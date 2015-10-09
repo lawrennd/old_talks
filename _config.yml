@@ -3,6 +3,11 @@ title: Neil Lawrence's Talks
 email: N.Lawrence@sheffield.ac.uk
 description: talks given by Neil Lawrence
 baseurl: "/talks" # the subpath of your site, e.g. /blog/
+youtube:
+- width: 800
+- height: 600
+talk_files: "https://raw.githubusercontent.com/lawrennd/talks/master/slides/"
+nbviewer: "http://nbviewer.ipython.org/github/lawrennd/talks/blob/master/slides/" 
 url: "http://inverseprobability.com" # the base hostname & protocol for your site
 twitter_username: lawrennd
 github_username:  lawrennd
