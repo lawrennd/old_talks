@@ -8,6 +8,7 @@ abstract: |
 
 	The talk will be grounded in academic ideas of what information, knowledge and data are. But these concepts have practical utility that can influence decision making on where data sits within an organisation.
 venue: "Right First Time, ControlPoint Industry Event"
-linkhtml: reproducible_manchester13.pdf
+linkreveal: 2015-10-07_controlPointTalk.slides.html
+linkipynb: 2015-10-07_controlPointTalk.ipynb
 date: 2015-10-08
 ---
