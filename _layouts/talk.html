@@ -1,0 +1,22 @@
+---
+layout: post
+---
+<div class="post">
+
+  <article class="post-content">
+
+    at <b>{{ page.venue }}</b> on {{ page.date }}
+    
+    {% if page.youtube %}
+    <iframe width="{{ site.youtube.width }}" height="{{ site.youtube.height }}" src="https://www.youtube.com/embed/{{ page.youtube }}" frameborder="0" allowfullscreen></iframe>
+    {% endif %}
+
+    <p><b>{{ page.tagline }}</b> {%if page.linkpdf %}[<a href="{{ site.url }}{{ site.baseurl }}/assets/{{ page.linkpdf }}">PDF Lecture slides</a>]{% endif %}{%if page.notebook %}[<a href="{{ site.nbviewer }}/{{ page.notebook }}">Jupyter Lecture slides</a>]{% endif %}
+      {% if page.abstract %}
+      <h4>Abstract/h2>
+
+	<p>{{ site.abstract }}</p>
+
+  </article>
+
+</div>
