@@ -11,7 +11,7 @@ layout: post
     <iframe width="{{ site.youtube.width }}" height="{{ site.youtube.height }}" src="https://www.youtube.com/embed/{{ page.youtube }}" frameborder="0" allowfullscreen></iframe>
     {% endif %}
 
-    <p><b>{{ page.tagline }}</b> {%if page.linkpdf %}[<a href="{{ site.talk_files }}/{{ page.linkpdf }}">PDF Lecture slides</a>]{% endif %}{%if page.linkipynb %}[<a href="{{ site.nbviewer }}/{{ page.linkipynb }}">Jupyter Lecture slides</a>]{% endif %}{%if page.linkreveal %}[<a href="{{ site.nbviewer }}/{{ page.linkreveal }}">Slides</a>]{% endif %}
+    <p><b>{{ page.tagline }}</b> {%if page.linkpdf %}[<a href="{{ site.talk_files }}/{{ page.linkpdf }}">PDF Lecture slides</a>]{% endif %}{%if page.linkipynb %}[<a href="{{ site.nbviewer }}{{ page.linkipynb }}">Jupyter Lecture slides</a>]{% endif %}{%if page.linkreveal %}[<a href="{{ site.nbviewer }}{{ page.linkreveal }}">Slides</a>]{% endif %}
       {% if page.abstract %}
       <h4>Abstract</h4>
 
