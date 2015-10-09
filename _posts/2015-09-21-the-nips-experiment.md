@@ -1,6 +1,6 @@
 ---
 layout: talk
-key: "Lawrence:peer15",
+key: "Lawrence:peer15"
 author: Neil D. Lawrence
 title: Peer Review and the NIPS Experiment
 abstract: In this talk we will summarize the NIPS experiment and discuss implications for peer review.
