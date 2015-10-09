@@ -1,6 +1,6 @@
 ---
 layout: talk
-key: Lawrence:reproducible16,
+key: "Lawrence:reproducible16",
 author: Neil D. Lawrence
 title: "The Digital Oligarchy: Information, Knowledge and the Internet Era"
 abstract: |

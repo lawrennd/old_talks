@@ -6,7 +6,7 @@ baseurl: "/talks" # the subpath of your site, e.g. /blog/
 youtube:
 - width: 800
 - height: 600
-talk_files: "https://raw.githubusercontent.com/lawrennd/talks/master/slides/"
+talk_files: "https://inverseprobability/talks/slides/"
 nbviewer: "http://nbviewer.ipython.org/github/lawrennd/talks/blob/master/slides/" 
 url: "http://inverseprobability.com" # the base hostname & protocol for your site
 twitter_username: lawrennd
