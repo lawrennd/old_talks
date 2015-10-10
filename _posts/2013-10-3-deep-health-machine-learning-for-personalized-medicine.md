@@ -8,7 +8,7 @@
   different views of the patient which need to be unified for truly personalized health
   care.
 :venue: E4L Away Day
-:linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "deep_health_e4l.pdf"'
+:linkpdf: 'deep_health_e4l.pdf'
 :year: '2013'
 :month: oct
 :day: '3'
