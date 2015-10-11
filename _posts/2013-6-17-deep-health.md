@@ -1,8 +1,7 @@
 ---
 author: Lawrence, Neil D.
 title: Deep Health
-abstract: |2+
-
+optabstract: ''
 venue: Manchester and Sheffield Machine Learning Meetings
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/deep_health_manchester13.pdf
 optlabel1: Software
@@ -12,4 +11,6 @@ month: '6'
 day: '17'
 layout: talk
 key: Lawrence:manchester13
+abstract: |2+
+
 ---

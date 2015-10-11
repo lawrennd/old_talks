@@ -1,8 +1,7 @@
 ---
 author: Lawrence, Neil D.
 title: 'Statistical Computing: Python'
-abstract: |2+
-
+optabstract: ''
 venue: Royal Statistical Society, London, U.K.
 optlinkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/deepgp_ucl14b.pdf
 optyoutube: ulahro6DjyY
@@ -17,4 +16,6 @@ month: '11'
 day: '21'
 layout: talk
 key: Lawrence:rss14
+abstract: |2+
+
 ---

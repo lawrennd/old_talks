@@ -1,8 +1,7 @@
 ---
 author: Lawrence, Neil D.
 title: Introduction to Gaussian Processes
-abstract: |2+
-
+optabstract: ''
 venue: Gaussian Process Winter School, Sheffield
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gp_gpws14_session3.pdf
 optlabel1: Software
@@ -13,4 +12,6 @@ month: '1'
 day: '13'
 layout: talk
 key: Lawrence:gpwsOne14
+abstract: |2+
+
 ---

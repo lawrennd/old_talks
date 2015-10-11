@@ -1,8 +1,7 @@
 ---
 author: Lawrence, Neil D.
 title: Multioutput Gaussian Processes
-abstract: |2+
-
+optabstract: ''
 venue: Gaussian Process Summer School, Sheffield
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gp_gpss13_session2.pdf
 optlabel1: Software
@@ -12,4 +11,6 @@ month: '6'
 day: '11'
 layout: talk
 key: Lawrence:gpssTwo13
+abstract: |2+
+
 ---
