@@ -6,7 +6,6 @@ videolectures: lms08_lawrence_gpdc
 year: '2008'
 month: '12'
 day: '20'
-abstract: ''
 group: gp,sysbio
 layout: talk
 key: Lawrence:gpdc08

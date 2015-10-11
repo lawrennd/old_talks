@@ -1,7 +1,6 @@
 ---
 author: Lawrence, Neil D.
 title: Latent Variable Models with Gaussian Processes
-abstract: ''
 venue: Gaussian Process Winter School, Sheffield
 linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gp_gpws14_session3.pdf"'
 optlabel1: Software

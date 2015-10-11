@@ -9,7 +9,6 @@ videolectures: mlss2012_lawrence_dimensionality_reduction
 year: '2012'
 month: '4'
 day: '11'
-abstract: ''
 layout: talk
 key: Lawrence:mlssOne12
 ---

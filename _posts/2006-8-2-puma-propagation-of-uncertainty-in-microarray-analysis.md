@@ -1,7 +1,6 @@
 ---
 author: Lawrence, Neil D.
 title: 'PUMA: Propagation of Uncertainty in Microarray Analysis'
-abstract: ''
 venue: Max Planck Institute, Tübingen, Germany
 label1: PUMA Project Page
 link1: http://bioinf.man.ac.uk/resources/puma/

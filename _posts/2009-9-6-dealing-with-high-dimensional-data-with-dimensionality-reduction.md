@@ -6,7 +6,6 @@ linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "interspeech09.pdf"'
 year: '2009'
 month: '9'
 day: '6'
-abstract: ''
 layout: talk
 key: Lawrence:interspeech09
 ---

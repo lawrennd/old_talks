@@ -1,7 +1,6 @@
 ---
 author: Lawrence, Neil D.
 title: 'Reproducible Research: Lessons from Machine Learning'
-abstract: ''
 venue: RADIANT Kick-off Meeting, Manchester, UK
 linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "reproducible_manchester13.pdf"'
 optlabel1: Software
