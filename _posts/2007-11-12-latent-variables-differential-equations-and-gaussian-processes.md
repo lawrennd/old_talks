@@ -20,7 +20,7 @@ linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lvDeGp.pdf
 label1: PUMA Project Page
 link1: http://bioinf.man.ac.uk/resources/puma/
 label2: TIGRE Project Page
-link2: http://inverseprobability.com/projects/tigre/
+link2: http://sheffieldml.github.io/projeccts/tigre/
 label3: GPSIM Software
 link3: http://inverseprobability.com/gpsim/
 label4: Demos Software
