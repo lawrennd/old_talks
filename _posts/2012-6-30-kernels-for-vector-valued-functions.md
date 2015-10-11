@@ -8,8 +8,8 @@ abstract: In this talk we review kernels for vector valued functions from the pe
   learning with GPs and the Semi Parametric Latent Factor model. Finally, we will
   introduce convolutional process models from the perspective of the latent force
   model.
-venue: 'ICML Workshop on ``Object, functional and structured data: towards next generation
-  kernel-based methods'''''
+venue: 'ICML Workshop on “Object, functional and structured data: towards next generation
+  kernel-based methods”'
 linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "mok_icmlWorkshop12.pdf"'
 year: '2012'
 month: '6'

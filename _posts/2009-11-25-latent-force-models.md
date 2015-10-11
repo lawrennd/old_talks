@@ -1,7 +1,7 @@
 ---
 author: Lawrence, Neil D.
 title: Latent Force Models
-venue: Disordered Systems Group, Department of Mathematics, King's College London
+venue: Disordered Systems Group, Department of Mathematics, King’s College London
 linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "lfm_kcl09.pdf"'
 year: '2009'
 month: '11'

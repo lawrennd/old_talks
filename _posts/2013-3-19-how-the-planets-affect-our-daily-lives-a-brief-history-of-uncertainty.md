@@ -1,7 +1,7 @@
 ---
 author: Lawrence, Neil D.
 title: 'How the Planets Affect Our Daily Lives: A Brief History of Uncertainty'
-venue: St Wilfrid's Primary School, Sheffield
+venue: St Wilfrid’s Primary School, Sheffield
 year: '2013'
 month: '3'
 url: ''
