@@ -4,17 +4,17 @@ title: Towards Computational Systems Biology with a Statistical Analysis Pipelin
   for Microarray Data
 abstract: Since the human genome project began mathematical models have become an
   integral part of biological data analysis. The growth in data availability has necessitated
-  their use in summarization of the data (e.g. \emph{statistical} approaches such
-  as hierarchical clustering). Simultaneously, as more has become understood about
-  the mechanisms underpinning particular pathways \emph{mechanistic} models of interactions
-  have become more widespread.\\\\ The data-driven statistical approach and the mechanistic
+  their use in summarization of the data (e.g. \emphstatistical approaches such as
+  hierarchical clustering). Simultaneously, as more has become understood about the
+  mechanisms underpinning particular pathways \emphmechanistic models of interactions
+  have become more widespread.\\\{The data-driven statistical approach and the mechanistic
   model approach each have their advantages. Data-driven models can be used in genome
-  wide analyses to 'fish' for genes that were not known to be relevant but provide
+  wide analyses to ’fish’ for genes that were not known to be relevant but provide
   a critical role in a pathway. Mechanistic models make real predictions about how
   systems will respond given particular interventions. The two approaches have interacted
-  only loosely, often not through interaction between the `mathematicians' but through
-  indirect interaction via the biologists. \\\\ In this talk we will follow describe
-  a statistical analysis `pipeline' for microarray data which handles the noise in
+  only loosely, often not through interaction between the ‘mathematicians’ but through
+  indirect interaction via the biologists. \\\{In this talk we will follow describe
+  a statistical analysis ‘pipeline’ for microarray data which handles the noise in
   the data. As we proceed down the pipeline we will come closer to mechanistic models
   of systems. We will finish with some general thoughts about the contribution that
   a combined statistical/mechanistic modelling approach can make.

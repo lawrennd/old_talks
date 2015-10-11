@@ -13,7 +13,7 @@ abstract: In this tutorial we will review spectral approaches to dimensionality 
   on the maximum entropy principle and the resulting probabilistic models are based
   on GRFs. We will review maximum variance unfolding, Laplacian eigenmaps, locally
   linear embeddings and Isomap. Under the framework, these approaches can be divided
-  into those that preserve local distances and those that don't.  For two small data
+  into those that preserve local distances and those that don’t.  For two small data
   sets we show that local distance preserving methods tend to perform better. Finally
   we use the unifying framework to relate these approaches to the Gaussian process
   latent variable model.

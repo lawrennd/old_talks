@@ -2,12 +2,12 @@
 author: Lawrence, Neil D.
 title: Modelling in the Context of Massively Missing Data
 abstract: In the age of large streaming data it seems appropriate to revisit the foundations
-  of what we think of as data modelling. In this talk I'll argue that traditional
+  of what we think of as data modelling. In this talk I’ll argue that traditional
   statistical approaches based on parametric models and i.i.d. assumptions are inappropriate
   for the type of large scale machine learning we need to do in the age of massive
   streaming data sets. Particularly when we realise that regardless of the size of
   data we have, it pales in comparison to the data we could have. This is the domain
-  of \emph{massively missing data}. I'll be arguing for flexible non-parametric models
+  of \emphmassively missing data. I’ll be arguing for flexible non-parametric models
   as the answer. This presents a particular challenge, non parametric models require
   data storage of the entire data set, which presents problems for massive, streaming
   data. I will present a potential solution, but perhaps end with more questions than

@@ -16,8 +16,8 @@ abstract: 'We are used to dealing with the situation where we have a latent vari
   will show how for some simple ordinary differential equations the latent variable
   can be dealt with analytically for particular Gaussian process priors over the latent
   force. In this talk we will introduce the general framework, present results in
-  systems biology.\\\\ Joint work with Magnus Rattray, Mauricio \''Alvarez, Pei Gao,
-  Antti Honkela, David Luengo, Guido Sanguinetti and Michalis K. Titsias. '
+  systems biology.\\\{Joint work with Magnus Rattray, Mauricio Álvarez, Pei Gao, Antti
+  Honkela, David Luengo, Guido Sanguinetti and Michalis K. Titsias. '
 group: ode, gp
 layout: talk
 key: Lawrence:bristol08

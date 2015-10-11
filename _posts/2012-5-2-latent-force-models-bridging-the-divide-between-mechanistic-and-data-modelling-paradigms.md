@@ -4,7 +4,7 @@ title: 'Latent Force Models: Bridging the Divide between Mechanistic and Data Mo
   Paradigms'
 abstract: Physics based approaches to data modeling involve constructing an accurate
   mechanistic model of data, often based on differential equations. Machine learning
-  and statistical approaches are typically data driven---perhaps through regularized
+  and statistical approaches are typically data driven—perhaps through regularized
   function approximation. These two approaches to data modeling are often seen as
   polar opposites, but in reality they are two different ends to a spectrum of approaches
   we might take. In this talk we introduce latent force models. Latent force models

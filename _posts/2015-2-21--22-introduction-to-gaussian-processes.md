@@ -7,7 +7,7 @@ optipynb: '"github.com/SheffieldML/notebook/blob/master/" # "lab_classes/gprs/Lo
 youtube: pmeAgona_to
 year: '2015'
 month: '2'
-day: 21--22
+day: 21–22
 layout: talk
 key: Lawrence:mlss15
 ---

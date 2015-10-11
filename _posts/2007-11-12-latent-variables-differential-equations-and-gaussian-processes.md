@@ -8,7 +8,7 @@ abstract: 'We are used to dealing with the situation where we have a latent vari
   Kalman filters or hidden Markov models). In this talk we will consider such models
   in the context of a biological problem: inferring transcription factor activities
   in simple transcription networks. We will extend the simpler formalisms described
-  above to consider the case where the latent variable is a ''latent function'' and
+  above to consider the case where the latent variable is a ’latent function’ and
   the relationship with the observed data is described by a linear differential equation.
   Through the use of a Gaussian process prior over the latent function we can perform
   inference tractably and learn parameters of interest in the system.'

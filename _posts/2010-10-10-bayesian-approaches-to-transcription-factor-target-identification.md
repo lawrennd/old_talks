@@ -11,11 +11,11 @@ day: '10'
 abstract: A simple approach to target identification through gene expression studies
   has been to cluster the expression profiles and look for coregulated genes within
   clusters. Within systems biology mechanistic models of gene expression are typically
-  constructed through differential equations. mRNA's production is taken to be proportional
+  constructed through differential equations. mRNA’s production is taken to be proportional
   to transcription factor activity (with the proportionality given by the sensitivity)
   and the mRNA is assumed to decay at a particular rate. The assumption that coregulated
   genes have similar profiles is equivalent to assuming both the decay and the sensitivity
-  are high.  \\\\ In this lecture we introduce Bayesian approaches to target identification
+  are high.  \\\{In this lecture we introduce Bayesian approaches to target identification
   which make use of sampling approaches to rank candidate lists of targets. We will
   begin with an introduction to the target identification problem and an overview
   of the power of Bayesian approaches in solving it. We will then consider how probabilistic
