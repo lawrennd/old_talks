@@ -12,6 +12,8 @@ abstract: |
   grounded in academic ideas of what information, knowledge and data are.
   But these concepts have practical utility that can influence decision
   making on where data sits within an organisation.
+ipynb: 2015-10-07_controlPointTalk.ipynb
+reveal: 2015-10-07_controlPointTalk.slides.html
 year: '2015'
 month: '10'
 day: '8'

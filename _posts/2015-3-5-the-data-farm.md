@@ -11,7 +11,7 @@ abstract: |
 venue: Sheffield Festival of Engineering and Science, Jessop West Exhibition Space,
   Jessop West, University of Sheffield, 1 Upper Hanover Street, Sheffield S3 7RA
 linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/datafarm_science15.pdf
-ipynb: github.com/SheffieldML/notebook/blob/master/science_week/The%20Data%20Farm.ipynb
+linkipynb: github.com/SheffieldML/notebook/blob/master/science_week/The%20Data%20Farm.ipynb
 year: '2015'
 month: '3'
 day: '5'

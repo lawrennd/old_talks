@@ -11,7 +11,9 @@ abstract: |
   conference. We will try to keep the presentation information to ensure
   questions can be asked. With luck it will give more insight into the
   processes that a program committee goes through when selecting papers.
-ipynb: staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/nips_radiant15.ipynb
+linkipynb: staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/nips_radiant15.ipynb
+ipynb: nips_radiant15.ipynb
+reveal: nips_radiant15.slides.html
 day: '30'
 layout: talk
 key: Lawrence:radiant15
