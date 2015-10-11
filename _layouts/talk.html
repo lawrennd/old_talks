@@ -15,8 +15,12 @@ layout: post
       {% if page.abstract %}
       <h4>Abstract</h4>
 
-	<p>{{ page.abstract | markdown }}</p>
-      {% endif %}
+	<p>{{ page.abstract | markdownify }}</p>
+	{% endif %}
+
+	{% markdown %}
+	{{ content }}
+	{% endmarkdown %}
   </article>
 
 </div>
