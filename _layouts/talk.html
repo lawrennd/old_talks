@@ -23,9 +23,7 @@ layout: post
 	<p>{{ page.abstract | markdownify }}</p>
 	{% endif %}
 
-	{% markdown %}
-	{{ content }}
-	{% endmarkdown %}
+	{{ content | markdownify }}
   </article>
 
 </div>
