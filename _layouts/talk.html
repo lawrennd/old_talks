@@ -7,7 +7,7 @@ layout: post
 
     at <b>{{ page.venue }}</b> on {{ page.date | date: "%b %-d, %Y" }}
     {%if page.reveal %}
-    <p><iframe width="{{ site.youtube.width }}" height="{{ site.youtube.height }}" src="{{ page.reveal }}" frameborder="0" allowfullscreen></iframe></p>
+    <p><iframe width="{{ site.youtube.width }}" height="{{ site.youtube.height }}" src="{{ site.talk_files }}{{ page.reveal }}" frameborder="0" allowfullscreen></iframe></p>
     {% endif %}
     {% if page.youtube %}
     <p><iframe width="{{ site.youtube.width }}" height="{{ site.youtube.height }}" src="https://www.youtube.com/embed/{{ page.youtube }}" frameborder="0" allowfullscreen></iframe></p>
@@ -18,7 +18,7 @@ layout: post
     <p><a href="http://videolectures.net/{{ page.videolectures }}/"><img src="http://videolectures.net/{{ page.videolectures }}/thumb.jpg" border=0></a></p>
     {% endif %}
       
-    <p><b>{{ page.tagline }}</b> {%if page.linkpdf %}[<a href="{{ page.linkpdf }}">PDF Lecture slides</a>]{% endif %}{%if page.linkpptgz %}[<a href="{{ page.linkpptgz }}">Gzipped Powerpoint Lecture slides</a>]{% endif %}{%if page.linkipynb %}[<a href="{{ page.linkipynb }}">Jupyter Lecture slides</a>]{% endif %}{%if page.reveal %}[<a href="{{ page.linkreveal }}">Slides</a>]{% endif %}{%if page.pdf %}[<a href="{{ site.talk_files }}/{{ page.pdf }}">PDF Lecture slides</a>]{% endif %}{%if page.ipynb %}[<a href="{{ site.nbviewer }}{{ page.ipynb }}">Jupyter Lecture slides</a>]{% endif %}{%if page.reveal %}[<a href="{{ site.talk_files }}{{ page.reveal }}">Slides</a>]{% endif %}{% if page.label1 %}[<a href="{{ page.link1 }}">{{ page.label1 }}</a>{% endif %}{% if page.label2 %}[<a href="{{ page.link2 }}">{{ page.label2 }}</a>{% endif %}{% if page.label3 %}[<a href="{{ page.link3 }}">{{ page.label3 }}</a>{% endif %}{% if page.label4 %}[<a href="{{ page.link4 }}">{{ page.label4 }}</a>{% endif %}
+    <p><b>{{ page.tagline }}</b> {%if page.linkpdf %}[<a href="{{ page.linkpdf }}">PDF Lecture slides</a>]{% endif %}{%if page.linkpptgz %}[<a href="{{ page.linkpptgz }}">Gzipped Powerpoint Lecture slides</a>]{% endif %}{%if page.linkipynb %}[<a href="{{ page.linkipynb }}">Jupyter Lecture slides</a>]{% endif %}{%if page.linkreveal %}[<a href="{{ page.linkreveal }}">Slides</a>]{% endif %}{%if page.pdf %}[<a href="{{ site.talk_files }}/{{ page.pdf }}">PDF Lecture slides</a>]{% endif %}{%if page.ipynb %}[<a href="{{ site.nbviewer }}{{ page.ipynb }}">Jupyter Lecture slides</a>]{% endif %}{%if page.reveal %}[<a href="{{ site.talk_files }}{{ page.reveal }}">Slides</a>]{% endif %}{% if page.label1 %}[<a href="{{ page.link1 }}">{{ page.label1 }}</a>{% endif %}{% if page.label2 %}[<a href="{{ page.link2 }}">{{ page.label2 }}</a>{% endif %}{% if page.label3 %}[<a href="{{ page.link3 }}">{{ page.label3 }}</a>{% endif %}{% if page.label4 %}[<a href="{{ page.link4 }}">{{ page.label4 }}</a>{% endif %}
       {% if page.abstract %}
       <h4>Abstract</h4>
 
