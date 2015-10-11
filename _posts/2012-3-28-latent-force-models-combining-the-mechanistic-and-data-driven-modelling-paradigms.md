@@ -1,26 +1,23 @@
 ---
-:bibtex_key: Lawrence:rank12
-:bibtex_type: :talk
-:author: Lawrence, Neil D.
-:title: 'Latent Force Models: Combining the Mechanistic and Data Driven Modelling
-  Paradigms'
-:venue: Rank Prize Workshop, Grasmere, Lake District
-:linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "lfm_rank12.pdf"'
-:mp3: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "120328_lfm_rank12.mp3"'
-:youtube: nSN-wEvwYCA
-:year: '2012'
-:month: mar
-:day: '28'
-:abstract: The main focus of machine learning is to combine data with assumptions
-  that reflect our belief about the regularity of the world. This, then, allows us
-  to generalize and make new predictions for `test data'. Relative to other modelling
-  paradigms such as those found in physics that are based on mechanistic understandings
-  of the world, models in machine learning typically make only weak assumptions about
-  data.\\\\ In this talk, we argue that these weak assumptions are also mechanistic
-  in nature. In particular, a very common assumption is smoothness, which can arise
-  through the heat equation or other models of diffusion. Our assumption of smoothness
-  reflects our belief in an underlying physical world in which smoothness is the norm.
-  Strong mechanistic models, such as those used in computational fluid dynamics, climate
+author: Lawrence, Neil D.
+title: 'Latent Force Models: Combining the Mechanistic and Data Driven Modelling Paradigms'
+venue: Rank Prize Workshop, Grasmere, Lake District
+linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "lfm_rank12.pdf"'
+mp3: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "120328_lfm_rank12.mp3"'
+youtube: nSN-wEvwYCA
+year: '2012'
+month: '3'
+day: '28'
+abstract: The main focus of machine learning is to combine data with assumptions that
+  reflect our belief about the regularity of the world. This, then, allows us to generalize
+  and make new predictions for `test data'. Relative to other modelling paradigms
+  such as those found in physics that are based on mechanistic understandings of the
+  world, models in machine learning typically make only weak assumptions about data.\\\\
+  In this talk, we argue that these weak assumptions are also mechanistic in nature.
+  In particular, a very common assumption is smoothness, which can arise through the
+  heat equation or other models of diffusion. Our assumption of smoothness reflects
+  our belief in an underlying physical world in which smoothness is the norm. Strong
+  mechanistic models, such as those used in computational fluid dynamics, climate
   etc. typically impose much more rigid constraints on the data and are often inappropriate
   for machine learning tasks where the model needs to be adaptive and should still
   perform well even when our mechanistic assumptions are not completely fulfilled.
@@ -35,5 +32,6 @@
   processes. The Gaussian processes provide the necessary adaptability and the differential
   equation encodes mechanistic assumptions. In this talk we introduce the model and
   demonstrate results in motion capture date and, given time, computational biology.
-:month_numeric: '3'
+layout: talk
+key: Lawrence:rank12
 ---

@@ -1,15 +1,13 @@
 ---
-:bibtex_key: Lawrence:smpgd11
-:bibtex_type: :talk
-:author: Lawrence, Neil D.
-:title: 'Between Systems and Data-driven Modeling for Computational Biology: Target
+author: Lawrence, Neil D.
+title: 'Between Systems and Data-driven Modeling for Computational Biology: Target
   Identification with Gaussian Processes'
-:venue: SMPGD2010, Paris, France
-:linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "ode_smpgd11.pdf"'
-:year: '2011'
-:month: jan
-:day: '27'
-:abstract: A simple approach to target identification through gene expression studies
+venue: SMPGD2010, Paris, France
+linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "ode_smpgd11.pdf"'
+year: '2011'
+month: '1'
+day: '27'
+abstract: A simple approach to target identification through gene expression studies
   has been to cluster the expression profiles and look for coregulated genes within
   clusters. Within systems biology mechanistic models of gene expression are typically
   constructed through differential equations. mRNA's production is taken to be proportional
@@ -22,5 +20,6 @@
   driven models. We combine simple differential equation models with Gaussian process
   priors to make probabilistic models with mechanistic underpinnings. We show applications
   in target identification from mRNA measurements.
-:month_numeric: '1'
+layout: talk
+key: Lawrence:smpgd11
 ---

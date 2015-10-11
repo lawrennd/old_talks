@@ -1,10 +1,8 @@
 ---
-:bibtex_key: Lawrence:liverpool12
-:bibtex_type: :talk
-:author: Lawrence, Neil D.
-:title: 'Latent Force Models: Bridging the Divide between Mechanistic and Data Modelling
+author: Lawrence, Neil D.
+title: 'Latent Force Models: Bridging the Divide between Mechanistic and Data Modelling
   Paradigms'
-:abstract: Physics based approaches to data modeling involve constructing an accurate
+abstract: Physics based approaches to data modeling involve constructing an accurate
   mechanistic model of data, often based on differential equations. Machine learning
   and statistical approaches are typically data driven---perhaps through regularized
   function approximation. These two approaches to data modeling are often seen as
@@ -16,10 +14,11 @@
   particular physical characteristics of interest, for example, in dynamical systems
   resonance and inertia. This allows us to perform a synthesis of the data driven
   and physical modeling paradigms.
-:venue: Computer Science Department, University of Liverpool, U.K.
-:linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "lfm_liverpool12.pdf"'
-:year: '2012'
-:month: may
-:day: '2'
-:month_numeric: '5'
+venue: Computer Science Department, University of Liverpool, U.K.
+linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "lfm_liverpool12.pdf"'
+year: '2012'
+month: '5'
+day: '2'
+layout: talk
+key: Lawrence:liverpool12
 ---

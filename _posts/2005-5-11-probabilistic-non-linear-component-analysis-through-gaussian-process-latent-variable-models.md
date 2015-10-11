@@ -1,10 +1,8 @@
 ---
-:bibtex_key: Lawrence:soton05
-:bibtex_type: :talk
-:author: Lawrence, Neil D.
-:title: Probabilistic Non-linear Component Analysis through Gaussian Process Latent
+author: Lawrence, Neil D.
+title: Probabilistic Non-linear Component Analysis through Gaussian Process Latent
   Variable Models
-:abstract: It is known that Principal Component Analysis has an underlying probabilistic
+abstract: It is known that Principal Component Analysis has an underlying probabilistic
   representation based on a latent variable model. Principal component analysis (PCA)
   is recovered when the latent variables are integrated out and the parameters of
   the model are optimised by maximum likelihood. It is less well known that the dual
@@ -17,14 +15,15 @@
   a non-linear probabilistic PCA. In the talk we will introduce the GPLVM and illustrate
   its application on a range of high dimensional data sets including motion capture
   data, hand written digits, a medical diagnosis data set and images.
-:venue: Department of Electronics and Computer Science, University of Southampton,
+venue: Department of Electronics and Computer Science, University of Southampton,
   U.K.
-:linkpptgz: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "long_gplvm.ppt.gz"'
-:label1: Seminar Page
-:link1: http://www.isis.ecs.soton.ac.uk/seminars/?date=20050511
-:year: '2005'
-:month: may
-:day: '11'
-:group: gplvm
-:month_numeric: '5'
+linkpptgz: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "long_gplvm.ppt.gz"'
+label1: Seminar Page
+link1: http://www.isis.ecs.soton.ac.uk/seminars/?date=20050511
+year: '2005'
+month: '5'
+day: '11'
+group: gplvm
+layout: talk
+key: Lawrence:soton05
 ---

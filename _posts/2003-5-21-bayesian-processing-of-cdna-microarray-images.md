@@ -1,9 +1,7 @@
 ---
-:bibtex_key: Lawrence:manchester03
-:bibtex_type: :talk
-:author: Lawrence, Neil D.
-:title: Bayesian Processing of cDNA Microarray Images
-:abstract: Gene expression levels are obtained from microarray experiments through
+author: Lawrence, Neil D.
+title: Bayesian Processing of cDNA Microarray Images
+abstract: Gene expression levels are obtained from microarray experiments through
   the extraction of pixel intensities from a scanned image of the slide. It is widely
   acknowledged that variabilities can occur in expression levels extracted from the
   same images by different users with the same software packages. These inconsistencies
@@ -16,10 +14,11 @@
   also saves hours of researchers' time normally spent in refining the grid placement.
   A MATLAB implementation of the algorithm is available for non-commercial use from
   \url{http://www.dcs.shef.ac.uk/\~{ }neil/vis}.
-:venue: The University of Manchester, Department of Computer Science, Bio-health sciences
+venue: The University of Manchester, Department of Computer Science, Bio-health sciences
   Seminars
-:year: '2003'
-:month: may
-:day: '21'
-:month_numeric: '5'
+year: '2003'
+month: '5'
+day: '21'
+layout: talk
+key: Lawrence:manchester03
 ---

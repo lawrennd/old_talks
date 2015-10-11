@@ -1,9 +1,7 @@
 ---
-:bibtex_key: Lawrence:nottingham15
-:bibtex_type: :talk
-:author: Lawrence, Neil D.
-:title: 'Data Science: A New Field or Just a Rebadging Exercise?'
-:abstract: Scientific fields don't necessarily emerge because fundamental new knowledge
+author: Lawrence, Neil D.
+title: 'Data Science: A New Field or Just a Rebadging Exercise?'
+abstract: Scientific fields don't necessarily emerge because fundamental new knowledge
   is being generated, but often because a shift in the key questions that are facing
   us, and the tools that we have to answer them. The current information revolution
   is causing us to reassess our approach to data. Our mathematical and computational
@@ -20,11 +18,12 @@
   a new and pressing set of questions that bridge the computational and mathematical
   sciences. Regardless of its phylogeny, exploring this interface through these questions
   will be mutually beneficial.
-:venue: School of Mathematical Sciences, University of Nottingham
-:linkpdf: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/" # "datascience_nottingham15.pdf"'
-:optyoutube: ulahro6DjyY
-:year: '2015'
-:month: mar
-:day: '12'
-:month_numeric: '3'
+venue: School of Mathematical Sciences, University of Nottingham
+linkpdf: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/" # "datascience_nottingham15.pdf"'
+optyoutube: ulahro6DjyY
+year: '2015'
+month: '3'
+day: '12'
+layout: talk
+key: Lawrence:nottingham15
 ---

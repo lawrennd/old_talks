@@ -1,10 +1,8 @@
 ---
-:bibtex_key: Lawrence:erice06
-:bibtex_type: :talk
-:author: Lawrence, Neil D.
-:title: Probabilistic Dimensional Reduction with the Gaussian Process Latent Variable
+author: Lawrence, Neil D.
+title: Probabilistic Dimensional Reduction with the Gaussian Process Latent Variable
   Model
-:abstract: Density modelling in high dimensions is a very difficult problem. Traditional
+abstract: Density modelling in high dimensions is a very difficult problem. Traditional
   approaches, such as mixtures of Gaussians, typically fail to capture the structure
   of data sets in high dimensional spaces. In this talk we will argue that for many
   data sets of interest, the data can be represented as a lower dimensional manifold
@@ -15,15 +13,16 @@
   algorithm, including dynamics, learning of large data sets and back constraints.  We
   will demonstrate the application of the model and its extensions to a range of data
   sets, including human motion data, a vowel data set and a robot mapping problem.
-:venue: Erice Workshop on Mathematics and Medical Diagnosis, Sicily, Italy
-:linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gplvm_06_07.pdf"'
-:label1: Demos Software
-:link1: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/" # "oxford/"'
-:label2: Main Software
-:link2: '"https://github.com/SheffieldML/" # "GPmat/"'
-:year: '2006'
-:month: jul
-:day: '11'
-:group: gplvm
-:month_numeric: '7'
+venue: Erice Workshop on Mathematics and Medical Diagnosis, Sicily, Italy
+linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gplvm_06_07.pdf"'
+label1: Demos Software
+link1: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/" # "oxford/"'
+label2: Main Software
+link2: '"https://github.com/SheffieldML/" # "GPmat/"'
+year: '2006'
+month: '7'
+day: '11'
+group: gplvm
+layout: talk
+key: Lawrence:erice06
 ---

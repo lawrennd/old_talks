@@ -1,14 +1,12 @@
 ---
-:bibtex_key: Lawrence:ncaf08
-:bibtex_type: :talk
-:author: Lawrence, Neil D.
-:title: Dynamics with Gaussian Processes
-:venue: Natural Computing Applications Forum, University of Sheffield, U.K.
-:linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "dynamics_ncaf08.pdf"'
-:year: '2008'
-:month: sep
-:day: '10'
-:abstract: We are used to dealing with the situation where we have a latent variable.
+author: Lawrence, Neil D.
+title: Dynamics with Gaussian Processes
+venue: Natural Computing Applications Forum, University of Sheffield, U.K.
+linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "dynamics_ncaf08.pdf"'
+year: '2008'
+month: '9'
+day: '10'
+abstract: We are used to dealing with the situation where we have a latent variable.
   Often we assume this latent variable to be independently drawn from a distribution,
   \emph{e.g.} probabilistic PCA or factor analysis. This simplification is often extended
   for temporal data where tractable Markovian independence assumptions are used (\emph{e.g.}
@@ -20,6 +18,7 @@
   force. In this talk we will introduce the general framework, present results in
   systems biology.\\\\ Joint work with Magnus Rattray, Mauricio \'Alvarez, Pei Gao,
   Antti Honkela, David Luengo, Guido Sanguinetti and Michalis K. Titsias.
-:group: ''
-:month_numeric: '9'
+group: ''
+layout: talk
+key: Lawrence:ncaf08
 ---

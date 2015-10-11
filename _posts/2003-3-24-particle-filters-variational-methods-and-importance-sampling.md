@@ -1,9 +1,7 @@
 ---
-:bibtex_key: Lawrence:msr03
-:bibtex_type: :talk
-:author: Lawrence, Neil D.
-:title: Particle Filters, Variational methods and Importance Sampling
-:abstract: 'Particle filters allow tracking of systems with highly non-linear, multi-modal
+author: Lawrence, Neil D.
+title: Particle Filters, Variational methods and Importance Sampling
+abstract: 'Particle filters allow tracking of systems with highly non-linear, multi-modal
   posterior distributions, however they are prone to failure when model likelihoods
   are sharply peaked or state spaces are high dimensional. This failure is caused
   by a mismatch between the proposal distribution and the true posterior. The number
@@ -17,9 +15,10 @@
   processing of cDNA microarray images.  We will then add dynamics to the model and
   demonstrate a marked improvement over standard approaches on both synthetic and
   real-world tracking examples.'
-:venue: Machine Learning and Perception Group, Microsoft Research, Cambridge, U.K.
-:year: '2003'
-:month: mar
-:day: '24'
-:month_numeric: '3'
+venue: Machine Learning and Perception Group, Microsoft Research, Cambridge, U.K.
+year: '2003'
+month: '3'
+day: '24'
+layout: talk
+key: Lawrence:msr03
 ---

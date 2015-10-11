@@ -1,16 +1,14 @@
 ---
-:bibtex_key: Lawrence:oxfordLatent12
-:bibtex_type: :talk
-:author: Lawrence, Neil D.
-:title: 'Latent force models: Combining Probabilistic and Mechanistic Modelling'
-:venue: Robotics Research Group Seminar, Department of Engineering Science, University
+author: Lawrence, Neil D.
+title: 'Latent force models: Combining Probabilistic and Mechanistic Modelling'
+venue: Robotics Research Group Seminar, Department of Engineering Science, University
   of Oxford
-:linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "lfm_oxford12.pdf"'
-:mp3: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "120213_lfm_oxford12.mp3"'
-:year: '2012'
-:month: feb
-:day: '13'
-:abstract: Physics based approaches to data modeling involve constructing an accurate
+linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "lfm_oxford12.pdf"'
+mp3: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "120213_lfm_oxford12.mp3"'
+year: '2012'
+month: '2'
+day: '13'
+abstract: Physics based approaches to data modeling involve constructing an accurate
   mechanistic model of data, often based on differential equations. Statistical and
   machine learning approaches are typically data driven-perhaps through regularized
   function approximation.\\\\ These two approaches to data modeling are often seen
@@ -27,5 +25,6 @@
   This allows us to perform a synthesis of the data driven and physical modeling paradigms.
   A moderately mechanistic approach. We show an application in modelling of human
   motion capture data.
-:month_numeric: '2'
+layout: talk
+key: Lawrence:oxfordLatent12
 ---

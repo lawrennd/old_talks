@@ -1,15 +1,13 @@
 ---
-:bibtex_key: Lawrence:mlmi08
-:bibtex_type: :talk
-:author: Lawrence, Neil D.
-:title: Ambiguity Modelling in Latent Spaces
-:venue: Machine Learning for Multimodal Interaction, Utrecht, The Netherlands
-:linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "ncca_mlmi08.pdf"'
-:linkvideo: http://mmm.idiap.ch/pres-mlmi2008/results?query=//kleweldata/mlmi2008/2008-09-08_09h14
-:year: '2008'
-:month: sep
-:day: '8'
-:abstract: We are interested in the situation where we have two or more representations
+author: Lawrence, Neil D.
+title: Ambiguity Modelling in Latent Spaces
+venue: Machine Learning for Multimodal Interaction, Utrecht, The Netherlands
+linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "ncca_mlmi08.pdf"'
+linkvideo: http://mmm.idiap.ch/pres-mlmi2008/results?query=//kleweldata/mlmi2008/2008-09-08_09h14
+year: '2008'
+month: '9'
+day: '8'
+abstract: We are interested in the situation where we have two or more representations
   of an underlying phenomenon. In particular we are interested in the scenario where
   the representation are complementary. This implies that a single individual representation
   is not sufficient to fully discriminate a specific instance of the underlying phenomenon,
@@ -24,6 +22,7 @@
   on Gaussian processes) for validation and inference. The proposed model has several
   potential application areas, we demonstrate its use for multi-modal regression on
   a benchmark human pose estimation data set.
-:group: ''
-:month_numeric: '9'
+group: ''
+layout: talk
+key: Lawrence:mlmi08
 ---

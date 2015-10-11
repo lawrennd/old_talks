@@ -1,10 +1,8 @@
 ---
-:bibtex_key: Lawrence:ucbgplvm03
-:bibtex_type: :talk
-:author: Lawrence, Neil D.
-:title: Probabilistic Non-linear Component Analysis through Gaussian Process Latent
+author: Lawrence, Neil D.
+title: Probabilistic Non-linear Component Analysis through Gaussian Process Latent
   Variable Models
-:abstract: It is known that Principal Component Analysis has an underlying probabilistic
+abstract: It is known that Principal Component Analysis has an underlying probabilistic
   representation based on a latent variable model. PCA is recovered when the latent
   variables are integrated out and the parameters of the model are optimised by maximum
   likelihood. It is less well known that the dual approach of integrating out the
@@ -18,9 +16,10 @@
   latent variables in a non-linear GPLVM and discuss some relations with other models.
   Finally we will present results from a SIGGRAPH paper which uses the GPLVM to learn
   styles in an inverse kinematics problem \cite{Grochow:styleik04}.
-:venue: University of California, Berkeley, U.S.A.
-:year: '2004'
-:month: may
-:day: '6'
-:month_numeric: '5'
+venue: University of California, Berkeley, U.S.A.
+year: '2004'
+month: '5'
+day: '6'
+layout: talk
+key: Lawrence:ucbgplvm03
 ---

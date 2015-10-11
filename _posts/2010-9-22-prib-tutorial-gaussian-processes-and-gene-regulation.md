@@ -1,14 +1,12 @@
 ---
-:bibtex_key: Lawrence:tutorialPRIB10
-:bibtex_type: :talk
-:author: Lawrence, Neil D.
-:title: 'PRIB Tutorial: Gaussian Processes and Gene Regulation'
-:venue: PRIB2010, Radboud University, Nijmegen, Netherlands
-:linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gp_prib10.pdf"'
-:year: '2010'
-:month: sep
-:day: '22'
-:abstract: 'Computational biology models are often missing information, such as the
+author: Lawrence, Neil D.
+title: 'PRIB Tutorial: Gaussian Processes and Gene Regulation'
+venue: PRIB2010, Radboud University, Nijmegen, Netherlands
+linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gp_prib10.pdf"'
+year: '2010'
+month: '9'
+day: '22'
+abstract: 'Computational biology models are often missing information, such as the
   concentration of biochemical species of interest. One approach to dealing with this
   missing information is to place a probabilistic prior over the missing data. One
   possible choice for such a prior is a Gaussian process.\\\\ In this tutorial we
@@ -17,5 +15,6 @@
   processes can be incorporated with differential equation models to give probabilistic
   models for transcription. Such models can then be used to rank potential targets
   of given transcription factors. '
-:month_numeric: '9'
+layout: talk
+key: Lawrence:tutorialPRIB10
 ---

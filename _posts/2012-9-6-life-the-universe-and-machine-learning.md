@@ -1,9 +1,7 @@
 ---
-:bibtex_key: Lawrence:inaugural12
-:bibtex_type: :talk
-:author: Lawrence, Neil D.
-:title: Life, the Universe and Machine Learning
-:abstract: 'What is Machine Learning? Why is it useful for us? Machine learning algorithms
+author: Lawrence, Neil D.
+title: Life, the Universe and Machine Learning
+abstract: 'What is Machine Learning? Why is it useful for us? Machine learning algorithms
   are the engines that are driving forward an intelligent internet. They are allowing
   us to uncover the causes of cancer and helping us understand the way the universe
   is put together. They are suggesting who your friends are on facebook, enabling
@@ -17,12 +15,13 @@
   computers have typically struggled. We will emphasize the role of uncertainty in
   data modelling and hope to persuade the audience that correct handling of uncertainty
   may be one of the keys to intelligent systems.'
-:venue: St George's Church Lecture Theatre, University of Sheffield
-:optlinkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gp_ucla12_introduction.pdf"'
-:optlabel1: Software
-:optlink1: '"https://github.com/SheffieldML/" # "multigp/"'
-:year: '2012'
-:month: sep
-:day: '6'
-:month_numeric: '9'
+venue: St George's Church Lecture Theatre, University of Sheffield
+optlinkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gp_ucla12_introduction.pdf"'
+optlabel1: Software
+optlink1: '"https://github.com/SheffieldML/" # "multigp/"'
+year: '2012'
+month: '9'
+day: '6'
+layout: talk
+key: Lawrence:inaugural12
 ---

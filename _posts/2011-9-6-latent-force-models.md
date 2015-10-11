@@ -1,9 +1,7 @@
 ---
-:bibtex_key: Lawrence:bayes11
-:bibtex_type: :talk
-:author: Lawrence, Neil D.
-:title: Latent Force Models
-:abstract: Physics based approaches to data modeling involve constructing an accurate
+author: Lawrence, Neil D.
+title: Latent Force Models
+abstract: Physics based approaches to data modeling involve constructing an accurate
   mechanistic model of data, often based on differential equations. Statistical and
   machine learning approaches are typically data driven---perhaps through regularized
   function approximation.\\\\ These two approaches to data modeling are often seen
@@ -20,12 +18,13 @@
   This allows us to perform a synthesis of the data driven and physical modeling paradigms.
   A \emph{moderately mechanistic} approach. We show an application in modelling of
   human motion capture data.
-:venue: Bayes 250 Workshop, University of Edinburgh, U.K.
-:linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "lfm_bayes250.pdf"'
-:mp3: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "110906_lfm_bayes250.mp3"'
-:year: '2011'
-:month: sep
-:day: '6'
-:group: ''
-:month_numeric: '9'
+venue: Bayes 250 Workshop, University of Edinburgh, U.K.
+linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "lfm_bayes250.pdf"'
+mp3: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "110906_lfm_bayes250.mp3"'
+year: '2011'
+month: '9'
+day: '6'
+group: ''
+layout: talk
+key: Lawrence:bayes11
 ---

@@ -1,13 +1,11 @@
 ---
-:bibtex_key: Lawrence:krebs11
-:bibtex_type: :talk
-:author: Lawrence, Neil D.
-:title: Model Based Target Identification from Expression Data
-:venue: Krebs Institute Symposium
-:year: '2011'
-:month: jun
-:day: '7'
-:abstract: A simple approach to target identification through gene expression studies
+author: Lawrence, Neil D.
+title: Model Based Target Identification from Expression Data
+venue: Krebs Institute Symposium
+year: '2011'
+month: '6'
+day: '7'
+abstract: A simple approach to target identification through gene expression studies
   has been to cluster the expression profiles and look for coregulated genes within
   clusters. Within systems biology mechanistic models of gene expression are typically
   constructed through differential equations. mRNA's production is taken to be proportional
@@ -20,6 +18,7 @@
   We combine simple differential equation models with Gaussian process priors to make
   probabilistic models with mechanistic underpinnings. We show applications in target
   identification from mRNA measurements.
-:group: gplvm,lfm
-:month_numeric: '6'
+group: gplvm,lfm
+layout: talk
+key: Lawrence:krebs11
 ---

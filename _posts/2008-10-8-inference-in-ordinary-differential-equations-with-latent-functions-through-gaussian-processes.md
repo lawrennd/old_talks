@@ -1,15 +1,13 @@
 ---
-:bibtex_key: Lawrence:rss08
-:bibtex_type: :talk
-:author: Lawrence, Neil D.
-:title: Inference in Ordinary Differential Equations with Latent Functions through
+author: Lawrence, Neil D.
+title: Inference in Ordinary Differential Equations with Latent Functions through
   Gaussian Processes
-:venue: RSS Manchester Local Group
-:linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "manchesterRss.pdf"'
-:year: '2008'
-:month: oct
-:day: '8'
-:abstract: In biochemical interaction networks is a key problem in estimation of the
+venue: RSS Manchester Local Group
+linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "manchesterRss.pdf"'
+year: '2008'
+month: '10'
+day: '8'
+abstract: In biochemical interaction networks is a key problem in estimation of the
   structure and parameters of the genetic, metabolic and protein interaction networks
   that underpin all biological processes. We present a framework for Bayesian marginalisation
   of these latent chemical species through Gaussian process priors. We demonstrate
@@ -19,6 +17,7 @@
   of active protein cannot easily be measured. The uncertainty in the inferred transcription
   factor activity can be integrated out in order to derive a likelihood function that
   can be used for the estimation of regulatory model parameters.
-:group: ode, gp
-:month_numeric: '10'
+group: ode, gp
+layout: talk
+key: Lawrence:rss08
 ---

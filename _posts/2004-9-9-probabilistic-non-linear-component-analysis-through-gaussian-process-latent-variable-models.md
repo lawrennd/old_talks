@@ -1,10 +1,8 @@
 ---
-:bibtex_key: Lawrence:smlwgplvm03
-:bibtex_type: :talk
-:author: Lawrence, Neil D.
-:title: Probabilistic Non-linear Component Analysis through Gaussian Process Latent
+author: Lawrence, Neil D.
+title: Probabilistic Non-linear Component Analysis through Gaussian Process Latent
   Variable Models
-:abstract: It is known that Principal Component Analysis has an underlying probabilistic
+abstract: It is known that Principal Component Analysis has an underlying probabilistic
   representation based on a latent variable model. Principal component analysis (PCA)
   is recovered when the latent variables are integrated out and the parameters of
   the model are optimised by maximum likelihood. It is less well known that the dual
@@ -15,11 +13,12 @@
   Model (GPLVM). This dual probabilistic PCA is still a linear latent variable model,
   but by looking beyond the inner product kernel as a for a covariance function we
   can develop a non-linear probabilistic PCA.
-:venue: Sheffield Machine Learning Workshop, Sheffield, U.K.
-:linkvideo: mms://velblod2.ijs.si/pascal/2004/sheffield_04/lawrence_neil/lawrence_neil_00.wmv
-:year: '2004'
-:month: sep
-:day: '9'
-:linkpptgz: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gplvm_smlw.ppt.gz"'
-:month_numeric: '9'
+venue: Sheffield Machine Learning Workshop, Sheffield, U.K.
+linkvideo: mms://velblod2.ijs.si/pascal/2004/sheffield_04/lawrence_neil/lawrence_neil_00.wmv
+year: '2004'
+month: '9'
+day: '9'
+linkpptgz: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gplvm_smlw.ppt.gz"'
+layout: talk
+key: Lawrence:smlwgplvm03
 ---

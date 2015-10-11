@@ -1,14 +1,12 @@
 ---
-:bibtex_key: Lawrence:jhu09
-:bibtex_type: :talk
-:author: Lawrence, Neil D.
-:title: Model Based Target Identification from Gene Expression with Gaussian Processes
-:venue: School of Public Health, Johns Hopkins University, U.S.A.
-:linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "ode_jhu09.pdf"'
-:year: '2009'
-:month: oct
-:day: '19'
-:abstract: A simple approach to target identification through gene expression studies
+author: Lawrence, Neil D.
+title: Model Based Target Identification from Gene Expression with Gaussian Processes
+venue: School of Public Health, Johns Hopkins University, U.S.A.
+linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "ode_jhu09.pdf"'
+year: '2009'
+month: '10'
+day: '19'
+abstract: A simple approach to target identification through gene expression studies
   has been to cluster the expression profiles and look for coregulated genes within
   clusters. Within systems biology mechanistic models of gene expression are typically
   constructed through differential equations. mRNA's production is taken to be proportional
@@ -20,5 +18,6 @@
   (or Transcription Factor) production and decay. Our models are simple enough to
   allow genome wide target identification, but rich enough to encode dynamical behavior
   that, allowing us to identify putative targets even when decay rates are low.
-:month_numeric: '10'
+layout: talk
+key: Lawrence:jhu09
 ---

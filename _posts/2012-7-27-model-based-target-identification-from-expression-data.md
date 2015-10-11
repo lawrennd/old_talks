@@ -1,16 +1,14 @@
 ---
-:bibtex_key: Lawrence:ucla12b
-:bibtex_type: :talk
-:author: Lawrence, Neil D.
-:title: Model Based Target Identification from Expression Data
-:venue: UCLA
-:year: '2012'
-:month: jul
-:url: http://talks.cam.ac.uk/talk/index/34517
-:linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gp_ucla12_modelBased.pdf"'
-:optmp3: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "120206_ode_cruk12.mp3"'
-:day: '27'
-:abstract: A simple approach to target identification through gene expression studies
+author: Lawrence, Neil D.
+title: Model Based Target Identification from Expression Data
+venue: UCLA
+year: '2012'
+month: '7'
+url: http://talks.cam.ac.uk/talk/index/34517
+linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gp_ucla12_modelBased.pdf"'
+optmp3: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "120206_ode_cruk12.mp3"'
+day: '27'
+abstract: A simple approach to target identification through gene expression studies
   has been to cluster the expression profiles and look for coregulated genes within
   clusters. Within systems biology mechanistic models of gene expression are typically
   constructed through differential equations. mRNA’s production is taken to be proportional
@@ -23,5 +21,6 @@
   We combine simple differential equation models with Gaussian process priors to make
   probabilistic models with mechanistic underpinnings. We show applications in target
   identification from mRNA measurements.
-:month_numeric: '7'
+layout: talk
+key: Lawrence:ucla12b
 ---

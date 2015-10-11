@@ -1,16 +1,14 @@
 ---
-:bibtex_key: Lawrence:bonn11
-:bibtex_type: :talk
-:author: Lawrence, Neil D.
-:title: A unifying probabilistic perspective on spectral approaches to dimensionality
+author: Lawrence, Neil D.
+title: A unifying probabilistic perspective on spectral approaches to dimensionality
   reduction
-:venue: Hausdorff Research Institute for Mathematics, Workshop on Manifold Learning,
+venue: Hausdorff Research Institute for Mathematics, Workshop on Manifold Learning,
   University of Bonn
-:year: '2011'
-:month: may
-:day: '31'
-:linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "spectral_bonn11.pdf"'
-:abstract: Spectral approaches to dimensionality reduction typically reduce the dimensionality
+year: '2011'
+month: '5'
+day: '31'
+linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "spectral_bonn11.pdf"'
+abstract: Spectral approaches to dimensionality reduction typically reduce the dimensionality
   of a data set through taking the eigenvectors of a Laplacian or a similarity matrix.
   Classical multidimensional scaling also makes use of the eigenvectors of a similarity
   matrix. In this talk we introduce a maximum entropy approach to designing this similarity
@@ -22,5 +20,6 @@
   such as the graphical LASSO. The hope is that this unifying perspective will allow
   the relationships between these methods to be better understood and will also provide
   the groundwork for further research.
-:month_numeric: '5'
+layout: talk
+key: Lawrence:bonn11
 ---

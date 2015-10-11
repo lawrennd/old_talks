@@ -1,9 +1,7 @@
 ---
-:bibtex_key: Lawrence:facebook14
-:bibtex_type: :talk
-:author: Lawrence, Neil D.
-:title: Modelling with Massively Missing Data
-:abstract: Supervised deep learning techniques now dominate in terms of performance
+author: Lawrence, Neil D.
+title: Modelling with Massively Missing Data
+abstract: Supervised deep learning techniques now dominate in terms of performance
   for complex classification tasks such as ImageNet. For these, the set of inputs
   (features) and targets (labels) are typically well defined in advance. However,
   for many tasks in artificial intelligence the questions that need to be answered
@@ -21,10 +19,11 @@
   can be adapted at 'runtime' as the data evolves, we don't want to be limited by
   decisions made at 'design time' when perhaps a more limited feature set existed.
   This poses particular challenges that we will address in this talk.
-:venue: Facebook, Menlo Park, CA
-:linkpdf: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/" # "missing_facebook14.pdf"'
-:year: '2014'
-:month: mar
-:day: '20'
-:month_numeric: '3'
+venue: Facebook, Menlo Park, CA
+linkpdf: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/" # "missing_facebook14.pdf"'
+year: '2014'
+month: '3'
+day: '20'
+layout: talk
+key: Lawrence:facebook14
 ---

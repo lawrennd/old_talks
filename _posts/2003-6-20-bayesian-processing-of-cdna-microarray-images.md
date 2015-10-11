@@ -1,9 +1,7 @@
 ---
-:bibtex_key: Lawrence:sussex03
-:bibtex_type: :talk
-:author: Lawrence, Neil D.
-:title: Bayesian Processing of cDNA Microarray Images
-:abstract: Gene expression levels are obtained from microarray experiments through
+author: Lawrence, Neil D.
+title: Bayesian Processing of cDNA Microarray Images
+abstract: Gene expression levels are obtained from microarray experiments through
   the extraction of pixel intensities from a scanned image of the slide. It is widely
   acknowledged that variabilities can occur in expression levels extracted from the
   same images by different users with the same software packages. These inconsistencies
@@ -14,10 +12,11 @@
   to downstream analysis. Our experiments demonstrate that variability between users
   can be significantly reduced using the approach. The automated nature of the approach
   also saves hours of researchers' time normally spent in refining the grid placement.
-:venue: The University of Sussex, Department of Cognitive Science, Bioinformatics
-  and Vision Seminars
-:year: '2003'
-:month: jun
-:day: '20'
-:month_numeric: '6'
+venue: The University of Sussex, Department of Cognitive Science, Bioinformatics and
+  Vision Seminars
+year: '2003'
+month: '6'
+day: '20'
+layout: talk
+key: Lawrence:sussex03
 ---

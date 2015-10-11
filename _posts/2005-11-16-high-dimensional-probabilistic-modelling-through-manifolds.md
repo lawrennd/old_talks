@@ -1,9 +1,7 @@
 ---
-:bibtex_key: Lawrence:gatsby05
-:bibtex_type: :talk
-:author: Lawrence, Neil D.
-:title: High Dimensional Probabilistic Modelling through Manifolds
-:abstract: Density modelling in high dimensions is a very difficult problem. Traditional
+author: Lawrence, Neil D.
+title: High Dimensional Probabilistic Modelling through Manifolds
+abstract: Density modelling in high dimensions is a very difficult problem. Traditional
   approaches, such as mixtures of Gaussians, typically fail to capture the structure
   of data sets in high dimensional spaces. In this talk we will argue that for many
   data sets of interest, the data can be represented as a lower dimensional manifold
@@ -14,11 +12,12 @@
   data sets, but with a particular focus on human motion data. We will show some preliminary
   work on facial animation and make use of a skeletal motion capture data set to illustrate
   differences between our model and traditional manifold techniques.
-:venue: Gatsby Computational Neuroscience Unit, University College London, U.K.
-:linkpptgz: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gplvm_gatsby.ppt.gz"'
-:year: '2005'
-:month: nov
-:day: '16'
-:group: gplvm
-:month_numeric: '11'
+venue: Gatsby Computational Neuroscience Unit, University College London, U.K.
+linkpptgz: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gplvm_gatsby.ppt.gz"'
+year: '2005'
+month: '11'
+day: '16'
+group: gplvm
+layout: talk
+key: Lawrence:gatsby05
 ---

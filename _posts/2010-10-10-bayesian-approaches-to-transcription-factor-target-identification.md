@@ -1,16 +1,14 @@
 ---
-:bibtex_key: Lawrence:eurogene10
-:bibtex_type: :talk
-:author: Lawrence, Neil D. and Honkela, Antti
-:title: Bayesian approaches to Transcription Factor Target Identification
-:venue: 'Course in Practical Systems Biology: Visualisation and Reverse engineering
+author: Lawrence, Neil D. and Honkela, Antti
+title: Bayesian approaches to Transcription Factor Target Identification
+venue: 'Course in Practical Systems Biology: Visualisation and Reverse engineering
   gene regulatory networks, EuroMediterranean University Centre of Ronzano, Bologna,
   Italy'
-:linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gp_bologna10.pdf"'
-:year: '2010'
-:month: oct
-:day: '10'
-:abstract: A simple approach to target identification through gene expression studies
+linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gp_bologna10.pdf"'
+year: '2010'
+month: '10'
+day: '10'
+abstract: A simple approach to target identification through gene expression studies
   has been to cluster the expression profiles and look for coregulated genes within
   clusters. Within systems biology mechanistic models of gene expression are typically
   constructed through differential equations. mRNA's production is taken to be proportional
@@ -25,5 +23,6 @@
   transcription factor. These models are simple enough to allow genome wide target
   identification, but rich enough to encode dynamical behavior that, allowing us to
   identify putative targets even when decay rates are low.
-:month_numeric: '10'
+layout: talk
+key: Lawrence:eurogene10
 ---

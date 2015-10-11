@@ -1,10 +1,8 @@
 ---
-:bibtex_key: Lawrence:loughborough11
-:bibtex_type: :talk
-:author: Lawrence, Neil D.
-:title: Probabilistic Dimensional Reduction with the Gaussian Process Latent Variable
+author: Lawrence, Neil D.
+title: Probabilistic Dimensional Reduction with the Gaussian Process Latent Variable
   Model
-:abstract: Density modelling in high dimensions is a very difficult problem. Traditional
+abstract: Density modelling in high dimensions is a very difficult problem. Traditional
   approaches, such as mixtures of Gaussians, typically fail to capture the structure
   of data sets in high dimensional spaces. In this talk we will argue that for many
   data sets of interest, the data can be represented as a lower dimensional manifold
@@ -16,15 +14,16 @@
   dimensionality determination, learning of large data sets. We will demonstrate the
   application of the model and its extensions to a range of data sets, including human
   motion data, speech data and video.
-:venue: Department of Computer Science, University of Loughgborough, U.K.
-:linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "loughborough_gplvm.pdf"'
-:label1: Bayesian GPLVM Software
-:link1: '"https://github.com/SheffieldML/" # "vargplvm/"'
-:label2: Main Software
-:link2: '"https://github.com/SheffieldML/" # "GPmat/"'
-:year: '2011'
-:month: mar
-:day: 09
-:group: gplvm
-:month_numeric: '3'
+venue: Department of Computer Science, University of Loughgborough, U.K.
+linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "loughborough_gplvm.pdf"'
+label1: Bayesian GPLVM Software
+link1: '"https://github.com/SheffieldML/" # "vargplvm/"'
+label2: Main Software
+link2: '"https://github.com/SheffieldML/" # "GPmat/"'
+year: '2011'
+month: '3'
+day: 09
+group: gplvm
+layout: talk
+key: Lawrence:loughborough11
 ---

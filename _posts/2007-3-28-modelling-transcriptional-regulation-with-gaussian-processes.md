@@ -1,9 +1,7 @@
 ---
-:bibtex_key: Lawrence:pesb07
-:bibtex_type: :talk
-:author: Lawrence, Neil D.
-:title: Modelling Transcriptional Regulation with Gaussian Processes
-:abstract: Modelling the dynamics of transcriptional processes in the cell requires
+author: Lawrence, Neil D.
+title: Modelling Transcriptional Regulation with Gaussian Processes
+abstract: Modelling the dynamics of transcriptional processes in the cell requires
   the knowledge of a number of key biological quantities. While some of them are relatively
   easy to measure, such as mRNA decay rates and mRNA abundance levels, it is still
   very hard to measure the active concentration levels of the transcription factor
@@ -14,14 +12,15 @@
   include the sensitivities, mRNA decay rates and baseline expression levels as hyperparameters.
   We apply this procedure to a human leukemia dataset, focusing on the tumour repressor
   p53 and obtaining results in good accordance with recent biological studies.
-:venue: Parameter Estimation in Systems Biology, School of Computer Science, University
+venue: Parameter Estimation in Systems Biology, School of Computer Science, University
   of Manchester, U.K.
-:linksoftware: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/" # "gpsim/"'
-:linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gpsim_07_03.pdf"'
-:videolectures: pesb07_lawrence_mtr
-:linkvideo: http://videolectures.net/pesb07_lawrence_mtr/
-:year: '2007'
-:month: mar
-:day: '28'
-:month_numeric: '3'
+linksoftware: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/" # "gpsim/"'
+linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gpsim_07_03.pdf"'
+videolectures: pesb07_lawrence_mtr
+linkvideo: http://videolectures.net/pesb07_lawrence_mtr/
+year: '2007'
+month: '3'
+day: '28'
+layout: talk
+key: Lawrence:pesb07
 ---

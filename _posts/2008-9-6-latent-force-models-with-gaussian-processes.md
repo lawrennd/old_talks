@@ -1,16 +1,14 @@
 ---
-:bibtex_key: Lawrence:bark08
-:bibtex_type: :talk
-:author: Lawrence, Neil D.
-:title: Latent Force Models with Gaussian Processes
-:venue: Bayesian Research Kitchen, Grasmere, Lake District, U.K.
-:linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "lfm_bark08.pdf"'
-:linkvideo: http://videolectures.net/bark08_lawrence_lfmwgp/
-:videolectures: bark08_lawrence_lfmwgp
-:year: '2008'
-:month: sep
-:day: '6'
-:abstract: We are used to dealing with the situation where we have a latent variable.
+author: Lawrence, Neil D.
+title: Latent Force Models with Gaussian Processes
+venue: Bayesian Research Kitchen, Grasmere, Lake District, U.K.
+linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "lfm_bark08.pdf"'
+linkvideo: http://videolectures.net/bark08_lawrence_lfmwgp/
+videolectures: bark08_lawrence_lfmwgp
+year: '2008'
+month: '9'
+day: '6'
+abstract: We are used to dealing with the situation where we have a latent variable.
   Often we assume this latent variable to be independently drawn from a distribution,
   \emph{e.g.} probabilistic PCA or factor analysis. This simplification is often extended
   for temporal data where tractable Markovian independence assumptions are used (\emph{e.g.}
@@ -22,6 +20,7 @@
   results in systems biology and preview extensions.\\\\ Joint work with Magnus Rattray,
   Mauricio \'Alvarez, Pei Gao, Antti Honkela, David Luengo, Guido Sanguinetti and
   Michalis K. Titsias.
-:group: ''
-:month_numeric: '9'
+group: ''
+layout: talk
+key: Lawrence:bark08
 ---

@@ -1,16 +1,14 @@
 ---
-:bibtex_key: Lawrence:oxfordUnify12
-:bibtex_type: :talk
-:author: Lawrence, Neil D.
-:title: A Unifying Review of Spectral Methods for Dimensionality Reduction
-:venue: Robotics Research Group Tutorial, Department of Engineering Science, University
+author: Lawrence, Neil D.
+title: A Unifying Review of Spectral Methods for Dimensionality Reduction
+venue: Robotics Research Group Tutorial, Department of Engineering Science, University
   of Oxford
-:linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "spectral_oxford12.pdf"'
-:linkmp3: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "120213_spectral_oxford12.pdf"'
-:year: '2012'
-:month: feb
-:day: '13'
-:abstract: In this tutorial we will review spectral approaches to dimensionality reduction,
+linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "spectral_oxford12.pdf"'
+linkmp3: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "120213_spectral_oxford12.pdf"'
+year: '2012'
+month: '2'
+day: '13'
+abstract: In this tutorial we will review spectral approaches to dimensionality reduction,
   introducing a unifying probabilistic perspective. Our unifying perspective is based
   on the maximum entropy principle and the resulting probabilistic models are based
   on GRFs. We will review maximum variance unfolding, Laplacian eigenmaps, locally
@@ -19,5 +17,6 @@
   sets we show that local distance preserving methods tend to perform better. Finally
   we use the unifying framework to relate these approaches to the Gaussian process
   latent variable model.
-:month_numeric: '2'
+layout: talk
+key: Lawrence:oxfordUnify12
 ---

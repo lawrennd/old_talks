@@ -1,10 +1,8 @@
 ---
-:bibtex_key: Lawrence:edinburgh11
-:bibtex_type: :talk
-:author: Lawrence, Neil D.
-:title: A Unifying Probabilistic Perspective on Spectral Approaches to Dimensionality
+author: Lawrence, Neil D.
+title: A Unifying Probabilistic Perspective on Spectral Approaches to Dimensionality
   Reduction
-:abstract: Spectral approaches to dimensionality reduction typically reduce the dimensionality
+abstract: Spectral approaches to dimensionality reduction typically reduce the dimensionality
   of a data set through taking the eigenvectors of a Laplacian or a similarity matrix.
   Classical multidimensional scaling also makes use of the eigenvectors of a similarity
   matrix. In this talk we introduce a maximum entropy approach to designing this similarity
@@ -16,10 +14,11 @@
   such as the graphical LASSO. The hope is that this unifying perspective will allow
   the relationships between these methods to be better understood and will also provide
   the groundwork for further research.
-:venue: ANC/DTC Seminar, School of Informatics, University of Edinburgh, U.K.
-:linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "spectral_edinburgh11.pdf"'
-:year: '2011'
-:month: mar
-:day: '01'
-:month_numeric: '3'
+venue: ANC/DTC Seminar, School of Informatics, University of Edinburgh, U.K.
+linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "spectral_edinburgh11.pdf"'
+year: '2011'
+month: '3'
+day: '01'
+layout: talk
+key: Lawrence:edinburgh11
 ---

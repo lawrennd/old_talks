@@ -1,10 +1,8 @@
 ---
-:bibtex_key: Lawrence:ucl13
-:bibtex_type: :talk
-:author: Lawrence, Neil D.
-:title: Deep Gaussian Processes
-:abstract: In this talk we will introduce deep Gaussian process (GP) models. Deep
-  GPs are a deep belief network based on Gaussian process mappings. The data is modeled
+author: Lawrence, Neil D.
+title: Deep Gaussian Processes
+abstract: In this talk we will introduce deep Gaussian process (GP) models. Deep GPs
+  are a deep belief network based on Gaussian process mappings. The data is modeled
   as the output of a multivariate GP. The inputs to that Gaussian process are then
   governed by another GP. A single layer model is equivalent to a standard GP or the
   GP latent variable model (GPLVM). We perform inference in the model by approximate
@@ -17,12 +15,13 @@
   modelling a digit data set containing only 150 examples. In the seminar we will
   briefly review dimensionality reduction via Gaussian processes, before showing how
   this framework can be extended to build deep models.
-:venue: University College, London
-:linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gplvm_ucl13.pdf"'
-:optlabel1: Software
-:optlink1: '"https://github.com/SheffieldML/" # "multigp/"'
-:year: '2013'
-:month: jan
-:day: '30'
-:month_numeric: '1'
+venue: University College, London
+linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gplvm_ucl13.pdf"'
+optlabel1: Software
+optlink1: '"https://github.com/SheffieldML/" # "multigp/"'
+year: '2013'
+month: '1'
+day: '30'
+layout: talk
+key: Lawrence:ucl13
 ---
