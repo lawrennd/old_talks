@@ -13,7 +13,6 @@ abstract: |
   deep Gaussian process models.
 venue: KTH Royal Institute of Technology, Sweden
 linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/deepgp_kth15.pdf
-optipynb: github.com/SheffieldML/notebook/blob/master/lab_classes/gprs/Low%20Rank%20Gaussian%20Processes.ipynb
 year: '2015'
 month: '4'
 day: '30'

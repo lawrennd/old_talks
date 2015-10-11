@@ -16,7 +16,6 @@ abstract: |
   optimal compression of our data from an information gain perspective.
 venue: Informatics Forum, University of Edinburgh, UK
 linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/flexible_edinburgh14.pdf
-optyoutube: ulahro6DjyY
 year: '2014'
 month: '5'
 day: '19'

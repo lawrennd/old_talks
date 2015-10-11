@@ -1,11 +1,8 @@
 ---
 author: Lawrence, Neil D.
 title: Deep Health
-optabstract: ''
 venue: Manchester and Sheffield Machine Learning Meetings
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/deep_health_manchester13.pdf
-optlabel1: Software
-optlink1: https://github.com/SheffieldML/multigp/
 year: '2013'
 month: '6'
 day: '17'

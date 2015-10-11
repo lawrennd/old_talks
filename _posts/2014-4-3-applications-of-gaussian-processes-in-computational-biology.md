@@ -9,7 +9,6 @@ abstract: |
   expression) or more complex tasks (like unpicking regulatory networks).
 venue: Institute Curie, Paris, France
 linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/gp_curie14.pdf
-optyoutube: ulahro6DjyY
 year: '2014'
 month: '4'
 day: '3'

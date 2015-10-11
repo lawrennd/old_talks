@@ -13,7 +13,6 @@ abstract: |
   variational approach we know as ’variational compression’.
 venue: Large-Scale Kernel Learning Workshop @ICML2015
 linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/parametric_icmllskw15.pdf
-optipynb: github.com/SheffieldML/notebook/blob/master/lab_classes/gprs/Low%20Rank%20Gaussian%20Processes.ipynb
 year: '2015'
 month: '7'
 day: '11'

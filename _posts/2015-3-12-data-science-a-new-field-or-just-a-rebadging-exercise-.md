@@ -24,7 +24,6 @@ abstract: |
   interface through these questions will be mutually beneficial.
 venue: School of Mathematical Sciences, University of Nottingham
 linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/datascience_nottingham15.pdf
-optyoutube: ulahro6DjyY
 year: '2015'
 month: '3'
 day: '12'

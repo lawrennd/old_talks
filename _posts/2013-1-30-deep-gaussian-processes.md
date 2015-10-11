@@ -20,8 +20,6 @@ abstract: |
   showing how this framework can be extended to build deep models.
 venue: University College, London
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_ucl13.pdf
-optlabel1: Software
-optlink1: https://github.com/SheffieldML/multigp/
 year: '2013'
 month: '1'
 day: '30'

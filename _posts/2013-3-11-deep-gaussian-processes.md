@@ -20,8 +20,6 @@ abstract: |
   showing how this framework can be extended to build deep models.
 venue: Max Planck Institute, Tübingen, Germany
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_tuebingen13.pdf
-optlabel1: Software
-optlink1: https://github.com/SheffieldML/multigp/
 year: '2013'
 month: '3'
 day: '11'

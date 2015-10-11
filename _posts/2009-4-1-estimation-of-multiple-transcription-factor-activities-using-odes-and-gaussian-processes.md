@@ -7,7 +7,6 @@ videolectures: licsb09_lawrence_emtf
 year: '2009'
 month: '4'
 day: '1'
-optabstract: ''
 layout: talk
 key: Lawrence:licsb09
 abstract: |2+

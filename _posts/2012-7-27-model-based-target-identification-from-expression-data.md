@@ -6,7 +6,6 @@ year: '2012'
 month: '7'
 url: http://talks.cam.ac.uk/talk/index/34517
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gp_ucla12_modelBased.pdf
-optmp3: ftp://ftp.dcs.shef.ac.uk/home/neil/120206_ode_cruk12.mp3
 day: '27'
 abstract: |
   A simple approach to target identification through gene expression

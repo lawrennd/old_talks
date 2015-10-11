@@ -1,7 +1,6 @@
 ---
 author: Lawrence, Neil D.
 title: The NIPS Experiment
-optabstract: ''
 venue: RADIANT Meeting, University of Zurich, Switzerland
 year: '2015'
 month: '1'

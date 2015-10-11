@@ -8,7 +8,6 @@ abstract: |
   computer science need to respond to the challenges culturally.
 venue: UCLID Workshop, University of Lancaster, UK
 linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/opendata_uclid14.pdf
-optyoutube: ulahro6DjyY
 year: '2014'
 month: '7'
 day: '2'

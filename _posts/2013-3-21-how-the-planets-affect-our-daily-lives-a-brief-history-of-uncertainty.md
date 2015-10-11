@@ -6,7 +6,6 @@ year: '2013'
 month: '3'
 url: ''
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/planets_friends_edwards13.pdf
-optmp3: ftp://ftp.dcs.shef.ac.uk/home/neil/120206_ode_cruk12.mp3
 day: '21'
 abstract: |
   Within the last 400 years scientists became able to predict the future.

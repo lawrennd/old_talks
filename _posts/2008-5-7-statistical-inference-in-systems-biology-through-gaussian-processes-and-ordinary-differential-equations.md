@@ -4,8 +4,6 @@ title: Statistical Inference in Systems Biology through Gaussian Processes and O
   Differential Equations
 venue: Max Planck Society, Ringberg Castle, Germany
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/mpi2.pdf
-optlabel1: ''
-optlink1: ''
 year: '2008'
 month: '5'
 day: '7'

@@ -20,8 +20,6 @@ abstract: |
   showing how this framework can be extended to build deep models.
 venue: University of Cambridge, Engineering Department
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_cambridge13.pdf
-optlabel1: Software
-optlink1: https://github.com/SheffieldML/multigp/
 year: '2013'
 month: '5'
 day: '1'

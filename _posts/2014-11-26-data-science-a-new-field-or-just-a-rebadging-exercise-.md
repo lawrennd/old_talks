@@ -24,7 +24,6 @@ abstract: |
   interface through these questions will be mutually beneficial.
 venue: Department of Statistics, University of Warwick
 linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/datascience_warwick14.pdf
-optyoutube: ulahro6DjyY
 year: '2014'
 month: '11'
 day: '26'

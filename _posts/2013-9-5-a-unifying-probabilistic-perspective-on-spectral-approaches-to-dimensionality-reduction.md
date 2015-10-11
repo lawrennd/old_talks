@@ -20,8 +20,6 @@ abstract: |
   research.
 venue: Microsoft Research, Cambridge
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/spectral_msr13.pdf
-optlabel1: Software
-optlink1: https://github.com/SheffieldML/multigp/
 year: '2013'
 month: '9'
 day: '5'

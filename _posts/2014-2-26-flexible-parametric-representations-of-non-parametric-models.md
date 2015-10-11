@@ -16,7 +16,6 @@ abstract: |
   optimal compression of our data from an information gain perspective.
 venue: Gatsby Computational Neuroscience Unit, University College London, U.K.
 linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/parametric_ucl14.pdf
-optyoutube: ulahro6DjyY
 year: '2014'
 month: '2'
 day: '26'

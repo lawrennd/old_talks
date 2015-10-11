@@ -8,8 +8,6 @@ abstract: |
   that also leads to stochastic variational inference for GPs.
 venue: Max Planck Institute, Tübingen, Germany
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gpvar_tuebingen13.pdf
-optlabel1: Software
-optlink1: https://github.com/SheffieldML/multigp/
 year: '2013'
 month: '3'
 day: '11'
