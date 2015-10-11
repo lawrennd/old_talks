@@ -12,7 +12,7 @@ venue: Workshop on Probabilistic formulation of the inverse problem and applicat
   U.K.
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_inverse_09_07.pdf
 label1: Demos Software
-link1: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/oxford/
+link1: http://inverseprobability.com/oxford/
 label2: Main Software
 link2: https://github.com/SheffieldML/GPmat/
 year: '2007'

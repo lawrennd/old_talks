@@ -19,7 +19,7 @@ abstract: |
 venue: Erice Workshop on Mathematics and Medical Diagnosis, Sicily, Italy
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_06_07.pdf
 label1: Demos Software
-link1: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/oxford/
+link1: http://inverseprobability.com/oxford/
 label2: Main Software
 link2: https://github.com/SheffieldML/GPmat/
 year: '2006'

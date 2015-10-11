@@ -21,7 +21,7 @@ abstract: |
 venue: Aalto University, Finland
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_aalto13.pdf
 label1: Software
-link1: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/hsvargplvm/
+link1: http://inverseprobability.com/hsvargplvm/
 year: '2013'
 month: '1'
 day: '24'

@@ -19,11 +19,11 @@ abstract: |
 venue: Dept of Signal Theory and Communications, Universidad Carlos III de Madrid,
   Spain
 label1: GPSIM Software
-link1: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/gpsim/
+link1: http://inverseprobability.com/gpsim/
 label2: TFA Software
 link2: https://github.com/SheffieldML/chipdyno/
 label3: TFA Software II
-link3: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/chipvar/
+link3: http://inverseprobability.com/chipvar/
 label4: PUMA Software
 link4: http://www.bioconductor.org/packages/2.0/bioc/html/puma.html
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/puma_07_07.pdf

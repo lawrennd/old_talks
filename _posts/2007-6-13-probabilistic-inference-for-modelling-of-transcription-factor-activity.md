@@ -4,13 +4,13 @@ title: Probabilistic Inference for Modelling of Transcription Factor Activity
 link1: http://bioinf.manchester.ac.uk/resources/puma/
 label1: Project Page
 label2: NPPCA Software
-link2: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/nppca/
+link2: http://inverseprobability.com/nppca/
 label3: ChipDyno Software
 link3: https://github.com/SheffieldML/chipdyno/
 label4: ChipVar Software
-link4: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/chipvar/
+link4: http://inverseprobability.com/chipvar/
 label5: GP p53 Software
-link5: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/gpsim/
+link5: http://inverseprobability.com/gpsim/
 label6: PUMA Software
 link6: http://www.bioconductor.org/packages/2.0/bioc/html/puma.html
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/puma_07_06.pdf

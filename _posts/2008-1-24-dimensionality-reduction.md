@@ -10,7 +10,7 @@ abstract: |
   processes.
 venue: EPSRC Winter School, University of Sheffield, Sheffield, U.K.
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/dataModellingWinter.pdf
-linksoftware: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/dimred/
+linksoftware: http://inverseprobability.com/dimred/
 linkvideo: http://videolectures.net/epsrcws08_lawrence_dr/
 videolectures: epsrcws08_lawrence_dr
 year: '2008'

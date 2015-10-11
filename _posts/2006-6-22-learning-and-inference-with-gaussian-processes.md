@@ -14,9 +14,9 @@ abstract: |
   animation and tracking.
 venue: School of Computer Science, University of Manchester, U.K.
 label1: p53 Software
-link1: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/gpsim/
+link1: http://inverseprobability.com/gpsim/
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gpintroTalk_06_06.pdf
-linksoftware: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/oxford/
+linksoftware: http://inverseprobability.com/oxford/
 year: '2006'
 month: '6'
 day: '22'

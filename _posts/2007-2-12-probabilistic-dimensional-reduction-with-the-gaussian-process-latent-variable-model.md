@@ -21,7 +21,7 @@ linkvideo: http://video.google.com/videoplay?docid=-5127068978792458641
 youtube: DS853uA0u4I
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_07_02.pdf
 label1: Demos Software
-link1: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/oxford/
+link1: http://inverseprobability.com/oxford/
 label2: Main Software
 link2: https://github.com/SheffieldML/GPmat/
 year: '2007'

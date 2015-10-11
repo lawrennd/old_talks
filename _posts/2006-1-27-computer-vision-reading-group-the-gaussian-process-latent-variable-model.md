@@ -14,7 +14,7 @@ link1: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvmTutorialSlides.pdf
 label2: PDF Notes
 link2: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvmTutorial.pdf
 label3: Demos Software
-link3: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/oxford/
+link3: http://inverseprobability.com/oxford/
 label4: Main Software
 link4: https://github.com/SheffieldML/GPmat/
 year: '2006'
