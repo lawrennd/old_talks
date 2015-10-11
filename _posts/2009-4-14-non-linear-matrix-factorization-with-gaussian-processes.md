@@ -6,8 +6,8 @@ linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/snowbird09.pdf
 year: '2009'
 month: '4'
 day: '14'
-abstract: |2+
-
 layout: talk
 key: Lawrence:learning09
+abstract: |2+
+
 ---

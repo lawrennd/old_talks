@@ -8,8 +8,8 @@ videolectures: mlss2012_lawrence_machine_learning
 year: '2012'
 month: '4'
 day: '15'
-abstract: |2+
-
 layout: talk
 key: Lawrence:mlssFour12
+abstract: |2+
+
 ---

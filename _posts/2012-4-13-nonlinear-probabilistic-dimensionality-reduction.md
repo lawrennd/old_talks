@@ -8,8 +8,8 @@ youtube: lEn1exknKFc
 year: '2012'
 month: '4'
 day: '13'
-abstract: |2+
-
 layout: talk
 key: Lawrence:mlssThree12
+abstract: |2+
+
 ---

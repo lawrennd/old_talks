@@ -6,8 +6,8 @@ linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lfm_inspire09.pdf
 year: '2009'
 month: '9'
 day: '24'
-abstract: |2+
-
 layout: talk
 key: Lawrence:inspire09
+abstract: |2+
+
 ---
