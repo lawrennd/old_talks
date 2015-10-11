@@ -3,8 +3,8 @@ author: Lawrence, Neil D.
 title: A Unifying Review of Spectral Methods for Dimensionality Reduction
 venue: Robotics Research Group Tutorial, Department of Engineering Science, University
   of Oxford
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "spectral_oxford12.pdf"'
-linkmp3: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "120213_spectral_oxford12.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/spectral_oxford12.pdf
+linkmp3: ftp://ftp.dcs.shef.ac.uk/home/neil/120213_spectral_oxford12.pdf
 year: '2012'
 month: '2'
 day: '13'

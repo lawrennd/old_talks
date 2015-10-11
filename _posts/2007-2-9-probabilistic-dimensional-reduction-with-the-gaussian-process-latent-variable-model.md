@@ -18,11 +18,11 @@ abstract: |
   data, a vowel data set and a robot mapping problem.
 venue: Computer Science and Artificial Intelligence Laboratory, Massachusetts Institute
   of Technology, Boston, MA, U.S.A.
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gplvm_07_02.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_07_02.pdf
 label1: Demos Software
-link1: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/" # "oxford/"'
+link1: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/oxford/
 label2: Main Software
-link2: '"https://github.com/SheffieldML/" # "GPmat/"'
+link2: https://github.com/SheffieldML/GPmat/
 label3: Seminar Page
 link3: http://www.eecs.mit.edu/cgi-bin/calendar.cgi?page=AY06-07/data/106.dat
 year: '2007'

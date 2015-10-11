@@ -18,11 +18,11 @@ abstract: |
   model and its extensions to a range of data sets, including human motion
   data, speech data and video.
 venue: Department of Computer Science, University of Loughgborough, U.K.
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "loughborough_gplvm.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/loughborough_gplvm.pdf
 label1: Bayesian GPLVM Software
-link1: '"https://github.com/SheffieldML/" # "vargplvm/"'
+link1: https://github.com/SheffieldML/vargplvm/
 label2: Main Software
-link2: '"https://github.com/SheffieldML/" # "GPmat/"'
+link2: https://github.com/SheffieldML/GPmat/
 year: '2011'
 month: '3'
 day: 09

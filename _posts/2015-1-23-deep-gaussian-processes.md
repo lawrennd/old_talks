@@ -15,7 +15,7 @@ abstract: |
   approaches to deep learning that are constructed from components with
   very well understood analytical properties.
 venue: Instituto Italiano de Tecnologia, Genova, Italy
-linkpdf: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/" # "deepgp_iit15.pdf"'
+linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/deepgp_iit15.pdf
 year: '2015'
 month: '1'
 day: '23'

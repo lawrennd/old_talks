@@ -12,8 +12,8 @@ abstract: |
   framework of variational compression and give some initial results of
   deep Gaussian process models.
 venue: 2nd Deep Learning Workshop, Edinburgh
-linkpdf: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/" # "deepgp_edinburgh15.pdf"'
-ipynb: '"github.com/SheffieldML" # "/deepGPy/blob/master/Nested%20Deep%20GPs.ipynb"'
+linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/deepgp_edinburgh15.pdf
+ipynb: github.com/SheffieldML/deepGPy/blob/master/Nested%20Deep%20GPs.ipynb
 year: '2015'
 month: '6'
 day: '9'

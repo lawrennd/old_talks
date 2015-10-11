@@ -17,11 +17,11 @@ abstract: |
   model and its extensions to a range of data sets, including human motion
   data, a vowel data set and a robot mapping problem.
 venue: Erice Workshop on Mathematics and Medical Diagnosis, Sicily, Italy
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gplvm_06_07.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_06_07.pdf
 label1: Demos Software
-link1: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/" # "oxford/"'
+link1: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/oxford/
 label2: Main Software
-link2: '"https://github.com/SheffieldML/" # "GPmat/"'
+link2: https://github.com/SheffieldML/GPmat/
 year: '2006'
 month: '7'
 day: '11'

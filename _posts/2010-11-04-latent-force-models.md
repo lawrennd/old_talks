@@ -3,7 +3,7 @@ author: Lawrence, Neil D.
 title: Latent Force Models
 venue: Dynamics Research Group Seminar, Mechanical Engineering, University of Sheffield,
   U.K.
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "lfm_sheffield10.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lfm_sheffield10.pdf
 year: '2010'
 month: '11'
 day: '04'

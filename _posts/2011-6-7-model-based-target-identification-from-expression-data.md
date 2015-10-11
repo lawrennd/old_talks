@@ -15,7 +15,8 @@ abstract: |
   sensitivity) and the mRNA is assumed to decay at a particular rate. The
   assumption that coregulated genes have similar profiles is equivalent to
   assuming both the decay and the sensitivity are high.\
-  {Typically researchers either use a data driven approach (such as
+  \
+  Typically researchers either use a data driven approach (such as
   clustering) or a model based approach (such as differential equations).
   In this talk we advocate hybrid techniques which have aspects of the
   mechanistic and data driven models. We combine simple differential

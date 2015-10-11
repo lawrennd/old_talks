@@ -2,7 +2,7 @@
 author: Lawrence, Neil D.
 title: Model Based Target Identification from Gene Expression with Gaussian Processes
 venue: School of Public Health, Johns Hopkins University, U.S.A.
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "ode_jhu09.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/ode_jhu09.pdf
 year: '2009'
 month: '10'
 day: '19'

@@ -2,7 +2,7 @@
 author: Lawrence, Neil D.
 title: Non-linear Matrix Facorization with Gaussian Proceses
 venue: European Modern Massive Datasets Workshop, Denmark Techinical University, Copenhagen
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "emmds09.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/emmds09.pdf
 year: '2009'
 month: '7'
 day: '3'

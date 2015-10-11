@@ -2,7 +2,7 @@
 author: Lawrence, Neil D.
 title: Transfer Learning and Multiple Output Kernel Functions
 venue: NIPS 09 Workshop on Transfer Learning for Structured Data
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "tlsd09.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/tlsd09.pdf
 year: '2009'
 month: '12'
 day: '12'

@@ -3,7 +3,7 @@ author: Lawrence, Neil D.
 title: Inferring Latent Functions with Gaussian Processes in Differential Equations
 venue: Department of Electronics and Computer Science, University of Southampton,
   U.K.
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gpSysBio.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gpSysBio.pdf
 label1: Seminar Page
 link1: http://www.isis.ecs.soton.ac.uk/seminars/?date=20080430
 year: '2008'

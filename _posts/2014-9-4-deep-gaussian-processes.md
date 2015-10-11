@@ -15,7 +15,7 @@ abstract: |
   approaches to deep learning that are constructed from components with
   very well understood analytical properties.
 venue: UCL-Duke University Workshop on Sensing and Analysis of High-Dimensional Data
-linkpdf: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/" # "deepgp_ucl14.pdf"'
+linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/deepgp_ucl14.pdf
 videolectures: sahd2014_lawrence_gaussian_processes
 year: '2014'
 month: '9'

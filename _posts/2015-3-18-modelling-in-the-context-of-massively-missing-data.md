@@ -9,15 +9,15 @@ abstract: |
   machine learning we need to do in the age of massive streaming data
   sets. Particularly when we realise that regardless of the size of data
   we have, it pales in comparison to the data we could have. This is the
-  domain of missing data. I’ll be arguing for flexible non-parametric
-  models as the answer. This presents a particular challenge, non
-  parametric models require data storage of the entire data set, which
-  presents problems for massive, streaming data. I will present a
-  potential solution, but perhaps end with more questions than we started
-  with.
+  domain of *massively missing data*. I’ll be arguing for flexible
+  non-parametric models as the answer. This presents a particular
+  challenge, non parametric models require data storage of the entire data
+  set, which presents problems for massive, streaming data. I will present
+  a potential solution, but perhaps end with more questions than we
+  started with.
 venue: Max Planck Institute, Tübingen
-linkpdf: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/" # "missingdata_tuebingen15.pdf"'
-ipynb: '"github.com/SheffieldML/notebook/blob/master/" # "lab_classes/gprs/Low%20Rank%20Gaussian%20Processes.ipynb"'
+linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/missingdata_tuebingen15.pdf
+ipynb: github.com/SheffieldML/notebook/blob/master/lab_classes/gprs/Low%20Rank%20Gaussian%20Processes.ipynb
 year: '2015'
 month: '3'
 day: '18'

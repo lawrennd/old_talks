@@ -19,9 +19,9 @@ abstract: |
   briefly review dimensionality reduction via Gaussian processes, before
   showing how this framework can be extended to build deep models.
 venue: Natural Computing Applications Forum, University of Oxford
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gplvm_ncaf13.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_ncaf13.pdf
 optlabel1: Software
-optlink1: '"https://github.com/SheffieldML/" # "multigp/"'
+optlink1: https://github.com/SheffieldML/multigp/
 year: '2013'
 month: '7'
 day: '4'

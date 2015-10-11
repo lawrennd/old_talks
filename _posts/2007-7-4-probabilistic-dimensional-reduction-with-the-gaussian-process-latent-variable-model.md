@@ -18,11 +18,11 @@ abstract: |
   data, a vowel data set and a robot mapping problem.
 venue: Dept of Signal Theory and Communications, Universidad Carlos III de Madrid,
   Spain
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gplvm_07_07.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_07_07.pdf
 label1: Demos Software
-link1: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/" # "oxford/"'
+link1: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/oxford/
 label2: Main Software
-link2: '"https://github.com/SheffieldML/" # "GPmat/"'
+link2: https://github.com/SheffieldML/GPmat/
 year: '2007'
 month: '7'
 day: '4'

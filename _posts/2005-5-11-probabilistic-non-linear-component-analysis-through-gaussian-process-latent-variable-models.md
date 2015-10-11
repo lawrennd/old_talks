@@ -21,7 +21,7 @@ abstract: |
   data set and images.
 venue: Department of Electronics and Computer Science, University of Southampton,
   U.K.
-linkpptgz: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "long_gplvm.ppt.gz"'
+linkpptgz: ftp://ftp.dcs.shef.ac.uk/home/neil/long_gplvm.ppt.gz
 label1: Seminar Page
 link1: http://www.isis.ecs.soton.ac.uk/seminars/?date=20050511
 year: '2005'

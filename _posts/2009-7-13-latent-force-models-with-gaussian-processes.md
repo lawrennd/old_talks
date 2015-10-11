@@ -3,7 +3,7 @@ author: Lawrence, Neil D.
 title: Latent Force Models with Gaussian Processes
 venue: Pattern Recognition Applications Group, Department of Electrical and Electronic
   Engineering, University of Cagliari, Italy
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "lfm_cagliari09.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lfm_cagliari09.pdf
 year: '2009'
 month: '7'
 day: '13'

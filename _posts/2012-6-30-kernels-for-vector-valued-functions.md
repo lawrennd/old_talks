@@ -12,7 +12,7 @@ abstract: |
   perspective of the latent force model.
 venue: 'ICML Workshop on “Object, functional and structured data: towards next generation
   kernel-based methods”'
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "mok_icmlWorkshop12.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/mok_icmlWorkshop12.pdf
 year: '2012'
 month: '6'
 day: '30'

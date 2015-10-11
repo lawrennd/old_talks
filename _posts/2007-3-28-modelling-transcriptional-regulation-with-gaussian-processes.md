@@ -18,8 +18,8 @@ abstract: |
   studies.
 venue: Parameter Estimation in Systems Biology, School of Computer Science, University
   of Manchester, U.K.
-linksoftware: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/" # "gpsim/"'
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gpsim_07_03.pdf"'
+linksoftware: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/gpsim/
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gpsim_07_03.pdf
 videolectures: pesb07_lawrence_mtr
 linkvideo: http://videolectures.net/pesb07_lawrence_mtr/
 year: '2007'

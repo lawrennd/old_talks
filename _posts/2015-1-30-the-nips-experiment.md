@@ -11,7 +11,7 @@ abstract: |
 venue: RADIANT Meeting, University of Zurich, Switzerland
 year: '2015'
 month: '1'
-ipynb: '"staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/" # "nips_radiant15.ipynb"'
+ipynb: staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/nips_radiant15.ipynb
 day: '30'
 layout: talk
 key: Lawrence:radiant15

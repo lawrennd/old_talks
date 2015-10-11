@@ -5,8 +5,8 @@ venue: UCLA
 year: '2012'
 month: '7'
 url: http://talks.cam.ac.uk/talk/index/34517
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gp_ucla12_modelBased.pdf"'
-optmp3: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "120206_ode_cruk12.mp3"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gp_ucla12_modelBased.pdf
+optmp3: ftp://ftp.dcs.shef.ac.uk/home/neil/120206_ode_cruk12.mp3
 day: '27'
 abstract: |
   A simple approach to target identification through gene expression
@@ -18,7 +18,8 @@ abstract: |
   sensitivity) and the mRNA is assumed to decay at a particular rate. The
   assumption that coregulated genes have similar profiles is equivalent to
   assuming both the decay and the sensitivity are high.\
-  {Typically researchers either use a data driven approach (such as
+  \
+  Typically researchers either use a data driven approach (such as
   clustering) or a model based approach (such as differential equations).
   In this talk we advocate hybrid techniques which have aspects of the
   mechanistic and data driven models. We combine simple differential

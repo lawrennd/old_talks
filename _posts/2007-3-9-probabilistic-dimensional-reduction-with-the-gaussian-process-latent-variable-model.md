@@ -17,11 +17,11 @@ abstract: |
   model and its extensions to a range of data sets, including human motion
   data, a vowel data set and a robot mapping problem.
 venue: Neural Computing Research Group, Aston University, U.K.
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gplvm_07_02.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_07_02.pdf
 label1: Demos Software
-link1: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/" # "oxford/"'
+link1: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/oxford/
 label2: Main Software
-link2: '"https://github.com/SheffieldML/" # "GPmat/"'
+link2: https://github.com/SheffieldML/GPmat/
 year: '2007'
 month: '3'
 day: '9'

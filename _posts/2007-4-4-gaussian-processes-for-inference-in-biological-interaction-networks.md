@@ -10,8 +10,8 @@ abstract: |
   transcription factor in a simple single input module network motif.
 venue: Exploring the Interface Between Mathematics and Bioscience, Manchester Interdisciplinary
   Biocentre, University of Manchester, U.K.
-linksoftware: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/" # "gpsim/"'
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gpsim_07_04.pdf"'
+linksoftware: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/gpsim/
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gpsim_07_04.pdf
 year: '2007'
 month: '4'
 day: '4'

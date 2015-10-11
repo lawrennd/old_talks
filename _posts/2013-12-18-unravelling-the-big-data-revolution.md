@@ -9,7 +9,7 @@ abstract: |
   with some final reflections on how it might effect the teaching
   curriculum.
 venue: Maths Department, Teaching Away Day, University of Leeds
-linkpdf: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/" # "unravelling_leeds13.pdf"'
+linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/unravelling_leeds13.pdf
 year: '2013'
 month: '12'
 day: '18'

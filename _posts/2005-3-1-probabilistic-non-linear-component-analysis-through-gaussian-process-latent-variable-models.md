@@ -20,7 +20,7 @@ abstract: |
   including motion capture data, hand written digits, a medical diagnosis
   data set and images.
 venue: Institute for Adaptive and Neural Computation, University of Ediburgh, U.K.
-linkpptgz: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "long_gplvm.ppt.gz"'
+linkpptgz: ftp://ftp.dcs.shef.ac.uk/home/neil/long_gplvm.ppt.gz
 year: '2005'
 month: '3'
 day: '1'

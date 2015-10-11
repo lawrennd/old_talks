@@ -3,7 +3,7 @@ author: Lawrence, Neil D.
 title: Making Implementations Available for the Research Community
 venue: Validation in Statistics and Machine Learning, Weierstrass Institute, Berlin,
   Germany
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "reproducible_berlin10.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/reproducible_berlin10.pdf
 year: '2010'
 month: '10'
 day: '6'

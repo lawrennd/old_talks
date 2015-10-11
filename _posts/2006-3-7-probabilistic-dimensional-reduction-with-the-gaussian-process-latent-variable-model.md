@@ -17,11 +17,11 @@ abstract: |
   model and its extensions to a range of data sets, including human motion
   data, a vowel data set and a robot mapping problem.
 venue: Information Engineering, University of Cambridge, U.K.
-linkpptgz: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gplvm_06_03.ppt.gz"'
+linkpptgz: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_06_03.ppt.gz
 label1: Demos Software
-link1: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/" # "oxford/"'
+link1: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/oxford/
 label2: Main Software
-link2: '"https://github.com/SheffieldML/" # "GPmat/"'
+link2: https://github.com/SheffieldML/GPmat/
 year: '2006'
 month: '3'
 day: '7'

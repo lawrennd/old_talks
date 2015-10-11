@@ -2,7 +2,7 @@
 author: Lawrence, Neil D.
 title: A Probabilistic Perspective on Spectral Dimensionality Reduction
 venue: Department of Statistics, Aalto University, Finland
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "spectral_aalto10.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/spectral_aalto10.pdf
 year: '2010'
 month: '10'
 day: '20'

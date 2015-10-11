@@ -3,7 +3,7 @@ author: Lawrence, Neil D.
 title: 'Between Systems and Data-driven Modeling for Computational Biology: Target
   Identification with Gaussian Processes'
 venue: IBSB2010, Kyoto University, Japan
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "ode_kyoto10.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/ode_kyoto10.pdf
 year: '2010'
 month: '7'
 day: '27'

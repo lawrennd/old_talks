@@ -2,7 +2,7 @@
 author: Lawrence, Neil D.
 title: 'Machine Learning Tutorial: Probabilistic Dimensionality Reduction II'
 venue: Imperial College, U.K.
-optlinkpdf: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/" # "probdimII_imperial15.pdf"'
+optlinkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/probdimII_imperial15.pdf
 year: '2015'
 month: '10'
 day: '21'

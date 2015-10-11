@@ -16,7 +16,8 @@ abstract: |
   approach. The automated nature of the approach also saves hours of
   researchers’ time normally spent in refining the grid placement. A
   MATLAB implementation of the algorithm is available for non-commercial
-  use from ://www.dcs.shef.ac.uk/\~ neil/vis.
+  use from
+  [http://www.dcs.shef.ac.uk/\~ neil/vis](http://www.dcs.shef.ac.uk/  neil/vis).
 venue: The University of Manchester, Department of Computer Science, Bio-health sciences
   Seminars
 year: '2003'

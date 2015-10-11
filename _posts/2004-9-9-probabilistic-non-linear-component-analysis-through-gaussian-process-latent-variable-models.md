@@ -21,7 +21,7 @@ linkvideo: mms://velblod2.ijs.si/pascal/2004/sheffield_04/lawrence_neil/lawrence
 year: '2004'
 month: '9'
 day: '9'
-linkpptgz: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gplvm_smlw.ppt.gz"'
+linkpptgz: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_smlw.ppt.gz
 layout: talk
 key: Lawrence:smlwgplvm03
 ---

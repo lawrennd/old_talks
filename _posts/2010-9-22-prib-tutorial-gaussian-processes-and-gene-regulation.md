@@ -2,7 +2,7 @@
 author: Lawrence, Neil D.
 title: 'PRIB Tutorial: Gaussian Processes and Gene Regulation'
 venue: PRIB2010, Radboud University, Nijmegen, Netherlands
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gp_prib10.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gp_prib10.pdf
 year: '2010'
 month: '9'
 day: '22'
@@ -12,7 +12,8 @@ abstract: |
   dealing with this missing information is to place a probabilistic prior
   over the missing data. One possible choice for such a prior is a
   Gaussian process.\
-  {In this tutorial we will give an introduction to Gaussian processes. We
+  \
+  In this tutorial we will give an introduction to Gaussian processes. We
   will give simple examples of Gaussian processes in regression and
   interpolation. We will then show how Gaussian processes can be
   incorporated with differential equation models to give probabilistic

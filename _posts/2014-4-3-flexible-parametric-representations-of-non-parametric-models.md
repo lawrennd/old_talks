@@ -15,7 +15,7 @@ abstract: |
   and parametric models within a consistent framework that performs an
   optimal compression of our data from an information gain perspective.
 venue: Statistical Machine Learning in Paris, France
-linkpdf: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/" # "flexible_smile14.pdf"'
+linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/flexible_smile14.pdf
 optyoutube: ulahro6DjyY
 year: '2014'
 month: '4'

@@ -3,7 +3,7 @@ author: Lawrence, Neil D.
 title: Inference in Ordinary Differential Equations with Latent Functions through
   Gaussian Processes
 venue: RSS Manchester Local Group
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "manchesterRss.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/manchesterRss.pdf
 year: '2008'
 month: '10'
 day: '8'

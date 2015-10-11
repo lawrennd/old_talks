@@ -8,7 +8,7 @@ abstract: |
   we expect to arise in this this domain and motivate Gaussian process
   models as one approach to dealing with the explosion of data.
 venue: Microsoft Research, New England
-linkpdf: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/" # "personalized_msne15.pdf"'
+linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/personalized_msne15.pdf
 year: '2015'
 month: '8'
 day: '19'

@@ -3,7 +3,7 @@ author: Lawrence, Neil D.
 title: Statistical inference in systems biology through Gaussian processes and ordinary
   differential equations
 venue: LICSB Workshop, University of Warwick, U.K.
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "warwick.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/warwick.pdf
 year: '2008'
 month: '6'
 day: '17'

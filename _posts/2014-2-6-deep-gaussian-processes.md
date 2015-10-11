@@ -9,7 +9,8 @@ abstract: |
   model is equivalent to a standard GP or the GP latent variable model
   (GPLVM). We will motivate these models by considering applications in
   personalized health.\
-  {We perform inference in the model by approximate variational
+  \
+  We perform inference in the model by approximate variational
   marginalization. This results in a strict lower bound on the marginal
   likelihood of the model which we use for model selection (number of
   layers and nodes per layer). Deep belief networks are typically applied
@@ -21,8 +22,8 @@ abstract: |
   briefly review dimensionality reduction via Gaussian processes, before
   showing how this framework can be extended to build deep models.
 venue: Oxford University Statistics Department
-linkpdf: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/" # "deep_oxford14.pdf"'
-mp3: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/" # "deep_oxford14.mp3"'
+linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/deep_oxford14.pdf
+mp3: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/deep_oxford14.mp3
 year: '2014'
 month: '2'
 day: '6'

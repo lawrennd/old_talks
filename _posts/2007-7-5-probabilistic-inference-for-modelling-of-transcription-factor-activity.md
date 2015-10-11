@@ -7,7 +7,8 @@ abstract: |
   them are difficult to measure in vivo. For example, it is very hard to
   measure the active concentration levels of the transcription factor
   proteins that drive the process.\
-  {In this talk we will show how, by making use of structural information
+  \
+  In this talk we will show how, by making use of structural information
   about the interaction network (e.g. arising form ChIP-chip data),
   transcription factor activities can estimated using probabilistic
   inference. We propose two different probabilistic models: a simple
@@ -18,14 +19,14 @@ abstract: |
 venue: Dept of Signal Theory and Communications, Universidad Carlos III de Madrid,
   Spain
 label1: GPSIM Software
-link1: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/" # "gpsim/"'
+link1: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/gpsim/
 label2: TFA Software
-link2: '"https://github.com/SheffieldML/" # "chipdyno/"'
+link2: https://github.com/SheffieldML/chipdyno/
 label3: TFA Software II
-link3: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/" # "chipvar/"'
+link3: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/chipvar/
 label4: PUMA Software
 link4: http://www.bioconductor.org/packages/2.0/bioc/html/puma.html
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "puma_07_07.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/puma_07_07.pdf
 year: '2007'
 month: '7'
 day: '5'

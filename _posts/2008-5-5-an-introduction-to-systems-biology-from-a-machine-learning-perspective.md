@@ -2,7 +2,7 @@
 author: Lawrence, Neil D.
 title: An Introduction to Systems Biology from a Machine Learning Perspective
 venue: Max Planck Society, Ringberg Castle, Germany
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "mpi.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/mpi.pdf
 optlabel1: ''
 optlink1: ''
 year: '2008'

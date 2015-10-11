@@ -2,8 +2,8 @@
 author: Lawrence, Neil D.
 title: 'Latent Force Models: Combining the Mechanistic and Data Driven Modelling Paradigms'
 venue: Rank Prize Workshop, Grasmere, Lake District
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "lfm_rank12.pdf"'
-mp3: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "120328_lfm_rank12.mp3"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lfm_rank12.pdf
+mp3: ftp://ftp.dcs.shef.ac.uk/home/neil/120328_lfm_rank12.mp3
 youtube: nSN-wEvwYCA
 year: '2012'
 month: '3'
@@ -15,7 +15,8 @@ abstract: |
   Relative to other modelling paradigms such as those found in physics
   that are based on mechanistic understandings of the world, models in
   machine learning typically make only weak assumptions about data.\
-  {In this talk, we argue that these weak assumptions are also mechanistic
+  \
+  In this talk, we argue that these weak assumptions are also mechanistic
   in nature. In particular, a very common assumption is smoothness, which
   can arise through the heat equation or other models of diffusion. Our
   assumption of smoothness reflects our belief in an underlying physical
@@ -28,7 +29,8 @@ abstract: |
   frameworks can, however, incorporate regularities beyond smoothness.
   Systems with inertia exhibit resonance and oscillation and these can be
   easily incorporated with strong mechanistic assumptions.\
-  {We believe that the area between the strong and weak mechanistic
+  \
+  We believe that the area between the strong and weak mechanistic
   paradigms should be a focus for much more research. For many interesting
   datasets we need adaptive models which include mechanistic assumptions.
   The latent force modeling paradigm is one way of approaching this which

@@ -8,7 +8,7 @@ abstract: |
   to arise in this this domain and motivate Gaussian process models as one
   approach to dealing with the explosion of data.
 venue: Disease Mapping Workshop, Leahurst
-linkpdf: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/" # "personalized_health_leahurst13.pdf"'
+linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/personalized_health_leahurst13.pdf
 year: '2013'
 month: '11'
 day: '4'

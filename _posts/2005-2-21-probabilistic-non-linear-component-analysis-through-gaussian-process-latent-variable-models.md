@@ -21,7 +21,7 @@ abstract: |
   data set and images.
 venue: Robotics Research Group, Department of Engineering Science, University of Oxford,
   U.K.
-linkpptgz: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "long_gplvm.ppt.gz"'
+linkpptgz: ftp://ftp.dcs.shef.ac.uk/home/neil/long_gplvm.ppt.gz
 year: '2005'
 month: '2'
 day: '21'

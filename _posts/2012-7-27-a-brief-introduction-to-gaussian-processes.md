@@ -11,9 +11,9 @@ abstract: |
   probabilistic interpretation allows us to fit the parameters of the
   covariance function.
 venue: UCLA
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gp_ucla12_introduction.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gp_ucla12_introduction.pdf
 optlabel1: Software
-optlink1: '"https://github.com/SheffieldML/" # "multigp/"'
+optlink1: https://github.com/SheffieldML/multigp/
 year: '2012'
 month: '7'
 day: '27'

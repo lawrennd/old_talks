@@ -20,9 +20,9 @@ abstract: |
   that correct handling of uncertainty may be one of the keys to
   intelligent systems.
 venue: St George’s Church Lecture Theatre, University of Sheffield
-optlinkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gp_ucla12_introduction.pdf"'
+optlinkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gp_ucla12_introduction.pdf
 optlabel1: Software
-optlink1: '"https://github.com/SheffieldML/" # "multigp/"'
+optlink1: https://github.com/SheffieldML/multigp/
 year: '2012'
 month: '9'
 day: '6'

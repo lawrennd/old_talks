@@ -18,7 +18,7 @@ abstract: |
   We will show applications of these models in systems biology and (given
   time) modelling of human motion capture data.
 venue: Mathematics and Computer Science, University of Exeter, U.K.
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "lfm_exeter.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lfm_exeter.pdf
 year: '2011'
 month: '3'
 day: '16'

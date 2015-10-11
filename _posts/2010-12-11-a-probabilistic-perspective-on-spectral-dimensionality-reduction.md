@@ -2,7 +2,7 @@
 author: Lawrence, Neil D.
 title: A Probabilistic Perspective on Spectral Dimensionality Reduction
 venue: Challenges of Data Visualization Workshop, NIPS 2010, Whistler
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "spectral_nipsw10.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/spectral_nipsw10.pdf
 year: '2010'
 month: '12'
 day: '11'

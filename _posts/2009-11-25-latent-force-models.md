@@ -2,7 +2,7 @@
 author: Lawrence, Neil D.
 title: Latent Force Models
 venue: Disordered Systems Group, Department of Mathematics, King’s College London
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "lfm_kcl09.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lfm_kcl09.pdf
 year: '2009'
 month: '11'
 day: '25'
@@ -11,11 +11,13 @@ abstract: |
   accurate mechanistic model of data, often based on differential
   equations. Machine learning approaches are typically data driven—
   perhaps through regularized function approximation.\
-  {These two approaches to data modeling are often seen as polar
-  opposites, but in reality they are two different ends to a spectrum of
-  approaches we might take.\
-  {In this talk we introduce latent force models. Latent force models are
-  a new approach to data representation that model data through unknown
+  \
+  These two approaches to data modeling are often seen as polar opposites,
+  but in reality they are two different ends to a spectrum of approaches
+  we might take.\
+  \
+  In this talk we introduce latent force models. Latent force models are a
+  new approach to data representation that model data through unknown
   forcing functions that drive differential equation models. By treating
   the unknown forcing functions with Gaussian process priors we can create
   probabilistic models that exhibit particular physical characteristics of

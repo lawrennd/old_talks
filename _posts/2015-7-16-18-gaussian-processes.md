@@ -4,7 +4,7 @@ title: Gaussian Processes
 abstract: |2+
 
 venue: MLSS, Tübingen
-linkpdf: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/" # "gp_mlss15b.pdf"'
+linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/gp_mlss15b.pdf
 year: '2015'
 month: '7'
 day: 16-18

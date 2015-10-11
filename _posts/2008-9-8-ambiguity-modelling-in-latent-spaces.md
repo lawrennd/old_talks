@@ -2,7 +2,7 @@
 author: Lawrence, Neil D.
 title: Ambiguity Modelling in Latent Spaces
 venue: Machine Learning for Multimodal Interaction, Utrecht, The Netherlands
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "ncca_mlmi08.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/ncca_mlmi08.pdf
 linkvideo: http://mmm.idiap.ch/pres-mlmi2008/results?query=//kleweldata/mlmi2008/2008-09-08_09h14
 year: '2008'
 month: '9'

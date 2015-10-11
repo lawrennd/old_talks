@@ -9,8 +9,8 @@ abstract: |
   Finally, we consider the problem of model selection using Gaussian
   processes.
 venue: EPSRC Winter School, University of Sheffield, Sheffield, U.K.
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "dataModellingWinter.pdf"'
-linksoftware: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/" # "dimred/"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/dataModellingWinter.pdf
+linksoftware: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/dimred/
 linkvideo: http://videolectures.net/epsrcws08_lawrence_dr/
 videolectures: epsrcws08_lawrence_dr
 year: '2008'

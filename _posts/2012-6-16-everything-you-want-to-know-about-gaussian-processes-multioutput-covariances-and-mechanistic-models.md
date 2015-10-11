@@ -5,7 +5,7 @@ title: 'Everything You Want to Know About Gaussian Processes: Multioutput Covari
 abstract: |2+
 
 venue: CVPR Tutorial, Providence, RI, USA
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gp_cvpr12_session2.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gp_cvpr12_session2.pdf
 note: Tutorial with Raquel Urtasun.
 year: '2012'
 month: '6'

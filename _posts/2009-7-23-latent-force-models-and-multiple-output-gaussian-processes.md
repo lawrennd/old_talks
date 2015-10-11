@@ -2,7 +2,7 @@
 author: Lawrence, Neil D.
 title: Latent Force Models and Multiple Output Gaussian Processes
 venue: Statistics and Learning Interface Meeting, University of Manchester, U.K.
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "lfm_slim09.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lfm_slim09.pdf
 year: '2009'
 month: '7'
 day: '23'

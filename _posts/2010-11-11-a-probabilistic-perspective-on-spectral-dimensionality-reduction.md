@@ -2,7 +2,7 @@
 author: Lawrence, Neil D.
 title: A Probabilistic Perspective on Spectral Dimensionality Reduction
 venue: AAAI Fall Symposium on Manifold Methods, U.S.A.
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "spectral_aaai10.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/spectral_aaai10.pdf
 year: '2010'
 month: '11'
 day: '11'

@@ -4,7 +4,7 @@ title: 'Statistical Computing: Python'
 abstract: |2+
 
 venue: Royal Statistical Society, London, U.K.
-optlinkpdf: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/" # "deepgp_ucl14b.pdf"'
+optlinkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/deepgp_ucl14b.pdf
 optyoutube: ulahro6DjyY
 label1: Event Detail
 link1: http://www.statslife.org.uk/events/eventdetail/284/-/-

@@ -3,7 +3,7 @@ author: Lawrence, Neil D.
 title: 'Between Systems and Data-driven Modeling for Computational Biology: Target
   Identification with Gaussian Processes'
 venue: SMPGD2010, Paris, France
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "ode_smpgd11.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/ode_smpgd11.pdf
 year: '2011'
 month: '1'
 day: '27'
@@ -17,7 +17,8 @@ abstract: |
   sensitivity) and the mRNA is assumed to decay at a particular rate. The
   assumption that coregulated genes have similar profiles is equivalent to
   assuming both the decay and the sensitivity are high.\
-  {Typically researchers either use a data driven approach (such as
+  \
+  Typically researchers either use a data driven approach (such as
   clustering) or a model based approach (such as differential equations).
   In this talk we advocate hybrid techniques which have aspects of the
   mechanistic and data driven models. We combine simple differential

@@ -17,13 +17,13 @@ abstract: |
   methodologies were motivated by different needs, and I’ll argue that it
   may now be time to return to the fundamental ideas from where these
   methodologies were inspired, but with a contemporary slant on the nature
-  of data. My own perspective is that if what I describe \*is\* data
+  of data. My own perspective is that if what I describe \*is\*data
   science, then it does not stand as a field alone, but it represents a
   new and pressing set of questions that bridge the computational and
   mathematical sciences. Regardless of its phylogeny, exploring this
   interface through these questions will be mutually beneficial.
 venue: Department of Statistics, University of Warwick
-linkpdf: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/" # "datascience_warwick14.pdf"'
+linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/datascience_warwick14.pdf
 optyoutube: ulahro6DjyY
 year: '2014'
 month: '11'

@@ -3,7 +3,7 @@ author: Lawrence, Neil D.
 title: Latent Force Models
 venue: 'Functional Phylogenies: Evolutionary Inference for Functional Data, University
   of Oxford, U.K.'
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "lfm_oxford10.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lfm_oxford10.pdf
 year: '2010'
 month: '9'
 day: '27'

@@ -7,7 +7,7 @@ venue: Hausdorff Research Institute for Mathematics, Workshop on Manifold Learni
 year: '2011'
 month: '5'
 day: '31'
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "spectral_bonn11.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/spectral_bonn11.pdf
 abstract: |
   Spectral approaches to dimensionality reduction typically reduce the
   dimensionality of a data set through taking the eigenvectors of a

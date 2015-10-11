@@ -16,7 +16,7 @@ abstract: |
   make use of a skeletal motion capture data set to illustrate differences
   between our model and traditional manifold techniques.
 venue: Gatsby Computational Neuroscience Unit, University College London, U.K.
-linkpptgz: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gplvm_gatsby.ppt.gz"'
+linkpptgz: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_gatsby.ppt.gz
 year: '2005'
 month: '11'
 day: '16'

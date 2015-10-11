@@ -5,8 +5,8 @@ venue: Schloss Dagstuhl, Germany
 year: '2011'
 month: '8'
 day: '25'
-mp3: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "110825_probDimRed_dagstuhl11.mp3"'
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "probDimRed_dagstuhl11.pdf"'
+mp3: ftp://ftp.dcs.shef.ac.uk/home/neil/110825_probDimRed_dagstuhl11.mp3
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/probDimRed_dagstuhl11.pdf
 abstract: |
   In this talk we present an overview of probabilistic approaches to
   dimensionality reduction and probabilistic interpretations of

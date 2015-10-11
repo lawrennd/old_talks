@@ -3,7 +3,7 @@ author: Lawrence, Neil D.
 title: Model Based Target Identification from Gene Expression with Gaussian Processes
 venue: BioDN@work ’09, Computational Biology & Bioinformatics, University of Naples
   “Federico II”
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "ode_napoli09.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/ode_napoli09.pdf
 year: '2009'
 month: '10'
 day: '28'

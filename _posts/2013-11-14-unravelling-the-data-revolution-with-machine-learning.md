@@ -8,7 +8,7 @@ abstract: |
   social challenges that this revolution will entail.
 venue: Newcastle, Edinburgh, Cambridge and Sheffield academic Departments of Respiratory
   Medicine Meeting, Whitely Hall, Sheffield
-linkpdf: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/" # "unravelling_necs13.pdf"'
+linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/unravelling_necs13.pdf
 year: '2013'
 month: '11'
 day: '14'

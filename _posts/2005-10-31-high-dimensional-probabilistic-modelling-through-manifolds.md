@@ -17,7 +17,7 @@ abstract: |
   between our model and traditional manifold techniques.
 venue: School of Computer and Communication Sciences, Swiss Federal Institute of Technology
   (EPFL), Lausanne, Switzerland
-linkpptgz: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gplvm_epfl.ppt.gz"'
+linkpptgz: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_epfl.ppt.gz
 year: '2005'
 month: '10'
 day: '31'

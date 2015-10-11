@@ -12,7 +12,7 @@ abstract: |
   highlighting directions for future research and discussing application
   of these models in domains such as personalised health.
 venue: Gatsby Computational Neuroscience Unit, University College London, U.K.
-linkpdf: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/" # "deepgp_ucl14b.pdf"'
+linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/deepgp_ucl14b.pdf
 optyoutube: ulahro6DjyY
 year: '2014'
 month: '10'

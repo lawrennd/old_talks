@@ -18,7 +18,7 @@ abstract: |
   and inertia. This allows us to perform a synthesis of the data driven
   and physical modeling paradigms.
 venue: Computer Science Department, University of Liverpool, U.K.
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "lfm_liverpool12.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lfm_liverpool12.pdf
 year: '2012'
 month: '5'
 day: '2'

@@ -24,7 +24,7 @@ abstract: |
   when perhaps a more limited feature set existed. This poses particular
   challenges that we will address in this talk.
 venue: Facebook, Menlo Park, CA
-linkpdf: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/" # "missing_facebook14.pdf"'
+linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/missing_facebook14.pdf
 year: '2014'
 month: '3'
 day: '20'

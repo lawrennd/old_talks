@@ -19,7 +19,7 @@ abstract: |
   better understood and will also provide the groundwork for further
   research.
 venue: ANC/DTC Seminar, School of Informatics, University of Edinburgh, U.K.
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "spectral_edinburgh11.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/spectral_edinburgh11.pdf
 year: '2011'
 month: '3'
 day: '01'

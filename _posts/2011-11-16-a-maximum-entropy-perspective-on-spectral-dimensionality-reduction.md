@@ -16,8 +16,8 @@ abstract: |
   to be better understood and will also provide the groundwork for further
   research.
 venue: Machine Learning @ CUED, University of Cambridge, U.K.
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "spectral_cambridge11.pdf"'
-mp3: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "111116_ode_cambridge11.mp3"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/spectral_cambridge11.pdf
+mp3: ftp://ftp.dcs.shef.ac.uk/home/neil/111116_ode_cambridge11.mp3
 youtube: 2XM2tS6TKhA
 year: '2011'
 month: '11'

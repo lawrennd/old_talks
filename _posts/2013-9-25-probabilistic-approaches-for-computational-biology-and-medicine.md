@@ -9,7 +9,7 @@ abstract: |
   applications I’ll discuss Bayesian approaches to regression modelling
   and lead into Gaussian process models.
 venue: Machine Learning for Personalized Medicine Summer School
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "probabilistic_mlpm13.pdf"'
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/probabilistic_mlpm13.pdf
 year: '2013'
 month: '9'
 day: '25'

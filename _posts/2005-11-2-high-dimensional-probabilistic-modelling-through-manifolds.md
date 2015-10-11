@@ -16,7 +16,7 @@ abstract: |
   make use of a skeletal motion capture data set to illustrate differences
   between our model and traditional manifold techniques.
 venue: IDIAP Research Institute, Martigny, Switzerland
-linkpptgz: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gplvm_epfl.ppt.gz"'
+linkpptgz: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_epfl.ppt.gz
 year: '2005'
 month: '11'
 day: '2'

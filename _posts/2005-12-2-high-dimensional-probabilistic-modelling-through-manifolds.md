@@ -16,7 +16,7 @@ abstract: |
   make use of a skeletal motion capture data set to illustrate differences
   between our model and traditional manifold techniques.
 venue: Electronic Arts Speaker Series, University of British Columbia, Canada
-linkpptgz: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gplvm_05_11.ppt.gz"'
+linkpptgz: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_05_11.ppt.gz
 year: '2005'
 month: '12'
 day: '2'

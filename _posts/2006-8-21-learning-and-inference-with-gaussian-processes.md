@@ -14,9 +14,9 @@ abstract: |
   animation and tracking.
 venue: Intel Research, Seattle, U.S.A.
 label1: p53 Software
-link1: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/" # "gpsim/"'
-linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gpintroTalk_06_08.pdf"'
-linksoftware: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/" # "oxford/"'
+link1: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/gpsim/
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gpintroTalk_06_08.pdf
+linksoftware: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/oxford/
 year: '2006'
 month: '8'
 day: '21'

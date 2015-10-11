@@ -8,7 +8,7 @@ abstract: |
   to arise in this this domain and motivate Gaussian process models as one
   approach to dealing with the explosion of data.
 venue: Universidad Nacional de Colombia, Sede Manizales, Colombia
-linkpdf: '"http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/" # "personalized_health_manizales14.pdf"'
+linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/personalized_health_manizales14.pdf
 optyoutube: ulahro6DjyY
 year: '2014'
 month: '2'
