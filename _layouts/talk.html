@@ -6,7 +6,9 @@ layout: post
   <article class="post-content">
 
     at <b>{{ page.venue }}</b> on {{ page.date | date: "%b %-d, %Y" }}
-    
+    {%if page.reveal %}
+    <p><iframe width="{{ site.youtube.width }}" height="{{ site.youtube.height }}" src="{{ page.reveal }}" frameborder="0" allowfullscreen></iframe></p>
+    {% endif %}
     {% if page.youtube %}
     <p><iframe width="{{ site.youtube.width }}" height="{{ site.youtube.height }}" src="https://www.youtube.com/embed/{{ page.youtube }}" frameborder="0" allowfullscreen></iframe></p>
     {% endif %}
