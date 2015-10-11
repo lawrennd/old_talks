@@ -1,6 +1,8 @@
 ---
 author: Lawrence, Neil D.
 title: 'Latent Force Models: Introduction'
+abstract: |2+
+
 venue: Latent Force Model Workshop, Sheffield
 linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gp_gpss13_session_lfm.pdf"'
 youtube: XK91ax4LBH4

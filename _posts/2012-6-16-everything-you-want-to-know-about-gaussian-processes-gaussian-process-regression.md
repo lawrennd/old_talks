@@ -1,6 +1,8 @@
 ---
 author: Lawrence, Neil D.
 title: 'Everything You Want to Know About Gaussian Processes: Gaussian Process Regression'
+abstract: |2+
+
 venue: CVPR Tutorial, Providence, RI, USA
 linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gp_cvpr12_session1.pdf"'
 label1: Software

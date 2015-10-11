@@ -8,11 +8,12 @@ optlink1: ''
 year: '2008'
 month: '5'
 day: '5'
-abstract: In this talk we will introduce some of the challenges in systems biology
-  and discuss the efforts being made to address them using statistical inference.
-  General biological background will be interlaced with case studies that illustrate
-  the salient issues in systems biology from the perspective of a machine learning
-  researcher.
+abstract: |
+  In this talk we will introduce some of the challenges in systems biology
+  and discuss the efforts being made to address them using statistical
+  inference. General biological background will be interlaced with case
+  studies that illustrate the salient issues in systems biology from the
+  perspective of a machine learning researcher.
 group: sysbio
 layout: talk
 key: Lawrence:sysbioIntroA08

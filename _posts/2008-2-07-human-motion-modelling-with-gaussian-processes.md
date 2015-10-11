@@ -9,4 +9,6 @@ day: '07'
 group: pascal
 layout: talk
 key: Lawrence:newton08
+abstract: |2+
+
 ---

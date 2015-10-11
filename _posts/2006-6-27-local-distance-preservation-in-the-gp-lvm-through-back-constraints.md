@@ -10,4 +10,6 @@ day: '27'
 group: gplvm
 layout: talk
 key: Lawrence:icml06
+abstract: |2+
+
 ---

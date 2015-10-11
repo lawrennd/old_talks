@@ -6,6 +6,8 @@ linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "lfm_warwick09.pdf"'
 year: '2009'
 month: '9'
 day: '16'
+abstract: |2+
+
 layout: talk
 key: Lawrence:warwick09
 ---

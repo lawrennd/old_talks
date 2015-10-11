@@ -14,4 +14,6 @@ day: '3'
 group: gplvm
 layout: talk
 key: Lawrence:manchesterGuest06
+abstract: |2+
+
 ---

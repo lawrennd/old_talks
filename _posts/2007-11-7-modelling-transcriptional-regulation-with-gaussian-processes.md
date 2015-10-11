@@ -1,6 +1,8 @@
 ---
 author: Lawrence, Neil D.
 title: Modelling Transcriptional Regulation with Gaussian Processes
+abstract: |2+
+
 venue: Parameter Estimation Workshop, Manchester Interdisciplinary Biocentre, University
   of Manchester, U.K.
 linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "parameterEstimationTalk.pdf"'

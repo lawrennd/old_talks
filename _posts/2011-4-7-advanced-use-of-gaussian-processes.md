@@ -9,4 +9,6 @@ day: '7'
 group: gplvm,lfm
 layout: talk
 key: Lawrence:siena11b
+abstract: |2+
+
 ---

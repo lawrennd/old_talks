@@ -10,4 +10,6 @@ day: '01'
 group: ''
 layout: talk
 key: Lawrence:gpbayes08
+abstract: |2+
+
 ---

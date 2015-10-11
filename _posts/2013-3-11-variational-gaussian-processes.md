@@ -1,10 +1,11 @@
 ---
 author: Lawrence, Neil D.
 title: Variational Gaussian Processes
-abstract: In this talk we will review the variational approximation to Gaussian processes
-  which enables Bayesian learning of latent variables. We will focus in particular
-  on a new explanation of the variational approach that also leads to stochastic variational
-  inference for GPs.
+abstract: |
+  In this talk we will review the variational approximation to Gaussian
+  processes which enables Bayesian learning of latent variables. We will
+  focus in particular on a new explanation of the variational approach
+  that also leads to stochastic variational inference for GPs.
 venue: Max Planck Institute, Tübingen, Germany
 linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "gpvar_tuebingen13.pdf"'
 optlabel1: Software

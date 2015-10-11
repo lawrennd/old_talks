@@ -9,4 +9,6 @@ day: '6'
 group: gp
 layout: talk
 key: Lawrence:siena11a
+abstract: |2+
+
 ---

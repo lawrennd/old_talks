@@ -1,11 +1,12 @@
 ---
 author: Lawrence, Neil D.
 title: Latent Variable Modelling with Gaussian Processes
-abstract: In this talk we will briefly describe the Gaussian process latent variable
-  model, an approach to probabilistic modelling of data through non-linear dimensional
-  reduction. The model takes a dual approach to statistical inference and can be shown
-  to generalise PCA. We will briefly introduce the model and quickly show some example
-  applications.
+abstract: |
+  In this talk we will briefly describe the Gaussian process latent
+  variable model, an approach to probabilistic modelling of data through
+  non-linear dimensional reduction. The model takes a dual approach to
+  statistical inference and can be shown to generalise PCA. We will
+  briefly introduce the model and quickly show some example applications.
 venue: Workshop on Probabilistic formulation of the inverse problem and application
   to image reconstruction, Neuroscience Research Institute, University of Manchester,
   U.K.

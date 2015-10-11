@@ -10,4 +10,6 @@ day: '15'
 group: gplvm
 layout: talk
 key: Lawrence:tuebingen05
+abstract: |2+
+
 ---

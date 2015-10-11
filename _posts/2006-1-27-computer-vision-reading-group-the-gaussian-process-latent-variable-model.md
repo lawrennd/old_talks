@@ -1,10 +1,12 @@
 ---
 author: Lawrence, Neil D.
 title: 'Computer Vision Reading Group: The Gaussian Process Latent Variable Model'
-abstract: The Gaussian process latent variable model (GP-LVM) is a recently proposed
-  probabilistic approach to obtaining a reduced dimension representation of a data
-  set. In this tutorial we motivate and describe the GP-LVM, giving a review of the
-  model itself and some of the concepts behind it.
+abstract: |
+  The Gaussian process latent variable model (GP-LVM) is a recently
+  proposed probabilistic approach to obtaining a reduced dimension
+  representation of a data set. In this tutorial we motivate and describe
+  the GP-LVM, giving a review of the model itself and some of the concepts
+  behind it.
 venue: Computer Vision Reading Group, Visual Geometry Group, Department of Engineering
   Science, University of Oxford, U.K.
 label1: PDF Slides

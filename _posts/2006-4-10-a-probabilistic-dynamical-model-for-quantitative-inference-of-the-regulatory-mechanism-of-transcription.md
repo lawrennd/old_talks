@@ -14,4 +14,6 @@ month: '4'
 day: '10'
 layout: talk
 key: Sanguinetti:masamb06
+abstract: |2+
+
 ---

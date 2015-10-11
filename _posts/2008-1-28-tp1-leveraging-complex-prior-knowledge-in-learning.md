@@ -9,4 +9,6 @@ day: '28'
 group: pascal
 layout: talk
 key: Lawrence:thematic08
+abstract: |2+
+
 ---

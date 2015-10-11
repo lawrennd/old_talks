@@ -6,6 +6,8 @@ linkpdf: '"ftp://ftp.dcs.shef.ac.uk/home/neil/" # "tut2.pdf"'
 year: '2009'
 month: '6'
 day: '23'
+abstract: |2+
+
 layout: talk
 key: Lawrence:tutII09
 ---
