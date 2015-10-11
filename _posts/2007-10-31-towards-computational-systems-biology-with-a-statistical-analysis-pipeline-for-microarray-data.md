@@ -31,7 +31,7 @@ linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/puma_mbb.pdf
 label1: PUMA Project Page
 link1: http://bioinf.man.ac.uk/resources/puma/
 label2: TIGRE Project Page
-link2: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/projects/tigre/
+link2: http://inverseprobability.com/projects/tigre/
 label3: PUMA Software
 link3: http://bioconductor.org/packages/2.2/bioc/html/puma.html
 year: '2007'
