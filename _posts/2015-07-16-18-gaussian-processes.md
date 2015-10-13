@@ -1,8 +1,6 @@
 ---
 author: Lawrence, Neil D.
 title: Gaussian Processes
-abstract: |2+
-
 venue: MLSS, Tübingen
 linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/gp_mlss15b.pdf
 year: '2015'

@@ -8,6 +8,4 @@ month: '1'
 day: '15'
 layout: talk
 key: Lawrence:reproducible13
-abstract: |2+
-
 ---

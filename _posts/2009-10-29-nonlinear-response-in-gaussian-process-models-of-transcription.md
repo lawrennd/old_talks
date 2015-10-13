@@ -8,6 +8,4 @@ month: '10'
 day: '29'
 layout: talk
 key: Lawrence:tigem09
-abstract: |2+
-
 ---

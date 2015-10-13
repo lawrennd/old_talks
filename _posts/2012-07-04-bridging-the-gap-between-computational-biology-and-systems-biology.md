@@ -8,6 +8,4 @@ month: '7'
 day: '4'
 layout: talk
 key: Lawrence:pathSoc12
-abstract: |2+
-
 ---

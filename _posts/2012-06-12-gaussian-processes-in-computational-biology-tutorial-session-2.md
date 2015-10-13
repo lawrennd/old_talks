@@ -8,6 +8,4 @@ month: '6'
 day: '12'
 layout: talk
 key: Lawrence:biopredyn12_2
-abstract: |2+
-
 ---

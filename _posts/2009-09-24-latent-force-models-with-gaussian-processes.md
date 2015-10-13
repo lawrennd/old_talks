@@ -8,6 +8,4 @@ month: '9'
 day: '24'
 layout: talk
 key: Lawrence:inspire09
-abstract: |2+
-
 ---

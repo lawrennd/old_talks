@@ -8,6 +8,4 @@ month: '6'
 day: '11'
 layout: talk
 key: Lawrence:gpssTwo13
-abstract: |2+
-
 ---

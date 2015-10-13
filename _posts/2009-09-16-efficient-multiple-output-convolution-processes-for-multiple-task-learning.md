@@ -8,6 +8,4 @@ month: '9'
 day: '16'
 layout: talk
 key: Lawrence:warwick09
-abstract: |2+
-
 ---

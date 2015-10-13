@@ -9,6 +9,4 @@ month: '1'
 day: '13'
 layout: talk
 key: Lawrence:gpwsOne14
-abstract: |2+
-
 ---

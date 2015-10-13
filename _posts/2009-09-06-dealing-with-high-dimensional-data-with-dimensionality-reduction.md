@@ -8,6 +8,4 @@ month: '9'
 day: '6'
 layout: talk
 key: Lawrence:interspeech09
-abstract: |2+
-
 ---

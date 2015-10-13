@@ -11,6 +11,4 @@ month: '6'
 day: '16'
 layout: talk
 key: Lawrence:cvpr12_1
-abstract: |2+
-
 ---

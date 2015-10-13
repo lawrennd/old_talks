@@ -18,6 +18,4 @@ day: '7'
 group: puma,gpsim
 layout: talk
 key: Lawrence:param07
-abstract: |2+
-
 ---

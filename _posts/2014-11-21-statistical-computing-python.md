@@ -13,6 +13,4 @@ month: '11'
 day: '21'
 layout: talk
 key: Lawrence:rss14
-abstract: |2+
-
 ---

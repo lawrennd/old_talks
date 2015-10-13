@@ -9,6 +9,4 @@ month: '6'
 day: '13'
 layout: talk
 key: Lawrence:lfmIntro13
-abstract: |2+
-
 ---

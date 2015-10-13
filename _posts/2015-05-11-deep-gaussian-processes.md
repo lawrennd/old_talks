@@ -13,7 +13,7 @@ abstract: |
   deep Gaussian process models.
 venue: Computer Science Colloquium, NYU
 linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/deepgp_nyu15.pdf
-ipynb: github.com/SheffieldML/deepGPy/blob/master/Nested%20Deep%20GPs.ipynb
+linkipynb: github.com/SheffieldML/deepGPy/blob/master/Nested%20Deep%20GPs.ipynb
 year: '2015'
 month: '5'
 day: '11'

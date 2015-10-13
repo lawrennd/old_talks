@@ -9,6 +9,4 @@ month: '4'
 day: '26'
 layout: talk
 key: Lawrence:mlss14
-abstract: |2+
-
 ---
