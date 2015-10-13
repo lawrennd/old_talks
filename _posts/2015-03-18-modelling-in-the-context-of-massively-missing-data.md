@@ -17,7 +17,7 @@ abstract: |
   started with.
 venue: Max Planck Institute, Tübingen
 linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/missingdata_tuebingen15.pdf
-linkipynb: github.com/SheffieldML/notebook/blob/master/lab_classes/gprs/Low%20Rank%20Gaussian%20Processes.ipynb
+linkipynb: github/SheffieldML/notebook/blob/master/lab_classes/gprs/Low%20Rank%20Gaussian%20Processes.ipynb
 year: '2015'
 month: '3'
 day: '18'
