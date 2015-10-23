@@ -11,8 +11,8 @@ abstract: |
   its place? This talk will explore current technology and speculate on
   what futures it may lead to.
 venue: The Data Hide, The Hide, Scotland Street, Sheffield
-ipynb: 21015-10-20-what-kind-of-ai.ipynb
-reveal: 21015-10-20-what-kind-of-ai.slides.html
+ipynb: 2015-10-20-what-kind-of-ai.ipynb
+reveal: 2015-10-20-what-kind-of-ai.slides.html
 year: '2015'
 month: '10'
 day: '20'
