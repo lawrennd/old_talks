@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-<title>2015-10-20-what-kind-of-ai slides</title>
+<title>2015-10-23-what-kind-of-ai slides</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -219,7 +219,7 @@ div.output_prompt {
     
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">pods</span> 
@@ -258,6 +258,54 @@ The raw code for this jupyter notebook can be hidden for easier reading. To togg
 </div>
 
 </div>
+    </div><div style=display:none>
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="kn">from</span> <span class="nn">notebook.services.config</span> <span class="k">import</span> <span class="n">ConfigManager</span>
+<span class="n">cm</span> <span class="o">=</span> <span class="n">ConfigManager</span><span class="p">()</span>
+<span class="n">cm</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s">&#39;livereveal&#39;</span><span class="p">,</span> <span class="p">{</span>
+              <span class="s">&#39;theme&#39;</span><span class="p">:</span> <span class="s">&#39;serif&#39;</span><span class="p">,</span>
+              <span class="s">&#39;transition&#39;</span><span class="p">:</span> <span class="s">&#39;none&#39;</span><span class="p">,</span>
+              <span class="s">&#39;start_slideshow_at&#39;</span><span class="p">:</span> <span class="s">&#39;selected&#39;</span><span class="p">,</span>
+<span class="p">})</span>
+<span class="n">cm</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s">&#39;livereveal&#39;</span><span class="p">,</span> <span class="p">{</span>
+              <span class="s">&#39;width&#39;</span><span class="p">:</span> <span class="mi">1024</span><span class="p">,</span>
+              <span class="s">&#39;height&#39;</span><span class="p">:</span> <span class="mi">768</span><span class="p">,</span>
+<span class="p">})</span>
+<span class="n">cm</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s">&#39;livereveal&#39;</span><span class="p">,</span> <span class="p">{</span>
+              <span class="s">&#39;transition&#39;</span><span class="p">:</span> <span class="s">&#39;none&#39;</span><span class="p">,</span>
+<span class="p">})</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&apos;height&apos;: 768,
+ &apos;start_slideshow_at&apos;: &apos;selected&apos;,
+ &apos;theme&apos;: &apos;serif&apos;,
+ &apos;transition&apos;: &apos;none&apos;,
+ &apos;width&apos;: 1024}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
     </div></section>
     </section><section>
     <section>
@@ -267,7 +315,7 @@ The raw code for this jupyter notebook can be hidden for easier reading. To togg
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="What-Kind-of-AI-are-we-Creating?">What Kind of AI are we Creating?<a class="anchor-link" href="#What-Kind-of-AI-are-we-Creating?">&#182;</a></h1><h3 id="Neil-Lawrence">Neil Lawrence<a class="anchor-link" href="#Neil-Lawrence">&#182;</a></h3><h3 id="The-Data-Hide-20th-October-2015">The Data Hide 20th October 2015<a class="anchor-link" href="#The-Data-Hide-20th-October-2015">&#182;</a></h3>
+<h1 id="What-Kind-of-AI-are-we-Creating?">What Kind of AI are we Creating?<a class="anchor-link" href="#What-Kind-of-AI-are-we-Creating?">&#182;</a></h1><h3 id="Neil-Lawrence">Neil Lawrence<a class="anchor-link" href="#Neil-Lawrence">&#182;</a></h3><h3 id="Cognitive-Science-Work-in-Progress">Cognitive Science Work in Progress<a class="anchor-link" href="#Cognitive-Science-Work-in-Progress">&#182;</a></h3><h3 id="23rd-October-2015">23rd October 2015<a class="anchor-link" href="#23rd-October-2015">&#182;</a></h3>
 </div>
 </div>
 </div></section>
@@ -448,33 +496,20 @@ The raw code for this jupyter notebook can be hidden for easier reading. To togg
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src='./diagrams/data_plus_model.png', width=80%></p>
-
-</div>
-</div>
-</div></section>
-    </section><section>
-    <section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src='./diagrams/historical_perspective.png', width=80%></p>
-
-</div>
-</div>
-</div></section>
-    </section><section>
-    <section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="./diagrams/mouse-47172.svg", width=80%></p>
+
+</div>
+</div>
+</div></section>
+    </section><section>
+    <section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src='http://3.bp.blogspot.com/-_Dp02atN98o/TqTuvH6iu9I/AAAAAAAACXE/Fzr4VyJnt3c/s640/Trolley_1.jpg', width=80%></p>
 
 </div>
 </div>
@@ -500,7 +535,7 @@ The raw code for this jupyter notebook can be hidden for easier reading. To togg
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src='./diagrams/two_perspectives.png', width=80%></p>
+<p><img src='https://upload.wikimedia.org/wikipedia/commons/c/c4/IP_stack_connections.svg', width=60%></p>
 
 </div>
 </div>
@@ -513,11 +548,180 @@ The raw code for this jupyter notebook can be hidden for easier reading. To togg
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src='./diagrams/two_perspectives2.png', width=80%></p>
+<p><img src='https://upload.wikimedia.org/wikipedia/commons/a/a6/Professor_Lucifer_Butts.gif', width=60%></p>
 
 </div>
 </div>
 </div></section>
+    </section><section>
+    <section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src='https://upload.wikimedia.org/wikipedia/commons/4/46/BigData_2267x1146_white.png', width=70%></p>
+
+</div>
+</div>
+</div></section>
+    </section><section>
+    <section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src='http://rickclemons.com/wp-content/uploads/2015/01/Masthead3.jpg', width=80%></p>
+
+</div>
+</div>
+</div></section>
+    </section><section>
+    <section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src='https://upload.wikimedia.org/wikipedia/commons/4/4f/Strand_paget.jpg', width=80%></p>
+
+</div>
+</div>
+</div></section>
+    </section><section>
+    <section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src='http://www.arthur-conan-doyle.com/images/3/39/The-new-revelation-1918-hodder-stoughton.jpg', width=60%></p>
+
+</div>
+</div>
+</div></section>
+    </section><section>
+    <section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src='./diagrams/girls-152345.svg', width=70%></p>
+
+</div>
+</div>
+</div></section>
+    </section><section>
+    <section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src='https://upload.wikimedia.org/wikipedia/en/8/87/HTM_Hierarchy_example.png', width=80%></p>
+
+</div>
+</div>
+</div></section>
+    </section><section>
+    <section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Hilbert_InfoGrowth.png', width=100%></p>
+
+</div>
+</div>
+</div></section>
+    </section><section>
+    <section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src='https://c2.staticflickr.com/4/3051/3038434448_8d996fb859_o_d.jpg',width=60%></p>
+
+</div>
+</div>
+</div></section>
+    </section><section>
+    <section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src='http://1.bp.blogspot.com/-rwViqfceTvc/TqTu7xCK9XI/AAAAAAAACXM/t2VApw5eAcc/s640/trolley2.jpg', width=80%></p>
+
+</div>
+</div>
+</div></section>
+    </section><section>
+    <section>
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s">&#39;tUlAV-stPvE&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[19]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+        <iframe
+            width="400"
+            height="300"
+            src="https://www.youtube.com/embed/tUlAV-stPvE"
+            frameborder="0"
+            allowfullscreen
+        ></iframe>
+        
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div><div style=display:none>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><iframe width="820" height="630" src="https://www.youtube.com/embed/tUlAV-stPvE" frameborder="0" allowfullscreen></iframe></p>
+
+</div>
+</div>
+</div>
+    </div></section>
     </section><section>
     <section>
     
@@ -541,6 +745,59 @@ The raw code for this jupyter notebook can be hidden for easier reading. To togg
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img src='https://upload.wikimedia.org/wikipedia/en/a/a1/Picard_as_Locutus.jpg', width='80%'></p>
+
+</div>
+</div>
+</div></section>
+    </section><section>
+    <section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src='https://upload.wikimedia.org/wikipedia/commons/c/c0/PSM_V10_D562_The_hindoo_earth.jpg', width=70%></p>
+
+</div>
+</div>
+</div></section>
+    </section><section>
+    <section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src='http://www.beastsofwar.com/wp-content/uploads/2012/06/Discworld-Anhk-Morpork-Cover-Art.jpg', width=70%></p>
+
+</div>
+</div>
+</div></section>
+    </section><section>
+    <section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<table border="0">
+<tr><td><img src='https://upload.wikimedia.org/wikipedia/commons/4/46/BigData_2267x1146_white.png'></td><td><img src='https://upload.wikimedia.org/wikipedia/commons/a/a6/Professor_Lucifer_Butts.gif'></td><td><img src='http://www.beastsofwar.com/wp-content/uploads/2012/06/Discworld-Anhk-Morpork-Cover-Art.jpg'></td></tr>
+</table>
+</div>
+</div>
+</div></section>
+    </section><section>
+    <section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src='./diagrams/world-turtle-model.jpg', width=80%></p>
 
 </div>
 </div>
