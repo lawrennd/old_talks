@@ -10,7 +10,7 @@ abstract: |
   away from implementing a ’sentient intelligence’, but what do we have in
   its place? This talk will explore current technology and speculate on
   what futures it may lead to.
-venue: The Data Hide, The Hide, Scotland Street, Sheffield
+venue: Cognitive Science work in Progress Meeting, Sheffield
 ipynb: 2015-10-23-what-kind-of-ai.ipynb
 reveal: 2015-10-23-what-kind-of-ai.slides.html
 year: '2015'
