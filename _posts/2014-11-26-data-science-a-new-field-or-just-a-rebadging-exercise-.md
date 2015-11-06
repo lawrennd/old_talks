@@ -26,7 +26,6 @@ layout: talk
 key: Lawrence:warwick14
 categories:
 - Lawrence:warwick14
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

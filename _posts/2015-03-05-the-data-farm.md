@@ -17,7 +17,6 @@ layout: talk
 key: Lawrence:fest15
 categories:
 - Lawrence:fest15
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

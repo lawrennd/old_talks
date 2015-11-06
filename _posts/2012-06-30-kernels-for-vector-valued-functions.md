@@ -17,7 +17,6 @@ layout: talk
 key: Lawrence:icmlVector12
 categories:
 - Lawrence:icmlVector12
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

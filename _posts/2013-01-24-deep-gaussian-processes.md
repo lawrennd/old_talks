@@ -25,7 +25,6 @@ layout: talk
 key: Lawrence:aalto13
 categories:
 - Lawrence:aalto13
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

@@ -11,7 +11,6 @@ key: Lawrence:mlss15
 categories:
 - Lawrence:mlss15
 abstract: ''
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

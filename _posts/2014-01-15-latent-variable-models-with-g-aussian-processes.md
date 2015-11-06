@@ -11,7 +11,6 @@ key: Lawrence:gpwsThree14
 categories:
 - Lawrence:gpwsThree14
 abstract: ''
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

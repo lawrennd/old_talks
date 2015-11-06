@@ -21,7 +21,6 @@ layout: talk
 key: Lawrence::columbia05
 categories:
 - Lawrence::columbia05
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

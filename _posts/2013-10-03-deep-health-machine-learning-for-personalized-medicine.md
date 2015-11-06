@@ -13,7 +13,6 @@ layout: talk
 key: Lawrence:e4l13
 categories:
 - Lawrence:e4l13
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

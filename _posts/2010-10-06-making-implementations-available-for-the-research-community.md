@@ -22,7 +22,6 @@ layout: talk
 key: Lawrence:validation10
 categories:
 - Lawrence:validation10
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

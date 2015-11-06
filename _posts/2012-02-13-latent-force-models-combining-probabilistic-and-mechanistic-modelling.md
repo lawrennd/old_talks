@@ -17,7 +17,6 @@ layout: talk
 key: Lawrence:oxfordLatent12
 categories:
 - Lawrence:oxfordLatent12
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

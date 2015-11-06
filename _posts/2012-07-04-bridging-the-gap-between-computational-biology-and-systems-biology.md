@@ -10,7 +10,6 @@ key: Lawrence:pathSoc12
 categories:
 - Lawrence:pathSoc12
 abstract: ''
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

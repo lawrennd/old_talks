@@ -26,7 +26,6 @@ layout: talk
 key: Lawrence:erice06
 categories:
 - Lawrence:erice06
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

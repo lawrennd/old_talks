@@ -15,7 +15,6 @@ layout: talk
 key: Lawrence:dagstuhl11
 categories:
 - Lawrence:dagstuhl11
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

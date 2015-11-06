@@ -21,7 +21,6 @@ layout: talk
 key: Lawrence:gatsby05
 categories:
 - Lawrence:gatsby05
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

@@ -18,7 +18,6 @@ layout: talk
 key: Lawrence:impact15
 categories:
 - Lawrence:impact15
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

@@ -10,7 +10,6 @@ key: Lawrence:tutII09
 categories:
 - Lawrence:tutII09
 abstract: ''
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

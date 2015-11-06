@@ -28,7 +28,6 @@ layout: talk
 key: Lawrence:google07
 categories:
 - Lawrence:google07
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

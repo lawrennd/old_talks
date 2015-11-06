@@ -23,7 +23,6 @@ layout: talk
 key: Lawrence:tuebingen13
 categories:
 - Lawrence:tuebingen13
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

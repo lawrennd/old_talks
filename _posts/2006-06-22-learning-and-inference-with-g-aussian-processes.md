@@ -20,7 +20,6 @@ layout: talk
 key: Lawrence:manchester06
 categories:
 - Lawrence:manchester06
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

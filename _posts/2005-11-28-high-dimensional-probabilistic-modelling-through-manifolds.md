@@ -21,7 +21,6 @@ layout: talk
 key: Lawrence::ibm05
 categories:
 - Lawrence::ibm05
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

@@ -23,7 +23,6 @@ layout: talk
 key: Lawrence:lfmSheffield10
 categories:
 - Lawrence:lfmSheffield10
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

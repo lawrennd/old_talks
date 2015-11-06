@@ -17,7 +17,6 @@ layout: talk
 key: Lawrence:bayes11
 categories:
 - Lawrence:bayes11
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

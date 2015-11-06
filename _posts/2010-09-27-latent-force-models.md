@@ -23,7 +23,6 @@ layout: talk
 key: Lawrence:phylogenetics10
 categories:
 - Lawrence:phylogenetics10
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

@@ -18,7 +18,6 @@ layout: talk
 key: Lawrence:nyu15
 categories:
 - Lawrence:nyu15
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

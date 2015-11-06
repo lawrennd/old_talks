@@ -26,7 +26,6 @@ layout: talk
 key: Lawrence:nottingham15
 categories:
 - Lawrence:nottingham15
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

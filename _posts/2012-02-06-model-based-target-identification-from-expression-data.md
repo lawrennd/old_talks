@@ -15,7 +15,6 @@ layout: talk
 key: Lawrence:cruk12
 categories:
 - Lawrence:cruk12
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

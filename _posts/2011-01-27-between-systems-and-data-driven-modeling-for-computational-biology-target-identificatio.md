@@ -14,7 +14,6 @@ layout: talk
 key: Lawrence:smpgd11
 categories:
 - Lawrence:smpgd11
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

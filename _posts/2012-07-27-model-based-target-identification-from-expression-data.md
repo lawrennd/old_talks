@@ -14,7 +14,6 @@ layout: talk
 key: Lawrence:ucla12b
 categories:
 - Lawrence:ucla12b
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

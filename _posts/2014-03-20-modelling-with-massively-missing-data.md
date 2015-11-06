@@ -27,7 +27,6 @@ layout: talk
 key: Lawrence:facebook14
 categories:
 - Lawrence:facebook14
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

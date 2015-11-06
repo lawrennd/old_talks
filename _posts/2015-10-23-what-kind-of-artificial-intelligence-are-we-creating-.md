@@ -17,7 +17,6 @@ layout: talk
 key: Lawrence:rise15a
 categories:
 - Lawrence:rise15a
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

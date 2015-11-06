@@ -17,7 +17,6 @@ layout: talk
 key: Lawrence:largeicml15
 categories:
 - Lawrence:largeicml15
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

@@ -14,7 +14,6 @@ layout: talk
 key: Lawrence:leeds13
 categories:
 - Lawrence:leeds13
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

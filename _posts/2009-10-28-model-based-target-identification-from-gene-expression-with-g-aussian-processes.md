@@ -22,7 +22,6 @@ layout: talk
 key: Lawrence:napoli09
 categories:
 - Lawrence:napoli09
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

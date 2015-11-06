@@ -10,7 +10,6 @@ key: Lawrence:tigem09
 categories:
 - Lawrence:tigem09
 abstract: ''
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

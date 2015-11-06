@@ -21,7 +21,6 @@ layout: talk
 key: Lawrence:mpi15
 categories:
 - Lawrence:mpi15
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

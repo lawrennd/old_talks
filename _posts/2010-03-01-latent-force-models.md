@@ -15,7 +15,6 @@ layout: talk
 key: Lawrence:inference10
 categories:
 - Lawrence:inference10
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

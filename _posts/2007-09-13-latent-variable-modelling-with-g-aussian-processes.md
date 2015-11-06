@@ -21,7 +21,6 @@ layout: talk
 key: Lawrence:inverse07
 categories:
 - Lawrence:inverse07
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

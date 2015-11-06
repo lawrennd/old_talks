@@ -18,7 +18,6 @@ layout: talk
 key: Lawrence:data08
 categories:
 - Lawrence:data08
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

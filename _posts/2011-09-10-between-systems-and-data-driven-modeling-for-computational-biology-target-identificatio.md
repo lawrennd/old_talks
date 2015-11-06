@@ -15,7 +15,6 @@ layout: talk
 key: Lawrence:abcd11
 categories:
 - Lawrence:abcd11
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

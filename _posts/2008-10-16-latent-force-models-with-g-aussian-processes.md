@@ -14,7 +14,6 @@ layout: talk
 key: Lawrence:bristol08
 categories:
 - Lawrence:bristol08
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

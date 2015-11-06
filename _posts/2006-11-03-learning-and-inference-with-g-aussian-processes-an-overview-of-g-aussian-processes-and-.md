@@ -16,7 +16,6 @@ key: Lawrence:manchesterGuest06
 categories:
 - Lawrence:manchesterGuest06
 abstract: ''
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

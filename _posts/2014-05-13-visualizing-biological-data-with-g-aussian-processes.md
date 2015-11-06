@@ -11,7 +11,6 @@ key: Lawrence:ebi14b
 categories:
 - Lawrence:ebi14b
 abstract: ''
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

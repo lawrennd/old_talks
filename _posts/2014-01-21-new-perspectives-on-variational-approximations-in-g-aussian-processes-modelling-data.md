@@ -17,7 +17,6 @@ layout: talk
 key: Lawrence:cued14
 categories:
 - Lawrence:cued14
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

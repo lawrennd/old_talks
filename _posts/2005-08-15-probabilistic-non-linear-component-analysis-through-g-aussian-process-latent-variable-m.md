@@ -12,7 +12,6 @@ key: Lawrence:tuebingen05
 categories:
 - Lawrence:tuebingen05
 abstract: ''
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

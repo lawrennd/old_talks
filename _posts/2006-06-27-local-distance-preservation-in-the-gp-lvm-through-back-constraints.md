@@ -12,7 +12,6 @@ key: Lawrence:icml06
 categories:
 - Lawrence:icml06
 abstract: ''
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

@@ -17,7 +17,6 @@ layout: talk
 key: Lawrence:kth15
 categories:
 - Lawrence:kth15
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

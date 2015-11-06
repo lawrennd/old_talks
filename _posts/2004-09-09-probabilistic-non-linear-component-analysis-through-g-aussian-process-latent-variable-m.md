@@ -22,7 +22,6 @@ layout: talk
 key: Lawrence:smlwgplvm03
 categories:
 - Lawrence:smlwgplvm03
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

@@ -20,7 +20,6 @@ layout: talk
 key: Lawrence:ucl14b
 categories:
 - Lawrence:ucl14b
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

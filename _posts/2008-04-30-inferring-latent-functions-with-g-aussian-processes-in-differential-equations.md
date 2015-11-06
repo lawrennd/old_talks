@@ -20,7 +20,6 @@ layout: talk
 key: Lawrence:latentFunc08
 categories:
 - Lawrence:latentFunc08
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

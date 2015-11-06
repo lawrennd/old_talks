@@ -9,7 +9,6 @@ layout: talk
 key: Lawrence:mlss15b
 categories:
 - Lawrence:mlss15b
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

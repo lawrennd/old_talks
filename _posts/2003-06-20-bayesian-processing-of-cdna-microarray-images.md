@@ -20,7 +20,6 @@ layout: talk
 key: Lawrence:sussex03
 categories:
 - Lawrence:sussex03
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

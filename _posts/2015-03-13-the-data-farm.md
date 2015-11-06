@@ -13,7 +13,6 @@ layout: talk
 key: Lawrence:datafarm15a
 categories:
 - Lawrence:datafarm15a
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

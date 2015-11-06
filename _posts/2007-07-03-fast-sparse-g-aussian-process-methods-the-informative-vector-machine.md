@@ -20,7 +20,6 @@ layout: talk
 key: Lawrence:uc3mivm07
 categories:
 - Lawrence:uc3mivm07
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

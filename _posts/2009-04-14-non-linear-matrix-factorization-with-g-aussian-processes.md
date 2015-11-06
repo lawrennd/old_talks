@@ -10,7 +10,6 @@ key: Lawrence:learning09
 categories:
 - Lawrence:learning09
 abstract: ''
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

@@ -11,7 +11,6 @@ key: Lawrence:licsb09
 categories:
 - Lawrence:licsb09
 abstract: ''
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

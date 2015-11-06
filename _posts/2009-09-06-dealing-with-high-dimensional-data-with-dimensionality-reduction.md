@@ -10,7 +10,6 @@ key: Lawrence:interspeech09
 categories:
 - Lawrence:interspeech09
 abstract: ''
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

@@ -22,7 +22,6 @@ layout: talk
 key: Lawrence:oxford06
 categories:
 - Lawrence:oxford06
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

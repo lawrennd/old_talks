@@ -10,7 +10,6 @@ key: Lawrence:biopredyn12_2
 categories:
 - Lawrence:biopredyn12_2
 abstract: ''
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

@@ -14,7 +14,6 @@ layout: talk
 key: Lawrence:manizales14
 categories:
 - Lawrence:manizales14
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

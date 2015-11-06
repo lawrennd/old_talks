@@ -14,7 +14,6 @@ layout: talk
 key: Lawrence:leahurst13
 categories:
 - Lawrence:leahurst13
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

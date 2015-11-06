@@ -17,7 +17,6 @@ layout: talk
 key: Lawrence:mascotnum15
 categories:
 - Lawrence:mascotnum15
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

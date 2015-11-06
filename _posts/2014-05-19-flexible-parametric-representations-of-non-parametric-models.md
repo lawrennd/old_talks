@@ -19,7 +19,6 @@ layout: talk
 key: Lawrence:edinburgh14
 categories:
 - Lawrence:edinburgh14
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

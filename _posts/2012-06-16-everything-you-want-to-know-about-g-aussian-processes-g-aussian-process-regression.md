@@ -14,7 +14,6 @@ key: Lawrence:cvpr12_1
 categories:
 - Lawrence:cvpr12_1
 abstract: ''
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

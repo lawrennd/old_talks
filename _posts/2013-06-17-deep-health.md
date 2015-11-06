@@ -10,7 +10,6 @@ key: Lawrence:manchester13
 categories:
 - Lawrence:manchester13
 abstract: ''
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

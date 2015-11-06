@@ -21,7 +21,6 @@ layout: talk
 key: Lawrence:jhu09
 categories:
 - Lawrence:jhu09
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

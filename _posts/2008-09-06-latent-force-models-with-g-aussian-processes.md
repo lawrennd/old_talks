@@ -18,7 +18,6 @@ layout: talk
 key: Lawrence:bark08
 categories:
 - Lawrence:bark08
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

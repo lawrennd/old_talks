@@ -15,7 +15,6 @@ layout: talk
 key: Lawrence:liverpool11
 categories:
 - Lawrence:liverpool11
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

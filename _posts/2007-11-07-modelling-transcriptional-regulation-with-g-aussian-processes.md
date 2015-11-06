@@ -20,7 +20,6 @@ key: Lawrence:param07
 categories:
 - Lawrence:param07
 abstract: ''
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

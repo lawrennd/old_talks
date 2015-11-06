@@ -14,7 +14,6 @@ layout: talk
 key: Lawrence:mlpm13
 categories:
 - Lawrence:mlpm13
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

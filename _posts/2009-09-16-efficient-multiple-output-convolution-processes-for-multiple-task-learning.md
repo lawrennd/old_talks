@@ -10,7 +10,6 @@ key: Lawrence:warwick09
 categories:
 - Lawrence:warwick09
 abstract: ''
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

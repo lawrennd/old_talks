@@ -24,7 +24,6 @@ layout: talk
 key: Lawrence:pesb07
 categories:
 - Lawrence:pesb07
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

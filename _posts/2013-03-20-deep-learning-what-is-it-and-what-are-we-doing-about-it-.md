@@ -12,7 +12,6 @@ layout: talk
 key: Lawrence:sheffield13
 categories:
 - Lawrence:sheffield13
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

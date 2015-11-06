@@ -21,7 +21,6 @@ layout: talk
 key: Lawrence:icml07
 categories:
 - Lawrence:icml07
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

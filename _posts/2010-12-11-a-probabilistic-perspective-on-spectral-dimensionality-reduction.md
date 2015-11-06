@@ -21,7 +21,6 @@ layout: talk
 key: Lawrence:nipsw10
 categories:
 - Lawrence:nipsw10
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

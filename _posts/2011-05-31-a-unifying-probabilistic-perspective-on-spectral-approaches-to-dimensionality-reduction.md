@@ -23,7 +23,6 @@ layout: talk
 key: Lawrence:bonn11
 categories:
 - Lawrence:bonn11
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

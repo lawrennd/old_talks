@@ -9,7 +9,6 @@ layout: talk
 key: Lawrence:infection13
 categories:
 - Lawrence:infection13
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

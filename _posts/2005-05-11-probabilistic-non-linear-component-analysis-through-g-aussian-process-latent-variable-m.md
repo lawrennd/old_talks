@@ -27,7 +27,6 @@ layout: talk
 key: Lawrence:soton05
 categories:
 - Lawrence:soton05
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

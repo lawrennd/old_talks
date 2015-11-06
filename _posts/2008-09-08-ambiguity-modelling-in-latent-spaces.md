@@ -26,7 +26,6 @@ layout: talk
 key: Lawrence:mlmi08
 categories:
 - Lawrence:mlmi08
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

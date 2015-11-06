@@ -21,7 +21,6 @@ layout: talk
 key: Lawrence:rss08
 categories:
 - Lawrence:rss08
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

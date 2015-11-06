@@ -19,7 +19,6 @@ layout: talk
 key: Lawrence:iit15
 categories:
 - Lawrence:iit15
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

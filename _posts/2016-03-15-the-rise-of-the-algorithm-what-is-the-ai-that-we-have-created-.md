@@ -15,7 +15,6 @@ layout: talk
 key: Lawrence:what15
 categories:
 - Lawrence:what15
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

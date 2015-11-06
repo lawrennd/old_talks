@@ -22,7 +22,6 @@ layout: talk
 key: Lawrence:msr13b
 categories:
 - Lawrence:msr13b
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

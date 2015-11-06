@@ -14,7 +14,6 @@ layout: talk
 key: Lawrence:oxford14
 categories:
 - Lawrence:oxford14
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

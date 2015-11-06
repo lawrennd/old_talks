@@ -21,7 +21,6 @@ layout: talk
 key: Lawrence:manchester03
 categories:
 - Lawrence:manchester03
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

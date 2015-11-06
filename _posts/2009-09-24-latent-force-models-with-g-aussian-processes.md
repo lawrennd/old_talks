@@ -10,7 +10,6 @@ key: Lawrence:inspire09
 categories:
 - Lawrence:inspire09
 abstract: ''
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

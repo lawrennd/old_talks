@@ -12,7 +12,6 @@ key: Lawrence:mlssFour12
 categories:
 - Lawrence:mlssFour12
 abstract: ''
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

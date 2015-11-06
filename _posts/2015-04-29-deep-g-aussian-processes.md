@@ -17,7 +17,6 @@ layout: talk
 key: Lawrence:linkoping15
 categories:
 - Lawrence:linkoping15
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

@@ -23,7 +23,6 @@ layout: talk
 key: Lawrence:ncaf13
 categories:
 - Lawrence:ncaf13
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

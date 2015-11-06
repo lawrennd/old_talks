@@ -24,6 +24,12 @@ def bibtohash(obj, bib)
   # +bib+:: +BibTeX+ object that contains strings etc
   # +errhandler+:: +Proc+ object that takes a pipe object as first and only param (may be nil)
   ha = obj.to_hash(:quotes=>'').rekey!(&:to_s)
+  if ha.has_key?('crossref')
+    hac = bibtohash(bib[ha['crossref']], bib)
+    hac.each do |key, array|
+      ha[key]=array
+    end
+  end
   ha['layout'] = ha['bibtex_type'].to_s
   ha.tap { |hs| hs.delete('bibtex_type') }
 
@@ -44,7 +50,6 @@ def bibtohash(obj, bib)
     ha['abstract'] = detex(ha['abstract'])
   end
 
-  
   if ha.has_key?('pages')
     pages = ha['pages'].split('-')
     ha['firstpage'] = pages[0].to_i
@@ -59,14 +64,16 @@ def bibtohash(obj, bib)
   end
   
   if ha.has_key?('sections')
-    sections = ha['sections'].split('|')
-    hasections = Array.new(sections.length)
-    sections.each.with_index do |section, index|
-      name_title = section.split('=')
-      hasections[index] = {'name' => name_title[0], 'title' => name_title[-1]}
+    if ha['sections']
+      sections = ha['sections'].split('|')
+      hasections = Array.new(sections.length)
+      sections.each.with_index do |section, index|
+        name_title = section.split('=')
+        hasections[index] = {'name' => name_title[0], 'title' => name_title[-1]}
+      end
     end
+    ha['sections'] = hasections
   end
-  ha['sections'] = hasections
   if ha.has_key?('editor')    
     ha['editors'] = splitauthors(ha, obj, type=:editor)
     ha.tap { |hs| hs.delete('editor') }
@@ -77,7 +84,7 @@ def bibtohash(obj, bib)
     ha.tap { |hs| hs.delete('author') }
   end
   if ha.has_key?('published')
-    ha['published'] = Date.parse ha['published']
+    ha['published'] = Date.parse ha['published'].to_s
   else
     if ha.has_key?('year')
       year = ha['year'].to_s
@@ -139,11 +146,16 @@ def splitauthors(ha, obj, type=:author)
 end
 
 if ARGV.length < 1
-  puts "Usage: #{$0} <bib> [<yml>]"
+  puts "Usage: #{$0} <bib>"
 else
-  out = ARGV.length == 2 ? File.open(ARGV[1], 'w') : STDOUT
-  b = BibTeX.open ARGV[0]
-    
+  txt = ''
+  ARGV.each do |obj|
+    txt += Kernel.open(obj).read
+  end
+  b = BibTeX::Bibliography.new
+  b.add BibTeX::Element.parse txt
+  #c = BibTeX.open ARGV[1]
+  #b.add(c)
   reponame = 'talks'
 
   b.each do |obj|
@@ -165,6 +177,42 @@ else
   # Process journals
   reponame = 'publications'
   b['@article'].each do |obj|
+    ha = bibtohash(obj, b)
+    ya = ha.to_yaml(:ExplicitTypes => true)
+    fname = filename(ha['published'], ha['key'])
+    out = File.open(pubdir + reponame + '/_posts/' + fname, 'w')
+    out.puts ya
+    out.puts "---"
+  end  
+
+  b['@inproceedings'].each do |obj|
+    ha = bibtohash(obj, b)
+    ya = ha.to_yaml(:ExplicitTypes => true)
+    fname = filename(ha['published'], ha['key'])
+    out = File.open(pubdir + reponame + '/_posts/' + fname, 'w')
+    out.puts ya
+    out.puts "---"
+  end  
+
+  b['@techreport'].each do |obj|
+    ha = bibtohash(obj, b)
+    ya = ha.to_yaml(:ExplicitTypes => true)
+    fname = filename(ha['published'], ha['key'])
+    out = File.open(pubdir + reponame + '/_posts/' + fname, 'w')
+    out.puts ya
+    out.puts "---"
+  end  
+
+  b['@incollection'].each do |obj|
+    ha = bibtohash(obj, b)
+    ya = ha.to_yaml(:ExplicitTypes => true)
+    fname = filename(ha['published'], ha['key'])
+    out = File.open(pubdir + reponame + '/_posts/' + fname, 'w')
+    out.puts ya
+    out.puts "---"
+  end  
+
+  b['@misc'].each do |obj|
     ha = bibtohash(obj, b)
     ya = ha.to_yaml(:ExplicitTypes => true)
     fname = filename(ha['published'], ha['key'])

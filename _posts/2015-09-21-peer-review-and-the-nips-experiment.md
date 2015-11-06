@@ -18,7 +18,6 @@ layout: talk
 key: Lawrence:peer15
 categories:
 - Lawrence:peer15
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

@@ -11,7 +11,6 @@ key: Lawrence:gpssOne13
 categories:
 - Lawrence:gpssOne13
 abstract: ''
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

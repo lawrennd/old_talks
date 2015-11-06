@@ -15,7 +15,6 @@ layout: talk
 key: Lawrence:kcl09
 categories:
 - Lawrence:kcl09
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

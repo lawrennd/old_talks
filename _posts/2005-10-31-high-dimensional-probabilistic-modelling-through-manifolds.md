@@ -22,7 +22,6 @@ layout: talk
 key: Lawrence:epfl05
 categories:
 - Lawrence:epfl05
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

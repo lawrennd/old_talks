@@ -23,7 +23,6 @@ layout: talk
 key: Lawrence:exeter11
 categories:
 - Lawrence:exeter11
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

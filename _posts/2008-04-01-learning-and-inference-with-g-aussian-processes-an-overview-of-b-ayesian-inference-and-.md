@@ -12,7 +12,6 @@ key: Lawrence:gpbayes08
 categories:
 - Lawrence:gpbayes08
 abstract: ''
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

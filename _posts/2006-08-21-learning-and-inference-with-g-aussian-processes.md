@@ -20,7 +20,6 @@ layout: talk
 key: Lawrence:intel06
 categories:
 - Lawrence:intel06
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

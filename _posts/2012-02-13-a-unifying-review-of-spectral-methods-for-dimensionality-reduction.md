@@ -20,7 +20,6 @@ layout: talk
 key: Lawrence:oxfordUnify12
 categories:
 - Lawrence:oxfordUnify12
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

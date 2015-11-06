@@ -24,7 +24,6 @@ layout: talk
 key: Lawrence:mbb07
 categories:
 - Lawrence:mbb07
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

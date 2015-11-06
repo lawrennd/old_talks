@@ -10,7 +10,6 @@ layout: talk
 key: Lawrence:gpdc08
 categories:
 - Lawrence:gpdc08
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

@@ -11,7 +11,6 @@ key: Lawrence:siena11a
 categories:
 - Lawrence:siena11a
 abstract: ''
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

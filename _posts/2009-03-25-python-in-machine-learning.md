@@ -19,7 +19,6 @@ layout: talk
 key: Lawrence:python09
 categories:
 - Lawrence:python09
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

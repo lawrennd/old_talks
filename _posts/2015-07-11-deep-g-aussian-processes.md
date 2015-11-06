@@ -17,7 +17,6 @@ layout: talk
 key: Lawrence:deepicml15
 categories:
 - Lawrence:deepicml15
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

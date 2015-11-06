@@ -21,7 +21,6 @@ layout: talk
 key: Lawrence:lfm_cagliary09
 categories:
 - Lawrence:lfm_cagliary09
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

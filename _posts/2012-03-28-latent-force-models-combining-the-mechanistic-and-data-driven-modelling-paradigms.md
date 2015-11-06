@@ -17,7 +17,6 @@ layout: talk
 key: Lawrence:rank12
 categories:
 - Lawrence:rank12
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

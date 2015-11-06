@@ -19,7 +19,6 @@ layout: talk
 key: Lawrence:smile14
 categories:
 - Lawrence:smile14
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

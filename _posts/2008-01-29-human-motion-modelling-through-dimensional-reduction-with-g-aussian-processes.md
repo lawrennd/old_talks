@@ -11,7 +11,6 @@ key: Lawrence:human08
 categories:
 - Lawrence:human08
 abstract: ''
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

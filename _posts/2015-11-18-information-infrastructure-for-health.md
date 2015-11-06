@@ -22,7 +22,6 @@ layout: talk
 key: Lawrence:atiscope15
 categories:
 - Lawrence:atiscope15
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

@@ -22,7 +22,6 @@ layout: talk
 key: Lawrence:edinburgh11
 categories:
 - Lawrence:edinburgh11
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

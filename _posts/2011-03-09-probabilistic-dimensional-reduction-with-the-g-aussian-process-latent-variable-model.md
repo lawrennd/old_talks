@@ -27,7 +27,6 @@ layout: talk
 key: Lawrence:loughborough11
 categories:
 - Lawrence:loughborough11
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

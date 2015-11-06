@@ -21,7 +21,6 @@ layout: talk
 key: Lawrence::msrred05
 categories:
 - Lawrence::msrred05
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

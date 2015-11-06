@@ -14,7 +14,6 @@ layout: talk
 key: Lawrence:curie14
 categories:
 - Lawrence:curie14
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

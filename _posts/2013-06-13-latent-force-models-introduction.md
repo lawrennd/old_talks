@@ -11,7 +11,6 @@ key: Lawrence:lfmIntro13
 categories:
 - Lawrence:lfmIntro13
 abstract: ''
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

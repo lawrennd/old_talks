@@ -15,7 +15,6 @@ layout: talk
 key: Lawrence:imperial15
 categories:
 - Lawrence:imperial15
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

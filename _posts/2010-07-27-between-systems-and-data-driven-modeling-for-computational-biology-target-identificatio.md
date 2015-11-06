@@ -23,7 +23,6 @@ layout: talk
 key: Lawrence:ibsb10
 categories:
 - Lawrence:ibsb10
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

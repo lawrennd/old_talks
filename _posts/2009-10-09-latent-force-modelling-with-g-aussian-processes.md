@@ -15,7 +15,6 @@ layout: talk
 key: Lawrence:newcastle09
 categories:
 - Lawrence:newcastle09
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

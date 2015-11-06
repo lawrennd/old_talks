@@ -16,7 +16,6 @@ key: Sanguinetti:masamb06
 categories:
 - Sanguinetti:masamb06
 abstract: ''
-sections: 
 authors:
 - firstname: Guido
   lastname: Sanguinetti

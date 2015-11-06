@@ -12,7 +12,6 @@ key: Lawrence:mlssOne12
 categories:
 - Lawrence:mlssOne12
 abstract: ''
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

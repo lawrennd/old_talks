@@ -17,7 +17,6 @@ layout: talk
 key: Lawrence:radiant15
 categories:
 - Lawrence:radiant15
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

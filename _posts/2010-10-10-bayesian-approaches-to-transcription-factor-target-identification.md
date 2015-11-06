@@ -15,7 +15,6 @@ layout: talk
 key: Lawrence:eurogene10
 categories:
 - Lawrence:eurogene10
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

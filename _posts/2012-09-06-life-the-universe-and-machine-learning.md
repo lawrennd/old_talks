@@ -22,7 +22,6 @@ layout: talk
 key: Lawrence:inaugural12
 categories:
 - Lawrence:inaugural12
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

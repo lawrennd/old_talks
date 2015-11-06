@@ -16,7 +16,6 @@ layout: talk
 key: Lawrence:emmds09
 categories:
 - Lawrence:emmds09
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

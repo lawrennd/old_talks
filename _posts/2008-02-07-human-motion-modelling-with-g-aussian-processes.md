@@ -11,7 +11,6 @@ key: Lawrence:newton08
 categories:
 - Lawrence:newton08
 abstract: ''
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

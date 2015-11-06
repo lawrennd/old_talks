@@ -14,7 +14,6 @@ layout: talk
 key: Lawrence:ncaf08
 categories:
 - Lawrence:ncaf08
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

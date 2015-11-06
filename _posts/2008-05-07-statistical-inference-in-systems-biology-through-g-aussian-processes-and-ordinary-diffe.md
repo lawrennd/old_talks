@@ -18,7 +18,6 @@ layout: talk
 key: Lawrence:sysbioIntroB08
 categories:
 - Lawrence:sysbioIntroB08
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

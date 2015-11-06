@@ -29,7 +29,6 @@ layout: talk
 key: Lawrence:csail07
 categories:
 - Lawrence:csail07
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

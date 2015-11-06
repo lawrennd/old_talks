@@ -19,7 +19,6 @@ layout: talk
 key: Lawrence:lfm_slim09
 categories:
 - Lawrence:lfm_slim09
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

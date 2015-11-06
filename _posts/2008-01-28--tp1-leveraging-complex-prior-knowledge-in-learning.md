@@ -11,7 +11,6 @@ key: Lawrence:thematic08
 categories:
 - Lawrence:thematic08
 abstract: ''
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

@@ -23,7 +23,6 @@ layout: talk
 key: Lawrence:cambridge13
 categories:
 - Lawrence:cambridge13
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

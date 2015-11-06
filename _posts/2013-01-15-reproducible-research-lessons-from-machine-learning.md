@@ -10,7 +10,6 @@ key: Lawrence:reproducible13
 categories:
 - Lawrence:reproducible13
 abstract: ''
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

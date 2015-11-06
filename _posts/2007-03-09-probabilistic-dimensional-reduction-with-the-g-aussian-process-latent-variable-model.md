@@ -26,7 +26,6 @@ layout: talk
 key: Lawrence:ncrg07
 categories:
 - Lawrence:ncrg07
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

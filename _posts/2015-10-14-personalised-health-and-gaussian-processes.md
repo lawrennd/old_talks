@@ -8,7 +8,6 @@ layout: talk
 key: Lawrence:benevolent15
 categories:
 - Lawrence:benevolent15
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

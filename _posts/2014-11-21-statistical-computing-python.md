@@ -15,7 +15,6 @@ key: Lawrence:rss14
 categories:
 - Lawrence:rss14
 abstract: ''
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

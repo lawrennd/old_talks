@@ -21,7 +21,6 @@ layout: talk
 key: Lawrence:idiap05
 categories:
 - Lawrence:idiap05
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

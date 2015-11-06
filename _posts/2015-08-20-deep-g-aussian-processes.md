@@ -9,7 +9,6 @@ layout: talk
 key: Lawrence:harvard15
 categories:
 - Lawrence:harvard15
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

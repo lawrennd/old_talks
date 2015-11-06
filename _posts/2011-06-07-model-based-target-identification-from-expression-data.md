@@ -13,7 +13,6 @@ layout: talk
 key: Lawrence:krebs11
 categories:
 - Lawrence:krebs11
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

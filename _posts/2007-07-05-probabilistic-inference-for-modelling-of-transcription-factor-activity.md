@@ -22,7 +22,6 @@ layout: talk
 key: Lawrence:uc3tfa07
 categories:
 - Lawrence:uc3tfa07
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

@@ -13,7 +13,6 @@ layout: talk
 key: Lawrence:tutorialPRIB10
 categories:
 - Lawrence:tutorialPRIB10
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

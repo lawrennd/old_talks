@@ -17,7 +17,6 @@ layout: talk
 key: Lawrence:mathbio07
 categories:
 - Lawrence:mathbio07
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

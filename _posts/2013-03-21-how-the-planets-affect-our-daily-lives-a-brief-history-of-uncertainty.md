@@ -15,7 +15,6 @@ layout: talk
 key: Lawrence:scienceweek_edwards13
 categories:
 - Lawrence:scienceweek_edwards13
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence

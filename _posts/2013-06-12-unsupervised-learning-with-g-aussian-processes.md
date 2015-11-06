@@ -10,7 +10,6 @@ key: Lawrence:gpssThree13
 categories:
 - Lawrence:gpssThree13
 abstract: ''
-sections: 
 authors:
 - firstname: Neil D.
   lastname: Lawrence
