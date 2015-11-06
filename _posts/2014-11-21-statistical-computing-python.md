@@ -1,5 +1,4 @@
 ---
-author: Lawrence, Neil D.
 title: 'Statistical Computing: Python'
 venue: Royal Statistical Society, London, U.K.
 label1: Event Detail
@@ -9,8 +8,16 @@ link2: http://nbviewer.ipython.org/github/lawrennd/statslang/blob/master/python/
 label3: Slides (Monte Carlo, IPython Notebook, written by Mike Croucher)
 link3: http://nbviewer.ipython.org/github/lawrennd/MultiLangMonteCarlo/blob/master/MultiLangStats.ipynb
 year: '2014'
-month: '11'
+month: 11
 day: '21'
 layout: talk
 key: Lawrence:rss14
+categories:
+- Lawrence:rss14
+abstract: ''
+sections: 
+authors:
+- firstname: Neil D.
+  lastname: Lawrence
+published: 2014-11-21
 ---

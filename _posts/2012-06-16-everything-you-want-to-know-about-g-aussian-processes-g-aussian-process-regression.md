@@ -1,0 +1,22 @@
+---
+title: 'Everything You Want to Know About {G}aussian Processes: {G}aussian Process
+  Regression'
+venue: CVPR Tutorial, Providence, RI, USA
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gp_cvpr12_session1.pdf
+label1: Software
+link1: https://github.com/SheffieldML/GPmat/
+note: Tutorial with Raquel Urtasun.
+year: '2012'
+month: 6
+day: '16'
+layout: talk
+key: Lawrence:cvpr12_1
+categories:
+- Lawrence:cvpr12_1
+abstract: ''
+sections: 
+authors:
+- firstname: Neil D.
+  lastname: Lawrence
+published: 2012-06-16
+---
