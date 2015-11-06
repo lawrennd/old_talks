@@ -19,6 +19,7 @@ abstract: |
   opportunity in terms of obtaining the necessary data-liquidity to
   fulfill the full potential of personalized health in effecting
   individuals’ health outcomes.
+venue: ATI Scoping Workshop on the Data Analytics Pipeline, Edinburgh
 year: '2015'
 month: '11'
 day: '18'
