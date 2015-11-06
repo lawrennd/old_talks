@@ -40,9 +40,9 @@ else
     ha['layout'] = 'talk'
     ha['key'] = ha['bibtex_key']
     ha['month'] = ha['month_numeric']
+    ha.tap { |hs| hs.delete('month_numeric') }
     ha.tap { |hs| hs.delete('bibtex_type') }
     ha.tap { |hs| hs.delete('bibtex_key') }
-    ha.tap { |hs| hs.delete('month_numeric') }
     ha.delete_if {|key, value| key[0..2] == "opt" }
     if ha['abstract'] == ''
       ha.tap { |hs| hs.delete('abstract') }
@@ -66,10 +66,17 @@ else
     ha = obj.to_hash(:quotes=>'').rekey!(&:to_s)
     ha['layout'] = 'article'
     ha['key'] = ha['bibtex_key']
-    ha['month'] = ha['month_numeric']
+    if ha.has_key?('month')
+      ha['month'] = ha['month_numeric']
+      ha.tap { |hs| hs.delete('month_numeric') }
+    else
+      ha['month'] = 1
+    end
+    unless ha.has_key?('day')
+      ha['day'] = 1
+    end
     ha.tap { |hs| hs.delete('bibtex_type') }
     ha.tap { |hs| hs.delete('bibtex_key') }
-    ha.tap { |hs| hs.delete('month_numeric') }
     ha.delete_if {|key, value| key[0..2] == "opt" }
     if ha['abstract'] == ''
       ha.tap { |hs| hs.delete('abstract') }
