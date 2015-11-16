@@ -9,6 +9,7 @@ require 'pandoc-ruby'
 bibdir = '/Users/neil/SheffieldML/publications/bib'
 pubdir = '/Users/neil/lawrennd/'
 talkdir = '/Users/neil/lawrennd/'
+projdir = '/Users/neil/sods/'
 url = 'http://inverseprobability.com'
 email = ''
 twitter = 'lawrennd'
@@ -220,4 +221,25 @@ else
     out.puts ya
     out.puts "---"
   end  
+
+  # # Process projects
+  # reponame = 'dsiprojects'
+  # b['@bscproject'].each do |obj|
+  #   ha = bibtohash(obj, b)
+  #   ya = ha.to_yaml(:ExplicitTypes => true)
+  #   fname = filename(ha['published'], ha['key'])
+  #   out = File.open(projdir + reponame + '/_posts/' + fname, 'w')
+  #   out.puts ya
+  #   out.puts "---"
+  # end  
+
+  # b['@phdproject'].each do |obj|
+  #   ha = bibtohash(obj, b)
+  #   ya = ha.to_yaml(:ExplicitTypes => true)
+  #   fname = filename(ha['published'], ha['key'])
+  #   out = File.open(projdir + reponame + '/_posts/' + fname, 'w')
+  #   out.puts ya
+  #   out.puts "---"
+  # end  
+
 end
