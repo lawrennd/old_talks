@@ -15,6 +15,8 @@ abstract: In this talk we will address challenges in information infrastructure 
   in terms of obtaining the necessary data-liquidity to fulfill the full potential
   of personalized health in effecting individuals’ health outcomes.
 venue: ATI Scoping Workshop on the Data Analytics Pipeline, Edinburgh
+ipynb: 2015-11-18-health-infrastructure.ipynb
+reveal: 2015-11-18-health-infrastructure.slides.html
 year: '2015'
 month: 11
 day: '18'
