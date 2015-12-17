@@ -1,7 +1,7 @@
 ---
 title: The Open Data Science Initiative
 venue: data@sheffield
-pdf: odsi_data@sheffield.pdf
+pdf: odsi_data_at_sheffield.pdf
 abstract: The Open Data Science Initiative is founded on the idea that there are a
   set of core principles that are restricting our ability, as a society, to exploit
   the large quantity of data we are now generating. In this talk we identify the challenges
