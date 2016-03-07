@@ -11,7 +11,7 @@ abstract: What is data science? An new name for something old perhaps. Neverthel
 year: '2016'
 month: 10
 day: '27'
-venue: Fisher Trust, Royal Society and London Mathematical Society Join Meeting
+venue: Fisher Trust, Royal Society and London Mathematical Society Joint Meeting
 layout: talk
 key: Lawrence:rss16
 categories:
