@@ -1,5 +1,5 @@
 ---
-title: Machine Learning with Gaussian Processes
+title: Machine Learning with {Gaussian} Processes
 abstract: Gaussian processes (GPs) provide a principled probabilistic approach to
   prior probability distributions for functions. In this talk we will give an overview
   of some uses of GPs and their extensions. In particular we will introduce mechanistic

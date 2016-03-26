@@ -1,5 +1,5 @@
 ---
-title: Personalised Health and Gaussian Processes
+title: Personalised Health and {Gaussian} Processes
 venue: Stratified Medical, 40 Churchway, London, NW1
 year: '2015'
 month: 10
