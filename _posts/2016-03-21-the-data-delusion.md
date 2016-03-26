@@ -1,6 +1,5 @@
 ---
-title: 'Artificial Stupidity: Potential Problems with the Current Generation of ''Intelligent''
-  Solutions'
+title: The Data Delusion
 abstract: The race on to develop the next generation of artificially intelligent algorithms,
   recent successes in hitherto unmanageable problems have somewhat blinded us to our
   own capabilities. Despite the commercial success of the current generation of learning
@@ -13,6 +12,7 @@ venue: MARS Conference, Palm Springs
 day: '21'
 month: 3
 year: '2016'
+pdf: 2016-03-21-amazonMars.pdf
 layout: talk
 key: Lawrence:mars16
 categories:
