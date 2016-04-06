@@ -21,9 +21,9 @@ month: 5
 year: '2016'
 venue: ICLR 2016, San Jaun, Puerto Rico
 layout: talk
-key: Lawrence:iclr16
+key: Lawrence:iclr17
 categories:
-- Lawrence:iclr16
+- Lawrence:iclr17
 authors:
 - firstname: Neil D.
   lastname: Lawrence

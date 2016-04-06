@@ -6,12 +6,12 @@ abstract: The race on to develop the next generation of artificially intelligent
   algorithms, the time has come for the academic community to take stock. Have we
   really got the tools in place to solve the next generation of learning problems?
   Or is our current confidence in our toolsets misplaced? In this talk we’ll develop
-  at least one direction where our capabilities are lacking, and speculate how close
-  we are to making a breakthrough in that domain.
-venue: MARS Conference, Palm Springs
+  at least one direction where our capabilities are lacking.
+venue: MARS Conference, Parker Palm Springs, Palm Springs, CA
 day: '21'
 month: 3
 year: '2016'
+ppt: 2016-03-21-amazonMars.pptz
 pdf: 2016-03-21-amazonMars.pdf
 layout: talk
 key: Lawrence:mars16
