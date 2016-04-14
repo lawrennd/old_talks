@@ -12,9 +12,9 @@ year: '2016'
 month: 5
 day: '24'
 layout: talk
-key: Lawrence:radiant16
+key: Lawrence:pintofscience16
 categories:
-- Lawrence:radiant16
+- Lawrence:pintofscience16
 authors:
 - firstname: Neil D.
   lastname: Lawrence
