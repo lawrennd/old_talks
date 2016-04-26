@@ -11,8 +11,8 @@ venue: MARS Conference, Parker Palm Springs, Palm Springs, CA
 day: '21'
 month: 3
 year: '2016'
-ppt: 2016-03-21-amazonMars.pptz
 pdf: 2016-03-21-amazonMars.pdf
+ppt: 2016-03-21-amazonMars.pptx
 layout: talk
 key: Lawrence:mars16
 categories:
