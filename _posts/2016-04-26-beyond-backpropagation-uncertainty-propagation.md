@@ -16,6 +16,7 @@ abstract: Deep learning is founded on composable functions that are structured t
 year: '2016'
 month: 4
 day: '26'
+demo: demo_2016_04_26_msr.m
 venue: Microsoft Research, New England, USA
 pdf: 2016-04-26-UncertaintyPropagation.pdf
 ppt: 2016-04-26-UncertaintyPropagation.pptx
