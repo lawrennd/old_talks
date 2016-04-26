@@ -7,7 +7,7 @@ abstract: Gaussian processes (GPs) provide a principled probabilistic approach t
 day: '29'
 month: 1
 year: '2016'
-ppt: 2016-01-29-OxWaSPGPTalk.pptz
+ppt: 2016-01-29-OxWaSPGPTalk.pptx
 pdf: 2016-01-29-OxWaSPGPTalk.pdf
 venue: OxWaSP Symposium, University of Warwick
 layout: talk

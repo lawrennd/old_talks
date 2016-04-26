@@ -17,6 +17,8 @@ year: '2016'
 month: 4
 day: '26'
 venue: Microsoft Research, New England, USA
+pdf: 2016-04-26-UncertaintyPropagation.pdf
+ppt: 2016-04-26-UncertaintyPropagation.pptx
 layout: talk
 key: Lawrence:msrne16b
 categories:
