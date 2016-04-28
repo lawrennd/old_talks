@@ -8,6 +8,8 @@ abstract: Gaussian processes (GPs) provide a principled probabilistic approach t
 day: '28'
 month: 4
 year: '2016'
+ppt: 2016-04-28-MLGPsAmazon.pptx
+pdf: 2016-04-28-MLGPsAmazon.pdf
 venue: Amazon Machine Learning Conference, Seattle
 layout: talk
 key: Lawrence:amazon16
