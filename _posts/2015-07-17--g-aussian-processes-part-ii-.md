@@ -1,17 +1,17 @@
 ---
-title: "{G}aussian Processes"
+title: "{G}aussian Processes (Part II)"
 venue: MLSS, T\"ubingen
 linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/gp_mlss15b.pdf
 year: '2015'
+youtube: MxeQIKGEXb8
 month: 7
-day: 16-18
+day: '17'
 layout: talk
-youtube: S9RbSCpy_pg
-key: Lawrence:mlss15b
+key: Lawrence:mlss15bII
 categories:
-- Lawrence:mlss15b
+- Lawrence:mlss15bII
 authors:
 - firstname: Neil D.
   lastname: Lawrence
-published: 2015-07-16
+published: 2015-07-17
 ---
