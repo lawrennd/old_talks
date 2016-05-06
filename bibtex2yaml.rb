@@ -5,6 +5,7 @@ require 'bibtex'
 require 'yaml'
 require 'facets'
 require 'pandoc-ruby'
+require 'pry'
 
 bibdir = '/Users/neil/SheffieldML/publications/bib'
 pubdir = '/Users/neil/lawrennd/'
