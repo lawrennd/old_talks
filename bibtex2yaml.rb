@@ -45,12 +45,15 @@ def bibtohash(obj, bib)
   ha.tap { |hs| hs.delete('month_numeric') }
 
   ha.delete_if {|key, value| key[0..2] == "opt" }
-
+  if ha.has_key?('title')
+    ha['title'] = detex(ha['abstract'])
+  end
   if ha['abstract'] == ''
     ha.tap { |hs| hs.delete('abstract') }
   else
     ha['abstract'] = detex(ha['abstract'])
   end
+
 
   if ha.has_key?('pages')
     pages = ha['pages'].split('-')
