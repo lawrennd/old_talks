@@ -45,9 +45,11 @@ def bibtohash(obj, bib)
   ha.tap { |hs| hs.delete('month_numeric') }
 
   ha.delete_if {|key, value| key[0..2] == "opt" }
+
   if ha.has_key?('title')
-    ha['title'] = detex(ha['abstract'])
+    ha['title'] = detex(ha['title'])
   end
+
   if ha['abstract'] == ''
     ha.tap { |hs| hs.delete('abstract') }
   else
