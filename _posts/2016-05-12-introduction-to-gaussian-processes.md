@@ -1,7 +1,7 @@
 ---
 title: Introduction to Gaussian Processes
 venue: MLSS, Cadiz
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/gp_mlss16.pdf
+pdf: gp_mlss16.pdf
 year: '2016'
 month: 5
 day: '12'
