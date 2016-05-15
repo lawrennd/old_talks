@@ -20,9 +20,7 @@ authors:
   lastname: Lawrence
   url: http://inverseprobability.com
   institute: University of Sheffield
-- firstname: Antti
-  lastname: Honkela
-  url: ''
-  institute: ''
+  twitter: lawrennd
+- 
 published: 2010-10-10
 ---

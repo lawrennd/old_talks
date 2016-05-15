@@ -25,5 +25,6 @@ authors:
   lastname: Lawrence
   url: http://inverseprobability.com
   institute: University of Sheffield
+  twitter: lawrennd
 published: 2007-11-07
 ---

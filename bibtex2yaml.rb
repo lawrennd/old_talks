@@ -149,17 +149,17 @@ def splitauthors(ha, obj, researchers, type=:author)
   obj[type].each.with_index(0) do |name, index|
     first = detex(name.first)
     last = detex(name.last)
-    url = ''
-    institute = ''
     for researcher in researchers
       if researcher['firstname'] == first and researcher['lastname']==last
-        url = researcher['url']
-        institute = researcher['institute']
+        a[index] = {'firstname' => first, 'lastname' => last}
+        for key in ['url', 'institute', 'twitter', 'gscholar']
+          if researcher.has_key?(key)
+            a[index][key] = researcher[key]
+          end
+        end
         break
       end
     end
-
-    a[index] = {'firstname' => first, 'lastname' => last, 'url' => url, 'institute' => institute}
   end
   puts a
   return a

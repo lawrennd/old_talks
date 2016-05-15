@@ -17,9 +17,6 @@ categories:
 - Sanguinetti:masamb06
 abstract: ''
 authors:
-- firstname: Guido
-  lastname: Sanguinetti
-  url: ''
-  institute: ''
+- 
 published: 2006-04-10
 ---

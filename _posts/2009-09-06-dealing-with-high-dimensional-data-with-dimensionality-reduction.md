@@ -15,9 +15,7 @@ authors:
   lastname: Lawrence
   url: http://inverseprobability.com
   institute: University of Sheffield
-- firstname: Jon
-  lastname: Barker
-  url: ''
-  institute: ''
+  twitter: lawrennd
+- 
 published: 2009-09-06
 ---
