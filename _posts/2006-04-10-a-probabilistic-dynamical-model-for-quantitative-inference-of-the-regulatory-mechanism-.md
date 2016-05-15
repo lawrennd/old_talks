@@ -17,6 +17,9 @@ categories:
 - Sanguinetti:masamb06
 abstract: ''
 authors:
-- 
+- firstname: Guido
+  lastname: Sanguinetti
+  url: http://homepages.inf.ed.ac.uk/gsanguin/
+  institute: University of Edinburgh
 published: 2006-04-10
 ---

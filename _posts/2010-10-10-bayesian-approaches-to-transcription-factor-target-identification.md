@@ -22,6 +22,7 @@ authors:
   institute: University of Sheffield
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
-- 
+- firstname: Antti
+  lastname: Honkela
 published: 2010-10-10
 ---
