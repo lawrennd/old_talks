@@ -1,6 +1,6 @@
 ---
 title: "<span>G</span>aussian Processes (Part III)"
-venue: MLSS, T\"ubingen
+venue: MLSS, Tübingen
 linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/gp_mlss15b.pdf
 year: '2015'
 youtube: Ead4TivIOmU

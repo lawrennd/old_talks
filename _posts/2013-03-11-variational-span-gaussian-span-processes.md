@@ -4,7 +4,7 @@ abstract: In this talk we will review the variational approximation to Gaussian 
   which enables Bayesian learning of latent variables. We will focus in particular
   on a new explanation of the variational approach that also leads to stochastic variational
   inference for GPs.
-venue: Max Planck Institute, T\"ubingen, Germany
+venue: Max Planck Institute, Tübingen, Germany
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gpvar_tuebingen13.pdf
 year: '2013'
 month: 3

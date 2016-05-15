@@ -14,7 +14,7 @@ abstract: In this talk we will introduce deep Gaussian process (GP) models. Deep
   modelling a digit data set containing only 150 examples. In the seminar we will
   briefly review dimensionality reduction via Gaussian processes, before showing how
   this framework can be extended to build deep models.
-venue: Max Planck Institute, T\"ubingen, Germany
+venue: Max Planck Institute, Tübingen, Germany
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_tuebingen13.pdf
 year: '2013'
 month: 3

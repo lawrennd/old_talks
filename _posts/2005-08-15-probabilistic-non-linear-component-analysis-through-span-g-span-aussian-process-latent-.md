@@ -1,7 +1,7 @@
 ---
 title: Probabilistic Non-linear Component Analysis through <span>G</span>aussian Process
   Latent Variable Models
-venue: Max Planck Institute, T\"ubingen, Germany
+venue: Max Planck Institute, Tübingen, Germany
 linkpptgz: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm.ppt.gz
 year: '2005'
 month: 8

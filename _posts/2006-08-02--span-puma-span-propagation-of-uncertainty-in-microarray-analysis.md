@@ -1,6 +1,6 @@
 ---
 title: "<span>PUMA</span>: Propagation of Uncertainty in Microarray Analysis"
-venue: Max Planck Institute, T\"ubingen, Germany
+venue: Max Planck Institute, Tübingen, Germany
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/puma_06_08.pdf
 year: '2006'
 month: 8
