@@ -10,6 +10,7 @@ abstract: In this talk we describe how deep neural networks can be modified to p
   models.
 venue: Deep Learning Workshop @ICML2015
 linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/deepgp_icmldeep15.pdf
+youtube: YHwnzd0i1XU
 year: '2015'
 month: 7
 day: '11'
