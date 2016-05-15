@@ -14,10 +14,6 @@ abstract: Density modelling in high dimensions is a very difficult problem. Trad
   data sets, including human motion data, a vowel data set and a robot mapping problem.
 venue: Erice Workshop on Mathematics and Medical Diagnosis, Sicily, Italy
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_06_07.pdf
-label1: Demos Software
-link1: http://inverseprobability.com/oxford/
-label2: Main Software
-link2: https://github.com/SheffieldML/GPmat/
 year: '2006'
 month: 7
 day: '11'
@@ -34,4 +30,10 @@ authors:
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
 published: 2006-07-11
+extras:
+- label: Demos Software
+  link: http://inverseprobability.com/oxford/
+- label: Main Software
+  link: https://github.com/SheffieldML/GPmat/
+errata: []
 ---

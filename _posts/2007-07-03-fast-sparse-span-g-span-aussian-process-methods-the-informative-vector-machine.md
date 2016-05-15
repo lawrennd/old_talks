@@ -9,10 +9,6 @@ abstract: Gaussian processes are a non parametric approach to learning regressio
   and learning invariances.
 venue: Dept of Signal Theory and Communications, Universidad Carlos III de Madrid,
   Spain
-label1: IVM Software
-link1: http://inverseprobability.com/ivm/
-label2: IVM C++ Software
-link2: https://github.com/SheffieldML/GPc/
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gpivm_07_07.pdf
 year: '2007'
 month: 7
@@ -29,4 +25,10 @@ authors:
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
 published: 2007-07-03
+extras:
+- label: IVM Software
+  link: http://inverseprobability.com/ivm/
+- label: IVM C++ Software
+  link: https://github.com/SheffieldML/GPc/
+errata: []
 ---

@@ -3,8 +3,6 @@ title: 'Everything You Want to Know About <span>G</span>aussian Processes: <span
   Process Regression'
 venue: CVPR Tutorial, Providence, RI, USA
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gp_cvpr12_session1.pdf
-label1: Software
-link1: https://github.com/SheffieldML/GPmat/
 note: Tutorial with Raquel Urtasun.
 year: '2012'
 month: 6
@@ -22,4 +20,8 @@ authors:
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
 published: 2012-06-16
+extras:
+- label: Software
+  link: https://github.com/SheffieldML/GPmat/
+errata: []
 ---

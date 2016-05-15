@@ -16,8 +16,6 @@ abstract: In this talk we will introduce deep Gaussian process (GP) models. Deep
   this framework can be extended to build deep models.
 venue: Aalto University, Finland
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_aalto13.pdf
-label1: Software
-link1: http://inverseprobability.com/hsvargplvm/
 year: '2013'
 month: 1
 day: '24'
@@ -33,4 +31,8 @@ authors:
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
 published: 2013-01-24
+extras:
+- label: Software
+  link: http://inverseprobability.com/hsvargplvm/
+errata: []
 ---

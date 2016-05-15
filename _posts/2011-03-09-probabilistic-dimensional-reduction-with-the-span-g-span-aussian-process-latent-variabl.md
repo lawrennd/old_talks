@@ -15,10 +15,6 @@ abstract: Density modelling in high dimensions is a very difficult problem. Trad
   motion data, speech data and video.
 venue: Department of Computer Science, University of Loughgborough, U.K.
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/loughborough_gplvm.pdf
-label1: Bayesian GPLVM Software
-link1: https://github.com/SheffieldML/vargplvm/
-label2: Main Software
-link2: https://github.com/SheffieldML/GPmat/
 year: '2011'
 month: 3
 day: 09
@@ -35,4 +31,10 @@ authors:
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
 published: 2011-03-09
+extras:
+- label: Bayesian GPLVM Software
+  link: https://github.com/SheffieldML/vargplvm/
+- label: Main Software
+  link: https://github.com/SheffieldML/GPmat/
+errata: []
 ---

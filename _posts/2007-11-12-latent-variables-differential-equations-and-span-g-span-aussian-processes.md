@@ -13,14 +13,6 @@ abstract: 'We are used to dealing with the situation where we have a latent vari
   inference tractably and learn parameters of interest in the system.'
 venue: Microsoft Research, Cambridge, U.K.
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lvDeGp.pdf
-label1: PUMA Project Page
-link1: http://bioinf.man.ac.uk/resources/puma/
-label2: TIGRE Project Page
-link2: http://sheffieldml.github.io/projects/tigre/
-label3: GPSIM Software
-link3: http://inverseprobability.com/gpsim/
-label4: Demos Software
-link4: http://inverseprobability.com/oxford/
 year: '2007'
 month: 11
 day: '12'
@@ -37,4 +29,14 @@ authors:
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
 published: 2007-11-12
+extras:
+- label: PUMA Project Page
+  link: http://bioinf.man.ac.uk/resources/puma/
+- label: TIGRE Project Page
+  link: http://sheffieldml.github.io/projects/tigre/
+- label: GPSIM Software
+  link: http://inverseprobability.com/gpsim/
+- label: Demos Software
+  link: http://inverseprobability.com/oxford/
+errata: []
 ---

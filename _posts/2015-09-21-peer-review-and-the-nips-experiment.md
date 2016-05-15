@@ -9,8 +9,6 @@ abstract: The peer review process can be difficult to navigate for newcomers. In
 venue: MLPM Summer School, Museum of Science and Industry, Manchester, UK
 reveal: nips_mlpm15.slides.html
 ipynb: nips_mlpm15.ipynb
-label1: Software
-link1: https://github.com/sods/conference/
 year: '2015'
 month: 9
 day: '21'
@@ -26,4 +24,8 @@ authors:
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
 published: 2015-09-21
+extras:
+- label: Software
+  link: https://github.com/sods/conference/
+errata: []
 ---

@@ -4,8 +4,6 @@ title: Inferring Latent Functions with <span>G</span>aussian Processes in Differ
 venue: Department of Electronics and Computer Science, University of Southampton,
   U.K.
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gpSysBio.pdf
-label1: Seminar Page
-link1: http://www.isis.ecs.soton.ac.uk/seminars/?date=20080430
 year: '2008'
 month: 4
 day: '30'
@@ -29,4 +27,8 @@ authors:
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
 published: 2008-04-30
+extras:
+- label: Seminar Page
+  link: http://www.isis.ecs.soton.ac.uk/seminars/?date=20080430
+errata: []
 ---

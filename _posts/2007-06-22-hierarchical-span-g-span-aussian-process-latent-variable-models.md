@@ -9,10 +9,6 @@ abstract: The Gaussian process latent variable model (GP-LVM) is a powerful appr
   which is applied to the visualisation of human motion data sets.
 venue: ICML, Corvallis, Oregon
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/hgplvm_07_06.pdf
-label1: Demos Software
-link1: http://inverseprobability.com/oxford/
-label2: Main Software
-link2: https://github.com/SheffieldML/hgplvm/
 year: '2007'
 month: 6
 day: '22'
@@ -29,4 +25,10 @@ authors:
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
 published: 2007-06-22
+extras:
+- label: Demos Software
+  link: http://inverseprobability.com/oxford/
+- label: Main Software
+  link: https://github.com/SheffieldML/hgplvm/
+errata: []
 ---

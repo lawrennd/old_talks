@@ -124,7 +124,33 @@ def bibtohash(obj, bib, researchers)
   if ha.has_key?('end')
     ha['end'] = Date.parse ha['end']
   end
-    
+  ha['extras'] = []
+  max_labels=10
+  for i in 1..max_labels
+    label = 'label' << i.to_s
+    link = 'link' << i.to_s
+    if ha.has_key?(label) and ha.has_key?(link)
+      ha['extras'] << {'label' => ha[label], 'link' => ha[link]}
+      ha.tap { |hs| hs.delete(label) }
+      ha.tap { |hs| hs.delete(link) }
+    end
+  end
+  ha['errata'] = []
+  max_errata = 10
+  for i in 1..max_errata
+    errata = 'errata' << i.to_s
+    errata_credit = 'erratacredit' << i.to_s
+    if ha.has_key?(errata)
+      if ha.has_key?(errata_credit)
+        ha['errata'] << {'text' => ha[errata], 'credit' => ha[errata_credit]}
+        ha.tap { |hs| hs.delete(errata) }
+        ha.tap { |hs| hs.delete(errata_credit) }
+      else
+        ha['errata'] << {'text' => ha[errata]}
+        ha.tap { |hs| hs.delete(errata) }
+      end
+    end
+  end
   return ha
 end
 

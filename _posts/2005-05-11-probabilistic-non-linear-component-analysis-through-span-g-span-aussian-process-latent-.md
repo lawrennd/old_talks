@@ -17,8 +17,6 @@ abstract: It is known that Principal Component Analysis has an underlying probab
 venue: Department of Electronics and Computer Science, University of Southampton,
   U.K.
 linkpptgz: ftp://ftp.dcs.shef.ac.uk/home/neil/long_gplvm.ppt.gz
-label1: Seminar Page
-link1: http://www.isis.ecs.soton.ac.uk/seminars/?date=20050511
 year: '2005'
 month: 5
 day: '11'
@@ -35,4 +33,8 @@ authors:
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
 published: 2005-05-11
+extras:
+- label: Seminar Page
+  link: http://www.isis.ecs.soton.ac.uk/seminars/?date=20050511
+errata: []
 ---

@@ -6,14 +6,6 @@ abstract: |-
   In this talk we will show how, by making use of structural information about the interaction network (e.g. arising form ChIP-chip data), transcription factor activities can estimated using probabilistic inference. We propose two different probabilistic models: a simple linear model with Kalman filter based dynamics for genome/transcriptome wide studies and a differential equation based Gaussian process model with a more physically realistic parameterisation for smaller interaction networks.
 venue: Dept of Signal Theory and Communications, Universidad Carlos III de Madrid,
   Spain
-label1: GPSIM Software
-link1: http://inverseprobability.com/gpsim/
-label2: TFA Software
-link2: https://github.com/SheffieldML/chipdyno/
-label3: TFA Software II
-link3: http://inverseprobability.com/chipvar/
-label4: PUMA Software
-link4: http://www.bioconductor.org/packages/2.0/bioc/html/puma.html
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/puma_07_07.pdf
 year: '2007'
 month: 7
@@ -30,4 +22,14 @@ authors:
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
 published: 2007-07-05
+extras:
+- label: GPSIM Software
+  link: http://inverseprobability.com/gpsim/
+- label: TFA Software
+  link: https://github.com/SheffieldML/chipdyno/
+- label: TFA Software II
+  link: http://inverseprobability.com/chipvar/
+- label: PUMA Software
+  link: http://www.bioconductor.org/packages/2.0/bioc/html/puma.html
+errata: []
 ---

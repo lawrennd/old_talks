@@ -9,10 +9,6 @@ venue: Workshop on Probabilistic formulation of the inverse problem and applicat
   to image reconstruction, Neuroscience Research Institute, University of Manchester,
   U.K.
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_inverse_09_07.pdf
-label1: Demos Software
-link1: http://inverseprobability.com/oxford/
-label2: Main Software
-link2: https://github.com/SheffieldML/GPmat/
 year: '2007'
 month: 9
 day: '13'
@@ -29,4 +25,10 @@ authors:
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
 published: 2007-09-13
+extras:
+- label: Demos Software
+  link: http://inverseprobability.com/oxford/
+- label: Main Software
+  link: https://github.com/SheffieldML/GPmat/
+errata: []
 ---

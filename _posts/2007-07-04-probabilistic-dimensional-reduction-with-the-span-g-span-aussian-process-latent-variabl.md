@@ -15,10 +15,6 @@ abstract: Density modelling in high dimensions is a very difficult problem. Trad
 venue: Dept of Signal Theory and Communications, Universidad Carlos III de Madrid,
   Spain
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_07_07.pdf
-label1: Demos Software
-link1: http://inverseprobability.com/oxford/
-label2: Main Software
-link2: https://github.com/SheffieldML/GPmat/
 year: '2007'
 month: 7
 day: '4'
@@ -35,4 +31,10 @@ authors:
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
 published: 2007-07-04
+extras:
+- label: Demos Software
+  link: http://inverseprobability.com/oxford/
+- label: Main Software
+  link: https://github.com/SheffieldML/GPmat/
+errata: []
 ---

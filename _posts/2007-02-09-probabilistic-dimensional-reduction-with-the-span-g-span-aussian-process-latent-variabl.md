@@ -15,12 +15,6 @@ abstract: Density modelling in high dimensions is a very difficult problem. Trad
 venue: Computer Science and Artificial Intelligence Laboratory, Massachusetts Institute
   of Technology, Boston, MA, U.S.A.
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_07_02.pdf
-label1: Demos Software
-link1: http://inverseprobability.com/oxford/
-label2: Main Software
-link2: https://github.com/SheffieldML/GPmat/
-label3: Seminar Page
-link3: http://www.eecs.mit.edu/cgi-bin/calendar.cgi?page=AY06-07/data/106.dat
 year: '2007'
 month: 2
 day: '9'
@@ -37,4 +31,12 @@ authors:
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
 published: 2007-02-09
+extras:
+- label: Demos Software
+  link: http://inverseprobability.com/oxford/
+- label: Main Software
+  link: https://github.com/SheffieldML/GPmat/
+- label: Seminar Page
+  link: http://www.eecs.mit.edu/cgi-bin/calendar.cgi?page=AY06-07/data/106.dat
+errata: []
 ---

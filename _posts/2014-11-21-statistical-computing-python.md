@@ -1,12 +1,6 @@
 ---
 title: 'Statistical Computing: Python'
 venue: Royal Statistical Society, London, U.K.
-label1: Event Detail
-link1: http://www.statslife.org.uk/events/eventdetail/284/-/-
-label2: Slides (Regression, IPython Notebook)
-link2: http://nbviewer.ipython.org/github/lawrennd/statslang/blob/master/python/statslang.ipynb
-label3: Slides (Monte Carlo, IPython Notebook, written by Mike Croucher)
-link3: http://nbviewer.ipython.org/github/lawrennd/MultiLangMonteCarlo/blob/master/MultiLangStats.ipynb
 year: '2014'
 month: 11
 day: '21'
@@ -23,4 +17,12 @@ authors:
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
 published: 2014-11-21
+extras:
+- label: Event Detail
+  link: http://www.statslife.org.uk/events/eventdetail/284/-/-
+- label: Slides (Regression, IPython Notebook)
+  link: http://nbviewer.ipython.org/github/lawrennd/statslang/blob/master/python/statslang.ipynb
+- label: Slides (Monte Carlo, IPython Notebook, written by Mike Croucher)
+  link: http://nbviewer.ipython.org/github/lawrennd/MultiLangMonteCarlo/blob/master/MultiLangStats.ipynb
+errata: []
 ---

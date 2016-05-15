@@ -9,8 +9,6 @@ abstract: Many application domains of machine learning can be reduced to inferen
   of the concentration of transcription factors which regulate gene expression and
   creating probabilistic models of human motion for animation and tracking.
 venue: Intel Research, Seattle, U.S.A.
-label1: p53 Software
-link1: http://inverseprobability.com/gpsim/
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gpintroTalk_06_08.pdf
 linksoftware: http://inverseprobability.com/oxford/
 year: '2006'
@@ -28,4 +26,8 @@ authors:
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
 published: 2006-08-21
+extras:
+- label: p53 Software
+  link: http://inverseprobability.com/gpsim/
+errata: []
 ---

@@ -16,10 +16,6 @@ venue: Google Research, New York, N.Y., U.S.A.
 linkvideo: http://video.google.com/videoplay?docid=-5127068978792458641
 youtube: DS853uA0u4I
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_07_02.pdf
-label1: Demos Software
-link1: http://inverseprobability.com/oxford/
-label2: Main Software
-link2: https://github.com/SheffieldML/GPmat/
 year: '2007'
 month: 2
 day: '12'
@@ -36,4 +32,10 @@ authors:
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
 published: 2007-02-12
+extras:
+- label: Demos Software
+  link: http://inverseprobability.com/oxford/
+- label: Main Software
+  link: https://github.com/SheffieldML/GPmat/
+errata: []
 ---
