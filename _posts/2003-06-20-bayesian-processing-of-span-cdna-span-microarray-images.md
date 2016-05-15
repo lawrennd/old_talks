@@ -23,5 +23,7 @@ categories:
 authors:
 - firstname: Neil D.
   lastname: Lawrence
+  url: http://inverseprobability.com
+  institute: University of Sheffield
 published: 2003-06-20
 ---

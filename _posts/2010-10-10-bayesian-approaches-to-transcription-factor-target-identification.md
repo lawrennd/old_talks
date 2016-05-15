@@ -18,7 +18,11 @@ categories:
 authors:
 - firstname: Neil D.
   lastname: Lawrence
+  url: http://inverseprobability.com
+  institute: University of Sheffield
 - firstname: Antti
   lastname: Honkela
+  url: ''
+  institute: ''
 published: 2010-10-10
 ---

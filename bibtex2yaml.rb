@@ -19,7 +19,7 @@ def detex(text)
   # Returning up to second end character is to deal with new line
   return PandocRuby.convert(text, {:from => :latex, :to => :markdown}, 'no-wrap')[0..-2]
 end
-def bibtohash(obj, bib)
+def bibtohash(obj, bib, researchers)
   # Takes an bib file object and returns a cleaned up hash.
   # Params:
   # +obj+:: Object to clean up
@@ -27,7 +27,7 @@ def bibtohash(obj, bib)
   # +errhandler+:: +Proc+ object that takes a pipe object as first and only param (may be nil)
   ha = obj.to_hash(:quotes=>'').rekey!(&:to_s)
   if ha.has_key?('crossref')
-    hac = bibtohash(bib[ha['crossref']], bib)
+    hac = bibtohash(bib[ha['crossref']], bib, researchers)
     hac.each do |key, array|
       unless ha.has_key?(key)
         ha[key]=array
@@ -84,12 +84,12 @@ def bibtohash(obj, bib)
     ha['sections'] = hasections
   end
   if ha.has_key?('editor')    
-    ha['editors'] = splitauthors(ha, obj, type=:editor)
+    ha['editors'] = splitauthors(ha, obj, researchers, type=:editor)
     ha.tap { |hs| hs.delete('editor') }
   end
   
   if ha.has_key?('author')
-    ha['authors'] = splitauthors(ha, obj)
+    ha['authors'] = splitauthors(ha, obj, researchers)
     ha.tap { |hs| hs.delete('author') }
   end
   if ha.has_key?('published')
@@ -144,19 +144,33 @@ def filename(date, title)
   return f
 end
 
-def splitauthors(ha, obj, type=:author)
+def splitauthors(ha, obj, researchers, type=:author)
   a = Array.new(obj[type].length)       #=> [nil, nil, nil]
   obj[type].each.with_index(0) do |name, index|
     first = detex(name.first)
     last = detex(name.last)
-    a[index] = {'firstname' => first, 'lastname' => last}
+    url = ''
+    institute = ''
+    for researcher in researchers
+      if researcher['firstname'] == first and researcher['lastname']==last
+        url = researcher['url']
+        institute = researcher['institute']
+        break
+      end
+    end
+
+    a[index] = {'firstname' => first, 'lastname' => last, 'url' => url, 'institute' => institute}
   end
+  puts a
   return a
 end
 
 if ARGV.length < 1
   puts "Usage: #{$0} <bib>"
 else
+
+  researchers = YAML.load_file('../data/researchers.yml')
+  
   txt = ''
   ARGV.each do |obj|
     txt += Kernel.open(obj).read
@@ -175,7 +189,7 @@ else
   # Process talks
   reponame = 'talks'
   b['@talk'].each do |obj|
-    ha = bibtohash(obj, b)
+    ha = bibtohash(obj, b, researchers)
     ya = ha.to_yaml(:ExplicitTypes => true)
     fname = filename(ha['published'], ha['title'])
     out = File.open(talkdir + reponame + '/_posts/' + fname, 'w')
@@ -186,7 +200,7 @@ else
   # Process journals
   reponame = 'publications'
   b['@article'].each do |obj|
-    ha = bibtohash(obj, b)
+    ha = bibtohash(obj, b, researchers)
     ya = ha.to_yaml(:ExplicitTypes => true)
     fname = filename(ha['published'], ha['key'])
     out = File.open(pubdir + reponame + '/_posts/' + fname, 'w')
@@ -195,7 +209,7 @@ else
   end  
 
   b['@inproceedings'].each do |obj|
-    ha = bibtohash(obj, b)
+    ha = bibtohash(obj, b, researchers)
     ya = ha.to_yaml(:ExplicitTypes => true)
     fname = filename(ha['published'], ha['key'])
     out = File.open(pubdir + reponame + '/_posts/' + fname, 'w')
@@ -204,7 +218,7 @@ else
   end  
 
   b['@techreport'].each do |obj|
-    ha = bibtohash(obj, b)
+    ha = bibtohash(obj, b, researchers)
     ya = ha.to_yaml(:ExplicitTypes => true)
     fname = filename(ha['published'], ha['key'])
     out = File.open(pubdir + reponame + '/_posts/' + fname, 'w')
@@ -213,7 +227,7 @@ else
   end  
 
   b['@incollection'].each do |obj|
-    ha = bibtohash(obj, b)
+    ha = bibtohash(obj, b, researchers)
     ya = ha.to_yaml(:ExplicitTypes => true)
     fname = filename(ha['published'], ha['key'])
     out = File.open(pubdir + reponame + '/_posts/' + fname, 'w')
@@ -222,7 +236,7 @@ else
   end  
 
   b['@misc'].each do |obj|
-    ha = bibtohash(obj, b)
+    ha = bibtohash(obj, b, researchers)
     ya = ha.to_yaml(:ExplicitTypes => true)
     fname = filename(ha['published'], ha['key'])
     out = File.open(pubdir + reponame + '/_posts/' + fname, 'w')

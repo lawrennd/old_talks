@@ -13,7 +13,11 @@ abstract: ''
 authors:
 - firstname: Neil D.
   lastname: Lawrence
+  url: http://inverseprobability.com
+  institute: University of Sheffield
 - firstname: Jon
   lastname: Barker
+  url: ''
+  institute: ''
 published: 2009-09-06
 ---
