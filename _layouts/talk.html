@@ -29,11 +29,12 @@ layout: post
     <h3>Links</h3>
     <div id="extras">
     <ul>
+      {%if page.ppt %}<li><a href="{{ page.ppt }}">Powerpoint</a></li>{% endif %}
       {%if page.linkpdf %}<li><a href="{{ page.linkpdf }}">Download PDF</a></li>{% endif %}
       {%if page.linkpsgz %}<li><a href="{{ page.linkpsgz }}">Download Gzipped Postscript</a></li>{% endif %}
       {%if page.linkps %}<li><a href="{{ page.linkps }}">Download Postscript</a></li>{% endif %}
-      {%if page.linkppt %}<li><a href="{{ page.linkps }}">Download PPT</a></li>{% endif %}
-      {%if page.linkpptgz %}<li><a href="{{ page.linkps }}">Download Gzipped PPT</a></li>{% endif %}
+      {%if page.linkppt %}<li><a href="{{ page.linkppt }}">Download PPT</a></li>{% endif %}
+      {%if page.linkpptgz %}<li><a href="{{ page.linkpptgz }}">Download Gzipped PPT</a></li>{% endif %}
       {%if page.linksoftware %}<li><a href="{{ page.linksoftware }}">Download Software</a></li>{% endif %}
       {% for extra in page.extras %}
       <li><a href="{{ extra.link }}">{{ extra.label }}</a></li>
