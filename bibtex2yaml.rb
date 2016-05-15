@@ -114,8 +114,6 @@ def bibtohash(obj, bib, researchers)
       day = '01'
     end
     date = year + '-' + month + '-' + day
-    puts ha['key']
-    puts date
     ha['published'] = Date.parse date
   end
   if ha.has_key?('start')
@@ -187,7 +185,6 @@ def splitauthors(ha, obj, researchers, type=:author)
       end
     end
   end
-  puts a
   return a
 end
 
