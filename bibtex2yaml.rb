@@ -29,7 +29,9 @@ def bibtohash(obj, bib)
   if ha.has_key?('crossref')
     hac = bibtohash(bib[ha['crossref']], bib)
     hac.each do |key, array|
-      ha[key]=array
+      unless ha.has_key?(key)
+        ha[key]=array
+      end
     end
   end
   ha['layout'] = ha['bibtex_type'].to_s
