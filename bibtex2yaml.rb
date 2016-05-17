@@ -258,6 +258,30 @@ else
     out.puts "---"
   end  
 
+  b['@proceedings'].each do |obj|
+    ha = bibtohash(obj, b, researchers)
+    output = false
+    for author in ha['authors']
+      if author.firstname == 'Neil D.' and author.lastname = 'Lawrence'
+        output = true
+      end
+    end
+    for editor in ha['editors']
+      if editor.firstname == 'Neil D.' and editor.lastname = 'Lawrence'
+        output = true
+      end
+    end
+    if not output
+      next
+    end
+    ya = ha.to_yaml(:ExplicitTypes => true)
+    fname = filename(ha['published'], ha['key'])
+    out = File.open(pubdir + reponame + '/_posts/' + fname, 'w')
+    out.puts ya
+    out.puts "---"
+  end  
+
+  
   b['@misc'].each do |obj|
     ha = bibtohash(obj, b, researchers)
     ya = ha.to_yaml(:ExplicitTypes => true)
