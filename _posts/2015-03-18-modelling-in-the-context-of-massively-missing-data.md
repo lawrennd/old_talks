@@ -11,7 +11,7 @@ abstract: In the age of large streaming data it seems appropriate to revisit the
   data storage of the entire data set, which presents problems for massive, streaming
   data. I will present a potential solution, but perhaps end with more questions than
   we started with.
-venue: Max Planck Institute, T\"ubingen
+venue: Max Planck Institute, Tübingen
 linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/missingdata_tuebingen15.pdf
 linkipynb: github/SheffieldML/notebook/blob/master/lab_classes/gprs/Low%20Rank%20Gaussian%20Processes.ipynb
 year: '2015'
@@ -24,5 +24,11 @@ categories:
 authors:
 - firstname: Neil D.
   lastname: Lawrence
+  url: http://inverseprobability.com
+  institute: University of Sheffield
+  twitter: lawrennd
+  gscholar: r3SJcvoAAAAJ
 published: 2015-03-18
+extras: []
+errata: []
 ---

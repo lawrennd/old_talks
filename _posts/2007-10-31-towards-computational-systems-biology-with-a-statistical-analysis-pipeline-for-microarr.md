@@ -10,12 +10,6 @@ abstract: |-
 venue: Department of Molecular Biology and Biotechnology, University of Sheffield,
   U.K.
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/puma_mbb.pdf
-label1: PUMA Project Page
-link1: http://bioinf.man.ac.uk/resources/puma/
-label2: TIGRE Project Page
-link2: http://sheffieldml.github.io/projects/tigre/
-label3: PUMA Software
-link3: http://bioconductor.org/packages/2.2/bioc/html/puma.html
 year: '2007'
 month: 10
 day: '31'
@@ -27,5 +21,17 @@ categories:
 authors:
 - firstname: Neil D.
   lastname: Lawrence
+  url: http://inverseprobability.com
+  institute: University of Sheffield
+  twitter: lawrennd
+  gscholar: r3SJcvoAAAAJ
 published: 2007-10-31
+extras:
+- label: PUMA Project Page
+  link: http://bioinf.man.ac.uk/resources/puma/
+- label: TIGRE Project Page
+  link: http://sheffieldml.github.io/projects/tigre/
+- label: PUMA Software
+  link: http://bioconductor.org/packages/2.2/bioc/html/puma.html
+errata: []
 ---

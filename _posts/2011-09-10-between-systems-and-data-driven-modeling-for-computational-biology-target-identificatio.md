@@ -1,6 +1,6 @@
 ---
 title: 'Between Systems and Data-driven Modeling for Computational Biology: Target
-  Identification with {Gaussian} Processes'
+  Identification with <span>Gaussian</span> Processes'
 venue: ABCD2011, Ravenna, Italy
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/ode_abcd11.pdf
 mp3: ftp://ftp.dcs.shef.ac.uk/home/neil/110910_ode_abcd11.mp3
@@ -18,5 +18,11 @@ categories:
 authors:
 - firstname: Neil D.
   lastname: Lawrence
+  url: http://inverseprobability.com
+  institute: University of Sheffield
+  twitter: lawrennd
+  gscholar: r3SJcvoAAAAJ
 published: 2011-09-10
+extras: []
+errata: []
 ---

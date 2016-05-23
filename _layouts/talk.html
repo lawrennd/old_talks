@@ -5,14 +5,13 @@ layout: post
 
   <article class="post-content">
 
-    at <b>{{ page.venue }}</b> on {{ page.date | date: "%b %-d, %Y" }} {%if page.linkpdf %}[<a href="{{ page.linkpdf }}">pdf</a>]{% endif %}{%if page.linkpptgz %}[<a href="{{ page.linkpptgz }}">Gzipped Powerpoint</a>]{% endif %}{%if page.linkipynb %}[<a href="{{ site.nbviewer }}{{ page.linkipynb }}">jupyter</a>]{% endif %}{%if page.linkreveal %}[<a href="{{ page.linkreveal }}">reveal</a>]{% endif %}{%if page.pdf %}[<a href="{{ site.talk_files }}/{{ page.pdf }}">pdf</a>]{% endif %}{%if page.ipynb %}[<a href="{{ site.nbviewer }}{{ site.basenb }}{{ page.ipynb }}">jupyter</a>]{% endif %}{%if page.reveal %}[<a href="{{ site.talk_files }}{{ page.reveal }}">reveal</a>]{% endif %}{% if page.label1 %}[<a href="{{ page.link1 }}">{{ page.label1 }}</a>]{% endif %}{% if page.label2 %}[<a href="{{ page.link2 }}">{{ page.label2 }}</a>]{% endif %}{% if page.label3 %}[<a href="{{ page.link3 }}">{{ page.label3 }}</a>]{% endif %}{% if page.label4 %}[<a href="{{ page.link4 }}">{{ page.label4 }}</a>]{% endif %}
+    at <b>{{ page.venue }}</b> on {{ page.date | date: "%b %-d, %Y" }} {%if page.linkpdf %}[<a href="{{ page.linkpdf }}">pdf</a>]{% endif %}{%if page.linkpptgz %}[<a href="{{ page.linkpptgz }}">Gzipped Powerpoint</a>]{% endif %}{%if page.linkipynb %}[<a href="{{ site.nbviewer }}{{ page.linkipynb }}">jupyter</a>]{% endif %}{%if page.linkreveal %}[<a href="{{ page.linkreveal }}">reveal</a>]{% endif %}{%if page.pdf %}[<a href="{{ site.talk_files }}/{{ page.pdf }}">pdf</a>]{% endif %}{%if page.ipynb %}[<a href="{{ site.nbviewer }}{{ site.basenb }}{{ page.ipynb }}">jupyter</a>]{% endif %}{%if page.reveal %}[<a href="{{ site.talk_files }}{{ page.reveal }}">reveal</a>]{% endif %}
     {%if page.reveal %}
     <p><iframe width="{{ site.reveal.width }}" height="{{ site.reveal.height }}" src="{{ site.talk_files }}{{ page.reveal }}" frameborder="0" allowfullscreen></iframe></p>
     {% endif %}
     {% if page.youtube %}
     <p><iframe width="{{ site.youtube.width }}" height="{{ site.youtube.height }}" src="https://www.youtube.com/embed/{{ page.youtube }}" frameborder="0" allowfullscreen></iframe></p>
     {% endif %}
-    
     {% if page.videolectures %}
     <h4>Videolectures</h4>
     <p><a href="http://videolectures.net/{{ page.videolectures }}/"><img src="http://videolectures.net/{{ page.videolectures }}/thumb.jpg" border=0></a></p>
@@ -25,7 +24,24 @@ layout: post
     
     <p>{{ page.abstract | markdownify }}</p>
     {% endif %}
-    
+
+    <h3>Links</h3>
+    <div id="extras">
+    <ul>
+      {%if page.ppt %}<li><a href="{{ site.talk_files }}/{{ page.ppt }}">Powerpoint</a></li>{% endif %}
+      {%if page.pdf %}<li><a href="{{ site.talk_files }}/{{ page.pdf }}">pdf</a></li>{% endif %}
+      {%if page.linkpdf %}<li><a href="{{ page.linkpdf }}">Download PDF</a></li>{% endif %}
+      {%if page.linkpsgz %}<li><a href="{{ page.linkpsgz }}">Download Gzipped Postscript</a></li>{% endif %}
+      {%if page.linkps %}<li><a href="{{ page.linkps }}">Download Postscript</a></li>{% endif %}
+      {%if page.linkppt %}<li><a href="{{ page.linkppt }}">Download PPT</a></li>{% endif %}
+      {%if page.linkpptgz %}<li><a href="{{ page.linkpptgz }}">Download Gzipped PPT</a></li>{% endif %}
+      {%if page.linksoftware %}<li><a href="{{ page.linksoftware }}">Download Software</a></li>{% endif %}
+      {% for extra in page.extras %}
+      <li><a href="{{ extra.link }}">{{ extra.label }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+
     {{ content | markdownify }}
   </article>
 
