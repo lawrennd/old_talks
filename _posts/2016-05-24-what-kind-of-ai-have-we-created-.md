@@ -8,6 +8,8 @@ abstract: There have been fears voiced by Elon Musk and Stephen Hawking about th
   humans think. The AI that Hawking and Musk fear is not yet here, but is the AI we
   have actually developed more or less disturbing than the vision they project?
 venue: A Pint of Science
+ipynb: 2016-05-24-what-kind-of-ai.ipynb
+reveal: 2016-05-24-what-kind-of-ai.slides.html
 year: '2016'
 month: 5
 day: '24'
