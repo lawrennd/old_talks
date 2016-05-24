@@ -15,8 +15,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <!-- General and theme style sheets -->
-<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/2.5.0/css/reveal.css">
-<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/2.5.0/css/theme/simple.css" id="theme">
+<link rel="stylesheet" href="http://lab.hakim.se/reveal-js//css/reveal.css">
+<link rel="stylesheet" href="http://lab.hakim.se/reveal-js//css/theme/simple.css" id="theme">
 
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
 <script>
@@ -24,14 +24,14 @@ if( window.location.search.match( /print-pdf/gi ) ) {
         var link = document.createElement( 'link' );
         link.rel = 'stylesheet';
         link.type = 'text/css';
-        link.href = 'http://cdn.jsdelivr.net/reveal.js/2.5.0/css/print/pdf.css';
+        link.href = 'http://lab.hakim.se/reveal-js//css/print/pdf.css';
         document.getElementsByTagName( 'head' )[0].appendChild( link );
 }
 
 </script>
 
 <!--[if lt IE 9]>
-<script src="http://cdn.jsdelivr.net/reveal.js/2.5.0/lib/js/html5shiv.js"></script>
+<script src="http://lab.hakim.se/reveal-js//lib/js/html5shiv.js"></script>
 <![endif]-->
 
 <!-- Loading the mathjax macro -->
@@ -382,7 +382,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/The_Overland_Pony_Express.jpg" width="60%"></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/The_Overland_Pony_Express.jpg" width="80%"></p>
 
 </div>
 </div>
@@ -440,26 +440,16 @@ a.anchor-link {
 </ul>
 </li>
 <li><p><a href="http://inverseprobability.com/blog.html">My blog</a> has articles relating to this area.</p>
-</li>
-<li><p><a href="http://inverseprobability.com/2015/12/04/what-kind-of-ai/">This post on System Zero</a> and <a href="http://inverseprobability.com/2015/11/09/artificial-stupidity/">This post on the Mechanistic Fallacy</a> relate to the ideas in this talk.</p>
+<ul>
+<li><a href="http://inverseprobability.com/2016/02/29/future-debates-ai">this post on communication</a></li>
+<li><a href="http://inverseprobability.com/2015/12/04/what-kind-of-ai/">this post on System Zero</a> </li>
+<li><a href="http://inverseprobability.com/2015/11/09/artificial-stupidity/">this post on the Mechanistic Fallacy</a></li>
+</ul>
 </li>
 </ul>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre> 
-</pre></div>
-
-</div>
-</div>
-</div>
-
 </div></section></section>
 </div>
 </div>
@@ -473,8 +463,8 @@ require(
       waitSeconds: 15
     },
     [
-      "http://cdn.jsdelivr.net/reveal.js/2.5.0/lib/js/head.min.js",
-      "http://cdn.jsdelivr.net/reveal.js/2.5.0/js/reveal.js"
+      "http://lab.hakim.se/reveal-js//lib/js/head.min.js",
+      "http://lab.hakim.se/reveal-js//js/reveal.js"
     ],
 
     function(head, Reveal){
@@ -490,9 +480,9 @@ require(
 
             // Optional libraries used to extend on reveal.js
             dependencies: [
-                { src: "http://cdn.jsdelivr.net/reveal.js/2.5.0/lib/js/classList.js",
+                { src: "http://lab.hakim.se/reveal-js//lib/js/classList.js",
                   condition: function() { return !document.body.classList; } },
-                { src: "http://cdn.jsdelivr.net/reveal.js/2.5.0/plugin/notes/notes.js",
+                { src: "http://lab.hakim.se/reveal-js//plugin/notes/notes.js",
                   async: true,
                   condition: function() { return !!document.body.classList; } }
             ]
