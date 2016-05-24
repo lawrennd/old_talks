@@ -258,6 +258,17 @@ else
     out.puts "---"
   end  
 
+
+  
+  b['@misc'].each do |obj|
+    ha = bibtohash(obj, b, researchers)
+    ya = ha.to_yaml(:ExplicitTypes => true)
+    fname = filename(ha['published'], ha['key'])
+    out = File.open(pubdir + reponame + '/_posts/' + fname, 'w')
+    out.puts ya
+    out.puts "---"
+  end  
+
   b['@proceedings'].each do |obj|
     ha = bibtohash(obj, b, researchers)
     output = false
@@ -280,17 +291,7 @@ else
     out.puts ya
     out.puts "---"
   end  
-
   
-  b['@misc'].each do |obj|
-    ha = bibtohash(obj, b, researchers)
-    ya = ha.to_yaml(:ExplicitTypes => true)
-    fname = filename(ha['published'], ha['key'])
-    out = File.open(pubdir + reponame + '/_posts/' + fname, 'w')
-    out.puts ya
-    out.puts "---"
-  end  
-
   # # Process projects
   # reponame = 'dsiprojects'
   # b['@bscproject'].each do |obj|
