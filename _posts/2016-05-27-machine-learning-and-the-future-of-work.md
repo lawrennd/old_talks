@@ -8,6 +8,8 @@ abstract: Machine learning technologies have evolved to the extent that they are
   talk we’ll explore where the advances are coming from and speculate about how our
   machine learning future is likely to pan out with a particular focus on work.
 venue: Cambridge Centre for Science and Policy
+pdf: 2016-05-27-future-of-work.pdf
+ppt: 2016-05-27-future-of-work.pptx
 year: '2016'
 month: 5
 day: '27'
