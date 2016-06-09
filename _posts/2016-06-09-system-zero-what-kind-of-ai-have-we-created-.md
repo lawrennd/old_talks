@@ -8,7 +8,7 @@ abstract: Machine learning technologies have evolved to the extent that they are
   are for our society.
 venue: Future of Humanity Institute, Oxford Martin School
 pdf: 2016-06-09-future-of-ai.pdf
-ppt: 2016-06-09-future-of-work.pptx
+ppt: 2016-06-09-future-of-ai.pptx
 year: '2016'
 month: 6
 day: '9'
