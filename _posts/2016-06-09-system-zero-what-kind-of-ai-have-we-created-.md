@@ -9,6 +9,7 @@ abstract: Machine learning technologies have evolved to the extent that they are
 venue: Future of Humanity Institute, Oxford Martin School
 pdf: 2016-06-09-future-of-ai.pdf
 ppt: 2016-06-09-future-of-ai.pptx
+youtube: 8R4t7d7o6ew
 year: '2016'
 month: 6
 day: '9'
