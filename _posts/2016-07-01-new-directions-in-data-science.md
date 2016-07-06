@@ -3,6 +3,7 @@ title: New Directions in Data Science
 venue: Data Science in Africa Workshop, UN Global Pulse, Kampala, Uganda
 reveal-md: 2016-07-01-data-science-challenges.md
 blog: 2016-07-01-data-science-challenges.md
+guardian: https://www.theguardian.com/media-network/2015/aug/25/africa-benefit-data-science-information
 youtube: _GSLvu6B7Bw
 abstract: 'Data science presents new opportunities for Africa but also new challenges.
   In this talk we will focus on three separate challenges for data science: 1. Paradoxes
