@@ -29,6 +29,8 @@ layout: post
     <div id="extras">
     <ul>
       {%if page.blog %}<li><a href="{% assign elems = page.blog | split: '-' %}{% for elem in elems %}{% if forloop.index0 < 4 %}/{% else %}-{% endif %}{% if forloop.last %}{{ elem | remove_first: '.md' }}{% else %}{{ elem }}{% endif %}{% endfor %}">Related Blog Post</a></li>{% endif %}
+      {%if page.blog1 %}<li><a href="{% assign elems = page.blog1 | split: '-' %}{% for elem in elems %}{% if forloop.index0 < 4 %}/{% else %}-{% endif %}{% if forloop.last %}{{ elem | remove_first: '.md' }}{% else %}{{ elem }}{% endif %}{% endfor %}">Further Related Blog Post</a></li>{% endif %}
+      {%if page.blog2 %}<li><a href="{% assign elems = page.blog2 | split: '-' %}{% for elem in elems %}{% if forloop.index0 < 4 %}/{% else %}-{% endif %}{% if forloop.last %}{{ elem | remove_first: '.md' }}{% else %}{{ elem }}{% endif %}{% endfor %}">Yet another Related Blog Post</a></li>{% endif %}
       {%if page.ppt %}<li><a href="{{ site.talk_files }}/{{ page.ppt }}">Powerpoint</a></li>{% endif %}
       {%if page.pdf %}<li><a href="{{ site.talk_files }}/{{ page.pdf }}">pdf</a></li>{% endif %}
       {%if page.linkpdf %}<li><a href="{{ page.linkpdf }}">Download PDF</a></li>{% endif %}

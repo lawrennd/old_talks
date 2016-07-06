@@ -17,6 +17,7 @@ abstract: In this talk we will address challenges in information infrastructure 
 venue: ATI Scoping Workshop on the Data Analytics Pipeline, Edinburgh
 ipynb: 2015-11-18-health-infrastructure.ipynb
 reveal: 2015-11-18-health-infrastructure.slides.html
+blog: 2015-11-17-alan-turing-information-infrastructures.md
 year: '2015'
 month: 11
 day: '18'

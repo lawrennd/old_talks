@@ -7,6 +7,8 @@ abstract: Machine learning technologies have evolved to the extent that they are
   what kind of artificial intelligence we’ve created and what possible implications
   are for our society.
 venue: Future of Humanity Institute, Oxford Martin School
+blog: 2015-12-04-what-kind-of-ai.md
+blog1: 2016-05-09-machine-learning-futures-6.md
 pdf: 2016-06-09-future-of-ai.pdf
 ppt: 2016-06-09-future-of-ai.pptx
 youtube: 8R4t7d7o6ew

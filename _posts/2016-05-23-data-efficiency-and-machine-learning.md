@@ -8,6 +8,7 @@ abstract: Entropy is a key component of information and probability, and may pro
 ppt: 2016-05-23-entropyDay.pptx
 pdf: 2016-05-23-entropyDay.pdf
 venue: Entropy Day, University of Sheffield
+blog: 2016-03-04-deep-learning-and-uncertainty.md
 year: '2016'
 month: 5
 day: '23'

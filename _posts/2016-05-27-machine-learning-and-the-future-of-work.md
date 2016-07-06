@@ -10,6 +10,7 @@ abstract: Machine learning technologies have evolved to the extent that they are
 venue: Cambridge Centre for Science and Policy
 pdf: 2016-05-27-future-of-work.pdf
 ppt: 2016-05-27-future-of-work.pptx
+blog: 2016-03-09-quora-session.md
 year: '2016'
 month: 5
 day: '27'

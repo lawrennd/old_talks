@@ -10,6 +10,7 @@ abstract: There have been fears voiced by Elon Musk and Stephen Hawking about th
 venue: A Pint of Science
 ipynb: 2016-05-24-what-kind-of-ai.ipynb
 reveal: 2016-05-24-what-kind-of-ai.slides.html
+blog: 2015-12-04-what-kind-of-ai.md
 year: '2016'
 month: 5
 day: '24'

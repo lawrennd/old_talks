@@ -8,6 +8,7 @@ abstract: The media is full of concerns about our data and how algorithms are af
   we have in its place? This talk will explore current technology and speculate on
   what futures it may lead to.
 venue: Cognitive Science work in Progress Meeting, Sheffield
+blog: 2015-12-04-what-kind-of-ai.md
 ipynb: 2015-10-23-what-kind-of-ai.ipynb
 reveal: 2015-10-23-what-kind-of-ai.slides.html
 year: '2015'

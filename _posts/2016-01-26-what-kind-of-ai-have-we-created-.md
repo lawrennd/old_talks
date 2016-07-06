@@ -7,6 +7,7 @@ abstract: The media is full of concerns about our data and how algorithms are af
   We are a long way away from implementing a ’sentient intelligence’, but what do
   we have in its place? This talk will explore current technology and speculate on
   what futures it may lead to.
+blog: 2015-12-04-what-kind-of-ai.md
 ipynb: 2016-01-26-what-kind-of-ai.ipynb
 reveal: 2016-01-26-what-kind-of-ai.slides.html
 day: '26'

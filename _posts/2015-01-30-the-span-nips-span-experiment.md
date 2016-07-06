@@ -10,6 +10,7 @@ abstract: The peer review process can be difficult to navigate for newcomers. In
   it will give more insight into the processes that a program committee goes through
   when selecting papers.
 linkipynb: staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/nips_radiant15.ipynb
+blog: 2014-12-16-the-nips-experiment.md
 ipynb: nips_radiant15.ipynb
 reveal: nips_radiant15.slides.html
 day: '30'

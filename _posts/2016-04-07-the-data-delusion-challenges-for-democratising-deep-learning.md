@@ -21,6 +21,7 @@ abstract: 'The widespread success of deep learning in a variety of domains is be
 day: '7'
 month: 4
 year: '2016'
+blog: 2016-03-04-deep-learning-and-uncertainty.md
 ppt: 2016-04-07-deepLearningSummit.pptx
 pdf: 2016-04-07-deepLearningSummit.pdf
 venue: Deep Learning Summit, London, UK

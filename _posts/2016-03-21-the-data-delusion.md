@@ -8,6 +8,7 @@ abstract: The race on to develop the next generation of artificially intelligent
   Or is our current confidence in our toolsets misplaced? In this talk we’ll develop
   at least one direction where our capabilities are lacking.
 venue: MARS Conference, Parker Palm Springs, Palm Springs, CA
+blog: 2016-03-04-deep-learning-and-uncertainty.md
 day: '21'
 month: 3
 year: '2016'

@@ -6,6 +6,7 @@ abstract: In this talk we will focus on the challenges that are arising through 
   the challenges culturally.
 venue: UCLID Workshop, University of Lancaster, UK
 linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/opendata_uclid14.pdf
+blog: 2014-07-01-open-data-science.md
 year: '2014'
 month: 7
 day: '2'

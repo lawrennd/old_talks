@@ -13,6 +13,8 @@ abstract: In this talk we will discuss how our current set of modelling solution
 venue: NIPS Workshop on Statistical Methods for Understanding Neural Systems
 ipynb: 2015-12-11-mechanistic-fallacy.ipynb
 reveal: 2015-12-11-mechanistic-fallacy.slides.html
+blog: 2015-12-04-what-kind-of-ai.md
+blog1: 2015-11-00-artificial-stupidity.md
 year: '2015'
 month: 12
 day: '11'

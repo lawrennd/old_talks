@@ -9,6 +9,7 @@ abstract: The peer review process can be difficult to navigate for newcomers. In
 venue: MLPM Summer School, Museum of Science and Industry, Manchester, UK
 reveal: nips_mlpm15.slides.html
 ipynb: nips_mlpm15.ipynb
+blog: 2014-12-16-the-nips-experiment.md
 year: '2015'
 month: 9
 day: '21'

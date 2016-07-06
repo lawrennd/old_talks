@@ -7,6 +7,7 @@ abstract: The Open Data Science Initiative is founded on the idea that there are
   the large quantity of data we are now generating. In this talk we identify the challenges
   across the range of industry, science, health and the developing world. We then
   review the principles of open data science which we hope will address these challenges.
+blog: 2014-07-01-open-data-science.md
 year: '2015'
 month: 12
 day: '16'

@@ -17,6 +17,7 @@ year: '2016'
 month: 4
 day: '26'
 demo: demo_2016_04_26_msr.m
+blog: 2016-03-04-deep-learning-and-uncertainty.md
 venue: Microsoft Research, New England, USA
 pdf: 2016-04-26-UncertaintyPropagation.pdf
 ppt: 2016-04-26-UncertaintyPropagation.pptx

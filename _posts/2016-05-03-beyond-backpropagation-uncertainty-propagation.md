@@ -22,6 +22,7 @@ month: 5
 year: '2016'
 ppt: 2016-05-03-UncertaintyPropagationICLR.pptx
 pdf: 2016-05-03-UncertaintyPropagationICLR.pdf
+blog: 2016-03-04-deep-learning-and-uncertainty.md
 venue: ICLR 2016, San Jaun, Puerto Rico
 layout: talk
 key: Lawrence:iclr16
