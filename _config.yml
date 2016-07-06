@@ -4,11 +4,11 @@ email: N.Lawrence@sheffield.ac.uk
 description: talks given by Neil Lawrence
 baseurl: "/talks" # the subpath of your site, e.g. /blog/
 reveal:
-  width: 1024
-  height: 768
+  width: 512
+  height: 384
 youtube:
-  width: 1024
-  height: 768
+  width: 512
+  height: 384
 talk_files: "http://inverseprobability.com/talks/slides/"
 nbviewer: "http://nbviewer.ipython.org/"
 basenb: "github/lawrennd/talks/blob/master/slides/" 
