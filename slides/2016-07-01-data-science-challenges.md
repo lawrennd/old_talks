@@ -1,5 +1,7 @@
-# Data Science Challenges
+## New Directions in Data Science
 
+### Data Science in Africa Workshop
+#### Pulse Lab, Kampala, Uganda
 ## Neil D. Lawrence
 ### University of Sheffield
 ```@lawrennd``` [inverseprobability.com](http://inverseprobability.com)
@@ -15,7 +17,7 @@
 
 ## Evolved Relationship
 
-<img src="http://inverseprobability.com/talks/slides/diagrams/data-science-information-flow.png" width="60%">
+<img src="./diagrams/data-science-information-flow.png" width="60%">
 
 ---
 
@@ -90,7 +92,7 @@
 
 There's a sea of data, but most of it is undrinkable
 
-<img src="http://inverseprobability.com/talks/slides/diagrams/sea-water-ocean-waves.jpg" width="50%">
+<img src="./diagrams/sea-water-ocean-waves.jpg" width="50%">
 
 We require data-desalination before it can be consumed!
 
@@ -148,7 +150,7 @@ We require data-desalination before it can be consumed!
 
 ## Free Will
 
-*  what does it mean if a computer can predict our individual behavior better than we ourselves can?
+*  What does it mean if a computer can predict our individual behavior better than we ourselves can?
 
 ---
 
@@ -184,10 +186,15 @@ We require data-desalination before it can be consumed!
 
 ---
 
-##Conclusion
+## Conclusion
 
 * Data science offers a great deal of promise
 * There are challenges and pitfalls
 * It is incumbent on us to avoid them
 
 ---
+
+## Thanks!
+
+* twitter: @lawrennd
+* blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
