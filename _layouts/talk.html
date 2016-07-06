@@ -28,7 +28,7 @@ layout: post
     <h3>Links</h3>
     <div id="extras">
     <ul>
-      {%if page.blog %}{% capture blog_array %}{{ page.blog | split: '-' }}{% endcapture %}<li><a href="/{{ blog_array[0] }}/{{ blog_array[1] }}/{{ blog_array[2] }}{{ blog_array | shift }}">Related Blog Post</a></li>{% endif %}
+      {%if page.blog %}{% capture blog_array %}{{ page.blog | split: '-' }}{% endcapture %}<li><a href="/{% for elem in blog_array %}{% if forloop.index<3 %}/{% else %}-{% endif %}{{ elem }}">Related Blog Post</a></li>{% endif %}
       {%if page.ppt %}<li><a href="{{ site.talk_files }}/{{ page.ppt }}">Powerpoint</a></li>{% endif %}
       {%if page.pdf %}<li><a href="{{ site.talk_files }}/{{ page.pdf }}">pdf</a></li>{% endif %}
       {%if page.linkpdf %}<li><a href="{{ page.linkpdf }}">Download PDF</a></li>{% endif %}
