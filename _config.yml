@@ -15,6 +15,7 @@ basenb: "github/lawrennd/talks/blob/master/slides/"
 url: "http://inverseprobability.com" # the base hostname & protocol for your site
 twitter_username: lawrennd
 github_username:  lawrennd
+permalink: "/:categories/:title.html"
 
 analytics:
   google:
