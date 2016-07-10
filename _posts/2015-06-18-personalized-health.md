@@ -1,9 +1,7 @@
 ---
 title: Personalized Health
 venue: Dedan Kimathi University, Nyeri, Kenya
-reveal: ''
 pdf: personalized_dsa15.pdf
-blog: ''
 year: '2015'
 month: 6
 day: '18'
@@ -19,8 +17,6 @@ authors:
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
 published: 2015-06-18
-extras:
-- label: ''
-  link: ''
+extras: []
 errata: []
 ---

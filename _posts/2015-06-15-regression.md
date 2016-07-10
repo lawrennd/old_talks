@@ -1,9 +1,7 @@
 ---
 title: Regression
 venue: Data Science Africa School, Dedan Kimathi University, Nyeri, Kenya
-reveal: ''
 pdf: regression_dss15.pdf
-blog: ''
 year: '2015'
 month: 6
 day: '15'
@@ -19,8 +17,6 @@ authors:
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
 published: 2015-06-15
-extras:
-- label: ''
-  link: ''
+extras: []
 errata: []
 ---
