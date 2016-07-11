@@ -20,6 +20,8 @@ authors:
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
 published: 2016-06-27
-extras: []
+extras:
+- label: Neil's machine learning course (with video and notes)
+  link: http://inverseprobability.com/mlai2015
 errata: []
 ---
