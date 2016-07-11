@@ -1,3 +1,5 @@
+% pandoc -t revealjs -s 2016-07-01-data-science-challenges.md -o 2016-07-01-data-science-challenges.html
+
 # New Directions in Data Science
 
 ### Data Science in Africa Workshop
@@ -8,27 +10,27 @@
 
 ---
 
-# Background
+## Background
 
 * Data is Pervasive phenomenon that affects all aspects of our activities
 * Data diffusiveness is both a challenge and an opportunity
 
 ---
 
-# Evolved Relationship
+## Evolved Relationship
 
 <img src="./diagrams/data-science-information-flow.png" width="60%">
 
 ---
 
-# Societal Effects
+## Societal Effects
 
 * Automated decision making within the computer based only on the data
 * A requirement to better understand our own subjective biases to ensure that the human to computer interface formulates the correct conclusions from the data
 
 ---
 
-# Societal Effects
+## Societal Effects
 
 * This process has already revolutionised biology
 
