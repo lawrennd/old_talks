@@ -1,5 +1,3 @@
-% pandoc -t revealjs -s 2016-07-01-data-science-challenges.md -o 2016-07-01-data-science-challenges.html
-
 # New Directions in Data Science
 
 ### Data Science in Africa Workshop
