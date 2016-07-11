@@ -1,6 +1,8 @@
 ---
 title: Introduction to Data Science and Machine Learning
 venue: Data Science in Africa Summer School, Makerere University
+ipynb: 2016-06-27-data-science-intro.ipynb
+reveal: 2016-06-27-data-science-intro.slides.html
 youtube: TJRK1_U2skw
 year: '2016'
 month: 6
