@@ -2,6 +2,7 @@
 title: New Directions in Data Science
 venue: Data Science in Africa Workshop, UN Global Pulse, Kampala, Uganda
 reveal-md: 2016-07-01-data-science-challenges.md
+reveal: 2016-07-01-data-science-challenges.html
 blog: 2016-07-01-data-science-challenges.md
 guardian: https://www.theguardian.com/media-network/2015/aug/25/africa-benefit-data-science-information
 youtube: _GSLvu6B7Bw
