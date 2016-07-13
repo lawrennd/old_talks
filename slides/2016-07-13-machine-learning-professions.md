@@ -24,7 +24,7 @@
 
 ## Perceptron
 
-<img src="./diagrams/perceptron_neg.gif" width="60%"> 
+<img src="./diagrams/perceptron_neg.gif" width="80%"> 
 
 ---
 
