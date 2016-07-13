@@ -72,9 +72,11 @@ $$\mathbf{x}=\begin{bmatrix} 1.0 & 2.3 & 3 \end{bmatrix}$$
 
 ## The Professions
 
-* What aspects cannot be replaced by a machine?
+* What aspects cannot/can be replaced by a machine?
 
 	* What makes professions special. 
+	
+	* Encroachment of automation on 'middle class' roles.
 
 * Not just your role, but the wider societal role.
 
