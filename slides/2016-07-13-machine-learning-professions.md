@@ -16,7 +16,7 @@
 
 ---
 
-## Example Image Classification
+## Example: Image Classification
 
 <img src="./diagrams/deepface_neg.png" width="80%" border="0">
 
@@ -24,19 +24,19 @@
 
 ## Perceptron
 
-<img src="./diagrams/perceptron_neg.gif" width="80%"> 
+<img src="./diagrams/perceptron_neg.gif" width="50%"> 
 
 ---
 
-## Example AlphaGo
+## Example: AlphaGo
 
 * An achievement in Artificial Intelligence
 
-<img src="./diagrams/alphagonature.jpg" width="40%">
+<img src="./diagrams/alphagonature.jpg" width="37%">
 
 
 
-## Example Driverless Cars
+## Example: Driverless Cars
 
 * Engineered system with many components.
 * Many vital components are based on machine learning.
