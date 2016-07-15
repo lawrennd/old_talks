@@ -4,7 +4,6 @@ abstract: As part of the Royal Society Working Group on Machine Learning this ta
   is a short introduction to machine learning for members of the professions followed
   by a provocation on what machine learning might mean for the future of the professions.
 venue: Royal Society, London
-ipynb: 2016-06-27-data-science-intro.ipynb
 reveal: 2016-07-13-machine-learning-professions.slides.html
 reveal-md: 2016-07-13-machine-learning-professions.md
 year: '2016'
