@@ -1,7 +1,7 @@
-# New Directions in Data Science
+## New Directions in Data Science
 ### Data Science in Africa Workshop
 #### Pulse Lab, Kampala, Uganda
-## Neil D. Lawrence
+### Neil D. Lawrence
 ### University of Sheffield
 ```@lawrennd``` [inverseprobability.com](http://inverseprobability.com)
 
