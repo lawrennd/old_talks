@@ -6,6 +6,8 @@ abstract: 'Data science presents new opportunities but also new challenges. In t
   marginalization. Each of these challenges has particular implications for data science.
   By addressing these challenges now we can ensure that the pitfalls of the data driven
   society are overcome allowing to reap the benefits.'
+reveal: 2016-09-14-data-science-challenges.slides.html
+reveal-md: 2016-09-14-data-science-challenges.md
 month: 9
 year: '2016'
 day: '14'
