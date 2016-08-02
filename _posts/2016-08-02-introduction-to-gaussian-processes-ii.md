@@ -4,6 +4,7 @@ abstract: In the second session we will look at how Gaussian process models are 
   to Kalman filters and how they may be extended to deal with multiple outputs and
   mechanistic models.
 venue: MLSS, Cadiz
+pdf: gp_mlss16b.pdf
 year: '2016'
 month: 8
 day: '2'

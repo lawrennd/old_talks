@@ -1,8 +1,9 @@
-## The Data Delusion
-### Neil D. Lawrence
-### University of Sheffield
-```@lawrennd``` [inverseprobability.com](http://inverseprobability.com)
-
+---
+title: The Data Delusion
+author: Neil D. Lawrence
+institute: University of Sheffield
+venue: ``@lawrennd``` [inverseprobability.com](http://inverseprobability.com)
+date: 2016-08-22
 ---
 
 <img src="./diagrams/deepface_neg.png" width="80%" border="0">

@@ -1,9 +1,10 @@
 ---
 title: Introduction to Gaussian Processes
-abstract: In this session we will introduce Gaussian process models, non parametric
+abstract: In this first session we will introduce Gaussian process models, non parametric
   Bayesian models that allow for principled propagation of uncertainty in regression
   analysis. We will assume a background in parametric models, linear algebra and probability.
 venue: MLSS, Arequipa
+pdf: gp_mlss16b.pdf
 year: '2016'
 month: 8
 day: '2'
