@@ -10,6 +10,7 @@ abstract: In this fourth sesssion we describe how deep neural networks can be mo
   models.
 venue: MLSS, Arequipa
 pdf: gp_mlss16b.pdf
+demo: demo_2016_08_04_mlss16.m
 year: '2016'
 month: 8
 day: '4'

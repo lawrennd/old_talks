@@ -38,6 +38,7 @@ layout: post
       {%if page.linkps %}<li><a href="{{ page.linkps }}">Download Postscript</a></li>{% endif %}
       {%if page.linkppt %}<li><a href="{{ page.linkppt }}">Download PPT</a></li>{% endif %}
       {%if page.linkpptgz %}<li><a href="{{ page.linkpptgz }}">Download Gzipped PPT</a></li>{% endif %}
+      {%if page.demo %}<li><a href="{{ page.demo }}">Talk demo code</a></li>{% endif %}
       {%if page.linksoftware %}<li><a href="{{ page.linksoftware }}">Download Software</a></li>{% endif %}
       {% for extra in page.extras %}
       <li><a href="{{ extra.link }}">{{ extra.label }}</a></li>
