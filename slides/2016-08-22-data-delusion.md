@@ -2,7 +2,7 @@
 title: The Data Delusion
 author: Neil D. Lawrence
 institute: University of Sheffield
-venue: ``@lawrennd``` [inverseprobability.com](http://inverseprobability.com)
+venue: "``@lawrennd`` [inverseprobability.com](http://inverseprobability.com)"
 date: 2016-08-22
 ---
 
