@@ -17,9 +17,9 @@ month: 9
 year: '2016'
 day: '14'
 layout: talk
-key: Lawrence:enbis16
+key: Lawrence-enbis16
 categories:
-- Lawrence:enbis16
+- Lawrence-enbis16
 authors:
 - firstname: Neil D.
   lastname: Lawrence

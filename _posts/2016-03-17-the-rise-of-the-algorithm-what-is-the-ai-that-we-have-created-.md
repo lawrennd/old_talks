@@ -14,9 +14,9 @@ year: '2016'
 month: 3
 day: '17'
 layout: talk
-key: Lawrence:notre15
+key: Lawrence-notre15
 categories:
-- Lawrence:notre15
+- Lawrence-notre15
 authors:
 - firstname: Neil D.
   lastname: Lawrence

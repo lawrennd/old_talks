@@ -18,9 +18,9 @@ month: 11
 day: '12'
 group: gp,puma,gpsim
 layout: talk
-key: Lawrence:msr07
+key: Lawrence-msr07
 categories:
-- Lawrence:msr07
+- Lawrence-msr07
 authors:
 - firstname: Neil D.
   lastname: Lawrence

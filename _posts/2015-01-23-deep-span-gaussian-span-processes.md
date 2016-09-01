@@ -16,9 +16,9 @@ year: '2015'
 month: 1
 day: '23'
 layout: talk
-key: Lawrence:iit15
+key: Lawrence-iit15
 categories:
-- Lawrence:iit15
+- Lawrence-iit15
 authors:
 - firstname: Neil D.
   lastname: Lawrence

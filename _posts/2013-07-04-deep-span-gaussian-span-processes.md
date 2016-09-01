@@ -20,9 +20,9 @@ year: '2013'
 month: 7
 day: '4'
 layout: talk
-key: Lawrence:ncaf13
+key: Lawrence-ncaf13
 categories:
-- Lawrence:ncaf13
+- Lawrence-ncaf13
 authors:
 - firstname: Neil D.
   lastname: Lawrence

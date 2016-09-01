@@ -20,9 +20,9 @@ month: 7
 day: '4'
 group: gplvm
 layout: talk
-key: Lawrence:uc3mgplvm07
+key: Lawrence-uc3mgplvm07
 categories:
-- Lawrence:uc3mgplvm07
+- Lawrence-uc3mgplvm07
 authors:
 - firstname: Neil D.
   lastname: Lawrence

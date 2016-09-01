@@ -19,9 +19,9 @@ year: '2015'
 month: 12
 day: '11'
 layout: talk
-key: Lawrence:mechanistic15
+key: Lawrence-mechanistic15
 categories:
-- Lawrence:mechanistic15
+- Lawrence-mechanistic15
 authors:
 - firstname: Neil D.
   lastname: Lawrence

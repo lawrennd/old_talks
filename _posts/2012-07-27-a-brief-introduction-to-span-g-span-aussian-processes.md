@@ -13,9 +13,9 @@ year: '2012'
 month: 7
 day: '27'
 layout: talk
-key: Lawrence:ucla12a
+key: Lawrence-ucla12a
 categories:
-- Lawrence:ucla12a
+- Lawrence-ucla12a
 authors:
 - firstname: Neil D.
   lastname: Lawrence

@@ -19,9 +19,9 @@ abstract: A simple approach to target identification through gene expression stu
   allow genome wide target identification, but rich enough to encode dynamical behavior
   that, allowing us to identify putative targets even when decay rates are low.
 layout: talk
-key: Lawrence:jhu09
+key: Lawrence-jhu09
 categories:
-- Lawrence:jhu09
+- Lawrence-jhu09
 authors:
 - firstname: Neil D.
   lastname: Lawrence

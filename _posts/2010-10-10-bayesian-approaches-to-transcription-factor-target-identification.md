@@ -12,9 +12,9 @@ abstract: |-
   \
   In this lecture we introduce Bayesian approaches to target identification which make use of sampling approaches to rank candidate lists of targets. We will begin with an introduction to the target identification problem and an overview of the power of Bayesian approaches in solving it. We will then consider how probabilistic models such as Gaussian processes can be used for ranking potential targets of a transcription factor. These models are simple enough to allow genome wide target identification, but rich enough to encode dynamical behavior that, allowing us to identify putative targets even when decay rates are low.
 layout: talk
-key: Lawrence:eurogene10
+key: Lawrence-eurogene10
 categories:
-- Lawrence:eurogene10
+- Lawrence-eurogene10
 authors:
 - firstname: Neil D.
   lastname: Lawrence

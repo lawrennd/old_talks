@@ -15,9 +15,9 @@ month: 1
 year: '2016'
 venue: Sheffield Computer Science Welcome Event
 layout: talk
-key: Lawrence:phd16
+key: Lawrence-phd16
 categories:
-- Lawrence:phd16
+- Lawrence-phd16
 authors:
 - firstname: Neil D.
   lastname: Lawrence

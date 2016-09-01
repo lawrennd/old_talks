@@ -12,9 +12,9 @@ ppt: 2016-01-29-OxWaSPGPTalk.pptx
 pdf: 2016-01-29-OxWaSPGPTalk.pdf
 venue: OxWaSP Symposium, University of Warwick
 layout: talk
-key: Lawrence:oxwasp16
+key: Lawrence-oxwasp16
 categories:
-- Lawrence:oxwasp16
+- Lawrence-oxwasp16
 authors:
 - firstname: Neil D.
   lastname: Lawrence

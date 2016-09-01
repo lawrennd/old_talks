@@ -15,9 +15,9 @@ year: '2006'
 month: 6
 day: '22'
 layout: talk
-key: Lawrence:manchester06
+key: Lawrence-manchester06
 categories:
-- Lawrence:manchester06
+- Lawrence-manchester06
 authors:
 - firstname: Neil D.
   lastname: Lawrence

@@ -7,9 +7,9 @@ year: '2013'
 month: 6
 day: '13'
 layout: talk
-key: Lawrence:lfmIntro13
+key: Lawrence-lfmIntro13
 categories:
-- Lawrence:lfmIntro13
+- Lawrence-lfmIntro13
 abstract: ''
 authors:
 - firstname: Neil D.

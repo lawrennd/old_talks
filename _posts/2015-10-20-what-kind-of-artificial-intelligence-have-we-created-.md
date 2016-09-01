@@ -15,9 +15,9 @@ year: '2015'
 month: 10
 day: '20'
 layout: talk
-key: Lawrence:rise15
+key: Lawrence-rise15
 categories:
-- Lawrence:rise15
+- Lawrence-rise15
 authors:
 - firstname: Neil D.
   lastname: Lawrence

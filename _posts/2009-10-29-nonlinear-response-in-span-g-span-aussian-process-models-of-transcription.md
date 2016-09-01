@@ -6,9 +6,9 @@ year: '2009'
 month: 10
 day: '29'
 layout: talk
-key: Lawrence:tigem09
+key: Lawrence-tigem09
 categories:
-- Lawrence:tigem09
+- Lawrence-tigem09
 abstract: ''
 authors:
 - firstname: Neil D.

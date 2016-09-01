@@ -10,9 +10,9 @@ year: '2013'
 month: 10
 day: '3'
 layout: talk
-key: Lawrence:e4l13
+key: Lawrence-e4l13
 categories:
-- Lawrence:e4l13
+- Lawrence-e4l13
 authors:
 - firstname: Neil D.
   lastname: Lawrence

@@ -9,9 +9,9 @@ year: '2013'
 month: 3
 day: '20'
 layout: talk
-key: Lawrence:sheffield13
+key: Lawrence-sheffield13
 categories:
-- Lawrence:sheffield13
+- Lawrence-sheffield13
 authors:
 - firstname: Neil D.
   lastname: Lawrence

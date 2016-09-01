@@ -20,9 +20,9 @@ month: 3
 day: 09
 group: gplvm
 layout: talk
-key: Lawrence:loughborough11
+key: Lawrence-loughborough11
 categories:
-- Lawrence:loughborough11
+- Lawrence-loughborough11
 authors:
 - firstname: Neil D.
   lastname: Lawrence

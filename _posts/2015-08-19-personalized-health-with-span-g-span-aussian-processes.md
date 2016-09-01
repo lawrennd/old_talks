@@ -11,9 +11,9 @@ year: '2015'
 month: 8
 day: '19'
 layout: talk
-key: Lawrence:msrne15
+key: Lawrence-msrne15
 categories:
-- Lawrence:msrne15
+- Lawrence-msrne15
 authors:
 - firstname: Neil D.
   lastname: Lawrence

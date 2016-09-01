@@ -8,9 +8,9 @@ month: 4
 day: '01'
 group: ''
 layout: talk
-key: Lawrence:gpbayes08
+key: Lawrence-gpbayes08
 categories:
-- Lawrence:gpbayes08
+- Lawrence-gpbayes08
 abstract: ''
 authors:
 - firstname: Neil D.

@@ -20,9 +20,9 @@ month: 3
 day: '16'
 group: gplvm
 layout: talk
-key: Lawrence:exeter11
+key: Lawrence-exeter11
 categories:
-- Lawrence:exeter11
+- Lawrence-exeter11
 authors:
 - firstname: Neil D.
   lastname: Lawrence

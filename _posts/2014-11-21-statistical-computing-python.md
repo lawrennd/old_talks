@@ -5,9 +5,9 @@ year: '2014'
 month: 11
 day: '21'
 layout: talk
-key: Lawrence:rss14
+key: Lawrence-rss14
 categories:
-- Lawrence:rss14
+- Lawrence-rss14
 abstract: ''
 authors:
 - firstname: Neil D.

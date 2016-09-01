@@ -19,9 +19,9 @@ month: 3
 day: '9'
 group: gplvm
 layout: talk
-key: Lawrence:ncrg07
+key: Lawrence-ncrg07
 categories:
-- Lawrence:ncrg07
+- Lawrence-ncrg07
 authors:
 - firstname: Neil D.
   lastname: Lawrence

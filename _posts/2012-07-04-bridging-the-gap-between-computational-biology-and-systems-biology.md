@@ -6,9 +6,9 @@ year: '2012'
 month: 7
 day: '4'
 layout: talk
-key: Lawrence:pathSoc12
+key: Lawrence-pathSoc12
 categories:
-- Lawrence:pathSoc12
+- Lawrence-pathSoc12
 abstract: ''
 authors:
 - firstname: Neil D.

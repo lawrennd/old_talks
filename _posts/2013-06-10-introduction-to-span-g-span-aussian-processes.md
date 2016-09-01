@@ -7,9 +7,9 @@ year: '2013'
 month: 6
 day: '10'
 layout: talk
-key: Lawrence:gpssOne13
+key: Lawrence-gpssOne13
 categories:
-- Lawrence:gpssOne13
+- Lawrence-gpssOne13
 abstract: ''
 authors:
 - firstname: Neil D.

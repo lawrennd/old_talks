@@ -14,9 +14,9 @@ month: 9
 day: '6'
 venue: Royal Statistical Society Conference, Manchester
 layout: talk
-key: Lawrence:rss17
+key: Lawrence-rss17
 categories:
-- Lawrence:rss17
+- Lawrence-rss17
 authors:
 - firstname: Neil D.
   lastname: Lawrence

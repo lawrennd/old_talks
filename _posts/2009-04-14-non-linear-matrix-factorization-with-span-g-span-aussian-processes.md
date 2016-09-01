@@ -6,9 +6,9 @@ year: '2009'
 month: 4
 day: '14'
 layout: talk
-key: Lawrence:learning09
+key: Lawrence-learning09
 categories:
-- Lawrence:learning09
+- Lawrence-learning09
 abstract: ''
 authors:
 - firstname: Neil D.

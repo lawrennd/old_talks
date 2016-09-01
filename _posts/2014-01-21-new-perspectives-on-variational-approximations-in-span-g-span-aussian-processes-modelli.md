@@ -14,9 +14,9 @@ year: '2014'
 month: 1
 day: '21'
 layout: talk
-key: Lawrence:cued14
+key: Lawrence-cued14
 categories:
-- Lawrence:cued14
+- Lawrence-cued14
 authors:
 - firstname: Neil D.
   lastname: Lawrence

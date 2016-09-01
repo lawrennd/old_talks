@@ -6,9 +6,9 @@ year: '2009'
 month: 6
 day: '23'
 layout: talk
-key: Lawrence:tutII09
+key: Lawrence-tutII09
 categories:
-- Lawrence:tutII09
+- Lawrence-tutII09
 abstract: ''
 authors:
 - firstname: Neil D.

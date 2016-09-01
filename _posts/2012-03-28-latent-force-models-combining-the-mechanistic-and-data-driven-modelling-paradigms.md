@@ -14,9 +14,9 @@ abstract: |-
   \
   We believe that the area between the strong and weak mechanistic paradigms should be a focus for much more research. For many interesting datasets we need adaptive models which include mechanistic assumptions. The latent force modeling paradigm is one way of approaching this which relies on the combination of differential equation systems which are driven, or have their initial or boundary conditions set, by Gaussian processes. The Gaussian processes provide the necessary adaptability and the differential equation encodes mechanistic assumptions. In this talk we introduce the model and demonstrate results in motion capture date and, given time, computational biology.
 layout: talk
-key: Lawrence:rank12
+key: Lawrence-rank12
 categories:
-- Lawrence:rank12
+- Lawrence-rank12
 authors:
 - firstname: Neil D.
   lastname: Lawrence

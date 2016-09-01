@@ -21,9 +21,9 @@ month: 3
 day: '9'
 group: gplvm
 layout: talk
-key: Lawrence:manchester05
+key: Lawrence-manchester05
 categories:
-- Lawrence:manchester05
+- Lawrence-manchester05
 authors:
 - firstname: Neil D.
   lastname: Lawrence

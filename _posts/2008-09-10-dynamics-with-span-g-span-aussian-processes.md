@@ -11,9 +11,9 @@ abstract: |-
   Joint work with Magnus Rattray, Mauricio Álvarez, Pei Gao, Antti Honkela, David Luengo, Guido Sanguinetti and Michalis K. Titsias.
 group: ''
 layout: talk
-key: Lawrence:ncaf08
+key: Lawrence-ncaf08
 categories:
-- Lawrence:ncaf08
+- Lawrence-ncaf08
 authors:
 - firstname: Neil D.
   lastname: Lawrence

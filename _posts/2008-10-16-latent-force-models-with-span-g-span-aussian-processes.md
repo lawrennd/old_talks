@@ -11,9 +11,9 @@ abstract: |-
   Joint work with Magnus Rattray, Mauricio Álvarez, Pei Gao, Antti Honkela, David Luengo, Guido Sanguinetti and Michalis K. Titsias.
 group: ode, gp
 layout: talk
-key: Lawrence:bristol08
+key: Lawrence-bristol08
 categories:
-- Lawrence:bristol08
+- Lawrence-bristol08
 authors:
 - firstname: Neil D.
   lastname: Lawrence

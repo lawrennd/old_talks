@@ -14,9 +14,9 @@ year: '2015'
 month: 4
 day: '8'
 layout: talk
-key: Lawrence:mascotnum15
+key: Lawrence-mascotnum15
 categories:
-- Lawrence:mascotnum15
+- Lawrence-mascotnum15
 authors:
 - firstname: Neil D.
   lastname: Lawrence

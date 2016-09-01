@@ -6,9 +6,9 @@ year: '2009'
 month: 9
 day: '6'
 layout: talk
-key: Lawrence:interspeech09
+key: Lawrence-interspeech09
 categories:
-- Lawrence:interspeech09
+- Lawrence-interspeech09
 abstract: ''
 authors:
 - firstname: Neil D.

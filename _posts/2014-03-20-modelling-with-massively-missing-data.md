@@ -24,9 +24,9 @@ year: '2014'
 month: 3
 day: '20'
 layout: talk
-key: Lawrence:facebook14
+key: Lawrence-facebook14
 categories:
-- Lawrence:facebook14
+- Lawrence-facebook14
 authors:
 - firstname: Neil D.
   lastname: Lawrence

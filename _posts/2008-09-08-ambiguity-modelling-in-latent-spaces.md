@@ -23,9 +23,9 @@ abstract: We are interested in the situation where we have two or more represent
   a benchmark human pose estimation data set.
 group: ''
 layout: talk
-key: Lawrence:mlmi08
+key: Lawrence-mlmi08
 categories:
-- Lawrence:mlmi08
+- Lawrence-mlmi08
 authors:
 - firstname: Neil D.
   lastname: Lawrence

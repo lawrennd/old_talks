@@ -6,9 +6,9 @@ day: '21'
 venue: Microsoft Research, New England, USA
 pdf: msr16_deepgp.pdf
 layout: talk
-key: Lawrence:msrne16a
+key: Lawrence-msrne16a
 categories:
-- Lawrence:msrne16a
+- Lawrence-msrne16a
 abstract: ''
 authors:
 - firstname: Neil D.

@@ -7,9 +7,9 @@ year: '2014'
 month: 1
 day: '15'
 layout: talk
-key: Lawrence:gpwsThree14
+key: Lawrence-gpwsThree14
 categories:
-- Lawrence:gpwsThree14
+- Lawrence-gpwsThree14
 abstract: ''
 authors:
 - firstname: Neil D.

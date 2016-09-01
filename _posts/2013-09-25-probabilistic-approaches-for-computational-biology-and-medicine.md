@@ -11,9 +11,9 @@ year: '2013'
 month: 9
 day: '25'
 layout: talk
-key: Lawrence:mlpm13
+key: Lawrence-mlpm13
 categories:
-- Lawrence:mlpm13
+- Lawrence-mlpm13
 authors:
 - firstname: Neil D.
   lastname: Lawrence

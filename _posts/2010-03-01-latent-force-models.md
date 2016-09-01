@@ -12,9 +12,9 @@ abstract: |-
   \
   In this talk we introduce latent force models. Latent force models are a new approach to data representation that model data through unknown forcing functions that drive differential equation models. By treating the unknown forcing functions with Gaussian process priors we can create probabilistic models that exhibit particular physical characteristics of interest, for example, in dynamical systems resonance and inertia. This allows us to perform a synthesis of the data driven and physical modeling paradigms. We will show applications of these models in systems biology and modelling of human motion capture data.
 layout: talk
-key: Lawrence:inference10
+key: Lawrence-inference10
 categories:
-- Lawrence:inference10
+- Lawrence-inference10
 authors:
 - firstname: Neil D.
   lastname: Lawrence

@@ -7,9 +7,9 @@ month: 1
 day: '28'
 group: pascal
 layout: talk
-key: Lawrence:thematic08
+key: Lawrence-thematic08
 categories:
-- Lawrence:thematic08
+- Lawrence-thematic08
 abstract: ''
 authors:
 - firstname: Neil D.

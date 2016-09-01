@@ -14,9 +14,9 @@ year: '2015'
 month: 9
 day: '21'
 layout: talk
-key: Lawrence:peer15
+key: Lawrence-peer15
 categories:
-- Lawrence:peer15
+- Lawrence-peer15
 authors:
 - firstname: Neil D.
   lastname: Lawrence

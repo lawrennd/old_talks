@@ -17,9 +17,9 @@ year: '2003'
 month: 6
 day: '20'
 layout: talk
-key: Lawrence:sussex03
+key: Lawrence-sussex03
 categories:
-- Lawrence:sussex03
+- Lawrence-sussex03
 authors:
 - firstname: Neil D.
   lastname: Lawrence

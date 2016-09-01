@@ -20,9 +20,9 @@ month: 2
 day: '9'
 group: gplvm
 layout: talk
-key: Lawrence:csail07
+key: Lawrence-csail07
 categories:
-- Lawrence:csail07
+- Lawrence-csail07
 authors:
 - firstname: Neil D.
   lastname: Lawrence

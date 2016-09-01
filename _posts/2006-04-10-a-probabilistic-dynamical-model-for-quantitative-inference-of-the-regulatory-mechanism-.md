@@ -8,9 +8,9 @@ group: shefml,puma,gene networks
 month: 4
 day: '10'
 layout: talk
-key: Sanguinetti:masamb06
+key: Sanguinetti-masamb06
 categories:
-- Sanguinetti:masamb06
+- Sanguinetti-masamb06
 abstract: ''
 authors:
 - firstname: Guido

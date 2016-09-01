@@ -10,9 +10,9 @@ day: '14'
 month: 4
 year: '2016'
 layout: talk
-key: Lawrence:facebook16
+key: Lawrence-facebook16
 categories:
-- Lawrence:facebook16
+- Lawrence-facebook16
 authors:
 - firstname: Neil D.
   lastname: Lawrence

@@ -15,9 +15,9 @@ month: 1
 day: '24'
 group: spectral
 layout: talk
-key: Lawrence:data08
+key: Lawrence-data08
 categories:
-- Lawrence:data08
+- Lawrence-data08
 authors:
 - firstname: Neil D.
   lastname: Lawrence

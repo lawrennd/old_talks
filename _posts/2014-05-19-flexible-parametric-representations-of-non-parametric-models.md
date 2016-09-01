@@ -16,9 +16,9 @@ year: '2014'
 month: 5
 day: '19'
 layout: talk
-key: Lawrence:edinburgh14
+key: Lawrence-edinburgh14
 categories:
-- Lawrence:edinburgh14
+- Lawrence-edinburgh14
 authors:
 - firstname: Neil D.
   lastname: Lawrence

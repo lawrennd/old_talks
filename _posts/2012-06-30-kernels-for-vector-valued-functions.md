@@ -14,9 +14,9 @@ year: '2012'
 month: 6
 day: '30'
 layout: talk
-key: Lawrence:icmlVector12
+key: Lawrence-icmlVector12
 categories:
-- Lawrence:icmlVector12
+- Lawrence-icmlVector12
 authors:
 - firstname: Neil D.
   lastname: Lawrence

@@ -11,9 +11,9 @@ abstract: In the second part of this tutorial we will develop non linear approac
   will build on the non-linear approaches we derived using Gaussian processes in the
   first part of the tutorial.
 layout: talk
-key: Lawrence:imperial15b
+key: Lawrence-imperial15b
 categories:
-- Lawrence:imperial15b
+- Lawrence-imperial15b
 authors:
 - firstname: Neil D.
   lastname: Lawrence

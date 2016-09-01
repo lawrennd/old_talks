@@ -15,9 +15,9 @@ year: '2015'
 month: 10
 day: '8'
 layout: talk
-key: Lawrence:impact15
+key: Lawrence-impact15
 categories:
-- Lawrence:impact15
+- Lawrence-impact15
 authors:
 - firstname: Neil D.
   lastname: Lawrence

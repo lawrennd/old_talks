@@ -6,9 +6,9 @@ year: '2015'
 month: 8
 day: '20'
 layout: talk
-key: Lawrence:harvard15
+key: Lawrence-harvard15
 categories:
-- Lawrence:harvard15
+- Lawrence-harvard15
 authors:
 - firstname: Neil D.
   lastname: Lawrence

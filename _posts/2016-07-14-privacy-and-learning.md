@@ -12,9 +12,9 @@ year: '2016'
 month: 7
 day: '14'
 layout: talk
-key: Lawrence:security16
+key: Lawrence-security16
 categories:
-- Lawrence:security16
+- Lawrence-security16
 authors:
 - firstname: Neil D.
   lastname: Lawrence

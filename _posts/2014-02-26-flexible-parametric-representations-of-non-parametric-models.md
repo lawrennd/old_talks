@@ -16,9 +16,9 @@ year: '2014'
 month: 2
 day: '26'
 layout: talk
-key: Lawrence:ucl14
+key: Lawrence-ucl14
 categories:
-- Lawrence:ucl14
+- Lawrence-ucl14
 authors:
 - firstname: Neil D.
   lastname: Lawrence

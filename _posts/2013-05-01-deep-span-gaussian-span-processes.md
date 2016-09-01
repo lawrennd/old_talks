@@ -20,9 +20,9 @@ year: '2013'
 month: 5
 day: '1'
 layout: talk
-key: Lawrence:cambridge13
+key: Lawrence-cambridge13
 categories:
-- Lawrence:cambridge13
+- Lawrence-cambridge13
 authors:
 - firstname: Neil D.
   lastname: Lawrence

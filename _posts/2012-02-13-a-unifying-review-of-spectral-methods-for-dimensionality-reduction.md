@@ -17,9 +17,9 @@ abstract: In this tutorial we will review spectral approaches to dimensionality 
   we use the unifying framework to relate these approaches to the Gaussian process
   latent variable model.
 layout: talk
-key: Lawrence:oxfordUnify12
+key: Lawrence-oxfordUnify12
 categories:
-- Lawrence:oxfordUnify12
+- Lawrence-oxfordUnify12
 authors:
 - firstname: Neil D.
   lastname: Lawrence

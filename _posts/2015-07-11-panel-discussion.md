@@ -6,9 +6,9 @@ year: '2015'
 month: 7
 day: '11'
 layout: talk
-key: Welling:deeppanel15
+key: Welling-deeppanel15
 categories:
-- Welling:deeppanel15
+- Welling-deeppanel15
 abstract: ''
 authors:
 - firstname: Max

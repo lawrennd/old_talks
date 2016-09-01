@@ -13,9 +13,9 @@ abstract: A popular approach to collaborative filtering is matrix factorization.
   factorization. We apply out approach to benchmark movie recommender data sets. The
   results show better than previous state-of-the-art performance.
 layout: talk
-key: Lawrence:emmds09
+key: Lawrence-emmds09
 categories:
-- Lawrence:emmds09
+- Lawrence-emmds09
 authors:
 - firstname: Neil D.
   lastname: Lawrence

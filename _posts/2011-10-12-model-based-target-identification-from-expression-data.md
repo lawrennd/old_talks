@@ -12,9 +12,9 @@ abstract: |-
   \
   Typically researchers either use a data driven approach (such as clustering) or a model based approach (such as differential equations). In this talk we advocate hybrid techniques which have aspects of the mechanistic and data driven models. We combine simple differential equation models with Gaussian process priors to make probabilistic models with mechanistic underpinnings. We show applications in target identification from mRNA measurements.
 layout: talk
-key: Lawrence:liverpool11
+key: Lawrence-liverpool11
 categories:
-- Lawrence:liverpool11
+- Lawrence-liverpool11
 authors:
 - firstname: Neil D.
   lastname: Lawrence

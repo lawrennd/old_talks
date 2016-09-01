@@ -18,9 +18,9 @@ month: 11
 day: '16'
 group: gplvm
 layout: talk
-key: Lawrence:gatsby05
+key: Lawrence-gatsby05
 categories:
-- Lawrence:gatsby05
+- Lawrence-gatsby05
 authors:
 - firstname: Neil D.
   lastname: Lawrence

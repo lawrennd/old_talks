@@ -19,9 +19,9 @@ month: 9
 day: '9'
 linkpptgz: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_smlw.ppt.gz
 layout: talk
-key: Lawrence:smlwgplvm03
+key: Lawrence-smlwgplvm03
 categories:
-- Lawrence:smlwgplvm03
+- Lawrence-smlwgplvm03
 authors:
 - firstname: Neil D.
   lastname: Lawrence

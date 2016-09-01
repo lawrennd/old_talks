@@ -11,9 +11,9 @@ year: '2013'
 month: 11
 day: '4'
 layout: talk
-key: Lawrence:leahurst13
+key: Lawrence-leahurst13
 categories:
-- Lawrence:leahurst13
+- Lawrence-leahurst13
 authors:
 - firstname: Neil D.
   lastname: Lawrence

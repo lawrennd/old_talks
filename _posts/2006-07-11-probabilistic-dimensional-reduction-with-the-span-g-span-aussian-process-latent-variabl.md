@@ -19,9 +19,9 @@ month: 7
 day: '11'
 group: gplvm
 layout: talk
-key: Lawrence:erice06
+key: Lawrence-erice06
 categories:
-- Lawrence:erice06
+- Lawrence-erice06
 authors:
 - firstname: Neil D.
   lastname: Lawrence

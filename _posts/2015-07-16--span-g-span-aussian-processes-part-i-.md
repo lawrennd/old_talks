@@ -7,9 +7,9 @@ youtube: S9RbSCpy_pg
 month: 7
 day: '16'
 layout: talk
-key: Lawrence:mlss15bI
+key: Lawrence-mlss15bI
 categories:
-- Lawrence:mlss15bI
+- Lawrence-mlss15bI
 authors:
 - firstname: Neil D.
   lastname: Lawrence

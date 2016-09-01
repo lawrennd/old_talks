@@ -19,9 +19,9 @@ month: 3
 day: '7'
 group: gplvm
 layout: talk
-key: Lawrence:cued06
+key: Lawrence-cued06
 categories:
-- Lawrence:cued06
+- Lawrence-cued06
 authors:
 - firstname: Neil D.
   lastname: Lawrence

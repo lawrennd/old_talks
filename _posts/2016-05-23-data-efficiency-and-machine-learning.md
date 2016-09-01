@@ -13,9 +13,9 @@ year: '2016'
 month: 5
 day: '23'
 layout: talk
-key: Lawrence:entropyday16
+key: Lawrence-entropyday16
 categories:
-- Lawrence:entropyday16
+- Lawrence-entropyday16
 authors:
 - firstname: Neil D.
   lastname: Lawrence

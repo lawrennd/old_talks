@@ -15,9 +15,9 @@ month: 10
 day: '31'
 group: puma,gpsim
 layout: talk
-key: Lawrence:mbb07
+key: Lawrence-mbb07
 categories:
-- Lawrence:mbb07
+- Lawrence-mbb07
 authors:
 - firstname: Neil D.
   lastname: Lawrence

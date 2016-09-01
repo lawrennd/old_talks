@@ -15,9 +15,9 @@ year: '2006'
 month: 8
 day: '21'
 layout: talk
-key: Lawrence:intel06
+key: Lawrence-intel06
 categories:
-- Lawrence:intel06
+- Lawrence-intel06
 authors:
 - firstname: Neil D.
   lastname: Lawrence

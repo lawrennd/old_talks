@@ -6,9 +6,9 @@ year: '2009'
 month: 9
 day: '16'
 layout: talk
-key: Lawrence:warwick09
+key: Lawrence-warwick09
 categories:
-- Lawrence:warwick09
+- Lawrence-warwick09
 abstract: ''
 authors:
 - firstname: Neil D.

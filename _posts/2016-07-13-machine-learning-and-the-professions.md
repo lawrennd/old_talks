@@ -10,9 +10,9 @@ year: '2016'
 month: 7
 day: '13'
 layout: talk
-key: Lawrence:professions16
+key: Lawrence-professions16
 categories:
-- Lawrence:professions16
+- Lawrence-professions16
 authors:
 - firstname: Neil D.
   lastname: Lawrence

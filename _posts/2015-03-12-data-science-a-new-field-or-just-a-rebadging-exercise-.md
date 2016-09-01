@@ -23,9 +23,9 @@ year: '2015'
 month: 3
 day: '12'
 layout: talk
-key: Lawrence:nottingham15
+key: Lawrence-nottingham15
 categories:
-- Lawrence:nottingham15
+- Lawrence-nottingham15
 authors:
 - firstname: Neil D.
   lastname: Lawrence

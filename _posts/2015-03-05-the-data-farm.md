@@ -15,9 +15,9 @@ youtube: s0EBVDAG2cg
 month: 3
 day: '5'
 layout: talk
-key: Lawrence:fest15
+key: Lawrence-fest15
 categories:
-- Lawrence:fest15
+- Lawrence-fest15
 authors:
 - firstname: Neil D.
   lastname: Lawrence

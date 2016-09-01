@@ -6,9 +6,9 @@ year: '2013'
 month: 6
 day: '11'
 layout: talk
-key: Lawrence:gpssTwo13
+key: Lawrence-gpssTwo13
 categories:
-- Lawrence:gpssTwo13
+- Lawrence-gpssTwo13
 abstract: ''
 authors:
 - firstname: Neil D.

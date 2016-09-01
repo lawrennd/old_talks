@@ -19,9 +19,9 @@ year: '2011'
 month: 11
 day: '16'
 layout: talk
-key: Lawrence:cambridge11
+key: Lawrence-cambridge11
 categories:
-- Lawrence:cambridge11
+- Lawrence-cambridge11
 authors:
 - firstname: Neil D.
   lastname: Lawrence

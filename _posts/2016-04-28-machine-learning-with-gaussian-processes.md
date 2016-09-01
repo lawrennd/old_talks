@@ -13,9 +13,9 @@ ppt: 2016-04-28-MLGPsAmazon.pptx
 pdf: 2016-04-28-MLGPsAmazon.pdf
 venue: Amazon Machine Learning Conference, Seattle
 layout: talk
-key: Lawrence:amazon16
+key: Lawrence-amazon16
 categories:
-- Lawrence:amazon16
+- Lawrence-amazon16
 authors:
 - firstname: Neil D.
   lastname: Lawrence

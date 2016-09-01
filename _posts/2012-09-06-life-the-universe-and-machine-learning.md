@@ -19,9 +19,9 @@ year: '2012'
 month: 9
 day: '6'
 layout: talk
-key: Lawrence:inaugural12
+key: Lawrence-inaugural12
 categories:
-- Lawrence:inaugural12
+- Lawrence-inaugural12
 authors:
 - firstname: Neil D.
   lastname: Lawrence

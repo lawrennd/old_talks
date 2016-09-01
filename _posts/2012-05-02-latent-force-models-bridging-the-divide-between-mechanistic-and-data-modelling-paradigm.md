@@ -19,9 +19,9 @@ year: '2012'
 month: 5
 day: '2'
 layout: talk
-key: Lawrence:liverpool12
+key: Lawrence-liverpool12
 categories:
-- Lawrence:liverpool12
+- Lawrence-liverpool12
 authors:
 - firstname: Neil D.
   lastname: Lawrence

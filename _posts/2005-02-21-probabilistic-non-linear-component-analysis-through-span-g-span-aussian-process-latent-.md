@@ -22,9 +22,9 @@ month: 2
 day: '21'
 group: gplvm
 layout: talk
-key: Lawrence:oxford05
+key: Lawrence-oxford05
 categories:
-- Lawrence:oxford05
+- Lawrence-oxford05
 authors:
 - firstname: Neil D.
   lastname: Lawrence

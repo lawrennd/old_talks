@@ -10,9 +10,9 @@ year: '2015'
 month: 3
 day: '13'
 layout: talk
-key: Lawrence:datafarm15a
+key: Lawrence-datafarm15a
 categories:
-- Lawrence:datafarm15a
+- Lawrence-datafarm15a
 authors:
 - firstname: Neil D.
   lastname: Lawrence

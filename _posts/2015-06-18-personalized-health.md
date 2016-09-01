@@ -6,9 +6,9 @@ year: '2015'
 month: 6
 day: '18'
 layout: talk
-key: Lawrence:nyeri15c
+key: Lawrence-nyeri15c
 categories:
-- Lawrence:nyeri15c
+- Lawrence-nyeri15c
 authors:
 - firstname: Neil D.
   lastname: Lawrence

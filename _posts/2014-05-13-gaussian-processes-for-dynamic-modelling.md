@@ -7,9 +7,9 @@ year: '2014'
 month: 5
 day: '13'
 layout: talk
-key: Lawrence:ebi14a
+key: Lawrence-ebi14a
 categories:
-- Lawrence:ebi14a
+- Lawrence-ebi14a
 abstract: ''
 authors:
 - firstname: Neil D.

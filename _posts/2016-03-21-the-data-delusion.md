@@ -15,9 +15,9 @@ year: '2016'
 pdf: 2016-03-21-amazonMars.pdf
 ppt: 2016-03-21-amazonMars.pptx
 layout: talk
-key: Lawrence:mars16
+key: Lawrence-mars16
 categories:
-- Lawrence:mars16
+- Lawrence-mars16
 authors:
 - firstname: Neil D.
   lastname: Lawrence

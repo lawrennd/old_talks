@@ -18,9 +18,9 @@ month: 11
 day: '29'
 group: gplvm
 layout: talk
-key: Lawrence::columbia05
+key: Lawrence--columbia05
 categories:
-- Lawrence::columbia05
+- Lawrence--columbia05
 authors:
 - firstname: Neil D.
   lastname: Lawrence

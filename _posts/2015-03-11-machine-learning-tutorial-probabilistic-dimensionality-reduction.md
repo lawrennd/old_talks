@@ -10,9 +10,9 @@ abstract: In this tutorial we will present probabilistic approaches to dimension
   and then start with principal component analysis and extend it to include non linear
   approaches to reducing the dimension of data.
 layout: talk
-key: Lawrence:imperial15
+key: Lawrence-imperial15
 categories:
-- Lawrence:imperial15
+- Lawrence-imperial15
 authors:
 - firstname: Neil D.
   lastname: Lawrence

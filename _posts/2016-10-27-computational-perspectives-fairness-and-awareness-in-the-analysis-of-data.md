@@ -13,9 +13,9 @@ month: 10
 day: '27'
 venue: Fisher Trust, Royal Society and London Mathematical Society Joint Meeting
 layout: talk
-key: Lawrence:rss16
+key: Lawrence-rss16
 categories:
-- Lawrence:rss16
+- Lawrence-rss16
 authors:
 - firstname: Neil D.
   lastname: Lawrence

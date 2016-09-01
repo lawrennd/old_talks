@@ -12,9 +12,9 @@ abstract: In this talk we will introduce some of the challenges in systems biolo
   researcher.
 group: sysbio
 layout: talk
-key: Lawrence:sysbioIntroA08
+key: Lawrence-sysbioIntroA08
 categories:
-- Lawrence:sysbioIntroA08
+- Lawrence-sysbioIntroA08
 authors:
 - firstname: Neil D.
   lastname: Lawrence

@@ -11,9 +11,9 @@ year: '2014'
 month: 4
 day: '3'
 layout: talk
-key: Lawrence:curie14
+key: Lawrence-curie14
 categories:
-- Lawrence:curie14
+- Lawrence-curie14
 authors:
 - firstname: Neil D.
   lastname: Lawrence

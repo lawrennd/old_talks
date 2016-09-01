@@ -22,9 +22,9 @@ month: 5
 day: '11'
 group: gplvm
 layout: talk
-key: Lawrence:soton05
+key: Lawrence-soton05
 categories:
-- Lawrence:soton05
+- Lawrence-soton05
 authors:
 - firstname: Neil D.
   lastname: Lawrence

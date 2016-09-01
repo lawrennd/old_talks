@@ -8,9 +8,9 @@ year: '2012'
 month: 4
 day: '15'
 layout: talk
-key: Lawrence:mlssFour12
+key: Lawrence-mlssFour12
 categories:
-- Lawrence:mlssFour12
+- Lawrence-mlssFour12
 abstract: ''
 authors:
 - firstname: Neil D.

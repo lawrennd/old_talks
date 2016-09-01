@@ -10,9 +10,9 @@ abstract: |-
   \
   In this tutorial we will give an introduction to Gaussian processes. We will give simple examples of Gaussian processes in regression and interpolation. We will then show how Gaussian processes can be incorporated with differential equation models to give probabilistic models for transcription. Such models can then be used to rank potential targets of given transcription factors.
 layout: talk
-key: Lawrence:tutorialPRIB10
+key: Lawrence-tutorialPRIB10
 categories:
-- Lawrence:tutorialPRIB10
+- Lawrence-tutorialPRIB10
 authors:
 - firstname: Neil D.
   lastname: Lawrence

@@ -15,9 +15,9 @@ abstract: |-
   Joint work with Magnus Rattray, Mauricio Álvarez, Pei Gao, Antti Honkela, David Luengo, Guido Sanguinetti and Michalis K. Titsias.
 group: ''
 layout: talk
-key: Lawrence:bark08
+key: Lawrence-bark08
 categories:
-- Lawrence:bark08
+- Lawrence-bark08
 authors:
 - firstname: Neil D.
   lastname: Lawrence

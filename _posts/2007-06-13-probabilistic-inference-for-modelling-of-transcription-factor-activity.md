@@ -10,9 +10,9 @@ year: '2007'
 month: 6
 day: '13'
 layout: talk
-key: Lawrence:gatsby07
+key: Lawrence-gatsby07
 categories:
-- Lawrence:gatsby07
+- Lawrence-gatsby07
 authors:
 - firstname: Neil D.
   lastname: Lawrence

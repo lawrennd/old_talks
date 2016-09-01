@@ -14,9 +14,9 @@ year: '2016'
 month: 3
 day: '10'
 layout: talk
-key: Lawrence:birley15
+key: Lawrence-birley15
 categories:
-- Lawrence:birley15
+- Lawrence-birley15
 authors:
 - firstname: Neil D.
   lastname: Lawrence

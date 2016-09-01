@@ -8,9 +8,9 @@ year: '2012'
 month: 6
 day: '16'
 layout: talk
-key: Lawrence:cvpr12_2
+key: Lawrence-cvpr12_2
 categories:
-- Lawrence:cvpr12_2
+- Lawrence-cvpr12_2
 abstract: ''
 authors:
 - firstname: Neil D.

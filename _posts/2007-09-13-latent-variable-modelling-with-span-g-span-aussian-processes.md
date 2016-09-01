@@ -14,9 +14,9 @@ month: 9
 day: '13'
 group: gplvm
 layout: talk
-key: Lawrence:inverse07
+key: Lawrence-inverse07
 categories:
-- Lawrence:inverse07
+- Lawrence-inverse07
 authors:
 - firstname: Neil D.
   lastname: Lawrence

@@ -6,9 +6,9 @@ year: '2013'
 month: 1
 day: '15'
 layout: talk
-key: Lawrence:reproducible13
+key: Lawrence-reproducible13
 categories:
-- Lawrence:reproducible13
+- Lawrence-reproducible13
 abstract: ''
 authors:
 - firstname: Neil D.

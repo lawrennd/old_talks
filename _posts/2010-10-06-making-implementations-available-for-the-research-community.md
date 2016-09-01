@@ -19,9 +19,9 @@ abstract: Machine learning research is either inspired by a particular applicati
   since 2001. In this talk I will make the arguments in favour of doing this universally
   and give personal experiences of the results.
 layout: talk
-key: Lawrence:validation10
+key: Lawrence-validation10
 categories:
-- Lawrence:validation10
+- Lawrence-validation10
 authors:
 - firstname: Neil D.
   lastname: Lawrence

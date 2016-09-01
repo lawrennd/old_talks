@@ -21,9 +21,9 @@ month: 3
 day: '1'
 group: gplvm
 layout: talk
-key: Lawrence:edinburgh05
+key: Lawrence-edinburgh05
 categories:
-- Lawrence:edinburgh05
+- Lawrence-edinburgh05
 authors:
 - firstname: Neil D.
   lastname: Lawrence

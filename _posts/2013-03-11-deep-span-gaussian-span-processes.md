@@ -20,9 +20,9 @@ year: '2013'
 month: 3
 day: '11'
 layout: talk
-key: Lawrence:tuebingen13
+key: Lawrence-tuebingen13
 categories:
-- Lawrence:tuebingen13
+- Lawrence-tuebingen13
 authors:
 - firstname: Neil D.
   lastname: Lawrence

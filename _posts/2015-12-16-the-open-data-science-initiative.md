@@ -12,9 +12,9 @@ year: '2015'
 month: 12
 day: '16'
 layout: talk
-key: Lawrence:odsi15
+key: Lawrence-odsi15
 categories:
-- Lawrence:odsi15
+- Lawrence-odsi15
 authors:
 - firstname: Neil D.
   lastname: Lawrence

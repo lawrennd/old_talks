@@ -20,9 +20,9 @@ year: '2013'
 month: 1
 day: '30'
 layout: talk
-key: Lawrence:ucl13
+key: Lawrence-ucl13
 categories:
-- Lawrence:ucl13
+- Lawrence-ucl13
 authors:
 - firstname: Neil D.
   lastname: Lawrence

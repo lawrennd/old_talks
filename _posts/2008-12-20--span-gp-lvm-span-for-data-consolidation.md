@@ -7,9 +7,9 @@ month: 12
 day: '20'
 group: gp,sysbio
 layout: talk
-key: Lawrence:gpdc08
+key: Lawrence-gpdc08
 categories:
-- Lawrence:gpdc08
+- Lawrence-gpdc08
 authors:
 - firstname: Neil D.
   lastname: Lawrence

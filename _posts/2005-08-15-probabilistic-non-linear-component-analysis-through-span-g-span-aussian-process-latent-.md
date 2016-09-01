@@ -8,9 +8,9 @@ month: 8
 day: '15'
 group: gplvm
 layout: talk
-key: Lawrence:tuebingen05
+key: Lawrence-tuebingen05
 categories:
-- Lawrence:tuebingen05
+- Lawrence-tuebingen05
 abstract: ''
 authors:
 - firstname: Neil D.

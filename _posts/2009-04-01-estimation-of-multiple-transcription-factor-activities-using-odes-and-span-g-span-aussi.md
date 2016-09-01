@@ -7,9 +7,9 @@ year: '2009'
 month: 4
 day: '1'
 layout: talk
-key: Lawrence:licsb09
+key: Lawrence-licsb09
 categories:
-- Lawrence:licsb09
+- Lawrence-licsb09
 abstract: ''
 authors:
 - firstname: Neil D.

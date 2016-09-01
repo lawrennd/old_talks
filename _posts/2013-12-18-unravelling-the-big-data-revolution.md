@@ -11,9 +11,9 @@ year: '2013'
 month: 12
 day: '18'
 layout: talk
-key: Lawrence:leeds13
+key: Lawrence-leeds13
 categories:
-- Lawrence:leeds13
+- Lawrence-leeds13
 authors:
 - firstname: Neil D.
   lastname: Lawrence

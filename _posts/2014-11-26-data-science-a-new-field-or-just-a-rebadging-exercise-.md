@@ -23,9 +23,9 @@ year: '2014'
 month: 11
 day: '26'
 layout: talk
-key: Lawrence:warwick14
+key: Lawrence-warwick14
 categories:
-- Lawrence:warwick14
+- Lawrence-warwick14
 authors:
 - firstname: Neil D.
   lastname: Lawrence

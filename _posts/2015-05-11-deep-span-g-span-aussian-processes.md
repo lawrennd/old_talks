@@ -15,9 +15,9 @@ year: '2015'
 month: 5
 day: '11'
 layout: talk
-key: Lawrence:nyu15
+key: Lawrence-nyu15
 categories:
-- Lawrence:nyu15
+- Lawrence-nyu15
 authors:
 - firstname: Neil D.
   lastname: Lawrence

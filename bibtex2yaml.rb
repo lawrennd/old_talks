@@ -37,7 +37,7 @@ def bibtohash(obj, bib, researchers)
   ha['layout'] = ha['bibtex_type'].to_s
   ha.tap { |hs| hs.delete('bibtex_type') }
 
-  ha['key'] = ha['bibtex_key'].to_s
+  ha['key'] = ha['bibtex_key'].to_s.tr(":", "-")
   ha.tap { |hs| hs.delete('bibtex_key') }
 
   ha['categories'] = Array.new(1)

@@ -19,9 +19,9 @@ month: 10
 day: '31'
 group: gplvm
 layout: talk
-key: Lawrence:epfl05
+key: Lawrence-epfl05
 categories:
-- Lawrence:epfl05
+- Lawrence-epfl05
 authors:
 - firstname: Neil D.
   lastname: Lawrence

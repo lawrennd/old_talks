@@ -8,9 +8,9 @@ month: 11
 day: '7'
 group: puma,gpsim
 layout: talk
-key: Lawrence:param07
+key: Lawrence-param07
 categories:
-- Lawrence:param07
+- Lawrence-param07
 abstract: ''
 authors:
 - firstname: Neil D.

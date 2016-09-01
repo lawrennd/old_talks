@@ -22,9 +22,9 @@ venue: Microsoft Research, New England, USA
 pdf: 2016-04-26-UncertaintyPropagation.pdf
 ppt: 2016-04-26-UncertaintyPropagation.pptx
 layout: talk
-key: Lawrence:msrne16b
+key: Lawrence-msrne16b
 categories:
-- Lawrence:msrne16b
+- Lawrence-msrne16b
 authors:
 - firstname: Neil D.
   lastname: Lawrence

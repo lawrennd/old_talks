@@ -6,9 +6,9 @@ year: '2009'
 month: 9
 day: '24'
 layout: talk
-key: Lawrence:inspire09
+key: Lawrence-inspire09
 categories:
-- Lawrence:inspire09
+- Lawrence-inspire09
 abstract: ''
 authors:
 - firstname: Neil D.

@@ -7,9 +7,9 @@ month: 4
 day: '7'
 group: gplvm,lfm
 layout: talk
-key: Lawrence:siena11b
+key: Lawrence-siena11b
 categories:
-- Lawrence:siena11b
+- Lawrence-siena11b
 abstract: ''
 authors:
 - firstname: Neil D.

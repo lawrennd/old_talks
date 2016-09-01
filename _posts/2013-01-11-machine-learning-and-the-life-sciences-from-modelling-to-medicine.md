@@ -6,9 +6,9 @@ year: '2013'
 month: 1
 day: '11'
 layout: talk
-key: Lawrence:infection13
+key: Lawrence-infection13
 categories:
-- Lawrence:infection13
+- Lawrence-infection13
 authors:
 - firstname: Neil D.
   lastname: Lawrence

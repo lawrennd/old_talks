@@ -7,9 +7,9 @@ youtube: MxeQIKGEXb8
 month: 7
 day: '17'
 layout: talk
-key: Lawrence:mlss15bII
+key: Lawrence-mlss15bII
 categories:
-- Lawrence:mlss15bII
+- Lawrence-mlss15bII
 authors:
 - firstname: Neil D.
   lastname: Lawrence

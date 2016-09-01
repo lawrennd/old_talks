@@ -7,9 +7,9 @@ youtube: Ead4TivIOmU
 month: 7
 day: '18'
 layout: talk
-key: Lawrence:mlss15bIII
+key: Lawrence-mlss15bIII
 categories:
-- Lawrence:mlss15bIII
+- Lawrence-mlss15bIII
 authors:
 - firstname: Neil D.
   lastname: Lawrence

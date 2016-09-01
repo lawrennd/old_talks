@@ -16,9 +16,9 @@ abstract: |-
   \
   I don’t know the answer, but I’ll try and use this MLO lunch to start the debate!
 layout: talk
-key: Lawrence:python09
+key: Lawrence-python09
 categories:
-- Lawrence:python09
+- Lawrence-python09
 authors:
 - firstname: Neil D.
   lastname: Lawrence

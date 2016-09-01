@@ -8,9 +8,9 @@ month: 11
 day: '3'
 group: gplvm
 layout: talk
-key: Lawrence:manchesterGuest06
+key: Lawrence-manchesterGuest06
 categories:
-- Lawrence:manchesterGuest06
+- Lawrence-manchesterGuest06
 abstract: ''
 authors:
 - firstname: Neil D.

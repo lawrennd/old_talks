@@ -16,9 +16,9 @@ year: '2016'
 month: 7
 day: '1'
 layout: talk
-key: Lawrence:dsa16b
+key: Lawrence-dsa16b
 categories:
-- Lawrence:dsa16b
+- Lawrence-dsa16b
 authors:
 - firstname: Neil D.
   lastname: Lawrence

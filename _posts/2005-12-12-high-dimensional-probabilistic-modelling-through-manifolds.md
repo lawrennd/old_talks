@@ -18,9 +18,9 @@ month: 12
 day: '12'
 group: gplvm
 layout: talk
-key: Lawrence::msrred05
+key: Lawrence--msrred05
 categories:
-- Lawrence::msrred05
+- Lawrence--msrred05
 authors:
 - firstname: Neil D.
   lastname: Lawrence

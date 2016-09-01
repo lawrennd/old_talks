@@ -18,9 +18,9 @@ month: 12
 day: '14'
 group: gplvm
 layout: talk
-key: Lawrence::uw05
+key: Lawrence--uw05
 categories:
-- Lawrence::uw05
+- Lawrence--uw05
 authors:
 - firstname: Neil D.
   lastname: Lawrence

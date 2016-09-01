@@ -13,9 +13,9 @@ blog: 2016-02-29-future-debates-ai.md
 venue: British Science Association Future Debates, Coffee Revolution, University of
   Sheffield
 layout: talk
-key: Lawrence:futuredebates16
+key: Lawrence-futuredebates16
 categories:
-- Lawrence:futuredebates16
+- Lawrence-futuredebates16
 authors:
 - firstname: Sheffield Debating
   lastname: Society

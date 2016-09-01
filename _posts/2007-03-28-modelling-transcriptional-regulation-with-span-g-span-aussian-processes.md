@@ -21,9 +21,9 @@ year: '2007'
 month: 3
 day: '28'
 layout: talk
-key: Lawrence:pesb07
+key: Lawrence-pesb07
 categories:
-- Lawrence:pesb07
+- Lawrence-pesb07
 authors:
 - firstname: Neil D.
   lastname: Lawrence

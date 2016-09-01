@@ -8,9 +8,9 @@ year: '2016'
 month: 6
 day: '27'
 layout: talk
-key: Lawrence:dsa16a
+key: Lawrence-dsa16a
 categories:
-- Lawrence:dsa16a
+- Lawrence-dsa16a
 abstract: ''
 authors:
 - firstname: Neil D.

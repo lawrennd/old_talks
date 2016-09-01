@@ -20,9 +20,9 @@ year: '2013'
 month: 9
 day: '3'
 layout: talk
-key: Lawrence:msr13a
+key: Lawrence-msr13a
 categories:
-- Lawrence:msr13a
+- Lawrence-msr13a
 authors:
 - firstname: Neil D.
   lastname: Lawrence

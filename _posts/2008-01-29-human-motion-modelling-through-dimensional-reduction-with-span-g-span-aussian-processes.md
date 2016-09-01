@@ -8,9 +8,9 @@ month: 1
 day: '29'
 group: pascal
 layout: talk
-key: Lawrence:human08
+key: Lawrence-human08
 categories:
-- Lawrence:human08
+- Lawrence-human08
 abstract: ''
 authors:
 - firstname: Neil D.

@@ -15,9 +15,9 @@ year: '2015'
 month: 7
 day: '11'
 layout: talk
-key: Lawrence:deepicml15
+key: Lawrence-deepicml15
 categories:
-- Lawrence:deepicml15
+- Lawrence-deepicml15
 authors:
 - firstname: Neil D.
   lastname: Lawrence

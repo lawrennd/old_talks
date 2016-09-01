@@ -17,9 +17,9 @@ year: '2016'
 month: 6
 day: '9'
 layout: talk
-key: Lawrence:futureofhumanity16
+key: Lawrence-futureofhumanity16
 categories:
-- Lawrence:futureofhumanity16
+- Lawrence-futureofhumanity16
 authors:
 - firstname: Neil D.
   lastname: Lawrence

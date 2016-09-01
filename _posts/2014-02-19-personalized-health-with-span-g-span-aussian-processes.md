@@ -11,9 +11,9 @@ year: '2014'
 month: 2
 day: '19'
 layout: talk
-key: Lawrence:manizales14
+key: Lawrence-manizales14
 categories:
-- Lawrence:manizales14
+- Lawrence-manizales14
 authors:
 - firstname: Neil D.
   lastname: Lawrence

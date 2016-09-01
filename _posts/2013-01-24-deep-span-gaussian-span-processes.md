@@ -20,9 +20,9 @@ year: '2013'
 month: 1
 day: '24'
 layout: talk
-key: Lawrence:aalto13
+key: Lawrence-aalto13
 categories:
-- Lawrence:aalto13
+- Lawrence-aalto13
 authors:
 - firstname: Neil D.
   lastname: Lawrence

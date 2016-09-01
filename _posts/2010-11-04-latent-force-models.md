@@ -20,9 +20,9 @@ abstract: Physics based approaches to data modeling involve constructing an accu
   We will show applications of these models in systems biology and (given time) modelling
   of human motion capture data.
 layout: talk
-key: Lawrence:lfmSheffield10
+key: Lawrence-lfmSheffield10
 categories:
-- Lawrence:lfmSheffield10
+- Lawrence-lfmSheffield10
 authors:
 - firstname: Neil D.
   lastname: Lawrence

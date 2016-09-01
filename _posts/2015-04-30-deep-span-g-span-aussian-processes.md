@@ -14,9 +14,9 @@ year: '2015'
 month: 4
 day: '30'
 layout: talk
-key: Lawrence:kth15
+key: Lawrence-kth15
 categories:
-- Lawrence:kth15
+- Lawrence-kth15
 authors:
 - firstname: Neil D.
   lastname: Lawrence

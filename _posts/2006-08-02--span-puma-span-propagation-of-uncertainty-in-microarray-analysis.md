@@ -6,9 +6,9 @@ year: '2006'
 month: 8
 day: '2'
 layout: talk
-key: Lawrence:tuebingen06
+key: Lawrence-tuebingen06
 categories:
-- Lawrence:tuebingen06
+- Lawrence-tuebingen06
 authors:
 - firstname: Neil D.
   lastname: Lawrence

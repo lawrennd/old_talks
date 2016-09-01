@@ -15,9 +15,9 @@ abstract: In this talk we will summarise recent work from our group in Mancheste
   model.
 group: gp,sysbio
 layout: talk
-key: Lawrence:sysbioIntroB08
+key: Lawrence-sysbioIntroB08
 categories:
-- Lawrence:sysbioIntroB08
+- Lawrence-sysbioIntroB08
 authors:
 - firstname: Neil D.
   lastname: Lawrence

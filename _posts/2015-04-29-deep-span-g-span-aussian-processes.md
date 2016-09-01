@@ -14,9 +14,9 @@ year: '2015'
 month: 4
 day: '29'
 layout: talk
-key: Lawrence:linkoping15
+key: Lawrence-linkoping15
 categories:
-- Lawrence:linkoping15
+- Lawrence-linkoping15
 authors:
 - firstname: Neil D.
   lastname: Lawrence

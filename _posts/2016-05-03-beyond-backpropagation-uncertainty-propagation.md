@@ -26,9 +26,9 @@ demo: demo_2016_05_03_iclr.m
 blog: 2016-03-04-deep-learning-and-uncertainty.md
 venue: ICLR 2016, San Jaun, Puerto Rico
 layout: talk
-key: Lawrence:iclr16
+key: Lawrence-iclr16
 categories:
-- Lawrence:iclr16
+- Lawrence-iclr16
 authors:
 - firstname: Neil D.
   lastname: Lawrence

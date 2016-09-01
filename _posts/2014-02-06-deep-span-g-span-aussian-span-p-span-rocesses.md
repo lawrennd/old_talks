@@ -11,9 +11,9 @@ year: '2014'
 month: 2
 day: '6'
 layout: talk
-key: Lawrence:oxford14
+key: Lawrence-oxford14
 categories:
-- Lawrence:oxford14
+- Lawrence-oxford14
 authors:
 - firstname: Neil D.
   lastname: Lawrence

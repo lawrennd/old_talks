@@ -9,9 +9,9 @@ year: '2016'
 month: 8
 day: '2'
 layout: talk
-key: Lawrence:mlss16bII
+key: Lawrence-mlss16bII
 categories:
-- Lawrence:mlss16bII
+- Lawrence-mlss16bII
 authors:
 - firstname: Neil D.
   lastname: Lawrence

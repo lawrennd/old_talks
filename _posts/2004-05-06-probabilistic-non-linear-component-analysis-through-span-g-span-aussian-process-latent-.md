@@ -20,9 +20,9 @@ year: '2004'
 month: 5
 day: '6'
 layout: talk
-key: Lawrence:ucbgplvm03
+key: Lawrence-ucbgplvm03
 categories:
-- Lawrence:ucbgplvm03
+- Lawrence-ucbgplvm03
 authors:
 - firstname: Neil D.
   lastname: Lawrence

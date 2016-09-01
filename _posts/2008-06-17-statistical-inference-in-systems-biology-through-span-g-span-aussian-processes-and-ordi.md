@@ -15,9 +15,9 @@ abstract: In this talk we will summarise recent work from our group in Mancheste
   model.
 group: ''
 layout: talk
-key: Lawrence:warwick08
+key: Lawrence-warwick08
 categories:
-- Lawrence:warwick08
+- Lawrence-warwick08
 authors:
 - firstname: Neil D.
   lastname: Lawrence

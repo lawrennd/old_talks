@@ -18,9 +18,9 @@ abstract: In biochemical interaction networks is a key problem in estimation of 
   can be used for the estimation of regulatory model parameters.
 group: ode, gp
 layout: talk
-key: Lawrence:rss08
+key: Lawrence-rss08
 categories:
-- Lawrence:rss08
+- Lawrence-rss08
 authors:
 - firstname: Neil D.
   lastname: Lawrence

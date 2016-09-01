@@ -16,9 +16,9 @@ abstract: We are used to dealing with the situation where we have a latent varia
   the latent force. In this talk we will introduce the general framework and present
   results in systems biology and motion capture.
 layout: talk
-key: Lawrence:lfm_slim09
+key: Lawrence-lfm_slim09
 categories:
-- Lawrence:lfm_slim09
+- Lawrence-lfm_slim09
 authors:
 - firstname: Neil D.
   lastname: Lawrence

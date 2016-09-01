@@ -15,9 +15,9 @@ ipynb: nips_radiant15.ipynb
 reveal: nips_radiant15.slides.html
 day: '30'
 layout: talk
-key: Lawrence:radiant15
+key: Lawrence-radiant15
 categories:
-- Lawrence:radiant15
+- Lawrence-radiant15
 authors:
 - firstname: Neil D.
   lastname: Lawrence

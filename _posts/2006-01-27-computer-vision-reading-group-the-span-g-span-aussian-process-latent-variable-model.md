@@ -12,9 +12,9 @@ month: 1
 day: '27'
 group: gplvm
 layout: talk
-key: Lawrence:oxford06
+key: Lawrence-oxford06
 categories:
-- Lawrence:oxford06
+- Lawrence-oxford06
 authors:
 - firstname: Neil D.
   lastname: Lawrence

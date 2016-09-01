@@ -18,9 +18,9 @@ month: 11
 day: '28'
 group: gplvm
 layout: talk
-key: Lawrence::ibm05
+key: Lawrence--ibm05
 categories:
-- Lawrence::ibm05
+- Lawrence--ibm05
 authors:
 - firstname: Neil D.
   lastname: Lawrence

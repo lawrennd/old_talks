@@ -21,9 +21,9 @@ month: 2
 day: '12'
 group: gplvm
 layout: talk
-key: Lawrence:google07
+key: Lawrence-google07
 categories:
-- Lawrence:google07
+- Lawrence-google07
 authors:
 - firstname: Neil D.
   lastname: Lawrence

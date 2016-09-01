@@ -19,9 +19,9 @@ year: '2011'
 month: 3
 day: '01'
 layout: talk
-key: Lawrence:edinburgh11
+key: Lawrence-edinburgh11
 categories:
-- Lawrence:edinburgh11
+- Lawrence-edinburgh11
 authors:
 - firstname: Neil D.
   lastname: Lawrence

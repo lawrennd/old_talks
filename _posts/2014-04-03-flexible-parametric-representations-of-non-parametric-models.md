@@ -16,9 +16,9 @@ year: '2014'
 month: 4
 day: '3'
 layout: talk
-key: Lawrence:smile14
+key: Lawrence-smile14
 categories:
-- Lawrence:smile14
+- Lawrence-smile14
 authors:
 - firstname: Neil D.
   lastname: Lawrence

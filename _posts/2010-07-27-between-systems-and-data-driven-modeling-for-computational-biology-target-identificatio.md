@@ -20,9 +20,9 @@ abstract: A simple approach to target identification through gene expression stu
   probabilistic models with mechanistic underpinnings. We show applications in target
   identification from mRNA measurements.
 layout: talk
-key: Lawrence:ibsb10
+key: Lawrence-ibsb10
 categories:
-- Lawrence:ibsb10
+- Lawrence-ibsb10
 authors:
 - firstname: Neil D.
   lastname: Lawrence

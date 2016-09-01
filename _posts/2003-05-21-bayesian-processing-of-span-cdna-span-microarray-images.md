@@ -18,9 +18,9 @@ year: '2003'
 month: 5
 day: '21'
 layout: talk
-key: Lawrence:manchester03
+key: Lawrence-manchester03
 categories:
-- Lawrence:manchester03
+- Lawrence-manchester03
 authors:
 - firstname: Neil D.
   lastname: Lawrence

@@ -7,9 +7,9 @@ month: 2
 day: '07'
 group: pascal
 layout: talk
-key: Lawrence:newton08
+key: Lawrence-newton08
 categories:
-- Lawrence:newton08
+- Lawrence-newton08
 abstract: ''
 authors:
 - firstname: Neil D.

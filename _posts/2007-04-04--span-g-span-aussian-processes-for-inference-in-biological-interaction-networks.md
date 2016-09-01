@@ -14,9 +14,9 @@ year: '2007'
 month: 4
 day: '4'
 layout: talk
-key: Lawrence:mathbio07
+key: Lawrence-mathbio07
 categories:
-- Lawrence:mathbio07
+- Lawrence-mathbio07
 authors:
 - firstname: Neil D.
   lastname: Lawrence

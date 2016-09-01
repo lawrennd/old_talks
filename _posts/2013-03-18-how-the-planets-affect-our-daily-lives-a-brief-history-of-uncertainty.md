@@ -12,9 +12,9 @@ abstract: Within the last 400 years scientists became able to predict the future
   planets affect who your Facebook friends are.
 agegroup: Y10
 layout: talk
-key: Lawrence:scienceweek_birley13
+key: Lawrence-scienceweek_birley13
 categories:
-- Lawrence:scienceweek_birley13
+- Lawrence-scienceweek_birley13
 authors:
 - firstname: Neil D.
   lastname: Lawrence

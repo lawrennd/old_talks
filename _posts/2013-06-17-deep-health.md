@@ -6,9 +6,9 @@ year: '2013'
 month: 6
 day: '17'
 layout: talk
-key: Lawrence:manchester13
+key: Lawrence-manchester13
 categories:
-- Lawrence:manchester13
+- Lawrence-manchester13
 abstract: ''
 authors:
 - firstname: Neil D.

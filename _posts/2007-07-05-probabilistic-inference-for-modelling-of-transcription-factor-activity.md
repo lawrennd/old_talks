@@ -11,9 +11,9 @@ year: '2007'
 month: 7
 day: '5'
 layout: talk
-key: Lawrence:uc3tfa07
+key: Lawrence-uc3tfa07
 categories:
-- Lawrence:uc3tfa07
+- Lawrence-uc3tfa07
 authors:
 - firstname: Neil D.
   lastname: Lawrence

@@ -16,9 +16,9 @@ abstract: In this talk we will present recent work from Manchester in inference 
   systems.
 group: gp
 layout: talk
-key: Lawrence:latentFunc08
+key: Lawrence-latentFunc08
 categories:
-- Lawrence:latentFunc08
+- Lawrence-latentFunc08
 authors:
 - firstname: Neil D.
   lastname: Lawrence

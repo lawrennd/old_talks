@@ -15,9 +15,9 @@ year: '2016'
 month: 5
 day: '27'
 layout: talk
-key: Lawrence:futureofwork16
+key: Lawrence-futureofwork16
 categories:
-- Lawrence:futureofwork16
+- Lawrence-futureofwork16
 authors:
 - firstname: Neil D.
   lastname: Lawrence

@@ -14,9 +14,9 @@ month: 6
 day: '22'
 group: gplvm
 layout: talk
-key: Lawrence:icml07
+key: Lawrence-icml07
 categories:
-- Lawrence:icml07
+- Lawrence-icml07
 authors:
 - firstname: Neil D.
   lastname: Lawrence

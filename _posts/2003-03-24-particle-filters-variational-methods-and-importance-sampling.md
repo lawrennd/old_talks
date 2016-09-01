@@ -19,9 +19,9 @@ year: '2003'
 month: 3
 day: '24'
 layout: talk
-key: Lawrence:msr03
+key: Lawrence-msr03
 categories:
-- Lawrence:msr03
+- Lawrence-msr03
 authors:
 - firstname: Neil D.
   lastname: Lawrence

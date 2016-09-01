@@ -8,9 +8,9 @@ month: 6
 day: '27'
 group: gplvm
 layout: talk
-key: Lawrence:icml06
+key: Lawrence-icml06
 categories:
-- Lawrence:icml06
+- Lawrence-icml06
 abstract: ''
 authors:
 - firstname: Neil D.

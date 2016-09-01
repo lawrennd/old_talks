@@ -7,9 +7,9 @@ year: '2012'
 month: 6
 day: '12'
 layout: talk
-key: Lawrence:biopredyn12_1
+key: Lawrence-biopredyn12_1
 categories:
-- Lawrence:biopredyn12_1
+- Lawrence-biopredyn12_1
 abstract: ''
 authors:
 - firstname: Neil D.

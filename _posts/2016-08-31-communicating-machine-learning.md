@@ -10,9 +10,9 @@ year: '2016'
 month: 8
 day: '31'
 layout: talk
-key: Lawrence:edinburgh16
+key: Lawrence-edinburgh16
 categories:
-- Lawrence:edinburgh16
+- Lawrence-edinburgh16
 authors:
 - firstname: Neil D.
   lastname: Lawrence

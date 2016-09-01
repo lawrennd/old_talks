@@ -18,9 +18,9 @@ abstract: Spectral approaches to dimensionality reduction typically reduce the d
   will allow the relationships between these methods to be better understood and will
   also provide the groundwork for further research.
 layout: talk
-key: Lawrence:aalto10
+key: Lawrence-aalto10
 categories:
-- Lawrence:aalto10
+- Lawrence-aalto10
 authors:
 - firstname: Neil D.
   lastname: Lawrence

@@ -14,9 +14,9 @@ month: 9
 day: '6'
 group: ''
 layout: talk
-key: Lawrence:bayes11
+key: Lawrence-bayes11
 categories:
-- Lawrence:bayes11
+- Lawrence-bayes11
 authors:
 - firstname: Neil D.
   lastname: Lawrence

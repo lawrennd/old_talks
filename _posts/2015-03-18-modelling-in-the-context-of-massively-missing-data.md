@@ -18,9 +18,9 @@ year: '2015'
 month: 3
 day: '18'
 layout: talk
-key: Lawrence:mpi15
+key: Lawrence-mpi15
 categories:
-- Lawrence:mpi15
+- Lawrence-mpi15
 authors:
 - firstname: Neil D.
   lastname: Lawrence

@@ -26,9 +26,9 @@ ppt: 2016-04-07-deepLearningSummit.pptx
 pdf: 2016-04-07-deepLearningSummit.pdf
 venue: Deep Learning Summit, London, UK
 layout: talk
-key: Lawrence:deepSummit16
+key: Lawrence-deepSummit16
 categories:
-- Lawrence:deepSummit16
+- Lawrence-deepSummit16
 authors:
 - firstname: Neil D.
   lastname: Lawrence

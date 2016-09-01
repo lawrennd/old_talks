@@ -11,9 +11,9 @@ year: '2013'
 month: 11
 day: '14'
 layout: talk
-key: Lawrence:necs13
+key: Lawrence-necs13
 categories:
-- Lawrence:necs13
+- Lawrence-necs13
 authors:
 - firstname: Neil D.
   lastname: Lawrence

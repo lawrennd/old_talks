@@ -12,9 +12,9 @@ abstract: In this talk we present an overview of probabilistic approaches to dim
   process latent variable model.
 group: gplvm,lfm
 layout: talk
-key: Lawrence:dagstuhl11
+key: Lawrence-dagstuhl11
 categories:
-- Lawrence:dagstuhl11
+- Lawrence-dagstuhl11
 authors:
 - firstname: Neil D.
   lastname: Lawrence

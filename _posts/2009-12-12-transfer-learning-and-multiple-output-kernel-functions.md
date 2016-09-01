@@ -21,9 +21,9 @@ abstract: 'A standard Bayesian approach to transfer learning is to construct hie
   We will try to illustrate these models with a range of real world examples of both
   transfer learning and other applications.'
 layout: talk
-key: Lawrence:tlsd09
+key: Lawrence-tlsd09
 categories:
-- Lawrence:tlsd09
+- Lawrence-tlsd09
 authors:
 - firstname: Neil D.
   lastname: Lawrence

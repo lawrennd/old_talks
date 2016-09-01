@@ -22,9 +22,9 @@ year: '2015'
 month: 11
 day: '18'
 layout: talk
-key: Lawrence:atiscope15
+key: Lawrence-atiscope15
 categories:
-- Lawrence:atiscope15
+- Lawrence-atiscope15
 authors:
 - firstname: Neil D.
   lastname: Lawrence
