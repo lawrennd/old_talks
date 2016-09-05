@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Neil D. Lawrence">
+  <title>Fitting Covariance and Multioutput Gaussian Processes</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Fitting Covariance and Multioutput Gaussian Processes</h1>
+  <h2 class="author">Neil D. Lawrence</h2>
+  <h3 class="date">14th September 2015</h3>
+</section>
+
+<section id="outline" class="slide level3">
+<h1>Outline</h1>
+<p>mlpcovarianceInit</p>
+</section>
+<section id="covariance-functions" class="slide level3">
+<h1>Covariance Functions</h1>
+<p><strong>MLP Covariance Function</strong></p>
+<p><span class="math display">\[{k}\left({{{\bf {x}}}},{{{\bf {x}}}}^{\prime}\right)=\alpha \text{asin}\left(\frac{w{{{\bf {x}}}}^\top {{{\bf {x}}}}^\prime + b}{\sqrt{w{{{\bf {x}}}}^\top{{{\bf {x}}}}+ b + 1}\sqrt{w{{{{\bf {x}}}}^\prime}^\top{{{\bf {x}}}}^\prime + b + 1}}\right)\]</span></p>
+<ul>
+<li>Based on infinite neural network model.</li>
+</ul>
+<p><span class="math display">\[w = 40\]</span> <span class="math display">\[b = 4\]</span></p>
+<p>mlpcovarianceSample</p>
+<p>linearcovarianceInit</p>
+</section>
+<section id="covariance-functions-1" class="slide level3">
+<h1>Covariance Functions</h1>
+<p><strong>Linear Covariance Function</strong></p>
+<p><span class="math display">\[{k}\left({{{\bf {x}}}},{{{\bf {x}}}}^{\prime}\right)=\alpha {{{\bf {x}}}}^\top {{{\bf {x}}}}^\prime\]</span></p>
+<ul>
+<li>Bayesian linear regression.</li>
+</ul>
+<p><span class="math display">\[\alpha = 1\]</span></p>
+<p>lincovarianceSample</p>
+</section>
+<section id="gaussian-noise" class="slide level3">
+<h1>Gaussian Noise</h1>
+<ul>
+<li><p>Gaussian noise model, <span class="math display">\[p\left({y}_{i}|{f}_{i}\right) = {\mathcal{N}\left({y}_{i}|{f}_{i},{\sigma}^2\right)}\]</span> where <span class="math inline">\({\sigma}^2\)</span> is the variance of the noise.</p></li>
+<li><p>Equivalent to a covariance function of the form <span class="math display">\[{k}({{{\bf {x}}}}_i, {{{\bf {x}}}}_j) = \delta_{i, j}{\sigma}^2\]</span> where <span class="math inline">\(\delta_{i,j}\)</span> is the Kronecker delta function.</p></li>
+<li><p>Additive nature of Gaussians means we can simply add this term to existing covariance matrices.</p></li>
+</ul>
+<p>markovcovarianceInit</p>
+</section>
+<section id="covariance-functions-2" class="slide level3">
+<h1>Covariance Functions</h1>
+<h4 id="where-did-this-covariance-matrix-come-from">Where did this covariance matrix come from?</h4>
+<p><strong>Markov Process</strong></p>
+<p><span class="math display">\[{k}\left(t,t^{\prime}\right)=\alpha \text{min}(t, t^\prime)\]</span></p>
+<ul>
+<li>Covariance matrix is built using the <em>inputs</em> to the function <span class="math inline">\(t\)</span>.</li>
+</ul>
+<p>markovcovarianceSample</p>
+<p>markovprecisionInit</p>
+</section>
+<section id="covariance-functions-3" class="slide level3">
+<h1>Covariance Functions</h1>
+<h4 id="where-did-this-covariance-matrix-come-from-1">Where did this covariance matrix come from?</h4>
+<p><strong>Markov Process</strong></p>
+<p><strong>Visualization of inverse covariance (precision).</strong></p>
+<ul>
+<li><p>Precision matrix is sparse: only neighbours in matrix are non-zero.</p></li>
+<li><p>This reflects <em>conditional</em> independencies in data.</p></li>
+<li><p>In this case <em>Markov</em> structure.</p></li>
+</ul>
+<p>markovprecisionPlot</p>
+<p>rbfcovarianceInit</p>
+</section>
+<section id="covariance-functions-4" class="slide level3">
+<h1>Covariance Functions</h1>
+<h4 id="where-did-this-covariance-matrix-come-from-2">Where did this covariance matrix come from?</h4>
+<p><strong>Exponentiated Quadratic Kernel Function (RBF, Squared Exponential, Gaussian)</strong></p>
+<p><span class="math display">\[{k}\left({{{\bf {x}}}},{{{\bf {x}}}}^{\prime}\right)=\alpha\exp\left(-\frac{{\left\Vert {{{\bf {x}}}}-{{{\bf {x}}}}^{\prime} \right\Vert_2}^{2}}{2{\ell}^{2}}\right)\]</span></p>
+<ul>
+<li><p>Covariance matrix is built using the <em>inputs</em> to the function <span class="math inline">\({{{\bf {x}}}}\)</span>.</p></li>
+<li><p>For the example above it was based on Euclidean distance.</p></li>
+<li><p>The covariance function is also know as a kernel.</p></li>
+</ul>
+<p>rbfcovarianceSample</p>
+<p>rbfprecisionInit</p>
+</section>
+<section id="covariance-functions-5" class="slide level3">
+<h1>Covariance Functions</h1>
+<h4 id="where-did-this-covariance-matrix-come-from-3">Where did this covariance matrix come from?</h4>
+<p><strong>Exponentiated Quadratic</strong></p>
+<p><strong>Visualization of inverse covariance (precision).</strong></p>
+<ul>
+<li><p>Precision matrix is not sparse.</p></li>
+<li><p>Each point is dependent on all the others.</p></li>
+<li><p>In this case non-Markovian.</p></li>
+</ul>
+<p>rbfprecisionSample</p>
+<p>markovprecisionInit</p>
+</section>
+<section id="covariance-functions-6" class="slide level3">
+<h1>Covariance Functions</h1>
+<h4 id="where-did-this-covariance-matrix-come-from-4">Where did this covariance matrix come from?</h4>
+<p><strong>Markov Process</strong></p>
+<p><strong>Visualization of inverse covariance (precision).</strong></p>
+<ul>
+<li><p>Precision matrix is sparse: only neighbours in matrix are non-zero.</p></li>
+<li><p>This reflects <em>conditional</em> independencies in data.</p></li>
+<li><p>In this case <em>Markov</em> structure.</p></li>
+</ul>
+<p>markovprecisionPlot</p>
+</section>
+<section id="simple-kalman-filter" class="slide level3">
+<h1>Simple Kalman Filter</h1>
+<ul>
+<li><p>We have state vector <span class="math inline">\({\mathbf{X}}= \left[{\mathbf{{x}}}_1  \dots {\mathbf{{x}}}_{q}\right] \in \mathbb{R}^{{T}\times {q}}\)</span> and if each state evolves independently we have <span class="math display">\[\begin{aligned}
+    p({\mathbf{X}}) &amp;= \prod_{i=1}^{q}p({\mathbf{{x}}}_{:,
+        i}) \\
+            p({\mathbf{{x}}}_{:, i})&amp;= {\mathcal{N}\left({\mathbf{{x}}}_{:,
+                i}|{\mathbf{0}},{\mathbf{K}}\right)}.
+                    \end{aligned}\]</span></p></li>
+<li><p>We want to obtain outputs through: <span class="math display">\[{\mathbf{{y}}}_{i, :} = {\mathbf{W}}{\mathbf{{x}}}_{i, :}\]</span></p></li>
+</ul>
+</section>
+<section id="stacking-and-kronecker-products" class="slide level3">
+<h1>Stacking and Kronecker Products</h1>
+<ul>
+<li>Represent with a ‘stacked’ system: <span class="math display">\[p({\mathbf{{x}}}) = {\mathcal{N}\left({\mathbf{{x}}}|{\mathbf{0}},{\mathbf{I}}\otimes {\mathbf{K}}\right)}\]</span> where the stacking is placing each column of <span class="math inline">\({\mathbf{X}}\)</span> one on top of another as <span class="math display">\[{\mathbf{{x}}}= \begin{bmatrix}
+      {\mathbf{{x}}}_{:, 1}\\
+      {\mathbf{{x}}}_{:, 2}\\
+      \vdots\\
+      {\mathbf{{x}}}_{:, {q}}
+    \end{bmatrix}\]</span></li>
+</ul>
+<p>gpKalmanFilterKroneckerInit</p>
+</section>
+<section id="kronecker-product" class="slide level3">
+<h1>Kronecker Product</h1>
+<p>gpKalmanFilterKroneckerPlot1</p>
+</section>
+<section id="stacking-and-kronecker-products-1" class="slide level3">
+<h1>Stacking and Kronecker Products</h1>
+<ul>
+<li>Represent with a ‘stacked’ system: <span class="math display">\[p({\mathbf{{x}}}) = {\mathcal{N}\left({\mathbf{{x}}}|{\mathbf{0}},{\mathbf{I}}\otimes {\mathbf{K}}\right)}\]</span> where the stacking is placing each column of <span class="math inline">\({\mathbf{X}}\)</span> one on top of another as <span class="math display">\[{\mathbf{{x}}}= \begin{bmatrix}
+      {\mathbf{{x}}}_{:, 1}\\
+      {\mathbf{{x}}}_{:, 2}\\
+      \vdots\\
+      {\mathbf{{x}}}_{:, {q}}
+    \end{bmatrix}\]</span></li>
+</ul>
+</section>
+<section id="column-stacking" class="slide level3">
+<h1>Column Stacking</h1>
+<p>gpKalmanFilterKroneckerPlot2</p>
+<p><span>For this stacking the marginal distribution over <em>time</em> is given by the block diagonals.</span></p>
+</section>
+<section id="two-ways-of-stacking" class="slide level3">
+<h1>Two Ways of Stacking</h1>
+<p>Can also stack each row of <span class="math inline">\({\mathbf{X}}\)</span> to form column vector: <span class="math display">\[{\mathbf{{x}}}= \begin{bmatrix}
+      {\mathbf{{x}}}_{1, :}\\
+      {\mathbf{{x}}}_{2, :}\\
+      \vdots\\
+      {\mathbf{{x}}}_{{T}, :}
+    \end{bmatrix}\]</span> <span class="math display">\[p({\mathbf{{x}}}) = {\mathcal{N}\left({\mathbf{{x}}}|{\mathbf{0}},{\mathbf{K}}\otimes {\mathbf{I}}\right)}\]</span></p>
+</section>
+<section id="row-stacking" class="slide level3">
+<h1>Row Stacking</h1>
+<p>gpKalmanFilterKroneckerPlot3</p>
+<p><br />
+<span>For this stacking the marginal distribution over the latent <em>dimensions</em> is given by the block diagonals.</span></p>
+</section>
+<section id="observed-process" class="slide level3">
+<h1>Observed Process</h1>
+<p>The observations are related to the latent points by a linear mapping matrix, <span class="math display">\[{\mathbf{{y}}}_{i, :} = {\mathbf{W}}{\mathbf{{x}}}_{i, :} + {\boldsymbol{\epsilon}}_{i, :}\]</span> <span class="math display">\[{\boldsymbol{\epsilon}}\sim {\mathcal{N}\left(0,{\sigma}^2{\mathbf{I}}\right)}\]</span></p>
+</section>
+<section id="mapping-from-latent-process-to-observed" class="slide level3">
+<h1>Mapping from Latent Process to Observed</h1>
+<p>gpKalmanFilterKroneckerPlot4</p>
+</section>
+<section id="output-covariance" class="slide level3">
+<h1>Output Covariance</h1>
+<p>This leads to a covariance of the form <span class="math display">\[({\mathbf{I}}\otimes {\mathbf{W}}) ({\mathbf{K}}\otimes {\mathbf{I}}) ({\mathbf{I}}\otimes {\mathbf{W}}^\top) + {\mathbf{I}}{\sigma}^2\]</span> Using <span class="math inline">\((\mathbf{A}\otimes\mathbf{B}) (\mathbf{C}\otimes\mathbf{D}) = \mathbf{A}\mathbf{C} \otimes \mathbf{B}\mathbf{D}\)</span> This leads to <span class="math display">\[{\mathbf{K}}\otimes {\mathbf{W}}{\mathbf{W}}^\top + {\mathbf{I}}{\sigma}^2\]</span> or <span class="math display">\[{\mathbf{{y}}}\sim {\mathcal{N}\left(0,{\mathbf{W}}{\mathbf{W}}^\top \otimes {\mathbf{K}}+ {\mathbf{I}}{\sigma}^2\right)}\]</span></p>
+<p>gpKalmanMultiTaskInit</p>
+</section>
+<section id="kernels-for-vector-valued-outputs-a-review" class="slide level3">
+<h1>Kernels for Vector Valued Outputs: A Review</h1>
+</section>
+<section id="kronecker-structure-gps" class="slide level3">
+<h1>Kronecker Structure GPs</h1>
+<ul>
+<li><p>This Kronecker structure leads to several published models. <span class="math display">\[({\mathbf{K}}({{\bf {x}}},{{\bf {x}}}^\prime))_{{d},{d}^\prime}={k}({{\bf {x}}},{{\bf {x}}}^\prime){k}_T({d},{d}^\prime),\]</span> where <span class="math inline">\({k}\)</span> has <span class="math inline">\({{\bf {x}}}\)</span> and <span class="math inline">\({k}_T\)</span> has <span class="math inline">\({n}\)</span> as inputs.</p></li>
+<li><p>Can think of multiple output covariance functions as covariances with augmented input.</p></li>
+<li><p>Alongside <span class="math inline">\({{\bf {x}}}\)</span> we also input the <span class="math inline">\({d}\)</span> associated with the <em>output</em> of interest.</p></li>
+</ul>
+</section>
+<section id="separable-covariance-functions" class="slide level3">
+<h1>Separable Covariance Functions</h1>
+<ul>
+<li><p>Taking <span class="math inline">\({\mathbf{B}}= {\mathbf{W}}{\mathbf{W}}^\top\)</span> we have a matrix expression across outputs. <span class="math display">\[{\mathbf{K}}({{\bf {x}}},{{\bf {x}}}^\prime)={k}({{\bf {x}}},{{\bf {x}}}^\prime){\mathbf{B}},\]</span> where <span class="math inline">\({\mathbf{B}}\)</span> is a <span class="math inline">\({p}\times {p}\)</span> symmetric and positive semi-definite matrix.</p></li>
+<li><p><span class="math inline">\({\mathbf{B}}\)</span> is called the <em>coregionalization</em> matrix.</p></li>
+<li><p>We call this class of covariance functions <em>separable</em> due to their product structure.</p></li>
+</ul>
+</section>
+<section id="sum-of-separable-covariance-functions" class="slide level3">
+<h1>Sum of Separable Covariance Functions</h1>
+<ul>
+<li><p>In the same spirit a more general class of kernels is given by <span class="math display">\[{\mathbf{K}}({{\bf {x}}},{{\bf {x}}}^\prime)=\sum_{{j}=1}^{q}{k}_{j}({{\bf {x}}},{{\bf {x}}}^\prime){\mathbf{B}}_{j}.\]</span></p></li>
+<li><p>This can also be written as <span class="math display">\[{\mathbf{K}}({{\bf X}}, {{\bf X}}) = \sum_{{j}=1}^{q}{\mathbf{B}}_{j}\otimes {k}_{j}({{\bf X}}, {{\bf X}}),\]</span></p></li>
+<li><p>This is like several Kalman filter-type models added together, but each one with a different set of latent functions.</p></li>
+<li><p>We call this class of kernels sum of separable kernels (SoS kernels).</p></li>
+</ul>
+</section>
+<section id="geostatistics" class="slide level3">
+<h1>Geostatistics</h1>
+<ul>
+<li><p>Use of GPs in Geostatistics is called kriging.</p></li>
+<li><p>These multi-output GPs pioneered in geostatistics: prediction over vector-valued output data is known as <em>cokriging</em>.</p></li>
+<li><p>The model in geostatistics is known as the <em>linear model of coregionalization</em> (LMC, <span><span class="citation" data-cites="Journel:miningBook78 Goovaerts:book97">@Journel:miningBook78 [@Goovaerts:book97]</span></span>).</p></li>
+<li><p>Most machine learning multitask models can be placed in the context of the LMC model.</p></li>
+</ul>
+</section>
+<section id="weighted-sum-of-latent-functions" class="slide level3">
+<h1>Weighted sum of Latent Functions</h1>
+<ul>
+<li><p>In the linear model of coregionalization (LMC) outputs are expressed as linear combinations of independent random functions.</p></li>
+<li><p>In the LMC, each component <span class="math inline">\({f}_{d}\)</span> is expressed as a linear sum <span class="math display">\[{f}_{d}({{\bf {x}}}) = \sum_{{j}=1}^{q}{w}_{{d},{j}}{u}_{{j}}({{\bf {x}}}).\]</span> where the latent functions are independent and have covariance functions <span class="math inline">\({k}_{{j}}({{\bf {x}}},{{\bf {x}}}^\prime)\)</span>.</p></li>
+<li><p>The processes <span class="math inline">\(\{{f}_{{j}}({{\bf {x}}})\}_{{j}=1}^{q}\)</span> are independent for <span class="math inline">\(q \neq {j}^\prime\)</span>.</p></li>
+</ul>
+</section>
+<section id="kalman-filter-special-case" class="slide level3">
+<h1>Kalman Filter Special Case</h1>
+<ul>
+<li><p>The Kalman filter is an example of the LMC where <span class="math inline">\({u}_i({{\bf {x}}}) \rightarrow {x}_i(t)\)</span>.</p></li>
+<li><p>I.e. we’ve moved form time input to a more general input space.</p></li>
+<li><p>In matrix notation:</p>
+<ol type="1">
+<li><p>Kalman filter <span class="math display">\[{\mathbf{F}}= {\mathbf{W}}{{\bf X}}\]</span></p></li>
+<li><p>LMC <span class="math display">\[{\mathbf{F}}= {\mathbf{W}}{\mathbf{U}}\]</span></p></li>
+</ol>
+<p>where the rows of these matrices <span class="math inline">\({\mathbf{F}}\)</span>, <span class="math inline">\({{\bf X}}\)</span>, <span class="math inline">\({\mathbf{U}}\)</span> each contain <span class="math inline">\({q}\)</span> samples from their corresponding functions at a different time (Kalman filter) or spatial location (LMC).</p></li>
+</ul>
+</section>
+<section id="intrinsic-coregionalization-model" class="slide level3">
+<h1>Intrinsic Coregionalization Model</h1>
+<ul>
+<li><p>If one covariance used for latent functions (like in Kalman filter).</p></li>
+<li><p>This is called the intrinsic coregionalization model (ICM, <span><span class="citation" data-cites="Goovaerts:book97">@Goovaerts:book97</span></span>).</p></li>
+<li><p>The kernel matrix corresponding to a dataset <span class="math inline">\({{\bf X}}\)</span> takes the form <span class="math display">\[{\mathbf{K}}({{\bf X}}, {{\bf X}}) =  {\mathbf{B}}\otimes {k}({{\bf X}}, {{\bf X}}).\]</span></p></li>
+</ul>
+</section>
+<section id="autokrigeability" class="slide level3">
+<h1>Autokrigeability</h1>
+<ul>
+<li><p>If outputs are noise-free, maximum likelihood is equivalent to independent fits of <span class="math inline">\({\mathbf{B}}\)</span> and <span class="math inline">\({k}({{\bf {x}}}, {{\bf {x}}}^\prime)\)</span> <span><span class="citation" data-cites="Helterbrand:universalCR94">[@Helterbrand:universalCR94]</span></span>.</p></li>
+<li><p>In geostatistics this is known as autokrigeability <span><span class="citation" data-cites="Wackernagel:multivariate03">[@Wackernagel:multivariate03]</span></span>.</p></li>
+<li><p>In multitask learning its the cancellation of intertask transfer <span><span class="citation" data-cites="Bonilla:multi07">[@Bonilla:multi07]</span></span>.</p></li>
+</ul>
+</section>
+<section id="intrinsic-coregionalization-model-1" class="slide level3">
+<h1>Intrinsic Coregionalization Model</h1>
+<p><span class="math display">\[{\mathbf{K}}({{\bf X}}, {{\bf X}}) =  {\mathbf{{w}}}{\mathbf{{w}}}^\top  \otimes {k}({{\bf X}}, {{\bf X}}).\]</span></p>
+<p><span class="math display">\[{\mathbf{{w}}}= \begin{bmatrix} 1 \\ 5\end{bmatrix}\]</span> <span class="math display">\[{\mathbf{B}}= \begin{bmatrix} 1 &amp; 5\\ 5&amp;25\end{bmatrix}\]</span></p>
+<p>gpKalmanToMultiTaskIcm</p>
+<p><span><img src="../../../multigp/tex/diagrams/icmCovarianceImage" alt="image" /></span><span><img src="../../../multigp/tex/diagrams/icmCovarianceSample1" alt="image" /></span><span><img src="../../../multigp/tex/diagrams/icmCovarianceSample2" alt="image" /></span><span><img src="../../../multigp/tex/diagrams/icmCovarianceSample3" alt="image" /></span><span><img src="../../../multigp/tex/diagrams/icmCovarianceSample4" alt="image" /></span></p>
+</section>
+<section id="intrinsic-coregionalization-model-2" class="slide level3">
+<h1>Intrinsic Coregionalization Model</h1>
+<p><span class="math display">\[{\mathbf{K}}({{\bf X}}, {{\bf X}}) =  {\mathbf{B}}\otimes {k}({{\bf X}}, {{\bf X}}).\]</span></p>
+<p><span class="math display">\[{\mathbf{B}}= \begin{bmatrix} 1 &amp; 0.5\\ 0.5&amp; 1.5\end{bmatrix}\]</span></p>
+<p>gpKalmanToMultiTaskIcm2</p>
+<p><span><img src="../../../multigp/tex/diagrams/icm2CovarianceImage" alt="image" /></span><span><img src="../../../multigp/tex/diagrams/icm2CovarianceSample1" alt="image" /></span><span><img src="../../../multigp/tex/diagrams/icm2CovarianceSample2" alt="image" /></span><span><img src="../../../multigp/tex/diagrams/icm2CovarianceSample3" alt="image" /></span><span><img src="../../../multigp/tex/diagrams/icm2CovarianceSample4" alt="image" /></span></p>
+</section>
+<section id="lmc-samples" class="slide level3">
+<h1>LMC Samples</h1>
+<p><span class="math display">\[{\mathbf{K}}({{\bf X}}, {{\bf X}}) = {\mathbf{B}}_1 \otimes {k}_1({{\bf X}}, {{\bf X}}) + {\mathbf{B}}_2 \otimes {k}_2({{\bf X}}, {{\bf X}})\]</span></p>
+<p><span class="math display">\[{\mathbf{B}}_1 = \begin{bmatrix} 1.4 &amp; 0.5\\ 0.5&amp; 1.2\end{bmatrix}\]</span> <span class="math display">\[{\ell}_1 = 1\]</span> <span class="math display">\[{\mathbf{B}}_2 = \begin{bmatrix} 1 &amp; 0.5\\ 0.5&amp; 1.3\end{bmatrix}\]</span> <span class="math display">\[{\ell}_2 = 0.2\]</span></p>
+<p>gpKalmanToMultiTaskLmc</p>
+<p><img src="../../../multigp/tex/diagrams/lmc2CovarianceImage" alt="image" /><img src="../../../multigp/tex/diagrams/lmc2CovarianceSample1" alt="image" /><img src="../../../multigp/tex/diagrams/lmc2CovarianceSample2" alt="image" /><img src="../../../multigp/tex/diagrams/lmc2CovarianceSample3" alt="image" /><img src="../../../multigp/tex/diagrams/lmc2CovarianceSample4" alt="image" /></p>
+</section>
+<section id="lmc-in-machine-learning-and-statistics" class="slide level3">
+<h1>LMC in Machine Learning and Statistics</h1>
+<ul>
+<li><p>Used in machine learning for GPs for multivariate regression and in statistics for computer emulation of expensive multivariate computer codes.</p></li>
+<li><p>Imposes the correlation of the outputs explicitly through the set of coregionalization matrices.</p></li>
+<li><p>Setting <span class="math inline">\({\mathbf{B}}={\mathbf{I}}_{p}\)</span> assumes outputs are conditionally independent given the parameters <span class="math inline">\({\boldsymbol{{\theta}}}\)</span>. <span class="citation" data-cites="Minka:learningtolearn97 Lawrence:learning04 Kai:multitask05">[@Minka:learningtolearn97; @Lawrence:learning04; @Kai:multitask05]</span>.</p></li>
+<li><p>More recent approaches for multiple output modeling are different versions of the linear model of coregionalization.</p></li>
+</ul>
+</section>
+<section id="semiparametric-latent-factor-model" class="slide level3">
+<h1>Semiparametric Latent Factor Model</h1>
+<ul>
+<li><p>Coregionalization matrices are rank 1 <span><span class="citation" data-cites="Teh:semiparametric05">@Teh:semiparametric05</span></span>. rewrite equation as <span class="math display">\[{\mathbf{K}}({{\bf X}}, {{\bf X}}) = \sum_{{j}=1}^{q}{\mathbf{{w}}}_{:, {j}}{\mathbf{{w}}}^{\top}_{:, {j}} \otimes {k}_{j}({{\bf X}}, {{\bf X}}).\]</span></p></li>
+<li><p>Like the Kalman filter, but each latent function has a <em>different</em> covariance.</p></li>
+<li><p>Authors suggest using an exponentiated quadratic characteristic length-scale for each input dimension.</p></li>
+</ul>
+</section>
+<section id="semiparametric-latent-factor-model-samples" class="slide level3">
+<h1>Semiparametric Latent Factor Model Samples</h1>
+<p><span class="math display">\[{\mathbf{K}}({{\bf X}}, {{\bf X}}) = {\mathbf{{w}}}_{:, 1}{\mathbf{{w}}}_{:, 1}^\top \otimes {k}_1({{\bf X}}, {{\bf X}}) + {\mathbf{{w}}}_{:, 2} {\mathbf{{w}}}_{:, 2}^\top \otimes {k}_2({{\bf X}}, {{\bf X}})\]</span></p>
+<p><span class="math display">\[{\mathbf{{w}}}_1 = \begin{bmatrix} 0.5 \\ 1\end{bmatrix}\]</span> <span class="math display">\[{\mathbf{{w}}}_2 = \begin{bmatrix} 1 \\ 0.5\end{bmatrix}\]</span></p>
+<p>gpKalmanToMultiTaskSlfm</p>
+<p><img src="../../../multigp/tex/diagrams/slfmCovarianceImage" alt="image" /><img src="../../../multigp/tex/diagrams/slfmCovarianceSample1" alt="image" /><img src="../../../multigp/tex/diagrams/slfmCovarianceSample2" alt="image" /><img src="../../../multigp/tex/diagrams/slfmCovarianceSample3" alt="image" /><img src="../../../multigp/tex/diagrams/slfmCovarianceSample4" alt="image" /></p>
+</section>
+<section id="gaussian-processes-for-multi-task-multi-output-and-multi-class" class="slide level3">
+<h1>Gaussian processes for Multi-task, Multi-output and Multi-class</h1>
+<ul>
+<li><p><span class="citation" data-cites="Bonilla:multi07">@Bonilla:multi07</span> suggest ICM for multitask learning.</p></li>
+<li><p>Use a PPCA form for <span class="math inline">\({\mathbf{B}}\)</span>: similar to our Kalman filter example.</p></li>
+<li><p>Refer to the autokrigeability effect as the cancellation of inter-task transfer.</p></li>
+<li><p>Also discuss the similarities between the multi-task GP and the ICM, and its relationship to the SLFM and the LMC.</p></li>
+</ul>
+</section>
+<section id="multitask-classification" class="slide level3">
+<h1>Multitask Classification</h1>
+<ul>
+<li><p>Mostly restricted to the case where the outputs are conditionally independent given the hyperparameters <span class="math inline">\(\boldsymbol{\phi}\)</span> <span><span class="citation" data-cites="Minka:learningtolearn97 Williams:multiclass98 Lawrence:learning04 Seeger:multiple04 Kai:multitask05 Rasmussen:book06">[@Minka:learningtolearn97; @Williams:multiclass98; @Lawrence:learning04; @Seeger:multiple04; @Kai:multitask05; @Rasmussen:book06]</span></span>.</p></li>
+<li><p>Intrinsic coregionalization model has been used in the multiclass scenario. <span class="citation" data-cites="Skolidis:multiclass11">@Skolidis:multiclass11</span> use the intrinsic coregionalization model for classification, by introducing a probit noise model as the likelihood.</p></li>
+<li><p>Posterior distribution is no longer analytically tractable: approximate inference is required.</p></li>
+</ul>
+</section>
+<section id="computer-emulation" class="slide level3">
+<h1>Computer Emulation</h1>
+<ul>
+<li><p>A statistical model used as a surrogate for a computationally expensive computer model.</p></li>
+<li><p><span class="citation" data-cites="Higdon:high08">@Higdon:high08</span> use the linear model of coregionalization to model images representing the evolution of the implosion of steel cylinders.</p></li>
+<li><p>In <span class="citation" data-cites="Conti:multi09">@Conti:multi09</span> use the ICM to model a vegetation model: called the Sheffield Dynamic Global Vegetation Model <span><span class="citation" data-cites="Woodward:vegetation98">[@Woodward:vegetation98]</span></span>.</p></li>
+</ul>
+</section>
+<section id="references" class="slide level3">
+<h1>References</h1>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

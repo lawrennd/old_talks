@@ -13,6 +13,7 @@ year: '2016'
 month: 9
 day: '6'
 venue: Royal Statistical Society Conference, Manchester
+reveal: 2016-09-06-data-science-where-computation-and-statistics-meet-.slides.html
 layout: talk
 key: Lawrence-rss17
 categories:

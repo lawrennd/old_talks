@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title></title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section class="slide level3">
+
+<p>      </p>
+<div class="sourceCode" id="mycode" startFrom="0"><table class="sourceCode octave numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="sourceCode"><pre><code class="sourceCode octave">
+<span class="co">%}</span>
+  importTool(<span class="st">&#39;ndlutil&#39;</span>);
+  textWidth = <span class="fl">13</span>;
+  <span class="fu">randn</span>(<span class="st">&#39;seed&#39;</span>, <span class="fl">1e6</span>);
+  <span class="fu">rand</span>(<span class="st">&#39;seed&#39;</span>, <span class="fl">1e6</span>);
+  markerSize = <span class="fl">8</span>;
+  markerLineWidth = <span class="fl">6</span>;
+  blueColor = [<span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">1</span>];
+  redColor = [<span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">0</span>];
+  magentaColor = [<span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">1</span>];
+  blackColor = [<span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>];
+  if blackBackground
+    blueColor =  <span class="fl">1</span>-blueColor;
+    redColor = <span class="fl">1</span>-redColor;
+    magentaColor = <span class="fl">1</span>-magentaColor;
+    blackColor = <span class="fl">1</span>- blackColor;
+  end
+<span class="co">%{</span></code></pre></td></tr></table></div>
+<p>frame start</p>
+<p>[plain,fragile]</p>
+</section>
+<section id="underdetermined-system" class="slide level3">
+<h1>Underdetermined System</h1>
+<p>columns start</p>
+<p>[c] </p>
+<p>overprint start</p>
+<p> What about two unknowns and <em>one</em> observation? <span class="math display">\[{y}_1 =  m{x}_1 + c\]</span>  Can compute <span class="math inline">\(m\)</span> given <span class="math inline">\(c\)</span>. <span class="math display">\[m = \frac{{y}_1 -c}{{x}}\]</span>  Can compute <span class="math inline">\(m\)</span> given <span class="math inline">\(c\)</span>. <span class="math display">\[\PandocStartInclude{../../../ml/tex/diagrams/onePointCval1.tex}c=1.75\Longrightarrow m=1.25\PandocEndInclude{input}{50}{53}\]</span>  Can compute <span class="math inline">\(m\)</span> given <span class="math inline">\(c\)</span>. <span class="math display">\[\PandocStartInclude{../../../ml/tex/diagrams/onePointCval2.tex}c=-0.777\Longrightarrow m=3.78\PandocEndInclude{input}{55}{53}\]</span>  Can compute <span class="math inline">\(m\)</span> given <span class="math inline">\(c\)</span>. <span class="math display">\[\PandocStartInclude{../../../ml/tex/diagrams/onePointCval3.tex}c=-4.01\Longrightarrow m=7.01\PandocEndInclude{input}{60}{53}\]</span>  Can compute <span class="math inline">\(m\)</span> given <span class="math inline">\(c\)</span>. <span class="math display">\[\PandocStartInclude{../../../ml/tex/diagrams/onePointCval4.tex}c=-0.718\Longrightarrow m=3.72\PandocEndInclude{input}{65}{53}\]</span>  Can compute <span class="math inline">\(m\)</span> given <span class="math inline">\(c\)</span>. <span class="math display">\[\PandocStartInclude{../../../ml/tex/diagrams/onePointCval5.tex}c=2.45\Longrightarrow m=0.545\PandocEndInclude{input}{70}{53}\]</span>  Can compute <span class="math inline">\(m\)</span> given <span class="math inline">\(c\)</span>. <span class="math display">\[\PandocStartInclude{../../../ml/tex/diagrams/onePointCval6.tex}c=-0.657\Longrightarrow m=3.66\PandocEndInclude{input}{75}{53}\]</span>  Can compute <span class="math inline">\(m\)</span> given <span class="math inline">\(c\)</span>. <span class="math display">\[\PandocStartInclude{../../../ml/tex/diagrams/onePointCval7.tex}c=-3.13\Longrightarrow m=6.13\PandocEndInclude{input}{80}{53}\]</span>  Can compute <span class="math inline">\(m\)</span> given <span class="math inline">\(c\)</span>. <span class="math display">\[\PandocStartInclude{../../../ml/tex/diagrams/onePointCval8.tex}c=-1.47\Longrightarrow m=4.47\PandocEndInclude{input}{85}{53}\]</span>  Can compute <span class="math inline">\(m\)</span> given <span class="math inline">\(c\)</span>.<br />
+Assume <span class="math display">\[c\sim {\mathcal{N}\left(0,4\right)},\]</span> we find a distribution of solutions.</p>
+<p>overprint end</p>
+<p></p>
+<div class="sourceCode" id="mycode" startFrom="0"><table class="sourceCode octave numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+</pre></td><td class="sourceCode"><pre><code class="sourceCode octave">
+            x = [<span class="fl">1</span>];
+      y = [<span class="fl">3</span>];
+      <span class="fu">figure</span>(<span class="fl">1</span>), <span class="fu">clf</span>
+      a = <span class="fu">plot</span>(x, y, <span class="st">&#39;x&#39;</span>);
+      <span class="fu">set</span>(a, <span class="st">&#39;markersize&#39;</span>, markerSize, <span class="st">&#39;linewidth&#39;</span>, markerLineWidth, <span class="st">&#39;color&#39;</span>, redColor)
+      <span class="fu">set</span>(gca, <span class="st">&#39;xtick&#39;</span>, [<span class="fl">0</span> <span class="fl">1</span> <span class="fl">2</span> <span class="fl">3</span>])
+      <span class="fu">set</span>(gca, <span class="st">&#39;ytick&#39;</span>, [<span class="fl">0</span> <span class="fl">1</span> <span class="fl">2</span> <span class="fl">3</span> <span class="fl">4</span> <span class="fl">5</span>])
+      ylim = [<span class="fl">0</span> <span class="fl">5</span>];
+      xlim = [<span class="fl">0</span> <span class="fl">3</span>];
+      <span class="fu">set</span>(gca, <span class="st">&#39;ylim&#39;</span>, ylim)
+      <span class="fu">set</span>(gca, <span class="st">&#39;xlim&#39;</span>, xlim)
+      <span class="fu">set</span>(gca, <span class="st">&#39;box&#39;</span>, <span class="st">&#39;off&#39;</span>)
+      line([xlim(<span class="fl">1</span>) xlim(<span class="fl">1</span>)], ylim, <span class="st">&#39;color&#39;</span>, blackColor)
+      line(xlim, [ylim(<span class="fl">1</span>) ylim(<span class="fl">1</span>)], <span class="st">&#39;color&#39;</span>, blackColor)
+      
+      <span class="fu">xlabel</span>(<span class="st">&#39;${x}$&#39;</span>)
+      <span class="fu">ylabel</span>(<span class="st">&#39;${y}$&#39;</span>)
+      printLatexPlot(<span class="st">&#39;onePoint&#39;</span>, <span class="st">&#39;../../../ml/tex/diagrams&#39;</span>, <span class="fl">0.45</span>*textWidth)
+
+      
+      xvals = <span class="fu">linspace</span>(<span class="fl">0</span>, <span class="fl">3</span>, <span class="fl">2</span>);
+      for <span class="bn">i</span> = <span class="fl">1</span>:<span class="fl">100</span>
+        
+        c = <span class="fu">randn</span>(<span class="fl">1</span>)*<span class="fl">2</span>;
+        m = (y - c)/x;
+        yvals = m*xvals+c;
+        <span class="fu">hold</span> on
+        a = <span class="fu">plot</span>(xvals, yvals, <span class="st">&#39;-&#39;</span>);
+        <span class="fu">set</span>(a, <span class="st">&#39;linewidth&#39;</span>, <span class="fl">2</span>, <span class="st">&#39;color&#39;</span>, blueColor)
+        if <span class="bn">i</span> &lt; <span class="fl">9</span> || <span class="bn">i</span> == <span class="fl">100</span>
+          if <span class="bn">i</span> &lt; <span class="fl">9</span> 
+            printLatexText([<span class="st">&#39;c=&#39;</span> numsf2str(c, <span class="fl">3</span>) <span class="st">&#39;\Longrightarrow m=&#39;</span> numsf2str(m, <span class="fl">3</span>)], [<span class="st">&#39;onePointCval&#39;</span> <span class="fu">num2str</span>(<span class="bn">i</span>)  <span class="st">&#39;.tex&#39;</span>], <span class="st">&#39;../../../ml/tex/diagrams&#39;</span>)
+          end
+          printLatexPlot([<span class="st">&#39;onePoint&#39;</span> <span class="fu">num2str</span>(<span class="bn">i</span>)], <span class="st">&#39;../../../ml/tex/diagrams&#39;</span>, <span class="fl">0.45</span>*textWidth)
+        end
+        
+      end
+          </code></pre></td></tr></table></div>
+<p>overprint start</p>
+<p><img src="inputdiagram-images/8428e35230f1fccf4bf43cbc64de57487b843bf4.png" /> <img src="inputdiagram-images/7744d91aafd232ae6172cb1a6c4951299a252a00.png" /> <img src="inputdiagram-images/2db38ab7609be701a11ce55a09e55ee8d6ad1d2b.png" /> <img src="inputdiagram-images/ebed602f250e0bf416ff5b5232afdad854a3df3d.png" /> <img src="inputdiagram-images/9f919500833df5da4db890e1cb7645b395417b95.png" /> <img src="inputdiagram-images/5e362f0d68adbbd7aa6bef3c525c77127610fce6.png" /> <img src="inputdiagram-images/3d974f38a3b465b99b5cd02a79d5b616adb43e48.png" /> <img src="inputdiagram-images/167016092d4b7b5d411748dc67bd0d3557a8a3aa.png" /> <img src="inputdiagram-images/9419f1aa7afacdace0ab0042f26cf138443d5cfa.png" /> <img src="inputdiagram-images/b073406173ec77ae1ecee44cdc5ac4db243233e6.png" /></p>
+<p>overprint end</p>
+<p>columns end</p>
+<p>frame end</p>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
