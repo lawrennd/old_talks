@@ -193,6 +193,7 @@ We require data-desalination before it can be consumed!
 * There are challenges and pitfalls
 * It is incumbent on us to avoid them
 
+**Many solutions rely on education and awareness**
 ---
 
 ## Thanks!
