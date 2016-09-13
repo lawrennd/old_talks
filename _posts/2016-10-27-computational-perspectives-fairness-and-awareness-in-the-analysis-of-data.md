@@ -8,14 +8,15 @@ abstract: What is data science? An new name for something old perhaps. Neverthel
   citizens in real time. In this talk I’ll suggest that data science provides a banner
   under which the computational and statistical sciences can unite to provide an unified
   response.
+reveal: 2016-10-27-computational-perspectives-fairness-and-awareness-in-the-analysis-of-data.slides.html
 year: '2016'
 month: 10
 day: '27'
 venue: Fisher Trust, Royal Society and London Mathematical Society Joint Meeting
 layout: talk
-key: Lawrence-rss16
+key: Lawrence-rss16b
 categories:
-- Lawrence-rss16
+- Lawrence-rss16b
 authors:
 - firstname: Neil D.
   lastname: Lawrence

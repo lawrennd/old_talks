@@ -9,15 +9,16 @@ abstract: 'What is data science? An new name for something old perhaps. Neverthe
   has particular implications for data science and the interface between computation
   and statistics. By addressing these challenges now we can ensure that the pitfalls
   of the data driven society are overcome allowing to reap the benefits.'
+reveal: 2016-09-06-data-science-where-computation-and-statistics-meet-.slides.html
+url: https://events.rss.org.uk/rss/frontend/reg/titem.csp?pageID=2373&eventID=1&eventID=1
 year: '2016'
 month: 9
 day: '6'
 venue: Royal Statistical Society Conference, Manchester
-reveal: 2016-09-06-data-science-where-computation-and-statistics-meet-.slides.html
 layout: talk
-key: Lawrence-rss17
+key: Lawrence-rss16a
 categories:
-- Lawrence-rss17
+- Lawrence-rss16a
 authors:
 - firstname: Neil D.
   lastname: Lawrence
