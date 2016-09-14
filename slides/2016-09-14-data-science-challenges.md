@@ -2,40 +2,111 @@
 ### ENBIS Meeting
 #### University of Sheffield, UK
 ### Neil D. Lawrence
-### University of Sheffield
+### Amazon and University of Sheffield
 ```@lawrennd``` [inverseprobability.com](http://inverseprobability.com)
 
----
+----
 
-## Background
+> There are three types of lies: lies, damned lies and statistics
+>
+> ??
+
+----
+
+> There are three types of lies: lies, damned lies and statistics
+>
+> Benjamin Disraeli
+
+----
+
+> There are three types of lies: lies, damned lies and statistics
+>
+> Benjamin Disraeli 1804-1881
+
+----
+
+## *Mathematical* Statistics
+
+* `Founded' by Karl Pearson (1857-1936)
+
+<img src="./diagrams/Portrait_of_Karl_Pearson.jpg" align="center" width="30%">
+
+----
+
+> There are three types of lies: lies, damned lies and 'big data'
+>
+> Neil Lawrence 1972-?
+
+----
+
+## Background: Big Data
 
 * Data is Pervasive phenomenon that affects all aspects of our activities
+
 * Data diffusiveness is both a challenge and an opportunity
 
----
+----
 
 ## Evolved Relationship
 
-<img src="./diagrams/data-science-information-flow.png" width="60%">
+<img src="./diagrams/data-science-information-flow_neg.svg" height=100% style="background:none; border:none; box-shadow:none;" align="center">
 
----
+
+----
+
+## "Embodiment Factors"
+
+<table>
+<tr><td></td><td align="center">
+<img src="./diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="60%" style="background:none; border:none; box-shadow:none;" align="center">
+</td>
+<td align="center">
+<img src="./diagrams/ClaudeShannon_MFO3807.jpg" width="100%" style="background:none; border:none; box-shadow:none;" align="center">
+</td>
+</tr>
+<tr>
+<td>compute</td><td align="center">~10 gigaflops</td><td align="center">~ 1000 teraflops?</td>
+</tr>
+<tr>
+<td>communicate</td><td align="center">~1 gigbit/s</td><td align="center">~ 100 bit/s</tr>
+<td>embodiment<br>(compute/communicate)</td><td align="center">10</td><td align="center">~ 10<sup>13</sup></tr>
+</table>
+
+
+----
+## Evolved Relationship
+
+<img src="./diagrams/data-science-information-flow_neg.svg" height=100% style="background:none; border:none; box-shadow:none;" align="center">
+
+
+----
+
+## Effects
+
+* This phenomenon has already revolutionised biology.
+
+* Large scale data acquisition and distribution.
+
+* Transcriptomics, genomics, epigenomics, 'rich phenomics'.
+
+----
 
 ## Societal Effects
 
-* Automated decision making within the computer based only on the data
-* A requirement to better understand our own subjective biases to ensure that the human to computer interface formulates the correct conclusions from the data
+* Automated decision making within the computer based only on the data.
 
----
+* A requirement to better understand our own subjective biases to ensure that the human to computer interface formulates the correct conclusions from the data.
+
+
+----
 
 ## Societal Effects
-
-* This process has already revolutionised biology
 
 * Shift in dynamic from the direct pathway between human and data to indirect pathway between human and data via the computer
 
 * This change of dynamics gives us the modern and emerging domain of data science
 
----
+----
 
 ## Challenges
 
@@ -45,7 +116,7 @@
 
 3. Privacy, loss of control, marginalization
 
----
+----
 
 ## Breadth vs Depth Paradox
 
@@ -55,7 +126,7 @@
 
 * As we measure more, we understand less
 
----
+----
 
 ## What?
 
@@ -65,11 +136,11 @@
 
 * Curate's egg of a society: it is only 'measured in parts'
 
----
+----
 
 ## Examples
 
-* 2015 UK election polls
+* Election polls (UK 2015 elections, EU referendum, US 2016 elections)
 
 * Clinical trial and personalized medicine
 
@@ -77,7 +148,7 @@
 
 * Filter bubbles and echo chambers
 
----
+----
 
 ## Solutions
 
@@ -85,7 +156,7 @@
 
 * A better characterization of human needs and flaws
 
----
+----
 
 ## Quantifying the Value of Data
 
@@ -95,7 +166,7 @@ There's a sea of data, but most of it is undrinkable
 
 We require data-desalination before it can be consumed!
 
----
+----
 
 ## Value
 
@@ -104,7 +175,7 @@ We require data-desalination before it can be consumed!
   * Incentivization
   * Quantifying the value in their contribution
 
----
+----
 
 ## Credit Allocation
 
@@ -114,7 +185,7 @@ We require data-desalination before it can be consumed!
 
 * Value of shared data: [Wellcome Trust 2010 Joint Statement](https://wellcome.ac.uk/what-we-do/our-work/sharing-research-data-improve-public-health-full-joint-statement-funders-health) (from the "Foggy Bottom" meeting)
 
----
+----
 
 ## Solutions
 
@@ -126,7 +197,7 @@ We require data-desalination before it can be consumed!
 
 * Implications for incentivization schemes
 
----
+----
 
 ### Privacy, Loss of Control and Marginalization
 
@@ -134,26 +205,26 @@ We require data-desalination before it can be consumed!
 
 * Individual is becoming easier to monitor
 
----
+----
 
 ### Hate Speech or Political Dissent?
 
 * social media monitoring for 'hate speech' can be easily turned to political dissent monitoring
 
----
+----
 
 ## Marketing
 
 * can become more sinister when the target of the marketing is well understood and the (digital) environment of the target is also so well controlled
 
 
----
+----
 
 ## Free Will
 
 *  What does it mean if a computer can predict our individual behavior better than we ourselves can?
 
----
+----
 
 ## Discrimination
 
@@ -161,7 +232,7 @@ We require data-desalination before it can be consumed!
 
 * All prohibited under European law, but can pass unawares, or be implicit
 
----
+----
 
 ## Marginalization
 
@@ -169,7 +240,7 @@ We require data-desalination before it can be consumed!
 * What if certain sectors of society are under-represented in our aanalysis?
 * What if Silicon Valley develops everything for us?
 
----
+----
 
 ## Amelioration
 
@@ -177,7 +248,7 @@ We require data-desalination before it can be consumed!
 * We accept privacy in our real lives, need to accept it in our digital
 * Control of persona and ability to project
 
----
+----
 
 ## Awareness
 
@@ -185,7 +256,7 @@ We require data-desalination before it can be consumed!
 * Need to ensure that technological solutions are being delivered not merely for few (#FirstWorldProblems)
 * Address a wider set of challenges that the greater part of the world's population is facing
 
----
+----
 
 ## Conclusion
 
@@ -194,7 +265,7 @@ We require data-desalination before it can be consumed!
 * It is incumbent on us to avoid them
 
 **Many solutions rely on education and awareness**
----
+----
 
 ## Thanks!
 

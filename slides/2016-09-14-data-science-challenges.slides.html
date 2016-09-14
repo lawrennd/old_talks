@@ -4,21 +4,20 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <title></title>
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link rel="stylesheet" href="reveal.js/css/reveal.css"/>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
   <style type="text/css">code{white-space: pre;}</style>
   <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
-  <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+  <link rel="stylesheet" href="talks.css"/>
+  <!-- Printing and PDF exports -->
   <script>
-    if( window.location.search.match( /print-pdf/gi ) ) {
-      var link = document.createElement( 'link' );
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = 'reveal.js/css/print/pdf.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
-    }
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
   </script>
   <!--[if lt IE 9]>
   <script src="reveal.js/lib/js/html5shiv.js"></script>
@@ -34,31 +33,131 @@
 <h3 id="enbis-meeting">ENBIS Meeting</h3>
 <h4 id="university-of-sheffield-uk">University of Sheffield, UK</h4>
 <h3 id="neil-d.-lawrence">Neil D. Lawrence</h3>
-<h3 id="university-of-sheffield">University of Sheffield</h3>
+<h3 id="amazon-and-university-of-sheffield">Amazon and University of Sheffield</h3>
 <p><code>@lawrennd</code> <a href="http://inverseprobability.com">inverseprobability.com</a></p>
 </section>
-<section id="background" class="slide level2">
-<h1>Background</h1>
+<section class="slide level2">
+
+<blockquote>
+<p>There are three types of lies: lies, damned lies and statistics</p>
+<p>??</p>
+</blockquote>
+</section>
+<section class="slide level2">
+
+<blockquote>
+<p>There are three types of lies: lies, damned lies and statistics</p>
+<p>Benjamin Disraeli</p>
+</blockquote>
+</section>
+<section class="slide level2">
+
+<blockquote>
+<p>There are three types of lies: lies, damned lies and statistics</p>
+<p>Benjamin Disraeli 1804-1881</p>
+</blockquote>
+</section>
+<section id="mathematical-statistics" class="slide level2">
+<h1><em>Mathematical</em> Statistics</h1>
 <ul>
-<li>Data is Pervasive phenomenon that affects all aspects of our activities</li>
-<li>Data diffusiveness is both a challenge and an opportunity</li>
+<li>`Founded’ by Karl Pearson (1857-1936)</li>
+</ul>
+<p><img src="./diagrams/Portrait_of_Karl_Pearson.jpg" align="center" width="30%"></p>
+</section>
+<section class="slide level2">
+
+<blockquote>
+<p>There are three types of lies: lies, damned lies and ‘big data’</p>
+<p>Neil Lawrence 1972-?</p>
+</blockquote>
+</section>
+<section id="background-big-data" class="slide level2">
+<h1>Background: Big Data</h1>
+<ul>
+<li><p>Data is Pervasive phenomenon that affects all aspects of our activities</p></li>
+<li><p>Data diffusiveness is both a challenge and an opportunity</p></li>
 </ul>
 </section>
 <section id="evolved-relationship" class="slide level2">
 <h1>Evolved Relationship</h1>
-<p><img src="./diagrams/data-science-information-flow.png" width="60%"></p>
+<p><img src="./diagrams/data-science-information-flow_neg.svg" height=100% style="background:none; border:none; box-shadow:none;" align="center"></p>
+</section>
+<section id="embodiment-factors" class="slide level2">
+<h1>“Embodiment Factors”</h1>
+<table>
+<tr>
+<td>
+</td>
+<td align="center">
+<img src="./diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="60%" style="background:none; border:none; box-shadow:none;" align="center">
+</td>
+<td align="center">
+<img src="./diagrams/ClaudeShannon_MFO3807.jpg" width="100%" style="background:none; border:none; box-shadow:none;" align="center">
+</td>
+</tr>
+<tr>
+<td>
+compute
+</td>
+<td align="center">
+~10 gigaflops
+</td>
+<td align="center">
+~ 1000 teraflops?
+</td>
+</tr>
+<tr>
+<td>
+communicate
+</td>
+<td align="center">
+~1 gigbit/s
+</td>
+<td align="center">
+~ 100 bit/s
+</tr>
+<td>
+embodiment<br>(compute/communicate)
+</td>
+<td align="center">
+10
+</td>
+<td align="center">
+~ 10<sup>13</sup>
+</tr>
+</table>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>## Evolved Relationship</td>
+</tr>
+<tr class="even">
+<td><img src="./diagrams/data-science-information-flow_neg.svg" height=100% style="background:none; border:none; box-shadow:none;" align="center"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="effects" class="slide level2">
+<h1>Effects</h1>
+<ul>
+<li><p>This phenomenon has already revolutionised biology.</p></li>
+<li><p>Large scale data acquisition and distribution.</p></li>
+<li><p>Transcriptomics, genomics, epigenomics, ‘rich phenomics’.</p></li>
+</ul>
 </section>
 <section id="societal-effects" class="slide level2">
 <h1>Societal Effects</h1>
 <ul>
-<li>Automated decision making within the computer based only on the data</li>
-<li>A requirement to better understand our own subjective biases to ensure that the human to computer interface formulates the correct conclusions from the data</li>
+<li><p>Automated decision making within the computer based only on the data.</p></li>
+<li><p>A requirement to better understand our own subjective biases to ensure that the human to computer interface formulates the correct conclusions from the data.</p></li>
 </ul>
 </section>
 <section id="societal-effects-1" class="slide level2">
 <h1>Societal Effects</h1>
 <ul>
-<li><p>This process has already revolutionised biology</p></li>
 <li><p>Shift in dynamic from the direct pathway between human and data to indirect pathway between human and data via the computer</p></li>
 <li><p>This change of dynamics gives us the modern and emerging domain of data science</p></li>
 </ul>
@@ -90,7 +189,7 @@
 <section id="examples" class="slide level2">
 <h1>Examples</h1>
 <ul>
-<li><p>2015 UK election polls</p></li>
+<li><p>Election polls (UK 2015 elections, EU referendum, US 2016 elections)</p></li>
 <li><p>Clinical trial and personalized medicine</p></li>
 <li><p>Social media memes</p></li>
 <li><p>Filter bubbles and echo chambers</p></li>
@@ -201,6 +300,9 @@
 <li>It is incumbent on us to avoid them</li>
 </ul>
 </section>
+<section id="many-solutions-rely-on-education-and-awareness" class="slide level2">
+<h1><strong>Many solutions rely on education and awareness</strong></h1>
+</section>
 <section id="thanks" class="slide level2">
 <h1>Thanks!</h1>
 <ul>
@@ -211,32 +313,22 @@
     </div>
   </div>
 
-
   <script src="reveal.js/lib/js/head.min.js"></script>
   <script src="reveal.js/js/reveal.js"></script>
 
   <script>
 
-      // Full list of configuration options available here:
+      // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
-        controls: true,         // Display controls in the bottom right corner
-        progress: true,         // Display a presentation progress bar
-        history: true,          // Push each slide change to the browser history
-        center: true,                       // Vertical centering of slides
-        maxScale: 1.5,                  // Bounds for smallest/largest possible content scale
-        slideNumber: false,                // Display the page number of the current slide
-        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
-        // Optional libraries used to extend on reveal.js
+        // Optional reveal.js plugins
         dependencies: [
           { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-          { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
-//          { src: 'reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; }, }
-//          { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
-]});
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
     </script>
     </body>
 </html>
