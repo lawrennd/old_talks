@@ -13,6 +13,7 @@ abstract: 'Data science presents new opportunities but also new challenges. In t
   personalized health to the developing world.'
 reveal: 2016-09-14-data-science-challenges.slides.html
 reveal-md: 2016-09-14-data-science-challenges.md
+venue: European Network for Business and Industrial Statistics (ENBIS) 2016, Sheffield
 month: 9
 year: '2016'
 day: '14'
