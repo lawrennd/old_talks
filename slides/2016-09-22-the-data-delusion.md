@@ -12,13 +12,6 @@
 
 <img src="./diagrams/Newcomen6325_neg.png" height="600px" style="background:none; border:none; box-shadow:none;" align="center">
 
-
-
-## {.slide: data-transition="none" slide-background="white"}
-
-<object data="./diagrams/uk_tin_coal_railways.svg" type="image/svg+xml">
-</object>
-
 ## {.slide: data-transition="none"}
 
 <object data="./diagrams/uk_tin_coal_railways001.svg" type="image/svg+xml">
@@ -48,7 +41,7 @@
 
 ----
 
-<!--<span class="fragment fade-in">--><small>Outline of the DeepFace architecture. A front-end of a single convolution-pooling-convolution filtering on the rectified input, followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected.</small><!--</span>-->
+<span class="fragment fade-in"><small>Outline of the DeepFace architecture. A front-end of a single convolution-pooling-convolution filtering on the rectified input, followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected.</small></span>
 
 
 <img src="./diagrams/deepface_neg.png" width="100%" style="background:none; border:none; box-shadow:none;" align="center">
@@ -64,19 +57,23 @@
 
 
 
-----
-
+## {.slide: data-transition="none" }
+ 
 <!--<span class="fragment fade-in">-->
 <object data="./diagrams/user-centric-data.svg" type="image/svg+xml">
 </object>
 <!--</span>-->
 
-----
+
+## {.slide: data-transition="none" }
 
 <object data="./diagrams/deep-health.svg" type="image/svg+xml">
 </object>
 
-----
+## {.slide: data-transition="none" }
+
+<object data="./diagrams/uk_tin_coal_railways004.svg" type="image/svg+xml">
+</object>
 
 ## Thank you
 
