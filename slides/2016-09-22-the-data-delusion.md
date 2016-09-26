@@ -13,19 +13,36 @@
 <img src="./diagrams/Newcomen6325_neg.png" height="600px" style="background:none; border:none; box-shadow:none;" align="center">
 
 
-----
 
-<object data="./diagrams/uk_tin_coal_66.svg" type="image/svg+xml">
+## {.slide: data-transition="none" slide-background="white"}
+
+<object data="./diagrams/uk_tin_coal_railways.svg" type="image/svg+xml">
 </object>
 
-----
+## {.slide: data-transition="none"}
+
+<object data="./diagrams/uk_tin_coal_railways001.svg" type="image/svg+xml">
+</object>
+
+## {.slide: data-transition="none"}
+
+<object data="./diagrams/uk_tin_coal_railways002.svg" type="image/svg+xml">
+</object>
+
+## {.slide: data-transition="none"}
+
+<object data="./diagrams/uk_tin_coal_railways003.svg" type="image/svg+xml">
+</object>
+
+##
 
 <img src="./diagrams/Steen_Doctor_and_His_Patient.jpg" height="600px" style="background:none; border:none; box-shadow:none;" align="center">
 
-----
+## {.slide: data-transition="none"}
 
 <img src="./diagrams/Watt7783_neg.png" height="600px" style="background:none; border:none; box-shadow:none;" align="center">
-----
+
+## {.slide: data-transition="none"}
 
 <img src="./diagrams/SteamEngine_Boulton&Watt_1784_neg.png" height="600px" style="background:none; border:none; box-shadow:none;" align="center">
 
