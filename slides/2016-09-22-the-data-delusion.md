@@ -75,6 +75,11 @@
 <object data="./diagrams/uk_tin_coal_railways004.svg" type="image/svg+xml">
 </object>
 
+## {.slide: data-transition="none" }
+
+<object data="./diagrams/uk_tin_coal_railways005.svg" type="image/svg+xml">
+</object>
+
 ## Thank you
 
 <center>Neil Lawrence</center>
