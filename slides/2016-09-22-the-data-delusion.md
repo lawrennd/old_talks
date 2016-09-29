@@ -12,17 +12,17 @@
 
 <img src="./diagrams/Newcomen6325_neg.png" height="600px" style="background:none; border:none; box-shadow:none;" align="center">
 
-## {.slide: data-transition="none"}
+## {.slide: data-transition="none"  data-background="#98AFC7"}
 
 <object data="./diagrams/uk_tin_coal_railways001.svg" type="image/svg+xml">
 </object>
 
-## {.slide: data-transition="none"}
+## {.slide: data-transition="none"  data-background="#98AFC7"}
 
 <object data="./diagrams/uk_tin_coal_railways002.svg" type="image/svg+xml">
 </object>
 
-## {.slide: data-transition="none"}
+## {.slide: data-transition="none"  data-background="#98AFC7"}
 
 <object data="./diagrams/uk_tin_coal_railways003.svg" type="image/svg+xml">
 </object>
@@ -70,12 +70,12 @@
 <object data="./diagrams/deep-health.svg" type="image/svg+xml">
 </object>
 
-## {.slide: data-transition="none" }
+## {.slide: data-transition="none" data-background="#98AFC7"}
 
 <object data="./diagrams/uk_tin_coal_railways004.svg" type="image/svg+xml">
 </object>
 
-## {.slide: data-transition="none" }
+## {.slide: data-transition="none" data-background="#98AFC7"}
 
 <object data="./diagrams/uk_tin_coal_railways005.svg" type="image/svg+xml">
 </object>
