@@ -49,10 +49,19 @@
 <p align="right">
 <small>Source: DeepFace</small></p>
 
-----
+## 
 
+<img src="./diagrams/576px-Early_Pinball.jpg" height="576px" style="background:none; border:none; box-shadow:none;" align="center">
+
+##
 
 <object data="./diagrams/pinball-initial.svg" type="image/svg+xml">
+</object>
+
+
+## {.slide: data-transition="none" }
+
+<object data="./diagrams/pinball-final.svg" type="image/svg+xml">
 </object>
 
 
