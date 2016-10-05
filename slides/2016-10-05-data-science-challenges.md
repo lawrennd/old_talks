@@ -45,15 +45,23 @@
 
 ## Evolved Relationship {.slide: data-transition="none"}
 
-<img src="./diagrams/data-science-information-flow_neg001.svg" height="80%" style="background:none; border:none; box-shadow:none;" align="center">
+<object type="image/svg+xml" data="./diagrams/data-science-information-flow_neg001.svg">
+</object>
 
 ## Evolved Relationship {.slide: data-transition="none"}
 
-<img src="./diagrams/data-science-information-flow_neg002.svg" height="80%" style="background:none; border:none; box-shadow:none;" align="center">
+<object type="image/svg+xml" data="./diagrams/data-science-information-flow_neg002.svg">
+</object>
 
 ## Evolved Relationship {.slide: data-transition="none"}
 
-<img src="./diagrams/data-science-information-flow_neg003.svg" height="80%" style="background:none; border:none; box-shadow:none;" align="center">
+<object type="image/svg+xml" data="./diagrams/data-science-information-flow_neg003.svg">
+</object>
+
+## Evolved Relationship {.slide: data-transition="none"}
+
+<object type="image/svg+xml" data="./diagrams/data-science-information-flow_neg004.svg">
+</object>
 
 
 ## Challenges
