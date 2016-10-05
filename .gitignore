@@ -4,3 +4,6 @@ _site
 *.asv
 *~
 *#
+.ipynb*
+*.pyc
+.#*
