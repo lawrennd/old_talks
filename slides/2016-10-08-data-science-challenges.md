@@ -271,15 +271,15 @@ We require data-desalination before it can be consumed!
 
 ## Discrimination
 
-* Potential for explicit and implicit discrimination on the basis of race, religion, sexuality, health status
+* Potential for explicit and implicit discrimination on the basis of race, religion, sexuality, health status.
 
-* All prohibited under European law, but can pass unawares, or be implicit
+* All prohibited under European law, but can pass unawares, or be implicit.
 
 
 ## Marginalization
 
-* Credit scoring, insurance, medical treatment
-* What if certain sectors of society are under-represented in our aanalysis?
+* Credit scoring, insurance, medical treatment.
+* What if certain sectors of society are under-represented in our analysis?
 * What if Silicon Valley develops everything for us?
 
 ## Digital Revolution and Inequality?
@@ -288,9 +288,9 @@ We require data-desalination before it can be consumed!
 
 ## Amelioration
 
-* Work to ensure individual retains control of their own data
-* We accept privacy in our real lives, need to accept it in our digital
-* Control of persona and ability to project
+* Work to ensure individual retains control of their own data.
+* We accept privacy in our real lives, need to accept it in our digital.
+* Control of persona and ability to project.
 
 
 ## Awareness
