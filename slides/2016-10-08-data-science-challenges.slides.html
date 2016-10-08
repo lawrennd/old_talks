@@ -22,7 +22,6 @@
   <!--[if lt IE 9]>
   <script src="reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
 </head>
 <body>
   <div class="reveal">
@@ -202,60 +201,24 @@ embodiment<br>(compute/communicate)
 <li><p>Curate's egg of a society: it is only 'measured in parts'</p></li>
 </ul>
 </section>
-<section id="the-maths" class="slide level2">
-<h1>The Maths</h1>
-<p><span class="math display">\[ \mathbf{Y} = \begin{bmatrix}
-\mathbf{y}^\top_{1, :} \\
-\mathbf{y}^\top_{2, :} \\
-\vdots \\
-\mathbf{y}^\top_{n, :} \\
-\end{bmatrix} \in \Re^{n\times p}
-\]</span></p>
-</section>
-<section id="the-maths-1" class="slide level2 slide:" data-transition="none">
-<h1>The Maths</h1>
-<p><span class="math display">\[p(\mathbf{Y}|\boldsymbol{\theta}) = \prod_{i=1}^n p(\mathbf{y}_{i, :}|\boldsymbol{\theta})\]</span></p>
-</section>
-<section id="the-maths-2" class="slide level2 slide:" data-transition="none">
-<h1>The Maths</h1>
-<p><span class="math display">\[p(\mathbf{Y}|\boldsymbol{\theta}) = \prod_{i=1}^n p(\mathbf{y}_{i, :}|\boldsymbol{\theta})\]</span></p>
-<p><span class="math display">\[\log p(\mathbf{Y}|\boldsymbol{\theta}) = \sum_{i=1}^n \log p(\mathbf{y}_{i, :}|\boldsymbol{\theta})\]</span></p>
-</section>
-<section id="consistency" class="slide level2">
-<h1>Consistency</h1>
-<ul>
-<li><p>Typically <span class="math inline">\(\boldsymbol{\theta} \in \Re^{\mathcal{O}(p)}\)</span></p></li>
-<li><p>Consistency reliant on large sample approximation of KL divergence</p></li>
-</ul>
-<p><span class="math display">\[ \text{KL}(P(\mathbf{Y})|| p(\mathbf{Y}|\boldsymbol{\theta}))\]</span></p>
-<ul>
-<li><p>Minimization is equivalent to maximization of likelihood.</p></li>
-<li><p>A foundation stone of classical statistics.</p></li>
-</ul>
-</section>
-<section id="large-p" class="slide level2">
-<h1>Large <span class="math inline">\(p\)</span></h1>
-<ul>
-<li><p>For large <span class="math inline">\(p\)</span> the parameters are badly determined.</p></li>
-<li><p>Large <span class="math inline">\(p\)</span> small <span class="math inline">\(n\)</span> problem.</p></li>
-<li><p>Easily dealt with through definition.</p></li>
-</ul>
-</section>
-<section id="the-maths-3" class="slide level2 slide:" data-transition="none">
-<h1>The Maths</h1>
-<p><span class="math display">\[p(\mathbf{Y}|\boldsymbol{\theta}) = \prod_{j=1}^p p(\mathbf{y}_{:, j}|\boldsymbol{\theta})\]</span></p>
-<p><span class="math display">\[\log p(\mathbf{Y}|\boldsymbol{\theta}) = \sum_{j=1}^p \log p(\mathbf{y}_{:, j}|\boldsymbol{\theta})\]</span></p>
-</section>
 <section id="breadth-vs-depth" class="slide level2">
 <h1>Breadth vs Depth</h1>
 <ul>
 <li><p>Modern Measurement deals with <em>depth</em> (many subjects) ... or <em>breadth</em> lots of detail about subject.</p></li>
+<li>Can deal with large <em>p</em> or large <em>n</em></li>
 <li>But what about
 <ul>
-<li><span class="math inline">\(p\approx n\)</span>?</li>
+<li><em>p</em> roughly equal to <em>n</em>?</li>
 <li>Stratification of populations: batch effects etc.</li>
 </ul></li>
 </ul>
+</section>
+<section id="wood-or-tree" class="slide level2">
+<h1>Wood or Tree</h1>
+<ul>
+<li>Can either see a wood or a tree.</li>
+</ul>
+<p><img src="./diagrams/Grib_skov.jpg" width="50%" style="border:none"> <!-- https://upload.wikimedia.org/wikipedia/commons/5/5b/Grib_skov.jpg--></p>
 </section>
 <section id="examples" class="slide level2">
 <h1>Examples</h1>
@@ -269,8 +232,12 @@ embodiment<br>(compute/communicate)
 <section id="solutions" class="slide level2">
 <h1>Solutions</h1>
 <ul>
-<li><p>More classical statistics!</p></li>
+<li>More classical statistics!
+<ul>
+<li>Like the 'paperless office'</li>
+</ul></li>
 <li><p>A better characterization of human needs and flaws</p></li>
+<li><p>Larger studies (100,000 genome)</p></li>
 </ul>
 </section>
 <section id="quantifying-the-value-of-data" class="slide level2">
@@ -324,17 +291,11 @@ embodiment<br>(compute/communicate)
 <li><p>Adoption of 'data readiness levels'</p></li>
 <li><p>Implications for incentivization schemes</p></li>
 </ul>
-</section>
-<section class="slide level2">
-
 <h3 id="privacy-loss-of-control-and-marginalization">Privacy, Loss of Control and Marginalization</h3>
 <ul>
 <li><p>Society is becoming harder to monitor</p></li>
 <li><p>Individual is becoming easier to monitor</p></li>
 </ul>
-</section>
-<section class="slide level2">
-
 <h3 id="hate-speech-or-political-dissent">Hate Speech or Political Dissent?</h3>
 <ul>
 <li>social media monitoring for 'hate speech' can be easily turned to political dissent monitoring</li>
@@ -367,6 +328,10 @@ embodiment<br>(compute/communicate)
 <li>What if Silicon Valley develops everything for us?</li>
 </ul>
 </section>
+<section id="digital-revolution-and-inequality" class="slide level2">
+<h1>Digital Revolution and Inequality?</h1>
+<p><img src="./diagrams/woman-tends-house-in-village-of-uganda-africa.jpg" width="50%" style="border:none"></p>
+</section>
 <section id="amelioration" class="slide level2">
 <h1>Amelioration</h1>
 <ul>
@@ -390,9 +355,7 @@ embodiment<br>(compute/communicate)
 <li>There are challenges and pitfalls</li>
 <li>It is incumbent on us to avoid them</li>
 </ul>
-</section>
-<section id="many-solutions-rely-on-education-and-awareness" class="slide level2">
-<h1><strong>Many solutions rely on education and awareness</strong></h1>
+<p><strong>Many solutions rely on education and awareness</strong></p>
 </section>
 <section id="thanks" class="slide level2">
 <h1>Thanks!</h1>

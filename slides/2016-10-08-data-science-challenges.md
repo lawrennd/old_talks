@@ -150,60 +150,16 @@
 * Curate's egg of a society: it is only 'measured in parts'
 
 
-## The Maths
 
-$$ \mathbf{Y} = \begin{bmatrix}
-\mathbf{y}^\top_{1, :} \\
-\mathbf{y}^\top_{2, :} \\
-\vdots \\
-\mathbf{y}^\top_{n, :} \\
-\end{bmatrix} \in \Re^{n\times p}
-$$
-
-## The Maths {.slide: data-transition="none"}
-
-$$p(\mathbf{Y}|\boldsymbol{\theta}) = \prod_{i=1}^n p(\mathbf{y}_{i, :}|\boldsymbol{\theta})$$
-
-
-## The Maths {.slide: data-transition="none"}
-
-$$p(\mathbf{Y}|\boldsymbol{\theta}) = \prod_{i=1}^n p(\mathbf{y}_{i, :}|\boldsymbol{\theta})$$
-
-$$\log p(\mathbf{Y}|\boldsymbol{\theta}) = \sum_{i=1}^n \log p(\mathbf{y}_{i, :}|\boldsymbol{\theta})$$
-
-## Consistency
-
-* Typically $\boldsymbol{\theta} \in \Re^{\mathcal{O}(p)}$
-
-* Consistency reliant on large sample approximation of KL divergence
-
-$$ \text{KL}(P(\mathbf{Y})|| p(\mathbf{Y}|\boldsymbol{\theta}))$$
-
-* Minimization is equivalent to maximization of likelihood.
-
-* A foundation stone of classical statistics.
-
-## Large $p$
-
-* For large $p$ the parameters are badly determined.
-
-* Large $p$ small $n$ problem.
-
-* Easily dealt with through definition.
-
-## The Maths {.slide: data-transition="none"}
-
-$$p(\mathbf{Y}|\boldsymbol{\theta}) = \prod_{j=1}^p p(\mathbf{y}_{:, j}|\boldsymbol{\theta})$$
-
-$$\log p(\mathbf{Y}|\boldsymbol{\theta}) = \sum_{j=1}^p \log p(\mathbf{y}_{:, j}|\boldsymbol{\theta})$$
 
 ## Breadth vs Depth
 
 * Modern Measurement deals with *depth* (many subjects)
     ... or *breadth* lots of detail about subject.
 	
+* Can deal with large *p* or large *n*
 * But what about 
-    * $p\approx n$?
+    * *p* roughly equal to *n*?
     * Stratification of populations: batch effects etc.
 
 ## Wood or Tree
