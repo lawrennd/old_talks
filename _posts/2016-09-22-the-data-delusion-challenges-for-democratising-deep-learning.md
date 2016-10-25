@@ -27,6 +27,7 @@ reveal: 2016-09-22-the-data-delusion.slides.html
 reveal-md: 2016-09-22-the-data-delusion.md
 venue: Deep Learning Summit, London, UK
 layout: talk
+youtube: BI9PMvuolqc
 key: Lawrence-deep-summit16b
 categories:
 - Lawrence-deep-summit16b
