@@ -40,7 +40,7 @@
       .myline2 { fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke:white}
       .mythickline { stroke:white;stroke-width:30;}
       .mytext { fill:white;font-size:2em;}
-      .mycentredtext { fill:white;font-size:2em;text-anchor:middle;text-align:center;}
+      .mycentredtext { fill:white;font-size:2em;text-anchor:middle;text-align:center;dominant-baseline="mathematical"}
       .mysmallinverttext { fill:black;font-size:1.5em;font-family: &quot;Source Sans Pro&quot;, Helvetica, sans-serif;}
 </style>
   <sodipodi:namedview
