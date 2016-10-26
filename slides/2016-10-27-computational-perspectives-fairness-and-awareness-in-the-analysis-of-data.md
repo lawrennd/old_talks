@@ -1,5 +1,6 @@
-## Challenges in Data Science
-### Open Data Science Conference
+## Computational Perspectives: Fairness and Awareness in Data Analysis
+### Royal Statistical Society
+### 2016-10-27
 ### London, UK
 ### Neil D. Lawrence
 ### Amazon and University of Sheffield
