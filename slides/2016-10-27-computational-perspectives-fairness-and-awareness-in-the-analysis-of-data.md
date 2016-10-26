@@ -291,14 +291,14 @@ We require data-desalination before it can be consumed!
 * Implications for incentivization schemes
 
 
-### Privacy, Loss of Control and Marginalization
+## Privacy, Loss of Control and Marginalization
 
 * Society is becoming harder to monitor
 
 * Individual is becoming easier to monitor
 
 
-### Hate Speech or Political Dissent?
+## Hate Speech or Political Dissent?
 
 * social media monitoring for 'hate speech' can be easily turned to political dissent monitoring
 
