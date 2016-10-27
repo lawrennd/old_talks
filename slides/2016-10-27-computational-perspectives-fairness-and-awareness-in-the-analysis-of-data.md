@@ -410,7 +410,9 @@ $$p(\mathbf{y}|\boldsymbol{\theta})$$<br>
 
 * Minimize KL divergence between approximation and truth.
 
+* This is similar to the Bayesian posterior distribution.
 
+* But it's placed over a set of 'pseudo-observations'.
 
 ## Also need
 
