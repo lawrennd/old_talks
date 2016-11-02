@@ -7,3 +7,9 @@
 .reveal h3 { font-size: 1em;
 	     text-transform: none;
 }
+.reveal h3 { font-size: 1em;
+	     text-transform: none;
+}
+
+.math_display { font-size: 2.5em !important;
+}

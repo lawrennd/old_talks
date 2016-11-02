@@ -15,7 +15,7 @@
 
 ## Evolved Relationship
 
-<img src="./diagrams/data-science-information-flow_neg.svg" height=100% style="background:none; border:none; box-shadow:none;" align="center">
+<img src="./diagrams/data-science-information-flow_neg.svg" height="100%" style="background:none; border:none; box-shadow:none;" align="center">
 
 ---
 

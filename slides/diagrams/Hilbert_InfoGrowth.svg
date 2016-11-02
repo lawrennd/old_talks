@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 900 675"
+   height="675"
+   width="900"
+   version="1.1"
+   id="svg3422"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="Hilbert_InfoGrowth.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1280"
+     inkscape:window-height="712"
+     id="namedview4367"
+     showgrid="false"
+     inkscape:zoom="1"
+     inkscape:cx="399.94124"
+     inkscape:cy="339.42792"
+     inkscape:window-x="103"
+     inkscape:window-y="1"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg3422" />
+  <metadata
+     id="metadata3428">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3426">
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Lend"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path5613"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:blue;stroke-opacity:1;fill:blue;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(1.1) rotate(180) translate(1,0)" />
+    </marker>
+    <style>
+      .mycirc { fill-opacity:1;stroke-width:3;stroke:white;fill:black;}
+      .mycirc2 { fill-opacity:1;stroke-width:3;stroke:white;fill:gray;}
+      .myemptycirc { fill-opacity:0;stroke-width:3;stroke:red;fill:black;}
+      .myrect { fill-opacity:1;stroke-width:3;stroke:white;fill:gray;}
+      .myarrow { stroke:white;stroke-width:2;marker-end:url(#markerArrow);}
+      .mythickarrow { stroke:white;stroke-width:20;marker-end:url(#markerThickArrow);}
+      .myline { stroke:gray;stroke-width:2;}
+      .myline2 { fill:none;fill-rule:evenodd;stroke:black;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke:gray}
+      .mythickline { stroke:white;stroke-width:30;}
+      .thinline { fill:none;fill-rule:evenodd;stroke:black;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;}
+      .thickline { opacity:1;fill-opacity:1;fill-rule:evenodd;stroke:black;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;}
+      .mydigitaltext { font-weight:bold;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#e46c0a;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;}
+      .titletext { font-weight:bold;font-stretch:normal;font-size:27.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:blue;fill-opacity:1;}
+      .subtitletext { font-size:22.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:blue;fill-opacity:1;}
+      .yeartext { font-weight:bold;font-stretch:normal;font-size:15px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;}
+      .totaltext { font-weight:bold;font-stretch:normal;font-size:15px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;}
+      .referencetext { font-size:12.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start;}
+      .mediatext { font-size:11.25px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;}
+      .largestoragetext { font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;}
+    </style>
+    
+  </defs>
+  <path
+     id="path3434"
+     d="m 616.16351,592.94118 -0.72233,-498.970592 -180.6261,225.434752 -12,3 -375.25625,1.56525 187.94118,5.29411 186.61764,22.5 15.88236,9.26471 z"
+     class="thickline"
+     style="fill:#fcd5b5"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccccccc" />
+  <path
+     id="path3432"
+     d="m 45,324.26471 185.29412,-19.85295 206.47059,-54.2647 178.07527,-197.887836 0.3006,40.648062 -180.39683,226.882434 -12.6261,3.6261 z"
+     class="thickline"
+     style="fill:#77933c"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cccccccc" />
+  <text
+     id="text3436"
+     y="44.411766"
+     x="17.764706"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:blue;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     sodipodi:linespacing="125%"><tspan
+       class="titletext"
+       y="44.411766"
+       x="17.764706"
+       id="tspan3438">Global Information Storage Capacity</tspan></text>
+  <text
+     id="text3440"
+     y="70.823532"
+     x="129.58824"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:blue;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     sodipodi:linespacing="125%"><tspan
+       class="subtitletext"
+       y="70.823532"
+       x="129.58824"
+       id="tspan3442">in optimally compressed bytes</tspan></text>
+  <text
+     id="text4252"
+     y="306"
+     x="625"
+     class="mediatext"
+     xml:space="preserve"><tspan
+       id="tspan4256">- DVD/Blu-ray 22.8%</tspan></text>
+  <text
+     xml:space="preserve"
+     class="mediatext"
+     x="626"
+     y="134"
+     id="text4390"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan4392"
+       x="625"
+       y="134">- CDs and minidisks 5.8%</tspan></text>
+  <text
+     xml:space="preserve"
+     class="mediatext"
+     x="625"
+     y="117"
+     id="text4394"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan4396"
+       x="625"
+       y="117">- Portable hard disks 2.4%</tspan></text>
+  <text
+     xml:space="preserve"
+     class="mediatext"
+     x="625"
+     y="104"
+     id="text4398"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan4400"
+       x="625"
+       y="104">- Portable media, flash drives: 2%</tspan></text>
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#00a0de;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 630,91 892,90.80865"
+     id="path4402"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <text
+      xml:space="preserve"
+      class="mediatext"
+     x="625"
+     y="84"
+     id="text4944"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan4946"
+       x="625"
+       y="84">- Analog videotapes (VHS, etc): 94%</tspan></text>
+  <text
+     xml:space="preserve"
+     class="mediatext"
+     x="625"
+     y="69"
+     id="text4948"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan4950"
+       x="625"
+       y="69">- Paper, film, audiotape and vinyl: 6%</tspan></text>
+  <text
+     xml:space="preserve"
+     class="mediatext"
+     x="621"
+     y="456"
+     id="text4976"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan4978"
+       x="625"
+       y="456">- PC hard disks: 44.5%</tspan></text>
+  <text
+     xml:space="preserve"
+     class="mediatext"
+     x="639"
+     y="473"
+     id="text4980"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan4982"
+       x="625"
+       y="473">123 billion gigabytes</tspan></text>
+  <text
+     xml:space="preserve"
+     class="mediatext"
+     x="624"
+     y="580"
+     id="text4984"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan4986"
+       x="625"
+       y="580">- Others: &lt; 1% (inc chip cards, memory cards, </tspan><tspan
+       sodipodi:role="line"
+       x="625"
+       y="594.0625"
+       id="tspan4988">floppy disks, mobile phones, PDAs, cameras</tspan><tspan
+       sodipodi:role="line"
+       x="625"
+       y="608.125"
+       id="tspan4990">video games)</tspan></text>
+  <text
+     xml:space="preserve"
+     class="mediatext"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="625"
+     y="625"
+     id="text4992"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan5000"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';text-align:start;writing-mode:lr-tb;text-anchor:start"
+       x="625"
+       y="625">DIGITAL</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="624"
+     y="646"
+     id="text5002"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan5004"
+       x="625"
+       y="646">280 exabytes</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="625"
+     y="32"
+     id="text5006"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan5008"
+       x="625"
+       y="32">ANALOG</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="623"
+     y="55"
+     id="text5010"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan5012"
+       x="625"
+       y="55">19 exabytes</tspan></text>
+  <text
+     xml:space="preserve"
+     class="yeartext"
+     x="579.41327"
+     y="24.484735"
+     id="text5014"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan5016"
+       x="579.41327"
+       y="24.484735">2007</tspan></text>
+  <text
+     xml:space="preserve"
+     class="yeartext"
+     x="382"
+     y="218"
+     id="text5018"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan5020"
+       x="382"
+       y="218">2000</tspan></text>
+  <text
+      xml:space="preserve"
+      class="yeartext"
+     x="212"
+     y="251"
+     id="text5022"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan5024"
+       x="212"
+       y="251">1993</tspan></text>
+  <text
+     xml:space="preserve"
+     class="yeartext"
+     x="41"
+     y="257"
+     id="text5026"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan5028"
+       x="41"
+       y="257">1986</tspan></text>
+  <text
+     xml:space="preserve"
+     class="totaltext"
+     x="39"
+     y="278"
+     id="text5030"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan5032"
+       x="35"
+       y="278">ANALOG</tspan></text>
+  <text
+     xml:space="preserve"
+     class="totaltext"
+     x="35"
+     y="297"
+     id="text5034"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan5036"
+       x="35"
+       y="297">2.6 exabytes</tspan></text>
+  <text
+      xml:space="preserve"
+      class="totaltext"
+     x="35"
+     y="358"
+     id="text5038"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan5040"
+       x="35"
+       y="358">DIGITAL</tspan></text>
+  <text
+     xml:space="preserve"
+     class="totaltext"
+     x="35"
+     y="380"
+     id="text5042"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan5044"
+       x="35"
+       y="380">0.02 exabytes</tspan></text>
+  <path
+     style="fill:blue;fill-opacity:1;fill-rule:evenodd;stroke:blue;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
+     d="M 457.5102,205.13775 458,447 l 0,2"
+     id="path5046"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccc" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#e46c0a;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="16"
+     y="586"
+     id="text5946"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan5948"
+       x="16"
+       y="586"
+       class="mydigitaltext">% digital</tspan></text>
+  <text
+      xml:space="preserve"
+      class="mydigitaltext"
+     y="615"
+     id="text5950"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan5952"
+       x="207"
+       y="614">3 %</tspan></text>
+  <text
+     xml:space="preserve"
+     class="mydigitaltext"
+     x="389"
+     y="614"
+     id="text5954"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan5956"
+       x="389"
+       y="615">25 %</tspan></text>
+  <text
+     xml:space="preserve"
+     class="mydigitaltext"
+     x="16"
+     y="614"
+     id="text5958"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan5960"
+       x="16"
+       y="615">1 %</tspan></text>
+  <text
+     xml:space="preserve"
+     class="mydigitaltext"
+     x="448"
+     y="560"
+     id="text5962"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan6287">50 %</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:blue;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+     x="437"
+     y="482"
+     id="text5966"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan5968"
+       x="437"
+       y="482">2002:</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold Italic';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:blue;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="462"
+     y="511"
+     id="text5970"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan5972"
+       x="462"
+       y="511">&quot;beginning</tspan><tspan
+       sodipodi:role="line"
+       x="462"
+       y="532.875"
+       id="tspan5974">of the digital age&quot;</tspan></text>
+  <text
+     xml:space="preserve"
+     class="mydigitaltext"
+     x="572"
+     y="614"
+     id="text5976"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan5978"
+       x="572"
+       y="615">94 %</tspan></text>
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:black;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4, 2;stroke-dashoffset:0;stroke-opacity:1"
+     d="m 232,304.48734 -0.0351,-39.5"
+     id="path5980"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="625.0401"
+     y="230.69443"
+     id="text6034"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan6036"
+       x="625"
+       y="230.69443">- Digital tape: 11.8%</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="623.15741"
+     y="178.4904"
+     id="text6044"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan6046"
+       x="625"
+       y="178.4904">- Computer servers and mainfraims: 8.9%</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="820.20819"
+     y="109.57722"
+     id="text6048"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan6050"
+       x="820.20819"
+       y="109.57722" /></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.25px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#e88636;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="840.09082"
+     y="106.71497"
+     id="text6063"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan6067"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#e88636;fill-opacity:1"
+       x="840.09082"
+       y="106.71497">DIGITAL</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#9aad6f;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="837.42755"
+     y="83.847664"
+     id="text6073"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan6075"
+       x="837.42755"
+       y="83.847664">ANALOG</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="7.5306029"
+     y="654.29083"
+     id="text6077"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan6079"
+       x="7.5306029"
+       y="654.29083"
+       class="referencetext">Source: Hilbert, M. &amp; Lopez, P (2011) The World's Technological Capacity to Store, Communicate, and </tspan><tspan
+       sodipodi:role="line"
+       x="7.5306029"
+       y="669.91583"
+       class="referencetext"
+       id="tspan6081">Compute Information, Science, 332 (6025) 60-65 <a href="http://www.martinhilbert.net/WorldInfoCapacity.html">http://www.martinhilbert.net/WorldInfoCapacity.html</a></tspan></text>
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:black;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:6, 2;stroke-dashoffset:0;stroke-opacity:1"
+     d="m 413.22661,239.0235 c 0,16.36685 0.009,16.36685 0.009,16.36685"
+     id="path6946"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:black;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4, 2;stroke-dashoffset:0;stroke-opacity:1"
+     d="m 44.383458,309.35753 c 0,27.23536 0,27.23536 0,27.23536 l 0,0 0,0"
+     id="path6954"
+     inkscape:connector-curvature="0" />
+  <text
+     xml:space="preserve"
+     class="largestoragetext"
+     x="339"
+     y="316"
+     id="text7047"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan7049"
+       x="339"
+       y="316">ANALOG STORAGE</tspan></text>
+  <text
+     xml:space="preserve"
+     class="largestoragetext"
+     x="543"
+     y="333"
+     id="text7051"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan7053"
+       x="543"
+       y="333"
+       class="largestoragetext">DIGITAL</tspan><tspan
+       sodipodi:role="line"
+       x="543"
+       y="354.875"
+       id="tspan7055"
+       class="largestoragetext">STORAGE</tspan></text>
+  <path
+     class="thinline"
+     d="m 616,159 -1,-1 0,0 -177,171 -11,5 -13,4 -171,-11 170,12 25,-7 29,-20 147,-111"
+     id="path7235"
+     inkscape:connector-curvature="0" />
+  <path
+     class="thinline"
+     d="m 615,259 -156,77 -23,9 -25,5 -166,-21 369,47 0,0"
+     id="path7237"
+     inkscape:connector-curvature="0" />
+  <path
+     class="thinline"
+     d="M 616,120 431,323 615,108"
+     id="path7239"
+     inkscape:connector-curvature="0" />
+</svg>

@@ -1,4 +1,4 @@
-<svg viewbox = "0 0 700 700" height="642.89447" width="784.49005" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+<svg viewbox = "0 0 700 700" height="700" width="700" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
 >
   <defs>
     <style type="text/css">
@@ -9,11 +9,13 @@
     <solidColor id="foreground" solid-color="white" solid-opacity="1.0"/>
     <style>
       .mycirc { fill-opacity:1;stroke-width:3;stroke:white;fill:black;}
+      .mycirc2 { fill-opacity:1;stroke-width:3;stroke:white;fill:gray;}
+      .myemptycirc { fill-opacity:0;stroke-width:3;stroke:red;fill:black;}
       .myrect { fill-opacity:0;stroke-width:3;stroke:white;}
       .myarrow { stroke:white;stroke-width:2;marker-end:url(#markerArrow);}
       .mythickarrow { stroke:white;stroke-width:20;marker-end:url(#markerThickArrow);}
-      .myline { stroke:white;stroke-width:2;}
-      .myline2 { fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke:white}
+      .myline { stroke:gray;stroke-width:2;}
+      .myline2 { fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke:gray}
       .mythickline { stroke:white;stroke-width:30;}
       .mytext { fill:white;font-size:2em;font-family: "Source Sans Pro", Helvetica, sans-serif;}
       .mysmallinverttext { fill:black;font-size:1.5em;font-family: "Source Sans Pro", Helvetica, sans-serif;}
@@ -32,22 +34,32 @@
      sodipodi:nodetypes="ccsc" />
   </defs>
 
-  <line x1="450" y1="80" x2="280" y2="420" class="myline" />
-  <line x1="280" y1="420" x2="620" y2="420" class="mythickline" />
-  <line x1="620" y1="420" x2="450" y2="80" class="myline" />
-  <circle cx="450" cy="80" r="78" class="mycirc" />
-  <text x="450" y="428" text-anchor="middle" class="mysmallinverttext" style="fill:black">high bandwidth</text>
-  <text x="450" y="80" fill="white" text-anchor="middle" class="mytext">human</text>
-  <circle cx="280" cy="420" r="78"  class="mycirc" />
-  <text x="280" y="420" fill="white" text-anchor="middle" class="mytext">computer</text>
-  <circle cx="620" cy="420" r="78" class="mycirc" />
+  <line x1="450" y1="80" x2="350" y2="350" class="myline" />
+  <circle cx="450" cy="80" r="50" class="mycirc" />
+  <text x="450" y="80" fill="white" text-anchor="middle" class="mytext">data</text>
+
+  <line x1="100" y1="100" x2="350" y2="350" class="myline" />
+  <circle cx="100" cy="100" r="50" class="mycirc" />
+  <text x="100" y="100" fill="white" text-anchor="middle" class="mytext">data</text>
+
+  <line x1="70" y1="420" x2="350" y2="350" class="myline" />
+  <circle cx="70" cy="420" r="50"  class="mycirc" />
+  <text x="70" y="420" fill="white" text-anchor="middle" class="mytext">data</text>
+
+  <line x1="620" y1="420" x2="350" y2="350" class="myline" />
+  <circle cx="620" cy="420" r="50" class="mycirc" />
   <text x="620" y="420" fill="white" text-anchor="middle" class="mytext">data</text>
-  <path xlink:href="#InfoFlowPath" class="mythickline" />
-  <text class="mytext">
-    <textPath xlink:href="#InfoFlowPath">new information flow</textPath>
-  </text>
-  <path
-     d="m 364,132 -116,1 c 0,0 32,7 53,20 -24,14 -58,34 -74,48 -27,24 -77,76 -93,111 -16,34 -31,54 -33,91 -1,2 -1,58 8,84 8,26 28.63576,50.11399 45.77325,65.41913 34.18772,30.53234 116.21912,59.28305 189.66435,58.05888 68.19874,-1.13675 141.21839,-33.55697 245.02618,-81.30302 -48.32693,10.66007 -98.14823,3.29038 -58.13655,-63.79708 C 456.57426,545.32776 382.74524,570.21665 334,568 285,565 216,544 192,520 167,496 144.08805,435.86343 163.29946,381.10562 c 19.51501,-55.62323 59.8069,-113.39222 94.61397,-145.84657 20.72058,-19.32002 47.17978,-38.25083 66.41942,-51.15207 9.5541,23.47718 11.51381,49.41666 11.51381,49.41666 z"
-     id="path3738" class="myline2"
-     sodipodi:nodetypes="cccssssssccssssccc" />
+
+
+  <circle cx="350" cy="350" r="150" class="mycirc"/>
+  <text x="350" y="350" fill="white" text-anchor="middle" class="mytext">data trust</text>
+
+  <circle cx="350" cy="350" r="200" class="myemptycirc"/>
+
+
+  <circle cx="375" cy="425" r="35" class="mycirc2"/>
+  <text x="375" y="425" fill="white" text-anchor="middle" class="mytext">ML</text>
+  <circle cx="325" cy="275" r="35" class="mycirc2"/>
+  <text x="325" y="275" fill="white" text-anchor="middle" class="mytext">ML</text>
+
 </svg>

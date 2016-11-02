@@ -1,0 +1,37 @@
+.mycirc { fill-opacity: 1;
+	  stroke-width: 3;
+	  stroke: white;
+	  fill: black;
+}
+
+.myrect { fill-opacity: 1;
+	  stroke-width: 3;
+	  stroke: white;
+	  fill: black;
+}
+
+.myarrow { stroke:white;
+	   stroke-width:2;
+	   marker-end:url(#markerArrow);
+
+}
+
+.myline { stroke:white;
+	  stroke-width:2;
+}
+.myline2 { fill: none;
+	   fill-rule: evenodd;
+	   stroke: black;
+	   stroke-width: 2;
+	   stroke-linecap: butt;
+	   stroke-linejoin: miter;
+	   stroke-opacity: 1;
+	   stroke:white
+}
+.mythickline { stroke: white;
+	       stroke-width: 30;
+}
+
+.mytext { fill: white;
+	  font-size: 2em;
+}
