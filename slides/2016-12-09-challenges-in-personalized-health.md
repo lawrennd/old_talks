@@ -245,6 +245,8 @@ $$\log p(\mathbf{Y}|\boldsymbol{\theta}) = \sum_{j=1}^p \log p(\mathbf{y}_{:, j}
     * $p\approx n$?
     * Stratification of populations: batch effects etc.
 
+* Multi-task learning (Natasha Jaques)
+
 ## Does $p$ Even Exist?
 
 * Massively missing data.
@@ -435,6 +437,7 @@ We require data-desalination before it can be consumed!
 
 * 90% of our time is spent on validation and integration (Leo Anthony Celi)
 * "The Dirty Work We Don't Want to Think About" (Eric Xing)
+* "Voodoo to get it decompressed" (Francisco Giminez?)
 * In health care clinicians collect the data and often control the direction of research through guardianship of data.
 
 ## Value
