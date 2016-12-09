@@ -468,6 +468,11 @@ We require data-desalination before it can be consumed!
 <object type="image/svg+xml" data="./diagrams/pomdp004.svg">
 </object>
 
+## {.slide: data-transition="none"}
+
+<object type="image/svg+xml" data="./diagrams/pomdp005.svg">
+</object>
+
 
 ## Credit Allocation
 
