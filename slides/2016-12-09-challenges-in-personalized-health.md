@@ -114,7 +114,7 @@
 
 * A requirement to better understand our own subjective biases to ensure that the human to computer interface formulates the correct conclusions from the data.
 
-* Particularly important where treatments are being proscribed.
+* Particularly important where treatments are being prescribed.
 
 * But what is a treatment in the modern era: interventions could be far more subtle.
 
