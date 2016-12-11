@@ -18,8 +18,7 @@ github_username:  lawrennd
 
 comments: true
 github:
-  links: true
-  fix: true
+  edit: true
 
 permalink: "/:categories/:title.html"
 
