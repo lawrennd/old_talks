@@ -1,5 +1,5 @@
 # Site settings
-title: Neil Lawrence's Talks
+title: "Neil Lawrence's Talks"
 email: N.Lawrence@sheffield.ac.uk
 description: talks given by Neil Lawrence
 baseurl: "/talks" # the subpath of your site, e.g. /blog/
@@ -15,8 +15,12 @@ basenb: "github/lawrennd/talks/blob/master/slides/"
 url: "http://inverseprobability.com" # the base hostname & protocol for your site
 twitter_username: lawrennd
 github_username:  lawrennd
+
+comments: true
 github:
+  links: true
   fix: true
+
 permalink: "/:categories/:title.html"
 
 analytics:
