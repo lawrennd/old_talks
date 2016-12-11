@@ -1,4 +1,12 @@
-## Personalized Health: Challenges in Data Science
+---
+title: "Personalized Health: Challenges in Data Science"
+layout: slides
+venue: NIPS Workshop on Machine Learning for Health, Barcelona, Spain
+date: 2016-12-09
+author: Neil D. Lawrence
+affiliation: Amazon and University of Sheffield
+---
+
 ### NIPS Workshop on Machine Learning for Health
 ### 2016-12-09
 ### Barcelona, Spain
