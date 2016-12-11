@@ -1,0 +1,17 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\def\layersep{1.2cm}
+\input{notationDef.tex}
+\input{definitions.tex}
+\input{graphicalModels.tex}
+\begin{document}
+
+\begin{tikzpicture}[scale=6]
+\draw node[obs] (y) {$\mathbf{y}$};
+\draw node[const, above=of y] (u) {$\mathbf{u}$};
+        
+% Connect the nodes
+\draw [->] (u) to (y);%
+
+\end{tikzpicture}
+\end{document}
