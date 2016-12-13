@@ -21,13 +21,13 @@ abstract: 'The widespread success of deep learning in a variety of domains is be
 day: '22'
 month: 9
 year: '2016'
+youtube: BI9PMvuolqc
 blog: 2016-03-04-deep-learning-and-uncertainty.md
 ppt: 2016-09-22-deepLearningSummit.pptx
 reveal: 2016-09-22-the-data-delusion.slides.html
 reveal-md: 2016-09-22-the-data-delusion.md
 venue: Deep Learning Summit, London, UK
 layout: talk
-youtube: BI9PMvuolqc
 key: Lawrence-deep-summit16b
 categories:
 - Lawrence-deep-summit16b

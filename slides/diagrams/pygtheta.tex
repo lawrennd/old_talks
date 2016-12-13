@@ -1,0 +1,18 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{amsmath}
+\def\layersep{1.2cm}
+\input{notationDef.tex}
+\input{definitions.tex}
+\input{graphicalModels.tex}
+\begin{document}
+
+\begin{tikzpicture}[scale=6]
+\draw node[obs] (y) {$\mathbf{y}$};
+\draw node[const, above=of y] (theta) {$\boldsymbol{\theta}$};
+        
+% Connect the nodes
+\draw [->] (theta) to (y);%
+
+\end{tikzpicture}
+\end{document}

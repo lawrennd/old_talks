@@ -1,12 +1,14 @@
 ---
 title: Communicating Machine Learning
+layout: slides
 author: Neil D. Lawrence
 institute: University of Sheffield
-venue: "``@lawrennd`` [inverseprobability.com](http://inverseprobability.com)"
+venue: University of Edinburgh
+contact: "``@lawrennd`` [inverseprobability.com](http://inverseprobability.com)"
 date: 2016-08-31
 ---
 
-<img src="./diagrams/gaussCeresPredictionMonatliche.png" height=100% style="border:none; box-shadow:none;" align="center">>
+<img src="./diagrams/gaussCeresPredictionMonatliche.png" height=100% style="border:none; box-shadow:none;" align="center">
 
 ### What is the Purpose of Writing?
 
