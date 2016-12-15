@@ -65,10 +65,11 @@ venue: "Defra Science Advisory Council: Data Sub Group"
 ## Stetson Hats
 
 * What's the most common hat worn in the west?
-
+<center>
 <table>
-<tr><td><img src="./diagrams/bowler.jpg" width="40%"></td><td><img src="./diagrams/stetson.jpg" width="40%"></td></tr>
+<tr><td><img src="./diagrams/bowler.jpg" width="70%"></td><td><img src="./diagrams/stetson.jpg" width="70%"></td></tr>
 </table>
+<center>
 
 ## The Three 'A's
 
@@ -115,14 +116,6 @@ venue: "Defra Science Advisory Council: Data Sub Group"
 * Ideally, analysis should be carried out by individuals not only skilled in data science but also equipped with the domain knowledge.
 
 
-## Background: Big Data
-
-* The pervasiveness of data brings forward particular challenges.
-
-* Those challenges are most sharply in focus for personalized health.
-
-* Particular opportunities, in challenging areas such as *mental health*.
-
 ## Evolved Relationship {.slide: data-transition="none"}
 
 <object type="image/svg+xml" data="./diagrams/data-science-information-flow_neg001.svg">
@@ -164,13 +157,13 @@ venue: "Defra Science Advisory Council: Data Sub Group"
 
 ## Societal Effects
 
-* Automated decision making within the computer based only on the data.
+* Automated decision making in the computer based  on data.
 
-* A requirement to better understand our own subjective biases to ensure that the human to computer interface formulates the correct conclusions from the data.
+* Need to better understand our own subjective biases better.
 
-* Particularly important where treatments are being prescribed.
+* Particularly important where societal interventions are prescribed.
 
-* But what is a treatment in the modern era: interventions could be far more subtle.
+* But what is a societal intervention in the modern era? Much more subtle than before.
 
 ## Societal Effects
 
@@ -179,7 +172,7 @@ venue: "Defra Science Advisory Council: Data Sub Group"
 * This change of dynamics gives us the modern and emerging domain of data science
 
 
-## Challenges
+## Societal Challenges
 
 1. Paradoxes of the Data Society
 
@@ -188,7 +181,7 @@ venue: "Defra Science Advisory Council: Data Sub Group"
 3. Privacy, Transparency, Fairness, Equality
 
 
-## Breadth vs Depth Paradox
+## Challenge 1) Breadth vs Depth Paradox
 
 * Able to quantify to a greater and greater degree the actions of individuals
 
@@ -227,7 +220,7 @@ venue: "Defra Science Advisory Council: Data Sub Group"
 * Larger studies (100,000 genome)
     * Combined with complex models: algorithmic challenges
 
-## Quantifying the Value of Data
+## Challenge 2) Quantifying the Value of Data
 
 There's a sea of data, but most of it is undrinkable
 
