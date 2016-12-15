@@ -1,7 +1,7 @@
 ---
 title: "The Data Landscape"
 abstract: In this talk I'll give an overview of the challenges in the data landscape, both institutional and societal.  
-reveal: 2016-12-15-data-landscape.slides.html
+reveal: 2016-12-15-the-data-landscape.slides.html
 author: Neil D. Lawrence
 date: 2016-12-15
 year: '2016'
