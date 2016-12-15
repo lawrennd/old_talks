@@ -290,22 +290,6 @@ We require data-desalination before it can be consumed!
 
 * Need better technological solutions: trust and algorithms.
 
-
-## Conclusion
-
-* Alone 'big data' promises much and delivers little.
-
-* Data needs to be cared for: it needs to be curated and evaluated. 
-
-* Thee stages: 
-  1. Awareness
-  2. Availability
-  3. Analysis 
-  
-* Hand waving about big data solutions leads to self-deception. 
-
-* The castles we build on our data landscapes must be based on firm foundations.
-
 ## Societal Challenges
 
 * Paradoxes of the Data Society
@@ -324,6 +308,24 @@ We require data-desalination before it can be consumed!
 * Automating the Data Science Pipeline:
   * The Automatic Statistician
   * AutoML
+
+## Conclusion
+
+* Alone 'big data' promises much and delivers little.
+
+* Data needs to be cared for: it needs to be curated and evaluated. 
+
+* Thee stages: 
+  1. Awareness
+  2. Availability
+  3. Analysis 
+  
+## Conclusion (2)  
+  
+* Hand waving about big data solutions leads to self-deception. 
+
+* The castles we build on our data landscapes must be based on firm foundations.
+
 
 ## Thanks!
 
