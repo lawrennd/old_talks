@@ -32,7 +32,7 @@ authors:
   institute: University of Sheffield
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
-pdf: ./slides/2012-09-06-life-universe-and-machine-learning.pdf
+pdf: 2012-09-06-life-universe-and-machine-learning.pdf
 published: 2012-09-06
 extras: []
 errata: []
