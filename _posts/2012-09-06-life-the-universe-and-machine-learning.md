@@ -7,7 +7,7 @@ abstract: "What is Machine Learning? Why is it useful for us? Machine learning a
   driverless cars and causing flagging potentially fraudulent transactions on your
   credit card. To put it simply, machine learning is about understanding data. 
   
-  In this lecture I will try and give a sense of the challenges we face in machine learning,
+  <p>In this lecture I will try and give a sense of the challenges we face in machine learning,
   with a particular focus on those that have inspired my research. We will look at
   applications of data modelling from the early 18th century to the present, and see
   how they relate to modern machine learning. There will be a particular focus on
@@ -20,6 +20,7 @@ year: '2012'
 month: 9
 day: '6'
 layout: talk
+video: https://uecho.shef.ac.uk:8443/ess/echo/presentation/cf5b4a10-cf6c-4446-b843-ff07fa741fa0
 key: Lawrence-inaugural12
 categories:
 - Lawrence-inaugural12
