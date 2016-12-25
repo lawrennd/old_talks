@@ -15,7 +15,8 @@ abstract: "What is Machine Learning? Why is it useful for us? Machine learning a
   area where computers have typically struggled. We will emphasize the role of uncertainty
   in data modelling and hope to persuade the audience that correct handling of uncertainty
   may be one of the keys to intelligent systems."
-venue: Inaugural Lecture at St George's Church Lecture Theatre, University of Sheffield
+venue: St George's Church Lecture Theatre, University of Sheffield
+type: Inaugural Lecture
 year: '2012'
 month: 9
 day: '6'
