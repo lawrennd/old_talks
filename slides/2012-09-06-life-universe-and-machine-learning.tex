@@ -1,0 +1,78 @@
+\documentclass[english]{beamer}
+\usepackage[latin9]{inputenc}
+\usepackage{color}
+\usepackage{url}
+\usepackage{amsbsy}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage[authoryear]{natbib}
+
+\input{../definitions}
+\input{../notationDef}
+
+\makeatletter
+\mode<presentation>
+{
+ \usetheme[height=8mm]{Rochester}
+ \setbeamertemplate{blocks}[rounded][shadow=true]
+ \setbeamertemplate{items}[circle]
+ \setbeamertemplate{navigation symbols}{}
+ \setbeamercovered{transparent}
+}
+\setbeamercovered{transparent}
+\usepackage{listings}
+
+\setbeamertemplate{navigation symbols}{} 
+
+%\useoutertheme{infolines} 
+\usetheme{Inaugural}
+%\usecolortheme{sheffield}
+
+\setbeamercovered{transparent}
+\usepackage{ae,aecompl}
+
+\newcommand{\newblock}{}
+\usepackage{multimedia}
+\usepackage{xmpmulti}
+\usepackage{bm}
+
+\usepackage{subfigure}
+\usepackage{pgf}
+
+\title[]{Life, the Universe and Machine Learning}
+
+\author[Neil D. Lawrence]{Neil D. Lawrence}
+
+\institute[DCS]{
+  Department of Computer Science\\
+  Sheffield University}
+
+\date{6th September 2012}
+
+\nocite{Gauss:theoria09}
+\subject{Life, the Universe and Machine Learning}
+%\setbeamertemplate{background}
+%{%
+%  \includegraphics[height=0.25\textheight]{../../../ml/tex/diagrams/Bendixen_-_Carl_Friedrich_Gauss_1828.png}\includegraphics[height=0.25\textheight]{../../../ml/tex/diagrams/Richard_Price.png}\includegraphics[height=0.25\textheight]{../../../ml/tex/diagrams/GodfreyKneller-IsaacNewton-1689.png}
+%\includegraphics[height=0.25\textheight]{../../../ml/tex/diagrams/Pierre-Simon_Laplace.png}
+%}
+% \setbeamercolor{background canvas}{bg=black}
+
+\begin{document}
+
+\frame{\vspace{1cm}\Huge Life, the Universe and ... \\\vspace{0.5cm}\hfill{\Huge ... Machine Learning}}
+
+\input{../../../ml/tex/talks/ceresDiscovery}
+\input{../../../ml/tex/talks/entropyIntro.tex}
+\input{../../../ml/tex/talks/uncertaintyInPractice.tex}
+%\input{../../../ml/tex/talks/firstOrderSystem.tex}
+\input{../../../ml/tex/talks/p53Example.tex}
+
+%\input{../../../ml/tex/talks/underdeterminedInaugural.tex}
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
