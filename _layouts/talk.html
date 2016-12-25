@@ -16,18 +16,21 @@ layout: post
     <h4>Videolectures</h4>
     <p><a href="http://videolectures.net/{{ page.videolectures }}/"><img src="http://videolectures.net/{{ page.videolectures }}/thumb.jpg" border=0></a></p>
     {% endif %}
-      
-    <p><b>{{ page.tagline }}</b> </p>
 
+    {% if page.tagline %}
+    <p><b>{{ page.tagline }}</b> </p>
+    {% endif %}
     {% if page.abstract %}
     <h4>Abstract</h4>
     
     <p>{{ page.abstract | markdownify }}</p>
     {% endif %}
 
+    
     <h3>Links</h3>
     <div id="extras">
     <ul>
+      {% if page.video %}<li><a href="{{ page.video }}">video</a></li>{% endif %}
       {%if page.blog %}<li><a href="{% assign elems = page.blog | split: '-' %}{% for elem in elems %}{% if forloop.index0 < 4 %}/{% else %}-{% endif %}{% if forloop.last %}{{ elem | remove_first: '.md' }}{% else %}{{ elem }}{% endif %}{% endfor %}">Related Blog Post</a></li>{% endif %}
       {%if page.blog1 %}<li><a href="{% assign elems = page.blog1 | split: '-' %}{% for elem in elems %}{% if forloop.index0 < 4 %}/{% else %}-{% endif %}{% if forloop.last %}{{ elem | remove_first: '.md' }}{% else %}{{ elem }}{% endif %}{% endfor %}">Further Related Blog Post</a></li>{% endif %}
       {%if page.blog2 %}<li><a href="{% assign elems = page.blog2 | split: '-' %}{% for elem in elems %}{% if forloop.index0 < 4 %}/{% else %}-{% endif %}{% if forloop.last %}{{ elem | remove_first: '.md' }}{% else %}{{ elem }}{% endif %}{% endfor %}">Yet another Related Blog Post</a></li>{% endif %}
