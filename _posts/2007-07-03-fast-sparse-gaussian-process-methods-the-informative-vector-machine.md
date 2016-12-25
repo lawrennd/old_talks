@@ -1,5 +1,5 @@
 ---
-title: 'Fast Sparse <span>G</span>aussian Process Methods: The Informative Vector
+title: 'Fast Sparse Gaussian Process Methods: The Informative Vector
   Machine'
 abstract: Gaussian processes are a non parametric approach to learning regression
   models. In this talk we will given a brief review of the use of Gaussian processes
