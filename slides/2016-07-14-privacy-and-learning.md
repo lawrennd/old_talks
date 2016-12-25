@@ -4,7 +4,7 @@ layout: slides
 author: Neil D. Lawrence
 institution: University of Sheffield
 venue: Security Workshop, Sheffield
-contact: ```@lawrennd``` [inverseprobability.com](http://inverseprobability.com)
+contact: "```@lawrennd``` [inverseprobability.com](http://inverseprobability.com)"
 ---
 
 ## Privacy and Learning

@@ -4,7 +4,7 @@ layout: slides
 author: Neil D. Lawrence
 institution: University of Sheffield
 venue: Royal Society, London
-contact: ```@lawrennd``` [inverseprobability.com](http://inverseprobability.com)
+contact: "```@lawrennd``` [inverseprobability.com](http://inverseprobability.com)"
 ---
 
 ## Machine Learning and the Professions
