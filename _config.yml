@@ -3,6 +3,7 @@ title: "Neil Lawrence's Talks"
 email: N.Lawrence@sheffield.ac.uk
 description: talks given by Neil Lawrence
 baseurl: "/talks" # the subpath of your site, e.g. /blog/
+exclude: slides
 reveal:
   width: 512
   height: 384
