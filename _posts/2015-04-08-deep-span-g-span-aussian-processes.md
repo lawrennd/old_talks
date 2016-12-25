@@ -1,5 +1,5 @@
 ---
-title: Deep <span>G</span>aussian Processes
+title: Deep Gaussian Processes
 abstract: In this talk we describe how deep neural networks can be modified to produce
   deep Gaussian process models. The framework of deep Gaussian processes allow for
   unsupervised learning, transfer learning, semi-supervised learning, multi-task learning
