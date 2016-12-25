@@ -33,7 +33,7 @@ layout: post
     <p>{{ page.abstract | markdownify }}</p>
     {% endif %}
 
-    
+    {% if page.video or page.blog or page.blog1 or page.blog2 or page.ppt or page.pdf or page.linkpdf or page.linkpsgz or page.linkps or page.linkppt or page.linkpptgz or page.demo or page.linksoftware or page.extras.size > 0 %}
     <h3>Links</h3>
     <div id="extras">
     <ul>
@@ -55,7 +55,7 @@ layout: post
       {% endfor %}
     </ul>
   </div>
-
+  {% endif %}
     {{ content | markdownify }}
   </article>
 
