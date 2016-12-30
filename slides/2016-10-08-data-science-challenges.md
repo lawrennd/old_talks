@@ -1,3 +1,9 @@
+---
+title: Challenges in Data Science
+layout: slides
+author: Neil D. Lawrence
+---
+
 ## Challenges in Data Science
 ### Open Data Science Conference
 ### London, UK
