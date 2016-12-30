@@ -1,3 +1,9 @@
+---
+layout: slides
+title: The Data Delusion
+author: Neil D. Lawrence
+---
+
 ## The Data Delusion
 ### Rework Deep Learning Summit, September 22nd
 ### Neil D. Lawrence

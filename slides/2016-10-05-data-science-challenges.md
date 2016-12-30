@@ -1,3 +1,9 @@
+---
+layout: slides
+title: Challenges in Data Science
+author: Neil D. Lawrence
+---
+
 ## Challenges in Data Science
 ### Amazon Academy
 #### University of Sheffield & Amazon Cambridge
