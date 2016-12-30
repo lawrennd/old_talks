@@ -1,3 +1,9 @@
+---
+layout: slides
+title: What are we Doing Here?
+author: Neil D. Lawrence
+---
+
 ## What are we Doing Here?
 
 ### Tech Talk Series
