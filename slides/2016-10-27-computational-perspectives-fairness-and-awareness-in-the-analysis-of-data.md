@@ -1,3 +1,9 @@
+---
+layout: slides
+title: "Computational Perspectives: Fairness and Awareness in Data Analysis"
+author: Neil D. Lawrence
+---
+
 ## Computational Perspectives: Fairness and Awareness in Data Analysis
 ### Royal Statistical Society
 ### 2016-10-27
