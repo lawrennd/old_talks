@@ -1,3 +1,8 @@
+---
+layout: slides
+title: Challenges in Data Science
+author: Neil D. Lawrence
+---
 ## Challenges in Data Science
 ### ENBIS Meeting
 #### University of Sheffield, UK

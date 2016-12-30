@@ -3,6 +3,7 @@ title: "The Data Landscape"
 author: Neil D. Lawrence
 date: 2016-12-15
 venue: "Defra Science Advisory Council: Data Sub Group"
+layout: slides
 ---
 
 ### Defra Science Advisory Council
