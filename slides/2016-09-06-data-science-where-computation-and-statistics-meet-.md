@@ -1,3 +1,9 @@
+---
+layout: slides
+title: "Data Science: Where Computation and Statistics Meet?"
+author: Neil D. Lawrence
+---
+
 ## Data Science: Where Computation and Statistics Meet?
 ### RSS Meeting, September 6th
 ### Neil D. Lawrence
