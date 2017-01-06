@@ -1,22 +1,23 @@
 ---
-title: Introduction to Machine Learning and Data Science
-venue: Data Science Africa School, Dedan Kimathi University, Nyeri, Kenya
-pdf: motivation_dss15.pdf
-year: '2015'
-month: 6
-day: '15'
-layout: talk
-key: Lawrence-nyeri15a
-categories:
-- Lawrence-nyeri15a
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2015-06-15
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-nyeri15a
+day: '15'
 errata: []
+extras: []
+key: Lawrence-nyeri15a
+layout: talk
+month: 6
+pdf: motivation_dss15.pdf
+published: 2015-06-15
+section: pre
+title: Introduction to Machine Learning and Data Science
+venue: Data Science Africa School, Dedan Kimathi University, Nyeri, Kenya
+year: '2015'
 ---

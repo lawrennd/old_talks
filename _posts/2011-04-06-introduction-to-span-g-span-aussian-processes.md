@@ -1,24 +1,25 @@
 ---
-title: Introduction to <span>G</span>aussian Processes
-venue: Mathematics and Computer Science, University of Siena, Italy
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gpReview.pdf
-year: '2011'
-month: 4
-day: '6'
-group: gp
-layout: talk
-key: Lawrence-siena11a
-categories:
-- Lawrence-siena11a
 abstract: ''
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2011-04-06
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-siena11a
+day: '6'
 errata: []
+extras: []
+group: gp
+key: Lawrence-siena11a
+layout: talk
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gpReview.pdf
+month: 4
+published: 2011-04-06
+section: pre
+title: Introduction to <span>G</span>aussian Processes
+venue: Mathematics and Computer Science, University of Siena, Italy
+year: '2011'
 ---

@@ -1,6 +1,4 @@
 ---
-title: Probabilistic Dimensional Reduction with the <span>G</span>aussian Process
-  Latent Variable Model
 abstract: Density modelling in high dimensions is a very difficult problem. Traditional
   approaches, such as mixtures of Gaussians, typically fail to capture the structure
   of data sets in high dimensional spaces. In this talk we will argue that for many
@@ -13,28 +11,31 @@ abstract: Density modelling in high dimensions is a very difficult problem. Trad
   dimensionality determination, learning of large data sets. We will demonstrate the
   application of the model and its extensions to a range of data sets, including human
   motion data, speech data and video.
-venue: Department of Computer Science, University of Loughgborough, U.K.
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/loughborough_gplvm.pdf
-year: '2011'
-month: 3
-day: 09
-group: gplvm
-layout: talk
-key: Lawrence-loughborough11
-categories:
-- Lawrence-loughborough11
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2011-03-09
+  url: http://inverseprobability.com
+categories:
+- Lawrence-loughborough11
+day: 09
+errata: []
 extras:
 - label: Bayesian GPLVM Software
   link: https://github.com/SheffieldML/vargplvm/
 - label: Main Software
   link: https://github.com/SheffieldML/GPmat/
-errata: []
+group: gplvm
+key: Lawrence-loughborough11
+layout: talk
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/loughborough_gplvm.pdf
+month: 3
+published: 2011-03-09
+section: pre
+title: Probabilistic Dimensional Reduction with the <span>G</span>aussian Process
+  Latent Variable Model
+venue: Department of Computer Science, University of Loughgborough, U.K.
+year: '2011'
 ---

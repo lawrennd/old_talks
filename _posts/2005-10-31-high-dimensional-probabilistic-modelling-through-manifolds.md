@@ -1,5 +1,4 @@
 ---
-title: High Dimensional Probabilistic Modelling through Manifolds
 abstract: Density modelling in high dimensions is a very difficult problem. Traditional
   approaches, such as mixtures of Gaussians, typically fail to capture the structure
   of data sets in high dimensional spaces. In this talk we will argue that for many
@@ -11,25 +10,27 @@ abstract: Density modelling in high dimensions is a very difficult problem. Trad
   data sets, but with a particular focus on human motion data. We will show some preliminary
   work on facial animation and make use of a skeletal motion capture data set to illustrate
   differences between our model and traditional manifold techniques.
-venue: School of Computer and Communication Sciences, Swiss Federal Institute of Technology
-  (EPFL), Lausanne, Switzerland
-linkpptgz: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_epfl.ppt.gz
-year: '2005'
-month: 10
-day: '31'
-group: gplvm
-layout: talk
-key: Lawrence-epfl05
-categories:
-- Lawrence-epfl05
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2005-10-31
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-epfl05
+day: '31'
 errata: []
+extras: []
+group: gplvm
+key: Lawrence-epfl05
+layout: talk
+linkpptgz: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_epfl.ppt.gz
+month: 10
+published: 2005-10-31
+section: pre
+title: High Dimensional Probabilistic Modelling through Manifolds
+venue: School of Computer and Communication Sciences, Swiss Federal Institute of Technology
+  (EPFL), Lausanne, Switzerland
+year: '2005'
 ---

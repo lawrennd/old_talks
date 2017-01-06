@@ -1,12 +1,4 @@
 ---
-title: A unifying probabilistic perspective on spectral approaches to dimensionality
-  reduction
-venue: Hausdorff Research Institute for Mathematics, Workshop on Manifold Learning,
-  University of Bonn
-year: '2011'
-month: 5
-day: '31'
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/spectral_bonn11.pdf
 abstract: Spectral approaches to dimensionality reduction typically reduce the dimensionality
   of a data set through taking the eigenvectors of a Laplacian or a similarity matrix.
   Classical multidimensional scaling also makes use of the eigenvectors of a similarity
@@ -19,18 +11,27 @@ abstract: Spectral approaches to dimensionality reduction typically reduce the d
   such as the graphical LASSO. The hope is that this unifying perspective will allow
   the relationships between these methods to be better understood and will also provide
   the groundwork for further research.
-layout: talk
-key: Lawrence-bonn11
-categories:
-- Lawrence-bonn11
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2011-05-31
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-bonn11
+day: '31'
 errata: []
+extras: []
+key: Lawrence-bonn11
+layout: talk
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/spectral_bonn11.pdf
+month: 5
+published: 2011-05-31
+section: pre
+title: A unifying probabilistic perspective on spectral approaches to dimensionality
+  reduction
+venue: Hausdorff Research Institute for Mathematics, Workshop on Manifold Learning,
+  University of Bonn
+year: '2011'
 ---

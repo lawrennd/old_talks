@@ -1,5 +1,4 @@
 ---
-title: 'Data Science: Where Computation and Statistics Meet?'
 abstract: 'What is data science? An new name for something old perhaps. Nevertheless
   there is something new happening. Data is being acquired in ways that could never
   have been envisaged 100 years ago. This is presenting new challenges, and ones that
@@ -9,24 +8,26 @@ abstract: 'What is data science? An new name for something old perhaps. Neverthe
   has particular implications for data science and the interface between computation
   and statistics. By addressing these challenges now we can ensure that the pitfalls
   of the data driven society are overcome allowing to reap the benefits.'
-reveal: 2016-09-06-data-science-where-computation-and-statistics-meet-.slides.html
-url: https://events.rss.org.uk/rss/frontend/reg/titem.csp?pageID=2373&eventID=1&eventID=1
-year: '2016'
-month: 9
-day: '6'
-venue: Royal Statistical Society Conference, Manchester
-layout: talk
-key: Lawrence-rss16a
-categories:
-- Lawrence-rss16a
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2016-09-06
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-rss16a
+day: '6'
 errata: []
+extras: []
+key: Lawrence-rss16a
+layout: talk
+month: 9
+published: 2016-09-06
+reveal: 2016-09-06-data-science-where-computation-and-statistics-meet-.slides.html
+section: pre
+title: 'Data Science: Where Computation and Statistics Meet?'
+url: https://events.rss.org.uk/rss/frontend/reg/titem.csp?pageID=2373&eventID=1&eventID=1
+venue: Royal Statistical Society Conference, Manchester
+year: '2016'
 ---

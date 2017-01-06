@@ -1,22 +1,23 @@
 ---
-title: Personalized Health
-venue: Dedan Kimathi University, Nyeri, Kenya
-pdf: personalized_dsa15.pdf
-year: '2015'
-month: 6
-day: '18'
-layout: talk
-key: Lawrence-nyeri15c
-categories:
-- Lawrence-nyeri15c
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2015-06-18
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-nyeri15c
+day: '18'
 errata: []
+extras: []
+key: Lawrence-nyeri15c
+layout: talk
+month: 6
+pdf: personalized_dsa15.pdf
+published: 2015-06-18
+section: pre
+title: Personalized Health
+venue: Dedan Kimathi University, Nyeri, Kenya
+year: '2015'
 ---

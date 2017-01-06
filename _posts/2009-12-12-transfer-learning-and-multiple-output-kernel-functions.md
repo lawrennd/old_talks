@@ -1,10 +1,4 @@
 ---
-title: Transfer Learning and Multiple Output Kernel Functions
-venue: NIPS 09 Workshop on Transfer Learning for Structured Data
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/tlsd09.pdf
-year: '2009'
-month: 12
-day: '12'
 abstract: 'A standard Bayesian approach to transfer learning is to construct hierarchical
   probabilistic models. Learning tasks are typically related in the model through
   conditional independencies of the variables/parameters. Many of the variables are
@@ -20,18 +14,25 @@ abstract: 'A standard Bayesian approach to transfer learning is to construct hie
   arrive at convolutional processes through physical interpretations of our models.
   We will try to illustrate these models with a range of real world examples of both
   transfer learning and other applications.'
-layout: talk
-key: Lawrence-tlsd09
-categories:
-- Lawrence-tlsd09
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2009-12-12
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-tlsd09
+day: '12'
 errata: []
+extras: []
+key: Lawrence-tlsd09
+layout: talk
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/tlsd09.pdf
+month: 12
+published: 2009-12-12
+section: pre
+title: Transfer Learning and Multiple Output Kernel Functions
+venue: NIPS 09 Workshop on Transfer Learning for Structured Data
+year: '2009'
 ---

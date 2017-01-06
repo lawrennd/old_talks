@@ -1,24 +1,25 @@
 ---
-title: Fitting Covariance and Multioutput Gaussian Processes
 abstract: In this second session we will talk about fitting covariance matrices and
   look at multiple output processes.
-venue: GPSS, Sheffield
-pdf: gp_gpss16_session2.pdf
-year: '2016'
-month: 9
-day: '13'
-layout: talk
-key: Lawrence-gpss16b
-categories:
-- Lawrence-gpss16b
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2016-09-13
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-gpss16b
+day: '13'
 errata: []
+extras: []
+key: Lawrence-gpss16b
+layout: talk
+month: 9
+pdf: gp_gpss16_session2.pdf
+published: 2016-09-13
+section: pre
+title: Fitting Covariance and Multioutput Gaussian Processes
+venue: GPSS, Sheffield
+year: '2016'
 ---

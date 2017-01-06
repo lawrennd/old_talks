@@ -1,6 +1,5 @@
 ---
-title: Information Infrastructure for Health
-abstract: In this talk we will address challenges in information infrastructure for
+abstract: "In this talk we will address challenges in information infrastructure for
   health. Personalized health care is one of the promises of the information revolution.
   However, there are major challenges in the curation, collection and management of
   the data. These are not currently being properly addressed. The care.data fiasco
@@ -13,26 +12,28 @@ abstract: In this talk we will address challenges in information infrastructure 
   information infrastructure would distribute data and contain afar greater degree
   of patient control over access. Such user-centric models may offer greater opportunity
   in terms of obtaining the necessary data-liquidity to fulfill the full potential
-  of personalized health in effecting individuals’ health outcomes.
-venue: ATI Scoping Workshop on the Data Analytics Pipeline, Edinburgh
-ipynb: 2015-11-18-health-infrastructure.ipynb
-reveal: 2015-11-18-health-infrastructure.slides.html
-blog: 2015-11-17-alan-turing-information-infrastructures.md
-year: '2015'
-month: 11
-day: '18'
-layout: talk
-key: Lawrence-atiscope15
-categories:
-- Lawrence-atiscope15
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+  of personalized health in effecting individuals\u2019 health outcomes."
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2015-11-18
-extras: []
+  url: http://inverseprobability.com
+blog: 2015-11-17-alan-turing-information-infrastructures.md
+categories:
+- Lawrence-atiscope15
+day: '18'
 errata: []
+extras: []
+ipynb: 2015-11-18-health-infrastructure.ipynb
+key: Lawrence-atiscope15
+layout: talk
+month: 11
+published: 2015-11-18
+reveal: 2015-11-18-health-infrastructure.slides.html
+section: pre
+title: Information Infrastructure for Health
+venue: ATI Scoping Workshop on the Data Analytics Pipeline, Edinburgh
+year: '2015'
 ---

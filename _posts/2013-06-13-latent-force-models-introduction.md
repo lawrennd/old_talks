@@ -1,24 +1,25 @@
 ---
-title: 'Latent Force Models: Introduction'
-venue: Latent Force Model Workshop, Sheffield
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gp_gpss13_session_lfm.pdf
-youtube: XK91ax4LBH4
-year: '2013'
-month: 6
-day: '13'
-layout: talk
-key: Lawrence-lfmIntro13
-categories:
-- Lawrence-lfmIntro13
 abstract: ''
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2013-06-13
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-lfmIntro13
+day: '13'
 errata: []
+extras: []
+key: Lawrence-lfmIntro13
+layout: talk
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gp_gpss13_session_lfm.pdf
+month: 6
+published: 2013-06-13
+section: pre
+title: 'Latent Force Models: Introduction'
+venue: Latent Force Model Workshop, Sheffield
+year: '2013'
+youtube: XK91ax4LBH4
 ---

@@ -1,5 +1,4 @@
 ---
-title: Particle Filters, Variational methods and Importance Sampling
 abstract: 'Particle filters allow tracking of systems with highly non-linear, multi-modal
   posterior distributions, however they are prone to failure when model likelihoods
   are sharply peaked or state spaces are high dimensional. This failure is caused
@@ -14,22 +13,24 @@ abstract: 'Particle filters allow tracking of systems with highly non-linear, mu
   processing of cDNA microarray images. We will then add dynamics to the model and
   demonstrate a marked improvement over standard approaches on both synthetic and
   real-world tracking examples.'
-venue: Machine Learning and Perception Group, Microsoft Research, Cambridge, U.K.
-year: '2003'
-month: 3
-day: '24'
-layout: talk
-key: Lawrence-msr03
-categories:
-- Lawrence-msr03
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2003-03-24
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-msr03
+day: '24'
 errata: []
+extras: []
+key: Lawrence-msr03
+layout: talk
+month: 3
+published: 2003-03-24
+section: pre
+title: Particle Filters, Variational methods and Importance Sampling
+venue: Machine Learning and Perception Group, Microsoft Research, Cambridge, U.K.
+year: '2003'
 ---

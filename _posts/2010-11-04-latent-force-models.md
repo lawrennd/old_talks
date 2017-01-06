@@ -1,14 +1,7 @@
 ---
-title: Latent Force Models
-venue: Dynamics Research Group Seminar, Mechanical Engineering, University of Sheffield,
-  U.K.
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lfm_sheffield10.pdf
-year: '2010'
-month: 11
-day: '04'
-abstract: Physics based approaches to data modeling involve constructing an accurate
+abstract: "Physics based approaches to data modeling involve constructing an accurate
   mechanistic model of data, often based on differential equations. Machine learning
-  approaches are typically data driven—perhaps through regularized function approximation.
+  approaches are typically data driven\u2014perhaps through regularized function approximation.
   These two approaches to data modeling are often seen as polar opposites, but in
   reality they are two different ends to a spectrum of approaches we might take. In
   this talk we introduce latent force models. Latent force models are a new approach
@@ -18,19 +11,27 @@ abstract: Physics based approaches to data modeling involve constructing an accu
   characteristics of interest, for example, in dynamical systems resonance and inertia.
   This allows us to perform a synthesis of the data driven and physical modeling paradigms.
   We will show applications of these models in systems biology and (given time) modelling
-  of human motion capture data.
-layout: talk
-key: Lawrence-lfmSheffield10
-categories:
-- Lawrence-lfmSheffield10
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+  of human motion capture data."
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2010-11-04
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-lfmSheffield10
+day: '04'
 errata: []
+extras: []
+key: Lawrence-lfmSheffield10
+layout: talk
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lfm_sheffield10.pdf
+month: 11
+published: 2010-11-04
+section: pre
+title: Latent Force Models
+venue: Dynamics Research Group Seminar, Mechanical Engineering, University of Sheffield,
+  U.K.
+year: '2010'
 ---

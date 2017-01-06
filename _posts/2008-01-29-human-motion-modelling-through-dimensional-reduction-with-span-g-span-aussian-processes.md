@@ -1,25 +1,26 @@
 ---
+abstract: ''
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
+  institute: University of Sheffield
+  twitter: lawrennd
+  url: http://inverseprobability.com
+categories:
+- Lawrence-human08
+day: '29'
+errata: []
+extras: []
+group: pascal
+key: Lawrence-human08
+layout: talk
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/human.pdf
+month: 1
+published: 2008-01-29
+section: pre
 title: Human Motion Modelling through Dimensional Reduction with <span>G</span>aussian
   Processes
 venue: Hotel Golf, Bled, Slovenia
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/human.pdf
 year: '2008'
-month: 1
-day: '29'
-group: pascal
-layout: talk
-key: Lawrence-human08
-categories:
-- Lawrence-human08
-abstract: ''
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
-  institute: University of Sheffield
-  twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2008-01-29
-extras: []
-errata: []
 ---

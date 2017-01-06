@@ -1,22 +1,23 @@
 ---
-title: Regression
-venue: Data Science Africa School, Dedan Kimathi University, Nyeri, Kenya
-pdf: regression_dss15.pdf
-year: '2015'
-month: 6
-day: '15'
-layout: talk
-key: Lawrence-nyeri15b
-categories:
-- Lawrence-nyeri15b
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2015-06-15
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-nyeri15b
+day: '15'
 errata: []
+extras: []
+key: Lawrence-nyeri15b
+layout: talk
+month: 6
+pdf: regression_dss15.pdf
+published: 2015-06-15
+section: pre
+title: Regression
+venue: Data Science Africa School, Dedan Kimathi University, Nyeri, Kenya
+year: '2015'
 ---

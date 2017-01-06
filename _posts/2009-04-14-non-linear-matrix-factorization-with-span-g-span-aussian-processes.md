@@ -1,23 +1,24 @@
 ---
-title: Non-linear Matrix Factorization with <span>G</span>aussian Processes
-venue: Learning Workshop, Clearwater, Florida
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/snowbird09.pdf
-year: '2009'
-month: 4
-day: '14'
-layout: talk
-key: Lawrence-learning09
-categories:
-- Lawrence-learning09
 abstract: ''
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2009-04-14
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-learning09
+day: '14'
 errata: []
+extras: []
+key: Lawrence-learning09
+layout: talk
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/snowbird09.pdf
+month: 4
+published: 2009-04-14
+section: pre
+title: Non-linear Matrix Factorization with <span>G</span>aussian Processes
+venue: Learning Workshop, Clearwater, Florida
+year: '2009'
 ---

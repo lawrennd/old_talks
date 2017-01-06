@@ -1,32 +1,40 @@
 ---
-title: "An Introduction to Gaussian Processes and Bayesian Optimization"
-abstract: In this master class we will give a short introduction to Gaussian process models, and then explore their use in the domain of Bayesian Optimization. Gaussian process models are flexible models which allow us to place probability distributions over functions. In Bayesian Optimization, the Gaussian process is used as a surrogate for the process of interest. Rather than directly optimizing the process, the surrogate is optimized. This leads to an efficient approach for improving efficiency in a wide range of physical systems. The seminar will introduce lab classes which will make use of the python software GPy and GPyOpt (https://github.com/sheffieldml/GPy, https://github.com/sheffieldml/GPyOpt).
-reveal: 
-date: 2017-02-06
-year: 2017
-month: 02
-day: 06
-venue: "Lancaster University Masterclass Series"
-layout: talk
-key: Lawrence-gpbo17
-categories:
-- Lawrence-gpbo17
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+abstract: In this master class we will give a short introduction to Gaussian process
+  models, and then explore their use in the domain of Bayesian Optimization. Gaussian
+  process models are flexible models which allow us to place probability distributions
+  over functions. In Bayesian Optimization, the Gaussian process is used as a surrogate
+  for the process of interest. Rather than directly optimizing the process, the surrogate
+  is optimized. This leads to an efficient approach for improving efficiency in a
+  wide range of physical systems. The seminar will introduce lab classes which will
+  make use of the python software GPy and GPyOpt (https://github.com/sheffieldml/GPy,
+  https://github.com/sheffieldml/GPyOpt).
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: Amazon Research Cambridge and The University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-- firstname: Javier
-  lastname: Gonzalez
-  url: http://javiergonzalezh.github.io/
+  url: http://inverseprobability.com
+- family: Gonzalez
+  given: Javier
+  gscholar: ynIWXnUAAAAJ
   institute: Amazon Research Cambridge
   twitter: lawrennd
-  gscholar: ynIWXnUAAAAJ
+  url: http://javiergonzalezh.github.io/
+categories:
+- Lawrence-gpbo17
+date: 2017-02-06
+day: 6
 errata: []
+key: Lawrence-gpbo17
+layout: talk
+month: 2
+reveal: null
+section: pre
+title: An Introduction to Gaussian Processes and Bayesian Optimization
+venue: Lancaster University Masterclass Series
+year: 2017
 ---
-
 
 Day 1:
 ---

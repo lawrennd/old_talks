@@ -1,5 +1,4 @@
 ---
-title: Deep <span>Gaussian</span> Processes
 abstract: In this talk we describe how deep neural networks can be modified to produce
   deep Gaussian process models. The framework of deep Gaussian processes allow for
   unsupervised learning, transfer learning, semi-supervised learning, multi-task learning
@@ -10,23 +9,25 @@ abstract: In this talk we describe how deep neural networks can be modified to p
   are very similar to the objective functions for deep neural networks, giving the
   promise of efficient approaches to deep learning that are constructed from components
   with very well understood analytical properties.
-venue: Instituto Italiano de Tecnologia, Genova, Italy
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/deepgp_iit15.pdf
-year: '2015'
-month: 1
-day: '23'
-layout: talk
-key: Lawrence-iit15
-categories:
-- Lawrence-iit15
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2015-01-23
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-iit15
+day: '23'
 errata: []
+extras: []
+key: Lawrence-iit15
+layout: talk
+linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/deepgp_iit15.pdf
+month: 1
+published: 2015-01-23
+section: pre
+title: Deep <span>Gaussian</span> Processes
+venue: Instituto Italiano de Tecnologia, Genova, Italy
+year: '2015'
 ---

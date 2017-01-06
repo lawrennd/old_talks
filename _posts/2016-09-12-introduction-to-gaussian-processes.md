@@ -1,25 +1,26 @@
 ---
-title: Introduction to Gaussian Processes
 abstract: In this first session we will introduce Gaussian process models, non parametric
   Bayesian models that allow for principled propagation of uncertainty in regression
   analysis. We will assume a background in parametric models, linear algebra and probability.
-venue: GPSS, Sheffield
-pdf: gp_gpss16_session1.pdf
-year: '2016'
-month: 9
-day: '12'
-layout: talk
-key: Lawrence-gpss16a
-categories:
-- Lawrence-gpss16a
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2016-09-12
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-gpss16a
+day: '12'
 errata: []
+extras: []
+key: Lawrence-gpss16a
+layout: talk
+month: 9
+pdf: gp_gpss16_session1.pdf
+published: 2016-09-12
+section: pre
+title: Introduction to Gaussian Processes
+venue: GPSS, Sheffield
+year: '2016'
 ---

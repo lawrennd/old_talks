@@ -1,10 +1,4 @@
 ---
-title: Latent Force Models and Multiple Output <span>G</span>aussian Processes
-venue: Statistics and Learning Interface Meeting, University of Manchester, U.K.
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lfm_slim09.pdf
-year: '2009'
-month: 7
-day: '23'
 abstract: We are used to dealing with the situation where we have a latent variable.
   Often we assume this latent variable to be independently drawn from a distribution,
   e.g. probabilistic PCA or factor analysis. This simplification is often extended
@@ -15,18 +9,25 @@ abstract: We are used to dealing with the situation where we have a latent varia
   variable can be dealt with analytically for particular Gaussian process priors over
   the latent force. In this talk we will introduce the general framework and present
   results in systems biology and motion capture.
-layout: talk
-key: Lawrence-lfm_slim09
-categories:
-- Lawrence-lfm_slim09
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2009-07-23
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-lfm_slim09
+day: '23'
 errata: []
+extras: []
+key: Lawrence-lfm_slim09
+layout: talk
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lfm_slim09.pdf
+month: 7
+published: 2009-07-23
+section: pre
+title: Latent Force Models and Multiple Output <span>G</span>aussian Processes
+venue: Statistics and Learning Interface Meeting, University of Manchester, U.K.
+year: '2009'
 ---

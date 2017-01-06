@@ -1,25 +1,26 @@
 ---
-title: Nonlinear Probabilistic Dimensionality Reduction
-venue: La Palma, Canary Islands
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/mlss12_session3.pdf
-videolectures: mlss2012_lawrence_dimensionality_reduction
-youtube: lEn1exknKFc
-year: '2012'
-month: 4
-day: '13'
-layout: talk
-key: Lawrence-mlssThree12
-categories:
-- Lawrence-mlssThree12
 abstract: ''
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2012-04-13
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-mlssThree12
+day: '13'
 errata: []
+extras: []
+key: Lawrence-mlssThree12
+layout: talk
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/mlss12_session3.pdf
+month: 4
+published: 2012-04-13
+section: pre
+title: Nonlinear Probabilistic Dimensionality Reduction
+venue: La Palma, Canary Islands
+videolectures: mlss2012_lawrence_dimensionality_reduction
+year: '2012'
+youtube: lEn1exknKFc
 ---

@@ -1,24 +1,25 @@
 ---
-title: Introduction to <span>G</span>aussian Processes
-venue: Gaussian Process Winter School, Sheffield
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gp_gpws14_session3.pdf
-youtube: ewJ3AxKclOg
-year: '2014'
-month: 1
-day: '13'
-layout: talk
-key: Lawrence-gpwsOne14
-categories:
-- Lawrence-gpwsOne14
 abstract: ''
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2014-01-13
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-gpwsOne14
+day: '13'
 errata: []
+extras: []
+key: Lawrence-gpwsOne14
+layout: talk
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gp_gpws14_session3.pdf
+month: 1
+published: 2014-01-13
+section: pre
+title: Introduction to <span>G</span>aussian Processes
+venue: Gaussian Process Winter School, Sheffield
+year: '2014'
+youtube: ewJ3AxKclOg
 ---

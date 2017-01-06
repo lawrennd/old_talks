@@ -1,23 +1,24 @@
 ---
-title: Deep Health
-venue: Manchester and Sheffield Machine Learning Meetings
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/deep_health_manchester13.pdf
-year: '2013'
-month: 6
-day: '17'
-layout: talk
-key: Lawrence-manchester13
-categories:
-- Lawrence-manchester13
 abstract: ''
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2013-06-17
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-manchester13
+day: '17'
 errata: []
+extras: []
+key: Lawrence-manchester13
+layout: talk
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/deep_health_manchester13.pdf
+month: 6
+published: 2013-06-17
+section: pre
+title: Deep Health
+venue: Manchester and Sheffield Machine Learning Meetings
+year: '2013'
 ---

@@ -1,14 +1,7 @@
 ---
-title: Latent Force Models
-venue: 'Functional Phylogenies: Evolutionary Inference for Functional Data, University
-  of Oxford, U.K.'
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lfm_oxford10.pdf
-year: '2010'
-month: 9
-day: '27'
-abstract: Physics based approaches to data modeling involve constructing an accurate
+abstract: "Physics based approaches to data modeling involve constructing an accurate
   mechanistic model of data, often based on differential equations. Machine learning
-  approaches are typically data driven—perhaps through regularized function approximation.
+  approaches are typically data driven\u2014perhaps through regularized function approximation.
   These two approaches to data modeling are often seen as polar opposites, but in
   reality they are two different ends to a spectrum of approaches we might take. In
   this talk we introduce latent force models. Latent force models are a new approach
@@ -18,19 +11,27 @@ abstract: Physics based approaches to data modeling involve constructing an accu
   characteristics of interest, for example, in dynamical systems resonance and inertia.
   This allows us to perform a synthesis of the data driven and physical modeling paradigms.
   We will show applications of these models in systems biology and (given time) modelling
-  of human motion capture data.
-layout: talk
-key: Lawrence-phylogenetics10
-categories:
-- Lawrence-phylogenetics10
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+  of human motion capture data."
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2010-09-27
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-phylogenetics10
+day: '27'
 errata: []
+extras: []
+key: Lawrence-phylogenetics10
+layout: talk
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lfm_oxford10.pdf
+month: 9
+published: 2010-09-27
+section: pre
+title: Latent Force Models
+venue: 'Functional Phylogenies: Evolutionary Inference for Functional Data, University
+  of Oxford, U.K.'
+year: '2010'
 ---

@@ -1,5 +1,4 @@
 ---
-title: A Brief Introduction to <span>G</span>aussian Processes
 abstract: Gaussian processes are non-parametric probabilistic models for function
   representation. In this tutorial we give a brief introduction to Gaussian process
   models. Using simple examples we show how, with particular choices for covariance
@@ -7,23 +6,25 @@ abstract: Gaussian processes are non-parametric probabilistic models for functio
   about functions using only data sampled from those functions. We give overview how
   the probabilistic interpretation allows us to fit the parameters of the covariance
   function.
-venue: UCLA
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gp_ucla12_introduction.pdf
-year: '2012'
-month: 7
-day: '27'
-layout: talk
-key: Lawrence-ucla12a
-categories:
-- Lawrence-ucla12a
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2012-07-27
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-ucla12a
+day: '27'
 errata: []
+extras: []
+key: Lawrence-ucla12a
+layout: talk
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gp_ucla12_introduction.pdf
+month: 7
+published: 2012-07-27
+section: pre
+title: A Brief Introduction to <span>G</span>aussian Processes
+venue: UCLA
+year: '2012'
 ---

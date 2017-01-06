@@ -1,5 +1,4 @@
 ---
-title: 'The Data Delusion: Challenges for Democratising Deep Learning'
 abstract: 'The widespread success of deep learning in a variety of domains is being
   hailed as a new revolution in artificial intelligence. It has taken 20 years to
   go from defeating Kasparov at Chess to Lee Sedol at Go. But what have the real advances
@@ -18,27 +17,29 @@ abstract: 'The widespread success of deep learning in a variety of domains is be
   architectures. He is highly active in the machine learning community, most recently
   Program Chairing the NIPS conference in 2014 and General Chairing (alongside Corinna
   Cortes) in 2015.'
-day: '22'
-month: 9
-year: '2016'
-youtube: BI9PMvuolqc
-blog: 2016-03-04-deep-learning-and-uncertainty.md
-ppt: 2016-09-22-deepLearningSummit.pptx
-reveal: 2016-09-22-the-data-delusion.slides.html
-reveal-md: 2016-09-22-the-data-delusion.md
-venue: Deep Learning Summit, London, UK
-layout: talk
-key: Lawrence-deep-summit16b
-categories:
-- Lawrence-deep-summit16b
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2016-09-22
-extras: []
+  url: http://inverseprobability.com
+blog: 2016-03-04-deep-learning-and-uncertainty.md
+categories:
+- Lawrence-deep-summit16b
+day: '22'
 errata: []
+extras: []
+key: Lawrence-deep-summit16b
+layout: talk
+month: 9
+ppt: 2016-09-22-deepLearningSummit.pptx
+published: 2016-09-22
+reveal: 2016-09-22-the-data-delusion.slides.html
+reveal-md: 2016-09-22-the-data-delusion.md
+section: pre
+title: 'The Data Delusion: Challenges for Democratising Deep Learning'
+venue: Deep Learning Summit, London, UK
+year: '2016'
+youtube: BI9PMvuolqc
 ---

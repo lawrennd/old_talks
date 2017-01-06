@@ -1,10 +1,4 @@
 ---
-title: A Probabilistic Perspective on Spectral Dimensionality Reduction
-venue: AAAI Fall Symposium on Manifold Methods, U.S.A.
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/spectral_aaai10.pdf
-year: '2010'
-month: 11
-day: '11'
 abstract: Spectral approaches to dimensionality reduction typically reduce the dimensionality
   of a data set through taking the eigenvectors of a Laplacian or a similarity matrix.
   Classical multidimensional scaling also makes use of the eigenvectors of a similarity
@@ -17,18 +11,25 @@ abstract: Spectral approaches to dimensionality reduction typically reduce the d
   techniques such as the graphical LASSO. The hope is that this unifying perspective
   will allow the relationships between these methods to be better understood and will
   also provide the groundwork for further research.
-layout: talk
-key: Lawrence-aaai10
-categories:
-- Lawrence-aaai10
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2010-11-11
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-aaai10
+day: '11'
 errata: []
+extras: []
+key: Lawrence-aaai10
+layout: talk
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/spectral_aaai10.pdf
+month: 11
+published: 2010-11-11
+section: pre
+title: A Probabilistic Perspective on Spectral Dimensionality Reduction
+venue: AAAI Fall Symposium on Manifold Methods, U.S.A.
+year: '2010'
 ---

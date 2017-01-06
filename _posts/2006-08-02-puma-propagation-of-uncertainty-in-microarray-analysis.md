@@ -1,22 +1,15 @@
 ---
-title: "PUMA: Propagation of Uncertainty in Microarray Analysis"
-venue: Max Planck Institute, Tübingen, Germany
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/puma_06_08.pdf
-year: '2006'
-month: 8
-day: '2'
-layout: talk
-key: Lawrence-tuebingen06
-categories:
-- Lawrence-tuebingen06
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2006-08-02
+  url: http://inverseprobability.com
+categories:
+- Lawrence-tuebingen06
+day: '2'
+errata: []
 extras:
 - label: PUMA Project Page
   link: http://bioinf.man.ac.uk/resources/puma/
@@ -30,5 +23,13 @@ extras:
   link: http://inverseprobability.com/gpsim/
 - label: PUMA Software
   link: http://www.bioconductor.org/packages/2.0/bioc/html/puma.html
-errata: []
+key: Lawrence-tuebingen06
+layout: talk
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/puma_06_08.pdf
+month: 8
+published: 2006-08-02
+section: pre
+title: 'PUMA: Propagation of Uncertainty in Microarray Analysis'
+venue: "Max Planck Institute, T\xFCbingen, Germany"
+year: '2006'
 ---

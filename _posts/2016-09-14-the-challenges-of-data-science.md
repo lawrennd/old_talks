@@ -1,5 +1,4 @@
 ---
-title: The Challenges of Data Science
 abstract: 'Data science presents new opportunities but also new challenges. In this
   talk we will focus on three separate challenges for data science: 1. Paradoxes of
   the Data Society, 2. Quantifying the Value of Data, 3. Privacy, loss of control,
@@ -11,24 +10,26 @@ abstract: 'Data science presents new opportunities but also new challenges. In t
   these challenges now we can ensure that the pitfalls of the data driven society
   are overcome allowing us to reap the benefits of data science in applications from
   personalized health to the developing world.'
-reveal: 2016-09-14-data-science-challenges.slides.html
-reveal-md: 2016-09-14-data-science-challenges.md
-venue: European Network for Business and Industrial Statistics (ENBIS) 2016, Sheffield
-month: 9
-year: '2016'
-day: '14'
-layout: talk
-key: Lawrence-enbis16
-categories:
-- Lawrence-enbis16
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2016-09-14
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-enbis16
+day: '14'
 errata: []
+extras: []
+key: Lawrence-enbis16
+layout: talk
+month: 9
+published: 2016-09-14
+reveal: 2016-09-14-data-science-challenges.slides.html
+reveal-md: 2016-09-14-data-science-challenges.md
+section: pre
+title: The Challenges of Data Science
+venue: European Network for Business and Industrial Statistics (ENBIS) 2016, Sheffield
+year: '2016'
 ---

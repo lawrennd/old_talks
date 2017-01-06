@@ -1,25 +1,16 @@
 ---
-title: Modelling Transcriptional Regulation with <span>G</span>aussian Processes
-venue: Parameter Estimation Workshop, Manchester Interdisciplinary Biocentre, University
-  of Manchester, U.K.
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/parameterEstimationTalk.pdf
-year: '2007'
-month: 11
-day: '7'
-group: puma,gpsim
-layout: talk
-key: Lawrence-param07
-categories:
-- Lawrence-param07
 abstract: ''
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2007-11-07
+  url: http://inverseprobability.com
+categories:
+- Lawrence-param07
+day: '7'
+errata: []
 extras:
 - label: PUMA Project Page
   link: http://bioinf.man.ac.uk/resources/puma/
@@ -29,5 +20,15 @@ extras:
   link: http://inverseprobability.com/gpsim/
 - label: Demos Software
   link: http://inverseprobability.com/oxford/
-errata: []
+group: puma,gpsim
+key: Lawrence-param07
+layout: talk
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/parameterEstimationTalk.pdf
+month: 11
+published: 2007-11-07
+section: pre
+title: Modelling Transcriptional Regulation with <span>G</span>aussian Processes
+venue: Parameter Estimation Workshop, Manchester Interdisciplinary Biocentre, University
+  of Manchester, U.K.
+year: '2007'
 ---

@@ -1,5 +1,4 @@
 ---
-title: Three Challenges for Open Data Science
 abstract: 'Data science presents new opportunities but also new challenges. In this
   talk we will focus on three separate challenges for data science: 1. Paradoxes of
   the Data Society, 2. Quantifying the Value of Data, 3. Privacy, loss of control,
@@ -12,24 +11,26 @@ abstract: 'Data science presents new opportunities but also new challenges. In t
   that we can avoid the pitfalls of the data driven society, allowing us to reap the
   benefits of data science in applications from personalized health to the developing
   world.'
-reveal: 2016-10-08-data-science-challenges.slides.html
-reveal-md: 2016-10-08-data-science-challenges.md
-venue: Open Data Science Conference
-month: 10
-year: '2016'
-day: '8'
-layout: talk
-key: Lawrence-osdc16
-categories:
-- Lawrence-osdc16
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2016-10-08
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-osdc16
+day: '8'
 errata: []
+extras: []
+key: Lawrence-osdc16
+layout: talk
+month: 10
+published: 2016-10-08
+reveal: 2016-10-08-data-science-challenges.slides.html
+reveal-md: 2016-10-08-data-science-challenges.md
+section: pre
+title: Three Challenges for Open Data Science
+venue: Open Data Science Conference
+year: '2016'
 ---
