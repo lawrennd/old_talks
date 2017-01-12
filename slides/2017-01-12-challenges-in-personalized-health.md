@@ -341,6 +341,8 @@ $$p(\boldsymbol{\theta} | \mathbf{y})$$
 
 * This pushes us back towards *parametric* models. 
 
+* Our solutions: Gaussian processes + inducing variable approximations
+
 <!-- ## Inducing Variables -->
 
 <!-- * Choose to go a different way.  -->
@@ -497,11 +499,11 @@ We require data-desalination before it can be consumed!
 
 * Encourage greater interaction between application domains and data scientists
 
-* Encourage visualization of data
-
-* Adoption of 'data readiness levels'
+* Encourage *visualization* of data
 
 * Implications for incentivization schemes
+
+* Adoption of *data readiness levels*
 
 
 ## Privacy, Loss of Control and Marginalization
