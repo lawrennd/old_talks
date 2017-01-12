@@ -1,13 +1,13 @@
 ---
 title: "Personalized Health: Challenges in Data Science"
 layout: slides
-venue: SMGPD 2017
+venue: SMPGD 2017
 date: 2017-01-12
 author: Neil D. Lawrence
 affiliation: Amazon and University of Sheffield
 ---
 
-### SMGPD 2017
+### SMPGD 2017
 ### 2017-01-12
 ### St Mary's Campus, Imperial College, London
 ### Neil D. Lawrence
