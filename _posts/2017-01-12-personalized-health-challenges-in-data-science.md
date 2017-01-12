@@ -14,10 +14,10 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 categories:
-- Lawrence-smgpd17
+- Lawrence-smpgd17
 day: '12'
 errata: []
-key: Lawrence-smgpd17
+key: Lawrence-smpgd17
 layout: talk
 month: 1
 reveal: 2017-01-12-challenges-in-personalized-health.slides.html
