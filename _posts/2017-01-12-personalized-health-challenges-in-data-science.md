@@ -21,7 +21,6 @@ key: Lawrence-smgpd17
 layout: talk
 month: 1
 reveal: 2017-01-12-challenges-in-personalized-health.slides.html
-section: pre
 title: 'Personalized Health: Challenges in Data Science'
 venue: SMGPD 2017
 year: '2017'

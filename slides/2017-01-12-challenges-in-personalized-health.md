@@ -7,7 +7,7 @@ author: Neil D. Lawrence
 affiliation: Amazon and University of Sheffield
 ---
 
-### NIPS Workshop on Machine Learning for Health
+### SMGPD 2017
 ### 2017-01-12
 ### St Mary's Campus, Imperial College, London
 ### Neil D. Lawrence
