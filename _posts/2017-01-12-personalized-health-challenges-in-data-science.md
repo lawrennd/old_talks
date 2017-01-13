@@ -24,4 +24,6 @@ reveal: 2017-01-12-challenges-in-personalized-health.slides.html
 title: 'Personalized Health: Challenges in Data Science'
 venue: SMPGD 2017
 year: '2017'
+blog: 2016-11-19-lies-damned-lies-big-data.md
+blog1: 2017-01-12-data-readiness-levels.md
 ---
