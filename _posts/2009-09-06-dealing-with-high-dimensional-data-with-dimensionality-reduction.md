@@ -1,25 +1,26 @@
 ---
-title: Dealing with High Dimensional Data with Dimensionality Reduction
-venue: Interspeech Tutorial, Brighton, U.K.
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/interspeech09.pdf
-year: '2009'
-month: 9
-day: '6'
-layout: talk
-key: Lawrence:interspeech09
-categories:
-- Lawrence:interspeech09
 abstract: ''
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-- firstname: Jon
-  lastname: Barker
-published: 2009-09-06
-extras: []
+  url: http://inverseprobability.com
+- family: Barker
+  given: Jon
+categories:
+- Lawrence-interspeech09
+day: '6'
 errata: []
+extras: []
+key: Lawrence-interspeech09
+layout: talk
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/interspeech09.pdf
+month: 9
+published: 2009-09-06
+section: pre
+title: Dealing with High Dimensional Data with Dimensionality Reduction
+venue: Interspeech Tutorial, Brighton, U.K.
+year: '2009'
 ---

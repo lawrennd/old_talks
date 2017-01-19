@@ -1,6 +1,4 @@
 ---
-title: Probabilistic Non-linear Component Analysis through <span>G</span>aussian Process
-  Latent Variable Models
 abstract: It is known that Principal Component Analysis has an underlying probabilistic
   representation based on a latent variable model. Principal component analysis (PCA)
   is recovered when the latent variables are integrated out and the parameters of
@@ -12,24 +10,27 @@ abstract: It is known that Principal Component Analysis has an underlying probab
   Model (GPLVM). This dual probabilistic PCA is still a linear latent variable model,
   but by looking beyond the inner product kernel as a for a covariance function we
   can develop a non-linear probabilistic PCA.
-venue: Sheffield Machine Learning Workshop, Sheffield, U.K.
-linkvideo: mms://velblod2.ijs.si/pascal/2004/sheffield_04/lawrence_neil/lawrence_neil_00.wmv
-year: '2004'
-month: 9
-day: '9'
-linkpptgz: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_smlw.ppt.gz
-layout: talk
-key: Lawrence:smlwgplvm03
-categories:
-- Lawrence:smlwgplvm03
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2004-09-09
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-smlwgplvm03
+day: '9'
 errata: []
+extras: []
+key: Lawrence-smlwgplvm03
+layout: talk
+linkpptgz: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_smlw.ppt.gz
+linkvideo: mms://velblod2.ijs.si/pascal/2004/sheffield_04/lawrence_neil/lawrence_neil_00.wmv
+month: 9
+published: 2004-09-09
+section: pre
+title: Probabilistic Non-linear Component Analysis through <span>G</span>aussian Process
+  Latent Variable Models
+venue: Sheffield Machine Learning Workshop, Sheffield, U.K.
+year: '2004'
 ---

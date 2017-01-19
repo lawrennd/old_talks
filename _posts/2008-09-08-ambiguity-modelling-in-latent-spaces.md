@@ -1,11 +1,4 @@
 ---
-title: Ambiguity Modelling in Latent Spaces
-venue: Machine Learning for Multimodal Interaction, Utrecht, The Netherlands
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/ncca_mlmi08.pdf
-linkvideo: http://mmm.idiap.ch/pres-mlmi2008/results?query=//kleweldata/mlmi2008/2008-09-08_09h14
-year: '2008'
-month: 9
-day: '8'
 abstract: We are interested in the situation where we have two or more representations
   of an underlying phenomenon. In particular we are interested in the scenario where
   the representation are complementary. This implies that a single individual representation
@@ -21,19 +14,27 @@ abstract: We are interested in the situation where we have two or more represent
   on Gaussian processes) for validation and inference. The proposed model has several
   potential application areas, we demonstrate its use for multi-modal regression on
   a benchmark human pose estimation data set.
-group: ''
-layout: talk
-key: Lawrence:mlmi08
-categories:
-- Lawrence:mlmi08
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2008-09-08
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-mlmi08
+day: '8'
 errata: []
+extras: []
+group: ''
+key: Lawrence-mlmi08
+layout: talk
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/ncca_mlmi08.pdf
+linkvideo: http://mmm.idiap.ch/pres-mlmi2008/results?query=//kleweldata/mlmi2008/2008-09-08_09h14
+month: 9
+published: 2008-09-08
+section: pre
+title: Ambiguity Modelling in Latent Spaces
+venue: Machine Learning for Multimodal Interaction, Utrecht, The Netherlands
+year: '2008'
 ---

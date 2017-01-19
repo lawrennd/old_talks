@@ -1,23 +1,24 @@
 ---
-title: Introduction to Gaussian Processes II
-venue: MLSS, Cadiz
-pdf: gp_mlss16.pdf
-youtube: xeP5Sh5VMoM
-year: '2016'
-month: 5
-day: '13'
-layout: talk
-key: Lawrence:mlss16II
-categories:
-- Lawrence:mlss16II
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2016-05-13
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-mlss16II
+day: '13'
 errata: []
+extras: []
+key: Lawrence-mlss16II
+layout: talk
+month: 5
+pdf: gp_mlss16.pdf
+published: 2016-05-13
+section: pre
+title: Introduction to Gaussian Processes II
+venue: MLSS, Cadiz
+year: '2016'
+youtube: xeP5Sh5VMoM
 ---

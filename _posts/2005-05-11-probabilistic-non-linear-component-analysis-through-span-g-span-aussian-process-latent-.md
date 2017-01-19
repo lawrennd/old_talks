@@ -1,6 +1,4 @@
 ---
-title: Probabilistic Non-linear Component Analysis through <span>G</span>aussian Process
-  Latent Variable Models
 abstract: It is known that Principal Component Analysis has an underlying probabilistic
   representation based on a latent variable model. Principal component analysis (PCA)
   is recovered when the latent variables are integrated out and the parameters of
@@ -14,27 +12,30 @@ abstract: It is known that Principal Component Analysis has an underlying probab
   a non-linear probabilistic PCA. In the talk we will introduce the GPLVM and illustrate
   its application on a range of high dimensional data sets including motion capture
   data, hand written digits, a medical diagnosis data set and images.
-venue: Department of Electronics and Computer Science, University of Southampton,
-  U.K.
-linkpptgz: ftp://ftp.dcs.shef.ac.uk/home/neil/long_gplvm.ppt.gz
-year: '2005'
-month: 5
-day: '11'
-group: gplvm
-layout: talk
-key: Lawrence:soton05
-categories:
-- Lawrence:soton05
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2005-05-11
+  url: http://inverseprobability.com
+categories:
+- Lawrence-soton05
+day: '11'
+errata: []
 extras:
 - label: Seminar Page
   link: http://www.isis.ecs.soton.ac.uk/seminars/?date=20050511
-errata: []
+group: gplvm
+key: Lawrence-soton05
+layout: talk
+linkpptgz: ftp://ftp.dcs.shef.ac.uk/home/neil/long_gplvm.ppt.gz
+month: 5
+published: 2005-05-11
+section: pre
+title: Probabilistic Non-linear Component Analysis through <span>G</span>aussian Process
+  Latent Variable Models
+venue: Department of Electronics and Computer Science, University of Southampton,
+  U.K.
+year: '2005'
 ---

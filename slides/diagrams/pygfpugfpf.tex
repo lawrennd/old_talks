@@ -1,0 +1,19 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\def\layersep{1.2cm}
+\input{notationDef.tex}
+\input{definitions.tex}
+\input{graphicalModels.tex}
+\begin{document}
+
+\begin{tikzpicture}[scale=6]
+\draw node[obs] (y) {$\mathbf{y}$};
+\draw node[latent, above left=of y] (f) {$\mathbf{f}$};
+\draw node[latent, below left=of f] (u) {$\mathbf{u}$};
+        
+% Connect the nodes
+\draw [->] (f) to (y);%
+\draw [->] (f) to (u);%
+
+\end{tikzpicture}
+\end{document}

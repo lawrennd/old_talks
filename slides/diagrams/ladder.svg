@@ -1,0 +1,31 @@
+<svg viewbox = "0 0 400 648" height="648" width="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style type="text/css">
+      @import url(../reveal.js/lib/font/source-sans-pro/source-sans-pro.css);
+      section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
+      color: #222; }
+    </style>
+    <solidColor id="foreground" solid-color="rgb(255, 255, 255)" solid-opacity="1.0"/>
+    <style>
+      .myrect { fill-opacity:0;stroke-width:3;stroke:white;}
+      .myarrow { stroke:white;stroke-width:2;marker-end:url(#markerArrow);}
+      .mytext { fill:white;font-size:2.5em;font-family: "Source Sans Pro", Helvetica, sans-serif;}
+    </style>
+    <marker id="markerCircle" markerWidth="8" markerHeight="8" refX="5" refY="5">
+      <circle cx="5" cy="5" r="3" style="stroke: none; fill:white"/>
+    </marker>
+    <marker id="markerArrow" markerWidth="13" markerHeight="13" refX="2" refY="6" orient="auto">
+      <path d="M2,2 L2,11 L10,6 L2,2" style="fill:white" />
+    </marker>
+    <!--<rect id="myrecty" width="100" height="31" class="myrect"/>-->
+  </defs>
+
+  <rect x="0" y="0" width="400" height="124" class="myrect"/>
+  <text x="200" y="64" fill="black" text-anchor="middle" class="mytext">Abstract</text>
+  <line x1="200" y1="124" x2="200" y2="234" class="myarrow" />
+  <rect x="0" y="260" width="400" height="124" class="myrect"/>
+  <text x="200" y="324" fill="black" text-anchor="middle" class="mytext">More Details</text>
+  <line x1="200" y1="384" x2="200" y2="498" class="myarrow"/>
+  <rect x="0" y="524" width="400" height="124" class="myrect"/>
+  <text x="200" y="588" fill="black" text-anchor="middle" class="mytext">Reality</text>
+</svg>

@@ -1,23 +1,24 @@
 ---
-title: Variational Inference in Deep GPs
-year: '2016'
-month: 4
-day: '21'
-venue: Microsoft Research, New England, USA
-pdf: msr16_deepgp.pdf
-layout: talk
-key: Lawrence:msrne16a
-categories:
-- Lawrence:msrne16a
 abstract: ''
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2016-04-21
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-msrne16a
+day: '21'
 errata: []
+extras: []
+key: Lawrence-msrne16a
+layout: talk
+month: 4
+pdf: msr16_deepgp.pdf
+published: 2016-04-21
+section: pre
+title: Variational Inference in Deep GPs
+venue: Microsoft Research, New England, USA
+year: '2016'
 ---

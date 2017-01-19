@@ -1,26 +1,27 @@
 ---
-title: "<span>G</span>aussian Processes in Computational Biology Tutorial: Multioutput
-  <span>G</span>aussian Processes and Mechanistic Models"
-venue: BioPreDyn Workshop, CRG, Barcelona, Spain
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gp_biopredyn12_session1.pdf
-year: '2012'
-month: 6
-day: '12'
-layout: talk
-key: Lawrence:biopredyn12_1
-categories:
-- Lawrence:biopredyn12_1
 abstract: ''
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2012-06-12
+  url: http://inverseprobability.com
+categories:
+- Lawrence-biopredyn12_1
+day: '12'
+errata: []
 extras:
 - label: Software
   link: https://github.com/SheffieldML/multigp/
-errata: []
+key: Lawrence-biopredyn12_1
+layout: talk
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gp_biopredyn12_session1.pdf
+month: 6
+published: 2012-06-12
+section: pre
+title: '<span>G</span>aussian Processes in Computational Biology Tutorial: Multioutput
+  <span>G</span>aussian Processes and Mechanistic Models'
+venue: BioPreDyn Workshop, CRG, Barcelona, Spain
+year: '2012'
 ---

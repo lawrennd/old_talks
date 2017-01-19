@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title></title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="talks.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="computational-perspectives-fairness-and-awareness-in-data-analysis" class="slide level2">
+<h1>Computational Perspectives: Fairness and Awareness in Data Analysis</h1>
+<h3 id="royal-statistical-society">Royal Statistical Society</h3>
+<h3 id="section">2016-10-27</h3>
+<h3 id="london-uk">London, UK</h3>
+<h3 id="neil-d.-lawrence">Neil D. Lawrence</h3>
+<h3 id="amazon-and-university-of-sheffield">Amazon and University of Sheffield</h3>
+<p><code>@lawrennd</code> <a href="http://inverseprobability.com">inverseprobability.com</a> <!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2016-10-27-computational-perspectives-fairness-and-awareness-in-the-analysis-of-data.slides.html 2016-10-27-computational-perspectives-fairness-and-awareness-in-the-analysis-of-data.md
+--></p>
+</section>
+<section id="section-1" class="slide level2 slide:" data-transition="none">
+<h1></h1>
+<blockquote>
+<p>There are three types of lies: lies, damned lies and statistics</p>
+<p>??</p>
+</blockquote>
+</section>
+<section id="section-2" class="slide level2 slide:" data-transition="none">
+<h1></h1>
+<blockquote>
+<p>There are three types of lies: lies, damned lies and statistics</p>
+<p>Benjamin Disraeli</p>
+</blockquote>
+</section>
+<section id="section-3" class="slide level2 slide:" data-transition="none">
+<h1></h1>
+<blockquote>
+<p>There are three types of lies: lies, damned lies and statistics</p>
+<p>Benjamin Disraeli 1804-1881</p>
+</blockquote>
+</section>
+<section id="mathematical-statistics" class="slide level2">
+<h1><em>Mathematical</em> Statistics</h1>
+<ul>
+<li>‘Founded’ by Karl Pearson (1857-1936)</li>
+</ul>
+<p><img src="./diagrams/Portrait_of_Karl_Pearson.jpg" align="center" width="30%" style="background:none; border:none; box-shadow:none;"></p>
+</section>
+<section id="section-4" class="slide level2 slide:" data-transition="none">
+<h1></h1>
+<blockquote>
+<p>There are three types of lies: lies, damned lies and ‘big data’</p>
+<p>Neil Lawrence 1972-?</p>
+</blockquote>
+</section>
+<section id="mathematical-data-science" class="slide level2">
+<h1>‘Mathematical Data Science’</h1>
+<ul>
+<li>‘Founded’ by ? (?-?)</li>
+</ul>
+<p><img src="./diagrams/Question_mark.png" align="center" width="30%" style="background:none; border:none; box-shadow:none;"></p>
+</section>
+<section id="background-big-data" class="slide level2">
+<h1>Background: Big Data</h1>
+<ul>
+<li><p>Data is Pervasive phenomenon that affects all aspects of our activities</p></li>
+<li><p>Data diffusiveness is both a challenge and an opportunity</p></li>
+</ul>
+</section>
+<section id="evolved-relationship" class="slide level2 slide:" data-transition="none">
+<h1>Evolved Relationship</h1>
+<object type="image/svg+xml" data="./diagrams/data-science-information-flow_neg001.svg">
+</object>
+</section>
+<section id="evolved-relationship-1" class="slide level2 slide:" data-transition="none">
+<h1>Evolved Relationship</h1>
+<object type="image/svg+xml" data="./diagrams/data-science-information-flow_neg002.svg">
+</object>
+</section>
+<section id="evolved-relationship-2" class="slide level2 slide:" data-transition="none">
+<h1>Evolved Relationship</h1>
+<object type="image/svg+xml" data="./diagrams/data-science-information-flow_neg003.svg">
+</object>
+</section>
+<section id="embodiment-factors" class="slide level2">
+<h1>“Embodiment Factors”</h1>
+<table>
+<tr>
+<td>
+</td>
+<td align="center">
+<img src="./diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="60%" style="background:none; border:none; box-shadow:none;" align="center">
+</td>
+<td align="center">
+<img src="./diagrams/ClaudeShannon_MFO3807.jpg" width="100%" style="background:none; border:none; box-shadow:none;" align="center">
+</td>
+</tr>
+<tr>
+<td>
+compute
+</td>
+<td align="center">
+~10 gigaflops
+</td>
+<td align="center">
+~ 1000 teraflops?
+</td>
+</tr>
+<tr>
+<td>
+communicate
+</td>
+<td align="center">
+~1 gigbit/s
+</td>
+<td align="center">
+~ 100 bit/s
+</tr>
+<td>
+embodiment<br>(compute/communicate)
+</td>
+<td align="center">
+10
+</td>
+<td align="center">
+~ 10<sup>13</sup>
+</tr>
+</table>
+</section>
+<section id="evolved-relationship-3" class="slide level2">
+<h1>Evolved Relationship</h1>
+<object type="image/svg+xml" data="./diagrams/data-science-information-flow_neg003.svg">
+</object>
+</section>
+<section id="effects" class="slide level2">
+<h1>Effects</h1>
+<ul>
+<li><p>This phenomenon has already revolutionised biology.</p></li>
+<li><p>Large scale data acquisition and distribution.</p></li>
+<li><p>Transcriptomics, genomics, epigenomics, ‘rich phenomics’.</p></li>
+</ul>
+</section>
+<section id="societal-effects" class="slide level2">
+<h1>Societal Effects</h1>
+<ul>
+<li><p>Automated decision making within the computer based only on the data.</p></li>
+<li><p>A requirement to better understand our own subjective biases to ensure that the human to computer interface formulates the correct conclusions from the data.</p></li>
+</ul>
+</section>
+<section id="societal-effects-1" class="slide level2">
+<h1>Societal Effects</h1>
+<ul>
+<li><p>Shift in dynamic from the direct pathway between human and data to indirect pathway between human and data via the computer</p></li>
+<li><p>This change of dynamics gives us the modern and emerging domain of data science</p></li>
+</ul>
+</section>
+<section id="challenges" class="slide level2">
+<h1>Challenges</h1>
+<ol type="1">
+<li><p>Paradoxes of the Data Society</p></li>
+<li><p>Quantifying the Value of Data</p></li>
+<li><p>Privacy, loss of control, marginalization</p></li>
+</ol>
+</section>
+<section id="breadth-vs-depth-paradox" class="slide level2">
+<h1>Breadth vs Depth Paradox</h1>
+<ul>
+<li><p>Able to quantify to a greater and greater degree the actions of individuals</p></li>
+<li><p>But less able to characterize society</p></li>
+<li><p>As we measure more, we understand less</p></li>
+</ul>
+</section>
+<section id="what" class="slide level2">
+<h1>What?</h1>
+<ul>
+<li><p>Perhaps greater preponderance of data is making society itself more complex</p></li>
+<li><p>Therefore traditional approaches to measurement are failing</p></li>
+<li><p>Curate’s egg of a society: it is only ‘measured in parts’</p></li>
+</ul>
+</section>
+<section id="wood-or-tree" class="slide level2">
+<h1>Wood or Tree</h1>
+<ul>
+<li>Can either see a wood or a tree.</li>
+</ul>
+<p><img src="./diagrams/Grib_skov.jpg" width="50%" style="border:none"> <!-- https://upload.wikimedia.org/wikipedia/commons/5/5b/Grib_skov.jpg--></p>
+</section>
+<section id="examples" class="slide level2">
+<h1>Examples</h1>
+<ul>
+<li><p>Election polls (UK 2015 elections, EU referendum, US 2016 elections)</p></li>
+<li><p>Clinical trial and personalized medicine</p></li>
+<li><p>Social media memes</p></li>
+<li><p>Filter bubbles and echo chambers</p></li>
+</ul>
+</section>
+<section id="the-maths" class="slide level2 slide:" data-transition="none">
+<h1>The Maths</h1>
+<p><span class="math display">\[ \mathbf{Y} = \begin{bmatrix}
+y_{1, 1} &amp; y_{1, 2} &amp;\dots &amp; y_{1,p}\\
+y_{2, 1} &amp; y_{2, 2} &amp;\dots &amp; y_{2,p}\\
+\vdots &amp; \vdots &amp;\dots &amp; \vdots\\
+y_{n, 1} &amp; y_{n, 2} &amp;\dots &amp; y_{n,p}
+\end{bmatrix} \in \Re^{n\times p}
+\]</span></p>
+</section>
+<section id="the-maths-1" class="slide level2 slide:" data-transition="none">
+<h1>The Maths</h1>
+<p><span class="math display">\[ \mathbf{Y} = \begin{bmatrix}
+\mathbf{y}^\top_{1, :} \\
+\mathbf{y}^\top_{2, :} \\
+\vdots \\
+\mathbf{y}^\top_{n, :}
+\end{bmatrix} \in \Re^{n\times p}
+\]</span></p>
+</section>
+<section id="the-maths-2" class="slide level2 slide:" data-transition="none">
+<h1>The Maths</h1>
+<p><span class="math display">\[ \mathbf{Y} = \begin{bmatrix}
+\mathbf{y}_{:, 1} &amp;
+\mathbf{y}_{:, 2} &amp;
+\dots &amp;
+\mathbf{y}_{:, p}
+\end{bmatrix} \in \Re^{n\times p}
+\]</span></p>
+<!-- This is the nature of modern streaming data, what has been called big data, although in the UK it looks like that term will gain a more diffuse meaning now that the government has associated a putative 189 billion pounds of funding to it. But the characteristic of massive missing data is particularly obvious when we look at clinical domains. EMIS, a Yorkshire based provider of software to General Practitioners, has 39 million patient records. When we consider clinical measurements, we need to build models that not only take into account all current clinical tests, but all tests that will be invented in the future. This leads to the idea of massive missing data. The classical statistical table of data is merely the special case where someone has filled in a block of information.  -->
+<!-- To deal with massively missing data we need to think about the *Kolmogorov consistency* of a process. Let me introduce Kolmogorov consistency by way of an example heard from Tony O'Hagan, but one that he credits originally to Michael Goldstein. Imagine you are on jury duty. You are asked to adjudicate on the guilt or innocence of Lord Safebury, and you are going to base your judgement on a model that is weighing all the evidence. You are just about to pronounce your decision when a maid comes running in and shouts "He didn't do it! He didn't do it!". The maid wasn't on the witness list and isn't accounted for in your model. How does this effect your inference? The pragmatists answer might be: not at all, because the maid wasn't in the model. But in the interests of justice we might want to include this information in our inference process. If, as a result of the maid's entry, we now think it is less likely that Lord Safebury committed the crime, then necessarily every time that the (unannounced) maid doesn't enter the room we have to assume that it is more likely that Safebury commited the crime (to ensure that the conditional probability of guilt given the maid's evidence normalizes. But we didn't know about the maid, so how can we account for this? Further, how can we account for all possible other surprise evidence, from the announced butlers, gardners, chauffeurs and footmen? Kolmogorov consistency (@Kolmogorov:grundbegriffe33) says that the net effect of marginalizing for all these potential bits of new information is null. It is a particular property of the model. Making it (only slightly) more formal, we can consider Kolmogorov consistency as a marginalization property of the model. We take the $n$ dimensional vector, $\mathbf{y}$, to be an (indexed) vector of all our instantiated observations of the world that we have *at the current time*. Then we take the $n^*$ dimensional vector, $\mathbf{y}^*$ to be the observations of the world that we are *yet to see*. -->
+</section>
+<section id="the-maths-3" class="slide level2 slide:" data-transition="none">
+<h1>The Maths</h1>
+<p><span class="math display">\[p(\mathbf{Y}|\boldsymbol{\theta}) = \prod_{i=1}^n p(\mathbf{y}_{i, :}|\boldsymbol{\theta})\]</span></p>
+</section>
+<section id="the-maths-4" class="slide level2 slide:" data-transition="none">
+<h1>The Maths</h1>
+<p><span class="math display">\[p(\mathbf{Y}|\boldsymbol{\theta}) = \prod_{i=1}^n p(\mathbf{y}_{i, :}|\boldsymbol{\theta})\]</span></p>
+<p><span class="math display">\[\log p(\mathbf{Y}|\boldsymbol{\theta}) = \sum_{i=1}^n \log p(\mathbf{y}_{i, :}|\boldsymbol{\theta})\]</span></p>
+</section>
+<section id="consistency" class="slide level2">
+<h1>Consistency</h1>
+<ul>
+<li><p>Typically <span class="math inline">\(\boldsymbol{\theta} \in \Re^{\mathcal{O}(p)}\)</span></p></li>
+<li><p>Consistency reliant on large sample approximation of KL divergence</p></li>
+</ul>
+<p><span class="math display">\[ \text{KL}(P(\mathbf{Y})|| p(\mathbf{Y}|\boldsymbol{\theta}))\]</span></p>
+<ul>
+<li><p>Minimization is equivalent to maximization of likelihood.</p></li>
+<li><p>A foundation stone of classical statistics.</p></li>
+</ul>
+</section>
+<section id="large-p" class="slide level2">
+<h1>Large <span class="math inline">\(p\)</span></h1>
+<ul>
+<li><p>For large <span class="math inline">\(p\)</span> the parameters are badly determined.</p></li>
+<li><p>Large <span class="math inline">\(p\)</span> small <span class="math inline">\(n\)</span> problem.</p></li>
+<li><p>Easily dealt with through definition.</p></li>
+</ul>
+</section>
+<section id="the-maths-5" class="slide level2 slide:" data-transition="none">
+<h1>The Maths</h1>
+<p><span class="math display">\[p(\mathbf{Y}|\boldsymbol{\theta}) = \prod_{j=1}^p p(\mathbf{y}_{:, j}|\boldsymbol{\theta})\]</span></p>
+<p><span class="math display">\[\log p(\mathbf{Y}|\boldsymbol{\theta}) = \sum_{j=1}^p \log p(\mathbf{y}_{:, j}|\boldsymbol{\theta})\]</span></p>
+</section>
+<section id="breadth-vs-depth" class="slide level2">
+<h1>Breadth vs Depth</h1>
+<ul>
+<li><p>Modern Measurement deals with <em>depth</em> (many subjects) … or <em>breadth</em> lots of detail about subject.</p></li>
+<li>But what about
+<ul>
+<li><span class="math inline">\(p\approx n\)</span>?</li>
+<li>Stratification of populations: batch effects etc.</li>
+</ul></li>
+</ul>
+</section>
+<section id="does-p-even-exist" class="slide level2">
+<h1>Does <span class="math inline">\(p\)</span> Even Exist?</h1>
+<ul>
+<li><p>Massively missing data.</p></li>
+<li><p>Classical bias towards tables.</p></li>
+<li><p>Streaming data.</p></li>
+</ul>
+<p><span class="math display">\[ \mathbf{Y} = \begin{bmatrix}
+y_{1, 1} &amp; y_{1, 2} &amp;\dots &amp; y_{1,p}\\
+y_{2, 1} &amp; y_{2, 2} &amp;\dots &amp; y_{2,p}\\
+\vdots &amp; \vdots &amp;\dots &amp; \vdots\\
+y_{n, 1} &amp; y_{n, 2} &amp;\dots &amp; y_{n,p}
+\end{bmatrix} \in \Re^{n\times p}
+\]</span></p>
+</section>
+<section id="general-index-on-y" class="slide level2">
+<h1>General index on <span class="math inline">\(y\)</span></h1>
+<p><span class="math display">\[y_\mathbf{x}\]</span></p>
+<p>where <span class="math inline">\(\mathbf{x}\)</span> might include time, spatial location …</p>
+<p>Streaming data. Joint model of past, <span class="math inline">\(\mathbf{y}\)</span> and future <span class="math inline">\(\mathbf{y}_*\)</span></p>
+<p><span class="math display">\[p(\mathbf{y}, \mathbf{y}_*)\]</span></p>
+<p>Prediction through:</p>
+<p><span class="math display">\[p(\mathbf{y}_*|\mathbf{y})\]</span></p>
+</section>
+<section id="kolmogorov-consistency" class="slide level2">
+<h1>Kolmogorov Consistency</h1>
+<ul>
+<li>From the sum rule of probability we have
+<span class="math display">\[\begin{align*}
+p(\mathbf{y}|n^*) = \int p(\mathbf{y}, \mathbf{y}^*) \text{d}\mathbf{y}^*
+\end{align*}\]</span>
+<p><span class="math inline">\(n^*\)</span> is length of <span class="math inline">\(\mathbf{y}^*\)</span>.</p></li>
+<li><p>Consistent if <span class="math inline">\(p(\mathbf{y}|n^*) = p(\mathbf{y})\)</span></p></li>
+<li>Prediction then given by product rule
+<span class="math display">\[\begin{align*}
+p(\mathbf{y}^*|\mathbf{y}) = \frac{p(\mathbf{y}, \mathbf{y}^*)}{p(\mathbf{y})}
+\end{align*}\]</span></li>
+</ul>
+</section>
+<section id="pmathbfymathbfy" class="slide level2">
+<h1><span class="math inline">\(p(\mathbf{y}^*|\mathbf{y})\)</span></h1>
+<!-- where the dependence of the marginal distribution for $\mathbf{y}$ aries from the fact that we are forming an $n^*$ dimensional integral over $\mathbf{y}^*$. If our distribution is Kolmogorov consistent, then we know that the distribution over $\mathbf{y}$ is *independent* of the value of $n^*$. So in other words $p(\mathbf{y}|n*)=p(\mathbf{y})$. So Kolmogorov consistency says that the form of $p(\mathbf{y})$ remains the same *regardless* of the number of observations of the world that are yet to come.  -->
+</section>
+<section id="parametric-models" class="slide level2">
+<h1>Parametric Models</h1>
+<ul>
+<li>Kolmogorov consistency trivial in parametric model.
+<span class="math display">\[\begin{align*}
+p(\mathbf{y}, \mathbf{y}^*) = \int \prod_{i=1}^n p(y_{i} | \boldsymbol{\theta})\prod_{i=1}^{n^*}p(y^*_i|\boldsymbol{\theta}) p(\boldsymbol{\theta}) \text{d}\boldsymbol{\theta}
+\end{align*}\]</span></li>
+<li>Marginalizing
+<span class="math display">\[\begin{align*}
+p(\mathbf{y}) = \int \prod_{i=1}^n p(y_{i} | \boldsymbol{\theta})\prod_{i=1}^{n^*} \int p(y^*_i|\boldsymbol{\theta}) \text{d}y^*_i p(\boldsymbol{\theta}) \text{d}\boldsymbol{\theta}
+\end{align*}\]</span></li>
+</ul>
+</section>
+<section id="parametric-bottleneck" class="slide level2">
+<h1>Parametric Bottleneck</h1>
+<ul>
+<li>Bayesian methods suggest a prior over <span class="math inline">\(\boldsymbol{\theta}\)</span> and use posterior, <span class="math inline">\(p(\boldsymbol{\theta}|\mathbf{y})\)</span> for making predictions.
+<span class="math display">\[\begin{align*}
+p(\mathbf{y}^*|\mathbf{y}) = \int \prod_i p(y_i^* | \boldsymbol{\theta}) p(\boldsymbol{\theta}|\mathbf{y})\text{d}\boldsymbol{\theta} 
+\end{align*}\]</span></li>
+<li><p>Design time problem: <em>parametric bottleneck</em>. <span class="math display">\[p(\boldsymbol{\theta} | \mathbf{y})\]</span></p></li>
+<li><p>Streaming data could turn out to be more complex than we imagine.</p></li>
+</ul>
+</section>
+<section id="finite-storage" class="slide level2">
+<h1>Finite Storage</h1>
+<ul>
+<li><p>Despite our large interconnected brains, we only have finite storage.</p></li>
+<li><p>Similar for digital computers. So we need to assume that we can only store a finite number of things about the data <span class="math inline">\(\mathbf{y}\)</span>.</p></li>
+<li><p>This pushes us back towards <em>parametric</em> models.</p></li>
+</ul>
+</section>
+<section id="inducing-variables" class="slide level2">
+<h1>Inducing Variables</h1>
+<ul>
+<li><p>Choose to go a different way.</p></li>
+<li><p>Introduce a set of auxiliary variables, <span class="math inline">\(\mathbf{u}\)</span>, which are <span class="math inline">\(m\)</span> in length.</p></li>
+<li><p>They are like “artificial data”.</p></li>
+<li><p>Used to <em>induce</em> a distribution: <span class="math inline">\(q(\mathbf{u}|\mathbf{y})\)</span></p></li>
+</ul>
+</section>
+<section id="making-parameters-non-parametric" class="slide level2">
+<h1>Making Parameters non-Parametric</h1>
+<ul>
+<li><p>Introduce variable set which is <em>finite</em> dimensional. <span class="math display">\[
+p(\mathbf{y}^*|\mathbf{y}) \approx \int p(\mathbf{y}^*|\mathbf{u}) q(\mathbf{u}|\mathbf{y}) \text{d}\mathbf{u}
+\]</span></p></li>
+<li><p>But dimensionality of <span class="math inline">\(\mathbf{u}\)</span> can be changed to improve approximation.</p></li>
+</ul>
+</section>
+<section id="variational-compression" class="slide level2 slide:" data-transition="none">
+<h1>Variational Compression</h1>
+<ul>
+<li>Model for our data, <span class="math inline">\(\mathbf{y}\)</span></li>
+</ul>
+<p><span class="math display">\[p(\mathbf{y})\]</span> <br><object type="image/svg+xml" data="./diagrams/py.svg"> </object></p>
+</section>
+<section id="variational-compression-1" class="slide level2 slide:" data-transition="none">
+<h1>Variational Compression</h1>
+<ul>
+<li>Prior density over <span class="math inline">\(\mathbf{f}\)</span>. Likelihood relates data, <span class="math inline">\(\mathbf{y}\)</span>, to <span class="math inline">\(\mathbf{f}\)</span>.</li>
+</ul>
+<p><span class="math display">\[p(\mathbf{y})=\int p(\mathbf{y}|\mathbf{f})p(\mathbf{f})\text{d}\mathbf{f}\]</span><br> <object type="image/svg+xml" data="./diagrams/pygfpf.svg"> </object></p>
+</section>
+<section id="variational-compression-2" class="slide level2 slide:" data-transition="none">
+<h1>Variational Compression</h1>
+<ul>
+<li>Prior density over <span class="math inline">\(\mathbf{f}\)</span>. Likelihood relates data, <span class="math inline">\(\mathbf{y}\)</span>, to <span class="math inline">\(\mathbf{f}\)</span>.</li>
+</ul>
+<span class="math display">\[p(\mathbf{y})=\int p(\mathbf{y}|\mathbf{f})p(\mathbf{u}|\mathbf{f})p(\mathbf{f})\text{d}\mathbf{f}\text{d}\mathbf{u}\]</span><br> <object type="image/svg+xml" data="./diagrams/pygfpugfpf.svg"> </object>
+</td>
+</tr>
+</table>
+</section>
+<section id="variational-compression-3" class="slide level2 slide:" data-transition="none">
+<h1>Variational Compression</h1>
+<p><span class="math display">\[p(\mathbf{y})=\int \int p(\mathbf{y}|\mathbf{f})p(\mathbf{f}|\mathbf{u})\text{d}\mathbf{f}p(\mathbf{u})\text{d}\mathbf{u}\]</span> <br><object type="image/svg+xml" data="./diagrams/pygfpfgupu.svg"> </object></p>
+</section>
+<section id="variational-compression-4" class="slide level2 slide:" data-transition="none">
+<h1>Variational Compression</h1>
+<p><span class="math display">\[p(\mathbf{y})=\int \int p(\mathbf{y}|\mathbf{f})p(\mathbf{f}|\mathbf{u})\text{d}\mathbf{f}p(\mathbf{u})\text{d}\mathbf{u}\]</span><br> <object type="image/svg+xml" data="./diagrams/pygfpfgupu2.svg"> </object></p>
+</section>
+<section id="variational-compression-5" class="slide level2 slide:" data-transition="none">
+<h1>Variational Compression</h1>
+<p><span class="math display">\[p(\mathbf{y}|\mathbf{u})=\int p(\mathbf{y}|\mathbf{f})p(\mathbf{f}|\mathbf{u})\text{d}\mathbf{f}\]</span><br> <object type="image/svg+xml" data="./diagrams/pygfpfgu.svg"> </object></p>
+</section>
+<section id="variational-compression-6" class="slide level2 slide:" data-transition="none">
+<h1>Variational Compression</h1>
+<p><span class="math display">\[p(\mathbf{y}|\mathbf{u})\]</span><br> <object type="image/svg+xml" data="./diagrams/pygu.svg"> </object></p>
+</section>
+<section id="variational-compression-7" class="slide level2 slide:" data-transition="none">
+<h1>Variational Compression</h1>
+<p><span class="math display">\[p(\mathbf{y}|\boldsymbol{\theta})\]</span><br> <object type="image/svg+xml" data="./diagrams/pygtheta.svg"> </object></p>
+</section>
+<section id="compression" class="slide level2">
+<h1>Compression</h1>
+<ul>
+<li><p>Replace true <span class="math inline">\(p(\mathbf{u}|\mathbf{y})\)</span> with approximation <span class="math inline">\(q(\mathbf{u}|\mathbf{y})\)</span>.</p></li>
+<li><p>Minimize KL divergence between approximation and truth.</p></li>
+</ul>
+</section>
+<section id="also-need" class="slide level2">
+<h1>Also need</h1>
+<ul>
+<li>More classical statistics!
+<ul>
+<li>Like the ‘paperless office’</li>
+</ul></li>
+<li><p>A better characterization of human (see later)</p></li>
+<li>Larger studies (100,000 genome)
+<ul>
+<li>Combined with complex models: algorithmic challenges</li>
+</ul></li>
+</ul>
+</section>
+<section id="quantifying-the-value-of-data" class="slide level2">
+<h1>Quantifying the Value of Data</h1>
+<p>There’s a sea of data, but most of it is undrinkable</p>
+<p><img src="./diagrams/sea-water-ocean-waves.jpg" width="50%"></p>
+<p>We require data-desalination before it can be consumed!</p>
+</section>
+<section id="value" class="slide level2">
+<h1>Value</h1>
+<ul>
+<li>How do we measure value in the data economy?</li>
+<li>How do we encourage data workers: curation and management</li>
+<li>Incentivization</li>
+<li>Quantifying the value in their contribution</li>
+</ul>
+</section>
+<section id="section-5" class="slide level2 slide:" data-transition="none">
+<h1></h1>
+<object type="image/svg+xml" data="./diagrams/pomdp001.svg">
+</object>
+</section>
+<section id="section-6" class="slide level2 slide:" data-transition="none">
+<h1></h1>
+<object type="image/svg+xml" data="./diagrams/pomdp002.svg">
+</object>
+</section>
+<section id="section-7" class="slide level2 slide:" data-transition="none">
+<h1></h1>
+<object type="image/svg+xml" data="./diagrams/pomdp003.svg">
+</object>
+</section>
+<section id="section-8" class="slide level2 slide:" data-transition="none">
+<h1></h1>
+<object type="image/svg+xml" data="./diagrams/pomdp004.svg">
+</object>
+</section>
+<section id="credit-allocation" class="slide level2">
+<h1>Credit Allocation</h1>
+<ul>
+<li><p>Direct work on data generates an enormous amount of ‘value’ in the data economy but this is unaccounted in the economy</p></li>
+<li><p>Hard because data is difficult to ‘embody’</p></li>
+<li><p>Value of shared data: <a href="https://wellcome.ac.uk/what-we-do/our-work/sharing-research-data-improve-public-health-full-joint-statement-funders-health">Wellcome Trust 2010 Joint Statement</a> (from the “Foggy Bottom” meeting)</p></li>
+</ul>
+</section>
+<section id="solutions" class="slide level2">
+<h1>Solutions</h1>
+<ul>
+<li><p>Encourage greater interaction between application domains and data scientists</p></li>
+<li><p>Encourage visualization of data</p></li>
+<li><p>Adoption of ‘data readiness levels’</p></li>
+<li><p>Implications for incentivization schemes</p></li>
+</ul>
+</section>
+<section id="privacy-loss-of-control-and-marginalization" class="slide level2">
+<h1>Privacy, Loss of Control and Marginalization</h1>
+<ul>
+<li><p>Society is becoming harder to monitor</p></li>
+<li><p>Individual is becoming easier to monitor</p></li>
+</ul>
+</section>
+<section id="conversation" class="slide level2 slide:" data-transition="none">
+<h1>Conversation</h1>
+<object type="image/svg+xml" data="./diagrams/anne_bob001.svg">
+</object>
+</section>
+<section id="conversation-1" class="slide level2 slide:" data-transition="none">
+<h1>Conversation</h1>
+<object type="image/svg+xml" data="./diagrams/anne_bob002.svg">
+</object>
+</section>
+<section id="conversation-2" class="slide level2 slide:" data-transition="none">
+<h1>Conversation</h1>
+<object type="image/svg+xml" data="./diagrams/anne_bob003.svg">
+</object>
+</section>
+<section id="modelling" class="slide level2">
+<h1>Modelling</h1>
+<object type="image/svg+xml" data="./diagrams/anne.svg">
+</object>
+</section>
+<section id="modelling-1" class="slide level2">
+<h1>Modelling</h1>
+<object type="image/svg+xml" data="./diagrams/bob.svg">
+</object>
+</section>
+<section id="hate-speech-or-political-dissent" class="slide level2">
+<h1>Hate Speech or Political Dissent?</h1>
+<ul>
+<li>social media monitoring for ‘hate speech’ can be easily turned to political dissent monitoring</li>
+</ul>
+</section>
+<section id="marketing" class="slide level2">
+<h1>Marketing</h1>
+<ul>
+<li>can become more sinister when the target of the marketing is well understood and the (digital) environment of the target is also so well controlled</li>
+</ul>
+</section>
+<section id="free-will" class="slide level2">
+<h1>Free Will</h1>
+<ul>
+<li>What does it mean if a computer can predict our individual behavior better than we ourselves can?</li>
+</ul>
+</section>
+<section id="discrimination" class="slide level2">
+<h1>Discrimination</h1>
+<ul>
+<li><p>Potential for explicit and implicit discrimination on the basis of race, religion, sexuality, health status</p></li>
+<li><p>All prohibited under European law, but can pass unawares, or be implicit</p></li>
+</ul>
+</section>
+<section id="marginalization" class="slide level2">
+<h1>Marginalization</h1>
+<ul>
+<li>Credit scoring, insurance, medical treatment</li>
+<li>What if certain sectors of society are under-represented in our aanalysis?</li>
+<li>What if Silicon Valley develops everything for us?</li>
+</ul>
+</section>
+<section id="digital-revolution-and-inequality" class="slide level2">
+<h1>Digital Revolution and Inequality?</h1>
+<p><img src="./diagrams/woman-tends-house-in-village-of-uganda-africa.jpg" width="50%" style="border:none"></p>
+</section>
+<section id="amelioration" class="slide level2">
+<h1>Amelioration</h1>
+<ul>
+<li>Work to ensure individual retains control of their own data</li>
+<li>We accept privacy in our real lives, need to accept it in our digital</li>
+<li><p>Control of persona and ability to project</p></li>
+<li><p>Need better technological solutions: trust and algorithms.</p></li>
+</ul>
+</section>
+<section id="awareness" class="slide level2">
+<h1>Awareness</h1>
+<ul>
+<li>Need to increase awareness of the pitfalls among researchers</li>
+<li>Need to ensure that technological solutions are being delivered not merely for few (#FirstWorldProblems)</li>
+<li>Address a wider set of challenges that the greater part of the world’s population is facing</li>
+</ul>
+</section>
+<section id="conclusion" class="slide level2">
+<h1>Conclusion</h1>
+<ul>
+<li>Data science offers a great deal of promise</li>
+<li>There are challenges and pitfalls</li>
+<li>It is incumbent on us to avoid them</li>
+<li>Need new ways of thinking!</li>
+<li><em>Mathematical</em> Data Science</li>
+</ul>
+<p><strong>Many solutions rely on education and awareness</strong></p>
+</section>
+<section id="thanks" class="slide level2">
+<h1>Thanks!</h1>
+<ul>
+<li>twitter: <span class="citation" data-cites="lawrennd">@lawrennd</span></li>
+<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

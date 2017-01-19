@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title></title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="talks.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="data-science-where-computation-and-statistics-meet" class="slide level2">
+<h1>Data Science: Where Computation and Statistics Meet?</h1>
+<h3 id="rss-meeting-september-6th">RSS Meeting, September 6th</h3>
+<h3 id="neil-d.-lawrence">Neil D. Lawrence</h3>
+<h3 id="amazon-cambridge-and-university-of-sheffield">Amazon Cambridge and University of Sheffield</h3>
+<p><code>@lawrennd</code> <a href="http://inverseprobability.com">inverseprobability.com</a></p>
+</section>
+<section id="background" class="slide level2">
+<h1>Background</h1>
+<ul>
+<li>Data is Pervasive phenomenon that affects all aspects of our activities</li>
+<li>Data diffusiveness is both a challenge and an opportunity</li>
+</ul>
+</section>
+<section id="evolved-relationship" class="slide level2">
+<h1>Evolved Relationship</h1>
+<p><img src="./diagrams/data-science-information-flow_neg.svg" height=100% style="background:none; border:none; box-shadow:none;" align="center"></p>
+</section>
+<section id="societal-effects" class="slide level2">
+<h1>Societal Effects</h1>
+<ul>
+<li>Automated decision making within the computer based only on the data</li>
+<li>A requirement to better understand our own subjective biases to ensure that the human to computer interface formulates the correct conclusions from the data</li>
+</ul>
+</section>
+<section id="societal-effects-1" class="slide level2">
+<h1>Societal Effects</h1>
+<ul>
+<li><p>This process has already revolutionised biology</p></li>
+<li><p>Shift in dynamic from the direct pathway between human and data to indirect pathway between human and data via the computer</p></li>
+<li><p>This change of dynamics gives us the modern and emerging domain of data science</p></li>
+</ul>
+</section>
+<section id="challenges" class="slide level2">
+<h1>Challenges</h1>
+<ol type="1">
+<li><p>Paradoxes of the Data Society</p></li>
+<li><p>Quantifying the Value of Data</p></li>
+<li><p>Privacy, loss of control, marginalization</p></li>
+</ol>
+</section>
+<section id="paradoxes-of-the-data-society" class="slide level2">
+<h1>Paradoxes of the Data Society</h1>
+</section>
+<section id="breadth-vs-depth-paradox" class="slide level2">
+<h1>Breadth vs Depth Paradox</h1>
+<ul>
+<li><p>Able to quantify to a greater and greater degree the actions of individuals</p></li>
+<li><p>But less able to characterize society</p></li>
+<li><p>As we measure more, we understand less</p></li>
+</ul>
+</section>
+<section id="wood-or-tree" class="slide level2">
+<h1>Wood or Tree</h1>
+<ul>
+<li>Can either see a wood or a tree.</li>
+</ul>
+<p><img src="./diagrams/Grib_skov.jpg" width="50%" style="border:none"> <!-- https://upload.wikimedia.org/wikipedia/commons/5/5b/Grib_skov.jpg--></p>
+</section>
+<section id="what" class="slide level2">
+<h1>What?</h1>
+<ul>
+<li><p>Perhaps greater preponderance of data is making society itself more complex</p></li>
+<li><p>Therefore traditional approaches to measurement are failing</p></li>
+</ul>
+</section>
+<section id="wood-or-tree-1" class="slide level2">
+<h1>Wood or Tree</h1>
+<ul>
+<li>Examples
+<ul>
+<li>2015 UK election polls</li>
+<li>Clinical trial and personalized medicine</li>
+</ul></li>
+</ul>
+</section>
+<section id="rapidly-evolving-digital-society" class="slide level2">
+<h1>Rapidly Evolving Digital Society</h1>
+<ul>
+<li>Causes
+<ul>
+<li>Social media memes</li>
+<li>Filter bubbles and echo chambers</li>
+<li>Better stratification of populations, giving fewer trial subjects, less power</li>
+</ul></li>
+<li>Curate’s egg of a society: it is only ‘measured in parts’</li>
+</ul>
+</section>
+<section id="solutions" class="slide level2">
+<h1>Solutions</h1>
+<ul>
+<li>More classical statistics!
+<ul>
+<li>Like the ‘paperless office’</li>
+</ul></li>
+<li><p>A better characterization of human needs and flaws</p></li>
+<li><p>Larger studies (100,000 genome)</p></li>
+</ul>
+</section>
+<section id="quantifying-the-value-of-data" class="slide level2">
+<h1>Quantifying the Value of Data</h1>
+<p>There’s a sea of data, but most of it is undrinkable</p>
+<p><img src="./diagrams/sea-water-ocean-waves.jpg" width="50%" style="border:none"></p>
+<p>We require data-desalination before it can be consumed!</p>
+</section>
+<section id="value" class="slide level2">
+<h1>Value</h1>
+<ul>
+<li>How do we measure value in the data economy?</li>
+<li>How do we encourage data workers: curation and management
+<ul>
+<li>Incentivization</li>
+<li>Quantifying the value in their contribution</li>
+</ul></li>
+</ul>
+</section>
+<section id="credit-allocation" class="slide level2">
+<h1>Credit Allocation</h1>
+<ul>
+<li><p>Direct work on data generates an enormous amount of ‘value’ in the data economy but this is unaccounted in the economy</p></li>
+<li>Hard because data is difficult to ‘embody’
+<ul>
+<li>Value of shared data: <a href="https://wellcome.ac.uk/what-we-do/our-work/sharing-research-data-improve-public-health-full-joint-statement-funders-health">Wellcome Trust 2010 Joint Statement</a> (from the “Foggy Bottom” meeting)</li>
+</ul></li>
+</ul>
+</section>
+<section id="solutions-1" class="slide level2">
+<h1>Solutions</h1>
+<ul>
+<li><p>Encourage greater interaction between application domains and data scientists</p></li>
+<li><p>Encourage visualization of data</p></li>
+<li><p>Adoption of ‘data readiness levels’</p></li>
+<li><p>Implications for incentivization schemes</p></li>
+</ul>
+</section>
+<section id="privacy-loss-of-control-and-marginalization" class="slide level2">
+<h1>Privacy, Loss of Control and Marginalization</h1>
+<ul>
+<li><p>Society is becoming harder to monitor</p></li>
+<li><p>Individual is becoming easier to monitor</p></li>
+</ul>
+</section>
+<section id="hate-speech-or-political-dissent" class="slide level2">
+<h1>Hate Speech or Political Dissent?</h1>
+<ul>
+<li>social media monitoring for ‘hate speech’ can be easily turned to political dissent monitoring</li>
+</ul>
+</section>
+<section id="marketing" class="slide level2">
+<h1>Marketing</h1>
+<ul>
+<li>can become more sinister when the target of the marketing is well understood and the (digital) environment of the target is also so well controlled</li>
+</ul>
+</section>
+<section id="free-will" class="slide level2">
+<h1>Free Will</h1>
+<ul>
+<li>What does it mean if a computer can predict our individual behavior better than we ourselves can?</li>
+</ul>
+</section>
+<section id="discrimination" class="slide level2">
+<h1>Discrimination</h1>
+<ul>
+<li><p>Potential for explicit and implicit discrimination on the basis of race, religion, sexuality, health status</p></li>
+<li><p>All prohibited under European law, but can pass unawares, or be implicit</p></li>
+</ul>
+</section>
+<section id="marginalization" class="slide level2">
+<h1>Marginalization</h1>
+<ul>
+<li>Credit scoring, insurance, medical treatment</li>
+<li>What if certain sectors of society are under-represented in our aanalysis?</li>
+<li>What if Silicon Valley develops everything for us?</li>
+</ul>
+</section>
+<section id="digital-revolution-and-inequality" class="slide level2">
+<h1>Digital Revolution and Inequality?</h1>
+<p><img src="./diagrams/woman-tends-house-in-village-of-uganda-africa.jpg" width="50%" style="border:none"></p>
+</section>
+<section id="amelioration" class="slide level2">
+<h1>Amelioration</h1>
+<ul>
+<li>Work to ensure individual retains control of their own data</li>
+<li>We accept privacy in our real lives, need to accept it in our digital</li>
+<li>Control of persona and ability to project</li>
+</ul>
+</section>
+<section id="awareness" class="slide level2">
+<h1>Awareness</h1>
+<ul>
+<li>Need to increase awareness of the pitfalls among researchers</li>
+<li>Need to ensure that technological solutions are being delivered not merely for few (#FirstWorldProblems)</li>
+<li>Address a wider set of challenges that the greater part of the world’s population is facing</li>
+</ul>
+</section>
+<section id="conclusion" class="slide level2">
+<h1>Conclusion</h1>
+<ul>
+<li>Data science offers a great deal of promise</li>
+<li>There are challenges and pitfalls</li>
+<li>It is incumbent on us to avoid them</li>
+</ul>
+</section>
+<section id="thanks" class="slide level2">
+<h1>Thanks!</h1>
+<ul>
+<li>twitter: <span class="citation" data-cites="lawrennd">@lawrennd</span></li>
+<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

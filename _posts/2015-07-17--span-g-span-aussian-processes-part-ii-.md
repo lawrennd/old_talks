@@ -1,23 +1,24 @@
 ---
-title: "<span>G</span>aussian Processes (Part II)"
-venue: MLSS, Tübingen
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/gp_mlss15b.pdf
-year: '2015'
-youtube: MxeQIKGEXb8
-month: 7
-day: '17'
-layout: talk
-key: Lawrence:mlss15bII
-categories:
-- Lawrence:mlss15bII
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2015-07-17
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-mlss15bII
+day: '17'
 errata: []
+extras: []
+key: Lawrence-mlss15bII
+layout: talk
+linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/gp_mlss15b.pdf
+month: 7
+published: 2015-07-17
+section: pre
+title: <span>G</span>aussian Processes (Part II)
+venue: "MLSS, T\xFCbingen"
+year: '2015'
+youtube: MxeQIKGEXb8
 ---

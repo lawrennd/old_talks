@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="490"
+   height="580"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.45.1"
+   version="1.0"
+   sodipodi:docbase="H:\profile\karl\Desktop"
+   sodipodi:docname="IP_stack_connections.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="TriangleOutM"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleOutM"
+       style="overflow: visible;">
+      <path
+         id="path4256"
+         d="M 5.77,0 L -2.88,5 L -2.88,-5 L 5.77,0 z "
+         style="fill-rule: evenodd; stroke: rgb(0, 0, 0); stroke-width: 1pt; marker-start: none;"
+         transform="scale(0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleInM"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleInM"
+       style="overflow: visible;">
+      <path
+         id="path4265"
+         d="M 5.77,0 L -2.88,5 L -2.88,-5 L 5.77,0 z "
+         style="fill-rule: evenodd; stroke: rgb(0, 0, 0); stroke-width: 1pt; marker-start: none;"
+         transform="scale(-0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="Torso"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Torso"
+       style="overflow: visible;">
+      <g
+         id="g4193"
+         transform="scale(0.7)">
+        <path
+           id="path4195"
+           d="M -4.7792281,-3.239542 C -2.4288541,-2.8736027 0.52103922,-1.3019943 0.25792722,0.38794346 C -0.0051877922,2.0778819 -2.2126741,2.6176539 -4.5630471,2.2517169 C -6.9134221,1.8857769 -8.521035,0.75201414 -8.257922,-0.93792336 C -7.994809,-2.6278615 -7.1296041,-3.6054813 -4.7792281,-3.239542 z "
+           style="marker: none; fill: none; fill-opacity: 0.75; fill-rule: evenodd; stroke: rgb(0, 0, 0); stroke-width: 1.25;" />
+        <path
+           id="path4197"
+           d="M 4.4598789,0.088665736 C -2.5564571,-4.378332 5.2248769,-3.9061806 -0.84829578,-8.7197331"
+           style="fill: none; fill-opacity: 0.75; fill-rule: evenodd; stroke: rgb(0, 0, 0); stroke-width: 1pt; marker-end: none;" />
+        <path
+           id="path4199"
+           d="M 4.9298719,0.057520736 C -1.3872731,1.7494689 1.8027579,5.4782079 -4.9448731,7.5462725"
+           style="fill: none; fill-opacity: 0.75; fill-rule: evenodd; stroke: rgb(0, 0, 0); stroke-width: 1pt; marker-start: none; marker-end: none;" />
+        <rect
+           id="rect4201"
+           transform="matrix(0.527536, -0.849533, 0.887668, 0.460484, 0, 0)"
+           y="-1.7408575"
+           x="-10.391706"
+           height="2.7608147"
+           width="2.6366582"
+           style="fill-rule: evenodd; stroke-width: 1pt; marker-end: none;" />
+        <rect
+           id="rect4203"
+           transform="matrix(0.671205, -0.741272, 0.790802, 0.612072, 0, 0)"
+           y="-7.9629307"
+           x="4.9587269"
+           height="2.8614161"
+           width="2.7327356"
+           style="fill-rule: evenodd; stroke-width: 1pt; marker-end: none;" />
+        <path
+           id="path4205"
+           transform="matrix(0, -1.10952, 1.10952, 0, 25.9665, 19.7162)"
+           d="M 16.779951 -28.685045 A 0.60731727 0.60731727 0 1 1  15.565317,-28.685045 A 0.60731727 0.60731727 0 1 1  16.779951 -28.685045 z"
+           sodipodi:ry="0.60731727"
+           sodipodi:rx="0.60731727"
+           sodipodi:cy="-28.685045"
+           sodipodi:cx="16.172634"
+           style="fill: rgb(255, 0, 0); fill-opacity: 0.75; fill-rule: evenodd; stroke: rgb(0, 0, 0); stroke-width: 1pt; marker-start: none; marker-end: none;"
+           sodipodi:type="arc" />
+        <path
+           id="path4207"
+           transform="matrix(0, -1.10952, 1.10952, 0, 26.8245, 16.9913)"
+           d="M 16.779951 -28.685045 A 0.60731727 0.60731727 0 1 1  15.565317,-28.685045 A 0.60731727 0.60731727 0 1 1  16.779951 -28.685045 z"
+           sodipodi:ry="0.60731727"
+           sodipodi:rx="0.60731727"
+           sodipodi:cy="-28.685045"
+           sodipodi:cx="16.172634"
+           style="fill: rgb(255, 0, 0); fill-opacity: 0.75; fill-rule: evenodd; stroke: rgb(0, 0, 0); stroke-width: 1pt; marker-start: none; marker-end: none;"
+           sodipodi:type="arc" />
+      </g>
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.7283907"
+     inkscape:cx="245"
+     inkscape:cy="247.40932"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     width="490px"
+     height="580px"
+     showgrid="true"
+     inkscape:grid-points="true"
+     inkscape:window-width="1116"
+     inkscape:window-height="1103"
+     inkscape:window-x="425"
+     inkscape:window-y="23" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="opacity: 0.808; fill: rgb(212, 224, 224); fill-opacity: 1; fill-rule: nonzero; stroke: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: 1.5, 3; stroke-dashoffset: 0pt; stroke-opacity: 1;"
+       id="rect5656"
+       width="450"
+       height="120"
+       x="20"
+       y="50.453125" />
+    <rect
+       style="fill: rgb(204, 204, 255); fill-opacity: 1; fill-rule: nonzero; stroke: rgb(172, 173, 218); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 1.4; stroke-opacity: 1;"
+       id="rect2162"
+       width="80"
+       height="80"
+       x="40"
+       y="70.453125" />
+    <text
+       xml:space="preserve"
+       style="font-size: 22px; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; text-align: center; line-height: 125%; text-anchor: middle; fill: rgb(0, 0, 0); fill-opacity: 1; stroke: none; stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; stroke-opacity: 1; font-family: Bitstream Vera Sans;"
+       x="79.189"
+       y="104.722"
+       id="text3140"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3142"
+         x="79.189003"
+         y="104.722">Host</tspan><tspan
+         sodipodi:role="line"
+         x="79.189003"
+         y="132.222"
+         id="tspan3144">A</tspan></text>
+    <path
+       sodipodi:type="arc"
+       style="fill: rgb(204, 204, 255); fill-opacity: 1; fill-rule: nonzero; stroke: rgb(172, 173, 218); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 1.4; stroke-opacity: 1;"
+       id="path3136"
+       sodipodi:cx="190"
+       sodipodi:cy="90"
+       sodipodi:rx="40"
+       sodipodi:ry="40"
+       d="M 230 90 A 40 40 0 1 1  150,90 A 40 40 0 1 1  230 90 z"
+       transform="translate(0.043457, 20.4531)" />
+    <text
+       xml:space="preserve"
+       style="font-size: 22px; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; text-align: center; line-height: 125%; text-anchor: middle; fill: rgb(0, 0, 0); fill-opacity: 1; stroke: none; stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; stroke-opacity: 1; font-family: Bitstream Vera Sans;"
+       x="188.975"
+       y="118.316"
+       id="text3152"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3154"
+         x="188.97501"
+         y="118.316">Router</tspan></text>
+    <path
+       sodipodi:type="arc"
+       style="fill: rgb(204, 204, 255); fill-opacity: 1; fill-rule: nonzero; stroke: rgb(172, 173, 218); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 1.4; stroke-opacity: 1;"
+       id="path3163"
+       sodipodi:cx="190"
+       sodipodi:cy="90"
+       sodipodi:rx="40"
+       sodipodi:ry="40"
+       d="M 230 90 A 40 40 0 1 1  150,90 A 40 40 0 1 1  230 90 z"
+       transform="translate(110.043, 20.4531)" />
+    <text
+       xml:space="preserve"
+       style="font-size: 22px; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; text-align: center; line-height: 125%; text-anchor: middle; fill: rgb(0, 0, 0); fill-opacity: 1; stroke: none; stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; stroke-opacity: 1; font-family: Bitstream Vera Sans;"
+       x="298.975"
+       y="118.316"
+       id="text3165"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3167"
+         x="298.97501"
+         y="118.316">Router</tspan></text>
+    <rect
+       style="fill: rgb(204, 204, 255); fill-opacity: 1; fill-rule: nonzero; stroke: rgb(172, 173, 218); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 1.4; stroke-opacity: 1;"
+       id="rect3177"
+       width="80"
+       height="80"
+       x="370"
+       y="70.453125" />
+    <text
+       xml:space="preserve"
+       style="font-size: 22px; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; text-align: center; line-height: 125%; text-anchor: middle; fill: rgb(0, 0, 0); fill-opacity: 1; stroke: none; stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; stroke-opacity: 1; font-family: Bitstream Vera Sans;"
+       x="409.189"
+       y="104.722"
+       id="text3179"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3181"
+         x="409.189"
+         y="104.722">Host</tspan><tspan
+         sodipodi:role="line"
+         x="409.189"
+         y="132.222"
+         id="tspan3183">B</tspan></text>
+    <g
+       id="g5972">
+      <path
+         style="fill: rgb(0, 0, 0); fill-opacity: 1; fill-rule: evenodd; stroke: none; stroke-width: 1.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1;"
+         d="M 231,109.25 L 231,110.75 L 255.78125,110.75 L 255.78125,109.25 L 231,109.25 z "
+         id="path4381" />
+      <path
+         style="fill-rule: evenodd; stroke: rgb(0, 0, 0); stroke-width: 0.4pt; marker-start: none;"
+         d="M 259.25535,110 L 254.06535,113 L 254.06535,107 L 259.25535,110 z "
+         id="path5978" />
+    </g>
+    <g
+       id="g5980">
+      <path
+         style="fill: rgb(0, 0, 0); fill-opacity: 1; fill-rule: evenodd; stroke: none; stroke-width: 1.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1;"
+         d="M 341,109.25 L 341,110.75 L 365.75,110.75 L 365.75,109.25 L 341,109.25 z "
+         id="path4385" />
+      <path
+         style="fill-rule: evenodd; stroke: rgb(0, 0, 0); stroke-width: 0.4pt; marker-start: none;"
+         d="M 369.20196,110 L 364.01196,113 L 364.01196,107 L 369.20196,110 z "
+         id="path5986" />
+    </g>
+    <g
+       id="g5964">
+      <path
+         style="fill: rgb(0, 0, 0); fill-opacity: 1; fill-rule: evenodd; stroke: none; stroke-width: 1.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1;"
+         d="M 121,109.25 L 121,110.75 L 145.75,110.75 L 145.75,109.25 L 121,109.25 z "
+         id="path4387" />
+      <path
+         style="fill-rule: evenodd; stroke: rgb(0, 0, 0); stroke-width: 0.4pt; marker-start: none;"
+         d="M 149.20196,110 L 144.01196,113 L 144.01196,107 L 149.20196,110 z "
+         id="path5970" />
+    </g>
+    <rect
+       style="opacity: 0.8; fill: rgb(212, 224, 224); fill-opacity: 1; fill-rule: nonzero; stroke: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: 1.5, 3; stroke-dashoffset: 0pt; stroke-opacity: 1;"
+       id="rect5658"
+       width="450"
+       height="230"
+       x="20"
+       y="230" />
+    <g
+       id="g5540"
+       transform="translate(0, 50.4531)">
+      <rect
+         y="190"
+         x="40"
+         height="30"
+         width="80"
+         id="rect5479"
+         style="fill: rgb(204, 204, 255); fill-opacity: 1; fill-rule: nonzero; stroke: rgb(172, 173, 218); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 1.4; stroke-opacity: 1;" />
+      <text
+         id="text5483"
+         y="208.311"
+         x="80.4688"
+         style="font-size: 12px; font-style: normal; font-weight: normal; text-align: center; text-anchor: middle; fill: rgb(0, 0, 0); fill-opacity: 1; stroke: none; stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; stroke-opacity: 1; font-family: Bitstream Vera Sans;"
+         xml:space="preserve"><tspan
+           y="208.311"
+           x="80.468803"
+           id="tspan5485"
+           sodipodi:role="line">Application</tspan></text>
+    </g>
+    <g
+       id="g5545"
+       transform="translate(0, 50.4531)">
+      <rect
+         y="250"
+         x="40"
+         height="30"
+         width="80"
+         id="rect5494"
+         style="fill: rgb(204, 204, 255); fill-opacity: 1; fill-rule: nonzero; stroke: rgb(172, 173, 218); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 1.4; stroke-opacity: 1;" />
+      <text
+         id="text5496"
+         y="268.311"
+         x="80.4688"
+         style="font-size: 12px; font-style: normal; font-weight: normal; text-align: center; text-anchor: middle; fill: rgb(0, 0, 0); fill-opacity: 1; stroke: none; stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; stroke-opacity: 1; font-family: Bitstream Vera Sans;"
+         xml:space="preserve"><tspan
+           y="268.311"
+           x="80.468803"
+           id="tspan5498"
+           sodipodi:role="line">Transport</tspan></text>
+    </g>
+    <g
+       id="g5550"
+       transform="translate(0, 50.4531)">
+      <rect
+         y="310"
+         x="40"
+         height="30"
+         width="80"
+         id="rect5520"
+         style="fill: rgb(204, 204, 255); fill-opacity: 1; fill-rule: nonzero; stroke: rgb(172, 173, 218); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 1.4; stroke-opacity: 1;" />
+      <text
+         id="text5522"
+         y="328.311"
+         x="80.4688"
+         style="font-size: 12px; font-style: normal; font-weight: normal; text-align: center; text-anchor: middle; fill: rgb(0, 0, 0); fill-opacity: 1; stroke: none; stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; stroke-opacity: 1; font-family: Bitstream Vera Sans; font-stretch: normal; font-variant: normal; line-height: 125%;"
+         xml:space="preserve"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan2322"
+           x="80.468803"
+           y="328.311">Internet</tspan></text>
+    </g>
+    <rect
+       style="fill: rgb(211, 212, 255); fill-opacity: 1; fill-rule: nonzero; stroke: rgb(172, 173, 218); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 1.4; stroke-opacity: 1;"
+       id="rect5534"
+       width="80"
+       height="30"
+       x="40"
+       y="420.45312" />
+    <text
+       xml:space="preserve"
+       style="font-size: 12px; font-style: normal; font-weight: normal; text-align: center; text-anchor: middle; fill: rgb(0, 0, 0); fill-opacity: 1; stroke: none; stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; stroke-opacity: 1; font-family: Bitstream Vera Sans; font-stretch: normal; font-variant: normal; line-height: 125%;"
+       x="80.4688"
+       y="438.764"
+       id="text5536"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan2867"
+         x="80.468803"
+         y="438.76401">Link</tspan></text>
+    <g
+       id="g6136">
+      <path
+         style="fill: rgb(0, 0, 0); fill-opacity: 1; fill-rule: evenodd; stroke: none; stroke-width: 1.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1;"
+         d="M 79.25,271.40625 L 79.25,295.71875 L 80.75,295.71875 L 80.75,271.40625 L 79.25,271.40625 z "
+         id="path5560" />
+      <path
+         style="fill-rule: evenodd; stroke: rgb(0, 0, 0); stroke-width: 0.4pt; marker-start: none;"
+         d="M 80,299.16855 L 77,293.97855 L 83,293.97855 L 80,299.16855 z "
+         id="path6142" />
+    </g>
+    <g
+       id="g6128">
+      <path
+         style="fill: rgb(0, 0, 0); fill-opacity: 1; fill-rule: evenodd; stroke: none; stroke-width: 1.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1;"
+         d="M 79.25,331.4375 L 79.25,355.75 L 80.75,355.75 L 80.75,331.4375 L 79.25,331.4375 z "
+         id="path5562" />
+      <path
+         style="fill-rule: evenodd; stroke: rgb(0, 0, 0); stroke-width: 0.4pt; marker-start: none;"
+         d="M 80,359.20621 L 77,354.01621 L 83,354.01621 L 80,359.20621 z "
+         id="path6134" />
+    </g>
+    <g
+       id="g6120">
+      <path
+         style="fill: rgb(0, 0, 0); fill-opacity: 1; fill-rule: evenodd; stroke: none; stroke-width: 1.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1;"
+         d="M 79.25,391.4375 L 79.25,415.75 L 80.75,415.75 L 80.75,391.4375 L 79.25,391.4375 z "
+         id="path5564" />
+      <path
+         style="fill-rule: evenodd; stroke: rgb(0, 0, 0); stroke-width: 0.4pt; marker-start: none;"
+         d="M 80,419.20621 L 77,414.01621 L 83,414.01621 L 80,419.20621 z "
+         id="path6126" />
+    </g>
+    <g
+       id="g5566"
+       transform="translate(330, 50.4531)">
+      <rect
+         y="190"
+         x="40"
+         height="30"
+         width="80"
+         id="rect5568"
+         style="fill: rgb(204, 204, 255); fill-opacity: 1; fill-rule: nonzero; stroke: rgb(172, 173, 218); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 1.4; stroke-opacity: 1;" />
+      <text
+         id="text5570"
+         y="208.311"
+         x="80.4688"
+         style="font-size: 12px; font-style: normal; font-weight: normal; text-align: center; text-anchor: middle; fill: rgb(0, 0, 0); fill-opacity: 1; stroke: none; stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; stroke-opacity: 1; font-family: Bitstream Vera Sans;"
+         xml:space="preserve"><tspan
+           y="208.311"
+           x="80.468803"
+           id="tspan5572"
+           sodipodi:role="line">Application</tspan></text>
+    </g>
+    <g
+       id="g5574"
+       transform="translate(330, 50.4531)">
+      <rect
+         y="250"
+         x="40"
+         height="30"
+         width="80"
+         id="rect5576"
+         style="fill: rgb(204, 204, 255); fill-opacity: 1; fill-rule: nonzero; stroke: rgb(172, 173, 218); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 1.4; stroke-opacity: 1;" />
+      <text
+         id="text5578"
+         y="268.311"
+         x="80.4688"
+         style="font-size: 12px; font-style: normal; font-weight: normal; text-align: center; text-anchor: middle; fill: rgb(0, 0, 0); fill-opacity: 1; stroke: none; stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; stroke-opacity: 1; font-family: Bitstream Vera Sans;"
+         xml:space="preserve"><tspan
+           y="268.311"
+           x="80.468803"
+           id="tspan5580"
+           sodipodi:role="line">Transport</tspan></text>
+    </g>
+    <g
+       id="g5582"
+       transform="translate(330, 50.4531)">
+      <rect
+         y="310"
+         x="40"
+         height="30"
+         width="80"
+         id="rect5584"
+         style="fill: rgb(204, 204, 255); fill-opacity: 1; fill-rule: nonzero; stroke: rgb(172, 173, 218); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 1.4; stroke-opacity: 1;" />
+      <text
+         id="text5586"
+         y="328.311"
+         x="80.4688"
+         style="font-size: 12px; font-style: normal; font-weight: normal; text-align: center; text-anchor: middle; fill: rgb(0, 0, 0); fill-opacity: 1; stroke: none; stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; stroke-opacity: 1; font-family: Bitstream Vera Sans;"
+         xml:space="preserve"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan2326"
+           x="80.468803"
+           y="328.311">Internet</tspan></text>
+    </g>
+    <g
+       id="g5590"
+       transform="translate(330, 50.4531)">
+      <rect
+         y="370"
+         x="40"
+         height="30"
+         width="80"
+         id="rect5592"
+         style="fill: rgb(204, 204, 255); fill-opacity: 1; fill-rule: nonzero; stroke: rgb(172, 173, 218); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 1.4; stroke-opacity: 1;" />
+      <text
+         id="text5594"
+         y="388.311"
+         x="80.4688"
+         style="font-size: 12px; font-style: normal; font-weight: normal; text-align: center; text-anchor: middle; fill: rgb(0, 0, 0); fill-opacity: 1; stroke: none; stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; stroke-opacity: 1; font-family: Bitstream Vera Sans; font-stretch: normal; font-variant: normal; line-height: 125%;"
+         xml:space="preserve"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan2873"
+           x="80.468803"
+           y="388.311">Link</tspan></text>
+    </g>
+    <g
+       id="g6008">
+      <path
+         style="fill: rgb(0, 0, 0); fill-opacity: 1; fill-rule: evenodd; stroke: none; stroke-width: 1.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1;"
+         d="M 409.25,275.15625 L 409.25,299.4375 L 410.75,299.4375 L 410.75,275.15625 L 409.25,275.15625 z "
+         id="path5598" />
+      <path
+         style="fill-rule: evenodd; stroke: rgb(0, 0, 0); stroke-width: 0.4pt; marker-start: none;"
+         d="M 410,271.70004 L 413,276.89004 L 407,276.89004 L 410,271.70004 z "
+         id="path6014" />
+    </g>
+    <g
+       id="g6016">
+      <path
+         style="fill: rgb(0, 0, 0); fill-opacity: 1; fill-rule: evenodd; stroke: none; stroke-width: 1.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1;"
+         d="M 409.25,335.15625 L 409.25,359.4375 L 410.75,359.4375 L 410.75,335.15625 L 409.25,335.15625 z "
+         id="path5600" />
+      <path
+         style="fill-rule: evenodd; stroke: rgb(0, 0, 0); stroke-width: 0.4pt; marker-start: none;"
+         d="M 410,331.70003 L 413,336.89003 L 407,336.89003 L 410,331.70003 z "
+         id="path6022" />
+    </g>
+    <g
+       id="g6024">
+      <path
+         style="fill: rgb(0, 0, 0); fill-opacity: 1; fill-rule: evenodd; stroke: none; stroke-width: 1.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1;"
+         d="M 409.25,395.15625 L 409.25,419.4375 L 410.75,419.4375 L 410.75,395.15625 L 409.25,395.15625 z "
+         id="path5602" />
+      <path
+         style="fill-rule: evenodd; stroke: rgb(0, 0, 0); stroke-width: 0.4pt; marker-start: none;"
+         d="M 410,391.70003 L 413,396.89003 L 407,396.89003 L 410,391.70003 z "
+         id="path6030" />
+    </g>
+    <g
+       id="g5604"
+       transform="translate(110, 50.4531)">
+      <rect
+         y="310"
+         x="40"
+         height="30"
+         width="80"
+         id="rect5606"
+         style="fill: rgb(204, 204, 255); fill-opacity: 1; fill-rule: nonzero; stroke: rgb(172, 173, 218); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 1.4; stroke-opacity: 1;" />
+      <text
+         id="text5608"
+         y="328.311"
+         x="80.4688"
+         style="font-size: 12px; font-style: normal; font-weight: normal; text-align: center; text-anchor: middle; fill: rgb(0, 0, 0); fill-opacity: 1; stroke: none; stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; stroke-opacity: 1; font-family: Bitstream Vera Sans; font-stretch: normal; font-variant: normal; line-height: 125%;"
+         xml:space="preserve"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan2320"
+           x="80.468803"
+           y="328.311">Internet</tspan></text>
+    </g>
+    <g
+       id="g5620"
+       transform="translate(220, 50.4531)">
+      <rect
+         y="310"
+         x="40"
+         height="30"
+         width="80"
+         id="rect5622"
+         style="fill: rgb(204, 204, 255); fill-opacity: 1; fill-rule: nonzero; stroke: rgb(172, 173, 218); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 1.4; stroke-opacity: 1;" />
+      <text
+         id="text5624"
+         y="328.311"
+         x="80.4688"
+         style="font-size: 12px; font-style: normal; font-weight: normal; text-align: center; text-anchor: middle; fill: rgb(0, 0, 0); fill-opacity: 1; stroke: none; stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; stroke-opacity: 1; font-family: Bitstream Vera Sans;"
+         xml:space="preserve"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan2324"
+           x="80.468803"
+           y="328.311">Internet</tspan></text>
+    </g>
+    <g
+       id="g6084">
+      <path
+         style="fill: rgb(0, 0, 0); fill-opacity: 1; fill-rule: evenodd; stroke: none; stroke-width: 1.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1;"
+         d="M 214.25,391.4375 L 214.25,415.75 L 215.75,415.75 L 215.75,391.4375 L 214.25,391.4375 z "
+         id="path5636" />
+      <path
+         style="fill-rule: evenodd; stroke: rgb(0, 0, 0); stroke-width: 0.4pt; marker-start: none;"
+         d="M 215,419.20621 L 212,414.01621 L 218,414.01621 L 215,419.20621 z "
+         id="path6090" />
+    </g>
+    <g
+       id="g6092">
+      <path
+         style="fill: rgb(0, 0, 0); fill-opacity: 1; fill-rule: evenodd; stroke: none; stroke-width: 1.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1;"
+         d="M 164.25,395.15625 L 164.25,419.4375 L 165.75,419.4375 L 165.75,395.15625 L 164.25,395.15625 z "
+         id="path5638" />
+      <path
+         style="fill-rule: evenodd; stroke: rgb(0, 0, 0); stroke-width: 0.4pt; marker-start: none;"
+         d="M 165,391.70003 L 168,396.89003 L 162,396.89003 L 165,391.70003 z "
+         id="path6098" />
+    </g>
+    <g
+       id="g6056">
+      <path
+         style="fill: rgb(0, 0, 0); fill-opacity: 1; fill-rule: evenodd; stroke: none; stroke-width: 1.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1;"
+         d="M 324.25,391.4375 L 324.25,415.75 L 325.75,415.75 L 325.75,391.4375 L 324.25,391.4375 z "
+         id="path5640" />
+      <path
+         style="fill-rule: evenodd; stroke: rgb(0, 0, 0); stroke-width: 0.4pt; marker-start: none;"
+         d="M 325,419.20621 L 322,414.01621 L 328,414.01621 L 325,419.20621 z "
+         id="path6062" />
+    </g>
+    <g
+       id="g6064">
+      <path
+         style="fill: rgb(0, 0, 0); fill-opacity: 1; fill-rule: evenodd; stroke: none; stroke-width: 1.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1;"
+         d="M 274.25,395.15625 L 274.25,419.4375 L 275.75,419.4375 L 275.75,395.15625 L 274.25,395.15625 z "
+         id="path5642" />
+      <path
+         style="fill-rule: evenodd; stroke: rgb(0, 0, 0); stroke-width: 0.4pt; marker-start: none;"
+         d="M 275,391.70003 L 278,396.89003 L 272,396.89003 L 275,391.70003 z "
+         id="path6070" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="245.46875"
+       y="320"
+       id="text5648"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5650"
+         x="245.46875"
+         y="320">host-to-host</tspan></text>
+    <g
+       id="g6108">
+      <path
+         style="fill: rgb(0, 0, 0); fill-opacity: 1; fill-rule: evenodd; stroke: none; stroke-width: 1.5; stroke-linecap: square; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1;"
+         d="M 80,507.6875 L 80,509.1875 L 80.75,509.1875 L 97.3125,509.1875 L 98.0625,509.1875 L 98.0625,507.6875 L 97.3125,507.6875 L 80.75,507.6875 L 80,507.6875 z "
+         id="path5700" />
+      <path
+         style="fill-rule: evenodd; stroke: rgb(0, 0, 0); stroke-width: 0.4pt; marker-start: none;"
+         d="M 100.76165,508.45312 L 95.571645,511.45312 L 95.571645,505.45312 L 100.76165,508.45312 z "
+         id="path6114" />
+    </g>
+    <path
+       style="fill: rgb(0, 0, 0); fill-opacity: 1; fill-rule: evenodd; stroke: none; stroke-width: 1.5; stroke-linecap: square; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1;"
+       d="M 79.25,451.4375 L 79.25,452.1875 L 79.25,508.4375 L 79.25,509.1875 L 80.75,509.1875 L 80.75,508.4375 L 80.75,452.1875 L 80.75,451.4375 L 79.25,451.4375 z "
+       id="path5702" />
+    <g
+       id="g5667"
+       transform="translate(0, 50.4531)">
+      <rect
+         y="370"
+         x="150"
+         height="30"
+         width="80"
+         id="rect5614"
+         style="fill: rgb(204, 204, 255); fill-opacity: 1; fill-rule: nonzero; stroke: rgb(172, 173, 218); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 1.4; stroke-opacity: 1;" />
+      <text
+         id="text5616"
+         y="388.311"
+         x="190.469"
+         style="font-size: 12px; font-style: normal; font-weight: normal; text-align: center; text-anchor: middle; fill: rgb(0, 0, 0); fill-opacity: 1; stroke: none; stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; stroke-opacity: 1; font-family: Bitstream Vera Sans; font-stretch: normal; font-variant: normal; line-height: 125%;"
+         xml:space="preserve"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan2869"
+           x="190.46899"
+           y="388.311">Link</tspan></text>
+    </g>
+    <g
+       id="g6100">
+      <path
+         style="fill: rgb(0, 0, 0); fill-opacity: 1; fill-rule: evenodd; stroke: none; stroke-width: 1.5; stroke-linecap: square; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1;"
+         d="M 164.25,454.78125 L 164.25,455.53125 L 164.25,482.6875 L 164.25,483.4375 L 165.75,483.4375 L 165.75,482.6875 L 165.75,455.53125 L 165.75,454.78125 L 164.25,454.78125 z "
+         id="path5716" />
+      <path
+         style="fill-rule: evenodd; stroke: rgb(0, 0, 0); stroke-width: 0.4pt; marker-start: none;"
+         d="M 165,452.07445 L 168,457.26445 L 162,457.26445 L 165,452.07445 z "
+         id="path6106" />
+    </g>
+    <path
+       style="fill: rgb(204, 255, 255); fill-opacity: 1; fill-rule: evenodd; stroke: rgb(172, 173, 218); stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; stroke-opacity: 1;"
+       d="M 125,483.9208 C 131.74992,473.31378 145.56634,472.22575 147,486.9208 C 167,476.9208 170.69918,483.84485 162,496.9208 C 182,506.9208 162,516.9208 162,516.9208 C 169.6014,526.28996 159,544.9208 147,526.9208 C 149,539.9208 126,545.9208 127,531.9208 C 114,543.9208 107,536.9208 108,522.9208 C 93,527.9208 95,509.9208 105,504.9208 C 94.25194,494.76985 101,486.9208 110,488.9208 C 103.76105,476.36136 123,475.9208 125,483.9208 z "
+       id="path5662"
+       sodipodi:nodetypes="cccccccccc" />
+    <g
+       id="g5628"
+       transform="translate(220, 50.4531)">
+      <rect
+         y="370"
+         x="40"
+         height="30"
+         width="80"
+         id="rect5630"
+         style="fill: rgb(204, 204, 255); fill-opacity: 1; fill-rule: nonzero; stroke: rgb(172, 173, 218); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 1.4; stroke-opacity: 1;" />
+      <text
+         id="text5632"
+         y="388.311"
+         x="80.4688"
+         style="font-size: 12px; font-style: normal; font-weight: normal; text-align: center; text-anchor: middle; fill: rgb(0, 0, 0); fill-opacity: 1; stroke: none; stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; stroke-opacity: 1; font-family: Bitstream Vera Sans; font-stretch: normal; font-variant: normal; line-height: 125%;"
+         xml:space="preserve"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan2871"
+           x="80.468803"
+           y="388.311">Link</tspan></text>
+    </g>
+    <g
+       id="g6072">
+      <path
+         style="fill: rgb(0, 0, 0); fill-opacity: 1; fill-rule: evenodd; stroke: none; stroke-width: 1.5; stroke-linecap: square; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1;"
+         d="M 274.25,454.78125 L 274.25,455.53125 L 274.25,482.6875 L 274.25,483.4375 L 275.75,483.4375 L 275.75,482.6875 L 275.75,455.53125 L 275.75,454.78125 L 274.25,454.78125 z "
+         id="path5730" />
+      <path
+         style="fill-rule: evenodd; stroke: rgb(0, 0, 0); stroke-width: 0.4pt; marker-start: none;"
+         d="M 275,452.07445 L 278,457.26445 L 272,457.26445 L 275,452.07445 z "
+         id="path6078" />
+    </g>
+    <path
+       style="fill: rgb(204, 255, 255); fill-opacity: 1; fill-rule: evenodd; stroke: rgb(172, 173, 218); stroke-width: 1.09697px; stroke-linecap: butt; stroke-linejoin: miter; stroke-opacity: 1;"
+       d="M 235.40848,485 C 243.54333,474.40904 260.19455,473.32266 261.92236,487.99546 C 286.02589,478.0106 290.48405,484.92416 280,497.98032 C 304.10353,507.96517 280,517.95002 280,517.95002 C 289.16104,527.30499 276.38448,545.90762 261.92236,527.93487 C 264.33271,540.91519 236.61366,546.9061 237.81883,532.9273 C 222.15154,544.90913 213.71531,537.91973 214.92048,523.94093 C 196.84283,528.93336 199.25319,510.96063 211.30495,505.9682 C 198.35164,495.83262 206.48424,487.99546 217.33083,489.99243 C 209.81179,477.45201 232.99812,477.01212 235.40848,485 z "
+       id="path5686"
+       sodipodi:nodetypes="cccccccccc" />
+    <text
+       sodipodi:linespacing="100%"
+       xml:space="preserve"
+       style="font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; text-align: center; line-height: 100%; text-anchor: middle; fill: rgb(0, 0, 0); fill-opacity: 1; stroke: none; stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; stroke-opacity: 1; font-family: Bitstream Vera Sans;"
+       x="247.004"
+       y="500"
+       id="text5688"><tspan
+         y="500"
+         x="247.004"
+         id="tspan2338"
+         sodipodi:role="line">Fiber,</tspan><tspan
+         y="512"
+         x="247.004"
+         id="tspan2340"
+         sodipodi:role="line">Satellite,</tspan><tspan
+         y="524"
+         x="247.004"
+         id="tspan2342"
+         sodipodi:role="line">etc.</tspan></text>
+    <g
+       id="g6032">
+      <path
+         style="fill: rgb(0, 0, 0); fill-opacity: 1; fill-rule: evenodd; stroke: none; stroke-width: 1.5; stroke-linecap: square; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1;"
+         d="M 409.25,454.625 L 409.25,455.375 L 409.25,506.65625 L 409.25,507.40625 L 410.75,507.40625 L 410.75,506.65625 L 410.75,455.375 L 410.75,454.625 L 409.25,454.625 z "
+         id="path5734" />
+      <path
+         style="fill-rule: evenodd; stroke: rgb(0, 0, 0); stroke-width: 0.4pt; marker-start: none;"
+         d="M 410,451.90844 L 413,457.09844 L 407,457.09844 L 410,451.90844 z "
+         id="path6038" />
+    </g>
+    <path
+       style="fill: rgb(0, 0, 0); fill-opacity: 1; fill-rule: evenodd; stroke: none; stroke-width: 1.5; stroke-linecap: square; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1;"
+       d="M 393.5,505.96875 L 393.5,507.4375 L 394.25,507.4375 L 410,507.4375 L 410.75,507.4375 L 410.75,505.96875 L 410,505.96875 L 394.25,505.96875 L 393.5,505.96875 z "
+       id="path5736" />
+    <path
+       style="fill: rgb(204, 255, 255); fill-opacity: 1; fill-rule: evenodd; stroke: rgb(172, 173, 218); stroke-width: 1.03286px; stroke-linecap: butt; stroke-linejoin: miter; stroke-opacity: 1;"
+       d="M 345.27249,483.93312 C 352.47694,473.33154 367.22373,472.24407 368.75393,486.93158 C 390.10071,476.93672 394.04898,483.85721 384.76401,496.92645 C 406.11078,506.92132 384.76401,516.91619 384.76401,516.91619 C 392.87728,526.28055 381.56199,544.90182 368.75393,526.91106 C 370.88861,539.90439 346.33983,545.90131 347.40717,531.9085 C 333.53177,543.90233 326.0604,536.90593 327.12774,522.91312 C 311.11767,527.91055 313.25234,509.91978 323.92573,504.92235 C 312.45391,494.7766 319.65637,486.93158 329.26242,488.93055 C 322.60335,476.37756 343.13782,475.93723 345.27249,483.93312 z "
+       id="path5694"
+       sodipodi:nodetypes="cccccccccc" />
+    <text
+       sodipodi:linespacing="125%"
+       xml:space="preserve"
+       style="font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; text-align: center; line-height: 125%; text-anchor: middle; fill: rgb(0, 0, 0); fill-opacity: 1; stroke: none; stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; stroke-opacity: 1; font-family: Bitstream Vera Sans;"
+       x="356.061"
+       y="511.751"
+       id="text5696"><tspan
+         y="511.75101"
+         x="356.061"
+         id="tspan2879"
+         sodipodi:role="line">Ethernet</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:32px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="244.73399"
+       y="220"
+       id="text5829"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5831"
+         x="244.73399"
+         y="220">Data Flow</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:32px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="244.21899"
+       y="40"
+       id="text5833"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5835"
+         x="244.21899"
+         y="40">Network Topology</tspan></text>
+    <text
+       id="text24664"
+       y="511.83"
+       x="134.803"
+       style="font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; text-align: center; line-height: 125%; text-anchor: middle; fill: rgb(0, 0, 0); fill-opacity: 1; stroke: none; stroke-width: 1px; stroke-linecap: butt; stroke-linejoin: miter; stroke-opacity: 1; font-family: Bitstream Vera Sans;"
+       xml:space="preserve"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan24666"
+         x="134.80299"
+         y="511.82999">Ethernet</tspan></text>
+    <g
+       id="g2319"
+       transform="matrix(1, 0, 0, 1.16953, 112, -7.27407)">
+      <path
+         style="fill: rgb(0, 0, 0); fill-opacity: 1; fill-rule: evenodd; stroke: none; stroke-width: 1.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1;"
+         d="M 214.25,391.4375 L 214.25,415.75 L 215.75,415.75 L 215.75,391.4375 L 214.25,391.4375 z "
+         id="path2321" />
+      <path
+         style="fill-rule: evenodd; stroke: rgb(0, 0, 0); stroke-width: 0.4pt; marker-start: none;"
+         d="M 215,419.20621 L 212,414.01621 L 218,414.01621 L 215,419.20621 z "
+         id="path2323" />
+    </g>
+    <g
+       id="g2328"
+       transform="matrix(1, 0, 0, 1.16953, 1.72964, -5.79774)">
+      <path
+         style="fill: rgb(0, 0, 0); fill-opacity: 1; fill-rule: evenodd; stroke: none; stroke-width: 1.5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1;"
+         d="M 214.25,391.4375 L 214.25,415.75 L 215.75,415.75 L 215.75,391.4375 L 214.25,391.4375 z "
+         id="path2330" />
+      <path
+         style="fill-rule: evenodd; stroke: rgb(0, 0, 0); stroke-width: 0.4pt; marker-start: none;"
+         d="M 215,419.20621 L 212,414.01621 L 218,414.01621 L 215,419.20621 z "
+         id="path2332" />
+    </g>
+    <g
+       transform="translate(-1.538,7.54688)"
+       id="g2317">
+      <path
+         id="path2319"
+         d="M 125,316.21875 L 128,316.21875 L 128,314.6875 L 125,314.6875 L 125,316.21875 z M 134,316.21875 L 137,316.21875 L 137,314.6875 L 134,314.6875 L 134,316.21875 z M 143,316.21875 L 146,316.21875 L 146,314.6875 L 143,314.6875 L 143,316.21875 z M 152,316.21875 L 155,316.21875 L 155,314.6875 L 152,314.6875 L 152,316.21875 z M 161,316.21875 L 164,316.21875 L 164,314.6875 L 161,314.6875 L 161,316.21875 z M 170,316.21875 L 173,316.21875 L 173,314.6875 L 170,314.6875 L 170,316.21875 z M 179,316.21875 L 182,316.21875 L 182,314.6875 L 179,314.6875 L 179,316.21875 z M 188,316.21875 L 191,316.21875 L 191,314.6875 L 188,314.6875 L 188,316.21875 z M 197,316.21875 L 200,316.21875 L 200,314.6875 L 197,314.6875 L 197,316.21875 z M 206,316.21875 L 209,316.21875 L 209,314.6875 L 206,314.6875 L 206,316.21875 z M 215,316.21875 L 218,316.21875 L 218,314.6875 L 215,314.6875 L 215,316.21875 z M 224,316.21875 L 227,316.21875 L 227,314.6875 L 224,314.6875 L 224,316.21875 z M 233,316.21875 L 236,316.21875 L 236,314.6875 L 233,314.6875 L 233,316.21875 z M 242,316.21875 L 245,316.21875 L 245,314.6875 L 242,314.6875 L 242,316.21875 z M 251,316.21875 L 254,316.21875 L 254,314.6875 L 251,314.6875 L 251,316.21875 z M 260,316.21875 L 263,316.21875 L 263,314.6875 L 260,314.6875 L 260,316.21875 z M 269,316.21875 L 272,316.21875 L 272,314.6875 L 269,314.6875 L 269,316.21875 z M 278,316.21875 L 281,316.21875 L 281,314.6875 L 278,314.6875 L 278,316.21875 z M 287,316.21875 L 290,316.21875 L 290,314.6875 L 287,314.6875 L 287,316.21875 z M 296,316.21875 L 299,316.21875 L 299,314.6875 L 296,314.6875 L 296,316.21875 z M 305,316.21875 L 308,316.21875 L 308,314.6875 L 305,314.6875 L 305,316.21875 z M 314,316.21875 L 317,316.21875 L 317,314.6875 L 314,314.6875 L 314,316.21875 z M 323,316.21875 L 326,316.21875 L 326,314.6875 L 323,314.6875 L 323,316.21875 z M 332,316.21875 L 335,316.21875 L 335,314.6875 L 332,314.6875 L 332,316.21875 z M 341,316.21875 L 344,316.21875 L 344,314.6875 L 341,314.6875 L 341,316.21875 z M 350,316.21875 L 353,316.21875 L 353,314.6875 L 350,314.6875 L 350,316.21875 z M 359,316.21875 L 362,316.21875 L 362,314.6875 L 359,314.6875 L 359,316.21875 z "
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3, 6;stroke-dashoffset:0;stroke-opacity:1" />
+      <path
+         id="path2322"
+         d="M 121.538,315.45312 L 126.728,312.45312 L 126.728,318.45312 L 121.538,315.45312 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:0.4pt;marker-start:none" />
+      <path
+         id="path2324"
+         d="M 368.47567,315.45312 L 363.28567,318.45312 L 363.28567,312.45312 L 368.47567,315.45312 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:0.4pt;marker-start:none" />
+    </g>
+    <text
+       sodipodi:linespacing="125%"
+       id="text2326"
+       y="254.04297"
+       x="246.37695"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         y="254.04297"
+         x="246.37695"
+         id="tspan2328"
+         sodipodi:role="line">process-to-process</tspan></text>
+    <g
+       id="g2330"
+       transform="translate(-1.288,-53.70312)">
+      <path
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3, 6;stroke-dashoffset:0;stroke-opacity:1"
+         d="M 125,316.21875 L 128,316.21875 L 128,314.6875 L 125,314.6875 L 125,316.21875 z M 134,316.21875 L 137,316.21875 L 137,314.6875 L 134,314.6875 L 134,316.21875 z M 143,316.21875 L 146,316.21875 L 146,314.6875 L 143,314.6875 L 143,316.21875 z M 152,316.21875 L 155,316.21875 L 155,314.6875 L 152,314.6875 L 152,316.21875 z M 161,316.21875 L 164,316.21875 L 164,314.6875 L 161,314.6875 L 161,316.21875 z M 170,316.21875 L 173,316.21875 L 173,314.6875 L 170,314.6875 L 170,316.21875 z M 179,316.21875 L 182,316.21875 L 182,314.6875 L 179,314.6875 L 179,316.21875 z M 188,316.21875 L 191,316.21875 L 191,314.6875 L 188,314.6875 L 188,316.21875 z M 197,316.21875 L 200,316.21875 L 200,314.6875 L 197,314.6875 L 197,316.21875 z M 206,316.21875 L 209,316.21875 L 209,314.6875 L 206,314.6875 L 206,316.21875 z M 215,316.21875 L 218,316.21875 L 218,314.6875 L 215,314.6875 L 215,316.21875 z M 224,316.21875 L 227,316.21875 L 227,314.6875 L 224,314.6875 L 224,316.21875 z M 233,316.21875 L 236,316.21875 L 236,314.6875 L 233,314.6875 L 233,316.21875 z M 242,316.21875 L 245,316.21875 L 245,314.6875 L 242,314.6875 L 242,316.21875 z M 251,316.21875 L 254,316.21875 L 254,314.6875 L 251,314.6875 L 251,316.21875 z M 260,316.21875 L 263,316.21875 L 263,314.6875 L 260,314.6875 L 260,316.21875 z M 269,316.21875 L 272,316.21875 L 272,314.6875 L 269,314.6875 L 269,316.21875 z M 278,316.21875 L 281,316.21875 L 281,314.6875 L 278,314.6875 L 278,316.21875 z M 287,316.21875 L 290,316.21875 L 290,314.6875 L 287,314.6875 L 287,316.21875 z M 296,316.21875 L 299,316.21875 L 299,314.6875 L 296,314.6875 L 296,316.21875 z M 305,316.21875 L 308,316.21875 L 308,314.6875 L 305,314.6875 L 305,316.21875 z M 314,316.21875 L 317,316.21875 L 317,314.6875 L 314,314.6875 L 314,316.21875 z M 323,316.21875 L 326,316.21875 L 326,314.6875 L 323,314.6875 L 323,316.21875 z M 332,316.21875 L 335,316.21875 L 335,314.6875 L 332,314.6875 L 332,316.21875 z M 341,316.21875 L 344,316.21875 L 344,314.6875 L 341,314.6875 L 341,316.21875 z M 350,316.21875 L 353,316.21875 L 353,314.6875 L 350,314.6875 L 350,316.21875 z M 359,316.21875 L 362,316.21875 L 362,314.6875 L 359,314.6875 L 359,316.21875 z "
+         id="path2333" />
+      <path
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:0.4pt;marker-start:none"
+         d="M 121.538,315.45312 L 126.728,312.45312 L 126.728,318.45312 L 121.538,315.45312 z "
+         id="path2335" />
+      <path
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:0.4pt;marker-start:none"
+         d="M 368.47567,315.45312 L 363.28567,318.45312 L 363.28567,312.45312 L 368.47567,315.45312 z "
+         id="path2337" />
+    </g>
+  </g>
+</svg>

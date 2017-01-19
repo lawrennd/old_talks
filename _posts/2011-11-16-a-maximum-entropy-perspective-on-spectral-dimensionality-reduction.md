@@ -1,5 +1,4 @@
 ---
-title: A Maximum Entropy Perspective on Spectral Dimensionality Reduction
 abstract: Spectral approaches to dimensionality reduction typically reduce the dimensionality
   of a data set through taking the eigenvectors of a Laplacian or a similarity matrix.
   Classical multidimensional scaling also makes use of the eigenvectors of a similarity
@@ -11,25 +10,27 @@ abstract: Spectral approaches to dimensionality reduction typically reduce the d
   The hope is that this unifying perspective will allow the relationships between
   these methods to be better understood and will also provide the groundwork for further
   research.
-venue: Machine Learning @ CUED, University of Cambridge, U.K.
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/spectral_cambridge11.pdf
-mp3: ftp://ftp.dcs.shef.ac.uk/home/neil/111116_ode_cambridge11.mp3
-youtube: 2XM2tS6TKhA
-year: '2011'
-month: 11
-day: '16'
-layout: talk
-key: Lawrence:cambridge11
-categories:
-- Lawrence:cambridge11
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2011-11-16
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-cambridge11
+day: '16'
 errata: []
+extras: []
+key: Lawrence-cambridge11
+layout: talk
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/spectral_cambridge11.pdf
+month: 11
+mp3: ftp://ftp.dcs.shef.ac.uk/home/neil/111116_ode_cambridge11.mp3
+published: 2011-11-16
+section: pre
+title: A Maximum Entropy Perspective on Spectral Dimensionality Reduction
+venue: Machine Learning @ CUED, University of Cambridge, U.K.
+year: '2011'
+youtube: 2XM2tS6TKhA
 ---

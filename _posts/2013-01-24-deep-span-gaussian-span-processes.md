@@ -1,5 +1,4 @@
 ---
-title: Deep <span>Gaussian</span> Processes
 abstract: In this talk we will introduce deep Gaussian process (GP) models. Deep GPs
   are a deep belief network based on Gaussian process mappings. The data is modeled
   as the output of a multivariate GP. The inputs to that Gaussian process are then
@@ -14,25 +13,27 @@ abstract: In this talk we will introduce deep Gaussian process (GP) models. Deep
   modelling a digit data set containing only 150 examples. In the seminar we will
   first review dimensionality reduction via Gaussian processes, before showing how
   this framework can be extended to build deep models.
-venue: Aalto University, Finland
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_aalto13.pdf
-year: '2013'
-month: 1
-day: '24'
-layout: talk
-key: Lawrence:aalto13
-categories:
-- Lawrence:aalto13
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2013-01-24
+  url: http://inverseprobability.com
+categories:
+- Lawrence-aalto13
+day: '24'
+errata: []
 extras:
 - label: Software
   link: http://inverseprobability.com/hsvargplvm/
-errata: []
+key: Lawrence-aalto13
+layout: talk
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_aalto13.pdf
+month: 1
+published: 2013-01-24
+section: pre
+title: Deep <span>Gaussian</span> Processes
+venue: Aalto University, Finland
+year: '2013'
 ---

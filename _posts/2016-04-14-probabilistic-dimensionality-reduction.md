@@ -1,26 +1,27 @@
 ---
-title: Probabilistic Dimensionality Reduction
 abstract: In this talk I give a quick overview of probabilistic interpretations of
   dimensionality reduction, starting with probabilistic principal component analysis
   and generalising to non-linear approaches such as the Gaussian Process Latent variable
   model.
-venue: Facebook London, UK
-pdf: probdim_facebook16.pdf
-day: '14'
-month: 4
-year: '2016'
-layout: talk
-key: Lawrence:facebook16
-categories:
-- Lawrence:facebook16
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2016-04-14
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-facebook16
+day: '14'
 errata: []
+extras: []
+key: Lawrence-facebook16
+layout: talk
+month: 4
+pdf: probdim_facebook16.pdf
+published: 2016-04-14
+section: pre
+title: Probabilistic Dimensionality Reduction
+venue: Facebook London, UK
+year: '2016'
 ---

@@ -1,0 +1,17 @@
+graph {
+     { edge [dir=forward]
+        s0 -- { s1 r0 }
+        a0 -- { r0 s1 }
+        r0 -- { s1 }
+        s1 -- { s2 r1 }
+        a1 -- { r1 s2 }
+        r1 -- { s2 }
+        s2 -- { s3 r2}
+        a2 -- { r2 s3 }
+        r2 -- { s3 }
+        s3 -- { s4 r3}
+        a3 -- { r3 s4 }
+        r3 -- { s4 }
+        s4 -- { s5 r4}
+     }
+   }

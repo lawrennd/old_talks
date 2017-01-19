@@ -1,0 +1,171 @@
+<svg viewbox = "-100 -100 800 800" height="900" width="900" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+>
+  <defs>
+    <style type="text/css">
+      @import url(../reveal.js/lib/font/source-sans-pro/source-sans-pro.css);
+      section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
+      color: #222; }
+    </style>
+    <solidColor id="foreground" solid-color="white" solid-opacity="1.0"/>
+    <style>
+      .mycirc { fill-opacity:1;stroke-width:3;stroke:white;fill:black;}
+      .mycirc2 { fill-opacity:1;stroke-width:3;stroke:white;fill:gray;}
+      .myemptycirc { fill-opacity:0;stroke-width:3;stroke:red;fill:black;}
+      .myrect { fill-opacity:1;stroke-width:3;stroke:white;fill:gray;}
+      .myarrow { stroke:white;stroke-width:2;marker-end:url(#markerArrow);}
+      .mythickarrow { stroke:white;stroke-width:20;marker-end:url(#markerThickArrow);}
+      .myline { stroke:gray;stroke-width:2;}
+      .myline2 { fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke:gray}
+      .mythickline { stroke:white;stroke-width:30;}
+      .mytext { fill:white;font-size:2em;font-family:sans-serif;}
+      .mysmalltext { fill:white;font-size:1em;font-family:sans-serif;}
+      .mysmallinverttext { fill:black;font-size:1.5em;font-family:sans-serif;}
+    </style>
+    <marker id="markerCircle" markerWidth="8" markerHeight="8" refX="5" refY="5">
+      <circle cx="5" cy="5" r="3" style="stroke: none; fill:white"/>
+    </marker>
+    <marker id="markerArrow" markerWidth="13" markerHeight="13" refX="2" refY="6" orient="auto">
+      <path d="M2,2 L2,11 L10,6 L2,2" style="fill:white" />
+    </marker>
+    <marker id="markerThickArrow" markerWidth="13" markerHeight="13" refX="2" refY="16" orient="auto">
+      <path d="M0.5,0.5 L0.5,3 L2.5,1.5 L0.5,0.5" style="fill:white" />
+    </marker>
+    <!--<rect id="myrecty" width="100" height="31" class="myrect"/>-->
+    <path id="InfoFlowPath" d="M 279.75659,571.06371 C 235.95986,560.97318 161.74966,558.722 145.29259,450.77337 c -5.25102,-76.62517 15.2858,-96.9644 27.88824,-122.46214 12.60245,-25.49773 27.58018,-46.85687 46.48386,-68.27496"
+     sodipodi:nodetypes="ccsc" />
+  </defs>
+
+  <!-- genome epigenome environment -->
+  <line x1="50" y1="50" x2="200" y2="200" class="myline"/>
+  <line x1="50" y1="50" x2="300" y2="200" class="myline"/>
+  <line x1="50" y1="50" x2="400" y2="200" class="myline"/>
+  <line x1="50" y1="50" x2="500" y2="200" class="myline"/>
+
+  <line x1="350" y1="50" x2="200" y2="200" class="myline"/>
+  <line x1="350" y1="50" x2="300" y2="200" class="myline"/>
+  <line x1="350" y1="50" x2="400" y2="200" class="myline"/>
+  <line x1="350" y1="50" x2="500" y2="200" class="myline"/>
+
+  <line x1="650" y1="50" x2="200" y2="200" class="myline"/>
+  <line x1="650" y1="50" x2="300" y2="200" class="myline"/>
+  <line x1="650" y1="50" x2="400" y2="200" class="myline"/>
+  <line x1="650" y1="50" x2="500" y2="200" class="myline"/>
+
+  <circle cx="50" cy="50" r="50" class="mycirc" />
+  <text x="50" y="50" fill="white" text-anchor="middle" class="mysmalltext">genome</text>
+  <circle cx="350" cy="50" r="50" class="mycirc" />
+  <text x="350" y="50" fill="white" text-anchor="middle" class="mysmalltext">epigenome</text>
+  <circle cx="650" cy="50" r="50" class="mycirc" />
+  <text x="650" y="50" fill="white" text-anchor="middle" class="mysmalltext">environment</text>
+
+  <!-- State of health -->
+  <line x1="200" y1="200" x2="200" y2="350" class="myline"/>
+  <line x1="200" y1="200" x2="300" y2="350" class="myline"/>
+  <line x1="200" y1="200" x2="400" y2="350" class="myline"/>
+  <line x1="200" y1="200" x2="500" y2="350" class="myline"/>
+  <line x1="200" y1="200" x2="50" y2="350" class="myline"/>
+
+  <line x1="300" y1="200" x2="200" y2="350" class="myline"/>
+  <line x1="300" y1="200" x2="300" y2="350" class="myline"/>
+  <line x1="300" y1="200" x2="400" y2="350" class="myline"/>
+  <line x1="300" y1="200" x2="500" y2="350" class="myline"/>
+  <line x1="300" y1="200" x2="50" y2="350" class="myline"/>
+
+  <line x1="400" y1="200" x2="200" y2="350" class="myline"/>
+  <line x1="400" y1="200" x2="300" y2="350" class="myline"/>
+  <line x1="400" y1="200" x2="400" y2="350" class="myline"/>
+  <line x1="400" y1="200" x2="500" y2="350" class="myline"/>
+  <line x1="400" y1="200" x2="650" y2="350" class="myline"/>
+
+  <line x1="500" y1="200" x2="200" y2="350" class="myline"/>
+  <line x1="500" y1="200" x2="300" y2="350" class="myline"/>
+  <line x1="500" y1="200" x2="400" y2="350" class="myline"/>
+  <line x1="500" y1="200" x2="500" y2="350" class="myline"/>
+  <line x1="500" y1="200" x2="650" y2="350" class="myline"/>
+  
+  <circle cx="200" cy="200" r="40" class="mycirc2" />
+  <circle cx="300" cy="200" r="40" class="mycirc2" />
+  <circle cx="400" cy="200" r="40" class="mycirc2" />
+  <circle cx="500" cy="200" r="40" class="mycirc2" />
+
+  <rect x="150" y="150" width="400" height="100" rx="15" ry="15" class="myrect" />
+  <text x="350" y="200" fill="white" text-anchor="middle" class="mytext">state of health</text>
+
+  <!-- organ states -->
+  <line x1="200" y1="350" x2="150" y2="500" class="myline"/>
+  <line x1="200" y1="350" x2="250" y2="500" class="myline"/>
+  <line x1="200" y1="350" x2="350" y2="500" class="myline"/>
+  <line x1="200" y1="350" x2="450" y2="500" class="myline"/>
+  <line x1="200" y1="350" x2="550" y2="500" class="myline"/>
+  <line x1="200" y1="350" x2="50" y2="500" class="myline"/>
+
+  <line x1="300" y1="350" x2="150" y2="500" class="myline"/>
+  <line x1="300" y1="350" x2="250" y2="500" class="myline"/>
+  <line x1="300" y1="350" x2="350" y2="500" class="myline"/>
+  <line x1="300" y1="350" x2="450" y2="500" class="myline"/>
+  <line x1="300" y1="350" x2="550" y2="500" class="myline"/>
+  <line x1="300" y1="350" x2="50" y2="500" class="myline"/>
+
+  <line x1="400" y1="350" x2="150" y2="500" class="myline"/>
+  <line x1="400" y1="350" x2="250" y2="500" class="myline"/>
+  <line x1="400" y1="350" x2="350" y2="500" class="myline"/>
+  <line x1="400" y1="350" x2="450" y2="500" class="myline"/>
+  <line x1="400" y1="350" x2="550" y2="500" class="myline"/>
+  <line x1="400" y1="350" x2="650" y2="500" class="myline"/>
+
+  <line x1="500" y1="350" x2="150" y2="500" class="myline"/>
+  <line x1="500" y1="350" x2="250" y2="500" class="myline"/>
+  <line x1="500" y1="350" x2="350" y2="500" class="myline"/>
+  <line x1="500" y1="350" x2="450" y2="500" class="myline"/>
+  <line x1="500" y1="350" x2="550" y2="500" class="myline"/>
+  <line x1="500" y1="350" x2="650" y2="500" class="myline"/>
+  
+  <circle cx="200" cy="350" r="40" class="mycirc2" />
+  <circle cx="300" cy="350" r="40" class="mycirc2" />
+  <circle cx="400" cy="350" r="40" class="mycirc2" />
+  <circle cx="500" cy="350" r="40" class="mycirc2" />
+
+  <rect x="150" y="300" width="400" height="100" rx="15" ry="15" class="myrect" />
+  <text x="350" y="350" fill="white" text-anchor="middle" class="mytext">organ states</text>
+
+  <circle cx="50" cy="350" r="50" class="mycirc" />
+  <text x="50" y="350" fill="white" text-anchor="middle" class="mysmalltext">clinical notes</text>
+  <circle cx="650" cy="350" r="50" class="mycirc" />
+  <text x="650" y="350" fill="white" text-anchor="middle" class="mysmalltext">clinical tests</text>
+  
+  <!-- cell states -->
+  <line x1="150" y1="500" x2="250" y2="650" class="myline" />
+  <line x1="250" y1="500" x2="250" y2="650" class="myline" />
+  <line x1="350" y1="500" x2="250" y2="650" class="myline" />
+  <line x1="450" y1="500" x2="250" y2="650" class="myline" />
+  <line x1="550" y1="500" x2="250" y2="650" class="myline" />
+
+  <line x1="150" y1="500" x2="450" y2="650" class="myline" />
+  <line x1="250" y1="500" x2="450" y2="650" class="myline" />
+  <line x1="350" y1="500" x2="450" y2="650" class="myline" />
+  <line x1="450" y1="500" x2="450" y2="650" class="myline" />
+  <line x1="550" y1="500" x2="450" y2="650" class="myline" />
+  
+  <circle cx="150" cy="500" r="40" class="mycirc2" />
+  <circle cx="250" cy="500" r="40" class="mycirc2" />
+  <circle cx="350" cy="500" r="40" class="mycirc2" />
+  <circle cx="450" cy="500" r="40" class="mycirc2" />
+  <circle cx="550" cy="500" r="40" class="mycirc2" />
+
+  <rect x="100" y="450" width="500" height="100" rx="15" ry="15" class="myrect" />
+  <text x="350" y="500" fill="white" text-anchor="middle" class="mytext">cell states</text>
+  
+  <circle cx="50" cy="500" r="50" class="mycirc" />
+  <text x="50" y="500" fill="white" text-anchor="middle" class="mysmalltext">gene expression</text>
+  <circle cx="650" cy="500" r="50" class="mycirc" />
+  <text x="650" y="500" fill="white" text-anchor="middle" class="mysmalltext">treatment</text>
+  
+  <circle cx="250" cy="650" r="50" class="mycirc" />
+  <text x="250" y="650" fill="white" text-anchor="middle" class="mysmalltext">biopsy</text>
+  
+  <circle cx="450" cy="650" r="50" class="mycirc" />
+  <text x="450" y="650" fill="white" text-anchor="middle" class="mysmalltext">X-ray</text>
+  
+
+
+</svg>

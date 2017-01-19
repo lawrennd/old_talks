@@ -1,5 +1,4 @@
 ---
-title: Modelling Transcriptional Regulation with <span>G</span>aussian Processes
 abstract: Modelling the dynamics of transcriptional processes in the cell requires
   the knowledge of a number of key biological quantities. While some of them are relatively
   easy to measure, such as mRNA decay rates and mRNA abundance levels, it is still
@@ -11,27 +10,29 @@ abstract: Modelling the dynamics of transcriptional processes in the cell requir
   include the sensitivities, mRNA decay rates and baseline expression levels as hyperparameters.
   We apply this procedure to a human leukemia dataset, focusing on the tumour repressor
   p53 and obtaining results in good accordance with recent biological studies.
-venue: Parameter Estimation in Systems Biology, School of Computer Science, University
-  of Manchester, U.K.
-linksoftware: http://inverseprobability.com/gpsim/
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gpsim_07_03.pdf
-videolectures: pesb07_lawrence_mtr
-linkvideo: http://videolectures.net/pesb07_lawrence_mtr/
-year: '2007'
-month: 3
-day: '28'
-layout: talk
-key: Lawrence:pesb07
-categories:
-- Lawrence:pesb07
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2007-03-28
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-pesb07
+day: '28'
 errata: []
+extras: []
+key: Lawrence-pesb07
+layout: talk
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gpsim_07_03.pdf
+linksoftware: http://inverseprobability.com/gpsim/
+linkvideo: http://videolectures.net/pesb07_lawrence_mtr/
+month: 3
+published: 2007-03-28
+section: pre
+title: Modelling Transcriptional Regulation with <span>G</span>aussian Processes
+venue: Parameter Estimation in Systems Biology, School of Computer Science, University
+  of Manchester, U.K.
+videolectures: pesb07_lawrence_mtr
+year: '2007'
 ---

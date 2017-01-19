@@ -1,6 +1,4 @@
 ---
-title: Probabilistic Dimensional Reduction with the <span>G</span>aussian Process
-  Latent Variable Model
 abstract: Density modelling in high dimensions is a very difficult problem. Traditional
   approaches, such as mixtures of Gaussians, typically fail to capture the structure
   of data sets in high dimensional spaces. In this talk we will argue that for many
@@ -12,29 +10,32 @@ abstract: Density modelling in high dimensions is a very difficult problem. Trad
   algorithm, including dynamics, learning of large data sets and back constraints.
   We will demonstrate the application of the model and its extensions to a range of
   data sets, including human motion data, a vowel data set and a robot mapping problem.
-venue: Dept of Signal Theory and Communications, Universidad Carlos III de Madrid,
-  Spain
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_07_07.pdf
-year: '2007'
-month: 7
-day: '4'
-group: gplvm
-layout: talk
-key: Lawrence:uc3mgplvm07
-categories:
-- Lawrence:uc3mgplvm07
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2007-07-04
+  url: http://inverseprobability.com
+categories:
+- Lawrence-uc3mgplvm07
+day: '4'
+errata: []
 extras:
 - label: Demos Software
   link: http://inverseprobability.com/oxford/
 - label: Main Software
   link: https://github.com/SheffieldML/GPmat/
-errata: []
+group: gplvm
+key: Lawrence-uc3mgplvm07
+layout: talk
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_07_07.pdf
+month: 7
+published: 2007-07-04
+section: pre
+title: Probabilistic Dimensional Reduction with the <span>G</span>aussian Process
+  Latent Variable Model
+venue: Dept of Signal Theory and Communications, Universidad Carlos III de Madrid,
+  Spain
+year: '2007'
 ---

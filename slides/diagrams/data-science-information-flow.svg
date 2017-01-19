@@ -1,0 +1,53 @@
+<svg viewbox = "0 0 700 700" height="700" width="700" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+>
+  <defs>
+    <style type="text/css">
+      @import url(../reveal.js/lib/font/source-sans-pro/source-sans-pro.css);
+      section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
+      color: #222; }
+    </style>
+    <solidColor id="foreground" solid-color="black" solid-opacity="1.0"/>
+    <style>
+      .mycirc { fill-opacity:1;stroke-width:3;stroke:black;fill:white;}
+      .myrect { fill-opacity:0;stroke-width:3;stroke:black;}
+      .myarrow { stroke:black;stroke-width:2;marker-end:url(#markerArrow);}
+      .mythickarrow { stroke:black;stroke-width:20;marker-end:url(#markerThickArrow);}
+      .myline { stroke:black;stroke-width:2;}
+      .myline2 { fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke:black}
+      .mythickline { stroke:black;stroke-width:30;}
+      .mytext { fill:black;font-size:2em;font-family: "Source Sans Pro", Helvetica, sans-serif;}
+      .mysmallinverttext { fill:white;font-size:1.5em;font-family: "Source Sans Pro", Helvetica, sans-serif;}
+    </style>
+    <marker id="markerCircle" markerWidth="8" markerHeight="8" refX="5" refY="5">
+      <circle cx="5" cy="5" r="3" style="stroke: none; fill:black"/>
+    </marker>
+    <marker id="markerArrow" markerWidth="13" markerHeight="13" refX="2" refY="6" orient="auto">
+      <path d="M2,2 L2,11 L10,6 L2,2" style="fill:black" />
+    </marker>
+    <marker id="markerThickArrow" markerWidth="13" markerHeight="13" refX="2" refY="16" orient="auto">
+      <path d="M0.5,0.5 L0.5,3 L2.5,1.5 L0.5,0.5" style="fill:black" />
+    </marker>
+    <!--<rect id="myrecty" width="100" height="31" class="myrect"/>-->
+    <path id="InfoFlowPath" d="M 279.75659,571.06371 C 235.95986,560.97318 161.74966,558.722 145.29259,450.77337 c -5.25102,-76.62517 15.2858,-96.9644 27.88824,-122.46214 12.60245,-25.49773 27.58018,-46.85687 46.48386,-68.27496"
+     sodipodi:nodetypes="ccsc" />
+  </defs>
+
+  <line x1="450" y1="80" x2="280" y2="420" class="myline" />
+  <line x1="280" y1="420" x2="620" y2="420" class="mythickline" />
+  <line x1="620" y1="420" x2="450" y2="80" class="myline" />
+  <circle cx="450" cy="80" r="78" class="mycirc" />
+  <text x="450" y="428" text-anchor="middle" class="mysmallinverttext" style="fill:white">high bandwidth</text>
+  <text x="450" y="80" fill="black" text-anchor="middle" class="mytext">human</text>
+  <circle cx="280" cy="420" r="78"  class="mycirc" />
+  <text x="280" y="420" fill="black" text-anchor="middle" class="mytext">computer</text>
+  <circle cx="620" cy="420" r="78" class="mycirc" />
+  <text x="620" y="420" fill="black" text-anchor="middle" class="mytext">data</text>
+  <path xlink:href="#InfoFlowPath" class="mythickline" />
+  <text class="mytext">
+    <textPath xlink:href="#InfoFlowPath">new information flow</textPath>
+  </text>
+  <path
+     d="m 364,132 -116,1 c 0,0 32,7 53,20 -24,14 -58,34 -74,48 -27,24 -77,76 -93,111 -16,34 -31,54 -33,91 -1,2 -1,58 8,84 8,26 28.63576,50.11399 45.77325,65.41913 34.18772,30.53234 116.21912,59.28305 189.66435,58.05888 68.19874,-1.13675 141.21839,-33.55697 245.02618,-81.30302 -48.32693,10.66007 -98.14823,3.29038 -58.13655,-63.79708 C 456.57426,545.32776 382.74524,570.21665 334,568 285,565 216,544 192,520 167,496 144.08805,435.86343 163.29946,381.10562 c 19.51501,-55.62323 59.8069,-113.39222 94.61397,-145.84657 20.72058,-19.32002 47.17978,-38.25083 66.41942,-51.15207 9.5541,23.47718 11.51381,49.41666 11.51381,49.41666 z"
+     id="path3738" class="myline2"
+     sodipodi:nodetypes="cccssssssccssssccc" />
+</svg>

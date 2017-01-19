@@ -1,23 +1,24 @@
 ---
-title: Nonlinear Response in <span>G</span>aussian Process Models of Transcription
-venue: Telethon Institute of Genetics and Medicine, Naples, Italy
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/tigem09.pdf
-year: '2009'
-month: 10
-day: '29'
-layout: talk
-key: Lawrence:tigem09
-categories:
-- Lawrence:tigem09
 abstract: ''
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2009-10-29
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-tigem09
+day: '29'
 errata: []
+extras: []
+key: Lawrence-tigem09
+layout: talk
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/tigem09.pdf
+month: 10
+published: 2009-10-29
+section: pre
+title: Nonlinear Response in <span>G</span>aussian Process Models of Transcription
+venue: Telethon Institute of Genetics and Medicine, Naples, Italy
+year: '2009'
 ---

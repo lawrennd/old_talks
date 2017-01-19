@@ -1,6 +1,4 @@
 ---
-title: A Unifying Probabilistic Perspective on Spectral Approaches to Dimensionality
-  Reduction
 abstract: Spectral approaches to dimensionality reduction typically reduce the dimensionality
   of a data set through taking the eigenvectors of a Laplacian or a similarity matrix.
   Classical multidimensional scaling also makes use of the eigenvectors of a similarity
@@ -13,23 +11,26 @@ abstract: Spectral approaches to dimensionality reduction typically reduce the d
   such as the graphical LASSO. The hope is that this unifying perspective will allow
   the relationships between these methods to be better understood and will also provide
   the groundwork for further research.
-venue: Microsoft Research, Cambridge
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/spectral_msr13.pdf
-year: '2013'
-month: 9
-day: '5'
-layout: talk
-key: Lawrence:msr13b
-categories:
-- Lawrence:msr13b
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2013-09-05
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-msr13b
+day: '5'
 errata: []
+extras: []
+key: Lawrence-msr13b
+layout: talk
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/spectral_msr13.pdf
+month: 9
+published: 2013-09-05
+section: pre
+title: A Unifying Probabilistic Perspective on Spectral Approaches to Dimensionality
+  Reduction
+venue: Microsoft Research, Cambridge
+year: '2013'
 ---

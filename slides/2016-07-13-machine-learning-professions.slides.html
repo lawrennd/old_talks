@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title></title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css"/>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+  <script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = 'reveal.js/css/print/pdf.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="machine-learning-and-the-professions" class="slide level2">
+<h1>Machine Learning and the Professions</h1>
+<h3 id="royal-society-london">Royal Society, London</h3>
+<h3 id="neil-d.-lawrence">Neil D. Lawrence</h3>
+<h3 id="university-of-sheffield">University of Sheffield</h3>
+<p><code>@lawrennd</code> <a href="http://inverseprobability.com">inverseprobability.com</a></p>
+</section>
+<section id="what-is-machine-learning" class="slide level2">
+<h1>What is Machine Learning?</h1>
+<ul>
+<li><p>A set of techniques for extracting information from data.</p></li>
+<li><p>Principal technology underlying recent advances in <em>artificial intelligence</em>.</p></li>
+<li><p>A major technology underlying <em>data science</em>.</p></li>
+</ul>
+</section>
+<section id="example-image-classification" class="slide level2">
+<h1>Example: Image Classification</h1>
+<p><img src="./diagrams/deepface_neg.png" width="80%" border="0"></p>
+</section>
+<section id="perceptron" class="slide level2">
+<h1>Perceptron</h1>
+<p><img src="./diagrams/perceptron_neg.gif" width="50%"></p>
+</section>
+<section id="example-alphago" class="slide level2">
+<h1>Example: AlphaGo</h1>
+<ul>
+<li>An achievement in Artificial Intelligence</li>
+</ul>
+<p><img src="./diagrams/alphagonature.jpg" width="37%"></p>
+</section>
+<section id="example-driverless-cars" class="slide level2">
+<h1>Example: Driverless Cars</h1>
+<ul>
+<li>Engineered system with many components.</li>
+<li>Many vital components are based on machine learning.</li>
+<li>Pedestrian recognition (an image classification problem)</li>
+</ul>
+</section>
+<section id="example-facebook" class="slide level2">
+<h1>Example: Facebook</h1>
+<ul>
+<li><p>Most aspects of the interface controlled using machine learning.</p></li>
+<li><p>Ranking of posts in newsfeed.</p></li>
+<li><p>Ranking of adverts.</p></li>
+</ul>
+</section>
+<section id="machine-learning" class="slide level2">
+<h1>Machine Learning</h1>
+<center>
+<strong>data + model = algorithm</strong>
+</center>
+<ul>
+<li>Your actions (likes, friends, clicks) are turned into a vector.</li>
+</ul>
+<p><span class="math display">\[\mathbf{x}=\begin{bmatrix} 1.0 &amp; 2.3 &amp; 3 \end{bmatrix}\]</span></p>
+</section>
+<section id="you-will-need" class="slide level2">
+<h1>You Will Need</h1>
+<ul>
+<li><p>Training data</p></li>
+<li><p>A model of how they interact</p></li>
+<li><p>Some computer time</p></li>
+</ul>
+</section>
+<section id="the-professions" class="slide level2">
+<h1>The Professions</h1>
+<ul>
+<li><p>What aspects cannot/can be replaced by a machine?</p>
+<ul>
+<li><p>What makes professions special.</p></li>
+<li><p>Encroachment of automation on ‘middle class’ roles.</p></li>
+</ul></li>
+<li><p>Not just your role, but the wider societal role.</p></li>
+<li><p>How will the professions evolve?</p></li>
+</ul>
+</section>
+<section id="thanks" class="slide level2">
+<h1>Thanks!</h1>
+<ul>
+<li>twitter: <span class="citation" data-cites="lawrennd">@lawrennd</span></li>
+<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,         // Display controls in the bottom right corner
+        progress: true,         // Display a presentation progress bar
+        history: true,          // Push each slide change to the browser history
+        center: true,                       // Vertical centering of slides
+        maxScale: 1.5,                  // Bounds for smallest/largest possible content scale
+        slideNumber: false,                // Display the page number of the current slide
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+//          { src: 'reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; }, }
+//          { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+]});
+    </script>
+    </body>
+</html>

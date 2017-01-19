@@ -1,5 +1,4 @@
 ---
-title: Deep <span>Gaussian</span> Processes
 abstract: In this talk we will introduce deep Gaussian process (GP) models. Deep GPs
   are a deep belief network based on Gaussian process mappings. The data is modeled
   as the output of a multivariate GP. The inputs to that Gaussian process are then
@@ -14,23 +13,25 @@ abstract: In this talk we will introduce deep Gaussian process (GP) models. Deep
   modelling a digit data set containing only 150 examples. In the seminar we will
   briefly review dimensionality reduction via Gaussian processes, before showing how
   this framework can be extended to build deep models.
-venue: University of Cambridge, Engineering Department
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_cambridge13.pdf
-year: '2013'
-month: 5
-day: '1'
-layout: talk
-key: Lawrence:cambridge13
-categories:
-- Lawrence:cambridge13
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2013-05-01
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-cambridge13
+day: '1'
 errata: []
+extras: []
+key: Lawrence-cambridge13
+layout: talk
+linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_cambridge13.pdf
+month: 5
+published: 2013-05-01
+section: pre
+title: Deep <span>Gaussian</span> Processes
+venue: University of Cambridge, Engineering Department
+year: '2013'
 ---

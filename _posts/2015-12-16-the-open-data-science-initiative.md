@@ -1,27 +1,29 @@
 ---
-title: The Open Data Science Initiative
-venue: data@sheffield
-pdf: odsi_data_at_sheffield15.pdf
 abstract: The Open Data Science Initiative is founded on the idea that there are a
   set of core principles that are restricting our ability, as a society, to exploit
   the large quantity of data we are now generating. In this talk we identify the challenges
   across the range of industry, science, health and the developing world. We then
   review the principles of open data science which we hope will address these challenges.
-year: '2015'
-month: 12
-day: '16'
-layout: talk
-key: Lawrence:odsi15
-categories:
-- Lawrence:odsi15
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2015-12-16
-extras: []
+  url: http://inverseprobability.com
+blog: 2014-07-01-open-data-science.md
+categories:
+- Lawrence-odsi15
+day: '16'
 errata: []
+extras: []
+key: Lawrence-odsi15
+layout: talk
+month: 12
+pdf: odsi_data_at_sheffield15.pdf
+published: 2015-12-16
+section: pre
+title: The Open Data Science Initiative
+venue: data@sheffield
+year: '2015'
 ---

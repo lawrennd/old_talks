@@ -1,30 +1,31 @@
 ---
-title: Approximate Inference in Deep <span>GP</span>s
-abstract: In this talk we will review deep Gaussian process models and relate them
+abstract: "In this talk we will review deep Gaussian process models and relate them
   to neural network models. We will then consider the details of how variational inference
-  may be performed in these models. The approach is centred on “variational compression”,
+  may be performed in these models. The approach is centred on \u201Cvariational compression\u201D,
   an approach to variational inference that compresses information into an augmented
   variable space. The aim of the deep Gaussian process framework is to enable probabilistic
   learning of multi-modal data. We will therefore end by highlighting directions for
   future research and discussing application of these models in domains such as personalised
-  health.
-venue: Gatsby Computational Neuroscience Unit, University College London, U.K.
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/deepgp_ucl14b.pdf
-year: '2014'
-month: 10
-day: '23'
-layout: talk
-key: Lawrence:ucl14c
-categories:
-- Lawrence:ucl14c
-authors:
-- firstname: Neil D.
-  lastname: Lawrence
-  url: http://inverseprobability.com
+  health."
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
   institute: University of Sheffield
   twitter: lawrennd
-  gscholar: r3SJcvoAAAAJ
-published: 2014-10-23
-extras: []
+  url: http://inverseprobability.com
+categories:
+- Lawrence-ucl14c
+day: '23'
 errata: []
+extras: []
+key: Lawrence-ucl14c
+layout: talk
+linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/deepgp_ucl14b.pdf
+month: 10
+published: 2014-10-23
+section: pre
+title: Approximate Inference in Deep <span>GP</span>s
+venue: Gatsby Computational Neuroscience Unit, University College London, U.K.
+year: '2014'
 ---
