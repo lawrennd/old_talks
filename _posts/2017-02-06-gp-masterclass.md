@@ -32,24 +32,8 @@ month: 2
 reveal: null
 section: pre
 title: An Introduction to Gaussian Processes and Bayesian Optimization
-venue: Lancaster University Masterclass Series
+venue: STOR-i Masterclass
 year: 2017
 ---
 
-Day 1:
----
-
-9:00 - 13:00 Introduction to Gaussian Processes (Neil Lawrence)
-
-14:00 - 16:00 Gaussian Process lab class
-
-16:30 - 17:30 Gaussian Processes in Practice
-
-Day 2:
----
-
-9:00 - 13:00 Introduction to Bayesian Optimization (Javier Gonzalez)
-
-14:00 - 16:00 Bayesian Optimization lab class
-
-16:30 - 17:30 Advanced Topics in Gaussian Processes
+For details of the talk and schedule [see here](http://gpss.cc/gpmc17/).

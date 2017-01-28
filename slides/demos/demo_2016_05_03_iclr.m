@@ -1,4 +1,4 @@
-% Demo for OxWaSP seminar 2016
+% Demo for ICLR Keynote 2016
 % Code needed at:
 % https://github.com/SheffieldML/multigp
 % https://github.com/SheffieldML/hgplvm

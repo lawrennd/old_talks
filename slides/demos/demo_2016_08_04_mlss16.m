@@ -5,11 +5,6 @@
 % https://github.com/SheffieldML/GPmat
 % and dependencies
 
-%importTool('multigp')
-%multigpToolboxes
-%clear all, close all
-%demAistats
-%pause
 
 importTool('hgplvm')
 hgplvmToolboxes
