@@ -1,5 +1,5 @@
-% Demo for OxWaSP seminar 2016
-% Code needed at:de
+% Demo for Amazon seminar 2016
+% Code needed at:
 % https://github.com/SheffieldML/multigp
 % https://github.com/SheffieldML/hgplvm
 % https://github.com/SheffieldML/hsvargplvm
