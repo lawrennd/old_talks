@@ -1,5 +1,5 @@
 ---
-abstract: ''
+title: Latent Variable Models with Gaussian Processes
 author:
 - family: Lawrence
   given: Neil D.
@@ -17,8 +17,6 @@ layout: talk
 linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gp_gpws14_session3.pdf
 month: 1
 published: 2014-01-15
-section: pre
-title: Latent Variable Models with <span>G</span>aussian Processes
 venue: Gaussian Process Winter School, Sheffield
 year: '2014'
 youtube: pAZxfwo6efg
