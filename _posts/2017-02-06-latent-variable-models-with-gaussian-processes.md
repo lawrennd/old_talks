@@ -16,6 +16,7 @@ key: Lawrence-gplvm17
 layout: talk
 month: 2
 venue: STOR-i Masterclass and University of Lancaster Seminar
+pdf: gp_gpmc17_session3.pdf
 year: 2017
 ---
 
