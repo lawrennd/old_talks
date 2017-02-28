@@ -17,29 +17,6 @@ affiliation: Amazon and University of Sheffield
 
 
 
-## {.slide: data-transition="none"}
-
-
-> There are three types of lies: lies, damned lies and statistics
->
-> Benjamin Disraeli
-
-## {.slide: data-transition="none"}
-
-> There are three types of lies: lies, damned lies and statistics
->
-> Benjamin Disraeli 1804-1881
-
-
-
-
-## {.slide: data-transition="none"}
-
-> There are three types of lies: lies, damned lies and 'big data'
->
-> Neil Lawrence 1972-?
-
-
 ## Gartner Hype Cycle
 
 
@@ -133,7 +110,7 @@ affiliation: Amazon and University of Sheffield
 
 
 
-## Large $p$
+## Large $p$, Large $n$
 
 * For large $p$ the parameters are badly determined.
 
