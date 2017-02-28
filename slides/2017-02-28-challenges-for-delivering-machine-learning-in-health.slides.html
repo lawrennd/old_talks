@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Neil D. Lawrence">
+  <meta name="dcterms.date" content="2017-02-28">
+  <title>Challenges for Delivering Machine Learning in Health</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="talks.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Challenges for Delivering Machine Learning in Health</h1>
+  <p class="author">Neil D. Lawrence</p>
+  <p class="date">2017-02-28</p>
+</section>
+
+<section class="slide level2">
+
+<h3 id="deep-learning-in-healthcare-summit-2017">Deep Learning in Healthcare Summit 2017</h3>
+<h3 id="section">2017-02-28</h3>
+<h3 id="neil-d.-lawrence">Neil D. Lawrence</h3>
+<h3 id="amazon-and-university-of-sheffield">Amazon and University of Sheffield</h3>
+<p><code>@lawrennd</code> <a href="http://inverseprobability.com">inverseprobability.com</a> <!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2017-02-28-challenges-for-delivering-machine-learning-in-health.slides.html 2017-02-28-challenges-for-delivering-machine-learning-in-health.md
+--></p>
+</section>
+<section id="section-1" class="slide level2 slide:" data-transition="none">
+<h2></h2>
+<blockquote>
+<p>There are three types of lies: lies, damned lies and statistics</p>
+<p>Benjamin Disraeli</p>
+</blockquote>
+</section>
+<section id="section-2" class="slide level2 slide:" data-transition="none">
+<h2></h2>
+<blockquote>
+<p>There are three types of lies: lies, damned lies and statistics</p>
+<p>Benjamin Disraeli 1804-1881</p>
+</blockquote>
+</section>
+<section id="section-3" class="slide level2 slide:" data-transition="none">
+<h2></h2>
+<blockquote>
+<p>There are three types of lies: lies, damned lies and ‘big data’</p>
+<p>Neil Lawrence 1972-?</p>
+</blockquote>
+</section>
+<section id="gartner-hype-cycle" class="slide level2">
+<h2>Gartner Hype Cycle</h2>
+<p><img src="./diagrams/Gartner_Hype_Cycle-neg.png" align="center" width="70%" style="background:none; border:none; box-shadow:none;"></p>
+</section>
+<section id="section-4" class="slide level2 slide:" data-transition="none">
+<h2></h2>
+<object type="image/svg+xml" data="./diagrams/ai-bd-dl-google-trends-001.svg">
+</object>
+</section>
+<section id="section-5" class="slide level2 slide:" data-transition="none">
+<h2></h2>
+<object type="image/svg+xml" data="./diagrams/ai-bd-dl-google-trends-002.svg">
+</object>
+</section>
+<section id="section-6" class="slide level2 slide:" data-transition="none">
+<h2></h2>
+<object type="image/svg+xml" data="./diagrams/ai-bd-dl-google-trends-003.svg">
+</object>
+</section>
+<section id="background-big-data" class="slide level2">
+<h2>Background: Big Data</h2>
+<ul>
+<li><p>The pervasiveness of data brings forward particular challenges.</p></li>
+<li><p>Those challenges are most sharply in focus for personalized health.</p></li>
+<li><p>Particular opportunities, in challenging areas such as <em>mental health</em>.</p></li>
+</ul>
+</section>
+<section id="evolved-relationship" class="slide level2">
+<h2>Evolved Relationship</h2>
+<object type="image/svg+xml" data="./diagrams/data-science-information-flow_neg003.svg">
+</object>
+</section>
+<section id="effects" class="slide level2">
+<h2>Effects</h2>
+<ul>
+<li><p>This phenomenon has already revolutionised biology.</p></li>
+<li><p>Large scale data acquisition and distribution.</p></li>
+<li><p>Transcriptomics, genomics, epigenomics, ‘rich phenomics’.</p></li>
+<li><p>Great <em>promise</em> for personalized health.</p></li>
+</ul>
+</section>
+<section id="societal-effects" class="slide level2">
+<h2>Societal Effects</h2>
+<ul>
+<li><p>Automated decision making within the computer based only on the data.</p></li>
+<li><p>A requirement to better understand our own subjective biases to ensure that the human to computer interface formulates the correct conclusions from the data.</p></li>
+<li><p>Particularly important where treatments are being prescribed.</p></li>
+<li><p>But what is a treatment in the modern era: interventions could be far more subtle.</p></li>
+</ul>
+</section>
+<section id="challenges" class="slide level2">
+<h2>Challenges</h2>
+<ol type="1">
+<li><p>Paradoxes of the Data Society</p></li>
+<li><p>Quantifying the Value of Data</p></li>
+<li><p>Privacy, loss of control, marginalization</p></li>
+</ol>
+</section>
+<section id="breadth-vs-depth-paradox" class="slide level2">
+<h2>Breadth vs Depth Paradox</h2>
+<ul>
+<li><p>Able to quantify to a greater and greater degree the actions of individuals</p></li>
+<li><p>But less able to characterize society</p></li>
+<li><p>As we measure more, we understand less</p></li>
+</ul>
+</section>
+<section id="what" class="slide level2">
+<h2>What?</h2>
+<ul>
+<li><p>Perhaps greater preponderance of data is making society itself more complex</p></li>
+<li><p>Therefore traditional approaches to measurement are failing</p></li>
+<li><p>Curate’s egg of a society: it is only ‘measured in parts’</p></li>
+</ul>
+</section>
+<section id="wood-or-tree" class="slide level2">
+<h2>Wood or Tree</h2>
+<ul>
+<li>Can either see a wood or a tree.</li>
+</ul>
+<p><img src="./diagrams/Grib_skov.jpg" width="50%" style="border:none"> <!-- https://upload.wikimedia.org/wikipedia/commons/5/5b/Grib_skov.jpg--></p>
+</section>
+<section id="examples" class="slide level2">
+<h2>Examples</h2>
+<ul>
+<li><p>Election polls (UK 2015 elections, EU referendum, US 2016 elections)</p></li>
+<li><p>Clinical trials vs personalized medicine: Obtaining statistical power where interventions are subtle. e.g. social media</p></li>
+</ul>
+</section>
+<section id="large-p" class="slide level2">
+<h2>Large <span class="math inline">\(p\)</span></h2>
+<ul>
+<li><p>For large <span class="math inline">\(p\)</span> the parameters are badly determined.</p></li>
+<li><p>Large <span class="math inline">\(p\)</span> small <span class="math inline">\(n\)</span> problem.</p></li>
+<li><p>Easily dealt with through definition.</p></li>
+</ul>
+</section>
+<section id="breadth-vs-depth" class="slide level2">
+<h2>Breadth vs Depth</h2>
+<ul>
+<li><p>Modern Measurement deals with <em>depth</em> (many subjects) … or <em>breadth</em> lots of detail about subject.</p></li>
+<li>But what about
+<ul>
+<li><span class="math inline">\(p\approx n\)</span>?</li>
+<li>Stratification of populations: batch effects etc.</li>
+</ul></li>
+<li><p>Multi-task learning (Natasha Jaques)</p></li>
+</ul>
+</section>
+<section id="also-need" class="slide level2">
+<h2>Also need</h2>
+<ul>
+<li>More classical statistics!
+<ul>
+<li>Like the ‘paperless office’</li>
+</ul></li>
+<li><p>A better characterization of human (see later)</p></li>
+<li>Larger studies (100,000 genome)
+<ul>
+<li>Combined with complex models: algorithmic challenges</li>
+</ul></li>
+</ul>
+</section>
+<section id="quantifying-the-value-of-data" class="slide level2">
+<h2>Quantifying the Value of Data</h2>
+<p>There’s a sea of data, but most of it is undrinkable</p>
+<p><img src="./diagrams/sea-water-ocean-waves.jpg" width="50%"></p>
+<p>We require data-desalination before it can be consumed!</p>
+</section>
+<section id="data-quotes-from-nips-workshop-on-ml-for-healthcare" class="slide level2">
+<h2>Data — Quotes from NIPS Workshop on ML for Healthcare</h2>
+<ul>
+<li>90% of our time is spent on validation and integration (Leo Anthony Celi)</li>
+<li>“The Dirty Work We Don’t Want to Think About” (Eric Xing)</li>
+<li>“Voodoo to get it decompressed” (Francisco Giminez)</li>
+<li>In health care clinicians collect the data and often control the direction of research through guardianship of data.</li>
+</ul>
+</section>
+<section id="value" class="slide level2">
+<h2>Value</h2>
+<ul>
+<li>How do we measure value in the data economy?</li>
+<li>How do we encourage data workers: curation and management</li>
+<li>Incentivization for sharing and production.</li>
+<li>Quantifying the value in the contribution of <em>each actor</em>.</li>
+</ul>
+</section>
+<section id="data-readiness-levels" class="slide level2">
+<h2>Data Readiness Levels</h2>
+<ul>
+<li>Three Bands of Data Readiness:</li>
+<li>Band C - the accessibility of data. Hearsay data. Availability, security.</li>
+<li>Band B - the validity of the data (faithfulness and representation)</li>
+<li>Band A - the usability of the data. Data in context</li>
+</ul>
+</section>
+<section id="band-c" class="slide level2">
+<h2>Band C</h2>
+<center>
+<img src="{{ site.baseurl }}/assets/stature-935643_1920.jpg" width="30%">
+</center>
+<ul>
+<li>whether it really is being recorded</li>
+<li>the format in which it’s being recorded (e.g. handwritten log book, stored in PDF format or old machine formats)</li>
+<li>privacy or legal constraints on the accessibility of the recorded data, have ethical constraints been alleviated?</li>
+<li>limitations on access due to topology (e.g. it’s distributed across a number of devices)</li>
+</ul>
+</section>
+<section id="band-b" class="slide level2">
+<h2>Band B</h2>
+<ul>
+<li><p>Visualizations.</p></li>
+<li><p>noise characterization.</p></li>
+<li>Missing values.</li>
+<li><p>Example, was a column or columns accidentally perturbed (e.g. through a sort operation that missed one or more columns)? Or was a <a href="http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-5-80">gene name accidentally converted to a date</a>?</p></li>
+</ul>
+</section>
+<section id="band-a" class="slide level2">
+<h2>Band A</h2>
+<ul>
+<li>Band A is about data in context.</li>
+<li>Consider appropriateness of a given data set to answer a particular question or to be subject to a particular analysis.</li>
+<li>May require
+<ul>
+<li>active collection of new data.</li>
+<li>annotation of data by human experts</li>
+<li>revisiting the collection (and running through the appropriate stages again)</li>
+</ul></li>
+</ul>
+</section>
+<section id="also" class="slide level2">
+<h2>Also …</h2>
+<ul>
+<li><p>Encourage greater interaction between application domains and data scientists</p></li>
+<li><p>Encourage <em>visualization</em> of data</p></li>
+<li><p>Incentivise the delivery of data.</p></li>
+</ul>
+</section>
+<section id="privacy-loss-of-control-and-marginalization" class="slide level2">
+<h2>Privacy, Loss of Control and Marginalization</h2>
+<ul>
+<li><p>Society is becoming harder to monitor</p></li>
+<li><p>Individual is becoming easier to monitor</p></li>
+</ul>
+</section>
+<section id="marketing" class="slide level2">
+<h2>Marketing</h2>
+<ul>
+<li>can become more sinister when the target of the marketing is well understood and the (digital) environment of the target is also so well controlled</li>
+</ul>
+</section>
+<section id="discrimination" class="slide level2">
+<h2>Discrimination</h2>
+<ul>
+<li><p>Potential for explicit and implicit discrimination on the basis of race, religion, sexuality, health status</p></li>
+<li><p>All prohibited under European law, but can pass unawares, or be implicit</p></li>
+</ul>
+</section>
+<section id="marginalization" class="slide level2">
+<h2>Marginalization</h2>
+<ul>
+<li>Credit scoring, insurance, medical treatment</li>
+<li>What if certain sectors of society are under-represented in our aanalysis?</li>
+<li>What if Silicon Valley develops everything for us?</li>
+</ul>
+</section>
+<section id="digital-revolution-and-inequality" class="slide level2">
+<h2>Digital Revolution and Inequality?</h2>
+<p><img src="./diagrams/woman-tends-house-in-village-of-uganda-africa.jpg" width="50%" style="border:none"></p>
+</section>
+<section id="amelioration" class="slide level2">
+<h2>Amelioration</h2>
+<ul>
+<li>Work to ensure individual retains control of their own data</li>
+<li>We accept privacy in our real lives, need to accept it in our digital</li>
+<li><p>Control of persona and ability to project</p></li>
+<li><p>Need better technological solutions: trust and algorithms.</p></li>
+</ul>
+</section>
+<section id="conclusion" class="slide level2">
+<h2>Conclusion</h2>
+<ul>
+<li>Data science offers a great deal of promise for personalized health</li>
+<li>There are challenges and pitfalls</li>
+<li>It is incumbent on us to avoid them</li>
+</ul>
+<p><strong>Many solutions rely on education and awareness</strong></p>
+</section>
+<section id="thanks" class="slide level2">
+<h2>Thanks!</h2>
+<ul>
+<li>twitter: <span class="citation" data-cites="lawrennd">@lawrennd</span></li>
+<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+              { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
