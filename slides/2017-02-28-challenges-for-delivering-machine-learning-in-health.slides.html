@@ -45,47 +45,26 @@
 <p><code>@lawrennd</code> <a href="http://inverseprobability.com">inverseprobability.com</a> <!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2017-02-28-challenges-for-delivering-machine-learning-in-health.slides.html 2017-02-28-challenges-for-delivering-machine-learning-in-health.md
 --></p>
 </section>
-<section id="section-1" class="slide level2 slide:" data-transition="none">
-<h2></h2>
-<blockquote>
-<p>There are three types of lies: lies, damned lies and statistics</p>
-<p>Benjamin Disraeli</p>
-</blockquote>
-</section>
-<section id="section-2" class="slide level2 slide:" data-transition="none">
-<h2></h2>
-<blockquote>
-<p>There are three types of lies: lies, damned lies and statistics</p>
-<p>Benjamin Disraeli 1804-1881</p>
-</blockquote>
-</section>
-<section id="section-3" class="slide level2 slide:" data-transition="none">
-<h2></h2>
-<blockquote>
-<p>There are three types of lies: lies, damned lies and ‘big data’</p>
-<p>Neil Lawrence 1972-?</p>
-</blockquote>
-</section>
 <section id="gartner-hype-cycle" class="slide level2">
 <h2>Gartner Hype Cycle</h2>
 <p><img src="./diagrams/Gartner_Hype_Cycle-neg.png" align="center" width="70%" style="background:none; border:none; box-shadow:none;"></p>
 </section>
-<section id="section-4" class="slide level2 slide:" data-transition="none">
+<section id="section-1" class="slide level2 slide:" data-transition="none">
 <h2></h2>
 <object type="image/svg+xml" data="./diagrams/ai-bd-dl-google-trends-000.svg">
 </object>
 </section>
-<section id="section-5" class="slide level2 slide:" data-transition="none">
+<section id="section-2" class="slide level2 slide:" data-transition="none">
 <h2></h2>
 <object type="image/svg+xml" data="./diagrams/ai-bd-dl-google-trends-001.svg">
 </object>
 </section>
-<section id="section-6" class="slide level2 slide:" data-transition="none">
+<section id="section-3" class="slide level2 slide:" data-transition="none">
 <h2></h2>
 <object type="image/svg+xml" data="./diagrams/ai-bd-dl-google-trends-002.svg">
 </object>
 </section>
-<section id="section-7" class="slide level2 slide:" data-transition="none">
+<section id="section-4" class="slide level2 slide:" data-transition="none">
 <h2></h2>
 <object type="image/svg+xml" data="./diagrams/ai-bd-dl-google-trends-003.svg">
 </object>
@@ -150,8 +129,8 @@
 <li><p>Clinical trials vs personalized medicine: Obtaining statistical power where interventions are subtle. e.g. social media</p></li>
 </ul>
 </section>
-<section id="large-p" class="slide level2">
-<h2>Large <span class="math inline">\(p\)</span></h2>
+<section id="large-p-large-n" class="slide level2">
+<h2>Large <span class="math inline">\(p\)</span>, Large <span class="math inline">\(n\)</span></h2>
 <ul>
 <li><p>For large <span class="math inline">\(p\)</span> the parameters are badly determined.</p></li>
 <li><p>Large <span class="math inline">\(p\)</span> small <span class="math inline">\(n\)</span> problem.</p>
@@ -225,20 +204,19 @@
 <li><p>Band A - usability</p></li>
 </ul>
 </section>
-<section id="band-c" class="slide level2">
-<h2>Band C</h2>
+<section id="accessibility-band-c" class="slide level2">
+<h2>Accessibility: Band C</h2>
 <ul>
-<li>The accessibility of data … hearsay data.</li>
+<li>Hearsay data.</li>
 <li>Availability, is it actually being recorded?</li>
 <li>privacy or legal constraints on the accessibility of the recorded data, have ethical constraints been alleviated?</li>
 <li>Format: log books, PDF …</li>
 <li>limitations on access due to topology (e.g. it’s distributed across a number of devices)</li>
 </ul>
 </section>
-<section id="band-b" class="slide level2">
-<h2>Band B</h2>
+<section id="validity-band-b" class="slide level2">
+<h2>Validity: Band B</h2>
 <ul>
-<li>The validity of data</li>
 <li>faithfulness and representation</li>
 <li>visualisations.</li>
 <li>noise characterisation.</li>
@@ -246,13 +224,18 @@
 <li>Example, was a column or columns accidentally perturbed (e.g. through a sort operation that missed one or more columns)? Or was a <a href="http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-5-80">gene name accidentally converted to a date</a>?</li>
 </ul>
 </section>
-<section id="band-a" class="slide level2">
-<h2>Band A</h2>
+<section id="usability-band-a" class="slide level2">
+<h2>Usability: Band A</h2>
 <ul>
 <li>The usability of data</li>
 <li>Band A is about data in context.</li>
 <li>Consider appropriateness of a given data set to answer a particular question or to be subject to a particular analysis.</li>
-<li>May require
+</ul>
+</section>
+<section id="recursive-effects" class="slide level2">
+<h2>Recursive Effects</h2>
+<ul>
+<li>Band A may also require
 <ul>
 <li>active collection of new data.</li>
 <li>annotation of data by human experts</li>

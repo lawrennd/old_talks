@@ -178,30 +178,32 @@ We require data-desalination before it can be consumed!
 * Band A - usability
 
 
-## Band C
+## Accessibility: Band C
 
-* The accessibility of data ... hearsay data.
+* Hearsay data.
 * Availability, is it actually being recorded?
 * privacy or legal constraints on the accessibility of the recorded data, have ethical constraints been alleviated?
 * Format: log books, PDF ...
 * limitations on access due to topology (e.g. it's distributed across a number of devices)
 
-## Band B
+## Validity: Band B
 
-* The validity of data
 *  faithfulness and representation
 * visualisations.
 * noise characterisation.
 * Missing values.
 * Example, was a column or columns accidentally perturbed (e.g. through a sort operation that missed one or more columns)? Or was a [gene name accidentally converted to a date](http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-5-80)?
 
-## Band A
+## Usability: Band A
 
 * The usability of data
 * Band A is about data in context.
 * Consider appropriateness of a given data set to answer a particular
 question or to be subject to a particular analysis.
-* May require
+
+## Recursive Effects
+
+* Band A may also require
     * active collection of new data. 
     * annotation of data by human experts
     * revisiting the collection (and running through the appropriate stages again)
