@@ -92,17 +92,6 @@ affiliation: Amazon and University of Sheffield
 
 * Great *promise* for personalized health.
 
-## Societal Effects
-
-* Automated decision making within the computer based only on the data.
-
-* A requirement to better understand our own subjective biases to ensure that the human to computer interface formulates the correct conclusions from the data.
-
-* Particularly important where treatments are being prescribed.
-
-* But what is a treatment in the modern era: interventions could be far more subtle.
-
-
 
 ## Challenges
 
@@ -110,7 +99,7 @@ affiliation: Amazon and University of Sheffield
 
 2. Quantifying the Value of Data
 
-3. Privacy, loss of control, marginalization
+3. Privacy, loss of control, marginalisation
 
 
 ## Breadth vs Depth Paradox
@@ -150,7 +139,7 @@ affiliation: Amazon and University of Sheffield
 
 * Large $p$ small $n$ problem.
 
-* Easily dealt with through definition.
+    * Easily dealt with through definition.
 
 
 ## Breadth vs Depth
@@ -162,7 +151,9 @@ affiliation: Amazon and University of Sheffield
     * $p\approx n$?
     * Stratification of populations: batch effects etc.
 
-* Multi-task learning (Natasha Jaques)
+* Challenge around combination of data sets.
+    * E.g. multi-task learning
+    * Massively missing data
 
 
 ## Also need
@@ -195,11 +186,11 @@ We require data-desalination before it can be consumed!
 
 * How do we measure value in the data economy?
 * How do we encourage data workers: curation and management
-  * Incentivization for sharing and production.
-  * Quantifying the value in the contribution of *each actor*.
+    * Incentivization for sharing and production.
+    * Quantifying the value in the contribution of *each actor*.
 
 
-## Data Readiness Levels
+## Embodiment: Data Readiness Levels
 
 * Three Bands of Data Readiness:
 
@@ -222,8 +213,8 @@ We require data-desalination before it can be consumed!
 
 * The validity of data
 *  faithfulness and representation
-* visualizations.
-* noise characterization.
+* visualisations.
+* noise characterisation.
 * Missing values.
 * Example, was a column or columns accidentally perturbed (e.g. through a sort operation that missed one or more columns)? Or was a [gene name accidentally converted to a date](http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-5-80)?
 
