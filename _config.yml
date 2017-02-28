@@ -31,4 +31,4 @@ analytics:
 
 # Build settings
 markdown: kramdown
-future: false
+future: true #false
