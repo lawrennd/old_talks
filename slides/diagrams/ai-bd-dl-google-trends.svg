@@ -90,7 +90,7 @@
            style="fill:#ffffff;"
            id="path7241" />
       </g>
-<!--      <g
+     <g
          id="line2d_1">
         <path
            clip-path="url(#pb0ccab78f3)"
@@ -98,8 +98,8 @@
            style="fill:none;stroke:#0000ff;stroke-linecap:square;"
            id="path7244" />
       </g>
-      -->
-<!--      <g
+
+      <g
          id="line2d_2">
         <path
            clip-path="url(#pb0ccab78f3)"
@@ -107,7 +107,6 @@
            style="fill:none;stroke:#008000;stroke-linecap:square;"
            id="path7247" />
 	   </g>
-	   -->
       <g
          id="line2d_3">
         <path
@@ -116,7 +115,8 @@
            style="fill:none;stroke:#ff0000;stroke-linecap:square;"
            id="path7250" />
       </g>
-      <g
+
+   <g
          id="patch_3">
         <path
            d="M 108 378  L 777.6 378  "

@@ -44,7 +44,10 @@ affiliation: Amazon and University of Sheffield
 
 
 <img src="./diagrams/Gartner_Hype_Cycle-neg.png" align="center" width="70%" style="background:none; border:none; box-shadow:none;">
+## {.slide: data-transition="none"}
 
+<object type="image/svg+xml" data="./diagrams/ai-bd-dl-google-trends-000.svg">
+</object>
 
 ## {.slide: data-transition="none"}
 
@@ -198,32 +201,34 @@ We require data-desalination before it can be consumed!
 ## Data Readiness Levels
 
 * Three Bands of Data Readiness:
-* Band C - the accessibility of data. Hearsay data. Availability, security.
-* Band B - the validity of the data (faithfulness and representation)
-* Band A - the usability of the data. Data in context
+
+* Band C - accessibility
+
+* Band B - validity
+
+* Band A - usability
 
 
 ## Band C
 
-<center><img src="{{ site.baseurl }}/assets/stature-935643_1920.jpg" width="30%"></center>
-
-
-* whether it really is being recorded
-* the format in which it's being recorded (e.g. handwritten log book, stored in PDF format or old machine formats)
+* The accessibility of data ... hearsay data.
+* Availability, is it actually being recorded?
 * privacy or legal constraints on the accessibility of the recorded data, have ethical constraints been alleviated?
+* Format: log books, PDF ...
 * limitations on access due to topology (e.g. it's distributed across a number of devices)
 
 ## Band B
 
-* Visualizations.
-
+* The validity of data
+*  faithfulness and representation
+* visualizations.
 * noise characterization.
-
 * Missing values.
 * Example, was a column or columns accidentally perturbed (e.g. through a sort operation that missed one or more columns)? Or was a [gene name accidentally converted to a date](http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-5-80)?
 
 ## Band A
 
+* The usability of data
 * Band A is about data in context.
 * Consider appropriateness of a given data set to answer a particular
 question or to be subject to a particular analysis.
@@ -246,12 +251,9 @@ question or to be subject to a particular analysis.
 
 * Individual is becoming easier to monitor
 
-## Marketing
-
-* can become more sinister when the target of the marketing is well understood and the (digital) environment of the target is also so well controlled
-
-
 ## Discrimination
+
+* Marketing can become more sinister when the target of the marketing is well understood and the (digital) environment of the target is also so well controlled
 
 * Potential for explicit and implicit discrimination on the basis of race, religion, sexuality, health status
 
