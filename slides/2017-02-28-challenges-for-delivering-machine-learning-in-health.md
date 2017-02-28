@@ -44,6 +44,7 @@ affiliation: Amazon and University of Sheffield
 
 
 <img src="./diagrams/Gartner_Hype_Cycle-neg.png" align="center" width="70%" style="background:none; border:none; box-shadow:none;">
+
 ## {.slide: data-transition="none"}
 
 <object type="image/svg+xml" data="./diagrams/ai-bd-dl-google-trends-000.svg">
