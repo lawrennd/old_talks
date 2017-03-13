@@ -44,8 +44,6 @@
 <h3 id="amazon-and-university-of-sheffield">Amazon and University of Sheffield</h3>
 <p><code>@lawrennd</code> <a href="http://inverseprobability.com">inverseprobability.com</a> <!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2017-03-13-challenges-in-ml-and-data-science.slides.html 2017-03-13-challenges-in-ml-and-data-science.md
 --></p>
-<p>To add: security and privacy. Stuxnet. Fog Computing</p>
-<p>Machine Learning Systems Design. — its into value of data?</p>
 </section>
 <section id="gartner-hype-cycle" class="slide level2">
 <h2>Gartner Hype Cycle</h2>
@@ -92,6 +90,54 @@
 <li><p>Data preprocessing: Internet of Intelligence.</p></li>
 </ul>
 </section>
+<section id="embodiment-factors" class="slide level2">
+<h2>“Embodiment Factors”</h2>
+<table>
+<tr>
+<td>
+</td>
+<td align="center">
+<img src="./diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="60%" style="background:none; border:none; box-shadow:none;" align="center">
+</td>
+<td align="center">
+<img src="./diagrams/ClaudeShannon_MFO3807.jpg" width="100%" style="background:none; border:none; box-shadow:none;" align="center">
+</td>
+</tr>
+<tr>
+<td>
+compute
+</td>
+<td align="center">
+~10 gigaflops
+</td>
+<td align="center">
+~ 1000 teraflops?
+</td>
+</tr>
+<tr>
+<td>
+communicate
+</td>
+<td align="center">
+~1 gigbit/s
+</td>
+<td align="center">
+~ 100 bit/s
+</td>
+</tr>
+<tr>
+<td>
+embodiment<br>(compute/communicate)
+</td>
+<td align="center">
+10
+</td>
+<td align="center">
+~ 10<sup>13</sup>
+</td>
+</tr>
+</table>
+</section>
 <section id="evolved-relationship" class="slide level2">
 <h2>Evolved Relationship</h2>
 <object type="image/svg+xml" data="./diagrams/data-science-information-flow_neg003.svg">
@@ -104,7 +150,9 @@
 <li><p>Large scale data acquisition and distribution.</p></li>
 <li><p>What does it mean for IoT</p></li>
 </ul>
-<h3 id="internet-of-people">Internet of People</h3>
+</section>
+<section id="internet-of-people" class="slide level2">
+<h2>Internet of People</h2>
 <ul>
 <li><p>Fog computing: barrier between cloud and device blurring.</p></li>
 <li><p>Stuxnet: Adversarial and Security implications for intelligent systems.</p></li>
@@ -308,10 +356,14 @@
 <li><p>The experience evolved adversarial behaviour.</p></li>
 </ul>
 </section>
+<section id="machine-learning-systems-design" class="slide level2">
+<h2>Machine Learning Systems Design</h2>
+<p><img src="./diagrams/SteamEngine_Boulton\&Watt_1784_neg.png" width="50%" style="border:none"></p>
+</section>
 <section id="turnaround-and-update" class="slide level2">
 <h2>Turnaround And Update</h2>
 <ul>
-<li><p>THere is a massive need for turn around and update</p></li>
+<li><p>There is a massive need for turn around and update</p></li>
 <li>A redeploy of the entire system.
 <ul>
 <li>This involves changing the way we design and deploy.</li>
