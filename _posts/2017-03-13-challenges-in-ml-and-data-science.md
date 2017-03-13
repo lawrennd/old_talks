@@ -14,6 +14,7 @@ categories:
 - Lawrence-arm17
 year: 2017
 reveal: 2017-03-13-challenges-in-ml-and-data-science.slides.html
+blog: 2017-01-12-data-readiness-levels.md
 month: 03
 day: 13
 errata: []
