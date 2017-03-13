@@ -5,7 +5,6 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    viewBox="0 0 900 675"
@@ -14,7 +13,7 @@
    version="1.1"
    id="svg3422"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="Hilbert_InfoGrowth.svg">
+   sodipodi:docname="Hilbert_InfoGrowth_neg.svg">
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -29,8 +28,8 @@
      id="namedview4367"
      showgrid="false"
      inkscape:zoom="1"
-     inkscape:cx="399.94124"
-     inkscape:cy="339.42792"
+     inkscape:cx="252.44124"
+     inkscape:cy="499.42792"
      inkscape:window-x="103"
      inkscape:window-y="1"
      inkscape:window-maximized="0"
@@ -63,7 +62,8 @@
          d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
          transform="scale(1.1) rotate(180) translate(1,0)" />
     </marker>
-    <style>
+    <style
+       id="style4444">
       .mycirc { fill-opacity:1;stroke-width:3;stroke:white;fill:white;}
       .mycirc2 { fill-opacity:1;stroke-width:3;stroke:white;fill:gray;}
       .myemptycirc { fill-opacity:0;stroke-width:3;stroke:red;fill:white;}
@@ -84,7 +84,93 @@
       .mediatext { font-size:11.25px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:white;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;}
       .largestoragetext { font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:white;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;}
     </style>
-    
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter4541">
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 -0.21 -0.72 -0.07 2 0 "
+         result="fbSourceGraphic"
+         id="feColorMatrix4543" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix4557" />
+      <feColorMatrix
+         id="feColorMatrix4559"
+         values="0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 -0.21 -0.72 -0.07 2 0 "
+         result="fbSourceGraphic"
+         in="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix4565" />
+      <feColorMatrix
+         id="feColorMatrix4567"
+         values="0 1 0 0 0 1 0 0 0 0 0 0 1 0 0 -0.21 -0.72 -0.07 2 0 "
+         result="color2"
+         in="fbSourceGraphic" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter4545">
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 -0.21 -0.72 -0.07 2 0 "
+         result="fbSourceGraphic"
+         id="feColorMatrix4547" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix4561" />
+      <feColorMatrix
+         id="feColorMatrix4563"
+         values="0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 -0.21 -0.72 -0.07 2 0 "
+         result="fbSourceGraphic"
+         in="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix4569" />
+      <feColorMatrix
+         id="feColorMatrix4571"
+         values="0 1 0 0 0 1 0 0 0 0 0 0 1 0 0 -0.21 -0.72 -0.07 2 0 "
+         result="color2"
+         in="fbSourceGraphic" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Invert"
+       id="filter4545-9">
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 -0.21 -0.72 -0.07 2 0 "
+         result="fbSourceGraphic"
+         id="feColorMatrix4547-3" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix4561-1" />
+      <feColorMatrix
+         id="feColorMatrix4563-9"
+         values="0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 -0.21 -0.72 -0.07 2 0 "
+         result="fbSourceGraphic"
+         in="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix4569-3" />
+      <feColorMatrix
+         id="feColorMatrix4571-3"
+         values="0 1 0 0 0 1 0 0 0 0 0 0 1 0 0 -0.21 -0.72 -0.07 2 0 "
+         result="color2"
+         in="fbSourceGraphic" />
+    </filter>
   </defs>
   <path
      id="path3434"
@@ -169,8 +255,8 @@
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="cc" />
   <text
-      xml:space="preserve"
-      class="mediatext"
+     xml:space="preserve"
+     class="mediatext"
      x="625"
      y="84"
      id="text4944"
@@ -300,8 +386,8 @@
        x="382"
        y="218">2000</tspan></text>
   <text
-      xml:space="preserve"
-      class="yeartext"
+     xml:space="preserve"
+     class="yeartext"
      x="212"
      y="251"
      id="text5022"
@@ -344,8 +430,8 @@
        x="35"
        y="297">2.6 exabytes</tspan></text>
   <text
-      xml:space="preserve"
-      class="totaltext"
+     xml:space="preserve"
+     class="totaltext"
      x="35"
      y="358"
      id="text5038"
@@ -384,15 +470,17 @@
        y="586"
        class="mydigitaltext">% digital</tspan></text>
   <text
-      xml:space="preserve"
-      class="mydigitaltext"
+     xml:space="preserve"
+     class="mydigitaltext"
      y="615"
      id="text5950"
-     sodipodi:linespacing="125%"><tspan
+     sodipodi:linespacing="125%"
+     x="201"
+     style="font-weight:bold;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#e46c0a;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"><tspan
        sodipodi:role="line"
        id="tspan5952"
-       x="207"
-       y="614">3 %</tspan></text>
+       x="201"
+       y="615">3 %</tspan></text>
   <text
      xml:space="preserve"
      class="mydigitaltext"
@@ -539,7 +627,9 @@
        x="7.5306029"
        y="669.91583"
        class="referencetext"
-       id="tspan6081">Compute Information, Science, 332 (6025) 60-65 <a href="http://www.martinhilbert.net/WorldInfoCapacity.html">http://www.martinhilbert.net/WorldInfoCapacity.html</a></tspan></text>
+       id="tspan6081">Compute Information, Science, 332 (6025) 60-65 <a
+   href="http://www.martinhilbert.net/WorldInfoCapacity.html"
+   id="a4529">http://www.martinhilbert.net/WorldInfoCapacity.html</a></tspan></text>
   <path
      style="fill:none;fill-rule:evenodd;stroke:white;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:6, 2;stroke-dashoffset:0;stroke-opacity:1"
      d="m 413.22661,239.0235 c 0,16.36685 0.009,16.36685 0.009,16.36685"
@@ -557,28 +647,12 @@
      x="339"
      y="316"
      id="text7047"
-     sodipodi:linespacing="125%"><tspan
+     sodipodi:linespacing="125%"
+     style="filter:url(#filter4545);fill:#000000;fill-opacity:1;"><tspan
        sodipodi:role="line"
        id="tspan7049"
        x="339"
        y="316">ANALOG STORAGE</tspan></text>
-  <text
-     xml:space="preserve"
-     class="largestoragetext"
-     x="543"
-     y="333"
-     id="text7051"
-     sodipodi:linespacing="125%"><tspan
-       sodipodi:role="line"
-       id="tspan7053"
-       x="543"
-       y="333"
-       class="largestoragetext">DIGITAL</tspan><tspan
-       sodipodi:role="line"
-       x="543"
-       y="354.875"
-       id="tspan7055"
-       class="largestoragetext">STORAGE</tspan></text>
   <path
      class="thinline"
      d="m 616,159 -1,-1 0,0 -177,171 -11,5 -13,4 -171,-11 170,12 25,-7 29,-20 147,-111"
@@ -594,4 +668,20 @@
      d="M 616,120 431,323 615,108"
      id="path7239"
      inkscape:connector-curvature="0" />
+  <text
+     xml:space="preserve"
+     class="largestoragetext"
+     x="552.4657"
+     y="330.36169"
+     id="text7047-4"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter4545-9)"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan5161"
+       x="552.4657"
+       y="330.36169">DIGITAL</tspan><tspan
+       sodipodi:role="line"
+       id="tspan5163"
+       x="552.4657"
+       y="352.23669">STORAGE</tspan></text>
 </svg>
