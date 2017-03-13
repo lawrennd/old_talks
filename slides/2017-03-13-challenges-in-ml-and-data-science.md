@@ -12,7 +12,7 @@ affiliation: Amazon and University of Sheffield
 ### Neil D. Lawrence
 ### Amazon and University of Sheffield
 ```@lawrennd``` [inverseprobability.com](http://inverseprobability.com)
-<!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2017-02-28-challenges-for-delivering-machine-learning-in-health.slides.html 2017-02-28-challenges-for-delivering-machine-learning-in-health.md
+<!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2017-03-13-challenges-in-ml-and-data-science.slides.html 2017-03-13-challenges-in-ml-and-data-science.md
 -->
 
 
@@ -44,6 +44,20 @@ Machine Learning Systems Design. --- its into value of data?
 ## {.slide: data-transition="none"}
 
 <object type="image/svg+xml" data="./diagrams/ai-bd-dl-google-trends-003.svg">
+</object>
+
+## What about IoT?
+
+
+
+## {.slide: data-transition="none"}
+
+<object type="image/svg+xml" data="./diagrams/bd-iot-google-trends-000.svg">
+</object>
+
+## {.slide: data-transition="none"}
+
+<object type="image/svg+xml" data="./diagrams/bd-iot-google-trends-001.svg">
 </object>
 
 
