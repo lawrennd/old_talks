@@ -293,7 +293,7 @@ question or to be subject to a particular analysis.
 
 ## Machine Learning Systems Design
 
-<img src="./diagrams/SteamEngine_Boulton\&Watt_1784_neg.png" width="50%" style="border:none">
+<img src="./diagrams/SteamEngine_Boulton&Watt_1784_neg.png" width="50%" style="border:none">
 
 ## Turnaround And Update
 
