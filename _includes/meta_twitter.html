@@ -1,0 +1,6 @@
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="{{ page.title }}"/>{% if site.twitter_username %}
+<meta name="twitter:site" content="@{{ site.twitter_username }}" />{% endif %}
+<meta name="twitter:description" content="{{ page.abstract | truncate: 160 }}"/>{% if site.conference.logo %}
+<meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}{{ site.conference.logo }}"/>
+<meta name="twitter:image:alt" content="Conference Logo"/>{% endif %}
