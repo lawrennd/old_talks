@@ -15,5 +15,6 @@ year: 2017
 layout: talk
 published: 2017-03-16
 venue: The Guardian Changing Media Summit
+ppt: 2017-03-16-rise-of-the-algorithm.pptx
 venue_url: "https://www.theguardian.com/media/2016/oct/17/changing-media-summit-2017-programme"
 ---

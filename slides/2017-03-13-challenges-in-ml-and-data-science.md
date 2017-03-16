@@ -16,11 +16,6 @@ affiliation: Amazon and University of Sheffield
 -->
 
 
-To add: security and privacy. Stuxnet. Fog Computing
-
-Machine Learning Systems Design. --- its into value of data?
-
-
 ## Gartner Hype Cycle
 
 
@@ -70,6 +65,27 @@ Machine Learning Systems Design. --- its into value of data?
 * Data preprocessing: Internet of Intelligence.
 
 
+## "Embodiment Factors"
+
+<table>
+<tr><td></td><td align="center">
+<img src="./diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="60%" style="background:none; border:none; box-shadow:none;" align="center">
+</td>
+<td align="center">
+<img src="./diagrams/ClaudeShannon_MFO3807.jpg" width="100%" style="background:none; border:none; box-shadow:none;" align="center">
+</td>
+</tr>
+<tr>
+<td>compute</td><td align="center">~10 gigaflops</td><td align="center">~ 1000 teraflops?</td>
+</tr>
+<tr>
+<td>communicate</td><td align="center">~1 gigbit/s</td><td align="center">~ 100 bit/s</td>
+</tr>
+<tr>
+<td>embodiment<br>(compute/communicate)</td><td align="center">10</td><td align="center">~ 10<sup>13</sup></td>
+</tr>
+</table>
+
 
 ## Evolved Relationship 
 
@@ -85,7 +101,7 @@ Machine Learning Systems Design. --- its into value of data?
 
 * What does it mean for IoT
 
-### Internet of People
+## Internet of People
 
 * Fog computing: barrier between cloud and device blurring.
 
@@ -275,9 +291,13 @@ question or to be subject to a particular analysis.
 
 * The experience evolved adversarial behaviour.
 
+## Machine Learning Systems Design
+
+<img src="./diagrams/SteamEngine_Boulton&Watt_1784_neg.png" width="50%" style="border:none">
+
 ## Turnaround And Update
 
-* THere is a massive need for turn around and update
+* There is a massive need for turn around and update
 
 * A redeploy of the entire system.
      *  This involves changing the way we design and deploy.
