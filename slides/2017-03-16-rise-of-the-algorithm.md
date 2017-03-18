@@ -1,58 +1,192 @@
 ---
-title: Challenges and Opportunities in Machine Learning and Artificial Intelligence
-venue: ARM, Cambridge
+title: The Rise of the Algorithm
+venue: The Guardian Changing Media Summit
 layout: slides
-date: 2017-03-13
+date: 2017-03-16
 author: Neil D. Lawrence
 affiliation: Amazon and University of Sheffield
 ---
 
-### ARM Data Science Conference
-### 2017-03-13
+### The Guardian Changing Media Summit
+### 2017-03-16
 ### Neil D. Lawrence
 ### Amazon and University of Sheffield
 ```@lawrennd``` [inverseprobability.com](http://inverseprobability.com)
-<!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2017-03-13-challenges-in-ml-and-data-science.slides.html 2017-03-13-challenges-in-ml-and-data-science.md
+<!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2017-03-16-rise-of-the-algorithm.slides.html 2017-03-16-rise-of-the-algorithm.md
 -->
 
 
-## Gartner Hype Cycle
+## 
 
-
-<img src="./diagrams/Gartner_Hype_Cycle-neg.png" align="center" width="70%" style="background:none; border:none; box-shadow:none;">
+<img src="./diagrams/alphagonature.jpg" align="center" height="100%" style="background:none; border:none; box-shadow:none;">
 
 ## {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="./diagrams/ai-bd-dl-google-trends-000.svg">
+<table width="100%" border="0" rules=none>
+<tr>
+<td style="text-align: center; vertical-align:middle;" width="50%">
+<img src="./diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="70%"
+style="background:none; border:none; box-shadow:none; text-align: center; vertical-align:middle;">
+</td>
+<td style="text-align: center; vertical-align:middle;" width="50%">
+<table  style="border: none; rules: none">
+<tr><td style="text-align: center; vertical-align:middle;">~10 gigaflops</td></tr>
+<tr><td style="text-align: center; vertical-align:middle;">~1 gigbit/s</td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align:middle;" width="50%">
+<img src="./diagrams/ClaudeShannon_MFO3807.jpg" width="50%"
+style="background:none; border:none; box-shadow:none; text-align: center; vertical-align:middle;">
+</td>
+<td  style="text-align: center; vertical-align:middle;">
+<table  border="0">
+<tr><td style="text-align: center; vertical-align:middle;">~ 1000 teraflops?</td></tr>
+<tr><td style="text-align: center; vertical-align:middle;"> ~100 bits/s?</td></tr>
+</table>
+</td>
+</tr>
+</table>
+
+## {.slide: data-transition="none"}
+
+<table width="100%" border="0" rules=none>
+<tr>
+<td style="text-align: center; vertical-align:middle;" width="50%">
+<img src="./diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="70%"
+style="background:none; border:none; box-shadow:none; text-align: center; vertical-align:middle;">
+</td>
+<td style="text-align: center; vertical-align:middle;" width="50%">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align:middle;" width="50%">
+<img src="./diagrams/ClaudeShannon_MFO3807.jpg" width="50%"
+style="background:none; border:none; box-shadow:none; text-align: center; vertical-align:middle;">
+</td>
+<td  style="text-align: center; vertical-align:middle;">
+~ 10<sup>13</sup>
+</td>
+</tr>
+</table>
+
+## {.slide: data-transition="none"}
+
+<img src="./diagrams/640px-Marcel_Renault_1903.jpg" align="center" width="70%" style="background:none; border:none; box-shadow:none;">
+
+## {.slide: data-transition="none"}
+
+<img src="./diagrams/Caleb_McDuff_WIX_Silence_Racing_livery.jpg" align="center" width="70%" style="background:none; border:none;
+box-shadow:none;">
+
+## {.slide: data-transition="none"}
+
+<img src="./diagrams/George-peabody-library.jpg" align="center" width="70%" style="background:none; border:none;
+box-shadow:none;">
+
+## {.slide: data-transition="none"}
+
+<object type="image/svg+xml" data="./diagrams/Hilbert_InfoGrowth_neg.svg">
+</object>
+
+
+./diagrams/20160609_132338.jpg
+
+./diagrams/20160609_132315.jpg 
+## {.slide: data-transition="none"}
+
+<object type="image/svg+xml" data="./diagrams/data-science-information-flow_neg003.svg ">
 </object>
 
 ## {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="./diagrams/ai-bd-dl-google-trends-001.svg">
+<img src="./diagrams/Caleb_McDuff_WIX_Silence_Racing_livery.jpg" align="center" width="70%" style="background:none; border:none;
+box-shadow:none;">
+
+## {.slide: data-transition="none"}
+
+<img src="./diagrams/Hodder-stoughton-1918-the-new-revelation.jpg" align="center" width="70%" style="background:none; border:none;
+box-shadow:none;">
+
+## {.slide: data-transition="none"}
+
+<img src="./diagrams/Elephantboyposter.jpg" align="center" width="70%" style="background:none; border:none;
+box-shadow:none;">
+
+./diagrams/16281468370_ea3702e83f_k.jpg 
+
+## {.slide: data-transition="none"}
+
+<img src="./diagrams/Medievalplowingwoodcut.jpg" align="center" width="70%" style="background:none; border:none;
+box-shadow:none;">
+
+## {.slide: data-transition="none"}
+
+<img src="./diagrams/elephant-1065632_1920.jpg" align="center" width="70%" style="background:none; border:none;
+box-shadow:none;">
+
+./diagrams/Palazzo_San_Georgio_Genova_W.jpg
+
+## {.slide: data-transition="none"}
+
+<object type="image/svg+xml" data="./diagrams/data-science-information-flow_neg003.svg ">
 </object>
 
 ## {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="./diagrams/ai-bd-dl-google-trends-002.svg">
+<img src="./diagrams/deepface_neg.png" align="center" width="70%" style="background:none; border:none;
+box-shadow:none;">
+
+## {.slide: data-transition="none"}
+
+<object type="image/svg+xml" data="./diagrams/pinball-initial.svg">
 </object>
 
 ## {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="./diagrams/ai-bd-dl-google-trends-003.svg">
-</object>
-
-## What about IoT?
-
-
-
-## {.slide: data-transition="none"}
-
-<object type="image/svg+xml" data="./diagrams/bd-iot-google-trends-000.svg">
+<object type="image/svg+xml" data="./diagrams/pinball-final.svg">
 </object>
 
 ## {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="./diagrams/bd-iot-google-trends-001.svg">
+<object type="image/svg+xml" data="./diagrams/anne-bob-conversation000.svg">
+</object>
+
+## {.slide: data-transition="none"}
+
+<object type="image/svg+xml" data="./diagrams/anne-bob-conversation001.svg">
+</object>
+
+## {.slide: data-transition="none"}
+
+<object type="image/svg+xml" data="./diagrams/anne-bob-conversation002.svg">
+</object>
+
+## {.slide: data-transition="none"}
+
+<object type="image/svg+xml" data="./diagrams/anne-bob-conversation003.svg">
+</object>
+
+## {.slide: data-transition="none"}
+
+<object type="image/svg+xml" data="./diagrams/anne-bob-conversation004.svg">
+</object>
+
+## {.slide: data-transition="none"}
+
+<object type="image/svg+xml" data="./diagrams/anne-bob-conversation005.svg">
+</object>
+
+## {.slide: data-transition="none"}
+
+<object type="image/svg+xml" data="./diagrams/anne-bob-conversation006.svg">
+</object>
+
+## {.slide: data-transition="none"}
+
+<object type="image/svg+xml" data="./diagrams/anne-bob-conversation007.svg">
 </object>
 
 
@@ -67,24 +201,6 @@ affiliation: Amazon and University of Sheffield
 
 ## "Embodiment Factors"
 
-<table>
-<tr><td></td><td align="center">
-<img src="./diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="60%" style="background:none; border:none; box-shadow:none;" align="center">
-</td>
-<td align="center">
-<img src="./diagrams/ClaudeShannon_MFO3807.jpg" width="100%" style="background:none; border:none; box-shadow:none;" align="center">
-</td>
-</tr>
-<tr>
-<td>compute</td><td align="center">~10 gigaflops</td><td align="center">~ 1000 teraflops?</td>
-</tr>
-<tr>
-<td>communicate</td><td align="center">~1 gigbit/s</td><td align="center">~ 100 bit/s</td>
-</tr>
-<tr>
-<td>embodiment<br>(compute/communicate)</td><td align="center">10</td><td align="center">~ 10<sup>13</sup></td>
-</tr>
-</table>
 
 
 ## Evolved Relationship 
