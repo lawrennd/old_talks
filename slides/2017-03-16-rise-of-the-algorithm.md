@@ -18,7 +18,7 @@ affiliation: Amazon and University of Sheffield
 
 ## 
 
-<img src="./diagrams/alphagonature.jpg" align="center" height="100%" style="background:none; border:none; box-shadow:none;">
+<img src="./diagrams/alphagonature.jpg" align="center" width="50%" style="background:none; border:none; box-shadow:none;">
 
 ## {.slide: data-transition="none"}
 
@@ -92,62 +92,84 @@ box-shadow:none;">
 </object>
 
 
-./diagrams/20160609_132338.jpg
-
-./diagrams/20160609_132315.jpg 
 ## {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="./diagrams/data-science-information-flow_neg003.svg ">
-</object>
-
-## {.slide: data-transition="none"}
-
-<img src="./diagrams/Caleb_McDuff_WIX_Silence_Racing_livery.jpg" align="center" width="70%" style="background:none; border:none;
+<img src="./diagrams/20160609_132315.jpg" align="center" width="70%" style="background:none; border:none;
 box-shadow:none;">
 
 ## {.slide: data-transition="none"}
 
-<img src="./diagrams/Hodder-stoughton-1918-the-new-revelation.jpg" align="center" width="70%" style="background:none; border:none;
+<img src="./diagrams/20160609_132338.jpg" align="center" width="70%" style="background:none; border:none;
 box-shadow:none;">
 
 ## {.slide: data-transition="none"}
 
-<img src="./diagrams/Elephantboyposter.jpg" align="center" width="70%" style="background:none; border:none;
+<img src="./diagrams/rapid-diagnosis-and-consultation-save-lives.png" align="center" width="70%" style="background:none; border:none;
 box-shadow:none;">
-
-./diagrams/16281468370_ea3702e83f_k.jpg 
-
-## {.slide: data-transition="none"}
-
-<img src="./diagrams/Medievalplowingwoodcut.jpg" align="center" width="70%" style="background:none; border:none;
-box-shadow:none;">
-
-## {.slide: data-transition="none"}
-
-<img src="./diagrams/elephant-1065632_1920.jpg" align="center" width="70%" style="background:none; border:none;
-box-shadow:none;">
-
-./diagrams/Palazzo_San_Georgio_Genova_W.jpg
 
 ## {.slide: data-transition="none"}
 
 <object type="image/svg+xml" data="./diagrams/data-science-information-flow_neg003.svg ">
 </object>
 
+
 ## {.slide: data-transition="none"}
+
+<img src="./diagrams/Elephantboyposter.jpg" align="center" width="50%" style="background:none; border:none;
+box-shadow:none;">
+
+## {.slide: data-transition="none"}
+
+<img src="./diagrams/Hodder-stoughton-1918-the-new-revelation.jpg" align="center" width="50%" style="background:none; border:none;
+box-shadow:none;">
+
+## {.slide: data-transition="none"}
+<p style="text-align:center;font-size: 0.5em;">Outline of the DeepFace architecture. A front-end of a single convolution-pooling-convolution filtering on the rectified input, followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected layers.</p>
 
 <img src="./diagrams/deepface_neg.png" align="center" width="70%" style="background:none; border:none;
 box-shadow:none;">
 
+<p style="text-align:right; font-size: 0.5em;">Source: DeepFace</p>
+## {.slide: data-transition="none"}
+<p style="text-align:center;">$g(\mathbf{x})$</p>
+<img src="./diagrams/deepface_neg.png" align="center" width="70%" style="background:none; border:none;
+box-shadow:none;">
+<p style="text-align:center;font-size:0.7em">$f_{1}(\cdot)$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$f_{2}(\cdot)$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+$f_3(\cdot)$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$f_4(\cdot)$&nbsp;&nbsp;$f_5(\cdot)$&nbsp;&nbsp;&nbsp;&nbsp;$f_6(\cdot)$&nbsp;&nbsp;$f_7(\cdot)$&nbsp;&nbsp;
+$f_8(\cdot)$&nbsp;&nbsp;$f_9(\cdot)$&nbsp;&nbsp;$f_{10}(\cdot)$</p>
+
+<p style="text-align:center;">$$g(\mathbf{x}) = f_{10}\left(f_{9}\left(f_{8}\left(f_{7}\left(f_{6}\left(f_{5}\left(f_{4}\left(f_{3}\left(f_{2}\left(f_{1}\left(\mathbf{x}\right)\right)\right)\right)\right)\right)\right)\right)\right)\right)$$ </p>
+
 ## {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="./diagrams/pinball-initial.svg">
+<table width="100%">
+<tr><td width="10%" style="text-align:center;
+vertical-align:middle">$$f_1(\mathbf{x})$$ $$f_2(\cdot)$$
+$$f_3(\cdot)$$</td><td  style="text-align:center; vertical-align:middle"><object type="image/svg+xml" data="./diagrams/pinball-initial.svg">
 </object>
-
+</td></tr>
+</table>
 ## {.slide: data-transition="none"}
 
 <object type="image/svg+xml" data="./diagrams/pinball-final.svg">
 </object>
+
+## {.slide: data-transition="none"}
+
+<img src="./diagrams/16281468370_ea3702e83f_k.jpg" align="center" width="70%" style="background:none; border:none;
+box-shadow:none;">
+
+## {.slide: data-transition="none"}
+
+<img src="./diagrams/The_hindoo_earth.jpg" align="center" width="70%" style="background:none; border:none;
+box-shadow:none;">
+
+## {.slide: data-transition="none"}
+
+<img src="./diagrams/Steen_Doctor_and_His_Patient.jpg" align="center" width="40%" style="background:none; border:none;
+box-shadow:none;">
+<img src="./diagrams/Palazzo_San_Georgio_Genova_W.jpg" align="center" width="40%" style="background:none; border:none;
+box-shadow:none;">
 
 ## {.slide: data-transition="none"}
 
@@ -189,248 +211,22 @@ box-shadow:none;">
 <object type="image/svg+xml" data="./diagrams/anne-bob-conversation007.svg">
 </object>
 
+## {.slide: data-transition="none"}
 
-## Background: Big Data
+<img src="./diagrams/rothenburg-of-the-deaf-1624164_1920.jpg" align="center" width="70%" style="background:none; border:none;
+box-shadow:none;">
 
-* The pervasiveness of data brings forward particular challenges.
+## {.slide: data-transition="none"}
 
-* Emerging themes: Devolving compute onto device. 
+<img src="./diagrams/Medievalplowingwoodcut.jpg" align="center" width="70%" style="background:none; border:none;
+box-shadow:none;">
 
-* Data preprocessing: Internet of Intelligence.
+## {.slide: data-transition="none"}
 
-
-## "Embodiment Factors"
-
-
-
-## Evolved Relationship 
-
-<object type="image/svg+xml" data="./diagrams/data-science-information-flow_neg003.svg">
-</object>
-
-
-## Effects
-
-* This phenomenon has already revolutionised biology.
-
-* Large scale data acquisition and distribution.
-
-* What does it mean for IoT
-
-## Internet of People
-
-* Fog computing: barrier between cloud and device blurring.
-
-* Stuxnet: Adversarial and Security implications for intelligent systems.
-
-* Complex feedback between algorithm and implementation
-  
-
-## Challenges
-
-1. Paradoxes of the Data Society
-
-2. Quantifying the Value of Data
-
-3. Privacy, loss of control, marginalisation
-
-## Wood or Tree
-
-* Can either see a wood or a tree. 
-
-<img src="./diagrams/Grib_skov.jpg" width="50%" style="border:none">
-<!-- https://upload.wikimedia.org/wikipedia/commons/5/5b/Grib_skov.jpg-->
-
-## Examples
-
-* Election polls (UK 2015 elections, EU referendum, US 2016 elections)
-
-* Clinical trials vs personalized medicine: Obtaining statistical power where interventions are subtle. e.g. social media
-
-
-## Breadth vs Depth
-
-* Modern Measurement deals with *depth* (many subjects)
-    ... or *breadth* lots of detail about subject.
-	
-* But what about 
-    * $p\approx n$?
-    * Stratification of populations: batch effects etc.
-
-* Will summarization be devolved to the device?
-
-* Advantages for privacy and latency.
-
-## Also need
-
-* More classical statistics!
-    * Like the 'paperless office'
-
-* A better characterization of human 
-
-## Quantifying the Value of Data
-
-There's a sea of data, but most of it is undrinkable
-
-<img src="./diagrams/sea-water-ocean-waves.jpg" width="50%">
-
-We require data-desalination before it can be consumed!
-
-
-## Data --- Quotes from NIPS Workshop on ML for Healthcare
-
-* 90% of our time is spent on validation and integration (Leo Anthony Celi)
-* "The Dirty Work We Don't Want to Think About" (Eric Xing)
-* "Voodoo to get it decompressed" (Francisco Giminez)
-* In health care clinicians collect the data and often control the direction of research through guardianship of data.
-
-## Value
-
-* How do we measure value in the data economy?
-* How do we encourage data workers: curation and management
-    * Incentivization for sharing and production.
-    * Quantifying the value in the contribution of *each actor*.
-
-
-## Embodiment: Data Readiness Levels
-
-* Three Bands of Data Readiness:
-
-* Band C - accessibility
-
-* Band B - validity
-
-* Band A - usability
-
-
-## Accessibility: Band C
-
-* Hearsay data.
-* Availability, is it actually being recorded?
-* privacy or legal constraints on the accessibility of the recorded data, have ethical constraints been alleviated?
-* Format: log books, PDF ...
-* limitations on access due to topology (e.g. it's distributed across a number of devices)
-
-## Validity: Band B
-
-*  faithfulness and representation
-* visualisations.
-* noise characterisation.
-* Missing values.
-* Example, was a column or columns accidentally perturbed (e.g. through a sort operation that missed one or more columns)? Or was a [gene name accidentally converted to a date](http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-5-80)?
-
-## Usability: Band A
-
-* The usability of data
-* Band A is about data in context.
-* Consider appropriateness of a given data set to answer a particular
-question or to be subject to a particular analysis.
-
-## Recursive Effects
-
-* Band A may also require
-    * active collection of new data. 
-    * annotation of data by human experts
-    * revisiting the collection (and running through the appropriate stages again)
-
-## Also ...
-
-* Encourage greater interaction between application domains and data scientists
-
-* Encourage *visualization* of data
-
-* Incentivise the delivery of data.
-
-## See Also ...
-
-* Data Joel Tests proposal by Damon Civin (ARM)
-
-
-## Privacy, Loss of Control and Marginalization
-
-* Society is becoming harder to monitor
-
-* Individual is becoming easier to monitor
-
-## Discrimination
-
-* Marketing can become more sinister when the target of the marketing is well understood and the (digital) environment of the target is also so well controlled
-
-* Potential for explicit and implicit discrimination on the basis of race, religion, sexuality, health status
-
-* All prohibited under European law, but can pass unawares, or be implicit
-
-
-## Marginalization
-
-* Credit scoring, insurance, medical treatment
-* What if certain sectors of society are under-represented in our aanalysis?
-* What if Silicon Valley develops everything for us?
-
-## Digital Revolution and Inequality?
-
-<img src="./diagrams/woman-tends-house-in-village-of-uganda-africa.jpg" width="50%" style="border:none">
-
-## Amelioration
-
-* Work to ensure individual retains control of their own data
-* We accept privacy in our real lives, need to accept it in our digital
-* Control of persona and ability to project
-
-* Need better technological solutions: trust and algorithms.
-
-
-## Finally: Machine Learning Systems Design
-
-* Major new challenge for systems designers.
-
-* Internet of Intelligence but currently:
-
-	* AI systems are currently *fragile*
-
-## Fragility of AI Systems
-
-* They are componentwise built from ML Capabilities.
-
-* Each capability is independently constructed and verified.
-
-   * Pedestrian detection
-   * Road line detection
-
-* Important for verification purposes.
-
-## Rapid Reimplementation
-
-* Whole systems are being deployed.
-
-* But they change their environment.
-
-* The experience evolved adversarial behaviour.
-
-## Machine Learning Systems Design
-
-<img src="./diagrams/SteamEngine_Boulton&Watt_1784_neg.png" width="50%" style="border:none">
-
-## Turnaround And Update
-
-* There is a massive need for turn around and update
-
-* A redeploy of the entire system.
-     *  This involves changing the way we design and deploy.
-
-* Early Example: Stuxnet.
-
-## Conclusion
-
-* Data science offers a great deal of promise for personalized health
-* There are challenges and pitfalls
-* It is incumbent on us to avoid them
-
-**Many solutions rely on education and awareness**
-
-* There are particular challenges around the Internet of Intelligence. 
+<img src="./diagrams/elephant-1065632_1920.jpg" align="center" width="70%" style="background:none; border:none;
+box-shadow:none;">
 
 ## Thanks!
 
-* twitter: @lawrennd
-* blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
+<p style="text-align:center;"> @lawrennd</p>
+<p style="text-align:center;">blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)</p>
