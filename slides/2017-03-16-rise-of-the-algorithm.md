@@ -94,13 +94,11 @@ box-shadow:none;">
 
 ## {.slide: data-transition="none"}
 
-<img src="./diagrams/20160609_132315.jpg" align="center" width="70%" style="background:none; border:none;
-box-shadow:none;">
+<img src="./diagrams/20160609_132315.jpg" align="center" width="70%" style="background:none; border:none;box-shadow:none;" class="rotateimg90">
 
 ## {.slide: data-transition="none"}
 
-<img src="./diagrams/20160609_132338.jpg" align="center" width="70%" style="background:none; border:none;
-box-shadow:none;">
+<img src="./diagrams/20160609_132338.jpg" align="center" width="70%" style="background:none; border:none;box-shadow:none;" class="rotateimg90">
 
 ## {.slide: data-transition="none"}
 
@@ -124,13 +122,16 @@ box-shadow:none;">
 box-shadow:none;">
 
 ## {.slide: data-transition="none"}
+
 <p style="text-align:center;font-size: 0.5em;">Outline of the DeepFace architecture. A front-end of a single convolution-pooling-convolution filtering on the rectified input, followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected layers.</p>
 
 <img src="./diagrams/deepface_neg.png" align="center" width="70%" style="background:none; border:none;
 box-shadow:none;">
 
 <p style="text-align:right; font-size: 0.5em;">Source: DeepFace</p>
+
 ## {.slide: data-transition="none"}
+
 <p style="text-align:center;">$g(\mathbf{x})$</p>
 <img src="./diagrams/deepface_neg.png" align="center" width="70%" style="background:none; border:none;
 box-shadow:none;">
@@ -149,10 +150,16 @@ $$f_3(\cdot)$$</td><td  style="text-align:center; vertical-align:middle"><object
 </object>
 </td></tr>
 </table>
+
 ## {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="./diagrams/pinball-final.svg">
+<table width="100%">
+<tr><td width="10%" style="text-align:center;
+vertical-align:middle">$$f_1(\mathbf{x})$$ $$f_2(\cdot)$$
+$$f_3(\cdot)$$</td><td  style="text-align:center; vertical-align:middle"><object type="image/svg+xml" data="./diagrams/pinball-final.svg">
 </object>
+</td></tr>
+</table>
 
 ## {.slide: data-transition="none"}
 
@@ -213,18 +220,15 @@ box-shadow:none;">
 
 ## {.slide: data-transition="none"}
 
-<img src="./diagrams/rothenburg-of-the-deaf-1624164_1920.jpg" align="center" width="70%" style="background:none; border:none;
-box-shadow:none;">
+<a href="https://pixabay.com/en/rothenburg-of-the-deaf-1624164/"><img src="./diagrams/rothenburg-of-the-deaf-1624164_1920.jpg" align="center" width="70%" style="background:none; border:none;box-shadow:none;"></a>
 
 ## {.slide: data-transition="none"}
 
-<img src="./diagrams/Medievalplowingwoodcut.jpg" align="center" width="70%" style="background:none; border:none;
-box-shadow:none;">
+<a href="https://commons.wikimedia.org/wiki/File:Medievalplowingwoodcut.jpg"><img src="./diagrams/Medievalplowingwoodcut.jpg" align="center" width="90%" style="background:none; border:none;box-shadow:none;"></a>
 
 ## {.slide: data-transition="none"}
 
-<img src="./diagrams/elephant-1065632_1920.jpg" align="center" width="70%" style="background:none; border:none;
-box-shadow:none;">
+<a href="https://pixabay.com/en/elephant-watering-hole-safari-1065632/"><img src="./diagrams/elephant-1065632_1920.jpg" align="center" width="70%" style="background:none; border:none;box-shadow:none;"></a>
 
 ## Thanks!
 
