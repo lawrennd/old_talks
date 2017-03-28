@@ -35,7 +35,6 @@ blog: 2017-01-12-data-readiness-levels.md
 id: Lawrence-health17
 layout: talk
 month: 2
-reveal: null
 section: pre
 year: '2017'
 ---
