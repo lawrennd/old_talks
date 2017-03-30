@@ -1,5 +1,3 @@
-
-
 ---
 title: Machine Learning and the Data Science Process
 venue: OxWaSP Workshop, Amazon, Berlin
