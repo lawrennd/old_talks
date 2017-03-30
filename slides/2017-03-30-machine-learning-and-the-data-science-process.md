@@ -23,38 +23,41 @@ affiliation: Amazon and University of Sheffield
 
 ## {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="./diagrams/ai-bd-dl-google-trends-000.svg">
+<object type="image/svg+xml" data="./diagrams/ml-ai-ds-google-trends-000.svg">
 </object>
 
 ## {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="./diagrams/ai-bd-dl-google-trends-001.svg">
+<object type="image/svg+xml" data="./diagrams/ml-ai-ds-google-trends-001.svg">
 </object>
 
 ## {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="./diagrams/ai-bd-dl-google-trends-002.svg">
+<object type="image/svg+xml" data="./diagrams/ml-ai-ds-google-trends-002.svg">
 </object>
 
 ## {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="./diagrams/ai-bd-dl-google-trends-003.svg">
-</object>
-
-## What about IoT?
-
-
-
-## {.slide: data-transition="none"}
-
-<object type="image/svg+xml" data="./diagrams/bd-iot-google-trends-000.svg">
+<object type="image/svg+xml" data="./diagrams/ml-ai-ds-google-trends-003.svg">
 </object>
 
 ## {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="./diagrams/bd-iot-google-trends-001.svg">
+<object type="image/svg+xml" data="./diagrams/ml-ai-ds-google-trends-004.svg">
 </object>
 
+
+## Machine Learning
+
+$$ \text{data} + \text{model} \rightarrow \text{prediction}$$
+
+## Machine Learning
+
+* Normal ML (& stats?) focus: model
+
+* In real world need more focus on: data
+
+* motivation for data science
 
 ## Background: Big Data
 
@@ -118,39 +121,16 @@ affiliation: Amazon and University of Sheffield
 
 3. Privacy, loss of control, marginalisation
 
-## Wood or Tree
+## Challenges {.slide: data-transition="none"}
 
-* Can either see a wood or a tree. 
+1. ~~Paradoxes of the Data Society~~
 
-<img src="./diagrams/Grib_skov.jpg" width="50%" style="border:none">
-<!-- https://upload.wikimedia.org/wikipedia/commons/5/5b/Grib_skov.jpg-->
+2. Quantifying the Value of Data
 
-## Examples
+3. ~~Privacy, loss of control, marginalisation~~
 
-* Election polls (UK 2015 elections, EU referendum, US 2016 elections)
+4. Deploying AI in the real world.
 
-* Clinical trials vs personalized medicine: Obtaining statistical power where interventions are subtle. e.g. social media
-
-
-## Breadth vs Depth
-
-* Modern Measurement deals with *depth* (many subjects)
-    ... or *breadth* lots of detail about subject.
-	
-* But what about 
-    * $p\approx n$?
-    * Stratification of populations: batch effects etc.
-
-* Will summarization be devolved to the device?
-
-* Advantages for privacy and latency.
-
-## Also need
-
-* More classical statistics!
-    * Like the 'paperless office'
-
-* A better characterization of human 
 
 ## Quantifying the Value of Data
 
@@ -176,7 +156,7 @@ We require data-desalination before it can be consumed!
     * Quantifying the value in the contribution of *each actor*.
 
 
-## Embodiment: Data Readiness Levels
+## Embodiment: [Data Readiness Levels](http://inverseprobability.com/2017/01/12/data-readiness-levels)
 
 * Three Bands of Data Readiness:
 
@@ -225,46 +205,16 @@ question or to be subject to a particular analysis.
 
 * Incentivise the delivery of data.
 
+* Analogies: For SDEs [describe data science as *debugging*](http://inverseprobability.com/2017/03/14/data-science-as-debugging).
+
 ## See Also ...
 
-* Data Joel Tests proposal by Damon Civin (ARM)
+* Data Joel Tests
+    * [proposal by Damon Civin](https://medium.com/@damoncivin/the-joel-test-for-data-readiness-4882aae64753) and
+    * [proposal by Nick Elprin](https://blog.dominodatalab.com/joel-test-data-science/)
 
 
-## Privacy, Loss of Control and Marginalization
-
-* Society is becoming harder to monitor
-
-* Individual is becoming easier to monitor
-
-## Discrimination
-
-* Marketing can become more sinister when the target of the marketing is well understood and the (digital) environment of the target is also so well controlled
-
-* Potential for explicit and implicit discrimination on the basis of race, religion, sexuality, health status
-
-* All prohibited under European law, but can pass unawares, or be implicit
-
-
-## Marginalization
-
-* Credit scoring, insurance, medical treatment
-* What if certain sectors of society are under-represented in our aanalysis?
-* What if Silicon Valley develops everything for us?
-
-## Digital Revolution and Inequality?
-
-<img src="./diagrams/woman-tends-house-in-village-of-uganda-africa.jpg" width="50%" style="border:none">
-
-## Amelioration
-
-* Work to ensure individual retains control of their own data
-* We accept privacy in our real lives, need to accept it in our digital
-* Control of persona and ability to project
-
-* Need better technological solutions: trust and algorithms.
-
-
-## Finally: Machine Learning Systems Design
+## Deploying ML in Real World: Machine Learning Systems Design
 
 * Major new challenge for systems designers.
 
