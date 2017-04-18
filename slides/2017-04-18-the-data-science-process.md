@@ -165,7 +165,7 @@ We require data-desalination before it can be consumed!
 * privacy or legal constraints on the accessibility of the recorded data, have ethical constraints been alleviated?
 * Format: log books, PDF ...
 * limitations on access due to topology (e.g. it's distributed across a number of devices)
-
+* At the end of Band C data is ready to be loaded into analysis software (R, SPSS, Matlab, Python, Mathematica)
 ## Validity: Band B
 
 *  faithfulness and representation
@@ -180,6 +180,7 @@ We require data-desalination before it can be consumed!
 * Band A is about data in context.
 * Consider appropriateness of a given data set to answer a particular
 question or to be subject to a particular analysis.
+* At the end of Band A it's ready for RAMP, Kaggle, etc
 
 ## Recursive Effects
 
