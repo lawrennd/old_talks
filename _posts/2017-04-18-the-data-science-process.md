@@ -11,6 +11,8 @@ author:
 categories:
 - Lawrence-dsp17
 day: 18
+reveal: 2017-04-18-the-data-science-process.slides.html
+blog: 2017-01-12-data-readiness-levels.md
 errata: []
 extras: []
 key: Lawrence-dsp17
