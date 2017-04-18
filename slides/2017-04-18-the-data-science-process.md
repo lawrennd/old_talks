@@ -166,6 +166,7 @@ We require data-desalination before it can be consumed!
 * Format: log books, PDF ...
 * limitations on access due to topology (e.g. it's distributed across a number of devices)
 * At the end of Band C data is ready to be loaded into analysis software (R, SPSS, Matlab, Python, Mathematica)
+
 ## Validity: Band B
 
 *  faithfulness and representation
@@ -173,6 +174,7 @@ We require data-desalination before it can be consumed!
 * noise characterisation.
 * Missing values.
 * Example, was a column or columns accidentally perturbed (e.g. through a sort operation that missed one or more columns)? Or was a [gene name accidentally converted to a date](http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-5-80)?
+* At the end of Band B, ready to define a candidate question, the context.
 
 ## Usability: Band A
 
