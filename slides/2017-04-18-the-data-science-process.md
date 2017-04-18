@@ -4,7 +4,6 @@ abstract: In this talk we will focus on challenges in facilitating the data scie
 published: 2017-04-18
 venue: DALI Data Science Process Workshop
 layout: slides
-date: 2017-03-30
 author: Neil D. Lawrence
 affiliation: Amazon Research Cambridge and University of Sheffield
 ---
