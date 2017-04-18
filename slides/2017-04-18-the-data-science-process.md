@@ -258,7 +258,7 @@ question or to be subject to a particular analysis.
 
 ## Conclusion
 
-* Data science offers a great deal of promise for personalized health
+* Data science offers a great deal of promise.
 * There are challenges and pitfalls
 * It is incumbent on us to avoid them
 
