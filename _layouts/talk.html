@@ -37,7 +37,7 @@ layout: post
     <h3>Links</h3>
     <div id="extras">
     <ul>
-      {% if page.video %}<li><a href="{{ page.video }}">video</a></li>{% endif %}
+      {% if page.video %}<li><a href="{{ page.video }}"  target="_blank" onclick="ga('send', 'event', 'Video Downloads', 'Download', {{ page.video }}, 10);">video</a></li>{% endif %}
       {%if page.blog %}<li><a href="{% assign elems = page.blog | split: '-' %}{% for elem in elems %}{% if forloop.index0 < 4 %}/{% else %}-{% endif %}{% if forloop.last %}{{ elem | remove_first: '.md' }}{% else %}{{ elem }}{% endif %}{% endfor %}">Related Blog Post</a></li>{% endif %}
       {%if page.blog1 %}<li><a href="{% assign elems = page.blog1 | split: '-' %}{% for elem in elems %}{% if forloop.index0 < 4 %}/{% else %}-{% endif %}{% if forloop.last %}{{ elem | remove_first: '.md' }}{% else %}{{ elem }}{% endif %}{% endfor %}">Further Related Blog Post</a></li>{% endif %}
       {%if page.blog2 %}<li><a href="{% assign elems = page.blog2 | split: '-' %}{% for elem in elems %}{% if forloop.index0 < 4 %}/{% else %}-{% endif %}{% if forloop.last %}{{ elem | remove_first: '.md' }}{% else %}{{ elem }}{% endif %}{% endfor %}">Yet another Related Blog Post</a></li>{% endif %}
