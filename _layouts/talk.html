@@ -5,7 +5,7 @@ layout: post
 
   <article class="post-content">
 
-    {{ page.type }} at <b>{% if page.venue_url %}<a href="{{ page.venue_url }}">{% endif %}{{ page.venue }}{% if page.venue_url %}</a>{% endif %}</b> on {{ page.date | date: "%b %-d, %Y" }} {%if page.linkpdf %}[<a href="{{ page.linkpdf }}">pdf</a>]{% endif %}{%if page.linkpptgz %}[<a href="{{ page.linkpptgz }}">Gzipped Powerpoint</a>]{% endif %}{%if page.linkipynb %}[<a href="{{ site.nbviewer }}{{ page.linkipynb }}">jupyter</a>]{% endif %}{%if page.linkreveal %}[<a href="{{ page.linkreveal }}">reveal</a>]{% endif %}{%if page.pdf %}[<a href="{{ site.talk_files }}/{{ page.pdf }}">pdf</a>]{% endif %}{%if page.ipynb %}[<a href="{{ site.nbviewer }}{{ site.basenb }}{{ page.ipynb }}">jupyter</a>]{% endif %}{%if page.reveal %}[<a href="{{ site.talk_files }}{{ page.reveal }}">reveal</a>]{% endif %}
+    {{ page.type }} at <b>{% if page.venue_url %}<a href="{{ page.venue_url }}">{% endif %}{{ page.venue }}{% if page.venue_url %}</a>{% endif %}</b> on {{ page.date | date: "%b %-d, %Y" }} {%if page.linkpdf %}[<a href="{{ page.linkpdf }}">pdf</a>]{% endif %}{%if page.linkpptgz %}[<a href="{{ page.linkpptgz }}"  target="_blank" onclick="ga('send', 'event', 'PPT Downloads', 'Download', {{ page.linkpptgz }}, 10);">Gzipped Powerpoint</a>]{% endif %}{%if page.linkipynb %}[<a href="{{ site.nbviewer }}{{ page.linkipynb }}  target="_blank" onclick="ga('send', 'event', 'Jupyter Downloads', 'Download', {{ site.nbviewer }}{{ page.linkipynb }}, 10);">jupyter</a>]{% endif %}{%if page.linkreveal %}[<a href="{{ page.linkreveal }}"  target="_blank" onclick="ga('send', 'event', 'Reveal Downloads', 'Download', {{ page.linkreveal }}, 10);">reveal</a>]{% endif %}{%if page.pdf %}[<a href="{{ site.talk_files }}/{{ page.pdf }} target="_blank" onclick="ga('send', 'event', 'Reveal Downloads', 'Download', {{ site.talk_files }}{{ page.pdf }}, 10);">pdf</a>]{% endif %}{%if page.ipynb %}[<a href="{{ site.nbviewer }}{{ site.basenb }}{{ page.ipynb }}" target="_blank" onclick="ga('send', 'event', 'Jupyter Downloads', 'Download', {{ site.nbviewer }}{{ site.basenb }}{{ page.ipynb }}, 10);">jupyter</a>]{% endif %}{%if page.reveal %}[<a href="{{ site.talk_files }}{{ page.reveal }}" target="_blank" onclick="ga('send', 'event', 'Reveal Downloads', 'Download', {{ site.talk_files }}{{ page.reveal }}, 10);">reveal</a>]{% endif %}
     <div id="authors">
       {% assign lastone = page.author | last %}
       {% for person in page.author %}
@@ -41,17 +41,17 @@ layout: post
       {%if page.blog %}<li><a href="{% assign elems = page.blog | split: '-' %}{% for elem in elems %}{% if forloop.index0 < 4 %}/{% else %}-{% endif %}{% if forloop.last %}{{ elem | remove_first: '.md' }}{% else %}{{ elem }}{% endif %}{% endfor %}">Related Blog Post</a></li>{% endif %}
       {%if page.blog1 %}<li><a href="{% assign elems = page.blog1 | split: '-' %}{% for elem in elems %}{% if forloop.index0 < 4 %}/{% else %}-{% endif %}{% if forloop.last %}{{ elem | remove_first: '.md' }}{% else %}{{ elem }}{% endif %}{% endfor %}">Further Related Blog Post</a></li>{% endif %}
       {%if page.blog2 %}<li><a href="{% assign elems = page.blog2 | split: '-' %}{% for elem in elems %}{% if forloop.index0 < 4 %}/{% else %}-{% endif %}{% if forloop.last %}{{ elem | remove_first: '.md' }}{% else %}{{ elem }}{% endif %}{% endfor %}">Yet another Related Blog Post</a></li>{% endif %}
-      {%if page.ppt %}<li><a href="{{ site.talk_files }}/{{ page.ppt }}">Powerpoint</a></li>{% endif %}
-      {%if page.pdf %}<li><a href="{{ site.talk_files }}/{{ page.pdf }}">pdf</a></li>{% endif %}
-      {%if page.linkpdf %}<li><a href="{{ page.linkpdf }}">Download PDF</a></li>{% endif %}
-      {%if page.linkpsgz %}<li><a href="{{ page.linkpsgz }}">Download Gzipped Postscript</a></li>{% endif %}
-      {%if page.linkps %}<li><a href="{{ page.linkps }}">Download Postscript</a></li>{% endif %}
-      {%if page.linkppt %}<li><a href="{{ page.linkppt }}">Download PPT</a></li>{% endif %}
-      {%if page.linkpptgz %}<li><a href="{{ page.linkpptgz }}">Download Gzipped PPT</a></li>{% endif %}
-      {%if page.demo %}<li><a href="{{ site.talk_files }}/demos/{{ page.demo }}">demo code</a></li>{% endif %}
-      {%if page.linksoftware %}<li><a href="{{ page.linksoftware }}">Download Software</a></li>{% endif %}
+      {%if page.ppt %}<li><a href="{{ site.talk_files }}/{{ page.ppt }}" target="_blank" onclick="ga('send', 'event', 'PPT Downloads', 'Download', {{ post.pdf}}, 10);">Powerpoint</a></li>{% endif %}
+      {%if page.pdf %}<li><a href="{{ site.talk_files }}/{{ page.pdf }}" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', {{ site.talk_files}}/{{ page.pdf}}, 10);">pdf</a></li>{% endif %}
+      {%if page.linkpdf %}<li><a href="{{ page.linkpdf }}" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', {{ page.linkpdf}}, 10);">Download PDF</a></li>{% endif %}
+      {%if page.linkpsgz %}<li><a href="{{ page.linkpsgz }} target="_blank" onclick="ga('send', 'event', 'PS Downloads', 'Download', {{ page.linkpsgz}}, 10);"">Download Gzipped Postscript</a></li>{% endif %}
+      {%if page.linkps %}<li><a href="{{ page.linkps }} target="_blank" onclick="ga('send', 'event', 'PS Downloads', 'Download', {{ page.linkps}}, 10);"">Download Postscript</a></li>{% endif %}
+      {%if page.linkppt %}<li><a href="{{ page.linkppt }} target="_blank" onclick="ga('send', 'event', 'PPT Downloads', 'Download', {{ page.linkppt}}, 10);"">Download PPT</a></li>{% endif %}
+      {%if page.linkpptgz %}<li><a href="{{ page.linkpptgz }}" target="_blank" onclick="ga('send', 'event', 'PPT Downloads', 'Download', {{ page.linkppt}}, 10);">Download Gzipped PPT</a></li>{% endif %}
+      {%if page.demo %}<li><a href="{{ site.talk_files }}/demos/{{ page.demo }} target="_blank" onclick="ga('send', 'event', 'Demo Downloads', 'Download', {{ site.talk_files }}/demos/{{ page.demo }}, 10);"">demo code</a></li>{% endif %}
+      {%if page.linksoftware %}<li><a href="{{ page.linksoftware }}" target="_blank" onclick="ga('send', 'event', 'Software Downloads', 'Download', {{ page.linksoftware }}, 10);">Download Software</a></li>{% endif %}
       {% for extra in page.extras %}
-      <li><a href="{{ extra.link }}">{{ extra.label }}</a></li>
+      <li><a href="{{ extra.link }}" target="_blank" onclick="ga('send', 'event', '{{ extra.label }}', 'Download', {{ extra.link }}, 10);">{{ extra.label }}</a></li>
       {% endfor %}
     </ul>
   </div>
