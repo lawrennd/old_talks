@@ -313,6 +313,7 @@ be a total nightmare.
 * exploratory data analysis
 * noise characterisation.
 * Missing values.
+* Schema alignment, record linkage, data fusion? (Luna's talk)
 * Example, was a column or columns accidentally perturbed (e.g. through a sort operation that missed one or more columns)? Or was a [gene name accidentally converted to a date](http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-5-80)?
 * At the end of Band B, ready to define a candidate question, the
   context, load into OpenML
@@ -323,6 +324,7 @@ be a total nightmare.
 * Band A is about data in context.
 * Consider appropriateness of a given data set to answer a particular
 question or to be subject to a particular analysis.
+* Greg's talk, Enrica's talk, data integration?
 * At the end of Band A it's ready for RAMP, Kaggle, define a *task* in OpenML.
 
 ## Recursive Effects
