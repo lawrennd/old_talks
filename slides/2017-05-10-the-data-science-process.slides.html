@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Neil D. Lawrence">
+  <title>The Data Science Process</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="talks.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">The Data Science Process</h1>
+  <p class="author">Neil D. Lawrence</p>
+</section>
+
+<section class="slide level2">
+
+<h3 id="amlc-data-science-workshop-address">AMLC Data Science Workshop Address</h3>
+<h3 id="section">2017-04-18</h3>
+<h3 id="neil-d.-lawrence">Neil D. Lawrence</h3>
+<h3 id="amazon-research-cambridge-and-university-of-sheffield">Amazon Research Cambridge and University of Sheffield</h3>
+<p><code>@lawrennd</code> <a href="http://inverseprobability.com">inverseprobability.com</a> <!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2017-05-10-the-data-science-process.slides.html 2017-05-10-the-data-science-process.md
+--></p>
+</section>
+<section id="gartner-hype-cycle" class="slide level2">
+<h2>Gartner Hype Cycle</h2>
+<p><img src="./diagrams/Gartner_Hype_Cycle-neg.png" align="center" width="70%" style="background:none; border:none; box-shadow:none;"></p>
+</section>
+<section id="section-1" class="slide level2 slide:" data-transition="none">
+<h2></h2>
+<object type="image/svg+xml" data="./diagrams/ml-ai-ds-google-trends-000.svg">
+</object>
+</section>
+<section id="section-2" class="slide level2 slide:" data-transition="none">
+<h2></h2>
+<object type="image/svg+xml" data="./diagrams/ml-ai-ds-google-trends-001.svg">
+</object>
+</section>
+<section id="section-3" class="slide level2 slide:" data-transition="none">
+<h2></h2>
+<object type="image/svg+xml" data="./diagrams/ml-ai-ds-google-trends-002.svg">
+</object>
+</section>
+<section id="section-4" class="slide level2 slide:" data-transition="none">
+<h2></h2>
+<object type="image/svg+xml" data="./diagrams/ml-ai-ds-google-trends-003.svg">
+</object>
+</section>
+<section id="section-5" class="slide level2 slide:" data-transition="none">
+<h2></h2>
+<object type="image/svg+xml" data="./diagrams/ml-ai-ds-google-trends-004.svg">
+</object>
+</section>
+<section id="machine-learning" class="slide level2">
+<h2>Machine Learning</h2>
+<p><span class="math display">\[ \text{data} + \text{model} \rightarrow \text{prediction}\]</span></p>
+</section>
+<section id="machine-learning-1" class="slide level2">
+<h2>Machine Learning</h2>
+<ul>
+<li><p>Normal ML (&amp; stats?) focus: model</p></li>
+<li><p>In real world need more focus on: data</p></li>
+<li><p>motivation for data science</p></li>
+</ul>
+</section>
+<section id="background-big-data" class="slide level2">
+<h2>Background: Big Data</h2>
+<ul>
+<li><p>The pervasiveness of data brings forward particular challenges.</p></li>
+<li><p>Emerging themes: Devolving compute onto device.</p></li>
+<li><p>Data preprocessing: Internet of Intelligence.</p></li>
+</ul>
+</section>
+<section id="embodiment-factors" class="slide level2">
+<h2>“Embodiment Factors”</h2>
+<table>
+<tr>
+<td>
+</td>
+<td align="center">
+<img src="./diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="60%" style="background:none; border:none; box-shadow:none;" align="center">
+</td>
+<td align="center">
+<img src="./diagrams/ClaudeShannon_MFO3807.jpg" width="100%" style="background:none; border:none; box-shadow:none;" align="center">
+</td>
+</tr>
+<tr>
+<td>
+compute
+</td>
+<td align="center">
+~10 gigaflops
+</td>
+<td align="center">
+~ 1000 teraflops?
+</td>
+</tr>
+<tr>
+<td>
+communicate
+</td>
+<td align="center">
+~1 gigbit/s
+</td>
+<td align="center">
+~ 100 bit/s
+</td>
+</tr>
+<tr>
+<td>
+embodiment<br>(compute/communicate)
+</td>
+<td align="center">
+10
+</td>
+<td align="center">
+~ 10<sup>13</sup>
+</td>
+</tr>
+</table>
+</section>
+<section id="evolved-relationship" class="slide level2">
+<h2>Evolved Relationship</h2>
+<object type="image/svg+xml" data="./diagrams/data-science-information-flow_neg003.svg">
+</object>
+</section>
+<section id="challenges" class="slide level2">
+<h2>Challenges</h2>
+<ol type="1">
+<li><p>Paradoxes of the Data Society</p></li>
+<li><p>Quantifying the Value of Data</p></li>
+<li><p>Privacy, loss of control, marginalisation</p></li>
+</ol>
+</section>
+<section id="challenges-1" class="slide level2 slide:" data-transition="none">
+<h2>Challenges</h2>
+<ol type="1">
+<li><p>Paradoxes of the Data Society</p></li>
+<li><p>Quantifying the Value of Data</p></li>
+<li><p><del>Privacy, loss of control, marginalisation</del></p></li>
+<li><p>Machine Learning Systems Design</p></li>
+</ol>
+</section>
+<section id="breadth-vs-depth-paradox" class="slide level2">
+<h2>Breadth vs Depth Paradox</h2>
+<ul>
+<li><p>Able to quantify to a greater and greater degree the actions of individuals</p></li>
+<li><p>But less able to characterize society</p></li>
+<li><p>As we measure more, we understand less</p></li>
+</ul>
+</section>
+<section id="what" class="slide level2">
+<h2>What?</h2>
+<ul>
+<li><p>Perhaps greater preponderance of data is making society itself more complex</p></li>
+<li><p>Therefore traditional approaches to measurement are failing</p></li>
+<li><p>Curate’s egg of a society: it is only ‘measured in parts’</p></li>
+</ul>
+</section>
+<section id="wood-or-tree" class="slide level2">
+<h2>Wood or Tree</h2>
+<ul>
+<li>Can either see a wood or a tree.</li>
+</ul>
+<p><img src="./diagrams/Grib_skov.jpg" width="50%" style="border:none"> <!-- https://upload.wikimedia.org/wikipedia/commons/5/5b/Grib_skov.jpg--></p>
+</section>
+<section id="examples" class="slide level2">
+<h2>Examples</h2>
+<ul>
+<li><p>Election polls (UK 2015 elections, EU referendum, US 2016 elections)</p></li>
+<li><p>Clinical trial and personalized medicine</p></li>
+<li><p>Social media memes</p></li>
+<li><p>Filter bubbles and echo chambers</p></li>
+</ul>
+</section>
+<section id="the-maths" class="slide level2 slide:" data-transition="none">
+<h2>The Maths</h2>
+<p><span class="math display">\[ \mathbf{Y} = \begin{bmatrix}
+y_{1, 1} &amp; y_{1, 2} &amp;\dots &amp; y_{1,p}\\
+y_{2, 1} &amp; y_{2, 2} &amp;\dots &amp; y_{2,p}\\
+\vdots &amp; \vdots &amp;\dots &amp; \vdots\\
+y_{n, 1} &amp; y_{n, 2} &amp;\dots &amp; y_{n,p}
+\end{bmatrix} \in \Re^{n\times p}
+\]</span></p>
+</section>
+<section id="the-maths-1" class="slide level2 slide:" data-transition="none">
+<h2>The Maths</h2>
+<p><span class="math display">\[ \mathbf{Y} = \begin{bmatrix}
+\mathbf{y}^\top_{1, :} \\
+\mathbf{y}^\top_{2, :} \\
+\vdots \\
+\mathbf{y}^\top_{n, :}
+\end{bmatrix} \in \Re^{n\times p}
+\]</span></p>
+</section>
+<section id="the-maths-2" class="slide level2 slide:" data-transition="none">
+<h2>The Maths</h2>
+<p><span class="math display">\[ \mathbf{Y} = \begin{bmatrix}
+\mathbf{y}_{:, 1} &amp;
+\mathbf{y}_{:, 2} &amp;
+\dots &amp;
+\mathbf{y}_{:, p}
+\end{bmatrix} \in \Re^{n\times p}
+\]</span></p>
+<!-- This is the nature of modern streaming data, what has been called big data, although in the UK it looks like that term will gain a more diffuse meaning now that the government has associated a putative 189 billion pounds of funding to it. But the characteristic of massive missing data is particularly obvious when we look at clinical domains. EMIS, a Yorkshire based provider of software to General Practitioners, has 39 million patient records. When we consider clinical measurements, we need to build models that not only take into account all current clinical tests, but all tests that will be invented in the future. This leads to the idea of massive missing data. The classical statistical table of data is merely the special case where someone has filled in a block of information.  -->
+<!-- To deal with massively missing data we need to think about the *Kolmogorov consistency* of a process. Let me introduce Kolmogorov consistency by way of an example heard from Tony O'Hagan, but one that he credits originally to Michael Goldstein. Imagine you are on jury duty. You are asked to adjudicate on the guilt or innocence of Lord Safebury, and you are going to base your judgement on a model that is weighing all the evidence. You are just about to pronounce your decision when a maid comes running in and shouts "He didn't do it! He didn't do it!". The maid wasn't on the witness list and isn't accounted for in your model. How does this effect your inference? The pragmatists answer might be: not at all, because the maid wasn't in the model. But in the interests of justice we might want to include this information in our inference process. If, as a result of the maid's entry, we now think it is less likely that Lord Safebury committed the crime, then necessarily every time that the (unannounced) maid doesn't enter the room we have to assume that it is more likely that Safebury commited the crime (to ensure that the conditional probability of guilt given the maid's evidence normalizes. But we didn't know about the maid, so how can we account for this? Further, how can we account for all possible other surprise evidence, from the announced butlers, gardners, chauffeurs and footmen? Kolmogorov consistency (@Kolmogorov:grundbegriffe33) says that the net effect of marginalizing for all these potential bits of new information is null. It is a particular property of the model. Making it (only slightly) more formal, we can consider Kolmogorov consistency as a marginalization property of the model. We take the $n$ dimensional vector, $\mathbf{y}$, to be an (indexed) vector of all our instantiated observations of the world that we have *at the current time*. Then we take the $n^*$ dimensional vector, $\mathbf{y}^*$ to be the observations of the world that we are *yet to see*. -->
+</section>
+<section id="the-maths-3" class="slide level2 slide:" data-transition="none">
+<h2>The Maths</h2>
+<p><span class="math display">\[p(\mathbf{Y}|\boldsymbol{\theta}) = \prod_{i=1}^n p(\mathbf{y}_{i, :}|\boldsymbol{\theta})\]</span></p>
+</section>
+<section id="the-maths-4" class="slide level2 slide:" data-transition="none">
+<h2>The Maths</h2>
+<p><span class="math display">\[p(\mathbf{Y}|\boldsymbol{\theta}) = \prod_{i=1}^n p(\mathbf{y}_{i, :}|\boldsymbol{\theta})\]</span></p>
+<p><span class="math display">\[\log p(\mathbf{Y}|\boldsymbol{\theta}) = \sum_{i=1}^n \log p(\mathbf{y}_{i, :}|\boldsymbol{\theta})\]</span></p>
+</section>
+<section id="consistency" class="slide level2">
+<h2>Consistency</h2>
+<ul>
+<li><p>Typically <span class="math inline">\(\boldsymbol{\theta} \in \Re^{\mathcal{O}(p)}\)</span></p></li>
+<li><p>Consistency reliant on large sample approximation of KL divergence</p></li>
+</ul>
+<p><span class="math display">\[ \text{KL}(P(\mathbf{Y})|| p(\mathbf{Y}|\boldsymbol{\theta}))\]</span></p>
+<ul>
+<li><p>Minimization is equivalent to maximization of likelihood.</p></li>
+<li><p>A foundation stone of classical statistics.</p></li>
+</ul>
+</section>
+<section id="large-p" class="slide level2">
+<h2>Large <span class="math inline">\(p\)</span></h2>
+<ul>
+<li><p>For large <span class="math inline">\(p\)</span> the parameters are badly determined.</p></li>
+<li><p>Large <span class="math inline">\(p\)</span> small <span class="math inline">\(n\)</span> problem.</p></li>
+<li><p>Easily dealt with through definition.</p></li>
+</ul>
+</section>
+<section id="the-maths-5" class="slide level2 slide:" data-transition="none">
+<h2>The Maths</h2>
+<p><span class="math display">\[p(\mathbf{Y}|\boldsymbol{\theta}) = \prod_{j=1}^p p(\mathbf{y}_{:, j}|\boldsymbol{\theta})\]</span></p>
+<p><span class="math display">\[\log p(\mathbf{Y}|\boldsymbol{\theta}) = \sum_{j=1}^p \log p(\mathbf{y}_{:, j}|\boldsymbol{\theta})\]</span></p>
+</section>
+<section id="breadth-vs-depth" class="slide level2">
+<h2>Breadth vs Depth</h2>
+<ul>
+<li><p>Modern Measurement deals with <em>depth</em> (many subjects) … or <em>breadth</em> lots of detail about subject.</p></li>
+<li>But what about
+<ul>
+<li><span class="math inline">\(p\approx n\)</span>?</li>
+<li>Stratification of populations: batch effects etc.</li>
+</ul></li>
+</ul>
+</section>
+<section id="does-p-even-exist" class="slide level2">
+<h2>Does <span class="math inline">\(p\)</span> Even Exist?</h2>
+<ul>
+<li><p>Massively missing data.</p></li>
+<li><p>Classical bias towards tables.</p></li>
+<li><p>Streaming data.</p></li>
+</ul>
+</section>
+<section id="also-need" class="slide level2">
+<h2>Also need</h2>
+<ul>
+<li>More classical statistics!
+<ul>
+<li>Like the ‘paperless office’</li>
+</ul></li>
+<li><p>A better characterization of human (see later)</p></li>
+<li>Larger studies (100,000 genome)
+<ul>
+<li>Combined with complex models: algorithmic challenges</li>
+</ul></li>
+</ul>
+</section>
+<section id="quantifying-the-value-of-data" class="slide level2">
+<h2>Quantifying the Value of Data</h2>
+<p>There’s a sea of data, but most of it is undrinkable</p>
+<p><img src="./diagrams/sea-water-ocean-waves.jpg" width="50%"></p>
+<p>We require data-desalination before it can be consumed!</p>
+</section>
+<section id="data-quotes-from-nips-workshop-on-ml-for-healthcare" class="slide level2">
+<h2>Data — Quotes from NIPS Workshop on ML for Healthcare</h2>
+<ul>
+<li>90% of our time is spent on validation and integration (Leo Anthony Celi)</li>
+<li>“The Dirty Work We Don’t Want to Think About” (Eric Xing)</li>
+<li>“Voodoo to get it decompressed” (Francisco Giminez)</li>
+<li>In health care clinicians collect the data and often control the direction of research through guardianship of data.</li>
+</ul>
+</section>
+<section id="quotes-from-today" class="slide level2">
+<h2>Quotes from Today</h2>
+<ul>
+<li>Getting money from management for data collection and annotation can be a total nightmare.</li>
+</ul>
+</section>
+<section id="value" class="slide level2">
+<h2>Value</h2>
+<ul>
+<li><p>How do we measure value in the data economy?</p></li>
+<li><p>How do we encourage data workers: curation and management</p>
+<ul>
+<li><p>Incentivization for sharing and production.</p></li>
+<li><p>Quantifying the value in the contribution of <em>each actor</em>.</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="embodiment" class="slide level2">
+<h2>Embodiment:</h2>
+<p><a href="http://inverseprobability.com/2017/01/12/data-readiness-levels">Data Readiness Levels</a> (see also <a href="https://arxiv.org/pdf/1705.02245.pdf">arxiv</a>)</p>
+<ul>
+<li><p>Three Bands of Data Readiness:</p></li>
+<li><p>Band C - accessibility</p></li>
+<li><p>Band B - validity</p></li>
+<li><p>Band A - usability</p></li>
+</ul>
+</section>
+<section id="accessibility-band-c" class="slide level2">
+<h2>Accessibility: Band C</h2>
+<ul>
+<li>Hearsay data.</li>
+<li>Availability, is it actually being recorded?</li>
+<li>privacy or legal constraints on the accessibility of the recorded data, have ethical constraints been alleviated?</li>
+<li>Format: log books, PDF …</li>
+<li>limitations on access due to topology (e.g. it’s distributed across a number of devices)</li>
+<li>At the end of Band C data is ready to be loaded into analysis software (R, SPSS, Matlab, Python, Mathematica)</li>
+</ul>
+</section>
+<section id="validity-band-b" class="slide level2">
+<h2>Validity: Band B</h2>
+<ul>
+<li>faithfulness and representation</li>
+<li>visualisations.</li>
+<li>exploratory data analysis</li>
+<li>noise characterisation.</li>
+<li>Missing values.</li>
+<li>Example, was a column or columns accidentally perturbed (e.g. through a sort operation that missed one or more columns)? Or was a <a href="http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-5-80">gene name accidentally converted to a date</a>?</li>
+<li>At the end of Band B, ready to define a candidate question, the context, load into OpenML</li>
+</ul>
+</section>
+<section id="usability-band-a" class="slide level2">
+<h2>Usability: Band A</h2>
+<ul>
+<li>The usability of data</li>
+<li>Band A is about data in context.</li>
+<li>Consider appropriateness of a given data set to answer a particular question or to be subject to a particular analysis.</li>
+<li>At the end of Band A it’s ready for RAMP, Kaggle, define a <em>task</em> in OpenML.</li>
+</ul>
+</section>
+<section id="recursive-effects" class="slide level2">
+<h2>Recursive Effects</h2>
+<ul>
+<li><p>Band A may also require</p>
+<ul>
+<li><p>active collection of new data.</p></li>
+<li><p>annotation of data by human experts (Enrica)</p></li>
+<li><p>revisiting the collection (and running through the appropriate stages again)</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="also" class="slide level2">
+<h2>Also …</h2>
+<ul>
+<li><p>Encourage greater interaction between application domains and data scientists</p></li>
+<li><p>Encourage <em>visualization</em> of data</p></li>
+<li><p>Incentivise the delivery of data.</p></li>
+<li><p>Analogies: For SDEs <a href="http://inverseprobability.com/2017/03/14/data-science-as-debugging">describe data science as <em>debugging</em></a>.</p></li>
+</ul>
+</section>
+<section id="see-also" class="slide level2">
+<h2>See Also …</h2>
+<ul>
+<li>Data Joel Tests
+<ul>
+<li><a href="https://medium.com/@damoncivin/the-joel-test-for-data-readiness-4882aae64753">proposal by Damon Civin</a> and</li>
+<li><a href="https://blog.dominodatalab.com/joel-test-data-science/">proposal by Nick Elprin</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="internet-of-people" class="slide level2">
+<h2>Internet of People</h2>
+<ul>
+<li><p>Fog computing: barrier between cloud and device blurring.</p></li>
+<li><p>Stuxnet: Adversarial and Security implications for intelligent systems.</p></li>
+<li><p>Complex feedback between algorithm and implementation</p></li>
+</ul>
+</section>
+<section id="deploying-ml-in-real-world-machine-learning-systems-design" class="slide level2">
+<h2>Deploying ML in Real World: Machine Learning Systems Design</h2>
+<ul>
+<li><p>Major new challenge for systems designers.</p></li>
+<li><p>Internet of Intelligence but currently:</p>
+<ul>
+<li>AI systems are currently <em>fragile</em></li>
+</ul></li>
+</ul>
+</section>
+<section id="fragility-of-ai-systems" class="slide level2">
+<h2>Fragility of AI Systems</h2>
+<ul>
+<li><p>They are componentwise built from ML Capabilities.</p></li>
+<li><p>Each capability is independently constructed and verified.</p></li>
+<li>Pedestrian detection</li>
+<li><p>Road line detection</p></li>
+<li><p>Important for verification purposes.</p></li>
+</ul>
+</section>
+<section id="rapid-reimplementation" class="slide level2">
+<h2>Rapid Reimplementation</h2>
+<ul>
+<li><p>Whole systems are being deployed.</p></li>
+<li><p>But they change their environment.</p></li>
+<li><p>The experience evolved adversarial behaviour.</p></li>
+</ul>
+</section>
+<section id="machine-learning-systems-design" class="slide level2">
+<h2>Machine Learning Systems Design</h2>
+<p><img src="./diagrams/SteamEngine_Boulton&Watt_1784_neg.png" width="50%" style="border:none"></p>
+</section>
+<section id="turnaround-and-update" class="slide level2">
+<h2>Turnaround And Update</h2>
+<ul>
+<li><p>There is a massive need for turn around and update</p></li>
+<li>A redeploy of the entire system.
+<ul>
+<li>This involves changing the way we design and deploy.</li>
+</ul></li>
+<li><p>Interface between security engineering and machine learning.</p></li>
+</ul>
+</section>
+<section id="conclusion" class="slide level2">
+<h2>Conclusion</h2>
+<ul>
+<li>Data science offers a great deal of promise.</li>
+<li>There are challenges and pitfalls</li>
+<li>It is incumbent on us to avoid them</li>
+</ul>
+<p><strong>Many solutions rely on education and awareness</strong></p>
+<ul>
+<li>There are particular challenges around the Internet of Intelligence.</li>
+</ul>
+</section>
+<section id="thanks" class="slide level2">
+<h2>Thanks!</h2>
+<ul>
+<li>twitter: <span class="citation" data-cites="lawrennd">@lawrennd</span></li>
+<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+              { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
