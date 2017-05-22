@@ -8,8 +8,8 @@ author: Neil D. Lawrence
 affiliation: Amazon Research Cambridge and University of Sheffield
 ---
 
-### AMLC Data Science Workshop Address
-### 2017-04-18
+### CLT UK Meeting
+### 2017-05-22
 ### Neil D. Lawrence
 ### Amazon Research Cambridge and University of Sheffield
 ```@lawrennd``` [inverseprobability.com](http://inverseprobability.com)
@@ -73,25 +73,61 @@ $$ \text{data} + \text{model} \rightarrow \text{prediction}$$
 
 * We scale by codifying processes and automating them.
 
-  * Ensure components are compatible (Whitworth threads)
+    * Ensure components are compatible (Whitworth threads)
 
-  * Then interconnect them as efficiently as possible.
+    * Then interconnect them as efficiently as possible.
 
-  * cf Colt 45, Ford Model T, 
+    * cf Colt 45, Ford Model T, 
+
+## How does ML Help?
 
 * ML Automates through Data
 
-  * *Strongly* related to statistics.
+    * *Strongly* related to statistics.
 
-  * Field underpins revolution in *data science* and *AI*
+    * Field underpins revolution in *data science* and *AI*
 
 * With AI: logic, robotics, computer vision, speech
 
 * With Data Science: databases, data mining, statistics, visualization
 
-## Codify Through Complex Functions
+
+## Codify Through Mathematical Functions 
 
 * How does machine learning work?
+
+* Jumper (jersey/sweater) purchase with logistic regression
+
+$$ \text{odds} = \frac{\text{bought}}{\text{not bought}} $$
+
+$$ \log \text{odds}  = \beta_0 + \beta_1 \text{age} + \beta_2 \text{lattitude}$$
+
+
+## Codify Through Mathematical Functions {.slide: data-transition="none"}
+
+* How does machine learning work?
+
+* Jumper (jersey/sweater) purchase with logistic regression
+
+$$ p(\text{bought}) =  f\left(\beta_0 + \beta_1 \text{age} + \beta_2 \text{lattitude}\right)$$
+
+
+## Codify Through Mathematical Functions {.slide: data-transition="none"}
+
+* How does machine learning work?
+
+* Jumper (jersey/sweater) purchase with logistic regression
+
+$$ p(\text{bought}) =  f\left(\boldsymbol{\beta}^\top \mathbf{x}\right)$$
+
+
+## Deep Learning
+
+* These are interpretable models: vital for disease etc.
+
+* Modern machine learning methods are less interpretable
+
+* Example: face recognition (see also Berlin work on Amazon Fresh)
 
 ##
 
@@ -153,16 +189,6 @@ $$ \text{data} + \text{model} \rightarrow \text{prediction}$$
    2. Quantifying value of data
 
    3. Fairness, privacy and marginalization
-
-
-* Challenges for AI
-
-   * Machine Learning Systems Design
-
-   * Peppercorns
-
-
-# Are you smarter than a 10 year old?
 
 ## Quantifying the Value of Data
 
@@ -229,6 +255,19 @@ be a total nightmare.
 * Data Joel Tests
     * [proposal by Damon Civin](https://medium.com/@damoncivin/the-joel-test-for-data-readiness-4882aae64753) and
     * [proposal by Nick Elprin](https://blog.dominodatalab.com/joel-test-data-science/)
+
+
+## Challenges for AI
+
+   * Machine Learning Systems Design
+
+   * Peppercorns
+
+
+## Are you smarter than a 10 year old?
+
+
+
 
 
 
