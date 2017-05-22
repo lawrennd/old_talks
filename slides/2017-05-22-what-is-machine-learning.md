@@ -261,14 +261,13 @@ be a total nightmare.
 
    * Machine Learning Systems Design
 
-   * Peppercorns
+   * Peppercorns (exposed gears!)
 
 
 ## Are you smarter than a 10 year old?
 
 
-
-
+<video class="stretch" src="./diagrams/2017-05-20 09.35.26.mp4"></video>
 
 
 ## Conclusion
@@ -281,10 +280,11 @@ be a total nightmare.
 
         2. Artificial Intelligence
 
+## Conclusion
 
 * Challenges in each area are different:
 
-    * For AI challenge of pepper corns and systems design
+    * For AI challenge of peppercorns and systems design
 
     * For data science challenges of data quality, fairness, privacy and bias.
 
