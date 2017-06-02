@@ -9,7 +9,7 @@ affiliation: Amazon Research Cambridge and University of Sheffield
 ---
 
 ### AMLC Data Science Workshop Address
-### 2017-04-18
+### 2017-05-10
 ### Neil D. Lawrence
 ### Amazon Research Cambridge and University of Sheffield
 ```@lawrennd``` [inverseprobability.com](http://inverseprobability.com)
