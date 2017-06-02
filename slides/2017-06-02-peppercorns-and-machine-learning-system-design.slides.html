@@ -23,7 +23,6 @@
   <!--[if lt IE 9]>
   <script src="reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
-  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 </head>
 <body>
   <div class="reveal">
@@ -40,7 +39,7 @@
 <h3 id="section">2017-06-02</h3>
 <h3 id="neil-d.-lawrence">Neil D. Lawrence</h3>
 <h3 id="amazon-research-cambridge-and-university-of-sheffield">Amazon Research Cambridge and University of Sheffield</h3>
-<p><code>@lawrennd</code> <a href="http://inverseprobability.com">inverseprobability.com</a> <!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2017-06-02-peppercorns-and-machine-learning-system-design.slides.html 2017-06-02-peppercorns-and-machine-learning-system-design.md
+<p><code>@lawrennd</code> <a href="http://inverseprobability.com">inverseprobability.com</a> <!--  pandoc -s -S --to revealjs 2017-06-02-peppercorns-and-machine-learning-system-design.md --output 2017-06-02-peppercorns-and-machine-learning-system-design.slides.html
 --></p>
 </section>
 <section id="gartner-hype-cycle" class="slide level2">
@@ -74,7 +73,7 @@
 </section>
 <section id="machine-learning" class="slide level2">
 <h2>Machine Learning</h2>
-<p><span class="math display">\[ \text{data} + \text{model} \rightarrow \text{prediction}\]</span></p>
+<p><br /><span class="math display">data + model → prediction</span><br /></p>
 </section>
 <section id="data-science-and-artificial-intelligence" class="slide level2 slide:" data-transition="none">
 <h2>Data Science and Artificial Intelligence</h2>
@@ -214,14 +213,16 @@ embodiment<br>(compute/communicate)
 <section id="section-6" class="slide level2 slide:" data-transition="none">
 <h2></h2>
 <center>
-<video src="./diagrams/paolo-peppercorn.mp4" height="80%">
+<video height="600" type="video/mp4">
+<source src="./diagrams/paolo-peppercorn.mp4" height="80%">
 </video>
 </center>
 </section>
 <section id="section-7" class="slide level2 slide:" data-transition="none">
 <h2></h2>
 <center>
-<video src="./diagrams/paolo-save.mp4">
+<video type="video/mp4">
+<source src="./diagrams/paolo-save.mp4">
 </video>
 </center>
 </section>
