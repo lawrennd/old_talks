@@ -16,6 +16,7 @@ author:
 - family: Lawrence
   given: Neil D.
   gscholar: r3SJcvoAAAAJ
+  
   institute: Amazon Research Cambridge and University of Cambridge
   twitter: lawrennd
   url: http://inverseprobability.com
