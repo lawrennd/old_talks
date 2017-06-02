@@ -12,6 +12,9 @@ abstract: "Machine learning is fundamental to two important
   bugs, in that the system will be performing as designed, but
   failures of imagination of the designers we introduce a new term for
   them: 'peppercorns'."
+css: talks.css
+to: revealjs
+mathjax: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 published: 2017-06-02
 venue: Sheffield ML Research Retreat
 layout: slides
@@ -24,7 +27,7 @@ affiliation: Amazon Research Cambridge and University of Sheffield
 ### Neil D. Lawrence
 ### Amazon Research Cambridge and University of Sheffield
 ```@lawrennd``` [inverseprobability.com](http://inverseprobability.com)
-<!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2017-06-02-peppercorns-and-machine-learning-system-design.slides.html 2017-06-02-peppercorns-and-machine-learning-system-design.md
+<!--  pandoc -s -S --to revealjs 2017-06-02-peppercorns-and-machine-learning-system-design.md --output 2017-06-02-peppercorns-and-machine-learning-system-design.slides.html
 -->
 
 
@@ -173,11 +176,11 @@ $$ \text{data} + \text{model} \rightarrow \text{prediction}$$
 
 ## {.slide: data-transition="none"}
 
-<center><video src="./diagrams/paolo-peppercorn.mp4" height="80%"></video></center>
+<center><video height="600" type="video/mp4"><source src="./diagrams/paolo-peppercorn.mp4" height="80%"></video></center>
 
 ## {.slide: data-transition="none"}
 
-<center><video src="./diagrams/paolo-save.mp4"></video></center>
+<center><video type="video/mp4"><source src="./diagrams/paolo-save.mp4"></video></center>
 
 ## Conclusion
 
