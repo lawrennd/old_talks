@@ -13,8 +13,6 @@ abstract: "Machine learning is fundamental to two important
   failures of imagination of the designers we introduce a new term for
   them: 'peppercorns'."
 css: talks.css
-to: revealjs
-mathjax: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 published: 2017-06-02
 venue: Sheffield ML Research Retreat
 layout: slides
@@ -27,44 +25,44 @@ affiliation: Amazon Research Cambridge and University of Sheffield
 ### Neil D. Lawrence
 ### Amazon Research Cambridge and University of Sheffield
 ```@lawrennd``` [inverseprobability.com](http://inverseprobability.com)
-<!--  pandoc -s -S --to revealjs 2017-06-02-peppercorns-and-machine-learning-system-design.md --output 2017-06-02-peppercorns-and-machine-learning-system-design.slides.html
+<!-- pandoc -s -S --to revealjs 2017-06-02-peppercorns-and-machine-learning-system-design.md --mathjax https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML -o 2017-06-02-peppercorns-and-machine-learning-system-design.slides.html
 -->
 
 
-## Gartner Hype Cycle
+<!-- ## Gartner Hype Cycle -->
 
 
-<img src="./diagrams/Gartner_Hype_Cycle-neg.png" align="center" width="70%" style="background:none; border:none; box-shadow:none;">
+<!-- <img src="./diagrams/Gartner_Hype_Cycle-neg.png" align="center" width="70%" style="background:none; border:none; box-shadow:none;"> -->
 
-## {.slide: data-transition="none"}
+<!-- ## {.slide: data-transition="none"} -->
 
-<object type="image/svg+xml" data="./diagrams/ml-ai-ds-google-trends-000.svg">
-</object>
+<!-- <object type="image/svg+xml" data="./diagrams/ml-ai-ds-google-trends-000.svg"> -->
+<!-- </object> -->
 
-## {.slide: data-transition="none"}
+<!-- ## {.slide: data-transition="none"} -->
 
-<object type="image/svg+xml" data="./diagrams/ml-ai-ds-google-trends-001.svg">
-</object>
+<!-- <object type="image/svg+xml" data="./diagrams/ml-ai-ds-google-trends-001.svg"> -->
+<!-- </object> -->
 
-## {.slide: data-transition="none"}
+<!-- ## {.slide: data-transition="none"} -->
 
-<object type="image/svg+xml" data="./diagrams/ml-ai-ds-google-trends-002.svg">
-</object>
+<!-- <object type="image/svg+xml" data="./diagrams/ml-ai-ds-google-trends-002.svg"> -->
+<!-- </object> -->
 
-## {.slide: data-transition="none"}
+<!-- ## {.slide: data-transition="none"} -->
 
-<object type="image/svg+xml" data="./diagrams/ml-ai-ds-google-trends-003.svg">
-</object>
+<!-- <object type="image/svg+xml" data="./diagrams/ml-ai-ds-google-trends-003.svg"> -->
+<!-- </object> -->
 
-## {.slide: data-transition="none"}
+<!-- ## {.slide: data-transition="none"} -->
 
-<object type="image/svg+xml" data="./diagrams/ml-ai-ds-google-trends-004.svg">
-</object>
+<!-- <object type="image/svg+xml" data="./diagrams/ml-ai-ds-google-trends-004.svg"> -->
+<!-- </object> -->
 
 
 ## Machine Learning
 
-$$ \text{data} + \text{model} \rightarrow \text{prediction}$$
+$$ \text{data} + \text{model} \xrightarrow{compute} \text{prediction}$$
 
 ## Data Science and Artificial Intelligence {.slide: data-transition="none"}
 
