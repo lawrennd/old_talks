@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title></title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="talks.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section class="slide level2">
+
+<h3 id="peppercorns-and-machine-learning-system-design">Peppercorns and Machine Learning System Design</h3>
+<h3 id="section">2017-06-02</h3>
+<h3 id="neil-d.-lawrence">Neil D. Lawrence</h3>
+<h3 id="amazon-research-cambridge-and-university-of-sheffield">Amazon Research Cambridge and University of Sheffield</h3>
+<p><code>@lawrennd</code> <a href="http://inverseprobability.com">inverseprobability.com</a> <!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2017-06-02-peppercorns-and-machine-learning-system-design.md.slides.html 2017-06-02-peppercorns-and-machine-learning-system-design.md.md
+--></p>
+</section>
+<section id="gartner-hype-cycle" class="slide level2">
+<h2>Gartner Hype Cycle</h2>
+<p><img src="./diagrams/Gartner_Hype_Cycle-neg.png" align="center" width="70%" style="background:none; border:none; box-shadow:none;"></p>
+</section>
+<section id="section-1" class="slide level2 slide:" data-transition="none">
+<h2></h2>
+<object type="image/svg+xml" data="./diagrams/ml-ai-ds-google-trends-000.svg">
+</object>
+</section>
+<section id="section-2" class="slide level2 slide:" data-transition="none">
+<h2></h2>
+<object type="image/svg+xml" data="./diagrams/ml-ai-ds-google-trends-001.svg">
+</object>
+</section>
+<section id="section-3" class="slide level2 slide:" data-transition="none">
+<h2></h2>
+<object type="image/svg+xml" data="./diagrams/ml-ai-ds-google-trends-002.svg">
+</object>
+</section>
+<section id="section-4" class="slide level2 slide:" data-transition="none">
+<h2></h2>
+<object type="image/svg+xml" data="./diagrams/ml-ai-ds-google-trends-003.svg">
+</object>
+</section>
+<section id="section-5" class="slide level2 slide:" data-transition="none">
+<h2></h2>
+<object type="image/svg+xml" data="./diagrams/ml-ai-ds-google-trends-004.svg">
+</object>
+</section>
+<section id="machine-learning" class="slide level2">
+<h2>Machine Learning</h2>
+<p><span class="math display">\[ \text{data} + \text{model} \rightarrow \text{prediction}\]</span></p>
+</section>
+<section id="data-science-and-artificial-intelligence" class="slide level2 slide:" data-transition="none">
+<h2>Data Science and Artificial Intelligence</h2>
+<ul>
+<li><p>Data Science: arises from the fact that we now capture data by happenstance.</p></li>
+<li><p>Artificial intelligence: emulation of human behaviour.</p></li>
+<li><p>Data acquisition: Internet of Things</p></li>
+</ul>
+</section>
+<section id="data-science-and-artificial-intelligence-1" class="slide level2 slide:" data-transition="none">
+<h2>Data Science and Artificial Intelligence</h2>
+<ul>
+<li><p>Arise from the fact that we now capture data by happenstance.</p></li>
+<li><p>Artificial intelligence: emulation of human behaviour.</p></li>
+<li><p>Data preprocessing: <strong>Internet of Things</strong></p></li>
+</ul>
+</section>
+<section id="data-science-and-artificial-intelligence-2" class="slide level2 slide:" data-transition="none">
+<h2>Data Science and Artificial Intelligence</h2>
+<ul>
+<li><p>Arise from the fact that we now capture data by happenstance.</p></li>
+<li><p>Artificial intelligence: emulation of human behaviour.</p></li>
+<li><p>Data acquisition: Internet of People</p></li>
+</ul>
+</section>
+<section id="embodiment-factors" class="slide level2">
+<h2>“Embodiment Factors”</h2>
+<table>
+<tr>
+<td>
+</td>
+<td align="center">
+<img src="./diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="60%" style="background:none; border:none; box-shadow:none;" align="center">
+</td>
+<td align="center">
+<img src="./diagrams/ClaudeShannon_MFO3807.jpg" width="100%" style="background:none; border:none; box-shadow:none;" align="center">
+</td>
+</tr>
+<tr>
+<td>
+compute
+</td>
+<td align="center">
+~10 gigaflops
+</td>
+<td align="center">
+~ 1000 teraflops?
+</td>
+</tr>
+<tr>
+<td>
+communicate
+</td>
+<td align="center">
+~1 gigbit/s
+</td>
+<td align="center">
+~ 100 bit/s
+</td>
+</tr>
+<tr>
+<td>
+embodiment<br>(compute/communicate)
+</td>
+<td align="center">
+10
+</td>
+<td align="center">
+~ 10<sup>13</sup>
+</td>
+</tr>
+</table>
+</section>
+<section id="evolved-relationship" class="slide level2">
+<h2>Evolved Relationship</h2>
+<object type="image/svg+xml" data="./diagrams/data-science-information-flow_neg003.svg">
+</object>
+</section>
+<section id="internet-of-people" class="slide level2">
+<h2>Internet of People</h2>
+<ul>
+<li><p>Fog computing: barrier between cloud and device blurring.</p></li>
+<li><p>Stuxnet: Adversarial and Security implications for intelligent systems.</p></li>
+<li><p>Complex feedback between algorithm and implementation</p></li>
+</ul>
+</section>
+<section id="deploying-ml-in-real-world-machine-learning-systems-design" class="slide level2">
+<h2>Deploying ML in Real World: Machine Learning Systems Design</h2>
+<ul>
+<li><p>Major new challenge for systems designers.</p></li>
+<li><p>Internet of Intelligence but currently:</p>
+<ul>
+<li>AI systems are currently <em>fragile</em></li>
+</ul></li>
+</ul>
+</section>
+<section id="fragility-of-ai-systems" class="slide level2">
+<h2>Fragility of AI Systems</h2>
+<ul>
+<li><p>They are componentwise built from ML Capabilities.</p></li>
+<li><p>Each capability is independently constructed and verified.</p></li>
+<li>Pedestrian detection</li>
+<li><p>Road line detection</p></li>
+<li><p>Important for verification purposes.</p></li>
+</ul>
+</section>
+<section id="rapid-reimplementation" class="slide level2">
+<h2>Rapid Reimplementation</h2>
+<ul>
+<li><p>Whole systems are being deployed.</p></li>
+<li><p>But they change their environment.</p></li>
+<li><p>The experience evolved adversarial behaviour.</p></li>
+</ul>
+</section>
+<section id="machine-learning-systems-design" class="slide level2">
+<h2>Machine Learning Systems Design</h2>
+<p><img src="./diagrams/SteamEngine_Boulton&Watt_1784_neg.png" width="50%" style="border:none"></p>
+</section>
+<section id="turnaround-and-update" class="slide level2">
+<h2>Turnaround And Update</h2>
+<ul>
+<li><p>There is a massive need for turn around and update</p></li>
+<li>A redeploy of the entire system.
+<ul>
+<li>This involves changing the way we design and deploy.</li>
+</ul></li>
+<li><p>Interface between security engineering and machine learning.</p></li>
+</ul>
+</section>
+<section id="peppercorns" class="slide level2">
+<h2>Peppercorns</h2>
+<ul>
+<li><p>A new name for system failures which aren’t bugs.</p></li>
+<li><p>Difference between finding a fly in your soup vs a peppercorn in your soup.</p></li>
+</ul>
+</section>
+<section id="section-6" class="slide level2 slide:" data-transition="none">
+<h2></h2>
+<center>
+<video src="./diagrams/paolo-peppercorn.mp4">
+</video>
+</center>
+</section>
+<section id="section-7" class="slide level2 slide:" data-transition="none">
+<h2></h2>
+<center>
+<video src="./diagrams/paolo-save.mp4">
+</video>
+</center>
+</section>
+<section id="conclusion" class="slide level2">
+<h2>Conclusion</h2>
+<ul>
+<li><p>Difference between Artificial Intelligence and Data Science are fundamentally different.</p></li>
+<li><p>In one you are dealing with data collected by happenstance.</p></li>
+<li><p>In the other you are trying to build systems in the real world, often by actively collecting data.</p></li>
+<li><p>Our approaches to systems design are building powerful machines that <strong>Many solutions rely on education and awareness</strong></p></li>
+<li><p>There are particular challenges around the Internet of Intelligence.</p></li>
+</ul>
+</section>
+<section id="thanks" class="slide level2">
+<h2>Thanks!</h2>
+<ul>
+<li>twitter: <span class="citation" data-cites="lawrennd">@lawrennd</span></li>
+<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+              { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
