@@ -20,5 +20,5 @@ key: Lawrence-peppercorns17
 layout: talk
 month: 6
 published: 2017-06-06
-venue: Sheffield ML Group Research Retreat
+venue: Probabilistic Scientific Computing Workshop at ICERM, Brown
 ---
