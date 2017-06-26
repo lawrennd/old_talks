@@ -1,32 +1,31 @@
 ---
-title: Machine Learning and the Future of Work
+title: Machine Learning, Technology and the Future of Intelligence
 abstract: >
-  Machine learning is the fundamental driving technology of two important
-  technological domains, artificial intelligence and data science,
-  both of which effect the future of work. In
-  this summary we will attempt to make a simple definition to distinguish
-  between the two, give intuitions of what machine learning is, and
-  speculate how this technological change differs from previous ones.
-published: 2017-06-23
-venue: Chatham House
+  The Leverhulme Centre for the Future of Intelligence is a fulcrum
+  around which debate in intelligence technology can be joined across
+  the wide range of intereted experts. In this talk I'll give some
+  perspectives on machine learning and my interactions with CFI.
+published: 2017-06-26
+venue: Leverhulme CFI
 layout: slides
 author: Neil D. Lawrence
 affiliation: Amazon Research Cambridge and University of Sheffield
 ---
 
-### Machine Learning and the Future of Work
-### 2017-06-23
+### Machine Learning, Technology and the Future of Intelligence 
+### 2017-06-26
 ### Neil D. Lawrence
 ### Amazon Research Cambridge and University of Sheffield
 ```@lawrennd``` [inverseprobability.com](http://inverseprobability.com)
 
-<!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2017-06-23-machine-learning-and-the-future-of-work.slides.html 2017-06-23-machine-learning-and-the-future-of-work.md
--->
+<!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2017-06-26-machine-learning-technology-and-the-future-of-intelligence.slides.html 2017-06-26-machine-learning-technology-and-the-future-of-intelligence.md -->
 
 
 ## Machine Learning
 
 $$ \text{data} + \text{model} \rightarrow \text{prediction}$$
+
+* Where prediction is carried out through *computation*.
 
 * Royal Society Report:
   [Machine Learning: Power and Promise of Computers that Learn by Example](https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf)
@@ -60,6 +59,15 @@ $$ \text{data} + \text{model} \rightarrow \text{prediction}$$
 </table>
 
 See ["Living Together: Mind and Machine Intelligence"](https://arxiv.org/abs/1705.07996)
+
+## *Thought* and *Intelligence*
+
+$$ \text{philosophy} \rightarrow \text{psychology} \rightarrow \text{social
+psychology}$$
+$$\rightarrow \text{economics}\ \text{and}\ \text{social science}$$
+<center>*must interconnect with*</center>
+$$ \text{cognitive science} \rightarrow \text{machine learning}
+\rightarrow \text{systems engineering}$$
 
 ## What does Machine Learning do?
 
@@ -154,15 +162,73 @@ late 19th century.
 
 * Maybe: But this one is dominated by *data* not *capital*
 
-* That presents *challenges* and *opportunities* (especially for economists!)
+* That presents *challenges* and *opportunities* (especially for
+  traditional economics!)
 
 cf
 [digital oligarchy](https://www.theguardian.com/media-network/2015/mar/05/digital-oligarchy-algorithms-personal-data)
 vs [how Africa can benefit from the data revolution](https://www.theguardian.com/media-network/2015/aug/25/africa-benefit-data-science-information)
 
-* Apple vs Nokia: How you handle disruption.
 
-* A threat to the future of Economists' work???
+## Machine Learning and Mechanical Systems Design
+
+<img src="./diagrams/SteamEngine_Boulton&Watt_1784_neg.png" width="50%" style="border:none">
+
+## Internet of People
+
+* Fog computing: barrier between cloud and device blurring.
+
+* Internet of Intelligence but currently:
+
+	* AI systems are currently *fragile*
+
+## Two Challenges
+
+1. Humans are very complex to work well inference of *intent* is required.
+
+2. In the meantime, humans are likely needed to moderate machine
+behaviour.
+
+## Environment of Operation
+
+* Machine assistance in a controlled environment (e.g. car production
+line).
+
+* Machine assistance in the real world (e.g. care robot).
+
+* For Autonomous vehicles think
+    1. Would likely deploy first on motorways (more controlled
+    environment)
+	2. Would likely cause chaos in towns (lack of intent inference)
+	3. Unable to step out of vehicle and help elderly passenger to
+    appointment.
+
+*  "Empathy Cannot be Automatized"
+
+## Peppercorns
+
+* A new name for system failures which aren't bugs.
+
+* Occur because of the impossibility of imagining all circumstances in
+  an uncontrolled environment.
+
+* Difference between finding a fly in your soup vs a peppercorn in
+  your soup. 
+
+## Conclusion
+
+* Difference between Artificial Intelligence and Data Science are fundamentally different.
+
+    * In one you are dealing with data collected by happenstance.
+
+    * In the other you are trying to build systems in the real world, often by actively collecting data.
+
+* Challenges around our future may be similar for previous
+technological waves.
+
+    * Principal effects on those *least mobile* in the work force. 
+
+	* Urgent need for both *education*, *training* and *research*.
 
 ## Thanks!
 

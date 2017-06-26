@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Neil D. Lawrence">
+  <title>Machine Learning, Technology and the Future of Intelligence</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="talks.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Machine Learning, Technology and the Future of Intelligence</h1>
+  <p class="author">Neil D. Lawrence</p>
+</section>
+
+<section class="slide level2">
+
+<h3 id="machine-learning-technology-and-the-future-of-intelligence">Machine Learning, Technology and the Future of Intelligence</h3>
+<h3 id="section">2017-06-26</h3>
+<h3 id="neil-d.-lawrence">Neil D. Lawrence</h3>
+<h3 id="amazon-research-cambridge-and-university-of-sheffield">Amazon Research Cambridge and University of Sheffield</h3>
+<p><code>@lawrennd</code> <a href="http://inverseprobability.com">inverseprobability.com</a></p>
+<!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2017-06-26-machine-learning-technology-and-the-future-of-intelligence.slides.html 2017-06-26-machine-learning-technology-and-the-future-of-intelligence.md -->
+</section>
+<section id="machine-learning" class="slide level2">
+<h2>Machine Learning</h2>
+<p><span class="math display">\[ \text{data} + \text{model} \rightarrow \text{prediction}\]</span></p>
+<ul>
+<li><p>Where prediction is carried out through <em>computation</em>.</p></li>
+<li><p>Royal Society Report: <a href="https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf">Machine Learning: Power and Promise of Computers that Learn by Example</a></p></li>
+</ul>
+</section>
+<section id="data-science-and-artificial-intelligence" class="slide level2 slide:" data-transition="none">
+<h2>Data Science and Artificial Intelligence</h2>
+<ul>
+<li><p>Data Science: arises from the fact that we now capture data by happenstance.</p></li>
+<li><p>Artificial intelligence: emulation of human behaviour.</p></li>
+</ul>
+</section>
+<section id="embodiment-factors" class="slide level2">
+<h2>“Embodiment Factors”</h2>
+<table>
+<tr>
+<td>
+</td>
+<td align="center">
+<img src="./diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="40%" style="background:none; border:none; box-shadow:none;" align="center">
+</td>
+<td align="center">
+<img src="./diagrams/ClaudeShannon_MFO3807.jpg" width="60%" style="background:none; border:none; box-shadow:none;" align="center">
+</td>
+</tr>
+<tr>
+<td>
+compute
+</td>
+<td align="center">
+~10 gigaflops
+</td>
+<td align="center">
+~ 1000 teraflops?
+</td>
+</tr>
+<tr>
+<td>
+communicate
+</td>
+<td align="center">
+~1 gigbit/s
+</td>
+<td align="center">
+~ 100 bit/s
+</td>
+</tr>
+<tr>
+<td>
+embodiment<br>(compute/communicate)
+</td>
+<td align="center">
+10
+</td>
+<td align="center">
+~ 10<sup>13</sup>
+</td>
+</tr>
+</table>
+<p>See <a href="https://arxiv.org/abs/1705.07996">“Living Together: Mind and Machine Intelligence”</a></p>
+</section>
+<section id="thought-and-intelligence" class="slide level2">
+<h2><em>Thought</em> and <em>Intelligence</em></h2>
+<span class="math display">\[ \text{philosophy} \rightarrow \text{psychology} \rightarrow \text{social
+psychology}\]</span> <span class="math display">\[\rightarrow \text{economics}\ \text{and}\ \text{social science}\]</span>
+<center>
+<em>must interconnect with</em>
+</center>
+<p><span class="math display">\[ \text{cognitive science} \rightarrow \text{machine learning}
+\rightarrow \text{systems engineering}\]</span></p>
+</section>
+<section id="what-does-machine-learning-do" class="slide level2">
+<h2>What does Machine Learning do?</h2>
+<ul>
+<li><p>We scale by codifying processes and automating them.</p>
+<ul>
+<li><p>Ensure components are compatible (Whitworth threads)</p></li>
+<li><p>Then interconnect them as efficiently as possible.</p></li>
+<li><p>cf Colt 45, Ford Model T,</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="what-does-machine-learning-do-1" class="slide level2">
+<h2>What does Machine Learning do?</h2>
+<ul>
+<li><p>ML Automates through Data</p>
+<ul>
+<li><p><em>Strongly</em> related to statistics.</p></li>
+<li><p>Field underpins revolution in <em>data science</em> and <em>AI</em></p></li>
+</ul></li>
+<li><p>With AI: logic, robotics, computer vision, speech</p></li>
+<li><p>With Data Science: databases, data mining, statistics, visualization</p></li>
+</ul>
+</section>
+<section id="codify-through-mathematical-functions" class="slide level2">
+<h2>Codify Through Mathematical Functions</h2>
+<ul>
+<li><p>How does machine learning work?</p></li>
+<li><p>Jumper (jersey/sweater) purchase with logistic regression</p></li>
+</ul>
+<p><span class="math display">\[ \text{odds} = \frac{\text{bought}}{\text{not bought}} \]</span></p>
+<p><span class="math display">\[ \log \text{odds}  = \beta_0 + \beta_1 \text{age} + \beta_2 \text{lattitude}\]</span></p>
+</section>
+<section id="codify-through-mathematical-functions-1" class="slide level2 slide:" data-transition="none">
+<h2>Codify Through Mathematical Functions</h2>
+<ul>
+<li><p>How does machine learning work?</p></li>
+<li><p>Jumper (jersey/sweater) purchase with logistic regression</p></li>
+</ul>
+<p><span class="math display">\[ p(\text{bought}) =  f\left(\beta_0 + \beta_1 \text{age} + \beta_2 \text{lattitude}\right)\]</span></p>
+</section>
+<section id="codify-through-mathematical-functions-2" class="slide level2 slide:" data-transition="none">
+<h2>Codify Through Mathematical Functions</h2>
+<ul>
+<li><p>How does machine learning work?</p></li>
+<li><p>Jumper (jersey/sweater) purchase with logistic regression</p></li>
+</ul>
+<p><span class="math display">\[ p(\text{bought}) =  f\left(\boldsymbol{\beta}^\top \mathbf{x}\right)\]</span></p>
+</section>
+<section id="deep-learning" class="slide level2">
+<h2>Deep Learning</h2>
+<ul>
+<li><p>These are interpretable models: vital for disease etc.</p></li>
+<li><p>Modern machine learning methods are less interpretable</p></li>
+<li><p>Example: face recognition</p></li>
+</ul>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<p><span class="fragment fade-in"><small>Outline of the DeepFace architecture. A front-end of a single convolution-pooling-convolution filtering on the rectified input, followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected.</small></span></p>
+<p><img src="./diagrams/deepface_neg.png" width="100%" style="background:none; border:none; box-shadow:none;" align="center"></p>
+<p align="right">
+<small>Source: DeepFace</small>
+</p>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<p><img src="./diagrams/576px-Early_Pinball.jpg" height="576px" style="background:none; border:none; box-shadow:none;" align="center"></p>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<object data="./diagrams/pinball-initial.svg" type="image/svg+xml">
+</object>
+</section>
+<section id="section-4" class="slide level2 slide:" data-transition="none">
+<h2></h2>
+<object data="./diagrams/pinball-final.svg" type="image/svg+xml">
+</object>
+</section>
+<section id="industrial-revolution-4.0" class="slide level2">
+<h2>Industrial Revolution 4.0?</h2>
+<ul>
+<li><p><em>Industrial Revolution</em> (1760-1840) term coined by Arnold Toynbee, late 19th century.</p></li>
+<li><p>Maybe: But this one is dominated by <em>data</em> not <em>capital</em></p></li>
+<li><p>That presents <em>challenges</em> and <em>opportunities</em> (especially for traditional economics!)</p></li>
+</ul>
+<p>cf <a href="https://www.theguardian.com/media-network/2015/mar/05/digital-oligarchy-algorithms-personal-data">digital oligarchy</a> vs <a href="https://www.theguardian.com/media-network/2015/aug/25/africa-benefit-data-science-information">how Africa can benefit from the data revolution</a></p>
+</section>
+<section id="machine-learning-and-mechanical-systems-design" class="slide level2">
+<h2>Machine Learning and Mechanical Systems Design</h2>
+<p><img src="./diagrams/SteamEngine_Boulton&Watt_1784_neg.png" width="50%" style="border:none"></p>
+</section>
+<section id="internet-of-people" class="slide level2">
+<h2>Internet of People</h2>
+<ul>
+<li><p>Fog computing: barrier between cloud and device blurring.</p></li>
+<li><p>Internet of Intelligence but currently:</p>
+<ul>
+<li>AI systems are currently <em>fragile</em></li>
+</ul></li>
+</ul>
+</section>
+<section id="two-challenges" class="slide level2">
+<h2>Two Challenges</h2>
+<ol type="1">
+<li><p>Humans are very complex to work well inference of <em>intent</em> is required.</p></li>
+<li><p>In the meantime, humans are likely needed to moderate machine behaviour.</p></li>
+</ol>
+</section>
+<section id="environment-of-operation" class="slide level2">
+<h2>Environment of Operation</h2>
+<ul>
+<li><p>Machine assistance in a controlled environment (e.g. car production line).</p></li>
+<li><p>Machine assistance in the real world (e.g. care robot).</p></li>
+<li>For Autonomous vehicles think
+<ol type="1">
+<li>Would likely deploy first on motorways (more controlled environment)</li>
+<li>Would likely cause chaos in towns (lack of intent inference)</li>
+<li>Unable to step out of vehicle and help elderly passenger to appointment.</li>
+</ol></li>
+<li><p>“Empathy Cannot be Automatized”</p></li>
+</ul>
+</section>
+<section id="peppercorns" class="slide level2">
+<h2>Peppercorns</h2>
+<ul>
+<li><p>A new name for system failures which aren’t bugs.</p></li>
+<li><p>Occur because of the impossibility of imagining all circumstances in an uncontrolled environment.</p></li>
+<li><p>Difference between finding a fly in your soup vs a peppercorn in your soup.</p></li>
+</ul>
+</section>
+<section id="conclusion" class="slide level2">
+<h2>Conclusion</h2>
+<ul>
+<li><p>Difference between Artificial Intelligence and Data Science are fundamentally different.</p>
+<ul>
+<li><p>In one you are dealing with data collected by happenstance.</p></li>
+<li><p>In the other you are trying to build systems in the real world, often by actively collecting data.</p></li>
+</ul></li>
+<li><p>Challenges around our future may be similar for previous technological waves.</p>
+<ul>
+<li><p>Principal effects on those <em>least mobile</em> in the work force.</p></li>
+<li><p>Urgent need for both <em>education</em>, <em>training</em> and <em>research</em>.</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="thanks" class="slide level2">
+<h2>Thanks!</h2>
+<ul>
+<li>twitter: <span class="citation" data-cites="lawrennd">@lawrennd</span></li>
+<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+              { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
