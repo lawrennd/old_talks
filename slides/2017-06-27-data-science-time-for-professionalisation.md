@@ -330,7 +330,7 @@ question or to be subject to a particular analysis.
 
 ## Contribute!
 
-* http://data-readiness.org
+* <http://data-readiness.org>
 
 ## Also ...
 
