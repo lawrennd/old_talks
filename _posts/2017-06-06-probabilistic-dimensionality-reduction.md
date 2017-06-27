@@ -5,14 +5,14 @@ author:
 - family: Lawrence
   given: Neil D.
   gscholar: r3SJcvoAAAAJ
-  institute: Amazon Research Cambridge and University of Cambridge
+  institute: Amazon Research Cambridge and University of Sheffield
   twitter: lawrennd
   url: http://inverseprobability.com
 categories:
 - Lawrence-peppercorns17
 day: 06
 pdf: gplvm_brown17.pdf
-reveal:
+reveal: 
 blog:
 errata: []
 extras: []
