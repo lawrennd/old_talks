@@ -1,5 +1,5 @@
 ---
-title: "Data Science: Time for Professionalisation?"
+title: "Data Science: Is it Time for Professionalisation?"
 abstract: >
   Machine learning methods and software are becoming widely
   deployed. But how are we sharing expertise about bottlenecks and
@@ -226,15 +226,17 @@ vs [how Africa can benefit from the data revolution](https://www.theguardian.com
 
 ## The Data Crisis
 
-The major cause of the data crisis is that machines have become more
-interconnected than ever before. Data access is therefore cheap, but
-data quality is often poor. What we need is cheap high quality
-data. That implies that we develop processes for improving and
-verifying data quality that are efficient.
-
-There would seem to be two ways for improving efficiency. Firstly, we
-should not duplicate work. Secondly, where possibly we should automate
-work. 
+>The major cause of the data crisis is that machines have become more
+>interconnected than ever before. Data access is therefore cheap, but
+>data quality is often poor. What we need is cheap high quality
+>data. That implies that we develop processes for improving and
+>verifying data quality that are efficient.
+>
+>There would seem to be two ways for improving efficiency. Firstly, we
+>should not duplicate work. Secondly, where possibly we should automate
+>work. 
+>
+> Me
 
 ## Rest of this Talk: Two Areas of Focus
 
