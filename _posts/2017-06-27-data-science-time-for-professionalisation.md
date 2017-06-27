@@ -11,6 +11,8 @@ abstract: >
   the deployment of machine learning systems.
 published: 2017-06-27
 venue: The Alan Turing Institute
+reveal: 2017-06-27-data-science-time-for-professionalisation.slides.html
+blog: 2017-01-12-data-readiness-levels.md
 layout: talk
 author:
 - family: Lawrence
