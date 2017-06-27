@@ -7,7 +7,7 @@ abstract: >
   science, we seem to be at a similar point today as software
   engineering was in the early 1980s. Best practice is not widely
   understood or deployed. In this talk we will focus on two particular
-  components of data science solutions: the preparation of data snd
+  components of data science solutions: the preparation of data and
   the deployment of machine learning systems.
 published: 2017-06-27
 venue: The Alan Turing Institute
