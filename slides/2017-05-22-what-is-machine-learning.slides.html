@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Neil D. Lawrence">
+  <title>What is Machine Learning?</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="talks.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">What is Machine Learning?</h1>
+  <p class="author">Neil D. Lawrence</p>
+</section>
+
+<section class="slide level2">
+
+<h3 id="clt-uk-meeting">CLT UK Meeting</h3>
+<h3 id="section">2017-05-22</h3>
+<h3 id="neil-d.-lawrence">Neil D. Lawrence</h3>
+<h3 id="amazon-research-cambridge-and-university-of-sheffield">Amazon Research Cambridge and University of Sheffield</h3>
+<p><code>@lawrennd</code> <a href="http://inverseprobability.com">inverseprobability.com</a> <!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2017-05-22-what-is-machine-learning.slides.html 2017-05-22-what-is-machine-learning.md
+--></p>
+</section>
+<section id="gartner-hype-cycle" class="slide level2">
+<h2>Gartner Hype Cycle</h2>
+<p><img src="./diagrams/Gartner_Hype_Cycle-neg.png" align="center" width="70%" style="background:none; border:none; box-shadow:none;"></p>
+</section>
+<section id="section-1" class="slide level2 slide:" data-transition="none">
+<h2></h2>
+<object type="image/svg+xml" data="./diagrams/ml-ai-ds-google-trends-000.svg">
+</object>
+</section>
+<section id="section-2" class="slide level2 slide:" data-transition="none">
+<h2></h2>
+<object type="image/svg+xml" data="./diagrams/ml-ai-ds-google-trends-001.svg">
+</object>
+</section>
+<section id="section-3" class="slide level2 slide:" data-transition="none">
+<h2></h2>
+<object type="image/svg+xml" data="./diagrams/ml-ai-ds-google-trends-002.svg">
+</object>
+</section>
+<section id="section-4" class="slide level2 slide:" data-transition="none">
+<h2></h2>
+<object type="image/svg+xml" data="./diagrams/ml-ai-ds-google-trends-003.svg">
+</object>
+</section>
+<section id="section-5" class="slide level2 slide:" data-transition="none">
+<h2></h2>
+<object type="image/svg+xml" data="./diagrams/ml-ai-ds-google-trends-004.svg">
+</object>
+</section>
+<section id="machine-learning" class="slide level2">
+<h2>Machine Learning</h2>
+<p><span class="math display">\[ \text{data} + \text{model} \rightarrow \text{prediction}\]</span></p>
+</section>
+<section id="machine-learning-1" class="slide level2">
+<h2>Machine Learning</h2>
+<ul>
+<li><p>Normal ML (&amp; stats?) focus: model</p></li>
+<li><p>In real world need more focus on: data</p></li>
+<li><p>motivation for data science</p></li>
+</ul>
+</section>
+<section id="background-big-data" class="slide level2">
+<h2>Background: Big Data</h2>
+<ul>
+<li><p>The pervasiveness of data brings forward particular challenges.</p></li>
+<li><p>Emerging themes: Devolving compute onto device.</p></li>
+<li><p>Data preprocessing: Internet of Intelligence.</p></li>
+</ul>
+</section>
+<section id="how-does-ml-help" class="slide level2">
+<h2>How does ML Help?</h2>
+<ul>
+<li><p>We scale by codifying processes and automating them.</p>
+<ul>
+<li><p>Ensure components are compatible (Whitworth threads)</p></li>
+<li><p>Then interconnect them as efficiently as possible.</p></li>
+<li><p>cf Colt 45, Ford Model T,</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="how-does-ml-help-1" class="slide level2">
+<h2>How does ML Help?</h2>
+<ul>
+<li><p>ML Automates through Data</p>
+<ul>
+<li><p><em>Strongly</em> related to statistics.</p></li>
+<li><p>Field underpins revolution in <em>data science</em> and <em>AI</em></p></li>
+</ul></li>
+<li><p>With AI: logic, robotics, computer vision, speech</p></li>
+<li><p>With Data Science: databases, data mining, statistics, visualization</p></li>
+</ul>
+</section>
+<section id="codify-through-mathematical-functions" class="slide level2">
+<h2>Codify Through Mathematical Functions</h2>
+<ul>
+<li><p>How does machine learning work?</p></li>
+<li><p>Jumper (jersey/sweater) purchase with logistic regression</p></li>
+</ul>
+<p><span class="math display">\[ \text{odds} = \frac{\text{bought}}{\text{not bought}} \]</span></p>
+<p><span class="math display">\[ \log \text{odds}  = \beta_0 + \beta_1 \text{age} + \beta_2 \text{lattitude}\]</span></p>
+</section>
+<section id="codify-through-mathematical-functions-1" class="slide level2 slide:" data-transition="none">
+<h2>Codify Through Mathematical Functions</h2>
+<ul>
+<li><p>How does machine learning work?</p></li>
+<li><p>Jumper (jersey/sweater) purchase with logistic regression</p></li>
+</ul>
+<p><span class="math display">\[ p(\text{bought}) =  f\left(\beta_0 + \beta_1 \text{age} + \beta_2 \text{lattitude}\right)\]</span></p>
+</section>
+<section id="codify-through-mathematical-functions-2" class="slide level2 slide:" data-transition="none">
+<h2>Codify Through Mathematical Functions</h2>
+<ul>
+<li><p>How does machine learning work?</p></li>
+<li><p>Jumper (jersey/sweater) purchase with logistic regression</p></li>
+</ul>
+<p><span class="math display">\[ p(\text{bought}) =  f\left(\boldsymbol{\beta}^\top \mathbf{x}\right)\]</span></p>
+</section>
+<section id="deep-learning" class="slide level2">
+<h2>Deep Learning</h2>
+<ul>
+<li><p>These are interpretable models: vital for disease etc.</p></li>
+<li><p>Modern machine learning methods are less interpretable</p></li>
+<li><p>Example: face recognition (see also Berlin work on Amazon Fresh)</p></li>
+</ul>
+</section>
+<section id="section-6" class="slide level2">
+<h2></h2>
+<p><span class="fragment fade-in"><small>Outline of the DeepFace architecture. A front-end of a single convolution-pooling-convolution filtering on the rectified input, followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected.</small></span></p>
+<p><img src="./diagrams/deepface_neg.png" width="100%" style="background:none; border:none; box-shadow:none;" align="center"></p>
+<p align="right">
+<small>Source: DeepFace</small>
+</p>
+</section>
+<section id="section-7" class="slide level2">
+<h2></h2>
+<p><img src="./diagrams/576px-Early_Pinball.jpg" height="576px" style="background:none; border:none; box-shadow:none;" align="center"></p>
+</section>
+<section id="section-8" class="slide level2">
+<h2></h2>
+<object data="./diagrams/pinball-initial.svg" type="image/svg+xml">
+</object>
+</section>
+<section id="section-9" class="slide level2 slide:" data-transition="none">
+<h2></h2>
+<object data="./diagrams/pinball-final.svg" type="image/svg+xml">
+</object>
+</section>
+<section id="when-can-ml-be-used" class="slide level2">
+<h2>When Can ML be Used?</h2>
+<ul>
+<li><p>Data science</p>
+<ul>
+<li>To get better data we need to improve our processes</li>
+</ul></li>
+<li><p>Artificial Intelligence</p>
+<ul>
+<li><p>Any sub-task that takes a human less than a second</p></li>
+<li><p>Also important for acquiring data (Mechanical Turk, ADS).</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="what-are-we-doing-about-it" class="slide level2">
+<h2>What are we doing about it?</h2>
+<ul>
+<li><p>Core ML Team: Berlin, Bangalore, Seattle, Barcelona, Los Angeles and <em>Cambridge</em></p></li>
+<li><p>Amazon Research Cambridge</p>
+<ul>
+<li><p>The Data Science Laboratory</p></li>
+<li><p>Customer obsession for data scientists</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="the-data-science-laboratory" class="slide level2">
+<h2>The Data Science Laboratory</h2>
+<ul>
+<li>Challenges of Data Science</li>
+</ul>
+<ol type="1">
+<li><p>Paradoxes of data society</p></li>
+<li><p>Quantifying value of data</p></li>
+<li><p>Fairness, privacy and marginalization</p></li>
+</ol>
+</section>
+<section id="quantifying-the-value-of-data" class="slide level2">
+<h2>Quantifying the Value of Data</h2>
+<p>There’s a sea of data, but most of it is undrinkable</p>
+<p><img src="./diagrams/sea-water-ocean-waves.jpg" width="50%"></p>
+<p>We require data-desalination before it can be consumed!</p>
+</section>
+<section id="data-quotes-from-nips-workshop-on-ml-for-healthcare" class="slide level2">
+<h2>Data — Quotes from NIPS Workshop on ML for Healthcare</h2>
+<ul>
+<li>90% of our time is spent on validation and integration (Leo Anthony Celi)</li>
+<li>“The Dirty Work We Don’t Want to Think About” (Eric Xing)</li>
+<li>“Voodoo to get it decompressed” (Francisco Giminez)</li>
+<li>In health care clinicians collect the data and often control the direction of research through guardianship of data.</li>
+</ul>
+</section>
+<section id="quotes-from-amlc-data-science-process" class="slide level2">
+<h2>Quotes from AMLC Data Science Process</h2>
+<ul>
+<li>Getting money from management for data collection and annotation can be a total nightmare.</li>
+</ul>
+</section>
+<section id="value" class="slide level2">
+<h2>Value</h2>
+<ul>
+<li><p>How do we measure value in the data economy?</p></li>
+<li><p>How do we encourage data workers: curation and management</p>
+<ul>
+<li><p>Incentivization for sharing and production.</p></li>
+<li><p>Quantifying the value in the contribution of <em>each actor</em>.</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="embodiment" class="slide level2">
+<h2>Embodiment:</h2>
+<p><a href="http://inverseprobability.com/2017/01/12/data-readiness-levels">Data Readiness Levels</a> (see also <a href="https://arxiv.org/pdf/1705.02245.pdf">arxiv</a>)</p>
+<ul>
+<li><p>Three Bands of Data Readiness:</p></li>
+<li><p>Band C - accessibility</p></li>
+<li><p>Band B - validity</p></li>
+<li><p>Band A - usability</p></li>
+</ul>
+</section>
+<section id="contribute" class="slide level2">
+<h2>Contribute!</h2>
+<ul>
+<li>http://data-readiness.org</li>
+</ul>
+</section>
+<section id="also" class="slide level2">
+<h2>Also …</h2>
+<ul>
+<li><p>Encourage greater interaction between application domains and data scientists</p></li>
+<li><p>Encourage <em>visualization</em> of data</p></li>
+<li><p>Incentivise the delivery of data.</p></li>
+<li><p>Analogies: For SDEs <a href="http://inverseprobability.com/2017/03/14/data-science-as-debugging">describe data science as <em>debugging</em></a>.</p></li>
+</ul>
+</section>
+<section id="see-also" class="slide level2">
+<h2>See Also …</h2>
+<ul>
+<li>Data Joel Tests
+<ul>
+<li><a href="https://medium.com/@damoncivin/the-joel-test-for-data-readiness-4882aae64753">proposal by Damon Civin</a> and</li>
+<li><a href="https://blog.dominodatalab.com/joel-test-data-science/">proposal by Nick Elprin</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="challenges-for-ai" class="slide level2">
+<h2>Challenges for AI</h2>
+<ul>
+<li><p>Machine Learning Systems Design</p></li>
+<li><p>Peppercorns (exposed gears!)</p></li>
+</ul>
+</section>
+<section id="are-you-smarter-than-a-10-year-old" class="slide level2">
+<h2>Are you smarter than a 10 year old?</h2>
+<video class="stretch" src="./diagrams/2017-05-20 09.35.26.mp4">
+</video>
+</section>
+<section id="conclusion" class="slide level2">
+<h2>Conclusion</h2>
+<ul>
+<li><p>Machine Learning is not a magic trick</p>
+<ul>
+<li><p>Two principal areas of deployment:</p>
+<ol type="1">
+<li><p>Data Science</p></li>
+<li><p>Artificial Intelligence</p></li>
+</ol></li>
+</ul></li>
+</ul>
+</section>
+<section id="conclusion-1" class="slide level2">
+<h2>Conclusion</h2>
+<ul>
+<li><p>Challenges in each area are different:</p>
+<ul>
+<li><p>For AI challenge of peppercorns and systems design</p></li>
+<li><p>For data science challenges of data quality, fairness, privacy and bias.</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="thanks" class="slide level2">
+<h2>Thanks!</h2>
+<ul>
+<li>twitter: <span class="citation" data-cites="lawrennd">@lawrennd</span></li>
+<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+              { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
