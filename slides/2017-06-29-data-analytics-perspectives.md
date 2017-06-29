@@ -16,13 +16,13 @@ abstract: >
 <!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2017-06-29-data-analytics-perspectives.slides.html 2017-06-29-data-analytics-perspectives.md
 -->
 
-## What is Machine Learning?
+## What is Machine Learning? 
 
 data + model + compute ->  prediction
 
+## Royal Society Report
 
-* Royal Society Report:
-  [Machine Learning: Power and Promise of Computers that Learn by Example](https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf)
+	<center>[Machine Learning: Power and Promise of Computers that Learn by Example](https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf)</center>
 
 ## Two Phenomena underpinned by ML
 
