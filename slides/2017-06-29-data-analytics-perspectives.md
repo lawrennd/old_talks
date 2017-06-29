@@ -99,6 +99,10 @@ charset="utf-8"></script></center>
 >
 > BEIS Discussion Under Chatham House Rule
 
+## Artificial Intelligence {.slide: data-transition="none"}
+
+* Challenge of empathy.
+
 > "It doesn't even replace a human *Go* player!"
 >
 > Thinks me
