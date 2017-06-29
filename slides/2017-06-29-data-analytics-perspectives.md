@@ -77,19 +77,19 @@ color="cyan">artificial intelligence</font>
 
 ## AI Bubble? {.slide: data-transition="none"}
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">If 1997 to 2001 was the dot com bubble, are we now in the dot ai bubble?</p>&mdash; Neil Lawrence (@lawrennd) <a href="https://twitter.com/lawrennd/status/880160513329688576">June 28, 2017</a></blockquote>
+<center><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">If 1997 to 2001 was the dot com bubble, are we now in the dot ai bubble?</p>&mdash; Neil Lawrence (@lawrennd) <a href="https://twitter.com/lawrennd/status/880160513329688576">June 28, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js"
-charset="utf-8"></script>
+charset="utf-8"></script></center>
 
 ## AI Bubble? {.slide: data-transition="none"}
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">It&#39;s not a bubble as long as it&#39;s not filled with hot air. AI is based on actual testable results and deployed in real life situations.</p>&mdash; visarga (@visarga) <a href="https://twitter.com/visarga/status/880266521045585922">June 29, 2017</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<center><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">It&#39;s not a bubble as long as it&#39;s not filled with hot air. AI is based on actual testable results and deployed in real life situations.</p>&mdash; visarga (@visarga) <a href="https://twitter.com/visarga/status/880266521045585922">June 29, 2017</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></center>
 
 ## AI Bubble? {.slide: data-transition="none"}
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">dot com was also based on real deployable technology. Boom vs bubble is driven by expectations.</p>&mdash; Neil Lawrence (@lawrennd) <a href="https://twitter.com/lawrennd/status/880307062231748608">June 29, 2017</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<center><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">dot com was also based on real deployable technology. Boom vs bubble is driven by expectations.</p>&mdash; Neil Lawrence (@lawrennd) <a href="https://twitter.com/lawrennd/status/880307062231748608">June 29, 2017</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></center>
 
 ## Artificial Intelligence
 
@@ -139,3 +139,8 @@ charset="utf-8"></script>
 
 * Difference between finding a fly in your soup vs a peppercorn in
   your soup. 
+
+## Thanks!
+
+* twitter: @lawrennd
+* blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
