@@ -91,7 +91,7 @@ charset="utf-8"></script></center>
 <center><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">dot com was also based on real deployable technology. Boom vs bubble is driven by expectations.</p>&mdash; Neil Lawrence (@lawrennd) <a href="https://twitter.com/lawrennd/status/880307062231748608">June 29, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></center>
 
-## Artificial Intelligence
+## Artificial Intelligence {.slide: data-transition="none"}
 
 * Challenge of empathy.
 
