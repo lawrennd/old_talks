@@ -115,7 +115,7 @@ charset="utf-8"></script></center>
 
 * AI systems are currently *fragile*
 
-   * Example: Stuxnet
+    * Example: Stuxnet
 
 ## Deploying ML in Real World: Machine Learning Systems Design {.slide: data-transition="none"}
 
@@ -125,6 +125,8 @@ charset="utf-8"></script></center>
 
 * AI systems are currently *fragile*
 
+    * Example: Stuxnet
+
 ## Deploying ML in Real World: Machine Learning Systems Design {.slide: data-transition="none"}
 
 * Internet of **People**
@@ -132,6 +134,8 @@ charset="utf-8"></script></center>
 * Major new challenge for systems designers.
 
 * AI systems are currently *fragile*
+
+    * Example: Stuxnet
 
 ## Machine Learning Systems Design
 
