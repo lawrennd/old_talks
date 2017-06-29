@@ -22,7 +22,7 @@ data + model + compute ->  prediction
 
 ## Royal Society Report
 
-	<center>[Machine Learning: Power and Promise of Computers that Learn by Example](https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf)</center>
+<center>[Machine Learning: Power and Promise of Computers that Learn by Example](https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf)</center>
 
 ## Two Phenomena underpinned by ML
 
