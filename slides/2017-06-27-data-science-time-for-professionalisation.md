@@ -19,7 +19,7 @@ affiliation: Amazon Research Cambridge and University of Sheffield
 ### Data Science: Time for Professionalisation?
 ### 2017-06-27
 ### Neil D. Lawrence
-### Amazon Research Cambridge and University of Sheffield
+### Amazon Research Cambridge and University of Sheffiel
 ```@lawrennd``` [inverseprobability.com](http://inverseprobability.com)
 
 <!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2017-06-27-data-science-time-for-professionalisation.slides.html 2017-06-27-data-science-time-for-professionalisation.md
@@ -331,6 +331,7 @@ question or to be subject to a particular analysis.
 ## Contribute!
 
 * <http://data-readiness.org>
+
 
 ## Also ...
 

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Neil D. Lawrence">
+  <title>Data Analytics Perspectives: Machine Learning</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="talks.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Data Analytics Perspectives: Machine Learning</h1>
+  <p class="author">Neil D. Lawrence</p>
+</section>
+
+<section class="slide level2">
+
+<h3 id="data-analytics-perspectives-machine-learning">Data Analytics Perspectives: Machine Learning</h3>
+<h3 id="csap-annual-conference-royal-society">CSaP Annual Conference, Royal Society</h3>
+<h3 id="th-june-2017">29th June 2017</h3>
+<h3 id="neil-lawrence">Neil Lawrence</h3>
+<h3 id="amazon-research-cambridge-and-university-of-sheffield">Amazon Research Cambridge and University of Sheffield</h3>
+<p><code>@lawrennd</code> <a href="http://inverseprobability.com">inverseprobability.com</a></p>
+<!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2017-06-29-data-analytics-perspectives.slides.html 2017-06-29-data-analytics-perspectives.md
+-->
+</section>
+<section id="what-is-machine-learning" class="slide level2">
+<h2>What is Machine Learning?</h2>
+<p>data + model + compute -&gt; prediction</p>
+</section>
+<section id="two-phenomena-underpinned-by-ml" class="slide level2">
+<h2>Two Phenomena underpinned by ML</h2>
+<ul>
+<li><p>Data Science</p></li>
+<li><p>Artificial Intelligence</p></li>
+</ul>
+</section>
+<section id="operating-at-different-time-scales" class="slide level2">
+<h2>Operating at Different Time Scales</h2>
+<object data="./diagrams/data-science-ai-time-frame.svg" type="image/svg+xml">
+</object>
+<center>
+<p><font color="yellow">data science</font>  <font
+color="cyan">artificial intelligence</font></p>
+</section>
+<section id="data-science" class="slide level2">
+<h2>Data Science</h2>
+</section>
+<section id="data-science-1" class="slide level2">
+<h2>Data Science</h2>
+<ul>
+<li><p>New technologies historically led to new professions:</p>
+<ul>
+<li><p>Brunel (born 1806): Civil, mechanical, naval</p></li>
+<li><p>Tesla (born 1856): Electrical and power</p></li>
+<li><p>William Shockley (born 1910): Electronic</p></li>
+<li><p>Watts S. Humphrey (born 1927): Software</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="the-software-crisis" class="slide level2">
+<h2>The Software Crisis</h2>
+<blockquote>
+<p>The major cause of the software crisis is that the machines have become several orders of magnitude more powerful! To put it quite bluntly: as long as there were no machines, programming was no problem at all; when we had a few weak computers, programming became a mild problem, and now we have gigantic computers, programming has become an equally gigantic problem.</p>
+<p>Edsger Dijkstra, The Humble Programmer</p>
+</blockquote>
+</section>
+<section id="the-data-crisis" class="slide level2">
+<h2>The Data Crisis</h2>
+<blockquote>
+<p>The major cause of the data crisis is that machines have become more interconnected than ever before. Data access is therefore cheap, but data quality is often poor or personally sensitive. We need cheap high quality data and systems which protect individual privacy.</p>
+<p>Me (born 1972)</p>
+</blockquote>
+</section>
+<section id="artificial-intelligence" class="slide level2">
+<h2>Artificial Intelligence</h2>
+</section>
+<section id="ai-bubble" class="slide level2 slide:" data-transition="none">
+<h2>AI Bubble?</h2>
+<blockquote class="twitter-tweet" data-lang="en">
+<p lang="en" dir="ltr">
+If 1997 to 2001 was the dot com bubble, are we now in the dot ai bubble?
+</p>
+— Neil Lawrence (<span class="citation" data-cites="lawrennd">@lawrennd</span>) <a href="https://twitter.com/lawrennd/status/880160513329688576">June 28, 2017</a>
+</blockquote>
+<script async src="//platform.twitter.com/widgets.js"
+charset="utf-8"></script>
+</section>
+<section id="ai-bubble-1" class="slide level2 slide:" data-transition="none">
+<h2>AI Bubble?</h2>
+<blockquote class="twitter-tweet" data-lang="en">
+<p lang="en" dir="ltr">
+It's not a bubble as long as it's not filled with hot air. AI is based on actual testable results and deployed in real life situations.
+</p>
+— visarga (<span class="citation" data-cites="visarga">@visarga</span>) <a href="https://twitter.com/visarga/status/880266521045585922">June 29, 2017</a>
+</blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</section>
+<section id="ai-bubble-2" class="slide level2 slide:" data-transition="none">
+<h2>AI Bubble?</h2>
+<blockquote class="twitter-tweet" data-lang="en">
+<p lang="en" dir="ltr">
+dot com was also based on real deployable technology. Boom vs bubble is driven by expectations.
+</p>
+— Neil Lawrence (<span class="citation" data-cites="lawrennd">@lawrennd</span>) <a href="https://twitter.com/lawrennd/status/880307062231748608">June 29, 2017</a>
+</blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</section>
+<section id="artificial-intelligence-1" class="slide level2">
+<h2>Artificial Intelligence</h2>
+<ul>
+<li>Challenge of empathy.</li>
+</ul>
+<blockquote>
+<p>“AlphaGo will replace accountants next”</p>
+<p>BEIS Discussion Under Chatham House Rule</p>
+</blockquote>
+<blockquote>
+<p>“It doesn’t even replace a human <em>Go</em> player!”</p>
+<p>Thinks me</p>
+</blockquote>
+</section>
+<section id="deploying-ml-in-real-world-machine-learning-systems-design" class="slide level2 slide:" data-transition="none">
+<h2>Deploying ML in Real World: Machine Learning Systems Design</h2>
+<ul>
+<li><p>Internet of Things</p></li>
+<li><p>Major new challenge for systems designers.</p></li>
+<li><p>AI systems are currently <em>fragile</em></p></li>
+<li><p>Example: Stuxnet</p></li>
+</ul>
+</section>
+<section id="deploying-ml-in-real-world-machine-learning-systems-design-1" class="slide level2 slide:" data-transition="none">
+<h2>Deploying ML in Real World: Machine Learning Systems Design</h2>
+<ul>
+<li><p>Internet of <del>Things</del></p></li>
+<li><p>Major new challenge for systems designers.</p></li>
+<li><p>AI systems are currently <em>fragile</em></p></li>
+</ul>
+</section>
+<section id="deploying-ml-in-real-world-machine-learning-systems-design-2" class="slide level2 slide:" data-transition="none">
+<h2>Deploying ML in Real World: Machine Learning Systems Design</h2>
+<ul>
+<li><p>Internet of <strong>People</strong></p></li>
+<li><p>Major new challenge for systems designers.</p></li>
+<li><p>AI systems are currently <em>fragile</em></p></li>
+</ul>
+</section>
+<section id="machine-learning-systems-design" class="slide level2">
+<h2>Machine Learning Systems Design</h2>
+<p><img src="./diagrams/SteamEngine_Boulton&Watt_1784_neg.png" width="50%" style="border:none"></p>
+</section>
+<section id="peppercorns" class="slide level2">
+<h2>Peppercorns</h2>
+<ul>
+<li><p>A new name for system failures which aren’t bugs.</p></li>
+<li><p>Difference between finding a fly in your soup vs a peppercorn in your soup.</p></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+              { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
