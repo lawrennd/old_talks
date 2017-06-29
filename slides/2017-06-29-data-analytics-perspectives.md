@@ -20,6 +20,10 @@ abstract: >
 
 data + model + compute ->  prediction
 
+
+* Royal Society Report:
+  [Machine Learning: Power and Promise of Computers that Learn by Example](https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf)
+
 ## Two Phenomena underpinned by ML
 
 * Data Science
