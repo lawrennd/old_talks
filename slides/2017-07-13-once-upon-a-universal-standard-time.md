@@ -4,14 +4,7 @@ title: "Once Upon a Universal Standard Time: Embodiment and AI Narratives"
 author: Neil D. Lawrence
 ---
 
-## Once Upon a Universal Standard Time: Embodiment and AI Narratives
-### Jesus College Cambridge
-### 2017-07-13
-### CFI Conference, Cambridge, UK
-### Neil D. Lawrence
-### Amazon and University of Sheffield
-```@lawrennd``` [inverseprobability.com](http://inverseprobability.com)
-<!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2017-07-13-ai-narratives-cfi-conference.slides.html  2017-07-13-ai-narratives-cfi-conference.md
+<!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2017-07-13-once-upon-a-universal-standard-time.slides.html  2017-07-13-once-upon-a-universal-standard-time.md
 -->
 
 
