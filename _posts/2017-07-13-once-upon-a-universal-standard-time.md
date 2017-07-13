@@ -20,6 +20,6 @@ key: Lawrence-cfi17
 layout: talk
 month: 10
 published: 2017-07-13
-reveal: 2016-07-13-ai-narratives.md
+reveal: 2016-07-13-once-upon-a-universal-standard-time.md
 venue: CFI Conference
 ---
