@@ -71,7 +71,7 @@ author: Neil D. Lawrence
 
 ## Machine Learning and Narratives
 
-<center><img src="./diagrams/CLassic_baby_shoes.jpg" width="60%">
+<center><img src="./diagrams/Classic_baby_shoes.jpg" width="60%">
 
 <p><i>For sale: baby shoes, never worn.</i></p>
 </center>
