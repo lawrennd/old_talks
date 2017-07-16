@@ -4,7 +4,7 @@ title: What is Machine Learning?
 venue: Data Science Africa Summer School
 author: Neil D. Lawrence
 abstract: >
-  In this talk we will introduce the fundamental ideas in machine learning. 
+  In this talk we will introduce the fundamental ideas in machine learning. We'll develop our exposition around the ideas of prediction function and the objective function. We don't so much focus on the derivation of particular algorithms, but more the general principles involved to give an idea of the machine learning *landscape*.  
 date: 2017-07-17
 affiliation: Amazon and University of Sheffield
 ---
@@ -175,6 +175,8 @@ $$
 
 * GOFAI relied on symbolic logic as its mathematical engine.
 
+# Artificial Intelligence
+
 * Early AI used expert systems: a set of logical rules implemented to reconstruct expertise. For example, rules to decide whether or not someone has cancer.
 
 * Such rules prove hard to specify for very complex processes.[^originai] 
@@ -188,6 +190,8 @@ $$
 * *Data science*: making sense of 'new data', the large volumes of data from sensors and increased interconnectivity (big data, IoT)
 
 * Classical statistics: the question is formed first, and data is later.
+
+# Data Science
 
 * Data Science: data is first, questions come later.
 
@@ -292,6 +296,8 @@ $$
 * For imagenet prediction function was a *convolutional neural network*
 
 * A convolutional neural network introduces *invariances* into the function that are particular to image classification.
+
+# Class of Function: Invariances
 
 * An invariance is a transformation of the input that we don't want to effect the output.
 
@@ -439,7 +445,30 @@ $$
 
 # Performance
 
-* To ensure good performance we normally want a model that gives us a low generalization error. If we weren't sure of the right prediction function to use then we could try 1,000 different prediction functions. Then we could use the one that gives us the lowest error on the test data. But you have to be careful. Selecting a model in this way is like a further stage of training where you are using the test data in the training.[^trainingtest] So when this is done, the data used for this is not known as test data, it is known as *validation data*. And the associated error is the *validation error*. Using the validation error for model selection is a standard machine learning technique, but it can be misleading about the final generalization error. Almost all machine learning practitioners know not to use the test data in your training procedure, but sometimes people forget that when validation data is used for model selection that validation error cannot be used as an unbiased estimate of the generalization performance.
+* To ensure good performance we normally want a model that gives us a low generalization error.
+
+* If we weren't sure of the right prediction function to use then we could try 1,000 different prediction functions.
+
+* We could use the one that gives us the lowest error on the test data.
+
+* But you have to be careful.
+
+
+# Validation and Model Selection
+
+* Selecting a model in this way is like a further stage of training where you are using the test data in the training.[^trainingtest]
+
+* It is known as *validation*.
+
+* The error is known as *validation error*.
+
+*  Using the validation error for model selection is a standard machine learning technique.
+
+# Difficult Trap
+
+* All machine learning practitioners should know not to use the test data in your training procedure.
+
+* But because validation data is used for model selection, it is not an unbiased estimate of the generalization performance.
 
 [^trainingtest]: Using the test data in your training procedure is a major error in any machine learning procedure. It is extremely dangerous as it gives a misleading assessment of the model performance. The [Baidu ImageNet scandal](http://inverseprobability.com/2015/06/04/baidu-on-imagenet) was an example of a team competing in the ImageNet challenge which did this. The team had announced via the publication pre-print server Arxiv that they had a world-leading performance on the ImageNet challenge. This was reported in the mainstream media. Two weeks later the challenge organizers revealed that the team had created multiple accounts for checking their test performance more times than was permitted by the challenge rules. This was then reported as "AI's first doping scandal". The team lead was fired by Baidu. 
 
@@ -453,28 +482,82 @@ $$
 
 # Unsupervised Learning
 
-* In unsupervised learning you have data, $\mathbf{x}$, but no labels $y$. The aim in unsupervised learning is to extract structure from data. The type of structure you are interested in is dependent on the broader context of the task. In supervised learning that context is very much driven by the labels. Supervised learning algorithms try and focus on the aspects of the data which are relevant to predicting the labels. But in unsupervised learning there are no labels. 
+* When you have data, $\mathbf{x}$, but no labels $y$.
 
-* Humans can easily sort a number of objects into objects that share similar characteristics. We easily categorize animals or vehicles. But if the data is very large this is too slow. Even for smaller data, it may be that it is presented in a form that is unintelligible for humans. We are good at dealing with high dimensional data when it's presented in images, but if it's presented as a series of numbers we find it hard to interpret. In unsupervised learning we want the computer to do the sorting for us. For example, an e-commerce company might need an algorithm that can go through its entire list of products and automatically sort them into groups such that similar products are located together.
+* Extract *structure* from data.
 
-<!-- One way of thinking of unsupervised learning is as a form of *compression* of data. The essence of the data is normally distilled by defining the algorithm. --> 
-Supervised learning is broadly divided into classification: i.e. wake word classification in the Amazon Echo, and regression, e.g. shelf life prediction for perishable goods.  Similarly, unsupervised learning can be broadly split into methods that cluster the data (i.e. provide a discrete label) and methods that represent the data as a continuous value. 
+* Type of structure you are interested dependent on the broader context of the task.
+
+# Context
+
+* Supervised learning:  context is very much driven by the labels.
+
+* Humans can easily sort a number of objects into objects that share similar characteristics, e.g. animals and vehicles
+
+* For large data sets or data we are not used to (high dimensional data) would like to automate.
+
+    * E.g., an e-commerce company might need an algorithm that can go through its entire list of products and automatically sort them into groups such that similar products are located together.
+
+<!-- One way of thinking of unsupervised learning is as a form of *compression* of data. The essence of the data is normally distilled by defining the algorithm. -->
+
+# Discrete vs Continuous
+
+* Supervised learning is broadly divided into classification and regression
+
+* Unsupervised learning can similarly be split into methods that cluster the data (i.e. provide a discrete label) or methods that represent the data as a continuous values. 
 
 # Clustering
 
-* Clustering methods associate each data point with a different label. Unlike in classification the label is not provided by a human annotator. It is allocated by the computer. Clustering is quite intuitive for humans, we do it naturally with our observations of the real world. For example, we cluster animals into different groups. If we encounter a new animal we can immediately assign it to a group: bird, mammal, insect. These are certainly labels that can be provided by humans, but they were also originally invented by humans. With clustering we want the computer to recreate that process of inventing the label.
+* *Task*:  associate each data point with a different label.
 
-* Unsupervised learning enables computers to form similar categorizations on data that is too large scale for us to process. When the Greek philosopher, Plato, was thinking about ideas, he considered the concept of the Platonic ideal. The Platonic ideal bird is the bird that is most bird-like or the chair that is most chair-like. In some sense, the task in clustering is to define different clusters, by finding their Platonic ideal (known as the cluster center) and allocate each data point to the relevant cluster center. So allocate each animal to the class defined by its nearest cluster center.
+* Label is *not* provided.
 
-* To perform clustering on a computer we need to define a notion of either similarity or distance between the objects and their Platonic ideal, the cluster center. We normally assume that our objects are represented by vectors of data, $\mathbf{x}_i$. Similarly we represent our cluster center for category $j$ by a vector $\mathbf{m}_j$. This vector contains the ideal features of a bird, a chair, or whatever category $j$ is. In clustering we can either think in terms of similarity of the objects, or distances. We want objects that are similar to each other to cluster together. We want objects that are distant from each other to cluster apart.
+* Quite intuitive for humans, we do it naturally.
 
-* This requires us to formalize our notion of similarity or distance. Let's focus on distances. A definition of distance between an object, $i$, and the cluster center of class $j$ is a function of two vectors, the data point, $\mathbf{x}_i$ and the cluster center, $\mathbf{m}_j$,
+# Platonic Ideals
+
+* Names for animals originally invented by humans through 'clustering'
+
+* Can we have the computer to recreate that process of inventing the label?
+
+* Greek philosopher, Plato, thought about ideas, he considered the concept of the Platonic ideal.
+
+* Platonic ideal bird is the bird that is most bird-like or the chair that is most chair-like.
+
+# Cluster Center
+
+* Can define different clusters, by finding their Platonic ideal (known as the cluster center)
+
+* Allocate each data point to the relevant nearest cluster center.
+
+* Allocate each animal to the class defined by its nearest cluster center.
+
+# Similarity and Distance Measures
+
+* Define a notion of either similarity or distance between the objects and their Platonic ideal.
+
+* If objects are vectors of data, $\mathbf{x}_i$.
+
+* Represent cluster center for category $j$ by a vector $\mathbf{m}_j$.
+
+* This vector contains the ideal features of a bird, a chair, or whatever category $j$ is.
+
+# Similarity or Distance
+
+* Can either think in terms of similarity of the objects, or distances.
+
+* We want objects that are similar to each other to cluster together. We want objects that are distant from each other to cluster apart.
+
+* Use mathematical function to formalize this notion, e.g. for distance
 
 $$
 d_{ij} = f(\mathbf{x}_i, \mathbf{m}_j).
 $$
 
-* Our objective is then to find cluster centers that are close to as many data points as possible.  For example, we might want to cluster customers into their different tastes. We could represent each customer by the products they've purchased in the past. This could be a binary vector $\mathbf{x}_i$. We can then define a distance between the cluster center and the customer. 
+# Squared Distance
+
+
+* Find cluster centers that are close to as many data points as possible.
 
 * A commonly used distance is the squared distance,
 
@@ -482,19 +565,37 @@ $$
 d_{ij} = (\mathbf{x}_i - \mathbf{m}_j)^2.
 $$
 
-* The squared distance comes up a lot in machine learning. In unsupervised learning it was used to measure dissimilarity between predictions and observed data. Here its being used to measure the dissimilarity between a cluster center and the data.
+* Already seen for regression.
 
-* Once we have decided on the distance or similarity function we can decide a number of cluster centers, $K$. We find their location by allocating each center to a sub-set of the points and minimizing the sum of the squared errors,
+# Objective Function
+
+* Given similarity measure, need number of  cluster centers, $K$.
+
+* Find their location by allocating each center to a sub-set of the points and minimizing the sum of the squared errors,
 
 $$
 E(\mathbf{M}) = \sum_{i \in \mathbf{i}_j} (\mathbf{x}_i - \mathbf{m}_j)^2
 $$
 
-where the notation $\mathbf{i}_j$ represents all the indices of each data point which has been allocated to the $j$th cluster represented by the center $\mathbf{m}_j$. 
+here $\mathbf{i}_j$ is all indices of  data points allocated to the $j$th center. 
 
 # $k$-Means Clustering
 
-* One approach to minimizing this objective function is known as *$k$-means clustering*. It is simple and relatively quick to implement, but it is an initialization sensitive algorithm. Initialization is the process of choosing an initial set of parameters before optimization. For $k$-means clustering you need to choose an initial set of centers. In $k$-means clustering your final set of clusters is very sensitive to the initial choice of centers. For more technical details on $k$-means clustering you can watch a video of Alex Ihler introducing the algorithm here.
+* *$k$-means clustering* is simple and quick to implement.
+
+* Very *initialisation* sensitive.
+
+# Initialisation
+
+* Initialisation is the process of selecting a starting set of parameters.
+
+* Optimisation result can depend on the starting point.
+
+* For $k$-means clustering you need to choose an initial set of centers.
+
+* Optimisation surface has many local optima, algorithm gets stuck in ones near initialisation.
+
+# $k$-Means Clustering
 
 [![$k$-means clustering by Alex Ihler](https://img.youtube.com/vi/mfqmoUN-Cuw/0.jpg)](https://www.youtube.com/watch?v=mfqmoUN-Cuw)
 
@@ -556,9 +657,15 @@ where the notation $\mathbf{i}_j$ represents all the indices of each data point 
 
 # Dimensionality Reduction
 
-* This gives three parameters in the puppeteers control. This implies that the 39 variables we see moving are controlled by only 3 variables. These 3 variables are often called the hidden or *latent variables*. 
+* This gives three parameters in the puppeteers control.
 
-* Assume similar for real world data, observations are derived from lower dimensional underlying proccess
+* Implies that the puppet we see moving is controlled by only 3 variables.
+
+* These 3 variables are often called the hidden or *latent variables*. 
+
+* Assume similar for real world data, observations are derived from lower dimensional underlying process
+
+# Examples in Social Sciences
 
 * Underpins *psychological scoring* such as *IQ* or *personality tests*
 
