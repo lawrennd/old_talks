@@ -849,20 +849,47 @@ $$
 
 # Optimization Methods
 
-* As we implied above, reinforcement learning can also used to improve user experience. In that case the reward is gained when the user buys a product from us. This makes it closely allied to the area of optimization. Optimization of our user interfaces can be seen as a reinforcement learning task, but more commonly it is thought about separately in the domains of *Bayesian optimization* or *bandit learning*.
+* Reinforcement learning can also used to improve user experience.
 
+* Reward is gained when the user buys a product from us.
 
-* We use optimization in machine learning to find the parameters of our models. We can do that because we have a mathematical representation of our objective function as a direct function of the parameters. 
+* This makes it closely allied to the area of optimization.
 
-* Examples in this form of optimization include, what is the best user interface for presenting adverts? What is the best design for a airfoil for a Prime Air drone? Which product should I return top of the list in response to this user's search?
+* Optimization of our user interfaces is like reinforcement learning task, but normally approached through *Bayesian optimization* or *bandit learning*.
 
-* Bayesian optimization arises when we can't directly relate the parameters in the system of interest to our objective through a mathematical function. For example, what is the mathematical function that relates a user's experience to the probability that they will buy a product? 
+# Optimization
+
+* Normal optimization we have a mathematical representation of our objective function as a direct function of the parameters.
+
+* In Bayesian Optimization we don't.
+
+* E.g. Examples in this form of optimization include:
+
+1. What is the best user interface for presenting adverts?
+
+2. What is the best design of wing for an F1 car?
+
+3. Which product should I return top of the list in response to this user's search?
 
 # Bayesian Optimization
 
-* One approach to these problems is to use machine learning methods to develop a *surrogate model* for the optimization task. The surrogate model is a prediction function that attempts to recreate the process we are finding hard to model. We try to simultaneously fit the surrogate model and optimize the process.
+* Can't directly relate the parameters in the system of interest to our objective through a mathematical function.
 
-* Bayesian optimization methods use a *surrogate model* (normally a specific form of regression model). They use this to predict how the real system will perform. The surrogate model makes a prediction (with an estimate of the uncertainty) of what the response will be to any given input. Parameters to test are chosen by considering this prediction. Similar to reinforcement learning, this can be viewed as a *model based* approach because the surrogate model can be seen as a model of the real world. In bandit methods strategies are determined without turning to a model to motivate them. They are *model free* methods. 
+* E.g. What is the mathematical function that relates a user's experience to the probability that they will buy a product? 
+
+# Bayesian Optimization
+
+* Use machine learning to develop a  *surrogate model* for the optimization task.
+
+* Surrogate model is a prediction function that attempts to recreate the process we are finding hard to model.
+
+* Try to simultaneously fit the surrogate model and optimize the process.
+
+# Surrogate Models
+
+* Bayesian optimization methods use a *surrogate model* (normally a specific form of regression model).
+
+* Use this to predict how the real system will perform. The surrogate model makes a prediction (with an estimate of the uncertainty) of what the response will be to any given input. Parameters to test are chosen by considering this prediction. Similar to reinforcement learning, this can be viewed as a *model based* approach because the surrogate model can be seen as a model of the real world. In bandit methods strategies are determined without turning to a model to motivate them. They are *model free* methods. 
 
 # Model Based and Model Free: Performance
 
