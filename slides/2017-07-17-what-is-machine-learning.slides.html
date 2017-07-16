@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="reveal.js/css/reveal.css">
   <style type="text/css">code{white-space: pre;}</style>
   <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
-  <link rel="stylesheet" href="talks.css"/>
+  <link rel="stylesheet" href="tech-talks.css"/>
   <!-- Printing and PDF exports -->
   <script>
     var link = document.createElement( 'link' );
@@ -86,13 +86,51 @@
 </section>
 <section id="physical-processes" class="slide level1">
 <h1>Physical Processes</h1>
-<p>Manufacturing processes consist of production lines and robotic automation. Logistics can also be decomposed into the supply chain processes. Whether it’s manufacturing or logistics, efficiency can be improved by automating components of the processes to improve the flow of goods.</p>
+<ul>
+<li><p>Manufacturing processes consist of production lines and robotic automation.</p></li>
+<li><p>Logistics can also be decomposed into the supply chain processes.</p></li>
+<li><p>Efficiency can be improved by automation.</p></li>
+</ul>
 </section>
 <section id="goods-and-information" class="slide level1">
 <h1>Goods and Information</h1>
-<p>An interesting challenge for modern society is the management of both the flow of goods and the flow of information. The flow of information is also highly automated. Processing of data is decomposed into stages in computer code.</p>
-<p>In these processing pipelines, manufacturing, logistics or data management, the overall pipeline normally also requires human intervention from an operator. These interventions can create bottlenecks and slow the process of automation. Machine learning is the key technology in automating these manual stages.</p>
-<p>The human interventions that were easy to replicate with technology have already been replaced. The components that still require human intervention are the knottier problems. Often they represent components that are difficult, or impossible, to decompose into stages which could then be further automated. In that sense these components are process-atoms. In manufacturing or logistics settings these atoms involve the sort of flexible manual skills that we cannot replicate with current robotic technology. They require emulation of a human’s motor skills. In information processing settings these atoms require emulation of our cognitive skills. For example, our ability to mentally process an image or some text.</p>
+<ul>
+<li><p>For modern society: management of flow of goods and information.</p></li>
+<li><p>Flow of information is highly automated.</p></li>
+<li><p>Processing of data is decomposed into stages in computer code.</p></li>
+</ul>
+</section>
+<section id="intervention" class="slide level1">
+<h1>Intervention</h1>
+<ul>
+<li><p>For all cases: manufacturing, logistics, data management</p></li>
+<li><p>Pipeline requires human intervention from an operator.</p></li>
+<li><p>Interventions create bottlenecks, slow the process.</p></li>
+<li><p>Machine learning is a key technology in automating these manual stages.</p></li>
+</ul>
+</section>
+<section id="long-grass" class="slide level1">
+<h1>Long Grass</h1>
+<ul>
+<li><p>Easy to replicate interventions have already been dealt with.</p></li>
+<li><p>Components that still require human intervention are the knottier problems.</p></li>
+<li><p>Difficult decompose into stages which could then be further automated.</p></li>
+<li><p>These components are ‘process-atoms’.</p></li>
+<li><p>These are the “long grass” regions of technology.</p></li>
+</ul>
+</section>
+<section id="nature-of-challenge" class="slide level1">
+<h1>Nature of Challenge</h1>
+<ul>
+<li><p>In manufacturing or logistics settings atoms are flexible manual skills.</p>
+<ul>
+<li>Requires emulation of a human’s motor skills.</li>
+</ul></li>
+<li><p>In information processing: our flexible cognitive skills.</p>
+<ul>
+<li>Our ability to mentally process an image or some text.</li>
+</ul></li>
+</ul>
 </section>
 <section id="worked-example-delivery-drones" class="slide level1">
 <h1>Worked Example: Delivery Drones</h1>
@@ -176,11 +214,23 @@
 </section>
 <section id="data-science" class="slide level1">
 <h1>Data Science</h1>
-<p>We can split applications of machine learning broadly into <em>data science</em> and <em>artificial intelligence</em>. We define the field of <em>data science</em> to be the challenge of making sense of the large volumes of data that have now become available through the increase in sensors and the large interconnection of the internet. Phenomena variously known as “big data” or “the internet of things”. Data science differs from traditional statistics in that this data is not necessarily collected with a purpose or experiment in mind. It is collected by happenstance, and we try and extract value from it later. In classical statistics the question is formed first, and data is collected to answer the question. Karl Popper, the philosopher of science, once put the challenge of model (or question) and experiment (or data) as being similar to the challenge of the chicken and the egg. Which comes first? His answer is that they co-evolve. And a similar answer should apply to the model and the data. But in classical statistics it was normally the question (which could be encoded in a model) that comes first. In modern data science it is often the data that comes first. Regardless, to truly answer questions to our satisfaction several stages of modelling and data collection are likely to be required. This naturally implies that classical statistical analyses are as important as ever in this domain.</p>
+<ul>
+<li><p>Can split applications of machine learning broadly into <em>data science</em> and <em>artificial intelligence</em>.</p></li>
+<li><p><em>Data science</em>: making sense of ‘new data’, the large volumes of data from sensors and increased interconnectivity (big data, IoT)</p></li>
+<li><p>Classical statistics: the question is formed first, and data is later.</p></li>
+<li><p>Data Science: data is first, questions come later.</p></li>
+<li><p>Overlap through <em>exploratory data analysis</em></p></li>
+</ul>
 </section>
 <section id="artificial-intelligence-1" class="slide level1">
 <h1>Artificial Intelligence</h1>
-<p>Artificial intelligence on the other hand is a field with its origins in <em>Cybernetics</em>. The challenge in artificial intelligence is to recreate “intelligent” behaviour. In particular there is a focus on having machines emulate the capabilities of humans. Machine learning has become important in this domain because of the success of data-driven artificial intelligence. In data-driven artificial intelligence, rather than solving a challenge in intelligence from first principles, we simply acquire data that guides us to the solution of the problem. Often such data is acquired from humans, and the computer is given the task of reconstructing that data. This is where machine learning techniques come in. Machine learning focuses on emulating the data creation process by combining a model with the data. The model incorporates assumptions about the data generating process. But unlike physical models (e.g. differential equation models) the assumptions are typically only weak. Smoothness assumptions are common, and the success of confolutional neural networks is driven by the assumptions they can encode about how an image is structured.</p>
+<ul>
+<li><p>Artificial intelligence* originates in <em>cybernetics</em></p></li>
+<li><p>Challenge to recreate “intelligent” behaviour.</p></li>
+<li><p>Either <em>general intelligence</em> or emulate <em>human</em> capabilities.</p></li>
+<li><p>Machine learning is important because of success of data-driven artificial intelligence.</p></li>
+<li><p>Data-driven artificial intelligence: instead of solving from first principles, collect data.</p></li>
+</ul>
 </section>
 <section id="machine-learning" class="slide level1">
 <h1>Machine Learning</h1>
