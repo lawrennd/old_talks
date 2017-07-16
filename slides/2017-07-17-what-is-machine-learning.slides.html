@@ -902,49 +902,61 @@ f_j(\mathbf{z}_i; \mathbf{W}) = w_{1j} z_{1i} + w_{2j} z_{2i}
 <h1>Surrogate Models</h1>
 <ul>
 <li><p>Bayesian optimization methods use a <em>surrogate model</em> (normally a specific form of regression model).</p></li>
-<li><p>Use this to predict how the real system will perform. The surrogate model makes a prediction (with an estimate of the uncertainty) of what the response will be to any given input. Parameters to test are chosen by considering this prediction. Similar to reinforcement learning, this can be viewed as a <em>model based</em> approach because the surrogate model can be seen as a model of the real world. In bandit methods strategies are determined without turning to a model to motivate them. They are <em>model free</em> methods.</p></li>
-</ul>
-</section>
-<section id="model-based-and-model-free-performance" class="slide level1">
-<h1>Model Based and Model Free: Performance</h1>
-<ul>
-<li>Because of their different philosophies, if a class of prediction functions is chosen, then a model based approach might have better average case performance. At least in terms of <em>data efficiency</em>. A model free approach may well have better worst case performance though, because it makes less assumptions about the nature of the data. To put it another way, making assumptions about the data is helpful if they are right: and if the model is sensible they’ll be right on average. However, it is unhelpful if the model is wrong. Indeed, it could be actively damaging. Since we can’t usually guarantee the model is absolutely right, the worst case performance of a model based approach would be poor.</li>
+<li><p>Use this to predict how the real system will perform.</p></li>
+<li><p>Optimize in the surrogate model.</p></li>
 </ul>
 </section>
 <section id="conclusion" class="slide level1">
 <h1>Conclusion</h1>
 <ul>
-<li>We have introduced a range of machine learning approaches by focusing on their use of mathematical functions to replace manually coded systems of rules. The important characteristic of machine learning is that the form of these functions, as dictated by their parameters, is determined by acquiring data from the real world.</li>
+<li><p>Introduce range of ML approaches.</p></li>
+<li><p>Focussed on where they use mathematical functions as a general overview.</p></li>
 </ul>
 </section>
 <section id="deployment" class="slide level1">
 <h1>Deployment</h1>
 <ul>
-<li>The methods we have introduced are roughly speaking introduced in order of difficulty of deployment. While supervised learning is more involved in terms of collection of data, it is the most straightforward method to deploy once that data is recovered. For this reason, a major focus with supervised learning should always be on maintaining data quality, increasing the efficiency and accountability<a href="#/fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> of the data collection pipeline and the quality of features used.</li>
+<li><p>Introduced almost in order of difficulty of deployment.</p></li>
+<li><p>Supervised learning requires more data annotation, but more straightforward to deploy.</p></li>
+<li><p>Therefore major focus with supervised learning should always be on maintaining data quality.</p></li>
 </ul>
+</section>
+<section id="where-to-deploy" class="slide level1">
+<h1>Where to Deploy</h1>
 <ul>
-<li>In relation to what AI can and can’t do today Andrew Ng is quoted as saying:</li>
+<li><blockquote>
+<p>If a typical person can do a mental task with less than one second of thought, we can probably automate it using AI either now or in the near future.[^ngquote]</p>
+<p>Andrew Ng</p>
+</blockquote></li>
 </ul>
-<blockquote>
-<p>If a typical person can do a mental task with less than one second of thought, we can probably automate it using AI either now or in the near future.<a href="#/fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a></p>
-</blockquote>
+</section>
+<section id="is-this-right" class="slide level1">
+<h1>Is this Right?</h1>
 <ul>
-<li><p>I would broadly agree with this quote but only in the context of supervised learning. If a human expert takes around that amount of time, then it’s also likely we can acquire the data necessary to build a supervised learning algorithm that can emulate that human’s response.</p></li>
+<li><p>Broadly agree with this quote but only in the context of supervised learning.</p></li>
 <li><p>The picture with regard to unsupervised learning and reinforcement learning is more clouded.</p></li>
-<li><p>One observation is that for <em>supervised</em> learning we seem to be moving beyond the era where very deep machine learning expertise is required to deploy methods. A solid understanding of machine learning (say to Masters level) is certainly required, but the quality of the final result is likely more dependent on domain expertise and the quality of the data and the information processing pipeline. This seems part of a wider trend where some of the big successes in machine learning are moving rapidly from the domain of science to that of engineering.<a href="#/fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a></p></li>
 </ul>
+</section>
+<section id="getting-easier" class="slide level1">
+<h1>Getting Easier</h1>
 <ul>
-<li><p>So if we can only emulate tasks that humans take around a second to do, how are we managing to deliver on self driving cars? The answer is that we are constructing engineered systems from sub-components, each of which is a machine learning subsystem. But they are tied together as a component based system in line with our traditional engineering approach. This has an advantage that each component in the system can be verified before its inclusion. This is important for debugging and safety. But in practice we can expect these systems to be very brittle. A human adapts the way in which they drive the car across their lifetime. A human can react to other road users. In extreme situations, such as a car jacking, a human can set to one side normal patterns of behavior, and purposely crash their car to draw attention to the situation.</p></li>
-<li><p>Supervised machine learning solutions are normally trained offline. They do not adapt when deployed because this makes them less verifiable. But this compounds the brittleness of our solutions. By deploying our solutions we actually change the environment in which they operate. Therefore, it’s important that they can be quickly updated to reflect changing circumstances. This updating happens offline. For a complex mechanical system, such as a delivery drone, extensive testing of the system may be required when any component is updated. It is therefore imperative that these data processing pipelines are well documented so that they can be redeployed on demand.</p></li>
-<li><p>In practice there can be challenges with the false dichotomy between reproducibility and performance. It is likely that most of our data scientists are caring less about their ability to redeploy their pipelines and only about their ability to produce an algorithm that achieves a particular performance. A key question is how reproducible is that process? There is a <em>false</em> dichotomy because ensuring reproducibility will typically improve performance as it will make it easier to run a rigorous set of explorative experiments. A worry is that, currently, we do not have a way to quantify the scale of this potential problem across the company.</p></li>
+<li><p>We seem to be moving beyond the era where very deep machine learning expertise is required to deploy methods.</p></li>
+<li><p>Just require a solid understanding of machine learning (say to Masters level)</p></li>
 </ul>
-<!-- Machine learning solutions When we deploy our solutions in the real world, we find that the situation is more complex. ThereAnother potential problem with our rush to supervised learning solutions is the false dichotomy between reproducibility and performance. Across Amazon we are using data science to design solutions which are deployed into production.  -->
-<!-- It also requires more expertise on the machine learning side to develop and deploy solutions in un, and requires more expertise.  -->
-<!-- such as avoiding a crash, to deliberately ram into another vehicle -->
-<!-- To deliver complex solutions, like self driving cars, many sub-components from a  -->
-<!-- Domain expertise becomWith regard to deIn particular, we are moving beyond the era where there is a short -->
+</section>
+<section id="streaming-data" class="slide level1">
+<h1>Streaming Data</h1>
 <ul>
-<li>Common to all machine learning methods is the initial choice of useful classes of functions. The deep learning revolution is associated with a particular class of mathematical functions that is proving very successful in what were seen to be challenging domains: speech, vision, language. This has meant that significant advances in problems that have been seen as hard have occurred in artificial intelligence.</li>
+<li><p>Supervised machine learning solutions are normally trained offline.</p></li>
+<li><p>They do not adapt when deployed because this makes them less verifiable.</p></li>
+<li><p>This compounds the brittleness of our solutions.</p></li>
+</ul>
+</section>
+<section id="model-choice" class="slide level1">
+<h1>Model Choice</h1>
+<ul>
+<li><p>For all machine learning methods is the initial choice of useful classes of functions.</p></li>
+<li><p>The deep learning revolution is associated with a particular class of mathematical functions.</p></li>
 </ul>
 </section>
 <section class="footnotes">
@@ -952,9 +964,6 @@ f_j(\mathbf{z}_i; \mathbf{W}) = w_{1j} z_{1i} + w_{2j} z_{2i}
 <ol>
 <li id="fn1"><p>GOFAI has its origins in the birth of computer science so it is unsurprising that logic should be the dominant paradigm. There was also a sense in which pure logic felt like it mapped well on to human reasoning. In practice, for any complex real world situation, the number of logical rules required causes an explosion in the <em>state space</em> of the system. This makes logical systems intractable in many applications.<a href="#/fnref1">↩</a></p></li>
 <li id="fn2"><p>Using the test data in your training procedure is a major error in any machine learning procedure. It is extremely dangerous as it gives a misleading assessment of the model performance. The <a href="http://inverseprobability.com/2015/06/04/baidu-on-imagenet">Baidu ImageNet scandal</a> was an example of a team competing in the ImageNet challenge which did this. The team had announced via the publication pre-print server Arxiv that they had a world-leading performance on the ImageNet challenge. This was reported in the mainstream media. Two weeks later the challenge organizers revealed that the team had created multiple accounts for checking their test performance more times than was permitted by the challenge rules. This was then reported as “AI’s first doping scandal”. The team lead was fired by Baidu.<a href="#/fnref2">↩</a></p></li>
-<li id="fn3"><p>To try and better embody the state of data readiness in organizations I’ve been proposing <a href="%7B%7B%20site.baseurl%20%7D%7D/2017/01/12/data-readiness-levels">“Data Readiness Levels”</a>. More needs to be done in this area to improve the efficiency of the data science pipeline.<a href="#/fnref3">↩</a></p></li>
-<li id="fn4"><p>The quote can be found in the Harvard Business Review Article <a href="https://hbr.org/2016/11/what-artificial-intelligence-can-and-cant-do-right-now">“What Artificial Intelligence Can and Can’t Do Right Now”</a>.<a href="#/fnref4">↩</a></p></li>
-<li id="fn5"><p>This trend was very clear at the moment, <a href="%7B%7Bsite.baseurl%20%7D%7D/2016/11/29/new-directions-in-kernels-and-gaussian-processes.html">I spoke about it</a> at a recent Dagstuhl workshop on new directions for kernel methods and Gaussian processes.<a href="#/fnref5">↩</a></p></li>
 </ol>
 </section>
     </div>
