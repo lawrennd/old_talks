@@ -4,7 +4,7 @@ title: What is Machine Learning?
 venue: Data Science Africa Summer School
 author: Neil D. Lawrence
 abstract: >
-  In this talk we will introduce the fundamental ideas in machine learning. We'll develop our exposition around the ideas of prediction function and the objective function. We don't so much focus on the derivation of particular algorithms, but more the general principles involved to give an idea of the machine learning *landscape*.  
+  In this talk we will introduce the fundamental ideas in machine learning. We'll develop our exposition around the ideas of prediction function and the objective function. We don't so much focus on the derivation of particular algorithms, but more the general principles involved to give an idea of the machine learning *landscape*.
 date: 2017-07-17
 affiliation: Amazon and University of Sheffield
 ---
@@ -492,19 +492,21 @@ $$
 
 * Supervised learning:  context is very much driven by the labels.
 
-* Humans can easily sort a number of objects into objects that share similar characteristics, e.g. animals and vehicles
+* Humans easily sort objects  e.g. animals and vehicles
 
 * For large data sets or data we are not used to (high dimensional data) would like to automate.
 
-    * E.g., an e-commerce company might need an algorithm that can go through its entire list of products and automatically sort them into groups such that similar products are located together.
-
-<!-- One way of thinking of unsupervised learning is as a form of *compression* of data. The essence of the data is normally distilled by defining the algorithm. -->
+    * E.g., an e-commerce company algorithm for sorting products into groups.
 
 # Discrete vs Continuous
 
 * Supervised learning is broadly divided into classification and regression
 
-* Unsupervised learning can similarly be split into methods that cluster the data (i.e. provide a discrete label) or methods that represent the data as a continuous values. 
+* Unsupervised learning can be split too:
+
+1.  methods that cluster the data
+
+2. methods that represent the data as (lower dimensional) continuous values. 
 
 # Clustering
 
@@ -720,17 +722,28 @@ $$
 
 * To fit the model need *loadings*, $\mathbf{W}$, and latent variables, $\mathbf{Z}$.
 
-* Can use least squares (leads to *matrix factorization* and recommender systems.
+* Can use least squares (leads to *matrix factorization* and recommender systems).
 
 * Recommender systems most elements of $\mathbf{x}_i$ are missing.
 
 # Probability
 
-* In PCA and factor analysis the unknown latent factors are dealt with through a probability distribution. They are each assumed to be drawn from a zero mean, unit variance normal distribution. This leaves the factor loadings to be estimated. For PCA the maximum likelihood solution for the factor loadings can be shown to be given by the *eigenvalue decomposition* of the data covariance matrix. This is algorithmically simple and convenient, although slow to compute for very large data sets with many features and many subjects. The eigenvalue problem can also be derived from many other starting points: e.g. the directions of maximum variance in the data or finding a latent space that best preserves inter-point distances between the data, or the optimal linear compression of the data given a linear reconstruction. These many and varied justifications for the eigenvalue decomposition may account for the popularity of PCA. Indeed, there is even an interpretation for Google's original PageRank algorithm (which computed the *smallest* eigenvector of the internet's linkage matrix) as seeking the dominant principal component of the web.[^pagerankinterpretation]
+* PCA and factor analysis the unknown latent factors are dealt with through a probability distribution.
 
-[^pagerankinterpretation]: The interpretation requires you to think of the web as a series of web pages in a high dimensional space where distances between web pages are computed by moving along the links (in either direction). The PageRank is the one dimensional space that best preserves those distances in the sense of an L1 norm. The interpretation works because the smallest eigenvalue of the linkage matrix is the *largest* eigenvalue of the inverse of the linkage matrix. The inverse linkage matrix (which would be impossible to compute) embeds similarities between pages according to how far apart they are via a random walk along the linkage matrix. 
+* Assume these "unknowns" are  drawn from a zero mean, unit variance normal distribution.
 
-* Characterizing users according to past buying behavior and combining this with characteristics about products, is key to making good recommendations and returning useful search results. Further advances can be made if we understand the context of a particular session. For example, if a user is buying Christmas presents and searches for a dress, then it could be the case that the user is willing to spend a little more on the dress than in normal circumstances. Characterizing these effects requires more data and more complex algorithms. However, in domains such a search we are normally constrained by the speed with which we need to return results. Accounting for each of these factors while returning results with acceptable latency is a particular challenge. 
+* That implies a particular *probability* density for data (PDF).
+
+* The PDF has parameters depending on factor loadings to be estimated.
+
+
+# Maximum Likelihood
+
+* Fit model by "maximising likelihood of data" under the PDF.
+
+* Maxium likelihood for  PCA is the *eigenvalue decomposition* of the data covariance matrix.
+
+* Algorithmically simple and convenient, but slow to compute for very large data sets with many features and many subjects.
 
 # Principal Component Analysis
 
@@ -746,11 +759,25 @@ $$
 
 * Idea of general intelligence is develop algorithms that are adaptable to many different circumstances.
 
-* Supervised learning algorithms are designed to resolve particular challenges. Data is annotated with those challenges in mind. Unsupervised attempts to build representations without any context. But normally the algorithm designer has an understanding of what the broader objective is and designs the algorithms accordingly (for example, characterizing users). In reinforcement learning some context is given, in the form of a reward, but the reward is normally delayed. There may have been many actions that affected the outcome, but which actions had a positive effect and which a negative effect?
+# Reinforcement Learning
 
-# A/B Testing
+* Supervised learning algorithms are designed to resolve particular challenges.
 
-* Testing the customer experience, A/B testing, prioritizes short term reward.
+* Data is annotated with those challenges in mind.
+
+* Unsupervised attempts to build representations without any context. 
+
+# "Reward"
+
+* In reinforcement learning some context is given, in the form of a reward. But it is often *delayed*
+
+* Credit allocation problem: many actions that affected the outcome, but which actions had a positive effect and which a negative effect?
+
+# A/B Testing and Reward
+
+* Advert clicks can be seen as a reward.
+
+* Testing the customer experience, A/B testing, prioritises short term reward.
 
 * The internet is currently being driven by short term rewards which make it distracting in the short term, but perhaps less useful in the long term.
 
@@ -760,46 +787,65 @@ $$
 
 # Longer Term
 
-* One open question is how to drive non-visual interfaces through equivalents to A/B testing. Speech interfaces, such as those used in intelligent agents, are less amenable to A/B testing when determining the quality of the interface. Improving interaction with them is therefore less exact science than the visual interface. Data efficient reinforcement learning methods are likely to be key to improving these agent's ability to interact with the user and understand intent. However, they are not yet mature enough to be deployed in this application. 
+* One open question is how to drive non-visual interfaces through equivalents to A/B testing.
+
+* Speech interfaces, such as those used in intelligent agents, are less amenable to A/B testing when determining the quality of the interface.
+
+* Improving interaction with them is therefore less exact science than the visual interface.
+
+# Data Efficiency
+
+* Data efficient reinforcement learning methods are likely to be key to improving these agent's ability to interact.
+
+* However, they are not yet mature enough to be deployed yet. 
 
 # Game Play
 
-* An area where reinforcement learning methods have been deployed with high profile success is game play. In game play the reward is delayed to the end of the game, and it comes in the form of victory or defeat. A significant advantage of game play as an application area is that, through simulation of the game, it is possible to generate as much data as is required to solve the problem. For this reason, many of the recent advances in reinforcement learning have occurred with methods that are not data efficient. 
+* Reinforcement learning methods have been deployed with high profile success is game play.
 
-* The company DeepMind is set up around reinforcement learning as an approach to general intelligence. All their most well known achievements are centered around artificial intelligence in game play. In reinforcement learning a decision made at any given time have a downstream affect on the result. Whether the effect if beneficial or not is unknown until a future moment. 
+* Reward is delayed to the end of the game, victory or defeat.
 
-* We can think of reinforcement learning as providing a label, but the label is associated with a series of data involving a number of decisions taken. Each decision was taken given the understanding of game play at any given moment. Understanding which of these decisions was important in victory or defeat is a hard problem. 
+* Can acquire lots of data through simulation.
 
-* In machine learning the process of understanding which decisions were beneficial and which were detrimental is known as the credit allocation problem. You wish to reward decisions that led to success to encourage them, but punish decisions that lead to failure. 
+* Many of the recent advances in reinforcement learning have occurred with methods that are not data efficient. 
+
+# DeepMind
+
+* The company DeepMind is set up around reinforcement learning as an approach to general intelligence.
+
+* Best known achievements are centered around artificial intelligence in game play.
+
+* For example, Atari game play and AlphaGo. 
 
 # Deep Q Learning
 
-Broadly speaking, DeepMind uses an approach to Machine Learning where there are two mathematical functions at work. One determines the action to be taken at any given moment, the other estimates the quality of the board position at any given time. These are respectively known as the *policy network* and the *value network*.[^qlearning] DeepMind made use of convolutional neural networks for both these models. 
+* DeepMind uses an approach to Machine Learning where there are two mathematical functions at work.
+
+* The *policy function* determines the action to be taken at any given moment,
+
+* The *value function* estimates the quality of a board position at any given time.
+
+* In AlphaGo make use of convolutional neural networks for both these models. 
 
 # AlphaGo
 
-* The ancient Chinese game of Go was considered a challenge for artificial intelligence for two reasons. Firstly, the game tree has a very high branching factor. The game tree is a discrete representation of the game. Every node in the game tree is associated with a board position. You can move through the game tree by making legal a move on the board to change the position. In Go, there are so many legal moves that the game tree increases exponentially. This challenge in Go was addressed by using stochastic game tree search. Rather than exploring the game tree exhaustively they explored it randomly.
+* Go was considered a challenge for artificial intelligence for two reasons.
 
-* Secondly, evaluating the quality of any given board position was deemed to be very hard.[^chess] The value function determines for each player whether they are winning or loosing. Skilled Go players can assess a board position, but they do it by instinct, by intuition. Just as early AI researchers struggled to give rules for detecting cancer, it is challenging to give rules to assess a Go board. The machine learning approach that AlphaGo took is to train a value function network to make this assessment. 
+1. Game tree has a very high `branching factor'.
 
-[^chess]: The situation in chess is much easier, firstly the number of possible moves at any time is about an order of magnitude lower, meaning the game tree doesn't grow as quickly. Secondly, in chess, there are well defined value functions. For example a  value function could be based on adding together the points that are associated with each piece.
+    In Go, there are so many legal moves that the game tree increases exponentially. 
 
-# Reinforcement Learning and Classical Control
+2. Evaluating the quality of any given board position was deemed to be very hard.[^chess].
 
-* The approach that DeepMind took to conquering Go is a *model free* approach known as *Q-learning*.[^qlearning] The model free approach refers to the fact that they don't directly include a model of how the world evolves in the reinforcement learning algorithm. They make extensive use of the game tree, but they don't model how it evolves. They do model the expected reward of each position in the game tree (the value function) but that is not the same as modeling how the game will proceed.
-
-[^qlearning]: The approach was described early on in the history of machine learning by Chris Watkins, during his PhD thesis in the 1980s. It is known as Q-learning. It's recent success in the games domain is driven by the use of deep learning for the policy and value functions as well as the use of fast compute to generate and process very large quantities of data. In its standard form it is not seen as a very data-efficient approach.
+* AlphaGo played more than 30,000,000 games to learn value and policy.
 
 # Model Based Approach
 
-* An alternative approach to reinforcement learning is to use a prediction function to suggest how the world will evolve in response to your actions. To predict how the game tree will evolve. You can then use this prediction to indirectly infer the expected reward associated with any action. This is known as *model based* reinforcement learning.
+* An alternative approach to reinforcement learning is to use a prediction function.
 
-* This model based approach is also closer to a control system. A classical control system is one where you give the system a set point. For example, a thermostat in the house. You set the temperature and the boiler switches off when it reaches it. Optimal control is about getting the house to the right temperature as quickly as possible. Classical control is widely used in robotic control and flight control.
+* This is similar to *classical control* and field of *system identification*.
 
-* One interesting crossover between classical control and machine learning arises because classical optimal control can be seen as a form of model based reinforcement learning. One where the reward is recovered when the set point is reached. In control engineering the prediction function is known as the *transfer function*. The process of fitting the transfer function in control is known as *system identification*. 
-
-* There is some exciting work emerging at the interface between the areas of control and reinforcement learning. Results at this interface could be very important for improving the quality of robotic and drone control. 
-
+* Known as *model based* reinforcement learning.
 
 # Optimization Methods
 
