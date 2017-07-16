@@ -1,4 +1,5 @@
 ---
+layout: slides
 title: "Data Analytics Perspectives: Machine Learning"
 venue: CSaP Annual Conference, Royal Society
 author: Neil D. Lawrence
