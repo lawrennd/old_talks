@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: slides
 title: What is Machine Learning?
 venue: Data Science Africa Summer School
 author: Neil D. Lawrence
