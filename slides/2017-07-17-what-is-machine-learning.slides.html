@@ -208,6 +208,11 @@
 <li><p>Principal technology underlying the recent advances in artificial intelligence techniques.</p></li>
 <li><p>Different approach to that developed in classical artificial intelligence (sometimes referred to as “good old fashioned AI” or GOFAI).</p></li>
 <li><p>GOFAI relied on symbolic logic as its mathematical engine.</p></li>
+</ul>
+</section>
+<section id="artificial-intelligence-1" class="slide level1">
+<h1>Artificial Intelligence</h1>
+<ul>
 <li><p>Early AI used expert systems: a set of logical rules implemented to reconstruct expertise. For example, rules to decide whether or not someone has cancer.</p></li>
 <li><p>Such rules prove hard to specify for very complex processes.<a href="#/fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p></li>
 </ul>
@@ -218,11 +223,16 @@
 <li><p>Can split applications of machine learning broadly into <em>data science</em> and <em>artificial intelligence</em>.</p></li>
 <li><p><em>Data science</em>: making sense of ‘new data’, the large volumes of data from sensors and increased interconnectivity (big data, IoT)</p></li>
 <li><p>Classical statistics: the question is formed first, and data is later.</p></li>
+</ul>
+</section>
+<section id="data-science-1" class="slide level1">
+<h1>Data Science</h1>
+<ul>
 <li><p>Data Science: data is first, questions come later.</p></li>
 <li><p>Overlap through <em>exploratory data analysis</em></p></li>
 </ul>
 </section>
-<section id="artificial-intelligence-1" class="slide level1">
+<section id="artificial-intelligence-2" class="slide level1">
 <h1>Artificial Intelligence</h1>
 <ul>
 <li><p>Artificial intelligence* originates in <em>cybernetics</em></p></li>
@@ -234,242 +244,645 @@
 </section>
 <section id="machine-learning" class="slide level1">
 <h1>Machine Learning</h1>
-<p>Machine learning takes the different approach of observing a system in practice and emulating its behavior with mathematics. One of the design aspects in designing machine learning solutions is where to put the mathematical function. Obtaining complex behavior in the resulting system can require some imagination in the design process. We will give an overview of the approaches that people take using the classical three subdivisions of the field: supervised learning, unsupervised learning and reinforcement learning. Each of these approaches uses the mathematical functions in a different way. Below we will introduce each of these learning challenges and explore how the mathematical function is deployed.</p>
+<p>1 observe a system in practice</p>
+<ol start="2" type="1">
+<li>emulate its behavior with mathematics.</li>
+</ol>
+<ul>
+<li><p>Design challenge: where to put mathematical function.</p></li>
+<li><p>Where it’s placed leads to different ML domains.</p></li>
+</ul>
 </section>
 <section id="supervised-learning" class="slide level1">
 <h1>Supervised Learning</h1>
-<p>Supervised learning is one of the most widely deployed machine learning technologies, and a particular domain of success has been <em>classification</em>. Classification is the process of taking an input (which might be an image) and categorizing it into one of a number of different classes (e.g. dog or cat). This simple idea underpins a lot of machine learning. By scanning across the image we can also determine where the animal is in the image.</p>
+<ul>
+<li><p>Most widely deployed machine learning technology.</p>
+<ul>
+<li>Particular domain of success has been <em>classification</em>.</li>
+</ul></li>
+<li><p>Take input to function (e.g. image)</p></li>
+<li><p>Use output to place it in a class (e.g. dog or cat).</p></li>
+<li><p>Simple idea underpins a lot of machine learning.</p></li>
+</ul>
 </section>
 <section id="classification" class="slide level1">
 <h1>Classification</h1>
-<p>Classification is one of the most widely used machine learning techniques. In the speech based agents, on-device classifiers are used to determine when the wake word is used. A wake word is a word that wakes up the device. For the Amazon Echo it is “Alexa”, for Siri it is “Hey Siri”. Once the wake word detected with a classifier, the speech can be uploaded to the cloud for full processing, the speech recognition stages.</p>
-<p>A major breakthrough in image classification came in 2012 with the ImageNet result of <a href="http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-">Alex Krizhevsky, Ilya Sutskever and Geoff Hinton</a> from the University of Toronto. ImageNet is a large data base of 14 million images with many thousands of classes. The data is used in a community-wide challenge for object categorization. Krizhevsky et al used convolutional neural networks to outperform all previous approaches on the challenge. They formed a company which was purchased shortly after by Google. This challenge, known as object categorisation, was a major obstacle for practical computer vision systems. Modern object categorization systems are close to human performance.</p>
-<p>In supervised learning the inputs, <span class="math inline">\(\mathbf{x}\)</span>, are mapped to a label, <span class="math inline">\(y\)</span>, through a function <span class="math inline">\(f(\cdot)\)</span> that is dependent on a set of parameters, <span class="math inline">\(\mathbf{w}\)</span>,</p>
+<ul>
+<li><p>Examples in a speech based intelligent agent: <em>wake word</em> classification.</p></li>
+<li><p>Major breakthrough for images was in 2012 with the ImageNet result of <a href="http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-">Alex Krizhevsky, Ilya Sutskever and Geoff Hinton</a></p></li>
+<li><p>ImageNet is a large data base of 14 million images with many thousands of classes.</p></li>
+<li><p>Data is used in a community-wide challenge for object categorization.</p></li>
+<li><p>Krizhevsky et al used <em>convolutional neural networks</em>.</p></li>
+</ul>
+</section>
+<section id="supervised-learning-1" class="slide level1">
+<h1>Supervised Learning</h1>
+<ul>
+<li>Inputs, <span class="math inline">\(\mathbf{x}\)</span>, mapped to a label, <span class="math inline">\(y\)</span>, through a function <span class="math inline">\(f(\cdot)\)</span> d dependent on parameters, <span class="math inline">\(\mathbf{w}\)</span>,</li>
+</ul>
 <p><span class="math display">\[
 y = f(\mathbf{x}; \mathbf{w}).
 \]</span></p>
-<p>The function <span class="math inline">\(f(\cdot)\)</span> is known as the <em>prediction function</em>. The key challenges are (1) choosing which features, <span class="math inline">\(\mathbf{x}\)</span>, are relevant in the prediction, (2) defining the appropriate <em>class of function</em>, <span class="math inline">\(f(\cdot)\)</span>, to use and (3) selecting the right parameters, <span class="math inline">\(\mathbf{w}\)</span>.</p>
+<ul>
+<li><span class="math inline">\(f(\cdot)\)</span> is known as the <em>prediction function</em>.</li>
+</ul>
+</section>
+<section id="supervised-learning-challenges" class="slide level1">
+<h1>Supervised Learning Challenges</h1>
+<ol type="1">
+<li><p>choosing which features, <span class="math inline">\(\mathbf{x}\)</span>, are relevant in the prediction</p></li>
+<li><p>defining the appropriate <em>class of function</em>, <span class="math inline">\(f(\cdot)\)</span>.</p></li>
+<li><p>selecting the right parameters, <span class="math inline">\(\mathbf{w}\)</span>.</p></li>
+</ol>
 </section>
 <section id="feature-selection" class="slide level1">
 <h1>Feature Selection</h1>
-<p>Feature selection is a critical stage in the algorithm design process. In the Olympic prediction example above we’re only using time to predict the the pace of the runners. In practice we might also want to use characteristics of the course: how hilly it is, what the temperature was when the race was run. In 1904 the runners actually got lost during the race. Should we include ‘lost’ as a feature? It would certainly help explain the particularly slow time in 1904. The features we select should be ones we expect to correlate with the prediction. In statistics, these features are even called <em>predictors</em> which highlights their role in developing the prediction function. For Facebook newsfeed, we might use features that include how close your friendship is with the poster, or how often you react to that poster, or whether a photo is included in the post.</p>
-<p>Sometimes we use feature selection algorithms, algorithms that automate the process of finding the features that we need. Classification is often used to rank search results, to decide which adverts to serve or, at Facebook, to determine what appears at the top of your newsfeed. In the Facebook example features might include how many likes a post has had, whether it has an image in it, whether you regularly interact with the friend who has posted. A good newsfeed ranking algorithm is critical to Facebook’s success, just as good ad serving choice is critical to Google’s success. These algorithms are in turn highly dependent on the feature sets used. Facebook in particular has made heavy investments in machine learning pipelines for evaluation of the feature utility.</p>
+<ul>
+<li><p>Olympic prediction example only using year to predict pace.</p></li>
+<li><p>Could also use <em>course characteristics</em> (e.g. how hilly) <em>temperature</em>.</p></li>
+<li><p>Can use <em>feature selection algorithms</em></p></li>
+<li><p>Automate the process of finding the features that we need.</p></li>
+</ul>
+</section>
+<section id="applications" class="slide level1">
+<h1>Applications</h1>
+<ul>
+<li><p>rank search results, decide which adverts to serve or, what appears at the top of your newsfeed.</p></li>
+<li><p>Facebook features include number of likes, whether it’s got an image, whether this is a friend you interact with.</p></li>
+<li><p>Newsfeed ranking algorithm is critical to Facebook’s success.</p></li>
+<li><p>Heavy investments in machine learning pipelines for evaluation of the feature utility.</p></li>
+</ul>
 </section>
 <section id="class-of-function-fcdot" class="slide level1">
 <h1>Class of Function, <span class="math inline">\(f(\cdot)\)</span></h1>
-<p>By class of function we mean, what are the characteristics of the mapping between <span class="math inline">\(\mathbf{x}\)</span> and <span class="math inline">\(y\)</span>. Often we might choose it to be a smooth function. Sometimes we will choose it to be a linear function. If the prediction is a forecast, for example the demand of a particular ASIN, then the function would need some periodic components to reflect seasonal or weekly effects.</p>
-<p>In the ImageNet challenge the input, <span class="math inline">\(\mathbf{x}\)</span>, was in the form of an image. And the form of the prediction function was a <em>convolutional neural network</em> (more on this later). A convolutional neural network introduces <em>invariances</em> into the function that are particular to image classification. An invariance is a transformation of the input that we don’t want to effect the output. For example, a cat in an image is still a cat no matter where it’s located in the image (translation). The cat is also a cat regardless of how large it is (scale), or whether it’s upside-down (rotation). Convolutional neural networks encode these invariances: scale invariance, rotation invariance and translation invariance; in the mathematical function.</p>
-<p>Encoding invariance in the prediction function is like encoding knowledge in the model. If we don’t specify these invariances then the model must learn them. This will require a lot more data to achieve the same performance, making the model less data efficient. Note that one invariance that is <em>not</em> encoded in a convolutional network is invariance to camera type. As a result practitioners need to be careful to ensure that their training data is representative of the type of cameras that will be used when the model is deployed.</p>
-<p>In general the prediction function could be any set of parameterized functions. In the Olympic marathon data example above we used a polynomial fit,</p>
+<ul>
+<li><p>What should be the characteristics of the mapping between <span class="math inline">\(\mathbf{x}\)</span> and <span class="math inline">\(y\)</span>?</p></li>
+<li><p>Often we choose it to be <em>smooth</em> (similar inputs lead to similar outputs).</p></li>
+<li><p>Often choose it to be a linear function.</p></li>
+<li><p>In <em>forecasting</em> we might want a <em>periodic</em> function (weekly or seasonal effects).</p></li>
+</ul>
+</section>
+<section id="class-of-function-neural-networks" class="slide level1">
+<h1>Class of Function: Neural Networks</h1>
+<ul>
+<li><p>For imagenet prediction function was a <em>convolutional neural network</em></p></li>
+<li><p>A convolutional neural network introduces <em>invariances</em> into the function that are particular to image classification.</p></li>
+</ul>
+</section>
+<section id="class-of-function-invariances" class="slide level1">
+<h1>Class of Function: Invariances</h1>
+<ul>
+<li><p>An invariance is a transformation of the input that we don’t want to effect the output.</p>
+<ul>
+<li><p>e.g. a cat remains a cat regardless of location (translation), size (scale) or upside-down (rotation and reflection).</p></li>
+<li><p>Convolutional neural networks encode invariances in the mathematical function.</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="encoding-knowledge" class="slide level1">
+<h1>Encoding Knowledge</h1>
+<ul>
+<li><p>Encoding invariance is like encoding knowledge in the model.</p></li>
+<li><p>If we don’t specify these invariances then the model must learn them.</p></li>
+<li><p>Learning invariances requires a <em>lot</em> more data.</p></li>
+<li><p>The amount of data required to achieve a certain performance is the <em>data efficiency</em>.</p></li>
+</ul>
+</section>
+<section id="choosing-prediction-function" class="slide level1">
+<h1>Choosing Prediction Function</h1>
+<ul>
+<li><p>Prediction function can be any set of parameterized functions.</p></li>
+<li><p>In the Olympic marathon example above we used a polynomial fit,</p></li>
+</ul>
 <p><span class="math display">\[
 f(x) = w_0 + w_1 x+ w_2 x^2 + w_3 x^3 + w_4 x^4.
 \]</span></p>
-<p>The Olympic example is also a supervised learning challenge. But it is a <em>regression</em> problem. A regression problem is one where the output is a continuous value (such as the pace in the marathon). In classification the output is constrained to be discrete. For example classifying whether or not an image contains a dog implies the output is binary. An early example of a regression problem used in machine learning was <a href="http://lib.stat.cmu.edu/datasets/tecator">the Tecator data</a>, where the fat, water and protein content of meat samples was predicted as a function of the absorption of infrared light.</p>
+<ul>
+<li><p>Olympic example is a supervised learning challenge. But it is a <em>regression</em> problem.</p></li>
+<li><p>A regression problem is one where the output is a continuous value (such as the pace in the marathon).</p></li>
+</ul>
 </section>
-<section id="parameter-estimation" class="slide level1">
-<h1>Parameter Estimation</h1>
-<p>Once we have a set of features and the class of functions we use is determined we need to find the parameters of the model.</p>
-<p>The parameters of the model, <span class="math inline">\(\mathbf{w}\)</span>, are estimated by specifying an <em>objective function</em>. The objective function specifies the quality of the match between the prediction function and the <em>training data</em>. In supervised learning the objective function incorporates both the input data (in the ImageNet data the image, in the Olympic marathon data the year of the marathon) and a <em>label</em>.</p>
+<section id="regression-problems" class="slide level1">
+<h1>Regression Problems</h1>
+<ul>
+<li><p>In classification the output of prediction function is constrained to be discrete.</p></li>
+<li><p>An early example of a regression data set used in machine learning was <a href="http://lib.stat.cmu.edu/datasets/tecator">the Tecator data</a></p>
+<ul>
+<li>Fat, water and protein content of meat samples was predicted as a function of the absorption of infrared light.</li>
+</ul></li>
+</ul>
 </section>
-<section id="labels" class="slide level1">
-<h1>Labels</h1>
-<p>The label is where the term supervised learning comes from. The idea being that a supervisor, or annotator, has already looked at the data and given it labels. For regression problem, a typical objective function is the <em>squared error</em>,</p>
+<section id="parameter-estimation-objective-functions" class="slide level1">
+<h1>Parameter Estimation: Objective Functions</h1>
+<ul>
+<li><p>After choosing <em>features</em> and <em>function class</em> we need <em>parameters</em>.</p></li>
+<li><p>Estimate <span class="math inline">\(\mathbf{w}\)</span> by specifying an <em>objective function</em>.</p></li>
+<li><p>The objective function specifies the quality of the match between the prediction function and the <em>training data</em>.</p></li>
+<li><p>In supervised learning the objective function has input data (for ImageNet, the image, for Olympic marathon the year) and a <em>label</em>.</p></li>
+</ul>
+</section>
+<section id="labels-and-squared-error" class="slide level1">
+<h1>Labels and Squared Error</h1>
+<ul>
+<li><p><em>Label</em> is where the term supervised learning comes from.</p></li>
+<li><p>Idea is that a supervisor, or annotator, has already given labels.</p></li>
+<li><p>For regression problem, a typical objective function is the <em>squared error</em>,</p></li>
+</ul>
 <p><span class="math display">\[
 E(\mathbf{w}) = \sum_{i=1}^n (y_i - f(\mathbf{x}_i))^2
 \]</span></p>
-<p>where the data is provided to us as a set of <span class="math inline">\(n\)</span> inputs, <span class="math inline">\(\mathbf{x}_1\)</span>, <span class="math inline">\(\mathbf{x}_2\)</span>, <span class="math inline">\(\mathbf{x}_3\)</span>, <span class="math inline">\(\dots\)</span>, <span class="math inline">\(\mathbf{x}_n\)</span> each one with an associated label, <span class="math inline">\(y_1\)</span>, <span class="math inline">\(y_2\)</span>, <span class="math inline">\(y_3\)</span>, <span class="math inline">\(\dots\)</span>, <span class="math inline">\(y_n\)</span>. Sometimes the label is cheap to acquire. For example in Newsfeed ranking Facebook are acquiring a label each time a user clicks on a post in their Newsfeed. Similarly in ad-click prediction labels are obtained whenever an advert is clicked. More generally though, we have to employ human annotators to label the data. For example, ImageNet, the breakthrough deep learning result was annotated using Amazon’s Mechanical Turk. Without such large scale human input we would not have the breakthrough results on image categorization we have today.</p>
+</section>
+<section id="data-provision" class="slide level1">
+<h1>Data Provision</h1>
+<ul>
+<li><p>Here the data is provided to us as a set of <span class="math inline">\(n\)</span> inputs, <span class="math inline">\(\mathbf{x}_1\)</span>, <span class="math inline">\(\mathbf{x}_2\)</span>, <span class="math inline">\(\mathbf{x}_3\)</span>, <span class="math inline">\(\dots\)</span>, <span class="math inline">\(\mathbf{x}_n\)</span></p></li>
+<li><p>Each data point with an associated label, <span class="math inline">\(y_1\)</span>, <span class="math inline">\(y_2\)</span>, <span class="math inline">\(y_3\)</span>, <span class="math inline">\(\dots\)</span>, <span class="math inline">\(y_n\)</span>.</p></li>
+<li><p>Sometimes the label is cheap to acquire.</p>
+<ul>
+<li><p>E.g. in Newsfeed ranking Facebook are acquiring a label each time a user clicks on a post in their Newsfeed. (Data Science?)</p></li>
+<li><p>In ad-click prediction labels are obtained whenever an advert is clicked.</p></li>
+</ul></li>
+<li><p>Often we have to employ human annotators to label the data.</p>
+<ul>
+<li>E.g. in ImageNet, the breakthrough deep learning result was annotated using Amazon’s Mechanical Turk. (AI?)</li>
+</ul></li>
+</ul>
 </section>
 <section id="annotation" class="slide level1">
 <h1>Annotation</h1>
-<p>Some tasks are easier to annotate than others. For example, in the Tecator data, to acquire the actual values of water, protein and fat content in the meat samples further experiments may be required. It is not simply a matter of human labelling. Even if the task is easy for humans to solve there can be problems. For example, humans will extrapolate the context of an image. A colleague mentioned once to me a challenge where humans were labelling images as containing swimming pools, even though none was visible, because they could infer there must be a pool nearby, perhaps because there are kids wearing bathing suits. But there is no swimming pool in the image for the computer to find. The quality of any machine learning solution is very sensitive to the quality of annotated data we have. Investing in processes and tools to improve annotation of data is therefore priority for improving the quality of machine learning solutions.</p>
-<p>There can also be significant problems with misrepresentation in the data set. If data isn’t collected carefully, then it can reflect biases about the population that we don’t want our models to have. For example, if we design a face detector using Californians may not perform well when deployed in Kampala, Uganda.</p>
+<ul>
+<li><p>Without large scale human input, would not have the breakthrough results in AI we have today.</p></li>
+<li><p>Some tasks <em>easier</em> to annotate than *others.</p>
+<ul>
+<li><p>For Tecator data, need to acquire the actual values of water, protein and fat content in the meat samples.</p></li>
+<li><p>Each data point requires real experiments</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="annotation-1" class="slide level1">
+<h1>Annotation</h1>
+<ul>
+<li><p>Even for <em>easy</em> tasks there will be problems.</p>
+<ul>
+<li>E.g. humans extrapolate the context of an image.</li>
+</ul></li>
+<li><p>Quality of any machine learning solution is very sensitive to the quality of annotated data we have.</p></li>
+<li><p>Investing in processes and tools to improve annotation of data is therefore a strong priority.</p></li>
+</ul>
+</section>
+<section id="misrepresentation" class="slide level1">
+<h1>Misrepresentation</h1>
+<ul>
+<li><p>Can be significant problems with misrepresentation in the data sets.</p></li>
+<li><p>If data isn’t collected carefully, it can reflect biases about the population that we don’t want our models to have.</p></li>
+<li><p>A face detector using Californians may not perform well when deployed in Kampala, Uganda.</p></li>
+</ul>
 </section>
 <section id="generalization-and-overfitting" class="slide level1">
 <h1>Generalization and Overfitting</h1>
-<p>Once a supervised learning system is trained it can be placed in a sequential pipeline to automate a process that used to be done manually.</p>
-<p>Supervised learning is one of the dominant approaches to learning. But the cost and time associated with labeling data is a major bottleneck for deploying machine learning systems. The process for creating training data requires significant human intervention. For example, internationalization of Alexa requires annotation of large speech corpora in new languages.</p>
+<ul>
+<li><p>Once a supervised learning system is trained it can be placed in a sequential pipeline to automate a process that used to be done manually.</p></li>
+<li><p>Supervised learning is probably the dominant approaches to learning.</p></li>
+<li><p>Cost and time associated with labeling data is a major bottleneck for deploying machine learning systems.</p></li>
+<li><p>Process for creating training data requires significant human intervention. For example, internationalization of Alexa requires annotation of large speech corpora in new languages.</p></li>
+</ul>
 </section>
 <section id="training-and-test" class="slide level1">
 <h1>Training and Test</h1>
-<p>An important distinction in machine learning is the separation between training data and test data (or production data). Training data is the data that was used to find the model parameters. Test data (or production data) is the data that is used with the live system. The ability of a machine learning system to predict well on production systems given only its training data is known as its <em>generalization</em> ability. This is the systems ability to predict in areas where it hasn’t previously seen data.</p>
-<p><a href="https://www.youtube.com/watch?v=py8QrZPT48s&amp;t=4m0s"><img src="https://img.youtube.com/vi/py8QrZPT48s/0.jpg" /></a></p>
-<p><em>Alex Ihler on Polynomials and Overfitting</em></p>
-<p>We can easily develop a simple prediction function that reconstructs the training data exactly, you can just use a look up table. But how would the lookup table predict between the training data, where examples haven’t been seen before? The choice of the class of prediction functions is critical in ensuring that the model generalizes well.</p>
+<ul>
+<li><p>Very important distinction.</p>
+<ul>
+<li>Separation between training data and test data (or production data).</li>
+</ul></li>
+<li><p>Training data is the data that was used to find the model parameters.</p></li>
+<li><p>Test data (or production data) is the data that is used with the live system.</p></li>
+<li><p>Ability of a machine learning system to predict well in production is known as its <em>generalization</em> ability.</p></li>
+<li><p>System’s ability to predict in areas where it hasn’t previously seen data.</p></li>
+</ul>
 </section>
 <section id="generalization-error" class="slide level1">
 <h1>Generalization Error</h1>
-<p>The generalization error is normally computed by applying the objective function to a set of data that the model <em>wasn’t</em> trained on, the test data. To ensure good performance we normally want a model that gives us a low generalization error. If we weren’t sure of the right prediction function to use then we could try 1,000 different prediction functions. Then we could use the one that gives us the lowest error on the test data. But you have to be careful. Selecting a model in this way is like a further stage of training where you are using the test data in the training.<a href="#/fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> So when this is done, the data used for this is not known as test data, it is known as <em>validation data</em>. And the associated error is the <em>validation error</em>. Using the validation error for model selection is a standard machine learning technique, but it can be misleading about the final generalization error. Almost all machine learning practitioners know not to use the test data in your training procedure, but sometimes people forget that when validation data is used for model selection that validation error cannot be used as an unbiased estimate of the generalization performance.</p>
+<ul>
+<li><p>Easy to develop a prediction function that reconstructs the training data exactly: a look up table. you can just use a look up table.</p></li>
+<li><p>How would the lookup table predict <em>between</em> the training data, where examples haven’t been seen before?</p></li>
+<li><p>Choice of the class of prediction functions is critical in ensuring that the model generalizes well.</p></li>
+<li><p>Generalization error is normally estimated by applying the objective function to a set of data that the model <em>wasn’t</em> trained on: the <em>test data</em>.</p></li>
+</ul>
+</section>
+<section id="performance" class="slide level1">
+<h1>Performance</h1>
+<ul>
+<li><p>To ensure good performance we normally want a model that gives us a low generalization error.</p></li>
+<li><p>If we weren’t sure of the right prediction function to use then we could try 1,000 different prediction functions.</p></li>
+<li><p>We could use the one that gives us the lowest error on the test data.</p></li>
+<li><p>But you have to be careful.</p></li>
+</ul>
+</section>
+<section id="validation-and-model-selection" class="slide level1">
+<h1>Validation and Model Selection</h1>
+<ul>
+<li><p>Selecting a model in this way is like a further stage of training where you are using the test data in the training.<a href="#/fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p></li>
+<li><p>It is known as <em>validation</em>.</p></li>
+<li><p>The error is known as <em>validation error</em>.</p></li>
+<li><p>Using the validation error for model selection is a standard machine learning technique.</p></li>
+</ul>
+</section>
+<section id="difficult-trap" class="slide level1">
+<h1>Difficult Trap</h1>
+<ul>
+<li><p>All machine learning practitioners should know not to use the test data in your training procedure.</p></li>
+<li><p>But because validation data is used for model selection, it is not an unbiased estimate of the generalization performance.</p></li>
+</ul>
+</section>
+<section id="overfitting" class="slide level1">
+<h1>Overfitting</h1>
+<p><a href="https://www.youtube.com/watch?v=py8QrZPT48s&amp;t=4m0s"><img src="https://img.youtube.com/vi/py8QrZPT48s/0.jpg" /></a></p>
+<p><em>Alex Ihler on Polynomials and Overfitting</em></p>
 </section>
 <section id="unsupervised-learning" class="slide level1">
 <h1>Unsupervised Learning</h1>
-<p>In unsupervised learning you have data, <span class="math inline">\(\mathbf{x}\)</span>, but no labels <span class="math inline">\(y\)</span>. The aim in unsupervised learning is to extract structure from data. The type of structure you are interested in is dependent on the broader context of the task. In supervised learning that context is very much driven by the labels. Supervised learning algorithms try and focus on the aspects of the data which are relevant to predicting the labels. But in unsupervised learning there are no labels.</p>
-<p>Humans can easily sort a number of objects into objects that share similar characteristics. We easily categorize animals or vehicles. But if the data is very large this is too slow. Even for smaller data, it may be that it is presented in a form that is unintelligible for humans. We are good at dealing with high dimensional data when it’s presented in images, but if it’s presented as a series of numbers we find it hard to interpret. In unsupervised learning we want the computer to do the sorting for us. For example, an e-commerce company might need an algorithm that can go through its entire list of products and automatically sort them into groups such that similar products are located together.</p>
+<ul>
+<li><p>When you have data, <span class="math inline">\(\mathbf{x}\)</span>, but no labels <span class="math inline">\(y\)</span>.</p></li>
+<li><p>Extract <em>structure</em> from data.</p></li>
+<li><p>Type of structure you are interested dependent on the broader context of the task.</p></li>
+</ul>
+</section>
+<section id="context" class="slide level1">
+<h1>Context</h1>
+<ul>
+<li><p>Supervised learning: context is very much driven by the labels.</p></li>
+<li><p>Humans can easily sort a number of objects into objects that share similar characteristics, e.g. animals and vehicles</p></li>
+<li><p>For large data sets or data we are not used to (high dimensional data) would like to automate.</p>
+<ul>
+<li>E.g., an e-commerce company might need an algorithm that can go through its entire list of products and automatically sort them into groups such that similar products are located together.</li>
+</ul></li>
+</ul>
 <!-- One way of thinking of unsupervised learning is as a form of *compression* of data. The essence of the data is normally distilled by defining the algorithm. -->
-<p>Supervised learning is broadly divided into classification: i.e. wake word classification in the Amazon Echo, and regression, e.g. shelf life prediction for perishable goods. Similarly, unsupervised learning can be broadly split into methods that cluster the data (i.e. provide a discrete label) and methods that represent the data as a continuous value.</p>
+</section>
+<section id="discrete-vs-continuous" class="slide level1">
+<h1>Discrete vs Continuous</h1>
+<ul>
+<li><p>Supervised learning is broadly divided into classification and regression</p></li>
+<li><p>Unsupervised learning can similarly be split into methods that cluster the data (i.e. provide a discrete label) or methods that represent the data as a continuous values.</p></li>
+</ul>
 </section>
 <section id="clustering" class="slide level1">
 <h1>Clustering</h1>
-<p>Clustering methods associate each data point with a different label. Unlike in classification the label is not provided by a human annotator. It is allocated by the computer. Clustering is quite intuitive for humans, we do it naturally with our observations of the real world. For example, we cluster animals into different groups. If we encounter a new animal we can immediately assign it to a group: bird, mammal, insect. These are certainly labels that can be provided by humans, but they were also originally invented by humans. With clustering we want the computer to recreate that process of inventing the label.</p>
-<p>Unsupervised learning enables computers to form similar categorizations on data that is too large scale for us to process. When the Greek philosopher, Plato, was thinking about ideas, he considered the concept of the Platonic ideal. The Platonic ideal bird is the bird that is most bird-like or the chair that is most chair-like. In some sense, the task in clustering is to define different clusters, by finding their Platonic ideal (known as the cluster center) and allocate each data point to the relevant cluster center. So allocate each animal to the class defined by its nearest cluster center.</p>
-<p>To perform clustering on a computer we need to define a notion of either similarity or distance between the objects and their Platonic ideal, the cluster center. We normally assume that our objects are represented by vectors of data, <span class="math inline">\(\mathbf{x}_i\)</span>. Similarly we represent our cluster center for category <span class="math inline">\(j\)</span> by a vector <span class="math inline">\(\mathbf{m}_j\)</span>. This vector contains the ideal features of a bird, a chair, or whatever category <span class="math inline">\(j\)</span> is. In clustering we can either think in terms of similarity of the objects, or distances. We want objects that are similar to each other to cluster together. We want objects that are distant from each other to cluster apart.</p>
-<p>This requires us to formalize our notion of similarity or distance. Let’s focus on distances. A definition of distance between an object, <span class="math inline">\(i\)</span>, and the cluster center of class <span class="math inline">\(j\)</span> is a function of two vectors, the data point, <span class="math inline">\(\mathbf{x}_i\)</span> and the cluster center, <span class="math inline">\(\mathbf{m}_j\)</span>,</p>
+<ul>
+<li><p><em>Task</em>: associate each data point with a different label.</p></li>
+<li><p>Label is <em>not</em> provided.</p></li>
+<li><p>Quite intuitive for humans, we do it naturally.</p></li>
+</ul>
+</section>
+<section id="platonic-ideals" class="slide level1">
+<h1>Platonic Ideals</h1>
+<ul>
+<li><p>Names for animals originally invented by humans through ‘clustering’</p></li>
+<li><p>Can we have the computer to recreate that process of inventing the label?</p></li>
+<li><p>Greek philosopher, Plato, thought about ideas, he considered the concept of the Platonic ideal.</p></li>
+<li><p>Platonic ideal bird is the bird that is most bird-like or the chair that is most chair-like.</p></li>
+</ul>
+</section>
+<section id="cluster-center" class="slide level1">
+<h1>Cluster Center</h1>
+<ul>
+<li><p>Can define different clusters, by finding their Platonic ideal (known as the cluster center)</p></li>
+<li><p>Allocate each data point to the relevant nearest cluster center.</p></li>
+<li><p>Allocate each animal to the class defined by its nearest cluster center.</p></li>
+</ul>
+</section>
+<section id="similarity-and-distance-measures" class="slide level1">
+<h1>Similarity and Distance Measures</h1>
+<ul>
+<li><p>Define a notion of either similarity or distance between the objects and their Platonic ideal.</p></li>
+<li><p>If objects are vectors of data, <span class="math inline">\(\mathbf{x}_i\)</span>.</p></li>
+<li><p>Represent cluster center for category <span class="math inline">\(j\)</span> by a vector <span class="math inline">\(\mathbf{m}_j\)</span>.</p></li>
+<li><p>This vector contains the ideal features of a bird, a chair, or whatever category <span class="math inline">\(j\)</span> is.</p></li>
+</ul>
+</section>
+<section id="similarity-or-distance" class="slide level1">
+<h1>Similarity or Distance</h1>
+<ul>
+<li><p>Can either think in terms of similarity of the objects, or distances.</p></li>
+<li><p>We want objects that are similar to each other to cluster together. We want objects that are distant from each other to cluster apart.</p></li>
+<li><p>Use mathematical function to formalize this notion, e.g. for distance</p></li>
+</ul>
 <p><span class="math display">\[
 d_{ij} = f(\mathbf{x}_i, \mathbf{m}_j).
 \]</span></p>
-<p>Our objective is then to find cluster centers that are close to as many data points as possible. For example, we might want to cluster customers into their different tastes. We could represent each customer by the products they’ve purchased in the past. This could be a binary vector <span class="math inline">\(\mathbf{x}_i\)</span>. We can then define a distance between the cluster center and the customer.</p>
-<p>A commonly used distance is the squared distance,</p>
+</section>
+<section id="squared-distance" class="slide level1">
+<h1>Squared Distance</h1>
+<ul>
+<li><p>Find cluster centers that are close to as many data points as possible.</p></li>
+<li><p>A commonly used distance is the squared distance,</p></li>
+</ul>
 <p><span class="math display">\[
 d_{ij} = (\mathbf{x}_i - \mathbf{m}_j)^2.
 \]</span></p>
-<p>The squared distance comes up a lot in machine learning. In unsupervised learning it was used to measure dissimilarity between predictions and observed data. Here its being used to measure the dissimilarity between a cluster center and the data.</p>
-<p>Once we have decided on the distance or similarity function we can decide a number of cluster centers, <span class="math inline">\(K\)</span>. We find their location by allocating each center to a sub-set of the points and minimizing the sum of the squared errors,</p>
+<ul>
+<li>Already seen for regression.</li>
+</ul>
+</section>
+<section id="objective-function" class="slide level1">
+<h1>Objective Function</h1>
+<ul>
+<li><p>Given similarity measure, need number of cluster centers, <span class="math inline">\(K\)</span>.</p></li>
+<li><p>Find their location by allocating each center to a sub-set of the points and minimizing the sum of the squared errors,</p></li>
+</ul>
 <p><span class="math display">\[
 E(\mathbf{M}) = \sum_{i \in \mathbf{i}_j} (\mathbf{x}_i - \mathbf{m}_j)^2
 \]</span></p>
-<p>where the notation <span class="math inline">\(\mathbf{i}_j\)</span> represents all the indices of each data point which has been allocated to the <span class="math inline">\(j\)</span>th cluster represented by the center <span class="math inline">\(\mathbf{m}_j\)</span>.</p>
+<p>here <span class="math inline">\(\mathbf{i}_j\)</span> is all indices of data points allocated to the <span class="math inline">\(j\)</span>th center.</p>
 </section>
 <section id="k-means-clustering" class="slide level1">
 <h1><span class="math inline">\(k\)</span>-Means Clustering</h1>
-<p>One approach to minimizing this objective function is known as <em><span class="math inline">\(k\)</span>-means clustering</em>. It is simple and relatively quick to implement, but it is an initialization sensitive algorithm. Initialization is the process of choosing an initial set of parameters before optimization. For <span class="math inline">\(k\)</span>-means clustering you need to choose an initial set of centers. In <span class="math inline">\(k\)</span>-means clustering your final set of clusters is very sensitive to the initial choice of centers. For more technical details on <span class="math inline">\(k\)</span>-means clustering you can watch a video of Alex Ihler introducing the algorithm here.</p>
+<ul>
+<li><p><em><span class="math inline">\(k\)</span>-means clustering</em> is simple and quick to implement.</p></li>
+<li><p>Very <em>initialisation</em> sensitive.</p></li>
+</ul>
+</section>
+<section id="initialisation" class="slide level1">
+<h1>Initialisation</h1>
+<ul>
+<li><p>Initialisation is the process of selecting a starting set of parameters.</p></li>
+<li><p>Optimisation result can depend on the starting point.</p></li>
+<li><p>For <span class="math inline">\(k\)</span>-means clustering you need to choose an initial set of centers.</p></li>
+<li><p>Optimisation surface has many local optima, algorithm gets stuck in ones near initialisation.</p></li>
+</ul>
+</section>
+<section id="k-means-clustering-1" class="slide level1">
+<h1><span class="math inline">\(k\)</span>-Means Clustering</h1>
 <p><a href="https://www.youtube.com/watch?v=mfqmoUN-Cuw"><img src="https://img.youtube.com/vi/mfqmoUN-Cuw/0.jpg" alt="k-means clustering by Alex Ihler" /></a></p>
 </section>
 <section id="hierarchical-clustering" class="slide level1">
 <h1>Hierarchical Clustering</h1>
-<p>Other approaches to clustering involve forming taxonomies of the cluster centers, like humans apply to animals, to form trees. You can learn more about agglomerative clustering in this video from Alex Ihler</p>
+<ul>
+<li><p>Form taxonomies of the cluster centers</p></li>
+<li><p>Like humans apply to animals, to form <em>phylogenies</em></p></li>
+</ul>
 <p><a href="https://www.youtube.com/watch?v=OcoE7JlbXvY"><img src="https://img.youtube.com/vi/OcoE7JlbXvY/0.jpg" alt="Hierarchical Clustering by Alex Ihler" /></a></p>
-<p>Indeed one application of machine learning techniques is performing a hierarchical clustering based on genetic data, i.e. the actual contents of the genome. If we do this across a number of species then we can produce a <em>phylogeny</em>. The phylogeny aims to represent the actual evolution of the species and some phylogenies even estimate the timing of the common ancestor between two species<a href="#/fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>. Similar methods are used to estimate the origin of viruses like AIDS or Bird flu which mutate very quickly. Determining the origin of viruses can be important in containing or treating outbreaks.</p>
-<p>We could apply hierarchical clustering to all our ASINs. To do so would give us a phylogeny of ASINs. Each cluster of ASINs would be split into sub-clusters of ASINs until we got down to individual ASINs. For example we might expect a high level split to be Electronics/Soft Apparel. Of course, a challenge with these tree like structures is that many ASINs belong in more than one parent cluster: for example running shoes should be in more than one group, they are ‘sporting goods’ and they are ‘apparel’. A tree structure doesn’t allow this allocation.</p>
-<p>Our own psychological grouping capabilities are studied as a domain of cognitive science. Researchers like Josh Tenenbaum have developed algorithms that decompose data in more complex ways, but they can normally only be applied to smaller data sets.</p>
+</section>
+<section id="phylogenetic-trees" class="slide level1">
+<h1>Phylogenetic Trees</h1>
+<ul>
+<li><p>Perform a hierarchical clustering based on genetic data, i.e. the actual contents of the genome.</p></li>
+<li><p>Perform across a number of species and produce a <em>phylogenetic tree</em>.</p></li>
+<li><p>Represents a guess at actual evolution of the species.</p></li>
+<li><p>Used to estimate the origin of viruses like AIDS or Bird flu</p></li>
+</ul>
+</section>
+<section id="product-clustering" class="slide level1">
+<h1>Product Clustering</h1>
+<ul>
+<li><p>Could apply hierarchical clustering to Amazon’s products.</p></li>
+<li><p>Would give us a phylogeny of products.</p></li>
+<li><p>Each cluster of products would be split into sub-clusters of products until we got down to individual products.</p>
+<ul>
+<li>E.g. at high level Electronics/Clothing</li>
+</ul></li>
+</ul>
+</section>
+<section id="hierarchical-clustering-challenge" class="slide level1">
+<h1>Hierarchical Clustering Challenge</h1>
+<ul>
+<li><p>Many products belong in more than one cluster: e.g. running shoes are ‘sporting goods’ and they are ‘clothing’.</p></li>
+<li><p>Tree structure doesn’t allow this allocation.</p></li>
+<li><p>Our own psychological grouping capabilities are in cognitive science.</p>
+<ul>
+<li>E.g. Josh Tenenbaum and collaborators cluster data in more complex ways.</li>
+</ul></li>
+</ul>
 </section>
 <section id="dimensionality-reduction" class="slide level1">
 <h1>Dimensionality Reduction</h1>
-<p>Dimensionality reduction methods compress the data by replacing the original data with a reduced number of continuous variables. One way of thinking of these methods is to imagine a marionette.</p>
+<ul>
+<li>Compress the data by replacing the original data with reduced number of continuous variables.</li>
+</ul>
 <figure>
 <img src="./diagrams/marionette.svg" />
 </figure>
-<p><em>Thinking of dimensionality reduction as a marionette. We observe the high dimensional pose of the puppet, <span class="math inline">\(\mathbf{x}\)</span>, but the movement of the puppeteer’s hand, <span class="math inline">\(\mathbf{z}\)</span> remains hidden to us. Dimensionality reduction aims to recover those hidden movements which generated the observations.</em></p>
-<p>The position of each body part of a marionette could be thought of as our data, <span class="math inline">\(\mathbf{x}_i\)</span>. So each data point consists of the 3-D co-ordinates of all the different body parts of the marionette. Lets say there are 13 different body parts (2 each of feet, knees, hips, hands, elbows, shoulders, one head). Each body part has an x, y, z position in Cartesian coordinates. So that’s 39 numbers associated with each observation.</p>
-<p>The movement of these 39 parts is determined by the puppeteer via strings. Let’s assume it’s a very simple puppet, with just one stick to control it. The puppeteer can move the stick up and down, left and right. And they can twist it. This gives three parameters in the puppeteers control. This implies that the 39 variables we see moving are controlled by only 3 variables. These 3 variables are often called the hidden or <em>latent variables</em>.</p>
-<p>Dimensionality reduction assumes something similar for real world data. It assumes that the data we observe is generated from some lower dimensional underlying process. It then seeks to recover the values associated with this low dimensional process.</p>
-<p>Dimensionality reduction techniques underpin a lot of psychological scoring tests such as IQ tests or personality tests. An IQ test can involve several hundred questions, potentially giving a rich, high dimensional, characterization of some aspects of your intelligence. It is then summarized by a single number. Similarly the Myers-Briggs personality test involves answering</p>
-<p>These tests are assuming that our intelligence is implicitly one dimensional and that our personality is implicitly four dimensional. Other examples include political belief which is typically represented on a left to right scale. A one dimensional distillation of an entire philosophy about how a country should be run. Our own leadership principles imply that our decisions have a fourteen dimensional space underlying them. Each decision could be characterized by judging to what extent it embodies each of the principles.</p>
-<p>Political belief, personality, intelligence, leadership. None of these exist as a directly measurable quantity in the real world, rather they are inferred based on measurables. Dimensionality reduction is the process of allowing the computer to automatically find such underlying dimensions. This automatically allowing us to characterize each data point according to those explanatory variables. Neil is intelligent, moderately left wing extrovert who prefers rational thinking to feeling. His leadership decisions often exhibit ownership and backbone, but could don’t score highly on frugality. Each of these characteristics can be scored, and individuals can then be turned into vectors.</p>
-<p>This doesn’t only apply to individuals, in recent years work on language modeling has taken a similar approach to words. The <a href="https://arxiv.org/abs/1301.3781">word2vec</a> algorithm performed a dimensionality reduction on words, now you can take any word and map it to a latent space where similar words exhibit similar characteristics. A personality space for words.</p>
+<p><em>We observe pose, <span class="math inline">\(\mathbf{x}\)</span>, puppeteer’s hand, <span class="math inline">\(\mathbf{z}\)</span> remains hidden to us.</em></p>
+</section>
+<section id="dimensionality-reduction-1" class="slide level1">
+<h1>Dimensionality Reduction</h1>
+<ul>
+<li><p>Position of each body part of a marionette could be thought of as our data, <span class="math inline">\(\mathbf{x}_i\)</span>.</p></li>
+<li><p>Each data point is the 3-D co-ordinates of all the different body parts</p></li>
+<li><p>Movement of parts determined by puppeteer via strings.</p></li>
+<li><p>For a simple puppet with one stick can move the stick up and down, left and right and twist.</p></li>
+</ul>
+</section>
+<section id="dimensionality-reduction-2" class="slide level1">
+<h1>Dimensionality Reduction</h1>
+<ul>
+<li><p>This gives three parameters in the puppeteers control.</p></li>
+<li><p>Implies that the puppet we see moving is controlled by only 3 variables.</p></li>
+<li><p>These 3 variables are often called the hidden or <em>latent variables</em>.</p></li>
+<li><p>Assume similar for real world data, observations are derived from lower dimensional underlying process</p></li>
+</ul>
+</section>
+<section id="examples-in-social-sciences" class="slide level1">
+<h1>Examples in Social Sciences</h1>
+<ul>
+<li><p>Underpins <em>psychological scoring</em> such as <em>IQ</em> or <em>personality tests</em></p></li>
+<li><p>Myers-Briggs assumes personality is four dimensional.</p></li>
+<li><p>Political belief (left/right wing).</p></li>
+<li><p>Also language modelling has taken similar approaches: <a href="https://arxiv.org/abs/1301.3781">word2vec</a></p></li>
+</ul>
 </section>
 <section id="principal-component-analysis" class="slide level1">
 <h1>Principal Component Analysis</h1>
-<p>Principal component analysis (PCA) is arguably the queen of dimensionality reduction techniques. PCA was developed as an approach to dimensionality reduction in 1930s by Hotelling as a method for the social sciences. In Hotelling’s formulation of PCA it was assumed that any data point, <span class="math inline">\(\mathbf{x}\)</span> could be represented as a weighted sum of the latent factors of interest, so that Hotelling described prediction functions (like in regression and classification above), only the regression is now <em>multiple output</em>. And instead of predicting a label, <span class="math inline">\(y_i\)</span>, we now try and force the regression to predict the observed feature vector, <span class="math inline">\(\mathbf{x}_i\)</span>. So for example, on an IQ test we would try and predict subject <span class="math inline">\(i\)</span>’s answer to the <span class="math inline">\(j\)</span>th question with the following function</p>
+<ul>
+<li><p>Principal component analysis (PCA) a linear dimensionality reduction technique</p></li>
+<li><p>In Hotelling’s formulation of PCA: a assume <span class="math inline">\(\mathbf{x}\)</span> is a linear weighted sum of the latent factors of interest.</p></li>
+<li><p>E.g. IQ test we would try and predict subject <span class="math inline">\(i\)</span>’s answer to the <span class="math inline">\(j\)</span>th question with the following function</p></li>
+</ul>
 <p><span class="math display">\[
 x_{ij} = f_j(z_i; \mathbf{w}).
 \]</span></p>
-<p>Here <span class="math inline">\(z_i\)</span> would be the IQ of subject <span class="math inline">\(i\)</span> and <span class="math inline">\(f_j(\cdot)\)</span> would be a function representing the relationship between the subject’s IQ and their score on the answer to question <span class="math inline">\(j\)</span>. This function is the same for all subjects, but the subject’s IQ is assumed to differ leading to different scores for each subject.</p>
+<p><span class="math inline">\(z_i\)</span> would be the IQ of subject <span class="math inline">\(i\)</span> and <span class="math inline">\(f_j(\cdot)\)</span> would function relating IQ and question answer.</p>
+</section>
+<section id="hotellings-pca" class="slide level1">
+<h1>Hotelling’s PCA</h1>
+<ul>
+<li>Assume function is linear function. This idea is taken from a wider field known as <em>factor analysis</em>, so Hotelling described the challenge as</li>
+</ul>
+<p><span class="math display">\[
+f_j(z_i; \mathbf{w}) = w_j z_i
+\]</span></p>
+<ul>
+<li><p>Answer to the <span class="math inline">\(j\)</span>th question is predicted to be a scaling of the subject’s IQ.</p></li>
+<li><p>Scale factor is given by <span class="math inline">\(w_j\)</span>.</p></li>
+</ul>
+</section>
+<section id="higher-latent-dimensions" class="slide level1">
+<h1>Higher Latent Dimensions</h1>
+<ul>
+<li>For more latent dimensions matrix of scales, <span class="math inline">\(\mathbf{W}\)</span></li>
+</ul>
+<p><span class="math display">\[
+f_j(\mathbf{z}_i; \mathbf{W}) = w_{1j} z_{1i} + w_{2j} z_{2i}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(z_{1i}\)</span> might be extrovert/introvert and <span class="math inline">\(z_{2i}\)</span> might rational/perceptual</li>
+</ul>
+</section>
+<section id="parameters" class="slide level1">
+<h1>Parameters</h1>
+<ul>
+<li><p>Parameters <span class="math inline">\(\mathbf{W}\)</span> are known as the factor <em>loadings</em> in FA.</p></li>
+<li><p>In PCA they are known as the principal components.</p></li>
+<li><p>To fit the model need <em>loadings</em>, <span class="math inline">\(\mathbf{W}\)</span>, and latent variables, <span class="math inline">\(\mathbf{Z}\)</span>.</p></li>
+<li><p>Can use least squares (leads to <em>matrix factorization</em> and recommender systems.</p></li>
+<li><p>Recommender systems most elements of <span class="math inline">\(\mathbf{x}_i\)</span> are missing.</p></li>
+</ul>
+</section>
+<section id="probability" class="slide level1">
+<h1>Probability</h1>
+<ul>
+<li>In PCA and factor analysis the unknown latent factors are dealt with through a probability distribution. They are each assumed to be drawn from a zero mean, unit variance normal distribution. This leaves the factor loadings to be estimated. For PCA the maximum likelihood solution for the factor loadings can be shown to be given by the <em>eigenvalue decomposition</em> of the data covariance matrix. This is algorithmically simple and convenient, although slow to compute for very large data sets with many features and many subjects. The eigenvalue problem can also be derived from many other starting points: e.g. the directions of maximum variance in the data or finding a latent space that best preserves inter-point distances between the data, or the optimal linear compression of the data given a linear reconstruction. These many and varied justifications for the eigenvalue decomposition may account for the popularity of PCA. Indeed, there is even an interpretation for Google’s original PageRank algorithm (which computed the <em>smallest</em> eigenvector of the internet’s linkage matrix) as seeking the dominant principal component of the web.<a href="#/fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></li>
+</ul>
+<ul>
+<li>Characterizing users according to past buying behavior and combining this with characteristics about products, is key to making good recommendations and returning useful search results. Further advances can be made if we understand the context of a particular session. For example, if a user is buying Christmas presents and searches for a dress, then it could be the case that the user is willing to spend a little more on the dress than in normal circumstances. Characterizing these effects requires more data and more complex algorithms. However, in domains such a search we are normally constrained by the speed with which we need to return results. Accounting for each of these factors while returning results with acceptable latency is a particular challenge.</li>
+</ul>
+</section>
+<section id="principal-component-analysis-1" class="slide level1">
+<h1>Principal Component Analysis</h1>
 <figure>
 <img src="./diagrams/demManifoldPrint_all_1_2.svg" />
 </figure>
 <p><em>Visualization of the first two principal components of an artificial data set. The data was generated by taking an image of a handwritten digit, 6, and rotating it 360 times, one degree each time. The first two principal components have been extracted in the diagram. The underlying circular shape is derived from the rotation of the data. Each image in the data set is projected on to the location its projected to in the latent space.</em></p>
-<p>In Hotelling’s formulation he assumed that the function was a linear function. This idea is taken from a wider field known as <em>factor analysis</em>, so Hotelling described the challenge as</p>
-<p><span class="math display">\[
-f_j(z_i; \mathbf{w}) = w_j z_i
-\]</span></p>
-<p>so the answer to the <span class="math inline">\(j\)</span>th question is predicted to be a scaling of the subject’s IQ. The scale factor is given by <span class="math inline">\(w_j\)</span>. If there are more latent dimensions then a matrix of parameters, <span class="math inline">\(\mathbf{W}\)</span> is used, for example if there were two latent dimensions we’d have</p>
-<p><span class="math display">\[
-f_j(\mathbf{z}_i; \mathbf{W}) = w_{1j} z_{1i} + w_{2j} z_{2i}
-\]</span></p>
-<p>where, if this were a personality test, then <span class="math inline">\(z_{1i}\)</span> might represent the spectrum over a subject’s extrovert/introvert and <span class="math inline">\(z_{2i}\)</span> might represent where the subject was on the rational/perceptual scale. The function would make a prediction about the subjects answer to a particular question on the test (e.g. preference for office job vs preference for outdoor job). In factor analysis the parameters <span class="math inline">\(\mathbf{W}\)</span> are known as the factor <em>loadings</em> and in PCA they are known as the principal components.</p>
-<p>Fitting the model involves finding estimates for the loadings, <span class="math inline">\(\mathbf{W}\)</span>, and latent variables, <span class="math inline">\(\mathbf{Z}\)</span>. There are different approaches including least squares. The least squares approach is used, for example, in recommender systems. In recommender systems this method is called <em>matrix factorization</em>. The the customer characteristics, <span class="math inline">\(\mathbf{x}_i\)</span> is the customer rating for each different product (or item) and the latent variables can be seen as a space of customer preferences. In the recommender system case the loadings matrix also has an interpretation as product similarities.<a href="#/fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> Recommender systems have a particular characteristic in that most of the entries of the vector <span class="math inline">\(\mathbf{x}_i\)</span> are missing most of the time.</p>
-<p>In PCA and factor analysis the unknown latent factors are dealt with through a probability distribution. They are each assumed to be drawn from a zero mean, unit variance normal distribution. This leaves the factor loadings to be estimated. For PCA the maximum likelihood solution for the factor loadings can be shown to be given by the <em>eigenvalue decomposition</em> of the data covariance matrix. This is algorithmically simple and convenient, although slow to compute for very large data sets with many features and many subjects. The eigenvalue problem can also be derived from many other starting points: e.g. the directions of maximum variance in the data or finding a latent space that best preserves inter-point distances between the data, or the optimal linear compression of the data given a linear reconstruction. These many and varied justifications for the eigenvalue decomposition may account for the popularity of PCA. Indeed, there is even an interpretation for Google’s original PageRank algorithm (which computed the <em>smallest</em> eigenvector of the internet’s linkage matrix) as seeking the dominant principal component of the web.<a href="#/fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a></p>
-<p>Characterizing users according to past buying behavior and combining this with characteristics about products, is key to making good recommendations and returning useful search results. Further advances can be made if we understand the context of a particular session. For example, if a user is buying Christmas presents and searches for a dress, then it could be the case that the user is willing to spend a little more on the dress than in normal circumstances. Characterizing these effects requires more data and more complex algorithms. However, in domains such a search we are normally constrained by the speed with which we need to return results. Accounting for each of these factors while returning results with acceptable latency is a particular challenge.</p>
 </section>
 <section id="reinforcement-learning" class="slide level1">
 <h1>Reinforcement Learning</h1>
-<p>The final domain of learning we will review is known as reinforcement learning. The domain of reinforcement learning is one that many researchers seem to believe is offering a route to <em>general intelligence</em>. The idea of general intelligence is to develop algorithms that are adaptable to many different circumstances. Supervised learning algorithms are designed to resolve particular challenges. Data is annotated with those challenges in mind. Unsupervised attempts to build representations without any context. But normally the algorithm designer has an understanding of what the broader objective is and designs the algorithms accordingly (for example, characterizing users). In reinforcement learning some context is given, in the form of a reward, but the reward is normally delayed. There may have been many actions that affected the outcome, but which actions had a positive effect and which a negative effect?</p>
+<ul>
+<li><p>The final domain of learning we will review is known as reinforcement learning.</p></li>
+<li><p>Many researchers seem to believe is offering a route to <em>general intelligence</em>.</p></li>
+<li><p>Idea of general intelligence is develop algorithms that are adaptable to many different circumstances.</p></li>
+<li><p>Supervised learning algorithms are designed to resolve particular challenges. Data is annotated with those challenges in mind. Unsupervised attempts to build representations without any context. But normally the algorithm designer has an understanding of what the broader objective is and designs the algorithms accordingly (for example, characterizing users). In reinforcement learning some context is given, in the form of a reward, but the reward is normally delayed. There may have been many actions that affected the outcome, but which actions had a positive effect and which a negative effect?</p></li>
+</ul>
 </section>
 <section id="ab-testing" class="slide level1">
 <h1>A/B Testing</h1>
-<p>One issue for companies like us is that our best way of testing the customer experience, A/B testing, prioritizes short term reward. The internet is currently being driven by short term rewards which make it distracting in the short term, but perhaps less useful in the long term. Click-bait is an example, but there are more subtle effects. The success of Facebook is driven by its ability to draw us in when likely we should be doing something else. This is driven by large scale A/B testing.</p>
-<p>One open question is how to drive non-visual interfaces through equivalents to A/B testing. Speech interfaces, such as those used in intelligent agents, are less amenable to A/B testing when determining the quality of the interface. Improving interaction with them is therefore less exact science than the visual interface. Data efficient reinforcement learning methods are likely to be key to improving these agent’s ability to interact with the user and understand intent. However, they are not yet mature enough to be deployed in this application.</p>
+<ul>
+<li><p>Testing the customer experience, A/B testing, prioritizes short term reward.</p></li>
+<li><p>The internet is currently being driven by short term rewards which make it distracting in the short term, but perhaps less useful in the long term.</p></li>
+<li><p>Click-bait is an example, but there are more subtle effects.</p></li>
+<li><p>Success of Facebook is driven by its ability to draw us in when likely we should be doing something else. This is driven by large scale A/B testing.</p></li>
+</ul>
+</section>
+<section id="longer-term" class="slide level1">
+<h1>Longer Term</h1>
+<ul>
+<li>One open question is how to drive non-visual interfaces through equivalents to A/B testing. Speech interfaces, such as those used in intelligent agents, are less amenable to A/B testing when determining the quality of the interface. Improving interaction with them is therefore less exact science than the visual interface. Data efficient reinforcement learning methods are likely to be key to improving these agent’s ability to interact with the user and understand intent. However, they are not yet mature enough to be deployed in this application.</li>
+</ul>
 </section>
 <section id="game-play" class="slide level1">
 <h1>Game Play</h1>
-<p>An area where reinforcement learning methods have been deployed with high profile success is game play. In game play the reward is delayed to the end of the game, and it comes in the form of victory or defeat. A significant advantage of game play as an application area is that, through simulation of the game, it is possible to generate as much data as is required to solve the problem. For this reason, many of the recent advances in reinforcement learning have occurred with methods that are not data efficient.</p>
-<p>The company DeepMind is set up around reinforcement learning as an approach to general intelligence. All their most well known achievements are centered around artificial intelligence in game play. In reinforcement learning a decision made at any given time have a downstream affect on the result. Whether the effect if beneficial or not is unknown until a future moment.</p>
-<p>We can think of reinforcement learning as providing a label, but the label is associated with a series of data involving a number of decisions taken. Each decision was taken given the understanding of game play at any given moment. Understanding which of these decisions was important in victory or defeat is a hard problem.</p>
-<p>In machine learning the process of understanding which decisions were beneficial and which were detrimental is known as the credit allocation problem. You wish to reward decisions that led to success to encourage them, but punish decisions that lead to failure.</p>
+<ul>
+<li><p>An area where reinforcement learning methods have been deployed with high profile success is game play. In game play the reward is delayed to the end of the game, and it comes in the form of victory or defeat. A significant advantage of game play as an application area is that, through simulation of the game, it is possible to generate as much data as is required to solve the problem. For this reason, many of the recent advances in reinforcement learning have occurred with methods that are not data efficient.</p></li>
+<li><p>The company DeepMind is set up around reinforcement learning as an approach to general intelligence. All their most well known achievements are centered around artificial intelligence in game play. In reinforcement learning a decision made at any given time have a downstream affect on the result. Whether the effect if beneficial or not is unknown until a future moment.</p></li>
+<li><p>We can think of reinforcement learning as providing a label, but the label is associated with a series of data involving a number of decisions taken. Each decision was taken given the understanding of game play at any given moment. Understanding which of these decisions was important in victory or defeat is a hard problem.</p></li>
+<li><p>In machine learning the process of understanding which decisions were beneficial and which were detrimental is known as the credit allocation problem. You wish to reward decisions that led to success to encourage them, but punish decisions that lead to failure.</p></li>
+</ul>
 </section>
 <section id="deep-q-learning" class="slide level1">
 <h1>Deep Q Learning</h1>
-<p>Broadly speaking, DeepMind uses an approach to Machine Learning where there are two mathematical functions at work. One determines the action to be taken at any given moment, the other estimates the quality of the board position at any given time. These are respectively known as the <em>policy network</em> and the <em>value network</em>.<a href="#/fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> DeepMind made use of convolutional neural networks for both these models.</p>
+<p>Broadly speaking, DeepMind uses an approach to Machine Learning where there are two mathematical functions at work. One determines the action to be taken at any given moment, the other estimates the quality of the board position at any given time. These are respectively known as the <em>policy network</em> and the <em>value network</em>.<a href="#/fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> DeepMind made use of convolutional neural networks for both these models.</p>
 </section>
 <section id="alphago" class="slide level1">
 <h1>AlphaGo</h1>
-<p>The ancient Chinese game of Go was considered a challenge for artificial intelligence for two reasons. Firstly, the game tree has a very high branching factor. The game tree is a discrete representation of the game. Every node in the game tree is associated with a board position. You can move through the game tree by making legal a move on the board to change the position. In Go, there are so many legal moves that the game tree increases exponentially. This challenge in Go was addressed by using stochastic game tree search. Rather than exploring the game tree exhaustively they explored it randomly.</p>
-<p>Secondly, evaluating the quality of any given board position was deemed to be very hard.<a href="#/fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> The value function determines for each player whether they are winning or loosing. Skilled Go players can assess a board position, but they do it by instinct, by intuition. Just as early AI researchers struggled to give rules for detecting cancer, it is challenging to give rules to assess a Go board. The machine learning approach that AlphaGo took is to train a value function network to make this assessment.</p>
+<ul>
+<li><p>The ancient Chinese game of Go was considered a challenge for artificial intelligence for two reasons. Firstly, the game tree has a very high branching factor. The game tree is a discrete representation of the game. Every node in the game tree is associated with a board position. You can move through the game tree by making legal a move on the board to change the position. In Go, there are so many legal moves that the game tree increases exponentially. This challenge in Go was addressed by using stochastic game tree search. Rather than exploring the game tree exhaustively they explored it randomly.</p></li>
+<li><p>Secondly, evaluating the quality of any given board position was deemed to be very hard.<a href="#/fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> The value function determines for each player whether they are winning or loosing. Skilled Go players can assess a board position, but they do it by instinct, by intuition. Just as early AI researchers struggled to give rules for detecting cancer, it is challenging to give rules to assess a Go board. The machine learning approach that AlphaGo took is to train a value function network to make this assessment.</p></li>
+</ul>
 </section>
 <section id="reinforcement-learning-and-classical-control" class="slide level1">
 <h1>Reinforcement Learning and Classical Control</h1>
-<p>The approach that DeepMind took to conquering Go is a <em>model free</em> approach known as <em>Q-learning</em>.<a href="#/fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a> The model free approach refers to the fact that they don’t directly include a model of how the world evolves in the reinforcement learning algorithm. They make extensive use of the game tree, but they don’t model how it evolves. They do model the expected reward of each position in the game tree (the value function) but that is not the same as modeling how the game will proceed.</p>
+<ul>
+<li>The approach that DeepMind took to conquering Go is a <em>model free</em> approach known as <em>Q-learning</em>.<a href="#/fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> The model free approach refers to the fact that they don’t directly include a model of how the world evolves in the reinforcement learning algorithm. They make extensive use of the game tree, but they don’t model how it evolves. They do model the expected reward of each position in the game tree (the value function) but that is not the same as modeling how the game will proceed.</li>
+</ul>
 </section>
 <section id="model-based-approach" class="slide level1">
 <h1>Model Based Approach</h1>
-<p>An alternative approach to reinforcement learning is to use a prediction function to suggest how the world will evolve in response to your actions. To predict how the game tree will evolve. You can then use this prediction to indirectly infer the expected reward associated with any action. This is known as <em>model based</em> reinforcement learning.</p>
-<p>This model based approach is also closer to a control system. A classical control system is one where you give the system a set point. For example, a thermostat in the house. You set the temperature and the boiler switches off when it reaches it. Optimal control is about getting the house to the right temperature as quickly as possible. Classical control is widely used in robotic control and flight control.</p>
-<p>One interesting crossover between classical control and machine learning arises because classical optimal control can be seen as a form of model based reinforcement learning. One where the reward is recovered when the set point is reached. In control engineering the prediction function is known as the <em>transfer function</em>. The process of fitting the transfer function in control is known as <em>system identification</em>.</p>
-<p>There is some exciting work emerging at the interface between the areas of control and reinforcement learning. Results at this interface could be very important for improving the quality of robotic and drone control.</p>
+<ul>
+<li><p>An alternative approach to reinforcement learning is to use a prediction function to suggest how the world will evolve in response to your actions. To predict how the game tree will evolve. You can then use this prediction to indirectly infer the expected reward associated with any action. This is known as <em>model based</em> reinforcement learning.</p></li>
+<li><p>This model based approach is also closer to a control system. A classical control system is one where you give the system a set point. For example, a thermostat in the house. You set the temperature and the boiler switches off when it reaches it. Optimal control is about getting the house to the right temperature as quickly as possible. Classical control is widely used in robotic control and flight control.</p></li>
+<li><p>One interesting crossover between classical control and machine learning arises because classical optimal control can be seen as a form of model based reinforcement learning. One where the reward is recovered when the set point is reached. In control engineering the prediction function is known as the <em>transfer function</em>. The process of fitting the transfer function in control is known as <em>system identification</em>.</p></li>
+<li><p>There is some exciting work emerging at the interface between the areas of control and reinforcement learning. Results at this interface could be very important for improving the quality of robotic and drone control.</p></li>
+</ul>
 </section>
 <section id="optimization-methods" class="slide level1">
 <h1>Optimization Methods</h1>
-<p>As we implied above, reinforcement learning can also used to improve user experience. In that case the reward is gained when the user buys a product from us. This makes it closely allied to the area of optimization. Optimization of our user interfaces can be seen as a reinforcement learning task, but more commonly it is thought about separately in the domains of <em>Bayesian optimization</em> or <em>bandit learning</em>.</p>
-<p>We use optimization in machine learning to find the parameters of our models. We can do that because we have a mathematical representation of our objective function as a direct function of the parameters.</p>
-<p>Examples in this form of optimization include, what is the best user interface for presenting adverts? What is the best design for a airfoil for a Prime Air drone? Which product should I return top of the list in response to this user’s search?</p>
-<p>Bayesian optimization arises when we can’t directly relate the parameters in the system of interest to our objective through a mathematical function. For example, what is the mathematical function that relates a user’s experience to the probability that they will buy a product?</p>
+<ul>
+<li><p>As we implied above, reinforcement learning can also used to improve user experience. In that case the reward is gained when the user buys a product from us. This makes it closely allied to the area of optimization. Optimization of our user interfaces can be seen as a reinforcement learning task, but more commonly it is thought about separately in the domains of <em>Bayesian optimization</em> or <em>bandit learning</em>.</p></li>
+<li><p>We use optimization in machine learning to find the parameters of our models. We can do that because we have a mathematical representation of our objective function as a direct function of the parameters.</p></li>
+<li><p>Examples in this form of optimization include, what is the best user interface for presenting adverts? What is the best design for a airfoil for a Prime Air drone? Which product should I return top of the list in response to this user’s search?</p></li>
+<li><p>Bayesian optimization arises when we can’t directly relate the parameters in the system of interest to our objective through a mathematical function. For example, what is the mathematical function that relates a user’s experience to the probability that they will buy a product?</p></li>
+</ul>
 </section>
 <section id="bayesian-optimization" class="slide level1">
 <h1>Bayesian Optimization</h1>
-<p>One approach to these problems is to use machine learning methods to develop a <em>surrogate model</em> for the optimization task. The surrogate model is a prediction function that attempts to recreate the process we are finding hard to model. We try to simultaneously fit the surrogate model and optimize the process.</p>
-<p>Bayesian optimization methods use a <em>surrogate model</em> (normally a specific form of regression model). They use this to predict how the real system will perform. The surrogate model makes a prediction (with an estimate of the uncertainty) of what the response will be to any given input. Parameters to test are chosen by considering this prediction. Similar to reinforcement learning, this can be viewed as a <em>model based</em> approach because the surrogate model can be seen as a model of the real world. In bandit methods strategies are determined without turning to a model to motivate them. They are <em>model free</em> methods.</p>
+<ul>
+<li><p>One approach to these problems is to use machine learning methods to develop a <em>surrogate model</em> for the optimization task. The surrogate model is a prediction function that attempts to recreate the process we are finding hard to model. We try to simultaneously fit the surrogate model and optimize the process.</p></li>
+<li><p>Bayesian optimization methods use a <em>surrogate model</em> (normally a specific form of regression model). They use this to predict how the real system will perform. The surrogate model makes a prediction (with an estimate of the uncertainty) of what the response will be to any given input. Parameters to test are chosen by considering this prediction. Similar to reinforcement learning, this can be viewed as a <em>model based</em> approach because the surrogate model can be seen as a model of the real world. In bandit methods strategies are determined without turning to a model to motivate them. They are <em>model free</em> methods.</p></li>
+</ul>
 </section>
 <section id="model-based-and-model-free-performance" class="slide level1">
 <h1>Model Based and Model Free: Performance</h1>
-<p>Because of their different philosophies, if a class of prediction functions is chosen, then a model based approach might have better average case performance. At least in terms of <em>data efficiency</em>. A model free approach may well have better worst case performance though, because it makes less assumptions about the nature of the data. To put it another way, making assumptions about the data is helpful if they are right: and if the model is sensible they’ll be right on average. However, it is unhelpful if the model is wrong. Indeed, it could be actively damaging. Since we can’t usually guarantee the model is absolutely right, the worst case performance of a model based approach would be poor.</p>
+<ul>
+<li>Because of their different philosophies, if a class of prediction functions is chosen, then a model based approach might have better average case performance. At least in terms of <em>data efficiency</em>. A model free approach may well have better worst case performance though, because it makes less assumptions about the nature of the data. To put it another way, making assumptions about the data is helpful if they are right: and if the model is sensible they’ll be right on average. However, it is unhelpful if the model is wrong. Indeed, it could be actively damaging. Since we can’t usually guarantee the model is absolutely right, the worst case performance of a model based approach would be poor.</li>
+</ul>
 </section>
 <section id="conclusion" class="slide level1">
 <h1>Conclusion</h1>
-<p>We have introduced a range of machine learning approaches by focusing on their use of mathematical functions to replace manually coded systems of rules. The important characteristic of machine learning is that the form of these functions, as dictated by their parameters, is determined by acquiring data from the real world.</p>
+<ul>
+<li>We have introduced a range of machine learning approaches by focusing on their use of mathematical functions to replace manually coded systems of rules. The important characteristic of machine learning is that the form of these functions, as dictated by their parameters, is determined by acquiring data from the real world.</li>
+</ul>
 </section>
 <section id="deployment" class="slide level1">
 <h1>Deployment</h1>
-<p>The methods we have introduced are roughly speaking introduced in order of difficulty of deployment. While supervised learning is more involved in terms of collection of data, it is the most straightforward method to deploy once that data is recovered. For this reason, a major focus with supervised learning should always be on maintaining data quality, increasing the efficiency and accountability<a href="#/fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a> of the data collection pipeline and the quality of features used.</p>
-<p>In relation to what AI can and can’t do today Andrew Ng is quoted as saying:</p>
+<ul>
+<li>The methods we have introduced are roughly speaking introduced in order of difficulty of deployment. While supervised learning is more involved in terms of collection of data, it is the most straightforward method to deploy once that data is recovered. For this reason, a major focus with supervised learning should always be on maintaining data quality, increasing the efficiency and accountability<a href="#/fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> of the data collection pipeline and the quality of features used.</li>
+</ul>
+<ul>
+<li>In relation to what AI can and can’t do today Andrew Ng is quoted as saying:</li>
+</ul>
 <blockquote>
-<p>If a typical person can do a mental task with less than one second of thought, we can probably automate it using AI either now or in the near future.<a href="#/fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a></p>
+<p>If a typical person can do a mental task with less than one second of thought, we can probably automate it using AI either now or in the near future.<a href="#/fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a></p>
 </blockquote>
-<p>I would broadly agree with this quote but only in the context of supervised learning. If a human expert takes around that amount of time, then it’s also likely we can acquire the data necessary to build a supervised learning algorithm that can emulate that human’s response.</p>
-<p>The picture with regard to unsupervised learning and reinforcement learning is more clouded.</p>
-<p>One observation is that for <em>supervised</em> learning we seem to be moving beyond the era where very deep machine learning expertise is required to deploy methods. A solid understanding of machine learning (say to Masters level) is certainly required, but the quality of the final result is likely more dependent on domain expertise and the quality of the data and the information processing pipeline. This seems part of a wider trend where some of the big successes in machine learning are moving rapidly from the domain of science to that of engineering.<a href="#/fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a></p>
-<p>So if we can only emulate tasks that humans take around a second to do, how are we managing to deliver on self driving cars? The answer is that we are constructing engineered systems from sub-components, each of which is a machine learning subsystem. But they are tied together as a component based system in line with our traditional engineering approach. This has an advantage that each component in the system can be verified before its inclusion. This is important for debugging and safety. But in practice we can expect these systems to be very brittle. A human adapts the way in which they drive the car across their lifetime. A human can react to other road users. In extreme situations, such as a car jacking, a human can set to one side normal patterns of behavior, and purposely crash their car to draw attention to the situation.</p>
-<p>Supervised machine learning solutions are normally trained offline. They do not adapt when deployed because this makes them less verifiable. But this compounds the brittleness of our solutions. By deploying our solutions we actually change the environment in which they operate. Therefore, it’s important that they can be quickly updated to reflect changing circumstances. This updating happens offline. For a complex mechanical system, such as a delivery drone, extensive testing of the system may be required when any component is updated. It is therefore imperative that these data processing pipelines are well documented so that they can be redeployed on demand.</p>
-<p>In practice there can be challenges with the false dichotomy between reproducibility and performance. It is likely that most of our data scientists are caring less about their ability to redeploy their pipelines and only about their ability to produce an algorithm that achieves a particular performance. A key question is how reproducible is that process? There is a <em>false</em> dichotomy because ensuring reproducibility will typically improve performance as it will make it easier to run a rigorous set of explorative experiments. A worry is that, currently, we do not have a way to quantify the scale of this potential problem across the company.</p>
+<ul>
+<li><p>I would broadly agree with this quote but only in the context of supervised learning. If a human expert takes around that amount of time, then it’s also likely we can acquire the data necessary to build a supervised learning algorithm that can emulate that human’s response.</p></li>
+<li><p>The picture with regard to unsupervised learning and reinforcement learning is more clouded.</p></li>
+<li><p>One observation is that for <em>supervised</em> learning we seem to be moving beyond the era where very deep machine learning expertise is required to deploy methods. A solid understanding of machine learning (say to Masters level) is certainly required, but the quality of the final result is likely more dependent on domain expertise and the quality of the data and the information processing pipeline. This seems part of a wider trend where some of the big successes in machine learning are moving rapidly from the domain of science to that of engineering.<a href="#/fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a></p></li>
+</ul>
+<ul>
+<li><p>So if we can only emulate tasks that humans take around a second to do, how are we managing to deliver on self driving cars? The answer is that we are constructing engineered systems from sub-components, each of which is a machine learning subsystem. But they are tied together as a component based system in line with our traditional engineering approach. This has an advantage that each component in the system can be verified before its inclusion. This is important for debugging and safety. But in practice we can expect these systems to be very brittle. A human adapts the way in which they drive the car across their lifetime. A human can react to other road users. In extreme situations, such as a car jacking, a human can set to one side normal patterns of behavior, and purposely crash their car to draw attention to the situation.</p></li>
+<li><p>Supervised machine learning solutions are normally trained offline. They do not adapt when deployed because this makes them less verifiable. But this compounds the brittleness of our solutions. By deploying our solutions we actually change the environment in which they operate. Therefore, it’s important that they can be quickly updated to reflect changing circumstances. This updating happens offline. For a complex mechanical system, such as a delivery drone, extensive testing of the system may be required when any component is updated. It is therefore imperative that these data processing pipelines are well documented so that they can be redeployed on demand.</p></li>
+<li><p>In practice there can be challenges with the false dichotomy between reproducibility and performance. It is likely that most of our data scientists are caring less about their ability to redeploy their pipelines and only about their ability to produce an algorithm that achieves a particular performance. A key question is how reproducible is that process? There is a <em>false</em> dichotomy because ensuring reproducibility will typically improve performance as it will make it easier to run a rigorous set of explorative experiments. A worry is that, currently, we do not have a way to quantify the scale of this potential problem across the company.</p></li>
+</ul>
 <!-- Machine learning solutions When we deploy our solutions in the real world, we find that the situation is more complex. ThereAnother potential problem with our rush to supervised learning solutions is the false dichotomy between reproducibility and performance. Across Amazon we are using data science to design solutions which are deployed into production.  -->
 <!-- It also requires more expertise on the machine learning side to develop and deploy solutions in un, and requires more expertise.  -->
 <!-- such as avoiding a crash, to deliberately ram into another vehicle -->
 <!-- To deliver complex solutions, like self driving cars, many sub-components from a  -->
 <!-- Domain expertise becomWith regard to deIn particular, we are moving beyond the era where there is a short -->
-<p>Common to all machine learning methods is the initial choice of useful classes of functions. The deep learning revolution is associated with a particular class of mathematical functions that is proving very successful in what were seen to be challenging domains: speech, vision, language. This has meant that significant advances in problems that have been seen as hard have occurred in artificial intelligence.</p>
+<ul>
+<li>Common to all machine learning methods is the initial choice of useful classes of functions. The deep learning revolution is associated with a particular class of mathematical functions that is proving very successful in what were seen to be challenging domains: speech, vision, language. This has meant that significant advances in problems that have been seen as hard have occurred in artificial intelligence.</li>
+</ul>
 </section>
 <section class="footnotes">
 <hr />
 <ol>
 <li id="fn1"><p>GOFAI has its origins in the birth of computer science so it is unsurprising that logic should be the dominant paradigm. There was also a sense in which pure logic felt like it mapped well on to human reasoning. In practice, for any complex real world situation, the number of logical rules required causes an explosion in the <em>state space</em> of the system. This makes logical systems intractable in many applications.<a href="#/fnref1">↩</a></p></li>
 <li id="fn2"><p>Using the test data in your training procedure is a major error in any machine learning procedure. It is extremely dangerous as it gives a misleading assessment of the model performance. The <a href="http://inverseprobability.com/2015/06/04/baidu-on-imagenet">Baidu ImageNet scandal</a> was an example of a team competing in the ImageNet challenge which did this. The team had announced via the publication pre-print server Arxiv that they had a world-leading performance on the ImageNet challenge. This was reported in the mainstream media. Two weeks later the challenge organizers revealed that the team had created multiple accounts for checking their test performance more times than was permitted by the challenge rules. This was then reported as “AI’s first doping scandal”. The team lead was fired by Baidu.<a href="#/fnref2">↩</a></p></li>
-<li id="fn3"><p>These models are quite a lot more complex than the simple clustering we describe here. They represent a common ancestor through a cluster center that is then allowed to evolve over time through a mutation rate. The time of separation between different species is estimated via these mutation rates.<a href="#/fnref3">↩</a></p></li>
-<li id="fn4"><p>One way of thinking about this is to flip the model on its side. Instead of thinking about the <span class="math inline">\(i\)</span>th subject and the <span class="math inline">\(j\)</span>th characteristic. Assume that each product is the subject. So the <span class="math inline">\(j\)</span>th item is thought of as the subject, and each item’s characteristic is given by the rating from a particular user. In this case symmetries in the model show that the matrix <span class="math inline">\(\mathbf{W}\)</span> can now be seen as a matrix of <em>latent variables</em> and the matrix <span class="math inline">\(\mathbf{Z}\)</span> can be seen as <em>factor loadings</em>. So you can think of the method as simultaneously doing a dimensionality reduction on the products and the users. Recommender systems also use other approaches, some of them based on similarity measures. In a similarity measure based recommender system the rating prediction is given by looking for similar products in the user profile and scoring the new product with a score that is a weighted sum of those products.<a href="#/fnref4">↩</a></p></li>
-<li id="fn5"><p>The interpretation requires you to think of the web as a series of web pages in a high dimensional space where distances between web pages are computed by moving along the links (in either direction). The PageRank is the one dimensional space that best preserves those distances in the sense of an L1 norm. The interpretation works because the smallest eigenvalue of the linkage matrix is the <em>largest</em> eigenvalue of the inverse of the linkage matrix. The inverse linkage matrix (which would be impossible to compute) embeds similarities between pages according to how far apart they are via a random walk along the linkage matrix.<a href="#/fnref5">↩</a></p></li>
+<li id="fn3"><p>The interpretation requires you to think of the web as a series of web pages in a high dimensional space where distances between web pages are computed by moving along the links (in either direction). The PageRank is the one dimensional space that best preserves those distances in the sense of an L1 norm. The interpretation works because the smallest eigenvalue of the linkage matrix is the <em>largest</em> eigenvalue of the inverse of the linkage matrix. The inverse linkage matrix (which would be impossible to compute) embeds similarities between pages according to how far apart they are via a random walk along the linkage matrix.<a href="#/fnref3">↩</a></p></li>
+<li id="fn4"><p>The approach was described early on in the history of machine learning by Chris Watkins, during his PhD thesis in the 1980s. It is known as Q-learning. It’s recent success in the games domain is driven by the use of deep learning for the policy and value functions as well as the use of fast compute to generate and process very large quantities of data. In its standard form it is not seen as a very data-efficient approach.<a href="#/fnref4">↩</a></p></li>
+<li id="fn5"><p>The situation in chess is much easier, firstly the number of possible moves at any time is about an order of magnitude lower, meaning the game tree doesn’t grow as quickly. Secondly, in chess, there are well defined value functions. For example a value function could be based on adding together the points that are associated with each piece.<a href="#/fnref5">↩</a></p></li>
 <li id="fn6"><p>The approach was described early on in the history of machine learning by Chris Watkins, during his PhD thesis in the 1980s. It is known as Q-learning. It’s recent success in the games domain is driven by the use of deep learning for the policy and value functions as well as the use of fast compute to generate and process very large quantities of data. In its standard form it is not seen as a very data-efficient approach.<a href="#/fnref6">↩</a></p></li>
-<li id="fn7"><p>The situation in chess is much easier, firstly the number of possible moves at any time is about an order of magnitude lower, meaning the game tree doesn’t grow as quickly. Secondly, in chess, there are well defined value functions. For example a value function could be based on adding together the points that are associated with each piece.<a href="#/fnref7">↩</a></p></li>
-<li id="fn8"><p>The approach was described early on in the history of machine learning by Chris Watkins, during his PhD thesis in the 1980s. It is known as Q-learning. It’s recent success in the games domain is driven by the use of deep learning for the policy and value functions as well as the use of fast compute to generate and process very large quantities of data. In its standard form it is not seen as a very data-efficient approach.<a href="#/fnref8">↩</a></p></li>
-<li id="fn9"><p>To try and better embody the state of data readiness in organizations I’ve been proposing <a href="%7B%7B%20site.baseurl%20%7D%7D/2017/01/12/data-readiness-levels">“Data Readiness Levels”</a>. More needs to be done in this area to improve the efficiency of the data science pipeline.<a href="#/fnref9">↩</a></p></li>
-<li id="fn10"><p>The quote can be found in the Harvard Business Review Article <a href="https://hbr.org/2016/11/what-artificial-intelligence-can-and-cant-do-right-now">“What Artificial Intelligence Can and Can’t Do Right Now”</a>.<a href="#/fnref10">↩</a></p></li>
-<li id="fn11"><p>This trend was very clear at the moment, <a href="%7B%7Bsite.baseurl%20%7D%7D/2016/11/29/new-directions-in-kernels-and-gaussian-processes.html">I spoke about it</a> at a recent Dagstuhl workshop on new directions for kernel methods and Gaussian processes.<a href="#/fnref11">↩</a></p></li>
+<li id="fn7"><p>To try and better embody the state of data readiness in organizations I’ve been proposing <a href="%7B%7B%20site.baseurl%20%7D%7D/2017/01/12/data-readiness-levels">“Data Readiness Levels”</a>. More needs to be done in this area to improve the efficiency of the data science pipeline.<a href="#/fnref7">↩</a></p></li>
+<li id="fn8"><p>The quote can be found in the Harvard Business Review Article <a href="https://hbr.org/2016/11/what-artificial-intelligence-can-and-cant-do-right-now">“What Artificial Intelligence Can and Can’t Do Right Now”</a>.<a href="#/fnref8">↩</a></p></li>
+<li id="fn9"><p>This trend was very clear at the moment, <a href="%7B%7Bsite.baseurl%20%7D%7D/2016/11/29/new-directions-in-kernels-and-gaussian-processes.html">I spoke about it</a> at a recent Dagstuhl workshop on new directions for kernel methods and Gaussian processes.<a href="#/fnref9">↩</a></p></li>
 </ol>
 </section>
     </div>
