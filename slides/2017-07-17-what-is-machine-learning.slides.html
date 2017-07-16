@@ -511,20 +511,23 @@ E(\mathbf{w}) = \sum_{i=1}^n (y_i - f(\mathbf{x}_i))^2
 <h1>Context</h1>
 <ul>
 <li><p>Supervised learning: context is very much driven by the labels.</p></li>
-<li><p>Humans can easily sort a number of objects into objects that share similar characteristics, e.g. animals and vehicles</p></li>
+<li><p>Humans easily sort objects e.g. animals and vehicles</p></li>
 <li><p>For large data sets or data we are not used to (high dimensional data) would like to automate.</p>
 <ul>
-<li>E.g., an e-commerce company might need an algorithm that can go through its entire list of products and automatically sort them into groups such that similar products are located together.</li>
+<li>E.g., an e-commerce company algorithm for sorting products into groups.</li>
 </ul></li>
 </ul>
-<!-- One way of thinking of unsupervised learning is as a form of *compression* of data. The essence of the data is normally distilled by defining the algorithm. -->
 </section>
 <section id="discrete-vs-continuous" class="slide level1">
 <h1>Discrete vs Continuous</h1>
 <ul>
 <li><p>Supervised learning is broadly divided into classification and regression</p></li>
-<li><p>Unsupervised learning can similarly be split into methods that cluster the data (i.e. provide a discrete label) or methods that represent the data as a continuous values.</p></li>
+<li><p>Unsupervised learning can be split too:</p></li>
 </ul>
+<ol type="1">
+<li><p>methods that cluster the data</p></li>
+<li><p>methods that represent the data as (lower dimensional) continuous values.</p></li>
+</ol>
 </section>
 <section id="clustering" class="slide level1">
 <h1>Clustering</h1>
@@ -734,17 +737,25 @@ f_j(\mathbf{z}_i; \mathbf{W}) = w_{1j} z_{1i} + w_{2j} z_{2i}
 <li><p>Parameters <span class="math inline">\(\mathbf{W}\)</span> are known as the factor <em>loadings</em> in FA.</p></li>
 <li><p>In PCA they are known as the principal components.</p></li>
 <li><p>To fit the model need <em>loadings</em>, <span class="math inline">\(\mathbf{W}\)</span>, and latent variables, <span class="math inline">\(\mathbf{Z}\)</span>.</p></li>
-<li><p>Can use least squares (leads to <em>matrix factorization</em> and recommender systems.</p></li>
+<li><p>Can use least squares (leads to <em>matrix factorization</em> and recommender systems).</p></li>
 <li><p>Recommender systems most elements of <span class="math inline">\(\mathbf{x}_i\)</span> are missing.</p></li>
 </ul>
 </section>
 <section id="probability" class="slide level1">
 <h1>Probability</h1>
 <ul>
-<li>In PCA and factor analysis the unknown latent factors are dealt with through a probability distribution. They are each assumed to be drawn from a zero mean, unit variance normal distribution. This leaves the factor loadings to be estimated. For PCA the maximum likelihood solution for the factor loadings can be shown to be given by the <em>eigenvalue decomposition</em> of the data covariance matrix. This is algorithmically simple and convenient, although slow to compute for very large data sets with many features and many subjects. The eigenvalue problem can also be derived from many other starting points: e.g. the directions of maximum variance in the data or finding a latent space that best preserves inter-point distances between the data, or the optimal linear compression of the data given a linear reconstruction. These many and varied justifications for the eigenvalue decomposition may account for the popularity of PCA. Indeed, there is even an interpretation for Google’s original PageRank algorithm (which computed the <em>smallest</em> eigenvector of the internet’s linkage matrix) as seeking the dominant principal component of the web.<a href="#/fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></li>
+<li><p>PCA and factor analysis the unknown latent factors are dealt with through a probability distribution.</p></li>
+<li><p>Assume these “unknowns” are drawn from a zero mean, unit variance normal distribution.</p></li>
+<li><p>That implies a particular <em>probability</em> density for data (PDF).</p></li>
+<li><p>The PDF has parameters depending on factor loadings to be estimated.</p></li>
 </ul>
+</section>
+<section id="maximum-likelihood" class="slide level1">
+<h1>Maximum Likelihood</h1>
 <ul>
-<li>Characterizing users according to past buying behavior and combining this with characteristics about products, is key to making good recommendations and returning useful search results. Further advances can be made if we understand the context of a particular session. For example, if a user is buying Christmas presents and searches for a dress, then it could be the case that the user is willing to spend a little more on the dress than in normal circumstances. Characterizing these effects requires more data and more complex algorithms. However, in domains such a search we are normally constrained by the speed with which we need to return results. Accounting for each of these factors while returning results with acceptable latency is a particular challenge.</li>
+<li><p>Fit model by “maximising likelihood of data” under the PDF.</p></li>
+<li><p>Maxium likelihood for PCA is the <em>eigenvalue decomposition</em> of the data covariance matrix.</p></li>
+<li><p>Algorithmically simple and convenient, but slow to compute for very large data sets with many features and many subjects.</p></li>
 </ul>
 </section>
 <section id="principal-component-analysis-1" class="slide level1">
@@ -760,13 +771,28 @@ f_j(\mathbf{z}_i; \mathbf{W}) = w_{1j} z_{1i} + w_{2j} z_{2i}
 <li><p>The final domain of learning we will review is known as reinforcement learning.</p></li>
 <li><p>Many researchers seem to believe is offering a route to <em>general intelligence</em>.</p></li>
 <li><p>Idea of general intelligence is develop algorithms that are adaptable to many different circumstances.</p></li>
-<li><p>Supervised learning algorithms are designed to resolve particular challenges. Data is annotated with those challenges in mind. Unsupervised attempts to build representations without any context. But normally the algorithm designer has an understanding of what the broader objective is and designs the algorithms accordingly (for example, characterizing users). In reinforcement learning some context is given, in the form of a reward, but the reward is normally delayed. There may have been many actions that affected the outcome, but which actions had a positive effect and which a negative effect?</p></li>
 </ul>
 </section>
-<section id="ab-testing" class="slide level1">
-<h1>A/B Testing</h1>
+<section id="reinforcement-learning-1" class="slide level1">
+<h1>Reinforcement Learning</h1>
 <ul>
-<li><p>Testing the customer experience, A/B testing, prioritizes short term reward.</p></li>
+<li><p>Supervised learning algorithms are designed to resolve particular challenges.</p></li>
+<li><p>Data is annotated with those challenges in mind.</p></li>
+<li><p>Unsupervised attempts to build representations without any context.</p></li>
+</ul>
+</section>
+<section id="reward" class="slide level1">
+<h1>“Reward”</h1>
+<ul>
+<li><p>In reinforcement learning some context is given, in the form of a reward. But it is often <em>delayed</em></p></li>
+<li><p>Credit allocation problem: many actions that affected the outcome, but which actions had a positive effect and which a negative effect?</p></li>
+</ul>
+</section>
+<section id="ab-testing-and-reward" class="slide level1">
+<h1>A/B Testing and Reward</h1>
+<ul>
+<li><p>Advert clicks can be seen as a reward.</p></li>
+<li><p>Testing the customer experience, A/B testing, prioritises short term reward.</p></li>
 <li><p>The internet is currently being driven by short term rewards which make it distracting in the short term, but perhaps less useful in the long term.</p></li>
 <li><p>Click-bait is an example, but there are more subtle effects.</p></li>
 <li><p>Success of Facebook is driven by its ability to draw us in when likely we should be doing something else. This is driven by large scale A/B testing.</p></li>
@@ -775,58 +801,108 @@ f_j(\mathbf{z}_i; \mathbf{W}) = w_{1j} z_{1i} + w_{2j} z_{2i}
 <section id="longer-term" class="slide level1">
 <h1>Longer Term</h1>
 <ul>
-<li>One open question is how to drive non-visual interfaces through equivalents to A/B testing. Speech interfaces, such as those used in intelligent agents, are less amenable to A/B testing when determining the quality of the interface. Improving interaction with them is therefore less exact science than the visual interface. Data efficient reinforcement learning methods are likely to be key to improving these agent’s ability to interact with the user and understand intent. However, they are not yet mature enough to be deployed in this application.</li>
+<li><p>One open question is how to drive non-visual interfaces through equivalents to A/B testing.</p></li>
+<li><p>Speech interfaces, such as those used in intelligent agents, are less amenable to A/B testing when determining the quality of the interface.</p></li>
+<li><p>Improving interaction with them is therefore less exact science than the visual interface.</p></li>
+</ul>
+</section>
+<section id="data-efficiency" class="slide level1">
+<h1>Data Efficiency</h1>
+<ul>
+<li><p>Data efficient reinforcement learning methods are likely to be key to improving these agent’s ability to interact.</p></li>
+<li><p>However, they are not yet mature enough to be deployed yet.</p></li>
 </ul>
 </section>
 <section id="game-play" class="slide level1">
 <h1>Game Play</h1>
 <ul>
-<li><p>An area where reinforcement learning methods have been deployed with high profile success is game play. In game play the reward is delayed to the end of the game, and it comes in the form of victory or defeat. A significant advantage of game play as an application area is that, through simulation of the game, it is possible to generate as much data as is required to solve the problem. For this reason, many of the recent advances in reinforcement learning have occurred with methods that are not data efficient.</p></li>
-<li><p>The company DeepMind is set up around reinforcement learning as an approach to general intelligence. All their most well known achievements are centered around artificial intelligence in game play. In reinforcement learning a decision made at any given time have a downstream affect on the result. Whether the effect if beneficial or not is unknown until a future moment.</p></li>
-<li><p>We can think of reinforcement learning as providing a label, but the label is associated with a series of data involving a number of decisions taken. Each decision was taken given the understanding of game play at any given moment. Understanding which of these decisions was important in victory or defeat is a hard problem.</p></li>
-<li><p>In machine learning the process of understanding which decisions were beneficial and which were detrimental is known as the credit allocation problem. You wish to reward decisions that led to success to encourage them, but punish decisions that lead to failure.</p></li>
+<li><p>Reinforcement learning methods have been deployed with high profile success is game play.</p></li>
+<li><p>Reward is delayed to the end of the game, victory or defeat.</p></li>
+<li><p>Can acquire lots of data through simulation.</p></li>
+<li><p>Many of the recent advances in reinforcement learning have occurred with methods that are not data efficient.</p></li>
+</ul>
+</section>
+<section id="deepmind" class="slide level1">
+<h1>DeepMind</h1>
+<ul>
+<li><p>The company DeepMind is set up around reinforcement learning as an approach to general intelligence.</p></li>
+<li><p>Best known achievements are centered around artificial intelligence in game play.</p></li>
+<li><p>For example, Atari game play and AlphaGo.</p></li>
 </ul>
 </section>
 <section id="deep-q-learning" class="slide level1">
 <h1>Deep Q Learning</h1>
-<p>Broadly speaking, DeepMind uses an approach to Machine Learning where there are two mathematical functions at work. One determines the action to be taken at any given moment, the other estimates the quality of the board position at any given time. These are respectively known as the <em>policy network</em> and the <em>value network</em>.<a href="#/fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> DeepMind made use of convolutional neural networks for both these models.</p>
+<ul>
+<li><p>DeepMind uses an approach to Machine Learning where there are two mathematical functions at work.</p></li>
+<li><p>The <em>policy function</em> determines the action to be taken at any given moment,</p></li>
+<li><p>The <em>value function</em> estimates the quality of a board position at any given time.</p></li>
+<li><p>In AlphaGo make use of convolutional neural networks for both these models.</p></li>
+</ul>
 </section>
 <section id="alphago" class="slide level1">
 <h1>AlphaGo</h1>
 <ul>
-<li><p>The ancient Chinese game of Go was considered a challenge for artificial intelligence for two reasons. Firstly, the game tree has a very high branching factor. The game tree is a discrete representation of the game. Every node in the game tree is associated with a board position. You can move through the game tree by making legal a move on the board to change the position. In Go, there are so many legal moves that the game tree increases exponentially. This challenge in Go was addressed by using stochastic game tree search. Rather than exploring the game tree exhaustively they explored it randomly.</p></li>
-<li><p>Secondly, evaluating the quality of any given board position was deemed to be very hard.<a href="#/fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> The value function determines for each player whether they are winning or loosing. Skilled Go players can assess a board position, but they do it by instinct, by intuition. Just as early AI researchers struggled to give rules for detecting cancer, it is challenging to give rules to assess a Go board. The machine learning approach that AlphaGo took is to train a value function network to make this assessment.</p></li>
+<li>Go was considered a challenge for artificial intelligence for two reasons.</li>
 </ul>
-</section>
-<section id="reinforcement-learning-and-classical-control" class="slide level1">
-<h1>Reinforcement Learning and Classical Control</h1>
+<ol type="1">
+<li><p>Game tree has a very high `branching factor’.</p>
+<p>In Go, there are so many legal moves that the game tree increases exponentially.</p></li>
+<li><p>Evaluating the quality of any given board position was deemed to be very hard.[^chess].</p></li>
+</ol>
 <ul>
-<li>The approach that DeepMind took to conquering Go is a <em>model free</em> approach known as <em>Q-learning</em>.<a href="#/fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> The model free approach refers to the fact that they don’t directly include a model of how the world evolves in the reinforcement learning algorithm. They make extensive use of the game tree, but they don’t model how it evolves. They do model the expected reward of each position in the game tree (the value function) but that is not the same as modeling how the game will proceed.</li>
+<li>AlphaGo played more than 30,000,000 games to learn value and policy.</li>
 </ul>
 </section>
 <section id="model-based-approach" class="slide level1">
 <h1>Model Based Approach</h1>
 <ul>
-<li><p>An alternative approach to reinforcement learning is to use a prediction function to suggest how the world will evolve in response to your actions. To predict how the game tree will evolve. You can then use this prediction to indirectly infer the expected reward associated with any action. This is known as <em>model based</em> reinforcement learning.</p></li>
-<li><p>This model based approach is also closer to a control system. A classical control system is one where you give the system a set point. For example, a thermostat in the house. You set the temperature and the boiler switches off when it reaches it. Optimal control is about getting the house to the right temperature as quickly as possible. Classical control is widely used in robotic control and flight control.</p></li>
-<li><p>One interesting crossover between classical control and machine learning arises because classical optimal control can be seen as a form of model based reinforcement learning. One where the reward is recovered when the set point is reached. In control engineering the prediction function is known as the <em>transfer function</em>. The process of fitting the transfer function in control is known as <em>system identification</em>.</p></li>
-<li><p>There is some exciting work emerging at the interface between the areas of control and reinforcement learning. Results at this interface could be very important for improving the quality of robotic and drone control.</p></li>
+<li><p>An alternative approach to reinforcement learning is to use a prediction function.</p></li>
+<li><p>This is similar to <em>classical control</em> and field of <em>system identification</em>.</p></li>
+<li><p>Known as <em>model based</em> reinforcement learning.</p></li>
 </ul>
 </section>
 <section id="optimization-methods" class="slide level1">
 <h1>Optimization Methods</h1>
 <ul>
-<li><p>As we implied above, reinforcement learning can also used to improve user experience. In that case the reward is gained when the user buys a product from us. This makes it closely allied to the area of optimization. Optimization of our user interfaces can be seen as a reinforcement learning task, but more commonly it is thought about separately in the domains of <em>Bayesian optimization</em> or <em>bandit learning</em>.</p></li>
-<li><p>We use optimization in machine learning to find the parameters of our models. We can do that because we have a mathematical representation of our objective function as a direct function of the parameters.</p></li>
-<li><p>Examples in this form of optimization include, what is the best user interface for presenting adverts? What is the best design for a airfoil for a Prime Air drone? Which product should I return top of the list in response to this user’s search?</p></li>
-<li><p>Bayesian optimization arises when we can’t directly relate the parameters in the system of interest to our objective through a mathematical function. For example, what is the mathematical function that relates a user’s experience to the probability that they will buy a product?</p></li>
+<li><p>Reinforcement learning can also used to improve user experience.</p></li>
+<li><p>Reward is gained when the user buys a product from us.</p></li>
+<li><p>This makes it closely allied to the area of optimization.</p></li>
+<li><p>Optimization of our user interfaces is like reinforcement learning task, but normally approached through <em>Bayesian optimization</em> or <em>bandit learning</em>.</p></li>
 </ul>
+</section>
+<section id="optimization" class="slide level1">
+<h1>Optimization</h1>
+<ul>
+<li><p>Normal optimization we have a mathematical representation of our objective function as a direct function of the parameters.</p></li>
+<li><p>In Bayesian Optimization we don’t.</p></li>
+<li><p>E.g. Examples in this form of optimization include:</p></li>
+</ul>
+<ol type="1">
+<li><p>What is the best user interface for presenting adverts?</p></li>
+<li><p>What is the best design of wing for an F1 car?</p></li>
+<li><p>Which product should I return top of the list in response to this user’s search?</p></li>
+</ol>
 </section>
 <section id="bayesian-optimization" class="slide level1">
 <h1>Bayesian Optimization</h1>
 <ul>
-<li><p>One approach to these problems is to use machine learning methods to develop a <em>surrogate model</em> for the optimization task. The surrogate model is a prediction function that attempts to recreate the process we are finding hard to model. We try to simultaneously fit the surrogate model and optimize the process.</p></li>
-<li><p>Bayesian optimization methods use a <em>surrogate model</em> (normally a specific form of regression model). They use this to predict how the real system will perform. The surrogate model makes a prediction (with an estimate of the uncertainty) of what the response will be to any given input. Parameters to test are chosen by considering this prediction. Similar to reinforcement learning, this can be viewed as a <em>model based</em> approach because the surrogate model can be seen as a model of the real world. In bandit methods strategies are determined without turning to a model to motivate them. They are <em>model free</em> methods.</p></li>
+<li><p>Can’t directly relate the parameters in the system of interest to our objective through a mathematical function.</p></li>
+<li><p>E.g. What is the mathematical function that relates a user’s experience to the probability that they will buy a product?</p></li>
+</ul>
+</section>
+<section id="bayesian-optimization-1" class="slide level1">
+<h1>Bayesian Optimization</h1>
+<ul>
+<li><p>Use machine learning to develop a <em>surrogate model</em> for the optimization task.</p></li>
+<li><p>Surrogate model is a prediction function that attempts to recreate the process we are finding hard to model.</p></li>
+<li><p>Try to simultaneously fit the surrogate model and optimize the process.</p></li>
+</ul>
+</section>
+<section id="surrogate-models" class="slide level1">
+<h1>Surrogate Models</h1>
+<ul>
+<li><p>Bayesian optimization methods use a <em>surrogate model</em> (normally a specific form of regression model).</p></li>
+<li><p>Use this to predict how the real system will perform. The surrogate model makes a prediction (with an estimate of the uncertainty) of what the response will be to any given input. Parameters to test are chosen by considering this prediction. Similar to reinforcement learning, this can be viewed as a <em>model based</em> approach because the surrogate model can be seen as a model of the real world. In bandit methods strategies are determined without turning to a model to motivate them. They are <em>model free</em> methods.</p></li>
 </ul>
 </section>
 <section id="model-based-and-model-free-performance" class="slide level1">
@@ -844,18 +920,18 @@ f_j(\mathbf{z}_i; \mathbf{W}) = w_{1j} z_{1i} + w_{2j} z_{2i}
 <section id="deployment" class="slide level1">
 <h1>Deployment</h1>
 <ul>
-<li>The methods we have introduced are roughly speaking introduced in order of difficulty of deployment. While supervised learning is more involved in terms of collection of data, it is the most straightforward method to deploy once that data is recovered. For this reason, a major focus with supervised learning should always be on maintaining data quality, increasing the efficiency and accountability<a href="#/fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> of the data collection pipeline and the quality of features used.</li>
+<li>The methods we have introduced are roughly speaking introduced in order of difficulty of deployment. While supervised learning is more involved in terms of collection of data, it is the most straightforward method to deploy once that data is recovered. For this reason, a major focus with supervised learning should always be on maintaining data quality, increasing the efficiency and accountability<a href="#/fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> of the data collection pipeline and the quality of features used.</li>
 </ul>
 <ul>
 <li>In relation to what AI can and can’t do today Andrew Ng is quoted as saying:</li>
 </ul>
 <blockquote>
-<p>If a typical person can do a mental task with less than one second of thought, we can probably automate it using AI either now or in the near future.<a href="#/fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a></p>
+<p>If a typical person can do a mental task with less than one second of thought, we can probably automate it using AI either now or in the near future.<a href="#/fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a></p>
 </blockquote>
 <ul>
 <li><p>I would broadly agree with this quote but only in the context of supervised learning. If a human expert takes around that amount of time, then it’s also likely we can acquire the data necessary to build a supervised learning algorithm that can emulate that human’s response.</p></li>
 <li><p>The picture with regard to unsupervised learning and reinforcement learning is more clouded.</p></li>
-<li><p>One observation is that for <em>supervised</em> learning we seem to be moving beyond the era where very deep machine learning expertise is required to deploy methods. A solid understanding of machine learning (say to Masters level) is certainly required, but the quality of the final result is likely more dependent on domain expertise and the quality of the data and the information processing pipeline. This seems part of a wider trend where some of the big successes in machine learning are moving rapidly from the domain of science to that of engineering.<a href="#/fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a></p></li>
+<li><p>One observation is that for <em>supervised</em> learning we seem to be moving beyond the era where very deep machine learning expertise is required to deploy methods. A solid understanding of machine learning (say to Masters level) is certainly required, but the quality of the final result is likely more dependent on domain expertise and the quality of the data and the information processing pipeline. This seems part of a wider trend where some of the big successes in machine learning are moving rapidly from the domain of science to that of engineering.<a href="#/fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a></p></li>
 </ul>
 <ul>
 <li><p>So if we can only emulate tasks that humans take around a second to do, how are we managing to deliver on self driving cars? The answer is that we are constructing engineered systems from sub-components, each of which is a machine learning subsystem. But they are tied together as a component based system in line with our traditional engineering approach. This has an advantage that each component in the system can be verified before its inclusion. This is important for debugging and safety. But in practice we can expect these systems to be very brittle. A human adapts the way in which they drive the car across their lifetime. A human can react to other road users. In extreme situations, such as a car jacking, a human can set to one side normal patterns of behavior, and purposely crash their car to draw attention to the situation.</p></li>
@@ -876,13 +952,9 @@ f_j(\mathbf{z}_i; \mathbf{W}) = w_{1j} z_{1i} + w_{2j} z_{2i}
 <ol>
 <li id="fn1"><p>GOFAI has its origins in the birth of computer science so it is unsurprising that logic should be the dominant paradigm. There was also a sense in which pure logic felt like it mapped well on to human reasoning. In practice, for any complex real world situation, the number of logical rules required causes an explosion in the <em>state space</em> of the system. This makes logical systems intractable in many applications.<a href="#/fnref1">↩</a></p></li>
 <li id="fn2"><p>Using the test data in your training procedure is a major error in any machine learning procedure. It is extremely dangerous as it gives a misleading assessment of the model performance. The <a href="http://inverseprobability.com/2015/06/04/baidu-on-imagenet">Baidu ImageNet scandal</a> was an example of a team competing in the ImageNet challenge which did this. The team had announced via the publication pre-print server Arxiv that they had a world-leading performance on the ImageNet challenge. This was reported in the mainstream media. Two weeks later the challenge organizers revealed that the team had created multiple accounts for checking their test performance more times than was permitted by the challenge rules. This was then reported as “AI’s first doping scandal”. The team lead was fired by Baidu.<a href="#/fnref2">↩</a></p></li>
-<li id="fn3"><p>The interpretation requires you to think of the web as a series of web pages in a high dimensional space where distances between web pages are computed by moving along the links (in either direction). The PageRank is the one dimensional space that best preserves those distances in the sense of an L1 norm. The interpretation works because the smallest eigenvalue of the linkage matrix is the <em>largest</em> eigenvalue of the inverse of the linkage matrix. The inverse linkage matrix (which would be impossible to compute) embeds similarities between pages according to how far apart they are via a random walk along the linkage matrix.<a href="#/fnref3">↩</a></p></li>
-<li id="fn4"><p>The approach was described early on in the history of machine learning by Chris Watkins, during his PhD thesis in the 1980s. It is known as Q-learning. It’s recent success in the games domain is driven by the use of deep learning for the policy and value functions as well as the use of fast compute to generate and process very large quantities of data. In its standard form it is not seen as a very data-efficient approach.<a href="#/fnref4">↩</a></p></li>
-<li id="fn5"><p>The situation in chess is much easier, firstly the number of possible moves at any time is about an order of magnitude lower, meaning the game tree doesn’t grow as quickly. Secondly, in chess, there are well defined value functions. For example a value function could be based on adding together the points that are associated with each piece.<a href="#/fnref5">↩</a></p></li>
-<li id="fn6"><p>The approach was described early on in the history of machine learning by Chris Watkins, during his PhD thesis in the 1980s. It is known as Q-learning. It’s recent success in the games domain is driven by the use of deep learning for the policy and value functions as well as the use of fast compute to generate and process very large quantities of data. In its standard form it is not seen as a very data-efficient approach.<a href="#/fnref6">↩</a></p></li>
-<li id="fn7"><p>To try and better embody the state of data readiness in organizations I’ve been proposing <a href="%7B%7B%20site.baseurl%20%7D%7D/2017/01/12/data-readiness-levels">“Data Readiness Levels”</a>. More needs to be done in this area to improve the efficiency of the data science pipeline.<a href="#/fnref7">↩</a></p></li>
-<li id="fn8"><p>The quote can be found in the Harvard Business Review Article <a href="https://hbr.org/2016/11/what-artificial-intelligence-can-and-cant-do-right-now">“What Artificial Intelligence Can and Can’t Do Right Now”</a>.<a href="#/fnref8">↩</a></p></li>
-<li id="fn9"><p>This trend was very clear at the moment, <a href="%7B%7Bsite.baseurl%20%7D%7D/2016/11/29/new-directions-in-kernels-and-gaussian-processes.html">I spoke about it</a> at a recent Dagstuhl workshop on new directions for kernel methods and Gaussian processes.<a href="#/fnref9">↩</a></p></li>
+<li id="fn3"><p>To try and better embody the state of data readiness in organizations I’ve been proposing <a href="%7B%7B%20site.baseurl%20%7D%7D/2017/01/12/data-readiness-levels">“Data Readiness Levels”</a>. More needs to be done in this area to improve the efficiency of the data science pipeline.<a href="#/fnref3">↩</a></p></li>
+<li id="fn4"><p>The quote can be found in the Harvard Business Review Article <a href="https://hbr.org/2016/11/what-artificial-intelligence-can-and-cant-do-right-now">“What Artificial Intelligence Can and Can’t Do Right Now”</a>.<a href="#/fnref4">↩</a></p></li>
+<li id="fn5"><p>This trend was very clear at the moment, <a href="%7B%7Bsite.baseurl%20%7D%7D/2016/11/29/new-directions-in-kernels-and-gaussian-processes.html">I spoke about it</a> at a recent Dagstuhl workshop on new directions for kernel methods and Gaussian processes.<a href="#/fnref5">↩</a></p></li>
 </ol>
 </section>
     </div>
