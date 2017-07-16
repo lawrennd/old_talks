@@ -19,19 +19,24 @@ affiliation: Amazon and University of Sheffield
 
 # Introduction
 
-In this post we'll provide a general introduction to machine learning, which tries to highlight the underlying technical challenges and where we have solutions. Machine learning is the principle technology underpinning the recent advances in artificial intelligence. But what is machine learning? And why is it important?
+* General introduction to machine learning.
 
-#
+* Highlight technical challenges and current solutions.
 
-Machine learning is perhaps the principal technology behind two emerging domains: data science and artificial intelligence. The rise of machine learning is coming about through the availability of data and computation, but machine learning methdologies are fundamentally dependent on models.
+* What is machine learning? And why is it important?
+
+# Rise of Machine Learning
+
+* Driven by data and computation
+
+* Fundamentally dependent on models
 
 $$
 \text{data} + \text{model} + \text{compute} \rightarrow \text{prediction}
 $$
 
-#
+# Data Revolution
 
-The emergence of machine learning is closely tied to the emergence of widely available data. 
 
 ![](./diagrams/data-science-information-flow_neg.svg)
 
@@ -39,7 +44,17 @@ The emergence of machine learning is closely tied to the emergence of widely ava
 
 # Efficiency
 
-Economists try to measure productivity, one of the ways we can become more productive is by becoming more efficient. For example, moving from gathering food to settled agriculture. In the modern era one approach to becoming more efficient is automation of processes like manufacturing production lines. The manufacturing process is decomposed into a series of mechanical or manual processes each of which is applied sequentially. 
+* Economies driven by 'production'.
+
+* Greater production comes with better efficiency.
+
+    * E.g. moving from gathering food to settled agriculture.
+
+* In the modern era one approach to becoming more efficient is automation of processes.
+
+    *  E.g. manufacturing production lines
+
+# Physical Processes
 
 Manufacturing processes consist of production lines and robotic automation. Logistics can also be decomposed into the supply chain processes. Whether it's manufacturing or logistics, efficiency can be improved by automating components of the processes to improve the flow of goods. 
 
@@ -51,18 +66,38 @@ In these processing pipelines, manufacturing, logistics or data management, the 
 
 The human interventions that were easy to replicate with technology have already been replaced. The components that still require human intervention are the knottier problems. Often they represent components that are difficult, or impossible, to decompose into stages which could then be further automated. In that sense these components are process-atoms. In manufacturing or logistics settings these atoms involve the sort of flexible manual skills that we cannot replicate with current robotic technology. They require emulation of a human's motor skills. In information processing settings these atoms require emulation of our cognitive skills. For example, our ability to mentally process an image or some text. 
 
+# Worked Example: Delivery Drones
 
-<!-- difficult to decompose key challenge is that many of the manual interventions are too complex to convert to simplistic sequential pipelines. Sequential processes such as manufacturing are easy to decode and automate. But what about cognitive processes? What about the ability to mentally process an image or some text? Cognitive processes are much more difficult to codify. How do we decide if an image contains a person?  -->
+[![](https://img.youtube.com/vi/vNySOrI2Ny8/0.jpg)](https://www.youtube.com/watch?v=py8QrZPT48s)
+
 
 # Data Driven
 
-Machine learning is a field dedicated to replicating such processes through the direct use of data. It is an approach to splitting these process-atoms so that they too be automated. In machine learning we aim to emulate cognitive processes through the use of data. Machine learning also uses data to provide new approaches in control and optimization that should allow for emulation of human motor skills. 
+* Machine Learning: Replicate Processes through *direct use of data*.
+
+* Aim to emulate cognitive processes through the use of data.
+
+* Use data to provide new approaches in control and optimization that should allow for emulation of human motor skills. 
 
 # Process Emulation
 
-A key idea in machine learning is to emulate the process as a mathematical function. Each function has a set of parameters which control its behavior. Learning is the process of changing these parameters to change the shape of the function to make it more representative of the data. Our choice of which class of mathematical functions we use is a vital component of our *model*. 
+* Key idea:  emulate the process as a mathematical function.
 
-![](./diagrams/olympic/olympic_loo000_LM_polynomial_num_basis004.svg)
+* Each function has a set of *parameters* which control its behavior.
+
+* *Learning* is the process of changing these parameters to change the shape of the function
+
+* Choice of which class of mathematical functions we use is a vital component of our *model*. 
+
+# Polynomial Fit {.slide: data-transition="none"}
+
+![](./diagrams/olympic/olympic_loo000_LM_polynomial_num_basis000.svg)
+
+*Example of prediction: The Olympic gold medalist in the marathon's pace is predicted using a regression fit. In this case the mathematical function is directly predicting the pace of the winner as a function of the year of the Olympics.*
+
+# Polynomial Fit {.slide: data-transition="none"}
+
+![](./diagrams/olympic/olympic_loo000_LM_polynomial_num_basis001.svg)
 
 *Example of prediction: The Olympic gold medalist in the marathon's pace is predicted using a regression fit. In this case the mathematical function is directly predicting the pace of the winner as a function of the year of the Olympics.*
 
