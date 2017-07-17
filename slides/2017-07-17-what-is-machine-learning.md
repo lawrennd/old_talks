@@ -231,6 +231,267 @@ $$
 
 * Simple idea underpins a lot of machine learning.
 
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron001.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron002.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron003.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron004.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron005.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron006.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron007.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron008.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron009.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron010.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron011.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron012.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron013.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron014.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron015.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron016.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron017.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron018.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron019.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron020.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron021.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron022.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron023.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron024.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron025.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron026.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron027.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron028.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+![](./diagrams/perceptron/perceptron029.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron030.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron031.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron032.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron033.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron034.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron035.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron036.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron037.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron038.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+![](./diagrams/perceptron/perceptron039.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron040.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron041.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron042.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron043.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+# Perceptron {.slide: data-transition="none"}
+
+![](./diagrams/perceptron/perceptron044.svg)
+
+*Simple classification with the perceptron algorithm.*
+
+
 # Classification
 
 * Examples in a speech based intelligent agent:  *wake word* classification.
@@ -374,15 +635,16 @@ $$
 
      * In ad-click prediction labels are obtained whenever an advert is clicked.
 
+# Annotation
+
 * Often we have to employ human annotators to label the data.
 
     * E.g. in ImageNet, the breakthrough deep learning result was annotated using Amazon's Mechanical Turk. (AI?)
 
+* Without large scale human input, would not have the breakthrough results in AI we have today. 
 
 
 # Annotation
-
-* Without large scale human input, would not have the breakthrough results in AI we have today. 
 
 * Some tasks *easier* to annotate than *others.
 
@@ -408,15 +670,15 @@ $$
 
 * A face detector using Californians may not perform well when deployed in Kampala, Uganda. 
 
-# Generalization and Overfitting
+# Automation
 
-* Once a supervised learning system is trained it can be placed in a sequential pipeline to automate a process that used to be done manually. 
+* Train  supervised learning system, place it in production
 
 * Supervised learning is probably the dominant approaches to learning.
 
 * Cost and time associated with labeling data is a major bottleneck for deploying machine learning systems.
 
-* Process for creating training data requires significant human intervention. For example, internationalization of Alexa requires annotation of large speech corpora in new languages. 
+* Creating training data requires significant human effort.
 
 # Training and Test
 
@@ -596,6 +858,84 @@ here $\mathbf{i}_j$ is all indices of  data points allocated to the $j$th center
 * For $k$-means clustering you need to choose an initial set of centers.
 
 * Optimisation surface has many local optima, algorithm gets stuck in ones near initialisation.
+
+# $k$-Means Clustering {.slide: data-transition="none"}
+
+![](./diagrams/kmeans_clustering/kmeans_clustering001.svg)
+
+*Clustering with the $k$-means clustering algorithm.*
+
+# $k$-Means Clustering {.slide: data-transition="none"}
+
+![](./diagrams/kmeans_clustering/kmeans_clustering002.svg)
+
+*Clustering with the $k$-means clustering algorithm.*
+
+# $k$-Means Clustering {.slide: data-transition="none"}
+
+![](./diagrams/kmeans_clustering/kmeans_clustering003.svg)
+
+*Clustering with the $k$-means clustering algorithm.*
+
+# $k$-Means Clustering {.slide: data-transition="none"}
+
+![](./diagrams/kmeans_clustering/kmeans_clustering004.svg)
+
+*Clustering with the $k$-means clustering algorithm.*
+
+# $k$-Means Clustering {.slide: data-transition="none"}
+
+![](./diagrams/kmeans_clustering/kmeans_clustering005.svg)
+
+*Clustering with the $k$-means clustering algorithm.*
+
+# $k$-Means Clustering {.slide: data-transition="none"}
+
+![](./diagrams/kmeans_clustering/kmeans_clustering006.svg)
+
+*Clustering with the $k$-means clustering algorithm.*
+
+# $k$-Means Clustering {.slide: data-transition="none"}
+
+![](./diagrams/kmeans_clustering/kmeans_clustering007.svg)
+
+*Clustering with the $k$-means clustering algorithm.*
+
+# $k$-Means Clustering {.slide: data-transition="none"}
+
+![](./diagrams/kmeans_clustering/kmeans_clustering008.svg)
+
+*Clustering with the $k$-means clustering algorithm.*
+
+# $k$-Means Clustering {.slide: data-transition="none"}
+
+![](./diagrams/kmeans_clustering/kmeans_clustering009.svg)
+
+*Clustering with the $k$-means clustering algorithm.*
+
+# $k$-Means Clustering {.slide: data-transition="none"}
+
+![](./diagrams/kmeans_clustering/kmeans_clustering010.svg)
+
+*Clustering with the $k$-means clustering algorithm.*
+
+# $k$-Means Clustering {.slide: data-transition="none"}
+
+![](./diagrams/kmeans_clustering/kmeans_clustering011.svg)
+
+*Clustering with the $k$-means clustering algorithm.*
+
+# $k$-Means Clustering {.slide: data-transition="none"}
+
+![](./diagrams/kmeans_clustering/kmeans_clustering012.svg)
+
+*Clustering with the $k$-means clustering algorithm.*
+
+# $k$-Means Clustering {.slide: data-transition="none"}
+
+![](./diagrams/kmeans_clustering/kmeans_clustering013.svg)
+
+*Clustering with the $k$-means clustering algorithm.*
 
 # $k$-Means Clustering
 
