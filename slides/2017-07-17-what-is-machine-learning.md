@@ -861,79 +861,85 @@ here $\mathbf{i}_j$ is all indices of  data points allocated to the $j$th center
 
 # $k$-Means Clustering {.slide: data-transition="none"}
 
-![](./diagrams/kmeans_clustering/kmeans_clustering001.svg)
+![](./diagrams/kmeans_clustering/kmeans_clustering_000.svg)
 
 *Clustering with the $k$-means clustering algorithm.*
 
 # $k$-Means Clustering {.slide: data-transition="none"}
 
-![](./diagrams/kmeans_clustering/kmeans_clustering002.svg)
+![](./diagrams/kmeans_clustering/kmeans_clustering_001.svg)
 
 *Clustering with the $k$-means clustering algorithm.*
 
 # $k$-Means Clustering {.slide: data-transition="none"}
 
-![](./diagrams/kmeans_clustering/kmeans_clustering003.svg)
+![](./diagrams/kmeans_clustering/kmeans_clustering_002.svg)
 
 *Clustering with the $k$-means clustering algorithm.*
 
 # $k$-Means Clustering {.slide: data-transition="none"}
 
-![](./diagrams/kmeans_clustering/kmeans_clustering004.svg)
+![](./diagrams/kmeans_clustering/kmeans_clustering_003.svg)
 
 *Clustering with the $k$-means clustering algorithm.*
 
 # $k$-Means Clustering {.slide: data-transition="none"}
 
-![](./diagrams/kmeans_clustering/kmeans_clustering005.svg)
+![](./diagrams/kmeans_clustering/kmeans_clustering_004.svg)
 
 *Clustering with the $k$-means clustering algorithm.*
 
 # $k$-Means Clustering {.slide: data-transition="none"}
 
-![](./diagrams/kmeans_clustering/kmeans_clustering006.svg)
+![](./diagrams/kmeans_clustering/kmeans_clustering_005.svg)
 
 *Clustering with the $k$-means clustering algorithm.*
 
 # $k$-Means Clustering {.slide: data-transition="none"}
 
-![](./diagrams/kmeans_clustering/kmeans_clustering007.svg)
+![](./diagrams/kmeans_clustering/kmeans_clustering_006.svg)
 
 *Clustering with the $k$-means clustering algorithm.*
 
 # $k$-Means Clustering {.slide: data-transition="none"}
 
-![](./diagrams/kmeans_clustering/kmeans_clustering008.svg)
+![](./diagrams/kmeans_clustering/kmeans_clustering_007.svg)
 
 *Clustering with the $k$-means clustering algorithm.*
 
 # $k$-Means Clustering {.slide: data-transition="none"}
 
-![](./diagrams/kmeans_clustering/kmeans_clustering009.svg)
+![](./diagrams/kmeans_clustering/kmeans_clustering_008.svg)
 
 *Clustering with the $k$-means clustering algorithm.*
 
 # $k$-Means Clustering {.slide: data-transition="none"}
 
-![](./diagrams/kmeans_clustering/kmeans_clustering010.svg)
+![](./diagrams/kmeans_clustering/kmeans_clustering_009.svg)
 
 *Clustering with the $k$-means clustering algorithm.*
 
 # $k$-Means Clustering {.slide: data-transition="none"}
 
-![](./diagrams/kmeans_clustering/kmeans_clustering011.svg)
+![](./diagrams/kmeans_clustering/kmeans_clustering_010.svg)
 
 *Clustering with the $k$-means clustering algorithm.*
 
 # $k$-Means Clustering {.slide: data-transition="none"}
 
-![](./diagrams/kmeans_clustering/kmeans_clustering012.svg)
+![](./diagrams/kmeans_clustering/kmeans_clustering_011.svg)
 
 *Clustering with the $k$-means clustering algorithm.*
 
 # $k$-Means Clustering {.slide: data-transition="none"}
 
-![](./diagrams/kmeans_clustering/kmeans_clustering013.svg)
+![](./diagrams/kmeans_clustering/kmeans_clustering_012.svg)
+
+*Clustering with the $k$-means clustering algorithm.*
+
+# $k$-Means Clustering {.slide: data-transition="none"}
+
+![](./diagrams/kmeans_clustering/kmeans_clustering_013.svg)
 
 *Clustering with the $k$-means clustering algorithm.*
 
