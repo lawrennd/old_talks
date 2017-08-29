@@ -30,5 +30,5 @@ key: Lawrence-cloaking17
 layout: talk
 month: 4
 published: 2017-08-30
-venue: ARES Conference
+venue: CD-MAKE Workshop at ARES 2017
 ---
