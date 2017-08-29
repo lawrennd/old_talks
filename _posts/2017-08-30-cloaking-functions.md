@@ -22,7 +22,7 @@ author:
 categories:
 - Lawrence-cloaking17
 day: 30
-reveal: 2017-08-29-cloaking-functions.slides.html
+reveal: 2017-08-30-cloaking-functions.slides.html
 blog:
 errata: []
 extras: []
