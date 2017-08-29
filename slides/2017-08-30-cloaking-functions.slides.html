@@ -86,9 +86,12 @@
 </section>
 <section id="applied-to-gaussian-processes-1" class="slide level2" data-background="diagrams/pres_bg_bb.png">
 <h2>Applied to Gaussian Processes</h2>
-<p>Using the representer theorem, we can write <span class="math inline">\(|| f_D(\mathbf{x_*}) - f_{D^\prime}(\mathbf{x_*}) ||_H^2\)</span><br />
-as:</p>
-<p><span class="math inline">\(\Big|\Big|\sum_{i=1}^n k(\mathbf{x_*},\mathbf{x}_i) \left(\alpha_i - \alpha^\prime_i\right)\Big|\Big|_H^2\)</span></p>
+<ul>
+<li>Using the representer theorem, we can write <span class="math inline">\(|| f_D(\mathbf{x_*}) - f_{D^\prime}(\mathbf{x_*}) ||_H^2\)</span><br />
+as:</li>
+</ul>
+<p><span class="math display">\[\Big|\Big|\sum_{i=1}^n k(\mathbf{x_*},\mathbf{x}_i)
+\left(\alpha_i - \alpha^\prime_i\right)\Big|\Big|_H^2\]</span></p>
 <p>where <span class="math inline">\(\boldsymbol{\alpha} - \boldsymbol{\alpha}^\prime = \mathbf{K}^{-1} \left(\mathbf{y} - \mathbf{y}^\prime \right)\)</span></p>
 </section>
 <section id="section-2" class="slide level2" data-background="diagrams/pres_bg_bb.png">
@@ -170,9 +173,11 @@ So the change in test points will be (at most)</p>
 </section>
 <section id="cloaking-4" class="slide level2" data-background="diagrams/pres_bg_bb.png">
 <h2>Cloaking</h2>
-<p>Dealing with <span class="math inline">\(d\)</span> elsewhere and setting <span class="math inline">\(\Delta = 1\)</span> (thus <span class="math inline">\(0 \leq \mathbf{c}_i^\top \mathbf{M}^{-1} \mathbf{c}_i \leq 1\)</span>) and minimise <span class="math inline">\(\log |\mathbf{M}|\)</span> (minimises the partial entropy).</p>
-<p>Using Lagrange multipliers and gradient descent, we find</p>
-<p><span class="math inline">\(\mathbf{M} = \sum_i{\lambda_i \mathbf{c}_i \mathbf{c}_i^\top}\)</span></p>
+<ul>
+<li><p>Dealing with <span class="math inline">\(d\)</span> elsewhere and setting <span class="math inline">\(\Delta = 1\)</span> (thus <span class="math inline">\(0 \leq \mathbf{c}_i^\top \mathbf{M}^{-1} \mathbf{c}_i \leq 1\)</span>) and minimise <span class="math inline">\(\log |\mathbf{M}|\)</span> (minimises the partial entropy).</p></li>
+<li><p>Using Lagrange multipliers and gradient descent, we find</p></li>
+</ul>
+<p><span class="math display">\[\mathbf{M} = \sum_i{\lambda_i \mathbf{c}_i \mathbf{c}_i^\top}\]</span></p>
 </section>
 <section id="cloaking-results" class="slide level2" data-background="diagrams/pres_bg_bb.png">
 <h2>Cloaking: Results</h2>
