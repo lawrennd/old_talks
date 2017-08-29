@@ -45,6 +45,153 @@
 <p><code>@lawrennd</code> <a href="http://inverseprobability.com">inverseprobability.com</a> <!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2017-08-30-cloaking-functions.slides.html 2017-08-30-cloaking-functions.md
 --></p>
 </section>
+<section id="embodiment-factors" class="slide level2">
+<h2>“Embodiment Factors”</h2>
+<table>
+<tr>
+<td>
+</td>
+<td align="center">
+<img src="./diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="60%" style="background:none; border:none; box-shadow:none;" align="center">
+</td>
+<td align="center">
+<img src="./diagrams/ClaudeShannon_MFO3807.jpg" width="100%" style="background:none; border:none; box-shadow:none;" align="center">
+</td>
+</tr>
+<tr>
+<td>
+compute
+</td>
+<td align="center">
+~10 gigaflops
+</td>
+<td align="center">
+~ 1000 teraflops?
+</td>
+</tr>
+<tr>
+<td>
+communicate
+</td>
+<td align="center">
+~1 gigbit/s
+</td>
+<td align="center">
+~ 100 bit/s
+</tr>
+<td>
+embodiment<br>(compute/communicate)
+</td>
+<td align="center">
+10
+</td>
+<td align="center">
+~ 10<sup>13</sup>
+</tr>
+</table>
+</section>
+<section id="evolved-relationship" class="slide level2 slide:" data-transition="none">
+<h2>Evolved Relationship</h2>
+<object type="image/svg+xml" data="./diagrams/data-science-information-flow_neg001.svg">
+</object>
+</section>
+<section id="evolved-relationship-1" class="slide level2 slide:" data-transition="none">
+<h2>Evolved Relationship</h2>
+<object type="image/svg+xml" data="./diagrams/data-science-information-flow_neg002.svg">
+</object>
+</section>
+<section id="evolved-relationship-2" class="slide level2 slide:" data-transition="none">
+<h2>Evolved Relationship</h2>
+<object type="image/svg+xml" data="./diagrams/data-science-information-flow_neg003.svg">
+</object>
+</section>
+<section id="conversation" class="slide level2 slide:" data-transition="none">
+<h2>Conversation</h2>
+<object type="image/svg+xml" data="./diagrams/anne_bob001.svg">
+</object>
+</section>
+<section id="conversation-1" class="slide level2 slide:" data-transition="none">
+<h2>Conversation</h2>
+<object type="image/svg+xml" data="./diagrams/anne_bob002.svg">
+</object>
+</section>
+<section id="conversation-2" class="slide level2 slide:" data-transition="none">
+<h2>Conversation</h2>
+<object type="image/svg+xml" data="./diagrams/anne_bob003.svg">
+</object>
+</section>
+<section id="modelling" class="slide level2">
+<h2>Modelling</h2>
+<object type="image/svg+xml" data="./diagrams/anne.svg">
+</object>
+</section>
+<section id="modelling-1" class="slide level2">
+<h2>Modelling</h2>
+<object type="image/svg+xml" data="./diagrams/bob.svg">
+</object>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<figure>
+<img src="diagrams/9780262182539-f30.jpg" alt="@Rasmussen:book06" style="border:none" style="height:40.0%" /><figcaption><span class="citation" data-cites="Rasmussen:book06">@Rasmussen:book06</span></figcaption>
+</figure>
+</section>
+<section id="section-2" class="slide level2" data-transition="none">
+<h2></h2>
+<!--frame start-->
+<p><img src="../../mlprojects/gplvm/tex/diagrams/gp_prior_samples_few_neg.png"
+width="80%" style="border:none" align="center"></p>
+<!--frame end-->
+</section>
+<section id="section-3" class="slide level2" data-transition="none">
+<h2></h2>
+<!--frame start-->
+<p><img src="../../mlprojects/gplvm/tex/diagrams/gp_prior_samples_neg.png" width="80%" style="border:none" align="center"></p>
+<!--frame end-->
+</section>
+<section id="section-4" class="slide level2" data-transition="none">
+<h2></h2>
+<!--frame start-->
+<p><img src="../../mlprojects/gplvm/tex/diagrams/gp_prior_samples_data_neg.png" width="80%" style="border:none" align="center"></p>
+<!--frame end-->
+</section>
+<section id="section-5" class="slide level2" data-transition="none">
+<h2></h2>
+<!--frame start-->
+<p><img src="../../mlprojects/gplvm/tex/diagrams/gp_rejection_samples_neg.png" width="80%" style="border:none" align="center"></p>
+<!--frame end-->
+</section>
+<section id="key-object" class="slide level2" data-transition="none">
+<h2>Key Object</h2>
+<ul>
+<li><p>Covariance function, <span class="math inline">\(\mathbf{K}\)</span></p></li>
+<li><p>Determines properties of samples.</p></li>
+<li><p>Function of <span class="math inline">\(\mathbf{X}\)</span>, <span class="math inline">\(k_{i,j} = k(\mathbf{x}_i, \mathbf{x}_j)\)</span></p></li>
+</ul>
+</section>
+<section id="linear-algebra" class="slide level2" data-transition="none">
+<h2>Linear Algebra</h2>
+<ul>
+<li>Posterior mean</li>
+</ul>
+<p><span class="math display">\[\hat{\mathbf{y}}_* = \mathbf{K}_{*,\mathbf{f}} \mathbf{K}^{-1}
+\mathbf{y}\]</span></p>
+<ul>
+<li>Posterior covariance <span class="math display">\[\mathbf{C}_* = \mathbf{K}_{*,*} - \mathbf{K}_{*,\mathbf{f}}
+\mathbf{K}^{-1} \mathbf{K}_{\mathbf{f}, *}\]</span></li>
+</ul>
+</section>
+<section id="linear-algebra-1" class="slide level2" data-transition="none">
+<h2>Linear Algebra</h2>
+<ul>
+<li>Posterior mean</li>
+</ul>
+<p><span class="math display">\[\hat{\mathbf{y}}_* = \mathbf{K}_{*,\mathbf{f}} \boldsymbol{\alpha}\]</span></p>
+<ul>
+<li>Posterior covariance <span class="math display">\[\mathbf{C}_* = \mathbf{K}_{*,*} - \mathbf{K}_{*,\mathbf{f}}
+\mathbf{K}^{-1} \mathbf{K}_{\mathbf{f}, *}\]</span></li>
+</ul>
+</section>
 <section id="differential-privacy-summary" class="slide level2" data-background="diagrams/pres_bg.png">
 <h2>Differential Privacy, summary</h2>
 <p>We want to protect a user from a linkage attack…</p>
@@ -54,7 +201,7 @@
 <p>This is a fundamental feature of differential privacy.</p>
 <p>See <a href="https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf">The Algorithmic Foundations of Differential Privacy</a> by Dwork and Roth for a rigorous introduction to the framework.</p>
 </section>
-<section id="section-1" class="slide level2" data-background="diagrams/pres_bg_bb.png" data-markdown="&quot;&quot;">
+<section id="section-6" class="slide level2" data-background="diagrams/pres_bg_bb.png" data-markdown="&quot;&quot;">
 <h2></h2>
 </section>
 <section id="differential-privacy-for-gaussian-processes" class="slide level2" data-background="diagrams/pres_bg_bb.png">
@@ -94,7 +241,7 @@ as:</li>
 \left(\alpha_i - \alpha^\prime_i\right)\Big|\Big|_H^2\]</span></p>
 <p>where <span class="math inline">\(\boldsymbol{\alpha} - \boldsymbol{\alpha}^\prime = \mathbf{K}^{-1} \left(\mathbf{y} - \mathbf{y}^\prime \right)\)</span></p>
 </section>
-<section id="section-2" class="slide level2" data-background="diagrams/pres_bg_bb.png">
+<section id="section-7" class="slide level2" data-background="diagrams/pres_bg_bb.png">
 <h2></h2>
 <p><span class="math inline">\(\Big|\Big|\sum_{i=1}^n k(\mathbf{x_*},\mathbf{x}_i) \left(\alpha_i - \alpha^\prime_i\right)\Big|\Big|_H^2\)</span></p>
 <p>where <span class="math inline">\(\boldsymbol{\alpha} - \boldsymbol{\alpha}^\prime = \mathbf{K}^{-1} \left(\mathbf{y} - \mathbf{y}^\prime \right)\)</span></p>
@@ -199,7 +346,7 @@ So the change in test points will be (at most)</p>
 <img src="diagrams/kung_cloaking_simple_neg.png" style="border:none" align="center" style="width:100.0%" />
 </figure>
 </section>
-<section id="section-3" class="slide level2" data-background="diagrams/pres_bg_bb.png">
+<section id="section-8" class="slide level2" data-background="diagrams/pres_bg_bb.png">
 <h2></h2>
 <p>House prices around London</p>
 <figure>
@@ -258,7 +405,7 @@ sensitivity to these outliers.</p>
 <p><strong>Thanks</strong> Funders: EPSRC; Colleagues: <strong>Michael T. Smith</strong>, Mauricio, Max.</p>
 <p><strong>Recruiting</strong> Deep Probabilistic Models: 2 year postdoc (<a href="http://tinyurl.com/shefpostdoc">tinyurl.com/shefpostdoc</a>)</p>
 </section>
-<section id="section-4" class="slide level2" data-background="diagrams/pres_bg.png">
+<section id="section-9" class="slide level2" data-background="diagrams/pres_bg.png">
 <h2></h2>
 <p><span style="margin-left:-50px;"><strong>The go-to book on differential privacy, by Dwork and Roth;</strong><br />
 </span> Dwork, Cynthia, and Aaron Roth. “The algorithmic foundations of differential privacy.” Theoretical Computer Science 9.3-4 (2013): 211-407. <a href="https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf">link</a></p>
