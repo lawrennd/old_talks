@@ -31,9 +31,123 @@ data-background: diagrams/pres_bg.png
 
 
 
+## "Embodiment Factors"
+
+<table>
+<tr><td></td><td align="center">
+<img src="./diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="60%" style="background:none; border:none; box-shadow:none;" align="center">
+</td>
+<td align="center">
+<img src="./diagrams/ClaudeShannon_MFO3807.jpg" width="100%" style="background:none; border:none; box-shadow:none;" align="center">
+</td>
+</tr>
+<tr>
+<td>compute</td><td align="center">~10 gigaflops</td><td align="center">~ 1000 teraflops?</td>
+</tr>
+<tr>
+<td>communicate</td><td align="center">~1 gigbit/s</td><td align="center">~ 100 bit/s</tr>
+<td>embodiment<br>(compute/communicate)</td><td align="center">10</td><td align="center">~ 10<sup>13</sup></tr>
+</table>
 
 
+## Evolved Relationship {.slide: data-transition="none"}
 
+<object type="image/svg+xml" data="./diagrams/data-science-information-flow_neg001.svg">
+</object>
+
+## Evolved Relationship {.slide: data-transition="none"}
+
+<object type="image/svg+xml" data="./diagrams/data-science-information-flow_neg002.svg">
+</object>
+
+## Evolved Relationship {.slide: data-transition="none"}
+
+<object type="image/svg+xml" data="./diagrams/data-science-information-flow_neg003.svg">
+</object>
+
+
+## Conversation {.slide: data-transition="none"}
+
+<object type="image/svg+xml" data="./diagrams/anne_bob001.svg">
+</object>
+
+## Conversation {.slide: data-transition="none"}
+
+<object type="image/svg+xml" data="./diagrams/anne_bob002.svg">
+</object>
+
+## Conversation {.slide: data-transition="none"}
+
+<object type="image/svg+xml" data="./diagrams/anne_bob003.svg">
+</object>
+
+## Modelling
+
+<object type="image/svg+xml" data="./diagrams/anne.svg">
+</object>
+
+## Modelling
+
+<object type="image/svg+xml" data="./diagrams/bob.svg">
+</object>
+
+
+## 
+
+![@Rasmussen:book06](diagrams/9780262182539-f30.jpg){height="40%" style="border:none"}
+
+## {data-transition="none"}
+<!--frame start-->
+<img src="../../mlprojects/gplvm/tex/diagrams/gp_prior_samples_few_neg.png"
+width="80%" style="border:none" align="center">
+
+<!--frame end-->
+
+## {data-transition="none"}
+<!--frame start-->
+<img src="../../mlprojects/gplvm/tex/diagrams/gp_prior_samples_neg.png" width="80%" style="border:none" align="center">
+
+<!--frame end-->
+
+## {data-transition="none"}
+<!--frame start-->
+<img src="../../mlprojects/gplvm/tex/diagrams/gp_prior_samples_data_neg.png" width="80%" style="border:none" align="center">
+
+<!--frame end-->
+## {data-transition="none"}
+<!--frame start-->
+<img src="../../mlprojects/gplvm/tex/diagrams/gp_rejection_samples_neg.png" width="80%" style="border:none" align="center">
+
+<!--frame end-->
+
+## Key Object {data-transition="none"}
+
+* Covariance function, $\mathbf{K}$
+
+* Determines properties of samples.
+
+* Function of $\mathbf{X}$, $k_{i,j} = k(\mathbf{x}_i, \mathbf{x}_j)$
+
+## Linear Algebra {data-transition="none"}
+
+* Posterior mean
+
+$$\hat{\mathbf{y}}_* = \mathbf{K}_{*,\mathbf{f}} \mathbf{K}^{-1}
+\mathbf{y}$$
+
+* Posterior covariance
+$$\mathbf{C}_* = \mathbf{K}_{*,*} - \mathbf{K}_{*,\mathbf{f}}
+\mathbf{K}^{-1} \mathbf{K}_{\mathbf{f}, *}$$
+
+## Linear Algebra {data-transition="none"}
+
+* Posterior mean
+
+$$\hat{\mathbf{y}}_* = \mathbf{K}_{*,\mathbf{f}} \boldsymbol{\alpha}$$
+
+* Posterior covariance
+$$\mathbf{C}_* = \mathbf{K}_{*,*} - \mathbf{K}_{*,\mathbf{f}}
+\mathbf{K}^{-1} \mathbf{K}_{\mathbf{f}, *}$$
 
 ## Differential Privacy, summary {data-background="diagrams/pres_bg.png"}
 
