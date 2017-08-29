@@ -1,0 +1,34 @@
+.reveal h1 { font-size: 1.2em;
+	     text-transform: none;
+}
+.reveal h2 { font-size: 1em;
+	     text-transform: none;
+}
+.reveal h3 { font-size: 1em;
+	     text-transform: none;
+}
+.reveal p { font-size: 1em;
+	    text-transform: none;
+}
+
+.reveal li { font-size: 1em;
+	     text-transform: none;
+}
+
+.math_display { font-size: 2em !important;
+}
+
+.reveal table {
+    border:none;
+    td{
+	border:none;
+    }
+}
+
+.rotateimg90 {
+  -webkit-transform:rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
