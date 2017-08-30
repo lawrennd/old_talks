@@ -134,27 +134,28 @@ width="80%" style="border:none" align="center">-->
 
 * Determines properties of samples.
 
-* Function of $\mathbf{X}$, $k_{i,j} = k(\mathbf{x}_i, \mathbf{x}_j)$
+* Function of $\mathbf{X}$,
+    $$k_{i,j} = k(\mathbf{x}_i, \mathbf{x}_j)$$
 
 ## Linear Algebra {data-transition="none"}
 
 * Posterior mean
 
-$$\hat{\mathbf{y}}_* = \mathbf{K}_{*,\mathbf{f}} \mathbf{K}^{-1}
+    $$f_D(\mathbf{x_*}) = \mathbf{k}(\mathbf{x}_*, \mathbf{X}) \mathbf{K}^{-1}
 \mathbf{y}$$
 
 * Posterior covariance
-$$\mathbf{C}_* = \mathbf{K}_{*,*} - \mathbf{K}_{*,\mathbf{f}}
+    $$\mathbf{C}_* = \mathbf{K}_{*,*} - \mathbf{K}_{*,\mathbf{f}}
 \mathbf{K}^{-1} \mathbf{K}_{\mathbf{f}, *}$$
 
 ## Linear Algebra {data-transition="none"}
 
 * Posterior mean
 
-$$\hat{\mathbf{y}}_* = \mathbf{K}_{*,\mathbf{f}} \boldsymbol{\alpha}$$
+    $$f_D(\mathbf{x_*}) = \mathbf{k}(\mathbf{x}_*, \mathbf{X}) \boldsymbol{\alpha}$$
 
 * Posterior covariance
-$$\mathbf{C}_* = \mathbf{K}_{*,*} - \mathbf{K}_{*,\mathbf{f}}
+    $$\mathbf{C}_* = \mathbf{K}_{*,*} - \mathbf{K}_{*,\mathbf{f}}
 \mathbf{K}^{-1} \mathbf{K}_{\mathbf{f}, *}$$
 
 ## Differential Privacy, summary {data-background="diagrams/pres_bg.png"}
@@ -205,51 +206,58 @@ private by adding a scaled sample from a GP prior.
 ## Applied to Gaussian Processes {#applied-to-gaussian-processes
 data-background="diagrams/pres_bg_bb.png"  }
 
-We applied this method to the GP posterior.
+* We applied this method to the GP posterior.
 
-The covariance of the posterior only depends on the inputs, $X$. So we
+* The covariance of the posterior only depends on the inputs, $X$. So we
 can compute this without applying DP.
 
-The mean function, $f_D(\mathbf{x_*})$, does depend on
-$\mathbf{y}$. $f_D(\mathbf{x_*}) = \mathbf{k}_*^\top
-\mathbf{K}^{-1} \mathbf{y}$
+* The mean function, $f_D(\mathbf{x_*})$, does depend on
+$\mathbf{y}$.
+    $$f_D(\mathbf{x_*}) = \mathbf{k}(x_*, \mathbf{X})
+\mathbf{K}^{-1} \mathbf{y}$$
 
-We are interested in finding $|| f_D(\mathbf{x_*}) -
-f_{D^\prime}(\mathbf{x_*}) ||_H^2$
+* We are interested in finding
 
-...how much the mean function (in RKHS) can change due to a change in
+    $$|| f_D(\mathbf{x_*}) -
+f_{D^\prime}(\mathbf{x_*}) ||_H^2$$
+
+    ...how much the mean function (in RKHS) can change due to a change in
 $\mathbf{y}$.
 
 
 ## Applied to Gaussian Processes {#applied-to-gaussian-processes-1 data-background="diagrams/pres_bg_bb.png"  }
 
-* Using the representer theorem, we can write $|| f_D(\mathbf{x_*}) -
-f_{D^\prime}(\mathbf{x_*}) ||_H^2$\
-as:
+* Using the representer theorem, we can write
+    $$|| f_D(\mathbf{x_*}) -
+	f_{D^\prime}(\mathbf{x_*}) ||_H^2$$
+	
+    as:
 
-$$\Big|\Big|\sum_{i=1}^n k(\mathbf{x_*},\mathbf{x}_i)
+    $$\Big|\Big|\sum_{i=1}^n k(\mathbf{x_*},\mathbf{x}_i)
 \left(\alpha_i - \alpha^\prime_i\right)\Big|\Big|_H^2$$
 
-where $\boldsymbol{\alpha} - \boldsymbol{\alpha}^\prime = \mathbf{K}^{-1}
+     where $\boldsymbol{\alpha} - \boldsymbol{\alpha}^\prime = \mathbf{K}^{-1}
 \left(\mathbf{y} - \mathbf{y}^\prime \right)$
 
 
 ## {data-background="diagrams/pres_bg_bb.png" }
 
-$\Big|\Big|\sum_{i=1}^n k(\mathbf{x_*},\mathbf{x}_i)
-\left(\alpha_i - \alpha^\prime_i\right)\Big|\Big|_H^2$
+* L2 Norm
 
-where $\boldsymbol{\alpha} - \boldsymbol{\alpha}^\prime = \mathbf{K}^{-1}
+    $$\Big|\Big|\sum_{i=1}^n k(\mathbf{x_*},\mathbf{x}_i)
+\left(\alpha_i - \alpha^\prime_i\right)\Big|\Big|_H^2$$
+
+    where $\boldsymbol{\alpha} - \boldsymbol{\alpha}^\prime = \mathbf{K}^{-1}
 \left(\mathbf{y} - \mathbf{y}^\prime \right)$
 
-We constrain the kernel: $-1\leq k(\cdot,\cdot) \leq 1$ and we only allow one
+* We constrain the kernel: $-1\leq k(\cdot,\cdot) \leq 1$ and we only allow one
 element of $\mathbf{y}$ and $\mathbf{y}'$ to differ (by at most
 $d$).
 
-So only one column of $\mathbf{K}^{-1}$ will be involved in the change of mean
+* So only one column of $\mathbf{K}^{-1}$ will be involved in the change of mean
 (which we are summing over).
 
-The distance above can then be shown to be no greater than
+* The distance above can then be shown to be no greater than
 $d\;||\mathbf{K}^{-1}||_\infty$
 
 
@@ -274,9 +282,9 @@ sensitivity a little. We'll see more on this later.
 
 ## Cloaking {#cloaking data-background="diagrams/pres_bg_bb.png"}
 
-So far we've made the whole posterior mean function private...
+* So far we've made the whole posterior mean function private...
 
-...what if we just concentrate on making particular predictions private?
+    ...what if we just concentrate on making particular predictions private?
 
 
 ## Effect of perturbation {#effect-of-perturbation data-background="diagrams/pres_bg_bb.png"}
