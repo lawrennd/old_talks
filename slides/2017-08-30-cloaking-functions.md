@@ -438,19 +438,19 @@ It also has some interesting features;
 
 
 
-## {data-background="diagrams/pres_bg_bb.png" }
+## House prices around London  {data-transition="None"}
 
-House prices around London
+![](diagrams/houseprices_bigcirc_15km_0_labels_neg.png){width="40%" style="border:none" align="center"}
 
-![](diagrams/houseprices_bigcirc_15km_0_labels_neg.png){width="50%" style="border:none" align="center"}
+## Citibike {#citibike} {data-transition="None"}
 
-## Citibike {#citibike}
-
-Tested on 4d citibike dataset (predicting journey durations from
+* Tested on 4d citibike dataset (predicting journey durations from
 start/finish station locations).
 
-The method appears to achieve lower noise than binning alternatives (for
+* The method appears to achieve lower noise than binning alternatives (for
 reasonable $\varepsilon$).
+
+## Citibike
 
 ![](diagrams/newtable2_neg.png){width="80%" style="border:none" align="center"} lengthscale in degrees, values
 above, journey duration (in seconds)
@@ -514,6 +514,7 @@ Science 9.3-4 (2013): 211-407.
 Wasserman. "Differential privacy for functions and functional data." The
 Journal of Machine Learning Research 14.1 (2013): 703-727.
 [link](http://www.stat.cmu.edu/~arinaldo/papers/hall13a.pdf)
+
 ## {data-background="diagrams/pres_bg.png"}
 
 
