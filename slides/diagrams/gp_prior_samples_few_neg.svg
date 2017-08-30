@@ -37,12 +37,12 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="967"
-     inkscape:window-height="579"
+     inkscape:window-width="686"
+     inkscape:window-height="480"
      id="namedview48"
      showgrid="false"
      inkscape:zoom="0.38222222"
-     inkscape:cx="450"
+     inkscape:cx="68.023253"
      inkscape:cy="225"
      inkscape:window-x="0"
      inkscape:window-y="0"
@@ -58,20 +58,15 @@
     <filter
        style="color-interpolation-filters:sRGB;"
        inkscape:label="Invert"
-       id="filter4201">
+       id="filter4746">
       <feColorMatrix
-         type="hueRotate"
-         values="180"
-         result="color1"
-         id="feColorMatrix4203" />
-      <feColorMatrix
-         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0.21 0.72 0.07 1 0 "
          result="color2"
-         id="feColorMatrix4205" />
+         id="feColorMatrix4748" />
     </filter>
   </defs>
   <g
-     style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;filter:url(#filter4201)"
+     style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;filter:url(#filter4746)"
      id="axes_1">
     <g
        style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"

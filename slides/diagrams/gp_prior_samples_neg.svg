@@ -42,7 +42,7 @@
      id="namedview3018"
      showgrid="false"
      inkscape:zoom="0.38222222"
-     inkscape:cx="520.63953"
+     inkscape:cx="138.66278"
      inkscape:cy="225"
      inkscape:window-x="280"
      inkscape:window-y="15"
@@ -58,20 +58,25 @@
     <filter
        style="color-interpolation-filters:sRGB;"
        inkscape:label="Invert"
-       id="filter9170">
+       id="filter7322">
       <feColorMatrix
-         type="hueRotate"
-         values="180"
-         result="color1"
-         id="feColorMatrix9172" />
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0.21 0.72 0.07 1 0 "
+         result="fbSourceGraphic"
+         id="feColorMatrix7324" />
       <feColorMatrix
-         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix7326" />
+      <feColorMatrix
+         id="feColorMatrix7328"
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0.21 0.72 0.07 1 0 "
          result="color2"
-         id="feColorMatrix9174" />
+         in="fbSourceGraphic" />
     </filter>
   </defs>
   <g
-     style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;filter:url(#filter9170)"
+     style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;filter:url(#filter7322)"
      id="axes_1">
     <g
        style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
