@@ -438,11 +438,11 @@ It also has some interesting features;
 
 
 
-## House prices around London  {data-transition="None"}
+## House Prices Around London  {data-transition="None"}
 
-![](diagrams/houseprices_bigcirc_15km_0_labels_neg.png){width="40%" style="border:none" align="center"}
+<img src="diagrams/houseprices_bigcirc_15km_0_labels_neg.png" width="60%" style="border:none">
 
-## Citibike {#citibike} {data-transition="None"}
+## Citibike {#citibike data-transition="None"}
 
 * Tested on 4d citibike dataset (predicting journey durations from
 start/finish station locations).
