@@ -17,7 +17,6 @@ abstract: >
   Joint work with Michael Smith, Max Zwiessele and Mauricio Alvarez
 date: 2017-08-30
 affiliation: Amazon and University of Sheffield
-data-background: diagrams/pres_bg.png
 ---
 
 
@@ -201,10 +200,10 @@ Privacy](https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf) by
 Dwork and Roth for a rigorous introduction to the framework.
 
 
-## Differential Privacy for Gaussian Processes {#differential-privacy-for-gaussian-processes  data-background="diagrams/pres_bg_bb.png"}
+## Differential Privacy for Gaussian Processes {#differential-privacy-for-gaussian-processes }
 
 
-## Differential Privacy for GPs {#differential-privacy-for-gps data-background="diagrams/pres_bg_bb.png"}
+## Differential Privacy for GPs {#differential-privacy-for-gps}
 
 We have a dataset in which the inputs, $\mathbf{X}$, are **public**. The
 outputs, $\mathbf{y}$, we want to keep **private**.
@@ -215,7 +214,7 @@ the !Kung](diagrams/kung_pseudo_pert_neg.png){width="65%" style="border:none" al
 **Data consists of the heights and weights of 287 women from a census of
 the !Kung**
 
-## Vectors and Functions {#vectors-and-functions data-background="diagrams/pres_bg_bb.png" }
+## Vectors and Functions {#vectors-and-functions }
 
 Hall et al. (2013) showed that one can ensure that a version of $f$,
 function $\tilde{f}$ is $(\varepsilon, \delta)$-differentially
@@ -247,7 +246,7 @@ f_{D^\prime}(\mathbf{x_*}) ||_H^2$$
 $\mathbf{y}$.
 
 
-## Applied to Gaussian Processes {#applied-to-gaussian-processes-1 data-background="diagrams/pres_bg_bb.png"  }
+## Applied to Gaussian Processes {#applied-to-gaussian-processes-1  }
 
 * Using the representer theorem, we can write
     $$|| f_D(\mathbf{x_*}) -
@@ -284,7 +283,7 @@ $d\;||\mathbf{K}^{-1}||_\infty$
 
 
 ## Applied to Gaussian Processes {#applied-to-gaussian-processes-2
-    data-background="diagrams/pres_bg_bb.png" }
+    }
 
 This 'works' in that it allows DP predictions...but to avoid too much
 noise, the value of $\varepsilon$ is too large (here it is 100)
@@ -294,7 +293,7 @@ noise, the value of $\varepsilon$ is too large (here it is 100)
 EQ kernel, $\ell = 25$ years, $\Delta=100$cm
 
 
-## Inducing Inputs {#inducing-inputs data-background="diagrams/pres_bg_bb.png"}
+## Inducing Inputs {#inducing-inputs}
 
 Using sparse methods (i.e. inducing inputs) can help reduce the
 sensitivity a little. We'll see more on this later.
@@ -302,14 +301,14 @@ sensitivity a little. We'll see more on this later.
 ![](diagrams/kung_inducing_simple_neg.png){width="70%" style="border:none" align="center"}
 
 
-## Cloaking {#cloaking data-background="diagrams/pres_bg_bb.png"}
+## Cloaking {#cloaking}
 
 * So far we've made the whole posterior mean function private...
 
     ...what if we just concentrate on making particular predictions private?
 
 
-## Effect of perturbation {#effect-of-perturbation data-background="diagrams/pres_bg_bb.png"}
+## Effect of perturbation {#effect-of-perturbation}
 
 * Standard approach: sample the noise is from the GP's
 **prior**.
@@ -358,7 +357,7 @@ sensitivity a little. We'll see more on this later.
 
 *Left*: Function change. *Right*: test point change
 
-## DP Vectors {#dp-vectors data-background="diagrams/pres_bg_bb.png"}
+## DP Vectors {#dp-vectors}
 
 * Hall et al. (2013) also presented a bound on vectors.
 
@@ -374,7 +373,7 @@ its Mahalanobis distance (wrt the added noise covariance).
     We get to pick $\mathbf{M}$
 
 
-## Cloaking {#cloaking-2 data-background="diagrams/pres_bg_bb.png"}
+## Cloaking {#cloaking-2}
 
 * Intuitively we want to construct $\mathbf{M}$ so that it has greatest
 covariance in those directions most affected by changes in training
@@ -390,7 +389,7 @@ represented in the cloaking matrix,
     $$\mathbf{C} = \mathbf{K}_{*f} \mathbf{K}^{-1}$$
 
 
-## Cloaking {#cloaking-3 data-background="diagrams/pres_bg_bb.png"}
+## Cloaking {#cloaking-3}
 
 * We assume we are protecting only one training input's change, by at most
 $d$.
@@ -409,7 +408,7 @@ element, $i$.\
     where $\mathbf{c}_i \triangleq \mathbf{C}_{:i}$
 
 
-## Cloaking {#cloaking-4 data-background="diagrams/pres_bg_bb.png"}
+## Cloaking {#cloaking-4}
 
 * Dealing with $d$ elsewhere and setting $\Delta = 1$ (thus $0 \leq
 \mathbf{c}_i^\top \mathbf{M}^{-1} \mathbf{c}_i \leq 1$) and minimise
@@ -419,7 +418,7 @@ $\log |\mathbf{M}|$ (minimises the partial entropy).
 
     $$\mathbf{M} = \sum_i{\lambda_i \mathbf{c}_i \mathbf{c}_i^\top}$$
 
-## Cloaking: Results {#cloaking-results data-background="diagrams/pres_bg_bb.png"}
+## Cloaking: Results {#cloaking-results}
 
 The noise added by this method is now practical.
 
@@ -427,7 +426,7 @@ The noise added by this method is now practical.
 
 EQ kernel, $l = 25$ years, $\Delta=100$cm, $\varepsilon=1$
 
-## Cloaking: Results {#cloaking-results-1 data-background="diagrams/pres_bg_bb.png"}
+## Cloaking: Results {#cloaking-results-1}
 
 It also has some interesting features;
 
@@ -445,7 +444,7 @@ House prices around London
 
 ![](diagrams/houseprices_bigcirc_15km_0_labels_neg.png){width="50%" style="border:none" align="center"}
 
-## Citibike {#citibike data-background="diagrams/pres_bg_bb.png"}
+## Citibike {#citibike}
 
 Tested on 4d citibike dataset (predicting journey durations from
 start/finish station locations).
@@ -456,7 +455,7 @@ reasonable $\varepsilon$).
 ![](diagrams/newtable2_neg.png){width="80%" style="border:none" align="center"} lengthscale in degrees, values
 above, journey duration (in seconds)
 
-## Cloaking and Inducing Inputs {#cloaking-and-inducing-inputs data-background="diagrams/pres_bg_bb.png"}
+## Cloaking and Inducing Inputs {#cloaking-and-inducing-inputs}
 
 * Outliers poorly predicted.
 
@@ -464,16 +463,16 @@ above, journey duration (in seconds)
 
 * Use inducing inputs to reduce the sensitivity to these outliers.
 
-## Cloaking (no) Inducing Inputs {#cloaking-no-inducing-inputs  data-background="diagrams/pres_bg_bb.png" data-transition="None"}
+## Cloaking (no) Inducing Inputs {#cloaking-no-inducing-inputs  data-transition="None"}
 
 ![](diagrams/cloaking-no-inducing_neg.png){width="100%" style="border:none" align="center"}
 
 ## Cloaking and Inducing Inputs {#cloaking-and-inducing-inputs-1
-   data-background="diagrams/pres_bg_bb.png" data-transition="None"}
+   data-transition="None"}
 
 ![](diagrams/cloaking-inducing_neg.png){width="80%" style="border:none" align="center"}
 
-## Results {#results data-background="diagrams/pres_bg_bb.png"}
+## Results {#results}
 
 * For 1D !Kung, RMSE improved from $15.0 \pm 2.0 \text{cm}$ to $11.1 \pm 0.8 \text{cm}$
 
@@ -483,13 +482,11 @@ above, journey duration (in seconds)
 
     Note that the uncertainty across cross-validation runs smaller. 2D version benefits from data's 1D manifold.
 
-## Cloaking (no) Inducing Inputs {#cloaking-no-inducing-inputs-1 data-background="diagrams/pres_bg_bb.png"  data-transition="none"}
+## Cloaking (no) Inducing Inputs {#cloaking-no-inducing-inputs-1 data-transition="none"}
 
 ![](diagrams/housing-no-inducing_neg.png){width="80%" style="border:none" align="center"}
 
-## Cloaking and Inducing Inputs {#cloaking-and-inducing-inputs-2
-    data-background="diagrams/pres_bg_bb.png" 
-    data-transition="none"}
+## Cloaking and Inducing Inputs {#cloaking-and-inducing-inputs-2 data-transition="none"}
 
 ![](diagrams/housing-inducing_neg.png){width="80%" style="border:none" align="center"}
 
