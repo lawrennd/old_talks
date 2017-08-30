@@ -231,18 +231,15 @@ width="80%" style="border:none" align="center">-->
 </ul>
 <p>See <a href="https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf">The Algorithmic Foundations of Differential Privacy</a> by Dwork and Roth for a rigorous introduction to the framework.</p>
 </section>
-<section id="differential-privacy-for-gaussian-processes" class="slide level2">
+<section id="differential-privacy-for-gaussian-processes" class="slide level2" data-transition="None">
 <h2>Differential Privacy for Gaussian Processes</h2>
-</section>
-<section id="differential-privacy-for-gps" class="slide level2">
-<h2>Differential Privacy for GPs</h2>
 <p>We have a dataset in which the inputs, <span class="math inline">\(\mathbf{X}\)</span>, are <strong>public</strong>. The outputs, <span class="math inline">\(\mathbf{y}\)</span>, we want to keep <strong>private</strong>.</p>
 <figure>
 <img src="diagrams/kung_pseudo_pert_neg.png" alt="Data consists of the heights and weights of 287 women from a census of the !Kung" style="border:none" align="center" style="width:65.0%" /><figcaption>Data consists of the heights and weights of 287 women from a census of the !Kung</figcaption>
 </figure>
 <p><strong>Data consists of the heights and weights of 287 women from a census of the !Kung</strong></p>
 </section>
-<section id="vectors-and-functions" class="slide level2">
+<section id="vectors-and-functions" class="slide level2" data-transition="None">
 <h2>Vectors and Functions</h2>
 <p>Hall et al. (2013) showed that one can ensure that a version of <span class="math inline">\(f\)</span>, function <span class="math inline">\(\tilde{f}\)</span> is <span class="math inline">\((\varepsilon, \delta)\)</span>-differentially private by adding a scaled sample from a GP prior.</p>
 <figure>
@@ -250,7 +247,7 @@ width="80%" style="border:none" align="center">-->
 </figure>
 <p>3 pages of maths ahead!</p>
 </section>
-<section id="applied-to-gaussian-processes" class="slide level2" data-background="diagrams/pres_bg_bb.png">
+<section id="applied-to-gaussian-processes" class="slide level2" data-background="diagrams/pres_bg.png">
 <h2>Applied to Gaussian Processes</h2>
 <ul>
 <li><p>We applied this method to the GP posterior.</p></li>
@@ -263,7 +260,7 @@ f_{D^\prime}(\mathbf{x_*}) ||_H^2\]</span></p>
 <p>…how much the mean function (in RKHS) can change due to a change in <span class="math inline">\(\mathbf{y}\)</span>.</p></li>
 </ul>
 </section>
-<section id="applied-to-gaussian-processes-1" class="slide level2">
+<section id="applied-to-gaussian-processes-1" class="slide level2" data-background="diagrams/pres_bg.png">
 <h2>Applied to Gaussian Processes</h2>
 <ul>
 <li><p>Using the representer theorem, we can write <span class="math display">\[|| f_D(\mathbf{x_*}) -
@@ -274,7 +271,7 @@ f_{D^\prime}(\mathbf{x_*}) ||_H^2\]</span></p>
 <p>where <span class="math inline">\(\boldsymbol{\alpha} - \boldsymbol{\alpha}^\prime = \mathbf{K}^{-1} \left(\mathbf{y} - \mathbf{y}^\prime \right)\)</span></p></li>
 </ul>
 </section>
-<section id="section-9" class="slide level2" data-background="diagrams/pres_bg_bb.png">
+<section id="section-9" class="slide level2" data-background="diagrams/pres_bg.png">
 <h2></h2>
 <ul>
 <li><p>L2 Norm</p>
@@ -286,7 +283,7 @@ f_{D^\prime}(\mathbf{x_*}) ||_H^2\]</span></p>
 <li><p>The distance above can then be shown to be no greater than <span class="math inline">\(d\;||\mathbf{K}^{-1}||_\infty\)</span></p></li>
 </ul>
 </section>
-<section id="applied-to-gaussian-processes-2" class="slide level2">
+<section id="applied-to-gaussian-processes-2" class="slide level2" data-transition="None">
 <h2>Applied to Gaussian Processes</h2>
 <p>This ‘works’ in that it allows DP predictions…but to avoid too much noise, the value of <span class="math inline">\(\varepsilon\)</span> is too large (here it is 100)</p>
 <figure>
@@ -294,21 +291,21 @@ f_{D^\prime}(\mathbf{x_*}) ||_H^2\]</span></p>
 </figure>
 <p>EQ kernel, <span class="math inline">\(\ell = 25\)</span> years, <span class="math inline">\(\Delta=100\)</span>cm</p>
 </section>
-<section id="inducing-inputs" class="slide level2">
+<section id="inducing-inputs" class="slide level2" data-transition="None">
 <h2>Inducing Inputs</h2>
 <p>Using sparse methods (i.e. inducing inputs) can help reduce the sensitivity a little. We’ll see more on this later.</p>
 <figure>
 <img src="diagrams/kung_inducing_simple_neg.png" style="border:none" align="center" style="width:70.0%" />
 </figure>
 </section>
-<section id="cloaking" class="slide level2">
+<section id="cloaking" class="slide level2" data-transition="None">
 <h2>Cloaking</h2>
 <ul>
 <li><p>So far we’ve made the whole posterior mean function private…</p>
 <p>…what if we just concentrate on making particular predictions private?</p></li>
 </ul>
 </section>
-<section id="effect-of-perturbation" class="slide level2">
+<section id="effect-of-perturbation" class="slide level2" data-transition="None">
 <h2>Effect of perturbation</h2>
 <ul>
 <li><p>Standard approach: sample the noise is from the GP’s <strong>prior</strong>.</p></li>
@@ -362,7 +359,7 @@ f_{D^\prime}(\mathbf{x_*}) ||_H^2\]</span></p>
 <p>We get to pick <span class="math inline">\(\mathbf{M}\)</span></p></li>
 </ul>
 </section>
-<section id="cloaking" class="slide level2" data-background="diagrams/pres_bg.png">
+<section id="cloaking-1" class="slide level2" data-background="diagrams/pres_bg.png">
 <h2>Cloaking</h2>
 <ul>
 <li><p>Intuitively we want to construct <span class="math inline">\(\mathbf{M}\)</span> so that it has greatest covariance in those directions most affected by changes in training points, so that it will be most able to mask those changes.</p></li>
@@ -372,7 +369,7 @@ f_{D^\prime}(\mathbf{x_*}) ||_H^2\]</span></p>
 <p><span class="math display">\[\mathbf{C} = \mathbf{K}_{*f} \mathbf{K}^{-1}\]</span></p></li>
 </ul>
 </section>
-<section id="cloaking-1" class="slide level2" data-background="diagrams/pres_bg.png">
+<section id="cloaking-2" class="slide level2" data-background="diagrams/pres_bg.png">
 <h2>Cloaking</h2>
 <ul>
 <li><p>We assume we are protecting only one training input’s change, by at most <span class="math inline">\(d\)</span>.</p></li>
@@ -385,7 +382,7 @@ f_{D^\prime}(\mathbf{x_*}) ||_H^2\]</span></p>
 <p>where <span class="math inline">\(\mathbf{c}_i \triangleq \mathbf{C}_{:i}\)</span></p></li>
 </ul>
 </section>
-<section id="cloaking-2" class="slide level2" data-background="diagrams/pres_bg.png">
+<section id="cloaking-3" class="slide level2" data-background="diagrams/pres_bg.png">
 <h2>Cloaking</h2>
 <ul>
 <li><p>Dealing with <span class="math inline">\(d\)</span> elsewhere and setting <span class="math inline">\(\Delta = 1\)</span> (thus <span class="math inline">\(0 \leq \mathbf{c}_i^\top \mathbf{M}^{-1} \mathbf{c}_i \leq 1\)</span>) and minimise <span class="math inline">\(\log |\mathbf{M}|\)</span> (minimises the partial entropy).</p></li>
