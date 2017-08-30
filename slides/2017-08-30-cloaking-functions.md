@@ -159,25 +159,32 @@ width="80%" style="border:none" align="center">-->
     $$\mathbf{C}_* = \mathbf{K}_{*,*} - \mathbf{K}_{*,\mathbf{f}}
 \mathbf{K}^{-1} \mathbf{K}_{\mathbf{f}, *}$$
 
+
+## {data-transition="none"}
+<!--frame start-->
+<object type="image/svg+xml" data="./diagrams/gp_prediction_neg.svg">
+</object>
+<!--<img src="../../mlprojects/gplvm/tex/diagrams/gp_rejection_samples_neg.png" width="80%" style="border:none" align="center">-->
+
+<!--frame end-->
+
 ## Differential Privacy, summary {data-background="diagrams/pres_bg.png"}
 
 
-We want to protect a user from a linkage attack...
+* We want to protect a user from a linkage attack...
 
-...while still performing inference over the whole group.
+    ...while still performing inference over the whole group.
 
-Making a dataset private is more than just erasing names.
+* Making a dataset private is more than just erasing names.
 
-To achieve a level of privacy one needs to add **randomness** to the
+* To achieve a level of privacy one needs to add **randomness** to the
 data.
 
-This is a fundamental feature of differential privacy.
+* This is a fundamental feature of differential privacy.
 
 See [The Algorithmic Foundations of Differential
 Privacy](https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf) by
 Dwork and Roth for a rigorous introduction to the framework.
-
-## {data-background="diagrams/pres_bg_bb.png" data-markdown=""}
 
 
 ## Differential Privacy for Gaussian Processes {#differential-privacy-for-gaussian-processes  data-background="diagrams/pres_bg_bb.png"}
