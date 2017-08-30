@@ -26,6 +26,7 @@ data-background: diagrams/pres_bg.png
 ### Neil D. Lawrence
 ### Amazon and University of Sheffield
 ```@lawrennd``` [inverseprobability.com](http://inverseprobability.com)
+[Paper on Arxiv](https://arxiv.org/pdf/1606.00720.pdf)
 <!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2017-08-30-cloaking-functions.slides.html 2017-08-30-cloaking-functions.md
 -->
 
@@ -394,7 +395,7 @@ It also has some interesting features;
 
 House prices around London
 
-![](diagrams/houseprices_bigcirc_15km_0_labels_neg.png){width="60%" style="border:none" align="center"}
+![](diagrams/houseprices_bigcirc_15km_0_labels_neg.png){width="50%" style="border:none" align="center"}
 
 ## Citibike {#citibike data-background="diagrams/pres_bg_bb.png"}
 
@@ -404,7 +405,7 @@ start/finish station locations).
 The method appears to achieve lower noise than binning alternatives (for
 reasonable $\varepsilon$).
 
-![](diagrams/newtable2_neg.png){width="100%" style="border:none" align="center"} lengthscale in degrees, values
+![](diagrams/newtable2_neg.png){width="80%" style="border:none" align="center"} lengthscale in degrees, values
 above, journey duration (in seconds)
 
 ## Cloaking and Inducing Inputs {#cloaking-and-inducing-inputs data-background="diagrams/pres_bg_bb.png"}
