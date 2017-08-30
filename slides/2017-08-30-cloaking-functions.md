@@ -464,11 +464,12 @@ above, journey duration (in seconds)
 
 * Use inducing inputs to reduce the sensitivity to these outliers.
 
-## Cloaking (no) Inducing Inputs {#cloaking-no-inducing-inputs  data-background="diagrams/pres_bg_bb.png" data-transition="none"}
+## Cloaking (no) Inducing Inputs {#cloaking-no-inducing-inputs  data-background="diagrams/pres_bg_bb.png" data-transition="None"}
 
 ![](diagrams/cloaking-no-inducing_neg.png){width="100%" style="border:none" align="center"}
 
-## Cloaking and Inducing Inputs {#cloaking-and-inducing-inputs-1 data-background="diagrams/pres_bg_bb.png"}
+## Cloaking and Inducing Inputs {#cloaking-and-inducing-inputs-1
+   data-background="diagrams/pres_bg_bb.png" data-transition="None"}
 
 ![](diagrams/cloaking-inducing_neg.png){width="80%" style="border:none" align="center"}
 
