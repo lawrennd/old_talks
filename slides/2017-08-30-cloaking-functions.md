@@ -440,7 +440,7 @@ It also has some interesting features;
 
 ## Citibike {#citibike data-transition="None"}
 
-* Tested on 4d citibike dataset (predicting journey durations from
+* Tested on 4D citibike dataset (predicting journey durations from
 start/finish station locations).
 
 * The method appears to achieve lower noise than binning alternatives (for
@@ -534,8 +534,7 @@ De-identification still doesn’t work." White Paper (2014).
 
 
 * Howell, N. Data from a partial census of the !kung san, dobe. 1967-1969.
-https://public.tableau. com/profile/john.marriott\#!/vizhome/
-kung-san/Attributes, 1967.
+<https://public.tableau.com/profile/john.marriott\#!/vizhome/kung-san/Attributes>, 1967.
 
 * **Images used:** BostonGlobe: [Mass
 Mutual](https://c.o0bg.com/rf/image_960w/Boston/2011-2020/2015/05/29/BostonGlobe.com/Business/Images/MassMutual_04.jpg),
