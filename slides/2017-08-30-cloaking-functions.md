@@ -316,70 +316,97 @@ sensitivity a little. We'll see more on this later.
 
 * Not necessarily the most 'efficient' covariance to use.
 
-![](diagrams/cloak1_neg.png){width="75%" style="border:none" align="center"}
+## Cloaking {#cloaking-1 data-transition="None"}
 
+<object type="image/svg+xml" data="./diagrams/dp_firstpoint0_neg.svg">
+</object>
 
-## Effect of perturbation {#effect-of-perturbation-1 data-background="diagrams/pres_bg_bb.png"}
+*Left*: Function change. *Right*: test point change
 
-![](diagrams/cloak2_neg.png){width="75%" style="border:none" align="center"}
+## Cloaking {#cloaking-1 data-transition="None"}
 
+<object type="image/svg+xml" data="./diagrams/dp_firstpoint2_neg.svg">
+</object>
 
-## Cloaking {#cloaking-1 data-background="diagrams/pres_bg_bb.png"}
+*Left*: Function change. *Right*: test point change
 
+## Cloaking {#cloaking-1 data-transition="None"}
 
-![](diagrams/cloak3_neg.png){width="75%" style="border:none" align="center"}
+<object type="image/svg+xml" data="./diagrams/dp_secondpoint0_neg.svg">
+</object>
 
-*Left*: Ideal covariance. *Right*: actual covariance
+*Left*: Function change. *Right*: test point change
+
+## Cloaking {#cloaking-1 data-transition="None"}
+
+<object type="image/svg+xml" data="./diagrams/dp_secondpoint2_neg.svg">
+</object>
+
+*Left*: Function change. *Right*: test point change
+
+## Cloaking {#cloaking-1 data-transition="None"}
+
+<object type="image/svg+xml" data="./diagrams/dp_with_ellipse1_neg.svg">
+</object>
+
+*Left*: Function change. *Right*: test point change
+
+## Cloaking {#cloaking-1 data-transition="None"}
+
+<object type="image/svg+xml" data="./diagrams/dp_with_ellipse2_neg.svg">
+</object>
+
+*Left*: Function change. *Right*: test point change
 
 ## DP Vectors {#dp-vectors data-background="diagrams/pres_bg_bb.png"}
 
-Hall et al. (2013) also presented a bound on vectors.
+* Hall et al. (2013) also presented a bound on vectors.
 
-Find a bound ($\Delta$) on the scale of the output change, in term of
+* Find a bound ($\Delta$) on the scale of the output change, in term of
 its Mahalanobis distance (wrt the added noise covariance).
 
-$\sup_{D \sim {D'}} ||\mathbf{M}^{-1/2} (\mathbf{y}_* -
-\mathbf{y}_{*}')||_2 \leq \Delta$
+    $$\sup_{D \sim {D'}} ||\mathbf{M}^{-1/2} (\mathbf{y}_* - \mathbf{y}_{*}')||_2 \leq \Delta$$
 
-We use this to scale the noise we add:
+* We use this to scale the noise we add:
 
-$\frac{\text{c}(\delta)\Delta}{\varepsilon} \mathcal{N}_d(0,\mathbf{M})$
+    $$\frac{\text{c}(\delta)\Delta}{\varepsilon} \mathcal{N}_d(0,\mathbf{M})$$
 
-We get to pick $\mathbf{M}$
+    We get to pick $\mathbf{M}$
 
 
 ## Cloaking {#cloaking-2 data-background="diagrams/pres_bg_bb.png"}
 
-Intuitively we want to construct $\mathbf{M}$ so that it has greatest
+* Intuitively we want to construct $\mathbf{M}$ so that it has greatest
 covariance in those directions most affected by changes in training
 points, so that it will be most able to mask those changes.
 
-The change in posterior mean predictions is,
+* The change in posterior mean predictions is,
 
-$\mathbf{y}_* - \mathbf{y}'_* = \mathbf{K}_{*f} \mathbf{K}^{-1}
-(\mathbf{y}-\mathbf{y}')$
+     $$\mathbf{y}_* - \mathbf{y}'_* = \mathbf{K}_{*f} \mathbf{K}^{-1} (\mathbf{y}-\mathbf{y}')$$
 
-The effect of perturbing each training point on each test point is
-represented in the cloaking matrix, $\mathbf{C} = \mathbf{K}_{*f} \mathbf{K}^{-1}$
+* Effect of perturbing each training point on each test point is
+represented in the cloaking matrix,
+
+    $$\mathbf{C} = \mathbf{K}_{*f} \mathbf{K}^{-1}$$
 
 
 ## Cloaking {#cloaking-3 data-background="diagrams/pres_bg_bb.png"}
 
-We assume we are protecting only one training input's change, by at most
+* We assume we are protecting only one training input's change, by at most
 $d$.
 
-So $\mathbf{y}-\mathbf{y}'$ will be all zeros except for one
+* So $\mathbf{y}-\mathbf{y}'$ will be all zeros except for one
 element, $i$.\
-So the change in test points will be (at most)
 
-$\mathbf{y}_*' - \mathbf{y}_* = d \mathbf{C}_{:i}$
+* So the change in test points will be (at most)
 
-We're able to write the earlier bound as,
+    $$\mathbf{y}_*' - \mathbf{y}_* = d \mathbf{C}_{:i}$$
 
-$d^2 \sup_{i} \mathbf{c}_i^\top \mathbf{M}^{-1} \mathbf{c}_i \leq
-\Delta$
+* We're able to write the earlier bound as,
 
-where $\mathbf{c}_i \triangleq \mathbf{C}_{:i}$
+    $$d^2 \sup_{i} \mathbf{c}_i^\top \mathbf{M}^{-1} \mathbf{c}_i \leq\Delta$$
+
+    where $\mathbf{c}_i \triangleq \mathbf{C}_{:i}$
 
 
 ## Cloaking {#cloaking-4 data-background="diagrams/pres_bg_bb.png"}
@@ -390,7 +417,7 @@ $\log |\mathbf{M}|$ (minimises the partial entropy).
 
 * Using Lagrange multipliers and gradient descent, we find
 
-$$\mathbf{M} = \sum_i{\lambda_i \mathbf{c}_i \mathbf{c}_i^\top}$$
+    $$\mathbf{M} = \sum_i{\lambda_i \mathbf{c}_i \mathbf{c}_i^\top}$$
 
 ## Cloaking: Results {#cloaking-results data-background="diagrams/pres_bg_bb.png"}
 
