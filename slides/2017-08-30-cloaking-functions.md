@@ -159,6 +159,20 @@ width="80%" style="border:none" align="center">-->
     $$\mathbf{C}_* = \mathbf{K}_{*,*} - \mathbf{K}_{*,\mathbf{f}}
 \mathbf{K}^{-1} \mathbf{K}_{\mathbf{f}, *}$$
 
+## {data-transition="none"}
+<!--frame start-->
+<object type="image/svg+xml" data="./diagrams/gp_prior_samples_data_neg.svg">
+</object>
+<!--<img src="../../mlprojects/gplvm/tex/diagrams/gp_prior_samples_data_neg.png" width="80%" style="border:none" align="center">-->
+
+<!--frame end-->
+## {data-transition="none"}
+<!--frame start-->
+<object type="image/svg+xml" data="./diagrams/gp_rejection_samples_neg.svg">
+</object>
+<!--<img src="../../mlprojects/gplvm/tex/diagrams/gp_rejection_samples_neg.png" width="80%" style="border:none" align="center">-->
+
+<!--frame end-->
 
 ## {data-transition="none"}
 <!--frame start-->
