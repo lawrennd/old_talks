@@ -514,6 +514,8 @@ Science 9.3-4 (2013): 211-407.
 Wasserman. "Differential privacy for functions and functional data." The
 Journal of Machine Learning Research 14.1 (2013): 703-727.
 [link](http://www.stat.cmu.edu/~arinaldo/papers/hall13a.pdf)
+## {data-background="diagrams/pres_bg.png"}
+
 
 * [**Articles about the Massachusetts privacy debate**\
 ]{style="margin-left:-50px;"} Barth-Jones, Daniel C.
@@ -521,8 +523,6 @@ Journal of Machine Learning Research 14.1 (2013): 703-727.
 critical re-examination of health data identification risks and privacy
 protections, then and now." Then and Now (June 4, 2012) (2012).
 [link](http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2076397)
-
-## {data-background="diagrams/pres_bg.png"}
 
 
 * Ohm, Paul. "Broken promises of privacy: Responding to the surprising
@@ -533,11 +533,14 @@ failure of anonymization." UCLA Law Review 57 (2010): 1701.
 De-identification still doesn’t work." White Paper (2014).
 [link](http://randomwalker.info/publications/no-silver-bullet-de-identification.pdf)
 
+## {data-background="diagrams/pres_bg.png"}
+
+
 * Howell, N. Data from a partial census of the !kung san, dobe. 1967-1969.
 https://public.tableau. com/profile/john.marriott\#!/vizhome/
 kung-san/Attributes, 1967.
 
-* [**Images used:**]{style="margin-left:-50px;"} BostonGlobe: [Mass
+* **Images used:** BostonGlobe: [Mass
 Mutual](https://c.o0bg.com/rf/image_960w/Boston/2011-2020/2015/05/29/BostonGlobe.com/Business/Images/MassMutual_04.jpg),
 [Weld](https://c.o0bg.com/rf/image_960w/Boston/2011-2020/2014/10/20/BostonGlobe.com/Metro/Images/Gov.%20Bill%20Weld%201-100425.jpg).
 Harvard: [Sweeney](http://www.gov.harvard.edu/files/Sweeney6crop.jpg).
