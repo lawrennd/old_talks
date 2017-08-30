@@ -428,10 +428,11 @@ f_{D^\prime}(\mathbf{x_*}) ||_H^2\]</span></p>
 </section>
 <section id="cloaking-and-inducing-inputs" class="slide level2" data-background="diagrams/pres_bg_bb.png">
 <h2>Cloaking and Inducing Inputs</h2>
-<p>Outliers poorly predicted.<br />
-Too much noise around data ‘edges’.</p>
-<p>Use inducing inputs to reduce the<br />
-sensitivity to these outliers.</p>
+<ul>
+<li><p>Outliers poorly predicted.</p></li>
+<li><p>Too much noise around data ‘edges’.</p></li>
+<li><p>Use inducing inputs to reduce the sensitivity to these outliers.</p></li>
+</ul>
 </section>
 <section id="cloaking-no-inducing-inputs" class="slide level2" data-background="diagrams/pres_bg_bb.png" data-transition="none">
 <h2>Cloaking (no) Inducing Inputs</h2>
@@ -448,13 +449,11 @@ sensitivity to these outliers.</p>
 <section id="results" class="slide level2" data-background="diagrams/pres_bg_bb.png">
 <h2>Results</h2>
 <ul>
-<li>For 1D !Kung, RMSE improved from <span class="math inline">\(15.0 \pm 2.0 \text{cm}\)</span> to <span class="math inline">\(11.1 \pm 0.8 \text{cm}\)</span></li>
+<li><p>For 1D !Kung, RMSE improved from <span class="math inline">\(15.0 \pm 2.0 \text{cm}\)</span> to <span class="math inline">\(11.1 \pm 0.8 \text{cm}\)</span></p>
+<p>Use Age and Weight to predict Height</p></li>
+<li><p>For 2D !Kung, RMSE improved from <span class="math inline">\(22.8 \pm 1.9 \text{cm}\)</span> to <span class="math inline">\(8.8 \pm 0.6 \text{cm}\)</span></p>
+<p>Note that the uncertainty across cross-validation runs smaller. 2D version benefits from data’s 1D manifold.</p></li>
 </ul>
-<p>Use Age and Weight to predict Height</p>
-<ul>
-<li>For 2D !Kung, RMSE improved from <span class="math inline">\(22.8 \pm 1.9 \text{cm}\)</span> to <span class="math inline">\(8.8 \pm 0.6 \text{cm}\)</span></li>
-</ul>
-<p>Note that the uncertainty across cross-validation runs smaller. 2D version benefits from data’s 1D manifold.</p>
 </section>
 <section id="cloaking-no-inducing-inputs-1" class="slide level2" data-background="diagrams/pres_bg_bb.png" data-transition="none">
 <h2>Cloaking (no) Inducing Inputs</h2>
@@ -467,23 +466,32 @@ sensitivity to these outliers.</p>
 <figure>
 <img src="diagrams/housing-inducing_neg.png" style="border:none" align="center" style="width:80.0%" />
 </figure>
-<p><strong>Summary</strong> We have developed an improved method for performing differentially private regression.</p>
-<p><strong>Future work</strong> Multiple outputs, GP classification, DP Optimising hyperparameters, Making the inputs private.</p>
-<p><strong>Thanks</strong> Funders: EPSRC; Colleagues: <strong>Michael T. Smith</strong>, Mauricio, Max.</p>
-<p><strong>Recruiting</strong> Deep Probabilistic Models: 2 year postdoc (<a href="http://tinyurl.com/shefpostdoc">tinyurl.com/shefpostdoc</a>)</p>
+<ul>
+<li><p><strong>Summary</strong> We have developed an improved method for performing differentially private regression.</p></li>
+<li><p><strong>Future work</strong> Multiple outputs, GP classification, DP Optimising hyperparameters, Making the inputs private.</p></li>
+<li><p><strong>Thanks</strong> Funders: EPSRC; Colleagues: <strong>Michael T. Smith</strong>, Mauricio, Max.</p></li>
+<li><p><strong>Recruiting</strong> Deep Probabilistic Models: 2 year postdoc (<a href="http://tinyurl.com/shefpostdoc">tinyurl.com/shefpostdoc</a>)</p></li>
+</ul>
 </section>
 <section id="section-11" class="slide level2" data-background="diagrams/pres_bg.png">
 <h2></h2>
-<p><span style="margin-left:-50px;"><strong>The go-to book on differential privacy, by Dwork and Roth;</strong><br />
-</span> Dwork, Cynthia, and Aaron Roth. “The algorithmic foundations of differential privacy.” Theoretical Computer Science 9.3-4 (2013): 211-407. <a href="https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf">link</a></p>
-<p><span style="margin-left:-50px;"><strong>Original basis of applying DP to GPs;</strong><br />
-</span> Hall, Rob, Alessandro Rinaldo, and Larry Wasserman. “Differential privacy for functions and functional data.” The Journal of Machine Learning Research 14.1 (2013): 703-727. <a href="http://www.stat.cmu.edu/~arinaldo/papers/hall13a.pdf">link</a></p>
-<p><span style="margin-left:-50px;"><strong>Articles about the Massachusetts privacy debate</strong><br />
-</span> Barth-Jones, Daniel C. “The ‘re-identification’ of Governor William Weld’s medical information: a critical re-examination of health data identification risks and privacy protections, then and now.” Then and Now (June 4, 2012) (2012). <a href="http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2076397">link</a></p>
-<p>Ohm, Paul. “Broken promises of privacy: Responding to the surprising failure of anonymization.” UCLA Law Review 57 (2010): 1701. <a href="https://epic.org/privacy/reidentification/ohm_article.pdf">link</a></p>
-<p>Narayanan, Arvind, and Edward W. Felten. “No silver bullet: De-identification still doesn’t work.” White Paper (2014). <a href="http://randomwalker.info/publications/no-silver-bullet-de-identification.pdf">link</a></p>
-<p>Howell, N. Data from a partial census of the !kung san, dobe. 1967-1969. https://public.tableau. com/profile/john.marriott#!/vizhome/ kung-san/Attributes, 1967.</p>
-<p><span style="margin-left:-50px;"><strong>Images used:</strong></span> BostonGlobe: <a href="https://c.o0bg.com/rf/image_960w/Boston/2011-2020/2015/05/29/BostonGlobe.com/Business/Images/MassMutual_04.jpg">Mass Mutual</a>, <a href="https://c.o0bg.com/rf/image_960w/Boston/2011-2020/2014/10/20/BostonGlobe.com/Metro/Images/Gov.%20Bill%20Weld%201-100425.jpg">Weld</a>. Harvard: <a href="http://www.gov.harvard.edu/files/Sweeney6crop.jpg">Sweeney</a>. Rich on flickr: <a href="https://www.flickr.com/photos/rich_b1982/13114665103/in/pool-sheffieldskyline/">Sheffield skyline</a>.</p>
+<ul>
+<li><p><span style="margin-left:-50px;"><strong>The go-to book on differential privacy, by Dwork and Roth;</strong><br />
+</span> Dwork, Cynthia, and Aaron Roth. “The algorithmic foundations of differential privacy.” Theoretical Computer Science 9.3-4 (2013): 211-407. <a href="https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf">link</a></p></li>
+<li><p><span style="margin-left:-50px;"><strong>Original basis of applying DP to GPs;</strong><br />
+</span> Hall, Rob, Alessandro Rinaldo, and Larry Wasserman. “Differential privacy for functions and functional data.” The Journal of Machine Learning Research 14.1 (2013): 703-727. <a href="http://www.stat.cmu.edu/~arinaldo/papers/hall13a.pdf">link</a></p></li>
+<li><p><span style="margin-left:-50px;"><strong>Articles about the Massachusetts privacy debate</strong><br />
+</span> Barth-Jones, Daniel C. “The ‘re-identification’ of Governor William Weld’s medical information: a critical re-examination of health data identification risks and privacy protections, then and now.” Then and Now (June 4, 2012) (2012). <a href="http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2076397">link</a></p></li>
+</ul>
+</section>
+<section id="section-12" class="slide level2" data-background="diagrams/pres_bg.png">
+<h2></h2>
+<ul>
+<li><p>Ohm, Paul. “Broken promises of privacy: Responding to the surprising failure of anonymization.” UCLA Law Review 57 (2010): 1701. <a href="https://epic.org/privacy/reidentification/ohm_article.pdf">link</a></p></li>
+<li><p>Narayanan, Arvind, and Edward W. Felten. “No silver bullet: De-identification still doesn’t work.” White Paper (2014). <a href="http://randomwalker.info/publications/no-silver-bullet-de-identification.pdf">link</a></p></li>
+<li><p>Howell, N. Data from a partial census of the !kung san, dobe. 1967-1969. https://public.tableau. com/profile/john.marriott#!/vizhome/ kung-san/Attributes, 1967.</p></li>
+<li><p><span style="margin-left:-50px;"><strong>Images used:</strong></span> BostonGlobe: <a href="https://c.o0bg.com/rf/image_960w/Boston/2011-2020/2015/05/29/BostonGlobe.com/Business/Images/MassMutual_04.jpg">Mass Mutual</a>, <a href="https://c.o0bg.com/rf/image_960w/Boston/2011-2020/2014/10/20/BostonGlobe.com/Metro/Images/Gov.%20Bill%20Weld%201-100425.jpg">Weld</a>. Harvard: <a href="http://www.gov.harvard.edu/files/Sweeney6crop.jpg">Sweeney</a>. Rich on flickr: <a href="https://www.flickr.com/photos/rich_b1982/13114665103/in/pool-sheffieldskyline/">Sheffield skyline</a>.</p></li>
+</ul>
 </section>
     </div>
   </div>

@@ -458,11 +458,11 @@ above, journey duration (in seconds)
 
 ## Cloaking and Inducing Inputs {#cloaking-and-inducing-inputs data-background="diagrams/pres_bg_bb.png"}
 
-Outliers poorly predicted.\
-Too much noise around data 'edges'.
+* Outliers poorly predicted.
 
-Use inducing inputs to reduce the\
-sensitivity to these outliers.
+* Too much noise around data 'edges'.
+
+* Use inducing inputs to reduce the sensitivity to these outliers.
 
 ## Cloaking (no) Inducing Inputs {#cloaking-no-inducing-inputs  data-background="diagrams/pres_bg_bb.png" data-transition="none"}
 
@@ -476,12 +476,11 @@ sensitivity to these outliers.
 
 * For 1D !Kung, RMSE improved from $15.0 \pm 2.0 \text{cm}$ to $11.1 \pm 0.8 \text{cm}$
 
-Use Age and Weight to predict Height
+    Use Age and Weight to predict Height
 
 * For 2D !Kung, RMSE improved from $22.8 \pm 1.9 \text{cm}$ to $8.8 \pm 0.6 \text{cm}$
 
-Note that the uncertainty across cross-validation runs smaller.
-2D version benefits from data's 1D manifold.
+    Note that the uncertainty across cross-validation runs smaller. 2D version benefits from data's 1D manifold.
 
 ## Cloaking (no) Inducing Inputs {#cloaking-no-inducing-inputs-1 data-background="diagrams/pres_bg_bb.png"  data-transition="none"}
 
@@ -493,52 +492,54 @@ Note that the uncertainty across cross-validation runs smaller.
 
 ![](diagrams/housing-inducing_neg.png){width="80%" style="border:none" align="center"}
 
-**Summary** We have developed an improved method for performing
+* **Summary** We have developed an improved method for performing
 differentially private regression.
 
-**Future work** Multiple outputs, GP classification, DP Optimising
+* **Future work** Multiple outputs, GP classification, DP Optimising
 hyperparameters, Making the inputs private.
 
-**Thanks** Funders: EPSRC; Colleagues: **Michael T. Smith**, Mauricio, Max.
+* **Thanks** Funders: EPSRC; Colleagues: **Michael T. Smith**, Mauricio, Max.
 
-**Recruiting** Deep Probabilistic Models: 2 year postdoc
-([tinyurl.com/shefpostdoc](http://tinyurl.com/shefpostdoc))
+* **Recruiting** Deep Probabilistic Models: 2 year postdoc ([tinyurl.com/shefpostdoc](http://tinyurl.com/shefpostdoc))
 
 
 ## {data-background="diagrams/pres_bg.png"}
 
-[**The go-to book on differential privacy, by Dwork and Roth;**\
+* [**The go-to book on differential privacy, by Dwork and Roth;**\
 ]{style="margin-left:-50px;"} Dwork, Cynthia, and Aaron Roth. "The
 algorithmic foundations of differential privacy." Theoretical Computer
 Science 9.3-4 (2013): 211-407.
 [link](https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf)
 
-[**Original basis of applying DP to GPs;**\
+* [**Original basis of applying DP to GPs;**\
 ]{style="margin-left:-50px;"} Hall, Rob, Alessandro Rinaldo, and Larry
 Wasserman. "Differential privacy for functions and functional data." The
 Journal of Machine Learning Research 14.1 (2013): 703-727.
 [link](http://www.stat.cmu.edu/~arinaldo/papers/hall13a.pdf)
 
-[**Articles about the Massachusetts privacy debate**\
+* [**Articles about the Massachusetts privacy debate**\
 ]{style="margin-left:-50px;"} Barth-Jones, Daniel C.
 "The 're-identification' of Governor William Weld's medical information: a
 critical re-examination of health data identification risks and privacy
 protections, then and now." Then and Now (June 4, 2012) (2012).
 [link](http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2076397)
 
-Ohm, Paul. "Broken promises of privacy: Responding to the surprising
+## {data-background="diagrams/pres_bg.png"}
+
+
+* Ohm, Paul. "Broken promises of privacy: Responding to the surprising
 failure of anonymization." UCLA Law Review 57 (2010): 1701.
 [link](https://epic.org/privacy/reidentification/ohm_article.pdf)
 
-Narayanan, Arvind, and Edward W. Felten. "No silver bullet:
+* Narayanan, Arvind, and Edward W. Felten. "No silver bullet:
 De-identification still doesn’t work." White Paper (2014).
 [link](http://randomwalker.info/publications/no-silver-bullet-de-identification.pdf)
 
-Howell, N. Data from a partial census of the !kung san, dobe. 1967-1969.
+* Howell, N. Data from a partial census of the !kung san, dobe. 1967-1969.
 https://public.tableau. com/profile/john.marriott\#!/vizhome/
 kung-san/Attributes, 1967.
 
-[**Images used:**]{style="margin-left:-50px;"} BostonGlobe: [Mass
+* [**Images used:**]{style="margin-left:-50px;"} BostonGlobe: [Mass
 Mutual](https://c.o0bg.com/rf/image_960w/Boston/2011-2020/2015/05/29/BostonGlobe.com/Business/Images/MassMutual_04.jpg),
 [Weld](https://c.o0bg.com/rf/image_960w/Boston/2011-2020/2014/10/20/BostonGlobe.com/Metro/Images/Gov.%20Bill%20Weld%201-100425.jpg).
 Harvard: [Sweeney](http://www.gov.harvard.edu/files/Sweeney6crop.jpg).
