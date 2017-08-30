@@ -434,7 +434,7 @@ It also has some interesting features;
 -   Least noise far from any data
 -   Most noise just outside data
 
-# Cloaking: Results  {data-transition="None"}
+## Cloaking: Results  {data-transition="None"}
 
 ![](diagrams/kung_cloaking_simple_neg.png){width="100%" style="border:none" align="center"}
 
