@@ -314,56 +314,84 @@ f_{D^\prime}(\mathbf{x_*}) ||_H^2\]</span></p>
 <li><p>Standard approach: sample the noise is from the GP’s <strong>prior</strong>.</p></li>
 <li><p>Not necessarily the most ‘efficient’ covariance to use.</p></li>
 </ul>
-<figure>
-<img src="diagrams/cloak1_neg.png" style="border:none" align="center" style="width:75.0%" />
-</figure>
 </section>
-<section id="effect-of-perturbation-1" class="slide level2" data-background="diagrams/pres_bg_bb.png">
-<h2>Effect of perturbation</h2>
-<figure>
-<img src="diagrams/cloak2_neg.png" style="border:none" align="center" style="width:75.0%" />
-</figure>
-</section>
-<section id="cloaking-1" class="slide level2" data-background="diagrams/pres_bg_bb.png">
+<section id="cloaking-1" class="slide level2" data-transition="None">
 <h2>Cloaking</h2>
-<figure>
-<img src="diagrams/cloak3_neg.png" style="border:none" align="center" style="width:75.0%" />
-</figure>
-<p><em>Left</em>: Ideal covariance. <em>Right</em>: actual covariance</p>
+<object type="image/svg+xml" data="./diagrams/dp_firstpoint0_neg.svg">
+</object>
+<p><em>Left</em>: Function change. <em>Right</em>: test point change</p>
+</section>
+<section id="cloaking-1" class="slide level2" data-transition="None">
+<h2>Cloaking</h2>
+<object type="image/svg+xml" data="./diagrams/dp_firstpoint2_neg.svg">
+</object>
+<p><em>Left</em>: Function change. <em>Right</em>: test point change</p>
+</section>
+<section id="cloaking-1" class="slide level2" data-transition="None">
+<h2>Cloaking</h2>
+<object type="image/svg+xml" data="./diagrams/dp_secondpoint0_neg.svg">
+</object>
+<p><em>Left</em>: Function change. <em>Right</em>: test point change</p>
+</section>
+<section id="cloaking-1" class="slide level2" data-transition="None">
+<h2>Cloaking</h2>
+<object type="image/svg+xml" data="./diagrams/dp_secondpoint2_neg.svg">
+</object>
+<p><em>Left</em>: Function change. <em>Right</em>: test point change</p>
+</section>
+<section id="cloaking-1" class="slide level2" data-transition="None">
+<h2>Cloaking</h2>
+<object type="image/svg+xml" data="./diagrams/dp_with_ellipse1_neg.svg">
+</object>
+<p><em>Left</em>: Function change. <em>Right</em>: test point change</p>
+</section>
+<section id="cloaking-1" class="slide level2" data-transition="None">
+<h2>Cloaking</h2>
+<object type="image/svg+xml" data="./diagrams/dp_with_ellipse2_neg.svg">
+</object>
+<p><em>Left</em>: Function change. <em>Right</em>: test point change</p>
 </section>
 <section id="dp-vectors" class="slide level2" data-background="diagrams/pres_bg_bb.png">
 <h2>DP Vectors</h2>
-<p>Hall et al. (2013) also presented a bound on vectors.</p>
-<p>Find a bound (<span class="math inline">\(\Delta\)</span>) on the scale of the output change, in term of its Mahalanobis distance (wrt the added noise covariance).</p>
-<p><span class="math inline">\(\sup_{D \sim {D&#39;}} ||\mathbf{M}^{-1/2} (\mathbf{y}_* - \mathbf{y}_{*}&#39;)||_2 \leq \Delta\)</span></p>
-<p>We use this to scale the noise we add:</p>
-<p><span class="math inline">\(\frac{\text{c}(\delta)\Delta}{\varepsilon} \mathcal{N}_d(0,\mathbf{M})\)</span></p>
-<p>We get to pick <span class="math inline">\(\mathbf{M}\)</span></p>
+<ul>
+<li><p>Hall et al. (2013) also presented a bound on vectors.</p></li>
+<li><p>Find a bound (<span class="math inline">\(\Delta\)</span>) on the scale of the output change, in term of its Mahalanobis distance (wrt the added noise covariance).</p>
+<p><span class="math display">\[\sup_{D \sim {D&#39;}} ||\mathbf{M}^{-1/2} (\mathbf{y}_* - \mathbf{y}_{*}&#39;)||_2 \leq \Delta\]</span></p></li>
+<li><p>We use this to scale the noise we add:</p>
+<p><span class="math display">\[\frac{\text{c}(\delta)\Delta}{\varepsilon} \mathcal{N}_d(0,\mathbf{M})\]</span></p>
+<p>We get to pick <span class="math inline">\(\mathbf{M}\)</span></p></li>
+</ul>
 </section>
 <section id="cloaking-2" class="slide level2" data-background="diagrams/pres_bg_bb.png">
 <h2>Cloaking</h2>
-<p>Intuitively we want to construct <span class="math inline">\(\mathbf{M}\)</span> so that it has greatest covariance in those directions most affected by changes in training points, so that it will be most able to mask those changes.</p>
-<p>The change in posterior mean predictions is,</p>
-<p><span class="math inline">\(\mathbf{y}_* - \mathbf{y}&#39;_* = \mathbf{K}_{*f} \mathbf{K}^{-1} (\mathbf{y}-\mathbf{y}&#39;)\)</span></p>
-<p>The effect of perturbing each training point on each test point is represented in the cloaking matrix, <span class="math inline">\(\mathbf{C} = \mathbf{K}_{*f} \mathbf{K}^{-1}\)</span></p>
+<ul>
+<li><p>Intuitively we want to construct <span class="math inline">\(\mathbf{M}\)</span> so that it has greatest covariance in those directions most affected by changes in training points, so that it will be most able to mask those changes.</p></li>
+<li><p>The change in posterior mean predictions is,</p>
+<p><span class="math display">\[\mathbf{y}_* - \mathbf{y}&#39;_* = \mathbf{K}_{*f} \mathbf{K}^{-1} (\mathbf{y}-\mathbf{y}&#39;)\]</span></p></li>
+<li><p>Effect of perturbing each training point on each test point is represented in the cloaking matrix,</p>
+<p><span class="math display">\[\mathbf{C} = \mathbf{K}_{*f} \mathbf{K}^{-1}\]</span></p></li>
+</ul>
 </section>
 <section id="cloaking-3" class="slide level2" data-background="diagrams/pres_bg_bb.png">
 <h2>Cloaking</h2>
-<p>We assume we are protecting only one training input’s change, by at most <span class="math inline">\(d\)</span>.</p>
-<p>So <span class="math inline">\(\mathbf{y}-\mathbf{y}&#39;\)</span> will be all zeros except for one element, <span class="math inline">\(i\)</span>.<br />
-So the change in test points will be (at most)</p>
-<p><span class="math inline">\(\mathbf{y}_*&#39; - \mathbf{y}_* = d \mathbf{C}_{:i}\)</span></p>
-<p>We’re able to write the earlier bound as,</p>
-<p><span class="math inline">\(d^2 \sup_{i} \mathbf{c}_i^\top \mathbf{M}^{-1} \mathbf{c}_i \leq \Delta\)</span></p>
-<p>where <span class="math inline">\(\mathbf{c}_i \triangleq \mathbf{C}_{:i}\)</span></p>
+<ul>
+<li><p>We assume we are protecting only one training input’s change, by at most <span class="math inline">\(d\)</span>.</p></li>
+<li>So <span class="math inline">\(\mathbf{y}-\mathbf{y}&#39;\)</span> will be all zeros except for one element, <span class="math inline">\(i\)</span>.<br />
+</li>
+<li><p>So the change in test points will be (at most)</p>
+<p><span class="math display">\[\mathbf{y}_*&#39; - \mathbf{y}_* = d \mathbf{C}_{:i}\]</span></p></li>
+<li><p>We’re able to write the earlier bound as,</p>
+<p><span class="math display">\[d^2 \sup_{i} \mathbf{c}_i^\top \mathbf{M}^{-1} \mathbf{c}_i \leq\Delta\]</span></p>
+<p>where <span class="math inline">\(\mathbf{c}_i \triangleq \mathbf{C}_{:i}\)</span></p></li>
+</ul>
 </section>
 <section id="cloaking-4" class="slide level2" data-background="diagrams/pres_bg_bb.png">
 <h2>Cloaking</h2>
 <ul>
 <li><p>Dealing with <span class="math inline">\(d\)</span> elsewhere and setting <span class="math inline">\(\Delta = 1\)</span> (thus <span class="math inline">\(0 \leq \mathbf{c}_i^\top \mathbf{M}^{-1} \mathbf{c}_i \leq 1\)</span>) and minimise <span class="math inline">\(\log |\mathbf{M}|\)</span> (minimises the partial entropy).</p></li>
-<li><p>Using Lagrange multipliers and gradient descent, we find</p></li>
+<li><p>Using Lagrange multipliers and gradient descent, we find</p>
+<p><span class="math display">\[\mathbf{M} = \sum_i{\lambda_i \mathbf{c}_i \mathbf{c}_i^\top}\]</span></p></li>
 </ul>
-<p><span class="math display">\[\mathbf{M} = \sum_i{\lambda_i \mathbf{c}_i \mathbf{c}_i^\top}\]</span></p>
 </section>
 <section id="cloaking-results" class="slide level2" data-background="diagrams/pres_bg_bb.png">
 <h2>Cloaking: Results</h2>
