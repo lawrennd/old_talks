@@ -98,25 +98,33 @@ data-background: diagrams/pres_bg.png
 
 ## {data-transition="none"}
 <!--frame start-->
-<img src="../../mlprojects/gplvm/tex/diagrams/gp_prior_samples_few_neg.png"
-width="80%" style="border:none" align="center">
+<object type="image/svg+xml" data="./diagrams/gp_prior_samples_few_neg.svg">
+</object>
+<!--<img src="./diagrams/gp_prior_samples_few_neg.png"
+width="80%" style="border:none" align="center">-->
 
 <!--frame end-->
 
 ## {data-transition="none"}
 <!--frame start-->
-<img src="../../mlprojects/gplvm/tex/diagrams/gp_prior_samples_neg.png" width="80%" style="border:none" align="center">
+<object type="image/svg+xml" data="./diagrams/gp_prior_samples_neg.svg">
+</object>
+<!--<img src="../../mlprojects/gplvm/tex/diagrams/gp_prior_samples_neg.png" width="80%" style="border:none" align="center">-->
 
 <!--frame end-->
 
 ## {data-transition="none"}
 <!--frame start-->
-<img src="../../mlprojects/gplvm/tex/diagrams/gp_prior_samples_data_neg.png" width="80%" style="border:none" align="center">
+<object type="image/svg+xml" data="./diagrams/gp_prior_samples_data_neg.svg">
+</object>
+<!--<img src="../../mlprojects/gplvm/tex/diagrams/gp_prior_samples_data_neg.png" width="80%" style="border:none" align="center">-->
 
 <!--frame end-->
 ## {data-transition="none"}
 <!--frame start-->
-<img src="../../mlprojects/gplvm/tex/diagrams/gp_rejection_samples_neg.png" width="80%" style="border:none" align="center">
+<object type="image/svg+xml" data="./diagrams/gp_rejection_samples_neg.svg">
+</object>
+<!--<img src="../../mlprojects/gplvm/tex/diagrams/gp_rejection_samples_neg.png" width="80%" style="border:none" align="center">-->
 
 <!--frame end-->
 
