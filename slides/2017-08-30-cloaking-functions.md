@@ -357,7 +357,7 @@ sensitivity a little. We'll see more on this later.
 
 *Left*: Function change. *Right*: test point change
 
-## DP Vectors {#dp-vectors}
+## DP Vectors  {data-background="diagrams/pres_bg.png"}
 
 * Hall et al. (2013) also presented a bound on vectors.
 
@@ -373,7 +373,7 @@ its Mahalanobis distance (wrt the added noise covariance).
     We get to pick $\mathbf{M}$
 
 
-## Cloaking {#cloaking-2}
+## Cloaking  {data-background="diagrams/pres_bg.png"}
 
 * Intuitively we want to construct $\mathbf{M}$ so that it has greatest
 covariance in those directions most affected by changes in training
@@ -389,7 +389,7 @@ represented in the cloaking matrix,
     $$\mathbf{C} = \mathbf{K}_{*f} \mathbf{K}^{-1}$$
 
 
-## Cloaking {#cloaking-3}
+## Cloaking  {data-background="diagrams/pres_bg.png"}
 
 * We assume we are protecting only one training input's change, by at most
 $d$.
@@ -408,7 +408,7 @@ element, $i$.\
     where $\mathbf{c}_i \triangleq \mathbf{C}_{:i}$
 
 
-## Cloaking {#cloaking-4}
+## Cloaking  {data-background="diagrams/pres_bg.png"}
 
 * Dealing with $d$ elsewhere and setting $\Delta = 1$ (thus $0 \leq
 \mathbf{c}_i^\top \mathbf{M}^{-1} \mathbf{c}_i \leq 1$) and minimise
@@ -418,7 +418,7 @@ $\log |\mathbf{M}|$ (minimises the partial entropy).
 
     $$\mathbf{M} = \sum_i{\lambda_i \mathbf{c}_i \mathbf{c}_i^\top}$$
 
-## Cloaking: Results {#cloaking-results}
+## Cloaking: Results {data-transition="None"}
 
 The noise added by this method is now practical.
 
@@ -426,7 +426,7 @@ The noise added by this method is now practical.
 
 EQ kernel, $l = 25$ years, $\Delta=100$cm, $\varepsilon=1$
 
-## Cloaking: Results {#cloaking-results-1}
+## Cloaking: Results {data-background="diagrams/pres_bg.png"}
 
 It also has some interesting features;
 
@@ -434,8 +434,9 @@ It also has some interesting features;
 -   Least noise far from any data
 -   Most noise just outside data
 
-![](diagrams/kung_cloaking_simple_neg.png){width="100%" style="border:none" align="center"}
+# Cloaking: Results  {data-transition="None"}
 
+![](diagrams/kung_cloaking_simple_neg.png){width="100%" style="border:none" align="center"}
 
 
 ## House Prices Around London  {data-transition="None"}
@@ -450,7 +451,7 @@ start/finish station locations).
 * The method appears to achieve lower noise than binning alternatives (for
 reasonable $\varepsilon$).
 
-## Citibike
+## Citibike {data-transition="None"}
 
 ![](diagrams/newtable2_neg.png){width="80%" style="border:none" align="center"} lengthscale in degrees, values
 above, journey duration (in seconds)
