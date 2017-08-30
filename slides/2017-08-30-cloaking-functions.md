@@ -486,6 +486,8 @@ above, journey duration (in seconds)
 
 ![](diagrams/housing-inducing_neg.png){width="80%" style="border:none" align="center"}
 
+## Conclusions {data-background="diagrams/pres_bg.png"}
+
 * **Summary** We have developed an improved method for performing
 differentially private regression.
 
