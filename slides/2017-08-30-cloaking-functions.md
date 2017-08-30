@@ -200,10 +200,7 @@ Privacy](https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf) by
 Dwork and Roth for a rigorous introduction to the framework.
 
 
-## Differential Privacy for Gaussian Processes {#differential-privacy-for-gaussian-processes }
-
-
-## Differential Privacy for GPs {#differential-privacy-for-gps}
+## Differential Privacy for Gaussian Processes  {data-transition="None"}
 
 We have a dataset in which the inputs, $\mathbf{X}$, are **public**. The
 outputs, $\mathbf{y}$, we want to keep **private**.
@@ -214,7 +211,7 @@ the !Kung](diagrams/kung_pseudo_pert_neg.png){width="65%" style="border:none" al
 **Data consists of the heights and weights of 287 women from a census of
 the !Kung**
 
-## Vectors and Functions {#vectors-and-functions }
+## Vectors and Functions {data-transition="None"}
 
 Hall et al. (2013) showed that one can ensure that a version of $f$,
 function $\tilde{f}$ is $(\varepsilon, \delta)$-differentially
@@ -224,8 +221,7 @@ private by adding a scaled sample from a GP prior.
 
 3 pages of maths ahead!
 
-## Applied to Gaussian Processes {#applied-to-gaussian-processes
-data-background="diagrams/pres_bg_bb.png"  }
+## Applied to Gaussian Processes  {data-background="diagrams/pres_bg.png"}
 
 * We applied this method to the GP posterior.
 
@@ -246,7 +242,7 @@ f_{D^\prime}(\mathbf{x_*}) ||_H^2$$
 $\mathbf{y}$.
 
 
-## Applied to Gaussian Processes {#applied-to-gaussian-processes-1  }
+## Applied to Gaussian Processes {data-background="diagrams/pres_bg.png"}
 
 * Using the representer theorem, we can write
     $$|| f_D(\mathbf{x_*}) -
@@ -261,7 +257,7 @@ $\mathbf{y}$.
 \left(\mathbf{y} - \mathbf{y}^\prime \right)$
 
 
-## {data-background="diagrams/pres_bg_bb.png" }
+## {data-background="diagrams/pres_bg.png" }
 
 * L2 Norm
 
@@ -282,8 +278,7 @@ $d$).
 $d\;||\mathbf{K}^{-1}||_\infty$
 
 
-## Applied to Gaussian Processes {#applied-to-gaussian-processes-2
-    }
+## Applied to Gaussian Processes {data-transition="None"}
 
 This 'works' in that it allows DP predictions...but to avoid too much
 noise, the value of $\varepsilon$ is too large (here it is 100)
@@ -293,7 +288,7 @@ noise, the value of $\varepsilon$ is too large (here it is 100)
 EQ kernel, $\ell = 25$ years, $\Delta=100$cm
 
 
-## Inducing Inputs {#inducing-inputs}
+## Inducing Inputs {data-transition="None"}
 
 Using sparse methods (i.e. inducing inputs) can help reduce the
 sensitivity a little. We'll see more on this later.
@@ -301,14 +296,14 @@ sensitivity a little. We'll see more on this later.
 ![](diagrams/kung_inducing_simple_neg.png){width="70%" style="border:none" align="center"}
 
 
-## Cloaking {#cloaking}
+## Cloaking {data-transition="None"}
 
 * So far we've made the whole posterior mean function private...
 
     ...what if we just concentrate on making particular predictions private?
 
 
-## Effect of perturbation {#effect-of-perturbation}
+## Effect of perturbation {data-transition="None"}
 
 * Standard approach: sample the noise is from the GP's
 **prior**.
