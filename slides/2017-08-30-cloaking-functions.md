@@ -2,7 +2,9 @@
 layout: slides
 title:  "Cloaking Functions: Differential Privacy with Gaussian Processes"
 venue: CD-MAKE Workshop at ARES 2017
-author: Neil D. Lawrence
+author: >
+  Neil D. Lawrence
+  with **Michael T. Smith**, Max Zwiessele and Mauricio Alvarez
 abstract: > 
   Processing of personally sensitive information should respect an individual's
   privacy. One promising framework is Differential Privacy (DP). In this talk
@@ -14,7 +16,7 @@ abstract: >
   gain the advantages of prediction from patient data without impinging on
   their privacy.
 
-  Joint work with Michael Smith, Max Zwiessele and Mauricio Alvarez
+  Joint work with **Michael T. Smith**, Max Zwiessele and Mauricio Alvarez
 date: 2017-08-30
 affiliation: Amazon and University of Sheffield
 ---
@@ -23,6 +25,7 @@ affiliation: Amazon and University of Sheffield
 ###  Cloaking Functions: Differential Privacy with Gaussian Processes  
 ### 2017-08-30
 ### Neil D. Lawrence
+### with **Michael T. Smith**, Max Zwiessele and Mauricio Alvarez
 ### Amazon and University of Sheffield
 ```@lawrennd``` [inverseprobability.com](http://inverseprobability.com)
 [Paper on Arxiv](https://arxiv.org/pdf/1606.00720.pdf)
