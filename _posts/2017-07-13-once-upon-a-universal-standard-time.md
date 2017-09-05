@@ -2,7 +2,7 @@
 title: "Once Upon a Universal Standard Time: Embodiment and AI Narratives" 
 abstract: >
   In this talk we consider a fundamental difference between human and
-  machien intelligence, a ratio between their ability to compute and
+  machine intelligence, a ratio between their ability to compute and
   their ability to communicate we refer to as the embodiment
   factor. Having suggested why this makes us fundamentally different
   we speculate on implications for developing *narrative* structure
