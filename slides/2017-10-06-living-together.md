@@ -26,6 +26,15 @@ author: Neil D. Lawrence
 <td>embodiment<br>(compute/communicate)</td><td align="center">10</td><td align="center">~ 10<sup>13</sup></tr>
 </table>
 
+## {.slide: data-transition="none"}
+
+<img src="./diagrams/640px-Marcel_Renault_1903.jpg" align="center" width="70%" style="background:none; border:none; box-shadow:none;">
+
+
+## {.slide: data-transition="none"}
+
+<object type="image/svg+xml" data="./diagrams/Hilbert_InfoGrowth_neg.svg">
+</object>
 
 ## Evolved Relationship {.slide: data-transition="none"}
 
@@ -45,31 +54,49 @@ author: Neil D. Lawrence
 
 ## Conversation {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="./diagrams/anne_bob001.svg">
+<object type="image/svg+xml" data="./diagrams/anne-bob-conversation000.svg">
 </object>
 
 ## Conversation {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="./diagrams/anne_bob002.svg">
+<object type="image/svg+xml" data="./diagrams/anne-bob-conversation001.svg">
 </object>
 
 ## Conversation {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="./diagrams/anne_bob003.svg">
+<object type="image/svg+xml" data="./diagrams/anne-bob-conversation002.svg">
 </object>
 
-## Modelling
+## Conversation {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="./diagrams/anne.svg">
+<object type="image/svg+xml" data="./diagrams/anne-bob-conversation003.svg">
 </object>
 
-## Modelling
+## Conversation {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="./diagrams/bob.svg">
+<object type="image/svg+xml" data="./diagrams/anne-bob-conversation004.svg">
 </object>
 
 
-## Machine Learning and Narratives
+## Conversation {.slide: data-transition="none"}
+
+<object type="image/svg+xml" data="./diagrams/anne-bob-conversation005.svg">
+</object>
+
+
+## Conversation {.slide: data-transition="none"}
+
+<object type="image/svg+xml" data="./diagrams/anne-bob-conversation006.svg">
+</object>
+
+
+## Conversation {.slide: data-transition="none"}
+
+<object type="image/svg+xml" data="./diagrams/anne-bob-conversation007.svg">
+</object>
+
+
+## Human and Narrative
 
 <center><img src="./diagrams/Classic_baby_shoes.jpg" width="60%">
 
