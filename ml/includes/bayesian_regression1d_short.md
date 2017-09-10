@@ -19,9 +19,21 @@
 -   The posterior is found through **Bayes’ Rule**
     $$p(c|{y}) = \frac{p({y}|c)p(c)}{p({y})}$$
 
-### Bayes Update
+### Bayes Update {data-transition="none"}
 
-\only<1>{\inputdiagram{../../../ml/tex/diagrams/demGaussian1}}\only<2>{\inputdiagram{../../../ml/tex/diagrams/demGaussian2}}\only<3>{\inputdiagram{../../../ml/tex/diagrams/demGaussian3}}
+<object class="svgplot" data="../ml/diagrams/dem_gaussian001.svg">
+</object>
+
+### Bayes Update {data-transition="none"}
+
+<object class="svgplot" data="../ml/diagrams/dem_gaussian002.svg">
+</object>
+
+### Bayes Update {data-transition="none"}
+
+<object class="svgplot" data="../ml/diagrams/dem_gaussian003.svg">
+</object>
+
 
 ### Stages to Derivation of the Posterior
 
