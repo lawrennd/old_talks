@@ -32,3 +32,10 @@
   -o-transform: rotate(90deg);
   transform: rotate(90deg);
 }
+
+.svgplot {
+        -webkit-filter: invert(100%);
+        filter: invert(100%);
+	type: "image/svg+xml";
+    }
+
