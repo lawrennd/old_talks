@@ -74,7 +74,7 @@ $$2.5 = 2m + c$$
 
 ### {data-transition="none"}
 
-![](../ml/diagrams/philosophicaless00lapliala.pdf){height="100%"}
+![](../ml/diagrams/philosophicaless00lapliala.png){height="100%"}
 
 ### $y = mx + c + \epsilon$ {data-transition="None"}
 
@@ -99,11 +99,18 @@ $$2.5 = 2m + c + \epsilon_3$$
 
 ### Laplace's Idea
 
-A Probabilistic Process
+<div align="left">The Probabilistic Process</div>
 
--   Set the mean of Gaussian to be a function.
-    $$p\left(y_i|x_i\right)=\frac{1}{\sqrt{2\pi\sigma^2}}\exp \left(-\frac{\left(y_i-f\left(x_i\right)\right)^{2}}{2\sigma^2}\right).$$
+. . .
 
--   This gives us a ‘noisy function’.
+<div align="left">Set the mean of Gaussian to be a function.</div>
 
--   This is known as a stochastic process.
+$$p\left(y_i|x_i\right)=\frac{1}{\sqrt{2\pi\sigma^2}}\exp \left(-\frac{\left(y_i-f\left(x_i\right)\right)^{2}}{2\sigma^2}\right).$$
+
+. . .
+
+<div align="left">This gives us a ‘noisy function’.</div>
+
+. . .
+
+<div align="left">This is known as a stochastic process.</div>
