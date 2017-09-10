@@ -11,7 +11,7 @@ abstract: >
   gain the advantages of prediction from patient data without impinging on
   their privacy.
 
-  Joint work with Michael Smith, Max Zwiessele and Mauricio Alvarez
+  Joint work with **Michael T. Smith**, Max Zwiessele and Mauricio Alvarez
 author:
 - family: Lawrence
   given: Neil D.
@@ -22,6 +22,7 @@ author:
 categories:
 - Lawrence-cloaking17
 day: 30
+paper_pdf: https://arxiv.org/pdf/1606.00720.pdf 
 reveal: 2017-08-30-cloaking-functions.slides.html
 blog:
 errata: []
