@@ -7,10 +7,12 @@
 
 -   And similarly weight: $$p(w) \sim {\mathcal{N}\left(75,36\right)}$$
 
-### Height and Weight Models
+### Height and Weight Models {data-transition="none"}
 
+<object class="svgplot"
+data="../ml/diagrams/height_weight_gaussian.svg">
+</object>
 
-![](../../ml/diagrams/height_gaussian.png)\hfill![](../../ml/diagrams/weight_gaussian.png)\
 Gaussian distributions for height and weight.
 
 \include{../../ml/includes/two_d_gaussian_independent_sample.md}
