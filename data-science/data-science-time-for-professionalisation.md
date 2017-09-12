@@ -9,31 +9,28 @@ abstract: >
   understood or deployed. In this talk we will focus on two particular
   components of data science solutions: the preparation of data snd
   the deployment of machine learning systems. 
-published: 2017-06-27
-venue: The Alan Turing Institute
-layout: slides
 author: Neil D. Lawrence
 affiliation: Amazon Research Cambridge and University of Sheffield
 ---
 
-### Data Science: Time for Professionalisation?
-### 2017-06-27
-### Neil D. Lawrence
-### Amazon Research Cambridge and University of Sheffiel
+#### Data Science: Time for Professionalisation?
+#### 2017-10-13
+#### Neil D. Lawrence
+#### Amazon Research Cambridge and University of Sheffiel
 ```@lawrennd``` [inverseprobability.com](http://inverseprobability.com)
 
 <!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2017-06-27-data-science-time-for-professionalisation.slides.html 2017-06-27-data-science-time-for-professionalisation.md
 -->
 
 
-## Machine Learning
+### Machine Learning
 
 $$ \text{data} + \text{model} \rightarrow \text{prediction}$$
 
 * Royal Society Report:
   [Machine Learning: Power and Promise of Computers that Learn by Example](https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf)
 
-## Machine Learning as the Driver ... {.slide: data-transition="none"}
+### Machine Learning as the Driver ... {.slide: data-transition="none"}
 
 
 ... of two different domains
@@ -43,7 +40,7 @@ $$ \text{data} + \text{model} \rightarrow \text{prediction}$$
 2. *Artificial Intelligence*: emulation of human behaviour.
 
 
-## What does Machine Learning do?
+### What does Machine Learning do?
 
 * ML Automates through Data
 
@@ -55,7 +52,7 @@ $$ \text{data} + \text{model} \rightarrow \text{prediction}$$
 
 * With Data Science: databases, data mining, statistics, visualization
 
-## "Embodiment Factors"
+### "Embodiment Factors"
 
 <table>
 <tr><td></td><td align="center">
@@ -78,22 +75,22 @@ $$ \text{data} + \text{model} \rightarrow \text{prediction}$$
 
 See ["Living Together: Mind and Machine Intelligence"](https://arxiv.org/abs/1705.07996)
 
-## Evolved Relationship {.slide: data-transition="none"}
+### Evolved Relationship {.slide: data-transition="none"}
 
 <object type="image/svg+xml" data="./diagrams/data-science-information-flow_neg001.svg">
 </object>
 
-## Evolved Relationship {.slide: data-transition="none"}
+### Evolved Relationship {.slide: data-transition="none"}
 
 <object type="image/svg+xml" data="./diagrams/data-science-information-flow_neg002.svg">
 </object>
 
-## Evolved Relationship {.slide: data-transition="none"}
+### Evolved Relationship {.slide: data-transition="none"}
 
 <object type="image/svg+xml" data="./diagrams/data-science-information-flow_neg003.svg">
 </object>
 
-## What does Machine Learning do?
+### What does Machine Learning do?
 
 * We scale by codifying processes and automating them.
 
@@ -104,7 +101,7 @@ See ["Living Together: Mind and Machine Intelligence"](https://arxiv.org/abs/170
     * cf Colt 45, Ford Model T, 
 
 
-## Codify Through Mathematical Functions 
+### Codify Through Mathematical Functions 
 
 * How does machine learning work?
 
@@ -115,7 +112,7 @@ $$ \text{odds} = \frac{\text{bought}}{\text{not bought}} $$
 $$ \log \text{odds}  = \beta_0 + \beta_1 \text{age} + \beta_2 \text{lattitude}$$
 
 
-## Codify Through Mathematical Functions {.slide: data-transition="none"}
+### Codify Through Mathematical Functions {.slide: data-transition="none"}
 
 * How does machine learning work?
 
@@ -124,7 +121,7 @@ $$ \log \text{odds}  = \beta_0 + \beta_1 \text{age} + \beta_2 \text{lattitude}$$
 $$ p(\text{bought}) =  f\left(\beta_0 + \beta_1 \text{age} + \beta_2 \text{lattitude}\right)$$
 
 
-## Codify Through Mathematical Functions {.slide: data-transition="none"}
+### Codify Through Mathematical Functions {.slide: data-transition="none"}
 
 * How does machine learning work?
 
@@ -133,7 +130,7 @@ $$ p(\text{bought}) =  f\left(\beta_0 + \beta_1 \text{age} + \beta_2 \text{latti
 $$ p(\text{bought}) =  f\left(\boldsymbol{\beta}^\top \mathbf{x}\right)$$
 
 
-## Deep Learning
+### Deep Learning
 
 * These are interpretable models: vital for disease etc.
 
@@ -141,7 +138,7 @@ $$ p(\text{bought}) =  f\left(\boldsymbol{\beta}^\top \mathbf{x}\right)$$
 
 * Example: face recognition
 
-##
+###
 
 <span class="fragment fade-in"><small>Outline of the DeepFace architecture. A front-end of a single convolution-pooling-convolution filtering on the rectified input, followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected.</small></span>
 
@@ -151,23 +148,23 @@ $$ p(\text{bought}) =  f\left(\boldsymbol{\beta}^\top \mathbf{x}\right)$$
 <p align="right">
 <small>Source: DeepFace</small></p>
 
-## 
+### 
 
 <img src="./diagrams/576px-Early_Pinball.jpg" height="576px" style="background:none; border:none; box-shadow:none;" align="center">
 
-##
+###
 
 <object data="./diagrams/pinball-initial.svg" type="image/svg+xml">
 </object>
 
 
-## {.slide: data-transition="none" }
+### {.slide: data-transition="none" }
 
 <object data="./diagrams/pinball-final.svg" type="image/svg+xml">
 </object>
 
 
-## Data Science
+### Data Science
 
 * Industrial Revolution 4.0?
 
@@ -185,7 +182,7 @@ vs [how Africa can benefit from the data revolution](https://www.theguardian.com
 * Apple vs Nokia: How you handle disruption.
 
 
-## A Time for Professionalisation?
+### A Time for Professionalisation?
 
 * New technologies historically led to new professions:
 
@@ -197,13 +194,13 @@ vs [how Africa can benefit from the data revolution](https://www.theguardian.com
 
     * Watts S. Humphrey (born 1927): Software
 
-## Why?
+### Why?
 
 * Codification of best practice.
 
 * Developing trust
 
-## Where are we?
+### Where are we?
 
 * Perhaps around the 1980s of programming.
 
@@ -213,7 +210,7 @@ vs [how Africa can benefit from the data revolution](https://www.theguardian.com
 
 * Let's *avoid* the over formalisation of software engineering.
 
-## The Software Crisis
+### The Software Crisis
 
 >The major cause of the software crisis is that the machines have
 >become several orders of magnitude more powerful! To put it quite
@@ -224,7 +221,7 @@ vs [how Africa can benefit from the data revolution](https://www.theguardian.com
 >
 > Edsger Dijkstra, The Humble Programmer
 
-## The Data Crisis
+### The Data Crisis
 
 >The major cause of the data crisis is that machines have become more
 >interconnected than ever before. Data access is therefore cheap, but
@@ -238,13 +235,13 @@ vs [how Africa can benefit from the data revolution](https://www.theguardian.com
 >
 > Me
 
-## Rest of this Talk: Two Areas of Focus
+### Rest of this Talk: Two Areas of Focus
 
 * Reusability of Data
 
 * Deployment of Machine Learning Systems
 
-## Quantifying the Value of Data
+### Quantifying the Value of Data
 
 There's a sea of data, but most of it is undrinkable
 
@@ -253,7 +250,7 @@ There's a sea of data, but most of it is undrinkable
 We require data-desalination before it can be consumed!
 
 
-## Data Quotes
+### Data Quotes
 
 * 90% of our time is spent on validation and integration (Leo Anthony Celi)
 * "The Dirty Work We Don't Want to Think About" (Eric Xing)
@@ -261,7 +258,7 @@ We require data-desalination before it can be consumed!
 * Getting money from management for data collection and annotation can
 be a total nightmare.
 
-## Value
+### Value
 
 * How do we measure value in the data economy?
 
@@ -272,7 +269,7 @@ be a total nightmare.
 	* Quantifying the value in the contribution of *each actor*.
 
 
-## Data Readiness Levels
+### Data Readiness Levels
 
    [Data Readiness Levels](http://inverseprobability.com/2017/01/12/data-readiness-levels)
    (see also [arxiv](https://arxiv.org/pdf/1705.02245.pdf))
@@ -286,7 +283,7 @@ be a total nightmare.
 * Grade A - usability
 
 
-## Accessibility: Grade C
+### Accessibility: Grade C
 
 * Hearsay data.
 * Availability, is it actually being recorded?
@@ -295,7 +292,7 @@ be a total nightmare.
 * limitations on access due to topology (e.g. it's distributed across a number of devices)
 * At the end of Grade C data is ready to be loaded into analysis software (R, SPSS, Matlab, Python, Mathematica)
 
-## Validity: Grade B
+### Validity: Grade B
 
 * faithfulness and representation
 * visualisations.
@@ -307,7 +304,7 @@ be a total nightmare.
 * At the end of Grade B, ready to define a candidate question, the
   context, load into OpenML
 
-## Usability: Grade A
+### Usability: Grade A
 
 * The usability of data
 * Grade A is about data in context.
@@ -316,7 +313,7 @@ question or to be subject to a particular analysis.
 * Greg's talk, Enrica's talk, data integration?
 * At the end of Grade A it's ready for RAMP, Kaggle, define a *task* in OpenML.
 
-## Recursive Effects
+### Recursive Effects
 
 * Grade A may also require:
 
@@ -328,12 +325,12 @@ question or to be subject to a particular analysis.
 
 	* revisiting the collection (and running through the appropriate stages again)
 
-## Contribute!
+### Contribute!
 
 * <http://data-readiness.org>
 
 
-## Also ...
+### Also ...
 
 * Encourage greater interaction between application domains and data scientists
 
@@ -343,14 +340,14 @@ question or to be subject to a particular analysis.
 
 * Analogies: For SDEs [describe data science as *debugging*](http://inverseprobability.com/2017/03/14/data-science-as-debugging).
 
-## See Also ...
+### See Also ...
 
 * Data Joel Tests
     * [proposal by Damon Civin](https://medium.com/@damoncivin/the-joel-test-for-data-readiness-4882aae64753) and
     * [proposal by Nick Elprin](https://blog.dominodatalab.com/joel-test-data-science/)
 
 
-## Artificial Intelligence
+### Artificial Intelligence
 
 * Suggested a split between artificial intelligence.
 
@@ -359,7 +356,7 @@ question or to be subject to a particular analysis.
 * Currently this is in the form of "machine learning systems"
 
 
-## Internet of People
+### Internet of People
 
 * Fog computing: barrier between cloud and device blurring.
 
@@ -367,7 +364,7 @@ question or to be subject to a particular analysis.
 
 * Complex feedback between algorithm and implementation
   
-## Deploying ML in Real World: Machine Learning Systems Design
+### Deploying ML in Real World: Machine Learning Systems Design
 
 * Major new challenge for systems designers.
 
@@ -375,7 +372,7 @@ question or to be subject to a particular analysis.
 
 	* AI systems are currently *fragile*
 
-## Fragility of AI Systems
+### Fragility of AI Systems
 
 * They are componentwise built from ML Capabilities.
 
@@ -386,7 +383,7 @@ question or to be subject to a particular analysis.
 
 * Important for verification purposes.
 
-## Rapid Reimplementation
+### Rapid Reimplementation
 
 * Whole systems are being deployed.
 
@@ -394,11 +391,11 @@ question or to be subject to a particular analysis.
 
 * The experience evolved adversarial behaviour.
 
-## Machine Learning Systems Design
+### Machine Learning Systems Design
 
 <img src="./diagrams/SteamEngine_Boulton&Watt_1784_neg.png" width="50%" style="border:none">
 
-## Turnaround And Update
+### Turnaround And Update
 
 * There is a massive need for turn around and update
 
@@ -407,22 +404,22 @@ question or to be subject to a particular analysis.
 
 * Interface between security engineering and machine learning.
 
-## Peppercorns
+### Peppercorns
 
 * A new name for system failures which aren't bugs.
 
 * Difference between finding a fly in your soup vs a peppercorn in
   your soup. 
 
-## {.slide: data-transition="none"}
+### {.slide: data-transition="none"}
 
 <center><video height="600" type="video/mp4"><source src="./diagrams/paolo-peppercorn.mp4" height="80%"></video></center>
 
-## {.slide: data-transition="none"}
+### {.slide: data-transition="none"}
 
 <center><video type="video/mp4"><source src="./diagrams/paolo-save.mp4"></video></center>
 
-## Conclusion
+### Conclusion
 
 * Difference between Artificial Intelligence and Data Science are fundamentally different.
 
@@ -434,7 +431,7 @@ question or to be subject to a particular analysis.
 will be deployed in evolving environments.
 
 
-## Thanks!
+### Thanks!
 
 * twitter: @lawrennd
 * blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
