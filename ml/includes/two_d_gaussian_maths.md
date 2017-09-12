@@ -1,16 +1,16 @@
-<!--frame start-->
-### Independent Gaussians {data=transition="None"}
+### Independent Gaussians {data-transition="None"}
 
 $$
 p(w, h) = p(w)p(h)
 $$
-### Independent Gaussians {data=transition="None"}
+
+### Independent Gaussians {data-transition="None"}
 
 $$
 p(w, h) = \frac{1}{\sqrt{2\pi \dataStd_1^2}\sqrt{2\pi\dataStd_2^2}} \exp\left(-\frac{1}{2}\left(\frac{(w-\meanScalar_1)^2}{\dataStd_1^2} + \frac{(h-\meanScalar_2)^2}{\dataStd_2^2}\right)\right)
 $$
 
-### Independent Gaussians {data=transition="None"}
+### Independent Gaussians {data-transition="None"}
 
 <small>
 $$
@@ -18,7 +18,7 @@ p(w, h) = \frac{1}{\sqrt{2\pi\dataStd_1^22\pi\dataStd_2^2}} \exp\left(-\frac{1}{
 $$
 </small>
 
-### Independent Gaussians {data=transition="None"}
+### Independent Gaussians {data-transition="None"}
 
 $$
 p(\dataVector) = \frac{1}{\det{2\pi \mathbf{D}}^{\frac{1}{2}}} \exp\left(-\frac{1}{2}(\dataVector - \meanVector)^\top\mathbf{D}^{-1}(\dataVector - \meanVector)\right)

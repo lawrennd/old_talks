@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Neil D. Lawrence">
+  <title>Introduction to Gaussian Processes</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="tech-talks.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Introduction to Gaussian Processes</h1>
+  <p class="author">Neil D. Lawrence</p>
+</section>
+
+<section class="slide level3">
+
+<!-- To compile -->
+<!--frame start-->
+</section>
+<section id="section" class="slide level3">
+<h3></h3>
+<figure>
+<img src="../gp/diagrams/9780262182539-f30.jpg" style="height:100.0%" />
+</figure>
+<p>Rasmussen:book06 <!--frame end--></p>
+</section>
+<section id="what-is-machine-learning" class="slide level3">
+<h3>What is Machine Learning?</h3>
+<div class="fragment">
+<p><span class="math display">\[ \text{data} + \text{model} = \text{prediction}\]</span></p>
+</div>
+<div class="fragment">
+<ul>
+<li><span class="math inline">\(\text{data}\)</span> : observations, could be actively or passively acquired (meta-data).</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><span class="math inline">\(\text{model}\)</span> : assumptions, based on previous experience (other data! transfer learning etc), or beliefs about the regularities of the universe. Inductive bias.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><span class="math inline">\(\text{prediction}\)</span> : an action to be taken or a categorization or a quality score.</li>
+</ul>
+</div>
+</section>
+<section id="the-gaussian-density" class="slide level3">
+<h3>The Gaussian density</h3>
+<!--frame start-->
+</section>
+<section id="the-gaussian-density-1" class="slide level3">
+<h3>The Gaussian Density</h3>
+<ul>
+<li><p>Perhaps the most common probability density.</p>
+<p><span class="math display">\[\begin{align}
+p({y}| {\mu}, {\sigma}^2) &amp; = \frac{1}{\sqrt{2\pi{\sigma}^2}}\exp\left(-\frac{({y}- {\mu})^2}{2{\sigma}^2}\right)\\&amp; \buildrel\triangle\over = {\mathcal{N}\left({y}|{\mu},{\sigma}^2\right)}
+\end{align}\]</span></p></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>The Gaussian density.</li>
+</ul>
+</div>
+</section>
+<section id="gaussian-density" class="slide level3">
+<h3>Gaussian Density</h3>
+<object class="svgplot" data="../ml/diagrams/gaussian_of_height.svg">
+</object>
+<p>The Gaussian PDF with <span class="math inline">\({\mu}=1.7\)</span> and variance <span class="math inline">\({\sigma}^2=  0.0225\)</span>. Mean shown as cyan line. It could represent the heights of a population of students.</p>
+</section>
+<section id="gaussian-density" class="slide level3">
+<h3>Gaussian Density</h3>
+<p><large> <span class="math display">\[
+{\mathcal{N}\left({y}|{\mu},{\sigma}^2\right)} = \frac{1}{\sqrt{2\pi{\sigma}^2}} \exp\left(-\frac{({y}-{\mu})^2}{2{\sigma}^2}\right)
+\]</span> <span class="math inline">\({\sigma}^2\)</span> is the variance of the density and <span class="math inline">\({\mu}\)</span> is the mean. </large></p>
+</section>
+<section id="two-important-gaussian-properties" class="slide level3">
+<h3>Two Important Gaussian Properties</h3>
+</section>
+<section id="sum-of-gaussians" class="slide level3">
+<h3>Sum of Gaussians</h3>
+<div class="fragment">
+<div align="left">
+Sum of Gaussian variables is also Gaussian.
+</div>
+<p><span class="math display">\[{y}_i \sim {\mathcal{N}\left({\mu}_i,\sigma_i^2\right)}\]</span></p>
+</div>
+<div class="fragment">
+<div align="left">
+And the sum is distributed as
+</div>
+<p><span class="math display">\[\sum_{i=1}^{{n}} {y}_i \sim {\mathcal{N}\left(\sum_{i=1}^{n}{\mu}_i,\sum_{i=1}^{n}\sigma_i^2\right)}\]</span></p>
+</div>
+<div class="fragment">
+<p><small>(<em>Aside</em>: As sum increases, sum of non-Gaussian, finite variance variables is also Gaussian because of <a href="https://en.wikipedia.org/wiki/Central_limit_theorem">central limit theorem</a>.)</small></p>
+</div>
+</section>
+<section id="scaling-a-gaussian" class="slide level3">
+<h3>Scaling a Gaussian</h3>
+<div class="fragment">
+<div align="left">
+Scaling a Gaussian leads to a Gaussian.
+</div>
+</div>
+<div class="fragment">
+<p><span class="math display">\[{y}\sim {\mathcal{N}\left({\mu},\sigma^2\right)}\]</span></p>
+</div>
+<div class="fragment">
+<div align="left">
+And the scaled density is distributed as
+</div>
+<p><span class="math display">\[ {w}{y}\sim {\mathcal{N}\left({w}{\mu},{w}^2 \sigma^2\right)}\]</span></p>
+<!--frame start-->
+</div>
+</section>
+<section id="regression-examples" class="slide level3">
+<h3>Regression Examples</h3>
+<ul>
+<li><p>Predict a real value, <span class="math inline">\({y}_i\)</span> given some inputs <span class="math inline">\({{\bf {x}}}_i\)</span>.</p></li>
+<li><p>Predict quality of meat given spectral measurements (Tecator data).</p></li>
+<li><p>Radiocarbon dating, the C14 calibration curve: predict age given quantity of C14 isotope.</p></li>
+<li><p>Predict quality of different Go or Backgammon moves given expert rated training data.</p></li>
+</ul>
+<!--frame end-->
+</section>
+<section id="olympic-marathon-data" class="slide level3">
+<h3>Olympic Marathon Data</h3>
+<table>
+<tr>
+<td>
+<ul>
+<li><p>Gold medal times for Olympic Marathon since 1896.</p></li>
+<li><p>Marathons before 1924 didn’t have a standardised distance.</p></li>
+<li><p>Present results using pace per km.</p></li>
+<li>In 1904 Marathon was badly organised leading to very slow times.</li>
+</ul>
+</td>
+<td width="30%">
+<img src="../ml/diagrams/Stephen_Kiprotich.jpg" alt="image" /> <small>Image from Wikimedia Commons <a href="http://bit.ly/16kMKHQ" class="uri">http://bit.ly/16kMKHQ</a></small>
+</td>
+</tr>
+</table>
+</section>
+<section id="olympic-marathon-data-1" class="slide level3">
+<h3>Olympic Marathon Data</h3>
+<object data="../ml/diagrams/olympic_marathon.svg" class="svgplot">
+</object>
+</section>
+<section id="section-1" class="slide level3" data-transition="none">
+<h3></h3>
+<p><large><span class="math display">\[y = mx + c\]</span></large></p>
+</section>
+<section id="section-2" class="slide level3" data-transition="none">
+<h3></h3>
+<object class="svgplot" data="../ml/diagrams/over_determined_system001.svg">
+</object>
+</section>
+<section id="section-3" class="slide level3" data-transition="none">
+<h3></h3>
+<object class="svgplot" data="../ml/diagrams/over_determined_system002.svg">
+</object>
+</section>
+<section id="section-4" class="slide level3" data-transition="none">
+<h3></h3>
+<object class="svgplot" data="../ml/diagrams/over_determined_system003.svg">
+</object>
+</section>
+<section id="section-5" class="slide level3" data-transition="none">
+<h3></h3>
+<object class="svgplot" data="../ml/diagrams/over_determined_system004.svg">
+</object>
+</section>
+<section id="section-6" class="slide level3" data-transition="none">
+<h3></h3>
+<object class="svgplot" data="../ml/diagrams/over_determined_system005.svg">
+</object>
+</section>
+<section id="section-7" class="slide level3" data-transition="none">
+<h3></h3>
+<object class="svgplot" data="../ml/diagrams/over_determined_system006.svg">
+</object>
+</section>
+<section id="section-8" class="slide level3" data-transition="none">
+<h3></h3>
+<object class="svgplot" data="../ml/diagrams/over_determined_system007.svg">
+</object>
+</section>
+<section id="y-mx-c" class="slide level3" data-transition="none">
+<h3><span class="math inline">\(y = mx + c\)</span></h3>
+<div class="fragment">
+<div align="left">
+point 1: <span class="math inline">\(x = 1\)</span>, <span class="math inline">\(y=3\)</span>
+</div>
+<p><span class="math display">\[3 = m + c\]</span></p>
+</div>
+<div class="fragment">
+<div align="left">
+point 2: <span class="math inline">\(x = 3\)</span>, <span class="math inline">\(y=1\)</span>
+</div>
+<p><span class="math display">\[1 = 3m + c\]</span></p>
+</div>
+<div class="fragment">
+<div align="left">
+point 3: <span class="math inline">\(x = 2\)</span>, <span class="math inline">\(y=2.5\)</span>
+</div>
+<p><span class="math display">\[2.5 = 2m + c\]</span></p>
+</div>
+</section>
+<section id="section-9" class="slide level3" data-transition="none">
+<h3></h3>
+<figure>
+<img src="../ml/diagrams/Pierre-Simon_Laplace.png" style="height:100.0%" />
+</figure>
+</section>
+<section id="section-10" class="slide level3" data-transition="none">
+<h3></h3>
+<figure>
+<img src="../ml/diagrams/laplacesDeterminismFrench.png" style="height:100.0%" />
+</figure>
+</section>
+<section id="section-11" class="slide level3" data-transition="none">
+<h3></h3>
+<figure>
+<img src="../ml/diagrams/laplacesDeterminismEnglish.png" style="height:100.0%" />
+</figure>
+</section>
+<section id="section-12" class="slide level3" data-transition="none">
+<h3></h3>
+<figure>
+<img src="../ml/diagrams/philosophicaless00lapliala.png" style="height:100.0%" />
+</figure>
+</section>
+<section id="y-mx-c-epsilon" class="slide level3" data-transition="None">
+<h3><span class="math inline">\(y = mx + c + \epsilon\)</span></h3>
+<div class="fragment">
+<div align="left">
+point 1: <span class="math inline">\(x = 1\)</span>, <span class="math inline">\(y=3\)</span>
+</div>
+<p><span class="math display">\[3 = m + c + \epsilon_1\]</span></p>
+</div>
+<div class="fragment">
+<div align="left">
+point 2: <span class="math inline">\(x = 3\)</span>, <span class="math inline">\(y=1\)</span>
+</div>
+<p><span class="math display">\[1 = 3m + c + \epsilon_2\]</span></p>
+</div>
+<div class="fragment">
+<div align="left">
+point 3: <span class="math inline">\(x = 2\)</span>, <span class="math inline">\(y=2.5\)</span>
+</div>
+<p><span class="math display">\[2.5 = 2m + c + \epsilon_3\]</span></p>
+</div>
+</section>
+<section id="laplaces-idea" class="slide level3">
+<h3>Laplace’s Idea</h3>
+<div align="left">
+The Probabilistic Process
+</div>
+<div class="fragment">
+<div align="left">
+Set the mean of Gaussian to be a function.
+</div>
+<p><span class="math display">\[p\left(y_i|x_i\right)=\frac{1}{\sqrt{2\pi\sigma^2}}\exp \left(-\frac{\left(y_i-f\left(x_i\right)\right)^{2}}{2\sigma^2}\right).\]</span></p>
+</div>
+<div class="fragment">
+<div align="left">
+This gives us a ‘noisy function’.
+</div>
+</div>
+<div class="fragment">
+<div align="left">
+This is known as a stochastic process.
+</div>
+</div>
+</section>
+<section id="underdetermined-system" class="slide level3" data-transition="none">
+<h3>Underdetermined System</h3>
+<ul>
+<li>What about two unknowns and <em>one</em> observation? <span class="math display">\[{y}_1 =  m{x}_1 + c\]</span></li>
+</ul>
+<div class="fragment">
+<p>Can compute <span class="math inline">\(m\)</span> given <span class="math inline">\(c\)</span>. <span class="math display">\[m = \frac{{y}_1 -c}{{x}}\]</span></p>
+</div>
+</section>
+<section id="underdetermined-system-1" class="slide level3" data-transition="none">
+<h3>Underdetermined System</h3>
+<object class="svgplot" data="../ml/diagrams/under_determined_system000.svg">
+</object>
+</section>
+<section id="underdetermined-system-2" class="slide level3" data-transition="none">
+<h3>Underdetermined System</h3>
+<object class="svgplot" data="../ml/diagrams/under_determined_system001.svg">
+</object>
+</section>
+<section id="underdetermined-system-3" class="slide level3" data-transition="none">
+<h3>Underdetermined System</h3>
+<object class="svgplot" data="../ml/diagrams/under_determined_system002.svg">
+</object>
+</section>
+<section id="underdetermined-system-4" class="slide level3" data-transition="none">
+<h3>Underdetermined System</h3>
+<object class="svgplot" data="../ml/diagrams/under_determined_system003.svg">
+</object>
+</section>
+<section id="underdetermined-system-5" class="slide level3" data-transition="none">
+<h3>Underdetermined System</h3>
+<object class="svgplot" data="../ml/diagrams/under_determined_system004.svg">
+</object>
+</section>
+<section id="underdetermined-system-6" class="slide level3" data-transition="none">
+<h3>Underdetermined System</h3>
+<object class="svgplot" data="../ml/diagrams/under_determined_system005.svg">
+</object>
+</section>
+<section id="underdetermined-system-7" class="slide level3" data-transition="none">
+<h3>Underdetermined System</h3>
+<object class="svgplot" data="../ml/diagrams/under_determined_system006.svg">
+</object>
+</section>
+<section id="underdetermined-system-8" class="slide level3" data-transition="none">
+<h3>Underdetermined System</h3>
+<object class="svgplot" data="../ml/diagrams/under_determined_system007.svg">
+</object>
+</section>
+<section id="underdetermined-system-9" class="slide level3" data-transition="none">
+<h3>Underdetermined System</h3>
+<object class="svgplot" data="../ml/diagrams/under_determined_system008.svg">
+</object>
+</section>
+<section id="underdetermined-system-10" class="slide level3" data-transition="none">
+<h3>Underdetermined System</h3>
+<object class="svgplot" data="../ml/diagrams/under_determined_system009.svg">
+</object>
+</section>
+<section id="underdetermined-system-11" class="slide level3" data-transition="none">
+<h3>Underdetermined System</h3>
+<object class="svgplot" data="../ml/diagrams/under_determined_system010.svg">
+</object>
+</section>
+<section id="probability-for-under--and-overdetermined" class="slide level3 allowframebreaks">
+<h3>Probability for Under- and Overdetermined</h3>
+<ul>
+<li>To deal with overdetermined introduced probability distribution for ‘variable’, <span class="math inline">\({\epsilon}_i\)</span>.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>For underdetermined system introduced probability distribution for ‘parameter’, <span class="math inline">\(c\)</span>.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>This is known as a Bayesian treatment.</li>
+</ul>
+</div>
+</section>
+<section id="bayesian-regression" class="slide level3">
+<h3>Bayesian Regression</h3>
+</section>
+<section id="prior-distribution" class="slide level3">
+<h3>Prior Distribution</h3>
+<ul>
+<li><p>Bayesian inference requires a prior on the parameters.</p></li>
+<li><p>The prior represents your belief <em>before</em> you see the data of the likely value of the parameters.</p></li>
+<li><p>For linear regression, consider a Gaussian prior on the intercept: <span class="math display">\[c \sim {\mathcal{N}\left(0,\alpha_1\right)}\]</span></p></li>
+</ul>
+</section>
+<section id="posterior-distribution" class="slide level3">
+<h3>Posterior Distribution</h3>
+<ul>
+<li><p>Posterior distribution is found by combining the prior with the likelihood.</p></li>
+<li><p>Posterior distribution is your belief <em>after</em> you see the data of the likely value of the parameters.</p></li>
+<li><p>The posterior is found through <strong>Bayes’ Rule</strong> <span class="math display">\[p(c|{y}) = \frac{p({y}|c)p(c)}{p({y})}\]</span></p></li>
+</ul>
+</section>
+<section id="bayes-update" class="slide level3" data-transition="none">
+<h3>Bayes Update</h3>
+<object class="svgplot" data="../ml/diagrams/dem_gaussian001.svg">
+</object>
+</section>
+<section id="bayes-update-1" class="slide level3" data-transition="none">
+<h3>Bayes Update</h3>
+<object class="svgplot" data="../ml/diagrams/dem_gaussian002.svg">
+</object>
+</section>
+<section id="bayes-update-2" class="slide level3" data-transition="none">
+<h3>Bayes Update</h3>
+<object class="svgplot" data="../ml/diagrams/dem_gaussian003.svg">
+</object>
+</section>
+<section id="stages-to-derivation-of-the-posterior" class="slide level3">
+<h3>Stages to Derivation of the Posterior</h3>
+<ul>
+<li><p>Multiply likelihood by prior</p>
+<ul>
+<li>they are “exponentiated quadratics”, the answer is always also an exponentiated quadratic because <span class="math inline">\(\exp(a^2)\exp(b^2) = \exp(a^2 + b^2)\)</span>.</li>
+</ul></li>
+<li><p>Complete the square to get the resulting density in the form of a Gaussian.</p></li>
+<li><p>Recognise the mean and (co)variance of the Gaussian. This is the estimate of the posterior.</p></li>
+</ul>
+</section>
+<section id="multivariate-analysis" class="slide level3">
+<h3>Multivariate Analysis</h3>
+<ul>
+<li>For general Bayesian inference need multivariate priors.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>E.g. for multivariate linear regression:</li>
+</ul>
+<p><span class="math display">\[{y}_i = \sum_i {w}_j {x}_{i, j} + {\epsilon}_i\]</span></p>
+<p><span class="math display">\[{y}_i = {\mathbf{{w}}}^\top {{\bf {x}}}_{i, :} + {\epsilon}_i\]</span></p>
+<p>(where we’ve dropped <span class="math inline">\(c\)</span> for convenience), we need a prior over <span class="math inline">\({\mathbf{{w}}}\)</span>.</p>
+</div>
+<div class="fragment">
+<ul>
+<li>This motivates a <em>multivariate</em> Gaussian density.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>We will use the multivariate Gaussian to put a prior <em>directly</em> on the function (a Gaussian process).</li>
+</ul>
+</div>
+</section>
+<section id="multivariate-bayesian-regression" class="slide level3">
+<h3>Multivariate Bayesian Regression</h3>
+</section>
+<section id="multivariate-regression-likelihood" class="slide level3">
+<h3>Multivariate Regression Likelihood</h3>
+<ul>
+<li>Noise corrupted data point <span class="math display">\[{y}_i = {{\mathbf{{w}}}}^\top {{\bf {x}}}_{i, :} + {{\epsilon}}_i\]</span></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Multivariate regression likelihood: <span class="math display">\[p({\mathbf{{y}}}| {{\bf X}}, {{\mathbf{{w}}}}) = \frac{1}{\left(2\pi {{\sigma}}^2\right)^{{{n}}/2}} \exp\left(-\frac{1}{2{{\sigma}}^2}\sum_{i=1}^{{n}}\left({y}_i - {{\mathbf{{w}}}}^\top {{\bf {x}}}_{i, :}\right)^2\right)\]</span></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Now use a multivariate Gaussian prior: <span class="math display">\[p({{\mathbf{{w}}}}) = \frac{1}{\left(2\pi \alpha\right)^\frac{{p}}{2}} \exp \left(-\frac{1}{2\alpha} {{\mathbf{{w}}}}^\top {{\mathbf{{w}}}}\right)\]</span></li>
+</ul>
+</div>
+</section>
+<section id="two-dimensional-gaussian-distribution" class="slide level3">
+<h3>Two Dimensional Gaussian Distribution</h3>
+</section>
+<section id="two-dimensional-gaussian" class="slide level3">
+<h3>Two Dimensional Gaussian</h3>
+<ul>
+<li><p>Consider height, <span class="math inline">\(h/m\)</span> and weight, <span class="math inline">\(w/kg\)</span>.</p></li>
+<li><p>Could sample height from a distribution: <span class="math display">\[p(h) \sim {\mathcal{N}\left(1.7,0.0225\right)}\]</span></p></li>
+<li><p>And similarly weight: <span class="math display">\[p(w) \sim {\mathcal{N}\left(75,36\right)}\]</span></p></li>
+</ul>
+</section>
+<section id="height-and-weight-models" class="slide level3" data-transition="none">
+<h3>Height and Weight Models</h3>
+<object class="svgplot" data="../ml/diagrams/height_weight_gaussian.svg">
+</object>
+<p>Gaussian distributions for height and weight.</p>
+</section>
+<section id="sampling-two-dimensional-variables" class="slide level3" data-transition="None">
+<h3>Sampling Two Dimensional Variables</h3>
+<object class="svgplot" data="../ml/diagrams/independent_height_weight000.svg">
+</object>
+<p>Independent samples of height and weight</p>
+</section>
+<section id="sampling-two-dimensional-variables-1" class="slide level3" data-transition="None">
+<h3>Sampling Two Dimensional Variables</h3>
+<object class="svgplot" data="../ml/diagrams/independent_height_weight001.svg">
+</object>
+<p>Independent samples of height and weight</p>
+</section>
+<section id="sampling-two-dimensional-variables-2" class="slide level3" data-transition="None">
+<h3>Sampling Two Dimensional Variables</h3>
+<object class="svgplot" data="../ml/diagrams/independent_height_weight002.svg">
+</object>
+<p>Independent samples of height and weight</p>
+</section>
+<section id="sampling-two-dimensional-variables-3" class="slide level3" data-transition="None">
+<h3>Sampling Two Dimensional Variables</h3>
+<object class="svgplot" data="../ml/diagrams/independent_height_weight003.svg">
+</object>
+<p>Independent samples of height and weight</p>
+</section>
+<section id="sampling-two-dimensional-variables-4" class="slide level3" data-transition="None">
+<h3>Sampling Two Dimensional Variables</h3>
+<object class="svgplot" data="../ml/diagrams/independent_height_weight004.svg">
+</object>
+<p>Independent samples of height and weight</p>
+</section>
+<section id="sampling-two-dimensional-variables-5" class="slide level3" data-transition="None">
+<h3>Sampling Two Dimensional Variables</h3>
+<object class="svgplot" data="../ml/diagrams/independent_height_weight005.svg">
+</object>
+<p>Independent samples of height and weight</p>
+</section>
+<section id="sampling-two-dimensional-variables-6" class="slide level3" data-transition="None">
+<h3>Sampling Two Dimensional Variables</h3>
+<object class="svgplot" data="../ml/diagrams/independent_height_weight006.svg">
+</object>
+<p>Independent samples of height and weight</p>
+</section>
+<section id="sampling-two-dimensional-variables-7" class="slide level3" data-transition="None">
+<h3>Sampling Two Dimensional Variables</h3>
+<object class="svgplot" data="../ml/diagrams/independent_height_weight007.svg">
+</object>
+<p>Independent samples of height and weight</p>
+<!--frame end-->
+</section>
+<section id="independence-assumption" class="slide level3">
+<h3>Independence Assumption</h3>
+<ul>
+<li><p>This assumes height and weight are independent. <span class="math display">\[p(h, w) = p(h)p(w)\]</span></p></li>
+<li><p>In reality they are dependent (body mass index) <span class="math inline">\(= \frac{w}{h^2}\)</span>.</p></li>
+</ul>
+</section>
+<section id="sampling-two-dimensional-variables-8" class="slide level3" data-transition="None">
+<h3>Sampling Two Dimensional Variables</h3>
+<object class="svgplot" data="../ml/diagrams/correlated_height_weight000.svg">
+</object>
+<p>Correlated samples of height and weight</p>
+</section>
+<section id="sampling-two-dimensional-variables-9" class="slide level3" data-transition="None">
+<h3>Sampling Two Dimensional Variables</h3>
+<object class="svgplot" data="../ml/diagrams/correlated_height_weight001.svg">
+</object>
+<p>Correlated samples of height and weight</p>
+</section>
+<section id="sampling-two-dimensional-variables-10" class="slide level3" data-transition="None">
+<h3>Sampling Two Dimensional Variables</h3>
+<object class="svgplot" data="../ml/diagrams/correlated_height_weight002.svg">
+</object>
+<p>Correlated samples of height and weight</p>
+</section>
+<section id="sampling-two-dimensional-variables-11" class="slide level3" data-transition="None">
+<h3>Sampling Two Dimensional Variables</h3>
+<object class="svgplot" data="../ml/diagrams/correlated_height_weight003.svg">
+</object>
+<p>Correlated samples of height and weight</p>
+</section>
+<section id="sampling-two-dimensional-variables-12" class="slide level3" data-transition="None">
+<h3>Sampling Two Dimensional Variables</h3>
+<object class="svgplot" data="../ml/diagrams/correlated_height_weight004.svg">
+</object>
+<p>Correlated samples of height and weight</p>
+</section>
+<section id="sampling-two-dimensional-variables-13" class="slide level3" data-transition="None">
+<h3>Sampling Two Dimensional Variables</h3>
+<object class="svgplot" data="../ml/diagrams/correlated_height_weight005.svg">
+</object>
+<p>Correlated samples of height and weight</p>
+</section>
+<section id="sampling-two-dimensional-variables-14" class="slide level3" data-transition="None">
+<h3>Sampling Two Dimensional Variables</h3>
+<object class="svgplot" data="../ml/diagrams/correlated_height_weight006.svg">
+</object>
+<p>Correlated samples of height and weight</p>
+</section>
+<section id="sampling-two-dimensional-variables-15" class="slide level3" data-transition="None">
+<h3>Sampling Two Dimensional Variables</h3>
+<object class="svgplot" data="../ml/diagrams/correlated_height_weight007.svg">
+</object>
+<p>Correlated samples of height and weight</p>
+<!--frame end-->
+</section>
+<section id="independent-gaussians" class="slide level3" data-transition="None">
+<h3>Independent Gaussians</h3>
+<p><span class="math display">\[
+p(w, h) = p(w)p(h)
+\]</span></p>
+</section>
+<section id="independent-gaussians-1" class="slide level3" data-transition="None">
+<h3>Independent Gaussians</h3>
+<p><span class="math display">\[
+p(w, h) = \frac{1}{\sqrt{2\pi {\sigma}_1^2}\sqrt{2\pi{\sigma}_2^2}} \exp\left(-\frac{1}{2}\left(\frac{(w-{\mu}_1)^2}{{\sigma}_1^2} + \frac{(h-{\mu}_2)^2}{{\sigma}_2^2}\right)\right)
+\]</span></p>
+</section>
+<section id="independent-gaussians-2" class="slide level3" data-transition="None">
+<h3>Independent Gaussians</h3>
+<p><small> <span class="math display">\[
+p(w, h) = \frac{1}{\sqrt{2\pi{\sigma}_1^22\pi{\sigma}_2^2}} \exp\left(-\frac{1}{2}\left(\begin{bmatrix}w \\ h\end{bmatrix} - \begin{bmatrix}{\mu}_1 \\ {\mu}_2\end{bmatrix}\right)^\top\begin{bmatrix}{\sigma}_1^2&amp; 0\\0&amp;{\sigma}_2^2\end{bmatrix}^{-1}\left(\begin{bmatrix}w \\ h\end{bmatrix} - \begin{bmatrix}{\mu}_1 \\ {\mu}_2\end{bmatrix}\right)\right)
+\]</span> </small></p>
+</section>
+<section id="independent-gaussians-3" class="slide level3" data-transition="None">
+<h3>Independent Gaussians</h3>
+<p><span class="math display">\[
+p({\mathbf{{y}}}) = \frac{1}{{\left|2\pi \mathbf{D}\right|}^{\frac{1}{2}}} \exp\left(-\frac{1}{2}({\mathbf{{y}}}- {\boldsymbol{{\mu}}})^\top\mathbf{D}^{-1}({\mathbf{{y}}}- {\boldsymbol{{\mu}}})\right)
+\]</span></p>
+</section>
+<section id="correlated-gaussian" class="slide level3" data-transition="None">
+<h3>Correlated Gaussian</h3>
+<p>Form correlated from original by rotating the data space using matrix <span class="math inline">\({\mathbf{R}}\)</span>.</p>
+<p><span class="math display">\[
+p({\mathbf{{y}}}) = \frac{1}{{\left|2\pi\mathbf{D}\right|}^{\frac{1}{2}}} \exp\left(-\frac{1}{2}({\mathbf{{y}}}- {\boldsymbol{{\mu}}})^\top\mathbf{D}^{-1}({\mathbf{{y}}}- {\boldsymbol{{\mu}}})\right)
+\]</span></p>
+</section>
+<section id="correlated-gaussian-1" class="slide level3" data-transition="None">
+<h3>Correlated Gaussian</h3>
+<p>Form correlated from original by rotating the data space using matrix <span class="math inline">\({\mathbf{R}}\)</span>.</p>
+<p><span class="math display">\[
+p({\mathbf{{y}}}) = \frac{1}{{\left|2\pi\mathbf{D}\right|}^{\frac{1}{2}}} \exp\left(-\frac{1}{2}({\mathbf{R}}^\top{\mathbf{{y}}}- {\mathbf{R}}^\top{\boldsymbol{{\mu}}})^\top\mathbf{D}^{-1}({\mathbf{R}}^\top{\mathbf{{y}}}- {\mathbf{R}}^\top{\boldsymbol{{\mu}}})\right)
+\]</span></p>
+</section>
+<section id="correlated-gaussian-2" class="slide level3" data-transition="None">
+<h3>Correlated Gaussian</h3>
+<p>Form correlated from original by rotating the data space using matrix <span class="math inline">\({\mathbf{R}}\)</span>.</p>
+<p><span class="math display">\[
+p({\mathbf{{y}}}) = \frac{1}{{\left|2\pi\mathbf{D}\right|}^{\frac{1}{2}}} \exp\left(-\frac{1}{2}({\mathbf{{y}}}- {\boldsymbol{{\mu}}})^\top{\mathbf{R}}\mathbf{D}^{-1}{\mathbf{R}}^\top({\mathbf{{y}}}- {\boldsymbol{{\mu}}})\right)
+\]</span> this gives a covariance matrix: <span class="math display">\[
+{\mathbf{C}}^{-1} = {\mathbf{R}}\mathbf{D}^{-1} {\mathbf{R}}^\top
+\]</span></p>
+</section>
+<section id="correlated-gaussian-3" class="slide level3" data-transition="None">
+<h3>Correlated Gaussian</h3>
+<p>Form correlated from original by rotating the data space using matrix <span class="math inline">\({\mathbf{R}}\)</span>.</p>
+<p><span class="math display">\[
+p({\mathbf{{y}}}) = \frac{1}{{\left|2\pi{\mathbf{C}}\right|}^{\frac{1}{2}}} \exp\left(-\frac{1}{2}({\mathbf{{y}}}- {\boldsymbol{{\mu}}})^\top{\mathbf{C}}^{-1} ({\mathbf{{y}}}- {\boldsymbol{{\mu}}})\right)
+\]</span> this gives a covariance matrix: <span class="math display">\[
+{\mathbf{C}}= {\mathbf{R}}\mathbf{D} {\mathbf{R}}^\top
+\]</span></p>
+</section>
+<section id="multivariate-gaussian-properties" class="slide level3">
+<h3>Multivariate Gaussian Properties</h3>
+<!--frame start-->
+</section>
+<section id="recall-univariate-gaussian-properties" class="slide level3">
+<h3>Recall Univariate Gaussian Properties</h3>
+<div class="fragment">
+<ol type="1">
+<li>Sum of Gaussian variables is also Gaussian.</li>
+</ol>
+<p><span class="math display">\[{y}_i \sim {\mathcal{N}\left({\mu}_i,\sigma_i^2\right)}\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[\sum_{i=1}^{{n}} {y}_i \sim {\mathcal{N}\left(\sum_{i=1}^{n}{\mu}_i,\sum_{i=1}^{n}\sigma_i^2\right)}\]</span></p>
+</div>
+<div class="fragment">
+<ol start="2" type="1">
+<li>Scaling a Gaussian leads to a Gaussian.</li>
+</ol>
+</div>
+<div class="fragment">
+<p><span class="math display">\[{y}\sim {\mathcal{N}\left({\mu},\sigma^2\right)}\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[{w}{y}\sim {\mathcal{N}\left({w}{\mu},{w}^2 \sigma^2\right)}\]</span></p>
+</div>
+</section>
+<section id="multivariate-consequence" class="slide level3">
+<h3>Multivariate Consequence</h3>
+<div align="left">
+If
+</div>
+<p><span class="math display">\[{{\bf {x}}}\sim {\mathcal{N}\left({\boldsymbol{{\mu}}},\boldsymbol{\Sigma}\right)}\]</span></p>
+<div class="fragment">
+<div align="left">
+And
+</div>
+<p><span class="math display">\[{\mathbf{{y}}}= {\mathbf{W}}{{\bf {x}}}\]</span></p>
+</div>
+<div class="fragment">
+<div align="left">
+Then
+</div>
+<p><span class="math display">\[{\mathbf{{y}}}\sim {\mathcal{N}\left({\mathbf{W}}{\boldsymbol{{\mu}}},{\mathbf{W}}\boldsymbol{\Sigma}{\mathbf{W}}^\top\right)}\]</span></p>
+</div>
+</section>
+<section id="distributions-over-functions" class="slide level3">
+<h3>Distributions over Functions</h3>
+</section>
+<section id="sampling-a-function" class="slide level3">
+<h3>Sampling a Function</h3>
+<p><strong>Multi-variate Gaussians</strong></p>
+<ul>
+<li><p>We will consider a Gaussian with a particular structure of covariance matrix.</p></li>
+<li><p>Generate a single sample from this 25 dimensional Gaussian distribution, <span class="math inline">\({\mathbf{{f}}}=\left[{f}_{1},{f}_{2}\dots {f}_{25}\right]\)</span>.</p></li>
+<li><p>We will plot these points against their index.</p></li>
+</ul>
+</section>
+<section id="gaussian-distribution-sample" class="slide level3" data-transition="none">
+<h3>Gaussian Distribution Sample</h3>
+<object data="../gp/diagrams/two_point_sample000.svg" class="svgplot">
+</object>
+<p>A 25 dimensional correlated random variable (values ploted against index)</p>
+</section>
+<section id="gaussian-distribution-sample-1" class="slide level3" data-transition="none">
+<h3>Gaussian Distribution Sample</h3>
+<object data="../gp/diagrams/two_point_sample001.svg" class="svgplot">
+</object>
+<p>A 25 dimensional correlated random variable (values ploted against index)</p>
+</section>
+<section id="gaussian-distribution-sample-2" class="slide level3" data-transition="none">
+<h3>Gaussian Distribution Sample</h3>
+<object data="../gp/diagrams/two_point_sample002.svg" class="svgplot">
+</object>
+<p>A 25 dimensional correlated random variable (values ploted against index)</p>
+</section>
+<section id="gaussian-distribution-sample-3" class="slide level3" data-transition="none">
+<h3>Gaussian Distribution Sample</h3>
+<object data="../gp/diagrams/two_point_sample003.svg" class="svgplot">
+</object>
+<p>A 25 dimensional correlated random variable (values ploted against index)</p>
+</section>
+<section id="gaussian-distribution-sample-4" class="slide level3" data-transition="none">
+<h3>Gaussian Distribution Sample</h3>
+<object data="../gp/diagrams/two_point_sample004.svg" class="svgplot">
+</object>
+<p>A 25 dimensional correlated random variable (values ploted against index)</p>
+</section>
+<section id="gaussian-distribution-sample-5" class="slide level3" data-transition="none">
+<h3>Gaussian Distribution Sample</h3>
+<object data="../gp/diagrams/two_point_sample005.svg" class="svgplot">
+</object>
+<p>A 25 dimensional correlated random variable (values ploted against index)</p>
+</section>
+<section id="gaussian-distribution-sample-6" class="slide level3" data-transition="none">
+<h3>Gaussian Distribution Sample</h3>
+<object data="../gp/diagrams/two_point_sample006.svg" class="svgplot">
+</object>
+<p>A 25 dimensional correlated random variable (values ploted against index)</p>
+</section>
+<section id="gaussian-distribution-sample-7" class="slide level3" data-transition="none">
+<h3>Gaussian Distribution Sample</h3>
+<object data="../gp/diagrams/two_point_sample007.svg" class="svgplot">
+</object>
+<p>A 25 dimensional correlated random variable (values ploted against index)</p>
+</section>
+<section id="gaussian-distribution-sample-8" class="slide level3" data-transition="none">
+<h3>Gaussian Distribution Sample</h3>
+<object data="../gp/diagrams/two_point_sample008.svg" class="svgplot">
+</object>
+<p>A 25 dimensional correlated random variable (values ploted against index)</p>
+</section>
+<section id="prediction-of-f_2-from-f_1" class="slide level3" data-transition="none">
+<h3>Prediction of <span class="math inline">\({f}_{2}\)</span> from <span class="math inline">\({f}_{1}\)</span></h3>
+<object data="../gp/diagrams/two_point_sample009.svg" class="svgplot">
+</object>
+<p>A 25 dimensional correlated random variable (values ploted against index)</p>
+</section>
+<section id="prediction-of-f_2-from-f_1-1" class="slide level3" data-transition="none">
+<h3>Prediction of <span class="math inline">\({f}_{2}\)</span> from <span class="math inline">\({f}_{1}\)</span></h3>
+<object data="../gp/diagrams/two_point_sample010.svg" class="svgplot">
+</object>
+<p>A 25 dimensional correlated random variable (values ploted against index)</p>
+</section>
+<section id="prediction-of-f_2-from-f_1-2" class="slide level3" data-transition="none">
+<h3>Prediction of <span class="math inline">\({f}_{2}\)</span> from <span class="math inline">\({f}_{1}\)</span></h3>
+<object data="../gp/diagrams/two_point_sample011.svg" class="svgplot">
+</object>
+<p>A 25 dimensional correlated random variable (values ploted against index)</p>
+</section>
+<section id="prediction-of-f_2-from-f_1-3" class="slide level3" data-transition="none">
+<h3>Prediction of <span class="math inline">\({f}_{2}\)</span> from <span class="math inline">\({f}_{1}\)</span></h3>
+<object data="../gp/diagrams/two_point_sample012.svg" class="svgplot">
+</object>
+<p>A 25 dimensional correlated random variable (values ploted against index)</p>
+</section>
+<section id="prediction-of-f_5-from-f_1" class="slide level3" data-transition="none">
+<h3>Prediction of <span class="math inline">\({f}_{5}\)</span> from <span class="math inline">\({f}_{1}\)</span></h3>
+<object data="../gp/diagrams/two_point_sample013.svg" class="svgplot">
+</object>
+<p>A 25 dimensional correlated random variable (values ploted against index)</p>
+</section>
+<section id="prediction-of-f_5-from-f_1-1" class="slide level3" data-transition="none">
+<h3>Prediction of <span class="math inline">\({f}_{5}\)</span> from <span class="math inline">\({f}_{1}\)</span></h3>
+<object data="../gp/diagrams/two_point_sample014.svg" class="svgplot">
+</object>
+<p>A 25 dimensional correlated random variable (values ploted against index)</p>
+</section>
+<section id="prediction-of-f_5-from-f_1-2" class="slide level3" data-transition="none">
+<h3>Prediction of <span class="math inline">\({f}_{5}\)</span> from <span class="math inline">\({f}_{1}\)</span></h3>
+<object data="../gp/diagrams/two_point_sample015.svg" class="svgplot">
+</object>
+<p>A 25 dimensional correlated random variable (values ploted against index)</p>
+</section>
+<section id="prediction-of-f_5-from-f_1-3" class="slide level3" data-transition="none">
+<h3>Prediction of <span class="math inline">\({f}_{5}\)</span> from <span class="math inline">\({f}_{1}\)</span></h3>
+<object data="../gp/diagrams/two_point_sample016.svg" class="svgplot">
+</object>
+<p>A 25 dimensional correlated random variable (values ploted against index)</p>
+</section>
+<section id="references" class="slide level3 allowframebreaks">
+<h3>References</h3>
+
+
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+              { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

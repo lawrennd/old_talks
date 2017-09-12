@@ -130,33 +130,24 @@ $\weightVector$.
 
 ### Two Point Marginals
 
-\include{../gp/includes/gptwopointpred.md}
-
-
-\include{../kern/includes/eq_covariance.md}
+\ignore{../gp/includes/gptwopointpred.md}
 
 \include{../kern/includes/rbfcovariance.md}
 \include{../kern/includes/computing_rbf_covariance.md}
 
-### Covariance from Basis Functions
+\include{../kern/includes/eq_covariance.md}
+
 
 \include{../gp/includes/basis_functions.md}
-
-###
-
-\include{../kern/includes/poly_covariance.md}
-
-
-###  An Alternative Analysis 
-
 \include{../gp/includes/gp_covariance_construction.md}
 \include{../kern/includes/rbfbasiscovariance.md}
+
+
 
 ### An Infinite Basis
 
 \include{../gp/includes/infinite_basis.md}
 \include{../kern/includes/rbfcovariance.md}
-\include{../kern/includes/rbfbasiscovariance.md}
 
 ### References {.allowframebreaks}
 
