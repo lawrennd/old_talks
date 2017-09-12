@@ -5,7 +5,7 @@ description: talks given by Neil Lawrence
 baseurl: "/talks" # the subpath of your site, e.g. /blog/
 # Exclude directories for preprocessing.
 exclude:
-  - slides/reveal.js/plugin/markdown/example
+  - slides/reveal.js
     gpss
     gp
     kern
