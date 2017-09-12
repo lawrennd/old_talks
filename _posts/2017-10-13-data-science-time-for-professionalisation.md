@@ -9,9 +9,9 @@ abstract: >
   understood or deployed. In this talk we will focus on two particular
   components of data science solutions: the preparation of data and
   the deployment of machine learning systems.
-published: 2017-06-27
-venue: The Alan Turing Institute
-reveal: 2017-06-27-data-science-time-for-professionalisation.slides.html
+published: 2017-10-13
+venue: The Open Data Science Conference
+reveal: 2017-10-13-data-science-time-for-professionalisation.slides.html
 blog: 2017-01-12-data-readiness-levels.md
 layout: talk
 author:
@@ -21,5 +21,5 @@ author:
   institute: Amazon Research Cambridge and University of Sheffield
   twitter: lawrennd
   url: http://inverseprobability.com
-published: 2017-06-27
+published: 2017-10-13
 ---
