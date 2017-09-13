@@ -31,13 +31,13 @@ affiliation: Amazon and University of Sheffield
 <!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2017-08-30-cloaking-functions.slides.html 2017-08-30-cloaking-functions.md
 -->
 
-\include{../privacy/includes/embodiment-factors.md}
-\include{../data-science/includes/evolved-relationship.md}
-\include{../privacy/includes/conversation-technical.md}
-\include{../gp/includes/gp-book.md}
-\include{../gp/includes/gp-intro-very-short.md}
-\include{../privacy/includes/differential-privacy-for-gps.md}
-\include{../privacy/includes/differential-privacy-with-cloaking.md}
+\include{../_ai/includes/embodiment-factors.md}
+\include{../_data-science/includes/evolved-relationship.md}
+\include{../_ai/includes/conversation-technical.md}
+\include{../_gp/includes/gp-book.md}
+\include{../_gp/includes/gp-intro-very-short.md}
+\include{../_privacy/includes/differential-privacy-for-gps.md}
+\include{../_privacy/includes/differential-privacy-with-cloaking.md}
 
 
 ###  Conclusions {data-background="../slides/diagrams/pres_bg.png"}
