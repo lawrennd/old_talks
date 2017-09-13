@@ -14,7 +14,7 @@
 ### Gaussian Density
 
 <object class="svgplot"
-data="../ml/diagrams/gaussian_of_height.svg">
+data="../_ml/diagrams/gaussian_of_height.svg">
 </object>
 
 The Gaussian PDF with ${\mu}=1.7$ and variance ${\sigma}^2=

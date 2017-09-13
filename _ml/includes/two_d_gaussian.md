@@ -10,12 +10,12 @@
 ### Height and Weight Models {data-transition="none"}
 
 <object class="svgplot"
-data="../ml/diagrams/height_weight_gaussian.svg">
+data="../_ml/diagrams/height_weight_gaussian.svg">
 </object>
 
 Gaussian distributions for height and weight.
 
-\include{../../ml/includes/two_d_gaussian_independent_sample.md}
+\include{../../_ml/includes/two_d_gaussian_independent_sample.md}
 
 ### Independence Assumption
 
@@ -24,6 +24,6 @@ Gaussian distributions for height and weight.
 
 -   In reality they are dependent (body mass index) $= \frac{w}{h^2}$.
 
-\include{../../ml/includes/two_d_gaussian_correlated_sample.md}
+\include{../../_ml/includes/two_d_gaussian_correlated_sample.md}
 
-\include{../../ml/includes/two_d_gaussian_maths.md}
+\include{../../_ml/includes/two_d_gaussian_maths.md}
