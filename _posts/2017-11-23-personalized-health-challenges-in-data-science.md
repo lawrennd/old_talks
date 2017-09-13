@@ -17,16 +17,15 @@ abstract: The promise of personalized health is driven by the wide availability 
   or personalized, medicine within the reach of an affordable health care service.
 categories:
 - Lawrence-ml4hc16b
-day: 09
+day: 23
 errata: []
 extras:
-- label: workshop website
-  link: http://www.nipsml4hc.ws/
-key: Lawrence-ml4hc16
+- label: lecture website
+  link: https://www.cwi.nl/events/2017/cwis-lectures-2017-machine-learning/cwi-lectures-machine-learning
+key: Lawrence-cwi17
 layout: talk
 month: 12
-published: 2016-10-27
-reveal: 2016-12-09-challenges-in-personalized-health.slides.html
-section: pre
-year: '2016'
+published: 2017-11-23
+reveal: 2017-11-23-challenges-in-personalized-health.slides.html
+year: '2017'
 ---
