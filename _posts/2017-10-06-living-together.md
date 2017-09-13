@@ -10,8 +10,8 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 categories:
-- Lawrence-cfi17
-key: Lawrence-cfi17
+- Lawrence-tedx17
+key: Lawrence-tedx17
 layout: talk
 month: 10
 published: 2017-10-06
