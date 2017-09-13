@@ -5,37 +5,37 @@
 
 ### {data-transition="none"}
 
-<object class="svgplot" data="../ml/diagrams/over_determined_system001.svg">
+<object class="svgplot" data="../_ml/diagrams/over_determined_system001.svg">
 </object>
 
 ### {data-transition="none"}
 
-<object class="svgplot" data="../ml/diagrams/over_determined_system002.svg">
+<object class="svgplot" data="../_ml/diagrams/over_determined_system002.svg">
 </object>
 
 ### {data-transition="none"}
 
-<object class="svgplot" data="../ml/diagrams/over_determined_system003.svg">
+<object class="svgplot" data="../_ml/diagrams/over_determined_system003.svg">
 </object>
 
 ### {data-transition="none"}
 
-<object class="svgplot" data="../ml/diagrams/over_determined_system004.svg">
+<object class="svgplot" data="../_ml/diagrams/over_determined_system004.svg">
 </object>
 
 ### {data-transition="none"}
 
-<object class="svgplot" data="../ml/diagrams/over_determined_system005.svg">
+<object class="svgplot" data="../_ml/diagrams/over_determined_system005.svg">
 </object>
 
 ### {data-transition="none"}
 
-<object class="svgplot" data="../ml/diagrams/over_determined_system006.svg">
+<object class="svgplot" data="../_ml/diagrams/over_determined_system006.svg">
 </object>
 
 ### {data-transition="none"}
 
-<object class="svgplot" data="../ml/diagrams/over_determined_system007.svg">
+<object class="svgplot" data="../_ml/diagrams/over_determined_system007.svg">
 </object>
 
 
@@ -62,19 +62,19 @@ $$2.5 = 2m + c$$
 
 ### {data-transition="none"}
 
-![](../ml/diagrams/Pierre-Simon_Laplace.png){height="100%"}
+![](../_ml/diagrams/Pierre-Simon_Laplace.png){height="100%"}
 
 ### {data-transition="none"}
 
-![](../ml/diagrams/laplacesDeterminismFrench.png){height="100%"}
+![](../_ml/diagrams/laplacesDeterminismFrench.png){height="100%"}
 
 ### {data-transition="none"}
 
-![](../ml/diagrams/laplacesDeterminismEnglish.png){height="100%"}
+![](../_ml/diagrams/laplacesDeterminismEnglish.png){height="100%"}
 
 ### {data-transition="none"}
 
-![](../ml/diagrams/philosophicaless00lapliala.png){height="100%"}
+![](../_ml/diagrams/philosophicaless00lapliala.png){height="100%"}
 
 ### $y = mx + c + \epsilon$ {data-transition="None"}
 

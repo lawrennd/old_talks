@@ -21,17 +21,17 @@
 
 ### Bayes Update {data-transition="none"}
 
-<object class="svgplot" data="../ml/diagrams/dem_gaussian001.svg">
+<object class="svgplot" data="../_ml/diagrams/dem_gaussian001.svg">
 </object>
 
 ### Bayes Update {data-transition="none"}
 
-<object class="svgplot" data="../ml/diagrams/dem_gaussian002.svg">
+<object class="svgplot" data="../_ml/diagrams/dem_gaussian002.svg">
 </object>
 
 ### Bayes Update {data-transition="none"}
 
-<object class="svgplot" data="../ml/diagrams/dem_gaussian003.svg">
+<object class="svgplot" data="../_ml/diagrams/dem_gaussian003.svg">
 </object>
 
 
