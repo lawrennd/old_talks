@@ -1,22 +1,22 @@
 
 ###  {data-transition="none"}
 
-<object type="image/svg+xml" data="../gp/diagrams/gp_prior_samples_few_neg.svg">
+<object type="image/svg+xml" data="../_gp/diagrams/gp_prior_samples_few_neg.svg">
 </object>
 
 ###  {data-transition="none"}
 
-<object type="image/svg+xml" data="../gp/diagrams/gp_prior_samples_neg.svg">
+<object type="image/svg+xml" data="../_gp/diagrams/gp_prior_samples_neg.svg">
 </object>
 
 ###  {data-transition="none"}
 
-<object type="image/svg+xml" data="../gp/diagrams/gp_prior_samples_data_neg.svg">
+<object type="image/svg+xml" data="../_gp/diagrams/gp_prior_samples_data_neg.svg">
 </object>
 
 ###  {data-transition="none"}
 
-<object type="image/svg+xml" data="../gp/diagrams/gp_rejection_samples_neg.svg">
+<object type="image/svg+xml" data="../_gp/diagrams/gp_rejection_samples_neg.svg">
 </object>
 
 ###  Key Object {data-transition="none"}
@@ -51,15 +51,15 @@
 
 ###  {data-transition="none"}
 
-<object type="image/svg+xml" data="../gp/diagrams/gp_prior_samples_data_neg.svg">
+<object type="image/svg+xml" data="../_gp/diagrams/gp_prior_samples_data_neg.svg">
 </object>
 
 ###  {data-transition="none"}
 
-<object type="image/svg+xml" data="../gp/diagrams/gp_rejection_samples_neg.svg">
+<object type="image/svg+xml" data="../_gp/diagrams/gp_rejection_samples_neg.svg">
 </object>
 
 ###  {data-transition="none"}
 
-<object type="image/svg+xml" data="../gp/diagrams/gp_prediction_neg.svg">
+<object type="image/svg+xml" data="../_gp/diagrams/gp_prediction_neg.svg">
 </object>

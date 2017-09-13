@@ -5,10 +5,10 @@ $$k(\mathbf{x}, \mathbf{x}^\prime) = \alpha(w \mathbf{x}^\top
 
 <table><tr><td>
 <object class="svgplot"
-data="../kern/diagrams/poly_covariance.svg"></object>
+data="../_kern/diagrams/poly_covariance.svg"></object>
 </td>
 <td>
-![](../kern/diagrams/poly_covariance.gif)
+![](../_kern/diagrams/poly_covariance.gif)
 </td>
 </tr>
 </table>
