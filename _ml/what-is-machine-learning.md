@@ -52,4 +52,5 @@ $$
 \include{../_ml/includes/supervised-learning.md}
 \include{../_ml/includes/unsupervised-learning.md}
 \include{../_ml/includes/reinforcement-learning.md}
+\include{../_ml/includes/deployment.md}
 
