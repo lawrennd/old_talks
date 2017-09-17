@@ -18,7 +18,7 @@ blibliography:
 
 . . .
 
-$$ \text{data} + \text{model} = \text{prediction}$$
+$$ \text{data} + \text{model} \rightarrow \text{prediction}$$
 
 . . .
 

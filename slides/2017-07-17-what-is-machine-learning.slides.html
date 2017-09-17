@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="reveal.js/css/reveal.css">
   <style type="text/css">code{white-space: pre;}</style>
   <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
-  <link rel="stylesheet" href="tech-talks.css"/>
+  <link rel="stylesheet" href="talks.css"/>
   <!-- Printing and PDF exports -->
   <script>
     var link = document.createElement( 'link' );
@@ -24,7 +24,7 @@
   <!--[if lt IE 9]>
   <script src="reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
-  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 </head>
 <body>
   <div class="reveal">
@@ -36,25 +36,16 @@
   <p class="date">2017-07-17</p>
 </section>
 
-<section class="slide level1">
-
-<h3 id="data-science-africa-summer-school">Data Science Africa Summer School</h3>
-<h3 id="section">2017-07-17</h3>
-<h3 id="neil-d.-lawrence">Neil D. Lawrence</h3>
-<h3 id="amazon-and-university-of-sheffield">Amazon and University of Sheffield</h3>
-<p><code>@lawrennd</code> <a href="http://inverseprobability.com">inverseprobability.com</a> <!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2017-07-17-what-is-machine-learning.slides.html 2017-07-17-what-is-machine-learning.md
---></p>
-</section>
-<section id="introduction" class="slide level1">
-<h1>Introduction</h1>
+<section id="introduction" class="slide level3">
+<h3>Introduction</h3>
 <ul>
 <li><p>General introduction to machine learning.</p></li>
 <li><p>Highlight technical challenges and current solutions.</p></li>
 <li><p>What is machine learning? And why is it important?</p></li>
 </ul>
 </section>
-<section id="rise-of-machine-learning" class="slide level1">
-<h1>Rise of Machine Learning</h1>
+<section id="rise-of-machine-learning" class="slide level3">
+<h3>Rise of Machine Learning</h3>
 <ul>
 <li><p>Driven by data and computation</p></li>
 <li><p>Fundamentally dependent on models</p></li>
@@ -63,15 +54,14 @@
 \text{data} + \text{model} + \text{compute} \rightarrow \text{prediction}
 \]</span></p>
 </section>
-<section id="data-revolution" class="slide level1">
-<h1>Data Revolution</h1>
-<figure>
-<img src="./diagrams/data-science-information-flow_neg.svg" />
-</figure>
+<section id="data-revolution" class="slide level3">
+<h3>Data Revolution</h3>
+<object class="svgplot" data="../_data-science/diagrams/data-science-information-flow.svg">
+</object>
 <p><em>Large amounts of data and high interconnection bandwidth mean that we receive much of our information about the world around us through computers.</em></p>
 </section>
-<section id="efficiency" class="slide level1">
-<h1>Efficiency</h1>
+<section id="efficiency" class="slide level3">
+<h3>Efficiency</h3>
 <ul>
 <li><p>Economies driven by ‘production’.</p></li>
 <li><p>Greater production comes with better efficiency.</p>
@@ -84,24 +74,24 @@
 </ul></li>
 </ul>
 </section>
-<section id="physical-processes" class="slide level1">
-<h1>Physical Processes</h1>
+<section id="physical-processes" class="slide level3">
+<h3>Physical Processes</h3>
 <ul>
 <li><p>Manufacturing processes consist of production lines and robotic automation.</p></li>
 <li><p>Logistics can also be decomposed into the supply chain processes.</p></li>
 <li><p>Efficiency can be improved by automation.</p></li>
 </ul>
 </section>
-<section id="goods-and-information" class="slide level1">
-<h1>Goods and Information</h1>
+<section id="goods-and-information" class="slide level3">
+<h3>Goods and Information</h3>
 <ul>
 <li><p>For modern society: management of flow of goods and information.</p></li>
 <li><p>Flow of information is highly automated.</p></li>
 <li><p>Processing of data is decomposed into stages in computer code.</p></li>
 </ul>
 </section>
-<section id="intervention" class="slide level1">
-<h1>Intervention</h1>
+<section id="intervention" class="slide level3">
+<h3>Intervention</h3>
 <ul>
 <li><p>For all cases: manufacturing, logistics, data management</p></li>
 <li><p>Pipeline requires human intervention from an operator.</p></li>
@@ -109,8 +99,8 @@
 <li><p>Machine learning is a key technology in automating these manual stages.</p></li>
 </ul>
 </section>
-<section id="long-grass" class="slide level1">
-<h1>Long Grass</h1>
+<section id="long-grass" class="slide level3">
+<h3>Long Grass</h3>
 <ul>
 <li><p>Easy to replicate interventions have already been dealt with.</p></li>
 <li><p>Components that still require human intervention are the knottier problems.</p></li>
@@ -119,8 +109,8 @@
 <li><p>These are the “long grass” regions of technology.</p></li>
 </ul>
 </section>
-<section id="nature-of-challenge" class="slide level1">
-<h1>Nature of Challenge</h1>
+<section id="nature-of-challenge" class="slide level3">
+<h3>Nature of Challenge</h3>
 <ul>
 <li><p>In manufacturing or logistics settings atoms are flexible manual skills.</p>
 <ul>
@@ -132,20 +122,20 @@
 </ul></li>
 </ul>
 </section>
-<section id="worked-example-delivery-drones" class="slide level1">
-<h1>Worked Example: Delivery Drones</h1>
+<section id="worked-example-delivery-drones" class="slide level3">
+<h3>Worked Example: Delivery Drones</h3>
 <p><a href="https://www.youtube.com/watch?v=py8QrZPT48s"><img src="https://img.youtube.com/vi/vNySOrI2Ny8/0.jpg" /></a></p>
 </section>
-<section id="data-driven" class="slide level1">
-<h1>Data Driven</h1>
+<section id="data-driven" class="slide level3">
+<h3>Data Driven</h3>
 <ul>
 <li><p>Machine Learning: Replicate Processes through <em>direct use of data</em>.</p></li>
 <li><p>Aim to emulate cognitive processes through the use of data.</p></li>
 <li><p>Use data to provide new approaches in control and optimization that should allow for emulation of human motor skills.</p></li>
 </ul>
 </section>
-<section id="process-emulation" class="slide level1">
-<h1>Process Emulation</h1>
+<section id="process-emulation" class="slide level3">
+<h3>Process Emulation</h3>
 <ul>
 <li><p>Key idea: emulate the process as a mathematical function.</p></li>
 <li><p>Each function has a set of <em>parameters</em> which control its behavior.</p></li>
@@ -153,108 +143,101 @@
 <li><p>Choice of which class of mathematical functions we use is a vital component of our <em>model</em>.</p></li>
 </ul>
 </section>
-<section id="polynomial-fit" class="slide level1 slide:" data-transition="none">
-<h1>Polynomial Fit</h1>
-<figure>
-<img src="./diagrams/olympic/olympic_loo000_LM_polynomial_num_basis001.svg" />
-</figure>
+<section id="polynomial-fit" class="slide level3 slide:" data-transition="none">
+<h3>Polynomial Fit</h3>
+<object class="svgplot" data="../_ml/diagrams/olympic/olympic_loo000_LM_polynomial_num_basis001.svg">
+</object>
 <p><em>Example of prediction: The Olympic gold medalist in the marathon’s pace is predicted using a regression fit. In this case the mathematical function is directly predicting the pace of the winner as a function of the year of the Olympics.</em></p>
 </section>
-<section id="polynomial-fit-1" class="slide level1 slide:" data-transition="none">
-<h1>Polynomial Fit</h1>
-<figure>
-<img src="./diagrams/olympic/olympic_loo000_LM_polynomial_num_basis002.svg" />
-</figure>
+<section id="polynomial-fit-1" class="slide level3 slide:" data-transition="none">
+<h3>Polynomial Fit</h3>
+<object class="svgplot" data="../_ml/diagrams/olympic/olympic_loo000_LM_polynomial_num_basis002.svg">
+</object>
 <p><em>Example of prediction: The Olympic gold medalist in the marathon’s pace is predicted using a regression fit. In this case the mathematical function is directly predicting the pace of the winner as a function of the year of the Olympics.</em></p>
 </section>
-<section id="polynomial-fit-2" class="slide level1 slide:" data-transition="none">
-<h1>Polynomial Fit</h1>
-<figure>
-<img src="./diagrams/olympic/olympic_loo000_LM_polynomial_num_basis003.svg" />
-</figure>
+<section id="polynomial-fit-2" class="slide level3 slide:" data-transition="none">
+<h3>Polynomial Fit</h3>
+<object class="svgplot" data="../_ml/diagrams/olympic/olympic_loo000_LM_polynomial_num_basis003.svg">
+</object>
 <p><em>Example of prediction: The Olympic gold medalist in the marathon’s pace is predicted using a regression fit. In this case the mathematical function is directly predicting the pace of the winner as a function of the year of the Olympics.</em></p>
 </section>
-<section id="polynomial-fit-3" class="slide level1 slide:" data-transition="none">
-<h1>Polynomial Fit</h1>
-<figure>
-<img src="./diagrams/olympic/olympic_loo000_LM_polynomial_num_basis004.svg" />
-</figure>
+<section id="polynomial-fit-3" class="slide level3 slide:" data-transition="none">
+<h3>Polynomial Fit</h3>
+<object class="svgplot" data="../_ml/diagrams/olympic/olympic_loo000_LM_polynomial_num_basis004.svg">
+</object>
 <p><em>Example of prediction: The Olympic gold medalist in the marathon’s pace is predicted using a regression fit. In this case the mathematical function is directly predicting the pace of the winner as a function of the year of the Olympics.</em></p>
 </section>
-<section id="polynomial-fit-4" class="slide level1 slide:" data-transition="none">
-<h1>Polynomial Fit</h1>
-<figure>
-<img src="./diagrams/olympic/olympic_loo000_LM_polynomial_num_basis005.svg" />
-</figure>
+<section id="polynomial-fit-4" class="slide level3 slide:" data-transition="none">
+<h3>Polynomial Fit</h3>
+<object class="svgplot" data="../_ml/diagrams/olympic/olympic_loo000_LM_polynomial_num_basis005.svg">
+</object>
 <p><em>Example of prediction: The Olympic gold medalist in the marathon’s pace is predicted using a regression fit. In this case the mathematical function is directly predicting the pace of the winner as a function of the year of the Olympics.</em></p>
 </section>
-<section id="polynomial-fit-5" class="slide level1 slide:" data-transition="none">
-<h1>Polynomial Fit</h1>
-<figure>
-<img src="./diagrams/olympic/olympic_loo000_LM_polynomial_num_basis006.svg" />
-</figure>
+<section id="polynomial-fit-5" class="slide level3 slide:" data-transition="none">
+<h3>Polynomial Fit</h3>
+<object class="svgplot" data="../_ml/diagrams/olympic/olympic_loo000_LM_polynomial_num_basis006.svg">
+</object>
 <p><em>Example of prediction: The Olympic gold medalist in the marathon’s pace is predicted using a regression fit. In this case the mathematical function is directly predicting the pace of the winner as a function of the year of the Olympics.</em></p>
 </section>
-<section id="polynomial-fit-6" class="slide level1 slide:" data-transition="none">
-<h1>Polynomial Fit</h1>
-<figure>
-<img src="./diagrams/olympic/olympic_loo000_LM_polynomial_num_basis007.svg" />
-</figure>
+<section id="polynomial-fit-6" class="slide level3 slide:" data-transition="none">
+<h3>Polynomial Fit</h3>
+<object class="svgplot" data="../_ml/diagrams/olympic/olympic_loo000_LM_polynomial_num_basis007.svg">
+</object>
 <p><em>Example of prediction: The Olympic gold medalist in the marathon’s pace is predicted using a regression fit. In this case the mathematical function is directly predicting the pace of the winner as a function of the year of the Olympics.</em></p>
 </section>
-<section id="artificial-intelligence" class="slide level1">
-<h1>Artificial Intelligence</h1>
+<section id="artificial-intelligence" class="slide level3">
+<h3>Artificial Intelligence</h3>
 <ul>
 <li><p>Principal technology underlying the recent advances in artificial intelligence techniques.</p></li>
 <li><p>Different approach to that developed in classical artificial intelligence (sometimes referred to as “good old fashioned AI” or GOFAI).</p></li>
 <li><p>GOFAI relied on symbolic logic as its mathematical engine.</p></li>
 </ul>
 </section>
-<section id="artificial-intelligence-1" class="slide level1">
-<h1>Artificial Intelligence</h1>
+<section id="artificial-intelligence-1" class="slide level3">
+<h3>Artificial Intelligence</h3>
 <ul>
 <li><p>Early AI used expert systems: a set of logical rules implemented to reconstruct expertise. For example, rules to decide whether or not someone has cancer.</p></li>
 <li><p>Such rules prove hard to specify for very complex processes.<a href="#/fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p></li>
 </ul>
 </section>
-<section id="data-science" class="slide level1">
-<h1>Data Science</h1>
+<section id="data-science" class="slide level3">
+<h3>Data Science</h3>
 <ul>
 <li><p>Can split applications of machine learning broadly into <em>data science</em> and <em>artificial intelligence</em>.</p></li>
 <li><p><em>Data science</em>: making sense of ‘new data’, the large volumes of data from sensors and increased interconnectivity (big data, IoT)</p></li>
 <li><p>Classical statistics: the question is formed first, and data is later.</p></li>
 </ul>
 </section>
-<section id="data-science-1" class="slide level1">
-<h1>Data Science</h1>
+<section id="data-science-1" class="slide level3">
+<h3>Data Science</h3>
 <ul>
 <li><p>Data Science: data is first, questions come later.</p></li>
 <li><p>Overlap through <em>exploratory data analysis</em></p></li>
 </ul>
 </section>
-<section id="artificial-intelligence-2" class="slide level1">
-<h1>Artificial Intelligence</h1>
+<section id="artificial-intelligence-2" class="slide level3">
+<h3>Artificial Intelligence</h3>
 <ul>
-<li><p>Artificial intelligence* originates in <em>cybernetics</em></p></li>
+<li><p><em>Artificial intelligence</em> originates in <em>cybernetics</em></p></li>
 <li><p>Challenge to recreate “intelligent” behaviour.</p></li>
 <li><p>Either <em>general intelligence</em> or emulate <em>human</em> capabilities.</p></li>
 <li><p>Machine learning is important because of success of data-driven artificial intelligence.</p></li>
 <li><p>Data-driven artificial intelligence: instead of solving from first principles, collect data.</p></li>
 </ul>
 </section>
-<section id="machine-learning" class="slide level1">
-<h1>Machine Learning</h1>
-<p>1 observe a system in practice</p>
-<ol start="2" type="1">
-<li>emulate its behavior with mathematics.</li>
+<section id="machine-learning" class="slide level3">
+<h3>Machine Learning</h3>
+<ol type="1">
+<li><p>observe a system in practice</p></li>
+<li><p>emulate its behavior with mathematics.</p></li>
 </ol>
 <ul>
 <li><p>Design challenge: where to put mathematical function.</p></li>
 <li><p>Where it’s placed leads to different ML domains.</p></li>
 </ul>
 </section>
-<section id="supervised-learning" class="slide level1">
-<h1>Supervised Learning</h1>
+<section id="supervised-learning" class="slide level3">
+<h3>Supervised Learning</h3>
 <ul>
 <li><p>Most widely deployed machine learning technology.</p>
 <ul>
@@ -265,310 +248,272 @@
 <li><p>Simple idea underpins a lot of machine learning.</p></li>
 </ul>
 </section>
-<section id="perceptron" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron001.svg" />
-</figure>
+<section id="perceptron" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron001.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-1" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron002.svg" />
-</figure>
+<section id="perceptron-1" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron002.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-2" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron003.svg" />
-</figure>
+<section id="perceptron-2" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron003.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-3" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron004.svg" />
-</figure>
+<section id="perceptron-3" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron004.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-4" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron005.svg" />
-</figure>
+<section id="perceptron-4" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron005.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-5" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron006.svg" />
-</figure>
+<section id="perceptron-5" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron006.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-6" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron007.svg" />
-</figure>
+<section id="perceptron-6" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron007.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-7" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron008.svg" />
-</figure>
+<section id="perceptron-7" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron008.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-8" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron009.svg" />
-</figure>
+<section id="perceptron-8" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron009.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-9" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron010.svg" />
-</figure>
+<section id="perceptron-9" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron010.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-10" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron011.svg" />
-</figure>
+<section id="perceptron-10" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron011.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-11" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron012.svg" />
-</figure>
+<section id="perceptron-11" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron012.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-12" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron013.svg" />
-</figure>
+<section id="perceptron-12" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron013.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-13" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron014.svg" />
-</figure>
+<section id="perceptron-13" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron014.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-14" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron015.svg" />
-</figure>
+<section id="perceptron-14" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron015.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-15" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron016.svg" />
-</figure>
+<section id="perceptron-15" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron016.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-16" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron017.svg" />
-</figure>
+<section id="perceptron-16" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron017.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-17" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron018.svg" />
-</figure>
+<section id="perceptron-17" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron018.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-18" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron019.svg" />
-</figure>
+<section id="perceptron-18" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron019.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-19" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron020.svg" />
-</figure>
+<section id="perceptron-19" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron020.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-20" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron021.svg" />
-</figure>
+<section id="perceptron-20" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron021.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-21" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron022.svg" />
-</figure>
+<section id="perceptron-21" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron022.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-22" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron023.svg" />
-</figure>
+<section id="perceptron-22" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron023.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-23" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron024.svg" />
-</figure>
+<section id="perceptron-23" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron024.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-24" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron025.svg" />
-</figure>
+<section id="perceptron-24" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron025.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-25" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron026.svg" />
-</figure>
+<section id="perceptron-25" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron026.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-26" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron027.svg" />
-</figure>
+<section id="perceptron-26" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron027.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-27" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron028.svg" />
-</figure>
-<p><em>Simple classification with the perceptron algorithm.</em></p>
-<figure>
-<img src="./diagrams/perceptron/perceptron029.svg" />
-</figure>
+<section id="perceptron-27" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron028.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-28" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron030.svg" />
-</figure>
+<section id="perceptron-28" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron029.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-29" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron031.svg" />
-</figure>
+<section id="perceptron-29" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron030.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-30" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron032.svg" />
-</figure>
+<section id="perceptron-30" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron031.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-31" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron033.svg" />
-</figure>
+<section id="perceptron-31" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron032.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-32" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron034.svg" />
-</figure>
+<section id="perceptron-32" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron033.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-33" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron035.svg" />
-</figure>
+<section id="perceptron-33" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron034.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-34" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron036.svg" />
-</figure>
+<section id="perceptron-34" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron035.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-35" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron037.svg" />
-</figure>
+<section id="perceptron-35" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron036.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-36" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron038.svg" />
-</figure>
-<p><em>Simple classification with the perceptron algorithm.</em></p>
-<figure>
-<img src="./diagrams/perceptron/perceptron039.svg" />
-</figure>
+<section id="perceptron-36" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron037.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-37" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron040.svg" />
-</figure>
+<section id="perceptron-37" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron038.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-38" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron041.svg" />
-</figure>
+<section id="perceptron-38" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron039.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-39" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron042.svg" />
-</figure>
+<section id="perceptron-39" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron040.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-40" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron043.svg" />
-</figure>
+<section id="perceptron-40" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron041.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="perceptron-41" class="slide level1 slide:" data-transition="none">
-<h1>Perceptron</h1>
-<figure>
-<img src="./diagrams/perceptron/perceptron044.svg" />
-</figure>
+<section id="perceptron-41" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron042.svg">
+</object>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="classification" class="slide level1">
-<h1>Classification</h1>
+<section id="perceptron-42" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron043.svg">
+</object>
+<p><em>Simple classification with the perceptron algorithm.</em></p>
+</section>
+<section id="perceptron-43" class="slide level3 slide:" data-transition="none">
+<h3>Perceptron</h3>
+<object class="svgplot" data="../slides/diagrams/perceptron/perceptron044.svg">
+</object>
+<p><em>Simple classification with the perceptron algorithm.</em></p>
+</section>
+<section id="classification" class="slide level3">
+<h3>Classification</h3>
 <ul>
 <li><p>Examples in a speech based intelligent agent: <em>wake word</em> classification.</p></li>
 <li><p>Major breakthrough for images was in 2012 with the ImageNet result of <a href="http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-">Alex Krizhevsky, Ilya Sutskever and Geoff Hinton</a></p></li>
@@ -577,28 +522,28 @@
 <li><p>Krizhevsky et al used <em>convolutional neural networks</em>.</p></li>
 </ul>
 </section>
-<section id="supervised-learning-1" class="slide level1">
-<h1>Supervised Learning</h1>
+<section id="supervised-learning-1" class="slide level3">
+<h3>Supervised Learning</h3>
 <ul>
-<li>Inputs, <span class="math inline">\(\mathbf{x}\)</span>, mapped to a label, <span class="math inline">\(y\)</span>, through a function <span class="math inline">\(f(\cdot)\)</span> d dependent on parameters, <span class="math inline">\(\mathbf{w}\)</span>,</li>
+<li>Inputs, <span class="math inline">\({{\bf {x}}}\)</span>, mapped to a label, <span class="math inline">\({y}\)</span>, through a function <span class="math inline">\({f}(\cdot)\)</span> dependent on parameters, <span class="math inline">\({\mathbf{{w}}}\)</span>,</li>
 </ul>
 <p><span class="math display">\[
-y = f(\mathbf{x}; \mathbf{w}).
+{y}= {f}({{\bf {x}}}; {\mathbf{{w}}}).
 \]</span></p>
 <ul>
 <li><span class="math inline">\(f(\cdot)\)</span> is known as the <em>prediction function</em>.</li>
 </ul>
 </section>
-<section id="supervised-learning-challenges" class="slide level1">
-<h1>Supervised Learning Challenges</h1>
+<section id="supervised-learning-challenges" class="slide level3">
+<h3>Supervised Learning Challenges</h3>
 <ol type="1">
-<li><p>choosing which features, <span class="math inline">\(\mathbf{x}\)</span>, are relevant in the prediction</p></li>
-<li><p>defining the appropriate <em>class of function</em>, <span class="math inline">\(f(\cdot)\)</span>.</p></li>
-<li><p>selecting the right parameters, <span class="math inline">\(\mathbf{w}\)</span>.</p></li>
+<li><p>choosing which features, <span class="math inline">\({{\bf {x}}}\)</span>, are relevant in the prediction</p></li>
+<li><p>defining the appropriate <em>class of function</em>, <span class="math inline">\({f}(\cdot)\)</span>.</p></li>
+<li><p>selecting the right parameters, <span class="math inline">\({\mathbf{{w}}}\)</span>.</p></li>
 </ol>
 </section>
-<section id="feature-selection" class="slide level1">
-<h1>Feature Selection</h1>
+<section id="feature-selection" class="slide level3">
+<h3>Feature Selection</h3>
 <ul>
 <li><p>Olympic prediction example only using year to predict pace.</p></li>
 <li><p>Could also use <em>course characteristics</em> (e.g. how hilly) <em>temperature</em>.</p></li>
@@ -606,8 +551,8 @@ y = f(\mathbf{x}; \mathbf{w}).
 <li><p>Automate the process of finding the features that we need.</p></li>
 </ul>
 </section>
-<section id="applications" class="slide level1">
-<h1>Applications</h1>
+<section id="applications" class="slide level3">
+<h3>Applications</h3>
 <ul>
 <li><p>rank search results, decide which adverts to serve or, what appears at the top of your newsfeed.</p></li>
 <li><p>Facebook features include number of likes, whether it’s got an image, whether this is a friend you interact with.</p></li>
@@ -615,24 +560,24 @@ y = f(\mathbf{x}; \mathbf{w}).
 <li><p>Heavy investments in machine learning pipelines for evaluation of the feature utility.</p></li>
 </ul>
 </section>
-<section id="class-of-function-fcdot" class="slide level1">
-<h1>Class of Function, <span class="math inline">\(f(\cdot)\)</span></h1>
+<section id="class-of-function-fcdot" class="slide level3">
+<h3>Class of Function, <span class="math inline">\({f}(\cdot)\)</span></h3>
 <ul>
-<li><p>What should be the characteristics of the mapping between <span class="math inline">\(\mathbf{x}\)</span> and <span class="math inline">\(y\)</span>?</p></li>
+<li><p>What should be the characteristics of the mapping between <span class="math inline">\({{\bf {x}}}\)</span> and <span class="math inline">\({y}\)</span>?</p></li>
 <li><p>Often we choose it to be <em>smooth</em> (similar inputs lead to similar outputs).</p></li>
 <li><p>Often choose it to be a linear function.</p></li>
 <li><p>In <em>forecasting</em> we might want a <em>periodic</em> function (weekly or seasonal effects).</p></li>
 </ul>
 </section>
-<section id="class-of-function-neural-networks" class="slide level1">
-<h1>Class of Function: Neural Networks</h1>
+<section id="class-of-function-neural-networks" class="slide level3">
+<h3>Class of Function: Neural Networks</h3>
 <ul>
 <li><p>For imagenet prediction function was a <em>convolutional neural network</em></p></li>
 <li><p>A convolutional neural network introduces <em>invariances</em> into the function that are particular to image classification.</p></li>
 </ul>
 </section>
-<section id="class-of-function-invariances" class="slide level1">
-<h1>Class of Function: Invariances</h1>
+<section id="class-of-function-invariances" class="slide level3">
+<h3>Class of Function: Invariances</h3>
 <ul>
 <li><p>An invariance is a transformation of the input that we don’t want to effect the output.</p>
 <ul>
@@ -641,8 +586,8 @@ y = f(\mathbf{x}; \mathbf{w}).
 </ul></li>
 </ul>
 </section>
-<section id="encoding-knowledge" class="slide level1">
-<h1>Encoding Knowledge</h1>
+<section id="encoding-knowledge" class="slide level3">
+<h3>Encoding Knowledge</h3>
 <ul>
 <li><p>Encoding invariance is like encoding knowledge in the model.</p></li>
 <li><p>If we don’t specify these invariances then the model must learn them.</p></li>
@@ -650,22 +595,22 @@ y = f(\mathbf{x}; \mathbf{w}).
 <li><p>The amount of data required to achieve a certain performance is the <em>data efficiency</em>.</p></li>
 </ul>
 </section>
-<section id="choosing-prediction-function" class="slide level1">
-<h1>Choosing Prediction Function</h1>
+<section id="choosing-prediction-function" class="slide level3">
+<h3>Choosing Prediction Function</h3>
 <ul>
 <li><p>Prediction function can be any set of parameterized functions.</p></li>
 <li><p>In the Olympic marathon example above we used a polynomial fit,</p></li>
 </ul>
 <p><span class="math display">\[
-f(x) = w_0 + w_1 x+ w_2 x^2 + w_3 x^3 + w_4 x^4.
+{f}(x) = {w}_0 + {w}_1 x+ {w}_2 x^2 + {w}_3 x^3 + {w}_4 x^4.
 \]</span></p>
 <ul>
 <li><p>Olympic example is a supervised learning challenge. But it is a <em>regression</em> problem.</p></li>
 <li><p>A regression problem is one where the output is a continuous value (such as the pace in the marathon).</p></li>
 </ul>
 </section>
-<section id="regression-problems" class="slide level1">
-<h1>Regression Problems</h1>
+<section id="regression-problems" class="slide level3">
+<h3>Regression Problems</h3>
 <ul>
 <li><p>In classification the output of prediction function is constrained to be discrete.</p></li>
 <li><p>An early example of a regression data set used in machine learning was <a href="http://lib.stat.cmu.edu/datasets/tecator">the Tecator data</a></p>
@@ -674,31 +619,31 @@ f(x) = w_0 + w_1 x+ w_2 x^2 + w_3 x^3 + w_4 x^4.
 </ul></li>
 </ul>
 </section>
-<section id="parameter-estimation-objective-functions" class="slide level1">
-<h1>Parameter Estimation: Objective Functions</h1>
+<section id="parameter-estimation-objective-functions" class="slide level3">
+<h3>Parameter Estimation: Objective Functions</h3>
 <ul>
 <li><p>After choosing <em>features</em> and <em>function class</em> we need <em>parameters</em>.</p></li>
-<li><p>Estimate <span class="math inline">\(\mathbf{w}\)</span> by specifying an <em>objective function</em>.</p></li>
+<li><p>Estimate <span class="math inline">\({\mathbf{{w}}}\)</span> by specifying an <em>objective function</em>.</p></li>
 <li><p>The objective function specifies the quality of the match between the prediction function and the <em>training data</em>.</p></li>
 <li><p>In supervised learning the objective function has input data (for ImageNet, the image, for Olympic marathon the year) and a <em>label</em>.</p></li>
 </ul>
 </section>
-<section id="labels-and-squared-error" class="slide level1">
-<h1>Labels and Squared Error</h1>
+<section id="labels-and-squared-error" class="slide level3">
+<h3>Labels and Squared Error</h3>
 <ul>
 <li><p><em>Label</em> is where the term supervised learning comes from.</p></li>
 <li><p>Idea is that a supervisor, or annotator, has already given labels.</p></li>
 <li><p>For regression problem, a typical objective function is the <em>squared error</em>,</p></li>
 </ul>
 <p><span class="math display">\[
-E(\mathbf{w}) = \sum_{i=1}^n (y_i - f(\mathbf{x}_i))^2
+{E}({\mathbf{{w}}}) = \sum_{i=1}^{n}({y}_i - {f}({{\bf {x}}}_i))^2
 \]</span></p>
 </section>
-<section id="data-provision" class="slide level1">
-<h1>Data Provision</h1>
+<section id="data-provision" class="slide level3">
+<h3>Data Provision</h3>
 <ul>
-<li><p>Here the data is provided to us as a set of <span class="math inline">\(n\)</span> inputs, <span class="math inline">\(\mathbf{x}_1\)</span>, <span class="math inline">\(\mathbf{x}_2\)</span>, <span class="math inline">\(\mathbf{x}_3\)</span>, <span class="math inline">\(\dots\)</span>, <span class="math inline">\(\mathbf{x}_n\)</span></p></li>
-<li><p>Each data point with an associated label, <span class="math inline">\(y_1\)</span>, <span class="math inline">\(y_2\)</span>, <span class="math inline">\(y_3\)</span>, <span class="math inline">\(\dots\)</span>, <span class="math inline">\(y_n\)</span>.</p></li>
+<li><p>Here the data is provided to us as a set of <span class="math inline">\(n\)</span> inputs, <span class="math inline">\({{\bf {x}}}_1\)</span>, <span class="math inline">\({{\bf {x}}}_2\)</span>, <span class="math inline">\({{\bf {x}}}_3\)</span>, <span class="math inline">\(\dots\)</span>, <span class="math inline">\({{\bf {x}}}_n\)</span></p></li>
+<li><p>Each data point with an associated label, <span class="math inline">\({y}_1\)</span>, <span class="math inline">\({y}_2\)</span>, <span class="math inline">\({y}_3\)</span>, <span class="math inline">\(\dots\)</span>, <span class="math inline">\({y}_n\)</span>.</p></li>
 <li><p>Sometimes the label is cheap to acquire.</p>
 <ul>
 <li><p>E.g. in Newsfeed ranking Facebook are acquiring a label each time a user clicks on a post in their Newsfeed. (Data Science?)</p></li>
@@ -706,8 +651,8 @@ E(\mathbf{w}) = \sum_{i=1}^n (y_i - f(\mathbf{x}_i))^2
 </ul></li>
 </ul>
 </section>
-<section id="annotation" class="slide level1">
-<h1>Annotation</h1>
+<section id="annotation" class="slide level3">
+<h3>Annotation</h3>
 <ul>
 <li><p>Often we have to employ human annotators to label the data.</p>
 <ul>
@@ -716,8 +661,8 @@ E(\mathbf{w}) = \sum_{i=1}^n (y_i - f(\mathbf{x}_i))^2
 <li><p>Without large scale human input, would not have the breakthrough results in AI we have today.</p></li>
 </ul>
 </section>
-<section id="annotation-1" class="slide level1">
-<h1>Annotation</h1>
+<section id="annotation-1" class="slide level3">
+<h3>Annotation</h3>
 <ul>
 <li><p>Some tasks <em>easier</em> to annotate than *others.</p>
 <ul>
@@ -726,8 +671,8 @@ E(\mathbf{w}) = \sum_{i=1}^n (y_i - f(\mathbf{x}_i))^2
 </ul></li>
 </ul>
 </section>
-<section id="annotation-2" class="slide level1">
-<h1>Annotation</h1>
+<section id="annotation-2" class="slide level3">
+<h3>Annotation</h3>
 <ul>
 <li><p>Even for <em>easy</em> tasks there will be problems.</p>
 <ul>
@@ -737,16 +682,16 @@ E(\mathbf{w}) = \sum_{i=1}^n (y_i - f(\mathbf{x}_i))^2
 <li><p>Investing in processes and tools to improve annotation of data is therefore a strong priority.</p></li>
 </ul>
 </section>
-<section id="misrepresentation" class="slide level1">
-<h1>Misrepresentation</h1>
+<section id="misrepresentation" class="slide level3">
+<h3>Misrepresentation</h3>
 <ul>
 <li><p>Can be significant problems with misrepresentation in the data sets.</p></li>
 <li><p>If data isn’t collected carefully, it can reflect biases about the population that we don’t want our models to have.</p></li>
 <li><p>A face detector using Californians may not perform well when deployed in Kampala, Uganda.</p></li>
 </ul>
 </section>
-<section id="automation" class="slide level1">
-<h1>Automation</h1>
+<section id="automation" class="slide level3">
+<h3>Automation</h3>
 <ul>
 <li><p>Train supervised learning system, place it in production</p></li>
 <li><p>Supervised learning is probably the dominant approaches to learning.</p></li>
@@ -754,8 +699,8 @@ E(\mathbf{w}) = \sum_{i=1}^n (y_i - f(\mathbf{x}_i))^2
 <li><p>Creating training data requires significant human effort.</p></li>
 </ul>
 </section>
-<section id="training-and-test" class="slide level1">
-<h1>Training and Test</h1>
+<section id="training-and-test" class="slide level3">
+<h3>Training and Test</h3>
 <ul>
 <li><p>Very important distinction.</p>
 <ul>
@@ -767,8 +712,8 @@ E(\mathbf{w}) = \sum_{i=1}^n (y_i - f(\mathbf{x}_i))^2
 <li><p>System’s ability to predict in areas where it hasn’t previously seen data.</p></li>
 </ul>
 </section>
-<section id="generalization-error" class="slide level1">
-<h1>Generalization Error</h1>
+<section id="generalization-error" class="slide level3">
+<h3>Generalization Error</h3>
 <ul>
 <li><p>Easy to develop a prediction function that reconstructs the training data exactly: a look up table. you can just use a look up table.</p></li>
 <li><p>How would the lookup table predict <em>between</em> the training data, where examples haven’t been seen before?</p></li>
@@ -776,8 +721,8 @@ E(\mathbf{w}) = \sum_{i=1}^n (y_i - f(\mathbf{x}_i))^2
 <li><p>Generalization error is normally estimated by applying the objective function to a set of data that the model <em>wasn’t</em> trained on: the <em>test data</em>.</p></li>
 </ul>
 </section>
-<section id="performance" class="slide level1">
-<h1>Performance</h1>
+<section id="performance" class="slide level3">
+<h3>Performance</h3>
 <ul>
 <li><p>To ensure good performance we normally want a model that gives us a low generalization error.</p></li>
 <li><p>If we weren’t sure of the right prediction function to use then we could try 1,000 different prediction functions.</p></li>
@@ -785,8 +730,8 @@ E(\mathbf{w}) = \sum_{i=1}^n (y_i - f(\mathbf{x}_i))^2
 <li><p>But you have to be careful.</p></li>
 </ul>
 </section>
-<section id="validation-and-model-selection" class="slide level1">
-<h1>Validation and Model Selection</h1>
+<section id="validation-and-model-selection" class="slide level3">
+<h3>Validation and Model Selection</h3>
 <ul>
 <li><p>Selecting a model in this way is like a further stage of training where you are using the test data in the training.<a href="#/fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p></li>
 <li><p>It is known as <em>validation</em>.</p></li>
@@ -794,28 +739,28 @@ E(\mathbf{w}) = \sum_{i=1}^n (y_i - f(\mathbf{x}_i))^2
 <li><p>Using the validation error for model selection is a standard machine learning technique.</p></li>
 </ul>
 </section>
-<section id="difficult-trap" class="slide level1">
-<h1>Difficult Trap</h1>
+<section id="difficult-trap" class="slide level3">
+<h3>Difficult Trap</h3>
 <ul>
 <li><p>All machine learning practitioners should know not to use the test data in your training procedure.</p></li>
 <li><p>But because validation data is used for model selection, it is not an unbiased estimate of the generalization performance.</p></li>
 </ul>
 </section>
-<section id="overfitting" class="slide level1">
-<h1>Overfitting</h1>
+<section id="overfitting" class="slide level3">
+<h3>Overfitting</h3>
 <p><a href="https://www.youtube.com/watch?v=py8QrZPT48s&amp;t=4m0s"><img src="https://img.youtube.com/vi/py8QrZPT48s/0.jpg" /></a></p>
 <p><em>Alex Ihler on Polynomials and Overfitting</em></p>
 </section>
-<section id="unsupervised-learning" class="slide level1">
-<h1>Unsupervised Learning</h1>
+<section id="unsupervised-learning" class="slide level3">
+<h3>Unsupervised Learning</h3>
 <ul>
-<li><p>When you have data, <span class="math inline">\(\mathbf{x}\)</span>, but no labels <span class="math inline">\(y\)</span>.</p></li>
+<li><p>When you have data, <span class="math inline">\({{\bf {x}}}\)</span>, but no labels <span class="math inline">\({\mathbf{{y}}}\)</span>.</p></li>
 <li><p>Extract <em>structure</em> from data.</p></li>
 <li><p>Type of structure you are interested dependent on the broader context of the task.</p></li>
 </ul>
 </section>
-<section id="context" class="slide level1">
-<h1>Context</h1>
+<section id="context" class="slide level3">
+<h3>Context</h3>
 <ul>
 <li><p>Supervised learning: context is very much driven by the labels.</p></li>
 <li><p>Humans easily sort objects e.g. animals and vehicles</p></li>
@@ -825,8 +770,8 @@ E(\mathbf{w}) = \sum_{i=1}^n (y_i - f(\mathbf{x}_i))^2
 </ul></li>
 </ul>
 </section>
-<section id="discrete-vs-continuous" class="slide level1">
-<h1>Discrete vs Continuous</h1>
+<section id="discrete-vs-continuous" class="slide level3">
+<h3>Discrete vs Continuous</h3>
 <ul>
 <li><p>Supervised learning is broadly divided into classification and regression</p></li>
 <li><p>Unsupervised learning can be split too:</p></li>
@@ -836,16 +781,16 @@ E(\mathbf{w}) = \sum_{i=1}^n (y_i - f(\mathbf{x}_i))^2
 <li><p>methods that represent the data as (lower dimensional) continuous values.</p></li>
 </ol>
 </section>
-<section id="clustering" class="slide level1">
-<h1>Clustering</h1>
+<section id="clustering" class="slide level3">
+<h3>Clustering</h3>
 <ul>
 <li><p><em>Task</em>: associate each data point with a different label.</p></li>
 <li><p>Label is <em>not</em> provided.</p></li>
 <li><p>Quite intuitive for humans, we do it naturally.</p></li>
 </ul>
 </section>
-<section id="platonic-ideals" class="slide level1">
-<h1>Platonic Ideals</h1>
+<section id="platonic-ideals" class="slide level3">
+<h3>Platonic Ideals</h3>
 <ul>
 <li><p>Names for animals originally invented by humans through ‘clustering’</p></li>
 <li><p>Can we have the computer to recreate that process of inventing the label?</p></li>
@@ -853,67 +798,67 @@ E(\mathbf{w}) = \sum_{i=1}^n (y_i - f(\mathbf{x}_i))^2
 <li><p>Platonic ideal bird is the bird that is most bird-like or the chair that is most chair-like.</p></li>
 </ul>
 </section>
-<section id="cluster-center" class="slide level1">
-<h1>Cluster Center</h1>
+<section id="cluster-center" class="slide level3">
+<h3>Cluster Center</h3>
 <ul>
 <li><p>Can define different clusters, by finding their Platonic ideal (known as the cluster center)</p></li>
 <li><p>Allocate each data point to the relevant nearest cluster center.</p></li>
 <li><p>Allocate each animal to the class defined by its nearest cluster center.</p></li>
 </ul>
 </section>
-<section id="similarity-and-distance-measures" class="slide level1">
-<h1>Similarity and Distance Measures</h1>
+<section id="similarity-and-distance-measures" class="slide level3">
+<h3>Similarity and Distance Measures</h3>
 <ul>
 <li><p>Define a notion of either similarity or distance between the objects and their Platonic ideal.</p></li>
-<li><p>If objects are vectors of data, <span class="math inline">\(\mathbf{x}_i\)</span>.</p></li>
-<li><p>Represent cluster center for category <span class="math inline">\(j\)</span> by a vector <span class="math inline">\(\mathbf{m}_j\)</span>.</p></li>
+<li><p>If objects are vectors of data, <span class="math inline">\({{\bf {x}}}_i\)</span>.</p></li>
+<li><p>Represent cluster center for category <span class="math inline">\(j\)</span> by a vector <span class="math inline">\({\boldsymbol{{\mu}}}_j\)</span>.</p></li>
 <li><p>This vector contains the ideal features of a bird, a chair, or whatever category <span class="math inline">\(j\)</span> is.</p></li>
 </ul>
 </section>
-<section id="similarity-or-distance" class="slide level1">
-<h1>Similarity or Distance</h1>
+<section id="similarity-or-distance" class="slide level3">
+<h3>Similarity or Distance</h3>
 <ul>
 <li><p>Can either think in terms of similarity of the objects, or distances.</p></li>
 <li><p>We want objects that are similar to each other to cluster together. We want objects that are distant from each other to cluster apart.</p></li>
 <li><p>Use mathematical function to formalize this notion, e.g. for distance</p></li>
 </ul>
 <p><span class="math display">\[
-d_{ij} = f(\mathbf{x}_i, \mathbf{m}_j).
+{d}_{ij} = {f}({{\bf {x}}}_i, {\boldsymbol{{\mu}}}_j).
 \]</span></p>
 </section>
-<section id="squared-distance" class="slide level1">
-<h1>Squared Distance</h1>
+<section id="squared-distance" class="slide level3">
+<h3>Squared Distance</h3>
 <ul>
 <li><p>Find cluster centers that are close to as many data points as possible.</p></li>
 <li><p>A commonly used distance is the squared distance,</p></li>
 </ul>
 <p><span class="math display">\[
-d_{ij} = (\mathbf{x}_i - \mathbf{m}_j)^2.
+{d}_{ij} = ({{\bf {x}}}_i - {\boldsymbol{{\mu}}}_j)^2.
 \]</span></p>
 <ul>
 <li>Already seen for regression.</li>
 </ul>
 </section>
-<section id="objective-function" class="slide level1">
-<h1>Objective Function</h1>
+<section id="objective-function" class="slide level3">
+<h3>Objective Function</h3>
 <ul>
-<li><p>Given similarity measure, need number of cluster centers, <span class="math inline">\(K\)</span>.</p></li>
+<li><p>Given similarity measure, need number of cluster centers, <span class="math inline">\({K}\)</span>.</p></li>
 <li><p>Find their location by allocating each center to a sub-set of the points and minimizing the sum of the squared errors,</p></li>
 </ul>
 <p><span class="math display">\[
-E(\mathbf{M}) = \sum_{i \in \mathbf{i}_j} (\mathbf{x}_i - \mathbf{m}_j)^2
+{E}({\mathbf{M}}) = \sum_{i \in \mathbf{i}_j} ({{\bf {x}}}_i - {\boldsymbol{{\mu}}}_j)^2
 \]</span></p>
 <p>here <span class="math inline">\(\mathbf{i}_j\)</span> is all indices of data points allocated to the <span class="math inline">\(j\)</span>th center.</p>
 </section>
-<section id="k-means-clustering" class="slide level1">
-<h1><span class="math inline">\(k\)</span>-Means Clustering</h1>
+<section id="k-means-clustering" class="slide level3">
+<h3><span class="math inline">\(k\)</span>-Means Clustering</h3>
 <ul>
 <li><p><em><span class="math inline">\(k\)</span>-means clustering</em> is simple and quick to implement.</p></li>
 <li><p>Very <em>initialisation</em> sensitive.</p></li>
 </ul>
 </section>
-<section id="initialisation" class="slide level1">
-<h1>Initialisation</h1>
+<section id="initialisation" class="slide level3">
+<h3>Initialisation</h3>
 <ul>
 <li><p>Initialisation is the process of selecting a starting set of parameters.</p></li>
 <li><p>Optimisation result can depend on the starting point.</p></li>
@@ -921,118 +866,104 @@ E(\mathbf{M}) = \sum_{i \in \mathbf{i}_j} (\mathbf{x}_i - \mathbf{m}_j)^2
 <li><p>Optimisation surface has many local optima, algorithm gets stuck in ones near initialisation.</p></li>
 </ul>
 </section>
-<section id="k-means-clustering-1" class="slide level1 slide:" data-transition="none">
-<h1><span class="math inline">\(k\)</span>-Means Clustering</h1>
-<figure>
-<img src="./diagrams/kmeans_clustering/kmeans_clustering_000.svg" />
-</figure>
+<section id="k-means-clustering-1" class="slide level3 slide:" data-transition="none">
+<h3><span class="math inline">\(k\)</span>-Means Clustering</h3>
+<object class="svgplot" data="../_ml/diagrams/kmeans-clustering/kmeans_clustering_000.svg">
+</object>
 <p><em>Clustering with the <span class="math inline">\(k\)</span>-means clustering algorithm.</em></p>
 </section>
-<section id="k-means-clustering-2" class="slide level1 slide:" data-transition="none">
-<h1><span class="math inline">\(k\)</span>-Means Clustering</h1>
-<figure>
-<img src="./diagrams/kmeans_clustering/kmeans_clustering_001.svg" />
-</figure>
+<section id="k-means-clustering-2" class="slide level3 slide:" data-transition="none">
+<h3><span class="math inline">\(k\)</span>-Means Clustering</h3>
+<object class="svgplot" data="../_ml/diagrams/kmeans-clustering/kmeans_clustering_001.svg">
+</object>
 <p><em>Clustering with the <span class="math inline">\(k\)</span>-means clustering algorithm.</em></p>
 </section>
-<section id="k-means-clustering-3" class="slide level1 slide:" data-transition="none">
-<h1><span class="math inline">\(k\)</span>-Means Clustering</h1>
-<figure>
-<img src="./diagrams/kmeans_clustering/kmeans_clustering_002.svg" />
-</figure>
+<section id="k-means-clustering-3" class="slide level3 slide:" data-transition="none">
+<h3><span class="math inline">\(k\)</span>-Means Clustering</h3>
+<object class="svgplot" data="../_ml/diagrams/kmeans-clustering/kmeans_clustering_002.svg">
+</object>
 <p><em>Clustering with the <span class="math inline">\(k\)</span>-means clustering algorithm.</em></p>
 </section>
-<section id="k-means-clustering-4" class="slide level1 slide:" data-transition="none">
-<h1><span class="math inline">\(k\)</span>-Means Clustering</h1>
-<figure>
-<img src="./diagrams/kmeans_clustering/kmeans_clustering_003.svg" />
-</figure>
+<section id="k-means-clustering-4" class="slide level3 slide:" data-transition="none">
+<h3><span class="math inline">\(k\)</span>-Means Clustering</h3>
+<object class="svgplot" data="../_ml/diagrams/kmeans-clustering/kmeans_clustering_003.svg">
+</object>
 <p><em>Clustering with the <span class="math inline">\(k\)</span>-means clustering algorithm.</em></p>
 </section>
-<section id="k-means-clustering-5" class="slide level1 slide:" data-transition="none">
-<h1><span class="math inline">\(k\)</span>-Means Clustering</h1>
-<figure>
-<img src="./diagrams/kmeans_clustering/kmeans_clustering_004.svg" />
-</figure>
+<section id="k-means-clustering-5" class="slide level3 slide:" data-transition="none">
+<h3><span class="math inline">\(k\)</span>-Means Clustering</h3>
+<object class="svgplot" data="../_ml/diagrams/kmeans-clustering/kmeans_clustering_004.svg">
+</object>
 <p><em>Clustering with the <span class="math inline">\(k\)</span>-means clustering algorithm.</em></p>
 </section>
-<section id="k-means-clustering-6" class="slide level1 slide:" data-transition="none">
-<h1><span class="math inline">\(k\)</span>-Means Clustering</h1>
-<figure>
-<img src="./diagrams/kmeans_clustering/kmeans_clustering_005.svg" />
-</figure>
+<section id="k-means-clustering-6" class="slide level3 slide:" data-transition="none">
+<h3><span class="math inline">\(k\)</span>-Means Clustering</h3>
+<object class="svgplot" data="../_ml/diagrams/kmeans-clustering/kmeans_clustering_005.svg">
+</object>
 <p><em>Clustering with the <span class="math inline">\(k\)</span>-means clustering algorithm.</em></p>
 </section>
-<section id="k-means-clustering-7" class="slide level1 slide:" data-transition="none">
-<h1><span class="math inline">\(k\)</span>-Means Clustering</h1>
-<figure>
-<img src="./diagrams/kmeans_clustering/kmeans_clustering_006.svg" />
-</figure>
+<section id="k-means-clustering-7" class="slide level3 slide:" data-transition="none">
+<h3><span class="math inline">\(k\)</span>-Means Clustering</h3>
+<object class="svgplot" data="../_ml/diagrams/kmeans-clustering/kmeans_clustering_006.svg">
+</object>
 <p><em>Clustering with the <span class="math inline">\(k\)</span>-means clustering algorithm.</em></p>
 </section>
-<section id="k-means-clustering-8" class="slide level1 slide:" data-transition="none">
-<h1><span class="math inline">\(k\)</span>-Means Clustering</h1>
-<figure>
-<img src="./diagrams/kmeans_clustering/kmeans_clustering_007.svg" />
-</figure>
+<section id="k-means-clustering-8" class="slide level3 slide:" data-transition="none">
+<h3><span class="math inline">\(k\)</span>-Means Clustering</h3>
+<object class="svgplot" data="../_ml/diagrams/kmeans-clustering/kmeans_clustering_007.svg">
+</object>
 <p><em>Clustering with the <span class="math inline">\(k\)</span>-means clustering algorithm.</em></p>
 </section>
-<section id="k-means-clustering-9" class="slide level1 slide:" data-transition="none">
-<h1><span class="math inline">\(k\)</span>-Means Clustering</h1>
-<figure>
-<img src="./diagrams/kmeans_clustering/kmeans_clustering_008.svg" />
-</figure>
+<section id="k-means-clustering-9" class="slide level3 slide:" data-transition="none">
+<h3><span class="math inline">\(k\)</span>-Means Clustering</h3>
+<object class="svgplot" data="../_ml/diagrams/kmeans-clustering/kmeans_clustering_008.svg">
+</object>
 <p><em>Clustering with the <span class="math inline">\(k\)</span>-means clustering algorithm.</em></p>
 </section>
-<section id="k-means-clustering-10" class="slide level1 slide:" data-transition="none">
-<h1><span class="math inline">\(k\)</span>-Means Clustering</h1>
-<figure>
-<img src="./diagrams/kmeans_clustering/kmeans_clustering_009.svg" />
-</figure>
+<section id="k-means-clustering-10" class="slide level3 slide:" data-transition="none">
+<h3><span class="math inline">\(k\)</span>-Means Clustering</h3>
+<object class="svgplot" data="../_ml/diagrams/kmeans-clustering/kmeans_clustering_009.svg">
+</object>
 <p><em>Clustering with the <span class="math inline">\(k\)</span>-means clustering algorithm.</em></p>
 </section>
-<section id="k-means-clustering-11" class="slide level1 slide:" data-transition="none">
-<h1><span class="math inline">\(k\)</span>-Means Clustering</h1>
-<figure>
-<img src="./diagrams/kmeans_clustering/kmeans_clustering_010.svg" />
-</figure>
+<section id="k-means-clustering-11" class="slide level3 slide:" data-transition="none">
+<h3><span class="math inline">\(k\)</span>-Means Clustering</h3>
+<object class="svgplot" data="../_ml/diagrams/kmeans-clustering/kmeans_clustering_010.svg">
+</object>
 <p><em>Clustering with the <span class="math inline">\(k\)</span>-means clustering algorithm.</em></p>
 </section>
-<section id="k-means-clustering-12" class="slide level1 slide:" data-transition="none">
-<h1><span class="math inline">\(k\)</span>-Means Clustering</h1>
-<figure>
-<img src="./diagrams/kmeans_clustering/kmeans_clustering_011.svg" />
-</figure>
+<section id="k-means-clustering-12" class="slide level3 slide:" data-transition="none">
+<h3><span class="math inline">\(k\)</span>-Means Clustering</h3>
+<object class="svgplot" data="../_ml/diagrams/kmeans-clustering/kmeans_clustering_011.svg">
+</object>
 <p><em>Clustering with the <span class="math inline">\(k\)</span>-means clustering algorithm.</em></p>
 </section>
-<section id="k-means-clustering-13" class="slide level1 slide:" data-transition="none">
-<h1><span class="math inline">\(k\)</span>-Means Clustering</h1>
-<figure>
-<img src="./diagrams/kmeans_clustering/kmeans_clustering_012.svg" />
-</figure>
+<section id="k-means-clustering-13" class="slide level3 slide:" data-transition="none">
+<h3><span class="math inline">\(k\)</span>-Means Clustering</h3>
+<object class="svgplot" data="../_ml/diagrams/kmeans-clustering/kmeans_clustering_012.svg">
+</object>
 <p><em>Clustering with the <span class="math inline">\(k\)</span>-means clustering algorithm.</em></p>
 </section>
-<section id="k-means-clustering-14" class="slide level1 slide:" data-transition="none">
-<h1><span class="math inline">\(k\)</span>-Means Clustering</h1>
-<figure>
-<img src="./diagrams/kmeans_clustering/kmeans_clustering_013.svg" />
-</figure>
+<section id="k-means-clustering-14" class="slide level3 slide:" data-transition="none">
+<h3><span class="math inline">\(k\)</span>-Means Clustering</h3>
+<object class="svgplot" data="../_ml/diagrams/kmeans-clustering/kmeans_clustering_013.svg">
+</object>
 <p><em>Clustering with the <span class="math inline">\(k\)</span>-means clustering algorithm.</em></p>
 </section>
-<section id="k-means-clustering-15" class="slide level1">
-<h1><span class="math inline">\(k\)</span>-Means Clustering</h1>
+<section id="k-means-clustering-15" class="slide level3">
+<h3><span class="math inline">\(k\)</span>-Means Clustering</h3>
 <p><a href="https://www.youtube.com/watch?v=mfqmoUN-Cuw"><img src="https://img.youtube.com/vi/mfqmoUN-Cuw/0.jpg" alt="k-means clustering by Alex Ihler" /></a></p>
 </section>
-<section id="hierarchical-clustering" class="slide level1">
-<h1>Hierarchical Clustering</h1>
+<section id="hierarchical-clustering" class="slide level3">
+<h3>Hierarchical Clustering</h3>
 <ul>
 <li><p>Form taxonomies of the cluster centers</p></li>
 <li><p>Like humans apply to animals, to form <em>phylogenies</em></p></li>
 </ul>
 <p><a href="https://www.youtube.com/watch?v=OcoE7JlbXvY"><img src="https://img.youtube.com/vi/OcoE7JlbXvY/0.jpg" alt="Hierarchical Clustering by Alex Ihler" /></a></p>
 </section>
-<section id="phylogenetic-trees" class="slide level1">
-<h1>Phylogenetic Trees</h1>
+<section id="phylogenetic-trees" class="slide level3">
+<h3>Phylogenetic Trees</h3>
 <ul>
 <li><p>Perform a hierarchical clustering based on genetic data, i.e. the actual contents of the genome.</p></li>
 <li><p>Perform across a number of species and produce a <em>phylogenetic tree</em>.</p></li>
@@ -1040,8 +971,8 @@ E(\mathbf{M}) = \sum_{i \in \mathbf{i}_j} (\mathbf{x}_i - \mathbf{m}_j)^2
 <li><p>Used to estimate the origin of viruses like AIDS or Bird flu</p></li>
 </ul>
 </section>
-<section id="product-clustering" class="slide level1">
-<h1>Product Clustering</h1>
+<section id="product-clustering" class="slide level3">
+<h3>Product Clustering</h3>
 <ul>
 <li><p>Could apply hierarchical clustering to Amazon’s products.</p></li>
 <li><p>Would give us a phylogeny of products.</p></li>
@@ -1051,8 +982,8 @@ E(\mathbf{M}) = \sum_{i \in \mathbf{i}_j} (\mathbf{x}_i - \mathbf{m}_j)^2
 </ul></li>
 </ul>
 </section>
-<section id="hierarchical-clustering-challenge" class="slide level1">
-<h1>Hierarchical Clustering Challenge</h1>
+<section id="hierarchical-clustering-challenge" class="slide level3">
+<h3>Hierarchical Clustering Challenge</h3>
 <ul>
 <li><p>Many products belong in more than one cluster: e.g. running shoes are ‘sporting goods’ and they are ‘clothing’.</p></li>
 <li><p>Tree structure doesn’t allow this allocation.</p></li>
@@ -1062,27 +993,26 @@ E(\mathbf{M}) = \sum_{i \in \mathbf{i}_j} (\mathbf{x}_i - \mathbf{m}_j)^2
 </ul></li>
 </ul>
 </section>
-<section id="dimensionality-reduction" class="slide level1">
-<h1>Dimensionality Reduction</h1>
+<section id="dimensionality-reduction" class="slide level3">
+<h3>Dimensionality Reduction</h3>
 <ul>
 <li>Compress the data by replacing the original data with reduced number of continuous variables.</li>
 </ul>
-<figure>
-<img src="./diagrams/marionette.svg" />
-</figure>
-<p><em>We observe pose, <span class="math inline">\(\mathbf{x}\)</span>, puppeteer’s hand, <span class="math inline">\(\mathbf{z}\)</span> remains hidden to us.</em></p>
+<object type="image/svg+xml" data="../_ml/diagrams/marionette.svg">
+</object>
+<p><em>We observe pose, <span class="math inline">\({\mathbf{{y}}}\)</span>, puppeteer’s hand, <span class="math inline">\({\mathbf{{x}}}\)</span> remains hidden to us.</em></p>
 </section>
-<section id="dimensionality-reduction-1" class="slide level1">
-<h1>Dimensionality Reduction</h1>
+<section id="dimensionality-reduction-1" class="slide level3">
+<h3>Dimensionality Reduction</h3>
 <ul>
-<li><p>Position of each body part of a marionette could be thought of as our data, <span class="math inline">\(\mathbf{x}_i\)</span>.</p></li>
+<li><p>Position of each body part of a marionette could be thought of as our data, <span class="math inline">\({{\bf {x}}}_i\)</span>.</p></li>
 <li><p>Each data point is the 3-D co-ordinates of all the different body parts</p></li>
 <li><p>Movement of parts determined by puppeteer via strings.</p></li>
 <li><p>For a simple puppet with one stick can move the stick up and down, left and right and twist.</p></li>
 </ul>
 </section>
-<section id="dimensionality-reduction-2" class="slide level1">
-<h1>Dimensionality Reduction</h1>
+<section id="dimensionality-reduction-2" class="slide level3">
+<h3>Dimensionality Reduction</h3>
 <ul>
 <li><p>This gives three parameters in the puppeteers control.</p></li>
 <li><p>Implies that the puppet we see moving is controlled by only 3 variables.</p></li>
@@ -1090,8 +1020,8 @@ E(\mathbf{M}) = \sum_{i \in \mathbf{i}_j} (\mathbf{x}_i - \mathbf{m}_j)^2
 <li><p>Assume similar for real world data, observations are derived from lower dimensional underlying process</p></li>
 </ul>
 </section>
-<section id="examples-in-social-sciences" class="slide level1">
-<h1>Examples in Social Sciences</h1>
+<section id="examples-in-social-sciences" class="slide level3">
+<h3>Examples in Social Sciences</h3>
 <ul>
 <li><p>Underpins <em>psychological scoring</em> such as <em>IQ</em> or <em>personality tests</em></p></li>
 <li><p>Myers-Briggs assumes personality is four dimensional.</p></li>
@@ -1099,55 +1029,55 @@ E(\mathbf{M}) = \sum_{i \in \mathbf{i}_j} (\mathbf{x}_i - \mathbf{m}_j)^2
 <li><p>Also language modelling has taken similar approaches: <a href="https://arxiv.org/abs/1301.3781">word2vec</a></p></li>
 </ul>
 </section>
-<section id="principal-component-analysis" class="slide level1">
-<h1>Principal Component Analysis</h1>
+<section id="principal-component-analysis" class="slide level3">
+<h3>Principal Component Analysis</h3>
 <ul>
 <li><p>Principal component analysis (PCA) a linear dimensionality reduction technique</p></li>
-<li><p>In Hotelling’s formulation of PCA: a assume <span class="math inline">\(\mathbf{x}\)</span> is a linear weighted sum of the latent factors of interest.</p></li>
+<li><p>In Hotelling’s formulation of PCA: a assume <span class="math inline">\({{\bf {x}}}\)</span> is a linear weighted sum of the latent factors of interest.</p></li>
 <li><p>E.g. IQ test we would try and predict subject <span class="math inline">\(i\)</span>’s answer to the <span class="math inline">\(j\)</span>th question with the following function</p></li>
 </ul>
 <p><span class="math display">\[
-x_{ij} = f_j(z_i; \mathbf{w}).
+{y}_{ij} = {f}_j({x}_i; {\mathbf{{w}}}).
 \]</span></p>
-<p><span class="math inline">\(z_i\)</span> would be the IQ of subject <span class="math inline">\(i\)</span> and <span class="math inline">\(f_j(\cdot)\)</span> would function relating IQ and question answer.</p>
+<p><span class="math inline">\({x}_i\)</span> would be the IQ of subject <span class="math inline">\(i\)</span> and <span class="math inline">\({f}_j(\cdot)\)</span> would function relating IQ and question answer.</p>
 </section>
-<section id="hotellings-pca" class="slide level1">
-<h1>Hotelling’s PCA</h1>
+<section id="hotellings-pca" class="slide level3">
+<h3>Hotelling’s PCA</h3>
 <ul>
 <li>Assume function is linear function. This idea is taken from a wider field known as <em>factor analysis</em>, so Hotelling described the challenge as</li>
 </ul>
 <p><span class="math display">\[
-f_j(z_i; \mathbf{w}) = w_j z_i
+{f}_j({x}_i; {\mathbf{{w}}}) = {w}_j {x}_i
 \]</span></p>
 <ul>
 <li><p>Answer to the <span class="math inline">\(j\)</span>th question is predicted to be a scaling of the subject’s IQ.</p></li>
-<li><p>Scale factor is given by <span class="math inline">\(w_j\)</span>.</p></li>
+<li><p>Scale factor is given by <span class="math inline">\({w}_j\)</span>.</p></li>
 </ul>
 </section>
-<section id="higher-latent-dimensions" class="slide level1">
-<h1>Higher Latent Dimensions</h1>
+<section id="higher-latent-dimensions" class="slide level3">
+<h3>Higher Latent Dimensions</h3>
 <ul>
-<li>For more latent dimensions matrix of scales, <span class="math inline">\(\mathbf{W}\)</span></li>
+<li>For more latent dimensions matrix of scales, <span class="math inline">\({\mathbf{{w}}}\)</span></li>
 </ul>
 <p><span class="math display">\[
-f_j(\mathbf{z}_i; \mathbf{W}) = w_{1j} z_{1i} + w_{2j} z_{2i}
+{f}_j({\mathbf{{x}}}_i; {\mathbf{{w}}}) = {w}_{1j} {x}_{1i} + {w}_{2j} {x}_{2i}
 \]</span></p>
 <ul>
-<li><span class="math inline">\(z_{1i}\)</span> might be extrovert/introvert and <span class="math inline">\(z_{2i}\)</span> might rational/perceptual</li>
+<li><span class="math inline">\({x}_{1i}\)</span> might be extrovert/introvert and <span class="math inline">\({x}_{2i}\)</span> might rational/perceptual</li>
 </ul>
 </section>
-<section id="parameters" class="slide level1">
-<h1>Parameters</h1>
+<section id="parameters" class="slide level3">
+<h3>Parameters</h3>
 <ul>
-<li><p>Parameters <span class="math inline">\(\mathbf{W}\)</span> are known as the factor <em>loadings</em> in FA.</p></li>
+<li><p>Parameters <span class="math inline">\({\mathbf{{w}}}\)</span> are known as the factor <em>loadings</em> in FA.</p></li>
 <li><p>In PCA they are known as the principal components.</p></li>
-<li><p>To fit the model need <em>loadings</em>, <span class="math inline">\(\mathbf{W}\)</span>, and latent variables, <span class="math inline">\(\mathbf{Z}\)</span>.</p></li>
+<li><p>To fit the model need <em>loadings</em>, <span class="math inline">\({\mathbf{{w}}}\)</span>, and latent variables, <span class="math inline">\({\mathbf{\MakeUppercase{{x}}}}\)</span>.</p></li>
 <li><p>Can use least squares (leads to <em>matrix factorization</em> and recommender systems).</p></li>
-<li><p>Recommender systems most elements of <span class="math inline">\(\mathbf{x}_i\)</span> are missing.</p></li>
+<li><p>Recommender systems most elements of <span class="math inline">\({{\bf {x}}}_i\)</span> are missing.</p></li>
 </ul>
 </section>
-<section id="probability" class="slide level1">
-<h1>Probability</h1>
+<section id="probability" class="slide level3">
+<h3>Probability</h3>
 <ul>
 <li><p>PCA and factor analysis the unknown latent factors are dealt with through a probability distribution.</p></li>
 <li><p>Assume these “unknowns” are drawn from a zero mean, unit variance normal distribution.</p></li>
@@ -1155,46 +1085,45 @@ f_j(\mathbf{z}_i; \mathbf{W}) = w_{1j} z_{1i} + w_{2j} z_{2i}
 <li><p>The PDF has parameters depending on factor loadings to be estimated.</p></li>
 </ul>
 </section>
-<section id="maximum-likelihood" class="slide level1">
-<h1>Maximum Likelihood</h1>
+<section id="maximum-likelihood" class="slide level3">
+<h3>Maximum Likelihood</h3>
 <ul>
 <li><p>Fit model by “maximising likelihood of data” under the PDF.</p></li>
 <li><p>Maxium likelihood for PCA is the <em>eigenvalue decomposition</em> of the data covariance matrix.</p></li>
 <li><p>Algorithmically simple and convenient, but slow to compute for very large data sets with many features and many subjects.</p></li>
 </ul>
 </section>
-<section id="principal-component-analysis-1" class="slide level1">
-<h1>Principal Component Analysis</h1>
-<figure>
-<img src="./diagrams/demManifoldPrint_all_1_2.svg" />
-</figure>
+<section id="principal-component-analysis-1" class="slide level3">
+<h3>Principal Component Analysis</h3>
+<object class="svgplot" data="../_ml/diagrams/demManifoldPrint_all_1_2.svg">
+</object>
 <p><em>Visualization of the first two principal components of an artificial data set. The data was generated by taking an image of a handwritten digit, 6, and rotating it 360 times, one degree each time. The first two principal components have been extracted in the diagram. The underlying circular shape is derived from the rotation of the data. Each image in the data set is projected on to the location its projected to in the latent space.</em></p>
 </section>
-<section id="reinforcement-learning" class="slide level1">
-<h1>Reinforcement Learning</h1>
+<section id="reinforcement-learning" class="slide level3">
+<h3>Reinforcement Learning</h3>
 <ul>
 <li><p>The final domain of learning we will review is known as reinforcement learning.</p></li>
 <li><p>Many researchers seem to believe is offering a route to <em>general intelligence</em>.</p></li>
 <li><p>Idea of general intelligence is develop algorithms that are adaptable to many different circumstances.</p></li>
 </ul>
 </section>
-<section id="reinforcement-learning-1" class="slide level1">
-<h1>Reinforcement Learning</h1>
+<section id="reinforcement-learning-1" class="slide level3">
+<h3>Reinforcement Learning</h3>
 <ul>
 <li><p>Supervised learning algorithms are designed to resolve particular challenges.</p></li>
 <li><p>Data is annotated with those challenges in mind.</p></li>
 <li><p>Unsupervised attempts to build representations without any context.</p></li>
 </ul>
 </section>
-<section id="reward" class="slide level1">
-<h1>“Reward”</h1>
+<section id="reward" class="slide level3">
+<h3>“Reward”</h3>
 <ul>
 <li><p>In reinforcement learning some context is given, in the form of a reward. But it is often <em>delayed</em></p></li>
 <li><p>Credit allocation problem: many actions that affected the outcome, but which actions had a positive effect and which a negative effect?</p></li>
 </ul>
 </section>
-<section id="ab-testing-and-reward" class="slide level1">
-<h1>A/B Testing and Reward</h1>
+<section id="ab-testing-and-reward" class="slide level3">
+<h3>A/B Testing and Reward</h3>
 <ul>
 <li><p>Advert clicks can be seen as a reward.</p></li>
 <li><p>Testing the customer experience, A/B testing, prioritises short term reward.</p></li>
@@ -1203,23 +1132,23 @@ f_j(\mathbf{z}_i; \mathbf{W}) = w_{1j} z_{1i} + w_{2j} z_{2i}
 <li><p>Success of Facebook is driven by its ability to draw us in when likely we should be doing something else. This is driven by large scale A/B testing.</p></li>
 </ul>
 </section>
-<section id="longer-term" class="slide level1">
-<h1>Longer Term</h1>
+<section id="longer-term" class="slide level3">
+<h3>Longer Term</h3>
 <ul>
 <li><p>One open question is how to drive non-visual interfaces through equivalents to A/B testing.</p></li>
 <li><p>Speech interfaces, such as those used in intelligent agents, are less amenable to A/B testing when determining the quality of the interface.</p></li>
 <li><p>Improving interaction with them is therefore less exact science than the visual interface.</p></li>
 </ul>
 </section>
-<section id="data-efficiency" class="slide level1">
-<h1>Data Efficiency</h1>
+<section id="data-efficiency" class="slide level3">
+<h3>Data Efficiency</h3>
 <ul>
 <li><p>Data efficient reinforcement learning methods are likely to be key to improving these agent’s ability to interact.</p></li>
 <li><p>However, they are not yet mature enough to be deployed yet.</p></li>
 </ul>
 </section>
-<section id="game-play" class="slide level1">
-<h1>Game Play</h1>
+<section id="game-play" class="slide level3">
+<h3>Game Play</h3>
 <ul>
 <li><p>Reinforcement learning methods have been deployed with high profile success is game play.</p></li>
 <li><p>Reward is delayed to the end of the game, victory or defeat.</p></li>
@@ -1227,16 +1156,16 @@ f_j(\mathbf{z}_i; \mathbf{W}) = w_{1j} z_{1i} + w_{2j} z_{2i}
 <li><p>Many of the recent advances in reinforcement learning have occurred with methods that are not data efficient.</p></li>
 </ul>
 </section>
-<section id="deepmind" class="slide level1">
-<h1>DeepMind</h1>
+<section id="deepmind" class="slide level3">
+<h3>DeepMind</h3>
 <ul>
 <li><p>The company DeepMind is set up around reinforcement learning as an approach to general intelligence.</p></li>
 <li><p>Best known achievements are centered around artificial intelligence in game play.</p></li>
 <li><p>For example, Atari game play and AlphaGo.</p></li>
 </ul>
 </section>
-<section id="deep-q-learning" class="slide level1">
-<h1>Deep Q Learning</h1>
+<section id="deep-q-learning" class="slide level3">
+<h3>Deep Q Learning</h3>
 <ul>
 <li><p>DeepMind uses an approach to Machine Learning where there are two mathematical functions at work.</p></li>
 <li><p>The <em>policy function</em> determines the action to be taken at any given moment,</p></li>
@@ -1244,8 +1173,8 @@ f_j(\mathbf{z}_i; \mathbf{W}) = w_{1j} z_{1i} + w_{2j} z_{2i}
 <li><p>In AlphaGo make use of convolutional neural networks for both these models.</p></li>
 </ul>
 </section>
-<section id="alphago" class="slide level1">
-<h1>AlphaGo</h1>
+<section id="alphago" class="slide level3">
+<h3>AlphaGo</h3>
 <ul>
 <li>Go was considered a challenge for artificial intelligence for two reasons.</li>
 </ul>
@@ -1258,16 +1187,16 @@ f_j(\mathbf{z}_i; \mathbf{W}) = w_{1j} z_{1i} + w_{2j} z_{2i}
 <li>AlphaGo played more than 30,000,000 games to learn value and policy.</li>
 </ul>
 </section>
-<section id="model-based-approach" class="slide level1">
-<h1>Model Based Approach</h1>
+<section id="model-based-approach" class="slide level3">
+<h3>Model Based Approach</h3>
 <ul>
 <li><p>An alternative approach to reinforcement learning is to use a prediction function.</p></li>
 <li><p>This is similar to <em>classical control</em> and field of <em>system identification</em>.</p></li>
 <li><p>Known as <em>model based</em> reinforcement learning.</p></li>
 </ul>
 </section>
-<section id="optimization-methods" class="slide level1">
-<h1>Optimization Methods</h1>
+<section id="optimization-methods" class="slide level3">
+<h3>Optimization Methods</h3>
 <ul>
 <li><p>Reinforcement learning can also used to improve user experience.</p></li>
 <li><p>Reward is gained when the user buys a product from us.</p></li>
@@ -1275,8 +1204,8 @@ f_j(\mathbf{z}_i; \mathbf{W}) = w_{1j} z_{1i} + w_{2j} z_{2i}
 <li><p>Optimization of our user interfaces is like reinforcement learning task, but normally approached through <em>Bayesian optimization</em> or <em>bandit learning</em>.</p></li>
 </ul>
 </section>
-<section id="optimization" class="slide level1">
-<h1>Optimization</h1>
+<section id="optimization" class="slide level3">
+<h3>Optimization</h3>
 <ul>
 <li><p>Normal optimization we have a mathematical representation of our objective function as a direct function of the parameters.</p></li>
 <li><p>In Bayesian Optimization we don’t.</p></li>
@@ -1288,46 +1217,46 @@ f_j(\mathbf{z}_i; \mathbf{W}) = w_{1j} z_{1i} + w_{2j} z_{2i}
 <li><p>Which product should I return top of the list in response to this user’s search?</p></li>
 </ol>
 </section>
-<section id="bayesian-optimization" class="slide level1">
-<h1>Bayesian Optimization</h1>
+<section id="bayesian-optimization" class="slide level3">
+<h3>Bayesian Optimization</h3>
 <ul>
 <li><p>Can’t directly relate the parameters in the system of interest to our objective through a mathematical function.</p></li>
 <li><p>E.g. What is the mathematical function that relates a user’s experience to the probability that they will buy a product?</p></li>
 </ul>
 </section>
-<section id="bayesian-optimization-1" class="slide level1">
-<h1>Bayesian Optimization</h1>
+<section id="bayesian-optimization-1" class="slide level3">
+<h3>Bayesian Optimization</h3>
 <ul>
 <li><p>Use machine learning to develop a <em>surrogate model</em> for the optimization task.</p></li>
 <li><p>Surrogate model is a prediction function that attempts to recreate the process we are finding hard to model.</p></li>
 <li><p>Try to simultaneously fit the surrogate model and optimize the process.</p></li>
 </ul>
 </section>
-<section id="surrogate-models" class="slide level1">
-<h1>Surrogate Models</h1>
+<section id="surrogate-models" class="slide level3">
+<h3>Surrogate Models</h3>
 <ul>
 <li><p>Bayesian optimization methods use a <em>surrogate model</em> (normally a specific form of regression model).</p></li>
 <li><p>Use this to predict how the real system will perform.</p></li>
 <li><p>Optimize in the surrogate model.</p></li>
 </ul>
 </section>
-<section id="conclusion" class="slide level1">
-<h1>Conclusion</h1>
+<section id="conclusion" class="slide level3">
+<h3>Conclusion</h3>
 <ul>
 <li><p>Introduce range of ML approaches.</p></li>
 <li><p>Focussed on where they use mathematical functions as a general overview.</p></li>
 </ul>
 </section>
-<section id="deployment" class="slide level1">
-<h1>Deployment</h1>
+<section id="deployment" class="slide level3">
+<h3>Deployment</h3>
 <ul>
 <li><p>Introduced almost in order of difficulty of deployment.</p></li>
 <li><p>Supervised learning requires more data annotation, but more straightforward to deploy.</p></li>
 <li><p>Therefore major focus with supervised learning should always be on maintaining data quality.</p></li>
 </ul>
 </section>
-<section id="where-to-deploy" class="slide level1">
-<h1>Where to Deploy</h1>
+<section id="where-to-deploy" class="slide level3">
+<h3>Where to Deploy</h3>
 <ul>
 <li><blockquote>
 <p>If a typical person can do a mental task with less than one second of thought, we can probably automate it using AI either now or in the near future.[^ngquote]</p>
@@ -1335,30 +1264,30 @@ f_j(\mathbf{z}_i; \mathbf{W}) = w_{1j} z_{1i} + w_{2j} z_{2i}
 </blockquote></li>
 </ul>
 </section>
-<section id="is-this-right" class="slide level1">
-<h1>Is this Right?</h1>
+<section id="is-this-right" class="slide level3">
+<h3>Is this Right?</h3>
 <ul>
 <li><p>Broadly agree with this quote but only in the context of supervised learning.</p></li>
 <li><p>The picture with regard to unsupervised learning and reinforcement learning is more clouded.</p></li>
 </ul>
 </section>
-<section id="getting-easier" class="slide level1">
-<h1>Getting Easier</h1>
+<section id="getting-easier" class="slide level3">
+<h3>Getting Easier</h3>
 <ul>
 <li><p>We seem to be moving beyond the era where very deep machine learning expertise is required to deploy methods.</p></li>
 <li><p>Just require a solid understanding of machine learning (say to Masters level)</p></li>
 </ul>
 </section>
-<section id="streaming-data" class="slide level1">
-<h1>Streaming Data</h1>
+<section id="streaming-data" class="slide level3">
+<h3>Streaming Data</h3>
 <ul>
 <li><p>Supervised machine learning solutions are normally trained offline.</p></li>
 <li><p>They do not adapt when deployed because this makes them less verifiable.</p></li>
 <li><p>This compounds the brittleness of our solutions.</p></li>
 </ul>
 </section>
-<section id="model-choice" class="slide level1">
-<h1>Model Choice</h1>
+<section id="model-choice" class="slide level3">
+<h3>Model Choice</h3>
 <ul>
 <li><p>For all machine learning methods is the initial choice of useful classes of functions.</p></li>
 <li><p>The deep learning revolution is associated with a particular class of mathematical functions.</p></li>
