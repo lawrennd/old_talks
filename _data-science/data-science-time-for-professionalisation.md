@@ -16,7 +16,7 @@ affiliation: Amazon Research Cambridge and University of Sheffield
 #### Data Science: Time for Professionalisation?
 #### 2017-10-13
 #### Neil D. Lawrence
-#### Amazon Research Cambridge and University of Sheffiel
+#### Amazon Research Cambridge and University of Sheffield
 ```@lawrennd``` [inverseprobability.com](http://inverseprobability.com)
 
 <!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2017-06-27-data-science-time-for-professionalisation.slides.html 2017-06-27-data-science-time-for-professionalisation.md
@@ -98,7 +98,7 @@ See ["Living Together: Mind and Machine Intelligence"](https://arxiv.org/abs/170
 
     * Then interconnect them as efficiently as possible.
 
-    * cf Colt 45, Ford Model T, 
+    * cf Colt 45, Ford Model T
 
 
 ### Codify Through Mathematical Functions 
@@ -109,7 +109,7 @@ See ["Living Together: Mind and Machine Intelligence"](https://arxiv.org/abs/170
 
 $$ \text{odds} = \frac{\text{bought}}{\text{not bought}} $$
 
-$$ \log \text{odds}  = \beta_0 + \beta_1 \text{age} + \beta_2 \text{lattitude}$$
+$$ \log \text{odds}  = \beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}$$
 
 
 ### Codify Through Mathematical Functions {.slide: data-transition="none"}
@@ -299,7 +299,7 @@ be a total nightmare.
 * exploratory data analysis
 * noise characterisation.
 * Missing values.
-* Schema alignment, record linkage, data fusion? (Luna's talk)
+* Schema alignment, record linkage, data fusion? 
 * Example, was a column or columns accidentally perturbed (e.g. through a sort operation that missed one or more columns)? Or was a [gene name accidentally converted to a date](http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-5-80)?
 * At the end of Grade B, ready to define a candidate question, the
   context, load into OpenML
@@ -310,8 +310,8 @@ be a total nightmare.
 * Grade A is about data in context.
 * Consider appropriateness of a given data set to answer a particular
 question or to be subject to a particular analysis.
-* Greg's talk, Enrica's talk, data integration?
-* At the end of Grade A it's ready for RAMP, Kaggle, define a *task* in OpenML.
+* Data integration?
+* At the end of Grade A it's ready for data platforms such as RAMP, Kaggle, define a *task* in OpenML.
 
 ### Recursive Effects
 
@@ -338,7 +338,7 @@ question or to be subject to a particular analysis.
 
 * Incentivise the delivery of data.
 
-* Analogies: For SDEs [describe data science as *debugging*](http://inverseprobability.com/2017/03/14/data-science-as-debugging).
+* Analogies: For Software Engineers [describe data science as *debugging*](http://inverseprobability.com/2017/03/14/data-science-as-debugging).
 
 ### See Also ...
 
