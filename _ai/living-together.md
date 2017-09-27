@@ -9,23 +9,14 @@ author: Neil D. Lawrence
 
 \include{../_ai/includes/diving-bell-butterfly.md}
 \include{../_ai/includes/embodiment-factors-tedx.md}
-
-### {.slide: data-transition="none"}
-
-<img src="./diagrams/640px-Marcel_Renault_1903.jpg" align="center" width="70%" style="background:none; border:none; box-shadow:none;">
-
-
-### {.slide: data-transition="none"}
-
-<object class="svgplot" data="./diagrams/Hilbert_InfoGrowth.svg">
-</object>
-
-\include{../_data-science/includes/evolved-relationship.md}
+\include{../_ai/includes/sahelanthropus-tchadensis.md}
+\include{../_ai/includes/marcel-renault.md}
+\include{../_ai/includes/caleb-mcduff.md}
 \include{../_ai/includes/conversation.md}
-
+\include{../_data-science/includes/information-growth.md}
 \include{../_ai/includes/baby-shoes.md}
+\include{../_data-science/includes/evolved-relationship.md}
 \include{../_ai/includes/computer-conversation.md}
-
 
 
 ### Thanks!
