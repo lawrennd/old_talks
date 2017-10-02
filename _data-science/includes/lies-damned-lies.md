@@ -23,7 +23,7 @@
 
 * 'Founded' by Karl Pearson (1857-1936)
 
-<img src="./diagrams/Portrait_of_Karl_Pearson.jpg" align="center" width="30%" style="background:none; border:none; box-shadow:none;">
+<img src="../slides/diagrams/Portrait_of_Karl_Pearson.jpg" align="center" width="30%" style="background:none; border:none; box-shadow:none;">
 
 ### {.slide: data-transition="none"}
 
