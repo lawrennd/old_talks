@@ -2,12 +2,12 @@
 title: Where Next for AI?
 venue: CWTech AI Conference
 layout: slides
-date: 2017-10-02
+date: 2017-10-03
 author: Neil D. Lawrence
 affiliation: Amazon and University of Sheffield
 ---
 
-\include{../_ai/includes/gartner-hype-cycle-ai-bd-dl.md}
+\include{../_ai/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
 
 \include{../_data-science/includes/lies-damned-lies.md}
 
