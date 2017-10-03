@@ -15,6 +15,6 @@ key: Lawrence-cwtec17
 layout: talk
 month: 10
 published: 2017-10-03
-reveal: 2017-10-03-where-next-for-ai.html
+reveal: 2017-10-03-where-next-for-ai.slides.html
 venue: CW AI Conference
 ---
