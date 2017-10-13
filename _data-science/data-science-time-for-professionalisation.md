@@ -235,9 +235,15 @@ vs [how Africa can benefit from the data revolution](https://www.theguardian.com
 >
 > Me
 
-### Rest of this Talk: Two Areas of Focus
+### Rest of this Talk: Two Areas of Focus {.slide: data-transition="none" }
 
-* _Reusability of Data_
+* Reusability of Data
+
+* Deployment of Machine Learning Systems
+
+### Rest of this Talk: Two Areas of Focus {.slide: data-transition="none" }
+
+* <s>Reusability of Data</s>
 
 * Deployment of Machine Learning Systems
 
@@ -253,8 +259,6 @@ vs [how Africa can benefit from the data revolution](https://www.theguardian.com
 
 * Fog computing: barrier between cloud and device blurring.
 
-* Stuxnet: Adversarial and Security implications for intelligent systems.
-
 * Complex feedback between algorithm and implementation
   
 ### Deploying ML in Real World: Machine Learning Systems Design
@@ -263,7 +267,7 @@ vs [how Africa can benefit from the data revolution](https://www.theguardian.com
 
 * Internet of Intelligence but currently:
 
-	* AI systems are currently *fragile*
+	* AI systems are *fragile*
 
 \include{../_ai/includes/ml-systems-design-long.md}
 
