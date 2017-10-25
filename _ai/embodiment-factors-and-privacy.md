@@ -6,6 +6,7 @@ author: Neil D. Lawrence
 \include{../_ai/includes/the-diving-bell-butterfly.md}
 \include{../_ai/includes/jean-dominique-bauby.md}
 \include{../_ai/includes/embodiment-factors-tedx.md}
+\include{../_ai/includes/formula-one-engine.md}
 \include{../_ai/includes/marcel-renault.md}
 \include{../_ai/includes/caleb-mcduff.md}
 \include{../_ai/includes/conversation.md}
