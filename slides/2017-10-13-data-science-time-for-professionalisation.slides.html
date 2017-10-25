@@ -255,129 +255,133 @@ embodiment<br>(compute/communicate)
 <h3>The Data Crisis</h3>
 <blockquote>
 <p>The major cause of the data crisis is that machines have become more interconnected than ever before. Data access is therefore cheap, but data quality is often poor. What we need is cheap high quality data. That implies that we develop processes for improving and verifying data quality that are efficient.</p>
-<p>There would seem to be two ways for improving efficiency. Firstly, we should not duplicate work. Secondly, where possibly we should automate work.</p>
+<p>There would seem to be two ways for improving efficiency. Firstly, we should not duplicate work. Secondly, where possible we should automate work.</p>
 <p>Me</p>
 </blockquote>
 </section>
-<section id="rest-of-this-talk-two-areas-of-focus" class="slide level3">
+<section id="rest-of-this-talk-two-areas-of-focus" class="slide level3 slide:" data-transition="none">
 <h3>Rest of this Talk: Two Areas of Focus</h3>
 <ul>
 <li><p>Reusability of Data</p></li>
 <li><p>Deployment of Machine Learning Systems</p></li>
 </ul>
 </section>
-<section id="quantifying-the-value-of-data" class="slide level3">
-<h3>Quantifying the Value of Data</h3>
-<p>There’s a sea of data, but most of it is undrinkable</p>
-<p><img src="./diagrams/sea-water-ocean-waves.jpg" width="50%"></p>
-<p>We require data-desalination before it can be consumed!</p>
-</section>
-<section id="data-quotes" class="slide level3">
-<h3>Data Quotes</h3>
+<section id="rest-of-this-talk-two-areas-of-focus-1" class="slide level3 slide:" data-transition="none">
+<h3>Rest of this Talk: Two Areas of Focus</h3>
 <ul>
-<li>90% of our time is spent on validation and integration (Leo Anthony Celi)</li>
-<li>“The Dirty Work We Don’t Want to Think About” (Eric Xing)</li>
-<li>“Voodoo to get it decompressed” (Francisco Giminez)</li>
-<li>Getting money from management for data collection and annotation can be a total nightmare.</li>
+<li><p><s>Reusability of Data</s></p></li>
+<li><p>Deployment of Machine Learning Systems</p></li>
 </ul>
-</section>
-<section id="value" class="slide level3">
-<h3>Value</h3>
-<ul>
-<li><p>How do we measure value in the data economy?</p></li>
-<li><p>How do we encourage data workers: curation and management</p>
-<ul>
-<li><p>Incentivization for sharing and production.</p></li>
-<li><p>Quantifying the value in the contribution of <em>each actor</em>.</p></li>
-</ul></li>
-</ul>
-</section>
-<section id="data-readiness-levels" class="slide level3">
-<h3>Data Readiness Levels</h3>
-<p><a href="http://inverseprobability.com/2017/01/12/data-readiness-levels">Data Readiness Levels</a> (see also <a href="https://arxiv.org/pdf/1705.02245.pdf">arxiv</a>)</p>
-<ul>
-<li><p>Three Grades of Data Readiness:</p></li>
-<li><p>Grade C - accessibility</p></li>
-<li><p>Grade B - validity</p></li>
-<li><p>Grade A - usability</p></li>
-</ul>
-</section>
-<section id="accessibility-grade-c" class="slide level3">
-<h3>Accessibility: Grade C</h3>
-<ul>
-<li>Hearsay data.</li>
-<li>Availability, is it actually being recorded?</li>
-<li>privacy or legal constraints on the accessibility of the recorded data, have ethical constraints been alleviated?</li>
-<li>Format: log books, PDF …</li>
-<li>limitations on access due to topology (e.g. it’s distributed across a number of devices)</li>
-<li>At the end of Grade C data is ready to be loaded into analysis software (R, SPSS, Matlab, Python, Mathematica)</li>
-</ul>
-</section>
-<section id="validity-grade-b" class="slide level3">
-<h3>Validity: Grade B</h3>
-<ul>
-<li>faithfulness and representation</li>
-<li>visualisations.</li>
-<li>exploratory data analysis</li>
-<li>noise characterisation.</li>
-<li>Missing values.</li>
-<li>Schema alignment, record linkage, data fusion?</li>
-<li>Example, was a column or columns accidentally perturbed (e.g. through a sort operation that missed one or more columns)? Or was a <a href="http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-5-80">gene name accidentally converted to a date</a>?</li>
-<li>At the end of Grade B, ready to define a candidate question, the context, load into OpenML</li>
-</ul>
-</section>
-<section id="usability-grade-a" class="slide level3">
-<h3>Usability: Grade A</h3>
-<ul>
-<li>The usability of data</li>
-<li>Grade A is about data in context.</li>
-<li>Consider appropriateness of a given data set to answer a particular question or to be subject to a particular analysis.</li>
-<li>Data integration?</li>
-<li>At the end of Grade A it’s ready for data platforms such as RAMP, Kaggle, define a <em>task</em> in OpenML.</li>
-</ul>
-</section>
-<section id="recursive-effects" class="slide level3">
-<h3>Recursive Effects</h3>
-<ul>
-<li><p>Grade A may also require:</p>
-<ul>
-<li><p>active collection of new data.</p></li>
-<li><p>rebalancing of data to ensure fairness</p></li>
-<li><p>annotation of data by human experts</p></li>
-<li><p>revisiting the collection (and running through the appropriate stages again)</p></li>
-</ul></li>
-</ul>
-</section>
-<section id="contribute" class="slide level3">
-<h3>Contribute!</h3>
-<ul>
-<li><a href="http://data-readiness.org" class="uri">http://data-readiness.org</a></li>
-</ul>
-</section>
-<section id="also" class="slide level3">
-<h3>Also …</h3>
-<ul>
-<li><p>Encourage greater interaction between application domains and data scientists</p></li>
-<li><p>Encourage <em>visualization</em> of data</p></li>
-<li><p>Incentivise the delivery of data.</p></li>
-<li><p>Analogies: For Software Engineers <a href="http://inverseprobability.com/2017/03/14/data-science-as-debugging">describe data science as <em>debugging</em></a>.</p></li>
-</ul>
-</section>
-<section id="see-also" class="slide level3">
-<h3>See Also …</h3>
-<ul>
-<li>Data Joel Tests
-<ul>
-<li><a href="https://medium.com/damoncivin/the-joel-test-for-data-readiness-4882aae64753">proposal by Damon Civin</a> and</li>
-<li><a href="https://blog.dominodatalab.com/joel-test-data-science/">proposal by Nick Elprin</a></li>
-</ul></li>
-</ul>
+<!--### Quantifying the Value of Data
+
+There's a sea of data, but most of it is undrinkable
+
+<img src="../slides/diagrams/sea-water-ocean-waves.jpg" width="50%">
+
+We require data-desalination before it can be consumed!
+
+
+### Data Quotes
+
+* 90% of our time is spent on validation and integration (Leo Anthony Celi)
+* "The Dirty Work We Don't Want to Think About" (Eric Xing)
+* "Voodoo to get it decompressed" (Francisco Giminez)
+* Getting money from management for data collection and annotation can
+be a total nightmare.
+
+### Value
+
+* How do we measure value in the data economy?
+
+* How do we encourage data workers: curation and management
+
+    * Incentivization for sharing and production.
+
+    * Quantifying the value in the contribution of *each actor*.
+
+
+### Data Readiness Levels
+
+   [Data Readiness Levels](http://inverseprobability.com/2017/01/12/data-readiness-levels)
+   (see also [arxiv](https://arxiv.org/pdf/1705.02245.pdf))
+
+* Three Grades of Data Readiness:
+
+* Grade C - accessibility
+
+* Grade B - validity
+
+* Grade A - usability
+
+
+### Accessibility: Grade C
+
+* Hearsay data.
+* Availability, is it actually being recorded?
+* privacy or legal constraints on the accessibility of the recorded data, have ethical constraints been alleviated?
+* Format: log books, PDF ...
+* limitations on access due to topology (e.g. it's distributed across a number of devices)
+* At the end of Grade C data is ready to be loaded into analysis software (R, SPSS, Matlab, Python, Mathematica)
+
+### Validity: Grade B
+
+* faithfulness and representation
+* visualisations.
+* exploratory data analysis
+* noise characterisation.
+* Missing values.
+* Schema alignment, record linkage, data fusion? 
+* Example, was a column or columns accidentally perturbed (e.g. through a sort operation that missed one or more columns)? Or was a [gene name accidentally converted to a date](http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-5-80)?
+* At the end of Grade B, ready to define a candidate question, the
+  context, load into OpenML
+
+### Usability: Grade A
+
+* The usability of data
+* Grade A is about data in context.
+* Consider appropriateness of a given data set to answer a particular
+question or to be subject to a particular analysis.
+* Data integration?
+* At the end of Grade A it's ready for data platforms such as RAMP, Kaggle, define a *task* in OpenML.
+
+### Recursive Effects
+
+* Grade A may also require:
+
+    * active collection of new data.
+
+    * rebalancing of data to ensure fairness
+
+    * annotation of data by human experts 
+
+    * revisiting the collection (and running through the appropriate stages again)
+
+### Contribute!
+
+* <http://data-readiness.org>
+
+
+### Also ...
+
+* Encourage greater interaction between application domains and data scientists
+
+* Encourage *visualization* of data
+
+* Incentivise the delivery of data.
+
+* Analogies: For Software Engineers [describe data science as *debugging*](http://inverseprobability.com/2017/03/14/data-science-as-debugging).
+
+### See Also ...
+
+* Data Joel Tests
+    * [proposal by Damon Civin](https://medium.com/damoncivin/the-joel-test-for-data-readiness-4882aae64753) and
+    * [proposal by Nick Elprin](https://blog.dominodatalab.com/joel-test-data-science/)
+-->
 </section>
 <section id="artificial-intelligence" class="slide level3">
 <h3>Artificial Intelligence</h3>
 <ul>
-<li><p>Suggested a split between artificial intelligence.</p></li>
-<li><p>Next section explore the challenges of deploying AI.</p></li>
+<li><p>Challenges in deploying AI.</p></li>
 <li><p>Currently this is in the form of “machine learning systems”</p></li>
 </ul>
 </section>
@@ -385,7 +389,6 @@ embodiment<br>(compute/communicate)
 <h3>Internet of People</h3>
 <ul>
 <li><p>Fog computing: barrier between cloud and device blurring.</p></li>
-<li><p>Stuxnet: Adversarial and Security implications for intelligent systems.</p></li>
 <li><p>Complex feedback between algorithm and implementation</p></li>
 </ul>
 </section>
@@ -395,7 +398,7 @@ embodiment<br>(compute/communicate)
 <li><p>Major new challenge for systems designers.</p></li>
 <li><p>Internet of Intelligence but currently:</p>
 <ul>
-<li>AI systems are currently <em>fragile</em></li>
+<li>AI systems are <em>fragile</em></li>
 </ul></li>
 </ul>
 </section>
@@ -403,9 +406,11 @@ embodiment<br>(compute/communicate)
 <h3>Fragility of AI Systems</h3>
 <ul>
 <li><p>They are componentwise built from ML Capabilities.</p></li>
-<li><p>Each capability is independently constructed and verified.</p></li>
+<li><p>Each capability is independently constructed and verified.</p>
+<ul>
 <li>Pedestrian detection</li>
-<li><p>Road line detection</p></li>
+<li>Road line detection</li>
+</ul></li>
 <li><p>Important for verification purposes.</p></li>
 </ul>
 </section>
@@ -417,15 +422,26 @@ embodiment<br>(compute/communicate)
 <li><p>The experience evolved adversarial behaviour.</p></li>
 </ul>
 </section>
+<section id="early-ai" class="slide level3">
+<h3>Early AI</h3>
+<p><img src="../slides/diagrams/2017-10-12 16.47.34.jpg" width="40%" class="rotateimg90" style="border:none"></p>
+</section>
 <section id="machine-learning-systems-design" class="slide level3">
 <h3>Machine Learning Systems Design</h3>
-<p><img src="./diagrams/SteamEngine_Boulton&Watt_1784_neg.png" width="50%" style="border:none"></p>
+<p><img src="../slides/diagrams/SteamEngine_Boulton&Watt_1784_neg.png" width="50%" style="border:none"></p>
+</section>
+<section id="adversaries" class="slide level3">
+<h3>Adversaries</h3>
+<ul>
+<li><p>Stuxnet</p></li>
+<li><p>Mischevious-Adversarial</p></li>
+</ul>
 </section>
 <section id="turnaround-and-update" class="slide level3">
 <h3>Turnaround And Update</h3>
 <ul>
 <li><p>There is a massive need for turn around and update</p></li>
-<li>A redeploy of the entire system.
+<li><p>A redeploy of the entire system.</p>
 <ul>
 <li>This involves changing the way we design and deploy.</li>
 </ul></li>
@@ -438,22 +454,15 @@ embodiment<br>(compute/communicate)
 <li><p>A new name for system failures which aren’t bugs.</p></li>
 <li><p>Difference between finding a fly in your soup vs a peppercorn in your soup.</p></li>
 </ul>
-</section>
-<section id="section-5" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<center>
-<video height="600" type="video/mp4">
-<source src="./diagrams/paolo-peppercorn.mp4" height="80%">
-</video>
-</center>
-</section>
-<section id="section-6" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<center>
-<video type="video/mp4">
-<source src="./diagrams/paolo-save.mp4">
-</video>
-</center>
+<!--### {.slide: data-transition="none"}
+
+<center><video height="600" type="video/mp4"><source src="../slides/diagrams/paolo-peppercorn.mp4" height="80%"></video></center>
+
+### {.slide: data-transition="none"}
+
+<center><video type="video/mp4"><source src="../slides/diagrams/paolo-save.mp4"></video></center>-->
+<!--  LocalWords:  Mischevious
+ -->
 </section>
 <section id="conclusion" class="slide level3">
 <h3>Conclusion</h3>
