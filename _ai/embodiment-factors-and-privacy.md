@@ -58,6 +58,8 @@ Consent is neither necessary nor sufficient for giving up privacy.-->
 
 * twitter: @lawrennd
 * blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
-* [Embodiment Factors](https://arxiv.org/abs/1705.07996)
-* [System Zero](http://inverseprobability.com/2015/12/04/what-kind-of-ai)
-* [Data Trusts Article](https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy)
+
+
+[Arxiv Article on Embodiment Factors](https://arxiv.org/abs/1705.07996),
+[Blog Post on System Zero](http://inverseprobability.com/2015/12/04/what-kind-of-ai),
+[Guardian Op-Ed on Data Trusts](https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy)
