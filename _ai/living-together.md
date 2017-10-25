@@ -3,7 +3,6 @@ layout: slides
 title: "Living Together: Mind and Machine Intelligence"
 author: Neil D. Lawrence
 ---
-
 <!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2017-10-06-living-together.slides.html  2017-10-06-living-together.md
 -->
 

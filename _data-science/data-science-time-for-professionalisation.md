@@ -230,137 +230,34 @@ vs [how Africa can benefit from the data revolution](https://www.theguardian.com
 >verifying data quality that are efficient.
 >
 >There would seem to be two ways for improving efficiency. Firstly, we
->should not duplicate work. Secondly, where possibly we should automate
+>should not duplicate work. Secondly, where possible we should automate
 >work. 
 >
 > Me
 
-### Rest of this Talk: Two Areas of Focus
+### Rest of this Talk: Two Areas of Focus {.slide: data-transition="none" }
 
 * Reusability of Data
 
 * Deployment of Machine Learning Systems
 
-### Quantifying the Value of Data
+### Rest of this Talk: Two Areas of Focus {.slide: data-transition="none" }
 
-There's a sea of data, but most of it is undrinkable
+* <s>Reusability of Data</s>
 
-<img src="./diagrams/sea-water-ocean-waves.jpg" width="50%">
+* Deployment of Machine Learning Systems
 
-We require data-desalination before it can be consumed!
-
-
-### Data Quotes
-
-* 90% of our time is spent on validation and integration (Leo Anthony Celi)
-* "The Dirty Work We Don't Want to Think About" (Eric Xing)
-* "Voodoo to get it decompressed" (Francisco Giminez)
-* Getting money from management for data collection and annotation can
-be a total nightmare.
-
-### Value
-
-* How do we measure value in the data economy?
-
-* How do we encourage data workers: curation and management
-
-	* Incentivization for sharing and production.
-
-	* Quantifying the value in the contribution of *each actor*.
-
-
-### Data Readiness Levels
-
-   [Data Readiness Levels](http://inverseprobability.com/2017/01/12/data-readiness-levels)
-   (see also [arxiv](https://arxiv.org/pdf/1705.02245.pdf))
-
-* Three Grades of Data Readiness:
-
-* Grade C - accessibility
-
-* Grade B - validity
-
-* Grade A - usability
-
-
-### Accessibility: Grade C
-
-* Hearsay data.
-* Availability, is it actually being recorded?
-* privacy or legal constraints on the accessibility of the recorded data, have ethical constraints been alleviated?
-* Format: log books, PDF ...
-* limitations on access due to topology (e.g. it's distributed across a number of devices)
-* At the end of Grade C data is ready to be loaded into analysis software (R, SPSS, Matlab, Python, Mathematica)
-
-### Validity: Grade B
-
-* faithfulness and representation
-* visualisations.
-* exploratory data analysis
-* noise characterisation.
-* Missing values.
-* Schema alignment, record linkage, data fusion? 
-* Example, was a column or columns accidentally perturbed (e.g. through a sort operation that missed one or more columns)? Or was a [gene name accidentally converted to a date](http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-5-80)?
-* At the end of Grade B, ready to define a candidate question, the
-  context, load into OpenML
-
-### Usability: Grade A
-
-* The usability of data
-* Grade A is about data in context.
-* Consider appropriateness of a given data set to answer a particular
-question or to be subject to a particular analysis.
-* Data integration?
-* At the end of Grade A it's ready for data platforms such as RAMP, Kaggle, define a *task* in OpenML.
-
-### Recursive Effects
-
-* Grade A may also require:
-
-    * active collection of new data.
-
-    * rebalancing of data to ensure fairness
-
-	* annotation of data by human experts 
-
-	* revisiting the collection (and running through the appropriate stages again)
-
-### Contribute!
-
-* <http://data-readiness.org>
-
-
-### Also ...
-
-* Encourage greater interaction between application domains and data scientists
-
-* Encourage *visualization* of data
-
-* Incentivise the delivery of data.
-
-* Analogies: For Software Engineers [describe data science as *debugging*](http://inverseprobability.com/2017/03/14/data-science-as-debugging).
-
-### See Also ...
-
-* Data Joel Tests
-    * [proposal by Damon Civin](https://medium.com/@damoncivin/the-joel-test-for-data-readiness-4882aae64753) and
-    * [proposal by Nick Elprin](https://blog.dominodatalab.com/joel-test-data-science/)
-
+<!--\include{../_data-science/includes/data-readiness-levels.md}-->
 
 ### Artificial Intelligence
 
-* Suggested a split between artificial intelligence.
-
-* Next section explore the challenges of deploying AI.
+* Challenges in deploying AI.
 
 * Currently this is in the form of "machine learning systems"
-
 
 ### Internet of People
 
 * Fog computing: barrier between cloud and device blurring.
-
-* Stuxnet: Adversarial and Security implications for intelligent systems.
 
 * Complex feedback between algorithm and implementation
   
@@ -370,54 +267,9 @@ question or to be subject to a particular analysis.
 
 * Internet of Intelligence but currently:
 
-	* AI systems are currently *fragile*
+	* AI systems are *fragile*
 
-### Fragility of AI Systems
-
-* They are componentwise built from ML Capabilities.
-
-* Each capability is independently constructed and verified.
-
-   * Pedestrian detection
-   * Road line detection
-
-* Important for verification purposes.
-
-### Rapid Reimplementation
-
-* Whole systems are being deployed.
-
-* But they change their environment.
-
-* The experience evolved adversarial behaviour.
-
-### Machine Learning Systems Design
-
-<img src="./diagrams/SteamEngine_Boulton&Watt_1784_neg.png" width="50%" style="border:none">
-
-### Turnaround And Update
-
-* There is a massive need for turn around and update
-
-* A redeploy of the entire system.
-     *  This involves changing the way we design and deploy.
-
-* Interface between security engineering and machine learning.
-
-### Peppercorns
-
-* A new name for system failures which aren't bugs.
-
-* Difference between finding a fly in your soup vs a peppercorn in
-  your soup. 
-
-### {.slide: data-transition="none"}
-
-<center><video height="600" type="video/mp4"><source src="./diagrams/paolo-peppercorn.mp4" height="80%"></video></center>
-
-### {.slide: data-transition="none"}
-
-<center><video type="video/mp4"><source src="./diagrams/paolo-save.mp4"></video></center>
+\include{../_ai/includes/ml-systems-design-long.md}
 
 ### Conclusion
 
