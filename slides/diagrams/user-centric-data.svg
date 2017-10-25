@@ -1,13 +1,65 @@
-<svg viewbox = "0 0 700 700" height="700" width="700" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
->
-  <defs>
-    <style type="text/css">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewbox="0 0 700 700"
+   height="700"
+   width="700"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="user-centric-data.svg">
+  <metadata
+     id="metadata61">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="836"
+     inkscape:window-height="636"
+     id="namedview59"
+     showgrid="false"
+     inkscape:zoom="0.67428571"
+     inkscape:cx="134.95763"
+     inkscape:cy="350"
+     inkscape:window-x="171"
+     inkscape:window-y="18"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <defs
+     id="defs4">
+    <style
+       type="text/css"
+       id="style6">
       @import url(../reveal.js/lib/font/source-sans-pro/source-sans-pro.css);
       section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
       color: #222; }
     </style>
-    <solidColor id="foreground" solid-color="white" solid-opacity="1.0"/>
-    <style>
+    <solidColor
+       id="foreground"
+       solid-color="white"
+       solid-opacity="1.0" />
+    <style
+       id="style9">
       .mycirc { fill-opacity:1;stroke-width:3;stroke:white;fill:black;}
       .mycirc2 { fill-opacity:1;stroke-width:3;stroke:white;fill:gray;}
       .myemptycirc { fill-opacity:0;stroke-width:3;stroke:red;fill:black;}
@@ -17,49 +69,357 @@
       .myline { stroke:gray;stroke-width:2;}
       .myline2 { fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke:gray}
       .mythickline { stroke:white;stroke-width:30;}
-      .mytext { fill:white;font-size:2em;font-family: "Source Sans Pro", Helvetica, sans-serif;}
-      .mysmallinverttext { fill:black;font-size:1.5em;font-family: "Source Sans Pro", Helvetica, sans-serif;}
+      .mytext { fill:white;font-size:2em;font-family: &quot;Source Sans Pro&quot;, Helvetica, sans-serif;}
+      .mysmallinverttext { fill:black;font-size:1.5em;font-family: &quot;Source Sans Pro&quot;, Helvetica, sans-serif;}
     </style>
-    <marker id="markerCircle" markerWidth="8" markerHeight="8" refX="5" refY="5">
-      <circle cx="5" cy="5" r="3" style="stroke: none; fill:white"/>
+    <marker
+       id="markerCircle"
+       markerWidth="8"
+       markerHeight="8"
+       refX="5"
+       refY="5">
+      <circle
+         cx="5"
+         cy="5"
+         r="3"
+         style="stroke: none; fill:white"
+         id="circle12" />
     </marker>
-    <marker id="markerArrow" markerWidth="13" markerHeight="13" refX="2" refY="6" orient="auto">
-      <path d="M2,2 L2,11 L10,6 L2,2" style="fill:white" />
+    <marker
+       id="markerArrow"
+       markerWidth="13"
+       markerHeight="13"
+       refX="2"
+       refY="6"
+       orient="auto">
+      <path
+         d="M2,2 L2,11 L10,6 L2,2"
+         style="fill:white"
+         id="path15" />
     </marker>
-    <marker id="markerThickArrow" markerWidth="13" markerHeight="13" refX="2" refY="16" orient="auto">
-      <path d="M0.5,0.5 L0.5,3 L2.5,1.5 L0.5,0.5" style="fill:white" />
+    <marker
+       id="markerThickArrow"
+       markerWidth="13"
+       markerHeight="13"
+       refX="2"
+       refY="16"
+       orient="auto">
+      <path
+         d="M0.5,0.5 L0.5,3 L2.5,1.5 L0.5,0.5"
+         style="fill:white"
+         id="path18" />
     </marker>
     <!--<rect id="myrecty" width="100" height="31" class="myrect"/>-->
-    <path id="InfoFlowPath" d="M 279.75659,571.06371 C 235.95986,560.97318 161.74966,558.722 145.29259,450.77337 c -5.25102,-76.62517 15.2858,-96.9644 27.88824,-122.46214 12.60245,-25.49773 27.58018,-46.85687 46.48386,-68.27496"
-     sodipodi:nodetypes="ccsc" />
+    <path
+       id="InfoFlowPath"
+       d="M 279.75659,571.06371 C 235.95986,560.97318 161.74966,558.722 145.29259,450.77337 c -5.25102,-76.62517 15.2858,-96.9644 27.88824,-122.46214 12.60245,-25.49773 27.58018,-46.85687 46.48386,-68.27496"
+       sodipodi:nodetypes="ccsc" />
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter3389">
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0.21 0.72 0.07 1 0 "
+         result="color2"
+         id="feColorMatrix3391" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter3393">
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0.21 0.72 0.07 1 0 "
+         result="color2"
+         id="feColorMatrix3395" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter3397">
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0.21 0.72 0.07 1 0 "
+         result="color2"
+         id="feColorMatrix3399" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter3401">
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0.21 0.72 0.07 1 0 "
+         result="color2"
+         id="feColorMatrix3403" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter3405">
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0.21 0.72 0.07 1 0 "
+         result="color2"
+         id="feColorMatrix3407" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter3409">
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0.21 0.72 0.07 1 0 "
+         result="color2"
+         id="feColorMatrix3411" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter3413">
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0.21 0.72 0.07 1 0 "
+         result="color2"
+         id="feColorMatrix3415" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter3417">
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0.21 0.72 0.07 1 0 "
+         result="color2"
+         id="feColorMatrix3419" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter3421">
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0.21 0.72 0.07 1 0 "
+         result="color2"
+         id="feColorMatrix3423" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter3425">
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0.21 0.72 0.07 1 0 "
+         result="color2"
+         id="feColorMatrix3427" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter3429">
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0.21 0.72 0.07 1 0 "
+         result="color2"
+         id="feColorMatrix3431" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter3433">
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0.21 0.72 0.07 1 0 "
+         result="color2"
+         id="feColorMatrix3435" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter3437">
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0.21 0.72 0.07 1 0 "
+         result="color2"
+         id="feColorMatrix3439" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter3441">
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0.21 0.72 0.07 1 0 "
+         result="color2"
+         id="feColorMatrix3443" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter3445">
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0.21 0.72 0.07 1 0 "
+         result="color2"
+         id="feColorMatrix3447" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter3449">
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0.21 0.72 0.07 1 0 "
+         result="color2"
+         id="feColorMatrix3451" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter3453">
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0.21 0.72 0.07 1 0 "
+         result="color2"
+         id="feColorMatrix3455" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter3457">
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0.21 0.72 0.07 1 0 "
+         result="color2"
+         id="feColorMatrix3459" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter3461">
+      <feColorMatrix
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0.21 0.72 0.07 1 0 "
+         result="color2"
+         id="feColorMatrix3463" />
+    </filter>
   </defs>
-
-  <line x1="450" y1="80" x2="350" y2="350" class="myline" />
-  <circle cx="450" cy="80" r="50" class="mycirc" />
-  <text x="450" y="80" fill="white" text-anchor="middle" class="mytext">data</text>
-
-  <line x1="100" y1="100" x2="350" y2="350" class="myline" />
-  <circle cx="100" cy="100" r="50" class="mycirc" />
-  <text x="100" y="100" fill="white" text-anchor="middle" class="mytext">data</text>
-
-  <line x1="70" y1="420" x2="350" y2="350" class="myline" />
-  <circle cx="70" cy="420" r="50"  class="mycirc" />
-  <text x="70" y="420" fill="white" text-anchor="middle" class="mytext">data</text>
-
-  <line x1="620" y1="420" x2="350" y2="350" class="myline" />
-  <circle cx="620" cy="420" r="50" class="mycirc" />
-  <text x="620" y="420" fill="white" text-anchor="middle" class="mytext">data</text>
-
-
-  <circle cx="350" cy="350" r="150" class="mycirc"/>
-  <text x="350" y="350" fill="white" text-anchor="middle" class="mytext">data trust</text>
-
-  <circle cx="350" cy="350" r="200" class="myemptycirc"/>
-
-
-  <circle cx="375" cy="425" r="35" class="mycirc2"/>
-  <text x="375" y="425" fill="white" text-anchor="middle" class="mytext">ML</text>
-  <circle cx="325" cy="275" r="35" class="mycirc2"/>
-  <text x="325" y="275" fill="white" text-anchor="middle" class="mytext">ML</text>
-
+  <line
+     x1="450"
+     y1="80"
+     x2="350"
+     y2="350"
+     class="myline"
+     id="line21"
+     style="filter:url(#filter3389)" />
+  <circle
+     cx="450"
+     cy="80"
+     r="50"
+     class="mycirc"
+     id="circle23"
+     style="filter:url(#filter3393)" />
+  <text
+     x="452"
+     y="84"
+     class="mytext"
+     id="text25"
+     style="font-size:24px;font-family:'Source Sans Pro', Helvetica, sans-serif;text-anchor:middle;fill:#ffffff;filter:url(#filter3397);fill-opacity:1;">data</text>
+  <line
+     x1="100"
+     y1="100"
+     x2="350"
+     y2="350"
+     class="myline"
+     id="line27"
+     style="filter:url(#filter3401)" />
+  <circle
+     cx="100"
+     cy="100"
+     r="50"
+     class="mycirc"
+     id="circle29"
+     style="filter:url(#filter3405)" />
+  <text
+     x="102"
+     y="104"
+     class="mytext"
+     id="text31"
+     style="font-size:24px;font-family:'Source Sans Pro', Helvetica, sans-serif;text-anchor:middle;fill:#ffffff;filter:url(#filter3409);fill-opacity:1;">data</text>
+  <line
+     x1="70"
+     y1="420"
+     x2="350"
+     y2="350"
+     class="myline"
+     id="line33"
+     style="filter:url(#filter3413)" />
+  <circle
+     cx="70"
+     cy="420"
+     r="50"
+     class="mycirc"
+     id="circle35"
+     style="filter:url(#filter3417)" />
+  <text
+     x="72"
+     y="424"
+     class="mytext"
+     id="text37"
+     style="font-size:24px;font-family:'Source Sans Pro', Helvetica, sans-serif;text-anchor:middle;fill:#ffffff;filter:url(#filter3421);fill-opacity:1;">data</text>
+  <line
+     x1="620"
+     y1="420"
+     x2="350"
+     y2="350"
+     class="myline"
+     id="line39"
+     style="filter:url(#filter3425)" />
+  <circle
+     cx="620"
+     cy="420"
+     r="50"
+     class="mycirc"
+     id="circle41"
+     style="filter:url(#filter3429)" />
+  <text
+     x="622"
+     y="426"
+     class="mytext"
+     id="text43"
+     style="font-size:24px;font-family:'Source Sans Pro', Helvetica, sans-serif;text-anchor:middle;fill:#ffffff;filter:url(#filter3433);fill-opacity:1;">data</text>
+  <circle
+     cx="350"
+     cy="350"
+     r="150"
+     class="mycirc"
+     id="circle45"
+     style="filter:url(#filter3437)" />
+  <text
+     x="350"
+     y="350"
+     fill="white"
+     text-anchor="middle"
+     class="mytext"
+     id="text47"
+     style="filter:url(#filter3441);fill:#ffffff;fill-opacity:1;">data trust</text>
+  <circle
+     cx="350"
+     cy="350"
+     r="200"
+     class="myemptycirc"
+     id="circle49"
+     style="filter:url(#filter3445)" />
+  <circle
+     cx="375"
+     cy="425"
+     r="35"
+     class="mycirc2"
+     id="circle51"
+     style="filter:url(#filter3449)" />
+  <text
+     x="375"
+     y="425"
+     fill="white"
+     text-anchor="middle"
+     class="mytext"
+     id="text53"
+     style="filter:url(#filter3453);fill:#ffffff;fill-opacity:1;">ML</text>
+  <circle
+     cx="325"
+     cy="275"
+     r="35"
+     class="mycirc2"
+     id="circle55"
+     style="filter:url(#filter3457)" />
+  <text
+     x="325"
+     y="275"
+     fill="white"
+     text-anchor="middle"
+     class="mytext"
+     id="text57"
+     style="filter:url(#filter3461);fill:#ffffff;fill-opacity:1;">ML</text>
 </svg>
