@@ -7,7 +7,7 @@ abstract: >
   how there may be challenges at the interace. Finally we propose Data
   Trusts as a solution for these challenges.
 published: 2017-10-26
-venue: The Israeli Academy of Science and Humanities
+venue: The Israel Academy of Science and Humanities
 reveal: 2017-10-26-embodiment-factors-and-privacy.slides.html
 blog: 2017-01-12-data-readiness-levels.md
 extras:
