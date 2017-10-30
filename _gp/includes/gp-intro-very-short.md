@@ -1,22 +1,22 @@
 
 ###  {data-transition="none"}
 
-<object type="image/svg+xml" data="../_gp/diagrams/gp_prior_samples_few_neg.svg">
+<object class="svgplot" data="../_gp/diagrams/gp_prior_samples_few.svg">
 </object>
 
 ###  {data-transition="none"}
 
-<object type="image/svg+xml" data="../_gp/diagrams/gp_prior_samples_neg.svg">
+<object class="svgplot" data="../_gp/diagrams/gp_prior_samples.svg">
 </object>
 
 ###  {data-transition="none"}
 
-<object type="image/svg+xml" data="../_gp/diagrams/gp_prior_samples_data_neg.svg">
+<object class="svgplot" data="../_gp/diagrams/gp_prior_samples_data.svg">
 </object>
 
 ###  {data-transition="none"}
 
-<object type="image/svg+xml" data="../_gp/diagrams/gp_rejection_samples_neg.svg">
+<object class="svgplot" data="../_gp/diagrams/gp_rejection_samples.svg">
 </object>
 
 ###  Key Object {data-transition="none"}
@@ -26,40 +26,40 @@
 * Determines properties of samples.
 
 * Function of $\inputMatrix$,
-    $$k_{i,j} = k(\mathbf{x}_i, \mathbf{x}_j)$$
+    $$\kernelScalar_{i,j} = \kernelScalar(\inputVector_i, \inputVector_j)$$
 
 ###  Linear Algebra {data-transition="none"}
 
 * Posterior mean
 
-    $$f_D(\mathbf{x_*}) = \mathbf{k}(\mathbf{x}_*, \inputMatrix) \kernelMatrix^{-1}
+    $$\mappingFunction_D(\inputVector_*) = \kernelVector(\inputVector_*, \inputMatrix) \kernelMatrix^{-1}
 \mathbf{y}$$
 
 * Posterior covariance
-    $$\mathbf{C}_* = \kernelMatrix_{*,*} - \kernelMatrix_{*,\mathbf{f}}
-\kernelMatrix^{-1} \kernelMatrix_{\mathbf{f}, *}$$
+    $$\mathbf{C}_* = \kernelMatrix_{*,*} - \kernelMatrix_{*,\mappingFunctionVector}
+\kernelMatrix^{-1} \kernelMatrix_{\mappingFunctionVector, *}$$
 
 ###  Linear Algebra {data-transition="none"}
 
 * Posterior mean
 
-    $$f_D(\mathbf{x_*}) = \mathbf{k}(\mathbf{x}_*, \inputMatrix) \boldsymbol{\alpha}$$
+    $$\mappingFunction_D(\inputVector_*) = \kernelVector(\inputVector_*, \inputMatrix) \boldsymbol{\alpha}$$
 
 * Posterior covariance
-    $$\mathbf{C}_* = \kernelMatrix_{*,*} - \kernelMatrix_{*,\mathbf{f}}
-\kernelMatrix^{-1} \kernelMatrix_{\mathbf{f}, *}$$
+    $$\covarianceMatrix_* = \kernelMatrix_{*,*} - \kernelMatrix_{*,\mappingFunctionVector}
+\kernelMatrix^{-1} \kernelMatrix_{\mappingFunctionVector, *}$$
 
 ###  {data-transition="none"}
 
-<object type="image/svg+xml" data="../_gp/diagrams/gp_prior_samples_data_neg.svg">
+<object class="svgplot" data="../_gp/diagrams/gp_prior_samples_data.svg">
 </object>
 
 ###  {data-transition="none"}
 
-<object type="image/svg+xml" data="../_gp/diagrams/gp_rejection_samples_neg.svg">
+<object class="svgplot" data="../_gp/diagrams/gp_rejection_samples.svg">
 </object>
 
 ###  {data-transition="none"}
 
-<object type="image/svg+xml" data="../_gp/diagrams/gp_prediction_neg.svg">
+<object class="svgplot" data="../_gp/diagrams/gp_prediction.svg">
 </object>
