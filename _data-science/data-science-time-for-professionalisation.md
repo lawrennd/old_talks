@@ -23,12 +23,12 @@ affiliation: Amazon Research Cambridge and University of Sheffield
 -->
 
 
-### Machine Learning
+### What is Machine Learning?
 
 $$ \text{data} + \text{model} \rightarrow \text{prediction}$$
 
 * Royal Society Report:
-  [Machine Learning: Power and Promise of Computers that Learn by Example](https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf)
+[Machine Learning: Power and Promise of Computers that Learn by Example](https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf)
 
 ### Machine Learning as the Driver ... {.slide: data-transition="none"}
 
