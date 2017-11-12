@@ -1,6 +1,6 @@
 ---
 layout: slides
-title: "Deep Probabilistic Modelling with with Gaussian Processes"
+title: "DRAFT SLIDES: Deep Probabilistic Modelling with with Gaussian Processes"
 author: Neil D. Lawrence
 ---
 
