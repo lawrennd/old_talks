@@ -1,6 +1,6 @@
-BASE=nips-tutorial
+BASE=deep-probabilistic-modelling-with-gaussian-processes
 DATE=$(shell date '+%Y-%m-%d')
-DATE=2017-10-26
+DATE=2017-12-04
 MATHJAX="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 CSS=talks.css
 PP=gpp

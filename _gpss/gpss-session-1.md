@@ -13,28 +13,7 @@ blibliography:
 \include{notation_def.tex}
 
 \include{../_gp/includes/gp-book.md}
-
-### What is Machine Learning?
-
-. . .
-
-$$ \text{data} + \text{model} \rightarrow \text{prediction}$$
-
-. . .
-
--   $\text{data}$ : observations, could be actively or passively
-    acquired (meta-data).
-
-. . .
-
--   $\text{model}$ : assumptions, based on previous experience (other data!
-    transfer learning etc), or beliefs about the regularities of
-    the universe. Inductive bias.
-
-. . .
-
--   $\text{prediction}$ : an action to be taken or a categorization or a
-    quality score.
+\include{../_ml/includes/what-is-ml.md}
 
 ### The Gaussian density
 

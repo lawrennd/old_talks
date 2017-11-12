@@ -1,15 +1,21 @@
 ### What is Machine Learning?
 
+. . .
+
 $$ \text{data} + \text{model} \rightarrow \text{prediction}$$
 
+. . .
 
-### Model
+-   $\text{data}$ : observations, could be actively or passively
+    acquired (meta-data).
 
-* Mathematical Abstraction of Problem
+. . .
 
-* Two functions
+-   $\text{model}$ : assumptions, based on previous experience (other data!
+    transfer learning etc), or beliefs about the regularities of
+    the universe. Inductive bias.
 
-    Prediction function $\mappingFunction(\cdot)$
+. . .
 
-	Objective function $\objectiveFunction(\cdot)$
-
+-   $\text{prediction}$ : an action to be taken or a categorization or a
+    quality score.
