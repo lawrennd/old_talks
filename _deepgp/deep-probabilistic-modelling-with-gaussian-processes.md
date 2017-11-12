@@ -6,6 +6,8 @@ author: Neil D. Lawrence
 
 ### DRAFT SLIDES
 
+\include{notation_def.tex}
+
 \include{../_gp/includes/what-is-a-gp.md}
 \include{../_gp/includes/approximate-gps.md}
 \include{../_deepgp/includes/what-is-a-deep-gp.md}

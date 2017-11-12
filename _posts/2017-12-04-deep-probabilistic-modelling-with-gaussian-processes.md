@@ -6,7 +6,7 @@ author:
 - family: Lawrence
   given: Neil D.
   gscholar: r3SJcvoAAAAJ
-  institute: University of Sheffield
+  institute: Amazon and University of Sheffield
   twitter: lawrennd
   url: http://inverseprobability.com
 categories:
@@ -16,6 +16,7 @@ errata: []
 key: Lawrence-nips17
 layout: talk
 month: 12
+published: 2017-12-04
 reveal: 2017-12-04-deep-probabilistic-modelling-with-gaussian-processes.slides.html
 venue: NIPS Tutorial 2017
 year: 2017
