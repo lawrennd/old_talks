@@ -4,6 +4,8 @@ title: "Deep Probabilistic Modelling with with Gaussian Processes"
 author: Neil D. Lawrence
 ---
 
+### DRAFT SLIDES
+
 \include{notation_def.tex}
 
 \include{../_gp/includes/what-is-a-gp.md}
