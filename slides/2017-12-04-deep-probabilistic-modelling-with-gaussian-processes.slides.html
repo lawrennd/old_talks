@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Neil D. Lawrence">
+  <title>Deep Probabilistic Modelling with with Gaussian Processes</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="talks.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Deep Probabilistic Modelling with with Gaussian Processes</h1>
+  <p class="author">Neil D. Lawrence</p>
+</section>
+
+<section id="draft-slides" class="slide level3">
+<h3>DRAFT SLIDES</h3>
+<!-- Introduction to GPs -->
+</section>
+<section id="what-is-machine-learning" class="slide level3">
+<h3>What is Machine Learning?</h3>
+<div class="fragment">
+<p><span class="math display">\[ \text{data} + \text{model} \rightarrow \text{prediction}\]</span></p>
+</div>
+<div class="fragment">
+<ul>
+<li><span class="math inline">\(\text{data}\)</span> : observations, could be actively or passively acquired (meta-data).</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><span class="math inline">\(\text{model}\)</span> : assumptions, based on previous experience (other data! transfer learning etc), or beliefs about the regularities of the universe. Inductive bias.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><span class="math inline">\(\text{prediction}\)</span> : an action to be taken or a categorization or a quality score.</li>
+</ul>
+</div>
+</section>
+<section id="model" class="slide level3">
+<h3>Model</h3>
+<ul>
+<li><p>Mathematical Abstraction of Problem</p></li>
+<li><p>Two functions</p>
+<p>Prediction function <span class="math inline">\({f}(\cdot)\)</span></p>
+<p>Objective function <span class="math inline">\(\objectiveFunction(\cdot)\)</span></p></li>
+</ul>
+</section>
+<section id="probabilistic-inference" class="slide level3">
+<h3>Probabilistic Inference</h3>
+<p>Data: <span class="math inline">\({\mathbf{{y}}}\)</span></p>
+<p>Model: <span class="math inline">\(p({\mathbf{{y}}}, {\mathbf{{y}}}^*)\)</span></p>
+<p>Prediction: <span class="math inline">\(p({\mathbf{{y}}}^*| {\mathbf{{y}}})\)</span></p>
+</section>
+<section id="gaussian-process" class="slide level3">
+<h3>Gaussian Process</h3>
+<ul>
+<li><p>Probabilistic model for functions</p>
+<p><span class="math inline">\(p({\mathbf{{w}}})\)</span></p></li>
+<li><p>Relate to data through a likelihood</p>
+<p><span class="math inline">\(p({\mathbf{{y}}}| {\mathbf{{w}}})\)</span></p></li>
+</ul>
+</section>
+<section id="section" class="slide level3" data-transition="none">
+<h3></h3>
+<object class="svgplot" data="../_gp/diagrams/gp_prior_samples_few.svg">
+</object>
+</section>
+<section id="section-1" class="slide level3" data-transition="none">
+<h3></h3>
+<object class="svgplot" data="../_gp/diagrams/gp_prior_samples.svg">
+</object>
+</section>
+<section id="section-2" class="slide level3" data-transition="none">
+<h3></h3>
+<object class="svgplot" data="../_gp/diagrams/gp_prior_samples_data.svg">
+</object>
+</section>
+<section id="section-3" class="slide level3" data-transition="none">
+<h3></h3>
+<object class="svgplot" data="../_gp/diagrams/gp_rejection_samples.svg">
+</object>
+</section>
+<section id="key-object" class="slide level3" data-transition="none">
+<h3>Key Object</h3>
+<ul>
+<li><p>Covariance function, <span class="math inline">\({\mathbf{K}}\)</span></p></li>
+<li><p>Determines properties of samples.</p></li>
+<li><p>Function of <span class="math inline">\({{\bf X}}\)</span>, <span class="math display">\[{k}_{i,j} = {k}({{\bf {x}}}_i, {{\bf {x}}}_j)\]</span></p></li>
+</ul>
+</section>
+<section id="linear-algebra" class="slide level3" data-transition="none">
+<h3>Linear Algebra</h3>
+<ul>
+<li><p>Posterior mean</p>
+<p><span class="math display">\[{f}_D({{\bf {x}}}_*) = {\mathbf{{k}}}({{\bf {x}}}_*, {{\bf X}}) {\mathbf{K}}^{-1}
+\mathbf{y}\]</span></p></li>
+<li><p>Posterior covariance <span class="math display">\[\mathbf{C}_* = {\mathbf{K}}_{*,*} - {\mathbf{K}}_{*,{\mathbf{{f}}}}
+{\mathbf{K}}^{-1} {\mathbf{K}}_{{\mathbf{{f}}}, *}\]</span></p></li>
+</ul>
+</section>
+<section id="linear-algebra-1" class="slide level3" data-transition="none">
+<h3>Linear Algebra</h3>
+<ul>
+<li><p>Posterior mean</p>
+<p><span class="math display">\[{f}_D({{\bf {x}}}_*) = {\mathbf{{k}}}({{\bf {x}}}_*, {{\bf X}}) \boldsymbol{\alpha}\]</span></p></li>
+<li><p>Posterior covariance <span class="math display">\[{\mathbf{C}}_* = {\mathbf{K}}_{*,*} - {\mathbf{K}}_{*,{\mathbf{{f}}}}
+{\mathbf{K}}^{-1} {\mathbf{K}}_{{\mathbf{{f}}}, *}\]</span></p></li>
+</ul>
+</section>
+<section id="section-4" class="slide level3" data-transition="none">
+<h3></h3>
+<object class="svgplot" data="../_gp/diagrams/gp_prior_samples_data.svg">
+</object>
+</section>
+<section id="section-5" class="slide level3" data-transition="none">
+<h3></h3>
+<object class="svgplot" data="../_gp/diagrams/gp_rejection_samples.svg">
+</object>
+</section>
+<section id="section-6" class="slide level3" data-transition="none">
+<h3></h3>
+<object class="svgplot" data="../_gp/diagrams/gp_prediction.svg">
+</object>
+</section>
+<section id="approximate-gaussian-processes" class="slide level3">
+<h3>Approximate Gaussian Processes</h3>
+</section>
+<section id="other-limitations" class="slide level3">
+<h3>Other Limitations</h3>
+<ul>
+<li>Joint Gaussianity is analytic, but not flexible.</li>
+</ul>
+</section>
+<section id="efficient-computation" class="slide level3">
+<h3>Efficient Computation</h3>
+<ul>
+<li>Thang and Turner paper</li>
+</ul>
+</section>
+<section id="what-is-a-deep-gaussian-process" class="slide level3">
+<h3>What is a Deep Gaussian Process?</h3>
+<ul>
+<li>Function Composition (Introduce as stacked processes … check Oxford Talk fromw ay back.</li>
+<li><p>Stochastic Process Composition</p></li>
+<li><p>Geoff Hinton’s view of Deep Learning</p></li>
+</ul>
+</section>
+<section id="multi-fidelity-modelling" class="slide level3">
+<h3>Multi-fidelity Modelling</h3>
+</section>
+<section id="surrogate-modelling-bayesian-optimization" class="slide level3">
+<h3>Surrogate Modelling Bayesian Optimization</h3>
+</section>
+<section id="multi-fidelity" class="slide level3">
+<h3>Multi-fidelity</h3>
+<ul>
+<li>Formula 1 example</li>
+</ul>
+</section>
+<section id="thanks" class="slide level3">
+<h3>Thanks!</h3>
+<ul>
+<li>twitter: lawrennd</li>
+<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+              { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
