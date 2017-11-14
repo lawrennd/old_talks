@@ -1,4 +1,8 @@
 ---
+title: Deep Gaussian Processes
+venue: Instituto Italiano de Tecnologia, Genova, Italy
+year: 2015
+published: 2015-01-23
 abstract: In this talk we describe how deep neural networks can be modified to produce
   deep Gaussian process models. The framework of deep Gaussian processes allow for
   unsupervised learning, transfer learning, semi-supervised learning, multi-task learning
@@ -25,9 +29,4 @@ key: Lawrence-iit15
 layout: talk
 linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/deepgp_iit15.pdf
 month: 1
-published: 2015-01-23
-section: pre
-title: Deep <span>Gaussian</span> Processes
-venue: Instituto Italiano de Tecnologia, Genova, Italy
-year: '2015'
 ---
