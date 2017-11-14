@@ -1,4 +1,5 @@
-BASE=deep-probabilistic-modelling-with-gaussian-processes
+#BASE=deep-probabilistic-modelling-with-gaussian-processes
+BASE=deep-gaussian-processes
 DATE=$(shell date '+%Y-%m-%d')
 DATE=2017-12-04
 MATHJAX="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
