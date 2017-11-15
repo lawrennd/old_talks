@@ -1,5 +1,3 @@
-<!--frame start-->
-![image](../../../gplvm/tex/diagrams/andreasDeepTalk){width="\textwidth"}
+![image](../../../_gplvm/tex/diagrams/andreasDeepTalk){width="80%"}
 
-<!--frame end-->
 

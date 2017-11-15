@@ -1,6 +1,6 @@
-<!--frame failure start-->
 
-  \frametitle{Structures for Extracting Information from Data}
+### Structures for Extracting Information from Data
+
 \begin{columns}[c]
 \column{5cm}
 \vspace{0.75cm}
@@ -44,11 +44,11 @@
 
 \end{columns}
 
-<!--frame failure end-->
-<!--frame start-->
+
+### 
+
 @Damianou:deepgp13\hfill\raggedleft{\andreasPicture{1.5cm}}\
 
 [\includegraphics[page=1,trim=0cm 16cm 0cm 0.5cm, width=0.4\textwidth, clip=true, width=1.0\textwidth]{../../../gp/tex/diagrams/damianou13a.pdf}](http://jmlr.org/proceedings/papers/v31/damianou13a.pdf)
 
-<!--frame end-->
 
