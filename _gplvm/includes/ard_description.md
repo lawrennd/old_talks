@@ -1,4 +1,3 @@
-<!--frame start-->
 ### Non-linear $\mappingFunction(\latentVector)$
 
 -   In linear case equivalence because
@@ -15,8 +14,7 @@
     prior spherical
     $$p\left(\latentMatrix\right)=\prod_{j=1}^{\latentDim}\gaussianDist{\latentVector_{:,j}}{\zerosVector}{\eye}$$
 
--   Covariance functions of this type are known as ARD [\scriptsize[see
-    e.g. @Neal:book96; @MacKay:information03; @Rasmussen:book06]]{}.
+-   Covariance functions of this type are known as ARD [see
+    e.g. @Neal:book96; @MacKay:information03; @Rasmussen:book06].
 
-<!--frame end-->
 

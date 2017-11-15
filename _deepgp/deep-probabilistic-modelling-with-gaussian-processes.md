@@ -10,7 +10,7 @@ author: Neil D. Lawrence
 
 \include{../_gp/includes/what-is-a-gp.md}
 \include{../_gp/includes/approximate-gps.md}
-\include{../_deepgp/includes/what-is-a-deep-gp.md}
+<!--\include{../_deepgp/includes/what-is-a-deep-gp.md}-->
 \include{../_deepgp/includes/multi-fidelity-modelling.md}
 
 

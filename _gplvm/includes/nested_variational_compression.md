@@ -1,4 +1,3 @@
-<!--frame start-->
 ### Variational Compression
 
 \hfill\raggedleft{\andreasPicture{1.5cm}}\
@@ -6,18 +5,16 @@
 
 -   Augment each layer with inducing variables $\inducingVector_i$.
 
--   Apply variational compression, $$\begin{aligned}
+-   Apply variational compression, \begin{align}
           p(\dataVector, \{\hiddenVector_i\}_{i=1}^{\numLayers-1}|\{\inducingVector_i\}_{i=1}^{\numLayers}, \inputMatrix) \geq & 
           \tilde p(\dataVector|\inducingVector_{\numLayers}, \hiddenVector_{\numLayers-1})\prod_{i=2}^{\numLayers-1} \tilde p(\hiddenVector_i|\inducingVector_i,\hiddenVector_{i-1}) \tilde p(\hiddenVector_1|\inducingVector_i,\inputMatrix) \nonumber \\
           & \times
           \exp\left(\sum_{i=1}^\numLayers -\frac{1}{2\sigma^2_i}\trace{\conditionalCovariance_{i}}\right)
           \label{eq:deep_structure}
-        \end{aligned}$$ where
+        \end{align} where
     $$\tilde p(\hiddenVector_i|\inducingVector_i,\hiddenVector_{i-1})
         = \gaussianDist{\hiddenVector_i}{\kernelMatrix_{\hiddenVector_{i}\inducingVector_{i}}\kernelMatrix_{\inducingVector_i\inducingVector_i}^{-1}\inducingVector_i}{\sigma^2_i\eye}.$$
 
-<!--frame end-->
-<!--frame start-->
 ### Nested Variational Compression
 
 \hfill\raggedleft{\jamesPicture{1.5cm}}\
@@ -31,8 +28,6 @@
 
 -   Additional complexity control term in the objective function.
 
-<!--frame end-->
-<!--frame start-->
 \tikz{%
         %top layer
         \node[obs] (x) {$\mathbf \inputScalar_i$};
@@ -69,11 +64,9 @@
         \plate {yhx} {(y)(h2)(h1)(x)} {\,\,$i=1...\numData$};
       }
 
-<!--frame end-->
-<!--frame start-->
 ### Nested Bound
 
-$$\begin{aligned}
+\begin{align}
     \log p(\dataVector|\inputMatrix )  \geq &
     %
     -\frac{1}{\sigma_1^2} \trace{\conditionalCovariance_1}
@@ -95,10 +88,8 @@ $$\begin{aligned}
         \inducingVector_{\numLayers}}^{-1}{\mathbf
         m}_\numLayers}{\sigma^2_\numLayers\eye}}
     \label{eq:deep_bound}
-  \end{aligned}$$
+  \end{align}
 
-<!--frame end-->
-<!--frame start-->
 ### Required Expectations
 
 $${\only<1>{\color{\redColor}}\log \gaussianDist{\dataVector}{{\only<2->{\color{\blueColor}}{\boldsymbol
@@ -121,5 +112,4 @@ $${\only<1>{\color{\redColor}}\log \gaussianDist{\dataVector}{{\only<2->{\color{
   }
 \only<4->{\begin{center} \emph{cf} wake sleep algorithm. {\color{\magentaColor}recognition network} and {\color{\blueColor}generation network} \citep{Hinton:science95}.\end{center} }
 
-<!--frame end-->
 

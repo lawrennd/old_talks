@@ -8,8 +8,7 @@ author: Neil D. Lawrence
 
 \include{notation_def.tex}
 
-Introduction
-============
+<!--Introduction-->
 
 \include{../_deepgp/includes/deep_nn_gp.md}
 \include{../_gp/includes/gp_extremely_short.md}
@@ -17,19 +16,16 @@ Introduction
 \newcommand{\hiddenScalar}{f}
 \newcommand{\latentScalar}{x}
 
-Deep Gaussian Process Models
-============================
+<!--Deep Gaussian Process Models-->
 
 \include{../_deepgp/includes/deeptheory.md}
 \include{../_gp/includes/gp_variational_complexity.md}
 
-Parametric Bottleneck
-=====================
+<!--Parametric Bottleneck-->
 
 \include{../_gp/includes/bottleneck.md}
 \include{../_gp/includes/low_rank_motivation.md}
 
-<!--frame start-->
 ### Information capture
 
 [Everything we want to do with a GP involves marginalising
@@ -44,12 +40,10 @@ $\mappingFunctionVector$]
 The posterior of $\mappingFunctionVector$ is the central object. This
 means inverting $\Kff$.
 
-<!--frame end-->
 \include{../_gp/includes/nystrom.md}
 \include{../_gp/includes/inducing_notation.md}
 \include{../_gp/includes/inducing_introduction.md}
 
-<!--frame start-->
 ### The alternative posterior
 
 [Instead of doing]{}
@@ -59,9 +53,7 @@ $$p(\inducingVector\given\dataVector,\inducingInputMatrix) = \frac{p(\dataVector
 \pause
 \centering\alert{but $p(\dataVector\given\inducingVector)$ involves inverting $\Kff$}
 
-<!--frame end-->
-Flexible Parametric Approximation
-=================================
+<!--Flexible Parametric Approximation-->
 
 \include{../_gp/includes/larger_graph_intro.md}
 \include{../_gp/includes/larger_variational.md}
@@ -73,8 +65,7 @@ Flexible Parametric Approximation
 \LARGE$$\mappingFunctionVector, \inducingVector \sim \gaussianSamp{\mathbf{0}}{\begin{bmatrix}\Kff & \Kfu\\\Kuf & \Kuu\end{bmatrix}}$$
 $$\dataVector|\mappingFunctionVector = \prod_{i} \gaussianSamp{\mappingFunction}{\dataStd^2}$$
 
-Variational Compression
-=======================
+<!--Variational Compression-->
 
 \include{../_gp/includes/variational_compression.md}
 \include{../_gp/includes/low_rank_variational.md}
@@ -83,12 +74,16 @@ Variational Compression
 \include{../_gplvm/includes/nested_variational_compression.md}
 \include{../_gp/includes/larger_gaussian.md}
 
-Bayesian GP-LVM
-===============
+<!--Bayesian GP-LVM-->
 
-\include{../_gplvm/includes/bayes_gplvm.md}
+
+\include{../_gplvm/includes/ard_gplvm.md}
+\include{../_gplvm/includes/bayes_gplvm_intro.md}
+\include{../_gplvm/includes/variational_bayes_gplvm_long.md}
+
 \include{../_gp/includes/gp_big_data_technical.md}
 \include{../_gp/includes/gp_big_data.md}
+
 \include{../_deepgp/includes/deep_gps.md}
 
 \include{../_deepgp/includes/deep_step_function.md}
@@ -96,21 +91,19 @@ Bayesian GP-LVM
 
 \newcommand{\latentScalar}{f}
 
-<!--\include{../health/includes/deep_health_model.md}-->
+\include{../_health/includes/deep_health_model.md}
 
-Conclusions
-===========
+
+<!--Conclusions-->
 
 \include{../_gplvm/includes/ard_model.md}
 \include{../_gplvm/includes/ard_results.md}
 
-Gaussian Process Dynamical Systems
-----------------------------------
+<!--Gaussian Process Dynamical Systems-->
 
 \include{../_gplvm/includes/gpds.md}
 
-Shared GP-LVM
--------------
+<!--Shared GP-LVM-->
 
 \include{../_gplvm/includes/mrd_gplvm.md}
 \include{../_deepgp/includes/stack_gp_intro.md}
@@ -135,8 +128,8 @@ Shared GP-LVM
 
 -   These methodologies are part of that picture.
 
-\include{../health/includes/deep_health_model.md}
-\include{../health/includes/deep_health_rangers.md}
+\include{../_health/includes/deep_health_model.md}
+\include{../_health/includes/deep_health_rangers.md}
 
 Summary
 -------
@@ -153,14 +146,13 @@ Summary
 -   Variational compression algorithms show promise for scaling these
     models to *massive* data sets.
 
-<!--frame failure start-->
-[allowframebreaks]  \frametitle{References}
+### References {.allowframebreaks data-background="../slides/diagrams/pres_bg.png"}
 
-  {\tiny \bibliographystyle{pdf_abbrvnat}
-    \bibliography{lawrence,other,zbooks}
-  }
 
-<!--frame failure end-->
+\bibliographystyle{pdf_abbrvnat}
+\bibliography{lawrence,other,zbooks}
+  
+
 
 ### Thanks!
 

@@ -80,7 +80,7 @@
 \newcommand{\eigenvalueMatrix}{\boldsymbol{\Lambda}}
 \newcommand{\eigenvalueVector}{\boldsymbol{\lambda}}
 \newcommand{\eigenvector}{\mathbf{\eigenvectorScalar}}
-\newcommand{\eigenvectorMatrix}{\mathbf{\MakeUppercase{\eigenvectorScalar}}}
+\newcommand{\eigenvectorMatrix}{\mathbf{U}}
 \newcommand{\eigenvectorScalar}{u}
 \newcommand{\eigenvectwo}{\mathbf{v}}
 \newcommand{\eigenvectwoMatrix}{\mathbf{V}}
@@ -103,6 +103,7 @@
 \newcommand{\gammaSamp}[2]{\mathcal{G}\left(#1,#2\right)}
 \newcommand{\gaussianDist}[3]{\mathcal{N}\left(#1|#2,#3\right)}
 \newcommand{\gaussianSamp}[2]{\mathcal{N}\left(#1,#2\right)}
+\newcommand{\given}{|}
 \newcommand{\half}{\frac{1}{2}}
 \newcommand{\heaviside}{H}
 \newcommand{\hiddenMatrix}{\mathbf{\MakeUppercase{\hiddenScalar}}}
@@ -114,7 +115,7 @@
 \newcommand{\inducingInputMatrix}{\mathbf{\MakeUppercase{\inducingInputScalar}}}
 \newcommand{\inducingScalar}{u}
 \newcommand{\inducingVector}{\mathbf{\inducingScalar}}
-\newcommand{\inducingMatrix}{\mathbf{\MakeUppercase{\inducingScalar}}}
+\newcommand{\inducingMatrix}{\mathbf{Z}}
 \newcommand{\inlineDiff}[2]{\text{d}#1/\text{d}#2}
 \newcommand{\inputDim}{q}
 \newcommand{\inputMatrix}{{\bf X}}
@@ -149,9 +150,9 @@
 \newcommand{\latentFunctionVector}{\mathbf{\latentFunction}}
 \newcommand{\latentFunctionMatrix}{\mathbf{\MakeUppercase{\latentFunction}}}
 \newcommand{\latentIndex}{j}
-\newcommand{\latentScalar}{x}
+\newcommand{\latentScalar}{z}
 \newcommand{\latentVector}{\mathbf{\latentScalar}}
-\newcommand{\latentMatrix}{\mathbf{\MakeUppercase{\latentScalar}}}
+\newcommand{\latentMatrix}{\mathbf{Z}}
 \newcommand{\learnRate}{\eta}
 \newcommand{\lengthScale}{\ell}
 \newcommand{\rbfWidth}{\ell}
@@ -162,9 +163,9 @@
 \newcommand{\locationMatrix}{\mathbf{M}}
 \newcommand{\variance}[1]{\text{var}\left( #1 \right)}
 \newcommand{\mappingFunction}{f}
-\newcommand{\mappingFunctionMatrix}{\mathbf{\MakeUppercase{\mappingFunction}}}
+\newcommand{\mappingFunctionMatrix}{\mathbf{F}}
 \newcommand{\mappingFunctionTwo}{g}
-\newcommand{\mappingFunctionTwoMatrix}{\mathbf{\MakeUppercase{\mappingFunctionTwo}}}
+\newcommand{\mappingFunctionTwoMatrix}{\mathbf{G}}
 \newcommand{\mappingFunctionTwoVector}{\mathbf{\mappingFunctionTwo}}
 \newcommand{\mappingFunctionVector}{\mathbf{\mappingFunction}}
 \newcommand{\mappingScalar}{w}
@@ -172,11 +173,11 @@
 \newcommand{\mappingMatrix}{\mathbf{W}}
 \newcommand{\mappingScalarTwo}{v}
 \newcommand{\mappingVectorTwo}{\mathbf{\mappingScalarTwo}}
-\newcommand{\mappingMatrixTwo}{\mathbf{\MakeUppercase{\mappingScalarTwo}}}
+\newcommand{\mappingMatrixTwo}{\mathbf{V}}
 \newcommand{\maxIters}{K}
 \newcommand{\meanMatrix}{\mathbf{M}}
 \newcommand{\meanScalar}{\mu}
-\newcommand{\meanTwoMatrix}{\mathbf{\MakeUppercase{\meanTwoScalar}}}
+\newcommand{\meanTwoMatrix}{\mathbf{M}}
 \newcommand{\meanTwoScalar}{m}
 \newcommand{\meanTwoVector}{\mathbf{\meanTwoScalar}}
 \newcommand{\meanVector}{\boldsymbol{\meanScalar}}
@@ -214,10 +215,10 @@
 \newcommand{\partDiff}[2]{\frac{\partial#1}{\partial#2}}
 \newcommand{\precisionScalar}{j}
 \newcommand{\precisionVector}{\mathbf{\precisionScalar}}
-\newcommand{\precisionMatrix}{\mathbf{\MakeUppercase{\precisionScalar}}}
+\newcommand{\precisionMatrix}{\mathbf{J}}
 \newcommand{\pseudotargetScalar}{\widetilde{y}}
 \newcommand{\pseudotargetVector}{\mathbf{\pseudotargetScalar}}
-\newcommand{\pseudotargetMatrix}{\mathbf{\MakeUppercase{\pseudotargetScalar}}}
+\newcommand{\pseudotargetMatrix}{\mathbf{\widetilde{Y}}}
 \newcommand{\rank}[1]{\text{rank}\left(#1\right)}
 \newcommand{\rayleighDist}[2]{\mathcal{R}\left(#1|#2\right)}
 \newcommand{\rayleighSamp}[1]{\mathcal{R}\left(#1\right)}
@@ -227,7 +228,7 @@
 \newcommand{\rotationMatrix}{\mathbf{R}}
 \newcommand{\sampleCovScalar}{s}
 \newcommand{\sampleCovVector}{\mathbf{\sampleCovScalar}}
-\newcommand{\sampleCovMatrix}{\mathbf{\MakeUppercase{\sampleCovScalar}}}
+\newcommand{\sampleCovMatrix}{\mathbf{s}}
 \newcommand{\scalarProduct}[2]{\left\langle{#1},{#2}\right\rangle}
 \newcommand{\sign}[1]{\text{sign}\left(#1\right)}
 \newcommand{\singularvalue}{\ell}
@@ -235,6 +236,7 @@
 \newcommand{\singularvalueVector}{\mathbf{l}}
 \newcommand{\sorth}{\mathbf{u}}
 \newcommand{\spar}{\lambda}
+\newcommand{\trace}[1]{\text{tr}\left(#1\right)}
 \newcommand{\BasalRate}{B}
 \newcommand{\DampingCoefficient}{C}
 \newcommand{\DecayRate}{D}
@@ -256,10 +258,10 @@
 \newcommand{\velocity}{v}
 \newcommand{\sufficientStatsScalar}{g}
 \newcommand{\sufficientStatsVector}{\mathbf{\sufficientStatsScalar}}
-\newcommand{\sufficientStatsMatrix}{\mathbf{\MakeUppercase{\sufficientStatsScalar}}}
+\newcommand{\sufficientStatsMatrix}{\mathbf{G}}
 \newcommand{\switchScalar}{s}
 \newcommand{\switchVector}{\mathbf{\switchScalar}}
-\newcommand{\switchMatrix}{\mathbf{\MakeUppercase{\switchScalar}}}
+\newcommand{\switchMatrix}{\mathbf{S}}
 \newcommand{\tr}[1]{\text{tr}\left(#1\right)}
 \newcommand{\loneNorm}[1]{\left\Vert #1 \right\Vert_1}
 \newcommand{\ltwoNorm}[1]{\left\Vert #1 \right\Vert_2}
@@ -273,8 +275,8 @@
 \newcommand{\vecb}[1]{\left(#1\right):}
 \newcommand{\weightScalar}{w}
 \newcommand{\weightVector}{\mathbf{\weightScalar}}
-\newcommand{\weightMatrix}{\mathbf{\MakeUppercase{\weightScalar}}}
-\newcommand{\weightedAdjacencyMatrix}{\mathbf{\MakeUppercase{\weightedAdjacencyScalar}}}
+\newcommand{\weightMatrix}{\mathbf{W}}
+\newcommand{\weightedAdjacencyMatrix}{\mathbf{A}}
 \newcommand{\weightedAdjacencyScalar}{a}
 \newcommand{\weightedAdjacencyVector}{\mathbf{\weightedAdjacencyScalar}}
 \newcommand{\onesVector}{\mathbf{1}}
