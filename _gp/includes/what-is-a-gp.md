@@ -14,9 +14,9 @@
 
 * To combine data with a model need:
 
-    **a prediction function** $\mappingFunction(\cdot)$ includes our beliefs about the regularities of the universe
+    * **a prediction function** $\mappingFunction(\cdot)$ includes our beliefs about the regularities of the universe
 
-    **an objective function** $\errorFunction(\cdot)$ defines the cost of misprediction.
+    * **an objective function** $\errorFunction(\cdot)$ defines the cost of misprediction.
 
 
 ### Uncertainty
