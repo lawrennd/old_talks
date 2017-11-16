@@ -8,7 +8,9 @@
 
 ### What is Machine Learning?
 
-$$\text{data} + \text{model} \rightarrow \text{prediction}$$
+* Simple description
+
+    $$\text{data} + \text{model} \rightarrow \text{prediction}$$
 
 * To combine data with a model need:
 
