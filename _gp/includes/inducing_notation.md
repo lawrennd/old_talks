@@ -1,25 +1,26 @@
-<!--frame start-->
+### {data-transition="None"}
+
+-------------------------------- --------------------------------------------------------------------------------------------------- --
+   $$\inputMatrix,\,\dataVector$$   <img src="./diagrams/nomenclature1.png" width="90%">  
   -------------------------------- --------------------------------------------------------------------------------------------------- --
-   $$\inputMatrix,\,\dataVector$$   \raisebox{-.9\height}{\includegraphics[width=\textwidth]{../../../gp/tex/diagrams/nomenclature1}}  
-  -------------------------------- --------------------------------------------------------------------------------------------------- --
 
-<!--frame end-->
-<!--frame start-->
+
+### {data-transition="None"}
+
   ---------------------------------------------------------------------------------------------------------------------------- --------------------------------------------------------------------------------------------------- --
-   [\semitransp $$\inputMatrix,\,\dataVector$$ ]{} $${\color{\blueColor} \mappingFunction(\inputVector)} \sim {\mathcal GP}$$   \raisebox{-.9\height}{\includegraphics[width=\textwidth]{../../../gp/tex/diagrams/nomenclature2}}  
+   [\semitransp $$\inputMatrix,\,\dataVector$$ ]{} $${\color{\blueColor} \mappingFunction(\inputVector)} \sim {\mathcal GP}$$   <img src="./diagrams/nomenclature2.png" width="90%">  
   ---------------------------------------------------------------------------------------------------------------------------- --------------------------------------------------------------------------------------------------- --
 
-<!--frame end-->
-<!--frame start-->
+### {data-transition="None"}
+
   ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --------------------------------------------------------------------------------------------------- --
-   [\semitransp $$\inputMatrix,\,\dataVector$$ $$\mappingFunction(\inputVector) \sim {\mathcal GP}$$ ]{} $$p({\color{\blueColor} \mappingFunctionVector}) = \gaussianSamp{\zerosVector}{\Kff}$$   \raisebox{-.9\height}{\includegraphics[width=\textwidth]{../../../gp/tex/diagrams/nomenclature3}}  
+   [\semitransp $$\inputMatrix,\,\dataVector$$ $$\mappingFunction(\inputVector) \sim {\mathcal GP}$$ ]{} $$p({\color{\blueColor} \mappingFunctionVector}) = \gaussianSamp{\zerosVector}{\Kff}$$   <img src="./diagrams/nomenclature3.png" width="90%">  
   ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --------------------------------------------------------------------------------------------------- --
 
-<!--frame end-->
-<!--frame start-->
+### {data-transition="None"}
+
   ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------- --
-   [\semitransp $$\inputMatrix,\,\dataVector$$ $$\mappingFunction(\inputVector) \sim {\mathcal GP}$$ $$p(\mappingFunctionVector) = \gaussianSamp{\zerosVector}{\Kff}$$ ]{} $$p({\color{\blueColor} \mappingFunctionVector}\given \dataVector,\inputMatrix)$$   \raisebox{-.9\height}{\includegraphics[width=\textwidth]{../../../gp/tex/diagrams/nomenclature3a}}  
+   $$\inputMatrix,\,\dataVector$$ $$\mappingFunction(\inputVector) \sim {\mathcal GP}$$ $$p(\mappingFunctionVector) = \gaussianSamp{\zerosVector}{\Kff}$$  $$p( \mappingFunctionVector \given \dataVector,\inputMatrix)$$   <img src="./diagrams/nomenclature3a.png" width="90%">  
   ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------- --
 
-<!--frame end-->
 

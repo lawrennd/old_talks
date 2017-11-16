@@ -1,16 +1,14 @@
-<!--frame start-->
-### Computational Savings
+### Computational Savings {data-transition="None"}
 
-\raggedright{\small\citep{Smola:sparsegp00,Csato:sparse00,Csato:sparse02,Csato:thesis02,Seeger:fast03}}
-
-![image](../../../gp/tex/diagrams/cov_approx){width="90.00000%"}
+<img src="./diagrams/cov_approx.png" width="90.00000%" border="none">
 
 $$\Kff \approx \Qff = \Kfu \Kuu^{-1}\Kuf$$
 
 Instead of inverting $\Kff$, we make a low rank (or Nyström)
 approximation, and invert $\Kuu$ instead.
 
-\vfill  {\footnotesize\hfill Figure originally from presentation by Ed Snelson at NIPS}
+*Figure originally from presentation by Ed Snelson at NIPS*
 
-<!--frame end-->
+
+@Smola:sparsegp00,@Csato:sparse00,@Csato:sparse02,@Csato:thesis02,@Seeger:fast03
 
