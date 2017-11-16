@@ -349,7 +349,7 @@ k_f\left({\bf x}_i, {\bf x}_j\right) = \alpha \boldsymbol{\phi}\left(\mathbf{V},
 <li><p>Viewing a neural network in this way is also what allows us to beform sensible <em>batch</em> normalizations [Ioffe:batch15].</p></li>
 </ul>
 </section>
-<section id="non-degenerate-gaussian-processes" class="slide level3">
+<section id="non-degenerate-gaussian-processes" class="slide level3" data-transition="None">
 <h3>Non-degenerate Gaussian Processes</h3>
 <ul>
 <li><p>This process is <em>degenerate</em>.</p></li>
@@ -358,28 +358,36 @@ k_f\left({\bf x}_i, {\bf x}_j\right) = \alpha \boldsymbol{\phi}\left(\mathbf{V},
 <li><p>Leading to <span class="math inline">\(\left|\mathbf{K}\right| = 0\)</span></p></li>
 </ul>
 </section>
-<section id="infinite-networks" class="slide level3">
+<section id="infinite-networks" class="slide level3" data-transition="None">
 <h3>Infinite Networks</h3>
 <ul>
 <li>In ML Radford Neal [Neal:bayesian94] asked “what would happen if you took <span class="math inline">\(h\rightarrow \infty\)</span>?”</li>
 </ul>
-<p><a href="http://www.cs.toronto.edu/~radford/ftp/thesis.pdf"><img src="./diagrams/neal-infinite-priors.png" width="80%" class="negate"  style="background:none; border:none; box-shadow:none;" align="center"></a> <em>Page 37 of Radford Neal’s 1994 thesis</em></p>
+<p><a href="http://www.cs.toronto.edu/~radford/ftp/thesis.pdf"><img src="./diagrams/neal-infinite-priors.png" width="80%" class="negate"  style="background:none; border:none; box-shadow:none;" align="center"></a></p>
+<p><em>Page 37 of Radford Neal’s 1994 thesis</em></p>
 </section>
-<section id="roughly-speaking" class="slide level3">
+<section id="roughly-speaking" class="slide level3" data-transition="None">
 <h3>Roughly Speaking</h3>
-<p>Instead of <span class="math display">\[\begin{align*}
-\kernel_\mappingFunction\left(\inputVector_i, \inputVector_j\right) &amp; = \alpha \activationVector\left(\mappingMatrixTwo, \inputVector_i\right)^\top \activationVector\left(\mappingMatrixTwo, \inputVector_j\right)\\
-&amp; = \sum_k \activationScalar\left(\mappingVectorTwo_k, \inputVector_i\right) \activationScalar\left(\mappingVectorTwo_k, \inputVector_j\right)
-\end{align*}\]</span> Sample infinitely many from a prior density, <span class="math inline">\(p(\mathbf{v})\)</span>, <span class="math display">\[
+<ul>
+<li><p>Instead of <span class="math display">\[\begin{align*}
+k_f\left({\bf x}_i, {\bf x}_j\right) &amp; = \alpha \boldsymbol{\phi}\left(\mathbf{V}, {\bf x}_i\right)^\top \boldsymbol{\phi}\left(\mathbf{V}, {\bf x}_j\right)\\
+&amp; = \sum_k \phi\left(\mathbf{v}_k, {\bf x}_i\right) \phi\left(\mathbf{v}_k, {\bf x}_j\right)
+\end{align*}\]</span></p></li>
+<li><p>Sample infinitely many from a prior density, <span class="math inline">\(p(\mathbf{v})\)</span>, <span class="math display">\[
 k_f\left({\bf x}_i, {\bf x}_j\right) = \int \phi\left(\mathbf{v}, {\bf x}_i\right) \phi\left(\mathbf{v}, {\bf x}_j\right) p(\mathbf{v}) \text{d}\mathbf{v}
-\]</span> Also applies for non-Gaussian <span class="math inline">\(p(\mathbf{v})\)</span> because of the <em>central limit theorem</em>.</p>
+\]</span></p></li>
+<li><p>Also applies for non-Gaussian <span class="math inline">\(p(\mathbf{v})\)</span> because of the <em>central limit theorem</em>.</p></li>
+</ul>
 </section>
-<section id="simple-probabilistic-program" class="slide level3">
+<section id="simple-probabilistic-program" class="slide level3" data-transition="None">
 <h3>Simple Probabilistic Program</h3>
-<p>If <span class="math display">\[\begin{align*}
-\mappingVectorTwo &amp; \sim p(\cdot)\\
-\phi_i &amp; = \activationScalar\left(\mappingVectorTwo, \inputVector_i\right), 
-\end{align*}\]</span> has finite variance, then the result of taking the number of hidden units to infinity, with appropriate scaling, is also a Gaussian process.</p>
+<ul>
+<li><p>If <span class="math display">\[\begin{align*}
+\mathbf{v}&amp; \sim p(\cdot)\\
+\phi_i &amp; = \phi\left(\mathbf{v}, {\bf x}_i\right), 
+\end{align*}\]</span> has finite variance.</p></li>
+<li><p>Then taking number of hidden units to infinity, is also a Gaussian process.</p></li>
+</ul>
 </section>
 <section id="further-reading" class="slide level3">
 <h3>Further Reading</h3>
