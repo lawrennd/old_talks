@@ -2,23 +2,35 @@
 
 \include{../../_ml/includes/what-is-ml.md}
 
-### Model
+### Artificial Intelligence
 
-* Mathematical Abstraction of Problem
+* Machine learning is a mainstay because of importance of prediction.
 
-* Two functions
+### What is Machine Learning?
 
-    Prediction function $\mappingFunction(\cdot)$
+$$\text{data} + \text{model} \rightarrow \text{prediction}$$
 
-	Objective function $\objectiveFunction(\cdot)$
+* To combine data with a model need:
 
-### Probabilistic Inference
+**a prediction function** $\mappingFunction(\cdot)$ includes our beliefs about the regularities of the universe
 
-Data: $\dataVector$
+**an objective function** $\objectiveFunction(\cdot)$ defines the cost of misprediction.
 
-Model: $p(\dataVector, \dataVector^*)$
 
-Prediction: $p(\dataVector^*| \dataVector)$
+### Uncertainty
+
+* Uncertainty in prediction arises from:
+
+1. scarcity of training data and 
+2. mismatch between the set of prediction functions we choose and all possible prediction functions.
+
+* Also uncertainties in objective, leave those for another day.
+
+\include{../../_ml/includes/neural-networks.md}
+\include{../../_ml/includes/probabilistic-modelling.md}
+\include{../../_ml/includes/performing-inference.md}
+\include{../../_gp/includes/non-degenerate-gps.md}
+
 
 ### Gaussian Process
 
