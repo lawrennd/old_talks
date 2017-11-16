@@ -29,18 +29,6 @@ $$\text{data} + \text{model} \rightarrow \text{prediction}$$
 \include{../../_ml/includes/neural-networks.md}
 \include{../../_ml/includes/probabilistic-modelling.md}
 \include{../../_ml/includes/performing-inference.md}
+\include{../../_ml/includes/multivariate-gaussian-properties.md}
 \include{../../_gp/includes/non-degenerate-gps.md}
-
-
-### Gaussian Process
-
-* Probabilistic model for functions
-
-    $p(\mappingVector)$
-
-* Relate to data through a likelihood
-
-    $p(\dataVector | \mappingVector)$
-
-
 \include{../../_gp/includes/gp-intro-very-short.md}
