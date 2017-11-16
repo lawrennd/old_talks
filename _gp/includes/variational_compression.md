@@ -1,4 +1,3 @@
-<!--frame start-->
 ### Gaussian $p(\dataScalar_i|\mappingFunction_i)$
 
 For Gaussian likelihoods: \only<1->{\[
@@ -8,8 +7,6 @@ For Gaussian likelihoods: \only<1->{\[
   p(\dataScalar_i|\inducingVector) \geq \exp\expSamp{\log c_i}\gaussianDist{\dataScalar_i}{\expSamp{\mappingFunction_i}}{ \dataStd^2}
   \]}
 
-<!--frame end-->
-<!--frame start-->
 ### Gaussian Process Over $\mappingFunctionVector$ and $\inducingVector$
 
 Define:
