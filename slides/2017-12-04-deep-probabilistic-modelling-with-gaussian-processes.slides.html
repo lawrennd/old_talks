@@ -130,7 +130,7 @@ code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Infor
 <li>To combine data with a model need:</li>
 </ul>
 <p><strong>a prediction function</strong> <span class="math inline">\(f(\cdot)\)</span> includes our beliefs about the regularities of the universe</p>
-<p><strong>an objective function</strong> <span class="math inline">\(\objectiveFunction(\cdot)\)</span> defines the cost of misprediction.</p>
+<p><strong>an objective function</strong> <span class="math inline">\(E(\cdot)\)</span> defines the cost of misprediction.</p>
 </section>
 <section id="uncertainty" class="slide level3">
 <h3>Uncertainty</h3>
@@ -183,7 +183,7 @@ f({\bf x}) = \mathbf{W}^\top \boldsymbol{\phi}(\mathbf{V}, {\bf x})
 <li><p>Consider the probabilistic approach.</p></li>
 </ul>
 </section>
-<section id="probabilistic-modelling" class="slide level3">
+<section id="probabilistic-modelling" class="slide level3" data-transition="None">
 <h3>Probabilistic Modelling</h3>
 <ul>
 <li>Probabilistically we want, <span class="math display">\[
@@ -191,7 +191,7 @@ p(y_*|\mathbf{y}, {\bf X}, {\bf x}_*),
 \]</span> <span class="math inline">\(y_*\)</span> is a test output <span class="math inline">\({\bf x}_*\)</span> is a test input <span class="math inline">\({\bf X}\)</span> is a training input matrix <span class="math inline">\(\mathbf{y}\)</span> is training outputs</li>
 </ul>
 </section>
-<section id="joint-model-of-world" class="slide level3">
+<section id="joint-model-of-world" class="slide level3" data-transition="None">
 <h3>Joint Model of World</h3>
 <p><span class="math display">\[
 p(y_*|\mathbf{y}, {\bf X}, {\bf x}_*) = \int p(y_*|{\bf x}_*, \boldsymbol{\theta}) p(\boldsymbol{\theta}| \mathbf{y}, {\bf X}) \text{d} \boldsymbol{\theta}
@@ -209,13 +209,13 @@ p(y_*|\mathbf{y}, {\bf X}, {\bf x}_*) = \int p(y_*|{\bf x}_*, \boldsymbol{\theta
 p(\mathbf{y}|{\bf X}, \boldsymbol{\theta}) \prod_{i=1}^np(y_i|{\bf x}_i, \boldsymbol{\theta}),\]</span></p>
 </div>
 </section>
-<section id="likelihood-and-prediction-function" class="slide level3">
+<section id="likelihood-and-prediction-function" class="slide level3" data-transition="None">
 <h3>Likelihood and Prediction Function</h3>
 <p><span class="math display">\[
 p(y_i | f({\bf x}_i)) = \frac{1}{\sqrt{2\pi \sigma^2}} \exp\left(-\frac{\left(y_i - f({\bf x}_i)\right)^2}{2\sigma^2}\right)
 \]</span></p>
 </section>
-<section id="unsupervised-learning" class="slide level3">
+<section id="unsupervised-learning" class="slide level3" data-transition="None">
 <h3>Unsupervised Learning</h3>
 <ul>
 <li><p>Can also consider priors over latents <span class="math display">\[
@@ -224,7 +224,7 @@ p(\mathbf{y}_*|\mathbf{y}) = \int p(\mathbf{y}_*|{\bf X}_*, \boldsymbol{\theta})
 <li><p>This gives <em>unsupervised learning</em>.</p></li>
 </ul>
 </section>
-<section id="probabilistic-inference" class="slide level3">
+<section id="probabilistic-inference" class="slide level3" data-transition="None">
 <h3>Probabilistic Inference</h3>
 <ul>
 <li><p>Data: <span class="math inline">\(\mathbf{y}\)</span></p></li>
@@ -247,7 +247,7 @@ p(\mathbf{y}_*|\mathbf{y}) = \int p(\mathbf{y}_*|{\bf X}_*, \boldsymbol{\theta})
   f({\bf x}) = \mathbf{W}^\top \boldsymbol{\phi}(\boldsymbol{\theta}, {\bf x})
   \]</span></p></li>
 <li><p>Hold <span class="math inline">\(\mathbf{V}\)</span> fixed for given analysis.</p></li>
-<li><p>Gaussian prior for<span class="math inline">\(\mathbf{W}\)</span>, <span class="math display">\[
+<li><p>Gaussian prior for <span class="math inline">\(\mathbf{W}\)</span>, <span class="math display">\[
   \mathbf{W}\sim \mathcal{N}\left(\mathbf{0},\mathbf{C}\right).
   \]</span> <span class="math display">\[
   y_i = f({\bf x}_i) + \epsilon_i,
