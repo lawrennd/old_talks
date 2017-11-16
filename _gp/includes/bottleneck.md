@@ -1,5 +1,4 @@
-<!--frame start-->
-### Nonparametric Gaussian Processes
+### Nonparametric Gaussian Processes {data-transition="None"}
 
 -   We’ve seen how we go from parametric to non-parametric.
 
@@ -11,9 +10,7 @@
 -   This representation *cannot* be summarized by a parameter vector of
     a fixed size.
 
-<!--frame end-->
-<!--frame start-->
-### The Parametric Bottleneck
+### The Parametric Bottleneck {data-transition="None"}
 
 -   Parametric models have a representation that does not respond to
     increasing training set size.
@@ -38,44 +35,54 @@
 -   How big is big enough for $\numBasisFunc$? Non-parametrics says
     $\numBasisFunc \rightarrow \infty$.
 
-<!--frame end-->
-<!--frame start-->
-### The Parametric Bottleneck {#the-parametric-bottleneck}
+### The Parametric Bottleneck {#the-parametric-bottleneck data-transition="None"}
 
 -   Now no longer possible to manipulate the model through the standard
-    parametric form. \pause
+    parametric form.
+
+. . .
 
 -   However, it *is* possible to express *parametric* as GPs:
     $$\kernelScalar\left(\inputVector_i,\inputVector_j\right)=\basisFunction_:\left(\inputVector_i\right)^\top\basisFunction_:\left(\inputVector_j\right).$$
-    \pause
 
--   These are known as degenerate covariance matrices. \pause
+. . .
+
+-   These are known as degenerate covariance matrices.
+
+. . .
 
 -   Their rank is at most $\numBasisFunc$, non-parametric models have
-    full rank covariance matrices. \pause
+    full rank covariance matrices.
+
+. . .
 
 -   Most well known is the “linear kernel”,
     $\kernelScalar(\inputVector_i, \inputVector_j) = \inputVector_i^\top\inputVector_j$.
 
-<!--frame end-->
-<!--frame start-->
-### Making Predictions
+### Making Predictions {data-transition="None"}
 
 -   For non-parametrics prediction at new points
     $\mappingFunctionVector_*$ is made by conditioning on
-    $\mappingFunctionVector$ in the joint distribution. \pause
+    $\mappingFunctionVector$ in the joint distribution.
+
+. . .
 
 -   In GPs this involves combining the training data with the covariance
-    function and the mean function. \pause
+    function and the mean function.
+
+. . .
 
 -   Parametric is a special case when conditional prediction can be
-    summarized in a *fixed* number of parameters. \pause
+    summarized in a *fixed* number of parameters.
+
+. . .
 
 -   Complexity of parametric model remains fixed regardless of the size
-    of our training data set. \pause
+    of our training data set.
+
+. . .
 
 -   For a non-parametric model the required number of parameters grows
     with the size of the training data.
 
-<!--frame end-->
 

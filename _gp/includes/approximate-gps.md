@@ -1,35 +1,22 @@
 ### Approximate Gaussian Processes
 
 
-### Other Limitations
-
-* Joint Gaussianity is analytic, but not flexible.
-
-
-### Efficient Computation
-
-* Thang and Turner paper
-
-
-\include{../../_gp/includes/gp_variational_complexity.md}
-
-<!--Parametric Bottleneck-->
-
-\include{../../_gp/includes/bottleneck.md}
 \include{../../_gp/includes/low_rank_motivation.md}
+\include{../../_gp/includes/gp_variational_complexity.md}
+\include{../../_gp/includes/bottleneck.md}
 
-### Information capture
+### Information capture {data-transition="None"}
 
-[Everything we want to do with a GP involves marginalising
-$\mappingFunctionVector$]
+-   Everything we want to do with a GP involves marginalising
+$\mappingFunctionVector$
 
--   Predictions
+    -   Predictions
 
--   Marginal likelihood
+    -   Marginal likelihood
 
--   Estimating covariance parameters
+    -   Estimating covariance parameters
 
-The posterior of $\mappingFunctionVector$ is the central object. This
+-   The posterior of $\mappingFunctionVector$ is the central object. This
 means inverting $\Kff$.
 
 \include{../../_gp/includes/nystrom.md}
@@ -65,3 +52,13 @@ $$\dataVector|\mappingFunctionVector = \prod_{i} \gaussianSamp{\mappingFunction}
 \include{../../_gplvm/includes/variational_bayes_gplvm_long.md}
 \include{../../_gplvm/includes/nested_variational_compression.md}
 \include{../../_gp/includes/larger_gaussian.md}
+
+### Efficient Computation
+
+* Thang and Turner paper
+
+### Other Limitations 
+
+* Joint Gaussianity is analytic, but not flexible.
+
+
