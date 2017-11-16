@@ -34,3 +34,8 @@
     filter: invert(100%);
     type: "image/svg+xml";
 }
+
+.negate {
+    -webkit-filter:invert(1);
+    filter:invert;
+}

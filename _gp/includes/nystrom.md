@@ -1,6 +1,6 @@
 ### Computational Savings {data-transition="None"}
 
-<img src="./diagrams/cov_approx.png" width="90.00000%" border="none">
+<img src="./diagrams/cov_approx.png" width="90.00000%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;" >
 
 $$\Kff \approx \Qff = \Kfu \Kuu^{-1}\Kuf$$
 
