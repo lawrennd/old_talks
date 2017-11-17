@@ -1,13 +1,3 @@
-``` {#mycode .octave .numberLines startFrom="0"}
-
-    %}
-    nonlinearDifficultyInit
-    %{
-  
-```
-
-<!--frame start-->
-\[fragile\]
 
 ### Difficulty for Probabilistic Approaches
 
@@ -15,35 +5,14 @@
 
 -   Normalisation of distribution becomes intractable.
 
-``` {#mycode .octave .numberLines startFrom="0"}
+<img src="./diagrams/nonlinear_mapping3_d_plot_slides.png" width="80%" class="negate"  style="background:none; border:none; box-shadow:none;" align="center">
 
-      %}
-      nonlinearDifficultyPlot1
-    %{
-    
-```
-
-![](../../../dimred/tex/diagrams/nonlinear_mapping3_d_plot_slides.png)
-
-<!--frame end-->
-<!--frame start-->
-\[fragile\]
 
 ### Difficulty for Probabilistic Approaches {#difficulty-for-probabilistic-approaches}
 
-``` {#mycode .octave .numberLines startFrom="0"}
+<img src="./diagrams/nonlinear_mapping2_d_plot_slides.png" width="80%" class="negate"  style="background:none; border:none; box-shadow:none;" align="center">
 
-      %}
-      nonlinearDifficultyPlot2
-    %{
-    
-```
 
-![](../../../dimred/tex/diagrams/nonlinear_mapping2_d_plot_slides.png)
-
-<!--frame end-->
-<!--frame start-->
-\[fragile\]
 
 ### Difficulty for Probabilistic Approaches {#difficulty-for-probabilistic-approaches}
 
