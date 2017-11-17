@@ -1,0 +1,78 @@
+\documentclass{standalone}
+\usepackage{tikz}
+
+\input{definitions.tex}
+\input{notation_def.tex}
+\input{graphicalModels.tex}
+\input{people.tex}
+
+
+
+\begin{document}
+  \def\layersep{1.5cm}
+  \def\nodesep{1cm}
+    \pgfdeclarelayer{background}
+    \pgfdeclarelayer{foreground}
+    \pgfsetlayers{background,main,foreground}
+
+    \begin{tikzpicture}[node distance=\layersep]
+      \tikzstyle{annot} = [text width=4em, text centered]    % Draw the input layer nodes
+      \begin{pgfonlayer}{foreground}
+
+
+      \foreach \name / \x in {1,...,1}
+      \path[xshift=\nodesep*4.5]
+        node[obs] (Y-\name) at (\x*\nodesep, \layersep*0) {$\dataScalar_\x$};
+
+        % Draw the hidden layer nodes
+      \foreach \name / \x in {1,...,4}
+        \path[xshift=\nodesep*3]
+          node[latent] (H1-\name) at (\x*\nodesep, \layersep*1) {$\hiddenScalar^{3}_\x$};
+
+        % Draw the hidden layer nodes
+      \foreach \name / \x in {1,...,6}
+        \path[xshift=\nodesep*2]
+          node[latent] (H2-\name) at (\x*\nodesep, \layersep*2) {$\hiddenScalar^{2}_\x$};
+
+        % Draw the hidden layer nodes
+      \foreach \name / \x in {1,...,8}
+        \path[xshift=\nodesep]
+          node[latent] (H3-\name) at (\x*\nodesep, \layersep*3) {$\hiddenScalar^{1}_\x$};
+
+        % Draw the input layer nodes
+      \foreach \name / \x in {1,...,6}
+        \path[xshift=\nodesep*2]
+          node[obs] (X-\name) at (\x*\nodesep, \layersep*4) {$\inputScalar_\x$};
+
+
+      \end{pgfonlayer}
+
+      \begin{pgfonlayer}{background}
+      % Connect every node in the latent layer with every node in the
+      % data layer.
+      \foreach \source in {1,...,4}
+        \foreach \dest in {1,...,1}
+          \draw[->] (H1-\source) -- (Y-\dest);
+
+      \foreach \source in {1,...,6}
+        \foreach \dest in {1,...,4}
+          \draw[->] (H2-\source) -- (H1-\dest);
+
+      \foreach \source in {1,...,8}
+        \foreach \dest in {1,...,6}
+          \draw[->] (H3-\source) -- (H2-\dest);
+
+      \foreach \source in {1,...,6}
+        \foreach \dest in {1,...,8}
+          \draw[->] (X-\source) -- (H3-\dest);
+
+      \end{pgfonlayer}
+
+      % Annotate the layers
+      \node[annot,right of=X-6, node distance=2cm, text width=3cm] (ls) {input layer};
+      \node[annot,right of=H3-8, node distance=2cm, text width=3cm] (ls) {hidden layer 1};
+      \node[annot,right of=H2-6, node distance=2cm, text width=3cm] (ls) {hidden layer 2};
+      \node[annot,right of=H1-4, node distance=2cm, text width=3cm] (ls) {hidden layer 3};
+      \node[annot,right of=Y-1, node distance=2cm, text width=3cm] (ds) {``label''};
+    \end{tikzpicture}
+\end{document}
