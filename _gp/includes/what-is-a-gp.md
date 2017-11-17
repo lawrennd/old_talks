@@ -23,8 +23,8 @@
 
 * Uncertainty in prediction arises from:
 
-1. scarcity of training data and 
-2. mismatch between the set of prediction functions we choose and all possible prediction functions.
+    1. scarcity of training data and 
+    2. mismatch between the set of prediction functions we choose and all possible prediction functions.
 
 * Also uncertainties in objective, leave those for another day.
 

@@ -1,11 +1,8 @@
-<!--frame start-->
 ### Mathematically
 
 -   Composite *multivariate* function
-    $$\mathbf{g}(\mathbf{x})=\mathbf{f}_5(\mathbf{f}_4(\mathbf{f}_3(\mathbf{f}_2(\mathbf{f}_1(\mathbf{x})))))$$
+    $$\mathbf{g}(\mathbf{x})=\mappingFunctionVector_5(\mappingFunctionVector_4(\mappingFunctionVector_3(\mappingFunctionVector_2(\mappingFunctionVector_1(\inputVector)))))$$
 
-<!--frame end-->
-<!--frame start-->
 ### Why Deep?
 
 -   Gaussian processes give priors over functions.
@@ -22,8 +19,6 @@
 
 -   E.g. a priori they don’t believe in function ‘jumps’.
 
-<!--frame end-->
-<!--frame start-->
 ### Process Composition
 
 \raggedleft{\zhenwenPicture{1.5cm}}
@@ -34,10 +29,8 @@
     simpler components.
 
 *Note*: To retain *Kolmogorov consistency* introduce IBP priors over
-latent variables in each layer (Zhenwen Dai).
+latent variables in each layer.
 
-<!--frame end-->
-<!--frame start-->
 ### Analysis of Deep GPs
 
 -   [@Duvenaud:pathologies14] Duvenaud et al show that the derivative
@@ -47,5 +40,4 @@ latent variables in each layer (Zhenwen Dai).
 -   [@Gal:dropout15] Gal and Ghahramani show that Drop Out is a
     variational approximation to a deep Gaussian process.
 
-<!--frame end-->
 
