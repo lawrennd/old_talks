@@ -38,6 +38,90 @@ $$p(\inducingVector\given\dataVector,\inducingInputMatrix) = \frac{p(\dataVector
 \include{../../_gp/includes/larger_variational.md}
 \include{../../_gp/includes/larger_factorize.md}
 
+### Inducing Variables
+
+* Choose to go a different way.
+
+* Introduce a set of auxiliary variables, $\inducingVector$, which are $m$ in length.
+
+* They are like "artificial data".
+
+* Used to *induce* a distribution: $q(\inducingVector|\dataVector)$
+
+### Making Parameters non-Parametric
+
+* Introduce variable set which is *finite* dimensional.
+$$
+p(\dataVector^*|\dataVector) \approx \int p(\dataVector^*|\inducingVector) q(\inducingVector|\dataVector) \text{d}\inducingVector
+$$
+
+* But dimensionality of $\inducingVector$ can be changed to improve approximation.
+
+### Variational Compression {.slide: data-transition="none"}
+
+* Model for our data, $\dataVector$
+
+$$p(\dataVector)$$
+<br><object type="image/svg+xml" data="./diagrams/py.svg">
+</object>
+
+### Variational Compression {.slide: data-transition="none"}
+
+* Prior density over $\mappingFunctionVector$. Likelihood relates data, $\dataVector$, to $\mappingFunctionVector$.
+
+$$p(\dataVector)=\int p(\dataVector|\mappingFunctionVector)p(\mappingFunctionVector)\text{d}\mappingFunctionVector$$<br>
+<object type="image/svg+xml" data="./diagrams/pygfpf.svg">
+</object>
+
+### Variational Compression {.slide: data-transition="none"}
+
+* Prior density over $\mappingFunctionVector$. Likelihood relates data, $\dataVector$, to $\mappingFunctionVector$.
+
+$$p(\dataVector)=\int p(\dataVector|\mappingFunctionVector)p(\inducingVector|\mappingFunctionVector)p(\mappingFunctionVector)\text{d}\mappingFunctionVector\text{d}\inducingVector$$<br>
+<object type="image/svg+xml" data="./diagrams/pygfpugfpf.svg">
+</object></td></tr>
+</table>
+
+### Variational Compression {.slide: data-transition="none"}
+
+$$p(\dataVector)=\int \int p(\dataVector|\mappingFunctionVector)p(\mappingFunctionVector|\inducingVector)\text{d}\mappingFunctionVectorp(\inducingVector)\text{d}\inducingVector$$
+<br><object type="image/svg+xml" data="./diagrams/pygfpfgupu.svg">
+</object>
+
+### Variational Compression {.slide: data-transition="none"}
+
+$$p(\dataVector)=\int \int p(\dataVector|\mappingFunctionVector)p(\mappingFunctionVector|\inducingVector)\text{d}\mappingFunctionVectorp(\inducingVector)\text{d}\inducingVector$$<br>
+<object type="image/svg+xml" data="./diagrams/pygfpfgupu2.svg">
+</object>
+
+### Variational Compression {.slide: data-transition="none"}
+
+$$p(\dataVector|\inducingVector)=\int p(\dataVector|\mappingFunctionVector)p(\mappingFunctionVector|\inducingVector)\text{d}\mappingFunctionVector$$<br>
+<object type="image/svg+xml" data="./diagrams/pygfpfgu.svg">
+</object>
+
+### Variational Compression {.slide: data-transition="none"}
+
+$$p(\dataVector|\inducingVector)$$<br>
+<object type="image/svg+xml" data="./diagrams/pygu.svg">
+</object>
+
+### Variational Compression {.slide: data-transition="none"}
+
+$$p(\dataVector|\paramVector)$$<br>
+<object type="image/svg+xml" data="./diagrams/pygtheta.svg">
+</object>
+
+### Compression
+
+* Replace true $p(\inducingVector|\dataVector)$ with approximation $q(\inducingVector|\dataVector)$.
+
+* Minimize KL divergence between approximation and truth.
+
+* This is similar to the Bayesian posterior distribution.
+
+* But it's placed over a set of 'pseudo-observations'.
+
 
 ###
 

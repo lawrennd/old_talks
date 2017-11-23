@@ -5,7 +5,7 @@ MATHJAX="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=
 CSS=talks.css
 PP=gpp
 PPFLAGS=-T
-PDFLAGS=-s -S --slide-level 3 --filter pandoc-citeproc --mathjax=${MATHJAX}
+PDFLAGS=-s --slide-level 3 --filter pandoc-citeproc --mathjax=${MATHJAX}
 OUT=$(DATE)-$(BASE)
 
 all: ${BASE}.slides.html 
