@@ -64,7 +64,6 @@ affiliation: Amazon and University of Sheffield
 
 
 \include{../_data-science/includes/breadth-or-depth.md}
-<!-- \include{../_data-science/includes/breadth-or-depth-math.md}-->
 
 ### Also need
 
