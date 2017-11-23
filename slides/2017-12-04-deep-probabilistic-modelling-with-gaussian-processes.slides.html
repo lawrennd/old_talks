@@ -91,8 +91,8 @@ code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Infor
   <p class="author">Neil D. Lawrence</p>
 </section>
 
-<section id="draft-slides" class="slide level3">
-<h3>DRAFT SLIDES</h3>
+<section class="slide level3">
+
 
 <!-- Introduction to GPs -->
 </section>
@@ -138,14 +138,12 @@ code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Infor
 <section id="uncertainty" class="slide level3">
 <h3>Uncertainty</h3>
 <ul>
-<li>Uncertainty in prediction arises from:</li>
-</ul>
+<li><p>Uncertainty in prediction arises from:</p>
 <ol type="1">
 <li>scarcity of training data and</li>
 <li>mismatch between the set of prediction functions we choose and all possible prediction functions.</li>
-</ol>
-<ul>
-<li>Also uncertainties in objective, leave those for another day.</li>
+</ol></li>
+<li><p>Also uncertainties in objective, leave those for another day.</p></li>
 </ul>
 </section>
 <section id="neural-networks-and-prediction-functions" class="slide level3">
@@ -461,991 +459,252 @@ k_f\left({\bf x}_i, {\bf x}_j\right) = \int \phi\left(\mathbf{v}, {\bf x}_i\righ
 <object class="svgplot" data="../_gp/diagrams/gp_prediction.svg">
 </object>
 </section>
-<section id="approximate-gaussian-processes" class="slide level3">
-<h3>Approximate Gaussian Processes</h3>
+<section id="deep-neural-network" class="slide level3" data-transition="None">
+<h3>Deep Neural Network</h3>
+<!--<object type="image/svg+xml" data="./diagrams/deep-nn1.svg" class="svgplot">-->
+<p><img src="./diagrams/deep-nn1.png"  width="80%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"></p>
 </section>
-<section id="low-rank-motivation" class="slide level3" data-transition="None">
-<h3>Low Rank Motivation</h3>
-<ul>
-<li><p>Inference in a GP has the following demands:</p>
-<table>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">Complexity:</td>
-<td style="text-align: left;"><span class="math inline">\(\mathcal{O}(n^3)\)</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">Storage:</td>
-<td style="text-align: left;"><span class="math inline">\(\mathcal{O}(n^2)\)</span></td>
-</tr>
-</tbody>
-</table></li>
-<li><p>Inference in a low rank GP has the following demands:</p>
-<table>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">Complexity:</td>
-<td style="text-align: left;"><span class="math inline">\(\mathcal{O}(nm^2)\)</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">Storage:</td>
-<td style="text-align: left;"><span class="math inline">\(\mathcal{O}(nm)\)</span></td>
-</tr>
-</tbody>
-</table>
-<p>where <span class="math inline">\(m\)</span> is a user chosen parameter.</p></li>
-</ul>
-<p>[Snelson:pseudo05,Quinonero:unifying05,Lawrence:larger07,Titsias:variational09]</p>
+<section id="deep-neural-network-1" class="slide level3" data-transition="None">
+<h3>Deep Neural Network</h3>
+<!--<object type="image/svg+xml" data="./diagrams/deep-nn2.svg" class="svgplot">-->
+<p><img src="./diagrams/deep-nn2.png"  width="80%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"></p>
 </section>
-<section id="variational-compression" class="slide level3" data-transition="None">
-<h3>Variational Compression</h3>
+<section id="mathematically" class="slide level3" data-transition="None">
+<h3>Mathematically</h3>
+<p><span class="math display">\[
+\begin{align}
+    \mathbf{h}_{1} &amp;= \phi\left(\mathbf{W}_1 {\bf x}\right)\\
+    \mathbf{h}_{2} &amp;=  \phi\left(\mathbf{W}_2\mathbf{h}_{1}\right)\\
+    \mathbf{h}_{3} &amp;= \phi\left(\mathbf{W}_3 \mathbf{h}_{2}\right)\\
+    \mathbf{y}&amp;= \mathbf{w}_4 ^\top\mathbf{h}_{3}
+\end{align}
+\]</span></p>
+</section>
+<section id="overfitting" class="slide level3" data-transition="None">
+<h3>Overfitting</h3>
 <ul>
-<li><p>Inducing variables are a compression of the real observations.</p></li>
-<li><p>They are like pseudo-data. They can be in space of <span class="math inline">\(\mathbf{f}\)</span> or a space that is related through a linear operator [Alvarez:efficient10] — e.g. a gradient or convolution.</p></li>
+<li><p>Potential problem: if number of nodes in two adjacent layers is big, corresponding <span class="math inline">\(\mathbf{W}\)</span> is also very big and there is the potential to overfit.</p></li>
+<li><p>Proposed solution: “dropout”.</p></li>
+<li><p>Alternative solution: parameterize <span class="math inline">\(\mathbf{W}\)</span> with its SVD. <span class="math display">\[\mathbf{W}= \mathbf{U}\boldsymbol{\Lambda}\mathbf{V}^\top\]</span> or <span class="math display">\[\mathbf{W}= \mathbf{U}\mathbf{V}^\top\]</span> where if <span class="math inline">\(\mathbf{W}\in \Re^{k_1\times k_2}\)</span> then <span class="math inline">\(\mathbf{U}\in \Re^{k_1\times q}\)</span> and <span class="math inline">\(\mathbf{V}\in \Re^{k_2\times q}\)</span>, i.e. we have a low rank matrix factorization for the weights.</p></li>
 </ul>
 </section>
-<section id="variational-compression-ii" class="slide level3">
-<h3>Variational Compression II</h3>
+<section id="deep-neural-network-2" class="slide level3" data-transition="None">
+<h3>Deep Neural Network</h3>
+<!--<object type="image/svg+xml" width="60%" data="./diagrams/deep-nn-bottleneck1.svg" class="svgplot">-->
+<p><img src="./diagrams/deep-nn-bottleneck1.png"  width="80%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"></p>
+</section>
+<section id="deep-neural-network-3" class="slide level3" data-transition="None">
+<h3>Deep Neural Network</h3>
+<!--<object type="image/svg+xml" data="./diagrams/deep-nn-bottleneck2.svg" class="svgplot">-->
+<p><img src="./diagrams/deep-nn-bottleneck2.png"  width="80%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"></p>
+</section>
+<section id="mathematically-1" class="slide level3" data-transition="None">
+<h3>Mathematically</h3>
+<p><span class="math display">\[
+\begin{align}
+    \mathbf{z}_{1} &amp;= \mathbf{V}^\top_1 {\bf x}\\
+    \mathbf{h}_{1} &amp;= \phi\left(\mathbf{U}_1 \mathbf{z}_{1}\right)\\
+    \mathbf{z}_{2} &amp;= \mathbf{V}^\top_2 \mathbf{h}_{1}\\
+    \mathbf{h}_{2} &amp;= \phi\left(\mathbf{U}_2 \mathbf{z}_{2}\right)\\
+    \mathbf{z}_{3} &amp;= \mathbf{V}^\top_3 \mathbf{h}_{2}\\
+    \mathbf{h}_{3} &amp;= \phi\left(\mathbf{U}_3 \mathbf{z}_{3}\right)\\
+    \mathbf{y}&amp;= \mathbf{w}_4^\top\mathbf{h}_{3}
+\end{align}
+\]</span></p>
+</section>
+<section id="a-cascade-of-neural-networks" class="slide level3" data-transition="None">
+<h3>A Cascade of Neural Networks</h3>
+<p><span class="math display">\[\begin{align}
+    \mathbf{z}_{1} &amp;= \mathbf{V}^\top_1 {\bf x}\\
+    \mathbf{z}_{2} &amp;= \mathbf{V}^\top_2 \phi\left(\mathbf{U}_1 \mathbf{z}_{1}\right)\\
+    \mathbf{z}_{3} &amp;= \mathbf{V}^\top_3 \phi\left(\mathbf{U}_2 \mathbf{z}_{2}\right)\\
+    \mathbf{y}&amp;= \mathbf{w}_4 ^\top \mathbf{z}_{3}
+\end{align}
+\]</span></p>
+</section>
+<section id="replace-each-neural-network-with-a-gaussian-process" class="slide level3" data-transition="None">
+<h3>Replace Each Neural Network with a Gaussian Process</h3>
+<p><span class="math display">\[
+\begin{align}
+    \mathbf{z}_{1} &amp;= \mathbf{f}\left({\bf x}\right)\\
+    \mathbf{z}_{2} &amp;= \mathbf{f}\left(\mathbf{z}_{1}\right)\\
+    \mathbf{z}_{3} &amp;= \mathbf{f}\left(\mathbf{z}_{2}\right)\\
+    \mathbf{y}&amp;= \mathbf{f}\left(\mathbf{z}_{3}\right)
+\end{align}
+\]</span></p>
+<p>This is equivalent to Gaussian prior over mappings and integrating out all parameters and taking width of each layer to infinity.</p>
+</section>
+<section id="mathematically-2" class="slide level3">
+<h3>Mathematically</h3>
 <ul>
-<li><p>Introduce <em>inducing</em> variables.</p></li>
-<li><p>Compress information into the inducing variables and avoid the need to store all the data.</p></li>
-<li><p>Allow for scaling e.g. stochastic variational Hensman:bigdata13 or parallelization Gal:Distributed14,Dai:gpu14, Seeger:auto17</p></li>
+<li>Composite <em>multivariate</em> function <span class="math display">\[\mathbf{g}(\mathbf{x})=\mathbf{f}_5(\mathbf{f}_4(\mathbf{f}_3(\mathbf{f}_2(\mathbf{f}_1({\bf x})))))\]</span></li>
 </ul>
 </section>
-<section id="nonparametric-gaussian-processes" class="slide level3" data-transition="None">
-<h3>Nonparametric Gaussian Processes</h3>
+<section id="why-deep" class="slide level3">
+<h3>Why Deep?</h3>
 <ul>
-<li><p>We’ve seen how we go from parametric to non-parametric.</p></li>
-<li><p>The limit implies infinite dimensional <span class="math inline">\(\mathbf{w}\)</span>.</p></li>
-<li><p>Gaussian processes are generally non-parametric: combine data with covariance function to get model.</p></li>
-<li><p>This representation <em>cannot</em> be summarized by a parameter vector of a fixed size.</p></li>
-</ul>
-</section>
-<section id="the-parametric-bottleneck" class="slide level3" data-transition="None">
-<h3>The Parametric Bottleneck</h3>
+<li><p>Gaussian processes give priors over functions.</p></li>
+<li><p>Elegant properties:</p>
 <ul>
-<li><p>Parametric models have a representation that does not respond to increasing training set size.</p></li>
-<li><p>Bayesian posterior distributions over parameters contain the information about the training data.</p>
-<ul>
-<li><p>Use Bayes’ rule from training data, <span class="math inline">\(p\left(\mathbf{w}|\mathbf{y}, {\bf X}\right)\)</span>,</p></li>
-<li><p>Make predictions on test data <span class="math display">\[p\left(y_*|{\bf X}_*, \mathbf{y}, {\bf X}\right) = \int
-      p\left(y_*|\mathbf{w},{\bf X}_*\right)p\left(\mathbf{w}|\mathbf{y},
-        {\bf X})\text{d}\mathbf{w}\right).\]</span></p></li>
+<li>e.g. <em>Derivatives</em> of process are also Gaussian distributed (if they exist).</li>
 </ul></li>
-<li><p><span class="math inline">\(\mathbf{w}\)</span> becomes a bottleneck for information about the training set to pass to the test set.</p></li>
-<li><p>Solution: increase <span class="math inline">\(m\)</span> so that the bottleneck is so large that it no longer presents a problem.</p></li>
-<li><p>How big is big enough for <span class="math inline">\(m\)</span>? Non-parametrics says <span class="math inline">\(m\rightarrow \infty\)</span>.</p></li>
+<li><p>For particular covariance functions they are ‘universal approximators’, i.e. all functions can have support under the prior.</p></li>
+<li><p>Gaussian derivatives might ring alarm bells.</p></li>
+<li><p>E.g. a priori they don’t believe in function ‘jumps’.</p></li>
 </ul>
 </section>
-<section id="the-parametric-bottleneck" class="slide level3" data-transition="None">
-<h3>The Parametric Bottleneck</h3>
-<ul>
-<li>Now no longer possible to manipulate the model through the standard parametric form.</li>
-</ul>
-<div class="fragment">
-<ul>
-<li>However, it <em>is</em> possible to express <em>parametric</em> as GPs: <span class="math display">\[k\left({\bf x}_i,{\bf x}_j\right)=\phi_:\left({\bf x}_i\right)^\top\phi_:\left({\bf x}_j\right).\]</span></li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>These are known as degenerate covariance matrices.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Their rank is at most <span class="math inline">\(m\)</span>, non-parametric models have full rank covariance matrices.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Most well known is the “linear kernel”, <span class="math inline">\(k({\bf x}_i, {\bf x}_j) = {\bf x}_i^\top{\bf x}_j\)</span>.</li>
-</ul>
-</div>
-</section>
-<section id="making-predictions" class="slide level3" data-transition="None">
-<h3>Making Predictions</h3>
-<ul>
-<li>For non-parametrics prediction at new points <span class="math inline">\(\mathbf{f}_*\)</span> is made by conditioning on <span class="math inline">\(\mathbf{f}\)</span> in the joint distribution.</li>
-</ul>
-<div class="fragment">
-<ul>
-<li>In GPs this involves combining the training data with the covariance function and the mean function.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Parametric is a special case when conditional prediction can be summarized in a <em>fixed</em> number of parameters.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Complexity of parametric model remains fixed regardless of the size of our training data set.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>For a non-parametric model the required number of parameters grows with the size of the training data.</li>
-</ul>
-</div>
-</section>
-<section id="information-capture" class="slide level3" data-transition="None">
-<h3>Information capture</h3>
-<ul>
-<li><p>Everything we want to do with a GP involves marginalising <span class="math inline">\(\mathbf{f}\)</span></p>
-<ul>
-<li><p>Predictions</p></li>
-<li><p>Marginal likelihood</p></li>
-<li><p>Estimating covariance parameters</p></li>
-</ul></li>
-<li><p>The posterior of <span class="math inline">\(\mathbf{f}\)</span> is the central object. This means inverting <span class="math inline">\(\mathbf{K}_{\mathbf{f}\mathbf{f}}\)</span>.</p></li>
-</ul>
-</section>
-<section id="computational-savings" class="slide level3" data-transition="None">
-<h3>Computational Savings</h3>
-<p><img src="./diagrams/cov_approx.png" width="90.00000%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;" ></p>
-<p><span class="math display">\[\mathbf{K}_{\mathbf{f}\mathbf{f}}\approx {\bf Q}_{\mathbf{f}\mathbf{f}}= \mathbf{K}_{\mathbf{f}\mathbf{u}}\mathbf{K}_{\mathbf{u}\mathbf{u}}^{-1}\mathbf{K}_{\mathbf{u}\mathbf{f}}\]</span></p>
-<p>Instead of inverting <span class="math inline">\(\mathbf{K}_{\mathbf{f}\mathbf{f}}\)</span>, we make a low rank (or Nyström) approximation, and invert <span class="math inline">\(\mathbf{K}_{\mathbf{u}\mathbf{u}}\)</span> instead.</p>
-<p><em>Figure originally from presentation by Ed Snelson at NIPS</em></p>
-<p>Smola:sparsegp00,Csato:sparse00,Csato:sparse02,Csato:thesis02,Seeger:fast03</p>
-</section>
-<section id="section-7" class="slide level3" data-transition="None">
-<h3></h3>
-<table>
-<tr>
-<td>
-<span class="math display">\[{\bf X},\,\mathbf{y}\]</span>
-</td>
-<td>
-<img src="./diagrams/nomenclature1.png" width="90%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;">
-</td>
-</tr>
-</table>
-</section>
-<section id="section-8" class="slide level3" data-transition="None">
-<h3></h3>
-<table>
-<tr>
-<td>
-<span class="math display">\[{\bf X},\,\mathbf{y}\]</span> <span class="math display">\[{\color{\blueColor} f({\bf x})} \sim {\mathcal GP}\]</span>
-</td>
-<td>
-<img src="./diagrams/nomenclature2.png" width="90%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;">
-</td>
-</tr>
-<table>
-</section>
-<section id="section-9" class="slide level3" data-transition="None">
-<h3></h3>
-<table>
-<tr>
-<td>
-<span class="math display">\[{\bf X},\,\mathbf{y}\]</span> <span class="math display">\[f({\bf x}) \sim {\mathcal GP}\]</span> <span class="math display">\[p({\color{\blueColor} \mathbf{f}}) = \mathcal{N}\left(\mathbf{0},\mathbf{K}_{\mathbf{f}\mathbf{f}}\right)\]</span>
-</td>
-<td>
-<img src="./diagrams/nomenclature3.png" width="90%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;">
-</td>
-</tr>
-</table>
-</section>
-<section id="section-10" class="slide level3" data-transition="None">
-<h3></h3>
-<table>
-<tr>
-<td>
-<span class="math display">\[{\bf X},\,\mathbf{y}\]</span> <span class="math display">\[f({\bf x}) \sim {\mathcal GP}\]</span> <span class="math display">\[p(\mathbf{f}) = \mathcal{N}\left(\mathbf{0},\mathbf{K}_{\mathbf{f}\mathbf{f}}\right)\]</span> <span class="math display">\[p( \mathbf{f}|\mathbf{y},{\bf X})\]</span>
-</td>
-<td>
-<img src="./diagrams/nomenclature3a.png" width="90%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;">
-</td>
-</tr>
-</table>
-</section>
-<section id="introducing-mathbfu" class="slide level3" data-transition="None">
-<h3>Introducing <span class="math inline">\(\mathbf{u}\)</span></h3>
-<p>Take an extra <span class="math inline">\(m\)</span> points on the function, <span class="math inline">\(\mathbf{u}= f(\mathbf{Z})\)</span>. <span class="math display">\[p(\mathbf{y},\mathbf{f},\mathbf{u}) = p(\mathbf{y}|\mathbf{f}) p(\mathbf{f}|\mathbf{u}) p(\mathbf{u})\]</span></p>
-</section>
-<section id="introducing-inducingvector" class="slide level3" data-transition="None">
-<h3>Introducing <span class="math inline">\(\mathbf{u}\)</span></h3>
-<p><img src="./diagrams/cov_inducing_withX.png" height="60%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"></p>
-</section>
-<section id="introducing-inducingvector" class="slide level3" data-transition="None">
-<h3>Introducing <span class="math inline">\(\mathbf{u}\)</span></h3>
-<p>Take and extra <span class="math inline">\(M\)</span> points on the function, <span class="math inline">\(\mathbf{u}= f(\mathbf{Z})\)</span>. <span class="math display">\[p(\mathbf{y},\mathbf{f},\mathbf{u}) = p(\mathbf{y}|\mathbf{f}) p(\mathbf{f}|\mathbf{u}) p(\mathbf{u})\]</span> <span class="math display">\[\begin{aligned}
-    p(\mathbf{y}|\mathbf{f}) &amp;= \mathcal{N}\left(\mathbf{y}|\mathbf{f},\sigma^2 \mathbf{I}\right)\\
-    p(\mathbf{f}|\mathbf{u}) &amp;= \mathcal{N}\left(\mathbf{f}| \mathbf{K}_{\mathbf{f}\mathbf{u}}\mathbf{K}_{\mathbf{u}\mathbf{u}}^{-1}\mathbf{u}, \tilde{\mathbf{K}}\right)\\
-    p(\mathbf{u}) &amp;= \mathcal{N}\left(\mathbf{u}| \mathbf{0},\mathbf{K}_{\mathbf{u}\mathbf{u}}\right)
-  \end{aligned}\]</span></p>
-</section>
-<section id="section-11" class="slide level3" data-transition="None">
-<h3></h3>
-<table>
-<tr>
-<td>
-<span class="math display">\[{\bf X},\,\mathbf{y}\]</span> <span class="math display">\[f({\bf x}) \sim {\mathcal GP}\]</span> <span class="math display">\[p(\mathbf{f}) = \mathcal{N}\left(\mathbf{0},\mathbf{K}_{\mathbf{f}\mathbf{f}}\right)\]</span> <span class="math display">\[p(\mathbf{f}|\mathbf{y},{\bf X})\]</span>
-</td>
-<td>
-<img src="./diagrams/nomenclature4" width="90%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;">
-</td>
-</tr>
-</table>
-<span class="math display">\[\begin{align}
-                                                                                                           &amp;\qquad\inducingInputMatrix, \inducingVector\\                                                                                                                                                                                                    
-                                                                                               &amp;p({\color{red} \inducingVector})  = \gaussianSamp{\zerosVector}{\Kuu}                                                                                                                                                                                        
-                                                                                                                          \end{align}\]</span>
-<p>$$</p>
-</section>
-<section id="section-12" class="slide level3" data-transition="None">
-<h3></h3>
-<table>
-<tr>
-<td>
-<span class="math display">\[{\bf X},\,\mathbf{y}\]</span> <span class="math display">\[f({\bf x}) \sim {\mathcal GP}\]</span> <span class="math display">\[p(\mathbf{f}) = \mathcal{N}\left(\mathbf{0},\mathbf{K}_{\mathbf{f}\mathbf{f}}\right)\]</span> <span class="math display">\[p(\mathbf{f}|\mathbf{y},{\bf X})\]</span> <span class="math display">\[p(\mathbf{u})  = \mathcal{N}\left(\mathbf{0},\mathbf{K}_{\mathbf{u}\mathbf{u}}\right)\]</span> <span class="math display">\[\widetilde p({\color{red}\mathbf{u}}|\mathbf{y},{\bf X})\]</span>
-</td>
-<td>
-<img src="./diagrams/nomenclature5.png" width="90%"  class="negate" align="cener" style="background:none; border:none; box-shadow:none;">
-</td>
-</tr>
-</table>
-</section>
-<section id="the-alternative-posterior" class="slide level3">
-<h3>The alternative posterior</h3>
-<p><span>Instead of doing</span> <span class="math display">\[p(\mathbf{f}|\mathbf{y},{\bf X}) = \frac{p(\mathbf{y}|\mathbf{f})p(\mathbf{f}|{\bf X})}{\int p(\mathbf{y}|\mathbf{f})p(\mathbf{f}|{\bf X}){\text{d}\mathbf{f}}}\]</span> <span>We’ll do</span> <span class="math display">\[p(\mathbf{u}|\mathbf{y},\mathbf{Z}) = \frac{p(\mathbf{y}|\mathbf{u})p(\mathbf{u}|\mathbf{Z})}{\int p(\mathbf{y}|\mathbf{u})p(\mathbf{u}|\mathbf{Z}){\text{d}\mathbf{u}}}\]</span>  </p>
-<!--Flexible Parametric Approximation-->
-<!--frame start-->
-</section>
-<section id="parametric-but-non-parametric" class="slide level3">
-<h3>Parametric but Non-parametric</h3>
-<ul>
-<li><p>Augment with a vector of <em>inducing</em> variables, <span class="math inline">\(\mathbf{u}\)</span>.</p></li>
-<li><p>Form a variational lower bound on true likelihood.</p></li>
-<li><p>Bound <em>factorizes</em> given inducing variables.</p></li>
-<li><p>Inducing variables appear in bound similar to parameters in a parametric model.</p></li>
-<li><p><em>But</em> number of inducing variables can be changed at run time.</p></li>
-</ul>
-<!--frame end-->
-<!--frame start-->
-</section>
-<section id="inducing-variable-approximations" class="slide level3">
-<h3>Inducing Variable Approximations</h3>
-<ul>
-<li><p>Date back to <span></span>. See <span></span> for a review.</p></li>
-<li><p>We follow variational perspective of <span></span>.</p></li>
-<li><p>This is an augmented variable method, followed by a collapsed variational approximation <span></span>.</p></li>
-</ul>
-<!--frame end-->
-<!--frame failure start-->
-
-
-<!--frame failure end-->
-<!--frame start-->
-</section>
-<section id="variational-bound-on-pmathbfymathbfu" class="slide level3">
-<h3>Variational Bound on <span class="math inline">\(p(\mathbf{y}|\mathbf{u})\)</span></h3>
-<p><span class="math display">\[\begin{aligned}
-    \log p(\mathbf{y}|\mathbf{u}) &amp; = \log \int p(\mathbf{y}|\mathbf{f}) p(\mathbf{f}|\mathbf{u}) \text{d}\mathbf{f}\\ &amp; = \int q(\mathbf{f}) \log \frac{p(\mathbf{y}|\mathbf{f}) p(\mathbf{f}|\mathbf{u})}{q(\mathbf{f})}\text{d}\mathbf{f}+ \text{KL}\left( q(\mathbf{f})\,\|\,p(\mathbf{f}|\mathbf{y}, \mathbf{u}) \right)
-  \end{aligned}\]</span></p>
+<section id="process-composition" class="slide level3">
+<h3>Process Composition</h3>
 
 <ul>
-<li>Example, set <span class="math inline">\(q(\mathbf{f})=p(\mathbf{f}|\mathbf{u})\)</span>, <span class="math display">\[\log p(\mathbf{y}|\mathbf{u}) \geq \log \int p(\mathbf{f}|\mathbf{u}) \log p(\mathbf{y}|\mathbf{f})\text{d}\mathbf{f}.\]</span> <span class="math display">\[p(\mathbf{y}|\mathbf{u}) \geq \exp \int p(\mathbf{f}|\mathbf{u}) \log p(\mathbf{y}|\mathbf{f})\text{d}\mathbf{f}.\]</span></li>
+<li><p>From a process perspective: <em>process composition</em>.</p></li>
+<li><p>A (new?) way of constructing more complex <em>processes</em> based on simpler components.</p></li>
 </ul>
-<!--frame end-->
-<!--frame start-->
+<p><em>Note</em>: To retain <em>Kolmogorov consistency</em> introduce IBP priors over latent variables in each layer.</p>
 </section>
-<section id="optimal-compression-in-inducing-variables" class="slide level3">
-<h3>Optimal Compression in Inducing Variables</h3>
+<section id="analysis-of-deep-gps" class="slide level3">
+<h3>Analysis of Deep GPs</h3>
 <ul>
-<li><p>Maximizing lower bound minimizes the KL divergence (information gain): <span class="math display">\[\text{KL}\left( p(\mathbf{f}|\mathbf{u})\,\|\,p(\mathbf{f}|\mathbf{y}, \mathbf{u}) \right) = \int p(\mathbf{f}|\mathbf{u}) \log \frac{p(\mathbf{f}|\mathbf{u})}{p(\mathbf{f}|\mathbf{y}, \mathbf{u})}\text{d}\mathbf{u}\]</span></p></li>
-<li><p>This is minimized when the information stored about <span class="math inline">\(\mathbf{y}\)</span> is stored already in <span class="math inline">\(\mathbf{u}\)</span>.</p></li>
-<li><p>The bound seeks an <em>optimal compression</em> from the <em>information gain</em> perspective.</p></li>
-<li><p>If <span class="math inline">\(\mathbf{u}= \mathbf{f}\)</span> bound is exact (<span class="math inline">\(\mathbf{f}\)</span> <span class="math inline">\(d\)</span>-separates <span class="math inline">\(\mathbf{y}\)</span> from <span class="math inline">\(\mathbf{u}\)</span>).</p></li>
-</ul>
-<!--frame end-->
-<!--frame start-->
-</section>
-<section id="choice-of-inducing-variables" class="slide level3">
-<h3>Choice of Inducing Variables</h3>
-<ul>
-<li><p>Optimizing the bound directly not always practical.</p></li>
-<li><p>Free to choose whatever heuristics for the inducing variables.</p></li>
-<li><p>Can quantify which heuristics perform better through checking lower bound.</p></li>
-</ul>
-<!--frame end-->
-<!--frame start-->
-</section>
-<section id="factorizing-likelihoods" class="slide level3">
-<h3>Factorizing Likelihoods</h3>
-<ul>
-<li><p>If the likelihood, <span class="math inline">\(p(\mathbf{y}|\mathbf{f})\)</span>, factorizes     </p></li>
-<li><p>&lt;8-&gt; Then the bound factorizes.</p></li>
-<li><p>&lt;10-&gt; Now need a choice of distributions for <span class="math inline">\(\mathbf{f}\)</span> and <span class="math inline">\(\mathbf{y}|\mathbf{f}\)</span> …</p></li>
-</ul>
-<!--frame end-->
-</section>
-<section id="section-13" class="slide level3">
-<h3></h3>
-<p><span class="math display">\[\mathbf{f}, \mathbf{u}\sim \mathcal{N}\left(\mathbf{0},\begin{bmatrix}\mathbf{K}_{\mathbf{f}\mathbf{f}}&amp; \mathbf{K}_{\mathbf{f}\mathbf{u}}\\\mathbf{K}_{\mathbf{u}\mathbf{f}}&amp; \mathbf{K}_{\mathbf{u}\mathbf{u}}\end{bmatrix}\right)\]</span> <span class="math display">\[\mathbf{y}|\mathbf{f}= \prod_{i} \mathcal{N}\left(f,\sigma^2\right)\]</span></p>
-<!--Variational Compression-->
-</section>
-<section id="gaussian-py_if_i" class="slide level3">
-<h3>Gaussian <span class="math inline">\(p(y_i|f_i)\)</span></h3>
-<p>For Gaussian likelihoods:  </p>
-</section>
-<section id="gaussian-process-over-mathbff-and-mathbfu" class="slide level3">
-<h3>Gaussian Process Over <span class="math inline">\(\mathbf{f}\)</span> and <span class="math inline">\(\mathbf{u}\)</span></h3>
-<p>Define: <span class="math display">\[q_{i, i} = \text{var}_{p(f_i|\mathbf{u})}\left( f_i \right) = \left&lt;f_i^2\right&gt;_{p(f_i|\mathbf{u})} - \left&lt;f_i\right&gt;_{p(f_i|\mathbf{u})}^2\]</span> We can write: <span class="math display">\[c_i = \exp\left(-{\frac{q_{i,i}}{2\sigma^2}}\right)\]</span> If joint distribution of <span class="math inline">\(p(\mathbf{f}, \mathbf{u})\)</span> is Gaussian then: <span class="math display">\[q_{i, i} = k_{i, i} - \mathbf{k}_{i, \mathbf{u}}^\top \mathbf{K}_{\mathbf{u}, \mathbf{u}}^{-1} \mathbf{k}_{i, \mathbf{u}}\]</span></p>
-<p><span class="math inline">\(c_i\)</span> is not a function of <span class="math inline">\(\mathbf{u}\)</span> but <em>is</em> a function of <span class="math inline">\({\bf X}_\mathbf{u}\)</span>.</p>
-<!--frame end-->
-<!--frame start-->
-</section>
-<section id="total-conditional-variance" class="slide level3">
-<h3>Total Conditional Variance</h3>
-<ul>
-<li><p>The sum of <span class="math inline">\(q_{i,i}\)</span> is the <em>total conditional variance</em>.</p></li>
-<li><p>If conditional density <span class="math inline">\(p(\mathbf{f}|\mathbf{u})\)</span> is Gaussian then it has covariance <span class="math display">\[\mathbf{Q} = \mathbf{K}_{\mathbf{f}\mathbf{f}} - \mathbf{K}_{\mathbf{f}\mathbf{u}}\mathbf{K}_{\mathbf{u}\mathbf{u}}^{-1} \mathbf{K}_{\mathbf{u}\mathbf{f}}\]</span></p></li>
-<li><p><span class="math inline">\(\text{tr}\left(\mathbf{Q}\right) = \sum_{i}q_{i,i}\)</span> is known as total variance.</p></li>
-<li><p>Because it is on conditional distribution we call it <em>total conditional variance</em>.</p></li>
-</ul>
-<!--frame end-->
-<!--frame start-->
-</section>
-<section id="capacity-of-a-density" class="slide level3">
-<h3>Capacity of a Density</h3>
-<ul>
-<li><p>Measure the ’capacity of a density’.</p></li>
-<li><p>Determinant of covariance represents ’volume’ of density.</p></li>
-<li><p>log determinant is entropy: sum of <em>log</em> eigenvalues of covariance.</p></li>
-<li><p>trace of covariance is total variance: sum of eigenvalues of covariance.</p></li>
-<li><p><span class="math inline">\(\lambda &gt; \log \lambda\)</span> then total conditional variance upper bounds entropy.</p></li>
-</ul>
-<!--frame end-->
-<!--frame start-->
-</section>
-<section id="alternative-view" class="slide level3">
-<h3>Alternative View</h3>
-<p>Exponentiated total variance bounds determinant. <span class="math display">\[\left|\mathbf{Q}\right| &lt; \exp \text{tr}\left(\mathbf{Q}\right)\]</span> Because <span class="math display">\[\prod_{i=1}^k \lambda_i &lt; \prod_{i=1}^k \exp(\lambda_i)\]</span> where <span class="math inline">\(\{\lambda_i\}_{i=1}^k\)</span> are the <em>positive</em> eigenvalues of <span class="math inline">\(\mathbf{Q}\)</span> This in turn implies <span class="math display">\[\left|\mathbf{Q}\right| &lt; \prod_{i=1}^k \exp\left(q_{i,i}\right)\]</span></p>
-<!--frame end-->
-<!--frame start-->
-</section>
-<section id="communication-channel" class="slide level3">
-<h3>Communication Channel</h3>
-<ul>
-<li><p>Conditional density <span class="math inline">\(p(\mathbf{f}|\mathbf{u})\)</span> can be seen as a <em>communication channel</em>.</p></li>
-<li><p>Normally we have: <span> <span class="math display">\[\text{Transmitter} \xrightarrow{\mathbf{u}} \begin{smallmatrix}p(\mathbf{f}|\mathbf{u}) \\ \text{Channel}\end{smallmatrix} \xrightarrow{\mathbf{f}} \text{Receiver}\]</span></span> and we control <span class="math inline">\(p(\mathbf{u})\)</span> (the source density).</p></li>
-<li><p><em>Here</em> we can also control the transmission channel <span class="math inline">\(p(\mathbf{f}|\mathbf{u})\)</span>.</p></li>
-</ul>
-<!--frame end-->
-<!--frame start-->
-</section>
-<section id="lower-bound-on-likelihood" class="slide level3">
-<h3>Lower Bound on Likelihood</h3>
-<p>Substitute variational bound into marginal likelihood: <span class="math display">\[p(\mathbf{y})\geq \prod_{i=1}^nc_i \int \mathcal{N}\left(\mathbf{y}|\left&lt;\mathbf{f}\right&gt;,\sigma^2\mathbf{I}\right)p(\mathbf{u}) \text{d}\mathbf{u}\]</span> Note that: <span class="math display">\[\left&lt;\mathbf{f}\right&gt;_{p(\mathbf{f}|\mathbf{u})} = \mathbf{K}_{\mathbf{f}, \mathbf{u}} \mathbf{K}_{\mathbf{u}, \mathbf{u}}^{-1}\mathbf{u}\]</span> is <em>linearly</em> dependent on <span class="math inline">\(\mathbf{u}\)</span>.</p>
-<!--frame end-->
-<!--frame start-->
-</section>
-<section id="deterministic-training-conditional" class="slide level3">
-<h3>Deterministic Training Conditional</h3>
-<p>Making the marginalization of <span class="math inline">\(\mathbf{u}\)</span> straightforward. In the Gaussian case: <span class="math display">\[p(\mathbf{u}) = \mathcal{N}\left(\mathbf{u}|\mathbf{0},\mathbf{K}_{\mathbf{u},\mathbf{u}}\right)\]</span>      </p>
-<!--frame end-->
-<!--frame start-->
-</section>
-<section id="variational-marginalisation-of-mathbff" class="slide level3">
-<h3>Variational marginalisation of <span class="math inline">\(\mathbf{f}\)</span></h3>
-<p><span class="math display">\[\log p(\mathbf{y}|\mathbf{u}) = \log\int p(\mathbf{y}|\mathbf{f})p(\mathbf{f}|\mathbf{u},{\bf X})\text{d}\mathbf{f}\]</span></p>
-
-<p><span class="math display">\[\log p(\mathbf{y}|\mathbf{u}) = \log \mathbb{E}_{p(\mathbf{f}|\mathbf{u},{\bf X})}\left[p(\mathbf{y}|\mathbf{f})\right]\]</span>  <span class="math display">\[\log p(\mathbf{y}|\mathbf{u}) \geq  \mathbb{E}_{p(\mathbf{f}|\mathbf{u},{\bf X})}\left[\log p(\mathbf{y}|\mathbf{f})\right]\triangleq \log\widetilde p(\mathbf{y}|\mathbf{u})\]</span> </p>
-<p><span> No inversion of <span class="math inline">\(\mathbf{K}_{\mathbf{f}\mathbf{f}}\)</span> required</span></p>
-<!--frame end-->
-<!--frame start-->
-</section>
-<section id="variational-marginalisation-of-mathbff-another-way" class="slide level3">
-<h3>Variational marginalisation of <span class="math inline">\(\mathbf{f}\)</span> (another way)</h3>
-
-<p><span class="math display">\[p(\mathbf{y}|\mathbf{u}) = \frac{p(\mathbf{y}|\mathbf{f})p(\mathbf{f}|\mathbf{u})}{p(\mathbf{f}|\mathbf{y}, \mathbf{u})}\]</span>  <span class="math display">\[\log p(\mathbf{y}|\mathbf{u}) = \log p(\mathbf{y}|\mathbf{f}) + \log \frac{p(\mathbf{f}|\mathbf{u})}{p(\mathbf{f}|\mathbf{y}, \mathbf{u})}\]</span>  <span class="math display">\[\log p(\mathbf{y}|\mathbf{u}) = \bbE_{p(\mathbf{f}|\mathbf{u})}\big[\log p(\mathbf{y}|\mathbf{f})\big] + \bbE_{p(\mathbf{f}|\mathbf{u})}\big[\log \frac{p(\mathbf{f}|\mathbf{u})}{p(\mathbf{f}|\mathbf{y}, \mathbf{u})}\big]\]</span>  <span class="math display">\[\log p(\mathbf{y}|\mathbf{u}) = \widetilde p(\mathbf{y}|\mathbf{u}) + \textsc{KL}[p(\mathbf{f}|\mathbf{u})||p(\mathbf{f}|\mathbf{y}, \mathbf{u})]\]</span></p>
-<p><span> No inversion of <span class="math inline">\(\mathbf{K}_{\mathbf{f}\mathbf{f}}\)</span> required</span></p>
-<!--frame end-->
-<!--frame start-->
-</section>
-<section id="a-lower-bound-on-the-likelihood" class="slide level3">
-<h3>A Lower Bound on the Likelihood</h3>
-<p><span class="math display">\[\widetilde p(\mathbf{y}|\mathbf{u})  = \prod_{i=1}^n\widetilde p(y_i|\mathbf{u})\]</span> <span class="math display">\[\widetilde p(y|\mathbf{u}) = \mathcal{N}\left(y|\mathbf{k}_{fu}\mathbf{K}_{\mathbf{u}\mathbf{u}}^{-1}\mathbf{u},\sigma^2\right) \,{\color{red}\exp\left\{-\tfrac{1}{2\sigma^2}\left(k_{ff}- \mathbf{k}_{fu}\mathbf{K}_{\mathbf{u}\mathbf{u}}^{-1}\mathbf{k}_{uf}\right)\right\}}\]</span></p>
-<p><span>A straightforward likelihood approximation, and a penalty term</span></p>
-<!--frame end-->
-<!--frame start-->
-</section>
-<section id="now-we-can-marginalise-mathbfu" class="slide level3">
-<h3>Now we can marginalise <span class="math inline">\(\mathbf{u}\)</span></h3>
-<p><span class="math display">\[\widetilde p(\mathbf{u}|\mathbf{y},\mathbf{Z}) = \frac{\widetilde p(\mathbf{y}|\mathbf{u})p(\mathbf{u}|\mathbf{Z})}{\int \widetilde p(\mathbf{y}|\mathbf{u})p(\mathbf{u}|\mathbf{Z})\dif{\mathbf{u}}}\]</span></p>
-<ul>
-<li><p>Computing the posterior costs <span class="math inline">\(\mathcal{O}(nm^2)\)</span></p></li>
-<li><p>We also get a lower bound of the marginal likelihood</p></li>
-</ul>
-<!--frame end-->
-<!--frame start-->
-</section>
-<section id="what-does-the-penalty-term-do" class="slide level3">
-<h3>What does the penalty term do?</h3>
-<p><span class="math display">\[{\color{red}\sum_{i=1}^n-\tfrac{1}{2\sigma^2}\left(k_{ff}- \mathbf{k}_{fu}\mathbf{K}_{\mathbf{u}\mathbf{u}}^{-1}\mathbf{k}_{uf}\right)}\]</span></p>
-
-<!--frame end-->
-<!--frame start-->
-</section>
-<section id="what-does-the-penalty-term-do" class="slide level3">
-<h3>What does the penalty term do?</h3>
-<p><span class="math display">\[{\color{red}\sum_{i=1}^n-\tfrac{1}{2\sigma^2}\left(k_{ff}- \mathbf{k}_{fu}\mathbf{K}_{\mathbf{u}\mathbf{u}}^{-1}\mathbf{k}_{uf}\right)}\]</span></p>
-
-<!--frame end-->
-<!--frame start-->
-</section>
-<section id="what-does-the-penalty-term-do" class="slide level3">
-<h3>What does the penalty term do?</h3>
-<figure>
-<img data-src="../../../gp/tex/diagrams/cov_approx" alt="image" style="width:60.0%" /><figcaption>image</figcaption>
-</figure>
-<figure>
-<img data-src="../../../gp/tex/diagrams/cov_approx_opt" alt="image" style="width:60.0%" /><figcaption>image</figcaption>
-</figure>
-<!--frame end-->
-<!--frame start-->
-</section>
-<section id="how-good-is-the-inducing-approximation" class="slide level3">
-<h3>How good is the inducing approximation?</h3>
-<p><span>It’s easy to show that as <span class="math inline">\(\mathbf{Z}\to {\bf X}\)</span>:</span></p>
-<ul>
-<li><p><span class="math inline">\(\mathbf{u}\to \mathbf{f}\)</span> (and the posterior is exact)</p></li>
-<li><p>The penalty term is zero.</p></li>
-<li><p>The cost returns to <span class="math inline">\(\mathcal{O}(n^3)\)</span></p></li>
-</ul>
-
-<ul>
-<li><p><br />
-</p></li>
-<li></li>
-</ul>
-<!--frame end-->
-<!--frame start-->
-</section>
-<section id="predictions" class="slide level3">
-<h3>Predictions</h3>
-
-<!--frame end-->
-<!--frame start-->
-</section>
-<section id="recap" class="slide level3">
-<h3>Recap</h3>
-<p><span>So far we:</span></p>
-<ul>
-<li><p>introduced <span class="math inline">\(\mathbf{Z}, \mathbf{u}\)</span></p></li>
-<li><p>approximated the intergral over <span class="math inline">\(\mathbf{f}\)</span> variationally</p></li>
-<li><p>captured the information in <span class="math inline">\(\widetilde p(\mathbf{u}|\mathbf{y})\)</span></p></li>
-<li><p>obtained a lower bound on the marginal likeihood</p></li>
-<li><p>saw the effect of the penalty term</p></li>
-<li><p>prediction for new points</p></li>
-</ul>
-<p><span>Omitted details:</span></p>
-<ul>
-<li><p>optimization of the covariance parameters using the bound</p></li>
-<li><p>optimization of Z (simultaneously)</p></li>
-<li><p>the form of <span class="math inline">\(\widetilde p(\mathbf{u}|\mathbf{y})\)</span></p></li>
-<li><p>historical approximations</p></li>
-</ul>
-<!--frame end-->
-<!--frame start-->
-</section>
-<section id="other-approximations" class="slide level3">
-<h3>Other approximations</h3>
-<p><span>Subset selection</span> </p>
-<ul>
-<li><p>Random or systematic</p></li>
-<li><p>Set <span class="math inline">\(\mathbf{Z}\)</span> to subset of <span class="math inline">\({\bf X}\)</span></p></li>
-<li><p>Set <span class="math inline">\(\mathbf{u}\)</span> to subset of <span class="math inline">\(\mathbf{f}\)</span></p></li>
-<li><p>Approximation to <span class="math inline">\(p(\mathbf{y}|\mathbf{u})\)</span>:</p>
-<ul>
-<li><p>$ p(_i) = p(_i_i) i$</p></li>
-<li><p>$ p(_i) = 1  i$</p></li>
-</ul></li>
-</ul>
-<!--frame end-->
-<!--frame start-->
-</section>
-<section id="other-approximations" class="slide level3">
-<h3>Other approximations</h3>
-
-<ul>
-<li><p>Approximation to <span class="math inline">\(p(\mathbf{y}|\mathbf{u})\)</span>:</p>
-<ul>
-<li>$ p(_i) = (_i, [_i])$</li>
-</ul></li>
-<li><p>As our variational formulation, but without penalty</p></li>
-</ul>
-<p>Optimization of <span class="math inline">\(\mathbf{Z}\)</span> is difficult</p>
-<!--frame end-->
-<!--frame start-->
-</section>
-<section id="other-approximations" class="slide level3">
-<h3>Other approximations</h3>
-<p><span>Fully Independent Training Conditional</span> </p>
-<ul>
-<li><p>Approximation to <span class="math inline">\(p(\mathbf{y}|\mathbf{u})\)</span>:</p></li>
-<li><p>$ p() = _ip(_i) $</p></li>
-</ul>
-<p>Optimization of <span class="math inline">\(\mathbf{Z}\)</span> is still difficult, and there are some weird heteroscedatic effects</p>
-<!--frame end-->
-<!--frame start-->
-<p>[label=bayesGplvm]</p>
-</section>
-<section id="selecting-data-dimensionality" class="slide level3">
-<h3>Selecting Data Dimensionality</h3>
-<ul>
-<li><p>GP-LVM Provides probabilistic non-linear dimensionality reduction.</p></li>
-<li><p>How to select the dimensionality?</p></li>
-<li><p>Need to estimate marginal likelihood.</p></li>
-<li><p>In standard GP-LVM it increases with increasing <span class="math inline">\(q\)</span>.</p></li>
-</ul>
-<!--frame end-->
-<!--frame failure start-->
-
-
-<!--frame failure end-->
-</section>
-<section id="standard-variational-approach-fails" class="slide level3">
-<h3>Standard Variational Approach Fails</h3>
-<ul>
-<li><p>&lt;1-&gt; Standard variational bound has the form: <span class="math display">\[\mathcal{L}= \left&lt;\log p(\mathbf{y}|\mathbf{Z})\right&gt;_{q(\mathbf{Z})} + \text{KL}\left( q(\mathbf{Z})\,\|\,p(\mathbf{Z}) \right)\]</span></p></li>
-<li><p>&lt;2-&gt; Requires expectation of <span class="math inline">\(\log p(\mathbf{y}|\mathbf{Z})\)</span> under <span class="math inline">\(q(\mathbf{Z})\)</span>. <span class="math display">\[\log p(\mathbf{y}|\mathbf{Z}) = -\frac{1}{2}\mathbf{y}^\top\left(\mathbf{K}_{\mathbf{f}, \mathbf{f}}+\sigma^2\mathbf{I}\right)^{-1}\mathbf{y}-\frac{1}{2}\log \left|\mathbf{K}_{\mathbf{f}, \mathbf{f}}+\sigma^2 \mathbf{I}\right| -\frac{n}{2}\log 2\pi\]</span></p></li>
-<li><p>&lt;3-&gt; Extremely difficult to compute because <span class="math inline">\(\mathbf{K}_{\mathbf{f}, \mathbf{f}}\)</span> is dependent on <span class="math inline">\(\mathbf{Z}\)</span> and appears in the inverse.</p></li>
+<li><p>[Duvenaud:pathologies14] Duvenaud et al show that the derivative distribution of the process becomes more <em>heavy tailed</em> as number of layers increase.</p></li>
+<li><p>[Gal:dropout15] Gal and Ghahramani show that Drop Out is a variational approximation to a deep Gaussian process.</p></li>
 </ul>
 </section>
-<section id="variational-bayesian-gp-lvm" class="slide level3">
-<h3>Variational Bayesian GP-LVM</h3>
+<section id="difficulty-for-probabilistic-approaches" class="slide level3">
+<h3>Difficulty for Probabilistic Approaches</h3>
 <ul>
-<li><p>&lt;1-&gt;Consider collapsed variational bound,   </p></li>
-<li><p>&lt;4-&gt; Apply variational lower bound to the inner integral. </p></li>
-<li><p>&lt;6-&gt; Which is analytically tractable for Gaussian <span class="math inline">\(q(\mathbf{Z})\)</span> and some covariance functions.</p></li>
+<li><p>Propagate a probability distribution through a non-linear mapping.</p></li>
+<li><p>Normalisation of distribution becomes intractable.</p></li>
 </ul>
+<p><img src="./diagrams/nonlinear_mapping3_d_plot_slides.png" width="80%" class="negate"  style="background:none; border:none; box-shadow:none;" align="center"></p>
 </section>
-<section id="required-expectations" class="slide level3">
-<h3>Required Expectations</h3>
-<ul>
-<li><p>Need expectations under <span class="math inline">\(q(\mathbf{Z})\)</span> of: <span class="math display">\[\log c_i = \frac{1}{2\sigma^2} \left[k_{i, i} - \mathbf{k}_{i, \mathbf{u}}^\top \mathbf{K}_{\mathbf{u}, \mathbf{u}}^{-1} \mathbf{k}_{i, \mathbf{u}}\right]\]</span> and <span class="math display">\[\log \mathcal{N}\left(\mathbf{y}|\left&lt;\mathbf{f}\right&gt;_{p(\mathbf{f}|\mathbf{u},\mathbf{\MakeUppercase{y}})},\sigma^2\mathbf{I}\right) = -\frac{1}{2}\log 2\pi\sigma^2 - \frac{1}{2\sigma^2}\left(y_i - \mathbf{K}_{\mathbf{f}, \mathbf{u}}\mathbf{K}_{\mathbf{u},\mathbf{u}}^{-1}\mathbf{u}\right)^2\]</span></p></li>
-<li><p>This requires the expectations <span class="math display">\[\left&lt;\mathbf{K}_{\mathbf{f},\mathbf{u}}\right&gt;_{q(\mathbf{Z})}\]</span> and <span class="math display">\[\left&lt;\mathbf{K}_{\mathbf{f},\mathbf{u}}\mathbf{K}_{\mathbf{u},\mathbf{u}}^{-1}\mathbf{K}_{\mathbf{u},\mathbf{f}}\right&gt;_{q(\mathbf{Z})}\]</span> which can be computed analytically for some covariance functions.</p></li>
-</ul>
+<section id="difficulty-for-probabilistic-approaches" class="slide level3">
+<h3>Difficulty for Probabilistic Approaches</h3>
+<p><img src="./diagrams/nonlinear_mapping2_d_plot_slides.png" width="80%" class="negate"  style="background:none; border:none; box-shadow:none;" align="center"></p>
 </section>
-<section id="variational-compression-1" class="slide level3">
-<h3>Variational Compression</h3>
-<p><br />
-<br />
-</p>
-<ul>
-<li><p>Augment each layer with inducing variables <span class="math inline">\(\mathbf{u}_i\)</span>.</p></li>
-<li><p>Apply variational compression, <span class="math display">\[\begin{align}
-      p(\dataVector, \{\hiddenVector_i\}_{i=1}^{\numLayers-1}|\{\inducingVector_i\}_{i=1}^{\numLayers}, \inputMatrix) \geq &amp; 
-      \tilde p(\dataVector|\inducingVector_{\numLayers}, \hiddenVector_{\numLayers-1})\prod_{i=2}^{\numLayers-1} \tilde p(\hiddenVector_i|\inducingVector_i,\hiddenVector_{i-1}) \tilde p(\hiddenVector_1|\inducingVector_i,\inputMatrix) \nonumber \\
-      &amp; \times
-      \exp\left(\sum_{i=1}^\numLayers -\frac{1}{2\sigma^2_i}\trace{\conditionalCovariance_{i}}\right)
-      \label{eq:deep_structure}
-    \end{align}\]</span> where <span class="math display">\[\tilde p(\mathbf{h}_i|\mathbf{u}_i,\mathbf{h}_{i-1})
-    = \mathcal{N}\left(\mathbf{h}_i|\mathbf{K}_{\mathbf{h}_{i}\mathbf{u}_{i}}\mathbf{K}_{\mathbf{u}_i\mathbf{u}_i}^{-1}\mathbf{u}_i,\sigma^2_i\mathbf{I}\right).\]</span></p></li>
-</ul>
-</section>
-<section id="nested-variational-compression" class="slide level3">
-<h3>Nested Variational Compression</h3>
-<p><br />
-</p>
-<ul>
-<li><p>By sustaining explicity distributions over inducing variables James Hensman has developed a nested variatnt of variational compression.</p></li>
-<li><p>Exciting thing: it mathematically looks like a deep neural network, but with inducing variables in the place of basis functions.</p></li>
-<li><p>Additional complexity control term in the objective function.</p></li>
-</ul>
-
-</section>
-<section id="nested-bound" class="slide level3">
-<h3>Nested Bound</h3>
-<span class="math display">\[\begin{align}
-    \log p(\dataVector|\inputMatrix )  \geq &amp;
-    %
-    -\frac{1}{\sigma_1^2} \trace{\conditionalCovariance_1}
-    % 
-    -\sum_{i=2}^\numLayers \frac{1}{2\sigma_i^2} \left(\psi_{i}
-    % 
-    - \trace{{\boldsymbol \Phi}_{i}\kernelMatrix_{\inducingVector_{i} \inducingVector_{i}}^{-1}}\right) \nonumber \\
-    %
-    &amp; - \sum_{i=1}^{\numLayers}\KL{q(\inducingVector_i)}{p(\inducingVector_i)} \nonumber \\
-    %
-    &amp; - \sum_{i=2}^{\numLayers}\frac{1}{2\sigma^2_{i}}\trace{({\boldsymbol
-        \Phi}_i - {\boldsymbol \Psi}_i^\top{\boldsymbol \Psi}_i)
-      \kernelMatrix_{\inducingVector_{i}
-        \inducingVector_{i}}^{-1}
-      \expDist{\inducingVector_{i}\inducingVector_{i}^\top}{q(\inducingVector_{i})}\kernelMatrix_{\inducingVector_{i}\inducingVector_{i}}^{-1}} \nonumber \\
-    %
-    &amp; + {\only&lt;2&gt;{\color{\redColor}}\log \gaussianDist{\dataVector}{{\boldsymbol
-        \Psi}_{\numLayers}\kernelMatrix_{\inducingVector_{\numLayers}
-        \inducingVector_{\numLayers}}^{-1}{\mathbf
-        m}_\numLayers}{\sigma^2_\numLayers\eye}}
-    \label{eq:deep_bound}
-  \end{align}\]</span>
-</section>
-<section id="required-expectations-1" class="slide level3">
-<h3>Required Expectations</h3>
-<p><span class="math display">\[{\only&lt;1&gt;{\color{\redColor}}\log \mathcal{N}\left(\mathbf{y}|{\only&lt;2-&gt;{\color{\blueColor}}{\boldsymbol
-          \Psi}_{\ell}}\mathbf{K}_{\mathbf{u}_{\ell}
-          \mathbf{u}_{\ell}}^{-1}{\mathbf
-          m}_\ell,\sigma^2_\ell\mathbf{I}\right)}\]</span> where   </p>
-<!--frame start-->
-</section>
-<section id="gaussian-py_if_i-1" class="slide level3">
-<h3>Gaussian <span class="math inline">\(p(y_i|f_i)\)</span></h3>
-<p>For Gaussian likelihoods:  </p>
-<!--frame end-->
-<!--frame start-->
-</section>
-<section id="gaussian-process-over-mathbff-and-mathbfu-1" class="slide level3">
-<h3>Gaussian Process Over <span class="math inline">\(\mathbf{f}\)</span> and <span class="math inline">\(\mathbf{u}\)</span></h3>
-<p>Define: <span class="math display">\[q_{i, i} = \text{var}_{p(f_i|\mathbf{u})}\left( f_i \right) = \left&lt;f_i^2\right&gt;_{p(f_i|\mathbf{u})} - \left&lt;f_i\right&gt;_{p(f_i|\mathbf{u})}^2\]</span> We can write: <span class="math display">\[c_i = \exp\left(-{\frac{q_{i,i}}{2\sigma^2}}\right)\]</span> If joint distribution of <span class="math inline">\(p(\mathbf{f}, \mathbf{u})\)</span> is Gaussian then: <span class="math display">\[q_{i, i} = k_{i, i} - \mathbf{k}_{i, \mathbf{u}}^\top \mathbf{K}_{\mathbf{u}, \mathbf{u}}^{-1} \mathbf{k}_{i, \mathbf{u}}\]</span></p>
-<p><span class="math inline">\(c_i\)</span> is not a function of <span class="math inline">\(\mathbf{u}\)</span> but <em>is</em> a function of <span class="math inline">\({\bf X}_\mathbf{u}\)</span>.</p>
-<!--frame end-->
-<!--frame start-->
-</section>
-<section id="lower-bound-on-likelihood-1" class="slide level3">
-<h3>Lower Bound on Likelihood</h3>
-<p>Substitute variational bound into marginal likelihood: <span class="math display">\[p(\mathbf{y})\geq \prod_{i=1}^nc_i \int \mathcal{N}\left(\mathbf{y}|\left&lt;\mathbf{f}\right&gt;,\sigma^2\mathbf{I}\right)p(\mathbf{u}) \text{d}\mathbf{u}\]</span> Note that: <span class="math display">\[\left&lt;\mathbf{f}\right&gt;_{p(\mathbf{f}|\mathbf{u})} = \mathbf{K}_{\mathbf{f}, \mathbf{u}} \mathbf{K}_{\mathbf{u}, \mathbf{u}}^{-1}\mathbf{u}\]</span> is <em>linearly</em> dependent on <span class="math inline">\(\mathbf{u}\)</span>.</p>
-<!--frame end-->
-<!--frame start-->
-</section>
-<section id="deterministic-training-conditional-1" class="slide level3">
-<h3>Deterministic Training Conditional</h3>
-<p>Making the marginalization of <span class="math inline">\(\mathbf{u}\)</span> straightforward. In the Gaussian case: <span class="math display">\[p(\mathbf{u}) = \mathcal{N}\left(\mathbf{u}|\mathbf{0},\mathbf{K}_{\mathbf{u},\mathbf{u}}\right)\]</span>      </p>
-<!--frame end-->
-</section>
-<section id="efficient-computation" class="slide level3">
-<h3>Efficient Computation</h3>
-<ul>
-<li>Thang and Turner paper</li>
-</ul>
-</section>
-<section id="other-limitations" class="slide level3">
-<h3>Other Limitations</h3>
-<ul>
-<li>Joint Gaussianity is analytic, but not flexible.</li>
-</ul>
-<p>include{../_deepgp/includes/what-is-a-deep-gp.md} include{../_deepgp/includes/deep_nn_gp.md}</p>
-<!--Deep Gaussian Process Models-->
-<p>include{../_deepgp/includes/deeptheory.md}</p>
-<!--Bayesian GP-LVM-->
-<!--include{../_gplvm/includes/ard_gplvm.md} -->
-<!-- <!--frame start-->
-<p>[label=bayesGplvm]</p>
-</section>
-<section id="selecting-data-dimensionality-1" class="slide level3">
-<h3>Selecting Data Dimensionality</h3>
-<ul>
-<li><p>GP-LVM Provides probabilistic non-linear dimensionality reduction.</p></li>
-<li><p>How to select the dimensionality?</p></li>
-<li><p>Need to estimate marginal likelihood.</p></li>
-<li><p>In standard GP-LVM it increases with increasing <span class="math inline">\(q\)</span>.</p></li>
-</ul>
-<!--frame end-->
-<!--frame failure start-->
-
-
-<!--frame failure end-->
-<p>–&gt; <!-- ### Standard Variational Approach Fails
-
--   <1-> Standard variational bound has the form:
-    $$\likelihoodBound = \expDist{\log p(\dataVector|\latentMatrix)}{q(\latentMatrix)} + \KL{q(\latentMatrix)}{p(\latentMatrix)}$$
-
--   <2-> Requires expectation of
-    $\log p(\dataVector|\latentMatrix)$ under $q(\latentMatrix)$.
-    $$\log p(\dataVector|\latentMatrix) = -\frac{1}{2}\dataVector^\top\left(\kernelMatrix_{\mappingFunctionVector, \mappingFunctionVector}+\dataStd^2\eye\right)^{-1}\dataVector -\frac{1}{2}\log \det{\kernelMatrix_{\mappingFunctionVector, \mappingFunctionVector}+\dataStd^2 \eye} -\frac{\numData}{2}\log 2\pi$$
-
--   <3-> Extremely difficult to compute because
-    $\kernelMatrix_{\mappingFunctionVector, \mappingFunctionVector}$ is
-    dependent on $\latentMatrix$ and appears in the inverse.
-
-### Variational Bayesian GP-LVM
-
--   <1->Consider collapsed variational bound, \only<1>{\[
-              p(\dataVector)\geq \prod_{i=1}^\numData c_i \int \gaussianDist{\dataVector}{\expSamp{\mappingFunctionVector}}{\dataStd^2\eye}p(\inducingVector) \text{d}\inducingVector
-              \]} \only<2>{\[
-              p(\dataVector|\latentMatrix )\geq \prod_{i=1}^\numData c_i \int \gaussianDist{\dataVector}{\expDist{\mappingFunctionVector}{p(\mappingFunctionVector|\inducingVector, \latentMatrix)}}{\dataStd^2\eye}p(\inducingVector) \text{d}\inducingVector
-              \]} \only<3->{\[
-              \int p(\dataVector|\latentMatrix)p(\latentMatrix) \text{d}\latentMatrix \geq \int \prod_{i=1}^\numData c_i \gaussianDist{\dataVector}{\expDist{\mappingFunctionVector}{p(\mappingFunctionVector|\inducingVector, \latentMatrix)}}{\dataStd^2\eye} p(\latentMatrix)\text{d}\latentMatrix p(\inducingVector) \text{d}\inducingVector   
-              \]}
-
--   <4-> Apply variational lower bound to the inner integral.
-    \only<5->{\small\begin{align*}
-              \int \prod_{i=1}^\numData c_i \gaussianDist{\dataVector}{\expDist{\mappingFunctionVector}{p(\mappingFunctionVector|\inducingVector, \latentMatrix)}}{\dataStd^2\eye}& p(\latentMatrix)\text{d}\latentMatrix\\ \geq & \expDist{\sum_{i=1}^\numData\log  c_i}{q(\latentMatrix)}\\& +\expDist{\log\gaussianDist{\dataVector}{\expDist{\mappingFunctionVector}{p(\mappingFunctionVector|\inducingVector, \latentMatrix)}}{\dataStd^2\eye}}{q(\latentMatrix)}\\& + \KL{q(\latentMatrix)}{p(\latentMatrix)}    
-              \end{align*}}
-
--   <6-> Which is analytically tractable for Gaussian
-    $q(\latentMatrix)$ and some covariance functions.
-
-### Required Expectations
-
--   Need expectations under $q(\latentMatrix)$ of:
-    $$\log c_i = \frac{1}{2\dataStd^2} \left[\kernelScalar_{i, i} - \kernelVector_{i, \inducingVector}^\top \kernelMatrix_{\inducingVector, \inducingVector}^{-1} \kernelVector_{i, \inducingVector}\right]$$
-    and
-    $$\log \gaussianDist{\dataVector}{\expDist{\mappingFunctionVector}{p(\mappingFunctionVector|\inducingVector,\dataMatrix)}}{\dataStd^2\eye} = -\frac{1}{2}\log 2\pi\dataStd^2 - \frac{1}{2\dataStd^2}\left(\dataScalar_i - \kernelMatrix_{\mappingFunctionVector, \inducingVector}\kernelMatrix_{\inducingVector,\inducingVector}^{-1}\inducingVector\right)^2$$
-
--   This requires the expectations
-    $$\expDist{\kernelMatrix_{\mappingFunctionVector,\inducingVector}}{q(\latentMatrix)}$$
-    and
-    $$\expDist{\kernelMatrix_{\mappingFunctionVector,\inducingVector}\kernelMatrix_{\inducingVector,\inducingVector}^{-1}\kernelMatrix_{\inducingVector,\mappingFunctionVector}}{q(\latentMatrix)}$$
-    which can be computed analytically for some covariance functions.
-
-
- --></p>
-<!-- <!--frame start-->
-</section>
-<section id="leads-to-other-approximations" class="slide level3">
-<h3>Leads to Other Approximations …</h3>
-<ul>
-<li><p>Let’s be explicity about storing approximate posterior of <span class="math inline">\(\mathbf{u}\)</span>, <span class="math inline">\(q(\mathbf{u})\)</span>.</p></li>
-<li><p>Now we have <span class="math display">\[p(\mathbf{y}^*|\mathbf{y}) = \int p(\mathbf{y}^*| \mathbf{u}) q(\mathbf{u}| \mathbf{y}) \mathbf{u}\]</span></p></li>
-<li><p>Inducing variables look a lot like regular parameters.</p></li>
-<li><p><em>But</em>: their dimensionality does not need to be set at design time.</p></li>
-<li><p>They can be modified arbitrarily at run time without effecting the model likelihood.</p></li>
-<li><p>They only effect the quality of compression and the lower bound.</p></li>
-</ul>
-<!--frame end-->
-<!--frame start-->
-</section>
-<section id="in-gps-for-big-data" class="slide level3">
-<h3>In GPs for Big Data</h3>
-<ul>
-<li><p>Exploit the resulting factorization … <span class="math display">\[p(\mathbf{y}^*|\mathbf{y}) = \int p(\mathbf{y}^*| \mathbf{u}) q(\mathbf{u}| \mathbf{y}) \mathbf{u}\]</span> </p></li>
-<li><p>The distribution now <em>factorizes</em>: <span class="math display">\[p(\mathbf{y}^*|\mathbf{y}) = \int \prod_{i=1}^{n^*}p(y^*_i| \mathbf{u}) q(\mathbf{u}| \mathbf{y}) \mathbf{u}\]</span></p></li>
-<li><p>This factorization can be exploited for stochastic variational inference [Hoffman:stochastic12].</p></li>
-</ul>
-<!--frame end-->
-<p>–&gt; <!--<!--frame start--> ### Nonparametrics for Very Large Data Sets</p>
-<p>Modern data availability<br />
-<img data-src="../../../ml/tex/diagrams/house_price_country.png" alt="image" style="width:60.0%" /></p>
-<!--frame end-->
-<!--frame start-->
-</section>
-<section id="nonparametrics-for-very-large-data-sets" class="slide level3">
-<h3>Nonparametrics for Very Large Data Sets</h3>
-
-<p><img data-src="../../../ml/tex/diagrams/house_price_peak_district.png" alt="image" style="width:60.0%" /><br />
-</p>
-<!--frame end-->
-<!--frame start-->
-<p>Hensman:bigdata13<br />
-</p>
-<p><br />
-</p>
-<!--frame end-->
-<p>–&gt;</p>
-</section>
-<section id="structures-for-extracting-information-from-data" class="slide level3">
-<h3>Structures for Extracting Information from Data</h3>
-
-</section>
-<section id="section-14" class="slide level3">
-<h3></h3>
-<p>Damianou:deepgp13<br />
-</p>
-<p><a href="http://jmlr.org/proceedings/papers/v31/damianou13a.pdf">\includegraphics[page=1,trim=0cm 16cm 0cm 0.5cm, width=0.4, clip=true, width=1.0]{../../../gp/tex/diagrams/damianou13a.pdf}</a></p>
-<!--frame failure start-->
-
-
-
-
-<!--frame failure end-->
-<!--frame failure start-->
-
-
-
-
-<!--frame failure end-->
-<!--frame start-->
-</section>
-<section id="deep-gaussian-processes" class="slide level3">
-<h3>Deep Gaussian Processes</h3>
-
-<ul>
-<li><p>Deep architectures allow abstraction of features <span></span>.</p></li>
-<li><p>We use variational approach to stack GP models.</p></li>
-</ul>
-<!--frame end-->
+<section id="difficulty-for-probabilistic-approaches" class="slide level3">
+<h3>Difficulty for Probabilistic Approaches</h3>
 <pre class="sourceCode numberSource octave numberLines" id="mycode" data-startFrom="0"><code class="sourceCode octave"><div class="sourceLine" id="mycode-0" data-line-number="0"></div>
-<div class="sourceLine" id="mycode-1" data-line-number="1"><span class="co">%}</span></div>
-<div class="sourceLine" id="mycode-2" data-line-number="2">  importLatest(<span class="st">&#39;GPmat&#39;</span>)</div>
-<div class="sourceLine" id="mycode-3" data-line-number="3">  gpmatToolboxes;</div>
-<div class="sourceLine" id="mycode-4" data-line-number="4">  <span class="fu">randn</span>(<span class="st">&#39;seed&#39;</span>, <span class="fl">1e6</span>);</div>
-<div class="sourceLine" id="mycode-5" data-line-number="5">  <span class="fu">rand</span>(<span class="st">&#39;seed&#39;</span>, <span class="fl">1e6</span>);</div>
-<div class="sourceLine" id="mycode-6" data-line-number="6">  textWidth = <span class="fl">13</span>;</div>
-<div class="sourceLine" id="mycode-7" data-line-number="7">  dirName = <span class="st">&#39;../../../health/tex/diagrams/&#39;</span>;</div>
-<div class="sourceLine" id="mycode-8" data-line-number="8">  blueColor = [<span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">1</span>];</div>
-<div class="sourceLine" id="mycode-9" data-line-number="9">  redColor = [<span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">0</span>];</div>
-<div class="sourceLine" id="mycode-10" data-line-number="10">  magentaColor = [<span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">1</span>];</div>
-<div class="sourceLine" id="mycode-11" data-line-number="11">  blackColor = [<span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>];</div>
-<div class="sourceLine" id="mycode-12" data-line-number="12">  negative = <span class="bn">false</span>;</div>
-<div class="sourceLine" id="mycode-13" data-line-number="13">  if blackBackground</div>
-<div class="sourceLine" id="mycode-14" data-line-number="14">    negative = <span class="bn">true</span>;</div>
-<div class="sourceLine" id="mycode-15" data-line-number="15">    blueColor =  <span class="fl">1</span>-blueColor;</div>
-<div class="sourceLine" id="mycode-16" data-line-number="16">    redColor = <span class="fl">1</span>-redColor;</div>
-<div class="sourceLine" id="mycode-17" data-line-number="17">    magentaColor = <span class="fl">1</span>-magentaColor;</div>
-<div class="sourceLine" id="mycode-18" data-line-number="18">    blackColor = <span class="fl">1</span>- blackColor;</div>
-<div class="sourceLine" id="mycode-19" data-line-number="19">  end</div>
-<div class="sourceLine" id="mycode-20" data-line-number="20"><span class="co">%{</span></div></code></pre>
-\begin{frame}[fragile]
+<div class="sourceLine" id="mycode-1" data-line-number="1">      <span class="co">%}</span></div>
+<div class="sourceLine" id="mycode-2" data-line-number="2">      nonlinearDifficultyPlot3</div>
+<div class="sourceLine" id="mycode-3" data-line-number="3">      <span class="co">%{</span></div>
+<div class="sourceLine" id="mycode-4" data-line-number="4">    </div></code></pre>
 
-
-\begin{columns}[c]              
-
-
- \only&lt;2,4,6,8,10&gt;{
-
-<p>\end{center}</p>
-<!--frame failure end-->
-<!--Conclusions-->
-<!-- include{../_gplvm/includes/ard_model.md} -->
-<!-- ![image](../../../_gplvm/tex/diagrams/andreasDeepTalk){width="80%"}
-
-
- -->
-<!--Gaussian Process Dynamical Systems-->
-<!-- <!--frame failure start-->
-
-
-
-
-<!--frame failure end-->
+<!--frame end-->
+</section>
+<section id="samples-from-a-deep-gp" class="slide level3">
+<h3>Samples from a Deep GP</h3>
+</section>
+<section id="derivative-tails-increase-with-layers-step-function" class="slide level3">
+<h3>Derivative Tails Increase with Layers: Step Function</h3>
+<p><img src="./diagrams/H0_predict.png"  width="30%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"></p>
+<p><img src="./diagrams/H1_predict.png"  width="30%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"><img src="./diagrams/H3_predict.png"  width="30%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"></p>
+</section>
+<section id="values-in-hidden-layers" class="slide level3">
+<h3>Values in Hidden Layers</h3>
+<p><img src="./diagrams/step_all.png"  width="20%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"></p>
 <!--frame start-->
 </section>
-<section id="gaussian-process-over-latent-space" class="slide level3">
-<h3>Gaussian Process over Latent Space</h3>
+<section id="loop-detection-in-robotics" class="slide level3">
+<h3>Loop Detection in Robotics</h3>
+<p><img src="./diagrams/robot_path.png"  width="30%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"></p>
+<p><img src="./diagrams/robot_layer1.png"  width="30%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"> <img src="./diagrams/robot_layer2.png"  width="30%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"></p>
 <ul>
-<li><p>Assume a GP prior for <span class="math inline">\(p(\mathbf{Z})\)</span>.</p></li>
-<li><p>Input to the process is time, <span class="math inline">\(p(\mathbf{Z}|t)\)</span>.</p></li>
+<li><p>Dynamically constrained model</p></li>
+<li><p>Correctly detects the loop</p></li>
+<li><p>Learns temporal continuity and corner-like features in different layers</p></li>
 </ul>
-<!--frame end-->
-<!--frame start-->
 </section>
-<section id="interpolation-of-hd-video" class="slide level3">
-<h3>Interpolation of HD Video</h3>
-
+<section id="data-fit-for-loop-closure" class="slide level3">
+<h3>Data fit for Loop Closure</h3>
+<p><img src="./diagrams/robot_wireless_signal1.png"  width="30%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"> <img src="./diagrams/robot_wireless_signal2.png"  width="30%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"></p>
+<p><em>Example data fits for <span class="math inline">\(2\)</span> of the <span class="math inline">\(30\)</span> output dimensions</em></p>
 <!--frame end-->
-<p>–&gt;</p>
-<!--Shared GP-LVM-->
-<!-- <!--frame failure start-->
-
-
-
-<!--frame failure end-->
-<!--frame failure start-->
-
-
-
-
-<!--frame failure end-->
-<!--frame failure start-->
-
-
-<pre><code>\def\layersep{2cm}
-\begin{center}
-  \begin{tikzpicture}[node distance=\layersep]</code></pre>
-<p> = [text width=4em, text centered] % Draw the input layer nodes / in {1,…,8} % This is the same as writing / in {1/1,2/2,3/3,4/4} (Y-) at (, 0) {<span class="math inline">\(y_\x\)</span>};</p>
-<pre><code>% Draw the hidden layer nodes
-\foreach \name / \x in {1,...,6}
-    \path[xshift=1cm]
-        node[latent] (X-\name) at (\x cm, \layersep) {$\latentScalar_\x$};
-
-% Connect every node in the latent layer with every node in the
-% data layer.
-\foreach \source in {1,...,6}
-    \foreach \dest in {1,...,8}
-        \draw[-&gt;] (X-\source) -- (Y-\dest);
-
-
-
-%  Annotate the layers
-\node[annot,left of=X-1, node distance=1cm] (ls) {Latent space};
-\node[annot,left of=Y-1, node distance=1cm] (ds) {Data space};</code></pre>
-<p>\end{tikzpicture} \end{center}</p>
-<!--frame failure end-->
-<!--frame failure start-->
-
-<pre><code>\def\layersep{2cm}
-\begin{center}
-  \begin{tikzpicture}[node distance=\layersep]</code></pre>
-<p> = [text width=4em, text centered] % Draw the input layer nodes / in {1,…,4} % This is the same as writing / in {1/1,2/2,3/3,4/4} (Y-) at (, 0) {<span class="math inline">\(y^{(1)}_\x\)</span>};</p>
-<pre><code>\foreach \name / \x in {1,...,4}
-% This is the same as writing \foreach \name / \x in {1/1,2/2,3/3,4/4}
-    \node[obs] (Z-\name) at (\x+5, 0) {$\dataScalar^{(2)}_\x$};
-
-% Draw the hidden layer nodes
-\foreach \name / \x in {1,...,6}
-    \path[xshift=2cm]
-        node[latent] (X-\name) at (\x cm, \layersep) {$\latentScalar_\x$};
-
-% Connect every node in the latent layer with every node in the
-% data layer.
-\foreach \source in {1,...,6}
-    \foreach \dest in {1,...,4}
-        \draw[-&gt;] (X-\source) -- (Y-\dest);
-
-\foreach \source in {1,...,6}
-    \foreach \dest in {1,...,4}
-        \draw[-&gt;] (X-\source) -- (Z-\dest);
-
-
-%  Annotate the layers
-\node[annot,left of=X-1, node distance=1cm] (ls) {Latent space};
-\node[annot,left of=Y-1, node distance=1cm] (ds) {Data space};</code></pre>
-<p>\end{tikzpicture} Separate ARD parameters for mappings to <span class="math inline">\(\mathbf{\MakeUppercase{y}}^{(1)}\)</span> and <span class="math inline">\(\mathbf{\MakeUppercase{y}}^{(2)}\)</span>. \end{center}</p>
-<!--frame failure end-->
-<!--frame start-->
-<figure>
-<img data-src="../../../gplvm/tex/diagrams/andreasDeepTalk" alt="image" /><figcaption>image</figcaption>
-</figure>
-<!--frame end-->
-<!--frame start-->
-<figure>
-<img data-src="../../../gplvm/tex/diagrams/andreasDeepTalk" alt="image" /><figcaption>image</figcaption>
-</figure>
-<!--frame end-->
-<!--frame start-->
-<figure>
-<img data-src="../../../gplvm/tex/diagrams/andreasDeepTalk" alt="image" /><figcaption>image</figcaption>
-</figure>
-<!--frame end-->
-<!--frame start-->
 </section>
-<section id="manifold-relevance-determination" class="slide level3">
-<h3>Manifold Relevance Determination</h3>
-
-<!--frame end-->
-<p>–&gt;</p>
-</section>
-<section id="what-can-we-do-that-google-cant" class="slide level3">
-<h3>What Can We Do that Google Can’t?</h3>
+<section id="motion-capture" class="slide level3">
+<h3>Motion Capture</h3>
 <ul>
-<li><p>Google’s resources give them access to volumes of data (or Facebook, or Microsoft, or Amazon).</p></li>
-<li><p>Is there anything for Universities to contribute?</p></li>
-<li><p>Assimilation of multiple views of the patient: each perhaps from a different patient.</p></li>
-<li><p>This may be done by small companies (with support of Universities).</p></li>
-<li><p>A Facebook app for your personalised health.</p></li>
-<li><p>These methodologies are part of that picture.</p></li>
+<li><p>‘High five’ data.</p></li>
+<li><p>Model learns structure between two interacting subjects.</p></li>
 </ul>
-<!--frame failure start-->
-
-
-
-
-<!--frame failure end-->
-<!--frame start-->
 </section>
-<section id="deep-health-power-ranger-model-of-research" class="slide level3">
-<h3>Deep Health: Power Ranger Model of Research</h3>
-
-
-<p><img data-src="../../../health/tex/diagrams/deep_health_power_rangers.jpg" alt="image" style="width:50.0%" /><br />
-Thanks to Alan Saul for creating the image.</p>
-<!--frame end-->
-<!--include{../_deepgp/includes/multi-fidelity-modelling.md}-->
+<section id="section-7" class="slide level3">
+<h3></h3>
+<p><img src="./diagrams/deep-gp-high-five.png"  width="100%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"></p>
+</section>
+<section id="digits-data-set" class="slide level3">
+<h3>Digits Data Set</h3>
+<ul>
+<li><p>Are deep hierarchies justified for small data sets?</p></li>
+<li><p>We can lower bound the evidence for different depths.</p></li>
+<li><p>For 150 6s, 0s and 1s from MNIST we found at least 5 layers are required.</p></li>
+</ul>
+</section>
+<section id="section-8" class="slide level3">
+<h3></h3>
+<p><img src="./diagrams/deep-gp-usps-digits.png"  width="100%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"></p>
+</section>
+<section id="deep-health" class="slide level3">
+<h3>Deep Health</h3>
+<p><img src="./diagrams/deep_health.png"  width="100%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"></p>
+</section>
+<section id="multi-fidelity-modelling" class="slide level3">
+<h3>Multi-fidelity Modelling</h3>
+<ul>
+<li><p>Deep nets are powerful approach to images, speech, language.</p></li>
+<li><p>Proposal: Deep GPs may also be a great approach, but better to deploy according to natural strengths.</p></li>
+</ul>
+</section>
+<section id="uncertainty-quantification" class="slide level3">
+<h3>Uncertainty Quantification</h3>
+<ul>
+<li><p>Probabilistic numerics, surrogate modelelling, emulation, and UQ.</p></li>
+<li><p>Not a fan of AI as a term.</p></li>
+<li><p>But we are faced with increasing amounts of <em>algorithmic decision making</em>.</p></li>
+</ul>
+</section>
+<section id="ml-and-decision-making" class="slide level3">
+<h3>ML and Decision Making</h3>
+<ul>
+<li><p>When trading off decisions: compute or acquire data?</p></li>
+<li><p>There is a critical need for uncertainty.</p></li>
+</ul>
+</section>
+<section id="uncertainty-quantification-1" class="slide level3">
+<h3>Uncertainty Quantification</h3>
+<blockquote>
+<p>Uncertainty quantification (UQ) is the science of quantitative characterization and reduction of uncertainties in both computational and real world applications. It tries to determine how likely certain outcomes are if some aspects of the system are not exactly known.</p>
+</blockquote>
+<ul>
+<li>Interaction between physical and virtual worlds of major interest for Amazon.</li>
+</ul>
+</section>
+<section id="example-formula-one-racing" class="slide level3">
+<h3>Example: Formula One Racing</h3>
+<ul>
+<li><p>Designing an F1 Car requires CFD, Wind Tunnel, Track Testing etc.</p></li>
+<li><p>How to combine them?</p></li>
+</ul>
+</section>
+<section id="multi-fidelity-emulation" class="slide level3">
+<h3>Multi-Fidelity Emulation</h3>
+<ul>
+<li>Normally assume that [Kandasamy:multifidelity16,Alonso:virtual17]:</li>
+</ul>
+<p><span class="math display">\[f_i\left({\bf x}\right) = \rhof_{i-1}\left({\bf x}\right) + \delta_i\left({\bf x}\right)\]</span></p>
+</section>
+<section id="deep-gp-emulation" class="slide level3">
+<h3>Deep GP Emulation</h3>
+<p>But with Deep Gaussian processes [Perdikaris:multifidelity17] we can consider the form</p>
+<p><span class="math display">\[f_i\left({\bf x}\right) = g_{i}\left(f_{i-1}\left({\bf x}\right)\right) + \delta_i\left({\bf x}\right),\]</span></p>
+</section>
+<section id="surrogate-modelling-bayesian-optimization" class="slide level3">
+<h3>Surrogate Modelling Bayesian Optimization</h3>
+</section>
+<section id="multi-fidelity" class="slide level3">
+<h3>Multi-fidelity</h3>
+<ul>
+<li>Formula 1 example</li>
+</ul>
 </section>
 <section id="thanks" class="slide level3">
 <h3>Thanks!</h3>

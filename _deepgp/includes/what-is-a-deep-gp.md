@@ -7,11 +7,11 @@
 
 * Geoff Hinton's view of Deep Learning
 
-include{../../_deepgp/includes/deep_nn_gp.md}
+\include{../../_deepgp/includes/deep-nn-gp.md}
 
 <!--Deep Gaussian Process Models-->
 
-include{../../_deepgp/includes/deeptheory.md}
+\include{../../_deepgp/includes/deeptheory.md}
 
 <!--Bayesian GP-LVM-->
 
