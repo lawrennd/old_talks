@@ -78,6 +78,9 @@ affiliation: Amazon and University of Sheffield
 
 \include{../_data-science/includes/value-of-data.md}
 \include{../_data-science/includes/privacy-loss-of-control.md}
+\include{../_gp/includes/gp-intro-very-short.md}
+\include{../_privacy/includes/differential-privacy-for-gps.md}
+\include{../_privacy/includes/differential-privacy-with-cloaking.md}
 
 ### Awareness
 

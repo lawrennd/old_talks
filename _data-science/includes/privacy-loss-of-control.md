@@ -5,31 +5,7 @@
 
 * Individual is becoming easier to monitor
 
-
-### Conversation {.slide: data-transition="none"}
-
-<object type="image/svg+xml" data="./diagrams/anne_bob001.svg">
-</object>
-
-### Conversation {.slide: data-transition="none"}
-
-<object type="image/svg+xml" data="./diagrams/anne_bob002.svg">
-</object>
-
-### Conversation {.slide: data-transition="none"}
-
-<object type="image/svg+xml" data="./diagrams/anne_bob003.svg">
-</object>
-
-### Modelling
-
-<object type="image/svg+xml" data="./diagrams/anne.svg">
-</object>
-
-### Modelling
-
-<object type="image/svg+xml" data="./diagrams/bob.svg">
-</object>
+\include{../../_ai/includes/conversation-technical.md}
 
 
 ### Hate Speech or Political Dissent?
@@ -42,16 +18,26 @@
 * can become more sinister when the target of the marketing is well understood and the (digital) environment of the target is also so well controlled
 
 
-### Free Will
+### Free Will {.slide: data-transition="none"}
 
 *  What does it mean if a computer can predict our individual behavior better than we ourselves can?
 
 
-### Discrimination
+### Discrimination {.slide: data-transition="none"}
 
 * Potential for explicit and implicit discrimination on the basis of race, religion, sexuality, health status
 
 * All prohibited under European law, but can pass unawares, or be implicit
+
+* GDPR: General Data Protection Regulation
+
+### Discrimination {.slide: data-transition="none"}
+
+* Potential for explicit and implicit discrimination on the basis of race, religion, sexuality, health status
+
+* All prohibited under European law, but can pass unawares, or be implicit
+
+* GDPR: Good Data Practice Rules
 
 
 ### Marginalization
@@ -69,6 +55,5 @@
 * Work to ensure individual retains control of their own data
 * We accept privacy in our real lives, need to accept it in our digital
 * Control of persona and ability to project
-
 * Need better technological solutions: trust and algorithms.
 
