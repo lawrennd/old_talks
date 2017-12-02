@@ -560,25 +560,41 @@ k_f\left({\bf x}_i, {\bf x}_j\right) = \int \phi\left(\mathbf{v}, {\bf x}_i\righ
 \end{align}
 \]</span></p>
 </section>
-<section id="replace-each-neural-network-with-a-gaussian-process" class="slide level3" data-transition="None">
-<h3>Replace Each Neural Network with a Gaussian Process</h3>
-<p><span class="math display">\[
-\begin{align}
-    \mathbf{z}_{1} &amp;= \mathbf{f}\left({\bf x}\right)\\
-    \mathbf{z}_{2} &amp;= \mathbf{f}\left(\mathbf{z}_{1}\right)\\
-    \mathbf{z}_{3} &amp;= \mathbf{f}\left(\mathbf{z}_{2}\right)\\
-    \mathbf{y}&amp;= \mathbf{f}\left(\mathbf{z}_{3}\right)
-\end{align}
-\]</span></p>
-<p>This is equivalent to Gaussian prior over mappings and integrating out all parameters and taking width of each layer to infinity.</p>
-</section>
-<section id="mathematically-2" class="slide level3">
-<h3>Mathematically</h3>
+<section id="cascade-of-gaussian-processes" class="slide level3" data-transition="None">
+<h3>Cascade of Gaussian Processes</h3>
 <ul>
-<li>Composite <em>multivariate</em> function <span class="math display">\[\mathbf{g}(\mathbf{x})=\mathbf{f}_5(\mathbf{f}_4(\mathbf{f}_3(\mathbf{f}_2(\mathbf{f}_1({\bf x})))))\]</span></li>
+<li><p>Replace each neural network with a Gaussian process <span class="math display">\[
+\begin{align}
+  \mathbf{z}_{1} &amp;= \mathbf{f}_1\left({\bf x}\right)\\
+  \mathbf{z}_{2} &amp;= \mathbf{f}_2\left(\mathbf{z}_{1}\right)\\
+  \mathbf{z}_{3} &amp;= \mathbf{f}_3\left(\mathbf{z}_{2}\right)\\
+  \mathbf{y}&amp;= \mathbf{f}_4\left(\mathbf{z}_{3}\right)
+\end{align}
+\]</span></p></li>
+<li><p>Equivalent to prior over parameters, take width of each layer to infinity.</p></li>
 </ul>
 </section>
-<section id="why-deep" class="slide level3">
+<section id="mathematically-2" class="slide level3" data-transition="None">
+<h3>Mathematically</h3>
+<ul>
+<li>Composite <em>multivariate</em> function <span class="math display">\[\mathbf{g}({\bf x})=\mathbf{f}_5(\mathbf{f}_4(\mathbf{f}_3(\mathbf{f}_2(\mathbf{f}_1({\bf x})))))\]</span></li>
+</ul>
+</section>
+<section id="equivalent-to-markov-chain" class="slide level3" data-transition="None">
+<h3>Equivalent to Markov Chain</h3>
+<ul>
+<li>Composite <em>multivariate</em> function</li>
+</ul>
+<p><span class="math display">\[p(\mathbf{y}|{\bf x})= p(\mathbf{y}|\mathbf{f}_5)p(\mathbf{f}_5|\mathbf{f}_4)p(\mathbf{f}_4|\mathbf{f}_3)p(\mathbf{f}_3|\mathbf{f}_2)p(\mathbf{f}_2|\mathbf{f}_1)p(\mathbf{f}_1|{\bf x})\]</span></p>
+<object class="svgplot" data="../slides/diagrams/deep-markov.svg">
+</object>
+</section>
+<section id="section-7" class="slide level3" data-transition="None">
+<h3></h3>
+<object class="svgplot" data="../slides/diagrams/deep-markov-vertical.svg">
+</object>
+</section>
+<section id="why-deep" class="slide level3" data-transition="None">
 <h3>Why Deep?</h3>
 <ul>
 <li><p>Gaussian processes give priors over functions.</p></li>
@@ -600,11 +616,11 @@ k_f\left({\bf x}_i, {\bf x}_j\right) = \int \phi\left(\mathbf{v}, {\bf x}_i\righ
 </ul>
 <p><em>Note</em>: To retain <em>Kolmogorov consistency</em> introduce IBP priors over latent variables in each layer.</p>
 </section>
-<section id="analysis-of-deep-gps" class="slide level3">
+<section id="analysis-of-deep-gps" class="slide level3" data-transition="None">
 <h3>Analysis of Deep GPs</h3>
 <ul>
-<li><p><span class="citation" data-cites="Duvenaud:pathologies14">(<span class="citeproc-not-found" data-reference-id="Duvenaud:pathologies14"><strong>???</strong></span>)</span> Duvenaud et al show that the derivative distribution of the process becomes more <em>heavy tailed</em> as number of layers increase.</p></li>
-<li><p><span class="citation" data-cites="Gal:dropout15">(<span class="citeproc-not-found" data-reference-id="Gal:dropout15"><strong>???</strong></span>)</span> Gal and Ghahramani show that Drop Out is a variational approximation to a deep Gaussian process.</p></li>
+<li><p><span class="citation" data-cites="Duvenaud:pathologies14">(Duvenaud et al., 2014)</span> Duvenaud et al show that the derivative distribution of the process becomes more <em>heavy tailed</em> as number of layers increase.</p></li>
+<li><p><span class="citation" data-cites="Dunlop:deep2017">(Dunlop et al., 2017)</span> Theoretical analysis possible through conditional Gaussian Markov property.</p></li>
 </ul>
 </section>
 <section id="difficulty-for-probabilistic-approaches" class="slide level3">
@@ -665,7 +681,7 @@ k_f\left({\bf x}_i, {\bf x}_j\right) = \int \phi\left(\mathbf{v}, {\bf x}_i\righ
 <li><p>Model learns structure between two interacting subjects.</p></li>
 </ul>
 </section>
-<section id="section-7" class="slide level3">
+<section id="section-8" class="slide level3">
 <h3></h3>
 <p><img src="./diagrams/deep-gp-high-five.png"  width="100%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"></p>
 </section>
@@ -677,7 +693,7 @@ k_f\left({\bf x}_i, {\bf x}_j\right) = \int \phi\left(\mathbf{v}, {\bf x}_i\righ
 <li><p>For 150 6s, 0s and 1s from MNIST we found at least 5 layers are required.</p></li>
 </ul>
 </section>
-<section id="section-8" class="slide level3">
+<section id="section-9" class="slide level3">
 <h3></h3>
 <p><img src="./diagrams/deep-gp-usps-digits.png"  width="100%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"></p>
 <p>Papers to cite on deep health:</p>
@@ -763,6 +779,12 @@ k_f\left({\bf x}_i, {\bf x}_j\right) = \int \phi\left(\mathbf{v}, {\bf x}_i\righ
 </div>
 <div id="ref-Cho:deep09">
 <p>Cho, Y., Saul, L.K., 2009. Kernel methods for deep learning, in: Bengio, Y., Schuurmans, D., Lafferty, J.D., Williams, C.K.I., Culotta, A. (Eds.), Advances in Neural Information Processing Systems 22. Curran Associates, Inc., pp. 342–350.</p>
+</div>
+<div id="ref-Dunlop:deep2017">
+<p>Dunlop, M.M., Girolami, M., Stuart, A.M., Teckentrup, A.L., 2017. How Deep Are Deep Gaussian Processes? ArXiv e-prints.</p>
+</div>
+<div id="ref-Duvenaud:pathologies14">
+<p>Duvenaud, D., Rippel, O., Adams, R., Ghahramani, Z., 2014. Avoiding pathologies in very deep networks, in: Kaski, S., Corander, J. (Eds.), Proceedings of the Seventeenth International Conference on Artificial Intelligence and Statistics, Proceedings of Machine Learning Research. PMLR, Reykjavik, Iceland, pp. 202–210.</p>
 </div>
 <div id="ref-Ioffe:batch15">
 <p>Ioffe, S., Szegedy, C., 2015. Batch normalization: Accelerating deep network training by reducing internal covariate shift, in: Bach, F., Blei, D. (Eds.), Proceedings of the 32nd International Conference on Machine Learning, Proceedings of Machine Learning Research. PMLR, Lille, France, pp. 448–456.</p>

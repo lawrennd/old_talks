@@ -1,9 +1,22 @@
-### Mathematically
+### Mathematically {data-transition="None"}
 
 -   Composite *multivariate* function
-    $$\mathbf{g}(\mathbf{x})=\mappingFunctionVector_5(\mappingFunctionVector_4(\mappingFunctionVector_3(\mappingFunctionVector_2(\mappingFunctionVector_1(\inputVector)))))$$
+    $$\mathbf{g}(\inputVector)=\mappingFunctionVector_5(\mappingFunctionVector_4(\mappingFunctionVector_3(\mappingFunctionVector_2(\mappingFunctionVector_1(\inputVector)))))$$
 
-### Why Deep?
+### Equivalent to Markov Chain {data-transition="None"}
+
+-   Composite *multivariate* function
+
+$$p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mappingFunctionVector_5|\mappingFunctionVector_4)p(\mappingFunctionVector_4|\mappingFunctionVector_3)p(\mappingFunctionVector_3|\mappingFunctionVector_2)p(\mappingFunctionVector_2|\mappingFunctionVector_1)p(\mappingFunctionVector_1|\inputVector)$$
+
+<object class="svgplot" data="../slides/diagrams/deep-markov.svg"></object>
+
+### {data-transition="None"}
+
+<object class="svgplot" data="../slides/diagrams/deep-markov-vertical.svg"></object>
+
+
+### Why Deep? {data-transition="None"}
 
 -   Gaussian processes give priors over functions.
 
@@ -31,13 +44,12 @@
 *Note*: To retain *Kolmogorov consistency* introduce IBP priors over
 latent variables in each layer.
 
-### Analysis of Deep GPs
+### Analysis of Deep GPs {data-transition="None"}
 
 -   [@Duvenaud:pathologies14] Duvenaud et al show that the derivative
     distribution of the process becomes more *heavy tailed* as number of
     layers increase.
 
--   [@Gal:dropout15] Gal and Ghahramani show that Drop Out is a
-    variational approximation to a deep Gaussian process.
+-   [@Dunlop:deep2017] Theoretical analysis possible through conditional Gaussian Markov property.
 
 
