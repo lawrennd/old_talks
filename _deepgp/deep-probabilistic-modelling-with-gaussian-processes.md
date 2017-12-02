@@ -22,6 +22,9 @@ Stefanos
 \include{notation_def.tex}
 
 \include{../_gp/includes/what-is-a-gp.md}
+
+[@Schulam:counterfactual17]
+
 \include{../_deepgp/includes/deep-nn-gp.md}
 \include{../_deepgp/includes/deeptheory.md}
 
