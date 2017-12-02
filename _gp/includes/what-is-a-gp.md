@@ -30,6 +30,7 @@
 
 \include{../../_ml/includes/neural-networks.md}
 \include{../../_ml/includes/probabilistic-modelling.md}
+\include{../../_ml/includes/graphical-models.md}
 \include{../../_ml/includes/performing-inference.md}
 \include{../../_ml/includes/multivariate-gaussian-properties.md}
 \include{../../_gp/includes/non-degenerate-gps.md}

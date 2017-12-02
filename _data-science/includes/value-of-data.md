@@ -24,9 +24,7 @@ We require data-desalination before it can be consumed!
 
 ### {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="./diagrams/pomdp001.svg">
-</object>
-
+\include{../diagrams/pomdp-mathjax-001.svg}
 ### {.slide: data-transition="none"}
 
 <object type="image/svg+xml" data="./diagrams/pomdp002.svg">
