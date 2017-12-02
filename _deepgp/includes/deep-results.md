@@ -1,3 +1,7 @@
+### Shared LVM
+
+<object class="svgplot" data="../slides/diagrams/shared.svg"></object>
+
 ### Motion Capture
 
 -   ‘High five’ data.

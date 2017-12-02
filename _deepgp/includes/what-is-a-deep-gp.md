@@ -29,7 +29,7 @@
 \include{../../_deepgp/includes/stacked_pca.md}
 \include{../../_deepgp/includes/stacked_gp.md}
 \include{../../_deepgp/includes/deep_pathologies.md}
-\include{../../_deepgp/includes/deepresults.md}
+\include{../../_deepgp/includes/deep-results.md}
 \include{../../_deepgp/includes/deep_step_function.md}
 \include{../../_deepgp/includes/deep_loop_detection.md}
 
