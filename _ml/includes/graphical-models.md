@@ -11,6 +11,3 @@ $$p(\dataVector) = p(\dataScalar_\numData | \dataScalar_{\numData-1}) p(\dataSca
 
 NADE
 
-### Shared LVM
-
-<object class="svgplot" data="../slides/diagrams/shared.svg"></object>
