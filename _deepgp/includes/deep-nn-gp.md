@@ -53,18 +53,20 @@ $$\begin{align}
 \end{align}
 $$
 
-### Replace Each Neural Network with a Gaussian Process {data-transition="None"}
+### Cascade of Gaussian Processes {data-transition="None"}
 
+* Replace each neural network with a Gaussian process
 $$
 \begin{align}
-    \latentVector_{1} &= \mathbf{f}\left(\inputVector\right)\\
-    \latentVector_{2} &= \mathbf{f}\left(\latentVector_{1}\right)\\
-    \latentVector_{3} &= \mathbf{f}\left(\latentVector_{2}\right)\\
-    \dataVector &= \mathbf{f}\left(\latentVector_{3}\right)
+    \latentVector_{1} &= \mappingFunctionVector_1\left(\inputVector\right)\\
+    \latentVector_{2} &= \mappingFunctionVector_2\left(\latentVector_{1}\right)\\
+    \latentVector_{3} &= \mappingFunctionVector_3\left(\latentVector_{2}\right)\\
+    \dataVector &= \mappingFunctionVector_4\left(\latentVector_{3}\right)
 \end{align}
 $$
 
-This is equivalent to Gaussian prior over mappings and integrating out
-all parameters and taking width of each layer to infinity.
+* Equivalent to prior over parameters, take width of each layer to infinity.
+
+
 
 
