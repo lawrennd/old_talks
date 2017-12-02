@@ -5,7 +5,7 @@ author: Neil D. Lawrence
 bibliography: deep-probabilistic-modelling-with-gaussian-processes.bib
 ---
 
-Notes from Stefanos: Hey Neil, 
+<!--Notes from Stefanos: Hey Neil, 
 
 Just realised that there was no comment on the fact that a DGP is not a GP, only the current layer conditioned on all previous ones.
 
@@ -18,10 +18,14 @@ Hope that's helpful.
 Cheers,
 Stefanos
 
+Comments from Rich!
+-->
 
 \include{notation_def.tex}
 
 \include{../_gp/includes/what-is-a-gp.md}
+
+Suchi and Peter Counterfactual GPs
 
 [@Schulam:counterfactual17]
 
@@ -51,7 +55,7 @@ acknowledgements: suggestions from Stefano  Eleftheriadis, John Bronskill, Hugh 
 
 ### Thanks!
 
-* twitter: @lawrennd
+* twitter: \@lawrennd
 * blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
 
-
+### References {.allowframebreaks data-background="../slides/diagrams/pres_bg.png"}

@@ -32,9 +32,9 @@
 
 ### Multi-Fidelity Emulation
 
-* Normally assume that [@Kandasamy:multifidelity16,Alonso:virtual17]:
+* Normally assume that [@Kandasamy:multifidelity16,@Alonso:virtual17]:
 
-$$\mappingFunction_i\left(\inputVector\right) = \rho\mappingFunction_{i-1}\left(\inputVector\right) + \delta_i\left(\inputVector \right)$$
+$$\mappingFunction_i\left(\inputVector\right) = \rho \mappingFunction_{i-1}\left(\inputVector\right) + \delta_i\left(\inputVector \right)$$
 
 ### Deep GP Emulation 
 
