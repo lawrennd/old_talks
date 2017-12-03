@@ -45,10 +45,21 @@ Suchi and Peter Counterfactual GPs
 
 Papers to cite on deep health:
 
-http://proceedings.mlr.press/v56/Ranganath16.html
-
 [@Ranganath-survival16]
-Alan's thesis
+[@Mattos:recurrent15]
+
+[@Damianou:thesis2015]
+
+[@Saul:thesis2016]
+
+This conference:
+
+[@Anqi:gpspike2017]
+
+[Salimbeni:doubly2017]
+
+[@Alaa:deep2017]
+
 
 \include{../_health/includes/deep-health-model.md}
 
