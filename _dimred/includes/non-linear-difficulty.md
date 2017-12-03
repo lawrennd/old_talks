@@ -1,17 +1,20 @@
 
-### Difficulty for Probabilistic Approaches
+### Difficulty for Probabilistic Approaches {.data-transition="None"}
 
 -   Propagate a probability distribution through a non-linear mapping.
 
 -   Normalisation of distribution becomes intractable.
 
-<img src="./diagrams/nonlinear_mapping3_d_plot_slides.png" width="80%" class="negate"  style="background:none; border:none; box-shadow:none;" align="center">
+<object class="svgplot" data="../slides/diagrams/nonlinear-mapping-3d-plot.svg"  align="center"></object>
 
 
-### Difficulty for Probabilistic Approaches {#difficulty-for-probabilistic-approaches}
+### Difficulty for Probabilistic Approaches {.data-transition="None"}
 
-<img src="./diagrams/nonlinear_mapping2_d_plot_slides.png" width="80%" class="negate"  style="background:none; border:none; box-shadow:none;" align="center">
+-   Propagate a probability distribution through a non-linear mapping.
 
+-   Normalisation of distribution becomes intractable.
+
+<object class="svgplot" data="../slides/diagrams/nonlinear-mapping-2d-plot.svg"  align="center"></object>
 
 
 ### Difficulty for Probabilistic Approaches {#difficulty-for-probabilistic-approaches}
