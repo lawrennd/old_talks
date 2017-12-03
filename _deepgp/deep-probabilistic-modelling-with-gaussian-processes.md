@@ -38,6 +38,8 @@ Suchi and Peter Counterfactual GPs
 \include{../_deepgp/includes/deep-loop-detection.md}
 \include{../_deepgp/includes/deep-results.md}
 
+###
+
 Papers to cite on deep health:
 
 http://proceedings.mlr.press/v56/Ranganath16.html
@@ -45,7 +47,7 @@ http://proceedings.mlr.press/v56/Ranganath16.html
 [@Ranganath-survival16]
 Alan's thesis
 
-\include{../_health/includes/deep_health_model.md}
+\include{../_health/includes/deep-health-model.md}
 
 \include{../_deepgp/includes/multi-fidelity-modelling.md}
 

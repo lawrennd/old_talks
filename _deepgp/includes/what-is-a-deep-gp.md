@@ -33,7 +33,7 @@
 \include{../../_deepgp/includes/deep_step_function.md}
 \include{../../_deepgp/includes/deep_loop_detection.md}
 
-\include{../../_health/includes/deep_health_model.md}
+\include{../../_health/includes/deep-health-model.md}
 
 
 <!--Conclusions-->
