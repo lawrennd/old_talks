@@ -15,7 +15,7 @@
 
 * In ML Radford Neal [@Neal:bayesian94] asked "what would happen if you took  $\numHidden \rightarrow \infty$?"
 
-[<img src="./diagrams/neal-infinite-priors.png" width="80%" class="negate"  style="background:none; border:none; box-shadow:none;" align="center">](http://www.cs.toronto.edu/~radford/ftp/thesis.pdf)
+[<img src="./diagrams/neal-infinite-priors.png" width="80%" style="background:none; border:none; box-shadow:none;" align="center">](http://www.cs.toronto.edu/~radford/ftp/thesis.pdf)
 
 *Page 37 of Radford Neal's 1994 thesis*
 
@@ -45,7 +45,7 @@ has finite variance.
 
 * Then taking number of hidden units to infinity, is also a Gaussian process. 
 
-### Further Reading
+### Further Reading {data-transition="None"}
 
 * Chapter 2 of Neal's thesis
 
