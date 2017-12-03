@@ -19,6 +19,9 @@ Cheers,
 Stefanos
 
 Comments from Rich!
+
+
+CMB samples -> Life
 -->
 
 \include{notation_def.tex}
@@ -54,6 +57,8 @@ Alan's thesis
 acknowledgements: suggestions from Stefano  Eleftheriadis, John Bronskill, Hugh Salembeni, Rich Turner.
 
 
+
+### Ongoing Code
 
 ### Thanks!
 
