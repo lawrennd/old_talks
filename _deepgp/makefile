@@ -9,7 +9,7 @@ HEADER=../svg-mathjax.html
 PP=gpp
 PPFLAGS=-T
 PPFLAGS=
-PDFLAGS=-s --slide-level 3 --filter pandoc-citeproc --csl=/Users/lawrennd/.pandoc/csl/elsevier-harvard.csl --mathjax=${MATHJAX} 
+PDFLAGS=-s --slide-level 3 --filter pandoc-citeproc --csl=elsevier-harvard.csl --mathjax=${MATHJAX} 
 OUT=$(DATE)-$(BASE)
 
 all: ${BASE}.slides.html 
