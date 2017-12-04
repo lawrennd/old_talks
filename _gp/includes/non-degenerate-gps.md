@@ -23,23 +23,23 @@
 
 * Instead of 
 $$\begin{align*}
-\kernel_\mappingFunction\left(\inputVector_i, \inputVector_j\right) & = \alpha \activationVector\left(\mappingMatrixTwo, \inputVector_i\right)^\top \activationVector\left(\mappingMatrixTwo, \inputVector_j\right)\\
-& = \sum_k \activationScalar\left(\mappingVectorTwo_k, \inputVector_i\right) \activationScalar\left(\mappingVectorTwo_k, \inputVector_j\right)
+\kernel_\mappingFunction\left(\inputVector_i, \inputVector_j\right) & = \alpha \activationVector\left(\mappingMatrix_1, \inputVector_i\right)^\top \activationVector\left(\mappingMatrix_1, \inputVector_j\right)\\
+& = \sum_k \activationScalar\left(\mappingVector^{(1)}_k, \inputVector_i\right) \activationScalar\left(\mappingVector^{(1)}_k, \inputVector_j\right)
 \end{align*}$$
 
-* Sample infinitely many from a prior density, $p(\mappingVectorTwo)$,
+* Sample infinitely many from a prior density, $p(\mappingVector^{(1)})$,
 $$
-\kernel_\mappingFunction\left(\inputVector_i, \inputVector_j\right) = \int \activationScalar\left(\mappingVectorTwo, \inputVector_i\right) \activationScalar\left(\mappingVectorTwo, \inputVector_j\right) p(\mappingVectorTwo) \text{d}\mappingVectorTwo
+\kernel_\mappingFunction\left(\inputVector_i, \inputVector_j\right) = \int \activationScalar\left(\mappingVector^{(1)}, \inputVector_i\right) \activationScalar\left(\mappingVector^{(1)}, \inputVector_j\right) p(\mappingVector^{(1)}) \text{d}\mappingVector^{(1)}
 $$
 
-* Also applies for non-Gaussian $p(\mappingVectorTwo)$ because of the *central limit theorem*. 
+* Also applies for non-Gaussian $p(\mappingVector^{(1)})$ because of the *central limit theorem*. 
 
 ### Simple Probabilistic Program {data-transition="None"}
 
 * If
 $$\begin{align*}
-\mappingVectorTwo & \sim p(\cdot)\\
-\phi_i & = \activationScalar\left(\mappingVectorTwo, \inputVector_i\right), 
+\mappingVector^{(1)} & \sim p(\cdot)\\
+\phi_i & = \activationScalar\left(\mappingVector^{(1)}, \inputVector_i\right), 
 \end{align*}$$
 has finite variance.
 

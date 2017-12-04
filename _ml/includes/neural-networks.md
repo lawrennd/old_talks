@@ -1,4 +1,4 @@
-### Neural Networks and Prediction Functions
+### Neural Networks and Prediction Functions {data-transiation="None"}
 
 *  adaptive non-linear function models inspired by simple neuron models [@McCulloch:neuron43]
 
@@ -8,10 +8,10 @@
 
 * start by focussing on one hidden layer
 
-### Prediction Function of One Hidden Layer
+### Prediction Function of One Hidden Layer {data-transiation="None"}
 
 $$
-\mappingFunction(\inputVector) = \mappingMatrix^\top \activationVector(\mappingMatrixTwo, \inputVector)
+\mappingFunction(\inputVector) = \mappingMatrix_2^\top \activationVector(\mappingMatrix_{1}, \inputVector)
 $$
 
 $\mappingFunction(\cdot)$ is a scalar function with vector inputs,
@@ -22,20 +22,20 @@ $\activationVector(\cdot)$ is a vector function with vector inputs.
 
 * elements of $\activationVector(\cdot)$ are the *activation* function of the neural network
 
-* elements of $\mappingMatrixTwo$ are the parameters of the activation functions.
+* elements of $\mappingMatrix_{1}$ are the parameters of the activation functions.
 
-### Relations with Classical Statistics
+### Relations with Classical Statistics {data-transiation="None"}
 
 * In statistics activation functions are known as *basis functions*.
 
 *  would think of this as a *linear model*: not linear predictions, linear in the parameters
 
-* $\mappingMatrixTwo$ are *static* parameters.
+* $\mappingMatrix_{1}$ are *static* parameters.
 
 
-### Adaptive Basis Functions
+### Adaptive Basis Functions {data-transiation="None"}
 
-* In machine learning we optimize $\mappingMatrixTwo$ as well as  $\mappingMatrix$ (which would normally be denoted in statistics by $\boldsymbol{\beta}$).
+* In machine learning we optimize $\mappingMatrix_{1}$ as well as  $\mappingMatrix_{2}$ (which would normally be denoted in statistics by $\boldsymbol{\beta}$).
 
 * This tutorial: revisit that decision: follow the path of Radford Neal [@Neal:bayesian94] and David MacKay [@MacKay:bayesian92].
 
