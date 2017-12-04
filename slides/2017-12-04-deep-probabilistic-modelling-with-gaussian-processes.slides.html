@@ -418,10 +418,10 @@ k_f\left({\bf x}_i, {\bf x}_j\right) = \alpha \boldsymbol{\phi}\left(\mathbf{W}_
 <ul>
 <li><p>Instead of <span class="math display">\[\begin{align*}
 k_f\left({\bf x}_i, {\bf x}_j\right) &amp; = \alpha \boldsymbol{\phi}\left(\mathbf{W}_1, {\bf x}_i\right)^\top \boldsymbol{\phi}\left(\mathbf{W}_1, {\bf x}_j\right)\\
-&amp; = \sum_k \phi\left(\mathbf{w}^{(1)}_k, {\bf x}_i\right) \phi\left(\mathbf{w}^{(1)}_k, {\bf x}_j\right)
+&amp; = \alpha \sum_k \phi\left(\mathbf{w}^{(1)}_k, {\bf x}_i\right) \phi\left(\mathbf{w}^{(1)}_k, {\bf x}_j\right)
 \end{align*}\]</span></p></li>
 <li><p>Sample infinitely many from a prior density, <span class="math inline">\(p(\mathbf{w}^{(1)})\)</span>, <span class="math display">\[
-k_f\left({\bf x}_i, {\bf x}_j\right) = \int \phi\left(\mathbf{w}^{(1)}, {\bf x}_i\right) \phi\left(\mathbf{w}^{(1)}, {\bf x}_j\right) p(\mathbf{w}^{(1)}) \text{d}\mathbf{w}^{(1)}
+k_f\left({\bf x}_i, {\bf x}_j\right) = \alpha \int \phi\left(\mathbf{w}^{(1)}, {\bf x}_i\right) \phi\left(\mathbf{w}^{(1)}, {\bf x}_j\right) p(\mathbf{w}^{(1)}) \text{d}\mathbf{w}^{(1)}
 \]</span></p></li>
 <li><p>Also applies for non-Gaussian <span class="math inline">\(p(\mathbf{w}^{(1)})\)</span> because of the <em>central limit theorem</em>.</p></li>
 </ul>
