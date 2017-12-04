@@ -28,11 +28,8 @@ CMB samples -> Life
 
 \include{../_gp/includes/what-is-a-gp.md}
 
-###
 
-<img src="../slides/diagrams/Planck_CMB.png" align="center" style="background:none; border:none; box-shadow:none;">
-
-###
+### Deep Gaussian Processes
 
 \include{../_deepgp/includes/deep-nn-gp.md}
 \include{../_deepgp/includes/deeptheory.md}
@@ -41,8 +38,7 @@ CMB samples -> Life
 \include{../_deepgp/includes/stacked-pca.md}
 \include{../_deepgp/includes/stacked-gp.md}
 
-
-### Samples from a Deep GP
+\include{../_deepgp/includes/deep-olympic.md}
 
 \include{../_deepgp/includes/deep-step-function.md}
 

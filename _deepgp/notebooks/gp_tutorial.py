@@ -1,7 +1,10 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
 # Visualization Utility Functions
 def ax_default(fignum, ax):
     if ax is None:
-        fig = figure(fignum)
+        fig = plt.figure(fignum)
         ax = fig.add_subplot(111)
     else:
         fig = ax.figure
@@ -11,7 +14,7 @@ def meanplot(x, mu, color='#3300FF', ax=None, fignum=None, linewidth=2,**kw):
     _, axes = ax_default(fignum, ax)
     return axes.plot(x,mu,color=color,linewidth=linewidth,**kw)
 
-def gpplot(x, mu, lower, upper, edgecol='#3300FF', fillcol='#33CCFF', ax=None, fignum=None, **kwargs):
+def gpplot(x, mu, lower, upper, edgecol='#3300FF', fillcol='#CC3300', ax=None, fignum=None, **kwargs):
     _, axes = ax_default(fignum, ax)
 
     mu = mu.flatten()
