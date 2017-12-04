@@ -80,7 +80,7 @@ CMB samples -> Life
 * *A Unifying Framework for Gaussian Process Pseudo-Point Approximations using Power Expectation Propagation*
     @Thang:unifying17
 
-* *Deep Gaussian Processes and Variational Propagation of Uncertaint*
+* *Deep Gaussian Processes and Variational Propagation of Uncertainty*
     @Damianou:thesis2015
 
 
