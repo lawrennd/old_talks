@@ -21,7 +21,7 @@ $\mappingMatrix$  contains $\mappingMatrix_1$ and $\mappingMatrix_2$
 
 $p(\mappingMatrix | \dataVector, \inputMatrix)$ is posterior density
 
-### Likelihood
+### Likelihood {data-transition="None"}
 
 $p(\dataScalar|\inputVector, \mappingMatrix)$ is the *likelihood* of data point
 

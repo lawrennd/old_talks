@@ -4,7 +4,7 @@
 
 -   Model learns structure between two interacting subjects.
 
-### Shared LVM
+### Shared LVM {data-transition="none"}
 
 <object class="svgplot" data="../slides/diagrams/shared.svg"></object>
 

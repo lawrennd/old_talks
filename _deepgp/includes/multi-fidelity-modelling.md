@@ -18,32 +18,28 @@
 
 * There is a critical need for uncertainty.
 
-### Uncertainty Quantification
+### Uncertainty Quantification {data-transition="None"}
 
 > Uncertainty quantification (UQ) is the science of quantitative characterization and reduction of uncertainties in both computational and real world applications. It tries to determine how likely certain outcomes are if some aspects of the system are not exactly known.
 
 * Interaction between physical and virtual worlds of major interest for Amazon.
 
-### Example: Formula One Racing
+### Example: Formula One Racing {data-transition="None"} 
 
 * Designing an F1 Car requires CFD, Wind Tunnel, Track Testing etc.
 
 * How to combine them?
 
-### Multi-Fidelity Emulation
+### Multi-Fidelity Emulation {data-transition="None"}
 
 * Normally assume that [@Kandasamy:multifidelity16,@Alonso:virtual17]:
 
 $$\mappingFunction_i\left(\inputVector\right) = \rho \mappingFunction_{i-1}\left(\inputVector\right) + \delta_i\left(\inputVector \right)$$
 
-### Deep GP Emulation 
+### Deep GP Emulation {data-transition="None"}
 
 But with Deep Gaussian processes [@Perdikaris:multifidelity17] we can consider the form 
 
 $$\mappingFunction_i\left(\inputVector\right) = \mappingFunctionTwo_{i}\left(\mappingFunction_{i-1}\left(\inputVector\right)\right) + \delta_i\left(\inputVector \right),$$
 
-### Surrogate Modelling Bayesian Optimization
-
-### Multi-fidelity
-
-* Formula 1 example
+### Notebook Example
