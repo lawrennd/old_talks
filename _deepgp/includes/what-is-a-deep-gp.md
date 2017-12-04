@@ -25,9 +25,9 @@
 
 \include{../../_deepgp/includes/deep_gps.md}
 
-\include{../../_deepgp/includes/stack_gp_intro.md}
-\include{../../_deepgp/includes/stacked_pca.md}
-\include{../../_deepgp/includes/stacked_gp.md}
+\include{../../_deepgp/includes/stack-gp-intro.md}
+\include{../../_deepgp/includes/stacked-pca.md}
+\include{../../_deepgp/includes/stacked-gp.md}
 \include{../../_deepgp/includes/deep_pathologies.md}
 \include{../../_deepgp/includes/deep-results.md}
 \include{../../_deepgp/includes/deep_step_function.md}

@@ -28,17 +28,26 @@ CMB samples -> Life
 
 \include{../_gp/includes/what-is-a-gp.md}
 
-Suchi and Peter Counterfactual GPs
+###
 
-[@Schulam:counterfactual17]
+<img src="../slides/diagrams/Planck_CMB.png" align="center" style="background:none; border:none; box-shadow:none;">
+
+###
 
 \include{../_deepgp/includes/deep-nn-gp.md}
 \include{../_deepgp/includes/deeptheory.md}
 
+\include{../_deepgp/includes/stack-gp-intro.md}
+\include{../_deepgp/includes/stacked-pca.md}
+\include{../_deepgp/includes/stacked-gp.md}
+
+
 ### Samples from a Deep GP
 
 \include{../_deepgp/includes/deep-step-function.md}
+
 \include{../_deepgp/includes/deep-loop-detection.md}
+
 \include{../_deepgp/includes/deep-results.md}
 
 ###
@@ -47,27 +56,22 @@ Papers to cite on deep health:
 
 [@Ranganath-survival16]
 [@Mattos:recurrent15]
-
 [@Damianou:thesis2015]
-
 [@Saul:thesis2016]
 
 This conference:
 
 [@Anqi:gpspike2017]
-
 [Salimbeni:doubly2017]
-
 [@Alaa:deep2017]
+[@Schulam:counterfactual17]
 
 
 \include{../_health/includes/deep-health-model.md}
 
 \include{../_deepgp/includes/multi-fidelity-modelling.md}
 
-acknowledgements: suggestions from Stefano  Eleftheriadis, John Bronskill, Hugh Salembeni, Rich Turner.
-
-
+acknowledgements: suggestions from Stefano  Eleftheriadis, John Bronskill, Hugh Salembeni, Rich Turner, Zhenwen Dai, Javier Gonzalez, Andreas Damianou, Mark Pullin.
 
 ### Ongoing Code
 
@@ -76,4 +80,6 @@ acknowledgements: suggestions from Stefano  Eleftheriadis, John Bronskill, Hugh 
 * twitter: \@lawrennd
 * blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
 
-### References {.allowframebreaks data-background="../slides/diagrams/pres_bg.png"}
+### References {.allowframebreaks}
+
+
