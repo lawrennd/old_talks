@@ -10,14 +10,14 @@
 
 * In statistics, focussed more on *linear* model implied by 
     $$
-    \mappingFunction(\inputVector) = \mappingMatrix_2^\top \activationVector(\mappingMatrix_1, \inputVector)
+    \mappingFunction(\inputVector) = \left.\mappingVector\right.^{(2)}^\top \activationVector(\mappingMatrix_1, \inputVector)
     $$
 
 * Hold $\mappingMatrixTwo$ fixed for given analysis.
 
 * Gaussian prior for $\mappingMatrix$,
     $$
-    \mappingMatrix_2 \sim \gaussianSamp{\zerosVector}{\covarianceMatrix}.
+    \mappingVector^{(2)} \sim \gaussianSamp{\zerosVector}{\covarianceMatrix}.
     $$
     $$
     \dataScalar_i = \mappingFunction(\inputVector_i) + \noiseScalar_i,
