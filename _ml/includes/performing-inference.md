@@ -13,7 +13,7 @@
     \mappingFunction(\inputVector) = \left.\mappingVector\right.^{(2)}^\top \activationVector(\mappingMatrix_1, \inputVector)
     $$
 
-* Hold $\mappingMatrixTwo$ fixed for given analysis.
+* Hold $\mappingMatrix_1$ fixed for given analysis.
 
 * Gaussian prior for $\mappingMatrix$,
     $$
