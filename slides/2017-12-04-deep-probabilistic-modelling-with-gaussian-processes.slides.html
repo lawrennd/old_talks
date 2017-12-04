@@ -463,48 +463,6 @@ k_f\left({\bf x}_i, {\bf x}_j\right) = \int \phi\left(\mathbf{w}^{(1)}, {\bf x}_
 <h3></h3>
 <object class="svgplot" data="../slides/diagrams/gp_rejection_samples.svg">
 </object>
-</section>
-<section id="key-object" class="slide level3" data-transition="none">
-<h3>Key Object</h3>
-<ul>
-<li><p>Covariance function, <span class="math inline">\(\mathbf{K}\)</span></p></li>
-<li><p>Determines properties of samples.</p></li>
-<li><p>Function of <span class="math inline">\({\bf X}\)</span>, <span class="math display">\[k_{i,j} = k({\bf x}_i, {\bf x}_j)\]</span></p></li>
-</ul>
-</section>
-<section id="linear-algebra" class="slide level3" data-transition="none">
-<h3>Linear Algebra</h3>
-<ul>
-<li><p>Posterior mean</p>
-<p><span class="math display">\[f_D({\bf x}_*) = \mathbf{k}({\bf x}_*, {\bf X}) \mathbf{K}^{-1}
-\mathbf{y}\]</span></p></li>
-<li><p>Posterior covariance <span class="math display">\[\mathbf{C}_* = \mathbf{K}_{*,*} - \mathbf{K}_{*,\mathbf{f}}
-\mathbf{K}^{-1} \mathbf{K}_{\mathbf{f}, *}\]</span></p></li>
-</ul>
-</section>
-<section id="linear-algebra-1" class="slide level3" data-transition="none">
-<h3>Linear Algebra</h3>
-<ul>
-<li><p>Posterior mean</p>
-<p><span class="math display">\[f_D({\bf x}_*) = \mathbf{k}({\bf x}_*, {\bf X}) \boldsymbol{\alpha}\]</span></p></li>
-<li><p>Posterior covariance <span class="math display">\[\mathbf{C}_* = \mathbf{K}_{*,*} - \mathbf{K}_{*,\mathbf{f}}
-\mathbf{K}^{-1} \mathbf{K}_{\mathbf{f}, *}\]</span></p></li>
-</ul>
-</section>
-<section id="section-5" class="slide level3" data-transition="none">
-<h3></h3>
-<object class="svgplot" data="../slides/diagrams/gp_prior_samples_data.svg">
-</object>
-</section>
-<section id="section-6" class="slide level3" data-transition="none">
-<h3></h3>
-<object class="svgplot" data="../slides/diagrams/gp_rejection_samples.svg">
-</object>
-</section>
-<section id="section-7" class="slide level3" data-transition="none">
-<h3></h3>
-<object class="svgplot" data="../slides/diagrams/gp_prediction.svg">
-</object>
 <!-- ### Two Dimensional Gaussian Distribution -->
 <!-- include{../../_ml/includes/two_d_gaussian.md} -->
 </section>
@@ -621,6 +579,48 @@ k_f\left({\bf x}_i, {\bf x}_j\right) = \int \phi\left(\mathbf{w}^{(1)}, {\bf x}_
 <object data="../_gp/diagrams/two_point_sample016.svg" class="svgplot">
 </object>
 <p>A 25 dimensional correlated random variable (values ploted against index)</p>
+</section>
+<section id="key-object" class="slide level3" data-transition="none">
+<h3>Key Object</h3>
+<ul>
+<li><p>Covariance function, <span class="math inline">\(\mathbf{K}\)</span></p></li>
+<li><p>Determines properties of samples.</p></li>
+<li><p>Function of <span class="math inline">\({\bf X}\)</span>, <span class="math display">\[k_{i,j} = k({\bf x}_i, {\bf x}_j)\]</span></p></li>
+</ul>
+</section>
+<section id="linear-algebra" class="slide level3" data-transition="none">
+<h3>Linear Algebra</h3>
+<ul>
+<li><p>Posterior mean</p>
+<p><span class="math display">\[f_D({\bf x}_*) = \mathbf{k}({\bf x}_*, {\bf X}) \mathbf{K}^{-1}
+\mathbf{y}\]</span></p></li>
+<li><p>Posterior covariance <span class="math display">\[\mathbf{C}_* = \mathbf{K}_{*,*} - \mathbf{K}_{*,\mathbf{f}}
+\mathbf{K}^{-1} \mathbf{K}_{\mathbf{f}, *}\]</span></p></li>
+</ul>
+</section>
+<section id="linear-algebra-1" class="slide level3" data-transition="none">
+<h3>Linear Algebra</h3>
+<ul>
+<li><p>Posterior mean</p>
+<p><span class="math display">\[f_D({\bf x}_*) = \mathbf{k}({\bf x}_*, {\bf X}) \boldsymbol{\alpha}\]</span></p></li>
+<li><p>Posterior covariance <span class="math display">\[\mathbf{C}_* = \mathbf{K}_{*,*} - \mathbf{K}_{*,\mathbf{f}}
+\mathbf{K}^{-1} \mathbf{K}_{\mathbf{f}, *}\]</span></p></li>
+</ul>
+</section>
+<section id="section-5" class="slide level3" data-transition="none">
+<h3></h3>
+<object class="svgplot" data="../slides/diagrams/gp_prior_samples_data.svg">
+</object>
+</section>
+<section id="section-6" class="slide level3" data-transition="none">
+<h3></h3>
+<object class="svgplot" data="../slides/diagrams/gp_rejection_samples.svg">
+</object>
+</section>
+<section id="section-7" class="slide level3" data-transition="none">
+<h3></h3>
+<object class="svgplot" data="../slides/diagrams/gp_prediction.svg">
+</object>
 </section>
 <section id="exponentiated-quadratic-covariance" class="slide level3" data-transition="none">
 <h3>Exponentiated Quadratic Covariance</h3>
