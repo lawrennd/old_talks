@@ -29,7 +29,25 @@ CMB samples -> Life
 \include{../_gp/includes/what-is-a-gp.md}
 
 
-### Deep Gaussian Processes
+### Deep Gaussian Processes {data-transition="None"}
+
+### Approximations {data-transition="None"}
+
+<img src="../slides/diagrams/sparse-gps-1.png" align="center" width="90%" style="background:none; border:none; box-shadow:none;">
+
+*Image credit: Kai Arulkumaran*
+
+### Approximations {data-transition="None"}
+
+<img src="../slides/diagrams/sparse-gps-2.png" align="center" width="40%" style="background:none; border:none; box-shadow:none;">
+
+*Image credit: Kai Arulkumaran*
+
+### Approximations {data-transition="None"}
+
+<img src="../slides/diagrams/sparse-gps-3.png" align="center" width="40%" style="background:none; border:none; box-shadow:none;">
+
+*Image credit: Kai Arulkumaran*
 
 \include{../_deepgp/includes/deep-nn-gp.md}
 \include{../_deepgp/includes/deeptheory.md}
