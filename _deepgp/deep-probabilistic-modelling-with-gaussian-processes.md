@@ -62,7 +62,7 @@ Papers to cite on deep health:
 This conference:
 
 [@Anqi:gpspike2017]
-[Salimbeni:doubly2017]
+[@Salimbeni:doubly2017]
 [@Alaa:deep2017]
 [@Schulam:counterfactual17]
 
@@ -71,7 +71,7 @@ This conference:
 
 \include{../_deepgp/includes/multi-fidelity-modelling.md}
 
-acknowledgements: suggestions from Stefano  Eleftheriadis, John Bronskill, Hugh Salembeni, Rich Turner, Zhenwen Dai, Javier Gonzalez, Andreas Damianou, Mark Pullin.
+acknowledgements: suggestions from Stefano  Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Dai, Javier Gonzalez, Andreas Damianou, Mark Pullin.
 
 ### Ongoing Code
 
