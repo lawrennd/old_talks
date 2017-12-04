@@ -1,5 +1,5 @@
 
-### Sampling a Function
+### Sampling a Function  {data-transition="none"}
 
 **Multi-variate Gaussians**
 

@@ -12,24 +12,24 @@ $\dataVector$ is training outputs
 ### Joint Model of World {data-transition="None"}
 
 $$
-p(\dataScalar_*|\dataVector, \inputMatrix, \inputVector_*) = \int p(\dataScalar_*|\inputVector_*, \parameterVector) p(\parameterVector | \dataVector, \inputMatrix) \text{d} \parameterVector
+p(\dataScalar_*|\dataVector, \inputMatrix, \inputVector_*) = \int p(\dataScalar_*|\inputVector_*, \mappingMatrix) p(\mappingMatrix | \dataVector, \inputMatrix) \text{d} \mappingMatrix
 $$
 
 . . .
 
-$\parameterVector$  contains $\mappingMatrix$ and $\mappingMatrixTwo$
+$\mappingMatrix$  contains $\mappingMatrix_1$ and $\mappingMatrix_2$
 
-$p(\parameterVector | \dataVector, \inputMatrix)$ is posterior density
+$p(\mappingMatrix | \dataVector, \inputMatrix)$ is posterior density
 
 ### Likelihood
 
-$p(\dataScalar|\inputVector, \parameterVector)$ is the *likelihood* of data point
+$p(\dataScalar|\inputVector, \mappingMatrix)$ is the *likelihood* of data point
 
 . . .
 
 Normally assume independence:
 $$
-p(\dataVector|\inputMatrix, \parameterVector) \prod_{i=1}^\numData p(\dataScalar_i|\inputVector_i, \parameterVector),$$
+p(\dataVector|\inputMatrix, \mappingMatrix) \prod_{i=1}^\numData p(\dataScalar_i|\inputVector_i, \mappingMatrix),$$
 
 ### Likelihood and Prediction Function {data-transition="None"}
 
@@ -41,7 +41,7 @@ $$
 
 * Can also consider priors over latents
 $$
-p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \parameterVector) p(\parameterVector | \dataVector, \inputMatrix) p(\inputMatrix) p(\inputMatrix_*) \text{d} \parameterVector \text{d} \inputMatrix \text{d}\inputMatrix_*
+p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatrix) p(\mappingMatrix | \dataVector, \inputMatrix) p(\inputMatrix) p(\inputMatrix_*) \text{d} \mappingMatrix \text{d} \inputMatrix \text{d}\inputMatrix_*
 $$
 
 * This gives *unsupervised learning*.

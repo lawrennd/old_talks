@@ -1,5 +1,5 @@
 <!--frame start-->
-### Recall Univariate Gaussian Properties
+### Recall Univariate Gaussian Properties {data-transition="None"}
 
 . . .
 
@@ -24,7 +24,7 @@ $${y}\sim {\mathcal{N}\left({\mu},\sigma^2\right)}$$
 $${w}{y}\sim {\mathcal{N}\left({w}{\mu},{w}^2 \sigma^2\right)}$$
 
 
-### Multivariate Consequence
+### Multivariate Consequence {data-transition="None"}
 
 <div align="left">If</div>
 

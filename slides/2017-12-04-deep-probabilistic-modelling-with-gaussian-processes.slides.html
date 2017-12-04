@@ -66,7 +66,7 @@ CMB samples -> Life
 
 <!-- Introduction to GPs -->
 </section>
-<section id="what-is-machine-learning" class="slide level3">
+<section id="what-is-machine-learning" class="slide level3" data-transition="none">
 <h3>What is Machine Learning?</h3>
 <div class="fragment">
 <p><span class="math display">\[ \text{data} + \text{model} \rightarrow \text{prediction}\]</span></p>
@@ -87,36 +87,53 @@ CMB samples -> Life
 </ul>
 </div>
 </section>
-<section id="artificial-intelligence" class="slide level3">
+<section id="artificial-intelligence" class="slide level3" data-transition="none">
 <h3>Artificial Intelligence</h3>
 <ul>
 <li>Machine learning is a mainstay because of importance of prediction.</li>
 </ul>
 </section>
-<section id="what-is-machine-learning-1" class="slide level3">
+<section id="what-is-machine-learning-1" class="slide level3" data-transition="none">
 <h3>What is Machine Learning?</h3>
+<p><span class="math display">\[\text{data} + \text{model} \rightarrow \text{prediction}\]</span></p>
+<div class="fragment">
 <ul>
-<li><p>Simple description</p>
-<p><span class="math display">\[\text{data} + \text{model} \rightarrow \text{prediction}\]</span></p></li>
-<li><p>To combine data with a model need:</p>
-<ul>
-<li><p><strong>a prediction function</strong> <span class="math inline">\(f(\cdot)\)</span> includes our beliefs about the regularities of the universe</p></li>
-<li><p><strong>an objective function</strong> <span class="math inline">\(E(\cdot)\)</span> defines the cost of misprediction.</p></li>
-</ul></li>
+<li>To combine data with a model need:</li>
 </ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>a prediction function</strong> <span class="math inline">\(f(\cdot)\)</span> includes our beliefs about the regularities of the universe</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>an objective function</strong> <span class="math inline">\(E(\cdot)\)</span> defines the cost of misprediction.</li>
+</ul>
+</div>
 </section>
-<section id="uncertainty" class="slide level3">
+<section id="uncertainty" class="slide level3" data-transition="none">
 <h3>Uncertainty</h3>
 <ul>
-<li><p>Uncertainty in prediction arises from:</p>
-<ol type="1">
-<li>scarcity of training data and</li>
-<li>mismatch between the set of prediction functions we choose and all possible prediction functions.</li>
-</ol></li>
-<li><p>Also uncertainties in objective, leave those for another day.</p></li>
+<li>Uncertainty in prediction arises from:</li>
 </ul>
+<div class="fragment">
+<ul>
+<li>scarcity of training data and</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>mismatch between the set of prediction functions we choose and all possible prediction functions.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Also uncertainties in objective, leave those for another day.</li>
+</ul>
+</div>
 </section>
-<section id="neural-networks-and-prediction-functions" class="slide level3">
+<section id="neural-networks-and-prediction-functions" class="slide level3" data-transiation="None">
 <h3>Neural Networks and Prediction Functions</h3>
 <ul>
 <li><p>adaptive non-linear function models inspired by simple neuron models <span class="citation" data-cites="McCulloch:neuron43">(McCulloch and Pitts, 1943)</span></p></li>
@@ -125,31 +142,31 @@ CMB samples -> Life
 <li><p>start by focussing on one hidden layer</p></li>
 </ul>
 </section>
-<section id="prediction-function-of-one-hidden-layer" class="slide level3">
+<section id="prediction-function-of-one-hidden-layer" class="slide level3" data-transiation="None">
 <h3>Prediction Function of One Hidden Layer</h3>
 <p><span class="math display">\[
-f({\bf x}) = \mathbf{W}^\top \boldsymbol{\phi}(\mathbf{V}, {\bf x})
+f({\bf x}) = \mathbf{W}_2^\top \boldsymbol{\phi}(\mathbf{W}_{1}, {\bf x})
 \]</span></p>
 <p><span class="math inline">\(f(\cdot)\)</span> is a scalar function with vector inputs,</p>
 <p><span class="math inline">\(\boldsymbol{\phi}(\cdot)\)</span> is a vector function with vector inputs.</p>
 <ul>
 <li><p>dimensionality of the vector function is known as the number of hidden units, or the number of neurons.</p></li>
 <li><p>elements of <span class="math inline">\(\boldsymbol{\phi}(\cdot)\)</span> are the <em>activation</em> function of the neural network</p></li>
-<li><p>elements of <span class="math inline">\(\mathbf{V}\)</span> are the parameters of the activation functions.</p></li>
+<li><p>elements of <span class="math inline">\(\mathbf{W}_{1}\)</span> are the parameters of the activation functions.</p></li>
 </ul>
 </section>
-<section id="relations-with-classical-statistics" class="slide level3">
+<section id="relations-with-classical-statistics" class="slide level3" data-transiation="None">
 <h3>Relations with Classical Statistics</h3>
 <ul>
 <li><p>In statistics activation functions are known as <em>basis functions</em>.</p></li>
 <li><p>would think of this as a <em>linear model</em>: not linear predictions, linear in the parameters</p></li>
-<li><p><span class="math inline">\(\mathbf{V}\)</span> are <em>static</em> parameters.</p></li>
+<li><p><span class="math inline">\(\mathbf{W}_{1}\)</span> are <em>static</em> parameters.</p></li>
 </ul>
 </section>
-<section id="adaptive-basis-functions" class="slide level3">
+<section id="adaptive-basis-functions" class="slide level3" data-transiation="None">
 <h3>Adaptive Basis Functions</h3>
 <ul>
-<li><p>In machine learning we optimize <span class="math inline">\(\mathbf{V}\)</span> as well as <span class="math inline">\(\mathbf{W}\)</span> (which would normally be denoted in statistics by <span class="math inline">\(\boldsymbol{\beta}\)</span>).</p></li>
+<li><p>In machine learning we optimize <span class="math inline">\(\mathbf{W}_{1}\)</span> as well as <span class="math inline">\(\mathbf{W}_{2}\)</span> (which would normally be denoted in statistics by <span class="math inline">\(\boldsymbol{\beta}\)</span>).</p></li>
 <li><p>This tutorial: revisit that decision: follow the path of Radford Neal <span class="citation" data-cites="Neal:bayesian94">(Neal, 1994)</span> and David MacKay <span class="citation" data-cites="MacKay:bayesian92">(MacKay, 1992)</span>.</p></li>
 <li><p>Consider the probabilistic approach.</p></li>
 </ul>
@@ -165,19 +182,19 @@ p(y_*|\mathbf{y}, {\bf X}, {\bf x}_*),
 <section id="joint-model-of-world" class="slide level3" data-transition="None">
 <h3>Joint Model of World</h3>
 <p><span class="math display">\[
-p(y_*|\mathbf{y}, {\bf X}, {\bf x}_*) = \int p(y_*|{\bf x}_*, \boldsymbol{\theta}) p(\boldsymbol{\theta}| \mathbf{y}, {\bf X}) \text{d} \boldsymbol{\theta}
+p(y_*|\mathbf{y}, {\bf X}, {\bf x}_*) = \int p(y_*|{\bf x}_*, \mathbf{W}) p(\mathbf{W}| \mathbf{y}, {\bf X}) \text{d} \mathbf{W}
 \]</span></p>
 <div class="fragment">
-<p><span class="math inline">\(\boldsymbol{\theta}\)</span> contains <span class="math inline">\(\mathbf{W}\)</span> and <span class="math inline">\(\mathbf{V}\)</span></p>
-<p><span class="math inline">\(p(\boldsymbol{\theta}| \mathbf{y}, {\bf X})\)</span> is posterior density</p>
+<p><span class="math inline">\(\mathbf{W}\)</span> contains <span class="math inline">\(\mathbf{W}_1\)</span> and <span class="math inline">\(\mathbf{W}_2\)</span></p>
+<p><span class="math inline">\(p(\mathbf{W}| \mathbf{y}, {\bf X})\)</span> is posterior density</p>
 </div>
 </section>
 <section id="likelihood" class="slide level3">
 <h3>Likelihood</h3>
-<p><span class="math inline">\(p(y|{\bf x}, \boldsymbol{\theta})\)</span> is the <em>likelihood</em> of data point</p>
+<p><span class="math inline">\(p(y|{\bf x}, \mathbf{W})\)</span> is the <em>likelihood</em> of data point</p>
 <div class="fragment">
 <p>Normally assume independence: <span class="math display">\[
-p(\mathbf{y}|{\bf X}, \boldsymbol{\theta}) \prod_{i=1}^np(y_i|{\bf x}_i, \boldsymbol{\theta}),\]</span></p>
+p(\mathbf{y}|{\bf X}, \mathbf{W}) \prod_{i=1}^np(y_i|{\bf x}_i, \mathbf{W}),\]</span></p>
 </div>
 </section>
 <section id="likelihood-and-prediction-function" class="slide level3" data-transition="None">
@@ -190,7 +207,7 @@ p(y_i | f({\bf x}_i)) = \frac{1}{\sqrt{2\pi \sigma^2}} \exp\left(-\frac{\left(y_
 <h3>Unsupervised Learning</h3>
 <ul>
 <li><p>Can also consider priors over latents <span class="math display">\[
-p(\mathbf{y}_*|\mathbf{y}) = \int p(\mathbf{y}_*|{\bf X}_*, \boldsymbol{\theta}) p(\boldsymbol{\theta}| \mathbf{y}, {\bf X}) p({\bf X}) p({\bf X}_*) \text{d} \boldsymbol{\theta}\text{d} {\bf X}\text{d}{\bf X}_*
+p(\mathbf{y}_*|\mathbf{y}) = \int p(\mathbf{y}_*|{\bf X}_*, \mathbf{W}) p(\mathbf{W}| \mathbf{y}, {\bf X}) p({\bf X}) p({\bf X}_*) \text{d} \mathbf{W}\text{d} {\bf X}\text{d}{\bf X}_*
 \]</span></p></li>
 <li><p>This gives <em>unsupervised learning</em>.</p></li>
 </ul>
@@ -203,7 +220,7 @@ p(\mathbf{y}_*|\mathbf{y}) = \int p(\mathbf{y}_*|{\bf X}_*, \boldsymbol{\theta})
 <li><p>Prediction: <span class="math inline">\(p(\mathbf{y}^*| \mathbf{y})\)</span></p></li>
 </ul>
 </section>
-<section id="graphical-models" class="slide level3">
+<section id="graphical-models" class="slide level3" data-transition="None">
 <h3>Graphical Models</h3>
 <ul>
 <li><p>Represent joint distribution through <em>conditional dependencies</em>.</p></li>
@@ -212,7 +229,12 @@ p(\mathbf{y}_*|\mathbf{y}) = \int p(\mathbf{y}_*|{\bf X}_*, \boldsymbol{\theta})
 <p><span class="math display">\[p(\mathbf{y}) = p(y_n| y_{n-1}) p(y_{n-1}|y_{n-2}) \dots p(y_{2} | y_{1})\]</span></p>
 <object class="svgplot" data="../slides/diagrams/markov.svg">
 </object>
-<p>NADE</p>
+</section>
+<section id="section" class="slide level3" data-transition="None">
+<h3></h3>
+<p>Predict Perioperative Risk of Clostridium Difficile Infection Following Colon Surgery</p>
+<p><img src="../slides/diagrams/bayes-net-diagnosis.png" class="negate" width="40%" align="center" style="background:none; border:none; box-shadow:none;"></p>
+<p><span class="citation" data-cites="Steele:predictive12">(Steele et al., 2012)</span></p>
 </section>
 <section id="performing-inference" class="slide level3" data-transition="None">
 <h3>Performing Inference</h3>
@@ -226,11 +248,11 @@ p(\mathbf{y}_*|\mathbf{y}) = \int p(\mathbf{y}_*|{\bf X}_*, \boldsymbol{\theta})
 <h3>Linear Models</h3>
 <ul>
 <li><p>In statistics, focussed more on <em>linear</em> model implied by <span class="math display">\[
-  f({\bf x}) = \mathbf{W}^\top \boldsymbol{\phi}(\boldsymbol{\theta}, {\bf x})
+  f({\bf x}) = \mathbf{W}_2^\top \boldsymbol{\phi}(\mathbf{W}_1, {\bf x})
   \]</span></p></li>
 <li><p>Hold <span class="math inline">\(\mathbf{V}\)</span> fixed for given analysis.</p></li>
 <li><p>Gaussian prior for <span class="math inline">\(\mathbf{W}\)</span>, <span class="math display">\[
-  \mathbf{W}\sim \mathcal{N}\left(\mathbf{0},\mathbf{C}\right).
+  \mathbf{W}_2 \sim \mathcal{N}\left(\mathbf{0},\mathbf{C}\right).
   \]</span> <span class="math display">\[
   y_i = f({\bf x}_i) + \epsilon_i,
   \]</span> where <span class="math display">\[
@@ -244,6 +266,52 @@ p(\mathbf{y}_*|\mathbf{y}) = \int p(\mathbf{y}_*|{\bf X}_*, \boldsymbol{\theta})
 <li>Normally integrals are complex but for this Gaussian linear case they are trivial.</li>
 </ul>
 </section>
+<section id="multivariate-gaussian-properties" class="slide level3" data-transition="none">
+<h3>Multivariate Gaussian Properties</h3>
+<!--frame start-->
+</section>
+<section id="recall-univariate-gaussian-properties" class="slide level3" data-transition="None">
+<h3>Recall Univariate Gaussian Properties</h3>
+<div class="fragment">
+<ol type="1">
+<li>Sum of Gaussian variables is also Gaussian.</li>
+</ol>
+<p><span class="math display">\[{y}_i \sim {\mathcal{N}\left({\mu}_i,\sigma_i^2\right)}\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[\sum_{i=1}^{{n}} {y}_i \sim {\mathcal{N}\left(\sum_{i=1}^{n}{\mu}_i,\sum_{i=1}^{n}\sigma_i^2\right)}\]</span></p>
+</div>
+<div class="fragment">
+<ol start="2" type="1">
+<li>Scaling a Gaussian leads to a Gaussian.</li>
+</ol>
+</div>
+<div class="fragment">
+<p><span class="math display">\[{y}\sim {\mathcal{N}\left({\mu},\sigma^2\right)}\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[{w}{y}\sim {\mathcal{N}\left({w}{\mu},{w}^2 \sigma^2\right)}\]</span></p>
+</div>
+</section>
+<section id="multivariate-consequence" class="slide level3" data-transition="None">
+<h3>Multivariate Consequence</h3>
+<div data-align="left">
+If
+</div>
+<p><span class="math display">\[{{\bf {x}}}\sim {\mathcal{N}\left({\boldsymbol{{\mu}}},\boldsymbol{\Sigma}\right)}\]</span></p>
+<div class="fragment">
+<div data-align="left">
+And
+</div>
+<p><span class="math display">\[{\mathbf{{y}}}= {\mathbf{W}}{{\bf {x}}}\]</span></p>
+</div>
+<div class="fragment">
+<div data-align="left">
+Then
+</div>
+<p><span class="math display">\[{\mathbf{{y}}}\sim {\mathcal{N}\left({\mathbf{W}}{\boldsymbol{{\mu}}},{\mathbf{W}}\boldsymbol{\Sigma}{\mathbf{W}}^\top\right)}\]</span></p>
+</div>
+</section>
 <section id="linear-gaussian-models-1" class="slide level3" data-transition="None">
 <h3>Linear Gaussian Models</h3>
 <ol type="1">
@@ -251,7 +319,7 @@ p(\mathbf{y}_*|\mathbf{y}) = \int p(\mathbf{y}_*|{\bf X}_*, \boldsymbol{\theta})
 <li>Even the parameters <em>within</em> the process can be handled, by considering a particular limit.</li>
 </ol>
 </section>
-<section id="multivariate-gaussian-properties" class="slide level3" data-transition="None">
+<section id="multivariate-gaussian-properties-1" class="slide level3" data-transition="None">
 <h3>Multivariate Gaussian Properties</h3>
 <ul>
 <li>If <span class="math display">\[
@@ -270,7 +338,7 @@ p(\mathbf{y}_*|\mathbf{y}) = \int p(\mathbf{y}_*|{\bf X}_*, \boldsymbol{\theta})
 <h3>Non linear on Inputs</h3>
 <ul>
 <li>Set each activation function computed at each data point to be <span class="math display">\[
-\phi_{i,j} = \phi(\mathbf{v}_{j}, {\bf x}_{i})
+\phi_{i,j} = \phi(\mathbf{w}^{(1)}_{j}, {\bf x}_{i})
 \]</span> Define <em>design matrix</em> <span class="math display">\[
 \boldsymbol{\Phi}= 
 \begin{bmatrix}
@@ -281,6 +349,16 @@ p(\mathbf{y}_*|\mathbf{y}) = \int p(\mathbf{y}_*|{\bf X}_*, \boldsymbol{\theta})
 \end{bmatrix}.
 \]</span></li>
 </ul>
+</section>
+<section id="matrix-representation-of-a-neural-network" class="slide level3" data-transition="None">
+<h3>Matrix Representation of a Neural Network</h3>
+<p><span class="math display">\[f\left({\bf x}\right) = \boldsymbol{\phi}\left({\bf x}\right)^\top \mathbf{w}+ \epsilon\]</span></p>
+<div class="fragment">
+<p><span class="math display">\[\mathbf{y}= \boldsymbol{\Phi}\mathbf{w}+ \boldsymbol{\epsilon}\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[\boldsymbol{\epsilon}\sim \mathcal{N}\left(\mathbf{0},\sigma^2\mathbf{I}\right)\]</span></p>
+</div>
 </section>
 <section id="prior-density" class="slide level3" data-transition="None">
 <h3>Prior Density</h3>
@@ -308,7 +386,7 @@ p(\mathbf{y}_*|\mathbf{y}) = \int p(\mathbf{y}_*|{\bf X}_*, \boldsymbol{\theta})
 <section id="covariance-function" class="slide level3" data-transition="None">
 <h3>Covariance Function</h3>
 <p><span class="math display">\[
-k_f\left({\bf x}_i, {\bf x}_j\right) = \alpha \boldsymbol{\phi}\left(\mathbf{V}, {\bf x}_i\right)^\top \boldsymbol{\phi}\left(\mathbf{V}, {\bf x}_j\right)
+k_f\left({\bf x}_i, {\bf x}_j\right) = \alpha \boldsymbol{\phi}\left(\mathbf{W}_1, {\bf x}_i\right)^\top \boldsymbol{\phi}\left(\mathbf{W}_1, {\bf x}_j\right)
 \]</span></p>
 <ul>
 <li>formed by inner products of the rows of the <em>design matrix</em>.</li>
@@ -319,8 +397,8 @@ k_f\left({\bf x}_i, {\bf x}_j\right) = \alpha \boldsymbol{\phi}\left(\mathbf{V},
 <ul>
 <li><p>Instead of making assumptions about our density over each data point, <span class="math inline">\(y_i\)</span> as i.i.d.</p></li>
 <li><p>make a joint Gaussian assumption over our data.</p></li>
-<li><p>covariance matrix is now a function of both the parameters of the activation function, <span class="math inline">\(\mathbf{V}\)</span>, and the input variables, <span class="math inline">\({\bf X}\)</span>.</p></li>
-<li><p>Arises from integrating out, <span class="math inline">\(\mathbf{w}\)</span>.</p></li>
+<li><p>covariance matrix is now a function of both the parameters of the activation function, <span class="math inline">\(\mathbf{W}_1\)</span>, and the input variables, <span class="math inline">\({\bf X}\)</span>.</p></li>
+<li><p>Arises from integrating out <span class="math inline">\(\mathbf{w}^{(2)}\)</span>.</p></li>
 </ul>
 </section>
 <section id="basis-functions" class="slide level3" data-transition="None">
@@ -351,21 +429,21 @@ k_f\left({\bf x}_i, {\bf x}_j\right) = \alpha \boldsymbol{\phi}\left(\mathbf{V},
 <h3>Roughly Speaking</h3>
 <ul>
 <li><p>Instead of <span class="math display">\[\begin{align*}
-k_f\left({\bf x}_i, {\bf x}_j\right) &amp; = \alpha \boldsymbol{\phi}\left(\mathbf{V}, {\bf x}_i\right)^\top \boldsymbol{\phi}\left(\mathbf{V}, {\bf x}_j\right)\\
-&amp; = \sum_k \phi\left(\mathbf{v}_k, {\bf x}_i\right) \phi\left(\mathbf{v}_k, {\bf x}_j\right)
+k_f\left({\bf x}_i, {\bf x}_j\right) &amp; = \alpha \boldsymbol{\phi}\left(\mathbf{W}_1, {\bf x}_i\right)^\top \boldsymbol{\phi}\left(\mathbf{W}_1, {\bf x}_j\right)\\
+&amp; = \sum_k \phi\left(\mathbf{w}^{(1)}_k, {\bf x}_i\right) \phi\left(\mathbf{w}^{(1)}_k, {\bf x}_j\right)
 \end{align*}\]</span></p></li>
-<li><p>Sample infinitely many from a prior density, <span class="math inline">\(p(\mathbf{v})\)</span>, <span class="math display">\[
-k_f\left({\bf x}_i, {\bf x}_j\right) = \int \phi\left(\mathbf{v}, {\bf x}_i\right) \phi\left(\mathbf{v}, {\bf x}_j\right) p(\mathbf{v}) \text{d}\mathbf{v}
+<li><p>Sample infinitely many from a prior density, <span class="math inline">\(p(\mathbf{w}^{(1)})\)</span>, <span class="math display">\[
+k_f\left({\bf x}_i, {\bf x}_j\right) = \int \phi\left(\mathbf{w}^{(1)}, {\bf x}_i\right) \phi\left(\mathbf{w}^{(1)}, {\bf x}_j\right) p(\mathbf{w}^{(1)}) \text{d}\mathbf{w}^{(1)}
 \]</span></p></li>
-<li><p>Also applies for non-Gaussian <span class="math inline">\(p(\mathbf{v})\)</span> because of the <em>central limit theorem</em>.</p></li>
+<li><p>Also applies for non-Gaussian <span class="math inline">\(p(\mathbf{w}^{(1)})\)</span> because of the <em>central limit theorem</em>.</p></li>
 </ul>
 </section>
 <section id="simple-probabilistic-program" class="slide level3" data-transition="None">
 <h3>Simple Probabilistic Program</h3>
 <ul>
 <li><p>If <span class="math display">\[\begin{align*}
-\mathbf{v}&amp; \sim p(\cdot)\\
-\phi_i &amp; = \phi\left(\mathbf{v}, {\bf x}_i\right), 
+\mathbf{w}^{(1)} &amp; \sim p(\cdot)\\
+\phi_i &amp; = \phi\left(\mathbf{w}^{(1)}, {\bf x}_i\right), 
 \end{align*}\]</span> has finite variance.</p></li>
 <li><p>Then taking number of hidden units to infinity, is also a Gaussian process.</p></li>
 </ul>
@@ -378,22 +456,22 @@ k_f\left({\bf x}_i, {\bf x}_j\right) = \int \phi\left(\mathbf{v}, {\bf x}_i\righ
 <li><p>David MacKay’s PhD thesis <span class="citation" data-cites="MacKay:bayesian92">(MacKay, 1992)</span></p></li>
 </ul>
 </section>
-<section id="section" class="slide level3" data-transition="none">
+<section id="section-1" class="slide level3" data-transition="none">
 <h3></h3>
 <object class="svgplot" data="../slides/diagrams/gp_prior_samples_few.svg">
 </object>
 </section>
-<section id="section-1" class="slide level3" data-transition="none">
+<section id="section-2" class="slide level3" data-transition="none">
 <h3></h3>
 <object class="svgplot" data="../slides/diagrams/gp_prior_samples.svg">
 </object>
 </section>
-<section id="section-2" class="slide level3" data-transition="none">
+<section id="section-3" class="slide level3" data-transition="none">
 <h3></h3>
 <object class="svgplot" data="../slides/diagrams/gp_prior_samples_data.svg">
 </object>
 </section>
-<section id="section-3" class="slide level3" data-transition="none">
+<section id="section-4" class="slide level3" data-transition="none">
 <h3></h3>
 <object class="svgplot" data="../slides/diagrams/gp_rejection_samples.svg">
 </object>
@@ -425,73 +503,27 @@ k_f\left({\bf x}_i, {\bf x}_j\right) = \int \phi\left(\mathbf{v}, {\bf x}_i\righ
 \mathbf{K}^{-1} \mathbf{K}_{\mathbf{f}, *}\]</span></p></li>
 </ul>
 </section>
-<section id="section-4" class="slide level3" data-transition="none">
+<section id="section-5" class="slide level3" data-transition="none">
 <h3></h3>
 <object class="svgplot" data="../slides/diagrams/gp_prior_samples_data.svg">
 </object>
 </section>
-<section id="section-5" class="slide level3" data-transition="none">
+<section id="section-6" class="slide level3" data-transition="none">
 <h3></h3>
 <object class="svgplot" data="../slides/diagrams/gp_rejection_samples.svg">
 </object>
 </section>
-<section id="section-6" class="slide level3" data-transition="none">
+<section id="section-7" class="slide level3" data-transition="none">
 <h3></h3>
 <object class="svgplot" data="../slides/diagrams/gp_prediction.svg">
 </object>
 <!-- ### Two Dimensional Gaussian Distribution -->
 <!-- include{../../_ml/includes/two_d_gaussian.md} -->
 </section>
-<section id="multivariate-gaussian-properties-1" class="slide level3">
-<h3>Multivariate Gaussian Properties</h3>
-<!--frame start-->
-</section>
-<section id="recall-univariate-gaussian-properties" class="slide level3">
-<h3>Recall Univariate Gaussian Properties</h3>
-<div class="fragment">
-<ol type="1">
-<li>Sum of Gaussian variables is also Gaussian.</li>
-</ol>
-<p><span class="math display">\[{y}_i \sim {\mathcal{N}\left({\mu}_i,\sigma_i^2\right)}\]</span></p>
-</div>
-<div class="fragment">
-<p><span class="math display">\[\sum_{i=1}^{{n}} {y}_i \sim {\mathcal{N}\left(\sum_{i=1}^{n}{\mu}_i,\sum_{i=1}^{n}\sigma_i^2\right)}\]</span></p>
-</div>
-<div class="fragment">
-<ol start="2" type="1">
-<li>Scaling a Gaussian leads to a Gaussian.</li>
-</ol>
-</div>
-<div class="fragment">
-<p><span class="math display">\[{y}\sim {\mathcal{N}\left({\mu},\sigma^2\right)}\]</span></p>
-</div>
-<div class="fragment">
-<p><span class="math display">\[{w}{y}\sim {\mathcal{N}\left({w}{\mu},{w}^2 \sigma^2\right)}\]</span></p>
-</div>
-</section>
-<section id="multivariate-consequence" class="slide level3">
-<h3>Multivariate Consequence</h3>
-<div data-align="left">
-If
-</div>
-<p><span class="math display">\[{{\bf {x}}}\sim {\mathcal{N}\left({\boldsymbol{{\mu}}},\boldsymbol{\Sigma}\right)}\]</span></p>
-<div class="fragment">
-<div data-align="left">
-And
-</div>
-<p><span class="math display">\[{\mathbf{{y}}}= {\mathbf{W}}{{\bf {x}}}\]</span></p>
-</div>
-<div class="fragment">
-<div data-align="left">
-Then
-</div>
-<p><span class="math display">\[{\mathbf{{y}}}\sim {\mathcal{N}\left({\mathbf{W}}{\boldsymbol{{\mu}}},{\mathbf{W}}\boldsymbol{\Sigma}{\mathbf{W}}^\top\right)}\]</span></p>
-</div>
-</section>
-<section id="distributions-over-functions" class="slide level3">
+<section id="distributions-over-functions" class="slide level3" data-transition="none">
 <h3>Distributions over Functions</h3>
 </section>
-<section id="sampling-a-function" class="slide level3">
+<section id="sampling-a-function" class="slide level3" data-transition="none">
 <h3>Sampling a Function</h3>
 <p><strong>Multi-variate Gaussians</strong></p>
 <ul>
@@ -695,7 +727,7 @@ Then
 </tr>
 </table>
 </section>
-<section id="section-7" class="slide level3" data-transition="none">
+<section id="section-8" class="slide level3" data-transition="none">
 <h3></h3>
 <p><img src="../slides/diagrams/Planck_CMB.png" align="center" style="background:none; border:none; box-shadow:none;"></p>
 </section>
@@ -794,7 +826,7 @@ Then
 <object class="svgplot" data="../slides/diagrams/deep-markov.svg">
 </object>
 </section>
-<section id="section-8" class="slide level3" data-transition="None">
+<section id="section-9" class="slide level3" data-transition="None">
 <h3></h3>
 <object class="svgplot" data="../slides/diagrams/deep-markov-vertical.svg">
 </object>
@@ -827,12 +859,12 @@ Then
 <li><p><span class="citation" data-cites="Dunlop:deep2017">(Dunlop et al., 2017)</span> Theoretical analysis possible through conditional Gaussian Markov property.</p></li>
 </ul>
 </section>
-<section id="section-9" class="slide level3" data-transition="None">
+<section id="section-10" class="slide level3" data-transition="None">
 <h3></h3>
 <object class="svgplot" data="../slides/diagrams/deep-markov-vertical.svg">
 </object>
 </section>
-<section id="section-10" class="slide level3" data-transition="None">
+<section id="section-11" class="slide level3" data-transition="None">
 <h3></h3>
 <object class="svgplot" data="../slides/diagrams/deep-markov-vertical-side.svg">
 </object>
@@ -993,7 +1025,7 @@ Then
 <object class="svgplot" data="../slides/diagrams/shared.svg">
 </object>
 </section>
-<section id="section-11" class="slide level3">
+<section id="section-12" class="slide level3">
 <h3></h3>
 <p><img src="../slides/diagrams/deep-gp-high-five.png"  width="100%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"></p>
 </section>
@@ -1005,11 +1037,11 @@ Then
 <li><p>For 150 6s, 0s and 1s from MNIST we found at least 5 layers are required.</p></li>
 </ul>
 </section>
-<section id="section-12" class="slide level3" data-transition="none">
+<section id="section-13" class="slide level3" data-transition="none">
 <h3></h3>
 <p><img src="../slides/diagrams/deep-gp-usps-digits.png"  width="100%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"></p>
 </section>
-<section id="section-13" class="slide level3" data-transition="none">
+<section id="section-14" class="slide level3" data-transition="none">
 <h3></h3>
 <object class="svgplot" data="../slides/diagrams/digit-samples-deep-gp.svg">
 </object>
@@ -1019,7 +1051,7 @@ Then
 <object class="svgplot" data="../slides/diagrams/deep-health.svg" align="center">
 </object>
 </section>
-<section id="section-14" class="slide level3">
+<section id="section-15" class="slide level3">
 <h3></h3>
 <ul>
 <li><span class="citation" data-cites="Anqi:gpspike2017">Wu et al. (2017)</span></li>
@@ -1028,7 +1060,7 @@ Then
 <li><span class="citation" data-cites="Schulam:counterfactual17">Schulam and Saria (2017)</span></li>
 </ul>
 </section>
-<section id="section-15" class="slide level3">
+<section id="section-16" class="slide level3">
 <h3></h3>
 <ul>
 <li><span class="citation" data-cites="Ranganath-survival16">Ranganath et al. (2016)</span></li>
@@ -1178,6 +1210,9 @@ Then
 </div>
 <div id="ref-Schulam:counterfactual17">
 <p>Schulam, P., Saria, S., 2017. Counterfactual gaussian processes for reliable decision-making and what-if reasoning, in: Guyon, I., Luxburg, U.V., Bengio, S., Wallach, H., Fergus, R., Vishwanathan, S., Garnett, R. (Eds.), Advances in Neural Information Processing Systems 30. Curran Associates, Inc., pp. 1696–1706.</p>
+</div>
+<div id="ref-Steele:predictive12">
+<p>Steele, S., Bilchik, A., Eberhardt, J., Kalina, P., Nissan, A., Johnson, E., Avital, I., Stojadinovic, A., 2012. Using machine-learned Bayesian belief networks to predict perioperative risk of clostridium difficile infection following colon surgery. Interact J Med Res 1, e6. <a href="https://doi.org/10.2196/ijmr.2131" class="uri">https://doi.org/10.2196/ijmr.2131</a></p>
 </div>
 <div id="ref-Tipping:probpca99">
 <p>Tipping, M.E., Bishop, C.M., 1999. Probabilistic principal component analysis. Journal of the Royal Statistical Society, B 6, 611–622. <a href="https://doi.org/doi:10.1111/1467-9868.00196" class="uri">https://doi.org/doi:10.1111/1467-9868.00196</a></p>

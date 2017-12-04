@@ -24,7 +24,7 @@ If $\covarianceMatrixTwo=\dataStd^2\eye$, this is Probabilistic Principal Compon
 
 * Set each activation function computed at each data point to be
 $$
-\activationScalar_{i,j} = \activationScalar(\mappingVectorTwo_{j}, \inputVector_{i})
+\activationScalar_{i,j} = \activationScalar(\mappingVector^{(1)}_{j}, \inputVector_{i})
 $$
 Define  *design matrix* 
 $$
@@ -36,6 +36,19 @@ $$
 \activationScalar_{\numData, 1} & \activationScalar_{\numData, 2} & \dots & \activationScalar_{\numData, \numHidden}
 \end{bmatrix}.
 $$
+
+### Matrix Representation of a Neural Network {data-transition="None"}
+
+$$\mappingFunction\left(\inputVector\right) = \activationVector\left(\inputVector\right)^\top \mappingVector + \noiseScalar$$
+
+. . .
+
+$$\dataVector = \activationMatrix\mappingVector + \noiseVector$$
+
+. . .
+
+$$\noiseVector \sim \gaussianSamp{\zerosVector}{\dataStd^2\eye}$$
+
 
 ### Prior Density {data-transition="None"}
 
@@ -64,7 +77,7 @@ $$
 ### Covariance Function {data-transition="None"}
 
 $$
-\kernel_\mappingFunction\left(\inputVector_i, \inputVector_j\right) = \alpha \activationVector\left(\mappingMatrixTwo, \inputVector_i\right)^\top \activationVector\left(\mappingMatrixTwo, \inputVector_j\right)
+\kernel_\mappingFunction\left(\inputVector_i, \inputVector_j\right) = \alpha \activationVector\left(\mappingMatrix_1, \inputVector_i\right)^\top \activationVector\left(\mappingMatrix_1, \inputVector_j\right)
 $$
 
 * formed by inner products of the rows of the *design matrix*.  
@@ -75,13 +88,13 @@ $$
 
 *  make a joint Gaussian assumption over our data.
 
-* covariance matrix is now a function of both the parameters of the activation function, $\mappingMatrixTwo$, and the input variables, $\inputMatrix$.
+* covariance matrix is now a function of both the parameters of the activation function, $\mappingMatrix_1$, and the input variables, $\inputMatrix$.
 
-* Arises from integrating out, $\mappingVector$. 
+* Arises from integrating out $\mappingVector^{(2)}$. 
 
 ### Basis Functions {data-transition="None"}
 
-* Can be very complex, such as deep kernels,  [@Cho:deep09] or could even put a convolutional neural network inside.
+* Can be very complex, such as deep kernels, [@Cho:deep09] or could even put a convolutional neural network inside.
 
 * Viewing a neural network in this way is also what allows us to beform sensible *batch* normalizations [@Ioffe:batch15].
 
