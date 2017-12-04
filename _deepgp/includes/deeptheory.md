@@ -6,8 +6,15 @@
 
 ### Analysis of Deep GPs {data-transition="None"}
 
--   [@Duvenaud:pathologies14] Duvenaud et al show that the derivative
+- *Avoiding pathologies in very deep networks*
+    @Duvenaud:pathologies14 show that the derivative
     distribution of the process becomes more *heavy tailed* as number of
     layers increase.
 
--   [@Dunlop:deep2017] Theoretical analysis possible through conditional Gaussian Markov property.
+- *How Deep Are Deep Gaussian Processes?*
+    @Dunlop:deep2017 perform a theoretical analysis possible through conditional Gaussian Markov property.
+
+###
+
+<div>
+<iframe src="https://www.youtube.com/embed/XhIvygQYFFQ" width="1120" height="630" allowtransparency="true"  frameborder="0"></iframe></div>

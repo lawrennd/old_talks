@@ -14,9 +14,15 @@
 
 <object class="svgplot" data="../slides/diagrams/usps-digits-hidden-1-0.svg"></object>
 
+### {data-transition="none"}
+
 <object class="svgplot" data="../slides/diagrams/usps-digits-hidden-2-0.svg"></object>
 
+### {data-transition="none"}
+
 <object class="svgplot" data="../slides/diagrams/usps-digits-hidden-3-0.svg"></object>
+
+### {data-transition="none"}
 
 <object class="svgplot" data="../slides/diagrams/usps-digits-hidden-4-0.svg"></object>
 
