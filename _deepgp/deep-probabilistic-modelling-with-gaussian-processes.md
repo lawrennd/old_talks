@@ -1,6 +1,6 @@
 ---
 layout: slides
-title: "DRAFT SLIDES: Deep Probabilistic Modelling with with Gaussian Processes"
+title: "Deep Probabilistic Modelling with with Gaussian Processes"
 author: Neil D. Lawrence
 bibliography: deep-probabilistic-modelling-with-gaussian-processes.bib
 ---
@@ -44,32 +44,42 @@ CMB samples -> Life
 \include{../_deepgp/includes/deep-high-five.md}
 \include{../_deepgp/includes/deep-usps-digits.md}
 
-<!--\include{../_deepgp/includes/deep-results.md}-->
 
-###
-
-Papers to cite on deep health:
-
-[@Ranganath-survival16]
-[@Mattos:recurrent15]
-[@Damianou:thesis2015]
-[@Saul:thesis2016]
-
-This conference:
-
-[@Anqi:gpspike2017]
-[@Salimbeni:doubly2017]
-[@Alaa:deep2017]
-[@Schulam:counterfactual17]
 
 
 \include{../_health/includes/deep-health-model.md}
 
+
+### 
+
+* @Anqi:gpspike2017
+* @Salimbeni:doubly2017
+* @Alaa:deep2017
+* @Schulam:counterfactual17
+
+
+###
+
+* @Ranganath-survival16
+* @Mattos:recurrent15
+* @Damianou:thesis2015
+* @Saul:thesis2016
+
 \include{../_deepgp/includes/multi-fidelity-modelling.md}
 
-acknowledgements: suggestions from Stefano  Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Dai, Javier Gonzalez, Andreas Damianou, Mark Pullin.
+### Acknowledgments
+
+Stefanos  Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Dai, Javier Gonzalez, Andreas Damianou, Mark Pullin.
 
 ### Ongoing Code
+
+* Powerful framework but
+
+* Software isn't there yet.
+
+* Our focus: Gaussian Processes driven by MXNet
+
+* Composition of GPs, Neural Networks, Other Models
 
 ### Thanks!
 

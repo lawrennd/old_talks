@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Neil D. Lawrence">
-  <title>DRAFT SLIDES: Deep Probabilistic Modelling with with Gaussian Processes</title>
+  <title>Deep Probabilistic Modelling with with Gaussian Processes</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -39,7 +39,7 @@
     <div class="slides">
 
 <section>
-  <h1 class="title">DRAFT SLIDES: Deep Probabilistic Modelling with with Gaussian Processes</h1>
+  <h1 class="title">Deep Probabilistic Modelling with with Gaussian Processes</h1>
   <p class="author">Neil D. Lawrence</p>
 </section>
 
@@ -980,36 +980,6 @@ Then
 <h3>Robot WiFi Data Latent Space</h3>
 <object data="../slides/diagrams/robot-wireless-latent-space.svg" class="svgplot">
 </object>
-<!--### Derivative Tails Increase with Layers: Step Function
-
-<img src="./diagrams/H0_predict.png"  width="30%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;">
-
-<img src="./diagrams/H1_predict.png"  width="30%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"><img src="./diagrams/H3_predict.png"  width="30%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;">
-
-### Values in Hidden Layers
-
-<img src="./diagrams/step_all.png"  width="20%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;">
-
-
--->
-<!--<!--frame start-->
-</section>
-<section id="loop-detection-in-robotics" class="slide level3">
-<h3>Loop Detection in Robotics</h3>
-<p><img src="./diagrams/robot_path.png"  width="30%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"></p>
-<p><img src="./diagrams/robot_layer1.png"  width="30%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"> <img src="./diagrams/robot_layer2.png"  width="30%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"></p>
-<ul>
-<li><p>Dynamically constrained model</p></li>
-<li><p>Correctly detects the loop</p></li>
-<li><p>Learns temporal continuity and corner-like features in different layers</p></li>
-</ul>
-</section>
-<section id="data-fit-for-loop-closure" class="slide level3">
-<h3>Data fit for Loop Closure</h3>
-<p><img src="./diagrams/robot_wireless_signal1.png"  width="30%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"> <img src="./diagrams/robot_wireless_signal2.png"  width="30%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"></p>
-<p><em>Example data fits for <span class="math inline">\(2\)</span> of the <span class="math inline">\(30\)</span> output dimensions</em></p>
-<!--frame end-->
-<p>–&gt;</p>
 </section>
 <section id="motion-capture" class="slide level3" data-transition="none">
 <h3>Motion Capture</h3>
@@ -1043,52 +1013,29 @@ Then
 <h3></h3>
 <object class="svgplot" data="../slides/diagrams/digit-samples-deep-gp.svg">
 </object>
-<!--### Motion Capture {data-transition="none"}
-
--   ‘High five’ data.
-
--   Model learns structure between two interacting subjects.
-
-### Shared LVM
-
-<object class="svgplot" data="../slides/diagrams/shared.svg"></object>
-
-###
-
-<img src="../slides/diagrams/deep-gp-high-five.png"  width="100%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;">
-
-### Digits Data Set {data-transition="none"}
-
--   Are deep hierarchies justified for small data sets?
-
--   We can lower bound the evidence for different depths.
-
--   For 150 6s, 0s and 1s from MNIST we found at least 5 layers are
-    required.
-
-### {data-transition="none"}
-
-<img src="../slides/diagrams/deep-gp-usps-digits.png"  width="100%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;">
-
-### {data-transition="none"}
-
-<object class="svgplot" data="../slides/diagrams/digit-samples-deep-gp.svg"></object>
-
-
-
--->
-</section>
-<section id="section-14" class="slide level3">
-<h3></h3>
-<p>Papers to cite on deep health:</p>
-<p><span class="citation" data-cites="Ranganath-survival16">(Ranganath et al., 2016)</span> <span class="citation" data-cites="Mattos:recurrent15">(Mattos et al., 2015)</span> <span class="citation" data-cites="Damianou:thesis2015">(Damianou, 2015)</span> <span class="citation" data-cites="Saul:thesis2016">(Saul, 2016)</span></p>
-<p>This conference:</p>
-<p><span class="citation" data-cites="Anqi:gpspike2017">(Wu et al., 2017)</span> <span class="citation" data-cites="Salimbeni:doubly2017">(Salimbeni and Deisenroth, 2017)</span> <span class="citation" data-cites="Alaa:deep2017">(Alaa and van der Schaar, 2017)</span> <span class="citation" data-cites="Schulam:counterfactual17">(Schulam and Saria, 2017)</span></p>
 </section>
 <section id="deep-health" class="slide level3">
 <h3>Deep Health</h3>
 <object class="svgplot" data="../slides/diagrams/deep-health.svg" align="center">
 </object>
+</section>
+<section id="section-14" class="slide level3">
+<h3></h3>
+<ul>
+<li><span class="citation" data-cites="Anqi:gpspike2017">Wu et al. (2017)</span></li>
+<li><span class="citation" data-cites="Salimbeni:doubly2017">Salimbeni and Deisenroth (2017)</span></li>
+<li><span class="citation" data-cites="Alaa:deep2017">Alaa and van der Schaar (2017)</span></li>
+<li><span class="citation" data-cites="Schulam:counterfactual17">Schulam and Saria (2017)</span></li>
+</ul>
+</section>
+<section id="section-15" class="slide level3">
+<h3></h3>
+<ul>
+<li><span class="citation" data-cites="Ranganath-survival16">Ranganath et al. (2016)</span></li>
+<li><span class="citation" data-cites="Mattos:recurrent15">Mattos et al. (2015)</span></li>
+<li><span class="citation" data-cites="Damianou:thesis2015">Damianou (2015)</span></li>
+<li><span class="citation" data-cites="Saul:thesis2016">Saul (2016)</span></li>
+</ul>
 </section>
 <section id="multi-fidelity-modelling" class="slide level3">
 <h3>Multi-fidelity Modelling</h3>
@@ -1148,10 +1095,19 @@ Then
 <ul>
 <li>Formula 1 example</li>
 </ul>
-<p>acknowledgements: suggestions from Stefano Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Dai, Javier Gonzalez, Andreas Damianou, Mark Pullin.</p>
+</section>
+<section id="acknowledgments" class="slide level3">
+<h3>Acknowledgments</h3>
+<p>Stefanos Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Dai, Javier Gonzalez, Andreas Damianou, Mark Pullin.</p>
 </section>
 <section id="ongoing-code" class="slide level3">
 <h3>Ongoing Code</h3>
+<ul>
+<li><p>Powerful framework but</p></li>
+<li><p>Software isn’t there yet.</p></li>
+<li><p>Our focus: Gaussian Processes driven by MXNet</p></li>
+<li><p>Composition of GPs, Neural Networks, Other Models</p></li>
+</ul>
 </section>
 <section id="thanks" class="slide level3">
 <h3>Thanks!</h3>
