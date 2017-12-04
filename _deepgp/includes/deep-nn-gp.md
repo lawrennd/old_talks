@@ -27,6 +27,10 @@ $$
     $\eigenvectwoMatrix \in \Re^{k_2\times q}$, i.e. we have a low rank
     matrix factorization for the weights.
 
+### Low Rank Approximation
+
+<object data="../slides/diagrams/wisuvt.svg" class="svgplot"></object>
+
 \include{../../_deepgp/includes/deep-gp.md}
 
 ### Mathematically {data-transition="None"}
