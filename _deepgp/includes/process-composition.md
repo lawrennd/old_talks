@@ -40,16 +40,9 @@ $$p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mapping
 -   A (new?) way of constructing more complex *processes* based on
     simpler components.
 
-*Note*: To retain *Kolmogorov consistency* introduce IBP priors over
-latent variables in each layer.
-
-### Analysis of Deep GPs {data-transition="None"}
-
--   [@Duvenaud:pathologies14] Duvenaud et al show that the derivative
-    distribution of the process becomes more *heavy tailed* as number of
-    layers increase.
-
--   [@Dunlop:deep2017] Theoretical analysis possible through conditional Gaussian Markov property.
+###
+<div>
+<iframe src="https://www.youtube.com/embed/XhIvygQYFFQ" width="1120" height="630" allowtransparency="true"  frameborder="0"></iframe></div>
 
 ### {data-transition="None"}
 

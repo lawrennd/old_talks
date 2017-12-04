@@ -34,10 +34,6 @@ CMB samples -> Life
 \include{../_deepgp/includes/deep-nn-gp.md}
 \include{../_deepgp/includes/deeptheory.md}
 
-\include{../_deepgp/includes/stack-gp-intro.md}
-\include{../_deepgp/includes/stacked-pca.md}
-\include{../_deepgp/includes/stacked-gp.md}
-
 \include{../_deepgp/includes/deep-olympic.md}
 \include{../_deepgp/includes/deep-robot-wireless.md}
 
@@ -50,20 +46,28 @@ CMB samples -> Life
 \include{../_health/includes/deep-health-model.md}
 
 
-### 
+### At this Year's NIPS
 
-* @Anqi:gpspike2017
-* @Salimbeni:doubly2017
-* @Alaa:deep2017
-* @Schulam:counterfactual17
+* *Gaussian process based nonlinear latent structure discovery in multivariate spike train data*
+    @Anqi:gpspike2017
+* *Doubly Stochastic Variational Inference for Deep Gaussian Processes*
+    @Salimbeni:doubly2017
+* *Deep Multi-task {G}aussian Processes for Survival Analysis with Competing Risks*
+    @Alaa:deep2017
+* *Counterfactual Gaussian Processes for Reliable Decision-making and What-if Reasoning*
+    @Schulam:counterfactual17
 
 
-###
+### Some Other Works
 
-* @Ranganath-survival16
-* @Mattos:recurrent15
-* @Damianou:thesis2015
-* @Saul:thesis2016
+* *Deep Survival Analysis*
+    @Ranganath-survival16
+* *Recurrent Gaussian Processes*
+    @Mattos:recurrent15
+* *Deep Gaussian Processes and Variational Propagation of Uncertaint*
+    @Damianou:thesis2015
+* *Gaussian Process Based Approaches for Survival Analysis*
+    @Saul:thesis2016
 
 \include{../_deepgp/includes/multi-fidelity-modelling.md}
 

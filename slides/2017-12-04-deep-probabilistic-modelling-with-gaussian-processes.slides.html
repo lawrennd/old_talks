@@ -177,7 +177,7 @@ p(y_*|\mathbf{y}, {\bf X}, {\bf x}_*) = \int p(y_*|{\bf x}_*, \mathbf{W}) p(\mat
 <p><span class="math inline">\(p(\mathbf{W}| \mathbf{y}, {\bf X})\)</span> is posterior density</p>
 </div>
 </section>
-<section id="likelihood" class="slide level3">
+<section id="likelihood" class="slide level3" data-transition="None">
 <h3>Likelihood</h3>
 <p><span class="math inline">\(p(y|{\bf x}, \mathbf{W})\)</span> is the <em>likelihood</em> of data point</p>
 <div class="fragment">
@@ -838,21 +838,20 @@ k_f\left({\bf x}_i, {\bf x}_j\right) = \int \phi\left(\mathbf{w}^{(1)}, {\bf x}_
 <li><p>From a process perspective: <em>process composition</em>.</p></li>
 <li><p>A (new?) way of constructing more complex <em>processes</em> based on simpler components.</p></li>
 </ul>
-<p><em>Note</em>: To retain <em>Kolmogorov consistency</em> introduce IBP priors over latent variables in each layer.</p>
 </section>
-<section id="analysis-of-deep-gps" class="slide level3" data-transition="None">
-<h3>Analysis of Deep GPs</h3>
-<ul>
-<li><p><span class="citation" data-cites="Duvenaud:pathologies14">(Duvenaud et al., 2014)</span> Duvenaud et al show that the derivative distribution of the process becomes more <em>heavy tailed</em> as number of layers increase.</p></li>
-<li><p><span class="citation" data-cites="Dunlop:deep2017">(Dunlop et al., 2017)</span> Theoretical analysis possible through conditional Gaussian Markov property.</p></li>
-</ul>
+<section id="section-10" class="slide level3">
+<h3></h3>
+<div>
+<iframe src="https://www.youtube.com/embed/XhIvygQYFFQ" width="1120" height="630" allowtransparency="true" frameborder="0">
+</iframe>
+</div>
 </section>
-<section id="section-10" class="slide level3" data-transition="None">
+<section id="section-11" class="slide level3" data-transition="None">
 <h3></h3>
 <object class="svgplot" data="../slides/diagrams/deep-markov-vertical.svg">
 </object>
 </section>
-<section id="section-11" class="slide level3" data-transition="None">
+<section id="section-12" class="slide level3" data-transition="None">
 <h3></h3>
 <object class="svgplot" data="../slides/diagrams/deep-markov-vertical-side.svg">
 </object>
@@ -883,16 +882,6 @@ k_f\left({\bf x}_i, {\bf x}_j\right) = \int \phi\left(\mathbf{w}^{(1)}, {\bf x}_
 </ul>
 <object class="svgplot" data="../slides/diagrams/gaussian-through-nonlinear.svg" align="center">
 </object>
-</section>
-<section id="deep-models" class="slide level3" data-transition="None">
-<h3>Deep Models</h3>
-
-</section>
-<section id="deep-models-1" class="slide level3" data-transition="None">
-<h3>Deep Models</h3>
-
-
-
 </section>
 <section id="deep-gaussian-processes-1" class="slide level3">
 <h3>Deep Gaussian Processes</h3>
@@ -951,6 +940,13 @@ k_f\left({\bf x}_i, {\bf x}_j\right) = \int \phi\left(\mathbf{w}^{(1)}, {\bf x}_
 <object class="svgplot" data="../slides/diagrams/stack-gp-sample-4.svg">
 </object>
 </section>
+<section id="analysis-of-deep-gps" class="slide level3" data-transition="None">
+<h3>Analysis of Deep GPs</h3>
+<ul>
+<li><p><span class="citation" data-cites="Duvenaud:pathologies14">(Duvenaud et al., 2014)</span> Duvenaud et al show that the derivative distribution of the process becomes more <em>heavy tailed</em> as number of layers increase.</p></li>
+<li><p><span class="citation" data-cites="Dunlop:deep2017">(Dunlop et al., 2017)</span> Theoretical analysis possible through conditional Gaussian Markov property.</p></li>
+</ul>
+</section>
 <section id="olympic-marathon-data-3" class="slide level3" data-transition="None">
 <h3>Olympic Marathon Data</h3>
 <object data="../slides/diagrams/olympic-marathon.svg" class="svgplot">
@@ -983,12 +979,12 @@ k_f\left({\bf x}_i, {\bf x}_j\right) = \int \phi\left(\mathbf{w}^{(1)}, {\bf x}_
 </section>
 <section id="robot-wifi-data-gp" class="slide level3" data-transition="None">
 <h3>Robot WiFi Data GP</h3>
-<object data="../slides/diagrams/robot-wireless-gp-dim-12.svg" class="svgplot">
+<object data="../slides/diagrams/robot-wireless-gp-dim-1.svg" class="svgplot">
 </object>
 </section>
 <section id="robot-wifi-data-gp-1" class="slide level3" data-transition="None">
 <h3>Robot WiFi Data GP</h3>
-<object data="../slides/diagrams/robot-wireless-deep-gp-dim-12.svg" class="svgplot">
+<object data="../slides/diagrams/robot-wireless-deep-gp-dim-1.svg" class="svgplot">
 </object>
 </section>
 <section id="robot-wifi-data-latent-space" class="slide level3" data-transition="None">
@@ -1008,12 +1004,12 @@ k_f\left({\bf x}_i, {\bf x}_j\right) = \int \phi\left(\mathbf{w}^{(1)}, {\bf x}_
 <li><p>Model learns structure between two interacting subjects.</p></li>
 </ul>
 </section>
-<section id="shared-lvm" class="slide level3">
+<section id="shared-lvm" class="slide level3" data-transition="none">
 <h3>Shared LVM</h3>
 <object class="svgplot" data="../slides/diagrams/shared.svg">
 </object>
 </section>
-<section id="section-12" class="slide level3">
+<section id="section-13" class="slide level3">
 <h3></h3>
 <p><img src="../slides/diagrams/deep-gp-high-five.png"  width="100%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"></p>
 </section>
@@ -1025,11 +1021,11 @@ k_f\left({\bf x}_i, {\bf x}_j\right) = \int \phi\left(\mathbf{w}^{(1)}, {\bf x}_
 <li><p>For 150 6s, 0s and 1s from MNIST we found at least 5 layers are required.</p></li>
 </ul>
 </section>
-<section id="section-13" class="slide level3" data-transition="none">
+<section id="section-14" class="slide level3" data-transition="none">
 <h3></h3>
 <p><img src="../slides/diagrams/deep-gp-usps-digits.png"  width="100%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"></p>
 </section>
-<section id="section-14" class="slide level3" data-transition="none">
+<section id="section-15" class="slide level3" data-transition="none">
 <h3></h3>
 <object class="svgplot" data="../slides/diagrams/digit-samples-deep-gp.svg">
 </object>
@@ -1039,22 +1035,22 @@ k_f\left({\bf x}_i, {\bf x}_j\right) = \int \phi\left(\mathbf{w}^{(1)}, {\bf x}_
 <object class="svgplot" data="../slides/diagrams/deep-health.svg" align="center">
 </object>
 </section>
-<section id="section-15" class="slide level3">
-<h3></h3>
+<section id="at-this-years-nips" class="slide level3">
+<h3>At this Year’s NIPS</h3>
 <ul>
-<li><span class="citation" data-cites="Anqi:gpspike2017">Wu et al. (2017)</span></li>
-<li><span class="citation" data-cites="Salimbeni:doubly2017">Salimbeni and Deisenroth (2017)</span></li>
-<li><span class="citation" data-cites="Alaa:deep2017">Alaa and van der Schaar (2017)</span></li>
-<li><span class="citation" data-cites="Schulam:counterfactual17">Schulam and Saria (2017)</span></li>
+<li><em>Gaussian process based nonlinear latent structure discovery in multivariate spike train data</em> <span class="citation" data-cites="Anqi:gpspike2017">Wu et al. (2017)</span></li>
+<li><em>Doubly Stochastic Variational Inference for Deep Gaussian Processes</em> <span class="citation" data-cites="Salimbeni:doubly2017">Salimbeni and Deisenroth (2017)</span></li>
+<li><em>Deep Multi-task {G}aussian Processes for Survival Analysis with Competing Risks</em> <span class="citation" data-cites="Alaa:deep2017">Alaa and van der Schaar (2017)</span></li>
+<li><em>Counterfactual Gaussian Processes for Reliable Decision-making and What-if Reasoning</em> <span class="citation" data-cites="Schulam:counterfactual17">Schulam and Saria (2017)</span></li>
 </ul>
 </section>
-<section id="section-16" class="slide level3">
-<h3></h3>
+<section id="some-other-works" class="slide level3">
+<h3>Some Other Works</h3>
 <ul>
-<li><span class="citation" data-cites="Ranganath-survival16">Ranganath et al. (2016)</span></li>
-<li><span class="citation" data-cites="Mattos:recurrent15">Mattos et al. (2015)</span></li>
-<li><span class="citation" data-cites="Damianou:thesis2015">Damianou (2015)</span></li>
-<li><span class="citation" data-cites="Saul:thesis2016">Saul (2016)</span></li>
+<li><em>Deep Survival Analysis</em> <span class="citation" data-cites="Ranganath-survival16">Ranganath et al. (2016)</span></li>
+<li><em>Recurrent Gaussian Processes</em> <span class="citation" data-cites="Mattos:recurrent15">Mattos et al. (2015)</span></li>
+<li><em>Deep Gaussian Processes and Variational Propagation of Uncertaint</em> <span class="citation" data-cites="Damianou:thesis2015">Damianou (2015)</span></li>
+<li><em>Gaussian Process Based Approaches for Survival Analysis</em> <span class="citation" data-cites="Saul:thesis2016">Saul (2016)</span></li>
 </ul>
 </section>
 <section id="multi-fidelity-modelling" class="slide level3">
@@ -1079,7 +1075,7 @@ k_f\left({\bf x}_i, {\bf x}_j\right) = \int \phi\left(\mathbf{w}^{(1)}, {\bf x}_
 <li><p>There is a critical need for uncertainty.</p></li>
 </ul>
 </section>
-<section id="uncertainty-quantification-1" class="slide level3">
+<section id="uncertainty-quantification-1" class="slide level3" data-transition="None">
 <h3>Uncertainty Quantification</h3>
 <blockquote>
 <p>Uncertainty quantification (UQ) is the science of quantitative characterization and reduction of uncertainties in both computational and real world applications. It tries to determine how likely certain outcomes are if some aspects of the system are not exactly known.</p>
@@ -1088,33 +1084,27 @@ k_f\left({\bf x}_i, {\bf x}_j\right) = \int \phi\left(\mathbf{w}^{(1)}, {\bf x}_
 <li>Interaction between physical and virtual worlds of major interest for Amazon.</li>
 </ul>
 </section>
-<section id="example-formula-one-racing" class="slide level3">
+<section id="example-formula-one-racing" class="slide level3" data-transition="None">
 <h3>Example: Formula One Racing</h3>
 <ul>
 <li><p>Designing an F1 Car requires CFD, Wind Tunnel, Track Testing etc.</p></li>
 <li><p>How to combine them?</p></li>
 </ul>
 </section>
-<section id="multi-fidelity-emulation" class="slide level3">
+<section id="multi-fidelity-emulation" class="slide level3" data-transition="None">
 <h3>Multi-Fidelity Emulation</h3>
 <ul>
 <li>Normally assume that <span class="citation" data-cites="Kandasamy:multifidelity16">(Kandasamy et al., 2016,<span class="citation" data-cites="Alonso:virtual17">Alonso et al. (2017)</span>)</span>:</li>
 </ul>
 <p><span class="math display">\[f_i\left({\bf x}\right) = \rho f_{i-1}\left({\bf x}\right) + \delta_i\left({\bf x}\right)\]</span></p>
 </section>
-<section id="deep-gp-emulation" class="slide level3">
+<section id="deep-gp-emulation" class="slide level3" data-transition="None">
 <h3>Deep GP Emulation</h3>
 <p>But with Deep Gaussian processes <span class="citation" data-cites="Perdikaris:multifidelity17">(Perdikaris et al., 2017)</span> we can consider the form</p>
 <p><span class="math display">\[f_i\left({\bf x}\right) = g_{i}\left(f_{i-1}\left({\bf x}\right)\right) + \delta_i\left({\bf x}\right),\]</span></p>
 </section>
-<section id="surrogate-modelling-bayesian-optimization" class="slide level3">
-<h3>Surrogate Modelling Bayesian Optimization</h3>
-</section>
-<section id="multi-fidelity" class="slide level3">
-<h3>Multi-fidelity</h3>
-<ul>
-<li>Formula 1 example</li>
-</ul>
+<section id="notebook-example" class="slide level3">
+<h3>Notebook Example</h3>
 </section>
 <section id="acknowledgments" class="slide level3">
 <h3>Acknowledgments</h3>
