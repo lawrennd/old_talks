@@ -11,7 +11,7 @@
 ### Prediction Function of One Hidden Layer {data-transiation="None"}
 
 $$
-\mappingFunction(\inputVector) = \mappingMatrix_2^\top \activationVector(\mappingMatrix_{1}, \inputVector)
+\mappingFunction(\inputVector) = \left.\mappingVector^{(2)}\right.^\top \activationVector(\mappingMatrix_{1}, \inputVector)
 $$
 
 $\mappingFunction(\cdot)$ is a scalar function with vector inputs,

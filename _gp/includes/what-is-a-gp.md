@@ -27,15 +27,9 @@ $$\text{data} + \text{model} \rightarrow \text{prediction}$$
 
 * Uncertainty in prediction arises from:
 
-. . .
-
 * scarcity of training data and 
 
-. . .
-
 * mismatch between the set of prediction functions we choose and all possible prediction functions.
-
-. . .
 
 * Also uncertainties in objective, leave those for another day.
 
