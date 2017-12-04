@@ -47,27 +47,8 @@
 ### Distributions over Functions
 
 \include{../../_gp/includes/gpdistfunc.md}
+\include{../../_gp/includes/olympic-marathon-gp.md}
 
+###
 
-### Olympic Marathon Data
-
-<table>
-<tr><td>
--   Gold medal times for Olympic Marathon since 1896.
-
--   Marathons before 1924 didn’t have a standardised distance.
-
--   Present results using pace per km.
-
--   In 1904 Marathon was badly organised leading to very slow times.
-</td><td width="30%">
-![image](../_ml/diagrams/Stephen_Kiprotich.jpg)
-<small>Image from Wikimedia Commons <http://bit.ly/16kMKHQ></small>
-</td></tr>
-</table>
-
-
-### Olympic Marathon Data
-
-<object data="../_ml/diagrams/olympic_marathon.svg"  class="svgplot"></object> 
-
+<img src="../slides/diagrams/Planck_CMB.png" align="center" style="background:none; border:none; box-shadow:none;">
