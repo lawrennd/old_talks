@@ -17,7 +17,7 @@
 <object class="svgplot" data="../slides/diagrams/nonlinear-mapping-2d-plot.svg"  align="center"></object>
 
 
-### Difficulty for Probabilistic Approaches {#difficulty-for-probabilistic-approaches} {data-transition="None"}
+### Difficulty for Probabilistic Approaches {data-transition="None"}
 
 -   Propagate a probability distribution through a non-linear mapping.
 

@@ -602,6 +602,22 @@ Then
 </object>
 <p>A 25 dimensional correlated random variable (values ploted against index)</p>
 </section>
+<section id="exponentiated-quadratic-covariance" class="slide level3" data-transition="none">
+<h3>Exponentiated Quadratic Covariance</h3>
+<p><span class="math display">\[k(\mathbf{x}, \mathbf{x}^\prime) 
+= \alpha \exp\left(-\frac{\left\Vert \mathbf{x} - \mathbf{x}^\prime\right\Vert^2_2}{2\ell^2}\right)\]</span></p>
+<table>
+<tr>
+<td>
+<object data="../slides/diagrams/eq_covariance.svg">
+</object>
+</td>
+<td>
+<img src="../slides/diagrams/eq_covariance.gif" class="negate" align="center" style="background:none; border:none; box-shadow:none;">
+</td>
+</tr>
+</table>
+</section>
 <section id="olympic-marathon-data" class="slide level3" data-transition="None">
 <h3>Olympic Marathon Data</h3>
 <table>
@@ -630,7 +646,56 @@ Then
 <object data="../slides/diagrams/olympic-marathon-gp.svg" class="svgplot">
 </object>
 </section>
-<section id="section-7" class="slide level3">
+<section id="basis-function-covariance" class="slide level3" data-transition="none">
+<h3>Basis Function Covariance</h3>
+<p><span class="math display">\[k(\mathbf{x}, \mathbf{x}^\prime) 
+= \boldsymbol{\phi}(\mathbf{x})^\top \boldsymbol{\phi(\mathbf{x}^\prime)}\]</span></p>
+<table>
+<tr>
+<td>
+<object data="../slides/diagrams/basis_covariance.svg">
+</object>
+</td>
+<td>
+<img src="../slides/diagrams/basis_covariance.gif" class="negate" align="center" style="background:none; border:none; box-shadow:none;">
+</td>
+</tr>
+</table>
+</section>
+<section id="brownian-covariance" class="slide level3" data-transition="none">
+<h3>Brownian Covariance</h3>
+<p><span class="math display">\[k(t, t^\prime) = \alpha \min(t, t^\prime)\]</span></p>
+<table>
+<tr>
+<td>
+<object data="../slides/diagrams/brownian_covariance.svg">
+</object>
+</td>
+<td>
+<img src="../slides/diagrams/brownian_covariance.gif" class="negate" align="center" style="background:none; border:none; box-shadow:none;">
+</td>
+</tr>
+</table>
+</section>
+<section id="multilayer-perceptron-covariance" class="slide level3" data-transition="none">
+<h3>Multilayer Perceptron Covariance</h3>
+<p><span class="math display">\[k(\mathbf{x}, \mathbf{x}^\prime) = 
+\alpha \arcsin\left(\frac{w \mathbf{x}^\top \mathbf{x}^\prime + b}
+{\sqrt{\left(w \mathbf{x}^\top \mathbf{x} + b + 1\right)
+\left(w \left.\mathbf{x}^\prime\right.^\top \mathbf{x}^\prime + b + 1\right)}}\right)\]</span></p>
+<table>
+<tr>
+<td>
+<object data="../slides/diagrams/mlp_covariance.svg">
+</object>
+</td>
+<td>
+<img src="../slides/diagrams/mlp_covariance.gif" class="negate" align="center" style="background:none; border:none; box-shadow:none;">
+</td>
+</tr>
+</table>
+</section>
+<section id="section-7" class="slide level3" data-transition="none">
 <h3></h3>
 <p><img src="../slides/diagrams/Planck_CMB.png" align="center" style="background:none; border:none; box-shadow:none;"></p>
 </section>
@@ -747,7 +812,7 @@ Then
 <li><p>E.g. a priori they don’t believe in function ‘jumps’.</p></li>
 </ul>
 </section>
-<section id="process-composition" class="slide level3">
+<section id="process-composition" class="slide level3" data-transition="none">
 <h3>Process Composition</h3>
 <ul>
 <li><p>From a process perspective: <em>process composition</em>.</p></li>
@@ -790,8 +855,8 @@ Then
 <object class="svgplot" data="../slides/diagrams/nonlinear-mapping-2d-plot.svg" align="center">
 </object>
 </section>
-<section id="difficulty-for-probabilistic-approaches-difficulty-for-probabilistic-approaches" class="slide level3" data-transition="None">
-<h3>Difficulty for Probabilistic Approaches {#difficulty-for-probabilistic-approaches}</h3>
+<section id="difficulty-for-probabilistic-approaches-2" class="slide level3" data-transition="None">
+<h3>Difficulty for Probabilistic Approaches</h3>
 <ul>
 <li><p>Propagate a probability distribution through a non-linear mapping.</p></li>
 <li><p>Normalisation of distribution becomes intractable.</p></li>
@@ -946,23 +1011,23 @@ Then
 <!--frame end-->
 <p>–&gt;</p>
 </section>
-<section id="shared-lvm" class="slide level3">
-<h3>Shared LVM</h3>
-<object class="svgplot" data="../slides/diagrams/shared.svg">
-</object>
-</section>
-<section id="motion-capture" class="slide level3">
+<section id="motion-capture" class="slide level3" data-transition="none">
 <h3>Motion Capture</h3>
 <ul>
 <li><p>‘High five’ data.</p></li>
 <li><p>Model learns structure between two interacting subjects.</p></li>
 </ul>
 </section>
+<section id="shared-lvm" class="slide level3">
+<h3>Shared LVM</h3>
+<object class="svgplot" data="../slides/diagrams/shared.svg">
+</object>
+</section>
 <section id="section-11" class="slide level3">
 <h3></h3>
-<p><img src="./diagrams/deep-gp-high-five.png"  width="100%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"></p>
+<p><img src="../slides/diagrams/deep-gp-high-five.png"  width="100%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"></p>
 </section>
-<section id="digits-data-set" class="slide level3">
+<section id="digits-data-set" class="slide level3" data-transition="none">
 <h3>Digits Data Set</h3>
 <ul>
 <li><p>Are deep hierarchies justified for small data sets?</p></li>
@@ -970,14 +1035,48 @@ Then
 <li><p>For 150 6s, 0s and 1s from MNIST we found at least 5 layers are required.</p></li>
 </ul>
 </section>
-<section id="section-12" class="slide level3">
+<section id="section-12" class="slide level3" data-transition="none">
 <h3></h3>
-<p><img src="./diagrams/deep-gp-usps-digits.png"  width="100%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"></p>
+<p><img src="../slides/diagrams/deep-gp-usps-digits.png"  width="100%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"></p>
 </section>
-<section id="section-13" class="slide level3">
+<section id="section-13" class="slide level3" data-transition="none">
 <h3></h3>
 <object class="svgplot" data="../slides/diagrams/digit-samples-deep-gp.svg">
 </object>
+<!--### Motion Capture {data-transition="none"}
+
+-   ‘High five’ data.
+
+-   Model learns structure between two interacting subjects.
+
+### Shared LVM
+
+<object class="svgplot" data="../slides/diagrams/shared.svg"></object>
+
+###
+
+<img src="../slides/diagrams/deep-gp-high-five.png"  width="100%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;">
+
+### Digits Data Set {data-transition="none"}
+
+-   Are deep hierarchies justified for small data sets?
+
+-   We can lower bound the evidence for different depths.
+
+-   For 150 6s, 0s and 1s from MNIST we found at least 5 layers are
+    required.
+
+### {data-transition="none"}
+
+<img src="../slides/diagrams/deep-gp-usps-digits.png"  width="100%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;">
+
+### {data-transition="none"}
+
+<object class="svgplot" data="../slides/diagrams/digit-samples-deep-gp.svg"></object>
+
+
+
+-->
 </section>
 <section id="section-14" class="slide level3">
 <h3></h3>

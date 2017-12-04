@@ -41,11 +41,10 @@ CMB samples -> Life
 \include{../_deepgp/includes/deep-olympic.md}
 \include{../_deepgp/includes/deep-robot-wireless.md}
 
-<!--\include{../_deepgp/includes/deep-step-function.md}-->
+\include{../_deepgp/includes/deep-high-five.md}
+\include{../_deepgp/includes/deep-usps-digits.md}
 
-<!--\include{../_deepgp/includes/deep-loop-detection.md}-->
-
-\include{../_deepgp/includes/deep-results.md}
+<!--\include{../_deepgp/includes/deep-results.md}-->
 
 ###
 

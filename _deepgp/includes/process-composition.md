@@ -32,7 +32,7 @@ $$p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mapping
 
 -   E.g. a priori they don’t believe in function ‘jumps’.
 
-### Process Composition
+### Process Composition {data-transition="none"}
 
 
 -   From a process perspective: *process composition*.
