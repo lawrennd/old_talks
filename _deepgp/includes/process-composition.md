@@ -40,9 +40,6 @@ $$p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mapping
 -   A (new?) way of constructing more complex *processes* based on
     simpler components.
 
-###
-<div>
-<iframe src="https://www.youtube.com/embed/XhIvygQYFFQ" width="1120" height="630" allowtransparency="true"  frameborder="0"></iframe></div>
 
 ### {data-transition="None"}
 
