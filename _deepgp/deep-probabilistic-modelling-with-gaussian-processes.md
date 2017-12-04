@@ -39,13 +39,19 @@ CMB samples -> Life
 
 ### Approximations {data-transition="None"}
 
-<img src="../slides/diagrams/sparse-gps-2.png" align="center" width="40%" style="background:none; border:none; box-shadow:none;">
+<img src="../slides/diagrams/sparse-gps-2.png" align="center" width="90%" style="background:none; border:none; box-shadow:none;">
 
 *Image credit: Kai Arulkumaran*
 
 ### Approximations {data-transition="None"}
 
-<img src="../slides/diagrams/sparse-gps-3.png" align="center" width="40%" style="background:none; border:none; box-shadow:none;">
+<img src="../slides/diagrams/sparse-gps-3.png" align="center" width="45%" style="background:none; border:none; box-shadow:none;">
+
+*Image credit: Kai Arulkumaran*
+
+### Approximations {data-transition="None"}
+
+<img src="../slides/diagrams/sparse-gps-4.png" align="center" width="45%" style="background:none; border:none; box-shadow:none;">
 
 *Image credit: Kai Arulkumaran*
 
