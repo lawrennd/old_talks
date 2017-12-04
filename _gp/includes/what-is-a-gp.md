@@ -48,19 +48,16 @@
 
 \include{../../_gp/includes/gpdistfunc.md}
 
-# Exponentiated Quadratic Covariance
-
-$$k(\mathbf{x}, \mathbf{x}^\prime) 
-= \alpha \exp\left(-\frac{\left\Vert \mathbf{x} - \mathbf{x}^\prime\right\Vert^2_2}{2\ell^2}\right)$$
-
-<table>
-  <tr><td><object class="svgplot" data="../slides/diagrams/eq_covariance.svg"></object></td>
-  <td><img src="../slides/diagrams/eq_covariance.gif" align="center" style="background:none; border:none; box-shadow:none;"></td></tr>
-</table>
-
+\include{../../_kern/includes/eq-covariance.md}
 
 \include{../../_gp/includes/olympic-marathon-gp.md}
 
-###
+\include{../../_kern/includes/basis-covariance.md}
+
+\include{../../_kern/includes/brownian-covariance.md}
+
+\include{../../_kern/includes/mlp-covariance.md}
+
+### {data-transition="none"}
 
 <img src="../slides/diagrams/Planck_CMB.png" align="center" style="background:none; border:none; box-shadow:none;">
