@@ -34,7 +34,6 @@ $$p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mapping
 
 ### Process Composition
 
-\raggedleft{\zhenwenPicture{1.5cm}}
 
 -   From a process perspective: *process composition*.
 
@@ -51,5 +50,13 @@ latent variables in each layer.
     layers increase.
 
 -   [@Dunlop:deep2017] Theoretical analysis possible through conditional Gaussian Markov property.
+
+### {data-transition="None"}
+
+<object class="svgplot" data="../slides/diagrams/deep-markov-vertical.svg"></object>
+
+### {data-transition="None"}
+
+<object class="svgplot" data="../slides/diagrams/deep-markov-vertical-side.svg"></object>
 
 

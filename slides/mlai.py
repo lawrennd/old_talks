@@ -8,133 +8,56 @@ import matplotlib.pyplot as plt
 from IPython.display import display, clear_output, HTML
 
 
-##########          Week 1          ##########
-def hyperplane_coordinates(w, b, plot_limits):
-    """Helper function for plotting the decision boundary of the perceptron."""
-    if abs(w[1])>abs(w[0]):
-        # If w[1]>w[0] in absolute value, plane is likely to be leaving tops of plot.
-        x0 = plot_limits['x']
-        x1 = -(b + x0*w[0])/w[1]
+##########          Week 2          ##########
+def init_perceptron(x_plus, x_minus, seed=1000001):
+    np.random.seed(seed=seed)
+    # flip a coin (i.e. generate a random number and check if it is greater than 0.5)
+    choose_plus = np.random.rand(1)>0.5
+    if choose_plus:
+        # generate a random point from the positives
+        index = np.random.randint(0, x_plus.shape[1])
+        x_select = x_plus[index, :]
+        w = x_plus[index, :] # set the normal vector to that point.
+        b = 1
     else:
-        # otherwise plane is likely to be leaving sides of plot.
-        x1 = plot_limits['y']
-        x0 = -(b + x1*w[1])/w[0]
-    return x0, x1
+        # generate a random point from the negatives
+        index = np.random.randint(0, x_minus.shape[1])
+        x_select = x_minus[index, :]
+        w = -x_minus[index, :] # set the normal vector to minus that point.
+        b = -1
+    return w, b, x_select
 
-def init_perceptron_plot(f, ax, x_plus, x_minus, w, b, x_select):
-    """Initialise a plot for showing the perceptron decision boundary."""
 
-    h = {}
-
-    ax[0].set_aspect('equal')
-    # Plot the data again
-    ax[0].plot(x_plus[:, 0], x_plus[:, 1], 'rx')
-    ax[0].plot(x_minus[:, 0], x_minus[:, 1], 'go')
-    plot_limits = {}
-    plot_limits['x'] = np.asarray(ax[0].get_xlim())
-    plot_limits['y'] = np.asarray(ax[0].get_ylim())
-    x0, x1 = hyperplane_coordinates(w, b, plot_limits)
-    strt = -b/w[1]
-
-    h['arrow'] = ax[0].arrow(0, strt, w[0], w[1]+strt, head_width=0.2)
-    # plot a line to represent the separating 'hyperplane'
-    h['plane'], = ax[0].plot(x0, x1, 'b-')
-    ax[0].set_xlim(plot_limits['x'])
-    ax[0].set_ylim(plot_limits['y'])
-    ax[0].set_xlabel('$x_0$', fontsize=fontsize)
-    ax[0].set_ylabel('$x_1$', fontsize=fontsize)
-    h['iter'] = ax[0].set_title('Update 0')
-
-    h['select'], = ax[0].plot(x_select[0], x_select[1], 'ro', markersize=10)
-
-    bins = 15
-    f_minus = np.dot(x_minus, w)
-    f_plus = np.dot(x_plus, w)
-    ax[1].hist(f_plus, bins, alpha=0.5, label='+1', color='r')
-    ax[1].hist(f_minus, bins, alpha=0.5, label='-1', color='g')
-    ax[1].legend(loc='upper right')
-    return h
-
-def update_perceptron_plot(h, f, ax, x_plus, x_minus, i, w, b, x_select):
-    """Update plots after decision boundary has changed."""
-    # Helper function for updating plots
-    h['select'].set_xdata(x_select[0])
-    h['select'].set_ydata(x_select[1])
-    # Re-plot the hyper plane 
-    plot_limits = {}
-    plot_limits['x'] = np.asarray(ax[0].get_xlim())
-    plot_limits['y'] = np.asarray(ax[0].get_ylim())
-    x0, x1 = hyperplane_coordinates(w, b, plot_limits)
-    strt = -b/w[1]
-    h['arrow'].remove()
-    del(h['arrow'])
-    h['arrow'] = ax[0].arrow(0, strt, w[0], w[1]+strt, head_width=0.2)
-    
-    h['plane'].set_xdata(x0)
-    h['plane'].set_ydata(x1)
-
-    h['iter'].set_text('Update ' + str(i))
-    ax[1].cla()
-    bins = 15
-    f_minus = np.dot(x_minus, w)
-    f_plus = np.dot(x_plus, w)
-    ax[1].hist(f_plus, bins, alpha=0.5, label='+1', color='r')
-    ax[1].hist(f_minus, bins, alpha=0.5, label='-1', color='g')
-    ax[1].legend(loc='upper right')
-
-    display(f)
-    clear_output(wait=True)
-    if i<3:
-        time.sleep(0.5)
+def update_perceptron(w, b, x_plus, x_minus, learn_rate):
+    "Update the perceptron."
+    # select a point at random from the data
+    choose_plus = np.random.uniform(size=1)>0.5
+    updated=False
+    if choose_plus:
+        # choose a point from the positive data
+        index = np.random.randint(x_plus.shape[0])
+        x_select = x_plus[index, :]
+        if np.dot(w, x_select)+b <= 0.:
+            # point is currently incorrectly classified
+            w += learn_rate*x_select
+            b += learn_rate
+            updated=True
     else:
-        time.sleep(.25)   
-    return h
-
-def init_regression_plot(f, ax, x, y, m_vals, c_vals, E_grid, m_star, c_star, fontsize=20):
-    """Function to plot the initial regression fit and the error surface."""
-    h = {}
-    levels=[0, 0.5, 1, 2, 4, 8, 16, 32, 64]
-    h['cont'] = ax[0].contour(m_vals, c_vals, E_grid, levels=levels) # this makes the contour plot on axes 0.
-    plt.clabel(h['cont'], inline=1, fontsize=15)
-    ax[0].set_xlabel('$m$', fontsize=fontsize)
-    ax[0].set_ylabel('$c$', fontsize=fontsize)
-    h['msg'] = ax[0].set_title('Error Function', fontsize=fontsize)
-
-    # Set up plot
-    h['data'], = ax[1].plot(x, y, 'r.', markersize=10)
-    ax[1].set_xlabel('$x$', fontsize=fontsize)
-    ax[1].set_ylabel('$y$', fontsize=fontsize)
-    ax[1].set_ylim((-9, -1)) # set the y limits of the plot fixed
-    ax[1].set_title('Best Fit', fontsize=fontsize)
-
-    # Plot the current estimate of the best fit line
-    x_plot = np.asarray(ax[1].get_xlim()) # get the x limits of the plot for plotting the current best line fit.
-    y_plot = m_star*x_plot + c_star
-    h['fit'], = ax[1].plot(x_plot, y_plot, 'b-', linewidth=3)
-    return h
-
-def update_regression_plot(h, f, ax, m_star, c_star, iteration):
-    """Update the regression plot with the latest fit and position in error space."""
-    ax[0].plot(m_star, c_star, 'g*')
-    x_plot = np.asarray(ax[1].get_xlim()) # get the x limits of the plot for plo
-    y_plot = m_star*x_plot + c_star
-    
-    # show the current status on the plot of the data
-    h['fit'].set_ydata(y_plot)
-    h['msg'].set_text('Iteration '+str(iteration))
-    display(f)
-    clear_output(wait=True)
-    time.sleep(0.25) # pause between iterations to see update
-    return h
+        # choose a point from the negative data
+        index = np.random.randint(x_minus.shape[0])
+        x_select = x_minus[index, :]
+        if np.dot(w, x_select)+b > 0.:
+            # point is currently incorrectly classified
+            w -= learn_rate*x_select
+            b -= learn_rate
+            updated=True
+    return w, b, x_select, updated
 
 ##########           Weeks 4 and 5           ##########
 class Model(object):
     def __init__(self):
         pass
     
-    def predict(self, X):
-        raise NotImplementedError
-
     def objective(self):
         raise NotImplementedError
 
@@ -145,17 +68,37 @@ class ProbModel(Model):
     def __init__(self):
         Model.__init__(self)
 
+    def objective(self):
+        return -self.log_likelihood()
+
     def log_likelihood(self):
         raise NotImplementedError
 
-class ProbMapModel(ProbModel):
-    """Probabilistic model that provides a mapping from X to y."""
+class MapModel(Model):
+    "Model that provides a mapping from X to y."
     def __init__(self, X, y):
-        ProbModel.__init__(self)
+        Model.__init__(self)
         self.X = X
         self.y = y
         self.num_data = y.shape[0]
-        
+
+    def update_sum_squares(self):
+        raise NotImplementedError
+    
+    def rmse(self):
+        self.update_sum_squares()
+        return np.sqrt(self.sum_squares()/self.num_data)
+
+    def predict(self, X):
+        raise NotImplementedError
+
+    
+class ProbMapModel(ProbModel, MapModel):
+    """Probabilistic model that provides a mapping from X to y."""
+    def __init__(self, X, y):
+        ProbModel.__init__(self)
+        MapModel.__init__(self, X, y)
+
     
 class LM(ProbMapModel):
     """Linear model
@@ -177,6 +120,8 @@ class LM(ProbMapModel):
         self.num_basis = num_basis
         self.basis_args = kwargs
         self.Phi = basis(X, num_basis=num_basis, **kwargs)
+        self.name = 'LM_'+basis.__name__
+        self.objective_name = 'Sum of Square Training Error'
 
     def update_QR(self):
         "Perform the QR decomposition on the basis matrix."
@@ -240,6 +185,7 @@ def radial(x, num_basis=4, data_limits=[-1., 1.], width=None):
         Phi[:, i:i+1] = np.exp(-0.5*((x-centres[i])/width)**2)
     return Phi
 
+
 def fourier(x, num_basis=4, data_limits=[-1., 1.], frequency=None):
     "Fourier basis"
     tau = 2*np.pi
@@ -253,6 +199,21 @@ def fourier(x, num_basis=4, data_limits=[-1., 1.], frequency=None):
             Phi[:, i:i+1] = np.sin(tau*frequency*x)
         else:
             Phi[:, i:i+1] = np.cos(tau*frequency*x)
+    return Phi
+
+def relu(x, num_basis=4, data_limits=[-1., 1.], gain=None):
+    "Rectified linear units basis"
+    if num_basis>2:
+        centres=np.linspace(data_limits[0], data_limits[1], num_basis)
+    else:
+        centres = np.asarray([data_limits[0]/2. + data_limits[1]/2.])
+    if gain is None:
+        gain = np.ones(num_basis-1)
+    Phi = np.zeros((x.shape[0], num_basis))
+    # Create the bias
+    Phi[:, 0] = 1.0
+    for i in range(1, num_basis):
+        Phi[:, i:i+1] = (gain[i-1]*x>centres[i-1])*(x-centres[i-1])
     return Phi
 
 def plot_basis(basis, x_min, x_max, fig, ax, loc, text, directory='./diagrams', fontsize=20):
@@ -271,17 +232,17 @@ def plot_basis(basis, x_min, x_max, fig, ax, loc, text, directory='./diagrams', 
     ax.set_xlabel('$x$', fontsize=fontsize)
     ax.set_ylabel('$\phi(x)$', fontsize=fontsize)
 
-    plt.savefig(directory + '/' + basis.__name__ + '_basis1.svg')
+    plt.savefig(directory + '/' + basis.__name__ + '_basis001.svg')
 
     ax.plot(x, Phi[:, 1], '-', color=[1, 0, 1], linewidth=3)
     ax.text(loc[1][0], loc[1][1], text[1], horizontalalignment='center', fontsize=fontsize)
 
-    plt.savefig(directory + '/' + basis.__name__ + '_basis2.svg')
+    plt.savefig(directory + '/' + basis.__name__ + '_basis002.svg')
 
     ax.plot(x, Phi[:, 2], '-', color=[0, 0, 1], linewidth=3)
     ax.text(loc[2][0], loc[2][1], text[2], horizontalalignment='center', fontsize=fontsize)
 
-    plt.savefig(directory + '/' + basis.__name__ + '_basis3.svg')
+    plt.savefig(directory + '/' + basis.__name__ + '_basis003.svg')
 
     w = np.random.normal(size=(3, 1))
     
@@ -301,14 +262,14 @@ def plot_basis(basis, x_min, x_max, fig, ax, loc, text, directory='./diagrams', 
     for i in range(w.shape[0]):
         t.append(ax.text(loc[i][0], loc[i][1], '$w_' + str(i) + ' = '+ str(w[i]) + '$', horizontalalignment='center', fontsize=fontsize))
 
-    plt.savefig(directory + '/' + basis.__name__ + '_function1.svg')
+    plt.savefig(directory + '/' + basis.__name__ + '_function001.svg')
 
     w = np.random.normal(size=(3, 1)) 
     f = np.dot(Phi,w) 
     a.set_ydata(f)
     for i in range(3):
         t[i].set_text('$w_' + str(i) + ' = '+ str(w[i]) + '$')
-    plt.savefig(directory + '/' + basis.__name__ + '_function2.svg')
+    plt.savefig(directory + '/' + basis.__name__ + '_function002.svg')
 
 
     w = np.random.normal(size=(3, 1)) 
@@ -316,53 +277,13 @@ def plot_basis(basis, x_min, x_max, fig, ax, loc, text, directory='./diagrams', 
     a.set_ydata(f)
     for i in range(3):
         t[i].set_text('$w_' + str(i) + ' = '+ str(w[i]) + '$')
-    plt.savefig(directory + '/' + basis.__name__ + '_function3.svg')
+    plt.savefig(directory + '/' + basis.__name__ + '_function003.svg')
 
 
-    
-def plot_marathon_fit(model, data_limits, fig, ax, x_val=None, y_val=None, objective=None, directory='./diagrams', fontsize=20, objective_ylim=None, prefix='olympic', title=None):
-    "Plot fit of the marathon data alongside error."
-    ax[0].cla()
-    ax[0].plot(model.X, model.y, 'o', color=[1, 0, 0], markersize=6, linewidth=3)
-    if x_val is not None and y_val is not None:
-        ax[0].plot(x_val, y_val, 'o', color=[0, 1, 0], markersize=6, linewidth=3)
-        
-    ylim = ax[0].get_ylim()
+#################### Session 5 ####################
 
-    x_pred = np.linspace(data_limits[0], data_limits[1], 130)[:, None]
-    y_pred, y_var = model.predict(x_pred)
-    
-    ax[0].plot(x_pred, y_pred, color=[0, 0, 1], linewidth=2)
-    if y_var is not None:
-        y_err = np.sqrt(y_var)*2
-        ax[0].plot(x_pred, y_pred + y_err, '--', color=[0, 0, 1], linewidth=1)
-        ax[0].plot(x_pred, y_pred - y_err, '--', color=[0, 0, 1], linewidth=1)
-        
-    ax[0].set_xlabel('year', fontsize=fontsize)
-    ax[0].set_ylim(ylim)
-    plt.sca(ax[0])
+#################### Session 6 ####################
 
-    xlim = ax[0].get_xlim()
-
-    if objective is not None:
-        max_basis = len(objective)
-        if objective is not None:
-            ax[1].set_ylim(objective_ylim)
-        if model.basis.__name__ == 'polynomial':
-            ax[1].set_xlabel('polynomial order', fontsize=fontsize)
-            ax[1].set_xlim([-1, max_basis])
-            basis_vals = range(max_basis)
-        else:
-            ax[1].set_xlabel('number of basis', fontsize=fontsize)
-            basis_vals = range(1, max_basis+1)
-        ax[1].plot(basis_vals, objective, 'o', color=[1, 0, 0], markersize=6, linewidth=3)
-        if title is not None:
-            ax[1].set_title(title, fontsize=fontsize)
-            
-    file_name = prefix + '_' + model.__class__.__name__ + '_' + model.basis.__name__ + str(model.num_basis) + '.svg'
-    plt.savefig(directory + '/' +file_name)
-
-##########          Week 6           ##########
 
 class Noise(ProbModel):
     """Noise model"""
@@ -419,6 +340,80 @@ class Gaussian(Noise):
         dlnZ_dmu = dlnZ_dmu*nu
         dlnZ_dvs = 0.5*(dlnZ_dmu*dlnZ_dmu - nu)
         return dlnZ_dmu, dlnZ_dvs
+
+class SimpleNeuralNetwork(Model):
+    """A simple one layer neural network
+    :param nodes: number of hidden nodes
+    """
+    def __init__(self, nodes):
+        self.nodes = nodes
+        self.w2 = np.random.normal(size=self.nodes)/self.nodes
+        self.b2 = np.random.normal(size=1)
+        self.w1 = np.random.normal(size=self.nodes)
+        self.b1 = np.random.normal(size=self.nodes)
+        
+
+    def predict(self, x):
+        "Compute output given current basis functions."
+        vxmb = self.w1*x + self.b1
+        phi = vxmb*(vxmb>0)
+        return np.sum(self.w2*phi) + self.b2
+
+class SimpleDropoutNeuralNetwork(SimpleNeuralNetwork):
+    """Simple neural network with dropout
+    :param nodes: number of hidden nodes
+    :param drop_p: drop out probability
+    """
+    def __init__(self, nodes, drop_p=0.5):
+        self.drop_p = drop_p
+        nn.__init__(self, nodes=nodes)
+        # renormalize the network weights
+        self.w2 /= self.drop_p 
+        
+    def do_samp(self):
+        "Sample the set of basis functions to use" 
+        gen = np.random.rand(self.nodes)
+        self.use = gen > self.drop_p
+        
+    def predict(self, x):
+        "Compute output given current basis functions used."
+        vxmb = self.w1[self.use]*x + self.b1[self.use]
+        phi = vxmb*(vxmb>0)
+        return np.sum(self.w2[self.use]*phi) + self.b2
+
+class NonparametricDropoutNeuralNetwork(SimpleDropoutNeuralNetwork):
+    """A non parametric dropout neural network
+    :param alpha: alpha parameter of the IBP controlling dropout.
+    :param beta: beta parameter of the two parameter IBP controlling dropout."""
+    def __init__(self, alpha=10, beta=1, n=1000):
+        self.update_num = 0
+        self.alpha = alpha
+        self.beta = beta
+        self.gamma = 0.5772156649
+        tot = np.log(n) + self.gamma + 0.5/n * (1./12.)/(n*n)
+        self.exp_features = alpha*beta*tot
+        self.maxk = np.max((10000,int(self.exp_features + np.ceil(4*np.sqrt(self.exp_features)))))
+        donn.__init__(self, nodes=self.maxk, drop_p=self.alpha/self.maxk)
+        self.maxval = 0
+        self.w2 *= self.maxk/self.alpha
+        self.count = np.zeros(self.maxk)
+    
+    
+        
+    def do_samp(self):
+        "Sample the next set of basis functions to be used"
+        
+        new=np.random.poisson(self.alpha*self.beta/(self.beta + self.update_num))
+        use_prob = self.count[:self.maxval]/(self.update_num+self.beta)
+        gen = np.random.rand(1, self.maxval)
+        self.use = np.zeros(self.maxk, dtype=bool)
+        self.use[:self.maxval] = gen < use_prob
+        self.use[self.maxval:self.maxval+new] = True
+        self.maxval+=new
+        self.update_num+=1
+        self.count[:self.maxval] += self.use[:self.maxval]
+        
+
     
 class BLM(ProbMapModel):
     """Bayesian Linear model
@@ -442,6 +437,8 @@ class BLM(ProbMapModel):
         self.num_basis = num_basis
         self.basis_args = kwargs
         self.Phi = basis(X, num_basis=num_basis, **kwargs)
+        self.name = 'BLM_'+basis.__name__
+        self.objective_name = 'Negative Marginal Likelihood'
         
     def update_QR(self):
         "Perform the QR decomposition on the basis matrix."
@@ -479,13 +476,22 @@ class BLM(ProbMapModel):
     
     def objective(self):
         """Compute the objective function."""
-        self.update_sum_squares()
-        return self.sum_squares
+        return - self.log_likelihood()
 
+    def update_nll(self):
+        """Precompute terms needed for the log likelihood."""
+        self.log_det = self.num_data*np.log(self.sigma2*np.pi*2.)-2*np.log(np.abs(np.linalg.det(self.Q[self.y.shape[0]:, :])))
+        self.quadratic = (self.y*self.y).sum()/self.sigma2 - (self.QTy*self.QTy).sum()/self.sigma2
+        
+    def nll_split(self):
+        "Compute the determinant and quadratic term of the negative log likelihood"
+        self.update_nll()
+        return self.log_det, self.quadratic
+    
     def log_likelihood(self):
         """Compute the log likelihood."""
-        #self.update_sum_squares()
-        return -self.num_data*np.log(self.sigma2*np.pi*2.)+2*np.log(np.abs(np.linalg.det(self.Q[self.y.shape[0]:, :])))-(self.y*self.y).sum()/self.sigma2 + (self.QTy*self.QTy).sum()/self.sigma2 
+        self.update_ll()
+        return -self.log_det - self.quadratic
 
 ##########          Week 8            ##########
 
@@ -587,7 +593,7 @@ class LR(ProbMapModel):
         return self.log_g[self.y.values, :].sum() + np.log_gminus[~self.y.values, :].sum()
     
 ##########          Week 12          ##########
-class GP():
+class GP(ProbMapModel):
     def __init__(self, X, y, sigma2, kernel, **kwargs):
         self.K = compute_kernel(X, X, kernel, **kwargs)
         self.X = X
@@ -596,10 +602,12 @@ class GP():
         self.kernel = kernel
         self.kernel_args = kwargs
         self.update_inverse()
-    
+        self.name = 'GP_'+kernel.__name__
+        self.objective_name = 'Negative Marginal Likelihood'
+
     def update_inverse(self):
-        # Preompute the inverse covariance and some quantities of interest
-        ## NOTE: This is not the correct *numerical* way to compute this! It is for ease of use.
+        # Pre-compute the inverse covariance and some quantities of interest
+        ## NOTE: This is *not* the correct *numerical* way to compute this! It is for ease of mapping onto the maths.
         self.Kinv = np.linalg.inv(self.K+self.sigma2*np.eye(self.K.shape[0]))
         # the log determinant of the covariance matrix.
         self.logdetK = np.linalg.det(self.K+self.sigma2*np.eye(self.K.shape[0]))
@@ -607,20 +615,41 @@ class GP():
         self.Kinvy = np.dot(self.Kinv, self.y)
         self.yKinvy = (self.y*self.Kinvy).sum()
 
-        
+    def fit(self):
+        pass
+
+    def update_nll(self):
+        "Precompute the log determinant and quadratic term from the negative log likelihod"
+        self.log_det = 0.5*(self.K.shape[0]*np.log(2*np.pi) + self.logdetK)
+        self.quadratic =  0.5*self.yKinvy
+                            
+    def nll_split(self):
+        "Return the two components of the negative log likelihood"
+        return self.log_det, self.quadratic
+    
     def log_likelihood(self):
-        # use the pre-computes to return the likelihood
-        return -0.5*(self.K.shape[0]*np.log(2*np.pi) + self.logdetK + self.yKinvy)
+        "Use the pre-computes to return the likelihood"
+        self.update_nll()
+        return -self.log_det - self.quadratic
     
     def objective(self):
-        # use the pre-computes to return the objective function 
+        "Use the pre-computes to return the objective function"
         return -self.log_likelihood()
 
-
+    def predict(self, X_test, full_cov=False):
+        "Give a mean and a variance of the prediction."
+        K_star = compute_kernel(self.X, X_test, self.kernel, **self.kernel_args)
+        A = np.dot(self.Kinv, K_star)
+        mu_f = np.dot(A.T, self.y)
+        k_starstar = compute_diag(X_test, self.kernel, **self.kernel_args)
+        c_f = k_starstar - (A*K_star).sum(0)[:, None]
+        return mu_f, c_f
+        
 def posterior_f(self, X_test):
     K_star = compute_kernel(self.X, X_test, self.kernel, **self.kernel_args)
     A = np.dot(self.Kinv, K_star)
-    mu_f = np.dot(A.T, y)
+    mu_f = np.dot(A.T, self.y)
+    K_starstar = compute_kernel(X_test, X_test, self.kernel, **self.kernel_args)
     C_f = K_starstar - np.dot(A.T, K_star)
     return mu_f, C_f
 
@@ -637,16 +666,123 @@ def update_inverse(self):
     self.Rinv = sp.linalg.solve_triangular(self.R, np.eye(self.K.shape[0]))
     self.Kinv = np.dot(self.Rinv, self.Rinv.T)
     
-def compute_kernel(X, X2, kernel, **kwargs):
+def compute_kernel(X, X2=None, kernel=None, **kwargs):
+    """Compute the full covariance function given a kernel function for two data points."""
+    if X2 is None:
+        X2 = X
     K = np.zeros((X.shape[0], X2.shape[0]))
     for i in np.arange(X.shape[0]):
         for j in np.arange(X2.shape[0]):
+            
             K[i, j] = kernel(X[i, :], X2[j, :], **kwargs)
         
     return K
-    
+
+def compute_diag(X, kernel=None, **kwargs):
+    """Compute the full covariance function given a kernel function for two data points."""
+    diagK = np.zeros((X.shape[0], 1))
+    for i in range(X.shape[0]):            
+        diagK[i] = kernel(X[i, :], X[i, :], **kwargs)
+    return diagK
+
 def exponentiated_quadratic(x, x_prime, variance=1., lengthscale=1.):
     "Exponentiated quadratic covariance function."
-    squared_distance = ((x-x_prime)**2).sum()
-    return variance*np.exp((-0.5*squared_distance)/lengthscale**2)        
+    r = np.linalg.norm(x-x_prime, 2)
+    return variance*np.exp((-0.5*r*r)/lengthscale**2)        
 
+def mlp_cov(x, x_prime, variance=1., w=1., b=5., alpha=0.):
+    "Covariance function for a MLP based neural network."
+    inner = np.dot(x, x_prime)*w + b
+    norm = np.sqrt(np.dot(x, x)*w + alpha + soft)*np.sqrt(np.dot(x_prime, x_prime)*w + b+alpha)
+    arg = np.clip(inner/norm, -1, 1) # clip as numerically can be > 1
+    theta = np.arccos(arg)
+    return variance*0.5*(1. - theta/np.pi)      
+
+
+def relu_cov(x, x_prime, scale=1., w=1., b=5., alpha=0.):
+    """Covariance function for a ReLU based neural network.
+    :param x: first input
+    :param x_prime: second input
+    :param scale: overall scale of the covariance
+    :param w: the overall scale of the weights on the input.
+    :param b: the overall scale of the bias on the input
+    :param alpha: the smoothness of the relu activation"""
+    def h(costheta, inner, s, a):
+        "Helper function"
+        cos2th = costheta*costheta
+        return (1-(2*s*s-1)*cos2th)/np.sqrt(a/inner + 1 - s*s*cos2th)*s
+
+    inner = np.dot(x, x_prime)*w + b
+    inner_1 = np.dot(x, x)*w + b
+    inner_2 = np.dot(x_prime, x_prime)*w + b
+    norm_1 = np.sqrt(inner_1 + alpha)
+    norm_2 = np.sqrt(inner_2 + alpha)
+    norm = norm_1*norm_2
+    s = np.sqrt(inner_1)/norm_1
+    s_prime = np.sqrt(inner_2)/norm_2
+    arg = np.clip(inner/norm, -1, 1) # clip as numerically can be > 1
+    arg2 = np.clip(inner/np.sqrt(inner_1*inner_2), -1, 1) # clip as numerically can be > 1
+    theta = np.arccos(arg)
+    return variance*0.5*((1. - theta/np.pi)*inner + h(arg2, inner_2, s, alpha)/np.pi + h(arg2, inner_1, s_prime, alpha)/np.pi) 
+
+
+def polynomial_cov(x, x_prime, variance=1., degree=2., w=1., b=1.):
+    "Polynomial covariance function."
+    return variance*(np.dot(x, x_prime)*w + b)**degree
+
+def linear_cov(x, x_prime, variance=1.):
+    "Linear covariance function."
+    return variance*np.dot(x, x_prime)
+
+def bias_cov(x, x_prime, variance=1.):
+    "Bias covariance function."
+    return variance
+
+def mlp_cov(x, x_prime, variance=1., w=1., b=1.):
+    "MLP covariance function."
+    return variance*np.arcsin((w*np.dot(x, x_prime) + b)/np.sqrt((np.dot(x, x)*w +b + 1)*(np.dot(x_prime, x_prime)*w + b + 1)))
+
+def sinc_cov(x, x_prime, variance=1., w=1.):
+    "Sinc covariance function."
+    r = np.linalg.norm(x-x_prime, 2)
+    return variance*np.sinc(np.pi*w*r)
+
+def ou_cov(x, x_prime, variance=1., lengthscale=1.):
+    "Ornstein Uhlenbeck covariance function."
+    r = np.linalg.norm(x-x_prime, 2)
+    return variance*np.exp(-r/lengthscale)        
+
+def brownian_cov(t, t_prime, variance=1.):
+    "Brownian motion covariance function."
+    if t>=0 and t_prime>=0:
+        return variance*np.min([t, t_prime])
+    else:
+        raise ValueError("For Brownian motion covariance only positive times are valid.")
+
+def periodic_cov(x, x_prime, variance=1., lengthscale=1., w=1.):
+    "Periodic covariance function"
+    r = np.linalg.norm(x-x_prime, 2)
+    return variance*np.exp(-2./(lengthscale*lengthscale)*np.sin(np.pi*r*w)**2)
+
+def ratquad_cov(x, x_prime, variance=1., lengthscale=1., alpha=1.):
+    "Rational quadratic covariance function"
+    r = np.linalg.norm(x-x_prime, 2)
+    return variance*(1. + r*r/(2*alpha*lengthscale*lengthscale))**-alpha
+
+def prod_cov(x, x_prime, kerns, kern_args):
+    "Product covariance function."
+    k = 1.
+    for kern, kern_arg in zip(kerns, kern_args):
+        k*=kern(x, x_prime, **kern_arg)
+    return k
+        
+def add_cov(x, x_prime, kerns, kern_args):
+    "Additive covariance function."
+    k = 0.
+    for kern, kern_arg in zip(kerns, kern_args):
+        k+=kern(x, x_prime, **kern_arg)
+    return k
+
+def basis_cov(x, x_prime, basis, **kwargs):
+    "Basis function covariance."
+    return (basis(x, **kwargs)*basis(x_prime, **kwargs)).sum()

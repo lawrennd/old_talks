@@ -1,8 +1,5 @@
-<!--frame failure start-->
+### Deep Models {data-transition="None"}
 
-  \frametitle{Deep Models}
-  \def\layersep{1.5cm}
-  \def\nodesep{1cm}
   \begin{center}
     \begin{tikzpicture}[node distance=\layersep]
       \tikzstyle{annot} = [text width=4em, text centered]    % Draw the input layer nodes
@@ -60,12 +57,7 @@
     \end{tikzpicture}
   \end{center}
   
-  
-
-<!--frame failure end-->
-<!--frame failure start-->
-
-  \frametitle{Deep Models}
+### Deep Models {data-transition="None"}
   \def\layersep{1.5cm}
   \def\nodesep{1cm}
   \begin{center}
@@ -109,17 +101,11 @@
   \end{center}
   
 
-<!--frame failure end-->
-<!--frame start-->
 ### Deep Gaussian Processes
 
-\begin{flushright}
-    \andreasPicture{1.5cm}\\{\scriptsize \cite{Damianou:deepgp13}}
-  \end{flushright}
 -   Deep architectures allow abstraction of features
-    [\scriptsize[@Bengio:deep09; @Hinton:fast06; @Salakhutdinov:quantitative08]]{}.
+    [@Bengio:deep09; @Hinton:fast06; @Salakhutdinov:quantitative08]
 
 -   We use variational approach to stack GP models.
 
-<!--frame end-->
 
