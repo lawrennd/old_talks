@@ -55,6 +55,36 @@ CMB samples -> Life
 
 *Image credit: Kai Arulkumaran*
 
+### Full Gaussian Process Fit {data-transition="None"}
+
+<object data="../slides/diagrams/gp-approx-full.svg" class="svgplot"></object>
+
+### Inducing Variable Fit {data-transition="None"}
+
+<object data="../slides/diagrams/gp-approx-sparse-init.svg" class="svgplot"></object>
+
+### Inducing Variable Param Optimize {data-transition="None"}
+
+<object data="../slides/diagrams/gp-approx-sparse-fit-1.svg" class="svgplot"></object>
+
+### Inducing Variable Full Optimize {data-transition="None"}
+
+<object data="../slides/diagrams/gp-approx-sparse-fit-2.svg" class="svgplot"></object>
+
+### Full Gaussian Process Fit {data-transition="None"}
+
+<object data="../slides/diagrams/gp-approx-full.svg" class="svgplot"></object>
+
+### Mordern Review
+
+* *A Unifying Framework for Gaussian Process Pseudo-Point Approximations using Power Expectation Propagation*
+    @Thang:unifying17
+
+* *Deep Gaussian Processes and Variational Propagation of Uncertaint*
+    @Damianou:thesis2015
+
+
+
 \include{../_deepgp/includes/deep-nn-gp.md}
 \include{../_deepgp/includes/deeptheory.md}
 
@@ -88,8 +118,6 @@ CMB samples -> Life
     @Ranganath-survival16
 * *Recurrent Gaussian Processes*
     @Mattos:recurrent15
-* *Deep Gaussian Processes and Variational Propagation of Uncertaint*
-    @Damianou:thesis2015
 * *Gaussian Process Based Approaches for Survival Analysis*
     @Saul:thesis2016
 
