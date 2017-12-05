@@ -1028,12 +1028,14 @@ def correlated_height_weight(h=None, w=None, muh=1.7, varh=0.0225, muw=75, varw=
 #################### Session 11 ####################
 
 def two_point_pred(K, f, x, ax=None, ind=[0, 1],
-                        conditional_linestyle = '-',
-                        conditional_linecolor = [1., 0., 0.],
-                        conditional_size = 4,
-                        fixed_linestyle = '-',
-                        fixed_linecolor = [0., 1., 0.],
-                        fixed_size = 4,stub=None, start=0, diagrams='../diagrams'):
+                   conditional_linestyle = '-',
+                   conditional_linecolor = [1., 0., 0.],
+                   conditional_size = 4,
+                   fixed_linestyle = '-',
+                   fixed_linecolor = [0., 1., 0.],
+                   fixed_size = 4, stub=None, start=0,
+                   diagrams='../diagrams'):
+    """Plot two dimensional predictions of the Gaussian density"""
     
     subK = K[ind][:, ind]
     f = f[ind]
@@ -1194,53 +1196,53 @@ def two_point_sample(kernel_function, diagrams='../diagrams', **args):
     mlai.write_figure(os.path.join(diagrams, 'two_point_sample003.svg'), transparent=True)
 
     obj = matrix(K, ax=ax[1], type='image', 
-                      highlight=True, 
-                      highlight_row=[0, 1], 
-                      highlight_col=[0,1], 
-                      highlight_color=hcolor,
-                      highlight_width=5,
-                     zoom=True,
-                     zoom_row=[0, 9],
-                     zoom_col=[0, 9])
+                 highlight=True, 
+                 highlight_row=[0, 1], 
+                 highlight_col=[0,1], 
+                 highlight_color=hcolor,
+                 highlight_width=5,
+                 zoom=True,
+                 zoom_row=[0, 9],
+                 zoom_col=[0, 9])
     ax[1].set_xlabel('$i$',fontsize=16)
     ax[1].set_ylabel('$i^\prime$',fontsize=16)
     mlai.write_figure(os.path.join(diagrams, 'two_point_sample004.svg'), transparent=True)
 
     obj = matrix(K, ax=ax[1], type='image', 
-                      highlight=True, 
-                      highlight_row=[0, 1], 
-                      highlight_col=[0,1], 
-                      highlight_color=hcolor,
-                      highlight_width=6,
-                     zoom=True,
-                     zoom_row=[0, 4],
-                     zoom_col=[0, 4])
+                 highlight=True, 
+                 highlight_row=[0, 1], 
+                 highlight_col=[0,1], 
+                 highlight_color=hcolor,
+                 highlight_width=6,
+                 zoom=True,
+                 zoom_row=[0, 4],
+                 zoom_col=[0, 4])
     ax[1].set_xlabel('$i$',fontsize=16)
     ax[1].set_ylabel('$i^\prime$',fontsize=16)
     mlai.write_figure(os.path.join(diagrams, 'two_point_sample005.svg'), transparent=True)
 
     obj = matrix(K, ax=ax[1], type='image', 
-                      highlight=True, 
-                      highlight_row=[0, 1], 
-                      highlight_col=[0,1], 
-                      highlight_color=hcolor,
-                      highlight_width=7,
-                     zoom=True,
-                     zoom_row=[0, 2],
-                     zoom_col=[0, 2])
+                 highlight=True, 
+                 highlight_row=[0, 1], 
+                 highlight_col=[0,1], 
+                 highlight_color=hcolor,
+                 highlight_width=7,
+                 zoom=True,
+                 zoom_row=[0, 2],
+                 zoom_col=[0, 2])
     ax[1].set_xlabel('$i$',fontsize=16)
     ax[1].set_ylabel('$i^\prime$',fontsize=16)
     mlai.write_figure(os.path.join(diagrams, 'two_point_sample006.svg'), transparent=True)
 
     obj = matrix(K, ax=ax[1], type='image', 
-                      highlight=True, 
-                      highlight_row=[0, 1], 
-                      highlight_col=[0,1], 
-                      highlight_color=hcolor,
-                      highlight_width=8,
-                     zoom=True,
-                     zoom_row=[0, 1],
-                     zoom_col=[0, 1])
+                 highlight=True, 
+                 highlight_row=[0, 1], 
+                 highlight_col=[0,1], 
+                 highlight_color=hcolor,
+                 highlight_width=8,
+                 zoom=True,
+                 zoom_row=[0, 1],
+                 zoom_col=[0, 1])
     ax[1].set_xlabel('$i$',fontsize=16)
     ax[1].set_ylabel('$i^\prime$',fontsize=16)
     mlai.write_figure(os.path.join(diagrams, 'two_point_sample007.svg'), transparent=True)
@@ -1253,8 +1255,14 @@ def two_point_sample(kernel_function, diagrams='../diagrams', **args):
     ax[0].cla()
     two_point_pred(K, f.T, x, ax=ax[0],ind=[0, 1], stub='two_point_sample', start=9, diagrams=diagrams)
 
+    ind = [0, 4]
+    obj = matrix(K[ind, ind], ax=ax[1], type='values')
+    ax[1].set_xlabel('$i$',fontsize=16)
+    ax[1].set_ylabel('$i^\prime$',fontsize=16)
+    mlai.write_figure(os.path.join(diagrams, 'two_point_sample008.svg'), transparent=True)
+
     ax[0].cla()
-    two_point_pred(K, f.T, x, ax=ax[0],ind=[0, 4], stub='two_point_sample', start=13, diagrams=diagrams)
+    two_point_pred(K, f.T, x, ax=ax[0],ind=ind, stub='two_point_sample', start=13, diagrams=diagrams)
 
 
 def poisson(diagrams='../diagrams'):
