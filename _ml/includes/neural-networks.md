@@ -33,7 +33,7 @@ $\activationVector(\cdot)$ is a vector function with vector inputs.
 * $\mappingVector_{1}$ are *static* parameters.
 
 
-### Adaptive Basis Functions {data-transiation="None"}
+### Adaptive Basis Functions {data-transition="None"}
 
 * In machine learning we optimize $\mappingMatrix_{1}$ as well as  $\mappingMatrix_{2}$ (which would normally be denoted in statistics by $\boldsymbol{\beta}$).
 

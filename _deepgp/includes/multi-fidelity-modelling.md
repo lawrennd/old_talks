@@ -1,18 +1,18 @@
-### Multi-fidelity Modelling
+### Multi-fidelity Modelling {data-transition=None}
 
 * Deep nets are powerful approach to images, speech, language.
 
 * Proposal: Deep GPs may also be a great approach, but better to deploy according to natural strengths.
 
-### Uncertainty Quantification
+### Uncertainty Quantification {data-transition=None}
 
-* Probabilistic numerics, surrogate modelelling, emulation, and UQ.
+* Probabilistic numerics, surrogate modelling, emulation, and UQ.
 
 * Not a fan of AI as a term.
 
 * But we are faced with increasing amounts of *algorithmic decision making*.
 
-### ML and Decision Making
+### ML and Decision Making {data-transition=None}
 
 * When trading off decisions: compute or acquire data?
 
@@ -42,4 +42,4 @@ But with Deep Gaussian processes [@Perdikaris:multifidelity17] we can consider t
 
 $$\mappingFunction_i\left(\inputVector\right) = \mappingFunctionTwo_{i}\left(\mappingFunction_{i-1}\left(\inputVector\right)\right) + \delta_i\left(\inputVector \right),$$
 
-### Notebook Example
+### Notebook Example {data-transition=None}
