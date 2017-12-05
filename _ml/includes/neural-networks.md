@@ -1,4 +1,4 @@
-### Neural Networks and Prediction Functions {data-transiation="None"}
+### Neural Networks and Prediction Functions {data-transition="None"}
 
 *  adaptive non-linear function models inspired by simple neuron models [@McCulloch:neuron43]
 
@@ -8,7 +8,7 @@
 
 * start by focussing on one hidden layer
 
-### Prediction Function of One Hidden Layer {data-transiation="None"}
+### Prediction Function of One Hidden Layer {data-transition="None"}
 
 $$
 \mappingFunction(\inputVector) = \left.\mappingVector^{(2)}\right.^\top \activationVector(\mappingMatrix_{1}, \inputVector)
@@ -24,7 +24,7 @@ $\activationVector(\cdot)$ is a vector function with vector inputs.
 
 * elements of $\mappingMatrix_{1}$ are the parameters of the activation functions.
 
-### Relations with Classical Statistics {data-transiation="None"}
+### Relations with Classical Statistics {data-transition="None"}
 
 * In statistics activation functions are known as *basis functions*.
 
