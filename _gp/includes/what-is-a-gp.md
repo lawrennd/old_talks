@@ -102,7 +102,7 @@ $$\text{data} + \text{model} \rightarrow \text{prediction}$$
 
 \include{../../_kern/includes/eq-covariance.md}
 
-\include{../../_gp/includes/olympic-marathon-gp.md}
+include{../../_gp/includes/olympic-marathon-gp.md}
 
 \include{../../_kern/includes/basis-covariance.md}
 
