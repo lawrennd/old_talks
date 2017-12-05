@@ -30,13 +30,13 @@ $\activationVector(\cdot)$ is a vector function with vector inputs.
 
 *  would think of this as a *linear model*: not linear predictions, linear in the parameters
 
-* $\mappingMatrix_{1}$ are *static* parameters.
+* $\mappingVector_{1}$ are *static* parameters.
 
 
 ### Adaptive Basis Functions {data-transiation="None"}
 
 * In machine learning we optimize $\mappingMatrix_{1}$ as well as  $\mappingMatrix_{2}$ (which would normally be denoted in statistics by $\boldsymbol{\beta}$).
 
-* This tutorial: revisit that decision: follow the path of Radford Neal [@Neal:bayesian94] and David MacKay [@MacKay:bayesian92].
+* This tutorial: revisit that decision: follow the path of @Neal:bayesian94 and @MacKay:bayesian92.
 
 * Consider the probabilistic approach.
