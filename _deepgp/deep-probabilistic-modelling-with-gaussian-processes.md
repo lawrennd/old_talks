@@ -75,7 +75,7 @@ CMB samples -> Life
 
 <object data="../slides/diagrams/gp-approx-full.svg" class="svgplot"></object>
 
-### Mordern Review
+### Modern Review
 
 * *A Unifying Framework for Gaussian Process Pseudo-Point Approximations using Power Expectation Propagation*
     @Thang:unifying17
@@ -106,7 +106,7 @@ CMB samples -> Life
     @Anqi:gpspike2017
 * *Doubly Stochastic Variational Inference for Deep Gaussian Processes*
     @Salimbeni:doubly2017
-* *Deep Multi-task {G}aussian Processes for Survival Analysis with Competing Risks*
+* *Deep Multi-task Gaussian Processes for Survival Analysis with Competing Risks*
     @Alaa:deep2017
 * *Counterfactual Gaussian Processes for Reliable Decision-making and What-if Reasoning*
     @Schulam:counterfactual17

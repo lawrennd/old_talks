@@ -10,7 +10,7 @@
 
 * In statistics, focussed more on *linear* model implied by 
     $$
-    \mappingFunction(\inputVector) = \left.\mappingVector\right.^{(2)}^\top \activationVector(\mappingMatrix_1, \inputVector)
+    \mappingFunction(\inputVector) = \left.\mappingVector^{(2)}\right.^\top \activationVector(\mappingMatrix_1, \inputVector)
     $$
 
 * Hold $\mappingMatrix_1$ fixed for given analysis.
