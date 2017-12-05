@@ -151,7 +151,7 @@ f({\bf x}) = \left.\mathbf{w}^{(2)}\right.^\top \boldsymbol{\phi}(\mathbf{W}_{1}
 <li><p><span class="math inline">\(\mathbf{w}_{1}\)</span> are <em>static</em> parameters.</p></li>
 </ul>
 </section>
-<section id="adaptive-basis-functions" class="slide level3" data-transiation="None">
+<section id="adaptive-basis-functions" class="slide level3" data-transition="None">
 <h3>Adaptive Basis Functions</h3>
 <ul>
 <li><p>In machine learning we optimize <span class="math inline">\(\mathbf{W}_{1}\)</span> as well as <span class="math inline">\(\mathbf{W}_{2}\)</span> (which would normally be denoted in statistics by <span class="math inline">\(\boldsymbol{\beta}\)</span>).</p></li>
@@ -773,7 +773,7 @@ k_f\left({\bf x}_i, {\bf x}_j\right) = \alpha \int \phi\left(\mathbf{w}^{(1)}, {
 <object data="../slides/diagrams/gp-approx-full.svg" class="svgplot">
 </object>
 </section>
-<section id="modern-review" class="slide level3">
+<section id="modern-review" class="slide level3" data-transition="None">
 <h3>Modern Review</h3>
 <ul>
 <li><p><em>A Unifying Framework for Gaussian Process Pseudo-Point Approximations using Power Expectation Propagation</em> <span class="citation" data-cites="Thang:unifying17">Bui et al. (2017)</span></p></li>
@@ -809,7 +809,7 @@ k_f\left({\bf x}_i, {\bf x}_j\right) = \alpha \int \phi\left(\mathbf{w}^{(1)}, {
 <li><p>Alternative solution: parameterize <span class="math inline">\(\mathbf{W}\)</span> with its SVD. <span class="math display">\[\mathbf{W}= \mathbf{U}\boldsymbol{\Lambda}\mathbf{V}^\top\]</span> or <span class="math display">\[\mathbf{W}= \mathbf{U}\mathbf{V}^\top\]</span> where if <span class="math inline">\(\mathbf{W}\in \Re^{k_1\times k_2}\)</span> then <span class="math inline">\(\mathbf{U}\in \Re^{k_1\times q}\)</span> and <span class="math inline">\(\mathbf{V}\in \Re^{k_2\times q}\)</span>, i.e. we have a low rank matrix factorization for the weights.</p></li>
 </ul>
 </section>
-<section id="low-rank-approximation" class="slide level3">
+<section id="low-rank-approximation" class="slide level3" data-transition="None">
 <h3>Low Rank Approximation</h3>
 <object data="../slides/diagrams/wisuvt.svg" class="svgplot">
 </object>
@@ -1140,22 +1140,22 @@ k_f\left({\bf x}_i, {\bf x}_j\right) = \alpha \int \phi\left(\mathbf{w}^{(1)}, {
 <li><em>Gaussian Process Based Approaches for Survival Analysis</em> <span class="citation" data-cites="Saul:thesis2016">Saul (2016)</span></li>
 </ul>
 </section>
-<section id="multi-fidelity-modelling" class="slide level3">
+<section id="multi-fidelity-modelling" class="slide level3" data-transition="None">
 <h3>Multi-fidelity Modelling</h3>
 <ul>
 <li><p>Deep nets are powerful approach to images, speech, language.</p></li>
 <li><p>Proposal: Deep GPs may also be a great approach, but better to deploy according to natural strengths.</p></li>
 </ul>
 </section>
-<section id="uncertainty-quantification" class="slide level3">
+<section id="uncertainty-quantification" class="slide level3" data-transition="None">
 <h3>Uncertainty Quantification</h3>
 <ul>
-<li><p>Probabilistic numerics, surrogate modelelling, emulation, and UQ.</p></li>
+<li><p>Probabilistic numerics, surrogate modelling, emulation, and UQ.</p></li>
 <li><p>Not a fan of AI as a term.</p></li>
 <li><p>But we are faced with increasing amounts of <em>algorithmic decision making</em>.</p></li>
 </ul>
 </section>
-<section id="ml-and-decision-making" class="slide level3">
+<section id="ml-and-decision-making" class="slide level3" data-transition="None">
 <h3>ML and Decision Making</h3>
 <ul>
 <li><p>When trading off decisions: compute or acquire data?</p></li>
@@ -1190,7 +1190,7 @@ k_f\left({\bf x}_i, {\bf x}_j\right) = \alpha \int \phi\left(\mathbf{w}^{(1)}, {
 <p>But with Deep Gaussian processes <span class="citation" data-cites="Perdikaris:multifidelity17">(Perdikaris et al., 2017)</span> we can consider the form</p>
 <p><span class="math display">\[f_i\left({\bf x}\right) = g_{i}\left(f_{i-1}\left({\bf x}\right)\right) + \delta_i\left({\bf x}\right),\]</span></p>
 </section>
-<section id="notebook-example" class="slide level3">
+<section id="notebook-example" class="slide level3" data-transition="None">
 <h3>Notebook Example</h3>
 </section>
 <section id="acknowledgments" class="slide level3">

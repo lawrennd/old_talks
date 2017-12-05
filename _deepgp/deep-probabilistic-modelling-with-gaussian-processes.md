@@ -75,7 +75,7 @@ CMB samples -> Life
 
 <object data="../slides/diagrams/gp-approx-full.svg" class="svgplot"></object>
 
-### Modern Review
+### Modern Review {data-transition="None"}
 
 * *A Unifying Framework for Gaussian Process Pseudo-Point Approximations using Power Expectation Propagation*
     @Thang:unifying17
