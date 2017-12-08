@@ -1614,24 +1614,19 @@ def clear_axes(ax):
     ax.spines["bottom"].set_visible(False)
     ax.spines["left"].set_visible(False)
 
-def non_linear_difficulty_plot_1(alpha=1.0, diagrams='../diagrams'):
+def non_linear_difficulty_plot_3(alpha=1.0,
+                                 rbf_width=2,
+                                 num_basis_func=3,
+                                 num_samples=10,
+                                 number_across=30,
+                                 diagrams='../diagrams'):
     """Push a Gaussian density through an RBF network and plot results"""
 
-    # nonLinearDifficultyPlot1
-    number = 200
-    num_basis_func = 3
-    rbf_width = 2
     mu = np.linspace(-4, 4, num_basis_func)[None, :]
-    x = np.linspace(-6, 6, number)[:, None]
-    num_samples = 10
-    alpha = 1
     W = np.random.randn(num_samples, num_basis_func)*np.sqrt(alpha)
 
-    number_across = 30
     x1 = np.linspace(-1, 1, number_across)
-    x2 = x1
-    mu1 = mu
-    mu2 = mu
+    x2 = x1; mu1 = mu; mu2 = mu
     MU1, MU2 = np.meshgrid(mu1, mu2)
     X1, X2 = np.meshgrid(x1, x2)
     X = np.column_stack([X1.flatten(), X2.flatten()])
@@ -1639,7 +1634,7 @@ def non_linear_difficulty_plot_1(alpha=1.0, diagrams='../diagrams'):
     MU = np.column_stack([MU1.flatten(), MU2.flatten()])
     num_basis_func = MU.shape[0]
     number = X.shape[0]
-    Phi = np.exp(-plot.dist2(X, MU)/(2*rbf_width*rbf_width))
+    Phi = np.exp(-dist2(X, MU)/(2*rbf_width*rbf_width))
     num_samples = 3
     np.random.seed(13)
     W = np.random.randn(num_samples, num_basis_func)*np.sqrt(alpha)
@@ -1669,7 +1664,7 @@ def non_linear_difficulty_plot_1(alpha=1.0, diagrams='../diagrams'):
         which='both', bottom='off', top='off', labelbottom='off',
                       right='off', left='off', labelleft='off') 
     ax[0].set(aspect='equal')
-    plot.clear_axes(ax[0])
+    clear_axes(ax[0])
     ax[0].set_xlabel('$x_1$', ha='center', fontsize=30)
     ax[0].set_ylabel('$x_2$', ha='center', fontsize=30)
 
@@ -1722,20 +1717,28 @@ def non_linear_difficulty_plot_1(alpha=1.0, diagrams='../diagrams'):
     ax[1].text(0.5, 0.45, '$\longrightarrow$', 
                ha='center',
                fontsize=40)
-    fig.savefig("../../slides/diagrams/dimred/nonlinear-mapping-3d-plot.svg", transparent=True)
+    fig.savefig(os.path.join(diagrams, "nonlinear-mapping-3d-plot.svg"),
+                transparent=True)
 
-def non_linear_difficulty_plot_2(alpha=1.0, diagrams='../diagrams'):
+def non_linear_difficulty_plot_2(alpha=1.0,
+                                 rbf_width=2,
+                                 num_basis_func=3,
+                                 num_samples=10,
+                                 number_across=101,
+                                 diagrams='../diagrams'):
     """Plot a one dimensional line mapped through a two dimensional mapping."""
     fig, ax = plt.subplots(1, 3, figsize=(10, 5))
     for item in ax:
         item.patch.set_visible(False)
 
-    number_across = 101
+    W = np.random.randn(num_samples, num_basis_func)*np.sqrt(alpha)
+
     x = np.linspace(-6, 6, number_across)[:, None]
-    num_basis_func = mu.shape[1]
+    mu = np.linspace(-4, 4, num_basis_func)[None, :]
     number = x.shape[0]
-    Phi = np.exp(-plot.dist2(x, mu.T)/(2*rbf_width*rbf_width))
-    F = np.dot(Phi,W[0:2, 0:num_basis_func].T)
+    Phi = np.exp(-dist2(x, mu.T)/(2*rbf_width*rbf_width))
+    
+    F = np.dot(Phi,W.T)
 
     a = ax[0].plot(x, np.ones(x.shape), 'r-');
     subx = x[0::10,:]
@@ -1743,7 +1746,7 @@ def non_linear_difficulty_plot_2(alpha=1.0, diagrams='../diagrams'):
     ax[0].set(ylim=[0.5, 1.5])
     ax[0].set(Xlim=[-7, 7])
     ax[0].set(aspect='equal')
-    plot.clear_axes(ax[0])
+    clear_axes(ax[0])
     a[0].set(linewidth=3)
     b[0].set(markersize=20)
 
@@ -1756,7 +1759,7 @@ def non_linear_difficulty_plot_2(alpha=1.0, diagrams='../diagrams'):
     a[0].set(linewidth=3)
     b[0].set(markersize=20)
     ax[2].set(aspect='equal')
-    plot.clear_axes(ax[2])
+    clear_axes(ax[2])
 
     ax[2].set_xlabel('$y_1$', ha='center', fontsize=30)
     ax[2].set_ylabel('$y_2$', ha='center', fontsize=30)
@@ -1769,18 +1772,21 @@ def non_linear_difficulty_plot_2(alpha=1.0, diagrams='../diagrams'):
     ax[1].text(0.5, 0.65, '$y_1 = f_1(x)$', ha='center', fontsize=30)
     ax[1].text(0.5, 0.5, '$\longrightarrow$', ha='center', fontsize=40)
     ax[1].text(0.5, 0.35, '$y_2 = f_2(x)$', ha='center', fontsize=30)
-    fig.savefig("../../slides/diagrams/dimred/nonlinear-mapping-2d-plot.svg", transparent=True)
+    fig.savefig(os.path.join(diagrams, "nonlinear-mapping-2d-plot.svg"),
+                transparent=True)
 
 def non_linear_difficulty_plot_1(alpha=1.0,
                                  data_std=0.2,
                                  rbf_width=0.1,
                                  num_basis_func=100,
+                                 number_across=200,
                                  num_samples=1000,
                                  patch_color = [0.3, 0.3, 0.3],
                                  diagrams='../diagrams'):
     """Plot a one dimensional Gaussian pushed through an RBF network."""
     from matplotlib.patches import Polygon
     xsamp = np.random.randn(num_samples, 1)
+    x = np.linspace(-6, 6, number_across)[:, None]
 
     # Create RBF network with much larger variation in functions.
     mu = np.linspace(-4, 4, num_basis_func)[None, :]
@@ -1923,7 +1929,7 @@ def deep_nn(diagrams='../diagrams'):
 
     new_text = ['', '', '', '', '']
     for i, text in enumerate(new_text):
-        model.layer[i].text=text
+        model.layers[i].text=text
     fig, ax = model.draw()
     fig.savefig(os.path.join(diagrams, "deep-nn1.svg"),
                 transparent=True)
@@ -1963,4 +1969,4 @@ def deep_nn_bottleneck(diagrams='../diagrams'):
     fig.savefig(os.path.join(diagrams, "deep-nn-bottleneck1.svg"),
                 transparent=True)
     for i, text in enumerate(new_text):
-        model.layer[i].text=text
+        model.layers[i].text=text
