@@ -14,6 +14,7 @@ categories:
 day: 4
 errata: []
 key: Lawrence-nips17
+youtube: NHTGY8VCinY
 layout: talk
 month: 12
 published: 2017-12-04
