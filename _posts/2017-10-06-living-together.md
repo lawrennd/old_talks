@@ -11,6 +11,7 @@ author:
   url: http://inverseprobability.com
 categories:
 - Lawrence-tedx17
+youtube: Bn-33vv-cmY
 key: Lawrence-tedx17
 layout: talk
 month: 10
