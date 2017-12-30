@@ -1,10 +1,12 @@
 import matplotlib.pyplot as plt
 import numpy as np
-import mlai
 import IPython
 import os
 from mpl_toolkits.mplot3d import Axes3D
+
 import daft
+
+import mlai
 
 #from IPython.display import display, clear_output, HTML
 
@@ -15,6 +17,11 @@ one_figsize = (5, 5)
 big_figsize = (7, 7)
 wide_figsize = (7, 3.5)
 hcolor = [1., 0., 1.] # highlighting color
+
+def pred_range(x, portion=0.2, points=200):
+    """Return a one dimensional range for prediction across given a data set, x"""
+    span = x.max()-x.min()
+    return np.linspace(x.min()-portion*span, x.max()+portion*span, points)[:,np.newaxis]
 
 # def write_plots(filename=filename, filebase, directory=None, width=700, height=500, kwargs):
 #     """Display a series of plots controlled by sliders. The function relies on Python string format functionality to index through a series of plots."""
@@ -36,20 +43,20 @@ hcolor = [1., 0., 1.] # highlighting color
 
 
 def matrix(A, ax=None,
-                bracket_width=3,
-                bracket_style='square',
-                type='values',
-                colormap=None,
-                highlight=False,
-                highlight_row=None,
-                highlight_col=None,
-                highlight_width=3,
-                highlight_color=[0,0,0],
-                zoom=False,
-                zoom_row=None,
-                zoom_col=None,
-                bracket_color=[0,0,0],
-                fontsize=16):
+           bracket_width=3,
+           bracket_style='square',
+           type='values',
+           colormap=None,
+           highlight=False,
+           highlight_row=None,
+           highlight_col=None,
+           highlight_width=3,
+           highlight_color=[0,0,0],
+           zoom=False,
+           zoom_row=None,
+           zoom_col=None,
+           bracket_color=[0,0,0],
+           fontsize=16):
     """Plot a matrix for visualisation in a slide or piece of text."""
     
     if ax is None:
@@ -185,11 +192,7 @@ def base_plot(K, ind=[0, 1], ax=None,
               contour_markersize=4,
               contour_marker='x',
               fontsize=20):
-    """
-    % BASEPLOT Plot the contour of the covariance.
-    % FORMAT
-    % DESC creates the basic plot.
-    % """
+    """Plot the contour of a covariance matrix"""
 
     blackcolor = [0,0,0]
     if ax is None:
@@ -232,8 +235,8 @@ def base_plot(K, ind=[0, 1], ax=None,
     return cont, thandle, cent 
 
 
-def prob_diagram(diagrams='../diagrams'):
-    "Plot a diagram demonstrating marginal and joint probabilities."
+def prob_diagram(fontsize=20, diagrams='../diagrams'):
+    """Plot a diagram demonstrating marginal and joint probabilities."""
     marg = 0.05 # Distance between lines and boxes
     indent = 0.1 # indent of n indicators
     axis_indent = 0.3 # Axis indent.
@@ -255,28 +258,28 @@ def prob_diagram(diagrams='../diagrams'):
         ax.plot([0, 7], [i, i], color=[0, 0, 0])
 
     for i in range(1, 5):
-        ax.text(-axis_indent, i-.5, str(i), horizontalalignment='center', fontsize=20)
+        ax.text(-axis_indent, i-.5, str(i), horizontalalignment='center', fontsize=fontsize)
 
     for i in range(1,7):
-        ax.text(i-0.5, -axis_indent, str(i), horizontalalignment='center', fontsize=20)
+        ax.text(i-0.5, -axis_indent, str(i), horizontalalignment='center', fontsize=fontsize)
 
     # Box for y=4
     ax.plot([-marg, 6+marg, 6+marg, -marg, -marg], [3-marg, 3-marg, 4+marg, 4+marg, 3-marg], linestyle=':', linewidth=2, color=[1, 0, 0])
-    ax.text(0.5, 4-indent, '$n_{Y=4}$', horizontalalignment='center', fontsize=20)
+    ax.text(0.5, 4-indent, '$n_{Y=4}$', horizontalalignment='center', fontsize=fontsize)
 
     # Box for x=5
     ax.plot([4-marg, 5+marg, 5+marg, 4-marg, 4-marg], [-marg, -marg, 4+marg, 4+marg, -marg], linestyle='--', linewidth=2, color=[1, 0, 0])
-    ax.text(4.5, 4-indent, '$n_{X=5}$', horizontalalignment='center', fontsize=20)
+    ax.text(4.5, 4-indent, '$n_{X=5}$', horizontalalignment='center', fontsize=fontsize)
 
     # Box for x=3, y=4
     ax.plot([2-2*marg, 3+2*marg, 3+2*marg, 2-2*marg, 2-2*marg], [3-2*marg, 3-2*marg, 4+2*marg, 4+2*marg, 3-2*marg], linestyle='--', linewidth=2, color=[1, 0, 1])
-    ax.text(2.5, 4-indent, '$n_{X=3, Y=4}$', horizontalalignment='center', fontsize=20)
+    ax.text(2.5, 4-indent, '$n_{X=3, Y=4}$', horizontalalignment='center', fontsize=fontsize)
 
 
-    plt.text(1.5, 0.5, '$N$ crosses total', horizontalalignment='center', fontsize=20);
+    plt.text(1.5, 0.5, '$N$ crosses total', horizontalalignment='center', fontsize=fontsize);
 
-    plt.text(3, -2*axis_indent, '$X$', fontsize=20)
-    plt.text(-2*axis_indent, 2, '$Y$', fontsize=20)
+    plt.text(3, -2*axis_indent, '$X$', fontsize=fontsize)
+    plt.text(-2*axis_indent, 2, '$Y$', fontsize=fontsize)
     #ylabel('\variableTwo')
 
     mlai.write_figure(os.path.join(diagrams, 'prob_diagram.svg'), transparent=True)
@@ -285,6 +288,7 @@ def prob_diagram(diagrams='../diagrams'):
 
 def hyperplane_coordinates(w, b, plot_limits):
     """Helper function for plotting the decision boundary of the perceptron."""
+
     if abs(w[1])>abs(w[0]):
         # If w[1]>w[0] in absolute value, plane is likely to be leaving tops of plot.
         x0 = plot_limits['x']
@@ -345,7 +349,8 @@ def update_perceptron(h, f, ax, x_plus, x_minus, i, w, b):
     norm = (w[0]*w[0] + w[1]*w[1])
     offset0 = -w[0]/norm*b
     offset1 = -w[1]/norm*b
-    h['arrow'] = ax[0].arrow(offset0, offset1, offset0+w[0], offset1+w[1], head_width=0.2)
+    h['arrow'] = ax[0].arrow(offset0, offset1, offset0+w[0],
+                             offset1+w[1], head_width=0.2)
     
     h['plane'].set_xdata(x0)
     h['plane'].set_ydata(x1)
@@ -364,7 +369,8 @@ def update_perceptron(h, f, ax, x_plus, x_minus, i, w, b):
     return h
 
 def contour_error(x, y, m_center, c_center, samps=100, width=6.):
-    "Compute the error on a grid as a function of m and c."
+    """Compute the error on a grid as a function of m and c."""
+
     # create an array of linearly separated values around m_true
     m_vals = np.linspace(m_center-width/2., m_center+width/2., samps) 
     # create an array of linearly separated values ae
@@ -376,16 +382,18 @@ def contour_error(x, y, m_center, c_center, samps=100, width=6.):
             E_grid[i, j] = ((y - m_grid[i, j]*x - c_grid[i, j])**2).sum()
     return m_vals, c_vals, E_grid
     
-def regression_contour(f, ax, m_vals, c_vals, E_grid):
-    "Regression contour plot."
+def regression_contour(f, ax, m_vals, c_vals, E_grid, fontsize=30):
+    """Regression contour plot."""
+    
     hcont = ax.contour(m_vals, c_vals, E_grid, levels=[0, 0.5, 1, 2, 4, 8, 16, 32, 64]) # this makes the contour plot 
-    plt.clabel(hcont, inline=1, fontsize=15) # this labels the contours.
+    plt.clabel(hcont, inline=1, fontsize=fontsize/2) # this labels the contours.
 
-    ax.set_xlabel('$m$', fontsize=25)
-    ax.set_ylabel('$c$', fontsize=25)
+    ax.set_xlabel('$m$', fontsize=fontsize)
+    ax.set_ylabel('$c$', fontsize=fontsize)
 
 def init_regression(f, ax, x, y, m_vals, c_vals, E_grid, m_star, c_star, fontsize=20):
     """Function to plot the initial regression fit and the error surface."""
+
     h = {}
     levels=[0, 0.5, 1, 2, 4, 8, 16, 32, 64]
     h['cont'] = ax[0].contour(m_vals, c_vals, E_grid, levels=levels) # this makes the contour plot on axes 0.
@@ -421,7 +429,8 @@ def update_regression(h, f, ax, m_star, c_star, iteration):
     return h
 
 def regression_contour_fit(x, y, learn_rate=0.01, m_center=1.4, c_center=-3.1, m_star = 0.0, c_star = -5.0, max_iters=1000, diagrams='../diagrams'):
-    "Plot an evolving contour plot of regression optimisation."
+    """Plot an evolving contour plot of regression optimisation."""
+
     m_vals, c_vals, E_grid = contour_error(x, y, m_center, c_center, samps=100)
 
     f, ax = plt.subplots(1, 2, figsize=two_figsize) # this is to create 'side by side axes'
@@ -446,7 +455,8 @@ def regression_contour_fit(x, y, learn_rate=0.01, m_center=1.4, c_center=-3.1, m
     return count
 
 def regression_contour_sgd(x, y, learn_rate=0.01, m_center=1.4, c_center=-3.1, m_star = 0.0, c_star = -5.0, max_iters=4000, diagrams='../diagrams'):
-    "Plot evolution of the solution of linear regression via SGD."
+    """Plot evolution of the solution of linear regression via SGD."""
+
     m_vals, c_vals, E_grid = contour_error(x, y, m_center, c_center, samps=100)
 
     f, ax = plt.subplots(1, 2, figsize=two_figsize) # this is to create 'side by side axes'
@@ -1516,21 +1526,26 @@ def kronecker_WX(fontsize=25, figsize=two_figsize, diagrams='../diagrams'):
                fontsize=fontsize)
 
     ax[1].set_position([0.05, 0.35, 0.3, 0.3])
-    objA = matrix(A, ax=ax[1], bracket_style='square', type='entries',
+    objA = matrix(A, ax=ax[1], bracket_style='square',
+                  type='entries',
                   fontsize=fontsize)
 
 
     ax[2].set_position([0.4, 0.35, 0.25, 0.3])
-    objB = matrix(B, ax=ax[2], bracket_style='none', type='entries',
+    objB = matrix(B, ax=ax[2], bracket_style='none',
+                  type='entries',
                   fontsize=fontsize)
     
     ax[3].set_position([0.6, 0.35, 0.35, 0.3])
-    objAkB = matrix(AkroneckerB, ax=ax[3], bracket_style='square', type='entries',
-                  fontsize=fontsize)
+    objAkB = matrix(AkroneckerB, ax=ax[3], bracket_style='square',
+                    type='entries',
+                    fontsize=fontsize)
         
-    mlai.write_figure(os.path.join(diagrams, 'kronecker_WX.svg'), transparent=True)
+    mlai.write_figure(os.path.join(diagrams, 'kronecker_WX.svg'),
+                      transparent=True)
 
 def perceptron(x_plus, x_minus, learn_rate=0.1, max_iters=10000, max_updates=30, seed=100001, diagrams='../diagrams'):
+    """Fit a perceptron algorithm and record iterations of fit"""
     w, b, x_select = mlai.init_perceptron(x_plus, x_minus, seed=seed)
     updates = 0
     count = 0
@@ -1568,6 +1583,7 @@ def perceptron(x_plus, x_minus, learn_rate=0.1, max_iters=10000, max_updates=30,
     return count
 
 import GPy
+
 def contour_data(data, length_scales, log_SNRs, kernel_call=GPy.kern.RBF):
     """
     Evaluate the GP objective function for a given data set for a range of
@@ -1619,6 +1635,7 @@ def non_linear_difficulty_plot_3(alpha=1.0,
                                  num_basis_func=3,
                                  num_samples=10,
                                  number_across=30,
+                                 fontsize=30,
                                  diagrams='../diagrams'):
     """Push a Gaussian density through an RBF network and plot results"""
 
@@ -1665,10 +1682,8 @@ def non_linear_difficulty_plot_3(alpha=1.0,
                       right='off', left='off', labelleft='off') 
     ax[0].set(aspect='equal')
     clear_axes(ax[0])
-    ax[0].set_xlabel('$x_1$', ha='center', fontsize=30)
-    ax[0].set_ylabel('$x_2$', ha='center', fontsize=30)
-
-
+    ax[0].set_xlabel('$x_1$', ha='center', fontsize=fontsize)
+    ax[0].set_ylabel('$x_2$', ha='center', fontsize=fontsize)
 
     start_val = 0
     for i in range(number_across):
@@ -1713,10 +1728,10 @@ def non_linear_difficulty_plot_3(alpha=1.0,
     ax[1].set_axis_off()
     ax[1].text(0.5, 0.55, '$y_j = f_j(\mathbf{x})$', 
                ha='center',
-              fontsize=30)
+              fontsize=fontsize)
     ax[1].text(0.5, 0.45, '$\longrightarrow$', 
                ha='center',
-               fontsize=40)
+               fontsize=4*fontsize/3)
     fig.savefig(os.path.join(diagrams, "nonlinear-mapping-3d-plot.svg"),
                 transparent=True)
 
@@ -1725,6 +1740,7 @@ def non_linear_difficulty_plot_2(alpha=1.0,
                                  num_basis_func=3,
                                  num_samples=10,
                                  number_across=101,
+                                 fontsize=30,
                                  diagrams='../diagrams'):
     """Plot a one dimensional line mapped through a two dimensional mapping."""
     fig, ax = plt.subplots(1, 3, figsize=(10, 5))
@@ -1750,7 +1766,7 @@ def non_linear_difficulty_plot_2(alpha=1.0,
     a[0].set(linewidth=3)
     b[0].set(markersize=20)
 
-    ax[0].set_xlabel('$x$', ha='center', fontsize=30)
+    ax[0].set_xlabel('$x$', ha='center', fontsize=fontsize)
 
 
 
@@ -1761,17 +1777,17 @@ def non_linear_difficulty_plot_2(alpha=1.0,
     ax[2].set(aspect='equal')
     clear_axes(ax[2])
 
-    ax[2].set_xlabel('$y_1$', ha='center', fontsize=30)
-    ax[2].set_ylabel('$y_2$', ha='center', fontsize=30)
+    ax[2].set_xlabel('$y_1$', ha='center', fontsize=fontsize)
+    ax[2].set_ylabel('$y_2$', ha='center', fontsize=fontsize)
 
     # Axis for writing text on plot
     ax[1].set(position=[0, 0, 1, 1])
     ax[1].set(xlim=[0, 1])
     ax[1].set(ylim=[0, 1])
     ax[1].set_axis_off()
-    ax[1].text(0.5, 0.65, '$y_1 = f_1(x)$', ha='center', fontsize=30)
-    ax[1].text(0.5, 0.5, '$\longrightarrow$', ha='center', fontsize=40)
-    ax[1].text(0.5, 0.35, '$y_2 = f_2(x)$', ha='center', fontsize=30)
+    ax[1].text(0.5, 0.65, '$y_1 = f_1(x)$', ha='center', fontsize=fontsize)
+    ax[1].text(0.5, 0.5, '$\longrightarrow$', ha='center', fontsize=4*fontsize/3)
+    ax[1].text(0.5, 0.35, '$y_2 = f_2(x)$', ha='center', fontsize=fontsize)
     fig.savefig(os.path.join(diagrams, "nonlinear-mapping-2d-plot.svg"),
                 transparent=True)
 
@@ -1782,6 +1798,7 @@ def non_linear_difficulty_plot_1(alpha=1.0,
                                  number_across=200,
                                  num_samples=1000,
                                  patch_color = [0.3, 0.3, 0.3],
+                                 fontsize=30,
                                  diagrams='../diagrams'):
     """Plot a one dimensional Gaussian pushed through an RBF network."""
     from matplotlib.patches import Polygon
@@ -1821,8 +1838,8 @@ def non_linear_difficulty_plot_1(alpha=1.0,
     ax[1].set(xlim=[0, 1])
     ax[1].set(ylim=[0, 1])
     ax[1].set_axis_off()
-    ax[1].text(0.5, 0.45, '$y = f(x) + \epsilon$', ha='center', fontsize=30)
-    ax[1].text(0.5, 0.35, '$\longrightarrow$', ha='center', fontsize=40)
+    ax[1].text(0.5, 0.45, '$y = f(x) + \epsilon$', ha='center', fontsize=fontsize)
+    ax[1].text(0.5, 0.35, '$\longrightarrow$', ha='center', fontsize=4*fontsize/3)
     fig.savefig(os.path.join(diagrams,"gaussian-through-nonlinear.svg"), transparent=True)
 
 class network():

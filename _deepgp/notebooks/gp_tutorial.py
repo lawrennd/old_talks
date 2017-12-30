@@ -3,6 +3,7 @@ import numpy as np
 
 # Visualization Utility Functions
 def ax_default(fignum, ax):
+    """Utility function for either creating a new subplot or returning a particular axis"""
     if ax is None:
         fig = plt.figure(fignum)
         ax = fig.add_subplot(111)
@@ -11,10 +12,20 @@ def ax_default(fignum, ax):
     return fig, ax
 
 def meanplot(x, mu, color='#3300FF', ax=None, fignum=None, linewidth=2,**kw):
+    """Plot a mean function in a given colour."""
     _, axes = ax_default(fignum, ax)
     return axes.plot(x,mu,color=color,linewidth=linewidth,**kw)
 
-def gpplot(x, mu, lower, upper, edgecol='#3300FF', fillcol='#CC3300', ax=None, fignum=None, **kwargs):
+def gpplot(x,
+           mu,
+           lower,
+           upper,
+           edgecol='#3300FF',
+           fillcol='#CC3300',
+           ax=None,
+           fignum=None,
+           **kwargs):
+    """Make a simple GP plot from a given mean, a lower and upper confidence bound"""
     _, axes = ax_default(fignum, ax)
 
     mu = mu.flatten()
