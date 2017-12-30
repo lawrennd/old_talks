@@ -199,7 +199,7 @@ def base_plot(K, ind=[0, 1], ax=None,
         ax = plt.gca()
     v, U = np.linalg.eig(K[ind][:, ind])
     r = np.sqrt(v)
-    theta = np.linspace(0, 2*np.pi, 200)[:, None]
+    theta = np.linspace(0, 2*np.pi, 200)[:, np.newaxis]
     xy = np.dot(np.concatenate([r[0]*np.sin(theta), r[1]*np.cos(theta)], axis=1),U.T)
     cont = plt.Line2D(xy[:, 0], xy[:, 1],
                       linewidth=contour_size,
@@ -579,8 +579,11 @@ def gaussian_of_height(diagrams='../diagrams'):
     
 #################### Session 5 ####################
 
-def marathon_fit(model, value, param_name, param_range, xlim, fig, ax, x_val=None, y_val=None, objective=None, diagrams='../diagrams', fontsize=20, objective_ylim=None, prefix='olympic', title=None, png_plot=False, samps=130):
-    "Plot fit of the marathon data alongside error."
+def marathon_fit(model, value, param_name, param_range,
+                 xlim, fig, ax, x_val=None, y_val=None, objective=None,
+                 diagrams='../diagrams', fontsize=20, objective_ylim=None,
+                 prefix='olympic', title=None, png_plot=False, samps=130):
+    """Plot fit of the olympic marathon data alongside error."""
     if title is None:
         title = model.objective_name
         
@@ -591,7 +594,7 @@ def marathon_fit(model, value, param_name, param_range, xlim, fig, ax, x_val=Non
         
     ylim = ax[0].get_ylim()
 
-    x_pred = np.linspace(xlim[0], xlim[1], samps)[:, None]
+    x_pred = np.linspace(xlim[0], xlim[1], samps)[:, np.newaxis]
     y_pred, y_var = model.predict(x_pred)
     
     ax[0].plot(x_pred, y_pred, color=[0, 0, 1], linewidth=2)
@@ -610,7 +613,8 @@ def marathon_fit(model, value, param_name, param_range, xlim, fig, ax, x_val=Non
         ax[1].cla()
         params = range(*param_range)
         for name, vals in objective.items():
-            ax[1].plot(np.array(params), vals, 'o', color=[1, 0, 0], markersize=6, linewidth=3)
+            ax[1].plot(np.array(params), vals, 'o',
+                       color=[1, 0, 0], markersize=6, linewidth=3)
         if len(param_range)>2:
             xlow = param_range[0]-param_range[2]
             xhigh = param_range[1]
@@ -820,7 +824,7 @@ def under_determined_system(diagrams='../diagrams'):
     ax.set_ylabel('$y$', fontsize=20)
     mlai.write_figure(figure=fig, filename=os.path.join(diagrams, 'under_determined_system000.svg'), transparent=True, frameon=True)
 
-    xvals = np.linspace(0, 3, 2)[:, None]
+    xvals = np.linspace(0, 3, 2)[:, np.newaxis]
     count=0
     for i in range(100):
         c = np.random.normal(size=(1,1))*2
@@ -833,7 +837,7 @@ def under_determined_system(diagrams='../diagrams'):
 
 
 def bayes_update(diagrams='../diagrams'):
-    "Visualise the updating of a posterior of Bayesian inference for a Gaussian lieklihood."""
+    """Visualise the updating of a posterior of Bayesian inference for a Gaussian lieklihood."""
     fig, ax = plt.subplots(figsize=two_figsize)
     num_points = 1000
     x_max = 6
@@ -846,11 +850,11 @@ def bayes_update(diagrams='../diagrams'):
     noise = mlai.Gaussian(offset=np.array([0.6]), scale=np.array(np.sqrt(0.05)))
 
 
-    f = np.linspace(x_min, x_max, num_points)[:, None]
+    f = np.linspace(x_min, x_max, num_points)[:, np.newaxis]
     ln_prior_curve = -0.5*(np.log(2*np.pi*prior_var) + (f-prior_mean)*(f-prior_mean)/prior_var)
     ln_likelihood_curve = np.zeros(ln_prior_curve.shape)
     for i in range(num_points):
-        ln_likelihood_curve[i] = noise.log_likelihood(f[i][None, :], 
+        ln_likelihood_curve[i] = noise.log_likelihood(f[i][np.newaxis, :], 
                                                       np.array([[np.finfo(float).eps]]), 
                                                       y)
     ln_marginal_likelihood = noise.log_likelihood(prior_mean, prior_var, y);
@@ -899,12 +903,13 @@ def bayes_update(diagrams='../diagrams'):
     plt.text(3.5, 0.65, '$\mathcal{N}\\left(c|\\frac{y-mx}{1+\\sigma^2\\alpha_1},(\\sigma^{-2}+\\alpha_1^{-1})^{-1}\\right)$', horizontalalignment='center', fontsize=20)
     mlai.write_figure(os.path.join(diagrams, 'dem_gaussian003.svg'), transparent=True)
 
-def height_weight(h=None, w=None, muh=1.7, varh=0.0225, muw=75, varw=36, diagrams='../diagrams'):
-    "Plot height and weight as Gaussians."
+def height_weight(h=None, w=None, muh=1.7, varh=0.0225,
+                  muw=75, varw=36, diagrams='../diagrams'):
+    """Plot height and weight as Gaussians."""
     if h is None:
-        h = np.linspace(1.25, 2.15, 100)[:, None]
+        h = np.linspace(1.25, 2.15, 100)[:, np.newaxis]
     if w is None:
-        w = np.linspace(55, 95, 100)[:, None]
+        w = np.linspace(55, 95, 100)[:, np.newaxis]
 
     ph = 1/np.sqrt(tau*varh)*np.exp(-1/(2*varh)*(h - muh)**2)
     pw = 1/np.sqrt(tau*varw)*np.exp(-1/(2*varw)*(w - muw)**2)
@@ -916,12 +921,14 @@ def height_weight(h=None, w=None, muh=1.7, varh=0.0225, muw=75, varw=36, diagram
     weight(ax[1], w, pw)
     mlai.write_figure(os.path.join(diagrams, 'height_weight_gaussian.svg'), transparent=True)
 
-def independent_height_weight(h=None, w=None, muh=1.7, varh=0.0225, muw=75, varw=36, num_samps=20, diagrams='../diagrams'):
-    "Plot independent Gaussians of height and weight."
+def independent_height_weight(h=None, w=None, muh=1.7, varh=0.0225,
+                              muw=75, varw=36, num_samps=20,
+                              diagrams='../diagrams'):
+    """Plot independent Gaussians of height and weight."""
     if h is None:
-        h = np.linspace(1.25, 2.15, 100)[:, None]
+        h = np.linspace(1.25, 2.15, 100)[:, np.newaxis]
     if w is None:
-        w = np.linspace(55, 95, 100)[:, None]
+        w = np.linspace(55, 95, 100)[:, np.newaxis]
 
     ph = 1/np.sqrt(tau*varh)*np.exp(-1/(2*varh)*(h - muh)**2)
     pw = 1/np.sqrt(tau*varw)*np.exp(-1/(2*varw)*(w - muw)**2)
@@ -974,12 +981,13 @@ def independent_height_weight(h=None, w=None, muh=1.7, varh=0.0225, muw=75, varw
         #mlai.write_figure(figure=fig, filename=os.path.join(diagrams, 'independent_height_weight{count:0>3}.svg').format(count=count), transparent=True)
         #count+=1
 
-def correlated_height_weight(h=None, w=None, muh=1.7, varh=0.0225, muw=75, varw=36, num_samps=20, diagrams='../diagrams'):
+def correlated_height_weight(h=None, w=None, muh=1.7, varh=0.0225,
+                             muw=75, varw=36, num_samps=20, diagrams='../diagrams'):
     "Plot correlated Gaussian distributions of height and weight."
     if h is None:
-        h = np.linspace(1.25, 2.15, 100)[:, None]
+        h = np.linspace(1.25, 2.15, 100)[:, np.newaxis]
     if w is None:
-        w = np.linspace(55, 95, 100)[:, None]
+        w = np.linspace(55, 95, 100)[:, np.newaxis]
 
     ph = 1/np.sqrt(tau*varh)*np.exp(-1/(2*varh)*(h - muh)**2)
     pw = 1/np.sqrt(tau*varw)*np.exp(-1/(2*varw)*(w - muw)**2)
@@ -1143,7 +1151,9 @@ def kern_circular_sample(K, mu=None, filename=None, fig=None, num_samps=5, num_t
         anim.save(os.path.join(diagrams, filename), writer='imagemagick', fps=30)
 
 
-def covariance_func(x, kernel_function, x_cov=None, formula=None, shortname=None, longname=None, comment=None, diagrams='../diagrams', **args):
+def covariance_func(x, kernel_function, x_cov=None, formula=None,
+                    shortname=None, longname=None, comment=None,
+                    diagrams='../diagrams', **args):
     """Write a slide on a given covariance matrix."""
     fig, ax = plt.subplots(figsize=one_figsize)
     hcolor = [1., 0., 1.]
@@ -1174,7 +1184,7 @@ def covariance_func(x, kernel_function, x_cov=None, formula=None, shortname=None
 def two_point_sample(kernel_function, diagrams='../diagrams', **args):
     """Make plots for the two data point sample example for explaining gaussian processes."""
     fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(two_figsize))
-    x = np.linspace(-1, 1, 25)[:, None]
+    x = np.linspace(-1, 1, 25)[:, np.newaxis]
     K = kernel_function(x, x, **args)
     obj = matrix(K, ax=ax[1], type='image')
     ax[1].set_xlabel('$i$',fontsize=16)
@@ -1279,6 +1289,7 @@ def two_point_sample(kernel_function, diagrams='../diagrams', **args):
 
 
 def poisson(diagrams='../diagrams'):
+    """Make plots of the Poisson distribution"""
     from scipy.stats import poisson
     fig, ax = plt.subplots(figsize=two_figsize)
     y = np.asarray(range(0, 16))
@@ -1296,6 +1307,7 @@ def poisson(diagrams='../diagrams'):
     mlai.write_figure(os.path.join(diagrams, 'poisson.svg'), transparent=True)
 
 def logistic(diagrams='../diagrams'):
+    """Make plots of the logistic function"""
     fig, ax = plt.subplots(figsize=two_figsize)
     f = np.linspace(-8, 8, 100)
     g = 1/(1+np.exp(-f))
@@ -1308,7 +1320,7 @@ def logistic(diagrams='../diagrams'):
 
 
 def height(ax, h, ph):
-    "Plot height as a distribution."
+    """Plot height as a distribution."""
     ax.plot(h, ph, '-', color=[1, 0, 0], linewidth=3)
     ax.set_xticks([1.25, 1.7, 2.15])
     ax.set_yticks([1, 2, 3])
@@ -1321,7 +1333,7 @@ def height(ax, h, ph):
     ax.hlines(ylim[0], xlim[0], xlim[1], color='k')
 
 def weight(ax, w, pw):
-    "Plot weight as a distribution."
+    """Plot weight as a distribution."""
     ax.plot(w, pw, '-', color=[0, 0, 1.], linewidth=3)
     ax.set_xticks([55, 75, 95])
     ax.set_yticks([0.02, 0.04, 0.06])
@@ -1544,7 +1556,8 @@ def kronecker_WX(fontsize=25, figsize=two_figsize, diagrams='../diagrams'):
     mlai.write_figure(os.path.join(diagrams, 'kronecker_WX.svg'),
                       transparent=True)
 
-def perceptron(x_plus, x_minus, learn_rate=0.1, max_iters=10000, max_updates=30, seed=100001, diagrams='../diagrams'):
+def perceptron(x_plus, x_minus, learn_rate=0.1, max_iters=10000,
+               max_updates=30, seed=100001, diagrams='../diagrams'):
     """Fit a perceptron algorithm and record iterations of fit"""
     w, b, x_select = mlai.init_perceptron(x_plus, x_minus, seed=seed)
     updates = 0
@@ -1617,7 +1630,7 @@ def contour_data(data, length_scales, log_SNRs, kernel_call=GPy.kern.RBF):
 
 def dist2(X, Y):
     """Computer squared distances between two design matrices"""
-    return -2*np.dot(X,Y.T) + (X*X).sum(1)[:, None] + (Y*Y).T.sum(0)
+    return -2*np.dot(X,Y.T) + (X*X).sum(1)[:, np.newaxis] + (Y*Y).T.sum(0)
 
 def clear_axes(ax):
     """Clear the axes lines and ticks"""
@@ -1639,7 +1652,7 @@ def non_linear_difficulty_plot_3(alpha=1.0,
                                  diagrams='../diagrams'):
     """Push a Gaussian density through an RBF network and plot results"""
 
-    mu = np.linspace(-4, 4, num_basis_func)[None, :]
+    mu = np.linspace(-4, 4, num_basis_func)[np.newaxis, :]
     W = np.random.randn(num_samples, num_basis_func)*np.sqrt(alpha)
 
     x1 = np.linspace(-1, 1, number_across)
@@ -1749,8 +1762,8 @@ def non_linear_difficulty_plot_2(alpha=1.0,
 
     W = np.random.randn(num_samples, num_basis_func)*np.sqrt(alpha)
 
-    x = np.linspace(-6, 6, number_across)[:, None]
-    mu = np.linspace(-4, 4, num_basis_func)[None, :]
+    x = np.linspace(-6, 6, number_across)[:, np.newaxis]
+    mu = np.linspace(-4, 4, num_basis_func)[np.newaxis, :]
     number = x.shape[0]
     Phi = np.exp(-dist2(x, mu.T)/(2*rbf_width*rbf_width))
     
@@ -1803,10 +1816,10 @@ def non_linear_difficulty_plot_1(alpha=1.0,
     """Plot a one dimensional Gaussian pushed through an RBF network."""
     from matplotlib.patches import Polygon
     xsamp = np.random.randn(num_samples, 1)
-    x = np.linspace(-6, 6, number_across)[:, None]
+    x = np.linspace(-6, 6, number_across)[:, np.newaxis]
 
     # Create RBF network with much larger variation in functions.
-    mu = np.linspace(-4, 4, num_basis_func)[None, :]
+    mu = np.linspace(-4, 4, num_basis_func)[np.newaxis, :]
     Phi = np.exp(-dist2(xsamp, mu.T)/(2*rbf_width*rbf_width))
     W = np.random.randn(1, num_basis_func)*np.sqrt(alpha)
     f = np.dot(Phi,W.T);
@@ -1822,7 +1835,7 @@ def non_linear_difficulty_plot_1(alpha=1.0,
     ax[0].set(xlim=[-6, 6])
     ax[0].set_xlabel('$p(x)$', ha='center', fontsize=20)
 
-    y = np.linspace(f.min()-3*data_std, f.max()+3*data_std, 100)[:, None]
+    y = np.linspace(f.min()-3*data_std, f.max()+3*data_std, 100)[:, np.newaxis]
     p = np.mean(np.exp(-0.5/(data_std*data_std)*dist2(y, f))*1/(np.sqrt(2*np.pi)*data_std), 1)
     patch = Polygon(np.column_stack((y, p)), closed=True, facecolor=patch_color)
     a=ax[2].add_patch(patch)
