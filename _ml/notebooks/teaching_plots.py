@@ -1592,8 +1592,13 @@ def perceptron(x_plus, x_minus, learn_rate=0.1, max_iters=10000,
             mlai.write_figure(figure=f2, filename=os.path.join(diagrams, 'perceptron{samp:0>3}.png').format(samp=count), bbox_inches=extent, transparent=True)        
             count+=1
             handle = update_perceptron(handle, f2, ax2, x_plus, x_minus, updates, w, b)
-            mlai.write_figure(figure=f2, filename=os.path.join(diagrams, 'perceptron{samp:0>3}.svg').format(samp=count), transparent=True)
-            mlai.write_figure(figure=f2, filename=os.path.join(diagrams, 'perceptron{samp:0>3}.png').format(samp=count), bbox_inches=extent, transparent=True)
+            mlai.write_figure(filename=os.path.join(diagrams, 'perceptron{samp:0>3}.svg').format(samp=count),
+                              figure=f2, 
+                              transparent=True)
+            mlai.write_figure(filename=os.path.join(diagrams, 'perceptron{samp:0>3}.png').format(samp=count),
+                              figure=f2, 
+                              bbox_inches=extent,
+                              transparent=True)
     print('Data passes:', iterations)
     return count
 
@@ -1746,8 +1751,9 @@ def non_linear_difficulty_plot_3(alpha=1.0,
     ax[1].text(0.5, 0.45, '$\longrightarrow$', 
                ha='center',
                fontsize=4*fontsize/3)
-    fig.savefig(os.path.join(diagrams, "nonlinear-mapping-3d-plot.svg"),
-                transparent=True)
+    mlai.write_figure(os.path.join(diagrams, "nonlinear-mapping-3d-plot.svg"),
+                      figure=fig,
+                      transparent=True)
 
 def non_linear_difficulty_plot_2(alpha=1.0,
                                  rbf_width=2,
@@ -1802,8 +1808,9 @@ def non_linear_difficulty_plot_2(alpha=1.0,
     ax[1].text(0.5, 0.65, '$y_1 = f_1(x)$', ha='center', fontsize=fontsize)
     ax[1].text(0.5, 0.5, '$\longrightarrow$', ha='center', fontsize=4*fontsize/3)
     ax[1].text(0.5, 0.35, '$y_2 = f_2(x)$', ha='center', fontsize=fontsize)
-    fig.savefig(os.path.join(diagrams, "nonlinear-mapping-2d-plot.svg"),
-                transparent=True)
+    mlai.write_figure(os.path.join(diagrams, "nonlinear-mapping-2d-plot.svg"),
+                      figure=fig,
+                      transparent=True)
 
 def non_linear_difficulty_plot_1(alpha=1.0,
                                  data_std=0.2,
@@ -1854,7 +1861,9 @@ def non_linear_difficulty_plot_1(alpha=1.0,
     ax[1].set_axis_off()
     ax[1].text(0.5, 0.45, '$y = f(x) + \epsilon$', ha='center', fontsize=fontsize)
     ax[1].text(0.5, 0.35, '$\longrightarrow$', ha='center', fontsize=4*fontsize/3)
-    fig.savefig(os.path.join(diagrams,"gaussian-through-nonlinear.svg"), transparent=True)
+    mlai.write_figure(os.path.join(diagrams,"gaussian-through-nonlinear.svg"),
+                      figure=fig,
+                      transparent=True)
 
 class network():
     """Class for drawing a neural network."""
@@ -1955,15 +1964,17 @@ def deep_nn(diagrams='../diagrams'):
                     text=r'$y=\mathbf{w}_4^\top\mathbf{h}_3$',
                     observed=True))
     fig, ax = model.draw()
-    fig.savefig(os.path.join(diagrams, "deep-nn2.svg"),
-                transparent=True)
+    mlai.write_figure(os.path.join(diagrams, "deep-nn2.svg"),
+                      figure=fig,
+                      transparent=True)
 
     new_text = ['', '', '', '', '']
     for i, text in enumerate(new_text):
         model.layers[i].text=text
     fig, ax = model.draw()
-    fig.savefig(os.path.join(diagrams, "deep-nn1.svg"),
-                transparent=True)
+    mlai.write_figure(os.path.join(diagrams, "deep-nn1.svg"),
+                      figure=fig,
+                      transparent=True)
 
 
     
@@ -1990,15 +2001,17 @@ def deep_nn_bottleneck(diagrams='../diagrams'):
                     text=r'$y=\mathbf{w}_4^\top\mathbf{h}_3$',
                     observed=True))
     fig, ax = model.draw()
-    fig.savefig(os.path.join(diagrams, "deep-nn-bottleneck2.svg"),
-                transparent=True)
+    mlai.write_figure(os.path.join(diagrams, "deep-nn-bottleneck2.svg"),
+                      figure=fig,
+                      transparent=True)
 
     new_text = ['input layer', 'latent layer 1', 'hidden layer 1', 
                 'latent layer 2', 'hidden layer 2', 'latent layer 3', 
                 'hidden layer 3', 'output layer']
     fig, ax = model.draw()
-    fig.savefig(os.path.join(diagrams, "deep-nn-bottleneck1.svg"),
-                transparent=True)
+    mlai.write_figure(os.path.join(diagrams, "deep-nn-bottleneck1.svg"),
+                      figure=fig,
+                      transparent=True)
     for i, text in enumerate(new_text):
         model.layers[i].text=text
 
@@ -2023,12 +2036,12 @@ def stack_gp_sample(kernel=GPy.kern.RBF,
                     side_length=25, lim_val=0.5, num_samps=5,figsize=(1.4, 7),
                     diagrams='../diagrams'):
     """Draw a sample from a deep Gaussian process."""
+
     depth=len(latent_dims)
     num_time = side_length*4
     t = box(lim_val=lim_val, side_length=side_length)
-    #t = t.flatten()[:, np.newaxis]
-    include_text = ''
     fig, ax = plt.subplots(len(latent_dims), 1, figsize=figsize)
+
     for i in range(num_samps):
         X = []
         X.append(t)
@@ -2055,8 +2068,11 @@ def stack_gp_sample(kernel=GPy.kern.RBF,
             ax[j].plot(X[j][:, 0], X[j][:, 1], color='b', linewidth=2)
             ax[j].set(aspect="equal")
             ax[j].set_axis_off()
-        file_name = 'stack-gp-sample-' + str(i) + '.svg'
-        fig.savefig(os.path.join(diagrams,file_name), transparent=True)
+        file_name = 'stack-gp-sample-' + kern[0].name + '-' + str(i) + '.svg'
+        mlai.write_figure(os.path.join(diagrams,file_name),
+                          figure=fig,
+                          transparent=True)
+
         if False:
             fig, ax = plt.subplots(1, 2, figsize=figsize)
             for j in range(2):
@@ -2077,5 +2093,89 @@ def stack_gp_sample(kernel=GPy.kern.RBF,
                              color='b', linewidth=2)
                 ax[j].set_axis_off()
             file_name = 'stack-gp-sample-squash-' + str(i) + '.svg'
-            fig.savefig(os.path.join(diagrams, file_name), transparent=True)
+            mlai.write_figure(os.path.join(diagrams, file_name),
+                              figure=fig,
+                              transparent=True)
 
+def vertical_chain(depth=5, grid_unit=1.5, node_unit=1, line_width=1.5, shape=None, target='y'):
+    """Make a verticle chain representation of a deep GP"""
+    if shape is None:
+        shape = [node_unit, 2*node_unit+depth]
+    direction = [0, -node_unit]
+
+    pgm = daft.PGM(shape=shape,
+                   origin=[0, 0], 
+                   grid_unit=grid_unit, 
+                   node_unit=node_unit, 
+                   observed_style='shaded',
+                  line_width=line_width)
+
+    node = "x"
+    pgm.add_node(daft.Node("x", r"$\mathbf{x}$", 0.5, 6.5, fixed=True))
+    for i in range(depth):
+        last = node
+        node="f_{index}".format(index=i+1)
+        pgm.add_node(daft.Node(node, r"$\mathbf{{f}}_{index}$".format(index=i+1),
+                               0.5, depth-i + 0.5))
+        pgm.add_edge(last, node)
+
+    last = node
+    node = target
+    pgm.add_node(daft.Node(node, r"$\mathbf{y}$", 
+                           0.5, 0.5, observed=True))
+    pgm.add_edge(last, node)
+    return pgm
+
+def horizontal_chain(depth=5,
+                     shape=None,
+                     origin=[0, 0],
+                     grid_unit=4,
+                     node_unit=1.9,
+                     line_width=3,
+                    target="y"):
+    if shape is None:
+        shape = [2*node_unit+depth, node_unit]
+    
+    direction = [-node_unit, 0]
+    
+    pgm = daft.PGM(shape=[7, 1],
+                   origin=origin, 
+                   grid_unit=grid_unit, 
+                   node_unit=node_unit, 
+                   observed_style='shaded',
+                  line_width=line_width)
+
+    node = "x"
+    pgm.add_node(daft.Node(node, r"$\mathbf{x}$", 0.5, 0.5, fixed=True))
+    for i in range(depth):
+        last=node
+        node = "f_{index}".format(index=i+1)
+        pgm.add_node(daft.Node(node, r"$\mathbf{{f}}_{index}$".format(index=i+1), 
+                               i+1.5, 0.5))
+        pgm.add_edge(last, node)
+    last = node
+    node=target
+    pgm.add_node(daft.Node(target, r"$\mathbf{y}$", depth+1.5, 0.5, observed=True))
+    pgm.add_edge(last, node)
+    return pgm
+
+def shared_gplvm():
+    pgm = daft.PGM(shape=[4, 3],
+                   origin=[0, 0], 
+                   grid_unit=5, 
+                   node_unit=1.9, 
+                   observed_style='shaded',
+                  line_width=3)
+
+    pgm.add_node(daft.Node("t", r"$\mathbf{t}$", 2, 2.5, observed=True))
+    pgm.add_node(daft.Node("X", r"$\mathbf{X}$", 2, 1.5))
+    pgm.add_node(daft.Node("Z_1", r"$\mathbf{Z}_1$", 1, 1.5))
+    pgm.add_node(daft.Node("Z_2", r"$\mathbf{Z}_2$", 3, 1.5))
+    pgm.add_node(daft.Node("Y_1", r"$\mathbf{Y}_1$", 1.5, 0.5, observed=True))
+    pgm.add_node(daft.Node("Y_2", r"$\mathbf{Y}_2$", 2.5, 0.5, observed=True))
+    pgm.add_edge("t", "X")
+    pgm.add_edge("X", "Y_1")
+    pgm.add_edge("X", "Y_2")
+    pgm.add_edge("Z_1", "Y_1")
+    pgm.add_edge("Z_2", "Y_2")
+    return pgm
