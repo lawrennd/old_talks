@@ -7,7 +7,15 @@ import scipy as sp
 import matplotlib.pyplot as plt
 from IPython.display import display, clear_output, HTML
 
-
+def write_figure(filename, figure=None, **kwargs):
+    """Write figure in correct formating"""
+    if 'transparent' not in kwargs:
+        kwargs['transparent'] = True
+    if figure is None:
+        plt.savefig(filename, **kwargs)
+    else:
+        figure.savefig(filename, **kwargs)
+    
 ##########          Week 2          ##########
 def init_perceptron(x_plus, x_minus, seed=1000001):
     np.random.seed(seed=seed)
