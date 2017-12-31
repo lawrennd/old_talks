@@ -1,26 +1,26 @@
 
 ### Step Function Data {data-transition="None"}
 
-<object class="svgplot" data="../slides/diagrams/datasets/step-function.svg"></object> 
+\includesvg{../slides/diagrams/datasets/step-function.svg} 
 
 ### Step Function Data GP {data-transition="None"}
 
-<object class="svgplot" data="../slides/diagrams/gp/step-function-gp.svg"></object> 
+\includesvg{../slides/diagrams/gp/step-function-gp.svg} 
 
 ### Step Function Data Deep GP {data-transition="None"}
 
-<object class="svgplot" data="../slides/diagrams/deepgp/step-function-deep-gp.svg"></object> 
+\includesvg{../slides/diagrams/deepgp/step-function-deep-gp.svg} 
 
 ### Step Function Data Deep GP {data-transition="None"}
 
-<object class="svgplot" data="../slides/diagrams/deepgp/step-function-deep-gp-sample.svg"></object> 
+\includesvg{../slides/diagrams/deepgp/step-function-deep-gp-sample.svg} 
 
 ### Step Function Data Latent 1 {data-transition="None"}
 
-<object class="svgplot" data="../slides/diagrams/deepgp/step-function-deep-gp-layer-1.svg"></object> 
+\includesvg{../slides/diagrams/deepgp/step-function-deep-gp-layer-1.svg} 
 
 ### Step Function Data Latent 2 {data-transition="None"}
 
-<object class="svgplot" data="../slides/diagrams/deepgp/step-function-deep-gp-layer-2.svg"></object> 
+\includesvg{../slides/diagrams/deepgp/step-function-deep-gp-layer-2.svg} 
 
 
