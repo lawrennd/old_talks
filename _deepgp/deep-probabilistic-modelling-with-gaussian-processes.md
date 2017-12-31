@@ -89,9 +89,11 @@ CMB samples -> Life
 \include{../_deepgp/includes/deeptheory.md}
 
 \include{../_deepgp/includes/deep-olympic.md}
+\include{../_deepgp/includes/deep-motorcycle.md}
 \include{../_deepgp/includes/deep-robot-wireless.md}
 
 \include{../_deepgp/includes/deep-high-five.md}
+
 \include{../_deepgp/includes/deep-usps-digits.md}
 
 

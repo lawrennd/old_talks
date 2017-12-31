@@ -1,11 +1,26 @@
-### Derivative Tails Increase with Layers: Step Function
 
-<img src="./diagrams/H0_predict.png"  width="30%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;">
+### Step Function Data {data-transition="None"}
 
-<img src="./diagrams/H1_predict.png"  width="30%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;"><img src="./diagrams/H3_predict.png"  width="30%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;">
+<object class="svgplot" data="../slides/diagrams/datasets/step-function.svg"></object> 
 
-### Values in Hidden Layers
+### Step Function Data GP {data-transition="None"}
 
-<img src="./diagrams/step_all.png"  width="20%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;">
+<object class="svgplot" data="../slides/diagrams/gp/step-function-gp.svg"></object> 
+
+### Step Function Data Deep GP {data-transition="None"}
+
+<object class="svgplot" data="../slides/diagrams/deepgp/step-function-deep-gp.svg"></object> 
+
+### Step Function Data Deep GP {data-transition="None"}
+
+<object class="svgplot" data="../slides/diagrams/deepgp/step-function-deep-gp-sample.svg"></object> 
+
+### Step Function Data Latent 1 {data-transition="None"}
+
+<object class="svgplot" data="../slides/diagrams/deepgp/step-function-deep-gp-layer-1.svg"></object> 
+
+### Step Function Data Latent 2 {data-transition="None"}
+
+<object class="svgplot" data="../slides/diagrams/deepgp/step-function-deep-gp-layer-2.svg"></object> 
 
 
