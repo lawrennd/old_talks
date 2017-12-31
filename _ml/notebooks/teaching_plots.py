@@ -4,6 +4,8 @@ import IPython
 import os
 from mpl_toolkits.mplot3d import Axes3D
 
+import GPy
+
 import daft
 
 import mlai
@@ -1595,7 +1597,6 @@ def perceptron(x_plus, x_minus, learn_rate=0.1, max_iters=10000,
     print('Data passes:', iterations)
     return count
 
-import GPy
 
 def contour_data(data, length_scales, log_SNRs, kernel_call=GPy.kern.RBF):
     """
@@ -2000,3 +2001,81 @@ def deep_nn_bottleneck(diagrams='../diagrams'):
                 transparent=True)
     for i, text in enumerate(new_text):
         model.layers[i].text=text
+
+
+def box(lim_val=0.5, side_length=25):
+    """Plot a box for use in deep GP samples."""
+    t = np.hstack((lim_val*np.ones((side_length, 1)), 
+                   np.linspace(-lim_val, lim_val, side_length)[:, np.newaxis]))
+    tnew = np.hstack((np.linspace(lim_val, -lim_val, side_length)[:, np.newaxis], 
+                      lim_val*np.ones((side_length, 1))))
+    t = np.vstack((t, tnew))
+    tnew = np.hstack((-lim_val*np.ones((side_length, 1)), 
+                      np.linspace(lim_val, -lim_val, side_length)[:, np.newaxis]))
+    t = np.vstack((t, tnew))
+    tnew = np.hstack((np.linspace(-lim_val, lim_val, side_length)[:, np.newaxis], 
+                   -lim_val*np.ones((side_length, 1))))
+    t = np.vstack((t, tnew))
+    return t
+
+def stack_gp_sample(kernel=GPy.kern.RBF,
+                    latent_dims=[2, 2, 2, 2, 2],
+                    side_length=25, lim_val=0.5, num_samps=5,figsize=(1.4, 7),
+                    diagrams='../diagrams'):
+    """Draw a sample from a deep Gaussian process."""
+    depth=len(latent_dims)
+    num_time = side_length*4
+    t = box(lim_val=lim_val, side_length=side_length)
+    #t = t.flatten()[:, np.newaxis]
+    include_text = ''
+    fig, ax = plt.subplots(len(latent_dims), 1, figsize=figsize)
+    for i in range(num_samps):
+        X = []
+        X.append(t)
+        kern = []
+        K = []
+        for j in range(depth):
+            kern.append(kernel(X[j].shape[1]))
+            K.append(kern[j].K(X[j]))
+            X.append(np.random.multivariate_normal(mean=np.zeros((num_time)), 
+                                                     cov=K[j], size=latent_dims[j]).T)
+
+
+        for j in range(depth):
+            #pos = ax[j].get_position()
+            #ax[j].set_position((pos.x0, pos.y0, 
+            #                    pos.width/2, pos.height))
+            if j == 0:
+                ax[j].set(xlim=1.25*np.array([-lim_val, lim_val]))
+                ax[j].set(ylim=1.25*np.array([-lim_val, lim_val]))
+            else: 
+                ax[j].set(xlim=1.25*np.array([-1, 1]))
+                ax[j].set(ylim=1.25*np.array([-1, 1]))
+            ax[j].cla()
+            ax[j].plot(X[j][:, 0], X[j][:, 1], color='b', linewidth=2)
+            ax[j].set(aspect="equal")
+            ax[j].set_axis_off()
+        file_name = 'stack-gp-sample-' + str(i) + '.svg'
+        fig.savefig(os.path.join(diagrams,file_name), transparent=True)
+        if False:
+            fig, ax = plt.subplots(1, 2, figsize=figsize)
+            for j in range(2):
+                pos = ax[j].get_position()
+                ax[j].set_position((pos.x0, pos.y0, pos.width/2, pos.height))
+                if j == 0:
+                    ax[j].set(xlim=1.25*np.array([-lim_val, lim_val]))
+                    ax[j].set(ylim=1.25*np.array([-lim_val, lim_val]))
+                else: 
+                    ax[j].set(xlim=1.25*np.array([-1, 1]))
+                    ax[j].set(ylim=1.25*np.array([-1, 1]))
+                if j == 1:
+                    plt.plot(X[0][:, 0], X[0][:, 1], 
+                             color='b', linewidth=2)
+                else:
+                    plt.plot(X[-1][:, 0], 
+                             X[-1][:, 1], 
+                             color='b', linewidth=2)
+                ax[j].set_axis_off()
+            file_name = 'stack-gp-sample-squash-' + str(i) + '.svg'
+            fig.savefig(os.path.join(diagrams, file_name), transparent=True)
+
