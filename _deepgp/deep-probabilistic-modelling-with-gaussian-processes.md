@@ -4,7 +4,13 @@ title: "Deep Probabilistic Modelling with with Gaussian Processes"
 author: Neil D. Lawrence
 bibliography: deep-probabilistic-modelling-with-gaussian-processes.bib
 ---
+\ifdef{ipynb}
+\define{\includesvg{filename}}{<img src="\filename">}
 
+\else
+\define{\includesvg{filename}}{<object class="svgplot" data="\filename"></object>}
+\endif
+\define{\includeimg{filename}{width}}{<img src="\filename" width="\width" style="background:none; border:none; box-shadow:none;">}
 <!--Notes from Stefanos: Hey Neil, 
 
 Just realised that there was no comment on the fact that a DGP is not a GP, only the current layer conditioned on all previous ones.
@@ -31,49 +37,7 @@ CMB samples -> Life
 
 ### Deep Gaussian Processes {data-transition="None"}
 
-### Approximations {data-transition="None"}
-
-<img src="../slides/diagrams/sparse-gps-1.png" align="center" width="90%" style="background:none; border:none; box-shadow:none;">
-
-*Image credit: Kai Arulkumaran*
-
-### Approximations {data-transition="None"}
-
-<img src="../slides/diagrams/sparse-gps-2.png" align="center" width="90%" style="background:none; border:none; box-shadow:none;">
-
-*Image credit: Kai Arulkumaran*
-
-### Approximations {data-transition="None"}
-
-<img src="../slides/diagrams/sparse-gps-3.png" align="center" width="45%" style="background:none; border:none; box-shadow:none;">
-
-*Image credit: Kai Arulkumaran*
-
-### Approximations {data-transition="None"}
-
-<img src="../slides/diagrams/sparse-gps-4.png" align="center" width="45%" style="background:none; border:none; box-shadow:none;">
-
-*Image credit: Kai Arulkumaran*
-
-### Full Gaussian Process Fit {data-transition="None"}
-
-<object data="../slides/diagrams/gp-approx-full.svg" class="svgplot"></object>
-
-### Inducing Variable Fit {data-transition="None"}
-
-<object data="../slides/diagrams/gp-approx-sparse-init.svg" class="svgplot"></object>
-
-### Inducing Variable Param Optimize {data-transition="None"}
-
-<object data="../slides/diagrams/gp-approx-sparse-fit-1.svg" class="svgplot"></object>
-
-### Inducing Variable Full Optimize {data-transition="None"}
-
-<object data="../slides/diagrams/gp-approx-sparse-fit-2.svg" class="svgplot"></object>
-
-### Full Gaussian Process Fit {data-transition="None"}
-
-<object data="../slides/diagrams/gp-approx-full.svg" class="svgplot"></object>
+\include{../_gp/includes/approximate-gps-short.md}
 
 ### Modern Review {data-transition="None"}
 
