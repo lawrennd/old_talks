@@ -17,9 +17,9 @@
 
 ### Motorcycle Helmet Data Latent 1 {data-transition="None"}
 
-\includesvg{../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-layer-1.svg}
+\includesvg{../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-layer-0.svg}
 
 ### Motorcycle Helmet Data Latent 2 {data-transition="None"}
 
-\includesvg{../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-layer-2.svg}
+\includesvg{../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-layer-1.svg}
 

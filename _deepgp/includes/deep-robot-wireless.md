@@ -7,9 +7,13 @@
 
 \includesvg{../slides/diagrams/gp/robot-wireless-gp-dim-1.svg}
 
-### Robot WiFi Data GP {data-transition="None"}
+### Robot WiFi Data Deep GP {data-transition="None"}
 
 \includesvg{../slides/diagrams/deepgp/robot-wireless-deep-gp-dim-1.svg}
+
+### Robot WiFi Data Deep GP {data-transition="None"}
+
+\includesvg{../slides/diagrams/deepgp/robot-wireless-deep-gp-sample-dim-1.svg}
 
 ### Robot WiFi Data Latent Space {data-transition="None"}
 
@@ -18,4 +22,5 @@
 ### Robot WiFi Data Latent Space {data-transition="None"}
 
 \includesvg{../slides/diagrams/deepgp/robot-wireless-latent-space.svg}
+
 
