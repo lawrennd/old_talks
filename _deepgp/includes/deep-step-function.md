@@ -17,10 +17,10 @@
 
 ### Step Function Data Latent 1 {data-transition="None"}
 
-\includesvg{../slides/diagrams/deepgp/step-function-deep-gp-layer-1.svg} 
+\includesvg{../slides/diagrams/deepgp/step-function-deep-gp-layer-0.svg} 
 
 ### Step Function Data Latent 2 {data-transition="None"}
 
-\includesvg{../slides/diagrams/deepgp/step-function-deep-gp-layer-2.svg} 
+\includesvg{../slides/diagrams/deepgp/step-function-deep-gp-layer-1.svg} 
 
 
