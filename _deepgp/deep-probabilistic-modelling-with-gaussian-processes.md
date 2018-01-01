@@ -10,7 +10,7 @@ bibliography: deep-probabilistic-modelling-with-gaussian-processes.bib
 \else
 \define{\includesvg{filename}}{<object class="svgplot" data="\filename"></object>}
 \endif
-\define{\includeimg{filename}{width}}{<img src="\filename" width="\width" style="background:none; border:none; box-shadow:none;">}
+\define{\includeimg{filename}{width}{class}}{<img class="\class" src="\filename" width="\width" style="background:none; border:none; box-shadow:none;">}
 <!--Notes from Stefanos: Hey Neil, 
 
 Just realised that there was no comment on the fact that a DGP is not a GP, only the current layer conditioned on all previous ones.

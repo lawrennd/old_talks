@@ -29,7 +29,7 @@ $$
 
 ### Low Rank Approximation {data-transition="None"}
 
-<object data="../slides/diagrams/wisuvt.svg" class="svgplot"></object>
+\includesvg{../slides/diagrams/wisuvt.svg}
 
 \include{../../_deepgp/includes/deep-gp.md}
 
