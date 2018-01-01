@@ -18,6 +18,7 @@ two_figsize = (10, 5)
 one_figsize = (5, 5)
 big_figsize = (7, 7)
 wide_figsize = (7, 3.5)
+big_wide_figsize = (12, 6)
 hcolor = [1., 0., 1.] # highlighting color
 
 def pred_range(x, portion=0.2, points=200):
@@ -1374,11 +1375,14 @@ def kronecker_illustrate(fontsize=25, diagrams='../diagrams'):
                   fontsize=fontsize)
     
     ax[3].set_position([0.57, 0.35, 0.35, 0.3])
-    objAkB = matrix(AkroneckerB, ax=ax[3], bracket_style='square', type='entries',
+    objAkB = matrix(AkroneckerB, ax=ax[3],
+                    bracket_style='square',
+                    type='entries',
                   fontsize=fontsize)
     ax[0].set_axis_off()
         
-    mlai.write_figure(os.path.join(diagrams, 'kronecker_product.svg'), transparent=True)
+    mlai.write_figure(os.path.join(diagrams, 'kronecker_product.svg'),
+                      transparent=True)
 def blank_canvas(ax):
     """Turn an axis into a blank canvas"""
     ax.set_position([0, 0, 1, 1])

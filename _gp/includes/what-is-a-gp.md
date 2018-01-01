@@ -86,18 +86,15 @@ $$\text{data} + \text{model} \rightarrow \text{prediction}$$
 
 ###  {data-transition="none"}
 
-<object class="svgplot" data="../slides/diagrams/gp_prior_samples_data.svg">
-</object>
+\includesvg{../slides/diagrams/gp_prior_samples_data.svg}
 
 ###  {data-transition="none"}
 
-<object class="svgplot" data="../slides/diagrams/gp_rejection_samples.svg">
-</object>
+\includesvg{../slides/diagrams/gp_rejection_samples.svg}
 
 ###  {data-transition="none"}
 
-<object class="svgplot" data="../slides/diagrams/gp_prediction.svg">
-</object>
+\includesvg{../slides/diagrams/gp_prediction.svg}
 
 
 \include{../../_kern/includes/eq-covariance.md}
@@ -112,7 +109,7 @@ include{../../_gp/includes/olympic-marathon-gp.md}
 
 ### {data-transition="none"}
 
-<img src="../slides/diagrams/Planck_CMB.png" align="center" width="70%" style="background:none; border:none; box-shadow:none;">
+\includeimg{../slides/diagrams/Planck_CMB.png}{70%}
 
 
 ### {data-transition="none"}

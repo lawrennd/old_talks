@@ -1,21 +1,17 @@
 
 ###  {data-transition="none"}
 
-<object class="svgplot" data="../slides/diagrams/gp_prior_samples_few.svg">
-</object>
+\includesvg{../slides/diagrams/gp/gp_prior_samples_few.svg}
 
 ###  {data-transition="none"}
 
-<object class="svgplot" data="../slides/diagrams/gp_prior_samples.svg">
-</object>
+\includesvg{../slides/diagrams/gp/gp_prior_samples.svg}
 
 ###  {data-transition="none"}
 
-<object class="svgplot" data="../slides/diagrams/gp_prior_samples_data.svg">
-</object>
+\includesvg{../slides/diagrams/gp/gp_prior_samples_data.svg}
 
 ###  {data-transition="none"}
 
-<object class="svgplot" data="../slides/diagrams/gp_rejection_samples.svg">
-</object>
+\includesvg{../slides/diagrams/gp/gp_rejection_samples.svg}
 
