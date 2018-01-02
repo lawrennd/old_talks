@@ -21,10 +21,14 @@ wide_figsize = (7, 3.5)
 big_wide_figsize = (12, 6)
 hcolor = [1., 0., 1.] # highlighting color
 
-def pred_range(x, portion=0.2, points=200):
+def pred_range(x, portion=0.2, points=200, randomize=False):
     """Return a one dimensional range for prediction across given a data set, x"""
     span = x.max()-x.min()
-    return np.linspace(x.min()-portion*span, x.max()+portion*span, points)[:,np.newaxis]
+    xt=np.linspace(x.min()-portion*span, x.max()+portion*span, points)[:,np.newaxis]
+    if not randomize:
+        return xt
+    else:
+        return xt + np.random.randn(points, 1)*span/float(points)
 
 # def write_plots(filename=filename, filebase, directory=None, width=700, height=500, kwargs):
 #     """Display a series of plots controlled by sliders. The function relies on Python string format functionality to index through a series of plots."""

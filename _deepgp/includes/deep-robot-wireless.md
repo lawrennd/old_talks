@@ -13,7 +13,7 @@
 
 ### Robot WiFi Data Deep GP {data-transition="None"}
 
-\includesvg{../slides/diagrams/deepgp/robot-wireless-deep-gp-sample-dim-1.svg}
+\includesvg{../slides/diagrams/deepgp/robot-wireless-deep-gp-samples-dim-1.svg}
 
 ### Robot WiFi Data Latent Space {data-transition="None"}
 

@@ -13,7 +13,7 @@
 
 ### Olympic Marathon Data Deep GP {data-transition="None"}
 
-\includesvg{../slides/diagrams/deepgp/olympic-marathon-deep-gp-sample.svg}
+\includesvg{../slides/diagrams/deepgp/olympic-marathon-deep-gp-samples.svg}
 
 ### Olympic Marathon Data Latent 1 {data-transition="None"}
 
