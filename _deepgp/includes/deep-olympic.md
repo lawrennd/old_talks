@@ -22,3 +22,7 @@
 ### Olympic Marathon Data Latent 2 {data-transition="None"}
 
 \includesvg{../slides/diagrams/deepgp/olympic-marathon-deep-gp-layer-1.svg}
+
+### Olympic Marathon Pinball Plot {data-transition="None"}
+
+\includesvg{../slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg}

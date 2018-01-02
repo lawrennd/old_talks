@@ -23,3 +23,8 @@
 
 \includesvg{../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-layer-1.svg}
 
+### Motorcycle Helmet Pinball Plot {data-transition="None"}
+
+\includesvg{../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-pinball.svg}
+
+

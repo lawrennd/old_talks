@@ -23,4 +23,8 @@
 
 \includesvg{../slides/diagrams/deepgp/step-function-deep-gp-layer-1.svg} 
 
+### Step Function Pinball Plot {data-transition="None"}
+
+\includesvg{../slides/diagrams/deepgp/step-function-deep-gp-pinball.svg}
+
 
