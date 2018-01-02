@@ -13,7 +13,7 @@
 
 ### Step Function Data Deep GP {data-transition="None"}
 
-\includesvg{../slides/diagrams/deepgp/step-function-deep-gp-sample.svg} 
+\includesvg{../slides/diagrams/deepgp/step-function-deep-gp-samples.svg} 
 
 ### Step Function Data Latent 1 {data-transition="None"}
 
