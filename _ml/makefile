@@ -1,6 +1,7 @@
+BASE=real-world-machine-learning-challenges-present-and-future
 #BASE=two-challenges-for-deep-learning
-#DATE=$(shell date '+%Y-%m-%d')
-DATE=2017-07-17
+DATE=$(shell date '+%Y-%m-%d')
+#DATE=2017-07-17
 MATHJAX="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 CSS=talks.css
 PP=gpp

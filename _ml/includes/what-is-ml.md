@@ -19,3 +19,8 @@ $$ \text{data} + \text{model} \rightarrow \text{prediction}$$
 
 -   $\text{prediction}$ : an action to be taken or a categorization or a
     quality score.
+
+. . .
+
+-   Royal Society Report:
+[Machine Learning: Power and Promise of Computers that Learn by Example](https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf)

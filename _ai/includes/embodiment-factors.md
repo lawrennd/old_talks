@@ -13,5 +13,7 @@
 </tr>
 <tr>
 <td>communicate</td><td align="center">~1 gigbit/s</td><td align="center">~ 100 bit/s</tr>
-<td>embodiment<br>(compute/communicate)</td><td align="center">10</td><td align="center">~ 10<sup>13</sup></tr>
+<td>(compute/communicate)</td><td align="center">10</td><td align="center">~ 10<sup>13</sup></tr>
 </table>
+
+See ["Living Together: Mind and Machine Intelligence"](https://arxiv.org/abs/1705.07996)
