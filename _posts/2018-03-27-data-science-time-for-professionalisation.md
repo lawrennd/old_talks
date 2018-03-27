@@ -10,7 +10,7 @@ abstract: >
   components of data science solutions: the preparation of data and
   the deployment of machine learning systems.
 published: 2018-03-27
-venue: Workshop on Data Science Theory and Practice
+venue: LSE Workshop on Data Science Theory and Practice
 reveal: 2018-03-27-data-science-time-for-professionalisation.slides.html
 blog: 2017-01-12-data-readiness-levels.md
 layout: talk
