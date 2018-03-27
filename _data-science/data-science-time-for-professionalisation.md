@@ -14,7 +14,7 @@ affiliation: Amazon Research Cambridge and University of Sheffield
 ---
 
 #### Data Science: Time for Professionalisation?
-#### 2017-10-13
+#### 2018-03-27
 #### Neil D. Lawrence
 #### Amazon Research Cambridge and University of Sheffield
 ```@lawrennd``` [inverseprobability.com](http://inverseprobability.com)
@@ -241,13 +241,13 @@ vs [how Africa can benefit from the data revolution](https://www.theguardian.com
 
 * Deployment of Machine Learning Systems
 
-### Rest of this Talk: Two Areas of Focus {.slide: data-transition="none" }
+<!--### Rest of this Talk: Two Areas of Focus {.slide: data-transition="none" }
 
 * <s>Reusability of Data</s>
 
-* Deployment of Machine Learning Systems
+* Deployment of Machine Learning Systems-->
 
-<!--\include{../_data-science/includes/data-readiness-levels.md}-->
+\include{../_data-science/includes/data-readiness-levels.md}
 
 ### Artificial Intelligence
 
@@ -285,5 +285,5 @@ will be deployed in evolving environments.
 
 ### Thanks!
 
-* twitter: @lawrennd
+* twitter: ```@lawrennd```
 * blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
