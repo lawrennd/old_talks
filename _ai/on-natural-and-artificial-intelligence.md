@@ -38,6 +38,8 @@ So what will be the last bastion
 <source src="\filename" type="video/mp4"/>
 </video>}
 
+\include{notation_def.tex}
+
 ### {.slide: data-transition="none" }
 
 <center>Are we close to creating intelligence?</center>
@@ -134,7 +136,7 @@ So what will be the last bastion
 
 ### {.slide: data-transition="none" }
 
-\includeimg{../slides/diagrams/taleb_skin_in_the_game.jpg}{50%}
+\includeimg{../slides/diagrams/taleb_skin_in_the_game.png}{50%}
 
 ### {.slide: data-transition="none" }
 
@@ -310,7 +312,7 @@ So what will be the last bastion
 \include{../_ai/includes/computer-conversation.md}
 
 
-### Conclusion I
+### Conclusion I {.slide: data-transition="none" }
 
 * We are a *long* way from emulating human intelligence, animal intelligence, animal motion. 
 
@@ -318,7 +320,7 @@ So what will be the last bastion
 
 * The *robustness* of natural systems is outside the scope of our current design methodologies.
 
-### Conclusion II
+### Conclusion II {.slide: data-transition="none" }
 
 * There is something quintisential about the *human* experience.
 

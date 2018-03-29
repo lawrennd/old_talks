@@ -1,15 +1,16 @@
-### Fragility of AI Systems
+### Fragility of AI Systems {.slide: data-transition="none" }
 
 * They are componentwise built from ML Capabilities.
 
 * Each capability is independently constructed and verified.
 
     * Pedestrian detection
+	
     * Road line detection
 
 * Important for verification purposes.
 
-### Rapid Reimplementation
+### Rapid Reimplementation {.slide: data-transition="none" }
 
 * Whole systems are being deployed.
 
@@ -17,21 +18,21 @@
 
 * The experience evolved adversarial behaviour.
 
-### Early AI
+### Early AI {.slide: data-transition="none" }
 
-<img src="../slides/diagrams/2017-10-12 16.47.34.jpg" width="40%" class="rotateimg90" style="border:none">
+\includeimg{../slides/diagrams/2017-10-12 16.47.34.jpg}{40%}{rotateimg90}
 
-### Machine Learning Systems Design
+### Machine Learning Systems Design {.slide: data-transition="none" }
 
-<img src="../slides/diagrams/SteamEngine_Boulton&Watt_1784_neg.png" width="50%" style="border:none">
+\includeimg{../slides/diagrams/SteamEngine_Boulton&Watt_1784_neg.png}{50%}
 
-### Adversaries
+### Adversaries {.slide: data-transition="none" }
 
 * Stuxnet
 
 * Mischevious-Adversarial
 
-### Turnaround And Update
+### Turnaround And Update {.slide: data-transition="none" }
 
 * There is a massive need for turn around and update
 
@@ -41,20 +42,19 @@
 
 * Interface between security engineering and machine learning.
 
-### Peppercorns
+### Peppercorns {.slide: data-transition="none" }
 
 * A new name for system failures which aren't bugs.
 
 * Difference between finding a fly in your soup vs a peppercorn in
   your soup. 
 
-<!--### {.slide: data-transition="none"}
+<!--
+### {.slide: data-transition="none"}
 
 <center><video height="600" type="video/mp4"><source src="../slides/diagrams/paolo-peppercorn.mp4" height="80%"></video></center>
 
 ### {.slide: data-transition="none"}
 
-<center><video type="video/mp4"><source src="../slides/diagrams/paolo-save.mp4"></video></center>-->
-
-<!--  LocalWords:  Mischevious
- -->
+<center><video type="video/mp4"><source src="../slides/diagrams/paolo-save.mp4"></video></center>
+-->
