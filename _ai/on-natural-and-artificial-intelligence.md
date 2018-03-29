@@ -181,6 +181,16 @@ So what will be the last bastion
 
 \include{../_ml/includes/what-does-machine-learning-do.md}
 
+### Deep Learning
+
+* These are interpretable models: vital for disease etc.
+
+* Modern machine learning methods are less interpretable
+
+* Example: face recognition
+
+\include{../_ml/includes/deep-learning-overview.md}
+
 \include{../_ai/includes/deploying-ai.md}
 \include{../_ai/includes/ml-systems-design-long.md}
 
