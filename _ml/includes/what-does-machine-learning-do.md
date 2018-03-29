@@ -27,7 +27,7 @@ $$ \log \text{odds}  = \beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}$$
 
 * Jumper (jersey/sweater) purchase with logistic regression
 
-$$ p(\text{bought}) =  f\left(\beta_0 + \beta_1 \text{age} + \beta_2 \text{lattitude}\right)$$
+$$ p(\text{bought}) =  \mappingFunction\left(\beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}\right)$$
 
 
 ### Codify Through Mathematical Functions {.slide: data-transition="none"}
@@ -36,4 +36,26 @@ $$ p(\text{bought}) =  f\left(\beta_0 + \beta_1 \text{age} + \beta_2 \text{latti
 
 * Jumper (jersey/sweater) purchase with logistic regression
 
-$$ p(\text{bought}) =  f\left(\boldsymbol{\beta}^\top \mathbf{x}\right)$$
+$$ p(\text{bought}) =  \mappingFunction\left(\boldsymbol{\beta}^\top \inputVector\right)$$
+
+. . .
+
+We call $\mappingFunction(\cdot)$ the *prediction function*
+
+### Fit to Data {.slide: data-transition="none"}
+
+* Use an objective function
+
+$$\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix)$$
+
+. . .
+
+* E.g. least squares
+
+$$\errorFunction(\boldsymbol{\beta}) = \sum_{i=1}^\numdata \left(\dataScalar_i - \mappingFunction(\inputVector_i)\right)^2$$
+
+### Two Components {.slide: data-transition="none"}
+
+* Prediction function, $\mappingFunction(\cdot)$
+
+* Objective function, $\errorFunction(\cdot)$

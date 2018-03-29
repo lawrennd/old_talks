@@ -31,29 +31,7 @@ affiliation: Amazon Research Cambridge and University of Sheffield
 \define{\includeimg{filename}{width}{class}}{<img class="\class" src="\filename" width="\width" style="background:none; border:none; box-shadow:none;">}
 
 \include{../_ml/includes/what-is-ml.md}
-
-### Machine Learning as the Driver ... {.slide: data-transition="none"}
-
-
-... of two different domains
-
-1. *Data Science*: arises from the fact that we now capture data by happenstance.
-
-2. *Artificial Intelligence*: emulation of human behaviour.
-
-
-### What does Machine Learning do?
-
-* ML Automates through Data
-
-    * *Strongly* related to statistics.
-
-    * Field underpins revolution in *data science* and *AI*
-
-* With AI: logic, robotics, computer vision, speech
-
-* With Data Science: databases, data mining, statistics, visualization
-
+\include{../_ml/includes/data-science-vs-ai.md}
 \include{../_ai/includes/embodiment-factors.md}
 \include{../_data-science/includes/evolved-relationship.md}
 \include{../_ml/includes/what-does-machine-learning-do.md}
@@ -66,31 +44,7 @@ affiliation: Amazon Research Cambridge and University of Sheffield
 
 * Example: face recognition
 
-###
-
-<span class="fragment fade-in"><small>Outline of the DeepFace architecture. A front-end of a single convolution-pooling-convolution filtering on the rectified input, followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected.</small></span>
-
-
-<img src="./diagrams/deepface_neg.png" width="100%" style="background:none; border:none; box-shadow:none;" align="center">
-
-<p align="right">
-<small>Source: DeepFace</small></p>
-
-### 
-
-<img src="./diagrams/576px-Early_Pinball.jpg" height="576px" style="background:none; border:none; box-shadow:none;" align="center">
-
-###
-
-<object data="./diagrams/pinball-initial.svg" type="image/svg+xml">
-</object>
-
-
-### {.slide: data-transition="none" }
-
-<object data="./diagrams/pinball-final.svg" type="image/svg+xml">
-</object>
-
+\include{../_ml/includes/deep-learning-overview.md}
 
 ### Data Science
 
@@ -138,30 +92,7 @@ vs [how Africa can benefit from the data revolution](https://www.theguardian.com
 
 * Let's *avoid* the over formalisation of software engineering.
 
-### The Software Crisis
-
->The major cause of the software crisis is that the machines have
->become several orders of magnitude more powerful! To put it quite
->bluntly: as long as there were no machines, programming was no problem
->at all; when we had a few weak computers, programming became a mild
->problem, and now we have gigantic computers, programming has become an
->equally gigantic problem.
->
-> Edsger Dijkstra, The Humble Programmer
-
-### The Data Crisis
-
->The major cause of the data crisis is that machines have become more
->interconnected than ever before. Data access is therefore cheap, but
->data quality is often poor. What we need is cheap high quality
->data. That implies that we develop processes for improving and
->verifying data quality that are efficient.
->
->There would seem to be two ways for improving efficiency. Firstly, we
->should not duplicate work. Secondly, where possible we should automate
->work. 
->
-> Me
+\include{../_data-science/includes/the-data-crisis.md}
 
 ### Rest of this Talk: Two Areas of Focus {.slide: data-transition="none" }
 
@@ -176,27 +107,7 @@ vs [how Africa can benefit from the data revolution](https://www.theguardian.com
 * Deployment of Machine Learning Systems-->
 
 \include{../_data-science/includes/data-readiness-levels.md}
-
-### Artificial Intelligence
-
-* Challenges in deploying AI.
-
-* Currently this is in the form of "machine learning systems"
-
-### Internet of People
-
-* Fog computing: barrier between cloud and device blurring.
-
-* Complex feedback between algorithm and implementation
-  
-### Deploying ML in Real World: Machine Learning Systems Design
-
-* Major new challenge for systems designers.
-
-* Internet of Intelligence but currently:
-
-	* AI systems are *fragile*
-
+\include{../_ai/includes/deploying-ai.md}
 \include{../_ai/includes/ml-systems-design-long.md}
 
 ### Conclusion
