@@ -386,36 +386,6 @@ Are we close to creating intelligence?
 <center><video type="video/mp4"><source src="../slides/diagrams/paolo-save.mp4"></video></center>-->
 <!--  LocalWords:  Mischevious
  -->
-<p>Well, machine learning algorithms proceed in the following way. They observe data, often from humans, and they attempt to emulate that data creation process with a mathematical function. Let’s explain that in a different way. Whichever activities we are interested in emulating, we acquire data about them. Data is simply a set of numbers representing the activity. It might include location, or number representing past behaviour. Once we have the behaviour represented in a set of numbers, then we can emulate it mathematically.</p>
-<ul>
-<li>Different mathematical functions have different characteristics, in trigonometry we learnt about sine and cosine functions. Those are functions that have a period. They repeat over time. They are useful for emulating behaviour that repeats itself, perhaps behaviour that reflects day/night cycles. But these functions on their own are too simple to emulate human behaviour in all its richness. So how do we make things more complex? In practice we can add functions together, scale them up and scale them down. All these things are done. Deep learning refers to the practice of creating a new function by feeding one function in to another. So we create the output of a function, feed it in to a new function, and take the output of that as our answer. In maths this is known as <em>composition</em> of functions. The advantage is that we can generate much more complex functions from simpler functions. The resulting functions allow us to take an <em>image</em> as an input and produce an output that includes numbers representing what the objects or people are in that image. Doing this accurately is achieved through composition of mathematical functions, otherwise known as deep learning.</li>
-</ul>
-</section>
-<section id="pinball-analogy" class="slide level3 slide:" data-transition="none">
-<h3>Pinball Analogy</h3>
-<ul>
-<li>To describe this process, I sometimes use the following analogy. Think of a pinball machine with rows of pins. A plunger is used to fire a ball into the top of the machine. Think of each row of pins as a function. The input to the function is the position of the ball along the left to right axis of the machine at the top. The output of the function is the position of the ball as it leaves each row of pins. Composition of functions is simply feeding the output of one row of pins into the next. If we do this multiple times, then although the machine has multiple functions in it, by feeding one function into another, then the entire machine is in itself representing a single function. Just a more complex function than that that any individual row of pins can represent. Our modern machine learning systems are just like this machine. Except they take very high dimensional inputs. The pinball is only represented by its left to right position, a one dimensional function. A real learning machine will often represent multiple dimensions, like playing pinball in a hyperspace.</li>
-</ul>
-</section>
-<section id="intelligence-emulation" class="slide level3 slide:" data-transition="none">
-<h3>Intelligence Emulation</h3>
-<ul>
-<li><p>So the intelligence we’ve created is just a (complex) mathematical function. But how do we make this function match what humans do? We use more maths. In fact we use another mathematical function. To avoid confusion let’s call the function represented by our pinball machine the <em>prediction function</em>. In the pinball machine, we can move the pins around, and any configuration of pins leads to a different answer for our functions. So how do we find the correct configuration? For that we use a separate function known as the <em>objective function</em>.</p></li>
-<li><p>The objective function measures the dissimilarity between the output of our prediction function, and data we have from the humans. The process of learning in these machines is the process of moving the pins around in the pinball machine to make the prediction more similar to the data. The quality of any given pin configuration is assessed by quantifying the differences between what the humans have done, and what the machine is predicting using the objective function. Different objective functions are used for different tasks, but objective functions are typically much simpler than prediction functions.</p></li>
-</ul>
-</section>
-<section id="algorithm-design" class="slide level3 slide:" data-transition="none">
-<h3>Algorithm Design</h3>
-<ul>
-<li>So, we have some background. And some understanding of the challenges for the designer of machine learning algorithms. You need data, you need a prediction function, and you need an objective function. Choice of prediction function and objective function are in the hands of the algorithm designer. Deep learning is a way of making very complex, and flexible, classes of prediction functions that deal well with the type of data we get from speech, written language and images.</li>
-</ul>
-</section>
-<section id="brittleness-of-current-ai" class="slide level3 slide:" data-transition="none">
-<h3>Brittleness of Current AI</h3>
-<ul>
-<li><p>But what if the designer gets the choice of prediction function wrong? Or the choice of the objective function wrong? Or what if they choose the right class of prediction function (such as a convolutional neural network, used for classifying images) but get the location of all those pins in the machine wrong?</p></li>
-<li><p>This is a major challenge for our current generation of AI solutions. They are fragile. They are sensitive to incorrect choices and when they fail, they fail catastrophically.</p></li>
-</ul>
 </section>
 <section id="artificial-vs-natural-systems" class="slide level3 slide:" data-transition="none">
 <h3>Artificial vs Natural Systems</h3>
@@ -429,6 +399,9 @@ Are we close to creating intelligence?
 <h3>Natural Systems are Evolved</h3>
 <blockquote>
 <p>Survival of the fittest</p>
+</blockquote>
+<blockquote>
+<p>?</p>
 </blockquote>
 </section>
 <section id="natural-systems-are-evolved-1" class="slide level3 slide:" data-transition="none">
@@ -444,6 +417,13 @@ Are we close to creating intelligence?
 <p>Non-survival of the non-fit</p>
 </blockquote>
 </section>
+<section id="mistake-we-make" class="slide level3 slide:" data-transition="none">
+<h3>Mistake we Make</h3>
+<ul>
+<li><p>Equate fitness for objective function.</p></li>
+<li><p>Assume static environment and known objective.</p></li>
+</ul>
+</section>
 <section id="engineering-systems-design" class="slide level3 slide:" data-transition="none">
 <h3>Engineering Systems Design</h3>
 <ul>
@@ -452,8 +432,6 @@ Are we close to creating intelligence?
 <li><p>This provides efficiency.</p></li>
 <li><p>Engineering designer imagines a solution that requires the minimal set of components to achieve the result.</p></li>
 <li><p>A water pump has one route through the pump.</p></li>
-<li><p>That minimises the number of components needed. Redundancy is introduced only in safety critical systems, such as aircraft control systems. Students of biology, however, will be aware that in nature system-redundancy is everywhere. Redundancy leads to robustness. For an organism to survive in an evolving environment it must first be robust, then it can consider how to be efficient. Indeed, organisms that evolve to be too efficient at a particular task, like those that occupy a niche environment, are particularly vulnerable to extinction.</p></li>
-<li><p>So it is with natural vs artificial intelligences. Any natural intelligence that was not robust to changes in its external environment would not survive, and therefore not reproduce. In contrast the artificial intelligences we produce are designed to be efficient at one specific task: control, computation, playing chess. They are <em>fragile</em>.</p></li>
 </ul>
 </section>
 <section id="dont-fail" class="slide level3 slide:" data-transition="none">
@@ -470,6 +448,11 @@ Are we close to creating intelligence?
 <ul>
 <li><p>Even if we wanted to incorporate <em>don’t fail</em> in some form, it is difficult to design for.</p></li>
 <li><p>To design for “don’t fail”, you have to consider every which way in which things can go wrong, if you miss one you fail. These cases are sometimes called corner cases.</p></li>
+</ul>
+</section>
+<section id="corners-everywhere" class="slide level3 slide:" data-transition="none">
+<h3>Corners Everywhere</h3>
+<ul>
 <li><p>In an uncontrolled environment, almost everything is a corner.</p>
 <ul>
 <li><p>It is difficult to imagine everything that can happen.</p></li>
@@ -480,12 +463,18 @@ Are we close to creating intelligence?
 <section id="deployment-in-uncontrolled-environments" class="slide level3 slide:" data-transition="none">
 <h3>Deployment in Uncontrolled Environments</h3>
 <ul>
-<li><p>Requires a different approach to systems design.</p>
+<li>Requires a different approach to systems design.</li>
+</ul>
+<div class="fragment">
 <ul>
 <li>One that accounts for uncertainty in the environment</li>
-<li>One that is robust to unforeseen circumstances.</li>
-</ul></li>
 </ul>
+</div>
+<div class="fragment">
+<ul>
+<li>One that is robust to unforeseen circumstances.</li>
+</ul>
+</div>
 </section>
 <section id="pigeonholing" class="slide level3 slide:" data-transition="none">
 <h3>Pigeonholing</h3>
@@ -496,19 +485,43 @@ Are we close to creating intelligence?
 <ul>
 <li><p>Need to move beyond pigeonholing tasks.</p></li>
 <li><p>Need new approaches to both the design of the individual components, and the combination of components within our AI systems.</p></li>
-<li><p>Need to deal with uncertainty and increase robustness.</p></li>
-<li><p>Today, it is easy to make a fool of an artificial intelligent agent, technology needs to address the challenge of the uncertain environment to achieve robust intelligences.</p></li>
 </ul>
+</section>
+<section id="an-intelligent-system-i-created" class="slide level3 slide:" data-transition="none">
+<h3>An Intelligent System I Created</h3>
+<video width="80%" controls preload="none">
+<source src="../slides/diagrams/paolo-save.mp4" type="video/mp4"/>
+</video>
+<p align="right">
+<small>Joint work with M. Milo</small>
+</p>
+</section>
+<section id="an-intelligent-system-i-created-1" class="slide level3 slide:" data-transition="none">
+<h3>An Intelligent System I Created</h3>
+<video width="30%" height="60%" controls preload="none">
+<source src="../slides/diagrams/paolo-peppercorn.mp4" type="video/mp4"/>
+</video>
+<p align="right">
+<small>Joint work with M. Milo</small>
+</p>
 </section>
 <section id="section-7" class="slide level3 slide:" data-transition="none">
 <h3></h3>
-<p><img src="../slides/diagrams/the-diving-bell-and-the-butterfly.jpg" width="40%" align="center" style="background:none; border:none; box-shadow:none;"></p>
+<ul>
+<li><p>Need to deal with uncertainty and increase robustness.</p></li>
+<li><p>Today, it is easy to make a fool of an artificial intelligent agent.</p></li>
+<li><p>Technology needs to address the challenge of the uncertain environment to achieve robust intelligences.</p></li>
+</ul>
 </section>
 <section id="section-8" class="slide level3 slide:" data-transition="none">
 <h3></h3>
+<p><img src="../slides/diagrams/the-diving-bell-and-the-butterfly.jpg" width="40%" align="center" style="background:none; border:none; box-shadow:none;"></p>
+</section>
+<section id="section-9" class="slide level3 slide:" data-transition="none">
+<h3></h3>
 <p><img src="../slides/diagrams/Jean-Dominique_Bauby.jpg" align="center" width="70%" style="background:none; border:none; box-shadow:none;"></p>
 </section>
-<section id="section-9" class="slide level3">
+<section id="section-10" class="slide level3">
 <h3></h3>
 <table>
 <tr>
@@ -604,15 +617,15 @@ Are we close to creating intelligence?
 </tr>
 </table>
 </section>
-<section id="section-10" class="slide level3" data-transition="None">
+<section id="section-11" class="slide level3" data-transition="None">
 <h3></h3>
 <p><img src="../slides/diagrams/Sahe_tchadensis.jpg" width="80%" align="center" width="70%" style="background:none; border:none; box-shadow:none;"></p>
 </section>
-<section id="section-11" class="slide level3 slide:" data-transition="none">
+<section id="section-12" class="slide level3 slide:" data-transition="none">
 <h3></h3>
 <p><img src="../slides/diagrams/640px-Marcel_Renault_1903.jpg" align="center" width="70%" style="background:none; border:none; box-shadow:none;"></p>
 </section>
-<section id="section-12" class="slide level3 slide:" data-transition="none">
+<section id="section-13" class="slide level3 slide:" data-transition="none">
 <h3></h3>
 <p><img src="../slides/diagrams/Caleb_McDuff_WIX_Silence_Racing_livery.jpg" align="center" width="70%" style="background:none; border:none; box-shadow:none;"></p>
 </section>
@@ -656,7 +669,7 @@ Are we close to creating intelligence?
 <object type="image/svg+xml" data="../slides/diagrams/anne-bob-conversation007.svg">
 </object>
 </section>
-<section id="section-13" class="slide level3 slide:" data-transition="none">
+<section id="section-14" class="slide level3 slide:" data-transition="none">
 <h3></h3>
 <object class="svgplot" data="../slides/diagrams/Hilbert_InfoGrowth.svg">
 </object>
@@ -685,10 +698,26 @@ Are we close to creating intelligence?
 <object class="svgplot" data="../slides/diagrams/data-science-information-flow_neg003.svg">
 </object>
 </section>
-<section id="section-14" class="slide level3 slide:" data-transition="none">
+<section id="section-15" class="slide level3 slide:" data-transition="none">
 <h3></h3>
 <object type="image/svg+xml" data="../slides/diagrams/anne-computer-conversation.svg">
 </object>
+</section>
+<section id="conclusion-i" class="slide level3">
+<h3>Conclusion I</h3>
+<ul>
+<li><p>We are a <em>long</em> way from emulating human intelligence, animal intelligence, animal motion.</p></li>
+<li><p>The objectives of <em>cybernetics</em> still have not been reached.</p></li>
+<li><p>The <em>robustness</em> of natural systems is outside the scope of our current design methodologies.</p></li>
+</ul>
+</section>
+<section id="conclusion-ii" class="slide level3">
+<h3>Conclusion II</h3>
+<ul>
+<li><p>There is something quintisential about the <em>human</em> experience.</p></li>
+<li><p>We are co-evolved to view the world in a certain way to enable collaboration.</p></li>
+<li><p>Our consciousness is a consequence of our limitations. Our <em>locked-in</em> intelligence.</p></li>
+</ul>
 </section>
     </div>
   </div>
