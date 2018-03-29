@@ -22,13 +22,15 @@ affiliation: Amazon Research Cambridge and University of Sheffield
 <!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2017-06-27-data-science-time-for-professionalisation.slides.html 2017-06-27-data-science-time-for-professionalisation.md
 -->
 
+\ifdef{ipynb}
+\define{\includesvg{filename}}{<img src="\filename">}
 
-### What is Machine Learning?
+\else
+\define{\includesvg{filename}}{<object class="svgplot" data="\filename"></object>}
+\endif
+\define{\includeimg{filename}{width}{class}}{<img class="\class" src="\filename" width="\width" style="background:none; border:none; box-shadow:none;">}
 
-$$ \text{data} + \text{model} \rightarrow \text{prediction}$$
-
-* Royal Society Report:
-[Machine Learning: Power and Promise of Computers that Learn by Example](https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf)
+\include{../_ml/includes/what-is-ml.md}
 
 ### Machine Learning as the Driver ... {.slide: data-transition="none"}
 
@@ -52,83 +54,9 @@ $$ \text{data} + \text{model} \rightarrow \text{prediction}$$
 
 * With Data Science: databases, data mining, statistics, visualization
 
-### "Embodiment Factors"
-
-<table>
-<tr><td></td><td align="center">
-<img src="./diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="40%" style="background:none; border:none; box-shadow:none;" align="center">
-</td>
-<td align="center">
-<img src="./diagrams/ClaudeShannon_MFO3807.jpg" width="60%" style="background:none; border:none; box-shadow:none;" align="center">
-</td>
-</tr>
-<tr>
-<td>compute</td><td align="center">~10 gigaflops</td><td align="center">~ 1000 teraflops?</td>
-</tr>
-<tr>
-<td>communicate</td><td align="center">~1 gigbit/s</td><td align="center">~ 100 bit/s</td>
-</tr>
-<tr>
-<td>embodiment<br>(compute/communicate)</td><td align="center">10</td><td align="center">~ 10<sup>13</sup></td>
-</tr>
-</table>
-
-See ["Living Together: Mind and Machine Intelligence"](https://arxiv.org/abs/1705.07996)
-
-### Evolved Relationship {.slide: data-transition="none"}
-
-<object type="image/svg+xml" data="./diagrams/data-science-information-flow_neg001.svg">
-</object>
-
-### Evolved Relationship {.slide: data-transition="none"}
-
-<object type="image/svg+xml" data="./diagrams/data-science-information-flow_neg002.svg">
-</object>
-
-### Evolved Relationship {.slide: data-transition="none"}
-
-<object type="image/svg+xml" data="./diagrams/data-science-information-flow_neg003.svg">
-</object>
-
-### What does Machine Learning do?
-
-* We scale by codifying processes and automating them.
-
-    * Ensure components are compatible (Whitworth threads)
-
-    * Then interconnect them as efficiently as possible.
-
-    * cf Colt 45, Ford Model T
-
-
-### Codify Through Mathematical Functions 
-
-* How does machine learning work?
-
-* Jumper (jersey/sweater) purchase with logistic regression
-
-$$ \text{odds} = \frac{\text{bought}}{\text{not bought}} $$
-
-$$ \log \text{odds}  = \beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}$$
-
-
-### Codify Through Mathematical Functions {.slide: data-transition="none"}
-
-* How does machine learning work?
-
-* Jumper (jersey/sweater) purchase with logistic regression
-
-$$ p(\text{bought}) =  f\left(\beta_0 + \beta_1 \text{age} + \beta_2 \text{lattitude}\right)$$
-
-
-### Codify Through Mathematical Functions {.slide: data-transition="none"}
-
-* How does machine learning work?
-
-* Jumper (jersey/sweater) purchase with logistic regression
-
-$$ p(\text{bought}) =  f\left(\boldsymbol{\beta}^\top \mathbf{x}\right)$$
-
+\include{../_ai/includes/embodiment-factors.md}
+\include{../_data-science/includes/evolved-relationship.md}
+\include{../_ml/includes/what-does-machine-learning-do.md}
 
 ### Deep Learning
 

@@ -36,23 +36,112 @@ So what will be the last bastion
 \endif
 \define{\includeimg{filename}{width}{class}}{<img class="\class" src="\filename" width="\width" style="background:none; border:none; box-shadow:none;">}
 
-*How are we making computers do the things we used to associated only with humans? Have we made a breakthrough in understanding human intelligence?*
+## What is Intelligence?
 
-While recent achievements might give the sense that the answer is yes, the short answer is that we are nowhere near. All we’ve achieved for the moment is a breakthrough in *emulating intelligence*. 
+* Poorly defined.
+
+    * My definition: use of information to achieve goals more efficiently.
+	
+	* Efficiency is defined through use of less resource.
+
+* Automated decision making: we are continuing to progress well.
+
+## The Silicon Factor
+
+* BBC 1, London, 14th September 1980
+
+* [Series of three programmes](http://genome.ch.bbc.co.uk/8bb0b5a05c38403280483e2f96aff1b9) investigating the so-called microelectronics revolution.
+
+* The promise (and perils) of silicon was broadly similar to that for AI today.
+
+## Public Definition
+
+* Doing things that humans do.
+
+    * There is a narcissistic element to our understanding of *artificial intelligence*
+
+* It's a shifting definition.
+
+    * Intelligence is the stuff I can do computers can't.
+		
+## Cybernetics and the Ratio Club
+
+* Cybernetics: Control and Communication in the Animal and the Machine by [Norbert Wiener](https://en.wikipedia.org/wiki/Norbert_Wiener) (1948)
+
+* [Ratio Club](https://en.wikipedia.org/wiki/Ratio_Club) members include [Alan Turing](https://en.wikipedia.org/wiki/Alan_Turing), [Jack Good](https://en.wikipedia.org/wiki/I._J._Good), [Horace Barlow](https://en.wikipedia.org/wiki/Horace_Barlow), [Donald MacKay](https://en.wikipedia.org/wiki/Donald_MacCrimmon_MacKay)
+
+## 	
+
+* Ideas came out of the Second World War.
+
+    * Researchers explored the use of radar (automated sensing) e.g. Donald MacKay
+	* Automatic computation for decryption of military codes (automated decision making) e.g. Jack Good and Alan Turing
+	
+	* Post-war potential for electronic emulation of what had up until then been the preserve of an animallian nervous system. 
+
+
+## Watt's Governor
 
 \includeimg{../slides/diagrams/science-holborn-viaduct.jpg}{30%}
 
 <center><i>Science on Holborn Viaduct, cradling Watt's Governor</i></center>
 
-Artificial intelligence is a badly defined term. Successful deployments of intelligent systems are common, but normally they are redefined to be non-intelligent. My favourite example is [Watt’s governor](https://en.wikipedia.org/wiki/Centrifugal_governor). Immortalised in the arms of the statue of “Science” on the Holborn viaduct in London, Watt’s governor automatically regulated the speed of a steam engine, closing the inlet valve progressively as the engine ran faster. It did the job that an intelligent operator used to have to do, but few today would describe it as “artificial intelligence”.
+[On Governors](http://www.maths.ed.ac.uk/~v1ranick/papers/maxwell1.pdf), James Clerk Maxwell 1868
 
-A more recent example comes from the middle of the last century. A hundred years ago *computers* were human beings, often female, who conducted repetitive mathematical tasks for the creation of mathematical tables such as logarithms. Our modern digital computers were originally called *automatic computers* to reflect the fact that the intelligence of these human operators had been automated. But despite the efficiency with which they perform these tasks, very few think of their mobile phones or computers as intelligent.
 
-## Cybernetics
+## Current Situation
 
-* Norbert Wiener launched last century’s first wave of interest in emulation of intelligence with his book “Cybernetics”. The great modern success that stemmed from that work is the modern engineering discipline of Automatic Control. The technology that allows fighter jets to fly. These ideas came out of the Second World War, when researchers explored the use of radar (automated sensing) and automatic computation for decryption of military codes (automated decision making). Post war a body of researchers, including Alan Turing, were seeing the potential for electronic emulation of what had up until then been the preserve of an animallian nervous system. 
+* How are we making computers do the things we used to associated only with humans? 
 
-So what of the modern revolution? Is this any different? Are we finally encroaching on the quintessential nature of human intelligence? Or is there a last bastion of our minds that remains out of reach from this latest technical wave? 
+* Have we made a breakthrough in understanding human intelligence?
+
+* Or is it more "chess playing machines"
+
+## Answer
+
+* Recent achievements might give the sense that the answer is yes. 
+
+. . . 
+
+* My answer is that we are nowhere near. 
+
+. . . 
+
+* All we’ve achieved for the moment is a breakthrough in *emulating intelligence*. 
+
+## Jeff and His Dog
+
+\includeimg{../slides/diagrams/bezos_taking_my_dog.png}{30%}
+
+## 
+
+\includeimg{../slides/diagrams/musk_chollet_control_reinforcement_learning.png}{30%}
+
+
+## 
+
+\includeimg{../slides/diagrams/spot_nick_jeff.jpg}{30%}
+
+## 
+
+\includeimg{../slides/diagrams/taleb_skin_in_the_game.jpg}{50%}
+
+##
+
+* Successful deployments of intelligent systems are common.
+
+* But they are redefined to be non-intelligent. 
+
+* My favourite example is [Watt’s governor](https://en.wikipedia.org/wiki/Centrifugal_governor). 
+
+## Computers
+
+* A hundred years ago *computers* were human beings.
+
+* Digital computers originally called *automatic computers* 
+
+* Do we think of such a computer as intelligent?
+
 
 ## Two Answers
 
@@ -62,7 +151,30 @@ So what of the modern revolution? Is this any different? Are we finally encroach
 
 ## Review of Current Technology
  
-* Recent breakthroughs in artificial intelligence are being driven by advances in machine learning. Or more precisely, a sub domain of that field known as deep learning. So what is deep learning? Well, machine learning algorithms proceed in the following way. They observe data, often from humans, and they attempt to emulate that data creation process with a mathematical function. Let’s explain that in a different way. Whichever activities we are interested in emulating, we acquire data about them. Data is simply a set of numbers representing the activity. It might include location, or number representing past behaviour. Once we have the behaviour represented in a set of numbers, then we can emulate it mathematically. 
+* Recent breakthroughs  driven by machine learning. 
+
+    * More precisely: deep learning
+	
+* So what are deep learning and machine leaning? 
+
+
+\include{../_ml/includes/what-is-ml.md}
+
+
+\include{../_ml/includes/what-does-machine-learning-do.md}
+
+### Deploying ML in Real World: Machine Learning Systems Design
+
+* Major new challenge for systems designers.
+
+* Internet of Intelligence but currently:
+
+	* AI systems are *fragile*
+
+\include{../_ai/includes/ml-systems-design-long.md}
+
+
+Well, machine learning algorithms proceed in the following way. They observe data, often from humans, and they attempt to emulate that data creation process with a mathematical function. Let’s explain that in a different way. Whichever activities we are interested in emulating, we acquire data about them. Data is simply a set of numbers representing the activity. It might include location, or number representing past behaviour. Once we have the behaviour represented in a set of numbers, then we can emulate it mathematically. 
 
 * Different mathematical functions have different characteristics, in trigonometry we learnt about sine and cosine functions. Those are functions that have a period. They repeat over time. They are useful for emulating behaviour that repeats itself, perhaps behaviour that reflects day/night cycles. But these functions on their own are too simple to emulate human behaviour in all its richness. So how do we make things more complex? In practice we can add functions together, scale them up and scale them down. All these things are done. Deep learning refers to the practice of creating a new function by feeding one function in to another. So we create the output of a function, feed it in to a new function, and take the output of that as our answer. In maths this is known as *composition* of functions. The advantage is that we can generate much more complex functions from simpler functions. The resulting functions allow us to take an *image* as an input and produce an output that includes numbers representing what the objects or people are in that image. Doing this accurately is achieved through composition of mathematical functions, otherwise known as deep learning. 
 
