@@ -168,7 +168,7 @@ Are we close to creating intelligence?
 </section>
 <section id="section-4" class="slide level3 slide:" data-transition="none">
 <h3></h3>
-<p><img class="" src="../slides/diagrams/taleb_skin_in_the_game.jpg" width="50%" style="background:none; border:none; box-shadow:none;"></p>
+<p><img class="" src="../slides/diagrams/taleb_skin_in_the_game.png" width="50%" style="background:none; border:none; box-shadow:none;"></p>
 </section>
 <section id="section-5" class="slide level3 slide:" data-transition="none">
 <h3></h3>
@@ -265,7 +265,7 @@ Are we close to creating intelligence?
 <li><p>How does machine learning work?</p></li>
 <li><p>Jumper (jersey/sweater) purchase with logistic regression</p></li>
 </ul>
-<p><span class="math display">\[ p(\text{bought}) =  \mappingFunction\left(\beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}\right)\]</span></p>
+<p><span class="math display">\[ p(\text{bought}) =  {f}\left(\beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}\right)\]</span></p>
 </section>
 <section id="codify-through-mathematical-functions-2" class="slide level3 slide:" data-transition="none">
 <h3>Codify Through Mathematical Functions</h3>
@@ -273,9 +273,9 @@ Are we close to creating intelligence?
 <li><p>How does machine learning work?</p></li>
 <li><p>Jumper (jersey/sweater) purchase with logistic regression</p></li>
 </ul>
-<p><span class="math display">\[ p(\text{bought}) =  \mappingFunction\left(\boldsymbol{\beta}^\top \inputVector\right)\]</span></p>
+<p><span class="math display">\[ p(\text{bought}) =  {f}\left(\boldsymbol{\beta}^\top {{\bf {x}}}\right)\]</span></p>
 <div class="fragment">
-<p>We call <span class="math inline">\(\mappingFunction(\cdot)\)</span> the <em>prediction function</em></p>
+<p>We call <span class="math inline">\({f}(\cdot)\)</span> the <em>prediction function</em></p>
 </div>
 </section>
 <section id="fit-to-data" class="slide level3 slide:" data-transition="none">
@@ -283,29 +283,29 @@ Are we close to creating intelligence?
 <ul>
 <li>Use an objective function</li>
 </ul>
-<p><span class="math display">\[\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix)\]</span></p>
+<p><span class="math display">\[{E}(\boldsymbol{\beta}, {\mathbf{Y}}, {{\bf X}})\]</span></p>
 <div class="fragment">
 <ul>
 <li>E.g. least squares</li>
 </ul>
-<p><span class="math display">\[\errorFunction(\boldsymbol{\beta}) = \sum_{i=1}^\numdata \left(\dataScalar_i - \mappingFunction(\inputVector_i)\right)^2\]</span></p>
+<p><span class="math display">\[{E}(\boldsymbol{\beta}) = \sum_{i=1}^{n}\left({y}_i - {f}({{\bf {x}}}_i)\right)^2\]</span></p>
 </div>
 </section>
 <section id="two-components" class="slide level3 slide:" data-transition="none">
 <h3>Two Components</h3>
 <ul>
-<li><p>Prediction function, <span class="math inline">\(\mappingFunction(\cdot)\)</span></p></li>
-<li><p>Objective function, <span class="math inline">\(\errorFunction(\cdot)\)</span></p></li>
+<li><p>Prediction function, <span class="math inline">\({f}(\cdot)\)</span></p></li>
+<li><p>Objective function, <span class="math inline">\({E}(\cdot)\)</span></p></li>
 </ul>
 </section>
-<section id="artificial-intelligence" class="slide level3">
+<section id="artificial-intelligence" class="slide level3 slide:" data-transition="none">
 <h3>Artificial Intelligence</h3>
 <ul>
 <li><p>Challenges in deploying AI.</p></li>
 <li><p>Currently this is in the form of “machine learning systems”</p></li>
 </ul>
 </section>
-<section id="internet-of-people" class="slide level3">
+<section id="internet-of-people" class="slide level3 slide:" data-transition="none">
 <h3>Internet of People</h3>
 <ul>
 <li><p>Fog computing: barrier between cloud and device blurring.</p>
@@ -315,7 +315,7 @@ Are we close to creating intelligence?
 <li><p>Complex feedback between algorithm and implementation</p></li>
 </ul>
 </section>
-<section id="deploying-ml-in-real-world-machine-learning-systems-design" class="slide level3">
+<section id="deploying-ml-in-real-world-machine-learning-systems-design" class="slide level3 slide:" data-transition="none">
 <h3>Deploying ML in Real World: Machine Learning Systems Design</h3>
 <ul>
 <li><p>Major new challenge for systems designers.</p></li>
@@ -325,19 +325,19 @@ Are we close to creating intelligence?
 </ul></li>
 </ul>
 </section>
-<section id="fragility-of-ai-systems" class="slide level3">
+<section id="fragility-of-ai-systems" class="slide level3 slide:" data-transition="none">
 <h3>Fragility of AI Systems</h3>
 <ul>
 <li><p>They are componentwise built from ML Capabilities.</p></li>
 <li><p>Each capability is independently constructed and verified.</p>
 <ul>
-<li>Pedestrian detection</li>
-<li>Road line detection</li>
+<li><p>Pedestrian detection</p></li>
+<li><p>Road line detection</p></li>
 </ul></li>
 <li><p>Important for verification purposes.</p></li>
 </ul>
 </section>
-<section id="rapid-reimplementation" class="slide level3">
+<section id="rapid-reimplementation" class="slide level3 slide:" data-transition="none">
 <h3>Rapid Reimplementation</h3>
 <ul>
 <li><p>Whole systems are being deployed.</p></li>
@@ -345,22 +345,22 @@ Are we close to creating intelligence?
 <li><p>The experience evolved adversarial behaviour.</p></li>
 </ul>
 </section>
-<section id="early-ai" class="slide level3">
+<section id="early-ai" class="slide level3 slide:" data-transition="none">
 <h3>Early AI</h3>
-<p><img src="../slides/diagrams/2017-10-12 16.47.34.jpg" width="40%" class="rotateimg90" style="border:none"></p>
+<p><img class="rotateimg90" src="../slides/diagrams/2017-10-12 16.47.34.jpg" width="40%" style="background:none; border:none; box-shadow:none;"></p>
 </section>
-<section id="machine-learning-systems-design" class="slide level3">
+<section id="machine-learning-systems-design" class="slide level3 slide:" data-transition="none">
 <h3>Machine Learning Systems Design</h3>
-<p><img src="../slides/diagrams/SteamEngine_Boulton&Watt_1784_neg.png" width="50%" style="border:none"></p>
+<p><img class="" src="../slides/diagrams/SteamEngine_Boulton&Watt_1784_neg.png" width="50%" style="background:none; border:none; box-shadow:none;"></p>
 </section>
-<section id="adversaries" class="slide level3">
+<section id="adversaries" class="slide level3 slide:" data-transition="none">
 <h3>Adversaries</h3>
 <ul>
 <li><p>Stuxnet</p></li>
 <li><p>Mischevious-Adversarial</p></li>
 </ul>
 </section>
-<section id="turnaround-and-update" class="slide level3">
+<section id="turnaround-and-update" class="slide level3 slide:" data-transition="none">
 <h3>Turnaround And Update</h3>
 <ul>
 <li><p>There is a massive need for turn around and update</p></li>
@@ -371,21 +371,21 @@ Are we close to creating intelligence?
 <li><p>Interface between security engineering and machine learning.</p></li>
 </ul>
 </section>
-<section id="peppercorns" class="slide level3">
+<section id="peppercorns" class="slide level3 slide:" data-transition="none">
 <h3>Peppercorns</h3>
 <ul>
 <li><p>A new name for system failures which aren’t bugs.</p></li>
 <li><p>Difference between finding a fly in your soup vs a peppercorn in your soup.</p></li>
 </ul>
-<!--### {.slide: data-transition="none"}
+<!--
+### {.slide: data-transition="none"}
 
 <center><video height="600" type="video/mp4"><source src="../slides/diagrams/paolo-peppercorn.mp4" height="80%"></video></center>
 
 ### {.slide: data-transition="none"}
 
-<center><video type="video/mp4"><source src="../slides/diagrams/paolo-save.mp4"></video></center>-->
-<!--  LocalWords:  Mischevious
- -->
+<center><video type="video/mp4"><source src="../slides/diagrams/paolo-save.mp4"></video></center>
+-->
 </section>
 <section id="artificial-vs-natural-systems" class="slide level3 slide:" data-transition="none">
 <h3>Artificial vs Natural Systems</h3>
@@ -616,9 +616,7 @@ Are we close to creating intelligence?
 </td>
 </tr>
 </table>
-</section>
-<section id="section-11" class="slide level3" data-transition="None">
-<h3></h3>
+<h4 id="section-11" data-transition="None"></h4>
 <p><img src="../slides/diagrams/Sahe_tchadensis.jpg" width="80%" align="center" width="70%" style="background:none; border:none; box-shadow:none;"></p>
 </section>
 <section id="section-12" class="slide level3 slide:" data-transition="none">
@@ -669,11 +667,6 @@ Are we close to creating intelligence?
 <object type="image/svg+xml" data="../slides/diagrams/anne-bob-conversation007.svg">
 </object>
 </section>
-<section id="section-14" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot" data="../slides/diagrams/Hilbert_InfoGrowth.svg">
-</object>
-</section>
 <section id="human-and-narrative" class="slide level3">
 <h3>Human and Narrative</h3>
 <center>
@@ -683,27 +676,12 @@ Are we close to creating intelligence?
 </p>
 </center>
 </section>
-<section id="evolved-relationship" class="slide level3 slide:" data-transition="none">
-<h3>Evolved Relationship</h3>
-<object class="svgplot" data="../slides/diagrams/data-science-information-flow_neg001.svg">
-</object>
-</section>
-<section id="evolved-relationship-1" class="slide level3 slide:" data-transition="none">
-<h3>Evolved Relationship</h3>
-<object class="svgplot" data="../slides/diagrams/data-science-information-flow_neg002.svg">
-</object>
-</section>
-<section id="evolved-relationship-2" class="slide level3 slide:" data-transition="none">
-<h3>Evolved Relationship</h3>
-<object class="svgplot" data="../slides/diagrams/data-science-information-flow_neg003.svg">
-</object>
-</section>
-<section id="section-15" class="slide level3 slide:" data-transition="none">
+<section id="section-14" class="slide level3 slide:" data-transition="none">
 <h3></h3>
 <object type="image/svg+xml" data="../slides/diagrams/anne-computer-conversation.svg">
 </object>
 </section>
-<section id="conclusion-i" class="slide level3">
+<section id="conclusion-i" class="slide level3 slide:" data-transition="none">
 <h3>Conclusion I</h3>
 <ul>
 <li><p>We are a <em>long</em> way from emulating human intelligence, animal intelligence, animal motion.</p></li>
@@ -711,7 +689,7 @@ Are we close to creating intelligence?
 <li><p>The <em>robustness</em> of natural systems is outside the scope of our current design methodologies.</p></li>
 </ul>
 </section>
-<section id="conclusion-ii" class="slide level3">
+<section id="conclusion-ii" class="slide level3 slide:" data-transition="none">
 <h3>Conclusion II</h3>
 <ul>
 <li><p>There is something quintisential about the <em>human</em> experience.</p></li>

@@ -52,7 +52,7 @@ $$\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix)$$
 
 * E.g. least squares
 
-$$\errorFunction(\boldsymbol{\beta}) = \sum_{i=1}^\numdata \left(\dataScalar_i - \mappingFunction(\inputVector_i)\right)^2$$
+$$\errorFunction(\boldsymbol{\beta}) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingFunction(\inputVector_i)\right)^2$$
 
 ### Two Components {.slide: data-transition="none"}
 
