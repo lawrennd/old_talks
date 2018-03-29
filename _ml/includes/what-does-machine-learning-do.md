@@ -1,5 +1,5 @@
 
-### What does Machine Learning do?
+### What does Machine Learning do? {.slide: data-transition="none"}
 
 * We scale by codifying processes and automating them.
 
@@ -10,7 +10,7 @@
     * cf Colt 45, Ford Model T
 
 
-### Codify Through Mathematical Functions 
+### Codify Through Mathematical Functions {.slide: data-transition="none"}
 
 * How does machine learning work?
 
