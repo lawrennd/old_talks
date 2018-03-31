@@ -34,7 +34,7 @@ So what will be the last bastion
 \define{\includesvg{filename}}{<object class="svgplot" data="\filename"></object>}
 \endif
 \define{\includeimg{filename}{width}{class}}{<img class="\class" src="\filename" width="\width" style="background:none; border:none; box-shadow:none;">}
-\define{\includemp4{filename}{width}}{<video width="\width" controls preload="none">
+\define{\includemp4{filename}{width}{height}}{<video width="\width" height="\height" controls preload="none">
 <source src="\filename" type="video/mp4"/>
 </video>}
 
@@ -286,19 +286,14 @@ So what will be the last bastion
 
 ### An Intelligent System I Created {.slide: data-transition="none" }
 
-<video width="80%" controls preload="none">
-<source src="../slides/diagrams/paolo-save.mp4" type="video/mp4"/>
-</video>
+\includemp4{../slides/diagrams/paolo-save.mp4}{80%}
 
 <p align="right">
 <small>Joint work with M. Milo</small></p>
 
 ### An Intelligent System I Created {.slide: data-transition="none" }
 
-
-<video width="30%" height="60%" controls preload="none">
-<source src="../slides/diagrams/paolo-peppercorn.mp4" type="video/mp4"/>
-</video>
+\includemp4{../slides/diagrams/paolo-peppercorn.mp4}{30%}{60%}
 
 <p align="right">
 <small>Joint work with M. Milo</small></p>
