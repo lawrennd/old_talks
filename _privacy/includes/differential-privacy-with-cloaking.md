@@ -14,37 +14,37 @@
 
 ### Cloaking {#cloaking-1 data-transition="None"}
 
-\includesvg{../slides/diagrams/dp_firstpoint0_neg.svg}
+\includesvg{../slides/diagrams/privacy/dp-firstpoint000.svg}
 
 *Left*: Function change. *Right*: test point change
 
 ### Cloaking {#cloaking-1 data-transition="None"}
 
-\includesvg{../slides/diagrams/dp_firstpoint2_neg.svg}
+\includesvg{../slides/diagrams/privacy/dp-firstpoint002.svg}
 
 *Left*: Function change. *Right*: test point change
 
 ### Cloaking {#cloaking-1 data-transition="None"}
 
-\includesvg{../slides/diagrams/dp_secondpoint0_neg.svg}
+\includesvg{../slides/diagrams/privacy/dp-secondpoint000.svg}
 
 *Left*: Function change. *Right*: test point change
 
 ### Cloaking {#cloaking-1 data-transition="None"}
 
-\includesvg{../slides/diagrams/dp_secondpoint2_neg.svg}
+\includesvg{../slides/diagrams/privacy/dp-secondpoint002.svg}
 
 *Left*: Function change. *Right*: test point change
 
 ### Cloaking {#cloaking-1 data-transition="None"}
 
-\includesvg{../slides/diagrams/dp_with_ellipse1_neg.svg}
+\includesvg{../slides/diagrams/privacy/dp-with-ellipse001.svg}
 
 *Left*: Function change. *Right*: test point change
 
 ### Cloaking {#cloaking-1 data-transition="None"}
 
-\includesvg{../slides/diagrams/dp_with_ellipse2_neg.svg}
+\includesvg{../slides/diagrams/privacy/dp-with-ellipse002.svg}
 
 *Left*: Function change. *Right*: test point change
 
