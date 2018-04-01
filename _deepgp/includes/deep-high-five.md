@@ -6,9 +6,8 @@
 
 ### Shared LVM {data-transition="none"}
 
-<object class="svgplot" data="../slides/diagrams/shared.svg"></object>
+\includesvg{../slides/diagrams/shared.svg}
 
 ### {data-transition="none"}
 
-<img src="../slides/diagrams/deep-gp-high-five2.png"  width="100%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;">
-
+\includeimg{../slides/diagrams/deep-gp-high-five2.png}{100%}{negate}

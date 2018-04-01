@@ -1,20 +1,20 @@
 ### Stacked PCA {data-transition="None"}
 
-<object class="svgplot" data="../slides/diagrams/stack-pca-sample-0.svg"></object>
+\includesvg{../slides/diagrams/stack-pca-sample-0.svg}
 
 ### Stacked PCA {data-transition="None"}
 
-<object class="svgplot" data="../slides/diagrams/stack-pca-sample-1.svg"></object>
+\includesvg{../slides/diagrams/stack-pca-sample-1.svg}
 
 ### Stacked PCA {data-transition="None"}
 
-<object class="svgplot" data="../slides/diagrams/stack-pca-sample-2.svg"></object>
+\includesvg{../slides/diagrams/stack-pca-sample-2.svg}
 
 ### Stacked PCA {data-transition="None"}
 
-<object class="svgplot" data="../slides/diagrams/stack-pca-sample-3.svg"></object>
+\includesvg{../slides/diagrams/stack-pca-sample-3.svg}
 
 ### Stacked PCA {data-transition="None"}
 
-<object class="svgplot" data="../slides/diagrams/stack-pca-sample-4.svg"></object>
+\includesvg{../slides/diagrams/stack-pca-sample-4.svg}
 
