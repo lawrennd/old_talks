@@ -10,10 +10,10 @@
 
 \includesvg{../slides/diagrams/anne_bob003.svg}
 
-###  Modelling
+###  Modelling {.slide: data-transition="none"}
 
 \includesvg{../slides/diagrams/anne.svg}
 
-###  Modelling
+###  Modelling {.slide: data-transition="none"}
 
 \includesvg{../slides/diagrams/bob.svg}

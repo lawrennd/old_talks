@@ -30,7 +30,7 @@ Comments from Rich!
 CMB samples -> Life
 -->
 \include{../talk-macros.tex}
-\includemd{../_gp/includes/what-is-a-gp.md}
+\include{../_gp/includes/what-is-a-gp.md}
 
 
 ### Deep Gaussian Processes {data-transition="None"}
