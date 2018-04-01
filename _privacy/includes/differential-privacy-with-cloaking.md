@@ -14,43 +14,37 @@
 
 ### Cloaking {#cloaking-1 data-transition="None"}
 
-<object type="image/svg+xml" data="../slides/diagrams/dp_firstpoint0_neg.svg">
-</object>
+\includesvg{../slides/diagrams/dp_firstpoint0_neg.svg}
 
 *Left*: Function change. *Right*: test point change
 
 ### Cloaking {#cloaking-1 data-transition="None"}
 
-<object type="image/svg+xml" data="../slides/diagrams/dp_firstpoint2_neg.svg">
-</object>
+\includesvg{../slides/diagrams/dp_firstpoint2_neg.svg}
 
 *Left*: Function change. *Right*: test point change
 
 ### Cloaking {#cloaking-1 data-transition="None"}
 
-<object type="image/svg+xml" data="../slides/diagrams/dp_secondpoint0_neg.svg">
-</object>
+\includesvg{../slides/diagrams/dp_secondpoint0_neg.svg}
 
 *Left*: Function change. *Right*: test point change
 
 ### Cloaking {#cloaking-1 data-transition="None"}
 
-<object type="image/svg+xml" data="../slides/diagrams/dp_secondpoint2_neg.svg">
-</object>
+\includesvg{../slides/diagrams/dp_secondpoint2_neg.svg}
 
 *Left*: Function change. *Right*: test point change
 
 ### Cloaking {#cloaking-1 data-transition="None"}
 
-<object type="image/svg+xml" data="../slides/diagrams/dp_with_ellipse1_neg.svg">
-</object>
+\includesvg{../slides/diagrams/dp_with_ellipse1_neg.svg}
 
 *Left*: Function change. *Right*: test point change
 
 ### Cloaking {#cloaking-1 data-transition="None"}
 
-<object type="image/svg+xml" data="../slides/diagrams/dp_with_ellipse2_neg.svg">
-</object>
+\includesvg{../slides/diagrams/dp_with_ellipse2_neg.svg}
 
 *Left*: Function change. *Right*: test point change
 
@@ -61,7 +55,7 @@
 * Find a bound ($\Delta$) on the scale of the output change, in term of
 its Mahalanobis distance (wrt the added noise covariance).
 
-    $$\sup_{D \sim {D'}} ||\mathbf{M}^{-1/2} (\mathbf{y}_* - \mathbf{y}_{*}')||_2 \leq \Delta$$
+    $$\sup_{D \sim {D^\prime}} ||\mathbf{M}^{-1/2} (\dataVector_* - \dataVector_{*}^\prime)||_2 \leq \Delta$$
 
 * We use this to scale the noise we add:
 
@@ -78,12 +72,12 @@ points, so that it will be most able to mask those changes.
 
 * The change in posterior mean predictions is,
 
-     $$\mathbf{y}_* - \mathbf{y}'_* = \mathbf{K}_{*f} \mathbf{K}^{-1} (\mathbf{y}-\mathbf{y}')$$
+     $$\dataVector_* - \dataVector^\prime_* = \kernelMatrix_{*f} \kernelMatrix^{-1} (\dataVector-\dataVector^\prime)$$
 
 * Effect of perturbing each training point on each test point is
 represented in the cloaking matrix,
 
-    $$\mathbf{C} = \mathbf{K}_{*f} \mathbf{K}^{-1}$$
+    $$\mathbf{C} = \kernelMatrix_{*f} \kernelMatrix^{-1}$$
 
 
 ### Cloaking  {data-background="../slides/diagrams/pres_bg.png"}
@@ -91,12 +85,12 @@ represented in the cloaking matrix,
 * We assume we are protecting only one training input's change, by at most
 $d$.
 
-* So $\mathbf{y}-\mathbf{y}'$ will be all zeros except for one
+* So $\dataVector-\dataVector^\prime$ will be all zeros except for one
 element, $i$.\
 
 * So the change in test points will be (at most)
 
-    $$\mathbf{y}_*' - \mathbf{y}_* = d \mathbf{C}_{:i}$$
+    $$\dataVector_*^\prime - \dataVector_* = d \mathbf{C}_{:i}$$
 
 * We're able to write the earlier bound as,
 
@@ -119,7 +113,7 @@ $\log |\mathbf{M}|$ (minimises the partial entropy).
 
 The noise added by this method is now practical.
 
-![](../slides/diagrams/kung_cloaking_simple_neg.png){width="100%" style="border:none" align="center"}
+\includeimg{../slides/diagrams/kung_cloaking_simple.png}{100%}{negate}
 
 EQ kernel, $l = 25$ years, $\Delta=100$cm, $\varepsilon=1$
 
@@ -133,12 +127,12 @@ It also has some interesting features;
 
 ### Cloaking: Results  {data-transition="None"}
 
-![](../slides/diagrams/kung_cloaking_simple_neg.png){width="100%" style="border:none" align="center"}
+\includeimg{../slides/diagrams/kung_cloaking_simple.png}{100%}{negate}
 
 
 ### House Prices Around London  {data-transition="None"}
 
-<img src="../slides/diagrams/houseprices_bigcirc_15km_0_labels_neg.png" width="60%" style="border:none">
+\includeimg{../slides/diagrams/houseprices_bigcirc_15km_0_labels.png}{60%}{negate}
 
 ### Citibike {#citibike data-transition="None"}
 
@@ -150,7 +144,7 @@ reasonable $\varepsilon$).
 
 ### Citibike {data-transition="None"}
 
-![](../slides/diagrams/newtable2_neg.png){width="80%" style="border:none" align="center"} lengthscale in degrees, values
+\includeimg{../slides/diagrams/newtable2.png}{80%}{negate} lengthscale in degrees, values
 above, journey duration (in seconds)
 
 ### Cloaking and Inducing Inputs {#cloaking-and-inducing-inputs}
@@ -163,12 +157,12 @@ above, journey duration (in seconds)
 
 ### Cloaking (no) Inducing Inputs {#cloaking-no-inducing-inputs  data-transition="None"}
 
-![](../slides/diagrams/cloaking-no-inducing_neg.png){width="100%" style="border:none" align="center"}
+\includeing{../slides/diagrams/cloaking-no-inducing.png}{100%}{negate}
 
 ### Cloaking and Inducing Inputs {#cloaking-and-inducing-inputs-1
    data-transition="None"}
 
-![](../slides/diagrams/cloaking-inducing_neg.png){width="80%" style="border:none" align="center"}
+\includeimg{../slides/diagrams/cloaking-inducing.png}{80%}{negate}
 
 ### Results {#results}
 
@@ -182,8 +176,8 @@ above, journey duration (in seconds)
 
 ### Cloaking (no) Inducing Inputs {#cloaking-no-inducing-inputs-1 data-transition="none"}
 
-![](../slides/diagrams/housing-no-inducing_neg.png){width="80%" style="border:none" align="center"}
+\includeimg{../slides/diagrams/housing-no-inducing.png}{80%}{negate}
 
 ### Cloaking and Inducing Inputs {#cloaking-and-inducing-inputs-2 data-transition="none"}
 
-![](../slides/diagrams/housing-inducing_neg.png){width="80%" style="border:none" align="center"}
+\includeimg{../slides/diagrams/housing-inducing.png}{80%}{negate}

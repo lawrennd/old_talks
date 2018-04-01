@@ -5,7 +5,9 @@ author: Neil D. Lawrence
 affiliation: Amazon and University of Sheffield
 ---
 
-\include{notation_def.tex}
+\include{../talk-macros.tex}
+
+
 \include{../_data-science/includes/lies-damned-lies.md}
 
 
@@ -23,8 +25,7 @@ affiliation: Amazon and University of Sheffield
 
 ### Evolved Relationship 
 
-<object type="image/svg+xml" data="./diagrams/data-science-information-flow_neg003.svg">
-</object>
+\includesvg{../slides/diagrams/data-science-information-flow_neg003.svg}
 
 
 ### Effects

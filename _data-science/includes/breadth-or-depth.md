@@ -18,7 +18,7 @@
 
 * Can either see a wood or a tree. 
 
-<img src="./diagrams/Grib_skov.jpg" width="50%" style="border:none">
+\includeimg{../slides/diagrams/Grib_skov.jpg}{50%}
 <!-- https://upload.wikimedia.org/wikipedia/commons/5/5b/Grib_skov.jpg-->
 
 ### Examples

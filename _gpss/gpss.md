@@ -10,7 +10,7 @@ blibliography:
 
 <!-- To compile -->
 
-\include{notation_def.tex}
+\include{../talk-macros.tex}
 
 \include{../gp/includes/gp-book.md}
 

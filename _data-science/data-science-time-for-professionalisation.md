@@ -22,14 +22,7 @@ affiliation: Amazon Research Cambridge and University of Sheffield
 <!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2017-06-27-data-science-time-for-professionalisation.slides.html 2017-06-27-data-science-time-for-professionalisation.md
 -->
 
-\ifdef{ipynb}
-\define{\includesvg{filename}}{<img src="\filename">}
-
-\else
-\define{\includesvg{filename}}{<object class="svgplot" data="\filename"></object>}
-\endif
-\define{\includeimg{filename}{width}{class}}{<img class="\class" src="\filename" width="\width" style="background:none; border:none; box-shadow:none;">}
-
+\include{../talk-macros.tex}
 \include{../_ml/includes/what-is-ml.md}
 \include{../_ml/includes/data-science-vs-ai.md}
 \include{../_ai/includes/embodiment-factors.md}

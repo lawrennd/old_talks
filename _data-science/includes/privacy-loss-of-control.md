@@ -48,7 +48,7 @@
 
 ### Digital Revolution and Inequality?
 
-<img src="./diagrams/woman-tends-house-in-village-of-uganda-africa.jpg" width="50%" style="border:none">
+\includeimg{../slides/diagrams/woman-tends-house-in-village-of-uganda-africa.jpg}{50%}
 
 ### Amelioration
 

@@ -2,7 +2,7 @@
 
 There's a sea of data, but most of it is undrinkable
 
-<img src="./diagrams/sea-water-ocean-waves.jpg" width="50%">
+\includeimg{../slides/diagrams/sea-water-ocean-waves.jpg}{50%}
 
 We require data-desalination before it can be consumed!
 
@@ -24,26 +24,23 @@ We require data-desalination before it can be consumed!
 
 ### {.slide: data-transition="none"}
 
-\include{../diagrams/pomdp-mathjax-001.svg}
-### {.slide: data-transition="none"}
-
-<object type="image/svg+xml" data="./diagrams/pomdp002.svg">
-</object>
+\includesvg{../slides/diagrams/pomdp001.svg}
 
 ### {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="./diagrams/pomdp003.svg">
-</object>
+\includesvg{../slides/diagrams/pomdp002.svg}
 
 ### {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="./diagrams/pomdp004.svg">
-</object>
+\includesvg{../slides/diagrams/pomdp003.svg}
 
 ### {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="./diagrams/pomdp005.svg">
-</object>
+\includesvg{../slides/diagrams/pomdp004.svg}
+
+### {.slide: data-transition="none"}
+
+\includesvg{../slides/diagrams/pomdp005.svg}
 
 
 ### Credit Allocation
