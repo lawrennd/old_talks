@@ -6,7 +6,7 @@ author: Neil D. Lawrence
 
 ### DRAFT SLIDES
 
-\include{notation_def.tex}
+\include{../talk-macros.tex}
 
 <!--Introduction-->
 

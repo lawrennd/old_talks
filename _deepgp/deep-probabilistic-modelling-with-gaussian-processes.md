@@ -29,19 +29,7 @@ Comments from Rich!
 
 CMB samples -> Life
 -->
-
-\ifdef{ipynb}
-\define{\includesvg{filename}{align}}{<img src="\filename" align="\align">}
-
-\else
-\define{\includesvg{filename}{align}}{<object class="svgplot" align="\align" data="\filename"></object>}
-\define{\includeyoutube{id}{width}{height}}{<div>
-<iframe src="https://www.youtube.com/embed/\id" width="\width" height="\height" allowtransparency="true"  frameborder="0"></iframe></div>}
-\define{\includeimg{filename}{width}{class}}{<img class="\class" src="\filename" width="\width" style="background:none; border:none; box-shadow:none;">}
-\endif
-
-\include{notation_def.tex}
-
+\include{../talk-macros.tex}
 \include{../_gp/includes/what-is-a-gp.md}
 
 

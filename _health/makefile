@@ -1,6 +1,6 @@
 BASE=challenges-in-personalized-health
 DATE=$(shell date '+%Y-%m-%d')
-DATE=2017-11-23
+#DATE=2017-11-23
 MATHJAX="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 CSS=talks.css
 HEADER=../svg-mathjax.html

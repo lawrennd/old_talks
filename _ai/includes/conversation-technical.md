@@ -1,24 +1,19 @@
 ###  Conversation {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="../slides/diagrams/anne_bob001.svg">
-</object>
+\includesvg{../slides/diagrams/anne_bob001.svg}
+	
+###  Conversation {.slide: data-transition="none"}
+
+\includesvg{../slides/diagrams/anne_bob002.svg}
 
 ###  Conversation {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="../slides/diagrams/anne_bob002.svg">
-</object>
-
-###  Conversation {.slide: data-transition="none"}
-
-<object type="image/svg+xml" data="../slides/diagrams/anne_bob003.svg">
-</object>
+\includesvg{../slides/diagrams/anne_bob003.svg}
 
 ###  Modelling
 
-<object type="image/svg+xml" data="../slides/diagrams/anne.svg">
-</object>
+\includesvg{../slides/diagrams/anne.svg}
 
 ###  Modelling
 
-<object type="image/svg+xml" data="../slides/diagrams/bob.svg">
-</object>
+\includesvg{../slides/diagrams/bob.svg}
