@@ -1,12 +1,12 @@
 ### Evolved Relationship {.slide: data-transition="none"}
 
-\includesvg{../slides/diagrams/data-science-information-flow_neg001.svg}
+\includesvg{../slides/diagrams/data-science/information-flow001.svg}
 
 ### Evolved Relationship {.slide: data-transition="none"}
 
-\includesvg{../slides/diagrams/data-science-information-flow_neg002.svg}
+\includesvg{../slides/diagrams/data-science/information-flow002.svg}
 
 ### Evolved Relationship {.slide: data-transition="none"}
 
-\includesvg{../slides/diagrams/data-science-information-flow_neg003.svg}
+\includesvg{../slides/diagrams/data-science/information-flow003.svg}
 

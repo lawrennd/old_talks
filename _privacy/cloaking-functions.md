@@ -31,6 +31,8 @@ affiliation: Amazon and University of Sheffield
 <!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2017-08-30-cloaking-functions.slides.html 2017-08-30-cloaking-functions.md
 -->
 
+\include{../talk-macros.tex}
+
 \include{../_ai/includes/embodiment-factors.md}
 \include{../_data-science/includes/evolved-relationship.md}
 \include{../_ai/includes/conversation-technical.md}
