@@ -7,6 +7,8 @@ author: Neil D. Lawrence
 affiliation: Amazon and University of Sheffield
 ---
 
+\include{../talk-macros.tex}
+
 \include{../_ai/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
 
 ### Tracking Hype about Hype
@@ -18,7 +20,7 @@ affiliation: Amazon and University of Sheffield
 
 ### Electricity
 
-<img src="../slides/diagrams/why-didnt-electricity-immediately-change-manufacturing_neg.jpg" width="70%" style="border:none">
+\includeimg{../slides/diagrams/why-didnt-electricity-immediately-change-manufacturing_neg.jpg}{70%}
 
 [Why didn't electricity immediately change manufacturing?](http://www.bbc.co.uk/news/business-40673694)
 by Tim Harford
@@ -27,7 +29,7 @@ by Tim Harford
 
 ### Machine Learning Systems Design
 
-<img src="../slides/diagrams/SteamEngine_Boulton&Watt_1784_neg.png" width="50%" style="border:none">
+\includeimg{../slides/diagrams/SteamEngine_Boulton&Watt_1784.png}{50%}{negate}
 
 ### Thanks!
 

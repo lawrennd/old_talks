@@ -1,33 +1,27 @@
 ### Gartner Hype Cycle
 
-<img src="../slides/diagrams/Gartner_Hype_Cycle-neg.png" align="center" width="70%" style="background:none; border:none; box-shadow:none;">
+\includeimg{../slides/diagrams/Gartner_Hype_Cycle.png}{70%}{negate}
 
 ### {.slide: data-transition="none"}
 
-<object class="svgplot" data="../slides/diagrams/ai-bd-dm-dl-ml-google-trends000.svg">
-</object>
+\includesvg{../slides/diagrams/ai-bd-dm-dl-ml-google-trends000.svg}
 
 ### {.slide: data-transition="none"}
 
-<object class="svgplot" data="../slides/diagrams/ai-bd-dm-dl-ml-google-trends001.svg">
-</object>
+\includesvg{../slides/diagrams/ai-bd-dm-dl-ml-google-trends001.svg}
 
 ### {.slide: data-transition="none"}
 
-<object class="svgplot" data="../slides/diagrams/ai-bd-dm-dl-ml-google-trends002.svg">
-</object>
+\includesvg{../slides/diagrams/ai-bd-dm-dl-ml-google-trends002.svg}
 
 ### {.slide: data-transition="none"}
 
-<object class="svgplot" data="../slides/diagrams/ai-bd-dm-dl-ml-google-trends003.svg">
-</object>
+\includesvg{../slides/diagrams/ai-bd-dm-dl-ml-google-trends003.svg}
 
 ### {.slide: data-transition="none"}
 
-<object class="svgplot" data="../slides/diagrams/ai-bd-dm-dl-ml-google-trends004.svg">
-</object>
+\includesvg{../slides/diagrams/ai-bd-dm-dl-ml-google-trends004.svg}
 
 ### {.slide: data-transition="none"}
 
-<object class="svgplot" data="../slides/diagrams/ai-bd-dm-dl-ml-google-trends005.svg">
-</object>
+\includesvg{../slides/diagrams/ai-bd-dm-dl-ml-google-trends005.svg}
