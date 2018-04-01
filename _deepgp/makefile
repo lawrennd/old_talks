@@ -12,14 +12,20 @@ PPFLAGS=
 PDFLAGS=-s --slide-level 3 --filter pandoc-citeproc --csl=elsevier-harvard.csl --mathjax=${MATHJAX} 
 OUT=$(DATE)-$(BASE)
 
-all: ${BASE}.slides.html ${BASE}.notes.html ${BASE}.ipynb.md 
+all: ${BASE}.slides.html ${BASE}.notes.html ${BASE}.ipynb
 
 ${BASE}.slides.html: ${BASE}.slides.md
 	pandoc  ${PDFLAGS} -c ${CSS} --include-in-header=${HEADER} -t revealjs --bibliography=${BASE}.bib -o ${BASE}.slides.html  ${BASE}.slides.md 
 	cp ${BASE}.slides.html ../slides/${OUT}.slides.html
 
+
 ${BASE}.notes.html: ${BASE}.notes.md
 	pandoc  --bibliography=${BASE}.bib -o ${BASE}.notes.html  ${BASE}.notes.md 
+
+${BASE}.ipynb: ${BASE}.ipynb.md
+	pandoc  --bibliography=${BASE}.bib -o ${BASE}.tmp.md  ${BASE}.ipynb.md 
+	notedown ${BASE}.tmp.md > ${BASE}.ipynb
+	rm ${BASE}.tmp.md
 
 ${BASE}.slides.md: ${BASE}.md 
 	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" ${PPFLAGS} ${BASE}.md -o ${BASE}.slides.md
