@@ -8,6 +8,7 @@
 
 ### What is Machine Learning? {data-transition="none"}
 
+\slidenotes{
 $$\text{data} + \text{model} \rightarrow \text{prediction}$$
 
 . . .
@@ -21,10 +22,17 @@ $$\text{data} + \text{model} \rightarrow \text{prediction}$$
 . . .
 
 * **an objective function** $\errorFunction(\cdot)$ defines the cost of misprediction.
+}{
+So how do Gaussian processes come in? Well in practice we normally perform machine learning using two functions. To combine data with a model we typically make use of:
 
+**a prediction function** a function which is used to make the predictions. It includes our beliefs about the regularities of the universe, our assumptions about how the world works, e.g. smoothness, spatial similarities, temporal similarities.
+
+**an objective function** a function which defines the cost of misprediction. Typically it includes knowledge about the world's generating processes (probabilistic objectives) or the costs we pay for mispredictions (empiricial risk minimization).
+}
 
 ### Uncertainty {data-transition="none"}
 
+\slidenotes{
 * Uncertainty in prediction arises from:
 
 * scarcity of training data and 
@@ -32,6 +40,14 @@ $$\text{data} + \text{model} \rightarrow \text{prediction}$$
 * mismatch between the set of prediction functions we choose and all possible prediction functions.
 
 * Also uncertainties in objective, leave those for another day.
+}{
+In practice, we normally also have uncertainty associated with these functions. Uncertainty in the prediction function arises from 
+
+1. scarcity of training data and 
+2. mismatch between the set of prediction functions we choose and all possible prediction functions.
+
+There are also challenges around specification of the objective function, but for we will save those for another day. For the moment, let us focus on the prediction function. 
+}
 
 \include{../../_ml/includes/neural-networks.md}
 \include{../../_ml/includes/probabilistic-modelling.md}
@@ -48,7 +64,6 @@ $$\text{data} + \text{model} \rightarrow \text{prediction}$$
 <!-- ### Two Dimensional Gaussian Distribution -->
 
 <!-- include{../../_ml/includes/two_d_gaussian.md} -->
-
 
 ### Distributions over Functions {data-transition="none"}
 
