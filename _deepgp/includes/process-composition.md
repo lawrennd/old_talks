@@ -9,11 +9,11 @@
 
 $$p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mappingFunctionVector_5|\mappingFunctionVector_4)p(\mappingFunctionVector_4|\mappingFunctionVector_3)p(\mappingFunctionVector_3|\mappingFunctionVector_2)p(\mappingFunctionVector_2|\mappingFunctionVector_1)p(\mappingFunctionVector_1|\inputVector)$$
 
-<object class="svgplot" data="../slides/diagrams/deepgp/deep-markov.svg"></object>
+\includesvg{../slides/diagrams/deepgp/deep-markov.svg}
 
 ### {data-transition="None"}
 
-<object class="svgplot" data="../slides/diagrams/deepgp/deep-markov-vertical.svg"></object>
+\includesvg{../slides/diagrams/deepgp/deep-markov-vertical.svg}
 
 
 ### Why Deep? {data-transition="None"}
@@ -43,10 +43,10 @@ $$p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mapping
 
 ### {data-transition="None"}
 
-<object class="svgplot" data="../slides/diagrams/deepgp/deep-markov-vertical.svg"></object>
+\includesvg{../slides/diagrams/deepgp/deep-markov-vertical.svg}
 
 ### {data-transition="None"}
 
-<object class="svgplot" data="../slides/diagrams/deepgp/deep-markov-vertical-side.svg"></object>
+\includesvg{../slides/diagrams/deepgp/deep-markov-vertical-side.svg}
 
 

@@ -16,5 +16,4 @@
 
 ###
 
-<div>
-<iframe src="https://www.youtube.com/embed/XhIvygQYFFQ" width="1120" height="630" allowtransparency="true"  frameborder="0"></iframe></div>
+\includeyoutube{XhIvygQYFFQ}{1120}{630}
