@@ -1,5 +1,6 @@
 ### What is Machine Learning? {data-transition="none"}
 
+\slidenotes{
 . . .
 
 $$ \text{data} + \text{model} \rightarrow \text{prediction}$$
@@ -24,3 +25,10 @@ $$ \text{data} + \text{model} \rightarrow \text{prediction}$$
 
 -   Royal Society Report:
 [Machine Learning: Power and Promise of Computers that Learn by Example](https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf)
+}{
+First of all, we'll consider the question, what is machine learning? By my definition Machine Learning is a combination of
+
+$$\text{data} + \text{model} \rightarrow \text{prediction}$$
+
+and the reason that machine learning has become a mainstay of artificial intelligence is the importance of predictions in artificial intelligence.
+}
