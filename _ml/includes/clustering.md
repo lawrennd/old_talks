@@ -89,93 +89,94 @@ here $\mathbf{i}_j$ is all indices of  data points allocated to the $j$th center
 
 ### $k$-Means Clustering {.slide: data-transition="none"}
 
-<object class="svgplot" data="../_ml/diagrams/kmeans-clustering/kmeans_clustering_000.svg"></object>
+\includesvg{../slides/diagrams/kmeans-clustering/kmeans_clustering_000.svg}
 
 *Clustering with the $k$-means clustering algorithm.*
 
 ### $k$-Means Clustering {.slide: data-transition="none"}
 
-<object class="svgplot" data="../_ml/diagrams/kmeans-clustering/kmeans_clustering_001.svg"></object>
+\includesvg{../slides/diagrams/kmeans-clustering/kmeans_clustering_001.svg}
 
 *Clustering with the $k$-means clustering algorithm.*
 
 ### $k$-Means Clustering {.slide: data-transition="none"}
 
-<object class="svgplot" data="../_ml/diagrams/kmeans-clustering/kmeans_clustering_002.svg"></object>
+\includesvg{../slides/diagrams/kmeans-clustering/kmeans_clustering_002.svg}
 
 *Clustering with the $k$-means clustering algorithm.*
 
 ### $k$-Means Clustering {.slide: data-transition="none"}
 
-<object class="svgplot" data="../_ml/diagrams/kmeans-clustering/kmeans_clustering_003.svg"></object>
+\includesvg{../slides/diagrams/kmeans-clustering/kmeans_clustering_003.svg}
 
 *Clustering with the $k$-means clustering algorithm.*
 
 ### $k$-Means Clustering {.slide: data-transition="none"}
 
-<object class="svgplot" data="../_ml/diagrams/kmeans-clustering/kmeans_clustering_004.svg"></object>
+\includesvg{../slides/diagrams/kmeans-clustering/kmeans_clustering_004.svg}
 
 *Clustering with the $k$-means clustering algorithm.*
 
 ### $k$-Means Clustering {.slide: data-transition="none"}
 
-<object class="svgplot" data="../_ml/diagrams/kmeans-clustering/kmeans_clustering_005.svg"></object>
+\includesvg{../slides/diagrams/kmeans-clustering/kmeans_clustering_005.svg}
 
 *Clustering with the $k$-means clustering algorithm.*
 
 ### $k$-Means Clustering {.slide: data-transition="none"}
 
-<object class="svgplot" data="../_ml/diagrams/kmeans-clustering/kmeans_clustering_006.svg"></object>
+\includesvg{../slides/diagrams/kmeans-clustering/kmeans_clustering_006.svg}
 
 *Clustering with the $k$-means clustering algorithm.*
 
 ### $k$-Means Clustering {.slide: data-transition="none"}
 
-<object class="svgplot" data="../_ml/diagrams/kmeans-clustering/kmeans_clustering_007.svg"></object>
+\includesvg{../slides/diagrams/kmeans-clustering/kmeans_clustering_007.svg}
 
 *Clustering with the $k$-means clustering algorithm.*
 
 ### $k$-Means Clustering {.slide: data-transition="none"}
 
-<object class="svgplot" data="../_ml/diagrams/kmeans-clustering/kmeans_clustering_008.svg"></object>
+\includesvg{../slides/diagrams/kmeans-clustering/kmeans_clustering_008.svg}
 
 *Clustering with the $k$-means clustering algorithm.*
 
 ### $k$-Means Clustering {.slide: data-transition="none"}
 
-<object class="svgplot" data="../_ml/diagrams/kmeans-clustering/kmeans_clustering_009.svg"></object>
+\includesvg{../slides/diagrams/kmeans-clustering/kmeans_clustering_009.svg}
 
 *Clustering with the $k$-means clustering algorithm.*
 
 ### $k$-Means Clustering {.slide: data-transition="none"}
 
-<object class="svgplot" data="../_ml/diagrams/kmeans-clustering/kmeans_clustering_010.svg"></object>
+\includesvg{../slides/diagrams/kmeans-clustering/kmeans_clustering_010.svg}
 
 *Clustering with the $k$-means clustering algorithm.*
 
 ### $k$-Means Clustering {.slide: data-transition="none"}
 
-<object class="svgplot" data="../_ml/diagrams/kmeans-clustering/kmeans_clustering_011.svg"></object>
+\includesvg{../slides/diagrams/kmeans-clustering/kmeans_clustering_011.svg}
 
 *Clustering with the $k$-means clustering algorithm.*
 
 ### $k$-Means Clustering {.slide: data-transition="none"}
 
-<object class="svgplot" data="../_ml/diagrams/kmeans-clustering/kmeans_clustering_012.svg"></object>
+\includesvg{../slides/diagrams/kmeans-clustering/kmeans_clustering_012.svg}
 
 *Clustering with the $k$-means clustering algorithm.*
 
 ### $k$-Means Clustering {.slide: data-transition="none"}
 
 <object class="svgplot"
-data="../_ml/diagrams/kmeans-clustering/kmeans_clustering_013.svg"></object>
+data="../slides/diagrams/kmeans-clustering/kmeans_clustering_013.svg}
 
 *Clustering with the $k$-means clustering algorithm.*
 
 ### $k$-Means Clustering
 
-[![$k$-means clustering by Alex Ihler](https://img.youtube.com/vi/mfqmoUN-Cuw/0.jpg)](https://www.youtube.com/watch?v=mfqmoUN-Cuw)
+\includeyoutube{mfqmoUN-Cuw}
 
+*$k$-means clustering by Alex Ihler*
 ### Hierarchical Clustering
 
 * Form taxonomies of the cluster centers

@@ -6,7 +6,7 @@ $$p(\dataVector,\mappingFunctionVector,\inducingVector) = p(\dataVector\given \m
 
 ### Introducing $\inducingVector$ {#introducing-inducingvector data-transition="None"}
 
-<img src="./diagrams/cov_inducing_withX.png" height="60%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;">
+\includeimg{../slides/diagrams/cov_inducing_withX.png}{60%}{negate}
 
 ### Introducing $\inducingVector$ {#introducing-inducingvector data-transition="None"}
 
@@ -28,7 +28,7 @@ $$\begin{aligned}
 $$\inputMatrix,\,\dataVector$$ $$\mappingFunction(\inputVector) \sim {\mathcal GP}$$ $$p(\mappingFunctionVector) = \gaussianSamp{\zerosVector}{\Kff}$$ $$p(\mappingFunctionVector\given \dataVector,\inputMatrix)$$
 </td>
 <td>
-<img src="./diagrams/nomenclature4" width="90%" class="negate" align="cener" style="background:none; border:none; box-shadow:none;">
+\includeimg{../slides/diagrams/nomenclature4}{90%}{negate}
 </td>
 </tr>
 </table>
@@ -45,7 +45,7 @@ $$\inputMatrix,\,\dataVector$$ $$\mappingFunction(\inputVector) \sim {\mathcal G
 $$\inputMatrix,\,\dataVector$$ $$\mappingFunction(\inputVector) \sim {\mathcal GP}$$ $$p(\mappingFunctionVector) = \gaussianSamp{\zerosVector}{\Kff}$$ $$p(\mappingFunctionVector\given \dataVector,\inputMatrix)$$ $$p(\inducingVector)  = \gaussianSamp{\zerosVector}{\Kuu}$$ $$\widetilde p({\color{red}\inducingVector}\given \dataVector,\inputMatrix)$$
 </td>
 <td>
-<img src="./diagrams/nomenclature5.png" width="90%"  class="negate" align="cener" style="background:none; border:none; box-shadow:none;">
+\includeimg{../slides/diagrams/nomenclature5.png}{90%}{negate}
 </td>
 </tr>
 </table>

@@ -60,4 +60,4 @@
 
 ### Worked Example: Delivery Drones
 
-[![](https://img.youtube.com/vi/vNySOrI2Ny8/0.jpg)](https://www.youtube.com/watch?v=py8QrZPT48s)
+\includeyoutube{py8QrZPT48s}

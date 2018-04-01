@@ -32,7 +32,7 @@
 
 * *Artificial intelligence* originates in *cybernetics*
 
-* Challenge to recreate "intelligent" behaviour.
+* Challenge to recreate 'intelligent' behaviour.
 
 * Either *general intelligence* or emulate *human* capabilities.
 

@@ -256,6 +256,7 @@ $$
 
 ### Overfitting
 
-[![](https://img.youtube.com/vi/py8QrZPT48s/0.jpg)](https://www.youtube.com/watch?v=py8QrZPT48s&t=4m0s)
+\includeyoutube{py8QrZPT48s}{}{}{4m0s}
+
 
 *Alex Ihler on Polynomials and Overfitting*

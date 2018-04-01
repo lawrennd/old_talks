@@ -19,12 +19,12 @@ author: Neil D. Lawrence
 <!--Deep Gaussian Process Models-->
 
 \include{../_deepgp/includes/deeptheory.md}
-\include{../_gp/includes/gp_variational_complexity.md}
+\include{../_gp/includes/gp-variational-complexity.md}
 
 <!--Parametric Bottleneck-->
 
 \include{../_gp/includes/bottleneck.md}
-\include{../_gp/includes/low_rank_motivation.md}
+\include{../_gp/includes/low-rank-motivation.md}
 
 ### Information capture
 
@@ -41,8 +41,8 @@ The posterior of $\mappingFunctionVector$ is the central object. This
 means inverting $\Kff$.
 
 \include{../_gp/includes/nystrom.md}
-\include{../_gp/includes/inducing_notation.md}
-\include{../_gp/includes/inducing_introduction.md}
+\include{../_gp/includes/inducing-notation.md}
+\include{../_gp/includes/inducing-introduction.md}
 
 ### The alternative posterior
 
@@ -86,12 +86,12 @@ $$\dataVector|\mappingFunctionVector = \prod_{i} \gaussianSamp{\mappingFunction}
 
 \include{../_deepgp/includes/deep_gps.md}
 
-\include{../_deepgp/includes/deep_step_function.md}
-\include{../_deepgp/includes/deep_loop_detection.md}
+\include{../_deepgp/includes/deep-step-function.md}
+\include{../_deepgp/includes/deep-loop-detection.md}
 
 \newcommand{\latentScalar}{f}
 
-\include{../_health/includes/deep_health_model.md}
+\include{../_health/includes/deep-health-model.md}
 
 
 <!--Conclusions-->
@@ -106,11 +106,11 @@ $$\dataVector|\mappingFunctionVector = \prod_{i} \gaussianSamp{\mappingFunction}
 <!--Shared GP-LVM-->
 
 \include{../_gplvm/includes/mrd_gplvm.md}
-\include{../_deepgp/includes/stack_gp_intro.md}
-\include{../_deepgp/includes/stacked_pca.md}
-\include{../_deepgp/includes/stacked_gp.md}
-\include{../_deepgp/includes/deep_pathologies.md}
-\include{../_deepgp/includes/deepresults.md}
+\include{../_deepgp/includes/stack-gp-intro.md}
+\include{../_deepgp/includes/stacked-pca.md}
+\include{../_deepgp/includes/stacked-gp.md}
+\include{../_deepgp/includes/deep-pathologies.md}
+\include{../_deepgp/includes/deep-results.md}
 
 ### What Can We Do that Google Can’t?
 
