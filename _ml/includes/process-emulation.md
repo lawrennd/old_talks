@@ -16,4 +16,4 @@
 
 * Choice of which class of mathematical functions we use is a vital component of our *model*. 
 
-\include{../_ml/includes/polynomial-fit.md}
+\include{../../_ml/includes/polynomial-fit.md}

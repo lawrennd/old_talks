@@ -30,7 +30,8 @@
 <!--frame end-->
 <!--frame failure start-->
 
-  \frametitle{Augmented Variable Model: Not Wrong but Useful?}
+### Augmented Variable Model: Not Wrong but Useful?
+
   \begin{columns}
     \column{0.6\textwidth}
     \only<1-2>{Augment standard model with a set of $\numInducing$ new inducing variables, $\inducingVector$.}

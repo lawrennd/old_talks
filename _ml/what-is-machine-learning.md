@@ -9,7 +9,7 @@ date: 2017-07-17
 affiliation: Amazon and University of Sheffield
 ---
 
-\include{talk-macros.tex}
+\include{../talk-macros.tex}
 
 ### Introduction
 
@@ -31,7 +31,7 @@ $$
 
 ### Data Revolution
 
-<object class="svgplot" data="../_data-science/diagrams/data-science-information-flow.svg"></object>
+\includesvg{../slides/diagrams/data-science-information-flow.svg}
 
 *Large amounts of data and high interconnection bandwidth mean that we receive much of our information about the world around us through computers.*
 
