@@ -9,7 +9,7 @@ date: 2017-07-17
 affiliation: Amazon and University of Sheffield
 ---
 
-\include{notation_def.tex}
+\include{talk-macros.tex}
 
 ### Introduction
 
