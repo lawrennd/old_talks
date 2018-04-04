@@ -1352,6 +1352,43 @@ def weight(ax, w, pw):
     ax.vlines(xlim[0], ylim[0], ylim[1], color='k')
     ax.hlines(ylim[0], xlim[0], xlim[1], color='k')
 
+def low_rank_approximation(fontsize=25, diagrams='../diagrams'):
+    """Illustrate the low rank approximation used in sparse GPs."""
+    fig, ax = plt.subplots(1, 4, figsize=big_wide_figsize)
+    q = 3
+    k1 = 10
+    k2 = 12
+    blank_canvas(ax[3])
+    ax[3].text(0.145, 0.55, r'$\times$', 
+               horizontalalignment='center',
+               fontsize=fontsize)
+    ax[3].text(0.47, 0.55, r'$=$', 
+               horizontalalignment='center',
+               fontsize=fontsize)
+    ax[3].text(0.075, 0.55, r'$\mathbf{U}$', 
+               horizontalalignment='center',
+               fontsize=fontsize, color=[1, 1, 1])
+    ax[3].text(0.3, 0.55, r'$\mathbf{V}^\top$', 
+               horizontalalignment='center',
+               fontsize=fontsize, color=[1, 1, 1])
+    ax[3].text(0.65, 0.55, r'$\mathbf{W}$', 
+               horizontalalignment='center',
+               fontsize=fontsize, color=[1, 1, 1])
+    U = np.random.randn(k1, q)
+    VT = np.random.randn(q, k2)
+    basewidth = 0.15
+    ax[0].set_position([0.0, 0.15, basewidth, basewidth/q*k1])
+    matrix(U, ax=ax[0], type='image')
+    ax[1].set_position([0.0, 0.5, basewidth/q*k2, basewidth])
+    ax[1].set_aspect('equal')
+    matrix(VT, ax=ax[1], type='image')
+    ax[2].set_position([0.35, 0.15, basewidth/q*k2, basewidth/q*k1])
+    matrix(np.dot(U,VT), ax=ax[2], type='image')
+    ax[3].set_frame_on(True)
+    ax[3].axes.get_yaxis().set_visible(True)
+    mlai.write_figure(os.path.join(diagrams, 'wisuvt.svg'),
+                      transparent=True)
+    
 def kronecker_illustrate(fontsize=25, diagrams='../diagrams'):
     """Illustrate a Kronecker product"""
     fig, ax = plt.subplots(1, 4, figsize=two_figsize)

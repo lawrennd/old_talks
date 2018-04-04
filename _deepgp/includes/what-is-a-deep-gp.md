@@ -1,3 +1,79 @@
+\include{../_deepgp/includes/deep-nn.md}
+
+### Mathematically 
+
+$$
+\begin{align}
+    \hiddenVector_{1} &= \basisFunction\left(\mappingMatrix_1 \inputVector\right)\\
+    \hiddenVector_{2} &=  \basisFunction\left(\mappingMatrix_2\hiddenVector_{1}\right)\\
+    \hiddenVector_{3} &= \basisFunction\left(\mappingMatrix_3 \hiddenVector_{2}\right)\\
+    \dataVector &= \mappingVector_4 ^\top\hiddenVector_{3}
+\end{align}
+$$
+
+### Overfitting 
+
+-   Potential problem: if number of nodes in two adjacent layers is big,
+    corresponding $\mappingMatrix$ is also very big and there is the
+    potential to overfit.
+
+-   Proposed solution: “dropout”.
+
+-   Alternative solution: parameterize $\mappingMatrix$ with its SVD.
+    $$\mappingMatrix = \eigenvectorMatrix\eigenvalueMatrix\eigenvectwoMatrix^\top$$
+    or $$\mappingMatrix = \eigenvectorMatrix\eigenvectwoMatrix^\top$$
+    where if $\mappingMatrix \in \Re^{k_1\times k_2}$ then
+    $\eigenvectorMatrix\in \Re^{k_1\times q}$ and
+    $\eigenvectwoMatrix \in \Re^{k_2\times q}$, i.e. we have a low rank
+    matrix factorization for the weights.
+	
+\plotcode{
+fig, ax = plt.subplots(1, 4,figsize=plot.big_wide_figsize)
+fontsize=40
+q = 3
+k1 = 10
+k2 = 12
+plot.blank_canvas(ax[3])
+ax[3].text(0.145, 0.55, r'$\times$', 
+           horizontalalignment='center',
+           fontsize=fontsize)
+ax[3].text(0.47, 0.55, r'$=$', 
+           horizontalalignment='center',
+           fontsize=fontsize)
+ax[3].text(0.075, 0.55, r'$\mathbf{U}$', 
+           horizontalalignment='center',
+           fontsize=fontsize, color=[1, 1, 1])
+ax[3].text(0.3, 0.55, r'$\mathbf{V}^\top$', 
+           horizontalalignment='center',
+           fontsize=fontsize, color=[1, 1, 1])
+ax[3].text(0.65, 0.55, r'$\mathbf{W}$', 
+           horizontalalignment='center',
+           fontsize=fontsize, color=[1, 1, 1])
+U = np.random.randn(k1, q)
+VT = np.random.randn(q, k2)
+basewidth = 0.15
+ax[0].set_position([0.0, 0.15, basewidth, basewidth/q*k1])
+plot.matrix(U, ax=ax[0], type='image')
+ax[1].set_position([0.0, 0.5, basewidth/q*k2, basewidth])
+ax[1].set_aspect('equal')
+plot.matrix(VT, ax=ax[1], type='image')
+ax[2].set_position([0.35, 0.15, basewidth/q*k2, basewidth/q*k1])
+plot.matrix(np.dot(U,VT), ax=ax[2], type='image')
+ax[3].set_frame_on(True)
+ax[3].axes.get_yaxis().set_visible(True)
+mlai.write_figure(figure=fig, filename='../../slides/diagrams/wisuvt.svg')
+}
+
+### Low Rank Approximation
+
+\includesvg{../../slides/diagrams/wisuvt.svg}
+
+\plotcode{plot.deep_nn_bottleneck(diagrams='../../slides/diagrams/deepgp')}
+
+### Deep Neural Network
+
+\includesvg{../../slides/diagrams/deepgp/deep-nn-bottleneck2.svg}
+
 ### What is a Deep Gaussian Process?
 
 * Function Composition
