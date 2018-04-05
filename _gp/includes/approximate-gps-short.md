@@ -59,6 +59,8 @@ Here we set up a simple one dimensional regression problem. The input locations,
 			   
     if xlim is not None:
         ax.set_xlim(xlim)
+	else:
+		ax.set_xlim([xt.min(), xt.max()])
     if ylim is not None: 
         ax.set_ylim(ylim)
 			   
@@ -82,7 +84,7 @@ y = np.random.multivariate_normal(np.zeros(N),k.K(X)+np.eye(N)*np.sqrt(noise_var
 _ = m_full.optimize(messages=True) # Optimize parameters of covariance function}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-plot_model_output(m_full, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2, xlim=xlim, ylim=ylim)
+plot_model_output(m_full, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2)
 mlai.write_figure(figure=fig,
                   filename='../slides/diagrams/gp/sparse-demo-full-gp.svg', 
                   transparent=True, frameon=True)}
