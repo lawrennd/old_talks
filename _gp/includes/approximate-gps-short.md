@@ -85,6 +85,8 @@ _ = m_full.optimize(messages=True) # Optimize parameters of covariance function}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot_model_output(m_full, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2)
+xlim = ax.get_xlim()
+ylim = ax.get_ylim()
 mlai.write_figure(figure=fig,
                   filename='../slides/diagrams/gp/sparse-demo-full-gp.svg', 
                   transparent=True, frameon=True)}
