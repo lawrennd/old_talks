@@ -172,6 +172,12 @@ $\weightVector$.
 
 \include{../_gp/includes/gpdistfunc.md}
 
+\include{../_kern/includes/computing-rbf-covariance.md}
+
+\include{../_kern/includes/poly-covariance.md}
+
+
+
 ### References {.allowframebreaks}
 
 \tiny

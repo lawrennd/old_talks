@@ -1,3 +1,11 @@
+\setupcode{import numpy as np
+np.random.seed(4949)}
+
+\setupcode{import teaching_plots as plot
+import pods}
+
+\include{../../_gp/includes/gaussian-predict-index-one-and-two.md}
+
 ### Prediction of $\mappingFunction_{2}$ from $\mappingFunction_{1}$
 
 <small>
@@ -23,28 +31,12 @@
     where covariance of joint density is given by
     $$\kernelMatrix= \begin{bmatrix} \kernelScalar_{1, 1} & \kernelScalar_{1, 2}\\ \kernelScalar_{2, 1} & \kernelScalar_{2, 2}\end{bmatrix}$$
 
-### Prediction of $\mappingFunction_{5}$ from $\mappingFunction_{1}$ {data-transition="none"}
-
-\includesvg{../../slides/_gp/diagrams/two_point_sample014.svg}
-
-A 25 dimensional correlated random variable (values ploted against index)
-
-### Prediction of $\mappingFunction_{5}$ from $\mappingFunction_{1}$ {data-transition="none"}
-
-\includesvg{../../slides/_gp/diagrams/two_point_sample015.svg}
-
-A 25 dimensional correlated random variable (values ploted against index)
-
-### Prediction of $\mappingFunction_{5}$ from $\mappingFunction_{1}$ {data-transition="none"}
-
-\includesvg{../../slides/_gp/diagrams/two_point_sample016.svg}
-
-A 25 dimensional correlated random variable (values ploted against index)
+\include{../../_gp/includes/gaussian-predict-index-one-and-eight.md}
 
 ### Details
 
 -   The single contour of the Gaussian density represents the
-    \colorblue{joint distribution, $p(\mappingFunction_1, \mappingFunction_5)$}
+    \colorblue{joint distribution, $p(\mappingFunction_1, \mappingFunction_8)$}
 
 . . .
 
