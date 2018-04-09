@@ -170,7 +170,7 @@ $\weightVector$.
 
 ### Distributions over Functions
 
-\include{../_gp/includes/gptwopointpred.md}
+\include{../_gp/includes/gpdistfunc.md}
 
 ### References {.allowframebreaks}
 
