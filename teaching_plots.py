@@ -1190,10 +1190,12 @@ def covariance_func(x, kernel_function, x_cov=None, formula=None,
 
 def two_point_sample(kernel_function, diagrams='../diagrams', **args):
     """Make plots for the two data point sample example for explaining gaussian processes."""
+
+    ind = [0, 1]    
     fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(two_figsize))
     x = np.linspace(-1, 1, 25)[:, np.newaxis]
     K = kernel_function(x, x, **args)
-    obj = matrix(K, ax=ax[1], type='image')
+    obj = matrix(K, ax=ax[1], type='image', colormap='gray')
     ax[1].set_xlabel('$i$',fontsize=16)
     ax[1].set_ylabel('$i^\prime$',fontsize=16)
     #fig.colorbar(mappable=obj, ax=ax[1])
@@ -1203,8 +1205,8 @@ def two_point_sample(kernel_function, diagrams='../diagrams', **args):
     f = np.random.multivariate_normal(np.zeros(25), K, size=1)
     ax[0].plot(range(1, 26), f.flatten(), 'o', markersize=5, linewidth=3, color=[1., 0., 0.])
     ax[0].set_xticks(range(1, 26, 2))
-    ax[0].set_yticks([-2, -1, 0, 1, 2])
-    ylim = [-2, 2]
+    ax[0].set_yticks([-1, 0, 1])
+    ylim = [-1.5, 1.5]
     xlim = [0, 26]
     ax[0].set_ylim(ylim)
     ax[0].set_xlim(xlim)
@@ -1212,15 +1214,16 @@ def two_point_sample(kernel_function, diagrams='../diagrams', **args):
     ax[0].set_ylabel('$f$', fontsize=20)
     mlai.write_figure(os.path.join(diagrams, 'two_point_sample001.svg'), transparent=True)
 
-    ax[0].plot(np.array([1, 2]), [f[0,0], f[0,1]], 'o', markersize=10, linewidth=5, color=hcolor)
+    ax[0].plot(np.array(ind)+1, [f[0,ind[0]], f[0,ind[1]]], 'o', markersize=10, linewidth=5, color=hcolor)
     mlai.write_figure(os.path.join(diagrams, 'two_point_sample002.svg'), transparent=True)
     #plt.Circle?
 
     obj = matrix(K, ax=ax[1], type='image', 
-                      highlight=True, 
-                      highlight_row=[0, 1], 
-                      highlight_col=[0,1], 
-                      highlight_color=hcolor)
+                 highlight=True, 
+                 highlight_row=[0, 1], 
+                 highlight_col=[0,1], 
+                 highlight_color=hcolor,
+                 colormap='gray')
     ax[1].set_xlabel('$i$',fontsize=16)
     ax[1].set_ylabel('$i^\prime$',fontsize=16)
     mlai.write_figure(os.path.join(diagrams, 'two_point_sample003.svg'), transparent=True)
@@ -1233,7 +1236,8 @@ def two_point_sample(kernel_function, diagrams='../diagrams', **args):
                  highlight_width=5,
                  zoom=True,
                  zoom_row=[0, 9],
-                 zoom_col=[0, 9])
+                 zoom_col=[0, 9],
+                 colormap='gray')
     ax[1].set_xlabel('$i$',fontsize=16)
     ax[1].set_ylabel('$i^\prime$',fontsize=16)
     mlai.write_figure(os.path.join(diagrams, 'two_point_sample004.svg'), transparent=True)
@@ -1246,7 +1250,8 @@ def two_point_sample(kernel_function, diagrams='../diagrams', **args):
                  highlight_width=6,
                  zoom=True,
                  zoom_row=[0, 4],
-                 zoom_col=[0, 4])
+                 zoom_col=[0, 4],
+                 colormap='gray')
     ax[1].set_xlabel('$i$',fontsize=16)
     ax[1].set_ylabel('$i^\prime$',fontsize=16)
     mlai.write_figure(os.path.join(diagrams, 'two_point_sample005.svg'), transparent=True)
@@ -1259,7 +1264,8 @@ def two_point_sample(kernel_function, diagrams='../diagrams', **args):
                  highlight_width=7,
                  zoom=True,
                  zoom_row=[0, 2],
-                 zoom_col=[0, 2])
+                 zoom_col=[0, 2],
+                 colormap='gray')
     ax[1].set_xlabel('$i$',fontsize=16)
     ax[1].set_ylabel('$i^\prime$',fontsize=16)
     mlai.write_figure(os.path.join(diagrams, 'two_point_sample006.svg'), transparent=True)
@@ -1272,23 +1278,34 @@ def two_point_sample(kernel_function, diagrams='../diagrams', **args):
                  highlight_width=8,
                  zoom=True,
                  zoom_row=[0, 1],
-                 zoom_col=[0, 1])
+                 zoom_col=[0, 1],
+                 colormap='gray')
     ax[1].set_xlabel('$i$',fontsize=16)
     ax[1].set_ylabel('$i^\prime$',fontsize=16)
     mlai.write_figure(os.path.join(diagrams, 'two_point_sample007.svg'), transparent=True)
 
-    ind = [0, 1]
-    obj = matrix(K[ind, ind], ax=ax[1], type='values')
+    obj = matrix(K[ind][:, ind], ax=ax[1], type='values')
     ax[1].set_xlabel('$i$',fontsize=16)
     ax[1].set_ylabel('$i^\prime$',fontsize=16)
     mlai.write_figure(os.path.join(diagrams, 'two_point_sample008.svg'), transparent=True)
 
     ax[0].cla()
-    two_point_pred(K, f.T, x, ax=ax[0],ind=[0, 1], stub='two_point_sample', start=9, diagrams=diagrams)
+    two_point_pred(K, f.T, x, ax=ax[0],ind=ind, stub='two_point_sample', start=9, diagrams=diagrams)
 
-    ind = [0, 4]
+    ind = [0, 7]
+    ax[0].cla()
+    ax[0].set_aspect('auto')
+    ax[0].plot(range(1, 26), f.flatten(), 'o', markersize=5, linewidth=3, color=[1., 0., 0.])
+    ax[0].set_xticks(range(1, 26, 2))
+    ax[0].set_yticks([-1, 0, 1])
+    ax[0].set_ylim(ylim)
+    ax[0].set_xlim(xlim)
+    ax[0].set_xlabel('$i$', fontsize=20)
+    ax[0].set_ylabel('$f$', fontsize=20)
+    
+    ax[0].plot(np.array(ind)+1, [f[0,ind[0]], f[0,ind[1]]], 'o', markersize=10, linewidth=5, color=hcolor)
     ax[0]
-    obj = matrix(K[ind, ind], ax=ax[1], type='values')
+    obj = matrix(K[ind][:, ind], ax=ax[1], type='values')
     ax[1].set_xlabel('$i$',fontsize=16)
     ax[1].set_ylabel('$i^\prime$',fontsize=16)
     mlai.write_figure(os.path.join(diagrams, 'two_point_sample013.svg'), transparent=True)
