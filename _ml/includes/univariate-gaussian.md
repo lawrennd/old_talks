@@ -1,4 +1,5 @@
-<!--frame start-->
+\setupcode{import teaching_plots as plot}
+
 ### The Gaussian Density
 
 -   Perhaps the most common probability density.
@@ -11,11 +12,11 @@
 
 -   The Gaussian density.
 
+\code{plot.gaussian_of_height(diagrams='../../slides/diagrams/ml')}
+
 ### Gaussian Density
 
-<object class="svgplot"
-data="../_ml/diagrams/gaussian_of_height.svg">
-</object>
+\includesvg{../slides/diagrams/gaussian_of_height.svg}
 
 The Gaussian PDF with ${\mu}=1.7$ and variance ${\sigma}^2=
   0.0225$. Mean shown as cyan line. It could represent the heights of a
@@ -29,4 +30,5 @@ $$
 $$
 $\dataStd^2$ is the variance of the density and $\meanScalar$ is the mean.
 </large>
+
 

@@ -123,7 +123,7 @@ display(m)}
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot_model_output(m, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2, xlim=xlim, ylim=ylim)
 mlai.write_figure(figure=fig,
-                  filename='../slides/diagrams/gp/sparse-demo-constrained-inducing-6-learned-gp.svg', 
+                  filename='../slides/diagrams/gp/sparse-demo-full-gp.svg', 
                   transparent=True, frameon=True)}
 
 ### Inducing Variable Param Optimize {data-transition="None"}
@@ -160,9 +160,13 @@ mlai.write_figure(figure=fig,
                   filename='../slides/diagrams/gp/sparse-demo-sparse-inducing-8-gp.svg', 
                   transparent=True, frameon=True)}
 
-### Full Gaussian Process Fit {data-transition="None"}
+### Eight Optimized Inducing Variables {data-transition="None"}
 
 \includesvg{../slides/diagrams/gp/sparse-demo-sparse-inducing-8-gp.svg}
+
+### Full Gaussian Process Fit {data-transition="None"}
+
+\includesvg{../slides/diagrams/gp/sparse-demo-full-gp.svg}
 
 \notes{And we can compare the probability of the result to the full model.}
 \code{print(m.log_likelihood(), m_full.log_likelihood())}

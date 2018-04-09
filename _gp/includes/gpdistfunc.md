@@ -13,6 +13,22 @@
 -   We will plot these points against their index.
 
 
+\code{%load -s compute_kernel mlai.py}
+
+\code{%load -s polynomial_cov mlai.py}
+
+\code{%load -s exponentiated_quadratic mlai.py}
+
+\plotcode{plot.two_point_sample(compute_kernel, kernel=exponentiated_quadratic, 
+                      lengthscale=0.5, diagrams='../../slides/diagrams/gp')}
+
+\plotcode{pods.notebook.display_plots('two_point_sample{sample:0>3}.svg', 
+                            '../../slides/diagrams/gp', sample=(0,12))}
+							
+### Uluru
+
+\includeimg{../../slides/diagrams/gp/799px-Uluru_Panorama.jpg}
+
 ### Gaussian Distribution Sample {data-transition="none"}
 
 \includesvg{../slides/diagrams/gp/two_point_sample000.svg}
