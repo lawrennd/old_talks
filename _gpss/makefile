@@ -1,4 +1,4 @@
-BASE=gpss-session-1
+BASE=gp-dist-func
 #BASE=deep-gaussian-processes
 DATE=$(shell date '+%Y-%m-%d')
 #DATE=2017-12-04

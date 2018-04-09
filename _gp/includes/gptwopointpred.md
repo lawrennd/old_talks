@@ -2,17 +2,16 @@
 
 <small>
 -   The single contour of the Gaussian density represents the
-    <div class="redkey">joint distribution, $p(\mappingFunction_1, \mappingFunction_2)$</div>
+    \colorred{joint distribution, $p(\mappingFunction_1, \mappingFunction_2)$}
 
 . . .
 
--   We observe that
-    <div class="greenkey">$\mappingFunction_1=?$</div>
+-   We observe that \colorgreen{$\mappingFunction_1=?$}
 
 . . .
 
 -   Conditional density:
-    <div class="redkey">$p(\mappingFunction_2|\mappingFunction_1=?)$</div>
+    \colorred{$p(\mappingFunction_2|\mappingFunction_1=?)$}
 </small>
 	
 ### Prediction with Correlated Gaussians
@@ -45,15 +44,15 @@ A 25 dimensional correlated random variable (values ploted against index)
 ### Details
 
 -   The single contour of the Gaussian density represents the
-    <div class="bluekey"> joint distribution, $p(\mappingFunction_1, \mappingFunction_5)$</div>
+    \colorblue{joint distribution, $p(\mappingFunction_1, \mappingFunction_5)$}
 
 . . .
 
--   We observe a value for <div class="greenkey">$\mappingFunction_1=-?$</div>
+-   We observe a value for \colorgreen{$\mappingFunction_1=-?$}
 
 . . .
 	
--   Conditional density: <div class="redkey">$p(\mappingFunction_5|\mappingFunction_1=?$</div>.
+-   Conditional density: \colorred{$p(\mappingFunction_5|\mappingFunction_1=?)$}.
 
 ### Prediction with Correlated Gaussians {#prediction-with-correlated-gaussians}
 
