@@ -51,7 +51,7 @@ $$
 
 ### Matrix Representation of a Neural Network {data-transition="None"}
 
-$$\mappingFunction\left(\inputVector\right) = \activationVector\left(\inputVector\right)^\top \mappingVector + \noiseScalar$$
+$$\dataScalar\left(\inputVector\right) = \activationVector\left(\inputVector\right)^\top \mappingVector + \noiseScalar$$
 
 . . .
 

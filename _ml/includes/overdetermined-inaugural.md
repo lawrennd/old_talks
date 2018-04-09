@@ -1,43 +1,40 @@
-### {data-transition="none"}
+\plotcode{plot.over_determined_system(diagrams='../../slides/diagrams/ml')}
 
+### {data-transition="none"}
 
 <large>$$y = mx + c$$</large>
 
+\code{pods.notebook.display_plots('over_determined_system{samp:0>3}.svg', directory='../../slides/diagrams/ml', samp=(1, 7))}
+
+\slides{
 ### {data-transition="none"}
 
-<object class="svgplot" data="../_ml/diagrams/over_determined_system001.svg">
-</object>
-
-### {data-transition="none"}
-
-<object class="svgplot" data="../_ml/diagrams/over_determined_system002.svg">
-</object>
+\includesvg{../slides/diagrams/ml/over_determined_system001.svg}
 
 ### {data-transition="none"}
 
-<object class="svgplot" data="../_ml/diagrams/over_determined_system003.svg">
-</object>
+\includesvg{../slides/diagrams/ml/over_determined_system002.svg}
 
 ### {data-transition="none"}
 
-<object class="svgplot" data="../_ml/diagrams/over_determined_system004.svg">
-</object>
+\includesvg{../slides/diagrams/ml/over_determined_system003.svg}
 
 ### {data-transition="none"}
 
-<object class="svgplot" data="../_ml/diagrams/over_determined_system005.svg">
-</object>
+\includesvg{../slides/diagrams/ml/over_determined_system004.svg}
 
 ### {data-transition="none"}
 
-<object class="svgplot" data="../_ml/diagrams/over_determined_system006.svg">
-</object>
+\includesvg{../slides/diagrams/ml/over_determined_system005.svg}
 
 ### {data-transition="none"}
 
-<object class="svgplot" data="../_ml/diagrams/over_determined_system007.svg">
-</object>
+\includesvg{../slides/diagrams/ml/over_determined_system006.svg}
 
+### {data-transition="none"}
+
+\includesvg{../slides/diagrams/ml/over_determined_system007.svg}
+}
 
 
 ### $y = mx + c$ {data-transition="none"}
@@ -62,19 +59,19 @@ $$2.5 = 2m + c$$
 
 ### {data-transition="none"}
 
-![](../_ml/diagrams/Pierre-Simon_Laplace.png){height="100%"}
+\includeimg{../slides/diagrams/Pierre-Simon_Laplace.png}{30%}
 
 ### {data-transition="none"}
 
-![](../_ml/diagrams/laplacesDeterminismFrench.png){height="100%"}
+\includeimg{../slides/diagrams/laplacesDeterminismFrench.png}{80%}
 
 ### {data-transition="none"}
 
-![](../_ml/diagrams/laplacesDeterminismEnglish.png){height="100%"}
+\includeimg{../slides/diagrams/laplacesDeterminismEnglish.png}{80%}
 
 ### {data-transition="none"}
 
-![](../_ml/diagrams/philosophicaless00lapliala.png){height="100%"}
+\includeimg{../slides/diagrams/philosophicaless00lapliala.png}{80%}
 
 ### $y = mx + c + \epsilon$ {data-transition="None"}
 

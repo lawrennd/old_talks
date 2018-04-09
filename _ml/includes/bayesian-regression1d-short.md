@@ -19,21 +19,24 @@
 -   The posterior is found through **Bayes’ Rule**
     $$p(c|{y}) = \frac{p({y}|c)p(c)}{p({y})}$$
 
+\plotcode{plot.bayes_update(diagrams='../../slides/diagrams/ml')}
+
+\displaycode{pods.notebook.display_plots('dem_gaussian{stage:0>3}.svg', 
+                            '../slides/diagrams/ml', stage=(1, 3))}
+
+\slides{
 ### Bayes Update {data-transition="none"}
 
-<object class="svgplot" data="../_ml/diagrams/dem_gaussian001.svg">
-</object>
+\includesvg{../slides/diagrams/ml/dem_gaussian001.svg}
 
 ### Bayes Update {data-transition="none"}
 
-<object class="svgplot" data="../_ml/diagrams/dem_gaussian002.svg">
-</object>
+\includesvg{../slides/diagrams/ml/dem_gaussian002.svg}
 
 ### Bayes Update {data-transition="none"}
 
-<object class="svgplot" data="../_ml/diagrams/dem_gaussian003.svg">
-</object>
-
+\includesvg{../slides/diagrams/ml/dem_gaussian003.svg}
+}
 
 ### Stages to Derivation of the Posterior
 
@@ -48,4 +51,5 @@
 
 -   Recognise the mean and (co)variance of the Gaussian. This is the
     estimate of the posterior.
+
 

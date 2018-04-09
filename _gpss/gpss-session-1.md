@@ -17,9 +17,11 @@ blibliography:
 
 ### The Gaussian density
 
-\include{../_ml/includes/univariate_gaussian.md}
-\include{../_ml/includes/univariate_gaussian_properties.md}
-\include{../_ml/includes/regression_examples.md}
+
+\code{data = pods.datasets.olympic_marathon_men()}
+
+
+
 
 ### Olympic Marathon Data
 
@@ -33,19 +35,59 @@ blibliography:
 
 -   In 1904 Marathon was badly organised leading to very slow times.
 </td><td width="30%">
-![image](../_ml/diagrams/Stephen_Kiprotich.jpg)
+![image](../sides/diagrams/Stephen_Kiprotich.jpg)
 <small>Image from Wikimedia Commons <http://bit.ly/16kMKHQ></small>
 </td></tr>
 </table>
 
+\plotcode{f, ax = plt.subplots(figsize=plot.one_figsize)
+ax.plot(data['X'], data['Y'], 'r.',markersize=10)
+ax.set_xlabel('year', fontsize=20)
+ax.set_ylabel('pace min/km', fontsize=20)
+plt.savefig('../slides/diagrams/ml/olympic_marathon.svg', transparent=True, frameon=True)}
+
 
 ### Olympic Marathon Data
 
-<object data="../_ml/diagrams/olympic_marathon.svg"  class="svgplot"></object> 
+\includesvg{../slides/diagrams/ml/olympic_marathon.svg}
 
-\include{../_ml/includes/overdetermined_inaugural.md}
+\include{../_ml/includes/overdetermined-inaugural.md}
+
+\include{../_ml/includes/univariate-gaussian.md}
+\include{../_ml/includes/univariate-gaussian-properties.md}
+\include{../_ml/includes/regression-examples.md}
+
 \include{../_ml/includes/underdetermined_system.md}
 
+### Overdetermined System
+
+-   With two unknowns and two observations: 
+    $$\begin{aligned}
+          y_1 = & mx_1 + c\\
+          y_2 = & mx_2 + c
+        \end{aligned}$$
+
+-   Additional observation leads to *overdetermined* system.
+    $$y_3 =  mx_3 + c$$
+
+-   This problem is solved through a noise model
+    $\epsilon \sim \mathcal{N}(0,\sigma^2)$ $$\begin{aligned}
+          y_1 = mx_1 + c + \epsilon_1\\
+          y_2 = mx_2 + c + \epsilon_2\\
+          y_3 = mx_3 + c + \epsilon_3
+        \end{aligned}$$
+
+### Noise Models
+
+-   We aren’t modeling entire system.
+
+-   Noise model gives mismatch between model and data.
+
+-   Gaussian model justified by appeal to central limit theorem.
+
+-   Other models also possible (Student-$t$ for heavy tails).
+
+-   Maximum likelihood with Gaussian noise leads to *least squares*.
 
 ### Probability for Under- and Overdetermined {.allowframebreaks}
 
@@ -61,10 +103,32 @@ blibliography:
 
 -   This is known as a Bayesian treatment.
 
+### Different Types of Uncertainty
+
+-   The first type of uncertainty we are assuming is
+    *aleatoric* uncertainty.
+
+-   The second type of uncertainty we are assuming is
+    *epistemic* uncertainty.
+
+### Aleatoric Uncertainty
+
+-   This is uncertainty we couldn’t know even if we wanted to. e.g. the
+    result of a football match before it’s played.
+
+-   Where a sheet of paper might land on the floor.
+
+### Epistemic Uncertainty
+
+-   This is uncertainty we could in principal know the answer too. We
+    just haven’t observed enough yet, e.g. the result of a football
+    match *after* it’s played.
+
+-   What colour socks your lecturer is wearing.
 
 ### Bayesian Regression
 
-\include{../_ml/includes/bayesian_regression1d_short.md}
+\include{../_ml/includes/bayesian-regression1d-short.md}
 
 
 ### Multivariate Analysis
@@ -93,19 +157,20 @@ $\weightVector$.
 
 ### Multivariate Bayesian Regression
 
-\include{../_ml/includes/multivariate_bayesian_linear_short.md}
+\include{../_ml/includes/multivariate-bayesian-linear-short.md}
 
 ### Two Dimensional Gaussian Distribution
 
-\include{../_ml/includes/two_d_gaussian.md}
+\include{../_ml/includes/two-d-gaussian.md}
 
 ### Multivariate Gaussian Properties
 
-\include{../_gp/includes/multivariate_gaussian_properties.md}
+<!-- Also a version of this under ../_ml/-->
+\include{../_gp/includes/multivariate-gaussian-properties.md}
 
 ### Distributions over Functions
 
-\include{../_gp/includes/gpdistfunc.md}
+\include{../_gp/includes/gptwopointpred.md}
 
 ### References {.allowframebreaks}
 

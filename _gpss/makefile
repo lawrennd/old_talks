@@ -1,32 +1,41 @@
-BASE=gpss-session-
-MATHJAX="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
-CSS=tech-talks.css
+BASE=gpss-session-1
+#BASE=deep-gaussian-processes
+DATE=$(shell date '+%Y-%m-%d')
+#DATE=2017-12-04
+#MATHJAX="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+MATHJAX="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG"
+CSS=talks.css
+HEADER=../svg-mathjax.html
 PP=gpp
 PPFLAGS=-T
-PDFLAGS=-s -S --slide-level 3 --filter pandoc-citeproc --mathjax=${MATHJAX}
-DATE1=$(shell date '+%Y-%m-%d')
-DATE1=2017-09-11
-DATE2=2017-09-12
-OUT1=$(DATE1)-$(BASE)1
-OUT2=$(DATE2)-$(BASE)2
+PPFLAGS=
+PDFLAGS=-s --slide-level 3 --filter pandoc-citeproc --csl=../elsevier-harvard.csl --mathjax=${MATHJAX} 
+OUT=$(DATE)-$(BASE)
 
 
-${BASE}1.slides.html: ${BASE}1.slides.md
-	pandoc ${PDFLAGS} -c ${CSS} -t revealjs -o ${BASE}1.slides.html  ${BASE}1.slides.md 
-	cp ${BASE}1.slides.html ../slides/${OUT1}.slides.html
+all: ${BASE}.slides.html ${BASE}.notes.html ${BASE}.ipynb
 
-${BASE}2.slides.html: ${BASE}2.slides.md
-	pandoc ${PDFLAGS} -c ${CSS} -t revealjs -o ${BASE}2.slides.html  ${BASE}2.slides.md 
-	cp ${BASE}2.slides.html ../slides/${OUT2}.slides.html
-
-${BASE}1.slides.md: ${BASE}1.md 
-	${PP} ${PPFLAGS} ${BASE}1.md -o ${BASE}1.slides.md
-
-${BASE}2.slides.md: ${BASE}2.md
-	${PP} ${PPFLAGS} ${BASE}2.md -o ${BASE}2.slides.md
+${BASE}.slides.html: ${BASE}.slides.md
+	pandoc  ${PDFLAGS} -c ${CSS} --include-in-header=${HEADER} -t revealjs --bibliography=${BASE}.bib -o ${BASE}.slides.html  ${BASE}.slides.md 
+	cp ${BASE}.slides.html ../slides/${OUT}.slides.html
 
 
-all: ${BASE}1.slides.html ${BASE}2.slides.html
+${BASE}.notes.html: ${BASE}.notes.md
+	pandoc  --bibliography=${BASE}.bib -o ${BASE}.notes.html  ${BASE}.notes.md 
+
+${BASE}.ipynb: ${BASE}.ipynb.md
+	pandoc  --bibliography=${BASE}.bib -o ${BASE}.tmp.md  ${BASE}.ipynb.md 
+	notedown ${BASE}.tmp.md > ${BASE}.ipynb
+	rm ${BASE}.tmp.md
+
+${BASE}.slides.md: ${BASE}.md 
+	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" ${PPFLAGS} ${BASE}.md -o ${BASE}.slides.md
+
+${BASE}.notes.md: ${BASE}.md 
+	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -Dnotes=1 ${PPFLAGS} ${BASE}.md -o ${BASE}.notes.md
+
+${BASE}.ipynb.md: ${BASE}.md 
+	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -Dipynb=1 ${PPFLAGS} ${BASE}.md -o ${BASE}.ipynb.md
 
 clean:
-	rm ${BASE}1.slides.md ${BASE}1.slides.html ${BASE}2.slides.html ${BASE}2.slides.md
+	rm ${BASE}.slides.md ${BASE}.slides.html ${BASE}.notes.md ${BASE}.notes.html ${BASE}.ipynb.md 

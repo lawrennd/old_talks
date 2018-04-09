@@ -26,22 +26,19 @@
 
 ### Prediction of $\mappingFunction_{5}$ from $\mappingFunction_{1}$ {data-transition="none"}
 
-<object data="../_gp/diagrams/two_point_sample014.svg" class="svgplot">
-</object>
+\includesvg{../../slides/_gp/diagrams/two_point_sample014.svg}
 
 A 25 dimensional correlated random variable (values ploted against index)
 
 ### Prediction of $\mappingFunction_{5}$ from $\mappingFunction_{1}$ {data-transition="none"}
 
-<object data="../_gp/diagrams/two_point_sample015.svg" class="svgplot">
-</object>
+\includesvg{../../slides/_gp/diagrams/two_point_sample015.svg}
 
 A 25 dimensional correlated random variable (values ploted against index)
 
 ### Prediction of $\mappingFunction_{5}$ from $\mappingFunction_{1}$ {data-transition="none"}
 
-<object data="../_gp/diagrams/two_point_sample016.svg" class="svgplot">
-</object>
+\includesvg{../../slides/_gp/diagrams/two_point_sample016.svg}
 
 A 25 dimensional correlated random variable (values ploted against index)
 
