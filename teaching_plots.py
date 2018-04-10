@@ -4,13 +4,13 @@ import IPython
 import os
 from mpl_toolkits.mplot3d import Axes3D
 
+
 import GPy
 
 import daft
 
 import mlai
-
-#from IPython.display import display, clear_output, HTML
+import gp_tutorial
 
 tau = 2*np.pi
 
@@ -1167,7 +1167,7 @@ def covariance_func(x, kernel_function, x_cov=None, formula=None,
     if x_cov is None:
         x_cov = x
     K = kernel_function(x_cov, x_cov, **args)
-    obj = matrix(K, ax=ax, type='image', bracket_style='boxes')
+    obj = matrix(K, ax=ax, type='image', bracket_style='boxes', colormap='gray')
 
     if shortname is not None:
         filename = shortname + '_covariance'
@@ -2243,3 +2243,65 @@ def shared_gplvm():
     pgm.add_edge("Z_1", "Y_1")
     pgm.add_edge("Z_2", "Y_2")
     return pgm
+
+def model_output(model, output_dim=0, scale=1.0, offset=0.0, ax=None, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2):
+    """Plot the output of a GP."""
+    if ax is None:
+        fig, ax = plt.subplots(figsize=big_figsize)
+    ax.plot(model.X.flatten(), model.Y[:, output_dim]*scale + offset, 'r.',markersize=10)
+    ax.set_xlabel(xlabel, fontsize=fontsize)
+    ax.set_ylabel(ylabel, fontsize=fontsize)
+    xt = pred_range(model.X, portion=portion)
+    yt_mean, yt_var = model.predict(xt)
+    yt_mean = yt_mean*scale + offset
+    yt_var *= scale*scale
+    yt_sd=np.sqrt(yt_var)
+    if yt_sd.shape[1]>1:
+        yt_sd = yt_sd[:, output_dim]
+
+    _ = gp_tutorial.gpplot(xt.flatten(),
+               yt_mean[:, output_dim],
+               yt_mean[:, output_dim]-2*yt_sd.flatten(),
+               yt_mean[:, output_dim]+2*yt_sd.flatten(), 
+               ax=ax)
+
+def model_sample(model, output_dim=0, scale=1.0, offset=0.0,
+                 samps=10, ax=None, xlabel='$x$', ylabel='$y$', 
+                 fontsize=20, portion=0.2,
+                 xlim=None, ylim=None):
+    """Plot model output with samples."""
+    
+    if ax is None:
+        fig, ax = plt.subplots(figsize=big_figsize)
+    ax.set_xlabel(xlabel, fontsize=fontsize)
+    ax.set_ylabel(ylabel, fontsize=fontsize)
+    
+    xt = pred_range(model.X, portion=portion)
+    yt_mean, yt_var = model.predict(xt)
+    yt_mean = yt_mean*scale + offset
+    yt_var *= scale*scale
+    yt_sd=np.sqrt(yt_var)
+    if yt_sd.shape[1]>1:
+        yt_sd = yt_sd[:, output_dim]
+        
+    _ = gp_tutorial.gpplot(xt.flatten(),
+               yt_mean[:, output_dim],
+               yt_mean[:, output_dim]-2*yt_sd.flatten(),
+               yt_mean[:, output_dim]+2*yt_sd.flatten(), 
+               ax=ax)
+    for i in range(samps):
+        xt = pred_range(model.X, portion=portion, randomize=True)
+        a = model.posterior_sample(xt)
+        ax.plot(xt.flatten(), a[:, output_dim]*scale+offset, 'b.',markersize=3, alpha=0.2)
+    ax.plot(model.X.flatten(), model.Y[:, output_dim]*scale+offset, 'r.',markersize=10)
+
+    if xlim is not None:
+        ax.set_xlim(xlim)
+    else:
+        ax.set_xlim([xt.min(), xt.max()])
+    if ylim is not None: 
+        ax.set_ylim(ylim)
+               
+    if hasattr(model, 'Z'):
+        ylim = ax.get_ylim()
+        ax.plot(m.Z, np.ones(m.Z.shape)*ax.get_ylim()[0], marker='^', linestyle=None, markersize=20)

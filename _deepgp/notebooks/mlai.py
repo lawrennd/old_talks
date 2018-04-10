@@ -1,1 +1,1 @@
-../../slides/mlai.py
+../../mlai.py

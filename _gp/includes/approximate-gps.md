@@ -61,56 +61,71 @@ $$
 
 * Model for our data, $\dataVector$
 
+\columns{
 $$p(\dataVector)$$
-<br><object type="image/svg+xml" data="./diagrams/py.svg">
-</object>
+}{
+\includesvg{../slides/diagrams/gp/py.svg}
+}
 
 ### Variational Compression {.slide: data-transition="none"}
 
 * Prior density over $\mappingFunctionVector$. Likelihood relates data, $\dataVector$, to $\mappingFunctionVector$.
 
-$$p(\dataVector)=\int p(\dataVector|\mappingFunctionVector)p(\mappingFunctionVector)\text{d}\mappingFunctionVector$$<br>
-<object type="image/svg+xml" data="./diagrams/pygfpf.svg">
-</object>
+\columns{
+$$p(\dataVector)=\int p(\dataVector|\mappingFunctionVector)p(\mappingFunctionVector)\text{d}\mappingFunctionVector$$
+}{
+\includesvg{../slides/diagrams/gp/pygfpf.svg}
+}
 
 ### Variational Compression {.slide: data-transition="none"}
 
 * Prior density over $\mappingFunctionVector$. Likelihood relates data, $\dataVector$, to $\mappingFunctionVector$.
 
-$$p(\dataVector)=\int p(\dataVector|\mappingFunctionVector)p(\inducingVector|\mappingFunctionVector)p(\mappingFunctionVector)\text{d}\mappingFunctionVector\text{d}\inducingVector$$<br>
-<object type="image/svg+xml" data="./diagrams/pygfpugfpf.svg">
-</object></td></tr>
-</table>
+\columns{
+$$p(\dataVector)=\int p(\dataVector|\mappingFunctionVector)p(\inducingVector|\mappingFunctionVector)p(\mappingFunctionVector)\text{d}\mappingFunctionVector\text{d}\inducingVector$$
+}{
+\includesvg{../slides/diagrams/gp/pygfpugfpf.svg}
+}
 
 ### Variational Compression {.slide: data-transition="none"}
 
-$$p(\dataVector)=\int \int p(\dataVector|\mappingFunctionVector)p(\mappingFunctionVector|\inducingVector)\text{d}\mappingFunctionVectorp(\inducingVector)\text{d}\inducingVector$$
-<br><object type="image/svg+xml" data="./diagrams/pygfpfgupu.svg">
-</object>
+\columns{
+$$p(\dataVector)=\int \int p(\dataVector|\mappingFunctionVector)p(\mappingFunctionVector|\inducingVector)\text{d}\mappingFunctionVector p(\inducingVector)\text{d}\inducingVector$$
+}{
+\includesvg{../slides/diagrams/gp/pygfpfgupu.svg}
+}
 
 ### Variational Compression {.slide: data-transition="none"}
 
-$$p(\dataVector)=\int \int p(\dataVector|\mappingFunctionVector)p(\mappingFunctionVector|\inducingVector)\text{d}\mappingFunctionVectorp(\inducingVector)\text{d}\inducingVector$$<br>
-<object type="image/svg+xml" data="./diagrams/pygfpfgupu2.svg">
-</object>
+\columns{
+$$p(\dataVector)=\int \int p(\dataVector|\mappingFunctionVector)p(\mappingFunctionVector|\inducingVector)\text{d}\mappingFunctionVector p(\inducingVector)\text{d}\inducingVector$$
+}{
+\includesvg{../slides/diagrams/gp/pygfpfgupu2.svg}
+}
 
 ### Variational Compression {.slide: data-transition="none"}
 
-$$p(\dataVector|\inducingVector)=\int p(\dataVector|\mappingFunctionVector)p(\mappingFunctionVector|\inducingVector)\text{d}\mappingFunctionVector$$<br>
-<object type="image/svg+xml" data="./diagrams/pygfpfgu.svg">
-</object>
+\columns{
+$$p(\dataVector|\inducingVector)=\int p(\dataVector|\mappingFunctionVector)p(\mappingFunctionVector|\inducingVector)\text{d}\mappingFunctionVector$$
+}{
+\includesvg{../slides/diagrams/gp/pygfpfgu.svg}
+}
 
 ### Variational Compression {.slide: data-transition="none"}
 
-$$p(\dataVector|\inducingVector)$$<br>
-<object type="image/svg+xml" data="./diagrams/pygu.svg">
-</object>
+\columns{
+$$p(\dataVector|\inducingVector)$$
+}{
+\includesvg{../slides/diagrams/gp/pygu.svg}
+}
 
 ### Variational Compression {.slide: data-transition="none"}
 
-$$p(\dataVector|\paramVector)$$<br>
-<object type="image/svg+xml" data="./diagrams/pygtheta.svg">
-</object>
+\columns{
+$$p(\dataVector|\paramVector)$$
+}{
+\includesvg{../slides/diagrams/gp/pygtheta.svg}
+}
 
 ### Compression
 

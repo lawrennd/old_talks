@@ -15,41 +15,7 @@ blibliography:
 \include{../_gp/includes/gp-book.md}
 \include{../_ml/includes/what-is-ml.md}
 
-### The Gaussian density
-
-
-\code{data = pods.datasets.olympic_marathon_men()}
-
-
-
-
-### Olympic Marathon Data
-
-<table>
-<tr><td>
--   Gold medal times for Olympic Marathon since 1896.
-
--   Marathons before 1924 didn’t have a standardised distance.
-
--   Present results using pace per km.
-
--   In 1904 Marathon was badly organised leading to very slow times.
-</td><td width="30%">
-![image](../sides/diagrams/Stephen_Kiprotich.jpg)
-<small>Image from Wikimedia Commons <http://bit.ly/16kMKHQ></small>
-</td></tr>
-</table>
-
-\plotcode{f, ax = plt.subplots(figsize=plot.one_figsize)
-ax.plot(data['X'], data['Y'], 'r.',markersize=10)
-ax.set_xlabel('year', fontsize=20)
-ax.set_ylabel('pace min/km', fontsize=20)
-plt.savefig('../slides/diagrams/ml/olympic_marathon.svg', transparent=True, frameon=True)}
-
-
-### Olympic Marathon Data
-
-\includesvg{../slides/diagrams/ml/olympic_marathon.svg}
+\include{../_ml/includes/olympic-marathon-data.md}
 
 \include{../_ml/includes/overdetermined-inaugural.md}
 
@@ -175,6 +141,7 @@ $\weightVector$.
 \include{../_kern/includes/computing-rbf-covariance.md}
 
 \include{../_kern/includes/poly-covariance.md}
+\include{../_kern/includes/brownian-covariance.md}
 
 
 

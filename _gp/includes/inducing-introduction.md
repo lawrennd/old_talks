@@ -22,16 +22,11 @@ $$\begin{aligned}
 
 ###  {data-transition="None"}
 
-<table>
-<tr>
-<td>
+\columns{
 $$\inputMatrix,\,\dataVector$$ $$\mappingFunction(\inputVector) \sim {\mathcal GP}$$ $$p(\mappingFunctionVector) = \gaussianSamp{\zerosVector}{\Kff}$$ $$p(\mappingFunctionVector\given \dataVector,\inputMatrix)$$
-</td>
-<td>
+}{
 \includeimg{../slides/diagrams/nomenclature4}{90%}{negate}
-</td>
-</tr>
-</table>
+}
 \begin{align}
                                                                                                            &\qquad\inducingInputMatrix, \inducingVector\\                                                                                                                                                                                                    
                                                                                                &p({\color{red} \inducingVector})  = \gaussianSamp{\zerosVector}{\Kuu}                                                                                                                                                                                        
@@ -39,14 +34,8 @@ $$\inputMatrix,\,\dataVector$$ $$\mappingFunction(\inputVector) \sim {\mathcal G
 
 ###  {data-transition="None"}
 
-<table>
-<tr>
-<td>
+\columns{
 $$\inputMatrix,\,\dataVector$$ $$\mappingFunction(\inputVector) \sim {\mathcal GP}$$ $$p(\mappingFunctionVector) = \gaussianSamp{\zerosVector}{\Kff}$$ $$p(\mappingFunctionVector\given \dataVector,\inputMatrix)$$ $$p(\inducingVector)  = \gaussianSamp{\zerosVector}{\Kuu}$$ $$\widetilde p({\color{red}\inducingVector}\given \dataVector,\inputMatrix)$$
-</td>
-<td>
+}{
 \includeimg{../slides/diagrams/nomenclature5.png}{90%}{negate}
-</td>
-</tr>
-</table>
-
+}

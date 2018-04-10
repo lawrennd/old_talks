@@ -4,13 +4,7 @@ title: "Deep Probabilistic Modelling with with Gaussian Processes"
 author: Neil D. Lawrence
 bibliography: deep-probabilistic-modelling-with-gaussian-processes.bib
 ---
-\ifdef{ipynb}
-\define{\includesvg{filename}}{<img src="\filename">}
 
-\else
-\define{\includesvg{filename}}{<object class="svgplot" data="\filename"></object>}
-\endif
-\define{\includeimg{filename}{width}{class}}{<img class="\class" src="\filename" width="\width" style="background:none; border:none; box-shadow:none;">}
 <!--Notes from Stefanos: Hey Neil, 
 
 Just realised that there was no comment on the fact that a DGP is not a GP, only the current layer conditioned on all previous ones.
@@ -29,13 +23,13 @@ Comments from Rich!
 
 CMB samples -> Life
 -->
-\include{../talk-macros.tex}
-\include{../_gp/includes/what-is-a-gp.md}
+\include{talk-macros.tex}
+\include{./_gp/includes/what-is-a-gp.md}
 
 
 ### Deep Gaussian Processes {data-transition="None"}
 
-\include{../_gp/includes/approximate-gps-short.md}
+\include{./_gp/includes/approximate-gps-short.md}
 
 ### Modern Review {data-transition="None"}
 
@@ -47,22 +41,22 @@ CMB samples -> Life
 
 
 
-\include{../_deepgp/includes/deep-nn-gp.md}
-\include{../_deepgp/includes/deeptheory.md}
+\include{./_deepgp/includes/deep-nn-gp.md}
+\include{./_deepgp/includes/deeptheory.md}
 
-\include{../_deepgp/includes/deep-olympic.md}
-\include{../_deepgp/includes/deep-step-function.md}
-\include{../_deepgp/includes/deep-motorcycle.md}
-\include{../_deepgp/includes/deep-robot-wireless.md}
+\include{./_deepgp/includes/deep-olympic.md}
+\include{./_deepgp/includes/deep-step-function.md}
+\include{./_deepgp/includes/deep-motorcycle.md}
+\include{./_deepgp/includes/deep-robot-wireless.md}
 
-\include{../_deepgp/includes/deep-high-five.md}
+\include{./_deepgp/includes/deep-high-five.md}
 
-\include{../_deepgp/includes/deep-usps-digits.md}
-
-
+\include{./_deepgp/includes/deep-usps-digits.md}
 
 
-\include{../_health/includes/deep-health-model.md}
+
+
+\include{./_health/includes/deep-health-model.md}
 
 
 ### At this Year's NIPS
@@ -86,7 +80,7 @@ CMB samples -> Life
 * *Gaussian Process Based Approaches for Survival Analysis*
     @Saul:thesis2016
 
-\include{../_deepgp/includes/multi-fidelity-modelling.md}
+\include{./_deepgp/includes/multi-fidelity-modelling.md}
 
 ### Acknowledgments
 

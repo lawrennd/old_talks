@@ -39,34 +39,6 @@ from gp_tutorial import gpplot}
 
 Here we set up a simple one dimensional regression problem. The input locations, $\inputMatrix$, are in two separate clusters. The response variable, $\dataVector$, is sampled from a Gaussian process with an exponentiated quadratic covariance.}
 
-\helpercode{def plot_model_output(model, output_dim=0, ax=None, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2, xlim=None, ylim=None):
-    if ax is None:
-        fig, ax = plt.subplots(figsize=plot.big_figsize)
-    ax.plot(model.X.flatten(), model.Y[:, output_dim], 'r.',markersize=10)
-    ax.set_xlabel(xlabel, fontsize=fontsize)
-    ax.set_ylabel(ylabel, fontsize=fontsize)
-    xt = plot.pred_range(model.X, portion=portion)
-    yt_mean, yt_var = model.predict(xt)
-    yt_sd=np.sqrt(yt_var)
-    if yt_sd.shape[1]>1:
-        yt_sd = yt_sd[:, output_dim]
-
-    _ = gpplot(xt.flatten(),
-               yt_mean[:, output_dim],
-               yt_mean[:, output_dim]-2*yt_sd.flatten(),
-               yt_mean[:, output_dim]+2*yt_sd.flatten(), 
-               ax=ax)
-			   
-    if xlim is not None:
-        ax.set_xlim(xlim)
-	else:
-		ax.set_xlim([xt.min(), xt.max()])
-    if ylim is not None: 
-        ax.set_ylim(ylim)
-			   
-	if hasattr(model, 'Z'):
-		ylim = ax.get_ylim()
-		ax.plot(m.Z, np.ones(m.Z.shape)*ax.get_ylim()[0], marker='^', linestyle=None, markersize=20)}
 		
 \code{N = 50
 noise_var = 0.01
@@ -84,7 +56,7 @@ y = np.random.multivariate_normal(np.zeros(N),k.K(X)+np.eye(N)*np.sqrt(noise_var
 _ = m_full.optimize(messages=True) # Optimize parameters of covariance function}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-plot_model_output(m_full, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2)
+plot.model_output(m_full, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2)
 xlim = ax.get_xlim()
 ylim = ax.get_ylim()
 mlai.write_figure(figure=fig,
@@ -108,7 +80,7 @@ m.inducing_inputs.constrain_fixed()
 display(m)}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-plot_model_output(m, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2, xlim=xlim, ylim=ylim)
+plot.model_output(m, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2, xlim=xlim, ylim=ylim)
 mlai.write_figure(figure=fig,
                   filename='../slides/diagrams/gp/sparse-demo-constrained-inducing-6-unlearned-gp.svg', 
                   transparent=True, frameon=True)}
@@ -121,7 +93,7 @@ mlai.write_figure(figure=fig,
 display(m)}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-plot_model_output(m, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2, xlim=xlim, ylim=ylim)
+plot.model_output(m, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2, xlim=xlim, ylim=ylim)
 mlai.write_figure(figure=fig,
                   filename='../slides/diagrams/gp/sparse-demo-full-gp.svg', 
                   transparent=True, frameon=True)}
@@ -135,7 +107,7 @@ m.inducing_inputs.unconstrain()
 _ = m.optimize(messages=True)}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-plot_model_output(m, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2,xlim=xlim, ylim=ylim)
+plot.model_output(m, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2,xlim=xlim, ylim=ylim)
 mlai.write_figure(figure=fig,
                   filename='../slides/diagrams/gp/sparse-demo-unconstrained-inducing-6-gp.svg', 
                   transparent=True, frameon=True)}
@@ -155,7 +127,7 @@ m.set_Z(np.random.rand(M,1)*12)
 _ = m.optimize(messages=True)}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-plot_model_output(m, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2, xlim=xlim, ylim=ylim)
+plot.model_output(m, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2, xlim=xlim, ylim=ylim)
 mlai.write_figure(figure=fig,
                   filename='../slides/diagrams/gp/sparse-demo-sparse-inducing-8-gp.svg', 
                   transparent=True, frameon=True)}

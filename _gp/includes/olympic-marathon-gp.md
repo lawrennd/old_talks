@@ -1,28 +1,52 @@
+\include{./_ml/includes/olympic-marathon-data.md}
 
+\notes{
+Our first objective will be to perform a Gaussian process fit to the data, we'll do this using the [GPy software](https://github.com/SheffieldML/GPy).}
 
-### Olympic Marathon Data {data-transition="None"}
+\code{m_full = GPy.models.GPRegression(x,yhat)
+_ = m_full.optimize() # Optimize parameters of covariance function}
 
-<table>
-<tr><td>
--   Gold medal times for Olympic Marathon since 1896.
+\slidenotes{}{The first command sets up the model, then 
+```
+m_full.optimize()
+```
+optimizes the parameters of the covariance function and the noise level of the model. Once the fit is complete, we'll try creating some test points, and computing the output of the GP model in terms of the mean and standard deviation of the posterior functions between 1870 and 2030. We plot the mean function and the standard deviation at 200 locations. We can obtain the predictions using
+```
+y_mean, y_var = m_full.predict(xt)
+```
+}
 
--   Marathons before 1924 didn’t have a standardised distance.
+\code{xt = np.linspace(1870,2030,200)[:,np.newaxis]
+yt_mean, yt_var = m_full.predict(xt)
+yt_sd=np.sqrt(yt_var)}
 
--   Present results using pace per km.
+\notes{Now we plot the results using the helper function in ```teaching_plots```.}
 
--   In 1904 Marathon was badly organised leading to very slow times.
-</td><td width="30%">
-![image](../slides/diagrams/Stephen_Kiprotich.jpg)
-<small>Image from Wikimedia Commons <http://bit.ly/16kMKHQ></small>
-</td></tr>
-</table>
+\helpercode{import teaching_plots as plot}
 
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+plot.model_output(m_full, scale=scale, offset=offset, ax=ax, xlabel='year', ylabel='pace min/km', fontsize=20, portion=0.2)
+ax.set_xlim(xlim)
+ax.set_ylim(ylim)
+mlai.write_figure(figure=fig,
+                  filename='../slides/diagrams/gp/olympic-marathon-gp.svg', 
+                  transparent=True, frameon=True)}
 
-### Olympic Marathon Data {data-transition="None"}
+\slides{
+### Olympic Marathon Data GP {data-transition="None"}
+}
+\includesvg{../slides/diagrams/gp/olympic-marathon-gp.svg}
 
-<object data="../slides/diagrams/olympic-marathon.svg"  class="svgplot"></object> 
+\notes{
+### Fit Quality
 
-### Olympic Marathon Data {data-transition="None"}
+In the fit we see that the error bars (coming mainly from the noise variance) are quite large. This is likely due to the outlier point in 1904, ignoring that point we can see that a tighter fit is obtained. To see this making a version of the model, ```m_clean```, where that point is removed. 
 
-<object data="../slides/diagrams/olympic-marathon-gp.svg"  class="svgplot"></object> 
+```
+x_clean=np.vstack((x[0:2, :], x[3:, :]))
+y_clean=np.vstack((y[0:2, :], y[3:, :]))
 
+m_clean = GPy.models.GPRegression(x_clean,y_clean)
+_ = m_clean.optimize()
+```
+}
