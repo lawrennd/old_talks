@@ -142,6 +142,7 @@ $\weightVector$.
 
 \include{../_kern/includes/poly-covariance.md}
 \include{../_kern/includes/brownian-covariance.md}
+\include{../_kern/includes/periodic-covariance.md}
 
 
 
