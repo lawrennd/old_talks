@@ -50,11 +50,7 @@ CMB samples -> Life
 \include{./_deepgp/includes/deep-robot-wireless.md}
 
 \include{./_deepgp/includes/deep-high-five.md}
-
 \include{./_deepgp/includes/deep-usps-digits.md}
-
-
-
 
 \include{./_health/includes/deep-health-model.md}
 
@@ -80,7 +76,7 @@ CMB samples -> Life
 * *Gaussian Process Based Approaches for Survival Analysis*
     @Saul:thesis2016
 
-\include{./_deepgp/includes/multi-fidelity-modelling.md}
+\include{./_uq/includes/uncertainty-quantification.md}
 
 ### Acknowledgments
 
