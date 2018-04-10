@@ -7,8 +7,8 @@ MATHJAX="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=
 CSS=talks.css
 HEADER=../svg-mathjax.html
 PP=gpp
-PPFLAGS=-T
-PPFLAGS=
+PPFLAGS=-T -I./..
+PPFLAGS=-I./..
 PDFLAGS=-s --slide-level 3 --filter pandoc-citeproc --csl=../elsevier-harvard.csl --mathjax=${MATHJAX} 
 OUT=$(DATE)-$(BASE)
 
@@ -25,6 +25,7 @@ ${BASE}.notes.html: ${BASE}.notes.md
 ${BASE}.ipynb: ${BASE}.ipynb.md
 	pandoc  --bibliography=${BASE}.bib -o ${BASE}.tmp.md  ${BASE}.ipynb.md 
 	notedown ${BASE}.tmp.md > ${BASE}.ipynb
+	cp ${BASE}.ipynb ../notebooks/${OUT}.ipynb
 	rm ${BASE}.tmp.md
 
 ${BASE}.slides.md: ${BASE}.md 

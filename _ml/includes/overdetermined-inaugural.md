@@ -1,10 +1,10 @@
-\plotcode{plot.over_determined_system(diagrams='../../slides/diagrams/ml')}
+\plotcode{plot.over_determined_system(diagrams='../slides/diagrams/ml')}
 
 ### {data-transition="none"}
 
 <large>$$y = mx + c$$</large>
 
-\code{pods.notebook.display_plots('over_determined_system{samp:0>3}.svg', directory='../../slides/diagrams/ml', samp=(1, 7))}
+\code{pods.notebook.display_plots('over_determined_system{samp:0>3}.svg', directory='../slides/diagrams/ml', samp=(1, 7))}
 
 \slides{
 ### {data-transition="none"}

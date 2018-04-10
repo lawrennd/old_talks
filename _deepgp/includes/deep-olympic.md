@@ -1,105 +1,4 @@
-\slidenotes{}{
-### Olympic Marathon Data
-
-The first thing we will do is load a standard data set for regression modelling. The data consists of the pace of Olympic Gold Medal Marathon winners for the Olympics from 1896 to present. First we load in the data and plot.
-}
-
-
-\plotcode{data = GPy.util.datasets.olympic_marathon_men()
-x = data['X']
-y = data['Y']
-
-offset = y.mean()
-scale = np.sqrt(y.var())
-
-xlim = (1875,2030)
-ylim = (2.5, 6.5)
-yhat = (y-offset)/scale
-
-fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-_ = ax.plot(x, y, 'r.',markersize=10)
-ax.set_xlabel('year', fontsize=20)
-ax.set_ylabel('pace min/km', fontsize=20)
-ax.set_xlim(xlim)
-ax.set_ylim(ylim)
-
-mlai.write_figure(figure=fig, filename='../../slides/diagrams/datasets/olympic-marathon.svg', transparent=True, frameon=True)
-}
-
-\slidenotes{
-### Olympic Marathon Data {data-transition="None"}
-
-\includesvg{../slides/diagrams/datasets/olympic-marathon.svg}
-}{Things to notice about the data include the outlier in 1904, in this year, the olympics was in St Louis, USA. Organizational problems and challenges with dust kicked up by the cars following the race meant that participants got lost, and only very few participants completed. 
-
-More recent years see more consistently quick marathons.
-
-Our first objective will be to perform a Gaussian process fit to the data, we'll do this using the [GPy software](https://github.com/SheffieldML/GPy).}
-
-\code{m_full = GPy.models.GPRegression(x,yhat)
-_ = m_full.optimize() # Optimize parameters of covariance function}
-
-\slidenotes{}{The first command sets up the model, then 
-```
-m_full.optimize()
-```
-optimizes the parameters of the covariance function and the noise level of the model. Once the fit is complete, we'll try creating some test points, and computing the output of the GP model in terms of the mean and standard deviation of the posterior functions between 1870 and 2030. We plot the mean function and the standard deviation at 200 locations. We can obtain the predictions using
-```
-y_mean, y_var = m_full.predict(xt)
-```}
-
-\code{xt = np.linspace(1870,2030,200)[:,np.newaxis]
-yt_mean, yt_var = m_full.predict(xt)
-yt_sd=np.sqrt(yt_var)}
-
-\slidenotes{}{Now we plot the results using the helper function ```gpplot```.}
-
-\helpercode{def plot_model_output(model, output_dim=0, scale=1.0, offset=0.0, ax=None, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2):
-    if ax is None:
-        fig, ax = plt.subplots(figsize=plot.big_figsize)
-    ax.plot(model.X.flatten(), model.Y[:, output_dim]*scale + offset, 'r.',markersize=10)
-    ax.set_xlabel(xlabel, fontsize=fontsize)
-    ax.set_ylabel(ylabel, fontsize=fontsize)
-    xt = plot.pred_range(model.X, portion=portion)
-    yt_mean, yt_var = model.predict(xt)
-    yt_mean = yt_mean*scale + offset
-    yt_var *= scale*scale
-    yt_sd=np.sqrt(yt_var)
-    if yt_sd.shape[1]>1:
-        yt_sd = yt_sd[:, output_dim]
-
-    _ = gpplot(xt.flatten(),
-               yt_mean[:, output_dim],
-               yt_mean[:, output_dim]-2*yt_sd.flatten(),
-               yt_mean[:, output_dim]+2*yt_sd.flatten(), 
-               ax=ax)}
-
-\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-plot_model_output(m_full, scale=scale, offset=offset, ax=ax, xlabel='year', ylabel='pace min/km', fontsize=20, portion=0.2)
-ax.set_xlim(xlim)
-ax.set_ylim(ylim)
-mlai.write_figure(figure=fig,
-                  filename='../../slides/diagrams/gp/olympic-marathon-gp.svg', 
-                  transparent=True, frameon=True)}
-
-
-### Olympic Marathon Data GP {data-transition="None"}
-
-\includesvg{../slides/diagrams/gp/olympic-marathon-gp.svg}
-
-\slidenotes{}
-{
-### Fit Quality
-
-In the fit we see that the error bars (coming mainly from the noise variance) are quite large. This is likely due to the outlier point in 1904, ignoring that point we can see that a tighter fit is obtained. To see this making a version of the model, ```m_clean```, where that point is removed. 
-
-```
-x_clean=np.vstack((x[0:2, :], x[3:, :]))
-y_clean=np.vstack((y[0:2, :], y[3:, :]))
-
-m_clean = GPy.models.GPRegression(x_clean,y_clean)
-_ = m_clean.optimize()
-```
+\include{./_gp/includes/olympic-marathon-gp.md}
 
 ### Deep GP Fit
 
@@ -114,7 +13,7 @@ m = deepgp.DeepGP([y.shape[1],hidden,x.shape[1]],Y=yhat, X=x, inits=['PCA','PCA'
                            GPy.kern.RBF(x.shape[1],ARD=True)], # the kernels for each layer
                   num_inducing=50, back_constraint=False)}
 				  
-\slidenotes{}{
+\notes{
 Deep Gaussian process models also can require some thought in initialization. Here we choose to start by setting the noise variance to be one percent of the data variance.
 
 Optimization requires moving variational parameters in the hidden layer representing the mean and variance of the expected values in that layer. Since all those values can be scaled up, and this only results in a downscaling in the output of the first GP, and a downscaling of the input length scale to the second GP. It makes sense to first of all fix the scales of the covariance function in each of the GPs.
@@ -147,7 +46,7 @@ deepgp.DeepGP.initialize=initialize}
 \code{# Call the initalization
 m.initialize()}
 
-\slidenotes{}{Now optimize the model. The first stage of optimization is working on variational parameters and lengthscales only. 
+\notes{Now optimize the model. The first stage of optimization is working on variational parameters and lengthscales only. 
 ```
 m.optimize(messages=False,max_iters=100)
 ```
@@ -198,19 +97,19 @@ deepgp.DeepGP.staged_optimize=staged_optimize}
 
 \code{m.staged_optimize(messages=(True,True,True))}
 
-\slidenotes{}{
+\notes{
 ### Plot the prediction
 
 The prediction of the deep GP can be extracted in a similar way to the normal GP. Although, in this case, it is an approximation to the true distribution, because the true distribution is not Gaussian. 
 }
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-plot_model_output(m, scale=scale, offset=offset, ax=ax, xlabel='year', ylabel='pace min/km', 
+plot.model_output(m, scale=scale, offset=offset, ax=ax, xlabel='year', ylabel='pace min/km', 
           fontsize=20, portion=0.2)
 ax.set_xlim(xlim)
 
 ax.set_ylim(ylim)
-mlai.write_figure(figure=fig, filename='../../slides/diagrams/deepgp/olympic-marathon-deep-gp.svg', 
+mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/olympic-marathon-deep-gp.svg', 
                 transparent=True, frameon=True)}
 
 
@@ -229,37 +128,12 @@ mlai.write_figure(figure=fig, filename='../../slides/diagrams/deepgp/olympic-mar
 deepgp.DeepGP.posterior_sample = posterior_sample}
 
 \helpercode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-def plot_model_sample(model, output_dim=0, scale=1.0, offset=0.0, samps=10, ax=None, xlabel='$x$', ylabel='$y$', 
-                      fontsize=20, portion=0.2):
-    if ax is None:
-        fig, ax = plt.subplots(figsize=plot.big_figsize)
-    ax.set_xlabel(xlabel, fontsize=fontsize)
-    ax.set_ylabel(ylabel, fontsize=fontsize)
-    
-    xt = plot.pred_range(model.X, portion=portion)
-    yt_mean, yt_var = model.predict(xt)
-    yt_mean = yt_mean*scale + offset
-    yt_var *= scale*scale
-    yt_sd=np.sqrt(yt_var)
-    if yt_sd.shape[1]>1:
-        yt_sd = yt_sd[:, output_dim]
-        
-    _ = gpplot(xt.flatten(),
-               yt_mean[:, output_dim],
-               yt_mean[:, output_dim]-2*yt_sd.flatten(),
-               yt_mean[:, output_dim]+2*yt_sd.flatten(), 
-               ax=ax)
-    for i in range(samps):
-        xt = plot.pred_range(model.X, portion=portion, randomize=True)
-        a = model.posterior_sample(xt)
-        ax.plot(xt.flatten(), a[:, output_dim]*scale+offset, 'b.',markersize=3, alpha=0.2)
-    ax.plot(model.X.flatten(), model.Y[:, output_dim]*scale+offset, 'r.',markersize=10)}
 
-\plotcode{plot_model_sample(m, scale=scale, offset=offset, samps=10, ax=ax, 
+\plotcode{plot.model_sample(m, scale=scale, offset=offset, samps=10, ax=ax, 
                   xlabel='year', ylabel='pace min/km', portion = 0.225)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
-mlai.write_figure(figure=fig, filename='../../slides/diagrams/deepgp/olympic-marathon-deep-gp-samples.svg', 
+mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/olympic-marathon-deep-gp-samples.svg', 
                   transparent=True, frameon=True)}
 
 
@@ -268,7 +142,7 @@ mlai.write_figure(figure=fig, filename='../../slides/diagrams/deepgp/olympic-mar
 \includesvg{../slides/diagrams/deepgp/olympic-marathon-deep-gp-samples.svg}
 
 
-\slidenotes{}{
+\notes{
 ### Fitted GP for each layer
 
 Now we explore the GPs the model has used to fit each layer. First of all, we look at the hidden layer.
@@ -333,7 +207,7 @@ deepgp.DeepGP.visualize=visualize}
 \plotcode{m.visualize(scale=scale, offset=offset, xlabel='year',
             ylabel='pace min/km',xlim=xlim, ylim=ylim,
             dataset='olympic-marathon',
-            diagrams='../../slides/diagrams/deepgp')}
+            diagrams='../slides/diagrams/deepgp')}
 
 
 ### Olympic Marathon Data Latent 1 {data-transition="None"}
@@ -566,7 +440,7 @@ deepgp.DeepGP.visualize_pinball=visualize_pinball}
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 m.visualize_pinball(ax=ax, scale=scale, offset=offset, points=30, portion=0.1,
                     xlabel='year', ylabel='pace km/min', vertical=True)
-mlai.write_figure(figure=fig, filename='../../slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg', 
+mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg', 
                   transparent=True, frameon=True)}
 
 ### Olympic Marathon Pinball Plot {data-transition="None"}

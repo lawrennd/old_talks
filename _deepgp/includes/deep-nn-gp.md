@@ -1,4 +1,4 @@
-\include{../../_deepgp/includes/deep-nn.md}
+\include{./_deepgp/includes/deep-nn.md}
 
 ### Mathematically {data-transition="None"}
 
@@ -27,13 +27,13 @@ $$
     $\eigenvectwoMatrix \in \Re^{k_2\times q}$, i.e. we have a low rank
     matrix factorization for the weights.
 
-\plotcode{plot.low_rank_approximation(diagrams='../../slides/diagrams')}
+\plotcode{plot.low_rank_approximation(diagrams='../slides/diagrams')}
 
 ### Low Rank Approximation {data-transition="None"}
 
 \includesvg{../slides/diagrams/wisuvt.svg}
 
-\include{../../_deepgp/includes/deep-gp.md}
+\include{./_deepgp/includes/deep-gp.md}
 
 ### Mathematically {data-transition="None"}
 

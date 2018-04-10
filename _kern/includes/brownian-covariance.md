@@ -1,8 +1,25 @@
-### Brownian Covariance {data-transition="none"}
+\helpercode{%load -s brownian_cov mlai.py}
+\setupcode{import teaching_plots as plot}
+\setupcode{import numpy as np}
 
-$$k(t, t^\prime) = \alpha \min(t, t^\prime)$$
 
-<table>
-  <tr><td><object  data="../slides/diagrams/brownian_covariance.svg"></object></td>
-  <td><img src="../slides/diagrams/brownian_covariance.gif" class="negate" align="center" style="background:none; border:none; box-shadow:none;"></td></tr>
-</table>
+\code{x=np.linspace(0, 2, 30)[:, np.newaxis]
+plot.covariance_func(x, mlai.compute_kernel, 
+                     formula = r'$$\kernelScalar(t, t^\prime) = \alpha \min(t, t^\prime)$$', 
+                     shortname='brownian', 
+                     longname='Brownian', 
+					 kernel=brownian_cov,
+                     degree=4., 
+					 diagrams='../slides/diagrams/kern')}
+
+
+### Brownian Covariance
+
+$$\kernelScalar(t, t^\prime) = \alpha \min(t, t^\prime)$$
+
+\columns{
+\includesvg{../slides/diagrams/kern/brownian_covariance.svg}
+}{
+\includegif{../slides/diagrams/kern/brownian_covariance.gif}{80%}
+}{50%}{50%}
+

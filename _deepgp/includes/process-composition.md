@@ -7,7 +7,7 @@
 \plotcode{rc("font", **{'family':'sans-serif','sans-serif':['Helvetica'],'size':30})
 rc("text", usetex=True)
 pgm = plot.horizontal_chain(depth=5)
-pgm.render().figure.savefig("../../slides/diagrams/deepgp/deep-markov.svg", transparent=True)}
+pgm.render().figure.savefig("../slides/diagrams/deepgp/deep-markov.svg", transparent=True)}
 
 ### Equivalent to Markov Chain {data-transition="None"}
 
@@ -21,7 +21,7 @@ $$p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mapping
 rc("font", **{'family':'sans-serif','sans-serif':['Helvetica'], 'size':15})
 rc("text", usetex=True)
 pgm = plot.vertical_chain(depth=5)
-pgm.render().figure.savefig("../../slides/diagrams/deepgp/deep-markov-vertical.svg", transparent=True)}
+pgm.render().figure.savefig("../slides/diagrams/deepgp/deep-markov-vertical.svg", transparent=True)}
 
 ### {data-transition="None"}
 
@@ -32,7 +32,6 @@ pgm.render().figure.savefig("../../slides/diagrams/deepgp/deep-markov-vertical.s
 -   Gaussian processes give priors over functions.
 
 -   Elegant properties:
-
     -   e.g. *Derivatives* of process are also Gaussian distributed (if
         they exist).
 
@@ -60,7 +59,7 @@ pgm.render().figure.savefig("../../slides/diagrams/deepgp/deep-markov-vertical.s
 pgm = plot.vertical_chain(depth=5, shape=[2, 7])
 pgm.add_node(daft.Node('y_2', r'$\mathbf{y}_2$', 1.5, 3.5, observed=True))
 pgm.add_edge('f_2', 'y_2')
-pgm.render().figure.savefig("../../slides/diagrams/deepgp/deep-markov-vertical-side.svg", transparent=True)}
+pgm.render().figure.savefig("../slides/diagrams/deepgp/deep-markov-vertical-side.svg", transparent=True)}
 
 ### {data-transition="None"}
 

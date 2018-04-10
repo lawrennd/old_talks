@@ -1,6 +1,6 @@
 \setupcode{import teaching_plots as plot}
 
-\code{plot.under_determined_system(diagrams='../../slides/diagrams/ml')}
+\code{plot.under_determined_system(diagrams='../slides/diagrams/ml')}
 
 ### Underdetermined System {data-transition="none"}
 
@@ -13,7 +13,7 @@ Can compute $m$
 given $c$. $$m = \frac{\dataScalar_1 - c}{\inputScalar}$$
 
 \displaycode{pods.notebook.display_plots('under_determined_system{samp:0>3}.svg', 
-                            directory='../../slides/diagrams/ml', samp=(0, 10))}
+                            directory='../slides/diagrams/ml', samp=(0, 10))}
 \slides{							
 ### Underdetermined System {data-transition="none"}
 
