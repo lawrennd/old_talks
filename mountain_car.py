@@ -1,29 +1,21 @@
+import os
 import numpy as np
+
 import matplotlib.pyplot as plt
+
 import GPyOpt
 from GPyOpt.acquisitions import AcquisitionBase
 import GPy
-from JSAnimation.IPython_display import display_animation
+
 from matplotlib import animation
-from IPython.display import display
+from IPython.display import display, HTML
 from pylab import cm
+
+import teaching_plots as plot
+import mlai
 
 N_STEPS_MAX = 500
 
-def display_frames_as_gif(frames, title):
-    """
-    Displays a list of frames as a gif, with controls
-    """
-    plt.figure(figsize=(frames[0].shape[1] / 72.0, frames[0].shape[0] / 72.0), dpi = 72)
-    plt.title(title)
-    patch = plt.imshow(frames[0])
-    plt.axis('off')
-
-    def animate(i):
-        patch.set_data(frames[i])
-
-    anim = animation.FuncAnimation(plt.gcf(), animate, frames = len(frames), interval=30)
-    display(display_animation(anim, default_mode='loop'))
 
     
 def make_multi_output_multi_fidelity_kernel(input_dim):
@@ -39,8 +31,8 @@ def make_multi_output_multi_fidelity_kernel(input_dim):
     k_error.lengthscale.constrain_bounded(1e-4, 10)
     return k_simulator + k_indicator*k_error
 
-### Define a low fidelity simulation that returns the approximate car dynamics
 def simulation(state):
+    """Define a low fidelity simulation that returns the approximate car dynamics"""
     power = 0.0015
     max_speed = 0.07
     min_position = -1.2
@@ -56,8 +48,8 @@ def simulation(state):
     d_position = new_position-position
     return d_position, d_velocity
 
-### Define a low fidelity simulation that returns the approximate car dynamics
 def low_cost_simulation(state):
+    """Define a low fidelity simulation that returns the approximate car dynamics"""
     # A corrupted version of the function above
     power = 0.002
     max_speed = 0.07
@@ -105,29 +97,6 @@ class AcquisitionPE(AcquisitionBase):
         df_acqu = dsdx
         return f_acqu, df_acqu
 
-def plot_emu_sim_comparison(env, control_params, emulator, fidelity='single'):
-    reward, state_trajectory, control_inputs, _ = run_simulation(env, control_params)
-    
-    reward_emu, state_trajectory_emu_mean, control_inputs_emu_mean = run_emulation(
-        emulator, control_params, state_trajectory[0, :].copy(), fidelity=fidelity)
-
-    f, axarr= plt.subplots(1, 3, figsize=(10, 3))
-    x_axis = np.arange(0, N_STEPS_MAX)
-    x_axis_emu = np.arange(0, N_STEPS_MAX)
-    h1, = axarr[0].plot(state_trajectory_emu_mean[:, 0])
-
-    h2, = axarr[0].plot(state_trajectory[:, 0])
-    axarr[0].set_title('Position')
-    axarr[1].plot(state_trajectory_emu_mean[:,1])
-    axarr[1].plot(state_trajectory[:,1])
-    axarr[1].set_title('Velocity')
-
-    axarr[2].plot(control_inputs_emu_mean)
-    axarr[2].plot(control_inputs)
-    axarr[2].set_title('Control Input')
-    f.legend([h1,h2], ['Emulation', 'Simulation'], loc=4)
-    plt.tight_layout()
-    plt.show()
 
 def run_simulation(env, controller_gains, render=False):
     # Reset environment to starting point
@@ -286,3 +255,77 @@ def create_deep_multi_fidelity_models(x, y1, y2):
     m2.optimize_restarts(10, verbose=False)
     return m1, m2
 
+def animate_frames(frames, title=None):
+    """
+    Converts a list of frames to an animation.
+    """
+    fig, ax = plt.subplots(figsize=(frames[0].shape[1] / 72.0, frames[0].shape[0] / 72.0), dpi = 72)
+    fig.set_alpha(0.0)
+    if title is None:
+        ax.set_position([0, 0, 1, 1])
+    else:
+        ax.set_title(title)
+    ax.set_alpha(0.0)
+    patch = ax.imshow(frames[0])
+    
+    plt.axis('off')
+
+    def animate(i):
+        patch.set_data(frames[i])
+        
+    return animation.FuncAnimation(plt.gcf(), animate, frames = len(frames), interval=30)
+    #HTML(anim.to_jshtml())##display(display_animation(anim, default_mode='loop'))
+    #HTML(anim.to_html5_video())##display(display_animation(anim, default_mode='loop'))
+
+
+def emu_sim_comparison(env, control_params, emulator, fidelity='single', max_steps=500, diagrams='../diagrams'):
+    """Plot a comparison between the emulator and the simulator"""
+    reward, state_trajectory, control_inputs, _ = run_simulation(env, control_params)
+    
+    reward_emu, state_trajectory_emu_mean, control_inputs_emu_mean = run_emulation(
+        emulator, control_params, state_trajectory[0, :].copy(), fidelity=fidelity)
+
+    fig, ax = plt.subplots(1, 3, figsize=plot.three_figsize)
+    x_axis = np.arange(0, max_steps)
+    x_axis_emu = np.arange(0, max_steps)
+    h1, = ax[0].plot(state_trajectory_emu_mean[:, 0])
+
+    h2, = ax[0].plot(state_trajectory[:, 0])
+    ax[0].set_title('Position')
+    ax[1].plot(state_trajectory_emu_mean[:,1])
+    ax[1].plot(state_trajectory[:,1])
+    ax[1].set_title('Velocity')
+
+    ax[2].plot(control_inputs_emu_mean)
+    ax[2].plot(control_inputs)
+    ax[2].set_title('Control Input')
+    fig.legend([h1,h2], ['Emulation', 'Simulation'], loc=4)
+    plt.tight_layout()
+    plt.show()
+    file_name = 'emu_sim_comparison.svg'
+    mlai.write_figure(os.path.join(diagrams, file_name),
+                      figure=fig,
+                      transparent=True)
+
+def invert_frames(frames):
+    inverted = []
+    for fr in frames:
+        fr = fr/255.
+        shp = fr[:, :, 0].shape
+        a=np.ones(shp)
+        #a[np.logical_and(np.logical_and(fr[:, :, 0]==1.0,fr[:, :, 1]==1.0), fr[:, :, 2]==1.0)]=0.0
+        fr = (1.0-fr)
+        frn = np.zeros(shp + (4,))
+        frn[:, :, :3] = fr
+        frn[:, :, 3] = a
+        inverted.append(frn)
+    return inverted
+
+
+def save_animation(frames, file_name, diagrams='../diagrams', inverted=True):
+    if inverted:
+        frames = invert_frames(frames)
+    anim=animate_frames(frames)
+    f = open(os.path.join(diagrams, file_name), 'w')
+    f.write(anim.to_jshtml())
+    f.close()
