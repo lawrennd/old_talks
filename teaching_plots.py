@@ -1,7 +1,7 @@
-import matplotlib.pyplot as plt
-import numpy as np
-import IPython
 import os
+import numpy as np
+import matplotlib.pyplot as plt
+import IPython
 from mpl_toolkits.mplot3d import Axes3D
 
 
@@ -12,8 +12,10 @@ import daft
 import mlai
 import gp_tutorial
 
+
 tau = 2*np.pi
 
+three_figsize = (10, 3)
 two_figsize = (10, 5)
 one_figsize = (5, 5)
 big_figsize = (7, 7)
@@ -1192,7 +1194,7 @@ def two_point_sample(kernel_function, diagrams='../diagrams', **args):
     """Make plots for the two data point sample example for explaining gaussian processes."""
 
     ind = [0, 1]    
-    fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(two_figsize))
+    fig, ax = plt.subplots(nrows=1, ncols=2, figsize=two_figsize)
     x = np.linspace(-1, 1, 25)[:, np.newaxis]
     K = kernel_function(x, x, **args)
     obj = matrix(K, ax=ax[1], type='image', colormap='gray')
@@ -1740,7 +1742,7 @@ def non_linear_difficulty_plot_3(alpha=1.0,
     W = np.random.randn(num_samples, num_basis_func)*np.sqrt(alpha)
     F = np.dot(Phi,W.T)
 
-    fig, ax = plt.subplots(1, 3, figsize=(10, 5))
+    fig, ax = plt.subplots(1, 3, figsize=two_figsize)
     fig.delaxes(ax[2])
     ax[2] = fig.add_subplot(133, projection='3d')
 
@@ -1827,7 +1829,7 @@ def non_linear_difficulty_plot_2(alpha=1.0,
                                  fontsize=30,
                                  diagrams='../diagrams'):
     """Plot a one dimensional line mapped through a two dimensional mapping."""
-    fig, ax = plt.subplots(1, 3, figsize=(10, 5))
+    fig, ax = plt.subplots(1, 3, figsize=two_figsize)
     for item in ax:
         item.patch.set_visible(False)
 
@@ -1896,7 +1898,7 @@ def non_linear_difficulty_plot_1(alpha=1.0,
     W = np.random.randn(1, num_basis_func)*np.sqrt(alpha)
     f = np.dot(Phi,W.T);
 
-    fig, ax = plt.subplots(1, 3, figsize=(10, 3))
+    fig, ax = plt.subplots(1, 3, figsize=three_figsize)
     p = np.exp(-0.5/alpha*x**2)*1/np.sqrt(2*np.pi*alpha)
     patch = Polygon(np.column_stack((x, p)), closed=True, facecolor=patch_color)
     a = ax[0].add_patch(patch)
@@ -2305,3 +2307,5 @@ def model_sample(model, output_dim=0, scale=1.0, offset=0.0,
     if hasattr(model, 'Z'):
         ylim = ax.get_ylim()
         ax.plot(m.Z, np.ones(m.Z.shape)*ax.get_ylim()[0], marker='^', linestyle=None, markersize=20)
+
+
