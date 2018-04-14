@@ -734,6 +734,11 @@ def relu_cov(x, x_prime, scale=1., w=1., b=5., alpha=0.):
     return variance*0.5*((1. - theta/np.pi)*inner + h(arg2, inner_2, s, alpha)/np.pi + h(arg2, inner_1, s_prime, alpha)/np.pi) 
 
 
+def eq_cov(x, x_prime, variance=1., lengthscale=1.):
+    "Polynomial covariance function."
+    diffx = x - x_prime
+    return variance*np.exp(-0.5*np.dot(diffx, diffx)/lengthscale**2)
+
 def polynomial_cov(x, x_prime, variance=1., degree=2., w=1., b=1.):
     "Polynomial covariance function."
     return variance*(np.dot(x, x_prime)*w + b)**degree
