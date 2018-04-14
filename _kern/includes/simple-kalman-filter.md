@@ -1,7 +1,7 @@
 ### Simple Kalman Filter
 
 -   We have state vector
-    $\inputMatrix= \left[\inputVector_1
+    $\inputMatrix = \left[\inputVector_1
           \dots \inputVector_\latentDim\right] \in \mathbb{R}^{{T}\times \latentDim}$
     and if each state evolves independently we have 
 		
@@ -16,14 +16,14 @@
 ### Stacking and Kronecker Products
 
 -   Represent with a ‘stacked’ system:
-    $$p({\mathbf{{x}}}) = {\mathcal{N}\left({\mathbf{{x}}}|{\mathbf{0}},{\mathbf{I}}\otimes {\mathbf{K}}\right)}$$
+    $$p(\inputVector) = \gaussianDist{\inputVector}{\zerosVector}{\eye \otimes \kernelMatrix}$$
     where the stacking is placing each column of
-    ${\mathbf{X}}$ one on top of another as
-    $${\mathbf{{x}}}= \begin{bmatrix}
-          {\mathbf{{x}}}_{:, 1}\\
-          {\mathbf{{x}}}_{:, 2}\\
+    $\inputMatrix$ one on top of another as
+    $$\inputVector= \begin{bmatrix}
+          \inputVector_{:, 1}\\
+          \inputVector_{:, 2}\\
           \vdots\\
-          {\mathbf{{x}}}_{:, {q}}
+          \inputVector_{:, \latentDim}
         \end{bmatrix}$$
 		
 		
@@ -45,14 +45,14 @@
 ### Stacking and Kronecker Products
 
 -   Represent with a ‘stacked’ system:
-    $$p({\mathbf{{x}}}) = {\mathcal{N}\left({\mathbf{{x}}}|{\mathbf{0}},{\mathbf{I}}\otimes {\mathbf{K}}\right)}$$
+    $$p(\inputVector) = \gaussianDist{\inputVector}{\zerosVector}{\eye\otimes \kernelMatrix}$$
     where the stacking is placing each column of
-    ${\mathbf{X}}$ one on top of another as
-    $${\mathbf{{x}}}= \begin{bmatrix}
-          {\mathbf{{x}}}_{:, 1}\\
-          {\mathbf{{x}}}_{:, 2}\\
+    $\inputMatrix$ one on top of another as
+    $$\inputVector= \begin{bmatrix}
+          \inputVector_{:, 1}\\
+          \inputVector_{:, 2}\\
           \vdots\\
-          {\mathbf{{x}}}_{:, {q}}
+          \inputVector_{:, \latentDim}
         \end{bmatrix}$$
 		
 ### Column Stacking
@@ -90,14 +90,14 @@ by the block diagonals.</span>
 
 ### Two Ways of Stacking
 
-Can also stack each row of ${\mathbf{X}}$ to form
-column vector: $${\mathbf{{x}}}= \begin{bmatrix}
-      {\mathbf{{x}}}_{1, :}\\
-      {\mathbf{{x}}}_{2, :}\\
+Can also stack each row of $\inputMatrix$ to form
+column vector: $$\inputVector= \begin{bmatrix}
+      \inputVector_{1, :}\\
+      \inputVector_{2, :}\\
       \vdots\\
-      {\mathbf{{x}}}_{{T}, :}
+      \inputVector_{{T}, :}
     \end{bmatrix}$$
-$$p({\mathbf{{x}}}) = {\mathcal{N}\left({\mathbf{{x}}}|{\mathbf{0}},{\mathbf{K}}\otimes {\mathbf{I}}\right)}$$
+$$p(\inputVector) = \gaussianDist{\inputVector}{\zerosVector}{\kernelMatrix\otimes \eye}$$
 
 ### Row Stacking
 
@@ -124,8 +124,8 @@ gpKalmanFilterKroneckerPlot4
 
 The observations are related to the latent points by a linear mapping
 matrix,
-$${\mathbf{{y}}}_{i, :} = {\mathbf{W}}{\mathbf{{x}}}_{i, :} + {\boldsymbol{\epsilon}}_{i, :}$$
-$${\boldsymbol{\epsilon}}\sim {\mathcal{N}\left(0,{\sigma}^2{\mathbf{I}}\right)}$$
+$$\dataVector_{i, :} = \mappingMatrix\inputVector_{i, :} + \noiseVector_{i, :}$$
+$$\noiseVector \sim \gaussianSamp{\zerosVector}{\dataStd^2\eye}$$
 
 \plotcode{plot.kronecker_WX(diagrams='../slides/diagrams/kern')}
 
@@ -136,13 +136,13 @@ $${\boldsymbol{\epsilon}}\sim {\mathcal{N}\left(0,{\sigma}^2{\mathbf{I}}\right)}
 ### Output Covariance
 
 This leads to a covariance of the form
-$$({\mathbf{I}}\otimes {\mathbf{W}}) ({\mathbf{K}}\otimes {\mathbf{I}}) ({\mathbf{I}}\otimes {\mathbf{W}}^\top) + {\mathbf{I}}{\sigma}^2$$
+$$(\eye\otimes \mappingMatrix) (\kernelMatrix \otimes \eye) (\eye \otimes \mappingMatrix^\top) + \eye\dataStd^2$$
 Using
 $(\mathbf{A}\otimes\mathbf{B}) (\mathbf{C}\otimes\mathbf{D}) = \mathbf{A}\mathbf{C} \otimes \mathbf{B}\mathbf{D}$
 This leads to
-$${\mathbf{K}}\otimes {\mathbf{W}}{\mathbf{W}}^\top + {\mathbf{I}}{\sigma}^2$$
+$$\kernelMatrix\otimes {\mappingMatrix}{\mappingMatrix}^\top + \eye\dataStd^2$$
 or
-$${\mathbf{{y}}}\sim {\mathcal{N}\left(0,{\mathbf{W}}{\mathbf{W}}^\top \otimes {\mathbf{K}}+ {\mathbf{I}}{\sigma}^2\right)}$$
+$$\dataVector\sim \gaussianSamp{\zerosVector}{\mappingMatrix\mappingMatrix^\top \otimes \kernelMatrix + \eye\dataStd^2}$$
 
 gpKalmanMultiTaskInit
 
@@ -151,25 +151,25 @@ gpKalmanMultiTaskInit
 ### Kronecker Structure GPs
 
 -   This Kronecker structure leads to several published models.
-    $$({\mathbf{K}}({{\bf {x}}},{{\bf {x}}}^\prime))_{{d},{d}^\prime}={k}({{\bf {x}}},{{\bf {x}}}^\prime){k}_T({d},{d}^\prime),$$
-    where ${k}$ has ${{\bf {x}}}$ and ${k}_T$ has ${n}$ as inputs.
+    $$(\kernelMatrix(\inputVector,\inputVector^\prime))_{\dataIndex,\dataIndex^\prime}=\kernelScalar(\inputVector,\inputVector^\prime)\kernelScalar_T(\dataIndex,\dataIndex^\prime),$$
+    where $\kernelScalar$ has $\inputVector$ and $\kernelScalar_T$ has $\numData$ as inputs.
 
 -   Can think of multiple output covariance functions as covariances
     with augmented input.
 
--   Alongside ${{\bf {x}}}$ we also input the ${d}$ associated with the
+-   Alongside $\inputVector$ we also input the $\dataIndex$ associated with the
     *output* of interest.
 	
 ### Separable Covariance Functions
 
 -   Taking
-    ${\mathbf{B}}= {\mathbf{W}}{\mathbf{W}}^\top$ we
+    $\coregionalizationMatrix= {\mappingMatrix}{\mappingMatrix}^\top$ we
     have a matrix expression across outputs.
-    $${\mathbf{K}}({{\bf {x}}},{{\bf {x}}}^\prime)={k}({{\bf {x}}},{{\bf {x}}}^\prime){\mathbf{B}},$$
-    where ${\mathbf{B}}$ is a ${p}\times {p}$
+    $$\kernelMatrix(\inputVector,\inputVector^\prime)=\kernelScalar(\inputVector,\inputVector^\prime)\coregionalizationMatrix,$$
+    where $\coregionalizationMatrix$ is a $\dataDim\times \dataDim$
     symmetric and positive semi-definite matrix.
 
--   ${\mathbf{B}}$ is called the
+-   $\coregionalizationMatrix$ is called the
     *coregionalization* matrix.
 
 -   We call this class of covariance functions *separable* due to their
@@ -178,10 +178,10 @@ gpKalmanMultiTaskInit
 ### Sum of Separable Covariance Functions
 
 -   In the same spirit a more general class of kernels is given by
-    $${\mathbf{K}}({{\bf {x}}},{{\bf {x}}}^\prime)=\sum_{{j}=1}^{q}{k}_{j}({{\bf {x}}},{{\bf {x}}}^\prime){\mathbf{B}}_{j}.$$
+    $$\kernelMatrix(\inputVector,\inputVector^\prime)=\sum_{{j}=1}^\latentDim\kernelScalar_{j}(\inputVector,\inputVector^\prime)\coregionalizationMatrix_{j}.$$
 
 -   This can also be written as
-    $${\mathbf{K}}({{\bf X}}, {{\bf X}}) = \sum_{{j}=1}^{q}{\mathbf{B}}_{j}\otimes {k}_{j}({{\bf X}}, {{\bf X}}),$$
+    $$\kernelMatrix(\inputMatrix, \inputMatrix) = \sum_{{j}=1}^\latentDim\coregionalizationMatrix_{j}\otimes \kernelScalar_{j}(\inputMatrix, \inputMatrix),$$
 
 -   This is like several Kalman filter-type models added together, but
     each one with a different set of latent functions.
@@ -208,31 +208,31 @@ gpKalmanMultiTaskInit
 -   In the linear model of coregionalization (LMC) outputs are expressed
     as linear combinations of independent random functions.
 
--   In the LMC, each component ${f}_{d}$ is expressed as a linear sum
-    $${f}_{d}({{\bf {x}}}) = \sum_{{j}=1}^{q}{w}_{{d},{j}}{u}_{{j}}({{\bf {x}}}).$$
+-   In the LMC, each component ${f}_\dataIndex$ is expressed as a linear sum
+    $${f}_\dataIndex(\inputVector) = \sum_{{j}=1}^\latentDim{w}_{\dataIndex,{j}}{u}_{{j}}(\inputVector).$$
     where the latent functions are independent and have covariance
-    functions ${k}_{{j}}({{\bf {x}}},{{\bf {x}}}^\prime)$.
+    functions $\kernelScalar_{{j}}(\inputVector,\inputVector^\prime)$.
 
--   The processes $\{{f}_{{j}}({{\bf {x}}})\}_{{j}=1}^{q}$ are
-    independent for $q \neq {j}^\prime$.
+-   The processes $\{\mappingFunction_j(\inputVector)\}_{j=1}^\latentDim$ are
+    independent for $\latentDim \neq {j}^\prime$.
 	
 ### Kalman Filter Special Case
 
 -   The Kalman filter is an example of the LMC where
-    ${u}_i({{\bf {x}}}) \rightarrow {x}_i(t)$.
+    ${u}_i(\inputVector) \rightarrow {x}_i(t)$.
 
 -   I.e. we’ve moved form time input to a more general input space.
 
 -   In matrix notation:
     1.  Kalman filter
-        $${\mathbf{F}}= {\mathbf{W}}{{\bf X}}$$
+        $${\mathbf{F}}= {\mappingMatrix}\inputMatrix$$
 
     2.  LMC
-        $${\mathbf{F}}= {\mathbf{W}}{\mathbf{U}}$$
+        $${\mathbf{F}}= {\mappingMatrix}{\mathbf{U}}$$
 
-    where the rows of these matrices ${\mathbf{F}}$,
-    ${{\bf X}}$, ${\mathbf{U}}$ each
-    contain ${q}$ samples from their corresponding functions at a
+    where the rows of these matrices ${\mappingFunctionMatrix}$,
+    $\inputMatrix$, ${\mathbf{U}}$ each
+    contain $\latentDim$ samples from their corresponding functions at a
     different time (Kalman filter) or spatial location (LMC).
 	
 ### Intrinsic Coregionalization Model
@@ -243,15 +243,15 @@ gpKalmanMultiTaskInit
     <span>@Goovaerts:book97</span>).
 
 -   The kernel matrix corresponding to a dataset
-    ${{\bf X}}$ takes the form
-    $${\mathbf{K}}({{\bf X}}, {{\bf X}}) =  {\mathbf{B}}\otimes {k}({{\bf X}}, {{\bf X}}).$$
+    $\inputMatrix$ takes the form
+    $$\kernelMatrix(\inputMatrix, \inputMatrix) =  \coregionalizationMatrix\otimes \kernelScalar(\inputMatrix, \inputMatrix).$$
 	
 
 ### Autokrigeability
 
 -   If outputs are noise-free, maximum likelihood is equivalent to
-    independent fits of ${\mathbf{B}}$ and
-    ${k}({{\bf {x}}}, {{\bf {x}}}^\prime)$
+    independent fits of $\coregionalizationMatrix$ and
+    $\kernelScalar(\inputVector, \inputVector^\prime)$
     <span>[@Helterbrand:universalCR94]</span>.
 
 -   In geostatistics this is known as autokrigeability
@@ -262,10 +262,10 @@ gpKalmanMultiTaskInit
 	
 ### Intrinsic Coregionalization Model
 
-$${\mathbf{K}}({{\bf X}}, {{\bf X}}) =  {\mathbf{{w}}}{\mathbf{{w}}}^\top  \otimes {k}({{\bf X}}, {{\bf X}}).$$
+$$\kernelMatrix(\inputMatrix, \inputMatrix) =  \mappingVector\mappingVector^\top  \otimes \kernelScalar(\inputMatrix, \inputMatrix).$$
 
- $${\mathbf{{w}}}= \begin{bmatrix} 1 \\ 5\end{bmatrix}$$
-$${\mathbf{B}}= \begin{bmatrix} 1 & 5\\ 5&25\end{bmatrix}$$
+ $$\mappingVector= \begin{bmatrix} 1 \\ 5\end{bmatrix}$$
+$$\coregionalizationMatrix= \begin{bmatrix} 1 & 5\\ 5&25\end{bmatrix}$$
 
 gpKalmanToMultiTaskIcm
 
@@ -274,10 +274,10 @@ gpKalmanToMultiTaskIcm
 
 ### Intrinsic Coregionalization Model
 
-$${\mathbf{K}}({{\bf X}}, {{\bf X}}) =  {\mathbf{B}}\otimes {k}({{\bf X}}, {{\bf X}}).$$
+$$\kernelMatrix(\inputMatrix, \inputMatrix) =  \coregionalizationMatrix\otimes \kernelScalar(\inputMatrix, \inputMatrix).$$
 
 
-$${\mathbf{B}}= \begin{bmatrix} 1 & 0.5\\ 0.5& 1.5\end{bmatrix}$$
+$$\coregionalizationMatrix= \begin{bmatrix} 1 & 0.5\\ 0.5& 1.5\end{bmatrix}$$
 
 gpKalmanToMultiTaskIcm2
 
@@ -285,12 +285,12 @@ gpKalmanToMultiTaskIcm2
 
 ### LMC Samples
 
-$${\mathbf{K}}({{\bf X}}, {{\bf X}}) = {\mathbf{B}}_1 \otimes {k}_1({{\bf X}}, {{\bf X}}) + {\mathbf{B}}_2 \otimes {k}_2({{\bf X}}, {{\bf X}})$$
+$$\kernelMatrix(\inputMatrix, \inputMatrix) = \coregionalizationMatrix_1 \otimes \kernelScalar_1(\inputMatrix, \inputMatrix) + \coregionalizationMatrix_2 \otimes \kernelScalar_2(\inputMatrix, \inputMatrix)$$
 
 
-$${\mathbf{B}}_1 = \begin{bmatrix} 1.4 & 0.5\\ 0.5& 1.2\end{bmatrix}$$
+$$\coregionalizationMatrix_1 = \begin{bmatrix} 1.4 & 0.5\\ 0.5& 1.2\end{bmatrix}$$
 $${\ell}_1 = 1$$
-$${\mathbf{B}}_2 = \begin{bmatrix} 1 & 0.5\\ 0.5& 1.3\end{bmatrix}$$
+$$\coregionalizationMatrix_2 = \begin{bmatrix} 1 & 0.5\\ 0.5& 1.3\end{bmatrix}$$
 $${\ell}_2 = 0.2$$
 
 gpKalmanToMultiTaskLmc
@@ -306,9 +306,9 @@ gpKalmanToMultiTaskLmc
 -   Imposes the correlation of the outputs explicitly through the set of
     coregionalization matrices.
 
--   Setting ${\mathbf{B}}={\mathbf{I}}_{p}$ assumes
+-   Setting $\coregionalizationMatrix = \eye_\dataDim$ assumes
     outputs are conditionally independent given the parameters
-    ${\boldsymbol{{\theta}}}$.
+    $\parameterVector$.
     [@Minka:learningtolearn97; @Lawrence:learning04; @Kai:multitask05].
 
 -   More recent approaches for multiple output modeling are different
@@ -318,7 +318,7 @@ gpKalmanToMultiTaskLmc
 
 -   Coregionalization matrices are rank 1
     <span>@Teh:semiparametric05</span>. rewrite equation as
-    $${\mathbf{K}}({{\bf X}}, {{\bf X}}) = \sum_{{j}=1}^{q}{\mathbf{{w}}}_{:, {j}}{\mathbf{{w}}}^{\top}_{:, {j}} \otimes {k}_{j}({{\bf X}}, {{\bf X}}).$$
+    $$\kernelMatrix(\inputMatrix, \inputMatrix) = \sum_{{j}=1}^\latentDim\mappingVector_{:, {j}}\mappingVector^{\top}_{:, {j}} \otimes \kernelScalar_{j}(\inputMatrix, \inputMatrix).$$
 
 -   Like the Kalman filter, but each latent function has a
     *different* covariance.
@@ -328,10 +328,10 @@ gpKalmanToMultiTaskLmc
 	
 ### Semiparametric Latent Factor Model Samples
 
-$${\mathbf{K}}({{\bf X}}, {{\bf X}}) = {\mathbf{{w}}}_{:, 1}{\mathbf{{w}}}_{:, 1}^\top \otimes {k}_1({{\bf X}}, {{\bf X}}) + {\mathbf{{w}}}_{:, 2} {\mathbf{{w}}}_{:, 2}^\top \otimes {k}_2({{\bf X}}, {{\bf X}})$$
+$$\kernelMatrix(\inputMatrix, \inputMatrix) = \mappingVector_{:, 1}\mappingVector_{:, 1}^\top \otimes \kernelScalar_1(\inputMatrix, \inputMatrix) + \mappingVector_{:, 2} \mappingVector_{:, 2}^\top \otimes \kernelScalar_2(\inputMatrix, \inputMatrix)$$
 
- $${\mathbf{{w}}}_1 = \begin{bmatrix} 0.5 \\ 1\end{bmatrix}$$
-$${\mathbf{{w}}}_2 = \begin{bmatrix} 1 \\ 0.5\end{bmatrix}$$
+ $$\mappingVector_1 = \begin{bmatrix} 0.5 \\ 1\end{bmatrix}$$
+$$\mappingVector_2 = \begin{bmatrix} 1 \\ 0.5\end{bmatrix}$$
 
 gpKalmanToMultiTaskSlfm
 
@@ -341,7 +341,7 @@ gpKalmanToMultiTaskSlfm
 
 -   @Bonilla:multi07 suggest ICM for multitask learning.
 
--   Use a PPCA form for ${\mathbf{B}}$: similar to our
+-   Use a PPCA form for $\coregionalizationMatrix$: similar to our
     Kalman filter example.
 
 -   Refer to the autokrigeability effect as the cancellation of
