@@ -1,0 +1,92 @@
+\ifdef{ipynb}
+\define{\includeyoutube{id}{width}{height}{time}}{```{.python}
+from IPython.lib.display import YouTubeVideo
+YouTubeVideo('\id')
+'''}
+\define{\includegif{filename}{width}{class}}{<img class="\class" src="\filename" width="\width" style="background:none; border:none; box-shadow:none;">}
+\define{\includeimg{filename}{width}{class}}{<img class="\class" src="\filename" width="\width" style="background:none; border:none; box-shadow:none;">}
+\define{\includesvg{filename}{align}}{<img src="\filename" align="\align">}
+\define{\includehtml{filename}{width}{height}}{<iframe src="\filename" width="\width" height="\height" allowtransparency="true" frameborder="0">
+</iframe>}
+\define{\slidenotes{slidetext}{notetext}}{\notetext}
+\define{\notes{text}}{\text}
+\define{\slides{text}}{}
+\define{\plotcode{block}}{```{.python}
+\block
+```}
+\define{\displaycode{block}}{```{.python}
+\block
+```}
+\define{\setupcode{block}}{```{.python}
+\block
+```}
+\define{\helpercode{block}}{```{.python}
+\block
+```}
+\define{\code{block}}{```{.python}
+\block
+```}
+\define{\colorgreen{block}}{\block}
+\define{\colorred{block}}{\block}
+\define{\colorblue{block}}{\block}
+
+\define{\columns{one}{two}{width1}{width2}}{<table><tr><td width="\width1">\one</td><td width="\width2">\two</td></tr></table>}
+
+\else
+\ifdef{notes}
+\define{\includeyoutube}{id}{width}{height}{time}}{[![](https://img.youtube.com/vi/\id/0.jpg)](https://www.youtube.com/watch?v=\id&t=\time)}
+\define{\slidenotes{slidetext}{notetext}}{\notetext}
+\define{\includeimg{filename}{width}{class}}{<img class="\class" src="\filename" width="\width" style="background:none; border:none; box-shadow:none;">}
+\define{\includegif{filename}{width}{class}}{<img class="\class" src="\filename" width="\width" style="background:none; border:none; box-shadow:none;">}
+\define{\includesvg{filename}{align}}{<object class="svgplot" align="\align" data="\filename"></object>}
+\define{\includehtml{filename}{width}{height}}{<iframe src="\filename" width="\width" height="\height" allowtransparency="true" frameborder="0">
+</iframe>}
+\define{\slides{text}}{}
+\define{\notes{text}}{\text}
+\define{\talksdir}{/Users/neil/lawrennd/talks}
+
+\define{\code{block}}{```{.python}
+\block
+```}
+\define{\helpercode{block}}{```{.python}
+\block
+```}
+\define{\plotcode{block}}{```{.python}
+\block
+```}
+\define{\setupcode{block}}{```{.python}
+\block
+```}
+\define{\displaycode{block}}{}
+\define{\colorgreen{block}}{\block}
+\define{\colorred{block}}{\block}
+\define{\colorblue{block}}{\block}
+
+\define{\columns{one}{two}{width1}{width2}}{<table><tr><td width="\width1">\one</td><td width="\width2">\two</td></tr></table>}
+
+\else
+\define{\slidenotes{slidetext}{notetext}}{\slidetext}
+\define{\includeimg{filename}{width}{class}}{<img class="\class" src="\filename" width="\width" style="background:none; border:none; box-shadow:none;">}
+\define{\includegif{filename}{width}{class}}{<img class="\class" src="\filename" width="\width" style="background:none; border:none; box-shadow:none;">}
+\define{\includesvg{filename}{align}}{<object class="svgplot" align="\align" data="\filename"></object>}
+\define{\includehtml{filename}{width}{height}}{<iframe src="\filename" width="\width" height="\height" allowtransparency="true" frameborder="0">
+</iframe>}
+
+
+\define{\notes{text}}{}
+\define{\slides{text}}{\text}
+\define{\code{block}}{}
+\define{\setupcode{block}}{}
+\define{\helpercode{block}}{}
+\define{\plotcode{block}}{}
+\define{\displaycode{block}}{}
+\define{\colorgreen{block}}{<div class="greenkey">\block</div>}
+\define{\colorred{block}}{<div class="redkey">\block</div>}
+\define{\colorblue{block}}{<div class="bluekey">\block</div>}
+
+\define{\columns{one}{two}{width1}{width2}}{<table><tr><td width="\width1">\one</td><td width="\width2">\two</td></tr></table>}
+
+\endif
+\endif
+
+\include{talk-notation.tex}
