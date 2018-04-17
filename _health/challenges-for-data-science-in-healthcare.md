@@ -5,10 +5,10 @@ author: Neil D. Lawrence
 affiliation: Amazon and University of Sheffield
 ---
 
-\include{../talk-macros.tex}
+\include{talk-macros.tex}
 
 
-\include{../_data-science/includes/lies-damned-lies.md}
+\include{_data-science/includes/lies-damned-lies.md}
 
 
 ### Background: Big Data
@@ -19,13 +19,13 @@ affiliation: Amazon and University of Sheffield
 
 * Particular opportunities, in challenging areas such as *mental health*.
 
-\include{../_data-science/includes/evolved-relationship.md}
-\include{../_ai/includes/embodiment-factors.md}
+\include{_data-science/includes/evolved-relationship.md}
+\include{_ai/includes/embodiment-factors.md}
 
 
 ### Evolved Relationship 
 
-\includesvg{../slides/diagrams/data-science-information-flow_neg003.svg}
+\includesvg{../slides/diagrams/data-science/information-flow003.svg}
 
 
 ### Effects
@@ -64,7 +64,7 @@ affiliation: Amazon and University of Sheffield
 3. Privacy, loss of control, marginalization
 
 
-\include{../_data-science/includes/breadth-or-depth.md}
+\include{_data-science/includes/breadth-or-depth.md}
 
 ### Also need
 
@@ -76,11 +76,8 @@ affiliation: Amazon and University of Sheffield
 * Larger studies (100,000 genome)
     * Combined with complex models: algorithmic challenges
 
-\include{../_data-science/includes/value-of-data.md}
-\include{../_data-science/includes/privacy-loss-of-control.md}
-\include{../_gp/includes/gp-intro-very-short.md}
-\include{../_privacy/includes/differential-privacy-for-gps.md}
-\include{../_privacy/includes/differential-privacy-with-cloaking.md}
+\include{_data-science/includes/value-of-data.md}
+\include{_data-science/includes/privacy-loss-of-control.md}
 
 ### Awareness
 
