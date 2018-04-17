@@ -3,7 +3,7 @@ title: "Challenges for Data Science in Healthcare"
 abstract: 
 published: 2018-04-18
 venue: A.I. and Health Regulation Meeting
-reveal: 
+reveal: 2018-04-18-challenges-for-data-science-in-healthcare.slides.html
 blog: 
 layout: talk
 author:
