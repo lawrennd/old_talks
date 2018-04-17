@@ -77,6 +77,7 @@ affiliation: Amazon and University of Sheffield
     * Combined with complex models: algorithmic challenges
 
 \include{_data-science/includes/value-of-data.md}
+\include{_health/includes/rolls-royce-analogy.md}
 \include{_data-science/includes/privacy-loss-of-control.md}
 
 ### Awareness
