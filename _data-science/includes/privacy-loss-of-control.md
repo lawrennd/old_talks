@@ -5,7 +5,7 @@
 
 * Individual is becoming easier to monitor
 
-\include{../../_ai/includes/conversation-technical.md}
+\include{_ai/includes/conversation-technical.md}
 
 
 ### Hate Speech or Political Dissent?
@@ -43,7 +43,7 @@
 ### Marginalization
 
 * Credit scoring, insurance, medical treatment
-* What if certain sectors of society are under-represented in our aanalysis?
+* What if certain sectors of society are under-represented in our analysis?
 * What if Silicon Valley develops everything for us?
 
 ### Digital Revolution and Inequality?
@@ -56,4 +56,3 @@
 * We accept privacy in our real lives, need to accept it in our digital
 * Control of persona and ability to project
 * Need better technological solutions: trust and algorithms.
-
