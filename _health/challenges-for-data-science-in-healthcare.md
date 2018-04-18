@@ -84,19 +84,21 @@ affiliation: Amazon and University of Sheffield
 \include{_health/includes/rolls-royce-analogy.md}
 \include{_data-science/includes/data-trusts.md}
 
-\include{_data-science/includes/privacy-loss-of-control.md}
+<!--\include{_data-science/includes/privacy-loss-of-control.md}-->
 
 
 ### Conclusion {.slide: data-transition="none"}
 
 * Data science offers a great deal of promise for healthcare
 * There are challenges and pitfalls
+* Here discussed two solutions for the Data Crisis
+    1. Data Readiness Levels
+	2. Data Trusts
 
-**Many solutions rely on changes to our culture of healthcare**
 
 
 ### Thanks! {.slide: data-transition="none"}
 
-* twitter: @lawrennd
+* twitter: \@lawrennd
 * blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
 * [Guardian articles](https://www.theguardian.com/profile/neil-lawrence)
