@@ -10,8 +10,10 @@ affiliation: Amazon and University of Sheffield
 
 \include{_data-science/includes/lies-damned-lies.md}
 
+\include{../_ml/includes/what-is-ml.md}
+\include{../_ml/includes/data-science-vs-ai.md}
 
-### Background: Big Data
+### Background: Big Data {.slide: data-transition="none"}
 
 * The pervasiveness of data brings forward particular challenges.
 
@@ -23,12 +25,12 @@ affiliation: Amazon and University of Sheffield
 \include{_ai/includes/embodiment-factors.md}
 
 
-### Evolved Relationship 
+### Evolved Relationship {.slide: data-transition="none"}
 
 \includesvg{../slides/diagrams/data-science/information-flow003.svg}
 
 
-### Effects
+### Effects {.slide: data-transition="none"}
 
 * This phenomenon has already revolutionised biology.
 
@@ -38,7 +40,7 @@ affiliation: Amazon and University of Sheffield
 
 * Great *promise* for personalized health.
 
-### Societal Effects
+### Societal Effects {.slide: data-transition="none"}
 
 * Automated decision making within the computer based only on the data.
 
@@ -48,14 +50,14 @@ affiliation: Amazon and University of Sheffield
 
 * But what is a treatment in the modern era: interventions could be far more subtle.
 
-### Societal Effects
+### Societal Effects {.slide: data-transition="none"}
 
 * Shift in dynamic from the direct pathway between human and data to indirect pathway between human and data via the computer
 
 * This change of dynamics gives us the modern and emerging domain of data science
 
 
-### Challenges
+### Challenges {.slide: data-transition="none"}
 
 1. Paradoxes of the Data Society
 
@@ -66,7 +68,7 @@ affiliation: Amazon and University of Sheffield
 
 \include{_data-science/includes/breadth-or-depth.md}
 
-### Also need
+### Also need {.slide: data-transition="none"}
 
 * More classical statistics!
     * Like the 'paperless office'
@@ -77,27 +79,24 @@ affiliation: Amazon and University of Sheffield
     * Combined with complex models: algorithmic challenges
 
 \include{_data-science/includes/value-of-data.md}
+\include{_data-science/includes/the-data-crisis.md}
+\include{_data-science/includes/data-readiness-levels.md}
 \include{_health/includes/rolls-royce-analogy.md}
+\include{_data-science/includes/data-trusts.md}
+
 \include{_data-science/includes/privacy-loss-of-control.md}
 
-### Awareness
 
-* Need to increase awareness of the pitfalls among researchers
-* Need to ensure that technological solutions are being delivered not merely for few (#FirstWorldProblems)
-* Address a wider set of challenges that the greater part of the world's population is facing
+### Conclusion {.slide: data-transition="none"}
 
-### Conclusion
-
-* Data science offers a great deal of promise for personalized health
+* Data science offers a great deal of promise for healthcare
 * There are challenges and pitfalls
-* It is incumbent on us to avoid them
-* Need new ways of thinking! 
-* *Mathematical* Data Science
 
-**Many solutions rely on education and awareness**
+**Many solutions rely on changes to our culture of healthcare**
 
 
-### Thanks!
+### Thanks! {.slide: data-transition="none"}
 
 * twitter: @lawrennd
 * blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
+* [Guardian articles](https://www.theguardian.com/profile/neil-lawrence)
