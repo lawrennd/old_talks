@@ -100,6 +100,7 @@ vs [how Africa can benefit from the data revolution](https://www.theguardian.com
 * Deployment of Machine Learning Systems-->
 
 \include{../_data-science/includes/data-readiness-levels.md}
+\include{../_data-science/includes/data-joel-tests.md}
 \include{../_ai/includes/deploying-ai.md}
 \include{../_ai/includes/ml-systems-design-long.md}
 

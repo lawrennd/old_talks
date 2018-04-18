@@ -23,6 +23,7 @@
   <!--[if lt IE 9]>
   <script src="reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
       <script type="text/javascript" src="svg_mathjax.js">
       </script>
       <script type="text/javascript">
@@ -80,7 +81,53 @@
 </ul>
 <p><img class="" src="../slides/diagrams/Question_mark.png" width="30%" style="background:none; border:none; box-shadow:none;"></p>
 </section>
-<section id="background-big-data" class="slide level3">
+<section id="what-is-machine-learning" class="slide level3" data-transition="none">
+<h3>What is Machine Learning?</h3>
+<div class="fragment">
+<p><span class="math display">\[ \text{data} + \text{model} \rightarrow \text{prediction}\]</span></p>
+</div>
+<div class="fragment">
+<ul>
+<li><span class="math inline">\(\text{data}\)</span> : observations, could be actively or passively acquired (meta-data).</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><span class="math inline">\(\text{model}\)</span> : assumptions, based on previous experience (other data! transfer learning etc), or beliefs about the regularities of the universe. Inductive bias.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><span class="math inline">\(\text{prediction}\)</span> : an action to be taken or a categorization or a quality score.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Royal Society Report: <a href="https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf">Machine Learning: Power and Promise of Computers that Learn by Example</a></li>
+</ul>
+</div>
+</section>
+<section id="machine-learning-as-the-driver-..." class="slide level3 slide:" data-transition="none">
+<h3>Machine Learning as the Driver ...</h3>
+<p>... of two different domains</p>
+<ol type="1">
+<li><p><em>Data Science</em>: arises from the fact that we now capture data by happenstance.</p></li>
+<li><p><em>Artificial Intelligence</em>: emulation of human behaviour.</p></li>
+</ol>
+</section>
+<section id="what-does-machine-learning-do" class="slide level3 slide:" data-transition="none">
+<h3>What does Machine Learning do?</h3>
+<ul>
+<li><p>ML Automates through Data</p>
+<ul>
+<li><p><em>Strongly</em> related to statistics.</p></li>
+<li><p>Field underpins revolution in <em>data science</em> and <em>AI</em></p></li>
+</ul></li>
+<li><p>With AI: logic, robotics, computer vision, speech</p></li>
+<li><p>With Data Science: databases, data mining, statistics, visualization</p></li>
+</ul>
+</section>
+<section id="background-big-data" class="slide level3 slide:" data-transition="none">
 <h3>Background: Big Data</h3>
 <ul>
 <li><p>The pervasiveness of data brings forward particular challenges.</p></li>
@@ -149,12 +196,12 @@ communicate
 </table>
 <p>See <a href="https://arxiv.org/abs/1705.07996">&quot;Living Together: Mind and Machine Intelligence&quot;</a></p>
 </section>
-<section id="evolved-relationship-3" class="slide level3">
+<section id="evolved-relationship-3" class="slide level3 slide:" data-transition="none">
 <h3>Evolved Relationship</h3>
 <object class="svgplot" align data="../slides/diagrams/data-science/information-flow003.svg">
 </object>
 </section>
-<section id="effects" class="slide level3">
+<section id="effects" class="slide level3 slide:" data-transition="none">
 <h3>Effects</h3>
 <ul>
 <li><p>This phenomenon has already revolutionised biology.</p></li>
@@ -163,7 +210,7 @@ communicate
 <li><p>Great <em>promise</em> for personalized health.</p></li>
 </ul>
 </section>
-<section id="societal-effects" class="slide level3">
+<section id="societal-effects" class="slide level3 slide:" data-transition="none">
 <h3>Societal Effects</h3>
 <ul>
 <li><p>Automated decision making within the computer based only on the data.</p></li>
@@ -172,14 +219,14 @@ communicate
 <li><p>But what is a treatment in the modern era: interventions could be far more subtle.</p></li>
 </ul>
 </section>
-<section id="societal-effects-1" class="slide level3">
+<section id="societal-effects-1" class="slide level3 slide:" data-transition="none">
 <h3>Societal Effects</h3>
 <ul>
 <li><p>Shift in dynamic from the direct pathway between human and data to indirect pathway between human and data via the computer</p></li>
 <li><p>This change of dynamics gives us the modern and emerging domain of data science</p></li>
 </ul>
 </section>
-<section id="challenges" class="slide level3">
+<section id="challenges" class="slide level3 slide:" data-transition="none">
 <h3>Challenges</h3>
 <ol type="1">
 <li><p>Paradoxes of the Data Society</p></li>
@@ -217,7 +264,7 @@ communicate
 <li><p>Clinical trials vs personalized medicine: Obtaining statistical power where interventions are subtle. e.g. social media</p></li>
 </ul>
 </section>
-<section id="also-need" class="slide level3">
+<section id="also-need" class="slide level3 slide:" data-transition="none">
 <h3>Also need</h3>
 <ul>
 <li>More classical statistics!
@@ -255,65 +302,91 @@ communicate
 <li>Quantifying the value in the contribution of <em>each actor</em>.</li>
 </ul>
 </section>
-<section id="section-4" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot" align data="../slides/diagrams/pomdp001.svg">
-</object>
+<section id="the-software-crisis" class="slide level3">
+<h3>The Software Crisis</h3>
+<blockquote>
+<p>The major cause of the software crisis is that the machines have become several orders of magnitude more powerful! To put it quite bluntly: as long as there were no machines, programming was no problem at all; when we had a few weak computers, programming became a mild problem, and now we have gigantic computers, programming has become an equally gigantic problem.</p>
+<p>Edsger Dijkstra, The Humble Programmer</p>
+</blockquote>
 </section>
-<section id="section-5" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot" align data="../slides/diagrams/pomdp002.svg">
-</object>
+<section id="the-data-crisis" class="slide level3">
+<h3>The Data Crisis</h3>
+<blockquote>
+<p>The major cause of the data crisis is that machines have become more interconnected than ever before. Data access is therefore cheap, but data quality is often poor. What we need is cheap high quality data. That implies that we develop processes for improving and verifying data quality that are efficient.</p>
+<p>There would seem to be two ways for improving efficiency. Firstly, we should not duplicate work. Secondly, where possible we should automate work.</p>
+<p>Me</p>
+</blockquote>
 </section>
-<section id="section-6" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot" align data="../slides/diagrams/pomdp003.svg">
-</object>
-</section>
-<section id="section-7" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot" align data="../slides/diagrams/pomdp004.svg">
-</object>
-</section>
-<section id="section-8" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot" align data="../slides/diagrams/pomdp005.svg">
-</object>
-</section>
-<section id="credit-allocation" class="slide level3">
-<h3>Credit Allocation</h3>
+<section id="data-readiness-levels" class="slide level3">
+<h3>Data Readiness Levels</h3>
+<p>(<a href="https://arxiv.org/pdf/1705.02245.pdf"></a>)</p>
+<p><a href="http://inverseprobability.com/2017/01/12/data-readiness-levels">Data Readiness Levels</a></p>
 <ul>
-<li><p>Direct work on data generates an enormous amount of 'value' in the data economy but this is unaccounted in the economy</p></li>
-<li><p>Hard because data is difficult to 'embody'</p></li>
-<li><p>Value of shared data: <a href="https://wellcome.ac.uk/what-we-do/our-work/sharing-research-data-improve-public-health-full-joint-statement-funders-health">Wellcome Trust 2010 Joint Statement</a> (from the &quot;Foggy Bottom&quot; meeting)</p></li>
+<li><p>Three Grades of Data Readiness:</p></li>
+<li><p>Grade C - accessibility</p></li>
+<li><p>Grade B - validity</p></li>
+<li><p>Grade A - usability</p></li>
 </ul>
 </section>
-<section id="solutions" class="slide level3">
-<h3>Solutions</h3>
+<section id="accessibility-grade-c" class="slide level3">
+<h3>Accessibility: Grade C</h3>
 <ul>
-<li><p>Encourage greater interaction between application domains and data scientists</p></li>
-<li><p>Encourage visualization of data</p></li>
-<li><p>Adoption of 'data readiness levels'</p></li>
-<li><p>Implications for incentivization schemes</p></li>
+<li><em>Hearsay</em> data.</li>
+<li>Availability, is it actually being recorded?</li>
+<li>privacy or legal constraints on the accessibility of the recorded data, have ethical constraints been alleviated?</li>
+<li>Format: log books, PDF ...</li>
+<li>limitations on access due to topology (e.g. it's distributed across a number of devices)</li>
+<li>At the end of Grade C data is ready to be loaded into analysis software (R, SPSS, Matlab, Python, Mathematica)</li>
 </ul>
 </section>
-<section id="understanding-patient-data" class="slide level3">
+<section id="validity-grade-b" class="slide level3">
+<h3>Validity: Grade B</h3>
+<ul>
+<li>faithfulness and representation</li>
+<li>visualisations.</li>
+<li>exploratory data analysis</li>
+<li>noise characterisation.</li>
+<li>Missing values.</li>
+<li>Schema alignment, record linkage, data fusion?</li>
+<li>Example, was a column or columns accidentally perturbed (e.g. through a sort operation that missed one or more columns)? Or was a <a href="http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-5-80">gene name accidentally converted to a date</a>?</li>
+<li>At the end of Grade B, ready to define a candidate question, the context, load into OpenML</li>
+</ul>
+</section>
+<section id="usability-grade-a" class="slide level3">
+<h3>Usability: Grade A</h3>
+<ul>
+<li>The usability of data</li>
+<li>Grade A is about data in context.</li>
+<li>Consider appropriateness of a given data set to answer a particular question or to be subject to a particular analysis.</li>
+<li>Data integration?</li>
+<li>At the end of Grade A it's ready for data platforms such as RAMP, Kaggle, define a <em>task</em> in OpenML.</li>
+</ul>
+</section>
+<section id="understanding-patient-data" class="slide level3 slide:" data-transition="none">
 <h3>Understanding Patient Data</h3>
 <p><a href="https://wellcome.ac.uk/news/understanding-patient-data-launches-today"><img class="" src="../slides/diagrams/health/understanding-patient-data.png" width="" style="background:none; border:none; box-shadow:none;"></a></p>
 </section>
-<section id="wannacry" class="slide level3">
+<section id="wannacry" class="slide level3 slide:" data-transition="none">
 <h3>WannaCry</h3>
 <p><a href="https://www.telegraph.co.uk/news/2017/05/12/nhs-hit-major-cyber-attack-hackers-demanding-ransom/"><img class="" src="../slides/diagrams/health/wannacry.png" width="" style="background:none; border:none; box-shadow:none;"></a></p>
 </section>
-<section id="section-9" class="slide level3">
+<section id="section-4" class="slide level3 slide:" data-transition="none">
 <h3></h3>
 <ul>
 <li>The difference between <em>capability</em> and <em>intent</em>.</li>
 </ul>
 </section>
-<section id="section-10" class="slide level3">
+<section id="section-5" class="slide level3 slide:" data-transition="none">
 <h3></h3>
 <p><img class="" src="../slides/diagrams/health/British_Airways_at_SFO.jpg" width="" style="background:none; border:none; box-shadow:none;"></p>
+</section>
+<section id="section-6" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<p><a href="https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy"><img class="" src="" width="" style="background:none; border:none; box-shadow:none;">{../slides/diagrams/data-science/data-trusts.png</a></p>
+</section>
+<section id="section-7" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<p><a href="https://www.out-law.com/en/articles/2017/october/review-calls-for-data-trusts-to-help-grow-artificial-intelligence-in-the-uk/"><img class="" src="" width="" style="background:none; border:none; box-shadow:none;">{../slides/diagrams/data-science/data-trusts-review.png</a></p>
 </section>
 <section id="privacy-loss-of-control-and-marginalization" class="slide level3">
 <h3>Privacy, Loss of Control and Marginalization</h3>
@@ -402,30 +475,20 @@ communicate
 <li>Need better technological solutions: trust and algorithms.</li>
 </ul>
 </section>
-<section id="awareness" class="slide level3">
-<h3>Awareness</h3>
-<ul>
-<li>Need to increase awareness of the pitfalls among researchers</li>
-<li>Need to ensure that technological solutions are being delivered not merely for few (#FirstWorldProblems)</li>
-<li>Address a wider set of challenges that the greater part of the world's population is facing</li>
-</ul>
-</section>
-<section id="conclusion" class="slide level3">
+<section id="conclusion" class="slide level3 slide:" data-transition="none">
 <h3>Conclusion</h3>
 <ul>
-<li>Data science offers a great deal of promise for personalized health</li>
+<li>Data science offers a great deal of promise for healthcare</li>
 <li>There are challenges and pitfalls</li>
-<li>It is incumbent on us to avoid them</li>
-<li>Need new ways of thinking!</li>
-<li><em>Mathematical</em> Data Science</li>
 </ul>
-<p><strong>Many solutions rely on education and awareness</strong></p>
+<p><strong>Many solutions rely on changes to our culture of healthcare</strong></p>
 </section>
-<section id="thanks" class="slide level3">
+<section id="thanks" class="slide level3 slide:" data-transition="none">
 <h3>Thanks!</h3>
 <ul>
 <li>twitter: <span class="citation" data-cites="lawrennd">(<span class="citeproc-not-found" data-reference-id="lawrennd"><strong>???</strong></span>)</span></li>
 <li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
+<li><a href="https://www.theguardian.com/profile/neil-lawrence">Guardian articles</a></li>
 </ul>
 </section>
     </div>
