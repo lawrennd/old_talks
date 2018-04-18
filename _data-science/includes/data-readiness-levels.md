@@ -5,7 +5,7 @@
 
    [Data Readiness Levels](http://inverseprobability.com/2017/01/12/data-readiness-levels)
 
-* Three Grades of Data Readiness:
+### Three Grades of Data Readiness:
 
 * Grade C - accessibility
 
