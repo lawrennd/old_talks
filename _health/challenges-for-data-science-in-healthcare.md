@@ -56,7 +56,7 @@ affiliation: Amazon and University of Sheffield
 
 * This change of dynamics gives us the modern and emerging domain of data science
 
-
+<!--
 ### Challenges {.slide: data-transition="none"}
 
 1. Paradoxes of the Data Society
@@ -76,10 +76,11 @@ affiliation: Amazon and University of Sheffield
 * A better characterization of human (see later)
 
 * Larger studies (100,000 genome)
-    * Combined with complex models: algorithmic challenges
+    * Combined with complex models: algorithmic challenges-->
+
+\include{_data-science/includes/the-data-crisis.md}
 
 \include{_data-science/includes/value-of-data.md}
-\include{_data-science/includes/the-data-crisis.md}
 \include{_data-science/includes/data-readiness-levels.md}
 \include{_health/includes/rolls-royce-analogy.md}
 \include{_data-science/includes/data-trusts.md}
