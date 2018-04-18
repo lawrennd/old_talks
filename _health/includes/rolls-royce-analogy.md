@@ -13,3 +13,7 @@
 ### {.slide: data-transition="none"}
 
 \includeimg{../slides/diagrams/health/British_Airways_at_SFO.jpg}
+
+### {.slide: data-transition="none"}
+
+[\includeimg{../slides/diagrams/health/black-box-thinking.jpg}](https://www.amazon.co.uk/Black-Box-Thinking-Surprising-Success-ebook/dp/B00PW634YQ)
