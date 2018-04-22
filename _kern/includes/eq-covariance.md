@@ -2,21 +2,26 @@
 \setupcode{import teaching_plots as plot
 import mlai
 import numpy as np}
+\code{K, anim=plot.animate_covariance_function(mlai.compute_kernel, 
+                                         kernel=eq_cov, lengthscale=0.2)}
+
+\setupcode{from IPython.core.display import HTML}
+
+\displaycode{HTML(anim.to_jshtml())}
+
+\plotcode{plot.save_animation(anim, 
+                    diagrams='../slides/diagrams/kern', 
+				    filename='eq_covariance.html')}
 
 
-\code{plot.covariance_func(x, mlai.compute_kernel, 
-                     formula = r'$$\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\ltwoNorm{\inputVector - \inputVector^\prime}^2}{2\lengthScale^2}\right)$$', 
-                     shortname='eq', 
-                     longname='Exponentiated Quadratic', 
-					 kernel=eq_cov,
-                     lengthscale=0.2., 
-					 diagrams='../slides/diagrams/kern')}
-
-
-
-### Exponentiated Quadratic Covariance {data-transition="none"}
+### Exponentiated Quadratic Covariance
 
 $$k(\inputVector, \inputVector^\prime) 
 = \alpha \exp\left(-\frac{\ltwoNorm{\inputVector - \inputVector^\prime}^2}{2\ell^2}\right)$$
 
-\includehtml{../slides/diagrams/kern/eq_covariance.html}
+\columns{
+\includesvg{../slides/diagrams/kern/eq_covariance.svg}
+}{
+\includehtml{../slides/diagrams/kern/eq_covariance.html}{512}{384}
+}{50%}{50%}
+
