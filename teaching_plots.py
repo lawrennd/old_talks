@@ -1101,26 +1101,44 @@ def two_point_pred(K, f, x, ax=None, ind=[0, 1],
         mlai.write_figure(os.path.join(diagrams, '{stub}{start:0>3}.svg').format(stub=stub, start=start+3), transparent=True)
     
 
-def kern_circular_sample(K, mu=None, filename=None, fig=None, num_samps=5, num_theta=200, multiple=False, diagrams='../diagrams'):
-
+def kern_circular_sample(kernel_function, x=None, mu=None,
+                         filename=None, fig=None, num_samps=5,
+                         num_theta=200, multiple=True,
+                         diagrams='../diagrams', **kwargs):
     """Make an animation of a circular sample from a covariance function."""
 
-    n = K.shape[0]
+    if x is None:
+        n=200
+        x = np.linspace(-1, 1, n)[:, np.newaxis]
+    else:
+        n=x.shape[0]
 
-    if not multiple:
+    if multiple:
+        x = np.repeat(x, num_samps, axis=0)
+        index = np.asarray([])
+        for i in range(num_samps):
+            index=np.append(index, np.ones(n)*i)
+        index = index[:, np.newaxis]
+        x = np.hstack((index, x))
+        
+    K = kernel_function(x, x, **kwargs)
+    
+    if multiple:
+        R1 = np.random.normal(size=(n*num_samps,1))
+        R2 = np.random.normal(size=(n*num_samps,1))
+    else:
         R1 = np.random.normal(size=(n, num_samps))
         R2 = np.random.normal(size=(n, num_samps))
-    else:
-        R1 = np.
+        
     U1 = np.dot(R1,np.diag(1/np.sqrt(np.sum(R1*R1, axis=0))))
     R2 = R2 - np.dot(U1,np.diag(np.sum(R2*U1, axis=0)))
     R2 = np.dot(R2,np.diag(np.sqrt(np.sum(R1*R1, axis=0))/np.sqrt(np.sum(R2*R2, axis=0))))
-    L = np.linalg.cholesky(K+np.diag(np.ones((n)))*1e-6)
+    L = np.linalg.cholesky(K+np.diag(np.ones((K.shape[0])))*1e-6)
 
 
     from matplotlib import animation
-    x_lim = (0, 1)
-    y_lim = (-2, 2)
+    x_lim = (x[:, 1].min(), x[:, 1].max())
+    y_lim = [[R1.min(), R2.min()].min(), [R1.max(), R2.max()].max()]
     
     if fig is None:
         fig, _ = plt.subplots(figsize=one_figsize)
@@ -1150,9 +1168,15 @@ def kern_circular_sample(K, mu=None, filename=None, fig=None, num_samps=5, num_t
         y = np.dot(L,coord)
         if mu is not None:
             y = y + mu
-        x = np.linspace(0, 1, n)
-        for i in range(num_samps):
-            line[i].set_data(x, y[:, i])
+        if multiple:
+            end = 0
+        for j in range(num_samps):
+            if multiple:
+                start = end
+                end += n
+                line[j].set_data(x[start:end, 1], y[start:end, 0])
+            else:
+                line[j].set_data(x, y[:, j])
         return line
 
     # call the animator.  blit=True means only re-draw the parts that have changed.
@@ -1160,27 +1184,29 @@ def kern_circular_sample(K, mu=None, filename=None, fig=None, num_samps=5, num_t
                                    frames=num_theta, blit=True)
     if filename is not None:
         anim.save(os.path.join(diagrams, filename), writer='imagemagick', fps=30)
-
+    return K
 
 def covariance_func(x, kernel_function, x_cov=None, formula=None,
                     shortname=None, longname=None, comment=None,
-                    diagrams='../diagrams', multiple=False, **args):
+                    num_samps=5, diagrams='../diagrams', multiple=False, **args):
     """Write a slide on a given covariance matrix."""
-    fig, ax = plt.subplots(figsize=one_figsize)
-    hcolor = [1., 0., 1.]
-    if x_cov is None:
-        x_cov = x
-    K = kernel_function(x_cov, x_cov, **args)
-    obj = matrix(K, ax=ax, type='image', bracket_style='boxes', colormap='gray')
 
     if shortname is not None:
         filename = shortname + '_covariance'
     else:
         filename = 'covariance'
+    
+    if x_cov is None:
+        x_cov = x
+    fig, ax = plt.subplots(figsize=one_figsize)
+    K = kern_circular_sample(kernel_function=kernel_function, x=x_cov, fig=fig, filename=filename + '.gif', num_samps=num_samps, multiple=multiple, diagrams=diagrams, **args)
+    fig, ax = plt.subplots(figsize=one_figsize)
+    hcolor = [1., 0., 1.]
+    obj = matrix(K, ax=ax, type='image', bracket_style='boxes', colormap='gray')
+
     mlai.write_figure(os.path.join(diagrams, filename + '.svg'), transparent=True)
 
     ax.cla()
-    kern_circular_sample(K, fig=fig, filename=filename + '.gif', multiple=multiple, diagrams=diagrams)
 
     out = '<h2>' + longname + ' Covariance</h2>'
     out += '\n\n'
