@@ -7,7 +7,7 @@
 		
 \begin{align}
   p(\inputMatrix) &= \prod_{i=1}^\latentDim p(\inputVector_{:, i}) \\
-     p(\inputVector_{:, i}) &= \gaussianDist\inputVector_{:, i}}{\zerosVector}{\kernelMatrix}.
+     p(\inputVector_{:, i}) &= \gaussianDist{\inputVector_{:, i}}{\zerosVector}{\kernelMatrix}.
 \end{align}
 
 -   We want to obtain outputs through:
@@ -27,7 +27,7 @@
         \end{bmatrix}$$
 		
 		
-\setuptcode{import teaching_plots as plot}
+\setupcode{import teaching_plots as plot}
 
 \plotcode{plot.kronecker_illustrate(diagrams='../slides/diagrams/kern')}
 

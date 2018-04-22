@@ -1103,7 +1103,7 @@ def two_point_pred(K, f, x, ax=None, ind=[0, 1],
 
 def kern_circular_sample(kernel_function, x=None, mu=None,
                          filename=None, fig=None, num_samps=5,
-                         num_theta=200, multiple=True,
+                         num_theta=48, multiple=True,
                          diagrams='../diagrams', **kwargs):
     """Make an animation of a circular sample from a covariance function."""
 
@@ -1114,13 +1114,12 @@ def kern_circular_sample(kernel_function, x=None, mu=None,
         n=x.shape[0]
 
     if multiple:
-        x = np.repeat(x, num_samps, axis=0)
+        x = np.tile(x, (num_samps, 1))
         index = np.asarray([])
         for i in range(num_samps):
             index=np.append(index, np.ones(n)*i)
         index = index[:, np.newaxis]
         x = np.hstack((index, x))
-        
     K = kernel_function(x, x, **kwargs)
     
     if multiple:
@@ -1135,10 +1134,18 @@ def kern_circular_sample(kernel_function, x=None, mu=None,
     R2 = np.dot(R2,np.diag(np.sqrt(np.sum(R1*R1, axis=0))/np.sqrt(np.sum(R2*R2, axis=0))))
     L = np.linalg.cholesky(K+np.diag(np.ones((K.shape[0])))*1e-6)
 
+    LR1 = np.dot(L,R1)
+    LR2 = np.dot(L,R2)
+    
 
     from matplotlib import animation
-    x_lim = (x[:, 1].min(), x[:, 1].max())
-    y_lim = [[R1.min(), R2.min()].min(), [R1.max(), R2.max()].max()]
+    if multiple:
+        x_lim = (x[:, 1].min(), x[:, 1].max())
+    else:
+        x_lim = (x.min(), x.max())
+    
+    y_lim = np.sqrt(2)*np.array([np.array([LR1.min(), LR2.min()]).min(),
+                        np.array([LR1.max(), LR2.max()]).max()])
     
     if fig is None:
         fig, _ = plt.subplots(figsize=one_figsize)
@@ -1165,7 +1172,7 @@ def kern_circular_sample(kernel_function, x=None, mu=None,
         yc = np.sin(theta)
         # generate 2d basis in t-d space
         coord = xc*R1 + yc*R2
-        y = np.dot(L,coord)
+        y = xc*LR1 + yc*LR2
         if mu is not None:
             y = y + mu
         if multiple:
