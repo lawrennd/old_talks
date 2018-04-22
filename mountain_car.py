@@ -322,10 +322,8 @@ def invert_frames(frames):
     return inverted
 
 
-def save_animation(frames, file_name, diagrams='../diagrams', inverted=True):
+def save_frames(frames, filename, diagrams='../diagrams', inverted=True):
     if inverted:
         frames = invert_frames(frames)
     anim=animate_frames(frames)
-    f = open(os.path.join(diagrams, file_name), 'w')
-    f.write(anim.to_jshtml())
-    f.close()
+    plot.save_animation(anim, filename, diagrams)

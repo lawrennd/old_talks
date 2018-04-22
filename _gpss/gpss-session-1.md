@@ -10,20 +10,20 @@ blibliography:
 
 <!-- To compile -->
 
-\include{../talk-macros.tex}
+\include{talk-macros.tex}
 
-\include{../_gp/includes/gp-book.md}
-\include{../_ml/includes/what-is-ml.md}
+\include{_gp/includes/gp-book.md}
+\include{_ml/includes/what-is-ml.md}
 
-\include{../_ml/includes/olympic-marathon-data.md}
+\include{_ml/includes/olympic-marathon-data.md}
 
-\include{../_ml/includes/overdetermined-inaugural.md}
+\include{_ml/includes/overdetermined-inaugural.md}
 
-\include{../_ml/includes/univariate-gaussian.md}
-\include{../_ml/includes/univariate-gaussian-properties.md}
-\include{../_ml/includes/regression-examples.md}
+\include{_ml/includes/univariate-gaussian.md}
+\include{_ml/includes/univariate-gaussian-properties.md}
+\include{_ml/includes/regression-examples.md}
 
-\include{../_ml/includes/underdetermined_system.md}
+\include{_ml/includes/underdetermined_system.md}
 
 ### Overdetermined System
 
@@ -94,7 +94,7 @@ blibliography:
 
 ### Bayesian Regression
 
-\include{../_ml/includes/bayesian-regression1d-short.md}
+\include{_ml/includes/bayesian-regression1d-short.md}
 
 
 ### Multivariate Analysis
@@ -123,26 +123,26 @@ $\weightVector$.
 
 ### Multivariate Bayesian Regression
 
-\include{../_ml/includes/multivariate-bayesian-linear-short.md}
+\include{_ml/includes/multivariate-bayesian-linear-short.md}
 
 ### Two Dimensional Gaussian Distribution
 
-\include{../_ml/includes/two-d-gaussian.md}
+\include{_ml/includes/two-d-gaussian.md}
 
 ### Multivariate Gaussian Properties
 
-<!-- Also a version of this under ../_ml/-->
-\include{../_gp/includes/multivariate-gaussian-properties.md}
+<!-- Also a version of this under _ml/-->
+\include{_gp/includes/multivariate-gaussian-properties.md}
 
 ### Distributions over Functions
 
-\include{../_gp/includes/gpdistfunc.md}
+\include{_gp/includes/gpdistfunc.md}
 
-\include{../_kern/includes/computing-rbf-covariance.md}
+\include{_kern/includes/computing-rbf-covariance.md}
 
-\include{../_kern/includes/poly-covariance.md}
-\include{../_kern/includes/brownian-covariance.md}
-\include{../_kern/includes/periodic-covariance.md}
+\include{_kern/includes/poly-covariance.md}
+\include{_kern/includes/brownian-covariance.md}
+\include{_kern/includes/periodic-covariance.md}
 
 
 

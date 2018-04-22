@@ -124,12 +124,12 @@ def matrix(A, ax=None,
         ax.set_xlim(x_lim)
         y_lim = np.array([-0.5, nrows-0.5])
         ax.set_ylim(y_lim)
-        for i in range(nrows+1):
-            ax.add_line(plt.axhline(y=i-.5, #xmin=-0.5, xmax=ncols-0.5, 
-                 color=bracket_color))
-        for j in range(ncols+1):
-            ax.add_line(plt.axvline(x=j-.5, #ymin=-0.5, ymax=nrows-0.5, 
-                 color=bracket_color))
+#        for i in range(nrows+1):
+#            ax.add_line(plt.axhline(y=i-.5, #xmin=-0.5, xmax=ncols-0.5, 
+#                 color=bracket_color))
+#        for j in range(ncols+1):
+#            ax.add_line(plt.axvline(x=j-.5, #ymin=-0.5, ymax=nrows-0.5, 
+#                 color=bracket_color))
     elif bracket_style == 'square':
         tick_length = 0.25
         ax.plot([x_lim[0]+tick_length,
@@ -1101,26 +1101,33 @@ def two_point_pred(K, f, x, ax=None, ind=[0, 1],
         mlai.write_figure(os.path.join(diagrams, '{stub}{start:0>3}.svg').format(stub=stub, start=start+3), transparent=True)
     
 
-def kern_circular_sample(kernel_function, x=None, mu=None,
+def output_augment_x(x, num_outputs):
+    """Compute an autmented input matrix with associated output indices."""
+    num_data = x.shape[0]
+    x = np.tile(x, (num_outputs, 1))
+    index = np.asarray([])
+    for i in range(num_outputs):
+        index=np.append(index, np.ones(n)*i)
+    index = index[:, np.newaxis]
+    return np.hstack((index, x))
+
+def kern_circular_sample(K, mu=None, x=None,
                          filename=None, fig=None, num_samps=5,
                          num_theta=48, multiple=True,
                          diagrams='../diagrams', **kwargs):
     """Make an animation of a circular sample from a covariance function."""
 
     if x is None:
-        n=200
+        if multiple:
+            n=K.shape[0]/num_samps
         x = np.linspace(-1, 1, n)[:, np.newaxis]
+        
+        if multiple:
+            x = output_augment_x(x, num_samps)
+
     else:
         n=x.shape[0]
 
-    if multiple:
-        x = np.tile(x, (num_samps, 1))
-        index = np.asarray([])
-        for i in range(num_samps):
-            index=np.append(index, np.ones(n)*i)
-        index = index[:, np.newaxis]
-        x = np.hstack((index, x))
-    K = kernel_function(x, x, **kwargs)
     
     if multiple:
         R1 = np.random.normal(size=(n*num_samps,1))
@@ -1187,32 +1194,49 @@ def kern_circular_sample(kernel_function, x=None, mu=None,
         return line
 
     # call the animator.  blit=True means only re-draw the parts that have changed.
-    anim = animation.FuncAnimation(fig, animate, init_func=init,
+    return animation.FuncAnimation(fig, animate, init_func=init,
                                    frames=num_theta, blit=True)
-    if filename is not None:
-        anim.save(os.path.join(diagrams, filename), writer='imagemagick', fps=30)
-    return K
 
-def covariance_func(x, kernel_function, x_cov=None, formula=None,
+def animate_covariance_function(kernel_function, x=None, num_samps=5, multiple=False, **kernelargs):
+    """Create an animation of a prior covariance function."""
+
+    fig, ax = plt.subplots(figsize=one_figsize)
+
+    if x is None:
+        n=200
+        x = np.linspace(-1, 1, n)[:, np.newaxis]
+    
+    if multiple:
+        x = output_augment_x(x, num_samps)
+    
+    K = kernel_function(x, x, **kernelargs)
+    return K, kern_circular_sample(K, x=x,
+                                fig=fig, num_samps=num_samps,
+                                multiple=multiple)
+    
+def covariance_func(kernel_function, x=None, formula=None,
                     shortname=None, longname=None, comment=None,
-                    num_samps=5, diagrams='../diagrams', multiple=False, **args):
+                    num_samps=5, diagrams='../diagrams', multiple=False,
+                    **kernelargs):
     """Write a slide on a given covariance matrix."""
 
+    K, anim=animate_covariance_function(kernel_function, x, num_samps,
+                                        multiple, **kernelargs)
     if shortname is not None:
         filename = shortname + '_covariance'
     else:
         filename = 'covariance'
-    
-    if x_cov is None:
-        x_cov = x
-    fig, ax = plt.subplots(figsize=one_figsize)
-    K = kern_circular_sample(kernel_function=kernel_function, x=x_cov, fig=fig, filename=filename + '.gif', num_samps=num_samps, multiple=multiple, diagrams=diagrams, **args)
+    anim.save(os.path.join(diagrams, filename + '.gif'),
+              writer='imagemagick', fps=30)
+    #HTML(anim.to_jshtml())##display(display_animation(anim, default_mode='loop'))
+    #HTML(anim.to_html5_video())##display(display_animation(anim, default_mode='loop'))
+
+
     fig, ax = plt.subplots(figsize=one_figsize)
     hcolor = [1., 0., 1.]
     obj = matrix(K, ax=ax, type='image', bracket_style='boxes', colormap='gray')
 
     mlai.write_figure(os.path.join(diagrams, filename + '.svg'), transparent=True)
-
     ax.cla()
 
     out = '<h2>' + longname + ' Covariance</h2>'
@@ -1521,12 +1545,13 @@ def kronecker_illustrate(fontsize=25, figsize=two_figsize, diagrams='../diagrams
     objAkB = matrix(AkroneckerB, ax=ax[3], bracket_style='square', type='entries',
                   fontsize=fontsize)
         
-    mlai.write_figure(os.path.join(diagrams, 'kronecker_product.svg'), transparent=True)
+    mlai.write_figure(os.path.join(diagrams, 'kronecker_illustrate.svg'), transparent=True)
 
 def kronecker_IK(fontsize=25, figsize=two_figsize, reverse=False, diagrams='../diagrams'):
     """Illustrate a Kronecker product"""
     fig, ax = plt.subplots(1, 4, figsize=figsize)
     my_rgb = [[1., 1., 1.],[1., 0., 0.],[ 0., 1., 0.],[ 0., 0., 1.]]
+
     from matplotlib.colors import ListedColormap
     colormap = ListedColormap(my_rgb, name='primary+black')
     dim_I = 3
@@ -2234,6 +2259,7 @@ def horizontal_chain(depth=5,
                      node_unit=1.9,
                      line_width=3,
                     target="y"):
+    """Plot a horizontal Markov chain."""
     if shape is None:
         shape = [2*node_unit+depth, node_unit]
     
@@ -2261,6 +2287,7 @@ def horizontal_chain(depth=5,
     return pgm
 
 def shared_gplvm():
+    """Plot graphical model of a Shared GP-LVM"""
     pgm = daft.PGM(shape=[4, 3],
                    origin=[0, 0], 
                    grid_unit=5, 
@@ -2343,4 +2370,8 @@ def model_sample(model, output_dim=0, scale=1.0, offset=0.0,
         ylim = ax.get_ylim()
         ax.plot(m.Z, np.ones(m.Z.shape)*ax.get_ylim()[0], marker='^', linestyle=None, markersize=20)
 
-
+def save_animation(anim, diagrams, filename):
+    """Save an animation to file."""
+    f = open(os.path.join(diagrams, filename), 'w')
+    f.write(anim.to_jshtml())
+    f.close()

@@ -59,34 +59,34 @@
 
 gpKalmanFilterKroneckerPlot2
 
-<span>For this stacking the marginal distribution over *time* is given
-by the block diagonals.</span>
+For this stacking the marginal distribution over *time* is given
+by the block diagonals.
 
-\plotcode{plot.kronecker_IK_highlight(diagrams='../diagrams/slides/kern')}
+\plotcode{plot.kronecker_IK_highlight(diagrams='../slides/diagrams/kern')}
 
 \setupcode{import pods}
 \displaycode{pods.notebook.display_plots('kronecker_IK_highlighted{count:0>3}.svg', 
-                            diagrams='../diagrams/slides/kern', count=(1,5))}
+                            diagrams='../slides/diagrams/kern', count=(1,5))}
 
-### {.}
+### {data-transition="none"}
 
-\includesvg{../diagrams/slides/kern/kronecker_IK_highlighted001.svg}
+\includesvg{../slides/diagrams/kern/kronecker_IK_highlighted001.svg}
 
-### {.}
+### {data-transition="none"}
 
-\includesvg{../diagrams/slides/kern/kronecker_IK_highlighted002.svg}
+\includesvg{../slides/diagrams/kern/kronecker_IK_highlighted002.svg}
 
-### {.}
+### {data-transition="none"}
 
-\includesvg{../diagrams/slides/kern/kronecker_IK_highlighted003.svg}
+\includesvg{../slides/diagrams/kern/kronecker_IK_highlighted003.svg}
 
-### {.}
+### {data-transition="none"}
 
-\includesvg{../diagrams/slides/kern/kronecker_IK_highlighted004.svg}
+\includesvg{../slides/diagrams/kern/kronecker_IK_highlighted004.svg}
 
-### {.}
+### {data-transition="none"}
 
-\includesvg{../diagrams/slides/kern/kronecker_IK_highlighted005.svg}
+\includesvg{../slides/diagrams/kern/kronecker_IK_highlighted005.svg}
 
 ### Two Ways of Stacking
 
@@ -104,8 +104,8 @@ $$p(\inputVector) = \gaussianDist{\inputVector}{\zerosVector}{\kernelMatrix\otim
 gpKalmanFilterKroneckerPlot3
 
 \
-<span>For this stacking the marginal distribution over the latent
-*dimensions* is given by the block diagonals.</span>
+For this stacking the marginal distribution over the latent
+*dimensions* is given by the block diagonals.
 
 \plotcode{plot.kronecker_IK_highlight(reverse=True, diagrams='../slides/diagrams/kern')}
 
@@ -113,14 +113,34 @@ gpKalmanFilterKroneckerPlot3
 
 \plotcode{plot.kronecker_IK(reverse=True, diagrams='../slides/diagrams/kern')}
 
-### Mapping from Latent Process to Observed
+### {data-transition="none"}
 
+\includesvg{../slides/diagrams/kern/kronecker_KI_highlighted001.svg}
+
+### {data-transition="none"}
+
+\includesvg{../slides/diagrams/kern/kronecker_KI_highlighted002.svg}
+
+### {data-transition="none"}
+
+\includesvg{../slides/diagrams/kern/kronecker_KI_highlighted003.svg}
+
+### {data-transition="none"}
+
+\includesvg{../slides/diagrams/kern/kronecker_KI_highlighted004.svg}
+
+### {data-transition="none"}
+
+\includesvg{../slides/diagrams/kern/kronecker_KI_highlighted005.svg}
+
+
+### Mapping from Latent Process to Observed {data-transition="none"}
 
 \includesvg{../slides/diagrams/kern/kronecker_KI.svg}
 gpKalmanFilterKroneckerPlot4
 
 
-### Observed Process
+### Observed Process {data-transition="none"}
 
 The observations are related to the latent points by a linear mapping
 matrix,
@@ -129,11 +149,11 @@ $$\noiseVector \sim \gaussianSamp{\zerosVector}{\dataStd^2\eye}$$
 
 \plotcode{plot.kronecker_WX(diagrams='../slides/diagrams/kern')}
 
-### 
+### {data-transition="none"}
 
 \includesvg{../slides/diagrams/kern/kronecker_WX.svg}
 
-### Output Covariance
+### Output Covariance {data-transition="none"}
 
 This leads to a covariance of the form
 $$(\eye\otimes \mappingMatrix) (\kernelMatrix \otimes \eye) (\eye \otimes \mappingMatrix^\top) + \eye\dataStd^2$$
@@ -146,9 +166,9 @@ $$\dataVector\sim \gaussianSamp{\zerosVector}{\mappingMatrix\mappingMatrix^\top 
 
 gpKalmanMultiTaskInit
 
-### Kernels for Vector Valued Outputs: A Review
+### Kernels for Vector Valued Outputs: A Review {data-transition="none"}
 
-### Kronecker Structure GPs
+### Kronecker Structure GPs {data-transition="none"}
 
 -   This Kronecker structure leads to several published models.
     $$(\kernelMatrix(\inputVector,\inputVector^\prime))_{\dataIndex,\dataIndex^\prime}=\kernelScalar(\inputVector,\inputVector^\prime)\kernelScalar_T(\dataIndex,\dataIndex^\prime),$$
@@ -160,7 +180,7 @@ gpKalmanMultiTaskInit
 -   Alongside $\inputVector$ we also input the $\dataIndex$ associated with the
     *output* of interest.
 	
-### Separable Covariance Functions
+### Separable Covariance Functions {data-transition="none"}
 
 -   Taking
     $\coregionalizationMatrix= {\mappingMatrix}{\mappingMatrix}^\top$ we
@@ -175,7 +195,7 @@ gpKalmanMultiTaskInit
 -   We call this class of covariance functions *separable* due to their
     product structure.
 	
-### Sum of Separable Covariance Functions
+### Sum of Separable Covariance Functions {data-transition="none"}
 
 -   In the same spirit a more general class of kernels is given by
     $$\kernelMatrix(\inputVector,\inputVector^\prime)=\sum_{{j}=1}^\latentDim\kernelScalar_{j}(\inputVector,\inputVector^\prime)\coregionalizationMatrix_{j}.$$
@@ -189,7 +209,7 @@ gpKalmanMultiTaskInit
 -   We call this class of kernels sum of separable kernels
     (SoS kernels).
 	
-### Geostatistics
+### Geostatistics {data-transition="none"}
 
 -   Use of GPs in Geostatistics is called kriging.
 
@@ -197,8 +217,8 @@ gpKalmanMultiTaskInit
     vector-valued output data is known as *cokriging*.
 
 -   The model in geostatistics is known as the *linear model of
-    coregionalization* (LMC, <span>@Journel:miningBook78
-    [@Goovaerts:book97]</span>).
+    coregionalization* (LMC, @Journel:miningBook78
+    @Goovaerts:book97).
 
 -   Most machine learning multitask models can be placed in the context
     of the LMC model.
@@ -208,8 +228,8 @@ gpKalmanMultiTaskInit
 -   In the linear model of coregionalization (LMC) outputs are expressed
     as linear combinations of independent random functions.
 
--   In the LMC, each component ${f}_\dataIndex$ is expressed as a linear sum
-    $${f}_\dataIndex(\inputVector) = \sum_{{j}=1}^\latentDim{w}_{\dataIndex,{j}}{u}_{{j}}(\inputVector).$$
+-   In the LMC, each component $\mappingFunction_\dataIndex$ is expressed as a linear sum
+    $$\mappingFunction_\dataIndex(\inputVector) = \sum_{{j}=1}^\latentDim{w}_{\dataIndex,{j}}{u}_{{j}}(\inputVector).$$
     where the latent functions are independent and have covariance
     functions $\kernelScalar_{{j}}(\inputVector,\inputVector^\prime)$.
 
@@ -228,7 +248,6 @@ gpKalmanMultiTaskInit
         $$\mappingFunctionMatrix= {\mappingMatrix}\inputMatrix$$
     2.  LMC
         $$\mappingFunctionMatrix= {\mappingMatrix}{\mathbf{U}}$$
-
     where the rows of these matrices ${\mappingFunctionMatrix}$,
     $\inputMatrix$, ${\mathbf{U}}$ each
     contain $\latentDim$ samples from their corresponding functions at a
@@ -239,7 +258,7 @@ gpKalmanMultiTaskInit
 -   If one covariance used for latent functions (like in Kalman filter).
 
 -   This is called the intrinsic coregionalization model (ICM,
-    <span>@Goovaerts:book97</span>).
+    @Goovaerts:book97).
 
 -   The kernel matrix corresponding to a dataset
     $\inputMatrix$ takes the form
@@ -251,13 +270,13 @@ gpKalmanMultiTaskInit
 -   If outputs are noise-free, maximum likelihood is equivalent to
     independent fits of $\coregionalizationMatrix$ and
     $\kernelScalar(\inputVector, \inputVector^\prime)$
-    <span>[@Helterbrand:universalCR94]</span>.
+    [@Helterbrand:universalCR94].
 
 -   In geostatistics this is known as autokrigeability
-    <span>[@Wackernagel:multivariate03]</span>.
+    [@Wackernagel:multivariate03].
 
 -   In multitask learning its the cancellation of intertask transfer
-    <span>[@Bonilla:multi07]</span>.
+    [@Bonilla:multi07].
 	
 ### Intrinsic Coregionalization Model
 
@@ -280,7 +299,7 @@ $$\coregionalizationMatrix= \begin{bmatrix} 1 & 0.5\\ 0.5& 1.5\end{bmatrix}$$
 
 gpKalmanToMultiTaskIcm2
 
-<span>![image](../../../multigp/tex/diagrams/icm2CovarianceImage)</span><span>![image](../../../multigp/tex/diagrams/icm2CovarianceSample1)</span><span>![image](../../../multigp/tex/diagrams/icm2CovarianceSample2)</span><span>![image](../../../multigp/tex/diagrams/icm2CovarianceSample3)</span><span>![image](../../../multigp/tex/diagrams/icm2CovarianceSample4)</span>
+![image](../../../multigp/tex/diagrams/icm2CovarianceImage)![image](../../../multigp/tex/diagrams/icm2CovarianceSample1)![image](../../../multigp/tex/diagrams/icm2CovarianceSample2)![image](../../../multigp/tex/diagrams/icm2CovarianceSample3)![image](../../../multigp/tex/diagrams/icm2CovarianceSample4)
 
 ### LMC Samples
 
@@ -316,7 +335,7 @@ gpKalmanToMultiTaskLmc
 ### Semiparametric Latent Factor Model
 
 -   Coregionalization matrices are rank 1
-    <span>@Teh:semiparametric05</span>. rewrite equation as
+    @Teh:semiparametric05. rewrite equation as
     $$\kernelMatrix(\inputMatrix, \inputMatrix) = \sum_{{j}=1}^\latentDim\mappingVector_{:, {j}}\mappingVector^{\top}_{:, {j}} \otimes \kernelScalar_{j}(\inputMatrix, \inputMatrix).$$
 
 -   Like the Kalman filter, but each latent function has a
@@ -355,7 +374,7 @@ gpKalmanToMultiTaskSlfm
 
 -   Mostly restricted to the case where the outputs are conditionally
     independent given the hyperparameters $\boldsymbol{\phi}$
-    <span>[@Minka:learningtolearn97; @Williams:multiclass98; @Lawrence:learning04; @Seeger:multiple04; @Kai:multitask05; @Rasmussen:book06]</span>.
+    [@Minka:learningtolearn97; @Williams:multiclass98; @Lawrence:learning04; @Seeger:multiple04; @Kai:multitask05; @Rasmussen:book06].
 
 -   Intrinsic coregionalization model has been used in the
     multiclass scenario. @Skolidis:multiclass11 use the intrinsic
@@ -376,4 +395,4 @@ gpKalmanToMultiTaskSlfm
 
 -   In @Conti:multi09 use the ICM to model a vegetation model: called
     the Sheffield Dynamic Global Vegetation Model
-    <span>[@Woodward:vegetation98]</span>.
+    @Woodward:vegetation98.

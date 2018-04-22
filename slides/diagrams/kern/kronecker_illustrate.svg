@@ -103,14 +103,14 @@ z
    <g id="matplotlib.axis_1"/>
    <g id="matplotlib.axis_2"/>
    <g id="line2d_1">
-    <path clip-path="url(#p41950cc55f)" d="M 151.2 144 
+    <path clip-path="url(#p5507bff71a)" d="M 151.2 144 
 L 144 144 
 L 144 216 
 L 151.2 216 
 " style="fill:none;stroke:#000000;stroke-linecap:square;stroke-width:3;"/>
    </g>
    <g id="line2d_2">
-    <path clip-path="url(#p41950cc55f)" d="M 208.8 144 
+    <path clip-path="url(#p5507bff71a)" d="M 208.8 144 
 L 216 144 
 L 216 216 
 L 208.8 216 
@@ -301,14 +301,14 @@ z
    <g id="matplotlib.axis_5"/>
    <g id="matplotlib.axis_6"/>
    <g id="line2d_3">
-    <path clip-path="url(#p7819331075)" d="M 493.2 126 
+    <path clip-path="url(#p2b9402425d)" d="M 493.2 126 
 L 482.4 126 
 L 482.4 234 
 L 493.2 234 
 " style="fill:none;stroke:#000000;stroke-linecap:square;stroke-width:3;"/>
    </g>
    <g id="line2d_4">
-    <path clip-path="url(#p7819331075)" d="M 579.6 126 
+    <path clip-path="url(#p2b9402425d)" d="M 579.6 126 
 L 590.4 126 
 L 590.4 234 
 L 579.6 234 
@@ -345,10 +345,10 @@ L 579.6 234
   </g>
  </g>
  <defs>
-  <clipPath id="p41950cc55f">
+  <clipPath id="p5507bff71a">
    <rect height="72" width="72" x="144" y="144"/>
   </clipPath>
-  <clipPath id="p7819331075">
+  <clipPath id="p2b9402425d">
    <rect height="108" width="108" x="482.4" y="126"/>
   </clipPath>
  </defs>
