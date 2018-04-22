@@ -225,10 +225,9 @@ gpKalmanMultiTaskInit
 
 -   In matrix notation:
     1.  Kalman filter
-        $${\mathbf{F}}= {\mappingMatrix}\inputMatrix$$
-
+        $$\mappingFunctionMatrix= {\mappingMatrix}\inputMatrix$$
     2.  LMC
-        $${\mathbf{F}}= {\mappingMatrix}{\mathbf{U}}$$
+        $$\mappingFunctionMatrix= {\mappingMatrix}{\mathbf{U}}$$
 
     where the rows of these matrices ${\mappingFunctionMatrix}$,
     $\inputMatrix$, ${\mathbf{U}}$ each
@@ -325,7 +324,9 @@ gpKalmanToMultiTaskLmc
 
 -   Authors suggest using an exponentiated quadratic characteristic
     length-scale for each input dimension.
-	
+
+\include{_kern/includes/slfm-covariance.md}
+
 ### Semiparametric Latent Factor Model Samples
 
 $$\kernelMatrix(\inputMatrix, \inputMatrix) = \mappingVector_{:, 1}\mappingVector_{:, 1}^\top \otimes \kernelScalar_1(\inputMatrix, \inputMatrix) + \mappingVector_{:, 2} \mappingVector_{:, 2}^\top \otimes \kernelScalar_2(\inputMatrix, \inputMatrix)$$
