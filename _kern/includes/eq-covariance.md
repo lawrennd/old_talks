@@ -1,15 +1,15 @@
 \helpercode{%load -s eq_cov mlai.py}
-\setupcode{import teaching_plots as plot}
-\setupcode{import numpy as np}
+\setupcode{import teaching_plots as plot
+import mlai
+import numpy as np}
 
 
-\code{x=np.linspace(0, 2, 30)[:, np.newaxis]
-plot.covariance_func(x, mlai.compute_kernel, 
+\code{plot.covariance_func(x, mlai.compute_kernel, 
                      formula = r'$$\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\ltwoNorm{\inputVector - \inputVector^\prime}^2}{2\lengthScale^2}\right)$$', 
                      shortname='eq', 
-                     longname='Brownian', 
+                     longname='Exponentiated Quadratic', 
 					 kernel=eq_cov,
-                     lengthscale=1., 
+                     lengthscale=0.2., 
 					 diagrams='../slides/diagrams/kern')}
 
 

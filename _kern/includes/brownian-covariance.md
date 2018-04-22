@@ -1,15 +1,15 @@
 \helpercode{%load -s brownian_cov mlai.py}
-\setupcode{import teaching_plots as plot}
-\setupcode{import numpy as np}
+\setupcode{import teaching_plots as plot
+import mlai
+import numpy as np}
 
 
-\code{x=np.linspace(0, 2, 30)[:, np.newaxis]
+\code{x=np.linspace(0, 2, 200)[:, np.newaxis]
 plot.covariance_func(x, mlai.compute_kernel, 
                      formula = r'$$\kernelScalar(t, t^\prime) = \alpha \min(t, t^\prime)$$', 
                      shortname='brownian', 
                      longname='Brownian', 
-					 kernel=brownian_cov,
-                     degree=4., 
+					 kernel=brownian_cov, 
 					 diagrams='../slides/diagrams/kern')}
 
 
