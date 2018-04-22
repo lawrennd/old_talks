@@ -1101,16 +1101,18 @@ def two_point_pred(K, f, x, ax=None, ind=[0, 1],
         mlai.write_figure(os.path.join(diagrams, '{stub}{start:0>3}.svg').format(stub=stub, start=start+3), transparent=True)
     
 
-def kern_circular_sample(K, mu=None, filename=None, fig=None, num_samps=5, num_theta=200, diagrams='../diagrams'):
+def kern_circular_sample(K, mu=None, filename=None, fig=None, num_samps=5, num_theta=200, multiple=False, diagrams='../diagrams'):
 
     """Make an animation of a circular sample from a covariance function."""
 
     n = K.shape[0]
 
-
-    R1 = np.random.normal(size=(n, num_samps))
+    if not multiple:
+        R1 = np.random.normal(size=(n, num_samps))
+        R2 = np.random.normal(size=(n, num_samps))
+    else:
+        R1 = np.
     U1 = np.dot(R1,np.diag(1/np.sqrt(np.sum(R1*R1, axis=0))))
-    R2 = np.random.normal(size=(n, num_samps))
     R2 = R2 - np.dot(U1,np.diag(np.sum(R2*U1, axis=0)))
     R2 = np.dot(R2,np.diag(np.sqrt(np.sum(R1*R1, axis=0))/np.sqrt(np.sum(R2*R2, axis=0))))
     L = np.linalg.cholesky(K+np.diag(np.ones((n)))*1e-6)
@@ -1162,7 +1164,7 @@ def kern_circular_sample(K, mu=None, filename=None, fig=None, num_samps=5, num_t
 
 def covariance_func(x, kernel_function, x_cov=None, formula=None,
                     shortname=None, longname=None, comment=None,
-                    diagrams='../diagrams', **args):
+                    diagrams='../diagrams', multiple=False, **args):
     """Write a slide on a given covariance matrix."""
     fig, ax = plt.subplots(figsize=one_figsize)
     hcolor = [1., 0., 1.]
@@ -1178,7 +1180,7 @@ def covariance_func(x, kernel_function, x_cov=None, formula=None,
     mlai.write_figure(os.path.join(diagrams, filename + '.svg'), transparent=True)
 
     ax.cla()
-    kern_circular_sample(K, fig=fig, filename=filename + '.gif', diagrams=diagrams)
+    kern_circular_sample(K, fig=fig, filename=filename + '.gif', multiple=multiple, diagrams=diagrams)
 
     out = '<h2>' + longname + ' Covariance</h2>'
     out += '\n\n'
