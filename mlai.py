@@ -698,10 +698,10 @@ def exponentiated_quadratic(x, x_prime, variance=1., lengthscale=1.):
     r = np.linalg.norm(x-x_prime, 2)
     return variance*np.exp((-0.5*r*r)/lengthscale**2)        
 
-def mlp_cov(x, x_prime, variance=1., w=1., b=5., alpha=0.):
+def mlp_cov(x, x_prime, variance=1., w=1., b=5., alpha=1.):
     "Covariance function for a MLP based neural network."
     inner = np.dot(x, x_prime)*w + b
-    norm = np.sqrt(np.dot(x, x)*w + alpha + soft)*np.sqrt(np.dot(x_prime, x_prime)*w + b+alpha)
+    norm = np.sqrt(np.dot(x, x)*w + b + alpha)*np.sqrt(np.dot(x_prime, x_prime)*w + b+alpha)
     arg = np.clip(inner/norm, -1, 1) # clip as numerically can be > 1
     theta = np.arccos(arg)
     return variance*0.5*(1. - theta/np.pi)      
@@ -733,7 +733,7 @@ def prod_kern(x, x_prime, kernargs):
         k*=kernel(x, x_prime, **kwargs)
     return k
 
-def relu_cov(x, x_prime, scale=1., w=1., b=5., alpha=0.):
+def relu_cov(x, x_prime, variance=1., scale=1., w=1., b=5., alpha=0.):
     """Covariance function for a ReLU based neural network.
     :param x: first input
     :param x_prime: second input
