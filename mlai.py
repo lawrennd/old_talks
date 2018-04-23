@@ -687,7 +687,7 @@ def compute_kernel(X, X2=None, kernel=None, **kwargs):
     return K
 
 def compute_diag(X, kernel=None, **kwargs):
-    """Compute the full covariance function given a kernel function for two data points."""
+    """Compute the fuletrl covariance function given a kernel function for two data points."""
     diagK = np.zeros((X.shape[0], 1))
     for i in range(X.shape[0]):            
         diagK[i] = kernel(X[i, :], X[i, :], **kwargs)
@@ -698,16 +698,42 @@ def exponentiated_quadratic(x, x_prime, variance=1., lengthscale=1.):
     r = np.linalg.norm(x-x_prime, 2)
     return variance*np.exp((-0.5*r*r)/lengthscale**2)        
 
-def mlp_cov(x, x_prime, variance=1., w=1., b=5., alpha=0.):
+def mlp_cov(x, x_prime, variance=1., w=1., b=5., alpha=1.):
     "Covariance function for a MLP based neural network."
     inner = np.dot(x, x_prime)*w + b
-    norm = np.sqrt(np.dot(x, x)*w + alpha + soft)*np.sqrt(np.dot(x_prime, x_prime)*w + b+alpha)
+    norm = np.sqrt(np.dot(x, x)*w + b + alpha)*np.sqrt(np.dot(x_prime, x_prime)*w + b+alpha)
     arg = np.clip(inner/norm, -1, 1) # clip as numerically can be > 1
     theta = np.arccos(arg)
     return variance*0.5*(1. - theta/np.pi)      
 
+def icm_cov(x, x_prime, B, subkernel, **kwargs):
+    """Intrinsic coregionalization model. First index is outputs considered for covariance function."""
+    i = x[0]
+    i_prime = x_prime[0]
+    return B[i, i_prime]*subkernel(x[1:], x_prime[1:], **kwargs)
 
-def relu_cov(x, x_prime, scale=1., w=1., b=5., alpha=0.):
+def slfm_cov(x, x_prime, W, subkernel, **kwargs):
+    """Semi-parametric latent factor model covariance function. First index is the output of the covariance function."""
+    W = np.asarray(W)
+    B = np.dot(W, W.T)
+    return icm_cov(x, x_prime, B, subkernel, **kwargs)
+
+
+def add_cov(x, x_prime, kernargs):
+    """Additive covariance function."""
+    k = 0.
+    for kernel, kwargs in kernargs:
+        k+=kernel(x, x_prime, **kwargs)
+    return k
+
+def prod_kern(x, x_prime, kernargs):
+    """Product covariance function."""
+    k = 1.
+    for kernel, kwargs in kernargs:
+        k*=kernel(x, x_prime, **kwargs)
+    return k
+
+def relu_cov(x, x_prime, variance=1., scale=1., w=1., b=5., alpha=0.):
     """Covariance function for a ReLU based neural network.
     :param x: first input
     :param x_prime: second input

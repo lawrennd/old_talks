@@ -7,9 +7,7 @@ affiliation: Amazon and University of Sheffield
 
 \include{talk-macros.tex}
 
-
 \include{_data-science/includes/lies-damned-lies.md}
-
 \include{../_ml/includes/what-is-ml.md}
 \include{../_ml/includes/data-science-vs-ai.md}
 

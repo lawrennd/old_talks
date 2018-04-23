@@ -1,6 +1,6 @@
 ### {.slide: data-transition="none"}
 
-[\includeimg{../slides/diagrams/data-science/data-trusts.png}{100%}](https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy)
+§[\includeimg{../slides/diagrams/data-science/data-trusts.png}{100%}](https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy)
 
 ### {.slide: data-transition="none"}
 
