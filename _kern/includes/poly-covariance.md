@@ -1,15 +1,17 @@
 \helpercode{%load -s polynomial_cov mlai.py}
-\setupcode{import teaching_plots as plot}
-\setupcode{import numpy as np}
+\setupcode{import teaching_plots as plot
+import mlai
+import numpy as np}
+\code{K, anim=plot.animate_covariance_function(mlai.compute_kernel, 
+                                         kernel=polynomial_cov, degree=4)}
 
-\code{x=np.linspace(-1, 1, 30)[:, np.newaxis]
-\code{plot.covariance_func(x, mlai.compute_kernel, 
-                     formula = r'$$k(\inputVector, \inputVector^\prime) = \alpha(w \inputVector^\top \inputVector^\prime + b)^d$$', 
-                     shortname='poly', 
-                     longname='Polynomial', 
-					 kernel=polynomial_cov,
-                     degree=4., 
-					 diagrams='../slides/diagrams/kern')}
+\setupcode{from IPython.core.display import HTML}
+
+\displaycode{HTML(anim.to_jshtml())}
+
+\plotcode{plot.save_animation(anim, 
+                    diagrams='../slides/diagrams/kern', 
+				    filename='polynomial_covariance.html')}
 
 
 ### Polynomial Covariance
@@ -18,8 +20,8 @@ $$k(\inputVector, \inputVector^\prime) = \alpha(w \inputVector^\top
 \inputVector^\prime + b)^d$$
 
 \columns{
-\includesvg{../slides/diagrams/kern/poly_covariance.svg}
+\includesvg{../slides/diagrams/kern/polynomial_covariance.svg}
 }{
-\includegif{../slides/diagrams/kern/poly_covariance.gif}{80%}
+\includehtml{../slides/diagrams/kern/polynomial_covariance.html}{512}{384}
 }{50%}{50%}
 
