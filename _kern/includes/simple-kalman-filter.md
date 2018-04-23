@@ -5,10 +5,10 @@
           \dots \inputVector_\latentDim\right] \in \mathbb{R}^{{T}\times \latentDim}$
     and if each state evolves independently we have 
 		
-\begin{align}
+\begin{align*}
   p(\inputMatrix) &= \prod_{i=1}^\latentDim p(\inputVector_{:, i}) \\
      p(\inputVector_{:, i}) &= \gaussianDist{\inputVector_{:, i}}{\zerosVector}{\kernelMatrix}.
-\end{align}
+\end{align*}
 
 -   We want to obtain outputs through:
     $$\dataVector_{i, :} = \mappingMatrix\inputVector_{i, :}$$
@@ -289,6 +289,7 @@ gpKalmanToMultiTaskIcm
 
 ![image](../../../multigp/tex/diagrams/icmCovarianceImage)![image](../../../multigp/tex/diagrams/icmCovarianceSample1)![image](../../../multigp/tex/diagrams/icmCovarianceSample2)![image](../../../multigp/tex/diagrams/icmCovarianceSample3)![image](../../../multigp/tex/diagrams/icmCovarianceSample4)
 
+\include{_kern/includes/icm-covariance.md}
 
 ### Intrinsic Coregionalization Model
 

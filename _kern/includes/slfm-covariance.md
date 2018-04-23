@@ -4,26 +4,26 @@
 import mlai
 import numpy as np}
 
+\code{K, anim=plot.animate_covariance_function(mlai.compute_kernel, 
+                                         kernel=slfm_cov, subkernel=eq_cov,
+										 W = np.asarray([[1],[5]])}
 
-\code{plot.covariance_func(x, mlai.compute_kernel, 
-                     formula = r'$$\kernelScalar(i, j, \inputVector, \inputVector^\prime) = w_i w_j \kernelScalar(\inputVector, \inputVector^\prime)$$', 
-                     shortname='slfm', 
-                     longname='Semi-parametric Latent Factor', 
-					 kernel=slfm_cov,
-                     subkernel=eq_cov,
-					 W = np.asarray([[1, 5]]),
-					 diagrams='../slides/diagrams/kern')}
+\setupcode{from IPython.core.display import HTML}
+
+\displaycode{HTML(anim.to_jshtml())}
+
+\plotcode{plot.save_animation(anim, 
+                    diagrams='../slides/diagrams/kern', 
+				    filename='slfm_covariance.html')}
 
 
-### Slfm Covariance
+### Semi Parametric Latent Factor Covariance
 
 $$\kernelScalar(i, j, \inputVector, \inputVector^\prime) = w_i w_j \kernelScalar(\inputVector, \inputVector^\prime)$$
-
-\includehtml{../slides/diagrams/kern/slfm-covariance.html}
 
 \columns{
 \includesvg{../slides/diagrams/kern/slfm_covariance.svg}
 }{
-\includegif{../slides/diagrams/kern/brownian_covariance.gif}{80%}
+\includehtml{../slides/diagrams/kern/slfm_covariance.html}{512}{384}
 }{50%}{50%}
 

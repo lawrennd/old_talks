@@ -3,7 +3,7 @@
 import mlai
 import numpy as np}
 \code{K, anim=plot.animate_covariance_function(mlai.compute_kernel, 
-                                         kernel=sinc_cov, lengthscale=0.2)}
+                                         kernel=sinc_cov)}
 
 \setupcode{from IPython.core.display import HTML}
 
