@@ -190,11 +190,16 @@ affiliation: University of Sheffield
 
 ### Tigers and Trolleys
 
-* Second trolley example takes on a new light. 
+* A simple switch in the points, is deterministic/mechanistic
 
-* The first example, that of a simple switch in the points, is deterministic/mechanistic
+\includeimg{../slides/diagrams/ai/Trolley_1.jpg}{60%}
+
+### Tigers and Trolleys
 
 * The second example is largely contrived, and riddled with uncertainty.
+
+\includeimg{../slides/diagrams/ai/trolley2.jpg}{60%}
+
 
 ### George Box
 
