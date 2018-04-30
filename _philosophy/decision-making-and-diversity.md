@@ -103,10 +103,11 @@ $$ \text{model} + \text{data} \rightarrow \text{prediction}$$
 ### Bias vs Variance
 
 
-* Geman et al [@Geman-biasvariance92] 'bias variance dilemma'.
+*'bias variance dilemma' @Geman-biasvariance92
 
-* Decompose erros as due to oversimplification (the bias error) and those due to
- insufficient data to underpin a complex model (variance error).
+* Decompose errors as 
+    1. due to oversimplification (the bias error) and 
+	2. those due to insufficient data to underpin a complex model (variance error).
 
 ### In Machine Learning
 
@@ -124,11 +125,13 @@ $$ \text{model} + \text{data} \rightarrow \text{prediction}$$
 	
 * Variance errors can also be averaged e.g. [bagging](https://en.wikipedia.org/wiki/Bootstrap_aggregating) and [boosting](https://en.wikipedia.org/wiki/Boosting_(machine_learning)) [@Breiman-bagging96] 
 
+
+
 ### Rational Behaviour
 
 * Sustain a variety of approaches to life.
 
-* Complex explanations such as half-time footballl punditry.
+* Complex explanations such as half-time football punditry.
 
 * Also clinical experts [@Meehl-clinicalstatistical54]. Meehl suggested they 'try to be clever and think outside the box'. 
 
@@ -149,9 +152,9 @@ $$ \text{model} + \text{data} \rightarrow \text{prediction}$$
 
 ### Similar Ideas Socially
 
-I may not agree with many people's subjective approach to life, I may even believe it to be severely sub-optimal. But I should not presume to know better, even if prior experience shows that my own 'way of being' is effective. 
-
-Variation is vitally important for robustness. There may be future circumstances where my approaches fail utterly, and other ways of being are better.
+> I may not agree with many people's subjective approach to life, I may even believe it to be severely sub-optimal. But I should not presume to know better, even if prior experience shows that my own 'way of being' is effective. 
+>
+> Variation is vitally important for robustness. There may be future circumstances where my approaches fail utterly, and other ways of being are better.
 
 ### A Universal Utility
 
@@ -217,6 +220,15 @@ Variation is vitally important for robustness. There may be future circumstances
 * [My blog](http://inverseprobability.com/blog.html) has articles relating to this area.
 
 * [This post on System Zero](http://inverseprobability.com/2015/12/04/what-kind-of-ai/) and [This post on the Mechanistic Fallacy](http://inverseprobability.com/2015/11/09/artificial-stupidity/) relate to the ideas in this talk.
+
+* [This post on natural vs artificial systems](http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence)
+
+* [This paper on decision making and diversity](http://inverseprobability.com/2017/11/15/decision-making)
+
+### Thanks!
+
+* twitter: ```@lawrennd```
+* blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
 
 
 ### Bibliography
