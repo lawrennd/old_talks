@@ -1,4 +1,4 @@
-BASE=what-kind-of-ai-public
+BASE=decision-making-and-diversity
 DATE=$(shell date '+%Y-%m-%d')
 #DATE=2018-04-18
 MATHJAX="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG"
