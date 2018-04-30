@@ -188,6 +188,16 @@ affiliation: University of Sheffield
 
 > There will be single absolute policy that should be followed slavishly in all circumstances
 
+
+### George Box
+
+
+> Since all models are wrong the scientist must be alert to what is importantly wrong. It is inappropriate to be concerned about mice when there are tigers abroad.
+>
+> George E. P. Box [@Box-science76]
+
+
+
 ### Tigers and Trolleys
 
 * A simple switch in the points, is deterministic/mechanistic
@@ -199,14 +209,6 @@ affiliation: University of Sheffield
 * The second example is largely contrived, and riddled with uncertainty.
 
 \includeimg{../slides/diagrams/ai/trolley2.jpg}{60%}
-
-
-### George Box
-
-
-> Since all models are wrong the scientist must be alert to what is importantly wrong. It is inappropriate to be concerned about mice when there are tigers abroad.
->
-> George E. P. Box [@Box-science76]
 
 
 ### Conclusion
