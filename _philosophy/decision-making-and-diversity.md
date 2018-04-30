@@ -68,7 +68,7 @@ affiliation: University of Sheffield
 
 * Actually happiness is some (monotonic) function of the gradient of whatever personal utility function we have. 
 
-* John Stuart Mill's variation on utilitarianism considered 'higher pleasures', such as the pleasure gained from literature and learning. (See also Eleni Vasilaki on Epicurus [@Vasilaki-epicurius17])
+* John Stuart Mill's variation on utilitarianism considered 'higher pleasures', such as the pleasure gained from literature and learning. (See also Eleni Vasilaki on Epicurus @Vasilaki-epicurius17)
 
 * our happiness must be integrated to form our utility. 
 
@@ -94,8 +94,7 @@ affiliation: University of Sheffield
 * Kahneman explores our tendency to produce overcomplicated explanations
 
 * Prediction is
-
-$$ \text{model} + \text{data} \rightarrow \text{prediction}$$
+    $$ \text{model} + \text{data} \rightarrow \text{prediction}$$
 
 * Models fail as overly simple or overly complex
 
@@ -103,7 +102,7 @@ $$ \text{model} + \text{data} \rightarrow \text{prediction}$$
 ### Bias vs Variance
 
 
-*'bias variance dilemma' @Geman-biasvariance92
+* 'bias variance dilemma' @Geman-biasvariance92
 
 * Decompose errors as 
     1. due to oversimplification (the bias error) and 
@@ -174,18 +173,20 @@ $$ \text{model} + \text{data} \rightarrow \text{prediction}$$
 	
 ### Uncertainty: The Tyger that Burns Bright
 
-* Two principles: *natural selection*.
-    * Non-survival of the non-fit (["survival of the fittest"](https://en.wikipedia.org/wiki/Survival_of_the_fittest) is due to [Herbert Spencer](https://en.wikipedia.org/wiki/Herbert_Spencer))
+* Non-survival of the non-fit 
 
 * The marvel of evolution is its responsiveness.
 
 * Utility function evolves socially and in our environment.
 
+
+(["survival of the fittest"](https://en.wikipedia.org/wiki/Survival_of_the_fittest) is due to [Herbert Spencer](https://en.wikipedia.org/wiki/Herbert_Spencer))
+
 ### Absolute Policies
 
 * There is only one absolute policy we should follow. 
 
-> "There will be single absolute policy that should be followed slavishly in all circumstances". 
+> There will be single absolute policy that should be followed slavishly in all circumstances
 
 ### Tigers and Trolleys
 
