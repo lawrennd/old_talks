@@ -14,8 +14,8 @@ youtube:
   width: 512
   height: 384
 talk_files: "http://inverseprobability.com/talks/slides/"
-nbviewer: "http://nbviewer.ipython.org/"
-basenb: "github/lawrennd/talks/blob/master/slides/" 
+nbviewer: "http://nbviewer.jupyter.org/"
+basenb: "github/lawrennd/talks/blob/master/notebooks/" 
 url: "http://inverseprobability.com" # the base hostname & protocol for your site
 twitter_username: lawrennd
 github_username:  lawrennd
