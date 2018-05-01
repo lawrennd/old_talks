@@ -15,9 +15,8 @@
 
 ###
 
-\includeimg{../slides/diagrams/sysbio/p53-unbound}{40%}{}{left}\includeimg{../slides/diagrams/sysbio/p53-bound}{40%}{}{right}
+\includeimg{../slides/diagrams/sysbio/p53-unbound.png}{40%}{}{left}\includeimg{../slides/diagrams/sysbio/p53-bound.png}{40%}{}{right}
   
-\end{frame}
 
 \include{_sysbio/includes/ode1-artificial-example.md}
 
