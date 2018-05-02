@@ -39,51 +39,7 @@ affiliation: Amazon Research Cambridge and University of Sheffield
 
 \include{../_ml/includes/deep-learning-overview.md}
 
-### Data Science
-
-* Industrial Revolution 4.0?
-
-* *Industrial Revolution* (1760-1840) term coined by Arnold Toynbee,
-late 19th century.
-
-* Maybe: But this one is dominated by *data* not *capital*
-
-* That presents *challenges* and *opportunities* 
-
-cf
-[digital oligarchy](https://www.theguardian.com/media-network/2015/mar/05/digital-oligarchy-algorithms-personal-data)
-vs [how Africa can benefit from the data revolution](https://www.theguardian.com/media-network/2015/aug/25/africa-benefit-data-science-information)
-
-* Apple vs Nokia: How you handle disruption.
-
-
-### A Time for Professionalisation?
-
-* New technologies historically led to new professions:
-
-    * Brunel (born 1806): Civil, mechanical, naval
-
-    * Tesla (born 1856): Electrical and power
- 
-    * William Shockley (born 1910): Electronic 
-
-    * Watts S. Humphrey (born 1927): Software
-
-### Why?
-
-* Codification of best practice.
-
-* Developing trust
-
-### Where are we?
-
-* Perhaps around the 1980s of programming.
-
-    * We understand if, for, procedures
-
-    * But we don't share best practice.
-
-* Let's *avoid* the over formalisation of software engineering.
+\include{_data-science/includes/a-time-for-professionalisation.md}
 
 \include{../_data-science/includes/the-data-crisis.md}
 
@@ -92,12 +48,6 @@ vs [how Africa can benefit from the data revolution](https://www.theguardian.com
 * Reusability of Data
 
 * Deployment of Machine Learning Systems
-
-<!--### Rest of this Talk: Two Areas of Focus {.slide: data-transition="none" }
-
-* <s>Reusability of Data</s>
-
-* Deployment of Machine Learning Systems-->
 
 \include{../_data-science/includes/data-readiness-levels.md}
 \include{../_data-science/includes/data-joel-tests.md}
@@ -118,5 +68,5 @@ will be deployed in evolving environments.
 
 ### Thanks!
 
-* twitter: ```@lawrennd```
+* twitter: \@lawrennd
 * blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
