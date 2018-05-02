@@ -3,8 +3,8 @@ title: "Towards Machine Learning Systems Design"
 abstract: 
 published: 2018-05-02
 venue: Sheffield ML Research Network Launch
-reveal: 2018-05-02-towards-machine-learning-systems-design.slides.html
-ipynb: 2018-05-02-towards-machine-learning-systems-design.ipynb
+reveal: 2018-05-02-towards-ml-systems-design.slides.html
+ipynb: 2018-05-02-towards-ml-systems-design.ipynb
 layout: talk
 author:
 - family: Lawrence
