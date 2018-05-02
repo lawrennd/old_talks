@@ -6,7 +6,7 @@ Our first objective will be to perform a Gaussian process fit to the data, we'll
 \code{m_full = GPy.models.GPRegression(x,yhat)
 _ = m_full.optimize() # Optimize parameters of covariance function}
 
-\slidenotes{}{The first command sets up the model, then 
+\notes{The first command sets up the model, then 
 ```
 m_full.optimize()
 ```

@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Neil D. Lawrence">
+  <title>Real World Machine Learning Challenges: Present and Future</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="talks.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
+      <script type="text/javascript" src="svg_mathjax.js">
+      </script>
+      <script type="text/javascript">
+          new Svg_MathJax().install();
+      </script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Real World Machine Learning Challenges: Present and Future</h1>
+  <p class="author">Neil D. Lawrence</p>
+</section>
+
+<section class="slide level3">
+
+<h4 id="data-science-time-for-professionalisation">Data Science: Time for Professionalisation?</h4>
+<h4 id="section">2018-01-23</h4>
+<h4 id="neil-d.-lawrence">Neil D. Lawrence</h4>
+<h4 id="amazon-research-cambridge-and-university-of-sheffield">Amazon Research Cambridge and University of Sheffield</h4>
+<p><code>@lawrennd</code> <a href="http://inverseprobability.com">inverseprobability.com</a></p>
+</section>
+<section id="what-is-machine-learning" class="slide level3" data-transition="none">
+<h3>What is Machine Learning?</h3>
+<div class="fragment">
+<p><span class="math display">\[ \text{data} + \text{model} \rightarrow \text{prediction}\]</span></p>
+</div>
+<div class="fragment">
+<ul>
+<li><span class="math inline">\(\text{data}\)</span> : observations, could be actively or passively acquired (meta-data).</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><span class="math inline">\(\text{model}\)</span> : assumptions, based on previous experience (other data! transfer learning etc), or beliefs about the regularities of the universe. Inductive bias.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><span class="math inline">\(\text{prediction}\)</span> : an action to be taken or a categorization or a quality score.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Royal Society Report: <a href="https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf">Machine Learning: Power and Promise of Computers that Learn by Example</a></li>
+</ul>
+</div>
+</section>
+<section id="machine-learning-as-the-driver-..." class="slide level3 slide:" data-transition="none">
+<h3>Machine Learning as the Driver ...</h3>
+<p>... of two different domains</p>
+<ol type="1">
+<li><p><em>Data Science</em>: arises from the fact that we now capture data by happenstance.</p></li>
+<li><p><em>Artificial Intelligence</em>: emulation of human behaviour.</p></li>
+</ol>
+</section>
+<section id="what-does-machine-learning-do" class="slide level3 slide:" data-transition="none">
+<h3>What does Machine Learning do?</h3>
+<ul>
+<li>ML Automates through Data
+<ul>
+<li><em>Strongly</em> related to statistics.</li>
+<li>Field underpins revolution in <em>data science</em> and <em>AI</em></li>
+</ul></li>
+<li><p>With AI: logic, robotics, computer vision, speech</p></li>
+<li><p>With Data Science: databases, data mining, statistics, visualization</p></li>
+</ul>
+</section>
+<section id="embodiment-factors" class="slide level3">
+<h3>&quot;Embodiment Factors&quot;</h3>
+<table>
+<tr>
+<td>
+</td>
+<td align="center">
+<img src="../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="60%" style="background:none; border:none; box-shadow:none;" align="center">
+</td>
+<td align="center">
+<img src="../slides/diagrams/ClaudeShannon_MFO3807.jpg" width="100%" style="background:none; border:none; box-shadow:none;" align="center">
+</td>
+</tr>
+<tr>
+<td>
+compute
+</td>
+<td align="center">
+~10 gigaflops
+</td>
+<td align="center">
+~ 1000 teraflops?
+</td>
+</tr>
+<tr>
+<td>
+communicate
+</td>
+<td align="center">
+~1 gigbit/s
+</td>
+<td align="center">
+~ 100 bit/s
+</tr>
+<td>
+(compute/communicate)
+</td>
+<td align="center">
+10
+</td>
+<td align="center">
+~ 10<sup>13</sup>
+</tr>
+</table>
+<p>See <a href="https://arxiv.org/abs/1705.07996">&quot;Living Together: Mind and Machine Intelligence&quot;</a></p>
+</section>
+<section id="evolved-relationship" class="slide level3 slide:" data-transition="none">
+<h3>Evolved Relationship</h3>
+<object class="svgplot" align data="../slides/diagrams/data-science/information-flow001.svg">
+</object>
+</section>
+<section id="evolved-relationship-1" class="slide level3 slide:" data-transition="none">
+<h3>Evolved Relationship</h3>
+<object class="svgplot" align data="../slides/diagrams/data-science/information-flow002.svg">
+</object>
+</section>
+<section id="evolved-relationship-2" class="slide level3 slide:" data-transition="none">
+<h3>Evolved Relationship</h3>
+<object class="svgplot" align data="../slides/diagrams/data-science/information-flow003.svg">
+</object>
+</section>
+<section id="what-does-machine-learning-do-1" class="slide level3 slide:" data-transition="none">
+<h3>What does Machine Learning do?</h3>
+<ul>
+<li><p>We scale by codifying processes and automating them.</p>
+<ul>
+<li><p>Ensure components are compatible (Whitworth threads)</p></li>
+<li><p>Then interconnect them as efficiently as possible.</p></li>
+<li><p>cf Colt 45, Ford Model T</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="codify-through-mathematical-functions" class="slide level3 slide:" data-transition="none">
+<h3>Codify Through Mathematical Functions</h3>
+<ul>
+<li><p>How does machine learning work?</p></li>
+<li><p>Jumper (jersey/sweater) purchase with logistic regression</p></li>
+</ul>
+<p><span class="math display">\[ \text{odds} = \frac{\text{bought}}{\text{not bought}} \]</span></p>
+<p><span class="math display">\[ \log \text{odds}  = \beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}\]</span></p>
+</section>
+<section id="codify-through-mathematical-functions-1" class="slide level3 slide:" data-transition="none">
+<h3>Codify Through Mathematical Functions</h3>
+<ul>
+<li><p>How does machine learning work?</p></li>
+<li><p>Jumper (jersey/sweater) purchase with logistic regression</p></li>
+</ul>
+<p><span class="math display">\[ p(\text{bought}) =  {f}\left(\beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}\right)\]</span></p>
+</section>
+<section id="codify-through-mathematical-functions-2" class="slide level3 slide:" data-transition="none">
+<h3>Codify Through Mathematical Functions</h3>
+<ul>
+<li><p>How does machine learning work?</p></li>
+<li><p>Jumper (jersey/sweater) purchase with logistic regression</p></li>
+</ul>
+<p><span class="math display">\[ p(\text{bought}) =  {f}\left(\boldsymbol{\beta}^\top {{\bf {x}}}\right)\]</span></p>
+<div class="fragment">
+<p>We call <span class="math inline">\({f}(\cdot)\)</span> the <em>prediction function</em></p>
+</div>
+</section>
+<section id="fit-to-data" class="slide level3 slide:" data-transition="none">
+<h3>Fit to Data</h3>
+<ul>
+<li>Use an objective function</li>
+</ul>
+<p><span class="math display">\[{E}(\boldsymbol{\beta}, {\mathbf{Y}}, {{\bf X}})\]</span></p>
+<div class="fragment">
+<ul>
+<li>E.g. least squares</li>
+</ul>
+<p><span class="math display">\[{E}(\boldsymbol{\beta}) = \sum_{i=1}^{n}\left({y}_i - {f}({{\bf {x}}}_i)\right)^2\]</span></p>
+</div>
+</section>
+<section id="two-components" class="slide level3 slide:" data-transition="none">
+<h3>Two Components</h3>
+<ul>
+<li><p>Prediction function, <span class="math inline">\({f}(\cdot)\)</span></p></li>
+<li><p>Objective function, <span class="math inline">\({E}(\cdot)\)</span></p></li>
+</ul>
+</section>
+<section id="deep-learning" class="slide level3">
+<h3>Deep Learning</h3>
+<ul>
+<li><p>These are interpretable models: vital for disease etc.</p></li>
+<li><p>Modern machine learning methods are less interpretable</p></li>
+<li><p>Example: face recognition</p></li>
+</ul>
+</section>
+<section id="section-1" class="slide level3">
+<h3></h3>
+<p><span class="fragment fade-in"><small>Outline of the DeepFace architecture. A front-end of a single convolution-pooling-convolution filtering on the rectified input, followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected.</small></span></p>
+<p><img class="" src="../slides/diagrams/deepface_neg.png" width="100%" align="" style="background:none; border:none; box-shadow:none;"></p>
+<p align="right">
+<small>Source: DeepFace</small>
+</p>
+</section>
+<section id="section-2" class="slide level3">
+<h3></h3>
+<p><img class="" src="../slides/diagrams/576px-Early_Pinball.jpg" width="30%" align="" style="background:none; border:none; box-shadow:none;"></p>
+</section>
+<section id="section-3" class="slide level3">
+<h3></h3>
+<object class="svgplot" align data="../slides/diagrams/pinball-initial.svg">
+</object>
+</section>
+<section id="section-4" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot" align data="../slides/diagrams/pinball-final.svg">
+</object>
+</section>
+<section id="section-5" class="slide level3" data-transition="none">
+<h3></h3>
+<object class="svgplot" align data="../slides/diagrams/gp/gp_prior_samples_few.svg">
+</object>
+</section>
+<section id="section-6" class="slide level3" data-transition="none">
+<h3></h3>
+<object class="svgplot" align data="../slides/diagrams/gp/gp_prior_samples.svg">
+</object>
+</section>
+<section id="section-7" class="slide level3" data-transition="none">
+<h3></h3>
+<object class="svgplot" align data="../slides/diagrams/gp/gp_prior_samples_data.svg">
+</object>
+</section>
+<section id="section-8" class="slide level3" data-transition="none">
+<h3></h3>
+<object class="svgplot" align data="../slides/diagrams/gp/gp_rejection_samples.svg">
+</object>
+</section>
+<section id="olympic-marathon-data" class="slide level3">
+<h3>Olympic Marathon Data</h3>
+<table>
+<tr>
+<td width="70%">
+<ul>
+<li><p>Gold medal times for Olympic Marathon since 1896.</p></li>
+<li><p>Marathons before 1924 didn’t have a standardised distance.</p></li>
+<li><p>Present results using pace per km.</p></li>
+<li>In 1904 Marathon was badly organised leading to very slow times.</li>
+</ul>
+</td>
+<td width="30%">
+<img src="../slides/diagrams/Stephen_Kiprotich.jpg" alt="image" /> <small>Image from Wikimedia Commons <a href="http://bit.ly/16kMKHQ" class="uri">http://bit.ly/16kMKHQ</a></small>
+</td>
+</tr>
+</table>
+</section>
+<section id="olympic-marathon-data-1" class="slide level3">
+<h3>Olympic Marathon Data</h3>
+<object class="svgplot" align data="../slides/diagrams/ml/olympic_marathon.svg">
+</object>
+</section>
+<section id="olympic-marathon-data-gp" class="slide level3" data-transition="None">
+<h3>Olympic Marathon Data GP</h3>
+<object class="svgplot" align data="../slides/diagrams/gp/olympic-marathon-gp.svg">
+</object>
+</section>
+<section id="deep-gp-fit" class="slide level3">
+<h3>Deep GP Fit</h3>
+<p>Let's see if a deep Gaussian process can help here. We will construct a deep Gaussian process with one hidden layer (i.e. one Gaussian process feeding into another).</p>
+<p>Build a Deep GP with an additional hidden layer (one dimensional) to fit the model. }</p>
+</section>
+<section id="olympic-marathon-data-deep-gp" class="slide level3" data-transition="None">
+<h3>Olympic Marathon Data Deep GP</h3>
+<object class="svgplot" align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp.svg">
+</object>
+<p>{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)</p>
+</section>
+<section id="olympic-marathon-data-deep-gp-1" class="slide level3" data-transition="None">
+<h3>Olympic Marathon Data Deep GP</h3>
+<object class="svgplot" align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-samples.svg">
+</object>
+</section>
+<section id="olympic-marathon-data-latent-1" class="slide level3" data-transition="None">
+<h3>Olympic Marathon Data Latent 1</h3>
+<object class="svgplot" align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-layer-0.svg">
+</object>
+</section>
+<section id="olympic-marathon-data-latent-2" class="slide level3" data-transition="None">
+<h3>Olympic Marathon Data Latent 2</h3>
+<object class="svgplot" align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-layer-1.svg">
+</object>
+</section>
+<section id="olympic-marathon-pinball-plot" class="slide level3" data-transition="None">
+<h3>Olympic Marathon Pinball Plot</h3>
+<object class="svgplot" align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg">
+</object>
+</section>
+<section id="data-science" class="slide level3">
+<h3>Data Science</h3>
+<ul>
+<li><p>Industrial Revolution 4.0?</p></li>
+<li><p><em>Industrial Revolution</em> (1760-1840) term coined by Arnold Toynbee, late 19th century.</p></li>
+<li><p>Maybe: But this one is dominated by <em>data</em> not <em>capital</em></p></li>
+<li><p>That presents <em>challenges</em> and <em>opportunities</em></p></li>
+</ul>
+<p>cf <a href="https://www.theguardian.com/media-network/2015/mar/05/digital-oligarchy-algorithms-personal-data">digital oligarchy</a> vs <a href="https://www.theguardian.com/media-network/2015/aug/25/africa-benefit-data-science-information">how Africa can benefit from the data revolution</a></p>
+<ul>
+<li>Apple vs Nokia: How you handle disruption.</li>
+</ul>
+</section>
+<section id="a-time-for-professionalisation" class="slide level3">
+<h3>A Time for Professionalisation?</h3>
+<ul>
+<li><p>New technologies historically led to new professions:</p>
+<ul>
+<li><p>Brunel (born 1806): Civil, mechanical, naval</p></li>
+<li><p>Tesla (born 1856): Electrical and power</p></li>
+<li><p>William Shockley (born 1910): Electronic</p></li>
+<li><p>Watts S. Humphrey (born 1927): Software</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="why" class="slide level3">
+<h3>Why?</h3>
+<ul>
+<li><p>Codification of best practice.</p></li>
+<li><p>Developing trust</p></li>
+</ul>
+</section>
+<section id="where-are-we" class="slide level3">
+<h3>Where are we?</h3>
+<ul>
+<li><p>Perhaps around the 1980s of programming.</p>
+<ul>
+<li><p>We understand if, for, procedures</p></li>
+<li><p>But we don't share best practice.</p></li>
+</ul></li>
+<li><p>Let's <em>avoid</em> the over formalisation of software engineering.</p></li>
+</ul>
+</section>
+<section id="the-software-crisis" class="slide level3">
+<h3>The Software Crisis</h3>
+<blockquote>
+<p>The major cause of the software crisis is that the machines have become several orders of magnitude more powerful! To put it quite bluntly: as long as there were no machines, programming was no problem at all; when we had a few weak computers, programming became a mild problem, and now we have gigantic computers, programming has become an equally gigantic problem.</p>
+<p>Edsger Dijkstra, The Humble Programmer</p>
+</blockquote>
+</section>
+<section id="the-data-crisis" class="slide level3">
+<h3>The Data Crisis</h3>
+<blockquote>
+<p>The major cause of the data crisis is that machines have become more interconnected than ever before. Data access is therefore cheap, but data quality is often poor. What we need is cheap high quality data. That implies that we develop processes for improving and verifying data quality that are efficient.</p>
+<p>There would seem to be two ways for improving efficiency. Firstly, we should not duplicate work. Secondly, where possible we should automate work.</p>
+<p>Me</p>
+</blockquote>
+</section>
+<section id="rest-of-this-talk-two-areas-of-focus" class="slide level3">
+<h3>Rest of this Talk: Two Areas of Focus</h3>
+<ul>
+<li><p>Reusability of Data</p></li>
+<li><p>Deployment of Machine Learning Systems</p></li>
+</ul>
+</section>
+<section id="rest-of-this-talk-two-areas-of-focus-1" class="slide level3">
+<h3>Rest of this Talk: Two Areas of Focus</h3>
+<ul>
+<li><p><s>Reusability of Data</s></p></li>
+<li><p>Deployment of Machine Learning Systems</p></li>
+</ul>
+<!--### Data Readiness Levels
+
+[<img class="" src="../slides/diagrams/data-science/data-readiness-levels.png" width="" align="" style="background:none; border:none; box-shadow:none;">](https://arxiv.org/pdf/1705.02245.pdf)
+
+
+   [Data Readiness Levels](http://inverseprobability.com/2017/01/12/data-readiness-levels)
+
+### Three Grades of Data Readiness:
+
+* Grade C - accessibility
+
+* Grade B - validity
+
+* Grade A - usability
+
+
+### Accessibility: Grade C
+
+* *Hearsay* data.
+* Availability, is it actually being recorded?
+* privacy or legal constraints on the accessibility of the recorded data, have ethical constraints been alleviated?
+* Format: log books, PDF ...
+* limitations on access due to topology (e.g. it's distributed across a number of devices)
+* At the end of Grade C data is ready to be loaded into analysis software (R, SPSS, Matlab, Python, Mathematica)
+
+### Validity: Grade B
+
+* faithfulness and representation
+* visualisations.
+* exploratory data analysis
+* noise characterisation.
+* Missing values.
+* Schema alignment, record linkage, data fusion? 
+* Example, was a column or columns accidentally perturbed (e.g. through a sort operation that missed one or more columns)? Or was a [gene name accidentally converted to a date](http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-5-80)?
+* At the end of Grade B, ready to define a candidate question, the
+  context, load into OpenML
+
+### Usability: Grade A
+
+* The usability of data
+* Grade A is about data in context.
+* Consider appropriateness of a given data set to answer a particular
+question or to be subject to a particular analysis.
+* Data integration?
+* At the end of Grade A it's ready for data platforms such as RAMP, Kaggle, define a *task* in OpenML.
+
+-->
+</section>
+<section id="artificial-intelligence" class="slide level3">
+<h3>Artificial Intelligence</h3>
+<ul>
+<li><p>Challenges in deploying AI.</p></li>
+<li><p>Currently this is in the form of &quot;machine learning systems&quot;</p></li>
+</ul>
+</section>
+<section id="internet-of-people" class="slide level3">
+<h3>Internet of People</h3>
+<ul>
+<li>Fog computing: barrier between cloud and device blurring.
+<ul>
+<li>Computing on the Edge</li>
+</ul></li>
+<li>Complex feedback between algorithm and implementation</li>
+</ul>
+</section>
+<section id="deploying-ml-in-real-world-machine-learning-systems-design" class="slide level3">
+<h3>Deploying ML in Real World: Machine Learning Systems Design</h3>
+<ul>
+<li><p>Major new challenge for systems designers.</p></li>
+<li><p>Internet of Intelligence but currently:</p>
+<ul>
+<li>AI systems are <em>fragile</em></li>
+</ul></li>
+</ul>
+</section>
+<section id="fragility-of-ai-systems" class="slide level3 slide:" data-transition="none">
+<h3>Fragility of AI Systems</h3>
+<ul>
+<li><p>They are componentwise built from ML Capabilities.</p></li>
+<li><p>Each capability is independently constructed and verified.</p>
+<ul>
+<li><p>Pedestrian detection</p></li>
+<li><p>Road line detection</p></li>
+</ul></li>
+<li><p>Important for verification purposes.</p></li>
+</ul>
+</section>
+<section id="rapid-reimplementation" class="slide level3 slide:" data-transition="none">
+<h3>Rapid Reimplementation</h3>
+<ul>
+<li><p>Whole systems are being deployed.</p></li>
+<li><p>But they change their environment.</p></li>
+<li><p>The experience evolved adversarial behaviour.</p></li>
+</ul>
+</section>
+<section id="early-ai" class="slide level3 slide:" data-transition="none">
+<h3>Early AI</h3>
+<p><img class="rotateimg90" src="../slides/diagrams/2017-10-12 16.47.34.jpg" width="40%" align="" style="background:none; border:none; box-shadow:none;"></p>
+</section>
+<section id="machine-learning-systems-design" class="slide level3 slide:" data-transition="none">
+<h3>Machine Learning Systems Design</h3>
+<p><img class="" src="../slides/diagrams/SteamEngine_Boulton&Watt_1784_neg.png" width="50%" align="" style="background:none; border:none; box-shadow:none;"></p>
+</section>
+<section id="adversaries" class="slide level3 slide:" data-transition="none">
+<h3>Adversaries</h3>
+<ul>
+<li><p>Stuxnet</p></li>
+<li><p>Mischevious-Adversarial</p></li>
+</ul>
+</section>
+<section id="turnaround-and-update" class="slide level3 slide:" data-transition="none">
+<h3>Turnaround And Update</h3>
+<ul>
+<li><p>There is a massive need for turn around and update</p></li>
+<li><p>A redeploy of the entire system.</p>
+<ul>
+<li>This involves changing the way we design and deploy.</li>
+</ul></li>
+<li><p>Interface between security engineering and machine learning.</p></li>
+</ul>
+</section>
+<section id="peppercorns" class="slide level3 slide:" data-transition="none">
+<h3>Peppercorns</h3>
+<ul>
+<li><p>A new name for system failures which aren't bugs.</p></li>
+<li><p>Difference between finding a fly in your soup vs a peppercorn in your soup.</p></li>
+</ul>
+<!--
+### {.slide: data-transition="none"}
+
+<center><video height="600" type="video/mp4"><source src="../slides/diagrams/paolo-peppercorn.mp4" height="80%"></video></center>
+
+### {.slide: data-transition="none"}
+
+<center><video type="video/mp4"><source src="../slides/diagrams/paolo-save.mp4"></video></center>
+-->
+</section>
+<section id="uncertainty-quantification" class="slide level3">
+<h3>Uncertainty Quantification</h3>
+<ul>
+<li><p>Deep nets are powerful approach to images, speech, language.</p></li>
+<li><p>Proposal: Deep GPs may also be a great approach, but better to deploy according to natural strengths.</p></li>
+</ul>
+</section>
+<section id="uncertainty-quantification-1" class="slide level3" data-transition="None">
+<h3>Uncertainty Quantification</h3>
+<ul>
+<li><p>Probabilistic numerics, surrogate modelling, emulation, and UQ.</p></li>
+<li><p>Not a fan of AI as a term.</p></li>
+<li><p>But we are faced with increasing amounts of <em>algorithmic decision making</em>.</p></li>
+</ul>
+</section>
+<section id="ml-and-decision-making" class="slide level3" data-transition="None">
+<h3>ML and Decision Making</h3>
+<ul>
+<li><p>When trading off decisions: compute or acquire data?</p></li>
+<li><p>There is a critical need for uncertainty.</p></li>
+</ul>
+</section>
+<section id="uncertainty-quantification-2" class="slide level3" data-transition="None">
+<h3>Uncertainty Quantification</h3>
+<blockquote>
+<p>Uncertainty quantification (UQ) is the science of quantitative characterization and reduction of uncertainties in both computational and real world applications. It tries to determine how likely certain outcomes are if some aspects of the system are not exactly known.</p>
+</blockquote>
+<ul>
+<li>Interaction between physical and virtual worlds of major interest for Amazon.</li>
+</ul>
+</section>
+<section id="example-formula-one-racing" class="slide level3" data-transition="None">
+<h3>Example: Formula One Racing</h3>
+<ul>
+<li><p>Designing an F1 Car requires CFD, Wind Tunnel, Track Testing etc.</p></li>
+<li><p>How to combine them?</p></li>
+</ul>
+</section>
+<section id="mountain-car-simulator" class="slide level3">
+<h3>Mountain Car Simulator</h3>
+<p><img class="" src="../slides/diagrams/uq/mountaincar.png" width="negate" align="" style="background:none; border:none; box-shadow:none;"></p>
+</section>
+<section id="car-dynamics" class="slide level3">
+<h3>Car Dynamics</h3>
+<p><span class="math display">\[{{\bf {x}}}_{t+1} = {f}({{\bf {x}}}_{t},\textbf{u}_{t})\]</span></p>
+<p>where <span class="math inline">\(\textbf{u}_t\)</span> is the action force, <span class="math inline">\({{\bf {x}}}_t = (p_t, v_t)\)</span> is the vehicle state</p>
+</section>
+<section id="policy" class="slide level3">
+<h3>Policy</h3>
+<ul>
+<li>Assume policy is linear with parameters <span class="math inline">\(\boldsymbol{\theta}\)</span></li>
+</ul>
+<p><span class="math display">\[\pi({{\bf {x}}},\theta)= \theta_0 + \theta_p p + \theta_vv.\]</span></p>
+</section>
+<section id="emulate-the-mountain-car" class="slide level3">
+<h3>Emulate the Mountain Car</h3>
+<ul>
+<li>Goal is find <span class="math inline">\(\theta\)</span> such that</li>
+</ul>
+<p><span class="math display">\[\theta^* = arg \max_{\theta} R_T(\theta).\]</span></p>
+<ul>
+<li>Reward is computed as 100 for target, minus squared sum of actions</li>
+</ul>
+</section>
+<section id="random-linear-controller" class="slide level3">
+<h3>Random Linear Controller</h3>
+<iframe src="../slides/diagrams/uq/mountain_car_random.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+</iframe>
+</section>
+<section id="best-controller-after-50-iterations-of-bayesian-optimization" class="slide level3">
+<h3>Best Controller after 50 Iterations of Bayesian Optimization</h3>
+<iframe src="../slides/diagrams/uq/mountain_car_simulated.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+</iframe>
+</section>
+<section id="data-efficient-emulation" class="slide level3">
+<h3>Data Efficient Emulation</h3>
+<ul>
+<li><p>For standard Bayesian Optimization ignored <em>dynamics</em> of the car.</p></li>
+<li><p>For more data efficiency, first <em>emulate</em> the dynamics.</p></li>
+<li><p>Then do Bayesian optimization of the <em>emulator</em>.</p></li>
+<li><p>Use a Gaussian process to model <span class="math display">\[\Delta v_{t+1} = v_{t+1} - v_{t}\]</span> and <span class="math display">\[\Delta x_{t+1} = p_{t+1} - p_{t}\]</span></p></li>
+<li><p>Two processes, one with mean <span class="math inline">\(v_{t}\)</span> one with mean <span class="math inline">\(p_{t}\)</span></p></li>
+</ul>
+</section>
+<section id="emulator-training" class="slide level3">
+<h3>Emulator Training</h3>
+<ul>
+<li><p>Used 500 randomly selected points to train emulators.</p></li>
+<li><p>Can make proces smore efficient through <em>experimental design</em>.</p></li>
+</ul>
+</section>
+<section id="emulator-accuracy" class="slide level3">
+<h3>Emulator Accuracy</h3>
+</section>
+<section id="comparison-of-emulation-and-simulation" class="slide level3">
+<h3>Comparison of Emulation and Simulation</h3>
+<object class="svgplot" align data="../slides/diagrams/uq/emu_sim_comparison.svg">
+</object>
+</section>
+<section id="data-efficiency" class="slide level3">
+<h3>Data Efficiency</h3>
+<ul>
+<li><p>Our emulator used only 500 calls to the simulator.</p></li>
+<li><p>Optimizing the simulator directly required 37,500 calls to the simulator.</p></li>
+</ul>
+</section>
+<section id="best-controller-using-emulator-of-dynamics" class="slide level3">
+<h3>Best Controller using Emulator of Dynamics</h3>
+<iframe src="../slides/diagrams/uq/mountain_car_emulated.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+</iframe>
+<p><span class="math display">\[{f}_i\left({{\bf {x}}}\right) = \rho{f}_{i-1}\left({{\bf {x}}}\right) + \delta_i\left({{\bf {x}}}\right)\]</span></p>
+<p><span class="math display">\[{f}_i\left({{\bf {x}}}\right) = {g}_{i}\left({f}_{i-1}\left({{\bf {x}}}\right)\right) + \delta_i\left({{\bf {x}}}\right),\]</span></p>
+</section>
+<section id="best-controller-with-multi-fidelity-emulator" class="slide level3">
+<h3>Best Controller with Multi-Fidelity Emulator</h3>
+<iframe src="../slides/diagrams/uq/mountain_car_multi_fidelity.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+</iframe>
+</section>
+<section id="conclusion" class="slide level3">
+<h3>Conclusion</h3>
+<ul>
+<li><p>Artificial Intelligence and Data Science are fundamentally different.</p></li>
+<li><p>In one you are dealing with data collected by happenstance.</p></li>
+<li><p>In the other you are trying to build systems in the real world, often by actively collecting data.</p></li>
+<li><p>Our approaches to systems design are building powerful machines that will be deployed in evolving environments.</p></li>
+</ul>
+</section>
+<section id="thanks" class="slide level3">
+<h3>Thanks!</h3>
+<ul>
+<li>twitter: @lawrennd</li>
+<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
+<li><a href="http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence">Natural vs Artifical Intelligence</a></li>
+<li><a href="https://medium.com/@mijordan3/artificial-intelligence-the-revolution-hasnt-happened-yet-5e1d5812e1e7">Mike Jordan's Medium Post</a></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Transition style
+        transition: 'None', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+              { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
