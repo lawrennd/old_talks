@@ -24,12 +24,12 @@ Comments from Rich!
 CMB samples -> Life
 -->
 \include{talk-macros.tex}
-\include{./_gp/includes/what-is-a-gp.md}
+\include{_gp/includes/what-is-a-gp.md}
 
 
 ### Deep Gaussian Processes {data-transition="None"}
 
-\include{./_gp/includes/approximate-gps-short.md}
+\include{_gp/includes/approximate-gps-short.md}
 
 ### Modern Review {data-transition="None"}
 
@@ -41,18 +41,18 @@ CMB samples -> Life
 
 
 
-\include{./_deepgp/includes/deep-nn-gp.md}
-\include{./_deepgp/includes/deeptheory.md}
+\include{_deepgp/includes/deep-nn-gp.md}
+\include{_deepgp/includes/deeptheory.md}
 
-\include{./_deepgp/includes/deep-olympic.md}
-\include{./_deepgp/includes/deep-step-function.md}
-\include{./_deepgp/includes/deep-motorcycle.md}
-\include{./_deepgp/includes/deep-robot-wireless.md}
+\include{_deepgp/includes/deep-olympic.md}
+\include{_deepgp/includes/deep-step-function.md}
+\include{_deepgp/includes/deep-motorcycle.md}
+\include{_deepgp/includes/deep-robot-wireless.md}
 
-\include{./_deepgp/includes/deep-high-five.md}
-\include{./_deepgp/includes/deep-usps-digits.md}
+\include{_deepgp/includes/deep-high-five.md}
+\include{_deepgp/includes/deep-usps-digits.md}
 
-\include{./_health/includes/deep-health-model.md}
+\include{_health/includes/deep-health-model.md}
 
 
 ### At this Year's NIPS
@@ -76,7 +76,7 @@ CMB samples -> Life
 * *Gaussian Process Based Approaches for Survival Analysis*
     @Saul:thesis2016
 
-\include{./_uq/includes/uncertainty-quantification.md}
+\include{_uq/includes/uncertainty-quantification.md}
 
 ### Acknowledgments
 

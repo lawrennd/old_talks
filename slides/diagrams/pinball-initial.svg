@@ -33,9 +33,9 @@
      id="defs4210" />
   <style
      id="style6530">
-      .pin { opacity:1;fill:white;fill-opacity:1;stroke:none;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:18, 3;stroke-dashoffset:0;stroke-opacity:1;}
-      .decisionbox { opacity:1;fill:white;fill-opacity:1;stroke:none;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:18, 3;stroke-dashoffset:0;stroke-opacity:1;}
-      .ball {opacity:1;fill:white;fill-opacity:1;stroke:none;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:18, 3;stroke-dashoffset:0;stroke-opacity:1;}
+      .pin { opacity:1;fill:black;fill-opacity:1;stroke:none;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:18, 3;stroke-dashoffset:0;stroke-opacity:1;}
+      .decisionbox { opacity:1;fill:black;fill-opacity:1;stroke:none;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:18, 3;stroke-dashoffset:0;stroke-opacity:1;}
+      .ball {opacity:1;fill:black;fill-opacity:1;stroke:none;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:18, 3;stroke-dashoffset:0;stroke-opacity:1;}
     </style>
   <sodipodi:namedview
      pagecolor="#ffffff"
@@ -131,7 +131,7 @@
      r="12" />
   <circle
      class="ball"
-     style="fill:#6faddb;fill-opacity:1"
+     style="fill:#905224;fill-opacity:1"
      id="yescircle"
      cx="595"
      cy="45"
@@ -148,7 +148,7 @@
      cx="595"
      cy="45"
      r="40"
-     style="fill:#6faddb;fill-opacity:1" />
+     style="fill:#905224;fill-opacity:1" />
   <animateMotion
       xlink:href="#yescircle2"
       dur="1s"
@@ -160,8 +160,14 @@
      id="nocircle"
      cx="595"
      cy="45"
-     style="fill:#83b75e;fill-opacity:1"
+     style="fill:#7c48a1;fill-opacity:1"
      r="40" />
+  <animateMotion
+      xlink:href="#nocircle"
+      dur="0.2s"
+      begin="click"
+      fill="freeze"
+      path="M0,0" />
   <animateMotion
       xlink:href="#nocircle"
       dur="1s"
@@ -170,28 +176,28 @@
       path="M0,0 -270,0 -260,74 -280,74 -270,90 -285,180 -325,168 -350,194 -330,202 -345,310 -365,440" />
   <rect
      class="decisionbox"
-     style="fill:#6faddb;fill-opacity:1"
+     style="fill:#905224;fill-opacity:1"
      id="yesbox"
      width="125"
      height="35"
      x="165"
      y="495" />
   <text
-     style="font-family:sans-serif;fill:white;fontsize:17.5px;text-anchor:middle;text-align:center"
+     style="font-family:sans-serif;fill:black;fontsize:17.5px;text-anchor:middle;text-align:center"
      x="220"
      y="518"
      id="text7701">Yes</text>
   
   <rect
      class="decisionbox"
-     style="fill:#83b75e;fill-opacity:1"
+     style="fill:#7c48a1;fill-opacity:1"
      id="nobox"
      width="125"
      height="35"
      x="345"
      y="495" />
   <text
-     style="font-family:sans-serif;fill:white;fontsize:17.5px;text-anchor:middle;text-align:center"
+     style="font-family:sans-serif;fill:black;fontsize:17.5px;text-anchor:middle;text-align:center"
      x="410"
      y="518"
      id="text7701">No</text>
