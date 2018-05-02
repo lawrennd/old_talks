@@ -10,6 +10,7 @@ YouTubeVideo('\id')
 \define{\includehtml{filename}{width}{height}}{<iframe src="\filename" width="\width" height="\height" allowtransparency="true" frameborder="0">
 </iframe>}
 \define{\slidenotes{slidetext}{notetext}}{\notetext}
+\define{\speakernotes{text}}{}
 \define{\notes{text}}{\text}
 \define{\slides{text}}{}
 \define{\fragment{text}{type}}{\text}
@@ -48,6 +49,7 @@ YouTubeVideo('\id')
 \define{\slides{text}}{}
 \define{\fragment{text}{type}}{\text}
 \define{\fragmentindex{text}{type}{index}}{\text}
+\define{\speakernotes{text}}{}
 \define{\notes{text}}{\text}
 \define{\talksdir}{/Users/neil/lawrennd/talks}
 
@@ -90,11 +92,10 @@ YouTubeVideo('\id')
 </object>}
 
 
-\define{\notes{text}}{::: notes
-
+\define{\speakernotes{text}}{<aside class="notes">
 \text
-
-:::}
+</aside>}
+\define{\notes{text}}{}
 \define{\slides{text}}{\text}
 \define{\fragment{text}{type}}{<span class="fragment \type">\text</span>}
 \define{\fragmentindex{text}{type}{index}}{<span class="fragment \type" data-fragment-index="\index">\text</span>}

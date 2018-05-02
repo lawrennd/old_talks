@@ -39,6 +39,9 @@ transition: None
 * Example: face recognition
 
 \include{_ml/includes/deep-learning-overview.md}
+\include{_gp/includes/gp-intro-very-short.md}
+\include{_deepgp/includes/deep-olympic.md}
+
 \include{_data-science/includes/a-time-for-professionalisation.md}
 \include{_data-science/includes/the-data-crisis.md}
 
@@ -79,6 +82,9 @@ transition: None
 
 \include{_ai/includes/ml-systems-design-long.md}
 
+\include{_uq/includes/uncertainty-quantification.md}
+
+
 ### Conclusion
 
 * Artificial Intelligence and Data Science are fundamentally different.
@@ -96,4 +102,4 @@ will be deployed in evolving environments.
 * twitter: \@lawrennd
 * blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
 * [Natural vs Artifical Intelligence](http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence)
-* Mike Jordan's Medium Post
+* [Mike Jordan's Medium Post](https://medium.com/@mijordan3/artificial-intelligence-the-revolution-hasnt-happened-yet-5e1d5812e1e7)
