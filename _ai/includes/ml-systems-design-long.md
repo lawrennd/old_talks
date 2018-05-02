@@ -1,51 +1,40 @@
-### Fragility of AI Systems {.slide: data-transition="none" }
+### Fragility of AI Systems
 
 * They are componentwise built from ML Capabilities.
-
 * Each capability is independently constructed and verified.
-
     * Pedestrian detection
-	
     * Road line detection
-
 * Important for verification purposes.
 
-### Rapid Reimplementation {.slide: data-transition="none" }
+### Rapid Reimplementation
 
 * Whole systems are being deployed.
-
 * But they change their environment.
-
 * The experience evolved adversarial behaviour.
 
-### Early AI {.slide: data-transition="none" }
+### Early AI
 
 \includeimg{../slides/diagrams/2017-10-12 16.47.34.jpg}{40%}{rotateimg90}
 
-### Machine Learning Systems Design {.slide: data-transition="none" }
+### Machine Learning Systems Design
 
 \includeimg{../slides/diagrams/SteamEngine_Boulton&Watt_1784_neg.png}{50%}
 
-### Adversaries {.slide: data-transition="none" }
+### Adversaries
 
 * Stuxnet
-
 * Mischevious-Adversarial
 
-### Turnaround And Update {.slide: data-transition="none" }
+### Turnaround And Update
 
 * There is a massive need for turn around and update
-
 * A redeploy of the entire system.
-
     * This involves changing the way we design and deploy.
-
 * Interface between security engineering and machine learning.
 
-### Peppercorns {.slide: data-transition="none" }
+### Peppercorns
 
 * A new name for system failures which aren't bugs.
-
 * Difference between finding a fly in your soup vs a peppercorn in
   your soup. 
 

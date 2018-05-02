@@ -321,78 +321,78 @@ communicate
 <h3>Olympic Marathon Pinball Plot</h3>
 <object class="svgplot" align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg">
 </object>
-</section>
-<section id="data-science" class="slide level3">
-<h3>Data Science</h3>
-<ul>
-<li><p>Industrial Revolution 4.0?</p></li>
-<li><p><em>Industrial Revolution</em> (1760-1840) term coined by Arnold Toynbee, late 19th century.</p></li>
-<li><p>Maybe: But this one is dominated by <em>data</em> not <em>capital</em></p></li>
-<li><p>That presents <em>challenges</em> and <em>opportunities</em></p></li>
-</ul>
-<p>cf <a href="https://www.theguardian.com/media-network/2015/mar/05/digital-oligarchy-algorithms-personal-data">digital oligarchy</a> vs <a href="https://www.theguardian.com/media-network/2015/aug/25/africa-benefit-data-science-information">how Africa can benefit from the data revolution</a></p>
-<ul>
-<li>Apple vs Nokia: How you handle disruption.</li>
-</ul>
-</section>
-<section id="a-time-for-professionalisation" class="slide level3">
-<h3>A Time for Professionalisation?</h3>
-<ul>
-<li><p>New technologies historically led to new professions:</p>
-<ul>
-<li><p>Brunel (born 1806): Civil, mechanical, naval</p></li>
-<li><p>Tesla (born 1856): Electrical and power</p></li>
-<li><p>William Shockley (born 1910): Electronic</p></li>
-<li><p>Watts S. Humphrey (born 1927): Software</p></li>
-</ul></li>
-</ul>
-</section>
-<section id="why" class="slide level3">
-<h3>Why?</h3>
-<ul>
-<li><p>Codification of best practice.</p></li>
-<li><p>Developing trust</p></li>
-</ul>
-</section>
-<section id="where-are-we" class="slide level3">
-<h3>Where are we?</h3>
-<ul>
-<li><p>Perhaps around the 1980s of programming.</p>
-<ul>
-<li><p>We understand if, for, procedures</p></li>
-<li><p>But we don't share best practice.</p></li>
-</ul></li>
-<li><p>Let's <em>avoid</em> the over formalisation of software engineering.</p></li>
-</ul>
-</section>
-<section id="the-software-crisis" class="slide level3">
-<h3>The Software Crisis</h3>
-<blockquote>
-<p>The major cause of the software crisis is that the machines have become several orders of magnitude more powerful! To put it quite bluntly: as long as there were no machines, programming was no problem at all; when we had a few weak computers, programming became a mild problem, and now we have gigantic computers, programming has become an equally gigantic problem.</p>
-<p>Edsger Dijkstra, The Humble Programmer</p>
-</blockquote>
-</section>
-<section id="the-data-crisis" class="slide level3">
-<h3>The Data Crisis</h3>
-<blockquote>
-<p>The major cause of the data crisis is that machines have become more interconnected than ever before. Data access is therefore cheap, but data quality is often poor. What we need is cheap high quality data. That implies that we develop processes for improving and verifying data quality that are efficient.</p>
-<p>There would seem to be two ways for improving efficiency. Firstly, we should not duplicate work. Secondly, where possible we should automate work.</p>
-<p>Me</p>
-</blockquote>
-</section>
-<section id="rest-of-this-talk-two-areas-of-focus" class="slide level3">
-<h3>Rest of this Talk: Two Areas of Focus</h3>
-<ul>
-<li><p>Reusability of Data</p></li>
-<li><p>Deployment of Machine Learning Systems</p></li>
-</ul>
-</section>
-<section id="rest-of-this-talk-two-areas-of-focus-1" class="slide level3">
-<h3>Rest of this Talk: Two Areas of Focus</h3>
-<ul>
-<li><p><s>Reusability of Data</s></p></li>
-<li><p>Deployment of Machine Learning Systems</p></li>
-</ul>
+<!-- ### Data Science
+
+* Industrial Revolution 4.0?
+
+* *Industrial Revolution* (1760-1840) term coined by Arnold Toynbee,
+late 19th century.
+
+* Maybe: But this one is dominated by *data* not *capital*
+
+* That presents *challenges* and *opportunities* 
+
+cf
+[digital oligarchy](https://www.theguardian.com/media-network/2015/mar/05/digital-oligarchy-algorithms-personal-data)
+vs [how Africa can benefit from the data revolution](https://www.theguardian.com/media-network/2015/aug/25/africa-benefit-data-science-information)
+
+* Apple vs Nokia: How you handle disruption.
+
+
+### A Time for Professionalisation?
+
+* New technologies historically led to new professions:
+    * Brunel (born 1806): Civil, mechanical, naval
+    * Tesla (born 1856): Electrical and power
+    * William Shockley (born 1910): Electronic 
+    * Watts S. Humphrey (born 1927): Software
+
+### Why?
+
+* Codification of best practice.
+* Developing trust
+
+### Where are we?
+
+* Perhaps around the 1980s of programming.
+    * We understand ```if```, ```for```, and procedures
+    * But we don't share best practice.
+
+* Let's *avoid* the over formalisation of software engineering.
+
+ -->
+<!-- 
+### The Software Crisis
+
+>The major cause of the software crisis is that the machines have
+>become several orders of magnitude more powerful! To put it quite
+>bluntly: as long as there were no machines, programming was no problem
+>at all; when we had a few weak computers, programming became a mild
+>problem, and now we have gigantic computers, programming has become an
+>equally gigantic problem.
+>
+> Edsger Dijkstra, The Humble Programmer
+
+### The Data Crisis
+
+>The major cause of the data crisis is that machines have become more
+>interconnected than ever before. Data access is therefore cheap, but
+>data quality is often poor. What we need is cheap high quality
+>data. That implies that we develop processes for improving and
+>verifying data quality that are efficient.
+>
+>There would seem to be two ways for improving efficiency. Firstly, we
+>should not duplicate work. Secondly, where possible we should automate
+>work. 
+>
+> Me
+ -->
+<!-- ### Rest of this Talk: Two Areas of Focus  -->
+<!-- * Reusability of Data -->
+<!-- * Deployment of Machine Learning Systems -->
+<!-- ### Rest of this Talk: Two Areas of Focus  -->
+<!-- * <s>Reusability of Data</s> -->
+<!-- * Deployment of Machine Learning Systems -->
 <!--### Data Readiness Levels
 
 [<img class="" src="../slides/diagrams/data-science/data-readiness-levels.png" width="" align="" style="background:none; border:none; box-shadow:none;">](https://arxiv.org/pdf/1705.02245.pdf)
@@ -462,63 +462,63 @@ question or to be subject to a particular analysis.
 <h3>Deploying ML in Real World: Machine Learning Systems Design</h3>
 <ul>
 <li><p>Major new challenge for systems designers.</p></li>
-<li><p>Internet of Intelligence but currently:</p>
+<li>Internet of Intelligence but currently:
 <ul>
 <li>AI systems are <em>fragile</em></li>
 </ul></li>
 </ul>
 </section>
-<section id="fragility-of-ai-systems" class="slide level3 slide:" data-transition="none">
+<section id="fragility-of-ai-systems" class="slide level3">
 <h3>Fragility of AI Systems</h3>
 <ul>
-<li><p>They are componentwise built from ML Capabilities.</p></li>
-<li><p>Each capability is independently constructed and verified.</p>
+<li>They are componentwise built from ML Capabilities.</li>
+<li>Each capability is independently constructed and verified.
 <ul>
-<li><p>Pedestrian detection</p></li>
-<li><p>Road line detection</p></li>
+<li>Pedestrian detection</li>
+<li>Road line detection</li>
 </ul></li>
-<li><p>Important for verification purposes.</p></li>
+<li>Important for verification purposes.</li>
 </ul>
 </section>
-<section id="rapid-reimplementation" class="slide level3 slide:" data-transition="none">
+<section id="rapid-reimplementation" class="slide level3">
 <h3>Rapid Reimplementation</h3>
 <ul>
-<li><p>Whole systems are being deployed.</p></li>
-<li><p>But they change their environment.</p></li>
-<li><p>The experience evolved adversarial behaviour.</p></li>
+<li>Whole systems are being deployed.</li>
+<li>But they change their environment.</li>
+<li>The experience evolved adversarial behaviour.</li>
 </ul>
 </section>
-<section id="early-ai" class="slide level3 slide:" data-transition="none">
+<section id="early-ai" class="slide level3">
 <h3>Early AI</h3>
 <p><img class="rotateimg90" src="../slides/diagrams/2017-10-12 16.47.34.jpg" width="40%" align="" style="background:none; border:none; box-shadow:none;"></p>
 </section>
-<section id="machine-learning-systems-design" class="slide level3 slide:" data-transition="none">
+<section id="machine-learning-systems-design" class="slide level3">
 <h3>Machine Learning Systems Design</h3>
 <p><img class="" src="../slides/diagrams/SteamEngine_Boulton&Watt_1784_neg.png" width="50%" align="" style="background:none; border:none; box-shadow:none;"></p>
 </section>
-<section id="adversaries" class="slide level3 slide:" data-transition="none">
+<section id="adversaries" class="slide level3">
 <h3>Adversaries</h3>
 <ul>
-<li><p>Stuxnet</p></li>
-<li><p>Mischevious-Adversarial</p></li>
+<li>Stuxnet</li>
+<li>Mischevious-Adversarial</li>
 </ul>
 </section>
-<section id="turnaround-and-update" class="slide level3 slide:" data-transition="none">
+<section id="turnaround-and-update" class="slide level3">
 <h3>Turnaround And Update</h3>
 <ul>
-<li><p>There is a massive need for turn around and update</p></li>
-<li><p>A redeploy of the entire system.</p>
+<li>There is a massive need for turn around and update</li>
+<li>A redeploy of the entire system.
 <ul>
 <li>This involves changing the way we design and deploy.</li>
 </ul></li>
-<li><p>Interface between security engineering and machine learning.</p></li>
+<li>Interface between security engineering and machine learning.</li>
 </ul>
 </section>
-<section id="peppercorns" class="slide level3 slide:" data-transition="none">
+<section id="peppercorns" class="slide level3">
 <h3>Peppercorns</h3>
 <ul>
-<li><p>A new name for system failures which aren't bugs.</p></li>
-<li><p>Difference between finding a fly in your soup vs a peppercorn in your soup.</p></li>
+<li>A new name for system failures which aren't bugs.</li>
+<li>Difference between finding a fly in your soup vs a peppercorn in your soup.</li>
 </ul>
 <!--
 ### {.slide: data-transition="none"}

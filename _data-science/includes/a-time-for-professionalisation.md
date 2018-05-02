@@ -19,27 +19,20 @@ vs [how Africa can benefit from the data revolution](https://www.theguardian.com
 ### A Time for Professionalisation?
 
 * New technologies historically led to new professions:
-
     * Brunel (born 1806): Civil, mechanical, naval
-
     * Tesla (born 1856): Electrical and power
- 
     * William Shockley (born 1910): Electronic 
-
     * Watts S. Humphrey (born 1927): Software
 
 ### Why?
 
 * Codification of best practice.
-
 * Developing trust
 
 ### Where are we?
 
 * Perhaps around the 1980s of programming.
-
-    * We understand if, for, procedures
-
+    * We understand ```if```, ```for```, and procedures
     * But we don't share best practice.
 
 * Let's *avoid* the over formalisation of software engineering.

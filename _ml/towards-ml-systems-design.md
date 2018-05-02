@@ -83,7 +83,6 @@ transition: None
 
 \include{_uq/includes/uncertainty-quantification.md}
 
-
 ### Conclusion
 
 * Artificial Intelligence and Data Science are fundamentally different.
