@@ -2,7 +2,12 @@
 
 ### Deep GP Fit
 
-Let's see if a deep Gaussian process can help here. We will construct a deep Gaussian process with one hidden layer (i.e. one Gaussian process feeding into another). 
+\slides{* Can a Deep Gaussian process help?
+
+* Deep GP is one GP feeding into another.}
+
+
+\notes{Let's see if a deep Gaussian process can help here. We will construct a deep Gaussian process with one hidden layer (i.e. one Gaussian process feeding into another). 
 
 Build a Deep GP with an additional hidden layer (one dimensional) to fit the model.
 }
@@ -113,7 +118,7 @@ mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/olympic-marath
                 transparent=True, frameon=True)}
 
 
-### Olympic Marathon Data Deep GP {data-transition="None"}
+### Olympic Marathon Data Deep GP
 
 \includesvg{../slides/diagrams/deepgp/olympic-marathon-deep-gp.svg}
 
