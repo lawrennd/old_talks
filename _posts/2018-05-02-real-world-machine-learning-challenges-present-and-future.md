@@ -3,8 +3,8 @@ title: "Real World Machine Learning Challenges: Present and Future"
 abstract: 
 published: 2018-05-02
 venue: Sheffield ML Research Network Launch
-reveal: 2018-04-30-real-world-machine-learning-challenges-present-and-future.slides.html
-ipynb
+reveal: 2018-05-02-real-world-machine-learning-challenges-present-and-future.slides.html
+ipynb: 2018-05-02-real-world-machine-learning-challenges-present-and-future.ipynb
 layout: talk
 author:
 - family: Lawrence
