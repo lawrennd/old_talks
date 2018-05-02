@@ -1,4 +1,3 @@
-
 ###  {data-transition="none"}
 
 \includesvg{../slides/diagrams/gp/gp_prior_samples_few.svg}

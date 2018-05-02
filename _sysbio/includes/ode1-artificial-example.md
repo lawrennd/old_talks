@@ -26,10 +26,12 @@
     blackColor = 1- blackColor;
     fillColor = 1-fillColor;
   end
-  directory = '../../../gpsim/tex/diagrams/';
+  directory = '../slides/diagrams/sysbio/';
 }
 
 ###
+
+ODE1 ARTIFICIAL EXAMPLE
 
 \code{
 load ../../../gpsim/matlab/demToyProblem7.mat
@@ -100,7 +102,8 @@ for i = 1:size(indices, 1)
   %set(gca, 'fontname', 'arial', 'fontsize', 24, 'xlim', xlim, 'ylim', [0 8])
   fileName = ['toyGeneData' num2str(i)];
   printLatexPlot(fileName, directory, 0.4*textWidth);
-  includeText = [includeText '\only<' num2str(i) '>{\inputdiagram{' directory fileName '}\hfill}'];
+  includeText = [includeText '###\n\n']
+  includeText = [includeText '\includeimg{' directory fileName '}{45%}{}{left}'];
    
   figure(2), clf  
   hold on
@@ -124,11 +127,11 @@ for i = 1:size(indices, 1)
   line(xlim, [ylim(1) ylim(1)], 'color', blackColor)
   fileName = ['groundTruthTFData' num2str(i)];
   printLatexPlot(fileName, directory, 0.4*textWidth);
-  includeText = [includeText '\only<' num2str(i) '>{\inputdiagram{' directory fileName '}\hfill}'];
+  includeText = [includeText '\includeimg{' directory fileName '}{45%}{}{right}'];
 end
-    printLatexText(includeText, 'inferTFfromGeneText.tex', directory)
+    printLatexText(includeText, 'infer-tf-from-gene-text.md', directory)
 
 }
 
-include{../../../gpsim/tex/diagrams/infer-tf-from-gene-text.md}
+include{../slides/diagrams/sysbio/infer-tf-from-gene-text.md}
 

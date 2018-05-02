@@ -18,6 +18,7 @@ abstract: >
   Joint work with **Michael T. Smith**, Max Zwiessele and Mauricio Alvarez
 date: 2017-08-30
 affiliation: Amazon and University of Sheffield
+transition: None
 ---
 
 
@@ -33,13 +34,13 @@ affiliation: Amazon and University of Sheffield
 
 \include{../talk-macros.tex}
 
-\include{../_ai/includes/embodiment-factors.md}
-\include{../_data-science/includes/evolved-relationship.md}
-\include{../_ai/includes/conversation-technical.md}
-\include{../_gp/includes/gp-book.md}
-\include{../_gp/includes/gp-intro-very-short.md}
-\include{../_privacy/includes/differential-privacy-for-gps.md}
-\include{../_privacy/includes/differential-privacy-with-cloaking.md}
+\include{_ai/includes/embodiment-factors.md}
+\include{_data-science/includes/evolved-relationship.md}
+\include{_ai/includes/conversation-technical.md}
+\include{_gp/includes/gp-book.md}
+\include{_gp/includes/gp-intro-very-short.md}
+\include{_privacy/includes/differential-privacy-for-gps.md}
+\include{_privacy/includes/differential-privacy-with-cloaking.md}
 
 
 ###  Conclusions {data-background="../slides/diagrams/pres_bg.png"}

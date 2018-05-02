@@ -21,7 +21,7 @@ Dwork and Roth for a rigorous introduction to the framework.
 We have a dataset in which the inputs, $\inputMatrix$, are **public**. The
 outputs, $\dataVector$, we want to keep **private**.
 
-\includeimg{../slides/diagrams/kung_pseudo_pert.png}{65%}{negate}
+\includeimg{../slides/diagrams/privacy/kung_pseudo_pert.png}{65%}{negate}
 
 **Data consists of the heights and weights of 287 women from a census of
 the !Kung**
@@ -32,7 +32,7 @@ Hall et al. (2013) showed that one can ensure that a version of $\mappingFunctio
 function $\tilde{f}$ is $(\varepsilon, \delta)$-differentially
 private by adding a scaled sample from a GP prior.
 
-\includeimg{../slides/diagrams/hall1.png}{30%}{negate}
+\includeimg{../slides/diagrams/privacy/hall1.png}{30%}{negate}
 
 3 pages of maths ahead!
 
@@ -98,9 +98,9 @@ $d\;||\kernelMatrix^{-1}||_\infty$
 This 'works' in that it allows DP predictions...but to avoid too much
 noise, the value of $\varepsilon$ is too large (here it is 100)
 
-\includeimg{../slides/diagrams/kung_standard_simple.png}{50%}{negate}
+\includeimg{../slides/diagrams/privacy/kung_standard_simple.png}{50%}{negate}
 
-EQ kernel, $\ell = 25$ years, $\Delta=100$cm
+EQ kernel, $\lengthScale = 25$ years, $\Delta=100$cm
 
 
 ### Inducing Inputs {data-transition="None"}
@@ -108,4 +108,4 @@ EQ kernel, $\ell = 25$ years, $\Delta=100$cm
 Using sparse methods (i.e. inducing inputs) can help reduce the
 sensitivity a little. We'll see more on this later.
 
-\includeimg{../slides/diagrams/kung_inducing_simple.png}{70%}{negate}
+\includeimg{../slides/diagrams/privacy/kung_inducing_simple.png}{70%}{negate}

@@ -144,7 +144,7 @@ reasonable $\varepsilon$).
 
 ### Citibike {data-transition="None"}
 
-\includeimg{../slides/diagrams/newtable2.png}{80%}{negate} lengthscale in degrees, values
+\includeimg{../slides/diagrams/privacy/newtable2.png}{80%}{negate} lengthscale in degrees, values
 above, journey duration (in seconds)
 
 ### Cloaking and Inducing Inputs {#cloaking-and-inducing-inputs}
@@ -157,12 +157,12 @@ above, journey duration (in seconds)
 
 ### Cloaking (no) Inducing Inputs {#cloaking-no-inducing-inputs  data-transition="None"}
 
-\includeing{../slides/diagrams/cloaking-no-inducing.png}{100%}{negate}
+\includeing{../slides/diagrams/privacy/cloaking-no-inducing.png}{100%}{negate}
 
 ### Cloaking and Inducing Inputs {#cloaking-and-inducing-inputs-1
    data-transition="None"}
 
-\includeimg{../slides/diagrams/cloaking-inducing.png}{80%}{negate}
+\includeimg{../slides/diagrams/privacy/cloaking-inducing.png}{80%}{negate}
 
 ### Results {#results}
 
@@ -176,8 +176,8 @@ above, journey duration (in seconds)
 
 ### Cloaking (no) Inducing Inputs {#cloaking-no-inducing-inputs-1 data-transition="none"}
 
-\includeimg{../slides/diagrams/housing-no-inducing.png}{80%}{negate}
+\includeimg{../slides/diagrams/privacy/housing-no-inducing.png}{80%}{negate}
 
 ### Cloaking and Inducing Inputs {#cloaking-and-inducing-inputs-2 data-transition="none"}
 
-\includeimg{../slides/diagrams/housing-inducing.png}{80%}{negate}
+\includeimg{../slides/diagrams/privacy/housing-inducing.png}{80%}{negate}
