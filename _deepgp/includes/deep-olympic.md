@@ -132,9 +132,8 @@ mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/olympic-marath
     return Z
 deepgp.DeepGP.posterior_sample = posterior_sample}
 
-\helpercode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-
-\plotcode{plot.model_sample(m, scale=scale, offset=offset, samps=10, ax=ax, 
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+plot.model_sample(m, scale=scale, offset=offset, samps=10, ax=ax, 
                   xlabel='year', ylabel='pace min/km', portion = 0.225)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
