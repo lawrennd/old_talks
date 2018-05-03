@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Neil D. Lawrence">
-  <title>Real World Machine Learning Challenges: Present and Future</title>
+  <title>Towards Machine Learning Systems Design</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -35,14 +35,14 @@
     <div class="slides">
 
 <section>
-  <h1 class="title">Real World Machine Learning Challenges: Present and Future</h1>
+  <h1 class="title">Towards Machine Learning Systems Design</h1>
   <p class="author">Neil D. Lawrence</p>
 </section>
 
 <section class="slide level3">
 
-<h4 id="data-science-time-for-professionalisation">Data Science: Time for Professionalisation?</h4>
-<h4 id="section">2018-01-23</h4>
+<h4 id="towards-machine-learning-systems-design">Towards Machine Learning Systems Design</h4>
+<h4 id="section">2018-05-02</h4>
 <h4 id="neil-d.-lawrence">Neil D. Lawrence</h4>
 <h4 id="amazon-research-cambridge-and-university-of-sheffield">Amazon Research Cambridge and University of Sheffield</h4>
 <p><code>@lawrennd</code> <a href="http://inverseprobability.com">inverseprobability.com</a></p>
@@ -154,18 +154,18 @@ communicate
 <object class="svgplot" align data="../slides/diagrams/data-science/information-flow003.svg">
 </object>
 </section>
-<section id="what-does-machine-learning-do-1" class="slide level3 slide:" data-transition="none">
+<section id="what-does-machine-learning-do-1" class="slide level3">
 <h3>What does Machine Learning do?</h3>
 <ul>
-<li><p>We scale by codifying processes and automating them.</p>
+<li>We scale by codifying processes and automating them.
 <ul>
-<li><p>Ensure components are compatible (Whitworth threads)</p></li>
-<li><p>Then interconnect them as efficiently as possible.</p></li>
-<li><p>cf Colt 45, Ford Model T</p></li>
+<li>Ensure components are compatible (Whitworth threads)</li>
+<li>Then interconnect them as efficiently as possible.</li>
+<li>cf Colt 45, Ford Model T</li>
 </ul></li>
 </ul>
 </section>
-<section id="codify-through-mathematical-functions" class="slide level3 slide:" data-transition="none">
+<section id="codify-through-mathematical-functions" class="slide level3">
 <h3>Codify Through Mathematical Functions</h3>
 <ul>
 <li><p>How does machine learning work?</p></li>
@@ -174,7 +174,7 @@ communicate
 <p><span class="math display">\[ \text{odds} = \frac{\text{bought}}{\text{not bought}} \]</span></p>
 <p><span class="math display">\[ \log \text{odds}  = \beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}\]</span></p>
 </section>
-<section id="codify-through-mathematical-functions-1" class="slide level3 slide:" data-transition="none">
+<section id="codify-through-mathematical-functions-1" class="slide level3">
 <h3>Codify Through Mathematical Functions</h3>
 <ul>
 <li><p>How does machine learning work?</p></li>
@@ -182,7 +182,7 @@ communicate
 </ul>
 <p><span class="math display">\[ p(\text{bought}) =  {f}\left(\beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}\right)\]</span></p>
 </section>
-<section id="codify-through-mathematical-functions-2" class="slide level3 slide:" data-transition="none">
+<section id="codify-through-mathematical-functions-2" class="slide level3">
 <h3>Codify Through Mathematical Functions</h3>
 <ul>
 <li><p>How does machine learning work?</p></li>
@@ -193,7 +193,7 @@ communicate
 <p>We call <span class="math inline">\({f}(\cdot)\)</span> the <em>prediction function</em></p>
 </div>
 </section>
-<section id="fit-to-data" class="slide level3 slide:" data-transition="none">
+<section id="fit-to-data" class="slide level3">
 <h3>Fit to Data</h3>
 <ul>
 <li>Use an objective function</li>
@@ -206,7 +206,7 @@ communicate
 <p><span class="math display">\[{E}(\boldsymbol{\beta}) = \sum_{i=1}^{n}\left({y}_i - {f}({{\bf {x}}}_i)\right)^2\]</span></p>
 </div>
 </section>
-<section id="two-components" class="slide level3 slide:" data-transition="none">
+<section id="two-components" class="slide level3">
 <h3>Two Components</h3>
 <ul>
 <li><p>Prediction function, <span class="math inline">\({f}(\cdot)\)</span></p></li>
@@ -302,7 +302,6 @@ communicate
 <h3>Olympic Marathon Data Deep GP</h3>
 <object class="svgplot" align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp.svg">
 </object>
-<p>{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)</p>
 </section>
 <section id="olympic-marathon-data-deep-gp-1" class="slide level3" data-transition="None">
 <h3>Olympic Marathon Data Deep GP</h3>

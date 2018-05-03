@@ -1,5 +1,5 @@
 ---
-title: "Real World Machine Learning Challenges: Present and Future"
+title: "Towards Machine Learning Systems Design"
 abstract: >
   Machine learning solutions, in particular those based on deep learning methods, form an underpinning of the 
   current revolution in “artificial intelligence” that has dominated popular press headlines and is having a 
@@ -14,8 +14,8 @@ affiliation: Amazon Research Cambridge and University of Sheffield
 transition: None
 ---
 
-#### Data Science: Time for Professionalisation?
-#### 2018-01-23
+#### Towards Machine Learning Systems Design
+#### 2018-05-02
 #### Neil D. Lawrence
 #### Amazon Research Cambridge and University of Sheffield
 ```@lawrennd``` [inverseprobability.com](http://inverseprobability.com)
