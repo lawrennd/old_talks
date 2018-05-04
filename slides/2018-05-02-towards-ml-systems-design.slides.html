@@ -47,7 +47,7 @@
 <h4 id="amazon-research-cambridge-and-university-of-sheffield">Amazon Research Cambridge and University of Sheffield</h4>
 <p><code>@lawrennd</code> <a href="http://inverseprobability.com">inverseprobability.com</a></p>
 </section>
-<section id="what-is-machine-learning" class="slide level3" data-transition="none">
+<section id="what-is-machine-learning" class="slide level3">
 <h3>What is Machine Learning?</h3>
 <div class="fragment">
 <p><span class="math display">\[ \text{data} + \text{model} \rightarrow \text{prediction}\]</span></p>
@@ -73,7 +73,26 @@
 </ul>
 </div>
 </section>
-<section id="machine-learning-as-the-driver-..." class="slide level3 slide:" data-transition="none">
+<section id="what-is-machine-learning-1" class="slide level3">
+<h3>What is Machine Learning?</h3>
+<p><span class="math display">\[\text{data} + \text{model} \rightarrow \text{prediction}\]</span></p>
+<div class="fragment">
+<ul>
+<li>To combine data with a model need:</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>a prediction function</strong> <span class="math inline">\({f}(\cdot)\)</span> includes our beliefs about the regularities of the universe</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>an objective function</strong> <span class="math inline">\({E}(\cdot)\)</span> defines the cost of misprediction.</li>
+</ul>
+</div>
+</section>
+<section id="machine-learning-as-the-driver-..." class="slide level3">
 <h3>Machine Learning as the Driver ...</h3>
 <p>... of two different domains</p>
 <ol type="1">
@@ -81,7 +100,7 @@
 <li><p><em>Artificial Intelligence</em>: emulation of human behaviour.</p></li>
 </ol>
 </section>
-<section id="what-does-machine-learning-do" class="slide level3 slide:" data-transition="none">
+<section id="what-does-machine-learning-do" class="slide level3">
 <h3>What does Machine Learning do?</h3>
 <ul>
 <li>ML Automates through Data
@@ -89,8 +108,8 @@
 <li><em>Strongly</em> related to statistics.</li>
 <li>Field underpins revolution in <em>data science</em> and <em>AI</em></li>
 </ul></li>
-<li><p>With AI: logic, robotics, computer vision, speech</p></li>
-<li><p>With Data Science: databases, data mining, statistics, visualization</p></li>
+<li>With AI: logic, <em>robotics</em>, <em>computer vision</em>, <em>speech</em></li>
+<li>With Data Science: <em>databases</em>, <em>data mining</em>, <em>statistics</em>, <em>visualization</em></li>
 </ul>
 </section>
 <section id="embodiment-factors" class="slide level3">
@@ -235,32 +254,37 @@ communicate
 </section>
 <section id="section-3" class="slide level3">
 <h3></h3>
-<object class="svgplot" align data="../slides/diagrams/pinball-initial.svg">
+<object class="svgplot" align data="../slides/diagrams/pinball001.svg">
 </object>
 </section>
 <section id="section-4" class="slide level3 slide:" data-transition="none">
 <h3></h3>
-<object class="svgplot" align data="../slides/diagrams/pinball-final.svg">
+<object class="svgplot" align data="../slides/diagrams/pinball002.svg">
 </object>
 </section>
 <section id="section-5" class="slide level3" data-transition="none">
 <h3></h3>
-<object class="svgplot" align data="../slides/diagrams/gp/gp_prior_samples_few.svg">
+<object class="svgplot" align data="../slides/diagrams/gp/gp_rejection_sample001.svg">
 </object>
 </section>
 <section id="section-6" class="slide level3" data-transition="none">
 <h3></h3>
-<object class="svgplot" align data="../slides/diagrams/gp/gp_prior_samples.svg">
+<object class="svgplot" align data="../slides/diagrams/gp/gp_rejection_sample002.svg">
 </object>
 </section>
 <section id="section-7" class="slide level3" data-transition="none">
 <h3></h3>
-<object class="svgplot" align data="../slides/diagrams/gp/gp_prior_samples_data.svg">
+<object class="svgplot" align data="../slides/diagrams/gp/gp_rejection_sample003.svg">
 </object>
 </section>
 <section id="section-8" class="slide level3" data-transition="none">
 <h3></h3>
-<object class="svgplot" align data="../slides/diagrams/gp/gp_rejection_samples.svg">
+<object class="svgplot" align data="../slides/diagrams/gp/gp_rejection_sample004.svg">
+</object>
+</section>
+<section id="section-9" class="slide level3" data-transition="none">
+<h3></h3>
+<object class="svgplot" align data="../slides/diagrams/gp/gp-rejection-sample005.svg">
 </object>
 </section>
 <section id="olympic-marathon-data" class="slide level3">
@@ -318,7 +342,7 @@ communicate
 <object class="svgplot" align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-layer-1.svg">
 </object>
 </section>
-<section id="olympic-marathon-pinball-plot" class="slide level3" data-transition="None">
+<section id="olympic-marathon-pinball-plot" class="slide level3">
 <h3>Olympic Marathon Pinball Plot</h3>
 <object class="svgplot" align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg">
 </object>
@@ -538,7 +562,7 @@ question or to be subject to a particular analysis.
 <li><p>Proposal: Deep GPs may also be a great approach, but better to deploy according to natural strengths.</p></li>
 </ul>
 </section>
-<section id="uncertainty-quantification-1" class="slide level3" data-transition="None">
+<section id="uncertainty-quantification-1" class="slide level3">
 <h3>Uncertainty Quantification</h3>
 <ul>
 <li><p>Probabilistic numerics, surrogate modelling, emulation, and UQ.</p></li>
@@ -546,14 +570,14 @@ question or to be subject to a particular analysis.
 <li><p>But we are faced with increasing amounts of <em>algorithmic decision making</em>.</p></li>
 </ul>
 </section>
-<section id="ml-and-decision-making" class="slide level3" data-transition="None">
+<section id="ml-and-decision-making" class="slide level3">
 <h3>ML and Decision Making</h3>
 <ul>
 <li><p>When trading off decisions: compute or acquire data?</p></li>
 <li><p>There is a critical need for uncertainty.</p></li>
 </ul>
 </section>
-<section id="uncertainty-quantification-2" class="slide level3" data-transition="None">
+<section id="uncertainty-quantification-2" class="slide level3">
 <h3>Uncertainty Quantification</h3>
 <blockquote>
 <p>Uncertainty quantification (UQ) is the science of quantitative characterization and reduction of uncertainties in both computational and real world applications. It tries to determine how likely certain outcomes are if some aspects of the system are not exactly known.</p>
@@ -562,7 +586,7 @@ question or to be subject to a particular analysis.
 <li>Interaction between physical and virtual worlds of major interest for Amazon.</li>
 </ul>
 </section>
-<section id="example-formula-one-racing" class="slide level3" data-transition="None">
+<section id="example-formula-one-racing" class="slide level3">
 <h3>Example: Formula One Racing</h3>
 <ul>
 <li><p>Designing an F1 Car requires CFD, Wind Tunnel, Track Testing etc.</p></li>

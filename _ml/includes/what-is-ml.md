@@ -1,6 +1,6 @@
 ### What is Machine Learning?
 
-\slide{
+\slides{
 . . .
 
 $$ \text{data} + \text{model} \rightarrow \text{prediction}$$
@@ -38,7 +38,7 @@ and the reason that machine learning has become a mainstay of artificial intelli
 
 $$\text{data} + \text{model} \rightarrow \text{prediction}$$
 
-\slide{
+\slides{
 . . .
 
 * To combine data with a model need:
