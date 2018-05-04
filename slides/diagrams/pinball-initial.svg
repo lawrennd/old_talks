@@ -138,7 +138,10 @@
      r="40" />
   <animateMotion
       xlink:href="#yescircle"
-      dur="1s"
+      dur="1.4s"
+      keyPoints="0;0.05;0.05;1"
+      keyTimes="0;0.1;0.4;1"
+      calcMode="linear"
       begin="click"
       fill="freeze"
       path="M0,0 -90,0 -135,74 -156,74 -145,90 -160,180 -200,168 -225,194 -205,202 -220,310 -185,440" />
@@ -151,7 +154,10 @@
      style="fill:#905224;fill-opacity:1" />
   <animateMotion
       xlink:href="#yescircle2"
-      dur="1s"
+      dur="2s"
+      keyPoints="0;0.3;0.3;1"
+      keyTimes="0;0.5;0.8;1"
+      calcMode="linear"
       begin="click"
       fill="freeze"
       path="M0,0 -385,0 -385,74 -405,74 -395,90 -285,180 -325,168 -350,194 -330,202 -345,310 -345,440" />
@@ -164,16 +170,13 @@
      r="40" />
   <animateMotion
       xlink:href="#nocircle"
-      dur="0.2s"
+      dur="2s"
+      keyPoints="0;0.26;0.26;1"
+      keyTimes="0;0.4;0.7;1"
+      calcMode="linear"
       begin="click"
       fill="freeze"
-      path="M0,0" />
-  <animateMotion
-      xlink:href="#nocircle"
-      dur="1s"
-      begin="click"
-      fill="freeze"
-      path="M0,0 -270,0 -260,74 -280,74 -270,90 -285,180 -325,168 -350,194 -330,202 -345,310 -365,440" />
+      path="M0,0 -270,0 -270,0 -270,0 -270,0 -270,0 -270,0 -260,74 -280,74 -270,90 -285,180 -325,168 -350,194 -330,202 -345,310 -365,440" />
   <rect
      class="decisionbox"
      style="fill:#905224;fill-opacity:1"

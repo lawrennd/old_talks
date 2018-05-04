@@ -138,7 +138,10 @@
      r="40" />
   <animateMotion
      xlink:href="#yescircle"
-     dur="1s"
+     dur="1.4s"
+     keyPoints="0;0.13;0.13;1"
+     keyTimes="0;0.1;0.4;1"
+     calcMode="linear"
      begin="click"
      fill="freeze"
      path="M0,0 -90,0 -155,74 -185,74 -205,90 -235,180 -280,168 -300,194 -335,202 -350,310 -365,440" />
@@ -151,7 +154,10 @@
      style="fill:#905224;fill-opacity:1" />
   <animateMotion
      xlink:href="#yescircle2"
-     dur="1s"
+     dur="2s"
+     keyPoints="0;0.42;0.42;1"
+     keyTimes="0;0.45;0.75;1"
+     calcMode="linear"
      begin="click"
      fill="freeze"
      path="M0,0 -385,0 -385,74 -385,74 -385,90 -385,180 -385,194 -385,202 -345,310 -385,440" />
@@ -164,7 +170,10 @@
      r="40" />
   <animateMotion
      xlink:href="#nocircle"
-     dur="1s"
+     dur="2s"
+     keyPoints="0;0.28;0.28;1"
+     keyTimes="0;0.4;0.7;1"
+     calcMode="linear"
      begin="click"
      fill="freeze"
      path="M0,0 -270,0 -260,74 -240,64 -230,90 -220,180 -220,168 -215,194 -210,202 -210,310 -200,440" />
