@@ -99,7 +99,7 @@ transition: None
 
 ###
 
-\columns{\includeimg{../slides/diagrams/Steen_Doctor_and_His_Patient.jpg}}{\includeimg{../slides/diagrams/Palazzo_San_Georgio_Genova_W.jpg}{40%}{60%}
+\columns{\includeimg{../slides/diagrams/Steen_Doctor_and_His_Patient.jpg}}{\includeimg{../slides/diagrams/Palazzo_San_Georgio_Genova_W.jpg}}{40%}{60%}
 
 \speakernotes{We’ve developed institutions such as medicine and banks that ensure we understand when to trust and how to trust. Trust is critical to our mode of operation.}
 
