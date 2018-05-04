@@ -2,6 +2,7 @@
 layout: slides
 title: "Deep Probabilistic Modelling with with Gaussian Processes"
 author: Neil D. Lawrence
+transition: None
 bibliography: deep-probabilistic-modelling-with-gaussian-processes.bib
 ---
 
@@ -27,11 +28,11 @@ CMB samples -> Life
 \include{_gp/includes/what-is-a-gp.md}
 
 
-### Deep Gaussian Processes {data-transition="None"}
+### Deep Gaussian Processes 
 
 \include{_gp/includes/approximate-gps-short.md}
 
-### Modern Review {data-transition="None"}
+### Modern Review
 
 * *A Unifying Framework for Gaussian Process Pseudo-Point Approximations using Power Expectation Propagation*
     @Thang:unifying17
@@ -40,20 +41,7 @@ CMB samples -> Life
     @Damianou:thesis2015
 
 
-
-\include{_deepgp/includes/deep-nn-gp.md}
-\include{_deepgp/includes/deeptheory.md}
-
-\include{_deepgp/includes/deep-olympic.md}
-\include{_deepgp/includes/deep-step-function.md}
-\include{_deepgp/includes/deep-motorcycle.md}
-\include{_deepgp/includes/deep-robot-wireless.md}
-
-\include{_deepgp/includes/deep-high-five.md}
-\include{_deepgp/includes/deep-usps-digits.md}
-
-\include{_health/includes/deep-health-model.md}
-
+\include{_deepgp/includes/deep-gaussian-processes.md}
 
 ### At this Year's NIPS
 

@@ -14,3 +14,6 @@
 
 \includesvg{../slides/diagrams/gp/gp_rejection_samples.svg}
 
+###  {data-transition="none"}
+
+\includesvg{../slides/diagrams/gp/gp_prediction.svg}
