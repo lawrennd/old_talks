@@ -1057,6 +1057,7 @@ def correlated_height_weight(h=None, w=None, muh=1.7, varh=0.0225,
 
 #################### Session 11 ####################
 
+
 def two_point_pred(K, f, x, ax=None, ind=[0, 1],
                    conditional_linestyle = '-',
                    conditional_linecolor = [1., 0., 0.],
@@ -1248,14 +1249,67 @@ def covariance_func(kernel_function, x=None, formula=None,
     fhand = open(os.path.join(diagrams, filename + '.html'), 'w')
     fhand.write(out)
 
+def rejection_samples(kernel_function, x=None, num_few=20, num_many=10000,  diagrams='../diagrams', **kwargs):
+    """Plot samples from a GP, a small sample of data and a rejection sample."""
 
-def two_point_sample(kernel_function, diagrams='../diagrams', **args):
+    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=big_wide_figsize)
+    if x is None:
+        x = np.linspace(-1, 1, 250)[:, np.newaxis]
+    resolution = x.shape[0]
+    K = kernel_function(x, x, **kwargs)
+    f = np.random.multivariate_normal(np.zeros(resolution), K, size=num_few).T
+    #ax.set_xticks(range(1, 26, 2))
+    #ax.set_yticks([-1, 0, 1])
+    ylim = [-4, 4]
+    xlim = [x.min(), x.max()]
+    ax.set_ylim(ylim)
+    ax.set_xlim(xlim)
+    ax.set_position([0., 0., 1., 1.])
+    ax.set_axis_off()
+    h_f = ax.plot(x, f)
+    mlai.write_figure(os.path.join(diagrams, 'gp_rejection_sample001.svg'), transparent=True)
+
+    fnew = np.random.multivariate_normal(np.zeros(resolution), K, size=num_many-num_few).T
+    f = np.hstack((f, fnew))
+    h_f += ax.plot(x, fnew)
+    mlai.write_figure(os.path.join(diagrams, 'gp_rejection_sample002.svg'), transparent=True)
+
+    ind = [int(resolution/5.), int(2*resolution/3.), int(4*resolution/5.)]
+    K_data = K[ind][:, ind]
+    x_data = x[ind, :]
+    y_data = np.random.multivariate_normal(np.zeros(len(ind)), K_data, size=1).T
+    
+    h_data=ax.plot(x_data, y_data, 'o', markersize=25, linewidth=3, color=[0., 0., 0.])
+    mlai.write_figure(os.path.join(diagrams, 'gp_rejection_sample003.svg'), transparent=True)
+    delta = y_data - f[ind, :]
+    dist = (delta*delta).sum(0)
+    del_ind = np.argsort(dist)[10:]
+    for i in del_ind:
+        h_f[i].remove()
+    mlai.write_figure(os.path.join(diagrams, 'gp_rejection_sample004.svg'), transparent=True)
+
+    # This is not the numerically stable way to do this!
+    Kinv = np.linalg.inv(K_data)
+    Kinvy = np.dot(Kinv, y_data)
+    K_star = kernel_function(x_data, x, **kwargs)
+    A = np.dot(Kinv, K_star)
+    mu_f = np.dot(A.T, y_data)
+    c_f = np.diag(K - np.dot(A.T, K_star))[:, np.newaxis]
+    _ = gp_tutorial.gpplot(x,
+                           mu_f,
+                           mu_f-2*np.sqrt(c_f),
+                           mu_f+2*np.sqrt(c_f), 
+                           ax=ax)
+    mlai.write_figure(os.path.join(diagrams, 'gp_rejection_sample005.svg'), transparent=True)
+    
+    
+def two_point_sample(kernel_function, diagrams='../diagrams', **kwargs):
     """Make plots for the two data point sample example for explaining gaussian processes."""
 
     ind = [0, 1]    
     fig, ax = plt.subplots(nrows=1, ncols=2, figsize=two_figsize)
     x = np.linspace(-1, 1, 25)[:, np.newaxis]
-    K = kernel_function(x, x, **args)
+    K = kernel_function(x, x, **kwargs)
     obj = matrix(K, ax=ax[1], type='image', colormap='gray')
     ax[1].set_xlabel('$i$',fontsize=16)
     ax[1].set_ylabel('$i^\prime$',fontsize=16)

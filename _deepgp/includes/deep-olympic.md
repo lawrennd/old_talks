@@ -214,6 +214,11 @@ deepgp.DeepGP.visualize=visualize}
             diagrams='../slides/diagrams/deepgp')}
 
 
+\displaycode{import pods
+pods.notebook.display_plots('olympic-marathon-deep-gp-layer-{sample:0>1}.svg', 
+                            '../slides/diagrams/deepgp', sample=(0,1))}
+
+\slides{
 ### Olympic Marathon Data Latent 1 {data-transition="None"}
 
 \includesvg{../slides/diagrams/deepgp/olympic-marathon-deep-gp-layer-0.svg}
@@ -221,7 +226,7 @@ deepgp.DeepGP.visualize=visualize}
 ### Olympic Marathon Data Latent 2 {data-transition="None"}
 
 \includesvg{../slides/diagrams/deepgp/olympic-marathon-deep-gp-layer-1.svg}
-
+}
 \helpercode{def scale_data(x, portion):     
     scale = (x.max()-x.min())/(1-2*portion)
     offset = x.min() - portion*scale
@@ -447,6 +452,8 @@ m.visualize_pinball(ax=ax, scale=scale, offset=offset, points=30, portion=0.1,
 mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg', 
                   transparent=True, frameon=True)}
 
-### Olympic Marathon Pinball Plot {data-transition="None"}
+### Olympic Marathon Pinball Plot
 
 \includesvg{../slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg}
+
+\notes{The pinball plot shows the flow of any input ball through the deep Gaussian process. In a pinball plot a series of vertical parallel lines would indicate a purely linear function. For the olypmic marathon data we can see the first layer begins to shift from input towards the right. Note it also does so with some uncertainty (indicated by the shaded backgrounds). The second layer has less uncertainty, but bunches the inputs more strongly to the right. This input layer of uncertainty, followed by a layer that pushes inputs to the right is what gives the heteroschedastic noise.}

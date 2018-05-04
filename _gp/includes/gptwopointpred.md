@@ -4,11 +4,11 @@ np.random.seed(4949)}
 \setupcode{import teaching_plots as plot
 import pods}
 
-\include{../../_gp/includes/gaussian-predict-index-one-and-two.md}
+\include{_gp/includes/gaussian-predict-index-one-and-two.md}
 
 ### Prediction of $\mappingFunction_{2}$ from $\mappingFunction_{1}$
 
-<small>
+\slidesmall{
 -   The single contour of the Gaussian density represents the
     \colorred{joint distribution, $p(\mappingFunction_1, \mappingFunction_2)$}
 
@@ -20,7 +20,7 @@ import pods}
 
 -   Conditional density:
     \colorred{$p(\mappingFunction_2|\mappingFunction_1=?)$}
-</small>
+}
 	
 ### Prediction with Correlated Gaussians
 

@@ -654,6 +654,7 @@ class GP(ProbMapModel):
         return mu_f, c_f
         
 def posterior_f(self, X_test):
+    """Compute the posterior distribution for f in the GP"""
     K_star = compute_kernel(self.X, X_test, self.kernel, **self.kernel_args)
     A = np.dot(self.Kinv, K_star)
     mu_f = np.dot(A.T, self.y)
@@ -662,6 +663,7 @@ def posterior_f(self, X_test):
     return mu_f, C_f
 
 def update_inverse(self):
+    """Update the inverse covariance in a numerically more stable manner"""
     # Perform Cholesky decomposition on matrix
     self.R = sp.linalg.cholesky(self.K + self.sigma2*self.K.shape[0])
     # compute the log determinant from Cholesky decomposition
@@ -681,7 +683,6 @@ def compute_kernel(X, X2=None, kernel=None, **kwargs):
     K = np.zeros((X.shape[0], X2.shape[0]))
     for i in np.arange(X.shape[0]):
         for j in np.arange(X2.shape[0]):
-            
             K[i, j] = kernel(X[i, :], X2[j, :], **kwargs)
         
     return K
@@ -694,12 +695,18 @@ def compute_diag(X, kernel=None, **kwargs):
     return diagK
 
 def exponentiated_quadratic(x, x_prime, variance=1., lengthscale=1.):
-    "Exponentiated quadratic covariance function."
+    """Exponentiated quadratic covariance function."""
     r = np.linalg.norm(x-x_prime, 2)
     return variance*np.exp((-0.5*r*r)/lengthscale**2)        
 
+def eq_cov(x, x_prime, variance=1., lengthscale=1.):
+    """Exponentiated quadratic covariance function."""
+    diffx = x - x_prime
+    return variance*np.exp(-0.5*np.dot(diffx, diffx)/lengthscale**2)
+
+
 def mlp_cov(x, x_prime, variance=1., w=1., b=5., alpha=1.):
-    "Covariance function for a MLP based neural network."
+    """Covariance function for a MLP based neural network."""
     inner = np.dot(x, x_prime)*w + b
     norm = np.sqrt(np.dot(x, x)*w + b + alpha)*np.sqrt(np.dot(x_prime, x_prime)*w + b+alpha)
     arg = np.clip(inner/norm, -1, 1) # clip as numerically can be > 1
@@ -717,7 +724,6 @@ def slfm_cov(x, x_prime, W, subkernel, **kwargs):
     W = np.asarray(W)
     B = np.dot(W, W.T)
     return icm_cov(x, x_prime, B, subkernel, **kwargs)
-
 
 def add_cov(x, x_prime, kernargs):
     """Additive covariance function."""
@@ -760,68 +766,63 @@ def relu_cov(x, x_prime, variance=1., scale=1., w=1., b=5., alpha=0.):
     return variance*0.5*((1. - theta/np.pi)*inner + h(arg2, inner_2, s, alpha)/np.pi + h(arg2, inner_1, s_prime, alpha)/np.pi) 
 
 
-def eq_cov(x, x_prime, variance=1., lengthscale=1.):
-    "Polynomial covariance function."
-    diffx = x - x_prime
-    return variance*np.exp(-0.5*np.dot(diffx, diffx)/lengthscale**2)
-
 def polynomial_cov(x, x_prime, variance=1., degree=2., w=1., b=1.):
-    "Polynomial covariance function."
+    """Polynomial covariance function."""
     return variance*(np.dot(x, x_prime)*w + b)**degree
 
 def linear_cov(x, x_prime, variance=1.):
-    "Linear covariance function."
+    """Linear covariance function."""
     return variance*np.dot(x, x_prime)
 
 def bias_cov(x, x_prime, variance=1.):
-    "Bias covariance function."
+    """Bias covariance function."""
     return variance
 
 def mlp_cov(x, x_prime, variance=1., w=1., b=1.):
-    "MLP covariance function."
+    """MLP covariance function."""
     return variance*np.arcsin((w*np.dot(x, x_prime) + b)/np.sqrt((np.dot(x, x)*w +b + 1)*(np.dot(x_prime, x_prime)*w + b + 1)))
 
 def sinc_cov(x, x_prime, variance=1., w=1.):
-    "Sinc covariance function."
+    """Sinc covariance function."""
     r = np.linalg.norm(x-x_prime, 2)
     return variance*np.sinc(np.pi*w*r)
 
 def ou_cov(x, x_prime, variance=1., lengthscale=1.):
-    "Ornstein Uhlenbeck covariance function."
+    """Ornstein Uhlenbeck covariance function."""
     r = np.linalg.norm(x-x_prime, 2)
     return variance*np.exp(-r/lengthscale)        
 
 def brownian_cov(t, t_prime, variance=1.):
-    "Brownian motion covariance function."
+    """Brownian motion covariance function."""
     if t>=0 and t_prime>=0:
         return variance*np.min([t, t_prime])
     else:
         raise ValueError("For Brownian motion covariance only positive times are valid.")
 
 def periodic_cov(x, x_prime, variance=1., lengthscale=1., w=1.):
-    "Periodic covariance function"
+    """Periodic covariance function"""
     r = np.linalg.norm(x-x_prime, 2)
     return variance*np.exp(-2./(lengthscale*lengthscale)*np.sin(np.pi*r*w)**2)
 
 def ratquad_cov(x, x_prime, variance=1., lengthscale=1., alpha=1.):
-    "Rational quadratic covariance function"
+    """Rational quadratic covariance function"""
     r = np.linalg.norm(x-x_prime, 2)
     return variance*(1. + r*r/(2*alpha*lengthscale*lengthscale))**-alpha
 
 def prod_cov(x, x_prime, kerns, kern_args):
-    "Product covariance function."
+    """Product covariance function."""
     k = 1.
     for kern, kern_arg in zip(kerns, kern_args):
         k*=kern(x, x_prime, **kern_arg)
     return k
         
 def add_cov(x, x_prime, kerns, kern_args):
-    "Additive covariance function."
+    """Additive covariance function."""
     k = 0.
     for kern, kern_arg in zip(kerns, kern_args):
         k+=kern(x, x_prime, **kern_arg)
     return k
 
 def basis_cov(x, x_prime, basis, **kwargs):
-    "Basis function covariance."
+    """Basis function covariance."""
     return (basis(x, **kwargs)*basis(x_prime, **kwargs)).sum()
