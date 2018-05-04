@@ -7,41 +7,33 @@ abstract: >
   In this talk we will firstly set the landscape of machine learning, artificial intelligence and data science by describing what characteristics they share, and how they differ. We'll then shift focus to the promise and challenges associated with both Data Science and Artficial Intelligence, with particular attention paid to the potential for a "data crisis" and challenges in "machine learning systems design".
 ---
 
-### Data Analytics Perspectives: Machine Learning
-### CSaP Annual Conference, Royal Society
-### 29th June 2017
-### Neil Lawrence
-### Amazon Research Cambridge and University of Sheffield
+#### Data Analytics Perspectives: Machine Learning
+#### CSaP Annual Conference, Royal Society
+#### 29th June 2017
+#### Neil Lawrence
+#### Amazon Research Cambridge and University of Sheffield
 ```@lawrennd``` [inverseprobability.com](http://inverseprobability.com)
 
-<!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2017-06-29-data-analytics-perspectives.slides.html 2017-06-29-data-analytics-perspectives.md
--->
 
-## What is Machine Learning? 
+\include{talk-macros.tex}
+\include{_ml/includes/what-is-ml.md}
+\include{_ml/includes/data-science-vs-ai.md}
 
-data + model + compute ->  prediction
-
-## Royal Society Report
-
-<center>[Machine Learning: Power and Promise of Computers that Learn by Example](https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf)</center>
-
-## Two Phenomena underpinned by ML
+### Two Phenomena underpinned by ML
 
 * Data Science
 
 * Artificial Intelligence
 
-## Operating at Different Time Scales
+### Operating at Different Time Scales
 
-<object data="./diagrams/data-science-ai-time-frame.svg" type="image/svg+xml">
-</object>
+\includesvg{../slides/diagrams/data-science/ai-time-frame.svg}
 
-<center><font color="yellow">data science</font>&nbsp;&nbsp;<font
-color="cyan">artificial intelligence</font>  
+\center{\coloryellow{data science}&nbsp;&nbsp;\colorcyan{artificial intelligence}}
 
-## Data Science
+### Data Science
 
-## Data Science
+### Data Science
 
 * New technologies historically led to new professions:
 
@@ -54,7 +46,7 @@ color="cyan">artificial intelligence</font>
     * Watts S. Humphrey (born 1927): Software
 
 
-## The Software Crisis
+### The Software Crisis
 
 >The major cause of the software crisis is that the machines have
 >become several orders of magnitude more powerful! To put it quite
@@ -65,7 +57,7 @@ color="cyan">artificial intelligence</font>
 >
 > Edsger Dijkstra, The Humble Programmer
 
-## The Data Crisis
+### The Data Crisis
 
 >The major cause of the data crisis is that machines have become more
 >interconnected than ever before. Data access is therefore cheap, but
@@ -74,25 +66,25 @@ color="cyan">artificial intelligence</font>
 >
 > Me (born 1972)
 
-## Artificial Intelligence
+### Artificial Intelligence
 
-## AI Bubble? {.slide: data-transition="none"}
+### AI Bubble? {.slide: data-transition="none"}
 
 <center><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">If 1997 to 2001 was the dot com bubble, are we now in the dot ai bubble?</p>&mdash; Neil Lawrence (@lawrennd) <a href="https://twitter.com/lawrennd/status/880160513329688576">June 28, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js"
 charset="utf-8"></script></center>
 
-## AI Bubble? {.slide: data-transition="none"}
+### AI Bubble? {.slide: data-transition="none"}
 
 <center><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">It&#39;s not a bubble as long as it&#39;s not filled with hot air. AI is based on actual testable results and deployed in real life situations.</p>&mdash; visarga (@visarga) <a href="https://twitter.com/visarga/status/880266521045585922">June 29, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></center>
 
-## AI Bubble? {.slide: data-transition="none"}
+### AI Bubble? {.slide: data-transition="none"}
 
 <center><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">dot com was also based on real deployable technology. Boom vs bubble is driven by expectations.</p>&mdash; Neil Lawrence (@lawrennd) <a href="https://twitter.com/lawrennd/status/880307062231748608">June 29, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></center>
 
-## Artificial Intelligence {.slide: data-transition="none"}
+### Artificial Intelligence {.slide: data-transition="none"}
 
 * Challenge of empathy.
 
@@ -100,7 +92,7 @@ charset="utf-8"></script></center>
 >
 > BEIS Discussion Under Chatham House Rule
 
-## Artificial Intelligence {.slide: data-transition="none"}
+### Artificial Intelligence {.slide: data-transition="none"}
 
 * Challenge of empathy.
 
@@ -108,7 +100,7 @@ charset="utf-8"></script></center>
 >
 > Thinks me
 
-## Deploying ML in Real World: Machine Learning Systems Design {.slide: data-transition="none"}
+### Deploying ML in Real World: Machine Learning Systems Design {.slide: data-transition="none"}
 
 * Internet of Things
 
@@ -118,7 +110,7 @@ charset="utf-8"></script></center>
 
     * Example: Stuxnet
 
-## Deploying ML in Real World: Machine Learning Systems Design {.slide: data-transition="none"}
+### Deploying ML in Real World: Machine Learning Systems Design {.slide: data-transition="none"}
 
 * Internet of ~~Things~~
 
@@ -128,7 +120,7 @@ charset="utf-8"></script></center>
 
     * Example: Stuxnet
 
-## Deploying ML in Real World: Machine Learning Systems Design {.slide: data-transition="none"}
+### Deploying ML in Real World: Machine Learning Systems Design {.slide: data-transition="none"}
 
 * Internet of **People**
 
@@ -138,18 +130,18 @@ charset="utf-8"></script></center>
 
     * Example: Stuxnet
 
-## Machine Learning Systems Design
+### Machine Learning Systems Design
 
 <img src="./diagrams/SteamEngine_Boulton&Watt_1784_neg.png" width="50%" style="border:none">
 
-## Peppercorns
+### Peppercorns
 
 * A new name for system failures which aren't bugs.
 
 * Difference between finding a fly in your soup vs a peppercorn in
   your soup. 
 
-## Thanks!
+### Thanks!
 
 * twitter: @lawrennd
 * blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
