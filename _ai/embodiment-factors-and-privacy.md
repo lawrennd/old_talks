@@ -56,7 +56,7 @@ Consent is neither necessary nor sufficient for giving up privacy.-->
 
 ### Thanks!
 
-* twitter: @lawrennd
+* twitter: \@lawrennd
 * blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
 
 

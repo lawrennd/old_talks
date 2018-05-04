@@ -1,43 +1,44 @@
+\displaycode{import pods
+pods.notebook.display_plots('anne-bob-conversation{sample:0>3}.svg', 
+                            '../slides/diagrams', sample=(0,7))}
+
+
+
+\slides{
 ### Conversation {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="../slides/diagrams/anne-bob-conversation000.svg">
-</object>
+\includesvg{../slides/diagrams/anne-bob-conversation000.svg}
 
-### Conversation {.slide: data-transition="none"}
-
-<object type="image/svg+xml" data="../slides/diagrams/anne-bob-conversation001.svg">
-</object>
-
-### Conversation {.slide: data-transition="none"}
-
-<object type="image/svg+xml" data="../slides/diagrams/anne-bob-conversation002.svg">
-</object>
-
-### Conversation {.slide: data-transition="none"}
-
-<object type="image/svg+xml" data="../slides/diagrams/anne-bob-conversation003.svg">
-</object>
+\speakernotes{This can be disturbing to humans because we are used to a low bandwidth communication rate. }
 
 ### Conversation {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="../slides/diagrams/anne-bob-conversation004.svg">
-</object>
-
+\includesvg{../slides/diagrams/anne-bob-conversation001.svg}
 
 ### Conversation {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="../slides/diagrams/anne-bob-conversation005.svg">
-</object>
-
+\includesvg{../slides/diagrams/anne-bob-conversation002.svg}
 
 ### Conversation {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="../slides/diagrams/anne-bob-conversation006.svg">
-</object>
+\includesvg{../slides/diagrams/anne-bob-conversation003.svg}
+
+### Conversation {.slide: data-transition="none"}
+
+\includesvg{../slides/diagrams/anne-bob-conversation004.svg}
 
 
 ### Conversation {.slide: data-transition="none"}
 
-<object type="image/svg+xml" data="../slides/diagrams/anne-bob-conversation007.svg">
-</object>
+\includesvg{../slides/diagrams/anne-bob-conversation005.svg}
 
+
+### Conversation {.slide: data-transition="none"}
+
+\includesvg{../slides/diagrams/anne-bob-conversation006.svg}
+
+
+### Conversation {.slide: data-transition="none"}
+
+\includesvg{../slides/diagrams/anne-bob-conversation007.svg}
+}
