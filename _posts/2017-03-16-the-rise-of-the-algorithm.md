@@ -9,7 +9,6 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 reveal: 2017-03-16-the-rise-of-the-algorithm.slides.html
-
 categories:
 day: 16
 month: 3
