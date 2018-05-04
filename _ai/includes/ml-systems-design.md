@@ -1,4 +1,4 @@
-### Machine Learning Systems Design {.slide: data-transition="none" }
+### Machine Learning Systems Design
 
 * Major new challenge for systems designers.
 
@@ -6,7 +6,7 @@
 
 	* AI systems are currently *fragile*
 
-### Fragility of AI Systems {.slide: data-transition="none" }
+### Fragility of AI Systems
 
 * They are componentwise built from ML Capabilities.
 
@@ -18,7 +18,7 @@
 
 * Important for verification purposes.
 
-### Rapid Reimplementation {.slide: data-transition="none" }
+### Rapid Reimplementation
 
 * Whole systems are being deployed.
 
@@ -26,11 +26,11 @@
 
 * The experience evolved adversarial behaviour.
 
-### Machine Learning Systems Design {.slide: data-transition="none" }
+### Machine Learning Systems Design
 
 \includeimg{../slides/diagrams/SteamEngine_Boulton&Watt_1784_neg.png}{50%}
 
-### Turnaround And Update {.slide: data-transition="none" }
+### Turnaround And Update
 
 * There is a massive need for turn around and update
 
@@ -39,5 +39,4 @@
 
 * Early Example: Stuxnet.
 
-## Peppercorns {.slide: data-transition="none" }
 

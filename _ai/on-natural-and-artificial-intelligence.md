@@ -28,13 +28,13 @@ So what will be the last bastion
 - Or at least in emulating a set of actions that we regard as intelligent. Whether it’s 
 -->
 
-\include{../talk-macros.tex}
+\include{talk-macros.tex}
 
-### {.slide: data-transition="none" }
+###
 
 <center>Are we close to creating intelligence?</center>
 
-### What is Intelligence? {.slide: data-transition="none" }
+### What is Intelligence?
 
 * Poorly defined.
 
@@ -44,7 +44,7 @@ So what will be the last bastion
 
 * Automated decision making: we are continuing to progress well.
 
-### The Silicon Factor {.slide: data-transition="none" }
+### The Silicon Factor
 
 * BBC 1, London, 14th September 1980
 
@@ -52,7 +52,7 @@ So what will be the last bastion
 
 * The promise (and perils) of silicon was broadly similar to that for AI today.
 
-### Public Definition {.slide: data-transition="none" }
+### Public Definition
 
 * Doing things that humans do.
 
@@ -62,13 +62,13 @@ So what will be the last bastion
 
     * Intelligence is the stuff I can do computers can't.
 		 
-### Cybernetics and the Ratio Club {.slide: data-transition="none" }
+### Cybernetics and the Ratio Club
 
 * Cybernetics: Control and Communication in the Animal and the Machine by [Norbert Wiener](https://en.wikipedia.org/wiki/Norbert_Wiener) (1948)
 
 * [Ratio Club](https://en.wikipedia.org/wiki/Ratio_Club) members include [Alan Turing](https://en.wikipedia.org/wiki/Alan_Turing), [Jack Good](https://en.wikipedia.org/wiki/I._J._Good), [Horace Barlow](https://en.wikipedia.org/wiki/Horace_Barlow), [Donald MacKay](https://en.wikipedia.org/wiki/Donald_MacCrimmon_MacKay)
 
-### {.slide: data-transition="none" }
+###
 
 * Ideas came out of the Second World War.
 
@@ -78,7 +78,7 @@ So what will be the last bastion
 	* Post-war potential for electronic emulation of what had up until then been the preserve of an animallian nervous system. 
 
 
-### Watt's Governor {.slide: data-transition="none" }
+### Watt's Governor
 
 \includeimg{../slides/diagrams/science-holborn-viaduct.jpg}{30%}
 
@@ -87,7 +87,7 @@ So what will be the last bastion
 [On Governors](http://www.maths.ed.ac.uk/~v1ranick/papers/maxwell1.pdf), James Clerk Maxwell 1868
 
 
-### Current Situation {.slide: data-transition="none" }
+### Current Situation
 
 * How are we making computers do the things we used to associated only with humans? 
 
@@ -95,7 +95,7 @@ So what will be the last bastion
 
 * Or is it more "chess playing machines"
 
-### Answer {.slide: data-transition="none" }
+### Answer 
 
 * Recent achievements might give the sense that the answer is yes. 
 
@@ -107,28 +107,28 @@ So what will be the last bastion
 
 * All we’ve achieved for the moment is a breakthrough in *emulating intelligence*. 
 
-### Story {.slide: data-transition="none" }
+### Story
 
 * A man and his dog
 
-### Jeff and His Dog {.slide: data-transition="none" }
+### Jeff and His Dog
 
 \includeimg{../slides/diagrams/bezos_taking_my_dog.png}{50%}
 
-### {.slide: data-transition="none" }
+###
 
 \includeimg{../slides/diagrams/musk_chollet_control_reinforcement_learning.png}{50%}
 
 
-### {.slide: data-transition="none" }
+###
 
 \includeimg{../slides/diagrams/spot_nick_jeff.jpg}{50%}
 
-### {.slide: data-transition="none" }
+###
 
 \includeimg{../slides/diagrams/taleb_skin_in_the_game.png}{50%}
 
-### {.slide: data-transition="none" }
+###
 
 * Successful deployments of intelligent systems are common.
 
@@ -136,7 +136,7 @@ So what will be the last bastion
 
 * My favourite example is [Watt’s governor](https://en.wikipedia.org/wiki/Centrifugal_governor). 
 
-### Computers {.slide: data-transition="none" }
+### Computers
 
 * A hundred years ago *computers* were human beings.
 
@@ -145,12 +145,12 @@ So what will be the last bastion
 * Do we think of such a computer as intelligent?
 
 
-### {.slide: data-transition="none" }
+###
 
 <center>Are we close to creating intelligence?</center>
 
 
-### Two Answers {.slide: data-transition="none" }
+### Two Answers
 
 1. Current technology is a long way from emulating all aspects of human intelligence: there are a number of technological breakthroughs that remain before we crack the fundamental nature of human intelligence.
 
@@ -158,7 +158,7 @@ So what will be the last bastion
 
 2. More controversially, I believe that there are aspects of human intelligence that we will never be able to emulate, a preserve that remains uniquely ours. 
 
-### Review of Current Technology {.slide: data-transition="none" }
+### Review of Current Technology
  
 * Recent breakthroughs  driven by machine learning. 
 
@@ -184,7 +184,7 @@ So what will be the last bastion
 \include{../_ai/includes/deploying-ai.md}
 \include{../_ai/includes/ml-systems-design-long.md}
 
-### Artificial vs Natural Systems {.slide: data-transition="none" }
+### Artificial vs Natural Systems
 
 * Consider natural intelligence, or natural *systems*
 
@@ -192,31 +192,31 @@ So what will be the last bastion
 
 * The key difference between the two is that artificial systems are *designed* whereas natural systems are *evolved*.
 
-### Natural Systems are Evolved {.slide: data-transition="none" }
+### Natural Systems are Evolved
 
 > Survival of the fittest
 
 > ?
 
-### Natural Systems are Evolved {.slide: data-transition="none" }
+### Natural Systems are Evolved
 
 > Survival of the fittest
 >
 > [Herbet Spencer](https://en.wikipedia.org/wiki/Herbert_Spencer), 1864
 
-### Natural Systems are Evolved {.slide: data-transition="none" }
+### Natural Systems are Evolved
 
 > Non-survival of the non-fit
 >  
 >  
 
-### Mistake we Make {.slide: data-transition="none" }
+### Mistake we Make
 
 * Equate fitness for objective function.
 
 * Assume static environment and known objective. 
 
-### Engineering Systems Design {.slide: data-transition="none" }
+### Engineering Systems Design
 
 * Major component of all Engineering disciplines.
 
@@ -228,7 +228,7 @@ So what will be the last bastion
 
 * A water pump has one route through the pump.
 
-### Don't Fail {.slide: data-transition="none" }
+### Don't Fail
 
 * First criterion of a natural intelligence is *don’t fail*.
 
@@ -238,7 +238,7 @@ So what will be the last bastion
 
 * Aim to achieve that objective efficiently.
 
-### Designing out Failure {.slide: data-transition="none" }
+### Designing out Failure
 
 * Even if we wanted to incorporate *don’t fail* in some form, it is difficult to design for.
 
@@ -252,7 +252,7 @@ So what will be the last bastion
     
     * Most of our automated systems operate in controlled environments (e.g.  a factory, a set of rails.)
 
-### Deployment in Uncontrolled Environments {.slide: data-transition="none" }
+### Deployment in Uncontrolled Environments
 
 * Requires a different approach to systems design.
 
@@ -264,11 +264,11 @@ So what will be the last bastion
 
 * One that is robust to unforeseen circumstances. 
 
-### Pigeonholing {.slide: data-transition="none" }
+### Pigeonholing
 
 \includeimg{../slides/diagrams/TooManyPigeons.jpg}{60%}
 
-### Robust {.slide: data-transition="none" }
+### Robust
 
 * Need to move beyond pigeonholing tasks.
 
@@ -276,7 +276,7 @@ So what will be the last bastion
 
 \include{../_ai/includes/intelligent-system-paolo.md}
 
-### {.slide: data-transition="none" }
+###
 
 * Need to deal with uncertainty and increase robustness.
 
@@ -295,7 +295,7 @@ So what will be the last bastion
 \include{../_ai/includes/computer-conversation.md}
 
 
-### Conclusion I {.slide: data-transition="none" }
+### Conclusion I
 
 * We are a *long* way from emulating human intelligence, animal intelligence, animal motion. 
 
@@ -303,7 +303,7 @@ So what will be the last bastion
 
 * The *robustness* of natural systems is outside the scope of our current design methodologies.
 
-### Conclusion II {.slide: data-transition="none" }
+### Conclusion II
 
 * There is something quintisential about the *human* experience.
 

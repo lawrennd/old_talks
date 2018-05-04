@@ -3,6 +3,9 @@
 from IPython.lib.display import YouTubeVideo
 YouTubeVideo('\id')
 '''}
+\define{\includempfour{filename}{width}{height}}{<video width="\width" height="\height" controls preload="none">
+<source src="\filename" type="video/mp4"/>
+</video>}
 \define{\includegif{filename}{width}{class}}{<img class="\class" src="\filename" width="\width" style="background:none; border:none; box-shadow:none;">}
 \define{\includeimg{filename}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" align="\align" style="background:none; border:none; box-shadow:none;">}
 \define{\includeimgclip{filename}{clip}{width}{class}{align}}{<img class="\class" clip="\clip" src="\filename" width="\width" align="\align" style="background:none; border:none; box-shadow:none;">}
@@ -31,6 +34,11 @@ YouTubeVideo('\id')
 \block
 ```}
 \define{\slidesmall{block}}{\block}
+\define{\center{block}}{<center>\block</center>}
+\define{\right{block}}{<span align="right">\block</span>}
+\define{\coloryellow{block}}{\block}
+\define{\colorcyan{block}}{\block}
+\define{\colormagenta{block}}{\block}
 \define{\colorgreen{block}}{\block}
 \define{\colorred{block}}{\block}
 \define{\colorblue{block}}{\block}
@@ -39,7 +47,10 @@ YouTubeVideo('\id')
 
 \else
 \ifdef{notes}
-\define{\includeyoutube}{id}{width}{height}{time}}{[![](https://img.youtube.com/vi/\id/0.jpg)](https://www.youtube.com/watch?v=\id&t=\time)}
+\define{\includeyoutube{id}{width}{height}{time}}{[![](https://img.youtube.com/vi/\id/0.jpg)](https://www.youtube.com/watch?v=\id&t=\time)}
+\define{\includempfour{filename}{width}{height}}{<video width="\width" height="\height" controls preload="none">
+<source src="\filename" type="video/mp4"/>
+</video>}
 \define{\slidenotes{slidetext}{notetext}}{\notetext}
 \define{\includeimg{filename}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" align="\align" style="background:none; border:none; box-shadow:none;">}
 \define{\includeimgclip{filename}{clip}{width}{class}{align}}{<img class="\class" clip="\clip" src="\filename" width="\width" align="\align" style="background:none; border:none; box-shadow:none;">}
@@ -68,6 +79,11 @@ YouTubeVideo('\id')
 ```}
 \define{\displaycode{block}}{}
 \define{\slidesmall{block}}{\block}
+\define{\center{block}}{<center>\block</center>}
+\define{\right{block}}{<span align="right">\block</span>}
+\define{\coloryellow{block}}{\block}
+\define{\colorcyan{block}}{\block}
+\define{\colormagenta{block}}{\block}
 \define{\colorgreen{block}}{\block}
 \define{\colorred{block}}{\block}
 \define{\colorblue{block}}{\block}
@@ -75,6 +91,10 @@ YouTubeVideo('\id')
 \define{\columns{one}{two}{width1}{width2}}{<table><tr><td width="\width1">\one</td><td width="\width2">\two</td></tr></table>}
 
 \else
+\define{\includeyoutube{id}{width}{height}{time}}{<iframe width="\width" height="\height" src="https://www.youtube.com/embed/\id?start=\time" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>}
+\define{\includempfour{filename}{width}{height}}{<video width="\width" height="\height" controls preload="none">
+<source src="\filename" type="video/mp4"/>
+</video>}
 \define{\slidenotes{slidetext}{notetext}}{\slidetext}
 \define{\includeimg{filename}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" align="\align" style="background:none; border:none; box-shadow:none;">}
 \define{\includeimgclip{filename}{clip}{width}{class}{align}}{<img class="\class" clip="\clip" src="\filename" width="\width" align="\align" style="background:none; border:none; box-shadow:none;">}
@@ -107,9 +127,14 @@ YouTubeVideo('\id')
 \define{\plotcode{block}}{}
 \define{\displaycode{block}}{}
 \define{\slidesmall{block}}{<small>\block</small>}
-\define{\colorgreen{block}}{<div class="greenkey">\block</div>}
-\define{\colorred{block}}{<div class="redkey">\block</div>}
-\define{\colorblue{block}}{<div class="bluekey">\block</div>}
+\define{\center{block}}{<center>\block</center>}
+\define{\right{block}}{<span align="right">\block</span>}
+\define{\colorgreen{block}}{<font color="green">\block</font>}
+\define{\coloryellow{block}}{<font color="yellow">\block</font>}
+\define{\colorcyan{block}}{<font color="cyan">\block</font>}
+\define{\colormagenta{block}}{<font color="magenta">\block</font>}
+\define{\colorred{block}}{<font color="red">\block</font>}
+\define{\colorblue{block}}{<font color="blue">\block</font>}
 
 \define{\columns{one}{two}{width1}{width2}}{<table><tr><td width="\width1">\one</td><td width="\width2">\two</td></tr></table>}
 
