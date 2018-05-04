@@ -67,3 +67,9 @@ transition: None
 \include{_data-science/includes/data-infrastructure.md}
 
 \include{_ai/includes/ml-systems-design-long.md}
+
+### Thanks!
+
+* twitter: \@lawrennd
+* blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
+* [Mike Jordan's Medium Post](https://medium.com/@mijordan3/artificial-intelligence-the-revolution-hasnt-happened-yet-5e1d5812e1e7)
