@@ -15,15 +15,13 @@ venue: HM Treasury
 transition: None
 ---
 
-#### Towards Machine Learning Systems Design
+#### Outlook for UK AI and Machine Learning
 #### 2018-05-11
 #### Neil D. Lawrence
-#### Amazon Research Cambridge and University of Sheffield
+#### Amazon Cambridge and **University of Sheffield**
 ```@lawrennd``` [inverseprobability.com](http://inverseprobability.com)
 
 \include{talk-macros.tex}
-
-\include{talk-notation.tex}
 
 \include{_ml/includes/what-is-ml.md}
 \include{_ml/includes/data-science-vs-ai.md}
