@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Neil D. Lawrence">
+  <meta name="dcterms.date" content="2017-03-16">
+  <title>The Rise of the Algorithm</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="talks.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+      <script type="text/javascript" src="svg_mathjax.js">
+      </script>
+      <script type="text/javascript">
+          new Svg_MathJax().install();
+      </script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">The Rise of the Algorithm</h1>
+  <p class="author">Neil D. Lawrence</p>
+  <p class="date">2017-03-16</p>
+</section>
+
+<section id="section" class="slide level3">
+<h3></h3>
+<p><img class="" src="../slides/diagrams/ai/nature-go.jpg" width="50%" align="" style="background:none; border:none; box-shadow:none;"></p>
+<aside class="notes">
+Reminder of the AlphaGo achievement, introduce the challenge and how it was solved. 30 million games.
+</aside>
+</section>
+<section id="section-1" class="slide level3">
+<h3></h3>
+<table>
+<tr>
+<td width="40%">
+<img class="" src="../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="30%" align="" style="background:none; border:none; box-shadow:none;"><img class="" src="../slides/diagrams/ClaudeShannon_MF3807.jpg" width="" align="" style="background:none; border:none; box-shadow:none;">
+</td>
+<td width="60%">
+~10 gigaflops<br><br>~1 gigabit per second<br><br><br><br>~1000 teraflops?<br><br>~100 bits per second?
+</td>
+</tr>
+</table>
+<aside class="notes">
+Embodiment factors: the fundamental differences between a human and a computer
+</aside>
+</section>
+<section id="section-2" class="slide level3">
+<h3></h3>
+<table>
+<tr>
+<td width="40%">
+<img class="" src="../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="30%" align="" style="background:none; border:none; box-shadow:none;"><img class="" src="../slides/diagrams/ClaudeShannon_MF3807.jpg" width="" align="" style="background:none; border:none; box-shadow:none;">
+</td>
+<td width="60%">
+10<br><br><br><br><br><br>~1000 teraflops?<br><br>~100 bits per second?
+</td>
+</tr>
+</table>
+</section>
+<section id="section-3" class="slide level3">
+<h3></h3>
+<p><img class="" src="../slides/diagrams/640px-Marcel_Renault_1903.jpg" width="80%" align="" style="background:none; border:none; box-shadow:none;"></p>
+<aside class="notes">
+Human brain like an F1 car, but an F1 car with bicycle wheels. We have a locked in intelligence.
+</aside>
+</section>
+<section id="section-4" class="slide level3">
+<h3></h3>
+<p><img class="" src="../slides/diagrams/Caleb_McDuff_WIX_Silence_Racing_livery.jpg" width="90%" align="" style="background:none; border:none; box-shadow:none;"></p>
+<aside class="notes">
+Computers are better balanced, they are lower powered, but because they have high bandwidth communication they can deploy all their power on the track.
+</aside>
+</section>
+<section id="section-5" class="slide level3">
+<h3></h3>
+<p><img class="" src="../slides/diagrams/George-peabody-library.jpg" width="70%" align="" style="background:none; border:none; box-shadow:none;"></p>
+<aside class="notes">
+Peabody Library, laid out for human access
+</aside>
+</section>
+<section id="section-6" class="slide level3">
+<h3></h3>
+<object class="svgplot" align="80%" data="../slides/diagrams/data-science/hilbert-info-growth.svg">
+</object>
+<aside class="notes">
+Large amount of digital data accessible to all
+</aside>
+</section>
+<section id="section-7" class="slide level3">
+<h3></h3>
+<p><img class="" src="../slides/diagrams/20160609_132315.jpg" width="70%" align="" style="background:none; border:none; box-shadow:none;"></p>
+<aside class="notes">
+1970 publication by Arthur Miller: The Assault on Privacy
+</aside>
+</section>
+<section id="section-8" class="slide level3">
+<h3></h3>
+<p><img class="" src="../slides/diagrams/20160609_132338.jpg" width="70%" align="" style="background:none; border:none; box-shadow:none;"></p>
+<aside class="notes">
+All been seen before.
+</aside>
+</section>
+<section id="section-9" class="slide level3">
+<h3></h3>
+<p><img class="" src="../slides/diagrams/rapid-diagnosis-and-consultation-save-lives.png" width="90%" align="" style="background:none; border:none; box-shadow:none;"></p>
+</section>
+<section id="evolved-relationship" class="slide level3 slide:" data-transition="none">
+<h3>Evolved Relationship</h3>
+<object class="svgplot" align data="../slides/diagrams/data-science/information-flow001.svg">
+</object>
+</section>
+<section id="evolved-relationship-1" class="slide level3 slide:" data-transition="none">
+<h3>Evolved Relationship</h3>
+<object class="svgplot" align data="../slides/diagrams/data-science/information-flow002.svg">
+</object>
+</section>
+<section id="evolved-relationship-2" class="slide level3 slide:" data-transition="none">
+<h3>Evolved Relationship</h3>
+<object class="svgplot" align data="../slides/diagrams/data-science/information-flow003.svg">
+</object>
+</section>
+<section id="section-10" class="slide level3">
+<h3></h3>
+<p><img class="" src="../slides/diagrams/ai/elephant-boy-poster.jpg" width="40%" align="" style="background:none; border:none; box-shadow:none;"></p>
+<aside class="notes">
+Pyschological models of intelligence: Dual process models of Cognition: Daniel Kahneman System One and System Two. Steve Peters, Our Inner Chimp.
+</aside>
+</section>
+<section id="section-11" class="slide level3">
+<h3></h3>
+<p><img class="" src="../slides/diagrams/ai/the-new-revelation.jpg" width="60%" align="" style="background:none; border:none; box-shadow:none;"></p>
+<aside class="notes">
+Most people think of intelligence as Sherlock Holmes like deduction. But actually what we can achiee is closer to what a spiritualist might do when cold reading. Understanding of statistics, no rationalisation.
+</aside>
+</section>
+<section id="section-12" class="slide level3">
+<h3></h3>
+<p><span class="fragment fade-in"><small>Outline of the DeepFace architecture. A front-end of a single convolution-pooling-convolution filtering on the rectified input, followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected.</small></span></p>
+<p><img class="" src="../slides/diagrams/deepface_neg.png" width="100%" align="" style="background:none; border:none; box-shadow:none;"></p>
+<p align="right">
+<small>Source: DeepFace</small>
+</p>
+</section>
+<section id="section-13" class="slide level3">
+<h3></h3>
+<p><img class="" src="../slides/diagrams/576px-Early_Pinball.jpg" width="30%" align="" style="background:none; border:none; box-shadow:none;"></p>
+</section>
+<section id="section-14" class="slide level3">
+<h3></h3>
+<object class="svgplot" align data="../slides/diagrams/pinball001.svg">
+</object>
+</section>
+<section id="section-15" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot" align data="../slides/diagrams/pinball002.svg">
+</object>
+</section>
+<section id="section-16" class="slide level3">
+<h3></h3>
+<p><img class="" src="../slides/diagrams/ai/mechanical-elephant.jpg" width="80%" align="" style="background:none; border:none; box-shadow:none;"></p>
+<aside class="notes">
+So in reality what we’ve created is much more akin to a mechanical elephant. One that takes inputs and feeds back responses.
+</aside>
+</section>
+<section id="section-17" class="slide level3">
+<h3></h3>
+<p><img class="" src="../slides/diagrams/ai/the-hindoo-earth.jpg" width="70%" align="" style="background:none; border:none; box-shadow:none;"></p>
+<aside class="notes">
+Or perhaps a better analogy is that we’ve created the turtle. System Zero in the Kahneman parlance. A large data aware organ that operates at a level below our subconscious.
+</aside>
+</section>
+<section id="conversation" class="slide level3 slide:" data-transition="none">
+<h3>Conversation</h3>
+<object class="svgplot" align data="../slides/diagrams/anne-bob-conversation000.svg">
+</object>
+<aside class="notes">
+This can be disturbing to humans because we are used to a low bandwidth communication rate.
+</aside>
+</section>
+<section id="conversation-1" class="slide level3 slide:" data-transition="none">
+<h3>Conversation</h3>
+<object class="svgplot" align data="../slides/diagrams/anne-bob-conversation001.svg">
+</object>
+</section>
+<section id="conversation-2" class="slide level3 slide:" data-transition="none">
+<h3>Conversation</h3>
+<object class="svgplot" align data="../slides/diagrams/anne-bob-conversation002.svg">
+</object>
+</section>
+<section id="conversation-3" class="slide level3 slide:" data-transition="none">
+<h3>Conversation</h3>
+<object class="svgplot" align data="../slides/diagrams/anne-bob-conversation003.svg">
+</object>
+</section>
+<section id="conversation-4" class="slide level3 slide:" data-transition="none">
+<h3>Conversation</h3>
+<object class="svgplot" align data="../slides/diagrams/anne-bob-conversation004.svg">
+</object>
+</section>
+<section id="conversation-5" class="slide level3 slide:" data-transition="none">
+<h3>Conversation</h3>
+<object class="svgplot" align data="../slides/diagrams/anne-bob-conversation005.svg">
+</object>
+</section>
+<section id="conversation-6" class="slide level3 slide:" data-transition="none">
+<h3>Conversation</h3>
+<object class="svgplot" align data="../slides/diagrams/anne-bob-conversation006.svg">
+</object>
+</section>
+<section id="conversation-7" class="slide level3 slide:" data-transition="none">
+<h3>Conversation</h3>
+<object class="svgplot" align data="../slides/diagrams/anne-bob-conversation007.svg">
+</object>
+</section>
+<section id="section-18" class="slide level3">
+<h3></h3>
+<table>
+<tr>
+<td width>
+</td>
+<td width>
+</td>
+</tr>
+</table>
+<p>{<img class="" src="../slides/diagrams/Steen_Doctor_and_His_Patient.jpg" width="" align="" style="background:none; border:none; box-shadow:none;">}{<img class="60%" src="../slides/diagrams/Palazzo_San_Georgio_Genova_W.jpg" width="40%" align="" style="background:none; border:none; box-shadow:none;"></p>
+<aside class="notes">
+We’ve developed institutions such as medicine and banks that ensure we understand when to trust and how to trust. Trust is critical to our mode of operation.
+</aside>
+</section>
+<section id="section-19" class="slide level3">
+<h3></h3>
+<p><img class="" src="../slides/diagrams/rothenburg-of-the-deaf-1624164_1920.jpg" width="60%" align="" style="background:none; border:none; box-shadow:none;"></p>
+<aside class="notes">
+Current approach to security is that we are either locked away or not, this does not map well to our notion of trust.
+</aside>
+</section>
+<section id="section-20" class="slide level3">
+<h3></h3>
+<p><img class="" src="../slides/diagrams/Medievalplowingwoodcut.jpg" width="90%" align="" style="background:none; border:none; box-shadow:none;"></p>
+<aside class="notes">
+It feels very much akin to the Medieval open field system. There are two ways in which our data I stored, either on our behalf by the “Lord of the Manor” or openly akin to the common land.
+</aside>
+</section>
+<section id="section-21" class="slide level3">
+<h3></h3>
+<p><img class="" src="../slides/diagrams/elephant-1065632_1920.jpg" width="90%" align="" style="background:none; border:none; box-shadow:none;"></p>
+<aside class="notes">
+If we could understand how to translate human notions of trust into the digital world then we would be better placed to operate with our traditional freedoms intact.
+</aside>
+</section>
+<section id="thanks" class="slide level3">
+<h3>Thanks!</h3>
+<ul>
+<li>twitter: @lawrennd</li>
+<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
+</ul>
+</section>
+<section id="links" class="slide level3">
+<h3>Links</h3>
+<ul>
+<li>Articles in the Guardian are available from my <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a>
+<ul>
+<li><a href="https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy">Guardian Op-Ed on Data Trusts</a></li>
+</ul></li>
+<li><a href="http://inverseprobability.com/blog.html">My blog</a> has articles relating to this area.
+<ul>
+<li><a href="http://inverseprobability.com/2015/12/04/what-kind-of-ai/">This post on System Zero</a> and <a href="http://inverseprobability.com/2015/11/09/artificial-stupidity/">This post on the Mechanistic Fallacy</a> relate to the ideas in this talk.</li>
+<li><a href="https://arxiv.org/abs/1705.07996">Arxiv Article on Embodiment Factors</a>,</li>
+</ul></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Transition style
+        transition: 'None', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+              { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
