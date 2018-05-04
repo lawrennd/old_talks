@@ -15,7 +15,7 @@ $$\log p(\dataVector\given\inducingVector) \geq  \mathbb{E}_{p(\mappingFunctionV
 <!--frame start-->
 ### Variational marginalisation of $\mappingFunctionVector$ (another way)
 
-\raggedright{\citep{Titsias:variational09}}
+\alignright{@Titsias:variational09}
 $$p(\dataVector\given\inducingVector) = \frac{p(\dataVector \given\mappingFunctionVector)p(\mappingFunctionVector\given\inducingVector)}{p(\mappingFunctionVector\given\dataVector, \inducingVector)}$$
 \pause
 $$\log p(\dataVector\given\inducingVector) = \log p(\dataVector \given\mappingFunctionVector) + \log \frac{p(\mappingFunctionVector\given\inducingVector)}{p(\mappingFunctionVector\given\dataVector, \inducingVector)}$$
@@ -145,7 +145,7 @@ $${\color{red}\sum_{i=1}^\numData-\tfrac{1}{2\dataStd^2}\left(\kff - \kfu\Kuu^{-
 <!--frame start-->
 ### Other approximations
 
-[Subset selection]{} \raggedright{\citep{Lawrence:ivm02}}
+[Subset selection]{} \alignright{@Lawrence:ivm02}
 
 -   Random or systematic
 
@@ -164,7 +164,7 @@ $${\color{red}\sum_{i=1}^\numData-\tfrac{1}{2\dataStd^2}\left(\kff - \kfu\Kuu^{-
 <!--frame start-->
 ### Other approximations {#other-approximations}
 
-\raggedright{\citep{Quinonero:unifying05}}
+\alignright{@Quinonero:unifying05}
   {Deterministic Training Conditional (DTC)}
 
 -   Approximation to $p(\dataVector\given \inducingVector)$:
@@ -180,11 +180,11 @@ Optimization of $\inducingInputMatrix$ is difficult
 ### Other approximations {#other-approximations}
 
 [Fully Independent Training Conditional]{}
-\raggedright{\citep{Snelson:pseudo05}}
+\alignright{@Snelson:pseudo05}
 
 -   Approximation to $p(\dataVector\given \inducingVector)$:
 
--   $   p(\dataVector\given \inducingVector)  = \prod_ip(\dataVector_i\given \inducingVector) $
+-   $   p(\dataVector\given \inducingVector)  = \prod_i p(\dataVector_i\given \inducingVector) $
 
 Optimization of $\inducingInputMatrix$ is still difficult, and there are
 some weird heteroscedatic effects
