@@ -3,15 +3,15 @@ OUT=$(DATE)-$(BASE)
 all: ${BASE}.slides.html ${BASE}.notes.html ${BASE}.ipynb
 
 ${BASE}.slides.html: ${BASE}.slides.md
-	pandoc  ${PDFLAGS} -c ${CSS} --include-in-header=${HEADER} -t revealjs --bibliography=${BASE}.bib -o ${BASE}.slides.html  ${BASE}.slides.md 
+	pandoc  ${PDFLAGS} -c ${CSS} --include-in-header=${HEADER} -t revealjs --bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib -o ${BASE}.slides.html  ${BASE}.slides.md 
 	cp ${BASE}.slides.html ../slides/${OUT}.slides.html
 
 
 ${BASE}.notes.html: ${BASE}.notes.md
-	pandoc  --bibliography=${BASE}.bib -o ${BASE}.notes.html  ${BASE}.notes.md 
+	pandoc  --bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib -o ${BASE}.notes.html  ${BASE}.notes.md 
 
 ${BASE}.ipynb: ${BASE}.ipynb.md
-	pandoc  --bibliography=${BASE}.bib -o ${BASE}.tmp.md  ${BASE}.ipynb.md 
+	pandoc  --bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib -o ${BASE}.tmp.md  ${BASE}.ipynb.md 
 	notedown ${BASE}.tmp.md > ${BASE}.ipynb
 	cp ${BASE}.ipynb ../notebooks/${OUT}.ipynb
 	rm ${BASE}.tmp.md
