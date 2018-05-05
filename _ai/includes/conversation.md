@@ -42,3 +42,13 @@ pods.notebook.display_plots('anne-bob-conversation{sample:0>3}.svg',
 
 \includesvg{../slides/diagrams/anne-bob-conversation007.svg}
 }
+
+###
+
+\includeimg{./diagrams/Classic_baby_shoes.jpg}{60%}
+
+\aligncenter{*For sale: baby shoes, never worn.*}
+
+### Heider and Simmel (1944)
+
+\includeyoutube{8FIEZXMUM2I}{840}{630}{7}

@@ -23,11 +23,15 @@ transition: None
 
 \include{talk-macros.tex}
 
+\notes{The aim of this presentation is give a sense of the current situation in machine learning and artificial intelligence as well as some perspective on the immediate outlook for the field.}
+
 \include{_ml/includes/what-is-ml.md}
 \include{_ml/includes/data-science-vs-ai.md}
 \include{_ai/includes/embodiment-factors.md}
 \include{_data-science/includes/evolved-relationship.md}
 \include{_ml/includes/what-does-machine-learning-do.md}
+
+\include{_ai/includes/embodiment-and-narrative.md}
 
 ### Deep Learning
 
@@ -37,7 +41,12 @@ transition: None
 
 * Example: face recognition
 
+
 \include{_ml/includes/deep-learning-overview.md}
+
+### Uncertainty and Learning
+
+### Comparison with Human Learning & Embodiment
 
 \include{_data-science/includes/a-time-for-professionalisation.md}
 \include{_data-science/includes/the-data-crisis.md}
@@ -46,23 +55,13 @@ transition: None
 
 ### Rest of this Talk: Two Areas of Focus
 
-* Reusability of Data
+* Data Infrastructure
 
 * Deployment of Machine Learning Systems
 
-### Rest of this Talk: Two Areas of Focus
-
-* <s>Reusability of Data</s>
-
-* Deployment of Machine Learning Systems
-
-* Deployment of Machine Learning Systems
-
-\include{_data-science/includes/data-readiness-levels.md}
-
-
-\include{_data-science/includes/data-trusts.md}
 \include{_data-science/includes/data-infrastructure.md}
+\include{_data-science/includes/data-readiness-levels.md}
+\include{_data-science/includes/data-trusts.md}
 
 \include{_ai/includes/ml-systems-design-long.md}
 
