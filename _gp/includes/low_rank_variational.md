@@ -4,6 +4,7 @@
 $$\log p(\dataVector\given\inducingVector) = \log\int p(\dataVector \given\mappingFunctionVector)p(\mappingFunctionVector\given\inducingVector,\inputMatrix)\text{d}\mappingFunctionVector$$
 
 \pause
+
 $$\log p(\dataVector\given\inducingVector) = \log \mathbb{E}_{p(\mappingFunctionVector\given \inducingVector,\inputMatrix)}\left[p(\dataVector \given\mappingFunctionVector)\right]$$
 \pause
 $$\log p(\dataVector\given\inducingVector) \geq  \mathbb{E}_{p(\mappingFunctionVector\given \inducingVector,\inputMatrix)}\left[\log p(\dataVector \given\mappingFunctionVector)\right]\triangleq \log\widetilde p(\dataVector\given \inducingVector)$$

@@ -9,7 +9,7 @@
 
 ### 
 
-\includeimg{../slides/diagrams/576px-Early_Pinball.jpg}{30%}
+\includeimg{../slides/diagrams/576px-Early_Pinball.jpg}{50%}
 
 \notes{We can think of what these models are doing as being similar to early pin ball machines. In a neural network, we input a number (or numbers), whereas in pinball, we input a ball. The location of the ball on the left-right axis can be thought of as the number. As the ball falls through the machine, each layer of pins can be thought of as a different layer of neurons. Each layer acts to move the ball from left to right. 
 
