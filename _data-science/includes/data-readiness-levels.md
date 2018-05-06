@@ -44,3 +44,26 @@ question or to be subject to a particular analysis.
 * Data integration?
 * At the end of Grade A it's ready for data platforms such as RAMP, Kaggle, define a *task* in OpenML.
 
+### Recursive Effects
+
+* Grade A may also require:
+    * active collection of new data.
+    * rebalancing of data to ensure fairness
+	* annotation of data by human experts 
+	* revisiting the collection (and running through the appropriate stages again)
+
+### Contribute!
+
+* <http://data-readiness.org>
+
+
+### Also ...
+
+* Encourage greater interaction between application domains and data scientists
+
+* Encourage *visualization* of data
+
+* Incentivise the delivery of data.
+
+* Analogies: For Software Engineers [describe data science as *debugging*](http://inverseprobability.com/2017/03/14/data-science-as-debugging).
+

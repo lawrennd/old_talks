@@ -1,5 +1,5 @@
-\displaycode{import pods
-pods.notebook.display_plots('information-flow{sample:0>3}.svg', 
+\setupcode{import pods}
+\displaycode{pods.notebook.display_plots('information-flow{sample:0>3}.svg', 
                             '../slides/diagrams/data-science', sample=(1,3))}
 
 \slides{
