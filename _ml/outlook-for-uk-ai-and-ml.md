@@ -71,6 +71,8 @@ transition: None
 
 \include{_data-science/includes/data-trusts.md}
 
+\include{_ml/includes/resolve-deploy-innovate.md}
+
 \include{_ai/includes/ml-systems-design-long.md}
 
 ### Thanks!
