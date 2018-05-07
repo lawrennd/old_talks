@@ -1,25 +1,25 @@
 ### "Embodiment Factors"
 
 <table>
-  <tr>
-    <td></td>
-    <td align="center">\includeimg{../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg}{60%}{}{center}</td>
-    <td align="center">\includeimg{../slides/diagrams/ClaudeShannon_MFO3807.jpg}{100%}{}{center}</td>
-  </tr>
-  <tr>
+ <tr>
+  <td></td>
+  <td align="center">\includeimg{../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg}{80%}{}{center}</td>
+  <td align="center">\includeimg{../slides/diagrams/ClaudeShannon_MFO3807.jpg}{50%}{}{center}</td>
+ </tr>
+ <tr>
   <td>compute</td>
-  <td align="center">$$\approx 10 \text{gigaflops}$$</td><td align="center">$$\approx 1000 \text{teraflops}$$</td>
-  </tr>
-  <tr>
-    <td>communicate</td>
-    <td align="center">$$\approx 1 \text{gigbit/s}$$</td>
-    <td align="center">$$\approx 100 \text{bit/s}$$</td>
-  </tr>
-  <tr>
-    <td>(compute/communicate)</td>
-    <td align="center">$$10$$</td>
-    <td align="center">$$\approx 10^{13}$$</td>
-  </tr>
+  <td align="center">$$\approx 10 \text{ gigaflops}$$</td><td align="center">$$\approx 14 \text{ teraflops}$$</td>
+ </tr>
+ <tr>
+  <td>communicate</td>
+  <td align="center">$$\approx 1 \text{ gigbit/s}$$</td>
+  <td align="center">$$\approx 100 \text{ bit/s}$$</td>
+ </tr>
+ <tr>
+  <td>(compute/communicate)</td>
+  <td align="center">$$10$$</td>
+  <td align="center">$$\approx 10^{13}$$</td>
+ </tr>
 </table>
 
 \slides{See ["Living Together: Mind and Machine Intelligence"](https://arxiv.org/abs/1705.07996)}
@@ -42,6 +42,6 @@ In contrast, our computers have less computational power, but they can communica
 
 For humans, that means much of our computation should be dedicated to considering *what* we should compute. To do that efficiently we need to model the world around us. The most complex thing in the world around us is other humans. So it is no surprise that we model them. We second guess what their intentions are, and our communication is only necessary when they are departing from how we model them. Naturally, for this to work well, we need to understand those we work closely with. So it is no surprise that social communication, social bonding, forms so much of a part of our use of our limited bandwidth. 
 
-There is a second effect here, our need to anthropomorphise objects around us. Our tendency to model our fellow humans extends even into our pets as well as inanimate objects around us, such as computers or even our cars. This tendency to overinterpret could be a consequence of our limited ability to communicate. 
+There is a second effect here, our need to anthropomorphise objects around us. Our tendency to model our fellow humans extends to when we interact with other entities in our environment. To our pets as well as inanimate objects around us, such as computers or even our cars. This tendency to overinterpret could be a consequence of our limited ability to communicate. 
 
 For more details see this paper ["Living Together: Mind and Machine Intelligence"](https://arxiv.org/abs/1705.07996), and this [TEDx talk](http://inverseprobability.com/talks/lawrence-tedx17/living-together.html).}
