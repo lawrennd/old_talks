@@ -29,6 +29,7 @@ transition: None
 
 \notes{This presentation represents my personal opinion as an academic with 20 years experience in machine learning, computational biology and data science. This is not in any sense *Amazon* policy, but since September 2016 I have been on leave of absence at Amazon.}
 
+\include{_data-science/includes/gartner-hype-cycle-bd-ds-iot-ml.md}
 \include{_ml/includes/what-is-ml.md}
 \include{_ml/includes/data-science-vs-ai.md}
 \include{_ai/includes/embodiment-factors.md}

@@ -15,7 +15,7 @@ transition: None
 ```@lawrennd``` [inverseprobability.com](http://inverseprobability.com)
 
 \include{talk-macros.tex}
-\include{_data-science/includes/gartner-hype-cycle-ml-ai-ds.md}
+\include{_data-science/includes/gartner-hype-cycle-bd-ds-iot-ml.md}
 
 
 ### Machine Learning

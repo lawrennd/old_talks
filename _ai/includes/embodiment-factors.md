@@ -1,19 +1,47 @@
 ### "Embodiment Factors"
 
 <table>
-<tr><td></td><td align="center">
-<img src="../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="60%" style="background:none; border:none; box-shadow:none;" align="center">
-</td>
-<td align="center">
-<img src="../slides/diagrams/ClaudeShannon_MFO3807.jpg" width="100%" style="background:none; border:none; box-shadow:none;" align="center">
-</td>
-</tr>
-<tr>
-<td>compute</td><td align="center">~10 gigaflops</td><td align="center">~ 1000 teraflops?</td>
-</tr>
-<tr>
-<td>communicate</td><td align="center">~1 gigbit/s</td><td align="center">~ 100 bit/s</tr>
-<td>(compute/communicate)</td><td align="center">10</td><td align="center">~ 10<sup>13</sup></tr>
+  <tr>
+    <td></td>
+    <td align="center">\includeimg{../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg}{60%}{}{center}</td>
+    <td align="center">\includeimg{../slides/diagrams/ClaudeShannon_MFO3807.jpg}{100%}{}{center}</td>
+  </tr>
+  <tr>
+  <td>compute</td>
+  <td align="center">$$\approx 10 \text{gigaflops}$$</td><td align="center">$$\approx 1000 \text{teraflops}$$</td>
+  </tr>
+  <tr>
+    <td>communicate</td>
+    <td align="center">$$\approx 1 \text{gigbit/s}$$</td>
+    <td align="center">$$\approx 100 \text{bit/s}$$</td>
+  </tr>
+  <tr>
+    <td>(compute/communicate)</td>
+    <td align="center">$$10$$</td>
+    <td align="center">$$\approx 10^{13}$$</td>
+  </tr>
 </table>
 
-See ["Living Together: Mind and Machine Intelligence"](https://arxiv.org/abs/1705.07996)
+\slides{See ["Living Together: Mind and Machine Intelligence"](https://arxiv.org/abs/1705.07996)}
+
+\notes{There is a fundamental limit placed on our intelligence based on our ability to communicate. Claude Shannon founded the field of information theory. The clever part of this theory is it allows us to separate our measurement of information from what the information pertains to[^knowledge-representation].
+
+[^knowledge-representation]: the challenge of understanding what it pertains to is known as knowledge representation). 
+
+Shannon measured information in bits. One bit of information is the amount of information I pass to you when I give you the result of a coin toss. Shannon was also interested in the amount of information in the English language. He estimated that on average a word in the English language contains XX bits of information. 
+
+Given typical speaking rates, that gives us an estimate of our ability to communicate of around 100 bits per second. Computers on the other hand can communicate much more rapidly. Current wired network speeds are around a billion bits per second, ten million times faster. 
+
+When it comes to compute though, our best estimates indicate our computers are slower. A typical modern computer can process make around 2 billion floating point operations per second, each floating point operation involves a 64 bit number. So the computer is processing around 120 billion bits per second. 
+
+It's difficult to get similar estimates for humans, but by some estimates the amount of compute we would require to *simulate* a human brain is equivalent to that in the UK's fastest computer, the MET office machine in Exeter, which in 2018 ranks as the 11th fastest computer in the world. That machine simulates the world's weather each morning, and then simulates the world's climate. It is a ** petaflop machine. 
+
+So when it comes to our ability to compute we are extraordinary, not compute in our conscious mind, but the underlying neuron firings that underpin both our consciousness, our sbuconsciousness as well as our motor control etc. By analogy I sometimes like to think of us as a Formula One engine. But in terms of our ability to deploy that computation in actual use, to share the results of what we have inferred, we are very limited. So when you imagine the F1 car that represents a psyche, think of an F1 car with bicycle wheels.
+
+In contrast, our computers have less computational power, but they can communicate fare more fluidly. They are more like a go-kart, less well powered, but with tires that allow them to deploy that power.
+
+For humans, that means much of our computation should be dedicated to considering *what* we should compute. To do that efficiently we need to model the world around us. The most complex thing in the world around us is other humans. So it is no surprise that we model them. We second guess what their intentions are, and our communication is only necessary when they are departing from how we model them. Naturally, for this to work well, we need to understand those we work closely with. So it is no surprise that social communication, social bonding, forms so much of a part of our use of our limited bandwidth. 
+
+There is a second effect here, our need to anthropomorphise objects around us. Our tendency to model our fellow humans extends even into our pets as well as inanimate objects around us, such as computers or even our cars. This tendency to overinterpret could be a consequence of our limited ability to communicate. 
+
+For more details see this paper ["Living Together: Mind and Machine Intelligence"](https://arxiv.org/abs/1705.07996), this blog post []() and this [TEDx talk](http://inverseprobability.com/talks/lawrence-tedx17/living-together.html).}
