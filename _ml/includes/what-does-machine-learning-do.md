@@ -1,13 +1,14 @@
-
 ### What does Machine Learning do?
-
+\slides{
 * Automation scales by codifying processes and automating them.
 * Need:
     * Interconnected components
 	* Compatible components
 * Early examples:
     * cf Colt 45, Ford Model T
+}
 
+\notes{Any process of automation allows us to scale what we do by codifying a process in some way that makes it efficient and repeatable. Machine learning automates by emulating human (or other actions) found in data. Machine learning codifies in the form of a mathematical function that is learnt by a computer. If we can create these mathematical functions in ways in which they can interconnect, then we can also build systems.}
 
 ### Codify Through Mathematical Functions
 
