@@ -12,7 +12,7 @@ author: Neil D. Lawrence
 \include{../_ai/includes/marcel-renault.md}
 \include{../_ai/includes/caleb-mcduff.md}
 \include{../_ai/includes/conversation.md}
-\include{../_data-science/includes/information-growth.md}
+\include{../_data-science/includes/data-science/information-growth.md}
 \include{../_ai/includes/baby-shoes.md}
 \include{../_data-science/includes/evolved-relationship.md}
 \include{../_ai/includes/computer-conversation.md}
