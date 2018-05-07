@@ -44,4 +44,4 @@ For humans, that means much of our computation should be dedicated to considerin
 
 There is a second effect here, our need to anthropomorphise objects around us. Our tendency to model our fellow humans extends even into our pets as well as inanimate objects around us, such as computers or even our cars. This tendency to overinterpret could be a consequence of our limited ability to communicate. 
 
-For more details see this paper ["Living Together: Mind and Machine Intelligence"](https://arxiv.org/abs/1705.07996), this blog post []() and this [TEDx talk](http://inverseprobability.com/talks/lawrence-tedx17/living-together.html).}
+For more details see this paper ["Living Together: Mind and Machine Intelligence"](https://arxiv.org/abs/1705.07996), and this [TEDx talk](http://inverseprobability.com/talks/lawrence-tedx17/living-together.html).}
