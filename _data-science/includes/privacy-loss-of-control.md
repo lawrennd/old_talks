@@ -18,7 +18,7 @@
 * can become more sinister when the target of the marketing is well understood and the (digital) environment of the target is also so well controlled
 
 
-### Free Will {.slide: data-transition="none"}
+### Free Will 
 
 *  What does it mean if a computer can predict our individual behavior better than we ourselves can?
 
