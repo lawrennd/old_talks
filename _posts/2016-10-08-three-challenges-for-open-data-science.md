@@ -1,4 +1,5 @@
 ---
+title: Three Challenges for Open Data Science
 abstract: >
   Data science presents new opportunities but also new challenges. In
   this talk we will focus on three separate challenges for data
@@ -34,7 +35,6 @@ published: 2016-10-08
 reveal: 2016-10-08-data-science-challenges.slides.html
 reveal-md: 2016-10-08-data-science-challenges.md
 section: pre
-title: Three Challenges for Open Data Science
 venue: Open Data Science Conference
 year: '2016'
 ---
