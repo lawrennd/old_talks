@@ -11,8 +11,9 @@ author:
   url: http://inverseprobability.com
 categories:
 - Lawrence-tedx17
-link1: https://arxiv.org/abs/1705.07996
-label1: Paper on "Living Together: Mind and Machine Intelligence"
+extras:
+- link: https://arxiv.org/abs/1705.07996
+  label: Paper on Mind and Machine Intelligence
 youtube: Bn-33vv-cmY
 key: Lawrence-tedx17
 layout: talk
