@@ -1,3 +1,3 @@
-BASE=machine-learning-and-the-data-science-process
+BASE=data-science-challenges
 include ../make-talk-flags.mk
 include ../make-talk.mk

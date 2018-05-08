@@ -39,11 +39,7 @@ $$ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$
 * Data preprocessing: Internet of Intelligence.
 
 \include{_ai/includes/embodiment-factors.md}
-
-### Evolved Relationship 
-
-\includesvg{../slides/diagrams/data-science/information-flow003.svg}
-
+\include{_data-science/includes/evolved-relationship.md}
 
 ### Effects
 
@@ -71,6 +67,8 @@ $$ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$
 
 3. Privacy, loss of control, marginalisation
 
+4. Deploying AI in the real world.
+
 ### Challenges {.slide: data-transition="none"}
 
 1. ~~Paradoxes of the Data Society~~
@@ -86,7 +84,7 @@ $$ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$
 
 There's a sea of data, but most of it is undrinkable
 
-<img src="./diagrams/sea-water-ocean-waves.jpg" width="50%">
+\includeimg{../slides/diagrams/sea-water-ocean-waves.jpg}{50%}
 
 We require data-desalination before it can be consumed!
 
