@@ -5,11 +5,9 @@ author: Neil D. Lawrence
 affiliation: Amazon and University of Sheffield
 ---
 
-\include{./talk-macros.tex}
+\include{talk-macros.tex}
 
-
-\include{./_data-science/includes/lies-damned-lies.md}
-
+\include{_data-science/includes/lies-damned-lies.md}
 
 ### Background: Big Data
 
@@ -19,41 +17,15 @@ affiliation: Amazon and University of Sheffield
 
 * Particular opportunities, in challenging areas such as *mental health*.
 
-\include{./_data-science/includes/evolved-relationship.md}
-\include{./_ai/includes/embodiment-factors.md}
+\include{_data-science/includes/evolved-relationship.md}
+\include{_ai/includes/embodiment-factors.md}
 
 
 ### Evolved Relationship 
 
-\includesvg{./slides/diagrams/data-science-information-flow_neg003.svg}
+\includesvg{../slides/diagrams/data-science-information-flow_neg003.svg}
 
-
-### Effects
-
-* This phenomenon has already revolutionised biology.
-
-* Large scale data acquisition and distribution.
-
-* Transcriptomics, genomics, epigenomics, 'rich phenomics'.
-
-* Great *promise* for personalized health.
-
-### Societal Effects
-
-* Automated decision making within the computer based only on the data.
-
-* A requirement to better understand our own subjective biases to ensure that the human to computer interface formulates the correct conclusions from the data.
-
-* Particularly important where treatments are being prescribed.
-
-* But what is a treatment in the modern era: interventions could be far more subtle.
-
-### Societal Effects
-
-* Shift in dynamic from the direct pathway between human and data to indirect pathway between human and data via the computer
-
-* This change of dynamics gives us the modern and emerging domain of data science
-
+\include{_data-science/includes/societal-effects.md}
 
 ### Challenges
 
@@ -63,19 +35,7 @@ affiliation: Amazon and University of Sheffield
 
 3. Privacy, loss of control, marginalization
 
-
 \include{./_data-science/includes/breadth-or-depth.md}
-
-### Also need
-
-* More classical statistics!
-    * Like the 'paperless office'
-
-* A better characterization of human (see later)
-
-* Larger studies (100,000 genome)
-    * Combined with complex models: algorithmic challenges
-
 \include{./_data-science/includes/value-of-data.md}
 \include{./_data-science/includes/data-credit-allocation.md}
 \include{./_data-science/includes/privacy-loss-of-control.md}

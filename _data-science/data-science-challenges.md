@@ -45,26 +45,8 @@ abstract: >
 
 \includesvg{../slides/diagrams/data-science/information-flow004.svg}
 
-### Effects
 
-* This phenomenon has already revolutionised biology.
-
-* Large scale data acquisition and distribution.
-
-* Transcriptomics, genomics, epigenomics, 'rich phenomics'.
-
-
-### Societal Effects
-
-* Automated decision making within the computer based only on the data.
-
-* A requirement to better understand our own subjective biases to ensure that the human to computer interface formulates the correct conclusions from the data.
-
-### Societal Effects
-
-* Shift in dynamic from the direct pathway between human and data to indirect pathway between human and data via the computer
-
-* This change of dynamics gives us the modern and emerging domain of data science
+\include{_data-science/includes/societal-effects.md}
 
 
 ### Challenges

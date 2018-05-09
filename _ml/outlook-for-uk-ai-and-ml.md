@@ -65,8 +65,10 @@ transition: None
 
 * Deployment of Machine Learning Systems
 
-\include{_data-science/includes/data-infrastructure.md}
+<!--\include{_data-science/includes/data-infrastructure.md}-->
 \include{_data-science/includes/data-readiness-levels.md}
+\include{_data-science/includes/data-sciene-as-debugging.md}
+\include{_health/includes/rolls-royce-analogy.md}
 \include{_data-science/includes/gdpr.md}
 
 \include{_ai/includes/government-reports.md}
