@@ -33,11 +33,12 @@ transition: None
 \include{_ml/includes/what-is-ml.md}
 \include{_ml/includes/data-science-vs-ai.md}
 \include{_ai/includes/embodiment-factors.md}
-\include{_data-science/includes/evolved-relationship.md}
+\include{_data-science/includes/evolved-relationship-society.md}
 \include{_data-science/includes/lies-damned-lies.md}
 \include{_ml/includes/what-does-machine-learning-do.md}
 
 \include{_ai/includes/embodiment-and-narrative.md}
+
 
 ### Deep Learning
 

@@ -3,8 +3,8 @@
 <table>
  <tr>
   <td></td>
-  <td align="center">\includeimg{../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg}{80%}{}{center}</td>
-  <td align="center">\includeimg{../slides/diagrams/ClaudeShannon_MFO3807.jpg}{50%}{}{center}</td>
+  <td align="center">\includeimg{../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg}{40%}{}{center}</td>
+  <td align="center">\includeimg{../slides/diagrams/ClaudeShannon_MFO3807.jpg}{25%}{}{center}</td>
  </tr>
  <tr>
   <td>compute</td>
