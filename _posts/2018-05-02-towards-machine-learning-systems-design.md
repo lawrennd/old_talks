@@ -78,8 +78,8 @@ There are strong overlaps between the fields, the wide availability of data by h
 <table>
  <tr>
   <td></td>
-  <td align="center"><img class="" src="../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="40%" align="center" style="background:none; border:none; box-shadow:none;"></td>
-  <td align="center"><img class="" src="../slides/diagrams/ClaudeShannon_MFO3807.jpg" width="25%" align="center" style="background:none; border:none; box-shadow:none;"></td>
+  <td align="center"><img class="" src="./slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="40%" align="center" style="background:none; border:none; box-shadow:none;"></td>
+  <td align="center"><img class="" src="./slides/diagrams/ClaudeShannon_MFO3807.jpg" width="25%" align="center" style="background:none; border:none; box-shadow:none;"></td>
  </tr>
  <tr>
   <td>compute</td>
@@ -123,7 +123,7 @@ For more details see this paper ["Living Together: Mind and Machine Intelligence
 
 ### Evolved Relationship 
 
-<object class="svgplot" align="" data="../slides/diagrams/data-science/information-flow003.svg"></object>
+<object class="svgplot" align="" data="./slides/diagrams/data-science/information-flow003.svg"></object>
 
 The high bandwidth of computers has resulted in a close relationship between the computer and data. Larege amounts of information can flow between the two. The degree to which the computer is mediating our relationship with data means that we should consider it an intermediary. 
 
@@ -169,16 +169,12 @@ $$ p(\text{bought}) =  \mappingFunction\left(\beta_0 + \beta_1 \text{age} + \bet
 * Jumper (jersey/sweater) purchase with logistic regression
 $$ p(\text{bought}) =  \mappingFunction\left(\boldsymbol{\beta}^\top \inputVector\right)$$
 
-. . .
-
 We call $\mappingFunction(\cdot)$ the *prediction function*
 
 ### Fit to Data
 
 * Use an objective function
 $$\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix)$$
-
-. . .
 
 * E.g. least squares
 $$\errorFunction(\boldsymbol{\beta}) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingFunction(\inputVector_i)\right)^2$$
@@ -197,18 +193,15 @@ $$\errorFunction(\boldsymbol{\beta}) = \sum_{i=1}^\numData \left(\dataScalar_i -
 
 * Example: face recognition
 
-###
-
 <small>Outline of the DeepFace architecture. A front-end of a single convolution-pooling-convolution filtering on the rectified input, followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected.</small>
 
-<img class="" src="../slides/diagrams/deepface_neg.png" width="100%" align="" style="background:none; border:none; box-shadow:none;">
+<img class="" src="./slides/diagrams/deepface_neg.png" width="100%" align="" style="background:none; border:none; box-shadow:none;">
 
 <p align="right">
 <small>Source: DeepFace</small></p>
 
-### 
 
-<img class="" src="../slides/diagrams/576px-Early_Pinball.jpg" width="50%" align="" style="background:none; border:none; box-shadow:none;">
+<img class="" src="./slides/diagrams/576px-Early_Pinball.jpg" width="50%" align="" style="background:none; border:none; box-shadow:none;">
 
 We can think of what these models are doing as being similar to early pin ball machines. In a neural network, we input a number (or numbers), whereas in pinball, we input a ball. The location of the ball on the left-right axis can be thought of as the number. As the ball falls through the machine, each layer of pins can be thought of as a different layer of neurons. Each layer acts to move the ball from left to right. 
 
@@ -242,7 +235,7 @@ import teaching_plots as plot
 ```{.python}
 np.random.seed(10)
 plot.rejection_samples(compute_kernel, kernel=eq_cov, 
-                       lengthscale=0.25, diagrams='../slides/diagrams/gp')
+                       lengthscale=0.25, diagrams='./slides/diagrams/gp')
 ```
 
 
@@ -280,7 +273,7 @@ ax.set_ylabel('pace min/km', fontsize=20)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 
-mlai.write_figure(figure=fig, filename='../slides/diagrams/datasets/olympic-marathon.svg', transparent=True, frameon=True)
+mlai.write_figure(figure=fig, filename='./slides/diagrams/datasets/olympic-marathon.svg', transparent=True, frameon=True)
 
 ```
 
@@ -295,12 +288,12 @@ mlai.write_figure(figure=fig, filename='../slides/diagrams/datasets/olympic-mara
 
 -   In 1904 Marathon was badly organised leading to very slow times.
 </td><td width="30%">
-![image](../slides/diagrams/Stephen_Kiprotich.jpg)
+![image](./slides/diagrams/Stephen_Kiprotich.jpg)
 <small>Image from Wikimedia Commons <http://bit.ly/16kMKHQ></small>
 </td></tr></table>
 
 
-<object class="svgplot" align="" data="../slides/diagrams/ml/olympic_marathon.svg"></object>
+<object class="svgplot" align="" data="./slides/diagrams/ml/olympic_marathon.svg"></object>
 
 
 Things to notice about the data include the outlier in 1904, in this year, the olympics was in St Louis, USA. Organizational problems and challenges with dust kicked up by the cars following the race meant that participants got lost, and only very few participants completed. 
@@ -345,12 +338,12 @@ plot.model_output(m_full, scale=scale, offset=offset, ax=ax, xlabel='year', ylab
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 mlai.write_figure(figure=fig,
-                  filename='../slides/diagrams/gp/olympic-marathon-gp.svg', 
+                  filename='./slides/diagrams/gp/olympic-marathon-gp.svg', 
                   transparent=True, frameon=True)
 ```
 
 
-<object class="svgplot" align="" data="../slides/diagrams/gp/olympic-marathon-gp.svg"></object>
+<object class="svgplot" align="" data="./slides/diagrams/gp/olympic-marathon-gp.svg"></object>
 
 
 ### Fit Quality
@@ -370,7 +363,7 @@ _ = m_clean.optimize()
 
 Data is fine for answering very specific questions, like "Who won the Olympic Marathon in 2012?", because we have that answer stored, however, we are not given the answer to many other questions. For example, Alan Turing was a formidable marathon runner, in 1946 he ran a time 2 hours 46 minutes (just under four minutes per kilometer, faster than I and most of the other [Endcliffe Park Run](http://www.parkrun.org.uk/sheffieldhallam/) runners can do 5 km). What is the probability he would have won an Olympics if one had been held in 1946?
 
-<table><tr><td width=""></td><td width=""></td></tr></table>{<img class="" src="../slides/diagrams/turing_run.jpg" width="40%" align="" style="background:none; border:none; box-shadow:none;">}{<img class="50%" src="../slides/diagrams/turing-times.gif" width="50%" align="" style="background:none; border:none; box-shadow:none;">
+<table><tr><td width=""></td><td width=""></td></tr></table>{<img class="" src="./slides/diagrams/turing_run.jpg" width="40%" align="" style="background:none; border:none; box-shadow:none;">}{<img class="50%" src="./slides/diagrams/turing-times.gif" width="50%" align="" style="background:none; border:none; box-shadow:none;">
 
 *Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: [Alan Turing Internet Scrapbook](http://www.turing.org.uk/scrapbook/run.html).*
 
@@ -498,14 +491,14 @@ plot.model_output(m, scale=scale, offset=offset, ax=ax, xlabel='year', ylabel='p
 ax.set_xlim(xlim)
 
 ax.set_ylim(ylim)
-mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/olympic-marathon-deep-gp.svg', 
+mlai.write_figure(figure=fig, filename='./slides/diagrams/deepgp/olympic-marathon-deep-gp.svg', 
                 transparent=True, frameon=True)
 ```
 
 
 ### Olympic Marathon Data Deep GP
 
-<object class="svgplot" align="" data="../slides/diagrams/deepgp/olympic-marathon-deep-gp.svg"></object>
+<object class="svgplot" align="" data="./slides/diagrams/deepgp/olympic-marathon-deep-gp.svg"></object>
 
 
 ```{.python}
@@ -525,14 +518,14 @@ plot.model_sample(m, scale=scale, offset=offset, samps=10, ax=ax,
                   xlabel='year', ylabel='pace min/km', portion = 0.225)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
-mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/olympic-marathon-deep-gp-samples.svg', 
+mlai.write_figure(figure=fig, filename='./slides/diagrams/deepgp/olympic-marathon-deep-gp-samples.svg', 
                   transparent=True, frameon=True)
 ```
 
 
 ### Olympic Marathon Data Deep GP {data-transition="None"}
 
-<object class="svgplot" align="" data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-samples.svg"></object>
+<object class="svgplot" align="" data="./slides/diagrams/deepgp/olympic-marathon-deep-gp-samples.svg"></object>
 
 
 
@@ -544,7 +537,7 @@ Now we explore the GPs the model has used to fit each layer. First of all, we lo
 ```{.python}
 def visualize(self, scale=1.0, offset=0.0, xlabel='input', ylabel='output', 
               xlim=None, ylim=None, fontsize=20, portion=0.2,dataset=None, 
-              diagrams='../diagrams'):
+              diagrams='./diagrams'):
     """Visualize the layers in a deep GP with one-d input and output."""
     depth = len(self.layers)
     if dataset is None:
@@ -603,7 +596,7 @@ deepgp.DeepGP.visualize=visualize
 m.visualize(scale=scale, offset=offset, xlabel='year',
             ylabel='pace min/km',xlim=xlim, ylim=ylim,
             dataset='olympic-marathon',
-            diagrams='../slides/diagrams/deepgp')
+            diagrams='./slides/diagrams/deepgp')
 ```
 
 
@@ -835,13 +828,13 @@ deepgp.DeepGP.visualize_pinball=visualize_pinball
 fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 m.visualize_pinball(ax=ax, scale=scale, offset=offset, points=30, portion=0.1,
                     xlabel='year', ylabel='pace km/min', vertical=True)
-mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg', 
+mlai.write_figure(figure=fig, filename='./slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg', 
                   transparent=True, frameon=True)
 ```
 
 ### Olympic Marathon Pinball Plot
 
-<object class="svgplot" align="" data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg"></object>
+<object class="svgplot" align="" data="./slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg"></object>
 
 The pinball plot shows the flow of any input ball through the deep Gaussian process. In a pinball plot a series of vertical parallel lines would indicate a purely linear function. For the olypmic marathon data we can see the first layer begins to shift from input towards the right. Note it also does so with some uncertainty (indicated by the shaded backgrounds). The second layer has less uncertainty, but bunches the inputs more strongly to the right. This input layer of uncertainty, followed by a layer that pushes inputs to the right is what gives the heteroschedastic noise.
 
@@ -934,7 +927,7 @@ What I term "The Data Crisis" is the modern equivalent of this problem. The quan
 
 <!--### Data Readiness Levels
 
-[<img class="" src="../slides/diagrams/data-science/data-readiness-levels.png" width="" align="" style="background:none; border:none; box-shadow:none;">](https://arxiv.org/pdf/1705.02245.pdf)
+[<img class="" src="./slides/diagrams/data-science/data-readiness-levels.png" width="" align="" style="background:none; border:none; box-shadow:none;">](https://arxiv.org/pdf/1705.02245.pdf)
 
 [Data Readiness Levels](http://inverseprobability.com/2017/01/12/data-readiness-levels)
 
@@ -1015,7 +1008,7 @@ These stages of data science are also ridden with ambiguity. In the long term th
 
 ### Pigeonholing
 
-<img class="" src="../slides/diagrams/TooManyPigeons.jpg" width="60%" align="" style="background:none; border:none; box-shadow:none;">
+<img class="" src="./slides/diagrams/TooManyPigeons.jpg" width="60%" align="" style="background:none; border:none; box-shadow:none;">
 
 
 The way we are deploying artificial intelligence systems in practice is to build up systems of machine learning components. To build a machine learning system, we decompose the task into parts which we can emulate with ML methods. Each of these parts can be, typically, independently constructed and verified. For example, in a driverless car we can decompose the tasks into components such as "pedestrian detection" and "road line detection". Each of these components can be constructed with, for example, an independent classifier. We can then superimpose a logic on top. For example, "Follow the road line unless you detect a pedestrian in the road". 
@@ -1028,11 +1021,11 @@ This allows for verification of car performance, as long as we can verify the in
 
 ### Early AI
 
-<img class="rotateimg90" src="../slides/diagrams/2017-10-12 16.47.34.jpg" width="40%" align="" style="background:none; border:none; box-shadow:none;">
+<img class="rotateimg90" src="./slides/diagrams/2017-10-12 16.47.34.jpg" width="40%" align="" style="background:none; border:none; box-shadow:none;">
 
 ### Machine Learning Systems Design
 
-<img class="" src="../slides/diagrams/SteamEngine_Boulton&Watt_1784_neg.png" width="50%" align="" style="background:none; border:none; box-shadow:none;">
+<img class="" src="./slides/diagrams/SteamEngine_Boulton&Watt_1784_neg.png" width="50%" align="" style="background:none; border:none; box-shadow:none;">
 
 ### Adversaries
 
@@ -1051,16 +1044,6 @@ This allows for verification of car performance, as long as we can verify the in
 * A new name for system failures which aren't bugs.
 * Difference between finding a fly in your soup vs a peppercorn in
   your soup. 
-
-<!--
-### {.slide: data-transition="none"}
-
-<center><video height="600" type="video/mp4"><source src="../slides/diagrams/paolo-peppercorn.mp4" height="80%"></video></center>
-
-### {.slide: data-transition="none"}
-
-<center><video type="video/mp4"><source src="../slides/diagrams/paolo-save.mp4"></video></center>
--->
 
 
 ### Uncertainty Quantification
@@ -1110,7 +1093,7 @@ We will to illustrate different concepts of [Uncertainty Quantification](https:/
 
 To illustrate the above mentioned concepts we we use the [mountain car simulator](https://github.com/openai/gym/wiki/MountainCarContinuous-v0). This simulator is widely used in machine learning to test reinforcement learning algorithms. The goal is to define a control policy on a car whose objective is to climb a mountain. Graphically, the problem looks as follows:
 
-<img class="" src="../slides/diagrams/uq/mountaincar.png" width="negate" align="" style="background:none; border:none; box-shadow:none;">
+<img class="" src="./slides/diagrams/uq/mountaincar.png" width="negate" align="" style="background:none; border:none; box-shadow:none;">
 
 The goal is to define a sequence of actions (push the car right or left with certain intensity) to make the car reach the flag after a number $T$ of time steps.
 
@@ -1223,13 +1206,13 @@ from IPython.core.display import HTML
 
 ```{.python}
 mc.save_frames(frames, 
-                  diagrams='../slides/diagrams/uq', 
+                  diagrams='./slides/diagrams/uq', 
 				  filename='mountain_car_random.html')
 ```
 
 
 
-<iframe src="../slides/diagrams/uq/mountain_car_random.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+<iframe src="./slides/diagrams/uq/mountain_car_random.html" width="1024" height="768" allowtransparency="true" frameborder="0">
 </iframe>
 
 
@@ -1252,13 +1235,13 @@ anim=mc.animate_frames(frames, 'Best controller after 50 iterations of Bayesian 
 
 ```{.python}
 mc.save_frames(frames, 
-                  diagrams='../slides/diagrams/uq', 
+                  diagrams='./slides/diagrams/uq', 
 				  filename='mountain_car_simulated.html')
 ```
 
 
 
-<iframe src="../slides/diagrams/uq/mountain_car_simulated.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+<iframe src="./slides/diagrams/uq/mountain_car_simulated.html" width="1024" height="768" allowtransparency="true" frameborder="0">
 </iframe>
 
 he car can now make it to the top of the mountain! Emulating the reward function and using the EI helped as to find a linear controller that solves the problem.
@@ -1364,12 +1347,12 @@ controller_gains = np.atleast_2d([0, .6, 1])  # change the valus of the linear c
 
 ```{.python}
 mc.emu_sim_comparison(env, controller_gains, [position_model, velocity_model], 
-                      max_steps=500, diagrams='../slides/diagrams/uq')
+                      max_steps=500, diagrams='./slides/diagrams/uq')
 ```
 
 
 
-<object class="svgplot" align="" data="../slides/diagrams/uq/emu_sim_comparison.svg"></object>
+<object class="svgplot" align="" data="./slides/diagrams/uq/emu_sim_comparison.svg"></object>
 
 We now make explicit use of the emulator, using it to replace the simulator and optimize the linear controller. Note that in this optimization, we don't need to query the simulator anymore as we can reproduce the full dynamics of an episode using the emulator. For illustrative purposes, in this example we fix the initial location of the car. 
 
@@ -1430,14 +1413,14 @@ from IPython.core.display import HTML
 
 ```{.python}
 mc.save_frames(frames, 
-                  diagrams='../slides/diagrams/uq', 
+                  diagrams='./slides/diagrams/uq', 
 				  filename='mountain_car_emulated.html')
 ```
 
 
 
 
-<iframe src="../slides/diagrams/uq/mountain_car_emulated.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+<iframe src="./slides/diagrams/uq/mountain_car_emulated.html" width="1024" height="768" allowtransparency="true" frameborder="0">
 </iframe>
 
 
@@ -1558,13 +1541,13 @@ from IPython.core.display import HTML
 
 ```{.python}
 mc.save_frames(frames, 
-                  diagrams='../slides/diagrams/uq', 
+                  diagrams='./slides/diagrams/uq', 
 				  filename='mountain_car_multi_fidelity.html')
 ```
 
 
 
-<iframe src="../slides/diagrams/uq/mountain_car_multi_fidelity.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+<iframe src="./slides/diagrams/uq/mountain_car_multi_fidelity.html" width="1024" height="768" allowtransparency="true" frameborder="0">
 </iframe>
 
 
