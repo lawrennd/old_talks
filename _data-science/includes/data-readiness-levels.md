@@ -34,7 +34,7 @@ Progressing through Grade C involves ensuring that this data is accessible. Not 
 \notes{Data transits from Grade C to Grade B once we can begin digital analysis on the computer. Once the challenges of access to the data have been resolved, we can make the data available either via API, or for direct loading into analysis software (such as Python, R, Matlab, Mathematica or SPSS). Once this has occured the data is at B4 level. Grade B involves the *validity* of the data. Does the data really represent what it purports to? There are challenges such as missing values, outliers, record duplication. Each of these needs to be investigated. 
 
 Grade B and C are important as if the work done in these grades is documented well, it can be reused in other projects. Reuse of this labour is key to reducing the costs of data-driven automated decision making. There is a strong overlap between the work required in this grade and the statistical field of [*exploratory data analysis*](https://en.wikipedia.org/wiki/Exploratory_data_analysis) [@Tukey:exploratory77]. }
-
+\slides{
 * faithfulness and representation
 * visualisations.
 * exploratory data analysis
@@ -43,7 +43,7 @@ Grade B and C are important as if the work done in these grades is documented we
 * Schema alignment, record linkage, data fusion? 
 * Example, was a column or columns accidentally perturbed (e.g. through a sort operation that missed one or more columns)? Or was a [gene name accidentally converted to a date](http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-5-80)?
 * At the end of Grade B, ready to define a candidate question, the
-  context, load into OpenML
+  context, load into OpenML}
 
 ### Usability: Grade A
 
@@ -74,7 +74,7 @@ question or to be subject to a particular analysis.
 
 * <http://data-readiness.org>}
 
-\notes{To find out more, or to contribute ideas go to <http://data-readiness.org>
+\notes{To find out more, or to contribute ideas go to <http://data-readiness.org>}
 
 \slides{
 ### Also ...
