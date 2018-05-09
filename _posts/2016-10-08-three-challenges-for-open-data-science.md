@@ -25,7 +25,7 @@ author:
   url: http://inverseprobability.com
 categories:
 - Lawrence-osdc16
-day: '8'
+day: 8
 errata: []
 extras: []
 key: Lawrence-osdc16
@@ -36,5 +36,5 @@ reveal: 2016-10-08-data-science-challenges.slides.html
 reveal-md: 2016-10-08-data-science-challenges.md
 section: pre
 venue: Open Data Science Conference
-year: '2016'
+year: 2016
 ---

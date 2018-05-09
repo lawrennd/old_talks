@@ -80,4 +80,3 @@ We also need a better social, cognitive and biological understanding of humans a
 * A better characterization of human needs and flaws
 
 * Larger studies (100,000 genome)}
-
