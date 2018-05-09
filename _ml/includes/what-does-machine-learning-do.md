@@ -16,7 +16,7 @@
 
 * How does machine learning work?
 * Jumper (jersey/sweater) purchase with logistic regression}
-$$ \text{odds} = \frac{\text{bought}}{\text{not bought}} $$
+$$ \text{odds} = \frac{p(\text{bought})}{p(\text{not bought})} $$
 $$ \log \text{odds}  = \beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}$$
 
 \notes{Here $\beta_0$, $\beta_1$ and $\beta_2$ are the parameters of the model. If $\beta_1$ and $\beta_2$  are both positive, then the log-odds that someone will buy a jumper increase with increasing latitude and age, so the further north you are and the older you are the more likely you are to buy a jumper. The parameter $\beta_0$ is an offset parameter, and gives the log-odds of buying a jumper at zero age and on the equator. It is likely to be negative[^logarithms] indicating that the purchase is odds-against. This is actually a classical statistical model, and models like logistic regression are widely used to estimate probabilities from ad-click prediction to risk of disease.
@@ -30,7 +30,7 @@ This is called a generalized linear model, we can also think of it as estimating
 
 * How does machine learning work?
 * Jumper (jersey/sweater) purchase with logistic regression}
-$$ p(\text{bought}) =  \sigmoid\left(\beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}\right)$$
+$$ p(\text{bought}) =  \sigmoid{\beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}}$$
 
 \notes{In the case where we have *features* to help us predict, we sometimes denote such features as a vector, $\inputVector$, and we then use an inner product between the features and the parameters, $\boldsymbol{\beta}^\top \inputVector = \beta_1 \inputScalar_1 + \beta_2 \inputScalar_2 + \beta_3 \inputScalar_3 ...$, to represent the argument of the sigmoid. 
 
@@ -39,7 +39,7 @@ $$ p(\text{bought}) =  \sigmoid\left(\beta_0 + \beta_1 \text{age} + \beta_2 \tex
 
 * How does machine learning work?
 * Jumper (jersey/sweater) purchase with logistic regression}
-$$ p(\text{bought}) =  \sigmoid\left(\boldsymbol{\beta}^\top \inputVector\right)$$
+$$ p(\text{bought}) =  \sigmoid{\boldsymbol{\beta}^\top \inputVector}$$
 
 \notes{More generally, we aim to predict some aspect of our data, $\dataScalar$, by relating it through a mathematical function, $\mappingFunction(\cdot)$, to the parameters, $\boldsymbol{\beta}$ and the data, $\inputVector$. 
 
@@ -64,8 +64,8 @@ $$\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix)$$
 \slides{
 . . .
 
-* E.g. least squares}\notes{A commonly used examples (for example in a regression problem) is least squares,
-$$\errorFunction(\boldsymbol{\beta}) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingFunction(\inputVector_i)\right)^2.$$
+* E.g. least squares}\notes{A commonly used examples (for example in a regression problem) is least squares,}
+$$\errorFunction(\boldsymbol{\beta}) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingFunction(\inputVector_i, \boldsymbol{\beta})\right)^2.$$
 
 \slides{
 ### Two Components
