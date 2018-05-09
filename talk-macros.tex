@@ -16,9 +16,11 @@ YouTubeVideo('\id')
 \define{\slidenotes{slidetext}{notetext}}{\notetext}
 \define{\speakernotes{text}}{}
 \define{\notes{text}}{\text}
+\define{\section{text}}{## \text}
 \define{\slides{text}}{}
 \define{\fragment{text}{type}}{\text}
 \define{\fragmentindex{text}{type}{index}}{\text}
+\define{\notesfigure{block}}{}
 \define{\plotcode{block}}{```{.python}
 \block
 ```}
@@ -65,6 +67,7 @@ YouTubeVideo('\id')
 \define{\fragmentindex{text}{type}{index}}{\text}
 \define{\speakernotes{text}}{}
 \define{\notes{text}}{\text}
+\define{\section{text}}{## \text}
 \define{\talksdir}{/Users/neil/lawrennd/talks}
 
 \define{\code{block}}{```{.python}
@@ -80,6 +83,7 @@ YouTubeVideo('\id')
 \block
 ```}
 \define{\displaycode{block}}{}
+\define{\notesfigure{block}}{\block}
 \define{\slidesmall{block}}{\block}
 \define{\aligncenter{block}}{<center>\block</center>}
 \define{\alignright{block}}{<span align="right">\block</span>}
@@ -121,6 +125,7 @@ YouTubeVideo('\id')
 \text
 </aside>}
 \define{\notes{text}}{}
+\define{\section{text}}{<!-- SECTION \text -->}
 \define{\slides{text}}{\text}
 \define{\fragment{text}{type}}{<span class="fragment \type">\text</span>}
 \define{\fragmentindex{text}{type}{index}}{<span class="fragment \type" data-fragment-index="\index">\text</span>}
@@ -129,6 +134,7 @@ YouTubeVideo('\id')
 \define{\helpercode{block}}{}
 \define{\plotcode{block}}{}
 \define{\displaycode{block}}{}
+\define{\notesfigure{block}}{}
 \define{\slidesmall{block}}{<small>\block</small>}
 \define{\aligncenter{block}}{<center>\block</center>}
 \define{\alignright{block}}{<span align="right">\block</span>}
