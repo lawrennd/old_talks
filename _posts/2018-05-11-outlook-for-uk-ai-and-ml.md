@@ -1,6 +1,6 @@
 ---
 title: "Outlook for UK AI and Machine Learning"
-abstract: With the recent BEIS Industrial Strategy and the UK Sector deal the UK is turning its attention to how the next generation of artificial intelligence can drive efficiency and innovaiton in the UK economy. In this talk we review the outlook. 
+abstract: With the recent BEIS Industrial Strategy and the UK Sector deal the UK is turning its attention to how the next generation of artificial intelligence can drive efficiency and innovation in the UK economy. In this talk we review the outlook. 
 published: 2018-05-11
 venue: HM Treasury
 layout: talk
