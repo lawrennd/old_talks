@@ -1,7 +1,7 @@
 ---
 title: "Living Together: Mind and Machine Intelligence" 
 abstract: >
-  What is the nature of machine intelligence and how does it differ from humans? In this talk we explore embodiment factors, the extent to which our intelligence is locked in and how this makes us fundamentally different form the machine intelligences we are creating around us..
+  What is the nature of machine intelligence and how does it differ from humans? In this talk we explore embodiment factors, the extent to which our intelligence is locked in and how this makes us fundamentally different form the machine intelligences we are creating around us.
 author:
 - family: Lawrence
   given: Neil D.
@@ -11,8 +11,9 @@ author:
   url: http://inverseprobability.com
 categories:
 - Lawrence-tedx17
-link1: https://arxiv.org/abs/1705.07996
-label1: Paper on "Living Together: Mind and Machine Intelligence"
+extras:
+- link: https://arxiv.org/abs/1705.07996
+  label: Paper on Mind and Machine Intelligence
 youtube: Bn-33vv-cmY
 key: Lawrence-tedx17
 layout: talk
@@ -95,7 +96,6 @@ Just think of the control a driver would have to have to deploy such power throu
 In contrast, our computers are more like go-karts. Underpowered, but with well-matched tires. More efficient, but somehow less extraordinary, less beautiful.
 
 The consequences between this mismatch of power and delivery are to be seen all around us. Because, just as driving an F1 car with bicycle wheels would be a fine art, so is the process of communication between humans.
-[conversation slide]
 
 If I have a thought and I wish to communicate it, I first of all need to have a model of what you think. I should think before I speak. When I speak, you may react. You have a model of who I am and what I was trying to say, and why I chose to say what I said. Now we begin this dance, where we are each trying to better understand each other and what we are saying. When it works, it is beautiful, but when misdeployed, just like a badly driven F1 car, there is a horrible crash, an argument.
 
