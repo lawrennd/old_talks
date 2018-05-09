@@ -33,7 +33,6 @@ transition: None
 \include{_data-science/includes/the-data-crisis.md}
 
 \include{_data-science/includes/value-of-data.md}
-\include{_data-science/includes/data-readiness-levels.md}
 \include{_health/includes/rolls-royce-analogy.md}
 \include{_data-science/includes/data-trusts.md}
 

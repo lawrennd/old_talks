@@ -1,6 +1,8 @@
-### What is Machine Learning?
+\section{What is Machine Learning?}
 
 \slides{
+### What is Machine Learning?
+
 . . .
 
 $$ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$

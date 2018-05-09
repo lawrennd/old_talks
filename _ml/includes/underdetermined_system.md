@@ -1,9 +1,12 @@
+\section{Underdetermined System}
+
 \setupcode{import teaching_plots as plot}
 
 \code{plot.under_determined_system(diagrams='../slides/diagrams/ml')}
 
-### Underdetermined System {data-transition="none"}
-
+\slides{
+### Underdetermined System
+}
 * What about two unknowns and *one* observation?
 $$\dataScalar_1 =  m\inputScalar_1 + c$$
 
@@ -12,6 +15,7 @@ $$\dataScalar_1 =  m\inputScalar_1 + c$$
 Can compute $m$
 given $c$. $$m = \frac{\dataScalar_1 - c}{\inputScalar}$$
 
+\setupcode{import pods}
 \displaycode{pods.notebook.display_plots('under_determined_system{samp:0>3}.svg', 
                             directory='../slides/diagrams/ml', samp=(0, 10))}
 \slides{							

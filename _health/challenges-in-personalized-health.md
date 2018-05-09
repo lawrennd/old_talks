@@ -3,6 +3,7 @@ title: "Personalized Health: Challenges in Data Science"
 layout: slides
 author: Neil D. Lawrence
 affiliation: Amazon and University of Sheffield
+transition: Nonex
 ---
 
 \include{talk-macros.tex}
@@ -37,7 +38,6 @@ affiliation: Amazon and University of Sheffield
 
 \include{./_data-science/includes/breadth-or-depth.md}
 \include{./_data-science/includes/value-of-data.md}
-\include{./_data-science/includes/data-credit-allocation.md}
 \include{./_data-science/includes/privacy-loss-of-control.md}
 \include{./_gp/includes/gp-intro-very-short.md}
 \include{./_privacy/includes/differential-privacy-for-gps.md}
