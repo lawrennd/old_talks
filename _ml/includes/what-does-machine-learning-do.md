@@ -54,7 +54,7 @@ $$ \dataScalar =  \mappingFunction\left(\inputVector, \boldsymbol{\beta}\right)$
 }
 We call $\mappingFunction(\cdot)$ the *prediction function*
 
-\notes{To obtain the fit to data, we use a separate function called the *objective function* that gives us a mathematical representation of the difference between our predictions and the real data. 
+\notes{To obtain the fit to data, we use a separate function called the *objective function* that gives us a mathematical representation of the difference between our predictions and the real data. }
 
 \slides{
 ### Fit to Data
