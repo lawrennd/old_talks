@@ -72,7 +72,7 @@ transition: None
 \include{_health/includes/rolls-royce-analogy.md}
 \include{_data-science/includes/gdpr.md}
 
-\include{_ai/includes/government-reports.md}
+<!--\include{_ai/includes/government-reports.md}-->
 
 \include{_data-science/includes/data-trusts.md}
 
