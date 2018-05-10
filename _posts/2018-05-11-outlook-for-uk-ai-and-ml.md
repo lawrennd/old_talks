@@ -173,13 +173,6 @@ Better mediation of this flow actually requires a better understanding of human-
 For further thoughts see [this Guardian article](https://www.theguardian.com/media-network/2015/jul/23/data-driven-economy-marketing) on marketing in the internet era and [this blog post](http://inverseprobability.com/2015/12/04/what-kind-of-ai) on System Zero. 
 
 
-
-
-
-
-
-
-
 ### Societal Effects
 
 We have already seen the effects of this changed dynamic in biology and computational biology. Improved sensorics have led to the new domains of transcriptomics, epigenomics, and 'rich phenomics' as well as considerably augmenting our capabilities in genomics. 
@@ -197,26 +190,12 @@ We can expect to see these phenomena reflected in wider society. Particularly as
 
 The main phenomenon we see across the board is the shift in dynamic from the direct pathway between human and data, as traditionally mediated by classical statistcs, to a new flow of information via the computer. This change of dynamics gives us the modern and emerging domain of *data science*.
 
-
-
 ## Human Communication
-
-
-
-
 
 
 For human conversation to work, we require an internal model of who we are speaking to. We model each other, and combine our sense of who they are, who they think we are, and what has been said. This is our approach to dealing with the limited bandwidth connection we have. Empathy and understanding of intent. Mental dispositional concepts are used to augment our limited communication bandwidth.
 
 Fritz Heider referred to the important point of a conversation as being that they are happenings that are "*psychologically represented* in each of the participants" (his emphasis) [@Heider:interpersonal58]
-
-
-
-
-
-
-
-
 
 ### Machine Learning and Narratives
 
@@ -224,19 +203,11 @@ Fritz Heider referred to the important point of a conversation as being that the
 
 <center>*For sale: baby shoes, never worn.*</center>
 
-
-
 Consider the six word novel, apocraphally credited to Ernest Hemingway, "For sale: baby shoes, never worn". To understand what that means to a human, you need a great deal of additional context. Context that is not directly accessible to a machine that has not got both the evolved and contextual understanding of our own condition to realize both the implication of the advert and what that implication means emotionally to the previous owner.
-
-
 
 [![](https://img.youtube.com/vi/8FIEZXMUM2I/0.jpg)](https://www.youtube.com/watch?v=8FIEZXMUM2I&t=7)
 
 [Fritz Heider](https://en.wikipedia.org/wiki/Fritz_Heider) and [Marianne Simmel](https://en.wikipedia.org/wiki/Marianne_Simmel)'s experiments with animated shapes from 1944 [@Heider:experimental44]. Our interpretation of these objects as showing motives and even emotion is a combination of our desire for narrative, a need for understanding of each other, and our ability to empathise. At one level, these are crudely drawn objects, but in another key way, the animator has communicated a story through simple facets such as their relative motions, their sizes and their actions. We apply our psychological representations to these faceless shapes in an effort to interpret their actions.
-
-
-
-### 
 
 > There are three types of lies: lies, damned lies and statistics
 >
@@ -245,8 +216,6 @@ Consider the six word novel, apocraphally credited to Ernest Hemingway, "For sal
 The quote lies, damned lies and statistics was credited to Benjamin Disraeli by Mark Twain in his autobiography. It characterizes the idea that statistic can be made to prove anything. But Disraeli died in 1881 and Mark Twain died in 1910. The important breakthrough in overcoming our tendency to overinterpet data came with the formalization of the field through the development of *mathematical statistics*.
 
 ### *Mathematical* Statistics
-
-
 
 <img class="" src="./slides/diagrams/Portrait_of_Karl_Pearson.jpg" width="30%" align="" style="background:none; border:none; box-shadow:none;">
 
@@ -268,10 +237,6 @@ In contrast, artificial intelligence technologies typically focus on emulating s
 Classically artificial intelligence worried more about *logic* and *planning* and focussed less on data driven decision making. Modern machine learning owes more to the field of *Cybernetics* [@Wiener:cybernetics48] than artificial intelligence. Related fields include *robotics*, *speech recognition*, *language understanding* and *computer vision*. 
 
 There are strong overlaps between the fields, the wide availability of data by happenstance makes it easier to collect data for designing AI systems. These relations are coming through wide availability of sensing technologies that are interconnected by celluar networks, WiFi and the internet. This phenomenon is sometimes known as the *Internet of Things*, but this feels like a dangerous misnomer. We must never forget that we are interconnecting people, not things. 
-
-
-
-
 
 
 ### What does Machine Learning do?
