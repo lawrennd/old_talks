@@ -53,7 +53,16 @@ transition: None
 
 ### Uncertainty and Learning
 
+* In this "vanilla" form these machines "don't know when they don't know".
+
+* Doubt is vital in real world decision making. 
+
+* Incorporating this in systems is a long time focus of my technical research.
+
+
 ### Comparison with Human Learning & Embodiment
+
+* The emulation of intelligence does not exhibit all the meta-modelling humans perform.
 
 \include{_data-science/includes/a-time-for-professionalisation.md}
 \include{_data-science/includes/the-data-crisis.md}
@@ -85,3 +94,4 @@ transition: None
 * twitter: \@lawrennd
 * blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
 * [Mike Jordan's Medium Post](https://medium.com/@mijordan3/artificial-intelligence-the-revolution-hasnt-happened-yet-5e1d5812e1e7)
+

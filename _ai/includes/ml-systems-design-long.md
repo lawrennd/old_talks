@@ -70,11 +70,11 @@ That is the effect of an adversary on an intelligent system, but even without ad
 
 \includeyoutube{1y2UKz47gew}
 
-Asking Siri what 1 trillion to the power of 1 thousand -1 is leads to a 30 minute response consisting of only 9s. I found this out because my nine year old grabbed my phone and did it. The only way to stop Siri was to force closure. This is an interesting example of a system feature that's *not* a bug, in fact it requires clever processing from Wolfram Alpha. But it's an unexpected result from the system performing correctly. 
+Asking Siri "What is a trillion to the power of a thousand minus one?" leads to a 30 minute response consisting of only 9s. I found this out because my nine year old grabbed my phone and did it. The only way to stop Siri was to force closure. This is an interesting example of a system feature that's *not* a bug, in fact it requires clever processing from Wolfram Alpha. But it's an unexpected result from the system performing correctly. 
 
 This challenge of facing a circumstance that was unenvisaged in design but has consequences in deployment becomes far larger when the environment is uncontrolled. Or in the extreme case, where actions of the intelligent system effect the wider environment and change it.
 
-These unforseen circumstances are likely to lead to need for much more efficient turn-around and update for our intelligent systems. Whether we are correcting for security flaws (which *are* bugs) or unenvisaged circumstantial challenges: an issue I'm referring to as *peppercorns*. Rapid deployment of system updates is required. 
+These unforseen circumstances are likely to lead to need for much more efficient turn-around and update for our intelligent systems. Whether we are correcting for security flaws (which *are* bugs) or unenvisaged circumstantial challenges: an issue I'm referring to as *peppercorns*. Rapid deployment of system updates is required. For example, Apple have "fixed" the problem of Siri returning long numbers.
 
 The challenge is particularly acute because of the *scale* at which we can deploy AI solutions. This means when something does go wrong, it may be going wrong in billions of households simultaneously.
 
