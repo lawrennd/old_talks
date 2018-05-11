@@ -90,6 +90,7 @@ question or to be subject to a particular analysis.
 * Encourage *visualization* of data
 
 * Incentivise the delivery of data.
+}
 
 \notes{Throughout the data preparation pipeline, it is important to have close interaction between data scientists and application domain experts. Decisions on data preparation taken outside the context of application have dangerous downstream consequences. This provides an additional burden on the data scientist as they are required for each project, but it should also be seen as a learning and familiarization exercise for the domain expert. Long term, just as biologists have found it necessary to assimilate the skills of the bioinformatician to be effective in their science, most domains will also require a familiarity with the nature of data driven decision making and its application. Working closely with data-scientists on data preparation is one way to begin this sharing of best practice.
 
