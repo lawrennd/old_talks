@@ -15,6 +15,7 @@ author:
 published: 2018-05-11
 ---
 
+\newcommand{\numData}{n}
 \newcommand{\errorFunction}{E}
 \newcommand{\mappingFunction}{f}
 \newcommand{\sigmoid}[1]{\sigma\left(#1\right)}
