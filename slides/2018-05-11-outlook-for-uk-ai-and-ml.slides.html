@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Neil D. Lawrence">
-  <title>Outlook for UK AI and Machine Learning</title>
+  <title>Outlook for AI and Machine Learning</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -35,7 +35,7 @@
     <div class="slides">
 
 <section>
-  <h1 class="title">Outlook for UK AI and Machine Learning</h1>
+  <h1 class="title">Outlook for AI and Machine Learning</h1>
   <p class="author">Neil D. Lawrence</p>
 </section>
 
@@ -541,110 +541,9 @@ Ernest Hemingway's apocrophal six word novel would mean nothing to a computer.
 <ul>
 <li>Importance of data infrastructure</li>
 </ul>
-</section>
-<section id="section-14" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class align="center" data="../slides/diagrams/data-science/uk_tin_coal_railways001.svg">
-</object>
-</section>
-<section id="section-15" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class align="center" data="../slides/diagrams/data-science/uk_tin_coal_railways002.svg">
-</object>
-<!--### {.slide: data-transition="none"}
-
-<object class="" align="center" data="../slides/diagrams/data-science/uk_tin_coal_railways003.svg"></object>-->
-</section>
-<section id="section-16" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class align="center" data="../slides/diagrams/data-science/uk_tin_coal_railways004.svg">
-</object>
-</section>
-<section id="section-17" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class align="center" data="../slides/diagrams/data-science/uk_tin_coal_railways005.svg">
-</object>
-<!-- SECTION Data Readiness Levels -->
-</section>
-<section id="data-readiness-levels" class="slide level3">
-<h3>Data Readiness Levels</h3>
-<p><a href="https://arxiv.org/pdf/1705.02245.pdf"><img class="" src="../slides/diagrams/data-science/data-readiness-levels.png" width="" align="" style="background:none; border:none; box-shadow:none;"></a></p>
-<p><a href="http://inverseprobability.com/2017/01/12/data-readiness-levels">Data Readiness Levels</a></p>
-</section>
-<section id="three-grades-of-data-readiness" class="slide level3">
-<h3>Three Grades of Data Readiness:</h3>
-<ul>
-<li><p>Grade C - accessibility</p></li>
-<li><p>Grade B - validity</p></li>
-<li><p>Grade A - usability</p></li>
-</ul>
-</section>
-<section id="accessibility-grade-c" class="slide level3">
-<h3>Accessibility: Grade C</h3>
-<ul>
-<li><em>Hearsay</em> data.</li>
-<li>Availability, is it actually being recorded?</li>
-<li>privacy or legal constraints on the accessibility of the recorded data, have ethical constraints been alleviated?</li>
-<li>Format: log books, PDF ...</li>
-<li>limitations on access due to topology (e.g. it's distributed across a number of devices)</li>
-<li>At the end of Grade C data is ready to be loaded into analysis software (R, SPSS, Matlab, Python, Mathematica)</li>
-</ul>
-</section>
-<section id="validity-grade-b" class="slide level3">
-<h3>Validity: Grade B</h3>
-<ul>
-<li>faithfulness and representation</li>
-<li>visualisations.</li>
-<li>exploratory data analysis</li>
-<li>noise characterisation.</li>
-<li>Missing values.</li>
-<li>Schema alignment, record linkage, data fusion?</li>
-<li>Example, was a column or columns accidentally perturbed (e.g. through a sort operation that missed one or more columns)? Or was a <a href="http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-5-80">gene name accidentally converted to a date</a>?</li>
-<li>At the end of Grade B, ready to define a candidate question, the context, load into OpenML</li>
-</ul>
-</section>
-<section id="usability-grade-a" class="slide level3">
-<h3>Usability: Grade A</h3>
-<ul>
-<li>The usability of data</li>
-<li>Grade A is about data in context.</li>
-<li>Consider appropriateness of a given data set to answer a particular question or to be subject to a particular analysis.</li>
-<li>Data integration?</li>
-<li>At the end of Grade A it's ready for data platforms such as RAMP, Kaggle, define a <em>task</em> in OpenML.</li>
-</ul>
-</section>
-<section id="recursive-effects" class="slide level3">
-<h3>Recursive Effects</h3>
-<ul>
-<li>Grade A may also require:
-<ul>
-<li>active collection of new data.</li>
-<li>rebalancing of data to ensure fairness</li>
-<li>annotation of data by human experts</li>
-<li>revisiting the collection (and running through the appropriate stages again)</li>
-</ul></li>
-</ul>
-</section>
-<section id="contribute" class="slide level3">
-<h3>Contribute!</h3>
-<ul>
-<li><a href="http://data-readiness.org" class="uri">http://data-readiness.org</a></li>
-</ul>
-</section>
-<section id="also-..." class="slide level3">
-<h3>Also ...</h3>
-<ul>
-<li><p>Encourage greater interaction between application domains and data scientists</p></li>
-<li><p>Encourage <em>visualization</em> of data</p></li>
-<li><p>Incentivise the delivery of data.</p></li>
-</ul>
-<!-- SECTION Data Science as Debugging -->
-</section>
-<section id="data-science-as-debugging" class="slide level3">
-<h3>Data Science as Debugging</h3>
-<ul>
-<li>Analogies: For Software Engineers <a href="http://inverseprobability.com/2017/03/14/data-science-as-debugging">describe data science as <em>debugging</em></a>.</li>
-</ul>
+<!--include{_data-science/includes/data-infrastructure.md}-->
+<!--include{_data-science/includes/data-readiness-levels.md}-->
+<!--include{_data-science/includes/data-science-as-debugging.md}-->
 <!-- SECTION Public Use of Data for Public Good -->
 </section>
 <section id="understanding-patient-data" class="slide level3">
@@ -662,60 +561,37 @@ Ernest Hemingway's apocrophal six word novel would mean nothing to a computer.
 <em>Bush Pilot Grant McConachie</em>
 </center>
 </section>
-<section id="section-18" class="slide level3">
+<section id="section-14" class="slide level3">
 <h3></h3>
 <ul>
 <li>The difference between <em>capability</em> and <em>intent</em>.</li>
 </ul>
 </section>
-<section id="section-19" class="slide level3">
+<section id="section-15" class="slide level3">
 <h3></h3>
 <img class="" src="../slides/diagrams/health/British_Airways_at_SFO.jpg" width="50%" align="" style="background:none; border:none; box-shadow:none;">
 <center>
 <em>British Airways 747 at SFO</em>
 </center>
 </section>
-<section id="section-20" class="slide level3">
+<section id="section-16" class="slide level3">
 <h3></h3>
 <p><a href="https://www.amazon.co.uk/Black-Box-Thinking-Surprising-Success-ebook/dp/B00PW634YQ"><img class="" src="../slides/diagrams/health/black-box-thinking.jpg" width="" align="" style="background:none; border:none; box-shadow:none;"></a></p>
-<!-- SECTION How the GDPR May Help -->
-</section>
-<section id="how-gdpr-may-help" class="slide level3">
-<h3>How GDPR May Help</h3>
-<ul>
-<li><p>Reflection on data eco-systems.</p></li>
-<li><p>GDPR: Good Data Practice Rules</p></li>
-<li><p>When viewed as best practice rather than regulation they hightlight problems in data ecosystems.</p></li>
-</ul>
+<!--include{_data-science/includes/gdpr.md}-->
 <!--include{_ai/includes/government-reports.md}-->
 <!-- SECTION Data Trusts -->
 </section>
-<section id="section-21" class="slide level3">
+<section id="section-17" class="slide level3">
 <h3></h3>
 <p><a href="https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy"><img class="" src="../slides/diagrams/data-science/data-trusts.png" width="100%" align="" style="background:none; border:none; box-shadow:none;"></a></p>
 </section>
-<section id="section-22" class="slide level3">
+<section id="section-18" class="slide level3">
 <h3></h3>
 <p><a href="https://www.out-law.com/en/articles/2017/october/review-calls-for-data-trusts-to-help-grow-artificial-intelligence-in-the-uk/"><img class="" src="../slides/diagrams/data-science/data-trusts-review.png" width="" align="" style="background:none; border:none; box-shadow:none;"></a></p>
 </section>
-<section id="section-23" class="slide level3">
+<section id="section-19" class="slide level3">
 <h3></h3>
-<!-- SECTION Challenges in Technology Deployment -->
-</section>
-<section id="three-pillars-of-disruption" class="slide level3 slide:" data-transition="none">
-<h3>Three Pillars of Disruption</h3>
-<object class="svgplot" align data="../slides/diagrams/ai/three-pillars-innovation001.svg">
-</object>
-</section>
-<section id="three-pillars-of-disruption-1" class="slide level3 slide:" data-transition="none">
-<h3>Three Pillars of Disruption</h3>
-<object class="svgplot" align data="../slides/diagrams/ai/three-pillars-innovation002.svg">
-</object>
-</section>
-<section id="three-pillars-of-disruption-2" class="slide level3 slide:" data-transition="none">
-<h3>Three Pillars of Disruption</h3>
-<object class="svgplot" align data="../slides/diagrams/ai/three-pillars-innovation003.svg">
-</object>
+<!--include{_ml/includes/resolve-deploy-innovate.md}-->
 <!--include{_ai/includes/ml-systems-design-long.md}-->
 </section>
 <section id="thanks" class="slide level3">
@@ -725,9 +601,6 @@ Ernest Hemingway's apocrophal six word novel would mean nothing to a computer.
 <li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
 <li><a href="https://medium.com/@mijordan3/artificial-intelligence-the-revolution-hasnt-happened-yet-5e1d5812e1e7">Mike Jordan's Medium Post</a></li>
 </ul>
-</section>
-<section id="references-.slide-allowframebreaks" class="slide level3">
-<h3>References {.slide: allowframebreaks}</h3>
 </section>
     </div>
   </div>

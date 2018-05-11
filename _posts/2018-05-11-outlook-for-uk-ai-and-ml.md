@@ -15,6 +15,7 @@ author:
 published: 2018-05-11
 ---
 
+
 The aim of this presentation is give a sense of the current situation in machine learning and artificial intelligence as well as some perspective on the immediate outlook for the field.
 
 This presentation represents my personal opinion as an academic with 20 years experience in machine learning, computational biology and data science. This is not in any sense *Amazon* policy, but since September 2016 I have been on leave of absence at Amazon.
@@ -62,7 +63,7 @@ for i, handle in enumerate(handles):
 ```
 
 <object class="svgplot" align="" data="./slides/diagrams/data-science/bd-ds-iot-ml-google-trends003.svg"></object>
-\center{*Google Trends data for different search terms in an attempt to assess their position on the "hype cycle"*}
+<center>*Google Trends data for different search terms in an attempt to assess their position on the "hype cycle"*</center>
 
 
 
@@ -174,6 +175,13 @@ Better mediation of this flow actually requires a better understanding of human-
 For further thoughts see [this Guardian article](https://www.theguardian.com/media-network/2015/jul/23/data-driven-economy-marketing) on marketing in the internet era and [this blog post](http://inverseprobability.com/2015/12/04/what-kind-of-ai) on System Zero. 
 
 
+
+
+
+
+
+
+
 ### Societal Effects
 
 We have already seen the effects of this changed dynamic in biology and computational biology. Improved sensorics have led to the new domains of transcriptomics, epigenomics, and 'rich phenomics' as well as considerably augmenting our capabilities in genomics. 
@@ -191,12 +199,26 @@ We can expect to see these phenomena reflected in wider society. Particularly as
 
 The main phenomenon we see across the board is the shift in dynamic from the direct pathway between human and data, as traditionally mediated by classical statistcs, to a new flow of information via the computer. This change of dynamics gives us the modern and emerging domain of *data science*.
 
+
+
 ## Human Communication
+
+
+
+
 
 
 For human conversation to work, we require an internal model of who we are speaking to. We model each other, and combine our sense of who they are, who they think we are, and what has been said. This is our approach to dealing with the limited bandwidth connection we have. Empathy and understanding of intent. Mental dispositional concepts are used to augment our limited communication bandwidth.
 
 Fritz Heider referred to the important point of a conversation as being that they are happenings that are "*psychologically represented* in each of the participants" (his emphasis) [@Heider:interpersonal58]
+
+
+
+
+
+
+
+
 
 ### Machine Learning and Narratives
 
@@ -204,11 +226,19 @@ Fritz Heider referred to the important point of a conversation as being that the
 
 <center>*For sale: baby shoes, never worn.*</center>
 
+
+
 Consider the six word novel, apocraphally credited to Ernest Hemingway, "For sale: baby shoes, never worn". To understand what that means to a human, you need a great deal of additional context. Context that is not directly accessible to a machine that has not got both the evolved and contextual understanding of our own condition to realize both the implication of the advert and what that implication means emotionally to the previous owner.
+
+
 
 [![](https://img.youtube.com/vi/8FIEZXMUM2I/0.jpg)](https://www.youtube.com/watch?v=8FIEZXMUM2I&t=7)
 
 [Fritz Heider](https://en.wikipedia.org/wiki/Fritz_Heider) and [Marianne Simmel](https://en.wikipedia.org/wiki/Marianne_Simmel)'s experiments with animated shapes from 1944 [@Heider:experimental44]. Our interpretation of these objects as showing motives and even emotion is a combination of our desire for narrative, a need for understanding of each other, and our ability to empathise. At one level, these are crudely drawn objects, but in another key way, the animator has communicated a story through simple facets such as their relative motions, their sizes and their actions. We apply our psychological representations to these faceless shapes in an effort to interpret their actions.
+
+
+
+### 
 
 > There are three types of lies: lies, damned lies and statistics
 >
@@ -217,6 +247,8 @@ Consider the six word novel, apocraphally credited to Ernest Hemingway, "For sal
 The quote lies, damned lies and statistics was credited to Benjamin Disraeli by Mark Twain in his autobiography. It characterizes the idea that statistic can be made to prove anything. But Disraeli died in 1881 and Mark Twain died in 1910. The important breakthrough in overcoming our tendency to overinterpet data came with the formalization of the field through the development of *mathematical statistics*.
 
 ### *Mathematical* Statistics
+
+
 
 <img class="" src="./slides/diagrams/Portrait_of_Karl_Pearson.jpg" width="30%" align="" style="background:none; border:none; box-shadow:none;">
 
@@ -240,6 +272,10 @@ Classically artificial intelligence worried more about *logic* and *planning* an
 There are strong overlaps between the fields, the wide availability of data by happenstance makes it easier to collect data for designing AI systems. These relations are coming through wide availability of sensing technologies that are interconnected by celluar networks, WiFi and the internet. This phenomenon is sometimes known as the *Internet of Things*, but this feels like a dangerous misnomer. We must never forget that we are interconnecting people, not things. 
 
 
+
+
+
+
 ### What does Machine Learning do?
 
 
@@ -259,24 +295,24 @@ This is called a generalized linear model, we can also think of it as estimating
 
 $$ p(\text{bought}) =  \sigmoid{\beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}}$$
 
-{In the case where we have *features* to help us predict, we sometimes denote such features as a vector, $\inputVector$, and we then use an inner product between the features and the parameters, $\boldsymbol{\beta}^\top \inputVector = \beta_1 \inputScalar_1 + \beta_2 \inputScalar_2 + \beta_3 \inputScalar_3 ...$, to represent the argument of the sigmoid. 
+In the case where we have *features* to help us predict, we sometimes denote such features as a vector, $\inputVector$, and we then use an inner product between the features and the parameters, $\boldsymbol{\beta}^\top \inputVector = \beta_1 \inputScalar_1 + \beta_2 \inputScalar_2 + \beta_3 \inputScalar_3 ...$, to represent the argument of the sigmoid.
 
 
 $$ p(\text{bought}) =  \sigmoid{\boldsymbol{\beta}^\top \inputVector}$$
 
-{More generally, we aim to predict some aspect of our data, $\dataScalar$, by relating it through a mathematical function, $\mappingFunction(\cdot)$, to the parameters, $\boldsymbol{\beta}$ and the data, $\inputVector$. 
+More generally, we aim to predict some aspect of our data, $\dataScalar$, by relating it through a mathematical function, $\mappingFunction(\cdot)$, to the parameters, $\boldsymbol{\beta}$ and the data, $\inputVector$.
 
 
 $$ \dataScalar =  \mappingFunction\left(\inputVector, \boldsymbol{\beta}\right)$$
 
 We call $\mappingFunction(\cdot)$ the *prediction function*
 
-{To obtain the fit to data, we use a separate function called the *objective function* that gives us a mathematical representation of the difference between our predictions and the real data. 
+To obtain the fit to data, we use a separate function called the *objective function* that gives us a mathematical representation of the difference between our predictions and the real data. 
 
 
 $$\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix)$$
 A commonly used examples (for example in a regression problem) is least squares,
-$$\errorFunction(\boldsymbol{\beta}) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingFunction(\inputVector_i, \boldsymbol{\beta})\right)^2.$$
+$$\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingFunction(\inputVector_i, \boldsymbol{\beta})\right)^2.$$
 
 
 
@@ -326,7 +362,16 @@ Probabilistic methods explore more of the space by considering a range of possib
 
 ### Uncertainty and Learning
 
+* In this "vanilla" form these machines "don't know when they don't know".
+
+* Doubt is vital in real world decision making. 
+
+* Incorporating this in systems is a long time focus of my technical research.
+
+
 ### Comparison with Human Learning & Embodiment
+
+* The emulation of intelligence does not exhibit all the meta-modelling humans perform.
 
 ### Data Science
 
@@ -402,7 +447,6 @@ In the late sixties early software programmers made note of the increasing costs
 What I term "The Data Crisis" is the modern equivalent of this problem. The quantity of modern data, and the lack of attention paid to data as it is initially "laid down" and the costs of data cleaning are bringing about a crisis in data-driven decision making. Just as with software, the crisis is most correctly addressed by 'scaling' the manner in which we process our data. Duplication of work occurs because the value of data cleaning is not correctly recognised in management decision making processes. Automation of work is increasingly possible through techniques in "artificial intelligence", but this will also require better management of the data science pipeline so that data about data science (meta-data science) can be correctly assimilated and processed. The Alan Turing institute has a program focussed on this area, [AI for Data Analytics](https://www.turing.ac.uk/research_projects/artificial-intelligence-data-analytics/).
 
 
-###
 
 <img class="" src="./slides/diagrams/Medievalplowingwoodcut.jpg" width="" align="" style="background:none; border:none; box-shadow:none;">
 
@@ -414,203 +458,86 @@ I explored this idea further in [this Guardian Op-Ed from 2015](https://www.theg
 
 
 
-### Rest of this Talk: Two Areas of Focus
+### Rest of the Talk
 
-* Data Infrastructure
+* Importance of data infrastructure
 
-* Deployment of Machine Learning Systems
+<!--include{_data-science/includes/data-infrastructure.md}-->
+<!--include{_data-science/includes/data-readiness-levels.md}-->
+<!--include{_data-science/includes/data-science-as-debugging.md}-->
+## Public Use of Data for Public Good
 
-<!--
+Since machine learning methods are so dependent on data, Understanding public attitudes to the use of their data is key to developing machine learning methods that maintain the trust of the public. Nowhere are the benefits of machine learning more profound, and the potential pitfalls more catastrophic than in the use of machine learning in health data. 
 
+The promise is for methods that take a personalized perspective on our individual health, but health data is some of the most sensitive data available to us. This is recognised both by the public and by regulation. 
 
-
-By analogy, we can think of the evolution of transport infrastructure during the industrial revolution. Earlier railways actually seem to be more focussed on the coal fields.
--->
-## Data Readiness Levels
-
-
-
-[Data Readiness Levels](http://inverseprobability.com/2017/01/12/data-readiness-levels) [@Lawrence:drl17] are an attempt to develop a language around data quality that can bridge the gap between technical solutions and decision makers such as managers and project planners. The are inspired by Technology Readiness Levels which attempt to quantify the readiness of technologies for deployment.
+With this in mind The Wellcome Trust launched a report on ["Understanding Patient Data"](https://wellcome.ac.uk/news/understanding-patient-data-launches-today) authored by Nicola Perrin, driven by the National Data Guardian's recommendations.
 
 
 
-Data-readiness describes, at its coarsest level,  three separate stages of data graduation.
 
-* Grade C - accessibility
 
-* Grade B - validity
-
-* Grade A - usability
-
-### Accessibility: Grade C
-
-The first grade refers to the accessibility of data. Most data science practitioners will be used to working with data-providers who, perhaps having had little experience of data-science before, state that they "have the data". More often than not, they have not verified this. A convenient term for this is "Hearsay Data", someone has *heard* that they have the data so they *say* they have it. This is the lowest grade of data readiness. 
-
-Progressing through Grade C involves ensuring that this data is accessible. Not just in terms of digital accessiblity, but also for regulatory, ethical and intellectual property reasons.
+From this report we know that patients trust Universities and hospitals more than the trust commercial entities and insurers. However, there are a number of different ways in which data can be mishandled, it is not only the intent of the data-controllers that effects our data security.
 
 
 
-### Validity: Grade B
-
-Data transits from Grade C to Grade B once we can begin digital analysis on the computer. Once the challenges of access to the data have been resolved, we can make the data available either via API, or for direct loading into analysis software (such as Python, R, Matlab, Mathematica or SPSS). Once this has occured the data is at B4 level. Grade B involves the *validity* of the data. Does the data really represent what it purports to? There are challenges such as missing values, outliers, record duplication. Each of these needs to be investigated. 
-
-Grade B and C are important as if the work done in these grades is documented well, it can be reused in other projects. Reuse of this labour is key to reducing the costs of data-driven automated decision making. There is a strong overlap between the work required in this grade and the statistical field of [*exploratory data analysis*](https://en.wikipedia.org/wiki/Exploratory_data_analysis) [@Tukey:exploratory77]. 
-
-
-### Usability: Grade A
-
-Once the validity of the data is determined, the data set can be considered for use in a particular task. This stage of data readiness is more akin to what machine learning scientists are used to doing in Universities. Bringing an algorithm to bear on a well understood data set. 
-
-In Grade A we are concerned about the utility of the data given a particular task. Grade A may involve additional data collection (experimental design in statistics) to ensure that the task is fulfilled.
-
-This is the stage where the data and the model are brought together, so expertise in learning algorithms and their application is key. Further ethical considerations, such as the fairness of the resulting predictions are required at this stage. At the end of this stage a prototype model is ready for deployment.
-
-Deployment and maintenance of machine learning models in production is another important issue which Data Readiness Levels are only a part of the solution for.
+For example, the recent WannaCry virus attack which demonstrated the unpreparedness of much of the NHS IT infrastructure for a virus exhibiting an exploit that was well known to the security community. The key point is that the public trust the *intent* of academics and medical professionals, but actual *capability* could be at variance with the intent. 
 
 
 
-To find out more, or to contribute ideas go to <http://data-readiness.org>
+<img class="" src="./slides/diagrams/health/bush-pilot-grant-mcconachie.jpg" width="60%" align="" style="background:none; border:none; box-shadow:none;">
+
+<center>*Bush Pilot Grant McConachie*</center>
+
+The situation is somewhat reminiscient of early aviation. This is where we are with our data science capabilities. By analogy, the engine of the plane is our data security infrastructure, the basic required technology to make us safe. The pilot is the health professional performing data analytics. The nature of the job of early pilots and indeed today's *bush pilots* (who fly to remote places) included a need to understand the mechanics of the engine. Just as a health data scientist, today, needs to deal with security of the infrastructure as well as the nature of the analysis.
 
 
 
-Throughout the data preparation pipeline, it is important to have close interaction between data scientists and application domain experts. Decisions on data preparation taken outside the context of application have dangerous downstream consequences. This provides an additional burden on the data scientist as they are required for each project, but it should also be seen as a learning and familiarization exercise for the domain expert. Long term, just as biologists have found it necessary to assimilate the skills of the bioinformatician to be effective in their science, most domains will also require a familiarity with the nature of data driven decision making and its application. Working closely with data-scientists on data preparation is one way to begin this sharing of best practice.
+<img class="" src="./slides/diagrams/health/British_Airways_at_SFO.jpg" width="50%" align="" style="background:none; border:none; box-shadow:none;">
+<center>*British Airways 747 at SFO*</center>
 
-The processes involved in Grade C and B are often badly taught in courses on data science. Perhaps not due to a lack of interest in the areas, but maybe more due to a lack of access to real world examples where data quality is poor. 
+I suspect most passengers would find it disconcerting if the pilot of a 747 was seen working on the engine shortly before a flight. As aviation has become more widespread, there is now a separation of responsibilities between pilots and mechanics. Indeed, Rolls Royce maintain ownership of their engines today, and merely lease them to the aircraft company. The responsibility for maintenance of the engine is entirely with Rolls Royce, yet the pilot is responsibility for the safety of the aircraft and its passengers.
 
-These stages of data science are also ridden with ambiguity. In the long term they could do with more formalization, and automation, but best practice needs to be understood by a wider community before that can happen.
-
-
-### Data Science as Debugging
-
-* Analogies: For Software Engineers [describe data science as *debugging*](http://inverseprobability.com/2017/03/14/data-science-as-debugging).
-
-### Understanding Patient Data
-
-[<img class="" src="./slides/diagrams/health/understanding-patient-data.png" width="" align="" style="background:none; border:none; box-shadow:none;">](https://wellcome.ac.uk/news/understanding-patient-data-launches-today)
-
-We know from the Wellcome report by Nicola Perrin et al on "Understanding Patient Data" that patients trust Universities and hospitals more than the trust commercial entities and insurers.
-
-### WannaCry 
-
-[<img class="" src="./slides/diagrams/health/wannacry.png" width="" align="" style="background:none; border:none; box-shadow:none;">](https://www.telegraph.co.uk/news/2017/05/12/nhs-hit-major-cyber-attack-hackers-demanding-ransom/)
-
-But there are challenges for public bodies in terms of maintaining the security of data. For example, the recent WannaCry virus attack which demonstrated the unpreparedness of much of the NHS IT infrastructure for a virus exhibiting an exploit that was well known to the security community. The key point is that the public trust the *intent* of academics and medical professionals, but actual *capability* is at variance with the intent. 
-
-### Bush Pilot Model
-
-<img class="" src="./slides/diagrams/health/bush-pilot-grant-mcconachie.jpg" width="80%" align="" style="background:none; border:none; box-shadow:none;">
-
-\center{*Bush Pilot Grant McConachie*}
-
-The situation is somewhat reminiscient of early aviation, and the nature of the job of *bush pilots*, who fly to remote places and often have mechanical skills required to fix the plane. Bush planes are also capable of making rough landings on harsh terrain. To a passenger, the sight of this pilot changing the oil before a flight out from a remote spot in the bush is likely reassuring.
-
-### 
-
-* The difference between *capability* and *intent*.
-
-### 
-
-<img class="" src="./slides/diagrams/health/British_Airways_at_SFO.jpg" width="" align="" style="background:none; border:none; box-shadow:none;">
-
-But I suspect most passengers would find it disconcerting if the pilot of a 747 was seen working on the engine shortly before a flight. As aviation has become more widespread, there is now a separation of responsibilities between pilots and mechanics. Indeed, Rolls Royce maintain ownership of their engines today, and merely lease them to the aircraft company. The responsibility for maintenance of the engine is entirely with Rolls Royce, yet the pilot is responsibility for the safety of the aircraft and its passengers.
-
+ We need to develop a modern data-infrastructure for which separates the need for security of infrastructure from the decision making of the data analyst.
+ 
 This separation of responsibility according to expertise needs to be emulated when considering health data infrastructure. This resolves the *intent-capability* dilemma, by ensuring a separation of responsibilities to those that are best placed to address the issues.
 
-### 
-
-[<img class="" src="./slides/diagrams/health/black-box-thinking.jpg" width="" align="" style="background:none; border:none; box-shadow:none;">](https://www.amazon.co.uk/Black-Box-Thinking-Surprising-Success-ebook/dp/B00PW634YQ)
-
-We must also be careful to maintain openness in this new genaration of digital solutions for patient care. Matthew Syed's book, "Black Box Thinking", emphasizes the importance of errors as a route to learning and improved process. Taking aviation as an example, and contrasting it with the culture in medicine, Matthew relates the story of [Martin Bromiley](https://chfg.org/trustees/martin-bromiley/), an airline pilot whose wife died during a routine hospital procedure and his efforts to improve the culture of safety in medicine. The motivation for the book is the difference in culture between aviation and medicine in how errors are acknowledged and dealt with. We must ensure that these high standards of oversight apply to the era of data-driven automated decision making.
-
-### How GDPR May Help
 
 
+### Propagation of Best Practice
 
 
-### Hall Presenti
+We must also be careful to maintain openness in this new genaration of digital solutions for patient care. Matthew Syed's book, "Black Box Thinking" [@Syed:blackbox15], emphasizes the importance of surfacing errors as a route to learning and improved process. Taking aviation as an example, and contrasting it with the culture in medicine, Matthew relates the story of [Martin Bromiley](https://chfg.org/trustees/martin-bromiley/), an airline pilot whose wife died during a routine hospital procedure and his efforts to improve the culture of safety in medicine. The motivation for the book is the difference in culture between aviation and medicine in how errors are acknowledged and dealt with. We must ensure that these high standards of oversight apply to the era of data-driven automated decision making. 
 
-### Industrial Strategy
+In particular, while there is much to be gained by involving comemrcial companies, if the process by which they are drawing inference about patient condition is hidden (for example, due to commercial confidentiality), this may prevent us from understanding errors in diagnosis or treatment. This would be a retrograde step. It may be that health device certification needs modification or reform for data-driven automated decision making, but we need a spirit of transparency around how these systems are deriving their inferences to ensure best practice.
 
-### AI Sector Deal
+<!--include{_data-science/includes/gdpr.md}-->
 
+<!--include{_ai/includes/government-reports.md}-->
 
-### 
+## Data Trusts
 
-[<img class="" src="./slides/diagrams/data-science/data-trusts.png" width="100%" align="" style="background:none; border:none; box-shadow:none;">](https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy)
+The machine learning solutions we are dependent on to drive automated decision making are dependent on data. But with regard to personal data there are important issues of privacy. Data sharing brings benefits, but also exposes our digital selves. From the use of social media data for targeted advertising to influence us, to the use of genetic data to identify criminals, or natural family members. Control of our virtual selves maps on to control of our actual selves. 
 
-### 
+The fuedal system that is implied by current data protection legislation has signficant power asymmetries at its heart, in that the data controller has a duty of care over the data subject, but the data subject may only discover failings in that duty of care when it's too late. Data controllers also may have conflicting motivations, and often their primary motivation is *not* towards the data-subject, but that is a consideration in their wider agenda.
 
-[<img class="" src="./slides/diagrams/data-science/data-trusts-review.png" width="" align="" style="background:none; border:none; box-shadow:none;">](https://www.out-law.com/en/articles/2017/october/review-calls-for-data-trusts-to-help-grow-artificial-intelligence-in-the-uk/)
+I proposed [Data Trusts](https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy) as a solution to this problem. Inspired by *land societies* that formed in the 19th century to bring democratic representation to the growing middle classes. A land society was a mutual organisation where resources were pooled for the common good. 
 
-###
+A Data Trust would be a legal entity where the trustees responsibility was entirely to the members of the trust. So the motivation of the data-controllers is aligned only with the data-subjects. How data is handled would be subject to the terms under which the trust was convened. The success of an individual trust would be contingent on it satisfying its members with appropriate balancing of individual privacy with the benefits of data sharing. 
 
-<object class="svgplot" align="" data="./slides/diagrams/user-centric-data.svg"></object>
-
-
-### Three Pillars of Deploying Technolgoy
+Formation of Data Trusts became the number one recommendation of the Hall-Presenti report on AI, but the manner in which this is done will have a significant impact on their utility. It feels important to have a diversity of approaches, and yet it feels important that any individual trust would be large enough to be taken seriously in representing the views of its members in wider negotiations.
 
 
 
 
-Any successful technical innovation has three components. Perhaps the most obvious is that there is technical innovation, but two more are important for innovation to reach its target, whether it's customers, patients or citizens of a country. First of all, the innovation needs to resolve a genuine business, customer or patient problem. That seems clear, but it is the first mistake of many to assume that their novel idea is applicable or somehow must help. Technological solutions have a manner of hypnotising those that develop them. There is a narrative around innovation that is distracting. The second mistake is to innovate to solve a business problem, but not understand the difficulties in deployment. Deployment can be challenging for many reasons whether they are technical or cultural. For example, to successfully deploy an innovation in the NHS it is likely that you need the body of NHS Consultants, Nurses and managers on board. Innovation can not be forced on people. Another challenge is existing ecosystems. I sometimes refer to it as *greenfields* innovation when innovation is taking place in a new ecosystem, but much of the time we are required to do *brownfields* innovation, i.e. innovate in an ecosystem that is already operational.
 
+<!--include{_ml/includes/resolve-deploy-innovate.md}-->
 
-### Fragility of AI Systems
-
-
-
-### Pigeonholing
-
-<img class="" src="./slides/diagrams/TooManyPigeons.jpg" width="60%" align="" style="background:none; border:none; box-shadow:none;">
-
-
-The way we are deploying artificial intelligence systems in practice is to build up systems of machine learning components. To build a machine learning system, we decompose the task into parts which we can emulate with ML methods. Each of these parts can be, typically, independently constructed and verified. For example, in a driverless car we can decompose the tasks into components such as "pedestrian detection" and "road line detection". Each of these components can be constructed with, for example, an independent classifier. We can then superimpose a logic on top. For example, "Follow the road line unless you detect a pedestrian in the road". 
-
-This allows for verification of car performance, as long as we can verify the individual components. However, it also implies that the AI systems we deploy are *fragile*.
-
-### Rapid Reimplementation
-
-
-
-### Early AI
-
-<img class="rotateimg90" src="./slides/diagrams/2017-10-12 16.47.34.jpg" width="40%" align="" style="background:none; border:none; box-shadow:none;">
-
-### Machine Learning Systems Design
-
-<img class="" src="./slides/diagrams/SteamEngine_Boulton&Watt_1784_neg.png" width="50%" align="" style="background:none; border:none; box-shadow:none;">
-
-### Adversaries
-
-* Stuxnet
-* Mischevious-Adversarial
-
-### Turnaround And Update
-
-* There is a massive need for turn around and update
-* A redeploy of the entire system.
-    * This involves changing the way we design and deploy.
-* Interface between security engineering and machine learning.
-
-### Peppercorns
-
-* A new name for system failures which aren't bugs.
-* Difference between finding a fly in your soup vs a peppercorn in
-  your soup. 
-
-<!--
-### {.slide: data-transition="none"}
-
-<center><video height="600" type="video/mp4"><source src="./slides/diagrams/paolo-peppercorn.mp4" height="80%"></video></center>
-
-### {.slide: data-transition="none"}
-
-<center><video type="video/mp4"><source src="./slides/diagrams/paolo-save.mp4"></video></center>
--->
-
+<!--include{_ai/includes/ml-systems-design-long.md}-->
 
 ### Thanks!
 
 * twitter: \@lawrennd
 * blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
 * [Mike Jordan's Medium Post](https://medium.com/@mijordan3/artificial-intelligence-the-revolution-hasnt-happened-yet-5e1d5812e1e7)
+
