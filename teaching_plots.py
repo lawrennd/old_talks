@@ -2362,6 +2362,42 @@ def shared_gplvm():
     pgm.add_edge("Z_2", "Y_2")
     return pgm
 
+def three_pillars_innovation(diagrams='./diagrams'):
+    """Plot graphical model of three pillars of successful innovation"""
+    pgm = daft.PGM(shape=[4, 2.5],
+                   origin=[0, 0], 
+                   grid_unit=5, 
+                   node_unit=4.2, 
+                   observed_style='shaded',
+                   line_width=6)
+    import matplotlib
+    orig_font_size = matplotlib.rcParams['font.size']
+    orig_font_weight = matplotlib.rcParams['font.weight']
+    matplotlib.rc('font', size=32)
+    matplotlib.rc('font', weight='bold')
+    aspect=2
+    pgm.add_node(daft.Node("innovate", "innovate", 2, 1.75, aspect=aspect))
+    ax=pgm.render()
+    mlai.write_figure(os.path.join(diagrams, 'three-pillars-innovation001.svg'),
+                  figure=ax.figure,
+                  transparent=True)
+    pgm.add_node(daft.Node("resolve", "resolve", 3, 0.75, aspect=aspect))
+    pgm.add_edge("resolve", "innovate", directed=False)
+    ax=pgm.render()
+    mlai.write_figure(os.path.join(diagrams, 'three-pillars-innovation002.svg'),
+                  figure=ax.figure,
+                  transparent=True)
+    pgm.add_node(daft.Node("deploy", "deploy", 1, 0.75, aspect=aspect))
+    pgm.add_edge("innovate", "deploy", directed=False)
+    pgm.add_edge("deploy", "resolve", directed=False)
+    ax=pgm.render()
+    mlai.write_figure(os.path.join(diagrams, 'three-pillars-innovation003.svg'),
+                  figure=ax.figure,
+                  transparent=True)
+    matplotlib.rc('font', size=orig_font_size)
+    matplotlib.rc('font', weight=orig_font_weight)
+
+
 def model_output(model, output_dim=0, scale=1.0, offset=0.0, ax=None, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2):
     """Plot the output of a GP."""
     if ax is None:
