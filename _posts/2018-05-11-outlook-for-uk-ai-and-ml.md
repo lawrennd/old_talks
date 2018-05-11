@@ -15,10 +15,16 @@ author:
 published: 2018-05-11
 ---
 
+\newcommand{\mappingFunction}{f}
+\newcommand{\sigmoid}[1]{\sigma\left(#1\right)}
+\newcommand{\inputScalar}{x}
+\newcommand{\inputVector}{{\bf \inputScalar}}
+\newcommand{\dataScalar}{y}
+\newcommand{\dataVector}{\mathbf{\dataScalar}}
+
+
 
 The aim of this presentation is give a sense of the current situation in machine learning and artificial intelligence as well as some perspective on the immediate outlook for the field.
-
-This presentation represents my personal opinion as an academic with 20 years experience in machine learning, computational biology and data science. This is not in any sense *Amazon* policy, but since September 2016 I have been on leave of absence at Amazon.
 
 ## The Gartner Hype Cycle
 
