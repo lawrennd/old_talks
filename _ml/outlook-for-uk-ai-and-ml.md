@@ -69,25 +69,23 @@ transition: None
 
 \include{_data-science/includes/feudal-era-data-ecosystem.md}
 
-### Rest of this Talk: Two Areas of Focus
+### Rest of the Talk
 
-* Data Infrastructure
+* Importance of data infrastructure
 
-* Deployment of Machine Learning Systems
-
-<!--\include{_data-science/includes/data-infrastructure.md}-->
+\include{_data-science/includes/data-infrastructure.md}
 \include{_data-science/includes/data-readiness-levels.md}
 \include{_data-science/includes/data-science-as-debugging.md}
 \include{_health/includes/rolls-royce-analogy.md}
 \include{_data-science/includes/gdpr.md}
 
-<!--\include{_ai/includes/government-reports.md}-->
+<!--include{_ai/includes/government-reports.md}-->
 
 \include{_data-science/includes/data-trusts.md}
 
 \include{_ml/includes/resolve-deploy-innovate.md}
 
-\include{_ai/includes/ml-systems-design-long.md}
+<!--include{_ai/includes/ml-systems-design-long.md}-->
 
 ### Thanks!
 
@@ -95,3 +93,4 @@ transition: None
 * blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
 * [Mike Jordan's Medium Post](https://medium.com/@mijordan3/artificial-intelligence-the-revolution-hasnt-happened-yet-5e1d5812e1e7)
 
+### References {.slide: allowframebreaks}

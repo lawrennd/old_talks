@@ -26,7 +26,7 @@ for i, handle in enumerate(handles):
 }
 
 \notesfigure{\includesvg{../slides/diagrams/data-science/bd-ds-iot-ml-google-trends003.svg}
-\center{*Google Trends data for different search terms in an attempt to assess their position on the "hype cycle"*}}
+\aligncenter{*Google Trends data for different search terms in an attempt to assess their position on the "hype cycle"*}}
 
 \displaycode{pods.notebook.display_plots('bd-ds-iot-ml-google-trends{sample:0>3}.svg', 
                             '../slides/diagrams/data-science', sample=(0,3))}

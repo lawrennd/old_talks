@@ -65,7 +65,7 @@ $$\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix)$$
 . . .
 
 * E.g. least squares}\notes{A commonly used examples (for example in a regression problem) is least squares,}
-$$\errorFunction(\boldsymbol{\beta}) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingFunction(\inputVector_i, \boldsymbol{\beta})\right)^2.$$
+$$\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingFunction(\inputVector_i, \boldsymbol{\beta})\right)^2.$$
 
 \slides{
 ### Two Components
