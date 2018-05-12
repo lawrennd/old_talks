@@ -15,7 +15,7 @@ author:
 published: 2018-05-11
 ---
 
-\newcommand{\numData}{n}
+$\newcommand{\numData}{n}
 \newcommand{\errorFunction}{E}
 \newcommand{\mappingFunction}{f}
 \newcommand{\sigmoid}[1]{\sigma\left(#1\right)}
@@ -24,66 +24,22 @@ published: 2018-05-11
 \newcommand{\inputMatrix}{{\bf X}}
 \newcommand{\dataScalar}{y}
 \newcommand{\dataVector}{\mathbf{\dataScalar}}
-\newcommand{\dataMatrix}{\mathbf{Y}}
-
-
+\newcommand{\dataMatrix}{\mathbf{Y}}$
 
 The aim of this presentation is give a sense of the current situation in machine learning and artificial intelligence as well as some perspective on the immediate outlook for the field.
 
 ## The Gartner Hype Cycle
 
-
-
 <img class="negate" src="./slides/diagrams/Gartner_Hype_Cycle.png" width="70%" align="center" style="background:none; border:none; box-shadow:none;">
-
 
 The [Gartner Hype Cycle](https://en.wikipedia.org/wiki/Hype_cycle) tries to assess where an idea is in terms of maturity and adoption. It splits the evolution of technology into a technological trigger, a peak of expectations followed by a trough of disillusionment and a final ascension into a useful technology. It looks rather like a classical control response to a final set point.
 
-
-
-
-
-```{.python}
-import matplotlib.pyplot as plt
-import pods
-import mlai
-import teaching_plots as plot
-```
-
-```{.python}
-# calling without arguments uses the default query terms
-data = pods.datasets.google_trends(['big data', 'data science', 'internet of things', 'machine learning']) 
-data['data frame'].set_index('Date', inplace=True)
-
-```
-
-```{.python}
-fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
-data['data frame'].plot(ax=ax)
-_ = ax.set_xticklabels(ax.xaxis.get_majorticklabels(), rotation=45)
-plt.gcf().subplots_adjust(bottom=0.3)
-handles = ax.get_lines()
-for handle in handles:
-    handle.set_visible(False)
-for i, handle in enumerate(handles):
-    handle.set_visible(True)
-	handle.set_linewidth(3)
-    mlai.write_figure('./slides/diagrams/data-science/bd-ds-iot-ml-google-trends{sample:0>3}.svg'.format(sample=i))
-
-```
-
 <object class="svgplot" align="" data="./slides/diagrams/data-science/bd-ds-iot-ml-google-trends003.svg"></object>
-<center>*Google Trends data for different search terms in an attempt to assess their position on the "hype cycle"*</center>
-
-
-
-
+<center><i>Google Trends data for different search terms in an attempt to assess their position on the "hype cycle"</i></center>
 
 Google trends gives us insight into how far along various technological terms are on the hype cycle.
 
 ## What is Machine Learning?
-
-
 
 What is machine learning? At its most basic level machine learning is a combination of
 
@@ -99,9 +55,6 @@ categorization or a quality score. The reason that machine learning
 has become a mainstay of artificial intelligence is the importance of
 predictions in artificial intelligence. The data and the model are combined through computation.
 
-
-
-
 In practice we normally perform machine learning using two functions. To combine data with a model we typically make use of:
 
 **a prediction function** a function which is used to make the predictions. It includes our beliefs about the regularities of the universe, our assumptions about how the world works, e.g. smoothness, spatial similarities, temporal similarities.
@@ -114,10 +67,7 @@ A useful reference for state of the art in machine learning is the UK Royal Soci
 
 You can also check my blog post on ["What is Machine Learning?"](http://inverseprobability.com/2017/07/17/what-is-machine-learning)
 
-
 ## Natural and Artificial Intelligence: Embodiment Factors
-
-
 
 <table>
  <tr>
@@ -141,13 +91,11 @@ You can also check my blog post on ["What is Machine Learning?"](http://inversep
  </tr>
 </table>
 
-
-
 There is a fundamental limit placed on our intelligence based on our ability to communicate. Claude Shannon founded the field of information theory. The clever part of this theory is it allows us to separate our measurement of information from what the information pertains to[^knowledge-representation].
 
 [^knowledge-representation]: the challenge of understanding what it pertains to is known as knowledge representation). 
 
-Shannon measured information in bits. One bit of information is the amount of information I pass to you when I give you the result of a coin toss. Shannon was also interested in the amount of information in the English language. He estimated that on average a word in the English language contains XX bits of information. 
+Shannon measured information in bits. One bit of information is the amount of information I pass to you when I give you the result of a coin toss. Shannon was also interested in the amount of information in the English language. He estimated that on average a word in the English language contains 12 bits of information. 
 
 Given typical speaking rates, that gives us an estimate of our ability to communicate of around 100 bits per second. Computers on the other hand can communicate much more rapidly. Current wired network speeds are around a billion bits per second, ten million times faster. 
 
@@ -169,7 +117,6 @@ For more details see this paper ["Living Together: Mind and Machine Intelligence
 
 <object class="svgplot" align="" data="./slides/diagrams/data-science/information-flow003.svg"></object>
 
-
 The high bandwidth of computers has resulted in a close relationship between the computer and data. Larege amounts of information can flow between the two. The degree to which the computer is mediating our relationship with data means that we should consider it an intermediary. 
 
 Origininally our low bandwith relationship with data was affected by two characteristics. Firstly, our tendency to over-interpret driven by our need to extract as much knowledge from our low bandwidth information channel as possible. Secondly, by our improved understanding of the domain of *mathematical* statistics and how our cognitive biases can mislead us. 
@@ -184,14 +131,6 @@ Better mediation of this flow actually requires a better understanding of human-
 
 For further thoughts see [this Guardian article](https://www.theguardian.com/media-network/2015/jul/23/data-driven-economy-marketing) on marketing in the internet era and [this blog post](http://inverseprobability.com/2015/12/04/what-kind-of-ai) on System Zero. 
 
-
-
-
-
-
-
-
-
 ### Societal Effects
 
 We have already seen the effects of this changed dynamic in biology and computational biology. Improved sensorics have led to the new domains of transcriptomics, epigenomics, and 'rich phenomics' as well as considerably augmenting our capabilities in genomics. 
@@ -200,55 +139,27 @@ Biologists have had to become data-savvy, they require a rich understanding of t
 
 There is also great promise for personalized health, but in health the wide data-sharing that has underpinned success in the computational biology community is much harder to cary out. 
 
-
-
-
 We can expect to see these phenomena reflected in wider society. Particularly as we make use of more automated decision making based only on data.
-
-
 
 The main phenomenon we see across the board is the shift in dynamic from the direct pathway between human and data, as traditionally mediated by classical statistcs, to a new flow of information via the computer. This change of dynamics gives us the modern and emerging domain of *data science*.
 
-
-
 ## Human Communication
-
-
-
-
-
 
 For human conversation to work, we require an internal model of who we are speaking to. We model each other, and combine our sense of who they are, who they think we are, and what has been said. This is our approach to dealing with the limited bandwidth connection we have. Empathy and understanding of intent. Mental dispositional concepts are used to augment our limited communication bandwidth.
 
 Fritz Heider referred to the important point of a conversation as being that they are happenings that are "*psychologically represented* in each of the participants" (his emphasis) [@Heider:interpersonal58]
 
-
-
-
-
-
-
-
-
 ### Machine Learning and Narratives
 
 <img class="" src="./slides/diagrams/Classic_baby_shoes.jpg" width="60%" align="" style="background:none; border:none; box-shadow:none;">
 
-<center>*For sale: baby shoes, never worn.*</center>
-
-
+<center><i>For sale: baby shoes, never worn.</i></center>
 
 Consider the six word novel, apocraphally credited to Ernest Hemingway, "For sale: baby shoes, never worn". To understand what that means to a human, you need a great deal of additional context. Context that is not directly accessible to a machine that has not got both the evolved and contextual understanding of our own condition to realize both the implication of the advert and what that implication means emotionally to the previous owner.
-
-
 
 [![](https://img.youtube.com/vi/8FIEZXMUM2I/0.jpg)](https://www.youtube.com/watch?v=8FIEZXMUM2I&t=7)
 
 [Fritz Heider](https://en.wikipedia.org/wiki/Fritz_Heider) and [Marianne Simmel](https://en.wikipedia.org/wiki/Marianne_Simmel)'s experiments with animated shapes from 1944 [@Heider:experimental44]. Our interpretation of these objects as showing motives and even emotion is a combination of our desire for narrative, a need for understanding of each other, and our ability to empathise. At one level, these are crudely drawn objects, but in another key way, the animator has communicated a story through simple facets such as their relative motions, their sizes and their actions. We apply our psychological representations to these faceless shapes in an effort to interpret their actions.
-
-
-
-### 
 
 > There are three types of lies: lies, damned lies and statistics
 >
@@ -258,16 +169,11 @@ The quote lies, damned lies and statistics was credited to Benjamin Disraeli by 
 
 ### *Mathematical* Statistics
 
-
-
 <img class="" src="./slides/diagrams/Portrait_of_Karl_Pearson.jpg" width="30%" align="" style="background:none; border:none; box-shadow:none;">
 
 [Karl Pearson](https://en.wikipedia.org/wiki/Karl_Pearson) (1857-1936), [Ronald Fisher](https://en.wikipedia.org/wiki/Ronald_Fisher) (1890-1962) and others considered the question of what conclusions can truly be drawn from data. Their mathematical studies act as a restraint on our tendency to over-interpret and see patterns where there are none. They introduced concepts such as randomized control trials that form a mainstay of the our decision making today, from government, to clinicians to large scale A/B testing that determines the nature of the web interfaces we interact with on social media and shopping.
 
-
-
 Today the statement "There are three types of lies: lies, damned lies and 'big data'" may be more apt. We are revisiting many of the mistakes made in interpreting data from the 19th century. Big data is laid down by happenstance, rather than actively collected with a particular question in mind. That means it needs to be treated with care when conclusions are being drawn. For data science to succede it needs the same form of rigour that Pearson and Fisher brought to statistics, a "mathematical data science" is needed.
-
 
 ### Artificial Intelligence and Data Science
 
@@ -281,13 +187,7 @@ Classically artificial intelligence worried more about *logic* and *planning* an
 
 There are strong overlaps between the fields, the wide availability of data by happenstance makes it easier to collect data for designing AI systems. These relations are coming through wide availability of sensing technologies that are interconnected by celluar networks, WiFi and the internet. This phenomenon is sometimes known as the *Internet of Things*, but this feels like a dangerous misnomer. We must never forget that we are interconnecting people, not things. 
 
-
-
-
-
-
 ### What does Machine Learning do?
-
 
 Any process of automation allows us to scale what we do by codifying a process in some way that makes it efficient and repeatable. Machine learning automates by emulating human (or other actions) found in data. Machine learning codifies in the form of a mathematical function that is learnt by a computer. If we can create these mathematical functions in ways in which they can interconnect, then we can also build systems.
 
@@ -307,11 +207,9 @@ $$ p(\text{bought}) =  \sigmoid{\beta_0 + \beta_1 \text{age} + \beta_2 \text{lat
 
 In the case where we have *features* to help us predict, we sometimes denote such features as a vector, $\inputVector$, and we then use an inner product between the features and the parameters, $\boldsymbol{\beta}^\top \inputVector = \beta_1 \inputScalar_1 + \beta_2 \inputScalar_2 + \beta_3 \inputScalar_3 ...$, to represent the argument of the sigmoid.
 
-
 $$ p(\text{bought}) =  \sigmoid{\boldsymbol{\beta}^\top \inputVector}$$
 
 More generally, we aim to predict some aspect of our data, $\dataScalar$, by relating it through a mathematical function, $\mappingFunction(\cdot)$, to the parameters, $\boldsymbol{\beta}$ and the data, $\inputVector$.
-
 
 $$ \dataScalar =  \mappingFunction\left(\inputVector, \boldsymbol{\beta}\right)$$
 
@@ -319,17 +217,11 @@ We call $\mappingFunction(\cdot)$ the *prediction function*
 
 To obtain the fit to data, we use a separate function called the *objective function* that gives us a mathematical representation of the difference between our predictions and the real data. 
 
-
 $$\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix)$$
 A commonly used examples (for example in a regression problem) is least squares,
 $$\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingFunction(\inputVector_i, \boldsymbol{\beta})\right)^2.$$
 
-
-
 If a linear prediction funciton is combined with the least squares objective function then that gives us a classical *linear regression*, another classical statistical model. Statistics often focusses on linear models because it makes interpretation of the model easier. Interpretation is key in statistics because the aim is normally to validate questions by analysis of data. Machine learning has typically focussed more on the prediction function itself and worried less about the interpretation of parameters, which are normally denoted by $\mathbf{w}$ instead of $\boldsymbol{\beta}$. As a result *non-linear* functions are explored more often as they tend to improve quality of predictions but at the expense of interpretability.
-
-
-
 
 ### Deep Learning
 
@@ -339,17 +231,12 @@ If a linear prediction funciton is combined with the least squares objective fun
 
 * Example: face recognition
 
-
-###
-
 <small>Outline of the DeepFace architecture. A front-end of a single convolution-pooling-convolution filtering on the rectified input, followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected.</small>
 
 <img class="" src="./slides/diagrams/deepface_neg.png" width="100%" align="" style="background:none; border:none; box-shadow:none;">
 
 <p align="right">
 <small>Source: DeepFace</small></p>
-
-### 
 
 <img class="" src="./slides/diagrams/576px-Early_Pinball.jpg" width="50%" align="" style="background:none; border:none; box-shadow:none;">
 
@@ -359,16 +246,11 @@ In a pinball machine, when the ball gets to the bottom it might fall into a hole
 
 An image has more than one number associated with it, so it's like playing pinball in a *hyper-space*.
 
-
-
-
 At initialization, the pins aren't in the right place to bring the ball to the correct decision.
-
 
 Learning involves moving all the pins to be in the right position, so that the ball falls in the right place. But moving all these pins in hyperspace can be difficult. In a hyper space you have to put a lot of data through the machine for to explore the positions of all the pins. Adversarial learning reflects the fact that a ball can be moved a small distance and lead to a very different result.
 
 Probabilistic methods explore more of the space by considering a range of possible paths for the ball through the machine.
-
 
 ### Uncertainty and Learning
 
@@ -393,9 +275,6 @@ late 19th century.
 
 compare [digital oligarchy](https://www.theguardian.com/media-network/2015/mar/05/digital-oligarchy-algorithms-personal-data) vs [how Africa can benefit from the data revolution](https://www.theguardian.com/media-network/2015/aug/25/africa-benefit-data-science-information)
 
-* Apple vs Nokia: How you handle disruption.
-
-
 Disruptive technologies take time to assimilate, and best practices, as well as the pitfalls of new technologies take time to share. Historically, new technologies led to new professions. [Isambard Kingdom Brunel](https://en.wikipedia.org/wiki/Isambard_Kingdom_Brunel) (born 1806) was a leading innovator in civil, mechanical and naval engineering. Each of these has its own professional institutions founded in 1818, 1847, and 1860 respectively.
 
 [Nikola Tesla](https://en.wikipedia.org/wiki/Nikola_Tesla) developed the modern approach to electrical distribution, he was born in 1856 and the American Instiute for Electrical Engineers was founded in 1884, the UK equivalent was founded in 1871. 
@@ -404,17 +283,7 @@ Disruptive technologies take time to assimilate, and best practices, as well as 
 
 [Watts S. Humphrey](https://en.wikipedia.org/wiki/Watts_Humphrey), born 1927, was known as the "father of software quality", in the 1980s he founded a program aimed at understanding and managing the software process. The British Computer Society was founded in 1956.
 
-
-
-
-
-
-
 Why the need for these professions? Much of it is about codification of best practice and developing trust between the public and practitioners. These fundamental characteristics of the professions are shared with the oldest professions (Medicine, Law) as well as the newest (Information Technology).
-
-
-
-
 
 So where are we today? My best guess is we are somewhere equivalent to the 1980s for Software Engineering. In terms of professional deployment we have a basic understanding of the equivalent of "programming" but much less understanding of *machine learning systems design* and *data infrastructure*. How the components we ahve developed interoperate together in a reliable and accountable manner. Best practice is still evolving, but perhaps isn't being shared widely enough. 
 
@@ -423,8 +292,6 @@ One problem is that the art of data science is superficially similar to regular 
 While data science involves programming, it is different in the following way. Most of the work in data science involves understanding the data and the appropriate manipulations to apply to extract knowledge from the data. The eventual number of lines of code that are required to extract that knowledge are often very few, but the amount of thought and attention that needs to be applied to each line is much more than a traditional line of software code. Testing of those lines is also of a different nature, provisions have to be made for evolving data environments. Any development work is often done on a static snapshot of data, but deployment is made in a live environment where the nature of data changes. Quality control involves checking for degradation in performance arising form unanticipated changes in data quality. It may also need to check for regulatory conformity. For example, in the UK the General Data Protection Regulation stipulates standards of explainability and fairness that may need to be monitored. These concerns do not affect traditional software deployments.
 
 Others are also pointing out these challenges, [this post](https://medium.com/@karpathy/software-2-0-a64152b37c35) from Andrej Karpathy (now head of AI at Tesla) covers the notion of "Software 2.0". Google researchers have highlighted the challenges of "Technical Debt" in machine learning [@Sculley:debt15]. Researchers at Berkeley have characterized the systems challenges associated with machine learning [@Stoica:systemsml17].
-
-
 
 Data science is not only about technical expertise and analysis of data, we need to also generate a culture of decision making that acknowledges the true challenges in data-driven automated decision making. In particular, a focus on algorithms has neglected the importance of data in driving decisions. The quality of data is paramount in that poor quality data will inevitably lead to poor quality decisions. Anecdotally most data scientists will suggest that 80% of their time is spent on data clean up, and only 20% on actually modelling. 
 
@@ -453,28 +320,14 @@ In the late sixties early software programmers made note of the increasing costs
 >should not duplicate work. Secondly, where possible we should automate
 >work. 
 
-
 What I term "The Data Crisis" is the modern equivalent of this problem. The quantity of modern data, and the lack of attention paid to data as it is initially "laid down" and the costs of data cleaning are bringing about a crisis in data-driven decision making. Just as with software, the crisis is most correctly addressed by 'scaling' the manner in which we process our data. Duplication of work occurs because the value of data cleaning is not correctly recognised in management decision making processes. Automation of work is increasingly possible through techniques in "artificial intelligence", but this will also require better management of the data science pipeline so that data about data science (meta-data science) can be correctly assimilated and processed. The Alan Turing institute has a program focussed on this area, [AI for Data Analytics](https://www.turing.ac.uk/research_projects/artificial-intelligence-data-analytics/).
 
-
-
 <img class="" src="./slides/diagrams/Medievalplowingwoodcut.jpg" width="" align="" style="background:none; border:none; box-shadow:none;">
-
-
 
 Our current information infrastructure bears a close relation with *feudal systems* of government. In the feudal system a lord had a duty of care over his serfs and vassals, a duty to protect subjects. But in practice there was a power-asymetry. In feudal days protection was against Viking raiders, today, it is against information raiders. However, when there is an information leak, when there is a failure it is too late. Alternatively, our data is publicly shared, in an information commons. Akin to common land of the medieval village. But just as commons were subject to overgrazing and poor management, so it is that much of our data cannot be managed in this way. In particularly personal, sensitive data. 
 
 I explored this idea further in [this Guardian Op-Ed from 2015](https://www.theguardian.com/media-network/2015/nov/16/information-barons-threaten-autonomy-privacy-online).
 
-
-
-### Rest of the Talk
-
-* Importance of data infrastructure
-
-<!--include{_data-science/includes/data-infrastructure.md}-->
-<!--include{_data-science/includes/data-readiness-levels.md}-->
-<!--include{_data-science/includes/data-science-as-debugging.md}-->
 ## Public Use of Data for Public Good
 
 Since machine learning methods are so dependent on data, Understanding public attitudes to the use of their data is key to developing machine learning methods that maintain the trust of the public. Nowhere are the benefits of machine learning more profound, and the potential pitfalls more catastrophic than in the use of machine learning in health data. 
@@ -483,47 +336,30 @@ The promise is for methods that take a personalized perspective on our individua
 
 With this in mind The Wellcome Trust launched a report on ["Understanding Patient Data"](https://wellcome.ac.uk/news/understanding-patient-data-launches-today) authored by Nicola Perrin, driven by the National Data Guardian's recommendations.
 
-
-
-
-
 From this report we know that patients trust Universities and hospitals more than the trust commercial entities and insurers. However, there are a number of different ways in which data can be mishandled, it is not only the intent of the data-controllers that effects our data security.
-
-
 
 For example, the recent WannaCry virus attack which demonstrated the unpreparedness of much of the NHS IT infrastructure for a virus exhibiting an exploit that was well known to the security community. The key point is that the public trust the *intent* of academics and medical professionals, but actual *capability* could be at variance with the intent. 
 
-
-
 <img class="" src="./slides/diagrams/health/bush-pilot-grant-mcconachie.jpg" width="60%" align="" style="background:none; border:none; box-shadow:none;">
 
-<center>*Bush Pilot Grant McConachie*</center>
+<center><i>Bush Pilot Grant McConachie</i></center>
 
 The situation is somewhat reminiscient of early aviation. This is where we are with our data science capabilities. By analogy, the engine of the plane is our data security infrastructure, the basic required technology to make us safe. The pilot is the health professional performing data analytics. The nature of the job of early pilots and indeed today's *bush pilots* (who fly to remote places) included a need to understand the mechanics of the engine. Just as a health data scientist, today, needs to deal with security of the infrastructure as well as the nature of the analysis.
 
-
-
 <img class="" src="./slides/diagrams/health/British_Airways_at_SFO.jpg" width="50%" align="" style="background:none; border:none; box-shadow:none;">
-<center>*British Airways 747 at SFO*</center>
+<center><i>British Airways 747 at SFO</i></center>
 
 I suspect most passengers would find it disconcerting if the pilot of a 747 was seen working on the engine shortly before a flight. As aviation has become more widespread, there is now a separation of responsibilities between pilots and mechanics. Indeed, Rolls Royce maintain ownership of their engines today, and merely lease them to the aircraft company. The responsibility for maintenance of the engine is entirely with Rolls Royce, yet the pilot is responsibility for the safety of the aircraft and its passengers.
 
- We need to develop a modern data-infrastructure for which separates the need for security of infrastructure from the decision making of the data analyst.
+We need to develop a modern data-infrastructure for which separates the need for security of infrastructure from the decision making of the data analyst.
  
 This separation of responsibility according to expertise needs to be emulated when considering health data infrastructure. This resolves the *intent-capability* dilemma, by ensuring a separation of responsibilities to those that are best placed to address the issues.
 
-
-
 ### Propagation of Best Practice
-
 
 We must also be careful to maintain openness in this new genaration of digital solutions for patient care. Matthew Syed's book, "Black Box Thinking" [@Syed:blackbox15], emphasizes the importance of surfacing errors as a route to learning and improved process. Taking aviation as an example, and contrasting it with the culture in medicine, Matthew relates the story of [Martin Bromiley](https://chfg.org/trustees/martin-bromiley/), an airline pilot whose wife died during a routine hospital procedure and his efforts to improve the culture of safety in medicine. The motivation for the book is the difference in culture between aviation and medicine in how errors are acknowledged and dealt with. We must ensure that these high standards of oversight apply to the era of data-driven automated decision making. 
 
 In particular, while there is much to be gained by involving comemrcial companies, if the process by which they are drawing inference about patient condition is hidden (for example, due to commercial confidentiality), this may prevent us from understanding errors in diagnosis or treatment. This would be a retrograde step. It may be that health device certification needs modification or reform for data-driven automated decision making, but we need a spirit of transparency around how these systems are deriving their inferences to ensure best practice.
-
-<!--include{_data-science/includes/gdpr.md}-->
-
-<!--include{_ai/includes/government-reports.md}-->
 
 ## Data Trusts
 
@@ -537,17 +373,8 @@ A Data Trust would be a legal entity where the trustees responsibility was entir
 
 Formation of Data Trusts became the number one recommendation of the Hall-Presenti report on AI, but the manner in which this is done will have a significant impact on their utility. It feels important to have a diversity of approaches, and yet it feels important that any individual trust would be large enough to be taken seriously in representing the views of its members in wider negotiations.
 
-
-
-
-
-<!--include{_ml/includes/resolve-deploy-innovate.md}-->
-
-<!--include{_ai/includes/ml-systems-design-long.md}-->
-
 ### Thanks!
 
-* twitter: \@lawrennd
+* twitter: @lawrennd
 * blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
 * [Mike Jordan's Medium Post](https://medium.com/@mijordan3/artificial-intelligence-the-revolution-hasnt-happened-yet-5e1d5812e1e7)
-
