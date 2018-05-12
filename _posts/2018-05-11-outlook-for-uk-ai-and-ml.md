@@ -15,16 +15,16 @@ author:
 published: 2018-05-11
 ---
 
-$\newcommand{\numData}{n}
+$$\newcommand{\numData}{n}
 \newcommand{\errorFunction}{E}
 \newcommand{\mappingFunction}{f}
 \newcommand{\sigmoid}[1]{\sigma\left(#1\right)}
 \newcommand{\inputScalar}{x}
-\newcommand{\inputVector}{{\bf \inputScalar}}
+\newcommand{\inputVector}{{\bf x}}
 \newcommand{\inputMatrix}{{\bf X}}
 \newcommand{\dataScalar}{y}
-\newcommand{\dataVector}{\mathbf{\dataScalar}}
-\newcommand{\dataMatrix}{\mathbf{Y}}$
+\newcommand{\dataVector}{\mathbf{y}}
+\newcommand{\dataMatrix}{\mathbf{Y}}$$
 
 The aim of this presentation is give a sense of the current situation in machine learning and artificial intelligence as well as some perspective on the immediate outlook for the field.
 
