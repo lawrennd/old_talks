@@ -101,7 +101,7 @@ Given typical speaking rates, that gives us an estimate of our ability to commun
 
 When it comes to compute though, our best estimates indicate our computers are slower. A typical modern computer can process make around 2 billion floating point operations per second, each floating point operation involves a 64 bit number. So the computer is processing around 120 billion bits per second. 
 
-It's difficult to get similar estimates for humans, but by some estimates the amount of compute we would require to *simulate* a human brain is equivalent to that in the UK's fastest computer, the MET office machine in Exeter, which in 2018 ranks as the 11th fastest computer in the world. That machine simulates the world's weather each morning, and then simulates the world's climate. It is a ** petaflop machine. 
+It's difficult to get similar estimates for humans, but by some estimates the amount of compute we would require to *simulate* a human brain is equivalent to that in the UK's fastest computer, the MET office machine in Exeter, which in 2018 ranks as the 11th fastest computer in the world. That machine simulates the world's weather each morning, and then simulates the world's climate. It is a 16 petaflop machine. 
 
 So when it comes to our ability to compute we are extraordinary, not compute in our conscious mind, but the underlying neuron firings that underpin both our consciousness, our sbuconsciousness as well as our motor control etc. By analogy I sometimes like to think of us as a Formula One engine. But in terms of our ability to deploy that computation in actual use, to share the results of what we have inferred, we are very limited. So when you imagine the F1 car that represents a psyche, think of an F1 car with bicycle wheels.
 
