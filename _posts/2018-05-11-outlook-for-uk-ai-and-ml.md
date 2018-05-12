@@ -1,7 +1,7 @@
 ---
 title: "Outlook for AI and Machine Learning"
 abstract: With the recent BEIS Industrial Strategy and the UK Sector deal the UK is turning its attention to how the next generation of artificial intelligence can drive efficiency and innovation in the UK economy. In this talk we review the outlook. 
-reveal: 2018-05-11-outlook-for-uk-ai-and-ml.slides.html
+reveal: 2018-05-11-outlo%ok-for-uk-ai-and-ml.slides.html
 published: 2018-05-11
 venue: HM Treasury
 layout: talk
@@ -30,11 +30,11 @@ The aim of this presentation is give a sense of the current situation in machine
 
 ## The Gartner Hype Cycle
 
-<img class="negate" src="./slides/diagrams/Gartner_Hype_Cycle.png" width="70%" align="center" style="background:none; border:none; box-shadow:none;">
+<img class="negate" src="http://inverseprobability.com/talks/slides/diagrams/Gartner_Hype_Cycle.png" width="70%" align="center" style="background:none; border:none; box-shadow:none;">
 
 The [Gartner Hype Cycle](https://en.wikipedia.org/wiki/Hype_cycle) tries to assess where an idea is in terms of maturity and adoption. It splits the evolution of technology into a technological trigger, a peak of expectations followed by a trough of disillusionment and a final ascension into a useful technology. It looks rather like a classical control response to a final set point.
 
-<object class="svgplot" align="" data="./slides/diagrams/data-science/bd-ds-iot-ml-google-trends003.svg"></object>
+<object class="svgplot" align="" data="http://inverseprobability.com/talks/slides/diagrams/data-science/bd-ds-iot-ml-google-trends003.svg"></object>
 <center><i>Google Trends data for different search terms in an attempt to assess their position on the "hype cycle"</i></center>
 
 Google trends gives us insight into how far along various technological terms are on the hype cycle.
@@ -72,8 +72,8 @@ You can also check my blog post on ["What is Machine Learning?"](http://inversep
 <table>
  <tr>
   <td></td>
-  <td align="center"><img class="" src="./slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="40%" align="center" style="background:none; border:none; box-shadow:none;"></td>
-  <td align="center"><img class="" src="./slides/diagrams/ClaudeShannon_MFO3807.jpg" width="25%" align="center" style="background:none; border:none; box-shadow:none;"></td>
+  <td align="center"><img class="" src="http://inverseprobability.com/talks/slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="40%" align="center" style="background:none; border:none; box-shadow:none;"></td>
+  <td align="center"><img class="" src="http://inverseprobability.com/talks/slides/diagrams/ClaudeShannon_MFO3807.jpg" width="25%" align="center" style="background:none; border:none; box-shadow:none;"></td>
  </tr>
  <tr>
   <td>compute</td>
@@ -115,7 +115,7 @@ For more details see this paper ["Living Together: Mind and Machine Intelligence
 
 ## Evolved Relationship with Information
 
-<object class="svgplot" align="" data="./slides/diagrams/data-science/information-flow003.svg"></object>
+<object class="svgplot" align="" data="http://inverseprobability.com/talks/slides/diagrams/data-science/information-flow003.svg"></object>
 
 The high bandwidth of computers has resulted in a close relationship between the computer and data. Larege amounts of information can flow between the two. The degree to which the computer is mediating our relationship with data means that we should consider it an intermediary. 
 
@@ -151,7 +151,7 @@ Fritz Heider referred to the important point of a conversation as being that the
 
 ### Machine Learning and Narratives
 
-<img class="" src="./slides/diagrams/Classic_baby_shoes.jpg" width="60%" align="" style="background:none; border:none; box-shadow:none;">
+<img class="" src="http://inverseprobability.com/talks/slides/diagrams/Classic_baby_shoes.jpg" width="60%" align="" style="background:none; border:none; box-shadow:none;">
 
 <center><i>For sale: baby shoes, never worn.</i></center>
 
@@ -169,7 +169,7 @@ The quote lies, damned lies and statistics was credited to Benjamin Disraeli by 
 
 ### *Mathematical* Statistics
 
-<img class="" src="./slides/diagrams/Portrait_of_Karl_Pearson.jpg" width="30%" align="" style="background:none; border:none; box-shadow:none;">
+<img class="" src="http://inverseprobability.com/talks/slides/diagrams/Portrait_of_Karl_Pearson.jpg" width="30%" align="" style="background:none; border:none; box-shadow:none;">
 
 [Karl Pearson](https://en.wikipedia.org/wiki/Karl_Pearson) (1857-1936), [Ronald Fisher](https://en.wikipedia.org/wiki/Ronald_Fisher) (1890-1962) and others considered the question of what conclusions can truly be drawn from data. Their mathematical studies act as a restraint on our tendency to over-interpret and see patterns where there are none. They introduced concepts such as randomized control trials that form a mainstay of the our decision making today, from government, to clinicians to large scale A/B testing that determines the nature of the web interfaces we interact with on social media and shopping.
 
@@ -233,12 +233,12 @@ If a linear prediction funciton is combined with the least squares objective fun
 
 <small>Outline of the DeepFace architecture. A front-end of a single convolution-pooling-convolution filtering on the rectified input, followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected.</small>
 
-<img class="" src="./slides/diagrams/deepface_neg.png" width="100%" align="" style="background:none; border:none; box-shadow:none;">
+<img class="" src="http://inverseprobability.com/talks/slides/diagrams/deepface_neg.png" width="100%" align="" style="background:none; border:none; box-shadow:none;">
 
 <p align="right">
 <small>Source: DeepFace</small></p>
 
-<img class="" src="./slides/diagrams/576px-Early_Pinball.jpg" width="50%" align="" style="background:none; border:none; box-shadow:none;">
+<img class="" src="http://inverseprobability.com/talks/slides/diagrams/576px-Early_Pinball.jpg" width="50%" align="" style="background:none; border:none; box-shadow:none;">
 
 We can think of what these models are doing as being similar to early pin ball machines. In a neural network, we input a number (or numbers), whereas in pinball, we input a ball. The location of the ball on the left-right axis can be thought of as the number. As the ball falls through the machine, each layer of pins can be thought of as a different layer of neurons. Each layer acts to move the ball from left to right. 
 
@@ -322,7 +322,7 @@ In the late sixties early software programmers made note of the increasing costs
 
 What I term "The Data Crisis" is the modern equivalent of this problem. The quantity of modern data, and the lack of attention paid to data as it is initially "laid down" and the costs of data cleaning are bringing about a crisis in data-driven decision making. Just as with software, the crisis is most correctly addressed by 'scaling' the manner in which we process our data. Duplication of work occurs because the value of data cleaning is not correctly recognised in management decision making processes. Automation of work is increasingly possible through techniques in "artificial intelligence", but this will also require better management of the data science pipeline so that data about data science (meta-data science) can be correctly assimilated and processed. The Alan Turing institute has a program focussed on this area, [AI for Data Analytics](https://www.turing.ac.uk/research_projects/artificial-intelligence-data-analytics/).
 
-<img class="" src="./slides/diagrams/Medievalplowingwoodcut.jpg" width="" align="" style="background:none; border:none; box-shadow:none;">
+<img class="" src="http://inverseprobability.com/talks/slides/diagrams/Medievalplowingwoodcut.jpg" width="" align="" style="background:none; border:none; box-shadow:none;">
 
 Our current information infrastructure bears a close relation with *feudal systems* of government. In the feudal system a lord had a duty of care over his serfs and vassals, a duty to protect subjects. But in practice there was a power-asymetry. In feudal days protection was against Viking raiders, today, it is against information raiders. However, when there is an information leak, when there is a failure it is too late. Alternatively, our data is publicly shared, in an information commons. Akin to common land of the medieval village. But just as commons were subject to overgrazing and poor management, so it is that much of our data cannot be managed in this way. In particularly personal, sensitive data. 
 
@@ -340,13 +340,13 @@ From this report we know that patients trust Universities and hospitals more tha
 
 For example, the recent WannaCry virus attack which demonstrated the unpreparedness of much of the NHS IT infrastructure for a virus exhibiting an exploit that was well known to the security community. The key point is that the public trust the *intent* of academics and medical professionals, but actual *capability* could be at variance with the intent. 
 
-<img class="" src="./slides/diagrams/health/bush-pilot-grant-mcconachie.jpg" width="60%" align="" style="background:none; border:none; box-shadow:none;">
+<img class="" src="http://inverseprobability.com/talks/slides/diagrams/health/bush-pilot-grant-mcconachie.jpg" width="60%" align="" style="background:none; border:none; box-shadow:none;">
 
 <center><i>Bush Pilot Grant McConachie</i></center>
 
 The situation is somewhat reminiscient of early aviation. This is where we are with our data science capabilities. By analogy, the engine of the plane is our data security infrastructure, the basic required technology to make us safe. The pilot is the health professional performing data analytics. The nature of the job of early pilots and indeed today's *bush pilots* (who fly to remote places) included a need to understand the mechanics of the engine. Just as a health data scientist, today, needs to deal with security of the infrastructure as well as the nature of the analysis.
 
-<img class="" src="./slides/diagrams/health/British_Airways_at_SFO.jpg" width="50%" align="" style="background:none; border:none; box-shadow:none;">
+<img class="" src="http://inverseprobability.com/talks/slides/diagrams/health/British_Airways_at_SFO.jpg" width="50%" align="" style="background:none; border:none; box-shadow:none;">
 <center><i>British Airways 747 at SFO</i></center>
 
 I suspect most passengers would find it disconcerting if the pilot of a 747 was seen working on the engine shortly before a flight. As aviation has become more widespread, there is now a separation of responsibilities between pilots and mechanics. Indeed, Rolls Royce maintain ownership of their engines today, and merely lease them to the aircraft company. The responsibility for maintenance of the engine is entirely with Rolls Royce, yet the pilot is responsibility for the safety of the aircraft and its passengers.
