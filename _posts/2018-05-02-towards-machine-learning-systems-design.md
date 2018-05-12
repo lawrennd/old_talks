@@ -26,7 +26,7 @@ $$ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$
 
 where *data* is our observations. They can be actively or passively
 acquired (meta-data). The *model* contains our assumptions, based on
-previous experience. THat experience can be other data, it can come
+previous experience. That experience can be other data, it can come
 from transfer learning, or it can merely be our beliefs about the
 regularities of the universe. In humans our models include our
 inductive biases. The *prediction* is an action to be taken or a
