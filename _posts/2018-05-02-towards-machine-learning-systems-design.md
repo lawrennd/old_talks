@@ -1570,7 +1570,7 @@ will be deployed in evolving environments.
 
 ### Thanks!
 
-* twitter: \@lawrennd
+* twitter: @lawrennd
 * blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
 * [Natural vs Artifical Intelligence](http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence)
 * [Mike Jordan's Medium Post](https://medium.com/@mijordan3/artificial-intelligence-the-revolution-hasnt-happened-yet-5e1d5812e1e7)
