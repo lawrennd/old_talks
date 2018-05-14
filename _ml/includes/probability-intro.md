@@ -100,16 +100,18 @@ for you, it only needs to be run once per file).}
     denoted by $x$ or $y$.
 
 -   We summarise the notation and terminology for these distributions in
-    the following table.
-       
+    the following table.}
+
+\slides{### }
+
 Terminology | Mathematical notation | Description
 ------|-------------|-------------
 joint | $P(X=x, Y=y)$ | prob. that X=x *and* Y=y
 marginal | $P(X=x)$ | prob. that X=x *regardless of* Y
-conditional | $P(X=x|Y=y)$ | prob. that X=x *given that* Y=y
+conditional | $P(X=x\vert Y=y)$ | prob. that X=x *given that* Y=y
 
-\aligncentre{The different basic probability
-  distributions.}}
+\aligncenter{The different basic probability
+  distributions.}
   
 
 \setupcode{import teaching_plots as plot}
@@ -121,20 +123,18 @@ conditional | $P(X=x|Y=y)$ | prob. that X=x *given that* Y=y
 
 \alignright{Inspired by lectures from Christopher Bishop}
 
-\slides{### Different Distributions
-
-- Definition of probability distributions.
+### Definition of probability distributions.
 
 Terminology      |  Definition                                              |         Probability Notation
 -----------------|----------------------------------------------------------|------------------------------                                                                                                                               
   Joint Probability      | $\lim_{N\rightarrow\infty}\frac{n_{X=3,Y=4}}{N}$ | $P\left(X=3,Y=4\right)$
   Marginal Probability |  $\lim_{N\rightarrow\infty}\frac{n_{X=5}}{N}$    | $P\left(X=5\right)$
- Conditional Probability | $\lim_{N\rightarrow\infty}\frac{n_{X=3,Y=4}}{n_{Y=4}}$ |  $P\left(X=3|Y=4\right)$
+ Conditional Probability | $\lim_{N\rightarrow\infty}\frac{n_{X=3,Y=4}}{n_{Y=4}}$ |  $P\left(X=3\vert Y=4\right)$
  
-}
 
-\slides{### Notational Details
+### Notational Details
 
+\slides{
 -   Typically we should write out
     $P\left(X=x,Y=y\right)$.
 
@@ -153,6 +153,26 @@ Terminology      |  Definition                                              |   
         $P\left(X=x,Y=y\right)=P\left(Y=y,X=x\right)$.
 
 -   We now quickly review the ‘rules of probability’.}
+
+\notes{Typically we should write out
+$P\left(X=x,Y=y\right)$, but in practice we often shorten this to $P\left(x,y\right)$. This looks very much like we might write a multivariate function, *e.g.*
+ 
+ $$f\left(x,y\right)=\frac{x}{y},$$ 
+ 
+ but for a multivariate funciton
+
+$$f\left(x,y\right)\neq f\left(y,x\right)$$.
+
+However
+
+$$P\left(x,y\right)=P\left(y,x\right)$$
+
+because
+
+$$P\left(X=x,Y=y\right)=P\left(Y=y,X=x\right).$$
+
+Sometimes I think of this as akin to the way in Python we can write 'keyword arguments' in functions. If we use keyword arguments, the ordering of arguments doesn't matter.}
+
 
 \notes{We've now introduced conditioning and independence to
 the notion of probability and computed some conditional probabilities on a
