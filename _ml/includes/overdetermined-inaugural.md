@@ -60,7 +60,7 @@ $$2.5 = 2m + c$$}
 
 ### 
 
-\includeimg{../slides/diagrams/Pierre-Simon_Laplace.png}{30%}
+\includeimg{../slides/diagrams/ml/Pierre-Simon_Laplace.png}{30%}
 
 ### {data-transition="none"}
 

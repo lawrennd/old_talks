@@ -1,3 +1,16 @@
+\slides{### Course Text
+
+\includeimg{../slides/diagrams/mlai/a-first-course-in-machine-learning.jpg}{40%}{}{centre}
+
+@Rogers:book11}
+
+\slides{### Course Text
+
+
+\includeimg{../slides/diagrams/mlai/978-0-387-31073-2.png}{40%}{}{centre}
+
+@Bishop:book06}
+
 \notes{Welcome to the Machine Learning and Adaptive
 Intelligence course. In this course we will introduce the basic concepts of
 machine learning and data science. In particular we will look at tools and
@@ -44,7 +57,3 @@ available, you may be able to summarize your code with just two or three lines,
 but the amount of intellectual energy that is expended on writing those three
 lines is far greater than in standard code.}
 
-In the first lecture we will think
-a little about 'how we got here' in terms of computer science. In the lecture
-itself, this will be done by taking a subjective perspective, that of my own
-'data autobiography'.

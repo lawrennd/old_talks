@@ -21,14 +21,14 @@ project? Name two languages involved in the Jupyter project other than python.}{
 
 \include{_ml/includes/probability-intro.md}
 
-## Assignment Questions
+### Assignment Questions
 
 \notes{The questions in the above lab sheet need to be
 answered and handed in before 09:00 on 7th October 2014 (i.e. before next
 lecture). The hand should be done via file upload through
 [MOLE](http://vle.shef.ac.uk).}
 
-## More Fun on the Python Data Farm
+### More Fun on the Python Data Farm
 
 \notes{If you want to explore more of the things
 you can do with movies and python you might be interested in the `imdbpy` python
