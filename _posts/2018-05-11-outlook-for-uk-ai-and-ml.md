@@ -20,8 +20,8 @@ $$\newcommand{\numData}{n}
 \newcommand{\mappingFunction}{f}
 \newcommand{\sigmoid}[1]{\sigma\left(#1\right)}
 \newcommand{\inputScalar}{x}
-\newcommand{\inputVector}{{\bf x}}
-\newcommand{\inputMatrix}{{\bf X}}
+\newcommand{\inputVector}{\mathbf{x}}
+\newcommand{\inputMatrix}{\mathbf{X}}
 \newcommand{\dataScalar}{y}
 \newcommand{\dataVector}{\mathbf{y}}
 \newcommand{\dataMatrix}{\mathbf{Y}}$$

@@ -1,10 +1,11 @@
+\setupcode{import teaching_plots as plot}
 \plotcode{plot.over_determined_system(diagrams='../slides/diagrams/ml')}
 
 ### {data-transition="none"}
 
-<large>$$y = mx + c$$</large>
+<large>$$\dataScalar = m\inputScalar + c$$</large>
 
-\code{pods.notebook.display_plots('over_determined_system{samp:0>3}.svg', directory='../slides/diagrams/ml', samp=(1, 7))}
+\displaycode{pods.notebook.display_plots('over_determined_system{samp:0>3}.svg', directory='../slides/diagrams/ml', samp=(1, 7))}
 
 \slides{
 ### {data-transition="none"}
@@ -37,27 +38,27 @@
 }
 
 
-### $y = mx + c$ {data-transition="none"}
+\slides{### $\dataScalar = m\inputScalar + c$ 
 
 . . . 
 
-<div align="left">point 1: $x = 1$, $y=3$</div>
+\alignleft{point 1: $\inputScalar = 1$, $\dataScalar=3$}
 
 $$3 = m + c$$
 
 . . .
 
-<div align="left">point 2: $x = 3$, $y=1$</div>
+\alignleft{point 2: $\inputScalar = 3$, $\dataScalar=1$}
 
 $$1 = 3m + c$$
 
 . . . 
 
-<div align="left">point 3: $x = 2$, $y=2.5$</div>
+\alignleft{point 3: $\inputScalar = 2$, $\dataScalar=2.5$}
 
-$$2.5 = 2m + c$$
+$$2.5 = 2m + c$$}
 
-### {data-transition="none"}
+### 
 
 \includeimg{../slides/diagrams/Pierre-Simon_Laplace.png}{30%}
 
@@ -73,41 +74,44 @@ $$2.5 = 2m + c$$
 
 \includeimg{../slides/diagrams/philosophicaless00lapliala.png}{80%}
 
-### $y = mx + c + \epsilon$ {data-transition="None"}
+\slides{
+### $\dataScalar = m\inputScalar + c + \noiseScalar$ {data-transition="None"}
 
 . . . 
 
-<div align="left">point 1: $x = 1$, $y=3$</div>
+\alignleft{point 1: $\inputScalar = 1$, $\dataScalar=3$}
 
-$$3 = m + c + \epsilon_1$$
+$$3 = m + c + \noiseScalar_1$$
 
 . . .
 
-<div align="left">point 2: $x = 3$, $y=1$</div>
+\alignleft{point 2: $\inputScalar = 3$, $\dataScalar=1$}
 
-$$1 = 3m + c + \epsilon_2$$
+$$1 = 3m + c + \noiseScalar_2$$
 
 . . . 
 
-<div align="left">point 3: $x = 2$, $y=2.5$</div>
+\alignleft{point 3: $\inputScalar = 2$, $\dataScalar=2.5$}
 
-$$2.5 = 2m + c + \epsilon_3$$
+$$2.5 = 2m + c + \noiseScalar_3$$
+}
 
-
+\slides{
 ### Laplace's Idea
 
-<div align="left">The Probabilistic Process</div>
+\alignleft{The Probabilistic Process}
 
 . . .
 
-<div align="left">Set the mean of Gaussian to be a function.</div>
+\alignleft{Set the mean of Gaussian to be a function.}
 
-$$p\left(y_i|x_i\right)=\frac{1}{\sqrt{2\pi\sigma^2}}\exp \left(-\frac{\left(y_i-f\left(x_i\right)\right)^{2}}{2\sigma^2}\right).$$
-
-. . .
-
-<div align="left">This gives us a ‘noisy function’.</div>
+$$p\left(\dataScalar_i|\inputScalar_i\right)=\frac{1}{\sqrt{2\pi\dataStd^2}}\exp \left(-\frac{\left(\dataScalar_i-\mappingFunction\left(\inputScalar_i\right)\right)^{2}}{2\dataStd^2}\right).$$
 
 . . .
 
-<div align="left">This is known as a stochastic process.</div>
+\alignleft{This gives us a 'noisy function'.}
+
+. . .
+
+\alignleft{This is known as a stochastic process.}
+}
