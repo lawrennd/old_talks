@@ -3,6 +3,7 @@ layout: slides
 title: Probability and an Introduction to Jupyter, Python and Pandas
 author: Neil D. Lawrence
 date: 2015/09/29
+transition: None
 ---
 
 \include{talk-macros.tex}
@@ -50,7 +51,7 @@ press `SHIFT-enter` or `CTRL-enter`. Then you can try running the code below.}
 ia = IMDb()
 
 for movie in ia.search_movie('python'):
-    print(movie) }
+    print(movie)}
 
 \includeyoutube{GX8VLYUYScM}
 
@@ -88,3 +89,7 @@ for movie in ia.search_movie('python'):
     2.  @Bishop:book06 Exercise 1.8
 
     3.  @Bishop:book06 Exercise 1.9}
+
+### References
+
+
