@@ -1,5 +1,5 @@
 ---
-layout: slides
+layout: lectures
 title: Probability and an Introduction to Jupyter, Python and Pandas
 author: Neil D. Lawrence
 date: 2015/09/29
