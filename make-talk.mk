@@ -1,6 +1,6 @@
 OUT=$(DATE)-$(BASE)
 
-all: ${BASE}.slides.html ${BASE}.notes.html  ${BASE}.notes.pdf ${BASE}.ipynb
+all: ${BASE}.slides.html ${BASE}.notes.html  ${BASE}.ipynb
 
 ${BASE}.slides.html: ${BASE}.slides.md
 	pandoc  ${PDFLAGS} ${SFLAGS} -c ${CSS} --include-in-header=${HEADER} -t revealjs --bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib -o ${BASE}.slides.html  ${BASE}.slides.md 
