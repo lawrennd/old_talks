@@ -34,7 +34,10 @@ Year is 1801 Planet Ceres discovered in January by Giuseppe Piazzi, an italian p
 
 ###
 
-[\includeimg{../slides/diagrams/ceres/ceres-beobachtung-von-piazzi.png}{100%}](https://play.google.com/books/reader?printsec=frontcover&output=reader&id=JBw4AAAAMAAJ&pg=GBS.PA280)
+\includegooglebook{JBw4AAAAMAAJ}{280}
+@Piazzi:monatliche1801
+
+<!--[\includeimg{../slides/diagrams/ceres/ceres-beobachtung-von-piazzi.png}{100%}](https://play.google.com/books/reader?printsec=frontcover&output=reader&id=JBw4AAAAMAAJ&pg=GBS.PA280)-->
 
 \speakernotes{Image data ```wget http://server3.sky-map.org/imgcut?survey=DSS2&img_id=all&angle=4&ra=3.5&de=17.25&width=1600&height=1600&projection=tan&interpolation=bicubic&jpeg_quality=0.8&output_type=png```}
 
@@ -81,19 +84,20 @@ Year is 1801 Planet Ceres discovered in January by Giuseppe Piazzi, an italian p
 
 \includeimg{../slides/diagrams/ceres/godfrey-kneller-isaac-newton-1689.png}
 
-\notes{@Gauss:astronomische02
-@1801monatliche}
+\notes{@Gauss:monatliche1801,@Gauss:astronomische02}
 
 \speakernotes{Named ceres because Ceres is strongly associated with Sicily}
 
 
 ###
 
-[\includeimg{../slides/diagrams/ceres/gauss-ceres-prediction-monatliche.png}](https://play.google.com/books/reader?printsec=frontcover&output=reader&id=JBw4AAAAMAAJ&pg=GBS.PA647)
+\includegooglebook{JBw4AAAAMAAJ}{647}
+
+<!--[\includeimg{../slides/diagrams/ceres/gauss-ceres-prediction-monatliche.png}](https://play.google.com/books/reader?printsec=frontcover&output=reader&id=JBw4AAAAMAAJ&pg=GBS.PA647)-->
 
 ###
 trim=0cm 9cm 0cm 12cm, clip=true
-
+\includegooglebook{JBw4AAAAMAAJ}{647}
 [\includeimg{../slides/diagrams/ceres/gauss-ceres-prediction-monatliche.png}](https://play.google.com/books/reader?printsec=frontcover&output=reader&id=JBw4AAAAMAAJ&pg=GBS.PA647)
 
 ###

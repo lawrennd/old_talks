@@ -1,42 +1,22 @@
 ### Regression: Linear Releationship
 
+\notes{For many their first encounter with what might be termed a machine learning method is fitting a straight line. A straight line is characterized by two parameters, the scale, $m$, and the offset $c$. 
+
 $$\dataScalar_i = m \inputScalar_i + c$$
 
-* $\dataScalar_i$ : winning
-time/pace.
+\slides{* $\dataScalar_i$ : winning
+pace.
 
 * $\inputScalar_i$ : year of Olympics.
 
 * $m$ : rate of improvement over
 time.
 
-* $c$ : winning time at year 0.
+* $c$ : winning time at year 0.}
 
-### Overdetermined System
+\notes{Firstly $\dataScalar_i$ is the winning pace and it is given as a function of the year which is represented by $\inputScalar_i$. There are two further parameters of the prediction function. For the olympics example we can interpret these parameters, the scale $m$ is the rate of improvement of the olympic marathon pace on a yearly basis. And $c$ is the winning pace as estimated at year 0.}
 
-\setupcode{import teaching_plots as plot}
-\plotcode{plot.over_determined_system(diagrams='../slides/diagrams/ml')}
-
-\displaycode{pods.notebook.display_plots('over_determined_system{samp:0>3}.svg', directory='../slides/diagrams/ml', samp=(1, 7))}
-
-### $y = mx + c$
-
-point 1: $x = 1$, $y=3$ $$3 = m + c$$ 
-point 2: $x = 3$, $y=1$
-$$1 = 3m + c$$ 
-point 3: $x = 2$, $y=2.5$ $$2.5 = 2m + c$$
-
-\includeimg{../slides/diagrams/Pierre-Simon_Laplace.png}{50%}
-
-### $y = mx + c + \epsilon$
-
-point 1: $x = 1$, $y=3$ 
-$$3 = m + c + \epsilon_1$$
-point 2: $x = 3$, $y=1$ 
-$$1 = 3m + c + \epsilon_2$$ 
-
-point 3: $x = 2$, $y=2.5$
-$$2.5 = 2m + c + \epsilon_3$$
+\include{_ml/includes/overdetermined-inaugural.md}
 
 ### The Gaussian Density
 
@@ -61,7 +41,7 @@ The Gaussian PDF with $\mu=1.7$ and variance $\sigma^2=0.0225$. Mean shown as re
 ### Gaussian Density
 
 $$
-\mathcal{N}(y|\mu, \sigma^2) =
+\gaussianDist{y}{\mu}{\sigma^2} =
 \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left(-\frac{(y-\mu)^2}{2\sigma^2}\right)
 $$
 
@@ -127,47 +107,35 @@ $$p\left(\dataScalar_i|\inputScalar_i,m,c\right)=\frac{1}{\sqrt{2\pi \sigma^2}}\
 
 ### Data Set Likelihood
 
-* If the noise, $\epsilon_i$ is sampled independently
-for each
-    data point.
+* If the noise, $\epsilon_i$ is sampled independently for each data point.
 
-* Each data point is independent (given $m$ and
-$c$).
+* Each data point is independent (given $m$ and $c$).
 
-* For independent variables:
+* For *independent* variables:
     $$p(\dataVector) = \prod_{i=1}^\numData
 p(\dataScalar_i)$$
     $$p(\dataVector|\inputVector, m, c) = \prod_{i=1}^\numData p(\dataScalar_i|\inputScalar_i, m, c)$$
 
 ### For Gaussian 
 
-* i.i.d. assumption   
-  $$p(\dataVector|\inputVector, m, c)
-= \prod_{i=1}^\numData \frac{1}{\sqrt{2\pi \sigma^2}}\exp \left(-\frac{\left(\dataScalar_i-
-m\inputScalar_i-c\right)^{2}}{2\sigma^2}\right).$$
-    $$p(\dataVector|\inputVector, m, c) =
-\frac{1}{\left(2\pi \sigma^2\right)^{\frac{\numData}{2}}}\exp
-\left(-\frac{\sum_{i=1}^\numData\left(\dataScalar_i-m\inputScalar_i-c\right)^{2}}{2\sigma^2}\right).$$
+* i.i.d. assumption
+  $$p(\dataVector|\inputVector, m, c) = \prod_{i=1}^\numData \frac{1}{\sqrt{2\pi \sigma^2}}\exp \left(-\frac{\left(\dataScalar_i- m\inputScalar_i-c\right)^{2}}{2\sigma^2}\right).$$
+  $$p(\dataVector|\inputVector, m, c) = \frac{1}{\left(2\pi \sigma^2\right)^{\frac{\numData}{2}}}\exp\left(-\frac{\sum_{i=1}^\numData\left(\dataScalar_i-m\inputScalar_i-c\right)^{2}}{2\sigma^2}\right).$$
 
 ### Log Likelihood Function
 
 * Normally work with the log likelihood:
-$$L(m,c,\sigma^{2})=-\frac{\numData}{2}\log 2\pi -\frac{\numData}{2}\log \sigma^2 -\sum
+  $$L(m,c,\sigma^{2})=-\frac{\numData}{2}\log 2\pi -\frac{\numData}{2}\log \sigma^2 -\sum
 _{i=1}^{\numData}\frac{\left(\dataScalar_i-m\inputScalar_i-c\right)^{2}}{2\sigma^2}.$$
 
 ### Consistency of Maximum Likelihood
 
 
-* If data was really generated
-according to probability we specified.
+* If data was really generated according to probability we specified.
 
-* Correct parameters will be recovered
-in limit as
-    $n \rightarrow \infty$.
+* Correct parameters will be recovered in limit as $\numData \rightarrow \infty$.
 
-* This can be proven through sample
-based approximations (law of
-    large numbers) of “KL divergences”.
+* This can be proven through sample based approximations (law of large numbers) of “KL divergences”.
 
 * Mainstay of classical statistics.
 
@@ -177,8 +145,7 @@ based approximations (law of
 
 * *Minimizing* error function is equivalent to *maximizing* log likelihood.
 
-* Maximizing *log likelihood* is equivalent to maximizing the *likelihood*
-because $\log$ is monotonic.
+* Maximizing *log likelihood* is equivalent to maximizing the *likelihood* because $\log$ is monotonic.
 
 * Probabilistic interpretation: Minimizing error function is equivalent to maximum likelihood with respect to parameters.
 
@@ -203,18 +170,15 @@ because $\log$ is monotonic.
 
 * Two functions involved:
   * Prediction function: $\mappingFunction(\inputScalar_i)$
-  * Error, or Objective function: $\errorFunction(m, c)$
+  * Error, or *Objective* function: $\errorFunction(m, c)$
 * Error function depends on parameters through prediction function.
 
 ### Mathematical Interpretation
 
 * What is the mathematical interpretation?
 * There is a cost function.
-  * It expresses mismatch between your
-prediction and reality.
-  $$\errorFunction(m, c)=\sum_{i=1}^\numData \left(\dataScalar_i - m\inputScalar_i
--c\right)^2$$
-
+  * It expresses mismatch between your prediction and reality.
+    $$\errorFunction(m, c)=\sum_{i=1}^\numData \left(\dataScalar_i - m\inputScalar_i-c\right)^2$$
   * This is known as the sum of squares error.
 
 ### Learning is Optimization
@@ -229,7 +193,7 @@ prediction and reality.
 
 * Fixed point equations
   $$0 = -2\sum_{i=1}^\numData \inputScalar_i\dataScalar_i+2\sum_{i=1}^\numData m \inputScalar_i^2+2\sum_{i=1}^\numData c\inputScalar_i$$
-    $$m  =    \frac{\sum_{i=1}^\numData \left(\dataScalar_i -c\right)\inputScalar_i}{\sum_{i=1}^\numData\inputScalar_i^2}$$
+  $$m  =    \frac{\sum_{i=1}^\numData \left(\dataScalar_i -c\right)\inputScalar_i}{\sum_{i=1}^\numData\inputScalar_i^2}$$
 
 ### Learning is Optimization
 
@@ -291,8 +255,7 @@ _{i=1}^{\numData}\left(\dataScalar_i-m^{*}\inputScalar_i-c^{*}\right)^{2}}{\numD
 ### Log Likelihood for Multivariate Regression
 
 * The likelihood of a single data point is
-  $$p\left(\dataScalar_i|\inputScalar_i\right)=\frac{1}{\sqrt{2\pi\sigma^2}}\exp
-\left(-\frac{\left(\dataScalar_i-\mappingVector^{\top}\inputVector_i\right)^{2}}{2\sigma^2}\right).$$
+  $$p\left(\dataScalar_i|\inputScalar_i\right)=\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{\left(\dataScalar_i-\mappingVector^{\top}\inputVector_i\right)^{2}}{2\sigma^2}\right).$$
 * Leading to a log likelihood for the data set of
   $$L(\mappingVector,\sigma^2)= -\frac{\numData}{2}\log \sigma^2-\frac{\numData}{2}\log 2\pi -\frac{\sum_{i=1}^{\numData}\left(\dataScalar_i-\mappingVector^{\top}\inputVector_i\right)^{2}}{2\sigma^2}.$$
 
@@ -301,7 +264,7 @@ _{i=1}^{\numData}\left(\dataScalar_i-m^{*}\inputScalar_i-c^{*}\right)^{2}}{\numD
 
 ### Expand the Brackets
 
-\begin{align*}
+$$\begin{align*}
   \errorFunction(\mappingVector,\sigma^2)  = &
 \frac{\numData}{2}\log \sigma^2 + \frac{1}{2\sigma^2}\sum
 _{i=1}^{\numData}\dataScalar_i^{2}-\frac{1}{\sigma^2}\sum
@@ -313,7 +276,7 @@ _{i=1}^{\numData}\dataScalar_i^{2}-\frac{1}{\sigma^2}
 \mappingVector^\top\sum_{i=1}^{\numData}\inputVector_i\dataScalar_i\\&+\frac{1}{2\sigma^2}
 \mappingVector^{\top}\left[\sum
 _{i=1}^{\numData}\inputVector_i\inputVector_i^{\top}\right]\mappingVector +\text{const}.
-\end{align*}
+\end{align*}$$
 
 ### Multivariate Derivatives
 

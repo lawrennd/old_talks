@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg4206"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   width="696.25"
+   height="560"
+   viewBox="0 0 696.25 560"
+   sodipodi:docname="pinball-initial.svg">
+  <metadata
+     id="metadata4212">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs4210" />
+  <style
+     id="style6530">
+      .pin { opacity:1;fill:black;fill-opacity:1;stroke:none;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:18, 3;stroke-dashoffset:0;stroke-opacity:1;}
+      .decisionbox { opacity:1;fill:black;fill-opacity:1;stroke:none;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:18, 3;stroke-dashoffset:0;stroke-opacity:1;}
+      .ball {opacity:1;fill:black;fill-opacity:1;stroke:none;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:18, 3;stroke-dashoffset:0;stroke-opacity:1;}
+    </style>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1208"
+     inkscape:window-height="660"
+     id="namedview4208"
+     showgrid="false"
+     inkscape:zoom="0.94642857"
+     inkscape:cx="180.6533"
+     inkscape:cy="237.73585"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg4206" />
+  <circle
+     class="pin"
+     id="circle4216"
+     cx="125"
+     cy="160"
+     r="12" />
+  <circle
+     class="pin"
+     id="circle4218"
+     cx="250"
+     cy="160"
+     r="12" />
+  <circle
+     class="pin"
+     id="circle4220"
+     cx="375"
+     cy="160"
+     r="12" />
+  <circle
+     class="pin"
+     id="circle4222"
+     cx="500"
+     cy="160"
+     r="12" />
+  <circle
+     class="pin"
+     id="circle4224"
+     cx="190"
+     cy="285"
+     r="12" />
+  <circle
+     class="pin"
+     id="circle426"
+     cx="315"
+     cy="285"
+     r="12" />
+  <circle
+     class="pin"
+     id="circle428"
+     cx="440"
+     cy="285"
+     r="12" />
+  <circle
+     class="pin"
+     id="circle4230"
+     cx="65"
+     cy="415"
+     r="12" />
+  <circle
+     class="pin"
+     id="circle4232"
+     cx="190"
+     cy="415"
+     r="12" />
+  <circle
+     class="pin"
+     id="circle4234"
+     cx="315"
+     cy="415"
+     r="12" />
+  <circle
+     class="pin"
+     id="circle4236"
+     cx="440"
+     cy="415"
+     r="12" />
+  <circle
+     class="pin"
+     id="circle6545"
+     cx="565"
+     cy="415"
+     r="12" />
+  <circle
+     class="ball"
+     style="fill:#905224;fill-opacity:1"
+     id="yescircle"
+     cx="595"
+     cy="45"
+     r="40" />
+  <circle
+     class="ball"
+     id="yescircle2"
+     cx="595"
+     cy="45"
+     r="40"
+     style="fill:#905224;fill-opacity:1" />
+  <circle
+     class="ball"
+     id="nocircle"
+     cx="595"
+     cy="45"
+     style="fill:#7c48a1;fill-opacity:1"
+     r="40" />
+  <rect
+     class="decisionbox"
+     style="fill:#905224;fill-opacity:1"
+     id="yesbox"
+     width="125"
+     height="35"
+     x="165"
+     y="495" />
+  <text
+     style="font-family:sans-serif;fill:black;fontsize:17.5px;text-anchor:middle;text-align:center"
+     x="220"
+     y="518"
+     id="text7701">Yes</text>
+  
+  <rect
+     class="decisionbox"
+     style="fill:#7c48a1;fill-opacity:1"
+     id="nobox"
+     width="125"
+     height="35"
+     x="345"
+     y="495" />
+  <text
+     style="font-family:sans-serif;fill:black;fontsize:17.5px;text-anchor:middle;text-align:center"
+     x="410"
+     y="518"
+     id="text7701">No</text>
+</svg>

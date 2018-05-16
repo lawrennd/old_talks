@@ -1,4 +1,8 @@
 \ifdef{ipynb}
+\define{\includegooglebook{id}{page}}{```
+import pods
+pods.notebook.display_google_book(id='\id', page=\page)
+```}
 \define{\includeyoutube{id}{width}{height}{time}}{```{.python}
 from IPython.lib.display import YouTubeVideo
 YouTubeVideo('\id')
@@ -71,6 +75,7 @@ YouTubeVideo('\id')
 
 \else
 \ifdef{notes}
+\define{\includegooglebook{id}{page}}{[![](../slides/diagrams/books/\id-\page.png)](https://play.google.com/books/reader?id=\id&pg=PA\page)}
 \define{\includeyoutube{id}{width}{height}{time}}{[![](https://img.youtube.com/vi/\id/0.jpg)](https://www.youtube.com/watch?v=\id&t=\time)}
 \define{\includempfour{filename}{width}{height}}{<video width="\width" height="\height" controls preload="none">
 <source src="\filename" type="video/mp4"/>
@@ -139,6 +144,7 @@ YouTubeVideo('\id')
 \define{\columns{one}{two}{width1}{width2}}{<table><tr><td width="\width1">\one</td><td width="\width2">\two</td></tr></table>}
 
 \else
+\define{\includegooglebook{id}{page}}{<iframe frameborder="0" scrolling="no" style="border:0px" src="http://books.google.co.uk/books?id=\id&pg=PA\page&output=embed", width=700 height=500></iframe>}
 \define{\includeyoutube{id}{width}{height}{time}}{<iframe width="\width" height="\height" src="https://www.youtube.com/embed/\id?start=\time" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>}
 \define{\includempfour{filename}{width}{height}}{<video width="\width" height="\height" controls preload="none">
 <source src="\filename" type="video/mp4"/>
