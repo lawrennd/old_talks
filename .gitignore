@@ -8,3 +8,11 @@ _site
 .ipynb*
 *.pyc
 .#*
+*.slides.md
+*.notes.md
+*.bak
+_*/*.ipynb
+_*/*.slides.html
+_*/*.notes.html
+*.ipynb.md
+_/*.notes.pdf
