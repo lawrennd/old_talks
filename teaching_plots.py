@@ -1112,6 +1112,67 @@ def output_augment_x(x, num_outputs):
     index = index[:, np.newaxis]
     return np.hstack((index, x))
 
+def basis(basis, x_min, x_max, fig, ax, loc, text, diagrams='./diagrams', fontsize=20):
+    """Plot examples of the basis vectors."""
+    x = np.linspace(x_min, x_max, 100)[:, None]
+
+    Phi = basis(x, num_basis=3)
+
+    ax.plot(x, Phi[:, 0], '-', color=[1, 0, 0], linewidth=3)
+    ylim = [-2, 2]
+    ax.set_ylim(ylim)
+    plt.sca(ax)
+    plt.yticks([-2, -1, 0, 1, 2])
+    plt.xticks([-1, 0, 1])
+    ax.text(loc[0][0], loc[0][1],text[0], horizontalalignment='center', fontsize=fontsize)
+    ax.set_xlabel('$x$', fontsize=fontsize)
+    ax.set_ylabel('$\phi(x)$', fontsize=fontsize)
+    mlai.write_figure(os.path.join(diagrams, basis.__name__ + '_basis001.svg'), transparent=True)
+
+    ax.plot(x, Phi[:, 1], '-', color=[1, 0, 1], linewidth=3)
+    ax.text(loc[1][0], loc[1][1], text[1], horizontalalignment='center', fontsize=fontsize)
+    mlai.write_figure(os.path.join(diagrams, basis.__name__ + '_basis002.svg'), transparent=True)
+
+    ax.plot(x, Phi[:, 2], '-', color=[0, 0, 1], linewidth=3)
+    ax.text(loc[2][0], loc[2][1], text[2], horizontalalignment='center', fontsize=fontsize)
+
+    mlai.write_figure(os.path.join(diagrams, basis.__name__ + '_basis003.svg'), transparent=True)
+
+    w = np.random.normal(size=(3, 1))
+    
+    f = np.dot(Phi,w)
+    ax.cla()
+    a, = ax.plot(x, f, color=[0, 0, 1], linewidth=3)
+    ax.plot(x, Phi[:, 0], color=[1, 0, 0], linewidth=1) 
+    ax.plot(x, Phi[:, 1], color=[1, 0, 1], linewidth=1)
+    ax.plot(x, Phi[:, 2], color=[0, 0, 1], linewidth=1) 
+    ylim = [-4, 3]
+    ax.set_ylim(ylim)
+    plt.sca(ax)
+    plt.xticks([-1, 0, 1]) 
+    ax.set_xlabel('$x$', fontsize=fontsize) 
+    ax.set_ylabel('$f(x)$', fontsize=fontsize)
+    t = []
+    for i in range(w.shape[0]):
+        t.append(ax.text(loc[i][0], loc[i][1], '$w_' + str(i) + ' = '+ str(w[i]) + '$', horizontalalignment='center', fontsize=fontsize))
+
+    mlai.write_figure(os.path.join(diagrams, basis.__name__ + '_function001.svg'), transparent=True)
+
+    w = np.random.normal(size=(3, 1)) 
+    f = np.dot(Phi,w) 
+    a.set_ydata(f)
+    for i in range(3):
+        t[i].set_text('$w_' + str(i) + ' = '+ str(w[i]) + '$')
+    mlai.write_figure(os.path.join(diagrams, basis.__name__ + '_function002.svg'), transparent=True)
+
+
+    w = np.random.normal(size=(3, 1)) 
+    f = np.dot(Phi, w) 
+    a.set_ydata(f)
+    for i in range(3):
+        t[i].set_text('$w_' + str(i) + ' = '+ str(w[i]) + '$')
+    mlai.write_figure(os.path.join(diagrams, basis.__name__ + '_function003.svg'), transparent=True)
+
 def kern_circular_sample(K, mu=None, x=None,
                          filename=None, fig=None, num_samps=5,
                          num_theta=48, multiple=True,
