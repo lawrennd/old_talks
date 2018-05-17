@@ -8,8 +8,7 @@ transition: None
 
 \include{talk-macros.tex}
 
-\setupcode{
-import numpy as np
+\setupcode{import numpy as np
 import scipy as sp
 %matplotlib inline}
 
@@ -29,14 +28,16 @@ import scipy as sp
 \setupcode{from matplotlib import pyplot as plt
 import mlai
 import teaching_plots as plot}
-\plotcode{f, ax = plt.subplots(figsize=plot.big_figsize)
+\plotcode{f, ax = plt.subplots(figsize=plot.big_wide_figsize)
 loc =[[0, 1.4,],
       [0, -0.7],
       [0.75, -0.2]]
 text =['$\phi(x) = 1$',
        '$\phi(x) = x$',
        '$\phi(x) = x^2$']
-mlai.plot_basis(mlai.polynomial, x_min=-1.3, x_max=1.3, fig=f, ax=ax, loc=loc, text=text)
+plot.basis(mlai.polynomial, x_min=-1.3, x_max=1.3, 
+           fig=f, ax=ax, loc=loc, text=text,
+		   diagrams='../slides/diagrams/ml')
 }
 
 ### Quadratic Basis
@@ -53,7 +54,7 @@ $$\mappingFunction(x) = \colorred{\mappingScalar_0} + \colormagenta{\mappingScal
 
 \displaycode{pods.notebook.display_plots('polynomial_function{func_num:0>3}.svg', directory='../slides/diagrams/ml', func_num=(1,3))}
 
-\plotcode{f, ax = plt.subplots(figsize=plot.big_figsize)
+\plotcode{f, ax = plt.subplots(figsize=plot.big_wide_figsize)
 
 loc = [[-1.25, -0.4],
        [0., 1.25],
@@ -61,7 +62,9 @@ loc = [[-1.25, -0.4],
 text = ['$\phi_1(x) = e^{-(x + 1)^2}$',
         '$\phi_2(x) = e^{-2x^2}$', 
         '$\phi_3(x) = e^{-2(x-1)^2}$']
-mlai.plot_basis(mlai.radial, x_min=-2, x_max=2, fig=f, ax=ax, loc=loc, text=text)}
+plot.basis(mlai.radial, x_min=-2, x_max=2, 
+           fig=f, ax=ax, loc=loc, text=text,
+           diagrams='../slides/diagrams/ml')}
 
 ### Radial Basis Functions
 
@@ -172,7 +175,7 @@ from matplotlib import pyplot as plt}
 \code{basis = mlai.polynomial
 
 data = pods.datasets.olympic_marathon_men()
-f, ax = plt.subplots(1, 2, figsize=(10,5))
+
 x = data['X']
 y = data['Y']
 
@@ -182,7 +185,9 @@ max_basis = 27
 ll = np.array([np.nan]*(max_basis))
 sum_squares = np.array([np.nan]*(max_basis))}
 
-\plotcode{for num_basis in range(1,max_basis):
+\plotcode{f, ax = plt.subplots(1, 2, figsize=plot.two_figsize)
+
+for num_basis in range(1,max_basis):
     
     model = mlai.LM(x, y, basis, num_basis=num_basis, data_limits=data_limits)
     model.fit()
@@ -190,7 +195,7 @@ sum_squares = np.array([np.nan]*(max_basis))}
     ll[num_basis-1] = model.log_likelihood()
     plot.marathon_fit(model=model, data_limits=data_limits, 
                       objective=sum_squares, objective_ylim=[0,8],
-                      title='Root Mean Square Training Error'
+                      title='Root Mean Square Training Error',
                       fig=f, ax=ax)
 }
 
