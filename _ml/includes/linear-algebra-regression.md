@@ -142,30 +142,28 @@ $$
 nor does he make use of the inner product.}
 
 \notes{In our notation, if we were to do linear regression, we would need to subsititue:
-\begin{align*}
+$$\begin{align*}
 a &\leftarrow \dataScalar_1-c, \\ a^\prime &\leftarrow \dataScalar_2-c,\\ a^{\prime\prime} &\leftarrow
 \dataScalar_3 -c,\\ 
 \text{etc.} 
-\end{align*}
-to introduce the data observations
-$\{\dataScalar_i\}_{i=1}^{\numData}$ alongside $c$, the offset. We would then introduce the input
-locations
-\begin{align*}
+\end{align*}$$
+to introduce the data observations $\{\dataScalar_i\}_{i=1}^{\numData}$ alongside $c$, the offset. We would then introduce the input locations
+$$\begin{align*}
 b & \leftarrow \inputScalar_1,\\
 b^\prime & \leftarrow \inputScalar_2,\\
 b^{\prime\prime} & \leftarrow \inputScalar_3\\
 \text{etc.}
-\end{align*}
+\end{align*}$$
 and finally the gradient of the function
 $$x \leftarrow -m.$$
 The remaining coefficients ($c$ and $f$) would then be zero. That would give us 
-\begin{align*}   &(\dataScalar_1 -
+$$\begin{align*}   &(\dataScalar_1 -
 (m\inputScalar_1+c))^2 \\
 + &(\dataScalar_2 -(m\inputScalar_2 + c))^2\\
 + &(\dataScalar_3 -(m\inputScalar_3 + c))^2 \\
 + &
 \text{etc.}
-\end{align*}
+\end{align*}$$
 which we would write in the modern notation for sums as
 $$
 \sum_{i=1}^\numData (\dataScalar_i-(m\inputScalar_i + c))^2
@@ -178,10 +176,7 @@ which is recognised as the sum of squares error for a linear regression.}
 $$
 \sum_{i=1}^q u_i v_i
 $$
-in a more compact notation,
-$
-\mathbf{u}\cdot\mathbf{v}.
-$}
+in a more compact notation, $\mathbf{u}\cdot\mathbf{v}.$}
 
 \notes{Here we are using bold face to represent vectors, and we assume that the individual elements of a vector $\mathbf{z}$ are given as a series of scalars
 $$
