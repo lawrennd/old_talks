@@ -64,6 +64,9 @@ YouTubeVideo('\id')
 \define{\slidesmall{block}}{\block}
 \define{\aligncenter{block}}{<center>\block</center>}
 \define{\alignright{block}}{<span align="right">\block</span>}
+\define{\alignleft{block}}{<span align="left">\block</span>}
+\define{\largetext{block}}{<large>\block</large>}
+\define{\smalltext{block}}{<small>\block</small>}
 \define{\coloryellow{block}}{\block}
 \define{\colorcyan{block}}{\block}
 \define{\colormagenta{block}}{\block}
@@ -134,6 +137,9 @@ YouTubeVideo('\id')
 \define{\slidesmall{block}}{\block}
 \define{\aligncenter{block}}{<center>\block</center>}
 \define{\alignright{block}}{<span align="right">\block</span>}
+\define{\alignleft{block}}{<span align="left">\block</span>}
+\define{\largetext{block}}{<large>\block</large>}
+\define{\smalltext{block}}{<small>\block</small>}
 \define{\coloryellow{block}}{\block}
 \define{\colorcyan{block}}{\block}
 \define{\colormagenta{block}}{\block}
@@ -144,7 +150,7 @@ YouTubeVideo('\id')
 \define{\columns{one}{two}{width1}{width2}}{<table><tr><td width="\width1">\one</td><td width="\width2">\two</td></tr></table>}
 
 \else
-\define{\includegooglebook{id}{page}}{<iframe frameborder="0" scrolling="no" style="border:0px" src="http://books.google.co.uk/books?id=\id&pg=PA\page&output=embed", width=700 height=500></iframe>}
+\define{\includegooglebook{id}{page}}{<iframe frameborder="0" scrolling="no" style="border:0px" src='http://books.google.co.uk/books?id=\id&pg=PA\page&output=embed', width=700 height=500></iframe>}
 \define{\includeyoutube{id}{width}{height}{time}}{<iframe width="\width" height="\height" src="https://www.youtube.com/embed/\id?start=\time" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>}
 \define{\includempfour{filename}{width}{height}}{<video width="\width" height="\height" controls preload="none">
 <source src="\filename" type="video/mp4"/>
@@ -188,6 +194,9 @@ YouTubeVideo('\id')
 \define{\slidesmall{block}}{<small>\block</small>}
 \define{\aligncenter{block}}{<center>\block</center>}
 \define{\alignright{block}}{<span align="right">\block</span>}
+\define{\alignleft{block}}{<span align="left">\block</span>}
+\define{\largetext{block}}{<large>\block</large>}
+\define{\smalltext{block}}{<small>\block</small>}
 \define{\colorgreen{block}}{<font color="green">\block</font>}
 \define{\coloryellow{block}}{<font color="yellow">\block</font>}
 \define{\colorcyan{block}}{<font color="cyan">\block</font>}
