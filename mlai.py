@@ -95,7 +95,7 @@ class MapModel(Model):
     
     def rmse(self):
         self.update_sum_squares()
-        return np.sqrt(self.sum_squares()/self.num_data)
+        return np.sqrt(self.sum_squares/self.num_data)
 
     def predict(self, X):
         raise NotImplementedError
@@ -194,15 +194,17 @@ def radial(x, num_basis=4, data_limits=[-1., 1.], width=None):
     return Phi
 
 
-def fourier(x, num_basis=4, data_limits=[-1., 1.], frequency=None):
-    "Fourier basis"
+def fourier(x, num_basis=4, data_limits=[-1., 1.], frequency_range=None):
+    """Fourier basis"""
     tau = 2*np.pi
     span = float(data_limits[1]-data_limits[0])
-    Phi = np.zeros((x.shape[0], num_basis))
-    for i in range(num_basis):
+    Phi = np.ones((x.shape[0], num_basis))
+    for i in range(1, num_basis):
         count = float((i+1)//2)
-        if frequency is None:
+        if frequency_range is None:
             frequency = count/span
+        else:
+            frequency = frequency_range[i]
         if i % 2:
             Phi[:, i:i+1] = np.sin(tau*frequency*x)
         else:
@@ -224,68 +226,6 @@ def relu(x, num_basis=4, data_limits=[-1., 1.], gain=None):
         Phi[:, i:i+1] = (gain[i-1]*x>centres[i-1])*(x-centres[i-1])
     return Phi
 
-def plot_basis(basis, x_min, x_max, fig, ax, loc, text, directory='./diagrams', fontsize=20):
-    """Plot examples of the basis vectors."""
-    x = np.linspace(x_min, x_max, 100)[:, None]
-
-    Phi = basis(x, num_basis=3)
-
-    ax.plot(x, Phi[:, 0], '-', color=[1, 0, 0], linewidth=3)
-    ylim = [-2, 2]
-    ax.set_ylim(ylim)
-    plt.sca(ax)
-    plt.yticks([-2, -1, 0, 1, 2])
-    plt.xticks([-1, 0, 1])
-    ax.text(loc[0][0], loc[0][1],text[0], horizontalalignment='center', fontsize=fontsize)
-    ax.set_xlabel('$x$', fontsize=fontsize)
-    ax.set_ylabel('$\phi(x)$', fontsize=fontsize)
-
-    plt.savefig(directory + '/' + basis.__name__ + '_basis001.svg')
-
-    ax.plot(x, Phi[:, 1], '-', color=[1, 0, 1], linewidth=3)
-    ax.text(loc[1][0], loc[1][1], text[1], horizontalalignment='center', fontsize=fontsize)
-
-    plt.savefig(directory + '/' + basis.__name__ + '_basis002.svg')
-
-    ax.plot(x, Phi[:, 2], '-', color=[0, 0, 1], linewidth=3)
-    ax.text(loc[2][0], loc[2][1], text[2], horizontalalignment='center', fontsize=fontsize)
-
-    plt.savefig(directory + '/' + basis.__name__ + '_basis003.svg')
-
-    w = np.random.normal(size=(3, 1))
-    
-    f = np.dot(Phi,w)
-    ax.cla()
-    a, = ax.plot(x, f, color=[0, 0, 1], linewidth=3)
-    ax.plot(x, Phi[:, 0], color=[1, 0, 0], linewidth=1) 
-    ax.plot(x, Phi[:, 1], color=[1, 0, 1], linewidth=1)
-    ax.plot(x, Phi[:, 2], color=[0, 0, 1], linewidth=1) 
-    ylim = [-4, 3]
-    ax.set_ylim(ylim)
-    plt.sca(ax)
-    plt.xticks([-1, 0, 1]) 
-    ax.set_xlabel('$x$', fontsize=fontsize) 
-    ax.set_ylabel('$f(x)$', fontsize=fontsize)
-    t = []
-    for i in range(w.shape[0]):
-        t.append(ax.text(loc[i][0], loc[i][1], '$w_' + str(i) + ' = '+ str(w[i]) + '$', horizontalalignment='center', fontsize=fontsize))
-
-    plt.savefig(directory + '/' + basis.__name__ + '_function001.svg')
-
-    w = np.random.normal(size=(3, 1)) 
-    f = np.dot(Phi,w) 
-    a.set_ydata(f)
-    for i in range(3):
-        t[i].set_text('$w_' + str(i) + ' = '+ str(w[i]) + '$')
-    plt.savefig(directory + '/' + basis.__name__ + '_function002.svg')
-
-
-    w = np.random.normal(size=(3, 1)) 
-    f = np.dot(Phi, w) 
-    a.set_ydata(f)
-    for i in range(3):
-        t[i].set_text('$w_' + str(i) + ' = '+ str(w[i]) + '$')
-    plt.savefig(directory + '/' + basis.__name__ + '_function003.svg')
 
 
 #################### Session 5 ####################

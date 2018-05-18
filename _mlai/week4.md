@@ -45,14 +45,16 @@ plot.basis(mlai.polynomial, x_min=-1.3, x_max=1.3,
 * Basis functions can be global. E.g. quadratic basis:
   $$\basisFuncVector = [1, \inputScalar, \inputScalar^2]$$
 
-\setupcode{import pods}
-\displaycode{pods.notebook.display_plots('polynomial_basis{num_basis:0>3}.svg', directory='../slides/diagrams/ml', num_basis=(1,3))}
+\setupcode{import pods
+from ipywidgets import IntSlider}
+\displaycode{pods.notebook.display_plots('polynomial_basis{num_basis:0>3}.svg', directory='../slides/diagrams/ml', num_basis=IntSlider(1,1,3,1))}
 
 ### Functions Derived from Quadratic Basis
 
 $$\mappingFunction(x) = \colorred{\mappingScalar_0} + \colormagenta{\mappingScalar_1\inputScalar} + \colorblue{\mappingScalar_2 \inputScalar^2}$$
 
-\displaycode{pods.notebook.display_plots('polynomial_function{func_num:0>3}.svg', directory='../slides/diagrams/ml', func_num=(1,3))}
+\setupcode{from ipywidgets import IntSlider}
+\displaycode{pods.notebook.display_plots('polynomial_function{func_num:0>3}.svg', directory='../slides/diagrams/ml', func_num=IntSlider(1,1,3,1))}
 
 \plotcode{f, ax = plt.subplots(figsize=plot.big_wide_figsize)
 
@@ -72,13 +74,15 @@ plot.basis(mlai.radial, x_min=-2, x_max=2,
 basis
   $$\basisFunc_j(\inputScalar) = \exp\left(-\frac{(\inputScalar-\mu_j)^2}{\lengthScale^2}\right)$$
 
-\displaycode{pods.notebook.display_plots('radial_basis{num_basis:0>3}.svg', directory='../slides/diagrams/ml', num_basis=(1,3))}
+\setupcode{from ipywidgets import IntSlider}
+\displaycode{pods.notebook.display_plots('radial_basis{num_basis:0>3}.svg', directory='../slides/diagrams/ml', num_basis=IntSlider(1,1,3,1))}
 
 ### Functions Derived from Radial Basis
 
 $$\mappingFunction(\inputScalar) = \colorred{\mappingScalar_1 e^{-2(\inputScalar+1)^2}}  + \colormagenta{\mappingScalar_2e^{-2\inputScalar^2}} + \colorblue{\mappingScalar_3 e^{-2(\inputScalar-1)^2}}$$
 
-\displaycode{pods.notebook.display_plots('radial_function{func_num:0>3}.svg', directory='../slides/diagrams/ml', func_num=(1,3))}
+\setupcode{from ipywidgets import IntSlider}
+\displaycode{pods.notebook.display_plots('radial_function{func_num:0>3}.svg', directory='../slides/diagrams/ml', func_num=IntSlider(1,1,3,1))}
 
 ### Basis Function Models
 
@@ -179,7 +183,7 @@ data = pods.datasets.olympic_marathon_men()
 x = data['X']
 y = data['Y']
 
-data_limits = [1892, 2020]
+xlim = [1892, 2020]
 max_basis = 27
 
 ll = np.array([np.nan]*(max_basis))
@@ -189,17 +193,22 @@ sum_squares = np.array([np.nan]*(max_basis))}
 
 for num_basis in range(1,max_basis):
     
-    model = mlai.LM(x, y, basis, num_basis=num_basis, data_limits=data_limits)
+    model = mlai.LM(x, y, basis, num_basis=num_basis, data_limits=xlim)
     model.fit()
     sum_squares[num_basis-1] = model.objective() 
-    ll[num_basis-1] = model.log_likelihood()
-    plot.marathon_fit(model=model, data_limits=data_limits, 
-                      objective=sum_squares, objective_ylim=[0,8],
+    ll[num_basis-1] = model.log_likelihood()	
+    plot.marathon_fit(model=model, xlim=xlim,
+                      param_name='num_basis',
+                      param_range=range(1,max_basis),
+                      value=num_basis,
+                      objective=sum_squares[num_basis-1], objective_ylim=[0,8],
                       title='Root Mean Square Training Error',
-                      fig=f, ax=ax)
+                      fig=f, ax=ax,
+                      diagrams='../slides/diagrams/ml')
 }
 
-\displaycode{pods.notebook.display_plots('olympic_LM_polynomial{num_basis:0>3}.svg', directory='../slides/diagrams/ml', num_basis=(1,max_basis))}
+\setupcode{from ipywidgets import IntSlider}
+\displaycode{pods.notebook.display_plots('olympic_LM_polynomial_num_basis{num_basis:0>3}.svg', directory='../slides/diagrams/ml', num_basis=IntSlider(1,1,max_basis,1))}
 
 ### Reading
 
@@ -273,11 +282,11 @@ Phi = quadratic(x)
 
 fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 ax.set_ylim([-1.2, 1.2]) # set y limits to ensure basis functions show.
-ax.plot(x[:,0], Phi[:, 0], 'r-', label = '$\phi=1$')
-ax.plot(x[:,0], Phi[:, 1], 'g-', label = '$\phi = x$')
-ax.plot(x[:,0], Phi[:, 2], 'b-', label = '$\phi = x^2$')
+ax.plot(x[:,0], Phi[:, 0], 'r-', label = '$\phi=1$', linewidth=3)
+ax.plot(x[:,0], Phi[:, 1], 'g-', label = '$\phi = x$', linewidth=3)
+ax.plot(x[:,0], Phi[:, 2], 'b-', label = '$\phi = x^2$', linewidth=3)
 ax.legend(loc='lower right')
-ax.set_title('Quadratic Basis Functions')}
+_ = ax.set_title('Quadratic Basis Functions')}
 
 The actual function we observe is then made up of a sum of these functions. This
 is the reason for the name basis. The term *basis* means 'the underlying support
@@ -369,7 +378,7 @@ ax.plot(x, y, 'rx')}
                                  data_limits=(1888, 2020),
                                  fig=fig, ax=ax,
                                  offset=0.,
-                                 wlim = (-4., 4., 0.001),
+                                 wlim = (-4., 4.),
                                  num_basis=4)}
 
 \writeassignment{Use the tool provided above to try and find the best

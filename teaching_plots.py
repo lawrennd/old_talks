@@ -606,11 +606,11 @@ def marathon_fit(model, value, param_name, param_range,
     x_pred = np.linspace(xlim[0], xlim[1], samps)[:, np.newaxis]
     y_pred, y_var = model.predict(x_pred)
     
-    ax[0].plot(x_pred, y_pred, color=[0, 0, 1], linewidth=2)
-    if y_var is not None:
+    if y_var is None:
+        gp_tutorial.meanplot(x_pred, y_pred, ax=ax[0])
+    else:
         y_err = np.sqrt(y_var)*2
-        ax[0].plot(x_pred, y_pred + y_err, '--', color=[0, 0, 1], linewidth=1)
-        ax[0].plot(x_pred, y_pred - y_err, '--', color=[0, 0, 1], linewidth=1)
+        gp_tutorial.gpplot(x_pred, y_pred - y_err, y_pred + y_err, ax=ax[0])
         
     #ax[0].set_xlabel('year', fontsize=fontsize)
     ax[0].set_ylim(ylim)
@@ -619,11 +619,13 @@ def marathon_fit(model, value, param_name, param_range,
     xlim = ax[0].get_xlim()
 
     if objective is not None:
-        ax[1].cla()
-        params = range(*param_range)
-        for name, vals in objective.items():
-            ax[1].plot(np.array(params), vals, 'o',
-                       color=[1, 0, 0], markersize=6, linewidth=3)
+        #ax[1].cla()
+        #params = range(*param_range)
+        #for name, vals in objective.items():
+        #    ax[1].plot(np.array(params), vals, 'o',
+        #               color=[1, 0, 0], markersize=6, linewidth=3)
+        ax[1].plot(value, objective, 'o',
+                   color=[1, 0, 0], markersize=6, linewidth=3)
         if len(param_range)>2:
             xlow = param_range[0]-param_range[2]
             xhigh = param_range[1]
@@ -643,23 +645,28 @@ def marathon_fit(model, value, param_name, param_range,
 
 
 
-def rmse_fit(x, y, param_name, param_range, model=mlai.LM, plot_objectives={'RMSE':mlai.MapModel.rmse}, objective_ylim=None, xlim=None, plot_fit=marathon_fit, diagrams='../diagrams', **kwargs):
-    "Fit a model and show RMSE error"
+def rmse_fit(x, y, param_name, param_range,
+             model=mlai.LM, #plot_objectives={'RMSE':mlai.MapModel.rmse},
+             objective_ylim=None, xlim=None,
+             plot_fit=marathon_fit, diagrams='../diagrams', **kwargs):
+    """Fit a model and show RMSE error"""
     f, ax = plt.subplots(1, 2, figsize=two_figsize)
     num_data = x.shape[0]
     
     params = range(*param_range)
 
     count = 0
+    obj = {}
     for param in params:
         kwargs[param_name] = param
         m = model(x, y, **kwargs)
         m.fit()
         # compute appropriate objective. 
-        for name, plot_objective in plot_objectives.items():
-            obj[name][count] = plot_objective(m)
+        #for name, plot_objective in plot_objectives.items():
+        obj=m.rmse()#[name][count] = plot_objective(m)
             
-        plot_fit(model=m, value=param, xlim=xlim, param_name=param_name, param_range=param_range,
+        plot_fit(model=m, value=param, xlim=xlim,
+                 param_name=param_name, param_range=param_range,
                  objective=obj, objective_ylim=objective_ylim,
                  fig=f, ax=ax, diagrams=diagrams)
         count += 1
@@ -700,8 +707,9 @@ def holdout_fit(x, y, param_name, param_range, model=mlai.LM, val_start=20,
         ss[count] = m.objective()
         ss_val[count] = ((y_val-f_val)**2).mean() 
         ll[count] = m.log_likelihood()
-        plot_fit(model=m, value=param, xlim=xlim, param_name=param_name, param_range=param_range,
-                 objective=np.sqrt(ss_val), objective_ylim=objective_ylim,
+        plot_fit(model=m, value=param, xlim=xlim,
+                 param_name=param_name, param_range=param_range,
+                 objective=np.sqrt(ss_val[count]), objective_ylim=objective_ylim,
                  fig=f, ax=ax, prefix=prefix,
                  title="Hold Out Validation",
                  x_val=x_val, y_val=y_val, diagrams=diagrams)
@@ -745,7 +753,7 @@ def loo_fit(x, y, param_name, param_range, model=mlai.LM, objective_ylim=None,
                 f_val, _ = m.predict(x_val)
                 ss_val_temp += ((y_val-f_val)**2).mean() 
                 plot_fit(model=m, value=param, xlim=xlim, param_name=param_name, param_range=param_range,
-                         objective=np.sqrt(ss_val), objective_ylim=objective_ylim,
+                         objective=np.sqrt(ss_val[count]), objective_ylim=objective_ylim,
                          fig=f, ax=ax, prefix='olympic_loo{part:0>3}'.format(part=part),
                          x_val=x_val, y_val=y_val, diagrams=diagrams)
             ss[count] = ss_temp/(num_parts)
@@ -753,7 +761,7 @@ def loo_fit(x, y, param_name, param_range, model=mlai.LM, objective_ylim=None,
             ss_val[count] = ss_val_temp/(num_parts)
             ax[1].cla()
             plot_fit(model=m, value=param, xlim=xlim, param_name=param_name, param_range=param_range,
-                     objective=np.sqrt(ss_val), objective_ylim=objective_ylim,
+                     objective=np.sqrt(ss_val[count]), objective_ylim=objective_ylim,
                      fig=f, ax=ax, prefix='olympic_loo{part:0>3}'.format(part=len(partitions)),
                      title="Leave One Out Validation",
                      x_val=x_val, y_val=y_val, diagrams=diagrams)
@@ -799,7 +807,7 @@ def cv_fit(x, y, param_name, param_range, model=mlai.LM, objective_ylim=None,
             f_val, _ = m.predict(x_val)
             ss_val_temp += ((y_val-f_val)**2).mean() 
             plot_fit(model=m, value=param, xlim=xlim, param_name=param_name, param_range=param_range,
-                     objective=np.sqrt(ss_val), objective_ylim=objective_ylim,
+                     objective=np.sqrt(ss_val[count]), objective_ylim=objective_ylim,
                      fig=f, ax=ax, prefix='olympic_{num_parts}cv{part:0>2}'.format(num_parts=num_parts, part=part),
                      title='{num_parts}-fold Cross Validation'.format(num_parts=num_parts),
                      x_val=x_val, y_val=y_val, diagrams=diagrams)
@@ -809,7 +817,7 @@ def cv_fit(x, y, param_name, param_range, model=mlai.LM, objective_ylim=None,
         count+=1
         ax[1].cla()
         plot_fit(model=m, value=param, xlim=xlim, param_name=param_name, param_range=param_range,
-                 objective=np.sqrt(ss_val), objective_ylim=objective_ylim,
+                 objective=np.sqrt(ss_val[count]), objective_ylim=objective_ylim,
                  fig=f, ax=ax,
                  prefix='olympic_{num_parts}cv{num_partitions:0>2}'.format(num_parts=num_parts, num_partitions=num_parts),
                  title='{num_parts}-fold Cross Validation'.format(num_parts=num_parts),
