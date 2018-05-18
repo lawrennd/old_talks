@@ -11,6 +11,9 @@
 	     text-transform: none;
 }
 
+.p { text-align: left;
+}
+
 .math_display { font-size: 2.5em !important;
 }
 
