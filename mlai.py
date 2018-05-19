@@ -226,13 +226,6 @@ def relu(x, num_basis=4, data_limits=[-1., 1.], gain=None):
         Phi[:, i:i+1] = (gain[i-1]*x>centres[i-1])*(x-centres[i-1])
     return Phi
 
-
-
-#################### Session 5 ####################
-
-#################### Session 6 ####################
-
-
 class Noise(ProbModel):
     """Noise model"""
     def __init__(self):
