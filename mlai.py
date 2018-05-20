@@ -178,7 +178,7 @@ def polynomial(x, num_basis=4, data_limits=[-1., 1.]):
     return Phi
 
 def radial(x, num_basis=4, data_limits=[-1., 1.], width=None):
-    "Radial basis constructed using exponentiated quadratic form."
+    """Radial basis constructed using exponentiated quadratic form."""
     if num_basis>1:
         centres=np.linspace(data_limits[0], data_limits[1], num_basis)
         if width is None:
@@ -212,7 +212,7 @@ def fourier(x, num_basis=4, data_limits=[-1., 1.], frequency_range=None):
     return Phi
 
 def relu(x, num_basis=4, data_limits=[-1., 1.], gain=None):
-    "Rectified linear units basis"
+    """Rectified linear units basis"""
     if num_basis>2:
         centres=np.linspace(data_limits[0], data_limits[1], num_basis)
     else:
@@ -224,6 +224,21 @@ def relu(x, num_basis=4, data_limits=[-1., 1.], gain=None):
     Phi[:, 0] = 1.0
     for i in range(1, num_basis):
         Phi[:, i:i+1] = (gain[i-1]*x>centres[i-1])*(x-centres[i-1])
+    return Phi
+
+def tanh(x, num_basis=4, data_limits=[-1., 1.], gain=None):
+    """Hyperbolic tangents"""
+    if num_basis>2:
+        centres=np.linspace(data_limits[0], data_limits[1], num_basis)
+    else:
+        centres = np.asarray([data_limits[0]/2. + data_limits[1]/2.])
+    if gain is None:
+        gain = np.ones(num_basis-1)
+    Phi = np.zeros((x.shape[0], num_basis))
+    # Create the bias
+    Phi[:, 0] = 1.0
+    for i in range(1, num_basis):
+        Phi[:, i:i+1] = np.tanh(gain[i-1]*(x-centres[i-1]))
     return Phi
 
 class Noise(ProbModel):

@@ -759,7 +759,7 @@ def loo_fit(x, y, param_name, param_range, model=mlai.LM, objective_ylim=None,
             ss[count] = ss_temp/(num_parts)
             ll[count] = ll_temp/(num_parts)
             ss_val[count] = ss_val_temp/(num_parts)
-            ax[1].cla()
+            #ax[1].cla()
             plot_fit(model=m, value=param, xlim=xlim, param_name=param_name, param_range=param_range,
                      objective=np.sqrt(ss_val[count]), objective_ylim=objective_ylim,
                      fig=f, ax=ax, prefix='olympic_loo{part:0>3}'.format(part=len(partitions)),
