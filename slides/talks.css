@@ -1,3 +1,6 @@
+.mySlides { display: none;
+}
+
 .reveal h1 { font-size: 1.6em;
 	     text-transform: none;
 }
@@ -11,10 +14,12 @@
 	     text-transform: none;
 }
 
-.p { text-align: left;
+.reveal p { text-align: left;
+}
+.reveal ul { text-align: left;
 }
 
-.math_display { font-size: 2.5em !important;
+.reveal math_display { font-size: 2.5em !important;
 }
 
 .reveal table {
