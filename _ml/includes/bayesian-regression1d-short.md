@@ -17,12 +17,16 @@
     the likely value of the parameters.
 
 -   The posterior is found through **Bayes’ Rule**
-    $$p(c|{y}) = \frac{p({y}|c)p(c)}{p({y})}$$
+    $$p(c|\dataScalar) = \frac{p(\dataScalar|c)p(c)}{p(\dataScalar)}$$
 
+\setupcode{import teaching_plots as plot}
 \plotcode{plot.bayes_update(diagrams='../../slides/diagrams/ml')}
 
-\displaycode{pods.notebook.display_plots('dem_gaussian{stage:0>3}.svg', 
-                            '../slides/diagrams/ml', stage=(1, 3))}
+\setupcode{from ipywidgets import IntSlider
+import pods}
+\displaycode{pods.notebook.display_plots('dem_gaussian{stage:0>2}.svg', 
+                            diagrams='../slides/diagrams/ml', 
+							stage=IntSlider(1, 1, 3, 1))}
 
 \slides{
 ### Bayes Update {data-transition="none"}

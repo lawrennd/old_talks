@@ -80,14 +80,14 @@ Write your answers in the code box below creating a new vector of parameters (in
 
 * Write in vector notation,}
   $$
-  \mappingFunction(\inputVector_i) = \mappingVector^\top \basisFuncVector_i
+  \mappingFunction(\inputVector_i) = \mappingVector^\top \basisVector_i
   $$
 
 ### Log Likelihood for Basis Function Model
 
 \slides{* The likelihood of a single data point is}
   $$
-  p\left(\dataScalar_i|\inputScalar_i\right)=\frac{1}{\sqrt{2\pi\dataStd^2}}\exp\left(-\frac{\left(\dataScalar_i-\mappingVector^{\top}\basisFuncVector_i\right)^{2}}{2\dataStd^2}\right).
+  p\left(\dataScalar_i|\inputScalar_i\right)=\frac{1}{\sqrt{2\pi\dataStd^2}}\exp\left(-\frac{\left(\dataScalar_i-\mappingVector^{\top}\basisVector_i\right)^{2}}{2\dataStd^2}\right).
   $$
 
 \slides{
@@ -95,35 +95,39 @@ Write your answers in the code box below creating a new vector of parameters (in
 
 * Leading to a log likelihood for the data set of}
   $$
-  L(\mappingVector,\dataStd^2)= -\frac{\numData}{2}\log \dataStd^2-\frac{\numData}{2}\log 2\pi -\frac{\sum_{i=1}^{\numData}\left(\dataScalar_i-\mappingVector^{\top}\basisFuncVector_i\right)^{2}}{2\dataStd^2}.
+  L(\mappingVector,\dataStd^2)= -\frac{\numData}{2}\log \dataStd^2-\frac{\numData}{2}\log 2\pi -\frac{\sum_{i=1}^{\numData}\left(\dataScalar_i-\mappingVector^{\top}\basisVector_i\right)^{2}}{2\dataStd^2}.
   $$
 
 ### Objective Function
 
-\slides{* And a corresponding *objective function* of the form
+\slides{* And a corresponding *objective function* of the form}
   $$
-  \errorFunction(\mappingVector,\dataStd^2)= \frac{\numData}{2}\log\dataStd^2 + \frac{\sum_{i=1}^{\numData}\left(\dataScalar_i-\mappingVector^{\top}\basisFuncVector_i\right)^{2}}{2\dataStd^2}.
+  \errorFunction(\mappingVector,\dataStd^2)= \frac{\numData}{2}\log\dataStd^2 + \frac{\sum_{i=1}^{\numData}\left(\dataScalar_i-\mappingVector^{\top}\basisVector_i\right)^{2}}{2\dataStd^2}.
   $$
 
 ### Expand the Brackets
 
 $$
 \begin{align}
-  \errorFunction(\mappingVector,\dataStd^2) = &\frac{\numData}{2}\log \dataStd^2 + \frac{1}{2\dataStd^2}\sum_{i=1}^{\numData}\dataScalar_i^{2}-\frac{1}{\dataStd^2}\sum_{i=1}^{\numData}\dataScalar_i\mappingVector^{\top}\basisFuncVector_i\\ &+\frac{1}{2\dataStd^2}\sum_{i=1}^{\numData}\mappingVector^{\top}\basisFuncVector_i\basisFuncVector_i^{\top}\mappingVector+\text{const}.
+  \errorFunction(\mappingVector,\dataStd^2) = &\frac{\numData}{2}\log \dataStd^2 + \frac{1}{2\dataStd^2}\sum_{i=1}^{\numData}\dataScalar_i^{2}-\frac{1}{\dataStd^2}\sum_{i=1}^{\numData}\dataScalar_i\mappingVector^{\top}\basisVector_i\\ &+\frac{1}{2\dataStd^2}\sum_{i=1}^{\numData}\mappingVector^{\top}\basisVector_i\basisVector_i^{\top}\mappingVector+\text{const}.
 \end{align}
 $$
 
 ### Expand the Brackets
 
-$$\begin{align} \errorFunction(\mappingVector, \dataStd^2) = & \frac{\numData}{2}\log \dataStd^2 + \frac{1}{2\dataStd^2}\sum_{i=1}^{\numData}\dataScalar_i^{2}-\frac{1}{\dataStd^2} \mappingVector^\top\sum_{i=1}^{\numData}\basisFuncVector_i \dataScalar_i\\ & +\frac{1}{2\dataStd^2}\mappingVector^{\top}\left[\sum_{i=1}^{\numData}\basisFuncVector_i\basisFuncVector_i^{\top}\right]\mappingVector+\text{const}.\end{align}$$
+$$\begin{align} \errorFunction(\mappingVector, \dataStd^2) = & \frac{\numData}{2}\log \dataStd^2 + \frac{1}{2\dataStd^2}\sum_{i=1}^{\numData}\dataScalar_i^{2}-\frac{1}{\dataStd^2} \mappingVector^\top\sum_{i=1}^{\numData}\basisVector_i \dataScalar_i\\ & +\frac{1}{2\dataStd^2}\mappingVector^{\top}\left[\sum_{i=1}^{\numData}\basisVector_i\basisVector_i^{\top}\right]\mappingVector+\text{const}.\end{align}$$
 
 ### Design Matrices
 
-We like to make use of *design* matrices for our data. Design matrices, as you will recall, involve placing the data points into rows of the matrix and data features into the columns of the matrix. By convention, we are referincing a vector with a bold lower case letter, and a matrix with a bold upper case letter. The design matrix is therefore given by
-$$
-\basisFuncVector = \begin{bmatrix} \mathbf{1} & \inputVector & \inputVector^2\end{bmatrix}
-$$
-
+\notes{We like to make use of *design* matrices for our data. Design matrices, as you will recall, involve placing the data points into rows of the matrix and data features into the columns of the matrix. By convention, we are referincing a vector with a bold lower case letter, and a matrix with a bold upper case letter. The design matrix is therefore given by}\slides{* Design matrix notation}
+  $$
+  \basisMatrix = \begin{bmatrix} \mathbf{1} & \inputVector & \inputVector^2\end{bmatrix}
+  $$
+  so that
+  $$
+  \basisMatrix \in \Re^{\numData \times \dataDim}.
+  $$
+  
 ### Multivariate Derivatives Reminder
 
 \slides{* We will need some multivariate calculus.}
@@ -135,37 +139,39 @@ $$
 
 ### Differentiate
 
-Differentiating with respect to the vector $\mappingVector$ we
-obtain
-$$\frac{\text{d} E\left(\mappingVector,\dataStd^2 \right)}{\text{d}\mappingVector}=-\frac{1}{\dataStd^2} \sum_{i=1}^{\numData}\basisFuncVector_i\dataScalar_i+\frac{1}{\dataStd^2} \left[\sum_{i=1}^{\numData}\basisFuncVector_i\basisFuncVector_i^{\top}\right]\mappingVector$$
+Differentiating with respect to the vector $\mappingVector$ we obtain
+$$\frac{\text{d} E\left(\mappingVector,\dataStd^2 \right)}{\text{d}\mappingVector}=-\frac{1}{\dataStd^2} \sum_{i=1}^{\numData}\basisVector_i\dataScalar_i+\frac{1}{\dataStd^2} \left[\sum_{i=1}^{\numData}\basisVector_i\basisVector_i^{\top}\right]\mappingVector$$
 Leading to
-$$\mappingVector^{*}=\left[\sum_{i=1}^{\numData}\basisFuncVector_i\basisFuncVector_i^{\top}\right]^{-1}\sum_{i=1}^{\numData}\basisFuncVector_i\dataScalar_i,$$
+$$\mappingVector^{*}=\left[\sum_{i=1}^{\numData}\basisVector_i\basisVector_i^{\top}\right]^{-1}\sum_{i=1}^{\numData}\basisVector_i\dataScalar_i,$$
 
 ### Matrix Notation
 
 Rewrite in matrix notation:
 $$
-\sum_{i=1}^{\numData}\basisFuncVector_i\basisFuncVector_i^\top = \basisFuncVector^\top \basisFuncVector$$
-$$\sum _{i=1}^{\numData}\basisFuncVector_i\dataScalar_i = \basisFuncVector^\top \dataVector
+\sum_{i=1}^{\numData}\basisVector_i\basisVector_i^\top = \basisMatrix^\top \basisMatrix$$
+$$\sum _{i=1}^{\numData}\basisVector_i\dataScalar_i = \basisMatrix^\top \dataVector
 $$
 
 ### Update Equations
 
-* Update for $\mappingVector^{*}$.
-  $$\mappingVector^{*} = \left(\basisFuncVector^\top \basisFuncVector\right)^{-1} \basisFuncVector^\top \dataVector$$
-
+* Update for $\mappingVector^{*}$
+  $$
+  \mappingVector^{*} = \left(\basisMatrix^\top \basisMatrix\right)^{-1} \basisMatrix^\top \dataVector
+  $$
 * The equation for $\left.\dataStd^2\right.^{*}$ may also be found
-  $$\left.\dataStd^2\right.^{{*}}=\frac{\sum_{i=1}^{\numData}\left(\dataScalar_i-\left.\mappingVector^{*}\right.^{\top}\basisFuncVector_i\right)^{2}}{\numData}.$$
+  $$
+  \left.\dataStd^2\right.^{{*}}=\frac{\sum_{i=1}^{\numData}\left(\dataScalar_i-\left.\mappingVector^{*}\right.^{\top}\basisVector_i\right)^{2}}{\numData}.
+  $$
 
 
 
 ### Avoid Direct Inverse
 
 * E.g. Solve for $\mappingVector$
-  $$\left(\basisFuncVector^\top \basisFuncVector\right)\mappingVector = \basisFuncVector^\top \dataVector$$
-  
+  $$
+  \left(\basisMatrix^\top \basisMatrix\right)\mappingVector = \basisMatrix^\top \dataVector
+  $$
 * See `np.linalg.solve`
-
 * In practice use $\mathbf{Q}\mathbf{R}$ decomposition (see lab class notes).
 
 ### Polynomial Fits to Olympic Data
@@ -204,11 +210,11 @@ sum_squares = np.array([np.nan]*(max_basis))}
 \notes{One rather nice aspect of our model is that whilst it is non-linear in the inputs, it is still linear in the parameters $\mappingVector$. This means that our derivations from before continue to operate to allow us to work with this model. In fact, although this is a non-linear regression it is still known as a *linear model* because it is linear in the parameters,}
 \slides{* Model is non-linear, but linear in parameters}
 $$
-\mappingFunction(\inputVector) = \mappingVector^\top \basisFuncVector(\inputVector)
+\mappingFunction(\inputVector) = \mappingVector^\top \basisVector(\inputVector)
 $$
 \slides{* $\inputVector$ is inside the non-linearity, but $\mappingVector$ is outside.}\notes{where the vector $\inputVector$ appears inside the basis functions, making our result, $\mappingFunction(\inputVector)$ non-linear in the inputs, but $\mappingVector$ appears outside our basis function, making our result *linear* in the parameters. In practice, our basis function itself may contain its own set of parameters,}
 $$
-\mappingFunction(\inputVector) = \mappingVector^\top \basisFuncVector(\inputVector;
+\mappingFunction(\inputVector) = \mappingVector^\top \basisVector(\inputVector;
 \boldsymbol{\theta}),
 $$
 \notes{that we've denoted here as $\boldsymbol{\theta}$. If these parameters appear inside the basis function then our model is *non-linear* in these parameters.}
@@ -237,7 +243,7 @@ above. Compute the design matrix on the covariates (or input data), `x`. Use the
 design matrix and the response variable `y` to solve the following linear system
 for the model parameters `w`.
 $$
-\basisFuncVector^\top\basisFuncVector\mappingVector = \basisFuncVector^\top
+\basisVector^\top\basisVector\mappingVector = \basisVector^\top
 \dataVector
 $$
 Compute the corresponding error on the training data. How does it

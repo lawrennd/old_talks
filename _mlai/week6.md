@@ -44,24 +44,8 @@ $$\begin{aligned}
 \dataScalar_3 = & m\inputScalar_3 + c
       \end{aligned}$$
 
-\code{plot.under_determined_system()}
 
-### Underdetermined System
-* What about two unknowns and *one* observation?
-  $$\dataScalar_1 =  m\inputScalar_1 + c$$
-
-\displaycode{pods.notebook.display_plots('under_determined_system{samp:0>3}.svg', directory='./diagrams', samp=(0, 10))}
-
-### Underdetermined System
-* Can compute $m$ given $c$.
-  $$m = \frac{\dataScalar_1 -c}{x}$$
-
-### Underdetermined System
-
-* Can compute $m$ given $c$.
-
-Assume 
-$$c \sim \gaussianSamp{0}{4},$$
+\include{_ml/includes/underdetermined-system.md}
 
 ### Overdetermined System
 
@@ -83,28 +67,7 @@ $$\begin{aligned}
         \end{aligned}
   $$
 
-### Noise Models
-
-* We aren’t modeling entire system.
-* Noise model gives mismatch between model and data.
-* Gaussian model justified by appeal to central limit theorem.
-* Other models also possible (Student-$t$ for heavy tails).
-* Maximum likelihood with Gaussian noise leads to *least squares*.
-
-### Different Types of Uncertainty
-
-* The first type of uncertainty we are assuming is *aleatoric* uncertainty.
-* The second type of uncertainty we are assuming is *epistemic* uncertainty.
-
-### Aleatoric Uncertainty
-
-* This is uncertainty we couldn’t know even if we wanted to. e.g. the result of a football match before it’s played.
-* Where a sheet of paper might land on the floor.
-
-### Epistemic Uncertainty
-
-* This is uncertainty we could in principal know the answer too. We just haven’t observed enough yet, e.g. the result of a football match *after* it’s played.
-* What colour socks your lecturer is wearing.
+\include{_ml/includes/types-of-uncertainty.md}
 
 ### Reading
 
@@ -119,33 +82,15 @@ $$\begin{aligned}
   - @Bishop:book06 Section 1.2.3 (pg 21–24).
 * @Bishop:book06 Section 1.2.6 (start from just past eq 1.64 pg 30-32).
 
-### Prior Distribution
+### Underdetermined System
+* What about two unknowns and *one* observation?
+  $$\dataScalar_1 =  m\inputScalar_1 + c$$
 
-* Bayesian inference requires a prior on the parameters.
-* The prior represents your belief *before* you see the data of the likely value of the parameters.
-* For linear regression, consider a Gaussian prior on the intercept:
-  $$c \sim \gaussianSamp{0}{\alpha_1}$$
+\code{plot.under_determined_system()}
 
-### Posterior Distribution
+\include{_ml/includes/bayesian-regression1d.md}
 
-* Posterior distribution is found by combining the prior with the likelihood.
-* Posterior distribution is your belief *after* you see the data of the likely value of the parameters.
-* The posterior is found through **Bayes’ Rule**
-  $$p(c|y) = \frac{p(y|c)p(c)}{p(y)}$$
 
-### Bayes Update
-
-\plotcode{plot.bayes_update()}
-
-\displaycode{pods.notebook.display_plots('dem_gaussian{stage:0>2}.svg', './diagrams/', IntSlider(1, 1, 3, 1))}
-
-### Stages to Derivation of the Posterior
-
-* Multiply likelihood by prior
-* they are "exponentiated quadratics", the answer is always also an exponentiated quadratic because
-  $$\exp(a^2)\exp(b^2) = \exp(a^2 + b^2)$$
-* Complete the square to get the resulting density in the form of a Gaussian.
-* Recognise the mean and (co)variance of the Gaussian. This is the estimate of the posterior.
 
 ### Main Trick
 
@@ -175,13 +120,13 @@ and $\mu = \frac{\tau^2}{\dataStd^2} \sum_{i=1}^n(\dataScalar_i-m\inputScalar_i)
 
 ### Height and Weight Models
 
-\plotcode{plot.height_weight()}
+\plotcode{plot.height_weight(diagrams='../slides/diagrams/ml')}
 
-![](./diagrams/height_weight_gaussian.svg)
+\includesvg{../slides/diagrams/ml/height_weight_gaussian.svg}
 
 ###  Sampling Two Dimensional Variables
 
-\plotcode{plot.independent_height_weight()}
+\plotcode{plot.independent_height_weight(diagrams='../slides/diagrams/ml')}
 
 \displaycode{pods.notebook.display_plots('independent_height_weight{fig:0>3}.png', './diagrams/', fig=IntSlider(0, 0, 79, 1))
 }
@@ -354,11 +299,10 @@ plot.cv_fit(x, y, param_name='num_basis', param_range=(1, max_basis+1),
 
 ### Variance of Expected Output
 
-*   Variance of model at location
-$\inputVector_i$ is given by
-    $$\begin{aligned}
-\text{var}(f(\inputVector_i; \mappingVector)) &= \left\langle(f(\inputVector_i;
-\mappingVector))^2\right\rangle - \left\langle f(\inputVector_i;
+*   Variance of model at location $\inputVector_i$ is given by
+    $$
+	\begin{aligned}\text{var}(\mappingFunction(\inputVector_i; \mappingVector)) &= \left\langle(\mappingFunction(\inputVector_i;
+\mappingVector))^2\right\rangle - \left\langle \mappingFunction(\inputVector_i;
 \mappingVector)\right\rangle^2 \\&= \basisVector_i^\top
 \left\langle\mappingVector\mappingVector^\top\right\rangle \basisVector_i -
 \basisVector_i^\top
@@ -394,8 +338,8 @@ with zero mean and variance $\dataStd^2$.
 
 In the overdetermined system we introduced a new set of slack variables, $\{\noiseScalar_i\}_{i=1}^n$, on top of our parameters $m$ and $c$. We dealt with the variables by placing a probability distribution over them. This gives rise to the likelihood and for the case of Gaussian distributed variables, it gives rise to the sum of squares error. It was Gauss who first made this connection in his volume on "Theoria Motus Corprum Coelestium" (written in Latin)
 
-\code{import pods
-pods.notebook.display_google_book(id='ORUOAAAAQAAJ', page='213')}
+\setupcode{import pods}
+\displaycode{pods.notebook.display_google_book(id='ORUOAAAAQAAJ', page='213')}
 
 The relevant section roughly translates as
 
@@ -655,22 +599,22 @@ $$
 # Write code for you answer to this question in this box
 # Do not delete these comments, otherwise you will get zero for this answer.
 # Make sure your code has run and the answer is correct *before* submitting your notebook for marking.
-sigma2 = 
-w_cov = 
-w_mean = }
+# sigma2 = 
+# w_cov = 
+# w_mean = }
 
 ### Sampling from the Posterior
 
 Before we were able to sample the prior values for the mean *independently* from a Gaussian using `np.random.normal` and scaling the result. However, observing the data *correlates* the parameters. Recall this from the first lab where we had a correlation between the offset, $c$ and the slope $m$ which caused such problems with the coordinate ascent algorithm. We need to sample from a *correlated* Gaussian. For this we can use `np.random.multivariate_normal`.
 
-\code{w_sample = np.random.multivariate_normal(w_mean.flatten(), w_cov)
+\plotcode{w_sample = np.random.multivariate_normal(w_mean.flatten(), w_cov)
 f_sample = np.dot(Phi_pred,w_sample)
 plt.plot(x_pred.flatten(), f_sample.flatten(), 'r-')
 plt.plot(x, y, 'rx') # plot data to show fit.}
 
 Now let's sample several functions and plot them all to see how the predictions fluctuate.
 
-\code{for i in range(num_samples):
+\plotcode{for i in range(num_samples):
     w_sample = np.random.multivariate_normal(w_mean.flatten(), w_cov)
     f_sample = np.dot(Phi_pred,w_sample)
     plt.plot(x_pred.flatten(), f_sample.flatten())
@@ -678,7 +622,7 @@ plt.plot(x, y, 'rx') # plot data to show fit.}
 
 This gives us an idea of what our predictions are. These are the predictions that are consistent with data and our prior. Try plotting different numbers of predictions. You can also try plotting beyond the range of where the data is and see what the functions do there. 
 
-Rather than sampling from the posterior each time to compute our predictions, it might be better if we just summarised the predictions by the expected value of the output funciton, $f(x)$, for any particular input. If we can get formulae for this we don't need to sample the values of $f(x)$ we might be able to compute the distribution directly. Fortunately, in the Gaussian case, we can use properties of multivariate Gaussians to compute both the mean and the variance of these samples.
+Rather than sampling from the posterior each time to compute our predictions, it might be better if we just summarised the predictions by the expected value of the output funciton, $\mappingFunction(x)$, for any particular input. If we can get formulae for this we don't need to sample the values of $\mappingFunction(x)$ we might be able to compute the distribution directly. Fortunately, in the Gaussian case, we can use properties of multivariate Gaussians to compute both the mean and the variance of these samples.
 
 ### Properties of Gaussian Variables
 
