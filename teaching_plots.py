@@ -1120,11 +1120,12 @@ def output_augment_x(x, num_outputs):
     index = index[:, np.newaxis]
     return np.hstack((index, x))
 
-def basis(basis, x_min, x_max, fig, ax, loc, text, diagrams='./diagrams', fontsize=20, num_basis=3):
+def basis(basis, x_min, x_max, fig, ax, loc, text, diagrams='./diagrams', fontsize=20, num_basis=3, num_plots=3):
     """Plot examples of the basis vectors."""
     x = np.linspace(x_min, x_max, 100)[:, None]
 
     Phi = basis(x, num_basis=num_basis)
+    diag=(Phi*Phi).sum(1)
 
     colors = []
     colors.append([1, 0, 0])
@@ -1134,52 +1135,47 @@ def basis(basis, x_min, x_max, fig, ax, loc, text, diagrams='./diagrams', fontsi
     colors.append([0, 1, 1])
     colors.append([1, 0, 1])
 
-    ylim = [-2, 2]
+    # Set ylim according to max standard deviation of basis
+    ylim = 2*np.asarray([-1, 1])*np.sqrt(diag.max())    
     ax.set_ylim(ylim)
+
     plt.sca(ax)
-    plt.yticks([-2, -1, 0, 1, 2])
-    plt.xticks([-1, 0, 1])
     ax.set_xlabel('$x$', fontsize=fontsize)
     ax.set_ylabel('$\phi(x)$', fontsize=fontsize)
     for i in range(num_basis):
         ax.plot(x, Phi[:, i], '-', color=colors[i], linewidth=3)
-        ax.text(loc[i][0], loc[i][1], text[0], horizontalalignment='center', fontsize=fontsize)
+        ax.text(loc[i][0], loc[i][1], text[i], horizontalalignment='center', fontsize=fontsize, color=colors[i])
         mlai.write_figure(os.path.join(diagrams, basis.__name__ + '_basis{num:0>3}.svg'.format(num=i)), transparent=True)
 
-    w = np.random.normal(size=(num_basis, 1))
-    
-    f = np.dot(Phi,w)
+    # Set ylim according to max standard deviation of basis
+    ylim = 3*np.asarray([-1, 1])*np.sqrt(diag.max())
+
+    f = np.dot(Phi, np.zeros((num_basis, 1)))
     ax.cla()
-    a, = ax.plot(x, f, color=[0, 0, 1], linewidth=3)
+    a, = ax.plot(x, f, color=[0, 0, 0], linewidth=3)
     
     for i in range(num_basis):
         ax.plot(x, Phi[:, i], colors[i], linewidth=1) 
-    ylim = [-4, 3]
     ax.set_ylim(ylim)
     plt.sca(ax)
-    plt.xticks([-1, 0, 1]) 
     ax.set_xlabel('$x$', fontsize=fontsize) 
     ax.set_ylabel('$f(x)$', fontsize=fontsize)
     t = []
-    for i in range(w.shape[0]):
-        t.append(ax.text(loc[i][0], loc[i][1], '$w_' + str(i) + ' = '+ str(w[i]) + '$', horizontalalignment='center', fontsize=fontsize))
-
-    mlai.write_figure(os.path.join(diagrams, basis.__name__ + '_function001.svg'), transparent=True)
-
-    w = np.random.normal(size=(num_basis, 1)) 
-    f = np.dot(Phi,w) 
-    a.set_ydata(f)
     for i in range(num_basis):
-        t[i].set_text('$w_' + str(i) + ' = '+ str(w[i]) + '$')
-    mlai.write_figure(os.path.join(diagrams, basis.__name__ + '_function002.svg'), transparent=True)
+        t.append(ax.text(loc[i][0], loc[i][1], '$w_' + str(i) + ' = 0$',
+                         horizontalalignment='center', fontsize=fontsize,
+                         verticalalignment='center', color=colors[i]))
 
+    for j in range(num_plots):
+        # Sample a function
+        w = np.random.normal(size=(num_basis, 1))    
+        f = np.dot(Phi,w)
+        a.set_ydata(f)
+        for i in range(num_basis):
+            t[i].set_text('$w_{ind} = {w:3.3}$'.format(ind=i, w=w[i,0]))
 
-    w = np.random.normal(size=(num_basis, 1)) 
-    f = np.dot(Phi, w) 
-    a.set_ydata(f)
-    for i in range(num_basis):
-        t[i].set_text('$w_' + str(i) + ' = '+ str(w[i]) + '$')
-    mlai.write_figure(os.path.join(diagrams, basis.__name__ + '_function003.svg'), transparent=True)
+        mlai.write_figure(os.path.join(diagrams, basis.__name__ + '_function{plot_num:0>3}.svg'.format(plot_num=j)), transparent=True)
+
 
 def kern_circular_sample(K, mu=None, x=None,
                          filename=None, fig=None, num_samps=5,

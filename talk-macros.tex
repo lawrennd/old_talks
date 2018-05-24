@@ -184,13 +184,13 @@ YouTubeVideo('\id')
 \define{\section{text}}{<!-- SECTION \text -->}
 \define{\slides{text}}{\text}
 
-\define{\startslides{group}}{<script>
-var slideIndex = 1;
+\define{\startslides{group}{start}{finish}}{<script>
+var slideIndex = \start;
 showDivs(slideIndex, '\group');
 </script>
 <button onclick="plusDivs(-1, '\group')">❮</button>
-<button onclick="plusDivs(1, '\group')">❯</button>}
-
+<button onclick="plusDivs(1, '\group')">❯</button>
+<input id="range-\group" type="range" min="\start" max="\finish" value="\start" onchange="setDivs('\group')" oninput="setDivs('\group')">}
 \define{\fragment{text}{type}}{<span class="fragment \type">\text</span>}
 \define{\fragmentindex{text}{type}{index}}{<span class="fragment \type" data-fragment-index="\index">\text</span>}
 \define{\code{block}}{}
