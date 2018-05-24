@@ -4,6 +4,10 @@
 \slides{* Basis functions can be local e.g. radial (or Gaussian) basis}
   $$\basisFunc_j(\inputScalar) = \exp\left(-\frac{(\inputScalar-\mu_j)^2}{\lengthScale^2}\right)$$
 
+\setupcode{import matplotlib.pyplot as plt
+import mlai
+import teaching_plots as plot}
+
 \code{%load -s radial mlai.py}
 
 \plotcode{f, ax = plt.subplots(figsize=plot.big_wide_figsize)
@@ -18,13 +22,13 @@ plot.basis(mlai.radial, x_min=-2, x_max=2,
            fig=f, ax=ax, loc=loc, text=text,
            diagrams='../slides/diagrams/ml')}
 
-\displaycode{pods.notebook.display_prediction(basis=radial, num_basis=4)}
+\displaycode{pods.notebook.display_prediction(basis=mlai.radial, num_basis=4)}
 
 \setupcode{from ipywidgets import IntSlider
 import pods}
 \displaycode{pods.notebook.display_plots('radial_basis{num_basis:0>3}.svg', 
                             directory='../slides/diagrams/ml', 
-							num_basis=IntSlider(1,1,3,1))}
+							num_basis=IntSlider(0,0,2,1))}
 
 ### Functions Derived from Radial Basis
 
@@ -32,12 +36,13 @@ $$
 \mappingFunction(\inputScalar) = {\color{cyan}\mappingScalar_1 e^{-2(\inputScalar+1)^2}}  + {\color{green}\mappingScalar_2e^{-2\inputScalar^2}} + {\color{yellow}\mappingScalar_3 e^{-2(\inputScalar-1)^2}}
 $$
 
-\startslides{radial_function}
+\startslides{radial_function}{1}{3}
+\includesvg{../slides/diagrams/ml/radial_function000.svg}{}{radial_function}
 \includesvg{../slides/diagrams/ml/radial_function001.svg}{}{radial_function}
 \includesvg{../slides/diagrams/ml/radial_function002.svg}{}{radial_function}
-\includesvg{../slides/diagrams/ml/radial_function003.svg}{}{radial_function}
 
 \setupcode{from ipywidgets import IntSlider
 import pods}
-\displaycode{pods.notebook.display_plots('radial_function{func_num:0>3}.svg', directory='../slides/diagrams/ml', func_num=IntSlider(1,1,3,1))}
+\displaycode{pods.notebook.display_plots('radial_function{func_num:0>3}.svg', directory='../slides/diagrams/ml', func_num=IntSlider(0,0,2,1))}
+
 

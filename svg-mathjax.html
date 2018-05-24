@@ -3,6 +3,12 @@
     </script>
     <script>
 
+function setDivs(group) {
+  var frame = document.getElementById("range-".concat(group)).value
+  slideIndex = parseInt(frame)
+  showDivs(slideIndex, group);
+}
+
 function plusDivs(n, group) {
   showDivs(slideIndex += n, group);
 }

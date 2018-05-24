@@ -86,8 +86,6 @@ _ = ax.set_title('Quadratic Basis Functions')}
 \include{_ml/includes/tanh-basis.md}
 
 
-
-
 ### Different Bases
 
 \notes{Our choice of basis can be made based on what our beliefs about what is appropriate for the data. For example, the polynomial basis extends the quadratic basis to aribrary degree, so we might define the $j$th basis function associated with the model as}
