@@ -185,8 +185,7 @@ YouTubeVideo('\id')
 \define{\slides{text}}{\text}
 
 \define{\startslides{group}{start}{finish}}{<script>
-var slideIndex = \start;
-showDivs(slideIndex, '\group');
+showDivs(\start, '\group');
 </script>
 <button onclick="plusDivs(-1, '\group')">❮</button>
 <button onclick="plusDivs(1, '\group')">❯</button>

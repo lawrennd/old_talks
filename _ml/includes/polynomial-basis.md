@@ -11,6 +11,7 @@ loc =[[0, 1.4,],
 text =['$\phi(x) = 1$',
        '$\phi(x) = x$',
        '$\phi(x) = x^2$']
+
 plot.basis(mlai.polynomial, x_min=-1.3, x_max=1.3, 
            fig=f, ax=ax, loc=loc, text=text,
 		   diagrams='../slides/diagrams/ml')
