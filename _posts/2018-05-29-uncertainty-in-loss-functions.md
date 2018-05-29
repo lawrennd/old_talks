@@ -337,13 +337,12 @@ A useful reference for state of the art in machine learning is the UK Royal Soci
 
 You can also check my blog post on ["What is Machine Learning?"](http://inverseprobability.com/2017/07/17/what-is-machine-learning)
 
-
+### Uncertainty in the Objective
 
 Uncertainty in the prediction function is handled by Bayesian inference, here we consider uncertainty arising in the objective functions, $E(\cdot)$.
 
 Consider a loss function which decomposes across individual observations, $\dataScalar_{k,j}$, each of which is
 dependent on some set of features, $\inputVector_k$.
-
 $$
 \errorFunction(\dataVector, \inputMatrix) = \sum_{k}\sum_{j}
 L(\dataScalar_{k,j}, \inputVector_k)
@@ -354,50 +353,24 @@ $$
 \errorFunction(\dataVector, \inputMatrix) = \sum_{k}\sum_{j} L(\dataScalar_{k,j},
 \mappingFunction_j(\inputVector_k))
 $$
-without loss of generality, we can move
-the index to the inputs, so we have $\inputVector_i =\left[\inputVector \quad
+without loss of generality, we can move the index to the inputs, so we have $\inputVector_i =\left[\inputVector \quad
 j\right]$, and we set $\dataScalar_i = \dataScalar_{k, j}$. So we have
 $$
 \errorFunction(\dataVector, \inputMatrix) = \sum_{i} L(\dataScalar_i, \mappingFunction(\inputVector_i))
 $$
-Bayesian inference considers uncertainty in $\mappingFunction$, often through
-parameterizing it, $\mappingFunction(\inputVector; \parameterVector)$, and
-considering a *prior* distribution for the parameters, $p(\parameterVector)$,
-this in turn implies a distribution over functions, $p(\mappingFunction)$.
-Process models, such as Gaussian processes specify this distribution, known as a
-process, directly. 
+Bayesian inference considers uncertainty in $\mappingFunction$, often through parameterizing it, $\mappingFunction(\inputVector; \parameterVector)$, and considering a *prior* distribution for the parameters, $p(\parameterVector)$, this in turn implies a distribution over functions, $p(\mappingFunction)$.
+Process models, such as Gaussian processes specify this distribution, known as a process, directly. 
 
-Bayesian inference proceeds by specifying a *likelihood*
-which relates the data, $\dataScalar$, to the parameters. Here we choose not to
-do this, but instead we only consider the *loss* function for our objective. The
-loss is the cost we pay for a misclassification. 
+Bayesian inference proceeds by specifying a *likelihood* which relates the data, $\dataScalar$, to the parameters. Here we choose not to do this, but instead we only consider the *loss* function for our objective. The loss is the cost we pay for a misclassification. 
 
-The *risk function* is the expectation of the loss under the distribution of the data. Here we are using
-the framework of *empirical risk* minimization, because we have a sample based
-approximation. The new expectation we are considering is around the loss
-function itself, not the uncertainty in the data.
+The *risk function* is the expectation of the loss under the distribution of the data. Here we are using the framework of *empirical risk* minimization, because we have a sample based approximation. The new expectation we are considering is around the loss function itself, not the uncertainty in the data.
 
-The loss function and the log
-likelihood may take a mathematically similar form but they are philosophically
-very different. The log likelihood assumes something about the *generating*
-function of the data, whereas the loss function assumes something about the cost
-we pay. Importantly the loss function in Bayesian inference only normally enters
-at the point of decision.
+The loss function and the log likelihood may take a mathematically similar form but they are philosophically very different. The log likelihood assumes something about the *generating* function of the data, whereas the loss function assumes something about the cost we pay. Importantly the loss function in Bayesian inference only normally enters at the point of decision.
 
-The key idea in Bayesian inference is that the
-probabilistic inference can be performed *without* knowing the loss becasue if
-the model is correct, then the form of the loss function is irrelevant when
-performing inference. In practice, however, the model is *never* correct.
+The key idea in Bayesian inference is that the probabilistic inference can be performed *without* knowing the loss becasue if
+the model is correct, then the form of the loss function is irrelevant when performing inference. In practice, however, the model is *never* correct.
 
-Some
-of the maths below looks similar to the maths we can find in Bayesian methods,
-in particular variational Bayes, but that is merely a consequence of the
-availability of analytical mathematics. There are only particular ways of
-developing tractable algorithms, one route involves linear algebra. However, the
-similarity of the mathematics belies a difference in interpretation. It is
-similar to travelling a road (e.g. Ermine Street) in a wild landscape. We travel
-together because that is where efficient progress is to be made, but in practice
-a our destinations (Lincoln, York), may be different.
+Some of the maths below looks similar to the maths we can find in Bayesian methods, in particular variational Bayes, but that is merely a consequence of the availability of analytical mathematics. There are only particular ways of developing tractable algorithms, one route involves linear algebra. However, the similarity of the mathematics belies a difference in interpretation. It is similar to travelling a road (e.g. Ermine Street) in a wild landscape. We travel together because that is where efficient progress is to be made, but in practice a our destinations (Lincoln, York), may be different.
 
 ### Introduce Uncertainty
 
@@ -496,8 +469,7 @@ $$
 $$
 If the loss is the *squared loss*, then this is recognised as a *reweighted least squares algorithm*. However, the loss can be of any form as long as $q(\scaleScalar)$ defined above exists.
 
-In addition to the above, in our example below, we updated $\beta$ to normalize the expected loss to be $\numData$ at each iteration, so we
-have
+In addition to the above, in our example below, we updated $\beta$ to normalize the expected loss to be $\numData$ at each iteration, so we have
 $$
 \beta = \frac{\numData}{\sum_{i=1}^\numData
 \expectationDist{\scaleScalar_i}{q(\scaleScalar_i)} L(\dataScalar_i,
@@ -513,8 +485,6 @@ import matplotlib.pyplot as plt
 ### Olympic Marathon Data
 
 The first thing we will do is load a standard data set for regression modelling. The data consists of the pace of Olympic Gold Medal Marathon winners for the Olympics from 1896 to present. First we load in the data and plot.
-
-
 
 ```{.python}
 data = pods.datasets.olympic_marathon_men()
@@ -550,7 +520,7 @@ mlai.write_figure(figure=fig, filename='../slides/diagrams/datasets/olympic-mara
 
 -   In 1904 Marathon was badly organised leading to very slow times.
 </td><td width="30%">
-![image](../slides/diagrams/Stephen_Kiprotich.jpg)
+<img src="../slides/diagrams/Stephen_Kiprotich.jpg">
 <small>Image from Wikimedia Commons <http://bit.ly/16kMKHQ></small>
 </td></tr></table>
 
@@ -561,8 +531,6 @@ mlai.write_figure(figure=fig, filename='../slides/diagrams/datasets/olympic-mara
 Things to notice about the data include the outlier in 1904, in this year, the olympics was in St Louis, USA. Organizational problems and challenges with dust kicked up by the cars following the race meant that participants got lost, and only very few participants completed. 
 
 More recent years see more consistently quick marathons.
-
-
 
 ### Example: Linear Regression
 
@@ -698,21 +666,12 @@ pods.notebook.display_plots('olympic-loss-linear-regression{number:0>3}.svg',
 
 ### Parameter Uncertainty
 
+Classical Bayesian inference is concerned with parameter uncertainty, which equates to uncertainty in the *prediction
+function*, $\mappingFunction(\inputVector)$. The prediction function is normally an estimate of the value of $\dataScalar$ or constructs a probability density for $\dataScalar$. 
 
-Classical Bayesian inference is concerned with
-parameter uncertainty, which equates to uncertainty in the *prediction
-function*, $\mappingFunction(\inputVector)$. The prediction function is normally
-an estimate of the value of $\dataScalar$ or constructs a probability density
-for $\dataScalar$. 
-
-Uncertainty in the prediction function can arise through
-uncertainty in our loss function, but also through uncertainty in parameters in
-the classical Bayesian sense. The full maximum entropy formalism would now be
+Uncertainty in the prediction function can arise through uncertainty in our loss function, but also through uncertainty in parameters in the classical Bayesian sense. The full maximum entropy formalism would now be
 $$
-\expectationDist{\beta \scaleScalar_i L(\dataScalar_i,
-\mappingFunction(\inputVector_i))}{q(\scaleScalar, \mappingFunction)} + \int
-q(\scaleScalar, \mappingFunction) \log \frac{q(\scaleScalar,
-\mappingFunction)}{m(\scaleScalar)m(\mappingFunction)}\text{d}\scaleScalar
+\expectationDist{\beta \scaleScalar_i L(\dataScalar_i, \mappingFunction(\inputVector_i))}{q(\scaleScalar, \mappingFunction)} + \int q(\scaleScalar, \mappingFunction) \log \frac{q(\scaleScalar, \mappingFunction)}{m(\scaleScalar)m(\mappingFunction)}\text{d}\scaleScalar
 \text{d}\mappingFunction
 $$
 
@@ -731,9 +690,7 @@ $$
 
 * Entropy maximization proceeds as before but with
 $$
-q(\scaleScalar) \propto
-\prod_{i=1}^\numData \exp\left(- \beta \scaleScalar_i \expectationDist{L(\dataScalar_i,
-\mappingFunction(\inputVector_i))}{q(\mappingFunction)} \right) m(\scaleScalar)
+q(\scaleScalar) \propto \prod_{i=1}^\numData \exp\left(- \beta \scaleScalar_i \expectationDist{L(\dataScalar_i, \mappingFunction(\inputVector_i))}{q(\mappingFunction)} \right) m(\scaleScalar)
 $$
 and
 $$
