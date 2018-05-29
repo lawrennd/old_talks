@@ -205,6 +205,8 @@ sum_squares = np.array([np.nan]*(max_basis))}
                             directory='../slides/diagrams/ml', 
                             num_basis=IntSlider(1,1,28,1))}
 
+
+
 ### Non-linear but Linear in the Parameters
 
 \notes{One rather nice aspect of our model is that whilst it is non-linear in the inputs, it is still linear in the parameters $\mappingVector$. This means that our derivations from before continue to operate to allow us to work with this model. In fact, although this is a non-linear regression it is still known as a *linear model* because it is linear in the parameters,}
@@ -243,8 +245,7 @@ above. Compute the design matrix on the covariates (or input data), `x`. Use the
 design matrix and the response variable `y` to solve the following linear system
 for the model parameters `w`.
 $$
-\basisVector^\top\basisVector\mappingVector = \basisVector^\top
-\dataVector
+\basisVector^\top\basisVector\mappingVector = \basisVector^\top \dataVector
 $$
 Compute the corresponding error on the training data. How does it
 compare to the error you were able to achieve fitting the basis above? Plot the
