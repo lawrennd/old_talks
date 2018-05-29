@@ -28,10 +28,6 @@ $$\newcommand{\Amatrix}{\mathbf{A}}
 \newcommand{\Kuf}{\kernelMatrix_{\inducingVector \mappingFunctionVector}}
 \newcommand{\Kuu}{\kernelMatrix_{\inducingVector \inducingVector}}
 \newcommand{\Kuui}{\Kuu^{-1}}
-\newcommand{\Qaast}{{\bf Q}_{\bf \ast \ast}}
-\newcommand{\Qastf}{{\bf Q}_{\ast \mappingFunction}}
-\newcommand{\Qfast}{{\bf Q}_{\mappingFunctionVector \bf \ast}}
-\newcommand{\Qff}{{\bf Q}_{\mappingFunctionVector \mappingFunctionVector}}
 \newcommand{\aMatrix}{\mathbf{A}}
 \newcommand{\aScalar}{a}
 \newcommand{\aVector}{\mathbf{a}}
@@ -144,11 +140,11 @@ $$\newcommand{\Amatrix}{\mathbf{A}}
 \newcommand{\inducingMatrix}{\mathbf{U}}
 \newcommand{\inlineDiff}[2]{\text{d}#1/\text{d}#2}
 \newcommand{\inputDim}{q}
-\newcommand{\inputMatrix}{{\bf X}}
+\newcommand{\inputMatrix}{\mathbf{X}}
 \newcommand{\inputScalar}{x}
 \newcommand{\inputSpace}{\mathcal{X}}
 \newcommand{\inputVals}{\inputVector}
-\newcommand{\inputVector}{{\bf \inputScalar}}
+\newcommand{\inputVector}{\mathbf{\inputScalar}}
 \newcommand{\iterNum}{k}
 \newcommand{\kernel}{\kernelScalar}
 \newcommand{\kernelMatrix}{\mathbf{K}}
@@ -310,13 +306,9 @@ $$\newcommand{\Amatrix}{\mathbf{A}}
 \newcommand{\weightedAdjacencyVector}{\mathbf{\weightedAdjacencyScalar}}
 \newcommand{\onesVector}{\mathbf{1}}
 \newcommand{\zerosVector}{\mathbf{0}}
-
-
 $$
 
 ## What is Machine Learning?
-
-
 
 What is machine learning? At its most basic level machine learning is a combination of
 
@@ -324,15 +316,13 @@ $$ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$
 
 where *data* is our observations. They can be actively or passively
 acquired (meta-data). The *model* contains our assumptions, based on
-previous experience. THat experience can be other data, it can come
+previous experience. That experience can be other data, it can come
 from transfer learning, or it can merely be our beliefs about the
 regularities of the universe. In humans our models include our
 inductive biases. The *prediction* is an action to be taken or a
 categorization or a quality score. The reason that machine learning
 has become a mainstay of artificial intelligence is the importance of
 predictions in artificial intelligence. The data and the model are combined through computation.
-
-
 
 
 In practice we normally perform machine learning using two functions. To combine data with a model we typically make use of:
@@ -349,21 +339,17 @@ You can also check my blog post on ["What is Machine Learning?"](http://inversep
 
 
 
-Uncertainty in models is handled by Bayesian inference, here we
-consider uncertainty arising in loss functions.
+Uncertainty in the prediction function is handled by Bayesian inference, here we consider uncertainty arising in the objective functions, $E(\cdot)$.
 
-Consider a loss function which
-decomposes across individual observations, $\dataScalar_{k,j}$, each of which is
+Consider a loss function which decomposes across individual observations, $\dataScalar_{k,j}$, each of which is
 dependent on some set of features, $\inputVector_k$.
 
 $$
 \errorFunction(\dataVector, \inputMatrix) = \sum_{k}\sum_{j}
 L(\dataScalar_{k,j}, \inputVector_k)
 $$
-Assume that the loss function depends
-on the features through some mapping function, $\mappingFunction_j(\cdot)$ which
+Assume that the loss function depends on the features through some mapping function, $\mappingFunction_j(\cdot)$ which
 we call the *prediction function*.
-
 $$
 \errorFunction(\dataVector, \inputMatrix) = \sum_{k}\sum_{j} L(\dataScalar_{k,j},
 \mappingFunction_j(\inputVector_k))
@@ -371,7 +357,6 @@ $$
 without loss of generality, we can move
 the index to the inputs, so we have $\inputVector_i =\left[\inputVector \quad
 j\right]$, and we set $\dataScalar_i = \dataScalar_{k, j}$. So we have
-
 $$
 \errorFunction(\dataVector, \inputMatrix) = \sum_{i} L(\dataScalar_i, \mappingFunction(\inputVector_i))
 $$
@@ -387,8 +372,7 @@ which relates the data, $\dataScalar$, to the parameters. Here we choose not to
 do this, but instead we only consider the *loss* function for our objective. The
 loss is the cost we pay for a misclassification. 
 
-The *risk function* is the
-expectation of the loss under the distribution of the data. Here we are using
+The *risk function* is the expectation of the loss under the distribution of the data. Here we are using
 the framework of *empirical risk* minimization, because we have a sample based
 approximation. The new expectation we are considering is around the loss
 function itself, not the uncertainty in the data.
@@ -456,8 +440,6 @@ q(\scaleScalar) \log \frac{q(\scaleScalar)}{m(\scaleScalar)}
 $$
 where $\beta$ serves to weight the relative
 contribution of the entropy term and the loss term.
-
-
 
 We can now minimize this modified loss with respect to the density
 $q(\scaleScalar)$, the freeform optimization over this term leads to
@@ -712,7 +694,7 @@ import pods
 pods.notebook.display_plots('olympic-loss-linear-regression{number:0>3}.svg', 
                             directory='../slides/diagrams/ml', number=(0, 1))
 ```
-
+<object class="svgplot" align="" data="../slides/diagrams/ml/olympic-loss-linear-regression001.svg"></object>
 
 ### Parameter Uncertainty
 
@@ -746,8 +728,6 @@ $$
 $$
 q(\mappingFunction, \scaleScalar) = q(\mappingFunction)q(\scaleScalar)
 $$
-
-
 
 * Entropy maximization proceeds as before but with
 $$
@@ -874,7 +854,7 @@ pods.notebook.display_plots('olympic-loss-bayes-linear-regression{number:0>3}.sv
 ```
 
 
-
+<object class="svgplot" align="" data="../slides/diagrams/ml/olympic-loss-bayes-linear-regression001.svg"></object>
 
 ### Correlated Scales
 
@@ -1038,7 +1018,7 @@ pods.notebook.display_plots('olympic-gp-loss-bayes-linear-regression{number:0>3}
 ```
 
 
-
+<object class="svgplot" align="" data="../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression001.svg"></object>
 
 
 Finally we make an attempt to show the joint uncertainty
@@ -1105,5 +1085,5 @@ mlai.write_figure('../slides/diagrams/ml/olympic-gp-loss-histogram-2020.svg', tr
 
 ### Thanks!
 
-* twitter: \@lawrennd
+* twitter: @lawrennd
 * blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
