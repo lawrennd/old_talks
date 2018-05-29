@@ -1021,8 +1021,7 @@ pods.notebook.display_plots('olympic-gp-loss-bayes-linear-regression{number:0>3}
 <object class="svgplot" align="" data="../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression001.svg"></object>
 
 
-Finally we make an attempt to show the joint uncertainty
-by first of all sampling from
+Finally we make an attempt to show the joint uncertainty by first of all sampling from
 
 ```{.python}
 fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
@@ -1072,7 +1071,7 @@ ax.set_xlabel='pace min/kim'
 mlai.write_figure('../slides/diagrams/ml/olympic-gp-loss-histogram-2020.svg', transparent=True)
 ```
 
-### Histogram from 2020 {.slide: data-transition="none"}
+### Histogram of Predictions from 2020
 
 <object class="svgplot" align="" data="../slides/diagrams/ml/olympic-gp-loss-histogram-2020.svg"></object>
 
