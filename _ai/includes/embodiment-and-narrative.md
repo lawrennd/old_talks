@@ -2,7 +2,7 @@
 
 ### Machine Learning and Narratives
 
-\includeimg{../slides/diagrams/Classic_baby_shoes.jpg}{60%}
+\includeimg{../slides/diagrams/Classic_baby_shoes.jpg}{60%}{}{center}
 
 \aligncenter{*For sale: baby shoes, never worn.*}
 

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Neil D. Lawrence">
+  <title>Uncertainty in Loss Functions</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="talks.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
+      <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ TeX: { extensions: ["color.js"] }});
+      </script>
+      <script>
+  
+  function setDivs(group) {
+    var frame = document.getElementById("range-".concat(group)).value
+    slideIndex = parseInt(frame)
+    showDivs(slideIndex, group);
+  }
+  
+  function plusDivs(n, group) {
+    showDivs(slideIndex += n, group);
+  }
+  
+  function showDivs(n,group) {
+    var i;
+    var x = document.getElementsByClassName(group);
+    if (n > x.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = x.length}
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    x[slideIndex-1].style.display = "block";  
+  }
+      </script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Uncertainty in Loss Functions</h1>
+  <p class="author">Neil D. Lawrence</p>
+</section>
+
+<section class="slide level3">
+
+<h4 id="uncertainty-in-loss-functions">Uncertainty in Loss Functions</h4>
+<h4 id="section">2018-05-29</h4>
+<h4 id="neil-d.-lawrence">Neil D. Lawrence</h4>
+<h4 id="amazon-cambridge-and-university-of-sheffield">Amazon Cambridge and <strong>University of Sheffield</strong></h4>
+<p><code>@lawrennd</code> <a href="http://inverseprobability.com">inverseprobability.com</a></p>
+<!-- SECTION What is Machine Learning? -->
+</section>
+<section id="what-is-machine-learning" class="slide level3">
+<h3>What is Machine Learning?</h3>
+<div class="fragment">
+<p><span class="math display">\[ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span></p>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>data</strong> : observations, could be actively or passively acquired (meta-data).</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>model</strong> : assumptions, based on previous experience (other data! transfer learning etc), or beliefs about the regularities of the universe. Inductive bias.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>prediction</strong> : an action to be taken or a categorization or a quality score.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Royal Society Report: <a href="https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf">Machine Learning: Power and Promise of Computers that Learn by Example</a></li>
+</ul>
+</div>
+</section>
+<section id="what-is-machine-learning-1" class="slide level3">
+<h3>What is Machine Learning?</h3>
+<p><span class="math display">\[\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span></p>
+<div class="fragment">
+<ul>
+<li>To combine data with a model need:</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>a prediction function</strong> <span class="math inline">\({f}(\cdot)\)</span> includes our beliefs about the regularities of the universe</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>an objective function</strong> <span class="math inline">\({E}(\cdot)\)</span> defines the cost of misprediction.</li>
+</ul>
+</div>
+</section>
+<section id="artificial-vs-natural-systems" class="slide level3">
+<h3>Artificial vs Natural Systems</h3>
+<ul>
+<li><p>Consider natural intelligence, or natural <em>systems</em></p></li>
+<li><p>Contrast between an artificial <em>system</em> and an natural system.</p></li>
+<li><p>The key difference between the two is that artificial systems are <em>designed</em> whereas natural systems are <em>evolved</em>.</p></li>
+</ul>
+</section>
+<section id="natural-systems-are-evolved" class="slide level3">
+<h3>Natural Systems are Evolved</h3>
+<blockquote>
+<p>Survival of the fittest</p>
+<p>?</p>
+</blockquote>
+</section>
+<section id="natural-systems-are-evolved-1" class="slide level3">
+<h3>Natural Systems are Evolved</h3>
+<blockquote>
+<p>Survival of the fittest</p>
+<p><a href="https://en.wikipedia.org/wiki/Herbert_Spencer">Herbet Spencer</a>, 1864</p>
+</blockquote>
+</section>
+<section id="natural-systems-are-evolved-2" class="slide level3">
+<h3>Natural Systems are Evolved</h3>
+<blockquote>
+<p>Non-survival of the non-fit</p>
+</blockquote>
+</section>
+<section id="mistake-we-make" class="slide level3">
+<h3>Mistake we Make</h3>
+<ul>
+<li>Equate fitness for objective function.</li>
+<li>Assume static environment and known objective.</li>
+</ul>
+</section>
+<section id="classical-loss-function" class="slide level3">
+<h3>Classical Loss Function</h3>
+<p><span class="math display">\[
+{E}({\mathbf{{y}}}, {{\bf X}}) = \sum_{k}\sum_{j}
+L({y}_{k,j}, {{\bf {x}}}_k)
+\]</span></p>
+<ul>
+<li>Dependent on a prediction function <span class="math display">\[
+{E}({\mathbf{{y}}}, {{\bf X}}) = \sum_{k}\sum_{j} L({y}_{k,j},
+{f}_j({{\bf {x}}}_k))
+\]</span></li>
+</ul>
+</section>
+<section id="absorb-j-into-bf-x" class="slide level3">
+<h3>Absorb <span class="math inline">\(j\)</span> into <span class="math inline">\({{\bf {x}}}\)</span></h3>
+<p><span class="math display">\[
+{E}({\mathbf{{y}}}, {{\bf X}}) = \sum_{i} L({y}_i, {f}({{\bf {x}}}_i))
+\]</span></p>
+</section>
+<section id="introduce-uncertainty" class="slide level3">
+<h3>Introduce Uncertainty</h3>
+<ul>
+<li><p>Introduce <span class="math inline">\(\left\{{s}_i\right\}_{i=1}^{n}\)</span>. <span class="math display">\[
+{E}({\mathbf{{y}}}, {{\bf X}}) = \sum_{i}
+{s}_i L({y}_i, {f}({{\bf {x}}}_i))
+\]</span></p></li>
+<li><p>Assume <span class="math inline">\({s}\sim q({s})\)</span> <span class="math display">\[
+\begin{align*}
+{E}({\mathbf{{y}}}, {{\bf X}}) = &amp; \sum_{i}{\left\langle {s}_i L({y}_i,
+{f}({{\bf {x}}}_i)) \right\rangle _{q({s})}}\\
+&amp;
+=\sum_{i}{\left\langle {s}_i  \right\rangle _{q({s})}}L({y}_i,
+{f}({{\bf {x}}}_i))
+\end{align*}
+\]</span></p></li>
+</ul>
+</section>
+<section id="principle-of-maximum-entropy" class="slide level3">
+<h3>Principle of Maximum Entropy</h3>
+<ul>
+<li>Maximum entropy principle <span class="math display">\[
+H({s})= - \int q({s}) \log
+\frac{q({s})}{m({s})} \text{d}{s}\]</span></li>
+<li>Minimize loss minus Entropy <span class="math display">\[
+\begin{align*}
+{E}= &amp; \beta\sum_{i}{\left\langle {s}_i
+ \right\rangle _{q({s})}}L({y}_i, {f}({{\bf {x}}}_i)) -
+H({s})\\
+&amp;= \beta\sum_{i}{\left\langle {s}_i
+ \right\rangle _{q({s})}}L({y}_i, {f}({{\bf {x}}}_i)) +  \int
+q({s}) \log \frac{q({s})}{m({s})}
+\text{d}{s}\end{align*}
+\]</span></li>
+</ul>
+</section>
+<section id="freeform-minimization-wrt-qs" class="slide level3">
+<h3>Freeform Minimization wrt <span class="math inline">\(q({s})\)</span></h3>
+<p><span class="math display">\[
+\begin{align*}
+q({s}) \propto &amp; \exp\left(- \beta \sum_{i=1}^{n}{s}_i L({y}_i, {f}({{\bf {x}}}_i)) \right)
+m({s})\\
+ \propto &amp; \prod_{i=1}^{n}\exp\left(- \beta
+{s}_i L({y}_i, {f}({{\bf {x}}}_i)) \right)
+m({s})
+\end{align*}
+\]</span></p>
+</section>
+<section id="example" class="slide level3">
+<h3>Example</h3>
+<ul>
+<li>Assume <span class="math display">\[
+m({s}) = \prod_i
+\lambda\exp\left(-\lambda{s}_i\right)
+\]</span></li>
+<li>Then we have <span class="math display">\[
+q({s}) = \prod_i q({s}_i)
+\]</span> <span class="math display">\[
+q({s}_i) \propto
+\frac{1}{\lambda+\beta L_i} \exp\left(-(\lambda+\beta L_i) {s}_i\right)
+\]</span></li>
+<li>And <span class="math display">\[
+{\left\langle {s}_i \right\rangle _{q({s})}} =
+\frac{1}{\lambda + \beta L_i}
+\]</span></li>
+</ul>
+</section>
+<section id="coordinate-ascent" class="slide level3">
+<h3>Coordinate Ascent</h3>
+<ul>
+<li>Optimize wrt <span class="math inline">\(q(\cdot)\)</span> <span class="math display">\[
+q({s}_i) = \frac{1}{\lambda+\beta L_i}
+\exp\left(-(\lambda+\beta L_i) {s}_i\right)
+\]</span></li>
+<li>Update expectation <span class="math display">\[
+{\left\langle {s}_i \right\rangle _{q({s}_i)}} = \frac{1}{\lambda+\beta
+L_i}
+\]</span></li>
+<li>Minimize expected loss <span class="math display">\[
+\beta \sum_{i=1}^{n}{\left\langle {s}_i \right\rangle _{q({s}_i)}} L({y}_i,
+{f}({{\bf {x}}}_i))
+\]</span></li>
+</ul>
+</section>
+<section id="olympic-marathon-data" class="slide level3">
+<h3>Olympic Marathon Data</h3>
+<table>
+<tr>
+<td width="70%">
+<ul>
+<li><p>Gold medal times for Olympic Marathon since 1896.</p></li>
+<li><p>Marathons before 1924 didn’t have a standardised distance.</p></li>
+<li><p>Present results using pace per km.</p></li>
+<li>In 1904 Marathon was badly organised leading to very slow times.</li>
+</ul>
+</td>
+<td width="30%">
+<img src="../slides/diagrams/Stephen_Kiprotich.jpg" alt="image" /> <small>Image from Wikimedia Commons <a href="http://bit.ly/16kMKHQ" class="uri">http://bit.ly/16kMKHQ</a></small>
+</td>
+</tr>
+</table>
+</section>
+<section id="olympic-marathon-data-1" class="slide level3">
+<h3>Olympic Marathon Data</h3>
+<object class="svgplot " align data="../slides/diagrams/ml/olympic_marathon.svg">
+</object>
+</section>
+<section id="example-linear-regression" class="slide level3">
+<h3>Example: Linear Regression</h3>
+</section>
+<section id="linear-regression-on-olympic-data" class="slide level3 slide:" data-transition="none">
+<h3>Linear Regression on Olympic Data</h3>
+<object class="svgplot " align data="../slides/diagrams/ml/olympic-loss-linear-regression000.svg">
+</object>
+</section>
+<section id="linear-regression-on-olympic-data-1" class="slide level3 slide:" data-transition="none">
+<h3>Linear Regression on Olympic Data</h3>
+<object class="svgplot " align data="../slides/diagrams/ml/olympic-loss-linear-regression001.svg">
+</object>
+</section>
+<section id="parameter-uncertainty" class="slide level3">
+<h3>Parameter Uncertainty</h3>
+<ul>
+<li>In Bayesian inference we consider parameter uncertainty</li>
+</ul>
+<p><span class="math display">\[
+{\left\langle \beta {s}_i L({y}_i,
+{f}({{\bf {x}}}_i)) \right\rangle _{q({s}, {f})}} + \int
+q({s}, {f}) \log \frac{q({s},
+{f})}{m({s})m({f})}\text{d}{s}\text{d}{f}\]</span> * Implying <span class="math display">\[
+q({f}, {s}) \propto
+\prod_{i=1}^{n}\exp\left(- \beta {s}_i L({y}_i,
+{f}({{\bf {x}}}_i)) \right) m({s})m({f})
+\]</span></p>
+</section>
+<section id="approximation" class="slide level3">
+<h3>Approximation</h3>
+<ul>
+<li>Generally intractable, so assume: <span class="math display">\[
+q({f}, {s}) = q({f})q({s})
+\]</span></li>
+</ul>
+</section>
+<section id="approximation-ii" class="slide level3">
+<h3>Approximation II</h3>
+<ul>
+<li>Entropy maximization proceeds as before but with <span class="math display">\[
+q({s}) \propto
+\prod_{i=1}^{n}\exp\left(- \beta {s}_i {\left\langle L({y}_i,
+{f}({{\bf {x}}}_i)) \right\rangle _{q({f})}} \right) m({s})
+\]</span> and <span class="math display">\[
+q({f}) \propto
+\prod_{i=1}^{n}\exp\left(- \beta {\left\langle {s}_i \right\rangle _{q({s})}} L({y}_i,
+{f}({{\bf {x}}}_i)) \right) m({f})
+\]</span></li>
+</ul>
+</section>
+<section id="approximation-iii" class="slide level3">
+<h3>Approximation III</h3>
+<ul>
+<li>Can now proceed with iteration between <span class="math inline">\(q({s})\)</span>, <span class="math inline">\(q({f})\)</span></li>
+</ul>
+</section>
+<section id="bayesian-linear-regression-on-olympic-data" class="slide level3 slide:" data-transition="none">
+<h3>Bayesian Linear Regression on Olympic Data</h3>
+<object class="svgplot " align data="../slides/diagrams/ml/olympic-loss-bayes-linear-regression000.svg">
+</object>
+</section>
+<section id="bayesian-linear-regression-on-olympic-data-1" class="slide level3 slide:" data-transition="none">
+<h3>Bayesian Linear Regression on Olympic Data</h3>
+<object class="svgplot " align data="../slides/diagrams/ml/olympic-loss-bayes-linear-regression001.svg">
+</object>
+</section>
+<section id="correlated-scales" class="slide level3">
+<h3>Correlated Scales</h3>
+<ul>
+<li>Assume the measure is a GP <span class="math display">\[
+{v}\sim \mathcal{GP}\left({\mu}({{\bf {x}}}), {{k}}({{\bf {x}}}, {{\bf {x}}}^\prime)\right)
+\]</span></li>
+<li>Assume <span class="math inline">\({s}= {v}^2\)</span></li>
+</ul>
+</section>
+<section id="correlated-scales-ii" class="slide level3">
+<h3>Correlated Scales II</h3>
+<ul>
+<li>Implies <span class="math display">\[
+q({v}) \propto
+\prod_{i=1}^{n}\exp\left(- \beta {v}_i^2 L({y}_i,
+{f}({{\bf {x}}}_i)) \right)\mathcal{GP}\left({\mu}({{\bf {x}}}), {{k}}({{\bf {x}}}, {{\bf {x}}}^\prime)\right)
+\]</span></li>
+<li>Gives <span class="math inline">\(q({v})\)</span> as Gaussian with covariance: <span class="math display">\[
+{\mathbf{C}}= \left(\beta\mathbf{L} + {\mathbf{K}}^{-1}\right)^{-1}
+\]</span> and mean <span class="math display">\[
+{\mathbf{{m}}}= \beta{\mathbf{C}}\mathbf{L}{\boldsymbol{{\mu}}}\]</span></li>
+</ul>
+</section>
+<section id="expectation-update" class="slide level3">
+<h3>Expectation Update</h3>
+<ul>
+<li>The update is given by <span class="math display">\[
+{\left\langle {v}_i^2 \right\rangle _{q({v})}} = {m}_i^2 +
+{c}_{i, i}.
+\]</span></li>
+<li>If measure covariance spherical and mean zero <span class="math display">\[
+{\left\langle {v}_i^2 \right\rangle _{q({v})}} = \frac{1}{\lambda + \beta L_i}
+\]</span> which is the same as we had before for the exponential prior over <span class="math inline">\({s}\)</span>.</li>
+</ul>
+</section>
+<section id="conditioning-the-measure" class="slide level3">
+<h3>Conditioning the Measure</h3>
+<ul>
+<li><p>Condition measure to be high weight in <em>test</em> region <span class="math display">\[
+{\mathbf{K}}^\prime = {\mathbf{K}}- \frac{{\mathbf{{k}}}_\ast{\mathbf{{k}}}^\top_\ast}{{k}_{*,*}}
+\]</span> and <span class="math display">\[
+{\boldsymbol{{\mu}}}^\prime = {\boldsymbol{{\mu}}}+ \frac{{\mathbf{{k}}}_\ast}{{k}_{*,*}}
+({v}_\ast-{\mu})
+\]</span></p></li>
+<li><p>As covariance becomes small, this becomes <em>LOESS regression</em></p></li>
+</ul>
+</section>
+<section id="linear-regression-on-olympic-data-2" class="slide level3 slide:" data-transition="none">
+<h3>Linear Regression on Olympic Data</h3>
+<object class="svgplot " align data="../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression000.svg">
+</object>
+</section>
+<section id="linear-regression-on-olympic-data-3" class="slide level3 slide:" data-transition="none">
+<h3>Linear Regression on Olympic Data</h3>
+<object class="svgplot " align data="../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression001.svg">
+</object>
+</section>
+<section id="joint-uncertainty" class="slide level3 slide:" data-transition="none">
+<h3>Joint Uncertainty</h3>
+<object class="svgplot " align data="../slides/diagrams/ml/olympic-gp-loss-samples.svg">
+</object>
+</section>
+<section id="joint-samples-from-regression" class="slide level3 slide:" data-transition="none">
+<h3>Joint Samples from Regression</h3>
+<object class="svgplot " align data="../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression-and-samples000.svg">
+</object>
+</section>
+<section id="joint-samples-from-regression-1" class="slide level3 slide:" data-transition="none">
+<h3>Joint Samples from Regression</h3>
+<object class="svgplot " align data="../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression-and-samples001.svg">
+</object>
+</section>
+<section id="histogram-from-2020" class="slide level3 slide:" data-transition="none">
+<h3>Histogram from 2020</h3>
+<object class="svgplot " align data="../slides/diagrams/ml/olympic-gp-loss-histogram-2020.svg">
+</object>
+</section>
+<section id="conclusions" class="slide level3">
+<h3>Conclusions</h3>
+<ul>
+<li>Maximum Entropy Framework for uncertainty in
+<ul>
+<li>Loss functions</li>
+<li>Prediction functions</li>
+</ul></li>
+</ul>
+</section>
+<section id="thanks" class="slide level3">
+<h3>Thanks!</h3>
+<ul>
+<li>twitter: @lawrennd</li>
+<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Transition style
+        transition: 'None', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+              { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

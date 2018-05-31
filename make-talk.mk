@@ -1,6 +1,6 @@
 OUT=$(DATE)-$(BASE)
 
-all: ${BASE}.slides.html ${BASE}.notes.html  ${BASE}.ipynb
+all: ${BASE}.slides.html ${BASE}.notes.html ${BASE}.posts.md ${BASE}.ipynb 
 
 ${BASE}.slides.html: ${BASE}.slides.md
 	pandoc  ${PDFLAGS} ${SFLAGS} -c ${CSS} --include-in-header=${HEADER} -t revealjs --bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib -o ${BASE}.slides.html  ${BASE}.slides.md 
@@ -11,6 +11,10 @@ ${BASE}.notes.pdf: ${BASE}.notes.md
 
 ${BASE}.notes.html: ${BASE}.notes.md
 	pandoc  ${PDFLAGS} --bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib -o ${BASE}.notes.html  ${BASE}.notes.md 
+
+${BASE}.posts.md: ${BASE}.notes.md
+	pandoc  ${PDFLAGS} --atx-headers --metadata date=${DATE} --metadata layout=talk --metadata reveal=${OUT}.slides.html --metadata published=${DATE} -t markdown --bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib -o ${BASE}.posts.md  ${BASE}.notes.md 
+	cp ${BASE}.posts.md ../_posts/${OUT}.posts.md
 
 ${BASE}.ipynb: ${BASE}.ipynb.md
 	pandoc  ${PDFLAGS} --bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib -o ${BASE}.tmp.md  ${BASE}.ipynb.md 
@@ -30,4 +34,4 @@ ${BASE}.ipynb.md: ${BASE}.md
 	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -Dipynb=1 ${PPFLAGS} ${BASE}.md -o ${BASE}.ipynb.md
 
 clean:
-	rm ${BASE}.slides.md ${BASE}.slides.html ${BASE}.notes.md ${BASE}.notes.html ${BASE}.ipynb.md 
+	rm ${BASE}.slides.md ${BASE}.slides.html ${BASE}.notes.md ${BASE}.notes.html ${BASE}.ipynb.md ${BASE}.posts.md

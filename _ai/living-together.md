@@ -2,6 +2,7 @@
 layout: slides
 title: "Living Together: Mind and Machine Intelligence"
 author: Neil D. Lawrence
+transition: None
 ---
 \include{talk-macros.tex}
 \include{_ai/includes/diving-bell-butterfly.md}

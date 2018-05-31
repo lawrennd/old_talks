@@ -1,15 +1,17 @@
+\slides{
 ###
 
-\fragment{<small>Outline of the DeepFace architecture. A front-end of a single convolution-pooling-convolution filtering on the rectified input, followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected.</small>}{fade-in}
+\fragment{\smalltext{Outline of the DeepFace architecture. A front-end of a single convolution-pooling-convolution filtering on the rectified input, followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected.}}{fade-in}}
 
-\includeimg{../slides/diagrams/deepface_neg.png}{100%}
+\includeimg{../slides/diagrams/deepface_neg.png}{100%}{}{center}
 
-<p align="right">
-<small>Source: DeepFace</small></p>
+\alignright{\smalltext{Source: DeepFace [@Taigman:deepface14]}}
 
-### 
+\notes{The DeepFace architecture [@Taigman:deepface14] consists of layers that deal  with *translation* and *rotational* invariances. These layers are followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected layers.}
 
-\includeimg{../slides/diagrams/576px-Early_Pinball.jpg}{50%}
+\slides{### }
+
+\includeimg{../slides/diagrams/576px-Early_Pinball.jpg}{50%}{}{center}
 
 \notes{We can think of what these models are doing as being similar to early pin ball machines. In a neural network, we input a number (or numbers), whereas in pinball, we input a ball. The location of the ball on the left-right axis can be thought of as the number. As the ball falls through the machine, each layer of pins can be thought of as a different layer of neurons. Each layer acts to move the ball from left to right. 
 

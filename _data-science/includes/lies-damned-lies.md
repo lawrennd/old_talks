@@ -1,3 +1,4 @@
+\notes{Lies and Damned Lies}
 \slides{### 
 
 > There are three types of lies: lies, damned lies and statistics
@@ -12,7 +13,8 @@
 > Benjamin Disraeli
 }
 
-### 
+\slides{### 
+}
 
 > There are three types of lies: lies, damned lies and statistics
 >
@@ -24,7 +26,7 @@
 
 \slides{* 'Founded' by Karl Pearson (1857-1936)}
 
-\includeimg{../slides/diagrams/Portrait_of_Karl_Pearson.jpg}{30%}
+\includeimg{../slides/diagrams/Portrait_of_Karl_Pearson.jpg}{30%}{}{center}
 
 \notes{[Karl Pearson](https://en.wikipedia.org/wiki/Karl_Pearson) (1857-1936), [Ronald Fisher](https://en.wikipedia.org/wiki/Ronald_Fisher) (1890-1962) and others considered the question of what conclusions can truly be drawn from data. Their mathematical studies act as a restraint on our tendency to over-interpret and see patterns where there are none. They introduced concepts such as randomized control trials that form a mainstay of the our decision making today, from government, to clinicians to large scale A/B testing that determines the nature of the web interfaces we interact with on social media and shopping.}
 
@@ -40,7 +42,7 @@
 
 * 'Founded' by ? (?-?)
 
-\includeimg{../slides/diagrams/Question_mark.png}{30%}
+\includeimg{../slides/diagrams/Question_mark.png}{30%}{}{center}
 
 }
 
