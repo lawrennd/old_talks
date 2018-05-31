@@ -183,100 +183,12 @@ So what will be the last bastion
 
 \include{../_ai/includes/deploying-ai.md}
 \include{../_ai/includes/ml-systems-design-long.md}
-
-### Artificial vs Natural Systems
-
-* Consider natural intelligence, or natural *systems*
-
-* Contrast between an artificial *system* and an natural system.
-
-* The key difference between the two is that artificial systems are *designed* whereas natural systems are *evolved*.
-
-### Natural Systems are Evolved
-
-> Survival of the fittest
-
-> ?
-
-### Natural Systems are Evolved
-
-> Survival of the fittest
->
-> [Herbet Spencer](https://en.wikipedia.org/wiki/Herbert_Spencer), 1864
-
-### Natural Systems are Evolved
-
-> Non-survival of the non-fit
->  
->  
-
-### Mistake we Make
-
-* Equate fitness for objective function.
-
-* Assume static environment and known objective. 
-
-### Engineering Systems Design
-
-* Major component of all Engineering disciplines.
-
-* Details differ: there is a common theme: achieve your objective with the minimal use of resources to do the job.
-
-* This provides efficiency.
-
-* Engineering designer imagines a solution that requires the minimal set of components to achieve the result.
-
-* A water pump has one route through the pump.
-
-### Don't Fail
-
-* First criterion of a natural intelligence is *don’t fail*.
-
-* In contrast, mantra for artificial systems is to be more efficient.
-
-* Artificial systems are given a single objective (in machine learning it is encoded in a mathematical function)
-
-* Aim to achieve that objective efficiently.
-
-### Designing out Failure
-
-* Even if we wanted to incorporate *don’t fail* in some form, it is difficult to design for.
-
-* To design for “don’t fail”, you have to consider every which way in which things can go wrong, if you miss one you fail. These cases are sometimes called corner cases.
-
-### Corners Everywhere {.slide: data-transition="none"}
-
-* In an uncontrolled environment, almost everything is a corner.
-
-    * It is difficult to imagine everything that can happen.
-    
-    * Most of our automated systems operate in controlled environments (e.g.  a factory, a set of rails.)
-
-### Deployment in Uncontrolled Environments
-
-* Requires a different approach to systems design.
-
-. . .
-
-* One that accounts for uncertainty in the environment
-
-. . .
-
-* One that is robust to unforeseen circumstances. 
-
-### Pigeonholing
-
-\includeimg{../slides/diagrams/TooManyPigeons.jpg}{60%}
-
-### Robust
-
-* Need to move beyond pigeonholing tasks.
-
-* Need new approaches to both the design of the individual components, and the combination of components within our AI systems.
-
+\include{../_ai/includes/artificial-vs-natural-systems.md}
+\include{../_ai/includes/engineering-systems-design.md}
+\include{../_ai/includes/pigeonholing.md}
 \include{../_ai/includes/intelligent-system-paolo.md}
 
-###
+### 
 
 * Need to deal with uncertainty and increase robustness.
 

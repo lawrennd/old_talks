@@ -31,7 +31,9 @@ This is known as an *overdetermined* system because there are more data than we 
 \setupcode{import teaching_plots as plot}
 \plotcode{plot.over_determined_system(diagrams='../slides/diagrams/ml')}
 
+\slides{
 ### 
+}
 
 \largetext{$$\dataScalar = m\inputScalar + c$$}
 
@@ -85,31 +87,7 @@ $$2.5 = 2m + c$$}
 
 \includeimg{../slides/diagrams/ml/Pierre-Simon_Laplace.png}{30%}
 
-\slides{### 
-
-\includeimg{../slides/diagrams/laplacesDeterminismFrench.png}{80%}}
-
-\notes{Famously, Laplace considered the idea of a deterministic Universe, one in which all the "". He speculates on an "intelligence" that can submit this vast data to analysis and propsoses that such an entity would be able to predict the future.
-
->Given for one instant an intelligence which could comprehend all the forces by which nature is animated and the respective situation of the beings who compose it---an intelligence sufficiently vast to submit these data to analysis---it woudl embrace in the same formulat the movements of the greatest bodies of the universe and those of the lightest atom; for it, nothing would be uncertain and the future, as the past, would be present in its eyes.}
-
-
-\slides{### 
-
-\includeimg{../slides/diagrams/laplacesDeterminismEnglish.png}{80%}}
-
-
-\notes{Unfortunately, most analyses of his ideas stop at that point, whereas his real point is that such a notion is somewhat ridiculous. Just 3 pages later in the "Philosophical Essay on Probabilities", Laplace goes on to observe:
-
-> The curve described by a simple molecule of air or vapor is regulated in a manner just as certain as the planetary orbits; the only difference between them is that which comes from our ignorance.
->
-> Probability is relative, in part to this ignorance, in part to our knowledge.}
-
-\slides{### 
-
-\includeimg{../slides/diagrams/philosophicaless00lapliala.png}{80%}}
-
-\notes{In other words, we can never utilize the idealistic deterministc Universe due to our ignorance about the world. }
+\include{_ai/includes/laplaces-determinism.md}
 
 \notes{Laplace's concept was that the reason that the data doesn't match up to the model is because of unconsidered factors, and that these might be well represented through probability densities. He tackles the challenge of the unknown factors by adding a variable, $\noiseScalar$, that represents the unknown. In modern parlance we would call this a *latent* variable. But in the context Laplace uses it, the variable is so common that it has other names such as a "slack" variable or the *noise* in the system.
 

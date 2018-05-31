@@ -12,7 +12,7 @@
 \slides{
 ### Pigeonholing
 
-\includeimg{../slides/diagrams/TooManyPigeons.jpg}{60%}
+\includeimg{../slides/diagrams/TooManyPigeons.jpg}{60%}{}{center}
 }
 
 \notes{The way we are deploying artificial intelligence systems in practice is to build up systems of machine learning components. To build a machine learning system, we decompose the task into parts, each of which we can emulate with ML methods. These parts are typically independently constructed and verified. For example, in a driverless car we can decompose the tasks into components such as "pedestrian detection" and "road line detection". Each of these components can be constructed with, for example, an independent classifier. We can then superimpose a logic on top. For example, "Follow the road line unless you detect a pedestrian in the road". 
@@ -39,12 +39,12 @@ We become exposed to mischief and adversaries. Adversaries intentially may wish 
 
 \slides{### Early AI
 }
-\includeimg{../slides/diagrams/2017-10-12 16.47.34.jpg}{40%}{rotateimg90}
+\includeimg{../slides/diagrams/2017-10-12 16.47.34.jpg}{40%}{rotateimg90}{center}
 \aligncenter{*Watt's Governor as held by "Science" on Holborn Viaduct*}
 \slides{
 ### Machine Learning Systems Design
 }
-\includeimg{../slides/diagrams/SteamEngine_Boulton&Watt_1784_neg.png}{50%}
+\includeimg{../slides/diagrams/SteamEngine_Boulton&Watt_1784_neg.png}{50%}{center}
 \aligncenter{*Watt's Steam Engine which made Steam Power Efficient and Practical*}
 
 \slides{
@@ -95,11 +95,3 @@ See also [this blog on the differences between natural and artificial intelligen
   your soup. 
 }
 
-\slides{### 
-
-\includempfour{../slides/diagrams/paolo-peppercorn.mp4}{}{600}
-
-### 
-
-\includempfour{../slides/diagrams/paolo-save.mp4}
-}
