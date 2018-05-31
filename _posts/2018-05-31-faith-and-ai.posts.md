@@ -1,4 +1,17 @@
 ---
+abstract: |
+    What is artificial intelligence and what are the implications of
+    advances in artificial intelligence for religion? In this talk we give a
+    short introduction to the technology that’s underpinning advances in
+    artificial intelligence, machine learning. We then develop those ideas
+    with a particular focus on how artificial intelligences differ from
+    *natural* intelligences. Next, we consider parallel’s between the
+    perspectives on religion and AI in popular culture, initially with a
+    ‘cartoon view’, but then diving deeper and reflecting on the shared
+    drive for introspection that a mature approach to artificial
+    intelligence and religion might bring.
+affiliation: 'University of Sheffield and Amazon, Cambridge'
+author: 'Neil D. Lawrence'
 bibliography:
 - '../other.bib'
 - '../lawrence.bib'
@@ -8,6 +21,9 @@ date: '2018-05-31'
 layout: talk
 published: '2018-05-31'
 reveal: '2018-05-31-faith-and-ai.slides.html'
+title: Faith and AI
+transition: None
+venue: 'Faith and AI Event, St George’s, Windsor'
 ---
 
 ## What is Machine Learning?
@@ -171,23 +187,18 @@ $\mathbf{w}$ instead of $\boldsymbol{\beta}$. As a result *non-linear*
 functions are explored more often as they tend to improve quality of
 predictions but at the expense of interpretability.
 
-### 
+<img class="" src="../slides/diagrams/deepface_neg.png" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
 
-<small>Outline of the DeepFace architecture. A front-end of a single
-convolution-pooling-convolution filtering on the rectified input,
+[<small>Source: DeepFace [@Taigman:deepface14]</small>]{align="right"}
+
+The DeepFace architecture [@Taigman:deepface14] consists of layers that
+deal with *translation* and *rotational* invariances. These layers are
 followed by three locally-connected layers and two fully-connected
 layers. Color illustrates feature maps produced at each layer. The net
 includes more than 120 million parameters, where more than 95% come from
-the local and fully connected.</small>
+the local and fully connected layers.
 
-<img class="" src="../slides/diagrams/deepface_neg.png" width="100%" align="" style="background:none; border:none; box-shadow:none;">
-
-<p align="right">
-<small>Source: DeepFace</small>
-</p>
-### 
-
-<img class="" src="../slides/diagrams/576px-Early_Pinball.jpg" width="50%" align="" style="background:none; border:none; box-shadow:none;">
+<img class="" src="../slides/diagrams/576px-Early_Pinball.jpg" width="50%" align="center" style="background:none; border:none; box-shadow:none;">
 
 We can think of what these models are doing as being similar to early
 pin ball machines. In a neural network, we input a number (or numbers),
@@ -215,145 +226,6 @@ distance and lead to a very different result.
 
 Probabilistic methods explore more of the space by considering a range
 of possible paths for the ball through the machine.
-
-## Artificial vs Natural Systems
-
-### Natural Systems are Evolved
-
-> Survival of the fittest
->
-> [Herbet Spencer](https://en.wikipedia.org/wiki/Herbert_Spencer), 1864
-
-Darwin never said “Survival of the Fittest” he talked about evolution by
-natural selection.
-
-Evolution is better described as “non-survival of the non-fit”. You
-don’t have to be the fittest to survive, you just need to avoid the
-pitfalls of life. This is the first priority.
-
-A mistake we make in our systems design is to equate fitness with the
-objective function, and to assume it is known and static. In practice, a
-real environment would have an evolving fitness function which would be
-unknown at any given time.
-
-## Machine Learning System Design
-
-The way we are deploying artificial intelligence systems in practice is
-to build up systems of machine learning components. To build a machine
-learning system, we decompose the task into parts, each of which we can
-emulate with ML methods. These parts are typically independently
-constructed and verified. For example, in a driverless car we can
-decompose the tasks into components such as “pedestrian detection” and
-“road line detection”. Each of these components can be constructed with,
-for example, an independent classifier. We can then superimpose a logic
-on top. For example, “Follow the road line unless you detect a
-pedestrian in the road”.
-
-This allows for verification of car performance, as long as we can
-verify the individual components. However, it also implies that the AI
-systems we deploy are *fragile*.
-
-Our intelligent systems are composed by “pigeonholing” each indvidual
-task, then substituting with a machine learning model.
-
-### Rapid Reimplementation
-
-This is also the classical approach to automation, but in traditional
-automation we also ensure the *environment* in which the system operates
-becomes controlled. For example, trains run on railway lines, fast cars
-run on motorways, goods are manufactured in a controlled factory
-environment.
-
-The difference with modern automated decision making systems is our
-intention is to deploy them in the *uncontrolled* environment that makes
-up our own world.
-
-This exposes us to either unforseen circumstances or adversarial action.
-And yet it is unclear our our intelligent systems are capable of
-adapting to this.
-
-We become exposed to mischief and adversaries. Adversaries intentially
-may wish to take over the artificial intelligence system, and mischief
-is the constant practice of many in our society. Simply watching a 10
-year old interact with a voice agent such as Alexa or Siri shows that
-they are delighted when the can make the the “intelligent” agent seem
-foolish.
-
-<img class="rotateimg90" src="../slides/diagrams/2017-10-12 16.47.34.jpg" width="40%" align="center" style="background:none; border:none; box-shadow:none;">
-<center>
-*Watt’s Governor as held by “Science” on Holborn Viaduct*
-</center>
-<img class="center" src="../slides/diagrams/SteamEngine_Boulton&Watt_1784_neg.png" width="50%" align="" style="background:none; border:none; box-shadow:none;">
-<center>
-*Watt’s Steam Engine which made Steam Power Efficient and Practical*
-</center>
-One of the first automated decision making systems was Watt’s governor,
-as held by “Science” on Holborns viaduct. Watt’s governor was a key
-component in his steam engine. It senses increases in speed in the
-engine and closed the steam valve to prevent the engine overspeeding and
-destroying itself. Until the invention of this device, it was a human
-job to do this.
-
-The formal study of governors and other feedback control devices was
-then began by [James Clerk
-Maxwell](https://en.wikipedia.org/wiki/James_Clerk_Maxwell), the
-Scottish physicist. This field became the foundation of our modern
-techniques of artificial intelligence through Norbert Wiener’s book
-*Cybernetics* [@Wiener:cybernetics48]. Cybernetics is Greek for
-governor, a word that in itself simply means helmsman in English.
-
-The recent WannaCry virus that had a wide impact on our health services
-ecosystem was exploiting a security flaw in Windows systems that was
-first exploited by a virus called Stuxnet.
-
-Stuxnet was a virus designed to infect the Iranian nuclear program’s
-Uranium enrichment centrifuges. A centrifuge is prevented from overspeed
-by a controller, just like Watt’s governor. Only now it is implemented
-in control logic, in this case on a Siemens PLC controller.
-
-Stuxnet infected these controllers and took over the response signal in
-the centrifuge, fooling the system into thinking that no overspeed was
-occuring. As a result, the centrifuges destroyed themselves through
-spinning too fast.
-
-This is equivalent to detaching Watt’s governor from the steam engine.
-Such sabotage would be easily recognized by a steam engine operator. The
-challenge for the operators of the Iranian Uranium centrifuges was that
-the sabotage was occurring inside the electronics.
-
-That is the effect of an adversary on an intelligent system, but even
-without adveraries, the mischief of a 10 year old can confuse our AIs.
-
-[![](https://img.youtube.com/vi/1y2UKz47gew/0.jpg)](https://www.youtube.com/watch?v=1y2UKz47gew&t=)
-
-Asking Siri “What is a trillion to the power of a thousand minus one?”
-leads to a 30 minute response consisting of only 9s. I found this out
-because my nine year old grabbed my phone and did it. The only way to
-stop Siri was to force closure. This is an interesting example of a
-system feature that’s *not* a bug, in fact it requires clever processing
-from Wolfram Alpha. But it’s an unexpected result from the system
-performing correctly.
-
-This challenge of facing a circumstance that was unenvisaged in design
-but has consequences in deployment becomes far larger when the
-environment is uncontrolled. Or in the extreme case, where actions of
-the intelligent system effect the wider environment and change it.
-
-These unforseen circumstances are likely to lead to need for much more
-efficient turn-around and update for our intelligent systems. Whether we
-are correcting for security flaws (which *are* bugs) or unenvisaged
-circumstantial challenges: an issue I’m referring to as *peppercorns*.
-Rapid deployment of system updates is required. For example, Apple have
-“fixed” the problem of Siri returning long numbers.
-
-The challenge is particularly acute because of the *scale* at which we
-can deploy AI solutions. This means when something does go wrong, it may
-be going wrong in billions of households simultaneously.
-
-See also [this blog on the differences between natural and artificial
-intelligence](http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence)
-and this paper [on the need for diversity in decision
-making](http://inverseprobability.com/2017/11/15/decision-making).
 
 ## Natural and Artificial Intelligence: Embodiment Factors
 
@@ -594,51 +466,13 @@ motions, their sizes and their actions. We apply our psychological
 representations to these faceless shapes in an effort to interpret their
 actions.
 
-Lies and Damned Lies
-
-> There are three types of lies: lies, damned lies and statistics
->
-> Benjamin Disraeli 1804-1881
-
-The quote lies, damned lies and statistics was credited to Benjamin
-Disraeli by Mark Twain in his autobiography. It characterizes the idea
-that statistic can be made to prove anything. But Disraeli died in 1881
-and Mark Twain died in 1910. The important breakthrough in overcoming
-our tendency to overinterpet data came with the formalization of the
-field through the development of *mathematical statistics*.
-
-### *Mathematical* Statistics
-
-<img class="" src="../slides/diagrams/Portrait_of_Karl_Pearson.jpg" width="30%" align="center" style="background:none; border:none; box-shadow:none;">
-
-[Karl Pearson](https://en.wikipedia.org/wiki/Karl_Pearson) (1857-1936),
-[Ronald Fisher](https://en.wikipedia.org/wiki/Ronald_Fisher) (1890-1962)
-and others considered the question of what conclusions can truly be
-drawn from data. Their mathematical studies act as a restraint on our
-tendency to over-interpret and see patterns where there are none. They
-introduced concepts such as randomized control trials that form a
-mainstay of the our decision making today, from government, to
-clinicians to large scale A/B testing that determines the nature of the
-web interfaces we interact with on social media and shopping.
-
-Today the statement “There are three types of lies: lies, damned lies
-and ‘big data’” may be more apt. We are revisiting many of the mistakes
-made in interpreting data from the 19th century. Big data is laid down
-by happenstance, rather than actively collected with a particular
-question in mind. That means it needs to be treated with care when
-conclusions are being drawn. For data science to succede it needs the
-same form of rigour that Pearson and Fisher brought to statistics, a
-“mathematical data science” is needed.
-
-### Challenges in Data Science
-
 ### Faith and AI
 
 1.  Artificial Intelligence as Cartoon Religion
 2.  Artificial Intelligence and Introspection
 3.  A Systemic Catch 22
 
-### AI as Cartoon Religion
+### Singulariansm: AI as Cartoon Religion
 
 The first parallels one can find between artificial intelligence and
 religion come in somewhat of a cartoon doomsday scenario form. The
@@ -647,12 +481,12 @@ be placed within the framework of the simpler questions that religion
 can try to answer. The parallels are
 
 1.  Superintelligence as god
-2.  Demi-god status achievable through trans-humanism
+2.  Demi-god status achievable through transhumanism
 3.  Immortality through uploading the connectome
 4.  The day of judgement as the “singularity”
 
 The notion of a ultra-intelligence is similar to the notion of an
-interventionist god, with omniscience both in the present and in the
+interventionist god, with omniscience in the past, present and the
 future. This notion was described by Pierre Simon Laplace.
 
 <img class="" src="../slides/diagrams/ml/Pierre-Simon_Laplace.png" width="30%" align="center" style="background:none; border:none; box-shadow:none;">
@@ -686,6 +520,95 @@ pages later in the “Philosophical Essay on Probabilities”
 
 In other words, we can never utilize the idealistic deterministc
 Universe due to our ignorance about the world.
+
+### Singularians
+
+The notion of Superintelligence in Nick Bostrom’s book is that of an
+infallible omniscience. The challenge of superintelligence according to
+Bostrom is constraining the power of such an entity. In practice, the
+premise is based on the Laplace’s straw man. No such intelligence could
+exist due to our ignorance, in practice any real intelligence must
+express *doubt*.
+
+Elon Musk has proposed that the only way to defeat the inevitable
+omniscience would be to augment ourselves with machine like
+capabilities. Ray Kurzweil has pushed the notion of developing ourselves
+by augmenting our existing cortex with direct connection to the
+internet.
+
+Within Sillicon Valley there is a particular obsession with ‘uploading’,
+once the brain is connected, we can achieve immortality by continuing to
+exist digitally in an artificial environment of our own creation while
+our physical body is left behind us.
+
+In this scenario, doomsday is the ‘technological singularity’, the
+moment at which computers rapidly outstrip our capabilities and take
+over our world. The high priests are the scientists, and the aim is to
+bring about the latter while restraining the former.
+
+*Singularism* is to religion what *scientology* is to science.
+Scientology is religion expressing itself as science and Singularism is
+science expressing itself as religion.
+
+For further reading see [this post on
+Singularism](http://inverseprobability.com/2016/05/09/machine-learning-futures-5)
+as well as this [paper by Luciano
+Floridi](http://www.academia.edu/15037984/Singularitarians_AItheists_and_Why_the_Problem_with_Artificial_Intelligence_is_H.A.L._Humanity_At_Large_not_HAL)
+and this [review of
+Superintelligence](http://inverseprobability.com/2016/05/09/machine-learning-futures-6)
+[@Bostrom-superintelligence14].
+
+### Artificial Intelligence and Introspection
+
+Ignoring the cartoon view of religion we’ve outlined above and focussing
+more on how religion can bring strength to people in their day-to-day
+living, religious environments bring a place to self reflect and
+meditate on our existence, and the wider cosmos. How are we here? What
+is our role? What makes us different?
+
+Creating machine intelligences characterizes the manner in which we are
+different, helps us understand what is special about us rather than the
+machine.
+
+I have in the past argued strongly against the term artificial
+intelligence but there is a sense in which it is a good term. If we
+think of artificial plants, then we have the right sense in which we are
+creating an artificial intelligence. An artificial plant is
+fundamentally different from a real plant, but can appear similar, or
+from a distance identical. However, a creator of an artificial plant
+gains a greater appreciation for the complexity of a natural plant.
+
+In a similar way, we might expect that attempts to emulate human
+intelligence would lead to a deeper appreciation of that intelligence.
+This type of reflection on who we are has a lot in common with many of
+the (to me) most endearing characteristics of religion.
+
+### The Cosmic Catch 22
+
+A final parallel between the world of AI and that of religion is the
+conundrums they raise for us. In particular the tradeoffs between a
+paternalistic society and individual freedoms. Two models for artificial
+intelligence that may be realistic are the “big brother” and the “big
+mother” models. The former refers to the surveillance society and the
+control of populations that can be achieved with a greater understanding
+of the individual self. A perceptual understanding of the individual
+that conceivably be of better than the individual’s self perception. The
+same understanding of individual is also necessary for the “big mother”
+scenario, where intelligent agents provide for us in the manner in which
+our parents did for us when we were young. Both scenarios are
+disempowering in terms of individual liberties. In a metaphorical sense,
+this could be seen as a return to Eden, a surrendering of individual
+liberties for a perceived paradise. But those individual liberties are
+also what we value. There is a tension between a desire to create the
+perfect environment, where no evil exists and our individual liberty.
+Our society chooses a balance between the pros and cons that attempts to
+sustain a diversity of perspectives and beliefs. Even if it were
+possible to use AI to organzie society in such a way that particular
+malevolent behaviours were prevented, doing so may come at the cost of
+the individual freedom we enjoy. These are difficult trade offs, and the
+exist both when explaining the nature of religious belief and when
+considering the nature of either the dystopian big brother or the
+“dys-utopian” big mother view of AI.
 
 ### Thanks!
 
