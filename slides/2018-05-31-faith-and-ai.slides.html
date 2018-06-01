@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="dcterms.date" content="2018-05-31">
+  <title>Faith and AI</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="talks.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
+      <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ TeX: { extensions: ["color.js"] }});
+      </script>
+      <script>
+  
+  function setDivs(group) {
+    var frame = document.getElementById("range-".concat(group)).value
+    slideIndex = parseInt(frame)
+    showDivs(slideIndex, group);
+  }
+  
+  function plusDivs(n, group) {
+    showDivs(slideIndex += n, group);
+  }
+  
+  function showDivs(n,group) {
+    var i;
+    var x = document.getElementsByClassName(group);
+    if (n > x.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = x.length}
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    x[slideIndex-1].style.display = "block";  
+  }
+      </script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Faith and AI</h1>
+  <p class="author">true</p>
+  <p class="date">2018-05-31</p>
+</section>
+
+<section class="slide level3">
+
+<h4 id="faith-and-ai">Faith and AI</h4>
+<h4 id="section">2018-05-31</h4>
+<h4 id="neil-d.-lawrence">Neil D. Lawrence</h4>
+<h4 id="amazon-cambridge-and-university-of-sheffield">Amazon Cambridge and <strong>University of Sheffield</strong></h4>
+<center>
+<code>@lawrennd</code> <a href="">inverseprobability.com</a>
+</center>
+<!-- SECTION What is Machine Learning? -->
+</section>
+<section id="what-is-machine-learning" class="slide level3">
+<h3>What is Machine Learning?</h3>
+<div class="fragment">
+<p><span class="math display">\[ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span></p>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>data</strong> : observations, could be actively or passively acquired (meta-data).</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>model</strong> : assumptions, based on previous experience (other data! transfer learning etc), or beliefs about the regularities of the universe. Inductive bias.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>prediction</strong> : an action to be taken or a categorization or a quality score.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Royal Society Report: <a href="https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf">Machine Learning: Power and Promise of Computers that Learn by Example</a></li>
+</ul>
+</div>
+</section>
+<section id="what-is-machine-learning-1" class="slide level3">
+<h3>What is Machine Learning?</h3>
+<p><span class="math display">\[\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span></p>
+<div class="fragment">
+<ul>
+<li>To combine data with a model need:</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>a prediction function</strong> <span class="math inline">\({f}(\cdot)\)</span> includes our beliefs about the regularities of the universe</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>an objective function</strong> <span class="math inline">\({E}(\cdot)\)</span> defines the cost of misprediction.</li>
+</ul>
+</div>
+</section>
+<section id="machine-learning" class="slide level3 slide:" data-transition="none">
+<h3>Machine Learning</h3>
+<ul>
+<li>Driver of two different domains:
+<ol type="1">
+<li><em>Data Science</em>: arises from the fact that we now capture data by happenstance.</li>
+<li><em>Artificial Intelligence</em>: emulation of human behaviour.</li>
+</ol></li>
+<li>Connection: Internet of Things</li>
+</ul>
+</section>
+<section id="machine-learning-1" class="slide level3 slide:" data-transition="none">
+<h3>Machine Learning</h3>
+<ul>
+<li>Driver of two different domains:
+<ol type="1">
+<li><em>Data Science</em>: arises from the fact that we now capture data by happenstance.</li>
+<li><em>Artificial Intelligence</em>: emulation of human behaviour.</li>
+</ol></li>
+<li>Connection: Internet of <del>Things</del></li>
+</ul>
+</section>
+<section id="machine-learning-2" class="slide level3 slide:" data-transition="none">
+<h3>Machine Learning</h3>
+<ul>
+<li>Driver of two different domains:
+<ol type="1">
+<li><em>Data Science</em>: arises from the fact that we now capture data by happenstance.</li>
+<li><em>Artificial Intelligence</em>: emulation of human behaviour.</li>
+</ol></li>
+<li>Connection: Internet of People</li>
+</ul>
+</section>
+<section id="what-does-machine-learning-do" class="slide level3">
+<h3>What does Machine Learning do?</h3>
+<ul>
+<li>ML Automates through Data
+<ul>
+<li><em>Strongly</em> related to statistics.</li>
+<li>Field underpins revolution in <em>data science</em> and <em>AI</em></li>
+</ul></li>
+<li>With AI:
+<ul>
+<li><em>logic</em>, <em>robotics</em>, <em>computer vision</em>, <em>speech</em></li>
+</ul></li>
+<li>With Data Science:
+<ul>
+<li><em>databases</em>, <em>data mining</em>, <em>statistics</em>, <em>visualization</em></li>
+</ul></li>
+</ul>
+</section>
+<section id="what-does-machine-learning-do-1" class="slide level3">
+<h3>What does Machine Learning do?</h3>
+<ul>
+<li>Automation scales by codifying processes and automating them.</li>
+<li>Need:
+<ul>
+<li>Interconnected components</li>
+<li>Compatible components</li>
+</ul></li>
+<li>Early examples:
+<ul>
+<li>cf Colt 45, Ford Model T</li>
+</ul></li>
+</ul>
+</section>
+<section id="codify-through-mathematical-functions" class="slide level3">
+<h3>Codify Through Mathematical Functions</h3>
+<ul>
+<li>How does machine learning work?</li>
+<li>Jumper (jersey/sweater) purchase with logistic regression <span class="math display">\[ \text{odds} = \frac{p(\text{bought})}{p(\text{not bought})} \]</span> <span class="math display">\[ \log \text{odds}  = \beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}\]</span></li>
+</ul>
+</section>
+<section id="codify-through-mathematical-functions-1" class="slide level3">
+<h3>Codify Through Mathematical Functions</h3>
+<ul>
+<li>How does machine learning work?</li>
+<li>Jumper (jersey/sweater) purchase with logistic regression <span class="math display">\[ p(\text{bought}) =  {\sigma\left(\beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}\right)}\]</span></li>
+</ul>
+</section>
+<section id="codify-through-mathematical-functions-2" class="slide level3">
+<h3>Codify Through Mathematical Functions</h3>
+<ul>
+<li>How does machine learning work?</li>
+<li>Jumper (jersey/sweater) purchase with logistic regression <span class="math display">\[ p(\text{bought}) =  {\sigma\left(\boldsymbol{\beta}^\top {\mathbf{{x}}}\right)}\]</span></li>
+</ul>
+</section>
+<section id="codify-through-mathematical-functions-3" class="slide level3">
+<h3>Codify Through Mathematical Functions</h3>
+<ul>
+<li>How does machine learning work?</li>
+<li>Jumper (jersey/sweater) purchase with logistic regression <span class="math display">\[ {y}=  {f}\left({\mathbf{{x}}}, \boldsymbol{\beta}\right)\]</span></li>
+</ul>
+<div class="fragment">
+<p>We call <span class="math inline">\({f}(\cdot)\)</span> the <em>prediction function</em></p>
+</div>
+</section>
+<section id="fit-to-data" class="slide level3">
+<h3>Fit to Data</h3>
+<ul>
+<li>Use an objective function <span class="math display">\[{E}(\boldsymbol{\beta}, {\mathbf{Y}}, {\mathbf{X}})\]</span></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>E.g. least squares <span class="math display">\[{E}(\boldsymbol{\beta}, {\mathbf{Y}}, {\mathbf{X}}) = \sum_{i=1}^{n}\left({y}_i - {f}({\mathbf{{x}}}_i, \boldsymbol{\beta})\right)^2.\]</span></li>
+</ul>
+</div>
+</section>
+<section id="two-components" class="slide level3">
+<h3>Two Components</h3>
+<ul>
+<li>Prediction function, <span class="math inline">\({f}(\cdot)\)</span></li>
+<li>Objective function, <span class="math inline">\({E}(\cdot)\)</span></li>
+</ul>
+</section>
+<section id="section-1" class="slide level3">
+<h3></h3>
+<p><span class="fragment fade-in"><small>Outline of the DeepFace architecture. A front-end of a single convolution-pooling-convolution filtering on the rectified input, followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected.</small></span></p>
+<p><img class="" src="../slides/diagrams/deepface_neg.png" width="100%" align="center" style="background:none; border:none; box-shadow:none;"></p>
+<p><span align="right"><small>Source: DeepFace <span class="citation" data-cites="Taigman:deepface14">(Taigman et al., 2014)</span></small></span></p>
+</section>
+<section id="section-2" class="slide level3">
+<h3></h3>
+<p><img class="" src="../slides/diagrams/576px-Early_Pinball.jpg" width="50%" align="center" style="background:none; border:none; box-shadow:none;"></p>
+</section>
+<section id="section-3" class="slide level3">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/pinball001.svg">
+</object>
+</section>
+<section id="section-4" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/pinball002.svg">
+</object>
+<!-- SECTION Natural and Artificial Intelligence: Embodiment Factors -->
+</section>
+<section id="embodiment-factors" class="slide level3">
+<h3>“Embodiment Factors”</h3>
+<table>
+<tr>
+<td>
+</td>
+<td align="center">
+<img class="" src="../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="40%" align="center" style="background:none; border:none; box-shadow:none;">
+</td>
+<td align="center">
+<img class="" src="../slides/diagrams/ClaudeShannon_MFO3807.jpg" width="25%" align="center" style="background:none; border:none; box-shadow:none;">
+</td>
+</tr>
+<tr>
+<td>
+compute
+</td>
+<td align="center">
+<span class="math display">\[\approx 100 \text{ gigaflops}\]</span>
+</td>
+<td align="center">
+<span class="math display">\[\approx 16 \text{ petaflops}\]</span>
+</td>
+</tr>
+<tr>
+<td>
+communicate
+</td>
+<td align="center">
+<span class="math display">\[1 \text{ gigbit/s}\]</span>
+</td>
+<td align="center">
+<span class="math display">\[100 \text{ bit/s}\]</span>
+</td>
+</tr>
+<tr>
+<td>
+(compute/communicate)
+</td>
+<td align="center">
+<span class="math display">\[10^{4}\]</span>
+</td>
+<td align="center">
+<span class="math display">\[10^{14}\]</span>
+</td>
+</tr>
+</table>
+<p>See <a href="https://arxiv.org/abs/1705.07996">“Living Together: Mind and Machine Intelligence”</a></p>
+<!-- SECTION Evolved Relationship with Information -->
+</section>
+<section id="evolved-relationship" class="slide level3 slide:" data-transition="none">
+<h3>Evolved Relationship</h3>
+<object class="svgplot " align data="../slides/diagrams/data-science/information-flow001.svg">
+</object>
+</section>
+<section id="evolved-relationship-1" class="slide level3 slide:" data-transition="none">
+<h3>Evolved Relationship</h3>
+<object class="svgplot " align data="../slides/diagrams/data-science/information-flow002.svg">
+</object>
+</section>
+<section id="evolved-relationship-2" class="slide level3 slide:" data-transition="none">
+<h3>Evolved Relationship</h3>
+<object class="svgplot " align data="../slides/diagrams/data-science/information-flow003.svg">
+</object>
+</section>
+<section id="effects" class="slide level3">
+<h3>Effects</h3>
+<ul>
+<li>This phenomenon has already revolutionised biology.
+<ul>
+<li>Large scale data acquisition and distribution.</li>
+<li>Transcriptomics, genomics, epigenomics, ‘rich phenomics’.</li>
+</ul></li>
+<li>Great <em>promise</em> for personalized health.</li>
+</ul>
+</section>
+<section id="societal-effects" class="slide level3">
+<h3>Societal Effects</h3>
+<ul>
+<li>Automated decision making within the computer based only on the data.</li>
+<li>A requirement to better understand our own subjective biases to ensure that the human to computer interface formulates the correct conclusions from the data.</li>
+<li>Particularly important where treatments are being prescribed.
+<ul>
+<li>But what is a treatment in the modern era: interventions could be far more subtle.</li>
+</ul></li>
+</ul>
+</section>
+<section id="societal-effects-1" class="slide level3">
+<h3>Societal Effects</h3>
+<ul>
+<li>Shift in dynamic from the direct pathway between human and data to indirect pathway between human and data via the computer</li>
+<li>This change of dynamics gives us the modern and emerging domain of data science</li>
+</ul>
+<!-- SECTION Human Communication -->
+</section>
+<section id="conversation" class="slide level3 slide:" data-transition="none">
+<h3>Conversation</h3>
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation000.svg">
+</object>
+<aside class="notes">
+This can be disturbing to humans because we are used to a low bandwidth communication rate.
+</aside>
+</section>
+<section id="conversation-1" class="slide level3 slide:" data-transition="none">
+<h3>Conversation</h3>
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation001.svg">
+</object>
+</section>
+<section id="conversation-2" class="slide level3 slide:" data-transition="none">
+<h3>Conversation</h3>
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation002.svg">
+</object>
+</section>
+<section id="conversation-3" class="slide level3 slide:" data-transition="none">
+<h3>Conversation</h3>
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation003.svg">
+</object>
+</section>
+<section id="conversation-4" class="slide level3 slide:" data-transition="none">
+<h3>Conversation</h3>
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation004.svg">
+</object>
+</section>
+<section id="conversation-5" class="slide level3 slide:" data-transition="none">
+<h3>Conversation</h3>
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation005.svg">
+</object>
+</section>
+<section id="conversation-6" class="slide level3 slide:" data-transition="none">
+<h3>Conversation</h3>
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation006.svg">
+</object>
+</section>
+<section id="conversation-7" class="slide level3 slide:" data-transition="none">
+<h3>Conversation</h3>
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation007.svg">
+</object>
+</section>
+<section id="machine-learning-and-narratives" class="slide level3">
+<h3>Machine Learning and Narratives</h3>
+<p><img class="" src="../slides/diagrams/Classic_baby_shoes.jpg" width="60%" align="center" style="background:none; border:none; box-shadow:none;"></p>
+<center>
+<em>For sale: baby shoes, never worn.</em>
+</center>
+<aside class="notes">
+Ernest Hemingway’s apocrophal six word novel would mean nothing to a computer.
+</aside>
+</section>
+<section id="heider-and-simmel-1944" class="slide level3">
+<h3>Heider and Simmel (1944)</h3>
+<iframe width="840" height="630" src="https://www.youtube.com/embed/8FIEZXMUM2I?start=7" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+</section>
+<section id="faith-and-ai-1" class="slide level3">
+<h3>Faith and AI</h3>
+<ol type="1">
+<li>Artificial Intelligence as Cartoon Religion</li>
+<li>Artificial Intelligence and Introspection</li>
+<li>Independence of thought and Control: A Systemic Catch 22</li>
+</ol>
+</section>
+<section id="singulariansm-ai-as-cartoon-religion" class="slide level3">
+<h3>Singulariansm: AI as Cartoon Religion</h3>
+<ol type="1">
+<li>Superintelligence as god</li>
+<li>Demi-god status achievable through transhumanism</li>
+<li>Immortality through uploading the connectome</li>
+<li>The day of judgement as the “singularity”</li>
+</ol>
+</section>
+<section id="section-5" class="slide level3">
+<h3></h3>
+<p><img class="" src="../slides/diagrams/ml/Pierre-Simon_Laplace.png" width="30%" align="center" style="background:none; border:none; box-shadow:none;"></p>
+</section>
+<section id="section-6" class="slide level3">
+<h3></h3>
+<p><img class="" src="../slides/diagrams/laplacesDeterminismFrench.png" width="80%" align="center" style="background:none; border:none; box-shadow:none;"></p>
+</section>
+<section id="section-7" class="slide level3">
+<h3></h3>
+<p><img class="" src="../slides/diagrams/laplacesDeterminismEnglish.png" width="80%" align="center" style="background:none; border:none; box-shadow:none;"></p>
+</section>
+<section id="section-8" class="slide level3">
+<h3></h3>
+<p><img class="" src="../slides/diagrams/philosophicaless00lapliala.png" width="80%" align="center" style="background:none; border:none; box-shadow:none;"></p>
+</section>
+<section id="singularians" class="slide level3">
+<h3>Singularians</h3>
+<ul>
+<li><em>Singularism</em> and religion equivalent to <em>scientology</em> and science?</li>
+</ul>
+</section>
+<section id="artificial-intelligence-and-introspection" class="slide level3">
+<h3>Artificial Intelligence and Introspection</h3>
+<ul>
+<li>Religion at it’s most powerful contextualizes us</li>
+<li>Creating artificial systems described as intelligence also contextualises us</li>
+<li>Compare an Artificial Intelligence to an Artificial Plant</li>
+</ul>
+</section>
+<section id="the-cosmic-catch-22" class="slide level3">
+<h3>The Cosmic Catch 22</h3>
+<ul>
+<li>A return to Eden?</li>
+<li>Big Mother</li>
+<li>Big Brother</li>
+</ul>
+</section>
+<section id="conclusion" class="slide level3">
+<h3>Conclusion</h3>
+<ul>
+<li><p>Overview of AI and ML</p></li>
+<li><p>Embodiment Factors</p></li>
+<li><p>Relations between Faith and AI</p></li>
+</ul>
+</section>
+<section id="thanks" class="slide level3">
+<h3>Thanks!</h3>
+<ul>
+<li>twitter: @lawrennd</li>
+<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
+</ul>
+<div id="refs" class="references">
+<div id="ref-Taigman:deepface14">
+<p>Taigman, Y., Yang, M., Ranzato, M., Wolf, L., 2014. DeepFace: Closing the gap to human-level performance in face verification, in: Proceedings of the Ieee Computer Society Conference on Computer Vision and Pattern Recognition. <a href="https://doi.org/10.1109/CVPR.2014.220" class="uri">https://doi.org/10.1109/CVPR.2014.220</a></p>
+</div>
+</div>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Transition style
+        transition: 'None', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+              { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
