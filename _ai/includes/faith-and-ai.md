@@ -1,8 +1,10 @@
 ### Faith and AI
 
+\notes{There would seem to be at least three ways in which artificial intelligence and religion interconnect.}
+
 1. Artificial Intelligence as Cartoon Religion
 2. Artificial Intelligence and Introspection
-3. A Systemic Catch 22
+3. Independence of thought and Control: A Systemic Catch 22
 
 ### Singulariansm: AI as Cartoon Religion
 
@@ -21,9 +23,9 @@
 
 \include{_ai/includes/laplaces-determinism.md}
 
-### Singularians
+\slides{### Singularians }
 
-\notes{The notion of Superintelligence in Nick Bostrom's book is that of an infallible omniscience. The challenge of superintelligence according to Bostrom is constraining the power of such an entity. In practice, the premise is based on the Laplace's straw man. No such intelligence could exist due to our ignorance, in practice any real intelligence must express *doubt*. 
+\notes{The notion of Superintelligence in, e.g. Nick Bostrom's book [@Bostrom-superintelligence14], is that of an infallible omniscience. A major narrative of the book is that the challenge of Superintelligence according is to constrain the power of such an entity. In practice, this narrative is strongly related to Laplace's "straw superman". No such intelligence could exist due to our ignorance, in practice any real intelligence must express *doubt*. 
 
 Elon Musk has proposed that the only way to defeat the inevitable omniscience would be to augment ourselves with machine like capabilities. Ray Kurzweil has pushed the notion of developing ourselves by augmenting our existing cortex with direct connection to the internet. 
 
@@ -44,7 +46,7 @@ In this scenario, doomsday is the 'technological singularity', the moment at whi
 \slides{
 * Religion at it's most powerful contextualizes us
 * Creating artificial systems described as intelligence also contextualises us
-* Artificial Plants
+* Compare an Artificial Intelligence to an Artificial Plant
 }
 \notes{Ignoring the cartoon view of religion we've outlined above and focussing more on how religion can bring strength to people in their day-to-day living, religious environments bring a place to self reflect and meditate on our existence, and the wider cosmos. How are we here? What is our role? What makes us different? 
 
@@ -54,6 +56,7 @@ I have in the past argued strongly against the term artificial intelligence but 
 
 In a similar way, we might expect that attempts to emulate human intelligence would lead to a deeper appreciation of that intelligence. This type of reflection on who we are has a lot in common with many of the (to me) most endearing characteristics of religion.}
 
+
 ### The Cosmic Catch 22
 
 \slides{
@@ -62,4 +65,8 @@ In a similar way, we might expect that attempts to emulate human intelligence wo
   * Big Brother
 }
 
-\notes{A final parallel between the world of AI and that of religion is the conundrums they raise for us. In particular the tradeoffs between a paternalistic society and individual freedoms. Two models for artificial intelligence that may be realistic are the "big brother" and the "big mother" models. The former refers to the surveillance society and the control of populations that can be achieved with a greater understanding of the individual self. A perceptual understanding of the individual that conceivably be of better than the individual's self perception. The same understanding of individual is also necessary for the "big mother" scenario, where intelligent agents provide for us in the manner in which our parents did for us when we were young. Both scenarios are disempowering in terms of individual liberties. In a metaphorical sense, this could be seen as a return to Eden, a surrendering of individual liberties for a perceived paradise. But those individual liberties are also what we value. There is a tension between a desire to create the perfect environment, where no evil exists and our individual liberty. Our society chooses a balance between the pros and cons that attempts to sustain a diversity of perspectives and beliefs. Even if it were possible to use AI to organzie society in such a way that particular malevolent behaviours were prevented, doing so may come at the cost of the individual freedom we enjoy. These are difficult trade offs, and the exist both when explaining the nature of religious belief and when considering the nature of either the dystopian big brother or the "dys-utopian" big mother view of AI.}
+\notes{A final parallel between the world of AI and that of religion is the conundrums they raise for us. In particular the tradeoffs between a paternalistic society and individual freedoms. Two models for artificial intelligence that may be realistic are the "Big Brother" and the "Big Mother" models. 
+
+Big Brother refers to the surveillance society and the control of populations that can be achieved with a greater understanding of the individual self. A perceptual understanding of the individual that conceivably be of better than the individual's self perception. This scenario was most famously explored by George Orwell, but also came into being in Communist East Germany where it is estimated that one in 66 citizens acted as an informants, [@Koehler-stasi99].
+
+The same understanding of individual is also necessary for the "Big Mother" scenario, where intelligent agents provide for us in the manner in which our parents did for us when we were young. Both scenarios are disempowering in terms of individual liberties. In a metaphorical sense, this could be seen as a return to Eden, a surrendering of individual liberties for a perceived paradise. But those individual liberties are also what we value. There is a tension between a desire to create the perfect environment, where no evil exists and our individual liberty. Our society chooses a balance between the pros and cons that attempts to sustain a diversity of perspectives and beliefs. Even if it were possible to use AI to organzie society in such a way that particular malevolent behaviours were prevented, doing so may come at the cost of the individual freedom we enjoy. These are difficult trade offs, and the exist both when explaining the nature of religious belief and when considering the nature of either the dystopian big brother or the "dys-utopian" big mother view of AI.}
