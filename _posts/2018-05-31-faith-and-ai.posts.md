@@ -11,7 +11,13 @@ abstract: |
     drive for introspection that a mature approach to artificial
     intelligence and religion might bring.
 affiliation: 'University of Sheffield and Amazon, Cambridge'
-author: 'Neil D. Lawrence'
+author:
+- family: Lawrence
+  given: 'Neil D.'
+  gscholar: r3SJcvoAAAAJ
+  institute: Amazon Cambridge and University of Sheffield
+  twitter: lawrennd
+  url: 'http://inverseprobability.com'
 bibliography:
 - '../other.bib'
 - '../lawrence.bib'
@@ -23,7 +29,7 @@ published: '2018-05-31'
 reveal: '2018-05-31-faith-and-ai.slides.html'
 title: Faith and AI
 transition: None
-venue: 'Faith and AI Event, St George’s, Windsor'
+venue: 'Faith and AI Event, St George’s House, Windsor'
 ---
 
 ## What is Machine Learning?
@@ -152,18 +158,18 @@ name *logistic* regression.
 $$ p(\text{bought}) =  {\sigma\left(\beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}\right)}$$
 
 In the case where we have *features* to help us predict, we sometimes
-denote such features as a vector, ${{\bf {x}}}$, and we then use an
+denote such features as a vector, ${\mathbf{{x}}}$, and we then use an
 inner product between the features and the parameters,
-$\boldsymbol{\beta}^\top {{\bf {x}}}= \beta_1 {x}_1 + \beta_2 {x}_2 + \beta_3 {x}_3 ...$,
+$\boldsymbol{\beta}^\top {\mathbf{{x}}}= \beta_1 {x}_1 + \beta_2 {x}_2 + \beta_3 {x}_3 ...$,
 to represent the argument of the sigmoid.
 
-$$ p(\text{bought}) =  {\sigma\left(\boldsymbol{\beta}^\top {{\bf {x}}}\right)}$$
+$$ p(\text{bought}) =  {\sigma\left(\boldsymbol{\beta}^\top {\mathbf{{x}}}\right)}$$
 
 More generally, we aim to predict some aspect of our data, ${y}$, by
 relating it through a mathematical function, ${f}(\cdot)$, to the
-parameters, $\boldsymbol{\beta}$ and the data, ${{\bf {x}}}$.
+parameters, $\boldsymbol{\beta}$ and the data, ${\mathbf{{x}}}$.
 
-$$ {y}=  {f}\left({{\bf {x}}}, \boldsymbol{\beta}\right)$$
+$$ {y}=  {f}\left({\mathbf{{x}}}, \boldsymbol{\beta}\right)$$
 
 We call ${f}(\cdot)$ the *prediction function*
 
@@ -171,9 +177,9 @@ To obtain the fit to data, we use a separate function called the
 *objective function* that gives us a mathematical representation of the
 difference between our predictions and the real data.
 
-$${E}(\boldsymbol{\beta}, {\mathbf{Y}}, {{\bf X}})$$ A commonly used
+$${E}(\boldsymbol{\beta}, {\mathbf{Y}}, {\mathbf{X}})$$ A commonly used
 examples (for example in a regression problem) is least squares,
-$${E}(\boldsymbol{\beta}, {\mathbf{Y}}, {{\bf X}}) = \sum_{i=1}^{n}\left({y}_i - {f}({{\bf {x}}}_i, \boldsymbol{\beta})\right)^2.$$
+$${E}(\boldsymbol{\beta}, {\mathbf{Y}}, {\mathbf{X}}) = \sum_{i=1}^{n}\left({y}_i - {f}({\mathbf{{x}}}_i, \boldsymbol{\beta})\right)^2.$$
 
 If a linear prediction funciton is combined with the least squares
 objective function then that gives us a classical *linear regression*,
@@ -468,9 +474,12 @@ actions.
 
 ### Faith and AI
 
+There would seem to be at least three ways in which artificial
+intelligence and religion interconnect.
+
 1.  Artificial Intelligence as Cartoon Religion
 2.  Artificial Intelligence and Introspection
-3.  A Systemic Catch 22
+3.  Independence of thought and Control: A Systemic Catch 22
 
 ### Singulariansm: AI as Cartoon Religion
 
@@ -491,12 +500,12 @@ future. This notion was described by Pierre Simon Laplace.
 
 <img class="" src="../slides/diagrams/ml/Pierre-Simon_Laplace.png" width="30%" align="center" style="background:none; border:none; box-shadow:none;">
 
-<img class="" src="../slides/diagrams/laplacesDeterminismFrench.png" width="80%" align="center" style="background:none; border:none; box-shadow:none;">}
-
 Famously, Laplace considered the idea of a deterministic Universe, one
-in which all the “”. He speculates on an “intelligence” that can submit
-this vast data to analysis and propsoses that such an entity would be
-able to predict the future.
+in which the model is *known*, or as the below translation refers to it,
+“an intelligence which could comprehend all the forces by which nature
+is animated”. He speculates on an “intelligence” that can submit this
+vast data to analysis and propsoses that such an entity would be able to
+predict the future.
 
 > Given for one instant an intelligence which could comprehend all the
 > forces by which nature is animated and the respective situation of the
@@ -506,10 +515,12 @@ able to predict the future.
 > lightest atom; for it, nothing would be uncertain and the future, as
 > the past, would be present in its eyes.
 
+This notion is known as *Laplace’s demon* or *Laplace’s superman*.
+
 Unfortunately, most analyses of his ideas stop at that point, whereas
-his real point is that such a notion is somewhat ridiculous. Just three
-pages later in the “Philosophical Essay on Probabilities”
-[@Laplace:essai14], Laplace goes on to observe:
+his real point is that such a notion is unreachable. Not so much
+*superman* as *strawman*. Just three pages later in the “Philosophical
+Essay on Probabilities” [@Laplace:essai14], Laplace goes on to observe:
 
 > The curve described by a simple molecule of air or vapor is regulated
 > in a manner just as certain as the planetary orbits; the only
@@ -519,16 +530,17 @@ pages later in the “Philosophical Essay on Probabilities”
 > knowledge.
 
 In other words, we can never utilize the idealistic deterministc
-Universe due to our ignorance about the world.
+Universe due to our ignorance about the world, Laplace’s suggestion, and
+focus in this essay is that we turn to probability to deal with this
+uncertainty.
 
-### Singularians
-
-The notion of Superintelligence in Nick Bostrom’s book is that of an
-infallible omniscience. The challenge of superintelligence according to
-Bostrom is constraining the power of such an entity. In practice, the
-premise is based on the Laplace’s straw man. No such intelligence could
-exist due to our ignorance, in practice any real intelligence must
-express *doubt*.
+The notion of Superintelligence in, e.g. Nick Bostrom’s book
+[@Bostrom-superintelligence14], is that of an infallible omniscience. A
+major narrative of the book is that the challenge of Superintelligence
+according is to constrain the power of such an entity. In practice, this
+narrative is strongly related to Laplace’s “straw superman”. No such
+intelligence could exist due to our ignorance, in practice any real
+intelligence must express *doubt*.
 
 Elon Musk has proposed that the only way to defeat the inevitable
 omniscience would be to augment ourselves with machine like
@@ -588,14 +600,20 @@ the (to me) most endearing characteristics of religion.
 A final parallel between the world of AI and that of religion is the
 conundrums they raise for us. In particular the tradeoffs between a
 paternalistic society and individual freedoms. Two models for artificial
-intelligence that may be realistic are the “big brother” and the “big
-mother” models. The former refers to the surveillance society and the
-control of populations that can be achieved with a greater understanding
-of the individual self. A perceptual understanding of the individual
-that conceivably be of better than the individual’s self perception. The
-same understanding of individual is also necessary for the “big mother”
-scenario, where intelligent agents provide for us in the manner in which
-our parents did for us when we were young. Both scenarios are
+intelligence that may be realistic are the “Big Brother” and the “Big
+Mother” models.
+
+Big Brother refers to the surveillance society and the control of
+populations that can be achieved with a greater understanding of the
+individual self. A perceptual understanding of the individual that
+conceivably be of better than the individual’s self perception. This
+scenario was most famously explored by George Orwell, but also came into
+being in Communist East Germany where it is estimated that one in 66
+citizens acted as an informants, [@Koehler-stasi99].
+
+The same understanding of individual is also necessary for the “Big
+Mother” scenario, where intelligent agents provide for us in the manner
+in which our parents did for us when we were young. Both scenarios are
 disempowering in terms of individual liberties. In a metaphorical sense,
 this could be seen as a return to Eden, a surrendering of individual
 liberties for a perceived paradise. But those individual liberties are
@@ -609,6 +627,31 @@ the individual freedom we enjoy. These are difficult trade offs, and the
 exist both when explaining the nature of religious belief and when
 considering the nature of either the dystopian big brother or the
 “dys-utopian” big mother view of AI.
+
+### Conclusion
+
+We’ve provided an overview of the advances in artificial intelligence
+from the perspective of machine learning, and tried to give a sense of
+how machine learning models operate to learn about us.
+
+We’ve highlighted a quintissential difference between humans and
+computers: the embodiment factor, the relatively restricted ability of
+human to communicate themselves when compared to computers. We explored
+how this has effected our evolved relationship with data and the
+relationship between the human and narrative.
+
+Finally, we explored three parallels between faith and AI, in particular
+the cartoon nature of religion based on technological promises of the
+singularity and AI. A more sophisticated relationship occurs when we see
+the way in which, as artificial intelligences invade our notion of
+personhood we will need to intrspect about who we are and what we want
+to be, a characteristic shared with many religions. The final parallel
+was in the emergent questions of AI, “Should we build an artificial
+intelligence to eliminate war?” has a strong parallel with the question
+“Why does God allow war?”. Building such a system would likely severely
+restrict our freedoms, and there is a tension between how much we wish
+those freedoms to be impinged versus the potential lives that could be
+saved.
 
 ### Thanks!
 
