@@ -56,7 +56,7 @@ L({y}_{k,j}, {\mathbf{{x}}}_k)
 <p>The key idea in Bayesian inference is that the probabilistic inference can be performed <em>without</em> knowing the loss becasue if the model is correct, then the form of the loss function is irrelevant when performing inference. In practice, however, the model is <em>never</em> correct.</p>
 <p>Some of the maths below looks similar to the maths we can find in Bayesian methods, in particular variational Bayes, but that is merely a consequence of the availability of analytical mathematics. There are only particular ways of developing tractable algorithms, one route involves linear algebra. However, the similarity of the mathematics belies a difference in interpretation. It is similar to travelling a road (e.g. Ermine Street) in a wild landscape. We travel together because that is where efficient progress is to be made, but in practice a our destinations (Lincoln, York), may be different.</p>
 <h3 id="introduce-uncertainty">Introduce Uncertainty</h3>
-<p>To introduce uncertainty we consider a weighted version of the loss function, we introduce positive weights, <span class="math inline">\(\left\{{s}_i\right\}_{i=1}^{n}\)</span>. <span class="math display">\[
+<p>To introduce uncertainty we consider a weighted version of the loss function, we introduce positive weights, <span class="math inline">\(\left\{ {s}_i\right\}_{i=1}^{n}\)</span>. <span class="math display">\[
 {E}({\mathbf{{y}}}, {\mathbf{X}}) = \sum_{i}
 {s}_i L({y}_i, {f}({\mathbf{{x}}}_i))
 \]</span> We now assume that tmake the assumption that these weights are drawn from a distribution, <span class="math inline">\(q({s})\)</span>. Instead of looking to minimize the loss direction, we look at the expected loss under this distribution.</p>

@@ -16,8 +16,6 @@ layout: talk
 ---
 
 
-{% raw %}
-
 <h2 id="what-is-machine-learning">What is Machine Learning?</h2>
 <p>What is machine learning? At its most basic level machine learning is a combination of</p>
 <p><span class="math display">\[ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span></p>
@@ -41,13 +39,13 @@ layout: talk
 <p>Here <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2\)</span> are the parameters of the model. If <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2\)</span> are both positive, then the log-odds that someone will buy a jumper increase with increasing latitude and age, so the further north you are and the older you are the more likely you are to buy a jumper. The parameter <span class="math inline">\(\beta_0\)</span> is an offset parameter, and gives the log-odds of buying a jumper at zero age and on the equator. It is likely to be negative[^logarithms] indicating that the purchase is odds-against. This is actually a classical statistical model, and models like logistic regression are widely used to estimate probabilities from ad-click prediction to risk of disease.</p>
 <p>This is called a generalized linear model, we can also think of it as estimating the <em>probability</em> of a purchase as a nonlinear function of the features (age, lattitude) and the parameters (the <span class="math inline">\(\beta\)</span> values). The function is known as the <em>sigmoid</em> or <a href="https://en.wikipedia.org/wiki/Logistic_regression">logistic function</a>, thus the name <em>logistic</em> regression.</p>
 <p><span class="math display">\[ p(\text{bought}) =  {\sigma\left(\beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}\right)}\]</span></p>
-<p>In the case where we have <em>features</em> to help us predict, we sometimes denote such features as a vector, <span class="math inline">\({\mathbf{{x}}}\)</span>, and we then use an inner product between the features and the parameters, <span class="math inline">\(\boldsymbol{\beta}^\top {\mathbf{{x}}}= \beta_1 {x}_1 + \beta_2 {x}_2 + \beta_3 {x}_3 ...\)</span>, to represent the argument of the sigmoid.</p>
-<p><span class="math display">\[ p(\text{bought}) =  {\sigma\left(\boldsymbol{\beta}^\top {\mathbf{{x}}}\right)}\]</span></p>
-<p>More generally, we aim to predict some aspect of our data, <span class="math inline">\({y}\)</span>, by relating it through a mathematical function, <span class="math inline">\({f}(\cdot)\)</span>, to the parameters, <span class="math inline">\(\boldsymbol{\beta}\)</span> and the data, <span class="math inline">\({\mathbf{{x}}}\)</span>.</p>
-<p><span class="math display">\[ {y}=  {f}\left({\mathbf{{x}}}, \boldsymbol{\beta}\right)\]</span></p>
+<p>In the case where we have <em>features</em> to help us predict, we sometimes denote such features as a vector, <span class="math inline">\({\mathbf{ {x}}}\)</span>, and we then use an inner product between the features and the parameters, <span class="math inline">\(\boldsymbol{\beta}^\top {\mathbf{ {x}}}= \beta_1 {x}_1 + \beta_2 {x}_2 + \beta_3 {x}_3 ...\)</span>, to represent the argument of the sigmoid.</p>
+<p><span class="math display">\[ p(\text{bought}) =  {\sigma\left(\boldsymbol{\beta}^\top {\mathbf{ {x}}}\right)}\]</span></p>
+<p>More generally, we aim to predict some aspect of our data, <span class="math inline">\({y}\)</span>, by relating it through a mathematical function, <span class="math inline">\({f}(\cdot)\)</span>, to the parameters, <span class="math inline">\(\boldsymbol{\beta}\)</span> and the data, <span class="math inline">\({\mathbf{ {x}}}\)</span>.</p>
+<p><span class="math display">\[ {y}=  {f}\left({\mathbf{ {x}}}, \boldsymbol{\beta}\right)\]</span></p>
 <p>We call <span class="math inline">\({f}(\cdot)\)</span> the <em>prediction function</em></p>
 <p>To obtain the fit to data, we use a separate function called the <em>objective function</em> that gives us a mathematical representation of the difference between our predictions and the real data.</p>
-<p><span class="math display">\[{E}(\boldsymbol{\beta}, {\mathbf{Y}}, {\mathbf{X}})\]</span> A commonly used examples (for example in a regression problem) is least squares, <span class="math display">\[{E}(\boldsymbol{\beta}, {\mathbf{Y}}, {\mathbf{X}}) = \sum_{i=1}^{n}\left({y}_i - {f}({\mathbf{{x}}}_i, \boldsymbol{\beta})\right)^2.\]</span></p>
+<p><span class="math display">\[{E}(\boldsymbol{\beta}, {\mathbf{Y}}, {\mathbf{X}})\]</span> A commonly used examples (for example in a regression problem) is least squares, <span class="math display">\[{E}(\boldsymbol{\beta}, {\mathbf{Y}}, {\mathbf{X}}) = \sum_{i=1}^{n}\left({y}_i - {f}({\mathbf{ {x}}}_i, \boldsymbol{\beta})\right)^2.\]</span></p>
 <p>If a linear prediction funciton is combined with the least squares objective function then that gives us a classical <em>linear regression</em>, another classical statistical model. Statistics often focusses on linear models because it makes interpretation of the model easier. Interpretation is key in statistics because the aim is normally to validate questions by analysis of data. Machine learning has typically focussed more on the prediction function itself and worried less about the interpretation of parameters, which are normally denoted by <span class="math inline">\(\mathbf{w}\)</span> instead of <span class="math inline">\(\boldsymbol{\beta}\)</span>. As a result <em>non-linear</em> functions are explored more often as they tend to improve quality of predictions but at the expense of interpretability.</p>
 <img class="" src="../slides/diagrams/deepface_neg.png" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
 <center>
@@ -243,6 +241,4 @@ communicate
 <li id="fn1"><p>the challenge of understanding what information pertains to is known as knowledge representation.<a href="#fnref1">↩</a></p></li>
 </ol>
 </div>
-
-{% endraw %}
 
