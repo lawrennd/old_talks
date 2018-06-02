@@ -1,0 +1,524 @@
+---
+title: "Uncertainty in Loss Functions"
+venue: "IWCV 2018, Modena, Italy"
+abstract: "Bayesian formalisms deal with uncertainty in parameters, frequentist formalisms deal with the <em>risk</em> of a data set, uncertainty in the data sample. In this talk, we consider uncertainty in the <em>loss function</em>. Uncertainty in the loss function. We introduce uncertainty through linear weightings of terms in the loss function and show how a distribution over the loss can be maintained through the <em>maximum entropy principle</em>. This allows us minimize the expected loss under our maximumm entropy distribution of the loss function. We recover weighted least squares and a LOESS-like regression from the formalism."
+author:
+- given: Neil D.
+  family: Lawrence
+  url: http://inverseprobability.com
+  institute: Amazon Cambridge and University of Sheffield
+  twitter: lawrennd
+  gscholar: r3SJcvoAAAAJ
+  orchid: 
+date: 2018-05-29
+published: 2018-05-29
+layout: talk
+---
+
+
+<h2 id="what-is-machine-learning">What is Machine Learning?</h2>
+<p>What is machine learning? At its most basic level machine learning is a combination of</p>
+<p><span class="math display">\[ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span></p>
+<p>where <em>data</em> is our observations. They can be actively or passively acquired (meta-data). The <em>model</em> contains our assumptions, based on previous experience. THat experience can be other data, it can come from transfer learning, or it can merely be our beliefs about the regularities of the universe. In humans our models include our inductive biases. The <em>prediction</em> is an action to be taken or a categorization or a quality score. The reason that machine learning has become a mainstay of artificial intelligence is the importance of predictions in artificial intelligence. The data and the model are combined through computation.</p>
+<p>In practice we normally perform machine learning using two functions. To combine data with a model we typically make use of:</p>
+<p><strong>a prediction function</strong> a function which is used to make the predictions. It includes our beliefs about the regularities of the universe, our assumptions about how the world works, e.g. smoothness, spatial similarities, temporal similarities.</p>
+<p><strong>an objective function</strong> a function which defines the cost of misprediction. Typically it includes knowledge about the world’s generating processes (probabilistic objectives) or the costs we pay for mispredictions (empiricial risk minimization).</p>
+<p>The combination of data and model through the prediction function and the objectie function leads to a <em>learning algorithm</em>. The class of prediction functions and objective functions we can make use of is restricted by the algorithms they lead to. If the prediction function or the objective function are too complex, then it can be difficult to find an appropriate learning algorithm. Much of the acdemic field of machine learning is the quest for new learning algorithms that allow us to bring different types of models and data together.</p>
+<p>A useful reference for state of the art in machine learning is the UK Royal Society Report, <a href="https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf">Machine Learning: Power and Promise of Computers that Learn by Example</a>.</p>
+<p>You can also check my blog post on <a href="http://inverseprobability.com/2017/07/17/what-is-machine-learning">“What is Machine Learning?”</a></p>
+<h2 id="artificial-vs-natural-systems">Artificial vs Natural Systems</h2>
+<h3 id="natural-systems-are-evolved">Natural Systems are Evolved</h3>
+<blockquote>
+<p>Survival of the fittest</p>
+<p><a href="https://en.wikipedia.org/wiki/Herbert_Spencer">Herbet Spencer</a>, 1864</p>
+</blockquote>
+<p>Darwin never said “Survival of the Fittest” he talked about evolution by natural selection.</p>
+<p>Evolution is better described as “non-survival of the non-fit”. You don’t have to be the fittest to survive, you just need to avoid the pitfalls of life. This is the first priority.</p>
+<p>A mistake we make in our systems design is to equate fitness with the objective function, and to assume it is known and static. In practice, a real environment would have an evolving fitness function which would be unknown at any given time.</p>
+<p>Uncertainty in models is handled by Bayesian inference, here we consider uncertainty arising in loss functions.</p>
+<p>Consider a loss function which decomposes across individual observations, <span class="math inline">\({y}_{k,j}\)</span>, each of which is dependent on some set of features, <span class="math inline">\({\mathbf{{x}}}_k\)</span>.</p>
+<p><span class="math display">\[
+{E}({\mathbf{{y}}}, {\mathbf{X}}) = \sum_{k}\sum_{j}
+L({y}_{k,j}, {\mathbf{{x}}}_k)
+\]</span> Assume that the loss function depends on the features through some mapping function, <span class="math inline">\({f}_j(\cdot)\)</span> which we call the <em>prediction function</em>.</p>
+<p><span class="math display">\[
+{E}({\mathbf{{y}}}, {\mathbf{X}}) = \sum_{k}\sum_{j} L({y}_{k,j},
+{f}_j({\mathbf{{x}}}_k))
+\]</span> without loss of generality, we can move the index to the inputs, so we have <span class="math inline">\({\mathbf{{x}}}_i =\left[{\mathbf{{x}}}\quad j\right]\)</span>, and we set <span class="math inline">\({y}_i = {y}_{k, j}\)</span>. So we have</p>
+<p><span class="math display">\[
+{E}({\mathbf{{y}}}, {\mathbf{X}}) = \sum_{i} L({y}_i, {f}({\mathbf{{x}}}_i))
+\]</span> Bayesian inference considers uncertainty in <span class="math inline">\({f}\)</span>, often through parameterizing it, <span class="math inline">\({f}({\mathbf{{x}}}; {\boldsymbol{{\theta}}})\)</span>, and considering a <em>prior</em> distribution for the parameters, <span class="math inline">\(p({\boldsymbol{{\theta}}})\)</span>, this in turn implies a distribution over functions, <span class="math inline">\(p({f})\)</span>. Process models, such as Gaussian processes specify this distribution, known as a process, directly.</p>
+<p>Bayesian inference proceeds by specifying a <em>likelihood</em> which relates the data, <span class="math inline">\({y}\)</span>, to the parameters. Here we choose not to do this, but instead we only consider the <em>loss</em> function for our objective. The loss is the cost we pay for a misclassification.</p>
+<p>The <em>risk function</em> is the expectation of the loss under the distribution of the data. Here we are using the framework of <em>empirical risk</em> minimization, because we have a sample based approximation. The new expectation we are considering is around the loss function itself, not the uncertainty in the data.</p>
+<p>The loss function and the log likelihood may take a mathematically similar form but they are philosophically very different. The log likelihood assumes something about the <em>generating</em> function of the data, whereas the loss function assumes something about the cost we pay. Importantly the loss function in Bayesian inference only normally enters at the point of decision.</p>
+<p>The key idea in Bayesian inference is that the probabilistic inference can be performed <em>without</em> knowing the loss becasue if the model is correct, then the form of the loss function is irrelevant when performing inference. In practice, however, the model is <em>never</em> correct.</p>
+<p>Some of the maths below looks similar to the maths we can find in Bayesian methods, in particular variational Bayes, but that is merely a consequence of the availability of analytical mathematics. There are only particular ways of developing tractable algorithms, one route involves linear algebra. However, the similarity of the mathematics belies a difference in interpretation. It is similar to travelling a road (e.g. Ermine Street) in a wild landscape. We travel together because that is where efficient progress is to be made, but in practice a our destinations (Lincoln, York), may be different.</p>
+<h3 id="introduce-uncertainty">Introduce Uncertainty</h3>
+<p>To introduce uncertainty we consider a weighted version of the loss function, we introduce positive weights, <span class="math inline">\(\left\{{s}_i\right\}_{i=1}^{n}\)</span>. <span class="math display">\[
+{E}({\mathbf{{y}}}, {\mathbf{X}}) = \sum_{i}
+{s}_i L({y}_i, {f}({\mathbf{{x}}}_i))
+\]</span> We now assume that tmake the assumption that these weights are drawn from a distribution, <span class="math inline">\(q({s})\)</span>. Instead of looking to minimize the loss direction, we look at the expected loss under this distribution.</p>
+<p><span class="math display">\[
+\begin{align*}
+{E}({\mathbf{{y}}}, {\mathbf{X}}) = &amp; \sum_{i}{\left\langle {s}_i L({y}_i, {f}({\mathbf{{x}}}_i)) \right\rangle _{q({s})}} \\
+&amp; =\sum_{i}{\left\langle {s}_i  \right\rangle _{q({s})}}L({y}_i, {f}({\mathbf{{x}}}_i))
+\end{align*}
+\]</span> We will assume that our process, <span class="math inline">\(q({s})\)</span> can depend on a variety of inputs such as <span class="math inline">\({\mathbf{{y}}}\)</span>, <span class="math inline">\({\mathbf{X}}\)</span> and time, <span class="math inline">\(t\)</span>.</p>
+<h3 id="principle-of-maximum-entropy">Principle of Maximum Entropy</h3>
+<p>To maximize uncertainty in <span class="math inline">\(q({s})\)</span> we maximize its entropy. Following Jaynes formalism of maximum entropy, in the continuous space we do this with respect to an invariant measure, <span class="math display">\[
+H({s})= - \int q({s}) \log \frac{q({s})}{m({s})} \text{d}{s}\]</span> and since we minimize the loss, we balance this by adding in this term to form <span class="math display">\[
+\begin{align*}
+{E}= &amp; \beta\sum_{i}{\left\langle {s}_i  \right\rangle _{q({s})}}L({y}_i, {f}({\mathbf{{x}}}_i)) - H({s})\\
+&amp;= \beta\sum_{i}{\left\langle {s}_i  \right\rangle _{q({s})}}L({y}_i, {f}({\mathbf{{x}}}_i)) +  \int q({s}) \log \frac{q({s})}{m({s})}\text{d}{s}\end{align*}
+\]</span> where <span class="math inline">\(\beta\)</span> serves to weight the relative contribution of the entropy term and the loss term.</p>
+<p>We can now minimize this modified loss with respect to the density <span class="math inline">\(q({s})\)</span>, the freeform optimization over this term leads to <span class="math display">\[
+\begin{align*}
+q({s}) \propto &amp; \exp\left(- \beta \sum_{i=1}^{n}{s}_i L({y}_i, {f}({\mathbf{{x}}}_i)) \right) m({s})\\
+ \propto &amp; \prod_{i=1}^{n}\exp\left(- \beta {s}_i L({y}_i, {f}({\mathbf{{x}}}_i)) \right) m({s})
+\end{align*}
+\]</span></p>
+<h3 id="example">Example</h3>
+<p>Assume <span class="math display">\[
+m({s}) = \prod_i \lambda\exp\left(-\lambda{s}_i\right)
+\]</span> which is the distribution with the maximum entropy for a given mean, <span class="math inline">\({s}\)</span>. Then we have <span class="math display">\[ 
+q({s}) = \prod_i q({s}_i)
+\]</span> <span class="math display">\[
+q({s}_i) \propto \frac{1}{\lambda+\beta L_i} \exp\left(-(\lambda+\beta L_i) {s}_i\right)
+\]</span> and we can compute <span class="math display">\[
+{\left\langle {s}_i \right\rangle _{q({s})}} =
+\frac{1}{\lambda + \beta L_i}
+\]</span></p>
+<h3 id="coordinate-ascent">Coordinate Ascent</h3>
+<p>We can optimize with respect to <span class="math inline">\(q({s})\)</span> recovering, <span class="math display">\[
+q({s}_i) = \frac{1}{\lambda+\beta L_i} \exp\left(-(\lambda+\beta L_i) {s}_i\right)
+\]</span> allowing us to compute the expectation of <span class="math inline">\({s}\)</span>, <span class="math display">\[
+{\left\langle {s}_i \right\rangle _{q({s}_i)}} = \frac{1}{\lambda+\beta
+L_i}
+\]</span> then, we can maximize our expected loss with respect to <span class="math inline">\({f}(\cdot)\)</span> <span class="math display">\[
+\beta \sum_{i=1}^{n}{\left\langle {s}_i \right\rangle _{q({s}_i)}} L({y}_i, {f}({\mathbf{{x}}}_i))
+\]</span> If the loss is the <em>squared loss</em>, then this is recognised as a <em>reweighted least squares algorithm</em>. However, the loss can be of any form as long as <span class="math inline">\(q({s})\)</span> defined above exists.</p>
+<p>In addition to the above, in our example below, we updated <span class="math inline">\(\beta\)</span> to normalize the expected loss to be <span class="math inline">\({n}\)</span> at each iteration, so we have <span class="math display">\[
+\beta = \frac{{n}}{\sum_{i=1}^{n}{\left\langle {s}_i \right\rangle _{q({s}_i)}} L({y}_i, {f}({\mathbf{{x}}}_i))}
+\]</span></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</code></pre></div>
+<h3 id="olympic-marathon-data">Olympic Marathon Data</h3>
+<p>The first thing we will do is load a standard data set for regression modelling. The data consists of the pace of Olympic Gold Medal Marathon winners for the Olympics from 1896 to present. First we load in the data and plot.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data <span class="op">=</span> pods.datasets.olympic_marathon_men()
+x <span class="op">=</span> data[<span class="st">&#39;X&#39;</span>]
+y <span class="op">=</span> data[<span class="st">&#39;Y&#39;</span>]
+
+offset <span class="op">=</span> y.mean()
+scale <span class="op">=</span> np.sqrt(y.var())
+
+xlim <span class="op">=</span> (<span class="dv">1875</span>,<span class="dv">2030</span>)
+ylim <span class="op">=</span> (<span class="fl">2.5</span>, <span class="fl">6.5</span>)
+yhat <span class="op">=</span> (y<span class="op">-</span>offset)<span class="op">/</span>scale
+
+fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+_ <span class="op">=</span> ax.plot(x, y, <span class="st">&#39;r.&#39;</span>,markersize<span class="op">=</span><span class="dv">10</span>)
+ax.set_xlabel(<span class="st">&#39;year&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>)
+ax.set_ylabel(<span class="st">&#39;pace min/km&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>)
+ax.set_xlim(xlim)
+ax.set_ylim(ylim)
+
+mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/datasets/olympic-marathon.svg&#39;</span>, transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<h3 id="olympic-marathon-data-1">Olympic Marathon Data</h3>
+<table>
+<tr>
+<td width="70%">
+<ul>
+<li><p>Gold medal times for Olympic Marathon since 1896.</p></li>
+<li><p>Marathons before 1924 didn’t have a standardised distance.</p></li>
+<li><p>Present results using pace per km.</p></li>
+<li>In 1904 Marathon was badly organised leading to very slow times.</li>
+</ul>
+</td>
+<td width="30%">
+<img src="../slides/diagrams/Stephen_Kiprotich.jpg" alt="image" /> <small>Image from Wikimedia Commons <a href="http://bit.ly/16kMKHQ" class="uri">http://bit.ly/16kMKHQ</a></small>
+</td>
+</tr>
+</table>
+<object class="svgplot" align data="../slides/diagrams/ml/olympic_marathon.svg">
+</object>
+<p>Things to notice about the data include the outlier in 1904, in this year, the olympics was in St Louis, USA. Organizational problems and challenges with dust kicked up by the cars following the race meant that participants got lost, and only very few participants completed.</p>
+<p>More recent years see more consistently quick marathons.</p>
+<h3 id="example-linear-regression">Example: Linear Regression</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> mlai
+<span class="im">import</span> numpy <span class="im">as</span> np
+<span class="im">import</span> scipy <span class="im">as</span> sp</code></pre></div>
+<p>Create a weighted linear regression class, inheriting from the <code>mlai.LM</code> class.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">class</span> LML(mlai.LM):
+    <span class="co">&quot;&quot;&quot;Linear model with evolving loss</span>
+<span class="co">    :param X: input values</span>
+<span class="co">    :type X: numpy.ndarray</span>
+<span class="co">    :param y: target values</span>
+<span class="co">    :type y: numpy.ndarray</span>
+<span class="co">    :param basis: basis function </span>
+<span class="co">    :param type: function</span>
+<span class="co">    :param beta: weight of the loss function</span>
+<span class="co">    :param type: float&quot;&quot;&quot;</span>
+
+    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, X, y, basis<span class="op">=</span><span class="va">None</span>, beta<span class="op">=</span><span class="fl">1.0</span>, lambd<span class="op">=</span><span class="fl">1.0</span>):
+        <span class="co">&quot;Initialise&quot;</span>
+        <span class="cf">if</span> basis <span class="kw">is</span> <span class="va">None</span>:
+            basis <span class="op">=</span> mlai.basis(mlai.polynomial, number<span class="op">=</span><span class="dv">2</span>)
+        mlai.LM.<span class="fu">__init__</span>(<span class="va">self</span>, X, y, basis)
+        <span class="va">self</span>.s <span class="op">=</span> np.ones((<span class="va">self</span>.num_data, <span class="dv">1</span>))<span class="co">#np.random.rand(self.num_data, 1)&gt;0.5</span>
+        <span class="va">self</span>.update_w()
+        <span class="va">self</span>.sigma2 <span class="op">=</span> <span class="dv">1</span><span class="op">/</span>beta
+        <span class="va">self</span>.beta <span class="op">=</span> beta
+        <span class="va">self</span>.name <span class="op">=</span> <span class="st">&#39;LML_&#39;</span><span class="op">+</span>basis.function.<span class="va">__name__</span>
+        <span class="va">self</span>.objective_name <span class="op">=</span> <span class="st">&#39;Weighted Sum of Square Training Error&#39;</span>
+        <span class="va">self</span>.lambd <span class="op">=</span> lambd
+
+    <span class="kw">def</span> update_QR(<span class="va">self</span>):
+        <span class="co">&quot;Perform the QR decomposition on the basis matrix.&quot;</span>
+        <span class="va">self</span>.Q, <span class="va">self</span>.R <span class="op">=</span> np.linalg.qr(<span class="va">self</span>.Phi<span class="op">*</span>np.sqrt(<span class="va">self</span>.s))
+
+    <span class="kw">def</span> fit(<span class="va">self</span>):
+        <span class="co">&quot;&quot;&quot;Minimize the objective function with respect to the parameters&quot;&quot;&quot;</span>
+        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">30</span>):
+            <span class="va">self</span>.update_w() <span class="co"># In the linear regression clas</span>
+            <span class="va">self</span>.update_s()
+        
+    <span class="kw">def</span> update_w(<span class="va">self</span>):
+        <span class="va">self</span>.update_QR()
+        <span class="va">self</span>.w_star <span class="op">=</span> sp.linalg.solve_triangular(<span class="va">self</span>.R, np.dot(<span class="va">self</span>.Q.T, <span class="va">self</span>.y<span class="op">*</span>np.sqrt(<span class="va">self</span>.s)))
+        <span class="va">self</span>.update_losses()
+
+    <span class="kw">def</span> predict(<span class="va">self</span>, X):
+        <span class="co">&quot;&quot;&quot;Return the result of the prediction function.&quot;&quot;&quot;</span>
+        <span class="cf">return</span> np.dot(<span class="va">self</span>.basis.Phi(X), <span class="va">self</span>.w_star), <span class="va">None</span>
+        
+    <span class="kw">def</span> update_s(<span class="va">self</span>):
+        <span class="co">&quot;&quot;&quot;Update the weights&quot;&quot;&quot;</span>
+        <span class="va">self</span>.s <span class="op">=</span> <span class="dv">1</span><span class="op">/</span>(<span class="va">self</span>.lambd <span class="op">+</span> <span class="va">self</span>.beta<span class="op">*</span><span class="va">self</span>.losses)
+                                                 
+    <span class="kw">def</span> update_losses(<span class="va">self</span>):
+        <span class="co">&quot;&quot;&quot;Compute the loss functions for each data point.&quot;&quot;&quot;</span>
+        <span class="va">self</span>.update_f()
+        <span class="va">self</span>.losses <span class="op">=</span> ((<span class="va">self</span>.y<span class="op">-</span><span class="va">self</span>.f)<span class="op">**</span><span class="dv">2</span>)
+        <span class="va">self</span>.beta <span class="op">=</span> <span class="dv">1</span><span class="op">/</span>(<span class="va">self</span>.losses<span class="op">*</span><span class="va">self</span>.s).mean()
+        
+    <span class="kw">def</span> objective(<span class="va">self</span>):
+        <span class="co">&quot;&quot;&quot;Compute the objective function.&quot;&quot;&quot;</span>
+        <span class="va">self</span>.update_losses()
+        <span class="cf">return</span> (<span class="va">self</span>.losses<span class="op">*</span><span class="va">self</span>.s).<span class="bu">sum</span>()</code></pre></div>
+<p>Set up a linear model (polynomial with two basis functions).</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">num_basis<span class="op">=</span><span class="dv">2</span> 
+data_limits<span class="op">=</span>[<span class="dv">1890</span>, <span class="dv">2020</span>]
+basis <span class="op">=</span> mlai.basis(mlai.polynomial, num_basis, data_limits<span class="op">=</span>data_limits)
+model <span class="op">=</span> LML(x, y, basis<span class="op">=</span>basis, lambd<span class="op">=</span><span class="dv">1</span>, beta<span class="op">=</span><span class="dv">1</span>)
+model2 <span class="op">=</span> mlai.LM(x, y, basis<span class="op">=</span>basis)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">model.fit()
+model2.fit()</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x_test <span class="op">=</span> np.linspace(data_limits[<span class="dv">0</span>], data_limits[<span class="dv">1</span>], <span class="dv">130</span>)[:, <span class="va">None</span>]
+f_test, f_var <span class="op">=</span> model.predict(x_test)
+f2_test, f2_var <span class="op">=</span> model2.predict(x_test)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> teaching_plots <span class="im">as</span> plot
+<span class="im">from</span> matplotlib <span class="im">import</span> rc, rcParams
+rcParams.update({<span class="st">&#39;font.size&#39;</span>: <span class="dv">22</span>})
+rc(<span class="st">&#39;text&#39;</span>, usetex<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+ax.plot(x_test, f2_test, linewidth<span class="op">=</span><span class="dv">3</span>, color<span class="op">=</span><span class="st">&#39;r&#39;</span>)
+ax.plot(x, y, <span class="st">&#39;g.&#39;</span>, markersize<span class="op">=</span><span class="dv">10</span>)
+ax.set_xlim(data_limits[<span class="dv">0</span>], data_limits[<span class="dv">1</span>])
+ax.set_xlabel(<span class="st">&#39;year&#39;</span>)
+ax.set_ylabel(<span class="st">&#39;pace min/km&#39;</span>)
+_ <span class="op">=</span> ax.set_ylim(<span class="dv">2</span>, <span class="dv">6</span>)
+mlai.write_figure(<span class="st">&#39;../slides/diagrams/ml/olympic-loss-linear-regression000.svg&#39;</span>, transparent<span class="op">=</span><span class="va">True</span>)
+ax.plot(x_test, f_test, linewidth<span class="op">=</span><span class="dv">3</span>, color<span class="op">=</span><span class="st">&#39;b&#39;</span>)
+ax.plot(x, y, <span class="st">&#39;g.&#39;</span>, markersize<span class="op">=</span><span class="dv">10</span>)
+ax2 <span class="op">=</span> ax.twinx()
+ax2.bar(x.flatten(), model.s.flatten(), width<span class="op">=</span><span class="dv">2</span>, color<span class="op">=</span><span class="st">&#39;b&#39;</span>)
+ax2.set_ylim(<span class="dv">0</span>, <span class="dv">4</span>)
+ax2.set_yticks([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>])
+ax2.set_ylabel(<span class="st">&#39;$\langle s_i </span><span class="ch">\\</span><span class="st">rangle$&#39;</span>)
+mlai.write_figure(<span class="st">&#39;../slides/diagrams/ml/olympic-loss-linear-regression001.svg&#39;</span>, transparent<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+pods.notebook.display_plots(<span class="st">&#39;olympic-loss-linear-regression</span><span class="sc">{number:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, number<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">1</span>))</code></pre></div>
+<object class="svgplot" align data="../slides/diagrams/ml/olympic-loss-linear-regression001.svg">
+</object>
+<center>
+<p><em>Linear regression for the standard quadratic loss in </em>red* and the probabilistically weighted loss in <em>blue</em>. *</block></p>
+<h3 id="parameter-uncertainty">Parameter Uncertainty</h3>
+<p>Classical Bayesian inference is concerned with parameter uncertainty, which equates to uncertainty in the <em>prediction function</em>, <span class="math inline">\({f}({\mathbf{{x}}})\)</span>. The prediction function is normally an estimate of the value of <span class="math inline">\({y}\)</span> or constructs a probability density for <span class="math inline">\({y}\)</span>.</p>
+<p>Uncertainty in the prediction function can arise through uncertainty in our loss function, but also through uncertainty in parameters in the classical Bayesian sense. The full maximum entropy formalism would now be <span class="math display">\[
+{\left\langle \beta {s}_i L({y}_i,
+{f}({\mathbf{{x}}}_i)) \right\rangle _{q({s}, {f})}} + \int
+q({s}, {f}) \log \frac{q({s},
+{f})}{m({s})m({f})}\text{d}{s}\text{d}{f}\]</span></p>
+<p><span class="math display">\[
+q({f}, {s}) \propto
+\prod_{i=1}^{n}\exp\left(- \beta {s}_i L({y}_i,
+{f}({\mathbf{{x}}}_i)) \right) m({s})m({f})
+\]</span></p>
+<h3 id="approximation">Approximation</h3>
+<ul>
+<li><p>Generally intractable, so assume: <span class="math display">\[
+q({f}, {s}) = q({f})q({s})
+\]</span></p></li>
+<li><p>Entropy maximization proceeds as before but with <span class="math display">\[
+q({s}) \propto
+\prod_{i=1}^{n}\exp\left(- \beta {s}_i {\left\langle L({y}_i,
+{f}({\mathbf{{x}}}_i)) \right\rangle _{q({f})}} \right) m({s})
+\]</span> and <span class="math display">\[
+q({f}) \propto
+\prod_{i=1}^{n}\exp\left(- \beta {\left\langle {s}_i \right\rangle _{q({s})}} L({y}_i,
+{f}({\mathbf{{x}}}_i)) \right) m({f})
+\]</span></p></li>
+<li><p>Can now proceed with iteration between <span class="math inline">\(q({s})\)</span>, <span class="math inline">\(q({f})\)</span></p></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">class</span> BLML(mlai.BLM):
+    <span class="co">&quot;&quot;&quot;Bayesian Linear model with evolving loss</span>
+<span class="co">    :param X: input values</span>
+<span class="co">    :type X: numpy.ndarray</span>
+<span class="co">    :param y: target values</span>
+<span class="co">    :type y: numpy.ndarray</span>
+<span class="co">    :param basis: basis function </span>
+<span class="co">    :param type: function</span>
+<span class="co">    :param beta: weight of the loss function</span>
+<span class="co">    :param type: float&quot;&quot;&quot;</span>
+
+    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, X, y, basis<span class="op">=</span><span class="va">None</span>, alpha<span class="op">=</span><span class="fl">1.0</span>, beta<span class="op">=</span><span class="fl">1.0</span>, lambd<span class="op">=</span><span class="fl">1.0</span>):
+        <span class="co">&quot;Initialise&quot;</span>
+        <span class="cf">if</span> basis <span class="kw">is</span> <span class="va">None</span>:
+            basis <span class="op">=</span> mlai.basis(mlai.polynomial, number<span class="op">=</span><span class="dv">2</span>)
+        mlai.BLM.<span class="fu">__init__</span>(<span class="va">self</span>, X, y, basis<span class="op">=</span>basis, alpha<span class="op">=</span>alpha, sigma2<span class="op">=</span><span class="dv">1</span><span class="op">/</span>beta)
+        <span class="va">self</span>.s <span class="op">=</span> np.ones((<span class="va">self</span>.num_data, <span class="dv">1</span>))<span class="co">#np.random.rand(self.num_data, 1)&gt;0.5       </span>
+        <span class="va">self</span>.update_w()
+        <span class="va">self</span>.beta <span class="op">=</span> beta
+        <span class="va">self</span>.name <span class="op">=</span> <span class="st">&#39;BLML_&#39;</span><span class="op">+</span>basis.function.<span class="va">__name__</span>
+        <span class="va">self</span>.objective_name <span class="op">=</span> <span class="st">&#39;Weighted Sum of Square Training Error&#39;</span>
+        <span class="va">self</span>.lambd <span class="op">=</span> lambd     
+
+    <span class="kw">def</span> update_QR(<span class="va">self</span>):
+        <span class="co">&quot;Perform the QR decomposition on the basis matrix.&quot;</span>
+        <span class="va">self</span>.Q, <span class="va">self</span>.R <span class="op">=</span> np.linalg.qr(np.vstack([<span class="va">self</span>.Phi<span class="op">*</span>np.sqrt(<span class="va">self</span>.s), np.sqrt(<span class="va">self</span>.sigma2<span class="op">/</span><span class="va">self</span>.alpha)<span class="op">*</span>np.eye(<span class="va">self</span>.basis.number)]))
+
+    <span class="kw">def</span> fit(<span class="va">self</span>):
+        <span class="co">&quot;&quot;&quot;Minimize the objective function with respect to the parameters&quot;&quot;&quot;</span>
+        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">30</span>):
+            <span class="va">self</span>.update_w()
+            <span class="va">self</span>.update_s()
+        
+    <span class="kw">def</span> update_w(<span class="va">self</span>):
+        <span class="va">self</span>.update_QR()
+        <span class="va">self</span>.QTy <span class="op">=</span> np.dot(<span class="va">self</span>.Q[:<span class="va">self</span>.y.shape[<span class="dv">0</span>], :].T, <span class="va">self</span>.y<span class="op">*</span>np.sqrt(<span class="va">self</span>.s))
+        <span class="va">self</span>.mu_w <span class="op">=</span> sp.linalg.solve_triangular(<span class="va">self</span>.R, <span class="va">self</span>.QTy)
+        <span class="va">self</span>.RTinv <span class="op">=</span> sp.linalg.solve_triangular(<span class="va">self</span>.R, np.eye(<span class="va">self</span>.R.shape[<span class="dv">0</span>]), trans<span class="op">=</span><span class="st">&#39;T&#39;</span>)
+        <span class="va">self</span>.C_w <span class="op">=</span> np.dot(<span class="va">self</span>.RTinv, <span class="va">self</span>.RTinv.T)
+        <span class="va">self</span>.update_losses()
+
+    <span class="kw">def</span> update_s(<span class="va">self</span>):
+        <span class="co">&quot;&quot;&quot;Update the weights&quot;&quot;&quot;</span>
+        <span class="va">self</span>.s <span class="op">=</span> <span class="dv">1</span><span class="op">/</span>(<span class="va">self</span>.lambd <span class="op">+</span> <span class="va">self</span>.beta<span class="op">*</span><span class="va">self</span>.losses)
+                                                 
+    <span class="kw">def</span> update_losses(<span class="va">self</span>):
+        <span class="co">&quot;&quot;&quot;Compute the loss functions for each data point.&quot;&quot;&quot;</span>
+        <span class="va">self</span>.update_f()
+        <span class="va">self</span>.losses <span class="op">=</span> ((<span class="va">self</span>.y<span class="op">-</span><span class="va">self</span>.f_bar)<span class="op">**</span><span class="dv">2</span>) <span class="op">+</span> <span class="va">self</span>.f_cov[:, np.newaxis]
+        <span class="va">self</span>.beta <span class="op">=</span> <span class="dv">1</span><span class="op">/</span>(<span class="va">self</span>.losses<span class="op">*</span><span class="va">self</span>.s).mean()
+        <span class="va">self</span>.sigma2<span class="op">=</span><span class="dv">1</span><span class="op">/</span><span class="va">self</span>.beta
+        
+
+ </code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">model <span class="op">=</span> BLML(x, y, basis<span class="op">=</span>basis, alpha<span class="op">=</span><span class="dv">1000</span>, lambd<span class="op">=</span><span class="dv">1</span>, beta<span class="op">=</span><span class="dv">1</span>)
+model2 <span class="op">=</span> mlai.BLM(x, y, basis<span class="op">=</span>basis, alpha<span class="op">=</span><span class="dv">1000</span>, sigma2<span class="op">=</span><span class="dv">1</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">model.fit()
+model2.fit()</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x_test <span class="op">=</span> np.linspace(data_limits[<span class="dv">0</span>], data_limits[<span class="dv">1</span>], <span class="dv">130</span>)[:, <span class="va">None</span>]
+f_test, f_var <span class="op">=</span> model.predict(x_test)
+f2_test, f2_var <span class="op">=</span> model2.predict(x_test)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> gp_tutorial</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+<span class="im">from</span> matplotlib <span class="im">import</span> rc, rcParams
+rcParams.update({<span class="st">&#39;font.size&#39;</span>: <span class="dv">22</span>})
+rc(<span class="st">&#39;text&#39;</span>, usetex<span class="op">=</span><span class="va">True</span>)
+gp_tutorial.gpplot(x_test, f2_test, f2_test <span class="op">-</span> <span class="dv">2</span><span class="op">*</span>np.sqrt(f2_var), f2_test <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>np.sqrt(f2_var), ax<span class="op">=</span>ax, edgecol<span class="op">=</span><span class="st">&#39;r&#39;</span>, fillcol<span class="op">=</span><span class="st">&#39;#CC3300&#39;</span>)
+ax.plot(x, y, <span class="st">&#39;g.&#39;</span>, markersize<span class="op">=</span><span class="dv">10</span>)
+ax.set_xlim(data_limits[<span class="dv">0</span>], data_limits[<span class="dv">1</span>])
+ax.set_xlabel(<span class="st">&#39;year&#39;</span>)
+ax.set_ylabel(<span class="st">&#39;pace min/km&#39;</span>)
+_ <span class="op">=</span> ax.set_ylim(<span class="dv">2</span>, <span class="dv">6</span>)
+mlai.write_figure(<span class="st">&#39;../slides/diagrams/ml/olympic-loss-bayes-linear-regression000.svg&#39;</span>, transparent<span class="op">=</span><span class="va">True</span>)
+gp_tutorial.gpplot(x_test, f_test, f_test <span class="op">-</span> <span class="dv">2</span><span class="op">*</span>np.sqrt(f_var), f_test <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>np.sqrt(f_var), ax<span class="op">=</span>ax, edgecol<span class="op">=</span><span class="st">&#39;b&#39;</span>, fillcol<span class="op">=</span><span class="st">&#39;#0033CC&#39;</span>)
+<span class="co">#ax.plot(x_test, f_test, linewidth=3, color=&#39;b&#39;)</span>
+ax.plot(x, y, <span class="st">&#39;g.&#39;</span>, markersize<span class="op">=</span><span class="dv">10</span>)
+ax2 <span class="op">=</span> ax.twinx()
+ax2.bar(x.flatten(), model.s.flatten(), width<span class="op">=</span><span class="dv">2</span>, color<span class="op">=</span><span class="st">&#39;b&#39;</span>)
+ax2.set_ylim(<span class="dv">0</span>, <span class="fl">0.2</span>)
+ax2.set_yticks([<span class="dv">0</span>, <span class="fl">0.1</span>, <span class="fl">0.2</span>])
+ax2.set_ylabel(<span class="st">&#39;$\langle s_i </span><span class="ch">\\</span><span class="st">rangle$&#39;</span>)
+mlai.write_figure(<span class="st">&#39;../slides/diagrams/ml/olympic-loss-bayes-linear-regression001.svg&#39;</span>, transparent<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+pods.notebook.display_plots(<span class="st">&#39;olympic-loss-bayes-linear-regression</span><span class="sc">{number:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, number<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">1</span>))</code></pre></div>
+<object class="svgplot" align data="../slides/diagrams/ml/olympic-loss-bayes-linear-regression001.svg">
+</object>
+<center>
+<p><em>Probabilistic linear regression for the standard quadratic loss in </em>red* and the probabilistically weighted loss in <em>blue</em>. *</block></p>
+<h3 id="correlated-scales">Correlated Scales</h3>
+<p>Going beyond independence between weights, we now consider <span class="math inline">\(m({v})\)</span> to be a Gaussian process, and scale by the <em>square</em> of <span class="math inline">\({v}\)</span>, <span class="math inline">\({s}={v}^2\)</span> <span class="math display">\[
+{v}\sim \mathcal{GP}\left({\mu}({\mathbf{{x}}}), {{k}}({\mathbf{{x}}}, {\mathbf{{x}}}^\prime)\right)
+\]</span></p>
+<p><span class="math display">\[
+q({v}) \propto
+\prod_{i=1}^{n}\exp\left(- \beta {v}_i^2 L({y}_i,
+{f}({\mathbf{{x}}}_i)) \right)
+\exp\left(-\frac{1}{2}({\mathbf{v}}-{\boldsymbol{{\mu}}})^\top {\mathbf{K}}^{-1}
+({\mathbf{v}}-{\boldsymbol{{\mu}}})\right)
+\]</span> where <span class="math inline">\({\mathbf{K}}\)</span> is the covariance of the process made up of elements taken from the covariance function, <span class="math inline">\({k}({\mathbf{{x}}}, t, {\mathbf{{y}}}; {\mathbf{{x}}}^\prime, t^\prime, {\mathbf{{y}}}^\prime)\)</span> so <span class="math inline">\(q({v})\)</span> itself is Gaussian with covariance <span class="math display">\[
+{\mathbf{C}}= \left(\beta\mathbf{L} + {\mathbf{K}}^{-1}\right)^{-1}
+\]</span> and mean <span class="math display">\[
+{\mathbf{{m}}}= \beta{\mathbf{C}}\mathbf{L}{\boldsymbol{{\mu}}}\]</span> where <span class="math inline">\(\mathbf{L}\)</span> is a matrix containing the loss functions, <span class="math inline">\(L({y}_i, {f}({\mathbf{{x}}}_i))\)</span> along its diagonal elements with zeros elsewhere.</p>
+<p>The update is given by <span class="math display">\[
+{\left\langle {v}_i^2 \right\rangle _{q({v})}} = {m}_i^2 +
+{c}_{i, i}.
+\]</span> To compare with before, if the mean of the measure <span class="math inline">\(m({v})\)</span> was zero and the prior covariance was spherical, <span class="math inline">\({\mathbf{K}}=\lambda^{-1}{\mathbf{I}}\)</span>. Then this would equate to an update, <span class="math display">\[
+{\left\langle {v}_i^2 \right\rangle _{q({v})}} = \frac{1}{\lambda + \beta L_i}
+\]</span> which is the same as we had before for the exponential prior over <span class="math inline">\({s}\)</span>.</p>
+<h3 id="conditioning-the-measure">Conditioning the Measure</h3>
+<p>Now that we have defined a process over <span class="math inline">\({v}\)</span>, we could define a region in which we’re certain that we would like the weights to be high. For example, if we were looking to have a test point at location <span class="math inline">\({\mathbf{{x}}}_\ast\)</span>, we could update our measure to be a Gaussian process that is conditioned on the observation of <span class="math inline">\({v}_\ast\)</span> set appropriately at <span class="math inline">\({x}_\ast\)</span>. In this case we have,</p>
+<p><span class="math display">\[
+{\mathbf{K}}^\prime = {\mathbf{K}}- \frac{{\mathbf{{k}}}_\ast{\mathbf{{k}}}^\top_\ast}{{k}_{*,*}}
+\]</span> and <span class="math display">\[
+{\boldsymbol{{\mu}}}^\prime = {\boldsymbol{{\mu}}}+ \frac{{\mathbf{{k}}}_\ast}{{k}_{*,*}}
+({v}_\ast-{\mu})
+\]</span> where <span class="math inline">\({k}_\ast\)</span> is the vector computed through the covariance function between the training data <span class="math inline">\({\mathbf{X}}\)</span> and the proposed point that we are conditioning the scale upon, <span class="math inline">\({\mathbf{{x}}}_\ast\)</span> and <span class="math inline">\({k}_{*,*}\)</span> is the covariance function computed for <span class="math inline">\({\mathbf{{x}}}_\ast\)</span>. Now the updated mean and covariance can be used in the maximum entropy formulation as before. <span class="math display">\[
+q({v}) \propto \prod_{i=1}^{n}\exp\left(-
+\beta {v}_i^2 L({y}_i, {f}({\mathbf{{x}}}_i)) \right)
+\exp\left(-\frac{1}{2}({\mathbf{v}}-{\boldsymbol{{\mu}}}^\prime)^\top
+\left.{\mathbf{K}}^\prime\right.^{-1} ({\mathbf{v}}-{\boldsymbol{{\mu}}}^\prime)\right)
+\]</span></p>
+<p>We will consider the same data set as above. We first create a Gaussian process model for the update.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">class</span> GPL(mlai.GP):
+    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, X, losses, kernel, beta<span class="op">=</span><span class="fl">1.0</span>, mu<span class="op">=</span><span class="fl">0.0</span>, X_star<span class="op">=</span><span class="va">None</span>, v_star<span class="op">=</span><span class="va">None</span>):
+        <span class="co"># Bring together locations</span>
+        <span class="va">self</span>.kernel <span class="op">=</span> kernel
+        <span class="va">self</span>.K <span class="op">=</span> <span class="va">self</span>.kernel.K(X)
+        <span class="va">self</span>.mu <span class="op">=</span> np.ones((X.shape[<span class="dv">0</span>],<span class="dv">1</span>))<span class="op">*</span>mu
+        <span class="va">self</span>.beta <span class="op">=</span> beta
+        <span class="cf">if</span> X_star <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:
+            kstar <span class="op">=</span> kernel.K(X, X_star)
+            kstarstar <span class="op">=</span> kernel.K(X_star, X_star)
+            kstarstarInv <span class="op">=</span> np.linalg.inv(kstarstar)
+            kskssInv <span class="op">=</span> np.dot(kstar, kstarstarInv)
+            <span class="va">self</span>.K <span class="op">-=</span> np.dot(kskssInv,kstar.T)
+            <span class="cf">if</span> v_star <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:
+                <span class="va">self</span>.mu <span class="op">=</span> kskssInv<span class="op">*</span>(v_star<span class="op">-</span><span class="va">self</span>.mu)<span class="op">+</span><span class="va">self</span>.mu
+                Xaug <span class="op">=</span> np.vstack((X, X_star))
+            <span class="cf">else</span>:
+                <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">&quot;v_star should not be None when X_star is None&quot;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">class</span> BLMLGP(BLML):
+    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, X, y, basis<span class="op">=</span><span class="va">None</span>, kernel<span class="op">=</span><span class="va">None</span>, beta<span class="op">=</span><span class="fl">1.0</span>, mu<span class="op">=</span><span class="fl">0.0</span>, alpha<span class="op">=</span><span class="fl">1.0</span>, X_star<span class="op">=</span><span class="va">None</span>, v_star<span class="op">=</span><span class="va">None</span>):
+        BLML.<span class="fu">__init__</span>(<span class="va">self</span>, X, y, basis<span class="op">=</span>basis, alpha<span class="op">=</span>alpha, beta<span class="op">=</span>beta, lambd<span class="op">=</span><span class="va">None</span>)
+        <span class="va">self</span>.gp_model<span class="op">=</span>GPL(<span class="va">self</span>.X, <span class="va">self</span>.losses, kernel<span class="op">=</span>kernel, beta<span class="op">=</span>beta, mu<span class="op">=</span>mu, X_star<span class="op">=</span>X_star, v_star<span class="op">=</span>v_star)
+    <span class="kw">def</span> update_s(<span class="va">self</span>):
+        <span class="co">&quot;&quot;&quot;Update the weights&quot;&quot;&quot;</span>
+        <span class="va">self</span>.gp_model.C <span class="op">=</span> sp.linalg.inv(sp.linalg.inv(<span class="va">self</span>.gp_model.K<span class="op">+</span>np.eye(<span class="va">self</span>.X.shape[<span class="dv">0</span>])<span class="op">*</span><span class="fl">1e-6</span>) <span class="op">+</span> <span class="va">self</span>.beta<span class="op">*</span>np.diag(<span class="va">self</span>.losses.flatten()))
+        <span class="va">self</span>.gp_model.diagC <span class="op">=</span> np.diag(<span class="va">self</span>.gp_model.C)[:, np.newaxis]
+        <span class="va">self</span>.gp_model.f <span class="op">=</span> <span class="va">self</span>.gp_model.beta<span class="op">*</span>np.dot(np.dot(<span class="va">self</span>.gp_model.C,np.diag(<span class="va">self</span>.losses.flatten())),<span class="va">self</span>.gp_model.mu) <span class="op">+</span><span class="va">self</span>.gp_model.mu
+        
+        <span class="co">#f, v = self.gp_model.K self.gp_model.predict(self.X)</span>
+        <span class="va">self</span>.s <span class="op">=</span> <span class="va">self</span>.gp_model.f<span class="op">*</span><span class="va">self</span>.gp_model.f <span class="op">+</span> <span class="va">self</span>.gp_model.diagC <span class="co"># + 1.0/(self.losses*self.gp_model.beta)</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">model <span class="op">=</span> BLMLGP(x, y, 
+           basis<span class="op">=</span>basis, 
+           kernel<span class="op">=</span>mlai.kernel(mlai.eq_cov, lengthscale<span class="op">=</span><span class="dv">20</span>, variance<span class="op">=</span><span class="fl">1.0</span>),
+           mu<span class="op">=</span><span class="fl">0.0</span>,
+           beta<span class="op">=</span><span class="fl">1.0</span>, 
+           alpha<span class="op">=</span><span class="dv">1000</span>,
+           X_star<span class="op">=</span>np.asarray([[<span class="dv">2020</span>]]), 
+           v_star<span class="op">=</span>np.asarray([[<span class="dv">1</span>]]))</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">model.fit()</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">f_test, f_var <span class="op">=</span> model.predict(x_test)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+ax.cla()
+<span class="im">from</span> matplotlib <span class="im">import</span> rc, rcParams
+rcParams.update({<span class="st">&#39;font.size&#39;</span>: <span class="dv">22</span>})
+rc(<span class="st">&#39;text&#39;</span>, usetex<span class="op">=</span><span class="va">True</span>)
+gp_tutorial.gpplot(x_test, f2_test, f2_test <span class="op">-</span> <span class="dv">2</span><span class="op">*</span>np.sqrt(f2_var), f2_test <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>np.sqrt(f2_var), ax<span class="op">=</span>ax, edgecol<span class="op">=</span><span class="st">&#39;r&#39;</span>, fillcol<span class="op">=</span><span class="st">&#39;#CC3300&#39;</span>)
+ax.plot(x, y, <span class="st">&#39;g.&#39;</span>, markersize<span class="op">=</span><span class="dv">10</span>)
+ax.set_xlim(data_limits[<span class="dv">0</span>], data_limits[<span class="dv">1</span>])
+ax.set_xlabel(<span class="st">&#39;year&#39;</span>)
+ax.set_ylabel(<span class="st">&#39;pace min/km&#39;</span>)
+_ <span class="op">=</span> ax.set_ylim(<span class="dv">2</span>, <span class="dv">6</span>)
+mlai.write_figure(<span class="st">&#39;../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression000.svg&#39;</span>, transparent<span class="op">=</span><span class="va">True</span>)
+gp_tutorial.gpplot(x_test, f_test, f_test <span class="op">-</span> <span class="dv">2</span><span class="op">*</span>np.sqrt(f_var), f_test <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>np.sqrt(f_var), ax<span class="op">=</span>ax, edgecol<span class="op">=</span><span class="st">&#39;b&#39;</span>, fillcol<span class="op">=</span><span class="st">&#39;#0033CC&#39;</span>)
+<span class="co">#ax.plot(x_test, f_test, linewidth=3, color=&#39;b&#39;)</span>
+ax.plot(x, y, <span class="st">&#39;g.&#39;</span>, markersize<span class="op">=</span><span class="dv">10</span>)
+ax2 <span class="op">=</span> ax.twinx()
+ax2.bar(x.flatten(), model.s.flatten(), width<span class="op">=</span><span class="dv">2</span>, color<span class="op">=</span><span class="st">&#39;b&#39;</span>)
+ax2.set_ylim(<span class="dv">0</span>, <span class="dv">3</span>)
+ax2.set_yticks([<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="dv">1</span>])
+ax2.set_ylabel(<span class="st">&#39;$\langle s_i </span><span class="ch">\\</span><span class="st">rangle$&#39;</span>)
+mlai.write_figure(<span class="st">&#39;../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression001.svg&#39;</span>, transparent<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;olympic-gp-loss-bayes-linear-regression</span><span class="sc">{number:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, number<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">1</span>))</code></pre></div>
+<object class="svgplot" align data="../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression001.svg">
+</object>
+<center>
+<p><em>Probabilistic linear regression for the standard quadratic loss in </em>red* and the probabilistically weighted loss with a Gaussian process measure in <em>blue</em>. *</block></p>
+<p>Finally, we make an attempt to show the joint uncertainty by first of all sampling from the loss function weights density, <span class="math inline">\(q({s})\)</span>.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+num_samps<span class="op">=</span><span class="dv">10</span>
+samps<span class="op">=</span>np.random.multivariate_normal(model.gp_model.f.flatten(), model.gp_model.C, size<span class="op">=</span><span class="dv">100</span>).T<span class="op">**</span><span class="dv">2</span>
+ax.plot(x, samps, <span class="st">&#39;-x&#39;</span>, markersize<span class="op">=</span><span class="dv">10</span>, linewidth<span class="op">=</span><span class="dv">2</span>)
+ax.set_xlim(data_limits[<span class="dv">0</span>], data_limits[<span class="dv">1</span>])
+ax.set_xlabel(<span class="st">&#39;year&#39;</span>)
+_ <span class="op">=</span> ax.set_ylabel(<span class="st">&#39;$s_i$&#39;</span>)
+mlai.write_figure(<span class="st">&#39;../slides/diagrams/ml/olympic-gp-loss-samples.svg&#39;</span>, transparent<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<object class="svgplot" align data="../slides/diagrams/ml/olympic-gp-loss-samples.svg">
+</object>
+<center>
+<p><em>Samples of loss weightings from the density <span class="math inline">\(q(\scaleSamples)\)</span>. </em></block></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+ax.plot(x, y, <span class="st">&#39;r.&#39;</span>, markersize<span class="op">=</span><span class="dv">10</span>)
+ax.set_xlim(data_limits[<span class="dv">0</span>], data_limits[<span class="dv">1</span>])
+ax.set_ylim(<span class="dv">2</span>, <span class="dv">6</span>)
+ax.set_xlabel(<span class="st">&#39;year&#39;</span>)
+ax.set_ylabel(<span class="st">&#39;pace min/km&#39;</span>)
+gp_tutorial.gpplot(x_test, f_test, f_test <span class="op">-</span> <span class="dv">2</span><span class="op">*</span>np.sqrt(f_var), f_test <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>np.sqrt(f_var), ax<span class="op">=</span>ax, edgecol<span class="op">=</span><span class="st">&#39;b&#39;</span>, fillcol<span class="op">=</span><span class="st">&#39;#0033CC&#39;</span>)
+mlai.write_figure(<span class="st">&#39;../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression-and-samples000.svg&#39;</span>, transparent<span class="op">=</span><span class="va">True</span>)
+allsamps <span class="op">=</span> []
+<span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(samps.shape[<span class="dv">1</span>]):
+    model.s <span class="op">=</span> samps[:, i:i<span class="op">+</span><span class="dv">1</span>]
+    model.update_w()
+    f_bar, f_cov <span class="op">=</span>model.predict(x_test, full_cov<span class="op">=</span><span class="va">True</span>)
+    f_samp <span class="op">=</span> np.random.multivariate_normal(f_bar.flatten(), f_cov, size<span class="op">=</span><span class="dv">10</span>).T
+    ax.plot(x_test, f_samp, linewidth<span class="op">=</span><span class="fl">0.5</span>, color<span class="op">=</span><span class="st">&#39;k&#39;</span>)
+    allsamps<span class="op">+=</span><span class="bu">list</span>(f_samp[<span class="op">-</span><span class="dv">1</span>, :])
+mlai.write_figure(<span class="st">&#39;../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression-and-samples001.svg&#39;</span>, transparent<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+pods.notebook.display_plots(<span class="st">&#39;olympic-gp-loss-bayes-linear-regression-and-samples</span><span class="sc">{number:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, number<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">1</span>))</code></pre></div>
+<object class="svgplot" align data="../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression-and-samples001.svg">
+</object>
+<center>
+<p><em>Samples from the joint density of loss weightings and regression weights show the full distribution of function predictions. </em></block></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_figsize)
+ax.hist(np.asarray(allsamps), bins<span class="op">=</span><span class="dv">30</span>, density<span class="op">=</span><span class="va">True</span>)
+ax.set_xlabel<span class="op">=</span><span class="st">&#39;pace min/kim&#39;</span>
+mlai.write_figure(<span class="st">&#39;../slides/diagrams/ml/olympic-gp-loss-histogram-2020.svg&#39;</span>, transparent<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<object class="svgplot" align data="../slides/diagrams/ml/olympic-gp-loss-histogram-2020.svg">
+</object>
+<center>
+<p><em>Histogram of samples from the year 2020, where the weight of the loss function was pinned to ensure that the model focussed its predictions on this region for test data. </em></block></p>
+<h3 id="conclusions">Conclusions</h3>
+<ul>
+<li>Maximum Entropy Framework for uncertainty in
+<ul>
+<li>Loss functions</li>
+<li>Prediction functions</li>
+</ul></li>
+</ul>
+<h3 id="thanks">Thanks!</h3>
+<ul>
+<li>twitter: @lawrennd</li>
+<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
+</ul>
+
