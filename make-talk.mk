@@ -14,7 +14,7 @@ ${BASE}.notes.html: ${BASE}.notes.md
 
 ${BASE}.posts.html: ${BASE}.notes.md
 	pandoc  --template pandoc-jekyll-talk-template ${PDFLAGS} --atx-headers --metadata date=${DATE} --metadata layout=talk --metadata reveal=${OUT}.slides.html --metadata published=${DATE} -t html --bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib -o ${BASE}.posts.html  ${BASE}.notes.md 
-	cp ${BASE}.posts.html ../_posts/${OUT}.posts.html
+	cp ${BASE}.posts.html ../_posts/${OUT}.html
 
 ${BASE}.ipynb: ${BASE}.ipynb.md
 	pandoc  ${PDFLAGS} --bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib -o ${BASE}.tmp.md  ${BASE}.ipynb.md 
@@ -33,4 +33,4 @@ ${BASE}.ipynb.md: ${BASE}.md
 	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -Dipynb=1 ${PPFLAGS} ${BASE}.md -o ${BASE}.ipynb.md
 
 clean:
-	rm ${BASE}.slides.md ${BASE}.slides.html ${BASE}.notes.md ${BASE}.notes.html ${BASE}.ipynb.md ${BASE}.posts.md
+	rm ${BASE}.slides.md ${BASE}.slides.html ${BASE}.notes.md ${BASE}.notes.html ${BASE}.ipynb.md ${BASE}.posts.html
