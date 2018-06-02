@@ -16,6 +16,7 @@ layout: talk
 ---
 
 
+
 {% raw %}
 
 <h2 id="what-is-machine-learning">What is Machine Learning?</h2>
@@ -38,18 +39,18 @@ layout: talk
 <p>Evolution is better described as “non-survival of the non-fit”. You don’t have to be the fittest to survive, you just need to avoid the pitfalls of life. This is the first priority.</p>
 <p>A mistake we make in our systems design is to equate fitness with the objective function, and to assume it is known and static. In practice, a real environment would have an evolving fitness function which would be unknown at any given time.</p>
 <p>Uncertainty in models is handled by Bayesian inference, here we consider uncertainty arising in loss functions.</p>
-<p>Consider a loss function which decomposes across individual observations, <span class="math inline">\({y}_{k,j}\)</span>, each of which is dependent on some set of features, <span class="math inline">\({\mathbf{{x}}}_k\)</span>.</p>
+<p>Consider a loss function which decomposes across individual observations, <span class="math inline">\({y}_{k,j}\)</span>, each of which is dependent on some set of features, <span class="math inline">\({\mathbf{ {x}}}_k\)</span>.</p>
 <p><span class="math display">\[
-{E}({\mathbf{{y}}}, {\mathbf{X}}) = \sum_{k}\sum_{j}
-L({y}_{k,j}, {\mathbf{{x}}}_k)
+{E}({\mathbf{ {y}}}, {\mathbf{X}}) = \sum_{k}\sum_{j}
+L({y}_{k,j}, {\mathbf{ {x}}}_k)
 \]</span> Assume that the loss function depends on the features through some mapping function, <span class="math inline">\({f}_j(\cdot)\)</span> which we call the <em>prediction function</em>.</p>
 <p><span class="math display">\[
-{E}({\mathbf{{y}}}, {\mathbf{X}}) = \sum_{k}\sum_{j} L({y}_{k,j},
-{f}_j({\mathbf{{x}}}_k))
-\]</span> without loss of generality, we can move the index to the inputs, so we have <span class="math inline">\({\mathbf{{x}}}_i =\left[{\mathbf{{x}}}\quad j\right]\)</span>, and we set <span class="math inline">\({y}_i = {y}_{k, j}\)</span>. So we have</p>
+{E}({\mathbf{ {y}}}, {\mathbf{X}}) = \sum_{k}\sum_{j} L({y}_{k,j},
+{f}_j({\mathbf{ {x}}}_k))
+\]</span> without loss of generality, we can move the index to the inputs, so we have <span class="math inline">\({\mathbf{ {x}}}_i =\left[{\mathbf{ {x}}}\quad j\right]\)</span>, and we set <span class="math inline">\({y}_i = {y}_{k, j}\)</span>. So we have</p>
 <p><span class="math display">\[
-{E}({\mathbf{{y}}}, {\mathbf{X}}) = \sum_{i} L({y}_i, {f}({\mathbf{{x}}}_i))
-\]</span> Bayesian inference considers uncertainty in <span class="math inline">\({f}\)</span>, often through parameterizing it, <span class="math inline">\({f}({\mathbf{{x}}}; {\boldsymbol{{\theta}}})\)</span>, and considering a <em>prior</em> distribution for the parameters, <span class="math inline">\(p({\boldsymbol{{\theta}}})\)</span>, this in turn implies a distribution over functions, <span class="math inline">\(p({f})\)</span>. Process models, such as Gaussian processes specify this distribution, known as a process, directly.</p>
+{E}({\mathbf{ {y}}}, {\mathbf{X}}) = \sum_{i} L({y}_i, {f}({\mathbf{ {x}}}_i))
+\]</span> Bayesian inference considers uncertainty in <span class="math inline">\({f}\)</span>, often through parameterizing it, <span class="math inline">\({f}({\mathbf{ {x}}}; {\boldsymbol{ {\theta}}})\)</span>, and considering a <em>prior</em> distribution for the parameters, <span class="math inline">\(p({\boldsymbol{ {\theta}}})\)</span>, this in turn implies a distribution over functions, <span class="math inline">\(p({f})\)</span>. Process models, such as Gaussian processes specify this distribution, known as a process, directly.</p>
 <p>Bayesian inference proceeds by specifying a <em>likelihood</em> which relates the data, <span class="math inline">\({y}\)</span>, to the parameters. Here we choose not to do this, but instead we only consider the <em>loss</em> function for our objective. The loss is the cost we pay for a misclassification.</p>
 <p>The <em>risk function</em> is the expectation of the loss under the distribution of the data. Here we are using the framework of <em>empirical risk</em> minimization, because we have a sample based approximation. The new expectation we are considering is around the loss function itself, not the uncertainty in the data.</p>
 <p>The loss function and the log likelihood may take a mathematically similar form but they are philosophically very different. The log likelihood assumes something about the <em>generating</em> function of the data, whereas the loss function assumes something about the cost we pay. Importantly the loss function in Bayesian inference only normally enters at the point of decision.</p>
@@ -57,26 +58,26 @@ L({y}_{k,j}, {\mathbf{{x}}}_k)
 <p>Some of the maths below looks similar to the maths we can find in Bayesian methods, in particular variational Bayes, but that is merely a consequence of the availability of analytical mathematics. There are only particular ways of developing tractable algorithms, one route involves linear algebra. However, the similarity of the mathematics belies a difference in interpretation. It is similar to travelling a road (e.g. Ermine Street) in a wild landscape. We travel together because that is where efficient progress is to be made, but in practice a our destinations (Lincoln, York), may be different.</p>
 <h3 id="introduce-uncertainty">Introduce Uncertainty</h3>
 <p>To introduce uncertainty we consider a weighted version of the loss function, we introduce positive weights, <span class="math inline">\(\left\{ {s}_i\right\}_{i=1}^{n}\)</span>. <span class="math display">\[
-{E}({\mathbf{{y}}}, {\mathbf{X}}) = \sum_{i}
-{s}_i L({y}_i, {f}({\mathbf{{x}}}_i))
+{E}({\mathbf{ {y}}}, {\mathbf{X}}) = \sum_{i}
+{s}_i L({y}_i, {f}({\mathbf{ {x}}}_i))
 \]</span> We now assume that tmake the assumption that these weights are drawn from a distribution, <span class="math inline">\(q({s})\)</span>. Instead of looking to minimize the loss direction, we look at the expected loss under this distribution.</p>
 <p><span class="math display">\[
 \begin{align*}
-{E}({\mathbf{{y}}}, {\mathbf{X}}) = &amp; \sum_{i}{\left\langle {s}_i L({y}_i, {f}({\mathbf{{x}}}_i)) \right\rangle _{q({s})}} \\
-&amp; =\sum_{i}{\left\langle {s}_i  \right\rangle _{q({s})}}L({y}_i, {f}({\mathbf{{x}}}_i))
+{E}({\mathbf{ {y}}}, {\mathbf{X}}) = &amp; \sum_{i}{\left\langle {s}_i L({y}_i, {f}({\mathbf{ {x}}}_i)) \right\rangle _{q({s})}} \\
+&amp; =\sum_{i}{\left\langle {s}_i  \right\rangle _{q({s})}}L({y}_i, {f}({\mathbf{ {x}}}_i))
 \end{align*}
-\]</span> We will assume that our process, <span class="math inline">\(q({s})\)</span> can depend on a variety of inputs such as <span class="math inline">\({\mathbf{{y}}}\)</span>, <span class="math inline">\({\mathbf{X}}\)</span> and time, <span class="math inline">\(t\)</span>.</p>
+\]</span> We will assume that our process, <span class="math inline">\(q({s})\)</span> can depend on a variety of inputs such as <span class="math inline">\({\mathbf{ {y}}}\)</span>, <span class="math inline">\({\mathbf{X}}\)</span> and time, <span class="math inline">\(t\)</span>.</p>
 <h3 id="principle-of-maximum-entropy">Principle of Maximum Entropy</h3>
 <p>To maximize uncertainty in <span class="math inline">\(q({s})\)</span> we maximize its entropy. Following Jaynes formalism of maximum entropy, in the continuous space we do this with respect to an invariant measure, <span class="math display">\[
 H({s})= - \int q({s}) \log \frac{q({s})}{m({s})} \text{d}{s}\]</span> and since we minimize the loss, we balance this by adding in this term to form <span class="math display">\[
 \begin{align*}
-{E}= &amp; \beta\sum_{i}{\left\langle {s}_i  \right\rangle _{q({s})}}L({y}_i, {f}({\mathbf{{x}}}_i)) - H({s})\\
-&amp;= \beta\sum_{i}{\left\langle {s}_i  \right\rangle _{q({s})}}L({y}_i, {f}({\mathbf{{x}}}_i)) +  \int q({s}) \log \frac{q({s})}{m({s})}\text{d}{s}\end{align*}
+{E}= &amp; \beta\sum_{i}{\left\langle {s}_i  \right\rangle _{q({s})}}L({y}_i, {f}({\mathbf{ {x}}}_i)) - H({s})\\
+&amp;= \beta\sum_{i}{\left\langle {s}_i  \right\rangle _{q({s})}}L({y}_i, {f}({\mathbf{ {x}}}_i)) +  \int q({s}) \log \frac{q({s})}{m({s})}\text{d}{s}\end{align*}
 \]</span> where <span class="math inline">\(\beta\)</span> serves to weight the relative contribution of the entropy term and the loss term.</p>
 <p>We can now minimize this modified loss with respect to the density <span class="math inline">\(q({s})\)</span>, the freeform optimization over this term leads to <span class="math display">\[
 \begin{align*}
-q({s}) \propto &amp; \exp\left(- \beta \sum_{i=1}^{n}{s}_i L({y}_i, {f}({\mathbf{{x}}}_i)) \right) m({s})\\
- \propto &amp; \prod_{i=1}^{n}\exp\left(- \beta {s}_i L({y}_i, {f}({\mathbf{{x}}}_i)) \right) m({s})
+q({s}) \propto &amp; \exp\left(- \beta \sum_{i=1}^{n}{s}_i L({y}_i, {f}({\mathbf{ {x}}}_i)) \right) m({s})\\
+ \propto &amp; \prod_{i=1}^{n}\exp\left(- \beta {s}_i L({y}_i, {f}({\mathbf{ {x}}}_i)) \right) m({s})
 \end{align*}
 \]</span></p>
 <h3 id="example">Example</h3>
@@ -97,10 +98,10 @@ q({s}_i) = \frac{1}{\lambda+\beta L_i} \exp\left(-(\lambda+\beta L_i) {s}_i\righ
 {\left\langle {s}_i \right\rangle _{q({s}_i)}} = \frac{1}{\lambda+\beta
 L_i}
 \]</span> then, we can maximize our expected loss with respect to <span class="math inline">\({f}(\cdot)\)</span> <span class="math display">\[
-\beta \sum_{i=1}^{n}{\left\langle {s}_i \right\rangle _{q({s}_i)}} L({y}_i, {f}({\mathbf{{x}}}_i))
+\beta \sum_{i=1}^{n}{\left\langle {s}_i \right\rangle _{q({s}_i)}} L({y}_i, {f}({\mathbf{ {x}}}_i))
 \]</span> If the loss is the <em>squared loss</em>, then this is recognised as a <em>reweighted least squares algorithm</em>. However, the loss can be of any form as long as <span class="math inline">\(q({s})\)</span> defined above exists.</p>
 <p>In addition to the above, in our example below, we updated <span class="math inline">\(\beta\)</span> to normalize the expected loss to be <span class="math inline">\({n}\)</span> at each iteration, so we have <span class="math display">\[
-\beta = \frac{{n}}{\sum_{i=1}^{n}{\left\langle {s}_i \right\rangle _{q({s}_i)}} L({y}_i, {f}({\mathbf{{x}}}_i))}
+\beta = \frac{{n}}{\sum_{i=1}^{n}{\left\langle {s}_i \right\rangle _{q({s}_i)}} L({y}_i, {f}({\mathbf{ {x}}}_i))}
 \]</span></p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
 <span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</code></pre></div>
@@ -245,18 +246,19 @@ pods.notebook.display_plots(<span class="st">&#39;olympic-loss-linear-regression
 <object class="svgplot" align data="../slides/diagrams/ml/olympic-loss-linear-regression001.svg">
 </object>
 <center>
-<p><em>Linear regression for the standard quadratic loss in </em>red* and the probabilistically weighted loss in <em>blue</em>. *</block></p>
+<em>Linear regression for the standard quadratic loss in </em>red* and the probabilistically weighted loss in <em>blue</em>. *
+</center>
 <h3 id="parameter-uncertainty">Parameter Uncertainty</h3>
-<p>Classical Bayesian inference is concerned with parameter uncertainty, which equates to uncertainty in the <em>prediction function</em>, <span class="math inline">\({f}({\mathbf{{x}}})\)</span>. The prediction function is normally an estimate of the value of <span class="math inline">\({y}\)</span> or constructs a probability density for <span class="math inline">\({y}\)</span>.</p>
+<p>Classical Bayesian inference is concerned with parameter uncertainty, which equates to uncertainty in the <em>prediction function</em>, <span class="math inline">\({f}({\mathbf{ {x}}})\)</span>. The prediction function is normally an estimate of the value of <span class="math inline">\({y}\)</span> or constructs a probability density for <span class="math inline">\({y}\)</span>.</p>
 <p>Uncertainty in the prediction function can arise through uncertainty in our loss function, but also through uncertainty in parameters in the classical Bayesian sense. The full maximum entropy formalism would now be <span class="math display">\[
 {\left\langle \beta {s}_i L({y}_i,
-{f}({\mathbf{{x}}}_i)) \right\rangle _{q({s}, {f})}} + \int
+{f}({\mathbf{ {x}}}_i)) \right\rangle _{q({s}, {f})}} + \int
 q({s}, {f}) \log \frac{q({s},
 {f})}{m({s})m({f})}\text{d}{s}\text{d}{f}\]</span></p>
 <p><span class="math display">\[
 q({f}, {s}) \propto
 \prod_{i=1}^{n}\exp\left(- \beta {s}_i L({y}_i,
-{f}({\mathbf{{x}}}_i)) \right) m({s})m({f})
+{f}({\mathbf{ {x}}}_i)) \right) m({s})m({f})
 \]</span></p>
 <h3 id="approximation">Approximation</h3>
 <ul>
@@ -266,11 +268,11 @@ q({f}, {s}) = q({f})q({s})
 <li><p>Entropy maximization proceeds as before but with <span class="math display">\[
 q({s}) \propto
 \prod_{i=1}^{n}\exp\left(- \beta {s}_i {\left\langle L({y}_i,
-{f}({\mathbf{{x}}}_i)) \right\rangle _{q({f})}} \right) m({s})
+{f}({\mathbf{ {x}}}_i)) \right\rangle _{q({f})}} \right) m({s})
 \]</span> and <span class="math display">\[
 q({f}) \propto
 \prod_{i=1}^{n}\exp\left(- \beta {\left\langle {s}_i \right\rangle _{q({s})}} L({y}_i,
-{f}({\mathbf{{x}}}_i)) \right) m({f})
+{f}({\mathbf{ {x}}}_i)) \right) m({f})
 \]</span></p></li>
 <li><p>Can now proceed with iteration between <span class="math inline">\(q({s})\)</span>, <span class="math inline">\(q({f})\)</span></p></li>
 </ul>
@@ -362,21 +364,22 @@ pods.notebook.display_plots(<span class="st">&#39;olympic-loss-bayes-linear-regr
 <object class="svgplot" align data="../slides/diagrams/ml/olympic-loss-bayes-linear-regression001.svg">
 </object>
 <center>
-<p><em>Probabilistic linear regression for the standard quadratic loss in </em>red* and the probabilistically weighted loss in <em>blue</em>. *</block></p>
+<em>Probabilistic linear regression for the standard quadratic loss in </em>red* and the probabilistically weighted loss in <em>blue</em>. *
+</center>
 <h3 id="correlated-scales">Correlated Scales</h3>
 <p>Going beyond independence between weights, we now consider <span class="math inline">\(m({v})\)</span> to be a Gaussian process, and scale by the <em>square</em> of <span class="math inline">\({v}\)</span>, <span class="math inline">\({s}={v}^2\)</span> <span class="math display">\[
-{v}\sim \mathcal{GP}\left({\mu}({\mathbf{{x}}}), {{k}}({\mathbf{{x}}}, {\mathbf{{x}}}^\prime)\right)
+{v}\sim \mathcal{GP}\left({\mu}({\mathbf{ {x}}}), {{k}}({\mathbf{ {x}}}, {\mathbf{ {x}}}^\prime)\right)
 \]</span></p>
 <p><span class="math display">\[
 q({v}) \propto
 \prod_{i=1}^{n}\exp\left(- \beta {v}_i^2 L({y}_i,
-{f}({\mathbf{{x}}}_i)) \right)
-\exp\left(-\frac{1}{2}({\mathbf{v}}-{\boldsymbol{{\mu}}})^\top {\mathbf{K}}^{-1}
-({\mathbf{v}}-{\boldsymbol{{\mu}}})\right)
-\]</span> where <span class="math inline">\({\mathbf{K}}\)</span> is the covariance of the process made up of elements taken from the covariance function, <span class="math inline">\({k}({\mathbf{{x}}}, t, {\mathbf{{y}}}; {\mathbf{{x}}}^\prime, t^\prime, {\mathbf{{y}}}^\prime)\)</span> so <span class="math inline">\(q({v})\)</span> itself is Gaussian with covariance <span class="math display">\[
+{f}({\mathbf{ {x}}}_i)) \right)
+\exp\left(-\frac{1}{2}({\mathbf{v}}-{\boldsymbol{ {\mu}}})^\top {\mathbf{K}}^{-1}
+({\mathbf{v}}-{\boldsymbol{ {\mu}}})\right)
+\]</span> where <span class="math inline">\({\mathbf{K}}\)</span> is the covariance of the process made up of elements taken from the covariance function, <span class="math inline">\({k}({\mathbf{ {x}}}, t, {\mathbf{ {y}}}; {\mathbf{ {x}}}^\prime, t^\prime, {\mathbf{ {y}}}^\prime)\)</span> so <span class="math inline">\(q({v})\)</span> itself is Gaussian with covariance <span class="math display">\[
 {\mathbf{C}}= \left(\beta\mathbf{L} + {\mathbf{K}}^{-1}\right)^{-1}
 \]</span> and mean <span class="math display">\[
-{\mathbf{{m}}}= \beta{\mathbf{C}}\mathbf{L}{\boldsymbol{{\mu}}}\]</span> where <span class="math inline">\(\mathbf{L}\)</span> is a matrix containing the loss functions, <span class="math inline">\(L({y}_i, {f}({\mathbf{{x}}}_i))\)</span> along its diagonal elements with zeros elsewhere.</p>
+{\mathbf{ {m}}}= \beta{\mathbf{C}}\mathbf{L}{\boldsymbol{ {\mu}}}\]</span> where <span class="math inline">\(\mathbf{L}\)</span> is a matrix containing the loss functions, <span class="math inline">\(L({y}_i, {f}({\mathbf{ {x}}}_i))\)</span> along its diagonal elements with zeros elsewhere.</p>
 <p>The update is given by <span class="math display">\[
 {\left\langle {v}_i^2 \right\rangle _{q({v})}} = {m}_i^2 +
 {c}_{i, i}.
@@ -384,17 +387,17 @@ q({v}) \propto
 {\left\langle {v}_i^2 \right\rangle _{q({v})}} = \frac{1}{\lambda + \beta L_i}
 \]</span> which is the same as we had before for the exponential prior over <span class="math inline">\({s}\)</span>.</p>
 <h3 id="conditioning-the-measure">Conditioning the Measure</h3>
-<p>Now that we have defined a process over <span class="math inline">\({v}\)</span>, we could define a region in which we’re certain that we would like the weights to be high. For example, if we were looking to have a test point at location <span class="math inline">\({\mathbf{{x}}}_\ast\)</span>, we could update our measure to be a Gaussian process that is conditioned on the observation of <span class="math inline">\({v}_\ast\)</span> set appropriately at <span class="math inline">\({x}_\ast\)</span>. In this case we have,</p>
+<p>Now that we have defined a process over <span class="math inline">\({v}\)</span>, we could define a region in which we’re certain that we would like the weights to be high. For example, if we were looking to have a test point at location <span class="math inline">\({\mathbf{ {x}}}_\ast\)</span>, we could update our measure to be a Gaussian process that is conditioned on the observation of <span class="math inline">\({v}_\ast\)</span> set appropriately at <span class="math inline">\({x}_\ast\)</span>. In this case we have,</p>
 <p><span class="math display">\[
-{\mathbf{K}}^\prime = {\mathbf{K}}- \frac{{\mathbf{{k}}}_\ast{\mathbf{{k}}}^\top_\ast}{{k}_{*,*}}
+{\mathbf{K}}^\prime = {\mathbf{K}}- \frac{{\mathbf{ {k}}}_\ast{\mathbf{ {k}}}^\top_\ast}{{k}_{*,*}}
 \]</span> and <span class="math display">\[
-{\boldsymbol{{\mu}}}^\prime = {\boldsymbol{{\mu}}}+ \frac{{\mathbf{{k}}}_\ast}{{k}_{*,*}}
+{\boldsymbol{ {\mu}}}^\prime = {\boldsymbol{ {\mu}}}+ \frac{{\mathbf{ {k}}}_\ast}{{k}_{*,*}}
 ({v}_\ast-{\mu})
-\]</span> where <span class="math inline">\({k}_\ast\)</span> is the vector computed through the covariance function between the training data <span class="math inline">\({\mathbf{X}}\)</span> and the proposed point that we are conditioning the scale upon, <span class="math inline">\({\mathbf{{x}}}_\ast\)</span> and <span class="math inline">\({k}_{*,*}\)</span> is the covariance function computed for <span class="math inline">\({\mathbf{{x}}}_\ast\)</span>. Now the updated mean and covariance can be used in the maximum entropy formulation as before. <span class="math display">\[
+\]</span> where <span class="math inline">\({k}_\ast\)</span> is the vector computed through the covariance function between the training data <span class="math inline">\({\mathbf{X}}\)</span> and the proposed point that we are conditioning the scale upon, <span class="math inline">\({\mathbf{ {x}}}_\ast\)</span> and <span class="math inline">\({k}_{*,*}\)</span> is the covariance function computed for <span class="math inline">\({\mathbf{ {x}}}_\ast\)</span>. Now the updated mean and covariance can be used in the maximum entropy formulation as before. <span class="math display">\[
 q({v}) \propto \prod_{i=1}^{n}\exp\left(-
-\beta {v}_i^2 L({y}_i, {f}({\mathbf{{x}}}_i)) \right)
-\exp\left(-\frac{1}{2}({\mathbf{v}}-{\boldsymbol{{\mu}}}^\prime)^\top
-\left.{\mathbf{K}}^\prime\right.^{-1} ({\mathbf{v}}-{\boldsymbol{{\mu}}}^\prime)\right)
+\beta {v}_i^2 L({y}_i, {f}({\mathbf{ {x}}}_i)) \right)
+\exp\left(-\frac{1}{2}({\mathbf{v}}-{\boldsymbol{ {\mu}}}^\prime)^\top
+\left.{\mathbf{K}}^\prime\right.^{-1} ({\mathbf{v}}-{\boldsymbol{ {\mu}}}^\prime)\right)
 \]</span></p>
 <p>We will consider the same data set as above. We first create a Gaussian process model for the update.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">class</span> GPL(mlai.GP):
@@ -464,7 +467,8 @@ mlai.write_figure(<span class="st">&#39;../slides/diagrams/ml/olympic-gp-loss-ba
 <object class="svgplot" align data="../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression001.svg">
 </object>
 <center>
-<p><em>Probabilistic linear regression for the standard quadratic loss in </em>red* and the probabilistically weighted loss with a Gaussian process measure in <em>blue</em>. *</block></p>
+<em>Probabilistic linear regression for the standard quadratic loss in </em>red* and the probabilistically weighted loss with a Gaussian process measure in <em>blue</em>. *
+</center>
 <p>Finally, we make an attempt to show the joint uncertainty by first of all sampling from the loss function weights density, <span class="math inline">\(q({s})\)</span>.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
 num_samps<span class="op">=</span><span class="dv">10</span>
@@ -477,7 +481,8 @@ mlai.write_figure(<span class="st">&#39;../slides/diagrams/ml/olympic-gp-loss-sa
 <object class="svgplot" align data="../slides/diagrams/ml/olympic-gp-loss-samples.svg">
 </object>
 <center>
-<p><em>Samples of loss weightings from the density <span class="math inline">\(q(\scaleSamples)\)</span>. </em></block></p>
+<em>Samples of loss weightings from the density <span class="math inline">\(q(\scaleSamples)\)</span>. </em>
+</center>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
 ax.plot(x, y, <span class="st">&#39;r.&#39;</span>, markersize<span class="op">=</span><span class="dv">10</span>)
 ax.set_xlim(data_limits[<span class="dv">0</span>], data_limits[<span class="dv">1</span>])
@@ -501,7 +506,8 @@ pods.notebook.display_plots(<span class="st">&#39;olympic-gp-loss-bayes-linear-r
 <object class="svgplot" align data="../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression-and-samples001.svg">
 </object>
 <center>
-<p><em>Samples from the joint density of loss weightings and regression weights show the full distribution of function predictions. </em></block></p>
+<em>Samples from the joint density of loss weightings and regression weights show the full distribution of function predictions. </em>
+</center>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_figsize)
 ax.hist(np.asarray(allsamps), bins<span class="op">=</span><span class="dv">30</span>, density<span class="op">=</span><span class="va">True</span>)
 ax.set_xlabel<span class="op">=</span><span class="st">&#39;pace min/kim&#39;</span>
@@ -509,7 +515,8 @@ mlai.write_figure(<span class="st">&#39;../slides/diagrams/ml/olympic-gp-loss-hi
 <object class="svgplot" align data="../slides/diagrams/ml/olympic-gp-loss-histogram-2020.svg">
 </object>
 <center>
-<p><em>Histogram of samples from the year 2020, where the weight of the loss function was pinned to ensure that the model focussed its predictions on this region for test data. </em></block></p>
+<em>Histogram of samples from the year 2020, where the weight of the loss function was pinned to ensure that the model focussed its predictions on this region for test data. </em>
+</center>
 <h3 id="conclusions">Conclusions</h3>
 <ul>
 <li>Maximum Entropy Framework for uncertainty in
