@@ -16,6 +16,9 @@ layout: talk
 ---
 
 
+
+{% raw %}
+
 <h2 id="what-is-machine-learning">What is Machine Learning?</h2>
 <p>What is machine learning? At its most basic level machine learning is a combination of</p>
 <p><span class="math display">\[ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span></p>
@@ -49,22 +52,26 @@ layout: talk
 <p>If a linear prediction funciton is combined with the least squares objective function then that gives us a classical <em>linear regression</em>, another classical statistical model. Statistics often focusses on linear models because it makes interpretation of the model easier. Interpretation is key in statistics because the aim is normally to validate questions by analysis of data. Machine learning has typically focussed more on the prediction function itself and worried less about the interpretation of parameters, which are normally denoted by <span class="math inline">\(\mathbf{w}\)</span> instead of <span class="math inline">\(\boldsymbol{\beta}\)</span>. As a result <em>non-linear</em> functions are explored more often as they tend to improve quality of predictions but at the expense of interpretability.</p>
 <img class="" src="../slides/diagrams/deepface_neg.png" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
 <center>
-<p><em>The DeepFace architecture <span class="citation">(Taigman et al., 2014)</span>, visualized through colors to represent the functional mappings at each layer. There are 120 million parameters in the model. </em></block></p>
+<em>The DeepFace architecture <span class="citation">(Taigman et al., 2014)</span>, visualized through colors to represent the functional mappings at each layer. There are 120 million parameters in the model. </em>
+</center>
 <p>The DeepFace architecture <span class="citation">(Taigman et al., 2014)</span> consists of layers that deal with <em>translation</em> and <em>rotational</em> invariances. These layers are followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected layers.</p>
 <img class="" src="../slides/diagrams/576px-Early_Pinball.jpg" width="50%" align="center" style="background:none; border:none; box-shadow:none;">
 <center>
-<p><em>Deep learning models are composition of simple functions. We can think of a pinball machine as an analogy. Each layer of pins corresponds to one of the layers of functions in the model. Input data is represented by the location of the ball from left to right when it is dropped in from the top. Output class comes from the position of the ball as it leaves the pins at the bottom. </em></block></p>
+<em>Deep learning models are composition of simple functions. We can think of a pinball machine as an analogy. Each layer of pins corresponds to one of the layers of functions in the model. Input data is represented by the location of the ball from left to right when it is dropped in from the top. Output class comes from the position of the ball as it leaves the pins at the bottom. </em>
+</center>
 <p>We can think of what these models are doing as being similar to early pin ball machines. In a neural network, we input a number (or numbers), whereas in pinball, we input a ball. The location of the ball on the left-right axis can be thought of as the number. As the ball falls through the machine, each layer of pins can be thought of as a different layer of neurons. Each layer acts to move the ball from left to right.</p>
 <p>In a pinball machine, when the ball gets to the bottom it might fall into a hole defining a score, in a neural network, that is equivalent to the decision: a classification of the input object.</p>
 <p>An image has more than one number associated with it, so it’s like playing pinball in a <em>hyper-space</em>.</p>
 <object class="svgplot" align data="../slides/diagrams/pinball001.svg">
 </object>
 <center>
-<p><em>At initialization, the pins, which represent the parameters of the function, aren’t in the right place to bring the balls to the correct decisions. </em></block></p>
+<em>At initialization, the pins, which represent the parameters of the function, aren’t in the right place to bring the balls to the correct decisions. </em>
+</center>
 <object class="svgplot" align data="../slides/diagrams/pinball002.svg">
 </object>
 <center>
-<p><em>After learning the pins are now in the right place to bring the balls to the correct decisions. </em></block></p>
+<em>After learning the pins are now in the right place to bring the balls to the correct decisions. </em>
+</center>
 <p>Learning involves moving all the pins to be in the right position, so that the ball falls in the right place. But moving all these pins in hyperspace can be difficult. In a hyper space you have to put a lot of data through the machine for to explore the positions of all the pins. Adversarial learning reflects the fact that a ball can be moved a small distance and lead to a very different result.</p>
 <p>Probabilistic methods explore more of the space by considering a range of possible paths for the ball through the machine.</p>
 <h2 id="natural-and-artificial-intelligence-embodiment-factors">Natural and Artificial Intelligence: Embodiment Factors</h2>
@@ -136,7 +143,8 @@ communicate
 <object class="svgplot" align data="../slides/diagrams/data-science/information-flow003.svg">
 </object>
 <center>
-<p><em>New direction of information flow, information is reaching us mediated by the computer </em></block></p>
+<em>New direction of information flow, information is reaching us mediated by the computer </em>
+</center>
 <h3 id="societal-effects">Societal Effects</h3>
 <p>We have already seen the effects of this changed dynamic in biology and computational biology. Improved sensorics have led to the new domains of transcriptomics, epigenomics, and ‘rich phenomics’ as well as considerably augmenting our capabilities in genomics.</p>
 <p>Biologists have had to become data-savvy, they require a rich understanding of the available data resources and need to assimilate existing data sets in their hypothesis generation as well as their experimental design. Modern biology has become a far more quantitative science, but the quantitativeness has required new methods developed in the domains of <em>computational biology</em> and <em>bioinformatics</em>.</p>
@@ -241,4 +249,6 @@ communicate
 <li id="fn1"><p>the challenge of understanding what information pertains to is known as knowledge representation.<a href="#fnref1">↩</a></p></li>
 </ol>
 </div>
+
+{% endraw %}
 
