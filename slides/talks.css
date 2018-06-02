@@ -16,7 +16,7 @@
 
 .reveal p { text-align: left;
 }
-.reveal ul { text-align: left;
+.reveal li { text-align: left;
 }
 
 .reveal math_display { font-size: 2.5em !important;

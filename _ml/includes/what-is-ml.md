@@ -54,11 +54,11 @@ $$\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$
 
 . . .
 
-* **a prediction function** $\mappingFunction(\cdot)$ includes our beliefs about the regularities of the universe
+  * **a prediction function** $\mappingFunction(\cdot)$ includes our beliefs about the regularities of the universe
 
 . . .
 
-* **an objective function** $\errorFunction(\cdot)$ defines the cost of misprediction.
+  * **an objective function** $\errorFunction(\cdot)$ defines the cost of misprediction.
 }
 
 \notes{

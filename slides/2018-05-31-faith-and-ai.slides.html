@@ -9,7 +9,12 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="reveal.js/css/reveal.css">
-  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
   <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
   <link rel="stylesheet" href="talks.css"/>
   <!-- Printing and PDF exports -->
@@ -55,10 +60,11 @@
   <div class="reveal">
     <div class="slides">
 
-<section>
+<section id="title-slide">
   <h1 class="title">Faith and AI</h1>
-  <p class="author">true</p>
-  <p class="date">2018-05-31</p>
+  <p class="author" style="text-align:center"><a href="http://inverseprobability.com">Neil D. Lawrence</a></p>
+  <p class="date" style="text-align:center"><time>2018-05-31</time></p>
+  <p class="venue" style="text-align:center">Faith and AI Event, St George’s House, Windsor</p>
 </section>
 
 <section class="slide level3">
@@ -235,8 +241,7 @@
 <section id="section-1" class="slide level3">
 <h3></h3>
 <p><span class="fragment fade-in"><small>Outline of the DeepFace architecture. A front-end of a single convolution-pooling-convolution filtering on the rectified input, followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected.</small></span></p>
-<p><img class="" src="../slides/diagrams/deepface_neg.png" width="100%" align="center" style="background:none; border:none; box-shadow:none;"></p>
-<p><span align="right"><small>Source: DeepFace <span class="citation" data-cites="Taigman:deepface14">(Taigman et al., 2014)</span></small></span></p>
+<p><img class="" src="../slides/diagrams/deepface_neg.png" width="100%" align="center" style="background:none; border:none; box-shadow:none;"> <span align="right"><small>Source: DeepFace <span class="citation" data-cites="Taigman:deepface14">(Taigman et al., 2014)</span></small></span></p>
 </section>
 <section id="section-2" class="slide level3">
 <h3></h3>
@@ -492,6 +497,8 @@ Ernest Hemingway’s apocrophal six word novel would mean nothing to a computer.
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
         // Transition style
         transition: 'None', // none/fade/slide/convex/concave/zoom
 
@@ -499,7 +506,7 @@ Ernest Hemingway’s apocrophal six word novel would mean nothing to a computer.
         dependencies: [
           { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
-              { src: 'reveal.js/plugin/notes/notes.js', async: true }
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
         ]
       });
     </script>
