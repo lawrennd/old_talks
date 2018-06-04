@@ -8,7 +8,7 @@ ${BASE}.slides.html: ${BASE}.slides.md
 	cat ../_includes/talk-notation.tex >> ../include.tmp
 	printf '$$' >> ../include.tmp
 	printf '$$' >> ../include.tmp
-	pandoc  -B ../include.tmp --template pandoc-revealjs-template ${PDSFLAGS} ${SFLAGS} -c ${CSS} --include-in-header=${HEADER} -t revealjs --bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib -o ${BASE}.slides.html  ${BASE}.slides.md 
+	pandoc  -B ../include.tmp --template pandoc-revealjs-template ${PDSFLAGS} ${SFLAGS} -c ${CSS} --include-in-header=${SLIDESHEADER} -t revealjs --bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib -o ${BASE}.slides.html  ${BASE}.slides.md 
 	cp ${BASE}.slides.html ../slides/${OUT}.slides.html
 	rm ../include.tmp
 
@@ -19,7 +19,7 @@ ${BASE}.notes.html: ${BASE}.notes.md
 	pandoc  ${PDSFLAGS} --bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib -o ${BASE}.notes.html  ${BASE}.notes.md 
 
 ${BASE}.posts.html: ${BASE}.notes.md
-	pandoc  --template pandoc-jekyll-talk-template ${PDFLAGS} --atx-headers --metadata date=${DATE} --metadata layout=talk --metadata reveal=${OUT}.slides.html --metadata published=${DATE} -t html --bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib -o ${BASE}.posts.html  ${BASE}.notes.md 
+	pandoc  --template pandoc-jekyll-talk-template ${PDFLAGS} --atx-headers --metadata date=${DATE} --metadata layout=talk --metadata reveal=${OUT}.slides.html --metadata published=${DATE} --include-in-header=${POSTSHEADER} -t html --bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib -o ${BASE}.posts.html  ${BASE}.notes.md 
 	cp ${BASE}.posts.html ../_posts/${OUT}.html
 
 

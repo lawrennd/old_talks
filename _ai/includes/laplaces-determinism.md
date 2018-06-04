@@ -1,6 +1,6 @@
 \slides{### 
 
-\includeimg{../slides/diagrams/laplacesDeterminismFrench.png}{80%}{}{center}}
+\includeimg{../slides/diagrams/laplacesDeterminismFrench.png}{60%}{}{center}}
 
 \notes{Famously, Laplace considered the idea of a deterministic Universe, one in which the model is *known*, or as the below translation refers to it, "an intelligence which could comprehend all the forces by which nature is animated". He speculates on an "intelligence" that can submit this vast data to analysis and propsoses that such an entity would be able to predict the future.
 
@@ -11,7 +11,7 @@
 
 \slides{### 
 
-\includeimg{../slides/diagrams/laplacesDeterminismEnglish.png}{80%}{}{center}}
+\includeimg{../slides/diagrams/laplacesDeterminismEnglish.png}{60%}{}{center}}
 
 
 \notes{Unfortunately, most analyses of his ideas stop at that point, whereas his real point is that such a notion is unreachable. Not so much *superman* as *strawman*. Just three pages later in the "Philosophical Essay on Probabilities" [@Laplace:essai14], Laplace goes on to observe:
@@ -22,6 +22,8 @@
 
 \slides{### 
 
-\includeimg{../slides/diagrams/philosophicaless00lapliala.png}{80%}{}{center}}
+\includeimg{../slides/diagrams/philosophicaless00lapliala.png}{60%}{}{center}}
 
-\notes{In other words, we can never utilize the idealistic deterministc Universe due to our ignorance about the world, Laplace's suggestion, and focus in this essay is that we turn to probability to deal with this uncertainty.}
+\notes{In other words, we can never utilize the idealistic deterministc Universe due to our ignorance about the world, Laplace's suggestion, and focus in this essay is that we turn to probability to deal with this uncertainty. This is also our inspiration for using probabilit in machine learning. 
+
+The "forces by which nature is animated" is our *model*, the "situation of beings that compose it" is our *data* and the "intelligence sufficiently vast enough to submit these data to analysis" is our compute. The fly in the ointment is our *ignorance* about these aspects. And *probability* is the tool we use to incorporate this ignorance leading to uncertainty or *doubt* in our predictions.}

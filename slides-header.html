@@ -1,5 +1,9 @@
     <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({ TeX: { extensions: ["color.js"] }});
+      MathJax.Hub.Config({
+        TeX: {
+          extensions: ["color.js"]
+        }
+      });
     </script>
     <script>
 
@@ -11,6 +15,7 @@ function setDivs(group) {
 
 function plusDivs(n, group) {
   showDivs(slideIndex += n, group);
+  document.setElementById("range-".concat(group)) = slideIndex
 }
 
 function showDivs(n,group) {
