@@ -502,13 +502,12 @@ mlai.write_figure(filename<span class="op">=</span><span class="st">&#39;../slid
 </object>
 <h3 id="update-equations-1">Update Equations</h3>
 <ul>
-<li>The step size has already been introduced, it's again known as the learning rate and is denoted by <span class="math inline">\(\learnRate\)</span>.</li>
-</ul>
-<p><span class="math display">\[c_\text{new}
-\leftarrow c_{\text{old}} - \learnRate \frac{\text{d}\errorFunction(m, c)}{\text{d}c}\]</span></p>
-<ul>
-<li><p>gives us an update for our estimate of <span class="math inline">\(c\)</span> (which in the code we've been calling <code>c_star</code> to represent a common way of writing a parameter estimate, <span class="math inline">\(c^*\)</span>) and <span class="math display">\[m_\text{new} \leftarrow m_{\text{old}} - \learnRate \frac{\text{d}\errorFunction(m,
-c)}{\text{d}m}\]</span></p></li>
+<li><p>The step size has already been introduced, it's again known as the learning rate and is denoted by <span class="math inline">\(\learnRate\)</span>. <span class="math display">\[
+  c_\text{new}\leftarrow c_{\text{old}} - \learnRate \frac{\text{d}\errorFunction(m, c)}{\text{d}c}
+\]</span></p></li>
+<li>gives us an update for our estimate of <span class="math inline">\(c\)</span> (which in the code we've been calling <code>c_star</code> to represent a common way of writing a parameter estimate, <span class="math inline">\(c^*\)</span>) and <span class="math display">\[
+m_\text{new} \leftarrow m_{\text{old}} - \learnRate \frac{\text{d}\errorFunction(m, c)}{\text{d}m}
+\]</span></li>
 <li><p>Giving us an update for <span class="math inline">\(m\)</span>.</p></li>
 </ul>
 <h3 id="update-code">Update Code</h3>
@@ -524,10 +523,13 @@ m_star <span class="op">=</span> m_star <span class="op">-</span> learn_rate<spa
 <ul>
 <li>Fit model by descending gradient.</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">
-</code></pre></div>
 <h3 id="gradient-descent-algorithm">Gradient Descent Algorithm</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">num_plots <span class="op">=</span> plot.regression_contour_fit(x, y, diagrams<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>)</code></pre></div>
+<object class="svgplot" align data="../slides/diagrams/ml/regression_contour_fit028.svg">
+</object>
+<center>
+<em>Stochastic gradient descent for linear regression </em>
+</center>
 <h3 id="stochastic-gradient-descent">Stochastic Gradient Descent</h3>
 <ul>
 <li>If <span class="math inline">\(\numData\)</span> is small, gradient descent is fine.</li>
@@ -561,9 +563,10 @@ m_\text{old}\inputScalar_n - c_\text{old})\right]\]</span></p>
 </ul>
 <h3 id="stochastic-gradient-descent-2">Stochastic Gradient Descent</h3>
 <ul>
-<li>Or more accurate, since the data is normally presented in a random order we just can write</li>
+<li>Or more accurate, since the data is normally presented in a random order we just can write <span class="math display">\[
+  m_\text{new} = m_\text{old} + 2\learnRate\left[\inputScalar_i (\dataScalar_i - m_\text{old}\inputScalar_i - c_\text{old})\right]
+  \]</span></li>
 </ul>
-<p><span class="math display">\[m_\text{new} = m_\text{old} + 2\learnRate\left[\inputScalar_i (\dataScalar_i - m_\text{old}\inputScalar_i - c_\text{old})\right]\]</span></p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># choose a random point for the update </span>
 i <span class="op">=</span> np.random.randint(x.shape[<span class="dv">0</span>]<span class="op">-</span><span class="dv">1</span>)
 <span class="co"># update m</span>
@@ -573,6 +576,11 @@ c_star <span class="op">=</span> c_star <span class="op">+</span> <span class="d
 <h3 id="sgd-for-linear-regression">SGD for Linear Regression</h3>
 <p>Putting it all together in an algorithm, we can do stochastic gradient descent for our regression data.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">num_plots <span class="op">=</span> plot.regression_contour_sgd(x, y, diagrams<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>)</code></pre></div>
+<object class="svgplot" align data="../slides/diagrams/ml/regression_sgd_contour_fit058.svg">
+</object>
+<center>
+<em>Stochastic gradient descent for linear regression </em>
+</center>
 <h3 id="reflection-on-linear-regression-and-supervised-learning">Reflection on Linear Regression and Supervised Learning</h3>
 <p>Think about:</p>
 <ol style="list-style-type: decimal">

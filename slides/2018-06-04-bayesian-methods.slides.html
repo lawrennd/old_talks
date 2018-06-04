@@ -880,13 +880,12 @@ c)\]</span></p>
 <section id="update-equations-1" class="slide level3">
 <h3>Update Equations</h3>
 <ul>
-<li>The step size has already been introduced, it’s again known as the learning rate and is denoted by <span class="math inline">\(\learnRate\)</span>.</li>
-</ul>
-<p><span class="math display">\[c_\text{new}
-\leftarrow c_{\text{old}} - \learnRate \frac{\text{d}\errorFunction(m, c)}{\text{d}c}\]</span></p>
-<ul>
-<li><p>gives us an update for our estimate of <span class="math inline">\(c\)</span> (which in the code we’ve been calling <code>c_star</code> to represent a common way of writing a parameter estimate, <span class="math inline">\(c^*\)</span>) and <span class="math display">\[m_\text{new} \leftarrow m_{\text{old}} - \learnRate \frac{\text{d}\errorFunction(m,
-c)}{\text{d}m}\]</span></p></li>
+<li><p>The step size has already been introduced, it’s again known as the learning rate and is denoted by <span class="math inline">\(\learnRate\)</span>. <span class="math display">\[
+  c_\text{new}\leftarrow c_{\text{old}} - \learnRate \frac{\text{d}\errorFunction(m, c)}{\text{d}c}
+\]</span></p></li>
+<li>gives us an update for our estimate of <span class="math inline">\(c\)</span> (which in the code we’ve been calling <code>c_star</code> to represent a common way of writing a parameter estimate, <span class="math inline">\(c^*\)</span>) and <span class="math display">\[
+m_\text{new} \leftarrow m_{\text{old}} - \learnRate \frac{\text{d}\errorFunction(m, c)}{\text{d}m}
+\]</span></li>
 <li><p>Giving us an update for <span class="math inline">\(m\)</span>.</p></li>
 </ul>
 </section>
@@ -902,151 +901,16 @@ c)}{\text{d}m}\]</span></p></li>
 </section>
 <section id="gradient-descent-algorithm" class="slide level3">
 <h3>Gradient Descent Algorithm</h3>
-</section>
-<section id="section-5" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit000.svg">
-</object>
-</section>
-<section id="section-6" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit001.svg">
-</object>
-</section>
-<section id="section-7" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit002.svg">
-</object>
-</section>
-<section id="section-8" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit003.svg">
-</object>
-</section>
-<section id="section-9" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit004.svg">
-</object>
-</section>
-<section id="section-10" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit005.svg">
-</object>
-</section>
-<section id="section-11" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit006.svg">
-</object>
-</section>
-<section id="section-12" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit007.svg">
-</object>
-</section>
-<section id="section-13" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit008.svg">
-</object>
-</section>
-<section id="section-14" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit009.svg">
-</object>
-</section>
-<section id="section-15" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit010.svg">
-</object>
-</section>
-<section id="section-16" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit011.svg">
-</object>
-</section>
-<section id="section-17" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit012.svg">
-</object>
-</section>
-<section id="section-18" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit013.svg">
-</object>
-</section>
-<section id="section-19" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit014.svg">
-</object>
-</section>
-<section id="section-20" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit015.svg">
-</object>
-</section>
-<section id="section-21" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit016.svg">
-</object>
-</section>
-<section id="section-22" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit017.svg">
-</object>
-</section>
-<section id="section-23" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit018.svg">
-</object>
-</section>
-<section id="section-24" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit019.svg">
-</object>
-</section>
-<section id="section-25" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit020.svg">
-</object>
-</section>
-<section id="section-26" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit021.svg">
-</object>
-</section>
-<section id="section-27" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit022.svg">
-</object>
-</section>
-<section id="section-28" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit023.svg">
-</object>
-</section>
-<section id="section-29" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit024.svg">
-</object>
-</section>
-<section id="section-30" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit025.svg">
-</object>
-</section>
-<section id="section-31" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit026.svg">
-</object>
-</section>
-<section id="section-32" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit027.svg">
-</object>
-</section>
-<section id="section-33" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit028.svg">
-</object>
+<script>
+showDivs(1, 'regression_contour_fit');
+</script>
+<button onclick="plusDivs(-1, 'regression_contour_fit')">
+❮
+</button>
+<button onclick="plusDivs(1, 'regression_contour_fit')">
+❯
+</button>
+<p><input id="range-regression_contour_fit" type="range" min="1" max="28" value="1" onchange="setDivs('regression_contour_fit')" oninput="setDivs('regression_contour_fit')"> <object class="svgplot regression_contour_fit" align="" data="../slides/diagrams/ml/regression_contour_fit000.svg"></object> <object class="svgplot regression_contour_fit" align="" data="../slides/diagrams/ml/regression_contour_fit001.svg"></object> <object class="svgplot regression_contour_fit" align="" data="../slides/diagrams/ml/regression_contour_fit002.svg"></object> <object class="svgplot regression_contour_fit" align="" data="../slides/diagrams/ml/regression_contour_fit003.svg"></object> <object class="svgplot regression_contour_fit" align="" data="../slides/diagrams/ml/regression_contour_fit004.svg"></object> <object class="svgplot regression_contour_fit" align="" data="../slides/diagrams/ml/regression_contour_fit005.svg"></object> <object class="svgplot regression_contour_fit" align="" data="../slides/diagrams/ml/regression_contour_fit006.svg"></object> <object class="svgplot regression_contour_fit" align="" data="../slides/diagrams/ml/regression_contour_fit007.svg"></object> <object class="svgplot regression_contour_fit" align="" data="../slides/diagrams/ml/regression_contour_fit008.svg"></object> <object class="svgplot regression_contour_fit" align="" data="../slides/diagrams/ml/regression_contour_fit009.svg"></object> <object class="svgplot regression_contour_fit" align="" data="../slides/diagrams/ml/regression_contour_fit010.svg"></object> <object class="svgplot regression_contour_fit" align="" data="../slides/diagrams/ml/regression_contour_fit011.svg"></object> <object class="svgplot regression_contour_fit" align="" data="../slides/diagrams/ml/regression_contour_fit012.svg"></object> <object class="svgplot regression_contour_fit" align="" data="../slides/diagrams/ml/regression_contour_fit013.svg"></object> <object class="svgplot regression_contour_fit" align="" data="../slides/diagrams/ml/regression_contour_fit014.svg"></object> <object class="svgplot regression_contour_fit" align="" data="../slides/diagrams/ml/regression_contour_fit015.svg"></object> <object class="svgplot regression_contour_fit" align="" data="../slides/diagrams/ml/regression_contour_fit016.svg"></object> <object class="svgplot regression_contour_fit" align="" data="../slides/diagrams/ml/regression_contour_fit017.svg"></object> <object class="svgplot regression_contour_fit" align="" data="../slides/diagrams/ml/regression_contour_fit018.svg"></object> <object class="svgplot regression_contour_fit" align="" data="../slides/diagrams/ml/regression_contour_fit019.svg"></object> <object class="svgplot regression_contour_fit" align="" data="../slides/diagrams/ml/regression_contour_fit020.svg"></object> <object class="svgplot regression_contour_fit" align="" data="../slides/diagrams/ml/regression_contour_fit021.svg"></object> <object class="svgplot regression_contour_fit" align="" data="../slides/diagrams/ml/regression_contour_fit022.svg"></object> <object class="svgplot regression_contour_fit" align="" data="../slides/diagrams/ml/regression_contour_fit023.svg"></object> <object class="svgplot regression_contour_fit" align="" data="../slides/diagrams/ml/regression_contour_fit024.svg"></object> <object class="svgplot regression_contour_fit" align="" data="../slides/diagrams/ml/regression_contour_fit025.svg"></object> <object class="svgplot regression_contour_fit" align="" data="../slides/diagrams/ml/regression_contour_fit026.svg"></object> <object class="svgplot regression_contour_fit" align="" data="../slides/diagrams/ml/regression_contour_fit027.svg"></object> <object class="svgplot regression_contour_fit" align="" data="../slides/diagrams/ml/regression_contour_fit028.svg"></object></p>
 </section>
 <section id="stochastic-gradient-descent" class="slide level3">
 <h3>Stochastic Gradient Descent</h3>
@@ -1088,263 +952,24 @@ m_\text{old}\inputScalar_n - c_\text{old})\right]\]</span></p>
 <section id="stochastic-gradient-descent-2" class="slide level3">
 <h3>Stochastic Gradient Descent</h3>
 <ul>
-<li>Or more accurate, since the data is normally presented in a random order we just can write</li>
+<li>Or more accurate, since the data is normally presented in a random order we just can write <span class="math display">\[
+  m_\text{new} = m_\text{old} + 2\learnRate\left[\inputScalar_i (\dataScalar_i - m_\text{old}\inputScalar_i - c_\text{old})\right]
+  \]</span></li>
 </ul>
-<p><span class="math display">\[m_\text{new} = m_\text{old} + 2\learnRate\left[\inputScalar_i (\dataScalar_i - m_\text{old}\inputScalar_i - c_\text{old})\right]\]</span></p>
 </section>
 <section id="sgd-for-linear-regression" class="slide level3">
 <h3>SGD for Linear Regression</h3>
 <p>Putting it all together in an algorithm, we can do stochastic gradient descent for our regression data.</p>
-</section>
-<section id="section-34" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit000.svg">
-</object>
-</section>
-<section id="section-35" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit001.svg">
-</object>
-</section>
-<section id="section-36" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit002.svg">
-</object>
-</section>
-<section id="section-37" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit003.svg">
-</object>
-</section>
-<section id="section-38" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit004.svg">
-</object>
-</section>
-<section id="section-39" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit005.svg">
-</object>
-</section>
-<section id="section-40" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit006.svg">
-</object>
-</section>
-<section id="section-41" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit007.svg">
-</object>
-</section>
-<section id="section-42" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit008.svg">
-</object>
-</section>
-<section id="section-43" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit009.svg">
-</object>
-</section>
-<section id="section-44" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit010.svg">
-</object>
-</section>
-<section id="section-45" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit011.svg">
-</object>
-</section>
-<section id="section-46" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit012.svg">
-</object>
-</section>
-<section id="section-47" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit013.svg">
-</object>
-</section>
-<section id="section-48" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit014.svg">
-</object>
-</section>
-<section id="section-49" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit015.svg">
-</object>
-</section>
-<section id="section-50" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit016.svg">
-</object>
-</section>
-<section id="section-51" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit017.svg">
-</object>
-</section>
-<section id="section-52" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit018.svg">
-</object>
-</section>
-<section id="section-53" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit019.svg">
-</object>
-</section>
-<section id="section-54" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit020.svg">
-</object>
-</section>
-<section id="section-55" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit021.svg">
-</object>
-</section>
-<section id="section-56" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit022.svg">
-</object>
-</section>
-<section id="section-57" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit023.svg">
-</object>
-</section>
-<section id="section-58" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit024.svg">
-</object>
-</section>
-<section id="section-59" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit025.svg">
-</object>
-</section>
-<section id="section-60" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit026.svg">
-</object>
-</section>
-<section id="section-61" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit027.svg">
-</object>
-</section>
-<section id="section-62" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit028.svg">
-</object>
-</section>
-<section id="section-63" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit029.svg">
-</object>
-</section>
-<section id="section-64" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit030.svg">
-</object>
-</section>
-<section id="section-65" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit040.svg">
-</object>
-</section>
-<section id="section-66" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit041.svg">
-</object>
-</section>
-<section id="section-67" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit042.svg">
-</object>
-</section>
-<section id="section-68" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit043.svg">
-</object>
-</section>
-<section id="section-69" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit044.svg">
-</object>
-</section>
-<section id="section-70" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit045.svg">
-</object>
-</section>
-<section id="section-71" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit046.svg">
-</object>
-</section>
-<section id="section-72" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit047.svg">
-</object>
-</section>
-<section id="section-73" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit048.svg">
-</object>
-</section>
-<section id="section-74" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit049.svg">
-</object>
-</section>
-<section id="section-75" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit050.svg">
-</object>
-</section>
-<section id="section-76" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit051.svg">
-</object>
-</section>
-<section id="section-77" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit052.svg">
-</object>
-</section>
-<section id="section-78" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit053.svg">
-</object>
-</section>
-<section id="section-79" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit054.svg">
-</object>
-</section>
-<section id="section-80" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit055.svg">
-</object>
-</section>
-<section id="section-81" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit056.svg">
-</object>
-</section>
-<section id="section-82" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit057.svg">
-</object>
-</section>
-<section id="section-83" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit058.svg">
-</object>
+<script>
+showDivs(0, 'regression_sgd_contour_fit');
+</script>
+<button onclick="plusDivs(-1, 'regression_sgd_contour_fit')">
+❮
+</button>
+<button onclick="plusDivs(1, 'regression_sgd_contour_fit')">
+❯
+</button>
+<p><input id="range-regression_sgd_contour_fit" type="range" min="0" max="58" value="0" onchange="setDivs('regression_sgd_contour_fit')" oninput="setDivs('regression_sgd_contour_fit')"> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit000.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit001.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit002.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit003.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit004.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit005.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit006.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit007.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit008.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit009.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit010.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit011.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit012.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit013.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit014.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit015.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit016.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit017.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit018.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit019.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit020.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit021.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit022.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit023.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit024.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit025.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit026.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit027.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit028.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit029.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit030.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit031.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit032.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit033.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit034.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit035.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit036.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit037.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit038.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit039.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit040.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit041.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit042.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit043.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit044.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit045.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit046.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit047.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit048.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit049.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit050.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit051.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit052.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit053.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit054.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit055.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit056.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit057.svg"></object> <object class="svgplot regression_sgd_contour_fit" align="" data="../slides/diagrams/ml/regression_sgd_contour_fit058.svg"></object></p>
 </section>
 <section id="reflection-on-linear-regression-and-supervised-learning" class="slide level3">
 <h3>Reflection on Linear Regression and Supervised Learning</h3>
@@ -1605,12 +1230,12 @@ showDivs(1, 'dem_gaussian');
 <h3>Main Trick</h3>
 <p><span class="math display">\[p(c) = \frac{1}{\sqrt{2\pi\alpha_1}} \exp\left(-\frac{1}{2\alpha_1}c^2\right)\]</span> <span class="math display">\[p(\dataVector|\inputVector, c, m, \dataStd^2) = \frac{1}{\left(2\pi\dataStd^2\right)^{\frac{\numData}{2}}} \exp\left(-\frac{1}{2\dataStd^2}\sum_{i=1}^\numData(\dataScalar_i - m\inputScalar_i - c)^2\right)\]</span></p>
 </section>
-<section id="section-84" class="slide level3">
+<section id="section-5" class="slide level3">
 <h3></h3>
 <p><span class="math display">\[p(c| \dataVector, \inputVector, m, \dataStd^2) = \frac{p(\dataVector|\inputVector, c, m, \dataStd^2)p(c)}{p(\dataVector|\inputVector, m, \dataStd^2)}\]</span></p>
 <p><span class="math display">\[p(c| \dataVector, \inputVector, m, \dataStd^2) =  \frac{p(\dataVector|\inputVector, c, m, \dataStd^2)p(c)}{\int p(\dataVector|\inputVector, c, m, \dataStd^2)p(c) \text{d} c}\]</span></p>
 </section>
-<section id="section-85" class="slide level3">
+<section id="section-6" class="slide level3">
 <h3></h3>
 <p><span class="math display">\[p(c| \dataVector, \inputVector, m, \dataStd^2) \propto  p(\dataVector|\inputVector, c, m, \dataStd^2)p(c)\]</span></p>
 <p><span class="math display">\[\begin{aligned}
@@ -1619,7 +1244,7 @@ showDivs(1, 'dem_gaussian');
     &amp; + c\frac{\sum_{i=1}^\numData(\dataScalar_i-m\inputScalar_i)}{\dataStd^2},
   \end{aligned}\]</span></p>
 </section>
-<section id="section-86" class="slide level3">
+<section id="section-7" class="slide level3">
 <h3></h3>
 <p>complete the square of the quadratic form to obtain <span class="math display">\[\log p(c | \dataVector, \inputVector, m, \dataStd^2) = -\frac{1}{2\tau^2}(c - \mu)^2 +\text{const},\]</span> where <span class="math inline">\(\tau^2 = \left(\numData\dataStd^{-2} +\alpha_1^{-1}\right)^{-1}\)</span> and <span class="math inline">\(\mu = \frac{\tau^2}{\dataStd^2} \sum_{i=1}^\numData(\dataScalar_i-m\inputScalar_i)\)</span>.</p>
 </section>
