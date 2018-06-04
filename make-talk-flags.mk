@@ -6,5 +6,6 @@ HEADER=../svg-mathjax.html
 PP=gpp
 PPFLAGS=-T 
 PPFLAGS=-I./..
-PDFLAGS=-s -S --filter pandoc-citeproc --csl=../elsevier-harvard.csl --mathjax=${MATHJAX} 
+PDFLAGS=--filter pandoc-citeproc --csl=../elsevier-harvard.csl --mathjax=${MATHJAX} 
+PDSFLAGS=-s -S ${PDFLAGS}
 SFLAGS=--slide-level 3 

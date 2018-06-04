@@ -15,7 +15,7 @@ extras:
   label: Data Trusts Op-Ed
 - link: https://arxiv.org/abs/1705.07996
   label: "Arxiv Paper: 'Living Together: Mind and Machine Intelligence'"
-blog: 2015-12-04-what-kind-of-ai.md
+blog1: 2015-12-04-what-kind-of-ai.md
 layout: talk
 author:
 - family: Lawrence
@@ -24,5 +24,4 @@ author:
   institute: Amazon Research Cambridge and University of Sheffield
   twitter: lawrennd
   url: http://inverseprobability.com
-published: 2017-10-26
 ---

@@ -20,7 +20,10 @@ fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 ax.plot(x, y, 'rx')}
 
 
-\displaycode{pods.notebook.display_prediction(basis=dict(radial=radial, polynomial=polynomial, fourier=fourier, relu=relu), 
+\displaycode{pods.notebook.display_prediction(basis=dict(radial=mlai.radial, 
+	                                        polynomial=mlai.polynomial, 
+											fourier=mlai.fourier, 
+											relu=mlai.relu), 
                                  data_limits=(1888, 2020),
                                  fig=fig, ax=ax,
                                  offset=0.,
@@ -32,7 +35,7 @@ fit you can to the data. Explore the parameter space and give the weight values
 you used for the 
 
 (a) polynomial basis
-(b) RBF basis
+(b) Radial basis
 (c) Fourier basis
 
 Write your answers in the code box below creating a new vector of parameters (in the correct order!) for each basis.}{3}{15}
@@ -49,7 +52,7 @@ Write your answers in the code box below creating a new vector of parameters (in
 ##############################
 # w_polynomial = np.asarray([[w_0], [w_1], [w_2], [w_3]]) 
 
-# (b) rbf
+# (b) radial
 ###### Edit these lines #####
 # w_0 =
 # w_1 = 

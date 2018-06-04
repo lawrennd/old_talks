@@ -610,7 +610,7 @@ def marathon_fit(model, value, param_name, param_range,
         gp_tutorial.meanplot(x_pred, y_pred, ax=ax[0])
     else:
         y_err = np.sqrt(y_var)*2
-        gp_tutorial.gpplot(x_pred, y_pred - y_err, y_pred + y_err, ax=ax[0])
+        gp_tutorial.gpplot(x_pred, y_pred, y_pred - y_err, y_pred + y_err, ax=ax[0])
         
     #ax[0].set_xlabel('year', fontsize=fontsize)
     ax[0].set_ylim(ylim)
@@ -658,8 +658,9 @@ def rmse_fit(x, y, param_name, param_range,
     count = 0
     obj = {}
     for param in params:
-        kwargs[param_name] = param        
         m = model(x, y, **kwargs)
+        m.set_param(param_name, param)
+        m.fit()
         # compute appropriate objective. 
         #for name, plot_objective in plot_objectives.items():
         obj=m.rmse()#[name][count] = plot_objective(m)
@@ -677,7 +678,6 @@ def holdout_fit(x, y, param_name, param_range, model=mlai.LM, val_start=20,
     "Fit a model and show holdout error."
 
     f, ax = plt.subplots(1, 2, figsize=two_figsize)
-
     num_data = x.shape[0]
 
     if permute:
@@ -699,8 +699,8 @@ def holdout_fit(x, y, param_name, param_range, model=mlai.LM, val_start=20,
     ss_val = np.array([np.nan]*len(params))
     count = 0
     for param in params:    
-        kwargs[param_name] = param
         m = model(x_tr, y_tr, **kwargs)
+        m.set_param(param_name, param)
         m.fit()
         f_val, _ = m.predict(x_val)
         ss[count] = m.objective()
@@ -735,7 +735,6 @@ def loo_fit(x, y, param_name, param_range, model=mlai.LM, objective_ylim=None,
         ss_val = np.array([np.nan]*len(params))
         count = 0
         for param in params:
-            kwargs[param_name] = param
             ss_temp = 0.
             ll_temp = 0.
             ss_val_temp = 0.
@@ -746,6 +745,7 @@ def loo_fit(x, y, param_name, param_range, model=mlai.LM, objective_ylim=None,
                 y_val = y[val_ind, :]
                 num_val_data = x_val.shape[0]
                 m = model(x_tr, y_tr, **kwargs)
+                m.set_param(param_name, param)
                 m.fit()
                 ss_temp = m.objective()
                 ll_temp = m.log_likelihood()
@@ -783,40 +783,33 @@ def cv_fit(x, y, param_name, param_range, model=mlai.LM, objective_ylim=None,
         start = end
 
     params = range(*param_range)
-    ll = np.array([np.nan]*len(params))
-    ss = np.array([np.nan]*len(params))
-    ss_val = np.array([np.nan]*len(params))
-    count = 0
     for param in params:
         ss_val_temp = 0.
         ll_temp = 0.
         ss_temp = 0.
-        kwargs[param_name] = param
         for part, (train_ind, val_ind) in enumerate(partitions):
             x_tr = x[train_ind, :]
             x_val = x[val_ind, :]
             y_tr = y[train_ind, :]
             y_val = y[val_ind, :]
             num_val_data = x_val.shape[0]
-
             m = model(x_tr, y_tr, **kwargs)
+            m.set_param(param_name, param)
             m.fit()
             ss_temp += m.objective()
             ll_temp += m.log_likelihood()
             f_val, _ = m.predict(x_val)
             ss_val_temp += ((y_val-f_val)**2).mean() 
             plot_fit(model=m, value=param, xlim=xlim, param_name=param_name, param_range=param_range,
-                     objective=np.sqrt(ss_val[count]), objective_ylim=objective_ylim,
+                     objective=np.nan, objective_ylim=objective_ylim,
                      fig=f, ax=ax, prefix='olympic_{num_parts}cv{part:0>2}'.format(num_parts=num_parts, part=part),
                      title='{num_parts}-fold Cross Validation'.format(num_parts=num_parts),
                      x_val=x_val, y_val=y_val, diagrams=diagrams)
-        ss_val[count] = ss_val_temp/(num_parts)
-        ss[count] = ss_temp/(num_parts)
-        ll[count] = ll_temp/(num_parts)
-        count+=1
-        ax[1].cla()
+        ss_val = ss_val_temp/(num_parts)
+        ss = ss_temp/(num_parts)
+        ll = ll_temp/(num_parts)
         plot_fit(model=m, value=param, xlim=xlim, param_name=param_name, param_range=param_range,
-                 objective=np.sqrt(ss_val[count]), objective_ylim=objective_ylim,
+                 objective=np.sqrt(ss_val), objective_ylim=objective_ylim,
                  fig=f, ax=ax,
                  prefix='olympic_{num_parts}cv{num_partitions:0>2}'.format(num_parts=num_parts, num_partitions=num_parts),
                  title='{num_parts}-fold Cross Validation'.format(num_parts=num_parts),
@@ -1125,7 +1118,7 @@ def basis(function, x_min, x_max, fig, ax, loc, text, diagrams='./diagrams', fon
 
     basis = mlai.basis(function, num_basis)
     Phi = basis.Phi(x)
-    diag=(Phi*Phi).sum(1)
+    diag=1/basis.number*(Phi*Phi).sum(1)
 
     colors = []
     colors.append([1, 0, 0])
@@ -1137,9 +1130,10 @@ def basis(function, x_min, x_max, fig, ax, loc, text, diagrams='./diagrams', fon
 
     # Set ylim according to max standard deviation of basis
     ylim = 2*np.asarray([-1, 1])*np.sqrt(diag.max())    
+    plt.sca(ax)
+    ax.set_xlim((x_min, x_max))    
     ax.set_ylim(ylim)
 
-    plt.sca(ax)
     ax.set_xlabel('$x$', fontsize=fontsize)
     ax.set_ylabel('$\phi(x)$', fontsize=fontsize)
     for i in range(basis.number):
@@ -1148,18 +1142,21 @@ def basis(function, x_min, x_max, fig, ax, loc, text, diagrams='./diagrams', fon
         mlai.write_figure(os.path.join(diagrams, basis.function.__name__ + '_basis{num:0>3}.svg'.format(num=i)), transparent=True)
 
     # Set ylim according to max standard deviation of basis
-    ylim = 3*np.asarray([-1, 1])*np.sqrt(diag.max())
-
-    f = np.dot(Phi, np.zeros((basis.number, 1)))
-    ax.cla()
-    a, = ax.plot(x, f, color=[0, 0, 0], linewidth=3)
-    
-    for i in range(basis.number):
-        ax.plot(x, Phi[:, i], colors[i], linewidth=1) 
-    ax.set_ylim(ylim)
     plt.sca(ax)
+    ax.cla()
+    ylim = 3*np.asarray([-1, 1])*np.sqrt(diag.max())
     ax.set_xlabel('$x$', fontsize=fontsize) 
     ax.set_ylabel('$f(x)$', fontsize=fontsize)
+
+    ax.set_xlim((x_min, x_max))
+    ax.set_ylim(ylim)
+
+    f = np.dot(Phi, np.zeros((basis.number, 1)))
+    a, = ax.plot(x, f, color=[0, 0, 0], linewidth=3)
+
+    for i in range(basis.number):
+        ax.plot(x.flatten(), Phi[:, i], color=colors[i], linewidth=1) 
+
     t = []
     for i in range(basis.number):
         t.append(ax.text(loc[i][0], loc[i][1], '$w_' + str(i) + ' = 0$',
@@ -1168,13 +1165,13 @@ def basis(function, x_min, x_max, fig, ax, loc, text, diagrams='./diagrams', fon
 
     for j in range(num_plots):
         # Sample a function
-        w = np.random.normal(size=(basis.number, 1))    
+        w = np.random.normal(size=(basis.number, 1))/basis.number
         f = np.dot(Phi,w)
         a.set_ydata(f)
         for i in range(basis.number):
             t[i].set_text('$w_{ind} = {w:3.3}$'.format(ind=i, w=w[i,0]))
 
-        mlai.write_figure(os.path.join(diagrams, basis.__name__ + '_function{plot_num:0>3}.svg'.format(plot_num=j)), transparent=True)
+        mlai.write_figure(os.path.join(diagrams, basis.function.__name__ + '_function{plot_num:0>3}.svg'.format(plot_num=j)), transparent=True)
 
 
 def kern_circular_sample(K, mu=None, x=None,

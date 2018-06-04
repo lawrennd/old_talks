@@ -4,11 +4,14 @@
 \notes{[Joseph Fourier](https://en.wikipedia.org/wiki/Joseph_Fourier) suggested that functions could be converted to a sum of sines and cosines. A Fourier basis is a linear weighted sum of these functions.}
   $$\basisFunc_j(\inputScalar) = = \mappingScalar_0  + \mappingScalar_1 \sin(\inputScalar) + \mappingScalar_2 \cos(\inputScalar) + \mappingScalar_3 \sin(2\inputScalar) + \mappingScalar_4 \cos(2\inputScalar)$$
 
+
+\setupcode{import numpy as np}
+\code{%load -s fourier mlai.py}
+
+
 \setupcode{import matplotlib.pyplot as plt
 import mlai
 import teaching_plots as plot}
-
-\code{%load -s fourier mlai.py}
 
 \plotcode{f, ax = plt.subplots(figsize=plot.big_wide_figsize)
 loc =[[0., 0.4,],

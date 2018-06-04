@@ -1,12 +1,5 @@
 \slidenotes{
-### Linear Gaussian Models {data-transition="None"}
-}{Gaussian processes are initially of interest because}
-
-1. linear Gaussian models are easier to deal with 
-2. Even the parameters *within* the process can be handled, by considering a particular limit.
-
-\slidenotes{
-### Multivariate Gaussian Properties {data-transition="None"}
+### Multivariate Gaussian Properties
 
 * If}{
 Let's first of all review the properties of the multivariate Gaussian distribution that make linear Gaussian models easier to deal with. We'll return to the, perhaps surprising, result on the parameters within the nonlinearity, $\parameterVector$, shortly.
@@ -29,7 +22,7 @@ $$
 \slidenotes{If $\covarianceMatrixTwo=\dataStd^2\eye$, this is Probabilistic Principal Component Analysis [@Tipping:probpca99], because we integrated out the inputs (or *latent* variables they would be called in that case).}{With apprioriately defined covariance, $\covarianceTwoMatrix$, this is actually the marginal likelihood for Factor Analysis, or Probabilistic Principal Component Analysis [@Tipping:probpca99], because we integrated out the inputs (or *latent* variables they would be called in that case).}
 
 \slidenotes{
-### Non linear on Inputs {data-transition="None"}
+### Non linear on Inputs
 
 * Set each activation function computed at each data point to be
 }{However, we are focussing on what happens in models which are non-linear in the inputs, whereas the above would be *linear* in the inputs. To consider these, we introduce a matrix, called the design matrix. We set each activation function computed at each data point to be}
@@ -49,7 +42,7 @@ $$
 \slidenotes{}{By convention this matrix always has $\numData$ rows and $\numHidden$ columns, now if we define the vector of all noise corruptions, $\noiseVector = \left[\noiseScalar_1, \dots \noiseScalar_\numData\right]^\top$.}
 
 
-### Matrix Representation of a Neural Network {data-transition="None"}
+### Matrix Representation of a Neural Network
 
 $$\dataScalar\left(\inputVector\right) = \activationVector\left(\inputVector\right)^\top \mappingVector + \noiseScalar$$
 
@@ -62,7 +55,7 @@ $$\dataVector = \activationMatrix\mappingVector + \noiseVector$$
 $$\noiseVector \sim \gaussianSamp{\zerosVector}{\dataStd^2\eye}$$
 
 \slidenotes{
-### Prior Density {data-transition="None"}
+### Prior Density
 
 * Define}
 {
@@ -84,7 +77,7 @@ $$
 $$}
 
 \slidenotes{
-### Joint Gaussian Density {data-transition="None"}
+### Joint Gaussian Density
 
 * Elements are a function $\kernel_{i,j} = \kernel\left(\inputVector_i, \inputVector_j\right)$
 }{In other words, our training data is distributed as a multivariate Gaussian, with zero mean and a covariance given by}
@@ -95,7 +88,7 @@ $$
 This is an $\numData \times \numData$ size matrix. Its elements are in the form of a function. The maths shows that any element, index by $i$ and $j$, is a function *only* of inputs associated with data points $i$ and $j$, $\dataVector_i$, $\dataVector_j$. $\kernel_{i,j} = \kernel\left(\inputVector_i, \inputVector_j\right)$}
 
 \slidenotes{
-### Covariance Function {data-transition="None"}
+### Covariance Function
 }{
 If we look at the portion of this function associated only with $\mappingFunction(\cdot)$, i.e. we remove the noise, then we can write down the covariance associated with our neural network,}
 $$
@@ -107,7 +100,7 @@ $$
 
 
 \slidenotes{
-### Gaussian Process {data-transition="None"}
+### Gaussian Process
 
 * Instead of making assumptions about our density over each data point, $\dataScalar_i$ as i.i.d.
 
@@ -121,7 +114,7 @@ This is the essence of a Gaussian process. Instead of making assumptions about o
 }
 
 \slidenotes{
-### Basis Functions {data-transition="None"}
+### Basis Functions
 
 * Can be very complex, such as deep kernels, [@Cho:deep09] or could even put a convolutional neural network inside.
 

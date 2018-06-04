@@ -1,19 +1,4 @@
-\include{../../_ml/includes/bayesian-regression1d-short.md}
-
-### Stages to Derivation of the Posterior
-
--   Multiply likelihood by prior
-
-    -   they are “exponentiated quadratics”, the answer is always also
-        an exponentiated quadratic because
-        $\exp(a^2)\exp(b^2) = \exp(a^2 + b^2)$.
-
--   Complete the square to get the resulting density in the form of a
-    Gaussian.
-
--   Recognise the mean and (co)variance of the Gaussian. This is the
-    estimate of the posterior.
-
+\include{_ml/includes/bayesian-regression1d-short.md}
 
 ### Main Trick
 

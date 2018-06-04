@@ -131,8 +131,16 @@ $\weightVector$.
 
 ### Multivariate Gaussian Properties
 
-<!-- Also a version of this under _ml/-->
-\include{_gp/includes/multivariate-gaussian-properties.md}
+\include{_ml/includes/multivariate-gaussian-properties-summary.md}
+
+\slidenotes{
+### Linear Gaussian Models
+}{Gaussian processes are initially of interest because}
+
+1. linear Gaussian models are easier to deal with 
+2. Even the parameters *within* the process can be handled, by considering a particular limit.
+
+\include{_ml/includes/multivariate-gaussian-properties.md}
 
 ### Distributions over Functions
 

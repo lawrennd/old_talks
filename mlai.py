@@ -129,6 +129,24 @@ class LM(ProbMapModel):
         self.name = 'LM_'+self.basis.function.__name__
         self.objective_name = 'Sum of Square Training Error'
 
+    def set_param(self, name, val, update_fit=True):
+        """Set a parameter to a given value"""
+        if name in self.__dict__:
+            if self.__dict__[name] == val:
+                update_fit=False
+            else:
+                self.__dict__[name] = val
+        elif name in self.basis.__dict__:
+            if self.basis.__dict__[name] == val:
+                update_fit=False
+            else:
+                self.basis.__dict__[name] = val
+                self.Phi = self.basis.Phi(self.X)            
+        else:
+            raise ValueError("Unknown parameter being set.")
+        if update_fit:
+            self.fit()
+
     def update_QR(self):
         "Perform the QR decomposition on the basis matrix."
         self.Q, self.R = np.linalg.qr(self.Phi)
@@ -230,9 +248,11 @@ def fourier(x, num_basis=4, data_limits=[-1., 1.], frequency_range=None):
 def relu(x, num_basis=4, data_limits=[-1., 1.], gain=None):
     """Rectified linear units basis"""
     if num_basis>2:
-        centres=np.linspace(data_limits[0], data_limits[1], num_basis)
-    else:
+        centres=np.linspace(data_limits[0], data_limits[1], num_basis-1)
+    elif num_basis==2:
         centres = np.asarray([data_limits[0]/2. + data_limits[1]/2.])
+    else:
+        centres = []
     if gain is None:
         gain = np.ones(num_basis-1)
     Phi = np.zeros((x.shape[0], num_basis))
@@ -245,12 +265,15 @@ def relu(x, num_basis=4, data_limits=[-1., 1.], gain=None):
 def tanh(x, num_basis=4, data_limits=[-1., 1.], gain=None):
     """Hyperbolic tangents"""
     if num_basis>2:
-        centres=np.linspace(data_limits[0], data_limits[1], num_basis)
+        centres=np.linspace(data_limits[0], data_limits[1], num_basis-1)
         width = (centres[1]-centres[0])/2.
-    else:
+    elif num_basis==2:
         centres = np.asarray([data_limits[0]/2. + data_limits[1]/2.])
         width = (data_limits[1]-data_limits[0])/2.
-    if gain is None:
+    else:
+        centres = []
+        width = None
+    if gain is None and width is not None:
         gain = np.ones(num_basis-1)/width
     Phi = np.zeros((x.shape[0], num_basis))
     # Create the bias
@@ -389,7 +412,7 @@ class NonparametricDropoutNeuralNetwork(SimpleDropoutNeuralNetwork):
         
 
     
-class BLM(ProbMapModel):
+class BLM(LM):
     """Bayesian Linear model
     :param X: input values
     :type X: numpy.ndarray
@@ -411,6 +434,24 @@ class BLM(ProbMapModel):
         self.Phi = self.basis.Phi(X)
         self.name = 'BLM_'+self.basis.function.__name__
         self.objective_name = 'Negative Marginal Likelihood'
+
+    def set_param(self, name, val, update_fit=True):
+        """Set a parameter to a given value"""
+        if name in self.__dict__:
+            if self.__dict__[name] == val:
+                update_fit=False
+            else:
+                self.__dict__[name] = val
+        elif name in self.basis.__dict__:
+            if self.basis.__dict__[name] == val:
+                update_fit=False
+            else:
+                self.basis.__dict__[name] = val
+                self.Phi = self.basis.Phi(self.X)            
+        else:
+            raise ValueError("Unknown parameter being set.")
+        if update_fit:
+            self.fit()
         
     def update_QR(self):
         "Perform the QR decomposition on the basis matrix."
@@ -462,7 +503,7 @@ class BLM(ProbMapModel):
     
     def log_likelihood(self):
         """Compute the log likelihood."""
-        self.update_ll()
+        self.update_nll()
         return -self.log_det - self.quadratic
 
 ##########          Week 8            ##########
