@@ -7,7 +7,10 @@ from mpl_toolkits.mplot3d import Axes3D
 
 import GPy
 
-import daft
+try:
+    import daft
+except ImportError:
+    pass
 
 import mlai
 import gp_tutorial
