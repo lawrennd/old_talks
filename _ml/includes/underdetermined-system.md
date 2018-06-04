@@ -44,9 +44,8 @@ from ipywidgets import IntSlider}
 \includesvg{../slides/diagrams/ml/under_determined_system007.svg}{}{under_determined_system}
 \includesvg{../slides/diagrams/ml/under_determined_system008.svg}{}{under_determined_system}
 \includesvg{../slides/diagrams/ml/under_determined_system009.svg}{}{under_determined_system}
-\includesvg{../slides/diagrams/ml/under_determined_system010.svg}{}{under_determined_system}
 }
 
-\notesfigure{\includesvg{../slides/diagrams/ml/under_determined_system010.svg}}
+\notesfigure{\includesvg{../slides/diagrams/ml/under_determined_system009.svg}}
 \notes{\caption{Fit underdetermined system by considering uncertainty}}
 
