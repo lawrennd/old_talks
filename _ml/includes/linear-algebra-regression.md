@@ -457,6 +457,9 @@ Why do we need so many iterations to get to the solution?}{3}{25}
   $$\mappingFunction(\inputVector_i) = \mappingVector^\top \inputVector_i$$
 }
 
+\include{_ml/includes/linear-regression-iterative.md}
+
+
 \slides{
 ### Log Likelihood for Multivariate Regression
 
@@ -622,8 +625,7 @@ $$
 $$
 where $\mathbf{c}$ might be a $k$ dimensional vector (which we can intepret as a $k\times 1$ dimensional matrix), and $\mathbf{B}$ is a $k\times k$ dimensional matrix and $\mathbf{a}$ is a $k$ dimensional vector ($k\times 1$ dimensional matrix).}
 
-\notes{The result of this
-multiplication is of the form
+\notes{The result of this multiplication is of the form
 $$
 \begin{bmatrix}c_1\\c_2 \\ \vdots \\
 a_k\end{bmatrix} = 
@@ -927,6 +929,7 @@ Q, R = np.linalg.qr(X)
 w = sp.linalg.solve_triangular(R, np.dot(Q.T, y)) 
 w = pd.DataFrame(w, index=X.columns)
 w}
+
 
 ### Reading
 

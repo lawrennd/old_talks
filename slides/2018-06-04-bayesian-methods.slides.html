@@ -776,6 +776,584 @@ _{i=1}^{\numData}\left(\dataScalar_i-m^{*}\inputScalar_i-c^{*}\right)^{2}}{\numD
 <li>Can absorb <span class="math inline">\(c\)</span> into <span class="math inline">\(\mappingVector\)</span> by assuming extra input <span class="math inline">\(\inputScalar_0\)</span> which is always 1. <span class="math display">\[\mappingFunction(\inputVector_i) = \mappingVector^\top \inputVector_i\]</span></li>
 </ul>
 </section>
+<section id="objective-functions-and-regression" class="slide level3">
+<h3>Objective Functions and Regression</h3>
+<ul>
+<li>Classification: map feature to class label.</li>
+<li><p>Regression: map feature to real value our <em>prediction function</em> is</p>
+<p><span class="math display">\[\mappingFunction(\inputScalar_i) = m\inputScalar_i + c\]</span></p></li>
+<li><p>Need an <em>algorithm</em> to fit it.</p></li>
+<li><p>Least squares: minimize an error.</p></li>
+</ul>
+<p><span class="math display">\[\errorFunction(m, c) = \sum_{i=1}^\numData (\dataScalar_i * \mappingFunction(\inputScalar_i))^2\]</span></p>
+</section>
+<section id="regression" class="slide level3">
+<h3>Regression</h3>
+<ul>
+<li>Create an artifical data set.</li>
+</ul>
+<p>We now need to decide on a <em>true</em> value for <span class="math inline">\(m\)</span> and a <em>true</em> value for <span class="math inline">\(c\)</span> to use for generating the data.</p>
+<p>We can use these values to create our artificial data. The formula <span class="math display">\[\dataScalar_i = m\inputScalar_i + c\]</span> is translated to code as follows:</p>
+</section>
+<section id="plot-of-data" class="slide level3">
+<h3>Plot of Data</h3>
+<p>We can now plot the artifical data we’ve created.</p>
+<object class="svgplot " align data="../slides/diagrams/ml/regression.svg">
+</object>
+<p>These points lie exactly on a straight line, that’s not very realistic, let’s corrupt them with a bit of Gaussian ‘noise’.</p>
+</section>
+<section id="noise-corrupted-plot" class="slide level3">
+<h3>Noise Corrupted Plot</h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_noise.svg">
+</object>
+</section>
+<section id="contour-plot-of-error-function" class="slide level3">
+<h3>Contour Plot of Error Function</h3>
+<ul>
+<li><p>Visualise the error function surface, create vectors of values.</p></li>
+<li><p>create a grid of values to evaluate the error function in 2D.</p></li>
+<li><p>compute the error function at each combination of <span class="math inline">\(c\)</span> and <span class="math inline">\(m\)</span>.</p></li>
+</ul>
+</section>
+<section id="contour-plot-of-error" class="slide level3">
+<h3>Contour Plot of Error</h3>
+<ul>
+<li>We can now make a contour plot.</li>
+</ul>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_contour.svg">
+</object>
+</section>
+<section id="steepest-descent" class="slide level3">
+<h3>Steepest Descent</h3>
+<ul>
+<li>Minimize the sum of squares error function.</li>
+<li>One way of doing that is gradient descent.</li>
+<li>Initialize with a guess for <span class="math inline">\(m\)</span> and <span class="math inline">\(c\)</span></li>
+<li>update that guess by subtracting a portion of the gradient from the guess.</li>
+<li>Like walking down a hill in the steepest direction of the hill to get to the bottom.</li>
+</ul>
+</section>
+<section id="algorithm" class="slide level3">
+<h3>Algorithm</h3>
+<ul>
+<li>We start with a guess for <span class="math inline">\(m\)</span> and <span class="math inline">\(c\)</span>.</li>
+</ul>
+</section>
+<section id="offset-gradient" class="slide level3">
+<h3>Offset Gradient</h3>
+<ul>
+<li>Now we need to compute the gradient of the error function, firstly with respect to <span class="math inline">\(c\)</span>,</li>
+</ul>
+<p><span class="math display">\[\frac{\text{d}\errorFunction(m, c)}{\text{d} c} =
+-2\sum_{i=1}^\numData (\dataScalar_i - m\inputScalar_i - c)\]</span></p>
+<ul>
+<li>This is computed in python as follows</li>
+</ul>
+</section>
+<section id="deriving-the-gradient" class="slide level3">
+<h3>Deriving the Gradient</h3>
+<p>To see how the gradient was derived, first note that the <span class="math inline">\(c\)</span> appears in every term in the sum. So we are just differentiating <span class="math inline">\((\dataScalar_i - m\inputScalar_i - c)^2\)</span> for each term in the sum. The gradient of this term with respect to <span class="math inline">\(c\)</span> is simply the gradient of the outer quadratic, multiplied by the gradient with respect to <span class="math inline">\(c\)</span> of the part inside the quadratic. The gradient of a quadratic is two times the argument of the quadratic, and the gradient of the inside linear term is just minus one. This is true for all terms in the sum, so we are left with the sum in the gradient.</p>
+</section>
+<section id="slope-gradient" class="slide level3">
+<h3>Slope Gradient</h3>
+<p>The gradient with respect tom <span class="math inline">\(m\)</span> is similar, but now the gradient of the quadratic’s argument is <span class="math inline">\(-\inputScalar_i\)</span> so the gradient with respect to <span class="math inline">\(m\)</span> is</p>
+<p><span class="math display">\[\frac{\text{d}\errorFunction(m, c)}{\text{d} m} = -2\sum_{i=1}^\numData \inputScalar_i(\dataScalar_i - m\inputScalar_i -
+c)\]</span></p>
+<p>which can be implemented in python (numpy) as</p>
+</section>
+<section id="update-equations" class="slide level3">
+<h3>Update Equations</h3>
+<ul>
+<li>Now we have gradients with respect to <span class="math inline">\(m\)</span> and <span class="math inline">\(c\)</span>.</li>
+<li>Can update our inital guesses for <span class="math inline">\(m\)</span> and <span class="math inline">\(c\)</span> using the gradient.</li>
+<li>We don’t want to just subtract the gradient from <span class="math inline">\(m\)</span> and <span class="math inline">\(c\)</span>,</li>
+<li>We need to take a <em>small</em> step in the gradient direction.</li>
+<li>Otherwise we might overshoot the minimum.</li>
+<li>We want to follow the gradient to get to the minimum, the gradient changes all the time.</li>
+</ul>
+</section>
+<section id="move-in-direction-of-gradient" class="slide level3">
+<h3>Move in Direction of Gradient</h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_step001.svg">
+</object>
+</section>
+<section id="update-equations-1" class="slide level3">
+<h3>Update Equations</h3>
+<ul>
+<li>The step size has already been introduced, it’s again known as the learning rate and is denoted by <span class="math inline">\(\learnRate\)</span>.</li>
+</ul>
+<p><span class="math display">\[c_\text{new}
+\leftarrow c_{\text{old}} - \learnRate \frac{\text{d}\errorFunction(m, c)}{\text{d}c}\]</span></p>
+<ul>
+<li><p>gives us an update for our estimate of <span class="math inline">\(c\)</span> (which in the code we’ve been calling <code>c_star</code> to represent a common way of writing a parameter estimate, <span class="math inline">\(c^*\)</span>) and <span class="math display">\[m_\text{new} \leftarrow m_{\text{old}} - \learnRate \frac{\text{d}\errorFunction(m,
+c)}{\text{d}m}\]</span></p></li>
+<li><p>Giving us an update for <span class="math inline">\(m\)</span>.</p></li>
+</ul>
+</section>
+<section id="update-code" class="slide level3">
+<h3>Update Code</h3>
+<ul>
+<li>These updates can be coded as</li>
+</ul>
+<!-- SECTION Iterating Updates -->
+<ul>
+<li>Fit model by descending gradient.</li>
+</ul>
+</section>
+<section id="gradient-descent-algorithm" class="slide level3">
+<h3>Gradient Descent Algorithm</h3>
+</section>
+<section id="section-5" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit000.svg">
+</object>
+</section>
+<section id="section-6" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit001.svg">
+</object>
+</section>
+<section id="section-7" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit002.svg">
+</object>
+</section>
+<section id="section-8" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit003.svg">
+</object>
+</section>
+<section id="section-9" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit004.svg">
+</object>
+</section>
+<section id="section-10" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit005.svg">
+</object>
+</section>
+<section id="section-11" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit006.svg">
+</object>
+</section>
+<section id="section-12" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit007.svg">
+</object>
+</section>
+<section id="section-13" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit008.svg">
+</object>
+</section>
+<section id="section-14" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit009.svg">
+</object>
+</section>
+<section id="section-15" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit010.svg">
+</object>
+</section>
+<section id="section-16" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit011.svg">
+</object>
+</section>
+<section id="section-17" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit012.svg">
+</object>
+</section>
+<section id="section-18" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit013.svg">
+</object>
+</section>
+<section id="section-19" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit014.svg">
+</object>
+</section>
+<section id="section-20" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit015.svg">
+</object>
+</section>
+<section id="section-21" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit016.svg">
+</object>
+</section>
+<section id="section-22" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit017.svg">
+</object>
+</section>
+<section id="section-23" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit018.svg">
+</object>
+</section>
+<section id="section-24" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit019.svg">
+</object>
+</section>
+<section id="section-25" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit020.svg">
+</object>
+</section>
+<section id="section-26" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit021.svg">
+</object>
+</section>
+<section id="section-27" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit022.svg">
+</object>
+</section>
+<section id="section-28" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit023.svg">
+</object>
+</section>
+<section id="section-29" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit024.svg">
+</object>
+</section>
+<section id="section-30" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit025.svg">
+</object>
+</section>
+<section id="section-31" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit026.svg">
+</object>
+</section>
+<section id="section-32" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit027.svg">
+</object>
+</section>
+<section id="section-33" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit028.svg">
+</object>
+</section>
+<section id="stochastic-gradient-descent" class="slide level3">
+<h3>Stochastic Gradient Descent</h3>
+<ul>
+<li>If <span class="math inline">\(\numData\)</span> is small, gradient descent is fine.</li>
+<li>But sometimes (e.g. on the internet <span class="math inline">\(\numData\)</span> could be a billion.</li>
+<li>Stochastic gradient descent is more similar to perceptron.</li>
+<li>Look at gradient of one data point at a time rather than summing across <em>all</em> data points)</li>
+<li>This gives a stochastic estimate of gradient.</li>
+</ul>
+</section>
+<section id="stochastic-gradient-descent-1" class="slide level3">
+<h3>Stochastic Gradient Descent</h3>
+<ul>
+<li>The real gradient with respect to <span class="math inline">\(m\)</span> is given by</li>
+</ul>
+<p><span class="math display">\[\frac{\text{d}\errorFunction(m, c)}{\text{d} m} = -2\sum_{i=1}^\numData \inputScalar_i(\dataScalar_i -
+m\inputScalar_i - c)\]</span></p>
+<p>but it has <span class="math inline">\(\numData\)</span> terms in the sum. Substituting in the gradient we can see that the full update is of the form</p>
+<p><span class="math display">\[m_\text{new} \leftarrow
+m_\text{old} + 2\learnRate \left[\inputScalar_1 (\dataScalar_1 - m_\text{old}\inputScalar_1 - c_\text{old}) + (\inputScalar_2 (\dataScalar_2 -   m_\text{old}\inputScalar_2 - c_\text{old}) + \dots + (\inputScalar_n (\dataScalar_n - m_\text{old}\inputScalar_n - c_\text{old})\right]\]</span></p>
+<p>This could be split up into lots of individual updates <span class="math display">\[m_1 \leftarrow m_\text{old} + 2\learnRate \left[\inputScalar_1 (\dataScalar_1 - m_\text{old}\inputScalar_1 -
+c_\text{old})\right]\]</span> <span class="math display">\[m_2 \leftarrow m_1 + 2\learnRate \left[\inputScalar_2 (\dataScalar_2 -
+m_\text{old}\inputScalar_2 - c_\text{old})\right]\]</span> <span class="math display">\[m_3 \leftarrow m_2 + 2\learnRate
+\left[\dots\right]\]</span> <span class="math display">\[m_n \leftarrow m_{n-1} + 2\learnRate \left[\inputScalar_n (\dataScalar_n -
+m_\text{old}\inputScalar_n - c_\text{old})\right]\]</span></p>
+<p>which would lead to the same final update.</p>
+</section>
+<section id="updating-c-and-m" class="slide level3">
+<h3>Updating <span class="math inline">\(c\)</span> and <span class="math inline">\(m\)</span></h3>
+<ul>
+<li>In the sum we don’t <span class="math inline">\(m\)</span> and <span class="math inline">\(c\)</span> we use for computing the gradient term at each update.</li>
+<li>In stochastic gradient descent we <em>do</em> change them.</li>
+<li>This means it’s not quite the same as steepest desceint.</li>
+<li>But we can present each data point in a random order, like we did for the perceptron.</li>
+<li>This makes the algorithm suitable for large scale web use (recently this domain is know as ‘Big Data’) and algorithms like this are widely used by Google, Microsoft, Amazon, Twitter and Facebook.</li>
+</ul>
+</section>
+<section id="stochastic-gradient-descent-2" class="slide level3">
+<h3>Stochastic Gradient Descent</h3>
+<ul>
+<li>Or more accurate, since the data is normally presented in a random order we just can write</li>
+</ul>
+<p><span class="math display">\[m_\text{new} = m_\text{old} + 2\learnRate\left[\inputScalar_i (\dataScalar_i - m_\text{old}\inputScalar_i - c_\text{old})\right]\]</span></p>
+</section>
+<section id="sgd-for-linear-regression" class="slide level3">
+<h3>SGD for Linear Regression</h3>
+<p>Putting it all together in an algorithm, we can do stochastic gradient descent for our regression data.</p>
+</section>
+<section id="section-34" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit000.svg">
+</object>
+</section>
+<section id="section-35" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit001.svg">
+</object>
+</section>
+<section id="section-36" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit002.svg">
+</object>
+</section>
+<section id="section-37" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit003.svg">
+</object>
+</section>
+<section id="section-38" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit004.svg">
+</object>
+</section>
+<section id="section-39" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit005.svg">
+</object>
+</section>
+<section id="section-40" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit006.svg">
+</object>
+</section>
+<section id="section-41" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit007.svg">
+</object>
+</section>
+<section id="section-42" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit008.svg">
+</object>
+</section>
+<section id="section-43" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit009.svg">
+</object>
+</section>
+<section id="section-44" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit010.svg">
+</object>
+</section>
+<section id="section-45" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit011.svg">
+</object>
+</section>
+<section id="section-46" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit012.svg">
+</object>
+</section>
+<section id="section-47" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit013.svg">
+</object>
+</section>
+<section id="section-48" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit014.svg">
+</object>
+</section>
+<section id="section-49" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit015.svg">
+</object>
+</section>
+<section id="section-50" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit016.svg">
+</object>
+</section>
+<section id="section-51" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit017.svg">
+</object>
+</section>
+<section id="section-52" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit018.svg">
+</object>
+</section>
+<section id="section-53" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit019.svg">
+</object>
+</section>
+<section id="section-54" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit020.svg">
+</object>
+</section>
+<section id="section-55" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit021.svg">
+</object>
+</section>
+<section id="section-56" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit022.svg">
+</object>
+</section>
+<section id="section-57" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit023.svg">
+</object>
+</section>
+<section id="section-58" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit024.svg">
+</object>
+</section>
+<section id="section-59" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit025.svg">
+</object>
+</section>
+<section id="section-60" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit026.svg">
+</object>
+</section>
+<section id="section-61" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit027.svg">
+</object>
+</section>
+<section id="section-62" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit028.svg">
+</object>
+</section>
+<section id="section-63" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit029.svg">
+</object>
+</section>
+<section id="section-64" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit030.svg">
+</object>
+</section>
+<section id="section-65" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit040.svg">
+</object>
+</section>
+<section id="section-66" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit041.svg">
+</object>
+</section>
+<section id="section-67" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit042.svg">
+</object>
+</section>
+<section id="section-68" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit043.svg">
+</object>
+</section>
+<section id="section-69" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit044.svg">
+</object>
+</section>
+<section id="section-70" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit045.svg">
+</object>
+</section>
+<section id="section-71" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit046.svg">
+</object>
+</section>
+<section id="section-72" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit047.svg">
+</object>
+</section>
+<section id="section-73" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit048.svg">
+</object>
+</section>
+<section id="section-74" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit049.svg">
+</object>
+</section>
+<section id="section-75" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit050.svg">
+</object>
+</section>
+<section id="section-76" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit051.svg">
+</object>
+</section>
+<section id="section-77" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit052.svg">
+</object>
+</section>
+<section id="section-78" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit053.svg">
+</object>
+</section>
+<section id="section-79" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit054.svg">
+</object>
+</section>
+<section id="section-80" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit055.svg">
+</object>
+</section>
+<section id="section-81" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit056.svg">
+</object>
+</section>
+<section id="section-82" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit057.svg">
+</object>
+</section>
+<section id="section-83" class="slide level3 slide:" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit058.svg">
+</object>
+</section>
+<section id="reflection-on-linear-regression-and-supervised-learning" class="slide level3">
+<h3>Reflection on Linear Regression and Supervised Learning</h3>
+<p>Think about:</p>
+<ol type="1">
+<li><p>What effect does the learning rate have in the optimization? What’s the effect of making it too small, what’s the effect of making it too big? Do you get the same result for both stochastic and steepest gradient descent?</p></li>
+<li><p>The stochastic gradient descent doesn’t help very much for such a small data set. It’s real advantage comes when there are many, you’ll see this in the lab.</p></li>
+</ol>
+</section>
 <section id="log-likelihood-for-multivariate-regression" class="slide level3">
 <h3>Log Likelihood for Multivariate Regression</h3>
 <p>The likelihood of a single data point is</p>
@@ -842,7 +1420,7 @@ _{i=1}^{\numData}\inputVector_i\dataScalar_i,
 \]</span></p>
 <!-- SECTION Update Equation for Global Optimum -->
 </section>
-<section id="update-equations" class="slide level3">
+<section id="update-equations-2" class="slide level3">
 <h3>Update Equations</h3>
 <ul>
 <li>Update for <span class="math inline">\(\mappingVector^{*}\)</span>. <span class="math display">\[\mappingVector^{*} = \left(\inputMatrix^\top \inputMatrix\right)^{-1} \inputMatrix^\top \dataVector\]</span></li>
@@ -857,29 +1435,6 @@ _{i=1}^{\numData}\inputVector_i\dataScalar_i,
 <ul>
 <li>Section 1.3 of <span class="citation" data-cites="Rogers:book11">Rogers and Girolami (2011)</span> for Matrix &amp; Vector Review.</li>
 </ul>
-<!-- SECTION Underdetermined System -->
-</section>
-<section id="underdetermined-system" class="slide level3">
-<h3>Underdetermined System</h3>
-<ul>
-<li>What about two unknowns and <em>one</em> observation? <span class="math display">\[\dataScalar_1 =  m\inputScalar_1 + c\]</span></li>
-</ul>
-<div class="fragment">
-<p>Can compute <span class="math inline">\(m\)</span> given <span class="math inline">\(c\)</span>. <span class="math display">\[m = \frac{\dataScalar_1 - c}{\inputScalar}\]</span></p>
-</div>
-</section>
-<section id="underdetermined-system-1" class="slide level3">
-<h3>Underdetermined System</h3>
-<script>
-showDivs(1, 'under_determined_system');
-</script>
-<button onclick="plusDivs(-1, 'under_determined_system')">
-❮
-</button>
-<button onclick="plusDivs(1, 'under_determined_system')">
-❯
-</button>
-<p><input id="range-under_determined_system" type="range" min="1" max="3" value="1" onchange="setDivs('under_determined_system')" oninput="setDivs('under_determined_system')"> <object class="svgplot under_determined_system" align="" data="../slides/diagrams/ml/under_determined_system000.svg"></object> <object class="svgplot under_determined_system" align="" data="../slides/diagrams/ml/under_determined_system001.svg"></object> <object class="svgplot under_determined_system" align="" data="../slides/diagrams/ml/under_determined_system002.svg"></object> <object class="svgplot under_determined_system" align="" data="../slides/diagrams/ml/under_determined_system003.svg"></object> <object class="svgplot under_determined_system" align="" data="../slides/diagrams/ml/under_determined_system004.svg"></object> <object class="svgplot under_determined_system" align="" data="../slides/diagrams/ml/under_determined_system005.svg"></object> <object class="svgplot under_determined_system" align="" data="../slides/diagrams/ml/under_determined_system006.svg"></object> <object class="svgplot under_determined_system" align="" data="../slides/diagrams/ml/under_determined_system007.svg"></object> <object class="svgplot under_determined_system" align="" data="../slides/diagrams/ml/under_determined_system008.svg"></object> <object class="svgplot under_determined_system" align="" data="../slides/diagrams/ml/under_determined_system009.svg"></object> <object class="svgplot under_determined_system" align="" data="../slides/diagrams/ml/under_determined_system010.svg"></object></p>
 </section>
 <section id="basis-functions" class="slide level3">
 <h3>Basis Functions</h3>
@@ -942,6 +1497,42 @@ showDivs(0, 'quadratic_function');
 ❯
 </button>
 <p><input id="range-quadratic_function" type="range" min="0" max="2" value="0" onchange="setDivs('quadratic_function')" oninput="setDivs('quadratic_function')"> <object class="svgplot quadratic_function" align="" data="../slides/diagrams/ml/quadratic_function000.svg"></object> <object class="svgplot quadratic_function" align="" data="../slides/diagrams/ml/quadratic_function001.svg"></object> <object class="svgplot quadratic_function" align="" data="../slides/diagrams/ml/quadratic_function002.svg"></object></p>
+</section>
+<section id="polynomial-fits-to-olympic-data" class="slide level3">
+<h3>Polynomial Fits to Olympic Data</h3>
+<script>
+showDivs(1, 'olympic_LM_polynomial_num_basis');
+</script>
+<button onclick="plusDivs(-1, 'olympic_LM_polynomial_num_basis')">
+❮
+</button>
+<button onclick="plusDivs(1, 'olympic_LM_polynomial_num_basis')">
+❯
+</button>
+<p><input id="range-olympic_LM_polynomial_num_basis" type="range" min="1" max="26" value="1" onchange="setDivs('olympic_LM_polynomial_num_basis')" oninput="setDivs('olympic_LM_polynomial_num_basis')"> <object class="svgplot olympic_LM_polynomial_num_basis" align="" data="../slides/diagrams/ml/olympic_LM_polynomial_num_basis001.svg"></object> <object class="svgplot olympic_LM_polynomial_num_basis" align="" data="../slides/diagrams/ml/olympic_LM_polynomial_num_basis002.svg"></object> <object class="svgplot olympic_LM_polynomial_num_basis" align="" data="../slides/diagrams/ml/olympic_LM_polynomial_num_basis003.svg"></object> <object class="svgplot olympic_LM_polynomial_num_basis" align="" data="../slides/diagrams/ml/olympic_LM_polynomial_num_basis004.svg"></object> <object class="svgplot olympic_LM_polynomial_num_basis" align="" data="../slides/diagrams/ml/olympic_LM_polynomial_num_basis005.svg"></object> <object class="svgplot olympic_LM_polynomial_num_basis" align="" data="../slides/diagrams/ml/olympic_LM_polynomial_num_basis006.svg"></object> <object class="svgplot olympic_LM_polynomial_num_basis" align="" data="../slides/diagrams/ml/olympic_LM_polynomial_num_basis007.svg"></object> <object class="svgplot olympic_LM_polynomial_num_basis" align="" data="../slides/diagrams/ml/olympic_LM_polynomial_num_basis008.svg"></object> <object class="svgplot olympic_LM_polynomial_num_basis" align="" data="../slides/diagrams/ml/olympic_LM_polynomial_num_basis009.svg"></object> <object class="svgplot olympic_LM_polynomial_num_basis" align="" data="../slides/diagrams/ml/olympic_LM_polynomial_num_basis010.svg"></object> <object class="svgplot olympic_LM_polynomial_num_basis" align="" data="../slides/diagrams/ml/olympic_LM_polynomial_num_basis011.svg"></object> <object class="svgplot olympic_LM_polynomial_num_basis" align="" data="../slides/diagrams/ml/olympic_LM_polynomial_num_basis012.svg"></object> <object class="svgplot olympic_LM_polynomial_num_basis" align="" data="../slides/diagrams/ml/olympic_LM_polynomial_num_basis013.svg"></object> <object class="svgplot olympic_LM_polynomial_num_basis" align="" data="../slides/diagrams/ml/olympic_LM_polynomial_num_basis014.svg"></object> <object class="svgplot olympic_LM_polynomial_num_basis" align="" data="../slides/diagrams/ml/olympic_LM_polynomial_num_basis015.svg"></object> <object class="svgplot olympic_LM_polynomial_num_basis" align="" data="../slides/diagrams/ml/olympic_LM_polynomial_num_basis016.svg"></object> <object class="svgplot olympic_LM_polynomial_num_basis" align="" data="../slides/diagrams/ml/olympic_LM_polynomial_num_basis017.svg"></object> <object class="svgplot olympic_LM_polynomial_num_basis" align="" data="../slides/diagrams/ml/olympic_LM_polynomial_num_basis018.svg"></object> <object class="svgplot olympic_LM_polynomial_num_basis" align="" data="../slides/diagrams/ml/olympic_LM_polynomial_num_basis019.svg"></object> <object class="svgplot olympic_LM_polynomial_num_basis" align="" data="../slides/diagrams/ml/olympic_LM_polynomial_num_basis020.svg"></object> <object class="svgplot olympic_LM_polynomial_num_basis" align="" data="../slides/diagrams/ml/olympic_LM_polynomial_num_basis021.svg"></object> <object class="svgplot olympic_LM_polynomial_num_basis" align="" data="../slides/diagrams/ml/olympic_LM_polynomial_num_basis022.svg"></object> <object class="svgplot olympic_LM_polynomial_num_basis" align="" data="../slides/diagrams/ml/olympic_LM_polynomial_num_basis023.svg"></object> <object class="svgplot olympic_LM_polynomial_num_basis" align="" data="../slides/diagrams/ml/olympic_LM_polynomial_num_basis024.svg"></object> <object class="svgplot olympic_LM_polynomial_num_basis" align="" data="../slides/diagrams/ml/olympic_LM_polynomial_num_basis025.svg"></object> <object class="svgplot olympic_LM_polynomial_num_basis" align="" data="../slides/diagrams/ml/olympic_LM_polynomial_num_basis026.svg"></object></p>
+<!-- SECTION Underdetermined System -->
+</section>
+<section id="underdetermined-system" class="slide level3">
+<h3>Underdetermined System</h3>
+<ul>
+<li>What about two unknowns and <em>one</em> observation? <span class="math display">\[\dataScalar_1 =  m\inputScalar_1 + c\]</span></li>
+</ul>
+<div class="fragment">
+<p>Can compute <span class="math inline">\(m\)</span> given <span class="math inline">\(c\)</span>. <span class="math display">\[m = \frac{\dataScalar_1 - c}{\inputScalar}\]</span></p>
+</div>
+</section>
+<section id="underdetermined-system-1" class="slide level3">
+<h3>Underdetermined System</h3>
+<script>
+showDivs(1, 'under_determined_system');
+</script>
+<button onclick="plusDivs(-1, 'under_determined_system')">
+❮
+</button>
+<button onclick="plusDivs(1, 'under_determined_system')">
+❯
+</button>
+<p><input id="range-under_determined_system" type="range" min="1" max="3" value="1" onchange="setDivs('under_determined_system')" oninput="setDivs('under_determined_system')"> <object class="svgplot under_determined_system" align="" data="../slides/diagrams/ml/under_determined_system000.svg"></object> <object class="svgplot under_determined_system" align="" data="../slides/diagrams/ml/under_determined_system001.svg"></object> <object class="svgplot under_determined_system" align="" data="../slides/diagrams/ml/under_determined_system002.svg"></object> <object class="svgplot under_determined_system" align="" data="../slides/diagrams/ml/under_determined_system003.svg"></object> <object class="svgplot under_determined_system" align="" data="../slides/diagrams/ml/under_determined_system004.svg"></object> <object class="svgplot under_determined_system" align="" data="../slides/diagrams/ml/under_determined_system005.svg"></object> <object class="svgplot under_determined_system" align="" data="../slides/diagrams/ml/under_determined_system006.svg"></object> <object class="svgplot under_determined_system" align="" data="../slides/diagrams/ml/under_determined_system007.svg"></object> <object class="svgplot under_determined_system" align="" data="../slides/diagrams/ml/under_determined_system008.svg"></object> <object class="svgplot under_determined_system" align="" data="../slides/diagrams/ml/under_determined_system009.svg"></object> <object class="svgplot under_determined_system" align="" data="../slides/diagrams/ml/under_determined_system010.svg"></object></p>
 </section>
 <section id="alan-turing" class="slide level3">
 <h3>Alan Turing</h3>
@@ -1014,12 +1605,12 @@ showDivs(1, 'dem_gaussian');
 <h3>Main Trick</h3>
 <p><span class="math display">\[p(c) = \frac{1}{\sqrt{2\pi\alpha_1}} \exp\left(-\frac{1}{2\alpha_1}c^2\right)\]</span> <span class="math display">\[p(\dataVector|\inputVector, c, m, \dataStd^2) = \frac{1}{\left(2\pi\dataStd^2\right)^{\frac{\numData}{2}}} \exp\left(-\frac{1}{2\dataStd^2}\sum_{i=1}^\numData(\dataScalar_i - m\inputScalar_i - c)^2\right)\]</span></p>
 </section>
-<section id="section-5" class="slide level3">
+<section id="section-84" class="slide level3">
 <h3></h3>
 <p><span class="math display">\[p(c| \dataVector, \inputVector, m, \dataStd^2) = \frac{p(\dataVector|\inputVector, c, m, \dataStd^2)p(c)}{p(\dataVector|\inputVector, m, \dataStd^2)}\]</span></p>
 <p><span class="math display">\[p(c| \dataVector, \inputVector, m, \dataStd^2) =  \frac{p(\dataVector|\inputVector, c, m, \dataStd^2)p(c)}{\int p(\dataVector|\inputVector, c, m, \dataStd^2)p(c) \text{d} c}\]</span></p>
 </section>
-<section id="section-6" class="slide level3">
+<section id="section-85" class="slide level3">
 <h3></h3>
 <p><span class="math display">\[p(c| \dataVector, \inputVector, m, \dataStd^2) \propto  p(\dataVector|\inputVector, c, m, \dataStd^2)p(c)\]</span></p>
 <p><span class="math display">\[\begin{aligned}
@@ -1028,7 +1619,7 @@ showDivs(1, 'dem_gaussian');
     &amp; + c\frac{\sum_{i=1}^\numData(\dataScalar_i-m\inputScalar_i)}{\dataStd^2},
   \end{aligned}\]</span></p>
 </section>
-<section id="section-7" class="slide level3">
+<section id="section-86" class="slide level3">
 <h3></h3>
 <p>complete the square of the quadratic form to obtain <span class="math display">\[\log p(c | \dataVector, \inputVector, m, \dataStd^2) = -\frac{1}{2\tau^2}(c - \mu)^2 +\text{const},\]</span> where <span class="math inline">\(\tau^2 = \left(\numData\dataStd^{-2} +\alpha_1^{-1}\right)^{-1}\)</span> and <span class="math inline">\(\mu = \frac{\tau^2}{\dataStd^2} \sum_{i=1}^\numData(\dataScalar_i-m\inputScalar_i)\)</span>.</p>
 </section>
