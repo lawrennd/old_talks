@@ -19,6 +19,16 @@ YouTubeVideo('\id')
 </iframe>}
 \define{\slidenotes{slidetext}{notetext}}{\notetext}
 \define{\speakernotes{text}}{}
+
+\ifdef{slides}
+
+\define{\notes{text}}{}
+\define{\writeassignment{text}{question}{marks}}{}
+\define{\codeassignment{text}{question}{marks}}{}
+\define{\slides{text}}{\text}
+
+\else
+
 \define{\notes{text}}{\text}
 \define{\writeassignment{text}{question}{marks}}{### Question \question
 
@@ -41,12 +51,16 @@ YouTubeVideo('\id')
 ```
 
 }
-\define{\section{text}}{## \text}
 \define{\slides{text}}{}
+\endif
+
+\define{\section{text}}{## \text}
 \define{\fragment{text}{type}}{\text}
 \define{\fragmentindex{text}{type}{index}}{\text}
 \define{\notesfigure{block}}{}
 \define{\caption{block}}{<center>*\block *</center>}
+
+
 \define{\plotcode{block}}{```{.python}
 \block
 ```}
@@ -97,7 +111,7 @@ YouTubeVideo('\id')
 \define{\fragmentindex{text}{type}{index}}{\text}
 \define{\speakernotes{text}}{}
 \define{\notes{text}}{\text}
-\define{\writeassignment{text}{question}{marks}}{### Question \question
+\define{\writeassignment{text}{question}{marks}{answerstub}}{### Question \question
 
 \text
 
@@ -105,15 +119,19 @@ YouTubeVideo('\id')
 
 ### Write your answer to Question \question here
 
+\answerstub
+
 }
-\define{\codeassignment{text}{question}{marks}}{### Question \question
+\define{\codeassignment{text}{question}{marks}{answerstub}}{### Question \question
 
 \text
 
 *\marks marks*
 
 ```{.python}
-# Write your answer to Question \question here
+# Write code for your answer to Question \question in this box
+
+\answerstub
 
 ```
 
@@ -219,4 +237,3 @@ showDivs(\start, '\group');
 \endif
 \endif
 
-\include{talk-notation.tex}

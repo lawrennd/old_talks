@@ -1,22 +1,26 @@
 ---
 layout: lectures
 title: Basis Functions
-author: Neil D. Lawrence
-date: 2015/10/20
+abstract: |
+  In the last session we explored least squares for univariate and multivariate *regression*. We introduced *matrices*, *linear algebra* and *derivatives*. 
+  
+  In this session we will introduce *basis functions* which allow us to implement *non-linear regression models*.
+date: 2015-10-20
+ipynb: 2015-10-20-week4.ipynb
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
+  institute: Amazon Cambridge and University of Sheffield
+  twitter: lawrennd
+  url: http://inverseprobability.com
+venue: University of Sheffield
 transition: None
 ---
 
 \include{talk-macros.tex}
 
-\setupcode{import numpy as np
-import scipy as sp
-%matplotlib inline}
-
-### Review
-
-* Last time: explored least squares for univariate and multivariate regression.
-* Introduced matrices, linear algebra and derivatives.
-* This time: introduce *basis functions* for non-linear regression models.
+\displaycode{%matplotlib inline}
 
 ### Nonlinear Regression
 
@@ -37,7 +41,6 @@ $$
 
 \include{_ml/includes/basis-functions.md}
 \include{_ml/includes/basis-function-models.md}
-
 
 ### Reading
 

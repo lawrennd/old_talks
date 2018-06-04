@@ -1,8 +1,18 @@
 ---
 layout: lectures
 title: Probability and an Introduction to Jupyter, Python and Pandas
-author: Neil D. Lawrence
-date: 2015/09/29
+abstract: |
+  In this first session we will introduce *machine learning*, review *probability* and begin familiarization with the Jupyter notebook, python and pandas.
+date: 2015-09-29
+ipynb: 2015-09-29-week1.ipynb
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
+  institute: Amazon Cambridge and University of Sheffield
+  twitter: lawrennd
+  url: http://inverseprobability.com
+venue: University of Sheffield
 transition: None
 ---
 

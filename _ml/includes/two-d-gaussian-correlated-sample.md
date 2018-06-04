@@ -1,56 +1,23 @@
-\code{plot.correlated_height_weight(num_samps=8, 
-                              diagrams='../../slides/diagrams/ml')}
-
-\displaycode{pods.notebook.display_plots('correlated_height_weight{stage:0>3}.svg', 
-                            '../../slides/diagrams/ml', stage=(0, 7))}
-
 \slides{
-### Sampling Two Dimensional Variables {data-transition="None"}
+### Sampling Two Dimensional Variables
 
-\includesvg{../slides/diagrams/ml/correlated_height_weight000.svg}
+\plotcode{import teaching_plots as plot}
+\plotcode{plot.correlated_height_weight(num_samps=8, 
+                              diagrams='../slides/diagrams/ml')}
 
-Correlated samples of height and weight
+\displaycode{import pods
+from ipywidgets import IntSlider}
+\displaycode{pods.notebook.display_plots('correlated_height_weight{fig:0>3}.png', '../slides/diagrams/ml', fig=IntSlider(0, 0, 8, 1))}
 
-### Sampling Two Dimensional Variables {data-transition="None"}
 
-\includesvg{../slides/diagrams/ml/correlated_height_weight001.svg}
-
-Correlated samples of height and weight
-
-### Sampling Two Dimensional Variables {data-transition="None"}
-
-\includesvg{../slides/diagrams/ml/correlated_height_weight002.svg}
-
-Correlated samples of height and weight
-
-### Sampling Two Dimensional Variables {data-transition="None"}
-
-\includesvg{../slides/diagrams/ml/correlated_height_weight003.svg}
-
-Correlated samples of height and weight
-
-### Sampling Two Dimensional Variables {data-transition="None"}
-
-\includesvg{../slides/diagrams/ml/correlated_height_weight004.svg}
-
-Correlated samples of height and weight
-
-### Sampling Two Dimensional Variables {data-transition="None"}
-
-\includesvg{../slides/diagrams/ml/correlated_height_weight005.svg}
-
-Correlated samples of height and weight
-
-### Sampling Two Dimensional Variables {data-transition="None"}
-
-\includesvg{../slides/diagrams/ml/correlated_height_weight006.svg}
-
-Correlated samples of height and weight
-
-### Sampling Two Dimensional Variables {data-transition="None"}
-
-\includesvg{../slides/diagrams/ml/correlated_height_weight007.svg}
-
-Correlated samples of height and weight
+\startslides{correlated_height_weight}{0}{7}
+\includesvg{../slides/diagrams/ml/correlated_height_weight000.svg}{}{correlated_height_weight}
+\includesvg{../slides/diagrams/ml/correlated_height_weight001.svg}{}{correlated_height_weight}
+\includesvg{../slides/diagrams/ml/correlated_height_weight002.svg}{}{correlated_height_weight}
+\includesvg{../slides/diagrams/ml/correlated_height_weight003.svg}{}{correlated_height_weight}
+\includesvg{../slides/diagrams/ml/correlated_height_weight004.svg}{}{correlated_height_weight}
+\includesvg{../slides/diagrams/ml/correlated_height_weight005.svg}{}{correlated_height_weight}
+\includesvg{../slides/diagrams/ml/correlated_height_weight006.svg}{}{correlated_height_weight}
+\includesvg{../slides/diagrams/ml/correlated_height_weight007.svg}{}{correlated_height_weight}
 }
-
+\notesfigure{\includesvg{../slides/diagrams/ml/correlated_height_weight007.svg}{}}\notes{\caption{Samples from correlated Gaussian variables that might represent heights and weights.}}

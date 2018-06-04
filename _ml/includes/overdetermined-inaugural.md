@@ -7,81 +7,80 @@ $$3 = m + c$$
 point 2: $\inputScalar = 3$, $\dataScalar=1$
 $$1 = 3m + c$$
 
-The solution to these two simultaneous equations can be represented graphically as
+The solution to these two simultaneous equations can be represented graphically as}
 
-\includesvg{../slides/diagrams/ml/over_determined_system003.svg}
-\aligncenter{*The solution of two linear equations represented as the fit of a straight line through two data*}
+\notes{\includesvg{../slides/diagrams/ml/over_determined_system003.svg}}
+\notes{\caption{The solution of two linear equations represented as the fit of a straight line through two data}}
 
+\notes{
 The challenge comes when a third data point is observed and it doesn't naturally fit on the straight line. 
 
 point 3: $\inputScalar = 2$, $\dataScalar=2.5$
 $$2.5 = 2m + c$$
+}
 
+\notes{\includesvg{../slides/diagrams/ml/over_determined_system004.svg}}
+\notes{\caption{A third observation of data is inconsistent with the solution dictated by the first two observations}}
 
-\includesvg{../slides/diagrams/ml/over_determined_system004.svg}
-\aligncenter{*A third observation of data is inconsistent with the solution dictated by the first two observations*}
+\notes{Now there are three candidate lines, each consistent with our data.}
 
-Now there are three candidate lines, each consistent with our data.
+\notes{\includesvg{../slides/diagrams/ml/over_determined_system007.svg}}
+\notes{\caption{Three solutions to the problem, each consistent with two points of the three observations}}
 
-\includesvg{../slides/diagrams/ml/over_determined_system007.svg}
-\aligncenter{*Three solutions to the problem, each consistent with two points of the three observations*}
+\notes{This is known as an *overdetermined* system because there are more data than we need to determine our parameters. The problem arises because the model is a simplification of the real world, and the data we observe is therefore inconsistent with our model.}
 
-This is known as an *overdetermined* system because there are more data than we need to determine our parameters. The problem arises because the model is a simplification of the real world, and the data we observe is therefore inconsistent with our model.}
-
-\setupcode{import teaching_plots as plot}
-\plotcode{plot.over_determined_system(diagrams='../slides/diagrams/ml')}
 
 \slides{
 ### 
 }
 
-\largetext{$$\dataScalar = m\inputScalar + c$$}
+\plotcode{import teaching_plots as plot}
+\plotcode{plot.over_determined_system(diagrams='../slides/diagrams/ml')}
 
-\displaycode{pods.notebook.display_plots('over_determined_system{samp:0>3}.svg', directory='../slides/diagrams/ml', samp=(1, 7))}
+\displaycode{from ipywidgets import IntSlider
+import pods}
+\displaycode{pods.notebook.display_plots('over_determined_system{samp:0>3}.svg',
+                            directory='../slides/diagrams/ml', 
+                            samp=IntSlider(1,1,8,1))}
 
 \slides{
-### {data-transition="none"}
-
-\includesvg{../slides/diagrams/ml/over_determined_system001.svg}
-
-### {data-transition="none"}
-
-\includesvg{../slides/diagrams/ml/over_determined_system002.svg}
-
-### {data-transition="none"}
-
-\includesvg{../slides/diagrams/ml/over_determined_system003.svg}
-
-### {data-transition="none"}
-
-\includesvg{../slides/diagrams/ml/over_determined_system004.svg}
-
-### {data-transition="none"}
-
-\includesvg{../slides/diagrams/ml/over_determined_system005.svg}
-
-### {data-transition="none"}
-
-\includesvg{../slides/diagrams/ml/over_determined_system006.svg}
-
-### {data-transition="none"}
-
-\includesvg{../slides/diagrams/ml/over_determined_system007.svg}
+\startslides{over_determined_system}{1}{8}
+\includesvg{../slides/diagrams/ml/over_determined_system001.svg}{}{over_determined_system}
+\includesvg{../slides/diagrams/ml/over_determined_system002.svg}{}{over_determined_system}
+\includesvg{../slides/diagrams/ml/over_determined_system003.svg}{}{over_determined_system}
+\includesvg{../slides/diagrams/ml/over_determined_system004.svg}{}{over_determined_system}
+\includesvg{../slides/diagrams/ml/over_determined_system005.svg}{}{over_determined_system}
+\includesvg{../slides/diagrams/ml/over_determined_system006.svg}{}{over_determined_system}
+\includesvg{../slides/diagrams/ml/over_determined_system007.svg}{}{over_determined_system}
 }
 
-\slides{### $\dataScalar = m\inputScalar + c$ 
+
+\slides{
+### $\dataScalar = m\inputScalar + c$ 
+
 . . . 
-\alignleft{point 1: $\inputScalar = 1$, $\dataScalar=3$}
-$$3 = m + c$$
+
+point 1: $\inputScalar = 1$, $\dataScalar=3$
+$$
+3 = m + c
+$$
+
 . . .
-\alignleft{point 2: $\inputScalar = 3$, $\dataScalar=1$}
-$$1 = 3m + c$$
+
+point 2: $\inputScalar = 3$, $\dataScalar=1$
+$$
+1 = 3m + c
+$$
+
 . . . 
-\alignleft{point 3: $\inputScalar = 2$, $\dataScalar=2.5$}
+
+point 3: $\inputScalar = 2$, $\dataScalar=2.5$
 
 $$2.5 = 2m + c$$}
 
-\slides{### }
+\slides{
+### 
+}
 
 \notes{The solution was proposed by Pierre-Simon Laplace. His idea was to accept that the model was an incomplete representation of the real world, and the manner in which it was incomplete is *unknown*. His idea was that such unknowns could be dealt with through probability.}
 
@@ -92,25 +91,43 @@ $$2.5 = 2m + c$$}
 \notes{Laplace's concept was that the reason that the data doesn't match up to the model is because of unconsidered factors, and that these might be well represented through probability densities. He tackles the challenge of the unknown factors by adding a variable, $\noiseScalar$, that represents the unknown. In modern parlance we would call this a *latent* variable. But in the context Laplace uses it, the variable is so common that it has other names such as a "slack" variable or the *noise* in the system.
 
 point 1: $\inputScalar = 1$, $\dataScalar=3$
-$$3 = m + c + \noiseScalar_1$$
+$$
+3 = m + c + \noiseScalar_1
+$$
 point 2: $\inputScalar = 3$, $\dataScalar=1$
-$$1 = 3m + c + \noiseScalar_2$$
+$$
+1 = 3m + c + \noiseScalar_2
+$$
 point 3: $\inputScalar = 2$, $\dataScalar=2.5$
-$$2.5 = 2m + c + \noiseScalar_3$$
+$$
+2.5 = 2m + c + \noiseScalar_3
+$$
 
 Laplace's trick has converted the *overdetermined* system into an *underdetermined* system. He has now added three variables, $\{\noiseScalar_i\}_{i=1}^3$, which represent the unknown corruptions of the real world. Laplace's idea is that we should represent that unknown corruption with a *probability distribution*.}
 
 \slides{
 ### $\dataScalar = m\inputScalar + c + \noiseScalar$ 
+
 . . . 
-\alignleft{point 1: $\inputScalar = 1$, $\dataScalar=3$}
-$$3 = m + c + \noiseScalar_1$$
+
+point 1: $\inputScalar = 1$, $\dataScalar=3$
+$$
+3 = m + c + \noiseScalar_1
+$$
+
 . . .
-\alignleft{point 2: $\inputScalar = 3$, $\dataScalar=1$}
-$$1 = 3m + c + \noiseScalar_2$$
+
+point 2: $\inputScalar = 3$, $\dataScalar=1$
+$$
+1 = 3m + c + \noiseScalar_2
+$$
+
 . . . 
-\alignleft{point 3: $\inputScalar = 2$, $\dataScalar=2.5$}
-$$2.5 = 2m + c + \noiseScalar_3$$
+
+point 3: $\inputScalar = 2$, $\dataScalar=2.5$
+$$
+2.5 = 2m + c + \noiseScalar_3
+$$
 }
 
 ### A Probabilistic Process
@@ -120,10 +137,17 @@ $$2.5 = 2m + c + \noiseScalar_3$$
 \notes{The result is a *noisy* function, a function which has a deterministic part, and a stochastic part. This type of function is sometimes known as a probabilistic or stochastic process, to distinguish it from a deterministic process.}
 
 \slides{. . .
-\alignleft{Set the mean of Gaussian to be a function.}
-$$p\left(\dataScalar_i|\inputScalar_i\right)=\frac{1}{\sqrt{2\pi\dataStd^2}}\exp \left(-\frac{\left(\dataScalar_i-\mappingFunction\left(\inputScalar_i\right)\right)^{2}}{2\dataStd^2}\right).$$
+
+Set the mean of Gaussian to be a function.
+$$p
+\left(\dataScalar_i|\inputScalar_i\right)=\frac{1}{\sqrt{2\pi\dataStd^2}}\exp \left(-\frac{\left(\dataScalar_i-\mappingFunction\left(\inputScalar_i\right)\right)^{2}}{2\dataStd^2}\right).
+$$
+
 . . .
-\alignleft{This gives us a 'noisy function'.}
+
+This gives us a 'noisy function'.
+
 . . .
-\alignleft{This is known as a stochastic process.}
+
+This is known as a stochastic process.
 }

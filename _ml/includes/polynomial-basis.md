@@ -1,3 +1,5 @@
+### Polynomial Basis
+
 \setupcode{import matplotlib.pyplot as plt
 import mlai
 import teaching_plots as plot}
@@ -20,16 +22,19 @@ plot.basis(mlai.polynomial, x_min=-1.3, x_max=1.3,
 ### Functions Derived from Polynomial Basis
 
 $$
-\mappingFunction(\inputScalar) = {\color{cyan}\mappingScalar_0}   + {\color{green}\mappingScalar_1 \inputScalar} + {\color{yellow}\mappingScalar_3 \inputScalar^2}
+\mappingFunction(\inputScalar) = {\color{cyan}\mappingScalar_0}   + {\color{green}\mappingScalar_1 \inputScalar} + {\color{yellow}\mappingScalar_2 \inputScalar^2}
 $$
 
-\startslides{polynomial_function}{1}{3}
-\includesvg{../slides/diagrams/ml/polynomial_function001.svg}{}{polynomial_function}
-\includesvg{../slides/diagrams/ml/polynomial_function002.svg}{}{polynomial_function}
-\includesvg{../slides/diagrams/ml/polynomial_function003.svg}{}{polynomial_function}
+\slides{
+\startslides{polynomial_basis}{1}{3}
+\includesvg{../slides/diagrams/ml/polynomial_basis001.svg}{}{polynomial_basis}
+\includesvg{../slides/diagrams/ml/polynomial_basis002.svg}{}{polynomial_basis}
+\includesvg{../slides/diagrams/ml/polynomial_basis003.svg}{}{polynomial_basis}}
 
-\setupcode{import pods
+\notesfigure{\includesvg{../slides/diagrams/ml/polynomial_basis003.svg}{}{}}
+
+\displaycode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('polynomial_basis{num_basis:0>3}.svg', 
                             directory='../slides/diagrams/ml', 
-							num_basis=IntSlider(0,0,2,1))}
+							num_basis=IntSlider(1,1,4,1))}

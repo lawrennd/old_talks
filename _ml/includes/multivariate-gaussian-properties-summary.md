@@ -1,4 +1,5 @@
-### Recall Univariate Gaussian Properties {data-transition="None"}
+\slides{
+### Recall Univariate Gaussian Properties
 
 . . .
 
@@ -23,19 +24,20 @@ $$\dataScalar \sim \gaussianSamp{\mu}{\dataStd^2}$$
 $$\mappingScalar\dataScalar\sim \gaussianSamp{\mappingScalar\mu}{\mappingScalar^2 \dataStd^2}$$
 
 
-### Multivariate Consequence {data-transition="None"}
+### Multivariate Consequence
 
-<div align="left">If</div>
+\alignleft{If}
 
 $$\inputVector \sim \gaussianSamp{\boldsymbol{\mu}}{\boldsymbol{\Sigma}}$$
 
 . . .
 
-<div align="left">And</div>
+\alignleft{And}
 $$\dataVector= \mappingMatrix\inputVector$$
 
 . . .
 
-<div align="left">Then</div>
+\alignleft{Then}
 $$\dataVector \sim \gaussianSamp{\mappingMatrix\boldsymbol{\mu}}{\mappingMatrix\boldsymbol{\Sigma}\mappingMatrix^\top}$$
 
+}

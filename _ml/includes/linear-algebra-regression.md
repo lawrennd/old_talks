@@ -23,51 +23,77 @@ pace.
 
 ### A Probabilistic Process
 
-* Set the mean of Gaussian to be a function.
+\slides{Set the mean of Gaussian to be a function.
+
+. . .
+
+}\notes{Laplace had the idea to augment the observations by noise, that is equivalent to considering a probability density whose mean is given by the *prediction function*}
   $$p\left(\dataScalar_i|\inputScalar_i\right)=\frac{1}{\sqrt{2\pi\dataStd^2}}\exp\left(-\frac{\left(\dataScalar_i-f\left(\inputScalar_i\right)\right)^{2}}{2\dataStd^2}\right).$$
-* This gives us a 'noisy function'.
-* This is known as a stochastic process.
+\slides{
+. . .
+
+This gives us a 'noisy function'.
+
+. . .
+
+This is known as a stochastic process.}
+\notes{This is known as *stochastic process*. It is a function that is corrupted by noise. Laplace didn't suggest the Gaussian density for that purpose, that was an innovation from Carl Friederich Gauss, which is what gives the Gaussian density its name.}
 
 ### Height as a Function of Weight
 
-* In the standard Gaussian, parametized by mean and variance.
-* Make the mean a linear function of an *input*.
-* This leads to a regression model. 
-  $$\begin{align*}
+In the standard Gaussian, parametized by mean and variance.
+
+Make the mean a linear function of an *input*.
+
+This leads to a regression model. 
+$$
+\begin{align*}
   \dataScalar_i=&\mappingFunction\left(\inputScalar_i\right)+\noiseScalar_i,\\
          \noiseScalar_i \sim & \gaussianSamp{0}{\dataStd^2}.
-  \end{align*}$$
-* Assume $\dataScalar_i$ is height and $\inputScalar_i$ is weight.
+  \end{align*}
+$$
 
+Assume $\dataScalar_i$ is height and $\inputScalar_i$ is weight.
+
+\slides{
 ### Data Point Likelihood
-
-* Likelihood of an individual data point
-  $$p\left(\dataScalar_i|\inputScalar_i,m,c\right)=\frac{1}{\sqrt{2\pi \dataStd^2}}\exp
-\left(-\frac{\left(\dataScalar_i-m\inputScalar_i-c\right)^{2}}{2\dataStd^2}\right).$$
-* Parameters are gradient, $m$, offset, $c$ of the function and noise variance $\dataStd^2$.
+}
+Likelihood of an individual data point
+$$
+p\left(\dataScalar_i|\inputScalar_i,m,c\right)=\frac{1}{\sqrt{2\pi \dataStd^2}}\exp\left(-\frac{\left(\dataScalar_i-m\inputScalar_i-c\right)^{2}}{2\dataStd^2}\right).
+$$
+Parameters are gradient, $m$, offset, $c$ of the function and noise variance $\dataStd^2$.
 
 ### Data Set Likelihood
 
-* If the noise, $\epsilon_i$ is sampled independently for each data point.
-* Each data point is independent (given $m$ and $c$).
-* For *independent* variables:
-  $$p(\dataVector) = \prod_{i=1}^\numData p(\dataScalar_i)$$
-  $$p(\dataVector|\inputVector, m, c) = \prod_{i=1}^\numData p(\dataScalar_i|\inputScalar_i, m, c)$$
+If the noise, $\epsilon_i$ is sampled independently for each data point.
+Each data point is independent (given $m$ and $c$).
+For *independent* variables:
+$$
+p(\dataVector) = \prod_{i=1}^\numData p(\dataScalar_i)
+$$
+$$
+p(\dataVector|\inputVector, m, c) = \prod_{i=1}^\numData p(\dataScalar_i|\inputScalar_i, m, c)
+$$
 
 ### For Gaussian 
 
-* i.i.d. assumption
-  $$p(\dataVector|\inputVector, m, c) = \prod_{i=1}^\numData \frac{1}{\sqrt{2\pi \dataStd^2}}\exp \left(-\frac{\left(\dataScalar_i- m\inputScalar_i-c\right)^{2}}{2\dataStd^2}\right).$$
-  $$p(\dataVector|\inputVector, m, c) = \frac{1}{\left(2\pi \dataStd^2\right)^{\frac{\numData}{2}}}\exp\left(-\frac{\sum_{i=1}^\numData\left(\dataScalar_i-m\inputScalar_i-c\right)^{2}}{2\dataStd^2}\right).$$
+i.i.d. assumption
+$$
+p(\dataVector|\inputVector, m, c) = \prod_{i=1}^\numData \frac{1}{\sqrt{2\pi \dataStd^2}}\exp \left(-\frac{\left(\dataScalar_i- m\inputScalar_i-c\right)^{2}}{2\dataStd^2}\right).
+$$
+$$
+p(\dataVector|\inputVector, m, c) = \frac{1}{\left(2\pi \dataStd^2\right)^{\frac{\numData}{2}}}\exp\left(-\frac{\sum_{i=1}^\numData\left(\dataScalar_i-m\inputScalar_i-c\right)^{2}}{2\dataStd^2}\right).
+$$
 
 ### Log Likelihood Function
 
 * Normally work with the log likelihood:
-  $$L(m,c,\dataStd^{2})=-\frac{\numData}{2}\log 2\pi -\frac{\numData}{2}\log \dataStd^2 -\sum
-_{i=1}^{\numData}\frac{\left(\dataScalar_i-m\inputScalar_i-c\right)^{2}}{2\dataStd^2}.$$
+$$
+L(m,c,\dataStd^{2})=-\frac{\numData}{2}\log 2\pi -\frac{\numData}{2}\log \dataStd^2 -\sum_{i=1}^{\numData}\frac{\left(\dataScalar_i-m\inputScalar_i-c\right)^{2}}{2\dataStd^2}.
+$$
 
 ### Consistency of Maximum Likelihood
-
 
 * If data was really generated according to probability we specified.
 * Correct parameters will be recovered in limit as $\numData \rightarrow \infty$.
@@ -98,25 +124,27 @@ _{i=1}^{\numData}\frac{\left(\dataScalar_i-m\inputScalar_i-c\right)^{2}}{2\dataS
 ### Reminder
 
 * Two functions involved:
-  * Prediction function: $\mappingFunction(\inputScalar_i)$
-  * Error, or *Objective* function: $\errorFunction(m, c)$
+    * *Prediction function*: $\mappingFunction(\inputScalar_i)$
+    * Error, or *Objective function*: $\errorFunction(m, c)$
 * Error function depends on parameters through prediction function.
 
 ### Mathematical Interpretation
 
 * What is the mathematical interpretation?
 * There is a cost function.
-  * It expresses mismatch between your prediction and reality.
-    $$\errorFunction(m, c)=\sum_{i=1}^\numData \left(\dataScalar_i - m\inputScalar_i-c\right)^2$$
-  * This is known as the sum of squares error.
+    * It expresses mismatch between your prediction and reality.
+      $$
+      \errorFunction(m, c)=\sum_{i=1}^\numData \left(\dataScalar_i - m\inputScalar_i-c\right)^2
+	  $$
+    * This is known as the sum of squares error.
 
 \section{Sum of Squares Error}
 
-\notes{Minimizing the sum of squares error was first proposed by [Legendre](http://en.wikipedia.org/wiki/Adrien-Marie_Legendre) in 1805. His book, which was on the orbit of comets, is available on google books, we can take a look at the relevant page by calling the code below.}
+\notes{Minimizing the sum of squares error was first proposed by [Legendre](http://en.wikipedia.org/wiki/Adrien-Marie_Legendre) in 1805. His book, which was on the orbit of comets, is available on google books, we can take a look at the relevant page by calling the code below.
 
 \includegooglebook{spcAAAAAMAAJ}{72}
 
-\notes{Of course, the main text is in French, but the key part we are interested in can be roughly translated as
+Of course, the main text is in French, but the key part we are interested in can be roughly translated as
 
 >In most matters where we take measures data through observation, the most accurate results they can offer, it is almost always leads to a system of equations of the form 
 >$$E = a + bx + cy + fz + etc .$$
@@ -125,13 +153,13 @@ _{i=1}^{\numData}\frac{\left(\dataScalar_i-m\inputScalar_i-c\right)^{2}}{2\dataS
 He continues
 
 >Of all the principles that we can offer for this item, I think it is not broader, more accurate, nor easier than the one we have used in previous research application, and that is to make the minimum sum of the squares of the errors. By this means, it is between the errors a kind of balance that prevents extreme to prevail, is very specific to make known the state of the closest to the truth system. The sum of the squares of the errors $E^2 + \left.E^\prime\right.^2 + \left.E^{\prime\prime}\right.^2 + etc$ being
-\begin{align*}   &(a + bx + cy + fz + etc)^2 \\
-+ &(a^\prime +
-b^\prime x + c^\prime y + f^\prime z + etc ) ^2\\
-+ &(a^{\prime\prime} +
-b^{\prime\prime}x  + c^{\prime\prime}y +  f^{\prime\prime}z + etc )^2 \\
-+ & etc
-\end{align*}
+>\begin{align*}   &(a + bx + cy + fz + etc)^2 \\
+>+ &(a^\prime +
+>b^\prime x + c^\prime y + f^\prime z + etc ) ^2\\
+>+ &(a^{\prime\prime} +
+>b^{\prime\prime}x  + c^{\prime\prime}y +  f^{\prime\prime}z + etc )^2 \\
+>+ & etc
+>\end{align*}
 >if we wanted a minimum, by varying x alone, we will have the equation ...}
 
 \notes{This is the earliest know printed version of the problem of least squares. The notation, however, is a little awkward for mordern eyes. In particular Legendre doesn't make use of the sum sign,
@@ -189,7 +217,8 @@ which are each indexed by their position in the vector.}
 
 \notes{Linear algebra provides a very similar role, when we introduce [linear algebra](http://en.wikipedia.org/wiki/Linear_algebra), it is because we are faced with a large number of addition and multiplication operations. These operations need to be done together and would be very tedious to write down as a group. So the first reason we reach for linear algebra is for a more compact representation of our mathematical formulae.}
 
-\notes{### Running Example: Olympic Marathons
+\notes{
+### Running Example: Olympic Marathons
 
 Now we will load in the Olympic marathon data. This is data of the olympic marath times for the men's marathon from the first olympics in 1896 up until the London 2012 olympics.}
 
@@ -202,28 +231,30 @@ y = data['Y']}
 \code{print(x)
 print(y)}
 
-\notes{Note that they are not `pandas` data frames for this example, they are just arrays of dimensionality $n\times 1$, where $n$ is the number of data.}
+\notes{Note that they are not `pandas` data frames for this example, they are just arrays of dimensionality $\numData\times 1$, where $\numData$ is the number of data.}
 
 \notes{The aim of this lab is to have you coding linear regression in python. We will do it in two ways, once using iterative updates (coordinate ascent) and then using linear algebra. The linear algebra approach will not only work much better, it is easy to extend to multiple input linear regression and *non-linear* regression using basis functions.}
 
-\notes{### Plotting the Data
+\notes{
+### Plotting the Data
 
 You can make a plot of $\dataScalar$ vs $\inputScalar$ with the following command:}
 
-\setupcode{%matplotlib inline 
+\plotcode{%matplotlib inline 
 import matplotlib.pyplot as plt}
 
 \plotcode{plt.plot(x, y, 'rx')
 plt.xlabel('year')
 plt.ylabel('pace in min/km')}
 
-\notes{### Maximum Likelihood: Iterative Solution
+\notes{
+### Maximum Likelihood: Iterative Solution
 
-Now we will take the maximum likelihood approach we derived in the lecture to fit a line, $\dataScalar_i=m\inputScalar_i + c$, to the data you've plotted. We are trying to minimize the error function:}
-
-$$\errorFunction(m, c) =  \sum_{i=1}^\numData(\dataScalar_i-m\inputScalar_i-c)^2$$
-
-\notes{with respect to $m$, $c$ and $\sigma^2$. We can start with an initial guess for $m$,}
+Now we will take the maximum likelihood approach we derived in the lecture to fit a line, $\dataScalar_i=m\inputScalar_i + c$, to the data you've plotted. We are trying to minimize the error function:
+$$
+\errorFunction(m, c) =  \sum_{i=1}^\numData(\dataScalar_i-m\inputScalar_i-c)^2
+$$
+with respect to $m$, $c$ and $\sigma^2$. We can start with an initial guess for $m$,}
 
 \code{m = -0.4
 c = 80}
@@ -236,7 +267,8 @@ c = 80}
 
 \notes{To find the minimum, we look for the point in the curve where the gradient is zero. This can be found by taking the gradient of $\errorFunction(m,c)$ with respect to the parameter.}
 
-\slides{### Learning is Optimization
+\slides{
+### Learning is Optimization
 
 * Learning is minimization of the cost function.
 * At the minima the gradient is zero.
@@ -244,13 +276,15 @@ c = 80}
   $$\frac{\text{d}\errorFunction(c)}{\text{d}c} = -2\sum_{i=1}^\numData \left(\dataScalar_i- m \inputScalar_i - c \right)$$
   $$0 = -2\sum_{i=1}^\numData\left(\dataScalar_i- m\inputScalar_i - c \right)$$}
 
-\slides{### Learning is Optimization
+\slides{
+### Learning is Optimization
 
 * Fixed point equations
   $$0 = -2\sum_{i=1}^\numData \dataScalar_i +2\sum_{i=1}^\numData m \inputScalar_i +2n c$$
   $$c = \frac{\sum_{i=1}^\numData \left(\dataScalar_i - m\inputScalar_i\right)}{\numData}$$}
 
-\notes{#### Update for Offset
+\notes{
+#### Update for Offset
 
 Let's consider the parameter $c$ first. The gradient goes nicely through the summation operator, and we obtain
 $$
@@ -275,6 +309,7 @@ c = (y - m*x).mean()
 print(c)}
 
 
+\slides{
 ### Learning is Optimization
 
 * Learning is minimization of the cost function.
@@ -282,14 +317,17 @@ print(c)}
 * Coordinate ascent, find gradient in each coordinate and set to zero.
   $$\frac{\text{d}\errorFunction(m)}{\text{d}m} = -2\sum_{i=1}^\numData \inputScalar_i\left(\dataScalar_i- m \inputScalar_i - c \right)$$
   $$0 = -2\sum_{i=1}^\numData \inputScalar_i \left(\dataScalar_i-m \inputScalar_i - c \right)$$
+}
 
+\slides{
 ### Learning is Optimization
 
 * Fixed point equations
   $$0 = -2\sum_{i=1}^\numData \inputScalar_i\dataScalar_i+2\sum_{i=1}^\numData m \inputScalar_i^2+2\sum_{i=1}^\numData c\inputScalar_i$$
   $$m  =    \frac{\sum_{i=1}^\numData \left(\dataScalar_i -c\right)\inputScalar_i}{\sum_{i=1}^\numData\inputScalar_i^2}$$
-
-\notes{### Update for Slope
+}
+\notes{
+### Update for Slope
 
 Now we have the offset set to the minimum value, in coordinate descent, the next step is to optimise another parameter. Only one further parameter remains. That is the slope of the system.}
 
@@ -299,7 +337,8 @@ $$m^* = \frac{\sum_{i=1}^\numData (\dataScalar_i - c)\inputScalar_i}{\sum_{i=1}^
 
 \notes{Communication of mathematics in data science is an essential skill, in a moment, you will be asked to rederive the equation above. Before we do that, however, we will briefly review how to write mathematics in the notebook.}
 
-\notes{### $\LaTeX$ for Maths
+\notes{
+### $\LaTeX$ for Maths
 
 These cells use [Markdown format](http://en.wikipedia.org/wiki/Markdown). You can include maths in your markdown using [$\LaTeX$ syntax](http://en.wikipedia.org/wiki/LaTeX), all you have to do is write your answer inside dollar signs, as follows:}
 
@@ -319,16 +358,19 @@ These cells use [Markdown format](http://en.wikipedia.org/wiki/Markdown). You ca
 ### Fixed Point Updates
 
 \alignleft{Worked example.}
-$$\begin{aligned}
+$$
+\begin{aligned}
     c^{*}=&\frac{\sum
 _{i=1}^{\numData}\left(\dataScalar_i-m^{*}\inputScalar_i\right)}{\numData},\\
     m^{*}=&\frac{\sum
 _{i=1}^{\numData}\inputScalar_i\left(\dataScalar_i-c^{*}\right)}{\sum _{i=1}^{\numData}\inputScalar_i^{2}},\\
 \left.\dataStd^2\right.^{*}=&\frac{\sum
 _{i=1}^{\numData}\left(\dataScalar_i-m^{*}\inputScalar_i-c^{*}\right)^{2}}{\numData}
-\end{aligned}$$
+\end{aligned}
+$$
 
-\notes{### Gradient With Respect to the Slope
+\notes{
+### Gradient With Respect to the Slope
 
 Now that you've had a little training in writing maths with $\LaTeX$, we will be able to use it to answer questions. The next thing we are going to do is a little differentiation practice.}
 
@@ -386,7 +428,7 @@ Why do we need so many iterations to get to the solution?}{3}{25}
 ### Important Concepts Not Covered
 
 * Other optimization methods:
-  * Second order methods, conjugate gradient, quasi-Newton and Newton.
+    * Second order methods, conjugate gradient, quasi-Newton and Newton.
 * Effective heuristics such as momentum.
 * Local vs global solutions.
 
@@ -395,6 +437,7 @@ Why do we need so many iterations to get to the solution?}{3}{25}
 * Section 1.1-1.2 of @Rogers:book11 for fitting linear models. 
 * Section 1.2.5 of @Bishop:book06 up to equation 1.65.
 
+\slides{
 ### Multi-dimensional Inputs
 
 * Multivariate functions involve more than one input.
@@ -403,27 +446,45 @@ Why do we need so many iterations to get to the solution?}{3}{25}
 * Place these factors in a feature vector $\inputVector_i$.
 * Linear function is now defined as
   $$\mappingFunction(\inputVector_i) = \sum_{j=1}^p w_j \inputScalar_{i, j} + c$$
+}
 
+\slides{
 ### Vector Notation
 
 * Write in vector notation,
   $$\mappingFunction(\inputVector_i) = \mappingVector^\top \inputVector_i + c$$
 * Can absorb $c$ into $\mappingVector$ by assuming extra input $\inputScalar_0$ which is always 1.
   $$\mappingFunction(\inputVector_i) = \mappingVector^\top \inputVector_i$$
+}
 
+\slides{
 ### Log Likelihood for Multivariate Regression
 
-* The likelihood of a single data point is
-  $$p\left(\dataScalar_i|\inputScalar_i\right)=\frac{1}{\sqrt{2\pi\dataStd^2}}\exp\left(-\frac{\left(\dataScalar_i-\mappingVector^{\top}\inputVector_i\right)^{2}}{2\dataStd^2}\right).$$
-* Leading to a log likelihood for the data set of
-  $$L(\mappingVector,\dataStd^2)= -\frac{\numData}{2}\log \dataStd^2-\frac{\numData}{2}\log 2\pi -\frac{\sum_{i=1}^{\numData}\left(\dataScalar_i-\mappingVector^{\top}\inputVector_i\right)^{2}}{2\dataStd^2}.$$
+The likelihood of a single data point is
 
-* And a corresponding error function of
-  $$\errorFunction(\mappingVector,\dataStd^2)=\frac{\numData}{2}\log\dataStd^2 + \frac{\sum_{i=1}^{\numData}\left(\dataScalar_i-\mappingVector^{\top}\inputVector_i\right)^{2}}{2\dataStd^2}.$$
+. . .
 
+$$p\left(\dataScalar_i|\inputScalar_i\right)=\frac{1}{\sqrt{2\pi\dataStd^2}}\exp\left(-\frac{\left(\dataScalar_i-\mappingVector^{\top}\inputVector_i\right)^{2}}{2\dataStd^2}\right).$$
+
+. . .
+
+Leading to a log likelihood for the data set of
+
+. . . 
+
+$$L(\mappingVector,\dataStd^2)= -\frac{\numData}{2}\log \dataStd^2-\frac{\numData}{2}\log 2\pi -\frac{\sum_{i=1}^{\numData}\left(\dataScalar_i-\mappingVector^{\top}\inputVector_i\right)^{2}}{2\dataStd^2}.$$
+
+### Error Function
+
+And a corresponding error function of
+$$\errorFunction(\mappingVector,\dataStd^2)=\frac{\numData}{2}\log\dataStd^2 + \frac{\sum_{i=1}^{\numData}\left(\dataScalar_i-\mappingVector^{\top}\inputVector_i\right)^{2}}{2\dataStd^2}.$$
+}
+
+\slides{
 ### Expand the Brackets
 
-$$\begin{align*}
+$$
+\begin{align*}
   \errorFunction(\mappingVector,\dataStd^2)  = &
 \frac{\numData}{2}\log \dataStd^2 + \frac{1}{2\dataStd^2}\sum
 _{i=1}^{\numData}\dataScalar_i^{2}-\frac{1}{\dataStd^2}\sum
@@ -435,7 +496,9 @@ _{i=1}^{\numData}\dataScalar_i^{2}-\frac{1}{\dataStd^2}
 \mappingVector^\top\sum_{i=1}^{\numData}\inputVector_i\dataScalar_i\\&+\frac{1}{2\dataStd^2}
 \mappingVector^{\top}\left[\sum
 _{i=1}^{\numData}\inputVector_i\inputVector_i^{\top}\right]\mappingVector +\text{const}.
-\end{align*}$$
+\end{align*}
+$$
+}
 
 \section{Multiple Input Solution with Linear Algebra}
 
@@ -517,7 +580,8 @@ $$\inputMatrix
 \code{X = np.hstack((np.ones_like(x), x))
 print(X)}
 
-\notes### Writing the Objective with Linear Algebra
+\notes{
+### Writing the Objective with Linear Algebra
 
 When we think of the objective function, we can think of it as the errors where the error is defined in a similar way to what it was in Legendre's day $\dataScalar_i - \mappingFunction(\inputVector_i)$, in statistics these errors are also sometimes called [*residuals*](http://en.wikipedia.org/wiki/Errors_and_residuals_in_statistics). So we can think as the objective and the prediction function as two separate parts, first we have,
 $$
@@ -690,16 +754,28 @@ $$}}
 ### Differentiate the Objective
 
 \slides{\alignleft{Differentiating with respect to the vector $\mappingVector$ we obtain}
-$$\frac{\partial L\left(\mappingVector,\dataStd^2 \right)}{\partial
+$$
+\frac{\partial L\left(\mappingVector,\dataStd^2 \right)}{\partial
 \mappingVector}=\frac{1}{\dataStd^2} \sum _{i=1}^{\numData}\inputVector_i \dataScalar_i-\frac{1}{\dataStd^2}
-\left[\sum _{i=1}^{\numData}\inputVector_i\inputVector_i^{\top}\right]\mappingVector$$
+\left[\sum _{i=1}^{\numData}\inputVector_i\inputVector_i^{\top}\right]\mappingVector
+$$
 Leading to
-$$\mappingVector^{*}=\left[\sum
+$$
+\mappingVector^{*}=\left[\sum
 _{i=1}^{\numData}\inputVector_i\inputVector_i^{\top}\right]^{-1}\sum
-_{i=1}^{\numData}\inputVector_i\dataScalar_i,$$
-\alignleft{Rewrite in matrix notation:}
-$$\sum_{i=1}^{\numData}\inputVector_i\inputVector_i^\top = \inputMatrix^\top \inputMatrix$$
-$$\sum_{i=1}^{\numData}\inputVector_i\dataScalar_i = \inputMatrix^\top \dataVector$$}
+_{i=1}^{\numData}\inputVector_i\dataScalar_i,
+$$\slides{
+
+### Differentiate the Objective
+
+}
+Rewrite in matrix notation:
+$$
+\sum_{i=1}^{\numData}\inputVector_i\inputVector_i^\top = \inputMatrix^\top \inputMatrix
+$$
+$$
+\sum_{i=1}^{\numData}\inputVector_i\dataScalar_i = \inputMatrix^\top \dataVector
+$$}
 
 \notes{First, we need to compute the full objective by substituting our prediction function into the objective function to obtain the objective in terms of $\mappingVector$. Doing this we obtain
 $$
@@ -776,7 +852,7 @@ A major advantage of the new system is that we can build a linear regression on 
 
 \notes{### Movie Body Count Data
 
-Let's load back in the movie body count data.}
+Let's consider the movie body count data.}
 
 \code{data = pods.datasets.movie_body_count()
 movies = data['Y']}
@@ -813,9 +889,11 @@ w = pd.DataFrame(data=np.linalg.solve(np.dot(X.T, X), np.dot(X.T, y)),  # solve 
 
 \notes{Although we have to be a little careful about interpretation because our input values live on different scales, however it looks like we are dominated by the bias, with a small negative effect for later films (but bear in mind the years are large, so this effect is probably larger than it looks) and a positive effect for length. So it looks like long earlier films generally do better, but the residuals are so high that we probably haven't modelled the system very well.}
 
+\notes{
 \includeyoutube{ui-uNlFHoms}
 
 \includeyoutube{78YNphT90-k}
+}
 
 \notes{### Solution with QR Decomposition
 

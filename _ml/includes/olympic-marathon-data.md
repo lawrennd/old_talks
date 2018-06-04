@@ -1,5 +1,8 @@
-\setupcode{import pods
-import matplotlib.pyplot as plt}
+\setupcode{import numpy as np
+import matplotlib.pyplot as plt
+import pods
+import teaching_plots as plot
+import mlai}
 
 \slidenotes{}{
 ### Olympic Marathon Data
@@ -47,7 +50,7 @@ mlai.write_figure(figure=fig, filename='../slides/diagrams/datasets/olympic-mara
 \slides{
 ### Olympic Marathon Data
 }
-\includesvg{../slides/diagrams/ml/olympic_marathon.svg}
+\includesvg{../slides/diagrams/datasets/olympic-marathon.svg}
 
 \notes{
 Things to notice about the data include the outlier in 1904, in this year, the olympics was in St Louis, USA. Organizational problems and challenges with dust kicked up by the cars following the race meant that participants got lost, and only very few participants completed. 
