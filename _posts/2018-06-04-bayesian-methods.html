@@ -1145,8 +1145,27 @@ sigma2 <span class="op">=</span>
 w_cov <span class="op">=</span> 
 w_mean <span class="op">=</span> 
 </code></pre></div>
+<h3 id="olympic-data-with-bayesian-polynomials">Olympic Data with Bayesian Polynomials</h3>
+<p>Five fold cross validation tests the ability of the model to <em>interpolate</em>.</p>
+<object class="svgplot" align data="../slides/diagrams/ml/olympic_BLM_polynomial_number026.svg">
+</object>
+<center>
+<em>Bayesian fit with 26th degree polynomial and negative marginal log likelihood. </em>
+</center>
+<h3 id="hold-out-validation">Hold Out Validation</h3>
+<p>For the polynomial fit, we will now look at <em>hold out</em> validation, where we are holding out some of the most recent points. This tests the abilit of our model to <em>extrapolate</em>.</p>
+<object class="svgplot" align data="../slides/diagrams/ml/olympic_val_BLM_polynomial_number026.svg">
+</object>
+<center>
+<em>Bayesian fit with 26th degree polynomial and hold out validation scores. </em>
+</center>
+<h3 id="fold-cross-validation">5-fold Cross Validation</h3>
+<p>Five fold cross validation tests the ability of the model to <em>interpolate</em>.</p>
 <object class="svgplot" align data="../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number026.svg">
 </object>
+<center>
+<em>Bayesian fit with 26th degree polynomial and five fold cross validation scores. </em>
+</center>
 <h3 id="marginal-likelihood">Marginal Likelihood</h3>
 <ul>
 <li><p>The marginal likelihood can also be computed, it has the form: <span class="math display">\[
