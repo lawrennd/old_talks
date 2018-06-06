@@ -27,13 +27,8 @@ layout: post
     {% if page.tagline %}
     <p><b>{{ page.tagline }}</b> </p>
     {% endif %}
-    {% if page.abstract %}
-    <h4>Abstract</h4>
-    
-    <p>{{ page.abstract | markdownify }}</p>
-    {% endif %}
 
-    {% if page.video or page.blog or page.blog1 or page.blog2 or page.ppt or page.pdf or page.linkpdf or page.linkpsgz or page.linkps or page.linkppt or page.linkpptgz or page.demo or page.linksoftware or page.extras.size > 0 %}
+    {% if page.video or page.blog or page.blog1 or page.blog2 or page.ppt or page.pdf or page.linkpdf or page.linkpsgz or page.linkps or page.linkppt or page.linkpptgz or page.demo or page.pdfnotes or page.linksoftware or page.extras.size > 0 %}
     <h3>Links</h3>
     <div id="extras">
     <ul>
@@ -50,13 +45,21 @@ layout: post
       {%if page.linkpptgz %}<li><a href="{{ page.linkpptgz }}" target="_blank" onclick="ga('send', 'event', 'PPT Downloads', 'Download', {{ page.linkppt}}, 10);">Download Gzipped PPT</a></li>{% endif %}
       {%if page.demo %}<li><a href="{{ site.talk_files }}/demos/{{ page.demo }} target="_blank" onclick="ga('send', 'event', 'Demo Downloads', 'Download', {{ site.talk_files }}/demos/{{ page.demo }}, 10);"">demo code</a></li>{% endif %}
       {%if page.linksoftware %}<li><a href="{{ page.linksoftware }}" target="_blank" onclick="ga('send', 'event', 'Software Downloads', 'Download', {{ page.linksoftware }}, 10);">Download Software</a></li>{% endif %}
+      {%if page.pdfnotes %}<li><a href="{{ page.pdfnotes }}" target="_blank" onclick="ga('send', 'event', 'Notes Downloads', 'Download', {{ page.pdfnotes }}, 10);">Download PDF Notes</a></li>{% endif %}
       {% for extra in page.extras %}
       <li><a href="{{ extra.link }}" target="_blank" onclick="ga('send', 'event', '{{ extra.label }}', 'Download', {{ extra.link }}, 10);">{{ extra.label }}</a></li>
       {% endfor %}
     </ul>
   </div>
   {% endif %}
-    {{ content | markdownify }}
+
+  {% if page.abstract %}
+  <h4>Abstract</h4>
+    
+  <p>{{ page.abstract | markdownify }}</p>
+  {% endif %}
+
+  {{ content | markdownify }}
   </article>
 
 </div>
