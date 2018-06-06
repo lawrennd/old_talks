@@ -30,7 +30,11 @@
   <![endif]-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
       <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({ TeX: { extensions: ["color.js"] }});
+        MathJax.Hub.Config({
+          TeX: {
+            extensions: ["color.js"]
+          }
+        });
       </script>
       <script>
   
@@ -42,6 +46,7 @@
   
   function plusDivs(n, group) {
     showDivs(slideIndex += n, group);
+    document.setElementById("range-".concat(group)) = slideIndex
   }
   
   function showDivs(n,group) {
@@ -57,7 +62,7 @@
       </script>
 </head>
 <body>
-\newcommand{\Amatrix}{\mathbf{A}}
+$$\newcommand{\Amatrix}{\mathbf{A}}
 \newcommand{\KL}[2]{\text{KL}\left( #1\,\|\,#2 \right)}
 \newcommand{\Kaast}{\kernelMatrix_{\mathbf{ \ast}\mathbf{ \ast}}}
 \newcommand{\Kastu}{\kernelMatrix_{\mathbf{ \ast} \inducingVector}}
@@ -349,6 +354,7 @@
 \newcommand{\weightedAdjacencyVector}{\mathbf{ \weightedAdjacencyScalar}}
 \newcommand{\onesVector}{\mathbf{1}}
 \newcommand{\zerosVector}{\mathbf{0}}
+$$
   <div class="reveal">
     <div class="slides">
 
@@ -726,15 +732,15 @@ Ernest Hemingway’s apocrophal six word novel would mean nothing to a computer.
 </section>
 <section id="section-6" class="slide level3">
 <h3></h3>
-<p><img class="" src="../slides/diagrams/laplacesDeterminismFrench.png" width="80%" align="center" style="background:none; border:none; box-shadow:none;"></p>
+<p><img class="" src="../slides/diagrams/laplacesDeterminismFrench.png" width="60%" align="center" style="background:none; border:none; box-shadow:none;"></p>
 </section>
 <section id="section-7" class="slide level3">
 <h3></h3>
-<p><img class="" src="../slides/diagrams/laplacesDeterminismEnglish.png" width="80%" align="center" style="background:none; border:none; box-shadow:none;"></p>
+<p><img class="" src="../slides/diagrams/laplacesDeterminismEnglish.png" width="60%" align="center" style="background:none; border:none; box-shadow:none;"></p>
 </section>
 <section id="section-8" class="slide level3">
 <h3></h3>
-<p><img class="" src="../slides/diagrams/philosophicaless00lapliala.png" width="80%" align="center" style="background:none; border:none; box-shadow:none;"></p>
+<p><img class="" src="../slides/diagrams/philosophicaless00lapliala.png" width="60%" align="center" style="background:none; border:none; box-shadow:none;"></p>
 </section>
 <section id="singularians" class="slide level3">
 <h3>Singularians</h3>

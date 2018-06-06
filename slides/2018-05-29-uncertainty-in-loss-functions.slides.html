@@ -30,7 +30,11 @@
   <![endif]-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
       <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({ TeX: { extensions: ["color.js"] }});
+        MathJax.Hub.Config({
+          TeX: {
+            extensions: ["color.js"]
+          }
+        });
       </script>
       <script>
   
@@ -42,6 +46,7 @@
   
   function plusDivs(n, group) {
     showDivs(slideIndex += n, group);
+    document.setElementById("range-".concat(group)) = slideIndex
   }
   
   function showDivs(n,group) {
@@ -57,7 +62,7 @@
       </script>
 </head>
 <body>
-\newcommand{\Amatrix}{\mathbf{A}}
+$$\newcommand{\Amatrix}{\mathbf{A}}
 \newcommand{\KL}[2]{\text{KL}\left( #1\,\|\,#2 \right)}
 \newcommand{\Kaast}{\kernelMatrix_{\mathbf{ \ast}\mathbf{ \ast}}}
 \newcommand{\Kastu}{\kernelMatrix_{\mathbf{ \ast} \inducingVector}}
@@ -349,6 +354,7 @@
 \newcommand{\weightedAdjacencyVector}{\mathbf{ \weightedAdjacencyScalar}}
 \newcommand{\onesVector}{\mathbf{1}}
 \newcommand{\zerosVector}{\mathbf{0}}
+$$
   <div class="reveal">
     <div class="slides">
 
