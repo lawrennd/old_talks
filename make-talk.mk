@@ -19,7 +19,17 @@ ${BASE}.notes.html: ${BASE}.notes.md
 	pandoc  ${PDSFLAGS} --bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib -o ${BASE}.notes.html  ${BASE}.notes.md 
 
 ${BASE}.posts.html: ${BASE}.notes.md
-	pandoc  --template pandoc-jekyll-talk-template ${PDFLAGS} --atx-headers --metadata date=${DATE} --metadata layout=talk --metadata reveal=${OUT}.slides.html --metadata published=${DATE} --include-in-header=${POSTSHEADER} -t html --bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib -o ${BASE}.posts.html  ${BASE}.notes.md 
+	pandoc --template pandoc-jekyll-talk-template ${PDFLAGS} \
+	       --atx-headers --metadata date=${DATE} \
+               --metadata layout=talk \
+               --metadata reveal=${OUT}.slides.html \
+               --metadata ipynb=${OUT}.ipynb \
+               --metadata published=${DATE} \
+               --bibliography=../lawrence.bib \
+               --bibliography=../other.bib \
+               --bibliography=../zbooks.bib \
+               --to html \
+               --out ${BASE}.posts.html  ${BASE}.notes.md 
 	cp ${BASE}.posts.html ../_posts/${OUT}.html
 
 
