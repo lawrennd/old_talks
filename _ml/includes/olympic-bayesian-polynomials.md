@@ -1,7 +1,8 @@
-\slides{
 ### Olympic Data with Bayesian Polynomials
 
+\notes{Five fold cross validation tests the ability of the model to *interpolate*.}
 
+\slides{
 \setupcode{import mlai
 import pods}
 
@@ -32,6 +33,7 @@ from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('olympic_BLM_polynomial_number{num_basis:0>3}.svg', 
                             directory='../slides/diagrams/ml/', 
 							num_basis=IntSlider(1, 1, 27, 1))}
+}
 
 \slides{
 \startslides{olympic_BLM_polynomial_number}{1}{26}
@@ -64,10 +66,14 @@ from ipywidgets import IntSlider}
 }
 
 \notesfigure{\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number026.svg}{}{}}
+\notes{\caption{Bayesian fit with 26th degree polynomial and negative marginal log likelihood.}}
 
 
 ### Hold Out Validation
 
+\notes{For the polynomial fit, we will now look at *hold out* validation, where we are holding out some of the most recent points. This tests the abilit of our model to *extrapolate*.}
+
+\slides{
 \plotcode{plot.holdout_fit(x, y, param_name='number', param_range=(1, 27),
               diagrams='../slides/diagrams/ml',
               model=mlai.BLM, 
@@ -83,6 +89,7 @@ from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('olympic_val_BLM_polynomial_number{num_basis:0>3}.svg', 
                             directory='../slides/diagrams/ml', 
                             num_basis=IntSlider(1, 1, 27, 1))}
+}
 
 \slides{
 \startslides{olympic_val_BLM_polynomial_number}{1}{26}
@@ -115,9 +122,13 @@ from ipywidgets import IntSlider}
 }
 
 \notesfigure{\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number026.svg}{}{}}
+\notes{\caption{Bayesian fit with 26th degree polynomial and hold out validation scores.}}
 
 ### 5-fold Cross Validation
 
+\notes{Five fold cross validation tests the ability of the model to *interpolate*.}
+
+\slides{
 \plotcode{num_parts=5
 plot.cv_fit(x, y, param_name='number', param_range=(1, 27),  
             diagrams='../slides/diagrams/ml',
@@ -169,3 +180,4 @@ from ipywidgets import IntSlider}
 }
 
 \notesfigure{\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number026.svg}{}{}}
+\notes{\caption{Bayesian fit with 26th degree polynomial and five fold cross validation scores.}}
