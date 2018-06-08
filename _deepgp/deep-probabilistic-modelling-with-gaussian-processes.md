@@ -1,7 +1,17 @@
 ---
 layout: slides
 title: "Deep Probabilistic Modelling with with Gaussian Processes"
-author: Neil D. Lawrence
+abstract: >
+  Neural network models are algorithmically simple, but mathematically complex. Gaussian process models are mathematically simple, but algorithmically complex. In this tutorial we will explore Deep Gaussian Process models. They bring advantages in their mathematical simplicity but are challenging in their algorithmic complexity. We will give an overview of Gaussian processes and highlight the algorithmic approximations that allow us to stack Gaussian process models: they are based on variational methods. In the last part of the tutorial will explore a use case exemplar: uncertainty quantification. We end with open questions.
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
+  institute: Amazon and University of Sheffield
+  twitter: lawrennd
+  url: http://inverseprobability.com
+venue: NIPS Tutorial 2017
+youtube: NHTGY8VCinY
 transition: None
 bibliography: deep-probabilistic-modelling-with-gaussian-processes.bib
 ---
