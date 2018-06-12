@@ -688,7 +688,7 @@ def update_inverse(self):
     self.Kinv = np.dot(self.Rinv, self.Rinv.T)
 
 
-class kernel():
+class Kernel():
     """Covariance function
     :param function: covariance function
     :type function: function
@@ -720,6 +720,10 @@ class kernel():
             diagK[i] = self.function(X[i, :], X[i, :], **self.parameters)
         return diagK
 
+    def _repr_html_(self):
+        raise NotImplementedError
+
+    
 def exponentiated_quadratic(x, x_prime, variance=1., lengthscale=1.):
     """Exponentiated quadratic covariance function."""
     r = np.linalg.norm(x-x_prime, 2)
