@@ -1,23 +1,23 @@
 
-### Approximations {data-transition="None"}
+### Approximations
 
 \includeimg{../slides/diagrams/sparse-gps-1.png}{90%}
 
 *Image credit: Kai Arulkumaran*
 
-### Approximations {data-transition="None"}
+### Approximations
 
 \includeimg{../slides/diagrams/sparse-gps-2.png}{90%}
 
 *Image credit: Kai Arulkumaran*
 
-### Approximations {data-transition="None"}
+### Approximations
 
 \includeimg{../slides/diagrams/sparse-gps-3.png}{45%}
 
 *Image credit: Kai Arulkumaran*
 
-### Approximations {data-transition="None"}
+### Approximations
 
 \includeimg{../slides/diagrams/sparse-gps-4.png}{45%}
 
@@ -63,7 +63,7 @@ mlai.write_figure(figure=fig,
                   filename='../slides/diagrams/gp/sparse-demo-full-gp.svg', 
                   transparent=True, frameon=True)}
 
-### Full Gaussian Process Fit {data-transition="None"}
+### Full Gaussian Process Fit
 
 \includesvg{../slides/diagrams/gp/sparse-demo-full-gp.svg}
 
@@ -85,7 +85,7 @@ mlai.write_figure(figure=fig,
                   filename='../slides/diagrams/gp/sparse-demo-constrained-inducing-6-unlearned-gp.svg', 
                   transparent=True, frameon=True)}
 
-### Inducing Variable Fit {data-transition="None"}
+### Inducing Variable Fit
 
 \includesvg{../slides/diagrams/gp/sparse-demo-constrained-inducing-6-unlearned-gp.svg}
 
@@ -98,7 +98,7 @@ mlai.write_figure(figure=fig,
                   filename='../slides/diagrams/gp/sparse-demo-full-gp.svg', 
                   transparent=True, frameon=True)}
 
-### Inducing Variable Param Optimize {data-transition="None"}
+### Inducing Variable Param Optimize
 
 \includesvg{../slides/diagrams/gp/sparse-demo-constrained-inducing-6-learned-gp.svg}
 
@@ -112,7 +112,7 @@ mlai.write_figure(figure=fig,
                   filename='../slides/diagrams/gp/sparse-demo-unconstrained-inducing-6-gp.svg', 
                   transparent=True, frameon=True)}
 
-### Inducing Variable Full Optimize {data-transition="None"}
+### Inducing Variable Full Optimize
 
 \includesvg{../slides/diagrams/gp/sparse-demo-unconstrained-inducing-6-gp.svg}
 
@@ -132,11 +132,11 @@ mlai.write_figure(figure=fig,
                   filename='../slides/diagrams/gp/sparse-demo-sparse-inducing-8-gp.svg', 
                   transparent=True, frameon=True)}
 
-### Eight Optimized Inducing Variables {data-transition="None"}
+### Eight Optimized Inducing Variables
 
 \includesvg{../slides/diagrams/gp/sparse-demo-sparse-inducing-8-gp.svg}
 
-### Full Gaussian Process Fit {data-transition="None"}
+### Full Gaussian Process Fit
 
 \includesvg{../slides/diagrams/gp/sparse-demo-full-gp.svg}
 

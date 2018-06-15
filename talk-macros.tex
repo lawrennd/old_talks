@@ -26,6 +26,8 @@ YouTubeVideo('\id')
 \define{\writeassignment{text}{question}{marks}}{}
 \define{\codeassignment{text}{question}{marks}}{}
 \define{\slides{text}}{\text}
+\define{\newslide{text}}{### \text
+}
 
 \else
 
@@ -52,6 +54,7 @@ YouTubeVideo('\id')
 
 }
 \define{\slides{text}}{}
+\define{\newslide{text}}{}
 \endif
 
 \define{\section{text}}{## \text}
@@ -107,6 +110,7 @@ YouTubeVideo('\id')
 \define{\includehtml{filename}{width}{height}}{<iframe src="\filename" width="\width" height="\height" allowtransparency="true" frameborder="0">
 </iframe>}
 \define{\slides{text}}{}
+\define{\newslide{text}}{}
 \define{\fragment{text}{type}}{\text}
 \define{\fragmentindex{text}{type}{index}}{\text}
 \define{\speakernotes{text}}{}
@@ -203,6 +207,8 @@ YouTubeVideo('\id')
 \define{\codeassignment{text}{question}{marks}}{}
 \define{\section{text}}{<!-- SECTION \text -->}
 \define{\slides{text}}{\text}
+\define{\newslide{text}}{### \text
+}
 
 \define{\startslides{group}{start}{finish}}{<script>
 showDivs(\start, '\group');

@@ -1,4 +1,4 @@
-### Probabilistic Modelling {data-transition="None"}
+### Probabilistic Modelling
 
 \slidenotes{
 * Probabilistically we want,}{
@@ -16,7 +16,7 @@ $\dataVector$ is training outputs
 there is nothing controversial here, as long as you accept that you have a good joint model of the world around you that relates test data to training data, $p(\dataScalar_*, \dataVector, \inputMatrix, \inputVector_*)$ then this conditional distribution can be recovered through standard rules of probability ($\text{data} + \text{model} \rightarrow \text{prediction}$). 
 }
 \slidenotes{
-### Joint Model of World {data-transition="None"}
+### Joint Model of World
 
 }{We can construct this joint density through the use of the following decomposition:}
 $$
@@ -32,7 +32,7 @@ $p(\mappingMatrix | \dataVector, \inputMatrix)$ is posterior density
 where, for convenience, we are assuming *all* the parameters of the model are now represented by $\parameterVector$ (which contains $\mappingMatrix$ and $\mappingMatrixTwo$) and $p(\parameterVector | \dataVector, \inputMatrix)$ is recognised as the posterior density of the parameters given data and $p(\dataScalar_*|\inputVector_*, \parameterVector)$ is the *likelihood* of an individual test data point given the parameters.}
 
 \slidenotes{
-### Likelihood {data-transition="None"}
+### Likelihood
 
 $p(\dataScalar|\inputVector, \mappingMatrix)$ is the *likelihood* of data point
 
@@ -51,7 +51,7 @@ $$
 }
 
 \slidenotes{
-### Likelihood and Prediction Function {data-transition="None"}
+### Likelihood and Prediction Function
 
 $$
 p(\dataScalar_i | \mappingFunction(\inputVector_i)) = \frac{1}{\sqrt{2\pi \dataStd^2}} \exp\left(-\frac{\left(\dataScalar_i - \mappingFunction(\inputVector_i)\right)^2}{2\dataStd^2}\right)
@@ -64,7 +64,7 @@ $$
 }
 
 \slidenotes{
-### Unsupervised Learning {data-transition="None"}
+### Unsupervised Learning
 
 * Can also consider priors over latents
 $$
@@ -81,7 +81,7 @@ $$
 and we have *unsupervised learning*  (from where we can get deep generative models). 
 }
 \slidenotes{
-### Probabilistic Inference {data-transition="None"}
+### Probabilistic Inference
 
 * Data: $\dataVector$
 
