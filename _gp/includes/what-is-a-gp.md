@@ -1,12 +1,15 @@
 \include{_ml/includes/what-is-ml.md}
 
 ### Artificial Intelligence
-
+\slides{
 * Machine learning is a mainstay because of importance of prediction.
+}
+\notes{
+}
 
 ### Uncertainty
 
-\slide{
+\slides{
 * Uncertainty in prediction arises from:
 * scarcity of training data and 
 * mismatch between the set of prediction functions we choose and all possible prediction functions.
@@ -30,9 +33,9 @@ There are also challenges around specification of the objective function, but fo
 
 \include{_ml/includes/multivariate-gaussian-properties-summary.md}
 
-\slidenotes{
+\slides{
 ### Linear Gaussian Models
-}{Gaussian processes are initially of interest because}
+}\notes{Gaussian processes are initially of interest because}
 
 1. linear Gaussian models are easier to deal with 
 2. Even the parameters *within* the process can be handled, by considering a particular limit.
@@ -79,15 +82,15 @@ There are also challenges around specification of the objective function, but fo
     $$\covarianceMatrix_* = \kernelMatrix_{*,*} - \kernelMatrix_{*,\mappingFunctionVector}
 \kernelMatrix^{-1} \kernelMatrix_{\mappingFunctionVector, *}$$
 
-###  {data-transition="none"}
+### 
 
 \includesvg{../slides/diagrams/gp_prior_samples_data.svg}
 
-###  {data-transition="none"}
+### 
 
 \includesvg{../slides/diagrams/gp_rejection_samples.svg}
 
-###  {data-transition="none"}
+### 
 
 \includesvg{../slides/diagrams/gp_prediction.svg}
 
