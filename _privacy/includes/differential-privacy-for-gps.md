@@ -93,7 +93,7 @@ $d$).
 $d\;||\kernelMatrix^{-1}||_\infty$
 
 
-### Applied to Gaussian Processes {data-transition="None"}
+### Applied to Gaussian Processes
 
 This 'works' in that it allows DP predictions...but to avoid too much
 noise, the value of $\varepsilon$ is too large (here it is 100)
@@ -103,7 +103,7 @@ noise, the value of $\varepsilon$ is too large (here it is 100)
 EQ kernel, $\lengthScale = 25$ years, $\Delta=100$cm
 
 
-### Inducing Inputs {data-transition="None"}
+### Inducing Inputs 
 
 Using sparse methods (i.e. inducing inputs) can help reduce the
 sensitivity a little. We'll see more on this later.

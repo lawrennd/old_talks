@@ -45,65 +45,13 @@ else:
 \setupcode{import pods}
 \displaycode{pods.notebook.display_google_book('CF4UAAAAQAAJ', 87)}
 
-\setupcode{from matplotlib.patches import Circle}
-\plotcode{fig, ax = plt.subplots(figsize=(7,7))
-ax.plot([0, 0, 1, 1], [1, 0, 0, 1], linewidth=3, color=[0,0,0])
-ax.set_axis_off()
-ax.set_aspect('equal')
-black_prob = 0.3
-ball_radius = 0.1
-ax.set_xlim([0, 1])
-ax.set_ylim([0, 1])
-t = np.linspace(0, 2*np.pi, 24)
-rows = 4
-cols = round(1/ball_radius)
-last_row_cols = 3;
-for row in range(rows):
-    if row == rows-1:
-      cols = last_row_cols
+\setupcode{import matplotlib.pyplot as plt
+import teaching_plots as plot}
 
-    for col in range(cols):
-        ball_x = col*2*ball_radius + ball_radius
-        ball_y = row*2*ball_radius + ball_radius
-        x = ball_x*np.ones(t.shape) + ball_radius*np.sin(t)
-        y = ball_y*np.ones(t.shape) + ball_radius*np.cos(t);
-  
-        if np.random.rand()<black_prob:
-            ball_color = [0, 0, 0]
-        else: 
-            ball_color = [1, 0, 0]
-        plt.sca(ax)
-        handle = Circle((ball_x, ball_y), ball_radius, fill=True, color=ball_color, figure=fig)
-        print(ball_x, ball_y, ball_radius)}
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)
+plot.bernoulli_urn(ax, diagrams='../slides/diagrams/ml/')}
 
-\matlabcode{
-      blackProb = 0.3;
-      ballRadius = 0.1;
-      set(gca, 'xlim', [0 1], 'ylim', [0 1])
-      t = 0:pi/24:2*pi;
-      rows = 4;
-      cols = 1/ballRadius;
-      lastRowCols = 3;
-      for row = 0:rows-1
-        if row == rows-1
-          cols = lastRowCols;
-        end
-        for col = 0:cols-1
-          ballX = col*2*ballRadius+ballRadius;
-          ballY = row*2*ballRadius + ballRadius;
-          x = ballX*ones(size(t)) + ballRadius*sin(t);
-          y = ballY*ones(size(t)) + ballRadius*cos(t);
-          if rand<blackProb
-            ballColor = blackColor;
-          else 
-            ballColor = redColor;
-          end
-          handle = patch(x', y', ballColor);
-        end
-      end
-      printLatexPlot('bernoulliUrn', '../../../ml/tex/diagrams/', plotWidth);
-      }
-    \end{comment}
+\includesvg{../slides/diagrams/ml/bernoulli-urn.svg}
 
 \newslide{Thomas Bayes's Bernoulli}
 
@@ -121,37 +69,30 @@ Now, we roll the second ball. We are interested if the second ball ends up on th
 
 For this reason in Bayes's distribution there is considered to be *aleatoric* uncertainty about the distribution parameter.}
 
+\setupcode{import matplotlib.pyplot as plt
+import teaching_plots as plot}
 
-\matlabcode{figure(1), clf
-      plotWidth = textWidth*0.4;
-      
-      line([0 0 1 1 0], [0 1 1 0 0], 'linewidth', 3, 'color', blackColor)
-      set(gca, 'xlim', [0 1], 'ylim', [0 1])
-      axis off
-      printLatexPlot('bayesBilliard0', '../../../ml/tex/diagrams/', plotWidth);
-      ballX = rand(1);
-      ballY = 0.5;
-      r = 0.1;
-      t = 0:pi/24:2*pi;
-      x = ballX*ones(size(t)) + r*sin(t);
-      y = ballY*ones(size(t)) + r*cos(t);
-      handle = patch(x', y', blackColor);
-      set(gca, 'xlim', [0 1], 'ylim', [0 1])
-      printLatexPlot('bayesBilliard1', '../../../ml/tex/diagrams/', plotWidth);
-      line([ballX ballX], [0 1], 'linestyle', ':', 'linewidth', 3, 'color', blackColor)
-      printLatexPlot('bayesBilliard2', '../../../ml/tex/diagrams/', plotWidth);
-      counter = 2;
-      for ballX = rand(1, 7)
-        ballY = 0.5;
-        counter = counter+1;
-        x = ballX*ones(size(t)) + r*sin(t);
-        y = ballY*ones(size(t)) + r*cos(t);
-        handle = patch(x', y', redColor);
-        set(gca, 'xlim', [0 1], 'ylim', [0 1])
-        printLatexPlot(['bayesBilliard' num2str(counter)], '../../../ml/tex/diagrams/', plotWidth);
-        delete(handle)
-      end
-      
-      \end{comment}
-    \column{5cm}
-    \only<1>{\input{../../../ml/tex/diagrams/bayesBilliard0}}\only<2>{\input{../../../ml/tex/diagrams/bayesBilliard1}}\only<3>{\input{../../../ml/tex/diagrams/bayesBilliard2}}\only<4>{\input{../../../ml/tex/diagrams/bayesBilliard3}}\only<5>{\input{../../../ml/tex/diagrams/bayesBilliard4}}\only<6>{\input{../../../ml/tex/diagrams/bayesBilliard5}}\only<7>{\input{../../../ml/tex/diagrams/bayesBilliard6}}\only<8>{\input{../../../ml/tex/diagrams/bayesBilliard7}}\only<9>{\input{../../../ml/tex/diagrams/bayesBilliard8}}\only<10>{\input{../../../ml/tex/diagrams/bayesBilliard9}}}
+\plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)
+plot.bayes_billiard(ax, diagrams='../slides/diagrams/ml/')}
+
+\includesvg{../slides/diagrams/ml/bernoulli-urn.svg}
+\slides{
+\startslides{bayes_billiard}{1}{10}
+\includesvg{../slides/diagrams/ml/bernoulli-urn000.svg}{}{bayes_billiard}
+\includesvg{../slides/diagrams/ml/bernoulli-urn001.svg}{}{bayes_billiard}
+\includesvg{../slides/diagrams/ml/bernoulli-urn002.svg}{}{bayes_billiard}
+\includesvg{../slides/diagrams/ml/bernoulli-urn003.svg}{}{bayes_billiard}
+\includesvg{../slides/diagrams/ml/bernoulli-urn004.svg}{}{bayes_billiard}
+\includesvg{../slides/diagrams/ml/bernoulli-urn005.svg}{}{bayes_billiard}
+\includesvg{../slides/diagrams/ml/bernoulli-urn006.svg}{}{bayes_billiard}
+\includesvg{../slides/diagrams/ml/bernoulli-urn007.svg}{}{bayes_billiard}
+\includesvg{../slides/diagrams/ml/bernoulli-urn008.svg}{}{bayes_billiard}
+\includesvg{../slides/diagrams/ml/bernoulli-urn009.svg}{}{bayes_billiard}
+}
+\notesfigure{\includesvg{../slides/diagrams/ml/bayes-billiard009.svg}}
+
+\setupcode{import pods
+from ipywidgets import IntSlider}
+\displaycode{pods.notebook.display_plots('bayes-billiard{counter:0>3}.svg', 
+                            directory='../slides/diagrams/ml', 
+							counter=IntSlider(0,0,9,1))}

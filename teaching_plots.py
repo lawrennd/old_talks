@@ -288,7 +288,7 @@ def prob_diagram(fontsize=20, diagrams='../diagrams'):
     ax.text(2.5, 4-indent, '$n_{X=3, Y=4}$', horizontalalignment='center', fontsize=fontsize)
 
 
-    plt.text(1.5, 0.5, '$N$ crosses total', horizontalalignment='center', fontsize=fontsize);
+    plt.text(1.5, 0.5, '$N$ crosses total', horizontalalignment='center', fontsize=fontsize)
 
     plt.text(3, -2*axis_indent, '$X$', fontsize=fontsize)
     plt.text(-2*axis_indent, 2, '$Y$', fontsize=fontsize)
@@ -297,7 +297,82 @@ def prob_diagram(fontsize=20, diagrams='../diagrams'):
     mlai.write_figure(os.path.join(diagrams, 'prob_diagram.svg'), transparent=True)
 
 
+def bernoulli_urn(ax, diagrams='../diagrams'):
+    """Plot the urn of Jacob Bernoulli's analogy for the Bernoulli distribution."""
 
+    black_prob = 0.3
+    ball_radius = 0.1
+
+    ax.plot([0, 0, 1, 1], [1, 0, 0, 1], linewidth=3, color=[0,0,0])
+    ax.set_axis_off()
+    ax.set_aspect('equal')
+    ax.set_xlim([0, 1])
+    ax.set_ylim([0, 1])
+    t = np.linspace(0, 2*np.pi, 24)
+    rows = 4
+    cols = round(1/ball_radius)
+    last_row_cols = 3
+    for row in range(rows):
+        if row == rows-1:
+          cols = last_row_cols
+
+        for col in range(cols):
+            ball_x = col*2*ball_radius + ball_radius
+            ball_y = row*2*ball_radius + ball_radius
+            x = ball_x*np.ones(t.shape) + ball_radius*np.sin(t)
+            y = ball_y*np.ones(t.shape) + ball_radius*np.cos(t)
+
+            if np.random.rand()<black_prob:
+                ball_color = [0, 0, 0]
+            else: 
+                ball_color = [1, 0, 0]
+            plt.sca(ax)
+            circle = plt.Circle((ball_x, ball_y), ball_radius, fill=True, color=ball_color, figure=fig)
+            ax.add_artist(circle)
+
+    mlai.write_figure(os.path.join(diagrams, 'bernoulli-urn.svg'), transparent=True)
+
+def bayes_billiard(ax, diagrams='../diagrams'):
+    """Plot a series of figures representing Thomas Bayes' billiard table for the Bernoulli distribution representation."""
+    
+    black_prob = 0.3
+    ball_radius = 0.1
+
+    ax.plot([0, 0, 1, 1], [1, 0, 0, 1], linewidth=3, color=[0,0,0])
+    ax.set_axis_off()
+    ax.set_aspect('equal')
+    ax.set_xlim([0, 1])
+    ax.set_ylim([0, 1])
+    mlai.write_figure(os.path.join(diagrams, 'bayes-billiard000.svg'), transparent=True)
+
+    ball_x = np.random.uniform(size=1)[0]
+    ball_y = 0.5
+    black_color = [0, 0, 0]
+    red_color = [1, 0, 0]
+    #r = 0.1
+    #t = np.linspace(0, 2*np.pi, 24)
+
+    #x = ball_x*np.ones(t.shape) + ball_radius*np.sin(t)
+    #y = ball_y*np.ones(t.shape) + ball_radius*np.cos(t)
+
+    circle = plt.Circle((ball_x, ball_y), ball_radius, fill=True, color=black_color)
+    ax.add_artist(circle)
+
+    mlai.write_figure(os.path.join(diagrams, 'bayes-billiard001.svg'), transparent=True)
+
+    ax.plot([ball_x, ball_x], [0, 1], linestyle=':', linewidth=3, color=black_color)
+
+    mlai.write_figure(os.path.join(diagrams, 'bayes-billiard002.svg'), transparent=True)
+    counter = 2
+    for ball_x in np.random.uniform(size=7):
+        counter += 1
+        circle = plt.Circle((ball_x, ball_y), ball_radius, fill=True, color=red_color)
+        ax.add_artist(circle)
+        mlai.write_figure(os.path.join(diagrams, 'bayes-billiard{counter:0>3}.svg'.format(counter=counter)), transparent=True)
+        circle.remove()
+        
+
+            
 def hyperplane_coordinates(w, b, plot_limits):
     """Helper function for plotting the decision boundary of the perceptron."""
 
@@ -496,24 +571,24 @@ def over_determined_system(diagrams='../diagrams'):
     x = np.array([1, 3])
     y = np.array([3, 1])
 
-    xvals = np.linspace(0, 5, 2);
+    xvals = np.linspace(0, 5, 2)
 
-    m = (y[1]-y[0])/(x[1]-x[0]);
-    c = y[0]-m*x[0];
+    m = (y[1]-y[0])/(x[1]-x[0])
+    c = y[0]-m*x[0]
 
-    yvals = m*xvals+c;
-    xvals = np.linspace(0, 5, 2);
+    yvals = m*xvals+c
+    xvals = np.linspace(0, 5, 2)
 
-    m = (y[1]-y[0])/(x[1]-x[0]);
-    c = y[0]-m*x[0];
+    m = (y[1]-y[0])/(x[1]-x[0])
+    c = y[0]-m*x[0]
 
-    yvals = m*xvals+c;
+    yvals = m*xvals+c
 
     ylim = np.array([0, 5])
     xlim = np.array([0, 5])
 
     f, ax = plt.subplots(1,1,figsize=one_figsize)
-    a = ax.plot(xvals, yvals, '-', linewidth=3);
+    a = ax.plot(xvals, yvals, '-', linewidth=3)
 
     ax.set_xlim(xlim)
     ax.set_ylim(ylim)
@@ -524,10 +599,10 @@ def over_determined_system(diagrams='../diagrams'):
     mlai.write_figure(os.path.join(diagrams, 'over_determined_system001.svg'), transparent=True)
     ctext = ax.text(0.15, c+0.15, '$c$',  horizontalalignment='center', verticalalignment='bottom', fontsize=20)
     xl = np.array([1.5, 2.5])
-    yl = xl*m + c;
+    yl = xl*m + c
     mhand = ax.plot([xl[0], xl[1]], [yl.min(), yl.min()], color=[0, 0, 0])
     mhand2 = ax.plot([xl.min(), xl.min()], [yl[0], yl[1]], color=[0, 0, 0])
-    mtext = ax.text(xl.mean(), yl.min()-0.2, '$m$',  horizontalalignment='center', verticalalignment='bottom',fontsize=20);
+    mtext = ax.text(xl.mean(), yl.min()-0.2, '$m$',  horizontalalignment='center', verticalalignment='bottom',fontsize=20)
     mlai.write_figure(os.path.join(diagrams, 'over_determined_system002.svg'), transparent=True)
 
     a2 = ax.plot(x, y, '.', markersize=20, linewidth=3, color=[1, 0, 0])
@@ -540,9 +615,9 @@ def over_determined_system(diagrams='../diagrams'):
     mlai.write_figure(os.path.join(diagrams, 'over_determined_system004.svg'), transparent=True)
 
 
-    m = (y[1]-ys)/(x[1]-xs);
-    c = ys-m*xs;
-    yvals = m*xvals+c;
+    m = (y[1]-ys)/(x[1]-xs)
+    c = ys-m*xs
+    yvals = m*xvals+c
 
     for i in a:
         i.set_visible(False)
@@ -563,7 +638,7 @@ def over_determined_system(diagrams='../diagrams'):
 
     for i in a3:
         i.set_visible(False)
-    a4 = ax.plot(xvals, yvals, '-', linewidth=2, color=[0, 0, 1]);
+    a4 = ax.plot(xvals, yvals, '-', linewidth=2, color=[0, 0, 1])
     for i in ast:
         i.set_color([1, 0, 0])
     mlai.write_figure(os.path.join(diagrams, 'over_determined_system006.svg'), transparent=True)
@@ -869,7 +944,7 @@ def bayes_update(diagrams='../diagrams'):
         ln_likelihood_curve[i] = noise.log_likelihood(f[i][np.newaxis, :], 
                                                       np.array([[np.finfo(float).eps]]), 
                                                       y)
-    ln_marginal_likelihood = noise.log_likelihood(prior_mean, prior_var, y);
+    ln_marginal_likelihood = noise.log_likelihood(prior_mean, prior_var, y)
 
     prior_curve = np.exp(ln_prior_curve) 
     likelihood_curve = np.exp(ln_likelihood_curve)
@@ -2021,7 +2096,7 @@ def non_linear_difficulty_plot_2(alpha=1.0,
     
     F = np.dot(Phi,W.T)
 
-    a = ax[0].plot(x, np.ones(x.shape), 'r-');
+    a = ax[0].plot(x, np.ones(x.shape), 'r-')
     subx = x[0::10,:]
     b = ax[0].plot(subx, np.ones(subx.shape), 'b.')
     ax[0].set(ylim=[0.5, 1.5])
@@ -2075,7 +2150,7 @@ def non_linear_difficulty_plot_1(alpha=1.0,
     mu = np.linspace(-4, 4, num_basis_func)[np.newaxis, :]
     Phi = np.exp(-dist2(xsamp, mu.T)/(2*rbf_width*rbf_width))
     W = np.random.randn(1, num_basis_func)*np.sqrt(alpha)
-    f = np.dot(Phi,W.T);
+    f = np.dot(Phi,W.T)
 
     fig, ax = plt.subplots(1, 3, figsize=three_figsize)
     p = np.exp(-0.5/alpha*x**2)*1/np.sqrt(2*np.pi*alpha)
