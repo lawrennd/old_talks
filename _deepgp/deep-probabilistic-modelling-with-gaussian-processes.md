@@ -16,24 +16,6 @@ transition: None
 bibliography: deep-probabilistic-modelling-with-gaussian-processes.bib
 ---
 
-<!--Notes from Stefanos: Hey Neil, 
-
-Just realised that there was no comment on the fact that a DGP is not a GP, only the current layer conditioned on all previous ones.
-
-I don't know if you want to clarify that. I believe that the majority of the audience won't have that knowledge and they may leave with the wrong impression.
-
-Although, I don't know where is the right time to introduce that in the talk.
-
-Hope that's helpful.
-
-Cheers,
-Stefanos
-
-Comments from Rich!
-
-
-CMB samples -> Life
--->
 \include{talk-macros.tex}
 \include{_gp/includes/what-is-a-gp.md}
 
@@ -49,7 +31,6 @@ CMB samples -> Life
 
 * *Deep Gaussian Processes and Variational Propagation of Uncertainty*
     @Damianou:thesis2015
-
 
 \include{_deepgp/includes/deep-gaussian-processes.md}
 

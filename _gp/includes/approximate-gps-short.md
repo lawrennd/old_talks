@@ -1,27 +1,27 @@
+\slides{
+### Approximations
+
+\includeimg{../slides/diagrams/sparse-gps-1.png}{90%}{}{center}
+\caption{Image credit: Kai Arulkumaran}
 
 ### Approximations
 
-\includeimg{../slides/diagrams/sparse-gps-1.png}{90%}
-
-*Image credit: Kai Arulkumaran*
-
-### Approximations
-
-\includeimg{../slides/diagrams/sparse-gps-2.png}{90%}
-
-*Image credit: Kai Arulkumaran*
+\includeimg{../slides/diagrams/sparse-gps-2.png}{90%}{}{center}
+\caption{Image credit: Kai Arulkumaran}
 
 ### Approximations
 
-\includeimg{../slides/diagrams/sparse-gps-3.png}{45%}
-
-*Image credit: Kai Arulkumaran*
+\includeimg{../slides/diagrams/sparse-gps-3.png}{45%}{}{center}
+\caption{Image credit: Kai Arulkumaran}
 
 ### Approximations
 
-\includeimg{../slides/diagrams/sparse-gps-4.png}{45%}
+\includeimg{../slides/diagrams/sparse-gps-4.png}{45%}{}{center}
+\caption{Image credit: Kai Arulkumaran}
+}
 
-*Image credit: Kai Arulkumaran*
+\notesfigure{\includeimg{../slides/diagrams/sparse-gps.jpg}{45%}{}{center}}
+\notes{\caption{Image credit: Kai Arulkumaran}}
 
 \setupcode{import numpy as np
 import matplotlib.pyplot as plt
@@ -63,10 +63,10 @@ mlai.write_figure(figure=fig,
                   filename='../slides/diagrams/gp/sparse-demo-full-gp.svg', 
                   transparent=True, frameon=True)}
 
-### Full Gaussian Process Fit
+\newslide{Full Gaussian Process Fit}
 
 \includesvg{../slides/diagrams/gp/sparse-demo-full-gp.svg}
-
+\notes{\caption{Full Gaussian process fitted to the data set.}}
 
 \notes{Now we set up the inducing variables, $\mathbf{u}$. Each inducing variable has its own associated input index, $\mathbf{Z}$, which lives in the same space as $\inputMatrix$. Here we are using the true covariance function parameters to generate the fit.}
 
@@ -85,9 +85,10 @@ mlai.write_figure(figure=fig,
                   filename='../slides/diagrams/gp/sparse-demo-constrained-inducing-6-unlearned-gp.svg', 
                   transparent=True, frameon=True)}
 
-### Inducing Variable Fit
+\newslide{Inducing Variable Fit}
 
 \includesvg{../slides/diagrams/gp/sparse-demo-constrained-inducing-6-unlearned-gp.svg}
+\notes{\caption{Sparse Gaussian process fitted with six inducing variables, no optimization of parameters or inducing variables.}}
 
 \code{_ = m.optimize(messages=True)
 display(m)}
@@ -98,9 +99,10 @@ mlai.write_figure(figure=fig,
                   filename='../slides/diagrams/gp/sparse-demo-full-gp.svg', 
                   transparent=True, frameon=True)}
 
-### Inducing Variable Param Optimize
+\newslide{Inducing Variable Param Optimize}
 
 \includesvg{../slides/diagrams/gp/sparse-demo-constrained-inducing-6-learned-gp.svg}
+\notes{\caption{Gaussian process fitted with inducing variables fixed and parameters optimized}}
 
 \code{m.randomize()
 m.inducing_inputs.unconstrain()
@@ -112,10 +114,10 @@ mlai.write_figure(figure=fig,
                   filename='../slides/diagrams/gp/sparse-demo-unconstrained-inducing-6-gp.svg', 
                   transparent=True, frameon=True)}
 
-### Inducing Variable Full Optimize
+\newslide{Inducing Variable Full Optimize}
 
 \includesvg{../slides/diagrams/gp/sparse-demo-unconstrained-inducing-6-gp.svg}
-
+\notes{\caption{Gaussian process fitted with location of inducing variables and parameters both optimized}}
 
 \notes{Now we will vary the number of inducing points used to form the approximation.}
 
@@ -132,6 +134,7 @@ mlai.write_figure(figure=fig,
                   filename='../slides/diagrams/gp/sparse-demo-sparse-inducing-8-gp.svg', 
                   transparent=True, frameon=True)}
 
+\slides{
 ### Eight Optimized Inducing Variables
 
 \includesvg{../slides/diagrams/gp/sparse-demo-sparse-inducing-8-gp.svg}
@@ -139,6 +142,12 @@ mlai.write_figure(figure=fig,
 ### Full Gaussian Process Fit
 
 \includesvg{../slides/diagrams/gp/sparse-demo-full-gp.svg}
+}
+
+\notesfigure{\includesvg{../slides/diagrams/gp/sparse-demo-sparse-inducing-8-gp.svg}
+\includesvg{../slides/diagrams/gp/sparse-demo-full-gp.svg}}
+\notes{\caption{Comparison of the full Gaussian process fit with a sparse Gaussian process using eight inducing varibles. Both inducing variables and parameters are optimized.}}
+
 
 \notes{And we can compare the probability of the result to the full model.}
 \code{print(m.log_likelihood(), m_full.log_likelihood())}
