@@ -91,15 +91,17 @@ $$
 
 ### Joint Density for Naive Bayes
 
-This allows us to write down the full joint density of the training data,
-$$
-p(\dataVector, \inputMatrix|\paramVector, \pi) = \prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)
-$$
-which can now be fit by maximum likelihood. As normal we form our objective as the negative log likelihood,
+\notes{This allows us to write down the full joint density of the training data,}\slides{
+* This allows us to write down the full joint density of the training data,}
+  $$
+  p(\dataVector, \inputMatrix|\paramVector, \pi) = \prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)
+  $$
+\slides{  which can now be fit by maximum likelihood.}
+\notes{which can now be fit by maximum likelihood. As normal we form our objective as the negative log likelihood,}
 $$
 \errorFunction(\paramVector, \pi) = -\log p(\dataVector, \inputMatrix|\paramVector, \pi) = -\sum_{i=1}^{\numData} \sum_{j=1}^{\dataDim} \log p(\inputScalar_{i, j}|\dataScalar_i, \paramVector) - \sum_{i=1}^{\numData} \log p(\dataScalar_i|\pi),
 $$
-which we note *decomposes* into two objective functions, one which is dependent on $\pi$ alone and one which is dependent on $\paramVector$ alone so we have,
+\notes{which we note *decomposes* into two objective functions, one which is dependent on $\pi$ alone and one which is dependent on $\paramVector$ alone so we have,
 $$
 \errorFunction(\pi, \paramVector) = \errorFunction(\paramVector) + \errorFunction(\pi).
 $$
@@ -111,14 +113,7 @@ which we already minimized above recovering
 $$
 \pi = \frac{\sum_{i=1}^{\numData} \dataScalar_i}{\numData}.
 $$
-
-\newslide{Joint Density for Naive Bayes}
-
-This allows us to write down the full joint density of the training data,
-$$
-p(\dataVector, \inputMatrix|\paramVector, \pi) = \prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)
-$$
-which can now be fit by maximum likelihood.
+}
 
 \newslide{Maximum Likelihood}
 
@@ -142,7 +137,7 @@ $$
 $$}
 
 \newslide{Fit Prior}
-
+\slides{
 * We can minimize prior. For Bernoulli likelihood over the labels we have, 
   $$
   \errorFunction(\pi) = - \sum_{i=1}^{\numData}\log p(\dataScalar_i|\pi) = -\sum_{i=1}^{\numData} \dataScalar_i \log \pi - \sum_{i=1}^{\numData} (1-\dataScalar_i) \log (1-\pi)
@@ -150,10 +145,11 @@ $$}
 * Solution from above is 
   $$
   \pi = \frac{\sum_{i=1}^{\numData} \dataScalar_i}{\numData}.
-  $$
+  $$}
 
 \newslide{Fit Conditional}
 
+\slides{
 * Minimize conditional distribution:
   $$
   \errorFunction(\paramVector) = -\sum_{i=1}^{\numData} \sum_{j=1}^{\dataDim} \log p(\inputScalar_{i, j} |\dataScalar_i, \paramVector),
@@ -166,7 +162,9 @@ $$}
 \frac{1}{\sqrt{2\pi \dataStd_{\dataScalar_i,j}^2}} \exp \left(-\frac{(\inputScalar_{i,j} - \mu_{\dataScalar_i,
 j})^2}{\dataStd_{\dataScalar_i,j}^2}\right),
   $$
+}
 
+\notes{
 ### Movie Body Count Data
 
 First we will load in the movie body count data. Our aim will be to predict whether a movie is rated R or not given the attributes in the data. We will predict on the basis of year, body count and movie genre. The genres in the CSV file are stored as a list in the following form:
@@ -175,13 +173,13 @@ First we will load in the movie body count data. Our aim will be to predict whet
 Biography|Action|Sci-Fi
 ```
 
-First we have to do a little work to extract this form and turn it into a vector of binary values. Let's first load in and remind ourselves of the data.
+First we have to do a little work to extract this form and turn it into a vector of binary values. Let's first load in and remind ourselves of the data.}
 
 \setupcode{import pods}
 \code{data = pods.datasets.movie_body_count()['Y']
 data.head()}
 
-Now we will convert this data into a form which we can use as inputs `X`, and labels `y`.
+\notes{Now we will convert this data into a form which we can use as inputs `X`, and labels `y`.}
 
 \setupcode{import pandas as pd
 import numpy as np}
@@ -202,11 +200,11 @@ for genre in genres:
     X[genre] = np.zeros(X.shape[0])
     X[genre][index] = np.ones(len(index))}
 
-This has given us a new data frame `X` which contains the different genres in different columns.
+\notes{This has given us a new data frame `X` which contains the different genres in different columns.}
 
 \code{X.describe()}
 
-We can now specify the naive Bayes model. For the genres we want to model the data as Bernoulli distributed, and for the year and body count we want to model the data as Gaussian distributed. We set up two data frames to contain the parameters for the rows and the columns below.
+\notes{We can now specify the naive Bayes model. For the genres we want to model the data as Bernoulli distributed, and for the year and body count we want to model the data as Gaussian distributed. We set up two data frames to contain the parameters for the rows and the columns below.}
 
 \code{# assume data is binary or real.
 # this list encodes whether it is binary or real (1 for binary, 0 for real)
@@ -215,7 +213,7 @@ real_columns = ['Year', 'Body_Count']
 Bernoulli = pd.DataFrame(data=np.zeros((2,len(binary_columns))), columns=binary_columns, index=['theta_0', 'theta_1'])
 Gaussian = pd.DataFrame(data=np.zeros((4,len(real_columns))), columns=real_columns, index=['mu_0', 'sigma2_0', 'mu_1', 'sigma2_1'])}
 
-Now we have the data in a form ready for analysis, let's construct our data matrix.
+\notes{Now we have the data in a form ready for analysis, let's construct our data matrix.}
 
 \code{num_train = 200
 indices = np.random.permutation(X.shape[0])
@@ -226,7 +224,7 @@ y_train = y.loc[train_indices]
 X_test = X.loc[test_indices]
 y_test = y.loc[test_indices]}
 
-And we can now train the model. For each feature we can make the fit independently. The fit is given by either counting the number of positives (for binary data) which gives us the maximum likelihood solution for the Bernoulli. Or by computing the empirical mean and variance of the data for the Gaussian, which also gives us the maximum likelihood solution.
+\notes{And we can now train the model. For each feature we can make the fit independently. The fit is given by either counting the number of positives (for binary data) which gives us the maximum likelihood solution for the Bernoulli. Or by computing the empirical mean and variance of the data for the Gaussian, which also gives us the maximum likelihood solution.}
 
 \code{for column in X_train:
     if column in Gaussian:
@@ -238,7 +236,7 @@ And we can now train the model. For each feature we can make the fit independent
         Bernoulli[column]['theta_0'] = X_train[column][~y].sum()/(~y).sum()
         Bernoulli[column]['theta_1'] = X_train[column][y].sum()/(y).sum()}
 
-We can examine the nature of the distributions we've fitted to the model by looking at the entries in these data frames.
+\notes{We can examine the nature of the distributions we've fitted to the model by looking at the entries in these data frames.}
 
 \code{Bernoulli}
 
@@ -306,7 +304,7 @@ but rather by adding one to the numerator and two to the denominator,
 $$
 \frac{1,826,213 + 1}{1,826,213 + 2} = 0.99999945.
 $$
-This technique is sometimes called a 'pseudocount technique' because it has an intepretation of assuming some observations before you start, it's as if instead of observing $\sum_{i}\dataScalar_i$ successes you have an additional success, $\sum_{i}\dataScalar_i + 1$ and instead of having observed $n$ events you've observed $n + 2$. So we can think of Laplace's idea saying (before we start) that we have 'two observations worth of belief, that the odds are 50/50', because before we start (i.e. when $n=0$) our estimate is 0.5, yet because the effective $n$ is only 2, this estimate is quickly overwhelmed by data. Laplace used ideas like this a lot, and it is known as his 'principle of insufficient reason'. His idea was that in the absence of knowledge (i.e. before we start) we should assume that all possible outcomes are equally likely. This idea has a modern counterpart, known as the [principle of maximum entropy](http://en.wikipedia.org/wiki/Principle_of_maximum_entropy). A lot of the theory of this approach was developed by [Ed Jaynes](http://en.wikipedia.org/wiki/Edwin_Thompson_Jaynes), who according to his erstwhile collaborator and friend, John Skilling, learnt French as an undergraduate by reading the works of Laplace. Although John also related that Jaynes's spoken French was not up to the standard of his scientific French. For me Ed Jaynes's work very much carries on the tradition of Laplace into the modern era, in particular his focus on Bayesian approaches. I'm very proud to have met those that knew and worked with him. It turns out that Laplace's idea also has a Bayesian interpretation (as Laplace understood), it comes from assuming a particular prior density for the parameter $\pi$, but we won't explore that interpretation for the moment, and merely choose to estimate the probability as,
+This technique is sometimes called a 'pseudocount technique' because it has an intepretation of assuming some observations before you start, it's as if instead of observing $\sum_{i}\dataScalar_i$ successes you have an additional success, $\sum_{i}\dataScalar_i + 1$ and instead of having observed $n$ events you've observed $\numData + 2$. So we can think of Laplace's idea saying (before we start) that we have 'two observations worth of belief, that the odds are 50/50', because before we start (i.e. when $\numData=0$) our estimate is 0.5, yet because the effective $n$ is only 2, this estimate is quickly overwhelmed by data. Laplace used ideas like this a lot, and it is known as his 'principle of insufficient reason'. His idea was that in the absence of knowledge (i.e. before we start) we should assume that all possible outcomes are equally likely. This idea has a modern counterpart, known as the [principle of maximum entropy](http://en.wikipedia.org/wiki/Principle_of_maximum_entropy). A lot of the theory of this approach was developed by [Ed Jaynes](http://en.wikipedia.org/wiki/Edwin_Thompson_Jaynes), who according to his erstwhile collaborator and friend, John Skilling, learnt French as an undergraduate by reading the works of Laplace. Although John also related that Jaynes's spoken French was not up to the standard of his scientific French. For me Ed Jaynes's work very much carries on the tradition of Laplace into the modern era, in particular his focus on Bayesian approaches. I'm very proud to have met those that knew and worked with him. It turns out that Laplace's idea also has a Bayesian interpretation (as Laplace understood), it comes from assuming a particular prior density for the parameter $\pi$, but we won't explore that interpretation for the moment, and merely choose to estimate the probability as,
 $$
 \pi = \frac{\sum_{i=1}^{\numData} \dataScalar_i + 1}{\numData + 2}
 $$
