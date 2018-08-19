@@ -36,40 +36,26 @@ categories:
 <p>A useful reference for state of the art in machine learning is the UK Royal Society Report, <a href="https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf">Machine Learning: Power and Promise of Computers that Learn by Example</a>.</p>
 <p>You can also check my blog post on <a href="http://inverseprobability.com/2017/07/17/what-is-machine-learning">&quot;What is Machine Learning?&quot;</a></p>
 <h3 id="artificial-intelligence">Artificial Intelligence</h3>
-<ul>
-<li>Machine learning is a mainstay because of importance of prediction.</li>
-</ul>
 <h3 id="uncertainty">Uncertainty</h3>
-
 <p>In practice, we normally also have uncertainty associated with these functions. Uncertainty in the prediction function arises from</p>
 <ol style="list-style-type: decimal">
 <li>scarcity of training data and</li>
 <li>mismatch between the set of prediction functions we choose and all possible prediction functions.</li>
 </ol>
 <p>There are also challenges around specification of the objective function, but for we will save those for another day. For the moment, let us focus on the prediction function.</p>
-<h3 id="neural-networks-and-prediction-functions" data-transition="None">Neural Networks and Prediction Functions</h3>
+<h3 id="neural-networks-and-prediction-functions">Neural Networks and Prediction Functions</h3>
 <p>Neural networks are adaptive non-linear function models. Originally, they were studied (by McCulloch and Pitts <span class="citation">(McCulloch and Pitts, 1943)</span>) as simple models for neurons, but over the last decade they have become popular because they are a flexible approach to modelling complex data. A particular characteristic of neural network models is that they can be composed to form highly complex functions which encode many of our expectations of the real world. They allow us to encode our assumptions about how the world works.</p>
 <p>We will return to composition later, but for the moment, let's focus on a one hidden layer neural network. We are interested in the prediction function, so we'll ignore the objective function (which is often called an error function) for the moment, and just describe the mathematical object of interest</p>
 <p><span class="math display">\[
 \mappingFunction(\inputVector) = \mappingMatrix^\top \activationVector(\mappingMatrixTwo, \inputVector)
 \]</span></p>
 <p>Where in this case <span class="math inline">\(\mappingFunction(\cdot)\)</span> is a scalar function with vector inputs, and <span class="math inline">\(\activationVector(\cdot)\)</span> is a vector function with vector inputs. The dimensionality of the vector function is known as the number of hidden units, or the number of neurons. The elements of this vector function are known as the <em>activation</em> function of the neural network and <span class="math inline">\(\mappingMatrixTwo\)</span> are the parameters of the activation functions.</p>
+<h3 id="relations-with-classical-statistics">Relations with Classical Statistics</h3>
 <p>In statistics activation functions are traditionally known as <em>basis functions</em>. And we would think of this as a <em>linear model</em>. It's doesn't make linear predictions, but it's linear because in statistics estimation focuses on the parameters, <span class="math inline">\(\mappingMatrix\)</span>, not the parameters, <span class="math inline">\(\mappingMatrixTwo\)</span>. The linear model terminology refers to the fact that the model is <em>linear in the parameters</em>, but it is <em>not</em> linear in the data unless the activation functions are chosen to be linear.</p>
+<h3 id="adaptive-basis-functions">Adaptive Basis Functions</h3>
 <p>The first difference in the (early) neural network literature to the classical statistical literature is the decision to optimize these parameters, <span class="math inline">\(\mappingMatrixTwo\)</span>, as well as the parameters, <span class="math inline">\(\mappingMatrix\)</span> (which would normally be denoted in statistics by <span class="math inline">\(\boldsymbol{\beta}\)</span>)<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>.</p>
 <p>In this tutorial, we're going to go revisit that decision, and follow the path of Radford Neal <span class="citation">(Neal, 1994)</span> who, inspired by work of David MacKay <span class="citation">(MacKay, 1992)</span> and others did his PhD thesis on Bayesian Neural Networks. If we take a Bayesian approach to parameter inference (note I am using inference here in the classical sense, not in the sense of prediction of test data, which seems to be a newer usage), then we don't wish to fit parameters at all, rather we wish to integrate them away and understand the family of functions that the model describes.</p>
-<h3 id="relations-with-classical-statistics" data-transition="None">Relations with Classical Statistics</h3>
-<ul>
-<li><p>In statistics activation functions are known as <em>basis functions</em>.</p></li>
-<li><p>would think of this as a <em>linear model</em>: not linear predictions, linear in the parameters</p></li>
-<li><p><span class="math inline">\(\mappingVector_{1}\)</span> are <em>static</em> parameters.</p></li>
-</ul>
-<h3 id="adaptive-basis-functions" data-transition="None">Adaptive Basis Functions</h3>
-<ul>
-<li><p>In machine learning we optimize <span class="math inline">\(\mappingMatrix_{1}\)</span> as well as <span class="math inline">\(\mappingMatrix_{2}\)</span> (which would normally be denoted in statistics by <span class="math inline">\(\boldsymbol{\beta}\)</span>).</p></li>
-<li><p>This tutorial: revisit that decision: follow the path of <span class="citation">Neal (1994)</span> and <span class="citation">MacKay (1992)</span>.</p></li>
-<li><p>Consider the probabilistic approach.</p></li>
-</ul>
-<h3 id="probabilistic-modelling" data-transition="None">Probabilistic Modelling</h3>
+<h3 id="probabilistic-modelling">Probabilistic Modelling</h3>
 <p>This Bayesian approach is designed to deal with uncertainty arising from fitting our prediction function to the data we have, a reduced data set.</p>
 <p>The Bayesian approach can be derived from a broader understanding of what our objective is. If we accept that we can jointly represent all things that happen in the world with a probability distribution, then we can interogate that probability to make predictions. So, if we are interested in predictions, <span class="math inline">\(\dataScalar_*\)</span> at future points input locations of interest, <span class="math inline">\(\inputVector_*\)</span> given previously training data, <span class="math inline">\(\dataVector\)</span> and corresponding inputs, <span class="math inline">\(\inputMatrix\)</span>, then we are really interogating the following probability density, <span class="math display">\[
 p(\dataScalar_*|\dataVector, \inputMatrix, \inputVector_*),
@@ -89,32 +75,47 @@ p(\dataScalar_i | \mappingFunction(\inputVector_i)) = \frac{1}{\sqrt{2\pi \dataS
 <p>In short, that is the classical approach to probabilistic inference, and all approaches to Bayesian neural networks fall within this path. For a deep probabilistic model, we can simply take this one stage further and place a probability distribution over the input locations, <span class="math display">\[
 p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \parameterVector) p(\parameterVector | \dataVector, \inputMatrix) p(\inputMatrix) p(\inputMatrix_*) \text{d} \parameterVector \text{d} \inputMatrix \text{d}\inputMatrix_*
 \]</span> and we have <em>unsupervised learning</em> (from where we can get deep generative models).</p>
-<h3 id="graphical-models" data-transition="None">Graphical Models</h3>
-<ul>
-<li><p>Represent joint distribution through <em>conditional dependencies</em>.</p></li>
-<li><p>E.g. Markov chain</p></li>
-</ul>
-<p><span class="math display">\[p(\dataVector) = p(\dataScalar_\numData | \dataScalar_{\numData-1}) p(\dataScalar_{\numData-1}|\dataScalar_{\numData-2}) \dots p(\dataScalar_{2} | \dataScalar_{1})\]</span></p>
+<h3 id="graphical-models">Graphical Models</h3>
+<p>One way of representing a joint distribution is to consider conditional dependencies between data. Conditional dependencies allow us to factorize the distribution. For example, a Markov chain is a factorization of a distribution into components that represent the conditional relationships between points that are neighboring, often in time or space. It can be decomposed in the following form. <span class="math display">\[p(\dataVector) = p(\dataScalar_\numData | \dataScalar_{\numData-1}) p(\dataScalar_{\numData-1}|\dataScalar_{\numData-2}) \dots p(\dataScalar_{2} | \dataScalar_{1})\]</span></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> daft
+<span class="im">from</span> matplotlib <span class="im">import</span> rc
+
+rc(<span class="st">&quot;font&quot;</span>, <span class="op">**</span>{<span class="st">&#39;family&#39;</span>:<span class="st">&#39;sans-serif&#39;</span>,<span class="st">&#39;sans-serif&#39;</span>:[<span class="st">&#39;Helvetica&#39;</span>]}, size<span class="op">=</span><span class="dv">30</span>)
+rc(<span class="st">&quot;text&quot;</span>, usetex<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pgm <span class="op">=</span> daft.PGM(shape<span class="op">=</span>[<span class="dv">3</span>, <span class="dv">1</span>],
+               origin<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">0</span>], 
+               grid_unit<span class="op">=</span><span class="dv">5</span>, 
+               node_unit<span class="op">=</span><span class="fl">1.9</span>, 
+               observed_style<span class="op">=</span><span class="st">&#39;shaded&#39;</span>,
+              line_width<span class="op">=</span><span class="dv">3</span>)
+
+
+pgm.add_node(daft.Node(<span class="st">&quot;y_1&quot;</span>, <span class="vs">r&quot;$y_1$&quot;</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>, fixed<span class="op">=</span><span class="va">False</span>))
+pgm.add_node(daft.Node(<span class="st">&quot;y_2&quot;</span>, <span class="vs">r&quot;$y_2$&quot;</span>, <span class="fl">1.5</span>, <span class="fl">0.5</span>, fixed<span class="op">=</span><span class="va">False</span>))
+pgm.add_node(daft.Node(<span class="st">&quot;y_3&quot;</span>, <span class="vs">r&quot;$y_3$&quot;</span>, <span class="fl">2.5</span>, <span class="fl">0.5</span>, fixed<span class="op">=</span><span class="va">False</span>))
+pgm.add_edge(<span class="st">&quot;y_1&quot;</span>, <span class="st">&quot;y_2&quot;</span>)
+pgm.add_edge(<span class="st">&quot;y_2&quot;</span>, <span class="st">&quot;y_3&quot;</span>)
+
+pgm.render().figure.savefig(<span class="st">&quot;../slides/diagrams/ml/markov.svg&quot;</span>, transparent<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <object class="svgplot" align data="../slides/diagrams/ml/markov.svg">
 </object>
-<h3 id="section" data-transition="None"></h3>
-<p>Predict Perioperative Risk of Clostridium Difficile Infection Following Colon Surgery</p>
-<p><img class="negate" src="../slides/diagrams/bayes-net-diagnosis.png" width="40%" align="" style="background:none; border:none; box-shadow:none;"></p>
-<p><span class="citation">(Steele et al., 2012)</span></p>
-<h3 id="performing-inference" data-transition="None">Performing Inference</h3>
-<p>Of course, the devil is in the detail, and while everything is easy to write in terms of probability densities, as we move from <span class="math inline">\(\text{data}\)</span> and <span class="math inline">\(\text{model}\)</span> to <span class="math inline">\(\text{prediction}\)</span> there is that simple <span class="math inline">\(\rightarrow\)</span> sign, which is now burying a wealth of difficulties. Each integral sign above is a high dimensional integral which will typically need approximation. Approximations also come with computational demands. As we consider more complex classes of functions, the challenges around the integrals become harder and prediction of future test data given our model and the data becomes so involved as to be impractical or impossible.</p>
+<p>By specifying conditional independencies we can reduce the parameterization required for our data, instead of directly specifying the parameters of the joint distribution, we can specify each set of parameters of the conditonal independently. This can also give an advantage in terms of interpretability. Understanding a conditional independence structure gives a structured understanding of data. If developed correctly, according to causal methodology, it can even inform how we should intervene in the system to drive a desired result <span class="citation">(Pearl, 1995)</span>.</p>
+<p>However, a challenge arise when the data becomes more complex. Consider the graphical model shown below, used to predict the perioperative risk of <em>C Difficile</em> infection following colon surgery <span class="citation">(Steele et al., 2012)</span>.</p>
+<p><img class="negate" src="../slides/diagrams/bayes-net-diagnosis.png" width="40%" align="center" style="background:none; border:none; box-shadow:none;"></p>
+<p>To capture the complexity in the interelationship between the data the graph becomes more complex, and less interpretable.</p>
+<h3 id="performing-inference">Performing Inference</h3>
+<p>As far as combining our data and our model to form our prediction, the devil is in the detail. While everything is easy to write in terms of probability densities, as we move from <span class="math inline">\(\text{data}\)</span> and <span class="math inline">\(\text{model}\)</span> to <span class="math inline">\(\text{prediction}\)</span> there is that simple <span class="math inline">\(\xrightarrow{\text{compute}}\)</span> sign, which is now burying a wealth of difficulties. Each integral sign above is a high dimensional integral which will typically need approximation. Approximations also come with computational demands. As we consider more complex classes of functions, the challenges around the integrals become harder and prediction of future test data given our model and the data becomes so involved as to be impractical or impossible.</p>
 <p>Statisticians realized these challenges early on, indeed, so early that they were actually physicists, both Laplace and Gauss worked on models such as this, in Gauss's case he made his career on prediction of the location of the lost planet (later reclassified as a asteroid, then dwarf planet), Ceres. Gauss and Laplace made use of maximum a posteriori estimates for simplifying their computations and Laplace developed Laplace's method (and invented the Gaussian density) to expand around that mode. But classical statistics needs better guarantees around model performance and interpretation, and as a result has focussed more on the <em>linear</em> model implied by <span class="math display">\[
-    \mappingFunction(\inputVector) = \left.\mappingVector^{(2)}\right.^\top \activationVector(\mappingMatrix_1, \inputVector)
-    \]</span></p>
-<p>by holding <span class="math inline">\(\mappingMatrixTwo\)</span> fixed for any given analysis. In this case, a Gaussian prior is formulated over the parameters <span class="math inline">\(\mappingMatrix\)</span>, <span class="math display">\[
-    \mappingVector^{(2)} \sim \gaussianSamp{\zerosVector}{\covarianceMatrix}.
-    \]</span></p>
+  \mappingFunction(\inputVector) = \left.\mappingVector^{(2)}\right.^\top \activationVector(\mappingMatrix_1, \inputVector)
+  \]</span></p>
+<p><span class="math display">\[
+  \mappingVector^{(2)} \sim \gaussianSamp{\zerosVector}{\covarianceMatrix}.
+  \]</span></p>
 <p>The Gaussian likelihood given above implies that the data observation is related to the function by noise corruption so we have, <span class="math display">\[
-    \dataScalar_i = \mappingFunction(\inputVector_i) + \noiseScalar_i,
-    \]</span> where <span class="math display">\[
-    \noiseScalar_i \sim \gaussianSamp{0}{\dataStd^2}
-    \]</span></p>
-<p>and while normally integrating over high dimensional parameter vectors is highly complex, here it is <em>trivial</em>. That is because of a property of the multivariate Gaussian.</p>
+  \dataScalar_i = \mappingFunction(\inputVector_i) + \noiseScalar_i,
+  \]</span> where <span class="math display">\[
+  \noiseScalar_i \sim \gaussianSamp{0}{\dataStd^2}
+  \]</span> and while normally integrating over high dimensional parameter vectors is highly complex, here it is <em>trivial</em>. That is because of a property of the multivariate Gaussian.</p>
 <h3 id="multivariate-gaussian-properties">Multivariate Gaussian Properties</h3>
 <p>Gaussian processes are initially of interest because</p>
 <ol style="list-style-type: decimal">
@@ -165,34 +166,29 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \parameterVe
 <p>We can basically put anything inside the basis functions, and many people do. These can be deep kernels <span class="citation">(Cho and Saul, 2009)</span> or we can learn the parameters of a convolutional neural network inside there.</p>
 <p>Viewing a neural network in this way is also what allows us to beform sensible <em>batch</em> normalizations <span class="citation">(Ioffe and Szegedy, 2015)</span>.</p>
 </div>
-<h3 id="non-degenerate-gaussian-processes" data-transition="None">Non-degenerate Gaussian Processes</h3>
+<h3 id="non-degenerate-gaussian-processes">Non-degenerate Gaussian Processes</h3>
 <p>The process described above is degenerate. The covariance function is of rank at most <span class="math inline">\(\numHidden\)</span> and since the theoretical amount of data could always increase <span class="math inline">\(\numData \rightarrow \infty\)</span>, the covariance function is not full rank. This means as we increase the amount of data to infinity, there will come a point where we can't normalize the process because the multivariate Gaussian has the form, <span class="math display">\[
-\gaussianDist{\mappingFunctionVector}{\zerosVector}{\kernelMatrix} = \frac{1}{\left(2\pi\right)^{\frac{\numData}{2}}\det{\kernelMatrix}^\frac{1}{2}} \exp\left(-\frac{\mappingFunctionVector^\top\kernelMatrix \mappingFunctionVector}{2}\right) 
+\gaussianDist{\mappingFunctionVector}{\zerosVector}{\kernelMatrix} = \frac{1}{\left(2\pi\right)^{\frac{\numData}{2}}\det{\kernelMatrix}^\frac{1}{2}} \exp\left(-\frac{\mappingFunctionVector^\top\kernelMatrix \mappingFunctionVector}{2}\right)
 \]</span> and a non-degenerate kernel matrix leads to <span class="math inline">\(\det{\kernelMatrix} = 0\)</span> defeating the normalization (it's equivalent to finding a projection in the high dimensional Gaussian where the variance of the the resulting univariate Gaussian is zero, i.e. there is a null space on the covariance, or alternatively you can imagine there are one or more directions where the Gaussian has become the delta function).</p>
 <p>In the machine learning field, it was Radford Neal <span class="citation">(Neal, 1994)</span> that realized the potential of the next step. In his 1994 thesis, he was considering Bayesian neural networks, of the type we described above, and in considered what would happen if you took the number of hidden nodes, or neurons, to infinity, i.e. <span class="math inline">\(\numHidden \rightarrow \infty\)</span>.</p>
 <p><a href="http://www.cs.toronto.edu/~radford/ftp/thesis.pdf"><img class="" src="../slides/diagrams/neal-infinite-priors.png" width="80%" align="" style="background:none; border:none; box-shadow:none;"></a></p>
 <p><em>Page 37 of Radford Neal's 1994 thesis</em></p>
-In loose terms, what Radford considers is what happens to the elements of the covariance function,
-<span class="math display">\[\begin{align*}
-\kernel_\mappingFunction\left(\inputVector_i, \inputVector_j\right) &amp; = \alpha \activationVector\left(\mappingMatrix_1, \inputVector_i\right)^\top \activationVector\left(\mappingMatrix_1, \inputVector_j\right)\\
-&amp; = \alpha \sum_k \activationScalar\left(\mappingVector^{(1)}_k, \inputVector_i\right) \activationScalar\left(\mappingVector^{(1)}_k, \inputVector_j\right)
-\end{align*}\]</span>
-<p>if instead of considering a finite number you sample infinitely many of these activation functions, sampling parameters from a prior density, <span class="math inline">\(p(\mappingVectorTwo)\)</span>, for each one, <span class="math display">\[
+<p>In loose terms, what Radford considers is what happens to the elements of the covariance function, <span class="math display">\[
+  \begin{align*}
+  \kernel_\mappingFunction\left(\inputVector_i, \inputVector_j\right) &amp; = \alpha \activationVector\left(\mappingMatrix_1, \inputVector_i\right)^\top \activationVector\left(\mappingMatrix_1, \inputVector_j\right)\\
+  &amp; = \alpha \sum_k \activationScalar\left(\mappingVector^{(1)}_k, \inputVector_i\right) \activationScalar\left(\mappingVector^{(1)}_k, \inputVector_j\right)
+  \end{align*}
+  \]</span> if instead of considering a finite number you sample infinitely many of these activation functions, sampling parameters from a prior density, <span class="math inline">\(p(\mappingVectorTwo)\)</span>, for each one, <span class="math display">\[
 \kernel_\mappingFunction\left(\inputVector_i, \inputVector_j\right) = \alpha \int \activationScalar\left(\mappingVector^{(1)}, \inputVector_i\right) \activationScalar\left(\mappingVector^{(1)}, \inputVector_j\right) p(\mappingVector^{(1)}) \text{d}\mappingVector^{(1)}
 \]</span> And that's not <em>only</em> for Gaussian <span class="math inline">\(p(\mappingVectorTwo)\)</span>. In fact this result holds for a range of activations, and a range of prior densities because of the <em>central limit theorem</em>.</p>
-To write it in the form of a probabilistic program, as long as the distribution for <span class="math inline">\(\phi_i\)</span> implied by this short probabilistic program,
-<span class="math display">\[\begin{align*}
-\mappingVectorTwo &amp; \sim p(\cdot)\\
-\phi_i &amp; = \activationScalar\left(\mappingVectorTwo, \inputVector_i\right), 
-\end{align*}\]</span>
-<p>has finite variance, then the result of taking the number of hidden units to infinity, with appropriate scaling, is also a Gaussian process.</p>
+<p>To write it in the form of a probabilistic program, as long as the distribution for <span class="math inline">\(\phi_i\)</span> implied by this short probabilistic program, <span class="math display">\[
+  \begin{align*}
+  \mappingVectorTwo &amp; \sim p(\cdot)\\
+  \phi_i &amp; = \activationScalar\left(\mappingVectorTwo, \inputVector_i\right), 
+  \end{align*}
+  \]</span> has finite variance, then the result of taking the number of hidden units to infinity, with appropriate scaling, is also a Gaussian process.</p>
+<h3 id="further-reading">Further Reading</h3>
 <p>To understand this argument in more detail, I highly recommend reading chapter 2 of Neal's thesis, which remains easy to read and clear today. Indeed, for readers interested in Bayesian neural networks, both Raford Neal's and David MacKay's PhD thesis <span class="citation">(MacKay, 1992)</span> remain essential reading. Both theses embody a clarity of thought, and an ability to weave together threads from different fields that was the business of machine learning in the 1990s. Radford and David were also pioneers in making their software widely available and publishing material on the web.</p>
-<h3 id="further-reading" data-transition="None">Further Reading</h3>
-<ul>
-<li><p>Chapter 2 of Neal's thesis <span class="citation">(Neal, 1994)</span></p></li>
-<li><p>Rest of Neal's thesis. <span class="citation">(Neal, 1994)</span></p></li>
-<li><p>David MacKay's PhD thesis <span class="citation">(MacKay, 1992)</span></p></li>
-</ul>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
 <span class="im">import</span> teaching_plots <span class="im">as</span> plot</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>load <span class="op">-</span>s compute_kernel mlai.py</code></pre></div>
@@ -255,13 +251,13 @@ p(\mappingFunction_2|\mappingFunction_1) = \gaussianDist{\mappingFunction_2}{\fr
 <li><p>Posterior covariance <span class="math display">\[\covarianceMatrix_* = \kernelMatrix_{*,*} - \kernelMatrix_{*,\mappingFunctionVector}
 \kernelMatrix^{-1} \kernelMatrix_{\mappingFunctionVector, *}\]</span></p></li>
 </ul>
-<h3 id="section-1" data-transition="none"></h3>
+<h3 id="section"></h3>
 <object class="svgplot" align data="../slides/diagrams/gp_prior_samples_data.svg">
 </object>
-<h3 id="section-2" data-transition="none"></h3>
+<h3 id="section-1"></h3>
 <object class="svgplot" align data="../slides/diagrams/gp_rejection_samples.svg">
 </object>
-<h3 id="section-3" data-transition="none"></h3>
+<h3 id="section-2"></h3>
 <object class="svgplot" align data="../slides/diagrams/gp_prediction.svg">
 </object>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>load <span class="op">-</span>s eq_cov mlai.py</code></pre></div>
@@ -275,8 +271,10 @@ p(\mappingFunction_2|\mappingFunction_1) = \gaussianDist{\mappingFunction_2}{\fr
                     diagrams<span class="op">=</span><span class="st">&#39;../slides/diagrams/kern&#39;</span>, 
                     filename<span class="op">=</span><span class="st">&#39;eq_covariance.html&#39;</span>)</code></pre></div>
 <h3 id="exponentiated-quadratic-covariance">Exponentiated Quadratic Covariance</h3>
-<p><span class="math display">\[k(\inputVector, \inputVector^\prime) 
-= \alpha \exp\left(-\frac{\ltwoNorm{\inputVector - \inputVector^\prime}^2}{2\ell^2}\right)\]</span></p>
+<p>The exponentiated quadratic covariance, also known as the Gaussian covariance or the RBF covariance and the squared exponential. Covariance between two points is related to the negative exponential of the squared distnace between those points. This covariance function can be derived in a few different ways: as the infinite limit of a radial basis function neural network, as diffusion in the heat equation, as a Gaussian filter in <em>Fourier space</em> or as the composition as a series of linear filters applied to a base function.</p>
+The covariance takes the following form, <span class="math display">\[
+\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\ltwoNorm{\inputVector - \inputVector^\prime}^2}{2\ell^2}\right)
+\]</span> where <span class="math inline">\(\ell\)</span> is the <em>length scale</em> or <em>time scale</em> of the process and <span class="math inline">\(\alpha\)</span> represents the overall process variance.
 <table>
 <tr>
 <td width="50%">
@@ -363,46 +361,57 @@ y_clean=np.vstack((y[0:2, :], y[3:, :]))
 
 m_clean = GPy.models.GPRegression(x_clean,y_clean)
 _ = m_clean.optimize()</code></pre>
-<h3 id="section-4"></h3>
 <p>Data is fine for answering very specific questions, like &quot;Who won the Olympic Marathon in 2012?&quot;, because we have that answer stored, however, we are not given the answer to many other questions. For example, Alan Turing was a formidable marathon runner, in 1946 he ran a time 2 hours 46 minutes (just under four minutes per kilometer, faster than I and most of the other <a href="http://www.parkrun.org.uk/sheffieldhallam/">Endcliffe Park Run</a> runners can do 5 km). What is the probability he would have won an Olympics if one had been held in 1946?</p>
 <table>
 <tr>
 <td width="40%">
-<img class="" src="../slides/diagrams/turing_run.jpg" width="40%" align="" style="background:none; border:none; box-shadow:none;">
+<img class="" src="../slides/diagrams/turing-run.jpg" width="40%" align="" style="background:none; border:none; box-shadow:none;">
 </td>
 <td width="50%">
 <img class="" src="../slides/diagrams/turing-times.gif" width="50%" align="" style="background:none; border:none; box-shadow:none;">
 </td>
 </tr>
 </table>
-<p><em>Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: <a href="http://www.turing.org.uk/scrapbook/run.html">Alan Turing Internet Scrapbook</a>.</em></p>
-<h3 id="basis-function-covariance" data-transition="none">Basis Function Covariance</h3>
-<p><span class="math display">\[k(\mathbf{x}, \mathbf{x}^\prime) 
-= \boldsymbol{\phi}(\mathbf{x})^\top \boldsymbol{\phi(\mathbf{x}^\prime)}\]</span></p>
+<center>
+<em>Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: <a href="http://www.turing.org.uk/scrapbook/run.html">Alan Turing Internet Scrapbook</a> </em>
+</center>
+<h3 id="basis-function-covariance">Basis Function Covariance</h3>
+<p>The fixed basis function covariane just comes from the properties of a multivariate Gaussian, if we decide <span class="math display">\[
+\mappingFunctionVector=\basisMatrix\mappingVector
+\]</span> and then we assume <span class="math display">\[
+\mappingVector \sim \gaussianSamp{\zerosVector}{\alpha\eye}
+\]</span> then it follows from the properties of a multivariate Gaussian that <span class="math display">\[
+\mappingFunctionVector \sim \gaussianSamp{\zerosVector}{\alpha\basisMatrix\basisMatrix^\top}
+\]</span> meaning that the vector of observations from the function is jointly distributed as a Gaussian process and the covariance matrix is <span class="math inline">\(\kernelMatrix = \alpha\basisMatrix \basisMatrix^\top\)</span>, each element of the covariance matrix can then be found as the inner product between two rows of the basis funciton matrix. <span class="math display">\[
+\kernel(\inputVector, \inputVector^\prime) = \basisVector(\inputVector)^\top \basisVector(\inputVector^\prime)
+\]</span></p>
 <table>
 <tr>
-<td>
-<object data="../slides/diagrams/basis_covariance.svg">
+<td width="45%">
+<object class="svgplot" align data="../slides/diagrams/kern/basis_covariance.svg">
 </object>
 </td>
-<td>
-<img src="../slides/diagrams/basis_covariance.gif" class="negate" align="center" style="background:none; border:none; box-shadow:none;">
+<td width="45%">
+<img class="negate" src="../slides/diagrams/kern/basis_covariance.gif" width="40%" align="center" style="background:none; border:none; box-shadow:none;">
 </td>
 </tr>
 </table>
+<h3 id="brownian-covariance">Brownian Covariance</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>load <span class="op">-</span>s brownian_cov mlai.py</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> teaching_plots <span class="im">as</span> plot
 <span class="im">import</span> mlai
 <span class="im">import</span> numpy <span class="im">as</span> np</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">t<span class="op">=</span>np.linspace(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">200</span>)[:, np.newaxis]
-K, anim<span class="op">=</span>plot.animate_covariance_function(mlai.compute_kernel, t, 
+K, anim<span class="op">=</span>plot.animate_covariance_function(mlai.compute_kernel, 
+                                         t, 
                                          kernel<span class="op">=</span>brownian_cov)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> IPython.core.display <span class="im">import</span> HTML</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">plot.save_animation(anim, 
                     diagrams<span class="op">=</span><span class="st">&#39;../slides/diagrams/kern&#39;</span>, 
                     filename<span class="op">=</span><span class="st">&#39;brownian_covariance.html&#39;</span>)</code></pre></div>
-<h3 id="brownian-covariance">Brownian Covariance</h3>
-<p><span class="math display">\[\kernelScalar(t, t^\prime) = \alpha \min(t, t^\prime)\]</span></p>
+Brownian motion is also a Gaussian process. It follows a Gaussian random walk, with diffusion occuring at each time point driven by a Gaussian input. This implies it is both Markov and Gaussian. The covariane function for Brownian motion has the form <span class="math display">\[
+\kernelScalar(t, t^\prime) = \alpha \min(t, t^\prime)
+\]</span>
 <table>
 <tr>
 <td width="50%">
@@ -415,6 +424,10 @@ K, anim<span class="op">=</span>plot.animate_covariance_function(mlai.compute_ke
 </td>
 </tr>
 </table>
+<center>
+<em>The covariance of Brownian motion, and some samples from the covariance showing the functional form. </em>
+</center>
+<h3 id="mlp-covariance">MLP Covariance</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>load <span class="op">-</span>s mlp_cov mlai.py</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> teaching_plots <span class="im">as</span> plot
 <span class="im">import</span> mlai
@@ -425,11 +438,9 @@ K, anim<span class="op">=</span>plot.animate_covariance_function(mlai.compute_ke
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">plot.save_animation(anim, 
                     diagrams<span class="op">=</span><span class="st">&#39;../slides/diagrams/kern&#39;</span>, 
                     filename<span class="op">=</span><span class="st">&#39;mlp_covariance.html&#39;</span>)</code></pre></div>
-<h3 id="mlp-covariance">MLP Covariance</h3>
-<p><span class="math display">\[\kernelScalar(\inputVector, \inputVector^\prime) = 
-\alpha \arcsin\left(\frac{w \inputVector^\top \inputVector^\prime + b}
-{\sqrt{\left(w \inputVector^\top \inputVector + b + 1\right)
-\left(w \left.\inputVector^\prime\right.^\top \inputVector^\prime + b + 1\right)}}\right)\]</span></p>
+<p>The multi-layer perceptron (MLP) covariance, also known as the neural network covariance or the arcsin covariance, is derived by considering the infinite limit of a neural network. <span class="math display">\[
+\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \arcsin\left(\frac{w \inputVector^\top \inputVector^\prime + b}{\sqrt{\left(w \inputVector^\top \inputVector + b + 1\right)\left(w \left.\inputVector^\prime\right.^\top \inputVector^\prime + b + 1\right)}}\right)
+\]</span></p>
 <table>
 <tr>
 <td width="50%">
@@ -442,25 +453,23 @@ K, anim<span class="op">=</span>plot.animate_covariance_function(mlai.compute_ke
 </td>
 </tr>
 </table>
-<h3 id="section-5" data-transition="none"></h3>
-<p><img class="" src="../slides/diagrams/Planck_CMB.png" width="70%" align="" style="background:none; border:none; box-shadow:none;"></p>
-<h3 id="section-6" data-transition="none"></h3>
+<center>
+<em>The multi-layer perceptron covariance function. This is derived by considering the infinite limit of a neural network with probit activation functions. </em>
+</center>
 <div style="fontsize:120px;vertical-align:middle;">
 <img src="../slides/diagrams/earth_PNG37.png" width="20%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">\(=f\Bigg(\)</span> <img src="../slides/diagrams/Planck_CMB.png"  width="50%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">\(\Bigg)\)</span>
 </div>
+<div style="fontsize:120px;vertical-align:middle;">
+<img src="../slides/diagrams/earth_PNG37.png" width="20%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">\(=f\Bigg(\)</span> <img src="../slides/diagrams/Planck_CMB.png"  width="50%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">\(\Bigg)\)</span>
+</div>
+<center>
+<em>The cosmic microwave background is, to a very high degree of precision, a Gaussian process. The parameters of its covariance function are given by fundamental parameters of the universe, such as the amount of dark matter and mass. </em>
+</center>
 <h3 id="deep-gaussian-processes">Deep Gaussian Processes</h3>
-<h3 id="approximations" data-transition="None">Approximations</h3>
-<p><img class="" src="../slides/diagrams/sparse-gps-1.png" width="90%" align="" style="background:none; border:none; box-shadow:none;"></p>
-<p><em>Image credit: Kai Arulkumaran</em></p>
-<h3 id="approximations-1" data-transition="None">Approximations</h3>
-<p><img class="" src="../slides/diagrams/sparse-gps-2.png" width="90%" align="" style="background:none; border:none; box-shadow:none;"></p>
-<p><em>Image credit: Kai Arulkumaran</em></p>
-<h3 id="approximations-2" data-transition="None">Approximations</h3>
-<p><img class="" src="../slides/diagrams/sparse-gps-3.png" width="45%" align="" style="background:none; border:none; box-shadow:none;"></p>
-<p><em>Image credit: Kai Arulkumaran</em></p>
-<h3 id="approximations-3" data-transition="None">Approximations</h3>
-<p><img class="" src="../slides/diagrams/sparse-gps-4.png" width="45%" align="" style="background:none; border:none; box-shadow:none;"></p>
-<p><em>Image credit: Kai Arulkumaran</em></p>
+<img class="" src="../slides/diagrams/sparse-gps.jpg" width="45%" align="center" style="background:none; border:none; box-shadow:none;">
+<center>
+<em>Image credit: Kai Arulkumaran </em>
+</center>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
 <span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
 <span class="im">from</span> IPython.display <span class="im">import</span> display
@@ -491,9 +500,11 @@ ylim <span class="op">=</span> ax.get_ylim()
 mlai.write_figure(figure<span class="op">=</span>fig,
                   filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/gp/sparse-demo-full-gp.svg&#39;</span>, 
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
-<h3 id="full-gaussian-process-fit" data-transition="None">Full Gaussian Process Fit</h3>
 <object class="svgplot" align data="../slides/diagrams/gp/sparse-demo-full-gp.svg">
 </object>
+<center>
+<em>Full Gaussian process fitted to the data set. </em>
+</center>
 <p>Now we set up the inducing variables, <span class="math inline">\(\mathbf{u}\)</span>. Each inducing variable has its own associated input index, <span class="math inline">\(\mathbf{Z}\)</span>, which lives in the same space as <span class="math inline">\(\inputMatrix\)</span>. Here we are using the true covariance function parameters to generate the fit.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">kern <span class="op">=</span> GPy.kern.RBF(<span class="dv">1</span>)
 Z <span class="op">=</span> np.hstack(
@@ -508,9 +519,11 @@ plot.model_output(m, ax<span class="op">=</span>ax, xlabel<span class="op">=</sp
 mlai.write_figure(figure<span class="op">=</span>fig,
                   filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/gp/sparse-demo-constrained-inducing-6-unlearned-gp.svg&#39;</span>, 
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
-<h3 id="inducing-variable-fit" data-transition="None">Inducing Variable Fit</h3>
 <object class="svgplot" align data="../slides/diagrams/gp/sparse-demo-constrained-inducing-6-unlearned-gp.svg">
 </object>
+<center>
+<em>Sparse Gaussian process fitted with six inducing variables, no optimization of parameters or inducing variables. </em>
+</center>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">_ <span class="op">=</span> m.optimize(messages<span class="op">=</span><span class="va">True</span>)
 display(m)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
@@ -518,9 +531,11 @@ plot.model_output(m, ax<span class="op">=</span>ax, xlabel<span class="op">=</sp
 mlai.write_figure(figure<span class="op">=</span>fig,
                   filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/gp/sparse-demo-full-gp.svg&#39;</span>, 
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
-<h3 id="inducing-variable-param-optimize" data-transition="None">Inducing Variable Param Optimize</h3>
 <object class="svgplot" align data="../slides/diagrams/gp/sparse-demo-constrained-inducing-6-learned-gp.svg">
 </object>
+<center>
+<em>Gaussian process fitted with inducing variables fixed and parameters optimized </em>
+</center>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.randomize()
 m.inducing_inputs.unconstrain()
 _ <span class="op">=</span> m.optimize(messages<span class="op">=</span><span class="va">True</span>)</code></pre></div>
@@ -529,9 +544,11 @@ plot.model_output(m, ax<span class="op">=</span>ax, xlabel<span class="op">=</sp
 mlai.write_figure(figure<span class="op">=</span>fig,
                   filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/gp/sparse-demo-unconstrained-inducing-6-gp.svg&#39;</span>, 
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
-<h3 id="inducing-variable-full-optimize" data-transition="None">Inducing Variable Full Optimize</h3>
 <object class="svgplot" align data="../slides/diagrams/gp/sparse-demo-unconstrained-inducing-6-gp.svg">
 </object>
+<center>
+<em>Gaussian process fitted with location of inducing variables and parameters both optimized </em>
+</center>
 <p>Now we will vary the number of inducing points used to form the approximation.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.num_inducing<span class="op">=</span><span class="dv">8</span>
 m.randomize()
@@ -544,12 +561,13 @@ plot.model_output(m, ax<span class="op">=</span>ax, xlabel<span class="op">=</sp
 mlai.write_figure(figure<span class="op">=</span>fig,
                   filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/gp/sparse-demo-sparse-inducing-8-gp.svg&#39;</span>, 
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
-<h3 id="eight-optimized-inducing-variables" data-transition="None">Eight Optimized Inducing Variables</h3>
 <object class="svgplot" align data="../slides/diagrams/gp/sparse-demo-sparse-inducing-8-gp.svg">
 </object>
-<h3 id="full-gaussian-process-fit-1" data-transition="None">Full Gaussian Process Fit</h3>
 <object class="svgplot" align data="../slides/diagrams/gp/sparse-demo-full-gp.svg">
 </object>
+<center>
+<em>Comparison of the full Gaussian process fit with a sparse Gaussian process using eight inducing varibles. Both inducing variables and parameters are optimized. </em>
+</center>
 <p>And we can compare the probability of the result to the full model.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(m.log_likelihood(), m_full.log_likelihood())</code></pre></div>
 <h3 id="modern-review">Modern Review</h3>
@@ -557,15 +575,14 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 <li><p><em>A Unifying Framework for Gaussian Process Pseudo-Point Approximations using Power Expectation Propagation</em> <span class="citation">Bui et al. (2017)</span></p></li>
 <li><p><em>Deep Gaussian Processes and Variational Propagation of Uncertainty</em> <span class="citation">Damianou (2015)</span></p></li>
 </ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> teaching_plots <span class="im">as</span> plot</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">plot.deep_nn(diagrams<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/&#39;</span>)</code></pre></div>
-<h3 id="deep-neural-network" data-transition="None">Deep Neural Network</h3>
-<object class="svgplot" align data="../slides/diagrams/deepgp/deep-nn1.svg">
-</object>
-<h3 id="deep-neural-network-1" data-transition="None">Deep Neural Network</h3>
 <object class="svgplot" align data="../slides/diagrams/deepgp/deep-nn2.svg">
 </object>
-<h3 id="mathematically" data-transition="None">Mathematically</h3>
-<p><span class="math display">\[
+<center>
+<em>A deep neural network. Input nodes are shown at the bottom. Each hidden layer is the result of applying an affine transformation to the previous layer and placing through an activation function. </em>
+</center>
+<p>Mathematically, each layer of a neural network is given through computing the activation function, <span class="math inline">\(\basisFunction(\cdot)\)</span>, contingent on the previous layer, or the inputs. In this way the activation functions, are composed to generate more complex interactions than would be possible with any single layer. <span class="math display">\[
 \begin{align}
     \hiddenVector_{1} &amp;= \basisFunction\left(\mappingMatrix_1 \inputVector\right)\\
     \hiddenVector_{2} &amp;=  \basisFunction\left(\mappingMatrix_2\hiddenVector_{1}\right)\\
@@ -573,105 +590,92 @@ mlai.write_figure(figure<span class="op">=</span>fig,
     \dataVector &amp;= \mappingVector_4 ^\top\hiddenVector_{3}
 \end{align}
 \]</span></p>
-<h3 id="overfitting" data-transition="None">Overfitting</h3>
-<ul>
-<li><p>Potential problem: if number of nodes in two adjacent layers is big, corresponding <span class="math inline">\(\mappingMatrix\)</span> is also very big and there is the potential to overfit.</p></li>
-<li><p>Proposed solution: “dropout”.</p></li>
-<li><p>Alternative solution: parameterize <span class="math inline">\(\mappingMatrix\)</span> with its SVD. <span class="math display">\[\mappingMatrix = \eigenvectorMatrix\eigenvalueMatrix\eigenvectwoMatrix^\top\]</span> or <span class="math display">\[\mappingMatrix = \eigenvectorMatrix\eigenvectwoMatrix^\top\]</span> where if <span class="math inline">\(\mappingMatrix \in \Re^{k_1\times k_2}\)</span> then <span class="math inline">\(\eigenvectorMatrix\in \Re^{k_1\times q}\)</span> and <span class="math inline">\(\eigenvectwoMatrix \in \Re^{k_2\times q}\)</span>, i.e. we have a low rank matrix factorization for the weights.</p></li>
-</ul>
+<h3 id="overfitting">Overfitting</h3>
+<p>One potential problem is that as the number of nodes in two adjacent layers increases, the number of parameters in the affine transformation between layers, <span class="math inline">\(\mappingMatrix\)</span>, increases. If there are <span class="math inline">\(k_{i-1}\)</span> nodes in one layer, and <span class="math inline">\(k_i\)</span> nodes in the following, then that matrix contains <span class="math inline">\(k_i k_{i-1}\)</span> parameters, when we have layer widths in the 1000s that leads to millions of parameters.</p>
+<p>One proposed solution is known as <em>dropout</em> where only a sub-set of the neural network is trained at each iteration. An alternative solution would be to reparameterize <span class="math inline">\(\mappingMatrix\)</span> with its <em>singular value decomposition</em>. <span class="math display">\[
+  \mappingMatrix = \eigenvectorMatrix\eigenvalueMatrix\eigenvectwoMatrix^\top
+  \]</span> or <span class="math display">\[
+  \mappingMatrix = \eigenvectorMatrix\eigenvectwoMatrix^\top
+  \]</span> where if <span class="math inline">\(\mappingMatrix \in \Re^{k_1\times k_2}\)</span> then <span class="math inline">\(\eigenvectorMatrix\in \Re^{k_1\times q}\)</span> and <span class="math inline">\(\eigenvectwoMatrix \in \Re^{k_2\times q}\)</span>, i.e. we have a low rank matrix factorization for the weights.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> teaching_plots <span class="im">as</span> plot</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">plot.low_rank_approximation(diagrams<span class="op">=</span><span class="st">&#39;../slides/diagrams&#39;</span>)</code></pre></div>
-<h3 id="low-rank-approximation" data-transition="None">Low Rank Approximation</h3>
 <object class="svgplot" align data="../slides/diagrams/wisuvt.svg">
 </object>
+<center>
+<em>Pictorial representation of the low rank form of the matrix <span class="math inline">\(\mappingMatrix\)</span> </em>
+</center>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> teaching_plots <span class="im">as</span> plot</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">plot.deep_nn_bottleneck(diagrams<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp&#39;</span>)</code></pre></div>
-<h3 id="deep-neural-network-2" data-transition="None">Deep Neural Network</h3>
-<object class="svgplot" align data="../slides/diagrams/deepgp/deep-nn-bottleneck1.svg">
-</object>
-<h3 id="deep-neural-network-3" data-transition="None">Deep Neural Network</h3>
 <object class="svgplot" align data="../slides/diagrams/deepgp/deep-nn-bottleneck2.svg">
 </object>
-<h3 id="mathematically-1" data-transition="None">Mathematically</h3>
+<p>Including the low rank decomposition of <span class="math inline">\(\mappingMatrix\)</span> in the neural network, we obtain a new mathematical form. Effectively, we are adding additional <em>latent</em> layers, <span class="math inline">\(\latentVector\)</span>, in between each of the existing hidden layers. In a neural network these are sometimes known as <em>bottleneck</em> layers. The network can now be written mathematically as <span class="math display">\[
+\begin{align}
+  \latentVector_{1} &amp;= \eigenvectwoMatrix^\top_1 \inputVector\\
+  \hiddenVector_{1} &amp;= \basisFunction\left(\eigenvectorMatrix_1 \latentVector_{1}\right)\\
+  \latentVector_{2} &amp;= \eigenvectwoMatrix^\top_2 \hiddenVector_{1}\\
+  \hiddenVector_{2} &amp;= \basisFunction\left(\eigenvectorMatrix_2 \latentVector_{2}\right)\\
+  \latentVector_{3} &amp;= \eigenvectwoMatrix^\top_3 \hiddenVector_{2}\\
+  \hiddenVector_{3} &amp;= \basisFunction\left(\eigenvectorMatrix_3 \latentVector_{3}\right)\\
+  \dataVector &amp;= \mappingVector_4^\top\hiddenVector_{3}.
+\end{align}
+\]</span></p>
+<h3 id="a-cascade-of-neural-networks">A Cascade of Neural Networks</h3>
 <p><span class="math display">\[
 \begin{align}
-    \latentVector_{1} &amp;= \eigenvectwoMatrix^\top_1 \inputVector\\
-    \hiddenVector_{1} &amp;= \basisFunction\left(\eigenvectorMatrix_1 \latentVector_{1}\right)\\
-    \latentVector_{2} &amp;= \eigenvectwoMatrix^\top_2 \hiddenVector_{1}\\
-    \hiddenVector_{2} &amp;= \basisFunction\left(\eigenvectorMatrix_2 \latentVector_{2}\right)\\
-    \latentVector_{3} &amp;= \eigenvectwoMatrix^\top_3 \hiddenVector_{2}\\
-    \hiddenVector_{3} &amp;= \basisFunction\left(\eigenvectorMatrix_3 \latentVector_{3}\right)\\
-    \dataVector &amp;= \mappingVector_4^\top\hiddenVector_{3}
+  \latentVector_{1} &amp;= \eigenvectwoMatrix^\top_1 \inputVector\\
+  \latentVector_{2} &amp;= \eigenvectwoMatrix^\top_2 \basisFunction\left(\eigenvectorMatrix_1 \latentVector_{1}\right)\\
+  \latentVector_{3} &amp;= \eigenvectwoMatrix^\top_3 \basisFunction\left(\eigenvectorMatrix_2 \latentVector_{2}\right)\\
+  \dataVector &amp;= \mappingVector_4 ^\top \latentVector_{3}
 \end{align}
 \]</span></p>
-<h3 id="a-cascade-of-neural-networks" data-transition="None">A Cascade of Neural Networks</h3>
-<p><span class="math display">\[\begin{align}
-    \latentVector_{1} &amp;= \eigenvectwoMatrix^\top_1 \inputVector\\
-    \latentVector_{2} &amp;= \eigenvectwoMatrix^\top_2 \basisFunction\left(\eigenvectorMatrix_1 \latentVector_{1}\right)\\
-    \latentVector_{3} &amp;= \eigenvectwoMatrix^\top_3 \basisFunction\left(\eigenvectorMatrix_2 \latentVector_{2}\right)\\
-    \dataVector &amp;= \mappingVector_4 ^\top \latentVector_{3}
-\end{align}
-\]</span></p>
-<h3 id="cascade-of-gaussian-processes" data-transition="None">Cascade of Gaussian Processes</h3>
+<h3 id="cascade-of-gaussian-processes">Cascade of Gaussian Processes</h3>
 <ul>
 <li><p>Replace each neural network with a Gaussian process <span class="math display">\[
 \begin{align}
-\latentVector_{1} &amp;= \mappingFunctionVector_1\left(\inputVector\right)\\
-\latentVector_{2} &amp;= \mappingFunctionVector_2\left(\latentVector_{1}\right)\\
-\latentVector_{3} &amp;= \mappingFunctionVector_3\left(\latentVector_{2}\right)\\
-\dataVector &amp;= \mappingFunctionVector_4\left(\latentVector_{3}\right)
+  \latentVector_{1} &amp;= \mappingFunctionVector_1\left(\inputVector\right)\\
+  \latentVector_{2} &amp;= \mappingFunctionVector_2\left(\latentVector_{1}\right)\\
+  \latentVector_{3} &amp;= \mappingFunctionVector_3\left(\latentVector_{2}\right)\\
+  \dataVector &amp;= \mappingFunctionVector_4\left(\latentVector_{3}\right)
 \end{align}
 \]</span></p></li>
 <li><p>Equivalent to prior over parameters, take width of each layer to infinity.</p></li>
 </ul>
-<h3 id="mathematically-2" data-transition="None">Mathematically</h3>
-<ul>
-<li>Composite <em>multivariate</em> function <span class="math display">\[\mathbf{g}(\inputVector)=\mappingFunctionVector_5(\mappingFunctionVector_4(\mappingFunctionVector_3(\mappingFunctionVector_2(\mappingFunctionVector_1(\inputVector)))))\]</span></li>
-</ul>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">rc(<span class="st">&quot;font&quot;</span>, <span class="op">**</span>{<span class="st">&#39;family&#39;</span>:<span class="st">&#39;sans-serif&#39;</span>,<span class="st">&#39;sans-serif&#39;</span>:[<span class="st">&#39;Helvetica&#39;</span>],<span class="st">&#39;size&#39;</span>:<span class="dv">30</span>})
-rc(<span class="st">&quot;text&quot;</span>, usetex<span class="op">=</span><span class="va">True</span>)
-pgm <span class="op">=</span> plot.horizontal_chain(depth<span class="op">=</span><span class="dv">5</span>)
+<p>Mathematically, a deep Gaussian process can be seen as a composite <em>multivariate</em> function, <span class="math display">\[
+  \mathbf{g}(\inputVector)=\mappingFunctionVector_5(\mappingFunctionVector_4(\mappingFunctionVector_3(\mappingFunctionVector_2(\mappingFunctionVector_1(\inputVector))))).
+  \]</span> Or if we view it from the probabilistic perspective we can see that a deep Gaussian process is specifying a factorization of the joint density, the standard deep model takes the form of a Markov chain.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> matplotlib <span class="im">import</span> rc
+
+rc(<span class="st">&quot;font&quot;</span>, <span class="op">**</span>{<span class="st">&#39;family&#39;</span>:<span class="st">&#39;sans-serif&#39;</span>,<span class="st">&#39;sans-serif&#39;</span>:[<span class="st">&#39;Helvetica&#39;</span>],<span class="st">&#39;size&#39;</span>:<span class="dv">30</span>})
+rc(<span class="st">&quot;text&quot;</span>, usetex<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pgm <span class="op">=</span> plot.horizontal_chain(depth<span class="op">=</span><span class="dv">5</span>)
 pgm.render().figure.savefig(<span class="st">&quot;../slides/diagrams/deepgp/deep-markov.svg&quot;</span>, transparent<span class="op">=</span><span class="va">True</span>)</code></pre></div>
-<h3 id="equivalent-to-markov-chain" data-transition="None">Equivalent to Markov Chain</h3>
-<ul>
-<li>Composite <em>multivariate</em> function</li>
-</ul>
-<p><span class="math display">\[p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mappingFunctionVector_5|\mappingFunctionVector_4)p(\mappingFunctionVector_4|\mappingFunctionVector_3)p(\mappingFunctionVector_3|\mappingFunctionVector_2)p(\mappingFunctionVector_2|\mappingFunctionVector_1)p(\mappingFunctionVector_1|\inputVector)\]</span></p>
+<p><span class="math display">\[
+  p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mappingFunctionVector_5|\mappingFunctionVector_4)p(\mappingFunctionVector_4|\mappingFunctionVector_3)p(\mappingFunctionVector_3|\mappingFunctionVector_2)p(\mappingFunctionVector_2|\mappingFunctionVector_1)p(\mappingFunctionVector_1|\inputVector)
+  \]</span></p>
 <object class="svgplot" align data="../slides/diagrams/deepgp/deep-markov.svg">
 </object>
+<center>
+<em>Probabilistically the deep Gaussian process can be represented as a Markov chain. </em>
+</center>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> matplotlib <span class="im">import</span> rc
 rc(<span class="st">&quot;font&quot;</span>, <span class="op">**</span>{<span class="st">&#39;family&#39;</span>:<span class="st">&#39;sans-serif&#39;</span>,<span class="st">&#39;sans-serif&#39;</span>:[<span class="st">&#39;Helvetica&#39;</span>], <span class="st">&#39;size&#39;</span>:<span class="dv">15</span>})
-rc(<span class="st">&quot;text&quot;</span>, usetex<span class="op">=</span><span class="va">True</span>)
-pgm <span class="op">=</span> plot.vertical_chain(depth<span class="op">=</span><span class="dv">5</span>)
+rc(<span class="st">&quot;text&quot;</span>, usetex<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pgm <span class="op">=</span> plot.vertical_chain(depth<span class="op">=</span><span class="dv">5</span>)
 pgm.render().figure.savefig(<span class="st">&quot;../slides/diagrams/deepgp/deep-markov-vertical.svg&quot;</span>, transparent<span class="op">=</span><span class="va">True</span>)</code></pre></div>
-<h3 id="section-7" data-transition="None"></h3>
 <object class="svgplot" align data="../slides/diagrams/deepgp/deep-markov-vertical.svg">
 </object>
-<h3 id="why-deep" data-transition="None">Why Deep?</h3>
-<ul>
-<li><p>Gaussian processes give priors over functions.</p></li>
-<li>Elegant properties:
-<ul>
-<li>e.g. <em>Derivatives</em> of process are also Gaussian distributed (if they exist).</li>
-</ul></li>
-<li><p>For particular covariance functions they are ‘universal approximators’, i.e. all functions can have support under the prior.</p></li>
-<li><p>Gaussian derivatives might ring alarm bells.</p></li>
-<li><p>E.g. a priori they don’t believe in function ‘jumps’.</p></li>
-</ul>
-<h3 id="process-composition" data-transition="none">Process Composition</h3>
-<ul>
-<li><p>From a process perspective: <em>process composition</em>.</p></li>
-<li><p>A (new?) way of constructing more complex <em>processes</em> based on simpler components.</p></li>
-</ul>
-<h3 id="section-8" data-transition="None"></h3>
+<h3 id="why-deep">Why Deep?</h3>
+<p>If the result of composing many functions together is simply another function, then why do we bother? The key point is that we can change the class of functions we are modeling by composing in this manner. A Gaussian process is specifying a prior over functions, and one with a number of elegant properties. For example, the derivative process (if it exists) of a Gaussian process is also Gaussian distributed. That makes it easy to assimilate, for example, derivative observations. But that also might raise some alarm bells. That implies that the <em>marginal derivative distribution</em> is also Gaussian distributed. If that's the case, then it means that functions which occasionally exhibit very large derivatives are hard to model with a Gaussian process. For example, a function with jumps in.</p>
+<p>A one off discontinuity is easy to model with a Gaussian process, or even multiple discontinuities. They can be introduced in the mean function, or independence can be forced between two covariance functions that apply in different areas of the input space. But in these cases we will need to specify the number of discontinuities and where they occur. In otherwords we need to <em>parameterise</em> the discontinuities. If we do not know the number of discontinuities and don't wish to specify where they occur, i.e. if we want a non-parametric representation of discontinuities, then the standard Gaussian process doesn't help.</p>
+<h3 id="stochastic-process-composition">Stochastic Process Composition</h3>
+<p>The deep Gaussian process leads to <em>non-Gaussian</em> models, and non-Gaussian characteristics in the covariance function. In effect, what we are proposing is that we change the properties of the functions we are considering by *composing stochastic processes$. This is an approach to creating new stochastic processes from well known processes.</p>
 <object class="svgplot" align data="../slides/diagrams/deepgp/deep-markov-vertical.svg">
 </object>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">
-pgm <span class="op">=</span> plot.vertical_chain(depth<span class="op">=</span><span class="dv">5</span>, shape<span class="op">=</span>[<span class="dv">2</span>, <span class="dv">7</span>])
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pgm <span class="op">=</span> plot.vertical_chain(depth<span class="op">=</span><span class="dv">5</span>, shape<span class="op">=</span>[<span class="dv">2</span>, <span class="dv">7</span>])
 pgm.add_node(daft.Node(<span class="st">&#39;y_2&#39;</span>, <span class="vs">r&#39;$\mathbf</span><span class="sc">{y}</span><span class="vs">_2$&#39;</span>, <span class="fl">1.5</span>, <span class="fl">3.5</span>, observed<span class="op">=</span><span class="va">True</span>))
 pgm.add_edge(<span class="st">&#39;f_2&#39;</span>, <span class="st">&#39;y_2&#39;</span>)
 pgm.render().figure.savefig(<span class="st">&quot;../slides/diagrams/deepgp/deep-markov-vertical-side.svg&quot;</span>, transparent<span class="op">=</span><span class="va">True</span>)</code></pre></div>
-<h3 id="section-9" data-transition="None"></h3>
-<object class="svgplot" align data="../slides/diagrams/deepgp/deep-markov-vertical-side.svg">
-</object>
+<p>Additionally, we are not constrained to the formalism of the chain. For example, we can easily add single nodes emerging from some point in the depth of the chain. This allows us to combine the benefits of the graphical modelling formalism, but with a powerful framework for relating one set of variables to another, that of Gaussian processes <object class="svgplot" align="" data="../slides/diagrams/deepgp/deep-markov-vertical-side.svg"></object></p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">plot.non_linear_difficulty_plot_3(diagrams<span class="op">=</span><span class="st">&#39;../../slides/diagrams/dimred/&#39;</span>)</code></pre></div>
 <h3 id="difficulty-for-probabilistic-approaches" data-transition="None">Difficulty for Probabilistic Approaches</h3>
 <ul>
@@ -711,12 +715,11 @@ pgm.render().figure.savefig(<span class="st">&quot;../slides/diagrams/deepgp/dee
 <h3 id="stacked-gp">Stacked GP</h3>
 <object class="svgplot" align data="../slides/diagrams/stack-gp-sample-4.svg">
 </object>
-<h3 id="analysis-of-deep-gps" data-transition="None">Analysis of Deep GPs</h3>
+<h3 id="analysis-of-deep-gps">Analysis of Deep GPs</h3>
 <ul>
 <li><p><em>Avoiding pathologies in very deep networks</em> <span class="citation">Duvenaud et al. (2014)</span> show that the derivative distribution of the process becomes more <em>heavy tailed</em> as number of layers increase.</p></li>
 <li><p><em>How Deep Are Deep Gaussian Processes?</em> <span class="citation">Dunlop et al. (2017)</span> perform a theoretical analysis possible through conditional Gaussian Markov property.</p></li>
 </ul>
-<h3 id="section-10"></h3>
 <p><a href="https://www.youtube.com/watch?v=XhIvygQYFFQ&amp;t="><img src="https://img.youtube.com/vi/XhIvygQYFFQ/0.jpg" /></a></p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
 <span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
@@ -792,19 +795,20 @@ y_clean=np.vstack((y[0:2, :], y[3:, :]))
 
 m_clean = GPy.models.GPRegression(x_clean,y_clean)
 _ = m_clean.optimize()</code></pre>
-<h3 id="section-11"></h3>
 <p>Data is fine for answering very specific questions, like &quot;Who won the Olympic Marathon in 2012?&quot;, because we have that answer stored, however, we are not given the answer to many other questions. For example, Alan Turing was a formidable marathon runner, in 1946 he ran a time 2 hours 46 minutes (just under four minutes per kilometer, faster than I and most of the other <a href="http://www.parkrun.org.uk/sheffieldhallam/">Endcliffe Park Run</a> runners can do 5 km). What is the probability he would have won an Olympics if one had been held in 1946?</p>
 <table>
 <tr>
 <td width="40%">
-<img class="" src="../slides/diagrams/turing_run.jpg" width="40%" align="" style="background:none; border:none; box-shadow:none;">
+<img class="" src="../slides/diagrams/turing-run.jpg" width="40%" align="" style="background:none; border:none; box-shadow:none;">
 </td>
 <td width="50%">
 <img class="" src="../slides/diagrams/turing-times.gif" width="50%" align="" style="background:none; border:none; box-shadow:none;">
 </td>
 </tr>
 </table>
-<p><em>Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: <a href="http://www.turing.org.uk/scrapbook/run.html">Alan Turing Internet Scrapbook</a>.</em></p>
+<center>
+<em>Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: <a href="http://www.turing.org.uk/scrapbook/run.html">Alan Turing Internet Scrapbook</a> </em>
+</center>
 <h3 id="deep-gp-fit">Deep GP Fit</h3>
 <p>Let's see if a deep Gaussian process can help here. We will construct a deep Gaussian process with one hidden layer (i.e. one Gaussian process feeding into another).</p>
 <p>Build a Deep GP with an additional hidden layer (one dimensional) to fit the model.</p>
@@ -1469,7 +1473,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 <h3 id="shared-lvm" data-transition="none">Shared LVM</h3>
 <object class="svgplot" align data="../slides/diagrams/shared.svg">
 </object>
-<h3 id="section-12" data-transition="none"></h3>
+<h3 id="section-3" data-transition="none"></h3>
 <p><img class="negate" src="../slides/diagrams/deep-gp-high-five2.png" width="100%" align="" style="background:none; border:none; box-shadow:none;"></p>
 
 <p>This notebook explores the deep Gaussian processes' capacity to perform unsupervised learning.</p>
@@ -1556,16 +1560,16 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
         plt.xlabel(<span class="st">&#39;dimension &#39;</span> <span class="op">+</span> <span class="bu">str</span>(dims[<span class="dv">0</span>]))
         plt.ylabel(<span class="st">&#39;dimension &#39;</span> <span class="op">+</span> <span class="bu">str</span>(dims[<span class="dv">1</span>]))
         mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&quot;../../slides/diagrams/deepgp/usps-digits-hidden-&quot;</span> <span class="op">+</span> <span class="bu">str</span>(dims[<span class="dv">0</span>]) <span class="op">+</span> <span class="st">&#39;-&#39;</span> <span class="op">+</span> <span class="bu">str</span>(dims[<span class="dv">1</span>]) <span class="op">+</span> <span class="st">&#39;.svg&#39;</span>, transparent<span class="op">=</span><span class="va">True</span>)</code></pre></div>
-<h3 id="section-13" data-transition="none"></h3>
+<h3 id="section-4" data-transition="none"></h3>
 <object class="svgplot" align data="../slides/diagrams/usps-digits-hidden-1-0.svg">
 </object>
-<h3 id="section-14" data-transition="none"></h3>
+<h3 id="section-5" data-transition="none"></h3>
 <object class="svgplot" align data="../slides/diagrams/usps-digits-hidden-2-0.svg">
 </object>
-<h3 id="section-15" data-transition="none"></h3>
+<h3 id="section-6" data-transition="none"></h3>
 <object class="svgplot" align data="../slides/diagrams/usps-digits-hidden-3-0.svg">
 </object>
-<h3 id="section-16" data-transition="none"></h3>
+<h3 id="section-7" data-transition="none"></h3>
 <object class="svgplot" align data="../slides/diagrams/usps-digits-hidden-4-0.svg">
 </object>
 <h3 id="generate-from-model">Generate From Model</h3>
@@ -1588,7 +1592,7 @@ fig, axs <span class="op">=</span> plt.subplots(rows,cols,figsize<span class="op
                         aspect<span class="op">=</span><span class="st">&#39;equal&#39;</span>)
         axs[i,j].set_axis_off()
 mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&quot;../../slides/diagrams/deepgp/digit-samples-deep-gp.svg&quot;</span>, transparent<span class="op">=</span><span class="va">True</span>)</code></pre></div>
-<h3 id="section-17" data-transition="none"></h3>
+<h3 id="section-8" data-transition="none"></h3>
 <object class="svgplot" align data="../slides/diagrams/digit-samples-deep-gp.svg">
 </object>
 <h3 id="deep-health" data-transition="None">Deep Health</h3>
@@ -1910,6 +1914,9 @@ anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Bes
 </div>
 <div id="ref-Neal:bayesian94">
 <p>Neal, R.M., 1994. Bayesian learning for neural networks (PhD thesis). Dept. of Computer Science, University of Toronto.</p>
+</div>
+<div id="ref-Pearl:causality95">
+<p>Pearl, J., 1995. From Bayesian networks to causal networks, in: Gammerman, A. (Ed.), Probabilistic Reasoning and Bayesian Belief Networks. Alfred Waller, pp. 1–31.</p>
 </div>
 <div id="ref-Perdikaris:multifidelity17">
 <p>Perdikaris, P., Raissi, M., Damianou, A., Lawrence, N.D., Karniadakis, G.E., 2017. Nonlinear information fusion algorithms for data-efficient multi-fidelity modelling. Proceedings of the Royal Society of London A: Mathematical, Physical and Engineering Sciences 473. <a href="https://doi.org/10.1098/rspa.2016.0751" class="uri">https://doi.org/10.1098/rspa.2016.0751</a></p>

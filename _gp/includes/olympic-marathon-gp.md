@@ -1,4 +1,4 @@
-\include{./_ml/includes/olympic-marathon-data.md}
+\include{_ml/includes/olympic-marathon-data.md}
 
 \notes{
 Our first objective will be to perform a Gaussian process fit to the data, we'll do this using the [GPy software](https://github.com/SheffieldML/GPy).}
@@ -22,7 +22,7 @@ yt_sd=np.sqrt(yt_var)}
 
 \notes{Now we plot the results using the helper function in ```teaching_plots```.}
 
-\helpercode{import teaching_plots as plot}
+\setupcode{import teaching_plots as plot}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot.model_output(m_full, scale=scale, offset=offset, ax=ax, xlabel='year', ylabel='pace min/km', fontsize=20, portion=0.2)
@@ -32,9 +32,8 @@ mlai.write_figure(figure=fig,
                   filename='../slides/diagrams/gp/olympic-marathon-gp.svg', 
                   transparent=True, frameon=True)}
 
-\slides{
-### Olympic Marathon Data GP
-}
+\newslide{Olympic Marathon Data GP}
+
 \includesvg{../slides/diagrams/gp/olympic-marathon-gp.svg}
 
 \notes{
@@ -51,10 +50,11 @@ _ = m_clean.optimize()
 ```
 }
 
-### 
+\newslide{}
 
 \notes{Data is fine for answering very specific questions, like "Who won the Olympic Marathon in 2012?", because we have that answer stored, however, we are not given the answer to many other questions. For example, Alan Turing was a formidable marathon runner, in 1946 he ran a time 2 hours 46 minutes (just under four minutes per kilometer, faster than I and most of the other [Endcliffe Park Run](http://www.parkrun.org.uk/sheffieldhallam/) runners can do 5 km). What is the probability he would have won an Olympics if one had been held in 1946?}
 
-\columns{\includeimg{../slides/diagrams/turing_run.jpg}{40%}}{\includeimg{../slides/diagrams/turing-times.gif}{50%}}{40%}{50%}
+\columns{\includeimg{../slides/diagrams/turing-run.jpg}{40%}}{\includeimg{../slides/diagrams/turing-times.gif}{50%}}{40%}{50%}
 
-\notes{*Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: [Alan Turing Internet Scrapbook](http://www.turing.org.uk/scrapbook/run.html).*}
+\caption{Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: [Alan Turing Internet Scrapbook](http://www.turing.org.uk/scrapbook/run.html)}
+

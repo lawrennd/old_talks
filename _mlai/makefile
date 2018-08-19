@@ -1,4 +1,4 @@
-BASE=week6
+BASE=week1
 include ../make-talk-flags.mk
-DATE=2015-11-03
+#DATE=2015-11-03
 include ../make-talk.mk

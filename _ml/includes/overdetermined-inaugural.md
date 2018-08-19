@@ -41,7 +41,7 @@ $$2.5 = 2m + c$$
 import pods}
 \displaycode{pods.notebook.display_plots('over_determined_system{samp:0>3}.svg',
                             directory='../slides/diagrams/ml', 
-                            samp=IntSlider(1,1,8,1))}
+                            samp=IntSlider(1,1,7,1))}
 
 \slides{
 \startslides{over_determined_system}{1}{8}

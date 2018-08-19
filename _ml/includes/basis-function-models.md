@@ -4,6 +4,10 @@ Now we are going to consider how these basis functions can be adjusted to fit to
 a particular data set. We will return to the olympic marathon data from last
 time. First we will scale the output of the data to be zero mean and variance 1.
 
+\setupcode{import pods
+import numpy as np
+import matplotlib.pyplot as plt}
+
 \code{data = pods.datasets.olympic_marathon_men()
 y = data['Y']
 x = data['X']
@@ -30,7 +34,7 @@ ax.plot(x, y, 'rx')}
                                  wlim = (-4., 4.),
                                  num_basis=4)}
 
-\writeassignment{Use the tool provided above to try and find the best
+\codeassignment{Use the tool provided above to try and find the best
 fit you can to the data. Explore the parameter space and give the weight values
 you used for the 
 
@@ -38,11 +42,7 @@ you used for the
 (b) Radial basis
 (c) Fourier basis
 
-Write your answers in the code box below creating a new vector of parameters (in the correct order!) for each basis.}{3}{15}
-
-\code{# Question 3 Answer Code
-# provide the answers so that the code runs correctly otherwise you will loose marks!
-
+Write your answers in the code box below creating a new vector of parameters (in the correct order!) for each basis.}{3}{15}{
 # (a) polynomial
 ###### Edit these lines #####
 # w_0 =
@@ -68,7 +68,7 @@ Write your answers in the code box below creating a new vector of parameters (in
 # w_2 = 
 # w_3 =
 ##############################
-# w_fourier = np.asarray([[w_0], [w_1], [w_2], [w_3]]) }
+# w_fourier = np.asarray([[w_0], [w_1], [w_2], [w_3]])}
 
 \code{np.asarray([[1, 2, 3, 4]]).shape}
 
