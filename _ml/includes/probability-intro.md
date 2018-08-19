@@ -92,17 +92,16 @@ below.}{5}{20}
 file (the `IPython` magic command `%matplotlib inline` we ran above will do that
 for you, it only needs to be run once per file).}
 
-\slides{### Probability Review
+\newslide{Probability Review}
 
--   We are interested in trials which result in two random variables,
-    $X$ and $Y$, each of which has an ‘outcome’
-    
-    denoted by $x$ or $y$.
+\slides{
+* We are interested in trials which result in two random variables,
+  $X$ and $Y$, each of which has an ‘outcome’
+  denoted by $x$ or $y$.
+* We summarise the notation and terminology for these distributions in
+  the following table.}
 
--   We summarise the notation and terminology for these distributions in
-    the following table.}
-
-\slides{### }
+\newslide{ }
 
 Terminology | Mathematical notation | Description
 ------|-------------|-------------
@@ -110,8 +109,7 @@ joint | $P(X=x, Y=y)$ | prob. that X=x *and* Y=y
 marginal | $P(X=x)$ | prob. that X=x *regardless of* Y
 conditional | $P(X=x\vert Y=y)$ | prob. that X=x *given that* Y=y
 
-\aligncenter{The different basic probability
-  distributions.}
+\aligncenter{The different basic probability distributions.}
   
 
 \setupcode{import teaching_plots as plot}
@@ -125,45 +123,41 @@ conditional | $P(X=x\vert Y=y)$ | prob. that X=x *given that* Y=y
 
 ### Definition of probability distributions.
 
-Terminology      |  Definition                                              |         Probability Notation
------------------|----------------------------------------------------------|------------------------------                                                                                                                               
-  Joint Probability      | $\lim_{N\rightarrow\infty}\frac{n_{X=3,Y=4}}{N}$ | $P\left(X=3,Y=4\right)$
-  Marginal Probability |  $\lim_{N\rightarrow\infty}\frac{n_{X=5}}{N}$    | $P\left(X=5\right)$
- Conditional Probability | $\lim_{N\rightarrow\infty}\frac{n_{X=3,Y=4}}{n_{Y=4}}$ |  $P\left(X=3\vert Y=4\right)$
+      Terminology        |              Definition                                |      Probability Notation
+-------------------------|--------------------------------------------------------|------------------------------
+  Joint Probability      | $\lim_{N\rightarrow\infty}\frac{n_{X=3,Y=4}}{N}$       | $P\left(X=3,Y=4\right)$
+  Marginal Probability   | $\lim_{N\rightarrow\infty}\frac{n_{X=5}}{N}$           | $P\left(X=5\right)$
+ Conditional Probability | $\lim_{N\rightarrow\infty}\frac{n_{X=3,Y=4}}{n_{Y=4}}$ | $P\left(X=3\vert Y=4\right)$
  
 
 ### Notational Details
 
 \slides{
--   Typically we should write out
-    $P\left(X=x,Y=y\right)$.
+* Typically we should write out
+  $P\left(X=x,Y=y\right)$.
 
--   In practice, we often use $P\left(x,y\right)$.
-
--   This looks very much like we might write a multivariate function,
-    *e.g.*
-    $f\left(x,y\right)=\frac{x}{y}$.
-
-    -   For a multivariate function though,
-        $f\left(x,y\right)\neq f\left(y,x\right)$.
-
-    -   However
-        $P\left(x,y\right)=P\left(y,x\right)$
-        because
-        $P\left(X=x,Y=y\right)=P\left(Y=y,X=x\right)$.
-
--   We now quickly review the ‘rules of probability’.}
+* In practice, we often use $P\left(x,y\right)$.
+* This looks very much like we might write a multivariate function,
+  *e.g.*
+  $f\left(x,y\right)=\frac{x}{y}$.
+  * For a multivariate function though,
+    $f\left(x,y\right)\neq f\left(y,x\right)$.
+  * However
+    $P\left(x,y\right)=P\left(y,x\right)$
+    because
+    $P\left(X=x,Y=y\right)=P\left(Y=y,X=x\right)$.
+* We now quickly review the ‘rules of probability’.}
 
 \notes{Typically we should write out
 $P\left(X=x,Y=y\right)$, but in practice we often shorten this to $P\left(x,y\right)$. This looks very much like we might write a multivariate function, *e.g.*
  
  $$f\left(x,y\right)=\frac{x}{y},$$ 
  
- but for a multivariate funciton
+but for a multivariate funciton
 
 $$f\left(x,y\right)\neq f\left(y,x\right)$$.
 
-However
+However,
 
 $$P\left(x,y\right)=P\left(y,x\right)$$
 
@@ -172,7 +166,6 @@ because
 $$P\left(X=x,Y=y\right)=P\left(Y=y,X=x\right).$$
 
 Sometimes I think of this as akin to the way in Python we can write 'keyword arguments' in functions. If we use keyword arguments, the ordering of arguments doesn't matter.}
-
 
 \notes{We've now introduced conditioning and independence to
 the notion of probability and computed some conditional probabilities on a
@@ -190,8 +183,9 @@ total_films = film_deaths.Body_Count.count() # this is total number of films
 prob_death = float(deaths)/float(total_films)
 print("Probability of deaths being greather than 40 and year being", year, "is:", prob_death)}
 
-\slides{### Normalization
+\newslide{Normalization}
 
+\slides{
 *All* distributions are normalized. This is clear from the fact that
 $\sum_{x}n_{x}=N$, which gives
 $$\sum_{x}P\left(x\right)={\lim_{N\rightarrow\infty}}\frac{\sum_{x}n_{x}}{N}={\lim_{N\rightarrow\infty}}\frac{N}{N}=1.$$
@@ -275,13 +269,20 @@ $$}
 for all values of $t$.}{6}{10}
 
 ### Bayes’ Rule
+
 \slides{
--   From the product rule,
-    $$P\left(y,x\right)=P\left(x,y\right)=P\left(x|y\right)P\left(y\right),$$
-    so
-    $$P\left(y|x\right)P\left(x\right)=P\left(x|y\right)P\left(y\right)$$
-    which leads to Bayes’ rule,
-    $$P\left(y|x\right)=\frac{P\left(x|y\right)P\left(y\right)}{P\left(x\right)}.$$}
+* From the product rule,
+  $$
+  P\left(y,x\right)=P\left(x,y\right)=P\left(x|y\right)P\left(y\right),$$
+  so
+  $$
+  P\left(y|x\right)P\left(x\right)=P\left(x|y\right)P\left(y\right)
+  $$
+  which leads to Bayes’ rule,
+  $$
+  P\left(y|x\right)=\frac{P\left(x|y\right)P\left(y\right)}{P\left(x\right)}.
+  $$
+}
 
 \notes{Bayes rule is a very simple rule, it's hardly worth the name of
 a rule at all. It follows directly from the product rule of probability. Because
@@ -298,61 +299,62 @@ these probability distributions represents the answer to a question we have
 about the world. Bayes rule (via the product rule) tells us how to *invert* the
 probability.}
 
-\slides{### Bayes’ Theorem Example
+\newslide{Bayes’ Theorem Example}
 
--   There are two barrels in front of you. Barrel One contains 20 apples
-    and 4 oranges. Barrel Two other contains 4 apples and 8 oranges. You
-    choose a barrel randomly and select a fruit. It is an apple. What is
-    the probability that the barrel was Barrel One?}
+\slides{
+* There are two barrels in front of you. Barrel One contains 20 apples
+  and 4 oranges. Barrel Two other contains 4 apples and 8 oranges. You
+  choose a barrel randomly and select a fruit. It is an apple. What is
+  the probability that the barrel was Barrel One?}
 
-\slides{### Bayes’ Theorem Example: Answer I
+\newslide{Bayes’ Theorem Example: Answer I}
 
--   We are given that: $$\begin{aligned}
-          P(\text{F}=\text{A}|\text{B}=1) = & 20/24 \\
-          P(\text{F}=\text{A}|\text{B}=2) = & 4/12 \\
-          P(\text{B}=1) = & 0.5 \\
-          P(\text{B}=2) = & 0.5
-        \end{aligned}$$}
+\slides{
+* We are given that: 
+  $$\begin{aligned}
+    P(\text{F}=\text{A}|\text{B}=1) = & 20/24 \\
+    P(\text{F}=\text{A}|\text{B}=2) = & 4/12 \\
+    P(\text{B}=1) = & 0.5 \\
+    P(\text{B}=2) = & 0.5
+  \end{aligned}$$
+}
 
-\slides{### Bayes’ Theorem Example: Answer II
+\newslide{Bayes’ Theorem Example: Answer II}
 
--   We use the sum rule to compute: $$\begin{aligned}
-          P(\text{F}=\text{A}) = & P(\text{F}=\text{A}|\text{B}=1)P(\text{B}=1) \\& + P(\text{F}=\text{A}|\text{B}=2)P(\text{B}=2) \\
+\slides{
+* We use the sum rule to compute: 
+  $$\begin{aligned}
+    P(\text{F}=\text{A}) = & P(\text{F}=\text{A}|\text{B}=1)P(\text{B}=1) \\& + P(\text{F}=\text{A}|\text{B}=2)P(\text{B}=2) \\
           = & 20/24\times 0.5 + 4/12 \times 0.5 = 7/12
-        \end{aligned}$$
+   \end{aligned}$$
+* And Bayes’ theorem tells us that: 
+  $$\begin{aligned}
+    P(\text{B}=1|\text{F}=\text{A}) = & \frac{P(\text{F} = \text{A}|\text{B}=1)P(\text{B}=1)}{P(\text{F}=\text{A})}\\ 
+         = & \frac{20/24 \times 0.5}{7/12} = 5/7
+  \end{aligned}$$}
 
--   And Bayes’ theorem tells us that: $$\begin{aligned}
-          P(\text{B}=1|\text{F}=\text{A}) = & \frac{P(\text{F} = \text{A}|\text{B}=1)P(\text{B}=1)}{P(\text{F}=\text{A})}\\ 
-          = & \frac{20/24 \times 0.5}{7/12} = 5/7
-        \end{aligned}$$}
 
+\newslide{Reading & Exercises}
 
-\slides{### Reading & Exercises
-
-Before next session, review the example on Bayes Theorem!
-
--   Read and *understand* Bishop on probability distributions: page
+\slides{* Bishop on probability distributions: page
     12–17 (Section 1.2).
 
--   Complete Exercise 1.3 in Bishop.}
+* Complete Exercise 1.3 in Bishop.}
 
 
-\slides{### Expectation Computation Example
+\newslide{Expectation Computation Example
 
--   Consider the following distribution.
+\slides{
+* Consider the following distribution.
 
 $y$        |  1  |  2  |  3  |  4
------------------------------|-----|-----|-----|-----
+-----------|-----|-----|-----|-----
 $P\left(y\right)$ |  0.3|  0.2|  0.1|  0.4
 
--   What is the mean of the distribution?
-
--   What is the standard deviation of the distribution?
-
--   Are the mean and standard deviation representative of the
-    distribution form?
-
--   What is the expected value of $-\log P(y)$?}
+* What is the mean of the distribution?
+* What is the standard deviation of the distribution?
+* Are the mean and standard deviation representative of the distribution form?
+* What is the expected value of $-\log P(y)$?}
 
 \slides{### Expectations Example: Answer
 
