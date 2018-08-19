@@ -15,6 +15,43 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
   <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
   <link rel="stylesheet" href="talks.css"/>
   <!-- Printing and PDF exports -->
@@ -798,9 +835,391 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatr
 <p>Predict Perioperative Risk of Clostridium Difficile Infection Following Colon Surgery <span class="citation" data-cites="Steele:predictive12">(Steele et al., 2012)</span></p>
 <p><img class="negate" src="../slides/diagrams/bayes-net-diagnosis.png" width="40%" align="center" style="background:none; border:none; box-shadow:none;"></p>
 </section>
+<section id="classification" class="slide level3">
+<h3>Classification</h3>
+<ul>
+<li>We are given a data set containing ‘inputs’, <span class="math inline">\(\inputMatrix\)</span> and ‘targets’, <span class="math inline">\(\dataVector\)</span>.</li>
+<li>Each data point consists of an input vector <span class="math inline">\(\inputVector_i\)</span> and a class label, <span class="math inline">\(\dataScalar_i\)</span>.</li>
+<li>For binary classification assume <span class="math inline">\(\dataScalar_i\)</span> should be either <span class="math inline">\(1\)</span> (yes) or <span class="math inline">\(-1\)</span> (no).</li>
+<li>Input vector can be thought of as features.</li>
+</ul>
+</section>
+<section id="discrete-probability" class="slide level3">
+<h3>Discrete Probability</h3>
+<ul>
+<li>Algorithms based on <em>prediction</em> function and <em>objective</em> function.</li>
+<li>For regression the <em>codomain</em> of the functions, <span class="math inline">\(f(\inputMatrix)\)</span> was the real numbers or sometimes real vectors.</li>
+<li>In classification we are given an input vector, <span class="math inline">\(\inputVector\)</span>, and an associated label, <span class="math inline">\(\dataScalar\)</span> which either takes the value <span class="math inline">\(-1\)</span> or <span class="math inline">\(1\)</span>.</li>
+</ul>
+</section>
+<section id="classification-examples" class="slide level3">
+<h3>Classification Examples</h3>
+<ul>
+<li>Classifiying hand written digits from binary images (automatic zip code reading)</li>
+<li>Detecting faces in images (e.g. digital cameras).</li>
+<li>Who a detected face belongs to (e.g. Picasa, Facebook, DeepFace, GaussianFace)</li>
+<li>Classifying type of cancer given gene expression data.</li>
+<li>Categorization of document types (different types of news article on the internet)</li>
+</ul>
+</section>
+<section id="reminder-on-the-term-bayesian" class="slide level3">
+<h3>Reminder on the Term “Bayesian”</h3>
+<ul>
+<li>We use Bayes’ rule to invert probabilities in the Bayesian approach.</li>
+<li>Bayesian is not named after Bayes’ rule (v. common confusion).</li>
+<li>The term Bayesian refers to the treatment of the parameters as stochastic variables.</li>
+<li>Proposed by <span class="citation" data-cites="Laplace:memoire74">Laplace (1774)</span> and <span class="citation" data-cites="Bayes:doctrine63">Bayes (1763)</span> independently.</li>
+<li>For early statisticians this was very controversial (Fisher et al).</li>
+</ul>
+</section>
+<section id="reminder-on-the-term-bayesian-1" class="slide level3">
+<h3>Reminder on the Term “Bayesian”</h3>
+<ul>
+<li>The use of Bayes’ rule does <em>not</em> imply you are being Bayesian.</li>
+<li>It is just an application of the product rule of probability.</li>
+</ul>
+</section>
+<section id="bernoulli-distribution" class="slide level3">
+<h3>Bernoulli Distribution</h3>
+<ul>
+<li>Binary classification: need a probability distribution for discrete variables.</li>
+<li>Discrete probability is in some ways easier: <span class="math inline">\(P(\dataScalar=1) = \pi\)</span> &amp; specify distribution as a table.</li>
+</ul>
+<p>| | 0 | 1 | |:——:|:———:|:—–:| | <span class="math inline">\(P(\dataScalar)\)</span> | <span class="math inline">\((1-\pi)\)</span> | <span class="math inline">\(\pi\)</span> |</p>
+<ul>
+<li>Mathematically we use a trick: use <span class="math inline">\(\dataScalar\)</span> as a mathematical switch: <span class="math display">\[
+  P(\dataScalar) = \pi^\dataScalar (1-\pi)^{(1-\dataScalar)}
+  \]</span> This is the <a href="http://en.wikipedia.org/wiki/Bernoulli_distribution">Bernoulli distribution</a>.}</li>
+</ul>
+</section>
+<section id="mathematical-switch" class="slide level3">
+<h3>Mathematical Switch</h3>
+<ul>
+<li><p>The Bernoulli distribution <span class="math display">\[
+  P(\dataScalar) = \pi^\dataScalar (1-\pi)^{(1-\dataScalar)}
+  \]</span></p></li>
+<li><p>Is a clever trick for switching probabilities, as code it would be</p></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> bernoulli(y_i, pi):
+    <span class="cf">if</span> y_i <span class="op">==</span> <span class="dv">1</span>:
+        <span class="cf">return</span> pi
+<span class="cf">else</span>:
+        <span class="cf">return</span> <span class="dv">1</span><span class="op">-</span>pi</code></pre></div>
+</section>
+<section id="jacob-bernoullis-bernoulli" class="slide level3">
+<h3>Jacob Bernoulli’s Bernoulli</h3>
+<ul>
+<li>Bernoulli described the Bernoulli distribution in terms of an ‘urn’ filled with balls.</li>
+<li>There are red and black balls. There is a fixed number of balls in the urn.</li>
+<li>The portion of red balls is given by <span class="math inline">\(\pi\)</span>.</li>
+<li>For this reason in Bernoulli’s distribution there is <em>epistemic</em> uncertainty about the distribution parameter.</li>
+</ul>
+<object class="svgplot " align data="../slides/diagrams/ml/bernoulli-urn.svg">
+</object>
+</section>
+<section id="thomas-bayess-bernoulli" class="slide level3">
+<h3>Thomas Bayes’s Bernoulli</h3>
+<ul>
+<li>Bayes described the Bernoulli distribution (he didn’t call it that!) in terms of a table and two balls.</li>
+<li>Each ball is rolled so it comes to rest at a uniform distribution across the table.</li>
+<li>The first ball comes to rest at a position that is a <span class="math inline">\(\pi\)</span> times the width of table.</li>
+<li>After placing the first ball you consider whether a second would land to the left or the right.</li>
+<li>For this reason in Bayes’s distribution there is considered to be <em>aleatoric</em> uncertainty about the distribution parameter.</li>
+</ul>
+<object class="svgplot " align data="../slides/diagrams/ml/bernoulli-urn.svg">
+</object>
+<script>
+showDivs(1, 'bayes_billiard');
+</script>
+<button onclick="plusDivs(-1, 'bayes_billiard')">
+❮
+</button>
+<button onclick="plusDivs(1, 'bayes_billiard')">
+❯
+</button>
+<p><input id="range-bayes_billiard" type="range" min="1" max="10" value="1" onchange="setDivs('bayes_billiard')" oninput="setDivs('bayes_billiard')"> <object class="svgplot bayes_billiard" align="" data="../slides/diagrams/ml/bernoulli-urn000.svg"></object> <object class="svgplot bayes_billiard" align="" data="../slides/diagrams/ml/bernoulli-urn001.svg"></object> <object class="svgplot bayes_billiard" align="" data="../slides/diagrams/ml/bernoulli-urn002.svg"></object> <object class="svgplot bayes_billiard" align="" data="../slides/diagrams/ml/bernoulli-urn003.svg"></object> <object class="svgplot bayes_billiard" align="" data="../slides/diagrams/ml/bernoulli-urn004.svg"></object> <object class="svgplot bayes_billiard" align="" data="../slides/diagrams/ml/bernoulli-urn005.svg"></object> <object class="svgplot bayes_billiard" align="" data="../slides/diagrams/ml/bernoulli-urn006.svg"></object> <object class="svgplot bayes_billiard" align="" data="../slides/diagrams/ml/bernoulli-urn007.svg"></object> <object class="svgplot bayes_billiard" align="" data="../slides/diagrams/ml/bernoulli-urn008.svg"></object> <object class="svgplot bayes_billiard" align="" data="../slides/diagrams/ml/bernoulli-urn009.svg"></object></p>
+</section>
+<section id="maximum-likelihood-in-the-bernoulli" class="slide level3">
+<h3>Maximum Likelihood in the Bernoulli</h3>
+<ul>
+<li>Assume data, <span class="math inline">\(\dataVector\)</span> is binary vector length <span class="math inline">\(\numData\)</span>.</li>
+<li>Assume each value was sampled independently from the Bernoulli distribution, given probability <span class="math inline">\(\pi\)</span> <span class="math display">\[
+p(\dataVector|\pi) = \prod_{i=1}^{\numData} \pi^{\dataScalar_i} (1-\pi)^{1-\dataScalar_i}.
+\]</span></li>
+</ul>
+</section>
+<section id="negative-log-likelihood" class="slide level3">
+<h3>Negative Log Likelihood</h3>
+<ul>
+<li>Minimize the negative log likelihood <span class="math display">\[
+  \begin{align*}\errorFunction(\pi)&amp; = -\log p(\dataVector|\pi)\\ &amp;= -\sum_{i=1}^{\numData} \dataScalar_i \log \pi - \sum_{i=1}^{\numData} (1-\dataScalar_i) \log(1-\pi),\end{align*}
+  \]</span></li>
+<li><p>Take gradient with respect to the parameter <span class="math inline">\(\pi\)</span>. <span class="math display">\[\frac{\text{d}\errorFunction(\pi)}{\text{d}\pi} = -\frac{\sum_{i=1}^{\numData} \dataScalar_i}{\pi}  + \frac{\sum_{i=1}^{\numData} (1-\dataScalar_i)}{1-\pi},\]</span> ### Fixed Point</p></li>
+<li><p>Stationary point: set derivative to zero <span class="math display">\[0 = -\frac{\sum_{i=1}^{\numData} \dataScalar_i}{\pi}  + \frac{\sum_{i=1}^{\numData} (1-\dataScalar_i)}{1-\pi},\]</span></p></li>
+<li><p>Rearrange to form <span class="math display">\[(1-\pi)\sum_{i=1}^{\numData} \dataScalar_i =   \pi\sum_{i=1}^{\numData} (1-\dataScalar_i),\]</span></p></li>
+<li><p>Giving <span class="math display">\[\sum_{i=1}^{\numData} \dataScalar_i =   \pi\left(\sum_{i=1}^{\numData} (1-\dataScalar_i) + \sum_{i=1}^{\numData} \dataScalar_i\right),\]</span></p></li>
+</ul>
+</section>
+<section id="solution" class="slide level3">
+<h3>Solution</h3>
+<ul>
+<li><p>Recognise that <span class="math inline">\(\sum_{i=1}^{\numData} (1-\dataScalar_i) + \sum_{i=1}^{\numData} \dataScalar_i = n\)</span> so we have <span class="math display">\[\pi = \frac{\sum_{i=1}^{\numData} \dataScalar_i}{\numData}\]</span></p></li>
+<li>Estimate the probability associated with the Bernoulli by setting it to the number of observed positives, divided by the total length of <span class="math inline">\(\dataScalar\)</span>.</li>
+<li>Makes intiutive sense.</li>
+<li><p>What’s your best guess of probability for coin toss is heads when you get 47 heads from 100 tosses?</p></li>
+</ul>
+
+</section>
+<section id="bayes-rule-reminder" class="slide level3">
+<h3>Bayes’ Rule Reminder</h3>
+<p><span class="math display">\[
+\text{posterior} =
+\frac{\text{likelihood}\times\text{prior}}{\text{marginal likelihood}}
+\]</span></p>
+<p>Four components: 1. Prior distribution 2. Likelihood 3. Posterior distribution 4. Marginal likelihood</p>
+</section>
+<section id="naive-bayes-classifiers" class="slide level3">
+<h3>Naive Bayes Classifiers</h3>
+<ul>
+<li>Probabilistic Machine Learning: place probability distributions (or densities) over all the variables of interest.</li>
+<li><p>In Naive Bayes this is exactly what we do.</p></li>
+<li><p>Form a classification algorithm by modelling the <em>joint</em> density of our observations.</p></li>
+<li><p>Need to make assumption about joint density.</p></li>
+</ul>
+</section>
+<section id="assumptions-about-density" class="slide level3">
+<h3>Assumptions about Density</h3>
+<ul>
+<li>Make assumptions to reduce the number of parameters we need to optimise.</li>
+<li>Given label data <span class="math inline">\(\dataVector\)</span> and the inputs <span class="math inline">\(\inputMatrix\)</span> could specify joint density of all potential values of <span class="math inline">\(\dataVector\)</span> and <span class="math inline">\(\inputMatrix\)</span>, <span class="math inline">\(p(\dataVector, \inputMatrix)\)</span>.</li>
+<li>If <span class="math inline">\(\inputMatrix\)</span> and <span class="math inline">\(\dataVector\)</span> are training data.</li>
+<li>If <span class="math inline">\(\inputVector^*\)</span> is a test input and <span class="math inline">\(\dataScalar^*\)</span> a test location we want <span class="math display">\[
+  p(\dataScalar^*|\inputMatrix, \dataVector, \inputVector^*),
+  \]</span></li>
+</ul>
+</section>
+<section id="answer-from-rules-of-probability" class="slide level3">
+<h3>Answer from Rules of Probability</h3>
+<ul>
+<li>Compute this distribution using the product and sum rules.</li>
+<li>Need the probability associated with all possible combinations of <span class="math inline">\(\dataVector\)</span> and <span class="math inline">\(\inputMatrix\)</span>.</li>
+<li>There are <span class="math inline">\(2^{\numData}\)</span> possible combinations for the vector <span class="math inline">\(\dataVector\)</span></li>
+<li>Probability for each of these combinations must be jointly specified along with the joint density of the matrix <span class="math inline">\(\inputMatrix\)</span>,</li>
+<li>Also need to <em>extend</em> the density for any chosen test location <span class="math inline">\(\inputVector^*\)</span>.</li>
+</ul>
+</section>
+<section id="naive-bayes-assumptions" class="slide level3">
+<h3>Naive Bayes Assumptions</h3>
+<ul>
+<li>In naive Bayes we make certain simplifying assumptions that allow us to perform all of the above in practice.</li>
+</ul>
+<ol type="1">
+<li>Data Conditional Independence</li>
+<li>Feature conditional independence</li>
+<li>Marginal density for <span class="math inline">\(\dataScalar\)</span>.</li>
+</ol>
+</section>
+<section id="data-conditional-independence" class="slide level3">
+<h3>Data Conditional Independence</h3>
+<ul>
+<li><p>Given model parameters <span class="math inline">\(\paramVector\)</span> we assume that all data points in the model are independent. <span class="math display">\[
+  p(\dataScalar^*, \inputVector^*, \dataVector, \inputMatrix|\paramVector) = p(\dataScalar^*, \inputVector^*|\paramVector)\prod_{i=1}^{\numData} p(\dataScalar_i, \inputVector_i | \paramVector).
+  \]</span></p></li>
+<li><p>This is a conditional independence assumption.</p></li>
+<li><p>We also make similar assumptions for regression (where <span class="math inline">\(\paramVector = \left\{\mappingVector,\dataStd^2\right\}\)</span>).</p></li>
+<li><p>Here we assume <em>joint</em> density of <span class="math inline">\(\dataVector\)</span> and <span class="math inline">\(\inputMatrix\)</span> is independent across the data given the parameters.</p></li>
+</ul>
+</section>
+<section id="bayes-classifier" class="slide level3">
+<h3>Bayes Classifier</h3>
+<p>Computing posterior distribution in this case becomes easier, this is known as the ‘Bayes classifier’.</p>
+</section>
+<section id="feature-conditional-independence" class="slide level3">
+<h3>Feature Conditional Independence</h3>
+<p><span class="math display">\[
+p(\inputVector_i | \dataScalar_i, \paramVector) = \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)
+\]</span> where <span class="math inline">\(\dataDim\)</span> is the dimensionality of our inputs.</p>
+<ul>
+<li>Particular to naive Bayes: assume <em>features</em> are also conditionally independent, given param <em>and</em> the label. <span class="math display">\[p(\inputVector_i | \dataScalar_i, \paramVector) = \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i,\paramVector)\]</span> where <span class="math inline">\(\dataDim\)</span> is the dimensionality of our inputs.</li>
+<li>This is known as the <em>naive Bayes</em> assumption.</li>
+<li>Bayes classifier + feature conditional independence.</li>
+</ul>
+</section>
+<section id="marginal-density-for-datascalar_i" class="slide level3">
+<h3>Marginal Density for <span class="math inline">\(\dataScalar_i\)</span></h3>
+<p><span class="math display">\[
+p(\inputScalar_{i,j},\dataScalar_i| \paramVector) = p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i).
+\]</span></p>
+<ul>
+<li><p>To specify the joint distribution we also need the marginal for <span class="math inline">\(p(\dataScalar_i)\)</span> <span class="math display">\[p(\inputScalar_{i,j},\dataScalar_i| \paramVector) = p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i).\]</span></p></li>
+<li><p>Because <span class="math inline">\(\dataScalar_i\)</span> is binary the <em>Bernoulli</em> density makes a suitable choice for our prior over <span class="math inline">\(\dataScalar_i\)</span>, <span class="math display">\[p(\dataScalar_i|\pi) = \pi^{\dataScalar_i} (1-\pi)^{1-\dataScalar_i}\]</span> where <span class="math inline">\(\pi\)</span> now has the interpretation as being the <em>prior</em> probability that the classification should be positive.</p></li>
+</ul>
+</section>
+<section id="joint-density-for-naive-bayes" class="slide level3">
+<h3>Joint Density for Naive Bayes</h3>
+<ul>
+<li>This allows us to write down the full joint density of the training data, <span class="math display">\[
+  p(\dataVector, \inputMatrix|\paramVector, \pi) = \prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)
+  \]</span> which can now be fit by maximum likelihood.</li>
+</ul>
+<p><span class="math display">\[
+\errorFunction(\paramVector, \pi) = -\log p(\dataVector, \inputMatrix|\paramVector, \pi) = -\sum_{i=1}^{\numData} \sum_{j=1}^{\dataDim} \log p(\inputScalar_{i, j}|\dataScalar_i, \paramVector) - \sum_{i=1}^{\numData} \log p(\dataScalar_i|\pi),
+\]</span></p>
+</section>
+<section id="maximum-likelihood" class="slide level3">
+<h3>Maximum Likelihood</h3>
+</section>
+<section id="fit-prior" class="slide level3">
+<h3>Fit Prior</h3>
+<ul>
+<li>We can minimize prior. For Bernoulli likelihood over the labels we have, <span class="math display">\[
+  \errorFunction(\pi) = - \sum_{i=1}^{\numData}\log p(\dataScalar_i|\pi) = -\sum_{i=1}^{\numData} \dataScalar_i \log \pi - \sum_{i=1}^{\numData} (1-\dataScalar_i) \log (1-\pi)
+  \]</span></li>
+<li>Solution from above is <span class="math display">\[
+  \pi = \frac{\sum_{i=1}^{\numData} \dataScalar_i}{\numData}.
+  \]</span></li>
+</ul>
+</section>
+<section id="fit-conditional" class="slide level3">
+<h3>Fit Conditional</h3>
+<ul>
+<li>Minimize conditional distribution: <span class="math display">\[
+  \errorFunction(\paramVector) = -\sum_{i=1}^{\numData} \sum_{j=1}^{\dataDim} \log p(\inputScalar_{i, j} |\dataScalar_i, \paramVector),
+  \]</span></li>
+<li>Implies making an assumption about it’s form.</li>
+<li>The right assumption will depend on the data.</li>
+<li>E.g. for real valued data, use a Gaussian <span class="math display">\[
+  p(\inputScalar_{i, j} | \dataScalar_i,\paramVector) =
+\frac{1}{\sqrt{2\pi \dataStd_{\dataScalar_i,j}^2}} \exp \left(-\frac{(\inputScalar_{i,j} - \mu_{\dataScalar_i,
+j})^2}{\dataStd_{\dataScalar_i,j}^2}\right),
+  \]</span></li>
+</ul>
+<p>The final model parameter is the prior probability of the positive class, <span class="math inline">\(\pi\)</span>, which is computed by maximum likelihood.</p>
+</section>
+<section id="making-predictions" class="slide level3">
+<h3>Making Predictions</h3>
+<p>Naive Bayes has given us the class conditional densities: <span class="math inline">\(p(\inputVector_i | \dataScalar_i, \paramVector)\)</span>. To make predictions with these densities we need to form the distribution given by <span class="math display">\[
+P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector)
+\]</span> This can be computed by using the product rule. We know that <span class="math display">\[
+P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector)p(\dataVector, \inputMatrix, \inputVector^*|\paramVector) = p(\dataScalar*, \dataVector, \inputMatrix, \inputVector^*| \paramVector)
+\]</span> implying that <span class="math display">\[
+P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector) = \frac{p(\dataScalar*, \dataVector, \inputMatrix, \inputVector^*| \paramVector)}{p(\dataVector, \inputMatrix, \inputVector^*|\paramVector)}
+\]</span> and we’ve already defined <span class="math inline">\(p(\dataScalar^*, \dataVector, \inputMatrix, \inputVector^*| \paramVector)\)</span> using our conditional independence assumptions above <span class="math display">\[
+p(\dataScalar^*, \dataVector, \inputMatrix, \inputVector^*| \paramVector) = \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)
+\]</span> The other required density is <span class="math display">\[p(\dataVector, \inputMatrix, \inputVector^*|\paramVector)\]</span> which can be found from <span class="math display">\[p(\dataScalar^*, \dataVector, \inputMatrix, \inputVector^*| \paramVector)\]</span> using the <em>sum rule</em> of probability, <span class="math display">\[
+p(\dataVector, \inputMatrix, \inputVector^*|\paramVector) = \sum_{\dataScalar^*=0}^1 p(\dataScalar^*, \dataVector, \inputMatrix, \inputVector^*| \paramVector).
+\]</span> Because of our independence assumptions that is simply equal to <span class="math display">\[
+p(\dataVector, \inputMatrix, \inputVector^*| \paramVector) = \sum_{\dataScalar^*=0}^1 \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi).
+\]</span> Substituting both forms in to recover our distribution over the test label conditioned on the training data we have, <span class="math display">\[
+P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector) = \frac{\prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)}{\sum_{\dataScalar^*=0}^1 \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)}
+\]</span> and we notice that all the terms associated with the training data actually cancel, the test prediction is <em>conditionally independent</em> of the training data <em>given</em> the parameters. This is a result of our conditional independence assumptions over the data points. <span class="math display">\[
+p(\dataScalar^*| \inputVector^*, \paramVector) = \frac{\prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i,
+\paramVector)p(\dataScalar^*|\pi)}{\sum_{\dataScalar^*=0}^1 \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)}
+\]</span> This formula is also fairly straightforward to implement. First we implement the log probabilities for the Gaussian density.</p>
+<p>Now for any test point we compute the joint distribution of the Gaussian features by <em>summing</em> their log probabilities. Working in log space can be a considerable advantage over computing the probabilities directly: as the number of features we include goes up, because all the probabilities are less than 1, the joint probability will become smaller and smaller, and may be difficult to represent accurately (or even underflow). Working in log space can ameliorate this problem. We can also compute the log probability for the Bernoulli distribution.</p>
+<p>Before we proceed, let’s just pause and think for a moment what will happen if <code>theta</code> here is either zero or one. This will result in <span class="math inline">\(\log 0 = -\infty\)</span> and cause numerical problems. This definitely can happen in practice. If some of the features are rare or very common across the data set then the maximum likelihood solution could find values of zero or one respectively. Such values are problematic because they cause posterior probabilities of class membership of either one or zero. In practice we deal with this using <em>Laplace smoothing</em> (which actually has an interpretation as a Bayesian fit of the Bernoulli distribution. Laplace used an example of the sun rising each day, and a wish to predict the sun rise the following day to describe his idea of smoothing, which can be found at the bottom of following page from Laplace’s ‘Essai Philosophique …’</p>
+<p>Laplace suggests that when computing the probability of an event where a success or failure is rare (he uses an example of the sun rising across the last 5,000 years or 1,826,213 days) that even though only successes have been observed (in the sun rising case) that the odds for tomorrow shouldn’t be given as <span class="math display">\[
+\frac{1,826,213}{1,826,213} = 1
+\]</span> but rather by adding one to the numerator and two to the denominator, <span class="math display">\[
+\frac{1,826,213 + 1}{1,826,213 + 2} = 0.99999945.
+\]</span> This technique is sometimes called a ‘pseudocount technique’ because it has an intepretation of assuming some observations before you start, it’s as if instead of observing <span class="math inline">\(\sum_{i}\dataScalar_i\)</span> successes you have an additional success, <span class="math inline">\(\sum_{i}\dataScalar_i + 1\)</span> and instead of having observed <span class="math inline">\(n\)</span> events you’ve observed <span class="math inline">\(\numData + 2\)</span>. So we can think of Laplace’s idea saying (before we start) that we have ‘two observations worth of belief, that the odds are 50/50’, because before we start (i.e. when <span class="math inline">\(\numData=0\)</span>) our estimate is 0.5, yet because the effective <span class="math inline">\(n\)</span> is only 2, this estimate is quickly overwhelmed by data. Laplace used ideas like this a lot, and it is known as his ‘principle of insufficient reason’. His idea was that in the absence of knowledge (i.e. before we start) we should assume that all possible outcomes are equally likely. This idea has a modern counterpart, known as the <a href="http://en.wikipedia.org/wiki/Principle_of_maximum_entropy">principle of maximum entropy</a>. A lot of the theory of this approach was developed by <a href="http://en.wikipedia.org/wiki/Edwin_Thompson_Jaynes">Ed Jaynes</a>, who according to his erstwhile collaborator and friend, John Skilling, learnt French as an undergraduate by reading the works of Laplace. Although John also related that Jaynes’s spoken French was not up to the standard of his scientific French. For me Ed Jaynes’s work very much carries on the tradition of Laplace into the modern era, in particular his focus on Bayesian approaches. I’m very proud to have met those that knew and worked with him. It turns out that Laplace’s idea also has a Bayesian interpretation (as Laplace understood), it comes from assuming a particular prior density for the parameter <span class="math inline">\(\pi\)</span>, but we won’t explore that interpretation for the moment, and merely choose to estimate the probability as, <span class="math display">\[
+\pi = \frac{\sum_{i=1}^{\numData} \dataScalar_i + 1}{\numData + 2}
+\]</span> to prevent problems with certainty causing numerical issues and misclassifications. Let’s refit the Bernoulli features now.</p>
+<p>That places us in a position to write the prediction function.</p>
+<p>Now we are in a position to make the predictions for the test data.</p>
+<p>We can test the quality of the predictions in the following way. Firstly, we can threshold our probabilities at 0.5, allocating points with greater than 50% probability of membership of the positive class to the positive class. We can then compare to the true values, and see how many of these values we got correct. This is our total number correct.</p>
+<p>We can also now plot the <a href="http://en.wikipedia.org/wiki/Confusion_matrix">confusion matrix</a>. A confusion matrix tells us where we are making mistakes. Along the diagonal it stores the <em>true positives</em>, the points that were positive class that we classified correctly, and the <em>true negatives</em>, the points that were negative class and that we classified correctly. The off diagonal terms contain the false positives and the false negatives. Along the rows of the matrix we place the actual class, and along the columns we place our predicted class.</p>
+
+
+</section>
+<section id="making-predictions-1" class="slide level3">
+<h3>Making Predictions</h3>
+<p>Naive Bayes has given us the class conditional densities: <span class="math inline">\(p(\inputVector_i | \dataScalar_i, \paramVector)\)</span>. To make predictions with these densities we need to form the distribution given by <span class="math display">\[
+P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector)
+\]</span></p>
+
+<p>If the input data was <em>binary</em> then we could also make use of the Bernoulli distribution for the features. For that case we would have the form, <span class="math display">\[
+p(\inputScalar_{i, j} | \dataScalar_i,\paramVector) = \theta_{\dataScalar_i, j}^{\inputScalar_{i, j}}(1-\theta_{\dataScalar_i, j})^{(1-\inputScalar_{i,j})},
+\]</span> where <span class="math inline">\(\theta_{1, j}\)</span> is the probability that the <span class="math inline">\(j\)</span>th feature is on if <span class="math inline">\(\dataScalar_i\)</span> is 1.</p>
+<p>In either case, maximum likelihood fitting would proceed in the same way. The objective has the form, <span class="math display">\[
+\errorFunction(\paramVector) = -\sum_{j=1}^{\dataDim} \sum_{i=1}^{\numData} \log p(\inputScalar_{i,j} |\dataScalar_i, \paramVector),
+\]</span> and if, as above, the parameters of the distributions are specific to each feature vector (we had means and variances for each continuous feature, and a probability for each binary feature) then we can use the fact that these parameters separate into disjoint subsets across the features to write, <span class="math display">\[
+\begin{align*}
+\errorFunction(\paramVector) &amp;= -\sum_{j=1}^{\dataDim} \sum_{i=1}^{\numData} \log
+p(\inputScalar_{i,j} |\dataScalar_i, \paramVector_j)\\
+&amp; \sum_{j=1}^{\dataDim}
+\errorFunction(\paramVector_j),
+\end{align*}
+\]</span> which means we can minimize our objective on each feature independently.</p>
+<p>These characteristics mean that naive Bayes scales very well with big data. To fit the model we consider each feature in turn, we select the positive class and fit parameters for that class, then we select each negative class and fit features for that class. We have code below.</p>
+</section>
+<section id="compute-posterior-for-test-point-label" class="slide level3">
+<h3>Compute Posterior for Test Point Label</h3>
+<ul>
+<li>We know that <span class="math display">\[
+  P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector)p(\dataVector,\inputMatrix, \inputVector^*|\paramVector) = p(\dataScalar*, \dataVector, \inputMatrix,\inputVector^*| \paramVector)
+  \]</span></li>
+<li>This implies <span class="math display">\[
+  P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector) = \frac{p(\dataScalar*, \dataVector, \inputMatrix, \inputVector^*| \paramVector)}{p(\dataVector, \inputMatrix, \inputVector^*|\paramVector)}
+  \]</span></li>
+</ul>
+</section>
+<section id="compute-posterior-for-test-point-label-1" class="slide level3">
+<h3>Compute Posterior for Test Point Label</h3>
+<ul>
+<li>From conditional independence assumptions <span class="math display">\[
+  p(\dataScalar^*, \dataVector, \inputMatrix, \inputVector^*| \paramVector) = \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)
+  \]</span></li>
+<li>We also need <span class="math display">\[
+  p(\dataVector, \inputMatrix, \inputVector^*|\paramVector)\]</span> which can be found from <span class="math display">\[p(\dataScalar^*, \dataVector, \inputMatrix, \inputVector^*| \paramVector)
+  \]</span></li>
+<li>Using the <em>sum rule</em> of probability, <span class="math display">\[
+  p(\dataVector, \inputMatrix, \inputVector^*|\paramVector) = \sum_{\dataScalar^*=0}^1 p(\dataScalar^*, \dataVector, \inputMatrix, \inputVector^*| \paramVector).
+  \]</span></li>
+</ul>
+</section>
+<section id="independence-assumptions" class="slide level3">
+<h3>Independence Assumptions</h3>
+<ul>
+<li>From independence assumptions <span class="math display">\[
+  p(\dataVector, \inputMatrix, \inputVector^*| \paramVector) = \sum_{\dataScalar^*=0}^1 \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi).
+  \]</span></li>
+<li>Substitute both forms to recover, <span class="math display">\[
+  P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector)  = \frac{\prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)}{\sum_{\dataScalar^*=0}^1 \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)}
+  \]</span></li>
+</ul>
+</section>
+<section id="cancelation" class="slide level3">
+<h3>Cancelation</h3>
+<ul>
+<li>Note training data terms cancel. <span class="math display">\[
+  p(\dataScalar^*| \inputVector^*, \paramVector) = \frac{\prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)}{\sum_{\dataScalar^*=0}^1 \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)}
+  \]</span></li>
+<li>This formula is also fairly straightforward to implement for different class conditional distributions.</li>
+</ul>
+</section>
+<section id="naive-bayes-summary" class="slide level3">
+<h3>Naive Bayes Summary</h3>
+<p>Naive Bayes is making very simple assumptions about the data, in particular it is modeling the full <em>joint</em> probability of the data set, <span class="math inline">\(p(\dataVector, \inputMatrix | \paramVector, \pi)\)</span> by very strong assumptions about factorizations that are unlikely to be true in practice. The data conditional independence assumption is common, and relies on a rich parameter vector to absorb all the information in the training data. The additional assumption of naive Bayes is that features are conditional indpenendent given the class label <span class="math inline">\(\dataScalar_i\)</span> (and the parameter vector, <span class="math inline">\(\paramVector\)</span>. This is quite a strong assumption. However, it causes the objective function to decompose into parts which can be independently fitted to the different feature vectors, meaning it is very easy to fit the model to large data. It is also clear how we should handle <em>streaming</em> data and <em>missing</em> data. This means that the model can be run ‘live’, adapting parameters and information as it arrives. Indeed, the model is even capable of dealing with new <em>features</em> that might arrive at run time. Such is the strength of the modeling the joint probability density. However, the factorization assumption that allows us to do this efficiently is very strong and may lead to poor decision boundaries in practice.</p>
+</section>
+<section id="other-reading" class="slide level3">
+<h3>Other Reading</h3>
+<ul>
+<li>Chapter 5 of <span class="citation" data-cites="Rogers:book11">Rogers and Girolami (2011)</span> up to pg 179 (Section 5.1, and 5.2 up to 5.2.2).</li>
+</ul>
+</section>
 <section id="references" class="slide level3 unnumbered">
 <h3>References</h3>
 <div id="refs" class="references">
+<div id="ref-Bayes:doctrine63">
+<p>Bayes, T., 1763. An essay towards solving a problem in the doctrine of chances. Philosophical Transactions of the Royal Society 53, 370–418. <a href="https://doi.org/10.1098/rstl.1763.0053" class="uri">https://doi.org/10.1098/rstl.1763.0053</a></p>
+</div>
+<div id="ref-Laplace:memoire74">
+<p>Laplace, P.S., 1774. Mémoire sur la probabilité des causes par les évènemens, in: Mémoires de Mathèmatique et de Physique, Presentés à lAcadémie Royale Des Sciences, Par Divers Savans, &amp; Lù Dans Ses Assemblées 6. pp. 621–656.</p>
+</div>
+<div id="ref-Rogers:book11">
+<p>Rogers, S., Girolami, M., 2011. A first course in machine learning. CRC Press.</p>
+</div>
 <div id="ref-Steele:predictive12">
 <p>Steele, S., Bilchik, A., Eberhardt, J., Kalina, P., Nissan, A., Johnson, E., Avital, I., Stojadinovic, A., 2012. Using machine-learned Bayesian belief networks to predict perioperative risk of clostridium difficile infection following colon surgery. Interact J Med Res 1, e6. <a href="https://doi.org/10.2196/ijmr.2131" class="uri">https://doi.org/10.2196/ijmr.2131</a></p>
 </div>
