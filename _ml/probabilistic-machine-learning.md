@@ -22,6 +22,9 @@ transition: None
 \include{_ml/includes/what-is-ml.md}
 \include{_ml/includes/probability-intro.md}
 \include{_ml/includes/probabilistic-modelling.md}
+
+### INTRODUCE DATASET EARLIER. HERE!
+
 \include{_ml/includes/graphical-models.md}
 \include{_ml/includes/classification-intro.md}
 \include{_ml/includes/classification-examples.md}
