@@ -25,19 +25,20 @@ via github you can also [download the zip
 file](https://github.com/sjmgarnier/R-vs-Python/archive/master.zip). But let's
 do that in python}
 
-\code{import pods
-pods.util.download_url('https://github.com/sjmgarnier/R-vs-Python/archive/master.zip')
+\setupcode{import pods}
+\code{pods.util.download_url('https://github.com/sjmgarnier/R-vs-Python/archive/master.zip')
 }
 
 \notes{Once the data is downloaded we can unzip it into the same directory where we are running the lab class.}
 
-\code{import zipfile
-zip = zipfile.ZipFile('./master.zip', 'r')
+\setupcode{import zipfile}
+\code{zip = zipfile.ZipFile('./master.zip', 'r')
 for name in zip.namelist():
     zip.extract(name, '.')}
 
-\code{import pandas as pd # import the pandas library into a namespace called pd
-film_deaths = pd.read_csv('./R-vs-Python-master/Deadliest movies scrape/code/film-death-counts-Python.csv')}
+\setupcode{import pandas as pd # import the pandas library into a namespace called pd}
+
+\code{film_deaths = pd.read_csv('./R-vs-Python-master/Deadliest movies scrape/code/film-death-counts-Python.csv')}
 
 \notes{Once it is loaded in the data can be summarized using the `describe` method in pandas.}
 
@@ -70,11 +71,11 @@ column directly we can write}
 
 \notes{This shows the number of deaths per film across the years. We can plot the data as follows.}
 
-\code{# this ensures the plot appears in the web browser
+\setupcode{# this ensures the plot appears in the web browser
 %matplotlib inline 
-import matplotlib.pyplot as plt # this imports the plotting library in python
+import matplotlib.pyplot as plt # this imports the plotting library in python}
 
-plt.plot(film_deaths['Year'], film_deaths['Body_Count'], 'rx')}
+\code{plt.plot(film_deaths['Year'], film_deaths['Body_Count'], 'rx')}
 
 \notes{You may be curious what the arguments we give to plt.plot are for, now is the perfect time to look at the documentation}
 
