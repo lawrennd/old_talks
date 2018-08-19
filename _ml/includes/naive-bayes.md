@@ -1,64 +1,59 @@
 ### Naive Bayes Classifiers
 
-In probabilistic machine learning we place probability distributions (or densities) over all the variables of interest, our first classification algorithm will do just that. We will consider how to form a classification by making assumptions about the *joint* density of our observations. We need to make assumptions to reduce the number of parameters we need to optimise. In the ideal world, given label data $\dataVector$ and the inputs $\inputMatrix$ we should be able to specify the joint density of all potential values of $\dataVector$ and $\inputMatrix$, $p(\dataVector, \inputMatrix)$.  If $\inputMatrix$ and $\dataVector$ are our training data, and we can somehow extend our density to incorporate future test data (by augmenting $\dataVector$ with a new observation $\dataScalar^*$ and $\inputMatrix$ with the corresponding inputs, $\inputVector^*$, then we can answer any given question about a future test point $\dataScalar^*$ given its covariates $\inputVector^*$ by conditioning on the training variables to recover,
+\notes{In probabilistic machine learning we place probability distributions (or densities) over all the variables of interest, our first classification algorithm will do just that. We will consider how to form a classification by making assumptions about the *joint* density of our observations. We need to make assumptions to reduce the number of parameters we need to optimise.}\slides{
+* Probabilistic Machine Learning: place probability distributions (or densities) over all the variables of interest.
+* In Naive Bayes this is exactly what we do.}
+
+\notes{In the ideal world, given label data $\dataVector$ and the inputs $\inputMatrix$ we should be able to specify the joint density of all potential values of $\dataVector$ and $\inputMatrix$, $p(\dataVector, \inputMatrix)$.  If $\inputMatrix$ and $\dataVector$ are our training data, and we can somehow extend our density to incorporate future test data (by augmenting $\dataVector$ with a new observation $\dataScalar^*$ and $\inputMatrix$ with the corresponding inputs, $\inputVector^*$), then we can answer any given question about a future test point $\dataScalar^*$ given its covariates $\inputVector^*$ by conditioning on the training variables to recover,
 $$
 p(\dataScalar^*|\inputMatrix, \dataVector, \inputVector^*),
-$$ 
-We can compute this distribution using the product and sum rules. However, to specify this density we must give the probability associated with all possible combinations of $\dataVector$ and $\inputMatrix$. There are $2^{\numData}$ possible combinations for the vector $\dataVector$ and the probability for each of these combinations must be jointly specified along with the joint density of the matrix $\inputMatrix$, as well as being able to *extend* the density for any chosen test location $\inputVector^*$.
+$$} 
+\slides{* Form a classification algorithm by modelling the *joint* density of our observations. }\notes{
+We can compute this distribution using the product and sum rules. However, to specify this density we must give the probability associated with all possible combinations of $\dataVector$ and $\inputMatrix$. There are $2^{\numData}$ possible combinations for the vector $\dataVector$ and the probability for each of these combinations must be jointly specified along with the joint density of the matrix $\inputMatrix$, as well as being able to *extend* the density for any chosen test location $\inputVector^*$.}
 
-In naive Bayes we make certain simplifying assumptions that allow us to perform all of the above in practice.
-
-\newslide{Naive Bayes Classifiers}
-
-* First lecture: placing probability distributions (or densities) over all the variables of interest.
-* In Naive Bayes this is exactly what we do.
-* Form a classification algorithm by modelling the *joint* density of our observations. 
-* Need to make assumption about joint density.
+\notes{In naive Bayes we make certain simplifying assumptions that allow us to perform all of the above in practice.}\slides{
+* Need to make assumption about joint density.}
 
 \newslide{Assumptions about Density}
 
-* Make assumptions to reduce the number of parameters we need to optimise. 
+\slides{* Make assumptions to reduce the number of parameters we need to optimise. 
 * Given label data $\dataVector$ and the inputs $\inputMatrix$ could specify joint density of all potential values of $\dataVector$
 and $\inputMatrix$, $p(\dataVector, \inputMatrix)$. 
 * If $\inputMatrix$ and $\dataVector$ are training data.
 * If $\inputVector^*$ is a test input and $\dataScalar^*$ a test location we want
   $$
   p(\dataScalar^*|\inputMatrix, \dataVector, \inputVector^*),
-  $$
+  $$}
 
 \newslide{Answer from Rules of Probability}
 
-* Compute this distribution using the product and sum rules. 
+\slides{* Compute this distribution using the product and sum rules. 
 * Need the probability associated with all possible combinations of $\dataVector$ and $\inputMatrix$. 
 * There are $2^{\numData}$ possible combinations for the vector $\dataVector$
 * Probability for each of these combinations must be jointly specified along with the joint density of the matrix $\inputMatrix$, 
-* Also need to *extend* the density for any chosen test location $\inputVector^*$.
+* Also need to *extend* the density for any chosen test location $\inputVector^*$.}
 
 \newslide{Naive Bayes Assumptions}
 
-* In naive Bayes we make certain simplifying assumptions that allow us to perform all of the above in practice. 
+\slides{* In naive Bayes we make certain simplifying assumptions that allow us to perform all of the above in practice. 
 1. Data Conditional Independence
 2. Feature conditional independence
-3. Marginal density for $\dataScalar$.
+3. Marginal density for $\dataScalar$.}
 
 ### Data Conditional Independence
 
-If we are given model parameters $\paramVector$ we assume that conditioned on all these parameters that all data points in the model are independent. In other words we have,
-$$
-p(\dataScalar^*, \inputVector^*, \dataVector, \inputMatrix|\paramVector) = p(\dataScalar^*, \inputVector^*|\paramVector)\prod_{i=1}^{\numData} p(\dataScalar_i, \inputVector_i | \paramVector).
-$$
-This is a conditional independence assumption because we are not assuming our data are purely independent. If we were to assume that, then there would be nothing to learn about our test data given our training data. We are assuming that they are independent *given* our parameters, $\paramVector$. We made similar assumptions for regression, where our parameter set included $\mappingVector$ and $\dataStd^2$. Given those parameters we assumed that the density over $\dataVector, \dataScalar^*$ was *independent*. Here we are going a little further with that assumption because we are assuming the *joint* density of $\dataVector$ and $\inputMatrix$ is independent across the data given the parameters.
-
-\newslide{Data Conditional Independence}
-
-* Given model parameters $\paramVector$ we assume that all data points in the model are independent. 
+\notes{If we are given model parameters $\paramVector$ we assume that conditioned on all these parameters that all data points in the model are independent. In other words we have,}\slides{
+* Given model parameters $\paramVector$ we assume that all data points in the model are independent. }
   $$
   p(\dataScalar^*, \inputVector^*, \dataVector, \inputMatrix|\paramVector) = p(\dataScalar^*, \inputVector^*|\paramVector)\prod_{i=1}^{\numData} p(\dataScalar_i, \inputVector_i | \paramVector).
   $$
-* This is a conditional independence assumption.
-* We made similar assumptions for regression (where $\paramVector =
-\left\{\mappingVector,\dataStd^2\right\}$).
-* Here we assume *joint* density of $\dataVector$ and $\inputMatrix$ is independent across the data given the parameters.
+\notes{This is a conditional independence assumption because we are not assuming our data are purely independent. If we were to assume that, then there would be nothing to learn about our test data given our training data. We are assuming that they are independent *given* our parameters, $\paramVector$.}\slides{
+* This is a conditional independence assumption.}
+\notes{We made similar assumptions for regression, where our parameter set included $\mappingVector$ and $\dataStd^2$. Given those parameters we assumed that the density over $\dataVector, \dataScalar^*$ was *independent*.}\slides{
+* We also make similar assumptions for regression (where $\paramVector =
+\left\{\mappingVector,\dataStd^2\right\}$).}
+\notes{Here we are going a little further with that assumption because we are assuming the *joint* density of $\dataVector$ and $\inputMatrix$ is independent across the data given the parameters.}\slides{
+* Here we assume *joint* density of $\dataVector$ and $\inputMatrix$ is independent across the data given the parameters.}
 
 \newslide{Bayes Classifier}
 
@@ -66,37 +61,31 @@ Computing posterior distribution in this case becomes easier, this is known as t
 
 ### Feature Conditional Independence
 
-The assumption that is particular to naive Bayes is to now consider that the *features* are also conditionally independent, but not only given the parameters. We assume that the features are independent given the parameters *and* the label. So for each data point we have
 $$
 p(\inputVector_i | \dataScalar_i, \paramVector) = \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)
 $$
-where $p$ is the dimensionality of our inputs.
+where $\dataDim$ is the dimensionality of our inputs.
 
-\newslide{Feature Conditional Independence}
-
-* Particular to naive Bayes: assume *features* are also conditionally independent, given param *and* the label.
+\notes{The assumption that is particular to naive Bayes is to now consider that the *features* are also conditionally independent, but not only given the parameters. We assume that the features are independent given the parameters *and* the label. So for each data point we have}\slides{
+* Particular to naive Bayes: assume *features* are also conditionally independent, given param *and* the label.}
   $$p(\inputVector_i | \dataScalar_i, \paramVector) = \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i,\paramVector)$$
-  where $p$ is the dimensionality of our inputs.
+  where $\dataDim$ is the dimensionality of our inputs.\slides{
 * This is known as the *naive Bayes* assumption.
 * Bayes classifier + feature conditional independence.
+}
 
 ### Marginal Density for $\dataScalar_i$
 
-We now have nearly all of the components we need to specify the full joint density. However, the feature conditional independence doesn't yet give us the joint density over $p(\dataScalar_i, \inputVector_i)$ which is required to subsitute in to our data conditional independence to give us the full density. To recover the joint density given the conditional distribution of each feature, $p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)$, we need to make use of the product rule and combine it with a marginal density for $\dataScalar_i$,
 $$
 p(\inputScalar_{i,j},\dataScalar_i| \paramVector) = p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i).
 $$
-Because $\dataScalar_i$ is binary the *Bernoulli* density makes a suitable choice for our prior over $\dataScalar_i$,
-$$
-p(\dataScalar_i|\pi) = \pi^{\dataScalar_i} (1-\pi)^{1-\dataScalar_i}
-$$
-where $\pi$ now has the interpretation as being the *prior* probability that the classification should be positive. 
 
-\newslide{Marginal Density for $\dataScalar_i$}
-
-* To specify the joint distribution we also need the marginal for $p(\dataScalar_i)$
+\notes{We now have nearly all of the components we need to specify the full joint density. However, the feature conditional independence doesn't yet give us the joint density over $p(\dataScalar_i, \inputVector_i)$ which is required to subsitute in to our data conditional independence to give us the full density. To recover the joint density given the conditional distribution of each feature, $p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)$, we need to make use of the product rule and combine it with a marginal density for $\dataScalar_i$,
+}\slides{
+* To specify the joint distribution we also need the marginal for $p(\dataScalar_i)$}
   $$p(\inputScalar_{i,j},\dataScalar_i| \paramVector) = p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i).$$
-* Because $\dataScalar_i$ is binary the *Bernoulli* density makes a suitable choice for our prior over $\dataScalar_i$,
+\notes{Because $\dataScalar_i$ is binary the *Bernoulli* density makes a suitable choice for our prior over $\dataScalar_i$,}\slides{
+* Because $\dataScalar_i$ is binary the *Bernoulli* density makes a suitable choice for our prior over $\dataScalar_i$,}
   $$p(\dataScalar_i|\pi) = \pi^{\dataScalar_i} (1-\pi)^{1-\dataScalar_i}$$
   where $\pi$ now has the interpretation as being the *prior* probability that the classification should be positive.
 
@@ -188,6 +177,7 @@ Biography|Action|Sci-Fi
 
 First we have to do a little work to extract this form and turn it into a vector of binary values. Let's first load in and remind ourselves of the data.
 
+\setupcode{import pods}
 \code{data = pods.datasets.movie_body_count()['Y']
 data.head()}
 
@@ -305,6 +295,7 @@ Now for any test point we compute the joint distribution of the Gaussian feature
 
 Before we proceed, let's just pause and think for a moment what will happen if `theta` here is either zero or one. This will result in $\log 0 = -\infty$ and cause numerical problems.  This definitely can happen in practice. If some of the features are rare or very common across the data set then the maximum likelihood solution could find values of zero or one respectively. Such values are problematic because they cause posterior probabilities of class membership of either one or zero. In practice we deal with this using *Laplace smoothing* (which actually has an interpretation as a Bayesian fit of the Bernoulli distribution. Laplace used an example of the sun rising each day, and a wish to predict the sun rise the following day to describe his idea of smoothing, which can be found at the bottom of following page from Laplace's 'Essai Philosophique ...'
 
+\setupcode{import pods}
 \displaycode{pods.notebook.display_google_book('1YQPAAAAQAAJ', page='PA16')}
 
 Laplace suggests that when computing the probability of an event where a success or failure is rare (he uses an example of the sun rising across the last 5,000 years or 1,826,213 days) that even though only successes have been observed (in the sun rising case) that the odds for tomorrow shouldn't be given as
