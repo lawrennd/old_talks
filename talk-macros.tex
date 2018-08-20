@@ -25,6 +25,7 @@ YouTubeVideo('\id')
 \define{\notes{text}}{}
 \define{\writeassignment{text}{question}{marks}}{}
 \define{\codeassignment{text}{question}{marks}}{}
+\define{\exercise{text}{answerstub}{codestub}}{}
 \define{\slides{text}}{\text}
 \define{\newslide{text}}{### \text
 }
@@ -53,6 +54,23 @@ YouTubeVideo('\id')
 ```
 
 }
+\define{\exercise{text}{answerstub}{codestub}}{### Exercise
+
+\text
+
+### Write your answer to Exercise here
+
+\answerstub
+
+```{.python}
+# Use this box for any code you need for the exercise
+
+\codestub
+
+```
+}
+
+
 \define{\slides{text}}{}
 \define{\newslide{text}}{}
 \endif
