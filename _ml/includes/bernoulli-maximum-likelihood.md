@@ -9,15 +9,18 @@ $$
 p(\dataVector|\pi) = \prod_{i=1}^{\numData} \pi^{\dataScalar_i} (1-\pi)^{1-\dataScalar_i}.
 $$
 \notes{As normal in maximum likelihood we consider the negative log likelihood as our objective,}\slides{
+
 \newslide{Negative Log Likelihood}
 
 * Minimize the negative log likelihood}
-  $$
-  \begin{align*}\errorFunction(\pi)& = -\log p(\dataVector|\pi)\\ &= -\sum_{i=1}^{\numData} \dataScalar_i \log \pi - \sum_{i=1}^{\numData} (1-\dataScalar_i) \log(1-\pi),\end{align*}
-  $$
+  $$\begin{align*}
+  \errorFunction(\pi)& = -\log p(\dataVector|\pi)\\ 
+                     & = -\sum_{i=1}^{\numData} \dataScalar_i \log \pi - \sum_{i=1}^{\numData} (1-\dataScalar_i) \log(1-\pi),
+  \end{align*}$$
 \slides{* Take gradient with respect to the parameter $\pi$.}\notes{
-and we seek the gradient with respect to the parameter $\pi$.}
+and we can derive the gradient with respect to the parameter $\pi$.}
   $$\frac{\text{d}\errorFunction(\pi)}{\text{d}\pi} = -\frac{\sum_{i=1}^{\numData} \dataScalar_i}{\pi}  + \frac{\sum_{i=1}^{\numData} (1-\dataScalar_i)}{1-\pi},$$
+
 \newslide{Fixed Point}
 
 \notes{and as normal we look for a stationary point for the log likelihood by setting this derivative to zero,}\slides{

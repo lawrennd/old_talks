@@ -1,14 +1,16 @@
 \newslide{Bernoulli Distribution}
 
 \slides{* Binary classification: need a probability distribution for discrete variables. 
-* Discrete probability is in some ways easier:  $P(\dataScalar=1) = \pi$ & specify distribution as a table.}
+* Discrete probability is in some ways easier:  $P(\dataScalar=1) = \pi$ & specify distribution as a table.
+* Instead of $\dataScalar=-1$ for negative class we take $\dataScalar=0$.}
 \notes{Our focus has been on models where the objective function is inspired by a probabilistic analysis of the problem. In particular we've argued that we answer questions about the data set by placing probability distributions over the various quantities of interest. For the case of binary classification this will normally involve introducing probability distributions for discrete variables. Such probability distributions, are in some senses easier than those for continuous variables, in particular we can represent a probability distribution over $\dataScalar$, where $\dataScalar$ is binary, with one value. If we specify the probability that $\dataScalar=1$ with a number that is between 0 and 1, i.e. let's say that $P(\dataScalar=1) = \pi$ (here we don't mean $\pi$ the number, we are setting $\pi$ to be a variable) then we can specify the probability distribution through a table.}
 
-| \dataScalar      | 0
+| $\dataScalar$      | 0
 | 1     |
 |:------:|:---------:|:-----:|
 | $P(\dataScalar)$ | $(1-\pi)$ | $\pi$ |
 
+\slides{
 * Mathematically we use a trick: use $\dataScalar$ as a mathematical switch:
   $$
   P(\dataScalar) = \pi^\dataScalar (1-\pi)^{(1-\dataScalar)}
@@ -28,7 +30,7 @@
 def bernoulli(y_i, pi):
     if y_i == 1:
         return pi
-else:
+	else:
         return 1-pi
 ```
 
@@ -48,8 +50,10 @@ else:
 \setupcode{import matplotlib.pyplot as plt
 import teaching_plots as plot}
 
-\plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)
+\plotcode{fig, ax = plt.subplots(figsize=plot.one_figsize)
 plot.bernoulli_urn(ax, diagrams='../slides/diagrams/ml/')}
+
+\newslide{Jacob Bernoulli's Bernoulli}
 
 \includesvg{../slides/diagrams/ml/bernoulli-urn.svg}
 
@@ -69,25 +73,26 @@ Now, we roll the second ball. We are interested if the second ball ends up on th
 
 For this reason in Bayes's distribution there is considered to be *aleatoric* uncertainty about the distribution parameter.}
 
+\newslide{Thomas Bayes' Bernoulli}
+
 \setupcode{import matplotlib.pyplot as plt
 import teaching_plots as plot}
 
-\plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)
+\plotcode{fig, ax = plt.subplots(figsize=plot.one_figsize)
 plot.bayes_billiard(ax, diagrams='../slides/diagrams/ml/')}
 
-\includesvg{../slides/diagrams/ml/bernoulli-urn.svg}
 \slides{
 \startslides{bayes_billiard}{1}{10}
-\includesvg{../slides/diagrams/ml/bernoulli-urn000.svg}{}{bayes_billiard}
-\includesvg{../slides/diagrams/ml/bernoulli-urn001.svg}{}{bayes_billiard}
-\includesvg{../slides/diagrams/ml/bernoulli-urn002.svg}{}{bayes_billiard}
-\includesvg{../slides/diagrams/ml/bernoulli-urn003.svg}{}{bayes_billiard}
-\includesvg{../slides/diagrams/ml/bernoulli-urn004.svg}{}{bayes_billiard}
-\includesvg{../slides/diagrams/ml/bernoulli-urn005.svg}{}{bayes_billiard}
-\includesvg{../slides/diagrams/ml/bernoulli-urn006.svg}{}{bayes_billiard}
-\includesvg{../slides/diagrams/ml/bernoulli-urn007.svg}{}{bayes_billiard}
-\includesvg{../slides/diagrams/ml/bernoulli-urn008.svg}{}{bayes_billiard}
-\includesvg{../slides/diagrams/ml/bernoulli-urn009.svg}{}{bayes_billiard}
+\includesvg{../slides/diagrams/ml/bayes-billiard000.svg}{}{bayes_billiard}
+\includesvg{../slides/diagrams/ml/bayes-billiard001.svg}{}{bayes_billiard}
+\includesvg{../slides/diagrams/ml/bayes-billiard002.svg}{}{bayes_billiard}
+\includesvg{../slides/diagrams/ml/bayes-billiard003.svg}{}{bayes_billiard}
+\includesvg{../slides/diagrams/ml/bayes-billiard004.svg}{}{bayes_billiard}
+\includesvg{../slides/diagrams/ml/bayes-billiard005.svg}{}{bayes_billiard}
+\includesvg{../slides/diagrams/ml/bayes-billiard006.svg}{}{bayes_billiard}
+\includesvg{../slides/diagrams/ml/bayes-billiard007.svg}{}{bayes_billiard}
+\includesvg{../slides/diagrams/ml/bayes-billiard008.svg}{}{bayes_billiard}
+\includesvg{../slides/diagrams/ml/bayes-billiard009.svg}{}{bayes_billiard}
 }
 \notesfigure{\includesvg{../slides/diagrams/ml/bayes-billiard009.svg}}
 

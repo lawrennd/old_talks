@@ -327,7 +327,7 @@ def bernoulli_urn(ax, diagrams='../diagrams'):
             else: 
                 ball_color = [1, 0, 0]
             plt.sca(ax)
-            circle = plt.Circle((ball_x, ball_y), ball_radius, fill=True, color=ball_color, figure=fig)
+            circle = plt.Circle((ball_x, ball_y), ball_radius, fill=True, color=ball_color)
             ax.add_artist(circle)
 
     mlai.write_figure(os.path.join(diagrams, 'bernoulli-urn.svg'), transparent=True)
@@ -1471,7 +1471,6 @@ def two_point_sample(kernel_function, diagrams='../diagrams', **kwargs):
 
     ax[0].plot(np.array(ind)+1, [f[0,ind[0]], f[0,ind[1]]], 'o', markersize=10, linewidth=5, color=hcolor)
     mlai.write_figure(os.path.join(diagrams, 'two_point_sample002.svg'), transparent=True)
-    #plt.Circle?
 
     obj = matrix(K, ax=ax[1], type='image', 
                  highlight=True, 
