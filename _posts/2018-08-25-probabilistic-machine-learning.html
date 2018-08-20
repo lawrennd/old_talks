@@ -114,43 +114,14 @@ The different basic probability distributions.
 </object>
 <p><span align="right">Inspired by lectures from Christopher Bishop</span></p>
 <h3 id="definition-of-probability-distributions.">Definition of probability distributions.</h3>
-<table>
-<colgroup>
-<col width="16%" />
-<col width="54%" />
-<col width="28%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Terminology</th>
-<th>Definition</th>
-<th>Probability Notation</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Joint Probability</td>
-<td><span class="math inline">\(\lim_{N\rightarrow\infty}\frac{n_{X=3,Y=4}}{N}\)</span></td>
-<td><span class="math inline">\(P\left(X=3,Y=4\right)\)</span></td>
-</tr>
-<tr class="even">
-<td>Marginal Probability</td>
-<td><span class="math inline">\(\lim_{N\rightarrow\infty}\frac{n_{X=5}}{N}\)</span></td>
-<td><span class="math inline">\(P\left(X=5\right)\)</span></td>
-</tr>
-<tr class="odd">
-<td>Conditional Probability</td>
-<td><span class="math inline">\(\lim_{N\rightarrow\infty}\frac{n_{X=3,Y=4}}{n_{Y=4}}\)</span></td>
-<td><span class="math inline">\(P\left(X=3\vert Y=4\right)\)</span></td>
-</tr>
-</tbody>
-</table>
+<pre><code>  Terminology        |              Definition                                |      Probability Notation</code></pre>
+<p>-------------------------|--------------------------------------------------------|------------------------------ Joint Probability | <span class="math inline">\(\lim_{N\rightarrow\infty}\frac{n_{X=3,Y=4}}{N}\)</span> | <span class="math inline">\(P\left(X=3,Y=4\right)\)</span> Marginal Probability | <span class="math inline">\(\lim_{N\rightarrow\infty}\frac{n_{X=5}}{N}\)</span> | <span class="math inline">\(P\left(X=5\right)\)</span> Conditional Probability | <span class="math inline">\(\lim_{N\rightarrow\infty}\frac{n_{X=3,Y=4}}{n_{Y=4}}\)</span> | <span class="math inline">\(P\left(X=3\vert Y=4\right)\)</span></p>
 <h3 id="notational-details">Notational Details</h3>
 <p>Typically we should write out <span class="math inline">\(P\left(X=x,Y=y\right)\)</span>, but in practice we often shorten this to <span class="math inline">\(P\left(x,y\right)\)</span>. This looks very much like we might write a multivariate function, <em>e.g.</em></p>
 <p><span class="math display">\[f\left(x,y\right)=\frac{x}{y},\]</span></p>
 <p>but for a multivariate funciton</p>
 <p><span class="math display">\[f\left(x,y\right)\neq f\left(y,x\right)\]</span>.</p>
-<p>However</p>
+<p>However,</p>
 <p><span class="math display">\[P\left(x,y\right)=P\left(y,x\right)\]</span></p>
 <p>because</p>
 <p><span class="math display">\[P\left(X=x,Y=y\right)=P\left(Y=y,X=x\right).\]</span></p>
@@ -195,6 +166,7 @@ P(y, t)
 P(t|y) =
 \frac{P(y|t)P(t)}{P(y)}
 \]</span> which is known as Bayes' rule (or Bayes's rule, it depends how you choose to pronounce it). It's not difficult to derive, and its importance is more to do with the semantic operation that it enables. Each of these probability distributions represents the answer to a question we have about the world. Bayes rule (via the product rule) tells us how to <em>invert</em> the probability.</p>
+<p>{Expectation Computation Example</p>
 <h3 id="probabilities-for-extracting-information-from-data">Probabilities for Extracting Information from Data</h3>
 <p>What use is all this probability in data science? Let's think about how we might use the probabilities to do some decision making. Let's load up a little more information about the movies.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">movies <span class="op">=</span> pd.read_csv(<span class="st">&#39;./R-vs-Python-master/Deadliest movies scrape/code/film-death-counts-Python.csv&#39;</span>)
@@ -224,6 +196,7 @@ p(\dataScalar_i | \mappingFunction(\inputVector_i)) = \frac{1}{\sqrt{2\pi \dataS
 <p>In short, that is the classical approach to probabilistic inference, and all approaches to Bayesian neural networks fall within this path. For a deep probabilistic model, we can simply take this one stage further and place a probability distribution over the input locations, <span class="math display">\[
 p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \parameterVector) p(\parameterVector | \dataVector, \inputMatrix) p(\inputMatrix) p(\inputMatrix_*) \text{d} \parameterVector \text{d} \inputMatrix \text{d}\inputMatrix_*
 \]</span> and we have <em>unsupervised learning</em> (from where we can get deep generative models).</p>
+<h3 id="introduce-dataset-earlier.-here">INTRODUCE DATASET EARLIER. HERE!</h3>
 <h3 id="graphical-models">Graphical Models</h3>
 <p>One way of representing a joint distribution is to consider conditional dependencies between data. Conditional dependencies allow us to factorize the distribution. For example, a Markov chain is a factorization of a distribution into components that represent the conditional relationships between points that are neighboring, often in time or space. It can be decomposed in the following form. <span class="math display">\[p(\dataVector) = p(\dataScalar_\numData | \dataScalar_{\numData-1}) p(\dataScalar_{\numData-1}|\dataScalar_{\numData-2}) \dots p(\dataScalar_{2} | \dataScalar_{1})\]</span></p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> daft
@@ -262,26 +235,21 @@ pgm.render().figure.savefig(<span class="st">&quot;../slides/diagrams/ml/markov.
 <li>Categorization of document types (different types of news article on the internet)</li>
 </ul>
 <p>Our focus has been on models where the objective function is inspired by a probabilistic analysis of the problem. In particular we've argued that we answer questions about the data set by placing probability distributions over the various quantities of interest. For the case of binary classification this will normally involve introducing probability distributions for discrete variables. Such probability distributions, are in some senses easier than those for continuous variables, in particular we can represent a probability distribution over <span class="math inline">\(\dataScalar\)</span>, where <span class="math inline">\(\dataScalar\)</span> is binary, with one value. If we specify the probability that <span class="math inline">\(\dataScalar=1\)</span> with a number that is between 0 and 1, i.e. let's say that <span class="math inline">\(P(\dataScalar=1) = \pi\)</span> (here we don't mean <span class="math inline">\(\pi\)</span> the number, we are setting <span class="math inline">\(\pi\)</span> to be a variable) then we can specify the probability distribution through a table.</p>
-<p>| | 0 | 1 | |:------:|:---------:|:-----:| | <span class="math inline">\(P(\dataScalar)\)</span> | <span class="math inline">\((1-\pi)\)</span> | <span class="math inline">\(\pi\)</span> |</p>
-<ul>
-<li>Mathematically we use a trick: use <span class="math inline">\(\dataScalar\)</span> as a mathematical switch: <span class="math display">\[
-  P(\dataScalar) = \pi^\dataScalar (1-\pi)^{(1-\dataScalar)}
-  \]</span> This is the <a href="http://en.wikipedia.org/wiki/Bernoulli_distribution">Bernoulli distribution</a>.}</li>
-</ul>
+<p>| <span class="math inline">\(\dataScalar\)</span> | 0 | 1 | |:------:|:---------:|:-----:| | <span class="math inline">\(P(\dataScalar)\)</span> | <span class="math inline">\((1-\pi)\)</span> | <span class="math inline">\(\pi\)</span> |</p>
 <p>Mathematically we can use a trick to implement this same table. We can use the value <span class="math inline">\(\dataScalar\)</span> as a mathematical switch and write that <span class="math display">\[
   P(\dataScalar) = \pi^\dataScalar (1-\pi)^{(1-\dataScalar)}
   \]</span> where our probability distribution is now written as a function of <span class="math inline">\(\dataScalar\)</span>. This probability distribution is known as the <a href="http://en.wikipedia.org/wiki/Bernoulli_distribution">Bernoulli distribution</a>. The Bernoulli distribution is a clever trick for mathematically switching between two probabilities if we were to write it as code it would be better described as</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> bernoulli(y_i, pi):
     <span class="cf">if</span> y_i <span class="op">==</span> <span class="dv">1</span>:
         <span class="cf">return</span> pi
-<span class="cf">else</span>:
+    <span class="cf">else</span>:
         <span class="cf">return</span> <span class="dv">1</span><span class="op">-</span>pi</code></pre></div>
 <p>If we insert <span class="math inline">\(\dataScalar=1\)</span> then the function is equal to <span class="math inline">\(\pi\)</span>, and if we insert <span class="math inline">\(\dataScalar=0\)</span> then the function is equal to <span class="math inline">\(1-\pi\)</span>. So the function recreates the table for the distribution given above.</p>
 <p>The probability distribution is named for <a href="http://en.wikipedia.org/wiki/Jacob_Bernoulli">Jacob Bernoulli</a>, the swiss mathematician. In his book Ars Conjectandi he considered the distribution and the result of a number of 'trials' under the Bernoulli distribution to form the <em>binomial</em> distribution. Below is the page where he considers Pascal's triangle in forming combinations of the Bernoulli distribution to realise the binomial distribution for the outcome of positive trials.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
 <span class="im">import</span> teaching_plots <span class="im">as</span> plot</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_figsize)
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.one_figsize)
 plot.bernoulli_urn(ax, diagrams<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml/&#39;</span>)</code></pre></div>
 <object class="svgplot" align data="../slides/diagrams/ml/bernoulli-urn.svg">
 </object>
@@ -291,10 +259,8 @@ plot.bernoulli_urn(ax, diagrams<span class="op">=</span><span class="st">&#39;..
 <p>For this reason in Bayes's distribution there is considered to be <em>aleatoric</em> uncertainty about the distribution parameter.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
 <span class="im">import</span> teaching_plots <span class="im">as</span> plot</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_figsize)
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.one_figsize)
 plot.bayes_billiard(ax, diagrams<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml/&#39;</span>)</code></pre></div>
-<object class="svgplot" align data="../slides/diagrams/ml/bernoulli-urn.svg">
-</object>
 <object class="svgplot" align data="../slides/diagrams/ml/bayes-billiard009.svg">
 </object>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
@@ -302,10 +268,11 @@ plot.bayes_billiard(ax, diagrams<span class="op">=</span><span class="st">&#39;.
 <h3 id="maximum-likelihood-in-the-bernoulli-distribution">Maximum Likelihood in the Bernoulli Distribution</h3>
 <p>Maximum likelihood in the Bernoulli distribution is straightforward. Let's assume we have data, <span class="math inline">\(\dataVector\)</span> which consists of a vector of binary values of length <span class="math inline">\(n\)</span>. If we assume each value was sampled independently from the Bernoulli distribution, conditioned on the parameter <span class="math inline">\(\pi\)</span> then our joint probability density has the form <span class="math display">\[
 p(\dataVector|\pi) = \prod_{i=1}^{\numData} \pi^{\dataScalar_i} (1-\pi)^{1-\dataScalar_i}.
-\]</span> As normal in maximum likelihood we consider the negative log likelihood as our objective, <span class="math display">\[
-  \begin{align*}\errorFunction(\pi)&amp; = -\log p(\dataVector|\pi)\\ &amp;= -\sum_{i=1}^{\numData} \dataScalar_i \log \pi - \sum_{i=1}^{\numData} (1-\dataScalar_i) \log(1-\pi),\end{align*}
-  \]</span></p>
-<p>and we seek the gradient with respect to the parameter <span class="math inline">\(\pi\)</span>. <span class="math display">\[\frac{\text{d}\errorFunction(\pi)}{\text{d}\pi} = -\frac{\sum_{i=1}^{\numData} \dataScalar_i}{\pi}  + \frac{\sum_{i=1}^{\numData} (1-\dataScalar_i)}{1-\pi},\]</span></p>
+\]</span> As normal in maximum likelihood we consider the negative log likelihood as our objective, <span class="math display">\[\begin{align*}
+  \errorFunction(\pi)&amp; = -\log p(\dataVector|\pi)\\ 
+                     &amp; = -\sum_{i=1}^{\numData} \dataScalar_i \log \pi - \sum_{i=1}^{\numData} (1-\dataScalar_i) \log(1-\pi),
+  \end{align*}\]</span></p>
+<p>and we can derive the gradient with respect to the parameter <span class="math inline">\(\pi\)</span>. <span class="math display">\[\frac{\text{d}\errorFunction(\pi)}{\text{d}\pi} = -\frac{\sum_{i=1}^{\numData} \dataScalar_i}{\pi}  + \frac{\sum_{i=1}^{\numData} (1-\dataScalar_i)}{1-\pi},\]</span></p>
 <p>and as normal we look for a stationary point for the log likelihood by setting this derivative to zero, <span class="math display">\[0 = -\frac{\sum_{i=1}^{\numData} \dataScalar_i}{\pi}  + \frac{\sum_{i=1}^{\numData} (1-\dataScalar_i)}{1-\pi},\]</span> rearranging we form <span class="math display">\[(1-\pi)\sum_{i=1}^{\numData} \dataScalar_i =   \pi\sum_{i=1}^{\numData} (1-\dataScalar_i),\]</span> which implies <span class="math display">\[\sum_{i=1}^{\numData} \dataScalar_i =   \pi\left(\sum_{i=1}^{\numData} (1-\dataScalar_i) + \sum_{i=1}^{\numData} \dataScalar_i\right),\]</span></p>
 <p>and now we recognise that <span class="math inline">\(\sum_{i=1}^{\numData} (1-\dataScalar_i) + \sum_{i=1}^{\numData} \dataScalar_i = \numData\)</span> so we have <span class="math display">\[\pi = \frac{\sum_{i=1}^{\numData} \dataScalar_i}{\numData}\]</span></p>
 <p>so in other words we estimate the probability associated with the Bernoulli by setting it to the number of observed positives, divided by the total length of <span class="math inline">\(\dataScalar\)</span>. This makes intiutive sense. If I asked you to estimate the probability of a coin being heads, and you tossed the coin 100 times, and recovered 47 heads, then the estimate of the probability of heads should be <span class="math inline">\(\frac{47}{100}\)</span>.</p>
@@ -319,7 +286,13 @@ p(\dataVector|\pi) = \prod_{i=1}^{\numData} \pi^{\dataScalar_i} (1-\pi)^{1-\data
 \text{posterior} =
 \frac{\text{likelihood}\times\text{prior}}{\text{marginal likelihood}}
 \]</span></p>
-<p>Four components: 1. Prior distribution 2. Likelihood 3. Posterior distribution 4. Marginal likelihood</p>
+<p>Four components:</p>
+<ol style="list-style-type: decimal">
+<li>Prior distribution</li>
+<li>Likelihood</li>
+<li>Posterior distribution</li>
+<li>Marginal likelihood</li>
+</ol>
 <h3 id="naive-bayes-classifiers">Naive Bayes Classifiers</h3>
 <p>In probabilistic machine learning we place probability distributions (or densities) over all the variables of interest, our first classification algorithm will do just that. We will consider how to form a classification by making assumptions about the <em>joint</em> density of our observations. We need to make assumptions to reduce the number of parameters we need to optimise.</p>
 <p>In the ideal world, given label data <span class="math inline">\(\dataVector\)</span> and the inputs <span class="math inline">\(\inputMatrix\)</span> we should be able to specify the joint density of all potential values of <span class="math inline">\(\dataVector\)</span> and <span class="math inline">\(\inputMatrix\)</span>, <span class="math inline">\(p(\dataVector, \inputMatrix)\)</span>. If <span class="math inline">\(\inputMatrix\)</span> and <span class="math inline">\(\dataVector\)</span> are our training data, and we can somehow extend our density to incorporate future test data (by augmenting <span class="math inline">\(\dataVector\)</span> with a new observation <span class="math inline">\(\dataScalar^*\)</span> and <span class="math inline">\(\inputMatrix\)</span> with the corresponding inputs, <span class="math inline">\(\inputVector^*\)</span>), then we can answer any given question about a future test point <span class="math inline">\(\dataScalar^*\)</span> given its covariates <span class="math inline">\(\inputVector^*\)</span> by conditioning on the training variables to recover, <span class="math display">\[
