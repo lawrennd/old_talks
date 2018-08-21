@@ -34,7 +34,7 @@ Year is 1801 Planet Ceres discovered in January by Giuseppe Piazzi, an italian p
 
 ###
 
-\includegooglebook{JBw4AAAAMAAJ}{280}
+\includegooglebook{JBw4AAAAMAAJ}{PA280}
 @Piazzi:monatliche1801
 
 <!--[\includeimg{../slides/diagrams/ceres/ceres-beobachtung-von-piazzi.png}{100%}](https://play.google.com/books/reader?printsec=frontcover&output=reader&id=JBw4AAAAMAAJ&pg=GBS.PA280)-->
@@ -91,13 +91,13 @@ Year is 1801 Planet Ceres discovered in January by Giuseppe Piazzi, an italian p
 
 ###
 
-\includegooglebook{JBw4AAAAMAAJ}{647}
+\includegooglebook{JBw4AAAAMAAJ}{PA647}
 
 <!--[\includeimg{../slides/diagrams/ceres/gauss-ceres-prediction-monatliche.png}](https://play.google.com/books/reader?printsec=frontcover&output=reader&id=JBw4AAAAMAAJ&pg=GBS.PA647)-->
 
 ###
 trim=0cm 9cm 0cm 12cm, clip=true
-\includegooglebook{JBw4AAAAMAAJ}{647}
+\includegooglebook{JBw4AAAAMAAJ}{PA647}
 [\includeimg{../slides/diagrams/ceres/gauss-ceres-prediction-monatliche.png}](https://play.google.com/books/reader?printsec=frontcover&output=reader&id=JBw4AAAAMAAJ&pg=GBS.PA647)
 
 ###

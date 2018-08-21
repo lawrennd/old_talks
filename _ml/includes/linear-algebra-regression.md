@@ -142,7 +142,7 @@ $$
 
 \notes{Minimizing the sum of squares error was first proposed by [Legendre](http://en.wikipedia.org/wiki/Adrien-Marie_Legendre) in 1805. His book, which was on the orbit of comets, is available on google books, we can take a look at the relevant page by calling the code below.
 
-\includegooglebook{spcAAAAAMAAJ}{72}
+\includegooglebook{spcAAAAAMAAJ}{PA72}
 
 Of course, the main text is in French, but the key part we are interested in can be roughly translated as
 
