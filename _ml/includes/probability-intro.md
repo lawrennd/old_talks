@@ -112,7 +112,7 @@ conditional | $P(X=x\vert Y=y)$ | prob. that X=x *given that* Y=y
 \aligncenter{The different basic probability distributions.}
   
 
-\setupcode{import teaching_plots as plot}
+\setupplotcode{import teaching_plots as plot}
 \plotcode{plot.prob_diagram(diagrams='../slides/diagrams/mlai')}
 
 ### A Pictorial Definition of Probability
@@ -133,49 +133,34 @@ conditional | $P(X=x\vert Y=y)$ | prob. that X=x *given that* Y=y
 ### Notational Details
 
 \slides{
-* Typically we should write out
-  $P\left(X=x,Y=y\right)$.
+* Typically we should write out $P\left(X=x,Y=y\right)$.
 
 * In practice, we often use $P\left(x,y\right)$.
-* This looks very much like we might write a multivariate function,
-  *e.g.*
-  $f\left(x,y\right)=\frac{x}{y}$.
-  * For a multivariate function though,
-    $f\left(x,y\right)\neq f\left(y,x\right)$.
-  * However
-    $P\left(x,y\right)=P\left(y,x\right)$
-    because
-    $P\left(X=x,Y=y\right)=P\left(Y=y,X=x\right)$.
+* This looks very much like we might write a multivariate function, *e.g.*  $f\left(x,y\right)=\frac{x}{y}$.
+  * For a multivariate function though, $f\left(x,y\right)\neq f\left(y,x\right)$.
+  * However $P\left(x,y\right)=P\left(y,x\right)$ because $P\left(X=x,Y=y\right)=P\left(Y=y,X=x\right)$.
 * We now quickly review the ‘rules of probability’.}
 
 \notes{Typically we should write out
 $P\left(X=x,Y=y\right)$, but in practice we often shorten this to $P\left(x,y\right)$. This looks very much like we might write a multivariate function, *e.g.*
- 
- $$f\left(x,y\right)=\frac{x}{y},$$ 
- 
-but for a multivariate funciton
-
-$$f\left(x,y\right)\neq f\left(y,x\right)$$.
-
+  $$
+  f\left(x,y\right)=\frac{x}{y},
+  $$ 
+but for a multivariate function
+$$
+f\left(x,y\right)\neq f\left(y,x\right).
+$$
 However,
-
-$$P\left(x,y\right)=P\left(y,x\right)$$
-
+$$
+P\left(x,y\right)=P\left(y,x\right)
+$$
 because
-
-$$P\left(X=x,Y=y\right)=P\left(Y=y,X=x\right).$$
-
+$$
+P\left(X=x,Y=y\right)=P\left(Y=y,X=x\right).
+$$
 Sometimes I think of this as akin to the way in Python we can write 'keyword arguments' in functions. If we use keyword arguments, the ordering of arguments doesn't matter.}
 
-\notes{We've now introduced conditioning and independence to
-the notion of probability and computed some conditional probabilities on a
-practical example The scatter plot of deaths vs year that we created above can
-be seen as a *joint* probability distribution. We represent a joint probability
-using the notation $P(Y=y, T=t)$ or $P(y, t)$ for short. Computing a joint
-probability is equivalent to answering the simultaneous questions, what's the
-probability that the number of deaths was over 40 and the year was 2002? Or any
-other question that may occur to us. Again we can easily use pandas to ask such
-questions.}
+\notes{We've now introduced conditioning and independence to the notion of probability and computed some conditional probabilities on a practical example The scatter plot of deaths vs year that we created above can be seen as a *joint* probability distribution. We represent a joint probability using the notation $P(Y=y, T=t)$ or $P(y, t)$ for short. Computing a joint probability is equivalent to answering the simultaneous questions, what's the probability that the number of deaths was over 40 and the year was 2002? Or any other question that may occur to us. Again we can easily use pandas to ask such questions.}
 
 \code{year = 2000
 deaths = (film_deaths.Body_Count[film_deaths.Year==year]>40).sum()
@@ -193,80 +178,77 @@ A similar result can be derived for the marginal and conditional
 distributions.}
 
 ### The Product Rule
-\slides{
--   $P\left(x|y\right)$ is
-    $${\lim_{N\rightarrow\infty}}\frac{n_{x,y}}{n_{y}}.$$
 
--   $P\left(x,y\right)$ is
-    $${\lim_{N\rightarrow\infty}}\frac{n_{x,y}}{N}={\lim_{N\rightarrow\infty}}\frac{n_{x,y}}{n_{y}}\frac{n_{y}}{N}$$
-    or in other
-    words$$P\left(x,y\right)=P\left(x|y\right)P\left(y\right).$$
-    This is known as the product rule of probability.}
+\slides{
+* $P\left(x|y\right)$ is
+  $$
+  {\lim_{N\rightarrow\infty}}\frac{n_{x,y}}{n_{y}}.
+  $$
+* $P\left(x,y\right)$ is
+  $$
+  {\lim_{N\rightarrow\infty}}\frac{n_{x,y}}{N}={\lim_{N\rightarrow\infty}}\frac{n_{x,y}}{n_{y}}\frac{n_{y}}{N}
+  $$
+  or in other words
+  $$
+  P\left(x,y\right)=P\left(x|y\right)P\left(y\right).
+  $$
+  This is known as the product rule of probability.}
 	
 \notes{This number is the joint probability, $P(Y, T)$ which is
 much *smaller* than the conditional probability. The number can never be bigger
 than the conditional probabililty because it is computed using the *product
 rule*.
 $$
-p(Y=y, T=t) = p(Y=y|T=t)p(T=t)
+p(Y=y, X=x) = p(Y=y|X=x)p(X=x)
 $$
-and $$p(T=t)$$ is a probability
-distribution, which is equal or less than 1, ensuring the joint distribution is
-typically smaller than the conditional distribution.}
+and $$p(X=x)$$ is a probability distribution, which is equal or less than 1, ensuring the joint distribution is typically smaller than the conditional distribution.}
 
-\notes{The product rule is a
-*fundamental* rule of probability, and you must remember it! It gives the
-relationship between the two questions: 1) What's the probability that a film
-was made in 2002 and has over 40 deaths? and 2) What's the probability that a
-film has over 40 deaths given that it was made in 2002?}
+\notes{The product rule is a *fundamental* rule of probability, and you must remember it! It gives the relationship between the two questions: 1) What's the probability that a film was made in 2002 and has over 40 deaths? and 2) What's the probability that a film has over 40 deaths given that it was made in 2002?}
 
-\notes{In our shorter notation
-we can write the product rule as
+\notes{In our shorter notation we can write the product rule as
 $$
-p(y, t) = p(y|t)p(t)
+p(y, x) = p(y|x)p(x)
 $$
 We can see the
 relation working in practice for our data above by computing the different
 values for $t=2000$.}
 
-\code{p_t = float((film_deaths.Year==2002).sum())/float(film_deaths.Body_Count.count())
-p_y_given_t = float((film_deaths.Body_Count[film_deaths.Year==2002]>40).sum())/float((film_deaths.Year==2002).sum())
-p_y_and_t = float((film_deaths.Body_Count[film_deaths.Year==2002]>40).sum())/float(film_deaths.Body_Count.count())
+\code{p_x = float((film_deaths.Year==2002).sum())/float(film_deaths.Body_Count.count())
+p_y_given_x = float((film_deaths.Body_Count[film_deaths.Year==2002]>40).sum())/float((film_deaths.Year==2002).sum())
+p_y_and_x = float((film_deaths.Body_Count[film_deaths.Year==2002]>40).sum())/float(film_deaths.Body_Count.count())
 
-print("P(t) is", p_t)
-print("P(y|t) is", p_y_given_t)
-print("P(y,t) is", p_y_and_t)}
+print("P(x) is", p_x)
+print("P(y|x) is", p_y_given_x)
+print("P(y,x) is", p_y_and_x)}
 
 ### The Sum Rule
 
 \slides{Ignoring the limit in our definitions:
-
--   The marginal probability $P\left(y\right)$ is
-    ${\lim_{N\rightarrow\infty}}\frac{n_{y}}{N}$ .
-
--   The joint distribution $P\left(x,y\right)$ is
-    ${\lim_{N\rightarrow\infty}}\frac{n_{x,y}}{N}$.
-
--   $n_{y}=\sum_{x}n_{x,y}$
-    so$${\lim_{N\rightarrow\infty}}\frac{n_{y}}{N}={\lim_{N\rightarrow\infty}}\sum_{x}\frac{n_{x,y}}{N},$$
-    in other words
-    $$P\left(y\right)=\sum_{x}P\left(x,y\right).$$
-    This is known as the sum rule of probability.}
+* The marginal probability $P\left(y\right)$ is ${\lim_{N\rightarrow\infty}}\frac{n_{y}}{N}$ .
+* The joint distribution $P\left(x,y\right)$ is ${\lim_{N\rightarrow\infty}}\frac{n_{x,y}}{N}$.
+* $n_{y}=\sum_{x}n_{x,y}$ so
+  $$
+  {\lim_{N\rightarrow\infty}}\frac{n_{y}}{N}={\lim_{N\rightarrow\infty}}\sum_{x}\frac{n_{x,y}}{N},
+  $$
+  in other words
+  $$
+  P\left(y\right)=\sum_{x}P\left(x,y\right).
+  $$
+  This is known as the sum rule of probability.}
 
 \notes{The other *fundamental rule* of probability is the *sum rule*
 this tells us how to get a *marginal* distribution from the joint distribution.
 Simply put it says that we need to sum across the value we'd like to remove.
 $$
-P(Y=y) = \sum_{t} P(Y=y, T=t)
+P(Y=y) = \sum_{x} P(Y=y, X=x)
 $$
 Or in our shortened notation
 $$
-P(y) = \sum_{t}
-P(y, t)
+P(y) = \sum_{x} P(y, x)
 $$}
 
-\codeassignment{Write code that computes $P(y)$ by adding $P(y, t)$
-for all values of $t$.}{6}{10}
+\codeassignment{Write code that computes $P(y)$ by adding $P(y, x)$
+for all values of $x$.}{6}{10}
 
 ### Bayes’ Rule
 
@@ -284,28 +266,17 @@ for all values of $t$.}{6}{10}
   $$
 }
 
-\notes{Bayes rule is a very simple rule, it's hardly worth the name of
-a rule at all. It follows directly from the product rule of probability. Because
-$P(y, t) = P(y|t)P(t)$ and by symmetry $P(y,t)=P(t,y)=P(t|y)P(y)$ then by
-equating these two equations and dividing through by $P(y)$ we have
+\notes{Bayes rule is a very simple rule, it's hardly worth the name of a rule at all. It follows directly from the product rule of probability. Because $P(y, x) = P(y|x)P(x)$ and by symmetry $P(y,x)=P(x,y)=P(x|y)P(y)$ then by equating these two equations and dividing through by $P(y)$ we have
 $$
-P(t|y) =
-\frac{P(y|t)P(t)}{P(y)}
+P(x|y) =
+\frac{P(y|x)P(x)}{P(y)}
 $$
-which is known as Bayes' rule (or Bayes's rule, it
-depends how you choose to pronounce it). It's not difficult to derive, and its
-importance is more to do with the semantic operation that it enables. Each of
-these probability distributions represents the answer to a question we have
-about the world. Bayes rule (via the product rule) tells us how to *invert* the
-probability.}
+which is known as Bayes' rule (or Bayes's rule, it depends how you choose to pronounce it). It's not difficult to derive, and its importance is more to do with the semantic operation that it enables. Each of these probability distributions represents the answer to a question we have about the world. Bayes rule (via the product rule) tells us how to *invert* the probability.}
 
 \newslide{Bayes’ Theorem Example}
 
 \slides{
-* There are two barrels in front of you. Barrel One contains 20 apples
-  and 4 oranges. Barrel Two other contains 4 apples and 8 oranges. You
-  choose a barrel randomly and select a fruit. It is an apple. What is
-  the probability that the barrel was Barrel One?}
+* There are two barrels in front of you. Barrel One contains 20 apples and 4 oranges. Barrel Two other contains 4 apples and 8 oranges. You choose a barrel randomly and select a fruit. It is an apple. What is the probability that the barrel was Barrel One?}
 
 \newslide{Bayes’ Theorem Example: Answer I}
 
@@ -336,13 +307,12 @@ probability.}
 
 \newslide{Reading & Exercises}
 
-\slides{* Bishop on probability distributions: page
-    12–17 (Section 1.2).
+\slides{
+* @Bishop:book06 on probability distributions: page 12–17 (Section 1.2).
+* Complete Exercise 1.3 in @Bishop:book06.}
 
-* Complete Exercise 1.3 in Bishop.}
 
-
-\newslide{Expectation Computation Example
+\newslide{Computing Expectations Example}
 
 \slides{
 * Consider the following distribution.
@@ -356,76 +326,60 @@ $P\left(y\right)$ |  0.3|  0.2|  0.1|  0.4
 * Are the mean and standard deviation representative of the distribution form?
 * What is the expected value of $-\log P(y)$?}
 
-\slides{### Expectations Example: Answer
+\newslide{Expectations Example: Answer}
 
--   We are given that:
+\slides{
+* We are given that:
 
-$y$        |   1   |   2   |   3   |   4
----------------------|-------|-------|-------|-------
+$y$               |   1   |   2   |   3   |   4
+------------------|-------|-------|-------|-------
 $P\left(y\right)$ |  0.3  |  0.2  |  0.1  |  0.4
-$y^2$       |   1   |   4   |   9   |  16
-  $-\log(P(y))$   | 1.204 | 1.609 | 2.302 | 0.916
+$y^2$             |   1   |   4   |   9   |  16
+$-\log(P(y))$     | 1.204 | 1.609 | 2.302 | 0.916
 
--   Mean:
-    $1\times 0.3 + 2\times 0.2 + 3 \times 0.1 + 4 \times 0.4 = 2.6$
+* Mean: $1\times 0.3 + 2\times 0.2 + 3 \times 0.1 + 4 \times 0.4 = 2.6$
+* Second moment: $1 \times 0.3 + 4 \times 0.2 + 9 \times 0.1 + 16 \times 0.4 = 8.4$
+* Variance: $8.4 - 2.6\times 2.6 = 1.64$
+* Standard deviation: $\sqrt{1.64} = 1.2806$
+* Expectation $-\log(P(y))$: $0.3\times 1.204 + 0.2\times 1.609 + 0.1\times 2.302 +0.4\times 0.916 = 1.280$}
 
--   Second moment:
-    $1 \times 0.3 + 4 \times 0.2 + 9 \times 0.1 + 16 \times 0.4 = 8.4$
+\newslide{Sample Based Approximation Example}
 
--   Variance: $8.4 - 2.6\times 2.6 = 1.64$
-
--   Standard deviation: $\sqrt{1.64} = 1.2806$
-
--   Expectation $-\log(P(y))$:
-    $0.3\times 1.204 + 0.2\times 1.609 + 0.1\times 2.302 +0.4\times 0.916 = 1.280$}
-
-\slides{### Sample Based Approximation Example
-
--   You are given the following values samples of heights of students,
+\slides{
+* You are given the following values samples of heights of students,
 
     $i$   |   1  |    2 |  3   |   4  |   5  |    6
 ----------|------|------|------|------|------|------
     $y_i$ |  1.76|  1.73| 1.79 | 1.81 | 1.85 |  1.80
 
--   What is the sample mean?
+* What is the sample mean?
+* What is the sample variance?
+* Can you compute sample approximation expected value of $-\log P(y)$?
+* Actually these “data” were sampled from a Gaussian with mean 1.7 and standard deviation 0.15. Are your estimates close to the real values? If not why not?}
 
--   What is the sample variance?
+\newslide{Sample Based Approximation Example: Answer}
 
--   Can you compute sample approximation expected value of
-    $-\log P(y)$?
-
--   Actually these “data” were sampled from a Gaussian with mean 1.7 and
-    standard deviation 0.15. Are your estimates close to the real
-    values? If not why not?}
-
-\slides{### Sample Based Approximation Example: Answer
-
--   We can compute:
+\slides{
+* We can compute:
 
 $i$        |    1    |    2    |    3    |    4    |    5    |    6
--------------------|--------|--------|--------|--------|--------|--------
-$y_i$  |   1.76  |   1.73  |   1.79  |   1.81  |   1.85  |   1.80
-$y^2_i$ |  3.0976 |  2.9929 |  3.2041 |  3.2761 |  3.4225 |  3.2400
+-----------|---------|---------|---------|---------|---------|--------
+$y_i$      |   1.76  |   1.73  |   1.79  |   1.81  |   1.85  |   1.80
+$y^2_i$    |  3.0976 |  2.9929 |  3.2041 |  3.2761 |  3.4225 |  3.2400
 
--   Mean: $\frac{1.76 + 1.73 + 1.79 + 1.81 + 1.85 + 1.80}{6} = 1.79$
+* Mean: $\frac{1.76 + 1.73 + 1.79 + 1.81 + 1.85 + 1.80}{6} = 1.79$
+* Second moment: $ \frac{3.0976 + 2.9929 + 3.2041 + 3.2761 + 3.4225 + 3.2400}{6} = 3.2055$
+* Variance: $3.2055 - 1.79\times1.79 = 1.43\times 10^{-3}$
+* Standard deviation: $0.0379$
+* No, you can’t compute it. You don’t have access to $P(y)$ directly.}
 
--   Second moment:
-    $ \frac{3.0976 + 2.9929 + 3.2041 + 3.2761 + 3.4225 + 3.2400}{6} = 3.2055$
+\notes{
+### Probabilities for Extracting Information from Data
 
--   Variance: $3.2055 - 1.79\times1.79 = 1.43\times 10^{-3}$
-
--   Standard deviation: $0.0379$
-
--   No, you can’t compute it. You don’t have access to
-    $P(y)$ directly.}
-
-\notes{### Probabilities for Extracting Information from Data}
-
-\notes{What use is all this
-probability in data science? Let's think about how we might use the
-probabilities to do some decision making. Let's load up a little more
+What use is all this probability in data science? Let's think about how we might use the probabilities to do some decision making. Let's load up a little more
 information about the movies.}
 
+\setupcode{import pandas as pd}
 \code{movies = pd.read_csv('./R-vs-Python-master/Deadliest movies scrape/code/film-death-counts-Python.csv')
 movies.columns}
 
