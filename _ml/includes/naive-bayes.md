@@ -340,14 +340,17 @@ Now for any test point we compute the joint distribution of the Gaussian feature
 
 \code{def log_bernoulli(x, theta):
     return x*np.log(theta) + (1-x)*np.log(1-theta)}
-}
+
 
 ### Laplace Smoothing
 
 Before we proceed, let's just pause and think for a moment what will happen if `theta` here is either zero or one. This will result in $\log 0 = -\infty$ and cause numerical problems.  This definitely can happen in practice. If some of the features are rare or very common across the data set then the maximum likelihood solution could find values of zero or one respectively. Such values are problematic because they cause posterior probabilities of class membership of either one or zero. In practice we deal with this using *Laplace smoothing* (which actually has an interpretation as a Bayesian fit of the Bernoulli distribution. Laplace used an example of the sun rising each day, and a wish to predict the sun rise the following day to describe his idea of smoothing, which can be found at the bottom of following page from Laplace's 'Essai Philosophique ...'}
 
+\newslide{Laplace Smoothing}
+
 \includegooglebook{1YQPAAAAQAAJ}{PA16}
 
+\notes{
 Laplace suggests that when computing the probability of an event where a success or failure is rare (he uses an example of the sun rising across the last 5,000 years or 1,826,213 days) that even though only successes have been observed (in the sun rising case) that the odds for tomorrow shouldn't be given as
 $$
 \frac{1,826,213}{1,826,213} = 1
