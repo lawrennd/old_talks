@@ -44,10 +44,10 @@ def bernoulli(y_i, pi):
 * For this reason in Bernoulli's distribution there is *epistemic* uncertainty about the distribution parameter.}
 \notes{The probability distribution is named for [Jacob Bernoulli](http://en.wikipedia.org/wiki/Jacob_Bernoulli), the swiss mathematician. In his book Ars Conjectandi he considered the distribution and the result of a number of 'trials' under the Bernoulli distribution to form the *binomial* distribution. Below is the page where he considers Pascal's triangle in forming combinations of the Bernoulli distribution to realise the binomial distribution for the outcome of positive trials.}
 
-\setupcode{import pods}
+\setupplotcode{import pods}
 \displaycode{pods.notebook.display_google_book('CF4UAAAAQAAJ', 87)}
 
-\setupcode{import matplotlib.pyplot as plt
+\setupplotcode{import matplotlib.pyplot as plt
 import teaching_plots as plot}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.one_figsize)
@@ -75,7 +75,7 @@ For this reason in Bayes's distribution there is considered to be *aleatoric* un
 
 \newslide{Thomas Bayes' Bernoulli}
 
-\setupcode{import matplotlib.pyplot as plt
+\setupplotcode{import matplotlib.pyplot as plt
 import teaching_plots as plot}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.one_figsize)
@@ -96,7 +96,7 @@ plot.bayes_billiard(ax, diagrams='../slides/diagrams/ml/')}
 }
 \notesfigure{\includesvg{../slides/diagrams/ml/bayes-billiard009.svg}}
 
-\setupcode{import pods
+\setupplotcode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('bayes-billiard{counter:0>3}.svg', 
                             directory='../slides/diagrams/ml', 

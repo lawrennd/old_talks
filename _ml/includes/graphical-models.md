@@ -2,12 +2,11 @@
 
 \slides{
 * Represent joint distribution through *conditional dependencies*.
-
 * E.g. Markov chain}
 \notes{One way of representing a joint distribution is to consider conditional dependencies between data. Conditional dependencies allow us to factorize the distribution. For example, a Markov chain is a factorization of a distribution into components that represent the conditional relationships between points that are neighboring, often in time or space. It can be decomposed in the following form.}
 $$p(\dataVector) = p(\dataScalar_\numData | \dataScalar_{\numData-1}) p(\dataScalar_{\numData-1}|\dataScalar_{\numData-2}) \dots p(\dataScalar_{2} | \dataScalar_{1})$$
 
-\setupcode{import daft
+\setupplotcode{import daft
 from matplotlib import rc
 
 rc("font", **{'family':'sans-serif','sans-serif':['Helvetica']}, size=30)
@@ -31,9 +30,9 @@ pgm.render().figure.savefig("../slides/diagrams/ml/markov.svg", transparent=True
 
 \includesvg{../slides/diagrams/ml/markov.svg}
 
-\slides{
-###
+\newslide{}
 
+\slides{
 Predict Perioperative Risk of Clostridium Difficile Infection Following Colon Surgery [@Steele:predictive12]}
 \notes{By specifying conditional independencies we can reduce the parameterization required for our data, instead of directly specifying the parameters of the joint distribution, we can specify each set of parameters of the conditonal independently. This can also give an advantage in terms of interpretability. Understanding a conditional independence structure gives a structured understanding of data. If developed correctly, according to causal methodology, it can even inform how we should intervene in the system to drive a desired result [@Pearl:causality95]. 
 
@@ -42,4 +41,3 @@ However, a challenge arise when the data becomes more complex. Consider the grap
 \includeimg{../slides/diagrams/bayes-net-diagnosis.png}{40%}{negate}{center}
 
 \notes{To capture the complexity in the interelationship between the data the graph becomes more complex, and less interpretable.}
-

@@ -1,4 +1,7 @@
-\ifdef{ipynb}
+\define{\talksdir}{/Users/neil/lawrennd/talks}
+
+\ifdef{ipynb} % ipynb
+
 \define{\includegooglebook{id}{page}}{```
 import pods
 pods.notebook.display_google_book(id='\id', page=\page)
@@ -7,6 +10,7 @@ pods.notebook.display_google_book(id='\id', page=\page)
 from IPython.lib.display import YouTubeVideo
 YouTubeVideo('\id')
 ```}
+
 \define{\includempfour{filename}{width}{height}}{<video width="\width" height="\height" controls preload="none">
 <source src="\filename" type="video/mp4"/>
 </video>}
@@ -20,17 +24,82 @@ YouTubeVideo('\id')
 \define{\slidenotes{slidetext}{notetext}}{\notetext}
 \define{\speakernotes{text}}{}
 
-\ifdef{slides}
+
+\define{\section{text}}{## \text}
+\define{\fragment{text}{type}}{\text}
+\define{\fragmentindex{text}{type}{index}}{\text}
+\define{\notesfigure{block}}{}
+\define{\caption{block}}{<center>*\block *</center>}
+
+
+\define{\slidesmall{block}}{\block}
+\define{\aligncenter{block}}{<center>\block</center>}
+\define{\alignright{block}}{<span align="right">\block</span>}
+\define{\alignleft{block}}{<span align="left">\block</span>}
+\define{\largetext{block}}{<large>\block</large>}
+\define{\smalltext{block}}{<small>\block</small>}
+\define{\coloryellow{block}}{\block}
+\define{\colorcyan{block}}{\block}
+\define{\colormagenta{block}}{\block}
+\define{\colorgreen{block}}{\block}
+\define{\colorred{block}}{\block}
+\define{\colorblue{block}}{\block}
+
+\define{\columns{one}{two}{width1}{width2}}{<table><tr><td width="\width1">\one</td><td width="\width2">\two</td></tr></table>}
+
+
+\ifdef{slides} % ipynb and slides
+
+\define{\setupplotcode{block}}{```{.python}
+\block
+```}
+\define{\plotcode{block}}{```{.python}
+\block
+```}
+\define{\displaycode{block}}{```{.python}
+\block
+```}
+\define{\setupcode{block}}{}
+\define{\loadcode{object}{file}}{}
+\define{\helpercode{block}}{}
+\define{\code{block}}{}
+\define{\matlabcode{block}}{}
 
 \define{\notes{text}}{}
 \define{\writeassignment{text}{question}{marks}}{}
 \define{\codeassignment{text}{question}{marks}}{}
-\define{\exercise{text}{answerstub}{codestub}}{}
+\define{\exercise{text}{answerstub}{codestub}}{### Exercise
+
+\text
+
+}
 \define{\slides{text}}{\text}
 \define{\newslide{text}}{### \text
 }
 
-\else
+
+\else % ipynb but not slides
+
+%%%%%%%%%% CODE DISPLAY %%%%%%%%%%
+
+\define{\setupplotcode{block}}{}
+\define{\plotcode{block}}{}
+\define{\displaycode{block}}{}
+\define{\setupcode{block}}{```{.python}
+\block
+```}
+\define{\loadcode{object}{file}}{```{.python}
+\%load -s \object \file.py
+```}
+\define{\helpercode{block}}{```{.python}
+\block
+```}
+\define{\code{block}}{```{.python}
+\block
+```}
+\define{\matlabcode{block}}{```{.matlab}
+\block
+```}
 
 \define{\notes{text}}{\text}
 \define{\writeassignment{text}{question}{marks}}{### Question \question
@@ -73,53 +142,10 @@ YouTubeVideo('\id')
 
 \define{\slides{text}}{}
 \define{\newslide{text}}{}
-\endif
 
-\define{\section{text}}{## \text}
-\define{\fragment{text}{type}}{\text}
-\define{\fragmentindex{text}{type}{index}}{\text}
-\define{\notesfigure{block}}{}
-\define{\caption{block}}{<center>*\block *</center>}
+\endif 
+\else % not ipynb
 
-
-\define{\plotcode{block}}{```{.python}
-\block
-```}
-\define{\displaycode{block}}{```{.python}
-\block
-```}
-\define{\setupcode{block}}{```{.python}
-\block
-```}
-\define{\loadcode{block}}{```{.python}
-\block
-```}
-\define{\helpercode{block}}{```{.python}
-\block
-```}
-\define{\code{block}}{```{.python}
-\block
-```}
-\define{\matlabcode{block}}{```{.matlab}
-\block
-```}
-
-\define{\slidesmall{block}}{\block}
-\define{\aligncenter{block}}{<center>\block</center>}
-\define{\alignright{block}}{<span align="right">\block</span>}
-\define{\alignleft{block}}{<span align="left">\block</span>}
-\define{\largetext{block}}{<large>\block</large>}
-\define{\smalltext{block}}{<small>\block</small>}
-\define{\coloryellow{block}}{\block}
-\define{\colorcyan{block}}{\block}
-\define{\colormagenta{block}}{\block}
-\define{\colorgreen{block}}{\block}
-\define{\colorred{block}}{\block}
-\define{\colorblue{block}}{\block}
-
-\define{\columns{one}{two}{width1}{width2}}{<table><tr><td width="\width1">\one</td><td width="\width2">\two</td></tr></table>}
-
-\else
 \ifdef{notes}
 \define{\includegooglebook{id}{page}}{[![](../slides/diagrams/books/\id-\page.png)](https://play.google.com/books/reader?id=\id&pg=PA\page)}
 \define{\includeyoutube{id}{width}{height}{time}}{[![](https://img.youtube.com/vi/\id/0.jpg)](https://www.youtube.com/watch?v=\id&t=\time)}
@@ -183,7 +209,6 @@ YouTubeVideo('\id')
 }
 
 \define{\section{text}}{## \text}
-\define{\talksdir}{/Users/neil/lawrennd/talks}
 
 \define{\code{block}}{```{.python}
 \block
@@ -191,19 +216,19 @@ YouTubeVideo('\id')
 \define{\helpercode{block}}{```{.python}
 \block
 ```}
-\define{\plotcode{block}}{```{.python}
-\block
-```}
+\define{\displaycode{block}}{}
+\define{\plotcode{block}}{}
+\define{\setupplotcode{block}}{}
 \define{\matlabcode{block}}{```{.matlab}
 \block
 ```}
 \define{\setupcode{block}}{```{.python}
 \block
 ```}
-\define{\loadcode{block}}{```{.python}
-\block
+
+\define{\loadcode{object}{file}}{```{.python}
+from \file import \object
 ```}
-\define{\displaycode{block}}{}
 \define{\notesfigure{block}}{\block}
 \define{\caption{block}}{<center>*\block *</center>}
 \define{\slidesmall{block}}{\block}
@@ -221,7 +246,8 @@ YouTubeVideo('\id')
 
 \define{\columns{one}{two}{width1}{width2}}{<table><tr><td width="\width1">\one</td><td width="\width2">\two</td></tr></table>}
 
-\else
+\else % not notes
+
 \define{\includegooglebook{id}{page}}{<iframe frameborder="0" scrolling="no" style="border:0px" src='http://books.google.co.uk/books?id=\id&pg=PA\page&output=embed', width=700 height=500></iframe>}
 \define{\includeyoutube{id}{width}{height}{time}}{<iframe width="\width" height="\height" src="https://www.youtube.com/embed/\id?start=\time" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>}
 \define{\includempfour{filename}{width}{height}}{<video width="\width" height="\height" controls preload="none">
@@ -269,6 +295,7 @@ showDivs(\start, '\group');
 \define{\code{block}}{}
 \define{\matlabcode{block}}{}
 \define{\setupcode{block}}{}
+\define{\setupplotcode{block}}{}
 \define{\loadcode{block}}{}
 \define{\helpercode{block}}{}
 \define{\plotcode{block}}{}
@@ -291,5 +318,6 @@ showDivs(\start, '\group');
 \define{\columns{one}{two}{width1}{width2}}{<table><tr><td width="\width1">\one</td><td width="\width2">\two</td></tr></table>}
 
 \endif
+
 \endif
 

@@ -1,7 +1,14 @@
 ---
 layout: lectures
 title: "Probabilistic Classification: Naive Bayes"
-author: Neil D. Lawrence
+author: 
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
+  institute: Amazon Cambridge and University of Sheffield
+  twitter: lawrennd
+  url: http://inverseprobability.com
+venue: University of Sheffield
 date: 2015-11-24
 abstract: In the last lecture we looked at unsupervised learning. We introduced latent variables, dimensionality reduction and clustering. In this lecture we're going to look at clustering, specifically the probabilistic approach to clustering. We'll focus on a simple but often effective algorithm known as *naive Bayes*.
 transition: None
