@@ -12,6 +12,8 @@
 Build a Deep GP with an additional hidden layer (one dimensional) to fit the model.
 }
 
+\setupcode{import GPy
+import deepgp}
 \code{hidden = 1
 m = deepgp.DeepGP([y.shape[1],hidden,x.shape[1]],Y=yhat, X=x, inits=['PCA','PCA'], 
                   kernels=[GPy.kern.RBF(hidden,ARD=True),
@@ -28,6 +30,9 @@ Sometimes, deep Gaussian processes can find a local minima which involves increa
 Let's create a helper function to initialize the models we use in the notebook.
 }
 
+\setupcode{import numpy as np
+import GPy
+import deepgp}
 \helpercode{def initialize(self, noise_factor=0.01, linear_factor=1):
     """Helper function for deep model initialization."""
     self.obslayer.likelihood.variance = self.Y.var()*noise_factor
@@ -52,24 +57,21 @@ deepgp.DeepGP.initialize=initialize}
 m.initialize()}
 
 \notes{Now optimize the model. The first stage of optimization is working on variational parameters and lengthscales only. 
-```
-m.optimize(messages=False,max_iters=100)
-```
+
+\code{m.optimize(messages=False,max_iters=100)}
 
 Now we remove the constraints on the scale of the covariance functions associated with each GP and optimize again.
-```
-for layer in m.layers:
+
+\code{for layer in m.layers:
     pass #layer.kern.variance.constrain_positive(warning=False)
 m.obslayer.kern.variance.constrain_positive(warning=False)
-m.optimize(messages=False,max_iters=100)
-```
+m.optimize(messages=False,max_iters=100)}
 
 Finally, we allow the noise variance to change and optimize for a large number of iterations.
-```
-for layer in m.layers:
+
+\code{for layer in m.layers:
     layer.likelihood.variance.constrain_positive(warning=False)
-m.optimize(messages=True,max_iters=10000)
-```
+m.optimize(messages=True,max_iters=10000)}
 
 For our optimization process we define a new function.}
 
@@ -108,7 +110,8 @@ deepgp.DeepGP.staged_optimize=staged_optimize}
 The prediction of the deep GP can be extracted in a similar way to the normal GP. Although, in this case, it is an approximation to the true distribution, because the true distribution is not Gaussian. 
 }
 
-\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+\setupcode{import matplotlib.pyplot as plt}
+\code{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot.model_output(m, scale=scale, offset=offset, ax=ax, xlabel='year', ylabel='pace min/km', 
           fontsize=20, portion=0.2)
 ax.set_xlim(xlim)
@@ -214,8 +217,8 @@ deepgp.DeepGP.visualize=visualize}
             diagrams='../slides/diagrams/deepgp')}
 
 
-\displaycode{import pods
-pods.notebook.display_plots('olympic-marathon-deep-gp-layer-{sample:0>1}.svg', 
+\setupplotcode{import pods}
+\displaycode{pods.notebook.display_plots('olympic-marathon-deep-gp-layer-{sample:0>1}.svg', 
                             '../slides/diagrams/deepgp', sample=(0,1))}
 
 \slides{
@@ -230,9 +233,9 @@ pods.notebook.display_plots('olympic-marathon-deep-gp-layer-{sample:0>1}.svg',
 \helpercode{def scale_data(x, portion):     
     scale = (x.max()-x.min())/(1-2*portion)
     offset = x.min() - portion*scale
-    return (x-offset)/scale, scale, offset
+    return (x-offset)/scale, scale, offset}
 
-def visualize_pinball(self, ax=None, scale=1.0, offset=0.0, xlabel='input', ylabel='output', 
+\helpercode{def visualize_pinball(self, ax=None, scale=1.0, offset=0.0, xlabel='input', ylabel='output', 
                   xlim=None, ylim=None, fontsize=20, portion=0.2, points=50, vertical=True):
     """Visualize the layers in a deep GP with one-d input and output."""
 
