@@ -1,6 +1,6 @@
-\slides{### 
+\newslide{}
 
-\includeimg{../slides/diagrams/laplacesDeterminismFrench.png}{60%}{}{center}}
+\includegooglebook{1YQPAAAAQAAJ}{PR17-IA2}
 
 \notes{Famously, Laplace considered the idea of a deterministic Universe, one in which the model is *known*, or as the below translation refers to it, "an intelligence which could comprehend all the forces by which nature is animated". He speculates on an "intelligence" that can submit this vast data to analysis and propsoses that such an entity would be able to predict the future.
 
@@ -9,7 +9,7 @@
 \notes{This notion is known as *Laplace's demon* or *Laplace's superman*.}
 
 
-\slides{### 
+\newslide{}
 
 \includeimg{../slides/diagrams/laplacesDeterminismEnglish.png}{60%}{}{center}}
 
@@ -20,7 +20,11 @@
 >
 > Probability is relative, in part to this ignorance, in part to our knowledge.}
 
-\slides{### 
+\newslide{}
+
+\includegooglebook{1YQPAAAAQAAJ}{PR17-IA4}
+
+\newslide{}
 
 \includeimg{../slides/diagrams/philosophicaless00lapliala.png}{60%}{}{center}}
 
