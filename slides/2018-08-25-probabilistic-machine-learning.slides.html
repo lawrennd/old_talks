@@ -897,7 +897,10 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatr
 <li>The portion of red balls is given by <span class="math inline">\(\pi\)</span>.</li>
 <li>For this reason in Bernoulli’s distribution there is <em>epistemic</em> uncertainty about the distribution parameter.</li>
 </ul>
-<iframe frameborder="0" scrolling="no" style="border:0px" src="http://books.google.co.uk/books?id=CF4UAAAAQAAJ&amp;pg=PAPA87&amp;output=embed" , width="700" height="500">
+</section>
+<section id="section-2" class="slide level3">
+<h3></h3>
+<iframe frameborder="0" scrolling="no" style="border:0px" src="http://books.google.co.uk/books?id=CF4UAAAAQAAJ&amp;pg=PA87&amp;output=embed" , width="700" height="500">
 </iframe>
 </section>
 <section id="jacob-bernoullis-bernoulli-1" class="slide level3">
@@ -1144,10 +1147,9 @@ j})^2}{\dataStd_{\dataScalar_i,j}^2}\right),
 </section>
 <section id="laplace-smoothing" class="slide level3">
 <h3>Laplace Smoothing</h3>
-<p>Before we proceed, let’s just pause and think for a moment what will happen if <code>theta</code> here is either zero or one. This will result in <span class="math inline">\(\log 0 = -\infty\)</span> and cause numerical problems. This definitely can happen in practice. If some of the features are rare or very common across the data set then the maximum likelihood solution could find values of zero or one respectively. Such values are problematic because they cause posterior probabilities of class membership of either one or zero. In practice we deal with this using <em>Laplace smoothing</em> (which actually has an interpretation as a Bayesian fit of the Bernoulli distribution. Laplace used an example of the sun rising each day, and a wish to predict the sun rise the following day to describe his idea of smoothing, which can be found at the bottom of following page from Laplace’s ‘Essai Philosophique …’}</p>
-<iframe frameborder="0" scrolling="no" style="border:0px" src="http://books.google.co.uk/books?id=1YQPAAAAQAAJ&amp;pg=PAPA16&amp;output=embed" , width="700" height="500">
+<iframe frameborder="0" scrolling="no" style="border:0px" src="http://books.google.co.uk/books?id=1YQPAAAAQAAJ&amp;pg=PA16&amp;output=embed" , width="700" height="500">
 </iframe>
-<p>Laplace suggests that when computing the probability of an event where a success or failure is rare (he uses an example of the sun rising across the last 5,000 years or 1,826,213 days) that even though only successes have been observed (in the sun rising case) that the odds for tomorrow shouldn’t be given as <span class="math display">\[
+<p>{ Laplace suggests that when computing the probability of an event where a success or failure is rare (he uses an example of the sun rising across the last 5,000 years or 1,826,213 days) that even though only successes have been observed (in the sun rising case) that the odds for tomorrow shouldn’t be given as <span class="math display">\[
 \frac{1,826,213}{1,826,213} = 1
 \]</span> but rather by adding one to the numerator and two to the denominator, <span class="math display">\[
 \frac{1,826,213 + 1}{1,826,213 + 2} = 0.99999945.
