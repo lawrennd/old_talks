@@ -45,5 +45,5 @@ and we can derive the gradient with respect to the parameter $\pi$.}
 
 \notes{so in other words we estimate the probability associated with the Bernoulli by setting it to the number of observed positives, divided by the total length of $\dataScalar$. This makes intiutive sense. If I asked you to estimate the probability of a coin being heads, and you tossed the coin 100 times, and recovered 47 heads, then the estimate of the probability of heads should be $\frac{47}{100}$.}
 
-\exercise{Show that the maximume likelihood solution we have found is a *minimum* for our objective.}
+\exercise{Show that the maximum likelihood solution we have found is a *minimum* for our objective.}
 
