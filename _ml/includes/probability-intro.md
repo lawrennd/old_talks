@@ -32,12 +32,21 @@ In practice we never get to observe an event infinite
 times, so rather than considering this we often use the following estimate
 $$
 P(Y=y) \approx \frac{n_y}{N}.
-$$
-Let's use this rule to compute the approximate
+$$}
+
+\notes{### Movie Body Count Data
+
+To explore probabilities, we'll load in a data set. The movie body count data is a data set of movies with a number of deaths that occurs in each movie. But in practice it could be a data set of regions, with deaths from a particular disease. We can load it through the pods library.}
+
+\setupcode{import pods}
+\code{data = pods.datasets.movie_body_count()['Y']
+data.head()}
+
+Let's use the sum rule to compute the approximate
 probability that a film from the movie body count website has over 40 deaths.}
 
-\code{deaths = (film_deaths.Body_Count>40).sum()  # number of positive outcomes (in sum True counts as 1, False counts as 0)
-total_films = film_deaths.Body_Count.count()
+\code{deaths = (data.Body_Count>40).sum()  # number of positive outcomes (in sum True counts as 1, False counts as 0)
+total_films = data.Body_Count.count()
 
 prob_death = float(deaths)/float(total_films)
 print("Probability of deaths being greather than 40 is:", prob_death)}
@@ -69,24 +78,21 @@ year. For this we can try estimating $P(Y>40 | T=2000)$ and compare the result,
 for example to $P(Y>40|2002)$ using our empirical estimate of the probability.}
 
 \code{for year in [2000, 2002]:
-    deaths = (film_deaths.Body_Count[film_deaths.Year==year]>40).sum()
-    total_films = (film_deaths.Year==year).sum()
+    deaths = (data.Body_Count[data.Year==year]>40).sum()
+    total_films = (data.Year==year).sum()
 
     prob_death = float(deaths)/float(total_films)
     print("Probability of deaths being greather than 40 in year", year, "is:", prob_death)}
 
 \codeassignment{Compute the probability for the number of deaths
-being over 40 for each year we have in our `film_deaths` data frame. Store the
+being over 40 for each year we have in our `data` data frame. Store the
 result in a `numpy` array and plot the probabilities against the years using the
 `plot` command from `matplotlib`. Do you think the estimate we have created of
 $P(y|t)$ is a good estimate? Write your code and your written answers in the box
 below.}{5}{20}
 
-#### Question 5 Answer Text
 
-\notes{Write your answer to the question in this box.}
-
-#### Notes for Question 5
+#### Notes for Question 
 
 \notes{Make sure the plot is included in *this* notebook
 file (the `IPython` magic command `%matplotlib inline` we ran above will do that
@@ -123,11 +129,11 @@ conditional | $P(X=x\vert Y=y)$ | prob. that X=x *given that* Y=y
 
 ### Definition of probability distributions.
 
-      Terminology        |              Definition                                |      Probability Notation
--------------------------|--------------------------------------------------------|------------------------------
-  Joint Probability      | $\lim_{N\rightarrow\infty}\frac{n_{X=3,Y=4}}{N}$       | $P\left(X=3,Y=4\right)$
-  Marginal Probability   | $\lim_{N\rightarrow\infty}\frac{n_{X=5}}{N}$           | $P\left(X=5\right)$
- Conditional Probability | $\lim_{N\rightarrow\infty}\frac{n_{X=3,Y=4}}{n_{Y=4}}$ | $P\left(X=3\vert Y=4\right)$
+Terminology       |              Definition                  |      Probability Notation
+------------------|------------------------------------------|------------------------------
+Joint Probability | $\lim_{N\rightarrow\infty}\frac{n_{X=3,Y=4}}{N}$ | $P\left(X=3,Y=4\right)$ 
+Marginal Probability |  $\lim_{N\rightarrow\infty}\frac{n_{X=5}}{N}$ | $P\left(X=5\right)$
+Conditional Probability | $\lim_{N\rightarrow\infty}\frac{n_{X=3,Y=4}}{n_{Y=4}}$ | $P\left(X=3\vert Y=4\right)$
  
 
 ### Notational Details
@@ -163,8 +169,8 @@ Sometimes I think of this as akin to the way in Python we can write 'keyword arg
 \notes{We've now introduced conditioning and independence to the notion of probability and computed some conditional probabilities on a practical example The scatter plot of deaths vs year that we created above can be seen as a *joint* probability distribution. We represent a joint probability using the notation $P(Y=y, T=t)$ or $P(y, t)$ for short. Computing a joint probability is equivalent to answering the simultaneous questions, what's the probability that the number of deaths was over 40 and the year was 2002? Or any other question that may occur to us. Again we can easily use pandas to ask such questions.}
 
 \code{year = 2000
-deaths = (film_deaths.Body_Count[film_deaths.Year==year]>40).sum()
-total_films = film_deaths.Body_Count.count() # this is total number of films
+deaths = (data.Body_Count[data.Year==year]>40).sum()
+total_films = data.Body_Count.count() # this is total number of films
 prob_death = float(deaths)/float(total_films)
 print("Probability of deaths being greather than 40 and year being", year, "is:", prob_death)}
 
@@ -213,9 +219,9 @@ We can see the
 relation working in practice for our data above by computing the different
 values for $t=2000$.}
 
-\code{p_x = float((film_deaths.Year==2002).sum())/float(film_deaths.Body_Count.count())
-p_y_given_x = float((film_deaths.Body_Count[film_deaths.Year==2002]>40).sum())/float((film_deaths.Year==2002).sum())
-p_y_and_x = float((film_deaths.Body_Count[film_deaths.Year==2002]>40).sum())/float(film_deaths.Body_Count.count())
+\code{p_x = float((data.Year==2002).sum())/float(data.Body_Count.count())
+p_y_given_x = float((data.Body_Count[data.Year==2002]>40).sum())/float((data.Year==2002).sum())
+p_y_and_x = float((data.Body_Count[data.Year==2002]>40).sum())/float(data.Body_Count.count())
 
 print("P(x) is", p_x)
 print("P(y|x) is", p_y_given_x)
