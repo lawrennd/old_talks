@@ -71,7 +71,7 @@ values for which the data series is `True`. We can also sort the result. To sort
 the result by the values in the `Kill_Count` column in *descending* order we use
 the following command.}
 
-\code{data[data['Body_Count']>200].sort(columns='Body_Count', ascending=False)}
+\code{data[data['Body_Count']>200].sort_values(by='Body_Count', ascending=False)}
 
 \notes{We now see that the 'Lord of the Rings' is a large outlier with a very large number of kills. We can try and determine how much of an outlier by histograming the data.}
 

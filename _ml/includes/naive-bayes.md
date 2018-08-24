@@ -184,11 +184,11 @@ data.head()}
 \setupcode{import pandas as pd
 import numpy as np}
 
-\code{X = data[['Year', 'Body_Count']]
+\code{X = data[['Year', 'Body_Count']].copy()
 y = data['MPAA_Rating']=='R' # set label to be positive for R rated films.
 
 # Create series of movie genres with the relevant index
-s = data['Genre'].str.split('|').apply(pd.Series, 1).stack() 
+s = data['Genre'].apply(pd.Series, 1).stack() 
 s.index = s.index.droplevel(-1) # to line up with df's index
 
 # Extract from the series the unique list of genres.
@@ -197,8 +197,8 @@ genres = s.unique()
 # For each genre extract the indices where it is present and add a column to X
 for genre in genres:
     index = s[s==genre].index.tolist()
-    X[genre] = np.zeros(X.shape[0])
-    X[genre][index] = np.ones(len(index))}
+    X.loc[:, genre] = 0.0 
+    X.loc[index, genre] = 1.0}
 
 \notes{This has given us a new data frame `X` which contains the different genres in different columns.}
 
@@ -247,7 +247,7 @@ The final model parameter is the prior probability of the positive class, $\pi$,
 \code{prior = float(y_train.sum())/len(y_train)}
 
 \newslide{Compute Posterior for Test Point Label}
-
+\slides{
 * We know that
   $$
   P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector)p(\dataVector,\inputMatrix, \inputVector^*|\paramVector) = p(\dataScalar*, \dataVector, \inputMatrix,\inputVector^*| \paramVector)
@@ -256,9 +256,9 @@ The final model parameter is the prior probability of the positive class, $\pi$,
   $$
   P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector) = \frac{p(\dataScalar*, \dataVector, \inputMatrix, \inputVector^*| \paramVector)}{p(\dataVector, \inputMatrix, \inputVector^*|\paramVector)}
   $$
-
+}
 \newslide{Compute Posterior for Test Point Label}
-
+\slides{
 * From conditional independence assumptions
   $$
   p(\dataScalar^*, \dataVector, \inputMatrix, \inputVector^*| \paramVector) = \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)
@@ -272,9 +272,9 @@ found from $$p(\dataScalar^*, \dataVector, \inputMatrix, \inputVector^*| \paramV
   $$
   p(\dataVector, \inputMatrix, \inputVector^*|\paramVector) = \sum_{\dataScalar^*=0}^1 p(\dataScalar^*, \dataVector, \inputMatrix, \inputVector^*| \paramVector).
   $$
-
+}
 \newslide{Independence Assumptions}
-
+\slides{
 * From independence assumptions
   $$
   p(\dataVector, \inputMatrix, \inputVector^*| \paramVector) = \sum_{\dataScalar^*=0}^1 \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi).
@@ -283,15 +283,15 @@ found from $$p(\dataScalar^*, \dataVector, \inputMatrix, \inputVector^*| \paramV
   $$
   P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector)  = \frac{\prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)}{\sum_{\dataScalar^*=0}^1 \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)}
   $$
-
+}
 \newslide{Cancelation}
-
+\slides{
 * Note training data terms cancel.
   $$
   p(\dataScalar^*| \inputVector^*, \paramVector) = \frac{\prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)}{\sum_{\dataScalar^*=0}^1 \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)}
   $$
 * This formula is also fairly straightforward to implement for different class conditional distributions.
-
+}
 \notes{
 ### Making Predictions
 
@@ -392,17 +392,17 @@ Now we are in a position to make the predictions for the test data.
 
 We can test the quality of the predictions in the following way. Firstly, we can threshold our probabilities at 0.5, allocating points with greater than 50% probability of membership of the positive class to the positive class. We can then compare to the true values, and see how many of these values we got correct. This is our total number correct.
 
-\code{correct = y_test & p_y>0.5
+\code{correct = y_test.eq(p_y>0.5)
 total_correct = sum(correct)
 print("Total correct", total_correct, " out of ", len(y_test), "which is", float(total_correct)/len(y_test), "%")}
 
 We can also now plot the [confusion matrix](http://en.wikipedia.org/wiki/Confusion_matrix). A confusion matrix tells us where we are making mistakes. Along the diagonal it stores the *true positives*, the points that were positive class that we classified correctly, and the *true negatives*, the points that were negative class and that we classified correctly. The off diagonal terms contain the false positives and the false negatives. Along the rows of the matrix we place the actual class, and along the columns we place our predicted class.
 
 \code{confusion_matrix = pd.DataFrame(data=np.zeros((2,2)), 
-                                columns=['predicted R-rated', 'predicted not R-rated'],
-                                index =['actual R-rated', 'actual not R-rated'])
-confusion_matrix['predicted R-rated']['actual R-rated'] = (y_test & p_y>0.5).sum()
-confusion_matrix['predicted R-rated']['actual not R-rated'] = (~y_test & p_y>0.5).sum()
+                                columns=['predicted not R-rated', 'predicted R-rated'],
+                                index =['actual not R-rated','actual R-rated'])
+confusion_matrix['predicted R-rated']['actual R-rated'] = (y_test & (p_y>0.5)).sum()
+confusion_matrix['predicted R-rated']['actual not R-rated'] = (~y_test & (p_y>0.5)).sum()
 confusion_matrix['predicted not R-rated']['actual R-rated'] = (y_test & ~(p_y>0.5)).sum()
 confusion_matrix['predicted not R-rated']['actual not R-rated'] = (~y_test & ~(p_y>0.5)).sum()
 confusion_matrix}
