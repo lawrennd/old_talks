@@ -2,7 +2,7 @@
 
 \notes{In probabilistic machine learning we place probability distributions (or densities) over all the variables of interest, our first classification algorithm will do just that. We will consider how to form a classification by making assumptions about the *joint* density of our observations. We need to make assumptions to reduce the number of parameters we need to optimise.}\slides{
 * Probabilistic Machine Learning: place probability distributions (or densities) over all the variables of interest.
-* In Naive Bayes this is exactly what we do.}
+* In *naive Bayes* this is exactly what we do.}
 
 \notes{In the ideal world, given label data $\dataVector$ and the inputs $\inputMatrix$ we should be able to specify the joint density of all potential values of $\dataVector$ and $\inputMatrix$, $p(\dataVector, \inputMatrix)$.  If $\inputMatrix$ and $\dataVector$ are our training data, and we can somehow extend our density to incorporate future test data (by augmenting $\dataVector$ with a new observation $\dataScalar^*$ and $\inputMatrix$ with the corresponding inputs, $\inputVector^*$), then we can answer any given question about a future test point $\dataScalar^*$ given its covariates $\inputVector^*$ by conditioning on the training variables to recover,
 $$
@@ -35,7 +35,7 @@ and $\inputMatrix$, $p(\dataVector, \inputMatrix)$.
 
 \newslide{Naive Bayes Assumptions}
 
-\slides{* In naive Bayes we make certain simplifying assumptions that allow us to perform all of the above in practice. 
+\slides{* In *naive Bayes* we make certain simplifying assumptions that allow us to perform all of the above in practice. 
 1. Data Conditional Independence
 2. Feature conditional independence
 3. Marginal density for $\dataScalar$.}
@@ -61,10 +61,12 @@ Computing posterior distribution in this case becomes easier, this is known as t
 
 ### Feature Conditional Independence
 
+\notes{
 $$
 p(\inputVector_i | \dataScalar_i, \paramVector) = \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)
 $$
 where $\dataDim$ is the dimensionality of our inputs.
+}
 
 \notes{The assumption that is particular to naive Bayes is to now consider that the *features* are also conditionally independent, but not only given the parameters. We assume that the features are independent given the parameters *and* the label. So for each data point we have}\slides{
 * Particular to naive Bayes: assume *features* are also conditionally independent, given param *and* the label.}
@@ -76,9 +78,11 @@ where $\dataDim$ is the dimensionality of our inputs.
 
 ### Marginal Density for $\dataScalar_i$
 
+\notes{
 $$
 p(\inputScalar_{i,j},\dataScalar_i| \paramVector) = p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i).
 $$
+}
 
 \notes{We now have nearly all of the components we need to specify the full joint density. However, the feature conditional independence doesn't yet give us the joint density over $p(\dataScalar_i, \inputVector_i)$ which is required to subsitute in to our data conditional independence to give us the full density. To recover the joint density given the conditional distribution of each feature, $p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)$, we need to make use of the product rule and combine it with a marginal density for $\dataScalar_i$,
 }\slides{
@@ -96,11 +100,12 @@ $$
   $$
   p(\dataVector, \inputMatrix|\paramVector, \pi) = \prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)
   $$
-\slides{  which can now be fit by maximum likelihood.}
+\slides{which can now be fit by maximum likelihood.}
 \notes{which can now be fit by maximum likelihood. As normal we form our objective as the negative log likelihood,}
-$$
-\errorFunction(\paramVector, \pi) = -\log p(\dataVector, \inputMatrix|\paramVector, \pi) = -\sum_{i=1}^{\numData} \sum_{j=1}^{\dataDim} \log p(\inputScalar_{i, j}|\dataScalar_i, \paramVector) - \sum_{i=1}^{\numData} \log p(\dataScalar_i|\pi),
-$$
+\newslide{Objective Function}
+$$\begin{align*}
+\errorFunction(\paramVector, \pi)& =  -\log p(\dataVector, \inputMatrix|\paramVector, \pi) \\ &= -\sum_{i=1}^{\numData} \sum_{j=1}^{\dataDim} \log p(\inputScalar_{i, j}|\dataScalar_i, \paramVector) -  \sum_{i=1}^{\numData} \log p(\dataScalar_i|\pi),
+\end{align*}$$
 \notes{which we note *decomposes* into two objective functions, one which is dependent on $\pi$ alone and one which is dependent on $\paramVector$ alone so we have,
 $$
 \errorFunction(\pi, \paramVector) = \errorFunction(\paramVector) + \errorFunction(\pi).
@@ -139,9 +144,9 @@ $$}
 \newslide{Fit Prior}
 \slides{
 * We can minimize prior. For Bernoulli likelihood over the labels we have, 
-  $$
-  \errorFunction(\pi) = - \sum_{i=1}^{\numData}\log p(\dataScalar_i|\pi) = -\sum_{i=1}^{\numData} \dataScalar_i \log \pi - \sum_{i=1}^{\numData} (1-\dataScalar_i) \log (1-\pi)
-  $$
+  $$\begin{align*}
+  \errorFunction(\pi) & = - \sum_{i=1}^{\numData}\log p(\dataScalar_i|\pi)\\ & = -\sum_{i=1}^{\numData} \dataScalar_i \log \pi - \sum_{i=1}^{\numData} (1-\dataScalar_i) \log (1-\pi)
+  \end{align*}$$
 * Solution from above is 
   $$
   \pi = \frac{\sum_{i=1}^{\numData} \dataScalar_i}{\numData}.
@@ -242,7 +247,7 @@ y_test = y.loc[test_indices]}
 
 \code{Gaussian}
 
-The final model parameter is the prior probability of the positive class, $\pi$, which is computed by maximum likelihood.
+\notes{The final model parameter is the prior probability of the positive class, $\pi$, which is computed by maximum likelihood.}
 
 \code{prior = float(y_train.sum())/len(y_train)}
 
@@ -359,11 +364,11 @@ but rather by adding one to the numerator and two to the denominator,
 $$
 \frac{1,826,213 + 1}{1,826,213 + 2} = 0.99999945.
 $$
-This technique is sometimes called a 'pseudocount technique' because it has an intepretation of assuming some observations before you start, it's as if instead of observing $\sum_{i}\dataScalar_i$ successes you have an additional success, $\sum_{i}\dataScalar_i + 1$ and instead of having observed $n$ events you've observed $\numData + 2$. So we can think of Laplace's idea saying (before we start) that we have 'two observations worth of belief, that the odds are 50/50', because before we start (i.e. when $\numData=0$) our estimate is 0.5, yet because the effective $n$ is only 2, this estimate is quickly overwhelmed by data. Laplace used ideas like this a lot, and it is known as his 'principle of insufficient reason'. His idea was that in the absence of knowledge (i.e. before we start) we should assume that all possible outcomes are equally likely. This idea has a modern counterpart, known as the [principle of maximum entropy](http://en.wikipedia.org/wiki/Principle_of_maximum_entropy). A lot of the theory of this approach was developed by [Ed Jaynes](http://en.wikipedia.org/wiki/Edwin_Thompson_Jaynes), who according to his erstwhile collaborator and friend, John Skilling, learnt French as an undergraduate by reading the works of Laplace. Although John also related that Jaynes's spoken French was not up to the standard of his scientific French. For me Ed Jaynes's work very much carries on the tradition of Laplace into the modern era, in particular his focus on Bayesian approaches. I'm very proud to have met those that knew and worked with him. It turns out that Laplace's idea also has a Bayesian interpretation (as Laplace understood), it comes from assuming a particular prior density for the parameter $\pi$, but we won't explore that interpretation for the moment, and merely choose to estimate the probability as,
+This technique is sometimes called a 'pseudocount technique' because it has an intepretation of assuming some observations before you start, it's as if instead of observing $\sum_{i}\dataScalar_i$ successes you have an additional success, $\sum_{i}\dataScalar_i + 1$ and instead of having observed $n$ events you've observed $\numData + 2$. So we can think of Laplace's idea saying (before we start) that we have 'two observations worth of belief, that the odds are 50/50', because before we start (i.e. when $\numData=0$) our estimate is 0.5, yet because the effective $n$ is only 2, this estimate is quickly overwhelmed by data. Laplace used ideas like this a lot, and it is known as his 'principle of insufficient reason'. His idea was that in the absence of knowledge (i.e. before we start) we should assume that all possible outcomes are equally likely. This idea has a modern counterpart, known as the [principle of maximum entropy](http://en.wikipedia.org/wiki/Principle_of_maximum_entropy). A lot of the theory of this approach was developed by [Ed Jaynes](http://en.wikipedia.org/wiki/Edwin_Thompson_Jaynes), who according to his erstwhile collaborator and friend, John Skilling, learnt French as an undergraduate by reading the works of Laplace. Although John also related that Jaynes's spoken French was not up to the standard of his scientific French. For me Ed Jaynes's work very much carries on the tradition of Laplace into the modern era, in particular his focus on Bayesian approaches. I'm very proud to have met those that knew and worked with him. It turns out that Laplace's idea also has a Bayesian interpretation (as Laplace understood), it comes from assuming a particular prior density for the parameter $\pi$, but we won't explore that interpretation for the moment, and merely choose to estimate the probability as,}\newslide{Pseudo Counts}
 $$
 \pi = \frac{\sum_{i=1}^{\numData} \dataScalar_i + 1}{\numData + 2}
 $$
-to prevent problems with certainty causing numerical issues and misclassifications. Let's refit the Bernoulli features now.
+\notes{to prevent problems with certainty causing numerical issues and misclassifications. Let's refit the Bernoulli features now.}
 
 \code{# fit the Bernoulli with Laplace smoothing.
 for column in X_train:
@@ -371,7 +376,7 @@ for column in X_train:
         Bernoulli[column]['theta_0'] = (X_train[column][~y].sum() + 1)/((~y).sum() + 2)
         Bernoulli[column]['theta_1'] = (X_train[column][y].sum() + 1)/((y).sum() + 2)}
 
-That places us in a position to write the prediction function.
+\notes{That places us in a position to write the prediction function.}
 
 \code{def predict(X_test, Gaussian, Bernoulli, prior):
     log_positive = pd.Series(data = np.zeros(X_test.shape[0]), index=X_test.index)
@@ -386,17 +391,17 @@ That places us in a position to write the prediction function.
             
     return np.exp(log_positive + np.log(prior))/(np.exp(log_positive + np.log(prior)) + np.exp(log_negative + np.log(1-prior)))}
 
-Now we are in a position to make the predictions for the test data.
+\notes{Now we are in a position to make the predictions for the test data.}
 
 \code{p_y = predict(X_test, Gaussian, Bernoulli, prior)}
 
-We can test the quality of the predictions in the following way. Firstly, we can threshold our probabilities at 0.5, allocating points with greater than 50% probability of membership of the positive class to the positive class. We can then compare to the true values, and see how many of these values we got correct. This is our total number correct.
+\notes{We can test the quality of the predictions in the following way. Firstly, we can threshold our probabilities at 0.5, allocating points with greater than 50% probability of membership of the positive class to the positive class. We can then compare to the true values, and see how many of these values we got correct. This is our total number correct.}
 
 \code{correct = y_test.eq(p_y>0.5)
 total_correct = sum(correct)
 print("Total correct", total_correct, " out of ", len(y_test), "which is", float(total_correct)/len(y_test), "%")}
 
-We can also now plot the [confusion matrix](http://en.wikipedia.org/wiki/Confusion_matrix). A confusion matrix tells us where we are making mistakes. Along the diagonal it stores the *true positives*, the points that were positive class that we classified correctly, and the *true negatives*, the points that were negative class and that we classified correctly. The off diagonal terms contain the false positives and the false negatives. Along the rows of the matrix we place the actual class, and along the columns we place our predicted class.
+\notes{We can also now plot the [confusion matrix](http://en.wikipedia.org/wiki/Confusion_matrix). A confusion matrix tells us where we are making mistakes. Along the diagonal it stores the *true positives*, the points that were positive class that we classified correctly, and the *true negatives*, the points that were negative class and that we classified correctly. The off diagonal terms contain the false positives and the false negatives. Along the rows of the matrix we place the actual class, and along the columns we place our predicted class.}
 
 \code{confusion_matrix = pd.DataFrame(data=np.zeros((2,2)), 
                                 columns=['predicted not R-rated', 'predicted R-rated'],
@@ -411,7 +416,8 @@ confusion_matrix}
 
 \exercise{We have decided to classify positive if probability of R rating is greater than 0.5. This has led us to accidentally classify some films as 'safe for children' when the aren't in actuallity. Imagine you wish to ensure that the film is safe for children. With your test set how low do you have to set the threshold to avoid all the false negatives (i.e. films where you said it wasn't R-rated, but in actuality it was?}
 
-\newslide{Making Predictions}
+\notes{
+### Making Predictions
 
 Naive Bayes has given us the class conditional densities: $p(\inputVector_i | \dataScalar_i, \paramVector)$. To make predictions with these densities we need to form the distribution given by
 $$
@@ -447,7 +453,7 @@ p(\inputScalar_{i,j} |\dataScalar_i, \paramVector_j)\\
 $$
 which means we can minimize our objective on each feature independently. 
 
-These characteristics mean that naive Bayes scales very well with big data. To fit the model we consider each feature in turn, we select the positive class and fit parameters for that class, then we select each negative class and fit features for that class. We have code below.
+These characteristics mean that naive Bayes scales very well with big data. To fit the model we consider each feature in turn, we select the positive class and fit parameters for that class, then we select each negative class and fit features for that class. We have code below.}
 
 
 \newslide{Naive Bayes Summary}

@@ -404,8 +404,8 @@ $$
 
 <section class="slide level3">
 
-<p>% not ipynb</p>
-<p>% not notes</p>
+<p><!--% not ipynb--></p>
+<p><!--% not notes--></p>
 <!-- SECTION What is Machine Learning? -->
 </section>
 <section id="what-is-machine-learning" class="slide level3">
@@ -452,10 +452,17 @@ $$
 <li><strong>an objective function</strong> <span class="math inline">\(\errorFunction(\cdot)\)</span> defines the cost of misprediction.</li>
 </ul>
 <!-- SECTION Probabilities -->
-<!-- SECTION Conditioning -->
-<h4 id="question-5-answer-text">Question 5 Answer Text</h4>
-<h4 id="notes-for-question-5">Notes for Question 5</h4>
+<!-- SECTION Movie Body Count Example -->
 </div>
+</section>
+<section id="pods" class="slide level3">
+<h3><code>pods</code></h3>
+<p>The <code>pods</code> library is a library for supporting open data science (python open data science). It allows you to load in various data sets and provides tools for helping teach in the notebook.</p>
+<p>To install pods you can use pip:</p>
+<p><code>pip install pods</code></p>
+<p>The code is also available on github: <a href="https://github.com/sods/ods" class="uri">https://github.com/sods/ods</a></p>
+<p>Once <code>pods</code> is installed, it can be imported in the usual manner.</p>
+<!-- SECTION Conditioning -->
 </section>
 <section id="probability-review" class="slide level3">
 <h3>Probability Review</h3>
@@ -504,8 +511,37 @@ The different basic probability distributions.
 </section>
 <section id="definition-of-probability-distributions." class="slide level3">
 <h3>Definition of probability distributions.</h3>
-<pre><code>  Terminology        |              Definition                                |      Probability Notation</code></pre>
-<p>————————-|——————————————————–|—————————— Joint Probability | <span class="math inline">\(\lim_{N\rightarrow\infty}\frac{n_{X=3,Y=4}}{N}\)</span> | <span class="math inline">\(P\left(X=3,Y=4\right)\)</span> Marginal Probability | <span class="math inline">\(\lim_{N\rightarrow\infty}\frac{n_{X=5}}{N}\)</span> | <span class="math inline">\(P\left(X=5\right)\)</span> Conditional Probability | <span class="math inline">\(\lim_{N\rightarrow\infty}\frac{n_{X=3,Y=4}}{n_{Y=4}}\)</span> | <span class="math inline">\(P\left(X=3\vert Y=4\right)\)</span></p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 46%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Terminology</th>
+<th>Definition</th>
+<th>Probability Notation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Joint Probability</td>
+<td><span class="math inline">\(\lim_{N\rightarrow\infty}\frac{n_{X=3,Y=4}}{N}\)</span></td>
+<td><span class="math inline">\(P\left(X=3,Y=4\right)\)</span></td>
+</tr>
+<tr class="even">
+<td>Marginal Probability</td>
+<td><span class="math inline">\(\lim_{N\rightarrow\infty}\frac{n_{X=5}}{N}\)</span></td>
+<td><span class="math inline">\(P\left(X=5\right)\)</span></td>
+</tr>
+<tr class="odd">
+<td>Conditional Probability</td>
+<td><span class="math inline">\(\lim_{N\rightarrow\infty}\frac{n_{X=3,Y=4}}{n_{Y=4}}\)</span></td>
+<td><span class="math inline">\(P\left(X=3\vert Y=4\right)\)</span></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="notational-details" class="slide level3">
 <h3>Notational Details</h3>
@@ -667,6 +703,48 @@ P(\text{B}=1|\text{F}=\text{A}) = &amp; \frac{P(\text{F} = \text{A}|\text{B}=1)P
 <li>Second moment: <span class="math inline">\(1 \times 0.3 + 4 \times 0.2 + 9 \times 0.1 + 16 \times 0.4 = 8.4\)</span></li>
 <li>Variance: <span class="math inline">\(8.4 - 2.6\times 2.6 = 1.64\)</span></li>
 <li>Standard deviation: <span class="math inline">\(\sqrt{1.64} = 1.2806\)</span></li>
+</ul>
+</section>
+<section id="expectations-example-answer-ii" class="slide level3">
+<h3>Expectations Example: Answer II</h3>
+<ul>
+<li>We are given that:</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(y\)</span></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(P\left(y\right)\)</span></td>
+<td>0.3</td>
+<td>0.2</td>
+<td>0.1</td>
+<td>0.4</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(y^2\)</span></td>
+<td>1</td>
+<td>4</td>
+<td>9</td>
+<td>16</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(-\log(P(y))\)</span></td>
+<td>1.204</td>
+<td>1.609</td>
+<td>2.302</td>
+<td>0.916</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li>Expectation <span class="math inline">\(-\log(P(y))\)</span>: <span class="math inline">\(0.3\times 1.204 + 0.2\times 1.609 + 0.1\times 2.302 +0.4\times 0.916 = 1.280\)</span></li>
 </ul>
 </section>
@@ -700,8 +778,7 @@ P(\text{B}=1|\text{F}=\text{A}) = &amp; \frac{P(\text{F} = \text{A}|\text{B}=1)P
 </table></li>
 <li>What is the sample mean?</li>
 <li>What is the sample variance?</li>
-<li>Can you compute sample approximation expected value of <span class="math inline">\(-\log P(y)\)</span>?</li>
-<li><p>Actually these “data” were sampled from a Gaussian with mean 1.7 and standard deviation 0.15. Are your estimates close to the real values? If not why not?</p></li>
+<li><p>Can you compute sample approximation expected value of <span class="math inline">\(-\log P(y)\)</span>?</p></li>
 </ul>
 </section>
 <section id="sample-based-approximation-example-answer" class="slide level3">
@@ -748,6 +825,37 @@ P(\text{B}=1|\text{F}=\text{A}) = &amp; \frac{P(\text{F} = \text{A}|\text{B}=1)P
 <li>Variance: <span class="math inline">\(3.2055 - 1.79\times1.79 = 1.43\times 10^{-3}\)</span></li>
 <li>Standard deviation: <span class="math inline">\(0.0379\)</span></li>
 <li>No, you can’t compute it. You don’t have access to <span class="math inline">\(P(y)\)</span> directly.</li>
+</ul>
+</section>
+<section id="sample-based-approximation-example-1" class="slide level3">
+<h3>Sample Based Approximation Example</h3>
+<ul>
+<li><p>You are given the following values samples of heights of students,</p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(i\)</span></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(y_i\)</span></td>
+<td>1.76</td>
+<td>1.73</td>
+<td>1.79</td>
+<td>1.81</td>
+<td>1.85</td>
+<td>1.80</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>Actually these “data” were sampled from a Gaussian with mean 1.7 and standard deviation 0.15. Are your estimates close to the real values? If not why not?</p></li>
 </ul>
 </section>
 <section id="probabilistic-modelling" class="slide level3">
@@ -798,9 +906,6 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatr
 <li><p>Model: <span class="math inline">\(p(\dataVector, \dataVector^*)\)</span></p></li>
 <li><p>Prediction: <span class="math inline">\(p(\dataVector^*| \dataVector)\)</span></p></li>
 </ul>
-</section>
-<section id="introduce-dataset-earlier.-here" class="slide level3">
-<h3>INTRODUCE DATASET EARLIER. HERE!</h3>
 </section>
 <section id="graphical-models" class="slide level3">
 <h3>Graphical Models</h3>
@@ -868,12 +973,23 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatr
 <li>Discrete probability is in some ways easier: <span class="math inline">\(P(\dataScalar=1) = \pi\)</span> &amp; specify distribution as a table.</li>
 <li>Instead of <span class="math inline">\(\dataScalar=-1\)</span> for negative class we take <span class="math inline">\(\dataScalar=0\)</span>.</li>
 </ul>
-<p>| <span class="math inline">\(\dataScalar\)</span> | 0 | 1 | |:——:|:———:|:—–:| | <span class="math inline">\(P(\dataScalar)\)</span> | <span class="math inline">\((1-\pi)\)</span> | <span class="math inline">\(\pi\)</span> |</p>
-<ul>
-<li>Mathematically we use a trick: use <span class="math inline">\(\dataScalar\)</span> as a mathematical switch: <span class="math display">\[
-  P(\dataScalar) = \pi^\dataScalar (1-\pi)^{(1-\dataScalar)}
-  \]</span> This is the <a href="http://en.wikipedia.org/wiki/Bernoulli_distribution">Bernoulli distribution</a>.</li>
-</ul>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(\dataScalar\)</span></th>
+<th style="text-align: center;">0</th>
+<th style="text-align: center;">1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(P(\dataScalar)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\((1-\pi)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\pi\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>This is the <a href="http://en.wikipedia.org/wiki/Bernoulli_distribution">Bernoulli distribution</a>.</p>
 </section>
 <section id="mathematical-switch" class="slide level3">
 <h3>Mathematical Switch</h3>
@@ -986,7 +1102,7 @@ p(\dataVector|\pi) = \prod_{i=1}^{\numData} \pi^{\dataScalar_i} (1-\pi)^{1-\data
 <h3>Naive Bayes Classifiers</h3>
 <ul>
 <li>Probabilistic Machine Learning: place probability distributions (or densities) over all the variables of interest.</li>
-<li><p>In Naive Bayes this is exactly what we do.</p></li>
+<li><p>In <em>naive Bayes</em> this is exactly what we do.</p></li>
 <li><p>Form a classification algorithm by modelling the <em>joint</em> density of our observations.</p></li>
 <li><p>Need to make assumption about joint density.</p></li>
 </ul>
@@ -1015,7 +1131,7 @@ p(\dataVector|\pi) = \prod_{i=1}^{\numData} \pi^{\dataScalar_i} (1-\pi)^{1-\data
 <section id="naive-bayes-assumptions" class="slide level3">
 <h3>Naive Bayes Assumptions</h3>
 <ul>
-<li>In naive Bayes we make certain simplifying assumptions that allow us to perform all of the above in practice.</li>
+<li>In <em>naive Bayes</em> we make certain simplifying assumptions that allow us to perform all of the above in practice.</li>
 </ul>
 <ol type="1">
 <li>Data Conditional Independence</li>
@@ -1040,9 +1156,6 @@ p(\dataVector|\pi) = \prod_{i=1}^{\numData} \pi^{\dataScalar_i} (1-\pi)^{1-\data
 </section>
 <section id="feature-conditional-independence" class="slide level3">
 <h3>Feature Conditional Independence</h3>
-<p><span class="math display">\[
-p(\inputVector_i | \dataScalar_i, \paramVector) = \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)
-\]</span> where <span class="math inline">\(\dataDim\)</span> is the dimensionality of our inputs.</p>
 <ul>
 <li>Particular to naive Bayes: assume <em>features</em> are also conditionally independent, given param <em>and</em> the label. <span class="math display">\[p(\inputVector_i | \dataScalar_i, \paramVector) = \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i,\paramVector)\]</span> where <span class="math inline">\(\dataDim\)</span> is the dimensionality of our inputs.</li>
 <li>This is known as the <em>naive Bayes</em> assumption.</li>
@@ -1051,9 +1164,6 @@ p(\inputVector_i | \dataScalar_i, \paramVector) = \prod_{j=1}^{\dataDim} p(\inpu
 </section>
 <section id="marginal-density-for-datascalar_i" class="slide level3">
 <h3>Marginal Density for <span class="math inline">\(\dataScalar_i\)</span></h3>
-<p><span class="math display">\[
-p(\inputScalar_{i,j},\dataScalar_i| \paramVector) = p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i).
-\]</span></p>
 <ul>
 <li><p>To specify the joint distribution we also need the marginal for <span class="math inline">\(p(\dataScalar_i)\)</span> <span class="math display">\[p(\inputScalar_{i,j},\dataScalar_i| \paramVector) = p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i).\]</span></p></li>
 <li><p>Because <span class="math inline">\(\dataScalar_i\)</span> is binary the <em>Bernoulli</em> density makes a suitable choice for our prior over <span class="math inline">\(\dataScalar_i\)</span>, <span class="math display">\[p(\dataScalar_i|\pi) = \pi^{\dataScalar_i} (1-\pi)^{1-\dataScalar_i}\]</span> where <span class="math inline">\(\pi\)</span> now has the interpretation as being the <em>prior</em> probability that the classification should be positive.</p></li>
@@ -1066,9 +1176,12 @@ p(\inputScalar_{i,j},\dataScalar_i| \paramVector) = p(\inputScalar_{i,j}|\dataSc
   p(\dataVector, \inputMatrix|\paramVector, \pi) = \prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)
   \]</span> which can now be fit by maximum likelihood.</li>
 </ul>
-<p><span class="math display">\[
-\errorFunction(\paramVector, \pi) = -\log p(\dataVector, \inputMatrix|\paramVector, \pi) = -\sum_{i=1}^{\numData} \sum_{j=1}^{\dataDim} \log p(\inputScalar_{i, j}|\dataScalar_i, \paramVector) - \sum_{i=1}^{\numData} \log p(\dataScalar_i|\pi),
-\]</span></p>
+</section>
+<section id="objective-function" class="slide level3">
+<h3>Objective Function</h3>
+<p><span class="math display">\[\begin{align*}
+\errorFunction(\paramVector, \pi)&amp; =  -\log p(\dataVector, \inputMatrix|\paramVector, \pi) \\ &amp;= -\sum_{i=1}^{\numData} \sum_{j=1}^{\dataDim} \log p(\inputScalar_{i, j}|\dataScalar_i, \paramVector) -  \sum_{i=1}^{\numData} \log p(\dataScalar_i|\pi),
+\end{align*}\]</span></p>
 </section>
 <section id="maximum-likelihood" class="slide level3">
 <h3>Maximum Likelihood</h3>
@@ -1076,9 +1189,9 @@ p(\inputScalar_{i,j},\dataScalar_i| \paramVector) = p(\inputScalar_{i,j}|\dataSc
 <section id="fit-prior" class="slide level3">
 <h3>Fit Prior</h3>
 <ul>
-<li>We can minimize prior. For Bernoulli likelihood over the labels we have, <span class="math display">\[
-  \errorFunction(\pi) = - \sum_{i=1}^{\numData}\log p(\dataScalar_i|\pi) = -\sum_{i=1}^{\numData} \dataScalar_i \log \pi - \sum_{i=1}^{\numData} (1-\dataScalar_i) \log (1-\pi)
-  \]</span></li>
+<li>We can minimize prior. For Bernoulli likelihood over the labels we have, <span class="math display">\[\begin{align*}
+  \errorFunction(\pi) &amp; = - \sum_{i=1}^{\numData}\log p(\dataScalar_i|\pi)\\ &amp; = -\sum_{i=1}^{\numData} \dataScalar_i \log \pi - \sum_{i=1}^{\numData} (1-\dataScalar_i) \log (1-\pi)
+  \end{align*}\]</span></li>
 <li>Solution from above is <span class="math display">\[
   \pi = \frac{\sum_{i=1}^{\numData} \dataScalar_i}{\numData}.
   \]</span></li>
@@ -1098,7 +1211,6 @@ p(\inputScalar_{i,j},\dataScalar_i| \paramVector) = p(\inputScalar_{i,j}|\dataSc
 j})^2}{\dataStd_{\dataScalar_i,j}^2}\right),
   \]</span></li>
 </ul>
-<p>The final model parameter is the prior probability of the positive class, <span class="math inline">\(\pi\)</span>, which is computed by maximum likelihood.</p>
 </section>
 <section id="compute-posterior-for-test-point-label" class="slide level3">
 <h3>Compute Posterior for Test Point Label</h3>
@@ -1149,40 +1261,14 @@ j})^2}{\dataStd_{\dataScalar_i,j}^2}\right),
 <h3>Laplace Smoothing</h3>
 <iframe frameborder="0" scrolling="no" style="border:0px" src="http://books.google.co.uk/books?id=1YQPAAAAQAAJ&amp;pg=PA16&amp;output=embed" , width="700" height="500">
 </iframe>
-<p>{ Laplace suggests that when computing the probability of an event where a success or failure is rare (he uses an example of the sun rising across the last 5,000 years or 1,826,213 days) that even though only successes have been observed (in the sun rising case) that the odds for tomorrow shouldn’t be given as <span class="math display">\[
-\frac{1,826,213}{1,826,213} = 1
-\]</span> but rather by adding one to the numerator and two to the denominator, <span class="math display">\[
-\frac{1,826,213 + 1}{1,826,213 + 2} = 0.99999945.
-\]</span> This technique is sometimes called a ‘pseudocount technique’ because it has an intepretation of assuming some observations before you start, it’s as if instead of observing <span class="math inline">\(\sum_{i}\dataScalar_i\)</span> successes you have an additional success, <span class="math inline">\(\sum_{i}\dataScalar_i + 1\)</span> and instead of having observed <span class="math inline">\(n\)</span> events you’ve observed <span class="math inline">\(\numData + 2\)</span>. So we can think of Laplace’s idea saying (before we start) that we have ‘two observations worth of belief, that the odds are 50/50’, because before we start (i.e. when <span class="math inline">\(\numData=0\)</span>) our estimate is 0.5, yet because the effective <span class="math inline">\(n\)</span> is only 2, this estimate is quickly overwhelmed by data. Laplace used ideas like this a lot, and it is known as his ‘principle of insufficient reason’. His idea was that in the absence of knowledge (i.e. before we start) we should assume that all possible outcomes are equally likely. This idea has a modern counterpart, known as the <a href="http://en.wikipedia.org/wiki/Principle_of_maximum_entropy">principle of maximum entropy</a>. A lot of the theory of this approach was developed by <a href="http://en.wikipedia.org/wiki/Edwin_Thompson_Jaynes">Ed Jaynes</a>, who according to his erstwhile collaborator and friend, John Skilling, learnt French as an undergraduate by reading the works of Laplace. Although John also related that Jaynes’s spoken French was not up to the standard of his scientific French. For me Ed Jaynes’s work very much carries on the tradition of Laplace into the modern era, in particular his focus on Bayesian approaches. I’m very proud to have met those that knew and worked with him. It turns out that Laplace’s idea also has a Bayesian interpretation (as Laplace understood), it comes from assuming a particular prior density for the parameter <span class="math inline">\(\pi\)</span>, but we won’t explore that interpretation for the moment, and merely choose to estimate the probability as, <span class="math display">\[
-\pi = \frac{\sum_{i=1}^{\numData} \dataScalar_i + 1}{\numData + 2}
-\]</span> to prevent problems with certainty causing numerical issues and misclassifications. Let’s refit the Bernoulli features now.</p>
-<p>That places us in a position to write the prediction function.</p>
-<p>Now we are in a position to make the predictions for the test data.</p>
-<p>We can test the quality of the predictions in the following way. Firstly, we can threshold our probabilities at 0.5, allocating points with greater than 50% probability of membership of the positive class to the positive class. We can then compare to the true values, and see how many of these values we got correct. This is our total number correct.</p>
-<p>We can also now plot the <a href="http://en.wikipedia.org/wiki/Confusion_matrix">confusion matrix</a>. A confusion matrix tells us where we are making mistakes. Along the diagonal it stores the <em>true positives</em>, the points that were positive class that we classified correctly, and the <em>true negatives</em>, the points that were negative class and that we classified correctly. The off diagonal terms contain the false positives and the false negatives. Along the rows of the matrix we place the actual class, and along the columns we place our predicted class.</p>
-
-
 </section>
-<section id="making-predictions" class="slide level3">
-<h3>Making Predictions</h3>
-<p>Naive Bayes has given us the class conditional densities: <span class="math inline">\(p(\inputVector_i | \dataScalar_i, \paramVector)\)</span>. To make predictions with these densities we need to form the distribution given by <span class="math display">\[
-P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector)
+<section id="pseudo-counts" class="slide level3">
+<h3>Pseudo Counts</h3>
+<p><span class="math display">\[
+\pi = \frac{\sum_{i=1}^{\numData} \dataScalar_i + 1}{\numData + 2}
 \]</span></p>
 
-<p>If the input data was <em>binary</em> then we could also make use of the Bernoulli distribution for the features. For that case we would have the form, <span class="math display">\[
-p(\inputScalar_{i, j} | \dataScalar_i,\paramVector) = \theta_{\dataScalar_i, j}^{\inputScalar_{i, j}}(1-\theta_{\dataScalar_i, j})^{(1-\inputScalar_{i,j})},
-\]</span> where <span class="math inline">\(\theta_{1, j}\)</span> is the probability that the <span class="math inline">\(j\)</span>th feature is on if <span class="math inline">\(\dataScalar_i\)</span> is 1.</p>
-<p>In either case, maximum likelihood fitting would proceed in the same way. The objective has the form, <span class="math display">\[
-\errorFunction(\paramVector) = -\sum_{j=1}^{\dataDim} \sum_{i=1}^{\numData} \log p(\inputScalar_{i,j} |\dataScalar_i, \paramVector),
-\]</span> and if, as above, the parameters of the distributions are specific to each feature vector (we had means and variances for each continuous feature, and a probability for each binary feature) then we can use the fact that these parameters separate into disjoint subsets across the features to write, <span class="math display">\[
-\begin{align*}
-\errorFunction(\paramVector) &amp;= -\sum_{j=1}^{\dataDim} \sum_{i=1}^{\numData} \log
-p(\inputScalar_{i,j} |\dataScalar_i, \paramVector_j)\\
-&amp; \sum_{j=1}^{\dataDim}
-\errorFunction(\paramVector_j),
-\end{align*}
-\]</span> which means we can minimize our objective on each feature independently.</p>
-<p>These characteristics mean that naive Bayes scales very well with big data. To fit the model we consider each feature in turn, we select the positive class and fit parameters for that class, then we select each negative class and fit features for that class. We have code below.</p>
+
 </section>
 <section id="naive-bayes-summary" class="slide level3">
 <h3>Naive Bayes Summary</h3>

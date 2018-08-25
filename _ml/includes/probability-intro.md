@@ -34,15 +34,9 @@ $$
 P(Y=y) \approx \frac{n_y}{N}.
 $$}
 
-\notes{### Movie Body Count Data
+\include{_ml/includes/movie-body-count-data.md}
 
-To explore probabilities, we'll load in a data set. The movie body count data is a data set of movies with a number of deaths that occurs in each movie. But in practice it could be a data set of regions, with deaths from a particular disease. We can load it through the pods library.}
-
-\setupcode{import pods}
-\code{data = pods.datasets.movie_body_count()['Y']
-data.head()}
-
-Let's use the sum rule to compute the approximate
+\notes{Let's use the sum rule to compute the approximate
 probability that a film from the movie body count website has over 40 deaths.}
 
 \code{deaths = (data.Body_Count>40).sum()  # number of positive outcomes (in sum True counts as 1, False counts as 0)
@@ -92,7 +86,7 @@ $P(y|t)$ is a good estimate? Write your code and your written answers in the box
 below.}{5}{20}
 
 
-#### Notes for Question 
+\notes{#### Notes for Question }
 
 \notes{Make sure the plot is included in *this* notebook
 file (the `IPython` magic command `%matplotlib inline` we ran above will do that
@@ -347,6 +341,19 @@ $-\log(P(y))$     | 1.204 | 1.609 | 2.302 | 0.916
 * Second moment: $1 \times 0.3 + 4 \times 0.2 + 9 \times 0.1 + 16 \times 0.4 = 8.4$
 * Variance: $8.4 - 2.6\times 2.6 = 1.64$
 * Standard deviation: $\sqrt{1.64} = 1.2806$
+}
+
+\newslide{Expectations Example: Answer II}
+
+\slides{
+* We are given that:
+
+$y$               |   1   |   2   |   3   |   4
+------------------|-------|-------|-------|-------
+$P\left(y\right)$ |  0.3  |  0.2  |  0.1  |  0.4
+$y^2$             |   1   |   4   |   9   |  16
+$-\log(P(y))$     | 1.204 | 1.609 | 2.302 | 0.916
+
 * Expectation $-\log(P(y))$: $0.3\times 1.204 + 0.2\times 1.609 + 0.1\times 2.302 +0.4\times 0.916 = 1.280$}
 
 \newslide{Sample Based Approximation Example}
@@ -361,7 +368,7 @@ $-\log(P(y))$     | 1.204 | 1.609 | 2.302 | 0.916
 * What is the sample mean?
 * What is the sample variance?
 * Can you compute sample approximation expected value of $-\log P(y)$?
-* Actually these “data” were sampled from a Gaussian with mean 1.7 and standard deviation 0.15. Are your estimates close to the real values? If not why not?}
+}
 
 \newslide{Sample Based Approximation Example: Answer}
 
@@ -379,15 +386,25 @@ $y^2_i$    |  3.0976 |  2.9929 |  3.2041 |  3.2761 |  3.4225 |  3.2400
 * Standard deviation: $0.0379$
 * No, you can’t compute it. You don’t have access to $P(y)$ directly.}
 
+
+\newslide{Sample Based Approximation Example}
+
+\slides{
+* You are given the following values samples of heights of students,
+
+    $i$   |   1  |    2 |  3   |   4  |   5  |    6
+----------|------|------|------|------|------|------
+    $y_i$ |  1.76|  1.73| 1.79 | 1.81 | 1.85 |  1.80
+
+* Actually these “data” were sampled from a Gaussian with mean 1.7 and standard deviation 0.15. Are your estimates close to the real values? If not why not?}
+
 \notes{
 ### Probabilities for Extracting Information from Data
 
-What use is all this probability in data science? Let's think about how we might use the probabilities to do some decision making. Let's load up a little more
+What use is all this probability in data science? Let's think about how we might use the probabilities to do some decision making. Let's look at the
 information about the movies.}
 
-\setupcode{import pandas as pd}
-\code{movies = pd.read_csv('./R-vs-Python-master/Deadliest movies scrape/code/film-death-counts-Python.csv')
-movies.columns}
+\code{data.columns}
 
 \writeassignment{Now we see we have several additional features
 including the quality rating (`IMDB_Rating`). Let's assume we want to predict

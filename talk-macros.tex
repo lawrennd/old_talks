@@ -1,6 +1,6 @@
 \define{\talksdir}{/Users/neil/lawrennd/talks}
 
-\ifdef{ipynb} % ipynb
+\ifdef{ipynb} <!--ipynb-->
 
 \define{\includegooglebook{id}{page}}{```
 import pods
@@ -48,7 +48,7 @@ YouTubeVideo('\id')
 \define{\columns{one}{two}{width1}{width2}}{<table><tr><td width="\width1">\one</td><td width="\width2">\two</td></tr></table>}
 
 
-\ifdef{slides} % ipynb and slides
+\ifdef{slides} <!-- ipynb and slides-->
 
 \define{\setupplotcode{block}}{```{.python}
 \block
@@ -78,9 +78,9 @@ YouTubeVideo('\id')
 }
 
 
-\else % ipynb but not slides
+\else <!-- ipynb but not slides -->
 
-%%%%%%%%%% CODE DISPLAY %%%%%%%%%%
+<!--%%%%%%%%%% CODE DISPLAY %%%%%%%%%%-->
 
 \define{\setupplotcode{block}}{}
 \define{\plotcode{block}}{}
@@ -144,7 +144,7 @@ YouTubeVideo('\id')
 \define{\newslide{text}}{}
 
 \endif 
-\else % not ipynb
+\else <!--% not ipynb-->
 
 \ifdef{notes}
 \define{\includegooglebook{id}{page}}{[![](../slides/diagrams/books/\id-\page.png)](https://play.google.com/books/reader?id=\id&pg=\page)}
@@ -246,7 +246,7 @@ from \file import \object
 
 \define{\columns{one}{two}{width1}{width2}}{<table><tr><td width="\width1">\one</td><td width="\width2">\two</td></tr></table>}
 
-\else % not notes
+\else <!--% not notes-->
 
 \define{\includegooglebook{id}{page}}{<iframe frameborder="0" scrolling="no" style="border:0px" src='http://books.google.co.uk/books?id=\id&pg=\page&output=embed', width=700 height=500></iframe>}
 \define{\includeyoutube{id}{width}{height}{time}}{<iframe width="\width" height="\height" src="https://www.youtube.com/embed/\id?start=\time" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>}
