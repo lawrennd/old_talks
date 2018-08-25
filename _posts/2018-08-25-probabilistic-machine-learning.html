@@ -1,7 +1,7 @@
 ---
 title: "Probabilistic Machine Learning"
 venue: "AI Saturdays, Lagos"
-abstract: "In this talk we review the <em>probabilistic</em> approach to machine learning. We start with a review of probability, and introduce the concepts of probabilistic modelling. We then apply the approach in practice to Naive Bayesian classification. In this lecture we review the Bayesian formalism in the context of linear models, reviewing initially maximum likelihood and introducing basis functions as a way of driving non-linearity in the model."
+abstract: "In this talk we review the <em>probabilistic</em> approach to machine learning. We start with a review of probability, and introduce the concepts of probabilistic modelling. We then apply the approach in practice to Naive Bayesian classification. In this session we review the Bayesian formalism in the context of linear models, reviewing initially maximum likelihood and introducing basis functions as a way of driving non-linearity in the model."
 author:
 - given: Neil D.
   family: Lawrence
@@ -23,7 +23,7 @@ categories:
   $${% include talk-notation.tex %}$$
 </div>
 
-<p>% not ipynb</p>
+<p><!--% not ipynb--></p>
 <h2 id="what-is-machine-learning">What is Machine Learning?</h2>
 <p>What is machine learning? At its most basic level machine learning is a combination of</p>
 <p><span class="math display">\[ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span></p>
@@ -46,9 +46,60 @@ P(Y=y) = \lim_{N\rightarrow
 \infty}\frac{n_y}{N}.
 \]</span> In practice we never get to observe an event infinite times, so rather than considering this we often use the following estimate <span class="math display">\[
 P(Y=y) \approx \frac{n_y}{N}.
-\]</span> Let's use this rule to compute the approximate probability that a film from the movie body count website has over 40 deaths.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">deaths <span class="op">=</span> (film_deaths.Body_Count<span class="op">&gt;</span><span class="dv">40</span>).<span class="bu">sum</span>()  <span class="co"># number of positive outcomes (in sum True counts as 1, False counts as 0)</span>
-total_films <span class="op">=</span> film_deaths.Body_Count.count()
+\]</span></p>
+<h2 id="movie-body-count-example">Movie Body Count Example</h2>
+<p>There is a crisis in the movie industry, deaths are occuring on a massive scale. In every feature film the body count is tolling up. But what is the cause of all these deaths? Let's try and investigate.</p>
+<p>For our first example of data science, we take inspiration from work by <a href="http://www.theswarmlab.com/r-vs-python-round-2/">researchers at NJIT</a>. They researchers were comparing the qualities of Python with R (my brief thoughts on the subject are available in a Google+ post here: https://plus.google.com/116220678599902155344/posts/5iKyqcrNN68). They put together a data base of results from the the &quot;Internet Movie Database&quot; and the <a href="http://www.moviebodycounts.com/">Movie Body Count</a> website which will allow us to do some preliminary investigation.</p>
+<p>We will make use of data that has already been 'scraped' from the <a href="http://www.moviebodycounts.com/">Movie Body Count</a> website. Code and the data is available at <a href="https://github.com/sjmgarnier/R-vs-%20Python/tree/master/Deadliest%20movies%20scrape/code">a github repository</a>. Git is a version control system and github is a website that hosts code that can be accessed through git. By sharing the code publicly through github, the authors are licensing the code publicly and allowing you to access and edit it. As well as accessing the code via github you can also <a href="https://github.com/sjmgarnier/R-vs-Python/archive/master.zip">download the zip file</a>.</p>
+<p>For ease of use we've packaged this data set in the <code>pods</code> library</p>
+<h3 id="pods"><code>pods</code></h3>
+<p>The <code>pods</code> library is a library for supporting open data science (python open data science). It allows you to load in various data sets and provides tools for helping teach in the notebook.</p>
+<p>To install pods you can use pip:</p>
+<p><code>pip install pods</code></p>
+<p>The code is also available on github: <a href="https://github.com/sods/ods" class="uri">https://github.com/sods/ods</a></p>
+<p>Once <code>pods</code> is installed, it can be imported in the usual manner.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data <span class="op">=</span> pods.datasets.movie_body_count()[<span class="st">&#39;Y&#39;</span>]
+data.head()</code></pre></div>
+<p>Once it is loaded in the data can be summarized using the <code>describe</code> method in pandas.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data.describe()</code></pre></div>
+<p>In jupyter and jupyter notebook it is possible to see a list of all possible functions and attributes by typing the name of the object followed by .<Tab> for example in the above case if we type data.<Tab> it show the columns available (these are attributes in pandas dataframes) such as Body_Count, and also functions, such as .describe().</p>
+<p>For functions we can also see the documentation about the function by following the name with a question mark. This will open a box with documentation at the bottom which can be closed with the x button.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data.describe?</code></pre></div>
+<p>The film deaths data is stored in an object known as a 'data frame'. Data frames come from the statistical family of programming languages based on <code>S</code>, the most widely used of which is <a href="http://en.wikipedia.org/wiki/R_(programming_language)"><code>R</code></a>. The data frame gives us a convenient object for manipulating data. The describe method summarizes which columns there are in the data frame and gives us counts, means, standard deviations and percentiles for the values in those columns. To access a column directly we can write</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(data[<span class="st">&#39;Year&#39;</span>])
+<span class="co">#print(data[&#39;Body_Count&#39;])</span></code></pre></div>
+<p>This shows the number of deaths per film across the years. We can plot the data as follows.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># this ensures the plot appears in the web browser</span>
+<span class="op">%</span>matplotlib inline 
+<span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <span class="co"># this imports the plotting library in python</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">plt.plot(data[<span class="st">&#39;Year&#39;</span>], data[<span class="st">&#39;Body_Count&#39;</span>], <span class="st">&#39;rx&#39;</span>)</code></pre></div>
+<p>You may be curious what the arguments we give to plt.plot are for, now is the perfect time to look at the documentation</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">plt.plot?</code></pre></div>
+<p>We immediately note that some films have a lot of deaths, which prevent us seeing the detail of the main body of films. First lets identify the films with the most deaths.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data[data[<span class="st">&#39;Body_Count&#39;</span>]<span class="op">&gt;</span><span class="dv">200</span>]</code></pre></div>
+<p>Here we are using the command <code>data['Kill_Count']&gt;200</code> to index the films in the pandas data frame which have over 200 deaths. To sort them in order we can also use the <code>sort</code> command. The result of this command on its own is a data series of <code>True</code> and <code>False</code> values. However, when it is passed to the <code>data</code> data frame it returns a new data frame which contains only those values for which the data series is <code>True</code>. We can also sort the result. To sort the result by the values in the <code>Kill_Count</code> column in <em>descending</em> order we use the following command.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data[data[<span class="st">&#39;Body_Count&#39;</span>]<span class="op">&gt;</span><span class="dv">200</span>].sort_values(by<span class="op">=</span><span class="st">&#39;Body_Count&#39;</span>, ascending<span class="op">=</span><span class="va">False</span>)</code></pre></div>
+<p>We now see that the 'Lord of the Rings' is a large outlier with a very large number of kills. We can try and determine how much of an outlier by histograming the data.</p>
+<h3 id="plotting-the-data">Plotting the Data</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data[<span class="st">&#39;Body_Count&#39;</span>].hist(bins<span class="op">=</span><span class="dv">20</span>) <span class="co"># histogram the data with 20 bins.</span>
+plt.title(<span class="st">&#39;Histogram of Film Kill Count&#39;</span>)</code></pre></div>
+<h3 id="question-2">Question 2</h3>
+<p>Read on the internet about the following python libraries: <code>numpy</code>, <code>matplotlib</code>, <code>scipy</code> and <code>pandas</code>. What functionality does each provide python. What is the <code>pylab</code> library and how does it relate to the other libraries?</p>
+<p><em>10 marks</em></p>
+<h3 id="write-your-answer-to-question-2-here">Write your answer to Question 2 here</h3>
+<p>We could try and remove these outliers, but another approach would be plot the logarithm of the counts against the year.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">plt.plot(data[<span class="st">&#39;Year&#39;</span>], data[<span class="st">&#39;Body_Count&#39;</span>], <span class="st">&#39;rx&#39;</span>)
+ax <span class="op">=</span> plt.gca() <span class="co"># obtain a handle to the current axis</span>
+ax.set_yscale(<span class="st">&#39;log&#39;</span>) <span class="co"># use a logarithmic death scale</span>
+<span class="co"># give the plot some titles and labels</span>
+plt.title(<span class="st">&#39;Film Deaths against Year&#39;</span>)
+plt.ylabel(<span class="st">&#39;deaths&#39;</span>)
+plt.xlabel(<span class="st">&#39;year&#39;</span>)</code></pre></div>
+<p>Note a few things. We are interacting with our data. In particular, we are replotting the data according to what we have learned so far. We are using the progamming language as a <em>scripting</em> language to give the computer one command or another, and then the next command we enter is dependent on the result of the previous. This is a very different paradigm to classical software engineering. In classical software engineering we normally write many lines of code (entire object classes or functions) before compiling the code and running it. Our approach is more similar to the approach we take whilst debugging. Historically, researchers interacted with data using a <em>console</em>. A command line window which allowed command entry. The notebook format we are using is slightly different. Each of the code entry boxes acts like a separate console window. We can move up and down the notebook and run each part in a different order. The <em>state</em> of the program is always as we left it after running the previous part.</p>
+<p>Let's use the sum rule to compute the approximate probability that a film from the movie body count website has over 40 deaths.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">deaths <span class="op">=</span> (data.Body_Count<span class="op">&gt;</span><span class="dv">40</span>).<span class="bu">sum</span>()  <span class="co"># number of positive outcomes (in sum True counts as 1, False counts as 0)</span>
+total_films <span class="op">=</span> data.Body_Count.count()
 
 prob_death <span class="op">=</span> <span class="bu">float</span>(deaths)<span class="op">/</span><span class="bu">float</span>(total_films)
 <span class="bu">print</span>(<span class="st">&quot;Probability of deaths being greather than 40 is:&quot;</span>, prob_death)</code></pre></div>
@@ -63,21 +114,19 @@ P(y|t) =
 p(y).
 \]</span> However, we might believe that the number of deaths is dependent on the year. For this we can try estimating <span class="math inline">\(P(Y&gt;40 | T=2000)\)</span> and compare the result, for example to <span class="math inline">\(P(Y&gt;40|2002)\)</span> using our empirical estimate of the probability.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">for</span> year <span class="kw">in</span> [<span class="dv">2000</span>, <span class="dv">2002</span>]:
-    deaths <span class="op">=</span> (film_deaths.Body_Count[film_deaths.Year<span class="op">==</span>year]<span class="op">&gt;</span><span class="dv">40</span>).<span class="bu">sum</span>()
-    total_films <span class="op">=</span> (film_deaths.Year<span class="op">==</span>year).<span class="bu">sum</span>()
+    deaths <span class="op">=</span> (data.Body_Count[data.Year<span class="op">==</span>year]<span class="op">&gt;</span><span class="dv">40</span>).<span class="bu">sum</span>()
+    total_films <span class="op">=</span> (data.Year<span class="op">==</span>year).<span class="bu">sum</span>()
 
     prob_death <span class="op">=</span> <span class="bu">float</span>(deaths)<span class="op">/</span><span class="bu">float</span>(total_films)
     <span class="bu">print</span>(<span class="st">&quot;Probability of deaths being greather than 40 in year&quot;</span>, year, <span class="st">&quot;is:&quot;</span>, prob_death)</code></pre></div>
 <h3 id="question-5">Question 5</h3>
-<p>Compute the probability for the number of deaths being over 40 for each year we have in our <code>film_deaths</code> data frame. Store the result in a <code>numpy</code> array and plot the probabilities against the years using the <code>plot</code> command from <code>matplotlib</code>. Do you think the estimate we have created of <span class="math inline">\(P(y|t)\)</span> is a good estimate? Write your code and your written answers in the box below.</p>
+<p>Compute the probability for the number of deaths being over 40 for each year we have in our <code>data</code> data frame. Store the result in a <code>numpy</code> array and plot the probabilities against the years using the <code>plot</code> command from <code>matplotlib</code>. Do you think the estimate we have created of <span class="math inline">\(P(y|t)\)</span> is a good estimate? Write your code and your written answers in the box below.</p>
 <p><em>20 marks</em></p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Write code for your answer to Question 5 in this box</span>
 <span class="co"># provide the answers so that the code runs correctly otherwise you will loose marks!</span>
 
 </code></pre></div>
-<h4 id="question-5-answer-text">Question 5 Answer Text</h4>
-<p>Write your answer to the question in this box.</p>
-<h4 id="notes-for-question-5">Notes for Question 5</h4>
+<h4 id="notes-for-question">Notes for Question</h4>
 <p>Make sure the plot is included in <em>this</em> notebook file (the <code>IPython</code> magic command <code>%matplotlib inline</code> we ran above will do that for you, it only needs to be run once per file).</p>
 <table>
 <thead>
@@ -113,8 +162,37 @@ The different basic probability distributions.
 </object>
 <p><span align="right">Inspired by lectures from Christopher Bishop</span></p>
 <h3 id="definition-of-probability-distributions.">Definition of probability distributions.</h3>
-<pre><code>  Terminology        |              Definition                                |      Probability Notation</code></pre>
-<p>-------------------------|--------------------------------------------------------|------------------------------ Joint Probability | <span class="math inline">\(\lim_{N\rightarrow\infty}\frac{n_{X=3,Y=4}}{N}\)</span> | <span class="math inline">\(P\left(X=3,Y=4\right)\)</span> Marginal Probability | <span class="math inline">\(\lim_{N\rightarrow\infty}\frac{n_{X=5}}{N}\)</span> | <span class="math inline">\(P\left(X=5\right)\)</span> Conditional Probability | <span class="math inline">\(\lim_{N\rightarrow\infty}\frac{n_{X=3,Y=4}}{n_{Y=4}}\)</span> | <span class="math inline">\(P\left(X=3\vert Y=4\right)\)</span></p>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="46%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Terminology</th>
+<th>Definition</th>
+<th>Probability Notation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Joint Probability</td>
+<td><span class="math inline">\(\lim_{N\rightarrow\infty}\frac{n_{X=3,Y=4}}{N}\)</span></td>
+<td><span class="math inline">\(P\left(X=3,Y=4\right)\)</span></td>
+</tr>
+<tr class="even">
+<td>Marginal Probability</td>
+<td><span class="math inline">\(\lim_{N\rightarrow\infty}\frac{n_{X=5}}{N}\)</span></td>
+<td><span class="math inline">\(P\left(X=5\right)\)</span></td>
+</tr>
+<tr class="odd">
+<td>Conditional Probability</td>
+<td><span class="math inline">\(\lim_{N\rightarrow\infty}\frac{n_{X=3,Y=4}}{n_{Y=4}}\)</span></td>
+<td><span class="math inline">\(P\left(X=3\vert Y=4\right)\)</span></td>
+</tr>
+</tbody>
+</table>
 <h3 id="notational-details">Notational Details</h3>
 <p>Typically we should write out <span class="math inline">\(P\left(X=x,Y=y\right)\)</span>, but in practice we often shorten this to <span class="math inline">\(P\left(x,y\right)\)</span>. This looks very much like we might write a multivariate function, <em>e.g.</em> <span class="math display">\[
   f\left(x,y\right)=\frac{x}{y},
@@ -127,8 +205,8 @@ P\left(X=x,Y=y\right)=P\left(Y=y,X=x\right).
 \]</span> Sometimes I think of this as akin to the way in Python we can write 'keyword arguments' in functions. If we use keyword arguments, the ordering of arguments doesn't matter.</p>
 <p>We've now introduced conditioning and independence to the notion of probability and computed some conditional probabilities on a practical example The scatter plot of deaths vs year that we created above can be seen as a <em>joint</em> probability distribution. We represent a joint probability using the notation <span class="math inline">\(P(Y=y, T=t)\)</span> or <span class="math inline">\(P(y, t)\)</span> for short. Computing a joint probability is equivalent to answering the simultaneous questions, what's the probability that the number of deaths was over 40 and the year was 2002? Or any other question that may occur to us. Again we can easily use pandas to ask such questions.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">year <span class="op">=</span> <span class="dv">2000</span>
-deaths <span class="op">=</span> (film_deaths.Body_Count[film_deaths.Year<span class="op">==</span>year]<span class="op">&gt;</span><span class="dv">40</span>).<span class="bu">sum</span>()
-total_films <span class="op">=</span> film_deaths.Body_Count.count() <span class="co"># this is total number of films</span>
+deaths <span class="op">=</span> (data.Body_Count[data.Year<span class="op">==</span>year]<span class="op">&gt;</span><span class="dv">40</span>).<span class="bu">sum</span>()
+total_films <span class="op">=</span> data.Body_Count.count() <span class="co"># this is total number of films</span>
 prob_death <span class="op">=</span> <span class="bu">float</span>(deaths)<span class="op">/</span><span class="bu">float</span>(total_films)
 <span class="bu">print</span>(<span class="st">&quot;Probability of deaths being greather than 40 and year being&quot;</span>, year, <span class="st">&quot;is:&quot;</span>, prob_death)</code></pre></div>
 <h3 id="the-product-rule">The Product Rule</h3>
@@ -139,9 +217,9 @@ p(Y=y, X=x) = p(Y=y|X=x)p(X=x)
 <p>In our shorter notation we can write the product rule as <span class="math display">\[
 p(y, x) = p(y|x)p(x)
 \]</span> We can see the relation working in practice for our data above by computing the different values for <span class="math inline">\(t=2000\)</span>.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">p_x <span class="op">=</span> <span class="bu">float</span>((film_deaths.Year<span class="op">==</span><span class="dv">2002</span>).<span class="bu">sum</span>())<span class="op">/</span><span class="bu">float</span>(film_deaths.Body_Count.count())
-p_y_given_x <span class="op">=</span> <span class="bu">float</span>((film_deaths.Body_Count[film_deaths.Year<span class="op">==</span><span class="dv">2002</span>]<span class="op">&gt;</span><span class="dv">40</span>).<span class="bu">sum</span>())<span class="op">/</span><span class="bu">float</span>((film_deaths.Year<span class="op">==</span><span class="dv">2002</span>).<span class="bu">sum</span>())
-p_y_and_x <span class="op">=</span> <span class="bu">float</span>((film_deaths.Body_Count[film_deaths.Year<span class="op">==</span><span class="dv">2002</span>]<span class="op">&gt;</span><span class="dv">40</span>).<span class="bu">sum</span>())<span class="op">/</span><span class="bu">float</span>(film_deaths.Body_Count.count())
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">p_x <span class="op">=</span> <span class="bu">float</span>((data.Year<span class="op">==</span><span class="dv">2002</span>).<span class="bu">sum</span>())<span class="op">/</span><span class="bu">float</span>(data.Body_Count.count())
+p_y_given_x <span class="op">=</span> <span class="bu">float</span>((data.Body_Count[data.Year<span class="op">==</span><span class="dv">2002</span>]<span class="op">&gt;</span><span class="dv">40</span>).<span class="bu">sum</span>())<span class="op">/</span><span class="bu">float</span>((data.Year<span class="op">==</span><span class="dv">2002</span>).<span class="bu">sum</span>())
+p_y_and_x <span class="op">=</span> <span class="bu">float</span>((data.Body_Count[data.Year<span class="op">==</span><span class="dv">2002</span>]<span class="op">&gt;</span><span class="dv">40</span>).<span class="bu">sum</span>())<span class="op">/</span><span class="bu">float</span>(data.Body_Count.count())
 
 <span class="bu">print</span>(<span class="st">&quot;P(x) is&quot;</span>, p_x)
 <span class="bu">print</span>(<span class="st">&quot;P(y|x) is&quot;</span>, p_y_given_x)
@@ -165,10 +243,8 @@ P(x|y) =
 \frac{P(y|x)P(x)}{P(y)}
 \]</span> which is known as Bayes' rule (or Bayes's rule, it depends how you choose to pronounce it). It's not difficult to derive, and its importance is more to do with the semantic operation that it enables. Each of these probability distributions represents the answer to a question we have about the world. Bayes rule (via the product rule) tells us how to <em>invert</em> the probability.</p>
 <h3 id="probabilities-for-extracting-information-from-data">Probabilities for Extracting Information from Data</h3>
-<p>What use is all this probability in data science? Let's think about how we might use the probabilities to do some decision making. Let's load up a little more information about the movies.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pandas <span class="im">as</span> pd</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">movies <span class="op">=</span> pd.read_csv(<span class="st">&#39;./R-vs-Python-master/Deadliest movies scrape/code/film-death-counts-Python.csv&#39;</span>)
-movies.columns</code></pre></div>
+<p>What use is all this probability in data science? Let's think about how we might use the probabilities to do some decision making. Let's look at the information about the movies.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data.columns</code></pre></div>
 <h3 id="question-7">Question 7</h3>
 <p>Now we see we have several additional features including the quality rating (<code>IMDB_Rating</code>). Let's assume we want to predict the rating given the other information in the data base. How would we go about doing it?</p>
 <p>Using what you've learnt about joint, conditional and marginal probabilities, as well as the sum and product rule, how would you formulate the question you want to answer in terms of probabilities? Should you be using a joint or a conditional distribution? If it's conditional, what should the distribution be over, and what should it be conditioned on?</p>
@@ -194,7 +270,6 @@ p(\dataScalar_i | \mappingFunction(\inputVector_i)) = \frac{1}{\sqrt{2\pi \dataS
 <p>In short, that is the classical approach to probabilistic inference, and all approaches to Bayesian neural networks fall within this path. For a deep probabilistic model, we can simply take this one stage further and place a probability distribution over the input locations, <span class="math display">\[
 p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \parameterVector) p(\parameterVector | \dataVector, \inputMatrix) p(\inputMatrix) p(\inputMatrix_*) \text{d} \parameterVector \text{d} \inputMatrix \text{d}\inputMatrix_*
 \]</span> and we have <em>unsupervised learning</em> (from where we can get deep generative models).</p>
-<h3 id="introduce-dataset-earlier.-here">INTRODUCE DATASET EARLIER. HERE!</h3>
 <h3 id="graphical-models">Graphical Models</h3>
 <p>One way of representing a joint distribution is to consider conditional dependencies between data. Conditional dependencies allow us to factorize the distribution. For example, a Markov chain is a factorization of a distribution into components that represent the conditional relationships between points that are neighboring, often in time or space. It can be decomposed in the following form. <span class="math display">\[p(\dataVector) = p(\dataScalar_\numData | \dataScalar_{\numData-1}) p(\dataScalar_{\numData-1}|\dataScalar_{\numData-2}) \dots p(\dataScalar_{2} | \dataScalar_{1})\]</span></p>
 <object class="svgplot" align data="../slides/diagrams/ml/markov.svg">
@@ -213,7 +288,22 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \parameterVe
 <li>Categorization of document types (different types of news article on the internet)</li>
 </ul>
 <p>Our focus has been on models where the objective function is inspired by a probabilistic analysis of the problem. In particular we've argued that we answer questions about the data set by placing probability distributions over the various quantities of interest. For the case of binary classification this will normally involve introducing probability distributions for discrete variables. Such probability distributions, are in some senses easier than those for continuous variables, in particular we can represent a probability distribution over <span class="math inline">\(\dataScalar\)</span>, where <span class="math inline">\(\dataScalar\)</span> is binary, with one value. If we specify the probability that <span class="math inline">\(\dataScalar=1\)</span> with a number that is between 0 and 1, i.e. let's say that <span class="math inline">\(P(\dataScalar=1) = \pi\)</span> (here we don't mean <span class="math inline">\(\pi\)</span> the number, we are setting <span class="math inline">\(\pi\)</span> to be a variable) then we can specify the probability distribution through a table.</p>
-<p>| <span class="math inline">\(\dataScalar\)</span> | 0 | 1 | |:------:|:---------:|:-----:| | <span class="math inline">\(P(\dataScalar)\)</span> | <span class="math inline">\((1-\pi)\)</span> | <span class="math inline">\(\pi\)</span> |</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(\dataScalar\)</span></th>
+<th align="center">0</th>
+<th align="center">1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(P(\dataScalar)\)</span></td>
+<td align="center"><span class="math inline">\((1-\pi)\)</span></td>
+<td align="center"><span class="math inline">\(\pi\)</span></td>
+</tr>
+</tbody>
+</table>
 <p>Mathematically we can use a trick to implement this same table. We can use the value <span class="math inline">\(\dataScalar\)</span> as a mathematical switch and write that <span class="math display">\[
   P(\dataScalar) = \pi^\dataScalar (1-\pi)^{(1-\dataScalar)}
   \]</span> where our probability distribution is now written as a function of <span class="math inline">\(\dataScalar\)</span>. This probability distribution is known as the <a href="http://en.wikipedia.org/wiki/Bernoulli_distribution">Bernoulli distribution</a>. The Bernoulli distribution is a clever trick for mathematically switching between two probabilities if we were to write it as code it would be better described as</p>
@@ -245,7 +335,7 @@ p(\dataVector|\pi) = \prod_{i=1}^{\numData} \pi^{\dataScalar_i} (1-\pi)^{1-\data
 <p>and now we recognise that <span class="math inline">\(\sum_{i=1}^{\numData} (1-\dataScalar_i) + \sum_{i=1}^{\numData} \dataScalar_i = \numData\)</span> so we have <span class="math display">\[\pi = \frac{\sum_{i=1}^{\numData} \dataScalar_i}{\numData}\]</span></p>
 <p>so in other words we estimate the probability associated with the Bernoulli by setting it to the number of observed positives, divided by the total length of <span class="math inline">\(\dataScalar\)</span>. This makes intiutive sense. If I asked you to estimate the probability of a coin being heads, and you tossed the coin 100 times, and recovered 47 heads, then the estimate of the probability of heads should be <span class="math inline">\(\frac{47}{100}\)</span>.</p>
 <h3 id="exercise">Exercise</h3>
-<p>Show that the maximume likelihood solution we have found is a <em>minimum</em> for our objective.</p>
+<p>Show that the maximum likelihood solution we have found is a <em>minimum</em> for our objective.</p>
 <h3 id="write-your-answer-to-exercise-here">Write your answer to Exercise here</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Use this box for any code you need for the exercise</span>
 
@@ -288,9 +378,10 @@ p(\inputScalar_{i,j},\dataScalar_i| \paramVector) = p(\inputScalar_{i,j}|\dataSc
 <p>This allows us to write down the full joint density of the training data, <span class="math display">\[
   p(\dataVector, \inputMatrix|\paramVector, \pi) = \prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)
   \]</span></p>
-<p>which can now be fit by maximum likelihood. As normal we form our objective as the negative log likelihood, <span class="math display">\[
-\errorFunction(\paramVector, \pi) = -\log p(\dataVector, \inputMatrix|\paramVector, \pi) = -\sum_{i=1}^{\numData} \sum_{j=1}^{\dataDim} \log p(\inputScalar_{i, j}|\dataScalar_i, \paramVector) - \sum_{i=1}^{\numData} \log p(\dataScalar_i|\pi),
-\]</span> which we note <em>decomposes</em> into two objective functions, one which is dependent on <span class="math inline">\(\pi\)</span> alone and one which is dependent on <span class="math inline">\(\paramVector\)</span> alone so we have, <span class="math display">\[
+<p>which can now be fit by maximum likelihood. As normal we form our objective as the negative log likelihood,</p>
+<p><span class="math display">\[\begin{align*}
+\errorFunction(\paramVector, \pi)&amp; =  -\log p(\dataVector, \inputMatrix|\paramVector, \pi) \\ &amp;= -\sum_{i=1}^{\numData} \sum_{j=1}^{\dataDim} \log p(\inputScalar_{i, j}|\dataScalar_i, \paramVector) -  \sum_{i=1}^{\numData} \log p(\dataScalar_i|\pi),
+\end{align*}\]</span> which we note <em>decomposes</em> into two objective functions, one which is dependent on <span class="math inline">\(\pi\)</span> alone and one which is dependent on <span class="math inline">\(\paramVector\)</span> alone so we have, <span class="math display">\[
 \errorFunction(\pi, \paramVector) = \errorFunction(\paramVector) + \errorFunction(\pi).
 \]</span> Since the two objective functions are separately dependent on the parameters <span class="math inline">\(\pi\)</span> and <span class="math inline">\(\paramVector\)</span> we can minimize them independently. Firstly, minimizing the Bernoulli likelihood over the labels we have, <span class="math display">\[
 \errorFunction(\pi) = -\sum_{i=1}^{\numData}\log p(\dataScalar_i|\pi) = -\sum_{i=1}^{\numData} \dataScalar_i \log \pi - \sum_{i=1}^{\numData} (1-\dataScalar_i) \log (1-\pi)
@@ -317,11 +408,11 @@ data.head()</code></pre></div>
 <p>Now we will convert this data into a form which we can use as inputs <code>X</code>, and labels <code>y</code>.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pandas <span class="im">as</span> pd
 <span class="im">import</span> numpy <span class="im">as</span> np</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">X <span class="op">=</span> data[[<span class="st">&#39;Year&#39;</span>, <span class="st">&#39;Body_Count&#39;</span>]]
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">X <span class="op">=</span> data[[<span class="st">&#39;Year&#39;</span>, <span class="st">&#39;Body_Count&#39;</span>]].copy()
 y <span class="op">=</span> data[<span class="st">&#39;MPAA_Rating&#39;</span>]<span class="op">==</span><span class="st">&#39;R&#39;</span> <span class="co"># set label to be positive for R rated films.</span>
 
 <span class="co"># Create series of movie genres with the relevant index</span>
-s <span class="op">=</span> data[<span class="st">&#39;Genre&#39;</span>].<span class="bu">str</span>.split(<span class="st">&#39;|&#39;</span>).<span class="bu">apply</span>(pd.Series, <span class="dv">1</span>).stack() 
+s <span class="op">=</span> data[<span class="st">&#39;Genre&#39;</span>].<span class="bu">apply</span>(pd.Series, <span class="dv">1</span>).stack() 
 s.index <span class="op">=</span> s.index.droplevel(<span class="op">-</span><span class="dv">1</span>) <span class="co"># to line up with df&#39;s index</span>
 
 <span class="co"># Extract from the series the unique list of genres.</span>
@@ -330,8 +421,8 @@ genres <span class="op">=</span> s.unique()
 <span class="co"># For each genre extract the indices where it is present and add a column to X</span>
 <span class="cf">for</span> genre <span class="kw">in</span> genres:
     index <span class="op">=</span> s[s<span class="op">==</span>genre].index.tolist()
-    X[genre] <span class="op">=</span> np.zeros(X.shape[<span class="dv">0</span>])
-    X[genre][index] <span class="op">=</span> np.ones(<span class="bu">len</span>(index))</code></pre></div>
+    X.loc[:, genre] <span class="op">=</span> <span class="fl">0.0</span> 
+    X.loc[index, genre] <span class="op">=</span> <span class="fl">1.0</span></code></pre></div>
 <p>This has given us a new data frame <code>X</code> which contains the different genres in different columns.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">X.describe()</code></pre></div>
 <p>We can now specify the naive Bayes model. For the genres we want to model the data as Bernoulli distributed, and for the year and body count we want to model the data as Gaussian distributed. We set up two data frames to contain the parameters for the rows and the columns below.</p>
@@ -365,33 +456,6 @@ y_test <span class="op">=</span> y.loc[test_indices]</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">Gaussian</code></pre></div>
 <p>The final model parameter is the prior probability of the positive class, <span class="math inline">\(\pi\)</span>, which is computed by maximum likelihood.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">prior <span class="op">=</span> <span class="bu">float</span>(y_train.<span class="bu">sum</span>())<span class="op">/</span><span class="bu">len</span>(y_train)</code></pre></div>
-<ul>
-<li>We know that <span class="math display">\[
-  P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector)p(\dataVector,\inputMatrix, \inputVector^*|\paramVector) = p(\dataScalar*, \dataVector, \inputMatrix,\inputVector^*| \paramVector)
-  \]</span></li>
-<li><p>This implies <span class="math display">\[
-  P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector) = \frac{p(\dataScalar*, \dataVector, \inputMatrix, \inputVector^*| \paramVector)}{p(\dataVector, \inputMatrix, \inputVector^*|\paramVector)}
-  \]</span></p></li>
-<li>From conditional independence assumptions <span class="math display">\[
-  p(\dataScalar^*, \dataVector, \inputMatrix, \inputVector^*| \paramVector) = \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)
-  \]</span></li>
-<li>We also need <span class="math display">\[
-  p(\dataVector, \inputMatrix, \inputVector^*|\paramVector)\]</span> which can be found from <span class="math display">\[p(\dataScalar^*, \dataVector, \inputMatrix, \inputVector^*| \paramVector)
-  \]</span></li>
-<li><p>Using the <em>sum rule</em> of probability, <span class="math display">\[
-  p(\dataVector, \inputMatrix, \inputVector^*|\paramVector) = \sum_{\dataScalar^*=0}^1 p(\dataScalar^*, \dataVector, \inputMatrix, \inputVector^*| \paramVector).
-  \]</span></p></li>
-<li>From independence assumptions <span class="math display">\[
-  p(\dataVector, \inputMatrix, \inputVector^*| \paramVector) = \sum_{\dataScalar^*=0}^1 \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi).
-  \]</span></li>
-<li><p>Substitute both forms to recover, <span class="math display">\[
-  P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector)  = \frac{\prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)}{\sum_{\dataScalar^*=0}^1 \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)}
-  \]</span></p></li>
-<li>Note training data terms cancel. <span class="math display">\[
-  p(\dataScalar^*| \inputVector^*, \paramVector) = \frac{\prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)}{\sum_{\dataScalar^*=0}^1 \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)}
-  \]</span></li>
-<li><p>This formula is also fairly straightforward to implement for different class conditional distributions.</p></li>
-</ul>
 <h3 id="making-predictions">Making Predictions</h3>
 <p>Naive Bayes has given us the class conditional densities: <span class="math inline">\(p(\inputVector_i | \dataScalar_i, \paramVector)\)</span>. To make predictions with these densities we need to form the distribution given by <span class="math display">\[
 P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector)
@@ -421,7 +485,7 @@ p(\dataScalar^*| \inputVector^*, \paramVector) = \frac{\prod_{j=1}^{\dataDim} p(
 <h3 id="laplace-smoothing">Laplace Smoothing</h3>
 <p>Before we proceed, let's just pause and think for a moment what will happen if <code>theta</code> here is either zero or one. This will result in <span class="math inline">\(\log 0 = -\infty\)</span> and cause numerical problems. This definitely can happen in practice. If some of the features are rare or very common across the data set then the maximum likelihood solution could find values of zero or one respectively. Such values are problematic because they cause posterior probabilities of class membership of either one or zero. In practice we deal with this using <em>Laplace smoothing</em> (which actually has an interpretation as a Bayesian fit of the Bernoulli distribution. Laplace used an example of the sun rising each day, and a wish to predict the sun rise the following day to describe his idea of smoothing, which can be found at the bottom of following page from Laplace's 'Essai Philosophique ...'</p>
 <p><a href="https://play.google.com/books/reader?id=1YQPAAAAQAAJ&amp;pg=PA16"><img src="../slides/diagrams/books/1YQPAAAAQAAJ-PA16.png" /></a></p>
-<p>{ Laplace suggests that when computing the probability of an event where a success or failure is rare (he uses an example of the sun rising across the last 5,000 years or 1,826,213 days) that even though only successes have been observed (in the sun rising case) that the odds for tomorrow shouldn't be given as <span class="math display">\[
+<p>Laplace suggests that when computing the probability of an event where a success or failure is rare (he uses an example of the sun rising across the last 5,000 years or 1,826,213 days) that even though only successes have been observed (in the sun rising case) that the odds for tomorrow shouldn't be given as <span class="math display">\[
 \frac{1,826,213}{1,826,213} = 1
 \]</span> but rather by adding one to the numerator and two to the denominator, <span class="math display">\[
 \frac{1,826,213 + 1}{1,826,213 + 2} = 0.99999945.
@@ -449,15 +513,15 @@ p(\dataScalar^*| \inputVector^*, \paramVector) = \frac{\prod_{j=1}^{\dataDim} p(
 <p>Now we are in a position to make the predictions for the test data.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">p_y <span class="op">=</span> predict(X_test, Gaussian, Bernoulli, prior)</code></pre></div>
 <p>We can test the quality of the predictions in the following way. Firstly, we can threshold our probabilities at 0.5, allocating points with greater than 50% probability of membership of the positive class to the positive class. We can then compare to the true values, and see how many of these values we got correct. This is our total number correct.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">correct <span class="op">=</span> y_test <span class="op">&amp;</span> p_y<span class="op">&gt;</span><span class="fl">0.5</span>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">correct <span class="op">=</span> y_test.eq(p_y<span class="op">&gt;</span><span class="fl">0.5</span>)
 total_correct <span class="op">=</span> <span class="bu">sum</span>(correct)
 <span class="bu">print</span>(<span class="st">&quot;Total correct&quot;</span>, total_correct, <span class="st">&quot; out of &quot;</span>, <span class="bu">len</span>(y_test), <span class="st">&quot;which is&quot;</span>, <span class="bu">float</span>(total_correct)<span class="op">/</span><span class="bu">len</span>(y_test), <span class="st">&quot;%&quot;</span>)</code></pre></div>
 <p>We can also now plot the <a href="http://en.wikipedia.org/wiki/Confusion_matrix">confusion matrix</a>. A confusion matrix tells us where we are making mistakes. Along the diagonal it stores the <em>true positives</em>, the points that were positive class that we classified correctly, and the <em>true negatives</em>, the points that were negative class and that we classified correctly. The off diagonal terms contain the false positives and the false negatives. Along the rows of the matrix we place the actual class, and along the columns we place our predicted class.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">confusion_matrix <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>np.zeros((<span class="dv">2</span>,<span class="dv">2</span>)), 
-                                columns<span class="op">=</span>[<span class="st">&#39;predicted R-rated&#39;</span>, <span class="st">&#39;predicted not R-rated&#39;</span>],
-                                index <span class="op">=</span>[<span class="st">&#39;actual R-rated&#39;</span>, <span class="st">&#39;actual not R-rated&#39;</span>])
-confusion_matrix[<span class="st">&#39;predicted R-rated&#39;</span>][<span class="st">&#39;actual R-rated&#39;</span>] <span class="op">=</span> (y_test <span class="op">&amp;</span> p_y<span class="op">&gt;</span><span class="fl">0.5</span>).<span class="bu">sum</span>()
-confusion_matrix[<span class="st">&#39;predicted R-rated&#39;</span>][<span class="st">&#39;actual not R-rated&#39;</span>] <span class="op">=</span> (<span class="op">~</span>y_test <span class="op">&amp;</span> p_y<span class="op">&gt;</span><span class="fl">0.5</span>).<span class="bu">sum</span>()
+                                columns<span class="op">=</span>[<span class="st">&#39;predicted not R-rated&#39;</span>, <span class="st">&#39;predicted R-rated&#39;</span>],
+                                index <span class="op">=</span>[<span class="st">&#39;actual not R-rated&#39;</span>,<span class="st">&#39;actual R-rated&#39;</span>])
+confusion_matrix[<span class="st">&#39;predicted R-rated&#39;</span>][<span class="st">&#39;actual R-rated&#39;</span>] <span class="op">=</span> (y_test <span class="op">&amp;</span> (p_y<span class="op">&gt;</span><span class="fl">0.5</span>)).<span class="bu">sum</span>()
+confusion_matrix[<span class="st">&#39;predicted R-rated&#39;</span>][<span class="st">&#39;actual not R-rated&#39;</span>] <span class="op">=</span> (<span class="op">~</span>y_test <span class="op">&amp;</span> (p_y<span class="op">&gt;</span><span class="fl">0.5</span>)).<span class="bu">sum</span>()
 confusion_matrix[<span class="st">&#39;predicted not R-rated&#39;</span>][<span class="st">&#39;actual R-rated&#39;</span>] <span class="op">=</span> (y_test <span class="op">&amp;</span> <span class="op">~</span>(p_y<span class="op">&gt;</span><span class="fl">0.5</span>)).<span class="bu">sum</span>()
 confusion_matrix[<span class="st">&#39;predicted not R-rated&#39;</span>][<span class="st">&#39;actual not R-rated&#39;</span>] <span class="op">=</span> (<span class="op">~</span>y_test <span class="op">&amp;</span> <span class="op">~</span>(p_y<span class="op">&gt;</span><span class="fl">0.5</span>)).<span class="bu">sum</span>()
 confusion_matrix</code></pre></div>
@@ -473,6 +537,7 @@ confusion_matrix</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Use this box for any code you need for the exercise</span>
 
 </code></pre></div>
+<h3 id="making-predictions-1">Making Predictions</h3>
 <p>Naive Bayes has given us the class conditional densities: <span class="math inline">\(p(\inputVector_i | \dataScalar_i, \paramVector)\)</span>. To make predictions with these densities we need to form the distribution given by <span class="math display">\[
 P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector)
 \]</span></p>

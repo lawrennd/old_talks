@@ -5,16 +5,11 @@
 * Instead of $\dataScalar=-1$ for negative class we take $\dataScalar=0$.}
 \notes{Our focus has been on models where the objective function is inspired by a probabilistic analysis of the problem. In particular we've argued that we answer questions about the data set by placing probability distributions over the various quantities of interest. For the case of binary classification this will normally involve introducing probability distributions for discrete variables. Such probability distributions, are in some senses easier than those for continuous variables, in particular we can represent a probability distribution over $\dataScalar$, where $\dataScalar$ is binary, with one value. If we specify the probability that $\dataScalar=1$ with a number that is between 0 and 1, i.e. let's say that $P(\dataScalar=1) = \pi$ (here we don't mean $\pi$ the number, we are setting $\pi$ to be a variable) then we can specify the probability distribution through a table.}
 
-| $\dataScalar$      | 0
-| 1     |
+| $\dataScalar$      | 0  | 1     |
 |:------:|:---------:|:-----:|
 | $P(\dataScalar)$ | $(1-\pi)$ | $\pi$ |
 
 \slides{
-* Mathematically we use a trick: use $\dataScalar$ as a mathematical switch:
-  $$
-  P(\dataScalar) = \pi^\dataScalar (1-\pi)^{(1-\dataScalar)}
-  $$
   This is the [Bernoulli distribution](http://en.wikipedia.org/wiki/Bernoulli_distribution).}
 
 \newslide{Mathematical Switch}

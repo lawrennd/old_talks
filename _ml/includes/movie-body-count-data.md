@@ -75,7 +75,9 @@ the following command.}
 
 \notes{We now see that the 'Lord of the Rings' is a large outlier with a very large number of kills. We can try and determine how much of an outlier by histograming the data.}
 
+\notes{
 ### Plotting the Data
+}
 
 \code{data['Body_Count'].hist(bins=20) # histogram the data with 20 bins.
 plt.title('Histogram of Film Kill Count')}
