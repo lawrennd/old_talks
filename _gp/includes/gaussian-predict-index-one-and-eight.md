@@ -1,4 +1,4 @@
-\setupplotcode{import pods
+\setupdisplaycode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('two_point_sample{sample:0>3}.svg', '../slides/diagrams/gp', sample=IntSlider(13, 13, 17, 1))}
 							
@@ -15,7 +15,7 @@ from ipywidgets import IntSlider}
 \includesvg{../slides/diagrams/gp/two_point_sample017.svg}{}{two_point_sample3}
 }
 \notesfigure{\includesvg{../slides/diagrams/gp/two_point_sample017.svg}}
-\caption{A 25 dimensional correlated random variable (values ploted against index)}
+\notes{\caption{The joint Gaussian over $\mappingFunction_1$ and $\mappingFunction_8$ along with the conditional distribution of $\mappingFunction_8$ given $\mappingFunction_1$}}
 
 
 

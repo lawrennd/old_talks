@@ -1389,7 +1389,7 @@ def covariance_func(kernel_function, x=None, formula=None,
     fhand = open(os.path.join(diagrams, filename + '.html'), 'w')
     fhand.write(out)
 
-def rejection_samples(kernel_function, x=None, num_few=20, num_many=10000,  diagrams='../diagrams', **kwargs):
+def rejection_samples(kernel_function, x=None, num_few=20, num_many=2000,  diagrams='../diagrams', **kwargs):
     """Plot samples from a GP, a small sample of data and a rejection sample."""
 
     fig, ax = plt.subplots(nrows=1, ncols=1, figsize=big_wide_figsize)
@@ -1443,13 +1443,13 @@ def rejection_samples(kernel_function, x=None, num_few=20, num_many=10000,  diag
     mlai.write_figure(os.path.join(diagrams, 'gp_rejection_sample005.svg'), transparent=True)
     
     
-def two_point_sample(kernel_function, diagrams='../diagrams', **kwargs):
+def two_point_sample(kernel_function, diagrams='../diagrams'):
     """Make plots for the two data point sample example for explaining gaussian processes."""
 
     ind = [0, 1]    
     fig, ax = plt.subplots(nrows=1, ncols=2, figsize=two_figsize)
     x = np.linspace(-1, 1, 25)[:, np.newaxis]
-    K = kernel_function(x, x, **kwargs)
+    K = kernel_function(x, x)
     obj = matrix(K, ax=ax[1], type='image', colormap='gray')
     ax[1].set_xlabel('$i$',fontsize=16)
     ax[1].set_ylabel('$i^\prime$',fontsize=16)

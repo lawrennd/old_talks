@@ -4,9 +4,12 @@
 \plotcode{plot.correlated_height_weight(num_samps=8, 
                               diagrams='../slides/diagrams/ml')}
 
-\setupplotcode{import pods
+\setupdisplaycode{import pods
 from ipywidgets import IntSlider}
-\displaycode{pods.notebook.display_plots('correlated_height_weight{fig:0>3}.svg', '../slides/diagrams/ml', fig=IntSlider(0, 0, 8, 1))}
+\displaycode{
+pods.notebook.display_plots('correlated_height_weight{fig:0>3}.svg', 
+                            directory='../slides/diagrams/ml', 
+							fig=IntSlider(0, 0, 7, 1))}
 
 
 \slides{
@@ -20,4 +23,4 @@ from ipywidgets import IntSlider}
 \includesvg{../slides/diagrams/ml/correlated_height_weight006.svg}{}{correlated_height_weight}
 \includesvg{../slides/diagrams/ml/correlated_height_weight007.svg}{}{correlated_height_weight}
 }
-\notesfigure{\includesvg{../slides/diagrams/ml/correlated_height_weight007.svg}{}}\notes{\caption{Samples from correlated Gaussian variables that might represent heights and weights.}}
+\notesfigure{\includesvg{../slides/diagrams/ml/correlated_height_weight007.svg}{}}\notes{\caption{Samples from *correlated* Gaussian variables that might represent heights and weights.}}

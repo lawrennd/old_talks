@@ -1,19 +1,20 @@
 \subsection{Where Did This Covariance Matrix Come From?}
 $$
 k(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\left\Vert \inputVector - \inputVector^\prime\right\Vert^2_2}{2\lengthScale^2}\right)$$
-
+\slides{
 \columns{* Covariance matrix is built using the *inputs* to the function, $\inputVector$.
 
 * For the example above it was based on Euclidean distance.
 
 * The covariance function is also know as a kernel.
 }{\includesvg{../slides/diagrams/kern/eq_covariance.svg}}{50%}{50%}
+}
 
-
-\setupplotcode{import pods
+\setupdisplaycode{import pods
 from ipywidgets import IntSlider}
-\plotcode{pods.notebook.display_plots('computing_eq_covariance{sample:0>3}.svg', 
-                            '../slides/diagrams/kern', sample=IntSlider(1, 1, 58, 1))}
+\displaycode{pods.notebook.display_plots('computing_eq_covariance{sample:0>3}.svg', 
+                            directory='../slides/diagrams/kern', 
+							sample=IntSlider(1, 1, 58, 1))}
 
 \slides{
 \startslides{computing_eq_covariance}{1}{57}
@@ -76,4 +77,5 @@ from ipywidgets import IntSlider}
 \includesvg{../slides/diagrams/kern/computing_eq_covariance057.svg}{}{computing_eq_covariance}
 \includesvg{../slides/diagrams/kern/computing_eq_covariance058.svg}{}{computing_eq_covariance}
 }
-\notesfigure{\includesvg{../slides/diagrams/kern/computing_eq_covariance058.svg}{}}\notes{\caption{Entrywise fill in of the covariance matrix from the covariance function.}}
+\notesfigure{\includesvg{../slides/diagrams/kern/computing_eq_covariance041.svg}{}
+\includesvg{../slides/diagrams/kern/computing_eq_covariance042.svg}{}}\notes{\caption{Entrywise fill in of the covariance matrix from the covariance function.}}
