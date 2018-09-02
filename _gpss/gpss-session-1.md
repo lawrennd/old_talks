@@ -1,11 +1,13 @@
 ---
 title: Introduction to Gaussian Processes
-author: Neil D. Lawrence
-slide-level: 3
-blibliography: 
-- lawrence.bib
-  other.bib
-  zbooks.bib
+abstract: >
+  In this talk we introduce Gaussian process models. Motivating the representation of uncertainty through probability distributions we review Laplace's approach to understanding uncertainty and how uncertainty in functions can be represented through a multivariate Gaussian density.
+author: 
+- given: Neil D. 
+  family: Lawrence
+affiliation: Amazon Research Cambridge and University of Sheffield
+transition: None
+date: 2018-09-03
 ---
 
 <!-- To compile -->
@@ -23,126 +25,132 @@ blibliography:
 \include{_ml/includes/univariate-gaussian-properties.md}
 \include{_ml/includes/regression-examples.md}
 
-\include{_ml/includes/underdetermined_system.md}
+\include{_ml/includes/underdetermined-system.md}
 
-### Overdetermined System
-
--   With two unknowns and two observations: 
+\newslide{Overdetermined System}
+\slides{
+* With two unknowns and two observations: 
     $$\begin{aligned}
-          y_1 = & mx_1 + c\\
-          y_2 = & mx_2 + c
+          \dataScalar_1 = & m\inputScalar_1 + c\\
+          \dataScalar_2 = & m\inputScalar_2 + c
         \end{aligned}$$
 
--   Additional observation leads to *overdetermined* system.
-    $$y_3 =  mx_3 + c$$
+* Additional observation leads to *overdetermined* system.
+    $$\dataScalar_3 =  m\inputScalar_3 + c$$
+}
 
--   This problem is solved through a noise model
-    $\epsilon \sim \mathcal{N}(0,\sigma^2)$ $$\begin{aligned}
-          y_1 = mx_1 + c + \epsilon_1\\
-          y_2 = mx_2 + c + \epsilon_2\\
-          y_3 = mx_3 + c + \epsilon_3
+\newslide{Overdetermined System}
+\slides{
+* This problem is solved through a noise model
+    $\noiseScalar \sim \gaussianSamp{0}{\dataStd^2}$ $$\begin{aligned}
+          \dataScalar_1 = m\inputScalar_1 + c + \noiseScalar_1\\
+          \dataScalar_2 = m\inputScalar_2 + c + \noiseScalar_2\\
+          \dataScalar_3 = m\inputScalar_3 + c + \noiseScalar_3
         \end{aligned}$$
+}
 
-### Noise Models
+\newslide{Noise Models}
+\slides{
+* We aren’t modeling entire system.
+* Noise model gives mismatch between model and data.
+* Gaussian model justified by appeal to central limit theorem.
+* Other models also possible (Student-$t$ for heavy tails).
+* Maximum likelihood with Gaussian noise leads to *least squares*.
+}
 
--   We aren’t modeling entire system.
-
--   Noise model gives mismatch between model and data.
-
--   Gaussian model justified by appeal to central limit theorem.
-
--   Other models also possible (Student-$t$ for heavy tails).
-
--   Maximum likelihood with Gaussian noise leads to *least squares*.
-
-### Probability for Under- and Overdetermined {.allowframebreaks}
-
--   To deal with overdetermined introduced probability distribution for
-    ‘variable’, ${\epsilon}_i$.
+\newslide{Probability for Under- and Overdetermined}
+\slides{
+* To deal with overdetermined introduced probability distribution for
+    ‘variable’, ${\noiseScalar}_i$.
 
 . . .
 
--   For underdetermined system introduced probability distribution for
+* For underdetermined system introduced probability distribution for
     ‘parameter’, $c$.
 
 . . .
 
--   This is known as a Bayesian treatment.
+* This is known as a Bayesian treatment.
+}
 
-### Different Types of Uncertainty
+\newslide{Different Types of Uncertainty}
+\slides{
+* The first type of uncertainty we are assuming is *aleatoric* uncertainty.
+* The second type of uncertainty we are assuming is *epistemic* uncertainty.
+}\notes{Classically, there are two types of uncertainty that we consider. The first is known as *aleatoric* uncertainty. This is uncertainty we couldn't resolve even if we wanted to. An example, would be the result of a football match before it's played, or where a sheet of paper lands on the floor. 
 
--   The first type of uncertainty we are assuming is
-    *aleatoric* uncertainty.
+The second is known as *epistemic* uncertainty. This is uncertainty that we could, in principle, resolve. We just haven't yet made the observation. For example, the result of a football match *after* it is played, or the color of socks that a lecturer is wearing. 
 
--   The second type of uncertainty we are assuming is
-    *epistemic* uncertainty.
+Note, that there isn't a clean difference between the two. It is arguable, that if we knew enough about a football match, or the physics of a falling sheet of paper then we might be able to resolve the uncertainty. The reason we can't is because *chaotic* behaviour means that a very small change in any of the initial conditions we would need to resolve can have a large change in downstream effects. By this argument, the only truly aleatoric uncertainty might be quantum uncertainty. However, in practice the distinction is often applied. 
 
-### Aleatoric Uncertainty
+In classical statistics, the frequentist approach only treats *aleatoric* uncertainty with probability. The key philosophical difference in the *Bayesian* approach is to treat any unknowns through probability. This approach was formally justified seperately by @Cox:probability46 and @deFinetti:prevision37.}
 
--   This is uncertainty we couldn’t know even if we wanted to. e.g. the
-    result of a football match before it’s played.
+\notes{The term Bayesian was a mocking term promoted by Fisher, it comes from the use, by Bayes, of a billiard table formulation to justify the Bernoulli distribution. Bayes considers a ball landing uniform at random between two sides of a billiard table. He then considers the outcome of the Bernoulli as being whether a second ball comes to rest to the right or left of the original. In this way, the parameter of his Bernoulli distribution is a *stochastic variable* (the uncertainty in the parameter is aleatoric). In contrast, when Bernoulli formulates the distribution he considers a bag of red and black balls. The parameter of his Bernoulli is the ratio of red balls to total balls, a deterministic variable.
 
--   Where a sheet of paper might land on the floor.
+Note how this relates to Laplace's demon. Laplace describes the deterministic universe ("... for it nothing would be uncertain and the future, as the past, would be present in its eyes"), but acknowledges the impossibility of achieving this in practice, (" ... the curve described by a simple molecule of air or vapor is regulated in a manner just as certain as the planetary orbits; the only difference between them is that which comes from our ignorance. *Probability* is relative in part to this ignorance, in part to our knowledge ...)}
 
-### Epistemic Uncertainty
+\newslide{Aleatoric Uncertainty}
+\slides{
+* This is uncertainty we couldn’t know even if we wanted to. e.g. the result of a football match before it’s played.
+* Where a sheet of paper might land on the floor.
+}
 
--   This is uncertainty we could in principal know the answer too. We
-    just haven’t observed enough yet, e.g. the result of a football
-    match *after* it’s played.
+\newslide{Epistemic Uncertainty}
+\slides{
+* This is uncertainty we could in principle know the answer too. We just haven’t observed enough yet, e.g. the result of a football match *after* it’s played.
+* What colour socks your lecturer is wearing.
+}
 
--   What colour socks your lecturer is wearing.
-
-### Bayesian Regression
+\newslide{Bayesian Regression}
 
 \include{_ml/includes/bayesian-regression1d-short.md}
 
 
-### Multivariate Analysis
-
--   For general Bayesian inference need multivariate priors.
-
-. . .
-
--   E.g. for multivariate linear regression:
-
-$${y}_i = \sum_i \weightScalar_j \inputScalar_{i, j} + \noiseScalar_i$$
-
-$${y}_i = \weightVector^\top \inputVector_{i, :} + \noiseScalar_i$$
-
-(where we’ve dropped $c$ for convenience), we need a prior over
-$\weightVector$.
+\newslide{Multivariate System}
+\slides{
+* For general Bayesian inference need multivariate priors.
 
 . . .
 
--   This motivates a *multivariate* Gaussian density.
+* E.g. for multivariate linear regression:
+
+$$\dataScalar_i = \sum_i \weightScalar_j \inputScalar_{i, j} + \noiseScalar_i$$
+
+$$\dataScalar_i = \weightVector^\top \inputVector_{i, :} + \noiseScalar_i$$
+
+(where we’ve dropped $c$ for convenience), we need a prior over $\weightVector$.
+}
+\newslide{Multivariate System}
+
+* This motivates a *multivariate* Gaussian density.
 
 . . .
 
--   We will use the multivariate Gaussian to put a prior *directly* on
-    the function (a Gaussian process).
+* We will use the multivariate Gaussian to put a prior *directly* on the function (a Gaussian process).
+}
 
-### Multivariate Bayesian Regression
+\newslide{Multivariate Bayesian Regression}
 
 \include{_ml/includes/multivariate-bayesian-linear-short.md}
 
-### Two Dimensional Gaussian Distribution
+\newslide{Two Dimensional Gaussian Distribution}
 
 \include{_ml/includes/two-d-gaussian.md}
 
-### Multivariate Gaussian Properties
+\newslide{Multivariate Gaussian Properties}
 
 \include{_ml/includes/multivariate-gaussian-properties-summary.md}
 
-\slidenotes{
-### Linear Gaussian Models
-}{Gaussian processes are initially of interest because}
-
+\newslide{Linear Gaussian Models}
+\slides{
+Gaussian processes are initially of interest because
 1. linear Gaussian models are easier to deal with 
 2. Even the parameters *within* the process can be handled, by considering a particular limit.
+}
 
 \include{_ml/includes/multivariate-gaussian-properties.md}
 
-### Distributions over Functions
+\newslide{Distributions over Functions}
 
 \include{_gp/includes/gpdistfunc.md}
 
@@ -152,9 +160,16 @@ $\weightVector$.
 \include{_kern/includes/brownian-covariance.md}
 \include{_kern/includes/periodic-covariance.md}
 
+\include{_kern/includes/rbf-basis-covariance.md}
 
 
-### References {.allowframebreaks}
+### An Infinite Basis
+
+\include{_gp/includes/infinite-basis.md}
+\include{_kern/includes/rbfcovariance.md}
+
+
+\newslide{References}
 
 \tiny
 

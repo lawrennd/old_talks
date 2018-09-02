@@ -1,4 +1,7 @@
-\section{Overdetermined System}
+\notes{
+### Overdetermined System
+}
+\newslide{Overdetermined System}
 
 \notes{The challenge with a linear model is that it has two unknowns, $m$, and $c$. Observing data allows us to write down a system of simultaneous linear equations. So, for example if we observe two data points, the first with the input value, $\inputScalar_1 = 1$ and the output value, $\dataScalar_1 =3$ and a second data point, $\inputScalar = 3$, $\dataScalar=1$, then we can write two simultaneous linear equations of the form. 
 
@@ -30,14 +33,12 @@ $$2.5 = 2m + c$$
 \notes{This is known as an *overdetermined* system because there are more data than we need to determine our parameters. The problem arises because the model is a simplification of the real world, and the data we observe is therefore inconsistent with our model.}
 
 
-\slides{
-### 
-}
+\newslide{}}
 
-\plotcode{import teaching_plots as plot}
+\setupplotcode{import teaching_plots as plot}
 \plotcode{plot.over_determined_system(diagrams='../slides/diagrams/ml')}
 
-\displaycode{from ipywidgets import IntSlider
+\setupplotcode{from ipywidgets import IntSlider
 import pods}
 \displaycode{pods.notebook.display_plots('over_determined_system{samp:0>3}.svg',
                             directory='../slides/diagrams/ml', 
@@ -55,8 +56,8 @@ import pods}
 }
 
 
+\newslide{$\dataScalar = m\inputScalar + c$}
 \slides{
-### $\dataScalar = m\inputScalar + c$ 
 
 . . . 
 
@@ -78,13 +79,11 @@ point 3: $\inputScalar = 2$, $\dataScalar=2.5$
 
 $$2.5 = 2m + c$$}
 
-\slides{
-### 
-}
+\newslide{}
 
 \notes{The solution was proposed by Pierre-Simon Laplace. His idea was to accept that the model was an incomplete representation of the real world, and the manner in which it was incomplete is *unknown*. His idea was that such unknowns could be dealt with through probability.}
 
-\includeimg{../slides/diagrams/ml/Pierre-Simon_Laplace.png}{30%}
+\includeimg{../slides/diagrams/ml/Pierre-Simon_Laplace.png}{30%}{}{center}
 
 \include{_ai/includes/laplaces-determinism.md}
 
@@ -105,9 +104,8 @@ $$
 
 Laplace's trick has converted the *overdetermined* system into an *underdetermined* system. He has now added three variables, $\{\noiseScalar_i\}_{i=1}^3$, which represent the unknown corruptions of the real world. Laplace's idea is that we should represent that unknown corruption with a *probability distribution*.}
 
+\newslide{$\dataScalar = m\inputScalar + c + \noiseScalar$}
 \slides{
-### $\dataScalar = m\inputScalar + c + \noiseScalar$ 
-
 . . . 
 
 point 1: $\inputScalar = 1$, $\dataScalar=3$
@@ -130,13 +128,9 @@ $$
 $$
 }
 
-### A Probabilistic Process
-
-\notes{However, it was left to an admirer of Gauss to develop a practical probability density for that purpose. It was Carl Friederich Gauss who suggested that the *Gaussian* density (which at the time was unnamed!) should be used to represent this error.}
-
-\notes{The result is a *noisy* function, a function which has a deterministic part, and a stochastic part. This type of function is sometimes known as a probabilistic or stochastic process, to distinguish it from a deterministic process.}
-
-\slides{. . .
+\subsection{A Probabilistic Process}
+\slides{
+. . .
 
 Set the mean of Gaussian to be a function.
 $$p
@@ -150,4 +144,7 @@ This gives us a 'noisy function'.
 . . .
 
 This is known as a stochastic process.
-}
+}\notes{However, it was left to an admirer of Gauss to develop a practical probability density for that purpose. It was Carl Friederich Gauss who suggested that the *Gaussian* density (which at the time was unnamed!) should be used to represent this error.}
+
+\notes{The result is a *noisy* function, a function which has a deterministic part, and a stochastic part. This type of function is sometimes known as a probabilistic or stochastic process, to distinguish it from a deterministic process.}
+

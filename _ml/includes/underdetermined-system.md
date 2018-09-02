@@ -1,8 +1,7 @@
 \section{Underdetermined System}
 
-\setupcode{import teaching_plots as plot}
-
-\code{plot.under_determined_system(diagrams='../slides/diagrams/ml')}
+\setupplotcode{import teaching_plots as plot}
+\plotcode{plot.under_determined_system(diagrams='../slides/diagrams/ml')}
 
 \notes{What about the situation where you have more parameters than data in your simultaneous equation? This is known as an *underdetermined* system. In fact this set up is in some sense *easier* to solve, because we don't need to think about introducing a slack variable (although it might make a lot of sense from a *modelling* perspective to do so).
 
@@ -13,21 +12,20 @@ with zero mean and variance $\dataStd^2$. }
 \notes{The follow up question is whether we can do the same thing with the parameters. If we have two parameters and only one unknown can we place a probability distribution over the parameters, as we did with the slack variables? The answer is yes.}
 
 
+\newslide{Underdetermined System}
 \slides{
-### Underdetermined System
-
 * What about two unknowns and *one* observation?
-$$\dataScalar_1 =  m\inputScalar_1 + c$$
+  $$\dataScalar_1 =  m\inputScalar_1 + c$$
 
 . . .
 
-Can compute $m$
-given $c$. $$m = \frac{\dataScalar_1 - c}{\inputScalar}$$
+Can compute $m$ given $c$. 
+$$m = \frac{\dataScalar_1 - c}{\inputScalar}$$
 }
 
-### Underdetermined System
+\subsection{Underdetermined System}
 
-\displaycode{import pods
+\setupplotcode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('under_determined_system{samp:0>3}.svg', 
                             directory='../slides/diagrams/ml', samp=IntSlider(0, 0, 10, 1))}
