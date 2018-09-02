@@ -1,16 +1,16 @@
 ### Brownian Covariance
 
-\loadcode{%load -s brownian_cov mlai.py}
+\loadcode{brownian_cov}{mlai}
 
-\setupcode{import teaching_plots as plot
+\setupplotcode{import teaching_plots as plot
 import mlai
 import numpy as np}
-\code{t=np.linspace(0, 2, 200)[:, np.newaxis]
+\plotcode{t=np.linspace(0, 2, 200)[:, np.newaxis]
 K, anim=plot.animate_covariance_function(mlai.compute_kernel, 
                                          t, 
                                          kernel=brownian_cov)}
 
-\setupcode{from IPython.core.display import HTML}
+\setupplotcode{from IPython.core.display import HTML}
 
 \displaycode{HTML(anim.to_jshtml())}
 

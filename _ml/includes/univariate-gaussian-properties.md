@@ -1,8 +1,8 @@
-### Two Important Gaussian Properties
+\subsection{Two Important Gaussian Properties}
 
 \notes{The Gaussian density has many important properties, but for the moment we'll review two of them.}
 
-### Sum of Gaussians
+\subsection{Sum of Gaussians}
 
 \notes{If we assume that a variable, $\dataScalar_i$, is sampled from a Gaussian density,}
 \slides{. . .
@@ -26,7 +26,7 @@ $$\sum_{i=1}^{\numData} \dataScalar_i \sim \gaussianSamp{\sum_{i=1}^\numData \me
 variance variables is also Gaussian because of [central limit theorem](https://en.wikipedia.org/wiki/Central_limit_theorem).)}}
 
 
-### Scaling a Gaussian
+\subsection{Scaling a Gaussian}
 
 \notes{Less unusual is the *scaling* property of a Gaussian density. If a variable, $\dataScalar$, is sampled from a Gaussian density,}
 \slides{. . .

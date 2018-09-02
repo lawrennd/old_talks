@@ -1,15 +1,15 @@
-\slides{
-### Sampling Two Dimensional Variables
+\subsection{Sampling Two Dimensional Variables}
 
 \plotcode{import teaching_plots as plot}
 \plotcode{plot.correlated_height_weight(num_samps=8, 
                               diagrams='../slides/diagrams/ml')}
 
-\displaycode{import pods
+\setupplotcode{import pods
 from ipywidgets import IntSlider}
-\displaycode{pods.notebook.display_plots('correlated_height_weight{fig:0>3}.png', '../slides/diagrams/ml', fig=IntSlider(0, 0, 8, 1))}
+\displaycode{pods.notebook.display_plots('correlated_height_weight{fig:0>3}.svg', '../slides/diagrams/ml', fig=IntSlider(0, 0, 8, 1))}
 
 
+\slides{
 \startslides{correlated_height_weight}{0}{7}
 \includesvg{../slides/diagrams/ml/correlated_height_weight000.svg}{}{correlated_height_weight}
 \includesvg{../slides/diagrams/ml/correlated_height_weight001.svg}{}{correlated_height_weight}

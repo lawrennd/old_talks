@@ -1,11 +1,11 @@
 \helpercode{%load -s sinc_cov mlai.py}
-\setupcode{import teaching_plots as plot
+\setupplotcode{import teaching_plots as plot
 import mlai
 import numpy as np}
-\code{K, anim=plot.animate_covariance_function(mlai.compute_kernel, 
+\plotcode{K, anim=plot.animate_covariance_function(mlai.compute_kernel, 
                                          kernel=sinc_cov)}
 
-\setupcode{from IPython.core.display import HTML}
+\setupplotcode{from IPython.core.display import HTML}
 
 \displaycode{HTML(anim.to_jshtml())}
 
@@ -14,9 +14,9 @@ import numpy as np}
 				    filename='sinc_covariance.html')}
 
 
-### Sinc Covariance
+\newslide{Sinc Covariance}
 
-$$\kernelScalar(\inputVector, \inputVector^\prime) = \alpha\sinc\left(\frac{r}{\lengthScale}\right)$$
+$$\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \text{sinc}\left(\frac{r}{\lengthScale}\right)$$
 
 \columns{
 \includesvg{../slides/diagrams/kern/sinc_covariance.svg}

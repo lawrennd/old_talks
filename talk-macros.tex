@@ -21,11 +21,11 @@ YouTubeVideo('\id')
 \define{\includesvgclass{filename}{class}{align}}{<img src="\filename" class="\class" align="\align">}
 \define{\includehtml{filename}{width}{height}}{<iframe src="\filename" width="\width" height="\height" allowtransparency="true" frameborder="0">
 </iframe>}
-\define{\slidenotes{slidetext}{notetext}}{\notetext}
 \define{\speakernotes{text}}{}
 
 
 \define{\section{text}}{## \text}
+\define{\subsection{text}}{### \text}
 \define{\fragment{text}{type}}{\text}
 \define{\fragmentindex{text}{type}{index}}{\text}
 \define{\notesfigure{block}}{}
@@ -49,6 +49,7 @@ YouTubeVideo('\id')
 
 
 \ifdef{slides} <!-- ipynb and slides-->
+\define{\slidenotes{slidetext}{notetext}}{\slidetext}
 
 \define{\setupplotcode{block}}{```{.python}
 \block
@@ -79,6 +80,7 @@ YouTubeVideo('\id')
 
 
 \else <!-- ipynb but not slides -->
+\define{\slidenotes{slidetext}{notetext}}{\notetext}
 
 <!--%%%%%%%%%% CODE DISPLAY %%%%%%%%%%-->
 
@@ -88,8 +90,8 @@ YouTubeVideo('\id')
 \define{\setupcode{block}}{```{.python}
 \block
 ```}
-\define{\loadcode{object}{file}}{```{.python}
-\%load -s \object \file.py
+\define{\loadcode{object}{source_file}}{```{.python}
+%load -s \object \source_file.py
 ```}
 \define{\helpercode{block}}{```{.python}
 \block
@@ -209,6 +211,7 @@ YouTubeVideo('\id')
 }
 
 \define{\section{text}}{## \text}
+\define{\subsection{text}}{### \text}
 
 \define{\code{block}}{```{.python}
 \block
@@ -280,6 +283,7 @@ from \file import \object
 \define{\writeassignment{text}{question}{marks}}{}
 \define{\codeassignment{text}{question}{marks}}{}
 \define{\section{text}}{<!-- SECTION \text -->}
+\define{\subsection{text}}{### \text}
 \define{\slides{text}}{\text}
 \define{\newslide{text}}{### \text
 }

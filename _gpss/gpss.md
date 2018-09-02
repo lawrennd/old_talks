@@ -38,9 +38,9 @@ $$ \text{data} + \text{model} = \text{prediction}$$
 
 ### The Gaussian density
 
-\include{../ml/includes/univariate_gaussian.md}
-\include{../ml/includes/univariate_gaussian_properties.md}
-\include{../ml/includes/regression_examples.md}
+\include{_ml/includes/univariate_gaussian.md}
+\include{_ml/includes/univariate_gaussian_properties.md}
+\include{_ml/includes/regression_examples.md}
 
 ### Olympic Marathon Data
 
@@ -54,7 +54,7 @@ $$ \text{data} + \text{model} = \text{prediction}$$
 
 -   In 1904 Marathon was badly organised leading to very slow times.
 </td><td width="30%">
-![image](../ml/diagrams/Stephen_Kiprotich.jpg)
+![image](_ml/diagrams/Stephen_Kiprotich.jpg)
 <small>Image from Wikimedia Commons <http://bit.ly/16kMKHQ></small>
 </td></tr>
 </table>
@@ -62,10 +62,10 @@ $$ \text{data} + \text{model} = \text{prediction}$$
 
 ### Olympic Marathon Data
 
-<object data="../ml/diagrams/olympic_marathon.svg"  class="svgplot"></object> 
+<object data="_ml/diagrams/olympic_marathon.svg"  class="svgplot"></object> 
 
-\include{../ml/includes/overdetermined_inaugural.md}
-\include{../ml/includes/underdetermined_system.md}
+\include{_ml/includes/overdetermined_inaugural.md}
+\include{_ml/includes/underdetermined_system.md}
 
 
 ### Probability for Under- and Overdetermined {.allowframebreaks}
@@ -85,7 +85,7 @@ $$ \text{data} + \text{model} = \text{prediction}$$
 
 ### Bayesian Regression
 
-\include{../ml/includes/bayesian_regression1d_short.md}
+\include{_ml/includes/bayesian_regression1d_short.md}
 
 
 ### Multivariate Analysis
@@ -114,40 +114,40 @@ $\weightVector$.
 
 ### Multivariate Bayesian Regression
 
-\include{../ml/includes/multivariate_bayesian_linear_short.md}
+\include{_ml/includes/multivariate_bayesian_linear_short.md}
 
 ### Two Dimensional Gaussian Distribution
 
-\include{../ml/includes/two_d_gaussian.md}
+\include{_ml/includes/two_d_gaussian.md}
 
 ### Multivariate Gaussian Properties
 
-\include{../gp/includes/multivariate_gaussian_properties.md}
+\include{_gp/includes/multivariate_gaussian_properties.md}
 
 ### Distributions over Functions
 
-\include{../gp/includes/gpdistfunc.md}
+\include{_gp/includes/gpdistfunc.md}
 
 ### Two Point Marginals
 
-\ignore{../gp/includes/gptwopointpred.md}
+\ignore{_gp/includes/gptwopointpred.md}
 
-\include{../kern/includes/rbfcovariance.md}
-\include{../kern/includes/computing_rbf_covariance.md}
+\include{_kern/includes/rbfcovariance.md}
+\include{_kern/includes/computing_rbf_covariance.md}
 
-\include{../kern/includes/eq_covariance.md}
+\include{_kern/includes/eq_covariance.md}
 
 
-\include{../gp/includes/basis_functions.md}
-\include{../gp/includes/gp_covariance_construction.md}
-\include{../kern/includes/rbfbasiscovariance.md}
+\include{_gp/includes/basis_functions.md}
+\include{_gp/includes/gp_covariance_construction.md}
+\include{_kern/includes/rbfbasiscovariance.md}
 
 
 
 ### An Infinite Basis
 
-\include{../gp/includes/infinite_basis.md}
-\include{../kern/includes/rbfcovariance.md}
+\include{_gp/includes/infinite-basis.md}
+\include{_kern/includes/rbfcovariance.md}
 
 ### References {.allowframebreaks}
 

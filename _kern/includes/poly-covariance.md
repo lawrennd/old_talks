@@ -1,11 +1,11 @@
-\helpercode{%load -s polynomial_cov mlai.py}
-\setupcode{import teaching_plots as plot
+\loadcode{polynomial_cov}{mlai}
+\setupplotcode{import teaching_plots as plot
 import mlai
 import numpy as np}
-\code{K, anim=plot.animate_covariance_function(mlai.compute_kernel, 
+\plotcode{K, anim=plot.animate_covariance_function(mlai.compute_kernel, 
                                          kernel=polynomial_cov, degree=4)}
 
-\setupcode{from IPython.core.display import HTML}
+\setupplotcode{from IPython.core.display import HTML}
 
 \displaycode{HTML(anim.to_jshtml())}
 

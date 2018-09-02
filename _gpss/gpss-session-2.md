@@ -1,11 +1,13 @@
 ---
 title: Kalman Filters and Coregionalization
-author: Neil D. Lawrence
-slide-level: 3
-blibliography:
-- lawrence.bib
-  other.bib
-  zbooks.bib
+abstract: >
+  In this talk we review multi-output Gaussian processes. Introducing them initially through a Kalman filter representation of a GP.
+author: 
+- given: Neil D. 
+  family: Lawrence
+affiliation: Amazon Research Cambridge and University of Sheffield
+transition: None
+date: 2018-09-04
 ---
 
 <!-- To compile -->

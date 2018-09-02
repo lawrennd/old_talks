@@ -1,24 +1,19 @@
-\setupcode{import numpy as np
+\setupplotcode{import numpy as np
 np.random.seed(4949)}
 
-\setupcode{import teaching_plots as plot
+\setupplotcode{import teaching_plots as plot
 import pods}
 
 ### Sampling a Function  {data-transition="none"}
 
 **Multi-variate Gaussians**
 
--   We will consider a Gaussian with a particular structure of
-    covariance matrix.
-
--   Generate a single sample from this 25 dimensional Gaussian
-    distribution,
-    $\mappingFunctionVector=\left[\mappingFunction_{1},\mappingFunction_{2}\dots \mappingFunction_{25}\right]$.
-
--   We will plot these points against their index.
+* We will consider a Gaussian with a particular structure of covariance matrix.
+* Generate a single sample from this 25 dimensional Gaussian distribution, $\mappingFunctionVector=\left[\mappingFunction_{1},\mappingFunction_{2}\dots \mappingFunction_{25}\right]$.
+* We will plot these points against their index.
 
 
-\include{./_gp/includes/gaussian-predict-index-one-and-two.md}
+\include{_gp/includes/gaussian-predict-index-one-and-two.md}
 
 ### Uluru
 
