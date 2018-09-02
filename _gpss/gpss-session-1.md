@@ -113,21 +113,21 @@ Note how this relates to Laplace's demon. Laplace describes the deterministic un
 . . .
 
 * E.g. for multivariate linear regression:
-
-$$\dataScalar_i = \sum_i \weightScalar_j \inputScalar_{i, j} + \noiseScalar_i$$
-
-$$\dataScalar_i = \weightVector^\top \inputVector_{i, :} + \noiseScalar_i$$
-
+}\notes{For general Bayesian inference, over more than one parameter, we need *multivariate priors*. For example, consider the multivariate linear regression where an observation, $\dataScalar_i$ is related to a vector of features, $\inputVector_{i, :}$, through a vector of parameters, $\weightVector$,}
+$$\dataScalar_i = \sum_j \weightScalar_j \inputScalar_{i, j} + \noiseScalar_i,$$
+\notes{or in vector notation,}
+$$\dataScalar_i = \weightVector^\top \inputVector_{i, :} + \noiseScalar_i.$$
+\notes{Here we've dropped the intercpet for convenience, it can be reintroduced by augmenting the feature vector, $\inputVector_{i, :}$, with a constant valued feature.}\slides{ 
 (where we’ve dropped $c$ for convenience), we need a prior over $\weightVector$.
 }
 \newslide{Multivariate System}
-
+\slides{
 * This motivates a *multivariate* Gaussian density.
 
 . . .
 
 * We will use the multivariate Gaussian to put a prior *directly* on the function (a Gaussian process).
-}
+}\notes{This motivates the need for a *multivariate* Gaussian density.}
 
 \newslide{Multivariate Bayesian Regression}
 
@@ -151,6 +151,8 @@ Gaussian processes are initially of interest because
 \include{_ml/includes/multivariate-gaussian-properties.md}
 
 \newslide{Distributions over Functions}
+
+\include{_gp/includes/gp-intro-very-short.md}
 
 \include{_gp/includes/gpdistfunc.md}
 

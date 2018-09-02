@@ -17,7 +17,7 @@
   $$
   \notes{where $p(\dataScalar}$ is the marginal probability of the data, obtained through integration over the joint density, $p(\dataScalar, c)=p(\dataScalar|c)p(c)$. Overall the equation can be summarized as,
   $$
-  \text{posterior} = \frac{\text{likelihood}\text{prior}}{\text{marginal likelihood}}.
+  \text{posterior} = \frac{\text{likelihood}\times \text{prior}}{\text{marginal likelihood}}.
   $$
 }
 
@@ -27,7 +27,7 @@
 \setupplotcode{import teaching_plots as plot}
 \plotcode{plot.bayes_update(diagrams='../slides/diagrams/ml')}
 
-\setupplotcode{from ipywidgets import IntSlider
+\setupdisplaycode{from ipywidgets import IntSlider
 import pods}
 \displaycode{pods.notebook.display_plots('dem_gaussian{stage:0>2}.svg', 
                             diagrams='../slides/diagrams/ml', 
@@ -46,7 +46,7 @@ import pods}
 \notes{The marginal likelihood, $p(\dataScalar)$, operates to ensure that the distribution is normalised.}
 
 \newslide{Stages to Derivation of the Posterior}
-\slides}
+\slides{
 * Multiply likelihood by prior
   * they are “exponentiated quadratics”, the answer is always also an exponentiated quadratic because $\exp(a^2)\exp(b^2) = \exp(a^2 + b^2)$.
 * Complete the square to get the resulting density in the form of a Gaussian.
