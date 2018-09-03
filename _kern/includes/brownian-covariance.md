@@ -1,14 +1,25 @@
-### Brownian Covariance
+\subsection{Brownian Covariance}
 
 \loadcode{brownian_cov}{mlai}
 
 \setupplotcode{import teaching_plots as plot
 import mlai
-import numpy as np}
+import matplotlib.pyplot as plt
+import numpy as np
+import os}
 \plotcode{t=np.linspace(0, 2, 200)[:, np.newaxis]
-K, anim=plot.animate_covariance_function(mlai.compute_kernel, 
-                                         t, 
-                                         kernel=brownian_cov)}
+kernel = mlai.Kernel(function=mlai.brownian_cov)
+K, anim=plot.animate_covariance_function(kernel.K, t)}
+
+\plotcode{fig, ax = plt.subplots(figsize=plot.one_figsize)
+t=np.linspace(0, 1, 20)[:, np.newaxis]
+plot.matrix(kernel.K(t), ax=ax, type='image', bracket_style='boxes', colormap='gray')
+plot.clear_axes(ax)
+ax.set_xlabel('$t$')
+ax.set_ylabel('$t^\prime$')
+mlai.write_figure(os.path.join('../slides/diagrams/kern', 'brownian_covariance.svg'), 
+                  transparent=True)
+}
 
 \setupplotcode{from IPython.core.display import HTML}
 
@@ -22,6 +33,7 @@ K, anim=plot.animate_covariance_function(mlai.compute_kernel,
 $$
 \kernelScalar(t, t^\prime) = \alpha \min(t, t^\prime)
 $$
+
 <!--\columns{
 \includesvg{../slides/diagrams/kern/brownian_covariance.svg}
 }{

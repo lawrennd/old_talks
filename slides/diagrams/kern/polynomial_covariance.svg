@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Created with matplotlib (http://matplotlib.org/) -->
+<svg height="360pt" version="1.1" viewBox="0 0 360 360" width="360pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+*{stroke-linecap:butt;stroke-linejoin:round;}
+  </style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 360 
+L 360 360 
+L 360 0 
+L 0 0 
+z
+" style="fill:none;"/>
+  </g>
+  <g id="axes_1">
+   <g clip-path="url(#p7bc5c3a837)">
+    <image height="272" id="image6c523f039c" transform="scale(1 -1)translate(0 -272)" width="272" x="48.6" xlink:href="data:image/png;base64,
+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" y="-43"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="text_1">
+     <!-- $t$ -->
+     <defs>
+      <path d="M 42.28125 54.6875 
+L 40.921875 47.703125 
+L 23 47.703125 
+L 17.1875 18.015625 
+Q 16.890625 16.359375 16.75 15.234375 
+Q 16.609375 14.109375 16.609375 13.484375 
+Q 16.609375 10.359375 18.484375 8.9375 
+Q 20.359375 7.515625 24.515625 7.515625 
+L 33.59375 7.515625 
+L 32.078125 0 
+L 23.484375 0 
+Q 15.484375 0 11.546875 3.125 
+Q 7.625 6.25 7.625 12.59375 
+Q 7.625 13.71875 7.765625 15.0625 
+Q 7.90625 16.40625 8.203125 18.015625 
+L 14.015625 47.703125 
+L 6.390625 47.703125 
+L 7.8125 54.6875 
+L 15.28125 54.6875 
+L 18.3125 70.21875 
+L 27.296875 70.21875 
+L 24.3125 54.6875 
+z
+" id="DejaVuSans-Oblique-74"/>
+     </defs>
+     <g transform="translate(182.5 326.598437)scale(0.1 -0.1)">
+      <use transform="translate(0 0.78125)" xlink:href="#DejaVuSans-Oblique-74"/>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="text_2">
+     <!-- $t^\prime$ -->
+     <defs>
+      <path d="M 3.515625 5.421875 
+Q 2.875 5.609375 2.875 6.390625 
+L 15.09375 51.8125 
+Q 15.671875 53.65625 17.078125 54.78125 
+Q 18.5 55.90625 20.3125 55.90625 
+Q 22.65625 55.90625 24.4375 54.359375 
+Q 26.21875 52.828125 26.21875 50.484375 
+Q 26.21875 49.46875 25.6875 48.1875 
+L 7.625 4.984375 
+Q 7.28125 4.296875 6.6875 4.296875 
+Q 6.15625 4.296875 5 4.78125 
+Q 3.859375 5.28125 3.515625 5.421875 
+z
+" id="Cmsy10-30"/>
+     </defs>
+     <g transform="translate(42.520313 182.5)rotate(-90)scale(0.1 -0.1)">
+      <use transform="translate(0 0.584375)" xlink:href="#DejaVuSans-Oblique-74"/>
+      <use transform="translate(45.849505 38.865625)scale(0.7)" xlink:href="#Cmsy10-30"/>
+     </g>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p7bc5c3a837">
+   <rect height="271.8" width="271.8" x="48.6" y="43.2"/>
+  </clipPath>
+ </defs>
+</svg>
