@@ -68,6 +68,7 @@ def matrix(A, ax=None,
            highlight_col=None,
            highlight_width=3,
            highlight_color=[0,0,0],
+           prec = '.3',
            zoom=False,
            zoom_row=None,
            zoom_col=None,
@@ -99,7 +100,7 @@ def matrix(A, ax=None,
     elif type == 'values':
         for i in range(nrows):
             for j in range(ncols):
-                handle.append(ax.text(j, i, str(A[i, j]), horizontalalignment='center', fontsize=fontsize))
+                handle.append(ax.text(j, i, '{val:{prec}}'.format(val=A[i, j], prec=prec), horizontalalignment='center', fontsize=fontsize))
     elif type == 'entries':
         for i in range(nrows):
             for j in range(ncols):

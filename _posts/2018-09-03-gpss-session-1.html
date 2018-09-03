@@ -1,13 +1,14 @@
 ---
 title: "Introduction to Gaussian Processes"
+venue: "Gaussian Process Summer School, Sheffield"
 abstract: "<p>In this talk we introduce Gaussian process models. Motivating the representation of uncertainty through probability distributions we review Laplace's approach to understanding uncertainty and how uncertainty in functions can be represented through a multivariate Gaussian density.</p>"
 author:
 - given: Neil D.
   family: Lawrence
-  url: 
-  institute: 
-  twitter: 
-  gscholar: 
+  url: http://inverseprobability.com
+  institute: Amazon Cambridge and University of Sheffield
+  twitter: lawrennd
+  gscholar: r3SJcvoAAAAJ
   orchid: 
 date: 2018-09-03
 published: 2018-09-03
@@ -296,7 +297,6 @@ p(\dataVector) = \frac{1}{\det{2\pi\covarianceMatrix}^{\frac{1}{2}}} \exp\left(-
 <h3 id="basis-functions">Basis Functions</h3>
 <p>We can basically put anything inside the basis functions, and many people do. These can be deep kernels <span class="citation">(Cho and Saul, 2009)</span> or we can learn the parameters of a convolutional neural network inside there.</p>
 <p>Viewing a neural network in this way is also what allows us to beform sensible <em>batch</em> normalizations <span class="citation">(Ioffe and Szegedy, 2015)</span>.</p>
-<p><a href="file:///Users/neil/lawrennd/talks/_gp/includes/gp-intro-very-short.md">_gp/includes/gp-intro-very-short.md</a></p>
 <h3 id="bayesian-inference-by-rejection-sampling">Bayesian Inference by Rejection Sampling</h3>
 <p>One view of Bayesian inference is to assume we are given a mechanism for generating samples, where we assume that mechanism is representing on accurate view on the way we believe the world works.</p>
 <p>This mechanism is known as our <em>prior</em> belief.</p>
@@ -318,7 +318,6 @@ p(\dataVector) = \frac{1}{\det{2\pi\covarianceMatrix}^{\frac{1}{2}}} \exp\left(-
 <center>
 <em>One view of Bayesian inference is we have a machine for generating samples (the </em>prior<em>), and we discard all samples inconsistent with our data, leaving the samples of interest (the </em>posterior<em>). The Gaussian process allows us to do this analytically. </em>
 </center>
-<p><a href="file:///Users/neil/lawrennd/talks/_gp/includes/gpdistfunc.md">_gp/includes/gpdistfunc.md</a></p>
 <h3 id="sampling-a-function">Sampling a Function</h3>
 <p>We will consider a Gaussian distribution with a particular structure of covariance matrix. We will generate <em>one</em> sample from a 25-dimensional Gaussian density. <span class="math display">\[
 \mappingFunctionVector=\left[\mappingFunction_{1},\mappingFunction_{2}\dots \mappingFunction_{25}\right].
@@ -332,7 +331,6 @@ p(\dataVector) = \frac{1}{\det{2\pi\covarianceMatrix}^{\frac{1}{2}}} \exp\left(-
 <center>
 <em>A 25 dimensional correlated random variable (values ploted against index) </em>
 </center>
-<p><a href="file:///Users/neil/lawrennd/talks/_gp/includes/gaussian-predict-index-one-and-two.md">_gp/includes/gaussian-predict-index-one-and-two.md</a></p>
 
 <object class="svgplot" align data="../slides/diagrams/gp/two_point_sample012.svg">
 </object>
@@ -350,7 +348,6 @@ p(\dataVector) = \frac{1}{\det{2\pi\covarianceMatrix}^{\frac{1}{2}}} \exp\left(-
     \kernelMatrix = \begin{bmatrix} \kernelScalar_{1, 1} &amp; \kernelScalar_{1, 2}\\ \kernelScalar_{2, 1} &amp; \kernelScalar_{2, 2}.\end{bmatrix}
     \]</span></p>
 <p>Using these formulae we can determine the conditional density for any of the elements of our vector <span class="math inline">\(\mappingFunctionVector\)</span>. For example, the variable <span class="math inline">\(\mappingFunction_8\)</span> is less correlated with <span class="math inline">\(\mappingFunction_1\)</span> than <span class="math inline">\(\mappingFunction_2\)</span>. If we consider this variable we see the conditional density is more diffuse.</p>
-<p><a href="file:///Users/neil/lawrennd/talks/_gp/includes/gaussian-predict-index-one-and-eight.md">_gp/includes/gaussian-predict-index-one-and-eight.md</a></p>
 
 <object class="svgplot" align data="../slides/diagrams/gp/two_point_sample013.svg">
 </object>
@@ -359,7 +356,6 @@ p(\dataVector) = \frac{1}{\det{2\pi\covarianceMatrix}^{\frac{1}{2}}} \exp\left(-
 <center>
 <em>The joint Gaussian over <span class="math inline">\(\mappingFunction_1\)</span> and <span class="math inline">\(\mappingFunction_8\)</span> along with the conditional distribution of <span class="math inline">\(\mappingFunction_8\)</span> given <span class="math inline">\(\mappingFunction_1\)</span> </em>
 </center>
-<p><a href="file:///Users/neil/lawrennd/talks/_kern/includes/computing-rbf-covariance.md">_kern/includes/computing-rbf-covariance.md</a></p>
 <h3 id="where-did-this-covariance-matrix-come-from">Where Did This Covariance Matrix Come From?</h3>
 <p><span class="math display">\[
 k(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\left\Vert \inputVector - \inputVector^\prime\right\Vert^2_2}{2\lengthScale^2}\right)\]</span></p>
