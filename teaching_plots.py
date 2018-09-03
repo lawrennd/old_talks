@@ -1453,7 +1453,9 @@ def kern_circular_sample(K, mu=None, x=None,
     return animation.FuncAnimation(fig, animate, init_func=init,
                                    frames=num_theta, blit=True)
 
-def animate_covariance_function(kernel_function, x=None, num_samps=5, multiple=False, **kernelargs):
+def animate_covariance_function(kernel_function,
+                                x=None, num_samps=5,
+                                multiple=False):
     """Create an animation of a prior covariance function."""
 
     fig, ax = plt.subplots(figsize=one_figsize)
@@ -1465,10 +1467,10 @@ def animate_covariance_function(kernel_function, x=None, num_samps=5, multiple=F
     if multiple:
         x = output_augment_x(x, num_samps)
     
-    K = kernel_function(x, x, **kernelargs)
+    K = kernel_function(x, x)
     return K, kern_circular_sample(K, x=x,
-                                fig=fig, num_samps=num_samps,
-                                multiple=multiple)
+                                   fig=fig, num_samps=num_samps,
+                                   multiple=multiple)
     
 def covariance_func(kernel_function, x=None, formula=None,
                     shortname=None, longname=None, comment=None,

@@ -394,7 +394,7 @@ k(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\left\Vert \input
 <table>
 <tr>
 <td width="45%">
-<object class="svgplot" align data="../slides/diagrams/kern/poly_covariance.svg">
+<object class="svgplot" align data="../slides/diagrams/kern/polynomial_covariance.svg">
 </object>
 </td>
 <td width="45%">
@@ -410,9 +410,10 @@ k(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\left\Vert \input
 </td></tr></table>-->
 <h3 id="brownian-covariance">Brownian Covariance</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> brownian_cov</code></pre></div>
-Brownian motion is also a Gaussian process. It follows a Gaussian random walk, with diffusion occuring at each time point driven by a Gaussian input. This implies it is both Markov and Gaussian. The covariane function for Brownian motion has the form <span class="math display">\[
+<p>Brownian motion is also a Gaussian process. It follows a Gaussian random walk, with diffusion occuring at each time point driven by a Gaussian input. This implies it is both Markov and Gaussian. The covariane function for Brownian motion has the form <span class="math display">\[
 \kernelScalar(t, t^\prime) = \alpha \min(t, t^\prime)
-\]</span> <!--<table><tr><td width="50%">
+\]</span></p>
+<!--<table><tr><td width="50%">
 <object class="svgplot" align="" data="../slides/diagrams/kern/brownian_covariance.svg"></object>
 </td><td width="50%">
 <iframe src="../slides/diagrams/kern/brownian_covariance.html" width="512" height="384" allowtransparency="true" frameborder="0">
