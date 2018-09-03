@@ -15,11 +15,11 @@
   $$
   p(c|\dataScalar) = \frac{p(\dataScalar|c)p(c)}{p(\dataScalar)}
   $$
-  \notes{where $p(\dataScalar}$ is the marginal probability of the data, obtained through integration over the joint density, $p(\dataScalar, c)=p(\dataScalar|c)p(c)$. Overall the equation can be summarized as,
+  \notes{where $p(\dataScalar)$ is the marginal probability of the data, obtained through integration over the joint density, $p(\dataScalar, c)=p(\dataScalar|c)p(c)$. Overall the equation can be summarized as,}
   $$
   \text{posterior} = \frac{\text{likelihood}\times \text{prior}}{\text{marginal likelihood}}.
   $$
-}
+
 
 
 \newslide{Bayes Update}

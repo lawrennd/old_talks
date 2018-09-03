@@ -1,7 +1,4 @@
-\notes{
-### Overdetermined System
-}
-\newslide{Overdetermined System}
+\subsection{Overdetermined System}
 
 \notes{The challenge with a linear model is that it has two unknowns, $m$, and $c$. Observing data allows us to write down a system of simultaneous linear equations. So, for example if we observe two data points, the first with the input value, $\inputScalar_1 = 1$ and the output value, $\dataScalar_1 =3$ and a second data point, $\inputScalar = 3$, $\dataScalar=1$, then we can write two simultaneous linear equations of the form. 
 
@@ -33,7 +30,7 @@ $$2.5 = 2m + c$$
 \notes{This is known as an *overdetermined* system because there are more data than we need to determine our parameters. The problem arises because the model is a simplification of the real world, and the data we observe is therefore inconsistent with our model.}
 
 
-\newslide{}}
+\newslide{}
 
 \setupplotcode{import teaching_plots as plot}
 \plotcode{plot.over_determined_system(diagrams='../slides/diagrams/ml')}
@@ -84,6 +81,7 @@ $$2.5 = 2m + c$$}
 \notes{The solution was proposed by Pierre-Simon Laplace. His idea was to accept that the model was an incomplete representation of the real world, and the manner in which it was incomplete is *unknown*. His idea was that such unknowns could be dealt with through probability.}
 
 \includeimg{../slides/diagrams/ml/Pierre-Simon_Laplace.png}{30%}{}{center}
+\notes{\caption{Pierre Simon Laplace}
 
 \include{_ai/includes/laplaces-determinism.md}
 

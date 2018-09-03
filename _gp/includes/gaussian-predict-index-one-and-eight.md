@@ -1,3 +1,5 @@
+\editme
+
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('two_point_sample{sample:0>3}.svg', '../slides/diagrams/gp', sample=IntSlider(13, 13, 17, 1))}

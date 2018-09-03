@@ -199,7 +199,11 @@ class basis():
 
     def Phi(self, X):
         return self.function(X, num_basis=self.number, **self.arguments)
-    
+
+def linear(x, **kwargs):
+    "Defines the linear basis."
+    return np.hstack([np.ones((X.shape[0], 1)), X])
+
 def polynomial(x, num_basis=4, data_limits=[-1., 1.]):
     "Polynomial basis"
     centre = data_limits[0]/2. + data_limits[1]/2.

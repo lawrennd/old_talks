@@ -18,9 +18,10 @@ import numpy as np}
 
 $$\kernelScalar(\inputVector, \inputVector^\prime) = \alpha\exp\left(\frac{-2\sin(\pi rw)^2}{\lengthScale^2}\right)$$
 
-\columns{
+<!--\columns{
 \includesvg{../slides/diagrams/kern/periodic_covariance.svg}
 }{
 \includehtml{../slides/diagrams/kern/periodic_covariance.html}{512}{384}
-}{50%}{50%}
+}{50%}{50%}-->
 
+\columns{\includesvg{../slides/diagrams/kern/periodic_covariance.svg}}{\includeimg{../slides/diagrams/kern/periodic_covariance.gif}{100%}{negate}{center}}{45%}{45%}

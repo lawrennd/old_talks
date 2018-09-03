@@ -1,3 +1,5 @@
+\editme
+
 \notes{\subsection{Bayesian Inference by Rejection Sampling}
 
 One view of Bayesian inference is to assume we are given a mechanism for generating samples, where we assume that mechanism is representing on accurate view on the way we believe the world works. 
@@ -52,10 +54,10 @@ from ipywidgets import IntSlider}
 \includesvg{../slides/diagrams/gp/gp_rejection_sample004.svg}
 
 ###  {data-transition="none"}
-
-\includesvg{../slides/diagrams/gp/gp-rejection-sample005.svg}
+x
+\includesvg{../slides/diagrams/gp/gp_rejection_sample005.svg}
 }
 \notesfigure{\includesvg{../slides/diagrams/gp/gp_rejection_sample003.svg}
-\includesvg{../slides/diagrams/gp/gp-rejection-sample004.svg}
-\includesvg{../slides/diagrams/gp/gp-rejection-sample005.svg}}
+\includesvg{../slides/diagrams/gp/gp_rejection_sample004.svg}
+\includesvg{../slides/diagrams/gp/gp_rejection_sample005.svg}}
 \notes{\caption{One view of Bayesian inference is we have a machine for generating samples (the *prior*), and we discard all samples inconsistent with our data, leaving the samples of interest (the *posterior*). The Gaussian process allows us to do this analytically.}}

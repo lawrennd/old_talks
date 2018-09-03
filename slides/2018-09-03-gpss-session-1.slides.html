@@ -449,7 +449,6 @@ $$
 </section>
 <section id="section-1" class="slide level3">
 <h3></h3>
-<p>}</p>
 <script>
 showDivs(1, 'over_determined_system');
 </script>
@@ -480,7 +479,10 @@ showDivs(1, 'over_determined_system');
 </section>
 <section id="section-2" class="slide level3">
 <h3></h3>
-<p><img class="" src="../slides/diagrams/ml/Pierre-Simon_Laplace.png" width="30%" align="center" style="background:none; border:none; box-shadow:none;"></p>
+<img class="" src="../slides/diagrams/ml/Pierre-Simon_Laplace.png" width="30%" align="center" style="background:none; border:none; box-shadow:none;"> {
+<center>
+<em>Pierre Simon Laplace </em>
+</center>
 </section>
 <section id="section-3" class="slide level3">
 <h3></h3>
@@ -711,10 +713,11 @@ showDivs(1, 'under_determined_system');
 <li>Posterior distribution is your belief <em>after</em> you see the data of the likely value of the parameters.</li>
 <li>The posterior is found through <strong>Bayes’ Rule</strong> <span class="math display">\[
   p(c|\dataScalar) = \frac{p(\dataScalar|c)p(c)}{p(\dataScalar)}
-  \]</span> $ is the marginal probability of the data, obtained through integration over the joint density, <span class="math inline">\(p(\dataScalar, c)=p(\dataScalar|c)p(c)\)</span>. Overall the equation can be summarized as, <span class="math display">\[
-  \text{posterior} = \frac{\text{likelihood}\times \text{prior}}{\text{marginal likelihood}}.
-  \]</span> }</li>
+  \]</span></li>
 </ul>
+<p><span class="math display">\[
+  \text{posterior} = \frac{\text{likelihood}\times \text{prior}}{\text{marginal likelihood}}.
+  \]</span></p>
 </section>
 <section id="bayes-update" class="slide level3">
 <h3>Bayes Update</h3>
@@ -1043,6 +1046,7 @@ p(\dataVector) = \frac{1}{\det{2\pi\covarianceMatrix}^{\frac{1}{2}}} \exp\left(-
 </section>
 <section id="distributions-over-functions" class="slide level3">
 <h3>Distributions over Functions</h3>
+<p><a href="file:///Users/neil/lawrennd/talks/_gp/includes/gp-intro-very-short.md">_gp/includes/gp-intro-very-short.md</a></p>
 
 </section>
 <section id="section-7" class="slide level3" data-transition="none">
@@ -1067,8 +1071,8 @@ p(\dataVector) = \frac{1}{\det{2\pi\covarianceMatrix}^{\frac{1}{2}}} \exp\left(-
 </section>
 <section id="section-11" class="slide level3" data-transition="none">
 <h3></h3>
-<object class="svgplot " align data="../slides/diagrams/gp/gp-rejection-sample005.svg">
-</object>
+<p>x <object class="svgplot " align="" data="../slides/diagrams/gp/gp_rejection_sample005.svg"></object></p>
+<p><a href="file:///Users/neil/lawrennd/talks/_gp/includes/gpdistfunc.md">_gp/includes/gpdistfunc.md</a></p>
 </section>
 <section id="sampling-a-function" class="slide level3">
 <h3>Sampling a Function</h3>
@@ -1094,9 +1098,7 @@ showDivs(0, 'two_point_sample');
 ❯
 </button>
 <p><input id="range-two_point_sample" type="range" min="0" max="8" value="0" onchange="setDivs('two_point_sample')" oninput="setDivs('two_point_sample')"> <object class="svgplot two_point_sample" align="" data="../slides/diagrams/gp/two_point_sample000.svg"></object> <object class="svgplot two_point_sample" align="" data="../slides/diagrams/gp/two_point_sample001.svg"></object> <object class="svgplot two_point_sample" align="" data="../slides/diagrams/gp/two_point_sample002.svg"></object> <object class="svgplot two_point_sample" align="" data="../slides/diagrams/gp/two_point_sample003.svg"></object> <object class="svgplot two_point_sample" align="" data="../slides/diagrams/gp/two_point_sample004.svg"></object> <object class="svgplot two_point_sample" align="" data="../slides/diagrams/gp/two_point_sample005.svg"></object> <object class="svgplot two_point_sample" align="" data="../slides/diagrams/gp/two_point_sample006.svg"></object> <object class="svgplot two_point_sample" align="" data="../slides/diagrams/gp/two_point_sample007.svg"></object> <object class="svgplot two_point_sample" align="" data="../slides/diagrams/gp/two_point_sample008.svg"></object></p>
-<center>
-<em>A 25 dimensional correlated random variable (values ploted against index) </em>
-</center>
+<p><a href="file:///Users/neil/lawrennd/talks/_gp/includes/gaussian-predict-index-one-and-two.md">_gp/includes/gaussian-predict-index-one-and-two.md</a></p>
 
 </section>
 <section id="prediction-of-mappingfunction_2-from-mappingfunction_1" class="slide level3">
@@ -1126,6 +1128,7 @@ p(\mappingFunction_2|\mappingFunction_1) = \gaussianDist{\mappingFunction_2}{\fr
 \kernelMatrix = \begin{bmatrix} \kernelScalar_{1, 1} &amp; \kernelScalar_{1, 2}\\ \kernelScalar_{2, 1} &amp; \kernelScalar_{2, 2}.\end{bmatrix}
 \]</span></li>
 </ul>
+<p><a href="file:///Users/neil/lawrennd/talks/_gp/includes/gaussian-predict-index-one-and-eight.md">_gp/includes/gaussian-predict-index-one-and-eight.md</a></p>
 
 </section>
 <section id="prediction-of-mappingfunction_8-from-mappingfunction_1" class="slide level3">
@@ -1150,6 +1153,7 @@ showDivs(13, 'two_point_sample3');
 </object>
 <object class="svgplot two_point_sample3" align data="../slides/diagrams/gp/two_point_sample017.svg">
 </object>
+<p><a href="file:///Users/neil/lawrennd/talks/_kern/includes/computing-rbf-covariance.md">_kern/includes/computing-rbf-covariance.md</a></p>
 </section>
 <section id="where-did-this-covariance-matrix-come-from" class="slide level3">
 <h3>Where Did This Covariance Matrix Come From?</h3>
@@ -1170,17 +1174,48 @@ k(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\left\Vert \input
 </td>
 </tr>
 </table>
+</section>
+<section id="computing-covariance" class="slide level3">
+<h3>Computing Covariance</h3>
 
 <script>
-showDivs(1, 'computing_eq_covariance');
+showDivs(0, 'computing_eq_three_covariance');
 </script>
-<button onclick="plusDivs(-1, 'computing_eq_covariance')">
+<button onclick="plusDivs(-1, 'computing_eq_three_covariance')">
 ❮
 </button>
-<button onclick="plusDivs(1, 'computing_eq_covariance')">
+<button onclick="plusDivs(1, 'computing_eq_three_covariance')">
 ❯
 </button>
-<p><input id="range-computing_eq_covariance" type="range" min="1" max="57" value="1" onchange="setDivs('computing_eq_covariance')" oninput="setDivs('computing_eq_covariance')"> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance001.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance002.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance003.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance004.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance005.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance006.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance007.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance008.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance009.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance010.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance011.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance012.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance013.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance014.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance015.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance016.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance017.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance018.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance019.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance020.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance021.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance022.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance023.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance024.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance025.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance026.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance027.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance028.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance029.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance030.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance031.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance032.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance033.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance034.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance035.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance036.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance037.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance038.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance039.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance040.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance041.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance042.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance043.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance044.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance045.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance046.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance047.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance048.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance049.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance050.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance051.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance052.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance053.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance054.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance055.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance056.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance057.svg"></object> <object class="svgplot computing_eq_covariance" align="" data="../slides/diagrams/kern/computing_eq_covariance058.svg"></object></p>
+<p><input id="range-computing_eq_three_covariance" type="range" min="0" max="16" value="0" onchange="setDivs('computing_eq_three_covariance')" oninput="setDivs('computing_eq_three_covariance')"> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance000.svg"></object> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance001.svg"></object> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance002.svg"></object> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance003.svg"></object> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance004.svg"></object> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance005.svg"></object> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance006.svg"></object> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance007.svg"></object> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance008.svg"></object> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance009.svg"></object> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance010.svg"></object> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance011.svg"></object> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance012.svg"></object> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance013.svg"></object> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance014.svg"></object> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance015.svg"></object> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance016.svg"></object></p>
+</section>
+<section id="computing-covariance-1" class="slide level3">
+<h3>Computing Covariance</h3>
+
+<script>
+showDivs(0, 'computing_eq_four_covariance');
+</script>
+<button onclick="plusDivs(-1, 'computing_eq_four_covariance')">
+❮
+</button>
+<button onclick="plusDivs(1, 'computing_eq_four_covariance')">
+❯
+</button>
+<p><input id="range-computing_eq_four_covariance" type="range" min="0" max="27" value="0" onchange="setDivs('computing_eq_four_covariance')" oninput="setDivs('computing_eq_four_covariance')"> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance000.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance001.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance002.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance003.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance004.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance005.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance006.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance007.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance008.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance009.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance010.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance011.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance012.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance013.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance014.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance015.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance016.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance017.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance018.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance019.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance020.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance021.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance022.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance023.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance024.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance025.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance026.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance027.svg"></object></p>
+</section>
+<section id="computing-covariance-2" class="slide level3">
+<h3>Computing Covariance</h3>
+
+<script>
+showDivs(0, 'computing_eq_three_2_covariance');
+</script>
+<button onclick="plusDivs(-1, 'computing_eq_three_2_covariance')">
+❮
+</button>
+<button onclick="plusDivs(1, 'computing_eq_three_2_covariance')">
+❯
+</button>
+<p><input id="range-computing_eq_three_2_covariance" type="range" min="0" max="16" value="0" onchange="setDivs('computing_eq_three_2_covariance')" oninput="setDivs('computing_eq_three_2_covariance')"> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance000.svg"></object> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance001.svg"></object> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance002.svg"></object> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance003.svg"></object> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance004.svg"></object> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance005.svg"></object> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance006.svg"></object> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance007.svg"></object> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance008.svg"></object> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance009.svg"></object> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance010.svg"></object> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance011.svg"></object> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance012.svg"></object> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance013.svg"></object> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance014.svg"></object> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance015.svg"></object> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance016.svg"></object></p>
 </section>
 <section id="polynomial-covariance" class="slide level3">
 <h3>Polynomial Covariance</h3>
@@ -1188,31 +1223,41 @@ showDivs(1, 'computing_eq_covariance');
 \inputVector^\prime + b)^d\]</span></p>
 <table>
 <tr>
-<td width="50%">
-<object class="svgplot " align data="../slides/diagrams/kern/polynomial_covariance.svg">
+<td width="45%">
+<object class="svgplot " align data="../slides/diagrams/kern/poly_covariance.svg">
 </object>
 </td>
-<td width="50%">
-<iframe src="../slides/diagrams/kern/polynomial_covariance.html" width="512" height="384" allowtransparency="true" frameborder="0">
-</iframe>
+<td width="45%">
+<img class="negate" src="../slides/diagrams/kern/poly_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
 </td>
 </tr>
 </table>
+<!--<table><tr><td width="50%">
+<object class="svgplot " align="" data="../slides/diagrams/kern/polynomial_covariance.svg"></object>
+</td><td width="50%">
+<iframe src="../slides/diagrams/kern/polynomial_covariance.html" width="512" height="384" allowtransparency="true" frameborder="0">
+</iframe>
+</td></tr></table>-->
 </section>
 <section id="brownian-covariance" class="slide level3">
 <h3>Brownian Covariance</h3>
 <span class="math display">\[
 \kernelScalar(t, t^\prime) = \alpha \min(t, t^\prime)
-\]</span>
+\]</span> <!--<table><tr><td width="50%">
+<object class="svgplot " align="" data="../slides/diagrams/kern/brownian_covariance.svg"></object>
+</td><td width="50%">
+<iframe src="../slides/diagrams/kern/brownian_covariance.html" width="512" height="384" allowtransparency="true" frameborder="0">
+</iframe>
+</td></tr></table>
+-->
 <table>
 <tr>
-<td width="50%">
+<td width="45%">
 <object class="svgplot " align data="../slides/diagrams/kern/brownian_covariance.svg">
 </object>
 </td>
-<td width="50%">
-<iframe src="../slides/diagrams/kern/brownian_covariance.html" width="512" height="384" allowtransparency="true" frameborder="0">
-</iframe>
+<td width="45%">
+<img class="negate" src="../slides/diagrams/kern/brownian_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
 </td>
 </tr>
 </table>
@@ -1220,15 +1265,20 @@ showDivs(1, 'computing_eq_covariance');
 <section id="periodic-covariance" class="slide level3">
 <h3>Periodic Covariance</h3>
 <p><span class="math display">\[\kernelScalar(\inputVector, \inputVector^\prime) = \alpha\exp\left(\frac{-2\sin(\pi rw)^2}{\lengthScale^2}\right)\]</span></p>
+<!--<table><tr><td width="50%">
+<object class="svgplot " align="" data="../slides/diagrams/kern/periodic_covariance.svg"></object>
+</td><td width="50%">
+<iframe src="../slides/diagrams/kern/periodic_covariance.html" width="512" height="384" allowtransparency="true" frameborder="0">
+</iframe>
+</td></tr></table>-->
 <table>
 <tr>
-<td width="50%">
+<td width="45%">
 <object class="svgplot " align data="../slides/diagrams/kern/periodic_covariance.svg">
 </object>
 </td>
-<td width="50%">
-<iframe src="../slides/diagrams/kern/periodic_covariance.html" width="512" height="384" allowtransparency="true" frameborder="0">
-</iframe>
+<td width="45%">
+<img class="negate" src="../slides/diagrams/kern/periodic_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
 </td>
 </tr>
 </table>
@@ -1258,7 +1308,7 @@ showDivs(1, 'computing_eq_covariance');
 </object>
 </td>
 <td width="45%">
-<img class="negate" src="../slides/diagrams/kern/basis_covariance.gif" width="40%" align="center" style="background:none; border:none; box-shadow:none;">
+<img class="negate" src="../slides/diagrams/kern/basis_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
 </td>
 </tr>
 </table>
@@ -1332,17 +1382,24 @@ showDivs(1, 'computing_eq_covariance');
 <li>this is a special case,</li>
 <li>in general they are very different</li>
 </ul>
-</section>
-<section id="covariance-functions-1" class="slide level3">
-<h3>Covariance Functions</h3>
-<h4 id="where-did-this-covariance-matrix-come-from-1">Where did this covariance matrix come from?</h4>
-<p><strong>Exponentiated Quadratic Kernel Function (RBF, Squared Exponential, Gaussian)</strong></p>
-<p><span class="math display">\[\kernelScalar\left(\inputVals,\inputVals^{\prime}\right)=\alpha\exp\left(-\frac{\ltwoNorm{\inputVals-\inputVals^{\prime}}^{2}}{2\lengthScale^{2}}\right)\]</span></p>
-<ul>
-<li><p>Covariance matrix is built using the <em>inputs</em> to the function <span class="math inline">\(\inputVals\)</span>.</p></li>
-<li><p>For the example above it was based on Euclidean distance.</p></li>
-<li><p>The covariance function is also know as a kernel.</p></li>
-</ul>
+<!--### Covariance Functions
+
+#### Where did this covariance matrix come from?
+
+**Exponentiated Quadratic Kernel Function (RBF, Squared Exponential,
+Gaussian)**
+
+$$\kernelScalar\left(\inputVals,\inputVals^{\prime}\right)=\alpha\exp\left(-\frac{\ltwoNorm{\inputVals-\inputVals^{\prime}}^{2}}{2\lengthScale^{2}}\right)$$
+
+
+-   Covariance matrix is built using the *inputs* to the function
+    $\inputVals$.
+
+-   For the example above it was based on Euclidean distance.
+
+-   The covariance function is also know as a kernel.
+
+-->
 </section>
 <section id="references" class="slide level3">
 <h3>References</h3>
