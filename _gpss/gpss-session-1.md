@@ -3,7 +3,6 @@ title: Introduction to Gaussian Processes
 venue: "Gaussian Process Summer School, Sheffield"
 abstract: >
   In this talk we introduce Gaussian process models. Motivating the representation of uncertainty through probability distributions we review Laplace's approach to understanding uncertainty and how uncertainty in functions can be represented through a multivariate Gaussian density.
-author: 
 author:
 - given: Neil D.
   family: Lawrence
@@ -12,7 +11,6 @@ author:
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
   orchid: 
-date: 2018-09-03
 published: 2018-09-03
 reveal: 2018-09-03-gpss-session-1.slides.html
 ipynb: 2018-09-03-gpss-session-1.ipynb
