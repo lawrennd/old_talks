@@ -43,6 +43,10 @@
     type: "image/svg+xml";
 }
 
+.svgplot_normal {
+    type: "image/svg+xml";
+}
+
 .negate {
     -webkit-filter:invert(1);
     filter:invert;

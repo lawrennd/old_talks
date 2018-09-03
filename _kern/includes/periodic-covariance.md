@@ -24,4 +24,4 @@ $$\kernelScalar(\inputVector, \inputVector^\prime) = \alpha\exp\left(\frac{-2\si
 \includehtml{../slides/diagrams/kern/periodic_covariance.html}{512}{384}
 }{50%}{50%}-->
 
-\columns{\includesvg{../slides/diagrams/kern/periodic_covariance.svg}}{\includeimg{../slides/diagrams/kern/periodic_covariance.gif}{100%}{negate}{center}}{45%}{45%}
+\columns{\includesvgclass{../slides/diagrams/kern/periodic_covariance.svg}}{\includeimg{../slides/diagrams/kern/periodic_covariance.gif}{100%}{negate}{center}}{45%}{45%}
