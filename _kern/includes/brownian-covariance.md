@@ -22,9 +22,11 @@ K, anim=plot.animate_covariance_function(mlai.compute_kernel,
 $$
 \kernelScalar(t, t^\prime) = \alpha \min(t, t^\prime)
 $$
-\columns{
+<!--\columns{
 \includesvg{../slides/diagrams/kern/brownian_covariance.svg}
 }{
 \includehtml{../slides/diagrams/kern/brownian_covariance.html}{512}{384}
 }{50%}{50%}
-\notes{\caption{The covariance of Brownian motion, and some samples from the covariance showing the functional form.}}
+\notes{\caption{The covariance of Brownian motion, and some samples from the covariance showing the functional form.}}-->
+\columns{\includesvg{../slides/diagrams/kern/brownian_covariance.svg}}{\includeimg{../slides/diagrams/kern/brownian_covariance.gif}{100%}{negate}{center}}{45%}{45%}
+

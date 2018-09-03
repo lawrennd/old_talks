@@ -19,9 +19,11 @@ import numpy as np}
 $$k(\inputVector, \inputVector^\prime) = \alpha(w \inputVector^\top
 \inputVector^\prime + b)^d$$
 
-\columns{
+\columns{\includesvg{../slides/diagrams/kern/poly_covariance.svg}}{\includeimg{../slides/diagrams/kern/poly_covariance.gif}{100%}{negate}{center}}{45%}{45%}
+
+<!--\columns{
 \includesvg{../slides/diagrams/kern/polynomial_covariance.svg}
 }{
 \includehtml{../slides/diagrams/kern/polynomial_covariance.html}{512}{384}
-}{50%}{50%}
+}{50%}{50%}-->
 

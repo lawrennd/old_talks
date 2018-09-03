@@ -86,9 +86,11 @@ categories:
 <em>Three solutions to the problem, each consistent with two points of the three observations </em>
 </center>
 <p>This is known as an <em>overdetermined</em> system because there are more data than we need to determine our parameters. The problem arises because the model is a simplification of the real world, and the data we observe is therefore inconsistent with our model.</p>
-<p>}</p>
 <p>The solution was proposed by Pierre-Simon Laplace. His idea was to accept that the model was an incomplete representation of the real world, and the manner in which it was incomplete is <em>unknown</em>. His idea was that such unknowns could be dealt with through probability.</p>
-<p><img class="" src="../slides/diagrams/ml/Pierre-Simon_Laplace.png" width="30%" align="center" style="background:none; border:none; box-shadow:none;"></p>
+<img class="" src="../slides/diagrams/ml/Pierre-Simon_Laplace.png" width="30%" align="center" style="background:none; border:none; box-shadow:none;"> {
+<center>
+<em>Pierre Simon Laplace </em>
+</center>
 <p><a href="https://play.google.com/books/reader?id=1YQPAAAAQAAJ&amp;pg=PR17-IA2"><img src="../slides/diagrams/books/1YQPAAAAQAAJ-PR17-IA2.png" /></a></p>
 <p>Famously, Laplace considered the idea of a deterministic Universe, one in which the model is <em>known</em>, or as the below translation refers to it, &quot;an intelligence which could comprehend all the forces by which nature is animated&quot;. He speculates on an &quot;intelligence&quot; that can submit this vast data to analysis and propsoses that such an entity would be able to predict the future.</p>
 <blockquote>
@@ -163,9 +165,9 @@ categories:
 <h3 id="posterior-distribution">Posterior Distribution</h3>
 <p>The prior distribution is combined with the likelihood of the data given the parameters <span class="math inline">\(p(\dataScalar|c)\)</span> to give the posterior via <em>Bayes' rule</em>, <span class="math display">\[
   p(c|\dataScalar) = \frac{p(\dataScalar|c)p(c)}{p(\dataScalar)}
-  \]</span> where <span class="math inline">\(p(\dataScalar\)</span> is the marginal probability of the data, obtained through integration over the joint density, <span class="math inline">\(p(\dataScalar, c)=p(\dataScalar|c)p(c)\)</span>. Overall the equation can be summarized as, <span class="math display">\[
+  \]</span> where <span class="math inline">\(p(\dataScalar)\)</span> is the marginal probability of the data, obtained through integration over the joint density, <span class="math inline">\(p(\dataScalar, c)=p(\dataScalar|c)p(c)\)</span>. Overall the equation can be summarized as, <span class="math display">\[
   \text{posterior} = \frac{\text{likelihood}\times \text{prior}}{\text{marginal likelihood}}.
-  \]</span> }</p>
+  \]</span></p>
 
 <object class="svgplot" align data="../slides/diagrams/ml/dem_gaussian003.svg">
 </object>
@@ -294,6 +296,7 @@ p(\dataVector) = \frac{1}{\det{2\pi\covarianceMatrix}^{\frac{1}{2}}} \exp\left(-
 <h3 id="basis-functions">Basis Functions</h3>
 <p>We can basically put anything inside the basis functions, and many people do. These can be deep kernels <span class="citation">(Cho and Saul, 2009)</span> or we can learn the parameters of a convolutional neural network inside there.</p>
 <p>Viewing a neural network in this way is also what allows us to beform sensible <em>batch</em> normalizations <span class="citation">(Ioffe and Szegedy, 2015)</span>.</p>
+<p><a href="file:///Users/neil/lawrennd/talks/_gp/includes/gp-intro-very-short.md">_gp/includes/gp-intro-very-short.md</a></p>
 <h3 id="bayesian-inference-by-rejection-sampling">Bayesian Inference by Rejection Sampling</h3>
 <p>One view of Bayesian inference is to assume we are given a mechanism for generating samples, where we assume that mechanism is representing on accurate view on the way we believe the world works.</p>
 <p>This mechanism is known as our <em>prior</em> belief.</p>
@@ -303,31 +306,33 @@ p(\dataVector) = \frac{1}{\det{2\pi\covarianceMatrix}^{\frac{1}{2}}} \exp\left(-
 <p>In practice, the algorithm is often too slow to be practical, because most samples will be inconsistent with the data and as a result the mechanism has to be operated many times to obtain a few posterior samples.</p>
 <p>However, in the Gaussian process case, when the likelihood also assumes Gaussian noise, we can operate this mechanims mathematically, and obtain the posterior density <em>analytically</em>. This is the benefit of Gaussian processes.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> _gp<span class="op">/</span>includes<span class="op">/</span>gp<span class="op">-</span>intro<span class="op">-</span>very<span class="op">-</span>short.md <span class="im">import</span> compute_kernel</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> _gp<span class="op">/</span>includes<span class="op">/</span>gp<span class="op">-</span>intro<span class="op">-</span>very<span class="op">-</span>short.md <span class="im">import</span> exponentiated_quadratic</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> compute_kernel</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> exponentiated_quadratic</code></pre></div>
 
 <object class="svgplot" align data="../slides/diagrams/gp/gp_rejection_sample003.svg">
 </object>
-<object class="svgplot" align data="../slides/diagrams/gp/gp-rejection-sample004.svg">
+<object class="svgplot" align data="../slides/diagrams/gp/gp_rejection_sample004.svg">
 </object>
-<object class="svgplot" align data="../slides/diagrams/gp/gp-rejection-sample005.svg">
+<object class="svgplot" align data="../slides/diagrams/gp/gp_rejection_sample005.svg">
 </object>
 <center>
 <em>One view of Bayesian inference is we have a machine for generating samples (the </em>prior<em>), and we discard all samples inconsistent with our data, leaving the samples of interest (the </em>posterior<em>). The Gaussian process allows us to do this analytically. </em>
 </center>
+<p><a href="file:///Users/neil/lawrennd/talks/_gp/includes/gpdistfunc.md">_gp/includes/gpdistfunc.md</a></p>
 <h3 id="sampling-a-function">Sampling a Function</h3>
 <p>We will consider a Gaussian distribution with a particular structure of covariance matrix. We will generate <em>one</em> sample from a 25-dimensional Gaussian density. <span class="math display">\[
 \mappingFunctionVector=\left[\mappingFunction_{1},\mappingFunction_{2}\dots \mappingFunction_{25}\right].
 \]</span> in the figure below we plot these data on the <span class="math inline">\(y\)</span>-axis against their <em>indices</em> on the <span class="math inline">\(x\)</span>-axis.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> _gp<span class="op">/</span>includes<span class="op">/</span>gpdistfunc.md <span class="im">import</span> Kernel</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> _gp<span class="op">/</span>includes<span class="op">/</span>gpdistfunc.md <span class="im">import</span> polynomial_cov</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> _gp<span class="op">/</span>includes<span class="op">/</span>gpdistfunc.md <span class="im">import</span> exponentiated_quadratic</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> Kernel</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> polynomial_cov</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> exponentiated_quadratic</code></pre></div>
 
 <object class="svgplot" align data="../slides/diagrams/gp/two_point_sample008.svg">
 </object>
 <center>
 <em>A 25 dimensional correlated random variable (values ploted against index) </em>
 </center>
+<p><a href="file:///Users/neil/lawrennd/talks/_gp/includes/gaussian-predict-index-one-and-two.md">_gp/includes/gaussian-predict-index-one-and-two.md</a></p>
 
 <object class="svgplot" align data="../slides/diagrams/gp/two_point_sample012.svg">
 </object>
@@ -344,7 +349,8 @@ p(\dataVector) = \frac{1}{\det{2\pi\covarianceMatrix}^{\frac{1}{2}}} \exp\left(-
     \]</span>where we have assumed that the covariance of the original joint density was given by <span class="math display">\[
     \kernelMatrix = \begin{bmatrix} \kernelScalar_{1, 1} &amp; \kernelScalar_{1, 2}\\ \kernelScalar_{2, 1} &amp; \kernelScalar_{2, 2}.\end{bmatrix}
     \]</span></p>
-<p>Using these formulae we can determine the conditional density for any of the elements of our vector <span class="math inline">\(\mappingFunctionVector\)</span>. For example, the variable <span class="math inline">\(\mappingFunction_8\)</span> is less correlated with <span class="math inline">\(\mappingFunction_1\)</span> than <span class="math inline">\(\mappingFunciton_2\)</span>. If we consider this variable we see the conditional density is more diffuse.</p>
+<p>Using these formulae we can determine the conditional density for any of the elements of our vector <span class="math inline">\(\mappingFunctionVector\)</span>. For example, the variable <span class="math inline">\(\mappingFunction_8\)</span> is less correlated with <span class="math inline">\(\mappingFunction_1\)</span> than <span class="math inline">\(\mappingFunction_2\)</span>. If we consider this variable we see the conditional density is more diffuse.</p>
+<p><a href="file:///Users/neil/lawrennd/talks/_gp/includes/gaussian-predict-index-one-and-eight.md">_gp/includes/gaussian-predict-index-one-and-eight.md</a></p>
 
 <object class="svgplot" align data="../slides/diagrams/gp/two_point_sample013.svg">
 </object>
@@ -353,63 +359,94 @@ p(\dataVector) = \frac{1}{\det{2\pi\covarianceMatrix}^{\frac{1}{2}}} \exp\left(-
 <center>
 <em>The joint Gaussian over <span class="math inline">\(\mappingFunction_1\)</span> and <span class="math inline">\(\mappingFunction_8\)</span> along with the conditional distribution of <span class="math inline">\(\mappingFunction_8\)</span> given <span class="math inline">\(\mappingFunction_1\)</span> </em>
 </center>
+<p><a href="file:///Users/neil/lawrennd/talks/_kern/includes/computing-rbf-covariance.md">_kern/includes/computing-rbf-covariance.md</a></p>
 <h3 id="where-did-this-covariance-matrix-come-from">Where Did This Covariance Matrix Come From?</h3>
 <p><span class="math display">\[
 k(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\left\Vert \inputVector - \inputVector^\prime\right\Vert^2_2}{2\lengthScale^2}\right)\]</span></p>
 
-<object class="svgplot" align data="../slides/diagrams/kern/computing_eq_covariance058.svg">
+<object class="svgplot" align data="../slides/diagrams/kern/computing_eq_three_covariance016.svg">
+</object>
+<object class="svgplot" align data="../slides/diagrams/kern/computing_eq_three_covariance016.svg">
 </object>
 <center>
 <em>Entrywise fill in of the covariance matrix from the covariance function. </em>
 </center>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> _kern<span class="op">/</span>includes<span class="op">/</span>poly<span class="op">-</span>covariance.md <span class="im">import</span> polynomial_cov</code></pre></div>
+
+<object class="svgplot" align data="../slides/diagrams/kern/computing_eq_four_covariance027.svg">
+</object>
+<object class="svgplot" align data="../slides/diagrams/kern/computing_eq_four_covariance027.svg">
+</object>
+<center>
+<em>Entrywise fill in of the covariance matrix from the covariance function. </em>
+</center>
+
+<object class="svgplot" align data="../slides/diagrams/kern/computing_eq_three_2_covariance016.svg">
+</object>
+<object class="svgplot" align data="../slides/diagrams/kern/computing_eq_three_2_covariance016.svg">
+</object>
+<center>
+<em>Entrywise fill in of the covariance matrix from the covariance function. </em>
+</center>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> polynomial_cov</code></pre></div>
 <h3 id="polynomial-covariance">Polynomial Covariance</h3>
 <p><span class="math display">\[k(\inputVector, \inputVector^\prime) = \alpha(w \inputVector^\top
 \inputVector^\prime + b)^d\]</span></p>
 <table>
 <tr>
-<td width="50%">
-<object class="svgplot" align data="../slides/diagrams/kern/polynomial_covariance.svg">
+<td width="45%">
+<object class="svgplot" align data="../slides/diagrams/kern/poly_covariance.svg">
 </object>
 </td>
-<td width="50%">
-<iframe src="../slides/diagrams/kern/polynomial_covariance.html" width="512" height="384" allowtransparency="true" frameborder="0">
-</iframe>
+<td width="45%">
+<img class="negate" src="../slides/diagrams/kern/poly_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
 </td>
 </tr>
 </table>
+<!--<table><tr><td width="50%">
+<object class="svgplot" align="" data="../slides/diagrams/kern/polynomial_covariance.svg"></object>
+</td><td width="50%">
+<iframe src="../slides/diagrams/kern/polynomial_covariance.html" width="512" height="384" allowtransparency="true" frameborder="0">
+</iframe>
+</td></tr></table>-->
 <h3 id="brownian-covariance">Brownian Covariance</h3>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> _kern<span class="op">/</span>includes<span class="op">/</span>brownian<span class="op">-</span>covariance.md <span class="im">import</span> brownian_cov</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> brownian_cov</code></pre></div>
 Brownian motion is also a Gaussian process. It follows a Gaussian random walk, with diffusion occuring at each time point driven by a Gaussian input. This implies it is both Markov and Gaussian. The covariane function for Brownian motion has the form <span class="math display">\[
 \kernelScalar(t, t^\prime) = \alpha \min(t, t^\prime)
-\]</span>
+\]</span> <!--<table><tr><td width="50%">
+<object class="svgplot" align="" data="../slides/diagrams/kern/brownian_covariance.svg"></object>
+</td><td width="50%">
+<iframe src="../slides/diagrams/kern/brownian_covariance.html" width="512" height="384" allowtransparency="true" frameborder="0">
+</iframe>
+</td></tr></table>
+<center>*The covariance of Brownian motion, and some samples from the covariance showing the functional form. *</center>-->
 <table>
 <tr>
-<td width="50%">
+<td width="45%">
 <object class="svgplot" align data="../slides/diagrams/kern/brownian_covariance.svg">
 </object>
 </td>
-<td width="50%">
-<iframe src="../slides/diagrams/kern/brownian_covariance.html" width="512" height="384" allowtransparency="true" frameborder="0">
-</iframe>
+<td width="45%">
+<img class="negate" src="../slides/diagrams/kern/brownian_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
 </td>
 </tr>
 </table>
-<center>
-<em>The covariance of Brownian motion, and some samples from the covariance showing the functional form. </em>
-</center>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> _kern<span class="op">/</span>includes<span class="op">/</span>periodic<span class="op">-</span>covariance.md <span class="im">import</span> periodic_cov</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> periodic_cov</code></pre></div>
 <h3 id="periodic-covariance">Periodic Covariance</h3>
 <p><span class="math display">\[\kernelScalar(\inputVector, \inputVector^\prime) = \alpha\exp\left(\frac{-2\sin(\pi rw)^2}{\lengthScale^2}\right)\]</span></p>
+<!--<table><tr><td width="50%">
+<object class="svgplot" align="" data="../slides/diagrams/kern/periodic_covariance.svg"></object>
+</td><td width="50%">
+<iframe src="../slides/diagrams/kern/periodic_covariance.html" width="512" height="384" allowtransparency="true" frameborder="0">
+</iframe>
+</td></tr></table>-->
 <table>
 <tr>
-<td width="50%">
+<td width="45%">
 <object class="svgplot" align data="../slides/diagrams/kern/periodic_covariance.svg">
 </object>
 </td>
-<td width="50%">
-<iframe src="../slides/diagrams/kern/periodic_covariance.html" width="512" height="384" allowtransparency="true" frameborder="0">
-</iframe>
+<td width="45%">
+<img class="negate" src="../slides/diagrams/kern/periodic_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
 </td>
 </tr>
 </table>
@@ -465,20 +502,29 @@ printLatexPlot(<span class="st">&#39;rbfbasisCovarianceSamples&#39;</span>, <spa
 </object>
 </td>
 <td width="45%">
-<img class="negate" src="../slides/diagrams/kern/basis_covariance.gif" width="40%" align="center" style="background:none; border:none; box-shadow:none;">
+<img class="negate" src="../slides/diagrams/kern/basis_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
 </td>
 </tr>
 </table>
 <h3 id="an-infinite-basis">An Infinite Basis</h3>
-<h3 id="covariance-functions">Covariance Functions</h3>
-<h4 id="where-did-this-covariance-matrix-come-from-1">Where did this covariance matrix come from?</h4>
-<p><strong>Exponentiated Quadratic Kernel Function (RBF, Squared Exponential, Gaussian)</strong></p>
-<p><span class="math display">\[\kernelScalar\left(\inputVals,\inputVals^{\prime}\right)=\alpha\exp\left(-\frac{\ltwoNorm{\inputVals-\inputVals^{\prime}}^{2}}{2\lengthScale^{2}}\right)\]</span></p>
-<ul>
-<li><p>Covariance matrix is built using the <em>inputs</em> to the function <span class="math inline">\(\inputVals\)</span>.</p></li>
-<li><p>For the example above it was based on Euclidean distance.</p></li>
-<li><p>The covariance function is also know as a kernel.</p></li>
-</ul>
+<!--### Covariance Functions
+
+#### Where did this covariance matrix come from?
+
+**Exponentiated Quadratic Kernel Function (RBF, Squared Exponential,
+Gaussian)**
+
+$$\kernelScalar\left(\inputVals,\inputVals^{\prime}\right)=\alpha\exp\left(-\frac{\ltwoNorm{\inputVals-\inputVals^{\prime}}^{2}}{2\lengthScale^{2}}\right)$$
+
+
+-   Covariance matrix is built using the *inputs* to the function
+    $\inputVals$.
+
+-   For the example above it was based on Euclidean distance.
+
+-   The covariance function is also know as a kernel.
+
+-->
 
 
 <div id="refs" class="references">

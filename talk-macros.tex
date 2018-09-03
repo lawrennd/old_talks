@@ -1,4 +1,5 @@
 \define{\talksdir}{/Users/neil/lawrennd/talks}
+\define{editme}{<a href="file:///Users/neil/lawrennd/talks/\file">\file</a>}
 
 \ifdef{ipynb} <!--ipynb-->
 
@@ -64,7 +65,7 @@ YouTubeVideo('\id')
 \block
 ```}
 \define{\setupcode{block}}{}
-\define{\loadcode{object}{file}}{}
+\define{\loadcode{object}{filename}}{}
 \define{\helpercode{block}}{}
 \define{\code{block}}{}
 \define{\matlabcode{block}}{}
@@ -98,8 +99,8 @@ YouTubeVideo('\id')
 \define{\setupcode{block}}{```{.python}
 \block
 ```}
-\define{\loadcode{object}{source_file}}{```{.python}
-%load -s \object \source_file.py
+\define{\loadcode{object}{filename}}{```{.python}
+%load -s \object \filename.py
 ```}
 \define{\helpercode{block}}{```{.python}
 \block
@@ -237,8 +238,8 @@ YouTubeVideo('\id')
 \block
 ```}
 
-\define{\loadcode{object}{file}}{```{.python}
-from \file import \object
+\define{\loadcode{object}{filename}}{```{.python}
+from \filename import \object
 ```}
 \define{\notesfigure{block}}{\block}
 \define{\caption{block}}{<center>*\block *</center>}

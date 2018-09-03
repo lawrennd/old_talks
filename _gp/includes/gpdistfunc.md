@@ -1,7 +1,9 @@
+\editme
+
 \setupplotcode{import numpy as np
 np.random.seed(4949)}
 
-### Sampling a Function
+\subsection{Sampling a Function}
 \slides{
 **Multi-variate Gaussians**
 
@@ -40,7 +42,7 @@ from ipywidgets import IntSlider}
 \includesvg{../slides/diagrams/gp/two_point_sample008.svg}{}{two_point_sample}
 }
 \notesfigure{\includesvg{../slides/diagrams/gp/two_point_sample008.svg}{}}
-\caption{A 25 dimensional correlated random variable (values ploted against index)}
+\notes{\caption{A 25 dimensional correlated random variable (values ploted against index)}}
 
 \include{_gp/includes/gaussian-predict-index-one-and-two.md}
 
@@ -65,6 +67,6 @@ Prediction of $\mappingFunction_2$ given $\mappingFunction_1$ requires the *cond
     \kernelMatrix = \begin{bmatrix} \kernelScalar_{1, 1} & \kernelScalar_{1, 2}\\ \kernelScalar_{2, 1} & \kernelScalar_{2, 2}.\end{bmatrix}
     $$
 
-\notes{Using these formulae we can determine the conditional density for any of the elements of our vector $\mappingFunctionVector$. For example, the variable $\mappingFunction_8$ is less correlated with $\mappingFunction_1$ than $\mappingFunciton_2$. If we consider this variable we see the conditional density is more diffuse.}
+\notes{Using these formulae we can determine the conditional density for any of the elements of our vector $\mappingFunctionVector$. For example, the variable $\mappingFunction_8$ is less correlated with $\mappingFunction_1$ than $\mappingFunction_2$. If we consider this variable we see the conditional density is more diffuse.}
 
 \include{_gp/includes/gaussian-predict-index-one-and-eight.md}

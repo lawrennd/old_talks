@@ -26,6 +26,10 @@ wide_figsize = (7, 3.5)
 big_wide_figsize = (12, 6)
 hcolor = [1., 0., 1.] # highlighting color
 
+notation_map={'variance': '\\alpha',
+           'lengthscale': '\\ell',
+           'period':'\omega'}
+
 def pred_range(x, portion=0.2, points=200, randomize=False):
     """Return a one dimensional range for prediction across given a data set, x"""
     span = x.max()-x.min()
@@ -103,7 +107,7 @@ def matrix(A, ax=None,
                     handle.append(ax.text(j, i, A[i, j], horizontalalignment='center', fontsize=fontsize))
                     
                 else:  
-                    handle.append(ax.text(j+1, i+1, ' ', horizontalalignment='center', fontsize=fontsize))
+                    handle.append(ax.text(j, i, ' ', horizontalalignment='center', fontsize=fontsize))
     elif type == 'patch':
         for i in range(nrows):
             for j in range(ncols):
@@ -1251,7 +1255,118 @@ def basis(function, x_min, x_max, fig, ax, loc, text, diagrams='./diagrams', fon
 
         mlai.write_figure(os.path.join(diagrams, basis.function.__name__ + '_function{plot_num:0>3}.svg'.format(plot_num=j)), transparent=True)
 
+def computing_covariance(kernel, 
+                         x, 
+                         formula,
+                         stub,
+                         prec='1.2',
+                         diagrams='../slides/diagrams/kern'):
+    counter=0
+    fig, ax = plt.subplots(1, 2, figsize=one_figsize)
+    if len(x)>3:
+        nsf=2
+    base_text = ''
+    data_text = ''
+    for i, val in enumerate(x.flatten()):
+        data_text += '$x_{i}={val:{prec}}$'.format(i=i, val=val,prec=prec)
+        if i<len(x.flatten())-2:
+            data_text += ', '
+        elif i<len(x.flatten())-1:
+            data_text += ' and '
+    param_text = ''
+    for i, param in enumerate(kernel.parameters):
+        if param in notation_map:
+            param_text += '$' + notation_map[param] 
+        else:
+            param_text += '$\text{' + param + '}' 
+        param_text += '={param:{prec}}$'.format(param=kernel.parameters[param],prec=prec)
+        if i<len(kernel.parameters)-2:
+            param_text += ', '
+        elif i<len(kernel.parameters)-1:
+            param_text += ' and '
+            
+    base_text += data_text
+    if len(kernel.parameters)>0:
+        base_text += ' with ' + param_text
+    ax[0].set_position([0.0, 0.0, 1.0, 1.0])
+    ax[0].set(ylim=[0.0, 1.0])
+    ax[0].set(xlim=[0.0, 1.0])
+    clear_axes(ax[0])
+    
+    ax[0].text(0.5, 0.9, formula, ha='center', fontsize=20)
+    ax[0].text(0.5, 0.2, base_text, ha='center', fontsize=12)
+    ax[1].set_position([0.5, 0.3, 0.5, 0.5])
+    clear_axes(ax[1])
+    K = kernel.K(x)
+    KplotFull = np.array(K, dtype='str')
+    Kplot = KplotFull.copy()
+    for i in range(K.shape[0]):
+        for j in range(K.shape[1]):
+            KplotFull[i, j] = '{value:{prec}}'.format(value=K[i, j], prec=prec)
+            Kplot[i, j] = ''
+    base_file_name = 'computing_{stub}_covariance'.format(stub=stub)
+    a = ax[0].text(0.25, 0.6, '', ha='center', fontsize=16)
+    for j in range(K.shape[0]):
+        for i in range(j+1):
+            text = '$x_{i}={val_i:{prec}}$, $x_{j}={val_j:{prec}}$'.format(i=i, j=j, val_i=x[i,0], val_j=x[j, 0], prec=prec)
+            a.set_text(text)
+            #a.append(ax[0].text(0.25, 0.4, 
+            #                    ['$\kernelScalar_{' num2str(i) ', ' num2str(j) '} = ' numsf2str(variance, nsf) ' \times \exp \left(-\frac{(' numsf2str(t(i), nsf) '-' numsf2str(t(j), nsf) ')^2}{2\times ' numsf2str(lengthScale, nsf) '^2}\right)$'], 'horizontalalignment', 'center')])
+            file_name = base_file_name+'{counter:0>3}.svg'.format(counter=counter)
+            mlai.write_figure(os.path.join(diagrams, file_name), 
+                              transparent=True)
+            counter += 1
+            Kplot[i, j] = KplotFull[i, j]
 
+            matrix(Kplot, 
+                   ax=ax[1], 
+                   bracket_style='square', 
+                   type='entries',
+                   highlight=True,
+                   highlight_row = [i, i],
+                   highlight_col = [j, j],
+                   highlight_color=[1, 0, 1])
+            
+            file_name = base_file_name+'{counter:0>3}.svg'.format(counter=counter)
+            mlai.write_figure(os.path.join(diagrams, file_name), 
+                              transparent=True)
+            counter +=1
+
+            if i != j:
+                Kplot[j, i] = KplotFull[j, i]
+
+                matrix(Kplot, 
+                       ax=ax[1], 
+                       bracket_style='square', 
+                       type='entries',
+                       highlight=True,
+                       highlight_row = [j, j],
+                       highlight_col = [i, i],
+                       highlight_color=[1, 0, 1])
+                file_name = base_file_name+'{counter:0>3}.svg'.format(counter=counter)
+                mlai.write_figure(os.path.join(diagrams, file_name), 
+                                  transparent=True)
+                counter += 1
+
+    matrix(Kplot, 
+           ax=ax[1], 
+           bracket_style='square', 
+           type='entries')
+
+    file_name = base_file_name+'{counter:0>3}.svg'.format(counter=counter)
+    mlai.write_figure(os.path.join(diagrams, file_name), 
+                      transparent=True)
+    counter += 1
+
+    matrix(K, 
+           ax=ax[1], 
+           bracket_style='square',
+           type='image')
+    file_name = base_file_name+'{counter:0>3}.svg'.format(counter=counter)
+    mlai.write_figure(os.path.join(diagrams, file_name), 
+                      transparent=True)
+    counter += 1
+            
 def kern_circular_sample(K, mu=None, x=None,
                          filename=None, fig=None, num_samps=5,
                          num_theta=48, multiple=True,
@@ -1961,8 +2076,8 @@ def clear_axes(ax):
     """Clear the axes lines and ticks"""
     ax.tick_params(axis='both',          
                    which='both', 
-                   bottom='off', top='off', labelbottom='off',
-                   right='off', left='off', labelleft='off') 
+                   bottom=False, top=False, labelbottom=False,
+                   right=False, left=False, labelleft=False) 
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
     ax.spines["bottom"].set_visible(False)
@@ -2016,8 +2131,8 @@ def non_linear_difficulty_plot_3(alpha=1.0,
           start_val = end_val
 
     ax[0].tick_params(axis='both',          
-        which='both', bottom='off', top='off', labelbottom='off',
-                      right='off', left='off', labelleft='off') 
+        which='both', bottom=False, top=False, labelbottom=False,
+                      right=False, left=False, labelleft=False) 
     ax[0].set(aspect='equal')
     clear_axes(ax[0])
     ax[0].set_xlabel('$x_1$', ha='center', fontsize=fontsize)
