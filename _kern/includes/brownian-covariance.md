@@ -40,5 +40,5 @@ $$
 \includehtml{../slides/diagrams/kern/brownian_covariance.html}{512}{384}
 }{50%}{50%}
 \notes{\caption{The covariance of Brownian motion, and some samples from the covariance showing the functional form.}}-->
-\columns{\includesvg{../slides/diagrams/kern/brownian_covariance.svg}}{\includeimg{../slides/diagrams/kern/brownian_covariance.gif}{100%}{negate}{center}}{45%}{45%}
+\columns{\includesvgclass{../slides/diagrams/kern/brownian_covariance.svg}}{\includeimg{../slides/diagrams/kern/brownian_covariance.gif}{100%}{negate}{center}}{45%}{45%}
 

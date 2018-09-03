@@ -47,4 +47,4 @@ line(xlim, [ylim(1) ylim(1)], 'color', blackColor)
 printLatexPlot('rbfbasisCovarianceSamples', '../../../kern/tex/diagrams/', colWidth);
 }
 
-\columns{\includesvg{../slides/diagrams/kern/basis_covariance.svg}}{\includeimg{../slides/diagrams/kern/basis_covariance.gif}{100%}{negate}{center}}{45%}{45%}
+\columns{\includesvgclass{../slides/diagrams/kern/basis_covariance.svg}}{\includeimg{../slides/diagrams/kern/basis_covariance.gif}{100%}{negate}{center}}{45%}{45%}
