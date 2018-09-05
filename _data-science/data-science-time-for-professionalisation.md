@@ -9,18 +9,21 @@ abstract: >
   understood or deployed. In this talk we will focus on two particular
   components of data science solutions: the preparation of data snd
   the deployment of machine learning systems. 
-author: Neil D. Lawrence
-affiliation: Amazon Research Cambridge and University of Sheffield
+author:
+- given: Neil D.
+  family: Lawrence
+  url: http://inverseprobability.com
+  institute: Amazon Cambridge and University of Sheffield
+  twitter: lawrennd
+  gscholar: r3SJcvoAAAAJ
+  orchid: 
+published: 2018-09-05
+reveal: 2018-09-05-data-science-time-for-professionalism.slides.html
+ipynb: 2018-09-05-data-science-time-for-professionalism.ipynb
+layout: talk
+transition: None
+date: 2018-09-05
 ---
-
-#### Data Science: Time for Professionalisation?
-#### 2018-03-27
-#### Neil D. Lawrence
-#### Amazon Research Cambridge and University of Sheffield
-```@lawrennd``` [inverseprobability.com](http://inverseprobability.com)
-
-<!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2017-06-27-data-science-time-for-professionalisation.slides.html 2017-06-27-data-science-time-for-professionalisation.md
--->
 
 \include{../talk-macros.tex}
 \include{../_ml/includes/what-is-ml.md}
@@ -29,7 +32,7 @@ affiliation: Amazon Research Cambridge and University of Sheffield
 \include{../_data-science/includes/evolved-relationship.md}
 \include{../_ml/includes/what-does-machine-learning-do.md}
 
-### Deep Learning
+\newslide{Deep Learning}
 
 * These are interpretable models: vital for disease etc.
 
@@ -43,7 +46,7 @@ affiliation: Amazon Research Cambridge and University of Sheffield
 
 \include{../_data-science/includes/the-data-crisis.md}
 
-### Rest of this Talk: Two Areas of Focus {.slide: data-transition="none" }
+\newslide{Rest of this Talk: Two Areas of Focus}
 
 * Reusability of Data
 
@@ -54,9 +57,9 @@ affiliation: Amazon Research Cambridge and University of Sheffield
 \include{../_ai/includes/deploying-ai.md}
 \include{../_ai/includes/ml-systems-design-long.md}
 
-### Conclusion
+\newslide{Conclusion}
 
-* Difference between Artificial Intelligence and Data Science are fundamentally different.
+* Artificial Intelligence and Data Science are fundamentally different.
 
 * In one you are dealing with data collected by happenstance.
 
@@ -66,7 +69,7 @@ affiliation: Amazon Research Cambridge and University of Sheffield
 will be deployed in evolving environments.
 
 
-### Thanks!
+\newslide{Thanks!}
 
 * twitter: \@lawrennd
 * blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
