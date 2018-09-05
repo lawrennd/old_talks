@@ -1,0 +1,328 @@
+---
+title: "Data Science: Is it Time for Professionalisation?"
+abstract: "<p>Machine learning methods and software are becoming widely deployed. But how are we sharing expertise about bottlenecks and pain points in deploying solutions? In terms of the practice of data science, we seem to be at a similar point today as software engineering was in the early 1980s. Best practice is not widely understood or deployed. In this talk we will focus on two particular components of data science solutions: the preparation of data snd the deployment of machine learning systems.</p>"
+author:
+- given: Neil D.
+  family: Lawrence
+  url: http://inverseprobability.com
+  institute: Amazon Cambridge and University of Sheffield
+  twitter: lawrennd
+  gscholar: r3SJcvoAAAAJ
+  orchid: 
+date: 2018-09-05
+published: 2018-09-05
+reveal: 2018-09-05-data-science-and-the-professions.slides.html
+layout: talk
+categories:
+- notes
+---
+
+
+<div style="display:none">
+  $${% include talk-notation.tex %}$$
+</div>
+
+<p><!--% not ipynb--></p>
+<h2 id="what-is-machine-learning">What is Machine Learning?</h2>
+<p>What is machine learning? At its most basic level machine learning is a combination of</p>
+<p><span class="math display">\[ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span></p>
+<p>where <em>data</em> is our observations. They can be actively or passively acquired (meta-data). The <em>model</em> contains our assumptions, based on previous experience. That experience can be other data, it can come from transfer learning, or it can merely be our beliefs about the regularities of the universe. In humans our models include our inductive biases. The <em>prediction</em> is an action to be taken or a categorization or a quality score. The reason that machine learning has become a mainstay of artificial intelligence is the importance of predictions in artificial intelligence. The data and the model are combined through computation.</p>
+<p>In practice we normally perform machine learning using two functions. To combine data with a model we typically make use of:</p>
+<p><strong>a prediction function</strong> a function which is used to make the predictions. It includes our beliefs about the regularities of the universe, our assumptions about how the world works, e.g. smoothness, spatial similarities, temporal similarities.</p>
+<p><strong>an objective function</strong> a function which defines the cost of misprediction. Typically it includes knowledge about the world's generating processes (probabilistic objectives) or the costs we pay for mispredictions (empiricial risk minimization).</p>
+<p>The combination of data and model through the prediction function and the objectie function leads to a <em>learning algorithm</em>. The class of prediction functions and objective functions we can make use of is restricted by the algorithms they lead to. If the prediction function or the objective function are too complex, then it can be difficult to find an appropriate learning algorithm. Much of the acdemic field of machine learning is the quest for new learning algorithms that allow us to bring different types of models and data together.</p>
+<p>A useful reference for state of the art in machine learning is the UK Royal Society Report, <a href="https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf">Machine Learning: Power and Promise of Computers that Learn by Example</a>.</p>
+<p>You can also check my blog post on <a href="http://inverseprobability.com/2017/07/17/what-is-machine-learning">&quot;What is Machine Learning?&quot;</a></p>
+<h3 id="artificial-intelligence-and-data-science">Artificial Intelligence and Data Science</h3>
+<p>Machine learning technologies have been the driver of two related, but distinct disciplines. The first is <em>data science</em>. Data science is an emerging field that arises from the fact that we now collect so much data by happenstance, rather than by <em>experimental design</em>. Classical statistics is the science of drawing conclusions from data, and to do so statistical experiments are carefully designed. In the modern era we collect so much data that there's a desire to draw inferences directly from the data.</p>
+<p>As well as machine learning, the field of data science draws from statistics, cloud computing, data storage (e.g. streaming data), visualization and data mining.</p>
+<p>In contrast, artificial intelligence technologies typically focus on emulating some form of human behaviour, such as understanding an image, or some speech, or translating text from one form to another. The recent advances in artifcial intelligence have come from machine learning providing the automation. But in contrast to data science, in artifcial intelligence the data is normally collected with the specific task in mind. In this sense it has strong relations to classical statistics.</p>
+<p>Classically artificial intelligence worried more about <em>logic</em> and <em>planning</em> and focussed less on data driven decision making. Modern machine learning owes more to the field of <em>Cybernetics</em> <span class="citation">(Wiener, 1948)</span> than artificial intelligence. Related fields include <em>robotics</em>, <em>speech recognition</em>, <em>language understanding</em> and <em>computer vision</em>.</p>
+<p>There are strong overlaps between the fields, the wide availability of data by happenstance makes it easier to collect data for designing AI systems. These relations are coming through wide availability of sensing technologies that are interconnected by celluar networks, WiFi and the internet. This phenomenon is sometimes known as the <em>Internet of Things</em>, but this feels like a dangerous misnomer. We must never forget that we are interconnecting people, not things.</p>
+<h2 id="natural-and-artificial-intelligence-embodiment-factors">Natural and Artificial Intelligence: Embodiment Factors</h2>
+<table>
+<tr>
+<td>
+</td>
+<td align="center">
+<img class="" src="../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="40%" align="center" style="background:none; border:none; box-shadow:none;">
+</td>
+<td align="center">
+<img class="" src="../slides/diagrams/ClaudeShannon_MFO3807.jpg" width="25%" align="center" style="background:none; border:none; box-shadow:none;">
+</td>
+</tr>
+<tr>
+<td>
+compute
+</td>
+<td align="center">
+<span class="math display">\[\approx 100 \text{ gigaflops}\]</span>
+</td>
+<td align="center">
+<span class="math display">\[\approx 16 \text{ petaflops}\]</span>
+</td>
+</tr>
+<tr>
+<td>
+communicate
+</td>
+<td align="center">
+<span class="math display">\[1 \text{ gigbit/s}\]</span>
+</td>
+<td align="center">
+<span class="math display">\[100 \text{ bit/s}\]</span>
+</td>
+</tr>
+<tr>
+<td>
+(compute/communicate)
+</td>
+<td align="center">
+<span class="math display">\[10^{4}\]</span>
+</td>
+<td align="center">
+<span class="math display">\[10^{14}\]</span>
+</td>
+</tr>
+</table>
+<p>There is a fundamental limit placed on our intelligence based on our ability to communicate. Claude Shannon founded the field of information theory. The clever part of this theory is it allows us to separate our measurement of information from what the information pertains to<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>.</p>
+<p>Shannon measured information in bits. One bit of information is the amount of information I pass to you when I give you the result of a coin toss. Shannon was also interested in the amount of information in the English language. He estimated that on average a word in the English language contains 12 bits of information.</p>
+<p>Given typical speaking rates, that gives us an estimate of our ability to communicate of around 100 bits per second <span class="citation">(Reed and Durlach, 1998)</span>. Computers on the other hand can communicate much more rapidly. Current wired network speeds are around a billion bits per second, ten million times faster.</p>
+<p>When it comes to compute though, our best estimates indicate our computers are slower. A typical modern computer can process make around 100 billion floating point operations per second, each floating point operation involves a 64 bit number. So the computer is processing around 6,400 billion bits per second.</p>
+<p>It's difficult to get similar estimates for humans, but by some estimates the amount of compute we would require to <em>simulate</em> a human brain is equivalent to that in the UK's fastest computer <span class="citation">(Ananthanarayanan et al., 2009)</span>, the MET office machine in Exeter, which in 2018 ranks as the 11th fastest computer in the world. That machine simulates the world's weather each morning, and then simulates the world's climate. It is a 16 petaflop machine, processing around 1,000 <em>trillion</em> bits per second.</p>
+<p>So when it comes to our ability to compute we are extraordinary, not compute in our conscious mind, but the underlying neuron firings that underpin both our consciousness, our sbuconsciousness as well as our motor control etc. By analogy I sometimes like to think of us as a Formula One engine. But in terms of our ability to deploy that computation in actual use, to share the results of what we have inferred, we are very limited. So when you imagine the F1 car that represents a psyche, think of an F1 car with bicycle wheels.</p>
+<p><img class="" src="../slides/diagrams/640px-Marcel_Renault_1903.jpg" width="70%" align="center" style="background:none; border:none; box-shadow:none;"></p>
+<p>In contrast, our computers have less computational power, but they can communicate far more fluidly. They are more like a go-kart, less well powered, but with tires that allow them to deploy that power.</p>
+<p><img class="" src="../slides/diagrams/Caleb_McDuff_WIX_Silence_Racing_livery.jpg" width="70%" align="center" style="background:none; border:none; box-shadow:none;"></p>
+<p>For humans, that means much of our computation should be dedicated to considering <em>what</em> we should compute. To do that efficiently we need to model the world around us. The most complex thing in the world around us is other humans. So it is no surprise that we model them. We second guess what their intentions are, and our communication is only necessary when they are departing from how we model them. Naturally, for this to work well, we need to understand those we work closely with. So it is no surprise that social communication, social bonding, forms so much of a part of our use of our limited bandwidth.</p>
+<p>There is a second effect here, our need to anthropomorphise objects around us. Our tendency to model our fellow humans extends to when we interact with other entities in our environment. To our pets as well as inanimate objects around us, such as computers or even our cars. This tendency to overinterpret could be a consequence of our limited ability to communicate.</p>
+<p>For more details see this paper <a href="https://arxiv.org/abs/1705.07996">&quot;Living Together: Mind and Machine Intelligence&quot;</a>, and this <a href="http://inverseprobability.com/talks/lawrence-tedx17/living-together.html">TEDx talk</a>.</p>
+<h2 id="evolved-relationship-with-information">Evolved Relationship with Information</h2>
+<p>The high bandwidth of computers has resulted in a close relationship between the computer and data. Large amounts of information can flow between the two. The degree to which the computer is mediating our relationship with data means that we should consider it an intermediary.</p>
+<p>Originaly our low bandwith relationship with data was affected by two characteristics. Firstly, our tendency to over-interpret driven by our need to extract as much knowledge from our low bandwidth information channel as possible. Secondly, by our improved understanding of the domain of <em>mathematical</em> statistics and how our cognitive biases can mislead us.</p>
+<p>With this new set up there is a potential for assimilating far more information via the computer, but the computer can present this to us in various ways. If it's motives are not aligned with ours then it can misrepresent the information. This needn't be nefarious it can be simply as a result of the computer pursuing a different objective from us. For example, if the computer is aiming to maximize our interaction time that may be a different objective from ours which may be to summarize information in a representative manner in the <em>shortest</em> possible length of time.</p>
+<p>For example, for me it was a common experience to pick up my telephone with the intention of checking when my next appointment was, but to soon find myself distracted by another application on the phone, and end up reading something on the internet. By the time I'd finished reading, I would often have forgotten the reason I picked up my phone in the first place.</p>
+<p>There are great benefits to be had from the huge amount of information we can unlock from this evolved relationship between us and data. In biology, large scale data sharing has been driven by a revolution in genomic, transcriptomic and epigenomic measurement. The improved inferences that that can be drawn through summarizing data by computer have fundamentally changed the nature of biological science, now this phenomenon is also infuencing us in our daily lives as data measured by <em>happenstance</em> is increasingly used to characterize us.</p>
+<p>Better mediation of this flow actually requires a better understanding of human-computer interaction. This in turn involves understanding our own intelligence better, what its cognitive biases are and how these might mislead us.</p>
+<p>For further thoughts see <a href="https://www.theguardian.com/media-network/2015/jul/23/data-driven-economy-marketing">this Guardian article</a> from 2015 on marketing in the internet era and <a href="http://inverseprobability.com/2015/12/04/what-kind-of-ai">this blog post</a> on System Zero.</p>
+<object class="svgplot" align data="../slides/diagrams/data-science/information-flow003.svg">
+</object>
+<center>
+<em>New direction of information flow, information is reaching us mediated by the computer </em>
+</center>
+<h3 id="what-does-machine-learning-do">What does Machine Learning do?</h3>
+<p>Any process of automation allows us to scale what we do by codifying a process in some way that makes it efficient and repeatable. Machine learning automates by emulating human (or other actions) found in data. Machine learning codifies in the form of a mathematical function that is learnt by a computer. If we can create these mathematical functions in ways in which they can interconnect, then we can also build systems.</p>
+<p>Machine learning works through codifing a prediction of interest into a mathematical function. For example, we can try and predict the probability that a customer wants to by a jersey given knowledge of their age, and the latitude where they live. The technique known as logistic regression estimates the odds that someone will by a jumper as a linear weighted sum of the features of interest.</p>
+<p><span class="math display">\[ \text{odds} = \frac{p(\text{bought})}{p(\text{not bought})} \]</span> <span class="math display">\[ \log \text{odds}  = \beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}\]</span></p>
+<p>Here <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2\)</span> are the parameters of the model. If <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2\)</span> are both positive, then the log-odds that someone will buy a jumper increase with increasing latitude and age, so the further north you are and the older you are the more likely you are to buy a jumper. The parameter <span class="math inline">\(\beta_0\)</span> is an offset parameter, and gives the log-odds of buying a jumper at zero age and on the equator. It is likely to be negative[^logarithms] indicating that the purchase is odds-against. This is actually a classical statistical model, and models like logistic regression are widely used to estimate probabilities from ad-click prediction to risk of disease.</p>
+<p>This is called a generalized linear model, we can also think of it as estimating the <em>probability</em> of a purchase as a nonlinear function of the features (age, lattitude) and the parameters (the <span class="math inline">\(\beta\)</span> values). The function is known as the <em>sigmoid</em> or <a href="https://en.wikipedia.org/wiki/Logistic_regression">logistic function</a>, thus the name <em>logistic</em> regression.</p>
+<p><span class="math display">\[ p(\text{bought}) =  \sigmoid{\beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}}\]</span></p>
+<p>In the case where we have <em>features</em> to help us predict, we sometimes denote such features as a vector, <span class="math inline">\(\inputVector\)</span>, and we then use an inner product between the features and the parameters, <span class="math inline">\(\boldsymbol{\beta}^\top \inputVector = \beta_1 \inputScalar_1 + \beta_2 \inputScalar_2 + \beta_3 \inputScalar_3 ...\)</span>, to represent the argument of the sigmoid.</p>
+<p><span class="math display">\[ p(\text{bought}) =  \sigmoid{\boldsymbol{\beta}^\top \inputVector}\]</span></p>
+<p>More generally, we aim to predict some aspect of our data, <span class="math inline">\(\dataScalar\)</span>, by relating it through a mathematical function, <span class="math inline">\(\mappingFunction(\cdot)\)</span>, to the parameters, <span class="math inline">\(\boldsymbol{\beta}\)</span> and the data, <span class="math inline">\(\inputVector\)</span>.</p>
+<p><span class="math display">\[ \dataScalar =  \mappingFunction\left(\inputVector, \boldsymbol{\beta}\right)\]</span></p>
+<p>We call <span class="math inline">\(\mappingFunction(\cdot)\)</span> the <em>prediction function</em></p>
+<p>To obtain the fit to data, we use a separate function called the <em>objective function</em> that gives us a mathematical representation of the difference between our predictions and the real data.</p>
+<p><span class="math display">\[\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix)\]</span> A commonly used examples (for example in a regression problem) is least squares, <span class="math display">\[\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingFunction(\inputVector_i, \boldsymbol{\beta})\right)^2.\]</span></p>
+<p>If a linear prediction function is combined with the least squares objective function then that gives us a classical <em>linear regression</em>, another classical statistical model. Statistics often focusses on linear models because it makes interpretation of the model easier. Interpretation is key in statistics because the aim is normally to validate questions by analysis of data. Machine learning has typically focussed more on the prediction function itself and worried less about the interpretation of parameters, which are normally denoted by <span class="math inline">\(\mathbf{w}\)</span> instead of <span class="math inline">\(\boldsymbol{\beta}\)</span>. As a result <em>non-linear</em> functions are explored more often as they tend to improve quality of predictions but at the expense of interpretability.</p>
+<ul>
+<li><p>These are interpretable models: vital for disease etc.</p></li>
+<li><p>Modern machine learning methods are less interpretable</p></li>
+<li><p>Example: face recognition</p></li>
+</ul>
+<img class="" src="../slides/diagrams/deepface_neg.png" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
+<center>
+<em>The DeepFace architecture <span class="citation">(Taigman et al., 2014)</span>, visualized through colors to represent the functional mappings at each layer. There are 120 million parameters in the model. </em>
+</center>
+<p>The DeepFace architecture <span class="citation">(Taigman et al., 2014)</span> consists of layers that deal with <em>translation</em> and <em>rotational</em> invariances. These layers are followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected layers.</p>
+<img class="" src="../slides/diagrams/576px-Early_Pinball.jpg" width="50%" align="center" style="background:none; border:none; box-shadow:none;">
+<center>
+<em>Deep learning models are composition of simple functions. We can think of a pinball machine as an analogy. Each layer of pins corresponds to one of the layers of functions in the model. Input data is represented by the location of the ball from left to right when it is dropped in from the top. Output class comes from the position of the ball as it leaves the pins at the bottom. </em>
+</center>
+<p>We can think of what these models are doing as being similar to early pin ball machines. In a neural network, we input a number (or numbers), whereas in pinball, we input a ball. The location of the ball on the left-right axis can be thought of as the number. As the ball falls through the machine, each layer of pins can be thought of as a different layer of neurons. Each layer acts to move the ball from left to right.</p>
+<p>In a pinball machine, when the ball gets to the bottom it might fall into a hole defining a score, in a neural network, that is equivalent to the decision: a classification of the input object.</p>
+<p>An image has more than one number associated with it, so it's like playing pinball in a <em>hyper-space</em>.</p>
+<object class="svgplot" align data="../slides/diagrams/pinball001.svg">
+</object>
+<center>
+<em>At initialization, the pins, which represent the parameters of the function, aren't in the right place to bring the balls to the correct decisions. </em>
+</center>
+<object class="svgplot" align data="../slides/diagrams/pinball002.svg">
+</object>
+<center>
+<em>After learning the pins are now in the right place to bring the balls to the correct decisions. </em>
+</center>
+<p>Learning involves moving all the pins to be in the right position, so that the ball falls in the right place. But moving all these pins in hyperspace can be difficult. In a hyper space you have to put a lot of data through the machine for to explore the positions of all the pins. Adversarial learning reflects the fact that a ball can be moved a small distance and lead to a very different result.</p>
+<p>Probabilistic methods explore more of the space by considering a range of possible paths for the ball through the machine.</p>
+<h3 id="data-science">Data Science</h3>
+<ul>
+<li>Industrial Revolution 4.0?</li>
+<li><em>Industrial Revolution</em> (1760-1840) term coined by Arnold Toynbee, late 19th century.</li>
+<li>Maybe: But this one is dominated by <em>data</em> not <em>capital</em></li>
+<li>That presents <em>challenges</em> and <em>opportunities</em></li>
+</ul>
+<p>compare <a href="https://www.theguardian.com/media-network/2015/mar/05/digital-oligarchy-algorithms-personal-data">digital oligarchy</a> vs <a href="https://www.theguardian.com/media-network/2015/aug/25/africa-benefit-data-science-information">how Africa can benefit from the data revolution</a></p>
+<ul>
+<li>Apple vs Nokia: How you handle disruption.</li>
+</ul>
+<p>Disruptive technologies take time to assimilate, and best practices, as well as the pitfalls of new technologies take time to share. Historically, new technologies led to new professions. <a href="https://en.wikipedia.org/wiki/Isambard_Kingdom_Brunel">Isambard Kingdom Brunel</a> (born 1806) was a leading innovator in civil, mechanical and naval engineering. Each of these has its own professional institutions founded in 1818, 1847, and 1860 respectively.</p>
+<p><a href="https://en.wikipedia.org/wiki/Nikola_Tesla">Nikola Tesla</a> developed the modern approach to electrical distribution, he was born in 1856 and the American Instiute for Electrical Engineers was founded in 1884, the UK equivalent was founded in 1871.</p>
+<p><a href="https://en.wikipedia.org/wiki/William_Shockley">William Schockley Jr</a>, born 1910, led the group that developed the transistor, referred to as &quot;the man who brought silicon to Silicon Valley&quot;, in 1963 the American Institute for Electical Engineers merged with the Institute of Radio Engineers to form the Institute of Electrical and Electronic Engineers.</p>
+<p><a href="https://en.wikipedia.org/wiki/Watts_Humphrey">Watts S. Humphrey</a>, born 1927, was known as the &quot;father of software quality&quot;, in the 1980s he founded a program aimed at understanding and managing the software process. The British Computer Society was founded in 1956.</p>
+<p>Why the need for these professions? Much of it is about codification of best practice and developing trust between the public and practitioners. These fundamental characteristics of the professions are shared with the oldest professions (Medicine, Law) as well as the newest (Information Technology).</p>
+<p>So where are we today? My best guess is we are somewhere equivalent to the 1980s for Software Engineering. In terms of professional deployment we have a basic understanding of the equivalent of &quot;programming&quot; but much less understanding of <em>machine learning systems design</em> and <em>data infrastructure</em>. How the components we ahve developed interoperate together in a reliable and accountable manner. Best practice is still evolving, but perhaps isn't being shared widely enough.</p>
+<p>One problem is that the art of data science is superficially similar to regular software engineering. Although in practice it is rather different. Modern software engineering practice operates to generate code which is well tested as it is written, agile programming techniques provide the appropriate degree of flexibility for the individual programmers alongside sufficient formalization and testing. These techniques have evolved from an overly restrictive formalization that was proposed in the early days of software engineering.</p>
+<p>While data science involves programming, it is different in the following way. Most of the work in data science involves understanding the data and the appropriate manipulations to apply to extract knowledge from the data. The eventual number of lines of code that are required to extract that knowledge are often very few, but the amount of thought and attention that needs to be applied to each line is much more than a traditional line of software code. Testing of those lines is also of a different nature, provisions have to be made for evolving data environments. Any development work is often done on a static snapshot of data, but deployment is made in a live environment where the nature of data changes. Quality control involves checking for degradation in performance arising form unanticipated changes in data quality. It may also need to check for regulatory conformity. For example, in the UK the General Data Protection Regulation stipulates standards of explainability and fairness that may need to be monitored. These concerns do not affect traditional software deployments.</p>
+<p>Others are also pointing out these challenges, <a href="https://medium.com/@karpathy/software-2-0-a64152b37c35">this post</a> from Andrej Karpathy (now head of AI at Tesla) covers the notion of &quot;Software 2.0&quot;. Google researchers have highlighted the challenges of &quot;Technical Debt&quot; in machine learning <span class="citation">(Sculley et al., 2015)</span>. Researchers at Berkeley have characterized the systems challenges associated with machine learning <span class="citation">(Stoica et al., 2017)</span>.</p>
+<p>Data science is not only about technical expertise and analysis of data, we need to also generate a culture of decision making that acknowledges the true challenges in data-driven automated decision making. In particular, a focus on algorithms has neglected the importance of data in driving decisions. The quality of data is paramount in that poor quality data will inevitably lead to poor quality decisions. Anecdotally most data scientists will suggest that 80% of their time is spent on data clean up, and only 20% on actually modelling.</p>
+<h3 id="the-software-crisis">The Software Crisis</h3>
+<blockquote>
+<p>The major cause of the software crisis is that the machines have become several orders of magnitude more powerful! To put it quite bluntly: as long as there were no machines, programming was no problem at all; when we had a few weak computers, programming became a mild problem, and now we have gigantic computers, programming has become an equally gigantic problem.</p>
+<p>Edsger Dijkstra (1930-2002), The Humble Programmer</p>
+</blockquote>
+<p>In the late sixties early software programmers made note of the increasing costs of software development and termed the challenges associated with it as the &quot;<a href="https://en.wikipedia.org/wiki/Software_crisis">Software Crisis</a>&quot;. Edsger Dijkstra referred to the crisis in his 1972 Turing Award winner's address.</p>
+<h3 id="the-data-crisis">The Data Crisis</h3>
+<blockquote>
+<p>The major cause of the data crisis is that machines have become more interconnected than ever before. Data access is therefore cheap, but data quality is often poor. What we need is cheap high quality data. That implies that we develop processes for improving and verifying data quality that are efficient.</p>
+<p>There would seem to be two ways for improving efficiency. Firstly, we should not duplicate work. Secondly, where possible we should automate work.</p>
+</blockquote>
+<p>What I term &quot;The Data Crisis&quot; is the modern equivalent of this problem. The quantity of modern data, and the lack of attention paid to data as it is initially &quot;laid down&quot; and the costs of data cleaning are bringing about a crisis in data-driven decision making. Just as with software, the crisis is most correctly addressed by 'scaling' the manner in which we process our data. Duplication of work occurs because the value of data cleaning is not correctly recognised in management decision making processes. Automation of work is increasingly possible through techniques in &quot;artificial intelligence&quot;, but this will also require better management of the data science pipeline so that data about data science (meta-data science) can be correctly assimilated and processed. The Alan Turing institute has a program focussed on this area, <a href="https://www.turing.ac.uk/research_projects/artificial-intelligence-data-analytics/">AI for Data Analytics</a>.</p>
+<h2 id="how-the-gdpr-may-help">How the GDPR May Help</h2>
+<p>Early reactions to the General Data Protection Regulation by companies seem to have been fairly wary, but if we view the principles outlined in the GDPR as good practice, rather than regulation, it feels like companies can only improve their internal data ecosystems by conforming to the GDPR. For this reason, I like to think of the initials as standing for &quot;Good Data Practice Rules&quot; rather than General Data Protection Regulation. In particular, the term &quot;data protection&quot; is a misnomer, and indeed the earliest <a href="https://en.wikipedia.org/wiki/Convention_for_the_protection_of_individuals_with_regard_to_automatic_processing_of_personal_data">data protection directive from the EU</a> (from 1981) refers to the protection of <em>individuals</em> with regard to the automatic processing of personal data, which is a much better sense of the term.</p>
+<p>If we think of the legislation as protecting individuals, and we note that it seeks, and instead of viewing it as regulation, we view it as &quot;Wouldn't it be good if ...&quot;, e.g. in respect to the <a href="https://en.wikipedia.org/wiki/Right_to_explanation">&quot;right to an explanation&quot;</a>, we might suggest: &quot;Wouldn't it be good if we could explain why our automated decision making system made a particular decison&quot;. That seems like good practice for an organization's automated decision making systems.</p>
+<p>Similarly, with regard to data minimization principles. Retaing the minimum amount of personal data needed to drive decisions could well lead to <em>better</em> decision making as it causes us to become intentional about which data is used rather than the sloppier thinking that &quot;more is better&quot; encourages. Particularly when we consider that to be truly useful data has to be cleaned and maintained.</p>
+<p>If GDPR is truly reflecting the interests of individuals, then it is also reflecting the interests of consumers, patients, users etc, each of whom make use of these systems. For any company that is customer facing, or any service that prides itself on the quality of its delivery to those individuals, &quot;good data practice&quot; should become part of the DNA of the organization.</p>
+<h2 id="data-trusts">Data Trusts</h2>
+<p>The machine learning solutions we are dependent on to drive automated decision making are dependent on data. But with regard to personal data there are important issues of privacy. Data sharing brings benefits, but also exposes our digital selves. From the use of social media data for targeted advertising to influence us, to the use of genetic data to identify criminals, or natural family members. Control of our virtual selves maps on to control of our actual selves.</p>
+<p>The fuedal system that is implied by current data protection legislation has signficant power asymmetries at its heart, in that the data controller has a duty of care over the data subject, but the data subject may only discover failings in that duty of care when it's too late. Data controllers also may have conflicting motivations, and often their primary motivation is <em>not</em> towards the data-subject, but that is a consideration in their wider agenda.</p>
+<p><a href="https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy">Data Trusts</a> <span class="citation">(Edwards, 2004,<span class="citation">Lawrence (2016)</span>)</span> are a potential solution to this problem. Inspired by <em>land societies</em> that formed in the 19th century to bring democratic representation to the growing middle classes. A land society was a mutual organisation where resources were pooled for the common good.</p>
+<p>A Data Trust would be a legal entity where the trustees responsibility was entirely to the members of the trust. So the motivation of the data-controllers is aligned only with the data-subjects. How data is handled would be subject to the terms under which the trust was convened. The success of an individual trust would be contingent on it satisfying its members with appropriate balancing of individual privacy with the benefits of data sharing.</p>
+<p>Formation of Data Trusts became the number one recommendation of the Hall-Presenti report on AI, but the manner in which this is done will have a significant impact on their utility. It feels important to have a diversity of approaches, and yet it feels important that any individual trust would be large enough to be taken seriously in representing the views of its members in wider negotiations.</p>
+<ul>
+<li><p>Reusability of Data</p></li>
+<li><p>Deployment of Machine Learning Systems</p></li>
+</ul>
+<h2 id="data-readiness-levels">Data Readiness Levels</h2>
+<p><a href="http://inverseprobability.com/2017/01/12/data-readiness-levels">Data Readiness Levels</a> <span class="citation">(Lawrence, 2017)</span> are an attempt to develop a language around data quality that can bridge the gap between technical solutions and decision makers such as managers and project planners. The are inspired by Technology Readiness Levels which attempt to quantify the readiness of technologies for deployment.</p>
+<p>Data-readiness describes, at its coarsest level, three separate stages of data graduation.</p>
+<ul>
+<li><p>Grade C - accessibility</p></li>
+<li><p>Grade B - validity</p></li>
+<li><p>Grade A - usability</p></li>
+</ul>
+<h3 id="accessibility-grade-c">Accessibility: Grade C</h3>
+<p>The first grade refers to the accessibility of data. Most data science practitioners will be used to working with data-providers who, perhaps having had little experience of data-science before, state that they &quot;have the data&quot;. More often than not, they have not verified this. A convenient term for this is &quot;Hearsay Data&quot;, someone has <em>heard</em> that they have the data so they <em>say</em> they have it. This is the lowest grade of data readiness.</p>
+<p>Progressing through Grade C involves ensuring that this data is accessible. Not just in terms of digital accessiblity, but also for regulatory, ethical and intellectual property reasons.</p>
+<h3 id="validity-grade-b">Validity: Grade B</h3>
+<p>Data transits from Grade C to Grade B once we can begin digital analysis on the computer. Once the challenges of access to the data have been resolved, we can make the data available either via API, or for direct loading into analysis software (such as Python, R, Matlab, Mathematica or SPSS). Once this has occured the data is at B4 level. Grade B involves the <em>validity</em> of the data. Does the data really represent what it purports to? There are challenges such as missing values, outliers, record duplication. Each of these needs to be investigated.</p>
+<p>Grade B and C are important as if the work done in these grades is documented well, it can be reused in other projects. Reuse of this labour is key to reducing the costs of data-driven automated decision making. There is a strong overlap between the work required in this grade and the statistical field of <a href="https://en.wikipedia.org/wiki/Exploratory_data_analysis"><em>exploratory data analysis</em></a> <span class="citation">(Tukey, 1977)</span>.</p>
+<h3 id="usability-grade-a">Usability: Grade A</h3>
+<p>Once the validity of the data is determined, the data set can be considered for use in a particular task. This stage of data readiness is more akin to what machine learning scientists are used to doing in Universities. Bringing an algorithm to bear on a well understood data set.</p>
+<p>In Grade A we are concerned about the utility of the data given a particular task. Grade A may involve additional data collection (experimental design in statistics) to ensure that the task is fulfilled.</p>
+<p>This is the stage where the data and the model are brought together, so expertise in learning algorithms and their application is key. Further ethical considerations, such as the fairness of the resulting predictions are required at this stage. At the end of this stage a prototype model is ready for deployment.</p>
+<p>Deployment and maintenance of machine learning models in production is another important issue which Data Readiness Levels are only a part of the solution for.</p>
+<p>To find out more, or to contribute ideas go to <a href="http://data-readiness.org" class="uri">http://data-readiness.org</a></p>
+<p>Throughout the data preparation pipeline, it is important to have close interaction between data scientists and application domain experts. Decisions on data preparation taken outside the context of application have dangerous downstream consequences. This provides an additional burden on the data scientist as they are required for each project, but it should also be seen as a learning and familiarization exercise for the domain expert. Long term, just as biologists have found it necessary to assimilate the skills of the bioinformatician to be effective in their science, most domains will also require a familiarity with the nature of data driven decision making and its application. Working closely with data-scientists on data preparation is one way to begin this sharing of best practice.</p>
+<p>The processes involved in Grade C and B are often badly taught in courses on data science. Perhaps not due to a lack of interest in the areas, but maybe more due to a lack of access to real world examples where data quality is poor.</p>
+<p>These stages of data science are also ridden with ambiguity. In the long term they could do with more formalization, and automation, but best practice needs to be understood by a wider community before that can happen.</p>
+<h2 id="assessing-the-organizations-readiness">Assessing the Organizations Readiness</h2>
+<p>Assessing the readiness of data for analysis is one action that can be taken, but assessing teams that need to assimilate the information in the data is the other side of the coin. With this in mind both <a href="https://medium.com/@damoncivin/the-joel-test-for-data-readiness-4882aae64753">Damon Civin</a> and <a href="https://blog.dominodatalab.com/joel-test-data-science/">Nick Elprin</a> have independently proposed the idea of a &quot;Data Joel Test&quot;. A &quot;<a href="https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/">Joel Test</a>&quot; is a short questionaire to establish the ability of a team to handle software engineering tasks. It is designed as a rough and ready capability assessment. A &quot;Data Joel Test&quot; is similar, but for assessing the capability of a team in performing data science.</p>
+<h3 id="artificial-intelligence" class="slide:" data-transition="none">Artificial Intelligence</h3>
+<ul>
+<li><p>Challenges in deploying AI.</p></li>
+<li><p>Currently this is in the form of &quot;machine learning systems&quot;</p></li>
+</ul>
+<h3 id="internet-of-people" class="slide:" data-transition="none">Internet of People</h3>
+<ul>
+<li><p>Fog computing: barrier between cloud and device blurring.</p>
+<ul>
+<li>Computing on the Edge</li>
+</ul></li>
+<li><p>Complex feedback between algorithm and implementation</p></li>
+</ul>
+<h3 id="deploying-ml-in-real-world-machine-learning-systems-design" class="slide:" data-transition="none">Deploying ML in Real World: Machine Learning Systems Design</h3>
+<ul>
+<li><p>Major new challenge for systems designers.</p></li>
+<li><p>Internet of Intelligence but currently:</p>
+<ul>
+<li>AI systems are <em>fragile</em></li>
+</ul></li>
+</ul>
+<h2 id="machine-learning-system-design">Machine Learning System Design</h2>
+<p>The way we are deploying artificial intelligence systems in practice is to build up systems of machine learning components. To build a machine learning system, we decompose the task into parts, each of which we can emulate with ML methods. These parts are typically independently constructed and verified. For example, in a driverless car we can decompose the tasks into components such as &quot;pedestrian detection&quot; and &quot;road line detection&quot;. Each of these components can be constructed with, for example, an independent classifier. We can then superimpose a logic on top. For example, &quot;Follow the road line unless you detect a pedestrian in the road&quot;.</p>
+<p>This allows for verification of car performance, as long as we can verify the individual components. However, it also implies that the AI systems we deploy are <em>fragile</em>.</p>
+<p>Our intelligent systems are composed by &quot;pigeonholing&quot; each indvidual task, then substituting with a machine learning model.</p>
+<h3 id="rapid-reimplementation">Rapid Reimplementation</h3>
+<p>This is also the classical approach to automation, but in traditional automation we also ensure the <em>environment</em> in which the system operates becomes controlled. For example, trains run on railway lines, fast cars run on motorways, goods are manufactured in a controlled factory environment.</p>
+<p>The difference with modern automated decision making systems is our intention is to deploy them in the <em>uncontrolled</em> environment that makes up our own world.</p>
+<p>This exposes us to either unforseen circumstances or adversarial action. And yet it is unclear our our intelligent systems are capable of adapting to this.</p>
+<p>We become exposed to mischief and adversaries. Adversaries intentially may wish to take over the artificial intelligence system, and mischief is the constant practice of many in our society. Simply watching a 10 year old interact with a voice agent such as Alexa or Siri shows that they are delighted when the can make the the &quot;intelligent&quot; agent seem foolish.</p>
+<img class="rotateimg90" src="../slides/diagrams/2017-10-12 16.47.34.jpg" width="40%" align="center" style="background:none; border:none; box-shadow:none;">
+<center>
+<em>Watt's Governor as held by &quot;Science&quot; on Holborn Viaduct</em>
+</center>
+<img class="center" src="../slides/diagrams/SteamEngine_Boulton&Watt_1784_neg.png" width="50%" align="" style="background:none; border:none; box-shadow:none;">
+<center>
+<em>Watt's Steam Engine which made Steam Power Efficient and Practical</em>
+</center>
+<p>One of the first automated decision making systems was Watt's governor, as held by &quot;Science&quot; on Holborns viaduct. Watt's governor was a key component in his steam engine. It senses increases in speed in the engine and closed the steam valve to prevent the engine overspeeding and destroying itself. Until the invention of this device, it was a human job to do this.</p>
+<p>The formal study of governors and other feedback control devices was then began by <a href="https://en.wikipedia.org/wiki/James_Clerk_Maxwell">James Clerk Maxwell</a>, the Scottish physicist. This field became the foundation of our modern techniques of artificial intelligence through Norbert Wiener's book <em>Cybernetics</em> <span class="citation">(Wiener, 1948)</span>. Cybernetics is Greek for governor, a word that in itself simply means helmsman in English.</p>
+<p>The recent WannaCry virus that had a wide impact on our health services ecosystem was exploiting a security flaw in Windows systems that was first exploited by a virus called Stuxnet.</p>
+<p>Stuxnet was a virus designed to infect the Iranian nuclear program's Uranium enrichment centrifuges. A centrifuge is prevented from overspeed by a controller, just like Watt's governor. Only now it is implemented in control logic, in this case on a Siemens PLC controller.</p>
+<p>Stuxnet infected these controllers and took over the response signal in the centrifuge, fooling the system into thinking that no overspeed was occuring. As a result, the centrifuges destroyed themselves through spinning too fast.</p>
+<p>This is equivalent to detaching Watt's governor from the steam engine. Such sabotage would be easily recognized by a steam engine operator. The challenge for the operators of the Iranian Uranium centrifuges was that the sabotage was occurring inside the electronics.</p>
+<p>That is the effect of an adversary on an intelligent system, but even without adveraries, the mischief of a 10 year old can confuse our AIs.</p>
+<p><a href="https://www.youtube.com/watch?v=1y2UKz47gew&amp;t="><img src="https://img.youtube.com/vi/1y2UKz47gew/0.jpg" /></a></p>
+<p>Asking Siri &quot;What is a trillion to the power of a thousand minus one?&quot; leads to a 30 minute response consisting of only 9s. I found this out because my nine year old grabbed my phone and did it. The only way to stop Siri was to force closure. This is an interesting example of a system feature that's <em>not</em> a bug, in fact it requires clever processing from Wolfram Alpha. But it's an unexpected result from the system performing correctly.</p>
+<p>This challenge of facing a circumstance that was unenvisaged in design but has consequences in deployment becomes far larger when the environment is uncontrolled. Or in the extreme case, where actions of the intelligent system effect the wider environment and change it.</p>
+<p>These unforseen circumstances are likely to lead to need for much more efficient turn-around and update for our intelligent systems. Whether we are correcting for security flaws (which <em>are</em> bugs) or unenvisaged circumstantial challenges: an issue I'm referring to as <em>peppercorns</em>. Rapid deployment of system updates is required. For example, Apple have &quot;fixed&quot; the problem of Siri returning long numbers.</p>
+<p>The challenge is particularly acute because of the <em>scale</em> at which we can deploy AI solutions. This means when something does go wrong, it may be going wrong in billions of households simultaneously.</p>
+<p>See also <a href="http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence">this blog on the differences between natural and artificial intelligence</a> and this paper <a href="http://inverseprobability.com/2017/11/15/decision-making">on the need for diversity in decision making</a>.</p>
+<ul>
+<li><p>Artificial Intelligence and Data Science are fundamentally different.</p></li>
+<li><p>In one you are dealing with data collected by happenstance.</p></li>
+<li><p>In the other you are trying to build systems in the real world, often by actively collecting data.</p></li>
+<li><p>Our approaches to systems design are building powerful machines that will be deployed in evolving environments.</p></li>
+<li>twitter: @lawrennd</li>
+<li><p>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></p></li>
+</ul>
+<div id="refs" class="references">
+<div id="ref-Ananthanarayanan-cat09">
+<p>Ananthanarayanan, R., Esser, S.K., Simon, H.D., Modha, D.S., 2009. The cat is out of the bag: Cortical simulations with <span class="math inline">\(10^9\)</span> neurons, <span class="math inline">\(10^{13}\)</span> synapses, in: Proceedings of the Conference on High Performance Computing Networking, Storage and Analysis - Sc ’09. <a href="https://doi.org/10.1145/1654059.1654124" class="uri">https://doi.org/10.1145/1654059.1654124</a></p>
+</div>
+<div id="ref-Edwards:privacy04">
+<p>Edwards, L., 2004. The problem with privacy. International Review of Law Computers &amp; Technology 18, 263–294.</p>
+</div>
+<div id="ref-Lawrence:drl17">
+<p>Lawrence, N.D., 2017. Data readiness levels. arXiv.</p>
+</div>
+<div id="ref-Lawrence:trusts16">
+<p>Lawrence, N.D., 2016. Data trusts could allay our privacy fears.</p>
+</div>
+<div id="ref-Reed-information98">
+<p>Reed, C., Durlach, N.I., 1998. Note on information transfer rates in human communication. Presence Teleoperators &amp; Virtual Environments 7, 509–518. <a href="https://doi.org/10.1162/105474698565893" class="uri">https://doi.org/10.1162/105474698565893</a></p>
+</div>
+<div id="ref-Sculley:debt15">
+<p>Sculley, D., Holt, G., Golovin, D., Davydov, E., Phillips, T., Ebner, D., Chaudhary, V., Young, M., Crespo, J.-F., Dennison, D., 2015. Hidden technical debt in machine learning systems, in: Cortes, C., Lawrence, N.D., Lee, D.D., Sugiyama, M., Garnett, R. (Eds.), Advances in Neural Information Processing Systems 28. Curran Associates, Inc., pp. 2503–2511.</p>
+</div>
+<div id="ref-Stoica:systemsml17">
+<p>Stoica, I., Song, D., Popa, R.A., Patterson, D.A., Mahoney, M.W., Katz, R.H., Joseph, A.D., Jordan, M., Hellerstein, J.M., Gonzalez, J., Goldberg, K., Ghodsi, A., Culler, D.E., Abbeel, P., 2017. A berkeley view of systems challenges for ai (No. UCB/EECS-2017-159). EECS Department, University of California, Berkeley.</p>
+</div>
+<div id="ref-Taigman:deepface14">
+<p>Taigman, Y., Yang, M., Ranzato, M., Wolf, L., 2014. DeepFace: Closing the gap to human-level performance in face verification, in: Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition. <a href="https://doi.org/10.1109/CVPR.2014.220" class="uri">https://doi.org/10.1109/CVPR.2014.220</a></p>
+</div>
+<div id="ref-Tukey:exploratory77">
+<p>Tukey, J.W., 1977. Exploratory data analysis. Addison-Wesley.</p>
+</div>
+<div id="ref-Wiener:cybernetics48">
+<p>Wiener, N., 1948. Cybernetics: Control and communication in the animal and the machine. MIT Press, Cambridge, MA.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>the challenge of understanding what information pertains to is known as knowledge representation.<a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
+
+
