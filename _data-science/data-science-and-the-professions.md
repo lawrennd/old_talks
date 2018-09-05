@@ -1,14 +1,11 @@
 ---
-title: "Data Science: Is it Time for Professionalisation?"
+title: "Data Science and the Professions"
 abstract: >
   Machine learning methods and software are becoming widely
-  deployed. But how are we sharing expertise about bottlenecks and
-  pain points in deploying solutions? In terms of the practice of data
+  deployed. But as we deploy algorithms that operate on individual data, how do we account for their effect on society? In terms of the practice of data
   science, we seem to be at a similar point today as software
   engineering was in the early 1980s. Best practice is not widely
-  understood or deployed. In this talk we will focus on two particular
-  components of data science solutions: the preparation of data snd
-  the deployment of machine learning systems. 
+  understood or deployed. One aspect of professions is trust. How can we bring trust to the data-sphere?
 author:
 - given: Neil D.
   family: Lawrence
@@ -46,7 +43,12 @@ date: 2018-09-05
 
 \include{../_data-science/includes/the-data-crisis.md}
 
+\newslide{Power Asymmetries and Data}
+
+\include{_data-science/includes/privacy-loss-of-control.md}
+
 \include{../_data-science/includes/gdpr.md}
+\include{../_data-science/includes/the-assault-on-privacy.md}
 \include{../_data-science/includes/data-trusts.md}
 
 
