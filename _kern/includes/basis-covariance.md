@@ -27,7 +27,7 @@ import numpy as np}
 
 \plotcode{
 basis = mlai.Basis(function=radial, 
-                   num_basis=3,
+                   number=3,
 	               data_limits=[-0.5, 0.5], 
                    width=0.25)
 kernel = mlai.Kernel(function=basis_cov,
