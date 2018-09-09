@@ -22,7 +22,7 @@ $$}
 \slides{
 * Specify the basis functions in terms of their indices,}\notes{The covariance function can then be given as
 $$
-\kernelScalar\left(\inputScalar_i,\inputScalar_j\right) = \sum_{k=1}^\numBasisFunc} \basisFunction_k(\inputScalar_i)\basisFunction_k(\inputScalar_j)
+\kernelScalar\left(\inputScalar_i,\inputScalar_j\right) = \sum_{k=1}^\numBasisFunc \basisFunction_k(\inputScalar_i)\basisFunction_k(\inputScalar_j)
 $$}
   $$\begin{aligned}
     \kernelScalar\left(\inputScalar_i,\inputScalar_j\right) = &\alpha^\prime\Delta\locationScalar \sum_{k=1}^{\numBasisFunc} \exp\Bigg(
