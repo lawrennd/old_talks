@@ -177,7 +177,8 @@ Gaussian processes are initially of interest because
 ### An Infinite Basis
 
 \include{_gp/includes/infinite-basis.md}
-<!--\include{_kern/includes/rbfcovariance.md}-->
+
+\include{_kern/includes/mlpcovariance.md}
 
 
 \newslide{References}

@@ -55,7 +55,7 @@ where we’ve scaled variance of process by $\Delta\locationScalar$.
 
 \newslide{Result}
 \slides{
-* Performing the integration leads to 
+* Performing the integration leads to}\notes{Performing the integration gives}
   $$\begin{aligned}
     \kernelScalar(\inputScalar_i,&\inputScalar_j) = \alpha^\prime \sqrt{\pi\rbfWidth^2}
     \exp\left( -\frac{\left(\inputScalar_i-\inputScalar_j\right)^2}{4\rbfWidth^2}\right)\\ &\times
@@ -63,20 +63,19 @@ where we’ve scaled variance of process by $\Delta\locationScalar$.
     \inputScalar_j\right)\right)}{\rbfWidth} \right)-
     \text{erf}\left(\frac{\left(a - \frac{1}{2}\left(\inputScalar_i +
        \inputScalar_j\right)\right)}{\rbfWidth} \right)\right],
-    \end{aligned}$$
-* Now take limit as $a\rightarrow -\infty$ and $b\rightarrow \infty$
+    \end{aligned}$$\slides{
+* Now take limit as}\notes{Now we take the limit as} $a\rightarrow -\infty$ and $b\rightarrow \infty$
   $$\kernelScalar\left(\inputScalar_i,\inputScalar_j\right) = \alpha\exp\left(
     -\frac{\left(\inputScalar_i-\inputScalar_j\right)^2}{4\rbfWidth^2}\right).$$
   where $\alpha=\alpha^\prime \sqrt{\pi\rbfWidth^2}$.
-}
+
 
 \newslide{Infinite Feature Space}
 \slides{
 * An RBF model with infinite basis functions is a Gaussian process.
-* The covariance function is given by the  covariance function.
+* The covariance function is given by the  covariance function.}\notes{In conclusion, an RBF model with infinite basis functions is a Gaussian process with the exponentiated quadratic covariance function}
   $$\kernelScalar\left(\inputScalar_i,\inputScalar_j\right) = \alpha \exp\left(
           -\frac{\left(\inputScalar_i-\inputScalar_j\right)^2}{4\rbfWidth^2}\right).$$
-}
 
 \newslide{Infinite Feature Space}
 \slides{
@@ -86,4 +85,4 @@ where we’ve scaled variance of process by $\Delta\locationScalar$.
   * this is a special case,
   * in general they are very different
 }
-
+\notes{Note that while the functional form of the basis function and the covariance function are similar, in general if we repeated this analysis for other basis functions the covariance function will have a very different form. For example the error function, $\text{erf}(\cdot)$, results in an $\asin(\cdot)$ form. See @Williams:infinite96 for more details.}
