@@ -1473,16 +1473,18 @@ def animate_covariance_function(kernel_function,
                                    fig=fig, num_samps=num_samps,
                                    multiple=multiple)
     
-def covariance_func(kernel_function, x=None, formula=None,
+def covariance_func(kernel, x=None,
                     shortname=None, longname=None, comment=None,
-                    num_samps=5, diagrams='../diagrams', multiple=False,
-                    **kernelargs):
+                    num_samps=5, diagrams='../diagrams', multiple=False):
     """Write a slide on a given covariance matrix."""
 
-    K, anim=animate_covariance_function(kernel_function, x, num_samps,
-                                        multiple, **kernelargs)
-    if shortname is not None:
-        filename = shortname + '_covariance'
+    if x is None:
+        x = np.linspace(-1, 1, 200)[:, np.newaxis]
+    K, anim=animate_covariance_function(kernel.K, x, num_samps,
+                                        multiple)
+
+    if kernel.shortname is not None:
+        filename = kernel.shortname + '_covariance'
     else:
         filename = 'covariance'
     anim.save(os.path.join(diagrams, filename + '.gif'),
@@ -1493,14 +1495,20 @@ def covariance_func(kernel_function, x=None, formula=None,
 
     fig, ax = plt.subplots(figsize=one_figsize)
     hcolor = [1., 0., 1.]
-    obj = matrix(K, ax=ax, type='image', bracket_style='boxes', colormap='gray')
+    K2 = kernel.K(x[:, ::10])
+    obj = matrix(K2, ax=ax, type='image',
+                 bracket_style='boxes', colormap='gray')
 
     mlai.write_figure(os.path.join(diagrams, filename + '.svg'), transparent=True)
     ax.cla()
 
-    out = '<h2>' + longname + ' Covariance</h2>'
-    out += '\n\n'
-    out += '<p><center>' + formula + '</center></p>'
+    if kernel.name is not None:
+        out = '<h2>' + kernel.name + ' Covariance</h2>'
+        out += '\n\n'
+    else:
+        out = ''
+    if kernel.formula is not None:
+        out += '<p><center>' + kernel.formula + '</center></p>'
     out += '<table>\n  <tr><td><img src="' + os.path.join(diagrams, filename) + '.svg"></td><td><img src="' + os.path.join(diagrams, filename) + '.gif"></td></tr>\n</table>'
     if comment is not None:
         out += '<p><center>' + comment + '</center></p>'
@@ -1727,8 +1735,8 @@ def height(ax, h, ph):
 
     ylim = ax.get_ylim()
     xlim = ax.get_xlim()
-    ax.vlines(xlim[0], ylim[0], ylim[1], color='k')
-    ax.hlines(ylim[0], xlim[0], xlim[1], color='k')
+    #ax.vlines(xlim[0], ylim[0], ylim[1], color='k')
+    #ax.hlines(ylim[0], xlim[0], xlim[1], color='k')
 
 def weight(ax, w, pw):
     """Plot weight as a distribution."""
@@ -1740,8 +1748,8 @@ def weight(ax, w, pw):
 
     ylim = ax.get_ylim()
     xlim = ax.get_xlim()
-    ax.vlines(xlim[0], ylim[0], ylim[1], color='k')
-    ax.hlines(ylim[0], xlim[0], xlim[1], color='k')
+    #ax.vlines(xlim[0], ylim[0], ylim[1], color='k')
+    #ax.hlines(ylim[0], xlim[0], xlim[1], color='k')
 
 def low_rank_approximation(fontsize=25, diagrams='../diagrams'):
     """Illustrate the low rank approximation used in sparse GPs."""

@@ -4,17 +4,16 @@
 import mlai
 import numpy as np}
 
-\plotcode{K, anim=plot.animate_covariance_function(mlai.compute_kernel, 
-                                         kernel=eq_cov, lengthscale=0.2)}
+\setupplotcode{import teaching_plots as plot
+import mlai
+import numpy as np}
 
-\setupplotcode{from IPython.core.display import HTML}
-
-\displaycode{HTML(anim.to_jshtml())}
-
-\plotcode{plot.save_animation(anim, 
-                    diagrams='../slides/diagrams/kern', 
-				    filename='eq_covariance.html')}
-
+\plotcode{kernel = mlai.Kernel(function=eq_cov,
+                     name='Exponentiated Quadratic',
+                     shortname='eq',					 
+                     formula='\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\ltwoNorm{\inputVector - \inputVector^\prime}^2}{2\ell^2}\right)',
+					 lengthscale=0.2)
+plot.covariance_func(kernel, diagrams='../slides/diagrams/')}
 
 \subsection{Exponentiated Quadratic Covariance}
 
@@ -25,9 +24,12 @@ $$
 \kernelScalar(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\ltwoNorm{\inputVector - \inputVector^\prime}^2}{2\ell^2}\right)
 $$
 \notes{where $\ell$ is the *length scale* or *time scale* of the process and $\alpha$ represents the overall process variance.}
-\columns{
+<!--\columns{
 \includesvg{../slides/diagrams/kern/eq_covariance.svg}
 }{
 \includehtml{../slides/diagrams/kern/eq_covariance.html}{512}{384}
-}{50%}{50%}
+}{50%}{50%}-->
+
+\columns{\includesvgclass{../slides/diagrams/kern/eq_covariance.svg}}{\includeimg{../slides/diagrams/kern/eq_covariance.gif}{100%}{negate}{center}}{45%}{45%}
+
 
