@@ -464,34 +464,8 @@ k(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\left\Vert \input
 \]</span> meaning that the vector of observations from the function is jointly distributed as a Gaussian process and the covariance matrix is <span class="math inline">\(\kernelMatrix = \alpha\basisMatrix \basisMatrix^\top\)</span>, each element of the covariance matrix can then be found as the inner product between two rows of the basis funciton matrix. <span class="math display">\[
 \kernel(\inputVector, \inputVector^\prime) = \basisVector(\inputVector)^\top \basisVector(\inputVector^\prime)
 \]</span></p>
-<div class="sourceCode"><pre class="sourceCode matlab"><code class="sourceCode matlab">close all
-t = linspace(-<span class="fl">3</span>, <span class="fl">3</span>, N)&#39;;
-tdisp = linspace(-<span class="fl">3</span>, <span class="fl">3</span>, Ndisp)&#39;;
-
-muVec = [-<span class="fl">1</span> <span class="fl">0</span> <span class="fl">1</span>]&#39;;
-phi = exp(-dist2(tdisp, muVec));
-K = phi*phi&#39;;
-ax = axes(<span class="st">&#39;Position&#39;</span>, [<span class="fl">0</span> <span class="fl">0</span> <span class="fl">1</span> <span class="fl">1</span>]);
-plotMatrix(K, ax, <span class="st">&#39;boxes&#39;</span>, <span class="st">&#39;imagesc&#39;</span>);
-printLatexPlot(<span class="st">&#39;rbfbasisCovarianceImage&#39;</span>, <span class="st">&#39;../../../kern/tex/diagrams/&#39;</span>, colWidth);
-
-clf
-phi = exp(-dist2(t, muVec));
-K = phi*phi&#39;;
-y = gsamp(zeros(size(K, <span class="fl">1</span>), <span class="fl">1</span>), K, numSamps);
-a= plot(t, y&#39;)
-if negative
-  for i = <span class="fl">1</span>:length(a)
-    set(a(i), <span class="st">&#39;color&#39;</span>, <span class="fl">1</span>-get(a(i), <span class="st">&#39;color&#39;</span>))
-  end
-end
-box off
-xlim = get(gca, <span class="st">&#39;xlim&#39;</span>);
-ylim = get(gca, <span class="st">&#39;ylim&#39;</span>);
-line([xlim(<span class="fl">1</span>) xlim(<span class="fl">1</span>)], ylim, <span class="st">&#39;color&#39;</span>, blackColor)
-line(xlim, [ylim(<span class="fl">1</span>) ylim(<span class="fl">1</span>)], <span class="st">&#39;color&#39;</span>, blackColor)
-
-printLatexPlot(<span class="st">&#39;rbfbasisCovarianceSamples&#39;</span>, <span class="st">&#39;../../../kern/tex/diagrams/&#39;</span>, colWidth);</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> basis_cov</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> radial</code></pre></div>
 <table>
 <tr>
 <td width="45%">

@@ -12,7 +12,7 @@ import numpy as np}
                      formula='k(\inputVector, \inputVector^\prime) = \alpha(w \inputVector^\top\inputVector^\prime + b)^d',
 					 degree=5)
 					 
-plot.covariance_func(kernel, diagrams='../slides/diagrams/')}
+plot.covariance_func(kernel, diagrams='../slides/diagrams/kern/')}
 
 $$k(\inputVector, \inputVector^\prime) = \alpha(w \inputVector^\top
 \inputVector^\prime + b)^d$$

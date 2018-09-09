@@ -17,34 +17,28 @@ $$
 \kernel(\inputVector, \inputVector^\prime) = \basisVector(\inputVector)^\top \basisVector(\inputVector^\prime)
 $$
 
-\matlabcode{close all
-t = linspace(-3, 3, N)';
-tdisp = linspace(-3, 3, Ndisp)';
 
-muVec = [-1 0 1]';
-phi = exp(-dist2(tdisp, muVec));
-K = phi*phi';
-ax = axes('Position', [0 0 1 1]);
-plotMatrix(K, ax, 'boxes', 'imagesc');
-printLatexPlot('rbfbasisCovarianceImage', '../../../kern/tex/diagrams/', colWidth);
+\loadcode{basis_cov}{mlai}
+\loadcode{radial}{mlai}
 
-clf
-phi = exp(-dist2(t, muVec));
-K = phi*phi';
-y = gsamp(zeros(size(K, 1), 1), K, numSamps);
-a= plot(t, y')
-if negative
-  for i = 1:length(a)
-    set(a(i), 'color', 1-get(a(i), 'color'))
-  end
-end
-box off
-xlim = get(gca, 'xlim');
-ylim = get(gca, 'ylim');
-line([xlim(1) xlim(1)], ylim, 'color', blackColor)
-line(xlim, [ylim(1) ylim(1)], 'color', blackColor)
+\setupplotcode{import teaching_plots as plot
+import mlai
+import numpy as np}
 
-printLatexPlot('rbfbasisCovarianceSamples', '../../../kern/tex/diagrams/', colWidth);
-}
+\plotcode{
+basis = mlai.Basis(function=radial, 
+                   num_basis=3,
+	               data_limits=[-0.5, 0.5], 
+                   width=0.25)
+kernel = mlai.Kernel(function=basis_cov,
+                     name='Basis',
+                     shortname='basis',					 
+                     formula='\kernel(\inputVector, \inputVector^\prime) = \basisVector(\inputVector)^\top \basisVector(\inputVector^\prime)',
+					 basis=basis)
+					 
+plot.covariance_func(kernel, diagrams='../slides/diagrams/kern/')}
+
+
+
 
 \columns{\includesvgclass{../slides/diagrams/kern/basis_covariance.svg}}{\includeimg{../slides/diagrams/kern/basis_covariance.gif}{100%}{negate}{center}}{45%}{45%}
