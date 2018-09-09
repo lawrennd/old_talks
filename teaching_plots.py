@@ -1493,14 +1493,13 @@ def covariance_func(kernel, x=None,
     #HTML(anim.to_html5_video())##display(display_animation(anim, default_mode='loop'))
 
 
+    K2 = kernel.K(x[::10, :])
     fig, ax = plt.subplots(figsize=one_figsize)
     hcolor = [1., 0., 1.]
-    K2 = kernel.K(x[:, ::10])
     obj = matrix(K2, ax=ax, type='image',
                  bracket_style='boxes', colormap='gray')
 
     mlai.write_figure(os.path.join(diagrams, filename + '.svg'), transparent=True)
-    ax.cla()
 
     if kernel.name is not None:
         out = '<h2>' + kernel.name + ' Covariance</h2>'
