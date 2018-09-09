@@ -1330,20 +1330,29 @@ showDivs(0, 'computing_eq_three_2_covariance');
 <h3>Uniform Basis Functions</h3>
 <ul>
 <li><p>Set each center location to <span class="math display">\[\locationScalar_k = a+\Delta\locationScalar\cdot (k-1).\]</span></p></li>
-<li><p>Specify the basis functions in terms of their indices, <span class="math display">\[\begin{aligned}
+<li>Specify the basis functions in terms of their indices, _k(_i)_k(_j) <span class="math display">\[}
+  \]</span>
+<span class="math display">\[\begin{aligned}
 \kernelScalar\left(\inputScalar_i,\inputScalar_j\right) = &amp;\alpha^\prime\Delta\locationScalar \sum_{k=1}^{\numBasisFunc} \exp\Bigg(
   -\frac{\inputScalar_i^2 + \inputScalar_j^2}{2\rbfWidth^2}\\ 
    &amp; - \frac{2\left(a+\Delta\locationScalar\cdot (k-1)\right)
-   \left(\inputScalar_i+\inputScalar_j\right) + 2\left(a+\Delta\locationScalar \cdot (k-1)\right)^2}{2\rbfWidth^2} \Bigg).
-  \end{aligned}\]</span></p></li>
-<li><p>Here we’ve scaled variance of process by <span class="math inline">\(\Delta\locationScalar\)</span>.</p></li>
+   \left(\inputScalar_i+\inputScalar_j\right) + 2\left(a+\Delta\locationScalar \cdot (k-1)\right)^2}{2\rbfWidth^2} \Bigg)
+  \end{aligned}\]</span>
+<p>$$</p></li>
 </ul>
+<p>where we’ve scaled variance of process by <span class="math inline">\(\Delta\locationScalar\)</span>.</p>
 </section>
 <section id="infinite-basis-functions" class="slide level3">
 <h3>Infinite Basis Functions</h3>
 <ul>
-<li><p>Take <span class="math display">\[\locationScalar_1=a \ \text{and}\  \locationScalar_\numBasisFunc=b \ \text{so}\ b= a+ \Delta\locationScalar\cdot(\numBasisFunc-1)\]</span></p></li>
-<li><p>This implies <span class="math display">\[b-a = \Delta\locationScalar (\numBasisFunc -1)\]</span> and therefore <span class="math display">\[\numBasisFunc = \frac{b-a}{\Delta \locationScalar} + 1\]</span></p></li>
+<li><p>Take <span class="math display">\[
+  \locationScalar_1=a \ \text{and}\  \locationScalar_\numBasisFunc=b \ \text{so}\ b= a+ \Delta\locationScalar\cdot(\numBasisFunc-1)
+  \]</span></p></li>
+<li><p>This implies <span class="math display">\[
+  b-a = \Delta\locationScalar (\numBasisFunc -1)
+  \]</span> and therefore <span class="math display">\[
+  \numBasisFunc = \frac{b-a}{\Delta \locationScalar} + 1
+  \]</span></p></li>
 <li><p>Take limit as <span class="math inline">\(\Delta\locationScalar\rightarrow 0\)</span> so <span class="math inline">\(\numBasisFunc \rightarrow \infty\)</span> where we have used <span class="math inline">\(a + k\cdot\Delta\locationScalar\rightarrow \locationScalar\)</span>.</p></li>
 </ul>
 </section>

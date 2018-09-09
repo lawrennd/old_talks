@@ -13,7 +13,6 @@ author:
 date: 2018-09-03
 published: 2018-09-03
 reveal: 2018-09-03-gpss-session-1.slides.html
-ipynb: 2018-09-03-gpss-session-1.ipynb
 layout: talk
 categories:
 - notes
@@ -505,6 +504,27 @@ printLatexPlot(<span class="st">&#39;rbfbasisCovarianceSamples&#39;</span>, <spa
 </tr>
 </table>
 <h3 id="an-infinite-basis">An Infinite Basis</h3>
+<h3 id="selecting-number-and-location-of-basis">Selecting Number and Location of Basis</h3>
+<p>In practice for a basis function model we need to choose both 1. the location of the basis functions 2. the number of basis functions</p>
+<p>One very clever of finessing this problem is to choose to have <em>infinite</em> basis functions and place them <em>everywhere</em>. To show how this is possible, we will consider a one dimensional system, <span class="math inline">\(\inputScalar\)</span>, which should give the intuition of how to do this. However, these ideas also extend to multidimensional systems as shown in, for example, <span class="citation">Williams (n.d.)</span> and <span class="citation">Neal (1994)</span>.</p>
+<p>We consider a one dimensional set up with exponentiated quadratic basis functions, <span class="math display">\[
+\basisFunction_k(\inputScalar_i) = \exp\left(\frac{\ltwoNorm{\inputScalar_i - \locationScalar_k}^2}{2\rbfWidth^2}\right)
+\]</span></p>
+<p>To place these basis functions, we first define the basis function centers in terms of a starting point on the left of our input, <span class="math inline">\(a\)</span>, and a finishing point, <span class="math inline">\(b\)</span>. The gap between basis is given by <span class="math inline">\(\Delta\locationScalar\)</span>. The location of each basis is then given by <span class="math display">\[\locationScalar_k = a+\Delta\locationScalar\cdot (k-1).\]</span> The covariance function can then be given as <span class="math display">\[
+\kernelScalar\left(\inputScalar_i,\inputScalar_j\right) = \sum_{k=1}^\numBasisFunc \basisFunction_k(\inputScalar_i)\basisFunction_k(\inputScalar_j)
+\]</span>} <span class="math display">\[\begin{aligned}
+    \kernelScalar\left(\inputScalar_i,\inputScalar_j\right) = &amp;\alpha^\prime\Delta\locationScalar \sum_{k=1}^{\numBasisFunc} \exp\Bigg(
+      -\frac{\inputScalar_i^2 + \inputScalar_j^2}{2\rbfWidth^2}\\ 
+   &amp; - \frac{2\left(a+\Delta\locationScalar\cdot (k-1)\right)
+       \left(\inputScalar_i+\inputScalar_j\right) + 2\left(a+\Delta\locationScalar \cdot (k-1)\right)^2}{2\rbfWidth^2} \Bigg)
+  \end{aligned}\]</span> where we've also scaled the variance of the process by <span class="math inline">\(\Delta\locationScalar\)</span>.</p>
+<p>A consequence of our definition is that the first and last basis function locations are given by <span class="math display">\[
+  \locationScalar_1=a \ \text{and}\  \locationScalar_\numBasisFunc=b \ \text{so}\ b= a+ \Delta\locationScalar\cdot(\numBasisFunc-1)
+  \]</span> This implies that the distance between <span class="math inline">\(b\)</span> and <span class="math inline">\(a\)</span> is given by <span class="math display">\[
+  b-a = \Delta\locationScalar (\numBasisFunc -1)
+  \]</span> and since the basis functions are separated by <span class="math inline">\(\Delta\locationScalar\)</span> the number of basis functions is given by <span class="math display">\[
+  \numBasisFunc = \frac{b-a}{\Delta \locationScalar} + 1
+  \]</span> The next step is to take the limit as <span class="math inline">\(\Delta\locationScalar\rightarrow 0\)</span> so <span class="math inline">\(\numBasisFunc \rightarrow \infty\)</span> where we have used <span class="math inline">\(a + k\cdot\Delta\locationScalar\rightarrow \locationScalar\)</span>.</p>
 <!--### Covariance Functions
 
 #### Where did this covariance matrix come from?
@@ -541,11 +561,17 @@ $$\kernelScalar\left(\inputVals,\inputVals^{\prime}\right)=\alpha\exp\left(-\fra
 <div id="ref-Laplace:essai14">
 <p>Laplace, P.S., 1814. Essai philosophique sur les probabilités, 2nd ed. Courcier, Paris.</p>
 </div>
+<div id="ref-Neal:thesis94">
+<p>Neal, R.M., 1994. Bayesian learning for neural networks (PhD thesis). University of Toronto, Canada.</p>
+</div>
 <div id="ref-Rasmussen:book06">
 <p>Rasmussen, C.E., Williams, C.K.I., 2006. Gaussian processes for machine learning. mit, Cambridge, MA.</p>
 </div>
 <div id="ref-Tipping:probpca99">
 <p>Tipping, M.E., Bishop, C.M., 1999. Probabilistic principal component analysis. Journal of the Royal Statistical Society, B 6, 611–622. <a href="https://doi.org/doi:10.1111/1467-9868.00196" class="uri">https://doi.org/doi:10.1111/1467-9868.00196</a></p>
+</div>
+<div id="ref-Williams:infinite96">
+<p>Williams, C.K.I., n.d. Computing with infinite networks, in:.</p>
 </div>
 </div>
 <div class="footnotes">
