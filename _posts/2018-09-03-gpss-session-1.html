@@ -534,6 +534,37 @@ k(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\left\Vert \input
 </td>
 </tr>
 </table>
+<h3 id="relu-covariance">RELU Covariance</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> relu_cov</code></pre></div>
+<p><span class="math display">\[\kernelScalar(\inputVector, \inputVector^\prime) = 
+\alpha \arcsin\left(\frac{w \inputVector^\top \inputVector^\prime + b}
+{\sqrt{\left(w \inputVector^\top \inputVector + b + 1\right)
+\left(w \left.\inputVector^\prime\right.^\top \inputVector^\prime + b + 1\right)}}\right)\]</span></p>
+<table>
+<tr>
+<td width="45%">
+<object class align data="../slides/diagrams/kern/relu_covariance.svg">
+</object>
+</td>
+<td width="45%">
+<img class="negate" src="../slides/diagrams/kern/relu_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
+</td>
+</tr>
+</table>
+<h3 id="sinc-covariance">Sinc Covariance</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> sinc_cov</code></pre></div>
+<p><span class="math display">\[\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \text{sinc}\left(\pi w r\right)\]</span></p>
+<table>
+<tr>
+<td width="45%">
+<object class align data="../slides/diagrams/kern/sinc_covariance.svg">
+</object>
+</td>
+<td width="45%">
+<img class="negate" src="../slides/diagrams/kern/sinc_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
+</td>
+</tr>
+</table>
 
 
 <div id="refs" class="references">
