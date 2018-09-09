@@ -12,7 +12,7 @@ import numpy as np}
                      formula='\kernelScalar(\inputVector, \inputVector^\prime) = \alpha\exp\left(\frac{-2\sin(\pi rw)^2}{\lengthScale^2}\right)',
 					 lengthscale=1.0)
 					 
-plot.covariance_func(kernel, diagrams='../slides/diagrams/')}
+plot.covariance_func(kernel, diagrams='../slides/diagrams/kern/')}
 
 $$\kernelScalar(\inputVector, \inputVector^\prime) = \alpha\exp\left(\frac{-2\sin(\pi rw)^2}{\lengthScale^2}\right)$$
 

@@ -13,7 +13,7 @@ import numpy as np}
                      shortname='eq',					 
                      formula='\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\ltwoNorm{\inputVector - \inputVector^\prime}^2}{2\ell^2}\right)',
 					 lengthscale=0.2)
-plot.covariance_func(kernel, diagrams='../slides/diagrams/')}
+plot.covariance_func(kernel, diagrams='../slides/diagrams/kern/')}
 
 \subsection{Exponentiated Quadratic Covariance}
 
