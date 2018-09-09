@@ -1330,15 +1330,12 @@ showDivs(0, 'computing_eq_three_2_covariance');
 <h3>Uniform Basis Functions</h3>
 <ul>
 <li><p>Set each center location to <span class="math display">\[\locationScalar_k = a+\Delta\locationScalar\cdot (k-1).\]</span></p></li>
-<li>Specify the basis functions in terms of their indices, _k(_i)_k(_j) <span class="math display">\[}
-  \]</span>
-<span class="math display">\[\begin{aligned}
+<li><p>Specify the basis functions in terms of their indices, <span class="math display">\[\begin{aligned}
 \kernelScalar\left(\inputScalar_i,\inputScalar_j\right) = &amp;\alpha^\prime\Delta\locationScalar \sum_{k=1}^{\numBasisFunc} \exp\Bigg(
   -\frac{\inputScalar_i^2 + \inputScalar_j^2}{2\rbfWidth^2}\\ 
    &amp; - \frac{2\left(a+\Delta\locationScalar\cdot (k-1)\right)
    \left(\inputScalar_i+\inputScalar_j\right) + 2\left(a+\Delta\locationScalar \cdot (k-1)\right)^2}{2\rbfWidth^2} \Bigg)
-  \end{aligned}\]</span>
-<p>$$</p></li>
+  \end{aligned}\]</span></p></li>
 </ul>
 <p>where we’ve scaled variance of process by <span class="math inline">\(\Delta\locationScalar\)</span>.</p>
 </section>
@@ -1388,24 +1385,24 @@ showDivs(0, 'computing_eq_three_2_covariance');
 <li>this is a special case,</li>
 <li>in general they are very different</li>
 </ul>
-<!--### Covariance Functions
-
-#### Where did this covariance matrix come from?
-
-**Exponentiated Quadratic Kernel Function (RBF, Squared Exponential,
-Gaussian)**
-
-$$\kernelScalar\left(\inputVals,\inputVals^{\prime}\right)=\alpha\exp\left(-\frac{\ltwoNorm{\inputVals-\inputVals^{\prime}}^{2}}{2\lengthScale^{2}}\right)$$
-
-
--   Covariance matrix is built using the *inputs* to the function
-    $\inputVals$.
-
--   For the example above it was based on Euclidean distance.
-
--   The covariance function is also know as a kernel.
-
--->
+</section>
+<section id="mlp-covariance" class="slide level3">
+<h3>MLP Covariance</h3>
+<p><span class="math display">\[
+\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \arcsin\left(\frac{w \inputVector^\top \inputVector^\prime + b}{\sqrt{\left(w \inputVector^\top \inputVector + b + 1\right)\left(w \left.\inputVector^\prime\right.^\top \inputVector^\prime + b + 1\right)}}\right)
+\]</span></p>
+<table>
+<tr>
+<td width="50%">
+<object class="svgplot " align data="../slides/diagrams/kern/mlp_covariance.svg">
+</object>
+</td>
+<td width="50%">
+<iframe src="../slides/diagrams/kern/mlp_covariance.html" width="512" height="384" allowtransparency="true" frameborder="0">
+</iframe>
+</td>
+</tr>
+</table>
 </section>
 <section id="references" class="slide level3">
 <h3>References</h3>
