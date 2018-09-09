@@ -383,8 +383,8 @@ k(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\left\Vert \input
 <center>
 <em>Entrywise fill in of the covariance matrix from the covariance function. </em>
 </center>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> polynomial_cov</code></pre></div>
 <h3 id="polynomial-covariance">Polynomial Covariance</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> polynomial_cov</code></pre></div>
 <p><span class="math display">\[k(\inputVector, \inputVector^\prime) = \alpha(w \inputVector^\top
 \inputVector^\prime + b)^d\]</span></p>
 <table>
@@ -394,7 +394,7 @@ k(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\left\Vert \input
 </object>
 </td>
 <td width="45%">
-<img class="negate" src="../slides/diagrams/kern/poly_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
+<img class="negate" src="../slides/diagrams/kern/polynomial_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
 </td>
 </tr>
 </table>
@@ -427,8 +427,8 @@ k(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\left\Vert \input
 </td>
 </tr>
 </table>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> periodic_cov</code></pre></div>
 <h3 id="periodic-covariance">Periodic Covariance</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> periodic_cov</code></pre></div>
 <p><span class="math display">\[\kernelScalar(\inputVector, \inputVector^\prime) = \alpha\exp\left(\frac{-2\sin(\pi rw)^2}{\lengthScale^2}\right)\]</span></p>
 <!--<table><tr><td width="50%">
 <object class="svgplot" align="" data="../slides/diagrams/kern/periodic_covariance.svg"></object>
@@ -538,29 +538,28 @@ printLatexPlot(<span class="st">&#39;rbfbasisCovarianceSamples&#39;</span>, <spa
           -\frac{\left(\inputScalar_i-\inputScalar_j\right)^2}{4\rbfWidth^2}\right).\]</span></p>
 <p>Note that while the functional form of the basis function and the covariance function are similar, in general if we repeated this analysis for other basis functions the covariance function will have a very different form. For example the error function, <span class="math inline">\(\text{erf}(\cdot)\)</span>, results in an <span class="math inline">\(\asin(\cdot)\)</span> form. See <span class="citation">Williams (n.d.)</span> for more details.</p>
 <h3 id="mlp-covariance">MLP Covariance</h3>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span>  <span class="im">import</span> <span class="op">%</span>load <span class="op">-</span>s mlp_cov mlai.py</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> teaching_plots <span class="im">as</span> plot
-<span class="im">import</span> mlai
-<span class="im">import</span> numpy <span class="im">as</span> np</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> IPython.core.display <span class="im">import</span> HTML</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> mlp_cov</code></pre></div>
 <p>The multi-layer perceptron (MLP) covariance, also known as the neural network covariance or the arcsin covariance, is derived by considering the infinite limit of a neural network. <span class="math display">\[
 \kernelScalar(\inputVector, \inputVector^\prime) = \alpha \arcsin\left(\frac{w \inputVector^\top \inputVector^\prime + b}{\sqrt{\left(w \inputVector^\top \inputVector + b + 1\right)\left(w \left.\inputVector^\prime\right.^\top \inputVector^\prime + b + 1\right)}}\right)
 \]</span></p>
-<table>
-<tr>
-<td width="50%">
-<object class="svgplot" align data="../slides/diagrams/kern/mlp_covariance.svg">
-</object>
-</td>
-<td width="50%">
+<!--<table><tr><td width="50%">
+<object class="svgplot" align="" data="../slides/diagrams/kern/mlp_covariance.svg"></object>
+</td><td width="50%">
 <iframe src="../slides/diagrams/kern/mlp_covariance.html" width="512" height="384" allowtransparency="true" frameborder="0">
 </iframe>
+</td></tr></table>
+<center>*The multi-layer perceptron covariance function. This is derived by considering the infinite limit of a neural network with probit activation functions. *</center>-->
+<table>
+<tr>
+<td width="45%">
+<object class align data="../slides/diagrams/kern/mlp_covariance.svg">
+</object>
+</td>
+<td width="45%">
+<img class="negate" src="../slides/diagrams/kern/mlp_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
 </td>
 </tr>
 </table>
-<center>
-<em>The multi-layer perceptron covariance function. This is derived by considering the infinite limit of a neural network with probit activation functions. </em>
-</center>
 
 
 <div id="refs" class="references">

@@ -182,7 +182,7 @@ class LM(ProbMapModel):
         return -self.num_data/2.*np.log(np.pi*2.)-self.num_data/2.*np.log(self.sigma2)-self.sum_squares/(2.*self.sigma2)
     
 
-class basis():
+class Basis():
     """Basis function
     :param function: basis function
     :type function: function
@@ -696,14 +696,25 @@ class Kernel():
     """Covariance function
     :param function: covariance function
     :type function: function
+    :param name: name of covariance function
+    :type name: string
+    :param shortname: abbreviated name of covariance function
+    :type shortname: string
+    :param formula: latex formula of covariance function
+    :type formula: string
+    :param function: covariance function
+    :type function: function
     :param \**kwargs:
         See below
 
     :Keyword Arguments:
         * """
 
-    def __init__(self, function, **kwargs):        
+    def __init__(self, function, name=None, shortname=None, formula=None, **kwargs):        
         self.function=function
+        self.formula = formula
+        self.name = name
+        self.shortname = shortname
         self.parameters=kwargs
         
     def K(self, X, X2=None):

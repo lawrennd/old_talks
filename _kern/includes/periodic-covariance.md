@@ -1,20 +1,18 @@
+\subsection{Periodic Covariance}
+
 \loadcode{periodic_cov}{mlai}
+
 \setupplotcode{import teaching_plots as plot
 import mlai
 import numpy as np}
-\plotcode{K, anim=plot.animate_covariance_function(mlai.compute_kernel, 
-                                         kernel=periodic_cov, lengthscale=1.)}
 
-\setupplotcode{from IPython.core.display import HTML}
-
-\displaycode{HTML(anim.to_jshtml())}
-
-\plotcode{plot.save_animation(anim, 
-                    diagrams='../slides/diagrams/kern', 
-				    filename='periodic_covariance.html')}
-
-
-### Periodic Covariance
+\plotcode{kernel = mlai.Kernel(function=periodic_cov,
+                     name='Periodic',
+                     shortname='periodic',					 
+                     formula='\kernelScalar(\inputVector, \inputVector^\prime) = \alpha\exp\left(\frac{-2\sin(\pi rw)^2}{\lengthScale^2}\right)',
+					 lengthscale=1.0)
+					 
+plot.covariance_func(kernel, diagrams='../slides/diagrams/')}
 
 $$\kernelScalar(\inputVector, \inputVector^\prime) = \alpha\exp\left(\frac{-2\sin(\pi rw)^2}{\lengthScale^2}\right)$$
 
