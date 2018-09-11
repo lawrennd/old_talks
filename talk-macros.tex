@@ -1,7 +1,6 @@
 \define{\talksdir}{/Users/neil/lawrennd/talks}
-\define{editme}{<a href="file:///Users/neil/lawrennd/talks/\file">\file</a>}
-\define{editme}{}
-
+\define{\concat{argone}{argtwo}}{\argone\argtwo}
+\define{\editme}{<a href="file://\talksdir\file">\file</a>}
 \ifdef{ipynb} <!--ipynb-->
 
 \define{\includegooglebook{id}{page}}{```
@@ -48,6 +47,8 @@ YouTubeVideo('\id')
 \define{\colorblue{block}}{\block}
 
 \define{\columns{one}{two}{width1}{width2}}{<table><tr><td width="\width1">\one</td><td width="\width2">\two</td></tr></table>}
+
+\define{\includecovariance{shortname}}{<table><tr><td width="45%">\includesvgclass{../slides/diagrams/kern/\concat{\shortname}{_covariance.svg}}<td width="45%">\includeimg{../slides/diagrams/kern/\concat{\shortname}{_covariance.gif}}{100%}{negate}{center}</td></tr></table>}
 
 
 \ifdef{slides} <!-- ipynb and slides-->
@@ -334,4 +335,7 @@ showDivs(\start, '\group');
 \endif
 
 \endif
+
+
+\define{\includecovariance{shortname}}{<center>$$\formula$$</center><br><table><tr><td width="45%">\includesvgclass{../slides/diagrams/kern/\concat{\shortname}{_covariance.svg}}<td width="45%">\includeimg{../slides/diagrams/kern/\concat{\shortname}{_covariance.gif}}{100%}{negate}{center}</td></tr></table>}
 

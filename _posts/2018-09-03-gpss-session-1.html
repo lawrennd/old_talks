@@ -297,6 +297,7 @@ p(\dataVector) = \frac{1}{\det{2\pi\covarianceMatrix}^{\frac{1}{2}}} \exp\left(-
 <h3 id="basis-functions">Basis Functions</h3>
 <p>We can basically put anything inside the basis functions, and many people do. These can be deep kernels <span class="citation">(Cho and Saul, 2009)</span> or we can learn the parameters of a convolutional neural network inside there.</p>
 <p>Viewing a neural network in this way is also what allows us to beform sensible <em>batch</em> normalizations <span class="citation">(Ioffe and Szegedy, 2015)</span>.</p>
+<p><a href="file:///Users/neil/lawrennd/talks_gp/includes/gp-intro-very-short.md">_gp/includes/gp-intro-very-short.md</a></p>
 <h3 id="bayesian-inference-by-rejection-sampling">Bayesian Inference by Rejection Sampling</h3>
 <p>One view of Bayesian inference is to assume we are given a mechanism for generating samples, where we assume that mechanism is representing on accurate view on the way we believe the world works.</p>
 <p>This mechanism is known as our <em>prior</em> belief.</p>
@@ -318,6 +319,7 @@ p(\dataVector) = \frac{1}{\det{2\pi\covarianceMatrix}^{\frac{1}{2}}} \exp\left(-
 <center>
 <em>One view of Bayesian inference is we have a machine for generating samples (the </em>prior<em>), and we discard all samples inconsistent with our data, leaving the samples of interest (the </em>posterior<em>). The Gaussian process allows us to do this analytically. </em>
 </center>
+<p><a href="file:///Users/neil/lawrennd/talks_gp/includes/gpdistfunc.md">_gp/includes/gpdistfunc.md</a></p>
 <h3 id="sampling-a-function">Sampling a Function</h3>
 <p>We will consider a Gaussian distribution with a particular structure of covariance matrix. We will generate <em>one</em> sample from a 25-dimensional Gaussian density. <span class="math display">\[
 \mappingFunctionVector=\left[\mappingFunction_{1},\mappingFunction_{2}\dots \mappingFunction_{25}\right].
@@ -331,6 +333,7 @@ p(\dataVector) = \frac{1}{\det{2\pi\covarianceMatrix}^{\frac{1}{2}}} \exp\left(-
 <center>
 <em>A 25 dimensional correlated random variable (values ploted against index) </em>
 </center>
+<p><a href="file:///Users/neil/lawrennd/talks_gp/includes/gaussian-predict-index-one-and-two.md">_gp/includes/gaussian-predict-index-one-and-two.md</a></p>
 
 <object class="svgplot" align data="../slides/diagrams/gp/two_point_sample012.svg">
 </object>
@@ -348,6 +351,7 @@ p(\dataVector) = \frac{1}{\det{2\pi\covarianceMatrix}^{\frac{1}{2}}} \exp\left(-
     \kernelMatrix = \begin{bmatrix} \kernelScalar_{1, 1} &amp; \kernelScalar_{1, 2}\\ \kernelScalar_{2, 1} &amp; \kernelScalar_{2, 2}.\end{bmatrix}
     \]</span></p>
 <p>Using these formulae we can determine the conditional density for any of the elements of our vector <span class="math inline">\(\mappingFunctionVector\)</span>. For example, the variable <span class="math inline">\(\mappingFunction_8\)</span> is less correlated with <span class="math inline">\(\mappingFunction_1\)</span> than <span class="math inline">\(\mappingFunction_2\)</span>. If we consider this variable we see the conditional density is more diffuse.</p>
+<p><a href="file:///Users/neil/lawrennd/talks_gp/includes/gaussian-predict-index-one-and-eight.md">_gp/includes/gaussian-predict-index-one-and-eight.md</a></p>
 
 <object class="svgplot" align data="../slides/diagrams/gp/two_point_sample013.svg">
 </object>
@@ -356,6 +360,7 @@ p(\dataVector) = \frac{1}{\det{2\pi\covarianceMatrix}^{\frac{1}{2}}} \exp\left(-
 <center>
 <em>The joint Gaussian over <span class="math inline">\(\mappingFunction_1\)</span> and <span class="math inline">\(\mappingFunction_8\)</span> along with the conditional distribution of <span class="math inline">\(\mappingFunction_8\)</span> given <span class="math inline">\(\mappingFunction_1\)</span> </em>
 </center>
+<p><a href="file:///Users/neil/lawrennd/talks_kern/includes/computing-rbf-covariance.md">_kern/includes/computing-rbf-covariance.md</a></p>
 <h3 id="where-did-this-covariance-matrix-come-from">Where Did This Covariance Matrix Come From?</h3>
 <p><span class="math display">\[
 k(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\left\Vert \inputVector - \inputVector^\prime\right\Vert^2_2}{2\lengthScale^2}\right)\]</span></p>
@@ -385,25 +390,20 @@ k(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\left\Vert \input
 </center>
 <h3 id="polynomial-covariance">Polynomial Covariance</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> polynomial_cov</code></pre></div>
-<p><span class="math display">\[k(\inputVector, \inputVector^\prime) = \alpha(w \inputVector^\top
-\inputVector^\prime + b)^d\]</span></p>
+<center>
+<span class="math display">\[\kernelScalar(\inputVector, \inputVector^\prime) = \alpha(w \inputVector^\top\inputVector^\prime + b)^d\]</span>
+</center>
+<br>
 <table>
 <tr>
 <td width="45%">
 <object class align data="../slides/diagrams/kern/polynomial_covariance.svg">
 </object>
-</td>
 <td width="45%">
 <img class="negate" src="../slides/diagrams/kern/polynomial_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
 </td>
 </tr>
 </table>
-<!--<table><tr><td width="50%">
-<object class="svgplot" align="" data="../slides/diagrams/kern/polynomial_covariance.svg"></object>
-</td><td width="50%">
-<iframe src="../slides/diagrams/kern/polynomial_covariance.html" width="512" height="384" allowtransparency="true" frameborder="0">
-</iframe>
-</td></tr></table>-->
 <h3 id="brownian-covariance">Brownian Covariance</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> brownian_cov</code></pre></div>
 <p>Brownian motion is also a Gaussian process. It follows a Gaussian random walk, with diffusion occuring at each time point driven by a Gaussian input. This implies it is both Markov and Gaussian. The covariane function for Brownian motion has the form <span class="math display">\[
@@ -429,19 +429,15 @@ k(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\left\Vert \input
 </table>
 <h3 id="periodic-covariance">Periodic Covariance</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> periodic_cov</code></pre></div>
-<p><span class="math display">\[\kernelScalar(\inputVector, \inputVector^\prime) = \alpha\exp\left(\frac{-2\sin(\pi rw)^2}{\lengthScale^2}\right)\]</span></p>
-<!--<table><tr><td width="50%">
-<object class="svgplot" align="" data="../slides/diagrams/kern/periodic_covariance.svg"></object>
-</td><td width="50%">
-<iframe src="../slides/diagrams/kern/periodic_covariance.html" width="512" height="384" allowtransparency="true" frameborder="0">
-</iframe>
-</td></tr></table>-->
+<center>
+<span class="math display">\[\kernelScalar(\inputVector, \inputVector^\prime) = \alpha\exp\left(\frac{-2\sin(\pi rw)^2}{\lengthScale^2}\right)\]</span>
+</center>
+<br>
 <table>
 <tr>
 <td width="45%">
 <object class align data="../slides/diagrams/kern/periodic_covariance.svg">
 </object>
-</td>
 <td width="45%">
 <img class="negate" src="../slides/diagrams/kern/periodic_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
 </td>
@@ -461,23 +457,27 @@ k(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\left\Vert \input
 \mappingVector \sim \gaussianSamp{\zerosVector}{\alpha\eye}
 \]</span> then it follows from the properties of a multivariate Gaussian that <span class="math display">\[
 \mappingFunctionVector \sim \gaussianSamp{\zerosVector}{\alpha\basisMatrix\basisMatrix^\top}
-\]</span> meaning that the vector of observations from the function is jointly distributed as a Gaussian process and the covariance matrix is <span class="math inline">\(\kernelMatrix = \alpha\basisMatrix \basisMatrix^\top\)</span>, each element of the covariance matrix can then be found as the inner product between two rows of the basis funciton matrix. <span class="math display">\[
-\kernel(\inputVector, \inputVector^\prime) = \basisVector(\inputVector)^\top \basisVector(\inputVector^\prime)
-\]</span></p>
+\]</span> meaning that the vector of observations from the function is jointly distributed as a Gaussian process and the covariance matrix is <span class="math inline">\(\kernelMatrix = \alpha\basisMatrix \basisMatrix^\top\)</span>, each element of the covariance matrix can then be found as the inner product between two rows of the basis funciton matrix.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> basis_cov</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> radial</code></pre></div>
+<center>
+<span class="math display">\[\kernel(\inputVector, \inputVector^\prime) = \basisVector(\inputVector)^\top \basisVector(\inputVector^\prime)\]</span>
+</center>
+<br>
 <table>
 <tr>
 <td width="45%">
 <object class align data="../slides/diagrams/kern/basis_covariance.svg">
 </object>
-</td>
 <td width="45%">
 <img class="negate" src="../slides/diagrams/kern/basis_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
 </td>
 </tr>
 </table>
-<h3 id="an-infinite-basis">An Infinite Basis</h3>
+{
+<center>
+<em>A covariance function based on a non-linear basis given by <span class="math inline">\(\basisVector(\inputVector)\)</span>. </em>
+</center>
 <h3 id="selecting-number-and-location-of-basis">Selecting Number and Location of Basis</h3>
 <p>In practice for a basis function model we need to choose both 1. the location of the basis functions 2. the number of basis functions</p>
 <p>One very clever of finessing this problem is to choose to have <em>infinite</em> basis functions and place them <em>everywhere</em>. To show how this is possible, we will consider a one dimensional system, <span class="math inline">\(\inputScalar\)</span>, which should give the intuition of how to do this. However, these ideas also extend to multidimensional systems as shown in, for example, <span class="citation">Williams (n.d.)</span> and <span class="citation">Neal (1994)</span>.</p>
@@ -513,61 +513,38 @@ k(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\left\Vert \input
 <p>Note that while the functional form of the basis function and the covariance function are similar, in general if we repeated this analysis for other basis functions the covariance function will have a very different form. For example the error function, <span class="math inline">\(\text{erf}(\cdot)\)</span>, results in an <span class="math inline">\(\asin(\cdot)\)</span> form. See <span class="citation">Williams (n.d.)</span> for more details.</p>
 <h3 id="mlp-covariance">MLP Covariance</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> mlp_cov</code></pre></div>
-<p>The multi-layer perceptron (MLP) covariance, also known as the neural network covariance or the arcsin covariance, is derived by considering the infinite limit of a neural network. <span class="math display">\[
-\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \arcsin\left(\frac{w \inputVector^\top \inputVector^\prime + b}{\sqrt{\left(w \inputVector^\top \inputVector + b + 1\right)\left(w \left.\inputVector^\prime\right.^\top \inputVector^\prime + b + 1\right)}}\right)
-\]</span></p>
-<!--<table><tr><td width="50%">
-<object class="svgplot" align="" data="../slides/diagrams/kern/mlp_covariance.svg"></object>
-</td><td width="50%">
-<iframe src="../slides/diagrams/kern/mlp_covariance.html" width="512" height="384" allowtransparency="true" frameborder="0">
-</iframe>
-</td></tr></table>
-<center>*The multi-layer perceptron covariance function. This is derived by considering the infinite limit of a neural network with probit activation functions. *</center>-->
+<p>The multi-layer perceptron (MLP) covariance, also known as the neural network covariance or the arcsin covariance, is derived by considering the infinite limit of a neural network.</p>
+<center>
+<span class="math display">\[\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \arcsin\left(\frac{w \inputVector^\top \inputVector^\prime + b}{\sqrt{\left(w \inputVector^\top \inputVector + b + 1\right)\left(w \left.\inputVector^\prime\right.^\top \inputVector^\prime + b + 1\right)}}\right)\]</span>
+</center>
+<br>
 <table>
 <tr>
 <td width="45%">
 <object class align data="../slides/diagrams/kern/mlp_covariance.svg">
 </object>
-</td>
 <td width="45%">
 <img class="negate" src="../slides/diagrams/kern/mlp_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
 </td>
 </tr>
 </table>
-<h3 id="relu-covariance">RELU Covariance</h3>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> relu_cov</code></pre></div>
-<p><span class="math display">\[\kernelScalar(\inputVector, \inputVector^\prime) = 
-\alpha \arcsin\left(\frac{w \inputVector^\top \inputVector^\prime + b}
-{\sqrt{\left(w \inputVector^\top \inputVector + b + 1\right)
-\left(w \left.\inputVector^\prime\right.^\top \inputVector^\prime + b + 1\right)}}\right)\]</span></p>
-<table>
-<tr>
-<td width="45%">
-<object class align data="../slides/diagrams/kern/relu_covariance.svg">
-</object>
-</td>
-<td width="45%">
-<img class="negate" src="../slides/diagrams/kern/relu_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
-</td>
-</tr>
-</table>
+<center>
+<em>The multi-layer perceptron covariance function. This is derived by considering the infinite limit of a neural network with probit activation functions. </em>
+</center>
+<!--include{_kern/includes/relu-covariance.md}-->
 <h3 id="sinc-covariance">Sinc Covariance</h3>
+<p>Another approach to developing covariance function exploits Bochner's theorem <span class="citation">Bochner (1959)</span>. Bochner's theorem tells us that any positve filter in Fourier space implies has an associated Gaussian process with a stationary covariance function. The covariance function is the <em>inverse Fourier transform</em> of the filter applied in Fourier space.</p>
+<p>For example, in signal processing, <em>band limitations</em> are commonly applied as an assumption. For example, we may believe that no frequency above <span class="math inline">\(w=2\)</span> exists in the signal. This is equivalent to a rectangle function being applied as a the filter in Fourier space.</p>
+<p>The inverse Fourier transform of the rectangle function is the <span class="math inline">\(\text{sinc}(\cdot)\)</span> function. So the sinc is a valid covariance function, and it represents <em>band limited</em> signals.</p>
+<p>Note that other covariance functions we've introduced can also be interpreted in this way. For example, the exponentiated quadratic covariance function can be Fourier transformed to see what the implied filter in Fourier space is. The Fourier transform of the exponentiated quadratic is an exponentiated quadratic, so the standard EQ-covariance implies a EQ filter in Fourier space.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> sinc_cov</code></pre></div>
-<p><span class="math display">\[\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \text{sinc}\left(\pi w r\right)\]</span></p>
-<table>
-<tr>
-<td width="45%">
-<object class align data="../slides/diagrams/kern/sinc_covariance.svg">
-</object>
-</td>
-<td width="45%">
-<img class="negate" src="../slides/diagrams/kern/sinc_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
-</td>
-</tr>
-</table>
+
 
 
 <div id="refs" class="references">
+<div id="ref-Bochner:book59">
+<p>Bochner, S., 1959. Lectures on fourier integrals. Princeton University Press.</p>
+</div>
 <div id="ref-Cho:deep09">
 <p>Cho, Y., Saul, L.K., 2009. Kernel methods for deep learning, in: Bengio, Y., Schuurmans, D., Lafferty, J.D., Williams, C.K.I., Culotta, A. (Eds.), Advances in Neural Information Processing Systems 22. Curran Associates, Inc., pp. 342–350.</p>
 </div>

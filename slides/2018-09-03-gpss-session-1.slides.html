@@ -1047,6 +1047,7 @@ p(\dataVector) = \frac{1}{\det{2\pi\covarianceMatrix}^{\frac{1}{2}}} \exp\left(-
 </section>
 <section id="distributions-over-functions" class="slide level3">
 <h3>Distributions over Functions</h3>
+<p><a href="file:///Users/neil/lawrennd/talks_gp/includes/gp-intro-very-short.md">_gp/includes/gp-intro-very-short.md</a></p>
 
 </section>
 <section id="section-7" class="slide level3" data-transition="none">
@@ -1072,6 +1073,7 @@ p(\dataVector) = \frac{1}{\det{2\pi\covarianceMatrix}^{\frac{1}{2}}} \exp\left(-
 <section id="section-11" class="slide level3" data-transition="none">
 <h3></h3>
 <p>x <object class="svgplot " align="" data="../slides/diagrams/gp/gp_rejection_sample005.svg"></object></p>
+<p><a href="file:///Users/neil/lawrennd/talks_gp/includes/gpdistfunc.md">_gp/includes/gpdistfunc.md</a></p>
 </section>
 <section id="sampling-a-function" class="slide level3">
 <h3>Sampling a Function</h3>
@@ -1097,6 +1099,7 @@ showDivs(0, 'two_point_sample');
 ❯
 </button>
 <p><input id="range-two_point_sample" type="range" min="0" max="8" value="0" onchange="setDivs('two_point_sample')" oninput="setDivs('two_point_sample')"> <object class="svgplot two_point_sample" align="" data="../slides/diagrams/gp/two_point_sample000.svg"></object> <object class="svgplot two_point_sample" align="" data="../slides/diagrams/gp/two_point_sample001.svg"></object> <object class="svgplot two_point_sample" align="" data="../slides/diagrams/gp/two_point_sample002.svg"></object> <object class="svgplot two_point_sample" align="" data="../slides/diagrams/gp/two_point_sample003.svg"></object> <object class="svgplot two_point_sample" align="" data="../slides/diagrams/gp/two_point_sample004.svg"></object> <object class="svgplot two_point_sample" align="" data="../slides/diagrams/gp/two_point_sample005.svg"></object> <object class="svgplot two_point_sample" align="" data="../slides/diagrams/gp/two_point_sample006.svg"></object> <object class="svgplot two_point_sample" align="" data="../slides/diagrams/gp/two_point_sample007.svg"></object> <object class="svgplot two_point_sample" align="" data="../slides/diagrams/gp/two_point_sample008.svg"></object></p>
+<p><a href="file:///Users/neil/lawrennd/talks_gp/includes/gaussian-predict-index-one-and-two.md">_gp/includes/gaussian-predict-index-one-and-two.md</a></p>
 
 </section>
 <section id="prediction-of-mappingfunction_2-from-mappingfunction_1" class="slide level3">
@@ -1126,6 +1129,7 @@ p(\mappingFunction_2|\mappingFunction_1) = \gaussianDist{\mappingFunction_2}{\fr
 \kernelMatrix = \begin{bmatrix} \kernelScalar_{1, 1} &amp; \kernelScalar_{1, 2}\\ \kernelScalar_{2, 1} &amp; \kernelScalar_{2, 2}.\end{bmatrix}
 \]</span></li>
 </ul>
+<p><a href="file:///Users/neil/lawrennd/talks_gp/includes/gaussian-predict-index-one-and-eight.md">_gp/includes/gaussian-predict-index-one-and-eight.md</a></p>
 
 </section>
 <section id="prediction-of-mappingfunction_8-from-mappingfunction_1" class="slide level3">
@@ -1150,6 +1154,7 @@ showDivs(13, 'two_point_sample3');
 </object>
 <object class="svgplot two_point_sample3" align data="../slides/diagrams/gp/two_point_sample017.svg">
 </object>
+<p><a href="file:///Users/neil/lawrennd/talks_kern/includes/computing-rbf-covariance.md">_kern/includes/computing-rbf-covariance.md</a></p>
 </section>
 <section id="where-did-this-covariance-matrix-come-from" class="slide level3">
 <h3>Where Did This Covariance Matrix Come From?</h3>
@@ -1215,25 +1220,20 @@ showDivs(0, 'computing_eq_three_2_covariance');
 </section>
 <section id="polynomial-covariance" class="slide level3">
 <h3>Polynomial Covariance</h3>
-<p><span class="math display">\[k(\inputVector, \inputVector^\prime) = \alpha(w \inputVector^\top
-\inputVector^\prime + b)^d\]</span></p>
+<center>
+<span class="math display">\[\kernelScalar(\inputVector, \inputVector^\prime) = \alpha(w \inputVector^\top\inputVector^\prime + b)^d\]</span>
+</center>
+<br>
 <table>
 <tr>
 <td width="45%">
 <object class align data="../slides/diagrams/kern/polynomial_covariance.svg">
 </object>
-</td>
 <td width="45%">
 <img class="negate" src="../slides/diagrams/kern/polynomial_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
 </td>
 </tr>
 </table>
-<!--<table><tr><td width="50%">
-<object class="svgplot " align="" data="../slides/diagrams/kern/polynomial_covariance.svg"></object>
-</td><td width="50%">
-<iframe src="../slides/diagrams/kern/polynomial_covariance.html" width="512" height="384" allowtransparency="true" frameborder="0">
-</iframe>
-</td></tr></table>-->
 </section>
 <section id="brownian-covariance" class="slide level3">
 <h3>Brownian Covariance</h3>
@@ -1261,19 +1261,15 @@ showDivs(0, 'computing_eq_three_2_covariance');
 </section>
 <section id="periodic-covariance" class="slide level3">
 <h3>Periodic Covariance</h3>
-<p><span class="math display">\[\kernelScalar(\inputVector, \inputVector^\prime) = \alpha\exp\left(\frac{-2\sin(\pi rw)^2}{\lengthScale^2}\right)\]</span></p>
-<!--<table><tr><td width="50%">
-<object class="svgplot " align="" data="../slides/diagrams/kern/periodic_covariance.svg"></object>
-</td><td width="50%">
-<iframe src="../slides/diagrams/kern/periodic_covariance.html" width="512" height="384" allowtransparency="true" frameborder="0">
-</iframe>
-</td></tr></table>-->
+<center>
+<span class="math display">\[\kernelScalar(\inputVector, \inputVector^\prime) = \alpha\exp\left(\frac{-2\sin(\pi rw)^2}{\lengthScale^2}\right)\]</span>
+</center>
+<br>
 <table>
 <tr>
 <td width="45%">
 <object class align data="../slides/diagrams/kern/periodic_covariance.svg">
 </object>
-</td>
 <td width="45%">
 <img class="negate" src="../slides/diagrams/kern/periodic_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
 </td>
@@ -1295,23 +1291,24 @@ showDivs(0, 'computing_eq_three_2_covariance');
 </section>
 <section id="basis-function-covariance" class="slide level3">
 <h3>Basis Function Covariance</h3>
-<p><span class="math display">\[
-\kernel(\inputVector, \inputVector^\prime) = \basisVector(\inputVector)^\top \basisVector(\inputVector^\prime)
-\]</span></p>
+<center>
+<span class="math display">\[\kernel(\inputVector, \inputVector^\prime) = \basisVector(\inputVector)^\top \basisVector(\inputVector^\prime)\]</span>
+</center>
+<br>
 <table>
 <tr>
 <td width="45%">
 <object class align data="../slides/diagrams/kern/basis_covariance.svg">
 </object>
-</td>
 <td width="45%">
 <img class="negate" src="../slides/diagrams/kern/basis_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
 </td>
 </tr>
 </table>
-</section>
-<section id="an-infinite-basis" class="slide level3">
-<h3>An Infinite Basis</h3>
+{
+<center>
+<em>A covariance function based on a non-linear basis given by <span class="math inline">\(\basisVector(\inputVector)\)</span>. </em>
+</center>
 </section>
 <section id="selecting-number-and-location-of-basis" class="slide level3">
 <h3>Selecting Number and Location of Basis</h3>
@@ -1388,60 +1385,25 @@ showDivs(0, 'computing_eq_three_2_covariance');
 </section>
 <section id="mlp-covariance" class="slide level3">
 <h3>MLP Covariance</h3>
-<p><span class="math display">\[
-\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \arcsin\left(\frac{w \inputVector^\top \inputVector^\prime + b}{\sqrt{\left(w \inputVector^\top \inputVector + b + 1\right)\left(w \left.\inputVector^\prime\right.^\top \inputVector^\prime + b + 1\right)}}\right)
-\]</span></p>
-<!--<table><tr><td width="50%">
-<object class="svgplot " align="" data="../slides/diagrams/kern/mlp_covariance.svg"></object>
-</td><td width="50%">
-<iframe src="../slides/diagrams/kern/mlp_covariance.html" width="512" height="384" allowtransparency="true" frameborder="0">
-</iframe>
-</td></tr></table>
--->
+<center>
+<span class="math display">\[\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \arcsin\left(\frac{w \inputVector^\top \inputVector^\prime + b}{\sqrt{\left(w \inputVector^\top \inputVector + b + 1\right)\left(w \left.\inputVector^\prime\right.^\top \inputVector^\prime + b + 1\right)}}\right)\]</span>
+</center>
+<br>
 <table>
 <tr>
 <td width="45%">
 <object class align data="../slides/diagrams/kern/mlp_covariance.svg">
 </object>
-</td>
 <td width="45%">
 <img class="negate" src="../slides/diagrams/kern/mlp_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
 </td>
 </tr>
 </table>
-</section>
-<section id="relu-covariance" class="slide level3">
-<h3>RELU Covariance</h3>
-<p><span class="math display">\[\kernelScalar(\inputVector, \inputVector^\prime) = 
-\alpha \arcsin\left(\frac{w \inputVector^\top \inputVector^\prime + b}
-{\sqrt{\left(w \inputVector^\top \inputVector + b + 1\right)
-\left(w \left.\inputVector^\prime\right.^\top \inputVector^\prime + b + 1\right)}}\right)\]</span></p>
-<table>
-<tr>
-<td width="45%">
-<object class align data="../slides/diagrams/kern/relu_covariance.svg">
-</object>
-</td>
-<td width="45%">
-<img class="negate" src="../slides/diagrams/kern/relu_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
-</td>
-</tr>
-</table>
+<!--include{_kern/includes/relu-covariance.md}-->
 </section>
 <section id="sinc-covariance" class="slide level3">
 <h3>Sinc Covariance</h3>
-<p><span class="math display">\[\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \text{sinc}\left(\pi w r\right)\]</span></p>
-<table>
-<tr>
-<td width="45%">
-<object class align data="../slides/diagrams/kern/sinc_covariance.svg">
-</object>
-</td>
-<td width="45%">
-<img class="negate" src="../slides/diagrams/kern/sinc_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
-</td>
-</tr>
-</table>
+
 </section>
 <section id="references" class="slide level3">
 <h3>References</h3>
