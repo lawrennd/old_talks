@@ -1,6 +1,6 @@
 \include{_ai/includes/conversation.md}
 
-### Machine Learning and Narratives
+\subsection{Machine Learning and Narratives}
 
 \includeimg{../slides/diagrams/Classic_baby_shoes.jpg}{60%}{}{center}
 
@@ -10,8 +10,7 @@
 
 \notes{Consider the six word novel, apocraphally credited to Ernest Hemingway, "For sale: baby shoes, never worn". To understand what that means to a human, you need a great deal of additional context. Context that is not directly accessible to a machine that has not got both the evolved and contextual understanding of our own condition to realize both the implication of the advert and what that implication means emotionally to the previous owner.}
 
-\slides{
-### Heider and Simmel (1944)}
+\newslide{Heider and Simmel (1944)}
 
 \includeyoutube{8FIEZXMUM2I}{840}{630}{7}
 

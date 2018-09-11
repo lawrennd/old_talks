@@ -15,20 +15,16 @@ Better mediation of this flow actually requires a better understanding of human-
 
 For further thoughts see [this Guardian article](https://www.theguardian.com/media-network/2015/jul/23/data-driven-economy-marketing) from 2015 on marketing in the internet era and [this blog post](http://inverseprobability.com/2015/12/04/what-kind-of-ai) on System Zero.} 
 
-\notesfigure{\includesvg{../slides/diagrams/data-science/information-flow003.svg}}
-\notes{\caption{New direction of information flow, information is reaching us mediated by the computer}}
+
+
+\newslide{Evolved Relationship}
 
 \slides{
-### Evolved Relationship {.slide: data-transition="none"}
-
-\includesvg{../slides/diagrams/data-science/information-flow001.svg}
-
-### Evolved Relationship {.slide: data-transition="none"}
-
-\includesvg{../slides/diagrams/data-science/information-flow002.svg}
-
-### Evolved Relationship {.slide: data-transition="none"}
-
-\includesvg{../slides/diagrams/data-science/information-flow003.svg}
+\startslides{information-flow}{1}{3}
+\includesvg{../slides/diagrams/data-science/information-flow001.svg}{}{information-flow}
+\includesvg{../slides/diagrams/data-science/information-flow002.svg}{}{information-flow}
+\includesvg{../slides/diagrams/data-science/information-flow003.svg}{}{information-flow}
 }
 
+\notesfigure{\includesvg{../slides/diagrams/data-science/information-flow003.svg}}
+\notes{\caption{New direction of information flow, information is reaching us mediated by the computer}}
