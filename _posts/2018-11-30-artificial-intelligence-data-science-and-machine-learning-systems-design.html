@@ -27,17 +27,11 @@ categories:
 <h2 id="the-gartner-hype-cycle">The Gartner Hype Cycle</h2>
 <p><img class="negate" src="../slides/diagrams/Gartner_Hype_Cycle.png" width="70%" align="center" style="background:none; border:none; box-shadow:none;"></p>
 <p>The <a href="https://en.wikipedia.org/wiki/Hype_cycle">Gartner Hype Cycle</a> tries to assess where an idea is in terms of maturity and adoption. It splits the evolution of technology into a technological trigger, a peak of expectations followed by a trough of disillusionment and a final ascension into a useful technology. It looks rather like a classical control response to a final set point.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
-<span class="im">import</span> pods
-<span class="im">import</span> mlai
-<span class="im">import</span> teaching_plots <span class="im">as</span> plot</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># calling without arguments uses the default query terms</span>
-data <span class="op">=</span> pods.datasets.google_trends([<span class="st">&#39;big data&#39;</span>, <span class="st">&#39;data science&#39;</span>, <span class="st">&#39;internet of things&#39;</span>, <span class="st">&#39;machine learning&#39;</span>]) 
-data[<span class="st">&#39;data frame&#39;</span>].set_index(<span class="st">&#39;Date&#39;</span>, inplace<span class="op">=</span><span class="va">True</span>)</code></pre></div>
-<object class="svgplot" align data="../slides/diagrams/data-science/bd-ds-iot-ml-google-trends003.svg">
+
+<object class="svgplot" align data="../slides/diagrams/data-science/bd-ds-iot-ml-google-trends004.svg">
 </object>
 <center>
-<em>Google Trends data for different search terms in an attempt to assess their position on the &quot;hype cycle&quot;</em>
+<em>Google trends for different technological terms on the hype cycle. </em>
 </center>
 <p>Google trends gives us insight into how far along various technological terms are on the hype cycle.</p>
 <p>Lies and Damned Lies</p>
