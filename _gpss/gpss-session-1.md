@@ -173,13 +173,10 @@ Gaussian processes are initially of interest because
 
 \include{_kern/includes/rbf-basis-covariance.md}
 
-
-### An Infinite Basis
-
 \include{_gp/includes/infinite-basis.md}
 
 \include{_kern/includes/mlp-covariance.md}
-\include{_kern/includes/relu-covariance.md}
+<!--include{_kern/includes/relu-covariance.md}-->
 
 \include{_kern/includes/sinc-covariance.md}
 

@@ -13,10 +13,8 @@ $$
 \mappingFunctionVector \sim \gaussianSamp{\zerosVector}{\alpha\basisMatrix\basisMatrix^\top}
 $$
 meaning that the vector of observations from the function is jointly distributed as a Gaussian process and the covariance matrix is $\kernelMatrix = \alpha\basisMatrix \basisMatrix^\top$, each element of the covariance matrix can then be found as the inner product between two rows of the basis funciton matrix.}
-$$
-\kernel(\inputVector, \inputVector^\prime) = \basisVector(\inputVector)^\top \basisVector(\inputVector^\prime)
-$$
 
+\define{\formula}{\kernel(\inputVector, \inputVector^\prime) = \basisVector(\inputVector)^\top \basisVector(\inputVector^\prime)}
 
 \loadcode{basis_cov}{mlai}
 \loadcode{radial}{mlai}
@@ -29,16 +27,15 @@ import numpy as np}
 basis = mlai.Basis(function=radial, 
                    number=3,
 	               data_limits=[-0.5, 0.5], 
-                   width=0.25)
+                   width=0.125)
 kernel = mlai.Kernel(function=basis_cov,
                      name='Basis',
                      shortname='basis',					 
-                     formula='\kernel(\inputVector, \inputVector^\prime) = \basisVector(\inputVector)^\top \basisVector(\inputVector^\prime)',
+                     formula='\formula',
 					 basis=basis)
 					 
 plot.covariance_func(kernel, diagrams='../slides/diagrams/kern/')}
 
 
-
-
-\columns{\includesvgclass{../slides/diagrams/kern/basis_covariance.svg}}{\includeimg{../slides/diagrams/kern/basis_covariance.gif}{100%}{negate}{center}}{45%}{45%}
+\includecovariance{basis}{\formula}
+\notes{\caption{A covariance function based on a non-linear basis given by $\basisVector(\inputVector)$.}
