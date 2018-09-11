@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="dcterms.date" content="2018-11-30">
-  <title>Artificial Intelligence, Data Science and Machine Learning Systems Design</title>
+  <meta name="dcterms.date" content="2018-05-31">
+  <title>fAIth</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -359,10 +359,10 @@ $$
     <div class="slides">
 
 <section id="title-slide">
-  <h1 class="title">Artificial Intelligence, Data Science and Machine Learning Systems Design</h1>
+  <h1 class="title">fAIth</h1>
   <p class="author" style="text-align:center"><a href="http://inverseprobability.com">Neil D. Lawrence</a></p>
-  <p class="date" style="text-align:center"><time>2018-11-30</time></p>
-  <p class="venue" style="text-align:center">Fifth International Workshop on Sustainable Road Freight, Cambridge</p>
+  <p class="date" style="text-align:center"><time>2018-05-31</time></p>
+  <p class="venue" style="text-align:center">Landor Associates, London</p>
 </section>
 
 <section class="slide level3">
@@ -612,643 +612,161 @@ communicate
 <object class="svgplot " align data="../slides/diagrams/data-science/information-flow003.svg">
 </object>
 </section>
-<section id="what-does-machine-learning-do-1" class="slide level3">
-<h3>What does Machine Learning do?</h3>
+<section id="effects" class="slide level3">
+<h3>Effects</h3>
 <ul>
-<li>Automation scales by codifying processes and automating them.</li>
-<li>Need:
+<li>This phenomenon has already revolutionised biology.
 <ul>
-<li>Interconnected components</li>
-<li>Compatible components</li>
+<li>Large scale data acquisition and distribution.</li>
+<li>Transcriptomics, genomics, epigenomics, ‘rich phenomics’.</li>
 </ul></li>
-<li>Early examples:
+<li>Great <em>promise</em> for personalized health.</li>
+</ul>
+</section>
+<section id="societal-effects" class="slide level3">
+<h3>Societal Effects</h3>
 <ul>
-<li>cf Colt 45, Ford Model T</li>
+<li>Automated decision making within the computer based only on the data.</li>
+<li>A requirement to better understand our own subjective biases to ensure that the human to computer interface formulates the correct conclusions from the data.</li>
+<li>Particularly important where treatments are being prescribed.
+<ul>
+<li>But what is a treatment in the modern era: interventions could be far more subtle.</li>
 </ul></li>
 </ul>
 </section>
-<section id="codify-through-mathematical-functions" class="slide level3">
-<h3>Codify Through Mathematical Functions</h3>
+<section id="societal-effects-1" class="slide level3">
+<h3>Societal Effects</h3>
 <ul>
-<li>How does machine learning work?</li>
-<li>Jumper (jersey/sweater) purchase with logistic regression <span class="math display">\[ \text{odds} = \frac{p(\text{bought})}{p(\text{not bought})} \]</span> <span class="math display">\[ \log \text{odds}  = \beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}\]</span></li>
+<li>Shift in dynamic from the direct pathway between human and data to indirect pathway between human and data via the computer</li>
+<li>This change of dynamics gives us the modern and emerging domain of data science</li>
 </ul>
+<!-- SECTION Human Communication -->
 </section>
-<section id="codify-through-mathematical-functions-1" class="slide level3">
-<h3>Codify Through Mathematical Functions</h3>
-<ul>
-<li>How does machine learning work?</li>
-<li>Jumper (jersey/sweater) purchase with logistic regression <span class="math display">\[ p(\text{bought}) =  \sigmoid{\beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}}\]</span></li>
-</ul>
+<section id="conversation" class="slide level3 slide:" data-transition="none">
+<h3>Conversation</h3>
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation000.svg">
+</object>
+<aside class="notes">
+This can be disturbing to humans because we are used to a low bandwidth communication rate.
+</aside>
 </section>
-<section id="codify-through-mathematical-functions-2" class="slide level3">
-<h3>Codify Through Mathematical Functions</h3>
-<ul>
-<li>How does machine learning work?</li>
-<li>Jumper (jersey/sweater) purchase with logistic regression <span class="math display">\[ p(\text{bought}) =  \sigmoid{\boldsymbol{\beta}^\top \inputVector}\]</span></li>
-</ul>
+<section id="conversation-1" class="slide level3 slide:" data-transition="none">
+<h3>Conversation</h3>
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation001.svg">
+</object>
 </section>
-<section id="codify-through-mathematical-functions-3" class="slide level3">
-<h3>Codify Through Mathematical Functions</h3>
-<ul>
-<li>How does machine learning work?</li>
-<li>Jumper (jersey/sweater) purchase with logistic regression <span class="math display">\[ \dataScalar =  \mappingFunction\left(\inputVector, \boldsymbol{\beta}\right)\]</span></li>
-</ul>
-<div class="fragment">
-<p>We call <span class="math inline">\(\mappingFunction(\cdot)\)</span> the <em>prediction function</em></p>
-</div>
+<section id="conversation-2" class="slide level3 slide:" data-transition="none">
+<h3>Conversation</h3>
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation002.svg">
+</object>
 </section>
-<section id="fit-to-data" class="slide level3">
-<h3>Fit to Data</h3>
-<ul>
-<li>Use an objective function <span class="math display">\[\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix)\]</span></li>
-</ul>
-<div class="fragment">
-<ul>
-<li>E.g. least squares <span class="math display">\[\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingFunction(\inputVector_i, \boldsymbol{\beta})\right)^2.\]</span></li>
-</ul>
-</div>
+<section id="conversation-3" class="slide level3 slide:" data-transition="none">
+<h3>Conversation</h3>
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation003.svg">
+</object>
 </section>
-<section id="two-components" class="slide level3">
-<h3>Two Components</h3>
-<ul>
-<li>Prediction function, <span class="math inline">\(\mappingFunction(\cdot)\)</span></li>
-<li>Objective function, <span class="math inline">\(\errorFunction(\cdot)\)</span></li>
-</ul>
+<section id="conversation-4" class="slide level3 slide:" data-transition="none">
+<h3>Conversation</h3>
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation004.svg">
+</object>
 </section>
-<section id="deep-learning" class="slide level3">
-<h3>Deep Learning</h3>
-<ul>
-<li><p>These are interpretable models: vital for disease etc.</p></li>
-<li><p>Modern machine learning methods are less interpretable</p></li>
-<li><p>Example: face recognition</p></li>
-</ul>
+<section id="conversation-5" class="slide level3 slide:" data-transition="none">
+<h3>Conversation</h3>
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation005.svg">
+</object>
+</section>
+<section id="conversation-6" class="slide level3 slide:" data-transition="none">
+<h3>Conversation</h3>
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation006.svg">
+</object>
+</section>
+<section id="conversation-7" class="slide level3 slide:" data-transition="none">
+<h3>Conversation</h3>
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation007.svg">
+</object>
+</section>
+<section id="machine-learning-and-narratives" class="slide level3">
+<h3>Machine Learning and Narratives</h3>
+<p><img class="" src="../slides/diagrams/Classic_baby_shoes.jpg" width="60%" align="center" style="background:none; border:none; box-shadow:none;"></p>
+<center>
+<em>For sale: baby shoes, never worn.</em>
+</center>
+<aside class="notes">
+Ernest Hemingway’s apocrophal six word novel would mean nothing to a computer.
+</aside>
+</section>
+<section id="heider-and-simmel-1944" class="slide level3">
+<h3>Heider and Simmel (1944)</h3>
+<iframe width="840" height="630" src="https://www.youtube.com/embed/8FIEZXMUM2I?start=7" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+</section>
+<section id="faith-and-ai" class="slide level3">
+<h3>Faith and AI</h3>
+<ol type="1">
+<li>Artificial Intelligence as Cartoon Religion</li>
+<li>Artificial Intelligence and Introspection</li>
+<li>Independence of thought and Control: A Systemic Catch 22</li>
+</ol>
+</section>
+<section id="singulariansm-ai-as-cartoon-religion" class="slide level3">
+<h3>Singulariansm: AI as Cartoon Religion</h3>
+<ol type="1">
+<li>Superintelligence as god</li>
+<li>Demi-god status achievable through transhumanism</li>
+<li>Immortality through uploading the connectome</li>
+<li>The day of judgement as the “singularity”</li>
+</ol>
 </section>
 <section id="section-4" class="slide level3">
 <h3></h3>
-<p><span class="fragment fade-in"><small>Outline of the DeepFace architecture. A front-end of a single convolution-pooling-convolution filtering on the rectified input, followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected.</small></span></p>
-<p><img class="" src="../slides/diagrams/deepface_neg.png" width="100%" align="center" style="background:none; border:none; box-shadow:none;"> <span align="right"><small>Source: DeepFace <span class="citation" data-cites="Taigman:deepface14">(Taigman et al., 2014)</span></small></span></p>
+<p><img class="" src="../slides/diagrams/ml/Pierre-Simon_Laplace.png" width="30%" align="center" style="background:none; border:none; box-shadow:none;"></p>
 </section>
 <section id="section-5" class="slide level3">
 <h3></h3>
-<p><img class="" src="../slides/diagrams/576px-Early_Pinball.jpg" width="50%" align="center" style="background:none; border:none; box-shadow:none;"></p>
+<iframe frameborder="0" scrolling="no" style="border:0px" src="http://books.google.co.uk/books?id=1YQPAAAAQAAJ&amp;pg=PR17-IA2&amp;output=embed" , width="700" height="500">
+</iframe>
 </section>
 <section id="section-6" class="slide level3">
 <h3></h3>
-<object class="svgplot " align data="../slides/diagrams/pinball001.svg">
-</object>
+<p><img class="" src="../slides/diagrams/laplacesDeterminismEnglish.png" width="60%" align="center" style="background:none; border:none; box-shadow:none;"></p>
 </section>
-<section id="section-7" class="slide level3 slide:" data-transition="none">
+<section id="section-7" class="slide level3">
 <h3></h3>
-<object class="svgplot " align data="../slides/diagrams/pinball002.svg">
-</object>
-<!--<a href="file:///Users/neil/lawrennd/talks_gp/includes/gp-intro-very-short.md">_gp/includes/gp-intro-very-short.md</a>
-
-
-
-
-
-
-
-
-
-
-
-
-\setupdisplaycode{import pods
-from ipywidgets import IntSlider}
-
-
-###  {data-transition="none"}
-
-<object class="svgplot " align="" data="../slides/diagrams/gp/gp_rejection_sample001.svg"></object>
-
-###  {data-transition="none"}
-
-<object class="svgplot " align="" data="../slides/diagrams/gp/gp_rejection_sample002.svg"></object>
-
-###  {data-transition="none"}
-
-<object class="svgplot " align="" data="../slides/diagrams/gp/gp_rejection_sample003.svg"></object>
-
-###  {data-transition="none"}
-
-<object class="svgplot " align="" data="../slides/diagrams/gp/gp_rejection_sample004.svg"></object>
-
-###  {data-transition="none"}
-x
-<object class="svgplot " align="" data="../slides/diagrams/gp/gp_rejection_sample005.svg"></object>
-
-
-
--->
-<!--
-
-
-
-
-
-
-### Olympic Marathon Data
-
-<table><tr><td width="70%">
--   Gold medal times for Olympic Marathon since 1896.
-
--   Marathons before 1924 didn’t have a standardised distance.
-
--   Present results using pace per km.
-
--   In 1904 Marathon was badly organised leading to very slow times.
-</td><td width="30%">
-![image](../slides/diagrams/Stephen_Kiprotich.jpg)
-<small>Image from Wikimedia Commons <http://bit.ly/16kMKHQ></small>
-</td></tr></table>
-
-
-### Olympic Marathon Data
-
-<object class="svgplot " align="" data="../slides/diagrams/datasets/olympic-marathon.svg"></object>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### Olympic Marathon Data GP
-
-
-<object class="svgplot " align="" data="../slides/diagrams/gp/olympic-marathon-gp.svg"></object>
-
-
-
-### 
-
-
-
-
-<table><tr><td width="40%"><img class="" src="../slides/diagrams/turing-run.jpg" width="40%" align="" style="background:none; border:none; box-shadow:none;"></td><td width="50%"><img class="" src="../slides/diagrams/turing-times.gif" width="50%" align="" style="background:none; border:none; box-shadow:none;"></td></tr></table>
-
-<center>*Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: [Alan Turing Internet Scrapbook](http://www.turing.org.uk/scrapbook/run.html) *</center>
-
-
-
-### Deep GP Fit
-
-* Can a Deep Gaussian process help?
-
-* Deep GP is one GP feeding into another.
-
-
-
-
-
-
-                  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### Olympic Marathon Data Deep GP
-
-<object class="svgplot " align="" data="../slides/diagrams/deepgp/olympic-marathon-deep-gp.svg"></object>
-
-
-
-
-
-
-
-### Olympic Marathon Data Deep GP {data-transition="None"}
-
-<object class="svgplot " align="" data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-samples.svg"></object>
-
-
-
-
-
-
-
-
-
-
-
-
-
-### Olympic Marathon Data Latent 1 {data-transition="None"}
-
-<object class="svgplot " align="" data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-layer-0.svg"></object>
-
-### Olympic Marathon Data Latent 2 {data-transition="None"}
-
-<object class="svgplot " align="" data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-layer-1.svg"></object>
-
-
-
-
-
-
-
-
-### Olympic Marathon Pinball Plot
-
-<object class="svgplot " align="" data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg"></object>
-
-
--->
-</section>
-<section id="data-science" class="slide level3">
-<h3>Data Science</h3>
-<ul>
-<li>Industrial Revolution 4.0?</li>
-<li><em>Industrial Revolution</em> (1760-1840) term coined by Arnold Toynbee, late 19th century.</li>
-<li>Maybe: But this one is dominated by <em>data</em> not <em>capital</em></li>
-<li>That presents <em>challenges</em> and <em>opportunities</em></li>
-</ul>
-<p>compare <a href="https://www.theguardian.com/media-network/2015/mar/05/digital-oligarchy-algorithms-personal-data">digital oligarchy</a> vs <a href="https://www.theguardian.com/media-network/2015/aug/25/africa-benefit-data-science-information">how Africa can benefit from the data revolution</a></p>
-<ul>
-<li>Apple vs Nokia: How you handle disruption.</li>
-</ul>
-</section>
-<section id="a-time-for-professionalisation" class="slide level3">
-<h3>A Time for Professionalisation?</h3>
-<ul>
-<li>New technologies historically led to new professions:
-<ul>
-<li>Brunel (born 1806): Civil, mechanical, naval</li>
-<li>Tesla (born 1856): Electrical and power</li>
-<li>William Shockley (born 1910): Electronic</li>
-<li>Watts S. Humphrey (born 1927): Software</li>
-</ul></li>
-</ul>
-</section>
-<section id="why" class="slide level3">
-<h3>Why?</h3>
-<ul>
-<li>Codification of best practice.</li>
-<li>Developing trust</li>
-</ul>
-</section>
-<section id="where-are-we" class="slide level3">
-<h3>Where are we?</h3>
-<ul>
-<li>Perhaps around the 1980s of programming.
-<ul>
-<li>We understand <code>if</code>, <code>for</code>, and procedures</li>
-<li>But we don’t share best practice.</li>
-</ul></li>
-<li>Let’s <em>avoid</em> the over formalisation of software engineering.</li>
-</ul>
-</section>
-<section id="the-software-crisis" class="slide level3">
-<h3>The Software Crisis</h3>
-<blockquote>
-<p>The major cause of the software crisis is that the machines have become several orders of magnitude more powerful! To put it quite bluntly: as long as there were no machines, programming was no problem at all; when we had a few weak computers, programming became a mild problem, and now we have gigantic computers, programming has become an equally gigantic problem.</p>
-<p>Edsger Dijkstra (1930-2002), The Humble Programmer</p>
-</blockquote>
-</section>
-<section id="the-data-crisis" class="slide level3">
-<h3>The Data Crisis</h3>
-<blockquote>
-<p>The major cause of the data crisis is that machines have become more interconnected than ever before. Data access is therefore cheap, but data quality is often poor. What we need is cheap high quality data. That implies that we develop processes for improving and verifying data quality that are efficient.</p>
-<p>There would seem to be two ways for improving efficiency. Firstly, we should not duplicate work. Secondly, where possible we should automate work.</p>
-<p>Me</p>
-</blockquote>
-</section>
-<section id="rest-of-this-talk-two-areas-of-focus" class="slide level3">
-<h3>Rest of this Talk: Two Areas of Focus</h3>
-<ul>
-<li>Reusability of Data</li>
-<li>Deployment of Machine Learning Systems</li>
-</ul>
-</section>
-<section id="rest-of-this-talk-two-areas-of-focus-1" class="slide level3">
-<h3>Rest of this Talk: Two Areas of Focus</h3>
-<ul>
-<li><s>Reusability of Data</s></li>
-<li>Deployment of Machine Learning Systems</li>
-</ul>
-<!-- SECTION Data Readiness Levels -->
-</section>
-<section id="data-readiness-levels" class="slide level3">
-<h3>Data Readiness Levels</h3>
-<p><a href="https://arxiv.org/pdf/1705.02245.pdf"><img class="" src="../slides/diagrams/data-science/data-readiness-levels.png" width="" align="" style="background:none; border:none; box-shadow:none;"></a></p>
-<p><a href="http://inverseprobability.com/2017/01/12/data-readiness-levels">Data Readiness Levels</a></p>
-</section>
-<section id="three-grades-of-data-readiness" class="slide level3">
-<h3>Three Grades of Data Readiness:</h3>
-<ul>
-<li><p>Grade C - accessibility</p></li>
-<li><p>Grade B - validity</p></li>
-<li><p>Grade A - usability</p></li>
-</ul>
-</section>
-<section id="accessibility-grade-c" class="slide level3">
-<h3>Accessibility: Grade C</h3>
-<ul>
-<li><em>Hearsay</em> data.</li>
-<li>Availability, is it actually being recorded?</li>
-<li>privacy or legal constraints on the accessibility of the recorded data, have ethical constraints been alleviated?</li>
-<li>Format: log books, PDF …</li>
-<li>limitations on access due to topology (e.g. it’s distributed across a number of devices)</li>
-<li>At the end of Grade C data is ready to be loaded into analysis software (R, SPSS, Matlab, Python, Mathematica)</li>
-</ul>
-</section>
-<section id="validity-grade-b" class="slide level3">
-<h3>Validity: Grade B</h3>
-<ul>
-<li>faithfulness and representation</li>
-<li>visualisations.</li>
-<li>exploratory data analysis</li>
-<li>noise characterisation.</li>
-<li>Missing values.</li>
-<li>Schema alignment, record linkage, data fusion?</li>
-<li>Example, was a column or columns accidentally perturbed (e.g. through a sort operation that missed one or more columns)? Or was a <a href="http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-5-80">gene name accidentally converted to a date</a>?</li>
-<li>At the end of Grade B, ready to define a candidate question, the context, load into OpenML</li>
-</ul>
-</section>
-<section id="usability-grade-a" class="slide level3">
-<h3>Usability: Grade A</h3>
-<ul>
-<li>The usability of data</li>
-<li>Grade A is about data in context.</li>
-<li>Consider appropriateness of a given data set to answer a particular question or to be subject to a particular analysis.</li>
-<li>Data integration?</li>
-<li>At the end of Grade A it’s ready for data platforms such as RAMP, Kaggle, define a <em>task</em> in OpenML.</li>
-</ul>
-</section>
-<section id="recursive-effects" class="slide level3">
-<h3>Recursive Effects</h3>
-<ul>
-<li>Grade A may also require:
-<ul>
-<li>active collection of new data.</li>
-<li>rebalancing of data to ensure fairness</li>
-<li>annotation of data by human experts</li>
-<li>revisiting the collection (and running through the appropriate stages again)</li>
-</ul></li>
-</ul>
-</section>
-<section id="contribute" class="slide level3">
-<h3>Contribute!</h3>
-<ul>
-<li><a href="http://data-readiness.org" class="uri">http://data-readiness.org</a></li>
-</ul>
-</section>
-<section id="also" class="slide level3">
-<h3>Also …</h3>
-<ul>
-<li><p>Encourage greater interaction between application domains and data scientists</p></li>
-<li><p>Encourage <em>visualization</em> of data</p></li>
-<li><p>Incentivise the delivery of data.</p></li>
-</ul>
-</section>
-<section id="artificial-intelligence" class="slide level3">
-<h3>Artificial Intelligence</h3>
-<ul>
-<li>Challenges in deploying AI.</li>
-<li>Currently this is in the form of “machine learning systems”</li>
-</ul>
-</section>
-<section id="internet-of-people" class="slide level3">
-<h3>Internet of People</h3>
-<ul>
-<li>Fog computing: barrier between cloud and device blurring.
-<ul>
-<li>Computing on the Edge</li>
-</ul></li>
-<li>Complex feedback between algorithm and implementation</li>
-</ul>
-</section>
-<section id="deploying-ml-in-real-world-machine-learning-systems-design" class="slide level3">
-<h3>Deploying ML in Real World: Machine Learning Systems Design</h3>
-<ul>
-<li>Major new challenge for systems designers.</li>
-<li>Internet of Intelligence but currently:
-<ul>
-<li>AI systems are <em>fragile</em></li>
-</ul></li>
-</ul>
-<!-- SECTION Machine Learning System Design -->
-</section>
-<section id="fragility-of-ai-systems" class="slide level3">
-<h3>Fragility of AI Systems</h3>
-<ul>
-<li>They are componentwise built from ML Capabilities.</li>
-<li>Each capability is independently constructed and verified.
-<ul>
-<li>Pedestrian detection</li>
-<li>Road line detection</li>
-</ul></li>
-<li>Important for verification purposes.</li>
-</ul>
-</section>
-<section id="pigeonholing" class="slide level3">
-<h3>Pigeonholing</h3>
-<p><img class="" src="../slides/diagrams/TooManyPigeons.jpg" width="60%" align="center" style="background:none; border:none; box-shadow:none;"></p>
-</section>
-<section id="rapid-reimplementation" class="slide level3">
-<h3>Rapid Reimplementation</h3>
-<ul>
-<li>Whole systems are being deployed.</li>
-<li>But they change their environment.</li>
-<li>The experience evolved adversarial behaviour.</li>
-</ul>
-</section>
-<section id="early-ai" class="slide level3">
-<h3>Early AI</h3>
-<img class="rotateimg90" src="../slides/diagrams/2017-10-12 16.47.34.jpg" width="40%" align="center" style="background:none; border:none; box-shadow:none;">
-<center>
-<em>Watt’s Governor as held by “Science” on Holborn Viaduct</em>
-</center>
-</section>
-<section id="machine-learning-systems-design" class="slide level3">
-<h3>Machine Learning Systems Design</h3>
-<img class="center" src="../slides/diagrams/SteamEngine_Boulton&Watt_1784_neg.png" width="50%" align="" style="background:none; border:none; box-shadow:none;">
-<center>
-<em>Watt’s Steam Engine which made Steam Power Efficient and Practical</em>
-</center>
-</section>
-<section id="adversaries" class="slide level3">
-<h3>Adversaries</h3>
-<ul>
-<li>Stuxnet</li>
-<li>Mischevious-Adversarial</li>
-</ul>
-</section>
-<section id="turnaround-and-update" class="slide level3">
-<h3>Turnaround And Update</h3>
-<ul>
-<li>There is a massive need for turn around and update</li>
-<li>A redeploy of the entire system.
-<ul>
-<li>This involves changing the way we design and deploy.</li>
-</ul></li>
-<li>Interface between security engineering and machine learning.</li>
-</ul>
-</section>
-<section id="peppercorns" class="slide level3">
-<h3>Peppercorns</h3>
-<ul>
-<li>A new name for system failures which aren’t bugs.</li>
-<li>Difference between finding a fly in your soup vs a peppercorn in your soup.</li>
-</ul>
-</section>
-<section id="uncertainty-quantification" class="slide level3">
-<h3>Uncertainty Quantification</h3>
-<ul>
-<li><p>Deep nets are powerful approach to images, speech, language.</p></li>
-<li><p>Proposal: Deep GPs may also be a great approach, but better to deploy according to natural strengths.</p></li>
-</ul>
-</section>
-<section id="uncertainty-quantification-1" class="slide level3">
-<h3>Uncertainty Quantification</h3>
-<ul>
-<li><p>Probabilistic numerics, surrogate modelling, emulation, and UQ.</p></li>
-<li><p>Not a fan of AI as a term.</p></li>
-<li><p>But we are faced with increasing amounts of <em>algorithmic decision making</em>.</p></li>
-</ul>
-</section>
-<section id="ml-and-decision-making" class="slide level3">
-<h3>ML and Decision Making</h3>
-<ul>
-<li><p>When trading off decisions: compute or acquire data?</p></li>
-<li><p>There is a critical need for uncertainty.</p></li>
-</ul>
-</section>
-<section id="uncertainty-quantification-2" class="slide level3">
-<h3>Uncertainty Quantification</h3>
-<blockquote>
-<p>Uncertainty quantification (UQ) is the science of quantitative characterization and reduction of uncertainties in both computational and real world applications. It tries to determine how likely certain outcomes are if some aspects of the system are not exactly known.</p>
-</blockquote>
-<ul>
-<li>Interaction between physical and virtual worlds of major interest for Amazon.</li>
-</ul>
-</section>
-<section id="example-formula-one-racing" class="slide level3">
-<h3>Example: Formula One Racing</h3>
-<ul>
-<li><p>Designing an F1 Car requires CFD, Wind Tunnel, Track Testing etc.</p></li>
-<li><p>How to combine them?</p></li>
-</ul>
-</section>
-<section id="mountain-car-simulator" class="slide level3">
-<h3>Mountain Car Simulator</h3>
-<p><img class="" src="../slides/diagrams/uq/mountaincar.png" width="negate" align="" style="background:none; border:none; box-shadow:none;"></p>
-</section>
-<section id="car-dynamics" class="slide level3">
-<h3>Car Dynamics</h3>
-<p><span class="math display">\[\inputVector_{t+1} = \mappingFunction(\inputVector_{t},\textbf{u}_{t})\]</span></p>
-<p>where <span class="math inline">\(\textbf{u}_t\)</span> is the action force, <span class="math inline">\(\inputVector_t = (p_t, v_t)\)</span> is the vehicle state</p>
-</section>
-<section id="policy" class="slide level3">
-<h3>Policy</h3>
-<ul>
-<li>Assume policy is linear with parameters <span class="math inline">\(\boldsymbol{\theta}\)</span></li>
-</ul>
-<p><span class="math display">\[\pi(\inputVector,\theta)= \theta_0 + \theta_p p + \theta_vv.\]</span></p>
-</section>
-<section id="emulate-the-mountain-car" class="slide level3">
-<h3>Emulate the Mountain Car</h3>
-<ul>
-<li>Goal is find <span class="math inline">\(\theta\)</span> such that</li>
-</ul>
-<p><span class="math display">\[\theta^* = arg \max_{\theta} R_T(\theta).\]</span></p>
-<ul>
-<li>Reward is computed as 100 for target, minus squared sum of actions</li>
-</ul>
-</section>
-<section id="random-linear-controller" class="slide level3">
-<h3>Random Linear Controller</h3>
-<iframe src="../slides/diagrams/uq/mountain_car_random.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+<iframe frameborder="0" scrolling="no" style="border:0px" src="http://books.google.co.uk/books?id=1YQPAAAAQAAJ&amp;pg=PR17-IA4&amp;output=embed" , width="700" height="500">
 </iframe>
 </section>
-<section id="best-controller-after-50-iterations-of-bayesian-optimization" class="slide level3">
-<h3>Best Controller after 50 Iterations of Bayesian Optimization</h3>
-<iframe src="../slides/diagrams/uq/mountain_car_simulated.html" width="1024" height="768" allowtransparency="true" frameborder="0">
-</iframe>
+<section id="section-8" class="slide level3">
+<h3></h3>
+<p><img class="" src="../slides/diagrams/philosophicaless00lapliala.png" width="60%" align="center" style="background:none; border:none; box-shadow:none;"></p>
 </section>
-<section id="data-efficient-emulation" class="slide level3">
-<h3>Data Efficient Emulation</h3>
+<section id="singularians" class="slide level3">
+<h3>Singularians</h3>
 <ul>
-<li><p>For standard Bayesian Optimization ignored <em>dynamics</em> of the car.</p></li>
-<li><p>For more data efficiency, first <em>emulate</em> the dynamics.</p></li>
-<li><p>Then do Bayesian optimization of the <em>emulator</em>.</p></li>
-<li><p>Use a Gaussian process to model <span class="math display">\[\Delta v_{t+1} = v_{t+1} - v_{t}\]</span> and <span class="math display">\[\Delta x_{t+1} = p_{t+1} - p_{t}\]</span></p></li>
-<li><p>Two processes, one with mean <span class="math inline">\(v_{t}\)</span> one with mean <span class="math inline">\(p_{t}\)</span></p></li>
+<li><em>Singularism</em> and religion equivalent to <em>scientology</em> and science?</li>
 </ul>
 </section>
-<section id="emulator-training" class="slide level3">
-<h3>Emulator Training</h3>
+<section id="artificial-intelligence-and-introspection" class="slide level3">
+<h3>Artificial Intelligence and Introspection</h3>
 <ul>
-<li><p>Used 500 randomly selected points to train emulators.</p></li>
-<li><p>Can make proces smore efficient through <em>experimental design</em>.</p></li>
-</ul>
-<!--
-### Emulator Accuracy-->
-</section>
-<section id="comparison-of-emulation-and-simulation" class="slide level3">
-<h3>Comparison of Emulation and Simulation</h3>
-<object class="svgplot " align data="../slides/diagrams/uq/emu_sim_comparison.svg">
-</object>
-</section>
-<section id="data-efficiency" class="slide level3">
-<h3>Data Efficiency</h3>
-<ul>
-<li><p>Our emulator used only 500 calls to the simulator.</p></li>
-<li><p>Optimizing the simulator directly required 37,500 calls to the simulator.</p></li>
+<li>Religion at it’s most powerful contextualizes us</li>
+<li>Creating artificial systems described as intelligence also contextualises us</li>
+<li>Compare an Artificial Intelligence to an Artificial Plant</li>
 </ul>
 </section>
-<section id="best-controller-using-emulator-of-dynamics" class="slide level3">
-<h3>Best Controller using Emulator of Dynamics</h3>
-<iframe src="../slides/diagrams/uq/mountain_car_emulated.html" width="1024" height="768" allowtransparency="true" frameborder="0">
-</iframe>
-<p>500 calls to the simulator vs 37,500 calls to the simulator</p>
-<p><span class="math display">\[\mappingFunction_i\left(\inputVector\right) = \rho\mappingFunction_{i-1}\left(\inputVector\right) + \delta_i\left(\inputVector \right)\]</span></p>
-</section>
-<section id="multi-fidelity-emulation" class="slide level3">
-<h3>Multi-Fidelity Emulation</h3>
-<p><span class="math display">\[\mappingFunction_i\left(\inputVector\right) = \mappingFunctionTwo_{i}\left(\mappingFunction_{i-1}\left(\inputVector\right)\right) + \delta_i\left(\inputVector \right),\]</span></p>
-</section>
-<section id="best-controller-with-multi-fidelity-emulator" class="slide level3">
-<h3>Best Controller with Multi-Fidelity Emulator</h3>
-<iframe src="../slides/diagrams/uq/mountain_car_multi_fidelity.html" width="1024" height="768" allowtransparency="true" frameborder="0">
-</iframe>
-<p>250 observations of high fidelity simulator and 250 of the low fidelity simulator</p>
+<section id="the-cosmic-catch-22" class="slide level3">
+<h3>The Cosmic Catch 22</h3>
+<ul>
+<li>A return to Eden?</li>
+<li>Big Mother</li>
+<li>Big Brother</li>
+</ul>
 </section>
 <section id="conclusion" class="slide level3">
 <h3>Conclusion</h3>
 <ul>
-<li>Artificial Intelligence and Data Science are fundamentally different.</li>
-<li>In one you are dealing with data collected by happenstance.</li>
-<li>In the other you are trying to build systems in the real world, often by actively collecting data.</li>
-<li>Our approaches to systems design are building powerful machines that will be deployed in evolving environments.</li>
+<li>Overview of AI and ML</li>
+<li>Embodiment Factors</li>
+<li>Relations between Faith and AI</li>
 </ul>
 </section>
 <section id="thanks" class="slide level3">
@@ -1256,14 +774,7 @@ x
 <ul>
 <li>twitter: @lawrennd</li>
 <li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
-<li><a href="http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence">Natural vs Artifical Intelligence</a></li>
-<li><a href="https://medium.com/@mijordan3/artificial-intelligence-the-revolution-hasnt-happened-yet-5e1d5812e1e7">Mike Jordan’s Medium Post</a></li>
 </ul>
-<div id="refs" class="references">
-<div id="ref-Taigman:deepface14">
-<p>Taigman, Y., Yang, M., Ranzato, M., Wolf, L., 2014. DeepFace: Closing the gap to human-level performance in face verification, in: Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition. <a href="https://doi.org/10.1109/CVPR.2014.220" class="uri">https://doi.org/10.1109/CVPR.2014.220</a></p>
-</div>
-</div>
 </section>
     </div>
   </div>
