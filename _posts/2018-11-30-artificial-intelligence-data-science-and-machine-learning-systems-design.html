@@ -28,13 +28,46 @@ categories:
 <p><img class="negate" src="../slides/diagrams/Gartner_Hype_Cycle.png" width="70%" align="center" style="background:none; border:none; box-shadow:none;"></p>
 <p>The <a href="https://en.wikipedia.org/wiki/Hype_cycle">Gartner Hype Cycle</a> tries to assess where an idea is in terms of maturity and adoption. It splits the evolution of technology into a technological trigger, a peak of expectations followed by a trough of disillusionment and a final ascension into a useful technology. It looks rather like a classical control response to a final set point.</p>
 
-<object class="svgplot" align data="../slides/diagrams/data-science/bd-ds-iot-ml-google-trends004.svg">
+<object class="svgplot" align data="../slides/diagrams/data-science/ai-bd-dm-dl-ml-google-trends004.svg">
 </object>
 <center>
 <em>Google trends for different technological terms on the hype cycle. </em>
 </center>
 <p>Google trends gives us insight into how far along various technological terms are on the hype cycle.</p>
-<p>Lies and Damned Lies</p>
+<!--## The Gartner Hype Cycle
+
+
+
+<img class="negate" src="../slides/diagrams/Gartner_Hype_Cycle.png" width="70%" align="center" style="background:none; border:none; box-shadow:none;">
+
+
+The [Gartner Hype Cycle](https://en.wikipedia.org/wiki/Hype_cycle) tries to assess where an idea is in terms of maturity and adoption. It splits the evolution of technology into a technological trigger, a peak of expectations followed by a trough of disillusionment and a final ascension into a useful technology. It looks rather like a classical control response to a final set point.
+
+
+
+
+
+
+
+
+
+
+
+\setupdisplaycode{import pods
+from ipywidgets import IntSlider}
+
+
+
+
+
+<object class="svgplot" align="" data="../slides/diagrams/data-science/bd-ds-iot-ml-google-trends004.svg"></object>
+<center>*Google trends for different technological terms on the hype cycle. *</center>
+
+Google trends gives us insight into how far along various technological terms are on the hype cycle.
+
+
+-->
+<h3 id="lies-and-damned-lies">Lies and Damned Lies</h3>
 <blockquote>
 <p>There are three types of lies: lies, damned lies and statistics</p>
 <p>Benjamin Disraeli 1804-1881</p>
@@ -175,469 +208,619 @@ communicate
 </center>
 <p>Learning involves moving all the pins to be in the right position, so that the ball falls in the right place. But moving all these pins in hyperspace can be difficult. In a hyper space you have to put a lot of data through the machine for to explore the positions of all the pins. Adversarial learning reflects the fact that a ball can be moved a small distance and lead to a very different result.</p>
 <p>Probabilistic methods explore more of the space by considering a range of possible paths for the ball through the machine.</p>
-<p><a href="file:///Users/neil/lawrennd/talks_gp/includes/gp-intro-very-short.md">_gp/includes/gp-intro-very-short.md</a></p>
-<h3 id="bayesian-inference-by-rejection-sampling">Bayesian Inference by Rejection Sampling</h3>
-<p>One view of Bayesian inference is to assume we are given a mechanism for generating samples, where we assume that mechanism is representing on accurate view on the way we believe the world works.</p>
-<p>This mechanism is known as our <em>prior</em> belief.</p>
-<p>We combine our prior belief with our observations of the real world by discarding all those samples that are inconsistent with our prior. The <em>likelihood</em> defines mathematically what we mean by inconsistent with the prior. The higher the noise level in the likelihood, the looser the notion of consistent.</p>
-<p>The samples that remain are considered to be samples from the <em>posterior</em>.</p>
-<p>This approach to Bayesian inference is closely related to two sampling techniques known as <em>rejection sampling</em> and <em>importance sampling</em>. It is realized in practice in an approach known as <em>approximate Bayesian computation</em> (ABC) or likelihood-free inference.</p>
-<p>In practice, the algorithm is often too slow to be practical, because most samples will be inconsistent with the data and as a result the mechanism has to be operated many times to obtain a few posterior samples.</p>
-<p>However, in the Gaussian process case, when the likelihood also assumes Gaussian noise, we can operate this mechanims mathematically, and obtain the posterior density <em>analytically</em>. This is the benefit of Gaussian processes.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> compute_kernel</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> exponentiated_quadratic</code></pre></div>
+<!--<a href="file:///Users/neil/lawrennd/talks_gp/includes/gp-intro-very-short.md">_gp/includes/gp-intro-very-short.md</a>
 
-<object class="svgplot" align data="../slides/diagrams/gp/gp_rejection_sample003.svg">
-</object>
-<object class="svgplot" align data="../slides/diagrams/gp/gp_rejection_sample004.svg">
-</object>
-<object class="svgplot" align data="../slides/diagrams/gp/gp_rejection_sample005.svg">
-</object>
-<center>
-<em>One view of Bayesian inference is we have a machine for generating samples (the </em>prior<em>), and we discard all samples inconsistent with our data, leaving the samples of interest (the </em>posterior<em>). The Gaussian process allows us to do this analytically. </em>
-</center>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
-<span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
-<span class="im">import</span> pods
-<span class="im">import</span> teaching_plots <span class="im">as</span> plot
-<span class="im">import</span> mlai</code></pre></div>
-<h3 id="olympic-marathon-data">Olympic Marathon Data</h3>
-<p>The first thing we will do is load a standard data set for regression modelling. The data consists of the pace of Olympic Gold Medal Marathon winners for the Olympics from 1896 to present. First we load in the data and plot.</p>
-<h3 id="olympic-marathon-data-1">Olympic Marathon Data</h3>
-<table>
-<tr>
-<td width="70%">
-<ul>
-<li><p>Gold medal times for Olympic Marathon since 1896.</p></li>
-<li><p>Marathons before 1924 didn’t have a standardised distance.</p></li>
-<li><p>Present results using pace per km.</p></li>
-<li>In 1904 Marathon was badly organised leading to very slow times.</li>
-</ul>
-</td>
-<td width="30%">
-<img src="../slides/diagrams/Stephen_Kiprotich.jpg" alt="image" /> <small>Image from Wikimedia Commons <a href="http://bit.ly/16kMKHQ" class="uri">http://bit.ly/16kMKHQ</a></small>
-</td>
-</tr>
-</table>
-<object class="svgplot" align data="../slides/diagrams/datasets/olympic-marathon.svg">
-</object>
-<p>Things to notice about the data include the outlier in 1904, in this year, the olympics was in St Louis, USA. Organizational problems and challenges with dust kicked up by the cars following the race meant that participants got lost, and only very few participants completed.</p>
-<p>More recent years see more consistently quick marathons.</p>
-<p>Our first objective will be to perform a Gaussian process fit to the data, we'll do this using the <a href="https://github.com/SheffieldML/GPy">GPy software</a>.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_full <span class="op">=</span> GPy.models.GPRegression(x,yhat)
-_ <span class="op">=</span> m_full.optimize() <span class="co"># Optimize parameters of covariance function</span></code></pre></div>
-<p>The first command sets up the model, then</p>
-<pre><code>m_full.optimize()</code></pre>
-<p>optimizes the parameters of the covariance function and the noise level of the model. Once the fit is complete, we'll try creating some test points, and computing the output of the GP model in terms of the mean and standard deviation of the posterior functions between 1870 and 2030. We plot the mean function and the standard deviation at 200 locations. We can obtain the predictions using</p>
-<pre><code>y_mean, y_var = m_full.predict(xt)</code></pre>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">xt <span class="op">=</span> np.linspace(<span class="dv">1870</span>,<span class="dv">2030</span>,<span class="dv">200</span>)[:,np.newaxis]
-yt_mean, yt_var <span class="op">=</span> m_full.predict(xt)
-yt_sd<span class="op">=</span>np.sqrt(yt_var)</code></pre></div>
-<p>Now we plot the results using the helper function in <code>teaching_plots</code>.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> teaching_plots <span class="im">as</span> plot</code></pre></div>
-<object class="svgplot" align data="../slides/diagrams/gp/olympic-marathon-gp.svg">
-</object>
-<h3 id="fit-quality">Fit Quality</h3>
-<p>In the fit we see that the error bars (coming mainly from the noise variance) are quite large. This is likely due to the outlier point in 1904, ignoring that point we can see that a tighter fit is obtained. To see this making a version of the model, <code>m_clean</code>, where that point is removed.</p>
-<pre><code>x_clean=np.vstack((x[0:2, :], x[3:, :]))
+### Bayesian Inference by Rejection Sampling
+
+One view of Bayesian inference is to assume we are given a mechanism for generating samples, where we assume that mechanism is representing on accurate view on the way we believe the world works. 
+
+This mechanism is known as our *prior* belief. 
+
+We combine our prior belief with our observations of the real world by discarding all those samples that are inconsistent with our prior. The *likelihood* defines mathematically what we mean by inconsistent with the prior. The higher the noise level in the likelihood, the looser the notion of consistent.
+
+The samples that remain are considered to be samples from the *posterior*. 
+
+This approach to Bayesian inference is closely related to two sampling techniques known as *rejection sampling* and *importance sampling*. It is realized in practice in an approach known as *approximate Bayesian computation* (ABC) or likelihood-free inference. 
+
+In practice, the algorithm is often too slow to be practical, because most samples will be inconsistent with the data and as a result the mechanism has to be operated many times to obtain a few posterior samples. 
+
+However, in the Gaussian process case, when the likelihood also assumes Gaussian noise, we can operate this mechanims mathematically, and obtain the posterior density *analytically*. This is the benefit of Gaussian processes.
+
+```{.python}
+import numpy as np
+```
+```{.python}
+from mlai import compute_kernel
+```
+```{.python}
+from mlai import exponentiated_quadratic
+```
+
+
+
+
+
+
+\setupdisplaycode{import pods
+from ipywidgets import IntSlider}
+
+
+<object class="svgplot" align="" data="../slides/diagrams/gp/gp_rejection_sample003.svg"></object>
+<object class="svgplot" align="" data="../slides/diagrams/gp/gp_rejection_sample004.svg"></object>
+<object class="svgplot" align="" data="../slides/diagrams/gp/gp_rejection_sample005.svg"></object>
+<center>*One view of Bayesian inference is we have a machine for generating samples (the *prior*), and we discard all samples inconsistent with our data, leaving the samples of interest (the *posterior*). The Gaussian process allows us to do this analytically. *</center>
+-->
+<!--```{.python}
+import numpy as np
+import matplotlib.pyplot as plt
+import pods
+import teaching_plots as plot
+import mlai
+```
+
+
+### Olympic Marathon Data
+
+The first thing we will do is load a standard data set for regression modelling. The data consists of the pace of Olympic Gold Medal Marathon winners for the Olympics from 1896 to present. First we load in the data and plot.
+
+
+
+
+
+### Olympic Marathon Data
+
+<table><tr><td width="70%">
+-   Gold medal times for Olympic Marathon since 1896.
+
+-   Marathons before 1924 didn’t have a standardised distance.
+
+-   Present results using pace per km.
+
+-   In 1904 Marathon was badly organised leading to very slow times.
+</td><td width="30%">
+![image](../slides/diagrams/Stephen_Kiprotich.jpg)
+<small>Image from Wikimedia Commons <http://bit.ly/16kMKHQ></small>
+</td></tr></table>
+
+
+<object class="svgplot" align="" data="../slides/diagrams/datasets/olympic-marathon.svg"></object>
+
+
+Things to notice about the data include the outlier in 1904, in this year, the olympics was in St Louis, USA. Organizational problems and challenges with dust kicked up by the cars following the race meant that participants got lost, and only very few participants completed. 
+
+More recent years see more consistently quick marathons.
+
+
+
+
+Our first objective will be to perform a Gaussian process fit to the data, we'll do this using the [GPy software](https://github.com/SheffieldML/GPy).
+
+```{.python}
+m_full = GPy.models.GPRegression(x,yhat)
+_ = m_full.optimize() # Optimize parameters of covariance function
+```
+
+The first command sets up the model, then 
+```
+m_full.optimize()
+```
+optimizes the parameters of the covariance function and the noise level of the model. Once the fit is complete, we'll try creating some test points, and computing the output of the GP model in terms of the mean and standard deviation of the posterior functions between 1870 and 2030. We plot the mean function and the standard deviation at 200 locations. We can obtain the predictions using
+```
+y_mean, y_var = m_full.predict(xt)
+```
+
+
+```{.python}
+xt = np.linspace(1870,2030,200)[:,np.newaxis]
+yt_mean, yt_var = m_full.predict(xt)
+yt_sd=np.sqrt(yt_var)
+```
+
+Now we plot the results using the helper function in ```teaching_plots```.
+
+```{.python}
+import teaching_plots as plot
+```
+
+
+
+
+
+<object class="svgplot" align="" data="../slides/diagrams/gp/olympic-marathon-gp.svg"></object>
+
+
+### Fit Quality
+
+In the fit we see that the error bars (coming mainly from the noise variance) are quite large. This is likely due to the outlier point in 1904, ignoring that point we can see that a tighter fit is obtained. To see this making a version of the model, ```m_clean```, where that point is removed. 
+
+```
+x_clean=np.vstack((x[0:2, :], x[3:, :]))
 y_clean=np.vstack((y[0:2, :], y[3:, :]))
 
 m_clean = GPy.models.GPRegression(x_clean,y_clean)
-_ = m_clean.optimize()</code></pre>
-<p>Data is fine for answering very specific questions, like &quot;Who won the Olympic Marathon in 2012?&quot;, because we have that answer stored, however, we are not given the answer to many other questions. For example, Alan Turing was a formidable marathon runner, in 1946 he ran a time 2 hours 46 minutes (just under four minutes per kilometer, faster than I and most of the other <a href="http://www.parkrun.org.uk/sheffieldhallam/">Endcliffe Park Run</a> runners can do 5 km). What is the probability he would have won an Olympics if one had been held in 1946?</p>
-<table>
-<tr>
-<td width="40%">
-<img class="" src="../slides/diagrams/turing-run.jpg" width="40%" align="" style="background:none; border:none; box-shadow:none;">
-</td>
-<td width="50%">
-<img class="" src="../slides/diagrams/turing-times.gif" width="50%" align="" style="background:none; border:none; box-shadow:none;">
-</td>
-</tr>
-</table>
-<center>
-<em>Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: <a href="http://www.turing.org.uk/scrapbook/run.html">Alan Turing Internet Scrapbook</a> </em>
-</center>
-<h3 id="deep-gp-fit">Deep GP Fit</h3>
-<p>Let's see if a deep Gaussian process can help here. We will construct a deep Gaussian process with one hidden layer (i.e. one Gaussian process feeding into another).</p>
-<p>Build a Deep GP with an additional hidden layer (one dimensional) to fit the model.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> GPy
-<span class="im">import</span> deepgp</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">hidden <span class="op">=</span> <span class="dv">1</span>
-m <span class="op">=</span> deepgp.DeepGP([y.shape[<span class="dv">1</span>],hidden,x.shape[<span class="dv">1</span>]],Y<span class="op">=</span>yhat, X<span class="op">=</span>x, inits<span class="op">=</span>[<span class="st">&#39;PCA&#39;</span>,<span class="st">&#39;PCA&#39;</span>], 
-                  kernels<span class="op">=</span>[GPy.kern.RBF(hidden,ARD<span class="op">=</span><span class="va">True</span>),
-                           GPy.kern.RBF(x.shape[<span class="dv">1</span>],ARD<span class="op">=</span><span class="va">True</span>)], <span class="co"># the kernels for each layer</span>
-                  num_inducing<span class="op">=</span><span class="dv">50</span>, back_constraint<span class="op">=</span><span class="va">False</span>)</code></pre></div>
-<p>Deep Gaussian process models also can require some thought in initialization. Here we choose to start by setting the noise variance to be one percent of the data variance.</p>
-<p>Optimization requires moving variational parameters in the hidden layer representing the mean and variance of the expected values in that layer. Since all those values can be scaled up, and this only results in a downscaling in the output of the first GP, and a downscaling of the input length scale to the second GP. It makes sense to first of all fix the scales of the covariance function in each of the GPs.</p>
-<p>Sometimes, deep Gaussian processes can find a local minima which involves increasing the noise level of one or more of the GPs. This often occurs because it allows a minimum in the KL divergence term in the lower bound on the likelihood. To avoid this minimum we habitually train with the likelihood variance (the noise on the output of the GP) fixed to some lower value for some iterations.</p>
-<p>Let's create a helper function to initialize the models we use in the notebook.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
-<span class="im">import</span> GPy
-<span class="im">import</span> deepgp</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> initialize(<span class="va">self</span>, noise_factor<span class="op">=</span><span class="fl">0.01</span>, linear_factor<span class="op">=</span><span class="dv">1</span>):
-    <span class="co">&quot;&quot;&quot;Helper function for deep model initialization.&quot;&quot;&quot;</span>
-    <span class="va">self</span>.obslayer.likelihood.variance <span class="op">=</span> <span class="va">self</span>.Y.var()<span class="op">*</span>noise_factor
-    <span class="cf">for</span> layer <span class="kw">in</span> <span class="va">self</span>.layers:
-        <span class="cf">if</span> <span class="bu">type</span>(layer.X) <span class="kw">is</span> GPy.core.parameterization.variational.NormalPosterior:
-            <span class="cf">if</span> layer.kern.ARD:
-                var <span class="op">=</span> layer.X.mean.var(<span class="dv">0</span>)
-            <span class="cf">else</span>:
-                var <span class="op">=</span> layer.X.mean.var()
-        <span class="cf">else</span>:
-            <span class="cf">if</span> layer.kern.ARD:
-                var <span class="op">=</span> layer.X.var(<span class="dv">0</span>)
-            <span class="cf">else</span>:
-                var <span class="op">=</span> layer.X.var()
+_ = m_clean.optimize()
+```
 
-        <span class="co"># Average 0.5 upcrossings in four standard deviations. </span>
-        layer.kern.lengthscale <span class="op">=</span> linear_factor<span class="op">*</span>np.sqrt(layer.kern.input_dim)<span class="op">*</span><span class="dv">2</span><span class="op">*</span><span class="dv">4</span><span class="op">*</span>np.sqrt(var)<span class="op">/</span>(<span class="dv">2</span><span class="op">*</span>np.pi)
-<span class="co"># Bind the new method to the Deep GP object.</span>
-deepgp.DeepGP.initialize<span class="op">=</span>initialize</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Call the initalization</span>
-m.initialize()</code></pre></div>
-<p>Now optimize the model. The first stage of optimization is working on variational parameters and lengthscales only.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.optimize(messages<span class="op">=</span><span class="va">False</span>,max_iters<span class="op">=</span><span class="dv">100</span>)</code></pre></div>
-<p>Now we remove the constraints on the scale of the covariance functions associated with each GP and optimize again.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">for</span> layer <span class="kw">in</span> m.layers:
-    <span class="cf">pass</span> <span class="co">#layer.kern.variance.constrain_positive(warning=False)</span>
-m.obslayer.kern.variance.constrain_positive(warning<span class="op">=</span><span class="va">False</span>)
-m.optimize(messages<span class="op">=</span><span class="va">False</span>,max_iters<span class="op">=</span><span class="dv">100</span>)</code></pre></div>
-<p>Finally, we allow the noise variance to change and optimize for a large number of iterations.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">for</span> layer <span class="kw">in</span> m.layers:
-    layer.likelihood.variance.constrain_positive(warning<span class="op">=</span><span class="va">False</span>)
-m.optimize(messages<span class="op">=</span><span class="va">True</span>,max_iters<span class="op">=</span><span class="dv">10000</span>)</code></pre></div>
-<p>For our optimization process we define a new function.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> staged_optimize(<span class="va">self</span>, iters<span class="op">=</span>(<span class="dv">1000</span>,<span class="dv">1000</span>,<span class="dv">10000</span>), messages<span class="op">=</span>(<span class="va">False</span>, <span class="va">False</span>, <span class="va">True</span>)):
-    <span class="co">&quot;&quot;&quot;Optimize with parameters constrained and then with parameters released&quot;&quot;&quot;</span>
-    <span class="cf">for</span> layer <span class="kw">in</span> <span class="va">self</span>.layers:
-        <span class="co"># Fix the scale of each of the covariance functions.</span>
-        layer.kern.variance.fix(warning<span class="op">=</span><span class="va">False</span>)
-        layer.kern.lengthscale.fix(warning<span class="op">=</span><span class="va">False</span>)
 
-        <span class="co"># Fix the variance of the noise in each layer.</span>
-        layer.likelihood.variance.fix(warning<span class="op">=</span><span class="va">False</span>)
 
-    <span class="va">self</span>.optimize(messages<span class="op">=</span>messages[<span class="dv">0</span>],max_iters<span class="op">=</span>iters[<span class="dv">0</span>])
+
+Data is fine for answering very specific questions, like "Who won the Olympic Marathon in 2012?", because we have that answer stored, however, we are not given the answer to many other questions. For example, Alan Turing was a formidable marathon runner, in 1946 he ran a time 2 hours 46 minutes (just under four minutes per kilometer, faster than I and most of the other [Endcliffe Park Run](http://www.parkrun.org.uk/sheffieldhallam/) runners can do 5 km). What is the probability he would have won an Olympics if one had been held in 1946?
+
+<table><tr><td width="40%"><img class="" src="../slides/diagrams/turing-run.jpg" width="40%" align="" style="background:none; border:none; box-shadow:none;"></td><td width="50%"><img class="" src="../slides/diagrams/turing-times.gif" width="50%" align="" style="background:none; border:none; box-shadow:none;"></td></tr></table>
+
+<center>*Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: [Alan Turing Internet Scrapbook](http://www.turing.org.uk/scrapbook/run.html) *</center>
+
+
+
+### Deep GP Fit
+
+
+
+
+Let's see if a deep Gaussian process can help here. We will construct a deep Gaussian process with one hidden layer (i.e. one Gaussian process feeding into another). 
+
+Build a Deep GP with an additional hidden layer (one dimensional) to fit the model.
+
+
+```{.python}
+import GPy
+import deepgp
+```
+```{.python}
+hidden = 1
+m = deepgp.DeepGP([y.shape[1],hidden,x.shape[1]],Y=yhat, X=x, inits=['PCA','PCA'], 
+                  kernels=[GPy.kern.RBF(hidden,ARD=True),
+                           GPy.kern.RBF(x.shape[1],ARD=True)], # the kernels for each layer
+                  num_inducing=50, back_constraint=False)
+```
+                  
+
+Deep Gaussian process models also can require some thought in initialization. Here we choose to start by setting the noise variance to be one percent of the data variance.
+
+Optimization requires moving variational parameters in the hidden layer representing the mean and variance of the expected values in that layer. Since all those values can be scaled up, and this only results in a downscaling in the output of the first GP, and a downscaling of the input length scale to the second GP. It makes sense to first of all fix the scales of the covariance function in each of the GPs.
+
+Sometimes, deep Gaussian processes can find a local minima which involves increasing the noise level of one or more of the GPs. This often occurs because it allows a minimum in the KL divergence term in the lower bound on the likelihood. To avoid this minimum we habitually train with the likelihood variance (the noise on the output of the GP) fixed to some lower value for some iterations.
+
+Let's create a helper function to initialize the models we use in the notebook.
+
+
+```{.python}
+import numpy as np
+import GPy
+import deepgp
+```
+```{.python}
+def initialize(self, noise_factor=0.01, linear_factor=1):
+    """Helper function for deep model initialization."""
+    self.obslayer.likelihood.variance = self.Y.var()*noise_factor
+    for layer in self.layers:
+        if type(layer.X) is GPy.core.parameterization.variational.NormalPosterior:
+            if layer.kern.ARD:
+                var = layer.X.mean.var(0)
+            else:
+                var = layer.X.mean.var()
+        else:
+            if layer.kern.ARD:
+                var = layer.X.var(0)
+            else:
+                var = layer.X.var()
+
+        # Average 0.5 upcrossings in four standard deviations. 
+        layer.kern.lengthscale = linear_factor*np.sqrt(layer.kern.input_dim)*2*4*np.sqrt(var)/(2*np.pi)
+# Bind the new method to the Deep GP object.
+deepgp.DeepGP.initialize=initialize
+```
+
+```{.python}
+# Call the initalization
+m.initialize()
+```
+
+Now optimize the model. The first stage of optimization is working on variational parameters and lengthscales only. 
+
+```{.python}
+m.optimize(messages=False,max_iters=100)
+```
+
+Now we remove the constraints on the scale of the covariance functions associated with each GP and optimize again.
+
+```{.python}
+for layer in m.layers:
+    pass #layer.kern.variance.constrain_positive(warning=False)
+m.obslayer.kern.variance.constrain_positive(warning=False)
+m.optimize(messages=False,max_iters=100)
+```
+
+Finally, we allow the noise variance to change and optimize for a large number of iterations.
+
+```{.python}
+for layer in m.layers:
+    layer.likelihood.variance.constrain_positive(warning=False)
+m.optimize(messages=True,max_iters=10000)
+```
+
+For our optimization process we define a new function.
+
+```{.python}
+def staged_optimize(self, iters=(1000,1000,10000), messages=(False, False, True)):
+    """Optimize with parameters constrained and then with parameters released"""
+    for layer in self.layers:
+        # Fix the scale of each of the covariance functions.
+        layer.kern.variance.fix(warning=False)
+        layer.kern.lengthscale.fix(warning=False)
+
+        # Fix the variance of the noise in each layer.
+        layer.likelihood.variance.fix(warning=False)
+
+    self.optimize(messages=messages[0],max_iters=iters[0])
     
-    <span class="cf">for</span> layer <span class="kw">in</span> <span class="va">self</span>.layers:
-        layer.kern.lengthscale.constrain_positive(warning<span class="op">=</span><span class="va">False</span>)
-    <span class="va">self</span>.obslayer.kern.variance.constrain_positive(warning<span class="op">=</span><span class="va">False</span>)
+    for layer in self.layers:
+        layer.kern.lengthscale.constrain_positive(warning=False)
+    self.obslayer.kern.variance.constrain_positive(warning=False)
 
 
-    <span class="va">self</span>.optimize(messages<span class="op">=</span>messages[<span class="dv">1</span>],max_iters<span class="op">=</span>iters[<span class="dv">1</span>])
+    self.optimize(messages=messages[1],max_iters=iters[1])
 
-    <span class="cf">for</span> layer <span class="kw">in</span> <span class="va">self</span>.layers:
-        layer.kern.variance.constrain_positive(warning<span class="op">=</span><span class="va">False</span>)
-        layer.likelihood.variance.constrain_positive(warning<span class="op">=</span><span class="va">False</span>)
-    <span class="va">self</span>.optimize(messages<span class="op">=</span>messages[<span class="dv">2</span>],max_iters<span class="op">=</span>iters[<span class="dv">2</span>])
+    for layer in self.layers:
+        layer.kern.variance.constrain_positive(warning=False)
+        layer.likelihood.variance.constrain_positive(warning=False)
+    self.optimize(messages=messages[2],max_iters=iters[2])
     
-<span class="co"># Bind the new method to the Deep GP object.</span>
-deepgp.DeepGP.staged_optimize<span class="op">=</span>staged_optimize</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.staged_optimize(messages<span class="op">=</span>(<span class="va">True</span>,<span class="va">True</span>,<span class="va">True</span>))</code></pre></div>
-<h3 id="plot-the-prediction">Plot the prediction</h3>
-<p>The prediction of the deep GP can be extracted in a similar way to the normal GP. Although, in this case, it is an approximation to the true distribution, because the true distribution is not Gaussian.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
-plot.model_output(m, scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, ax<span class="op">=</span>ax, xlabel<span class="op">=</span><span class="st">&#39;year&#39;</span>, ylabel<span class="op">=</span><span class="st">&#39;pace min/km&#39;</span>, 
-          fontsize<span class="op">=</span><span class="dv">20</span>, portion<span class="op">=</span><span class="fl">0.2</span>)
+# Bind the new method to the Deep GP object.
+deepgp.DeepGP.staged_optimize=staged_optimize
+```
+
+```{.python}
+m.staged_optimize(messages=(True,True,True))
+```
+
+
+### Plot the prediction
+
+The prediction of the deep GP can be extracted in a similar way to the normal GP. Although, in this case, it is an approximation to the true distribution, because the true distribution is not Gaussian. 
+
+
+```{.python}
+import matplotlib.pyplot as plt
+```
+```{.python}
+fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+plot.model_output(m, scale=scale, offset=offset, ax=ax, xlabel='year', ylabel='pace min/km', 
+          fontsize=20, portion=0.2)
 ax.set_xlim(xlim)
 
 ax.set_ylim(ylim)
-mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/olympic-marathon-deep-gp.svg&#39;</span>, 
-                transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
-<h3 id="olympic-marathon-data-deep-gp">Olympic Marathon Data Deep GP</h3>
-<object class="svgplot" align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp.svg">
-</object>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> posterior_sample(<span class="va">self</span>, X, <span class="op">**</span>kwargs):
-    <span class="co">&quot;&quot;&quot;Give a sample from the posterior of the deep GP.&quot;&quot;&quot;</span>
-    Z <span class="op">=</span> X
-    <span class="cf">for</span> i, layer <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">reversed</span>(<span class="va">self</span>.layers)):
-        Z <span class="op">=</span> layer.posterior_samples(Z, size<span class="op">=</span><span class="dv">1</span>, <span class="op">**</span>kwargs)[:, :, <span class="dv">0</span>]
- 
-    <span class="cf">return</span> Z
-deepgp.DeepGP.posterior_sample <span class="op">=</span> posterior_sample</code></pre></div>
-<h3 id="olympic-marathon-data-deep-gp-1" data-transition="None">Olympic Marathon Data Deep GP</h3>
-<object class="svgplot" align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-samples.svg">
-</object>
-<h3 id="fitted-gp-for-each-layer">Fitted GP for each layer</h3>
-<p>Now we explore the GPs the model has used to fit each layer. First of all, we look at the hidden layer.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> visualize(<span class="va">self</span>, scale<span class="op">=</span><span class="fl">1.0</span>, offset<span class="op">=</span><span class="fl">0.0</span>, xlabel<span class="op">=</span><span class="st">&#39;input&#39;</span>, ylabel<span class="op">=</span><span class="st">&#39;output&#39;</span>, 
-              xlim<span class="op">=</span><span class="va">None</span>, ylim<span class="op">=</span><span class="va">None</span>, fontsize<span class="op">=</span><span class="dv">20</span>, portion<span class="op">=</span><span class="fl">0.2</span>,dataset<span class="op">=</span><span class="va">None</span>, 
-              diagrams<span class="op">=</span><span class="st">&#39;../diagrams&#39;</span>):
-    <span class="co">&quot;&quot;&quot;Visualize the layers in a deep GP with one-d input and output.&quot;&quot;&quot;</span>
-    depth <span class="op">=</span> <span class="bu">len</span>(<span class="va">self</span>.layers)
-    <span class="cf">if</span> dataset <span class="kw">is</span> <span class="va">None</span>:
-        fname <span class="op">=</span> <span class="st">&#39;deep-gp-layer&#39;</span>
-    <span class="cf">else</span>:
-        fname <span class="op">=</span> dataset <span class="op">+</span> <span class="st">&#39;-deep-gp-layer&#39;</span>
-    filename <span class="op">=</span> os.path.join(diagrams, fname)
-    last_name <span class="op">=</span> xlabel
-    last_x <span class="op">=</span> <span class="va">self</span>.X
-    <span class="cf">for</span> i, layer <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">reversed</span>(<span class="va">self</span>.layers)):
-        <span class="cf">if</span> i<span class="op">&gt;</span><span class="dv">0</span>:
-            plt.plot(last_x, layer.X.mean, <span class="st">&#39;r.&#39;</span>,markersize<span class="op">=</span><span class="dv">10</span>)
-            last_x<span class="op">=</span>layer.X.mean
-            ax<span class="op">=</span>plt.gca()
-            name <span class="op">=</span> <span class="st">&#39;layer &#39;</span> <span class="op">+</span> <span class="bu">str</span>(i)
-            plt.xlabel(last_name, fontsize<span class="op">=</span>fontsize)
-            plt.ylabel(name, fontsize<span class="op">=</span>fontsize)
-            last_name<span class="op">=</span>name
-            mlai.write_figure(filename<span class="op">=</span>filename <span class="op">+</span> <span class="st">&#39;-&#39;</span> <span class="op">+</span> <span class="bu">str</span>(i<span class="op">-</span><span class="dv">1</span>) <span class="op">+</span> <span class="st">&#39;.svg&#39;</span>, 
-                              transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)
-            
-        <span class="cf">if</span> i<span class="op">==</span><span class="dv">0</span> <span class="kw">and</span> xlim <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:
-            xt <span class="op">=</span> plot.pred_range(np.array(xlim), portion<span class="op">=</span><span class="fl">0.0</span>)
-        <span class="cf">elif</span> i<span class="op">&gt;</span><span class="dv">0</span>:
-            xt <span class="op">=</span> plot.pred_range(np.array(next_lim), portion<span class="op">=</span><span class="fl">0.0</span>)
-        <span class="cf">else</span>:
-            xt <span class="op">=</span> plot.pred_range(last_x, portion<span class="op">=</span>portion)
-        yt_mean, yt_var <span class="op">=</span> layer.predict(xt)
-        <span class="cf">if</span> layer<span class="op">==</span><span class="va">self</span>.obslayer:
-            yt_mean <span class="op">=</span> yt_mean<span class="op">*</span>scale <span class="op">+</span> offset
-            yt_var <span class="op">*=</span> scale<span class="op">*</span>scale
-        yt_sd <span class="op">=</span> np.sqrt(yt_var)
-        gpplot(xt,yt_mean,yt_mean<span class="op">-</span><span class="dv">2</span><span class="op">*</span>yt_sd,yt_mean<span class="op">+</span><span class="dv">2</span><span class="op">*</span>yt_sd)
-        ax <span class="op">=</span> plt.gca()
-        <span class="cf">if</span> i<span class="op">&gt;</span><span class="dv">0</span>:
-            ax.set_xlim(next_lim)
-        <span class="cf">elif</span> xlim <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:
-            ax.set_xlim(xlim)
-        next_lim <span class="op">=</span> plt.gca().get_ylim()
-        
-    plt.plot(last_x, <span class="va">self</span>.Y<span class="op">*</span>scale <span class="op">+</span> offset, <span class="st">&#39;r.&#39;</span>,markersize<span class="op">=</span><span class="dv">10</span>)
-    plt.xlabel(last_name, fontsize<span class="op">=</span>fontsize)
-    plt.ylabel(ylabel, fontsize<span class="op">=</span>fontsize)
-    mlai.write_figure(filename<span class="op">=</span>filename <span class="op">+</span> <span class="st">&#39;-&#39;</span> <span class="op">+</span> <span class="bu">str</span>(i) <span class="op">+</span> <span class="st">&#39;.svg&#39;</span>, 
-                      transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)
+mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/olympic-marathon-deep-gp.svg', 
+                transparent=True, frameon=True)
+```
 
-    <span class="cf">if</span> ylim <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:
-        ax<span class="op">=</span>plt.gca()
+
+### Olympic Marathon Data Deep GP
+
+<object class="svgplot" align="" data="../slides/diagrams/deepgp/olympic-marathon-deep-gp.svg"></object>
+
+
+```{.python}
+def posterior_sample(self, X, **kwargs):
+    """Give a sample from the posterior of the deep GP."""
+    Z = X
+    for i, layer in enumerate(reversed(self.layers)):
+        Z = layer.posterior_samples(Z, size=1, **kwargs)[:, :, 0]
+ 
+    return Z
+deepgp.DeepGP.posterior_sample = posterior_sample
+```
+
+
+
+
+### Olympic Marathon Data Deep GP {data-transition="None"}
+
+<object class="svgplot" align="" data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-samples.svg"></object>
+
+
+
+### Fitted GP for each layer
+
+Now we explore the GPs the model has used to fit each layer. First of all, we look at the hidden layer.
+
+
+```{.python}
+def visualize(self, scale=1.0, offset=0.0, xlabel='input', ylabel='output', 
+              xlim=None, ylim=None, fontsize=20, portion=0.2,dataset=None, 
+              diagrams='../diagrams'):
+    """Visualize the layers in a deep GP with one-d input and output."""
+    depth = len(self.layers)
+    if dataset is None:
+        fname = 'deep-gp-layer'
+    else:
+        fname = dataset + '-deep-gp-layer'
+    filename = os.path.join(diagrams, fname)
+    last_name = xlabel
+    last_x = self.X
+    for i, layer in enumerate(reversed(self.layers)):
+        if i>0:
+            plt.plot(last_x, layer.X.mean, 'r.',markersize=10)
+            last_x=layer.X.mean
+            ax=plt.gca()
+            name = 'layer ' + str(i)
+            plt.xlabel(last_name, fontsize=fontsize)
+            plt.ylabel(name, fontsize=fontsize)
+            last_name=name
+            mlai.write_figure(filename=filename + '-' + str(i-1) + '.svg', 
+                              transparent=True, frameon=True)
+            
+        if i==0 and xlim is not None:
+            xt = plot.pred_range(np.array(xlim), portion=0.0)
+        elif i>0:
+            xt = plot.pred_range(np.array(next_lim), portion=0.0)
+        else:
+            xt = plot.pred_range(last_x, portion=portion)
+        yt_mean, yt_var = layer.predict(xt)
+        if layer==self.obslayer:
+            yt_mean = yt_mean*scale + offset
+            yt_var *= scale*scale
+        yt_sd = np.sqrt(yt_var)
+        gpplot(xt,yt_mean,yt_mean-2*yt_sd,yt_mean+2*yt_sd)
+        ax = plt.gca()
+        if i>0:
+            ax.set_xlim(next_lim)
+        elif xlim is not None:
+            ax.set_xlim(xlim)
+        next_lim = plt.gca().get_ylim()
+        
+    plt.plot(last_x, self.Y*scale + offset, 'r.',markersize=10)
+    plt.xlabel(last_name, fontsize=fontsize)
+    plt.ylabel(ylabel, fontsize=fontsize)
+    mlai.write_figure(filename=filename + '-' + str(i) + '.svg', 
+                      transparent=True, frameon=True)
+
+    if ylim is not None:
+        ax=plt.gca()
         ax.set_ylim(ylim)
 
-<span class="co"># Bind the new method to the Deep GP object.</span>
-deepgp.DeepGP.visualize<span class="op">=</span>visualize</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> scale_data(x, portion):     
-    scale <span class="op">=</span> (x.<span class="bu">max</span>()<span class="op">-</span>x.<span class="bu">min</span>())<span class="op">/</span>(<span class="dv">1</span><span class="op">-</span><span class="dv">2</span><span class="op">*</span>portion)
-    offset <span class="op">=</span> x.<span class="bu">min</span>() <span class="op">-</span> portion<span class="op">*</span>scale
-    <span class="cf">return</span> (x<span class="op">-</span>offset)<span class="op">/</span>scale, scale, offset</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> visualize_pinball(<span class="va">self</span>, ax<span class="op">=</span><span class="va">None</span>, scale<span class="op">=</span><span class="fl">1.0</span>, offset<span class="op">=</span><span class="fl">0.0</span>, xlabel<span class="op">=</span><span class="st">&#39;input&#39;</span>, ylabel<span class="op">=</span><span class="st">&#39;output&#39;</span>, 
-                  xlim<span class="op">=</span><span class="va">None</span>, ylim<span class="op">=</span><span class="va">None</span>, fontsize<span class="op">=</span><span class="dv">20</span>, portion<span class="op">=</span><span class="fl">0.2</span>, points<span class="op">=</span><span class="dv">50</span>, vertical<span class="op">=</span><span class="va">True</span>):
-    <span class="co">&quot;&quot;&quot;Visualize the layers in a deep GP with one-d input and output.&quot;&quot;&quot;</span>
+# Bind the new method to the Deep GP object.
+deepgp.DeepGP.visualize=visualize
+```
 
-    <span class="cf">if</span> ax <span class="kw">is</span> <span class="va">None</span>:
-        fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
 
-    depth <span class="op">=</span> <span class="bu">len</span>(<span class="va">self</span>.layers)
 
-    last_name <span class="op">=</span> xlabel
-    last_x <span class="op">=</span> <span class="va">self</span>.X
 
-    <span class="co"># Recover input and output scales from output plot</span>
-    plot_model_output(<span class="va">self</span>, scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, ax<span class="op">=</span>ax, 
-                      xlabel<span class="op">=</span>xlabel, ylabel<span class="op">=</span>ylabel, 
-                      fontsize<span class="op">=</span>fontsize, portion<span class="op">=</span>portion)
-    xlim<span class="op">=</span>ax.get_xlim()
-    xticks<span class="op">=</span>ax.get_xticks()
-    xtick_labels<span class="op">=</span>ax.get_xticklabels().copy()
-    ylim<span class="op">=</span>ax.get_ylim()
-    yticks<span class="op">=</span>ax.get_yticks()
-    ytick_labels<span class="op">=</span>ax.get_yticklabels().copy()
 
-    <span class="co"># Clear axes and start again</span>
+
+
+
+```{.python}
+def scale_data(x, portion):     
+    scale = (x.max()-x.min())/(1-2*portion)
+    offset = x.min() - portion*scale
+    return (x-offset)/scale, scale, offset
+```
+
+```{.python}
+def visualize_pinball(self, ax=None, scale=1.0, offset=0.0, xlabel='input', ylabel='output', 
+                  xlim=None, ylim=None, fontsize=20, portion=0.2, points=50, vertical=True):
+    """Visualize the layers in a deep GP with one-d input and output."""
+
+    if ax is None:
+        fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+
+    depth = len(self.layers)
+
+    last_name = xlabel
+    last_x = self.X
+
+    # Recover input and output scales from output plot
+    plot_model_output(self, scale=scale, offset=offset, ax=ax, 
+                      xlabel=xlabel, ylabel=ylabel, 
+                      fontsize=fontsize, portion=portion)
+    xlim=ax.get_xlim()
+    xticks=ax.get_xticks()
+    xtick_labels=ax.get_xticklabels().copy()
+    ylim=ax.get_ylim()
+    yticks=ax.get_yticks()
+    ytick_labels=ax.get_yticklabels().copy()
+
+    # Clear axes and start again
     ax.cla()
-    <span class="cf">if</span> vertical:
-        ax.set_xlim((<span class="dv">0</span>, <span class="dv">1</span>))
+    if vertical:
+        ax.set_xlim((0, 1))
         ax.invert_yaxis()
 
-        ax.set_ylim((depth, <span class="dv">0</span>))
-    <span class="cf">else</span>:
-        ax.set_ylim((<span class="dv">0</span>, <span class="dv">1</span>))
-        ax.set_xlim((<span class="dv">0</span>, depth))
+        ax.set_ylim((depth, 0))
+    else:
+        ax.set_ylim((0, 1))
+        ax.set_xlim((0, depth))
         
-    ax.set_axis_off()<span class="co">#frame_on(False)</span>
+    ax.set_axis_off()#frame_on(False)
 
 
-    <span class="kw">def</span> pinball(x, y, y_std, color_scale<span class="op">=</span><span class="va">None</span>, 
-                layer<span class="op">=</span><span class="dv">0</span>, depth<span class="op">=</span><span class="dv">1</span>, ax<span class="op">=</span><span class="va">None</span>, 
-                alpha<span class="op">=</span><span class="fl">1.0</span>, portion<span class="op">=</span><span class="fl">0.0</span>, vertical<span class="op">=</span><span class="va">True</span>):  
+    def pinball(x, y, y_std, color_scale=None, 
+                layer=0, depth=1, ax=None, 
+                alpha=1.0, portion=0.0, vertical=True):  
 
-        scaledx, xscale, xoffset <span class="op">=</span> scale_data(x, portion<span class="op">=</span>portion)
-        scaledy, yscale, yoffset <span class="op">=</span> scale_data(y, portion<span class="op">=</span>portion)
-        y_std <span class="op">/=</span> yscale
+        scaledx, xscale, xoffset = scale_data(x, portion=portion)
+        scaledy, yscale, yoffset = scale_data(y, portion=portion)
+        y_std /= yscale
 
-        <span class="co"># Check whether data is anti-correlated on output</span>
-        <span class="cf">if</span> np.dot((scaledx<span class="op">-</span><span class="fl">0.5</span>).T, (scaledy<span class="op">-</span><span class="fl">0.5</span>))<span class="op">&lt;</span><span class="dv">0</span>:
-            scaledy<span class="op">=</span><span class="dv">1</span><span class="op">-</span>scaledy
-            flip<span class="op">=-</span><span class="dv">1</span>
-        <span class="cf">else</span>:
-            flip<span class="op">=</span><span class="dv">1</span>
+        # Check whether data is anti-correlated on output
+        if np.dot((scaledx-0.5).T, (scaledy-0.5))<0:
+            scaledy=1-scaledy
+            flip=-1
+        else:
+            flip=1
 
-        <span class="cf">if</span> color_scale <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:
-            color_scale, _, _<span class="op">=</span>scale_data(color_scale, portion<span class="op">=</span><span class="dv">0</span>)
-        scaledy <span class="op">=</span> (<span class="dv">1</span><span class="op">-</span>alpha)<span class="op">*</span>scaledx <span class="op">+</span> alpha<span class="op">*</span>scaledy
+        if color_scale is not None:
+            color_scale, _, _=scale_data(color_scale, portion=0)
+        scaledy = (1-alpha)*scaledx + alpha*scaledy
 
-        <span class="kw">def</span> color_value(x, cmap<span class="op">=</span><span class="va">None</span>, width<span class="op">=</span><span class="va">None</span>, centers<span class="op">=</span><span class="va">None</span>):
-            <span class="co">&quot;&quot;&quot;Return color as a function of position along x axis&quot;&quot;&quot;</span>
-            <span class="cf">if</span> cmap <span class="kw">is</span> <span class="va">None</span>:
-                cmap <span class="op">=</span> np.asarray([[<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>], [<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>], [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>]])
-            ncenters <span class="op">=</span> cmap.shape[<span class="dv">0</span>]
-            <span class="cf">if</span> centers <span class="kw">is</span> <span class="va">None</span>:
-                centers <span class="op">=</span> np.linspace(<span class="dv">0</span><span class="op">+</span><span class="fl">0.5</span><span class="op">/</span>ncenters, <span class="dv">1</span><span class="op">-</span><span class="fl">0.5</span><span class="op">/</span>ncenters, ncenters)
-            <span class="cf">if</span> width <span class="kw">is</span> <span class="va">None</span>:
-                width <span class="op">=</span> <span class="fl">0.25</span><span class="op">/</span>ncenters
+        def color_value(x, cmap=None, width=None, centers=None):
+            """Return color as a function of position along x axis"""
+            if cmap is None:
+                cmap = np.asarray([[1, 0, 0], [1, 1, 0], [0, 1, 0]])
+            ncenters = cmap.shape[0]
+            if centers is None:
+                centers = np.linspace(0+0.5/ncenters, 1-0.5/ncenters, ncenters)
+            if width is None:
+                width = 0.25/ncenters
             
-            r <span class="op">=</span> (x<span class="op">-</span>centers)<span class="op">/</span>width
-            weights <span class="op">=</span> np.exp(<span class="op">-</span><span class="fl">0.5</span><span class="op">*</span>r<span class="op">*</span>r).flatten()
-            weights <span class="op">/=</span>weights.<span class="bu">sum</span>()
-            weights <span class="op">=</span> weights[:, np.newaxis]
-            <span class="cf">return</span> np.dot(cmap.T, weights).flatten()
+            r = (x-centers)/width
+            weights = np.exp(-0.5*r*r).flatten()
+            weights /=weights.sum()
+            weights = weights[:, np.newaxis]
+            return np.dot(cmap.T, weights).flatten()
 
 
-        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(x.shape[<span class="dv">0</span>]):
-            <span class="cf">if</span> color_scale <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:
-                color <span class="op">=</span> color_value(color_scale[i])
-            <span class="cf">else</span>:
-                color<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>)
-            x_plot <span class="op">=</span> np.asarray((scaledx[i], scaledy[i])).flatten()
-            y_plot <span class="op">=</span> np.asarray((layer, layer<span class="op">+</span>alpha)).flatten()
-            <span class="cf">if</span> vertical:
-                ax.plot(x_plot, y_plot, color<span class="op">=</span>color, alpha<span class="op">=</span><span class="fl">0.5</span>, linewidth<span class="op">=</span><span class="dv">3</span>)
-                ax.plot(x_plot, y_plot, color<span class="op">=</span><span class="st">&#39;k&#39;</span>, alpha<span class="op">=</span><span class="fl">0.5</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)
-            <span class="cf">else</span>:
-                ax.plot(y_plot, x_plot, color<span class="op">=</span>color, alpha<span class="op">=</span><span class="fl">0.5</span>, linewidth<span class="op">=</span><span class="dv">3</span>)
-                ax.plot(y_plot, x_plot, color<span class="op">=</span><span class="st">&#39;k&#39;</span>, alpha<span class="op">=</span><span class="fl">0.5</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)
+        for i in range(x.shape[0]):
+            if color_scale is not None:
+                color = color_value(color_scale[i])
+            else:
+                color=(1, 0, 0)
+            x_plot = np.asarray((scaledx[i], scaledy[i])).flatten()
+            y_plot = np.asarray((layer, layer+alpha)).flatten()
+            if vertical:
+                ax.plot(x_plot, y_plot, color=color, alpha=0.5, linewidth=3)
+                ax.plot(x_plot, y_plot, color='k', alpha=0.5, linewidth=0.5)
+            else:
+                ax.plot(y_plot, x_plot, color=color, alpha=0.5, linewidth=3)
+                ax.plot(y_plot, x_plot, color='k', alpha=0.5, linewidth=0.5)
 
-            <span class="co"># Plot error bars that increase as sqrt of distance from start.</span>
-            std_points <span class="op">=</span> <span class="dv">50</span>
-            stdy <span class="op">=</span> np.linspace(<span class="dv">0</span>, alpha,std_points)
-            stdx <span class="op">=</span> np.sqrt(stdy)<span class="op">*</span>y_std[i]
-            stdy <span class="op">+=</span> layer
-            mean_vals <span class="op">=</span> np.linspace(scaledx[i], scaledy[i], std_points)
-            upper <span class="op">=</span> mean_vals<span class="op">+</span>stdx 
-            lower <span class="op">=</span> mean_vals<span class="op">-</span>stdx 
-            fillcolor<span class="op">=</span>color
-            x_errorbars<span class="op">=</span>np.hstack((upper,lower[::<span class="op">-</span><span class="dv">1</span>]))
-            y_errorbars<span class="op">=</span>np.hstack((stdy,stdy[::<span class="op">-</span><span class="dv">1</span>]))
-            <span class="cf">if</span> vertical:
+            # Plot error bars that increase as sqrt of distance from start.
+            std_points = 50
+            stdy = np.linspace(0, alpha,std_points)
+            stdx = np.sqrt(stdy)*y_std[i]
+            stdy += layer
+            mean_vals = np.linspace(scaledx[i], scaledy[i], std_points)
+            upper = mean_vals+stdx 
+            lower = mean_vals-stdx 
+            fillcolor=color
+            x_errorbars=np.hstack((upper,lower[::-1]))
+            y_errorbars=np.hstack((stdy,stdy[::-1]))
+            if vertical:
                 ax.fill(x_errorbars,y_errorbars,
-                        color<span class="op">=</span>fillcolor, alpha<span class="op">=</span><span class="fl">0.1</span>)
-                ax.plot(scaledy[i], layer<span class="op">+</span>alpha, <span class="st">&#39;.&#39;</span>,markersize<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span>color, alpha<span class="op">=</span><span class="fl">0.5</span>)
-            <span class="cf">else</span>:
+                        color=fillcolor, alpha=0.1)
+                ax.plot(scaledy[i], layer+alpha, '.',markersize=10, color=color, alpha=0.5)
+            else:
                 ax.fill(y_errorbars,x_errorbars,
-                        color<span class="op">=</span>fillcolor, alpha<span class="op">=</span><span class="fl">0.1</span>)
-                ax.plot(layer<span class="op">+</span>alpha, scaledy[i], <span class="st">&#39;.&#39;</span>,markersize<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span>color, alpha<span class="op">=</span><span class="fl">0.5</span>)
-            <span class="co"># Marker to show end point</span>
-        <span class="cf">return</span> flip
+                        color=fillcolor, alpha=0.1)
+                ax.plot(layer+alpha, scaledy[i], '.',markersize=10, color=color, alpha=0.5)
+            # Marker to show end point
+        return flip
 
 
-    <span class="co"># Whether final axis is flipped</span>
-    flip <span class="op">=</span> <span class="dv">1</span>
-    first_x<span class="op">=</span>last_x
-    <span class="cf">for</span> i, layer <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">reversed</span>(<span class="va">self</span>.layers)):     
-        <span class="cf">if</span> i<span class="op">==</span><span class="dv">0</span>:
-            xt <span class="op">=</span> plot.pred_range(last_x, portion<span class="op">=</span>portion, points<span class="op">=</span>points)
-            color_scale<span class="op">=</span>xt
-        yt_mean, yt_var <span class="op">=</span> layer.predict(xt)
-        <span class="cf">if</span> layer<span class="op">==</span><span class="va">self</span>.obslayer:
-            yt_mean <span class="op">=</span> yt_mean<span class="op">*</span>scale <span class="op">+</span> offset
-            yt_var <span class="op">*=</span> scale<span class="op">*</span>scale
-        yt_sd <span class="op">=</span> np.sqrt(yt_var)
-        flip <span class="op">=</span> flip<span class="op">*</span>pinball(xt,yt_mean,yt_sd,color_scale,portion<span class="op">=</span>portion, 
-                            layer<span class="op">=</span>i, ax<span class="op">=</span>ax, depth<span class="op">=</span>depth,vertical<span class="op">=</span>vertical)<span class="co">#yt_mean-2*yt_sd,yt_mean+2*yt_sd)</span>
-        xt <span class="op">=</span> yt_mean
-    <span class="co"># Make room for axis labels</span>
-    <span class="cf">if</span> vertical:
-        ax.set_ylim((<span class="fl">2.1</span>, <span class="op">-</span><span class="fl">0.1</span>))
-        ax.set_xlim((<span class="op">-</span><span class="fl">0.02</span>, <span class="fl">1.02</span>))
-        ax.set_yticks(<span class="bu">range</span>(depth,<span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>))
-    <span class="cf">else</span>:
-        ax.set_xlim((<span class="op">-</span><span class="fl">0.1</span>, <span class="fl">2.1</span>))
-        ax.set_ylim((<span class="op">-</span><span class="fl">0.02</span>, <span class="fl">1.02</span>))
-        ax.set_xticks(<span class="bu">range</span>(<span class="dv">0</span>, depth))
+    # Whether final axis is flipped
+    flip = 1
+    first_x=last_x
+    for i, layer in enumerate(reversed(self.layers)):     
+        if i==0:
+            xt = plot.pred_range(last_x, portion=portion, points=points)
+            color_scale=xt
+        yt_mean, yt_var = layer.predict(xt)
+        if layer==self.obslayer:
+            yt_mean = yt_mean*scale + offset
+            yt_var *= scale*scale
+        yt_sd = np.sqrt(yt_var)
+        flip = flip*pinball(xt,yt_mean,yt_sd,color_scale,portion=portion, 
+                            layer=i, ax=ax, depth=depth,vertical=vertical)#yt_mean-2*yt_sd,yt_mean+2*yt_sd)
+        xt = yt_mean
+    # Make room for axis labels
+    if vertical:
+        ax.set_ylim((2.1, -0.1))
+        ax.set_xlim((-0.02, 1.02))
+        ax.set_yticks(range(depth,0,-1))
+    else:
+        ax.set_xlim((-0.1, 2.1))
+        ax.set_ylim((-0.02, 1.02))
+        ax.set_xticks(range(0, depth))
         
-    <span class="kw">def</span> draw_axis(ax, scale<span class="op">=</span><span class="fl">1.0</span>, offset<span class="op">=</span><span class="fl">0.0</span>, level<span class="op">=</span><span class="fl">0.0</span>, flip<span class="op">=</span><span class="dv">1</span>, 
-                  label<span class="op">=</span><span class="va">None</span>,up<span class="op">=</span><span class="va">False</span>, nticks<span class="op">=</span><span class="dv">10</span>, ticklength<span class="op">=</span><span class="fl">0.05</span>,
-                  vertical<span class="op">=</span><span class="va">True</span>,
-                 fontsize<span class="op">=</span><span class="dv">20</span>):
-        <span class="kw">def</span> clean_gap(gap):
-            nsf <span class="op">=</span> np.log10(gap)
-            <span class="cf">if</span> nsf<span class="op">&gt;</span><span class="dv">0</span>:
-                nsf <span class="op">=</span> np.ceil(nsf)
-            <span class="cf">else</span>:
-                nsf <span class="op">=</span> np.floor(nsf)
-            lower_gaps <span class="op">=</span> np.asarray([<span class="fl">0.005</span>, <span class="fl">0.01</span>, <span class="fl">0.02</span>, <span class="fl">0.03</span>, <span class="fl">0.04</span>, <span class="fl">0.05</span>, 
-                                     <span class="fl">0.1</span>, <span class="fl">0.25</span>, <span class="fl">0.5</span>, 
-                                     <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>, <span class="fl">2.5</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">25</span>, <span class="dv">50</span>, <span class="dv">100</span>])
-            upper_gaps <span class="op">=</span> np.asarray([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">10</span>])
-            <span class="cf">if</span> nsf <span class="op">&gt;</span><span class="dv">2</span> <span class="kw">or</span> nsf<span class="op">&lt;-</span><span class="dv">2</span>:
-                d <span class="op">=</span> np.<span class="bu">abs</span>(gap<span class="op">-</span>upper_gaps<span class="op">*</span><span class="dv">10</span><span class="op">**</span>nsf)
-                ind <span class="op">=</span> np.argmin(d)
-                <span class="cf">return</span> upper_gaps[ind]<span class="op">*</span><span class="dv">10</span><span class="op">**</span>nsf
-            <span class="cf">else</span>:
-                d <span class="op">=</span> np.<span class="bu">abs</span>(gap<span class="op">-</span>lower_gaps)
-                ind <span class="op">=</span> np.argmin(d)
-                <span class="cf">return</span> lower_gaps[ind]
+    def draw_axis(ax, scale=1.0, offset=0.0, level=0.0, flip=1, 
+                  label=None,up=False, nticks=10, ticklength=0.05,
+                  vertical=True,
+                 fontsize=20):
+        def clean_gap(gap):
+            nsf = np.log10(gap)
+            if nsf>0:
+                nsf = np.ceil(nsf)
+            else:
+                nsf = np.floor(nsf)
+            lower_gaps = np.asarray([0.005, 0.01, 0.02, 0.03, 0.04, 0.05, 
+                                     0.1, 0.25, 0.5, 
+                                     1, 1.5, 2, 2.5, 3, 4, 5, 10, 25, 50, 100])
+            upper_gaps = np.asarray([1, 2, 3, 4, 5, 10])
+            if nsf >2 or nsf<-2:
+                d = np.abs(gap-upper_gaps*10**nsf)
+                ind = np.argmin(d)
+                return upper_gaps[ind]*10**nsf
+            else:
+                d = np.abs(gap-lower_gaps)
+                ind = np.argmin(d)
+                return lower_gaps[ind]
             
-        tickgap <span class="op">=</span> clean_gap(scale<span class="op">/</span>(nticks<span class="op">-</span><span class="dv">1</span>))
-        nticks <span class="op">=</span> <span class="bu">int</span>(scale<span class="op">/</span>tickgap) <span class="op">+</span> <span class="dv">1</span>
-        tickstart <span class="op">=</span> np.<span class="bu">round</span>(offset<span class="op">/</span>tickgap)<span class="op">*</span>tickgap
-        ticklabels <span class="op">=</span> np.asarray(<span class="bu">range</span>(<span class="dv">0</span>, nticks))<span class="op">*</span>tickgap <span class="op">+</span> tickstart
-        ticks <span class="op">=</span> (ticklabels<span class="op">-</span>offset)<span class="op">/</span>scale
-        axargs <span class="op">=</span> {<span class="st">&#39;color&#39;</span>:<span class="st">&#39;k&#39;</span>, <span class="st">&#39;linewidth&#39;</span>:<span class="dv">1</span>}
+        tickgap = clean_gap(scale/(nticks-1))
+        nticks = int(scale/tickgap) + 1
+        tickstart = np.round(offset/tickgap)*tickgap
+        ticklabels = np.asarray(range(0, nticks))*tickgap + tickstart
+        ticks = (ticklabels-offset)/scale
+        axargs = {'color':'k', 'linewidth':1}
         
-        <span class="cf">if</span> <span class="kw">not</span> up:
-            ticklength<span class="op">=-</span>ticklength
-        tickspot <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, nticks)
-        <span class="cf">if</span> flip <span class="op">&lt;</span> <span class="dv">0</span>:
-            ticks <span class="op">=</span> <span class="dv">1</span><span class="op">-</span>ticks
-        <span class="cf">for</span> tick, ticklabel <span class="kw">in</span> <span class="bu">zip</span>(ticks, ticklabels):
-            <span class="cf">if</span> vertical:
-                ax.plot([tick, tick], [level, level<span class="op">-</span>ticklength], <span class="op">**</span>axargs)
-                ax.text(tick, level<span class="op">-</span>ticklength<span class="op">*</span><span class="dv">2</span>, ticklabel, horizontalalignment<span class="op">=</span><span class="st">&#39;center&#39;</span>, 
-                        fontsize<span class="op">=</span>fontsize<span class="op">/</span><span class="dv">2</span>)
-                ax.text(<span class="fl">0.5</span>, level<span class="op">-</span><span class="dv">5</span><span class="op">*</span>ticklength, label, horizontalalignment<span class="op">=</span><span class="st">&#39;center&#39;</span>, fontsize<span class="op">=</span>fontsize)
-            <span class="cf">else</span>:
-                ax.plot([level, level<span class="op">-</span>ticklength], [tick, tick],  <span class="op">**</span>axargs)
-                ax.text(level<span class="op">-</span>ticklength<span class="op">*</span><span class="dv">2</span>, tick, ticklabel, horizontalalignment<span class="op">=</span><span class="st">&#39;center&#39;</span>, 
-                        fontsize<span class="op">=</span>fontsize<span class="op">/</span><span class="dv">2</span>)
-                ax.text(level<span class="op">-</span><span class="dv">5</span><span class="op">*</span>ticklength, <span class="fl">0.5</span>, label, horizontalalignment<span class="op">=</span><span class="st">&#39;center&#39;</span>, fontsize<span class="op">=</span>fontsize)
+        if not up:
+            ticklength=-ticklength
+        tickspot = np.linspace(0, 1, nticks)
+        if flip < 0:
+            ticks = 1-ticks
+        for tick, ticklabel in zip(ticks, ticklabels):
+            if vertical:
+                ax.plot([tick, tick], [level, level-ticklength], **axargs)
+                ax.text(tick, level-ticklength*2, ticklabel, horizontalalignment='center', 
+                        fontsize=fontsize/2)
+                ax.text(0.5, level-5*ticklength, label, horizontalalignment='center', fontsize=fontsize)
+            else:
+                ax.plot([level, level-ticklength], [tick, tick],  **axargs)
+                ax.text(level-ticklength*2, tick, ticklabel, horizontalalignment='center', 
+                        fontsize=fontsize/2)
+                ax.text(level-5*ticklength, 0.5, label, horizontalalignment='center', fontsize=fontsize)
         
-        <span class="cf">if</span> vertical:
-            xlim <span class="op">=</span> <span class="bu">list</span>(ax.get_xlim())
-            <span class="cf">if</span> ticks.<span class="bu">min</span>()<span class="op">&lt;</span>xlim[<span class="dv">0</span>]:
-                xlim[<span class="dv">0</span>] <span class="op">=</span> ticks.<span class="bu">min</span>()
-            <span class="cf">if</span> ticks.<span class="bu">max</span>()<span class="op">&gt;</span>xlim[<span class="dv">1</span>]:
-                xlim[<span class="dv">1</span>] <span class="op">=</span> ticks.<span class="bu">max</span>()
+        if vertical:
+            xlim = list(ax.get_xlim())
+            if ticks.min()<xlim[0]:
+                xlim[0] = ticks.min()
+            if ticks.max()>xlim[1]:
+                xlim[1] = ticks.max()
             ax.set_xlim(xlim)
             
-            ax.plot([ticks.<span class="bu">min</span>(), ticks.<span class="bu">max</span>()], [level, level], <span class="op">**</span>axargs)
-        <span class="cf">else</span>:
-            ylim <span class="op">=</span> <span class="bu">list</span>(ax.get_ylim())
-            <span class="cf">if</span> ticks.<span class="bu">min</span>()<span class="op">&lt;</span>ylim[<span class="dv">0</span>]:
-                ylim[<span class="dv">0</span>] <span class="op">=</span> ticks.<span class="bu">min</span>()
-            <span class="cf">if</span> ticks.<span class="bu">max</span>()<span class="op">&gt;</span>ylim[<span class="dv">1</span>]:
-                ylim[<span class="dv">1</span>] <span class="op">=</span> ticks.<span class="bu">max</span>()
+            ax.plot([ticks.min(), ticks.max()], [level, level], **axargs)
+        else:
+            ylim = list(ax.get_ylim())
+            if ticks.min()<ylim[0]:
+                ylim[0] = ticks.min()
+            if ticks.max()>ylim[1]:
+                ylim[1] = ticks.max()
             ax.set_ylim(ylim)
-            ax.plot([level, level], [ticks.<span class="bu">min</span>(), ticks.<span class="bu">max</span>()], <span class="op">**</span>axargs)
+            ax.plot([level, level], [ticks.min(), ticks.max()], **axargs)
 
 
-    _, xscale, xoffset <span class="op">=</span> scale_data(first_x, portion<span class="op">=</span>portion)
-    _, yscale, yoffset <span class="op">=</span> scale_data(yt_mean, portion<span class="op">=</span>portion)
-    draw_axis(ax<span class="op">=</span>ax, scale<span class="op">=</span>xscale, offset<span class="op">=</span>xoffset, level<span class="op">=</span><span class="fl">0.0</span>, label<span class="op">=</span>xlabel, 
-              up<span class="op">=</span><span class="va">True</span>, vertical<span class="op">=</span>vertical)
-    draw_axis(ax<span class="op">=</span>ax, scale<span class="op">=</span>yscale, offset<span class="op">=</span>yoffset, 
-              flip<span class="op">=</span>flip, level<span class="op">=</span>depth, label<span class="op">=</span>ylabel, up<span class="op">=</span><span class="va">False</span>, vertical<span class="op">=</span>vertical)
+    _, xscale, xoffset = scale_data(first_x, portion=portion)
+    _, yscale, yoffset = scale_data(yt_mean, portion=portion)
+    draw_axis(ax=ax, scale=xscale, offset=xoffset, level=0.0, label=xlabel, 
+              up=True, vertical=vertical)
+    draw_axis(ax=ax, scale=yscale, offset=yoffset, 
+              flip=flip, level=depth, label=ylabel, up=False, vertical=vertical)
     
-    <span class="co">#for txt in xticklabels:</span>
-    <span class="co">#    txt.set</span>
-<span class="co"># Bind the new method to the Deep GP object.</span>
-deepgp.DeepGP.visualize_pinball<span class="op">=</span>visualize_pinball</code></pre></div>
-<h3 id="olympic-marathon-pinball-plot">Olympic Marathon Pinball Plot</h3>
-<object class="svgplot" align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg">
-</object>
-<p>The pinball plot shows the flow of any input ball through the deep Gaussian process. In a pinball plot a series of vertical parallel lines would indicate a purely linear function. For the olypmic marathon data we can see the first layer begins to shift from input towards the right. Note it also does so with some uncertainty (indicated by the shaded backgrounds). The second layer has less uncertainty, but bunches the inputs more strongly to the right. This input layer of uncertainty, followed by a layer that pushes inputs to the right is what gives the heteroschedastic noise.</p>
+    #for txt in xticklabels:
+    #    txt.set
+# Bind the new method to the Deep GP object.
+deepgp.DeepGP.visualize_pinball=visualize_pinball
+```
+
+
+
+
+### Olympic Marathon Pinball Plot
+
+<object class="svgplot" align="" data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg"></object>
+
+The pinball plot shows the flow of any input ball through the deep Gaussian process. In a pinball plot a series of vertical parallel lines would indicate a purely linear function. For the olypmic marathon data we can see the first layer begins to shift from input towards the right. Note it also does so with some uncertainty (indicated by the shaded backgrounds). The second layer has less uncertainty, but bunches the inputs more strongly to the right. This input layer of uncertainty, followed by a layer that pushes inputs to the right is what gives the heteroschedastic noise.
+-->
 <h3 id="data-science">Data Science</h3>
 <ul>
 <li>Industrial Revolution 4.0?</li>
@@ -672,9 +855,9 @@ deepgp.DeepGP.visualize_pinball<span class="op">=</span>visualize_pinball</code>
 </blockquote>
 <p>What I term &quot;The Data Crisis&quot; is the modern equivalent of this problem. The quantity of modern data, and the lack of attention paid to data as it is initially &quot;laid down&quot; and the costs of data cleaning are bringing about a crisis in data-driven decision making. Just as with software, the crisis is most correctly addressed by 'scaling' the manner in which we process our data. Duplication of work occurs because the value of data cleaning is not correctly recognised in management decision making processes. Automation of work is increasingly possible through techniques in &quot;artificial intelligence&quot;, but this will also require better management of the data science pipeline so that data about data science (meta-data science) can be correctly assimilated and processed. The Alan Turing institute has a program focussed on this area, <a href="https://www.turing.ac.uk/research_projects/artificial-intelligence-data-analytics/">AI for Data Analytics</a>.</p>
 <ul>
-<li><p>Reusability of Data</p></li>
+<li>Reusability of Data</li>
 <li><p>Deployment of Machine Learning Systems</p></li>
-<li><p><s>Reusability of Data</s></p></li>
+<li><s>Reusability of Data</s></li>
 <li><p>Deployment of Machine Learning Systems</p></li>
 </ul>
 <h2 id="data-readiness-levels">Data Readiness Levels</h2>
@@ -701,14 +884,14 @@ deepgp.DeepGP.visualize_pinball<span class="op">=</span>visualize_pinball</code>
 <p>The processes involved in Grade C and B are often badly taught in courses on data science. Perhaps not due to a lack of interest in the areas, but maybe more due to a lack of access to real world examples where data quality is poor.</p>
 <p>These stages of data science are also ridden with ambiguity. In the long term they could do with more formalization, and automation, but best practice needs to be understood by a wider community before that can happen.</p>
 <ul>
-<li><p>Challenges in deploying AI.</p></li>
+<li>Challenges in deploying AI.</li>
 <li><p>Currently this is in the form of &quot;machine learning systems&quot;</p></li>
 <li>Fog computing: barrier between cloud and device blurring.
 <ul>
 <li>Computing on the Edge</li>
 </ul></li>
 <li><p>Complex feedback between algorithm and implementation</p></li>
-<li><p>Major new challenge for systems designers.</p></li>
+<li>Major new challenge for systems designers.</li>
 <li>Internet of Intelligence but currently:
 <ul>
 <li>AI systems are <em>fragile</em></li>
@@ -978,10 +1161,10 @@ anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Bes
 </iframe>
 <p>And problem solved! We see how the problem is also solved with 250 observations of the high fidelity simulator and 250 of the low fidelity simulator.</p>
 <ul>
-<li><p>Artificial Intelligence and Data Science are fundamentally different.</p></li>
-<li><p>In one you are dealing with data collected by happenstance.</p></li>
-<li><p>In the other you are trying to build systems in the real world, often by actively collecting data.</p></li>
-<li><p>Our approaches to systems design are building powerful machines that will be deployed in evolving environments.</p></li>
+<li>Artificial Intelligence and Data Science are fundamentally different.</li>
+<li>In one you are dealing with data collected by happenstance.</li>
+<li>In the other you are trying to build systems in the real world, often by actively collecting data.</li>
+<li>Our approaches to systems design are building powerful machines that will be deployed in evolving environments.</li>
 </ul>
 <div id="refs" class="references">
 <div id="ref-Ananthanarayanan-cat09">

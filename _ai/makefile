@@ -1,4 +1,4 @@
-BASE=machine-learning-and-amazon
+BASE=faith
 include ../make-talk-flags.mk
-DATE=2018-07-27
+DATE=2018-09-12
 include ../make-talk.mk

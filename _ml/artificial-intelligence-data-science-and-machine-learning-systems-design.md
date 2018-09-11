@@ -25,7 +25,8 @@ transition: None
 
 \include{talk-macros.tex}
 
-\include{_data-science/includes/gartner-hype-cycle-bd-ds-iot-ml.md}
+\include{_data-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
+<!--\include{_data-science/includes/gartner-hype-cycle-bd-ds-iot-ml.md}-->
 \include{_data-science/includes/lies-damned-lies.md}
 \include{_ml/includes/what-is-ml.md}
 \include{_ml/includes/data-science-vs-ai.md}
@@ -42,8 +43,8 @@ transition: None
 * Example: face recognition
 
 \include{_ml/includes/deep-learning-overview.md}
-\include{_gp/includes/gp-intro-very-short.md}
-\include{_deepgp/includes/deep-olympic.md}
+<!--\include{_gp/includes/gp-intro-very-short.md}-->
+<!--\include{_deepgp/includes/deep-olympic.md}-->
 
 \include{_data-science/includes/a-time-for-professionalisation.md}
 \include{_data-science/includes/the-data-crisis.md} 
@@ -51,13 +52,11 @@ transition: None
 \newslide{Rest of this Talk: Two Areas of Focus}
 
 * Reusability of Data
-
 * Deployment of Machine Learning Systems
 
 \newslide{Rest of this Talk: Two Areas of Focus}
 
 * <s>Reusability of Data</s>
-
 * Deployment of Machine Learning Systems
 
 \include{_data-science/includes/data-readiness-levels.md}
@@ -65,20 +64,17 @@ transition: None
 \newslide{Artificial Intelligence}
 
 * Challenges in deploying AI.
-
 * Currently this is in the form of "machine learning systems"
 
 \newslide{Internet of People}
 
 * Fog computing: barrier between cloud and device blurring.
     * Computing on the Edge
-
 * Complex feedback between algorithm and implementation
   
 \newslide{Deploying ML in Real World: Machine Learning Systems Design}
 
 * Major new challenge for systems designers.
-
 * Internet of Intelligence but currently:
 	* AI systems are *fragile*
 
@@ -88,11 +84,8 @@ transition: None
 \newslide{Conclusion}
 
 * Artificial Intelligence and Data Science are fundamentally different.
-
 * In one you are dealing with data collected by happenstance.
-
 * In the other you are trying to build systems in the real world, often by actively collecting data.
-
 * Our approaches to systems design are building powerful machines that
 will be deployed in evolving environments.
 
