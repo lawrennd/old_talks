@@ -1,17 +1,14 @@
 
+\newslide{Effects}
 \slides{
-### Effects
-
 * This phenomenon has already revolutionised biology.
     * Large scale data acquisition and distribution.
     * Transcriptomics, genomics, epigenomics, 'rich phenomics'.
 * Great *promise* for personalized health.
-
-
 }
 
 \notes{
-### Societal Effects
+\subsection{Societal Effects}
 
 We have already seen the effects of this changed dynamic in biology and computational biology. Improved sensorics have led to the new domains of transcriptomics, epigenomics, and 'rich phenomics' as well as considerably augmenting our capabilities in genomics. 
 
@@ -20,9 +17,8 @@ Biologists have had to become data-savvy, they require a rich understanding of t
 There is also great promise for personalized health, but in health the wide data-sharing that has underpinned success in the computational biology community is much harder to cary out.} 
 
 
+\newslide{Societal Effects}
 \slides{
-### Societal Effects
-
 * Automated decision making within the computer based only on the data.
 * A requirement to better understand our own subjective biases to ensure that the human to computer interface formulates the correct conclusions from the data.
 * Particularly important where treatments are being prescribed.
@@ -31,9 +27,8 @@ There is also great promise for personalized health, but in health the wide data
 
 \notes{We can expect to see these phenomena reflected in wider society. Particularly as we make use of more automated decision making based only on data.}
 
+\newslide{Societal Effects}
 \slides{
-### Societal Effects
-
 * Shift in dynamic from the direct pathway between human and data to indirect pathway between human and data via the computer
 * This change of dynamics gives us the modern and emerging domain of data science
 }

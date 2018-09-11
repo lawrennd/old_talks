@@ -1,3 +1,3 @@
-### {.slide: data-transition="none"}
+\newslide{}
 
-<img src="../slides/diagrams/Lotus_49-2.JPG" align="center" width="70%" style="background:none; border:none; box-shadow:none;">
+\includeimg{../slides/diagrams/Lotus_49-2.JPG}{70%}{}{center}
