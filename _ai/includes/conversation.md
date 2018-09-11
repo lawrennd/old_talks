@@ -14,7 +14,7 @@ Fritz Heider referred to the important point of a conversation as being that the
 
 \newslide{Conversation}
 \slides{
-\startslides{anne-bob-coversation{0}{7}
+\startslides{anne-bob-conversation}{0}{7}
 \includesvg{../slides/diagrams/anne-bob-conversation000.svg}{}{anne-bob-conversation}
 \includesvg{../slides/diagrams/anne-bob-conversation001.svg}{}{anne-bob-conversation}
 \includesvg{../slides/diagrams/anne-bob-conversation002.svg}{}{anne-bob-conversation}
