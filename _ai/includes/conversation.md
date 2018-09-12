@@ -13,22 +13,23 @@ Fritz Heider referred to the important point of a conversation as being that the
 
 
 \newslide{Conversation}
-\define{\divoptions}{width:80%; maxwidth:100vw; max-height:100vh}
-\define{\svgstyle}{width:80%;}
-\startslides{anne-bob-conversation}{0}{7}
+\define{\stubname}{anne-bob-conversation}
 \slides{
-\div{\includesvg{../slides/diagrams/anne-bob-conversation000.svg}{}{}{\svgstyle}}{anne-bob-conversation}{\divoptions}
-\div{\includesvg{../slides/diagrams/anne-bob-conversation001.svg}{}{}{\svgstyle}}{anne-bob-conversation}{\divoptions}
-\div{\includesvg{../slides/diagrams/anne-bob-conversation002.svg}{}{}{\svgstyle}}{anne-bob-conversation}{\divoptions}
-\div{\includesvg{../slides/diagrams/anne-bob-conversation003.svg}{}{}{\svgstyle}}{anne-bob-conversation}{\divoptions}
-\div{\includesvg{../slides/diagrams/anne-bob-conversation004.svg}{}{}{\svgstyle}}{anne-bob-conversation}{\divoptions}
-\div{\includesvg{../slides/diagrams/anne-bob-conversation005.svg}{}{}{\svgstyle}}{anne-bob-conversation}{\divoptions}
-\div{\includesvg{../slides/diagrams/anne-bob-conversation006.svg}{}{}{\svgstyle}}{anne-bob-conversation}{\divoptions}
-\div{\includesvg{../slides/diagrams/anne-bob-conversation007.svg}{}{}{\svgstyle}}{anne-bob-conversation}{\divoptions}
+\define{\divoptions}{maxwidth:100vw; max-height:100vh}
+\define{\svgstyle}{width:80%;}
+\startslides{\stubname}{0}{7}
+\div{\includesvg{../slides/diagrams/\concat{\stubname}{000.svg}}{}{}{\svgstyle}}{\stubname}{\divoptions}
+\div{\includesvg{../slides/diagrams/\concat{\stubname}{001.svg}}{}{}{\svgstyle}}{\stubname}{\divoptions}
+\div{\includesvg{../slides/diagrams/\concat{\stubname}{002.svg}}{}{}{\svgstyle}}{\stubname}{\divoptions}
+\div{\includesvg{../slides/diagrams/\concat{\stubname}{003.svg}}{}{}{\svgstyle}}{\stubname}{\divoptions}
+\div{\includesvg{../slides/diagrams/\concat{\stubname}{004.svg}}{}{}{\svgstyle}}{\stubname}{\divoptions}
+\div{\includesvg{../slides/diagrams/\concat{\stubname}{005.svg}}{}{}{\svgstyle}}{\stubname}{\divoptions}
+\div{\includesvg{../slides/diagrams/\concat{\stubname}{006.svg}}{}{}{\svgstyle}}{\stubname}{\divoptions}
+\div{\includesvg{../slides/diagrams/\concat{\stubname}{007.svg}}{}{}{\svgstyle}}{\stubname}{\divoptions}
 }
 
-\notesfigure{\includesvg{../slides/diagrams/anne-bob-conversation006.svg}}
+\notesfigure{\includesvg{../slides/diagrams/\concat{\stubname}{006.svg}}}
 \notes{\caption{Conversation relies on internal models of other individuals.}}
-\notesfigure{\includesvg{../slides/diagrams/anne-bob-conversation007.svg}}
+\notesfigure{\includesvg{../slides/diagrams/\concat{\stubname}{007.svg}}}
 \notes{\caption{Misunderstanding of context and who we are talking to leads to arguments.}}
 \speakernotes{This can be disturbing to humans because we are used to a low bandwidth communication rate. }
