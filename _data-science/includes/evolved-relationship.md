@@ -1,7 +1,6 @@
 \section{Evolved Relationship with Information}
 
-\notes{
-The high bandwidth of computers has resulted in a close relationship between the computer and data. Large amounts of information can flow between the two. The degree to which the computer is mediating our relationship with data means that we should consider it an intermediary. 
+\notes{The high bandwidth of computers has resulted in a close relationship between the computer and data. Large amounts of information can flow between the two. The degree to which the computer is mediating our relationship with data means that we should consider it an intermediary. 
 
 Originaly our low bandwith relationship with data was affected by two characteristics. Firstly, our tendency to over-interpret driven by our need to extract as much knowledge from our low bandwidth information channel as possible. Secondly, by our improved understanding of the domain of *mathematical* statistics and how our cognitive biases can mislead us. 
 
@@ -18,13 +17,15 @@ For further thoughts see [this Guardian article](https://www.theguardian.com/med
 
 
 \newslide{Evolved Relationship}
-
+\define{\divoptions}{maxwidth:100vw; max-height:100vh}
+\define{\svgstyle}{height:60%}
+\define{\stubname}{information-flow}
 \slides{
-\startslides{information-flow}{1}{3}
-\includesvg{../slides/diagrams/data-science/information-flow001.svg}{}{information-flow}
-\includesvg{../slides/diagrams/data-science/information-flow002.svg}{}{information-flow}
-\includesvg{../slides/diagrams/data-science/information-flow003.svg}{}{information-flow}
+\startslides{\stubname}{1}{3}
+\div{\includesvg{../slides/diagrams/data-science/\concat{\stubname}{001.svg}}{}{}{\svgstyle}}{\stubname}{\divoptions}
+\div{\includesvg{../slides/diagrams/data-science/\concat{\stubname}{002.svg}}{}{}{\svgstyle}}{\stubname}{\divoptions}
+\div{\includesvg{../slides/diagrams/data-science/\concat{\stubname}{003.svg}}{}{}{\svgstyle}}{\stubname}{\divoptions}
 }
 
-\notesfigure{\includesvg{../slides/diagrams/data-science/information-flow003.svg}}
+\notesfigure{\includesvg{../slides/diagrams/data-science/\concat{\stubname}{003.svg}}}
 \notes{\caption{New direction of information flow, information is reaching us mediated by the computer}}
