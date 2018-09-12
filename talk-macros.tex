@@ -18,8 +18,8 @@ YouTubeVideo('\id')
 \define{\includegif{filename}{width}{class}}{<img class="\class" src="\filename" width="\width" style="background:none; border:none; box-shadow:none;">}
 \define{\includeimg{filename}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" height="auto" align="\align" style="background:none; border:none; box-shadow:none;">}
 \define{\includeimgclip{filename}{clip}{width}{class}{align}}{<img class="\class" clip="\clip" src="\filename" width="\width" align="\align" style="background:none; border:none; box-shadow:none;">}
-\define{\includesvg{filename}{align}}{<img src="\filename" align="\align">}
-\define{\includesvgclass{filename}{class}{align}}{<img src="\filename" class="\class" align="\align">}
+\define{\includesvg{filename}{align}{class}{style}}{<img src="\filename" class="\class" align="\align" style="\style">}
+\define{\includesvgclass{filename}{class}{align}}{<img src="\filename" class="\class" align="\align" >}
 \define{\includehtml{filename}{width}{height}}{<iframe src="\filename" width="\width" height="\height" allowtransparency="true" frameborder="0">
 </iframe>}
 \define{\speakernotes{text}}{}
@@ -169,7 +169,7 @@ YouTubeVideo('\id')
 \define{\includeimg{filename}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" height="auto" align="\align" style="background:none; border:none; box-shadow:none;">}
 \define{\includeimgclip{filename}{clip}{width}{class}{align}}{<img class="\class" clip="\clip" src="\filename" width="\width" align="\align" style="background:none; border:none; box-shadow:none;">}
 \define{\includegif{filename}{width}{class}}{<img class="\class" src="\filename" width="\width" style="background:none; border:none; box-shadow:none;">}
-\define{\includesvg{filename}{align}}{<object class="svgplot" align="\align" data="\filename"></object>}
+\define{\includesvg{filename}{align}{class}{style}}{<object class="svgplot \class" align="\align" data="\filename" style="\style"></object>}
 \define{\includesvgclass{filename}{class}{align}}{<object class="\class" align="\align" data="\filename"></object>}
 \define{\includehtml{filename}{width}{height}}{<iframe src="\filename" width="\width" height="\height" allowtransparency="true" frameborder="0">
 </iframe>}
@@ -271,7 +271,7 @@ from \filename import \object
 \define{\includeimg{filename}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" height="auto" align="\align" style="background:none; border:none; box-shadow:none;">}
 \define{\includeimgclip{filename}{clip}{width}{class}{align}}{<img class="\class" clip="\clip" src="\filename" width="\width" height="auto" align="\align" style="background:none; border:none; box-shadow:none;">}
 \define{\includegif{filename}{width}{class}}{<img class="\class" src="\filename" width="\width" style="background:none; border:none; box-shadow:none;">}
-\define{\includesvg{filename}{align}{class}}{<object class="svgplot \class" align="\align" data="\filename"></object>}
+\define{\includesvg{filename}{align}{class}{style}}{<object class="svgplot \class" align="\align" data="\filename" style="\style"></object>}
 \define{\includesvgclass{filename}{class}{align}}{<object class="\class" align="\align" data="\filename"></object>}
 \define{\includehtml{filename}{width}{height}}{<iframe src="\filename" width="\width" height="\height" allowtransparency="true" frameborder="0">
 </iframe>}
@@ -302,9 +302,10 @@ from \filename import \object
 \define{\startslides{group}{start}{finish}}{<script>
 showDivs(\start, '\group');
 </script>
+ <input id="range-\group" type="range" min="\start" max="\finish" value="\start" onchange="setDivs('\group')" oninput="setDivs('\group')">
 <button onclick="plusDivs(-1, '\group')">❮</button>
 <button onclick="plusDivs(1, '\group')">❯</button>
-<input id="range-\group" type="range" min="\start" max="\finish" value="\start" onchange="setDivs('\group')" oninput="setDivs('\group')">}
+}
 \define{\fragment{text}{type}}{<span class="fragment \type">\text</span>}
 \define{\fragmentindex{text}{type}{index}}{<span class="fragment \type" data-fragment-index="\index">\text</span>}
 \define{\code{block}}{}
@@ -339,3 +340,4 @@ showDivs(\start, '\group');
 
 \define{\includecovariance{shortname}}{<center>$$\formula$$</center><br><table><tr><td width="45%">\includesvgclass{../slides/diagrams/kern/\concat{\shortname}{_covariance.svg}}<td width="45%">\includeimg{../slides/diagrams/kern/\concat{\shortname}{_covariance.gif}}{100%}{negate}{center}</td></tr></table>}
 
+\define{\div{contents}{class}{style}}{<div class="\class" style="\style">\contents</div>}

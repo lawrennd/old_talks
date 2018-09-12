@@ -13,16 +13,18 @@ Fritz Heider referred to the important point of a conversation as being that the
 
 
 \newslide{Conversation}
-\slides{
+\define{\divoptions}{width:80%; maxwidth:100vw; max-height:100vh}
+\define{\svgstyle}{width:80%;}
 \startslides{anne-bob-conversation}{0}{7}
-\includesvg{../slides/diagrams/anne-bob-conversation000.svg}{}{anne-bob-conversation}
-\includesvg{../slides/diagrams/anne-bob-conversation001.svg}{}{anne-bob-conversation}
-\includesvg{../slides/diagrams/anne-bob-conversation002.svg}{}{anne-bob-conversation}
-\includesvg{../slides/diagrams/anne-bob-conversation003.svg}{}{anne-bob-conversation}
-\includesvg{../slides/diagrams/anne-bob-conversation004.svg}{}{anne-bob-conversation}
-\includesvg{../slides/diagrams/anne-bob-conversation005.svg}{}{anne-bob-conversation}
-\includesvg{../slides/diagrams/anne-bob-conversation006.svg}{}{anne-bob-conversation}
-\includesvg{../slides/diagrams/anne-bob-conversation007.svg}{}{anne-bob-conversation}
+\slides{
+\div{\includesvg{../slides/diagrams/anne-bob-conversation000.svg}{}{}{\svgstyle}}{anne-bob-conversation}{\divoptions}
+\div{\includesvg{../slides/diagrams/anne-bob-conversation001.svg}{}{}{\svgstyle}}{anne-bob-conversation}{\divoptions}
+\div{\includesvg{../slides/diagrams/anne-bob-conversation002.svg}{}{}{\svgstyle}}{anne-bob-conversation}{\divoptions}
+\div{\includesvg{../slides/diagrams/anne-bob-conversation003.svg}{}{}{\svgstyle}}{anne-bob-conversation}{\divoptions}
+\div{\includesvg{../slides/diagrams/anne-bob-conversation004.svg}{}{}{\svgstyle}}{anne-bob-conversation}{\divoptions}
+\div{\includesvg{../slides/diagrams/anne-bob-conversation005.svg}{}{}{\svgstyle}}{anne-bob-conversation}{\divoptions}
+\div{\includesvg{../slides/diagrams/anne-bob-conversation006.svg}{}{}{\svgstyle}}{anne-bob-conversation}{\divoptions}
+\div{\includesvg{../slides/diagrams/anne-bob-conversation007.svg}{}{}{\svgstyle}}{anne-bob-conversation}{\divoptions}
 }
 
 \notesfigure{\includesvg{../slides/diagrams/anne-bob-conversation006.svg}}

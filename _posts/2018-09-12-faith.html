@@ -28,45 +28,13 @@ categories:
 <p><img class="negate" src="../slides/diagrams/Gartner_Hype_Cycle.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none;"></p>
 <p>The <a href="https://en.wikipedia.org/wiki/Hype_cycle">Gartner Hype Cycle</a> tries to assess where an idea is in terms of maturity and adoption. It splits the evolution of technology into a technological trigger, a peak of expectations followed by a trough of disillusionment and a final ascension into a useful technology. It looks rather like a classical control response to a final set point.</p>
 
-<object class="svgplot" align data="../slides/diagrams/data-science/ai-bd-dm-dl-ml-google-trends004.svg">
+<object class="svgplot " align data="../slides/diagrams/data-science/ai-bd-dm-dl-ml-google-trends004.svg" style>
 </object>
 <center>
 <em>Google trends for different technological terms on the hype cycle. </em>
 </center>
 <p>Google trends gives us insight into how far along various technological terms are on the hype cycle.</p>
-<!--## The Gartner Hype Cycle
-
-
-
-<img class="negate" src="../slides/diagrams/Gartner_Hype_Cycle.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
-
-
-The [Gartner Hype Cycle](https://en.wikipedia.org/wiki/Hype_cycle) tries to assess where an idea is in terms of maturity and adoption. It splits the evolution of technology into a technological trigger, a peak of expectations followed by a trough of disillusionment and a final ascension into a useful technology. It looks rather like a classical control response to a final set point.
-
-
-
-
-
-
-
-
-
-
-
-\setupdisplaycode{import pods
-from ipywidgets import IntSlider}
-
-
-
-
-
-<object class="svgplot" align="" data="../slides/diagrams/data-science/bd-ds-iot-ml-google-trends004.svg"></object>
-<center>*Google trends for different technological terms on the hype cycle. *</center>
-
-Google trends gives us insight into how far along various technological terms are on the hype cycle.
-
-
--->
+<!--include{_data-science/includes/gartner-hype-cycle-bd-ds-iot-ml.md}-->
 <h3 id="lies-and-damned-lies">Lies and Damned Lies</h3>
 <blockquote>
 <p>There are three types of lies: lies, damned lies and statistics</p>
@@ -74,7 +42,10 @@ Google trends gives us insight into how far along various technological terms ar
 </blockquote>
 <p>The quote lies, damned lies and statistics was credited to Benjamin Disraeli by Mark Twain in his autobiography. It characterizes the idea that statistic can be made to prove anything. But Disraeli died in 1881 and Mark Twain died in 1910. The important breakthrough in overcoming our tendency to overinterpet data came with the formalization of the field through the development of <em>mathematical statistics</em>.</p>
 <h3 id="mathematical-statistics"><em>Mathematical</em> Statistics</h3>
-<p><img class="" src="../slides/diagrams/Portrait_of_Karl_Pearson.jpg" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none;"></p>
+<img class="" src="../slides/diagrams/Portrait_of_Karl_Pearson.jpg" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+<center>
+<em>'Founded' by Karl Pearson (1857-1936) </em>
+</center>
 <p><a href="https://en.wikipedia.org/wiki/Karl_Pearson">Karl Pearson</a> (1857-1936), <a href="https://en.wikipedia.org/wiki/Ronald_Fisher">Ronald Fisher</a> (1890-1962) and others considered the question of what conclusions can truly be drawn from data. Their mathematical studies act as a restraint on our tendency to over-interpret and see patterns where there are none. They introduced concepts such as randomized control trials that form a mainstay of the our decision making today, from government, to clinicians to large scale A/B testing that determines the nature of the web interfaces we interact with on social media and shopping.</p>
 <p>Today the statement &quot;There are three types of lies: lies, damned lies and 'big data'&quot; may be more apt. We are revisiting many of the mistakes made in interpreting data from the 19th century. Big data is laid down by happenstance, rather than actively collected with a particular question in mind. That means it needs to be treated with care when conclusions are being drawn. For data science to succede it needs the same form of rigour that Pearson and Fisher brought to statistics, a &quot;mathematical data science&quot; is needed.</p>
 <h2 id="what-is-machine-learning">What is Machine Learning?</h2>
@@ -160,7 +131,7 @@ communicate
 <p>There are great benefits to be had from the huge amount of information we can unlock from this evolved relationship between us and data. In biology, large scale data sharing has been driven by a revolution in genomic, transcriptomic and epigenomic measurement. The improved inferences that that can be drawn through summarizing data by computer have fundamentally changed the nature of biological science, now this phenomenon is also infuencing us in our daily lives as data measured by <em>happenstance</em> is increasingly used to characterize us.</p>
 <p>Better mediation of this flow actually requires a better understanding of human-computer interaction. This in turn involves understanding our own intelligence better, what its cognitive biases are and how these might mislead us.</p>
 <p>For further thoughts see <a href="https://www.theguardian.com/media-network/2015/jul/23/data-driven-economy-marketing">this Guardian article</a> from 2015 on marketing in the internet era and <a href="http://inverseprobability.com/2015/12/04/what-kind-of-ai">this blog post</a> on System Zero.</p>
-<object class="svgplot" align data="../slides/diagrams/data-science/information-flow003.svg">
+<object class="svgplot " align data="../slides/diagrams/data-science/information-flow003.svg" style>
 </object>
 <center>
 <em>New direction of information flow, information is reaching us mediated by the computer </em>
@@ -175,12 +146,13 @@ communicate
 
 <p>For human conversation to work, we require an internal model of who we are speaking to. We model each other, and combine our sense of who they are, who they think we are, and what has been said. This is our approach to dealing with the limited bandwidth connection we have. Empathy and understanding of intent. Mental dispositional concepts are used to augment our limited communication bandwidth.</p>
 <p>Fritz Heider referred to the important point of a conversation as being that they are happenings that are &quot;<em>psychologically represented</em> in each of the participants&quot; (his emphasis) <span class="citation">(Heider, 1958)</span></p>
-<object class="svgplot" align data="../slides/diagrams/anne-bob-conversation006.svg">
+<p>\startslides{anne-bob-conversation}{0}{7}</p>
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation006.svg" style>
 </object>
 <center>
 <em>Conversation relies on internal models of other individuals. </em>
 </center>
-<object class="svgplot" align data="../slides/diagrams/anne-bob-conversation007.svg">
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation007.svg" style>
 </object>
 <center>
 <em>Misunderstanding of context and who we are talking to leads to arguments. </em>
@@ -248,7 +220,7 @@ communicate
 <table>
 <tr>
 <td width="50%">
-<img class="" src="../slides/diagrams/ai/1984-Big-Brother.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+<img class="" src="../slides/diagrams/ai/Cropped-big-brother-is-watching-1984.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
 </td>
 <td width="50%">
 <img class="" src="../slides/diagrams/ai/548px-Plakat_Mutti_is_Watching_You.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
