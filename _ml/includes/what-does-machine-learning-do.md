@@ -15,7 +15,8 @@
 \newslide{Codify Through Mathematical Functions}
 \slides{
 * How does machine learning work?
-* Jumper (jersey/sweater) purchase with logistic regression}
+* Jumper (jersey/sweater) purchase with logistic regression
+}
 $$ \text{odds} = \frac{p(\text{bought})}{p(\text{not bought})} $$
 $$ \log \text{odds}  = \beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}$$
 
@@ -28,7 +29,8 @@ This is called a generalized linear model, we can also think of it as estimating
 \newslide{Codify Through Mathematical Functions}
 \slides{
 * How does machine learning work?
-* Jumper (jersey/sweater) purchase with logistic regression}
+* Jumper (jersey/sweater) purchase with logistic regression
+}
 $$ p(\text{bought}) =  \sigmoid{\beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}}$$
 
 \notes{In the case where we have *features* to help us predict, we sometimes denote such features as a vector, $\inputVector$, and we then use an inner product between the features and the parameters, $\boldsymbol{\beta}^\top \inputVector = \beta_1 \inputScalar_1 + \beta_2 \inputScalar_2 + \beta_3 \inputScalar_3 ...$, to represent the argument of the sigmoid.}
@@ -36,7 +38,8 @@ $$ p(\text{bought}) =  \sigmoid{\beta_0 + \beta_1 \text{age} + \beta_2 \text{lat
 \newslide{Codify Through Mathematical Functions}
 \slides{
 * How does machine learning work?
-* Jumper (jersey/sweater) purchase with logistic regression}
+* Jumper (jersey/sweater) purchase with logistic regression
+}
 $$ p(\text{bought}) =  \sigmoid{\boldsymbol{\beta}^\top \inputVector}$$
 
 \notes{More generally, we aim to predict some aspect of our data, $\dataScalar$, by relating it through a mathematical function, $\mappingFunction(\cdot)$, to the parameters, $\boldsymbol{\beta}$ and the data, $\inputVector$.}
@@ -44,10 +47,11 @@ $$ p(\text{bought}) =  \sigmoid{\boldsymbol{\beta}^\top \inputVector}$$
 \newslide{Codify Through Mathematical Functions}
 \slides{
 * How does machine learning work?
-* Jumper (jersey/sweater) purchase with logistic regression}
+* Jumper (jersey/sweater) purchase with logistic regression
+}
 $$ \dataScalar =  \mappingFunction\left(\inputVector, \boldsymbol{\beta}\right)$$
-\slides{
-. . .
+\slides{. . .
+
 }
 We call $\mappingFunction(\cdot)$ the *prediction function*
 
@@ -55,7 +59,8 @@ We call $\mappingFunction(\cdot)$ the *prediction function*
 
 \newslide{Fit to Data}
 \slides{
-* Use an objective function}
+* Use an objective function
+}
 $$\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix)$$
 \slides{
 . . .
