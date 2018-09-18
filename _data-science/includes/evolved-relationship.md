@@ -18,7 +18,7 @@ For further thoughts see [this Guardian article](https://www.theguardian.com/med
 
 \newslide{Evolved Relationship}
 \define{\divoptions}{maxwidth:100vw; max-height:100vh}
-\define{\svgstyle}{height:60%}
+\define{\svgstyle}{height:50%}
 \define{\stubname}{information-flow}
 \slides{
 \startslides{\stubname}{1}{3}
