@@ -1,4 +1,4 @@
-BASE=artificial-intelligence-data-science-and-machine-learning-systems-design
+BASE=data-science-and-digital-systems
 include ../make-talk-flags.mk
 DATE=2018-11-30
 include ../make-talk.mk

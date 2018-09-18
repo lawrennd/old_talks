@@ -1,17 +1,16 @@
 \section{Machine Learning System Design}
 
+\newslide{Fragility of AI Systems}
 \slides{
-### Fragility of AI Systems
-
-* They are componentwise built from ML Capabilities.
-* Each capability is independently constructed and verified.
-    * Pedestrian detection
-    * Road line detection
-* Important for verification purposes.
+> * They are componentwise built from ML capabilities.
+  * Each capability is independently constructed and verified.
+      * Pedestrian detection
+      * Road line detection
+  * Componentwise deconstruciton is Important for verification purposes.
 }
-\slides{
-### Pigeonholing
 
+\newslide{Pigeonholing}
+\slides{
 \includeimg{../slides/diagrams/TooManyPigeons.jpg}{60%}{}{center}
 }
 
@@ -21,7 +20,7 @@ This allows for verification of car performance, as long as we can verify the in
 
 Our intelligent systems are composed by "pigeonholing" each indvidual task, then substituting with a machine learning model.}
 
-### Rapid Reimplementation
+\subsection{Rapid Reimplementation}
 
 \slides{
 * Whole systems are being deployed.
@@ -37,22 +36,21 @@ The difference with modern automated decision making systems is our intention is
 
 We become exposed to mischief and adversaries. Adversaries intentially may wish to take over the artificial intelligence system, and mischief is the constant practice of many in our society. Simply watching a 10 year old interact with a voice agent such as Alexa or Siri shows that they are delighted when the can make the the "intelligent" agent seem foolish. }
 
-\slides{### Early AI
-}
+\newslide{Early AI}
+
 \includeimg{../slides/diagrams/2017-10-12 16.47.34.jpg}{40%}{rotateimg90}{center}
-\aligncenter{*Watt's Governor as held by "Science" on Holborn Viaduct*}
-\slides{
-### Machine Learning Systems Design
-}
+\caption{Watt's Governor as held by "Science" on Holborn Viaduct}
+
+\newslide{Machine Learning Systems Design}
+
 \includeimg{../slides/diagrams/SteamEngine_Boulton&Watt_1784_neg.png}{50%}{center}
-\aligncenter{*Watt's Steam Engine which made Steam Power Efficient and Practical*}
+\caption{Watt's Steam Engine which made Steam Power Efficient and Practical}
 
+\newslide{Adversaries}
 \slides{
-### Adversaries
-
 * Stuxnet
-* Mischevious-Adversarial}
-
+* Mischevious-Adversarial
+}
 
 \notes{One of the first automated decision making systems was Watt's governor, as held by "Science" on Holborns viaduct. Watt's governor was a key component in his steam engine. It senses increases in speed in the engine and closed the steam valve to prevent the engine overspeeding and destroying itself. Until the invention of this device, it was a human job to do this. 
 
@@ -80,18 +78,17 @@ The challenge is particularly acute because of the *scale* at which we can deplo
 
 See also [this blog on the differences between natural and artificial intelligence](http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence) and this paper [on the need for diversity in decision making](http://inverseprobability.com/2017/11/15/decision-making).}
 
+\newslide{Turnaround And Update}
 \slides{
-### Turnaround And Update
-
 * There is a massive need for turn around and update
 * A redeploy of the entire system.
     * This involves changing the way we design and deploy.
 * Interface between security engineering and machine learning.
+}
 
-### Peppercorns
-
+\newslide{Peppercorns}
+\slides{
 * A new name for system failures which aren't bugs.
-* Difference between finding a fly in your soup vs a peppercorn in
-  your soup. 
+* Difference between finding a fly in your soup vs a peppercorn in your soup. 
 }
 
