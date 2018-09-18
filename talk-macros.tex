@@ -73,6 +73,7 @@ YouTubeVideo('\id')
 \define{\matlabcode{block}}{}
 
 \define{\notes{text}}{}
+\define{\recommendation{text}}{}
 \define{\writeassignment{text}{question}{marks}}{}
 \define{\codeassignment{text}{question}{marks}}{}
 \define{\exercise{text}{answerstub}{codestub}}{### Exercise
@@ -81,6 +82,11 @@ YouTubeVideo('\id')
 
 }
 \define{\slides{text}}{\text}
+\define{\slidesincremental{text}}{::: incremental
+
+\text
+
+:::}
 \define{\newslide{text}}{### \text
 }
 
@@ -115,6 +121,7 @@ YouTubeVideo('\id')
 ```}
 
 \define{\notes{text}}{\text}
+\define{\recommendation{text}}{**Recommendation**: \text}
 \define{\writeassignment{text}{question}{marks}}{### Question \question
 
 \text
@@ -154,6 +161,7 @@ YouTubeVideo('\id')
 
 
 \define{\slides{text}}{}
+\define{\slidesincremental{text}}{}
 \define{\newslide{text}}{}
 
 \endif 
@@ -166,7 +174,7 @@ YouTubeVideo('\id')
 <source src="\filename" type="video/mp4"/>
 </video>}
 \define{\slidenotes{slidetext}{notetext}}{\notetext}
-\define{\includeimg{filename}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" height="auto" align="\align" style="background:none; border:none; box-shadow:none;">}
+\define{\includeimg{filename}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" height="auto" align="\align" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">}
 \define{\includeimgclip{filename}{clip}{width}{class}{align}}{<img class="\class" clip="\clip" src="\filename" width="\width" align="\align" style="background:none; border:none; box-shadow:none;">}
 \define{\includegif{filename}{width}{class}}{<img class="\class" src="\filename" width="\width" style="background:none; border:none; box-shadow:none;">}
 \define{\includesvg{filename}{align}{class}{style}}{<object class="svgplot \class" align="\align" data="\filename" style="\style"></object>}
@@ -174,11 +182,13 @@ YouTubeVideo('\id')
 \define{\includehtml{filename}{width}{height}}{<iframe src="\filename" width="\width" height="\height" allowtransparency="true" frameborder="0">
 </iframe>}
 \define{\slides{text}}{}
+\define{\slidesincremental{text}}{}
 \define{\newslide{text}}{}
 \define{\fragment{text}{type}}{\text}
 \define{\fragmentindex{text}{type}{index}}{\text}
 \define{\speakernotes{text}}{}
 \define{\notes{text}}{\text}
+\define{\recommendation{text}}{**Recommendation**: \text}
 \define{\writeassignment{text}{question}{marks}{answerstub}}{### Question \question
 
 \text
@@ -291,11 +301,17 @@ from \filename import \object
 \text
 </aside>}
 \define{\notes{text}}{}
+\define{\recommendation{text}}{}
 \define{\writeassignment{text}{question}{marks}}{}
 \define{\codeassignment{text}{question}{marks}}{}
 \define{\section{text}}{<!-- SECTION \text -->}
 \define{\subsection{text}}{### \text}
 \define{\slides{text}}{\text}
+\define{\slidesincremental{text}}{::: incremental
+
+\text
+
+:::}
 \define{\newslide{text}}{### \text
 }
 

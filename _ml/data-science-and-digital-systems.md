@@ -1,5 +1,5 @@
 ---
-title: "Artificial Intelligence, Data Science and Machine Learning Systems Design"
+title: "Data Science and Digital Systems"
 abstract: >
   Machine learning solutions, in particular those based on deep learning methods, form an underpinning of the 
   current revolution in “artificial intelligence” that has dominated popular press headlines and is having a 

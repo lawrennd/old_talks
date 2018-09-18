@@ -1,5 +1,5 @@
 ---
-title: "Artificial Intelligence, Data Science and Machine Learning Systems Design"
+title: "Data Science and Digital Systems"
 venue: "Fifth International Workshop on Sustainable Road Freight, Cambridge"
 abstract: "<p>Machine learning solutions, in particular those based on deep learning methods, form an underpinning of the current revolution in “artificial intelligence” that has dominated popular press headlines and is having a significant influence on the wider tech agenda. In this talk I will give an overview of where we are now with machine learning solutions, and what challenges we face both in the near and far future. These include practical application of existing algorithms in the face of the need to explain decision making, mechanisms for improving the quality and availability of data, dealing with large unstructured datasets.</p>"
 author:
@@ -12,7 +12,7 @@ author:
   orchid: 
 date: 2018-11-30
 published: 2018-11-30
-reveal: 2018-11-30-artificial-intelligence-data-science-and-machine-learning-systems-design.slides.html
+reveal: 2018-11-30-data-science-and-digital-systems.slides.html
 layout: talk
 categories:
 - notes
@@ -25,10 +25,10 @@ categories:
 
 <p><!--% not ipynb--></p>
 <h2 id="the-gartner-hype-cycle">The Gartner Hype Cycle</h2>
-<p><img class="negate" src="../slides/diagrams/Gartner_Hype_Cycle.png" width="70%" align="center" style="background:none; border:none; box-shadow:none;"></p>
+<p><img class="negate" src="../slides/diagrams/Gartner_Hype_Cycle.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto"></p>
 <p>The <a href="https://en.wikipedia.org/wiki/Hype_cycle">Gartner Hype Cycle</a> tries to assess where an idea is in terms of maturity and adoption. It splits the evolution of technology into a technological trigger, a peak of expectations followed by a trough of disillusionment and a final ascension into a useful technology. It looks rather like a classical control response to a final set point.</p>
 
-<object class="svgplot" align data="../slides/diagrams/data-science/ai-bd-dm-dl-ml-google-trends004.svg">
+<object class="svgplot " align data="../slides/diagrams/data-science/ai-bd-dm-dl-ml-google-trends004.svg" style>
 </object>
 <center>
 <em>Google trends for different technological terms on the hype cycle. </em>
@@ -38,7 +38,7 @@ categories:
 
 
 
-<img class="negate" src="../slides/diagrams/Gartner_Hype_Cycle.png" width="70%" align="center" style="background:none; border:none; box-shadow:none;">
+<img class="negate" src="../slides/diagrams/Gartner_Hype_Cycle.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 
 
 The [Gartner Hype Cycle](https://en.wikipedia.org/wiki/Hype_cycle) tries to assess where an idea is in terms of maturity and adoption. It splits the evolution of technology into a technological trigger, a peak of expectations followed by a trough of disillusionment and a final ascension into a useful technology. It looks rather like a classical control response to a final set point.
@@ -60,7 +60,7 @@ from ipywidgets import IntSlider}
 
 
 
-<object class="svgplot" align="" data="../slides/diagrams/data-science/bd-ds-iot-ml-google-trends004.svg"></object>
+<object class="svgplot " align="" data="../slides/diagrams/data-science/bd-ds-iot-ml-google-trends004.svg" style=""></object>
 <center>*Google trends for different technological terms on the hype cycle. *</center>
 
 Google trends gives us insight into how far along various technological terms are on the hype cycle.
@@ -74,12 +74,15 @@ Google trends gives us insight into how far along various technological terms ar
 </blockquote>
 <p>The quote lies, damned lies and statistics was credited to Benjamin Disraeli by Mark Twain in his autobiography. It characterizes the idea that statistic can be made to prove anything. But Disraeli died in 1881 and Mark Twain died in 1910. The important breakthrough in overcoming our tendency to overinterpet data came with the formalization of the field through the development of <em>mathematical statistics</em>.</p>
 <h3 id="mathematical-statistics"><em>Mathematical</em> Statistics</h3>
-<p><img class="" src="../slides/diagrams/Portrait_of_Karl_Pearson.jpg" width="30%" align="center" style="background:none; border:none; box-shadow:none;"></p>
+<img class="" src="../slides/diagrams/Portrait_of_Karl_Pearson.jpg" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+<center>
+<em>'Founded' by Karl Pearson (1857-1936) </em>
+</center>
 <p><a href="https://en.wikipedia.org/wiki/Karl_Pearson">Karl Pearson</a> (1857-1936), <a href="https://en.wikipedia.org/wiki/Ronald_Fisher">Ronald Fisher</a> (1890-1962) and others considered the question of what conclusions can truly be drawn from data. Their mathematical studies act as a restraint on our tendency to over-interpret and see patterns where there are none. They introduced concepts such as randomized control trials that form a mainstay of the our decision making today, from government, to clinicians to large scale A/B testing that determines the nature of the web interfaces we interact with on social media and shopping.</p>
 <p>Today the statement &quot;There are three types of lies: lies, damned lies and 'big data'&quot; may be more apt. We are revisiting many of the mistakes made in interpreting data from the 19th century. Big data is laid down by happenstance, rather than actively collected with a particular question in mind. That means it needs to be treated with care when conclusions are being drawn. For data science to succede it needs the same form of rigour that Pearson and Fisher brought to statistics, a &quot;mathematical data science&quot; is needed.</p>
 <h2 id="what-is-machine-learning">What is Machine Learning?</h2>
 <p>What is machine learning? At its most basic level machine learning is a combination of</p>
-<p><span class="math display">\[ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span></p>
+<p><span class="math display">\[\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span></p>
 <p>where <em>data</em> is our observations. They can be actively or passively acquired (meta-data). The <em>model</em> contains our assumptions, based on previous experience. That experience can be other data, it can come from transfer learning, or it can merely be our beliefs about the regularities of the universe. In humans our models include our inductive biases. The <em>prediction</em> is an action to be taken or a categorization or a quality score. The reason that machine learning has become a mainstay of artificial intelligence is the importance of predictions in artificial intelligence. The data and the model are combined through computation.</p>
 <p>In practice we normally perform machine learning using two functions. To combine data with a model we typically make use of:</p>
 <p><strong>a prediction function</strong> a function which is used to make the predictions. It includes our beliefs about the regularities of the universe, our assumptions about how the world works, e.g. smoothness, spatial similarities, temporal similarities.</p>
@@ -99,10 +102,10 @@ Google trends gives us insight into how far along various technological terms ar
 <td>
 </td>
 <td align="center">
-<img class="" src="../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="40%" align="center" style="background:none; border:none; box-shadow:none;">
+<img class="" src="../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 </td>
 <td align="center">
-<img class="" src="../slides/diagrams/ClaudeShannon_MFO3807.jpg" width="25%" align="center" style="background:none; border:none; box-shadow:none;">
+<img class="" src="../slides/diagrams/ClaudeShannon_MFO3807.jpg" width="25%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 </td>
 </tr>
 <tr>
@@ -143,11 +146,12 @@ communicate
 <p>Shannon measured information in bits. One bit of information is the amount of information I pass to you when I give you the result of a coin toss. Shannon was also interested in the amount of information in the English language. He estimated that on average a word in the English language contains 12 bits of information.</p>
 <p>Given typical speaking rates, that gives us an estimate of our ability to communicate of around 100 bits per second <span class="citation">(Reed and Durlach, 1998)</span>. Computers on the other hand can communicate much more rapidly. Current wired network speeds are around a billion bits per second, ten million times faster.</p>
 <p>When it comes to compute though, our best estimates indicate our computers are slower. A typical modern computer can process make around 100 billion floating point operations per second, each floating point operation involves a 64 bit number. So the computer is processing around 6,400 billion bits per second.</p>
-<p>It's difficult to get similar estimates for humans, but by some estimates the amount of compute we would require to <em>simulate</em> a human brain is equivalent to that in the UK's fastest computer <span class="citation">(Ananthanarayanan et al., 2009)</span>, the MET office machine in Exeter, which in 2018 ranks as the 11th fastest computer in the world. That machine simulates the world's weather each morning, and then simulates the world's climate. It is a 16 petaflop machine, processing around 1,000 <em>trillion</em> bits per second.</p>
+<p>It's difficult to get similar estimates for humans, but by some estimates the amount of compute we would require to <em>simulate</em> a human brain is equivalent to that in the UK's fastest computer <span class="citation">(Ananthanarayanan et al., 2009)</span>, the MET office machine in Exeter, which in 2018 ranks as the 11th fastest computer in the world. That machine simulates the world's weather each morning, and then simulates the world's climate in the afternoon. It is a 16 petaflop machine, processing around 1,000 <em>trillion</em> bits per second.</p>
+<p><img class="" src="../slides/diagrams/Lotus_49-2.JPG" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto"></p>
 <p>So when it comes to our ability to compute we are extraordinary, not compute in our conscious mind, but the underlying neuron firings that underpin both our consciousness, our sbuconsciousness as well as our motor control etc. By analogy I sometimes like to think of us as a Formula One engine. But in terms of our ability to deploy that computation in actual use, to share the results of what we have inferred, we are very limited. So when you imagine the F1 car that represents a psyche, think of an F1 car with bicycle wheels.</p>
-<p><img class="" src="../slides/diagrams/640px-Marcel_Renault_1903.jpg" width="70%" align="center" style="background:none; border:none; box-shadow:none;"></p>
+<p><img class="" src="../slides/diagrams/640px-Marcel_Renault_1903.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto"></p>
 <p>In contrast, our computers have less computational power, but they can communicate far more fluidly. They are more like a go-kart, less well powered, but with tires that allow them to deploy that power.</p>
-<p><img class="" src="../slides/diagrams/Caleb_McDuff_WIX_Silence_Racing_livery.jpg" width="70%" align="center" style="background:none; border:none; box-shadow:none;"></p>
+<p><img class="" src="../slides/diagrams/Caleb_McDuff_WIX_Silence_Racing_livery.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto"></p>
 <p>For humans, that means much of our computation should be dedicated to considering <em>what</em> we should compute. To do that efficiently we need to model the world around us. The most complex thing in the world around us is other humans. So it is no surprise that we model them. We second guess what their intentions are, and our communication is only necessary when they are departing from how we model them. Naturally, for this to work well, we need to understand those we work closely with. So it is no surprise that social communication, social bonding, forms so much of a part of our use of our limited bandwidth.</p>
 <p>There is a second effect here, our need to anthropomorphise objects around us. Our tendency to model our fellow humans extends to when we interact with other entities in our environment. To our pets as well as inanimate objects around us, such as computers or even our cars. This tendency to overinterpret could be a consequence of our limited ability to communicate.</p>
 <p>For more details see this paper <a href="https://arxiv.org/abs/1705.07996">&quot;Living Together: Mind and Machine Intelligence&quot;</a>, and this <a href="http://inverseprobability.com/talks/lawrence-tedx17/living-together.html">TEDx talk</a>.</p>
@@ -159,7 +163,7 @@ communicate
 <p>There are great benefits to be had from the huge amount of information we can unlock from this evolved relationship between us and data. In biology, large scale data sharing has been driven by a revolution in genomic, transcriptomic and epigenomic measurement. The improved inferences that that can be drawn through summarizing data by computer have fundamentally changed the nature of biological science, now this phenomenon is also infuencing us in our daily lives as data measured by <em>happenstance</em> is increasingly used to characterize us.</p>
 <p>Better mediation of this flow actually requires a better understanding of human-computer interaction. This in turn involves understanding our own intelligence better, what its cognitive biases are and how these might mislead us.</p>
 <p>For further thoughts see <a href="https://www.theguardian.com/media-network/2015/jul/23/data-driven-economy-marketing">this Guardian article</a> from 2015 on marketing in the internet era and <a href="http://inverseprobability.com/2015/12/04/what-kind-of-ai">this blog post</a> on System Zero.</p>
-<object class="svgplot" align data="../slides/diagrams/data-science/information-flow003.svg">
+<object class="svgplot " align data="../slides/diagrams/data-science/information-flow003.svg" style>
 </object>
 <center>
 <em>New direction of information flow, information is reaching us mediated by the computer </em>
@@ -184,24 +188,24 @@ communicate
 <li><p>Modern machine learning methods are less interpretable</p></li>
 <li><p>Example: face recognition</p></li>
 </ul>
-<img class="" src="../slides/diagrams/deepface_neg.png" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
+<img class="" src="../slides/diagrams/deepface_neg.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 <center>
 <em>The DeepFace architecture <span class="citation">(Taigman et al., 2014)</span>, visualized through colors to represent the functional mappings at each layer. There are 120 million parameters in the model. </em>
 </center>
 <p>The DeepFace architecture <span class="citation">(Taigman et al., 2014)</span> consists of layers that deal with <em>translation</em> and <em>rotational</em> invariances. These layers are followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected layers.</p>
-<img class="" src="../slides/diagrams/576px-Early_Pinball.jpg" width="50%" align="center" style="background:none; border:none; box-shadow:none;">
+<img class="" src="../slides/diagrams/576px-Early_Pinball.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 <center>
 <em>Deep learning models are composition of simple functions. We can think of a pinball machine as an analogy. Each layer of pins corresponds to one of the layers of functions in the model. Input data is represented by the location of the ball from left to right when it is dropped in from the top. Output class comes from the position of the ball as it leaves the pins at the bottom. </em>
 </center>
 <p>We can think of what these models are doing as being similar to early pin ball machines. In a neural network, we input a number (or numbers), whereas in pinball, we input a ball. The location of the ball on the left-right axis can be thought of as the number. As the ball falls through the machine, each layer of pins can be thought of as a different layer of neurons. Each layer acts to move the ball from left to right.</p>
 <p>In a pinball machine, when the ball gets to the bottom it might fall into a hole defining a score, in a neural network, that is equivalent to the decision: a classification of the input object.</p>
 <p>An image has more than one number associated with it, so it's like playing pinball in a <em>hyper-space</em>.</p>
-<object class="svgplot" align data="../slides/diagrams/pinball001.svg">
+<object class="svgplot " align data="../slides/diagrams/pinball001.svg" style>
 </object>
 <center>
 <em>At initialization, the pins, which represent the parameters of the function, aren't in the right place to bring the balls to the correct decisions. </em>
 </center>
-<object class="svgplot" align data="../slides/diagrams/pinball002.svg">
+<object class="svgplot " align data="../slides/diagrams/pinball002.svg" style>
 </object>
 <center>
 <em>After learning the pins are now in the right place to bring the balls to the correct decisions. </em>
@@ -245,9 +249,9 @@ from mlai import exponentiated_quadratic
 from ipywidgets import IntSlider}
 
 
-<object class="svgplot" align="" data="../slides/diagrams/gp/gp_rejection_sample003.svg"></object>
-<object class="svgplot" align="" data="../slides/diagrams/gp/gp_rejection_sample004.svg"></object>
-<object class="svgplot" align="" data="../slides/diagrams/gp/gp_rejection_sample005.svg"></object>
+<object class="svgplot " align="" data="../slides/diagrams/gp/gp_rejection_sample003.svg" style=""></object>
+<object class="svgplot " align="" data="../slides/diagrams/gp/gp_rejection_sample004.svg" style=""></object>
+<object class="svgplot " align="" data="../slides/diagrams/gp/gp_rejection_sample005.svg" style=""></object>
 <center>*One view of Bayesian inference is we have a machine for generating samples (the *prior*), and we discard all samples inconsistent with our data, leaving the samples of interest (the *posterior*). The Gaussian process allows us to do this analytically. *</center>
 -->
 <!--```{.python}
@@ -283,7 +287,7 @@ The first thing we will do is load a standard data set for regression modelling.
 </td></tr></table>
 
 
-<object class="svgplot" align="" data="../slides/diagrams/datasets/olympic-marathon.svg"></object>
+<object class="svgplot " align="" data="../slides/diagrams/datasets/olympic-marathon.svg" style=""></object>
 
 
 Things to notice about the data include the outlier in 1904, in this year, the olympics was in St Louis, USA. Organizational problems and challenges with dust kicked up by the cars following the race meant that participants got lost, and only very few participants completed. 
@@ -326,7 +330,7 @@ import teaching_plots as plot
 
 
 
-<object class="svgplot" align="" data="../slides/diagrams/gp/olympic-marathon-gp.svg"></object>
+<object class="svgplot " align="" data="../slides/diagrams/gp/olympic-marathon-gp.svg" style=""></object>
 
 
 ### Fit Quality
@@ -346,7 +350,7 @@ _ = m_clean.optimize()
 
 Data is fine for answering very specific questions, like "Who won the Olympic Marathon in 2012?", because we have that answer stored, however, we are not given the answer to many other questions. For example, Alan Turing was a formidable marathon runner, in 1946 he ran a time 2 hours 46 minutes (just under four minutes per kilometer, faster than I and most of the other [Endcliffe Park Run](http://www.parkrun.org.uk/sheffieldhallam/) runners can do 5 km). What is the probability he would have won an Olympics if one had been held in 1946?
 
-<table><tr><td width="40%"><img class="" src="../slides/diagrams/turing-run.jpg" width="40%" align="" style="background:none; border:none; box-shadow:none;"></td><td width="50%"><img class="" src="../slides/diagrams/turing-times.gif" width="50%" align="" style="background:none; border:none; box-shadow:none;"></td></tr></table>
+<table><tr><td width="40%"><img class="" src="../slides/diagrams/turing-run.jpg" width="40%" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto"></td><td width="50%"><img class="" src="../slides/diagrams/turing-times.gif" width="50%" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto"></td></tr></table>
 
 <center>*Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: [Alan Turing Internet Scrapbook](http://www.turing.org.uk/scrapbook/run.html) *</center>
 
@@ -497,7 +501,7 @@ mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/olympic-marath
 
 ### Olympic Marathon Data Deep GP
 
-<object class="svgplot" align="" data="../slides/diagrams/deepgp/olympic-marathon-deep-gp.svg"></object>
+<object class="svgplot " align="" data="../slides/diagrams/deepgp/olympic-marathon-deep-gp.svg" style=""></object>
 
 
 ```{.python}
@@ -516,7 +520,7 @@ deepgp.DeepGP.posterior_sample = posterior_sample
 
 ### Olympic Marathon Data Deep GP {data-transition="None"}
 
-<object class="svgplot" align="" data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-samples.svg"></object>
+<object class="svgplot " align="" data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-samples.svg" style=""></object>
 
 
 
@@ -817,7 +821,7 @@ deepgp.DeepGP.visualize_pinball=visualize_pinball
 
 ### Olympic Marathon Pinball Plot
 
-<object class="svgplot" align="" data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg"></object>
+<object class="svgplot " align="" data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg" style=""></object>
 
 The pinball plot shows the flow of any input ball through the deep Gaussian process. In a pinball plot a series of vertical parallel lines would indicate a purely linear function. For the olypmic marathon data we can see the first layer begins to shift from input towards the right. Note it also does so with some uncertainty (indicated by the shaded backgrounds). The second layer has less uncertainty, but bunches the inputs more strongly to the right. This input layer of uncertainty, followed by a layer that pushes inputs to the right is what gives the heteroschedastic noise.
 -->
@@ -906,13 +910,13 @@ The pinball plot shows the flow of any input ball through the deep Gaussian proc
 <p>The difference with modern automated decision making systems is our intention is to deploy them in the <em>uncontrolled</em> environment that makes up our own world.</p>
 <p>This exposes us to either unforseen circumstances or adversarial action. And yet it is unclear our our intelligent systems are capable of adapting to this.</p>
 <p>We become exposed to mischief and adversaries. Adversaries intentially may wish to take over the artificial intelligence system, and mischief is the constant practice of many in our society. Simply watching a 10 year old interact with a voice agent such as Alexa or Siri shows that they are delighted when the can make the the &quot;intelligent&quot; agent seem foolish.</p>
-<img class="rotateimg90" src="../slides/diagrams/2017-10-12 16.47.34.jpg" width="40%" align="center" style="background:none; border:none; box-shadow:none;">
+<img class="rotateimg90" src="../slides/diagrams/2017-10-12 16.47.34.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 <center>
-<em>Watt's Governor as held by &quot;Science&quot; on Holborn Viaduct</em>
+<em>Watt's Governor as held by &quot;Science&quot; on Holborn Viaduct </em>
 </center>
-<img class="center" src="../slides/diagrams/SteamEngine_Boulton&Watt_1784_neg.png" width="50%" align="" style="background:none; border:none; box-shadow:none;">
+<img class="center" src="../slides/diagrams/SteamEngine_Boulton&Watt_1784_neg.png" width="50%" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 <center>
-<em>Watt's Steam Engine which made Steam Power Efficient and Practical</em>
+<em>Watt's Steam Engine which made Steam Power Efficient and Practical </em>
 </center>
 <p>One of the first automated decision making systems was Watt's governor, as held by &quot;Science&quot; on Holborns viaduct. Watt's governor was a key component in his steam engine. It senses increases in speed in the engine and closed the steam valve to prevent the engine overspeeding and destroying itself. Until the invention of this device, it was a human job to do this.</p>
 <p>The formal study of governors and other feedback control devices was then began by <a href="https://en.wikipedia.org/wiki/James_Clerk_Maxwell">James Clerk Maxwell</a>, the Scottish physicist. This field became the foundation of our modern techniques of artificial intelligence through Norbert Wiener's book <em>Cybernetics</em> <span class="citation">(Wiener, 1948)</span>. Cybernetics is Greek for governor, a word that in itself simply means helmsman in English.</p>
@@ -963,7 +967,7 @@ The pinball plot shows the flow of any input ball through the deep Gaussian proc
 </ul>
 <h3 id="mountain-car-simulator">Mountain Car Simulator</h3>
 <p>To illustrate the above mentioned concepts we we use the <a href="https://github.com/openai/gym/wiki/MountainCarContinuous-v0">mountain car simulator</a>. This simulator is widely used in machine learning to test reinforcement learning algorithms. The goal is to define a control policy on a car whose objective is to climb a mountain. Graphically, the problem looks as follows:</p>
-<p><img class="" src="../slides/diagrams/uq/mountaincar.png" width="negate" align="" style="background:none; border:none; box-shadow:none;"></p>
+<p><img class="" src="../slides/diagrams/uq/mountaincar.png" width="negate" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto"></p>
 <p>The goal is to define a sequence of actions (push the car right or left with certain intensity) to make the car reach the flag after a number <span class="math inline">\(T\)</span> of time steps.</p>
 <p>At each time step <span class="math inline">\(t\)</span>, the car is characterized by a vector <span class="math inline">\(\inputVector_{t} = (p_t,v_t)\)</span> of states which are respectively the the position and velocity of the car at time <span class="math inline">\(t\)</span>. For a sequence of states (an episode), the dynamics of the car is given by</p>
 <p><span class="math display">\[\inputVector_{t+1} = \mappingFunction(\inputVector_{t},\textbf{u}_{t})\]</span></p>
@@ -1061,7 +1065,7 @@ velocity_model.updateModel(initial_design_dynamics, y[:, [<span class="dv">1</sp
 <p>We can see how the emulator is doing a fairly good job approximating the simulator. On the edges, however, it struggles to captures the dynamics of the simulator.</p>
 <p>Given some input parameters of the linear controlling, how do the dynamics of the emulator and simulator match? In the following figure we show the position and velocity of the car for the 500 time steps of an episode in which the parameters of the linear controller have been fixed beforehand. The value of the input control is also shown.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">controller_gains <span class="op">=</span> np.atleast_2d([<span class="dv">0</span>, .<span class="dv">6</span>, <span class="dv">1</span>])  <span class="co"># change the valus of the linear controller to observe the trayectories.</span></code></pre></div>
-<object class="svgplot" align data="../slides/diagrams/uq/emu_sim_comparison.svg">
+<object class="svgplot " align data="../slides/diagrams/uq/emu_sim_comparison.svg" style>
 </object>
 <p>We now make explicit use of the emulator, using it to replace the simulator and optimize the linear controller. Note that in this optimization, we don't need to query the simulator anymore as we can reproduce the full dynamics of an episode using the emulator. For illustrative purposes, in this example we fix the initial location of the car.</p>
 <p>We define the objective reward function in terms of the simulator.</p>

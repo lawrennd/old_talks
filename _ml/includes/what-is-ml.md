@@ -46,17 +46,9 @@ predictions in artificial intelligence. The data and the model are combined thro
 \slides{
 $$\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$
 
-. . .
-
-* To combine data with a model need:
-
-. . .
-
-  * **a prediction function** $\mappingFunction(\cdot)$ includes our beliefs about the regularities of the universe
-
-. . .
-
-  * **an objective function** $\errorFunction(\cdot)$ defines the cost of misprediction.
+> - To combine data with a model need:
+      + **a prediction function** $\mappingFunction(\cdot)$ includes our beliefs about the regularities of the universe
+      + **an objective function** $\errorFunction(\cdot)$ defines the cost of misprediction.
 }
 
 \notes{In practice we normally perform machine learning using two functions. To combine data with a model we typically make use of:
