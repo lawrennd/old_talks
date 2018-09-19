@@ -50,7 +50,8 @@ $$ p(\text{bought}) =  \sigmoid{\boldsymbol{\beta}^\top \inputVector}$$
 * Jumper (jersey/sweater) purchase with logistic regression
 }
 $$ \dataScalar =  \mappingFunction\left(\inputVector, \boldsymbol{\beta}\right)$$
-\slides{. . .
+\slides{
+. . .
 
 }
 We call $\mappingFunction(\cdot)$ the *prediction function*
