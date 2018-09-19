@@ -47,6 +47,7 @@
 \newslide{Different Views}
 \slides{
 $$\text{data} + \text{model}$$
+
 * For OR, control, stats etc.
 * More things *unite* us rather than *divide* us.
 }
@@ -54,7 +55,7 @@ $$\text{data} + \text{model}$$
 \notes{However, at another level our separate professions of OR, statistics and control engineering are just different views on the same problem. Just as any tribe of humans need to eat and sleep, so do these professions depend on data, modelling, optimization and decision-making.}
 
 \newslide{We're no longer hunter gatherers ...}
-\slide{
+\slides{
 * The automation challenges we face require 
     * all of our best ideas.
 	* rethinking what $\text{data}+\text{model}$ means
