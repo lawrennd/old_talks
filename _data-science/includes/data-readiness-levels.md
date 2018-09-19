@@ -1,8 +1,7 @@
 \section{Data Readiness Levels}
 
+\newslide{Data Readiness Levels}
 \slides{
-### Data Readiness Levels
-
 [\includeimg{../slides/diagrams/data-science/data-readiness-levels.png}](https://arxiv.org/pdf/1705.02245.pdf)
 
 [Data Readiness Levels](http://inverseprobability.com/2017/01/12/data-readiness-levels)
@@ -10,9 +9,7 @@
 
 \notes{[Data Readiness Levels](http://inverseprobability.com/2017/01/12/data-readiness-levels) [@Lawrence:drl17] are an attempt to develop a language around data quality that can bridge the gap between technical solutions and decision makers such as managers and project planners. The are inspired by Technology Readiness Levels which attempt to quantify the readiness of technologies for deployment.}
 
-\slides{
-### Three Grades of Data Readiness:
-}
+\newslide{Three Grades of Data Readiness:}
 
 \notes{Data-readiness describes, at its coarsest level,  three separate stages of data graduation.}
 
@@ -22,7 +19,7 @@
 
 * Grade A - usability
 
-### Accessibility: Grade C
+\subsection{Accessibility: Grade C}
 
 \notes{The first grade refers to the accessibility of data. Most data science practitioners will be used to working with data-providers who, perhaps having had little experience of data-science before, state that they "have the data". More often than not, they have not verified this. A convenient term for this is "Hearsay Data", someone has *heard* that they have the data so they *say* they have it. This is the lowest grade of data readiness. 
 
@@ -35,11 +32,11 @@ Progressing through Grade C involves ensuring that this data is accessible. Not 
 * limitations on access due to topology (e.g. it's distributed across a number of devices)
 * At the end of Grade C data is ready to be loaded into analysis software (R, SPSS, Matlab, Python, Mathematica)}
 
-### Validity: Grade B
+\subsection{Validity: Grade B}
 
 \notes{Data transits from Grade C to Grade B once we can begin digital analysis on the computer. Once the challenges of access to the data have been resolved, we can make the data available either via API, or for direct loading into analysis software (such as Python, R, Matlab, Mathematica or SPSS). Once this has occured the data is at B4 level. Grade B involves the *validity* of the data. Does the data really represent what it purports to? There are challenges such as missing values, outliers, record duplication. Each of these needs to be investigated. 
 
-Grade B and C are important as if the work done in these grades is documented well, it can be reused in other projects. Reuse of this labour is key to reducing the costs of data-driven automated decision making. There is a strong overlap between the work required in this grade and the statistical field of [*exploratory data analysis*](https://en.wikipedia.org/wiki/Exploratory_data_analysis) [@Tukey:exploratory77]. }
+Grade B and C are important as if the work done in these grades is documented well, it can be reused in other projects. Reuse of this labour is key to reducing the costs of data-driven automated decision making. There is a strong overlap between the work required in this grade and the statistical field of [*exploratory data analysis*](https://en.wikipedia.org/wiki/Exploratory_data_analysis) [@Tukey:exploratory77].}
 \slides{
 * faithfulness and representation
 * visualisations.
@@ -51,7 +48,14 @@ Grade B and C are important as if the work done in these grades is documented we
 * At the end of Grade B, ready to define a candidate question, the
   context, load into OpenML}
 
-### Usability: Grade A
+\subsection{Usability: Grade A}
+\slides{
+* The usability of data
+* Grade A is about data in context.
+* Consider appropriateness of a given data set to answer a particular
+question or to be subject to a particular analysis.
+* Data integration?
+* At the end of Grade A it's ready for data platforms such as RAMP, Kaggle, define a *task* in OpenML.}
 
 \notes{Once the validity of the data is determined, the data set can be considered for use in a particular task. This stage of data readiness is more akin to what machine learning scientists are used to doing in Universities. Bringing an algorithm to bear on a well understood data set. 
 
@@ -61,34 +65,26 @@ This is the stage where the data and the model are brought together, so expertis
 
 Deployment and maintenance of machine learning models in production is another important issue which Data Readiness Levels are only a part of the solution for.}
 
-\slides{* The usability of data
-* Grade A is about data in context.
-* Consider appropriateness of a given data set to answer a particular
-question or to be subject to a particular analysis.
-* Data integration?
-* At the end of Grade A it's ready for data platforms such as RAMP, Kaggle, define a *task* in OpenML.
 
-### Recursive Effects
-
+\subsection{Recursive Effects}
+\slides{
 * Grade A may also require:
     * active collection of new data.
     * rebalancing of data to ensure fairness
 	* annotation of data by human experts 
 	* revisiting the collection (and running through the appropriate stages again)
+}
 
-### Contribute!
+\subsection{Contribute!}
 
 * <http://data-readiness.org>}
 
 \notes{To find out more, or to contribute ideas go to <http://data-readiness.org>}
 
+\newslide{Also ...}
 \slides{
-### Also ...
-
 * Encourage greater interaction between application domains and data scientists
-
 * Encourage *visualization* of data
-
 * Incentivise the delivery of data.
 }
 
