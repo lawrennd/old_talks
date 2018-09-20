@@ -4,7 +4,7 @@
 \slides{
 [\includeimg{../slides/diagrams/data-science/data-readiness-levels.png}](https://arxiv.org/pdf/1705.02245.pdf)
 
-[Data Readiness Levels](http://inverseprobability.com/2017/01/12/data-readiness-levels)
+[Data Readiness Levels](http://inverseprobability.com/2017/01/12/data-readiness-levels) [@Lawrence:drl17]
 }
 
 \notes{[Data Readiness Levels](http://inverseprobability.com/2017/01/12/data-readiness-levels) [@Lawrence:drl17] are an attempt to develop a language around data quality that can bridge the gap between technical solutions and decision makers such as managers and project planners. The are inspired by Technology Readiness Levels which attempt to quantify the readiness of technologies for deployment.}
@@ -75,8 +75,8 @@ Deployment and maintenance of machine learning models in production is another i
 	* revisiting the collection (and running through the appropriate stages again)
 }
 
-\subsection{Contribute!}
-
+\newslide{Contribute!}
+\slides{
 * <http://data-readiness.org>}
 
 \notes{To find out more, or to contribute ideas go to <http://data-readiness.org>}
