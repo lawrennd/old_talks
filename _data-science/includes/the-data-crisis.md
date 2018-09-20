@@ -4,6 +4,8 @@
 
 \subsection{The Software Crisis}
 
+\slidesmall{
+
 >The major cause of the software crisis is that the machines have
 >become several orders of magnitude more powerful! To put it quite
 >bluntly: as long as there were no machines, programming was no problem
@@ -12,6 +14,8 @@
 >equally gigantic problem.
 >
 > Edsger Dijkstra (1930-2002), The Humble Programmer
+
+}
 
 \notes{In the late sixties early software programmers made note of the increasing costs of software development and termed the challenges associated with it as the "[Software Crisis](https://en.wikipedia.org/wiki/Software_crisis)". Edsger Dijkstra referred to the crisis in his 1972 Turing Award winner's address.}
 

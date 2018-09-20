@@ -1,5 +1,5 @@
 
-\subsection{Deployment}
+\notes{\subsection{Deployment}}
 
 \newslide{Premise}
 \slides{
