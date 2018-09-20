@@ -1,9 +1,9 @@
 \section{Data Science as Debugging}
 
 \newslide{Data Science as Debugging}
-
 \slides{
-* Analogies: For Software Engineers [describe data science as *debugging*](http://inverseprobability.com/2017/03/14/data-science-as-debugging).}
+* Analogies: For Software Engineers [describe data science as *debugging*](http://inverseprobability.com/2017/03/14/data-science-as-debugging).
+}
 
 \notes{One challenge for existing information technology professionals is realizing the extent to which a software ecosystem based on data differs from a classical ecosystem. In particular, by ingesting data we bring unknowns/uncontrollables into our decision making system. This presents opportunity for adversarial exploitation and unforeseen operation.
 

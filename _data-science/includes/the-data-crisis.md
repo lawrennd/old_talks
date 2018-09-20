@@ -17,6 +17,8 @@
 
 \subsection{The Mordern Data Crisis}
 
+\slidesmall{
+
 >The major cause of the data crisis is that machines have become more
 >interconnected than ever before. Data access is therefore cheap, but
 >data quality is often poor. What we need is cheap high quality
@@ -28,7 +30,7 @@
 >work. 
 \slides{>
 > Me}
-
+}
 \notes{What I term "The Data Crisis" is the modern equivalent of this problem. The quantity of modern data, and the lack of attention paid to data as it is initially "laid down" and the costs of data cleaning are bringing about a crisis in data-driven decision making. 
 
 Just as with software, the crisis is most correctly addressed by 'scaling' the manner in which we process our data. Duplication of work occurs because the value of data cleaning is not correctly recognised in management decision making processes. Automation of work is increasingly possible through techniques in "artificial intelligence", but this will also require better management of the data science pipeline so that data about data science (meta-data science) can be correctly assimilated and processed. The Alan Turing institute has a program focussed on this area, [AI for Data Analytics](https://www.turing.ac.uk/research_projects/artificial-intelligence-data-analytics/).}
