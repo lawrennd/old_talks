@@ -42,20 +42,37 @@ Grade B and C are important as if the work done in these grades is documented we
 * visualisations.
 * exploratory data analysis
 * noise characterisation.
+}
+\newslide{Grade B Checks}
+\slides{
 * Missing values.
-* Schema alignment, record linkage, data fusion? 
-* Example, was a column or columns accidentally perturbed (e.g. through a sort operation that missed one or more columns)? Or was a [gene name accidentally converted to a date](http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-5-80)?
-* At the end of Grade B, ready to define a candidate question, the
-  context, load into OpenML}
+* Schema alignment, record linkage, data fusion
+* Example:
+    * Was a column or columns accidentally perturbed (e.g. through a sort operation that missed one or more columns)? Or was a [gene name accidentally converted to a date](http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-5-80)?
+}
+
+\notes{The need for Grade B emerges due to the fundamental change in the availability of data. Classically, the scientific question came first, and the data came later. This is still the approach in a randomized control trial, e.g. in A/B testing or clinical trials for drugs. Today data is being laid down by happenstance, and the question we wish to ask about the data often comes after the data has been created. The Grade B of data readiness ensures thought can be put into data quality *before* the question is defined. It is this work that is reusable across multiple teams. It is these processes that the team which is *standing up* the data must deliver.}
+
+
+\newslide{Grade B Transition}
+\slides{
+* At the end of Grade B, ready to define a *task*, or *question*
+* Compare with classical statistics:
+    * *Classically*: question is first data comes later.
+	* *Today*: data is first question comes later.
+}
+
+\newslide{Data First}
+\slides{
+In a *data first* company teams own their data quality issues at least as far as grade B1.
+}
 
 \subsection{Usability: Grade A}
 \slides{
-* The usability of data
-* Grade A is about data in context.
-* Consider appropriateness of a given data set to answer a particular
-question or to be subject to a particular analysis.
-* Data integration?
-* At the end of Grade A it's ready for data platforms such as RAMP, Kaggle, define a *task* in OpenML.}
+* The *usability* of data
+    * Grade A is about data in context.
+* Consider appropriateness of a given data set to answer a particular question or to be subject to a particular analysis.
+}
 
 \notes{Once the validity of the data is determined, the data set can be considered for use in a particular task. This stage of data readiness is more akin to what machine learning scientists are used to doing in Universities. Bringing an algorithm to bear on a well understood data set. 
 
@@ -69,15 +86,22 @@ Deployment and maintenance of machine learning models in production is another i
 \subsection{Recursive Effects}
 \slides{
 * Grade A may also require:
+    * data integration
     * active collection of new data.
     * rebalancing of data to ensure fairness
 	* annotation of data by human experts 
 	* revisiting the collection (and running through the appropriate stages again)
 }
 
+\newslide{A1 Data}
+\slides{
+* A1 data is ready to make available for *challenges* or *AutoML* platforms.
+}
+
 \newslide{Contribute!}
 \slides{
-* <http://data-readiness.org>}
+
+\aligncenter{<http://data-readiness.org>}}
 
 \notes{To find out more, or to contribute ideas go to <http://data-readiness.org>}
 
@@ -85,7 +109,6 @@ Deployment and maintenance of machine learning models in production is another i
 \slides{
 * Encourage greater interaction between application domains and data scientists
 * Encourage *visualization* of data
-* Incentivise the delivery of data.
 }
 
 \notes{Throughout the data preparation pipeline, it is important to have close interaction between data scientists and application domain experts. Decisions on data preparation taken outside the context of application have dangerous downstream consequences. This provides an additional burden on the data scientist as they are required for each project, but it should also be seen as a learning and familiarization exercise for the domain expert. Long term, just as biologists have found it necessary to assimilate the skills of the bioinformatician to be effective in their science, most domains will also require a familiarity with the nature of data driven decision making and its application. Working closely with data-scientists on data preparation is one way to begin this sharing of best practice.
