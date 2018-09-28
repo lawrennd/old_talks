@@ -1,0 +1,173 @@
+---
+title: ""
+date: 2018-10-18
+published: 2018-10-18
+reveal: 2018-10-18-natural-and-artificial-intelligence.slides.html
+layout: talk
+categories:
+- notes
+---
+
+
+<div style="display:none">
+  $${% include talk-notation.tex %}$$
+</div>
+
+<hr />
+<p>layout: slides title: &quot;Natural and Artificial Intelligence&quot; subtitle: &quot;Embodiment Factors&quot; abstract: &gt; What is the nature of machine intelligence and how does it differ from humans? In this talk we explore embodiment factors, the extent to which our intelligence is locked in and how this makes us fundamentally different form the machine intelligences we are creating around us. extras: - link: https://arxiv.org/abs/1705.07996 label: Paper on Mind and Machine Intelligence reveal: 2018-10-18-natural-and-artificial-intelligence.slides.html author: - family: Lawrence given: Neil D. gscholar: r3SJcvoAAAAJ institute: Amazon Cambridge and University of Sheffield twitter: lawrennd url: http://inverseprobability.com date: 2018-10-18 venue: Amazon Innovation Day transition: None</p>
+<p><!--% not ipynb--></p>
+<h3 id="section" class="slide:" data-transition="none"></h3>
+<p><img src="../slides/diagrams/the-diving-bell-and-the-butterfly.jpg" width="40%" align="center" style="background:none; border:none; box-shadow:none;"></p>
+<table>
+<tr>
+<td>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="6">
+<p><img src="../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg"
+ width="40%" style="background:none; border:none; box-shadow:none;"
+ align="center"></p>
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="4">
+<p><img src="../slides/diagrams/ClaudeShannon_MFO3807.jpg"
+ width="150%" style="background:none; border:none;
+ box-shadow:none;" align="center"></p>
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="1">
+<p><img src="../slides/diagrams/Jean-Dominique_Bauby.jpg"
+ width="150%" style="background:none; border:none;
+ box-shadow:none;" align="center"></p>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="fragment" data-fragment-index="2">
+<p>bits/min</p>
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="6">
+<p>billions</p>
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="5">
+<p>2000</p>
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="3">
+<p>6</p>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="fragment" data-fragment-index="7">
+<p>billion<br>calculations/s</p>
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="9">
+<p>~100</p>
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="8">
+<p>a billion</p>
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="8">
+<p>a billion</p>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="fragment" data-fragment-index="10">
+<p>embodiment</p>
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="11">
+<p>20 minutes</p>
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="12">
+<p>5 billion years</p>
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="12">
+<p>15 trillion years</p>
+</div>
+</td>
+</tr>
+</table>
+<h3 id="section-1" data-transition="None"></h3>
+<p><img src="../slides/diagrams/Sahe_tchadensis.jpg" width="80%" align="center" width="70%" style="background:none; border:none; box-shadow:none;"></p>
+<h3 id="section-2"></h3>
+<p><img class="" src="../slides/diagrams/640px-Marcel_Renault_1903.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto"></p>
+<h3 id="section-3"></h3>
+<p><img class="" src="../slides/diagrams/Caleb_McDuff_WIX_Silence_Racing_livery.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto"></p>
+<h3 id="human-communication">Human Communication</h3>
+
+<p>For human conversation to work, we require an internal model of who we are speaking to. We model each other, and combine our sense of who they are, who they think we are, and what has been said. This is our approach to dealing with the limited bandwidth connection we have. Empathy and understanding of intent. Mental dispositional concepts are used to augment our limited communication bandwidth.</p>
+<p>Fritz Heider referred to the important point of a conversation as being that they are happenings that are &quot;<em>psychologically represented</em> in each of the participants&quot; (his emphasis) <span class="citation">(Heider, 1958)</span></p>
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation006.svg" style>
+</object>
+<center>
+<em>Conversation relies on internal models of other individuals. </em>
+</center>
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation007.svg" style>
+</object>
+<center>
+<em>Misunderstanding of context and who we are talking to leads to arguments. </em>
+</center>
+<h3 id="section-4"></h3>
+<object class="svgplot " align data="../slides/diagrams/hilbert-info-growth.svg" style>
+</object>
+<h3 id="human-and-narrative">Human and Narrative</h3>
+<center>
+<p><img src="../slides/diagrams/Classic_baby_shoes.jpg" width="60%"></p>
+<p>
+<i>For sale: baby shoes, never worn.</i>
+</p>
+</center>
+<h2 id="evolved-relationship-with-information">Evolved Relationship with Information</h2>
+<p>The high bandwidth of computers has resulted in a close relationship between the computer and data. Large amounts of information can flow between the two. The degree to which the computer is mediating our relationship with data means that we should consider it an intermediary.</p>
+<p>Originaly our low bandwith relationship with data was affected by two characteristics. Firstly, our tendency to over-interpret driven by our need to extract as much knowledge from our low bandwidth information channel as possible. Secondly, by our improved understanding of the domain of <em>mathematical</em> statistics and how our cognitive biases can mislead us.</p>
+<p>With this new set up there is a potential for assimilating far more information via the computer, but the computer can present this to us in various ways. If it's motives are not aligned with ours then it can misrepresent the information. This needn't be nefarious it can be simply as a result of the computer pursuing a different objective from us. For example, if the computer is aiming to maximize our interaction time that may be a different objective from ours which may be to summarize information in a representative manner in the <em>shortest</em> possible length of time.</p>
+<p>For example, for me it was a common experience to pick up my telephone with the intention of checking when my next appointment was, but to soon find myself distracted by another application on the phone, and end up reading something on the internet. By the time I'd finished reading, I would often have forgotten the reason I picked up my phone in the first place.</p>
+<p>There are great benefits to be had from the huge amount of information we can unlock from this evolved relationship between us and data. In biology, large scale data sharing has been driven by a revolution in genomic, transcriptomic and epigenomic measurement. The improved inferences that that can be drawn through summarizing data by computer have fundamentally changed the nature of biological science, now this phenomenon is also infuencing us in our daily lives as data measured by <em>happenstance</em> is increasingly used to characterize us.</p>
+<p>Better mediation of this flow actually requires a better understanding of human-computer interaction. This in turn involves understanding our own intelligence better, what its cognitive biases are and how these might mislead us.</p>
+<p>For further thoughts see <a href="https://www.theguardian.com/media-network/2015/jul/23/data-driven-economy-marketing">this Guardian article</a> from 2015 on marketing in the internet era and <a href="http://inverseprobability.com/2015/12/04/what-kind-of-ai">this blog post</a> on System Zero.</p>
+<object class="svgplot " align data="../slides/diagrams/data-science/information-flow003.svg" style>
+</object>
+<center>
+<em>New direction of information flow, information is reaching us mediated by the computer </em>
+</center>
+<h3 id="section-5" class="slide:" data-transition="none"></h3>
+<object type="image/svg+xml" data="../slides/diagrams/anne-computer-conversation.svg">
+</object>
+<h3 id="thanks">Thanks!</h3>
+<ul>
+<li>twitter: @lawrennd</li>
+<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
+<li>podcast: <a href="http://thetalkingmachines.com" class="uri">http://thetalkingmachines.com</a></li>
+<li><a href="http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence">Natural vs Artifical Intelligence</a></li>
+</ul>
+<div id="refs" class="references">
+<div id="ref-Heider:interpersonal58">
+<p>Heider, F., 1958. The psychology of interpersonal relations. John Wiley.</p>
+</div>
+</div>
+
+

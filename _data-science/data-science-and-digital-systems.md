@@ -10,7 +10,7 @@ abstract: >
   we face both in the near and far future. These include practical application of existing algorithms in the 
   face of the need to explain decision making, mechanisms for improving the quality and availability of data, 
   dealing with large unstructured datasets.
-reveal: 2018-11-30-data-science-and-digital-systems.slides.html
+reveal: 2019-02-19-data-science-and-digital-systems.slides.html
 author:
 - family: Lawrence
   given: Neil D.
@@ -18,8 +18,8 @@ author:
   institute: Amazon Cambridge and University of Sheffield
   twitter: lawrennd
   url: http://inverseprobability.com
-date: 2018-11-30
-venue: Fifth International Workshop on Sustainable Road Freight, Cambridge
+date: 2019-02-19
+venue: Stu Hunter Resesearch Conference, Milan
 transition: None
 ---
 

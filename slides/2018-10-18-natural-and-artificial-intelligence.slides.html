@@ -3,8 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="dcterms.date" content="2018-09-12">
-  <title>fAIth</title>
+  <title></title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -28,7 +27,6 @@
   <!--[if lt IE 9]>
   <script src="reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
       <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
           TeX: {
@@ -358,300 +356,124 @@ $$
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide">
-  <h1 class="title">fAIth</h1>
-  <p class="author" style="text-align:center"><a href="http://inverseprobability.com">Neil D. Lawrence</a></p>
-  <p class="date" style="text-align:center"><time>2018-09-12</time></p>
-  <p class="venue" style="text-align:center">Landor Associates, London</p>
-</section>
 
 <section class="slide level3">
 
+<p>layout: slides title: “Natural and Artificial Intelligence” subtitle: “Embodiment Factors” abstract: &gt; What is the nature of machine intelligence and how does it differ from humans? In this talk we explore embodiment factors, the extent to which our intelligence is locked in and how this makes us fundamentally different form the machine intelligences we are creating around us. extras: - link: https://arxiv.org/abs/1705.07996 label: Paper on Mind and Machine Intelligence reveal: 2018-10-18-natural-and-artificial-intelligence.slides.html author: - family: Lawrence given: Neil D. gscholar: r3SJcvoAAAAJ institute: Amazon Cambridge and University of Sheffield twitter: lawrennd url: http://inverseprobability.com date: 2018-10-18 venue: Amazon Innovation Day transition: None</p>
 <p><!--% not ipynb--></p>
 <p><!--% not notes--></p>
-<!-- SECTION The Gartner Hype Cycle -->
 </section>
-<section id="gartner-hype-cycle" class="slide level3">
-<h3>Gartner Hype Cycle</h3>
-<p><img class="negate" src="../slides/diagrams/Gartner_Hype_Cycle.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none;"></p>
-
-</section>
-<section id="gartner-hype-cycle-1" class="slide level3">
-<h3>Gartner Hype Cycle</h3>
-<script>
-showDivs(0, 'ai-bd-dm-dl-ml-google-trends');
-</script>
-<input id="range-ai-bd-dm-dl-ml-google-trends" type="range" min="0" max="4" value="0" onchange="setDivs('ai-bd-dm-dl-ml-google-trends')" oninput="setDivs('ai-bd-dm-dl-ml-google-trends')">
-<button onclick="plusDivs(-1, 'ai-bd-dm-dl-ml-google-trends')">
-❮
-</button>
-<button onclick="plusDivs(1, 'ai-bd-dm-dl-ml-google-trends')">
-❯
-</button>
-<object class="svgplot ai-bd-dm-dl-ml-google-trends" align data="../slides/diagrams/data-science/ai-bd-dm-dl-ml-google-trends000.svg" style>
-</object>
-<object class="svgplot ai-bd-dm-dl-ml-google-trends" align data="../slides/diagrams/data-science/ai-bd-dm-dl-ml-google-trends001.svg" style>
-</object>
-<object class="svgplot ai-bd-dm-dl-ml-google-trends" align data="../slides/diagrams/data-science/ai-bd-dm-dl-ml-google-trends002.svg" style>
-</object>
-<object class="svgplot ai-bd-dm-dl-ml-google-trends" align data="../slides/diagrams/data-science/ai-bd-dm-dl-ml-google-trends003.svg" style>
-</object>
-<object class="svgplot ai-bd-dm-dl-ml-google-trends" align data="../slides/diagrams/data-science/ai-bd-dm-dl-ml-google-trends004.svg" style>
-</object>
-<!--include{_data-science/includes/gartner-hype-cycle-bd-ds-iot-ml.md}-->
-</section>
-<section id="section" class="slide level3">
+<section id="section" class="slide level3 slide:" data-transition="none">
 <h3></h3>
-<blockquote>
-<p>There are three types of lies: lies, damned lies and statistics</p>
-<p>??</p>
-</blockquote>
+<p><img src="../slides/diagrams/the-diving-bell-and-the-butterfly.jpg" width="40%" align="center" style="background:none; border:none; box-shadow:none;"></p>
 </section>
 <section id="section-1" class="slide level3">
 <h3></h3>
-<blockquote>
-<p>There are three types of lies: lies, damned lies and statistics</p>
-<p>Benjamin Disraeli</p>
-</blockquote>
-</section>
-<section id="section-2" class="slide level3">
-<h3></h3>
-<blockquote>
-<p>There are three types of lies: lies, damned lies and statistics</p>
-<p>Benjamin Disraeli 1804-1881</p>
-</blockquote>
-</section>
-<section id="mathematical-statistics" class="slide level3">
-<h3><em>Mathematical</em> Statistics</h3>
-<img class="" src="../slides/diagrams/Portrait_of_Karl_Pearson.jpg" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
-<center>
-<em>‘Founded’ by Karl Pearson (1857-1936) </em>
-</center>
-</section>
-<section id="section-3" class="slide level3">
-<h3></h3>
-<blockquote>
-<p>There are three types of lies: lies, damned lies and ‘big data’</p>
-<p>Neil Lawrence 1972-?</p>
-</blockquote>
-</section>
-<section id="mathematical-data-science" class="slide level3">
-<h3>‘Mathematical Data Science’</h3>
-<img class="" src="../slides/diagrams/Question_mark.png" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
-<center>
-<em>‘Founded’ by ? (?-?) </em>
-</center>
-<!-- SECTION What is Machine Learning? -->
-</section>
-<section id="what-is-machine-learning" class="slide level3">
-<h3>What is Machine Learning?</h3>
-<div class="fragment">
-<p><span class="math display">\[ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span></p>
-</div>
-<div class="fragment">
-<ul>
-<li><strong>data</strong> : observations, could be actively or passively acquired (meta-data).</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><strong>model</strong> : assumptions, based on previous experience (other data! transfer learning etc), or beliefs about the regularities of the universe. Inductive bias.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><strong>prediction</strong> : an action to be taken or a categorization or a quality score.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Royal Society Report: <a href="https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf">Machine Learning: Power and Promise of Computers that Learn by Example</a></li>
-</ul>
-</div>
-</section>
-<section id="what-is-machine-learning-1" class="slide level3">
-<h3>What is Machine Learning?</h3>
-<p><span class="math display">\[\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span></p>
-<ul>
-<li class="fragment">To combine data with a model need:</li>
-<li class="fragment"><strong>a prediction function</strong> <span class="math inline">\(\mappingFunction(\cdot)\)</span> includes our beliefs about the regularities of the universe</li>
-<li class="fragment"><strong>an objective function</strong> <span class="math inline">\(\errorFunction(\cdot)\)</span> defines the cost of misprediction.</li>
-</ul>
-</section>
-<section id="machine-learning" class="slide level3 slide:" data-transition="none">
-<h3>Machine Learning</h3>
-<ul>
-<li>Driver of two different domains:
-<ol type="1">
-<li><em>Data Science</em>: arises from the fact that we now capture data by happenstance.</li>
-<li><em>Artificial Intelligence</em>: emulation of human behaviour.</li>
-</ol></li>
-<li>Connection: Internet of Things</li>
-</ul>
-</section>
-<section id="machine-learning-1" class="slide level3 slide:" data-transition="none">
-<h3>Machine Learning</h3>
-<ul>
-<li>Driver of two different domains:
-<ol type="1">
-<li><em>Data Science</em>: arises from the fact that we now capture data by happenstance.</li>
-<li><em>Artificial Intelligence</em>: emulation of human behaviour.</li>
-</ol></li>
-<li>Connection: Internet of <del>Things</del></li>
-</ul>
-</section>
-<section id="machine-learning-2" class="slide level3 slide:" data-transition="none">
-<h3>Machine Learning</h3>
-<ul>
-<li>Driver of two different domains:
-<ol type="1">
-<li><em>Data Science</em>: arises from the fact that we now capture data by happenstance.</li>
-<li><em>Artificial Intelligence</em>: emulation of human behaviour.</li>
-</ol></li>
-<li>Connection: Internet of People</li>
-</ul>
-</section>
-<section id="what-does-machine-learning-do" class="slide level3">
-<h3>What does Machine Learning do?</h3>
-<ul>
-<li>ML Automates through Data
-<ul>
-<li><em>Strongly</em> related to statistics.</li>
-<li>Field underpins revolution in <em>data science</em> and <em>AI</em></li>
-</ul></li>
-<li>With AI:
-<ul>
-<li><em>logic</em>, <em>robotics</em>, <em>computer vision</em>, <em>speech</em></li>
-</ul></li>
-<li>With Data Science:
-<ul>
-<li><em>databases</em>, <em>data mining</em>, <em>statistics</em>, <em>visualization</em></li>
-</ul></li>
-</ul>
-<!-- SECTION Natural and Artificial Intelligence: Embodiment Factors -->
-<!-- SECTION Natural and Artificial Intelligence: Embodiment Factors -->
-</section>
-<section id="embodiment-factors" class="slide level3">
-<h3>“Embodiment Factors”</h3>
 <table>
 <tr>
 <td>
 </td>
 <td align="center">
-<img class="" src="../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+<div class="fragment" data-fragment-index="6">
+<p><img src="../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg"
+ width="40%" style="background:none; border:none; box-shadow:none;"
+ align="center"></p>
+</div>
 </td>
 <td align="center">
-<img class="" src="../slides/diagrams/ClaudeShannon_MFO3807.jpg" width="25%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+<div class="fragment" data-fragment-index="4">
+<p><img src="../slides/diagrams/ClaudeShannon_MFO3807.jpg"
+ width="150%" style="background:none; border:none;
+ box-shadow:none;" align="center"></p>
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="1">
+<p><img src="../slides/diagrams/Jean-Dominique_Bauby.jpg"
+ width="150%" style="background:none; border:none;
+ box-shadow:none;" align="center"></p>
+</div>
 </td>
 </tr>
 <tr>
 <td>
-compute
+<div class="fragment" data-fragment-index="2">
+<p>bits/min</p>
+</div>
 </td>
 <td align="center">
-<span class="math display">\[\approx 100 \text{ gigaflops}\]</span>
+<div class="fragment" data-fragment-index="6">
+<p>billions</p>
+</div>
 </td>
 <td align="center">
-<span class="math display">\[\approx 16 \text{ petaflops}\]</span>
+<div class="fragment" data-fragment-index="5">
+<p>2000</p>
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="3">
+<p>6</p>
+</div>
 </td>
 </tr>
 <tr>
 <td>
-communicate
+<div class="fragment" data-fragment-index="7">
+<p>billion<br>calculations/s</p>
+</div>
 </td>
 <td align="center">
-<span class="math display">\[1 \text{ gigbit/s}\]</span>
+<div class="fragment" data-fragment-index="9">
+<p>~100</p>
+</div>
 </td>
 <td align="center">
-<span class="math display">\[100 \text{ bit/s}\]</span>
+<div class="fragment" data-fragment-index="8">
+<p>a billion</p>
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="8">
+<p>a billion</p>
+</div>
 </td>
 </tr>
 <tr>
 <td>
-(compute/communicate)
+<div class="fragment" data-fragment-index="10">
+<p>embodiment</p>
+</div>
 </td>
 <td align="center">
-<span class="math display">\[10^{4}\]</span>
+<div class="fragment" data-fragment-index="11">
+<p>20 minutes</p>
+</div>
 </td>
 <td align="center">
-<span class="math display">\[10^{14}\]</span>
+<div class="fragment" data-fragment-index="12">
+<p>5 billion years</p>
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="12">
+<p>15 trillion years</p>
+</div>
 </td>
 </tr>
 </table>
-<p>See <a href="https://arxiv.org/abs/1705.07996">“Living Together: Mind and Machine Intelligence”</a></p>
+</section>
+<section id="section-2" class="slide level3" data-transition="None">
+<h3></h3>
+<p><img src="../slides/diagrams/Sahe_tchadensis.jpg" width="80%" align="center" width="70%" style="background:none; border:none; box-shadow:none;"></p>
+</section>
+<section id="section-3" class="slide level3">
+<h3></h3>
+<p><img class="" src="../slides/diagrams/640px-Marcel_Renault_1903.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none;"></p>
 </section>
 <section id="section-4" class="slide level3">
 <h3></h3>
-<div style="text-align:center">
-<img class="" src="../slides/diagrams/Lotus_49-2.JPG" width="70%" height="auto" align="" style="background:none; border:none; box-shadow:none;">
-</div>
-</section>
-<section id="section-5" class="slide level3">
-<h3></h3>
-<div style="text-align:center">
-<img class="" src="../slides/diagrams/640px-Marcel_Renault_1903.jpg" width="70%" height="auto" align="" style="background:none; border:none; box-shadow:none;">
-</div>
-</section>
-<section id="section-6" class="slide level3">
-<h3></h3>
-<div style="text-align:center">
-<img class="" src="../slides/diagrams/Caleb_McDuff_WIX_Silence_Racing_livery.jpg" width="70%" height="auto" align="" style="background:none; border:none; box-shadow:none;">
-</div>
-<!-- SECTION Evolved Relationship with Information -->
-</section>
-<section id="evolved-relationship" class="slide level3">
-<h3>Evolved Relationship</h3>
-<script>
-showDivs(1, 'information-flow');
-</script>
-<input id="range-information-flow" type="range" min="1" max="3" value="1" onchange="setDivs('information-flow')" oninput="setDivs('information-flow')">
-<button onclick="plusDivs(-1, 'information-flow')">
-❮
-</button>
-<button onclick="plusDivs(1, 'information-flow')">
-❯
-</button>
-<div class="information-flow" style="maxwidth:100vw; max-height:100vh">
-<object class="svgplot " align data="../slides/diagrams/data-science/information-flow001.svg" style="height:50%">
-</object>
-</div>
-<div class="information-flow" style="maxwidth:100vw; max-height:100vh">
-<object class="svgplot " align data="../slides/diagrams/data-science/information-flow002.svg" style="height:50%">
-</object>
-</div>
-<div class="information-flow" style="maxwidth:100vw; max-height:100vh">
-<object class="svgplot " align data="../slides/diagrams/data-science/information-flow003.svg" style="height:50%">
-</object>
-</div>
-</section>
-<section id="effects" class="slide level3">
-<h3>Effects</h3>
-<ul>
-<li>This phenomenon has already revolutionised biology.
-<ul>
-<li>Large scale data acquisition and distribution.</li>
-<li>Transcriptomics, genomics, epigenomics, ‘rich phenomics’.</li>
-</ul></li>
-<li>Great <em>promise</em> for personalized health.</li>
-</ul>
-</section>
-<section id="societal-effects" class="slide level3">
-<h3>Societal Effects</h3>
-<ul>
-<li>Automated decision making within the computer based only on the data.</li>
-<li>A requirement to better understand our own subjective biases to ensure that the human to computer interface formulates the correct conclusions from the data.</li>
-<li>Particularly important where treatments are being prescribed.
-<ul>
-<li>But what is a treatment in the modern era: interventions could be far more subtle.</li>
-</ul></li>
-</ul>
-</section>
-<section id="societal-effects-1" class="slide level3">
-<h3>Societal Effects</h3>
-<ul>
-<li>Shift in dynamic from the direct pathway between human and data to indirect pathway between human and data via the computer</li>
-<li>This change of dynamics gives us the modern and emerging domain of data science</li>
-</ul>
+<p><img class="" src="../slides/diagrams/Caleb_McDuff_WIX_Silence_Racing_livery.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none;"></p>
 </section>
 <section id="human-communication" class="slide level3">
 <h3>Human Communication</h3>
@@ -705,118 +527,58 @@ showDivs(0, 'anne-bob-conversation');
 This can be disturbing to humans because we are used to a low bandwidth communication rate.
 </aside>
 </section>
-<section id="machine-learning-and-narratives" class="slide level3">
-<h3>Machine Learning and Narratives</h3>
-<p><img class="" src="../slides/diagrams/Classic_baby_shoes.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none;"></p>
+<section id="section-5" class="slide level3">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/hilbert-info-growth.svg" style>
+</object>
+</section>
+<section id="human-and-narrative" class="slide level3">
+<h3>Human and Narrative</h3>
 <center>
-<em>For sale: baby shoes, never worn.</em>
+<p><img src="../slides/diagrams/Classic_baby_shoes.jpg" width="60%"></p>
+<p>
+<i>For sale: baby shoes, never worn.</i>
+</p>
 </center>
-<aside class="notes">
-Ernest Hemingway’s apocrophal six word novel would mean nothing to a computer.
-</aside>
+<!-- SECTION Evolved Relationship with Information -->
 </section>
-<section id="heider-and-simmel-1944" class="slide level3">
-<h3>Heider and Simmel (1944)</h3>
-<iframe width="840" height="630" src="https://www.youtube.com/embed/8FIEZXMUM2I?start=7" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-</iframe>
+<section id="evolved-relationship" class="slide level3">
+<h3>Evolved Relationship</h3>
+<script>
+showDivs(1, 'information-flow');
+</script>
+<input id="range-information-flow" type="range" min="1" max="3" value="1" onchange="setDivs('information-flow')" oninput="setDivs('information-flow')">
+<button onclick="plusDivs(-1, 'information-flow')">
+❮
+</button>
+<button onclick="plusDivs(1, 'information-flow')">
+❯
+</button>
+<div class="information-flow" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " align data="../slides/diagrams/data-science/information-flow001.svg" style="height:50%">
+</object>
+</div>
+<div class="information-flow" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " align data="../slides/diagrams/data-science/information-flow002.svg" style="height:50%">
+</object>
+</div>
+<div class="information-flow" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " align data="../slides/diagrams/data-science/information-flow003.svg" style="height:50%">
+</object>
+</div>
 </section>
-<section id="faith-and-ai" class="slide level3">
-<h3>Faith and AI</h3>
-<ol type="1">
-<li>Artificial Intelligence as Cartoon Religion</li>
-<li>Artificial Intelligence and Introspection</li>
-<li>Independence of thought and Control: A Systemic Catch 22</li>
-</ol>
-</section>
-<section id="singulariansm-ai-as-cartoon-religion" class="slide level3">
-<h3>Singulariansm: AI as Cartoon Religion</h3>
-<ol type="1">
-<li>Superintelligence as god</li>
-<li>Demi-god status achievable through transhumanism</li>
-<li>Immortality through uploading the connectome</li>
-<li>The day of judgement as the “singularity”</li>
-</ol>
-</section>
-<section id="section-7" class="slide level3">
+<section id="section-6" class="slide level3 slide:" data-transition="none">
 <h3></h3>
-<p><img class="" src="../slides/diagrams/ml/Pierre-Simon_Laplace.png" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none;"></p>
-</section>
-<section id="section-8" class="slide level3">
-<h3></h3>
-<iframe frameborder="0" scrolling="no" style="border:0px" src="http://books.google.co.uk/books?id=1YQPAAAAQAAJ&amp;pg=PR17-IA2&amp;output=embed" , width="700" height="500">
-</iframe>
-</section>
-<section id="section-9" class="slide level3">
-<h3></h3>
-<p><img class="" src="../slides/diagrams/laplacesDeterminismEnglish.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none;"></p>
-</section>
-<section id="section-10" class="slide level3">
-<h3></h3>
-<iframe frameborder="0" scrolling="no" style="border:0px" src="http://books.google.co.uk/books?id=1YQPAAAAQAAJ&amp;pg=PR17-IA4&amp;output=embed" , width="700" height="500">
-</iframe>
-</section>
-<section id="section-11" class="slide level3">
-<h3></h3>
-<p><img class="" src="../slides/diagrams/philosophicaless00lapliala.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none;"></p>
-</section>
-<section id="singularians" class="slide level3">
-<h3>Singularians</h3>
-<ul>
-<li><p>Removing the bandwidth limitation: removing our humanity?</p></li>
-<li><p><em>Singularism</em> and religion equivalent to <em>scientology</em> and science?</p></li>
-</ul>
-</section>
-<section id="artificial-intelligence-and-introspection" class="slide level3">
-<h3>Artificial Intelligence and Introspection</h3>
-<ul>
-<li>Religion at its most powerful contextualizes us</li>
-<li>Creating artificial systems described as intelligence also contextualises us</li>
-</ul>
-</section>
-<section id="the-artificial-plant" class="slide level3">
-<h3>The Artificial Plant</h3>
-</section>
-<section id="the-digital-catch-22" class="slide level3">
-<h3>The Digital Catch 22</h3>
-<p><img class="" src="../slides/diagrams/ai/Catch22.jpg" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none;"></p>
-</section>
-<section id="section-12" class="slide level3">
-<h3></h3>
-<blockquote>
-<p>For a system to watch over us it first has to watch us</p>
-</blockquote>
-</section>
-<section id="dys-utopian-view" class="slide level3">
-<h3>Dys-utopian View</h3>
-<table>
-<tr>
-<td width="50%">
-<img class="" src="../slides/diagrams/ai/Cropped-big-brother-is-watching-1984.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
-</td>
-<td width="50%">
-<img class="" src="../slides/diagrams/ai/548px-Plakat_Mutti_is_Watching_You.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
-</td>
-</tr>
-</table>
-</section>
-<section id="section-13" class="slide level3">
-<h3></h3>
-<p><img class="" src="../slides/diagrams/ai/1024px-Thomas_Cole_The_Garden_of_Eden_Amon_Carter_Museum.jpg" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none;"></p>
-</section>
-<section id="conclusion" class="slide level3">
-<h3>Conclusion</h3>
-<ul>
-<li>Overview of AI and ML</li>
-<li>Embodiment Factors</li>
-<li>Narrative as a mode of communication</li>
-<li>Relations between Faith and AI</li>
-</ul>
+<object type="image/svg+xml" data="../slides/diagrams/anne-computer-conversation.svg">
+</object>
 </section>
 <section id="thanks" class="slide level3">
 <h3>Thanks!</h3>
 <ul>
 <li>twitter: @lawrennd</li>
 <li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
+<li>podcast: <a href="http://thetalkingmachines.com" class="uri">http://thetalkingmachines.com</a></li>
+<li><a href="http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence">Natural vs Artifical Intelligence</a></li>
 </ul>
 </section>
     </div>
@@ -832,8 +594,6 @@ Ernest Hemingway’s apocrophal six word novel would mean nothing to a computer.
       Reveal.initialize({
         // Push each slide change to the browser history
         history: true,
-        // Transition style
-        transition: 'None', // none/fade/slide/convex/concave/zoom
 
         // Optional reveal.js plugins
         dependencies: [
