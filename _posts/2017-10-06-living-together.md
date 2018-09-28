@@ -1,5 +1,6 @@
 ---
-title: "Living Together: Mind and Machine Intelligence" 
+title: "Living Together"
+subtitle: "Mind and Machine Intelligence" 
 abstract: >
   What is the nature of machine intelligence and how does it differ from humans? In this talk we explore embodiment factors, the extent to which our intelligence is locked in and how this makes us fundamentally different form the machine intelligences we are creating around us.
 author:

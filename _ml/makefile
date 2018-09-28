@@ -1,4 +1,4 @@
-BASE=machine-learning-systems-design-data-first
+BASE=data-science-and-digital-systems
 include ../make-talk-flags.mk
-DATE=2018-09-20
+DATE=2018-11-30
 include ../make-talk.mk

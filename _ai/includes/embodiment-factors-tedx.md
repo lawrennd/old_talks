@@ -1,3 +1,3 @@
 \newslide{}
 
-\include{./embodiment-factors-table.html}
+\include{_ai/includes/embodiment-factors-table.html}
