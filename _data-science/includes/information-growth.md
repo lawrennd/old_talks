@@ -1,4 +1,4 @@
-### 
+\newslide{} 
 
-\includesvg{../slides/diagrams/hilbert-info-growth.svg}
+\div{\includesvg{../slides/diagrams/hilbert-info-growth.svg}}{}{text-align:center}
 
