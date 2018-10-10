@@ -1,4 +1,4 @@
-BASE=natural-and-artificial-intelligence
+BASE=fairness-and-embodiment-factors
 include ../make-talk-flags.mk
-DATE=2018-10-18
+DATE=2018-11-08
 include ../make-talk.mk
