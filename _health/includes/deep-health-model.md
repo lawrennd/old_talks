@@ -1,4 +1,4 @@
-### Deep Health {data-transition="None"}
+\newslide{Deep Health}
 
-\includesvg{../slides/diagrams/deep-health.svg}{center}
+\div{\includesvg{../slides/diagrams/deep-health.svg}}{}{text-align:center}
 

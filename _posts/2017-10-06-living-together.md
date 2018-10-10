@@ -136,7 +136,7 @@ Of course, like any technology, that doesn’t mean it’s without its dangers. 
 
 Your cat understands you better than your computer does, your cat understands me better than your computer does, and it hasn’t even met me!
 
-Our lives are defined by our desperate need to be understood: art, music, literature, dance, sport. So many creative ways to try and communicate who we are or what we feel. The computer has no need for this.  
+Our lives are defined by our desperate need to be understood: art, music, literature, dance, sport. So many creative ways to try and communicate who we are or what we feel. The computer has no need for this.
 
 When you hear the term Artificial Intelligence, remember that’s precisely what it is. Artificial, like that plastic plant. A plastic plant is convenient, it doesn’t need watering, it doesn’t need to be put in the light, it won’t wilt if you don’t attend to it, and it won’t outgrow the place you put it. 
 
