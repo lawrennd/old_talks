@@ -14,17 +14,14 @@ Better mediation of this flow actually requires a better understanding of human-
 
 For further thoughts see [this Guardian article](https://www.theguardian.com/media-network/2015/jul/23/data-driven-economy-marketing) from 2015 on marketing in the internet era and [this blog post](http://inverseprobability.com/2015/12/04/what-kind-of-ai) on System Zero.} 
 
-
-
 \newslide{Evolved Relationship}
 \define{\divoptions}{maxwidth:100vw; max-height:100vh}
 \define{\svgstyle}{height:50%}
-\define{\stubname}{information-flow}
+\define{\stubname}{new-flow-of-information}
 \slides{
 \startslides{\stubname}{1}{3}
 \div{\includesvg{../slides/diagrams/data-science/\concat{\stubname}{001.svg}}{}{}{\svgstyle}}{\stubname}{\divoptions}
 \div{\includesvg{../slides/diagrams/data-science/\concat{\stubname}{002.svg}}{}{}{\svgstyle}}{\stubname}{\divoptions}
-\div{\includesvg{../slides/diagrams/data-science/\concat{\stubname}{003.svg}}{}{}{\svgstyle}}{\stubname}{\divoptions}
 }
 
 \notesfigure{\includesvg{../slides/diagrams/data-science/\concat{\stubname}{003.svg}}}
