@@ -5,7 +5,6 @@
 
 Fritz Heider referred to the important point of a conversation as being that they are happenings that are "*psychologically represented* in each of the participants" (his emphasis) [@Heider:interpersonal58]}
 
-\newslide{Conversation}
 
 \define{\stubname}{anne-bob-conversation}
 \include{_ai/includes/anne-bob-talk.md}

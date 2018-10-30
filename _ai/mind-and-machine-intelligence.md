@@ -25,7 +25,6 @@ ppt: 2018-10-30-mind-and-machine-intelligence.pptx
 
 \include{_ai/includes/diving-bell-butterfly.md}
 \include{_ai/includes/embodiment-factors-tedx.md}
-\include{_ai/includes/sahelanthropus-tchadensis.md}
 \include{_ai/includes/formula-one-engine.md}
 \include{_ai/includes/marcel-renault.md}
 \include{_ai/includes/caleb-mcduff.md}
@@ -36,17 +35,24 @@ ppt: 2018-10-30-mind-and-machine-intelligence.pptx
 \include{_data-science/includes/evolved-relationship.md}
 \include{_ai/includes/centrifugal-governor.md}
 \include{_ml/includes/what-is-ml-2.md}
+\include{_ml/includes/deep-learning-overview.md}
 
 \newslide{Systems Design}
-
+\slides{
 * decomposition
 * data
 * deployment
+}
+
+
 
 \newslide{Thanks!}
-
+\slides{
 * twitter: \@lawrennd
 * blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
 * podcast: [The Talking Machines](http://thetalkingmachines.com)
+}
+
+### References
 
 
