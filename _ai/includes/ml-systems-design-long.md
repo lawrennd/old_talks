@@ -36,15 +36,9 @@ The difference with modern automated decision making systems is our intention is
 
 We become exposed to mischief and adversaries. Adversaries intentially may wish to take over the artificial intelligence system, and mischief is the constant practice of many in our society. Simply watching a 10 year old interact with a voice agent such as Alexa or Siri shows that they are delighted when the can make the the "intelligent" agent seem foolish. }
 
-\newslide{Early AI}
-
-\includeimg{../slides/diagrams/2017-10-12 16.47.34.jpg}{40%}{rotateimg90}{center}
-\caption{Watt's Governor as held by "Science" on Holborn Viaduct}
-
 \newslide{Machine Learning Systems Design}
 
-\includeimg{../slides/diagrams/SteamEngine_Boulton&Watt_1784_neg.png}{50%}{center}
-\caption{Watt's Steam Engine which made Steam Power Efficient and Practical}
+\include{_ai/includes/centrifugal_governor.md}
 
 \newslide{Adversaries}
 \slides{
