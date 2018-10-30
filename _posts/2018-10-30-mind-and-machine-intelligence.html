@@ -152,9 +152,6 @@ embodiment
 <p>I call this ratio between the time it takes to compute something, and the time it takes to say it, the embodiment factor. Because it reflects how embodied our cognition is.</p>
 <p>If it takes you two minutes to say the thing you have thought in a second, then you are a computer. If it takes you 15 billion years, then you are a human.</p>
 <div style="text-align:center;width:70%">
-<img class="" src="../slides/diagrams/Sahe_tchadensis.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
-</div>
-<div style="text-align:center;width:70%">
 <img class="" src="../slides/diagrams/Lotus_49-2.JPG" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 </div>
 <p>If we think of ourselves as vehicles, then we are massively overpowered. Our ability to generate derived information from raw fuel is extraordinary. Intellectually we have formula one engines.</p>
@@ -254,17 +251,46 @@ embodiment
 <p>Machine learning models are <em>mathematical models</em> which make weak assumptions about data, e.g. smoothness assumptions. By combining these assumptions with the data we observe we can interpolate between data points or, occasionally, extrapolate into the future.</p>
 <p>Machine learning is a technology which strongly overlaps with the methodology of statistics. From a historical/philosophical view point, machine learning differs from statistics in that the focus in the machine learning community has been primarily on accuracy of prediction, whereas the focus in statistics is typically on the interpretability of a model and/or validating a hypothesis through data collection.</p>
 <p>The rapid increase in the availability of compute and data has led to the increased prominence of machine learning. This prominence is surfacing in two different, but overlapping domains: data science and artificial intelligence.</p>
-<ul>
-<li>decomposition</li>
-<li>data</li>
-<li><p>deployment</p></li>
-<li>twitter: @lawrennd</li>
-<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
-<li><p>podcast: <a href="http://thetalkingmachines.com">The Talking Machines</a></p></li>
-</ul>
+<div style="width:100%;text-align:center">
+<img class="" src="../slides/diagrams/deepface_neg.png" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</div>
+<center>
+<em>The DeepFace architecture <span class="citation">(Taigman et al., 2014)</span>, visualized through colors to represent the functional mappings at each layer. There are 120 million parameters in the model. </em>
+</center>
+<p>The DeepFace architecture <span class="citation">(Taigman et al., 2014)</span> consists of layers that deal with <em>translation</em> and <em>rotational</em> invariances. These layers are followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected layers.</p>
+<div style="height:600px;text-align:center">
+<img class="" src="../slides/diagrams/576px-Early_Pinball.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</div>
+<center>
+<em>Deep learning models are composition of simple functions. We can think of a pinball machine as an analogy. Each layer of pins corresponds to one of the layers of functions in the model. Input data is represented by the location of the ball from left to right when it is dropped in from the top. Output class comes from the position of the ball as it leaves the pins at the bottom. </em>
+</center>
+<p>We can think of what these models are doing as being similar to early pin ball machines. In a neural network, we input a number (or numbers), whereas in pinball, we input a ball. The location of the ball on the left-right axis can be thought of as the number. As the ball falls through the machine, each layer of pins can be thought of as a different layer of neurons. Each layer acts to move the ball from left to right.</p>
+<p>In a pinball machine, when the ball gets to the bottom it might fall into a hole defining a score, in a neural network, that is equivalent to the decision: a classification of the input object.</p>
+<p>An image has more than one number associated with it, so it's like playing pinball in a <em>hyper-space</em>.</p>
+
+<div style="text-align:center">
+<object class="svgplot " align data="../slides/diagrams/pinball001.svg" style>
+</object>
+</div>
+<center>
+<em>At initialization, the pins, which represent the parameters of the function, aren't in the right place to bring the balls to the correct decisions. </em>
+</center>
+<div style="text-align:center">
+<object class="svgplot " align data="../slides/diagrams/pinball002.svg" style>
+</object>
+</div>
+<center>
+<em>After learning the pins are now in the right place to bring the balls to the correct decisions. </em>
+</center>
+<p>Learning involves moving all the pins to be in the right position, so that the ball falls in the right place. But moving all these pins in hyperspace can be difficult. In a hyper space you have to put a lot of data through the machine for to explore the positions of all the pins. Adversarial learning reflects the fact that a ball can be moved a small distance and lead to a very different result.</p>
+<p>Probabilistic methods explore more of the space by considering a range of possible paths for the ball through the machine.</p>
+<h3 id="references" class="unnumbered">References</h3>
 <div id="refs" class="references">
 <div id="ref-Heider:interpersonal58">
 <p>Heider, F., 1958. The psychology of interpersonal relations. John Wiley.</p>
+</div>
+<div id="ref-Taigman:deepface14">
+<p>Taigman, Y., Yang, M., Ranzato, M., Wolf, L., 2014. DeepFace: Closing the gap to human-level performance in face verification, in: Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition. <a href="https://doi.org/10.1109/CVPR.2014.220" class="uri">https://doi.org/10.1109/CVPR.2014.220</a></p>
 </div>
 </div>
 
