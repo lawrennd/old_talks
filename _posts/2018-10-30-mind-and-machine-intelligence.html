@@ -1,6 +1,6 @@
 ---
 title: "Mind and Machine Intelligence"
-venue: FinTECHTalents 2018
+venue: "FinTECHTalents 2018"
 abstract: "What is the nature of machine intelligence and how does it differ from humans? In this talk we introduce embodiment factors. They represent the extent to which our intelligence is locked inside us. The locked in nature of our intelligence makes us fundamentally different from the machine intelligences we are creating around us. Having summarized these differences we consider the Three Ds of machine learning system design: a set of considerations to take into acount when building machine intelligences."
 author:
 - given: Neil D.
@@ -13,6 +13,251 @@ author:
 date: 2018-10-30
 published: 2018-10-30
 reveal: 2018-10-30-mind-and-machine-intelligence.slides.html
-ppt: 2018-10-30-mind-and-machine-intelligence.pptx
 layout: talk
+categories:
+- notes
 ---
+
+
+<div style="display:none">
+  $${% include talk-notation.tex %}$$
+</div>
+
+<p><!--% not ipynb--></p>
+<div style="text-align:center;width:60%">
+<img class="" src="../slides/diagrams/the-diving-bell-and-the-butterfly2.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</div>
+<p>The Diving Bell and the Butterfly is the autobiography of Jean-Dominique Bauby.</p>
+<p>In 1995, when he was editor-in-chief of the French Elle magazine, he suffered a stroke, which destroyed his brainstem. He became almost totally physically paralyzed, but was still mentally active. He acquired what is known as locked-in syndrome.</p>
+<p>Incredibly, Bauby wrote his memoir after he became paralyzed.</p>
+<p>His left eye was the only muscle he could voluntarily move, and he wrote the entire book by winking it.</p>
+<div style="text-align:center;font-size:200%">
+E S A R I N T U L <br> O M D P C F B V <br> H G J Q Z Y X K W
+</div>
+<p>How could he do that? Well, first, they set up a mechanism where he could scan across letters and blink at the letter he wanted to use. In this way, he was able to write each letter.</p>
+<p>It took him 10 months of four hours a day to write the book. Each word took two minutes to write.</p>
+<p>Imagine doing all that thinking, but so little speaking, having all those thoughts and so little ability to communicate.</p>
+<p>The idea behind this talk is that we are all in that situation. While not as extreme as for Bauby, we all have somewhat of a locked in intelligence.</p>
+<table>
+<tr>
+<td>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="6" style="">
+<img class="" src="../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="4" style="">
+<img class="" src="../slides/diagrams/ClaudeShannon_MFO3807.jpg" width="150%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="1" style="">
+<img class="" src="../slides/diagrams/Jean-Dominique_Bauby.jpg" width="150%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="fragment" data-fragment-index="2" style="">
+bits/min
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="6" style="">
+billions
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="5" style="">
+2000
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="3" style="">
+6
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="fragment" data-fragment-index="7" style="">
+billion<br>calculations/s
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="9" style="">
+~100
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="8" style="">
+a billion
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="8" style="">
+a billion
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="fragment" data-fragment-index="10" style="">
+embodiment
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="11" style="">
+20 minutes
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="12" style="">
+5 billion years
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="12" style="">
+15 trillion years
+</div>
+</td>
+</tr>
+</table>
+<p>Let me explain what I mean. Claude Shannon introduced a mathematical concept of information for the purposes of understanding telephone exchanges.</p>
+<p>Information has many meanings, but mathematically, Shannon defined a bit of information to be the amount of information you get from tossing a coin.</p>
+<p>If I toss a coin, and look at it, I know the answer. You don't. But if I now tell you the answer I communicate to you 1 bit of information. Shannon defined this as the fundamental unit of information.</p>
+<p>If I toss the coin twice, and tell you the result of both tosses, I give you two bits of information. Information is additive.</p>
+<p>Shannon also estimated the average information associated with the English language. He estimated that the average information in any word is 12 bits, equivalent to twelve coin tosses.</p>
+<p>So every two minutes Bauby was able to communicate 12 bits, or six bits per minute.</p>
+<p>This is the information transfer rate he was limited to, the rate at which he could communicate.</p>
+<p>Compare this to me, talking now. The average speaker for TEDX speaks around 160 words per minute. That's 320 times faster than Bauby or around a 2000 bits per minute. 2000 coin tosses per minute.</p>
+<p>But, just think how much thought Bauby was putting into every sentence. Imagine how carefully chosen each of his words was. Because he was communication constrained he could put more thought into each of his words. Into thinking about his audience.</p>
+<p>So, his intelligence became locked in. He thinks as fast as any of us, but can communicate slower. Like the tree falling in the woods with no one there to hear it, his intelligence is embedded inside him.</p>
+<p>Two thousand coin tosses per minute sounds pretty impressive, but this talk is not just about us, it’s about our computers, and the type of intelligence we are creating within them.</p>
+<p>So how does two thousand compare to our digital companions? When computers talk to each other, they do so with billions of coin tosses per minute.</p>
+<p>Let’s imagine for a moment, that instead of talking about communication of information, we are actually talking about money. Bauby would have 6 dollars. I would have 2000 dollars, and my computer has billions of dollars.</p>
+<p>The internet has interconnected computers and equipped them with extremely high transfer rates.</p>
+<p>However, by our very best estimates, computers actually think slower than us.</p>
+<p>How can that be? You might ask, computers calculate much faster than me. That’s true, but underlying your conscious thoughts there are a lot of calculations going on.</p>
+<p>Each thought involves many thousands, millions or billions of calculations. How many exactly, we don’t know yet, because we don’t know how the brain turns calculations into thoughts.</p>
+<p>Our best estimates suggest that to simulate your brain a computer would have to be as large as the UK Met Office machine here in Exeter. That’s a 250 million pound machine, the fastest in the UK. It can do 16 billion billon calculations per second.</p>
+<p>It simulates the weather across the word every day, that’s how much power we think we need to simulate our brains.</p>
+<p>So, in terms of our computational power we are extraordinary, but in terms of our ability to explain ourselves, just like Bauby, we are locked in.</p>
+<p>For a typical computer, to communicate everything it computes in one second, it would only take it a couple of minutes. For us to do the same would take 15 billion years.</p>
+<p>If intelligence is fundamentally about processing and sharing of information. This gives us a fundamental constraint on human intelligence that dictates its nature.</p>
+<p>I call this ratio between the time it takes to compute something, and the time it takes to say it, the embodiment factor. Because it reflects how embodied our cognition is.</p>
+<p>If it takes you two minutes to say the thing you have thought in a second, then you are a computer. If it takes you 15 billion years, then you are a human.</p>
+<div style="text-align:center;width:70%">
+<img class="" src="../slides/diagrams/Sahe_tchadensis.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</div>
+<div style="text-align:center;width:70%">
+<img class="" src="../slides/diagrams/Lotus_49-2.JPG" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</div>
+<p>If we think of ourselves as vehicles, then we are massively overpowered. Our ability to generate derived information from raw fuel is extraordinary. Intellectually we have formula one engines.</p>
+<div style="text-align:center;width:70%">
+<img class="" src="../slides/diagrams/640px-Marcel_Renault_1903.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</div>
+<p>But, if you think about our ability to make use of those thoughts, to deploy them on the track, we are F1 cars with bicycle wheels.</p>
+<p>Just think of the control a driver would have to have to deploy such power through such a narrow channel of traction. That is the beauty and the skill of the human mind.</p>
+<div style="width:70%;text-align:center">
+<img class="" src="../slides/diagrams/Caleb_McDuff_WIX_Silence_Racing_livery.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</div>
+<p>In contrast, our computers are more like go-karts. Underpowered, but with well-matched tires. More efficient, but somehow less extraordinary, less beautiful.</p>
+<h3 id="human-communication">Human Communication</h3>
+<p>For human conversation to work, we require an internal model of who we are speaking to. We model each other, and combine our sense of who they are, who they think we are, and what has been said. This is our approach to dealing with the limited bandwidth connection we have. Empathy and understanding of intent. Mental dispositional concepts are used to augment our limited communication bandwidth.</p>
+<p>Fritz Heider referred to the important point of a conversation as being that they are happenings that are &quot;<em>psychologically represented</em> in each of the participants&quot; (his emphasis) <span class="citation">(Heider, 1958)</span></p>
+
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation006.svg" style>
+</object>
+<center>
+<em>Conversation relies on internal models of other individuals. </em>
+</center>
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation007.svg" style>
+</object>
+<center>
+<em>Misunderstanding of context and who we are talking to leads to arguments. </em>
+</center>
+<div style="text-align:center">
+<object class="svgplot " align data="../slides/diagrams/hilbert-info-growth.svg" style>
+</object>
+</div>
+<div style="text-align:center;width:60%">
+<img class="" src="../slides/diagrams/Classic_baby_shoes.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</div>
+<center>
+<em>For sale: baby shoes, never worn. </em>
+</center>
+<p>But this is a very different kind of intelligence than ours. A computer cannot understand the depth of the Ernest Hemingway's apocryphal six word novel: &quot;For Sale, Baby Shoes, Never worn&quot;, because it isn't equipped with that ability to model the complexity of humanity that underlies that statement.</p>
+<div style="text-align:center">
+<object class="svgplot " align data="../slides/diagrams/anne-computer-conversation.svg" style>
+</object>
+</div>
+
+<object class="svgplot " align data="../slides/diagrams/anne-computer-conversation006.svg" style>
+</object>
+<center>
+<em>Conversation relies on internal models of other individuals. </em>
+</center>
+<object class="svgplot " align data="../slides/diagrams/anne-computer-conversation007.svg" style>
+</object>
+<center>
+<em>Misunderstanding of context and who we are talking to leads to arguments. </em>
+</center>
+<p>Similarly, we find it difficult to comprehend how computers are making decisions. Because they do so with more data than we can possibly imagine.</p>
+<p>In many respects, this is not a problem, it's a good thing. Computers and us are good at different things. But when we interact with a computer, when it acts in a different way to us, we need to remember why.</p>
+<p>Just as the first step to getting along with other humans is understanding other humans, so it needs to be with getting along with our computers.</p>
+<p>Embodiment factors explain why, at the same time, computers are so impressive in simulating our weather, but so poor at predicting our moods. Our complexity is greater than that of our weather, and each of us is tuned to read and respond to one another.</p>
+<p>Their intelligence is different. It is based on very large quantities of data that we cannot absorb. Our computers don’t have a complex internal model of who we are. They don’t understand the human condition. They are not tuned to respond to us as we are to each other.</p>
+<p>Embodiment factors encapsulate a profound thing about the nature of humans. Our locked in intelligence means that we are striving to communicate, so we put a lot of thought into what we’re communicating with. And if we’re communicating with something complex, we naturally anthropomorphize them.</p>
+<p>We give our dogs, our cats and our cars human motivations. We do the same with our computers. We anthropomorphize them. We assume that they have the same objectives as us and the same constraints. They don’t.</p>
+<p>This means, that when we worry about artificial intelligence, we worry about the wrong things. We fear computers that behave like more powerful versions of ourselves that will struggle to outcompete us.</p>
+<p>In reality, the challenge is that our computers cannot be human enough. They cannot understand us with the depth we understand one another. They drop below our cognitive radar and operate outside our mental models.</p>
+<p>The real danger is that computers don’t anthropomorphize. They’ll make decisions in isolation from us without our supervision, because they can’t communicate truly and deeply with us.</p>
+<h2 id="evolved-relationship-with-information">Evolved Relationship with Information</h2>
+<p>The high bandwidth of computers has resulted in a close relationship between the computer and data. Large amounts of information can flow between the two. The degree to which the computer is mediating our relationship with data means that we should consider it an intermediary.</p>
+<p>Originaly our low bandwith relationship with data was affected by two characteristics. Firstly, our tendency to over-interpret driven by our need to extract as much knowledge from our low bandwidth information channel as possible. Secondly, by our improved understanding of the domain of <em>mathematical</em> statistics and how our cognitive biases can mislead us.</p>
+<p>With this new set up there is a potential for assimilating far more information via the computer, but the computer can present this to us in various ways. If it's motives are not aligned with ours then it can misrepresent the information. This needn't be nefarious it can be simply as a result of the computer pursuing a different objective from us. For example, if the computer is aiming to maximize our interaction time that may be a different objective from ours which may be to summarize information in a representative manner in the <em>shortest</em> possible length of time.</p>
+<p>For example, for me it was a common experience to pick up my telephone with the intention of checking when my next appointment was, but to soon find myself distracted by another application on the phone, and end up reading something on the internet. By the time I'd finished reading, I would often have forgotten the reason I picked up my phone in the first place.</p>
+<p>There are great benefits to be had from the huge amount of information we can unlock from this evolved relationship between us and data. In biology, large scale data sharing has been driven by a revolution in genomic, transcriptomic and epigenomic measurement. The improved inferences that that can be drawn through summarizing data by computer have fundamentally changed the nature of biological science, now this phenomenon is also infuencing us in our daily lives as data measured by <em>happenstance</em> is increasingly used to characterize us.</p>
+<p>Better mediation of this flow actually requires a better understanding of human-computer interaction. This in turn involves understanding our own intelligence better, what its cognitive biases are and how these might mislead us.</p>
+<p>For further thoughts see <a href="https://www.theguardian.com/media-network/2015/jul/23/data-driven-economy-marketing">this Guardian article</a> from 2015 on marketing in the internet era and <a href="http://inverseprobability.com/2015/12/04/what-kind-of-ai">this blog post</a> on System Zero.</p>
+<object class="svgplot " align data="../slides/diagrams/data-science/new-flow-of-information002.svg" style>
+</object>
+<center>
+<em>New direction of information flow, information is reaching us mediated by the computer </em>
+</center>
+<img class="" src="../slides/diagrams/science-holborn-viaduct.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+<center>
+<em>Centrifugal governor as held by &quot;Science&quot; on Holborn Viaduct </em>
+</center>
+<img class="negate" src="../slides/diagrams/SteamEngine_Boulton&Watt_1784.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+<center>
+<em>Watt's Steam Engine which made Steam Power Efficient and Practical </em>
+</center>
+<img class="negate" src="../slides/diagrams/Centrifugal_governor.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+<center>
+<em>The centrifugal governor, an early example of a decision making system. </em>
+</center>
+<p>Machine learning allows us to extract knowledge from data to form a prediction.</p>
+<p><span class="math display">\[ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span></p>
+<p>A machine learning prediction is made by combining a model with data to form the prediction. The manner in which this is done gives us the machine learning <em>algorithm</em>.</p>
+<p>Machine learning models are <em>mathematical models</em> which make weak assumptions about data, e.g. smoothness assumptions. By combining these assumptions with the data we observe we can interpolate between data points or, occasionally, extrapolate into the future.</p>
+<p>Machine learning is a technology which strongly overlaps with the methodology of statistics. From a historical/philosophical view point, machine learning differs from statistics in that the focus in the machine learning community has been primarily on accuracy of prediction, whereas the focus in statistics is typically on the interpretability of a model and/or validating a hypothesis through data collection.</p>
+<p>The rapid increase in the availability of compute and data has led to the increased prominence of machine learning. This prominence is surfacing in two different, but overlapping domains: data science and artificial intelligence.</p>
+<ul>
+<li>decomposition</li>
+<li>data</li>
+<li><p>deployment</p></li>
+<li>twitter: @lawrennd</li>
+<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
+<li><p>podcast: <a href="http://thetalkingmachines.com">The Talking Machines</a></p></li>
+</ul>
+<div id="refs" class="references">
+<div id="ref-Heider:interpersonal58">
+<p>Heider, F., 1958. The psychology of interpersonal relations. John Wiley.</p>
+</div>
+</div>
+
+
