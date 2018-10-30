@@ -1,5 +1,6 @@
 ---
 layout: slides
+transition: None
 title: "Living Together"
 subtitle: "Mind and Machine Intelligence"
 abstract: >
@@ -24,6 +25,8 @@ published: 2017-10-06
 reveal: 2017-10-06-living-together.slides.html
 venue: TEDx Exeter
 ---
+
+\include{talk-macros.tex}
 
 \include{_ai/includes/diving-bell-butterfly.md}
 \include{_ai/includes/embodiment-factors-tedx.md}
