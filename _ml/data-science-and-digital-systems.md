@@ -27,14 +27,7 @@ transition: None
 
 \include{_data-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
 
-\newslide{}
-
-\div{\includeimg{../slides/diagrams/2017-10-12 16.47.34.jpg}{50%}{rotateimg90}{center}}{}{text-align:center}
-
-\newslide{}
-
-\div{\includeimg{../slides/diagrams/SteamEngine_Boulton&Watt_1784_neg.png}{50%}{center}}{}{text-align:center}
-
+\include{_ai/includes/centrifugal-governor.md}
 \include{_ml/includes/what-is-ml-2.md}
 \include{_ai/includes/ai-vs-data-science-2.md}
 

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Mind and Machine Intelligence</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="talks.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          TeX: {
+            extensions: ["color.js"]
+          }
+        });
+      </script>
+      <script>
+  
+  function setDivs(group) {
+    var frame = document.getElementById("range-".concat(group)).value
+    slideIndex = parseInt(frame)
+    showDivs(slideIndex, group);
+  }
+  
+  function plusDivs(n, group) {
+    showDivs(slideIndex += n, group);
+    document.setElementById("range-".concat(group)) = slideIndex
+  }
+  
+  function showDivs(n,group) {
+    var i;
+    var x = document.getElementsByClassName(group);
+    if (n > x.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = x.length}
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    x[slideIndex-1].style.display = "block";  
+  }
+      </script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Mind and Machine Intelligence</h1>
+  <p class="author" style="text-align:center"><a href="http://inverseprobability.com">Neil D. Lawrence</a></p>
+  <p class="venue" style="text-align:center">FinTECHTalents 2018</p>
+</section>
+
+<section class="slide level3">
+
+<p><!--% not ipynb--></p>
+<p><!--% not notes--></p>
+</section>
+<section id="section" class="slide level3">
+<h3></h3>
+<div style="text-align:center;width:60%">
+<img class="" src="../slides/diagrams/the-diving-bell-and-the-butterfly2.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none;">
+</div>
+</section>
+<section id="section-1" class="slide level3">
+<h3></h3>
+<div style="text-align:center;font-size:200%">
+E S A R I N T U L <br> O M D P C F B V <br> H G J Q Z Y X K W
+</div>
+</section>
+<section id="section-2" class="slide level3">
+<h3></h3>
+<table>
+<tr>
+<td>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="6" style="">
+<object class="svgplot " align data="../slides/diagrams/computer-clip-art.svg" style>
+</object>
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="4" style="">
+<object class="svgplot " align data="../slides/diagrams/computer.svg" style>
+</object>
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="1" style="">
+<img class="" src="../slides/diagrams/Jean-Dominique_Bauby.jpg" width="150%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="fragment" data-fragment-index="2" style="">
+bits/min
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="6" style="">
+billions
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="5" style="">
+2000
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="3" style="">
+6
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="fragment" data-fragment-index="7" style="">
+billion<br>calculations/s
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="9" style="">
+~100
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="8" style="">
+a billion
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="8" style="">
+a billion
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="fragment" data-fragment-index="10" style="">
+embodiment
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="11" style="">
+20 minutes
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="12" style="">
+5 billion years
+</div>
+</td>
+<td align="center">
+<div class="fragment" data-fragment-index="12" style="">
+15 trillion years
+</div>
+</td>
+</tr>
+</table>
+</section>
+<section id="section-3" class="slide level3">
+<h3></h3>
+<div style="text-align:center;width:70%">
+<img class="" src="../slides/diagrams/Sahe_tchadensis.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none;">
+</div>
+</section>
+<section id="section-4" class="slide level3">
+<h3></h3>
+<div style="text-align:center;width:70%">
+<img class="" src="../slides/diagrams/Lotus_49-2.JPG" width="" height="auto" align="" style="background:none; border:none; box-shadow:none;">
+</div>
+</section>
+<section id="section-5" class="slide level3">
+<h3></h3>
+<div style="text-align:center;width:70%">
+<img class="" src="../slides/diagrams/640px-Marcel_Renault_1903.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none;">
+</div>
+</section>
+<section id="section-6" class="slide level3">
+<h3></h3>
+<div style="width:70%;text-align:center">
+<img class="" src="../slides/diagrams/Caleb_McDuff_WIX_Silence_Racing_livery.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none;">
+</div>
+</section>
+<section id="human-communication" class="slide level3">
+<h3>Human Communication</h3>
+</section>
+<section id="conversation" class="slide level3">
+<h3>Conversation</h3>
+
+<script>
+showDivs(0, 'anne-bob-conversation');
+</script>
+<input id="range-anne-bob-conversation" type="range" min="0" max="7" value="0" onchange="setDivs('anne-bob-conversation')" oninput="setDivs('anne-bob-conversation')">
+<button onclick="plusDivs(-1, 'anne-bob-conversation')">
+❮
+</button>
+<button onclick="plusDivs(1, 'anne-bob-conversation')">
+❯
+</button>
+<div class="anne-bob-conversation" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation000.svg" style="width:80%;">
+</object>
+</div>
+<div class="anne-bob-conversation" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation001.svg" style="width:80%;">
+</object>
+</div>
+<div class="anne-bob-conversation" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation002.svg" style="width:80%;">
+</object>
+</div>
+<div class="anne-bob-conversation" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation003.svg" style="width:80%;">
+</object>
+</div>
+<div class="anne-bob-conversation" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation004.svg" style="width:80%;">
+</object>
+</div>
+<div class="anne-bob-conversation" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation005.svg" style="width:80%;">
+</object>
+</div>
+<div class="anne-bob-conversation" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation006.svg" style="width:80%;">
+</object>
+</div>
+<div class="anne-bob-conversation" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation007.svg" style="width:80%;">
+</object>
+</div>
+<aside class="notes">
+This can be disturbing to humans because we are used to a low bandwidth communication rate.
+</aside>
+</section>
+<section id="section-7" class="slide level3">
+<h3></h3>
+<div style="text-align:center">
+<object class="svgplot " align data="../slides/diagrams/hilbert-info-growth.svg" style>
+</object>
+</div>
+</section>
+<section id="section-8" class="slide level3">
+<h3></h3>
+<div style="text-align:center;width:60%">
+<img class="" src="../slides/diagrams/Classic_baby_shoes.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none;">
+</div>
+<center>
+<em>For sale: baby shoes, never worn. </em>
+</center>
+</section>
+<section id="section-9" class="slide level3">
+<h3></h3>
+<div style="text-align:center">
+<object class="svgplot " align data="../slides/diagrams/anne-computer-conversation.svg" style>
+</object>
+</div>
+
+<script>
+showDivs(0, 'anne-computer-conversation');
+</script>
+<input id="range-anne-computer-conversation" type="range" min="0" max="7" value="0" onchange="setDivs('anne-computer-conversation')" oninput="setDivs('anne-computer-conversation')">
+<button onclick="plusDivs(-1, 'anne-computer-conversation')">
+❮
+</button>
+<button onclick="plusDivs(1, 'anne-computer-conversation')">
+❯
+</button>
+<div class="anne-computer-conversation" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " align data="../slides/diagrams/anne-computer-conversation000.svg" style="width:80%;">
+</object>
+</div>
+<div class="anne-computer-conversation" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " align data="../slides/diagrams/anne-computer-conversation001.svg" style="width:80%;">
+</object>
+</div>
+<div class="anne-computer-conversation" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " align data="../slides/diagrams/anne-computer-conversation002.svg" style="width:80%;">
+</object>
+</div>
+<div class="anne-computer-conversation" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " align data="../slides/diagrams/anne-computer-conversation003.svg" style="width:80%;">
+</object>
+</div>
+<div class="anne-computer-conversation" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " align data="../slides/diagrams/anne-computer-conversation004.svg" style="width:80%;">
+</object>
+</div>
+<div class="anne-computer-conversation" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " align data="../slides/diagrams/anne-computer-conversation005.svg" style="width:80%;">
+</object>
+</div>
+<div class="anne-computer-conversation" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " align data="../slides/diagrams/anne-computer-conversation006.svg" style="width:80%;">
+</object>
+</div>
+<div class="anne-computer-conversation" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " align data="../slides/diagrams/anne-computer-conversation007.svg" style="width:80%;">
+</object>
+</div>
+<aside class="notes">
+This can be disturbing to humans because we are used to a low bandwidth communication rate.
+</aside>
+<!-- SECTION Evolved Relationship with Information -->
+</section>
+<section id="evolved-relationship" class="slide level3">
+<h3>Evolved Relationship</h3>
+<div class="new-flow-of-information" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " align data="../slides/diagrams/data-science/new-flow-of-information001.svg" style="height:50%">
+</object>
+</div>
+</section>
+<section id="evolved-relationship-1" class="slide level3">
+<h3>Evolved Relationship</h3>
+<div class="new-flow-of-information" style="maxwidth:100vw; max-height:100vh">
+<object class="svgplot " align data="../slides/diagrams/data-science/new-flow-of-information002.svg" style="height:50%">
+</object>
+</div>
+</section>
+<section id="section-10" class="slide level3">
+<h3></h3>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/science-holborn-viaduct.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
+</section>
+<section id="section-11" class="slide level3">
+<h3></h3>
+<div style="text-align:center">
+<img class="negate" src="../slides/diagrams/SteamEngine_Boulton&Watt_1784.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
+</section>
+<section id="section-12" class="slide level3">
+<h3></h3>
+<div style="text-align:center">
+<img class="negate" src="../slides/diagrams/Centrifugal_governor.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
+</section>
+<section id="section-13" class="slide level3">
+<h3></h3>
+<p><span class="math display">\[ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span></p>
+</section>
+<section id="systems-design" class="slide level3">
+<h3>Systems Design</h3>
+<ul>
+<li>decomposition</li>
+<li>data</li>
+<li>deployment</li>
+</ul>
+</section>
+<section id="thanks" class="slide level3">
+<h3>Thanks!</h3>
+<ul>
+<li>twitter: @lawrennd</li>
+<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
+<li>podcast: <a href="http://thetalkingmachines.com">The Talking Machines</a></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // Transition style
+        transition: 'None', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
