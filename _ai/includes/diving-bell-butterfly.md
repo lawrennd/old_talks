@@ -1,6 +1,6 @@
 \newslide{}
 
-\div{\includeimg{../slides/diagrams/the-diving-bell-and-the-butterfly.jpg}}{}{text-align:center;width:40%}
+\div{\includeimg{../slides/diagrams/the-diving-bell-and-the-butterfly.jpg}}{}{text-align:center;width:60%}
 
 \notes{The Diving Bell and the Butterfly is the autobiography of Jean-Dominique Bauby.
 

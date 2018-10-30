@@ -1,4 +1,4 @@
-BASE=fairness-and-embodiment-factors
+BASE=mind-and-machine-intelligence
 include ../make-talk-flags.mk
-DATE=2018-11-08
+DATE=2018-10-29
 include ../make-talk.mk
