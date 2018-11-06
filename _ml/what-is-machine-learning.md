@@ -35,9 +35,10 @@ $$
 
 *Large amounts of data and high interconnection bandwidth mean that we receive much of our information about the world around us through computers.*
 
-\include{../_ml/includes/process-automation.md}
-\include{../_ml/includes/process-emulation.md}
-\include{../_ai/includes/ai-vs-data-science.md}
+\include{_ml/includes/process-automation.md}
+\include{_ml/includes/process-emulation.md}
+\include{_ml/includes/polynomial-fit.md}
+\include{_ai/includes/ai-vs-data-science.md}
 
 ### Machine Learning
 

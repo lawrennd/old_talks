@@ -1,6 +1,17 @@
-\notes{Anecdotally, talking to data modelling scientists. Most say they spend 80% of their time acquiring and cleaning data. This is precipitating what I refer to as the “data crisis”. This is an analogy with software. The “software crisis” was the phenomenon of inability to deliver software solutions due to increasing complexity of implementation. There was no single shot solution for the software crisis, it involved better practice (scrum, test orientated development, sprints, code review), improved programming paradigms (object orientated, functional) and better tools (CVS, then SVN, then git).}
+\notes{Anecdotally, talking to data modelling scientists. Most say they spend
+80% of their time acquiring and cleaning data. This is precipitating
+what I refer to as the “data crisis”. This is an analogy with software.
+The “software crisis” was the phenomenon of inability to deliver
+software solutions due to increasing complexity of implementation. There
+was no single shot solution for the software crisis, it involved better
+practice (scrum, test orientated development, sprints, code review),
+improved programming paradigms (object orientated, functional) and
+better tools (CVS, then SVN, then git).}
 
-\notes{However, these challenges aren't new, they are merely taking a different form. From the computer's perspective software *is* data. The first wave of the data crisis was known as the *software crisis*.}
+\notes{However, these challenges aren't new, they are merely taking a different
+form. From the computer's perspective software *is* data. The first wave
+of the data crisis was known as the *software crisis*.
+}
 
 \subsection{The Software Crisis}
 
@@ -17,9 +28,13 @@
 
 }
 
-\notes{In the late sixties early software programmers made note of the increasing costs of software development and termed the challenges associated with it as the "[Software Crisis](https://en.wikipedia.org/wiki/Software_crisis)". Edsger Dijkstra referred to the crisis in his 1972 Turing Award winner's address.}
+\notes{In the late sixties early software programmers made note of the
+increasing costs of software development and termed the challenges
+associated with it as the "[Software
+Crisis](https://en.wikipedia.org/wiki/Software_crisis)". Edsger Dijkstra
+referred to the crisis in his 1972 Turing Award winner's address.}
 
-\subsection{The Mordern Data Crisis}
+\subsection{The Data Crisis}
 
 \slidesmall{
 
@@ -35,6 +50,18 @@
 \slides{>
 > Me}
 }
-\notes{What I term "The Data Crisis" is the modern equivalent of this problem. The quantity of modern data, and the lack of attention paid to data as it is initially "laid down" and the costs of data cleaning are bringing about a crisis in data-driven decision making. 
+\notes{What I term "The Data Crisis" is the modern equivalent of this problem.
+The quantity of modern data, and the lack of attention paid to data as
+it is initially "laid down" and the costs of data cleaning are bringing
+about a crisis in data-driven decision making. This crisis is at the
+core of the challenge of *technical debt* in machine learning [@Sculley:debt15].}
 
-Just as with software, the crisis is most correctly addressed by 'scaling' the manner in which we process our data. Duplication of work occurs because the value of data cleaning is not correctly recognised in management decision making processes. Automation of work is increasingly possible through techniques in "artificial intelligence", but this will also require better management of the data science pipeline so that data about data science (meta-data science) can be correctly assimilated and processed. The Alan Turing institute has a program focussed on this area, [AI for Data Analytics](https://www.turing.ac.uk/research_projects/artificial-intelligence-data-analytics/).}
+\notes{Just as with software, the crisis is most correctly addressed by
+'scaling' the manner in which we process our data. Duplication of work
+occurs because the value of data cleaning is not correctly recognised in
+management decision making processes. Automation of work is increasingly
+possible through techniques in "artificial intelligence", but this will
+also require better management of the data science pipeline so that data
+about data science (meta-data science) can be correctly assimilated and
+processed. The Alan Turing institute has a program focussed on this
+area, [AI for Data Analytics](https://www.turing.ac.uk/research_projects/artificial-intelligence-data-analytics/).}
