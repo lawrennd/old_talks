@@ -9,8 +9,7 @@
 
 At each time step $t$, the car is characterized by a vector $\inputVector_{t} = (p_t,v_t)$ of states which are respectively the the position and velocity of the car at time $t$. For a sequence of states (an episode), the dynamics of the car is given by}
 
-\slides{
-### Car Dynamics}
+\newslide{Car Dynamics}
 
 $$\inputVector_{t+1} = \mappingFunction(\inputVector_{t},\textbf{u}_{t})$$
 
@@ -19,9 +18,9 @@ $$\inputVector_{t+1} = \mappingFunction(\inputVector_{t},\textbf{u}_{t})$$
 \notes{where $\textbf{u}_{t}$ is the value of an action force, which in this example corresponds to push car to the left (negative value) or to the right (positive value). The actions across a full episode are represented in a policy $\textbf{u}_{t} = \pi(\inputVector_{t},\theta)$ that acts according to the current state of the car and some parameters $\theta$. In the following examples we will assume that the policy is linear which allows us to write $\pi(\inputVector_{t},\theta)$ as}
 
 
-\slides{
-### Policy
+\newslide{Policy}
 
+\slides{
 * Assume policy is linear with parameters $\boldsymbol{\theta}$}
 
 $$\pi(\inputVector,\theta)= \theta_0 + \theta_p p + \theta_vv.$$
@@ -31,7 +30,7 @@ $\textbf{u}_{t}$ are fully determined by the parameters of the linear controller
 
 \notes{After each episode of length $T$ is complete, a reward function $R_{T}(\theta)$ is computed. In the mountain car example the reward is computed as 100 for reaching the target of the hill on the right hand side, minus the squared sum of actions (a real negative to push to the left and a real positive to push to the right) from start to goal.  Note that our reward depend on $\theta$ as we make it dependent on the parameters of the linear controller.}
 
-### Emulate the Mountain Car
+\subsection{Emulate the Mountain Car}
 
 \setupcode{import gym}
 \code{env = gym.make('MountainCarContinuous-v0')}

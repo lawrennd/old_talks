@@ -3,13 +3,13 @@ OUT=$(DATE)-$(BASE)
 all: ${BASE}.slides.html ${BASE}.notes.html ${BASE}.posts.html ${BASE}.slides.ipynb ${BASE}.ipynb ${BASE}.notes.pdf 
 
 ${BASE}.slides.html: ${BASE}.slides.md
-	printf '$$' > ../include.tmp
-	printf '$$' >> ../include.tmp
+	printf '' > ../include.tmp
+	printf '\[' >> ../include.tmp
 	cat ../_includes/talk-notation.tex >> ../include.tmp
-	printf '$$' >> ../include.tmp
-	printf '$$' >> ../include.tmp
-	pandoc  --template pandoc-revealjs-template ${PDSFLAGS} ${SFLAGS} -c ${CSS} --include-in-header=${SLIDESHEADER} -t revealjs --bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib -o ${BASE}.slides.html  ${BASE}.slides.md 
-	#pandoc  -B ../include.tmp --template pandoc-revealjs-template ${PDSFLAGS} ${SFLAGS} -c ${CSS} --include-in-header=${SLIDESHEADER} -t revealjs --bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib -o ${BASE}.slides.html  ${BASE}.slides.md 
+	printf '\]' >> ../include.tmp
+	printf '' >> ../include.tmp
+	#pandoc  --template pandoc-revealjs-template ${PDSFLAGS} ${SFLAGS} -c ${CSS} --include-in-header=${SLIDESHEADER} -t revealjs --bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib -o ${BASE}.slides.html  ${BASE}.slides.md 
+	pandoc  -B ../include.tmp --template pandoc-revealjs-template ${PDSFLAGS} ${SFLAGS} -c ${CSS} --include-in-header=${SLIDESHEADER} -t revealjs --bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib -o ${BASE}.slides.html  ${BASE}.slides.md 
 	cp ${BASE}.slides.html ../slides/${OUT}.slides.html
 	rm ../include.tmp
 

@@ -8,7 +8,7 @@
 }
 \notes{Supply chain is a large scale automated decision making network. Our aim is to make decisions not only based on our models of customer behavior (as observed through data), but also by accounting for the structure of our fulfilment center, and delivery network.}
 
-\notes{Many of the most important questions in supply chain take the form of counterfactuals. E.g. “What would happen if we opened a manufacturing facility in  Cambridge?” A counter factual is a question that implies a mechanistic understanding of our systems. It goes beyond simple smoothness assumptions or translation invariants. It requires a physical, or *mechanistic* understanding of the supply chain network. For this reason the type of models we deploy in supply chain often involve simulations or more mechanistic understanding of the network.}
+\notes{Many of the most important questions in supply chain take the form of counterfactuals. E.g. “What would happen if we opened a manufacturing facility in  Cambridge?” A counter factual is a question that implies a mechanistic understanding of a system. It goes beyond simple smoothness assumptions or translation invariants. It requires a physical, or *mechanistic* understanding of the supply chain network. For this reason the type of models we deploy in supply chain often involve simulations or more mechanistic understanding of the network.}
 
 \notes{In supply chain Machine Learning alone is not enough, we need to bridge between models that contain real mechanisms and models that are entirely data driven.}
 
