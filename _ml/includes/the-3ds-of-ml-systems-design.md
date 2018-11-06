@@ -1,8 +1,9 @@
-\notes{\subsection{Challenges for Machine Learning in General}}
+\notes{\subsection{The Three Ds of Machine Learning Systems Design}
+
 \newslide{The 3D Challenges}
 \slides{
 * Three primary challenges of Machine Learning Systems Design.
-1. Design
+1. Decomposition
 2. Data 
 3. Deployment
 }
@@ -10,7 +11,7 @@
 
 \notes{The first two components *design* and *data* are interlinked, but we will first outline the design challenge. Below we will mainly focus on *supervised learning* because this is arguably the technology that is best understood within machine learning.}
 
-\newslide{Design}
+\newslide{Decomposition}
 
 \include{_ml/includes/ml-design-challenge.md}
 
