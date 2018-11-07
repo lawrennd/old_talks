@@ -1,0 +1,1875 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="dcterms.date" content="2019-01-09">
+  <title>Gaussian Processes</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="talks.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          TeX: {
+            extensions: ["color.js"]
+          }
+        });
+      </script>
+      <script>
+  
+  function setDivs(group) {
+    var frame = document.getElementById("range-".concat(group)).value
+    slideIndex = parseInt(frame)
+    showDivs(slideIndex, group);
+  }
+  
+  function plusDivs(n, group) {
+    showDivs(slideIndex += n, group);
+    document.setElementById("range-".concat(group)) = slideIndex
+  }
+  
+  function showDivs(n,group) {
+    var i;
+    var x = document.getElementsByClassName(group);
+    if (n > x.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = x.length}
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    x[slideIndex-1].style.display = "block";  
+  }
+      </script>
+</head>
+<body>
+\[\newcommand{\Amatrix}{\mathbf{A}}
+\newcommand{\KL}[2]{\text{KL}\left( #1\,\|\,#2 \right)}
+\newcommand{\Kaast}{\kernelMatrix_{\mathbf{ \ast}\mathbf{ \ast}}}
+\newcommand{\Kastu}{\kernelMatrix_{\mathbf{ \ast} \inducingVector}}
+\newcommand{\Kff}{\kernelMatrix_{\mappingFunctionVector \mappingFunctionVector}}
+\newcommand{\Kfu}{\kernelMatrix_{\mappingFunctionVector \inducingVector}}
+\newcommand{\Kuast}{\kernelMatrix_{\inducingVector \bf\ast}}
+\newcommand{\Kuf}{\kernelMatrix_{\inducingVector \mappingFunctionVector}}
+\newcommand{\Kuu}{\kernelMatrix_{\inducingVector \inducingVector}}
+\newcommand{\Kuui}{\Kuu^{-1}}
+\newcommand{\Qaast}{\mathbf{Q}_{\bf \ast \ast}}
+\newcommand{\Qastf}{\mathbf{Q}_{\ast \mappingFunction}}
+\newcommand{\Qfast}{\mathbf{Q}_{\mappingFunctionVector \bf \ast}}
+\newcommand{\Qff}{\mathbf{Q}_{\mappingFunctionVector \mappingFunctionVector}}
+\newcommand{\aMatrix}{\mathbf{A}}
+\newcommand{\aScalar}{a}
+\newcommand{\aVector}{\mathbf{a}}
+\newcommand{\acceleration}{a}
+\newcommand{\bMatrix}{\mathbf{B}}
+\newcommand{\bScalar}{b}
+\newcommand{\bVector}{\mathbf{b}}
+\newcommand{\basisFunc}{\phi}
+\newcommand{\basisFuncVector}{\boldsymbol{ \basisFunc}}
+\newcommand{\basisFunction}{\phi}
+\newcommand{\basisLocation}{\mu}
+\newcommand{\basisMatrix}{\boldsymbol{ \Phi}}
+\newcommand{\basisScalar}{\basisFunction}
+\newcommand{\basisVector}{\boldsymbol{ \basisFunction}}
+\newcommand{\activationFunction}{\phi}
+\newcommand{\activationMatrix}{\boldsymbol{ \Phi}}
+\newcommand{\activationScalar}{\basisFunction}
+\newcommand{\activationVector}{\boldsymbol{ \basisFunction}}
+\newcommand{\bigO}{\mathcal{O}}
+\newcommand{\binomProb}{\pi}
+\newcommand{\cMatrix}{\mathbf{C}}
+\newcommand{\cbasisMatrix}{\hat{\boldsymbol{ \Phi}}}
+\newcommand{\cdataMatrix}{\hat{\dataMatrix}}
+\newcommand{\cdataScalar}{\hat{\dataScalar}}
+\newcommand{\cdataVector}{\hat{\dataVector}}
+\newcommand{\centeredKernelMatrix}{\mathbf{ \MakeUppercase{\centeredKernelScalar}}}
+\newcommand{\centeredKernelScalar}{b}
+\newcommand{\centeredKernelVector}{\centeredKernelScalar}
+\newcommand{\centeringMatrix}{\mathbf{H}}
+\newcommand{\chiSquaredDist}[2]{\chi_{#1}^{2}\left(#2\right)}
+\newcommand{\chiSquaredSamp}[1]{\chi_{#1}^{2}}
+\newcommand{\conditionalCovariance}{\boldsymbol{ \Sigma}}
+\newcommand{\coregionalizationMatrix}{\mathbf{B}}
+\newcommand{\coregionalizationScalar}{b}
+\newcommand{\coregionalizationVector}{\mathbf{ \coregionalizationScalar}}
+\newcommand{\covDist}[2]{\text{cov}_{#2}\left(#1\right)}
+\newcommand{\covSamp}[1]{\text{cov}\left(#1\right)}
+\newcommand{\covarianceScalar}{c}
+\newcommand{\covarianceVector}{\mathbf{ \covarianceScalar}}
+\newcommand{\covarianceMatrix}{\mathbf{C}}
+\newcommand{\covarianceMatrixTwo}{\boldsymbol{ \Sigma}}
+\newcommand{\croupierScalar}{s}
+\newcommand{\croupierVector}{\mathbf{ \croupierScalar}}
+\newcommand{\croupierMatrix}{\mathbf{ \MakeUppercase{\croupierScalar}}}
+\newcommand{\dataDim}{p}
+\newcommand{\dataIndex}{i}
+\newcommand{\dataIndexTwo}{j}
+\newcommand{\dataMatrix}{\mathbf{Y}}
+\newcommand{\dataScalar}{y}
+\newcommand{\dataSet}{\mathcal{D}}
+\newcommand{\dataStd}{\sigma}
+\newcommand{\dataVector}{\mathbf{ \dataScalar}}
+\newcommand{\decayRate}{d}
+\newcommand{\degreeMatrix}{\mathbf{ \MakeUppercase{\degreeScalar}}}
+\newcommand{\degreeScalar}{d}
+\newcommand{\degreeVector}{\mathbf{ \degreeScalar}}
+% Already defined by latex
+%\newcommand{\det}[1]{\left|#1\right|}
+\newcommand{\diag}[1]{\text{diag}\left(#1\right)}
+\newcommand{\diagonalMatrix}{\mathbf{D}}
+\newcommand{\diff}[2]{\frac{\text{d}#1}{\text{d}#2}}
+\newcommand{\diffTwo}[2]{\frac{\text{d}^2#1}{\text{d}#2^2}}
+\newcommand{\displacement}{x}
+\newcommand{\displacementVector}{\textbf{\displacement}}
+\newcommand{\distanceMatrix}{\mathbf{ \MakeUppercase{\distanceScalar}}}
+\newcommand{\distanceScalar}{d}
+\newcommand{\distanceVector}{\mathbf{ \distanceScalar}}
+\newcommand{\eigenvaltwo}{\ell}
+\newcommand{\eigenvaltwoMatrix}{\mathbf{L}}
+\newcommand{\eigenvaltwoVector}{\mathbf{l}}
+\newcommand{\eigenvalue}{\lambda}
+\newcommand{\eigenvalueMatrix}{\boldsymbol{ \Lambda}}
+\newcommand{\eigenvalueVector}{\boldsymbol{ \lambda}}
+\newcommand{\eigenvector}{\mathbf{ \eigenvectorScalar}}
+\newcommand{\eigenvectorMatrix}{\mathbf{U}}
+\newcommand{\eigenvectorScalar}{u}
+\newcommand{\eigenvectwo}{\mathbf{v}}
+\newcommand{\eigenvectwoMatrix}{\mathbf{V}}
+\newcommand{\eigenvectwoScalar}{v}
+\newcommand{\entropy}[1]{\mathcal{H}\left(#1\right)}
+\newcommand{\errorFunction}{E}
+\newcommand{\expDist}[2]{\left<#1\right>_{#2}}
+\newcommand{\expSamp}[1]{\left<#1\right>}
+\newcommand{\expectation}[1]{\left\langle #1 \right\rangle }
+\newcommand{\expectationDist}[2]{\left\langle #1 \right\rangle _{#2}}
+\newcommand{\expectedDistanceMatrix}{\mathcal{D}}
+\newcommand{\eye}{\mathbf{I}}
+\newcommand{\fantasyDim}{r}
+\newcommand{\fantasyMatrix}{\mathbf{ \MakeUppercase{\fantasyScalar}}}
+\newcommand{\fantasyScalar}{z}
+\newcommand{\fantasyVector}{\mathbf{ \fantasyScalar}}
+\newcommand{\featureStd}{\varsigma}
+\newcommand{\gammaCdf}[3]{\mathcal{GAMMA CDF}\left(#1|#2,#3\right)}
+\newcommand{\gammaDist}[3]{\mathcal{G}\left(#1|#2,#3\right)}
+\newcommand{\gammaSamp}[2]{\mathcal{G}\left(#1,#2\right)}
+\newcommand{\gaussianDist}[3]{\mathcal{N}\left(#1|#2,#3\right)}
+\newcommand{\gaussianSamp}[2]{\mathcal{N}\left(#1,#2\right)}
+\newcommand{\given}{|}
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\heaviside}{H}
+\newcommand{\hiddenMatrix}{\mathbf{ \MakeUppercase{\hiddenScalar}}}
+\newcommand{\hiddenScalar}{h}
+\newcommand{\hiddenVector}{\mathbf{ \hiddenScalar}}
+\newcommand{\identityMatrix}{\eye}
+\newcommand{\inducingInputScalar}{z}
+\newcommand{\inducingInputVector}{\mathbf{ \inducingInputScalar}}
+\newcommand{\inducingInputMatrix}{\mathbf{Z}}
+\newcommand{\inducingScalar}{u}
+\newcommand{\inducingVector}{\mathbf{ \inducingScalar}}
+\newcommand{\inducingMatrix}{\mathbf{U}}
+\newcommand{\inlineDiff}[2]{\text{d}#1/\text{d}#2}
+\newcommand{\inputDim}{q}
+\newcommand{\inputMatrix}{\mathbf{X}}
+\newcommand{\inputScalar}{x}
+\newcommand{\inputSpace}{\mathcal{X}}
+\newcommand{\inputVals}{\inputVector}
+\newcommand{\inputVector}{\mathbf{ \inputScalar}}
+\newcommand{\iterNum}{k}
+\newcommand{\kernel}{\kernelScalar}
+\newcommand{\kernelMatrix}{\mathbf{K}}
+\newcommand{\kernelScalar}{k}
+\newcommand{\kernelVector}{\mathbf{ \kernelScalar}}
+\newcommand{\kff}{\kernelScalar_{\mappingFunction \mappingFunction}}
+\newcommand{\kfu}{\kernelVector_{\mappingFunction \inducingScalar}}
+\newcommand{\kuf}{\kernelVector_{\inducingScalar \mappingFunction}}
+\newcommand{\kuu}{\kernelVector_{\inducingScalar \inducingScalar}}
+\newcommand{\lagrangeMultiplier}{\lambda}
+\newcommand{\lagrangeMultiplierMatrix}{\boldsymbol{ \Lambda}}
+\newcommand{\lagrangian}{L}
+\newcommand{\laplacianFactor}{\mathbf{ \MakeUppercase{\laplacianFactorScalar}}}
+\newcommand{\laplacianFactorScalar}{m}
+\newcommand{\laplacianFactorVector}{\mathbf{ \laplacianFactorScalar}}
+\newcommand{\laplacianMatrix}{\mathbf{L}}
+\newcommand{\laplacianScalar}{\ell}
+\newcommand{\laplacianVector}{\mathbf{ \ell}}
+\newcommand{\latentDim}{q}
+\newcommand{\latentDistanceMatrix}{\boldsymbol{ \Delta}}
+\newcommand{\latentDistanceScalar}{\delta}
+\newcommand{\latentDistanceVector}{\boldsymbol{ \delta}}
+\newcommand{\latentForce}{f}
+\newcommand{\latentFunction}{u}
+\newcommand{\latentFunctionVector}{\mathbf{ \latentFunction}}
+\newcommand{\latentFunctionMatrix}{\mathbf{ \MakeUppercase{\latentFunction}}}
+\newcommand{\latentIndex}{j}
+\newcommand{\latentScalar}{z}
+\newcommand{\latentVector}{\mathbf{ \latentScalar}}
+\newcommand{\latentMatrix}{\mathbf{Z}}
+\newcommand{\learnRate}{\eta}
+\newcommand{\lengthScale}{\ell}
+\newcommand{\rbfWidth}{\ell}
+\newcommand{\likelihoodBound}{\mathcal{L}}
+\newcommand{\likelihoodFunction}{L}
+\newcommand{\locationScalar}{\mu}
+\newcommand{\locationVector}{\boldsymbol{ \locationScalar}}
+\newcommand{\locationMatrix}{\mathbf{M}}
+\newcommand{\variance}[1]{\text{var}\left( #1 \right)}
+\newcommand{\mappingFunction}{f}
+\newcommand{\mappingFunctionMatrix}{\mathbf{F}}
+\newcommand{\mappingFunctionTwo}{g}
+\newcommand{\mappingFunctionTwoMatrix}{\mathbf{G}}
+\newcommand{\mappingFunctionTwoVector}{\mathbf{ \mappingFunctionTwo}}
+\newcommand{\mappingFunctionVector}{\mathbf{ \mappingFunction}}
+\newcommand{\scaleScalar}{s}
+\newcommand{\mappingScalar}{w}
+\newcommand{\mappingVector}{\mathbf{ \mappingScalar}}
+\newcommand{\mappingMatrix}{\mathbf{W}}
+\newcommand{\mappingScalarTwo}{v}
+\newcommand{\mappingVectorTwo}{\mathbf{ \mappingScalarTwo}}
+\newcommand{\mappingMatrixTwo}{\mathbf{V}}
+\newcommand{\maxIters}{K}
+\newcommand{\meanMatrix}{\mathbf{M}}
+\newcommand{\meanScalar}{\mu}
+\newcommand{\meanTwoMatrix}{\mathbf{M}}
+\newcommand{\meanTwoScalar}{m}
+\newcommand{\meanTwoVector}{\mathbf{ \meanTwoScalar}}
+\newcommand{\meanVector}{\boldsymbol{ \meanScalar}}
+\newcommand{\mrnaConcentration}{m}
+\newcommand{\naturalFrequency}{\omega}
+\newcommand{\neighborhood}[1]{\mathcal{N}\left( #1 \right)}
+\newcommand{\neilurl}{http://inverseprobability.com/}
+\newcommand{\noiseMatrix}{\boldsymbol{ E}}
+\newcommand{\noiseScalar}{\epsilon}
+\newcommand{\noiseVector}{\boldsymbol{ \epsilon}}
+\newcommand{\norm}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\normalizedLaplacianMatrix}{\hat{\mathbf{L}}}
+\newcommand{\normalizedLaplacianScalar}{\hat{\ell}}
+\newcommand{\normalizedLaplacianVector}{\hat{\mathbf{ \ell}}}
+\newcommand{\numActive}{m}
+\newcommand{\numBasisFunc}{m}
+\newcommand{\numComponents}{m}
+\newcommand{\numComps}{K}
+\newcommand{\numData}{n}
+\newcommand{\numFeatures}{K}
+\newcommand{\numHidden}{h}
+\newcommand{\numInducing}{m}
+\newcommand{\numLayers}{\ell}
+\newcommand{\numNeighbors}{K}
+\newcommand{\numSequences}{s}
+\newcommand{\numSuccess}{s}
+\newcommand{\numTasks}{m}
+\newcommand{\numTime}{T}
+\newcommand{\numTrials}{S}
+\newcommand{\outputIndex}{j}
+\newcommand{\paramVector}{\boldsymbol{ \theta}}
+\newcommand{\parameterMatrix}{\boldsymbol{ \Theta}}
+\newcommand{\parameterScalar}{\theta}
+\newcommand{\parameterVector}{\boldsymbol{ \parameterScalar}}
+\newcommand{\partDiff}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\precisionScalar}{j}
+\newcommand{\precisionVector}{\mathbf{ \precisionScalar}}
+\newcommand{\precisionMatrix}{\mathbf{J}}
+\newcommand{\pseudotargetScalar}{\widetilde{y}}
+\newcommand{\pseudotargetVector}{\mathbf{ \pseudotargetScalar}}
+\newcommand{\pseudotargetMatrix}{\mathbf{ \widetilde{Y}}}
+\newcommand{\rank}[1]{\text{rank}\left(#1\right)}
+\newcommand{\rayleighDist}[2]{\mathcal{R}\left(#1|#2\right)}
+\newcommand{\rayleighSamp}[1]{\mathcal{R}\left(#1\right)}
+\newcommand{\responsibility}{r}
+\newcommand{\rotationScalar}{r}
+\newcommand{\rotationVector}{\mathbf{ \rotationScalar}}
+\newcommand{\rotationMatrix}{\mathbf{R}}
+\newcommand{\sampleCovScalar}{s}
+\newcommand{\sampleCovVector}{\mathbf{ \sampleCovScalar}}
+\newcommand{\sampleCovMatrix}{\mathbf{s}}
+\newcommand{\scalarProduct}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\sign}[1]{\text{sign}\left(#1\right)}
+\newcommand{\sigmoid}[1]{\sigma\left(#1\right)}
+\newcommand{\singularvalue}{\ell}
+\newcommand{\singularvalueMatrix}{\mathbf{L}}
+\newcommand{\singularvalueVector}{\mathbf{l}}
+\newcommand{\sorth}{\mathbf{u}}
+\newcommand{\spar}{\lambda}
+\newcommand{\trace}[1]{\text{tr}\left(#1\right)}
+\newcommand{\BasalRate}{B}
+\newcommand{\DampingCoefficient}{C}
+\newcommand{\DecayRate}{D}
+\newcommand{\Displacement}{X}
+\newcommand{\LatentForce}{F}
+\newcommand{\Mass}{M}
+\newcommand{\Sensitivity}{S}
+\newcommand{\basalRate}{b}
+\newcommand{\dampingCoefficient}{c}
+\newcommand{\mass}{m}
+\newcommand{\sensitivity}{s}
+\newcommand{\springScalar}{\kappa}
+\newcommand{\springVector}{\boldsymbol{ \kappa}}
+\newcommand{\springMatrix}{\boldsymbol{ \mathcal{K}}}
+\newcommand{\tfConcentration}{p}
+\newcommand{\tfDecayRate}{\delta}
+\newcommand{\tfMrnaConcentration}{f}
+\newcommand{\tfVector}{\mathbf{ \tfConcentration}}
+\newcommand{\velocity}{v}
+\newcommand{\sufficientStatsScalar}{g}
+\newcommand{\sufficientStatsVector}{\mathbf{ \sufficientStatsScalar}}
+\newcommand{\sufficientStatsMatrix}{\mathbf{G}}
+\newcommand{\switchScalar}{s}
+\newcommand{\switchVector}{\mathbf{ \switchScalar}}
+\newcommand{\switchMatrix}{\mathbf{S}}
+\newcommand{\tr}[1]{\text{tr}\left(#1\right)}
+\newcommand{\loneNorm}[1]{\left\Vert #1 \right\Vert_1}
+\newcommand{\ltwoNorm}[1]{\left\Vert #1 \right\Vert_2}
+\newcommand{\onenorm}[1]{\left\vert#1\right\vert_1}
+\newcommand{\twonorm}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\vScalar}{v}
+\newcommand{\vVector}{\mathbf{v}}
+\newcommand{\vMatrix}{\mathbf{V}}
+\newcommand{\varianceDist}[2]{\text{var}_{#2}\left( #1 \right)}
+% Already defined by latex
+%\newcommand{\vec}{#1:}
+\newcommand{\vecb}[1]{\left(#1\right):}
+\newcommand{\weightScalar}{w}
+\newcommand{\weightVector}{\mathbf{ \weightScalar}}
+\newcommand{\weightMatrix}{\mathbf{W}}
+\newcommand{\weightedAdjacencyMatrix}{\mathbf{A}}
+\newcommand{\weightedAdjacencyScalar}{a}
+\newcommand{\weightedAdjacencyVector}{\mathbf{ \weightedAdjacencyScalar}}
+\newcommand{\onesVector}{\mathbf{1}}
+\newcommand{\zerosVector}{\mathbf{0}}
+\]
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Gaussian Processes</h1>
+  <p class="author" style="text-align:center"><a href="http://inverseprobability.com">Neil D. Lawrence</a></p>
+  <p class="date" style="text-align:center"><time>2019-01-09</time></p>
+  <p class="venue" style="text-align:center">MLSS, Stellenbosch, South Africa</p>
+</section>
+
+<section class="slide level3">
+
+<p><!--% not ipynb--></p>
+<p><!--% not notes--></p>
+<!-- SECTION What is Machine Learning? -->
+</section>
+<section id="what-is-machine-learning" class="slide level3">
+<h3>What is Machine Learning?</h3>
+<div class="fragment">
+<p><span class="math display">\[ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span></p>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>data</strong> : observations, could be actively or passively acquired (meta-data).</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>model</strong> : assumptions, based on previous experience (other data! transfer learning etc), or beliefs about the regularities of the universe. Inductive bias.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>prediction</strong> : an action to be taken or a categorization or a quality score.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Royal Society Report: <a href="https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf">Machine Learning: Power and Promise of Computers that Learn by Example</a></li>
+</ul>
+</div>
+</section>
+<section id="what-is-machine-learning-1" class="slide level3">
+<h3>What is Machine Learning?</h3>
+<p><span class="math display">\[\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span></p>
+<ul>
+<li class="fragment">To combine data with a model need:</li>
+<li class="fragment"><strong>a prediction function</strong> <span class="math inline">\(\mappingFunction(\cdot)\)</span> includes our beliefs about the regularities of the universe</li>
+<li class="fragment"><strong>an objective function</strong> <span class="math inline">\(\errorFunction(\cdot)\)</span> defines the cost of misprediction.</li>
+</ul>
+</section>
+<section id="artificial-intelligence" class="slide level3">
+<h3>Artificial Intelligence</h3>
+<ul>
+<li>Machine learning is a mainstay because of importance of prediction.</li>
+</ul>
+</section>
+<section id="uncertainty" class="slide level3">
+<h3>Uncertainty</h3>
+<ul>
+<li>Uncertainty in prediction arises from:</li>
+<li>scarcity of training data and</li>
+<li>mismatch between the set of prediction functions we choose and all possible prediction functions.</li>
+<li>Also uncertainties in objective, leave those for another day.</li>
+</ul>
+</section>
+<section id="neural-networks-and-prediction-functions" class="slide level3">
+<h3>Neural Networks and Prediction Functions</h3>
+<ul>
+<li><p>adaptive non-linear function models inspired by simple neuron models <span class="citation" data-cites="McCulloch:neuron43">(McCulloch and Pitts, 1943)</span></p></li>
+<li><p>have become popular because of their ability to model data.</p></li>
+<li><p>can be composed to form highly complex functions</p></li>
+<li><p>start by focussing on one hidden layer</p></li>
+</ul>
+</section>
+<section id="prediction-function-of-one-hidden-layer" class="slide level3">
+<h3>Prediction Function of One Hidden Layer</h3>
+<p><span class="math display">\[
+\mappingFunction(\inputVector) = \left.\mappingVector^{(2)}\right.^\top \activationVector(\mappingMatrix_{1}, \inputVector)
+\]</span></p>
+<p><span class="math inline">\(\mappingFunction(\cdot)\)</span> is a scalar function with vector inputs,</p>
+<p><span class="math inline">\(\activationVector(\cdot)\)</span> is a vector function with vector inputs.</p>
+<ul>
+<li><p>dimensionality of the vector function is known as the number of hidden units, or the number of neurons.</p></li>
+<li><p>elements of <span class="math inline">\(\activationVector(\cdot)\)</span> are the <em>activation</em> function of the neural network</p></li>
+<li><p>elements of <span class="math inline">\(\mappingMatrix_{1}\)</span> are the parameters of the activation functions.</p></li>
+</ul>
+</section>
+<section id="relations-with-classical-statistics" class="slide level3">
+<h3>Relations with Classical Statistics</h3>
+<ul>
+<li><p>In statistics activation functions are known as <em>basis functions</em>.</p></li>
+<li><p>would think of this as a <em>linear model</em>: not linear predictions, linear in the parameters</p></li>
+<li><p><span class="math inline">\(\mappingVector_{1}\)</span> are <em>static</em> parameters.</p></li>
+</ul>
+</section>
+<section id="adaptive-basis-functions" class="slide level3">
+<h3>Adaptive Basis Functions</h3>
+<ul>
+<li><p>In machine learning we optimize <span class="math inline">\(\mappingMatrix_{1}\)</span> as well as <span class="math inline">\(\mappingMatrix_{2}\)</span> (which would normally be denoted in statistics by <span class="math inline">\(\boldsymbol{\beta}\)</span>).</p></li>
+<li><p>This tutorial: revisit that decision: follow the path of <span class="citation" data-cites="Neal:bayesian94">Neal (1994)</span> and <span class="citation" data-cites="MacKay:bayesian92">MacKay (1992)</span>.</p></li>
+<li><p>Consider the probabilistic approach.</p></li>
+</ul>
+</section>
+<section id="probabilistic-modelling" class="slide level3">
+<h3>Probabilistic Modelling</h3>
+<ul>
+<li>Probabilistically we want, <span class="math display">\[
+p(\dataScalar_*|\dataVector, \inputMatrix, \inputVector_*),
+\]</span> <span class="math inline">\(\dataScalar_*\)</span> is a test output <span class="math inline">\(\inputVector_*\)</span> is a test input <span class="math inline">\(\inputMatrix\)</span> is a training input matrix <span class="math inline">\(\dataVector\)</span> is training outputs</li>
+</ul>
+</section>
+<section id="joint-model-of-world" class="slide level3">
+<h3>Joint Model of World</h3>
+<p><span class="math display">\[
+p(\dataScalar_*|\dataVector, \inputMatrix, \inputVector_*) = \int p(\dataScalar_*|\inputVector_*, \mappingMatrix) p(\mappingMatrix | \dataVector, \inputMatrix) \text{d} \mappingMatrix
+\]</span></p>
+<div class="fragment">
+<p><span class="math inline">\(\mappingMatrix\)</span> contains <span class="math inline">\(\mappingMatrix_1\)</span> and <span class="math inline">\(\mappingMatrix_2\)</span></p>
+<p><span class="math inline">\(p(\mappingMatrix | \dataVector, \inputMatrix)\)</span> is posterior density</p>
+</div>
+</section>
+<section id="likelihood" class="slide level3">
+<h3>Likelihood</h3>
+<p><span class="math inline">\(p(\dataScalar|\inputVector, \mappingMatrix)\)</span> is the <em>likelihood</em> of data point</p>
+<div class="fragment">
+<p>Normally assume independence: <span class="math display">\[
+p(\dataVector|\inputMatrix, \mappingMatrix) \prod_{i=1}^\numData p(\dataScalar_i|\inputVector_i, \mappingMatrix),\]</span></p>
+</div>
+</section>
+<section id="likelihood-and-prediction-function" class="slide level3">
+<h3>Likelihood and Prediction Function</h3>
+<p><span class="math display">\[
+p(\dataScalar_i | \mappingFunction(\inputVector_i)) = \frac{1}{\sqrt{2\pi \dataStd^2}} \exp\left(-\frac{\left(\dataScalar_i - \mappingFunction(\inputVector_i)\right)^2}{2\dataStd^2}\right)
+\]</span></p>
+</section>
+<section id="unsupervised-learning" class="slide level3">
+<h3>Unsupervised Learning</h3>
+<ul>
+<li><p>Can also consider priors over latents <span class="math display">\[
+p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatrix) p(\mappingMatrix | \dataVector, \inputMatrix) p(\inputMatrix) p(\inputMatrix_*) \text{d} \mappingMatrix \text{d} \inputMatrix \text{d}\inputMatrix_*
+\]</span></p></li>
+<li><p>This gives <em>unsupervised learning</em>.</p></li>
+</ul>
+</section>
+<section id="probabilistic-inference" class="slide level3">
+<h3>Probabilistic Inference</h3>
+<ul>
+<li><p>Data: <span class="math inline">\(\dataVector\)</span></p></li>
+<li><p>Model: <span class="math inline">\(p(\dataVector, \dataVector^*)\)</span></p></li>
+<li><p>Prediction: <span class="math inline">\(p(\dataVector^*| \dataVector)\)</span></p></li>
+</ul>
+</section>
+<section id="graphical-models" class="slide level3">
+<h3>Graphical Models</h3>
+<ul>
+<li>Represent joint distribution through <em>conditional dependencies</em>.</li>
+<li>E.g. Markov chain</li>
+</ul>
+<p><span class="math display">\[p(\dataVector) = p(\dataScalar_\numData | \dataScalar_{\numData-1}) p(\dataScalar_{\numData-1}|\dataScalar_{\numData-2}) \dots p(\dataScalar_{2} | \dataScalar_{1})\]</span></p>
+<object class="svgplot " align data="../slides/diagrams/ml/markov.svg" style>
+</object>
+</section>
+<section id="section" class="slide level3">
+<h3></h3>
+<p>Predict Perioperative Risk of Clostridium Difficile Infection Following Colon Surgery <span class="citation" data-cites="Steele:predictive12">(Steele et al., 2012)</span></p>
+<p><img class="negate" src="../slides/diagrams/bayes-net-diagnosis.png" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none;"></p>
+</section>
+<section id="performing-inference" class="slide level3">
+<h3>Performing Inference</h3>
+<ul>
+<li><p>Easy to write in probabilities</p></li>
+<li><p>But underlying this is a wealth of computational challenges.</p></li>
+<li><p>High dimensional integrals typically require approximation.</p></li>
+</ul>
+</section>
+<section id="linear-models" class="slide level3">
+<h3>Linear Models</h3>
+<ul>
+<li><p>In statistics, focussed more on <em>linear</em> model implied by <span class="math display">\[
+  \mappingFunction(\inputVector) = \left.\mappingVector^{(2)}\right.^\top \activationVector(\mappingMatrix_1, \inputVector)
+  \]</span></p></li>
+<li><p>Hold <span class="math inline">\(\mappingMatrix_1\)</span> fixed for given analysis.</p></li>
+<li><p>Gaussian prior for <span class="math inline">\(\mappingMatrix\)</span>, <span class="math display">\[
+  \mappingVector^{(2)} \sim \gaussianSamp{\zerosVector}{\covarianceMatrix}.
+  \]</span> <span class="math display">\[
+  \dataScalar_i = \mappingFunction(\inputVector_i) + \noiseScalar_i,
+  \]</span> where <span class="math display">\[
+  \noiseScalar_i \sim \gaussianSamp{0}{\dataStd^2}
+  \]</span></p></li>
+</ul>
+</section>
+<section id="linear-gaussian-models" class="slide level3">
+<h3>Linear Gaussian Models</h3>
+<ul>
+<li>Normally integrals are complex but for this Gaussian linear case they are trivial.</li>
+</ul>
+</section>
+<section id="multivariate-gaussian-properties" class="slide level3">
+<h3>Multivariate Gaussian Properties</h3>
+</section>
+<section id="recall-univariate-gaussian-properties" class="slide level3">
+<h3>Recall Univariate Gaussian Properties</h3>
+<div class="fragment">
+<ol type="1">
+<li>Sum of Gaussian variables is also Gaussian.</li>
+</ol>
+<p><span class="math display">\[\dataScalar_i \sim \gaussianSamp{\meanScalar_i}{\dataStd_i^2}\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[\sum_{i=1}^{\numData} \dataScalar_i \sim \gaussianSamp{\sum_{i=1}^\numData \meanScalar_i}{\sum_{i=1}^\numData\dataStd_i^2}\]</span></p>
+</div>
+</section>
+<section id="recall-univariate-gaussian-properties-1" class="slide level3">
+<h3>Recall Univariate Gaussian Properties</h3>
+<ol start="2" type="1">
+<li>Scaling a Gaussian leads to a Gaussian.</li>
+</ol>
+<div class="fragment">
+<p><span class="math display">\[\dataScalar \sim \gaussianSamp{\meanScalar}{\dataStd^2}\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[\mappingScalar\dataScalar\sim \gaussianSamp{\mappingScalar\meanScalar}{\mappingScalar^2 \dataStd^2}\]</span></p>
+</div>
+</section>
+<section id="multivariate-consequence" class="slide level3">
+<h3>Multivariate Consequence</h3>
+<p><span align="left">If</span> <span class="math display">\[\inputVector \sim \gaussianSamp{\meanVector}{\covarianceMatrix}\]</span></p>
+<div class="fragment">
+<p><span align="left">And</span> <span class="math display">\[\dataVector= \mappingMatrix\inputVector\]</span></p>
+</div>
+<div class="fragment">
+<p><span align="left">Then</span> <span class="math display">\[\dataVector \sim \gaussianSamp{\mappingMatrix\meanVector}{\mappingMatrix\covarianceMatrix\mappingMatrix^\top}\]</span></p>
+</div>
+</section>
+<section id="linear-gaussian-models-1" class="slide level3">
+<h3>Linear Gaussian Models</h3>
+<ol type="1">
+<li>linear Gaussian models are easier to deal with</li>
+<li>Even the parameters <em>within</em> the process can be handled, by considering a particular limit.</li>
+</ol>
+</section>
+<section id="multivariate-gaussian-properties-1" class="slide level3">
+<h3>Multivariate Gaussian Properties</h3>
+<ul>
+<li><p>If <span class="math display">\[
+\dataVector = \mappingMatrix \inputVector + \noiseVector,
+\]</span></p></li>
+<li><p>Assume <span class="math display">\[\begin{align}
+\inputVector &amp; \sim \gaussianSamp{\meanVector}{\covarianceMatrix}\\
+\noiseVector &amp; \sim \gaussianSamp{\zerosVector}{\covarianceMatrixTwo}
+\end{align}\]</span></p></li>
+<li><p>Then <span class="math display">\[
+\dataVector \sim \gaussianSamp{\mappingMatrix\meanVector}{\mappingMatrix\covarianceMatrix\mappingMatrix^\top + \covarianceMatrixTwo}.
+\]</span> If <span class="math inline">\(\covarianceMatrixTwo=\dataStd^2\eye\)</span>, this is Probabilistic Principal Component Analysis <span class="citation" data-cites="Tipping:probpca99">(Tipping and Bishop, 1999)</span>, because we integrated out the inputs (or <em>latent</em> variables they would be called in that case).</p></li>
+</ul>
+</section>
+<section id="non-linear-on-inputs" class="slide level3">
+<h3>Non linear on Inputs</h3>
+<ul>
+<li>Set each activation function computed at each data point to be</li>
+</ul>
+<p><span class="math display">\[
+\activationScalar_{i,j} = \activationScalar(\mappingVector^{(1)}_{j}, \inputVector_{i})
+\]</span> Define <em>design matrix</em> <span class="math display">\[
+\activationMatrix = 
+\begin{bmatrix}
+\activationScalar_{1, 1} &amp; \activationScalar_{1, 2} &amp; \dots &amp; \activationScalar_{1, \numHidden} \\
+\activationScalar_{1, 2} &amp; \activationScalar_{1, 2} &amp; \dots &amp; \activationScalar_{1, \numData} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+\activationScalar_{\numData, 1} &amp; \activationScalar_{\numData, 2} &amp; \dots &amp; \activationScalar_{\numData, \numHidden}
+\end{bmatrix}.
+\]</span></p>
+</section>
+<section id="matrix-representation-of-a-neural-network" class="slide level3">
+<h3>Matrix Representation of a Neural Network</h3>
+<p><span class="math display">\[\dataScalar\left(\inputVector\right) = \activationVector\left(\inputVector\right)^\top \mappingVector + \noiseScalar\]</span></p>
+<div class="fragment">
+<p><span class="math display">\[\dataVector = \activationMatrix\mappingVector + \noiseVector\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[\noiseVector \sim \gaussianSamp{\zerosVector}{\dataStd^2\eye}\]</span></p>
+</div>
+</section>
+<section id="prior-density" class="slide level3">
+<h3>Prior Density</h3>
+<ul>
+<li>Define</li>
+</ul>
+<p><span class="math display">\[
+\mappingVector \sim \gaussianSamp{\zerosVector}{\alpha\eye},
+\]</span></p>
+<ul>
+<li>Rules of multivariate Gaussians to see that,</li>
+</ul>
+<p><span class="math display">\[
+\dataVector \sim \gaussianSamp{\zerosVector}{\alpha \activationMatrix \activationMatrix^\top + \dataStd^2 \eye}.
+\]</span></p>
+<p><span class="math display">\[
+\kernelMatrix = \alpha \activationMatrix \activationMatrix^\top + \dataStd^2 \eye.
+\]</span></p>
+</section>
+<section id="joint-gaussian-density" class="slide level3">
+<h3>Joint Gaussian Density</h3>
+<ul>
+<li>Elements are a function <span class="math inline">\(\kernel_{i,j} = \kernel\left(\inputVector_i, \inputVector_j\right)\)</span></li>
+</ul>
+<p><span class="math display">\[
+\kernelMatrix = \alpha \activationMatrix \activationMatrix^\top + \dataStd^2 \eye.
+\]</span></p>
+</section>
+<section id="covariance-function" class="slide level3">
+<h3>Covariance Function</h3>
+<p><span class="math display">\[
+\kernel_\mappingFunction\left(\inputVector_i, \inputVector_j\right) = \alpha \activationVector\left(\mappingMatrix_1, \inputVector_i\right)^\top \activationVector\left(\mappingMatrix_1, \inputVector_j\right)
+\]</span></p>
+<ul>
+<li>formed by inner products of the rows of the <em>design matrix</em>.</li>
+</ul>
+</section>
+<section id="gaussian-process" class="slide level3">
+<h3>Gaussian Process</h3>
+<ul>
+<li><p>Instead of making assumptions about our density over each data point, <span class="math inline">\(\dataScalar_i\)</span> as i.i.d.</p></li>
+<li><p>make a joint Gaussian assumption over our data.</p></li>
+<li><p>covariance matrix is now a function of both the parameters of the activation function, <span class="math inline">\(\mappingMatrix_1\)</span>, and the input variables, <span class="math inline">\(\inputMatrix\)</span>.</p></li>
+<li><p>Arises from integrating out <span class="math inline">\(\mappingVector^{(2)}\)</span>.</p></li>
+</ul>
+</section>
+<section id="basis-functions" class="slide level3">
+<h3>Basis Functions</h3>
+<ul>
+<li>Can be very complex, such as deep kernels, <span class="citation" data-cites="Cho:deep09">(Cho and Saul, 2009)</span> or could even put a convolutional neural network inside.</li>
+<li>Viewing a neural network in this way is also what allows us to beform sensible <em>batch</em> normalizations <span class="citation" data-cites="Ioffe:batch15">(Ioffe and Szegedy, 2015)</span>.</li>
+</ul>
+</section>
+<section id="non-degenerate-gaussian-processes" class="slide level3">
+<h3>Non-degenerate Gaussian Processes</h3>
+<ul>
+<li><p>This process is <em>degenerate</em>.</p></li>
+<li><p>Covariance function is of rank at most <span class="math inline">\(\numHidden\)</span>.</p></li>
+<li><p>As <span class="math inline">\(\numData \rightarrow \infty\)</span>, covariance matrix is not full rank.</p></li>
+<li><p>Leading to <span class="math inline">\(\det{\kernelMatrix} = 0\)</span></p></li>
+</ul>
+</section>
+<section id="infinite-networks" class="slide level3">
+<h3>Infinite Networks</h3>
+<ul>
+<li>In ML Radford Neal <span class="citation" data-cites="Neal:bayesian94">(Neal, 1994)</span> asked “what would happen if you took <span class="math inline">\(\numHidden \rightarrow \infty\)</span>?”</li>
+</ul>
+<p><a href="http://www.cs.toronto.edu/~radford/ftp/thesis.pdf"><img class="" src="../slides/diagrams/neal-infinite-priors.png" width="80%" height="auto" align="" style="background:none; border:none; box-shadow:none;"></a></p>
+<p><em>Page 37 of Radford Neal’s 1994 thesis</em></p>
+</section>
+<section id="roughly-speaking" class="slide level3">
+<h3>Roughly Speaking</h3>
+<ul>
+<li>Instead of</li>
+</ul>
+<p><span class="math display">\[
+  \begin{align*}
+  \kernel_\mappingFunction\left(\inputVector_i, \inputVector_j\right) &amp; = \alpha \activationVector\left(\mappingMatrix_1, \inputVector_i\right)^\top \activationVector\left(\mappingMatrix_1, \inputVector_j\right)\\
+  &amp; = \alpha \sum_k \activationScalar\left(\mappingVector^{(1)}_k, \inputVector_i\right) \activationScalar\left(\mappingVector^{(1)}_k, \inputVector_j\right)
+  \end{align*}
+  \]</span></p>
+<ul>
+<li>Sample infinitely many from a prior density, <span class="math inline">\(p(\mappingVector^{(1)})\)</span>,</li>
+</ul>
+<p><span class="math display">\[
+\kernel_\mappingFunction\left(\inputVector_i, \inputVector_j\right) = \alpha \int \activationScalar\left(\mappingVector^{(1)}, \inputVector_i\right) \activationScalar\left(\mappingVector^{(1)}, \inputVector_j\right) p(\mappingVector^{(1)}) \text{d}\mappingVector^{(1)}
+\]</span></p>
+<ul>
+<li>Also applies for non-Gaussian <span class="math inline">\(p(\mappingVector^{(1)})\)</span> because of the <em>central limit theorem</em>.</li>
+</ul>
+</section>
+<section id="simple-probabilistic-program" class="slide level3">
+<h3>Simple Probabilistic Program</h3>
+<ul>
+<li><p>If <span class="math display">\[
+  \begin{align*} 
+  \mappingVector^{(1)} &amp; \sim p(\cdot)\\ \phi_i &amp; = \activationScalar\left(\mappingVector^{(1)}, \inputVector_i\right), 
+  \end{align*}
+  \]</span> has finite variance.</p></li>
+<li><p>Then taking number of hidden units to infinity, is also a Gaussian process.</p></li>
+</ul>
+</section>
+<section id="further-reading" class="slide level3">
+<h3>Further Reading</h3>
+<ul>
+<li><p>Chapter 2 of Neal’s thesis <span class="citation" data-cites="Neal:bayesian94">(Neal, 1994)</span></p></li>
+<li><p>Rest of Neal’s thesis. <span class="citation" data-cites="Neal:bayesian94">(Neal, 1994)</span></p></li>
+<li><p>David MacKay’s PhD thesis <span class="citation" data-cites="MacKay:bayesian92">(MacKay, 1992)</span></p></li>
+</ul>
+<p><a href="file:///Users/neil/lawrennd/talks_gp/includes/gp-intro-very-short.md">_gp/includes/gp-intro-very-short.md</a></p>
+
+</section>
+<section id="section-1" class="slide level3" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/gp/gp_rejection_sample001.svg" style>
+</object>
+</section>
+<section id="section-2" class="slide level3" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/gp/gp_rejection_sample002.svg" style>
+</object>
+</section>
+<section id="section-3" class="slide level3" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/gp/gp_rejection_sample003.svg" style>
+</object>
+</section>
+<section id="section-4" class="slide level3" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/gp/gp_rejection_sample004.svg" style>
+</object>
+</section>
+<section id="section-5" class="slide level3" data-transition="none">
+<h3></h3>
+<p>x <object class="svgplot " align="" data="../slides/diagrams/gp/gp_rejection_sample005.svg" style=""></object></p>
+<!-- ### Two Dimensional Gaussian Distribution -->
+<!-- include{_ml/includes/two-d-gaussian.md} -->
+</section>
+<section id="distributions-over-functions" class="slide level3">
+<h3>Distributions over Functions</h3>
+<p><a href="file:///Users/neil/lawrennd/talks_gp/includes/gpdistfunc.md">_gp/includes/gpdistfunc.md</a></p>
+</section>
+<section id="sampling-a-function" class="slide level3">
+<h3>Sampling a Function</h3>
+<p><strong>Multi-variate Gaussians</strong></p>
+<ul>
+<li>We will consider a Gaussian with a particular structure of covariance matrix.</li>
+<li>Generate a single sample from this 25 dimensional Gaussian density, <span class="math display">\[
+\mappingFunctionVector=\left[\mappingFunction_{1},\mappingFunction_{2}\dots \mappingFunction_{25}\right].
+\]</span></li>
+<li>We will plot these points against their index.</li>
+</ul>
+
+</section>
+<section id="gaussian-distribution-sample" class="slide level3">
+<h3>Gaussian Distribution Sample</h3>
+<script>
+showDivs(0, 'two_point_sample');
+</script>
+<input id="range-two_point_sample" type="range" min="0" max="8" value="0" onchange="setDivs('two_point_sample')" oninput="setDivs('two_point_sample')">
+<button onclick="plusDivs(-1, 'two_point_sample')">
+❮
+</button>
+<button onclick="plusDivs(1, 'two_point_sample')">
+❯
+</button>
+<object class="svgplot two_point_sample" align data="../slides/diagrams/gp/two_point_sample000.svg" style>
+</object>
+<object class="svgplot two_point_sample" align data="../slides/diagrams/gp/two_point_sample001.svg" style>
+</object>
+<object class="svgplot two_point_sample" align data="../slides/diagrams/gp/two_point_sample002.svg" style>
+</object>
+<object class="svgplot two_point_sample" align data="../slides/diagrams/gp/two_point_sample003.svg" style>
+</object>
+<object class="svgplot two_point_sample" align data="../slides/diagrams/gp/two_point_sample004.svg" style>
+</object>
+<object class="svgplot two_point_sample" align data="../slides/diagrams/gp/two_point_sample005.svg" style>
+</object>
+<object class="svgplot two_point_sample" align data="../slides/diagrams/gp/two_point_sample006.svg" style>
+</object>
+<object class="svgplot two_point_sample" align data="../slides/diagrams/gp/two_point_sample007.svg" style>
+</object>
+<object class="svgplot two_point_sample" align data="../slides/diagrams/gp/two_point_sample008.svg" style>
+</object>
+<p><a href="file:///Users/neil/lawrennd/talks_gp/includes/gaussian-predict-index-one-and-two.md">_gp/includes/gaussian-predict-index-one-and-two.md</a></p>
+
+</section>
+<section id="prediction-of-mappingfunction_2-from-mappingfunction_1" class="slide level3">
+<h3>Prediction of <span class="math inline">\(\mappingFunction_{2}\)</span> from <span class="math inline">\(\mappingFunction_{1}\)</span></h3>
+<script>
+showDivs(9, 'two_point_sample2');
+</script>
+<input id="range-two_point_sample2" type="range" min="9" max="12" value="9" onchange="setDivs('two_point_sample2')" oninput="setDivs('two_point_sample2')">
+<button onclick="plusDivs(-1, 'two_point_sample2')">
+❮
+</button>
+<button onclick="plusDivs(1, 'two_point_sample2')">
+❯
+</button>
+<object class="svgplot two_point_sample2" align data="../slides/diagrams/gp/two_point_sample009.svg" style>
+</object>
+<object class="svgplot two_point_sample2" align data="../slides/diagrams/gp/two_point_sample010.svg" style>
+</object>
+<object class="svgplot two_point_sample2" align data="../slides/diagrams/gp/two_point_sample011.svg" style>
+</object>
+<object class="svgplot two_point_sample2" align data="../slides/diagrams/gp/two_point_sample012.svg" style>
+</object>
+</section>
+<section id="uluru" class="slide level3">
+<h3>Uluru</h3>
+<p><img class="" src="../slides/diagrams/gp/799px-Uluru_Panorama.jpg" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none;"></p>
+</section>
+<section id="prediction-with-correlated-gaussians" class="slide level3">
+<h3>Prediction with Correlated Gaussians</h3>
+<ul>
+<li>Prediction of <span class="math inline">\(\mappingFunction_2\)</span> from <span class="math inline">\(\mappingFunction_1\)</span> requires <em>conditional density</em>.</li>
+<li>Conditional density is <em>also</em> Gaussian. <span class="math display">\[
+p(\mappingFunction_2|\mappingFunction_1) = \gaussianDist{\mappingFunction_2}{\frac{\kernelScalar_{1, 2}}{\kernelScalar_{1, 1}}\mappingFunction_1}{ \kernelScalar_{2, 2} - \frac{\kernelScalar_{1,2}^2}{\kernelScalar_{1,1}}}
+\]</span> where covariance of joint density is given by <span class="math display">\[
+\kernelMatrix = \begin{bmatrix} \kernelScalar_{1, 1} &amp; \kernelScalar_{1, 2}\\ \kernelScalar_{2, 1} &amp; \kernelScalar_{2, 2}.\end{bmatrix}
+\]</span></li>
+</ul>
+<p><a href="file:///Users/neil/lawrennd/talks_gp/includes/gaussian-predict-index-one-and-eight.md">_gp/includes/gaussian-predict-index-one-and-eight.md</a></p>
+
+</section>
+<section id="prediction-of-mappingfunction_8-from-mappingfunction_1" class="slide level3">
+<h3>Prediction of <span class="math inline">\(\mappingFunction_{8}\)</span> from <span class="math inline">\(\mappingFunction_{1}\)</span></h3>
+<script>
+showDivs(13, 'two_point_sample3');
+</script>
+<input id="range-two_point_sample3" type="range" min="13" max="17" value="13" onchange="setDivs('two_point_sample3')" oninput="setDivs('two_point_sample3')">
+<button onclick="plusDivs(-1, 'two_point_sample3')">
+❮
+</button>
+<button onclick="plusDivs(1, 'two_point_sample3')">
+❯
+</button>
+<object class="svgplot two_point_sample3" align data="../slides/diagrams/gp/two_point_sample013.svg" style>
+</object>
+<object class="svgplot two_point_sample3" align data="../slides/diagrams/gp/two_point_sample014.svg" style>
+</object>
+<object class="svgplot two_point_sample3" align data="../slides/diagrams/gp/two_point_sample015.svg" style>
+</object>
+<object class="svgplot two_point_sample3" align data="../slides/diagrams/gp/two_point_sample016.svg" style>
+</object>
+<object class="svgplot two_point_sample3" align data="../slides/diagrams/gp/two_point_sample017.svg" style>
+</object>
+</section>
+<section id="key-object" class="slide level3">
+<h3>Key Object</h3>
+<ul>
+<li><p>Covariance function, <span class="math inline">\(\kernelMatrix\)</span></p></li>
+<li><p>Determines properties of samples.</p></li>
+<li><p>Function of <span class="math inline">\(\inputMatrix\)</span>, <span class="math display">\[\kernelScalar_{i,j} = \kernelScalar(\inputVector_i, \inputVector_j)\]</span></p></li>
+</ul>
+</section>
+<section id="linear-algebra" class="slide level3">
+<h3>Linear Algebra</h3>
+<ul>
+<li><p>Posterior mean</p>
+<p><span class="math display">\[\mappingFunction_D(\inputVector_*) = \kernelVector(\inputVector_*, \inputMatrix) \kernelMatrix^{-1}
+\mathbf{y}\]</span></p></li>
+<li><p>Posterior covariance <span class="math display">\[\mathbf{C}_* = \kernelMatrix_{*,*} - \kernelMatrix_{*,\mappingFunctionVector}
+\kernelMatrix^{-1} \kernelMatrix_{\mappingFunctionVector, *}\]</span></p></li>
+</ul>
+</section>
+<section id="linear-algebra-1" class="slide level3">
+<h3>Linear Algebra</h3>
+<ul>
+<li><p>Posterior mean</p>
+<p><span class="math display">\[\mappingFunction_D(\inputVector_*) = \kernelVector(\inputVector_*, \inputMatrix) \boldsymbol{\alpha}\]</span></p></li>
+<li><p>Posterior covariance <span class="math display">\[\covarianceMatrix_* = \kernelMatrix_{*,*} - \kernelMatrix_{*,\mappingFunctionVector}
+\kernelMatrix^{-1} \kernelMatrix_{\mappingFunctionVector, *}\]</span></p></li>
+</ul>
+</section>
+<section id="section-6" class="slide level3">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/gp_prior_samples_data.svg" style>
+</object>
+</section>
+<section id="section-7" class="slide level3">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/gp_rejection_samples.svg" style>
+</object>
+</section>
+<section id="section-8" class="slide level3">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/gp_prediction.svg" style>
+</object>
+
+</section>
+<section id="exponentiated-quadratic-covariance" class="slide level3">
+<h3>Exponentiated Quadratic Covariance</h3>
+<center>
+<span class="math display">\[\formula\]</span>
+</center>
+<br>
+<table>
+<tr>
+<td width="45%">
+<object class align data="../slides/diagrams/kern/eq_covariance.svg">
+</object>
+<td width="45%">
+<img class="negate" src="../slides/diagrams/kern/eq_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</td>
+</tr>
+</table>
+</section>
+<section id="olympic-marathon-data" class="slide level3">
+<h3>Olympic Marathon Data</h3>
+<table>
+<tr>
+<td width="70%">
+<ul>
+<li><p>Gold medal times for Olympic Marathon since 1896.</p></li>
+<li><p>Marathons before 1924 didn’t have a standardised distance.</p></li>
+<li><p>Present results using pace per km.</p></li>
+<li>In 1904 Marathon was badly organised leading to very slow times.</li>
+</ul>
+</td>
+<td width="30%">
+<img src="../slides/diagrams/Stephen_Kiprotich.jpg" alt="image" /> <small>Image from Wikimedia Commons <a href="http://bit.ly/16kMKHQ" class="uri">http://bit.ly/16kMKHQ</a></small>
+</td>
+</tr>
+</table>
+</section>
+<section id="olympic-marathon-data-1" class="slide level3">
+<h3>Olympic Marathon Data</h3>
+<object class="svgplot " align data="../slides/diagrams/datasets/olympic-marathon.svg" style>
+</object>
+</section>
+<section id="olympic-marathon-data-gp" class="slide level3">
+<h3>Olympic Marathon Data GP</h3>
+<object class="svgplot " align data="../slides/diagrams/gp/olympic-marathon-gp.svg" style>
+</object>
+</section>
+<section id="section-9" class="slide level3">
+<h3></h3>
+<table>
+<tr>
+<td width="40%">
+<img class="" src="../slides/diagrams/turing-run.jpg" width="40%" height="auto" align="" style="background:none; border:none; box-shadow:none;">
+</td>
+<td width="50%">
+<img class="" src="../slides/diagrams/turing-times.gif" width="50%" height="auto" align="" style="background:none; border:none; box-shadow:none;">
+</td>
+</tr>
+</table>
+<center>
+<em>Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: <a href="http://www.turing.org.uk/scrapbook/run.html">Alan Turing Internet Scrapbook</a> </em>
+</center>
+</section>
+<section id="basis-function-covariance" class="slide level3">
+<h3>Basis Function Covariance</h3>
+<center>
+<span class="math display">\[\kernel(\inputVector, \inputVector^\prime) = \basisVector(\inputVector)^\top \basisVector(\inputVector^\prime)\]</span>
+</center>
+<br>
+<table>
+<tr>
+<td width="45%">
+<object class align data="../slides/diagrams/kern/basis_covariance.svg">
+</object>
+<td width="45%">
+<img class="negate" src="../slides/diagrams/kern/basis_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</td>
+</tr>
+</table>
+{
+<center>
+<em>A covariance function based on a non-linear basis given by <span class="math inline">\(\basisVector(\inputVector)\)</span>. </em>
+</center>
+</section>
+<section id="brownian-covariance" class="slide level3">
+<h3>Brownian Covariance</h3>
+<p><span class="math display">\[
+\kernelScalar(t, t^\prime) = \alpha \min(t, t^\prime)
+\]</span></p>
+<!--<table><tr><td width="50%">
+<object class="svgplot " align="" data="../slides/diagrams/kern/brownian_covariance.svg" style=""></object>
+</td><td width="50%">
+<iframe src="../slides/diagrams/kern/brownian_covariance.html" width="512" height="384" allowtransparency="true" frameborder="0">
+</iframe>
+</td></tr></table>
+-->
+<table>
+<tr>
+<td width="45%">
+<object class align data="../slides/diagrams/kern/brownian_covariance.svg">
+</object>
+</td>
+<td width="45%">
+<img class="negate" src="../slides/diagrams/kern/brownian_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</td>
+</tr>
+</table>
+</section>
+<section id="mlp-covariance" class="slide level3">
+<h3>MLP Covariance</h3>
+<center>
+<span class="math display">\[\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \arcsin\left(\frac{w \inputVector^\top \inputVector^\prime + b}{\sqrt{\left(w \inputVector^\top \inputVector + b + 1\right)\left(w \left.\inputVector^\prime\right.^\top \inputVector^\prime + b + 1\right)}}\right)\]</span>
+</center>
+<br>
+<table>
+<tr>
+<td width="45%">
+<object class align data="../slides/diagrams/kern/mlp_covariance.svg">
+</object>
+<td width="45%">
+<img class="negate" src="../slides/diagrams/kern/mlp_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</td>
+</tr>
+</table>
+</section>
+<section id="section-10" class="slide level3">
+<h3></h3>
+<p><img class="" src="../slides/diagrams/Planck_CMB.png" width="70%" height="auto" align="" style="background:none; border:none; box-shadow:none;"></p>
+</section>
+<section id="section-11" class="slide level3">
+<h3></h3>
+<div style="fontsize:120px;vertical-align:middle;">
+<img src="../slides/diagrams/earth_PNG37.png" width="20%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">\(=f\Bigg(\)</span> <img src="../slides/diagrams/Planck_CMB.png"  width="50%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">\(\Bigg)\)</span>
+</div>
+</section>
+<section id="deep-gaussian-processes" class="slide level3">
+<h3>Deep Gaussian Processes</h3>
+</section>
+<section id="approximations" class="slide level3">
+<h3>Approximations</h3>
+<img class="" src="../slides/diagrams/sparse-gps-1.png" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+<center>
+<em>Image credit: Kai Arulkumaran </em>
+</center>
+</section>
+<section id="approximations-1" class="slide level3">
+<h3>Approximations</h3>
+<img class="" src="../slides/diagrams/sparse-gps-2.png" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+<center>
+<em>Image credit: Kai Arulkumaran </em>
+</center>
+</section>
+<section id="approximations-2" class="slide level3">
+<h3>Approximations</h3>
+<img class="" src="../slides/diagrams/sparse-gps-3.png" width="45%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+<center>
+<em>Image credit: Kai Arulkumaran </em>
+</center>
+</section>
+<section id="approximations-3" class="slide level3">
+<h3>Approximations</h3>
+<img class="" src="../slides/diagrams/sparse-gps-4.png" width="45%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+<center>
+<em>Image credit: Kai Arulkumaran </em>
+</center>
+</section>
+<section id="full-gaussian-process-fit" class="slide level3">
+<h3>Full Gaussian Process Fit</h3>
+<object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-full-gp.svg" style>
+</object>
+</section>
+<section id="inducing-variable-fit" class="slide level3">
+<h3>Inducing Variable Fit</h3>
+<object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-constrained-inducing-6-unlearned-gp.svg" style>
+</object>
+</section>
+<section id="inducing-variable-param-optimize" class="slide level3">
+<h3>Inducing Variable Param Optimize</h3>
+<object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-constrained-inducing-6-learned-gp.svg" style>
+</object>
+</section>
+<section id="inducing-variable-full-optimize" class="slide level3">
+<h3>Inducing Variable Full Optimize</h3>
+<object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-unconstrained-inducing-6-gp.svg" style>
+</object>
+</section>
+<section id="eight-optimized-inducing-variables" class="slide level3">
+<h3>Eight Optimized Inducing Variables</h3>
+<object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-sparse-inducing-8-gp.svg" style>
+</object>
+</section>
+<section id="full-gaussian-process-fit-1" class="slide level3">
+<h3>Full Gaussian Process Fit</h3>
+<object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-full-gp.svg" style>
+</object>
+</section>
+<section id="modern-review" class="slide level3">
+<h3>Modern Review</h3>
+<ul>
+<li><p><em>A Unifying Framework for Gaussian Process Pseudo-Point Approximations using Power Expectation Propagation</em> <span class="citation" data-cites="Thang:unifying17">Bui et al. (2017)</span></p></li>
+<li><p><em>Deep Gaussian Processes and Variational Propagation of Uncertainty</em> <span class="citation" data-cites="Damianou:thesis2015">Damianou (2015)</span></p></li>
+</ul>
+</section>
+<section id="deep-neural-network" class="slide level3">
+<h3>Deep Neural Network</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/deep-nn1.svg" style>
+</object>
+</section>
+<section id="deep-neural-network-1" class="slide level3">
+<h3>Deep Neural Network</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/deep-nn2.svg" style>
+</object>
+</section>
+<section id="mathematically" class="slide level3">
+<h3>Mathematically</h3>
+<p><span class="math display">\[
+\begin{align}
+    \hiddenVector_{1} &amp;= \basisFunction\left(\mappingMatrix_1 \inputVector\right)\\
+    \hiddenVector_{2} &amp;=  \basisFunction\left(\mappingMatrix_2\hiddenVector_{1}\right)\\
+    \hiddenVector_{3} &amp;= \basisFunction\left(\mappingMatrix_3 \hiddenVector_{2}\right)\\
+    \dataVector &amp;= \mappingVector_4 ^\top\hiddenVector_{3}
+\end{align}
+\]</span></p>
+</section>
+<section id="overfitting" class="slide level3">
+<h3>Overfitting</h3>
+<ul>
+<li><p>Potential problem: if number of nodes in two adjacent layers is big, corresponding <span class="math inline">\(\mappingMatrix\)</span> is also very big and there is the potential to overfit.</p></li>
+<li><p>Proposed solution: “dropout”.</p></li>
+<li><p>Alternative solution: parameterize <span class="math inline">\(\mappingMatrix\)</span> with its SVD. <span class="math display">\[
+  \mappingMatrix = \eigenvectorMatrix\eigenvalueMatrix\eigenvectwoMatrix^\top
+  \]</span> or <span class="math display">\[
+  \mappingMatrix = \eigenvectorMatrix\eigenvectwoMatrix^\top
+  \]</span> where if <span class="math inline">\(\mappingMatrix \in \Re^{k_1\times k_2}\)</span> then <span class="math inline">\(\eigenvectorMatrix\in \Re^{k_1\times q}\)</span> and <span class="math inline">\(\eigenvectwoMatrix \in \Re^{k_2\times q}\)</span>, i.e. we have a low rank matrix factorization for the weights.</p></li>
+</ul>
+</section>
+<section id="low-rank-approximation" class="slide level3">
+<h3>Low Rank Approximation</h3>
+<object class="svgplot " align data="../slides/diagrams/wisuvt.svg" style>
+</object>
+<center>
+<em>Pictorial representation of the low rank form of the matrix <span class="math inline">\(\mappingMatrix\)</span> </em>
+</center>
+</section>
+<section id="deep-neural-network-2" class="slide level3">
+<h3>Deep Neural Network</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/deep-nn-bottleneck1.svg" style>
+</object>
+</section>
+<section id="deep-neural-network-3" class="slide level3">
+<h3>Deep Neural Network</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/deep-nn-bottleneck2.svg" style>
+</object>
+</section>
+<section id="mathematically-1" class="slide level3">
+<h3>Mathematically</h3>
+<p>The network can now be written mathematically as <span class="math display">\[
+\begin{align}
+  \latentVector_{1} &amp;= \eigenvectwoMatrix^\top_1 \inputVector\\
+  \hiddenVector_{1} &amp;= \basisFunction\left(\eigenvectorMatrix_1 \latentVector_{1}\right)\\
+  \latentVector_{2} &amp;= \eigenvectwoMatrix^\top_2 \hiddenVector_{1}\\
+  \hiddenVector_{2} &amp;= \basisFunction\left(\eigenvectorMatrix_2 \latentVector_{2}\right)\\
+  \latentVector_{3} &amp;= \eigenvectwoMatrix^\top_3 \hiddenVector_{2}\\
+  \hiddenVector_{3} &amp;= \basisFunction\left(\eigenvectorMatrix_3 \latentVector_{3}\right)\\
+  \dataVector &amp;= \mappingVector_4^\top\hiddenVector_{3}.
+\end{align}
+\]</span></p>
+</section>
+<section id="a-cascade-of-neural-networks" class="slide level3">
+<h3>A Cascade of Neural Networks</h3>
+<p><span class="math display">\[
+\begin{align}
+  \latentVector_{1} &amp;= \eigenvectwoMatrix^\top_1 \inputVector\\
+  \latentVector_{2} &amp;= \eigenvectwoMatrix^\top_2 \basisFunction\left(\eigenvectorMatrix_1 \latentVector_{1}\right)\\
+  \latentVector_{3} &amp;= \eigenvectwoMatrix^\top_3 \basisFunction\left(\eigenvectorMatrix_2 \latentVector_{2}\right)\\
+  \dataVector &amp;= \mappingVector_4 ^\top \latentVector_{3}
+\end{align}
+\]</span></p>
+</section>
+<section id="cascade-of-gaussian-processes" class="slide level3">
+<h3>Cascade of Gaussian Processes</h3>
+<ul>
+<li><p>Replace each neural network with a Gaussian process <span class="math display">\[
+\begin{align}
+  \latentVector_{1} &amp;= \mappingFunctionVector_1\left(\inputVector\right)\\
+  \latentVector_{2} &amp;= \mappingFunctionVector_2\left(\latentVector_{1}\right)\\
+  \latentVector_{3} &amp;= \mappingFunctionVector_3\left(\latentVector_{2}\right)\\
+  \dataVector &amp;= \mappingFunctionVector_4\left(\latentVector_{3}\right)
+\end{align}
+\]</span></p></li>
+<li><p>Equivalent to prior over parameters, take width of each layer to infinity.</p></li>
+</ul>
+</section>
+<section id="mathematically-2" class="slide level3">
+<h3>Mathematically</h3>
+<ul>
+<li>Composite <em>multivariate</em> function</li>
+</ul>
+<p><span class="math display">\[
+  \mathbf{g}(\inputVector)=\mappingFunctionVector_5(\mappingFunctionVector_4(\mappingFunctionVector_3(\mappingFunctionVector_2(\mappingFunctionVector_1(\inputVector))))).
+  \]</span></p>
+</section>
+<section id="equivalent-to-markov-chain" class="slide level3">
+<h3>Equivalent to Markov Chain</h3>
+<ul>
+<li>Composite <em>multivariate</em> function <span class="math display">\[
+  p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mappingFunctionVector_5|\mappingFunctionVector_4)p(\mappingFunctionVector_4|\mappingFunctionVector_3)p(\mappingFunctionVector_3|\mappingFunctionVector_2)p(\mappingFunctionVector_2|\mappingFunctionVector_1)p(\mappingFunctionVector_1|\inputVector)
+  \]</span></li>
+</ul>
+<object class="svgplot " align data="../slides/diagrams/deepgp/deep-markov.svg" style>
+</object>
+</section>
+<section id="section-12" class="slide level3">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/deep-markov-vertical.svg" style>
+</object>
+</section>
+<section id="why-deep" class="slide level3">
+<h3>Why Deep?</h3>
+<ul>
+<li><p>Gaussian processes give priors over functions.</p></li>
+<li>Elegant properties:</li>
+<li><p>e.g. <em>Derivatives</em> of process are also Gaussian distributed (if they exist).</p></li>
+<li><p>For particular covariance functions they are ‘universal approximators’, i.e. all functions can have support under the prior.</p></li>
+<li><p>Gaussian derivatives might ring alarm bells.</p></li>
+<li><p>E.g. a priori they don’t believe in function ‘jumps’.</p></li>
+</ul>
+</section>
+<section id="stochastic-process-composition" class="slide level3">
+<h3>Stochastic Process Composition</h3>
+<ul>
+<li><p>From a process perspective: <em>process composition</em>.</p></li>
+<li><p>A (new?) way of constructing more complex <em>processes</em> based on simpler components.</p></li>
+</ul>
+</section>
+<section id="section-13" class="slide level3">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/deep-markov-vertical.svg" style>
+</object>
+</section>
+<section id="section-14" class="slide level3">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/deep-markov-vertical-side.svg" style>
+</object>
+</section>
+<section id="difficulty-for-probabilistic-approaches" class="slide level3" data-transition="None">
+<h3>Difficulty for Probabilistic Approaches</h3>
+<ul>
+<li><p>Propagate a probability distribution through a non-linear mapping.</p></li>
+<li><p>Normalisation of distribution becomes intractable.</p></li>
+</ul>
+<object class="svgplot " align="center" data="../slides/diagrams/dimred/nonlinear-mapping-3d-plot.svg" style>
+</object>
+</section>
+<section id="difficulty-for-probabilistic-approaches-1" class="slide level3" data-transition="None">
+<h3>Difficulty for Probabilistic Approaches</h3>
+<ul>
+<li><p>Propagate a probability distribution through a non-linear mapping.</p></li>
+<li><p>Normalisation of distribution becomes intractable.</p></li>
+</ul>
+<object class="svgplot " align="center" data="../slides/diagrams/dimred/nonlinear-mapping-2d-plot.svg" style>
+</object>
+</section>
+<section id="difficulty-for-probabilistic-approaches-2" class="slide level3" data-transition="None">
+<h3>Difficulty for Probabilistic Approaches</h3>
+<ul>
+<li><p>Propagate a probability distribution through a non-linear mapping.</p></li>
+<li><p>Normalisation of distribution becomes intractable.</p></li>
+</ul>
+<object class="svgplot " align="center" data="../slides/diagrams/dimred/gaussian-through-nonlinear.svg" style>
+</object>
+</section>
+<section id="deep-gaussian-processes-1" class="slide level3">
+<h3>Deep Gaussian Processes</h3>
+<ul>
+<li><p>Deep architectures allow abstraction of features <span class="citation" data-cites="Bengio:deep09 Hinton:fast06 Salakhutdinov:quantitative08">(Bengio, 2009; Hinton and Osindero, 2006; Salakhutdinov and Murray, n.d.)</span></p></li>
+<li><p>We use variational approach to stack GP models.</p></li>
+</ul>
+</section>
+<section id="stacked-pca" class="slide level3" data-transition="None">
+<h3>Stacked PCA</h3>
+<object class="svgplot " align data="../slides/diagrams/stack-pca-sample-0.svg" style>
+</object>
+</section>
+<section id="stacked-pca-1" class="slide level3" data-transition="None">
+<h3>Stacked PCA</h3>
+<object class="svgplot " align data="../slides/diagrams/stack-pca-sample-1.svg" style>
+</object>
+</section>
+<section id="stacked-pca-2" class="slide level3" data-transition="None">
+<h3>Stacked PCA</h3>
+<object class="svgplot " align data="../slides/diagrams/stack-pca-sample-2.svg" style>
+</object>
+</section>
+<section id="stacked-pca-3" class="slide level3" data-transition="None">
+<h3>Stacked PCA</h3>
+<object class="svgplot " align data="../slides/diagrams/stack-pca-sample-3.svg" style>
+</object>
+</section>
+<section id="stacked-pca-4" class="slide level3" data-transition="None">
+<h3>Stacked PCA</h3>
+<object class="svgplot " align data="../slides/diagrams/stack-pca-sample-4.svg" style>
+</object>
+</section>
+<section id="stacked-gp" class="slide level3" data-transition="None">
+<h3>Stacked GP</h3>
+<object class="svgplot " align data="../slides/diagrams/stack-gp-sample-0.svg" style>
+</object>
+</section>
+<section id="stacked-gp-1" class="slide level3" data-transition="None">
+<h3>Stacked GP</h3>
+<object class="svgplot " align data="../slides/diagrams/stack-gp-sample-1.svg" style>
+</object>
+</section>
+<section id="stacked-gp-2" class="slide level3" data-transition="None">
+<h3>Stacked GP</h3>
+<object class="svgplot " align data="../slides/diagrams/stack-gp-sample-2.svg" style>
+</object>
+</section>
+<section id="stacked-gp-3" class="slide level3" data-transition="None">
+<h3>Stacked GP</h3>
+<object class="svgplot " align data="../slides/diagrams/stack-gp-sample-3.svg" style>
+</object>
+</section>
+<section id="stacked-gp-4" class="slide level3" data-transition="None">
+<h3>Stacked GP</h3>
+<object class="svgplot " align data="../slides/diagrams/stack-gp-sample-4.svg" style>
+</object>
+</section>
+<section id="analysis-of-deep-gps" class="slide level3">
+<h3>Analysis of Deep GPs</h3>
+<ul>
+<li><p><em>Avoiding pathologies in very deep networks</em> <span class="citation" data-cites="Duvenaud:pathologies14">Duvenaud et al. (2014)</span> show that the derivative distribution of the process becomes more <em>heavy tailed</em> as number of layers increase.</p></li>
+<li><p><em>How Deep Are Deep Gaussian Processes?</em> <span class="citation" data-cites="Dunlop:deep2017">Dunlop et al. (2017)</span> perform a theoretical analysis possible through conditional Gaussian Markov property.</p></li>
+</ul>
+</section>
+<section id="section-15" class="slide level3">
+<h3></h3>
+<iframe width="1120" height="630" src="https://www.youtube.com/embed/XhIvygQYFFQ?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+</section>
+<section id="olympic-marathon-data-2" class="slide level3">
+<h3>Olympic Marathon Data</h3>
+<table>
+<tr>
+<td width="70%">
+<ul>
+<li><p>Gold medal times for Olympic Marathon since 1896.</p></li>
+<li><p>Marathons before 1924 didn’t have a standardised distance.</p></li>
+<li><p>Present results using pace per km.</p></li>
+<li>In 1904 Marathon was badly organised leading to very slow times.</li>
+</ul>
+</td>
+<td width="30%">
+<img src="../slides/diagrams/Stephen_Kiprotich.jpg" alt="image" /> <small>Image from Wikimedia Commons <a href="http://bit.ly/16kMKHQ" class="uri">http://bit.ly/16kMKHQ</a></small>
+</td>
+</tr>
+</table>
+</section>
+<section id="olympic-marathon-data-3" class="slide level3">
+<h3>Olympic Marathon Data</h3>
+<object class="svgplot " align data="../slides/diagrams/datasets/olympic-marathon.svg" style>
+</object>
+</section>
+<section id="olympic-marathon-data-gp-1" class="slide level3">
+<h3>Olympic Marathon Data GP</h3>
+<object class="svgplot " align data="../slides/diagrams/gp/olympic-marathon-gp.svg" style>
+</object>
+</section>
+<section id="section-16" class="slide level3">
+<h3></h3>
+<table>
+<tr>
+<td width="40%">
+<img class="" src="../slides/diagrams/turing-run.jpg" width="40%" height="auto" align="" style="background:none; border:none; box-shadow:none;">
+</td>
+<td width="50%">
+<img class="" src="../slides/diagrams/turing-times.gif" width="50%" height="auto" align="" style="background:none; border:none; box-shadow:none;">
+</td>
+</tr>
+</table>
+<center>
+<em>Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: <a href="http://www.turing.org.uk/scrapbook/run.html">Alan Turing Internet Scrapbook</a> </em>
+</center>
+</section>
+<section id="deep-gp-fit" class="slide level3">
+<h3>Deep GP Fit</h3>
+<ul>
+<li><p>Can a Deep Gaussian process help?</p></li>
+<li><p>Deep GP is one GP feeding into another.</p></li>
+</ul>
+</section>
+<section id="olympic-marathon-data-deep-gp" class="slide level3">
+<h3>Olympic Marathon Data Deep GP</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp.svg" style>
+</object>
+</section>
+<section id="olympic-marathon-data-deep-gp-1" class="slide level3" data-transition="None">
+<h3>Olympic Marathon Data Deep GP</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-samples.svg" style>
+</object>
+</section>
+<section id="olympic-marathon-data-latent-1" class="slide level3" data-transition="None">
+<h3>Olympic Marathon Data Latent 1</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-layer-0.svg" style>
+</object>
+</section>
+<section id="olympic-marathon-data-latent-2" class="slide level3" data-transition="None">
+<h3>Olympic Marathon Data Latent 2</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-layer-1.svg" style>
+</object>
+</section>
+<section id="olympic-marathon-pinball-plot" class="slide level3">
+<h3>Olympic Marathon Pinball Plot</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg" style>
+</object>
+</section>
+<section id="step-function-data" class="slide level3" data-transition="None">
+<h3>Step Function Data</h3>
+<object class="svgplot " align data="../slides/diagrams/datasets/step-function.svg" style>
+</object>
+</section>
+<section id="step-function-data-gp" class="slide level3" data-transition="None">
+<h3>Step Function Data GP</h3>
+<object class="svgplot " align data="../slides/diagrams/gp/step-function-gp.svg" style>
+</object>
+</section>
+<section id="step-function-data-deep-gp" class="slide level3" data-transition="None">
+<h3>Step Function Data Deep GP</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp.svg" style>
+</object>
+</section>
+<section id="step-function-data-deep-gp-1" class="slide level3" data-transition="None">
+<h3>Step Function Data Deep GP</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp-samples.svg" style>
+</object>
+</section>
+<section id="step-function-data-latent-1" class="slide level3" data-transition="None">
+<h3>Step Function Data Latent 1</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp-layer-0.svg" style>
+</object>
+</section>
+<section id="step-function-data-latent-2" class="slide level3" data-transition="None">
+<h3>Step Function Data Latent 2</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp-layer-1.svg" style>
+</object>
+</section>
+<section id="step-function-data-latent-3" class="slide level3" data-transition="None">
+<h3>Step Function Data Latent 3</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp-layer-2.svg" style>
+</object>
+</section>
+<section id="step-function-data-latent-4" class="slide level3" data-transition="None">
+<h3>Step Function Data Latent 4</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp-layer-3.svg" style>
+</object>
+</section>
+<section id="step-function-pinball-plot" class="slide level3" data-transition="None">
+<h3>Step Function Pinball Plot</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp-pinball.svg" style>
+</object>
+</section>
+<section id="motorcycle-helmet-data" class="slide level3" data-transition="None">
+<h3>Motorcycle Helmet Data</h3>
+<object class="svgplot " align data="../slides/diagrams/datasets/motorcycle-helmet.svg" style>
+</object>
+</section>
+<section id="motorcycle-helmet-data-gp" class="slide level3" data-transition="None">
+<h3>Motorcycle Helmet Data GP</h3>
+<object class="svgplot " align data="../slides/diagrams/gp/motorcycle-helmet-gp.svg" style>
+</object>
+</section>
+<section id="motorcycle-helmet-data-deep-gp" class="slide level3" data-transition="None">
+<h3>Motorcycle Helmet Data Deep GP</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp.svg" style>
+</object>
+</section>
+<section id="motorcycle-helmet-data-deep-gp-1" class="slide level3" data-transition="None">
+<h3>Motorcycle Helmet Data Deep GP</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-samples.svg" style>
+</object>
+</section>
+<section id="motorcycle-helmet-data-latent-1" class="slide level3" data-transition="None">
+<h3>Motorcycle Helmet Data Latent 1</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-layer-0.svg" style>
+</object>
+</section>
+<section id="motorcycle-helmet-data-latent-2" class="slide level3" data-transition="None">
+<h3>Motorcycle Helmet Data Latent 2</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-layer-1.svg" style>
+</object>
+</section>
+<section id="motorcycle-helmet-pinball-plot" class="slide level3" data-transition="None">
+<h3>Motorcycle Helmet Pinball Plot</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-pinball.svg" style>
+</object>
+</section>
+<section id="robot-wireless-ground-truth" class="slide level3" data-transition="None">
+<h3>Robot Wireless Ground Truth</h3>
+<object class="svgplot " align data="../slides/diagrams/datasets/robot-wireless-ground-truth.svg" style>
+</object>
+</section>
+<section id="robot-wifi-data" class="slide level3" data-transition="None">
+<h3>Robot WiFi Data</h3>
+<object class="svgplot " align data="../slides/diagrams/datasets/robot-wireless-dim-1.svg" style>
+</object>
+</section>
+<section id="robot-wifi-data-gp" class="slide level3" data-transition="None">
+<h3>Robot WiFi Data GP</h3>
+<object class="svgplot " align data="../slides/diagrams/gp/robot-wireless-gp-dim-1.svg" style>
+</object>
+</section>
+<section id="robot-wifi-data-deep-gp" class="slide level3" data-transition="None">
+<h3>Robot WiFi Data Deep GP</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/robot-wireless-deep-gp-dim-1.svg" style>
+</object>
+</section>
+<section id="robot-wifi-data-deep-gp-1" class="slide level3" data-transition="None">
+<h3>Robot WiFi Data Deep GP</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/robot-wireless-deep-gp-samples-dim-1.svg" style>
+</object>
+</section>
+<section id="robot-wifi-data-latent-space" class="slide level3" data-transition="None">
+<h3>Robot WiFi Data Latent Space</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/robot-wireless-ground-truth.svg" style>
+</object>
+</section>
+<section id="robot-wifi-data-latent-space-1" class="slide level3" data-transition="None">
+<h3>Robot WiFi Data Latent Space</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/robot-wireless-latent-space.svg" style>
+</object>
+</section>
+<section id="motion-capture" class="slide level3" data-transition="none">
+<h3>Motion Capture</h3>
+<ul>
+<li><p>‘High five’ data.</p></li>
+<li><p>Model learns structure between two interacting subjects.</p></li>
+</ul>
+</section>
+<section id="shared-lvm" class="slide level3" data-transition="none">
+<h3>Shared LVM</h3>
+<object class="svgplot " align data="../slides/diagrams/shared.svg" style>
+</object>
+</section>
+<section id="section-17" class="slide level3" data-transition="none">
+<h3></h3>
+<p><img class="negate" src="../slides/diagrams/deep-gp-high-five2.png" width="100%" height="auto" align="" style="background:none; border:none; box-shadow:none;"></p>
+
+</section>
+<section id="section-18" class="slide level3" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/usps-digits-latent.svg" style>
+</object>
+</section>
+<section id="section-19" class="slide level3" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/usps-digits-hidden-1-0.svg" style>
+</object>
+</section>
+<section id="section-20" class="slide level3" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/usps-digits-hidden-2-0.svg" style>
+</object>
+</section>
+<section id="section-21" class="slide level3" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/usps-digits-hidden-3-0.svg" style>
+</object>
+</section>
+<section id="section-22" class="slide level3" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/usps-digits-hidden-4-0.svg" style>
+</object>
+</section>
+<section id="section-23" class="slide level3" data-transition="none">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/digit-samples-deep-gp.svg" style>
+</object>
+</section>
+<section id="deep-health" class="slide level3">
+<h3>Deep Health</h3>
+<div style="text-align:center">
+<object class="svgplot " align data="../slides/diagrams/deep-health.svg" style>
+</object>
+</div>
+</section>
+<section id="from-nips-2017" class="slide level3">
+<h3>From NIPS 2017</h3>
+<ul>
+<li><em>Gaussian process based nonlinear latent structure discovery in multivariate spike train data</em> <span class="citation" data-cites="Anqi:gpspike2017">Wu et al. (2017)</span></li>
+<li><em>Doubly Stochastic Variational Inference for Deep Gaussian Processes</em> <span class="citation" data-cites="Salimbeni:doubly2017">Salimbeni and Deisenroth (2017)</span></li>
+<li><em>Deep Multi-task Gaussian Processes for Survival Analysis with Competing Risks</em> <span class="citation" data-cites="Alaa:deep2017">Alaa and van der Schaar (2017)</span></li>
+<li><em>Counterfactual Gaussian Processes for Reliable Decision-making and What-if Reasoning</em> <span class="citation" data-cites="Schulam:counterfactual17">Schulam and Saria (2017)</span></li>
+</ul>
+</section>
+<section id="some-other-works" class="slide level3">
+<h3>Some Other Works</h3>
+<ul>
+<li><em>Deep Survival Analysis</em> <span class="citation" data-cites="Ranganath-survival16">Ranganath et al. (2016)</span></li>
+<li><em>Recurrent Gaussian Processes</em> <span class="citation" data-cites="Mattos:recurrent15">Mattos et al. (2015)</span></li>
+<li><em>Gaussian Process Based Approaches for Survival Analysis</em> <span class="citation" data-cites="Saul:thesis2016">Saul (2016)</span></li>
+</ul>
+</section>
+<section id="uncertainty-quantification" class="slide level3">
+<h3>Uncertainty Quantification</h3>
+<ul>
+<li>Deep nets are powerful approach to images, speech, language.</li>
+<li>Proposal: Deep GPs may also be a great approach, but better to deploy according to natural strengths.</li>
+</ul>
+</section>
+<section id="uncertainty-quantification-1" class="slide level3">
+<h3>Uncertainty Quantification</h3>
+<ul>
+<li>Probabilistic numerics, surrogate modelling, emulation, and UQ.</li>
+<li>Not a fan of AI as a term.</li>
+<li>But we are faced with increasing amounts of <em>algorithmic decision making</em>.</li>
+</ul>
+</section>
+<section id="ml-and-decision-making" class="slide level3">
+<h3>ML and Decision Making</h3>
+<ul>
+<li>When trading off decisions: compute or acquire data?</li>
+<li>There is a critical need for uncertainty.</li>
+</ul>
+</section>
+<section id="uncertainty-quantification-2" class="slide level3">
+<h3>Uncertainty Quantification</h3>
+<blockquote>
+<p>Uncertainty quantification (UQ) is the science of quantitative characterization and reduction of uncertainties in both computational and real world applications. It tries to determine how likely certain outcomes are if some aspects of the system are not exactly known.</p>
+</blockquote>
+<ul>
+<li>Interaction between physical and virtual worlds of major interest.</li>
+</ul>
+</section>
+<section id="contrast" class="slide level3">
+<h3>Contrast</h3>
+<ul>
+<li>Simulation in <em>reinforcement learning</em>.</li>
+<li>Known as <em>data augmentation</em>.</li>
+<li>Newer, similar in spirit, but typically ignores uncertainty.</li>
+</ul>
+</section>
+<section id="example-formula-one-racing" class="slide level3">
+<h3>Example: Formula One Racing</h3>
+<ul>
+<li><p>Designing an F1 Car requires CFD, Wind Tunnel, Track Testing etc.</p></li>
+<li><p>How to combine them?</p></li>
+</ul>
+</section>
+<section id="mountain-car-simulator" class="slide level3">
+<h3>Mountain Car Simulator</h3>
+<div style="text-align:center">
+<img class="negate" src="../slides/diagrams/uq/mountaincar.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
+</section>
+<section id="car-dynamics" class="slide level3">
+<h3>Car Dynamics</h3>
+<p><span class="math display">\[\inputVector_{t+1} = \mappingFunction(\inputVector_{t},\textbf{u}_{t})\]</span></p>
+<p>where <span class="math inline">\(\textbf{u}_t\)</span> is the action force, <span class="math inline">\(\inputVector_t = (p_t, v_t)\)</span> is the vehicle state</p>
+</section>
+<section id="policy" class="slide level3">
+<h3>Policy</h3>
+<ul>
+<li>Assume policy is linear with parameters <span class="math inline">\(\boldsymbol{\theta}\)</span></li>
+</ul>
+<p><span class="math display">\[\pi(\inputVector,\theta)= \theta_0 + \theta_p p + \theta_vv.\]</span></p>
+</section>
+<section id="emulate-the-mountain-car" class="slide level3">
+<h3>Emulate the Mountain Car</h3>
+<ul>
+<li>Goal is find <span class="math inline">\(\theta\)</span> such that</li>
+</ul>
+<p><span class="math display">\[\theta^* = arg \max_{\theta} R_T(\theta).\]</span></p>
+<ul>
+<li>Reward is computed as 100 for target, minus squared sum of actions</li>
+</ul>
+</section>
+<section id="random-linear-controller" class="slide level3">
+<h3>Random Linear Controller</h3>
+<iframe src="../slides/diagrams/uq/mountain_car_random.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+</iframe>
+</section>
+<section id="best-controller-after-50-iterations-of-bayesian-optimization" class="slide level3">
+<h3>Best Controller after 50 Iterations of Bayesian Optimization</h3>
+<iframe src="../slides/diagrams/uq/mountain_car_simulated.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+</iframe>
+</section>
+<section id="data-efficient-emulation" class="slide level3">
+<h3>Data Efficient Emulation</h3>
+<ul>
+<li><p>For standard Bayesian Optimization ignored <em>dynamics</em> of the car.</p></li>
+<li><p>For more data efficiency, first <em>emulate</em> the dynamics.</p></li>
+<li><p>Then do Bayesian optimization of the <em>emulator</em>.</p></li>
+<li><p>Use a Gaussian process to model <span class="math display">\[\Delta v_{t+1} = v_{t+1} - v_{t}\]</span> and <span class="math display">\[\Delta x_{t+1} = p_{t+1} - p_{t}\]</span></p></li>
+<li><p>Two processes, one with mean <span class="math inline">\(v_{t}\)</span> one with mean <span class="math inline">\(p_{t}\)</span></p></li>
+</ul>
+</section>
+<section id="emulator-training" class="slide level3">
+<h3>Emulator Training</h3>
+<ul>
+<li><p>Used 500 randomly selected points to train emulators.</p></li>
+<li><p>Can make proces smore efficient through <em>experimental design</em>.</p></li>
+</ul>
+</section>
+<section id="comparison-of-emulation-and-simulation" class="slide level3">
+<h3>Comparison of Emulation and Simulation</h3>
+<object class="svgplot " align data="../slides/diagrams/uq/emu_sim_comparison.svg" style>
+</object>
+</section>
+<section id="data-efficiency" class="slide level3">
+<h3>Data Efficiency</h3>
+<ul>
+<li><p>Our emulator used only 500 calls to the simulator.</p></li>
+<li><p>Optimizing the simulator directly required 37,500 calls to the simulator.</p></li>
+</ul>
+</section>
+<section id="best-controller-using-emulator-of-dynamics" class="slide level3">
+<h3>Best Controller using Emulator of Dynamics</h3>
+<iframe src="../slides/diagrams/uq/mountain_car_emulated.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+</iframe>
+<p>500 calls to the simulator vs 37,500 calls to the simulator</p>
+<p><span class="math display">\[\mappingFunction_i\left(\inputVector\right) = \rho\mappingFunction_{i-1}\left(\inputVector\right) + \delta_i\left(\inputVector \right)\]</span></p>
+</section>
+<section id="multi-fidelity-emulation" class="slide level3">
+<h3>Multi-Fidelity Emulation</h3>
+<p><span class="math display">\[\mappingFunction_i\left(\inputVector\right) = \mappingFunctionTwo_{i}\left(\mappingFunction_{i-1}\left(\inputVector\right)\right) + \delta_i\left(\inputVector \right),\]</span></p>
+
+<iframe src="../slides/diagrams/uq/mountain_car_multi_fidelity.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+</iframe>
+<p>250 observations of high fidelity simulator and 250 of the low fidelity simulator</p>
+</section>
+<section id="acknowledgments" class="slide level3">
+<h3>Acknowledgments</h3>
+<p>Stefanos Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Dai, Javier Gonzalez, Andreas Damianou, Mark Pullin.</p>
+</section>
+<section id="ongoing-code" class="slide level3">
+<h3>Ongoing Code</h3>
+<ul>
+<li>Powerful framework but</li>
+<li>Software isn’t there yet.</li>
+<li>Our focus: Gaussian Processes driven by MXNet</li>
+<li>Composition of GPs, Neural Networks, Other Models</li>
+</ul>
+</section>
+<section id="thanks" class="slide level3">
+<h3>Thanks!</h3>
+<ul>
+<li>twitter: @lawrennd</li>
+<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
+</ul>
+</section>
+<section id="references" class="slide level3">
+<h3>References</h3>
+<p>{.allowframebreaks}</p>
+<div id="refs" class="references">
+<div id="ref-Alaa:deep2017">
+<p>Alaa, A.M., van der Schaar, M., 2017. Deep multi-task Gaussian processes for survival analysis with competing risks, in: Guyon, I., Luxburg, U.V., Bengio, S., Wallach, H., Fergus, R., Vishwanathan, S., Garnett, R. (Eds.), Advances in Neural Information Processing Systems 30. Curran Associates, Inc., pp. 2326–2334.</p>
+</div>
+<div id="ref-Bengio:deep09">
+<p>Bengio, Y., 2009. Learning Deep Architectures for AI. Found. Trends Mach. Learn. 2, 1–127. <a href="https://doi.org/10.1561/2200000006" class="uri">https://doi.org/10.1561/2200000006</a></p>
+</div>
+<div id="ref-Thang:unifying17">
+<p>Bui, T.D., Yan, J., Turner, R.E., 2017. A unifying framework for gaussian process pseudo-point approximations using power expectation propagation. Journal of Machine Learning Research 18, 1–72.</p>
+</div>
+<div id="ref-Cho:deep09">
+<p>Cho, Y., Saul, L.K., 2009. Kernel methods for deep learning, in: Bengio, Y., Schuurmans, D., Lafferty, J.D., Williams, C.K.I., Culotta, A. (Eds.), Advances in Neural Information Processing Systems 22. Curran Associates, Inc., pp. 342–350.</p>
+</div>
+<div id="ref-Damianou:thesis2015">
+<p>Damianou, A., 2015. Deep gaussian processes and variational propagation of uncertainty (PhD thesis). University of Sheffield.</p>
+</div>
+<div id="ref-Dunlop:deep2017">
+<p>Dunlop, M.M., Girolami, M., Stuart, A.M., Teckentrup, A.L., 2017. How Deep Are Deep Gaussian Processes? ArXiv e-prints.</p>
+</div>
+<div id="ref-Duvenaud:pathologies14">
+<p>Duvenaud, D., Rippel, O., Adams, R., Ghahramani, Z., 2014. Avoiding pathologies in very deep networks, in:.</p>
+</div>
+<div id="ref-Hinton:fast06">
+<p>Hinton, G.E., Osindero, S., 2006. A fast learning algorithm for deep belief nets. Neural Computation 18, 2006.</p>
+</div>
+<div id="ref-Ioffe:batch15">
+<p>Ioffe, S., Szegedy, C., 2015. Batch normalization: Accelerating deep network training by reducing internal covariate shift, in: Bach, F., Blei, D. (Eds.), Proceedings of the 32nd International Conference on Machine Learning, Proceedings of Machine Learning Research. PMLR, Lille, France, pp. 448–456.</p>
+</div>
+<div id="ref-MacKay:bayesian92">
+<p>MacKay, D.J.C., 1992. Bayesian methods for adaptive models (PhD thesis). California Institute of Technology.</p>
+</div>
+<div id="ref-Mattos:recurrent15">
+<p>Mattos, C.L.C., Dai, Z., Damianou, A.C., Forth, J., Barreto, G.A., Lawrence, N.D., 2015. Recurrent gaussian processes. CoRR abs/1511.06644.</p>
+</div>
+<div id="ref-McCulloch:neuron43">
+<p>McCulloch, W.S., Pitts, W., 1943. A logical calculus of the ideas immanent in nervous activity. Bulletin of Mathematical Biophysics 5, 115–133.</p>
+</div>
+<div id="ref-Neal:bayesian94">
+<p>Neal, R.M., 1994. Bayesian learning for neural networks (PhD thesis). Dept. of Computer Science, University of Toronto.</p>
+</div>
+<div id="ref-Ranganath-survival16">
+<p>Ranganath, R., Perotte, A., Elhadad, N., Blei, D., 2016. Deep survival analysis, in: Doshi-Velez, F., Fackler, J., Kale, D., Wallace, B., Wiens, J. (Eds.), Proceedings of the 1st Machine Learning for Healthcare Conference, Proceedings of Machine Learning Research. PMLR, Children’s Hospital LA, Los Angeles, CA, USA, pp. 101–114.</p>
+</div>
+<div id="ref-Salakhutdinov:quantitative08">
+<p>Salakhutdinov, R., Murray, I., n.d. On the quantitative analysis of deep belief networks, in:. pp. 872–879.</p>
+</div>
+<div id="ref-Salimbeni:doubly2017">
+<p>Salimbeni, H., Deisenroth, M., 2017. Doubly stochastic variational inference for deep gaussian processes, in: Guyon, I., Luxburg, U.V., Bengio, S., Wallach, H., Fergus, R., Vishwanathan, S., Garnett, R. (Eds.), Advances in Neural Information Processing Systems 30. Curran Associates, Inc., pp. 4591–4602.</p>
+</div>
+<div id="ref-Saul:thesis2016">
+<p>Saul, A.D., 2016. Gaussian process based approaches for survival analysis (PhD thesis). University of Sheffield.</p>
+</div>
+<div id="ref-Schulam:counterfactual17">
+<p>Schulam, P., Saria, S., 2017. Counterfactual gaussian processes for reliable decision-making and what-if reasoning, in: Guyon, I., Luxburg, U.V., Bengio, S., Wallach, H., Fergus, R., Vishwanathan, S., Garnett, R. (Eds.), Advances in Neural Information Processing Systems 30. Curran Associates, Inc., pp. 1696–1706.</p>
+</div>
+<div id="ref-Steele:predictive12">
+<p>Steele, S., Bilchik, A., Eberhardt, J., Kalina, P., Nissan, A., Johnson, E., Avital, I., Stojadinovic, A., 2012. Using machine-learned Bayesian belief networks to predict perioperative risk of clostridium difficile infection following colon surgery. Interact J Med Res 1, e6. <a href="https://doi.org/10.2196/ijmr.2131" class="uri">https://doi.org/10.2196/ijmr.2131</a></p>
+</div>
+<div id="ref-Tipping:probpca99">
+<p>Tipping, M.E., Bishop, C.M., 1999. Probabilistic principal component analysis. Journal of the Royal Statistical Society, B 6, 611–622. <a href="https://doi.org/doi:10.1111/1467-9868.00196" class="uri">https://doi.org/doi:10.1111/1467-9868.00196</a></p>
+</div>
+<div id="ref-Anqi:gpspike2017">
+<p>Wu, A., Roy, N.G., Keeley, S., Pillow, J.W., 2017. Gaussian process based nonlinear latent structure discovery in multivariate spike train data, in: Guyon, I., Luxburg, U.V., Bengio, S., Wallach, H., Fergus, R., Vishwanathan, S., Garnett, R. (Eds.), Advances in Neural Information Processing Systems 30. Curran Associates, Inc., pp. 3499–3508.</p>
+</div>
+</div>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // Transition style
+        transition: 'None', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

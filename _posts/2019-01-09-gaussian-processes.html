@@ -1,0 +1,1630 @@
+---
+title: "Gaussian Processes"
+venue: "MLSS, Stellenbosch, South Africa"
+abstract: "<p>Classical machine learning and statistical approaches to learning, such as neural networks and linear regression, assume a parametric form for functions. Gaussian process models are an alternative approach that assumes a probabilistic prior over functions. This brings benefits, in that uncertainty of function estimation is sustained throughout inference, and some challenges: algorithms for fitting Gaussian processes tend to be more complex than parametric models. In these sessions I will introduce Gaussian processes and explain why sustaining uncertainty is important. We’ll then look at some extensions of Gaussian process models, in particular composition of Gaussian processes, or deep Gaussian processes.</p>"
+author:
+- given: Neil D.
+  family: Lawrence
+  url: http://inverseprobability.com
+  institute: Amazon Cambridge and University of Sheffield
+  twitter: lawrennd
+  gscholar: r3SJcvoAAAAJ
+  orchid: 
+date: 2019-01-09
+published: 2019-01-09
+reveal: 2019-01-09-gaussian-processes.slides.html
+layout: talk
+categories:
+- notes
+---
+
+
+<div style="display:none">
+  $${% include talk-notation.tex %}$$
+</div>
+
+<p><!--% not ipynb--></p>
+<h2 id="what-is-machine-learning">What is Machine Learning?</h2>
+<p>What is machine learning? At its most basic level machine learning is a combination of</p>
+<p><span class="math display">\[\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span></p>
+<p>where <em>data</em> is our observations. They can be actively or passively acquired (meta-data). The <em>model</em> contains our assumptions, based on previous experience. That experience can be other data, it can come from transfer learning, or it can merely be our beliefs about the regularities of the universe. In humans our models include our inductive biases. The <em>prediction</em> is an action to be taken or a categorization or a quality score. The reason that machine learning has become a mainstay of artificial intelligence is the importance of predictions in artificial intelligence. The data and the model are combined through computation.</p>
+<p>In practice we normally perform machine learning using two functions. To combine data with a model we typically make use of:</p>
+<p><strong>a prediction function</strong> a function which is used to make the predictions. It includes our beliefs about the regularities of the universe, our assumptions about how the world works, e.g. smoothness, spatial similarities, temporal similarities.</p>
+<p><strong>an objective function</strong> a function which defines the cost of misprediction. Typically it includes knowledge about the world's generating processes (probabilistic objectives) or the costs we pay for mispredictions (empiricial risk minimization).</p>
+<p>The combination of data and model through the prediction function and the objectie function leads to a <em>learning algorithm</em>. The class of prediction functions and objective functions we can make use of is restricted by the algorithms they lead to. If the prediction function or the objective function are too complex, then it can be difficult to find an appropriate learning algorithm. Much of the acdemic field of machine learning is the quest for new learning algorithms that allow us to bring different types of models and data together.</p>
+<p>A useful reference for state of the art in machine learning is the UK Royal Society Report, <a href="https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf">Machine Learning: Power and Promise of Computers that Learn by Example</a>.</p>
+<p>You can also check my blog post on <a href="http://inverseprobability.com/2017/07/17/what-is-machine-learning">&quot;What is Machine Learning?&quot;</a></p>
+<h3 id="artificial-intelligence">Artificial Intelligence</h3>
+<h3 id="uncertainty">Uncertainty</h3>
+<p>In practice, we normally also have uncertainty associated with these functions. Uncertainty in the prediction function arises from</p>
+<ol style="list-style-type: decimal">
+<li>scarcity of training data and</li>
+<li>mismatch between the set of prediction functions we choose and all possible prediction functions.</li>
+</ol>
+<p>There are also challenges around specification of the objective function, but for we will save those for another day. For the moment, let us focus on the prediction function.</p>
+<h3 id="neural-networks-and-prediction-functions">Neural Networks and Prediction Functions</h3>
+<p>Neural networks are adaptive non-linear function models. Originally, they were studied (by McCulloch and Pitts <span class="citation">(McCulloch and Pitts, 1943)</span>) as simple models for neurons, but over the last decade they have become popular because they are a flexible approach to modelling complex data. A particular characteristic of neural network models is that they can be composed to form highly complex functions which encode many of our expectations of the real world. They allow us to encode our assumptions about how the world works.</p>
+<p>We will return to composition later, but for the moment, let's focus on a one hidden layer neural network. We are interested in the prediction function, so we'll ignore the objective function (which is often called an error function) for the moment, and just describe the mathematical object of interest</p>
+<p><span class="math display">\[
+\mappingFunction(\inputVector) = \mappingMatrix^\top \activationVector(\mappingMatrixTwo, \inputVector)
+\]</span></p>
+<p>Where in this case <span class="math inline">\(\mappingFunction(\cdot)\)</span> is a scalar function with vector inputs, and <span class="math inline">\(\activationVector(\cdot)\)</span> is a vector function with vector inputs. The dimensionality of the vector function is known as the number of hidden units, or the number of neurons. The elements of this vector function are known as the <em>activation</em> function of the neural network and <span class="math inline">\(\mappingMatrixTwo\)</span> are the parameters of the activation functions.</p>
+<h3 id="relations-with-classical-statistics">Relations with Classical Statistics</h3>
+<p>In statistics activation functions are traditionally known as <em>basis functions</em>. And we would think of this as a <em>linear model</em>. It's doesn't make linear predictions, but it's linear because in statistics estimation focuses on the parameters, <span class="math inline">\(\mappingMatrix\)</span>, not the parameters, <span class="math inline">\(\mappingMatrixTwo\)</span>. The linear model terminology refers to the fact that the model is <em>linear in the parameters</em>, but it is <em>not</em> linear in the data unless the activation functions are chosen to be linear.</p>
+<h3 id="adaptive-basis-functions">Adaptive Basis Functions</h3>
+<p>The first difference in the (early) neural network literature to the classical statistical literature is the decision to optimize these parameters, <span class="math inline">\(\mappingMatrixTwo\)</span>, as well as the parameters, <span class="math inline">\(\mappingMatrix\)</span> (which would normally be denoted in statistics by <span class="math inline">\(\boldsymbol{\beta}\)</span>)<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>.</p>
+<p>In this tutorial, we're going to go revisit that decision, and follow the path of Radford Neal <span class="citation">(Neal, 1994)</span> who, inspired by work of David MacKay <span class="citation">(MacKay, 1992)</span> and others did his PhD thesis on Bayesian Neural Networks. If we take a Bayesian approach to parameter inference (note I am using inference here in the classical sense, not in the sense of prediction of test data, which seems to be a newer usage), then we don't wish to fit parameters at all, rather we wish to integrate them away and understand the family of functions that the model describes.</p>
+<h3 id="probabilistic-modelling">Probabilistic Modelling</h3>
+<p>This Bayesian approach is designed to deal with uncertainty arising from fitting our prediction function to the data we have, a reduced data set.</p>
+<p>The Bayesian approach can be derived from a broader understanding of what our objective is. If we accept that we can jointly represent all things that happen in the world with a probability distribution, then we can interogate that probability to make predictions. So, if we are interested in predictions, <span class="math inline">\(\dataScalar_*\)</span> at future points input locations of interest, <span class="math inline">\(\inputVector_*\)</span> given previously training data, <span class="math inline">\(\dataVector\)</span> and corresponding inputs, <span class="math inline">\(\inputMatrix\)</span>, then we are really interogating the following probability density, <span class="math display">\[
+p(\dataScalar_*|\dataVector, \inputMatrix, \inputVector_*),
+\]</span> there is nothing controversial here, as long as you accept that you have a good joint model of the world around you that relates test data to training data, <span class="math inline">\(p(\dataScalar_*, \dataVector, \inputMatrix, \inputVector_*)\)</span> then this conditional distribution can be recovered through standard rules of probability (<span class="math inline">\(\text{data} + \text{model} \rightarrow \text{prediction}\)</span>).</p>
+<p>We can construct this joint density through the use of the following decomposition: <span class="math display">\[
+p(\dataScalar_*|\dataVector, \inputMatrix, \inputVector_*) = \int p(\dataScalar_*|\inputVector_*, \mappingMatrix) p(\mappingMatrix | \dataVector, \inputMatrix) \text{d} \mappingMatrix
+\]</span></p>
+<p>where, for convenience, we are assuming <em>all</em> the parameters of the model are now represented by <span class="math inline">\(\parameterVector\)</span> (which contains <span class="math inline">\(\mappingMatrix\)</span> and <span class="math inline">\(\mappingMatrixTwo\)</span>) and <span class="math inline">\(p(\parameterVector | \dataVector, \inputMatrix)\)</span> is recognised as the posterior density of the parameters given data and <span class="math inline">\(p(\dataScalar_*|\inputVector_*, \parameterVector)\)</span> is the <em>likelihood</em> of an individual test data point given the parameters.</p>
+<p>The likelihood of the data is normally assumed to be independent across the parameters, <span class="math display">\[
+p(\dataVector|\inputMatrix, \mappingMatrix) \prod_{i=1}^\numData p(\dataScalar_i|\inputVector_i, \mappingMatrix),\]</span></p>
+<p>and if that is so, it is easy to extend our predictions across all future, potential, locations, <span class="math display">\[
+p(\dataVector_*|\dataVector, \inputMatrix, \inputMatrix_*) = \int p(\dataVector_*|\inputMatrix_*, \parameterVector) p(\parameterVector | \dataVector, \inputMatrix) \text{d} \parameterVector.
+\]</span></p>
+<p>The likelihood is also where the <em>prediction function</em> is incorporated. For example in the regression case, we consider an objective based around the Gaussian density, <span class="math display">\[
+p(\dataScalar_i | \mappingFunction(\inputVector_i)) = \frac{1}{\sqrt{2\pi \dataStd^2}} \exp\left(-\frac{\left(\dataScalar_i - \mappingFunction(\inputVector_i)\right)^2}{2\dataStd^2}\right)
+\]</span></p>
+<p>In short, that is the classical approach to probabilistic inference, and all approaches to Bayesian neural networks fall within this path. For a deep probabilistic model, we can simply take this one stage further and place a probability distribution over the input locations, <span class="math display">\[
+p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \parameterVector) p(\parameterVector | \dataVector, \inputMatrix) p(\inputMatrix) p(\inputMatrix_*) \text{d} \parameterVector \text{d} \inputMatrix \text{d}\inputMatrix_*
+\]</span> and we have <em>unsupervised learning</em> (from where we can get deep generative models).</p>
+<h3 id="graphical-models">Graphical Models</h3>
+<p>One way of representing a joint distribution is to consider conditional dependencies between data. Conditional dependencies allow us to factorize the distribution. For example, a Markov chain is a factorization of a distribution into components that represent the conditional relationships between points that are neighboring, often in time or space. It can be decomposed in the following form. <span class="math display">\[p(\dataVector) = p(\dataScalar_\numData | \dataScalar_{\numData-1}) p(\dataScalar_{\numData-1}|\dataScalar_{\numData-2}) \dots p(\dataScalar_{2} | \dataScalar_{1})\]</span></p>
+<object class="svgplot " align data="../slides/diagrams/ml/markov.svg" style>
+</object>
+<p>By specifying conditional independencies we can reduce the parameterization required for our data, instead of directly specifying the parameters of the joint distribution, we can specify each set of parameters of the conditonal independently. This can also give an advantage in terms of interpretability. Understanding a conditional independence structure gives a structured understanding of data. If developed correctly, according to causal methodology, it can even inform how we should intervene in the system to drive a desired result <span class="citation">(Pearl, 1995)</span>.</p>
+<p>However, a challenge arise when the data becomes more complex. Consider the graphical model shown below, used to predict the perioperative risk of <em>C Difficile</em> infection following colon surgery <span class="citation">(Steele et al., 2012)</span>.</p>
+<p><img class="negate" src="../slides/diagrams/bayes-net-diagnosis.png" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto"></p>
+<p>To capture the complexity in the interelationship between the data the graph becomes more complex, and less interpretable.</p>
+<h3 id="performing-inference">Performing Inference</h3>
+<p>As far as combining our data and our model to form our prediction, the devil is in the detail. While everything is easy to write in terms of probability densities, as we move from <span class="math inline">\(\text{data}\)</span> and <span class="math inline">\(\text{model}\)</span> to <span class="math inline">\(\text{prediction}\)</span> there is that simple <span class="math inline">\(\xrightarrow{\text{compute}}\)</span> sign, which is now burying a wealth of difficulties. Each integral sign above is a high dimensional integral which will typically need approximation. Approximations also come with computational demands. As we consider more complex classes of functions, the challenges around the integrals become harder and prediction of future test data given our model and the data becomes so involved as to be impractical or impossible.</p>
+<p>Statisticians realized these challenges early on, indeed, so early that they were actually physicists, both Laplace and Gauss worked on models such as this, in Gauss's case he made his career on prediction of the location of the lost planet (later reclassified as a asteroid, then dwarf planet), Ceres. Gauss and Laplace made use of maximum a posteriori estimates for simplifying their computations and Laplace developed Laplace's method (and invented the Gaussian density) to expand around that mode. But classical statistics needs better guarantees around model performance and interpretation, and as a result has focussed more on the <em>linear</em> model implied by <span class="math display">\[
+  \mappingFunction(\inputVector) = \left.\mappingVector^{(2)}\right.^\top \activationVector(\mappingMatrix_1, \inputVector)
+  \]</span></p>
+<p><span class="math display">\[
+  \mappingVector^{(2)} \sim \gaussianSamp{\zerosVector}{\covarianceMatrix}.
+  \]</span></p>
+<p>The Gaussian likelihood given above implies that the data observation is related to the function by noise corruption so we have, <span class="math display">\[
+  \dataScalar_i = \mappingFunction(\inputVector_i) + \noiseScalar_i,
+  \]</span> where <span class="math display">\[
+  \noiseScalar_i \sim \gaussianSamp{0}{\dataStd^2}
+  \]</span> and while normally integrating over high dimensional parameter vectors is highly complex, here it is <em>trivial</em>. That is because of a property of the multivariate Gaussian.</p>
+<h3 id="multivariate-gaussian-properties">Multivariate Gaussian Properties</h3>
+<p>Gaussian processes are initially of interest because</p>
+<ol style="list-style-type: decimal">
+<li>linear Gaussian models are easier to deal with</li>
+<li>Even the parameters <em>within</em> the process can be handled, by considering a particular limit.</li>
+</ol>
+<p>Let's first of all review the properties of the multivariate Gaussian distribution that make linear Gaussian models easier to deal with. We'll return to the, perhaps surprising, result on the parameters within the nonlinearity, <span class="math inline">\(\parameterVector\)</span>, shortly.</p>
+<p>To work with linear Gaussian models, to find the marginal likelihood all you need to know is the following rules. If <span class="math display">\[
+\dataVector = \mappingMatrix \inputVector + \noiseVector,
+\]</span> where <span class="math inline">\(\dataVector\)</span>, <span class="math inline">\(\inputVector\)</span> and <span class="math inline">\(\noiseVector\)</span> are vectors and we assume that <span class="math inline">\(\inputVector\)</span> and <span class="math inline">\(\noiseVector\)</span> are drawn from multivariate Gaussians, <span class="math display">\[\begin{align}
+\inputVector &amp; \sim \gaussianSamp{\meanVector}{\covarianceMatrix}\\
+\noiseVector &amp; \sim \gaussianSamp{\zerosVector}{\covarianceMatrixTwo}
+\end{align}\]</span> then we know that <span class="math inline">\(\dataVector\)</span> is also drawn from a multivariate Gaussian with, <span class="math display">\[
+\dataVector \sim \gaussianSamp{\mappingMatrix\meanVector}{\mappingMatrix\covarianceMatrix\mappingMatrix^\top + \covarianceMatrixTwo}.
+\]</span></p>
+<p>With apprioriately defined covariance, <span class="math inline">\(\covarianceTwoMatrix\)</span>, this is actually the marginal likelihood for Factor Analysis, or Probabilistic Principal Component Analysis <span class="citation">(Tipping and Bishop, 1999)</span>, because we integrated out the inputs (or <em>latent</em> variables they would be called in that case).</p>
+<p>However, we are focussing on what happens in models which are non-linear in the inputs, whereas the above would be <em>linear</em> in the inputs. To consider these, we introduce a matrix, called the design matrix. We set each activation function computed at each data point to be <span class="math display">\[
+\activationScalar_{i,j} = \activationScalar(\mappingVector^{(1)}_{j}, \inputVector_{i})
+\]</span> and define the matrix of activations (known as the <em>design matrix</em> in statistics) to be, <span class="math display">\[
+\activationMatrix = 
+\begin{bmatrix}
+\activationScalar_{1, 1} &amp; \activationScalar_{1, 2} &amp; \dots &amp; \activationScalar_{1, \numHidden} \\
+\activationScalar_{1, 2} &amp; \activationScalar_{1, 2} &amp; \dots &amp; \activationScalar_{1, \numData} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+\activationScalar_{\numData, 1} &amp; \activationScalar_{\numData, 2} &amp; \dots &amp; \activationScalar_{\numData, \numHidden}
+\end{bmatrix}.
+\]</span> By convention this matrix always has <span class="math inline">\(\numData\)</span> rows and <span class="math inline">\(\numHidden\)</span> columns, now if we define the vector of all noise corruptions, <span class="math inline">\(\noiseVector = \left[\noiseScalar_1, \dots \noiseScalar_\numData\right]^\top\)</span>.</p>
+<p>If we define the prior distribution over the vector <span class="math inline">\(\mappingVector\)</span> to be Gaussian, <span class="math display">\[
+\mappingVector \sim \gaussianSamp{\zerosVector}{\alpha\eye},
+\]</span></p>
+<p>then we can use rules of multivariate Gaussians to see that, <span class="math display">\[
+\dataVector \sim \gaussianSamp{\zerosVector}{\alpha \activationMatrix \activationMatrix^\top + \dataStd^2 \eye}.
+\]</span></p>
+<p>In other words, our training data is distributed as a multivariate Gaussian, with zero mean and a covariance given by <span class="math display">\[
+\kernelMatrix = \alpha \activationMatrix \activationMatrix^\top + \dataStd^2 \eye.
+\]</span></p>
+<p>This is an <span class="math inline">\(\numData \times \numData\)</span> size matrix. Its elements are in the form of a function. The maths shows that any element, index by <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>, is a function <em>only</em> of inputs associated with data points <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>, <span class="math inline">\(\dataVector_i\)</span>, <span class="math inline">\(\dataVector_j\)</span>. <span class="math inline">\(\kernel_{i,j} = \kernel\left(\inputVector_i, \inputVector_j\right)\)</span></p>
+<p>If we look at the portion of this function associated only with <span class="math inline">\(\mappingFunction(\cdot)\)</span>, i.e. we remove the noise, then we can write down the covariance associated with our neural network, <span class="math display">\[
+\kernel_\mappingFunction\left(\inputVector_i, \inputVector_j\right) = \alpha \activationVector\left(\mappingMatrix_1, \inputVector_i\right)^\top \activationVector\left(\mappingMatrix_1, \inputVector_j\right)
+\]</span> so the elements of the covariance or <em>kernel</em> matrix are formed by inner products of the rows of the <em>design matrix</em>.</p>
+<h3 id="gaussian-process">Gaussian Process</h3>
+<p>This is the essence of a Gaussian process. Instead of making assumptions about our density over each data point, <span class="math inline">\(\dataScalar_i\)</span> as i.i.d. we make a joint Gaussian assumption over our data. The covariance matrix is now a function of both the parameters of the activation function, <span class="math inline">\(\mappingMatrixTwo\)</span>, and the input variables, <span class="math inline">\(\inputMatrix\)</span>. This comes about through integrating out the parameters of the model, <span class="math inline">\(\mappingVector\)</span>.</p>
+<h3 id="basis-functions">Basis Functions</h3>
+<p>We can basically put anything inside the basis functions, and many people do. These can be deep kernels <span class="citation">(Cho and Saul, 2009)</span> or we can learn the parameters of a convolutional neural network inside there.</p>
+<p>Viewing a neural network in this way is also what allows us to beform sensible <em>batch</em> normalizations <span class="citation">(Ioffe and Szegedy, 2015)</span>.</p>
+<h3 id="non-degenerate-gaussian-processes">Non-degenerate Gaussian Processes</h3>
+<p>The process described above is degenerate. The covariance function is of rank at most <span class="math inline">\(\numHidden\)</span> and since the theoretical amount of data could always increase <span class="math inline">\(\numData \rightarrow \infty\)</span>, the covariance function is not full rank. This means as we increase the amount of data to infinity, there will come a point where we can't normalize the process because the multivariate Gaussian has the form, <span class="math display">\[
+\gaussianDist{\mappingFunctionVector}{\zerosVector}{\kernelMatrix} = \frac{1}{\left(2\pi\right)^{\frac{\numData}{2}}\det{\kernelMatrix}^\frac{1}{2}} \exp\left(-\frac{\mappingFunctionVector^\top\kernelMatrix \mappingFunctionVector}{2}\right)
+\]</span> and a non-degenerate kernel matrix leads to <span class="math inline">\(\det{\kernelMatrix} = 0\)</span> defeating the normalization (it's equivalent to finding a projection in the high dimensional Gaussian where the variance of the the resulting univariate Gaussian is zero, i.e. there is a null space on the covariance, or alternatively you can imagine there are one or more directions where the Gaussian has become the delta function).</p>
+<p>In the machine learning field, it was Radford Neal <span class="citation">(Neal, 1994)</span> that realized the potential of the next step. In his 1994 thesis, he was considering Bayesian neural networks, of the type we described above, and in considered what would happen if you took the number of hidden nodes, or neurons, to infinity, i.e. <span class="math inline">\(\numHidden \rightarrow \infty\)</span>.</p>
+<p><a href="http://www.cs.toronto.edu/~radford/ftp/thesis.pdf"><img class="" src="../slides/diagrams/neal-infinite-priors.png" width="80%" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto"></a></p>
+<p><em>Page 37 of Radford Neal's 1994 thesis</em></p>
+<p>In loose terms, what Radford considers is what happens to the elements of the covariance function, <span class="math display">\[
+  \begin{align*}
+  \kernel_\mappingFunction\left(\inputVector_i, \inputVector_j\right) &amp; = \alpha \activationVector\left(\mappingMatrix_1, \inputVector_i\right)^\top \activationVector\left(\mappingMatrix_1, \inputVector_j\right)\\
+  &amp; = \alpha \sum_k \activationScalar\left(\mappingVector^{(1)}_k, \inputVector_i\right) \activationScalar\left(\mappingVector^{(1)}_k, \inputVector_j\right)
+  \end{align*}
+  \]</span> if instead of considering a finite number you sample infinitely many of these activation functions, sampling parameters from a prior density, <span class="math inline">\(p(\mappingVectorTwo)\)</span>, for each one, <span class="math display">\[
+\kernel_\mappingFunction\left(\inputVector_i, \inputVector_j\right) = \alpha \int \activationScalar\left(\mappingVector^{(1)}, \inputVector_i\right) \activationScalar\left(\mappingVector^{(1)}, \inputVector_j\right) p(\mappingVector^{(1)}) \text{d}\mappingVector^{(1)}
+\]</span> And that's not <em>only</em> for Gaussian <span class="math inline">\(p(\mappingVectorTwo)\)</span>. In fact this result holds for a range of activations, and a range of prior densities because of the <em>central limit theorem</em>.</p>
+<p>To write it in the form of a probabilistic program, as long as the distribution for <span class="math inline">\(\phi_i\)</span> implied by this short probabilistic program, <span class="math display">\[
+  \begin{align*}
+  \mappingVectorTwo &amp; \sim p(\cdot)\\
+  \phi_i &amp; = \activationScalar\left(\mappingVectorTwo, \inputVector_i\right), 
+  \end{align*}
+  \]</span> has finite variance, then the result of taking the number of hidden units to infinity, with appropriate scaling, is also a Gaussian process.</p>
+<h3 id="further-reading">Further Reading</h3>
+<p>To understand this argument in more detail, I highly recommend reading chapter 2 of Neal's thesis, which remains easy to read and clear today. Indeed, for readers interested in Bayesian neural networks, both Raford Neal's and David MacKay's PhD thesis <span class="citation">(MacKay, 1992)</span> remain essential reading. Both theses embody a clarity of thought, and an ability to weave together threads from different fields that was the business of machine learning in the 1990s. Radford and David were also pioneers in making their software widely available and publishing material on the web.</p>
+<p><a href="file:///Users/neil/lawrennd/talks_gp/includes/gp-intro-very-short.md">_gp/includes/gp-intro-very-short.md</a></p>
+<h3 id="bayesian-inference-by-rejection-sampling">Bayesian Inference by Rejection Sampling</h3>
+<p>One view of Bayesian inference is to assume we are given a mechanism for generating samples, where we assume that mechanism is representing on accurate view on the way we believe the world works.</p>
+<p>This mechanism is known as our <em>prior</em> belief.</p>
+<p>We combine our prior belief with our observations of the real world by discarding all those samples that are inconsistent with our prior. The <em>likelihood</em> defines mathematically what we mean by inconsistent with the prior. The higher the noise level in the likelihood, the looser the notion of consistent.</p>
+<p>The samples that remain are considered to be samples from the <em>posterior</em>.</p>
+<p>This approach to Bayesian inference is closely related to two sampling techniques known as <em>rejection sampling</em> and <em>importance sampling</em>. It is realized in practice in an approach known as <em>approximate Bayesian computation</em> (ABC) or likelihood-free inference.</p>
+<p>In practice, the algorithm is often too slow to be practical, because most samples will be inconsistent with the data and as a result the mechanism has to be operated many times to obtain a few posterior samples.</p>
+<p>However, in the Gaussian process case, when the likelihood also assumes Gaussian noise, we can operate this mechanims mathematically, and obtain the posterior density <em>analytically</em>. This is the benefit of Gaussian processes.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> compute_kernel</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> exponentiated_quadratic</code></pre></div>
+
+<object class="svgplot " align data="../slides/diagrams/gp/gp_rejection_sample003.svg" style>
+</object>
+<object class="svgplot " align data="../slides/diagrams/gp/gp_rejection_sample004.svg" style>
+</object>
+<object class="svgplot " align data="../slides/diagrams/gp/gp_rejection_sample005.svg" style>
+</object>
+<center>
+<em>One view of Bayesian inference is we have a machine for generating samples (the </em>prior<em>), and we discard all samples inconsistent with our data, leaving the samples of interest (the </em>posterior<em>). The Gaussian process allows us to do this analytically. </em>
+</center>
+<!-- ### Two Dimensional Gaussian Distribution -->
+<!-- include{_ml/includes/two-d-gaussian.md} -->
+<h3 id="distributions-over-functions">Distributions over Functions</h3>
+<p><a href="file:///Users/neil/lawrennd/talks_gp/includes/gpdistfunc.md">_gp/includes/gpdistfunc.md</a></p>
+<h3 id="sampling-a-function">Sampling a Function</h3>
+<p>We will consider a Gaussian distribution with a particular structure of covariance matrix. We will generate <em>one</em> sample from a 25-dimensional Gaussian density. <span class="math display">\[
+\mappingFunctionVector=\left[\mappingFunction_{1},\mappingFunction_{2}\dots \mappingFunction_{25}\right].
+\]</span> in the figure below we plot these data on the <span class="math inline">\(y\)</span>-axis against their <em>indices</em> on the <span class="math inline">\(x\)</span>-axis.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> Kernel</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> polynomial_cov</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> exponentiated_quadratic</code></pre></div>
+
+<object class="svgplot " align data="../slides/diagrams/gp/two_point_sample008.svg" style>
+</object>
+<center>
+<em>A 25 dimensional correlated random variable (values ploted against index) </em>
+</center>
+<p><a href="file:///Users/neil/lawrennd/talks_gp/includes/gaussian-predict-index-one-and-two.md">_gp/includes/gaussian-predict-index-one-and-two.md</a></p>
+
+<object class="svgplot " align data="../slides/diagrams/gp/two_point_sample012.svg" style>
+</object>
+<center>
+<em>The joint Gaussian over <span class="math inline">\(\mappingFunction_1\)</span> and <span class="math inline">\(\mappingFunction_2\)</span> along with the conditional distribution of <span class="math inline">\(\mappingFunction_2\)</span> given <span class="math inline">\(\mappingFunction_1\)</span> </em>
+</center>
+<h3 id="uluru">Uluru</h3>
+<p><img class="" src="../slides/diagrams/gp/799px-Uluru_Panorama.jpg" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto"> When viewing these contour plots, I sometimes find it helpful to think of Uluru, the prominent rock formation in Australia. The rock rises above the surface of the plane, just like a probability density rising above the zero line. The rock is three dimensional, but when we view Uluru from the classical position, we are looking at one side of it. This is equivalent to viewing the marginal density.</p>
+<p>The joint density can be viewed from above, using contours. The conditional density is equivalent to <em>slicing</em> the rock. Uluru is a holy rock, so this has to be an imaginary slice. Imagine we cut down a vertical plane orthogonal to our view point (e.g. coming across our view point). This would give a profile of the rock, which when renormalized, would give us the conditional distribution, the value of conditioning would be the location of the slice in the direction we are facing.</p>
+<h3 id="prediction-with-correlated-gaussians">Prediction with Correlated Gaussians</h3>
+<p>Of course in practice, rather than manipulating mountains physically, the advantage of the Gaussian density is that we can perform these manipulations mathematically.</p>
+<p>Prediction of <span class="math inline">\(\mappingFunction_2\)</span> given <span class="math inline">\(\mappingFunction_1\)</span> requires the <em>conditional density</em>, <span class="math inline">\(p(\mappingFunction_2|\mappingFunction_1)\)</span>.Another remarkable property of the Gaussian density is that this conditional distribution is <em>also</em> guaranteed to be a Gaussian density. It has the form, <span class="math display">\[
+    p(\mappingFunction_2|\mappingFunction_1) = \gaussianDist{\mappingFunction_2}{\frac{\kernelScalar_{1, 2}}{\kernelScalar_{1, 1}}\mappingFunction_1}{ \kernelScalar_{2, 2} - \frac{\kernelScalar_{1,2}^2}{\kernelScalar_{1,1}}}
+    \]</span>where we have assumed that the covariance of the original joint density was given by <span class="math display">\[
+    \kernelMatrix = \begin{bmatrix} \kernelScalar_{1, 1} &amp; \kernelScalar_{1, 2}\\ \kernelScalar_{2, 1} &amp; \kernelScalar_{2, 2}.\end{bmatrix}
+    \]</span></p>
+<p>Using these formulae we can determine the conditional density for any of the elements of our vector <span class="math inline">\(\mappingFunctionVector\)</span>. For example, the variable <span class="math inline">\(\mappingFunction_8\)</span> is less correlated with <span class="math inline">\(\mappingFunction_1\)</span> than <span class="math inline">\(\mappingFunction_2\)</span>. If we consider this variable we see the conditional density is more diffuse.</p>
+<p><a href="file:///Users/neil/lawrennd/talks_gp/includes/gaussian-predict-index-one-and-eight.md">_gp/includes/gaussian-predict-index-one-and-eight.md</a></p>
+
+<object class="svgplot " align data="../slides/diagrams/gp/two_point_sample013.svg" style>
+</object>
+<object class="svgplot " align data="../slides/diagrams/gp/two_point_sample017.svg" style>
+</object>
+<center>
+<em>The joint Gaussian over <span class="math inline">\(\mappingFunction_1\)</span> and <span class="math inline">\(\mappingFunction_8\)</span> along with the conditional distribution of <span class="math inline">\(\mappingFunction_8\)</span> given <span class="math inline">\(\mappingFunction_1\)</span> </em>
+</center>
+<h3 id="key-object">Key Object</h3>
+<ul>
+<li><p>Covariance function, <span class="math inline">\(\kernelMatrix\)</span></p></li>
+<li><p>Determines properties of samples.</p></li>
+<li><p>Function of <span class="math inline">\(\inputMatrix\)</span>, <span class="math display">\[\kernelScalar_{i,j} = \kernelScalar(\inputVector_i, \inputVector_j)\]</span></p></li>
+</ul>
+<h3 id="linear-algebra">Linear Algebra</h3>
+<ul>
+<li><p>Posterior mean</p>
+<p><span class="math display">\[\mappingFunction_D(\inputVector_*) = \kernelVector(\inputVector_*, \inputMatrix) \kernelMatrix^{-1}
+\mathbf{y}\]</span></p></li>
+<li><p>Posterior covariance <span class="math display">\[\mathbf{C}_* = \kernelMatrix_{*,*} - \kernelMatrix_{*,\mappingFunctionVector}
+\kernelMatrix^{-1} \kernelMatrix_{\mappingFunctionVector, *}\]</span></p></li>
+</ul>
+<h3 id="linear-algebra-1">Linear Algebra</h3>
+<ul>
+<li><p>Posterior mean</p>
+<p><span class="math display">\[\mappingFunction_D(\inputVector_*) = \kernelVector(\inputVector_*, \inputMatrix) \boldsymbol{\alpha}\]</span></p></li>
+<li><p>Posterior covariance <span class="math display">\[\covarianceMatrix_* = \kernelMatrix_{*,*} - \kernelMatrix_{*,\mappingFunctionVector}
+\kernelMatrix^{-1} \kernelMatrix_{\mappingFunctionVector, *}\]</span></p></li>
+</ul>
+<h3 id="section"></h3>
+<object class="svgplot " align data="../slides/diagrams/gp_prior_samples_data.svg" style>
+</object>
+<h3 id="section-1"></h3>
+<object class="svgplot " align data="../slides/diagrams/gp_rejection_samples.svg" style>
+</object>
+<h3 id="section-2"></h3>
+<object class="svgplot " align data="../slides/diagrams/gp_prediction.svg" style>
+</object>
+
+<h3 id="exponentiated-quadratic-covariance">Exponentiated Quadratic Covariance</h3>
+<p>The exponentiated quadratic covariance, also known as the Gaussian covariance or the RBF covariance and the squared exponential. Covariance between two points is related to the negative exponential of the squared distnace between those points. This covariance function can be derived in a few different ways: as the infinite limit of a radial basis function neural network, as diffusion in the heat equation, as a Gaussian filter in <em>Fourier space</em> or as the composition as a series of linear filters applied to a base function.</p>
+<p>The covariance takes the following form, <span class="math display">\[
+\formula
+\]</span> where <span class="math inline">\(\ell\)</span> is the <em>length scale</em> or <em>time scale</em> of the process and <span class="math inline">\(\alpha\)</span> represents the overall process variance.</p>
+<center>
+<span class="math display">\[\formula\]</span>
+</center>
+<br>
+<table>
+<tr>
+<td width="45%">
+<object class align data="../slides/diagrams/kern/eq_covariance.svg">
+</object>
+<td width="45%">
+<img class="negate" src="../slides/diagrams/kern/eq_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</td>
+</tr>
+</table>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
+<span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
+<span class="im">import</span> pods
+<span class="im">import</span> teaching_plots <span class="im">as</span> plot
+<span class="im">import</span> mlai</code></pre></div>
+<h3 id="olympic-marathon-data">Olympic Marathon Data</h3>
+<p>The first thing we will do is load a standard data set for regression modelling. The data consists of the pace of Olympic Gold Medal Marathon winners for the Olympics from 1896 to present. First we load in the data and plot.</p>
+<h3 id="olympic-marathon-data-1">Olympic Marathon Data</h3>
+<table>
+<tr>
+<td width="70%">
+<ul>
+<li><p>Gold medal times for Olympic Marathon since 1896.</p></li>
+<li><p>Marathons before 1924 didn’t have a standardised distance.</p></li>
+<li><p>Present results using pace per km.</p></li>
+<li>In 1904 Marathon was badly organised leading to very slow times.</li>
+</ul>
+</td>
+<td width="30%">
+<img src="../slides/diagrams/Stephen_Kiprotich.jpg" alt="image" /> <small>Image from Wikimedia Commons <a href="http://bit.ly/16kMKHQ" class="uri">http://bit.ly/16kMKHQ</a></small>
+</td>
+</tr>
+</table>
+<object class="svgplot " align data="../slides/diagrams/datasets/olympic-marathon.svg" style>
+</object>
+<p>Things to notice about the data include the outlier in 1904, in this year, the olympics was in St Louis, USA. Organizational problems and challenges with dust kicked up by the cars following the race meant that participants got lost, and only very few participants completed.</p>
+<p>More recent years see more consistently quick marathons.</p>
+<p>Our first objective will be to perform a Gaussian process fit to the data, we'll do this using the <a href="https://github.com/SheffieldML/GPy">GPy software</a>.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_full <span class="op">=</span> GPy.models.GPRegression(x,yhat)
+_ <span class="op">=</span> m_full.optimize() <span class="co"># Optimize parameters of covariance function</span></code></pre></div>
+<p>The first command sets up the model, then</p>
+<pre><code>m_full.optimize()</code></pre>
+<p>optimizes the parameters of the covariance function and the noise level of the model. Once the fit is complete, we'll try creating some test points, and computing the output of the GP model in terms of the mean and standard deviation of the posterior functions between 1870 and 2030. We plot the mean function and the standard deviation at 200 locations. We can obtain the predictions using</p>
+<pre><code>y_mean, y_var = m_full.predict(xt)</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">xt <span class="op">=</span> np.linspace(<span class="dv">1870</span>,<span class="dv">2030</span>,<span class="dv">200</span>)[:,np.newaxis]
+yt_mean, yt_var <span class="op">=</span> m_full.predict(xt)
+yt_sd<span class="op">=</span>np.sqrt(yt_var)</code></pre></div>
+<p>Now we plot the results using the helper function in <code>teaching_plots</code>.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> teaching_plots <span class="im">as</span> plot</code></pre></div>
+<object class="svgplot " align data="../slides/diagrams/gp/olympic-marathon-gp.svg" style>
+</object>
+<h3 id="fit-quality">Fit Quality</h3>
+<p>In the fit we see that the error bars (coming mainly from the noise variance) are quite large. This is likely due to the outlier point in 1904, ignoring that point we can see that a tighter fit is obtained. To see this making a version of the model, <code>m_clean</code>, where that point is removed.</p>
+<pre><code>x_clean=np.vstack((x[0:2, :], x[3:, :]))
+y_clean=np.vstack((y[0:2, :], y[3:, :]))
+
+m_clean = GPy.models.GPRegression(x_clean,y_clean)
+_ = m_clean.optimize()</code></pre>
+<p>Data is fine for answering very specific questions, like &quot;Who won the Olympic Marathon in 2012?&quot;, because we have that answer stored, however, we are not given the answer to many other questions. For example, Alan Turing was a formidable marathon runner, in 1946 he ran a time 2 hours 46 minutes (just under four minutes per kilometer, faster than I and most of the other <a href="http://www.parkrun.org.uk/sheffieldhallam/">Endcliffe Park Run</a> runners can do 5 km). What is the probability he would have won an Olympics if one had been held in 1946?</p>
+<table>
+<tr>
+<td width="40%">
+<img class="" src="../slides/diagrams/turing-run.jpg" width="40%" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</td>
+<td width="50%">
+<img class="" src="../slides/diagrams/turing-times.gif" width="50%" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</td>
+</tr>
+</table>
+<center>
+<em>Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: <a href="http://www.turing.org.uk/scrapbook/run.html">Alan Turing Internet Scrapbook</a> </em>
+</center>
+<h3 id="basis-function-covariance">Basis Function Covariance</h3>
+<p>The fixed basis function covariance just comes from the properties of a multivariate Gaussian, if we decide <span class="math display">\[
+\mappingFunctionVector=\basisMatrix\mappingVector
+\]</span> and then we assume <span class="math display">\[
+\mappingVector \sim \gaussianSamp{\zerosVector}{\alpha\eye}
+\]</span> then it follows from the properties of a multivariate Gaussian that <span class="math display">\[
+\mappingFunctionVector \sim \gaussianSamp{\zerosVector}{\alpha\basisMatrix\basisMatrix^\top}
+\]</span> meaning that the vector of observations from the function is jointly distributed as a Gaussian process and the covariance matrix is <span class="math inline">\(\kernelMatrix = \alpha\basisMatrix \basisMatrix^\top\)</span>, each element of the covariance matrix can then be found as the inner product between two rows of the basis funciton matrix.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> basis_cov</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> radial</code></pre></div>
+<center>
+<span class="math display">\[\kernel(\inputVector, \inputVector^\prime) = \basisVector(\inputVector)^\top \basisVector(\inputVector^\prime)\]</span>
+</center>
+<br>
+<table>
+<tr>
+<td width="45%">
+<object class align data="../slides/diagrams/kern/basis_covariance.svg">
+</object>
+<td width="45%">
+<img class="negate" src="../slides/diagrams/kern/basis_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</td>
+</tr>
+</table>
+{
+<center>
+<em>A covariance function based on a non-linear basis given by <span class="math inline">\(\basisVector(\inputVector)\)</span>. </em>
+</center>
+<h3 id="brownian-covariance">Brownian Covariance</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> brownian_cov</code></pre></div>
+<p>Brownian motion is also a Gaussian process. It follows a Gaussian random walk, with diffusion occuring at each time point driven by a Gaussian input. This implies it is both Markov and Gaussian. The covariane function for Brownian motion has the form <span class="math display">\[
+\kernelScalar(t, t^\prime) = \alpha \min(t, t^\prime)
+\]</span></p>
+<!--<table><tr><td width="50%">
+<object class="svgplot " align="" data="../slides/diagrams/kern/brownian_covariance.svg" style=""></object>
+</td><td width="50%">
+<iframe src="../slides/diagrams/kern/brownian_covariance.html" width="512" height="384" allowtransparency="true" frameborder="0">
+</iframe>
+</td></tr></table>
+<center>*The covariance of Brownian motion, and some samples from the covariance showing the functional form. *</center>-->
+<table>
+<tr>
+<td width="45%">
+<object class align data="../slides/diagrams/kern/brownian_covariance.svg">
+</object>
+</td>
+<td width="45%">
+<img class="negate" src="../slides/diagrams/kern/brownian_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</td>
+</tr>
+</table>
+<h3 id="mlp-covariance">MLP Covariance</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> mlp_cov</code></pre></div>
+<p>The multi-layer perceptron (MLP) covariance, also known as the neural network covariance or the arcsin covariance, is derived by considering the infinite limit of a neural network.</p>
+<center>
+<span class="math display">\[\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \arcsin\left(\frac{w \inputVector^\top \inputVector^\prime + b}{\sqrt{\left(w \inputVector^\top \inputVector + b + 1\right)\left(w \left.\inputVector^\prime\right.^\top \inputVector^\prime + b + 1\right)}}\right)\]</span>
+</center>
+<br>
+<table>
+<tr>
+<td width="45%">
+<object class align data="../slides/diagrams/kern/mlp_covariance.svg">
+</object>
+<td width="45%">
+<img class="negate" src="../slides/diagrams/kern/mlp_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</td>
+</tr>
+</table>
+<center>
+<em>The multi-layer perceptron covariance function. This is derived by considering the infinite limit of a neural network with probit activation functions. </em>
+</center>
+<div style="fontsize:120px;vertical-align:middle;">
+<img src="../slides/diagrams/earth_PNG37.png" width="20%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">\(=f\Bigg(\)</span> <img src="../slides/diagrams/Planck_CMB.png"  width="50%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">\(\Bigg)\)</span>
+</div>
+<div style="fontsize:120px;vertical-align:middle;">
+<img src="../slides/diagrams/earth_PNG37.png" width="20%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">\(=f\Bigg(\)</span> <img src="../slides/diagrams/Planck_CMB.png"  width="50%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">\(\Bigg)\)</span>
+</div>
+<center>
+<em>The cosmic microwave background is, to a very high degree of precision, a Gaussian process. The parameters of its covariance function are given by fundamental parameters of the universe, such as the amount of dark matter and mass. </em>
+</center>
+<img class="" src="../slides/diagrams/sparse-gps.jpg" width="45%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+<center>
+<em>Image credit: Kai Arulkumaran </em>
+</center>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
+<span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
+<span class="im">from</span> IPython.display <span class="im">import</span> display
+<span class="im">import</span> GPy
+
+<span class="im">import</span> mlai
+<span class="im">import</span> teaching_plots <span class="im">as</span> plot 
+<span class="im">from</span> gp_tutorial <span class="im">import</span> gpplot</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">np.random.seed(<span class="dv">101</span>)</code></pre></div>
+<h3 id="a-simple-regression-problem">A Simple Regression Problem</h3>
+<p>Here we set up a simple one dimensional regression problem. The input locations, <span class="math inline">\(\inputMatrix\)</span>, are in two separate clusters. The response variable, <span class="math inline">\(\dataVector\)</span>, is sampled from a Gaussian process with an exponentiated quadratic covariance.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">N <span class="op">=</span> <span class="dv">50</span>
+noise_var <span class="op">=</span> <span class="fl">0.01</span>
+X <span class="op">=</span> np.zeros((<span class="dv">50</span>, <span class="dv">1</span>))
+X[:<span class="dv">25</span>, :] <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">3</span>,<span class="dv">25</span>)[:,<span class="va">None</span>] <span class="co"># First cluster of inputs/covariates</span>
+X[<span class="dv">25</span>:, :] <span class="op">=</span> np.linspace(<span class="dv">7</span>,<span class="dv">10</span>,<span class="dv">25</span>)[:,<span class="va">None</span>] <span class="co"># Second cluster of inputs/covariates</span>
+
+<span class="co"># Sample response variables from a Gaussian process with exponentiated quadratic covariance.</span>
+k <span class="op">=</span> GPy.kern.RBF(<span class="dv">1</span>)
+y <span class="op">=</span> np.random.multivariate_normal(np.zeros(N),k.K(X)<span class="op">+</span>np.eye(N)<span class="op">*</span>np.sqrt(noise_var)).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)</code></pre></div>
+<p>First we perform a full Gaussian process regression on the data. We create a GP model, <code>m_full</code>, and fit it to the data, plotting the resulting fit.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_full <span class="op">=</span> GPy.models.GPRegression(X,y)
+_ <span class="op">=</span> m_full.optimize(messages<span class="op">=</span><span class="va">True</span>) <span class="co"># Optimize parameters of covariance function</span></code></pre></div>
+<object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-full-gp.svg" style>
+</object>
+<center>
+<em>Full Gaussian process fitted to the data set. </em>
+</center>
+<p>Now we set up the inducing variables, <span class="math inline">\(\mathbf{u}\)</span>. Each inducing variable has its own associated input index, <span class="math inline">\(\mathbf{Z}\)</span>, which lives in the same space as <span class="math inline">\(\inputMatrix\)</span>. Here we are using the true covariance function parameters to generate the fit.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">kern <span class="op">=</span> GPy.kern.RBF(<span class="dv">1</span>)
+Z <span class="op">=</span> np.hstack(
+        (np.linspace(<span class="fl">2.5</span>,<span class="dv">4</span>.,<span class="dv">3</span>),
+        np.linspace(<span class="dv">7</span>,<span class="fl">8.5</span>,<span class="dv">3</span>)))[:,<span class="va">None</span>]
+m <span class="op">=</span> GPy.models.SparseGPRegression(X,y,kernel<span class="op">=</span>kern,Z<span class="op">=</span>Z)
+m.noise_var <span class="op">=</span> noise_var
+m.inducing_inputs.constrain_fixed()
+display(m)</code></pre></div>
+<object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-constrained-inducing-6-unlearned-gp.svg" style>
+</object>
+<center>
+<em>Sparse Gaussian process fitted with six inducing variables, no optimization of parameters or inducing variables. </em>
+</center>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">_ <span class="op">=</span> m.optimize(messages<span class="op">=</span><span class="va">True</span>)
+display(m)</code></pre></div>
+<object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-constrained-inducing-6-learned-gp.svg" style>
+</object>
+<center>
+<em>Gaussian process fitted with inducing variables fixed and parameters optimized </em>
+</center>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.randomize()
+m.inducing_inputs.unconstrain()
+_ <span class="op">=</span> m.optimize(messages<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-unconstrained-inducing-6-gp.svg" style>
+</object>
+<center>
+<em>Gaussian process fitted with location of inducing variables and parameters both optimized </em>
+</center>
+<p>Now we will vary the number of inducing points used to form the approximation.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.num_inducing<span class="op">=</span><span class="dv">8</span>
+m.randomize()
+M <span class="op">=</span> <span class="dv">8</span>
+m.set_Z(np.random.rand(M,<span class="dv">1</span>)<span class="op">*</span><span class="dv">12</span>)
+
+_ <span class="op">=</span> m.optimize(messages<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-sparse-inducing-8-gp.svg" style>
+</object>
+<object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-full-gp.svg" style>
+</object>
+<center>
+<em>Comparison of the full Gaussian process fit with a sparse Gaussian process using eight inducing varibles. Both inducing variables and parameters are optimized. </em>
+</center>
+<p>And we can compare the probability of the result to the full model.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(m.log_likelihood(), m_full.log_likelihood())</code></pre></div>
+<ul>
+<li><p><em>A Unifying Framework for Gaussian Process Pseudo-Point Approximations using Power Expectation Propagation</em> <span class="citation">Bui et al. (2017)</span></p></li>
+<li><p><em>Deep Gaussian Processes and Variational Propagation of Uncertainty</em> <span class="citation">Damianou (2015)</span></p></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> teaching_plots <span class="im">as</span> plot</code></pre></div>
+<object class="svgplot " align data="../slides/diagrams/deepgp/deep-nn2.svg" style>
+</object>
+<center>
+<em>A deep neural network. Input nodes are shown at the bottom. Each hidden layer is the result of applying an affine transformation to the previous layer and placing through an activation function. </em>
+</center>
+<p>Mathematically, each layer of a neural network is given through computing the activation function, <span class="math inline">\(\basisFunction(\cdot)\)</span>, contingent on the previous layer, or the inputs. In this way the activation functions, are composed to generate more complex interactions than would be possible with any single layer. <span class="math display">\[
+\begin{align}
+    \hiddenVector_{1} &amp;= \basisFunction\left(\mappingMatrix_1 \inputVector\right)\\
+    \hiddenVector_{2} &amp;=  \basisFunction\left(\mappingMatrix_2\hiddenVector_{1}\right)\\
+    \hiddenVector_{3} &amp;= \basisFunction\left(\mappingMatrix_3 \hiddenVector_{2}\right)\\
+    \dataVector &amp;= \mappingVector_4 ^\top\hiddenVector_{3}
+\end{align}
+\]</span></p>
+<h3 id="overfitting">Overfitting</h3>
+<p>One potential problem is that as the number of nodes in two adjacent layers increases, the number of parameters in the affine transformation between layers, <span class="math inline">\(\mappingMatrix\)</span>, increases. If there are <span class="math inline">\(k_{i-1}\)</span> nodes in one layer, and <span class="math inline">\(k_i\)</span> nodes in the following, then that matrix contains <span class="math inline">\(k_i k_{i-1}\)</span> parameters, when we have layer widths in the 1000s that leads to millions of parameters.</p>
+<p>One proposed solution is known as <em>dropout</em> where only a sub-set of the neural network is trained at each iteration. An alternative solution would be to reparameterize <span class="math inline">\(\mappingMatrix\)</span> with its <em>singular value decomposition</em>. <span class="math display">\[
+  \mappingMatrix = \eigenvectorMatrix\eigenvalueMatrix\eigenvectwoMatrix^\top
+  \]</span> or <span class="math display">\[
+  \mappingMatrix = \eigenvectorMatrix\eigenvectwoMatrix^\top
+  \]</span> where if <span class="math inline">\(\mappingMatrix \in \Re^{k_1\times k_2}\)</span> then <span class="math inline">\(\eigenvectorMatrix\in \Re^{k_1\times q}\)</span> and <span class="math inline">\(\eigenvectwoMatrix \in \Re^{k_2\times q}\)</span>, i.e. we have a low rank matrix factorization for the weights.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> teaching_plots <span class="im">as</span> plot</code></pre></div>
+<object class="svgplot " align data="../slides/diagrams/wisuvt.svg" style>
+</object>
+<center>
+<em>Pictorial representation of the low rank form of the matrix <span class="math inline">\(\mappingMatrix\)</span> </em>
+</center>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> teaching_plots <span class="im">as</span> plot</code></pre></div>
+<object class="svgplot " align data="../slides/diagrams/deepgp/deep-nn-bottleneck2.svg" style>
+</object>
+<p>Including the low rank decomposition of <span class="math inline">\(\mappingMatrix\)</span> in the neural network, we obtain a new mathematical form. Effectively, we are adding additional <em>latent</em> layers, <span class="math inline">\(\latentVector\)</span>, in between each of the existing hidden layers. In a neural network these are sometimes known as <em>bottleneck</em> layers. The network can now be written mathematically as <span class="math display">\[
+\begin{align}
+  \latentVector_{1} &amp;= \eigenvectwoMatrix^\top_1 \inputVector\\
+  \hiddenVector_{1} &amp;= \basisFunction\left(\eigenvectorMatrix_1 \latentVector_{1}\right)\\
+  \latentVector_{2} &amp;= \eigenvectwoMatrix^\top_2 \hiddenVector_{1}\\
+  \hiddenVector_{2} &amp;= \basisFunction\left(\eigenvectorMatrix_2 \latentVector_{2}\right)\\
+  \latentVector_{3} &amp;= \eigenvectwoMatrix^\top_3 \hiddenVector_{2}\\
+  \hiddenVector_{3} &amp;= \basisFunction\left(\eigenvectorMatrix_3 \latentVector_{3}\right)\\
+  \dataVector &amp;= \mappingVector_4^\top\hiddenVector_{3}.
+\end{align}
+\]</span></p>
+<h3 id="a-cascade-of-neural-networks">A Cascade of Neural Networks</h3>
+<p><span class="math display">\[
+\begin{align}
+  \latentVector_{1} &amp;= \eigenvectwoMatrix^\top_1 \inputVector\\
+  \latentVector_{2} &amp;= \eigenvectwoMatrix^\top_2 \basisFunction\left(\eigenvectorMatrix_1 \latentVector_{1}\right)\\
+  \latentVector_{3} &amp;= \eigenvectwoMatrix^\top_3 \basisFunction\left(\eigenvectorMatrix_2 \latentVector_{2}\right)\\
+  \dataVector &amp;= \mappingVector_4 ^\top \latentVector_{3}
+\end{align}
+\]</span></p>
+<h3 id="cascade-of-gaussian-processes">Cascade of Gaussian Processes</h3>
+<ul>
+<li><p>Replace each neural network with a Gaussian process <span class="math display">\[
+\begin{align}
+  \latentVector_{1} &amp;= \mappingFunctionVector_1\left(\inputVector\right)\\
+  \latentVector_{2} &amp;= \mappingFunctionVector_2\left(\latentVector_{1}\right)\\
+  \latentVector_{3} &amp;= \mappingFunctionVector_3\left(\latentVector_{2}\right)\\
+  \dataVector &amp;= \mappingFunctionVector_4\left(\latentVector_{3}\right)
+\end{align}
+\]</span></p></li>
+<li><p>Equivalent to prior over parameters, take width of each layer to infinity.</p></li>
+</ul>
+<p>Mathematically, a deep Gaussian process can be seen as a composite <em>multivariate</em> function, <span class="math display">\[
+  \mathbf{g}(\inputVector)=\mappingFunctionVector_5(\mappingFunctionVector_4(\mappingFunctionVector_3(\mappingFunctionVector_2(\mappingFunctionVector_1(\inputVector))))).
+  \]</span> Or if we view it from the probabilistic perspective we can see that a deep Gaussian process is specifying a factorization of the joint density, the standard deep model takes the form of a Markov chain.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> matplotlib <span class="im">import</span> rc
+
+rc(<span class="st">&quot;font&quot;</span>, <span class="op">**</span>{<span class="st">&#39;family&#39;</span>:<span class="st">&#39;sans-serif&#39;</span>,<span class="st">&#39;sans-serif&#39;</span>:[<span class="st">&#39;Helvetica&#39;</span>],<span class="st">&#39;size&#39;</span>:<span class="dv">30</span>})
+rc(<span class="st">&quot;text&quot;</span>, usetex<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<p><span class="math display">\[
+  p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mappingFunctionVector_5|\mappingFunctionVector_4)p(\mappingFunctionVector_4|\mappingFunctionVector_3)p(\mappingFunctionVector_3|\mappingFunctionVector_2)p(\mappingFunctionVector_2|\mappingFunctionVector_1)p(\mappingFunctionVector_1|\inputVector)
+  \]</span></p>
+<object class="svgplot " align data="../slides/diagrams/deepgp/deep-markov.svg" style>
+</object>
+<center>
+<em>Probabilistically the deep Gaussian process can be represented as a Markov chain. </em>
+</center>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> matplotlib <span class="im">import</span> rc
+rc(<span class="st">&quot;font&quot;</span>, <span class="op">**</span>{<span class="st">&#39;family&#39;</span>:<span class="st">&#39;sans-serif&#39;</span>,<span class="st">&#39;sans-serif&#39;</span>:[<span class="st">&#39;Helvetica&#39;</span>], <span class="st">&#39;size&#39;</span>:<span class="dv">15</span>})
+rc(<span class="st">&quot;text&quot;</span>, usetex<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<object class="svgplot " align data="../slides/diagrams/deepgp/deep-markov-vertical.svg" style>
+</object>
+<h3 id="why-deep">Why Deep?</h3>
+<p>If the result of composing many functions together is simply another function, then why do we bother? The key point is that we can change the class of functions we are modeling by composing in this manner. A Gaussian process is specifying a prior over functions, and one with a number of elegant properties. For example, the derivative process (if it exists) of a Gaussian process is also Gaussian distributed. That makes it easy to assimilate, for example, derivative observations. But that also might raise some alarm bells. That implies that the <em>marginal derivative distribution</em> is also Gaussian distributed. If that's the case, then it means that functions which occasionally exhibit very large derivatives are hard to model with a Gaussian process. For example, a function with jumps in.</p>
+<p>A one off discontinuity is easy to model with a Gaussian process, or even multiple discontinuities. They can be introduced in the mean function, or independence can be forced between two covariance functions that apply in different areas of the input space. But in these cases we will need to specify the number of discontinuities and where they occur. In otherwords we need to <em>parameterise</em> the discontinuities. If we do not know the number of discontinuities and don't wish to specify where they occur, i.e. if we want a non-parametric representation of discontinuities, then the standard Gaussian process doesn't help.</p>
+<h3 id="stochastic-process-composition">Stochastic Process Composition</h3>
+<p>The deep Gaussian process leads to <em>non-Gaussian</em> models, and non-Gaussian characteristics in the covariance function. In effect, what we are proposing is that we change the properties of the functions we are considering by *composing stochastic processes$. This is an approach to creating new stochastic processes from well known processes.</p>
+<object class="svgplot " align data="../slides/diagrams/deepgp/deep-markov-vertical.svg" style>
+</object>
+<p>Additionally, we are not constrained to the formalism of the chain. For example, we can easily add single nodes emerging from some point in the depth of the chain. This allows us to combine the benefits of the graphical modelling formalism, but with a powerful framework for relating one set of variables to another, that of Gaussian processes <object class="svgplot " align="" data="../slides/diagrams/deepgp/deep-markov-vertical-side.svg" style=""></object></p>
+<h3 id="difficulty-for-probabilistic-approaches" data-transition="None">Difficulty for Probabilistic Approaches</h3>
+<ul>
+<li><p>Propagate a probability distribution through a non-linear mapping.</p></li>
+<li><p>Normalisation of distribution becomes intractable.</p></li>
+</ul>
+<object class="svgplot " align="center" data="../slides/diagrams/dimred/nonlinear-mapping-3d-plot.svg" style>
+</object>
+<h3 id="difficulty-for-probabilistic-approaches-1" data-transition="None">Difficulty for Probabilistic Approaches</h3>
+<ul>
+<li><p>Propagate a probability distribution through a non-linear mapping.</p></li>
+<li><p>Normalisation of distribution becomes intractable.</p></li>
+</ul>
+<object class="svgplot " align="center" data="../slides/diagrams/dimred/nonlinear-mapping-2d-plot.svg" style>
+</object>
+<h3 id="difficulty-for-probabilistic-approaches-2" data-transition="None">Difficulty for Probabilistic Approaches</h3>
+<ul>
+<li><p>Propagate a probability distribution through a non-linear mapping.</p></li>
+<li><p>Normalisation of distribution becomes intractable.</p></li>
+</ul>
+<object class="svgplot " align="center" data="../slides/diagrams/dimred/gaussian-through-nonlinear.svg" style>
+</object>
+<h3 id="deep-gaussian-processes">Deep Gaussian Processes</h3>
+<ul>
+<li><p>Deep architectures allow abstraction of features <span class="citation">(Bengio, 2009; Hinton and Osindero, 2006; Salakhutdinov and Murray, n.d.)</span></p></li>
+<li><p>We use variational approach to stack GP models.</p></li>
+</ul>
+<h3 id="stacked-pca">Stacked PCA</h3>
+<object class="svgplot " align data="../slides/diagrams/stack-pca-sample-4.svg" style>
+</object>
+<h3 id="stacked-gp">Stacked GP</h3>
+<object class="svgplot " align data="../slides/diagrams/stack-gp-sample-4.svg" style>
+</object>
+<h3 id="analysis-of-deep-gps">Analysis of Deep GPs</h3>
+<ul>
+<li><p><em>Avoiding pathologies in very deep networks</em> <span class="citation">Duvenaud et al. (2014)</span> show that the derivative distribution of the process becomes more <em>heavy tailed</em> as number of layers increase.</p></li>
+<li><p><em>How Deep Are Deep Gaussian Processes?</em> <span class="citation">Dunlop et al. (2017)</span> perform a theoretical analysis possible through conditional Gaussian Markov property.</p></li>
+</ul>
+<p><a href="https://www.youtube.com/watch?v=XhIvygQYFFQ&amp;t="><img src="https://img.youtube.com/vi/XhIvygQYFFQ/0.jpg" /></a></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
+<span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
+<span class="im">import</span> pods
+<span class="im">import</span> teaching_plots <span class="im">as</span> plot
+<span class="im">import</span> mlai</code></pre></div>
+<h3 id="olympic-marathon-data-2">Olympic Marathon Data</h3>
+<p>The first thing we will do is load a standard data set for regression modelling. The data consists of the pace of Olympic Gold Medal Marathon winners for the Olympics from 1896 to present. First we load in the data and plot.</p>
+<h3 id="olympic-marathon-data-3">Olympic Marathon Data</h3>
+<table>
+<tr>
+<td width="70%">
+<ul>
+<li><p>Gold medal times for Olympic Marathon since 1896.</p></li>
+<li><p>Marathons before 1924 didn’t have a standardised distance.</p></li>
+<li><p>Present results using pace per km.</p></li>
+<li>In 1904 Marathon was badly organised leading to very slow times.</li>
+</ul>
+</td>
+<td width="30%">
+<img src="../slides/diagrams/Stephen_Kiprotich.jpg" alt="image" /> <small>Image from Wikimedia Commons <a href="http://bit.ly/16kMKHQ" class="uri">http://bit.ly/16kMKHQ</a></small>
+</td>
+</tr>
+</table>
+<object class="svgplot " align data="../slides/diagrams/datasets/olympic-marathon.svg" style>
+</object>
+<p>Things to notice about the data include the outlier in 1904, in this year, the olympics was in St Louis, USA. Organizational problems and challenges with dust kicked up by the cars following the race meant that participants got lost, and only very few participants completed.</p>
+<p>More recent years see more consistently quick marathons.</p>
+<p>Our first objective will be to perform a Gaussian process fit to the data, we'll do this using the <a href="https://github.com/SheffieldML/GPy">GPy software</a>.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_full <span class="op">=</span> GPy.models.GPRegression(x,yhat)
+_ <span class="op">=</span> m_full.optimize() <span class="co"># Optimize parameters of covariance function</span></code></pre></div>
+<p>The first command sets up the model, then</p>
+<pre><code>m_full.optimize()</code></pre>
+<p>optimizes the parameters of the covariance function and the noise level of the model. Once the fit is complete, we'll try creating some test points, and computing the output of the GP model in terms of the mean and standard deviation of the posterior functions between 1870 and 2030. We plot the mean function and the standard deviation at 200 locations. We can obtain the predictions using</p>
+<pre><code>y_mean, y_var = m_full.predict(xt)</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">xt <span class="op">=</span> np.linspace(<span class="dv">1870</span>,<span class="dv">2030</span>,<span class="dv">200</span>)[:,np.newaxis]
+yt_mean, yt_var <span class="op">=</span> m_full.predict(xt)
+yt_sd<span class="op">=</span>np.sqrt(yt_var)</code></pre></div>
+<p>Now we plot the results using the helper function in <code>teaching_plots</code>.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> teaching_plots <span class="im">as</span> plot</code></pre></div>
+<object class="svgplot " align data="../slides/diagrams/gp/olympic-marathon-gp.svg" style>
+</object>
+<h3 id="fit-quality-1">Fit Quality</h3>
+<p>In the fit we see that the error bars (coming mainly from the noise variance) are quite large. This is likely due to the outlier point in 1904, ignoring that point we can see that a tighter fit is obtained. To see this making a version of the model, <code>m_clean</code>, where that point is removed.</p>
+<pre><code>x_clean=np.vstack((x[0:2, :], x[3:, :]))
+y_clean=np.vstack((y[0:2, :], y[3:, :]))
+
+m_clean = GPy.models.GPRegression(x_clean,y_clean)
+_ = m_clean.optimize()</code></pre>
+<p>Data is fine for answering very specific questions, like &quot;Who won the Olympic Marathon in 2012?&quot;, because we have that answer stored, however, we are not given the answer to many other questions. For example, Alan Turing was a formidable marathon runner, in 1946 he ran a time 2 hours 46 minutes (just under four minutes per kilometer, faster than I and most of the other <a href="http://www.parkrun.org.uk/sheffieldhallam/">Endcliffe Park Run</a> runners can do 5 km). What is the probability he would have won an Olympics if one had been held in 1946?</p>
+<table>
+<tr>
+<td width="40%">
+<img class="" src="../slides/diagrams/turing-run.jpg" width="40%" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</td>
+<td width="50%">
+<img class="" src="../slides/diagrams/turing-times.gif" width="50%" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</td>
+</tr>
+</table>
+<center>
+<em>Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: <a href="http://www.turing.org.uk/scrapbook/run.html">Alan Turing Internet Scrapbook</a> </em>
+</center>
+<h3 id="deep-gp-fit">Deep GP Fit</h3>
+<p>Let's see if a deep Gaussian process can help here. We will construct a deep Gaussian process with one hidden layer (i.e. one Gaussian process feeding into another).</p>
+<p>Build a Deep GP with an additional hidden layer (one dimensional) to fit the model.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> GPy
+<span class="im">import</span> deepgp</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">hidden <span class="op">=</span> <span class="dv">1</span>
+m <span class="op">=</span> deepgp.DeepGP([y.shape[<span class="dv">1</span>],hidden,x.shape[<span class="dv">1</span>]],Y<span class="op">=</span>yhat, X<span class="op">=</span>x, inits<span class="op">=</span>[<span class="st">&#39;PCA&#39;</span>,<span class="st">&#39;PCA&#39;</span>], 
+                  kernels<span class="op">=</span>[GPy.kern.RBF(hidden,ARD<span class="op">=</span><span class="va">True</span>),
+                           GPy.kern.RBF(x.shape[<span class="dv">1</span>],ARD<span class="op">=</span><span class="va">True</span>)], <span class="co"># the kernels for each layer</span>
+                  num_inducing<span class="op">=</span><span class="dv">50</span>, back_constraint<span class="op">=</span><span class="va">False</span>)</code></pre></div>
+<p>Deep Gaussian process models also can require some thought in initialization. Here we choose to start by setting the noise variance to be one percent of the data variance.</p>
+<p>Optimization requires moving variational parameters in the hidden layer representing the mean and variance of the expected values in that layer. Since all those values can be scaled up, and this only results in a downscaling in the output of the first GP, and a downscaling of the input length scale to the second GP. It makes sense to first of all fix the scales of the covariance function in each of the GPs.</p>
+<p>Sometimes, deep Gaussian processes can find a local minima which involves increasing the noise level of one or more of the GPs. This often occurs because it allows a minimum in the KL divergence term in the lower bound on the likelihood. To avoid this minimum we habitually train with the likelihood variance (the noise on the output of the GP) fixed to some lower value for some iterations.</p>
+<p>Let's create a helper function to initialize the models we use in the notebook.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
+<span class="im">import</span> GPy
+<span class="im">import</span> deepgp</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> initialize(<span class="va">self</span>, noise_factor<span class="op">=</span><span class="fl">0.01</span>, linear_factor<span class="op">=</span><span class="dv">1</span>):
+    <span class="co">&quot;&quot;&quot;Helper function for deep model initialization.&quot;&quot;&quot;</span>
+    <span class="va">self</span>.obslayer.likelihood.variance <span class="op">=</span> <span class="va">self</span>.Y.var()<span class="op">*</span>noise_factor
+    <span class="cf">for</span> layer <span class="kw">in</span> <span class="va">self</span>.layers:
+        <span class="cf">if</span> <span class="bu">type</span>(layer.X) <span class="kw">is</span> GPy.core.parameterization.variational.NormalPosterior:
+            <span class="cf">if</span> layer.kern.ARD:
+                var <span class="op">=</span> layer.X.mean.var(<span class="dv">0</span>)
+            <span class="cf">else</span>:
+                var <span class="op">=</span> layer.X.mean.var()
+        <span class="cf">else</span>:
+            <span class="cf">if</span> layer.kern.ARD:
+                var <span class="op">=</span> layer.X.var(<span class="dv">0</span>)
+            <span class="cf">else</span>:
+                var <span class="op">=</span> layer.X.var()
+
+        <span class="co"># Average 0.5 upcrossings in four standard deviations. </span>
+        layer.kern.lengthscale <span class="op">=</span> linear_factor<span class="op">*</span>np.sqrt(layer.kern.input_dim)<span class="op">*</span><span class="dv">2</span><span class="op">*</span><span class="dv">4</span><span class="op">*</span>np.sqrt(var)<span class="op">/</span>(<span class="dv">2</span><span class="op">*</span>np.pi)
+<span class="co"># Bind the new method to the Deep GP object.</span>
+deepgp.DeepGP.initialize<span class="op">=</span>initialize</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Call the initalization</span>
+m.initialize()</code></pre></div>
+<p>Now optimize the model. The first stage of optimization is working on variational parameters and lengthscales only.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.optimize(messages<span class="op">=</span><span class="va">False</span>,max_iters<span class="op">=</span><span class="dv">100</span>)</code></pre></div>
+<p>Now we remove the constraints on the scale of the covariance functions associated with each GP and optimize again.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">for</span> layer <span class="kw">in</span> m.layers:
+    <span class="cf">pass</span> <span class="co">#layer.kern.variance.constrain_positive(warning=False)</span>
+m.obslayer.kern.variance.constrain_positive(warning<span class="op">=</span><span class="va">False</span>)
+m.optimize(messages<span class="op">=</span><span class="va">False</span>,max_iters<span class="op">=</span><span class="dv">100</span>)</code></pre></div>
+<p>Finally, we allow the noise variance to change and optimize for a large number of iterations.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">for</span> layer <span class="kw">in</span> m.layers:
+    layer.likelihood.variance.constrain_positive(warning<span class="op">=</span><span class="va">False</span>)
+m.optimize(messages<span class="op">=</span><span class="va">True</span>,max_iters<span class="op">=</span><span class="dv">10000</span>)</code></pre></div>
+<p>For our optimization process we define a new function.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> staged_optimize(<span class="va">self</span>, iters<span class="op">=</span>(<span class="dv">1000</span>,<span class="dv">1000</span>,<span class="dv">10000</span>), messages<span class="op">=</span>(<span class="va">False</span>, <span class="va">False</span>, <span class="va">True</span>)):
+    <span class="co">&quot;&quot;&quot;Optimize with parameters constrained and then with parameters released&quot;&quot;&quot;</span>
+    <span class="cf">for</span> layer <span class="kw">in</span> <span class="va">self</span>.layers:
+        <span class="co"># Fix the scale of each of the covariance functions.</span>
+        layer.kern.variance.fix(warning<span class="op">=</span><span class="va">False</span>)
+        layer.kern.lengthscale.fix(warning<span class="op">=</span><span class="va">False</span>)
+
+        <span class="co"># Fix the variance of the noise in each layer.</span>
+        layer.likelihood.variance.fix(warning<span class="op">=</span><span class="va">False</span>)
+
+    <span class="va">self</span>.optimize(messages<span class="op">=</span>messages[<span class="dv">0</span>],max_iters<span class="op">=</span>iters[<span class="dv">0</span>])
+    
+    <span class="cf">for</span> layer <span class="kw">in</span> <span class="va">self</span>.layers:
+        layer.kern.lengthscale.constrain_positive(warning<span class="op">=</span><span class="va">False</span>)
+    <span class="va">self</span>.obslayer.kern.variance.constrain_positive(warning<span class="op">=</span><span class="va">False</span>)
+
+
+    <span class="va">self</span>.optimize(messages<span class="op">=</span>messages[<span class="dv">1</span>],max_iters<span class="op">=</span>iters[<span class="dv">1</span>])
+
+    <span class="cf">for</span> layer <span class="kw">in</span> <span class="va">self</span>.layers:
+        layer.kern.variance.constrain_positive(warning<span class="op">=</span><span class="va">False</span>)
+        layer.likelihood.variance.constrain_positive(warning<span class="op">=</span><span class="va">False</span>)
+    <span class="va">self</span>.optimize(messages<span class="op">=</span>messages[<span class="dv">2</span>],max_iters<span class="op">=</span>iters[<span class="dv">2</span>])
+    
+<span class="co"># Bind the new method to the Deep GP object.</span>
+deepgp.DeepGP.staged_optimize<span class="op">=</span>staged_optimize</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.staged_optimize(messages<span class="op">=</span>(<span class="va">True</span>,<span class="va">True</span>,<span class="va">True</span>))</code></pre></div>
+<h3 id="plot-the-prediction">Plot the prediction</h3>
+<p>The prediction of the deep GP can be extracted in a similar way to the normal GP. Although, in this case, it is an approximation to the true distribution, because the true distribution is not Gaussian.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+plot.model_output(m, scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, ax<span class="op">=</span>ax, xlabel<span class="op">=</span><span class="st">&#39;year&#39;</span>, ylabel<span class="op">=</span><span class="st">&#39;pace min/km&#39;</span>, 
+          fontsize<span class="op">=</span><span class="dv">20</span>, portion<span class="op">=</span><span class="fl">0.2</span>)
+ax.set_xlim(xlim)
+
+ax.set_ylim(ylim)
+mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/olympic-marathon-deep-gp.svg&#39;</span>, 
+                transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<h3 id="olympic-marathon-data-deep-gp">Olympic Marathon Data Deep GP</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp.svg" style>
+</object>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> posterior_sample(<span class="va">self</span>, X, <span class="op">**</span>kwargs):
+    <span class="co">&quot;&quot;&quot;Give a sample from the posterior of the deep GP.&quot;&quot;&quot;</span>
+    Z <span class="op">=</span> X
+    <span class="cf">for</span> i, layer <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">reversed</span>(<span class="va">self</span>.layers)):
+        Z <span class="op">=</span> layer.posterior_samples(Z, size<span class="op">=</span><span class="dv">1</span>, <span class="op">**</span>kwargs)[:, :, <span class="dv">0</span>]
+ 
+    <span class="cf">return</span> Z
+deepgp.DeepGP.posterior_sample <span class="op">=</span> posterior_sample</code></pre></div>
+<h3 id="olympic-marathon-data-deep-gp-1" data-transition="None">Olympic Marathon Data Deep GP</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-samples.svg" style>
+</object>
+<h3 id="fitted-gp-for-each-layer">Fitted GP for each layer</h3>
+<p>Now we explore the GPs the model has used to fit each layer. First of all, we look at the hidden layer.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> visualize(<span class="va">self</span>, scale<span class="op">=</span><span class="fl">1.0</span>, offset<span class="op">=</span><span class="fl">0.0</span>, xlabel<span class="op">=</span><span class="st">&#39;input&#39;</span>, ylabel<span class="op">=</span><span class="st">&#39;output&#39;</span>, 
+              xlim<span class="op">=</span><span class="va">None</span>, ylim<span class="op">=</span><span class="va">None</span>, fontsize<span class="op">=</span><span class="dv">20</span>, portion<span class="op">=</span><span class="fl">0.2</span>,dataset<span class="op">=</span><span class="va">None</span>, 
+              diagrams<span class="op">=</span><span class="st">&#39;../diagrams&#39;</span>):
+    <span class="co">&quot;&quot;&quot;Visualize the layers in a deep GP with one-d input and output.&quot;&quot;&quot;</span>
+    depth <span class="op">=</span> <span class="bu">len</span>(<span class="va">self</span>.layers)
+    <span class="cf">if</span> dataset <span class="kw">is</span> <span class="va">None</span>:
+        fname <span class="op">=</span> <span class="st">&#39;deep-gp-layer&#39;</span>
+    <span class="cf">else</span>:
+        fname <span class="op">=</span> dataset <span class="op">+</span> <span class="st">&#39;-deep-gp-layer&#39;</span>
+    filename <span class="op">=</span> os.path.join(diagrams, fname)
+    last_name <span class="op">=</span> xlabel
+    last_x <span class="op">=</span> <span class="va">self</span>.X
+    <span class="cf">for</span> i, layer <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">reversed</span>(<span class="va">self</span>.layers)):
+        <span class="cf">if</span> i<span class="op">&gt;</span><span class="dv">0</span>:
+            plt.plot(last_x, layer.X.mean, <span class="st">&#39;r.&#39;</span>,markersize<span class="op">=</span><span class="dv">10</span>)
+            last_x<span class="op">=</span>layer.X.mean
+            ax<span class="op">=</span>plt.gca()
+            name <span class="op">=</span> <span class="st">&#39;layer &#39;</span> <span class="op">+</span> <span class="bu">str</span>(i)
+            plt.xlabel(last_name, fontsize<span class="op">=</span>fontsize)
+            plt.ylabel(name, fontsize<span class="op">=</span>fontsize)
+            last_name<span class="op">=</span>name
+            mlai.write_figure(filename<span class="op">=</span>filename <span class="op">+</span> <span class="st">&#39;-&#39;</span> <span class="op">+</span> <span class="bu">str</span>(i<span class="op">-</span><span class="dv">1</span>) <span class="op">+</span> <span class="st">&#39;.svg&#39;</span>, 
+                              transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)
+            
+        <span class="cf">if</span> i<span class="op">==</span><span class="dv">0</span> <span class="kw">and</span> xlim <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:
+            xt <span class="op">=</span> plot.pred_range(np.array(xlim), portion<span class="op">=</span><span class="fl">0.0</span>)
+        <span class="cf">elif</span> i<span class="op">&gt;</span><span class="dv">0</span>:
+            xt <span class="op">=</span> plot.pred_range(np.array(next_lim), portion<span class="op">=</span><span class="fl">0.0</span>)
+        <span class="cf">else</span>:
+            xt <span class="op">=</span> plot.pred_range(last_x, portion<span class="op">=</span>portion)
+        yt_mean, yt_var <span class="op">=</span> layer.predict(xt)
+        <span class="cf">if</span> layer<span class="op">==</span><span class="va">self</span>.obslayer:
+            yt_mean <span class="op">=</span> yt_mean<span class="op">*</span>scale <span class="op">+</span> offset
+            yt_var <span class="op">*=</span> scale<span class="op">*</span>scale
+        yt_sd <span class="op">=</span> np.sqrt(yt_var)
+        gpplot(xt,yt_mean,yt_mean<span class="op">-</span><span class="dv">2</span><span class="op">*</span>yt_sd,yt_mean<span class="op">+</span><span class="dv">2</span><span class="op">*</span>yt_sd)
+        ax <span class="op">=</span> plt.gca()
+        <span class="cf">if</span> i<span class="op">&gt;</span><span class="dv">0</span>:
+            ax.set_xlim(next_lim)
+        <span class="cf">elif</span> xlim <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:
+            ax.set_xlim(xlim)
+        next_lim <span class="op">=</span> plt.gca().get_ylim()
+        
+    plt.plot(last_x, <span class="va">self</span>.Y<span class="op">*</span>scale <span class="op">+</span> offset, <span class="st">&#39;r.&#39;</span>,markersize<span class="op">=</span><span class="dv">10</span>)
+    plt.xlabel(last_name, fontsize<span class="op">=</span>fontsize)
+    plt.ylabel(ylabel, fontsize<span class="op">=</span>fontsize)
+    mlai.write_figure(filename<span class="op">=</span>filename <span class="op">+</span> <span class="st">&#39;-&#39;</span> <span class="op">+</span> <span class="bu">str</span>(i) <span class="op">+</span> <span class="st">&#39;.svg&#39;</span>, 
+                      transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)
+
+    <span class="cf">if</span> ylim <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:
+        ax<span class="op">=</span>plt.gca()
+        ax.set_ylim(ylim)
+
+<span class="co"># Bind the new method to the Deep GP object.</span>
+deepgp.DeepGP.visualize<span class="op">=</span>visualize</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> scale_data(x, portion):     
+    scale <span class="op">=</span> (x.<span class="bu">max</span>()<span class="op">-</span>x.<span class="bu">min</span>())<span class="op">/</span>(<span class="dv">1</span><span class="op">-</span><span class="dv">2</span><span class="op">*</span>portion)
+    offset <span class="op">=</span> x.<span class="bu">min</span>() <span class="op">-</span> portion<span class="op">*</span>scale
+    <span class="cf">return</span> (x<span class="op">-</span>offset)<span class="op">/</span>scale, scale, offset</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> visualize_pinball(<span class="va">self</span>, ax<span class="op">=</span><span class="va">None</span>, scale<span class="op">=</span><span class="fl">1.0</span>, offset<span class="op">=</span><span class="fl">0.0</span>, xlabel<span class="op">=</span><span class="st">&#39;input&#39;</span>, ylabel<span class="op">=</span><span class="st">&#39;output&#39;</span>, 
+                  xlim<span class="op">=</span><span class="va">None</span>, ylim<span class="op">=</span><span class="va">None</span>, fontsize<span class="op">=</span><span class="dv">20</span>, portion<span class="op">=</span><span class="fl">0.2</span>, points<span class="op">=</span><span class="dv">50</span>, vertical<span class="op">=</span><span class="va">True</span>):
+    <span class="co">&quot;&quot;&quot;Visualize the layers in a deep GP with one-d input and output.&quot;&quot;&quot;</span>
+
+    <span class="cf">if</span> ax <span class="kw">is</span> <span class="va">None</span>:
+        fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+
+    depth <span class="op">=</span> <span class="bu">len</span>(<span class="va">self</span>.layers)
+
+    last_name <span class="op">=</span> xlabel
+    last_x <span class="op">=</span> <span class="va">self</span>.X
+
+    <span class="co"># Recover input and output scales from output plot</span>
+    plot_model_output(<span class="va">self</span>, scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, ax<span class="op">=</span>ax, 
+                      xlabel<span class="op">=</span>xlabel, ylabel<span class="op">=</span>ylabel, 
+                      fontsize<span class="op">=</span>fontsize, portion<span class="op">=</span>portion)
+    xlim<span class="op">=</span>ax.get_xlim()
+    xticks<span class="op">=</span>ax.get_xticks()
+    xtick_labels<span class="op">=</span>ax.get_xticklabels().copy()
+    ylim<span class="op">=</span>ax.get_ylim()
+    yticks<span class="op">=</span>ax.get_yticks()
+    ytick_labels<span class="op">=</span>ax.get_yticklabels().copy()
+
+    <span class="co"># Clear axes and start again</span>
+    ax.cla()
+    <span class="cf">if</span> vertical:
+        ax.set_xlim((<span class="dv">0</span>, <span class="dv">1</span>))
+        ax.invert_yaxis()
+
+        ax.set_ylim((depth, <span class="dv">0</span>))
+    <span class="cf">else</span>:
+        ax.set_ylim((<span class="dv">0</span>, <span class="dv">1</span>))
+        ax.set_xlim((<span class="dv">0</span>, depth))
+        
+    ax.set_axis_off()<span class="co">#frame_on(False)</span>
+
+
+    <span class="kw">def</span> pinball(x, y, y_std, color_scale<span class="op">=</span><span class="va">None</span>, 
+                layer<span class="op">=</span><span class="dv">0</span>, depth<span class="op">=</span><span class="dv">1</span>, ax<span class="op">=</span><span class="va">None</span>, 
+                alpha<span class="op">=</span><span class="fl">1.0</span>, portion<span class="op">=</span><span class="fl">0.0</span>, vertical<span class="op">=</span><span class="va">True</span>):  
+
+        scaledx, xscale, xoffset <span class="op">=</span> scale_data(x, portion<span class="op">=</span>portion)
+        scaledy, yscale, yoffset <span class="op">=</span> scale_data(y, portion<span class="op">=</span>portion)
+        y_std <span class="op">/=</span> yscale
+
+        <span class="co"># Check whether data is anti-correlated on output</span>
+        <span class="cf">if</span> np.dot((scaledx<span class="op">-</span><span class="fl">0.5</span>).T, (scaledy<span class="op">-</span><span class="fl">0.5</span>))<span class="op">&lt;</span><span class="dv">0</span>:
+            scaledy<span class="op">=</span><span class="dv">1</span><span class="op">-</span>scaledy
+            flip<span class="op">=-</span><span class="dv">1</span>
+        <span class="cf">else</span>:
+            flip<span class="op">=</span><span class="dv">1</span>
+
+        <span class="cf">if</span> color_scale <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:
+            color_scale, _, _<span class="op">=</span>scale_data(color_scale, portion<span class="op">=</span><span class="dv">0</span>)
+        scaledy <span class="op">=</span> (<span class="dv">1</span><span class="op">-</span>alpha)<span class="op">*</span>scaledx <span class="op">+</span> alpha<span class="op">*</span>scaledy
+
+        <span class="kw">def</span> color_value(x, cmap<span class="op">=</span><span class="va">None</span>, width<span class="op">=</span><span class="va">None</span>, centers<span class="op">=</span><span class="va">None</span>):
+            <span class="co">&quot;&quot;&quot;Return color as a function of position along x axis&quot;&quot;&quot;</span>
+            <span class="cf">if</span> cmap <span class="kw">is</span> <span class="va">None</span>:
+                cmap <span class="op">=</span> np.asarray([[<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>], [<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>], [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>]])
+            ncenters <span class="op">=</span> cmap.shape[<span class="dv">0</span>]
+            <span class="cf">if</span> centers <span class="kw">is</span> <span class="va">None</span>:
+                centers <span class="op">=</span> np.linspace(<span class="dv">0</span><span class="op">+</span><span class="fl">0.5</span><span class="op">/</span>ncenters, <span class="dv">1</span><span class="op">-</span><span class="fl">0.5</span><span class="op">/</span>ncenters, ncenters)
+            <span class="cf">if</span> width <span class="kw">is</span> <span class="va">None</span>:
+                width <span class="op">=</span> <span class="fl">0.25</span><span class="op">/</span>ncenters
+            
+            r <span class="op">=</span> (x<span class="op">-</span>centers)<span class="op">/</span>width
+            weights <span class="op">=</span> np.exp(<span class="op">-</span><span class="fl">0.5</span><span class="op">*</span>r<span class="op">*</span>r).flatten()
+            weights <span class="op">/=</span>weights.<span class="bu">sum</span>()
+            weights <span class="op">=</span> weights[:, np.newaxis]
+            <span class="cf">return</span> np.dot(cmap.T, weights).flatten()
+
+
+        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(x.shape[<span class="dv">0</span>]):
+            <span class="cf">if</span> color_scale <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:
+                color <span class="op">=</span> color_value(color_scale[i])
+            <span class="cf">else</span>:
+                color<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>)
+            x_plot <span class="op">=</span> np.asarray((scaledx[i], scaledy[i])).flatten()
+            y_plot <span class="op">=</span> np.asarray((layer, layer<span class="op">+</span>alpha)).flatten()
+            <span class="cf">if</span> vertical:
+                ax.plot(x_plot, y_plot, color<span class="op">=</span>color, alpha<span class="op">=</span><span class="fl">0.5</span>, linewidth<span class="op">=</span><span class="dv">3</span>)
+                ax.plot(x_plot, y_plot, color<span class="op">=</span><span class="st">&#39;k&#39;</span>, alpha<span class="op">=</span><span class="fl">0.5</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)
+            <span class="cf">else</span>:
+                ax.plot(y_plot, x_plot, color<span class="op">=</span>color, alpha<span class="op">=</span><span class="fl">0.5</span>, linewidth<span class="op">=</span><span class="dv">3</span>)
+                ax.plot(y_plot, x_plot, color<span class="op">=</span><span class="st">&#39;k&#39;</span>, alpha<span class="op">=</span><span class="fl">0.5</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)
+
+            <span class="co"># Plot error bars that increase as sqrt of distance from start.</span>
+            std_points <span class="op">=</span> <span class="dv">50</span>
+            stdy <span class="op">=</span> np.linspace(<span class="dv">0</span>, alpha,std_points)
+            stdx <span class="op">=</span> np.sqrt(stdy)<span class="op">*</span>y_std[i]
+            stdy <span class="op">+=</span> layer
+            mean_vals <span class="op">=</span> np.linspace(scaledx[i], scaledy[i], std_points)
+            upper <span class="op">=</span> mean_vals<span class="op">+</span>stdx 
+            lower <span class="op">=</span> mean_vals<span class="op">-</span>stdx 
+            fillcolor<span class="op">=</span>color
+            x_errorbars<span class="op">=</span>np.hstack((upper,lower[::<span class="op">-</span><span class="dv">1</span>]))
+            y_errorbars<span class="op">=</span>np.hstack((stdy,stdy[::<span class="op">-</span><span class="dv">1</span>]))
+            <span class="cf">if</span> vertical:
+                ax.fill(x_errorbars,y_errorbars,
+                        color<span class="op">=</span>fillcolor, alpha<span class="op">=</span><span class="fl">0.1</span>)
+                ax.plot(scaledy[i], layer<span class="op">+</span>alpha, <span class="st">&#39;.&#39;</span>,markersize<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span>color, alpha<span class="op">=</span><span class="fl">0.5</span>)
+            <span class="cf">else</span>:
+                ax.fill(y_errorbars,x_errorbars,
+                        color<span class="op">=</span>fillcolor, alpha<span class="op">=</span><span class="fl">0.1</span>)
+                ax.plot(layer<span class="op">+</span>alpha, scaledy[i], <span class="st">&#39;.&#39;</span>,markersize<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span>color, alpha<span class="op">=</span><span class="fl">0.5</span>)
+            <span class="co"># Marker to show end point</span>
+        <span class="cf">return</span> flip
+
+
+    <span class="co"># Whether final axis is flipped</span>
+    flip <span class="op">=</span> <span class="dv">1</span>
+    first_x<span class="op">=</span>last_x
+    <span class="cf">for</span> i, layer <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">reversed</span>(<span class="va">self</span>.layers)):     
+        <span class="cf">if</span> i<span class="op">==</span><span class="dv">0</span>:
+            xt <span class="op">=</span> plot.pred_range(last_x, portion<span class="op">=</span>portion, points<span class="op">=</span>points)
+            color_scale<span class="op">=</span>xt
+        yt_mean, yt_var <span class="op">=</span> layer.predict(xt)
+        <span class="cf">if</span> layer<span class="op">==</span><span class="va">self</span>.obslayer:
+            yt_mean <span class="op">=</span> yt_mean<span class="op">*</span>scale <span class="op">+</span> offset
+            yt_var <span class="op">*=</span> scale<span class="op">*</span>scale
+        yt_sd <span class="op">=</span> np.sqrt(yt_var)
+        flip <span class="op">=</span> flip<span class="op">*</span>pinball(xt,yt_mean,yt_sd,color_scale,portion<span class="op">=</span>portion, 
+                            layer<span class="op">=</span>i, ax<span class="op">=</span>ax, depth<span class="op">=</span>depth,vertical<span class="op">=</span>vertical)<span class="co">#yt_mean-2*yt_sd,yt_mean+2*yt_sd)</span>
+        xt <span class="op">=</span> yt_mean
+    <span class="co"># Make room for axis labels</span>
+    <span class="cf">if</span> vertical:
+        ax.set_ylim((<span class="fl">2.1</span>, <span class="op">-</span><span class="fl">0.1</span>))
+        ax.set_xlim((<span class="op">-</span><span class="fl">0.02</span>, <span class="fl">1.02</span>))
+        ax.set_yticks(<span class="bu">range</span>(depth,<span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>))
+    <span class="cf">else</span>:
+        ax.set_xlim((<span class="op">-</span><span class="fl">0.1</span>, <span class="fl">2.1</span>))
+        ax.set_ylim((<span class="op">-</span><span class="fl">0.02</span>, <span class="fl">1.02</span>))
+        ax.set_xticks(<span class="bu">range</span>(<span class="dv">0</span>, depth))
+        
+    <span class="kw">def</span> draw_axis(ax, scale<span class="op">=</span><span class="fl">1.0</span>, offset<span class="op">=</span><span class="fl">0.0</span>, level<span class="op">=</span><span class="fl">0.0</span>, flip<span class="op">=</span><span class="dv">1</span>, 
+                  label<span class="op">=</span><span class="va">None</span>,up<span class="op">=</span><span class="va">False</span>, nticks<span class="op">=</span><span class="dv">10</span>, ticklength<span class="op">=</span><span class="fl">0.05</span>,
+                  vertical<span class="op">=</span><span class="va">True</span>,
+                 fontsize<span class="op">=</span><span class="dv">20</span>):
+        <span class="kw">def</span> clean_gap(gap):
+            nsf <span class="op">=</span> np.log10(gap)
+            <span class="cf">if</span> nsf<span class="op">&gt;</span><span class="dv">0</span>:
+                nsf <span class="op">=</span> np.ceil(nsf)
+            <span class="cf">else</span>:
+                nsf <span class="op">=</span> np.floor(nsf)
+            lower_gaps <span class="op">=</span> np.asarray([<span class="fl">0.005</span>, <span class="fl">0.01</span>, <span class="fl">0.02</span>, <span class="fl">0.03</span>, <span class="fl">0.04</span>, <span class="fl">0.05</span>, 
+                                     <span class="fl">0.1</span>, <span class="fl">0.25</span>, <span class="fl">0.5</span>, 
+                                     <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>, <span class="fl">2.5</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">25</span>, <span class="dv">50</span>, <span class="dv">100</span>])
+            upper_gaps <span class="op">=</span> np.asarray([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">10</span>])
+            <span class="cf">if</span> nsf <span class="op">&gt;</span><span class="dv">2</span> <span class="kw">or</span> nsf<span class="op">&lt;-</span><span class="dv">2</span>:
+                d <span class="op">=</span> np.<span class="bu">abs</span>(gap<span class="op">-</span>upper_gaps<span class="op">*</span><span class="dv">10</span><span class="op">**</span>nsf)
+                ind <span class="op">=</span> np.argmin(d)
+                <span class="cf">return</span> upper_gaps[ind]<span class="op">*</span><span class="dv">10</span><span class="op">**</span>nsf
+            <span class="cf">else</span>:
+                d <span class="op">=</span> np.<span class="bu">abs</span>(gap<span class="op">-</span>lower_gaps)
+                ind <span class="op">=</span> np.argmin(d)
+                <span class="cf">return</span> lower_gaps[ind]
+            
+        tickgap <span class="op">=</span> clean_gap(scale<span class="op">/</span>(nticks<span class="op">-</span><span class="dv">1</span>))
+        nticks <span class="op">=</span> <span class="bu">int</span>(scale<span class="op">/</span>tickgap) <span class="op">+</span> <span class="dv">1</span>
+        tickstart <span class="op">=</span> np.<span class="bu">round</span>(offset<span class="op">/</span>tickgap)<span class="op">*</span>tickgap
+        ticklabels <span class="op">=</span> np.asarray(<span class="bu">range</span>(<span class="dv">0</span>, nticks))<span class="op">*</span>tickgap <span class="op">+</span> tickstart
+        ticks <span class="op">=</span> (ticklabels<span class="op">-</span>offset)<span class="op">/</span>scale
+        axargs <span class="op">=</span> {<span class="st">&#39;color&#39;</span>:<span class="st">&#39;k&#39;</span>, <span class="st">&#39;linewidth&#39;</span>:<span class="dv">1</span>}
+        
+        <span class="cf">if</span> <span class="kw">not</span> up:
+            ticklength<span class="op">=-</span>ticklength
+        tickspot <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, nticks)
+        <span class="cf">if</span> flip <span class="op">&lt;</span> <span class="dv">0</span>:
+            ticks <span class="op">=</span> <span class="dv">1</span><span class="op">-</span>ticks
+        <span class="cf">for</span> tick, ticklabel <span class="kw">in</span> <span class="bu">zip</span>(ticks, ticklabels):
+            <span class="cf">if</span> vertical:
+                ax.plot([tick, tick], [level, level<span class="op">-</span>ticklength], <span class="op">**</span>axargs)
+                ax.text(tick, level<span class="op">-</span>ticklength<span class="op">*</span><span class="dv">2</span>, ticklabel, horizontalalignment<span class="op">=</span><span class="st">&#39;center&#39;</span>, 
+                        fontsize<span class="op">=</span>fontsize<span class="op">/</span><span class="dv">2</span>)
+                ax.text(<span class="fl">0.5</span>, level<span class="op">-</span><span class="dv">5</span><span class="op">*</span>ticklength, label, horizontalalignment<span class="op">=</span><span class="st">&#39;center&#39;</span>, fontsize<span class="op">=</span>fontsize)
+            <span class="cf">else</span>:
+                ax.plot([level, level<span class="op">-</span>ticklength], [tick, tick],  <span class="op">**</span>axargs)
+                ax.text(level<span class="op">-</span>ticklength<span class="op">*</span><span class="dv">2</span>, tick, ticklabel, horizontalalignment<span class="op">=</span><span class="st">&#39;center&#39;</span>, 
+                        fontsize<span class="op">=</span>fontsize<span class="op">/</span><span class="dv">2</span>)
+                ax.text(level<span class="op">-</span><span class="dv">5</span><span class="op">*</span>ticklength, <span class="fl">0.5</span>, label, horizontalalignment<span class="op">=</span><span class="st">&#39;center&#39;</span>, fontsize<span class="op">=</span>fontsize)
+        
+        <span class="cf">if</span> vertical:
+            xlim <span class="op">=</span> <span class="bu">list</span>(ax.get_xlim())
+            <span class="cf">if</span> ticks.<span class="bu">min</span>()<span class="op">&lt;</span>xlim[<span class="dv">0</span>]:
+                xlim[<span class="dv">0</span>] <span class="op">=</span> ticks.<span class="bu">min</span>()
+            <span class="cf">if</span> ticks.<span class="bu">max</span>()<span class="op">&gt;</span>xlim[<span class="dv">1</span>]:
+                xlim[<span class="dv">1</span>] <span class="op">=</span> ticks.<span class="bu">max</span>()
+            ax.set_xlim(xlim)
+            
+            ax.plot([ticks.<span class="bu">min</span>(), ticks.<span class="bu">max</span>()], [level, level], <span class="op">**</span>axargs)
+        <span class="cf">else</span>:
+            ylim <span class="op">=</span> <span class="bu">list</span>(ax.get_ylim())
+            <span class="cf">if</span> ticks.<span class="bu">min</span>()<span class="op">&lt;</span>ylim[<span class="dv">0</span>]:
+                ylim[<span class="dv">0</span>] <span class="op">=</span> ticks.<span class="bu">min</span>()
+            <span class="cf">if</span> ticks.<span class="bu">max</span>()<span class="op">&gt;</span>ylim[<span class="dv">1</span>]:
+                ylim[<span class="dv">1</span>] <span class="op">=</span> ticks.<span class="bu">max</span>()
+            ax.set_ylim(ylim)
+            ax.plot([level, level], [ticks.<span class="bu">min</span>(), ticks.<span class="bu">max</span>()], <span class="op">**</span>axargs)
+
+
+    _, xscale, xoffset <span class="op">=</span> scale_data(first_x, portion<span class="op">=</span>portion)
+    _, yscale, yoffset <span class="op">=</span> scale_data(yt_mean, portion<span class="op">=</span>portion)
+    draw_axis(ax<span class="op">=</span>ax, scale<span class="op">=</span>xscale, offset<span class="op">=</span>xoffset, level<span class="op">=</span><span class="fl">0.0</span>, label<span class="op">=</span>xlabel, 
+              up<span class="op">=</span><span class="va">True</span>, vertical<span class="op">=</span>vertical)
+    draw_axis(ax<span class="op">=</span>ax, scale<span class="op">=</span>yscale, offset<span class="op">=</span>yoffset, 
+              flip<span class="op">=</span>flip, level<span class="op">=</span>depth, label<span class="op">=</span>ylabel, up<span class="op">=</span><span class="va">False</span>, vertical<span class="op">=</span>vertical)
+    
+    <span class="co">#for txt in xticklabels:</span>
+    <span class="co">#    txt.set</span>
+<span class="co"># Bind the new method to the Deep GP object.</span>
+deepgp.DeepGP.visualize_pinball<span class="op">=</span>visualize_pinball</code></pre></div>
+<h3 id="olympic-marathon-pinball-plot">Olympic Marathon Pinball Plot</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg" style>
+</object>
+<p>The pinball plot shows the flow of any input ball through the deep Gaussian process. In a pinball plot a series of vertical parallel lines would indicate a purely linear function. For the olypmic marathon data we can see the first layer begins to shift from input towards the right. Note it also does so with some uncertainty (indicated by the shaded backgrounds). The second layer has less uncertainty, but bunches the inputs more strongly to the right. This input layer of uncertainty, followed by a layer that pushes inputs to the right is what gives the heteroschedastic noise.</p>
+<h3 id="step-function">Step Function</h3>
+<p>Next we consider a simple step function data set.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">num_low<span class="op">=</span><span class="dv">25</span>
+num_high<span class="op">=</span><span class="dv">25</span>
+gap <span class="op">=</span> <span class="op">-</span>.<span class="dv">1</span>
+noise<span class="op">=</span><span class="fl">0.0001</span>
+x <span class="op">=</span> np.vstack((np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="op">-</span>gap<span class="op">/</span><span class="fl">2.0</span>, num_low)[:, np.newaxis],
+              np.linspace(gap<span class="op">/</span><span class="fl">2.0</span>, <span class="dv">1</span>, num_high)[:, np.newaxis]))
+y <span class="op">=</span> np.vstack((np.zeros((num_low, <span class="dv">1</span>)), np.ones((num_high,<span class="dv">1</span>))))
+scale <span class="op">=</span> np.sqrt(y.var())
+offset <span class="op">=</span> y.mean()
+yhat <span class="op">=</span> (y<span class="op">-</span>offset)<span class="op">/</span>scale</code></pre></div>
+<h3 id="step-function-data" data-transition="None">Step Function Data</h3>
+<object class="svgplot " align data="../slides/diagrams/datasets/step-function.svg" style>
+</object>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_full <span class="op">=</span> GPy.models.GPRegression(x,yhat)
+_ <span class="op">=</span> m_full.optimize() <span class="co"># Optimize parameters of covariance function</span></code></pre></div>
+<h3 id="step-function-data-gp" data-transition="None">Step Function Data GP</h3>
+<object class="svgplot " align data="../slides/diagrams/gp/step-function-gp.svg" style>
+</object>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">layers <span class="op">=</span> [y.shape[<span class="dv">1</span>], <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>,x.shape[<span class="dv">1</span>]]
+inits <span class="op">=</span> [<span class="st">&#39;PCA&#39;</span>]<span class="op">*</span>(<span class="bu">len</span>(layers)<span class="op">-</span><span class="dv">1</span>)
+kernels <span class="op">=</span> []
+<span class="cf">for</span> i <span class="kw">in</span> layers[<span class="dv">1</span>:]:
+    kernels <span class="op">+=</span> [GPy.kern.RBF(i)]
+m <span class="op">=</span> deepgp.DeepGP(layers,Y<span class="op">=</span>yhat, X<span class="op">=</span>x, 
+                  inits<span class="op">=</span>inits, 
+                  kernels<span class="op">=</span>kernels, <span class="co"># the kernels for each layer</span>
+                  num_inducing<span class="op">=</span><span class="dv">20</span>, back_constraint<span class="op">=</span><span class="va">False</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.initialize()
+m.staged_optimize()</code></pre></div>
+<h3 id="step-function-data-deep-gp" data-transition="None">Step Function Data Deep GP</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp.svg" style>
+</object>
+<h3 id="step-function-data-deep-gp-1" data-transition="None">Step Function Data Deep GP</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp-samples.svg" style>
+</object>
+<h3 id="step-function-data-latent-1" data-transition="None">Step Function Data Latent 1</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp-layer-0.svg" style>
+</object>
+<h3 id="step-function-data-latent-2" data-transition="None">Step Function Data Latent 2</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp-layer-1.svg" style>
+</object>
+<h3 id="step-function-data-latent-3" data-transition="None">Step Function Data Latent 3</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp-layer-2.svg" style>
+</object>
+<h3 id="step-function-data-latent-4" data-transition="None">Step Function Data Latent 4</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp-layer-3.svg" style>
+</object>
+<h3 id="step-function-pinball-plot" data-transition="None">Step Function Pinball Plot</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp-pinball.svg" style>
+</object>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+data <span class="op">=</span> pods.datasets.mcycle()
+x <span class="op">=</span> data[<span class="st">&#39;X&#39;</span>]
+y <span class="op">=</span> data[<span class="st">&#39;Y&#39;</span>]
+scale<span class="op">=</span>np.sqrt(y.var())
+offset<span class="op">=</span>y.mean()
+yhat <span class="op">=</span> (y <span class="op">-</span> offset)<span class="op">/</span>scale</code></pre></div>
+<h3 id="motorcycle-helmet-data" data-transition="None">Motorcycle Helmet Data</h3>
+<object class="svgplot " align data="../slides/diagrams/datasets/motorcycle-helmet.svg" style>
+</object>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_full <span class="op">=</span> GPy.models.GPRegression(x,yhat)
+_ <span class="op">=</span> m_full.optimize() <span class="co"># Optimize parameters of covariance function</span></code></pre></div>
+<h3 id="motorcycle-helmet-data-gp" data-transition="None">Motorcycle Helmet Data GP</h3>
+<object class="svgplot " align data="../slides/diagrams/gp/motorcycle-helmet-gp.svg" style>
+</object>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">layers <span class="op">=</span> [y.shape[<span class="dv">1</span>], <span class="dv">1</span>, x.shape[<span class="dv">1</span>]]
+inits <span class="op">=</span> [<span class="st">&#39;PCA&#39;</span>]<span class="op">*</span>(<span class="bu">len</span>(layers)<span class="op">-</span><span class="dv">1</span>)
+kernels <span class="op">=</span> []
+<span class="cf">for</span> i <span class="kw">in</span> layers[<span class="dv">1</span>:]:
+    kernels <span class="op">+=</span> [GPy.kern.RBF(i)]
+m <span class="op">=</span> deepgp.DeepGP(layers,Y<span class="op">=</span>yhat, X<span class="op">=</span>x, 
+                  inits<span class="op">=</span>inits, 
+                  kernels<span class="op">=</span>kernels, <span class="co"># the kernels for each layer</span>
+                  num_inducing<span class="op">=</span><span class="dv">20</span>, back_constraint<span class="op">=</span><span class="va">False</span>)
+
+
+
+m.initialize()</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.staged_optimize(iters<span class="op">=</span>(<span class="dv">1000</span>,<span class="dv">1000</span>,<span class="dv">10000</span>), messages<span class="op">=</span>(<span class="va">True</span>, <span class="va">True</span>, <span class="va">True</span>))</code></pre></div>
+<h3 id="motorcycle-helmet-data-deep-gp" data-transition="None">Motorcycle Helmet Data Deep GP</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp.svg" style>
+</object>
+<h3 id="motorcycle-helmet-data-deep-gp-1" data-transition="None">Motorcycle Helmet Data Deep GP</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-samples.svg" style>
+</object>
+<h3 id="motorcycle-helmet-data-latent-1" data-transition="None">Motorcycle Helmet Data Latent 1</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-layer-0.svg" style>
+</object>
+<h3 id="motorcycle-helmet-data-latent-2" data-transition="None">Motorcycle Helmet Data Latent 2</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-layer-1.svg" style>
+</object>
+<h3 id="motorcycle-helmet-pinball-plot" data-transition="None">Motorcycle Helmet Pinball Plot</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-pinball.svg" style>
+</object>
+<h3 id="robot-wireless-data">Robot Wireless Data</h3>
+<p>The robot wireless data is taken from an experiment run by Brian Ferris at University of Washington. It consists of the measurements of WiFi access point signal strengths as Brian walked in a loop.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data<span class="op">=</span>pods.datasets.robot_wireless()
+
+x <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">215</span>)[:, np.newaxis]
+y <span class="op">=</span> data[<span class="st">&#39;Y&#39;</span>]
+offset <span class="op">=</span> y.mean()
+scale <span class="op">=</span> np.sqrt(y.var())
+yhat <span class="op">=</span> (y<span class="op">-</span>offset)<span class="op">/</span>scale</code></pre></div>
+<p>The ground truth is recorded in the data, the actual loop is given in the plot below.</p>
+<h3 id="robot-wireless-ground-truth" data-transition="None">Robot Wireless Ground Truth</h3>
+<object class="svgplot " align data="../slides/diagrams/datasets/robot-wireless-ground-truth.svg" style>
+</object>
+<p>We will ignore this ground truth in making our predictions, but see if the model can recover something similar in one of the latent layers.</p>
+<h3 id="robot-wifi-data" data-transition="None">Robot WiFi Data</h3>
+<object class="svgplot " align data="../slides/diagrams/datasets/robot-wireless-dim-1.svg" style>
+</object>
+<p>Perform a Gaussian process fit on the data using GPy.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_full <span class="op">=</span> GPy.models.GPRegression(x,yhat)
+_ <span class="op">=</span> m_full.optimize() <span class="co"># Optimize parameters of covariance function</span></code></pre></div>
+<h3 id="robot-wifi-data-gp" data-transition="None">Robot WiFi Data GP</h3>
+<object class="svgplot " align data="../slides/diagrams/gp/robot-wireless-gp-dim-1.svg" style>
+</object>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">layers <span class="op">=</span> [y.shape[<span class="dv">1</span>], <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">2</span>, x.shape[<span class="dv">1</span>]]
+inits <span class="op">=</span> [<span class="st">&#39;PCA&#39;</span>]<span class="op">*</span>(<span class="bu">len</span>(layers)<span class="op">-</span><span class="dv">1</span>)
+kernels <span class="op">=</span> []
+<span class="cf">for</span> i <span class="kw">in</span> layers[<span class="dv">1</span>:]:
+    kernels <span class="op">+=</span> [GPy.kern.RBF(i, ARD<span class="op">=</span><span class="va">True</span>)]</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m <span class="op">=</span> deepgp.DeepGP(layers,Y<span class="op">=</span>y, X<span class="op">=</span>x, inits<span class="op">=</span>inits, 
+                  kernels<span class="op">=</span>kernels,
+                  num_inducing<span class="op">=</span><span class="dv">50</span>, back_constraint<span class="op">=</span><span class="va">False</span>)
+m.initialize()</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.staged_optimize(messages<span class="op">=</span>(<span class="va">True</span>,<span class="va">True</span>,<span class="va">True</span>))</code></pre></div>
+<h3 id="robot-wifi-data-deep-gp" data-transition="None">Robot WiFi Data Deep GP</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/robot-wireless-deep-gp-dim-1.svg" style>
+</object>
+<h3 id="robot-wifi-data-deep-gp-1" data-transition="None">Robot WiFi Data Deep GP</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/robot-wireless-deep-gp-samples-dim-1.svg" style>
+</object>
+<h3 id="robot-wifi-data-latent-space" data-transition="None">Robot WiFi Data Latent Space</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/robot-wireless-ground-truth.svg" style>
+</object>
+<h3 id="robot-wifi-data-latent-space-1" data-transition="None">Robot WiFi Data Latent Space</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/robot-wireless-latent-space.svg" style>
+</object>
+<h3 id="motion-capture" data-transition="none">Motion Capture</h3>
+<ul>
+<li><p>‘High five’ data.</p></li>
+<li><p>Model learns structure between two interacting subjects.</p></li>
+</ul>
+<h3 id="shared-lvm" data-transition="none">Shared LVM</h3>
+<object class="svgplot " align data="../slides/diagrams/shared.svg" style>
+</object>
+<h3 id="section-3" data-transition="none"></h3>
+<p><img class="negate" src="../slides/diagrams/deep-gp-high-five2.png" width="100%" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto"></p>
+
+<p>This notebook explores the deep Gaussian processes' capacity to perform unsupervised learning.</p>
+<p>We will look at a sub-sample of the MNIST digit data set.</p>
+<p>This notebook depends on GPy and PyDeepGP. These libraries can be installed via pip:</p>
+<pre><code>pip install GPy
+pip install git+https://github.com/SheffieldML/PyDeepGP.git</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
+<span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
+<span class="im">from</span> matplotlib <span class="im">import</span> rc
+<span class="im">from</span> IPython.display <span class="im">import</span> display
+
+<span class="im">import</span> deepgp
+<span class="im">import</span> GPy
+
+<span class="im">from</span> gp_tutorial <span class="im">import</span> ax_default, meanplot, gpplot
+<span class="im">import</span> mlai
+<span class="im">import</span> teaching_plots <span class="im">as</span> plot</code></pre></div>
+<p>First load in the MNIST data set from scikit learn. This can take a little while because it's large to download.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> sklearn.datasets <span class="im">import</span> fetch_mldata
+mnist <span class="op">=</span> fetch_mldata(<span class="st">&#39;MNIST original&#39;</span>)</code></pre></div>
+<p>Sub-sample the dataset to make the training faster.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">np.random.seed(<span class="dv">0</span>)
+digits <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>]
+N_per_digit <span class="op">=</span> <span class="dv">100</span>
+Y <span class="op">=</span> []
+labels <span class="op">=</span> []
+<span class="cf">for</span> d <span class="kw">in</span> digits:
+    imgs <span class="op">=</span> mnist[<span class="st">&#39;data&#39;</span>][mnist[<span class="st">&#39;target&#39;</span>]<span class="op">==</span>d]
+    Y.append(imgs[np.random.permutation(imgs.shape[<span class="dv">0</span>])][:N_per_digit])
+    labels.append(np.ones(N_per_digit)<span class="op">*</span>d)
+Y <span class="op">=</span> np.vstack(Y).astype(np.float64)
+labels <span class="op">=</span> np.hstack(labels)
+Y <span class="op">/=</span> <span class="dv">255</span>.</code></pre></div>
+<h3 id="fit-a-deep-gp">Fit a Deep GP</h3>
+<p>We're going to fit a Deep Gaussian process model to the MNIST data with two hidden layers. Each of the two Gaussian processes (one from the first hidden layer to the second, one from the second hidden layer to the data) has an exponentiated quadratic covariance.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">num_latent <span class="op">=</span> <span class="dv">2</span>
+num_hidden_2 <span class="op">=</span> <span class="dv">5</span>
+m <span class="op">=</span> deepgp.DeepGP([Y.shape[<span class="dv">1</span>],num_hidden_2,num_latent],
+                  Y,
+                  kernels<span class="op">=</span>[GPy.kern.RBF(num_hidden_2,ARD<span class="op">=</span><span class="va">True</span>), 
+                           GPy.kern.RBF(num_latent,ARD<span class="op">=</span><span class="va">False</span>)], 
+                  num_inducing<span class="op">=</span><span class="dv">50</span>, back_constraint<span class="op">=</span><span class="va">False</span>, 
+                  encoder_dims<span class="op">=</span>[[<span class="dv">200</span>],[<span class="dv">200</span>]])</code></pre></div>
+<h3 id="initialization">Initialization</h3>
+<p>Just like deep neural networks, there are some tricks to intitializing these models. The tricks we use here include some early training of the model with model parameters constrained. This gives the variational inducing parameters some scope to tighten the bound for the case where the noise variance is small and the variances of the Gaussian processes are around 1.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.obslayer.likelihood.variance[:] <span class="op">=</span> Y.var()<span class="op">*</span><span class="fl">0.01</span>
+<span class="cf">for</span> layer <span class="kw">in</span> m.layers:
+    layer.kern.variance.fix(warning<span class="op">=</span><span class="va">False</span>)
+    layer.likelihood.variance.fix(warning<span class="op">=</span><span class="va">False</span>)</code></pre></div>
+<p>We now we optimize for a hundred iterations with the constrained model.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.optimize(messages<span class="op">=</span><span class="va">False</span>,max_iters<span class="op">=</span><span class="dv">100</span>)</code></pre></div>
+<p>Now we remove the fixed constraint on the kernel variance parameters, but keep the noise output constrained, and run for a further 100 iterations.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">for</span> layer <span class="kw">in</span> m.layers:
+    layer.kern.variance.constrain_positive(warning<span class="op">=</span><span class="va">False</span>)
+m.optimize(messages<span class="op">=</span><span class="va">False</span>,max_iters<span class="op">=</span><span class="dv">100</span>)</code></pre></div>
+<p>Finally we unconstrain the layer likelihoods and allow the full model to be trained for 1000 iterations.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">for</span> layer <span class="kw">in</span> m.layers:
+    layer.likelihood.variance.constrain_positive(warning<span class="op">=</span><span class="va">False</span>)
+m.optimize(messages<span class="op">=</span><span class="va">True</span>,max_iters<span class="op">=</span><span class="dv">10000</span>)</code></pre></div>
+<h3 id="visualize-the-latent-space-of-the-top-layer">Visualize the latent space of the top layer</h3>
+<p>Now the model is trained, let's plot the mean of the posterior distributions in the top latent layer of the model.</p>
+<object class="svgplot " align data="../slides/diagrams/usps-digits-latent.svg" style>
+</object>
+<h3 id="visualize-the-latent-space-of-the-intermediate-layer">Visualize the latent space of the intermediate layer</h3>
+<p>We can also visualize dimensions of the intermediate layer. First the lengthscale of those dimensions is given by</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.obslayer.kern.lengthscale</code></pre></div>
+<h3 id="section-4" data-transition="none"></h3>
+<object class="svgplot " align data="../slides/diagrams/usps-digits-hidden-1-0.svg" style>
+</object>
+<h3 id="section-5" data-transition="none"></h3>
+<object class="svgplot " align data="../slides/diagrams/usps-digits-hidden-2-0.svg" style>
+</object>
+<h3 id="section-6" data-transition="none"></h3>
+<object class="svgplot " align data="../slides/diagrams/usps-digits-hidden-3-0.svg" style>
+</object>
+<h3 id="section-7" data-transition="none"></h3>
+<object class="svgplot " align data="../slides/diagrams/usps-digits-hidden-4-0.svg" style>
+</object>
+<h3 id="generate-from-model">Generate From Model</h3>
+<p>Now we can take a look at a sample from the model, by drawing a Gaussian random sample in the latent space and propagating it through the model.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">
+rows <span class="op">=</span> <span class="dv">10</span>
+cols <span class="op">=</span> <span class="dv">20</span>
+t<span class="op">=</span>np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, rows<span class="op">*</span>cols)[:, <span class="va">None</span>]
+kern <span class="op">=</span> GPy.kern.RBF(<span class="dv">1</span>,lengthscale<span class="op">=</span><span class="fl">0.05</span>)
+cov <span class="op">=</span> kern.K(t, t)
+x <span class="op">=</span> np.random.multivariate_normal(np.zeros(rows<span class="op">*</span>cols), cov, num_latent).T</code></pre></div>
+<h3 id="section-8" data-transition="none"></h3>
+<object class="svgplot " align data="../slides/diagrams/digit-samples-deep-gp.svg" style>
+</object>
+<div style="text-align:center">
+<object class="svgplot " align data="../slides/diagrams/deep-health.svg" style>
+</object>
+</div>
+<ul>
+<li><em>Gaussian process based nonlinear latent structure discovery in multivariate spike train data</em> <span class="citation">Wu et al. (2017)</span></li>
+<li><em>Doubly Stochastic Variational Inference for Deep Gaussian Processes</em> <span class="citation">Salimbeni and Deisenroth (2017)</span></li>
+<li><em>Deep Multi-task Gaussian Processes for Survival Analysis with Competing Risks</em> <span class="citation">Alaa and van der Schaar (2017)</span></li>
+<li><p><em>Counterfactual Gaussian Processes for Reliable Decision-making and What-if Reasoning</em> <span class="citation">Schulam and Saria (2017)</span></p></li>
+<li><em>Deep Survival Analysis</em> <span class="citation">Ranganath et al. (2016)</span></li>
+<li><em>Recurrent Gaussian Processes</em> <span class="citation">Mattos et al. (2015)</span></li>
+<li><p><em>Gaussian Process Based Approaches for Survival Analysis</em> <span class="citation">Saul (2016)</span></p></li>
+</ul>
+<h3 id="uncertainty-quantification">Uncertainty Quantification</h3>
+<blockquote>
+<p>Uncertainty quantification (UQ) is the science of quantitative characterization and reduction of uncertainties in both computational and real world applications. It tries to determine how likely certain outcomes are if some aspects of the system are not exactly known.</p>
+</blockquote>
+<p>We will to illustrate different concepts of <a href="https://en.wikipedia.org/wiki/Uncertainty_quantification">Uncertainty Quantification</a> (UQ) and the role that Gaussian processes play in this field. Based on a simple simulator of a car moving between a valley and a mountain, we are going to illustrate the following concepts:</p>
+<ul>
+<li><p><strong>Systems emulation</strong>. Many real world decisions are based on simulations that can be computationally very demanding. We will show how simulators can be replaced by <em>emulators</em>: Gaussian process models fitted on a few simulations that can be used to replace the <em>simulator</em>. Emulators are cheap to compute, fast to run, and always provide ways to quantify the uncertainty of how precise they are compared the original simulator.</p></li>
+<li><p><strong>Emulators in optimization problems</strong>. We will show how emulators can be used to optimize black-box functions that are expensive to evaluate. This field is also called Bayesian Optimization and has gained an increasing relevance in machine learning as emulators can be used to optimize computer simulations (and machine learning algorithms) quite efficiently.</p></li>
+<li><p><strong>Multi-fidelity emulation methods</strong>. In many scenarios we have simulators of different quality about the same measure of interest. In these cases the goal is to merge all sources of information under the same model so the final emulator is cheaper and more accurate than an emulator fitted only using data from the most accurate and expensive simulator.</p></li>
+</ul>
+<h3 id="mountain-car-simulator">Mountain Car Simulator</h3>
+<p>To illustrate the above mentioned concepts we we use the <a href="https://github.com/openai/gym/wiki/MountainCarContinuous-v0">mountain car simulator</a>. This simulator is widely used in machine learning to test reinforcement learning algorithms. The goal is to define a control policy on a car whose objective is to climb a mountain. Graphically, the problem looks as follows:</p>
+<div style="text-align:center">
+<img class="negate" src="../slides/diagrams/uq/mountaincar.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</div>
+<center>
+<em>The mountain car simulation from the Open AI gym. </em>
+</center>
+<p>The goal is to define a sequence of actions (push the car right or left with certain intensity) to make the car reach the flag after a number <span class="math inline">\(T\)</span> of time steps.</p>
+<p>At each time step <span class="math inline">\(t\)</span>, the car is characterized by a vector <span class="math inline">\(\inputVector_{t} = (p_t,v_t)\)</span> of states which are respectively the the position and velocity of the car at time <span class="math inline">\(t\)</span>. For a sequence of states (an episode), the dynamics of the car is given by</p>
+<p><span class="math display">\[\inputVector_{t+1} = \mappingFunction(\inputVector_{t},\textbf{u}_{t})\]</span></p>
+<p>where <span class="math inline">\(\textbf{u}_{t}\)</span> is the value of an action force, which in this example corresponds to push car to the left (negative value) or to the right (positive value). The actions across a full episode are represented in a policy <span class="math inline">\(\textbf{u}_{t} = \pi(\inputVector_{t},\theta)\)</span> that acts according to the current state of the car and some parameters <span class="math inline">\(\theta\)</span>. In the following examples we will assume that the policy is linear which allows us to write <span class="math inline">\(\pi(\inputVector_{t},\theta)\)</span> as</p>
+<p><span class="math display">\[\pi(\inputVector,\theta)= \theta_0 + \theta_p p + \theta_vv.\]</span></p>
+<p>For <span class="math inline">\(t=1,\dots,T\)</span> now given some initial state <span class="math inline">\(\inputVector_{0}\)</span> and some some values of each <span class="math inline">\(\textbf{u}_{t}\)</span>, we can <strong>simulate</strong> the full dynamics of the car for a full episode using <a href="https://gym.openai.com/envs/">Gym</a>. The values of <span class="math inline">\(\textbf{u}_{t}\)</span> are fully determined by the parameters of the linear controller.</p>
+<p>After each episode of length <span class="math inline">\(T\)</span> is complete, a reward function <span class="math inline">\(R_{T}(\theta)\)</span> is computed. In the mountain car example the reward is computed as 100 for reaching the target of the hill on the right hand side, minus the squared sum of actions (a real negative to push to the left and a real positive to push to the right) from start to goal. Note that our reward depend on <span class="math inline">\(\theta\)</span> as we make it dependent on the parameters of the linear controller.</p>
+<h3 id="emulate-the-mountain-car">Emulate the Mountain Car</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> gym</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">env <span class="op">=</span> gym.make(<span class="st">&#39;MountainCarContinuous-v0&#39;</span>)</code></pre></div>
+<p>Our goal in this section is to find the parameters <span class="math inline">\(\theta\)</span> of the linear controller such that</p>
+<p><span class="math display">\[\theta^* = arg \max_{\theta} R_T(\theta).\]</span></p>
+<p>In this section, we directly use Bayesian optimization to solve this problem. We will use <a href="https://sheffieldml.github.io/GPyOpt/">GPyOpt</a> so we first define the objective function:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> mountain_car <span class="im">as</span> mc
+<span class="im">import</span> GPyOpt</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">obj_func <span class="op">=</span> <span class="kw">lambda</span> x: mc.run_simulation(env, x)[<span class="dv">0</span>]
+objective <span class="op">=</span> GPyOpt.core.task.SingleObjective(obj_func)</code></pre></div>
+<p>For each set of parameter values of the linear controller we can run an episode of the simulator (that we fix to have a horizon of <span class="math inline">\(T=500\)</span>) to generate the reward. Using as input the parameters of the controller and as outputs the rewards we can build a Gaussian process emulator of the reward.</p>
+<p>We start defining the input space, which is three-dimensional:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">## --- We define the input space of the emulator</span>
+
+space<span class="op">=</span> [{<span class="st">&#39;name&#39;</span>:<span class="st">&#39;postion_parameter&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="fl">1.2</span>, <span class="op">+</span><span class="dv">1</span>)},
+        {<span class="st">&#39;name&#39;</span>:<span class="st">&#39;velocity_parameter&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="dv">1</span><span class="op">/</span><span class="fl">0.07</span>, <span class="op">+</span><span class="dv">1</span><span class="op">/</span><span class="fl">0.07</span>)},
+        {<span class="st">&#39;name&#39;</span>:<span class="st">&#39;constant&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="dv">1</span>, <span class="op">+</span><span class="dv">1</span>)}]
+
+design_space <span class="op">=</span> GPyOpt.Design_space(space<span class="op">=</span>space)</code></pre></div>
+<p>Now we initizialize a Gaussian process emulator.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">model <span class="op">=</span> GPyOpt.models.GPModel(optimize_restarts<span class="op">=</span><span class="dv">5</span>, verbose<span class="op">=</span><span class="va">False</span>, exact_feval<span class="op">=</span><span class="va">True</span>, ARD<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<p>In Bayesian optimization an acquisition function is used to balance exploration and exploitation to evaluate new locations close to the optimum of the objective. In this notebook we select the expected improvement (EI). For further details have a look to the review paper of <a href="http://www.cs.ox.ac.uk/people/nando.defreitas/publications/BayesOptLoop.pdf">Shahriari et al (2015)</a>.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">aquisition_optimizer <span class="op">=</span> GPyOpt.optimization.AcquisitionOptimizer(design_space)
+acquisition <span class="op">=</span> GPyOpt.acquisitions.AcquisitionEI(model, design_space, optimizer<span class="op">=</span>aquisition_optimizer)
+evaluator <span class="op">=</span> GPyOpt.core.evaluators.Sequential(acquisition) <span class="co"># Collect points sequentially, no parallelization.</span></code></pre></div>
+<p>To initalize the model we start sampling some initial points (25) for the linear controler randomly.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> GPyOpt.experiment_design.random_design <span class="im">import</span> RandomDesign</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">n_initial_points <span class="op">=</span> <span class="dv">25</span>
+random_design <span class="op">=</span> RandomDesign(design_space)
+initial_design <span class="op">=</span> random_design.get_samples(n_initial_points)</code></pre></div>
+<p>Before we start any optimization, lets have a look to the behavior of the car with the first of these initial points that we have selected randomly.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">random_controller <span class="op">=</span> initial_design[<span class="dv">0</span>,:]
+_, _, _, frames <span class="op">=</span> mc.run_simulation(env, np.atleast_2d(random_controller), render<span class="op">=</span><span class="va">True</span>)
+anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Random linear controller&#39;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> IPython.core.display <span class="im">import</span> HTML</code></pre></div>
+<iframe src="../slides/diagrams/uq/mountain_car_random.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+</iframe>
+<p>As we can see the random linear controller does not manage to push the car to the top of the mountain. Now, let's optimize the regret using Bayesian optimization and the emulator for the reward. We try 50 new parameters chosen by the EI.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">max_iter <span class="op">=</span> <span class="dv">50</span>
+bo <span class="op">=</span> GPyOpt.methods.ModularBayesianOptimization(model, design_space, objective, acquisition, evaluator, initial_design)
+bo.run_optimization(max_iter <span class="op">=</span> max_iter )</code></pre></div>
+<p>Now we visualize the result for the best controller that we have found with Bayesian optimization.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">_, _, _, frames <span class="op">=</span> mc.run_simulation(env, np.atleast_2d(bo.x_opt), render<span class="op">=</span><span class="va">True</span>)
+anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Best controller after 50 iterations of Bayesian optimization&#39;</span>)</code></pre></div>
+<iframe src="../slides/diagrams/uq/mountain_car_simulated.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+</iframe>
+<p>he car can now make it to the top of the mountain! Emulating the reward function and using the EI helped as to find a linear controller that solves the problem.</p>
+<h3 id="data-efficient-emulation">Data Efficient Emulation</h3>
+<p>In the previous section we solved the mountain car problem by directly emulating the reward but no considerations about the dynamics <span class="math inline">\(\inputVector_{t+1} = \mappingFunction(\inputVector_{t},\textbf{u}_{t})\)</span> of the system were made. Note that we had to run 75 episodes of 500 steps each to solve the problem, which required to call the simulator <span class="math inline">\(500\times 75 =37500\)</span> times. In this section we will show how it is possible to reduce this number by building an emulator for <span class="math inline">\(f\)</span> that can later be used to directly optimize the control.</p>
+<p>The inputs of the model for the dynamics are the velocity, the position and the value of the control so create this space accordingly.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> gym</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">env <span class="op">=</span> gym.make(<span class="st">&#39;MountainCarContinuous-v0&#39;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> GPyOpt</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">space_dynamics <span class="op">=</span> [{<span class="st">&#39;name&#39;</span>:<span class="st">&#39;position&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:[<span class="op">-</span><span class="fl">1.2</span>, <span class="op">+</span><span class="fl">0.6</span>]},
+                  {<span class="st">&#39;name&#39;</span>:<span class="st">&#39;velocity&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:[<span class="op">-</span><span class="fl">0.07</span>, <span class="op">+</span><span class="fl">0.07</span>]},
+                  {<span class="st">&#39;name&#39;</span>:<span class="st">&#39;action&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:[<span class="op">-</span><span class="dv">1</span>, <span class="op">+</span><span class="dv">1</span>]}]
+design_space_dynamics <span class="op">=</span> GPyOpt.Design_space(space<span class="op">=</span>space_dynamics)</code></pre></div>
+<p>The outputs are the velocity and the position. Indeed our model will capture the change in position and velocity on time. That is, we will model</p>
+<p><span class="math display">\[\Delta v_{t+1} = v_{t+1} - v_{t}\]</span></p>
+<p><span class="math display">\[\Delta x_{t+1} = p_{t+1} - p_{t}\]</span></p>
+<p>with Gaussian processes with prior mean <span class="math inline">\(v_{t}\)</span> and <span class="math inline">\(p_{t}\)</span> respectively. As a covariance function, we use a Matern52. We need therefore two models to capture the full dynamics of the system.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">position_model <span class="op">=</span> GPyOpt.models.GPModel(optimize_restarts<span class="op">=</span><span class="dv">5</span>, verbose<span class="op">=</span><span class="va">False</span>, exact_feval<span class="op">=</span><span class="va">True</span>, ARD<span class="op">=</span><span class="va">True</span>)
+velocity_model <span class="op">=</span> GPyOpt.models.GPModel(optimize_restarts<span class="op">=</span><span class="dv">5</span>, verbose<span class="op">=</span><span class="va">False</span>, exact_feval<span class="op">=</span><span class="va">True</span>, ARD<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<p>Next, we sample some input parameters and use the simulator to compute the outputs. Note that in this case we are not running the full episodes, we are just using the simulator to compute <span class="math inline">\(\inputVector_{t+1}\)</span> given <span class="math inline">\(\inputVector_{t}\)</span> and <span class="math inline">\(\textbf{u}_{t}\)</span>.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
+<span class="im">from</span> GPyOpt.experiment_design.random_design <span class="im">import</span> RandomDesign
+<span class="im">import</span> mountain_car <span class="im">as</span> mc</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">### --- Random locations of the inputs</span>
+n_initial_points <span class="op">=</span> <span class="dv">500</span>
+random_design_dynamics <span class="op">=</span> RandomDesign(design_space_dynamics)
+initial_design_dynamics <span class="op">=</span> random_design_dynamics.get_samples(n_initial_points)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">### --- Simulation of the (normalized) outputs</span>
+y <span class="op">=</span> np.zeros((initial_design_dynamics.shape[<span class="dv">0</span>], <span class="dv">2</span>))
+<span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(initial_design_dynamics.shape[<span class="dv">0</span>]):
+    y[i, :] <span class="op">=</span> mc.simulation(initial_design_dynamics[i, :])
+
+<span class="co"># Normalize the data from the simulation</span>
+y_normalisation <span class="op">=</span> np.std(y, axis<span class="op">=</span><span class="dv">0</span>)
+y_normalised <span class="op">=</span> y<span class="op">/</span>y_normalisation</code></pre></div>
+<p>In general we might use much smarter strategies to design our emulation of the simulator. For example, we could use the variance of the predictive distributions of the models to collect points using uncertainty sampling, which will give us a better coverage of the space. For simplicity, we move ahead with the 500 randomly selected points.</p>
+<p>Now that we have a data set, we can update the emulators for the location and the velocity.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">position_model.updateModel(initial_design_dynamics, y[:, [<span class="dv">0</span>]], <span class="va">None</span>, <span class="va">None</span>)
+velocity_model.updateModel(initial_design_dynamics, y[:, [<span class="dv">1</span>]], <span class="va">None</span>, <span class="va">None</span>)</code></pre></div>
+<p>We can now have a look to how the emulator and the simulator match. First, we show a contour plot of the car aceleration for each pair of can position and velocity. You can use the bar bellow to play with the values of the controler to compare the emulator and the simulator.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> IPython.html.widgets <span class="im">import</span> interact</code></pre></div>
+<p>We can see how the emulator is doing a fairly good job approximating the simulator. On the edges, however, it struggles to captures the dynamics of the simulator.</p>
+<p>Given some input parameters of the linear controlling, how do the dynamics of the emulator and simulator match? In the following figure we show the position and velocity of the car for the 500 time steps of an episode in which the parameters of the linear controller have been fixed beforehand. The value of the input control is also shown.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">controller_gains <span class="op">=</span> np.atleast_2d([<span class="dv">0</span>, .<span class="dv">6</span>, <span class="dv">1</span>])  <span class="co"># change the valus of the linear controller to observe the trayectories.</span></code></pre></div>
+<object class="svgplot " align data="../slides/diagrams/uq/emu_sim_comparison.svg" style>
+</object>
+<p>We now make explicit use of the emulator, using it to replace the simulator and optimize the linear controller. Note that in this optimization, we don't need to query the simulator anymore as we can reproduce the full dynamics of an episode using the emulator. For illustrative purposes, in this example we fix the initial location of the car.</p>
+<p>We define the objective reward function in terms of the simulator.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">### --- Optimize control parameters with emulator</span>
+car_initial_location <span class="op">=</span> np.asarray([<span class="op">-</span><span class="fl">0.58912799</span>, <span class="dv">0</span>]) 
+
+<span class="co">### --- Reward objective function using the emulator</span>
+obj_func_emulator <span class="op">=</span> <span class="kw">lambda</span> x: mc.run_emulation([position_model, velocity_model], x, car_initial_location)[<span class="dv">0</span>]
+objective_emulator <span class="op">=</span> GPyOpt.core.task.SingleObjective(obj_func_emulator)</code></pre></div>
+<p>And as before, we use Bayesian optimization to find the best possible linear controller.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">### --- Elements of the optimization that will use the multi-fidelity emulator</span>
+model <span class="op">=</span> GPyOpt.models.GPModel(optimize_restarts<span class="op">=</span><span class="dv">5</span>, verbose<span class="op">=</span><span class="va">False</span>, exact_feval<span class="op">=</span><span class="va">True</span>, ARD<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<p>The design space is the three continuous variables that make up the linear controller.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">space<span class="op">=</span> [{<span class="st">&#39;name&#39;</span>:<span class="st">&#39;linear_1&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="dv">1</span><span class="op">/</span><span class="fl">1.2</span>, <span class="op">+</span><span class="dv">1</span>)},
+        {<span class="st">&#39;name&#39;</span>:<span class="st">&#39;linear_2&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="dv">1</span><span class="op">/</span><span class="fl">0.07</span>, <span class="op">+</span><span class="dv">1</span><span class="op">/</span><span class="fl">0.07</span>)},
+        {<span class="st">&#39;name&#39;</span>:<span class="st">&#39;constant&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="dv">1</span>, <span class="op">+</span><span class="dv">1</span>)}]
+
+design_space         <span class="op">=</span> GPyOpt.Design_space(space<span class="op">=</span>space)
+aquisition_optimizer <span class="op">=</span> GPyOpt.optimization.AcquisitionOptimizer(design_space)
+
+random_design <span class="op">=</span> RandomDesign(design_space)
+initial_design <span class="op">=</span> random_design.get_samples(<span class="dv">25</span>)</code></pre></div>
+<p>We set the acquisition function to be expected improvement using <code>GPyOpt</code>.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">acquisition          <span class="op">=</span> GPyOpt.acquisitions.AcquisitionEI(model, design_space, optimizer<span class="op">=</span>aquisition_optimizer)
+evaluator            <span class="op">=</span> GPyOpt.core.evaluators.Sequential(acquisition)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">bo_emulator <span class="op">=</span> GPyOpt.methods.ModularBayesianOptimization(model, design_space, objective_emulator, acquisition, evaluator, initial_design)
+bo_emulator.run_optimization(max_iter<span class="op">=</span><span class="dv">50</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">_, _, _, frames <span class="op">=</span> mc.run_simulation(env, np.atleast_2d(bo_emulator.x_opt), render<span class="op">=</span><span class="va">True</span>)
+anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Best controller using the emulator of the dynamics&#39;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> IPython.core.display <span class="im">import</span> HTML</code></pre></div>
+<iframe src="../slides/diagrams/uq/mountain_car_emulated.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+</iframe>
+<p>And the problem is again solved, but in this case we have replaced the simulator of the car dynamics by a Gaussian process emulator that we learned by calling the simulator only 500 times. Compared to the 37500 calls that we needed when applying Bayesian optimization directly on the simulator this is a great gain.</p>
+<p>In some scenarios we have simulators of the same environment that have different fidelities, that is that reflect with different level of accuracy the dynamics of the real world. Running simulations of the different fidelities also have a different cost: hight fidelity simulations are more expensive the cheaper ones. If we have access to these simulators we can combine high and low fidelity simulations under the same model.</p>
+<p>So let's assume that we have two simulators of the mountain car dynamics, one of high fidelity (the one we have used) and another one of low fidelity. The traditional approach to this form of multi-fidelity emulation is to assume that</p>
+<p><span class="math display">\[\mappingFunction_i\left(\inputVector\right) = \rho\mappingFunction_{i-1}\left(\inputVector\right) + \delta_i\left(\inputVector \right)\]</span></p>
+<p>where <span class="math inline">\(\mappingFunction_{i-1}\left(\inputVector\right)\)</span> is a low fidelity simulation of the problem of interest and <span class="math inline">\(\mappingFunction_i\left(\inputVector\right)\)</span> is a higher fidelity simulation. The function <span class="math inline">\(\delta_i\left(\inputVector \right)\)</span> represents the difference between the lower and higher fidelity simulation, which is considered additive. The additive form of this covariance means that if <span class="math inline">\(\mappingFunction_{0}\left(\inputVector\right)\)</span> and <span class="math inline">\(\left\{\delta_i\left(\inputVector \right)\right\}_{i=1}^m\)</span> are all Gaussian processes, then the process over all fidelities of simuation will be a joint Gaussian process.</p>
+<p>But with Deep Gaussian processes we can consider the form</p>
+<p><span class="math display">\[\mappingFunction_i\left(\inputVector\right) = \mappingFunctionTwo_{i}\left(\mappingFunction_{i-1}\left(\inputVector\right)\right) + \delta_i\left(\inputVector \right),\]</span></p>
+<p>where the low fidelity representation is non linearly transformed by <span class="math inline">\(\mappingFunctionTwo(\cdot)\)</span> before use in the process. This is the approach taken in <span class="citation">Perdikaris et al. (2017)</span>. But once we accept that these models can be composed, a highly flexible framework can emerge. A key point is that the data enters the model at different levels, and represents different aspects. For example these correspond to the two fidelities of the mountain car simulator.</p>
+<p>We start by sampling both of them at 250 random input locations.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> gym</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">env <span class="op">=</span> gym.make(<span class="st">&#39;MountainCarContinuous-v0&#39;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> GPyOpt</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">### --- Collect points from low and high fidelity simulator --- </span><span class="al">###</span>
+
+space <span class="op">=</span> GPyOpt.Design_space([
+        {<span class="st">&#39;name&#39;</span>:<span class="st">&#39;position&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="fl">1.2</span>, <span class="op">+</span><span class="dv">1</span>)},
+        {<span class="st">&#39;name&#39;</span>:<span class="st">&#39;velocity&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="fl">0.07</span>, <span class="op">+</span><span class="fl">0.07</span>)},
+        {<span class="st">&#39;name&#39;</span>:<span class="st">&#39;action&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="dv">1</span>, <span class="op">+</span><span class="dv">1</span>)}])
+
+n_points <span class="op">=</span> <span class="dv">250</span>
+random_design <span class="op">=</span> GPyOpt.experiment_design.RandomDesign(space)
+x_random <span class="op">=</span> random_design.get_samples(n_points)</code></pre></div>
+<p>Next, we evaluate the high and low fidelity simualtors at those locations.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
+<span class="im">import</span> mountain_car <span class="im">as</span> mc</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">d_position_hf <span class="op">=</span> np.zeros((n_points, <span class="dv">1</span>))
+d_velocity_hf <span class="op">=</span> np.zeros((n_points, <span class="dv">1</span>))
+d_position_lf <span class="op">=</span> np.zeros((n_points, <span class="dv">1</span>))
+d_velocity_lf <span class="op">=</span> np.zeros((n_points, <span class="dv">1</span>))
+
+<span class="co"># --- Collect high fidelity points</span>
+<span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, n_points):
+    d_position_hf[i], d_velocity_hf[i] <span class="op">=</span> mc.simulation(x_random[i, :])
+
+<span class="co"># --- Collect low fidelity points  </span>
+<span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, n_points):
+    d_position_lf[i], d_velocity_lf[i] <span class="op">=</span> mc.low_cost_simulation(x_random[i, :])</code></pre></div>
+<p>It is time to build the multi-fidelity model for both the position and the velocity.</p>
+<p>As we did in the previous section we use the emulator to optimize the simulator. In this case we use the high fidelity output of the emulator.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">### --- Optimize controller parameters </span>
+obj_func <span class="op">=</span> <span class="kw">lambda</span> x: mc.run_simulation(env, x)[<span class="dv">0</span>]
+obj_func_emulator <span class="op">=</span> <span class="kw">lambda</span> x: mc.run_emulation([position_model, velocity_model], x, car_initial_location)[<span class="dv">0</span>]
+objective_multifidelity <span class="op">=</span> GPyOpt.core.task.SingleObjective(obj_func)</code></pre></div>
+<p>And we optimize using Bayesian optimzation.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> GPyOpt.experiment_design.random_design <span class="im">import</span> RandomDesign</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">model <span class="op">=</span> GPyOpt.models.GPModel(optimize_restarts<span class="op">=</span><span class="dv">5</span>, verbose<span class="op">=</span><span class="va">False</span>, exact_feval<span class="op">=</span><span class="va">True</span>, ARD<span class="op">=</span><span class="va">True</span>)
+space<span class="op">=</span> [{<span class="st">&#39;name&#39;</span>:<span class="st">&#39;linear_1&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="dv">1</span><span class="op">/</span><span class="fl">1.2</span>, <span class="op">+</span><span class="dv">1</span>)},
+        {<span class="st">&#39;name&#39;</span>:<span class="st">&#39;linear_2&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="dv">1</span><span class="op">/</span><span class="fl">0.07</span>, <span class="op">+</span><span class="dv">1</span><span class="op">/</span><span class="fl">0.07</span>)},
+        {<span class="st">&#39;name&#39;</span>:<span class="st">&#39;constant&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="dv">1</span>, <span class="op">+</span><span class="dv">1</span>)}]
+
+design_space <span class="op">=</span> GPyOpt.Design_space(space<span class="op">=</span>space)
+aquisition_optimizer <span class="op">=</span> GPyOpt.optimization.AcquisitionOptimizer(design_space)
+
+n_initial_points <span class="op">=</span> <span class="dv">25</span>
+random_design <span class="op">=</span> RandomDesign(design_space)
+initial_design <span class="op">=</span> random_design.get_samples(n_initial_points)
+acquisition <span class="op">=</span> GPyOpt.acquisitions.AcquisitionEI(model, design_space, optimizer<span class="op">=</span>aquisition_optimizer)
+evaluator <span class="op">=</span> GPyOpt.core.evaluators.Sequential(acquisition)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">bo_multifidelity <span class="op">=</span> GPyOpt.methods.ModularBayesianOptimization(model, design_space, objective_multifidelity, acquisition, evaluator, initial_design)
+bo_multifidelity.run_optimization(max_iter<span class="op">=</span><span class="dv">50</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">_, _, _, frames <span class="op">=</span> mc.run_simulation(env, np.atleast_2d(bo_multifidelity.x_opt), render<span class="op">=</span><span class="va">True</span>)
+anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Best controller with multi-fidelity emulator&#39;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> IPython.core.display <span class="im">import</span> HTML</code></pre></div>
+
+<iframe src="../slides/diagrams/uq/mountain_car_multi_fidelity.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+</iframe>
+<p>And problem solved! We see how the problem is also solved with 250 observations of the high fidelity simulator and 250 of the low fidelity simulator.</p>
+<p>Stefanos Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Dai, Javier Gonzalez, Andreas Damianou, Mark Pullin.</p>
+<ul>
+<li>Powerful framework but</li>
+<li>Software isn't there yet.</li>
+<li>Our focus: Gaussian Processes driven by MXNet</li>
+<li><p>Composition of GPs, Neural Networks, Other Models</p></li>
+<li>twitter: @lawrennd</li>
+<li><p>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></p></li>
+</ul>
+<p>{.allowframebreaks}</p>
+<div id="refs" class="references">
+<div id="ref-Alaa:deep2017">
+<p>Alaa, A.M., van der Schaar, M., 2017. Deep multi-task Gaussian processes for survival analysis with competing risks, in: Guyon, I., Luxburg, U.V., Bengio, S., Wallach, H., Fergus, R., Vishwanathan, S., Garnett, R. (Eds.), Advances in Neural Information Processing Systems 30. Curran Associates, Inc., pp. 2326–2334.</p>
+</div>
+<div id="ref-Bengio:deep09">
+<p>Bengio, Y., 2009. Learning Deep Architectures for AI. Found. Trends Mach. Learn. 2, 1–127. <a href="https://doi.org/10.1561/2200000006" class="uri">https://doi.org/10.1561/2200000006</a></p>
+</div>
+<div id="ref-Thang:unifying17">
+<p>Bui, T.D., Yan, J., Turner, R.E., 2017. A unifying framework for gaussian process pseudo-point approximations using power expectation propagation. Journal of Machine Learning Research 18, 1–72.</p>
+</div>
+<div id="ref-Cho:deep09">
+<p>Cho, Y., Saul, L.K., 2009. Kernel methods for deep learning, in: Bengio, Y., Schuurmans, D., Lafferty, J.D., Williams, C.K.I., Culotta, A. (Eds.), Advances in Neural Information Processing Systems 22. Curran Associates, Inc., pp. 342–350.</p>
+</div>
+<div id="ref-Damianou:thesis2015">
+<p>Damianou, A., 2015. Deep gaussian processes and variational propagation of uncertainty (PhD thesis). University of Sheffield.</p>
+</div>
+<div id="ref-Dunlop:deep2017">
+<p>Dunlop, M.M., Girolami, M., Stuart, A.M., Teckentrup, A.L., 2017. How Deep Are Deep Gaussian Processes? ArXiv e-prints.</p>
+</div>
+<div id="ref-Duvenaud:pathologies14">
+<p>Duvenaud, D., Rippel, O., Adams, R., Ghahramani, Z., 2014. Avoiding pathologies in very deep networks, in:.</p>
+</div>
+<div id="ref-Hinton:fast06">
+<p>Hinton, G.E., Osindero, S., 2006. A fast learning algorithm for deep belief nets. Neural Computation 18, 2006.</p>
+</div>
+<div id="ref-Ioffe:batch15">
+<p>Ioffe, S., Szegedy, C., 2015. Batch normalization: Accelerating deep network training by reducing internal covariate shift, in: Bach, F., Blei, D. (Eds.), Proceedings of the 32nd International Conference on Machine Learning, Proceedings of Machine Learning Research. PMLR, Lille, France, pp. 448–456.</p>
+</div>
+<div id="ref-MacKay:bayesian92">
+<p>MacKay, D.J.C., 1992. Bayesian methods for adaptive models (PhD thesis). California Institute of Technology.</p>
+</div>
+<div id="ref-Mattos:recurrent15">
+<p>Mattos, C.L.C., Dai, Z., Damianou, A.C., Forth, J., Barreto, G.A., Lawrence, N.D., 2015. Recurrent gaussian processes. CoRR abs/1511.06644.</p>
+</div>
+<div id="ref-McCulloch:neuron43">
+<p>McCulloch, W.S., Pitts, W., 1943. A logical calculus of the ideas immanent in nervous activity. Bulletin of Mathematical Biophysics 5, 115–133.</p>
+</div>
+<div id="ref-Neal:bayesian94">
+<p>Neal, R.M., 1994. Bayesian learning for neural networks (PhD thesis). Dept. of Computer Science, University of Toronto.</p>
+</div>
+<div id="ref-Pearl:causality95">
+<p>Pearl, J., 1995. From Bayesian networks to causal networks, in: Gammerman, A. (Ed.), Probabilistic Reasoning and Bayesian Belief Networks. Alfred Waller, pp. 1–31.</p>
+</div>
+<div id="ref-Perdikaris:multifidelity17">
+<p>Perdikaris, P., Raissi, M., Damianou, A., Lawrence, N.D., Karniadakis, G.E., 2017. Nonlinear information fusion algorithms for data-efficient multi-fidelity modelling. Proceedings of the Royal Society of London A: Mathematical, Physical and Engineering Sciences 473. <a href="https://doi.org/10.1098/rspa.2016.0751" class="uri">https://doi.org/10.1098/rspa.2016.0751</a></p>
+</div>
+<div id="ref-Ranganath-survival16">
+<p>Ranganath, R., Perotte, A., Elhadad, N., Blei, D., 2016. Deep survival analysis, in: Doshi-Velez, F., Fackler, J., Kale, D., Wallace, B., Wiens, J. (Eds.), Proceedings of the 1st Machine Learning for Healthcare Conference, Proceedings of Machine Learning Research. PMLR, Children’s Hospital LA, Los Angeles, CA, USA, pp. 101–114.</p>
+</div>
+<div id="ref-Salakhutdinov:quantitative08">
+<p>Salakhutdinov, R., Murray, I., n.d. On the quantitative analysis of deep belief networks, in:. pp. 872–879.</p>
+</div>
+<div id="ref-Salimbeni:doubly2017">
+<p>Salimbeni, H., Deisenroth, M., 2017. Doubly stochastic variational inference for deep gaussian processes, in: Guyon, I., Luxburg, U.V., Bengio, S., Wallach, H., Fergus, R., Vishwanathan, S., Garnett, R. (Eds.), Advances in Neural Information Processing Systems 30. Curran Associates, Inc., pp. 4591–4602.</p>
+</div>
+<div id="ref-Saul:thesis2016">
+<p>Saul, A.D., 2016. Gaussian process based approaches for survival analysis (PhD thesis). University of Sheffield.</p>
+</div>
+<div id="ref-Schulam:counterfactual17">
+<p>Schulam, P., Saria, S., 2017. Counterfactual gaussian processes for reliable decision-making and what-if reasoning, in: Guyon, I., Luxburg, U.V., Bengio, S., Wallach, H., Fergus, R., Vishwanathan, S., Garnett, R. (Eds.), Advances in Neural Information Processing Systems 30. Curran Associates, Inc., pp. 1696–1706.</p>
+</div>
+<div id="ref-Steele:predictive12">
+<p>Steele, S., Bilchik, A., Eberhardt, J., Kalina, P., Nissan, A., Johnson, E., Avital, I., Stojadinovic, A., 2012. Using machine-learned Bayesian belief networks to predict perioperative risk of clostridium difficile infection following colon surgery. Interact J Med Res 1, e6. <a href="https://doi.org/10.2196/ijmr.2131" class="uri">https://doi.org/10.2196/ijmr.2131</a></p>
+</div>
+<div id="ref-Tipping:probpca99">
+<p>Tipping, M.E., Bishop, C.M., 1999. Probabilistic principal component analysis. Journal of the Royal Statistical Society, B 6, 611–622. <a href="https://doi.org/doi:10.1111/1467-9868.00196" class="uri">https://doi.org/doi:10.1111/1467-9868.00196</a></p>
+</div>
+<div id="ref-Anqi:gpspike2017">
+<p>Wu, A., Roy, N.G., Keeley, S., Pillow, J.W., 2017. Gaussian process based nonlinear latent structure discovery in multivariate spike train data, in: Guyon, I., Luxburg, U.V., Bengio, S., Wallach, H., Fergus, R., Vishwanathan, S., Garnett, R. (Eds.), Advances in Neural Information Processing Systems 30. Curran Associates, Inc., pp. 3499–3508.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>In classical statistics we often interpret these parameters, <span class="math inline">\(\beta\)</span>, whereas in machine learning we are normally more interested in the result of the prediction, and less in the prediction. Although this is changing with more need for accountability. In honour of this I normally use <span class="math inline">\(\boldsymbol{\beta}\)</span> when I care about the value of these parameters, and <span class="math inline">\(\mappingVector\)</span> when I care more about the quality of the prediction.<a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
+
+
