@@ -8,7 +8,7 @@ $$\mappingFunction_i\left(\inputVector\right) = \rho\mappingFunction_{i-1}\left(
 
 But with Deep Gaussian processes we can consider the form }
 
-\slides{### Multi-Fidelity Emulation}
+\newslide{Multi-Fidelity Emulation}
 
 $$\mappingFunction_i\left(\inputVector\right) = \mappingFunctionTwo_{i}\left(\mappingFunction_{i-1}\left(\inputVector\right)\right) + \delta_i\left(\inputVector \right),$$
 
@@ -90,8 +90,7 @@ anim=mc.animate_frames(frames, 'Best controller with multi-fidelity emulator')}
                   diagrams='../slides/diagrams/uq', 
 				  filename='mountain_car_multi_fidelity.html')}
 
-\slides{
-### Best Controller with Multi-Fidelity Emulator}
+\newgslide{Best Controller with Multi-Fidelity Emulator}
 
 \includehtml{../slides/diagrams/uq/mountain_car_multi_fidelity.html}{1024}{768}
 

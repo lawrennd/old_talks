@@ -42,4 +42,4 @@
 }
 \newslide{Worked Example: Delivery Drones}
 
-\includeyoutube{vNySOrI2Ny8}
+\includeyoutube{vNySOrI2Ny8}{800}{600}

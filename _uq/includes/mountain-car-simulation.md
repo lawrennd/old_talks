@@ -1,9 +1,10 @@
 
-### Mountain Car Simulator
+\subsection{Mountain Car Simulator}
 
 \notes{To illustrate the above mentioned concepts we we use the [mountain car simulator](https://github.com/openai/gym/wiki/MountainCarContinuous-v0). This simulator is widely used in machine learning to test reinforcement learning algorithms. The goal is to define a control policy on a car whose objective is to climb a mountain. Graphically, the problem looks as follows:}
 
-\includeimg{../slides/diagrams/uq/mountaincar.png}{negate}
+\includepng{../slides/diagrams/uq/mountaincar}{}{negate}
+\notes{\caption{The mountain car simulation from the Open AI gym.}}
 
 \notes{The goal is to define a sequence of actions (push the car right or left with certain intensity) to make the car reach the flag after a number $T$ of time steps.
 
@@ -97,8 +98,7 @@ anim=mc.animate_frames(frames, 'Random linear controller')}
                   diagrams='../slides/diagrams/uq', 
 				  filename='mountain_car_random.html')}
 
-\slides{
-### Random Linear Controller}
+\newslide{Random Linear Controller}
 
 \includehtml{../slides/diagrams/uq/mountain_car_random.html}{1024}{768}
 
@@ -120,8 +120,7 @@ anim=mc.animate_frames(frames, 'Best controller after 50 iterations of Bayesian 
                   diagrams='../slides/diagrams/uq', 
 				  filename='mountain_car_simulated.html')}
 
-\slides{
-### Best Controller after 50 Iterations of Bayesian Optimization}
+\newslide{Best Controller after 50 Iterations of Bayesian Optimization}
 
 \includehtml{../slides/diagrams/uq/mountain_car_simulated.html}{1024}{768}
 

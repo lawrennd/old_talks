@@ -1,4 +1,4 @@
-### Data Efficient Emulation
+\subsection{Data Efficient Emulation}
 
 \slides{
 * For standard Bayesian Optimization ignored *dynamics* of the car.
@@ -54,9 +54,8 @@ for i in range(initial_design_dynamics.shape[0]):
 y_normalisation = np.std(y, axis=0)
 y_normalised = y/y_normalisation}
 
+\newslide{Emulator Training}
 \slides{
-### Emulator Training
-
 * Used 500 randomly selected points to train emulators.
 
 * Can make proces smore efficient through *experimental design*.
@@ -76,8 +75,6 @@ velocity_model.updateModel(initial_design_dynamics, y[:, [1]], None, None)}
 \plotcode{control = mc.plot_control(velocity_model)
 interact(control.plot_slices, control=(-1, 1, 0.05))}
 
-<!--\slides{
-### Emulator Accuracy}-->
 
 \notes{We can see how the emulator is doing a fairly good job approximating the simulator. On the edges, however, it struggles to captures the dynamics of the simulator. 
 
@@ -88,8 +85,7 @@ Given some input parameters of the linear controlling, how do the dynamics of th
 \plotcode{mc.emu_sim_comparison(env, controller_gains, [position_model, velocity_model], 
                       max_steps=500, diagrams='../slides/diagrams/uq')}
 
-\slides{
-### Comparison of Emulation and Simulation}
+\newslide{Comparison of Emulation and Simulation}
 
 \includesvg{../slides/diagrams/uq/emu_sim_comparison.svg}
 
@@ -139,16 +135,16 @@ anim=mc.animate_frames(frames, 'Best controller using the emulator of the dynami
 \plotcode{mc.save_frames(frames, 
                   diagrams='../slides/diagrams/uq', 
 				  filename='mountain_car_emulated.html')}
-\slides{
-### Data Efficiency
 
+\newslide{Data Efficiency}
+
+\slides{
 * Our emulator used only 500 calls to the simulator.
 
 * Optimizing the simulator directly required 37,500 calls to the simulator.
 }
 
-\slides{
-### Best Controller using Emulator of Dynamics}
+\newslide{Best Controller using Emulator of Dynamics}
 
 \includehtml{../slides/diagrams/uq/mountain_car_emulated.html}{1024}{768}
 
