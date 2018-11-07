@@ -1,4 +1,4 @@
-\define{\formula}{
+
 \loadplotcode{eq_cov}{mlai}
 
 \setupplotcode{import teaching_plots as plot
