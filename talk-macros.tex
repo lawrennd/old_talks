@@ -360,3 +360,7 @@ showDivs(\start, '\group');
 \define{\fragmentdiv{contents}{number}{style}}{<div class="fragment" data-fragment-index="\number" style="\style">\contents</div>}
 
 \define{\linebreak}{<br>}
+
+
+\define{\includejpg{filename}{width}{class}}{\div{\includeimg{\concat{\filename}{.jpg}}{\width}{\class}{center}}{}{text-align:center}}
+\define{\includepng{filename}{width}{class}}{\div{\includeimg{\concat{\filename}{.png}}{\width}{\class}{center}}{}{text-align:center}}
