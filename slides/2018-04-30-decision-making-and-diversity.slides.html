@@ -3,14 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="author" content="Neil D. Lawrence">
-  <meta name="dcterms.date" content="2018-04-30">
   <title>Decision Making and Diversity: The Folly of Value Alignment</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="reveal.js/css/reveal.css">
-  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
   <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
   <link rel="stylesheet" href="talks.css"/>
   <!-- Printing and PDF exports -->
@@ -25,42 +28,370 @@
   <script src="reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
-      <script type="text/javascript" src="svg_mathjax.js">
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          TeX: {
+            extensions: ["color.js"]
+          }
+        });
       </script>
-      <script type="text/javascript">
-          new Svg_MathJax().install();
+      <script>
+  
+  function setDivs(group) {
+    var frame = document.getElementById("range-".concat(group)).value
+    slideIndex = parseInt(frame)
+    showDivs(slideIndex, group);
+  }
+  
+  function plusDivs(n, group) {
+    showDivs(slideIndex += n, group);
+    document.setElementById("range-".concat(group)) = slideIndex
+  }
+  
+  function showDivs(n,group) {
+    var i;
+    var x = document.getElementsByClassName(group);
+    if (n > x.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = x.length}
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    x[slideIndex-1].style.display = "block";  
+  }
       </script>
 </head>
 <body>
+\[\newcommand{\Amatrix}{\mathbf{A}}
+\newcommand{\KL}[2]{\text{KL}\left( #1\,\|\,#2 \right)}
+\newcommand{\Kaast}{\kernelMatrix_{\mathbf{ \ast}\mathbf{ \ast}}}
+\newcommand{\Kastu}{\kernelMatrix_{\mathbf{ \ast} \inducingVector}}
+\newcommand{\Kff}{\kernelMatrix_{\mappingFunctionVector \mappingFunctionVector}}
+\newcommand{\Kfu}{\kernelMatrix_{\mappingFunctionVector \inducingVector}}
+\newcommand{\Kuast}{\kernelMatrix_{\inducingVector \bf\ast}}
+\newcommand{\Kuf}{\kernelMatrix_{\inducingVector \mappingFunctionVector}}
+\newcommand{\Kuu}{\kernelMatrix_{\inducingVector \inducingVector}}
+\newcommand{\Kuui}{\Kuu^{-1}}
+\newcommand{\Qaast}{\mathbf{Q}_{\bf \ast \ast}}
+\newcommand{\Qastf}{\mathbf{Q}_{\ast \mappingFunction}}
+\newcommand{\Qfast}{\mathbf{Q}_{\mappingFunctionVector \bf \ast}}
+\newcommand{\Qff}{\mathbf{Q}_{\mappingFunctionVector \mappingFunctionVector}}
+\newcommand{\aMatrix}{\mathbf{A}}
+\newcommand{\aScalar}{a}
+\newcommand{\aVector}{\mathbf{a}}
+\newcommand{\acceleration}{a}
+\newcommand{\bMatrix}{\mathbf{B}}
+\newcommand{\bScalar}{b}
+\newcommand{\bVector}{\mathbf{b}}
+\newcommand{\basisFunc}{\phi}
+\newcommand{\basisFuncVector}{\boldsymbol{ \basisFunc}}
+\newcommand{\basisFunction}{\phi}
+\newcommand{\basisLocation}{\mu}
+\newcommand{\basisMatrix}{\boldsymbol{ \Phi}}
+\newcommand{\basisScalar}{\basisFunction}
+\newcommand{\basisVector}{\boldsymbol{ \basisFunction}}
+\newcommand{\activationFunction}{\phi}
+\newcommand{\activationMatrix}{\boldsymbol{ \Phi}}
+\newcommand{\activationScalar}{\basisFunction}
+\newcommand{\activationVector}{\boldsymbol{ \basisFunction}}
+\newcommand{\bigO}{\mathcal{O}}
+\newcommand{\binomProb}{\pi}
+\newcommand{\cMatrix}{\mathbf{C}}
+\newcommand{\cbasisMatrix}{\hat{\boldsymbol{ \Phi}}}
+\newcommand{\cdataMatrix}{\hat{\dataMatrix}}
+\newcommand{\cdataScalar}{\hat{\dataScalar}}
+\newcommand{\cdataVector}{\hat{\dataVector}}
+\newcommand{\centeredKernelMatrix}{\mathbf{ \MakeUppercase{\centeredKernelScalar}}}
+\newcommand{\centeredKernelScalar}{b}
+\newcommand{\centeredKernelVector}{\centeredKernelScalar}
+\newcommand{\centeringMatrix}{\mathbf{H}}
+\newcommand{\chiSquaredDist}[2]{\chi_{#1}^{2}\left(#2\right)}
+\newcommand{\chiSquaredSamp}[1]{\chi_{#1}^{2}}
+\newcommand{\conditionalCovariance}{\boldsymbol{ \Sigma}}
+\newcommand{\coregionalizationMatrix}{\mathbf{B}}
+\newcommand{\coregionalizationScalar}{b}
+\newcommand{\coregionalizationVector}{\mathbf{ \coregionalizationScalar}}
+\newcommand{\covDist}[2]{\text{cov}_{#2}\left(#1\right)}
+\newcommand{\covSamp}[1]{\text{cov}\left(#1\right)}
+\newcommand{\covarianceScalar}{c}
+\newcommand{\covarianceVector}{\mathbf{ \covarianceScalar}}
+\newcommand{\covarianceMatrix}{\mathbf{C}}
+\newcommand{\covarianceMatrixTwo}{\boldsymbol{ \Sigma}}
+\newcommand{\croupierScalar}{s}
+\newcommand{\croupierVector}{\mathbf{ \croupierScalar}}
+\newcommand{\croupierMatrix}{\mathbf{ \MakeUppercase{\croupierScalar}}}
+\newcommand{\dataDim}{p}
+\newcommand{\dataIndex}{i}
+\newcommand{\dataIndexTwo}{j}
+\newcommand{\dataMatrix}{\mathbf{Y}}
+\newcommand{\dataScalar}{y}
+\newcommand{\dataSet}{\mathcal{D}}
+\newcommand{\dataStd}{\sigma}
+\newcommand{\dataVector}{\mathbf{ \dataScalar}}
+\newcommand{\decayRate}{d}
+\newcommand{\degreeMatrix}{\mathbf{ \MakeUppercase{\degreeScalar}}}
+\newcommand{\degreeScalar}{d}
+\newcommand{\degreeVector}{\mathbf{ \degreeScalar}}
+% Already defined by latex
+%\newcommand{\det}[1]{\left|#1\right|}
+\newcommand{\diag}[1]{\text{diag}\left(#1\right)}
+\newcommand{\diagonalMatrix}{\mathbf{D}}
+\newcommand{\diff}[2]{\frac{\text{d}#1}{\text{d}#2}}
+\newcommand{\diffTwo}[2]{\frac{\text{d}^2#1}{\text{d}#2^2}}
+\newcommand{\displacement}{x}
+\newcommand{\displacementVector}{\textbf{\displacement}}
+\newcommand{\distanceMatrix}{\mathbf{ \MakeUppercase{\distanceScalar}}}
+\newcommand{\distanceScalar}{d}
+\newcommand{\distanceVector}{\mathbf{ \distanceScalar}}
+\newcommand{\eigenvaltwo}{\ell}
+\newcommand{\eigenvaltwoMatrix}{\mathbf{L}}
+\newcommand{\eigenvaltwoVector}{\mathbf{l}}
+\newcommand{\eigenvalue}{\lambda}
+\newcommand{\eigenvalueMatrix}{\boldsymbol{ \Lambda}}
+\newcommand{\eigenvalueVector}{\boldsymbol{ \lambda}}
+\newcommand{\eigenvector}{\mathbf{ \eigenvectorScalar}}
+\newcommand{\eigenvectorMatrix}{\mathbf{U}}
+\newcommand{\eigenvectorScalar}{u}
+\newcommand{\eigenvectwo}{\mathbf{v}}
+\newcommand{\eigenvectwoMatrix}{\mathbf{V}}
+\newcommand{\eigenvectwoScalar}{v}
+\newcommand{\entropy}[1]{\mathcal{H}\left(#1\right)}
+\newcommand{\errorFunction}{E}
+\newcommand{\expDist}[2]{\left<#1\right>_{#2}}
+\newcommand{\expSamp}[1]{\left<#1\right>}
+\newcommand{\expectation}[1]{\left\langle #1 \right\rangle }
+\newcommand{\expectationDist}[2]{\left\langle #1 \right\rangle _{#2}}
+\newcommand{\expectedDistanceMatrix}{\mathcal{D}}
+\newcommand{\eye}{\mathbf{I}}
+\newcommand{\fantasyDim}{r}
+\newcommand{\fantasyMatrix}{\mathbf{ \MakeUppercase{\fantasyScalar}}}
+\newcommand{\fantasyScalar}{z}
+\newcommand{\fantasyVector}{\mathbf{ \fantasyScalar}}
+\newcommand{\featureStd}{\varsigma}
+\newcommand{\gammaCdf}[3]{\mathcal{GAMMA CDF}\left(#1|#2,#3\right)}
+\newcommand{\gammaDist}[3]{\mathcal{G}\left(#1|#2,#3\right)}
+\newcommand{\gammaSamp}[2]{\mathcal{G}\left(#1,#2\right)}
+\newcommand{\gaussianDist}[3]{\mathcal{N}\left(#1|#2,#3\right)}
+\newcommand{\gaussianSamp}[2]{\mathcal{N}\left(#1,#2\right)}
+\newcommand{\given}{|}
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\heaviside}{H}
+\newcommand{\hiddenMatrix}{\mathbf{ \MakeUppercase{\hiddenScalar}}}
+\newcommand{\hiddenScalar}{h}
+\newcommand{\hiddenVector}{\mathbf{ \hiddenScalar}}
+\newcommand{\identityMatrix}{\eye}
+\newcommand{\inducingInputScalar}{z}
+\newcommand{\inducingInputVector}{\mathbf{ \inducingInputScalar}}
+\newcommand{\inducingInputMatrix}{\mathbf{Z}}
+\newcommand{\inducingScalar}{u}
+\newcommand{\inducingVector}{\mathbf{ \inducingScalar}}
+\newcommand{\inducingMatrix}{\mathbf{U}}
+\newcommand{\inlineDiff}[2]{\text{d}#1/\text{d}#2}
+\newcommand{\inputDim}{q}
+\newcommand{\inputMatrix}{\mathbf{X}}
+\newcommand{\inputScalar}{x}
+\newcommand{\inputSpace}{\mathcal{X}}
+\newcommand{\inputVals}{\inputVector}
+\newcommand{\inputVector}{\mathbf{ \inputScalar}}
+\newcommand{\iterNum}{k}
+\newcommand{\kernel}{\kernelScalar}
+\newcommand{\kernelMatrix}{\mathbf{K}}
+\newcommand{\kernelScalar}{k}
+\newcommand{\kernelVector}{\mathbf{ \kernelScalar}}
+\newcommand{\kff}{\kernelScalar_{\mappingFunction \mappingFunction}}
+\newcommand{\kfu}{\kernelVector_{\mappingFunction \inducingScalar}}
+\newcommand{\kuf}{\kernelVector_{\inducingScalar \mappingFunction}}
+\newcommand{\kuu}{\kernelVector_{\inducingScalar \inducingScalar}}
+\newcommand{\lagrangeMultiplier}{\lambda}
+\newcommand{\lagrangeMultiplierMatrix}{\boldsymbol{ \Lambda}}
+\newcommand{\lagrangian}{L}
+\newcommand{\laplacianFactor}{\mathbf{ \MakeUppercase{\laplacianFactorScalar}}}
+\newcommand{\laplacianFactorScalar}{m}
+\newcommand{\laplacianFactorVector}{\mathbf{ \laplacianFactorScalar}}
+\newcommand{\laplacianMatrix}{\mathbf{L}}
+\newcommand{\laplacianScalar}{\ell}
+\newcommand{\laplacianVector}{\mathbf{ \ell}}
+\newcommand{\latentDim}{q}
+\newcommand{\latentDistanceMatrix}{\boldsymbol{ \Delta}}
+\newcommand{\latentDistanceScalar}{\delta}
+\newcommand{\latentDistanceVector}{\boldsymbol{ \delta}}
+\newcommand{\latentForce}{f}
+\newcommand{\latentFunction}{u}
+\newcommand{\latentFunctionVector}{\mathbf{ \latentFunction}}
+\newcommand{\latentFunctionMatrix}{\mathbf{ \MakeUppercase{\latentFunction}}}
+\newcommand{\latentIndex}{j}
+\newcommand{\latentScalar}{z}
+\newcommand{\latentVector}{\mathbf{ \latentScalar}}
+\newcommand{\latentMatrix}{\mathbf{Z}}
+\newcommand{\learnRate}{\eta}
+\newcommand{\lengthScale}{\ell}
+\newcommand{\rbfWidth}{\ell}
+\newcommand{\likelihoodBound}{\mathcal{L}}
+\newcommand{\likelihoodFunction}{L}
+\newcommand{\locationScalar}{\mu}
+\newcommand{\locationVector}{\boldsymbol{ \locationScalar}}
+\newcommand{\locationMatrix}{\mathbf{M}}
+\newcommand{\variance}[1]{\text{var}\left( #1 \right)}
+\newcommand{\mappingFunction}{f}
+\newcommand{\mappingFunctionMatrix}{\mathbf{F}}
+\newcommand{\mappingFunctionTwo}{g}
+\newcommand{\mappingFunctionTwoMatrix}{\mathbf{G}}
+\newcommand{\mappingFunctionTwoVector}{\mathbf{ \mappingFunctionTwo}}
+\newcommand{\mappingFunctionVector}{\mathbf{ \mappingFunction}}
+\newcommand{\scaleScalar}{s}
+\newcommand{\mappingScalar}{w}
+\newcommand{\mappingVector}{\mathbf{ \mappingScalar}}
+\newcommand{\mappingMatrix}{\mathbf{W}}
+\newcommand{\mappingScalarTwo}{v}
+\newcommand{\mappingVectorTwo}{\mathbf{ \mappingScalarTwo}}
+\newcommand{\mappingMatrixTwo}{\mathbf{V}}
+\newcommand{\maxIters}{K}
+\newcommand{\meanMatrix}{\mathbf{M}}
+\newcommand{\meanScalar}{\mu}
+\newcommand{\meanTwoMatrix}{\mathbf{M}}
+\newcommand{\meanTwoScalar}{m}
+\newcommand{\meanTwoVector}{\mathbf{ \meanTwoScalar}}
+\newcommand{\meanVector}{\boldsymbol{ \meanScalar}}
+\newcommand{\mrnaConcentration}{m}
+\newcommand{\naturalFrequency}{\omega}
+\newcommand{\neighborhood}[1]{\mathcal{N}\left( #1 \right)}
+\newcommand{\neilurl}{http://inverseprobability.com/}
+\newcommand{\noiseMatrix}{\boldsymbol{ E}}
+\newcommand{\noiseScalar}{\epsilon}
+\newcommand{\noiseVector}{\boldsymbol{ \epsilon}}
+\newcommand{\norm}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\normalizedLaplacianMatrix}{\hat{\mathbf{L}}}
+\newcommand{\normalizedLaplacianScalar}{\hat{\ell}}
+\newcommand{\normalizedLaplacianVector}{\hat{\mathbf{ \ell}}}
+\newcommand{\numActive}{m}
+\newcommand{\numBasisFunc}{m}
+\newcommand{\numComponents}{m}
+\newcommand{\numComps}{K}
+\newcommand{\numData}{n}
+\newcommand{\numFeatures}{K}
+\newcommand{\numHidden}{h}
+\newcommand{\numInducing}{m}
+\newcommand{\numLayers}{\ell}
+\newcommand{\numNeighbors}{K}
+\newcommand{\numSequences}{s}
+\newcommand{\numSuccess}{s}
+\newcommand{\numTasks}{m}
+\newcommand{\numTime}{T}
+\newcommand{\numTrials}{S}
+\newcommand{\outputIndex}{j}
+\newcommand{\paramVector}{\boldsymbol{ \theta}}
+\newcommand{\parameterMatrix}{\boldsymbol{ \Theta}}
+\newcommand{\parameterScalar}{\theta}
+\newcommand{\parameterVector}{\boldsymbol{ \parameterScalar}}
+\newcommand{\partDiff}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\precisionScalar}{j}
+\newcommand{\precisionVector}{\mathbf{ \precisionScalar}}
+\newcommand{\precisionMatrix}{\mathbf{J}}
+\newcommand{\pseudotargetScalar}{\widetilde{y}}
+\newcommand{\pseudotargetVector}{\mathbf{ \pseudotargetScalar}}
+\newcommand{\pseudotargetMatrix}{\mathbf{ \widetilde{Y}}}
+\newcommand{\rank}[1]{\text{rank}\left(#1\right)}
+\newcommand{\rayleighDist}[2]{\mathcal{R}\left(#1|#2\right)}
+\newcommand{\rayleighSamp}[1]{\mathcal{R}\left(#1\right)}
+\newcommand{\responsibility}{r}
+\newcommand{\rotationScalar}{r}
+\newcommand{\rotationVector}{\mathbf{ \rotationScalar}}
+\newcommand{\rotationMatrix}{\mathbf{R}}
+\newcommand{\sampleCovScalar}{s}
+\newcommand{\sampleCovVector}{\mathbf{ \sampleCovScalar}}
+\newcommand{\sampleCovMatrix}{\mathbf{s}}
+\newcommand{\scalarProduct}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\sign}[1]{\text{sign}\left(#1\right)}
+\newcommand{\sigmoid}[1]{\sigma\left(#1\right)}
+\newcommand{\singularvalue}{\ell}
+\newcommand{\singularvalueMatrix}{\mathbf{L}}
+\newcommand{\singularvalueVector}{\mathbf{l}}
+\newcommand{\sorth}{\mathbf{u}}
+\newcommand{\spar}{\lambda}
+\newcommand{\trace}[1]{\text{tr}\left(#1\right)}
+\newcommand{\BasalRate}{B}
+\newcommand{\DampingCoefficient}{C}
+\newcommand{\DecayRate}{D}
+\newcommand{\Displacement}{X}
+\newcommand{\LatentForce}{F}
+\newcommand{\Mass}{M}
+\newcommand{\Sensitivity}{S}
+\newcommand{\basalRate}{b}
+\newcommand{\dampingCoefficient}{c}
+\newcommand{\mass}{m}
+\newcommand{\sensitivity}{s}
+\newcommand{\springScalar}{\kappa}
+\newcommand{\springVector}{\boldsymbol{ \kappa}}
+\newcommand{\springMatrix}{\boldsymbol{ \mathcal{K}}}
+\newcommand{\tfConcentration}{p}
+\newcommand{\tfDecayRate}{\delta}
+\newcommand{\tfMrnaConcentration}{f}
+\newcommand{\tfVector}{\mathbf{ \tfConcentration}}
+\newcommand{\velocity}{v}
+\newcommand{\sufficientStatsScalar}{g}
+\newcommand{\sufficientStatsVector}{\mathbf{ \sufficientStatsScalar}}
+\newcommand{\sufficientStatsMatrix}{\mathbf{G}}
+\newcommand{\switchScalar}{s}
+\newcommand{\switchVector}{\mathbf{ \switchScalar}}
+\newcommand{\switchMatrix}{\mathbf{S}}
+\newcommand{\tr}[1]{\text{tr}\left(#1\right)}
+\newcommand{\loneNorm}[1]{\left\Vert #1 \right\Vert_1}
+\newcommand{\ltwoNorm}[1]{\left\Vert #1 \right\Vert_2}
+\newcommand{\onenorm}[1]{\left\vert#1\right\vert_1}
+\newcommand{\twonorm}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\vScalar}{v}
+\newcommand{\vVector}{\mathbf{v}}
+\newcommand{\vMatrix}{\mathbf{V}}
+\newcommand{\varianceDist}[2]{\text{var}_{#2}\left( #1 \right)}
+% Already defined by latex
+%\newcommand{\vec}{#1:}
+\newcommand{\vecb}[1]{\left(#1\right):}
+\newcommand{\weightScalar}{w}
+\newcommand{\weightVector}{\mathbf{ \weightScalar}}
+\newcommand{\weightMatrix}{\mathbf{W}}
+\newcommand{\weightedAdjacencyMatrix}{\mathbf{A}}
+\newcommand{\weightedAdjacencyScalar}{a}
+\newcommand{\weightedAdjacencyVector}{\mathbf{ \weightedAdjacencyScalar}}
+\newcommand{\onesVector}{\mathbf{1}}
+\newcommand{\zerosVector}{\mathbf{0}}
+\]
   <div class="reveal">
     <div class="slides">
 
-<section>
+<section id="title-slide">
   <h1 class="title">Decision Making and Diversity: The Folly of Value Alignment</h1>
-  <p class="author">Neil D. Lawrence</p>
-  <p class="date">2018-04-30</p>
+  <p class="author" style="text-align:center"><a href="http://inverseprobability.com">Neil D. Lawrence</a></p>
+  <p class="venue" style="text-align:center">CFI Lunchtime Seminar</p>
 </section>
 
+<section class="slide level3">
+
+<p><!--% not ipynb--></p>
+<p><!--% not notes--></p>
+</section>
 <section id="section" class="slide level3">
 <h3></h3>
-<p><img class="" src="../slides/diagrams/philosophy/justice-whats-the-right-thing-to-do.jpg" width="50%" align="" style="background:none; border:none; box-shadow:none;"></p>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/philosophy/justice-whats-the-right-thing-to-do.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
 </section>
 <section id="section-1" class="slide level3">
 <h3></h3>
-<p><img class="" src="../slides/diagrams/ai/Trolley_1.jpg" width="80%" align="" style="background:none; border:none; box-shadow:none;"></p>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/ai/Trolley_1.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
 </section>
 <section id="utility-theory-and-utilitarianism" class="slide level3">
 <h3>Utility Theory and Utilitarianism</h3>
 <ul>
-<li><p>Utilitarianism maps to <em>utility theory</em></p></li>
-<li><p>Assume that result of a decision can be evaluated mathematically.</p></li>
+<li>Utilitarianism maps to <em>utility theory</em></li>
+<li>Assume that result of a decision can be evaluated mathematically.</li>
 </ul>
 </section>
 <section id="utility-theory" class="slide level3">
 <h3>Utility Theory</h3>
 <ul>
-<li><p>An approach to balancing sensitivity vs specificity in a decision.</p></li>
-<li><p>Decision theory</p></li>
+<li>An approach to balancing sensitivity vs specificity in a decision.</li>
+<li>Decision theory</li>
 </ul>
 </section>
 <section id="basics" class="slide level3">
@@ -71,68 +402,70 @@
 </section>
 <section id="the-push-and-the-trolley" class="slide level3">
 <h3>The Push and the Trolley</h3>
-<p><img class="" src="../slides/diagrams/ai/trolley2.jpg" width="80%" align="" style="background:none; border:none; box-shadow:none;"></p>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/ai/trolley2.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
 </section>
 <section id="evolution-and-utilitarianism" class="slide level3">
 <h3>Evolution and Utilitarianism</h3>
 <ul>
-<li><p>Bentham was not aware of Darwin's principle of natural selection</p></li>
-<li><p>Bentham believed that we should take an action if it maximised the happiness of the population (thereby minimising pain).</p></li>
-<li><p>His utility function was the sum of the happiness of the population.</p></li>
+<li>Bentham was not aware of Darwin’s principle of natural selection</li>
+<li>Bentham believed that we should take an action if it maximised the happiness of the population (thereby minimising pain).</li>
+<li>His utility function was the sum of the happiness of the population.</li>
 </ul>
 </section>
 <section id="john-stuart-mill" class="slide level3">
 <h3>John Stuart Mill</h3>
 <ul>
-<li><p>Struggled with the idea that a night of debauchery was the same form of happiness.</p></li>
-<li><p>See also Epicurius</p></li>
+<li>Struggled with the idea that a night of debauchery was the same form of happiness.</li>
+<li>See also Epicurius</li>
 </ul>
 </section>
 <section id="natural-selection" class="slide level3">
 <h3>Natural Selection</h3>
 <ul>
-<li><p>Species evolve through natural selection</p></li>
-<li><p>Bentham's idea was that we should maximize happiness.</p></li>
-<li><p>In reality happiness is some form of <em>intermediate</em> reward.</p></li>
+<li>Species evolve through natural selection</li>
+<li>Bentham’s idea was that we should maximize happiness.</li>
+<li>In reality happiness is some form of <em>intermediate</em> reward.</li>
 </ul>
 </section>
 <section id="mathematics-of-change" class="slide level3">
 <h3>Mathematics of Change</h3>
 <ul>
-<li><p>Driven by Newton and <a href="https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz">Leibniz</a>'s work differential calculus.</p></li>
-<li><p>Actually happiness is some (monotonic) function of the gradient of whatever personal utility function we have.</p></li>
-<li><p>John Stuart Mill's variation on utilitarianism considered 'higher pleasures', such as the pleasure gained from literature and learning. (See also Eleni Vasilaki on Epicurus <span class="citation" data-cites="Vasilaki-epicurius17">Vasilaki (2017)</span>)</p></li>
-<li><p>our happiness must be integrated to form our utility.</p></li>
+<li>Driven by Newton and <a href="https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz">Leibniz</a>’s work differential calculus.</li>
+<li>Actually happiness is some (monotonic) function of the gradient of whatever personal utility function we have.</li>
+<li>John Stuart Mill’s variation on utilitarianism considered ‘higher pleasures’, such as the pleasure gained from literature and learning. (See also Eleni Vasilaki on Epicurus <span class="citation" data-cites="Vasilaki-epicurius17">Vasilaki (2017)</span>)</li>
+<li>our happiness must be integrated to form our utility.</li>
 </ul>
 </section>
 <section id="prospect-theory" class="slide level3">
 <h3>Prospect Theory</h3>
 <ul>
-<li><p>Daniel Kahneman's Nobel Memorial Prize in Economics was awarded for the idea of <em>prospect theory</em>.</p></li>
-<li><p>Kahneman describes the theory and its background in his book, &quot;Thinking Fast and Slow&quot; <span class="citation" data-cites="Kahneman-fastslow11">(Kahneman, 2011)</span>.</p></li>
-<li><p>Empirical theory about how people are responsive to change in circumstance, not absolute circumstance.</p></li>
+<li>Daniel Kahneman’s Nobel Memorial Prize in Economics was awarded for the idea of <em>prospect theory</em>.</li>
+<li>Kahneman describes the theory and its background in his book, “Thinking Fast and Slow” <span class="citation" data-cites="Kahneman-fastslow11">(Kahneman, 2011)</span>.</li>
+<li>Empirical theory about how people are responsive to change in circumstance, not absolute circumstance.</li>
 </ul>
 </section>
 <section id="subjective-utility" class="slide level3">
 <h3>Subjective Utility</h3>
 <ul>
-<li><p>Bentham's ideas focussed around the idea of a global utility.</p></li>
-<li><p>Natural selection insists there must be <em>variation</em> in the population</p></li>
-<li><p>Without variation, there is no separation between effective and ineffective strategies.</p></li>
+<li>Bentham’s ideas focussed around the idea of a global utility.</li>
+<li>Natural selection insists there must be <em>variation</em> in the population</li>
+<li>Without variation, there is no separation between effective and ineffective strategies.</li>
 </ul>
 </section>
 <section id="a-cognitive-bias-towards-variance" class="slide level3">
 <h3>A Cognitive Bias towards Variance</h3>
 <ul>
-<li><p>Kahneman explores our tendency to produce overcomplicated explanations</p></li>
-<li><p>Prediction is <span class="math display">\[ \text{model} + \text{data} \rightarrow \text{prediction}\]</span></p></li>
-<li><p>Models fail as overly simple or overly complex</p></li>
+<li>Kahneman explores our tendency to produce overcomplicated explanations</li>
+<li>Prediction is <span class="math display">\[ \text{model} + \text{data} \rightarrow \text{prediction}\]</span></li>
+<li>Models fail as overly simple or overly complex</li>
 </ul>
 </section>
 <section id="bias-vs-variance" class="slide level3">
 <h3>Bias vs Variance</h3>
 <ul>
-<li><p>'bias variance dilemma' <span class="citation" data-cites="Geman-biasvariance92">Geman et al. (1992)</span></p></li>
+<li>‘bias variance dilemma’ <span class="citation" data-cites="Geman-biasvariance92">Geman et al. (1992)</span></li>
 <li>Decompose errors as
 <ol type="1">
 <li>due to oversimplification (the bias error) and</li>
@@ -162,23 +495,23 @@
 <section id="rational-behaviour" class="slide level3">
 <h3>Rational Behaviour</h3>
 <ul>
-<li><p>Sustain a variety of approaches to life.</p></li>
-<li><p>Complex explanations such as half-time football punditry.</p></li>
-<li><p>Also clinical experts <span class="citation" data-cites="Meehl-clinicalstatistical54">(Meehl, 1954)</span>. Meehl suggested they 'try to be clever and think outside the box'.</p></li>
+<li>Sustain a variety of approaches to life.</li>
+<li>Complex explanations such as half-time football punditry.</li>
+<li>Also clinical experts <span class="citation" data-cites="Meehl-clinicalstatistical54">(Meehl, 1954)</span>. Meehl suggested they ‘try to be clever and think outside the box’.</li>
 </ul>
 </section>
 <section id="one-correct-solution" class="slide level3">
 <h3>One Correct Solution</h3>
 <ul>
-<li><p>Artificial Selection and Eugenics.</p></li>
-<li><p>OK for race horses, greyhounds, crops, sheep and cows</p></li>
-<li><p>Not OK for the human race.</p></li>
+<li>Artificial Selection and Eugenics.</li>
+<li>OK for race horses, greyhounds, crops, sheep and cows</li>
+<li>Not OK for the human race.</li>
 </ul>
 </section>
 <section id="one-correct-solution-1" class="slide level3">
 <h3>One Correct Solution</h3>
 <ul>
-<li><p>Flawed understanding of science</p></li>
+<li>Flawed understanding of science</li>
 <li>Animals in a species become too specialised then they may not be able to respond to changing circumstances.
 <ul>
 <li>Think of cheetahs and eagles vs rats and pigeons.</li>
@@ -188,22 +521,22 @@
 <section id="similar-ideas-socially" class="slide level3">
 <h3>Similar Ideas Socially</h3>
 <blockquote>
-<p>I may not agree with many people's subjective approach to life, I may even believe it to be severely sub-optimal. But I should not presume to know better, even if prior experience shows that my own 'way of being' is effective.</p>
+<p>I may not agree with many people’s subjective approach to life, I may even believe it to be severely sub-optimal. But I should not presume to know better, even if prior experience shows that my own ‘way of being’ is effective.</p>
 <p>Variation is vitally important for robustness. There may be future circumstances where my approaches fail utterly, and other ways of being are better.</p>
 </blockquote>
 </section>
 <section id="a-universal-utility" class="slide level3">
 <h3>A Universal Utility</h3>
 <ul>
-<li><p>Quality of our individual subjective utilities measured by effectiveness.</p></li>
-<li><p>But it is surival of entire species that dominates long term.</p></li>
-<li><p>A universal utility by which we are judged is difficult to define.</p></li>
+<li>Quality of our individual subjective utilities measured by effectiveness.</li>
+<li>But it is surival of entire species that dominates long term.</li>
+<li>A universal utility by which we are judged is difficult to define.</li>
 </ul>
 </section>
 <section id="the-real-ethical-dilemma" class="slide level3">
 <h3>The Real Ethical Dilemma</h3>
 <ul>
-<li><p>Trolley Problem is an oversimplification.</p></li>
+<li>Trolley Problem is an oversimplification.</li>
 <li>Driverless cars:
 <ul>
 <li>introduce driverless cars and bring about a 90% reduction in deaths</li>
@@ -214,11 +547,11 @@
 <section id="uncertainty-the-tyger-that-burns-bright" class="slide level3">
 <h3>Uncertainty: The Tyger that Burns Bright</h3>
 <ul>
-<li><p>Non-survival of the non-fit</p></li>
-<li><p>The marvel of evolution is its responsiveness.</p></li>
-<li><p>Utility function evolves socially and in our environment.</p></li>
+<li>Non-survival of the non-fit</li>
+<li>The marvel of evolution is its responsiveness.</li>
+<li>Utility function evolves socially and in our environment.</li>
 </ul>
-<p>(<a href="https://en.wikipedia.org/wiki/Survival_of_the_fittest">&quot;survival of the fittest&quot;</a> is due to <a href="https://en.wikipedia.org/wiki/Herbert_Spencer">Herbert Spencer</a>)</p>
+<p>(<a href="https://en.wikipedia.org/wiki/Survival_of_the_fittest">“survival of the fittest”</a> is due to <a href="https://en.wikipedia.org/wiki/Herbert_Spencer">Herbert Spencer</a>)</p>
 </section>
 <section id="absolute-policies" class="slide level3">
 <h3>Absolute Policies</h3>
@@ -241,32 +574,36 @@
 <ul>
 <li>A simple switch in the points, is deterministic/mechanistic</li>
 </ul>
-<p><img class="" src="../slides/diagrams/ai/Trolley_1.jpg" width="60%" align="" style="background:none; border:none; box-shadow:none;"></p>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/ai/Trolley_1.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
 </section>
 <section id="tigers-and-trolleys-1" class="slide level3">
 <h3>Tigers and Trolleys</h3>
 <ul>
 <li>The second example is largely contrived, and riddled with uncertainty.</li>
 </ul>
-<p><img class="" src="../slides/diagrams/ai/trolley2.jpg" width="60%" align="" style="background:none; border:none; box-shadow:none;"></p>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/ai/trolley2.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
 </section>
 <section id="conclusion" class="slide level3">
 <h3>Conclusion</h3>
 <ul>
-<li><p>Uncertainty of the correct utility implies 'correct' decision is difficult produce or verify.</p></li>
-<li><p>Tendency to seek proxies such as <em>consistency</em> in decision making.</p></li>
-<li><p>Consistent algorithms oversimplifies.</p></li>
-<li><p>Society would be more robust if diversity of solutions and opinions are sustained and respected.</p></li>
+<li>Uncertainty of the correct utility implies ‘correct’ decision is difficult produce or verify.</li>
+<li>Tendency to seek proxies such as <em>consistency</em> in decision making.</li>
+<li>Consistent algorithms oversimplifies.</li>
+<li>Society would be more robust if diversity of solutions and opinions are sustained and respected.</li>
 </ul>
 </section>
 <section id="links" class="slide level3">
 <h3>Links</h3>
 <ul>
-<li><p>Articles in the Guardian are available from my <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></p></li>
-<li><p><a href="http://inverseprobability.com/blog.html">My blog</a> has articles relating to this area.</p></li>
-<li><p><a href="http://inverseprobability.com/2015/12/04/what-kind-of-ai/">This post on System Zero</a> and <a href="http://inverseprobability.com/2015/11/09/artificial-stupidity/">This post on the Mechanistic Fallacy</a> relate to the ideas in this talk.</p></li>
-<li><p><a href="http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence">This post on natural vs artificial systems</a></p></li>
-<li><p><a href="http://inverseprobability.com/2017/11/15/decision-making">This paper on decision making and diversity</a></p></li>
+<li>Articles in the Guardian are available from my <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></li>
+<li><a href="http://inverseprobability.com/blog.html">My blog</a> has articles relating to this area.</li>
+<li><a href="http://inverseprobability.com/2015/12/04/what-kind-of-ai/">This post on System Zero</a> and <a href="http://inverseprobability.com/2015/11/09/artificial-stupidity/">This post on the Mechanistic Fallacy</a> relate to the ideas in this talk.</li>
+<li><a href="http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence">This post on natural vs artificial systems</a></li>
+<li><a href="http://inverseprobability.com/2017/11/15/decision-making">This paper on decision making and diversity</a></li>
 </ul>
 </section>
 <section id="thanks" class="slide level3">
@@ -310,12 +647,14 @@
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
 
         // Optional reveal.js plugins
         dependencies: [
           { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
-              { src: 'reveal.js/plugin/notes/notes.js', async: true }
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
         ]
       });
     </script>
