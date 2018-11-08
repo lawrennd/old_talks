@@ -17,6 +17,7 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 published: 2018-04-30
+transition: None
 ---
 
 \include{../talk-macros.tex}
@@ -71,7 +72,7 @@ published: 2018-04-30
 
 * Driven by Newton and [Leibniz](https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz)'s work differential calculus. 
 * Actually happiness is some (monotonic) function of the gradient of whatever personal utility function we have. 
-* John Stuart Mill's variation on utilitarianism considered 'higher pleasures', such as the pleasure gained from literature and learning. (See also Eleni Vasilaki on Epicurus @Vasilaki-epicurius17)
+* John Stuart Mill's variation on utilitarianism considered 'higher pleasures', such as the pleasure gained from literature and learning. (See also Eleni Vasilaki on Epicurus @Vasilaki:epicurius17)
 * our happiness must be integrated to form our utility. 
 
 \newslide{Prospect Theory}
