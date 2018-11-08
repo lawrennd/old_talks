@@ -45,6 +45,90 @@ include{_philosophy/includes/trolley-push.md}-->
 
 
 -->
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> create_data(per_cluster<span class="op">=</span><span class="dv">50</span>):
+    <span class="co">&quot;&quot;&quot;Create a randomly sampled data set</span>
+<span class="co">    </span>
+<span class="co">    :param per_cluster: number of points in each cluster</span>
+<span class="co">    &quot;&quot;&quot;</span>
+    X <span class="op">=</span> []
+    y <span class="op">=</span> []
+    scale <span class="op">=</span> <span class="dv">3</span>
+    prec <span class="op">=</span> <span class="dv">1</span><span class="op">/</span>(scale<span class="op">*</span>scale)
+    pos_mean <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">1</span>],[<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>]]
+    pos_cov <span class="op">=</span> [[prec, <span class="dv">0</span>.], [<span class="dv">0</span>., prec]]
+    neg_mean <span class="op">=</span> [[<span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>],[<span class="dv">1</span>,<span class="dv">0</span>]]
+    neg_cov <span class="op">=</span> [[prec, <span class="dv">0</span>.], [<span class="dv">0</span>., prec]]
+    <span class="cf">for</span> mean <span class="kw">in</span> pos_mean:
+        X.append(np.random.multivariate_normal(mean<span class="op">=</span>mean, cov<span class="op">=</span>pos_cov, size<span class="op">=</span>per_class))
+        y.append(np.ones((per_class, <span class="dv">1</span>)))
+    <span class="cf">for</span> mean <span class="kw">in</span> neg_mean:
+        X.append(np.random.multivariate_normal(mean<span class="op">=</span>mean, cov<span class="op">=</span>neg_cov, size<span class="op">=</span>per_class))
+        y.append(np.zeros((per_class, <span class="dv">1</span>)))
+    <span class="cf">return</span> np.vstack(X), np.vstack(y).flatten()</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> make_meshgrid(x, y, h<span class="op">=</span>.<span class="dv">02</span>):
+    <span class="co">&quot;&quot;&quot;Create a mesh of points to plot in</span>
+
+<span class="co">    Parameters</span>
+<span class="co">    ----------</span>
+<span class="co">    x: data to base x-axis meshgrid on</span>
+<span class="co">    y: data to base y-axis meshgrid on</span>
+<span class="co">    h: stepsize for meshgrid, optional</span>
+
+<span class="co">    Returns</span>
+<span class="co">    -------</span>
+<span class="co">    xx, yy : ndarray</span>
+<span class="co">    </span>
+<span class="co">    code from https://scikit-learn.org/stable/auto_examples/svm/plot_iris.html</span>
+<span class="co">    &quot;&quot;&quot;</span>
+    x_min, x_max <span class="op">=</span> x.<span class="bu">min</span>() <span class="op">-</span> <span class="dv">1</span>, x.<span class="bu">max</span>() <span class="op">+</span> <span class="dv">1</span>
+    y_min, y_max <span class="op">=</span> y.<span class="bu">min</span>() <span class="op">-</span> <span class="dv">1</span>, y.<span class="bu">max</span>() <span class="op">+</span> <span class="dv">1</span>
+    xx, yy <span class="op">=</span> np.meshgrid(np.arange(x_min, x_max, h),
+                         np.arange(y_min, y_max, h))
+    <span class="cf">return</span> xx, yy</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> plot_contours(ax, cl, xx, yy, <span class="op">**</span>params):
+    <span class="co">&quot;&quot;&quot;Plot the decision boundaries for a classifier.</span>
+
+<span class="co">    Parameters</span>
+<span class="co">    ----------</span>
+<span class="co">    ax: matplotlib axes object</span>
+<span class="co">    clf: a classifier</span>
+<span class="co">    xx: meshgrid ndarray</span>
+<span class="co">    yy: meshgrid ndarray</span>
+<span class="co">    params: dictionary of params to pass to contourf, optional</span>
+<span class="co">    &quot;&quot;&quot;</span>
+    Z <span class="op">=</span> cl.predict(np.c_[xx.ravel(), yy.ravel()])
+    Z <span class="op">=</span> Z.reshape(xx.shape)
+    out <span class="op">=</span> ax.contourf(xx, yy, Z, <span class="op">**</span>params)
+    <span class="cf">return</span> out</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> decision_boundary_plot(models, X, y, axs, filename, titles):
+    <span class="co">&quot;&quot;&quot;Plot a decision boundary on the given axes</span>
+<span class="co">    </span>
+<span class="co">    :param axs: the axes to plot on.</span>
+<span class="co">    :param models: the SVM models to plot</span>
+<span class="co">    :param titles: the titles for each axis</span>
+<span class="co">    :param X: input training data</span>
+<span class="co">    :param y: target training data&quot;&quot;&quot;</span>
+    <span class="cf">for</span> ax <span class="kw">in</span> sub.flatten():
+        ax.clear()
+    X0, X1 <span class="op">=</span> X[:, <span class="dv">0</span>], X[:, <span class="dv">1</span>]
+    xx, yy <span class="op">=</span> make_meshgrid(X0, X1)
+
+    <span class="cf">for</span> cl, title, ax <span class="kw">in</span> <span class="bu">zip</span>(models, titles, axs.flatten()):
+        plot_contours(ax, cl, xx, yy,
+                      cmap<span class="op">=</span>plt.cm.coolwarm, alpha<span class="op">=</span><span class="fl">0.8</span>)
+        ax.plot(X0[y<span class="op">==</span><span class="dv">1</span>], X1[y<span class="op">==</span><span class="dv">1</span>], <span class="st">&#39;k.&#39;</span>, markersize<span class="op">=</span><span class="dv">10</span>)
+        ax.plot(X0[y<span class="op">==</span><span class="dv">0</span>], X1[y<span class="op">==</span><span class="dv">0</span>], <span class="st">&#39;w.&#39;</span>, markersize<span class="op">=</span><span class="dv">10</span>)
+        ax.set_xlim(xx.<span class="bu">min</span>(), xx.<span class="bu">max</span>())
+        ax.set_ylim(yy.<span class="bu">min</span>(), yy.<span class="bu">max</span>())
+        ax.set_xlabel(<span class="st">&#39;$x_1$&#39;</span>)
+        ax.set_ylabel(<span class="st">&#39;$x_2$&#39;</span>)
+        ax.set_xticks(())
+        ax.set_yticks(())
+        ax.set_title(title)
+        mlai.write_figure(os.path.join(filename),
+                          figure<span class="op">=</span>fig,
+                          transparent<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/ml/bias-variance000.svg" style>
 </object>
 <center>
