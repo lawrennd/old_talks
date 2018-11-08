@@ -36,6 +36,20 @@ include{_philosophy/includes/trolley-push.md}-->
 <!--\include{_philosophy/includes/bias-variance-rational.md}-->
 <!--\include{_philosophy/includes/uncertainty-and-absolutism.md}-->
 
+\newslide{Trolleys!?!}
+\slides{
+
+\includejpg{../slides/diagrams/ai/Trolley_1}{80%}{}
+}
+
+\newslide{The Real Ethical Dilemma}
+\slides{
+* Trolley Problem is an oversimplification.
+* Driverless cars: 
+    * introduce driverless cars and bring about a 90% reduction in deaths 
+	* What if remaining deaths are all cyclists?
+}
+
 \newslide{Conclusion}
 \slides{
 * Tendency to seek proxies such as *consistency* in decision making. 
