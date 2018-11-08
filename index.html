@@ -3,15 +3,12 @@ layout: default
 ---
 
 <div class="home">
-
   <h1 class="page-heading">Talks</h1>
-
   <ul class="post-list">
     {% for post in site.posts %}
       <li>
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> at {{ post.venue }}
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> at <i>{{ post.venue }}</i>
       </li>
     {% endfor %}
   </ul>
