@@ -8,7 +8,7 @@ author:
   institute: Amazon Cambridge and University of Sheffield
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
-  orcid: 
+  orchid: 
 blog: 2018-02-06-natural-and-artificial-intelligence.md
 blog: 2017-11-15-decision-making.md
 blog: 2015-12-04-what-kind-of-ai.md
@@ -16,6 +16,8 @@ date: 2018-04-30
 published: 2018-04-30
 reveal: 2018-04-30-decision-making-and-diversity.slides.html
 layout: talk
+categories:
+- notes
 ---
 
 
@@ -28,137 +30,14 @@ layout: talk
 <img class="" src="../slides/diagrams/philosophy/justice-whats-the-right-thing-to-do.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 </div>
 <div style="text-align:center">
-<img class="" src="../slides/diagrams/ai/Trolley_1.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+<img class="negate" src="../slides/diagrams/ai/Trolley_1.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 </div>
-<ul>
-<li>Utilitarianism maps to <em>utility theory</em></li>
-<li><p>Assume that result of a decision can be evaluated mathematically.</p></li>
-<li>An approach to balancing sensitivity vs specificity in a decision.</li>
-<li><p>Decision theory</p></li>
-<li><p>define a <em>utility function</em></p></li>
-</ul>
 <div style="text-align:center">
-<img class="" src="../slides/diagrams/ai/trolley2.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+<img class="negate" src="../slides/diagrams/ai/trolley2.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 </div>
 <ul>
-<li>Bentham was not aware of Darwin's principle of natural selection</li>
-<li>Bentham believed that we should take an action if it maximised the happiness of the population (thereby minimising pain).</li>
-<li><p>His utility function was the sum of the happiness of the population.</p></li>
-<li>Struggled with the idea that a night of debauchery was the same form of happiness.</li>
-<li><p>See also Epicurius</p></li>
-<li>Species evolve through natural selection</li>
-<li>Bentham's idea was that we should maximize happiness.</li>
-<li><p>In reality happiness is some form of <em>intermediate</em> reward.</p></li>
-<li>Driven by Newton and <a href="https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz">Leibniz</a>'s work differential calculus.</li>
-<li>Actually happiness is some (monotonic) function of the gradient of whatever personal utility function we have.</li>
-<li>John Stuart Mill's variation on utilitarianism considered 'higher pleasures', such as the pleasure gained from literature and learning. (See also Eleni Vasilaki on Epicurus <span class="citation">(<span class="citeproc-not-found" data-reference-id="Vasilaki:epicurius17"><strong>???</strong></span>)</span>)</li>
-<li><p>our happiness must be integrated to form our utility.</p></li>
-<li>Daniel Kahneman's Nobel Memorial Prize in Economics was awarded for the idea of <em>prospect theory</em>.</li>
-<li>Kahneman describes the theory and its background in his book, &quot;Thinking Fast and Slow&quot; <span class="citation">(Kahneman, 2011)</span>.</li>
-<li><p>Empirical theory about how people are responsive to change in circumstance, not absolute circumstance.</p></li>
-<li>Bentham's ideas focussed around the idea of a global utility.</li>
-<li>Natural selection insists there must be <em>variation</em> in the population</li>
-<li><p>Without variation, there is no separation between effective and ineffective strategies.</p></li>
-<li>Kahneman explores our tendency to produce overcomplicated explanations</li>
-<li>Prediction is <span class="math display">\[ \text{model} + \text{data} \rightarrow \text{prediction}\]</span></li>
-<li><p>Models fail as overly simple or overly complex</p></li>
-<li>'bias variance dilemma' <span class="citation">Geman et al. (1992)</span></li>
-<li>Decompose errors as
-<ol style="list-style-type: decimal">
-<li>due to oversimplification (the bias error) and</li>
-<li>those due to insufficient data to underpin a complex model (variance error).</li>
-</ol></li>
-<li>Two approaches</li>
-<li>Use simpler models (better consistency and generalization)</li>
-<li><p>Use more complex models and average.</p></li>
-<li>In a population we should prefer variance-errors.
-<ul>
-<li>Bias errors lead to consistent, decsion making.</li>
-<li>Consistently wrong!</li>
-</ul></li>
-<li><p>Variance errors can also be averaged e.g. <a href="https://en.wikipedia.org/wiki/Bootstrap_aggregating">bagging</a> and <a href="https://en.wikipedia.org/wiki/Boosting_(machine_learning)">boosting</a> <span class="citation">(Breiman, 1996)</span></p></li>
-<li>Sustain a variety of approaches to life.</li>
-<li>Complex explanations such as half-time football punditry.</li>
-<li><p>Also clinical experts <span class="citation">(Meehl, 1954)</span>. Meehl suggested they 'try to be clever and think outside the box'.</p></li>
-<li>Artificial Selection and Eugenics.</li>
-<li>OK for race horses, greyhounds, crops, sheep and cows</li>
-<li><p>Not OK for the human race.</p></li>
-<li>Flawed understanding of science</li>
-<li>Animals in a species become too specialised then they may not be able to respond to changing circumstances.
-<ul>
-<li>Think of cheetahs and eagles vs rats and pigeons.</li>
-</ul></li>
-</ul>
-<blockquote>
-<p>I may not agree with many people's subjective approach to life, I may even believe it to be severely sub-optimal. But I should not presume to know better, even if prior experience shows that my own 'way of being' is effective.</p>
-<p>Variation is vitally important for robustness. There may be future circumstances where my approaches fail utterly, and other ways of being are better.</p>
-</blockquote>
-<ul>
-<li>Quality of our individual subjective utilities measured by effectiveness.</li>
-<li>But it is surival of entire species that dominates long term.</li>
-<li><p>A universal utility by which we are judged is difficult to define.</p></li>
-<li>Trolley Problem is an oversimplification.</li>
-<li>Driverless cars:
-<ul>
-<li>introduce driverless cars and bring about a 90% reduction in deaths</li>
-<li>What if remaining deaths are all cyclists?</li>
-</ul></li>
-<li>Non-survival of the non-fit</li>
-<li>The marvel of evolution is its responsiveness.</li>
-<li><p>Utility function evolves socially and in our environment.</p></li>
-</ul>
-<p>(<a href="https://en.wikipedia.org/wiki/Survival_of_the_fittest">&quot;survival of the fittest&quot;</a> is due to <a href="https://en.wikipedia.org/wiki/Herbert_Spencer">Herbert Spencer</a>)</p>
-<ul>
-<li>There is only one absolute policy we should follow.</li>
-</ul>
-<blockquote>
-<p>There will be single absolute policy that should be followed slavishly in all circumstances</p>
-</blockquote>
-<blockquote>
-<p>Since all models are wrong the scientist must be alert to what is importantly wrong. It is inappropriate to be concerned about mice when there are tigers abroad.</p>
-<p>George E. P. Box <span class="citation">(Box, 1976)</span></p>
-</blockquote>
-<ul>
-<li>A simple switch in the points, is deterministic/mechanistic</li>
-</ul>
-<div style="text-align:center">
-<img class="" src="../slides/diagrams/ai/Trolley_1.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
-</div>
-<ul>
-<li>The second example is largely contrived, and riddled with uncertainty.</li>
-</ul>
-<div style="text-align:center">
-<img class="" src="../slides/diagrams/ai/trolley2.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
-</div>
-<ul>
-<li>Uncertainty of the correct utility implies 'correct' decision is difficult produce or verify.</li>
-<li>Tendency to seek proxies such as <em>consistency</em> in decision making.</li>
-<li>Consistent algorithms oversimplifies.</li>
-<li><p>Society would be more robust if diversity of solutions and opinions are sustained and respected.</p></li>
-<li>Articles in the Guardian are available from my <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></li>
-<li><a href="http://inverseprobability.com/blog.html">My blog</a> has articles relating to this area.</li>
-<li><a href="http://inverseprobability.com/2015/12/04/what-kind-of-ai/">This post on System Zero</a> and <a href="http://inverseprobability.com/2015/11/09/artificial-stupidity/">This post on the Mechanistic Fallacy</a> relate to the ideas in this talk.</li>
-<li><a href="http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence">This post on natural vs artificial systems</a></li>
-<li><p><a href="http://inverseprobability.com/2017/11/15/decision-making">This paper on decision making and diversity</a></p></li>
 <li>twitter: <code>@lawrennd</code></li>
-<li><p>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></p></li>
+<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
 </ul>
-<div id="refs" class="references">
-<div id="ref-Box-science76">
-<p>Box, G.E.P., 1976. Science and statistics. Journal of the American Statistical Association 71, 791–799.</p>
-</div>
-<div id="ref-Breiman-bagging96">
-<p>Breiman, L., 1996. Bagging predictors. Machine Learning 24, 123–140. <a href="https://doi.org/10.1007/BF00058655" class="uri">https://doi.org/10.1007/BF00058655</a></p>
-</div>
-<div id="ref-Geman-biasvariance92">
-<p>Geman, S., Bienenstock, E., Doursat, R., 1992. Neural networks and the bias/variance dilemma. Neural Computation 4, 1–58. <a href="https://doi.org/10.1162/neco.1992.4.1.1" class="uri">https://doi.org/10.1162/neco.1992.4.1.1</a></p>
-</div>
-<div id="ref-Kahneman-fastslow11">
-<p>Kahneman, D., 2011. Thinking fast and slow.</p>
-</div>
-<div id="ref-Meehl-clinicalstatistical54">
-<p>Meehl, P.E., 1954. Clinical versus statistical prediction: A theoretical analysis and a review of the evidence.</p>
-</div>
-</div>
 
 

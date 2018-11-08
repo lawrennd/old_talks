@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title>Decision Making and Diversity: The Folly of Value Alignment</title>
+  <title>Fairness and Diversity of Decision Making</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -358,77 +358,47 @@
     <div class="slides">
 
 <section id="title-slide">
-  <h1 class="title">Decision Making and Diversity: The Folly of Value Alignment</h1>
+  <h1 class="title">Fairness and Diversity of Decision Making</h1>
   <p class="author" style="text-align:center"><a href="http://inverseprobability.com">Neil D. Lawrence</a></p>
-  <p class="venue" style="text-align:center">CFI Lunchtime Seminar</p>
+  <p class="venue" style="text-align:center">Royal Society Workshop</p>
 </section>
 
 <section class="slide level3">
 
 <p><!--% not ipynb--></p>
 <p><!--% not notes--></p>
+<!--include{_philosophy/includes/utilitarianism.md}
+include{_philosophy/includes/utility-utilitarianism.md}
+include{_philosophy/includes/trolley-push.md}-->
 </section>
 <section id="section" class="slide level3">
 <h3></h3>
-<div style="text-align:center">
-<img class="" src="../slides/diagrams/philosophy/justice-whats-the-right-thing-to-do.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
-</div>
-</section>
-<section id="section-1" class="slide level3">
-<h3></h3>
-<div style="text-align:center">
-<img class="negate" src="../slides/diagrams/ai/Trolley_1.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
-</div>
-</section>
-<section id="utility-theory-and-utilitarianism" class="slide level3">
-<h3>Utility Theory and Utilitarianism</h3>
-<ul>
-<li>Utilitarianism maps to <em>utility theory</em></li>
-<li>Assume that result of a decision can be evaluated mathematically.</li>
-</ul>
-</section>
-<section id="utility-theory" class="slide level3">
-<h3>Utility Theory</h3>
-<ul>
-<li>An approach to balancing sensitivity vs specificity in a decision.</li>
-<li>Decision theory</li>
-</ul>
-</section>
-<section id="basics" class="slide level3">
-<h3>Basics</h3>
-<ul>
-<li>define a <em>utility function</em></li>
-</ul>
-</section>
-<section id="the-push-and-the-trolley" class="slide level3">
-<h3>The Push and the Trolley</h3>
-<div style="text-align:center">
-<img class="negate" src="../slides/diagrams/ai/trolley2.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
-</div>
-</section>
-<section id="prospect-theory" class="slide level3">
-<h3>Prospect Theory</h3>
-<ul>
-<li>Daniel Kahneman’s Nobel Memorial Prize in Economics was awarded for the idea of <em>prospect theory</em>.</li>
-<li>Kahneman describes the theory and its background in his book, “Thinking Fast and Slow” <span class="citation" data-cites="Kahneman-fastslow11">(Kahneman, 2011)</span>.</li>
-<li>Empirical theory about how people are responsive to change in circumstance, not absolute circumstance.</li>
-</ul>
-</section>
-<section id="subjective-utility" class="slide level3">
-<h3>Subjective Utility</h3>
-<ul>
-<li>Bentham’s ideas focussed around the idea of a global utility.</li>
-<li>Natural selection insists there must be <em>variation</em> in the population</li>
-<li>Without variation, there is no separation between effective and ineffective strategies.</li>
-</ul>
-</section>
-<section id="a-cognitive-bias-towards-variance" class="slide level3">
-<h3>A Cognitive Bias towards Variance</h3>
-<ul>
-<li>Kahneman explores our tendency to produce overcomplicated explanations</li>
-<li>Prediction is <span class="math display">\[ \text{model} + \text{data} \rightarrow \text{prediction}\]</span></li>
-<li>Models fail as overly simple or overly complex</li>
-</ul>
+<p><span class="math display">\[ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span></p>
+<!--### Prospect Theory
+
+
+* Daniel Kahneman's Nobel Memorial Prize in Economics was awarded for the idea of *prospect theory*. 
+* Kahneman describes the theory and its background in his book, "Thinking Fast and Slow" [@Kahneman-fastslow11]. 
+* Empirical theory about how people are responsive to change in circumstance, not absolute circumstance. 
+
+
+### Subjective Utility
+
+
+* Bentham's ideas focussed around the idea of a global utility.
+* Natural selection insists there must be *variation* in the population
+* Without variation, there is no separation between effective and ineffective strategies.
+
+
+### A Cognitive Bias towards Variance
+
+
+* Kahneman explores our tendency to produce overcomplicated explanations
+* Prediction is
+    $$ \text{model} + \text{data} \rightarrow \text{prediction}$$
+* Models fail as overly simple or overly complex
+
+-->
 </section>
 <section id="bias-vs-variance" class="slide level3">
 <h3>Bias vs Variance</h3>
@@ -449,6 +419,106 @@
 <li>Use more complex models and average.</li>
 </ul>
 </section>
+<section id="section-1" class="slide level3">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/bias-variance000.svg" style>
+</object>
+</section>
+<section id="section-2" class="slide level3">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/bias-variance001.svg" style>
+</object>
+</section>
+<section id="section-3" class="slide level3">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/bias-variance002.svg" style>
+</object>
+</section>
+<section id="section-4" class="slide level3">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/bias-variance003.svg" style>
+</object>
+</section>
+<section id="section-5" class="slide level3">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/bias-variance004.svg" style>
+</object>
+</section>
+<section id="section-6" class="slide level3">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/bias-variance005.svg" style>
+</object>
+</section>
+<section id="section-7" class="slide level3">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/bias-variance006.svg" style>
+</object>
+</section>
+<section id="section-8" class="slide level3">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/bias-variance007.svg" style>
+</object>
+</section>
+<section id="section-9" class="slide level3">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/bias-variance008.svg" style>
+</object>
+</section>
+<section id="section-10" class="slide level3">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/bias-variance009.svg" style>
+</object>
+</section>
+<section id="section-11" class="slide level3">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/bias-variance010.svg" style>
+</object>
+</section>
+<section id="section-12" class="slide level3">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/bias-variance011.svg" style>
+</object>
+</section>
+<section id="section-13" class="slide level3">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/bias-variance012.svg" style>
+</object>
+</section>
+<section id="section-14" class="slide level3">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/bias-variance013.svg" style>
+</object>
+</section>
+<section id="section-15" class="slide level3">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/bias-variance014.svg" style>
+</object>
+</section>
+<section id="section-16" class="slide level3">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/bias-variance015.svg" style>
+</object>
+</section>
+<section id="section-17" class="slide level3">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/bias-variance016.svg" style>
+</object>
+</section>
+<section id="section-18" class="slide level3">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/bias-variance017.svg" style>
+</object>
+</section>
+<section id="section-19" class="slide level3">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/bias-variance018.svg" style>
+</object>
+</section>
+<section id="section-20" class="slide level3">
+<h3></h3>
+<object class="svgplot " align data="../slides/diagrams/ml/bias-variance019.svg" style>
+</object>
+</section>
 <section id="decision-making-and-bias-variance" class="slide level3">
 <h3>Decision Making and Bias-Variance</h3>
 <ul>
@@ -459,106 +529,103 @@
 </ul></li>
 <li>Variance errors can also be averaged e.g. <a href="https://en.wikipedia.org/wiki/Bootstrap_aggregating">bagging</a> and <a href="https://en.wikipedia.org/wiki/Boosting_(machine_learning)">boosting</a> <span class="citation" data-cites="Breiman-bagging96">(Breiman, 1996)</span></li>
 </ul>
-</section>
-<section id="rational-behaviour" class="slide level3">
-<h3>Rational Behaviour</h3>
-<ul>
-<li>Sustain a variety of approaches to life.</li>
-<li>Complex explanations such as half-time football punditry.</li>
-<li>Also clinical experts <span class="citation" data-cites="Meehl-clinicalstatistical54">(Meehl, 1954)</span>. Meehl suggested they ‘try to be clever and think outside the box’.</li>
-</ul>
-</section>
-<section id="one-correct-solution" class="slide level3">
-<h3>One Correct Solution</h3>
-<ul>
-<li>Artificial Selection and Eugenics.</li>
-<li>OK for race horses, greyhounds, crops, sheep and cows</li>
-<li>Not OK for the human race.</li>
-</ul>
-</section>
-<section id="one-correct-solution-1" class="slide level3">
-<h3>One Correct Solution</h3>
-<ul>
-<li>Flawed understanding of science</li>
-<li>Animals in a species become too specialised then they may not be able to respond to changing circumstances.
-<ul>
-<li>Think of cheetahs and eagles vs rats and pigeons.</li>
-</ul></li>
-</ul>
-</section>
-<section id="similar-ideas-socially" class="slide level3">
-<h3>Similar Ideas Socially</h3>
-<blockquote>
-<p>I may not agree with many people’s subjective approach to life, I may even believe it to be severely sub-optimal. But I should not presume to know better, even if prior experience shows that my own ‘way of being’ is effective.</p>
-<p>Variation is vitally important for robustness. There may be future circumstances where my approaches fail utterly, and other ways of being are better.</p>
-</blockquote>
-</section>
-<section id="a-universal-utility" class="slide level3">
-<h3>A Universal Utility</h3>
-<ul>
-<li>Quality of our individual subjective utilities measured by effectiveness.</li>
-<li>But it is survival of entire species that dominates long term.</li>
-<li>A universal utility by which we are judged is difficult to define.</li>
-</ul>
-</section>
-<section id="the-real-ethical-dilemma" class="slide level3">
-<h3>The Real Ethical Dilemma</h3>
-<ul>
-<li>Trolley Problem is an oversimplification.</li>
-<li>Driverless cars:
-<ul>
-<li>introduce driverless cars and bring about a 90% reduction in deaths</li>
-<li>What if remaining deaths are all cyclists?</li>
-</ul></li>
-</ul>
-</section>
-<section id="uncertainty-the-tyger-that-burns-bright" class="slide level3">
-<h3>Uncertainty: The Tyger that Burns Bright</h3>
-<ul>
-<li>Non-survival of the non-fit</li>
-<li>The marvel of evolution is its responsiveness.</li>
-<li>Utility function evolves socially and in our environment.</li>
-</ul>
-<p>(<a href="https://en.wikipedia.org/wiki/Survival_of_the_fittest">“survival of the fittest”</a> is due to <a href="https://en.wikipedia.org/wiki/Herbert_Spencer">Herbert Spencer</a>)</p>
-</section>
-<section id="absolute-policies" class="slide level3">
-<h3>Absolute Policies</h3>
-<ul>
-<li>There is only one absolute policy we should follow.</li>
-</ul>
-<blockquote>
-<p>There will be single absolute policy that should be followed slavishly in all circumstances</p>
-</blockquote>
-</section>
-<section id="george-box" class="slide level3">
-<h3>George Box</h3>
-<blockquote>
-<p>Since all models are wrong the scientist must be alert to what is importantly wrong. It is inappropriate to be concerned about mice when there are tigers abroad.</p>
-<p>George E. P. Box <span class="citation" data-cites="Box-science76">(Box, 1976)</span></p>
-</blockquote>
-</section>
-<section id="tigers-and-trolleys" class="slide level3">
-<h3>Tigers and Trolleys</h3>
-<ul>
-<li>A simple switch in the points, is deterministic/mechanistic</li>
-</ul>
-<div style="text-align:center">
-<img class="negate" src="../slides/diagrams/ai/Trolley_1.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
-</div>
-</section>
-<section id="tigers-and-trolleys-1" class="slide level3">
-<h3>Tigers and Trolleys</h3>
-<ul>
-<li>The second example is largely contrived, and riddled with uncertainty.</li>
-</ul>
-<div style="text-align:center">
-<img class="negate" src="../slides/diagrams/ai/trolley2.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
-</div>
+<!--### Rational Behaviour
+
+
+* Sustain a variety of approaches to life.
+* Complex explanations such as half-time football punditry.
+* Also clinical experts [@Meehl-clinicalstatistical54]. Meehl suggested they 'try to be clever and think outside the box'. 
+
+
+### One Correct Solution
+
+
+* Artificial Selection and Eugenics.
+* OK for race horses, greyhounds, crops, sheep and cows 
+* Not OK for the human race.
+
+
+### One Correct Solution
+
+
+* Flawed understanding of science
+* Animals in a species become too specialised then they may not be able to respond to changing circumstances. 
+    * Think of cheetahs and eagles vs rats and pigeons.
+
+
+### Similar Ideas Socially
+
+
+> I may not agree with many people's subjective approach to life, I may even believe it to be severely sub-optimal. But I should not presume to know better, even if prior experience shows that my own 'way of being' is effective. 
+>
+> Variation is vitally important for robustness. There may be future circumstances where my approaches fail utterly, and other ways of being are better.
+
+
+### A Universal Utility
+
+
+* Quality of our individual subjective utilities measured by effectiveness.
+* But it is survival of entire species that dominates long term.
+* A universal utility by which we are judged is difficult to define.
+
+
+### The Real Ethical Dilemma
+
+
+* Trolley Problem is an oversimplification.
+* Driverless cars: 
+    * introduce driverless cars and bring about a 90% reduction in deaths 
+    * What if remaining deaths are all cyclists?
+
+-->
+<!--### Uncertainty: The Tyger that Burns Bright
+
+
+* Non-survival of the non-fit 
+* The marvel of evolution is its responsiveness.
+* Utility function evolves socially and in our environment.
+
+(["survival of the fittest"](https://en.wikipedia.org/wiki/Survival_of_the_fittest) is due to [Herbert Spencer](https://en.wikipedia.org/wiki/Herbert_Spencer))
+
+
+### Absolute Policies
+
+
+* There is only one absolute policy we should follow. 
+
+> There will be single absolute policy that should be followed slavishly in all circumstances
+
+
+### George Box
+
+
+
+> Since all models are wrong the scientist must be alert to what is importantly wrong. It is inappropriate to be concerned about mice when there are tigers abroad.
+>
+> George E. P. Box [@Box-science76]
+
+
+
+### Tigers and Trolleys
+
+
+* A simple switch in the points, is deterministic/mechanistic
+
+<div class="" style="text-align:center"><img class="negate" src="../slides/diagrams/ai/Trolley_1.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none;"></div>
+
+
+### Tigers and Trolleys
+
+
+* The second example is largely contrived, and riddled with uncertainty.
+
+<div class="" style="text-align:center"><img class="negate" src="../slides/diagrams/ai/trolley2.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none;"></div>
+
+-->
 </section>
 <section id="conclusion" class="slide level3">
 <h3>Conclusion</h3>
 <ul>
-<li>Uncertainty of the correct utility implies ‘correct’ decision is difficult produce or verify.</li>
 <li>Tendency to seek proxies such as <em>consistency</em> in decision making.</li>
 <li>Consistent algorithms oversimplifies.</li>
 <li>Society would be more robust if diversity of solutions and opinions are sustained and respected.</li>
@@ -567,11 +634,11 @@
 <section id="links" class="slide level3">
 <h3>Links</h3>
 <ul>
+<li><a href="http://inverseprobability.com/2017/11/15/decision-making">This paper on decision making and diversity</a></li>
 <li>Articles in the Guardian are available from my <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></li>
 <li><a href="http://inverseprobability.com/blog.html">My blog</a> has articles relating to this area.</li>
 <li><a href="http://inverseprobability.com/2015/12/04/what-kind-of-ai/">This post on System Zero</a> and <a href="http://inverseprobability.com/2015/11/09/artificial-stupidity/">This post on the Mechanistic Fallacy</a> relate to the ideas in this talk.</li>
 <li><a href="http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence">This post on natural vs artificial systems</a></li>
-<li><a href="http://inverseprobability.com/2017/11/15/decision-making">This paper on decision making and diversity</a></li>
 </ul>
 </section>
 <section id="thanks" class="slide level3">
@@ -584,20 +651,11 @@
 <section id="references" class="slide level3 unnumbered">
 <h3>References</h3>
 <div id="refs" class="references">
-<div id="ref-Box-science76">
-<p>Box, G.E.P., 1976. Science and statistics. Journal of the American Statistical Association 71, 791–799.</p>
-</div>
 <div id="ref-Breiman-bagging96">
 <p>Breiman, L., 1996. Bagging predictors. Machine Learning 24, 123–140. <a href="https://doi.org/10.1007/BF00058655" class="uri">https://doi.org/10.1007/BF00058655</a></p>
 </div>
 <div id="ref-Geman-biasvariance92">
 <p>Geman, S., Bienenstock, E., Doursat, R., 1992. Neural networks and the bias/variance dilemma. Neural Computation 4, 1–58. <a href="https://doi.org/10.1162/neco.1992.4.1.1" class="uri">https://doi.org/10.1162/neco.1992.4.1.1</a></p>
-</div>
-<div id="ref-Kahneman-fastslow11">
-<p>Kahneman, D., 2011. Thinking fast and slow.</p>
-</div>
-<div id="ref-Meehl-clinicalstatistical54">
-<p>Meehl, P.E., 1954. Clinical versus statistical prediction: A theoretical analysis and a review of the evidence.</p>
 </div>
 </div>
 </section>
