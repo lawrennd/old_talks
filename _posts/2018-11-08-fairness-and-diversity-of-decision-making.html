@@ -45,6 +45,131 @@ include{_philosophy/includes/trolley-push.md}-->
 
 
 -->
+<!--
+
+
+
+
+
+```{.python}
+import numpy as np
+```
+
+```{.python}
+def create_data(per_cluster=50):
+    """Create a randomly sampled data set
+    
+    :param per_cluster: number of points in each cluster
+    """
+    X = []
+    y = []
+    scale = 3
+    prec = 1/(scale*scale)
+    pos_mean = [[1, 1],[-1,0]]
+    pos_cov = [[prec, 0.], [0., prec]]
+    neg_mean = [[-1, -1],[1,0]]
+    neg_cov = [[prec, 0.], [0., prec]]
+    for mean in pos_mean:
+        X.append(np.random.multivariate_normal(mean=mean, cov=pos_cov, size=per_class))
+        y.append(np.ones((per_class, 1)))
+    for mean in neg_mean:
+        X.append(np.random.multivariate_normal(mean=mean, cov=neg_cov, size=per_class))
+        y.append(np.zeros((per_class, 1)))
+    return np.vstack(X), np.vstack(y).flatten()
+```
+    
+
+```{.python}
+def make_meshgrid(x, y, h=.02):
+    """Create a mesh of points to plot in
+
+    Parameters
+    ----------
+    x: data to base x-axis meshgrid on
+    y: data to base y-axis meshgrid on
+    h: stepsize for meshgrid, optional
+
+    Returns
+    -------
+    xx, yy : ndarray
+    
+    code from https://scikit-learn.org/stable/auto_examples/svm/plot_iris.html
+    """
+    x_min, x_max = x.min() - 1, x.max() + 1
+    y_min, y_max = y.min() - 1, y.max() + 1
+    xx, yy = np.meshgrid(np.arange(x_min, x_max, h),
+                         np.arange(y_min, y_max, h))
+    return xx, yy
+```
+    
+    
+```{.python}
+def plot_contours(ax, cl, xx, yy, **params):
+    """Plot the decision boundaries for a classifier.
+
+    Parameters
+    ----------
+    ax: matplotlib axes object
+    clf: a classifier
+    xx: meshgrid ndarray
+    yy: meshgrid ndarray
+    params: dictionary of params to pass to contourf, optional
+    """
+    Z = cl.predict(np.c_[xx.ravel(), yy.ravel()])
+    Z = Z.reshape(xx.shape)
+    out = ax.contourf(xx, yy, Z, **params)
+    return out
+```
+
+
+```{.python}
+def decision_boundary_plot(models, X, y, axs, filename, titles):
+    """Plot a decision boundary on the given axes
+    
+    :param axs: the axes to plot on.
+    :param models: the SVM models to plot
+    :param titles: the titles for each axis
+    :param X: input training data
+    :param y: target training data"""
+    for ax in sub.flatten():
+        ax.clear()
+    X0, X1 = X[:, 0], X[:, 1]
+    xx, yy = make_meshgrid(X0, X1)
+
+    for cl, title, ax in zip(models, titles, axs.flatten()):
+        plot_contours(ax, cl, xx, yy,
+                      cmap=plt.cm.coolwarm, alpha=0.8)
+        ax.plot(X0[y==1], X1[y==1], 'k.', markersize=10)
+        ax.plot(X0[y==0], X1[y==0], 'w.', markersize=10)
+        ax.set_xlim(xx.min(), xx.max())
+        ax.set_ylim(yy.min(), yy.max())
+        ax.set_xlabel('$x_1$')
+        ax.set_ylabel('$x_2$')
+        ax.set_xticks(())
+        ax.set_yticks(())
+        ax.set_title(title)
+        mlai.write_figure(os.path.join(filename),
+                          figure=fig,
+                          transparent=True)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> create_data(per_cluster<span class="op">=</span><span class="dv">50</span>):
     <span class="co">&quot;&quot;&quot;Create a randomly sampled data set</span>
@@ -164,9 +289,7 @@ include{_philosophy/includes/trolley-push.md}-->
 
 
 -->
-<ul>
-<li>twitter: <code>@lawrennd</code></li>
-<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
-</ul>
+<!--  -->
+<!--  -->
 
 
