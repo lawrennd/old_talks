@@ -8,7 +8,7 @@ abstract: >
   We can choose to be wrong by over-simplifying or we can choose to be wrong by over-complicating (given the available data).
   
   In machine learning this is known as the bias-variance dilemma. In this talk we consider the implications of the bias-variance dilemma for fairness of decision making. 
-venue: Royal Society Workshop
+venue: Center for the Advanced Studies of the Behavioral Sciences, Joint American Academy and Royal Society Workshop
 reveal: 2018-11-08-fairness-and-diversity-of-decision-making.slides.html
 blog: 2017-11-15-decision-making.md
 blog1: 2018-02-06-natural-and-artificial-intelligence.md
