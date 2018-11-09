@@ -399,25 +399,200 @@ include{_philosophy/includes/trolley-push.md}-->
 * Models fail as overly simple or overly complex
 
 -->
-</section>
-<section id="bias-vs-variance" class="slide level3">
-<h3>Bias vs Variance</h3>
-<ul>
-<li>‘bias variance dilemma’ <span class="citation" data-cites="Geman-biasvariance92">Geman et al. (1992)</span></li>
-<li>Decompose errors as
-<ol type="1">
-<li>due to oversimplification (the bias error) and</li>
-<li>those due to insufficient data to underpin a complex model (variance error).</li>
-</ol></li>
-</ul>
-</section>
-<section id="in-machine-learning" class="slide level3">
-<h3>In Machine Learning</h3>
-<ul>
-<li>Two approaches</li>
-<li>Use simpler models (better consistency and generalization)</li>
-<li>Use more complex models and average.</li>
-</ul>
+<!--### Bias vs Variance
+
+
+* 'bias variance dilemma' @Geman-biasvariance92
+* Decompose errors as 
+    1. due to oversimplification (the bias error) and 
+    2. those due to insufficient data to underpin a complex model (variance error).
+
+
+### In Machine Learning
+
+
+* Two approaches
+   * Use simpler models (better consistency and generalization)
+   * Use more complex models and average.
+
+
+
+
+
+    
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### 
+
+
+<object class="svgplot " align="" data="../slides/diagrams/ml/bias-variance000.svg" style=""></object>
+
+<center>*simple models on left complex models on right *</center>
+
+### 
+
+
+<object class="svgplot " align="" data="../slides/diagrams/ml/bias-variance001.svg" style=""></object>
+
+<center>*simple models on left complex models on right *</center>
+
+### 
+
+
+<object class="svgplot " align="" data="../slides/diagrams/ml/bias-variance002.svg" style=""></object>
+
+<center>*simple models on left complex models on right *</center>
+
+### 
+
+
+<object class="svgplot " align="" data="../slides/diagrams/ml/bias-variance003.svg" style=""></object>
+
+<center>*simple models on left complex models on right *</center>
+
+### 
+
+
+<object class="svgplot " align="" data="../slides/diagrams/ml/bias-variance004.svg" style=""></object>
+
+<center>*simple models on left complex models on right *</center>
+
+### 
+
+
+<object class="svgplot " align="" data="../slides/diagrams/ml/bias-variance005.svg" style=""></object>
+
+<center>*simple models on left complex models on right *</center>
+
+### 
+
+
+<object class="svgplot " align="" data="../slides/diagrams/ml/bias-variance006.svg" style=""></object>
+
+<center>*simple models on left complex models on right *</center>
+
+### 
+
+
+<object class="svgplot " align="" data="../slides/diagrams/ml/bias-variance007.svg" style=""></object>
+
+<center>*simple models on left complex models on right *</center>
+
+### 
+
+
+<object class="svgplot " align="" data="../slides/diagrams/ml/bias-variance008.svg" style=""></object>
+
+<center>*simple models on left complex models on right *</center>
+
+### 
+
+
+<object class="svgplot " align="" data="../slides/diagrams/ml/bias-variance009.svg" style=""></object>
+
+<center>*simple models on left complex models on right *</center>
+
+### 
+
+
+<object class="svgplot " align="" data="../slides/diagrams/ml/bias-variance010.svg" style=""></object>
+
+<center>*simple models on left complex models on right *</center>
+
+### 
+
+
+<object class="svgplot " align="" data="../slides/diagrams/ml/bias-variance011.svg" style=""></object>
+
+<center>*simple models on left complex models on right *</center>
+
+### 
+
+
+<object class="svgplot " align="" data="../slides/diagrams/ml/bias-variance012.svg" style=""></object>
+
+<center>*simple models on left complex models on right *</center>
+
+### 
+
+
+<object class="svgplot " align="" data="../slides/diagrams/ml/bias-variance013.svg" style=""></object>
+
+<center>*simple models on left complex models on right *</center>
+
+### 
+
+
+<object class="svgplot " align="" data="../slides/diagrams/ml/bias-variance014.svg" style=""></object>
+
+<center>*simple models on left complex models on right *</center>
+
+### 
+
+
+<object class="svgplot " align="" data="../slides/diagrams/ml/bias-variance015.svg" style=""></object>
+
+<center>*simple models on left complex models on right *</center>
+
+### 
+
+
+<object class="svgplot " align="" data="../slides/diagrams/ml/bias-variance016.svg" style=""></object>
+
+<center>*simple models on left complex models on right *</center>
+
+### 
+
+
+<object class="svgplot " align="" data="../slides/diagrams/ml/bias-variance017.svg" style=""></object>
+
+<center>*simple models on left complex models on right *</center>
+
+### 
+
+
+<object class="svgplot " align="" data="../slides/diagrams/ml/bias-variance018.svg" style=""></object>
+
+<center>*simple models on left complex models on right *</center>
+
+### 
+
+
+<object class="svgplot " align="" data="../slides/diagrams/ml/bias-variance019.svg" style=""></object>
+
+<center>*simple models on left complex models on right *</center>
+
+
+
+### Decision Making and Bias-Variance
+
+
+* In a population we should prefer variance-errors. 
+    * Bias errors lead to consistent, decsion making.
+    * Consistently wrong!
+    
+* Variance errors can also be averaged e.g. [bagging](https://en.wikipedia.org/wiki/Bootstrap_aggregating) and [boosting](https://en.wikipedia.org/wiki/Boosting_(machine_learning)) [@Breiman-bagging96] 
+
+
+-->
 </section>
 <section id="section-1" class="slide level3">
 <h3></h3>
@@ -578,17 +753,6 @@ include{_philosophy/includes/trolley-push.md}-->
 <center>
 <em>simple models on left complex models on right </em>
 </center>
-</section>
-<section id="decision-making-and-bias-variance" class="slide level3">
-<h3>Decision Making and Bias-Variance</h3>
-<ul>
-<li>In a population we should prefer variance-errors.
-<ul>
-<li>Bias errors lead to consistent, decsion making.</li>
-<li>Consistently wrong!</li>
-</ul></li>
-<li>Variance errors can also be averaged e.g. <a href="https://en.wikipedia.org/wiki/Bootstrap_aggregating">bagging</a> and <a href="https://en.wikipedia.org/wiki/Boosting_(machine_learning)">boosting</a> <span class="citation" data-cites="Breiman-bagging96">(Breiman, 1996)</span></li>
-</ul>
 <!--### Rational Behaviour
 
 
@@ -682,59 +846,14 @@ include{_philosophy/includes/trolley-push.md}-->
 <div class="" style="text-align:center"><img class="negate" src="../slides/diagrams/ai/trolley2.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none;"></div>
 
 -->
+<!-- ### Trolleys!?!
+ -->
+<!--  -->
+<!-- <div class="" style="text-align:center"><img class="" src="../slides/diagrams/ai/Trolley_1.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none;"></div> -->
+<!--  -->
 </section>
-<section id="trolleys" class="slide level3">
-<h3>Trolleys!?!</h3>
-<div style="text-align:center">
-<img class="" src="../slides/diagrams/ai/Trolley_1.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
-</div>
-</section>
-<section id="the-real-ethical-dilemma" class="slide level3">
-<h3>The Real Ethical Dilemma</h3>
-<ul>
-<li>Trolley Problem is an oversimplification.</li>
-<li>Driverless cars:
-<ul>
-<li>introduce driverless cars and bring about a 90% reduction in deaths</li>
-<li>What if remaining deaths are all cyclists?</li>
-</ul></li>
-</ul>
-</section>
-<section id="conclusion" class="slide level3">
-<h3>Conclusion</h3>
-<ul>
-<li>Tendency to seek proxies such as <em>consistency</em> in decision making.</li>
-<li>Consistent algorithms oversimplifies.</li>
-<li>Society would be more robust if diversity of solutions and opinions are sustained and respected.</li>
-</ul>
-</section>
-<section id="links" class="slide level3">
-<h3>Links</h3>
-<ul>
-<li><a href="http://inverseprobability.com/2017/11/15/decision-making">This paper on decision making and diversity</a></li>
-<li>Articles in the Guardian are available from my <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></li>
-<li><a href="http://inverseprobability.com/blog.html">My blog</a> has articles relating to this area.</li>
-<li><a href="http://inverseprobability.com/2015/12/04/what-kind-of-ai/">This post on System Zero</a> and <a href="http://inverseprobability.com/2015/11/09/artificial-stupidity/">This post on the Mechanistic Fallacy</a> relate to the ideas in this talk.</li>
-<li><a href="http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence">This post on natural vs artificial systems</a></li>
-</ul>
-</section>
-<section id="thanks" class="slide level3">
-<h3>Thanks!</h3>
-<ul>
-<li>twitter: <code>@lawrennd</code></li>
-<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
-</ul>
-</section>
-<section id="references" class="slide level3 unnumbered">
+<section id="references" class="slide level3">
 <h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-Breiman-bagging96">
-<p>Breiman, L., 1996. Bagging predictors. Machine Learning 24, 123–140. <a href="https://doi.org/10.1007/BF00058655" class="uri">https://doi.org/10.1007/BF00058655</a></p>
-</div>
-<div id="ref-Geman-biasvariance92">
-<p>Geman, S., Bienenstock, E., Doursat, R., 1992. Neural networks and the bias/variance dilemma. Neural Computation 4, 1–58. <a href="https://doi.org/10.1162/neco.1992.4.1.1" class="uri">https://doi.org/10.1162/neco.1992.4.1.1</a></p>
-</div>
-</div>
 </section>
     </div>
   </div>

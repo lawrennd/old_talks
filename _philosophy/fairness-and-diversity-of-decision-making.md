@@ -32,45 +32,15 @@ include{_philosophy/includes/utility-utilitarianism.md}
 include{_philosophy/includes/trolley-push.md}-->
 \include{_ml/includes/what-is-ml-2.md}
 <!--\include{_philosophy/includes/bias-towards-variance.md}-->
-\include{_philosophy/includes/bias-variance-in-ml.md}
+<!--\include{_philosophy/includes/bias-variance-in-ml.md}-->
+\include{_ml/includes/bias-variance-plots.md}
 <!--\include{_philosophy/includes/bias-variance-rational.md}-->
 <!--\include{_philosophy/includes/uncertainty-and-absolutism.md}-->
 
-\newslide{Trolleys!?!}
-\slides{
+<!-- \newslide{Trolleys!?!} -->
+<!-- \slides{ -->
 
-\includejpg{../slides/diagrams/ai/Trolley_1}{80%}{}
-}
-
-\newslide{The Real Ethical Dilemma}
-\slides{
-* Trolley Problem is an oversimplification.
-* Driverless cars: 
-    * introduce driverless cars and bring about a 90% reduction in deaths 
-	* What if remaining deaths are all cyclists?
-}
-
-\newslide{Conclusion}
-\slides{
-* Tendency to seek proxies such as *consistency* in decision making. 
-* Consistent algorithms oversimplifies.
-* Society would be more robust if diversity of solutions and opinions are sustained and respected. 
-}
-
-\newslide{Links}
-\slides{
-* [This paper on decision making and diversity](http://inverseprobability.com/2017/11/15/decision-making)
-* Articles in the Guardian are available from my [Guardian Profile Page](http://www.theguardian.com/profile/neil-lawrence)
-* [My blog](http://inverseprobability.com/blog.html) has articles relating to this area.
-* [This post on System Zero](http://inverseprobability.com/2015/12/04/what-kind-of-ai/) and [This post on the Mechanistic Fallacy](http://inverseprobability.com/2015/11/09/artificial-stupidity/) relate to the ideas in this talk.
-* [This post on natural vs artificial systems](http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence)
-}
-
-\newslide{Thanks!}
-
-* twitter: ```@lawrennd```
-* blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
-
-
+<!-- \includejpg{../slides/diagrams/ai/Trolley_1}{80%}{} -->
+<!-- } -->
 \newslide{References}
 
