@@ -33,6 +33,7 @@ include{_philosophy/includes/trolley-push.md}-->
 \include{_ml/includes/what-is-ml-2.md}
 <!--\include{_philosophy/includes/bias-towards-variance.md}-->
 <!--\include{_philosophy/includes/bias-variance-in-ml.md}-->
+\newslide{BIAS-VARIANCE DILEMMA}
 \include{_ml/includes/bias-variance-plots.md}
 <!--\include{_philosophy/includes/bias-variance-rational.md}-->
 <!--\include{_philosophy/includes/uncertainty-and-absolutism.md}-->
