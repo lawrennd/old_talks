@@ -1,4 +1,4 @@
-### Probabilistic Modelling
+\subsection{Probabilistic Modelling}
 
 \slides{
 * Probabilistically we want,}\notes{

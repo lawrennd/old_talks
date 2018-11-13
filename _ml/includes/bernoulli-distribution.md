@@ -79,18 +79,18 @@ plot.bayes_billiard(ax, diagrams='../slides/diagrams/ml/')}
 
 \slides{
 \startslides{bayes_billiard}{1}{10}
-\includesvg{../slides/diagrams/ml/bayes-billiard000.svg}{}{bayes_billiard}
-\includesvg{../slides/diagrams/ml/bayes-billiard001.svg}{}{bayes_billiard}
-\includesvg{../slides/diagrams/ml/bayes-billiard002.svg}{}{bayes_billiard}
-\includesvg{../slides/diagrams/ml/bayes-billiard003.svg}{}{bayes_billiard}
-\includesvg{../slides/diagrams/ml/bayes-billiard004.svg}{}{bayes_billiard}
-\includesvg{../slides/diagrams/ml/bayes-billiard005.svg}{}{bayes_billiard}
-\includesvg{../slides/diagrams/ml/bayes-billiard006.svg}{}{bayes_billiard}
-\includesvg{../slides/diagrams/ml/bayes-billiard007.svg}{}{bayes_billiard}
-\includesvg{../slides/diagrams/ml/bayes-billiard008.svg}{}{bayes_billiard}
-\includesvg{../slides/diagrams/ml/bayes-billiard009.svg}{}{bayes_billiard}
+\div{\includesvg{../slides/diagrams/ml/bayes-billiard000.svg}}{bayes_billiard}{text-align:center}
+\div{\includesvg{../slides/diagrams/ml/bayes-billiard001.svg}}{bayes_billiard}{text-align:center}
+\div{\includesvg{../slides/diagrams/ml/bayes-billiard002.svg}}{bayes_billiard}{text-align:center}
+\div{\includesvg{../slides/diagrams/ml/bayes-billiard003.svg}}{bayes_billiard}{text-align:center}
+\div{\includesvg{../slides/diagrams/ml/bayes-billiard004.svg}}{bayes_billiard}{text-align:center}
+\div{\includesvg{../slides/diagrams/ml/bayes-billiard005.svg}}{bayes_billiard}{text-align:center}
+\div{\includesvg{../slides/diagrams/ml/bayes-billiard006.svg}}{bayes_billiard}{text-align:center}
+\div{\includesvg{../slides/diagrams/ml/bayes-billiard007.svg}}{bayes_billiard}{text-align:center}
+\div{\includesvg{../slides/diagrams/ml/bayes-billiard008.svg}}{bayes_billiard}{text-align:center}
+\div{\includesvg{../slides/diagrams/ml/bayes-billiard009.svg}}{bayes_billiard}{text-align:center}
 }
-\notesfigure{\includesvg{../slides/diagrams/ml/bayes-billiard009.svg}}
+\notesfigure{\div{\includesvg{../slides/diagrams/ml/bayes-billiard009.svg}}{}{text-align:center}}
 
 \setupplotcode{import pods
 from ipywidgets import IntSlider}

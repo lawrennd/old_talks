@@ -57,7 +57,7 @@ import matplotlib.pyplot as plt # this imports the plotting library in python}
 
 \code{plt.plot(data['Year'], data['Body_Count'], 'rx')}
 
-\notes{You may be curious what the arguments we give to plt.plot are for, now is the perfect time to look at the documentation}
+\notes{You may be curious what the arguments we give to ```plt.plot``` are for, now is the perfect time to look at the documentation}
 
 \code{plt.plot?}
 
