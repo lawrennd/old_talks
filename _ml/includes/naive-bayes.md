@@ -1,4 +1,4 @@
-### Naive Bayes Classifiers
+\subsection{Naive Bayes Classifiers}
 
 \notes{In probabilistic machine learning we place probability distributions (or densities) over all the variables of interest, our first classification algorithm will do just that. We will consider how to form a classification by making assumptions about the *joint* density of our observations. We need to make assumptions to reduce the number of parameters we need to optimise.}\slides{
 * Probabilistic Machine Learning: place probability distributions (or densities) over all the variables of interest.
@@ -40,7 +40,7 @@ and $\inputMatrix$, $p(\dataVector, \inputMatrix)$.
 2. Feature conditional independence
 3. Marginal density for $\dataScalar$.}
 
-### Data Conditional Independence
+\subsection{Data Conditional Independence}
 
 \notes{If we are given model parameters $\paramVector$ we assume that conditioned on all these parameters that all data points in the model are independent. In other words we have,}\slides{
 * Given model parameters $\paramVector$ we assume that all data points in the model are independent. }
@@ -59,7 +59,7 @@ and $\inputMatrix$, $p(\dataVector, \inputMatrix)$.
 
 Computing posterior distribution in this case becomes easier, this is known as the 'Bayes classifier'.
 
-### Feature Conditional Independence
+\subsection{Feature Conditional Independence}
 
 \notes{
 $$
@@ -76,7 +76,7 @@ where $\dataDim$ is the dimensionality of our inputs.
 * Bayes classifier + feature conditional independence.
 }
 
-### Marginal Density for $\dataScalar_i$
+\subsection{Marginal Density for $\dataScalar_i$}
 
 \notes{
 $$
@@ -93,7 +93,7 @@ $$
   $$p(\dataScalar_i|\pi) = \pi^{\dataScalar_i} (1-\pi)^{1-\dataScalar_i}$$
   where $\pi$ now has the interpretation as being the *prior* probability that the classification should be positive.
 
-### Joint Density for Naive Bayes
+\subsection{Joint Density for Naive Bayes}
 
 \notes{This allows us to write down the full joint density of the training data,}\slides{
 * This allows us to write down the full joint density of the training data,}
@@ -169,87 +169,7 @@ j})^2}{\dataStd_{\dataScalar_i,j}^2}\right),
   $$
 }
 
-\notes{
-### Movie Body Count Data
-
-First we will load in the movie body count data. Our aim will be to predict whether a movie is rated R or not given the attributes in the data. We will predict on the basis of year, body count and movie genre. The genres in the CSV file are stored as a list in the following form:
-
-```
-Biography|Action|Sci-Fi
-```
-
-First we have to do a little work to extract this form and turn it into a vector of binary values. Let's first load in and remind ourselves of the data.}
-
-\setupcode{import pods}
-\code{data = pods.datasets.movie_body_count()['Y']
-data.head()}
-
-\notes{Now we will convert this data into a form which we can use as inputs `X`, and labels `y`.}
-
-\setupcode{import pandas as pd
-import numpy as np}
-
-\code{X = data[['Year', 'Body_Count']].copy()
-y = data['MPAA_Rating']=='R' # set label to be positive for R rated films.
-
-# Create series of movie genres with the relevant index
-s = data['Genre'].apply(pd.Series, 1).stack() 
-s.index = s.index.droplevel(-1) # to line up with df's index
-
-# Extract from the series the unique list of genres.
-genres = s.unique()
-
-# For each genre extract the indices where it is present and add a column to X
-for genre in genres:
-    index = s[s==genre].index.tolist()
-    X.loc[:, genre] = 0.0 
-    X.loc[index, genre] = 1.0}
-
-\notes{This has given us a new data frame `X` which contains the different genres in different columns.}
-
-\code{X.describe()}
-
-\notes{We can now specify the naive Bayes model. For the genres we want to model the data as Bernoulli distributed, and for the year and body count we want to model the data as Gaussian distributed. We set up two data frames to contain the parameters for the rows and the columns below.}
-
-\code{# assume data is binary or real.
-# this list encodes whether it is binary or real (1 for binary, 0 for real)
-binary_columns = genres
-real_columns = ['Year', 'Body_Count']
-Bernoulli = pd.DataFrame(data=np.zeros((2,len(binary_columns))), columns=binary_columns, index=['theta_0', 'theta_1'])
-Gaussian = pd.DataFrame(data=np.zeros((4,len(real_columns))), columns=real_columns, index=['mu_0', 'sigma2_0', 'mu_1', 'sigma2_1'])}
-
-\notes{Now we have the data in a form ready for analysis, let's construct our data matrix.}
-
-\code{num_train = 200
-indices = np.random.permutation(X.shape[0])
-train_indices = indices[:num_train]
-test_indices = indices[num_train:]
-X_train = X.loc[train_indices]
-y_train = y.loc[train_indices]
-X_test = X.loc[test_indices]
-y_test = y.loc[test_indices]}
-
-\notes{And we can now train the model. For each feature we can make the fit independently. The fit is given by either counting the number of positives (for binary data) which gives us the maximum likelihood solution for the Bernoulli. Or by computing the empirical mean and variance of the data for the Gaussian, which also gives us the maximum likelihood solution.}
-
-\code{for column in X_train:
-    if column in Gaussian:
-        Gaussian[column]['mu_0'] = X_train[column][~y].mean()
-        Gaussian[column]['mu_1'] = X_train[column][y].mean()
-        Gaussian[column]['sigma2_0'] = X_train[column][~y].var(ddof=0)
-        Gaussian[column]['sigma2_1'] = X_train[column][y].var(ddof=0)
-    if column in Bernoulli:
-        Bernoulli[column]['theta_0'] = X_train[column][~y].sum()/(~y).sum()
-        Bernoulli[column]['theta_1'] = X_train[column][y].sum()/(y).sum()}
-
-\notes{We can examine the nature of the distributions we've fitted to the model by looking at the entries in these data frames.}
-
-\code{Bernoulli}
-
-\code{Gaussian}
-
-\notes{The final model parameter is the prior probability of the positive class, $\pi$, which is computed by maximum likelihood.}
-
-\code{prior = float(y_train.sum())/len(y_train)}
+\include{_ml/includes/nigerian-nmis-data-naive-bayes.md}
 
 \newslide{Compute Posterior for Test Point Label}
 \slides{
@@ -298,7 +218,7 @@ found from $$p(\dataScalar^*, \dataVector, \inputMatrix, \inputVector^*| \paramV
 * This formula is also fairly straightforward to implement for different class conditional distributions.
 }
 \notes{
-### Making Predictions
+\subsection{Making Predictions}
 
 Naive Bayes has given us the class conditional densities: $p(\inputVector_i | \dataScalar_i, \paramVector)$. To make predictions with these densities we need to form the distribution given by
 $$
@@ -347,7 +267,7 @@ Now for any test point we compute the joint distribution of the Gaussian feature
     return x*np.log(theta) + (1-x)*np.log(1-theta)}
 
 
-### Laplace Smoothing
+\subsection{Laplace Smoothing}
 
 Before we proceed, let's just pause and think for a moment what will happen if `theta` here is either zero or one. This will result in $\log 0 = -\infty$ and cause numerical problems.  This definitely can happen in practice. If some of the features are rare or very common across the data set then the maximum likelihood solution could find values of zero or one respectively. Such values are problematic because they cause posterior probabilities of class membership of either one or zero. In practice we deal with this using *Laplace smoothing* (which actually has an interpretation as a Bayesian fit of the Bernoulli distribution. Laplace used an example of the sun rising each day, and a wish to predict the sun rise the following day to describe his idea of smoothing, which can be found at the bottom of following page from Laplace's 'Essai Philosophique ...'}
 
@@ -417,7 +337,7 @@ confusion_matrix}
 \exercise{We have decided to classify positive if probability of R rating is greater than 0.5. This has led us to accidentally classify some films as 'safe for children' when the aren't in actuallity. Imagine you wish to ensure that the film is safe for children. With your test set how low do you have to set the threshold to avoid all the false negatives (i.e. films where you said it wasn't R-rated, but in actuality it was?}
 
 \notes{
-### Making Predictions
+\subsection{Making Predictions}
 
 Naive Bayes has given us the class conditional densities: $p(\inputVector_i | \dataScalar_i, \paramVector)$. To make predictions with these densities we need to form the distribution given by
 $$
@@ -468,7 +388,7 @@ These characteristics mean that naive Bayes scales very well with big data. To f
 }
 
 \notes{
-### Naive Bayes Summary
+\subsection{Naive Bayes Summary}
 
 Naive Bayes is making very simple assumptions about the data, in particular it is modeling the full *joint* probability of the data set, $p(\dataVector, \inputMatrix | \paramVector, \pi)$ by very strong assumptions about factorizations that are unlikely to be true in practice. The data conditional independence assumption is common, and relies on a rich parameter vector to absorb all the information in the training data. The additional assumption of naive Bayes is that features are conditional independent given the class label $\dataScalar_i$ (and the parameter vector, $\paramVector$. This is quite a strong assumption. However, it causes the objective function to decompose into parts which can be independently fitted to the different feature vectors, meaning it is very easy to fit the model to large data. It is also clear how we should handle *streaming* data and *missing* data. This means that the model can be run 'live', adapting parameters and information as it arrives. Indeed, the model is even capable of dealing with new *features* that might arrive at run time. Such is the strength of the modeling the joint probability density. However, the factorization assumption that allows us to do this efficiently is very strong and may lead to poor decision boundaries in practice.
 }

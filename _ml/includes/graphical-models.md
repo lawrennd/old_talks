@@ -1,4 +1,4 @@
-### Graphical Models
+\subsection{Graphical Models}
 
 \slides{
 * Represent joint distribution through *conditional dependencies*.
@@ -38,6 +38,6 @@ Predict Perioperative Risk of Clostridium Difficile Infection Following Colon Su
 
 However, a challenge arise when the data becomes more complex. Consider the graphical model shown below, used to predict the perioperative risk of *C Difficile* infection following colon surgery [@Steele:predictive12].}
 
-\includeimg{../slides/diagrams/bayes-net-diagnosis.png}{40%}{negate}{center}
+\includepng{../slides/diagrams/bayes-net-diagnosis}{50%}{negate}
 
 \notes{To capture the complexity in the interelationship between the data the graph becomes more complex, and less interpretable.}

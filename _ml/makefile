@@ -1,4 +1,4 @@
-BASE=the-three-ds-of-machine-learning
+BASE=bayesian-methods-abuja
 include ../make-talk-flags.mk
-DATE=2018-11-15
+DATE=2018-11-14
 include ../make-talk.mk
