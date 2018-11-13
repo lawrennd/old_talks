@@ -1,7 +1,7 @@
 ---
 title: "Bayesian Methods"
 venue: "DSA, Abuja"
-abstract: "In this session we review the <em>probabilistic</em> approach to machine learning. We start with a review of probability, and introduce the concepts of probabilistic modelling. We then apply the approach in practice to Naive Bayesian classification. In this session we review the Bayesian formalism in the context of linear models, reviewing initially maximum likelihood and introducing basis functions as a way of driving non-linearity in the model."
+abstract: "In this session we review the <em>probabilistic</em> approach to machine learning. We start with a review of probability, and introduce the concepts of probabilistic modelling. We then apply the approach in practice to Naive Bayesian classification. In this session we review the probabilistic formulation of a classification model, reviewing initially maximum likelihood and the naive Bayes model."
 author:
 - given: Neil D.
   family: Lawrence
@@ -13,7 +13,6 @@ author:
 date: 2018-11-14
 published: 2018-11-14
 reveal: 2018-11-14-bayesian-methods-abuja.slides.html
-ipynb: 2018-11-14-bayesian-methods-abuja.ipynb
 layout: talk
 categories:
 - notes
@@ -111,22 +110,19 @@ plt.ylabel(<span class="st">&#39;number of nurses&#39;</span>)
 plt.xlabel(<span class="st">&#39;number of doctors&#39;</span>)</code></pre></div>
 <p>Note a few things. We are interacting with our data. In particular, we are replotting the data according to what we have learned so far. We are using the progamming language as a <em>scripting</em> language to give the computer one command or another, and then the next command we enter is dependent on the result of the previous. This is a very different paradigm to classical software engineering. In classical software engineering we normally write many lines of code (entire object classes or functions) before compiling the code and running it. Our approach is more similar to the approach we take whilst debugging. Historically, researchers interacted with data using a <em>console</em>. A command line window which allowed command entry. The notebook format we are using is slightly different. Each of the code entry boxes acts like a separate console window. We can move up and down the notebook and run each part in a different order. The <em>state</em> of the program is always as we left it after running the previous part.</p>
 <p>Let's use the sum rule to compute the approximate probability that a film from the movie body count website has over 40 deaths.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">large <span class="op">=</span> (data.num_nurses_fulltime<span class="op">&gt;</span><span class="dv">40</span>).<span class="bu">sum</span>()  <span class="co"># number of positive outcomes (in sum True counts as 1, False counts as 0)</span>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">large <span class="op">=</span> (data.num_nurses_fulltime<span class="op">&gt;</span><span class="dv">2</span>).<span class="bu">sum</span>()  <span class="co"># number of positive outcomes (in sum True counts as 1, False counts as 0)</span>
 total_facilities <span class="op">=</span> data.num_nurses_fulltime.count()
 
 prob_large <span class="op">=</span> <span class="bu">float</span>(large)<span class="op">/</span><span class="bu">float</span>(total_facilities)
-<span class="bu">print</span>(<span class="st">&quot;Probability of number of nurses being greather than 40 is:&quot;</span>, prob_death)</code></pre></div>
-<h3 id="question-4">Question 4</h3>
-<p><em>20 marks</em></p>
-<h3 id="write-your-answer-to-question-4-here">Write your answer to Question 4 here</h3>
+<span class="bu">print</span>(<span class="st">&quot;Probability of number of nurses being greather than 2 is:&quot;</span>, prob_large)</code></pre></div>
 <h2 id="conditioning">Conditioning</h2>
 <p>When predicting whether a coin turns up head or tails, we might think that this event is <em>independent</em> of the year or time of day. If we include an observation such as time, then in a probability this is known as <em>condtioning</em>. We use this notation, <span class="math inline">\(P(Y=y|X=x)\)</span>, to condition the outcome on a second variable (in this case the number of doctors). Or, often, for a shorthand we use <span class="math inline">\(P(y|x)\)</span> to represent this distribution (the <span class="math inline">\(Y=\)</span> and <span class="math inline">\(X=\)</span> being implicit). If two variables are independent then we find that <span class="math display">\[
 P(y|x) = p(y).
-\]</span> However, we might believe that the number of nurses is dependent on the number of doctors. For this we can try estimating <span class="math inline">\(P(Y&gt;40 | X&gt;10)\)</span> and compare the result, for example to <span class="math inline">\(P(Y&gt;40|X\leq 10)\)</span> using our empirical estimate of the probability.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">large <span class="op">=</span> ((data.num_nurses_fulltime<span class="op">&gt;</span><span class="dv">40</span>) <span class="op">&amp;</span> (data.num_doctors_fulltime<span class="op">&gt;</span><span class="dv">10</span>)).<span class="bu">sum</span>()
-    total_large_doctors <span class="op">=</span> (data.num_doctors_fulltime<span class="op">&gt;</span><span class="dv">10</span>).<span class="bu">sum</span>()
-    prob_both_large <span class="op">=</span> large<span class="op">/</span>total_large_doctors
-    <span class="bu">print</span>(<span class="st">&quot;Probability of number of nurses being greather than 40 given number of doctors is greater than 10&quot;</span>, year, <span class="st">&quot;is:&quot;</span>, prob_both_large)</code></pre></div>
+\]</span> However, we might believe that the number of nurses is dependent on the number of doctors. For this we can try estimating <span class="math inline">\(P(Y&gt;2 | X&gt;1)\)</span> and compare the result, for example to <span class="math inline">\(P(Y&gt;2|X\leq 1)\)</span> using our empirical estimate of the probability.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">large <span class="op">=</span> ((data.num_nurses_fulltime<span class="op">&gt;</span><span class="dv">2</span>) <span class="op">&amp;</span> (data.num_doctors_fulltime<span class="op">&gt;</span><span class="dv">1</span>)).<span class="bu">sum</span>()
+total_large_doctors <span class="op">=</span> (data.num_doctors_fulltime<span class="op">&gt;</span><span class="dv">1</span>).<span class="bu">sum</span>()
+prob_both_large <span class="op">=</span> large<span class="op">/</span>total_large_doctors
+<span class="bu">print</span>(<span class="st">&quot;Probability of number of nurses being greater than 2 given number of doctors is greater than 1 is:&quot;</span>, prob_both_large)</code></pre></div>
 <h3 id="question">Question</h3>
 <ul>
 <li>marks*</li>
@@ -555,12 +551,12 @@ total_correct <span class="op">=</span> <span class="bu">sum</span>(correct)
 <span class="bu">print</span>(<span class="st">&quot;Total correct&quot;</span>, total_correct, <span class="st">&quot; out of &quot;</span>, <span class="bu">len</span>(y_test), <span class="st">&quot;which is&quot;</span>, <span class="bu">float</span>(total_correct)<span class="op">/</span><span class="bu">len</span>(y_test), <span class="st">&quot;%&quot;</span>)</code></pre></div>
 <p>We can also now plot the <a href="http://en.wikipedia.org/wiki/Confusion_matrix">confusion matrix</a>. A confusion matrix tells us where we are making mistakes. Along the diagonal it stores the <em>true positives</em>, the points that were positive class that we classified correctly, and the <em>true negatives</em>, the points that were negative class and that we classified correctly. The off diagonal terms contain the false positives and the false negatives. Along the rows of the matrix we place the actual class, and along the columns we place our predicted class.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">confusion_matrix <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>np.zeros((<span class="dv">2</span>,<span class="dv">2</span>)), 
-                                columns<span class="op">=</span>[<span class="st">&#39;predicted not R-rated&#39;</span>, <span class="st">&#39;predicted R-rated&#39;</span>],
-                                index <span class="op">=</span>[<span class="st">&#39;actual not R-rated&#39;</span>,<span class="st">&#39;actual R-rated&#39;</span>])
-confusion_matrix[<span class="st">&#39;predicted R-rated&#39;</span>][<span class="st">&#39;actual R-rated&#39;</span>] <span class="op">=</span> (y_test <span class="op">&amp;</span> (p_y<span class="op">&gt;</span><span class="fl">0.5</span>)).<span class="bu">sum</span>()
-confusion_matrix[<span class="st">&#39;predicted R-rated&#39;</span>][<span class="st">&#39;actual not R-rated&#39;</span>] <span class="op">=</span> (<span class="op">~</span>y_test <span class="op">&amp;</span> (p_y<span class="op">&gt;</span><span class="fl">0.5</span>)).<span class="bu">sum</span>()
-confusion_matrix[<span class="st">&#39;predicted not R-rated&#39;</span>][<span class="st">&#39;actual R-rated&#39;</span>] <span class="op">=</span> (y_test <span class="op">&amp;</span> <span class="op">~</span>(p_y<span class="op">&gt;</span><span class="fl">0.5</span>)).<span class="bu">sum</span>()
-confusion_matrix[<span class="st">&#39;predicted not R-rated&#39;</span>][<span class="st">&#39;actual not R-rated&#39;</span>] <span class="op">=</span> (<span class="op">~</span>y_test <span class="op">&amp;</span> <span class="op">~</span>(p_y<span class="op">&gt;</span><span class="fl">0.5</span>)).<span class="bu">sum</span>()
+                                columns<span class="op">=</span>[<span class="st">&#39;predicted no maternity&#39;</span>, <span class="st">&#39;predicted maternity&#39;</span>],
+                                index <span class="op">=</span>[<span class="st">&#39;actual no maternity&#39;</span>,<span class="st">&#39;actual maternity&#39;</span>])
+confusion_matrix[<span class="st">&#39;predicted maternity&#39;</span>][<span class="st">&#39;actual maternity&#39;</span>] <span class="op">=</span> (y_test <span class="op">&amp;</span> (p_y<span class="op">&gt;</span><span class="fl">0.5</span>)).<span class="bu">sum</span>()
+confusion_matrix[<span class="st">&#39;predicted maternity&#39;</span>][<span class="st">&#39;actual no maternity&#39;</span>] <span class="op">=</span> (<span class="op">~</span>y_test <span class="op">&amp;</span> (p_y<span class="op">&gt;</span><span class="fl">0.5</span>)).<span class="bu">sum</span>()
+confusion_matrix[<span class="st">&#39;predicted no maternity&#39;</span>][<span class="st">&#39;actual maternity&#39;</span>] <span class="op">=</span> (y_test <span class="op">&amp;</span> <span class="op">~</span>(p_y<span class="op">&gt;</span><span class="fl">0.5</span>)).<span class="bu">sum</span>()
+confusion_matrix[<span class="st">&#39;predicted no maternity&#39;</span>][<span class="st">&#39;actual no maternity&#39;</span>] <span class="op">=</span> (<span class="op">~</span>y_test <span class="op">&amp;</span> <span class="op">~</span>(p_y<span class="op">&gt;</span><span class="fl">0.5</span>)).<span class="bu">sum</span>()
 confusion_matrix</code></pre></div>
 <h3 id="exercise-1">Exercise</h3>
 <p>How can you improve your classification, are all the features equally valid? Are some features more helpful than others? What happens if you remove features that appear to be less helpful. How might you select such features?</p>
@@ -569,7 +565,7 @@ confusion_matrix</code></pre></div>
 
 </code></pre></div>
 <h3 id="exercise-2">Exercise</h3>
-<p>We have decided to classify positive if probability of R rating is greater than 0.5. This has led us to accidentally classify some films as 'safe for children' when the aren't in actuallity. Imagine you wish to ensure that the film is safe for children. With your test set how low do you have to set the threshold to avoid all the false negatives (i.e. films where you said it wasn't R-rated, but in actuality it was?</p>
+<p>We have decided to classify positive if probability of maternity is greater than 0.5. This has led us to accidentally classify some facilities as havien't facilities for maternity when in fact they don't. Imagine you wish to ensure that a facility handles maternity. With your test set how low do you have to set the threshold to avoid all the false negatives (i.e. facilities where you predicted there was no maternity, but in actuality there were?</p>
 <h3 id="write-your-answer-to-exercise-here-2">Write your answer to Exercise here</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Use this box for any code you need for the exercise</span>
 
