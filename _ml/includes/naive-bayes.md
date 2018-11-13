@@ -61,12 +61,10 @@ Computing posterior distribution in this case becomes easier, this is known as t
 
 \subsection{Feature Conditional Independence}
 
-\notes{
-$$
+\notes{$$
 p(\inputVector_i | \dataScalar_i, \paramVector) = \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)
 $$
-where $\dataDim$ is the dimensionality of our inputs.
-}
+where $\dataDim$ is the dimensionality of our inputs.}
 
 \notes{The assumption that is particular to naive Bayes is to now consider that the *features* are also conditionally independent, but not only given the parameters. We assume that the features are independent given the parameters *and* the label. So for each data point we have}\slides{
 * Particular to naive Bayes: assume *features* are also conditionally independent, given param *and* the label.}
@@ -78,11 +76,9 @@ where $\dataDim$ is the dimensionality of our inputs.
 
 \subsection{Marginal Density for $\dataScalar_i$}
 
-\notes{
-$$
+\notes{$$
 p(\inputScalar_{i,j},\dataScalar_i| \paramVector) = p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i).
-$$
-}
+$$}
 
 \notes{We now have nearly all of the components we need to specify the full joint density. However, the feature conditional independence doesn't yet give us the joint density over $p(\dataScalar_i, \inputVector_i)$ which is required to subsitute in to our data conditional independence to give us the full density. To recover the joint density given the conditional distribution of each feature, $p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)$, we need to make use of the product rule and combine it with a marginal density for $\dataScalar_i$,
 }\slides{
@@ -324,17 +320,17 @@ print("Total correct", total_correct, " out of ", len(y_test), "which is", float
 \notes{We can also now plot the [confusion matrix](http://en.wikipedia.org/wiki/Confusion_matrix). A confusion matrix tells us where we are making mistakes. Along the diagonal it stores the *true positives*, the points that were positive class that we classified correctly, and the *true negatives*, the points that were negative class and that we classified correctly. The off diagonal terms contain the false positives and the false negatives. Along the rows of the matrix we place the actual class, and along the columns we place our predicted class.}
 
 \code{confusion_matrix = pd.DataFrame(data=np.zeros((2,2)), 
-                                columns=['predicted not R-rated', 'predicted R-rated'],
-                                index =['actual not R-rated','actual R-rated'])
-confusion_matrix['predicted R-rated']['actual R-rated'] = (y_test & (p_y>0.5)).sum()
-confusion_matrix['predicted R-rated']['actual not R-rated'] = (~y_test & (p_y>0.5)).sum()
-confusion_matrix['predicted not R-rated']['actual R-rated'] = (y_test & ~(p_y>0.5)).sum()
-confusion_matrix['predicted not R-rated']['actual not R-rated'] = (~y_test & ~(p_y>0.5)).sum()
+                                columns=['predicted no maternity', 'predicted maternity'],
+                                index =['actual no maternity','actual maternity'])
+confusion_matrix['predicted maternity']['actual maternity'] = (y_test & (p_y>0.5)).sum()
+confusion_matrix['predicted maternity']['actual no maternity'] = (~y_test & (p_y>0.5)).sum()
+confusion_matrix['predicted no maternity']['actual maternity'] = (y_test & ~(p_y>0.5)).sum()
+confusion_matrix['predicted no maternity']['actual no maternity'] = (~y_test & ~(p_y>0.5)).sum()
 confusion_matrix}
 
 \exercise{How can you improve your classification, are all the features equally valid? Are some features more helpful than others? What happens if you remove features that appear to be less helpful. How might you select such features?}
 
-\exercise{We have decided to classify positive if probability of R rating is greater than 0.5. This has led us to accidentally classify some films as 'safe for children' when the aren't in actuallity. Imagine you wish to ensure that the film is safe for children. With your test set how low do you have to set the threshold to avoid all the false negatives (i.e. films where you said it wasn't R-rated, but in actuality it was?}
+\exercise{We have decided to classify positive if probability of maternity is greater than 0.5. This has led us to accidentally classify some facilities as havien't facilities for maternity when in fact they don't. Imagine you wish to ensure that a facility handles maternity. With your test set how low do you have to set the threshold to avoid all the false negatives (i.e. facilities where you predicted there was no maternity, but in actuality there were?}
 
 \notes{
 \subsection{Making Predictions}
