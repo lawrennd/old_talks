@@ -7,13 +7,14 @@ First we will load in the Nigerian NMIS health data. Our aim will be to predict 
 
 \ifdef{nmisdatadownloaded}
 \code{data.head()}
-\else{
+\else
 \setupcode{import urllib.request}
-\code{urllib.request.urlretrieve('https://energydata.info/dataset/f85d1796-e7f2-4630-be84-79420174e3bd/resource/6e640a13-cab4-457b-b9e6-0336051bac27/download/healthmopupandbaselinenmisfacility.csv', 'healthmopupandbaselinenmisfacility.csv')}
+\code{urllib.request.urlretrieve('https://energydata.info/dataset/f85d1796-e7f2-4630-be84-79420174e3bd/resource/6e640a13-cab4-457b-b9e6-0336051bac27/download/healthmopupandbaselinenmisfacility.csv', 'healthmopupandbaselinenmisfacility.csv')
 
 \setupcode{import pandas as pd}
 \code{data = pd.read_csv('healthmopupandbaselinenmisfacility.csv')}
 data.head()}
+\endif
 
 \notes{Now we will convert this data into a form which we can use as inputs `X`, and labels `y`.}
 
@@ -21,6 +22,7 @@ data.head()}
 import numpy as np}
 
 \code{data = data[~pd.isnull(data['maternal_health_delivery_services'])]
+data = data.dropna() # Remove entries with missing values
 X = data[['emergency_transport',
 		  'num_chews_fulltime', 
 		  'phcn_electricity',
@@ -34,7 +36,7 @@ X = data[['emergency_transport',
           'malaria_treatment_artemisinin', 
 		  'latitude', 
 		  'longitude']].copy()
-y = data['maternal_health_delivery_services']  # set label to be whether there's a maternal health delivery service
+y = data['maternal_health_delivery_services']==True  # set label to be whether there's a maternal health delivery service
 
 # Create series of health center types with the relevant index
 s = data['facility_type_display'].apply(pd.Series, 1).stack() 
@@ -44,10 +46,13 @@ s.index = s.index.droplevel(-1) # to line up with df's index
 types = s.unique()
 
 # For each type extract the indices where it is present and add a column to X
+type_names = []
 for htype in types:
     index = s[s==htype].index.tolist()
-    X.loc[:, htype] = 0.0 
-    X.loc[index, htype] = 1.0}
+    type_col=htype.replace(' ', '_').replace('/','-').lower()
+    type_names.append(type_col)
+    X.loc[:, type_col] = 0.0 
+    X.loc[index, type_col] = 1.0}
 
 \notes{This has given us a new data frame `X` which contains the different facility types  in different columns.}
 
@@ -64,7 +69,7 @@ binary_columns = ['emergency_transport',
 		  'improved_sanitation',
           'antenatal_care_yn', 
 		  'family_planning_yn',
-          'malaria_treatment_artemisinin'] + types
+          'malaria_treatment_artemisinin'] + type_names
 real_columns = ['num_chews_fulltime', 
                 'num_nurses_fulltime', 
                 'num_doctors_fulltime', 
@@ -80,21 +85,21 @@ indices = np.random.permutation(X.shape[0])
 train_indices = indices[:num_train]
 test_indices = indices[num_train:]
 X_train = X.loc[train_indices]
-y_train = y.loc[train_indices]
+y_train = y.loc[train_indices]==True
 X_test = X.loc[test_indices]
-y_test = y.loc[test_indices]}
+y_test = y.loc[test_indices]==True}
 
 \notes{And we can now train the model. For each feature we can make the fit independently. The fit is given by either counting the number of positives (for binary data) which gives us the maximum likelihood solution for the Bernoulli. Or by computing the empirical mean and variance of the data for the Gaussian, which also gives us the maximum likelihood solution.}
 
 \code{for column in X_train:
     if column in Gaussian:
-        Gaussian[column]['mu_0'] = X_train[column][~y].mean()
-        Gaussian[column]['mu_1'] = X_train[column][y].mean()
-        Gaussian[column]['sigma2_0'] = X_train[column][~y].var(ddof=0)
-        Gaussian[column]['sigma2_1'] = X_train[column][y].var(ddof=0)
+        Gaussian[column]['mu_0'] = X_train[column][~y_train].mean()
+        Gaussian[column]['mu_1'] = X_train[column][y_train].mean()
+        Gaussian[column]['sigma2_0'] = X_train[column][~y_train].var(ddof=0)
+        Gaussian[column]['sigma2_1'] = X_train[column][y_train].var(ddof=0)
     if column in Bernoulli:
-        Bernoulli[column]['theta_0'] = X_train[column][~y].sum()/(~y).sum()
-        Bernoulli[column]['theta_1'] = X_train[column][y].sum()/(y).sum()}
+        Bernoulli[column]['theta_0'] = X_train[column][~y_train].sum()/(~y_train).sum()
+        Bernoulli[column]['theta_1'] = X_train[column][y_train].sum()/(y_train).sum()}
 
 \notes{We can examine the nature of the distributions we've fitted to the model by looking at the entries in these data frames.}
 
