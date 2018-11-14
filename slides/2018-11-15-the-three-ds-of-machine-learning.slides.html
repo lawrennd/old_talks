@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="dcterms.date" content="2018-11-15">
+  <title>Machine Learning Systems Design</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="talks.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          TeX: {
+            extensions: ["color.js"]
+          }
+        });
+      </script>
+      <script>
+  
+  function setDivs(group) {
+    var frame = document.getElementById("range-".concat(group)).value
+    slideIndex = parseInt(frame)
+    showDivs(slideIndex, group);
+  }
+  
+  function plusDivs(n, group) {
+    showDivs(slideIndex += n, group);
+    document.setElementById("range-".concat(group)) = slideIndex
+  }
+  
+  function showDivs(n,group) {
+    var i;
+    var x = document.getElementsByClassName(group);
+    if (n > x.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = x.length}
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    x[slideIndex-1].style.display = "block";  
+  }
+      </script>
+</head>
+<body>
+\[\newcommand{\Amatrix}{\mathbf{A}}
+\newcommand{\KL}[2]{\text{KL}\left( #1\,\|\,#2 \right)}
+\newcommand{\Kaast}{\kernelMatrix_{\mathbf{ \ast}\mathbf{ \ast}}}
+\newcommand{\Kastu}{\kernelMatrix_{\mathbf{ \ast} \inducingVector}}
+\newcommand{\Kff}{\kernelMatrix_{\mappingFunctionVector \mappingFunctionVector}}
+\newcommand{\Kfu}{\kernelMatrix_{\mappingFunctionVector \inducingVector}}
+\newcommand{\Kuast}{\kernelMatrix_{\inducingVector \bf\ast}}
+\newcommand{\Kuf}{\kernelMatrix_{\inducingVector \mappingFunctionVector}}
+\newcommand{\Kuu}{\kernelMatrix_{\inducingVector \inducingVector}}
+\newcommand{\Kuui}{\Kuu^{-1}}
+\newcommand{\Qaast}{\mathbf{Q}_{\bf \ast \ast}}
+\newcommand{\Qastf}{\mathbf{Q}_{\ast \mappingFunction}}
+\newcommand{\Qfast}{\mathbf{Q}_{\mappingFunctionVector \bf \ast}}
+\newcommand{\Qff}{\mathbf{Q}_{\mappingFunctionVector \mappingFunctionVector}}
+\newcommand{\aMatrix}{\mathbf{A}}
+\newcommand{\aScalar}{a}
+\newcommand{\aVector}{\mathbf{a}}
+\newcommand{\acceleration}{a}
+\newcommand{\bMatrix}{\mathbf{B}}
+\newcommand{\bScalar}{b}
+\newcommand{\bVector}{\mathbf{b}}
+\newcommand{\basisFunc}{\phi}
+\newcommand{\basisFuncVector}{\boldsymbol{ \basisFunc}}
+\newcommand{\basisFunction}{\phi}
+\newcommand{\basisLocation}{\mu}
+\newcommand{\basisMatrix}{\boldsymbol{ \Phi}}
+\newcommand{\basisScalar}{\basisFunction}
+\newcommand{\basisVector}{\boldsymbol{ \basisFunction}}
+\newcommand{\activationFunction}{\phi}
+\newcommand{\activationMatrix}{\boldsymbol{ \Phi}}
+\newcommand{\activationScalar}{\basisFunction}
+\newcommand{\activationVector}{\boldsymbol{ \basisFunction}}
+\newcommand{\bigO}{\mathcal{O}}
+\newcommand{\binomProb}{\pi}
+\newcommand{\cMatrix}{\mathbf{C}}
+\newcommand{\cbasisMatrix}{\hat{\boldsymbol{ \Phi}}}
+\newcommand{\cdataMatrix}{\hat{\dataMatrix}}
+\newcommand{\cdataScalar}{\hat{\dataScalar}}
+\newcommand{\cdataVector}{\hat{\dataVector}}
+\newcommand{\centeredKernelMatrix}{\mathbf{ \MakeUppercase{\centeredKernelScalar}}}
+\newcommand{\centeredKernelScalar}{b}
+\newcommand{\centeredKernelVector}{\centeredKernelScalar}
+\newcommand{\centeringMatrix}{\mathbf{H}}
+\newcommand{\chiSquaredDist}[2]{\chi_{#1}^{2}\left(#2\right)}
+\newcommand{\chiSquaredSamp}[1]{\chi_{#1}^{2}}
+\newcommand{\conditionalCovariance}{\boldsymbol{ \Sigma}}
+\newcommand{\coregionalizationMatrix}{\mathbf{B}}
+\newcommand{\coregionalizationScalar}{b}
+\newcommand{\coregionalizationVector}{\mathbf{ \coregionalizationScalar}}
+\newcommand{\covDist}[2]{\text{cov}_{#2}\left(#1\right)}
+\newcommand{\covSamp}[1]{\text{cov}\left(#1\right)}
+\newcommand{\covarianceScalar}{c}
+\newcommand{\covarianceVector}{\mathbf{ \covarianceScalar}}
+\newcommand{\covarianceMatrix}{\mathbf{C}}
+\newcommand{\covarianceMatrixTwo}{\boldsymbol{ \Sigma}}
+\newcommand{\croupierScalar}{s}
+\newcommand{\croupierVector}{\mathbf{ \croupierScalar}}
+\newcommand{\croupierMatrix}{\mathbf{ \MakeUppercase{\croupierScalar}}}
+\newcommand{\dataDim}{p}
+\newcommand{\dataIndex}{i}
+\newcommand{\dataIndexTwo}{j}
+\newcommand{\dataMatrix}{\mathbf{Y}}
+\newcommand{\dataScalar}{y}
+\newcommand{\dataSet}{\mathcal{D}}
+\newcommand{\dataStd}{\sigma}
+\newcommand{\dataVector}{\mathbf{ \dataScalar}}
+\newcommand{\decayRate}{d}
+\newcommand{\degreeMatrix}{\mathbf{ \MakeUppercase{\degreeScalar}}}
+\newcommand{\degreeScalar}{d}
+\newcommand{\degreeVector}{\mathbf{ \degreeScalar}}
+% Already defined by latex
+%\newcommand{\det}[1]{\left|#1\right|}
+\newcommand{\diag}[1]{\text{diag}\left(#1\right)}
+\newcommand{\diagonalMatrix}{\mathbf{D}}
+\newcommand{\diff}[2]{\frac{\text{d}#1}{\text{d}#2}}
+\newcommand{\diffTwo}[2]{\frac{\text{d}^2#1}{\text{d}#2^2}}
+\newcommand{\displacement}{x}
+\newcommand{\displacementVector}{\textbf{\displacement}}
+\newcommand{\distanceMatrix}{\mathbf{ \MakeUppercase{\distanceScalar}}}
+\newcommand{\distanceScalar}{d}
+\newcommand{\distanceVector}{\mathbf{ \distanceScalar}}
+\newcommand{\eigenvaltwo}{\ell}
+\newcommand{\eigenvaltwoMatrix}{\mathbf{L}}
+\newcommand{\eigenvaltwoVector}{\mathbf{l}}
+\newcommand{\eigenvalue}{\lambda}
+\newcommand{\eigenvalueMatrix}{\boldsymbol{ \Lambda}}
+\newcommand{\eigenvalueVector}{\boldsymbol{ \lambda}}
+\newcommand{\eigenvector}{\mathbf{ \eigenvectorScalar}}
+\newcommand{\eigenvectorMatrix}{\mathbf{U}}
+\newcommand{\eigenvectorScalar}{u}
+\newcommand{\eigenvectwo}{\mathbf{v}}
+\newcommand{\eigenvectwoMatrix}{\mathbf{V}}
+\newcommand{\eigenvectwoScalar}{v}
+\newcommand{\entropy}[1]{\mathcal{H}\left(#1\right)}
+\newcommand{\errorFunction}{E}
+\newcommand{\expDist}[2]{\left<#1\right>_{#2}}
+\newcommand{\expSamp}[1]{\left<#1\right>}
+\newcommand{\expectation}[1]{\left\langle #1 \right\rangle }
+\newcommand{\expectationDist}[2]{\left\langle #1 \right\rangle _{#2}}
+\newcommand{\expectedDistanceMatrix}{\mathcal{D}}
+\newcommand{\eye}{\mathbf{I}}
+\newcommand{\fantasyDim}{r}
+\newcommand{\fantasyMatrix}{\mathbf{ \MakeUppercase{\fantasyScalar}}}
+\newcommand{\fantasyScalar}{z}
+\newcommand{\fantasyVector}{\mathbf{ \fantasyScalar}}
+\newcommand{\featureStd}{\varsigma}
+\newcommand{\gammaCdf}[3]{\mathcal{GAMMA CDF}\left(#1|#2,#3\right)}
+\newcommand{\gammaDist}[3]{\mathcal{G}\left(#1|#2,#3\right)}
+\newcommand{\gammaSamp}[2]{\mathcal{G}\left(#1,#2\right)}
+\newcommand{\gaussianDist}[3]{\mathcal{N}\left(#1|#2,#3\right)}
+\newcommand{\gaussianSamp}[2]{\mathcal{N}\left(#1,#2\right)}
+\newcommand{\given}{|}
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\heaviside}{H}
+\newcommand{\hiddenMatrix}{\mathbf{ \MakeUppercase{\hiddenScalar}}}
+\newcommand{\hiddenScalar}{h}
+\newcommand{\hiddenVector}{\mathbf{ \hiddenScalar}}
+\newcommand{\identityMatrix}{\eye}
+\newcommand{\inducingInputScalar}{z}
+\newcommand{\inducingInputVector}{\mathbf{ \inducingInputScalar}}
+\newcommand{\inducingInputMatrix}{\mathbf{Z}}
+\newcommand{\inducingScalar}{u}
+\newcommand{\inducingVector}{\mathbf{ \inducingScalar}}
+\newcommand{\inducingMatrix}{\mathbf{U}}
+\newcommand{\inlineDiff}[2]{\text{d}#1/\text{d}#2}
+\newcommand{\inputDim}{q}
+\newcommand{\inputMatrix}{\mathbf{X}}
+\newcommand{\inputScalar}{x}
+\newcommand{\inputSpace}{\mathcal{X}}
+\newcommand{\inputVals}{\inputVector}
+\newcommand{\inputVector}{\mathbf{ \inputScalar}}
+\newcommand{\iterNum}{k}
+\newcommand{\kernel}{\kernelScalar}
+\newcommand{\kernelMatrix}{\mathbf{K}}
+\newcommand{\kernelScalar}{k}
+\newcommand{\kernelVector}{\mathbf{ \kernelScalar}}
+\newcommand{\kff}{\kernelScalar_{\mappingFunction \mappingFunction}}
+\newcommand{\kfu}{\kernelVector_{\mappingFunction \inducingScalar}}
+\newcommand{\kuf}{\kernelVector_{\inducingScalar \mappingFunction}}
+\newcommand{\kuu}{\kernelVector_{\inducingScalar \inducingScalar}}
+\newcommand{\lagrangeMultiplier}{\lambda}
+\newcommand{\lagrangeMultiplierMatrix}{\boldsymbol{ \Lambda}}
+\newcommand{\lagrangian}{L}
+\newcommand{\laplacianFactor}{\mathbf{ \MakeUppercase{\laplacianFactorScalar}}}
+\newcommand{\laplacianFactorScalar}{m}
+\newcommand{\laplacianFactorVector}{\mathbf{ \laplacianFactorScalar}}
+\newcommand{\laplacianMatrix}{\mathbf{L}}
+\newcommand{\laplacianScalar}{\ell}
+\newcommand{\laplacianVector}{\mathbf{ \ell}}
+\newcommand{\latentDim}{q}
+\newcommand{\latentDistanceMatrix}{\boldsymbol{ \Delta}}
+\newcommand{\latentDistanceScalar}{\delta}
+\newcommand{\latentDistanceVector}{\boldsymbol{ \delta}}
+\newcommand{\latentForce}{f}
+\newcommand{\latentFunction}{u}
+\newcommand{\latentFunctionVector}{\mathbf{ \latentFunction}}
+\newcommand{\latentFunctionMatrix}{\mathbf{ \MakeUppercase{\latentFunction}}}
+\newcommand{\latentIndex}{j}
+\newcommand{\latentScalar}{z}
+\newcommand{\latentVector}{\mathbf{ \latentScalar}}
+\newcommand{\latentMatrix}{\mathbf{Z}}
+\newcommand{\learnRate}{\eta}
+\newcommand{\lengthScale}{\ell}
+\newcommand{\rbfWidth}{\ell}
+\newcommand{\likelihoodBound}{\mathcal{L}}
+\newcommand{\likelihoodFunction}{L}
+\newcommand{\locationScalar}{\mu}
+\newcommand{\locationVector}{\boldsymbol{ \locationScalar}}
+\newcommand{\locationMatrix}{\mathbf{M}}
+\newcommand{\variance}[1]{\text{var}\left( #1 \right)}
+\newcommand{\mappingFunction}{f}
+\newcommand{\mappingFunctionMatrix}{\mathbf{F}}
+\newcommand{\mappingFunctionTwo}{g}
+\newcommand{\mappingFunctionTwoMatrix}{\mathbf{G}}
+\newcommand{\mappingFunctionTwoVector}{\mathbf{ \mappingFunctionTwo}}
+\newcommand{\mappingFunctionVector}{\mathbf{ \mappingFunction}}
+\newcommand{\scaleScalar}{s}
+\newcommand{\mappingScalar}{w}
+\newcommand{\mappingVector}{\mathbf{ \mappingScalar}}
+\newcommand{\mappingMatrix}{\mathbf{W}}
+\newcommand{\mappingScalarTwo}{v}
+\newcommand{\mappingVectorTwo}{\mathbf{ \mappingScalarTwo}}
+\newcommand{\mappingMatrixTwo}{\mathbf{V}}
+\newcommand{\maxIters}{K}
+\newcommand{\meanMatrix}{\mathbf{M}}
+\newcommand{\meanScalar}{\mu}
+\newcommand{\meanTwoMatrix}{\mathbf{M}}
+\newcommand{\meanTwoScalar}{m}
+\newcommand{\meanTwoVector}{\mathbf{ \meanTwoScalar}}
+\newcommand{\meanVector}{\boldsymbol{ \meanScalar}}
+\newcommand{\mrnaConcentration}{m}
+\newcommand{\naturalFrequency}{\omega}
+\newcommand{\neighborhood}[1]{\mathcal{N}\left( #1 \right)}
+\newcommand{\neilurl}{http://inverseprobability.com/}
+\newcommand{\noiseMatrix}{\boldsymbol{ E}}
+\newcommand{\noiseScalar}{\epsilon}
+\newcommand{\noiseVector}{\boldsymbol{ \epsilon}}
+\newcommand{\norm}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\normalizedLaplacianMatrix}{\hat{\mathbf{L}}}
+\newcommand{\normalizedLaplacianScalar}{\hat{\ell}}
+\newcommand{\normalizedLaplacianVector}{\hat{\mathbf{ \ell}}}
+\newcommand{\numActive}{m}
+\newcommand{\numBasisFunc}{m}
+\newcommand{\numComponents}{m}
+\newcommand{\numComps}{K}
+\newcommand{\numData}{n}
+\newcommand{\numFeatures}{K}
+\newcommand{\numHidden}{h}
+\newcommand{\numInducing}{m}
+\newcommand{\numLayers}{\ell}
+\newcommand{\numNeighbors}{K}
+\newcommand{\numSequences}{s}
+\newcommand{\numSuccess}{s}
+\newcommand{\numTasks}{m}
+\newcommand{\numTime}{T}
+\newcommand{\numTrials}{S}
+\newcommand{\outputIndex}{j}
+\newcommand{\paramVector}{\boldsymbol{ \theta}}
+\newcommand{\parameterMatrix}{\boldsymbol{ \Theta}}
+\newcommand{\parameterScalar}{\theta}
+\newcommand{\parameterVector}{\boldsymbol{ \parameterScalar}}
+\newcommand{\partDiff}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\precisionScalar}{j}
+\newcommand{\precisionVector}{\mathbf{ \precisionScalar}}
+\newcommand{\precisionMatrix}{\mathbf{J}}
+\newcommand{\pseudotargetScalar}{\widetilde{y}}
+\newcommand{\pseudotargetVector}{\mathbf{ \pseudotargetScalar}}
+\newcommand{\pseudotargetMatrix}{\mathbf{ \widetilde{Y}}}
+\newcommand{\rank}[1]{\text{rank}\left(#1\right)}
+\newcommand{\rayleighDist}[2]{\mathcal{R}\left(#1|#2\right)}
+\newcommand{\rayleighSamp}[1]{\mathcal{R}\left(#1\right)}
+\newcommand{\responsibility}{r}
+\newcommand{\rotationScalar}{r}
+\newcommand{\rotationVector}{\mathbf{ \rotationScalar}}
+\newcommand{\rotationMatrix}{\mathbf{R}}
+\newcommand{\sampleCovScalar}{s}
+\newcommand{\sampleCovVector}{\mathbf{ \sampleCovScalar}}
+\newcommand{\sampleCovMatrix}{\mathbf{s}}
+\newcommand{\scalarProduct}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\sign}[1]{\text{sign}\left(#1\right)}
+\newcommand{\sigmoid}[1]{\sigma\left(#1\right)}
+\newcommand{\singularvalue}{\ell}
+\newcommand{\singularvalueMatrix}{\mathbf{L}}
+\newcommand{\singularvalueVector}{\mathbf{l}}
+\newcommand{\sorth}{\mathbf{u}}
+\newcommand{\spar}{\lambda}
+\newcommand{\trace}[1]{\text{tr}\left(#1\right)}
+\newcommand{\BasalRate}{B}
+\newcommand{\DampingCoefficient}{C}
+\newcommand{\DecayRate}{D}
+\newcommand{\Displacement}{X}
+\newcommand{\LatentForce}{F}
+\newcommand{\Mass}{M}
+\newcommand{\Sensitivity}{S}
+\newcommand{\basalRate}{b}
+\newcommand{\dampingCoefficient}{c}
+\newcommand{\mass}{m}
+\newcommand{\sensitivity}{s}
+\newcommand{\springScalar}{\kappa}
+\newcommand{\springVector}{\boldsymbol{ \kappa}}
+\newcommand{\springMatrix}{\boldsymbol{ \mathcal{K}}}
+\newcommand{\tfConcentration}{p}
+\newcommand{\tfDecayRate}{\delta}
+\newcommand{\tfMrnaConcentration}{f}
+\newcommand{\tfVector}{\mathbf{ \tfConcentration}}
+\newcommand{\velocity}{v}
+\newcommand{\sufficientStatsScalar}{g}
+\newcommand{\sufficientStatsVector}{\mathbf{ \sufficientStatsScalar}}
+\newcommand{\sufficientStatsMatrix}{\mathbf{G}}
+\newcommand{\switchScalar}{s}
+\newcommand{\switchVector}{\mathbf{ \switchScalar}}
+\newcommand{\switchMatrix}{\mathbf{S}}
+\newcommand{\tr}[1]{\text{tr}\left(#1\right)}
+\newcommand{\loneNorm}[1]{\left\Vert #1 \right\Vert_1}
+\newcommand{\ltwoNorm}[1]{\left\Vert #1 \right\Vert_2}
+\newcommand{\onenorm}[1]{\left\vert#1\right\vert_1}
+\newcommand{\twonorm}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\vScalar}{v}
+\newcommand{\vVector}{\mathbf{v}}
+\newcommand{\vMatrix}{\mathbf{V}}
+\newcommand{\varianceDist}[2]{\text{var}_{#2}\left( #1 \right)}
+% Already defined by latex
+%\newcommand{\vec}{#1:}
+\newcommand{\vecb}[1]{\left(#1\right):}
+\newcommand{\weightScalar}{w}
+\newcommand{\weightVector}{\mathbf{ \weightScalar}}
+\newcommand{\weightMatrix}{\mathbf{W}}
+\newcommand{\weightedAdjacencyMatrix}{\mathbf{A}}
+\newcommand{\weightedAdjacencyScalar}{a}
+\newcommand{\weightedAdjacencyVector}{\mathbf{ \weightedAdjacencyScalar}}
+\newcommand{\onesVector}{\mathbf{1}}
+\newcommand{\zerosVector}{\mathbf{0}}
+\]
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Machine Learning Systems Design</h1>
+  <p class="subtitle" style="text-align:center">The Three Ds of Machine Learning</p>
+  <p class="author" style="text-align:center"><a href="http://inverseprobability.com">Neil D. Lawrence</a></p>
+  <p class="date" style="text-align:center"><time>2018-11-15</time></p>
+  <p class="venue" style="text-align:center">Data Science Africa, Abuja</p>
+</section>
+
+<section class="slide level3">
+
+<p><!--% not ipynb--></p>
+<p><!--% not notes--></p>
+</section>
+<section id="section" class="slide level3">
+<h3></h3>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/science-holborn-viaduct.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
+</section>
+<section id="section-1" class="slide level3">
+<h3></h3>
+<div style="text-align:center">
+<img class="negate" src="../slides/diagrams/SteamEngine_Boulton&Watt_1784.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
+<center>
+<em>Watt’s Steam Engine which made Steam Power Efficient and Practical </em>
+</center>
+</section>
+<section id="section-2" class="slide level3">
+<h3></h3>
+<div style="text-align:center">
+<img class="negate" src="../slides/diagrams/Centrifugal_governor.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
+<!--include{_ai/includes/embodiment-factors-short.md}-->
+<!--include{../_data-science/includes/evolved-relationship.md}
+include{../_ml/includes/what-does-machine-learning-do.md}-->
+</section>
+<section id="section-3" class="slide level3">
+<h3></h3>
+<p><span class="math display">\[ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span></p>
+</section>
+<section id="efficiency" class="slide level3">
+<h3>Efficiency</h3>
+<ul>
+<li>Economies driven by ‘production’.</li>
+<li>Greater production comes with better efficiency.
+<ul>
+<li>E.g. moving from gathering food to settled agriculture.</li>
+</ul></li>
+<li>In the modern era one approach to becoming more efficient is automation of processes.
+<ul>
+<li>E.g. manufacturing production lines</li>
+</ul></li>
+</ul>
+</section>
+<section id="physical-processes" class="slide level3">
+<h3>Physical Processes</h3>
+<ul>
+<li>Manufacturing processes consist of production lines and robotic automation.</li>
+<li>Logistics can also be decomposed into the supply chain processes.</li>
+<li>Efficiency can be improved by automation.</li>
+</ul>
+</section>
+<section id="goods-and-information" class="slide level3">
+<h3>Goods and Information</h3>
+<ul>
+<li>For modern society: management of flow of goods and information.</li>
+<li>Flow of information is highly automated.</li>
+<li>Processing of data is decomposed into stages in computer code.</li>
+</ul>
+</section>
+<section id="intervention" class="slide level3">
+<h3>Intervention</h3>
+<ul>
+<li>For all cases: manufacturing, logistics, data management</li>
+<li>Pipeline requires human intervention from an operator.</li>
+<li>Interventions create bottlenecks, slow the process.</li>
+<li>Machine learning is a key technology in automating these manual stages.</li>
+</ul>
+</section>
+<section id="long-grass" class="slide level3">
+<h3>Long Grass</h3>
+<ul>
+<li>Easy to replicate interventions have already been dealt with.</li>
+<li>Components that still require human intervention are the knottier problems.</li>
+<li>Difficult decompose into stages which could then be further automated.</li>
+<li>These components are ‘process-atoms’.</li>
+<li>These are the “long grass” regions of technology.</li>
+</ul>
+</section>
+<section id="nature-of-challenge" class="slide level3">
+<h3>Nature of Challenge</h3>
+<ul>
+<li>In manufacturing or logistics settings atoms are flexible manual skills.
+<ul>
+<li>Requires emulation of a human’s motor skills.</li>
+</ul></li>
+<li>In information processing: our flexible cognitive skills.
+<ul>
+<li>Our ability to mentally process an image or some text.</li>
+</ul></li>
+</ul>
+</section>
+<section id="worked-example-delivery-drones" class="slide level3">
+<h3>Worked Example: Delivery Drones</h3>
+<iframe width="800" height="600" src="https://www.youtube.com/embed/vNySOrI2Ny8?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+</section>
+<section id="artificial-intelligence-and-data-science" class="slide level3">
+<h3>Artificial Intelligence and Data Science</h3>
+<ul>
+<li>AI aims to equip computers with human capabilities
+<ul>
+<li>Image understanding</li>
+<li>Computer vision</li>
+<li>Speech recognition</li>
+<li>Natural language understanding</li>
+<li>Machine translation</li>
+</ul></li>
+</ul>
+</section>
+<section id="supervised-learning-for-ai" class="slide level3">
+<h3>Supervised Learning for AI</h3>
+<ul>
+<li>Dominant approach today:
+<ul>
+<li>Generate large labelled data set from humans.</li>
+<li>Use <em>supervised learning</em> to emulate that data.
+<ul>
+<li><em>E.g.</em> <a href="www.image-net.org">ImageNet</a> <span class="citation" data-cites="Russakovsky-imagenet15">Russakovsky et al. (2015)</span></li>
+</ul></li>
+</ul></li>
+<li>Significant advances due to <em>deep learning</em>
+<ul>
+<li><em>E.g.</em> Alexa, Amazon Go</li>
+</ul></li>
+</ul>
+</section>
+<section id="data-science" class="slide level3">
+<h3>Data Science</h3>
+<ul>
+<li>Arises from <em>happenstance data</em>.</li>
+<li>Differs from statistics in that the question comes <em>after</em> data collection.</li>
+</ul>
+</section>
+<section id="machine-learning-in-supply-chain" class="slide level3">
+<h3>Machine Learning in Supply Chain</h3>
+<ul>
+<li><em>Supply chain</em>: Large Automated Decision Making Network</li>
+<li>Amazon’s supply chain: Possibly the world’s largest ‘AI’</li>
+<li>Major Challenge:
+<ul>
+<li>We have a <em>mechanistic</em> understanding of supply chain.</li>
+<li>Machine learning is a <em>data driven</em> technology.</li>
+</ul></li>
+</ul>
+<!--include{_ml/includes/or-control-econometrics-statistics-ml.md}-->
+</section>
+<section id="the-three-ds-of-ml-systems-design" class="slide level3">
+<h3>THE THREE Ds of ML SYSTEMS DESIGN</h3>
+</section>
+<section id="the-three-ds-of-machine-learning-systems-design" class="slide level3">
+<h3>The Three Ds of Machine Learning Systems Design</h3>
+<ul>
+<li>Three primary challenges of Machine Learning Systems Design.</li>
+</ul>
+<ol type="1">
+<li>Decomposition</li>
+<li>Data</li>
+<li>Deployment</li>
+</ol>
+</section>
+<section id="decomposition" class="slide level3">
+<h3>Decomposition</h3>
+<ul>
+<li>ML is not Magical Pixie Dust.</li>
+<li>It cannot be sprinkled thoughtlessly.</li>
+<li>We cannot simply <em>automate all decisions through data</em></li>
+</ul>
+</section>
+<section id="decomposition-1" class="slide level3">
+<h3>Decomposition</h3>
+<p>We are constrained by:</p>
+<ol type="1">
+<li>Our <em>data</em>.</li>
+<li>The <em>models</em>.</li>
+</ol>
+</section>
+<section id="decomposition-of-task" class="slide level3">
+<h3>Decomposition of Task</h3>
+<ul>
+<li>Careful thought needs to be put into sub-processes of task.</li>
+<li>Any repetitive task is a candidate for automation.</li>
+</ul>
+</section>
+<section id="pigeonholing" class="slide level3">
+<h3>Pigeonholing</h3>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/TooManyPigeons.jpg" width="60%" height="auto" align="" style="background:none; border:none; box-shadow:none;">
+</div>
+</section>
+<section id="pigeonholing-1" class="slide level3">
+<h3>Pigeonholing</h3>
+<ol type="1">
+<li>Can we decompose decision we need to repetitive sub-tasks where inputs and outputs are well defined?</li>
+<li>Are those repetitive sub-tasks well represent by a mathematical mapping?</li>
+</ol>
+</section>
+<section id="a-trap" class="slide level3">
+<h3>A Trap</h3>
+<ul>
+<li>Over emphasis on the <em>type</em> of model we’re deploying.</li>
+<li>Under emphasis on the appropriateness of the task decomposition.</li>
+</ul>
+</section>
+<section id="chicken-and-egg" class="slide level3">
+<h3>Chicken and Egg</h3>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/ai/chicken-and-egg.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none;">
+</div>
+</section>
+<section id="co-evolution" class="slide level3">
+<h3>Co-evolution</h3>
+<ul>
+<li>Absolute decomposition is impossible.</li>
+<li>If we deploy a weak component in one place, downstream system will compensate.</li>
+<li>Systems <em>co-evolve</em> … there is no <em>simple</em> solution</li>
+<li>Trade off between <em>performance</em> and <em>decomposability</em>.
+<ul>
+<li>Need to monitor deployment</li>
+</ul></li>
+</ul>
+</section>
+<section id="data" class="slide level3">
+<h3>Data</h3>
+<ul>
+<li>Hard to overstate its importance.</li>
+<li>Half the equation of <span class="math inline">\(\text{data} + \text{model}\)</span>.</li>
+<li>Often utterly neglected.</li>
+</ul>
+</section>
+<section id="data-neglect" class="slide level3">
+<h3>Data Neglect</h3>
+<ul>
+<li>Arises for two reasons.
+<ol type="1">
+<li>Data cleaning is perceived as tedious.</li>
+<li>Data cleaning is complex.</li>
+</ol></li>
+</ul>
+</section>
+<section id="data-cleaning" class="slide level3">
+<h3>Data Cleaning</h3>
+<ul>
+<li>Seems difficult to formulate into readily teachable princples.</li>
+<li>Heavily neglected in data science, statistics and ML courses.</li>
+<li>In practice most scientists spend around 80% of time data cleaning.</li>
+</ul>
+</section>
+<section id="the-data-crisis" class="slide level3">
+<h3>The Data Crisis</h3>
+</section>
+<section id="the-software-crisis" class="slide level3">
+<h3>The Software Crisis</h3>
+<p><small></p>
+<blockquote>
+<p>The major cause of the software crisis is that the machines have become several orders of magnitude more powerful! To put it quite bluntly: as long as there were no machines, programming was no problem at all; when we had a few weak computers, programming became a mild problem, and now we have gigantic computers, programming has become an equally gigantic problem.</p>
+<p>Edsger Dijkstra (1930-2002), The Humble Programmer</p>
+</blockquote>
+<p></small></p>
+</section>
+<section id="the-data-crisis-1" class="slide level3">
+<h3>The Data Crisis</h3>
+<p><small></p>
+<blockquote>
+<p>The major cause of the data crisis is that machines have become more interconnected than ever before. Data access is therefore cheap, but data quality is often poor. What we need is cheap high quality data. That implies that we develop processes for improving and verifying data quality that are efficient.</p>
+<p>There would seem to be two ways for improving efficiency. Firstly, we should not duplicate work. Secondly, where possible we should automate work.</p>
+<p>Me </small></p>
+</blockquote>
+</section>
+<section id="the-data-first-paradigm" class="slide level3">
+<h3>The Data First Paradigm</h3>
+</section>
+<section id="data-quality" class="slide level3">
+<h3>Data Quality</h3>
+<!-- SECTION Data Readiness Levels -->
+</section>
+<section id="data-readiness-levels" class="slide level3">
+<h3>Data Readiness Levels</h3>
+<p><a href="https://arxiv.org/pdf/1705.02245.pdf"><img class="" src="../slides/diagrams/data-science/data-readiness-levels.png" width="" height="auto" align="" style="background:none; border:none; box-shadow:none;"></a></p>
+<p><a href="http://inverseprobability.com/2017/01/12/data-readiness-levels">Data Readiness Levels</a> <span class="citation" data-cites="Lawrence:drl17">(Lawrence, 2017)</span></p>
+</section>
+<section id="three-grades-of-data-readiness" class="slide level3">
+<h3>Three Grades of Data Readiness:</h3>
+<ul>
+<li><p>Grade C - accessibility</p></li>
+<li><p>Grade B - validity</p></li>
+<li><p>Grade A - usability</p></li>
+</ul>
+</section>
+<section id="accessibility-grade-c" class="slide level3">
+<h3>Accessibility: Grade C</h3>
+<ul>
+<li><em>Hearsay</em> data.</li>
+<li>Availability, is it actually being recorded?</li>
+<li>privacy or legal constraints on the accessibility of the recorded data, have ethical constraints been alleviated?</li>
+<li>Format: log books, PDF …</li>
+<li>limitations on access due to topology (e.g. it’s distributed across a number of devices)</li>
+<li>At the end of Grade C data is ready to be loaded into analysis software (R, SPSS, Matlab, Python, Mathematica)</li>
+</ul>
+</section>
+<section id="validity-grade-b" class="slide level3">
+<h3>Validity: Grade B</h3>
+<ul>
+<li>faithfulness and representation</li>
+<li>visualisations.</li>
+<li>exploratory data analysis</li>
+<li>noise characterisation.</li>
+</ul>
+</section>
+<section id="grade-b-checks" class="slide level3">
+<h3>Grade B Checks</h3>
+<ul>
+<li>Missing values.</li>
+<li>Schema alignment, record linkage, data fusion</li>
+<li>Example:
+<ul>
+<li>Was a column or columns accidentally perturbed (e.g. through a sort operation that missed one or more columns)? Or was a <a href="http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-5-80">gene name accidentally converted to a date</a>?</li>
+</ul></li>
+</ul>
+</section>
+<section id="grade-b-transition" class="slide level3">
+<h3>Grade B Transition</h3>
+<ul>
+<li>At the end of Grade B, ready to define a <em>task</em>, or <em>question</em></li>
+<li>Compare with classical statistics:
+<ul>
+<li><em>Classically</em>: question is first data comes later.</li>
+<li><em>Today</em>: data is first question comes later.</li>
+</ul></li>
+</ul>
+</section>
+<section id="data-first" class="slide level3">
+<h3>Data First</h3>
+<p>In a <em>data first</em> company teams own their data quality issues at least as far as grade B1.</p>
+</section>
+<section id="usability-grade-a" class="slide level3">
+<h3>Usability: Grade A</h3>
+<ul>
+<li>The <em>usability</em> of data
+<ul>
+<li>Grade A is about data in context.</li>
+</ul></li>
+<li>Consider appropriateness of a given data set to answer a particular question or to be subject to a particular analysis.</li>
+</ul>
+</section>
+<section id="recursive-effects" class="slide level3">
+<h3>Recursive Effects</h3>
+<ul>
+<li>Grade A may also require:
+<ul>
+<li>data integration</li>
+<li>active collection of new data.</li>
+<li>rebalancing of data to ensure fairness</li>
+<li>annotation of data by human experts</li>
+<li>revisiting the collection (and running through the appropriate stages again)</li>
+</ul></li>
+</ul>
+</section>
+<section id="a1-data" class="slide level3">
+<h3>A1 Data</h3>
+<ul>
+<li>A1 data is ready to make available for <em>challenges</em> or <em>AutoML</em> platforms.</li>
+</ul>
+</section>
+<section id="contribute" class="slide level3">
+<h3>Contribute!</h3>
+<center>
+<a href="http://data-readiness.org" class="uri">http://data-readiness.org</a>
+</center>
+</section>
+<section id="also" class="slide level3">
+<h3>Also …</h3>
+<ul>
+<li>Encourage greater interaction between application domains and data scientists</li>
+<li>Encourage <em>visualization</em> of data</li>
+</ul>
+</section>
+<section id="move-beyond-software-engineering-to-data-engineering" class="slide level3">
+<h3>Move Beyond Software Engineering to Data Engineering</h3>
+</section>
+<section id="data-science-as-debugging" class="slide level3">
+<h3>Data Science as Debugging</h3>
+<ul>
+<li>Analogies: For Software Engineers <a href="http://inverseprobability.com/2017/03/14/data-science-as-debugging">describe data science as <em>debugging</em></a>.</li>
+</ul>
+</section>
+<section id="section-4" class="slide level3">
+<h3></h3>
+<div style="text-align;center">
+<img class="" src="../slides/diagrams/data-science/water-bridge-hill-transport-arch-calm-544448-pxhere.com.jpg" width="80%" height="auto" align="" style="background:none; border:none; box-shadow:none;">
+</div>
+</section>
+<section id="section-5" class="slide level3">
+<h3></h3>
+<div style="text-align;center">
+<img class="" src="../slides/diagrams/data-science/1024px-Lake_District_picture.JPG" width="80%" height="auto" align="" style="background:none; border:none; box-shadow:none;">
+</div>
+</section>
+<section id="deployment" class="slide level3">
+<h3>Deployment</h3>
+</section>
+<section id="premise" class="slide level3">
+<h3>Premise</h3>
+<p>Our <em>machine learning</em> is based on a <em>software systems</em> view that is 20 years out of date.</p>
+</section>
+<section id="continuous-deployment" class="slide level3">
+<h3>Continuous Deployment</h3>
+<ul>
+<li>Deployment of modeling code.</li>
+<li>Data dependent models in production need <em>continuous monitoring</em>.</li>
+</ul>
+</section>
+<section id="continuous-monitoring" class="slide level3">
+<h3>Continuous Monitoring</h3>
+<ul>
+<li>Continuous deployment:
+<ul>
+<li>We’ve changed the code, we should test the effect.</li>
+</ul></li>
+<li>Continuous Monitoring:
+<ul>
+<li>The world around us is changing, we should monitor the effect.</li>
+</ul></li>
+<li>Update our notions of testing: <em>progression testing</em></li>
+</ul>
+</section>
+<section id="data-orientated-architectures" class="slide level3">
+<h3>Data Orientated Architectures</h3>
+<ul>
+<li>Historically we’ve been <em>software first</em>
+<ul>
+<li>A necessary but not sufficient condition for <em>data first</em></li>
+</ul></li>
+<li>Move from
+<ol type="1">
+<li>software orientated architectures</li>
+<li><em>data orientated architectures</em></li>
+</ol></li>
+</ul>
+</section>
+<section id="streaming-architectures" class="slide level3">
+<h3>Streaming Architectures</h3>
+<ul>
+<li>AWS Kinesis, Apache Kafka</li>
+<li>Not just about streaming
+<ul>
+<li>Nodes in the architecture are <em>stateless</em></li>
+<li>They persist through storing state on <em>streams</em></li>
+</ul></li>
+<li>This brings the data <em>inside out</em></li>
+</ul>
+</section>
+<section id="technical-contributions" class="slide level3">
+<h3>Technical Contributions</h3>
+</section>
+<section id="automl-and-mxfusion" class="slide level3">
+<h3>AutoML and MXFusion</h3>
+<ul>
+<li><a href="https://github.com/SheffieldML/GPy" class="uri">https://github.com/SheffieldML/GPy</a>
+<ul>
+<li><a href="https://github.com/GPflow/GPflow" class="uri">https://github.com/GPflow/GPflow</a></li>
+<li><a href="https://github.com/cornellius-gp/gpytorch" class="uri">https://github.com/cornellius-gp/gpytorch</a></li>
+</ul></li>
+<li><a href="https://github.com/SheffieldML/GPyOpt" class="uri">https://github.com/SheffieldML/GPyOpt</a></li>
+</ul>
+</section>
+<section id="emukit" class="slide level3">
+<h3>Emukit</h3>
+<p><a href="https://amzn.github.io/emukit-playground/" class="uri">https://amzn.github.io/emukit-playground/</a> <a href="https://amzn.github.io/emukit/" class="uri">https://amzn.github.io/emukit/</a></p>
+</section>
+<section id="mxfusion" class="slide level3">
+<h3>MxFusion</h3>
+<p><a href="https://github.com/amzn/mxfusion" class="uri">https://github.com/amzn/mxfusion</a> <a href="https://github.com/amzn/xfer" class="uri">https://github.com/amzn/xfer</a></p>
+</section>
+<section id="outlook-for-machine-learning" class="slide level3">
+<h3>Outlook for Machine Learning</h3>
+<ul>
+<li>Risen to prominence to <em>scale</em> our activities.</li>
+<li>To scale activities need more computer based automation.</li>
+<li>Machine learning allows us to automate processes previously out of reach.</li>
+</ul>
+</section>
+<section id="conclusion" class="slide level3">
+<h3>Conclusion</h3>
+<ul>
+<li>Technologically <em>evolving</em> environment.</li>
+<li>ML is a key component of decision making.</li>
+<li>Data is the key component of ML.</li>
+<li>ML is <em>critically</em> dependent on data.</li>
+<li>Challenges in system <strong>decomposition</strong>, <strong>data</strong> curation and model <strong>deployment</strong>.</li>
+</ul>
+</section>
+<section id="references" class="slide level3 unnumbered">
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Lawrence:drl17">
+<p>Lawrence, N.D., 2017. Data readiness levels. arXiv.</p>
+</div>
+<div id="ref-Russakovsky-imagenet15">
+<p>Russakovsky, O., Deng, J., Su, H., Krause, J., Satheesh, S., Ma, S., Huang, Z., Karpathy, A., Khosla, A., Bernstein, M., Berg, A.C., Fei-Fei, L., 2015. ImageNet Large Scale Visual Recognition Challenge. International Journal of Computer Vision (IJCV) 115, 211–252. <a href="https://doi.org/10.1007/s11263-015-0816-y" class="uri">https://doi.org/10.1007/s11263-015-0816-y</a></p>
+</div>
+</div>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // Transition style
+        transition: 'None', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
