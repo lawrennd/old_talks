@@ -35,8 +35,8 @@ YouTubeVideo('\id')
 
 \define{\slidesmall{block}}{\block}
 \define{\aligncenter{block}}{<center>\block</center>}
-\define{\alignright{block}}{<span align="right">\block</span>}
-\define{\alignleft{block}}{<span align="left">\block</span>}
+\define{\alignright{block}}{<span style="text-align:right">\block</span>}
+\define{\alignleft{block}}{<span style="text-align:left">\block</span>}
 \define{\largetext{block}}{<large>\block</large>}
 \define{\smalltext{block}}{<small>\block</small>}
 \define{\coloryellow{block}}{\block}
@@ -262,8 +262,8 @@ from \filename import \object
 \define{\caption{block}}{<center>*\block *</center>}
 \define{\slidesmall{block}}{\block}
 \define{\aligncenter{block}}{<center>\block</center>}
-\define{\alignright{block}}{<span align="right">\block</span>}
-\define{\alignleft{block}}{<span align="left">\block</span>}
+\define{\alignright{block}}{<span style="text-align:right">\block</span>}
+\define{\alignleft{block}}{<span style="text-align:left">\block</span>}
 \define{\largetext{block}}{<large>\block</large>}
 \define{\smalltext{block}}{<small>\block</small>}
 \define{\coloryellow{block}}{\block}
@@ -342,8 +342,8 @@ showDivs(\start, '\group');
 \define{\caption{block}}{<center>*\block *</center>}
 \define{\slidesmall{block}}{<small>\block</small>}
 \define{\aligncenter{block}}{<center>\block</center>}
-\define{\alignright{block}}{<span align="right">\block</span>}
-\define{\alignleft{block}}{<span align="left">\block</span>}
+\define{\alignright{block}}{<span style="text-align:right">\block</span>}
+\define{\alignleft{block}}{<span style="text-align:left">\block</span>}
 \define{\largetext{block}}{<large>\block</large>}
 \define{\smalltext{block}}{<small>\block</small>}
 \define{\colorgreen{block}}{<font color="green">\block</font>}
@@ -370,3 +370,5 @@ showDivs(\start, '\group');
 
 \define{\includejpg{filename}{width}{class}}{\div{\includeimg{\concat{\filename}{.jpg}}{\width}{\class}{center}}{}{text-align:center}}
 \define{\includepng{filename}{width}{class}}{\div{\includeimg{\concat{\filename}{.png}}{\width}{\class}{center}}{}{text-align:center}}
+
+\define{\comment}{}

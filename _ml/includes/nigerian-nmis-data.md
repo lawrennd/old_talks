@@ -15,12 +15,13 @@
 >Suggested citation: Nigeria NMIS facility database (2014), the Office of the Senior Special Assistant to the President on the Millennium Development Goals (OSSAP-MDGs) & Columbia University
 }
 
-<!--\notes{For ease of use we've packaged this data set in the `pods` library}
+\comment{\notes{For ease of use we've packaged this data set in the `pods` library}
 
 include{_ml/includes/pods.md}
 
 \code{data = pods.datasets.nigerian_nmis_facility_database()['Y']
-data.head()}-->
+data.head()}}
+
 
 \setupcode{import urllib.request}
 \code{urllib.request.urlretrieve('https://energydata.info/dataset/f85d1796-e7f2-4630-be84-79420174e3bd/resource/6e640a13-cab4-457b-b9e6-0336051bac27/download/healthmopupandbaselinenmisfacility.csv', 'healthmopupandbaselinenmisfacility.csv')}
@@ -32,7 +33,7 @@ data.head()}-->
 
 \code{data.describe()}
 
-\notes{In jupyter and jupyter notebook it is possible to see a list of all possible functions and attributes by typing the name of the object followed by .<Tab> for example in the above case if we type data.<Tab> it show the columns available (these are attributes in pandas dataframes) such as `num_nurses_fulltime`, and also functions, such as `.describe()`.}
+\notes{In python and jupyter notebook it is possible to see a list of all possible functions and attributes by typing the name of the object followed by .<Tab> for example in the above case if we type data.<Tab> it show the columns available (these are attributes in pandas dataframes) such as `num_nurses_fulltime`, and also functions, such as `.describe()`.}
 
 \notes{For functions we can also see the documentation about the function by following the name with a question mark. This will open a box with documentation at the bottom which can be closed with the x button.}
 
@@ -49,7 +50,7 @@ data.head()}-->
 %matplotlib inline 
 import matplotlib.pyplot as plt # this imports the plotting library in python}
 
-\code{plt.plot(data['num_doctors_fulltime'], data['num_nurses_fulltime'], 'rx')}
+\code{_ = plt.plot(data['num_doctors_fulltime'], data['num_nurses_fulltime'], 'rx')}
 
 \notes{You may be curious what the arguments we give to `plt.plot` are for, now is the perfect time to look at the documentation}
 
@@ -59,15 +60,13 @@ import matplotlib.pyplot as plt # this imports the plotting library in python}
 
 \code{data[data['num_nurses_fulltime']>100]}
 
-\notes{Here we are using the command `data['num_nurses_fulltime']>100` to index the facilities in the pandas data frame which have over 100 nurses. To sort them in order we can also use the `sort` command. The result of this command on its own is a data series of `True` and `False` values. However, when it is passed to the `data` data frame it returns a new data frame which contains only those values for which the data series is `True`. We can also sort the result. To sort the result by the values in the `num_nurses_fulltime` column in *descending* order we use the following command.}
+\notes{Here we are using the command `data['num_nurses_fulltime']>100` to index the facilities in the pandas data frame which have over 100 nurses. To sort them in order we can also use the `sort` command. The result of this command on its own is a data `Series` of `True` and `False` values. However, when it is passed to the `data` data frame it returns a new data frame which contains only those values for which the data series is `True`. We can also sort the result. To sort the result by the values in the `num_nurses_fulltime` column in *descending* order we use the following command.}
 
 \code{data[data['num_nurses_fulltime']>100].sort_values(by='num_nurses_fulltime', ascending=False)}
 
 \notes{We now see that the 'University of Calabar Teaching Hospital' is a large outlier with 513 nurses. We can try and determine how much of an outlier by histograming the data.}
 
-\notes{
-\subsection{Plotting the Data}
-}
+\notes{\subsection{Plotting the Data}}
 
 \code{data['num_nurses_fulltime'].hist(bins=20) # histogram the data with 20 bins.
 plt.title('Histogram of Number of Nurses')}
@@ -81,12 +80,12 @@ ax.set_yscale('log')}
 
 \writeassignment{Read on the internet about the following python
 libraries: `numpy`, `matplotlib`, `scipy` and `pandas`. What functionality does
-each provide python?}{2}{10}
+each provide python?}{1}{10}
 
 \notes{Let's try and see how the number of nurses relates to the number of doctors.}
 
-\code{plt.plot(data['num_doctors_fulltime'], data['num_nurses_fulltime'], 'rx')
-ax = plt.gca() # obtain a handle to the current axis
+\code{fig, ax = plt.suplots(figsize=(10, 7)) 
+ax.plot(data['num_doctors_fulltime'], data['num_nurses_fulltime'], 'rx')
 ax.set_xscale('log') # use a logarithmic x scale
 ax.set_yscale('log') # use a logarithmic Y scale
 # give the plot some titles and labels

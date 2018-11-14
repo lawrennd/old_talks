@@ -23,6 +23,10 @@ conditional | $P(X=x\vert Y=y)$ | prob. that X=x *given that* Y=y
 
 \subsection{A Pictorial Definition of Probability}
 
+\setupplotcode{import teaching_plots as plot}
+
+\plotcode{plot.prob_diagram(diagrams='../slides/diagrams')}
+
 \includesvg{../slides/diagrams/mlai/prob_diagram.svg}
 
 \alignright{Inspired by lectures from Christopher Bishop}
@@ -66,13 +70,13 @@ P\left(X=x,Y=y\right)=P\left(Y=y,X=x\right).
 $$
 Sometimes I think of this as akin to the way in Python we can write 'keyword arguments' in functions. If we use keyword arguments, the ordering of arguments doesn't matter.}
 
-\notes{We've now introduced conditioning and independence to the notion of probability and computed some conditional probabilities on a practical example The scatter plot of deaths vs year that we created above can be seen as a *joint* probability distribution. We represent a joint probability using the notation $P(Y=y, T=t)$ or $P(y, t)$ for short. Computing a joint probability is equivalent to answering the simultaneous questions, what's the probability that the number of nurses was over 40 and the number of doctors was 10? Or any other question that may occur to us. Again we can easily use pandas to ask such questions.}
+\notes{We've now introduced conditioning and independence to the notion of probability and computed some conditional probabilities on a practical example The scatter plot of deaths vs year that we created above can be seen as a *joint* probability distribution. We represent a joint probability using the notation $P(Y=y, X=x)$ or $P(y, x)$ for short. Computing a joint probability is equivalent to answering the simultaneous questions, what's the probability that the number of nurses was over 2 and the number of doctors was 1? Or any other question that may occur to us. Again we can easily use pandas to ask such questions.}
 
-\code{year = 10
-large = (data.num_nurses_fulltime[data.num_doctors_fulltime==year]>40).sum()
+\code{num_doctors = 1
+large = (data.num_nurses_fulltime[data.num_doctors_fulltime==num_doctors]>2).sum()
 total_facilities = data.num_nurses_fulltime.count() # this is total number of films
 prob_large = float(large)/float(total_facilities)
-print("Probability of nurses being greater than 40 and number of doctors being", year, "is:", prob_large)}
+print("Probability of nurses being greater than 2 and number of doctors being", num_doctors, "is:", prob_large)}
 
 \newslide{Normalization}
 
@@ -100,7 +104,7 @@ distributions.}
   $$
   This is known as the product rule of probability.}
 	
-\notes{This number is the joint probability, $P(Y, T)$ which is
+\notes{This number is the joint probability, $P(Y, X)$ which is
 much *smaller* than the conditional probability. The number can never be bigger
 than the conditional probabililty because it is computed using the *product
 rule*.
@@ -109,7 +113,7 @@ p(Y=y, X=x) = p(Y=y|X=x)p(X=x)
 $$
 and $$p(X=x)$$ is a probability distribution, which is equal or less than 1, ensuring the joint distribution is typically smaller than the conditional distribution.}
 
-\notes{The product rule is a *fundamental* rule of probability, and you must remember it! It gives the relationship between the two questions: 1) What's the probability that a facility was made in 2002 and has over 40 deaths? and 2) What's the probability that a film has over 40 deaths given that it was made in 2002?}
+\notes{The product rule is a *fundamental* rule of probability, and you must remember it! It gives the relationship between the two questions: 1) What's the probability that a facility has over two nurses *and* one doctor? and 2) What's the probability that a facility has over two nurses *given that* it has one doctor?}
 
 \notes{In our shorter notation we can write the product rule as
 $$
@@ -117,11 +121,13 @@ p(y, x) = p(y|x)p(x)
 $$
 We can see the
 relation working in practice for our data above by computing the different
-values for $x=10$.}
+values for $x=1$.}
 
-\code{p_x = float((data.num_doctors_fulltime==10).sum())/float(data.num_nurses_fulltime.count())
-p_y_given_x = float((data.num_nurses_fulltime[data.num_doctors_fulltime==10]>40).sum())/float((data.num_doctors_fulltime==10).sum())
-p_y_and_x = float((data.num_nurses_fulltime[data.num_doctors_fulltime==10]>40).sum())/float(data.num_nurses_fulltime.count())
+\code{num_doctors=1
+num_nurses=2
+p_x = float((data.num_doctors_fulltime==num_doctors).sum())/float(data.num_nurses_fulltime.count())
+p_y_given_x = float((data.num_nurses_fulltime[data.num_doctors_fulltime==num_doctors]>num_nurses).sum())/float((data.num_doctors_fulltime==num_doctors).sum())
+p_y_and_x = float((data.num_nurses_fulltime[data.num_doctors_fulltime==num_doctors]>num_nurses).sum())/float(data.num_nurses_fulltime.count())
 
 print("P(x) is", p_x)
 print("P(y|x) is", p_y_given_x)
@@ -154,7 +160,7 @@ P(y) = \sum_{x} P(y, x)
 $$}
 
 \codeassignment{Write code that computes $P(y)$ by adding $P(y, x)$
-for all values of $x$.}{6}{10}
+for all values of $x$.}{3}{10}
 
 \subsection{Bayes’ Rule}
 
@@ -226,12 +232,12 @@ information data.}
 
 \code{data.columns}
 
-\writeassignment{Now we see we have several additional features. Let's assume we want to predict ```maternal_health_delivery_services```. How would we go about
+\writeassignment{Now we see we have several additional features. Let's assume we want to predict `maternal_health_delivery_services`. How would we go about
 doing it? 
 
 Using what you've learnt about joint, conditional and marginal
 probabilities, as well as the sum and product rule, how would you formulate the
 question you want to answer in terms of probabilities? Should you be using a
 joint or a conditional distribution? If it's conditional, what should the
-distribution be over, and what should it be conditioned on?}{7}{20}
+distribution be over, and what should it be conditioned on?}{4}{20}
 
