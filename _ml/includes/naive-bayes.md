@@ -289,11 +289,13 @@ $$
 \code{# fit the Bernoulli with Laplace smoothing.
 for column in X_train:
     if column in Bernoulli:
-        Bernoulli[column]['theta_0'] = (X_train[column][~y].sum() + 1)/((~y).sum() + 2)
-        Bernoulli[column]['theta_1'] = (X_train[column][y].sum() + 1)/((y).sum() + 2)}
+        Bernoulli[column]['theta_0'] = (X_train[column][~y_train].sum() + 1)/((~y_train).sum() + 2)
+        Bernoulli[column]['theta_1'] = (X_train[column][y_train].sum() + 1)/((y_train).sum() + 2)}
 
 \notes{That places us in a position to write the prediction function.}
 
+\setupcode{import numpy as np
+import pandas as pd}
 \code{def predict(X_test, Gaussian, Bernoulli, prior):
     log_positive = pd.Series(data = np.zeros(X_test.shape[0]), index=X_test.index)
     log_negative = pd.Series(data = np.zeros(X_test.shape[0]), index=X_test.index)

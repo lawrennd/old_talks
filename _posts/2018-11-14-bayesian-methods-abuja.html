@@ -405,10 +405,12 @@ p(\inputScalar_{i, j} | \dataScalar_i,\paramVector) = \frac{1}{\sqrt{2\pi \dataS
 <h3 id="nigerian-nmis-data-1">Nigerian NMIS Data</h3>
 <p>First we will load in the Nigerian NMIS health data. Our aim will be to predict whether a center has maternal health delivery services given the attributes in the data. We will predict of the number of nurses, the number of doctors, location etc.</p>
 <p>Let's first remind ourselves of the data.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data.head()</code></pre></div>
 <p>Now we will convert this data into a form which we can use as inputs <code>X</code>, and labels <code>y</code>.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pandas <span class="im">as</span> pd
 <span class="im">import</span> numpy <span class="im">as</span> np</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data <span class="op">=</span> data[<span class="op">~</span>pd.isnull(data[<span class="st">&#39;maternal_health_delivery_services&#39;</span>])]
+data <span class="op">=</span> data.dropna() <span class="co"># Remove entries with missing values</span>
 X <span class="op">=</span> data[[<span class="st">&#39;emergency_transport&#39;</span>,
           <span class="st">&#39;num_chews_fulltime&#39;</span>, 
           <span class="st">&#39;phcn_electricity&#39;</span>,
@@ -422,7 +424,7 @@ X <span class="op">=</span> data[[<span class="st">&#39;emergency_transport&#39;
           <span class="st">&#39;malaria_treatment_artemisinin&#39;</span>, 
           <span class="st">&#39;latitude&#39;</span>, 
           <span class="st">&#39;longitude&#39;</span>]].copy()
-y <span class="op">=</span> data[<span class="st">&#39;maternal_health_delivery_services&#39;</span>]  <span class="co"># set label to be whether there&#39;s a maternal health delivery service</span>
+y <span class="op">=</span> data[<span class="st">&#39;maternal_health_delivery_services&#39;</span>]<span class="op">==</span><span class="va">True</span>  <span class="co"># set label to be whether there&#39;s a maternal health delivery service</span>
 
 <span class="co"># Create series of health center types with the relevant index</span>
 s <span class="op">=</span> data[<span class="st">&#39;facility_type_display&#39;</span>].<span class="bu">apply</span>(pd.Series, <span class="dv">1</span>).stack() 
@@ -432,10 +434,13 @@ s.index <span class="op">=</span> s.index.droplevel(<span class="op">-</span><sp
 types <span class="op">=</span> s.unique()
 
 <span class="co"># For each type extract the indices where it is present and add a column to X</span>
+type_names <span class="op">=</span> []
 <span class="cf">for</span> htype <span class="kw">in</span> types:
     index <span class="op">=</span> s[s<span class="op">==</span>htype].index.tolist()
-    X.loc[:, htype] <span class="op">=</span> <span class="fl">0.0</span> 
-    X.loc[index, htype] <span class="op">=</span> <span class="fl">1.0</span></code></pre></div>
+    type_col<span class="op">=</span>htype.replace(<span class="st">&#39; &#39;</span>, <span class="st">&#39;_&#39;</span>).replace(<span class="st">&#39;/&#39;</span>,<span class="st">&#39;-&#39;</span>).lower()
+    type_names.append(type_col)
+    X.loc[:, type_col] <span class="op">=</span> <span class="fl">0.0</span> 
+    X.loc[index, type_col] <span class="op">=</span> <span class="fl">1.0</span></code></pre></div>
 <p>This has given us a new data frame <code>X</code> which contains the different facility types in different columns.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">X.describe()</code></pre></div>
 <p>We can now specify the naive Bayes model. For the genres we want to model the data as Bernoulli distributed, and for the year and body count we want to model the data as Gaussian distributed. We set up two data frames to contain the parameters for the rows and the columns below.</p>
@@ -448,7 +453,7 @@ binary_columns <span class="op">=</span> [<span class="st">&#39;emergency_transp
           <span class="st">&#39;improved_sanitation&#39;</span>,
           <span class="st">&#39;antenatal_care_yn&#39;</span>, 
           <span class="st">&#39;family_planning_yn&#39;</span>,
-          <span class="st">&#39;malaria_treatment_artemisinin&#39;</span>] <span class="op">+</span> types
+          <span class="st">&#39;malaria_treatment_artemisinin&#39;</span>] <span class="op">+</span> type_names
 real_columns <span class="op">=</span> [<span class="st">&#39;num_chews_fulltime&#39;</span>, 
                 <span class="st">&#39;num_nurses_fulltime&#39;</span>, 
                 <span class="st">&#39;num_doctors_fulltime&#39;</span>, 
@@ -462,19 +467,19 @@ indices <span class="op">=</span> np.random.permutation(X.shape[<span class="dv"
 train_indices <span class="op">=</span> indices[:num_train]
 test_indices <span class="op">=</span> indices[num_train:]
 X_train <span class="op">=</span> X.loc[train_indices]
-y_train <span class="op">=</span> y.loc[train_indices]
+y_train <span class="op">=</span> y.loc[train_indices]<span class="op">==</span><span class="va">True</span>
 X_test <span class="op">=</span> X.loc[test_indices]
-y_test <span class="op">=</span> y.loc[test_indices]</code></pre></div>
+y_test <span class="op">=</span> y.loc[test_indices]<span class="op">==</span><span class="va">True</span></code></pre></div>
 <p>And we can now train the model. For each feature we can make the fit independently. The fit is given by either counting the number of positives (for binary data) which gives us the maximum likelihood solution for the Bernoulli. Or by computing the empirical mean and variance of the data for the Gaussian, which also gives us the maximum likelihood solution.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">for</span> column <span class="kw">in</span> X_train:
     <span class="cf">if</span> column <span class="kw">in</span> Gaussian:
-        Gaussian[column][<span class="st">&#39;mu_0&#39;</span>] <span class="op">=</span> X_train[column][<span class="op">~</span>y].mean()
-        Gaussian[column][<span class="st">&#39;mu_1&#39;</span>] <span class="op">=</span> X_train[column][y].mean()
-        Gaussian[column][<span class="st">&#39;sigma2_0&#39;</span>] <span class="op">=</span> X_train[column][<span class="op">~</span>y].var(ddof<span class="op">=</span><span class="dv">0</span>)
-        Gaussian[column][<span class="st">&#39;sigma2_1&#39;</span>] <span class="op">=</span> X_train[column][y].var(ddof<span class="op">=</span><span class="dv">0</span>)
+        Gaussian[column][<span class="st">&#39;mu_0&#39;</span>] <span class="op">=</span> X_train[column][<span class="op">~</span>y_train].mean()
+        Gaussian[column][<span class="st">&#39;mu_1&#39;</span>] <span class="op">=</span> X_train[column][y_train].mean()
+        Gaussian[column][<span class="st">&#39;sigma2_0&#39;</span>] <span class="op">=</span> X_train[column][<span class="op">~</span>y_train].var(ddof<span class="op">=</span><span class="dv">0</span>)
+        Gaussian[column][<span class="st">&#39;sigma2_1&#39;</span>] <span class="op">=</span> X_train[column][y_train].var(ddof<span class="op">=</span><span class="dv">0</span>)
     <span class="cf">if</span> column <span class="kw">in</span> Bernoulli:
-        Bernoulli[column][<span class="st">&#39;theta_0&#39;</span>] <span class="op">=</span> X_train[column][<span class="op">~</span>y].<span class="bu">sum</span>()<span class="op">/</span>(<span class="op">~</span>y).<span class="bu">sum</span>()
-        Bernoulli[column][<span class="st">&#39;theta_1&#39;</span>] <span class="op">=</span> X_train[column][y].<span class="bu">sum</span>()<span class="op">/</span>(y).<span class="bu">sum</span>()</code></pre></div>
+        Bernoulli[column][<span class="st">&#39;theta_0&#39;</span>] <span class="op">=</span> X_train[column][<span class="op">~</span>y_train].<span class="bu">sum</span>()<span class="op">/</span>(<span class="op">~</span>y_train).<span class="bu">sum</span>()
+        Bernoulli[column][<span class="st">&#39;theta_1&#39;</span>] <span class="op">=</span> X_train[column][y_train].<span class="bu">sum</span>()<span class="op">/</span>(y_train).<span class="bu">sum</span>()</code></pre></div>
 <p>We can examine the nature of the distributions we've fitted to the model by looking at the entries in these data frames.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">Bernoulli</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">Gaussian</code></pre></div>
@@ -519,9 +524,11 @@ p(\dataScalar^*| \inputVector^*, \paramVector) = \frac{\prod_{j=1}^{\dataDim} p(
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># fit the Bernoulli with Laplace smoothing.</span>
 <span class="cf">for</span> column <span class="kw">in</span> X_train:
     <span class="cf">if</span> column <span class="kw">in</span> Bernoulli:
-        Bernoulli[column][<span class="st">&#39;theta_0&#39;</span>] <span class="op">=</span> (X_train[column][<span class="op">~</span>y].<span class="bu">sum</span>() <span class="op">+</span> <span class="dv">1</span>)<span class="op">/</span>((<span class="op">~</span>y).<span class="bu">sum</span>() <span class="op">+</span> <span class="dv">2</span>)
-        Bernoulli[column][<span class="st">&#39;theta_1&#39;</span>] <span class="op">=</span> (X_train[column][y].<span class="bu">sum</span>() <span class="op">+</span> <span class="dv">1</span>)<span class="op">/</span>((y).<span class="bu">sum</span>() <span class="op">+</span> <span class="dv">2</span>)</code></pre></div>
+        Bernoulli[column][<span class="st">&#39;theta_0&#39;</span>] <span class="op">=</span> (X_train[column][<span class="op">~</span>y_train].<span class="bu">sum</span>() <span class="op">+</span> <span class="dv">1</span>)<span class="op">/</span>((<span class="op">~</span>y_train).<span class="bu">sum</span>() <span class="op">+</span> <span class="dv">2</span>)
+        Bernoulli[column][<span class="st">&#39;theta_1&#39;</span>] <span class="op">=</span> (X_train[column][y_train].<span class="bu">sum</span>() <span class="op">+</span> <span class="dv">1</span>)<span class="op">/</span>((y_train).<span class="bu">sum</span>() <span class="op">+</span> <span class="dv">2</span>)</code></pre></div>
 <p>That places us in a position to write the prediction function.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
+<span class="im">import</span> pandas <span class="im">as</span> pd</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> predict(X_test, Gaussian, Bernoulli, prior):
     log_positive <span class="op">=</span> pd.Series(data <span class="op">=</span> np.zeros(X_test.shape[<span class="dv">0</span>]), index<span class="op">=</span>X_test.index)
     log_negative <span class="op">=</span> pd.Series(data <span class="op">=</span> np.zeros(X_test.shape[<span class="dv">0</span>]), index<span class="op">=</span>X_test.index)

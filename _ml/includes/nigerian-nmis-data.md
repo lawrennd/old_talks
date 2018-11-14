@@ -29,6 +29,8 @@ data.head()}}
 \setupcode{import pandas as pd}
 \code{data = pd.read_csv('healthmopupandbaselinenmisfacility.csv')}
 
+\define{\nmisdatadownloaded}
+
 \notes{Once it is loaded in the data can be summarized using the `describe` method in pandas.}
 
 \code{data.describe()}
