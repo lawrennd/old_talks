@@ -1,7 +1,7 @@
 \include{_ml/includes/nigerian-nmis-data.md}
 
-\notes{Let's use the sum rule to compute the approximate
-probability that a film from the movie body count website has over 40 deaths.}
+\notes{Let's use the sum rule to compute the estimate the 
+probability that a facility has more than two nurses.}
 
 \code{large = (data.num_nurses_fulltime>2).sum()  # number of positive outcomes (in sum True counts as 1, False counts as 0)
 total_facilities = data.num_nurses_fulltime.count()
@@ -30,7 +30,7 @@ prob_both_large = large/total_large_doctors
 print("Probability of number of nurses being greater than 2 given number of doctors is greater than 1 is:", prob_both_large)
 }
 
-\codeassignment{}{}{}
+\codeassignment{Write code that prints out the probability of nurses being greater than 2 for different numbers of doctors.}{2}{15}
 
 
 \notes{#### Notes for Question }

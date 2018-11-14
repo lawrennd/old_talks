@@ -1,16 +1,18 @@
 \notes{
 \subsection{Nigerian NMIS Data}
 
-First we will load in the Nigerian NMIS health data. Our aim will be to predict whether a center has maternal health delivery services given the attributes in the data. We will predict on the basis of year, body count and movie genre. The facility type in the CSV file are stored as a list in the following form:
+First we will load in the Nigerian NMIS health data. Our aim will be to predict whether a center has maternal health delivery services given the attributes in the data. We will predict of the number of nurses, the number of doctors, location etc.
 
-```
-Biography|Action|Sci-Fi
-```
+ Let's first remind ourselves of the data.}
 
-First we have to do a little work to extract this form and turn it into a vector of binary values. Let's first load in and remind ourselves of the data.}
+\ifdef{nmisdatadownloaded}
+\code{data.head()}
+\else{
+\setupcode{import urllib.request}
+\code{urllib.request.urlretrieve('https://energydata.info/dataset/f85d1796-e7f2-4630-be84-79420174e3bd/resource/6e640a13-cab4-457b-b9e6-0336051bac27/download/healthmopupandbaselinenmisfacility.csv', 'healthmopupandbaselinenmisfacility.csv')}
 
-\setupcode{import pods}
-\code{data = pods.datasets.nigerian_nmis_data()['Y']
+\setupcode{import pandas as pd}
+\code{data = pd.read_csv('healthmopupandbaselinenmisfacility.csv')}
 data.head()}
 
 \notes{Now we will convert this data into a form which we can use as inputs `X`, and labels `y`.}
@@ -32,7 +34,7 @@ X = data[['emergency_transport',
           'malaria_treatment_artemisinin', 
 		  'latitude', 
 		  'longitude']].copy()
-y = data['maternal_health_delivery_service']  # set label to be whether there's a maternal health delivery service
+y = data['maternal_health_delivery_services']  # set label to be whether there's a maternal health delivery service
 
 # Create series of health center types with the relevant index
 s = data['facility_type_display'].apply(pd.Series, 1).stack() 

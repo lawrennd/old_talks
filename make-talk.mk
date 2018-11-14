@@ -37,19 +37,19 @@ ${BASE}.posts.html: ${BASE}.notes.md
 ${BASE}.ipynb: ${BASE}.ipynb.md
 	pandoc  ${PDFLAGS} -B ../_includes/talk-notation.tex --template pandoc-jekyll-ipynb-template --atx-headers --bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib -o ${BASE}.tmp.md  ${BASE}.ipynb.md
 	notedown ${BASE}.tmp.md > ${BASE}.ipynb
-	cp ${BASE}.ipynb ../notebooks/${OUT}.ipynb
+	cp ${BASE}.ipynb ../_notebooks/${OUT}.ipynb
 	rm ${BASE}.tmp.md
 
 ${BASE}.ipynb: ${BASE}.ipynb.md
 	pandoc  ${PDFLAGS} -B ../_includes/talk-notation.tex --template pandoc-jekyll-ipynb-template --atx-headers --bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib -o ${BASE}.tmp.md  ${BASE}.ipynb.md
 	notedown ${BASE}.tmp.md > ${BASE}.ipynb
-	cp ${BASE}.ipynb ../notebooks/${OUT}.ipynb
+	cp ${BASE}.ipynb ../_notebooks/${OUT}.ipynb
 	rm ${BASE}.tmp.md
 
 ${BASE}.slides.ipynb: ${BASE}.slides.ipynb.md
 	pandoc  ${PDFLAGS} -B ../_includes/talk-notation.tex --template pandoc-jekyll-ipynb-template --atx-headers --bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib -o ${BASE}.tmp.md  ${BASE}.slides.ipynb.md
 	notedown ${BASE}.tmp.md > ${BASE}.slides.ipynb
-	cp ${BASE}.slides.ipynb ../notebooks/${OUT}.slides.ipynb
+	cp ${BASE}.slides.ipynb ../_notebooks/${OUT}.slides.ipynb
 	rm ${BASE}.tmp.md
 
 
