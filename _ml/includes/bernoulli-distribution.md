@@ -92,7 +92,7 @@ plot.bayes_billiard(ax, diagrams='../slides/diagrams/ml/')}
 }
 \notesfigure{\div{\includesvg{../slides/diagrams/ml/bayes-billiard009.svg}}{}{text-align:center}}
 
-\setupplotcode{import pods
+\setupdisplaycode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('bayes-billiard{counter:0>3}.svg', 
                             directory='../slides/diagrams/ml', 
