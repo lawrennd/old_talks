@@ -13,13 +13,20 @@
 >To learn more, please visit <http://csd.columbia.edu/2014/03/10/the-nigeria-mdg-information-system-nmis-takes-open-data-further/>
 >
 >Suggested citation: Nigeria NMIS facility database (2014), the Office of the Senior Special Assistant to the President on the Millennium Development Goals (OSSAP-MDGs) & Columbia University
+}
 
-\notes{For ease of use we've packaged this data set in the `pods` library}
+<!--\notes{For ease of use we've packaged this data set in the `pods` library}
 
-\include{_ml/includes/pods.md}
+include{_ml/includes/pods.md}
 
 \code{data = pods.datasets.nigerian_nmis_facility_database()['Y']
-data.head()}
+data.head()}-->
+
+\setupcode{import urllib.request}
+\code{urllib.request.urlretrieve('https://energydata.info/dataset/f85d1796-e7f2-4630-be84-79420174e3bd/resource/6e640a13-cab4-457b-b9e6-0336051bac27/download/healthmopupandbaselinenmisfacility.csv', 'healthmopupandbaselinenmisfacility.csv')}
+
+\setupcode{import pandas as pd}
+\code{data = pd.read_csv('healthmopupandbaselinenmisfacility.csv')}
 
 \notes{Once it is loaded in the data can be summarized using the `describe` method in pandas.}
 
