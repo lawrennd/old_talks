@@ -46,7 +46,7 @@ data.head()}}
 \code{print(data['num_doctors_fulltime'])
 #print(data['num_nurses_fulltime'])}
 
-\notes{This shows the number of doctors per facility. We can plot the data against the number of nurses as follows.}
+\notes{This shows the number of doctors per facility, number of nurses and number of community health workers (CHEWS). We can plot the number of doctors against the number of nurses as follows.}
 
 \setupcode{# this ensures the plot appears in the web browser
 %matplotlib inline 
