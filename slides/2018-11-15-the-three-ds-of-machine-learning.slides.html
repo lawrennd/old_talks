@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="dcterms.date" content="2018-11-15">
-  <title>Machine Learning Systems Design</title>
+  <title>The Three Ds of Machine Learning</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -359,8 +359,7 @@
     <div class="slides">
 
 <section id="title-slide">
-  <h1 class="title">Machine Learning Systems Design</h1>
-  <p class="subtitle" style="text-align:center">The Three Ds of Machine Learning</p>
+  <h1 class="title">The Three Ds of Machine Learning</h1>
   <p class="author" style="text-align:center"><a href="http://inverseprobability.com">Neil D. Lawrence</a></p>
   <p class="date" style="text-align:center"><time>2018-11-15</time></p>
   <p class="venue" style="text-align:center">Data Science Africa, Abuja</p>
@@ -398,110 +397,8 @@ include{../_ml/includes/what-does-machine-learning-do.md}-->
 <section id="section-3" class="slide level3">
 <h3></h3>
 <p><span class="math display">\[ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span></p>
-</section>
-<section id="efficiency" class="slide level3">
-<h3>Efficiency</h3>
-<ul>
-<li>Economies driven by ‘production’.</li>
-<li>Greater production comes with better efficiency.
-<ul>
-<li>E.g. moving from gathering food to settled agriculture.</li>
-</ul></li>
-<li>In the modern era one approach to becoming more efficient is automation of processes.
-<ul>
-<li>E.g. manufacturing production lines</li>
-</ul></li>
-</ul>
-</section>
-<section id="physical-processes" class="slide level3">
-<h3>Physical Processes</h3>
-<ul>
-<li>Manufacturing processes consist of production lines and robotic automation.</li>
-<li>Logistics can also be decomposed into the supply chain processes.</li>
-<li>Efficiency can be improved by automation.</li>
-</ul>
-</section>
-<section id="goods-and-information" class="slide level3">
-<h3>Goods and Information</h3>
-<ul>
-<li>For modern society: management of flow of goods and information.</li>
-<li>Flow of information is highly automated.</li>
-<li>Processing of data is decomposed into stages in computer code.</li>
-</ul>
-</section>
-<section id="intervention" class="slide level3">
-<h3>Intervention</h3>
-<ul>
-<li>For all cases: manufacturing, logistics, data management</li>
-<li>Pipeline requires human intervention from an operator.</li>
-<li>Interventions create bottlenecks, slow the process.</li>
-<li>Machine learning is a key technology in automating these manual stages.</li>
-</ul>
-</section>
-<section id="long-grass" class="slide level3">
-<h3>Long Grass</h3>
-<ul>
-<li>Easy to replicate interventions have already been dealt with.</li>
-<li>Components that still require human intervention are the knottier problems.</li>
-<li>Difficult decompose into stages which could then be further automated.</li>
-<li>These components are ‘process-atoms’.</li>
-<li>These are the “long grass” regions of technology.</li>
-</ul>
-</section>
-<section id="nature-of-challenge" class="slide level3">
-<h3>Nature of Challenge</h3>
-<ul>
-<li>In manufacturing or logistics settings atoms are flexible manual skills.
-<ul>
-<li>Requires emulation of a human’s motor skills.</li>
-</ul></li>
-<li>In information processing: our flexible cognitive skills.
-<ul>
-<li>Our ability to mentally process an image or some text.</li>
-</ul></li>
-</ul>
-</section>
-<section id="worked-example-delivery-drones" class="slide level3">
-<h3>Worked Example: Delivery Drones</h3>
-<iframe width="800" height="600" src="https://www.youtube.com/embed/vNySOrI2Ny8?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-</iframe>
-</section>
-<section id="artificial-intelligence-and-data-science" class="slide level3">
-<h3>Artificial Intelligence and Data Science</h3>
-<ul>
-<li>AI aims to equip computers with human capabilities
-<ul>
-<li>Image understanding</li>
-<li>Computer vision</li>
-<li>Speech recognition</li>
-<li>Natural language understanding</li>
-<li>Machine translation</li>
-</ul></li>
-</ul>
-</section>
-<section id="supervised-learning-for-ai" class="slide level3">
-<h3>Supervised Learning for AI</h3>
-<ul>
-<li>Dominant approach today:
-<ul>
-<li>Generate large labelled data set from humans.</li>
-<li>Use <em>supervised learning</em> to emulate that data.
-<ul>
-<li><em>E.g.</em> <a href="www.image-net.org">ImageNet</a> <span class="citation" data-cites="Russakovsky-imagenet15">Russakovsky et al. (2015)</span></li>
-</ul></li>
-</ul></li>
-<li>Significant advances due to <em>deep learning</em>
-<ul>
-<li><em>E.g.</em> Alexa, Amazon Go</li>
-</ul></li>
-</ul>
-</section>
-<section id="data-science" class="slide level3">
-<h3>Data Science</h3>
-<ul>
-<li>Arises from <em>happenstance data</em>.</li>
-<li>Differs from statistics in that the question comes <em>after</em> data collection.</li>
-</ul>
+<!-- include{_ml/includes/process-automation.md} -->
+<!-- include{_ai/includes/ai-vs-data-science-2.md} -->
 </section>
 <section id="machine-learning-in-supply-chain" class="slide level3">
 <h3>Machine Learning in Supply Chain</h3>
@@ -866,9 +763,6 @@ include{../_ml/includes/what-does-machine-learning-do.md}-->
 <div id="refs" class="references">
 <div id="ref-Lawrence:drl17">
 <p>Lawrence, N.D., 2017. Data readiness levels. arXiv.</p>
-</div>
-<div id="ref-Russakovsky-imagenet15">
-<p>Russakovsky, O., Deng, J., Su, H., Krause, J., Satheesh, S., Ma, S., Huang, Z., Karpathy, A., Khosla, A., Bernstein, M., Berg, A.C., Fei-Fei, L., 2015. ImageNet Large Scale Visual Recognition Challenge. International Journal of Computer Vision (IJCV) 115, 211–252. <a href="https://doi.org/10.1007/s11263-015-0816-y" class="uri">https://doi.org/10.1007/s11263-015-0816-y</a></p>
 </div>
 </div>
 </section>
