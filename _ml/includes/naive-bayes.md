@@ -1,5 +1,7 @@
 \subsection{Naive Bayes Classifiers}
 
+\notes{*Note*: Everything we do below is possible using standard packages like `scikit-learn`, our purpose in this session is to help you understand how those engines are constructed. In practice for an application you should use a library like `scikit-learn`.}
+
 \notes{In probabilistic machine learning we place probability distributions (or densities) over all the variables of interest, our first classification algorithm will do just that. We will consider how to form a classification by making assumptions about the *joint* density of our observations. We need to make assumptions to reduce the number of parameters we need to optimise.}\slides{
 * Probabilistic Machine Learning: place probability distributions (or densities) over all the variables of interest.
 * In *naive Bayes* this is exactly what we do.}
