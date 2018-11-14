@@ -1,6 +1,5 @@
 ---
-title: "Machine Learning Systems Design"
-subtitle: "The Three Ds of Machine Learning"
+title: "The Three Ds of Machine Learning"
 abstract: >
   Machine learning solutions, in particular those based on deep learning methods, form an underpinning of the current revolution in “artificial intelligence” that has dominated popular press headlines and is having a significant influence on the wider tech agenda.
   
