@@ -105,8 +105,16 @@ y_test = y.iloc[test_indices]==True}
 
 \code{Bernoulli}
 
+The distributions show the parameters of the *independent* class conditional probabilities for no maternity services. It is a Bernoulli distribution with the parameter, $\pi$, given by (`theta_0`) for the facilities without maternity services and `theta_1` for the facilities with maternity services. The parameters whow that, facilities with maternity services also are more likely to have other services such as grid electricity, emergency transport, immunization programs etc. 
+
+The naive Bayes assumption says that the joint probability for these services is given by the product of each of these Bernoulli distributions.
+
 \code{Gaussian}
+
+We have modelled the numbers in our table with a Gaussian density. Since several of these numbers are counts, a more appropriate distribution might be the Poisson distribution. But here we can see that the average number of nurses, healthworkers and doctors is *higher* in the facilities with maternal services (`mu_1`) than those without maternal services (`mu_0`). There is also a small difference between the mean latitude and longitudes. However, the *standard deviation* which would be given by the square root of the variance parameters (`sigma_0` and `sigma_1`) is large, implying that a difference in latitude and longitude may be due to sampling error. To be sure more analysis would be required.
 
 \notes{The final model parameter is the prior probability of the positive class, $\pi$, which is computed by maximum likelihood.}
 
 \code{prior = float(y_train.sum())/len(y_train)}
+
+\notes{The prior probability tells us that slightly more facilities have maternity services than those that don't.}
