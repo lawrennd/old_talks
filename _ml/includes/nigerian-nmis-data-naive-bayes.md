@@ -84,10 +84,10 @@ Gaussian = pd.DataFrame(data=np.zeros((4,len(real_columns))), columns=real_colum
 indices = np.random.permutation(X.shape[0])
 train_indices = indices[:num_train]
 test_indices = indices[num_train:]
-X_train = X.loc[train_indices]
-y_train = y.loc[train_indices]==True
-X_test = X.loc[test_indices]
-y_test = y.loc[test_indices]==True}
+X_train = X.iloc[train_indices]
+y_train = y.iloc[train_indices]==True
+X_test = X.iloc[test_indices]
+y_test = y.iloc[test_indices]==True}
 
 \notes{And we can now train the model. For each feature we can make the fit independently. The fit is given by either counting the number of positives (for binary data) which gives us the maximum likelihood solution for the Bernoulli. Or by computing the empirical mean and variance of the data for the Gaussian, which also gives us the maximum likelihood solution.}
 

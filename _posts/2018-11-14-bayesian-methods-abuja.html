@@ -94,7 +94,7 @@ ax.set_yscale(<span class="st">&#39;log&#39;</span>)</code></pre></div>
 <p><em>10 marks</em></p>
 <h3 id="write-your-answer-to-question-1-here">Write your answer to Question 1 here</h3>
 <p>Let's try and see how the number of nurses relates to the number of doctors.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.suplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">7</span>)) 
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">7</span>)) 
 ax.plot(data[<span class="st">&#39;num_doctors_fulltime&#39;</span>], data[<span class="st">&#39;num_nurses_fulltime&#39;</span>], <span class="st">&#39;rx&#39;</span>)
 ax.set_xscale(<span class="st">&#39;log&#39;</span>) <span class="co"># use a logarithmic x scale</span>
 ax.set_yscale(<span class="st">&#39;log&#39;</span>) <span class="co"># use a logarithmic Y scale</span>
@@ -327,6 +327,7 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \parameterVe
 <object class="svgplot " align data="../slides/diagrams/ml/bayes-billiard009.svg" style>
 </object>
 </div>
+
 <h3 id="maximum-likelihood-in-the-bernoulli-distribution">Maximum Likelihood in the Bernoulli Distribution</h3>
 <p>Maximum likelihood in the Bernoulli distribution is straightforward. Let's assume we have data, <span class="math inline">\(\dataVector\)</span> which consists of a vector of binary values of length <span class="math inline">\(n\)</span>. If we assume each value was sampled independently from the Bernoulli distribution, conditioned on the parameter <span class="math inline">\(\pi\)</span> then our joint probability density has the form <span class="math display">\[
 p(\dataVector|\pi) = \prod_{i=1}^{\numData} \pi^{\dataScalar_i} (1-\pi)^{1-\dataScalar_i}.
@@ -466,10 +467,10 @@ Gaussian <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>np.
 indices <span class="op">=</span> np.random.permutation(X.shape[<span class="dv">0</span>])
 train_indices <span class="op">=</span> indices[:num_train]
 test_indices <span class="op">=</span> indices[num_train:]
-X_train <span class="op">=</span> X.loc[train_indices]
-y_train <span class="op">=</span> y.loc[train_indices]<span class="op">==</span><span class="va">True</span>
-X_test <span class="op">=</span> X.loc[test_indices]
-y_test <span class="op">=</span> y.loc[test_indices]<span class="op">==</span><span class="va">True</span></code></pre></div>
+X_train <span class="op">=</span> X.iloc[train_indices]
+y_train <span class="op">=</span> y.iloc[train_indices]<span class="op">==</span><span class="va">True</span>
+X_test <span class="op">=</span> X.iloc[test_indices]
+y_test <span class="op">=</span> y.iloc[test_indices]<span class="op">==</span><span class="va">True</span></code></pre></div>
 <p>And we can now train the model. For each feature we can make the fit independently. The fit is given by either counting the number of positives (for binary data) which gives us the maximum likelihood solution for the Bernoulli. Or by computing the empirical mean and variance of the data for the Gaussian, which also gives us the maximum likelihood solution.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">for</span> column <span class="kw">in</span> X_train:
     <span class="cf">if</span> column <span class="kw">in</span> Gaussian:
@@ -540,7 +541,12 @@ p(\dataScalar^*| \inputVector^*, \paramVector) = \frac{\prod_{j=1}^{\dataDim} p(
             log_positive <span class="op">+=</span> log_bernoulli(X_test[column], Bernoulli[column][<span class="st">&#39;theta_1&#39;</span>])
             log_negative <span class="op">+=</span> log_bernoulli(X_test[column], Bernoulli[column][<span class="st">&#39;theta_0&#39;</span>])
             
-    <span class="cf">return</span> np.exp(log_positive <span class="op">+</span> np.log(prior))<span class="op">/</span>(np.exp(log_positive <span class="op">+</span> np.log(prior)) <span class="op">+</span> np.exp(log_negative <span class="op">+</span> np.log(<span class="dv">1</span><span class="op">-</span>prior)))</code></pre></div>
+    v <span class="op">=</span> np.zeros_like(log_positive.values)
+    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(X_test.shape[<span class="dv">0</span>]):
+        v[i] <span class="op">=</span> np.exp(log_positive.values[i] <span class="op">+</span> np.log(prior))<span class="op">/</span>(np.exp(log_positive.values[i] <span class="op">+</span> np.log(prior)) 
+                                                               <span class="op">+</span> np.exp(log_negative.values[i] <span class="op">+</span> np.log(<span class="dv">1</span><span class="op">-</span>prior)))
+    <span class="cf">return</span> v
+    <span class="co">#return np.exp(log_positive + np.log(prior))/(np.exp(log_positive + np.log(prior)) + np.exp(log_negative + np.log(1-prior)))</span></code></pre></div>
 <p>Now we are in a position to make the predictions for the test data.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">p_y <span class="op">=</span> predict(X_test, Gaussian, Bernoulli, prior)</code></pre></div>
 <p>We can test the quality of the predictions in the following way. Firstly, we can threshold our probabilities at 0.5, allocating points with greater than 50% probability of membership of the positive class to the positive class. We can then compare to the true values, and see how many of these values we got correct. This is our total number correct.</p>

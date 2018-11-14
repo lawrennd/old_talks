@@ -86,7 +86,7 @@ each provide python?}{1}{10}
 
 \notes{Let's try and see how the number of nurses relates to the number of doctors.}
 
-\code{fig, ax = plt.suplots(figsize=(10, 7)) 
+\code{fig, ax = plt.subplots(figsize=(10, 7)) 
 ax.plot(data['num_doctors_fulltime'], data['num_nurses_fulltime'], 'rx')
 ax.set_xscale('log') # use a logarithmic x scale
 ax.set_yscale('log') # use a logarithmic Y scale

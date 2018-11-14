@@ -307,7 +307,12 @@ import pandas as pd}
             log_positive += log_bernoulli(X_test[column], Bernoulli[column]['theta_1'])
             log_negative += log_bernoulli(X_test[column], Bernoulli[column]['theta_0'])
             
-    return np.exp(log_positive + np.log(prior))/(np.exp(log_positive + np.log(prior)) + np.exp(log_negative + np.log(1-prior)))}
+    v = np.zeros_like(log_positive.values)
+    for i in range(X_test.shape[0]):
+        v[i] = np.exp(log_positive.values[i] + np.log(prior))/(np.exp(log_positive.values[i] + np.log(prior)) 
+                                                               + np.exp(log_negative.values[i] + np.log(1-prior)))
+    return v
+    #return np.exp(log_positive + np.log(prior))/(np.exp(log_positive + np.log(prior)) + np.exp(log_negative + np.log(1-prior)))}
 
 \notes{Now we are in a position to make the predictions for the test data.}
 
