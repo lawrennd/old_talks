@@ -49,7 +49,7 @@ P(Y=y) \approx \frac{n_y}{N}.
 \]</span></p>
 <h2 id="nigerian-nmis-data">Nigerian NMIS Data</h2>
 <p>As an example data set we will use Nigerian NMIS Health Facility data from openAFRICA. It can be found here <a href="https://africaopendata.org/dataset/nigeria-nmis-health-facility-data-2014" class="uri">https://africaopendata.org/dataset/nigeria-nmis-health-facility-data-2014</a></p>
-<p>{Taking from the information on the site,</p>
+<p>Taking from the information on the site,</p>
 <blockquote>
 <p>The Nigeria MDG (Millennium Development Goals) Information System – NMIS health facility data is collected by the Office of the Senior Special Assistant to the President on the Millennium Development Goals (OSSAP-MDGs) in partner with the Sustainable Engineering Lab at Columbia University. A rigorous, geo-referenced baseline facility inventory across Nigeria is created spanning from 2009 to 2011 with an additional survey effort to increase coverage in 2014, to build Nigeria’s first nation-wide inventory of health facility. The database includes 34,139 health facilities info in Nigeria.</p>
 <p>The goal of this database is to make the data collected available to planners, government officials, and the public, to be used to make strategic decisions for planning relevant interventions.</p>
@@ -57,16 +57,18 @@ P(Y=y) \approx \frac{n_y}{N}.
 <p>To learn more, please visit <a href="http://csd.columbia.edu/2014/03/10/the-nigeria-mdg-information-system-nmis-takes-open-data-further/" class="uri">http://csd.columbia.edu/2014/03/10/the-nigeria-mdg-information-system-nmis-takes-open-data-further/</a></p>
 <p>Suggested citation: Nigeria NMIS facility database (2014), the Office of the Senior Special Assistant to the President on the Millennium Development Goals (OSSAP-MDGs) &amp; Columbia University</p>
 </blockquote>
-<p>For ease of use we've packaged this data set in the <code>pods</code> library</p>
-<h3 id="pods"><code>pods</code></h3>
-<p>The <code>pods</code> library is a library for supporting open data science (python open data science). It allows you to load in various data sets and provides tools for helping teach in the notebook.</p>
-<p>To install pods you can use pip:</p>
-<p><code>pip install pods</code></p>
-<p>The code is also available on github: <a href="https://github.com/sods/ods" class="uri">https://github.com/sods/ods</a></p>
-<p>Once <code>pods</code> is installed, it can be imported in the usual manner.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data <span class="op">=</span> pods.datasets.nigerian_nmis_facility_database()[<span class="st">&#39;Y&#39;</span>]
-data.head()</code></pre></div>
+<!--For ease of use we've packaged this data set in the `pods` library
+
+include{_ml/includes/pods.md}
+
+```{.python}
+data = pods.datasets.nigerian_nmis_facility_database()['Y']
+data.head()
+```-->
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> urllib.request</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">urllib.request.urlretrieve(<span class="st">&#39;https://energydata.info/dataset/f85d1796-e7f2-4630-be84-79420174e3bd/resource/6e640a13-cab4-457b-b9e6-0336051bac27/download/healthmopupandbaselinenmisfacility.csv&#39;</span>, <span class="st">&#39;healthmopupandbaselinenmisfacility.csv&#39;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pandas <span class="im">as</span> pd</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data <span class="op">=</span> pd.read_csv(<span class="st">&#39;healthmopupandbaselinenmisfacility.csv&#39;</span>)</code></pre></div>
 <p>Once it is loaded in the data can be summarized using the <code>describe</code> method in pandas.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data.describe()</code></pre></div>
 <p>In jupyter and jupyter notebook it is possible to see a list of all possible functions and attributes by typing the name of the object followed by .<Tab> for example in the above case if we type data.<Tab> it show the columns available (these are attributes in pandas dataframes) such as <code>num_nurses_fulltime</code>, and also functions, such as <code>.describe()</code>.</p>
