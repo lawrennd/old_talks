@@ -1,6 +1,13 @@
 \define{\talksdir}{/Users/neil/lawrennd/talks}
 \define{\concat{argone}{argtwo}}{\argone\argtwo}
+
+<!-- Enables links to pages-->
+\ifdef{draft}
 \define{\editme}{<a href="file://\talksdir\file">\file</a>}
+\else
+\define{\editme}
+\endif
+
 \ifdef{ipynb} <!--ipynb-->
 
 \define{\includegooglebook{id}{page}}{```
@@ -244,6 +251,7 @@ YouTubeVideo('\id')
 \define{\helpercode{block}}{```{.python}
 \block
 ```}
+\define{\setupdisplaycode{block}}{}
 \define{\displaycode{block}}{}
 \define{\plotcode{block}}{}
 \define{\setupplotcode{block}}{}
@@ -286,7 +294,7 @@ from \filename import \object
 \define{\includeimg{filename}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" height="auto" align="\align" style="background:none; border:none; box-shadow:none;">}
 \define{\includeimgclip{filename}{clip}{width}{class}{align}}{<img class="\class" clip="\clip" src="\filename" width="\width" height="auto" align="\align" style="background:none; border:none; box-shadow:none;">}
 \define{\includegif{filename}{width}{class}}{<img class="\class" src="\filename" width="\width" style="background:none; border:none; box-shadow:none;">}
-\define{\includesvg{filename}{align}{class}{style}}{<object class="svgplot \class" align="\align" data="\filename" style="\style"></object>}
+\define{\includesvg{filename}{align}{class}{style}}{<div style="text-align:\align" class="\class"><object class="svgplot \class" align="\align" data="\filename" style="\style"></object></div>}
 \define{\includesvgclass{filename}{class}{align}}{<object class="\class" align="\align" data="\filename"></object>}
 \define{\includehtml{filename}{width}{height}}{<iframe src="\filename" width="\width" height="\height" allowtransparency="true" frameborder="0">
 </iframe>}
@@ -320,15 +328,27 @@ from \filename import \object
 \define{\newslide{text}}{### \text
 }
 
-\define{\startslides{group}{start}{finish}}{<script>
+
+\define{\startanimation{group}{start}{finish}}{<script>
 showDivs(\start, '\group');
 </script>
  <input id="range-\group" type="range" min="\start" max="\finish" value="\start" onchange="setDivs('\group')" oninput="setDivs('\group')">
 <button onclick="plusDivs(-1, '\group')">❮</button>
 <button onclick="plusDivs(1, '\group')">❯</button>
 }
+
+\define{\newframe{contents}{name}{style}}{<div style="text-align:center;\style" class="\name">\contents</div>}
+\define{\endanimation}{}
+
+\define{\startslides{group}{start}{finish}}{\startanimation{\group}{\start}{\finish}}
+
+
 \define{\fragment{text}{type}}{<span class="fragment \type">\text</span>}
 \define{\fragmentindex{text}{type}{index}}{<span class="fragment \type" data-fragment-index="\index">\text</span>}
+
+
+
+
 \define{\code{block}}{}
 \define{\matlabcode{block}}{}
 \define{\setupcode{block}}{}
@@ -337,6 +357,7 @@ showDivs(\start, '\group');
 \define{\loadcode{block}}{}
 \define{\helpercode{block}}{}
 \define{\plotcode{block}}{}
+\define{\setupdisplaycode{block}}{}
 \define{\displaycode{block}}{}
 \define{\notesfigure{block}}{}
 \define{\caption{block}}{<center>*\block *</center>}
@@ -370,5 +391,7 @@ showDivs(\start, '\group');
 
 \define{\includejpg{filename}{width}{class}}{\div{\includeimg{\concat{\filename}{.jpg}}{\width}{\class}{center}}{}{text-align:center}}
 \define{\includepng{filename}{width}{class}}{\div{\includeimg{\concat{\filename}{.png}}{\width}{\class}{center}}{}{text-align:center}}
+
+\define{\credit{text}}{\smalltext{\alignright{Thanks to: \text}}}
 
 \define{\comment}{}

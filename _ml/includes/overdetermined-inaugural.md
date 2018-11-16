@@ -42,14 +42,14 @@ import pods}
                             samp=IntSlider(1,1,7,1))}
 
 \slides{
-\startslides{over_determined_system}{1}{8}
-\includesvg{../slides/diagrams/ml/over_determined_system001.svg}{}{over_determined_system}
-\includesvg{../slides/diagrams/ml/over_determined_system002.svg}{}{over_determined_system}
-\includesvg{../slides/diagrams/ml/over_determined_system003.svg}{}{over_determined_system}
-\includesvg{../slides/diagrams/ml/over_determined_system004.svg}{}{over_determined_system}
-\includesvg{../slides/diagrams/ml/over_determined_system005.svg}{}{over_determined_system}
-\includesvg{../slides/diagrams/ml/over_determined_system006.svg}{}{over_determined_system}
-\includesvg{../slides/diagrams/ml/over_determined_system007.svg}{}{over_determined_system}
+\startanimation{over_determined_system}{1}{8}
+\newframe{\includesvg{../slides/diagrams/ml/over_determined_system001.svg}}{over_determined_system}
+\newframe{\includesvg{../slides/diagrams/ml/over_determined_system002.svg}}{over_determined_system}
+\newframe{\includesvg{../slides/diagrams/ml/over_determined_system003.svg}}{over_determined_system}
+\newframe{\includesvg{../slides/diagrams/ml/over_determined_system004.svg}}{over_determined_system}
+\newframe{\includesvg{../slides/diagrams/ml/over_determined_system005.svg}}{over_determined_system}
+\newframe{\includesvg{../slides/diagrams/ml/over_determined_system006.svg}}{over_determined_system}
+\newframe{\includesvg{../slides/diagrams/ml/over_determined_system007.svg}}{over_determined_system}
 }
 
 
@@ -80,8 +80,8 @@ $$2.5 = 2m + c$$}
 
 \notes{The solution was proposed by Pierre-Simon Laplace. His idea was to accept that the model was an incomplete representation of the real world, and the manner in which it was incomplete is *unknown*. His idea was that such unknowns could be dealt with through probability.}
 
-\includeimg{../slides/diagrams/ml/Pierre-Simon_Laplace.png}{30%}{}{center}
-\notes{\caption{Pierre Simon Laplace}
+\includepng{../slides/diagrams/ml/Pierre-Simon_Laplace}{30%}{}
+\notes{\caption{Pierre Simon Laplace}}
 
 \include{_ai/includes/laplaces-determinism.md}
 

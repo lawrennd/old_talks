@@ -1,8 +1,8 @@
-### Fourier Basis
+\subsection{Fourier Basis}
 
 \slides{* }
 \notes{[Joseph Fourier](https://en.wikipedia.org/wiki/Joseph_Fourier) suggested that functions could be converted to a sum of sines and cosines. A Fourier basis is a linear weighted sum of these functions.}
-  $$\basisFunc_j(\inputScalar) = = \mappingScalar_0  + \mappingScalar_1 \sin(\inputScalar) + \mappingScalar_2 \cos(\inputScalar) + \mappingScalar_3 \sin(2\inputScalar) + \mappingScalar_4 \cos(2\inputScalar)$$
+  $$\basisFunc_j(\inputScalar) = \mappingScalar_0  + \mappingScalar_1 \sin(\inputScalar) + \mappingScalar_2 \cos(\inputScalar) + \mappingScalar_3 \sin(2\inputScalar) + \mappingScalar_4 \cos(2\inputScalar)$$
 
 
 \setupcode{import numpy as np}
@@ -39,19 +39,22 @@ from ipywidgets import IntSlider}
 
 \displaycode{pods.notebook.display_prediction(basis=mlai.fourier, num_basis=5)}
 
-### Functions Derived from Fourier Basis
+\subsection{Functions Derived from Fourier Basis}
 
 $$
 \mappingFunction(\inputScalar) = {\color{cyan}\mappingScalar_0}  + {\color{green}\mappingScalar_1 \sin(\inputScalar)} + {\color{yellow}\mappingScalar_2 \cos(\inputScalar)} + {\color{magenta}\mappingScalar_3 \sin(2\inputScalar)} + {\color{red}\mappingScalar_4 \cos(2\inputScalar)}
 $$
 
-\startslides{fourier_function}{1}{3}
-\includesvg{../slides/diagrams/ml/fourier_function000.svg}{}{fourier_function}
-\includesvg{../slides/diagrams/ml/fourier_function001.svg}{}{fourier_function}
-\includesvg{../slides/diagrams/ml/fourier_function002.svg}{}{fourier_function}
-
+\startanimation{fourier_function}{1}{3}
+\newframe{\includesvg{../slides/diagrams/ml/fourier_function000.svg}}{fourier_function}
+\newframe{\includesvg{../slides/diagrams/ml/fourier_function001.svg}}{fourier_function}
+\newframe{\includesvg{../slides/diagrams/ml/fourier_function002.svg}}{fourier_function}
+\endanimation
 \setupcode{from ipywidgets import IntSlider
 import pods}
+
+\setupdisplaycode{import pods
+from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('fourier_function{func_num:0>3}.svg', directory='../slides/diagrams/ml', func_num=IntSlider(0,0,2,1))}
 
 

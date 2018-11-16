@@ -1,4 +1,4 @@
-### Radial Basis Functions
+\subsection{Radial Basis Functions}
 
 \notes{Another type of basis is sometimes known as a 'radial basis' because the effect basis functions are constructed on 'centres' and the effect of each basis function decreases as the radial distance from each centre increases.}
 \slides{* Basis functions can be local e.g. radial (or Gaussian) basis}
@@ -30,16 +30,17 @@ import pods}
                             directory='../slides/diagrams/ml', 
 							num_basis=IntSlider(0,0,2,1))}
 
-### Functions Derived from Radial Basis
+\subsection{Functions Derived from Radial Basis}
 
 $$
 \mappingFunction(\inputScalar) = {\color{cyan}\mappingScalar_1 e^{-2(\inputScalar+1)^2}}  + {\color{green}\mappingScalar_2e^{-2\inputScalar^2}} + {\color{yellow}\mappingScalar_3 e^{-2(\inputScalar-1)^2}}
 $$
 
-\startslides{radial_function}{1}{3}
-\includesvg{../slides/diagrams/ml/radial_function000.svg}{}{radial_function}
-\includesvg{../slides/diagrams/ml/radial_function001.svg}{}{radial_function}
-\includesvg{../slides/diagrams/ml/radial_function002.svg}{}{radial_function}
+\startanimation{radial_function}{1}{3}
+\newframe{\includesvg{../slides/diagrams/ml/radial_function000.svg}}{radial_function}
+\newframe{\includesvg{../slides/diagrams/ml/radial_function001.svg}}{radial_function}
+\newframe{\includesvg{../slides/diagrams/ml/radial_function002.svg}}{radial_function}
+\endanimation
 
 \setupcode{from ipywidgets import IntSlider
 import pods}

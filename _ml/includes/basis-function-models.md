@@ -1,4 +1,4 @@
-### Fitting to Data
+\subsection{Fitting to Data}
 
 Now we are going to consider how these basis functions can be adjusted to fit to
 a particular data set. We will return to the olympic marathon data from last
@@ -23,7 +23,7 @@ fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 
 ax.plot(x, y, 'rx')}
 
-
+\setupdisplaycode{pods}
 \displaycode{pods.notebook.display_prediction(basis=dict(radial=mlai.radial, 
 	                                        polynomial=mlai.polynomial, 
 											fourier=mlai.fourier, 
@@ -72,43 +72,42 @@ Write your answers in the code box below creating a new vector of parameters (in
 
 \code{np.asarray([[1, 2, 3, 4]]).shape}
 
-### Basis Function Models
+\subsection{Basis Function Models}
 
 \slides{* The *prediction function* is now defined as }
   $$
   \mappingFunction(\inputVector_i) = \sum_{j=1}^\numBasisFunc \mappingScalar_j \basisFunc_{i, j}
   $$
 
-\slides{### Vector Notation
-
+\newslide{Vector Notation}
+\slides{
 * Write in vector notation,}
   $$
   \mappingFunction(\inputVector_i) = \mappingVector^\top \basisVector_i
   $$
 
-### Log Likelihood for Basis Function Model
+\subsection{Log Likelihood for Basis Function Model}
 
 \slides{* The likelihood of a single data point is}
   $$
   p\left(\dataScalar_i|\inputScalar_i\right)=\frac{1}{\sqrt{2\pi\dataStd^2}}\exp\left(-\frac{\left(\dataScalar_i-\mappingVector^{\top}\basisVector_i\right)^{2}}{2\dataStd^2}\right).
   $$
 
+\newslide{Log Likelihood for Basis Function Model}
 \slides{
-### Log Likelihood for Basis Function Model
-
 * Leading to a log likelihood for the data set of}
   $$
   L(\mappingVector,\dataStd^2)= -\frac{\numData}{2}\log \dataStd^2-\frac{\numData}{2}\log 2\pi -\frac{\sum_{i=1}^{\numData}\left(\dataScalar_i-\mappingVector^{\top}\basisVector_i\right)^{2}}{2\dataStd^2}.
   $$
 
-### Objective Function
+\subsection{Objective Function}
 
 \slides{* And a corresponding *objective function* of the form}
   $$
   \errorFunction(\mappingVector,\dataStd^2)= \frac{\numData}{2}\log\dataStd^2 + \frac{\sum_{i=1}^{\numData}\left(\dataScalar_i-\mappingVector^{\top}\basisVector_i\right)^{2}}{2\dataStd^2}.
   $$
 
-### Expand the Brackets
+\subsection{Expand the Brackets}
 
 $$
 \begin{align}
@@ -116,11 +115,11 @@ $$
 \end{align}
 $$
 
-### Expand the Brackets
+\subsection{Expand the Brackets}
 
 $$\begin{align} \errorFunction(\mappingVector, \dataStd^2) = & \frac{\numData}{2}\log \dataStd^2 + \frac{1}{2\dataStd^2}\sum_{i=1}^{\numData}\dataScalar_i^{2}-\frac{1}{\dataStd^2} \mappingVector^\top\sum_{i=1}^{\numData}\basisVector_i \dataScalar_i\\ & +\frac{1}{2\dataStd^2}\mappingVector^{\top}\left[\sum_{i=1}^{\numData}\basisVector_i\basisVector_i^{\top}\right]\mappingVector+\text{const}.\end{align}$$
 
-### Design Matrices
+\subsection{Design Matrices}
 
 \notes{We like to make use of *design* matrices for our data. Design matrices, as you will recall, involve placing the data points into rows of the matrix and data features into the columns of the matrix. By convention, we are referincing a vector with a bold lower case letter, and a matrix with a bold upper case letter. The design matrix is therefore given by}\slides{* Design matrix notation}
   $$
@@ -131,7 +130,7 @@ $$\begin{align} \errorFunction(\mappingVector, \dataStd^2) = & \frac{\numData}{2
   \basisMatrix \in \Re^{\numData \times \dataDim}.
   $$
   
-### Multivariate Derivatives Reminder
+\subsection{Multivariate Derivatives Reminder}
 
 \slides{* We will need some multivariate calculus.}
   $$\frac{\text{d}\mathbf{a}^{\top}\mappingVector}{\text{d}\mappingVector}=\mathbf{a}$$
@@ -140,14 +139,14 @@ $$\begin{align} \errorFunction(\mappingVector, \dataStd^2) = & \frac{\numData}{2
   or if $\mathbf{A}$ is symmetric (*i.e.* $\mathbf{A}=\mathbf{A}^{\top}$)
   $$\frac{\text{d}\mappingVector^{\top}\mathbf{A}\mappingVector}{\text{d}\mappingVector}=2\mathbf{A}\mappingVector.$$
 
-### Differentiate
+\subsection{Differentiate}
 
 Differentiating with respect to the vector $\mappingVector$ we obtain
 $$\frac{\text{d} E\left(\mappingVector,\dataStd^2 \right)}{\text{d}\mappingVector}=-\frac{1}{\dataStd^2} \sum_{i=1}^{\numData}\basisVector_i\dataScalar_i+\frac{1}{\dataStd^2} \left[\sum_{i=1}^{\numData}\basisVector_i\basisVector_i^{\top}\right]\mappingVector$$
 Leading to
 $$\mappingVector^{*}=\left[\sum_{i=1}^{\numData}\basisVector_i\basisVector_i^{\top}\right]^{-1}\sum_{i=1}^{\numData}\basisVector_i\dataScalar_i,$$
 
-### Matrix Notation
+\subsection{Matrix Notation}
 
 Rewrite in matrix notation:
 $$
@@ -155,7 +154,7 @@ $$
 $$\sum _{i=1}^{\numData}\basisVector_i\dataScalar_i = \basisMatrix^\top \dataVector
 $$
 
-### Update Equations
+\subsection{Update Equations}
 
 * Update for $\mappingVector^{*}$
   $$
@@ -168,7 +167,7 @@ $$
 
 
 
-### Avoid Direct Inverse
+\subsection{Avoid Direct Inverse}
 
 * E.g. Solve for $\mappingVector$
   $$
@@ -177,7 +176,7 @@ $$
 * See `np.linalg.solve`
 * In practice use $\mathbf{Q}\mathbf{R}$ decomposition (see lab class notes).
 
-### Polynomial Fits to Olympic Data
+\subsection{Polynomial Fits to Olympic Data}
 
 \setupcode{import numpy as np
 from matplotlib import pyplot as plt
@@ -210,7 +209,7 @@ sum_squares = np.array([np.nan]*(max_basis))}
 
 
 
-### Non-linear but Linear in the Parameters
+\subsection{Non-linear but Linear in the Parameters}
 
 \notes{One rather nice aspect of our model is that whilst it is non-linear in the inputs, it is still linear in the parameters $\mappingVector$. This means that our derivations from before continue to operate to allow us to work with this model. In fact, although this is a non-linear regression it is still known as a *linear model* because it is linear in the parameters,}
 \slides{* Model is non-linear, but linear in parameters}
@@ -239,7 +238,7 @@ the model is linear in the inputs, the parameters or both.
 (e) $\mappingFunction(\inputScalar) = \exp(-\mappingVector^\top \inputVector)$}{4}{25}
 
 \notes{
-### Fitting the Model Yourself
+\subsection{Fitting the Model Yourself}
 
 You now have everything you need to fit a non- linear (in the inputs) basis function model to the marathon data.}
 

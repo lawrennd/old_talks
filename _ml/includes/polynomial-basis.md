@@ -1,4 +1,4 @@
-### Polynomial Basis
+\subsection{Polynomial Basis}
 
 \setupcode{import matplotlib.pyplot as plt
 import mlai
@@ -19,18 +19,19 @@ plot.basis(mlai.polynomial, x_min=-1.3, x_max=1.3,
 		   diagrams='../slides/diagrams/ml')
 }
 
-### Functions Derived from Polynomial Basis
+\subsection{Functions Derived from Polynomial Basis}
 
 $$
 \mappingFunction(\inputScalar) = {\color{cyan}\mappingScalar_0}   + {\color{green}\mappingScalar_1 \inputScalar} + {\color{yellow}\mappingScalar_2 \inputScalar^2}
 $$
 
 \slides{
-\startslides{polynomial_basis}{1}{3}
-\includesvg{../slides/diagrams/ml/polynomial_basis001.svg}{}{polynomial_basis}
-\includesvg{../slides/diagrams/ml/polynomial_basis002.svg}{}{polynomial_basis}
-\includesvg{../slides/diagrams/ml/polynomial_basis003.svg}{}{polynomial_basis}}
-
+\startanimation{polynomial_basis}{1}{3}
+\newframe{\includesvg{../slides/diagrams/ml/polynomial_basis001.svg}}{polynomial_basis}
+\newframe{\includesvg{../slides/diagrams/ml/polynomial_basis002.svg}}{polynomial_basis}
+\newframe{\includesvg{../slides/diagrams/ml/polynomial_basis003.svg}}{polynomial_basis}
+\endanimation
+}
 \notesfigure{\includesvg{../slides/diagrams/ml/polynomial_basis003.svg}{}{}}
 
 \displaycode{import pods

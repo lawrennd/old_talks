@@ -24,12 +24,15 @@ categories:
 </div>
 
 <!-- To compile -->
+<!-- Enables links to pages-->
 <p><!--% not ipynb--></p>
-<p><img class="" src="../slides/diagrams/gp/rasmussen-williams-book.jpg" width="50%" align="" style="background:none; border:none; box-shadow:none;"></p>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/gp/rasmussen-williams-book.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</div>
 <p><span class="citation">Rasmussen and Williams (2006)</span> is still one of the most important references on Gaussian process models. It is available freely online.</p>
 <h2 id="what-is-machine-learning">What is Machine Learning?</h2>
 <p>What is machine learning? At its most basic level machine learning is a combination of</p>
-<p><span class="math display">\[ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span></p>
+<p><br /><span class="math display">$$\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$</span><br /></p>
 <p>where <em>data</em> is our observations. They can be actively or passively acquired (meta-data). The <em>model</em> contains our assumptions, based on previous experience. That experience can be other data, it can come from transfer learning, or it can merely be our beliefs about the regularities of the universe. In humans our models include our inductive biases. The <em>prediction</em> is an action to be taken or a categorization or a quality score. The reason that machine learning has become a mainstay of artificial intelligence is the importance of predictions in artificial intelligence. The data and the model are combined through computation.</p>
 <p>In practice we normally perform machine learning using two functions. To combine data with a model we typically make use of:</p>
 <p><strong>a prediction function</strong> a function which is used to make the predictions. It includes our beliefs about the regularities of the universe, our assumptions about how the world works, e.g. smoothness, spatial similarities, temporal similarities.</p>
@@ -37,11 +40,6 @@ categories:
 <p>The combination of data and model through the prediction function and the objectie function leads to a <em>learning algorithm</em>. The class of prediction functions and objective functions we can make use of is restricted by the algorithms they lead to. If the prediction function or the objective function are too complex, then it can be difficult to find an appropriate learning algorithm. Much of the acdemic field of machine learning is the quest for new learning algorithms that allow us to bring different types of models and data together.</p>
 <p>A useful reference for state of the art in machine learning is the UK Royal Society Report, <a href="https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf">Machine Learning: Power and Promise of Computers that Learn by Example</a>.</p>
 <p>You can also check my blog post on <a href="http://inverseprobability.com/2017/07/17/what-is-machine-learning">&quot;What is Machine Learning?&quot;</a></p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
-<span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
-<span class="im">import</span> pods
-<span class="im">import</span> teaching_plots <span class="im">as</span> plot
-<span class="im">import</span> mlai</code></pre></div>
 <h3 id="olympic-marathon-data">Olympic Marathon Data</h3>
 <p>The first thing we will do is load a standard data set for regression modelling. The data consists of the pace of Olympic Gold Medal Marathon winners for the Olympics from 1896 to present. First we load in the data and plot.</p>
 <h3 id="olympic-marathon-data-1">Olympic Marathon Data</h3>
@@ -56,39 +54,46 @@ categories:
 </ul>
 </td>
 <td width="30%">
-<img src="../slides/diagrams/Stephen_Kiprotich.jpg" alt="image" /> <small>Image from Wikimedia Commons <a href="http://bit.ly/16kMKHQ" class="uri">http://bit.ly/16kMKHQ</a></small>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/Stephen_Kiprotich.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</div>
+<small>Image from Wikimedia Commons <a href="http://bit.ly/16kMKHQ" class="uri">http://bit.ly/16kMKHQ</a></small>
 </td>
 </tr>
 </table>
-<object class="svgplot" align data="../slides/diagrams/datasets/olympic-marathon.svg">
+<div style="text-align:center">
+<object class="svgplot " align data="../slides/diagrams/datasets/olympic-marathon.svg" style>
 </object>
+</div>
 <p>Things to notice about the data include the outlier in 1904, in this year, the olympics was in St Louis, USA. Organizational problems and challenges with dust kicked up by the cars following the race meant that participants got lost, and only very few participants completed.</p>
 <p>More recent years see more consistently quick marathons.</p>
 <h3 id="overdetermined-system">Overdetermined System</h3>
-<p>The challenge with a linear model is that it has two unknowns, <span class="math inline">\(m\)</span>, and <span class="math inline">\(c\)</span>. Observing data allows us to write down a system of simultaneous linear equations. So, for example if we observe two data points, the first with the input value, <span class="math inline">\(\inputScalar_1 = 1\)</span> and the output value, <span class="math inline">\(\dataScalar_1 =3\)</span> and a second data point, <span class="math inline">\(\inputScalar = 3\)</span>, <span class="math inline">\(\dataScalar=1\)</span>, then we can write two simultaneous linear equations of the form.</p>
-<p>point 1: <span class="math inline">\(\inputScalar = 1\)</span>, <span class="math inline">\(\dataScalar=3\)</span> <span class="math display">\[3 = m + c\]</span> point 2: <span class="math inline">\(\inputScalar = 3\)</span>, <span class="math inline">\(\dataScalar=1\)</span> <span class="math display">\[1 = 3m + c\]</span></p>
+<p>The challenge with a linear model is that it has two unknowns, <span class="math inline"><em>m</em></span>, and <span class="math inline"><em>c</em></span>. Observing data allows us to write down a system of simultaneous linear equations. So, for example if we observe two data points, the first with the input value, <span class="math inline">$\inputScalar_1 = 1$</span> and the output value, <span class="math inline">$\dataScalar_1 =3$</span> and a second data point, <span class="math inline">$\inputScalar = 3$</span>, <span class="math inline">$\dataScalar=1$</span>, then we can write two simultaneous linear equations of the form.</p>
+<p>point 1: <span class="math inline">$\inputScalar = 1$</span>, <span class="math inline">$\dataScalar=3$</span> <br /><span class="math display">3 = <em>m</em> + <em>c</em></span><br /> point 2: <span class="math inline">$\inputScalar = 3$</span>, <span class="math inline">$\dataScalar=1$</span> <br /><span class="math display">1 = 3<em>m</em> + <em>c</em></span><br /></p>
 <p>The solution to these two simultaneous equations can be represented graphically as</p>
-<object class="svgplot" align data="../slides/diagrams/ml/over_determined_system003.svg">
+<object class="svgplot " align data="../slides/diagrams/ml/over_determined_system003.svg" style>
 </object>
 <center>
 <em>The solution of two linear equations represented as the fit of a straight line through two data </em>
 </center>
 <p>The challenge comes when a third data point is observed and it doesn't naturally fit on the straight line.</p>
-<p>point 3: <span class="math inline">\(\inputScalar = 2\)</span>, <span class="math inline">\(\dataScalar=2.5\)</span> <span class="math display">\[2.5 = 2m + c\]</span></p>
-<object class="svgplot" align data="../slides/diagrams/ml/over_determined_system004.svg">
+<p>point 3: <span class="math inline">$\inputScalar = 2$</span>, <span class="math inline">$\dataScalar=2.5$</span> <br /><span class="math display">2.5 = 2<em>m</em> + <em>c</em></span><br /></p>
+<object class="svgplot " align data="../slides/diagrams/ml/over_determined_system004.svg" style>
 </object>
 <center>
 <em>A third observation of data is inconsistent with the solution dictated by the first two observations </em>
 </center>
 <p>Now there are three candidate lines, each consistent with our data.</p>
-<object class="svgplot" align data="../slides/diagrams/ml/over_determined_system007.svg">
+<object class="svgplot " align data="../slides/diagrams/ml/over_determined_system007.svg" style>
 </object>
 <center>
 <em>Three solutions to the problem, each consistent with two points of the three observations </em>
 </center>
 <p>This is known as an <em>overdetermined</em> system because there are more data than we need to determine our parameters. The problem arises because the model is a simplification of the real world, and the data we observe is therefore inconsistent with our model.</p>
 <p>The solution was proposed by Pierre-Simon Laplace. His idea was to accept that the model was an incomplete representation of the real world, and the manner in which it was incomplete is <em>unknown</em>. His idea was that such unknowns could be dealt with through probability.</p>
-<img class="" src="../slides/diagrams/ml/Pierre-Simon_Laplace.png" width="30%" align="center" style="background:none; border:none; box-shadow:none;"> {
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/ml/Pierre-Simon_Laplace.png" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</div>
 <center>
 <em>Pierre Simon Laplace </em>
 </center>
@@ -98,59 +103,62 @@ categories:
 <p>Given for one instant an intelligence which could comprehend all the forces by which nature is animated and the respective situation of the beings who compose it---an intelligence sufficiently vast to submit these data to analysis---it would embrace in the same formulate the movements of the greatest bodies of the universe and those of the lightest atom; for it, nothing would be uncertain and the future, as the past, would be present in its eyes.</p>
 </blockquote>
 <p>This notion is known as <em>Laplace's demon</em> or <em>Laplace's superman</em>.</p>
-<p><img class="" src="../slides/diagrams/laplacesDeterminismEnglish.png" width="60%" align="center" style="background:none; border:none; box-shadow:none;"></p>
-<p>Unfortunately, most analyses of his ideas stop at that point, whereas his real point is that such a notion is unreachable. Not so much <em>superman</em> as <em>strawman</em>. Just three pages later in the &quot;Philosophical Essay on Probabilities&quot; <span class="citation">(Laplace, 1814)</span>, Laplace goes on to observe:</p>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/laplacesDeterminismEnglish.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</div>
+<p>Unfortunately, most analyses of his ideas stop at that point, whereas his real point is that such a notion is unreachable. Not so much <em>superman</em> as <em>strawman</em>. Just three pages later in the &quot;Philosophical Essay on Probabilities&quot; <span class="citation">(Laplace 1814)</span>, Laplace goes on to observe:</p>
 <blockquote>
 <p>The curve described by a simple molecule of air or vapor is regulated in a manner just as certain as the planetary orbits; the only difference between them is that which comes from our ignorance.</p>
 <p>Probability is relative, in part to this ignorance, in part to our knowledge.</p>
 </blockquote>
 <p><a href="https://play.google.com/books/reader?id=1YQPAAAAQAAJ&amp;pg=PR17-IA4"><img src="../slides/diagrams/books/1YQPAAAAQAAJ-PR17-IA4.png" /></a></p>
-<p><img class="" src="../slides/diagrams/philosophicaless00lapliala.png" width="60%" align="center" style="background:none; border:none; box-shadow:none;"></p>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/philosophicaless00lapliala.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</div>
 <p>In other words, we can never make use of the idealistic deterministc Universe due to our ignorance about the world, Laplace's suggestion, and focus in this essay is that we turn to probability to deal with this uncertainty. This is also our inspiration for using probabilit in machine learning.</p>
 <p>The &quot;forces by which nature is animated&quot; is our <em>model</em>, the &quot;situation of beings that compose it&quot; is our <em>data</em> and the &quot;intelligence sufficiently vast enough to submit these data to analysis&quot; is our compute. The fly in the ointment is our <em>ignorance</em> about these aspects. And <em>probability</em> is the tool we use to incorporate this ignorance leading to uncertainty or <em>doubt</em> in our predictions.</p>
-<p>Laplace's concept was that the reason that the data doesn't match up to the model is because of unconsidered factors, and that these might be well represented through probability densities. He tackles the challenge of the unknown factors by adding a variable, <span class="math inline">\(\noiseScalar\)</span>, that represents the unknown. In modern parlance we would call this a <em>latent</em> variable. But in the context Laplace uses it, the variable is so common that it has other names such as a &quot;slack&quot; variable or the <em>noise</em> in the system.</p>
-<p>point 1: <span class="math inline">\(\inputScalar = 1\)</span>, <span class="math inline">\(\dataScalar=3\)</span> <span class="math display">\[
+<p>Laplace's concept was that the reason that the data doesn't match up to the model is because of unconsidered factors, and that these might be well represented through probability densities. He tackles the challenge of the unknown factors by adding a variable, <span class="math inline">$\noiseScalar$</span>, that represents the unknown. In modern parlance we would call this a <em>latent</em> variable. But in the context Laplace uses it, the variable is so common that it has other names such as a &quot;slack&quot; variable or the <em>noise</em> in the system.</p>
+<p>point 1: <span class="math inline">$\inputScalar = 1$</span>, <span class="math inline">$\dataScalar=3$</span> <br /><span class="math display">$$
 3 = m + c + \noiseScalar_1
-\]</span> point 2: <span class="math inline">\(\inputScalar = 3\)</span>, <span class="math inline">\(\dataScalar=1\)</span> <span class="math display">\[
+$$</span><br /> point 2: <span class="math inline">$\inputScalar = 3$</span>, <span class="math inline">$\dataScalar=1$</span> <br /><span class="math display">$$
 1 = 3m + c + \noiseScalar_2
-\]</span> point 3: <span class="math inline">\(\inputScalar = 2\)</span>, <span class="math inline">\(\dataScalar=2.5\)</span> <span class="math display">\[
+$$</span><br /> point 3: <span class="math inline">$\inputScalar = 2$</span>, <span class="math inline">$\dataScalar=2.5$</span> <br /><span class="math display">$$
 2.5 = 2m + c + \noiseScalar_3
-\]</span></p>
-<p>Laplace's trick has converted the <em>overdetermined</em> system into an <em>underdetermined</em> system. He has now added three variables, <span class="math inline">\(\{\noiseScalar_i\}_{i=1}^3\)</span>, which represent the unknown corruptions of the real world. Laplace's idea is that we should represent that unknown corruption with a <em>probability distribution</em>.</p>
+$$</span><br /></p>
+<p>Laplace's trick has converted the <em>overdetermined</em> system into an <em>underdetermined</em> system. He has now added three variables, <span class="math inline">$\{\noiseScalar_i\}_{i=1}^3$</span>, which represent the unknown corruptions of the real world. Laplace's idea is that we should represent that unknown corruption with a <em>probability distribution</em>.</p>
 <h3 id="a-probabilistic-process">A Probabilistic Process</h3>
 <p>However, it was left to an admirer of Gauss to develop a practical probability density for that purpose. It was Carl Friederich Gauss who suggested that the <em>Gaussian</em> density (which at the time was unnamed!) should be used to represent this error.</p>
 <p>The result is a <em>noisy</em> function, a function which has a deterministic part, and a stochastic part. This type of function is sometimes known as a probabilistic or stochastic process, to distinguish it from a deterministic process.</p>
 <h3 id="the-gaussian-density">The Gaussian Density</h3>
-<p>The Gaussian density is perhaps the most commonly used probability density. It is defined by a <em>mean</em>, <span class="math inline">\(\meanScalar\)</span>, and a <em>variance</em>, <span class="math inline">\(\dataStd^2\)</span>. The variance is taken to be the square of the <em>standard deviation</em>, <span class="math inline">\(\dataStd\)</span>.</p>
-<p><span class="math display">\[\begin{align}
+<p>The Gaussian density is perhaps the most commonly used probability density. It is defined by a <em>mean</em>, <span class="math inline">$\meanScalar$</span>, and a <em>variance</em>, <span class="math inline">$\dataStd^2$</span>. The variance is taken to be the square of the <em>standard deviation</em>, <span class="math inline">$\dataStd$</span>.</p>
+<p><br /><span class="math display">$$\begin{align}
   p(\dataScalar| \meanScalar, \dataStd^2) &amp; = \frac{1}{\sqrt{2\pi\dataStd^2}}\exp\left(-\frac{(\dataScalar - \meanScalar)^2}{2\dataStd^2}\right)\\&amp; \buildrel\triangle\over = \gaussianDist{\dataScalar}{\meanScalar}{\dataStd^2}
-  \end{align}\]</span></p>
-<object class="svgplot" align data="../slides/diagrams/ml/gaussian_of_height.svg">
+  \end{align}$$</span><br /></p>
+<object class="svgplot " align data="../slides/diagrams/ml/gaussian_of_height.svg" style>
 </object>
 <center>
-<em>The Gaussian PDF with <span class="math inline">\({\meanScalar}=1.7\)</span> and variance <span class="math inline">\({\dataStd}^2=0.0225\)</span>. Mean shown as red line. It could represent the heights of a population of students. </em>
+<em>The Gaussian PDF with <span class="math inline">${\meanScalar}=1.7$</span> and variance <span class="math inline">${\dataStd}^2=0.0225$</span>. Mean shown as red line. It could represent the heights of a population of students. </em>
 </center>
 <h3 id="two-important-gaussian-properties">Two Important Gaussian Properties</h3>
 <p>The Gaussian density has many important properties, but for the moment we'll review two of them.</p>
 <h3 id="sum-of-gaussians">Sum of Gaussians</h3>
-<p>If we assume that a variable, <span class="math inline">\(\dataScalar_i\)</span>, is sampled from a Gaussian density,</p>
-<p><span class="math display">\[\dataScalar_i \sim \gaussianSamp{\meanScalar_i}{\sigma_i^2}\]</span></p>
+<p>If we assume that a variable, <span class="math inline">$\dataScalar_i$</span>, is sampled from a Gaussian density,</p>
+<p><br /><span class="math display">$$\dataScalar_i \sim \gaussianSamp{\meanScalar_i}{\sigma_i^2}$$</span><br /></p>
 <p>Then we can show that the sum of a set of variables, each drawn independently from such a density is also distributed as Gaussian. The mean of the resulting density is the sum of the means, and the variance is the sum of the variances,</p>
-<p><span class="math display">\[\sum_{i=1}^{\numData} \dataScalar_i \sim \gaussianSamp{\sum_{i=1}^\numData \meanScalar_i}{\sum_{i=1}^\numData \sigma_i^2}\]</span></p>
+<p><br /><span class="math display">$$\sum_{i=1}^{\numData} \dataScalar_i \sim \gaussianSamp{\sum_{i=1}^\numData \meanScalar_i}{\sum_{i=1}^\numData \sigma_i^2}$$</span><br /></p>
 <p>Since we are very familiar with the Gaussian density and its properties, it is not immediately apparent how unusual this is. Most random variables, when you add them together, change the family of density they are drawn from. For example, the Gaussian is exceptional in this regard. Indeed, other random variables, if they are independently drawn and summed together tend to a Gaussian density. That is the <a href="https://en.wikipedia.org/wiki/Central_limit_theorem"><em>central limit theorem</em></a> which is a major justification for the use of a Gaussian density.</p>
 <h3 id="scaling-a-gaussian">Scaling a Gaussian</h3>
-<p>Less unusual is the <em>scaling</em> property of a Gaussian density. If a variable, <span class="math inline">\(\dataScalar\)</span>, is sampled from a Gaussian density,</p>
-<p><span class="math display">\[\dataScalar \sim \gaussianSamp{\meanScalar}{\sigma^2}\]</span> and we choose to scale that variable by a <em>deterministic</em> value, <span class="math inline">\(\mappingScalar\)</span>, then the <em>scaled variable</em> is distributed as</p>
-<p><span class="math display">\[\mappingScalar \dataScalar \sim \gaussianSamp{\mappingScalar\meanScalar}{\mappingScalar^2 \sigma^2}.\]</span> Unlike the summing properties, where adding two or more random variables independently sampled from a family of densitites typically brings the summed variable <em>outside</em> that family, scaling many densities leaves the distribution of that variable in the same <em>family</em> of densities. Indeed, many densities include a <em>scale</em> parameter (e.g. the <a href="https://en.wikipedia.org/wiki/Gamma_distribution">Gamma density</a>) which is purely for this purpose. In the Gaussian the standard deviation, <span class="math inline">\(\dataStd\)</span>, is the scale parameter. To see why this makes sense, let's consider, <span class="math display">\[z \sim \gaussianSamp{0}{1},\]</span> then if we scale by <span class="math inline">\(\dataStd\)</span> so we have, <span class="math inline">\(\dataScalar=\dataStd z\)</span>, we can write, <span class="math display">\[\dataScalar =\dataStd z \sim \gaussianSamp{0}{\dataStd^2}\]</span></p>
+<p>Less unusual is the <em>scaling</em> property of a Gaussian density. If a variable, <span class="math inline">$\dataScalar$</span>, is sampled from a Gaussian density,</p>
+<p><br /><span class="math display">$$\dataScalar \sim \gaussianSamp{\meanScalar}{\sigma^2}$$</span><br /> and we choose to scale that variable by a <em>deterministic</em> value, <span class="math inline">$\mappingScalar$</span>, then the <em>scaled variable</em> is distributed as</p>
+<p><br /><span class="math display">$$\mappingScalar \dataScalar \sim \gaussianSamp{\mappingScalar\meanScalar}{\mappingScalar^2 \sigma^2}.$$</span><br /> Unlike the summing properties, where adding two or more random variables independently sampled from a family of densitites typically brings the summed variable <em>outside</em> that family, scaling many densities leaves the distribution of that variable in the same <em>family</em> of densities. Indeed, many densities include a <em>scale</em> parameter (e.g. the <a href="https://en.wikipedia.org/wiki/Gamma_distribution">Gamma density</a>) which is purely for this purpose. In the Gaussian the standard deviation, <span class="math inline">$\dataStd$</span>, is the scale parameter. To see why this makes sense, let's consider, <br /><span class="math display">$$z \sim \gaussianSamp{0}{1},$$</span><br /> then if we scale by <span class="math inline">$\dataStd$</span> so we have, <span class="math inline">$\dataScalar=\dataStd z$</span>, we can write, <br /><span class="math display">$$\dataScalar =\dataStd z \sim \gaussianSamp{0}{\dataStd^2}$$</span><br /></p>
 <h3 id="regression-examples">Regression Examples</h3>
-<p>Regression involves predicting a real value, <span class="math inline">\(\dataScalar_i\)</span>, given an input vector, <span class="math inline">\(\inputVector_i\)</span>. For example, the Tecator data involves predicting the quality of meat given spectral measurements. Or in radiocarbon dating, the C14 calibration curve maps from radiocarbon age to age measured through a back-trace of tree rings. Regression has also been used to predict the quality of board game moves given expert rated training data.</p>
+<p>Regression involves predicting a real value, <span class="math inline">$\dataScalar_i$</span>, given an input vector, <span class="math inline">$\inputVector_i$</span>. For example, the Tecator data involves predicting the quality of meat given spectral measurements. Or in radiocarbon dating, the C14 calibration curve maps from radiocarbon age to age measured through a back-trace of tree rings. Regression has also been used to predict the quality of board game moves given expert rated training data.</p>
 <h2 id="underdetermined-system">Underdetermined System</h2>
 <p>What about the situation where you have more parameters than data in your simultaneous equation? This is known as an <em>underdetermined</em> system. In fact this set up is in some sense <em>easier</em> to solve, because we don't need to think about introducing a slack variable (although it might make a lot of sense from a <em>modelling</em> perspective to do so).</p>
-<p>The way Laplace proposed resolving an overdetermined system, was to introduce slack variables, <span class="math inline">\(\noiseScalar_i\)</span>, which needed to be estimated for each point. The slack variable represented the difference between our actual prediction and the true observation. This is known as the <em>residual</em>. By introducing the slack variable we now have an additional <span class="math inline">\(n\)</span> variables to estimate, one for each data point, <span class="math inline">\(\{\noiseScalar_i\}\)</span>. This actually turns the overdetermined system into an underdetermined system. Introduction of <span class="math inline">\(n\)</span> variables, plus the original <span class="math inline">\(m\)</span> and <span class="math inline">\(c\)</span> gives us <span class="math inline">\(\numData+2\)</span> parameters to be estimated from <span class="math inline">\(n\)</span> observations, which actually makes the system <em>underdetermined</em>. However, we then made a probabilistic assumption about the slack variables, we assumed that the slack variables were distributed according to a probability density. And for the moment we have been assuming that density was the Gaussian, <span class="math display">\[\noiseScalar_i \sim \gaussianSamp{0}{\dataStd^2},\]</span> with zero mean and variance <span class="math inline">\(\dataStd^2\)</span>.</p>
+<p>The way Laplace proposed resolving an overdetermined system, was to introduce slack variables, <span class="math inline">$\noiseScalar_i$</span>, which needed to be estimated for each point. The slack variable represented the difference between our actual prediction and the true observation. This is known as the <em>residual</em>. By introducing the slack variable we now have an additional <span class="math inline"><em>n</em></span> variables to estimate, one for each data point, <span class="math inline">$\{\noiseScalar_i\}$</span>. This actually turns the overdetermined system into an underdetermined system. Introduction of <span class="math inline"><em>n</em></span> variables, plus the original <span class="math inline"><em>m</em></span> and <span class="math inline"><em>c</em></span> gives us <span class="math inline">$\numData+2$</span> parameters to be estimated from <span class="math inline"><em>n</em></span> observations, which actually makes the system <em>underdetermined</em>. However, we then made a probabilistic assumption about the slack variables, we assumed that the slack variables were distributed according to a probability density. And for the moment we have been assuming that density was the Gaussian, <br /><span class="math display">$$\noiseScalar_i \sim \gaussianSamp{0}{\dataStd^2},$$</span><br /> with zero mean and variance <span class="math inline">$\dataStd^2$</span>.</p>
 <p>The follow up question is whether we can do the same thing with the parameters. If we have two parameters and only one unknown can we place a probability distribution over the parameters, as we did with the slack variables? The answer is yes.</p>
 <h3 id="underdetermined-system-1">Underdetermined System</h3>
-
-<object class="svgplot" align data="../slides/diagrams/ml/under_determined_system009.svg">
+<object class="svgplot " align data="../slides/diagrams/ml/under_determined_system009.svg" style>
 </object>
 <center>
 <em>Fit underdetermined system by considering uncertainty </em>
@@ -162,115 +170,107 @@ categories:
 <p>The term Bayesian was a mocking term promoted by Fisher, it comes from the use, by Bayes, of a billiard table formulation to justify the Bernoulli distribution. Bayes considers a ball landing uniform at random between two sides of a billiard table. He then considers the outcome of the Bernoulli as being whether a second ball comes to rest to the right or left of the original. In this way, the parameter of his Bernoulli distribution is a <em>stochastic variable</em> (the uncertainty in the parameter is aleatoric). In contrast, when Bernoulli formulates the distribution he considers a bag of red and black balls. The parameter of his Bernoulli is the ratio of red balls to total balls, a deterministic variable.</p>
 <p>Note how this relates to Laplace's demon. Laplace describes the deterministic universe (&quot;... for it nothing would be uncertain and the future, as the past, would be present in its eyes&quot;), but acknowledges the impossibility of achieving this in practice, (&quot; ... the curve described by a simple molecule of air or vapor is regulated in a manner just as certain as the planetary orbits; the only difference between them is that which comes from our ignorance. <em>Probability</em> is relative in part to this ignorance, in part to our knowledge ...)</p>
 <h3 id="prior-distribution">Prior Distribution</h3>
-<p>The tradition in Bayesian inference is to place a probability density over the parameters of interest in your model. This choice is made regardless of whether you generally believe those parameters to be stochastic or deterministic in origin. In other words, to a Bayesian, the modelling treatment does not differentiate between epistemic and aleatoric uncertainty. For linear regression we could consider the following Gaussian prior on the intercept parameter, <span class="math display">\[c \sim \gaussianSamp{0}{\alpha_1}\]</span> where <span class="math inline">\(\alpha_1\)</span> is the variance of the prior distribution, its mean being zero.</p>
+<p>The tradition in Bayesian inference is to place a probability density over the parameters of interest in your model. This choice is made regardless of whether you generally believe those parameters to be stochastic or deterministic in origin. In other words, to a Bayesian, the modelling treatment does not differentiate between epistemic and aleatoric uncertainty. For linear regression we could consider the following Gaussian prior on the intercept parameter, <br /><span class="math display">$$c \sim \gaussianSamp{0}{\alpha_1}$$</span><br /> where <span class="math inline"><em>α</em><sub>1</sub></span> is the variance of the prior distribution, its mean being zero.</p>
 <h3 id="posterior-distribution">Posterior Distribution</h3>
-<p>The prior distribution is combined with the likelihood of the data given the parameters <span class="math inline">\(p(\dataScalar|c)\)</span> to give the posterior via <em>Bayes' rule</em>, <span class="math display">\[
+<p>The prior distribution is combined with the likelihood of the data given the parameters <span class="math inline">$p(\dataScalar|c)$</span> to give the posterior via <em>Bayes' rule</em>, <br /><span class="math display">$$
   p(c|\dataScalar) = \frac{p(\dataScalar|c)p(c)}{p(\dataScalar)}
-  \]</span> where <span class="math inline">\(p(\dataScalar)\)</span> is the marginal probability of the data, obtained through integration over the joint density, <span class="math inline">\(p(\dataScalar, c)=p(\dataScalar|c)p(c)\)</span>. Overall the equation can be summarized as, <span class="math display">\[
+  $$</span><br /> where <span class="math inline">$p(\dataScalar)$</span> is the marginal probability of the data, obtained through integration over the joint density, <span class="math inline">$p(\dataScalar, c)=p(\dataScalar|c)p(c)$</span>. Overall the equation can be summarized as, <br /><span class="math display">$$
   \text{posterior} = \frac{\text{likelihood}\times \text{prior}}{\text{marginal likelihood}}.
-  \]</span></p>
+  $$</span><br /></p>
 
-<object class="svgplot" align data="../slides/diagrams/ml/dem_gaussian003.svg">
+<object class="svgplot " align data="../slides/diagrams/ml/dem_gaussian003.svg" style>
 </object>
 <center>
 <em>Combining a Gaussian likelihood with a Gaussian prior to form a Gaussian posterior </em>
 </center>
-<p>Another way of seeing what's going on is to note that the numerator of Bayes' rule merely multiplies the likelihood by the prior. The denominator, is not a function of <span class="math inline">\(c\)</span>. So the functional form is entirely determined by the multiplication of prior and likelihood. This has the effect of ensuring that the posterior only has probability mass in regions where both the prior and the likelihood have probability mass.</p>
-<p>The marginal likelihood, <span class="math inline">\(p(\dataScalar)\)</span>, operates to ensure that the distribution is normalised.</p>
-<p>For the Gaussian case, the normalisation of the posterior can be performed analytically. This is because both the prior and the likelihood have the form of an <em>exponentiated quadratic</em>, <span class="math display">\[
-\exp(a^2)\exp(b^2) = \exp(a^2 + b^2),
-\]</span> and the properties of the exponential mean that the product of two exponentiated quadratics is also an exponentiated quadratic. That implies that the posterior is also Gaussian, because a normalized exponentiated quadratic is a Gaussian distribution.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
-<p>For general Bayesian inference, over more than one parameter, we need <em>multivariate priors</em>. For example, consider the multivariate linear regression where an observation, <span class="math inline">\(\dataScalar_i\)</span> is related to a vector of features, <span class="math inline">\(\inputVector_{i, :}\)</span>, through a vector of parameters, <span class="math inline">\(\weightVector\)</span>, <span class="math display">\[\dataScalar_i = \sum_j \weightScalar_j \inputScalar_{i, j} + \noiseScalar_i,\]</span> or in vector notation, <span class="math display">\[\dataScalar_i = \weightVector^\top \inputVector_{i, :} + \noiseScalar_i.\]</span> Here we've dropped the intercpet for convenience, it can be reintroduced by augmenting the feature vector, <span class="math inline">\(\inputVector_{i, :}\)</span>, with a constant valued feature.</p>
+<p>Another way of seeing what's going on is to note that the numerator of Bayes' rule merely multiplies the likelihood by the prior. The denominator, is not a function of <span class="math inline"><em>c</em></span>. So the functional form is entirely determined by the multiplication of prior and likelihood. This has the effect of ensuring that the posterior only has probability mass in regions where both the prior and the likelihood have probability mass.</p>
+<p>The marginal likelihood, <span class="math inline">$p(\dataScalar)$</span>, operates to ensure that the distribution is normalised.</p>
+<p>For the Gaussian case, the normalisation of the posterior can be performed analytically. This is because both the prior and the likelihood have the form of an <em>exponentiated quadratic</em>, <br /><span class="math display">exp(<em>a</em><sup>2</sup>)exp(<em>b</em><sup>2</sup>)=exp(<em>a</em><sup>2</sup> + <em>b</em><sup>2</sup>),</span><br /> and the properties of the exponential mean that the product of two exponentiated quadratics is also an exponentiated quadratic. That implies that the posterior is also Gaussian, because a normalized exponentiated quadratic is a Gaussian distribution.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
+<p>For general Bayesian inference, over more than one parameter, we need <em>multivariate priors</em>. For example, consider the multivariate linear regression where an observation, <span class="math inline">$\dataScalar_i$</span> is related to a vector of features, <span class="math inline">$\inputVector_{i, :}$</span>, through a vector of parameters, <span class="math inline">$\weightVector$</span>, <br /><span class="math display">$$\dataScalar_i = \sum_j \weightScalar_j \inputScalar_{i, j} + \noiseScalar_i,$$</span><br /> or in vector notation, <br /><span class="math display">$$\dataScalar_i = \weightVector^\top \inputVector_{i, :} + \noiseScalar_i.$$</span><br /> Here we've dropped the intercpet for convenience, it can be reintroduced by augmenting the feature vector, <span class="math inline">$\inputVector_{i, :}$</span>, with a constant valued feature.</p>
 <p>This motivates the need for a <em>multivariate</em> Gaussian density.</p>
 <h3 id="multivariate-regression-likelihood">Multivariate Regression Likelihood</h3>
 <ul>
-<li>Noise corrupted data point <span class="math display">\[\dataScalar_i = \weightVector^\top \inputVector_{i, :} + {\noiseScalar}_i\]</span></li>
+<li>Noise corrupted data point <br /><span class="math display">$$\dataScalar_i = \weightVector^\top \inputVector_{i, :} + {\noiseScalar}_i$$</span><br /></li>
 </ul>
 <div class="incremental">
 <ul>
-<li>Multivariate regression likelihood: <span class="math display">\[p(\dataVector| \inputMatrix, \weightVector) = \frac{1}{\left(2\pi {\dataStd}^2\right)^{\numData/2}} \exp\left(-\frac{1}{2{\dataStd}^2}\sum_{i=1}^{\numData}\left(\dataScalar_i - \weightVector^\top \inputVector_{i, :}\right)^2\right)\]</span></li>
+<li>Multivariate regression likelihood: <br /><span class="math display">$$p(\dataVector| \inputMatrix, \weightVector) = \frac{1}{\left(2\pi {\dataStd}^2\right)^{\numData/2}} \exp\left(-\frac{1}{2{\dataStd}^2}\sum_{i=1}^{\numData}\left(\dataScalar_i - \weightVector^\top \inputVector_{i, :}\right)^2\right)$$</span><br /></li>
 </ul>
 </div>
 <div class="incremental">
 <ul>
-<li>Now use a <em>multivariate</em> Gaussian prior: <span class="math display">\[p(\weightVector) = \frac{1}{\left(2\pi \alpha\right)^\frac{\dataDim}{2}} \exp \left(-\frac{1}{2\alpha} \weightVector^\top \weightVector\right)\]</span></li>
+<li>Now use a <em>multivariate</em> Gaussian prior: <br /><span class="math display">$$p(\weightVector) = \frac{1}{\left(2\pi \alpha\right)^\frac{\dataDim}{2}} \exp \left(-\frac{1}{2\alpha} \weightVector^\top \weightVector\right)$$</span><br /></li>
 </ul>
 </div>
 <h3 id="two-dimensional-gaussian">Two Dimensional Gaussian</h3>
-<p>Consider the distribution of height (in meters) of an adult male human population. We will approximate the marginal density of heights as a Gaussian density with mean given by <span class="math inline">\(1.7\text{m}\)</span> and a standard deviation of <span class="math inline">\(0.15\text{m}\)</span>, implying a variance of <span class="math inline">\(\dataStd^2=0.0225\)</span>, <span class="math display">\[
+<p>Consider the distribution of height (in meters) of an adult male human population. We will approximate the marginal density of heights as a Gaussian density with mean given by <span class="math inline">1.7m</span> and a standard deviation of <span class="math inline">0.15m</span>, implying a variance of <span class="math inline">$\dataStd^2=0.0225$</span>, <br /><span class="math display">$$
   p(h) \sim \gaussianSamp{1.7}{0.0225}.
-  \]</span> Similarly, we assume that weights of the population are distributed a Gaussian density with a mean of <span class="math inline">\(75 \text{kg}\)</span> and a standard deviation of <span class="math inline">\(6 kg\)</span> (implying a variance of 36), <span class="math display">\[
+  $$</span><br /> Similarly, we assume that weights of the population are distributed a Gaussian density with a mean of <span class="math inline">75kg</span> and a standard deviation of <span class="math inline">6<em>k</em><em>g</em></span> (implying a variance of 36), <br /><span class="math display">$$
   p(w) \sim \gaussianSamp{75}{36}.
-  \]</span></p>
-<object class="svgplot" align data="../slides/diagrams/ml/height_weight_gaussian.svg">
+  $$</span><br /></p>
+<object class="svgplot " align data="../slides/diagrams/ml/height_weight_gaussian.svg" style>
 </object>
 <center>
 <em>Gaussian distributions for height and weight. </em>
 </center>
 <h3 id="independence-assumption">Independence Assumption</h3>
-<p>First of all, we make an independence assumption, we assume that height and weight are independent. The definition of probabilistic independence is that the joint density, <span class="math inline">\(p(w, h)\)</span>, factorizes into its marginal densities, <span class="math display">\[
-  p(w, h) = p(w)p(h).
-  \]</span> Given this assumption we can sample from the joint distribution by independently sampling weights and heights.</p>
-
-<object class="svgplot" align data="../slides/diagrams/ml/independent_height_weight007.svg">
+<p>First of all, we make an independence assumption, we assume that height and weight are independent. The definition of probabilistic independence is that the joint density, <span class="math inline"><em>p</em>(<em>w</em>, <em>h</em>)</span>, factorizes into its marginal densities, <br /><span class="math display"><em>p</em>(<em>w</em>, <em>h</em>)=<em>p</em>(<em>w</em>)<em>p</em>(<em>h</em>).</span><br /> Given this assumption we can sample from the joint distribution by independently sampling weights and heights.</p>
+<object class="svgplot " align data="../slides/diagrams/ml/independent_height_weight007.svg" style>
 </object>
 <center>
 <em>Samples from independent Gaussian variables that might represent heights and weights. </em>
 </center>
-<p>In reality height and weight are <em>not</em> independent. Taller people tend on average to be heavier, and heavier people are likely to be taller. This is reflected by the <em>body mass index</em>. A ratio suggested by one of the fathers of statistics, Adolphe Quetelet. Quetelet was interested in the notion of the <em>average man</em> and collected various statistics about people. He defined the BMI to be, <span class="math display">\[
+<p>In reality height and weight are <em>not</em> independent. Taller people tend on average to be heavier, and heavier people are likely to be taller. This is reflected by the <em>body mass index</em>. A ratio suggested by one of the fathers of statistics, Adolphe Quetelet. Quetelet was interested in the notion of the <em>average man</em> and collected various statistics about people. He defined the BMI to be, <br /><span class="math display">$$
 \text{BMI} = \frac{w}{h^2}
-\]</span>To deal with this dependence we now introduce the notion of <em>correlation</em> to the multivariate Gaussian density.</p>
+$$</span><br />To deal with this dependence we now introduce the notion of <em>correlation</em> to the multivariate Gaussian density.</p>
 <h3 id="sampling-two-dimensional-variables">Sampling Two Dimensional Variables</h3>
-
-<object class="svgplot" align data="../slides/diagrams/ml/correlated_height_weight007.svg">
+<object class="svgplot " align data="../slides/diagrams/ml/correlated_height_weight007.svg" style>
 </object>
 <center>
 <em>Samples from </em>correlated* Gaussian variables that might represent heights and weights. *
 </center>
 <h3 id="independent-gaussians">Independent Gaussians</h3>
-<p><span class="math display">\[
-p(w, h) = p(w)p(h)
-\]</span></p>
-<p><span class="math display">\[
+<p><br /><span class="math display"><em>p</em>(<em>w</em>, <em>h</em>)=<em>p</em>(<em>w</em>)<em>p</em>(<em>h</em>)</span><br /></p>
+<p><br /><span class="math display">$$
 p(w, h) = \frac{1}{\sqrt{2\pi \dataStd_1^2}\sqrt{2\pi\dataStd_2^2}} \exp\left(-\frac{1}{2}\left(\frac{(w-\meanScalar_1)^2}{\dataStd_1^2} + \frac{(h-\meanScalar_2)^2}{\dataStd_2^2}\right)\right)
-\]</span></p>
-<p><span class="math display">\[
+$$</span><br /></p>
+<p><br /><span class="math display">$$
 p(w, h) = \frac{1}{\sqrt{2\pi\dataStd_1^22\pi\dataStd_2^2}} \exp\left(-\frac{1}{2}\left(\begin{bmatrix}w \\ h\end{bmatrix} - \begin{bmatrix}\meanScalar_1 \\ \meanScalar_2\end{bmatrix}\right)^\top\begin{bmatrix}\dataStd_1^2&amp; 0\\0&amp;\dataStd_2^2\end{bmatrix}^{-1}\left(\begin{bmatrix}w \\ h\end{bmatrix} - \begin{bmatrix}\meanScalar_1 \\ \meanScalar_2\end{bmatrix}\right)\right)
-\]</span></p>
-<p><span class="math display">\[
+$$</span><br /></p>
+<p><br /><span class="math display">$$
 p(\dataVector) = \frac{1}{\det{2\pi \mathbf{D}}^{\frac{1}{2}}} \exp\left(-\frac{1}{2}(\dataVector - \meanVector)^\top\mathbf{D}^{-1}(\dataVector - \meanVector)\right)
-\]</span></p>
+$$</span><br /></p>
 <h3 id="correlated-gaussian">Correlated Gaussian</h3>
-<p>Form correlated from original by rotating the data space using matrix <span class="math inline">\(\rotationMatrix\)</span>.</p>
-<p><span class="math display">\[
+<p>Form correlated from original by rotating the data space using matrix <span class="math inline">$\rotationMatrix$</span>.</p>
+<p><br /><span class="math display">$$
 p(\dataVector) = \frac{1}{\det{2\pi\mathbf{D}}^{\frac{1}{2}}} \exp\left(-\frac{1}{2}(\dataVector - \meanVector)^\top\mathbf{D}^{-1}(\dataVector - \meanVector)\right)
-\]</span></p>
-<p><span class="math display">\[
+$$</span><br /></p>
+<p><br /><span class="math display">$$
 p(\dataVector) = \frac{1}{\det{2\pi\mathbf{D}}^{\frac{1}{2}}} \exp\left(-\frac{1}{2}(\rotationMatrix^\top\dataVector - \rotationMatrix^\top\meanVector)^\top\mathbf{D}^{-1}(\rotationMatrix^\top\dataVector - \rotationMatrix^\top\meanVector)\right)
-\]</span></p>
-<p><span class="math display">\[
+$$</span><br /></p>
+<p><br /><span class="math display">$$
 p(\dataVector) = \frac{1}{\det{2\pi\mathbf{D}}^{\frac{1}{2}}} \exp\left(-\frac{1}{2}(\dataVector - \meanVector)^\top\rotationMatrix\mathbf{D}^{-1}\rotationMatrix^\top(\dataVector - \meanVector)\right)
-\]</span> this gives a covariance matrix: <span class="math display">\[
+$$</span><br /> this gives a covariance matrix: <br /><span class="math display">$$
 \covarianceMatrix^{-1} = \rotationMatrix \mathbf{D}^{-1} \rotationMatrix^\top
-\]</span></p>
-<p><span class="math display">\[
+$$</span><br /></p>
+<p><br /><span class="math display">$$
 p(\dataVector) = \frac{1}{\det{2\pi\covarianceMatrix}^{\frac{1}{2}}} \exp\left(-\frac{1}{2}(\dataVector - \meanVector)^\top\covarianceMatrix^{-1} (\dataVector - \meanVector)\right)
-\]</span> this gives a covariance matrix: <span class="math display">\[
+$$</span><br /> this gives a covariance matrix: <br /><span class="math display">$$
 \covarianceMatrix = \rotationMatrix \mathbf{D} \rotationMatrix^\top
-\]</span></p>
-<p>Let's first of all review the properties of the multivariate Gaussian distribution that make linear Gaussian models easier to deal with. We'll return to the, perhaps surprising, result on the parameters within the nonlinearity, <span class="math inline">\(\parameterVector\)</span>, shortly.</p>
-<p>To work with linear Gaussian models, to find the marginal likelihood all you need to know is the following rules. If <span class="math display">\[
+$$</span><br /></p>
+<p>Let's first of all review the properties of the multivariate Gaussian distribution that make linear Gaussian models easier to deal with. We'll return to the, perhaps surprising, result on the parameters within the nonlinearity, <span class="math inline">$\parameterVector$</span>, shortly.</p>
+<p>To work with linear Gaussian models, to find the marginal likelihood all you need to know is the following rules. If <br /><span class="math display">$$
 \dataVector = \mappingMatrix \inputVector + \noiseVector,
-\]</span> where <span class="math inline">\(\dataVector\)</span>, <span class="math inline">\(\inputVector\)</span> and <span class="math inline">\(\noiseVector\)</span> are vectors and we assume that <span class="math inline">\(\inputVector\)</span> and <span class="math inline">\(\noiseVector\)</span> are drawn from multivariate Gaussians, <span class="math display">\[\begin{align}
+$$</span><br /> where <span class="math inline">$\dataVector$</span>, <span class="math inline">$\inputVector$</span> and <span class="math inline">$\noiseVector$</span> are vectors and we assume that <span class="math inline">$\inputVector$</span> and <span class="math inline">$\noiseVector$</span> are drawn from multivariate Gaussians, <br /><span class="math display">$$\begin{align}
 \inputVector &amp; \sim \gaussianSamp{\meanVector}{\covarianceMatrix}\\
 \noiseVector &amp; \sim \gaussianSamp{\zerosVector}{\covarianceMatrixTwo}
-\end{align}\]</span> then we know that <span class="math inline">\(\dataVector\)</span> is also drawn from a multivariate Gaussian with, <span class="math display">\[
+\end{align}$$</span><br /> then we know that <span class="math inline">$\dataVector$</span> is also drawn from a multivariate Gaussian with, <br /><span class="math display">$$
 \dataVector \sim \gaussianSamp{\mappingMatrix\meanVector}{\mappingMatrix\covarianceMatrix\mappingMatrix^\top + \covarianceMatrixTwo}.
-\]</span></p>
-<p>With apprioriately defined covariance, <span class="math inline">\(\covarianceTwoMatrix\)</span>, this is actually the marginal likelihood for Factor Analysis, or Probabilistic Principal Component Analysis <span class="citation">(Tipping and Bishop, 1999)</span>, because we integrated out the inputs (or <em>latent</em> variables they would be called in that case).</p>
-<p>However, we are focussing on what happens in models which are non-linear in the inputs, whereas the above would be <em>linear</em> in the inputs. To consider these, we introduce a matrix, called the design matrix. We set each activation function computed at each data point to be <span class="math display">\[
+$$</span><br /></p>
+<p>With apprioriately defined covariance, <span class="math inline">$\covarianceTwoMatrix$</span>, this is actually the marginal likelihood for Factor Analysis, or Probabilistic Principal Component Analysis <span class="citation">(Tipping and Bishop 1999)</span>, because we integrated out the inputs (or <em>latent</em> variables they would be called in that case).</p>
+<p>However, we are focussing on what happens in models which are non-linear in the inputs, whereas the above would be <em>linear</em> in the inputs. To consider these, we introduce a matrix, called the design matrix. We set each activation function computed at each data point to be <br /><span class="math display">$$
 \activationScalar_{i,j} = \activationScalar(\mappingVector^{(1)}_{j}, \inputVector_{i})
-\]</span> and define the matrix of activations (known as the <em>design matrix</em> in statistics) to be, <span class="math display">\[
+$$</span><br /> and define the matrix of activations (known as the <em>design matrix</em> in statistics) to be, <br /><span class="math display">$$
 \activationMatrix = 
 \begin{bmatrix}
 \activationScalar_{1, 1} &amp; \activationScalar_{1, 2} &amp; \dots &amp; \activationScalar_{1, \numHidden} \\
@@ -278,26 +278,25 @@ p(\dataVector) = \frac{1}{\det{2\pi\covarianceMatrix}^{\frac{1}{2}}} \exp\left(-
 \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
 \activationScalar_{\numData, 1} &amp; \activationScalar_{\numData, 2} &amp; \dots &amp; \activationScalar_{\numData, \numHidden}
 \end{bmatrix}.
-\]</span> By convention this matrix always has <span class="math inline">\(\numData\)</span> rows and <span class="math inline">\(\numHidden\)</span> columns, now if we define the vector of all noise corruptions, <span class="math inline">\(\noiseVector = \left[\noiseScalar_1, \dots \noiseScalar_\numData\right]^\top\)</span>.</p>
-<p>If we define the prior distribution over the vector <span class="math inline">\(\mappingVector\)</span> to be Gaussian, <span class="math display">\[
+$$</span><br /> By convention this matrix always has <span class="math inline">$\numData$</span> rows and <span class="math inline">$\numHidden$</span> columns, now if we define the vector of all noise corruptions, <span class="math inline">$\noiseVector = \left[\noiseScalar_1, \dots \noiseScalar_\numData\right]^\top$</span>.</p>
+<p>If we define the prior distribution over the vector <span class="math inline">$\mappingVector$</span> to be Gaussian, <br /><span class="math display">$$
 \mappingVector \sim \gaussianSamp{\zerosVector}{\alpha\eye},
-\]</span></p>
-<p>then we can use rules of multivariate Gaussians to see that, <span class="math display">\[
+$$</span><br /></p>
+<p>then we can use rules of multivariate Gaussians to see that, <br /><span class="math display">$$
 \dataVector \sim \gaussianSamp{\zerosVector}{\alpha \activationMatrix \activationMatrix^\top + \dataStd^2 \eye}.
-\]</span></p>
-<p>In other words, our training data is distributed as a multivariate Gaussian, with zero mean and a covariance given by <span class="math display">\[
+$$</span><br /></p>
+<p>In other words, our training data is distributed as a multivariate Gaussian, with zero mean and a covariance given by <br /><span class="math display">$$
 \kernelMatrix = \alpha \activationMatrix \activationMatrix^\top + \dataStd^2 \eye.
-\]</span></p>
-<p>This is an <span class="math inline">\(\numData \times \numData\)</span> size matrix. Its elements are in the form of a function. The maths shows that any element, index by <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>, is a function <em>only</em> of inputs associated with data points <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>, <span class="math inline">\(\dataVector_i\)</span>, <span class="math inline">\(\dataVector_j\)</span>. <span class="math inline">\(\kernel_{i,j} = \kernel\left(\inputVector_i, \inputVector_j\right)\)</span></p>
-<p>If we look at the portion of this function associated only with <span class="math inline">\(\mappingFunction(\cdot)\)</span>, i.e. we remove the noise, then we can write down the covariance associated with our neural network, <span class="math display">\[
+$$</span><br /></p>
+<p>This is an <span class="math inline">$\numData \times \numData$</span> size matrix. Its elements are in the form of a function. The maths shows that any element, index by <span class="math inline"><em>i</em></span> and <span class="math inline"><em>j</em></span>, is a function <em>only</em> of inputs associated with data points <span class="math inline"><em>i</em></span> and <span class="math inline"><em>j</em></span>, <span class="math inline">$\dataVector_i$</span>, <span class="math inline">$\dataVector_j$</span>. <span class="math inline">$\kernel_{i,j} = \kernel\left(\inputVector_i, \inputVector_j\right)$</span></p>
+<p>If we look at the portion of this function associated only with <span class="math inline">$\mappingFunction(\cdot)$</span>, i.e. we remove the noise, then we can write down the covariance associated with our neural network, <br /><span class="math display">$$
 \kernel_\mappingFunction\left(\inputVector_i, \inputVector_j\right) = \alpha \activationVector\left(\mappingMatrix_1, \inputVector_i\right)^\top \activationVector\left(\mappingMatrix_1, \inputVector_j\right)
-\]</span> so the elements of the covariance or <em>kernel</em> matrix are formed by inner products of the rows of the <em>design matrix</em>.</p>
+$$</span><br /> so the elements of the covariance or <em>kernel</em> matrix are formed by inner products of the rows of the <em>design matrix</em>.</p>
 <h3 id="gaussian-process">Gaussian Process</h3>
-<p>This is the essence of a Gaussian process. Instead of making assumptions about our density over each data point, <span class="math inline">\(\dataScalar_i\)</span> as i.i.d. we make a joint Gaussian assumption over our data. The covariance matrix is now a function of both the parameters of the activation function, <span class="math inline">\(\mappingMatrixTwo\)</span>, and the input variables, <span class="math inline">\(\inputMatrix\)</span>. This comes about through integrating out the parameters of the model, <span class="math inline">\(\mappingVector\)</span>.</p>
+<p>This is the essence of a Gaussian process. Instead of making assumptions about our density over each data point, <span class="math inline">$\dataScalar_i$</span> as i.i.d. we make a joint Gaussian assumption over our data. The covariance matrix is now a function of both the parameters of the activation function, <span class="math inline">$\mappingMatrixTwo$</span>, and the input variables, <span class="math inline">$\inputMatrix$</span>. This comes about through integrating out the parameters of the model, <span class="math inline">$\mappingVector$</span>.</p>
 <h3 id="basis-functions">Basis Functions</h3>
-<p>We can basically put anything inside the basis functions, and many people do. These can be deep kernels <span class="citation">(Cho and Saul, 2009)</span> or we can learn the parameters of a convolutional neural network inside there.</p>
-<p>Viewing a neural network in this way is also what allows us to beform sensible <em>batch</em> normalizations <span class="citation">(Ioffe and Szegedy, 2015)</span>.</p>
-<p><a href="file:///Users/neil/lawrennd/talks_gp/includes/gp-intro-very-short.md">_gp/includes/gp-intro-very-short.md</a></p>
+<p>We can basically put anything inside the basis functions, and many people do. These can be deep kernels <span class="citation">(Cho and Saul 2009)</span> or we can learn the parameters of a convolutional neural network inside there.</p>
+<p>Viewing a neural network in this way is also what allows us to beform sensible <em>batch</em> normalizations <span class="citation">(Ioffe and Szegedy 2015)</span>.</p>
 <h3 id="bayesian-inference-by-rejection-sampling">Bayesian Inference by Rejection Sampling</h3>
 <p>One view of Bayesian inference is to assume we are given a mechanism for generating samples, where we assume that mechanism is representing on accurate view on the way we believe the world works.</p>
 <p>This mechanism is known as our <em>prior</em> belief.</p>
@@ -309,89 +308,81 @@ p(\dataVector) = \frac{1}{\det{2\pi\covarianceMatrix}^{\frac{1}{2}}} \exp\left(-
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> compute_kernel</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> exponentiated_quadratic</code></pre></div>
-
-<object class="svgplot" align data="../slides/diagrams/gp/gp_rejection_sample003.svg">
+<object class="svgplot " align data="../slides/diagrams/gp/gp_rejection_sample003.svg" style>
 </object>
-<object class="svgplot" align data="../slides/diagrams/gp/gp_rejection_sample004.svg">
+<object class="svgplot " align data="../slides/diagrams/gp/gp_rejection_sample004.svg" style>
 </object>
-<object class="svgplot" align data="../slides/diagrams/gp/gp_rejection_sample005.svg">
+<object class="svgplot " align data="../slides/diagrams/gp/gp_rejection_sample005.svg" style>
 </object>
 <center>
 <em>One view of Bayesian inference is we have a machine for generating samples (the </em>prior<em>), and we discard all samples inconsistent with our data, leaving the samples of interest (the </em>posterior<em>). The Gaussian process allows us to do this analytically. </em>
 </center>
-<p><a href="file:///Users/neil/lawrennd/talks_gp/includes/gpdistfunc.md">_gp/includes/gpdistfunc.md</a></p>
 <h3 id="sampling-a-function">Sampling a Function</h3>
-<p>We will consider a Gaussian distribution with a particular structure of covariance matrix. We will generate <em>one</em> sample from a 25-dimensional Gaussian density. <span class="math display">\[
+<p>We will consider a Gaussian distribution with a particular structure of covariance matrix. We will generate <em>one</em> sample from a 25-dimensional Gaussian density. <br /><span class="math display">$$
 \mappingFunctionVector=\left[\mappingFunction_{1},\mappingFunction_{2}\dots \mappingFunction_{25}\right].
-\]</span> in the figure below we plot these data on the <span class="math inline">\(y\)</span>-axis against their <em>indices</em> on the <span class="math inline">\(x\)</span>-axis.</p>
+$$</span><br /> in the figure below we plot these data on the <span class="math inline"><em>y</em></span>-axis against their <em>indices</em> on the <span class="math inline"><em>x</em></span>-axis.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> Kernel</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> polynomial_cov</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> exponentiated_quadratic</code></pre></div>
-
-<object class="svgplot" align data="../slides/diagrams/gp/two_point_sample008.svg">
+<object class="svgplot " align data="../slides/diagrams/gp/two_point_sample008.svg" style>
 </object>
 <center>
 <em>A 25 dimensional correlated random variable (values ploted against index) </em>
 </center>
-<p><a href="file:///Users/neil/lawrennd/talks_gp/includes/gaussian-predict-index-one-and-two.md">_gp/includes/gaussian-predict-index-one-and-two.md</a></p>
-
-<object class="svgplot" align data="../slides/diagrams/gp/two_point_sample012.svg">
+<object class="svgplot " align data="../slides/diagrams/gp/two_point_sample012.svg" style>
 </object>
 <center>
-<em>The joint Gaussian over <span class="math inline">\(\mappingFunction_1\)</span> and <span class="math inline">\(\mappingFunction_2\)</span> along with the conditional distribution of <span class="math inline">\(\mappingFunction_2\)</span> given <span class="math inline">\(\mappingFunction_1\)</span> </em>
+<em>The joint Gaussian over <span class="math inline">$\mappingFunction_1$</span> and <span class="math inline">$\mappingFunction_2$</span> along with the conditional distribution of <span class="math inline">$\mappingFunction_2$</span> given <span class="math inline">$\mappingFunction_1$</span> </em>
 </center>
 <h3 id="uluru">Uluru</h3>
-<p><img class="" src="../slides/diagrams/gp/799px-Uluru_Panorama.jpg" width="" align="center" style="background:none; border:none; box-shadow:none;"> When viewing these contour plots, I sometimes find it helpful to think of Uluru, the prominent rock formation in Australia. The rock rises above the surface of the plane, just like a probability density rising above the zero line. The rock is three dimensional, but when we view Uluru from the classical position, we are looking at one side of it. This is equivalent to viewing the marginal density.</p>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/gp/799px-Uluru_Panorama.jpg" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</div>
+<p>When viewing these contour plots, I sometimes find it helpful to think of Uluru, the prominent rock formation in Australia. The rock rises above the surface of the plane, just like a probability density rising above the zero line. The rock is three dimensional, but when we view Uluru from the classical position, we are looking at one side of it. This is equivalent to viewing the marginal density.</p>
 <p>The joint density can be viewed from above, using contours. The conditional density is equivalent to <em>slicing</em> the rock. Uluru is a holy rock, so this has to be an imaginary slice. Imagine we cut down a vertical plane orthogonal to our view point (e.g. coming across our view point). This would give a profile of the rock, which when renormalized, would give us the conditional distribution, the value of conditioning would be the location of the slice in the direction we are facing.</p>
 <h3 id="prediction-with-correlated-gaussians">Prediction with Correlated Gaussians</h3>
 <p>Of course in practice, rather than manipulating mountains physically, the advantage of the Gaussian density is that we can perform these manipulations mathematically.</p>
-<p>Prediction of <span class="math inline">\(\mappingFunction_2\)</span> given <span class="math inline">\(\mappingFunction_1\)</span> requires the <em>conditional density</em>, <span class="math inline">\(p(\mappingFunction_2|\mappingFunction_1)\)</span>.Another remarkable property of the Gaussian density is that this conditional distribution is <em>also</em> guaranteed to be a Gaussian density. It has the form, <span class="math display">\[
+<p>Prediction of <span class="math inline">$\mappingFunction_2$</span> given <span class="math inline">$\mappingFunction_1$</span> requires the <em>conditional density</em>, <span class="math inline">$p(\mappingFunction_2|\mappingFunction_1)$</span>.Another remarkable property of the Gaussian density is that this conditional distribution is <em>also</em> guaranteed to be a Gaussian density. It has the form, <br /><span class="math display">$$
     p(\mappingFunction_2|\mappingFunction_1) = \gaussianDist{\mappingFunction_2}{\frac{\kernelScalar_{1, 2}}{\kernelScalar_{1, 1}}\mappingFunction_1}{ \kernelScalar_{2, 2} - \frac{\kernelScalar_{1,2}^2}{\kernelScalar_{1,1}}}
-    \]</span>where we have assumed that the covariance of the original joint density was given by <span class="math display">\[
+    $$</span><br />where we have assumed that the covariance of the original joint density was given by <br /><span class="math display">$$
     \kernelMatrix = \begin{bmatrix} \kernelScalar_{1, 1} &amp; \kernelScalar_{1, 2}\\ \kernelScalar_{2, 1} &amp; \kernelScalar_{2, 2}.\end{bmatrix}
-    \]</span></p>
-<p>Using these formulae we can determine the conditional density for any of the elements of our vector <span class="math inline">\(\mappingFunctionVector\)</span>. For example, the variable <span class="math inline">\(\mappingFunction_8\)</span> is less correlated with <span class="math inline">\(\mappingFunction_1\)</span> than <span class="math inline">\(\mappingFunction_2\)</span>. If we consider this variable we see the conditional density is more diffuse.</p>
-<p><a href="file:///Users/neil/lawrennd/talks_gp/includes/gaussian-predict-index-one-and-eight.md">_gp/includes/gaussian-predict-index-one-and-eight.md</a></p>
-
-<object class="svgplot" align data="../slides/diagrams/gp/two_point_sample013.svg">
+    $$</span><br /></p>
+<p>Using these formulae we can determine the conditional density for any of the elements of our vector <span class="math inline">$\mappingFunctionVector$</span>. For example, the variable <span class="math inline">$\mappingFunction_8$</span> is less correlated with <span class="math inline">$\mappingFunction_1$</span> than <span class="math inline">$\mappingFunction_2$</span>. If we consider this variable we see the conditional density is more diffuse.</p>
+<object class="svgplot " align data="../slides/diagrams/gp/two_point_sample013.svg" style>
 </object>
-<object class="svgplot" align data="../slides/diagrams/gp/two_point_sample017.svg">
+<object class="svgplot " align data="../slides/diagrams/gp/two_point_sample017.svg" style>
 </object>
 <center>
-<em>The joint Gaussian over <span class="math inline">\(\mappingFunction_1\)</span> and <span class="math inline">\(\mappingFunction_8\)</span> along with the conditional distribution of <span class="math inline">\(\mappingFunction_8\)</span> given <span class="math inline">\(\mappingFunction_1\)</span> </em>
+<em>The joint Gaussian over <span class="math inline">$\mappingFunction_1$</span> and <span class="math inline">$\mappingFunction_8$</span> along with the conditional distribution of <span class="math inline">$\mappingFunction_8$</span> given <span class="math inline">$\mappingFunction_1$</span> </em>
 </center>
-<p><a href="file:///Users/neil/lawrennd/talks_kern/includes/computing-rbf-covariance.md">_kern/includes/computing-rbf-covariance.md</a></p>
 <h3 id="where-did-this-covariance-matrix-come-from">Where Did This Covariance Matrix Come From?</h3>
-<p><span class="math display">\[
-k(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\left\Vert \inputVector - \inputVector^\prime\right\Vert^2_2}{2\lengthScale^2}\right)\]</span></p>
-
-<object class="svgplot" align data="../slides/diagrams/kern/computing_eq_three_covariance016.svg">
+<p><br /><span class="math display">$$
+k(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\left\Vert \inputVector - \inputVector^\prime\right\Vert^2_2}{2\lengthScale^2}\right)$$</span><br /></p>
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_covariance016.svg" style>
 </object>
-<object class="svgplot" align data="../slides/diagrams/kern/computing_eq_three_covariance016.svg">
-</object>
-<center>
-<em>Entrywise fill in of the covariance matrix from the covariance function. </em>
-</center>
-
-<object class="svgplot" align data="../slides/diagrams/kern/computing_eq_four_covariance027.svg">
-</object>
-<object class="svgplot" align data="../slides/diagrams/kern/computing_eq_four_covariance027.svg">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_covariance016.svg" style>
 </object>
 <center>
 <em>Entrywise fill in of the covariance matrix from the covariance function. </em>
 </center>
-
-<object class="svgplot" align data="../slides/diagrams/kern/computing_eq_three_2_covariance016.svg">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_four_covariance027.svg" style>
 </object>
-<object class="svgplot" align data="../slides/diagrams/kern/computing_eq_three_2_covariance016.svg">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_four_covariance027.svg" style>
+</object>
+<center>
+<em>Entrywise fill in of the covariance matrix from the covariance function. </em>
+</center>
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_2_covariance016.svg" style>
+</object>
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_2_covariance016.svg" style>
 </object>
 <center>
 <em>Entrywise fill in of the covariance matrix from the covariance function. </em>
 </center>
 <h3 id="polynomial-covariance">Polynomial Covariance</h3>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> polynomial_cov</code></pre></div>
+
 <center>
-<span class="math display">\[\kernelScalar(\inputVector, \inputVector^\prime) = \alpha(w \inputVector^\top\inputVector^\prime + b)^d\]</span>
+<br /><span class="math display">$$\kernelScalar(\inputVector, \inputVector^\prime) = \alpha(w \inputVector^\top\inputVector^\prime + b)^d$$</span><br />
 </center>
 <br>
 <table>
@@ -400,17 +391,17 @@ k(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\left\Vert \input
 <object class align data="../slides/diagrams/kern/polynomial_covariance.svg">
 </object>
 <td width="45%">
-<img class="negate" src="../slides/diagrams/kern/polynomial_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
+<img class="negate" src="../slides/diagrams/kern/polynomial_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 </td>
 </tr>
 </table>
 <h3 id="brownian-covariance">Brownian Covariance</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> brownian_cov</code></pre></div>
-<p>Brownian motion is also a Gaussian process. It follows a Gaussian random walk, with diffusion occuring at each time point driven by a Gaussian input. This implies it is both Markov and Gaussian. The covariane function for Brownian motion has the form <span class="math display">\[
+<p>Brownian motion is also a Gaussian process. It follows a Gaussian random walk, with diffusion occuring at each time point driven by a Gaussian input. This implies it is both Markov and Gaussian. The covariane function for Brownian motion has the form <br /><span class="math display">$$
 \kernelScalar(t, t^\prime) = \alpha \min(t, t^\prime)
-\]</span></p>
+$$</span><br /></p>
 <!--<table><tr><td width="50%">
-<object class="svgplot" align="" data="../slides/diagrams/kern/brownian_covariance.svg"></object>
+<object class="svgplot " align="" data="../slides/diagrams/kern/brownian_covariance.svg" style=""></object>
 </td><td width="50%">
 <iframe src="../slides/diagrams/kern/brownian_covariance.html" width="512" height="384" allowtransparency="true" frameborder="0">
 </iframe>
@@ -423,14 +414,14 @@ k(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\left\Vert \input
 </object>
 </td>
 <td width="45%">
-<img class="negate" src="../slides/diagrams/kern/brownian_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
+<img class="negate" src="../slides/diagrams/kern/brownian_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 </td>
 </tr>
 </table>
 <h3 id="periodic-covariance">Periodic Covariance</h3>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> periodic_cov</code></pre></div>
+
 <center>
-<span class="math display">\[\kernelScalar(\inputVector, \inputVector^\prime) = \alpha\exp\left(\frac{-2\sin(\pi rw)^2}{\lengthScale^2}\right)\]</span>
+<br /><span class="math display">$$\kernelScalar(\inputVector, \inputVector^\prime) = \alpha\exp\left(\frac{-2\sin(\pi rw)^2}{\lengthScale^2}\right)$$</span><br />
 </center>
 <br>
 <table>
@@ -439,29 +430,29 @@ k(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\left\Vert \input
 <object class align data="../slides/diagrams/kern/periodic_covariance.svg">
 </object>
 <td width="45%">
-<img class="negate" src="../slides/diagrams/kern/periodic_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
+<img class="negate" src="../slides/diagrams/kern/periodic_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 </td>
 </tr>
 </table>
-<p>Any linear basis function can also be incorporated into a covariance function. For example, an RBF network is a type of neural network with a set of radial basis functions. Meaning, the basis funciton is radially symmetric. These basis functions take the form, <span class="math display">\[
+<p>Any linear basis function can also be incorporated into a covariance function. For example, an RBF network is a type of neural network with a set of radial basis functions. Meaning, the basis funciton is radially symmetric. These basis functions take the form, <br /><span class="math display">$$
 \basisFunction_k(\inputScalar) = \exp\left(-\frac{\ltwoNorm{\inputScalar-\meanScalar_k}^{2}}{\lengthScale^{2}}\right).
-\]</span> Given a set of parameters, <span class="math display">\[
+$$</span><br /> Given a set of parameters, <br /><span class="math display">$$
 \meanVector = \begin{bmatrix} -1 \\ 0 \\ 1\end{bmatrix},
-\]</span> we can construct the corresponding covariance function, which has the form, <span class="math display">\[
+$$</span><br /> we can construct the corresponding covariance function, which has the form, <br /><span class="math display">$$
 \kernelScalar\left(\inputVals,\inputVals^{\prime}\right)=\alpha\basisVector(\inputVals)^\top \basisVector(\inputVals^\prime).
-\]</span></p>
+$$</span><br /></p>
 <h3 id="basis-function-covariance">Basis Function Covariance</h3>
-<p>The fixed basis function covariance just comes from the properties of a multivariate Gaussian, if we decide <span class="math display">\[
+<p>The fixed basis function covariance just comes from the properties of a multivariate Gaussian, if we decide <br /><span class="math display">$$
 \mappingFunctionVector=\basisMatrix\mappingVector
-\]</span> and then we assume <span class="math display">\[
+$$</span><br /> and then we assume <br /><span class="math display">$$
 \mappingVector \sim \gaussianSamp{\zerosVector}{\alpha\eye}
-\]</span> then it follows from the properties of a multivariate Gaussian that <span class="math display">\[
+$$</span><br /> then it follows from the properties of a multivariate Gaussian that <br /><span class="math display">$$
 \mappingFunctionVector \sim \gaussianSamp{\zerosVector}{\alpha\basisMatrix\basisMatrix^\top}
-\]</span> meaning that the vector of observations from the function is jointly distributed as a Gaussian process and the covariance matrix is <span class="math inline">\(\kernelMatrix = \alpha\basisMatrix \basisMatrix^\top\)</span>, each element of the covariance matrix can then be found as the inner product between two rows of the basis funciton matrix.</p>
+$$</span><br /> meaning that the vector of observations from the function is jointly distributed as a Gaussian process and the covariance matrix is <span class="math inline">$\kernelMatrix = \alpha\basisMatrix \basisMatrix^\top$</span>, each element of the covariance matrix can then be found as the inner product between two rows of the basis funciton matrix.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> basis_cov</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> radial</code></pre></div>
 <center>
-<span class="math display">\[\kernel(\inputVector, \inputVector^\prime) = \basisVector(\inputVector)^\top \basisVector(\inputVector^\prime)\]</span>
+<br /><span class="math display">$$\kernel(\inputVector, \inputVector^\prime) = \basisVector(\inputVector)^\top \basisVector(\inputVector^\prime)$$</span><br />
 </center>
 <br>
 <table>
@@ -470,52 +461,52 @@ k(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\left\Vert \input
 <object class align data="../slides/diagrams/kern/basis_covariance.svg">
 </object>
 <td width="45%">
-<img class="negate" src="../slides/diagrams/kern/basis_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
+<img class="negate" src="../slides/diagrams/kern/basis_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 </td>
 </tr>
 </table>
 {
 <center>
-<em>A covariance function based on a non-linear basis given by <span class="math inline">\(\basisVector(\inputVector)\)</span>. </em>
+<em>A covariance function based on a non-linear basis given by <span class="math inline">$\basisVector(\inputVector)$</span>. </em>
 </center>
 <h3 id="selecting-number-and-location-of-basis">Selecting Number and Location of Basis</h3>
 <p>In practice for a basis function model we need to choose both 1. the location of the basis functions 2. the number of basis functions</p>
-<p>One very clever of finessing this problem is to choose to have <em>infinite</em> basis functions and place them <em>everywhere</em>. To show how this is possible, we will consider a one dimensional system, <span class="math inline">\(\inputScalar\)</span>, which should give the intuition of how to do this. However, these ideas also extend to multidimensional systems as shown in, for example, <span class="citation">Williams (n.d.)</span> and <span class="citation">Neal (1994)</span>.</p>
-<p>We consider a one dimensional set up with exponentiated quadratic basis functions, <span class="math display">\[
+<p>One very clever of finessing this problem is to choose to have <em>infinite</em> basis functions and place them <em>everywhere</em>. To show how this is possible, we will consider a one dimensional system, <span class="math inline">$\inputScalar$</span>, which should give the intuition of how to do this. However, these ideas also extend to multidimensional systems as shown in, for example, <span class="citation">Williams (n.d.)</span> and <span class="citation">Neal (1994)</span>.</p>
+<p>We consider a one dimensional set up with exponentiated quadratic basis functions, <br /><span class="math display">$$
 \basisFunction_k(\inputScalar_i) = \exp\left(\frac{\ltwoNorm{\inputScalar_i - \locationScalar_k}^2}{2\rbfWidth^2}\right)
-\]</span></p>
-<p>To place these basis functions, we first define the basis function centers in terms of a starting point on the left of our input, <span class="math inline">\(a\)</span>, and a finishing point, <span class="math inline">\(b\)</span>. The gap between basis is given by <span class="math inline">\(\Delta\locationScalar\)</span>. The location of each basis is then given by <span class="math display">\[\locationScalar_k = a+\Delta\locationScalar\cdot (k-1).\]</span> The covariance function can then be given as <span class="math display">\[
+$$</span><br /></p>
+<p>To place these basis functions, we first define the basis function centers in terms of a starting point on the left of our input, <span class="math inline"><em>a</em></span>, and a finishing point, <span class="math inline"><em>b</em></span>. The gap between basis is given by <span class="math inline">$\Delta\locationScalar$</span>. The location of each basis is then given by <br /><span class="math display">$$\locationScalar_k = a+\Delta\locationScalar\cdot (k-1).$$</span><br /> The covariance function can then be given as <br /><span class="math display">$$
 \kernelScalar\left(\inputScalar_i,\inputScalar_j\right) = \sum_{k=1}^\numBasisFunc \basisFunction_k(\inputScalar_i)\basisFunction_k(\inputScalar_j)
-\]</span> <span class="math display">\[\begin{aligned}
+$$</span><br /> <br /><span class="math display">$$\begin{aligned}
     \kernelScalar\left(\inputScalar_i,\inputScalar_j\right) = &amp;\alpha^\prime\Delta\locationScalar \sum_{k=1}^{\numBasisFunc} \exp\Bigg(
       -\frac{\inputScalar_i^2 + \inputScalar_j^2}{2\rbfWidth^2}\\ 
    &amp; - \frac{2\left(a+\Delta\locationScalar\cdot (k-1)\right)
        \left(\inputScalar_i+\inputScalar_j\right) + 2\left(a+\Delta\locationScalar \cdot (k-1)\right)^2}{2\rbfWidth^2} \Bigg)
-  \end{aligned}\]</span> where we've also scaled the variance of the process by <span class="math inline">\(\Delta\locationScalar\)</span>.</p>
-<p>A consequence of our definition is that the first and last basis function locations are given by <span class="math display">\[
+  \end{aligned}$$</span><br /> where we've also scaled the variance of the process by <span class="math inline">$\Delta\locationScalar$</span>.</p>
+<p>A consequence of our definition is that the first and last basis function locations are given by <br /><span class="math display">$$
   \locationScalar_1=a \ \text{and}\  \locationScalar_\numBasisFunc=b \ \text{so}\ b= a+ \Delta\locationScalar\cdot(\numBasisFunc-1)
-  \]</span> This implies that the distance between <span class="math inline">\(b\)</span> and <span class="math inline">\(a\)</span> is given by <span class="math display">\[
+  $$</span><br /> This implies that the distance between <span class="math inline"><em>b</em></span> and <span class="math inline"><em>a</em></span> is given by <br /><span class="math display">$$
   b-a = \Delta\locationScalar (\numBasisFunc -1)
-  \]</span> and since the basis functions are separated by <span class="math inline">\(\Delta\locationScalar\)</span> the number of basis functions is given by <span class="math display">\[
+  $$</span><br /> and since the basis functions are separated by <span class="math inline">$\Delta\locationScalar$</span> the number of basis functions is given by <br /><span class="math display">$$
   \numBasisFunc = \frac{b-a}{\Delta \locationScalar} + 1
-  \]</span> The next step is to take the limit as <span class="math inline">\(\Delta\locationScalar\rightarrow 0\)</span> so <span class="math inline">\(\numBasisFunc \rightarrow \infty\)</span> where we have used <span class="math inline">\(a + k\cdot\Delta\locationScalar\rightarrow \locationScalar\)</span>.</p>
-<p>Performing the integration gives <span class="math display">\[\begin{aligned}
+  $$</span><br /> The next step is to take the limit as <span class="math inline">$\Delta\locationScalar\rightarrow 0$</span> so <span class="math inline">$\numBasisFunc \rightarrow \infty$</span> where we have used <span class="math inline">$a + k\cdot\Delta\locationScalar\rightarrow \locationScalar$</span>.</p>
+<p>Performing the integration gives <br /><span class="math display">$$\begin{aligned}
     \kernelScalar(\inputScalar_i,&amp;\inputScalar_j) = \alpha^\prime \sqrt{\pi\rbfWidth^2}
     \exp\left( -\frac{\left(\inputScalar_i-\inputScalar_j\right)^2}{4\rbfWidth^2}\right)\\ &amp;\times
     \frac{1}{2}\left[\text{erf}\left(\frac{\left(b - \frac{1}{2}\left(\inputScalar_i +
     \inputScalar_j\right)\right)}{\rbfWidth} \right)-
     \text{erf}\left(\frac{\left(a - \frac{1}{2}\left(\inputScalar_i +
        \inputScalar_j\right)\right)}{\rbfWidth} \right)\right],
-    \end{aligned}\]</span>Now we take the limit as <span class="math inline">\(a\rightarrow -\infty\)</span> and <span class="math inline">\(b\rightarrow \infty\)</span> <span class="math display">\[\kernelScalar\left(\inputScalar_i,\inputScalar_j\right) = \alpha\exp\left(
-    -\frac{\left(\inputScalar_i-\inputScalar_j\right)^2}{4\rbfWidth^2}\right).\]</span> where <span class="math inline">\(\alpha=\alpha^\prime \sqrt{\pi\rbfWidth^2}\)</span>.</p>
-<p>In conclusion, an RBF model with infinite basis functions is a Gaussian process with the exponentiated quadratic covariance function <span class="math display">\[\kernelScalar\left(\inputScalar_i,\inputScalar_j\right) = \alpha \exp\left(
-          -\frac{\left(\inputScalar_i-\inputScalar_j\right)^2}{4\rbfWidth^2}\right).\]</span></p>
-<p>Note that while the functional form of the basis function and the covariance function are similar, in general if we repeated this analysis for other basis functions the covariance function will have a very different form. For example the error function, <span class="math inline">\(\text{erf}(\cdot)\)</span>, results in an <span class="math inline">\(\asin(\cdot)\)</span> form. See <span class="citation">Williams (n.d.)</span> for more details.</p>
+    \end{aligned}$$</span><br />Now we take the limit as <span class="math inline"><em>a</em> → −∞</span> and <span class="math inline"><em>b</em> → ∞</span> <br /><span class="math display">$$\kernelScalar\left(\inputScalar_i,\inputScalar_j\right) = \alpha\exp\left(
+    -\frac{\left(\inputScalar_i-\inputScalar_j\right)^2}{4\rbfWidth^2}\right).$$</span><br /> where <span class="math inline">$\alpha=\alpha^\prime \sqrt{\pi\rbfWidth^2}$</span>.</p>
+<p>In conclusion, an RBF model with infinite basis functions is a Gaussian process with the exponentiated quadratic covariance function <br /><span class="math display">$$\kernelScalar\left(\inputScalar_i,\inputScalar_j\right) = \alpha \exp\left(
+          -\frac{\left(\inputScalar_i-\inputScalar_j\right)^2}{4\rbfWidth^2}\right).$$</span><br /></p>
+<p>Note that while the functional form of the basis function and the covariance function are similar, in general if we repeated this analysis for other basis functions the covariance function will have a very different form. For example the error function, <span class="math inline">erf(⋅)</span>, results in an <span class="math inline">$\asin(\cdot)$</span> form. See <span class="citation">Williams (n.d.)</span> for more details.</p>
 <h3 id="mlp-covariance">MLP Covariance</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> mlp_cov</code></pre></div>
 <p>The multi-layer perceptron (MLP) covariance, also known as the neural network covariance or the arcsin covariance, is derived by considering the infinite limit of a neural network.</p>
 <center>
-<span class="math display">\[\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \arcsin\left(\frac{w \inputVector^\top \inputVector^\prime + b}{\sqrt{\left(w \inputVector^\top \inputVector + b + 1\right)\left(w \left.\inputVector^\prime\right.^\top \inputVector^\prime + b + 1\right)}}\right)\]</span>
+<br /><span class="math display">$$\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \arcsin\left(\frac{w \inputVector^\top \inputVector^\prime + b}{\sqrt{\left(w \inputVector^\top \inputVector + b + 1\right)\left(w \left.\inputVector^\prime\right.^\top \inputVector^\prime + b + 1\right)}}\right)$$</span><br />
 </center>
 <br>
 <table>
@@ -524,7 +515,7 @@ k(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\left\Vert \input
 <object class align data="../slides/diagrams/kern/mlp_covariance.svg">
 </object>
 <td width="45%">
-<img class="negate" src="../slides/diagrams/kern/mlp_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
+<img class="negate" src="../slides/diagrams/kern/mlp_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 </td>
 </tr>
 </table>
@@ -534,8 +525,8 @@ k(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\left\Vert \input
 <!--include{_kern/includes/relu-covariance.md}-->
 <h3 id="sinc-covariance">Sinc Covariance</h3>
 <p>Another approach to developing covariance function exploits Bochner's theorem <span class="citation">Bochner (1959)</span>. Bochner's theorem tells us that any positve filter in Fourier space implies has an associated Gaussian process with a stationary covariance function. The covariance function is the <em>inverse Fourier transform</em> of the filter applied in Fourier space.</p>
-<p>For example, in signal processing, <em>band limitations</em> are commonly applied as an assumption. For example, we may believe that no frequency above <span class="math inline">\(w=2\)</span> exists in the signal. This is equivalent to a rectangle function being applied as a the filter in Fourier space.</p>
-<p>The inverse Fourier transform of the rectangle function is the <span class="math inline">\(\text{sinc}(\cdot)\)</span> function. So the sinc is a valid covariance function, and it represents <em>band limited</em> signals.</p>
+<p>For example, in signal processing, <em>band limitations</em> are commonly applied as an assumption. For example, we may believe that no frequency above <span class="math inline"><em>w</em> = 2</span> exists in the signal. This is equivalent to a rectangle function being applied as a the filter in Fourier space.</p>
+<p>The inverse Fourier transform of the rectangle function is the <span class="math inline">sinc(⋅)</span> function. So the sinc is a valid covariance function, and it represents <em>band limited</em> signals.</p>
 <p>Note that other covariance functions we've introduced can also be interpreted in this way. For example, the exponentiated quadratic covariance function can be Fourier transformed to see what the implied filter in Fourier space is. The Fourier transform of the exponentiated quadratic is an exponentiated quadratic, so the standard EQ-covariance implies a EQ filter in Fourier space.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> sinc_cov</code></pre></div>
 
@@ -543,40 +534,40 @@ k(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\left\Vert \input
 
 <div id="refs" class="references">
 <div id="ref-Bochner:book59">
-<p>Bochner, S., 1959. Lectures on fourier integrals. Princeton University Press.</p>
+<p>Bochner, Salomon. 1959. <em>Lectures on Fourier Integrals</em>. Princeton University Press. <a href="http://books.google.co.uk/books?id=-vU02QewWK8C" class="uri">http://books.google.co.uk/books?id=-vU02QewWK8C</a>.</p>
 </div>
 <div id="ref-Cho:deep09">
-<p>Cho, Y., Saul, L.K., 2009. Kernel methods for deep learning, in: Bengio, Y., Schuurmans, D., Lafferty, J.D., Williams, C.K.I., Culotta, A. (Eds.), Advances in Neural Information Processing Systems 22. Curran Associates, Inc., pp. 342–350.</p>
+<p>Cho, Youngmin, and Lawrence K. Saul. 2009. “Kernel Methods for Deep Learning.” In <em>Advances in Neural Information Processing Systems 22</em>, edited by Y. Bengio, D. Schuurmans, J. D. Lafferty, C. K. I. Williams, and A. Culotta, 342–50. Curran Associates, Inc. <a href="http://papers.nips.cc/paper/3628-kernel-methods-for-deep-learning.pdf" class="uri">http://papers.nips.cc/paper/3628-kernel-methods-for-deep-learning.pdf</a>.</p>
 </div>
 <div id="ref-Cox:probability46">
-<p>Cox, R.T., 1946. Probability, frequency and reasonable expectation. American Journal of Physics 14, 1–13.</p>
+<p>Cox, R. T. 1946. “Probability, Frequency and Reasonable Expectation.” <em>American Journal of Physics</em> 14 (1): 1–13.</p>
 </div>
 <div id="ref-deFinetti:prevision37">
-<p>Finetti, B. de, 1937. La prévision: Ses lois logiques, ses sources subjectives. Annales de l’Institut Henri Poincaré 7, 1–68.</p>
+<p>Finetti, Bruno de. 1937. “La Prévision: Ses Lois Logiques, Ses Sources Subjectives.” <em>Annales de L’Institut Henri Poincaré</em> 7: 1–68.</p>
 </div>
 <div id="ref-Ioffe:batch15">
-<p>Ioffe, S., Szegedy, C., 2015. Batch normalization: Accelerating deep network training by reducing internal covariate shift, in: Bach, F., Blei, D. (Eds.), Proceedings of the 32nd International Conference on Machine Learning, Proceedings of Machine Learning Research. PMLR, Lille, France, pp. 448–456.</p>
+<p>Ioffe, Sergey, and Christian Szegedy. 2015. “Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift.” In <em>Proceedings of the 32nd International Conference on Machine Learning</em>, edited by Francis Bach and David Blei, 37:448–56. Proceedings of Machine Learning Research. Lille, France: PMLR. <a href="http://proceedings.mlr.press/v37/ioffe15.html" class="uri">http://proceedings.mlr.press/v37/ioffe15.html</a>.</p>
 </div>
 <div id="ref-Laplace:essai14">
-<p>Laplace, P.S., 1814. Essai philosophique sur les probabilités, 2nd ed. Courcier, Paris.</p>
+<p>Laplace, Pierre Simon. 1814. <em>Essai Philosophique Sur Les Probabilités</em>. 2nd ed. Paris: Courcier.</p>
 </div>
 <div id="ref-Neal:thesis94">
-<p>Neal, R.M., 1994. Bayesian learning for neural networks (PhD thesis). University of Toronto, Canada.</p>
+<p>Neal, Radford M. 1994. “Bayesian Learning for Neural Networks.” PhD thesis, University of Toronto, Canada. <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.446.9306&amp;rep=rep1&amp;type=pdf" class="uri">http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.446.9306&amp;rep=rep1&amp;type=pdf</a>.</p>
 </div>
 <div id="ref-Rasmussen:book06">
-<p>Rasmussen, C.E., Williams, C.K.I., 2006. Gaussian processes for machine learning. mit, Cambridge, MA.</p>
+<p>Rasmussen, Carl Edward, and Christopher K. I. Williams. 2006. <em>Gaussian Processes for Machine Learning</em>. Cambridge, MA: mit.</p>
 </div>
 <div id="ref-Tipping:probpca99">
-<p>Tipping, M.E., Bishop, C.M., 1999. Probabilistic principal component analysis. Journal of the Royal Statistical Society, B 6, 611–622. <a href="https://doi.org/doi:10.1111/1467-9868.00196" class="uri">https://doi.org/doi:10.1111/1467-9868.00196</a></p>
+<p>Tipping, Michael E., and Christopher M. Bishop. 1999. “Probabilistic Principal Component Analysis.” <em>Journal of the Royal Statistical Society, B</em> 6 (3): 611–22. doi:<a href="https://doi.org/doi:10.1111/1467-9868.00196">doi:10.1111/1467-9868.00196</a>.</p>
 </div>
 <div id="ref-Williams:infinite96">
-<p>Williams, C.K.I., n.d. Computing with infinite networks, in:.</p>
+<p>Williams, Christopher K. I. n.d. “Computing with Infinite Networks.” In.</p>
 </div>
 </div>
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Note not all exponentiated quadratics can be normalized, to do so, the coefficient associated with the variable squared, <span class="math inline">\(\dataScalar^2\)</span>, must be strictly positive.<a href="#fnref1">↩</a></p></li>
+<li id="fn1"><p>Note not all exponentiated quadratics can be normalized, to do so, the coefficient associated with the variable squared, <span class="math inline">$\dataScalar^2$</span>, must be strictly positive.<a href="#fnref1">↩</a></p></li>
 </ol>
 </div>
 

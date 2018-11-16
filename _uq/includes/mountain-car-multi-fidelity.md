@@ -90,7 +90,7 @@ anim=mc.animate_frames(frames, 'Best controller with multi-fidelity emulator')}
                   diagrams='../slides/diagrams/uq', 
 				  filename='mountain_car_multi_fidelity.html')}
 
-\newgslide{Best Controller with Multi-Fidelity Emulator}
+\newslide{Best Controller with Multi-Fidelity Emulator}
 
 \includehtml{../slides/diagrams/uq/mountain_car_multi_fidelity.html}{1024}{768}
 

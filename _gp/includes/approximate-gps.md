@@ -1,11 +1,11 @@
-### Approximate Gaussian Processes
+\newslide{Approximate Gaussian Processes
 
 
-\include{../../_gp/includes/low_rank_motivation.md}
-\include{../../_gp/includes/gp_variational_complexity.md}
-\include{../../_gp/includes/bottleneck.md}
+\include{_gp/includes/low_rank_motivation.md}
+\include{_gp/includes/gp_variational_complexity.md}
+\include{_gp/includes/bottleneck.md}
 
-### Information capture {data-transition="None"}
+\newslide{Information capture {data-transition="None"}
 
 -   Everything we want to do with a GP involves marginalising
 $\mappingFunctionVector$
@@ -19,11 +19,11 @@ $\mappingFunctionVector$
 -   The posterior of $\mappingFunctionVector$ is the central object. This
 means inverting $\Kff$.
 
-\include{../../_gp/includes/nystrom.md}
-\include{../../_gp/includes/inducing_notation.md}
-\include{../../_gp/includes/inducing_introduction.md}
+\include{_gp/includes/nystrom.md}
+\include{_gp/includes/inducing_notation.md}
+\include{_gp/includes/inducing_introduction.md}
 
-### The alternative posterior
+\newslide{The alternative posterior}
 
 [Instead of doing]{}
 $$p(\mappingFunctionVector\given\dataVector,\inputMatrix) = \frac{p(\dataVector\given\mappingFunctionVector)p(\mappingFunctionVector\given\inputMatrix)}{\int p(\dataVector\given\mappingFunctionVector)p(\mappingFunctionVector\given\inputMatrix){\text{d}\mappingFunctionVector}}$$
@@ -34,11 +34,11 @@ $$p(\inducingVector\given\dataVector,\inducingInputMatrix) = \frac{p(\dataVector
 
 <!--Flexible Parametric Approximation-->
 
-\include{../../_gp/includes/larger_graph_intro.md}
-\include{../../_gp/includes/larger_variational.md}
-\include{../../_gp/includes/larger_factorize.md}
+\include{_gp/includes/larger_graph_intro.md}
+\include{_gp/includes/larger_variational.md}
+\include{_gp/includes/larger_factorize.md}
 
-### Inducing Variables
+\newslide{Inducing Variables}
 
 * Choose to go a different way.
 
@@ -48,7 +48,7 @@ $$p(\inducingVector\given\dataVector,\inducingInputMatrix) = \frac{p(\dataVector
 
 * Used to *induce* a distribution: $q(\inducingVector|\dataVector)$
 
-### Making Parameters non-Parametric
+\newslide{Making Parameters non-Parametric}
 
 * Introduce variable set which is *finite* dimensional.
 $$
@@ -57,7 +57,7 @@ $$
 
 * But dimensionality of $\inducingVector$ can be changed to improve approximation.
 
-### Variational Compression {.slide: data-transition="none"}
+\newslide{Variational Compression}
 
 * Model for our data, $\dataVector$
 
@@ -67,7 +67,7 @@ $$p(\dataVector)$$
 \includesvg{../slides/diagrams/gp/py.svg}
 }
 
-### Variational Compression {.slide: data-transition="none"}
+\newslide{Variational Compression}
 
 * Prior density over $\mappingFunctionVector$. Likelihood relates data, $\dataVector$, to $\mappingFunctionVector$.
 
@@ -77,7 +77,7 @@ $$p(\dataVector)=\int p(\dataVector|\mappingFunctionVector)p(\mappingFunctionVec
 \includesvg{../slides/diagrams/gp/pygfpf.svg}
 }
 
-### Variational Compression {.slide: data-transition="none"}
+\newslide{Variational Compression}
 
 * Prior density over $\mappingFunctionVector$. Likelihood relates data, $\dataVector$, to $\mappingFunctionVector$.
 
@@ -87,7 +87,7 @@ $$p(\dataVector)=\int p(\dataVector|\mappingFunctionVector)p(\inducingVector|\ma
 \includesvg{../slides/diagrams/gp/pygfpugfpf.svg}
 }
 
-### Variational Compression {.slide: data-transition="none"}
+\newslide{Variational Compression}
 
 \columns{
 $$p(\dataVector)=\int \int p(\dataVector|\mappingFunctionVector)p(\mappingFunctionVector|\inducingVector)\text{d}\mappingFunctionVector p(\inducingVector)\text{d}\inducingVector$$
@@ -95,7 +95,7 @@ $$p(\dataVector)=\int \int p(\dataVector|\mappingFunctionVector)p(\mappingFuncti
 \includesvg{../slides/diagrams/gp/pygfpfgupu.svg}
 }
 
-### Variational Compression {.slide: data-transition="none"}
+\newslide{Variational Compression}
 
 \columns{
 $$p(\dataVector)=\int \int p(\dataVector|\mappingFunctionVector)p(\mappingFunctionVector|\inducingVector)\text{d}\mappingFunctionVector p(\inducingVector)\text{d}\inducingVector$$
@@ -103,7 +103,7 @@ $$p(\dataVector)=\int \int p(\dataVector|\mappingFunctionVector)p(\mappingFuncti
 \includesvg{../slides/diagrams/gp/pygfpfgupu2.svg}
 }
 
-### Variational Compression {.slide: data-transition="none"}
+\newslide{Variational Compression}
 
 \columns{
 $$p(\dataVector|\inducingVector)=\int p(\dataVector|\mappingFunctionVector)p(\mappingFunctionVector|\inducingVector)\text{d}\mappingFunctionVector$$
@@ -111,7 +111,7 @@ $$p(\dataVector|\inducingVector)=\int p(\dataVector|\mappingFunctionVector)p(\ma
 \includesvg{../slides/diagrams/gp/pygfpfgu.svg}
 }
 
-### Variational Compression {.slide: data-transition="none"}
+\newslide{Variational Compression}
 
 \columns{
 $$p(\dataVector|\inducingVector)$$
@@ -119,7 +119,7 @@ $$p(\dataVector|\inducingVector)$$
 \includesvg{../slides/diagrams/gp/pygu.svg}
 }
 
-### Variational Compression {.slide: data-transition="none"}
+\newslide{Variational Compression}
 
 \columns{
 $$p(\dataVector|\paramVector)$$
@@ -127,7 +127,7 @@ $$p(\dataVector|\paramVector)$$
 \includesvg{../slides/diagrams/gp/pygtheta.svg}
 }
 
-### Compression
+\newslide{Compression}
 
 * Replace true $p(\inducingVector|\dataVector)$ with approximation $q(\inducingVector|\dataVector)$.
 
@@ -145,18 +145,18 @@ $$\dataVector|\mappingFunctionVector = \prod_{i} \gaussianSamp{\mappingFunction}
 
 <!--Variational Compression-->
 
-\include{../../_gp/includes/variational_compression.md}
-\include{../../_gp/includes/low_rank_variational.md}
-\include{../../_gplvm/includes/bayes_gplvm_intro.md}
-\include{../../_gplvm/includes/variational_bayes_gplvm_long.md}
-\include{../../_gplvm/includes/nested_variational_compression.md}
-\include{../../_gp/includes/larger_gaussian.md}
+\include{_gp/includes/variational_compression.md}
+\include{_gp/includes/low_rank_variational.md}
+\include{_gplvm/includes/bayes_gplvm_intro.md}
+\include{_gplvm/includes/variational_bayes_gplvm_long.md}
+\include{_gplvm/includes/nested_variational_compression.md}
+\include{_gp/includes/larger_gaussian.md}
 
-### Efficient Computation
+\newslide{Efficient Computation}
 
 * Thang and Turner paper
 
-### Other Limitations 
+\newslide{Other Limitations}
 
 * Joint Gaussianity is analytic, but not flexible.
 

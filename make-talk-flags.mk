@@ -6,6 +6,7 @@ POSTSHEADER=../posts-header.html
 PP=gpp
 PPFLAGS=-T 
 PPFLAGS=-I./..
-PDFLAGS=--filter pandoc-citeproc --csl=../elsevier-harvard.csl --mathjax=${MATHJAX} 
-PDSFLAGS=-s -S ${PDFLAGS}
-SFLAGS=--slide-level 3 
+BIBFLAGS=--bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib 
+TEXFLAGS=--filter pandoc-citeproc --csl=../elsevier-harvard.csl --mathjax=${MATHJAX} ${BIBFLAGS}
+PDSFLAGS=-s -S ${TEXFLAGS}
+SFLAGS=--slide-level 3

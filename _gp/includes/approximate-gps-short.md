@@ -1,26 +1,26 @@
 \slides{
-### Approximations
+\newslide{Approximations}
 
-\includeimg{../slides/diagrams/sparse-gps-1.png}{90%}{}{center}
+\includepng{../slides/diagrams/sparse-gps-1}{90%}
 \caption{Image credit: Kai Arulkumaran}
 
-### Approximations
+\newslide{Approximations}
 
-\includeimg{../slides/diagrams/sparse-gps-2.png}{90%}{}{center}
+\includepng{../slides/diagrams/sparse-gps-2}{90%}
 \caption{Image credit: Kai Arulkumaran}
 
-### Approximations
+\newslide{Approximations}
 
-\includeimg{../slides/diagrams/sparse-gps-3.png}{45%}{}{center}
+\includepng{../slides/diagrams/sparse-gps-3}{45%}
 \caption{Image credit: Kai Arulkumaran}
 
-### Approximations
+\newslide{Approximations}
 
-\includeimg{../slides/diagrams/sparse-gps-4.png}{45%}{}{center}
+\includepng{../slides/diagrams/sparse-gps-4}{45%}
 \caption{Image credit: Kai Arulkumaran}
 }
 
-\notesfigure{\includeimg{../slides/diagrams/sparse-gps.jpg}{45%}{}{center}}
+\notesfigure{\includejpg{../slides/diagrams/sparse-gps.jpg}{45%}}
 \notes{\caption{Image credit: Kai Arulkumaran}}
 
 \setupcode{import numpy as np
@@ -35,7 +35,7 @@ from gp_tutorial import gpplot}
 \setupcode{np.random.seed(101)}
 
 \notes{
-### A Simple Regression Problem
+\subsection{A Simple Regression Problem}
 
 Here we set up a simple one dimensional regression problem. The input locations, $\inputMatrix$, are in two separate clusters. The response variable, $\dataVector$, is sampled from a Gaussian process with an exponentiated quadratic covariance.}
 
@@ -55,7 +55,7 @@ y = np.random.multivariate_normal(np.zeros(N),k.K(X)+np.eye(N)*np.sqrt(noise_var
 \code{m_full = GPy.models.GPRegression(X,y)
 _ = m_full.optimize(messages=True) # Optimize parameters of covariance function}
 
-\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+\plotcode{fig, ax = plt.subplots(figsize=plot.wide_figsize)
 plot.model_output(m_full, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2)
 xlim = ax.get_xlim()
 ylim = ax.get_ylim()
@@ -79,7 +79,7 @@ m.noise_var = noise_var
 m.inducing_inputs.constrain_fixed()
 display(m)}
 
-\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+\plotcode{fig, ax = plt.subplots(figsize=plot.wide_figsize)
 plot.model_output(m, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2, xlim=xlim, ylim=ylim)
 mlai.write_figure(figure=fig,
                   filename='../slides/diagrams/gp/sparse-demo-constrained-inducing-6-unlearned-gp.svg', 
@@ -93,7 +93,7 @@ mlai.write_figure(figure=fig,
 \code{_ = m.optimize(messages=True)
 display(m)}
 
-\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+\plotcode{fig, ax = plt.subplots(figsize=plot.wide_figsize)
 plot.model_output(m, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2, xlim=xlim, ylim=ylim)
 mlai.write_figure(figure=fig,
                   filename='../slides/diagrams/gp/sparse-demo-full-gp.svg', 
@@ -108,7 +108,7 @@ mlai.write_figure(figure=fig,
 m.inducing_inputs.unconstrain()
 _ = m.optimize(messages=True)}
 
-\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+\plotcode{fig, ax = plt.subplots(figsize=plot.wide_figsize)
 plot.model_output(m, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2,xlim=xlim, ylim=ylim)
 mlai.write_figure(figure=fig,
                   filename='../slides/diagrams/gp/sparse-demo-unconstrained-inducing-6-gp.svg', 
@@ -128,18 +128,18 @@ m.set_Z(np.random.rand(M,1)*12)
 
 _ = m.optimize(messages=True)}
 
-\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+\plotcode{fig, ax = plt.subplots(figsize=plot.wide_figsize)
 plot.model_output(m, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2, xlim=xlim, ylim=ylim)
 mlai.write_figure(figure=fig,
                   filename='../slides/diagrams/gp/sparse-demo-sparse-inducing-8-gp.svg', 
                   transparent=True, frameon=True)}
 
 \slides{
-### Eight Optimized Inducing Variables
+\newslide{Eight Optimized Inducing Variables}
 
 \includesvg{../slides/diagrams/gp/sparse-demo-sparse-inducing-8-gp.svg}
 
-### Full Gaussian Process Fit
+\newslide{Full Gaussian Process Fit}
 
 \includesvg{../slides/diagrams/gp/sparse-demo-full-gp.svg}
 }
@@ -147,7 +147,6 @@ mlai.write_figure(figure=fig,
 \notesfigure{\includesvg{../slides/diagrams/gp/sparse-demo-sparse-inducing-8-gp.svg}
 \includesvg{../slides/diagrams/gp/sparse-demo-full-gp.svg}}
 \notes{\caption{Comparison of the full Gaussian process fit with a sparse Gaussian process using eight inducing varibles. Both inducing variables and parameters are optimized.}}
-
 
 \notes{And we can compare the probability of the result to the full model.}
 \code{print(m.log_likelihood(), m_full.log_likelihood())}

@@ -1,8 +1,7 @@
-### Olympic Data with Bayesian Polynomials
+\subsection{Olympic Data with Bayesian Polynomials}
 
 \notes{Five fold cross validation tests the ability of the model to *interpolate*.}
 
-\slides{
 \setupcode{import mlai
 import pods}
 
@@ -12,7 +11,7 @@ y = data['Y']
 num_data = x.shape[0]
 
 data_limits = [1892, 2020]
-basis = mlai.basis(mlai.polynomial, number=1, data_limits=data_limits)
+basis = mlai.Basis(mlai.polynomial, number=1, data_limits=data_limits)
 
 max_basis = y.shape[0]}
 
@@ -33,47 +32,48 @@ from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('olympic_BLM_polynomial_number{num_basis:0>3}.svg', 
                             directory='../slides/diagrams/ml/', 
 							num_basis=IntSlider(1, 1, 27, 1))}
-}
+
 
 \slides{
-\startslides{olympic_BLM_polynomial_number}{1}{26}
-\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number001.svg}{}{olympic_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number002.svg}{}{olympic_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number003.svg}{}{olympic_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number004.svg}{}{olympic_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number005.svg}{}{olympic_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number006.svg}{}{olympic_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number007.svg}{}{olympic_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number008.svg}{}{olympic_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number009.svg}{}{olympic_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number010.svg}{}{olympic_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number011.svg}{}{olympic_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number012.svg}{}{olympic_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number013.svg}{}{olympic_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number014.svg}{}{olympic_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number015.svg}{}{olympic_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number016.svg}{}{olympic_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number017.svg}{}{olympic_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number018.svg}{}{olympic_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number019.svg}{}{olympic_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number020.svg}{}{olympic_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number021.svg}{}{olympic_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number022.svg}{}{olympic_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number023.svg}{}{olympic_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number024.svg}{}{olympic_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number025.svg}{}{olympic_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number026.svg}{}{olympic_BLM_polynomial_number}
+\startanimation{olympic_BLM_polynomial_number}{1}{26}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number001.svg}}{olympic_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number002.svg}}{olympic_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number003.svg}}{olympic_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number004.svg}}{olympic_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number005.svg}}{olympic_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number006.svg}}{olympic_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number007.svg}}{olympic_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number008.svg}}{olympic_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number009.svg}}{olympic_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number010.svg}}{olympic_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number011.svg}}{olympic_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number012.svg}}{olympic_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number013.svg}}{olympic_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number014.svg}}{olympic_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number015.svg}}{olympic_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number016.svg}}{olympic_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number017.svg}}{olympic_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number018.svg}}{olympic_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number019.svg}}{olympic_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number020.svg}}{olympic_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number021.svg}}{olympic_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number022.svg}}{olympic_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number023.svg}}{olympic_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number024.svg}}{olympic_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number025.svg}}{olympic_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number026.svg}}{olympic_BLM_polynomial_number}
+\endanimation
 }
 
-\notesfigure{\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number026.svg}{}{}}
+\notesfigure{\includesvg{../slides/diagrams/ml/olympic_BLM_polynomial_number026.svg}}{}}
 \notes{\caption{Bayesian fit with 26th degree polynomial and negative marginal log likelihood.}}
 
 
-### Hold Out Validation
+\subsection{Hold Out Validation}
 
 \notes{For the polynomial fit, we will now look at *hold out* validation, where we are holding out some of the most recent points. This tests the abilit of our model to *extrapolate*.}
 
-\slides{
+\setupplotcode{import teaching_plots as plot}
 \plotcode{plot.holdout_fit(x, y, param_name='number', param_range=(1, 27),
               diagrams='../slides/diagrams/ml',
               model=mlai.BLM, 
@@ -89,46 +89,45 @@ from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('olympic_val_BLM_polynomial_number{num_basis:0>3}.svg', 
                             directory='../slides/diagrams/ml', 
                             num_basis=IntSlider(1, 1, 27, 1))}
-}
 
 \slides{
-\startslides{olympic_val_BLM_polynomial_number}{1}{26}
-\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number001.svg}{}{olympic_val_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number002.svg}{}{olympic_val_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number003.svg}{}{olympic_val_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number004.svg}{}{olympic_val_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number005.svg}{}{olympic_val_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number006.svg}{}{olympic_val_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number007.svg}{}{olympic_val_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number008.svg}{}{olympic_val_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number009.svg}{}{olympic_val_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number010.svg}{}{olympic_val_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number011.svg}{}{olympic_val_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number012.svg}{}{olympic_val_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number013.svg}{}{olympic_val_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number014.svg}{}{olympic_val_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number015.svg}{}{olympic_val_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number016.svg}{}{olympic_val_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number017.svg}{}{olympic_val_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number018.svg}{}{olympic_val_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number019.svg}{}{olympic_val_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number020.svg}{}{olympic_val_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number021.svg}{}{olympic_val_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number022.svg}{}{olympic_val_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number023.svg}{}{olympic_val_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number024.svg}{}{olympic_val_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number025.svg}{}{olympic_val_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number026.svg}{}{olympic_val_BLM_polynomial_number}
+\startanimation{olympic_val_BLM_polynomial_number}{1}{26}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number001.svg}}{olympic_val_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number002.svg}}{olympic_val_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number003.svg}}{olympic_val_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number004.svg}}{olympic_val_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number005.svg}}{olympic_val_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number006.svg}}{olympic_val_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number007.svg}}{olympic_val_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number008.svg}}{olympic_val_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number009.svg}}{olympic_val_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number010.svg}}{olympic_val_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number011.svg}}{olympic_val_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number012.svg}}{olympic_val_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number013.svg}}{olympic_val_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number014.svg}}{olympic_val_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number015.svg}}{olympic_val_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number016.svg}}{olympic_val_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number017.svg}}{olympic_val_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number018.svg}}{olympic_val_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number019.svg}}{olympic_val_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number020.svg}}{olympic_val_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number021.svg}}{olympic_val_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number022.svg}}{olympic_val_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number023.svg}}{olympic_val_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number024.svg}}{olympic_val_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number025.svg}}{olympic_val_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number026.svg}}{olympic_val_BLM_polynomial_number}
+\endanimation
 }
 
-\notesfigure{\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number026.svg}{}{}}
+\notesfigure{\includesvg{../slides/diagrams/ml/olympic_val_BLM_polynomial_number026.svg}}{}
 \notes{\caption{Bayesian fit with 26th degree polynomial and hold out validation scores.}}
 
-### 5-fold Cross Validation
+\subsection{5-fold Cross Validation}
 
 \notes{Five fold cross validation tests the ability of the model to *interpolate*.}
 
-\slides{
 \plotcode{num_parts=5
 plot.cv_fit(x, y, param_name='number', param_range=(1, 27),  
             diagrams='../slides/diagrams/ml',
@@ -147,37 +146,38 @@ from ipywidgets import IntSlider}
 							part=(0, 5), 
 							num_basis=IntSlider(1, 1, 27, 1))}
 
-}
+
 
 \slides{
-\startslides{olympic_5cv05_BLM_polynomial_number}{1}{26}
-\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number001.svg}{}{olympic_5cv05_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number002.svg}{}{olympic_5cv05_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number003.svg}{}{olympic_5cv05_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number004.svg}{}{olympic_5cv05_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number005.svg}{}{olympic_5cv05_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number006.svg}{}{olympic_5cv05_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number007.svg}{}{olympic_5cv05_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number008.svg}{}{olympic_5cv05_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number009.svg}{}{olympic_5cv05_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number010.svg}{}{olympic_5cv05_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number011.svg}{}{olympic_5cv05_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number012.svg}{}{olympic_5cv05_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number013.svg}{}{olympic_5cv05_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number014.svg}{}{olympic_5cv05_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number015.svg}{}{olympic_5cv05_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number016.svg}{}{olympic_5cv05_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number017.svg}{}{olympic_5cv05_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number018.svg}{}{olympic_5cv05_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number019.svg}{}{olympic_5cv05_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number020.svg}{}{olympic_5cv05_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number021.svg}{}{olympic_5cv05_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number022.svg}{}{olympic_5cv05_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number023.svg}{}{olympic_5cv05_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number024.svg}{}{olympic_5cv05_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number025.svg}{}{olympic_5cv05_BLM_polynomial_number}
-\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number026.svg}{}{olympic_5cv05_BLM_polynomial_number}
+\startanimation{olympic_5cv05_BLM_polynomial_number}{1}{26}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number001.svg}}{olympic_5cv05_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number002.svg}}{olympic_5cv05_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number003.svg}}{olympic_5cv05_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number004.svg}}{olympic_5cv05_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number005.svg}}{olympic_5cv05_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number006.svg}}{olympic_5cv05_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number007.svg}}{olympic_5cv05_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number008.svg}}{olympic_5cv05_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number009.svg}}{olympic_5cv05_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number010.svg}}{olympic_5cv05_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number011.svg}}{olympic_5cv05_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number012.svg}}{olympic_5cv05_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number013.svg}}{olympic_5cv05_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number014.svg}}{olympic_5cv05_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number015.svg}}{olympic_5cv05_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number016.svg}}{olympic_5cv05_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number017.svg}}{olympic_5cv05_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number018.svg}}{olympic_5cv05_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number019.svg}}{olympic_5cv05_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number020.svg}}{olympic_5cv05_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number021.svg}}{olympic_5cv05_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number022.svg}}{olympic_5cv05_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number023.svg}}{olympic_5cv05_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number024.svg}}{olympic_5cv05_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number025.svg}}{olympic_5cv05_BLM_polynomial_number}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number026.svg}}{olympic_5cv05_BLM_polynomial_number}
+\endanimation
 }
 
-\notesfigure{\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number026.svg}{}{}}
+\notesfigure{\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number026.svg}}{}
 \notes{\caption{Bayesian fit with 26th degree polynomial and five fold cross validation scores.}}

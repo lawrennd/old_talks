@@ -31,17 +31,18 @@ from ipywidgets import IntSlider}
                             directory='../slides/diagrams/ml', samp=IntSlider(0, 0, 10, 1))}
 
 \slides{
-\startslides{under_determined_system}{1}{3}
-\includesvg{../slides/diagrams/ml/under_determined_system000.svg}{}{under_determined_system}
-\includesvg{../slides/diagrams/ml/under_determined_system001.svg}{}{under_determined_system}
-\includesvg{../slides/diagrams/ml/under_determined_system002.svg}{}{under_determined_system}
-\includesvg{../slides/diagrams/ml/under_determined_system003.svg}{}{under_determined_system}
-\includesvg{../slides/diagrams/ml/under_determined_system004.svg}{}{under_determined_system}
-\includesvg{../slides/diagrams/ml/under_determined_system005.svg}{}{under_determined_system}
-\includesvg{../slides/diagrams/ml/under_determined_system006.svg}{}{under_determined_system}
-\includesvg{../slides/diagrams/ml/under_determined_system007.svg}{}{under_determined_system}
-\includesvg{../slides/diagrams/ml/under_determined_system008.svg}{}{under_determined_system}
-\includesvg{../slides/diagrams/ml/under_determined_system009.svg}{}{under_determined_system}
+\startanimation{under_determined_system}{1}{3}
+\newframe{\includesvg{../slides/diagrams/ml/under_determined_system000.svg}}{under_determined_system}
+\newframe{\includesvg{../slides/diagrams/ml/under_determined_system001.svg}}{under_determined_system}
+\newframe{\includesvg{../slides/diagrams/ml/under_determined_system002.svg}}{under_determined_system}
+\newframe{\includesvg{../slides/diagrams/ml/under_determined_system003.svg}}{under_determined_system}
+\newframe{\includesvg{../slides/diagrams/ml/under_determined_system004.svg}}{under_determined_system}
+\newframe{\includesvg{../slides/diagrams/ml/under_determined_system005.svg}}{under_determined_system}
+\newframe{\includesvg{../slides/diagrams/ml/under_determined_system006.svg}}{under_determined_system}
+\newframe{\includesvg{../slides/diagrams/ml/under_determined_system007.svg}}{under_determined_system}
+\newframe{\includesvg{../slides/diagrams/ml/under_determined_system008.svg}}{under_determined_system}
+\newframe{\includesvg{../slides/diagrams/ml/under_determined_system009.svg}}{under_determined_system}
+\endanimation
 }
 
 \notesfigure{\includesvg{../slides/diagrams/ml/under_determined_system009.svg}}

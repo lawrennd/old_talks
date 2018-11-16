@@ -1,13 +1,12 @@
 \include{_ml/includes/what-is-ml.md}
 
-### Artificial Intelligence
+\newslides{Artificial Intelligence}
 \slides{
 * Machine learning is a mainstay because of importance of prediction.
 }
-\notes{
-}
+\notes{}
 
-### Uncertainty
+\newslides{Uncertainty}
 
 \slides{
 * Uncertainty in prediction arises from:
@@ -29,12 +28,12 @@ There are also challenges around specification of the objective function, but fo
 \include{_ml/includes/graphical-models.md}
 \include{_ml/includes/performing-inference.md}
 
-### Multivariate Gaussian Properties
+\newslides{Multivariate Gaussian Properties}
 
 \include{_ml/includes/multivariate-gaussian-properties-summary.md}
 
 \slides{
-### Linear Gaussian Models
+\newslides{Linear Gaussian Models}
 }\notes{Gaussian processes are initially of interest because}
 
 1. linear Gaussian models are easier to deal with 
@@ -48,11 +47,11 @@ There are also challenges around specification of the objective function, but fo
 
 <!-- include{_ml/includes/two-d-gaussian.md} -->
 
-### Distributions over Functions
+\newslides{Distributions over Functions}
 
 \include{_gp/includes/gpdistfunc.md}
 
-###  Key Object
+\newslides{Key Object}
 
 * Covariance function, $\kernelMatrix$
 
@@ -61,7 +60,7 @@ There are also challenges around specification of the objective function, but fo
 * Function of $\inputMatrix$,
     $$\kernelScalar_{i,j} = \kernelScalar(\inputVector_i, \inputVector_j)$$
 
-###  Linear Algebra
+\newslides{Linear Algebra}
 
 * Posterior mean
 
@@ -72,7 +71,7 @@ There are also challenges around specification of the objective function, but fo
     $$\mathbf{C}_* = \kernelMatrix_{*,*} - \kernelMatrix_{*,\mappingFunctionVector}
 \kernelMatrix^{-1} \kernelMatrix_{\mappingFunctionVector, *}$$
 
-###  Linear Algebra
+\newslides{Linear Algebra}
 
 * Posterior mean
 
@@ -82,15 +81,15 @@ There are also challenges around specification of the objective function, but fo
     $$\covarianceMatrix_* = \kernelMatrix_{*,*} - \kernelMatrix_{*,\mappingFunctionVector}
 \kernelMatrix^{-1} \kernelMatrix_{\mappingFunctionVector, *}$$
 
-### 
+\newslides{}
 
 \includesvg{../slides/diagrams/gp_prior_samples_data.svg}
 
-### 
+\newslides{}
 
 \includesvg{../slides/diagrams/gp_rejection_samples.svg}
 
-### 
+\newslides{}
 
 \includesvg{../slides/diagrams/gp_prediction.svg}
 
