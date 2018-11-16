@@ -1,8 +1,6 @@
 \section{The Gartner Hype Cycle}
 
-\slides{
-### Gartner Hype Cycle
-}
+\newslide{Gartner Hype Cycle}
 
 \includeimg{../slides/diagrams/Gartner_Hype_Cycle.png}{70%}{negate}{center}
 

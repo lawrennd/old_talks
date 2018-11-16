@@ -7,11 +7,12 @@ from ipywidgets import IntSlider}
 \newslide{Prediction of $\mappingFunction_{2}$ from $\mappingFunction_{1}$}
 
 \slides{
-\startslides{two_point_sample2}{9}{12}
-\includesvg{../slides/diagrams/gp/two_point_sample009.svg}{}{two_point_sample2}
-\includesvg{../slides/diagrams/gp/two_point_sample010.svg}{}{two_point_sample2}
-\includesvg{../slides/diagrams/gp/two_point_sample011.svg}{}{two_point_sample2}
-\includesvg{../slides/diagrams/gp/two_point_sample012.svg}{}{two_point_sample2}
+\startanimation{two_point_sample2}{9}{12}
+\newframe{\includesvg{../slides/diagrams/gp/two_point_sample009.svg}}{two_point_sample2}
+\newframe{\includesvg{../slides/diagrams/gp/two_point_sample010.svg}}{two_point_sample2}
+\newframe{\includesvg{../slides/diagrams/gp/two_point_sample011.svg}}{two_point_sample2}
+\newframe{\includesvg{../slides/diagrams/gp/two_point_sample012.svg}}{two_point_sample2}
+\endanimation
 }
 
 \notesfigure{\includesvg{../slides/diagrams/gp/two_point_sample012.svg}{}}

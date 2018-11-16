@@ -12,14 +12,15 @@ from ipywidgets import IntSlider}
 							fig=IntSlider(0, 0, 7, 1))}
 
 \slides{
-\startslides{independent_height_weight}{0}{7}
-\includesvg{../slides/diagrams/ml/independent_height_weight000.svg}{}{independent_height_weight}
-\includesvg{../slides/diagrams/ml/independent_height_weight001.svg}{}{independent_height_weight}
-\includesvg{../slides/diagrams/ml/independent_height_weight002.svg}{}{independent_height_weight}
-\includesvg{../slides/diagrams/ml/independent_height_weight003.svg}{}{independent_height_weight}
-\includesvg{../slides/diagrams/ml/independent_height_weight004.svg}{}{independent_height_weight}
-\includesvg{../slides/diagrams/ml/independent_height_weight005.svg}{}{independent_height_weight}
-\includesvg{../slides/diagrams/ml/independent_height_weight006.svg}{}{independent_height_weight}
-\includesvg{../slides/diagrams/ml/independent_height_weight007.svg}{}{independent_height_weight}
+\startanimation{independent_height_weight}{0}{7}
+\newframe{\includesvg{../slides/diagrams/ml/independent_height_weight000.svg}}{independent_height_weight}
+\newframe{\includesvg{../slides/diagrams/ml/independent_height_weight001.svg}}{independent_height_weight}
+\newframe{\includesvg{../slides/diagrams/ml/independent_height_weight002.svg}}{independent_height_weight}
+\newframe{\includesvg{../slides/diagrams/ml/independent_height_weight003.svg}}{independent_height_weight}
+\newframe{\includesvg{../slides/diagrams/ml/independent_height_weight004.svg}}{independent_height_weight}
+\newframe{\includesvg{../slides/diagrams/ml/independent_height_weight005.svg}}{independent_height_weight}
+\newframe{\includesvg{../slides/diagrams/ml/independent_height_weight006.svg}}{independent_height_weight}
+\newframe{\includesvg{../slides/diagrams/ml/independent_height_weight007.svg}}{independent_height_weight}
+\endanimation
 }
 \notesfigure{\includesvg{../slides/diagrams/ml/independent_height_weight007.svg}{}}\notes{\caption{Samples from independent Gaussian variables that might represent heights and weights.}}

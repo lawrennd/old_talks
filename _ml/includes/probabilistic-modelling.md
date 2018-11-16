@@ -42,7 +42,7 @@ Normally assume independence:
 }\notes{
 The likelihood of the data is normally assumed to be independent across the parameters,
 }$$
-p(\dataVector|\inputMatrix, \mappingMatrix) \prod_{i=1}^\numData p(\dataScalar_i|\inputVector_i, \mappingMatrix),$$
+p(\dataVector|\inputMatrix, \mappingMatrix) = \prod_{i=1}^\numData p(\dataScalar_i|\inputVector_i, \mappingMatrix),$$
 \notes{
 and if that is so, it is easy to extend our predictions across all future, potential, locations,
 $$

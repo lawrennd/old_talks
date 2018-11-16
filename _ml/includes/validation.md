@@ -14,7 +14,7 @@ y = data['Y']}
 
 We can plot them to check that they've loaded in correctly.
 
-\setupcode{%matplotlib inline
+\setupplotcode{%matplotlib inline
 import matplotlib.pyplot as plt}
 
 \plotcode{plt.plot(x, y, 'rx')}

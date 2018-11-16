@@ -5,6 +5,7 @@
 * Instead of $\dataScalar=-1$ for negative class we take $\dataScalar=0$.}
 \notes{Our focus has been on models where the objective function is inspired by a probabilistic analysis of the problem. In particular we've argued that we answer questions about the data set by placing probability distributions over the various quantities of interest. For the case of binary classification this will normally involve introducing probability distributions for discrete variables. Such probability distributions, are in some senses easier than those for continuous variables, in particular we can represent a probability distribution over $\dataScalar$, where $\dataScalar$ is binary, with one value. If we specify the probability that $\dataScalar=1$ with a number that is between 0 and 1, i.e. let's say that $P(\dataScalar=1) = \pi$ (here we don't mean $\pi$ the number, we are setting $\pi$ to be a variable) then we can specify the probability distribution through a table.}
 
+
 | $\dataScalar$      | 0  | 1     |
 |:------:|:---------:|:-----:|
 | $P(\dataScalar)$ | $(1-\pi)$ | $\pi$ |
@@ -78,17 +79,17 @@ import teaching_plots as plot}
 plot.bayes_billiard(ax, diagrams='../slides/diagrams/ml/')}
 
 \slides{
-\startslides{bayes_billiard}{1}{10}
-\div{\includesvg{../slides/diagrams/ml/bayes-billiard000.svg}}{bayes_billiard}{text-align:center}
-\div{\includesvg{../slides/diagrams/ml/bayes-billiard001.svg}}{bayes_billiard}{text-align:center}
-\div{\includesvg{../slides/diagrams/ml/bayes-billiard002.svg}}{bayes_billiard}{text-align:center}
-\div{\includesvg{../slides/diagrams/ml/bayes-billiard003.svg}}{bayes_billiard}{text-align:center}
-\div{\includesvg{../slides/diagrams/ml/bayes-billiard004.svg}}{bayes_billiard}{text-align:center}
-\div{\includesvg{../slides/diagrams/ml/bayes-billiard005.svg}}{bayes_billiard}{text-align:center}
-\div{\includesvg{../slides/diagrams/ml/bayes-billiard006.svg}}{bayes_billiard}{text-align:center}
-\div{\includesvg{../slides/diagrams/ml/bayes-billiard007.svg}}{bayes_billiard}{text-align:center}
-\div{\includesvg{../slides/diagrams/ml/bayes-billiard008.svg}}{bayes_billiard}{text-align:center}
-\div{\includesvg{../slides/diagrams/ml/bayes-billiard009.svg}}{bayes_billiard}{text-align:center}
+\startanimation{bayes_billiard}{1}{10}
+\newframe{\includesvg{../slides/diagrams/ml/bayes-billiard000.svg}}{bayes_billiard}
+\newframe{\includesvg{../slides/diagrams/ml/bayes-billiard001.svg}}{bayes_billiard}
+\newframe{\includesvg{../slides/diagrams/ml/bayes-billiard002.svg}}{bayes_billiard}
+\newframe{\includesvg{../slides/diagrams/ml/bayes-billiard003.svg}}{bayes_billiard}
+\newframe{\includesvg{../slides/diagrams/ml/bayes-billiard004.svg}}{bayes_billiard}
+\newframe{\includesvg{../slides/diagrams/ml/bayes-billiard005.svg}}{bayes_billiard}
+\newframe{\includesvg{../slides/diagrams/ml/bayes-billiard006.svg}}{bayes_billiard}
+\newframe{\includesvg{../slides/diagrams/ml/bayes-billiard007.svg}}{bayes_billiard}
+\newframe{\includesvg{../slides/diagrams/ml/bayes-billiard008.svg}}{bayes_billiard}
+\newframe{\includesvg{../slides/diagrams/ml/bayes-billiard009.svg}}{bayes_billiard}
 }
 \notesfigure{\div{\includesvg{../slides/diagrams/ml/bayes-billiard009.svg}}{}{text-align:center}}
 

@@ -1,6 +1,6 @@
 OUT=$(DATE)-$(BASE)
 
-all: ${BASE}.slides.html ${BASE}.notes.html ${BASE}.posts.html ${BASE}.slides.ipynb ${BASE}.ipynb ${BASE}.notes.pdf 
+all: ${BASE}.slides.html ${BASE}.notes.html ${BASE}.posts.html ${BASE}.slides.ipynb ${BASE}.ipynb ${BASE}.notes.tex
 
 ${BASE}.slides.html: ${BASE}.slides.md
 	printf '' > ../include.tmp
@@ -13,11 +13,20 @@ ${BASE}.slides.html: ${BASE}.slides.md
 	cp ${BASE}.slides.html ../slides/${OUT}.slides.html
 	rm ../include.tmp
 
-${BASE}.notes.pdf: ${BASE}.notes.md
-	pandoc  -B ../_includes/talk-notation.tex ${PDFLAGS} --bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib -o ${BASE}.notes.pdf  ${BASE}.notes.md 
+${BASE}.notes.pdf: ${BASE}.notes.tex
+	pdflatex ${BASE}.notes.tex
+
+${BASE}.notes.tex: ${BASE}.notes.md
+	pandoc  --template pandoc-notes-tex-template \
+		-B ../_includes/talk-notation.tex \
+		${PDSFLAGS} \
+		-o ${BASE}.notes.tex  \
+		${BASE}.notes.md 
 
 ${BASE}.notes.html: ${BASE}.notes.md
-	pandoc  ${PDSFLAGS} --bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib -o ${BASE}.notes.html  ${BASE}.notes.md 
+	pandoc  ${PDSFLAGS} \
+		-o ${BASE}.notes.html  \
+		${BASE}.notes.md 
 
 ${BASE}.posts.html: ${BASE}.notes.md
 	pandoc --template pandoc-jekyll-talk-template ${PDFLAGS} \

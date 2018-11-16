@@ -23,7 +23,7 @@ two_figsize = (10, 5)
 one_figsize = (5, 5)
 big_figsize = (7, 7)
 wide_figsize = (7, 3.5)
-big_wide_figsize = (12, 6)
+big_wide_figsize = (10, 6)
 hcolor = [1., 0., 1.] # highlighting color
 
 notation_map={'variance': '\\alpha',

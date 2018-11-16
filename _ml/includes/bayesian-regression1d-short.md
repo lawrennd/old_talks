@@ -33,11 +33,13 @@ import pods}
                             diagrams='../slides/diagrams/ml', 
 							stage=IntSlider(1, 1, 3, 1))}
 \slides{
-\startslides{dem_gaussian}{1}{3}
-\includesvg{../slides/diagrams/ml/dem_gaussian001.svg}{}{dem_gaussian}
-\includesvg{../slides/diagrams/ml/dem_gaussian002.svg}{}{dem_gaussian}
-\includesvg{../slides/diagrams/ml/dem_gaussian003.svg}{}{dem_gaussian}
+\startanimation{dem_gaussian}{1}{3}
+\newframe{\includesvg{../slides/diagrams/ml/dem_gaussian001.svg}}{dem_gaussian}
+\newframe{\includesvg{../slides/diagrams/ml/dem_gaussian002.svg}}{dem_gaussian}
+\newframe{\includesvg{../slides/diagrams/ml/dem_gaussian003.svg}}{dem_gaussian}
+\endanimation
 }
+
 \notesfigure{\includesvg{../slides/diagrams/ml/dem_gaussian003.svg}}
 \notes{\caption{Combining a Gaussian likelihood with a Gaussian prior to form a Gaussian posterior}}
 

@@ -62,7 +62,7 @@
       </script>
 </head>
 <body>
-$$\newcommand{\Amatrix}{\mathbf{A}}
+\[\newcommand{\Amatrix}{\mathbf{A}}
 \newcommand{\KL}[2]{\text{KL}\left( #1\,\|\,#2 \right)}
 \newcommand{\Kaast}{\kernelMatrix_{\mathbf{ \ast}\mathbf{ \ast}}}
 \newcommand{\Kastu}{\kernelMatrix_{\mathbf{ \ast} \inducingVector}}
@@ -354,7 +354,7 @@ $$\newcommand{\Amatrix}{\mathbf{A}}
 \newcommand{\weightedAdjacencyVector}{\mathbf{ \weightedAdjacencyScalar}}
 \newcommand{\onesVector}{\mathbf{1}}
 \newcommand{\zerosVector}{\mathbf{0}}
-$$
+\]
   <div class="reveal">
     <div class="slides">
 
@@ -368,13 +368,16 @@ $$
 <section class="slide level3">
 
 <!-- To compile -->
+<!-- Enables links to pages-->
 <p><!--% not ipynb--></p>
 <p><!--% not notes--></p>
 </section>
 <section id="section" class="slide level3">
 <h3></h3>
-<p><img class="" src="../slides/diagrams/gp/rasmussen-williams-book.jpg" width="50%" align="" style="background:none; border:none; box-shadow:none;"></p>
-<p><span align="right"><span class="citation" data-cites="Rasmussen:book06">Rasmussen and Williams (2006)</span></span></p>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/gp/rasmussen-williams-book.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
+<p><span style="text-align:right"><span class="citation" data-cites="Rasmussen:book06">Rasmussen and Williams (2006)</span></span></p>
 <!-- SECTION What is Machine Learning? -->
 </section>
 <section id="what-is-machine-learning" class="slide level3">
@@ -406,21 +409,11 @@ $$
 <section id="what-is-machine-learning-1" class="slide level3">
 <h3>What is Machine Learning?</h3>
 <p><span class="math display">\[\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span></p>
-<div class="fragment">
 <ul>
-<li>To combine data with a model need:</li>
+<li class="fragment">To combine data with a model need:</li>
+<li class="fragment"><strong>a prediction function</strong> <span class="math inline">\(\mappingFunction(\cdot)\)</span> includes our beliefs about the regularities of the universe</li>
+<li class="fragment"><strong>an objective function</strong> <span class="math inline">\(\errorFunction(\cdot)\)</span> defines the cost of misprediction.</li>
 </ul>
-</div>
-<div class="fragment">
-<ul>
-<li><strong>a prediction function</strong> <span class="math inline">\(\mappingFunction(\cdot)\)</span> includes our beliefs about the regularities of the universe</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><strong>an objective function</strong> <span class="math inline">\(\errorFunction(\cdot)\)</span> defines the cost of misprediction.</li>
-</ul>
-</div>
 </section>
 <section id="olympic-marathon-data" class="slide level3">
 <h3>Olympic Marathon Data</h3>
@@ -435,15 +428,22 @@ $$
 </ul>
 </td>
 <td width="30%">
-<img src="../slides/diagrams/Stephen_Kiprotich.jpg" alt="image" /> <small>Image from Wikimedia Commons <a href="http://bit.ly/16kMKHQ" class="uri">http://bit.ly/16kMKHQ</a></small>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/Stephen_Kiprotich.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
+<small>Image from Wikimedia Commons <a href="http://bit.ly/16kMKHQ" class="uri">http://bit.ly/16kMKHQ</a></small>
 </td>
 </tr>
 </table>
 </section>
 <section id="olympic-marathon-data-1" class="slide level3">
 <h3>Olympic Marathon Data</h3>
-<object class="svgplot " align data="../slides/diagrams/datasets/olympic-marathon.svg">
+<div style="text-align:center">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/datasets/olympic-marathon.svg" style>
 </object>
+</div>
+</div>
 </section>
 <section id="overdetermined-system" class="slide level3">
 <h3>Overdetermined System</h3>
@@ -453,13 +453,55 @@ $$
 <script>
 showDivs(1, 'over_determined_system');
 </script>
+<input id="range-over_determined_system" type="range" min="1" max="8" value="1" onchange="setDivs('over_determined_system')" oninput="setDivs('over_determined_system')">
 <button onclick="plusDivs(-1, 'over_determined_system')">
 ❮
 </button>
 <button onclick="plusDivs(1, 'over_determined_system')">
 ❯
 </button>
-<p><input id="range-over_determined_system" type="range" min="1" max="8" value="1" onchange="setDivs('over_determined_system')" oninput="setDivs('over_determined_system')"> <object class="svgplot over_determined_system" align="" data="../slides/diagrams/ml/over_determined_system001.svg"></object> <object class="svgplot over_determined_system" align="" data="../slides/diagrams/ml/over_determined_system002.svg"></object> <object class="svgplot over_determined_system" align="" data="../slides/diagrams/ml/over_determined_system003.svg"></object> <object class="svgplot over_determined_system" align="" data="../slides/diagrams/ml/over_determined_system004.svg"></object> <object class="svgplot over_determined_system" align="" data="../slides/diagrams/ml/over_determined_system005.svg"></object> <object class="svgplot over_determined_system" align="" data="../slides/diagrams/ml/over_determined_system006.svg"></object> <object class="svgplot over_determined_system" align="" data="../slides/diagrams/ml/over_determined_system007.svg"></object></p>
+<div class="over_determined_system" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/over_determined_system001.svg" style>
+</object>
+</div>
+</div>
+<div class="over_determined_system" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/over_determined_system002.svg" style>
+</object>
+</div>
+</div>
+<div class="over_determined_system" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/over_determined_system003.svg" style>
+</object>
+</div>
+</div>
+<div class="over_determined_system" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/over_determined_system004.svg" style>
+</object>
+</div>
+</div>
+<div class="over_determined_system" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/over_determined_system005.svg" style>
+</object>
+</div>
+</div>
+<div class="over_determined_system" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/over_determined_system006.svg" style>
+</object>
+</div>
+</div>
+<div class="over_determined_system" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/over_determined_system007.svg" style>
+</object>
+</div>
+</div>
 </section>
 <section id="datascalar-minputscalar-c" class="slide level3">
 <h3><span class="math inline">\(\dataScalar = m\inputScalar + c\)</span></h3>
@@ -480,10 +522,9 @@ showDivs(1, 'over_determined_system');
 </section>
 <section id="section-2" class="slide level3">
 <h3></h3>
-<img class="" src="../slides/diagrams/ml/Pierre-Simon_Laplace.png" width="30%" align="center" style="background:none; border:none; box-shadow:none;"> {
-<center>
-<em>Pierre Simon Laplace </em>
-</center>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/ml/Pierre-Simon_Laplace.png" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
 </section>
 <section id="section-3" class="slide level3">
 <h3></h3>
@@ -492,7 +533,9 @@ showDivs(1, 'over_determined_system');
 </section>
 <section id="section-4" class="slide level3">
 <h3></h3>
-<p><img class="" src="../slides/diagrams/laplacesDeterminismEnglish.png" width="60%" align="center" style="background:none; border:none; box-shadow:none;"></p>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/laplacesDeterminismEnglish.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
 </section>
 <section id="section-5" class="slide level3">
 <h3></h3>
@@ -501,7 +544,9 @@ showDivs(1, 'over_determined_system');
 </section>
 <section id="section-6" class="slide level3">
 <h3></h3>
-<p><img class="" src="../slides/diagrams/philosophicaless00lapliala.png" width="60%" align="center" style="background:none; border:none; box-shadow:none;"></p>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/philosophicaless00lapliala.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
 </section>
 <section id="datascalar-minputscalar-c-noisescalar" class="slide level3">
 <h3><span class="math inline">\(\dataScalar = m\inputScalar + c + \noiseScalar\)</span></h3>
@@ -548,8 +593,10 @@ showDivs(1, 'over_determined_system');
 </section>
 <section id="gaussian-density" class="slide level3">
 <h3>Gaussian Density</h3>
-<object class="svgplot " align data="../slides/diagrams/ml/gaussian_of_height.svg">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/gaussian_of_height.svg" style>
 </object>
+</div>
 <center>
 <em>The Gaussian PDF with <span class="math inline">\({\meanScalar}=1.7\)</span> and variance <span class="math inline">\({\dataStd}^2=0.0225\)</span>. Mean shown as cyan line. It could represent the heights of a population of students. </em>
 </center>
@@ -571,11 +618,11 @@ showDivs(1, 'over_determined_system');
 <section id="sum-of-gaussians" class="slide level3">
 <h3>Sum of Gaussians</h3>
 <div class="fragment">
-<p><span align="left">Sum of Gaussian variables is also Gaussian.</span></p>
+<p><span style="text-align:left">Sum of Gaussian variables is also Gaussian.</span></p>
 <p><span class="math display">\[\dataScalar_i \sim \gaussianSamp{\meanScalar_i}{\sigma_i^2}\]</span></p>
 </div>
 <div class="fragment">
-<p><span align="left">And the sum is distributed as</span></p>
+<p><span style="text-align:left">And the sum is distributed as</span></p>
 <p><span class="math display">\[\sum_{i=1}^{\numData} \dataScalar_i \sim \gaussianSamp{\sum_{i=1}^\numData \meanScalar_i}{\sum_{i=1}^\numData \sigma_i^2}\]</span></p>
 </div>
 <div class="fragment">
@@ -585,13 +632,13 @@ showDivs(1, 'over_determined_system');
 <section id="scaling-a-gaussian" class="slide level3">
 <h3>Scaling a Gaussian</h3>
 <div class="fragment">
-<p><span align="left">Scaling a Gaussian leads to a Gaussian.</span></p>
+<p><span style="text-align:left">Scaling a Gaussian leads to a Gaussian.</span></p>
 </div>
 <div class="fragment">
 <p><span class="math display">\[\dataScalar \sim \gaussianSamp{\meanScalar}{\sigma^2}\]</span></p>
 </div>
 <div class="fragment">
-<p><span align="left">And the scaled variable is distributed as</span></p>
+<p><span style="text-align:left">And the scaled variable is distributed as</span></p>
 <p><span class="math display">\[\mappingScalar \dataScalar \sim \gaussianSamp{\mappingScalar\meanScalar}{\mappingScalar^2 \sigma^2}.\]</span></p>
 </div>
 </section>
@@ -616,17 +663,76 @@ showDivs(1, 'over_determined_system');
 </section>
 <section id="underdetermined-system-1" class="slide level3">
 <h3>Underdetermined System</h3>
-
 <script>
 showDivs(1, 'under_determined_system');
 </script>
+<input id="range-under_determined_system" type="range" min="1" max="3" value="1" onchange="setDivs('under_determined_system')" oninput="setDivs('under_determined_system')">
 <button onclick="plusDivs(-1, 'under_determined_system')">
 ❮
 </button>
 <button onclick="plusDivs(1, 'under_determined_system')">
 ❯
 </button>
-<p><input id="range-under_determined_system" type="range" min="1" max="3" value="1" onchange="setDivs('under_determined_system')" oninput="setDivs('under_determined_system')"> <object class="svgplot under_determined_system" align="" data="../slides/diagrams/ml/under_determined_system000.svg"></object> <object class="svgplot under_determined_system" align="" data="../slides/diagrams/ml/under_determined_system001.svg"></object> <object class="svgplot under_determined_system" align="" data="../slides/diagrams/ml/under_determined_system002.svg"></object> <object class="svgplot under_determined_system" align="" data="../slides/diagrams/ml/under_determined_system003.svg"></object> <object class="svgplot under_determined_system" align="" data="../slides/diagrams/ml/under_determined_system004.svg"></object> <object class="svgplot under_determined_system" align="" data="../slides/diagrams/ml/under_determined_system005.svg"></object> <object class="svgplot under_determined_system" align="" data="../slides/diagrams/ml/under_determined_system006.svg"></object> <object class="svgplot under_determined_system" align="" data="../slides/diagrams/ml/under_determined_system007.svg"></object> <object class="svgplot under_determined_system" align="" data="../slides/diagrams/ml/under_determined_system008.svg"></object> <object class="svgplot under_determined_system" align="" data="../slides/diagrams/ml/under_determined_system009.svg"></object></p>
+<div class="under_determined_system" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/under_determined_system000.svg" style>
+</object>
+</div>
+</div>
+<div class="under_determined_system" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/under_determined_system001.svg" style>
+</object>
+</div>
+</div>
+<div class="under_determined_system" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/under_determined_system002.svg" style>
+</object>
+</div>
+</div>
+<div class="under_determined_system" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/under_determined_system003.svg" style>
+</object>
+</div>
+</div>
+<div class="under_determined_system" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/under_determined_system004.svg" style>
+</object>
+</div>
+</div>
+<div class="under_determined_system" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/under_determined_system005.svg" style>
+</object>
+</div>
+</div>
+<div class="under_determined_system" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/under_determined_system006.svg" style>
+</object>
+</div>
+</div>
+<div class="under_determined_system" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/under_determined_system007.svg" style>
+</object>
+</div>
+</div>
+<div class="under_determined_system" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/under_determined_system008.svg" style>
+</object>
+</div>
+</div>
+<div class="under_determined_system" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/under_determined_system009.svg" style>
+</object>
+</div>
+</div>
 </section>
 <section id="overdetermined-system-1" class="slide level3">
 <h3>Overdetermined System</h3>
@@ -722,17 +828,34 @@ showDivs(1, 'under_determined_system');
 </section>
 <section id="bayes-update" class="slide level3">
 <h3>Bayes Update</h3>
-
 <script>
 showDivs(1, 'dem_gaussian');
 </script>
+<input id="range-dem_gaussian" type="range" min="1" max="3" value="1" onchange="setDivs('dem_gaussian')" oninput="setDivs('dem_gaussian')">
 <button onclick="plusDivs(-1, 'dem_gaussian')">
 ❮
 </button>
 <button onclick="plusDivs(1, 'dem_gaussian')">
 ❯
 </button>
-<p><input id="range-dem_gaussian" type="range" min="1" max="3" value="1" onchange="setDivs('dem_gaussian')" oninput="setDivs('dem_gaussian')"> <object class="svgplot dem_gaussian" align="" data="../slides/diagrams/ml/dem_gaussian001.svg"></object> <object class="svgplot dem_gaussian" align="" data="../slides/diagrams/ml/dem_gaussian002.svg"></object> <object class="svgplot dem_gaussian" align="" data="../slides/diagrams/ml/dem_gaussian003.svg"></object></p>
+<div class="dem_gaussian" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/dem_gaussian001.svg" style>
+</object>
+</div>
+</div>
+<div class="dem_gaussian" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/dem_gaussian002.svg" style>
+</object>
+</div>
+</div>
+<div class="dem_gaussian" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/dem_gaussian003.svg" style>
+</object>
+</div>
+</div>
 </section>
 <section id="stages-to-derivation-of-the-posterior" class="slide level3">
 <h3>Stages to Derivation of the Posterior</h3>
@@ -804,8 +927,10 @@ showDivs(1, 'dem_gaussian');
 </section>
 <section id="height-and-weight-models" class="slide level3">
 <h3>Height and Weight Models</h3>
-<object class="svgplot " align data="../slides/diagrams/ml/height_weight_gaussian.svg">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/height_weight_gaussian.svg" style>
 </object>
+</div>
 <center>
 <em>Gaussian distributions for height and weight. </em>
 </center>
@@ -821,17 +946,64 @@ showDivs(1, 'dem_gaussian');
 </section>
 <section id="sampling-two-dimensional-variables" class="slide level3">
 <h3>Sampling Two Dimensional Variables</h3>
-
 <script>
 showDivs(0, 'independent_height_weight');
 </script>
+<input id="range-independent_height_weight" type="range" min="0" max="7" value="0" onchange="setDivs('independent_height_weight')" oninput="setDivs('independent_height_weight')">
 <button onclick="plusDivs(-1, 'independent_height_weight')">
 ❮
 </button>
 <button onclick="plusDivs(1, 'independent_height_weight')">
 ❯
 </button>
-<p><input id="range-independent_height_weight" type="range" min="0" max="7" value="0" onchange="setDivs('independent_height_weight')" oninput="setDivs('independent_height_weight')"> <object class="svgplot independent_height_weight" align="" data="../slides/diagrams/ml/independent_height_weight000.svg"></object> <object class="svgplot independent_height_weight" align="" data="../slides/diagrams/ml/independent_height_weight001.svg"></object> <object class="svgplot independent_height_weight" align="" data="../slides/diagrams/ml/independent_height_weight002.svg"></object> <object class="svgplot independent_height_weight" align="" data="../slides/diagrams/ml/independent_height_weight003.svg"></object> <object class="svgplot independent_height_weight" align="" data="../slides/diagrams/ml/independent_height_weight004.svg"></object> <object class="svgplot independent_height_weight" align="" data="../slides/diagrams/ml/independent_height_weight005.svg"></object> <object class="svgplot independent_height_weight" align="" data="../slides/diagrams/ml/independent_height_weight006.svg"></object> <object class="svgplot independent_height_weight" align="" data="../slides/diagrams/ml/independent_height_weight007.svg"></object></p>
+<div class="independent_height_weight" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/independent_height_weight000.svg" style>
+</object>
+</div>
+</div>
+<div class="independent_height_weight" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/independent_height_weight001.svg" style>
+</object>
+</div>
+</div>
+<div class="independent_height_weight" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/independent_height_weight002.svg" style>
+</object>
+</div>
+</div>
+<div class="independent_height_weight" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/independent_height_weight003.svg" style>
+</object>
+</div>
+</div>
+<div class="independent_height_weight" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/independent_height_weight004.svg" style>
+</object>
+</div>
+</div>
+<div class="independent_height_weight" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/independent_height_weight005.svg" style>
+</object>
+</div>
+</div>
+<div class="independent_height_weight" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/independent_height_weight006.svg" style>
+</object>
+</div>
+</div>
+<div class="independent_height_weight" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/independent_height_weight007.svg" style>
+</object>
+</div>
+</div>
 </section>
 <section id="body-mass-index" class="slide level3">
 <h3>Body Mass Index</h3>
@@ -842,17 +1014,64 @@ showDivs(0, 'independent_height_weight');
 </section>
 <section id="sampling-two-dimensional-variables-1" class="slide level3">
 <h3>Sampling Two Dimensional Variables</h3>
-
 <script>
 showDivs(0, 'correlated_height_weight');
 </script>
+<input id="range-correlated_height_weight" type="range" min="0" max="7" value="0" onchange="setDivs('correlated_height_weight')" oninput="setDivs('correlated_height_weight')">
 <button onclick="plusDivs(-1, 'correlated_height_weight')">
 ❮
 </button>
 <button onclick="plusDivs(1, 'correlated_height_weight')">
 ❯
 </button>
-<p><input id="range-correlated_height_weight" type="range" min="0" max="7" value="0" onchange="setDivs('correlated_height_weight')" oninput="setDivs('correlated_height_weight')"> <object class="svgplot correlated_height_weight" align="" data="../slides/diagrams/ml/correlated_height_weight000.svg"></object> <object class="svgplot correlated_height_weight" align="" data="../slides/diagrams/ml/correlated_height_weight001.svg"></object> <object class="svgplot correlated_height_weight" align="" data="../slides/diagrams/ml/correlated_height_weight002.svg"></object> <object class="svgplot correlated_height_weight" align="" data="../slides/diagrams/ml/correlated_height_weight003.svg"></object> <object class="svgplot correlated_height_weight" align="" data="../slides/diagrams/ml/correlated_height_weight004.svg"></object> <object class="svgplot correlated_height_weight" align="" data="../slides/diagrams/ml/correlated_height_weight005.svg"></object> <object class="svgplot correlated_height_weight" align="" data="../slides/diagrams/ml/correlated_height_weight006.svg"></object> <object class="svgplot correlated_height_weight" align="" data="../slides/diagrams/ml/correlated_height_weight007.svg"></object></p>
+<div class="correlated_height_weight" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/correlated_height_weight000.svg" style>
+</object>
+</div>
+</div>
+<div class="correlated_height_weight" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/correlated_height_weight001.svg" style>
+</object>
+</div>
+</div>
+<div class="correlated_height_weight" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/correlated_height_weight002.svg" style>
+</object>
+</div>
+</div>
+<div class="correlated_height_weight" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/correlated_height_weight003.svg" style>
+</object>
+</div>
+</div>
+<div class="correlated_height_weight" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/correlated_height_weight004.svg" style>
+</object>
+</div>
+</div>
+<div class="correlated_height_weight" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/correlated_height_weight005.svg" style>
+</object>
+</div>
+</div>
+<div class="correlated_height_weight" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/correlated_height_weight006.svg" style>
+</object>
+</div>
+</div>
+<div class="correlated_height_weight" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/ml/correlated_height_weight007.svg" style>
+</object>
+</div>
+</div>
 </section>
 <section id="independent-gaussians" class="slide level3">
 <h3>Independent Gaussians</h3>
@@ -939,12 +1158,12 @@ p(\dataVector) = \frac{1}{\det{2\pi\covarianceMatrix}^{\frac{1}{2}}} \exp\left(-
 </section>
 <section id="multivariate-consequence" class="slide level3">
 <h3>Multivariate Consequence</h3>
-<p><span align="left">If</span> <span class="math display">\[\inputVector \sim \gaussianSamp{\meanVector}{\covarianceMatrix}\]</span></p>
+<p><span style="text-align:left">If</span> <span class="math display">\[\inputVector \sim \gaussianSamp{\meanVector}{\covarianceMatrix}\]</span></p>
 <div class="fragment">
-<p><span align="left">And</span> <span class="math display">\[\dataVector= \mappingMatrix\inputVector\]</span></p>
+<p><span style="text-align:left">And</span> <span class="math display">\[\dataVector= \mappingMatrix\inputVector\]</span></p>
 </div>
 <div class="fragment">
-<p><span align="left">Then</span> <span class="math display">\[\dataVector \sim \gaussianSamp{\mappingMatrix\meanVector}{\mappingMatrix\covarianceMatrix\mappingMatrix^\top}\]</span></p>
+<p><span style="text-align:left">Then</span> <span class="math display">\[\dataVector \sim \gaussianSamp{\mappingMatrix\meanVector}{\mappingMatrix\covarianceMatrix\mappingMatrix^\top}\]</span></p>
 </div>
 </section>
 <section id="linear-gaussian-models" class="slide level3">
@@ -1047,33 +1266,42 @@ p(\dataVector) = \frac{1}{\det{2\pi\covarianceMatrix}^{\frac{1}{2}}} \exp\left(-
 </section>
 <section id="distributions-over-functions" class="slide level3">
 <h3>Distributions over Functions</h3>
-<p><a href="file:///Users/neil/lawrennd/talks_gp/includes/gp-intro-very-short.md">_gp/includes/gp-intro-very-short.md</a></p>
-
 </section>
 <section id="section-7" class="slide level3" data-transition="none">
 <h3></h3>
-<object class="svgplot " align data="../slides/diagrams/gp/gp_rejection_sample001.svg">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/gp_rejection_sample001.svg" style>
 </object>
+</div>
 </section>
 <section id="section-8" class="slide level3" data-transition="none">
 <h3></h3>
-<object class="svgplot " align data="../slides/diagrams/gp/gp_rejection_sample002.svg">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/gp_rejection_sample002.svg" style>
 </object>
+</div>
 </section>
 <section id="section-9" class="slide level3" data-transition="none">
 <h3></h3>
-<object class="svgplot " align data="../slides/diagrams/gp/gp_rejection_sample003.svg">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/gp_rejection_sample003.svg" style>
 </object>
+</div>
 </section>
 <section id="section-10" class="slide level3" data-transition="none">
 <h3></h3>
-<object class="svgplot " align data="../slides/diagrams/gp/gp_rejection_sample004.svg">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/gp_rejection_sample004.svg" style>
 </object>
+</div>
 </section>
 <section id="section-11" class="slide level3" data-transition="none">
 <h3></h3>
-<p>x <object class="svgplot " align="" data="../slides/diagrams/gp/gp_rejection_sample005.svg"></object></p>
-<p><a href="file:///Users/neil/lawrennd/talks_gp/includes/gpdistfunc.md">_gp/includes/gpdistfunc.md</a></p>
+x
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/gp_rejection_sample005.svg" style>
+</object>
+</div>
 </section>
 <section id="sampling-a-function" class="slide level3">
 <h3>Sampling a Function</h3>
@@ -1085,39 +1313,116 @@ p(\dataVector) = \frac{1}{\det{2\pi\covarianceMatrix}^{\frac{1}{2}}} \exp\left(-
 \]</span></li>
 <li>We will plot these points against their index.</li>
 </ul>
-
 </section>
 <section id="gaussian-distribution-sample" class="slide level3">
 <h3>Gaussian Distribution Sample</h3>
 <script>
 showDivs(0, 'two_point_sample');
 </script>
+<input id="range-two_point_sample" type="range" min="0" max="8" value="0" onchange="setDivs('two_point_sample')" oninput="setDivs('two_point_sample')">
 <button onclick="plusDivs(-1, 'two_point_sample')">
 ❮
 </button>
 <button onclick="plusDivs(1, 'two_point_sample')">
 ❯
 </button>
-<p><input id="range-two_point_sample" type="range" min="0" max="8" value="0" onchange="setDivs('two_point_sample')" oninput="setDivs('two_point_sample')"> <object class="svgplot two_point_sample" align="" data="../slides/diagrams/gp/two_point_sample000.svg"></object> <object class="svgplot two_point_sample" align="" data="../slides/diagrams/gp/two_point_sample001.svg"></object> <object class="svgplot two_point_sample" align="" data="../slides/diagrams/gp/two_point_sample002.svg"></object> <object class="svgplot two_point_sample" align="" data="../slides/diagrams/gp/two_point_sample003.svg"></object> <object class="svgplot two_point_sample" align="" data="../slides/diagrams/gp/two_point_sample004.svg"></object> <object class="svgplot two_point_sample" align="" data="../slides/diagrams/gp/two_point_sample005.svg"></object> <object class="svgplot two_point_sample" align="" data="../slides/diagrams/gp/two_point_sample006.svg"></object> <object class="svgplot two_point_sample" align="" data="../slides/diagrams/gp/two_point_sample007.svg"></object> <object class="svgplot two_point_sample" align="" data="../slides/diagrams/gp/two_point_sample008.svg"></object></p>
-<p><a href="file:///Users/neil/lawrennd/talks_gp/includes/gaussian-predict-index-one-and-two.md">_gp/includes/gaussian-predict-index-one-and-two.md</a></p>
-
+<div class="two_point_sample" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/two_point_sample000.svg" style>
+</object>
+</div>
+</div>
+<div class="two_point_sample" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/two_point_sample001.svg" style>
+</object>
+</div>
+</div>
+<div class="two_point_sample" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/two_point_sample002.svg" style>
+</object>
+</div>
+</div>
+<div class="two_point_sample" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/two_point_sample003.svg" style>
+</object>
+</div>
+</div>
+<div class="two_point_sample" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/two_point_sample004.svg" style>
+</object>
+</div>
+</div>
+<div class="two_point_sample" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/two_point_sample005.svg" style>
+</object>
+</div>
+</div>
+<div class="two_point_sample" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/two_point_sample006.svg" style>
+</object>
+</div>
+</div>
+<div class="two_point_sample" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/two_point_sample007.svg" style>
+</object>
+</div>
+</div>
+<div class="two_point_sample" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/two_point_sample008.svg" style>
+</object>
+</div>
+</div>
 </section>
 <section id="prediction-of-mappingfunction_2-from-mappingfunction_1" class="slide level3">
 <h3>Prediction of <span class="math inline">\(\mappingFunction_{2}\)</span> from <span class="math inline">\(\mappingFunction_{1}\)</span></h3>
 <script>
 showDivs(9, 'two_point_sample2');
 </script>
+<input id="range-two_point_sample2" type="range" min="9" max="12" value="9" onchange="setDivs('two_point_sample2')" oninput="setDivs('two_point_sample2')">
 <button onclick="plusDivs(-1, 'two_point_sample2')">
 ❮
 </button>
 <button onclick="plusDivs(1, 'two_point_sample2')">
 ❯
 </button>
-<p><input id="range-two_point_sample2" type="range" min="9" max="12" value="9" onchange="setDivs('two_point_sample2')" oninput="setDivs('two_point_sample2')"> <object class="svgplot two_point_sample2" align="" data="../slides/diagrams/gp/two_point_sample009.svg"></object> <object class="svgplot two_point_sample2" align="" data="../slides/diagrams/gp/two_point_sample010.svg"></object> <object class="svgplot two_point_sample2" align="" data="../slides/diagrams/gp/two_point_sample011.svg"></object> <object class="svgplot two_point_sample2" align="" data="../slides/diagrams/gp/two_point_sample012.svg"></object></p>
+<div class="two_point_sample2" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/two_point_sample009.svg" style>
+</object>
+</div>
+</div>
+<div class="two_point_sample2" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/two_point_sample010.svg" style>
+</object>
+</div>
+</div>
+<div class="two_point_sample2" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/two_point_sample011.svg" style>
+</object>
+</div>
+</div>
+<div class="two_point_sample2" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/two_point_sample012.svg" style>
+</object>
+</div>
+</div>
 </section>
 <section id="uluru" class="slide level3">
 <h3>Uluru</h3>
-<p><img class="" src="../slides/diagrams/gp/799px-Uluru_Panorama.jpg" width="" align="center" style="background:none; border:none; box-shadow:none;"></p>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/gp/799px-Uluru_Panorama.jpg" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
 </section>
 <section id="prediction-with-correlated-gaussians" class="slide level3">
 <h3>Prediction with Correlated Gaussians</h3>
@@ -1129,32 +1434,49 @@ p(\mappingFunction_2|\mappingFunction_1) = \gaussianDist{\mappingFunction_2}{\fr
 \kernelMatrix = \begin{bmatrix} \kernelScalar_{1, 1} &amp; \kernelScalar_{1, 2}\\ \kernelScalar_{2, 1} &amp; \kernelScalar_{2, 2}.\end{bmatrix}
 \]</span></li>
 </ul>
-<p><a href="file:///Users/neil/lawrennd/talks_gp/includes/gaussian-predict-index-one-and-eight.md">_gp/includes/gaussian-predict-index-one-and-eight.md</a></p>
-
 </section>
 <section id="prediction-of-mappingfunction_8-from-mappingfunction_1" class="slide level3">
 <h3>Prediction of <span class="math inline">\(\mappingFunction_{8}\)</span> from <span class="math inline">\(\mappingFunction_{1}\)</span></h3>
 <script>
 showDivs(13, 'two_point_sample3');
 </script>
+<input id="range-two_point_sample3" type="range" min="13" max="17" value="13" onchange="setDivs('two_point_sample3')" oninput="setDivs('two_point_sample3')">
 <button onclick="plusDivs(-1, 'two_point_sample3')">
 ❮
 </button>
 <button onclick="plusDivs(1, 'two_point_sample3')">
 ❯
 </button>
-<p><input id="range-two_point_sample3" type="range" min="13" max="17" value="13" onchange="setDivs('two_point_sample3')" oninput="setDivs('two_point_sample3')"></p>
-<object class="svgplot two_point_sample3" align data="../slides/diagrams/gp/two_point_sample013.svg">
+<div class="two_point_sample3" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/two_point_sample013.svg" style>
 </object>
-<object class="svgplot two_point_sample3" align data="../slides/diagrams/gp/two_point_sample014.svg">
+</div>
+</div>
+<div class="two_point_sample3" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/two_point_sample014.svg" style>
 </object>
-<object class="svgplot two_point_sample3" align data="../slides/diagrams/gp/two_point_sample015.svg">
+</div>
+</div>
+<div class="two_point_sample3" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/two_point_sample015.svg" style>
 </object>
-<object class="svgplot two_point_sample3" align data="../slides/diagrams/gp/two_point_sample016.svg">
+</div>
+</div>
+<div class="two_point_sample3" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/two_point_sample016.svg" style>
 </object>
-<object class="svgplot two_point_sample3" align data="../slides/diagrams/gp/two_point_sample017.svg">
+</div>
+</div>
+<div class="two_point_sample3" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/two_point_sample017.svg" style>
 </object>
-<p><a href="file:///Users/neil/lawrennd/talks_kern/includes/computing-rbf-covariance.md">_kern/includes/computing-rbf-covariance.md</a></p>
+</div>
+</div>
 </section>
 <section id="where-did-this-covariance-matrix-come-from" class="slide level3">
 <h3>Where Did This Covariance Matrix Come From?</h3>
@@ -1170,56 +1492,428 @@ k(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\left\Vert \input
 </ul>
 </td>
 <td width="50%">
-<object class="svgplot " align data="../slides/diagrams/kern/eq_covariance.svg">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/eq_covariance.svg" style>
 </object>
+</div>
 </td>
 </tr>
 </table>
 </section>
 <section id="computing-covariance" class="slide level3">
 <h3>Computing Covariance</h3>
-
 <script>
 showDivs(0, 'computing_eq_three_covariance');
 </script>
+<input id="range-computing_eq_three_covariance" type="range" min="0" max="16" value="0" onchange="setDivs('computing_eq_three_covariance')" oninput="setDivs('computing_eq_three_covariance')">
 <button onclick="plusDivs(-1, 'computing_eq_three_covariance')">
 ❮
 </button>
 <button onclick="plusDivs(1, 'computing_eq_three_covariance')">
 ❯
 </button>
-<p><input id="range-computing_eq_three_covariance" type="range" min="0" max="16" value="0" onchange="setDivs('computing_eq_three_covariance')" oninput="setDivs('computing_eq_three_covariance')"> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance000.svg"></object> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance001.svg"></object> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance002.svg"></object> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance003.svg"></object> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance004.svg"></object> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance005.svg"></object> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance006.svg"></object> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance007.svg"></object> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance008.svg"></object> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance009.svg"></object> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance010.svg"></object> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance011.svg"></object> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance012.svg"></object> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance013.svg"></object> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance014.svg"></object> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance015.svg"></object> <object class="svgplot computing_eq_three_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_covariance016.svg"></object></p>
+<div class="computing_eq_three_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_covariance000.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_three_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_covariance001.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_three_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_covariance002.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_three_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_covariance003.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_three_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_covariance004.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_three_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_covariance005.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_three_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_covariance006.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_three_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_covariance007.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_three_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_covariance008.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_three_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_covariance009.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_three_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_covariance010.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_three_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_covariance011.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_three_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_covariance012.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_three_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_covariance013.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_three_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_covariance014.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_three_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_covariance015.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_three_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_covariance016.svg" style>
+</object>
+</div>
+</div>
 </section>
 <section id="computing-covariance-1" class="slide level3">
 <h3>Computing Covariance</h3>
-
 <script>
 showDivs(0, 'computing_eq_four_covariance');
 </script>
+<input id="range-computing_eq_four_covariance" type="range" min="0" max="27" value="0" onchange="setDivs('computing_eq_four_covariance')" oninput="setDivs('computing_eq_four_covariance')">
 <button onclick="plusDivs(-1, 'computing_eq_four_covariance')">
 ❮
 </button>
 <button onclick="plusDivs(1, 'computing_eq_four_covariance')">
 ❯
 </button>
-<p><input id="range-computing_eq_four_covariance" type="range" min="0" max="27" value="0" onchange="setDivs('computing_eq_four_covariance')" oninput="setDivs('computing_eq_four_covariance')"> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance000.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance001.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance002.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance003.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance004.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance005.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance006.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance007.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance008.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance009.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance010.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance011.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance012.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance013.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance014.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance015.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance016.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance017.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance018.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance019.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance020.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance021.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance022.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance023.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance024.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance025.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance026.svg"></object> <object class="svgplot computing_eq_four_covariance" align="" data="../slides/diagrams/kern/computing_eq_four_covariance027.svg"></object></p>
+<div class="computing_eq_four_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_four_covariance000.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_four_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_four_covariance001.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_four_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_four_covariance002.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_four_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_four_covariance003.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_four_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_four_covariance004.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_four_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_four_covariance005.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_four_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_four_covariance006.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_four_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_four_covariance007.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_four_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_four_covariance008.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_four_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_four_covariance009.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_four_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_four_covariance010.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_four_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_four_covariance011.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_four_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_four_covariance012.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_four_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_four_covariance013.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_four_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_four_covariance014.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_four_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_four_covariance015.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_four_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_four_covariance016.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_four_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_four_covariance017.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_four_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_four_covariance018.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_four_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_four_covariance019.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_four_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_four_covariance020.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_four_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_four_covariance021.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_four_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_four_covariance022.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_four_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_four_covariance023.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_four_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_four_covariance024.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_four_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_four_covariance025.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_four_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_four_covariance026.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_four_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_four_covariance027.svg" style>
+</object>
+</div>
+</div>
 </section>
 <section id="computing-covariance-2" class="slide level3">
 <h3>Computing Covariance</h3>
-
 <script>
 showDivs(0, 'computing_eq_three_2_covariance');
 </script>
+<input id="range-computing_eq_three_2_covariance" type="range" min="0" max="16" value="0" onchange="setDivs('computing_eq_three_2_covariance')" oninput="setDivs('computing_eq_three_2_covariance')">
 <button onclick="plusDivs(-1, 'computing_eq_three_2_covariance')">
 ❮
 </button>
 <button onclick="plusDivs(1, 'computing_eq_three_2_covariance')">
 ❯
 </button>
-<p><input id="range-computing_eq_three_2_covariance" type="range" min="0" max="16" value="0" onchange="setDivs('computing_eq_three_2_covariance')" oninput="setDivs('computing_eq_three_2_covariance')"> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance000.svg"></object> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance001.svg"></object> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance002.svg"></object> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance003.svg"></object> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance004.svg"></object> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance005.svg"></object> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance006.svg"></object> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance007.svg"></object> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance008.svg"></object> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance009.svg"></object> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance010.svg"></object> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance011.svg"></object> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance012.svg"></object> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance013.svg"></object> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance014.svg"></object> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance015.svg"></object> <object class="svgplot computing_eq_three_2_covariance" align="" data="../slides/diagrams/kern/computing_eq_three_2_covariance016.svg"></object></p>
+<div class="computing_eq_three_2_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_2_covariance000.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_three_2_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_2_covariance001.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_three_2_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_2_covariance002.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_three_2_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_2_covariance003.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_three_2_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_2_covariance004.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_three_2_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_2_covariance005.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_three_2_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_2_covariance006.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_three_2_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_2_covariance007.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_three_2_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_2_covariance008.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_three_2_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_2_covariance009.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_three_2_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_2_covariance010.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_three_2_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_2_covariance011.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_three_2_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_2_covariance012.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_three_2_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_2_covariance013.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_three_2_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_2_covariance014.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_three_2_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_2_covariance015.svg" style>
+</object>
+</div>
+</div>
+<div class="computing_eq_three_2_covariance" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_2_covariance016.svg" style>
+</object>
+</div>
+</div>
 </section>
 <section id="polynomial-covariance" class="slide level3">
 <h3>Polynomial Covariance</h3>
+
 <center>
 <span class="math display">\[\kernelScalar(\inputVector, \inputVector^\prime) = \alpha(w \inputVector^\top\inputVector^\prime + b)^d\]</span>
 </center>
@@ -1230,7 +1924,7 @@ showDivs(0, 'computing_eq_three_2_covariance');
 <object class align data="../slides/diagrams/kern/polynomial_covariance.svg">
 </object>
 <td width="45%">
-<img class="negate" src="../slides/diagrams/kern/polynomial_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
+<img class="negate" src="../slides/diagrams/kern/polynomial_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
 </td>
 </tr>
 </table>
@@ -1241,7 +1935,7 @@ showDivs(0, 'computing_eq_three_2_covariance');
 \kernelScalar(t, t^\prime) = \alpha \min(t, t^\prime)
 \]</span></p>
 <!--<table><tr><td width="50%">
-<object class="svgplot " align="" data="../slides/diagrams/kern/brownian_covariance.svg"></object>
+<div style="text-align:" class=""><object class="svgplot " align="" data="../slides/diagrams/kern/brownian_covariance.svg" style=""></object></div>
 </td><td width="50%">
 <iframe src="../slides/diagrams/kern/brownian_covariance.html" width="512" height="384" allowtransparency="true" frameborder="0">
 </iframe>
@@ -1254,13 +1948,14 @@ showDivs(0, 'computing_eq_three_2_covariance');
 </object>
 </td>
 <td width="45%">
-<img class="negate" src="../slides/diagrams/kern/brownian_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
+<img class="negate" src="../slides/diagrams/kern/brownian_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
 </td>
 </tr>
 </table>
 </section>
 <section id="periodic-covariance" class="slide level3">
 <h3>Periodic Covariance</h3>
+
 <center>
 <span class="math display">\[\kernelScalar(\inputVector, \inputVector^\prime) = \alpha\exp\left(\frac{-2\sin(\pi rw)^2}{\lengthScale^2}\right)\]</span>
 </center>
@@ -1271,7 +1966,7 @@ showDivs(0, 'computing_eq_three_2_covariance');
 <object class align data="../slides/diagrams/kern/periodic_covariance.svg">
 </object>
 <td width="45%">
-<img class="negate" src="../slides/diagrams/kern/periodic_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
+<img class="negate" src="../slides/diagrams/kern/periodic_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
 </td>
 </tr>
 </table>
@@ -1301,7 +1996,7 @@ showDivs(0, 'computing_eq_three_2_covariance');
 <object class align data="../slides/diagrams/kern/basis_covariance.svg">
 </object>
 <td width="45%">
-<img class="negate" src="../slides/diagrams/kern/basis_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
+<img class="negate" src="../slides/diagrams/kern/basis_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
 </td>
 </tr>
 </table>
@@ -1395,7 +2090,7 @@ showDivs(0, 'computing_eq_three_2_covariance');
 <object class align data="../slides/diagrams/kern/mlp_covariance.svg">
 </object>
 <td width="45%">
-<img class="negate" src="../slides/diagrams/kern/mlp_covariance.gif" width="100%" align="center" style="background:none; border:none; box-shadow:none;">
+<img class="negate" src="../slides/diagrams/kern/mlp_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
 </td>
 </tr>
 </table>

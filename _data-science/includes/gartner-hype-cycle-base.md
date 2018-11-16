@@ -28,12 +28,13 @@ from ipywidgets import IntSlider}
 \newslide{Gartner Hype Cycle}
 
 \slides{
-\startslides{\initials-google-trends}{0}{4}
-\includesvg{../slides/diagrams/data-science/\initials-google-trends000.svg}{}{\initials-google-trends}
-\includesvg{../slides/diagrams/data-science/\initials-google-trends001.svg}{}{\initials-google-trends}
-\includesvg{../slides/diagrams/data-science/\initials-google-trends002.svg}{}{\initials-google-trends}
-\includesvg{../slides/diagrams/data-science/\initials-google-trends003.svg}{}{\initials-google-trends}
-\includesvg{../slides/diagrams/data-science/\initials-google-trends004.svg}{}{\initials-google-trends}
+\startanimation{\initials-google-trends}{0}{4}
+\newframe{\includesvg{../slides/diagrams/data-science/\initials-google-trends000.svg}}{\initials-google-trends}
+\newframe{\includesvg{../slides/diagrams/data-science/\initials-google-trends001.svg}}{\initials-google-trends}
+\newframe{\includesvg{../slides/diagrams/data-science/\initials-google-trends002.svg}}{\initials-google-trends}
+\newframe{\includesvg{../slides/diagrams/data-science/\initials-google-trends003.svg}}{\initials-google-trends}
+\newframe{\includesvg{../slides/diagrams/data-science/\initials-google-trends004.svg}}{\initials-google-trends}
+\endanimation
 }
 \notesfigure{\includesvg{../slides/diagrams/data-science/\initials-google-trends004.svg}{}}
 \notes{\caption{Google trends for different technological terms on the hype cycle.}}

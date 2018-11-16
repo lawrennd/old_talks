@@ -3,6 +3,7 @@ layout: lectures
 title: "Bayesian Regression"
 abstract: "Bayesian formalisms deal with uncertainty in parameters, "
 ipynb: 2015-11-03-week6.ipynb
+reveal: 2015-11-03-week6.slides.html
 author:
 - family: Lawrence
   given: Neil D.
@@ -17,7 +18,7 @@ transition: None
 
 \include{talk-macros.tex}
 
-### Overdetermined System
+\subsection{Overdetermined System}
 
 \notes{We can motivate the introduction of probability by considering systems where there were more observations than unknowns. In particular we can consider the simple fitting of the gradient and an offset of a line,
 $$ 
@@ -90,7 +91,7 @@ $$}
 \include{_ml/includes/underdetermined-system.md}
 \include{_ml/includes/types-of-uncertainty.md}
 
-### Reading
+\subsection{Reading}
 
 * @Bishop:book06 Section 1.2.3 (pg 21–24).
 * @Bishop:book06 Section 1.2.6 (start from just past eq 1.64 pg 30-32).
@@ -100,7 +101,7 @@ $$}
 * @Bishop:book06 Section 1.2.6 (start from just past eq 1.64 pg 30-32).
 
 \notes{
-### Sum of Squares and Probability
+\subsection{Sum of Squares and Probability}
 
 In the overdetermined system we introduced a new set of slack variables, $\{\noiseScalar_i\}_{i=1}^\numData$, on top of our parameters $m$ and $c$. We dealt with the variables by placing a probability distribution over them. This gives rise to the likelihood and for the case of Gaussian distributed variables, it gives rise to the sum of squares error. It was Gauss who first made this connection in his volume on "Theoria Motus Corprum Coelestium" (written in Latin)
 
@@ -124,14 +125,14 @@ where the crediting to the Laplace is about halfway through the last paragraph. 
 \include{_ml/includes/bayesian-regression1d.md}
 \include{_ml/includes/bayesian-1d-maths.md}
 
-### The Joint Density
+\subsection{The Joint Density}
 
 * Really want to know the *joint* posterior density over the parameters $c$ *and* $m$.
 * Could now integrate out over $m$, but it’s easier to consider the multivariate case.
 
 \include{_ml/includes/two-d-gaussian.md}
 
-### The Prior Density
+\subsection{The Prior Density}
 
 Let's assume that the prior density is given by a zero mean Gaussian, which is independent across each of the parameters, 
 $$
@@ -151,15 +152,14 @@ order = 5
 sigma2 = 0.01}
 
 
-### Reading
+\subsection{Reading}
 
 * Section 2.3 of @Bishop:book06 up to top of pg 85 (multivariate Gaussians).
 
 * Section 3.3 of @Bishop:book06 up to 159 (pg 152–159).
 
+\newslide{Revisit Olympics Data}
 \slides{
-### Revisit Olympics Data
-
 * Use Bayesian approach on olympics data with polynomials.
 
 * Choose a prior $\mappingVector \sim \gaussianSamp{\zerosVector}{\alpha \eye}$ with $\alpha = 1$.
@@ -171,16 +171,18 @@ sigma2 = 0.01}
 \include{_ml/includes/posterior-computation-gaussian.md}
 \include{_ml/includes/olympic-bayesian-polynomials.md}
 
-\slides{
-### Model Fit
+\newslide{Model Fit}
 
+\slides{
 * Marginal likelihood doesn’t always increase as model order increases.
 * Bayesian model always has 2 parameters, regardless of how many basis functions (and here we didn’t even fit them).
 * Maximum likelihood model over fits through increasing number of parameters.
 * Revisit maximum likelihood solution with validation set.
+}
 
-### Regularized Mean
+\newslide{Regularized Mean}
 
+\slides{
 * Validation fit here based on mean solution for $\mappingVector$ only.
 * For Bayesian solution
   $$
@@ -198,12 +200,13 @@ sigma2 = 0.01}
 \include{_ml/includes/polynomial-marginal-likelihood.md}
 \include{_ml/includes/compute-output-expectations.md}
 
-### Reading
+\subsection{Reading}
 
 *   Section 3.7–3.8 of @Rogers:book11 (pg 122–133).
 
 *   Section 3.4 of @Bishop:book06 (pg 161–165).
 
+\subsection{References}
 
 
 

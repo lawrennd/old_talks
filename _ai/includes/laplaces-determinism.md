@@ -11,7 +11,7 @@
 
 \newslide{}
 
-\includeimg{../slides/diagrams/laplacesDeterminismEnglish.png}{60%}{}{center}
+\includepng{../slides/diagrams/laplacesDeterminismEnglish}{60%}
 
 
 \notes{Unfortunately, most analyses of his ideas stop at that point, whereas his real point is that such a notion is unreachable. Not so much *superman* as *strawman*. Just three pages later in the "Philosophical Essay on Probabilities" [@Laplace:essai14], Laplace goes on to observe:
@@ -26,7 +26,7 @@
 
 \newslide{}
 
-\includeimg{../slides/diagrams/philosophicaless00lapliala.png}{60%}{}{center}
+\includepng{../slides/diagrams/philosophicaless00lapliala}{60%}
 
 \notes{In other words, we can never make use of the idealistic deterministc Universe due to our ignorance about the world, Laplace's suggestion, and focus in this essay is that we turn to probability to deal with this uncertainty. This is also our inspiration for using probabilit in machine learning. 
 

@@ -37,7 +37,7 @@ Create a function that solves the linear system for the set of parameters that m
 
 Fit a linear model to the olympic data using these functions and plot the resulting prediction between 1890 and 2020. Set the title of the plot to be the error of the fit on the *training data*.}{1}{15}
 
-### Polynomial Fit: Training Error
+\subsection{Polynomial Fit: Training Error}
 
 \slides{The next thing we'll do is consider a quadratic fit. We will compute the training error for the two fits.}
 
@@ -54,12 +54,12 @@ It should be called in the following form:
 
 Use this to compute the quadratic fit for the model, again plotting the result titled by the error.}{2}{10}
 
-### Polynomial Fits to Olympics Data
+\subsection{Polynomial Fits to Olympics Data}
 
 \setupcode{import pods
 import mlai}
 
-\code{max_basis = 8
+\code{max_basis = 26
 basis = mlai.polynomial
 
 data = pods.datasets.olympic_marathon_men()
@@ -81,3 +81,35 @@ num_data = x.shape[0]}
 \displaycode{pods.notebook.display_plots('olympic_LM_polynomial_num_basis{num_basis:0>3}.svg', 
                             directory='../slides/diagrams/ml', 
 							num_basis=IntSlider(1, 1, max_basis, 1))}
+
+\slides{
+\startanimation{olympic_LM_polynomial_num_basis}{1}{26}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_LM_polynomial_num_basis001.svg}}{olympic_LM_polynomial_num_basis}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_LM_polynomial_num_basis002.svg}}{olympic_LM_polynomial_num_basis}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_LM_polynomial_num_basis003.svg}}{olympic_LM_polynomial_num_basis}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_LM_polynomial_num_basis004.svg}}{olympic_LM_polynomial_num_basis}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_LM_polynomial_num_basis005.svg}}{olympic_LM_polynomial_num_basis}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_LM_polynomial_num_basis006.svg}}{olympic_LM_polynomial_num_basis}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_LM_polynomial_num_basis007.svg}}{olympic_LM_polynomial_num_basis}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_LM_polynomial_num_basis008.svg}}{olympic_LM_polynomial_num_basis}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_LM_polynomial_num_basis009.svg}}{olympic_LM_polynomial_num_basis}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_LM_polynomial_num_basis010.svg}}{olympic_LM_polynomial_num_basis}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_LM_polynomial_num_basis011.svg}}{olympic_LM_polynomial_num_basis}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_LM_polynomial_num_basis012.svg}}{olympic_LM_polynomial_num_basis}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_LM_polynomial_num_basis013.svg}}{olympic_LM_polynomial_num_basis}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_LM_polynomial_num_basis014.svg}}{olympic_LM_polynomial_num_basis}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_LM_polynomial_num_basis015.svg}}{olympic_LM_polynomial_num_basis}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_LM_polynomial_num_basis016.svg}}{olympic_LM_polynomial_num_basis}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_LM_polynomial_num_basis017.svg}}{olympic_LM_polynomial_num_basis}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_LM_polynomial_num_basis018.svg}}{olympic_LM_polynomial_num_basis}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_LM_polynomial_num_basis019.svg}}{olympic_LM_polynomial_num_basis}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_LM_polynomial_num_basis020.svg}}{olympic_LM_polynomial_num_basis}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_LM_polynomial_num_basis021.svg}}{olympic_LM_polynomial_num_basis}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_LM_polynomial_num_basis022.svg}}{olympic_LM_polynomial_num_basis}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_LM_polynomial_num_basis023.svg}}{olympic_LM_polynomial_num_basis}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_LM_polynomial_num_basis024.svg}}{olympic_LM_polynomial_num_basis}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_LM_polynomial_num_basis025.svg}}{olympic_LM_polynomial_num_basis}
+\newframe{\includesvg{../slides/diagrams/ml/olympic_LM_polynomial_num_basis026.svg}}{olympic_LM_polynomial_num_basis}
+\endanimation
+}
+

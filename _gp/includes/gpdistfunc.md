@@ -30,16 +30,17 @@ from ipywidgets import IntSlider}
 							
 \newslide{Gaussian Distribution Sample}
 \slides{
-\startslides{two_point_sample}{0}{8}
-\includesvg{../slides/diagrams/gp/two_point_sample000.svg}{}{two_point_sample}
-\includesvg{../slides/diagrams/gp/two_point_sample001.svg}{}{two_point_sample}
-\includesvg{../slides/diagrams/gp/two_point_sample002.svg}{}{two_point_sample}
-\includesvg{../slides/diagrams/gp/two_point_sample003.svg}{}{two_point_sample}
-\includesvg{../slides/diagrams/gp/two_point_sample004.svg}{}{two_point_sample}
-\includesvg{../slides/diagrams/gp/two_point_sample005.svg}{}{two_point_sample}
-\includesvg{../slides/diagrams/gp/two_point_sample006.svg}{}{two_point_sample}
-\includesvg{../slides/diagrams/gp/two_point_sample007.svg}{}{two_point_sample}
-\includesvg{../slides/diagrams/gp/two_point_sample008.svg}{}{two_point_sample}
+\startanimation{two_point_sample}{0}{8}
+\newframe{\includesvg{../slides/diagrams/gp/two_point_sample000.svg}}{two_point_sample}
+\newframe{\includesvg{../slides/diagrams/gp/two_point_sample001.svg}}{two_point_sample}
+\newframe{\includesvg{../slides/diagrams/gp/two_point_sample002.svg}}{two_point_sample}
+\newframe{\includesvg{../slides/diagrams/gp/two_point_sample003.svg}}{two_point_sample}
+\newframe{\includesvg{../slides/diagrams/gp/two_point_sample004.svg}}{two_point_sample}
+\newframe{\includesvg{../slides/diagrams/gp/two_point_sample005.svg}}{two_point_sample}
+\newframe{\includesvg{../slides/diagrams/gp/two_point_sample006.svg}}{two_point_sample}
+\newframe{\includesvg{../slides/diagrams/gp/two_point_sample007.svg}}{two_point_sample}
+\newframe{\includesvg{../slides/diagrams/gp/two_point_sample008.svg}}{two_point_sample}
+\endanimation
 }
 \notesfigure{\includesvg{../slides/diagrams/gp/two_point_sample008.svg}{}}
 \notes{\caption{A 25 dimensional correlated random variable (values ploted against index)}}
@@ -48,7 +49,8 @@ from ipywidgets import IntSlider}
 
 \subsection{Uluru}
 
-\includeimg{../slides/diagrams/gp/799px-Uluru_Panorama.jpg}{}{}{center}
+\includejpg{../slides/diagrams/gp/799px-Uluru_Panorama}
+
 \notes{When viewing these contour plots, I sometimes find it helpful to think of Uluru, the prominent rock formation in Australia. The rock rises above the surface of the plane, just like a probability density rising above the zero line. The rock is three dimensional, but when we view Uluru from the classical position, we are looking at one side of it. This is equivalent to viewing the marginal density. 
 
 The joint density can be viewed from above, using contours. The conditional density is equivalent to *slicing* the rock. Uluru is a holy rock, so this has to be an imaginary slice. Imagine we cut down a vertical plane orthogonal to our view point (e.g. coming across our view point). This would give a profile of the rock, which when renormalized, would give us the conditional distribution, the value of conditioning would be the location of the slice in the direction we are facing.}
