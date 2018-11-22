@@ -2,8 +2,8 @@
 title: "Machine Learning and the Physical World"
 abstract: >
   Machine learning is a data driven endeavour, but real world systems are physical and mechanistic. In this talk we will review approaches to integrating machine learning with real world systems. Our focus will be on emulation (otherwise known as surrogate modeling). 
-ipynb: 2018-11-06-the-three-ds-of-machine-learning.ipynb
-reveal: 2018-11-06-the-three-ds-of-machine-learning.slides.html
+ipynb: 2018-12-10--machine-learning-and-the-physical-world.ipynb
+reveal: 2018-12-10-machine-learning-and-the-physical-world.slides.html
 author:
 - family: Lawrence
   given: Neil D.
@@ -11,8 +11,8 @@ author:
   institute: Amazon Cambridge and University of Sheffield
   twitter: lawrennd
   url: http://inverseprobability.com
-date: 2018-11-06
-venue: Uber AI Labs
+date: 2018-12-10
+venue: Laboratory for Intelligent Probabilistic Systems, Princeton
 transition: None
 ---
 

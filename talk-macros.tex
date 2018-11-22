@@ -329,20 +329,6 @@ from \filename import \object
 }
 
 
-\define{\startanimation{group}{start}{finish}}{<script>
-showDivs(\start, '\group');
-</script>
- <input id="range-\group" type="range" min="\start" max="\finish" value="\start" onchange="setDivs('\group')" oninput="setDivs('\group')">
-<button onclick="plusDivs(-1, '\group')">❮</button>
-<button onclick="plusDivs(1, '\group')">❯</button>
-}
-
-\define{\newframe{contents}{name}{style}}{<div style="text-align:center;\style" class="\name">\contents</div>}
-\define{\endanimation}{}
-
-\define{\startslides{group}{start}{finish}}{\startanimation{\group}{\start}{\finish}}
-
-
 \define{\fragment{text}{type}}{<span class="fragment \type">\text</span>}
 \define{\fragmentindex{text}{type}{index}}{<span class="fragment \type" data-fragment-index="\index">\text</span>}
 
@@ -390,8 +376,24 @@ showDivs(\start, '\group');
 
 
 \define{\includejpg{filename}{width}{class}}{\div{\includeimg{\concat{\filename}{.jpg}}{\width}{\class}{center}}{}{text-align:center}}
+
 \define{\includepng{filename}{width}{class}}{\div{\includeimg{\concat{\filename}{.png}}{\width}{\class}{center}}{}{text-align:center}}
+
+\define{\includegif{filename}{width}{class}}{\div{\includeimg{\concat{\filename}{.gif}}{\width}{\class}{center}}{}{text-align:center}}
 
 \define{\credit{text}}{\smalltext{\alignright{Thanks to: \text}}}
 
 \define{\comment}{}
+
+\define{\startanimation{group}{start}{finish}{name}}{<script>
+showDivs(\start, '\group');
+</script>
+\smalltext{\name} <input id="range-\group" type="range" min="\start" max="\finish" value="\start" onchange="setDivs('\group')" oninput="setDivs('\group')">
+<button onclick="plusDivs(-1, '\group')">❮</button>
+<button onclick="plusDivs(1, '\group')">❯</button>
+}
+
+\define{\newframe{contents}{name}{style}}{<div style="text-align:center;\style" class="\name">\contents</div>}
+\define{\endanimation}{}
+
+\define{\startslides{group}{start}{finish}}{\startanimation{\group}{\start}{\finish}}

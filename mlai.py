@@ -109,16 +109,18 @@ class ProbMapModel(ProbModel, MapModel):
 
     
 class LM(ProbMapModel):
-    """Linear model
-    :param X: input values
-    :type X: numpy.ndarray
-    :param y: target values
-    :type y: numpy.ndarray
-    :param basis: basis function 
-    :param type: function"""
+    """Linear model class."""
 
     def __init__(self, X, y, basis):
-        "Initialise"
+        """Initialise a linear model object
+
+        :param X: input values
+        :type X: numpy.ndarray
+        :param y: target values
+        :type y: numpy.ndarray
+        :param basis: basis function 
+        :param type: function"""
+
         ProbModel.__init__(self)
         self.y = y
         self.num_data = y.shape[0]
@@ -143,7 +145,7 @@ class LM(ProbMapModel):
                 self.basis.__dict__[name] = val
                 self.Phi = self.basis.Phi(self.X)            
         else:
-            raise ValueError("Unknown parameter being set.")
+            raise ValueError("Unknown parameter '{}' being set.".format(name))
         if update_fit:
             self.fit()
 

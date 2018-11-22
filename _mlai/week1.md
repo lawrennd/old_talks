@@ -5,6 +5,7 @@ abstract: |
   In this first session we will introduce *machine learning*, review *probability* and begin familiarization with the Jupyter notebook, python and pandas.
 date: 2015-09-29
 ipynb: 2015-09-29-week1.ipynb
+reveal: 2015-09-29-week1.slides.html
 author:
 - family: Lawrence
   given: Neil D.
@@ -21,25 +22,24 @@ transition: None
 \include{_mlai/includes/welcome.md}
 \include{_mlai/includes/assumed-knowledge.md}
 \include{_mlai/includes/environment-python-jupyter.md}
-\include{_ml/includes/what-is-ml.md}
-\include{_ml/includes/overdetermined-inaugural.md}
-\include{_ml/includes/movie-body-count-data.md}
-\include{_ml/includes/probability-intro.md}
 
 \writeassignment{What is jupyter and why was it invented? Give some
 examples of functionality it gives over standard python. What is the jupyter
 project? Name two languages involved in the Jupyter project other than python.}{3}{10}
 
+\include{_ml/includes/what-is-ml.md}
+\include{_ml/includes/overdetermined-inaugural.md}
+\include{_ml/includes/nigerian-nmis-data.md}
 \include{_ml/includes/probability-intro.md}
 
-### Assignment Questions
+\subsection{Assignment Questions}
 
 \notes{The questions in the above lab sheet need to be
 answered and handed in before 09:00 on 7th October 2014 (i.e. before next
 lecture). The hand should be done via file upload through
 [MOLE](http://vle.shef.ac.uk).}
 
-### More Fun on the Python Data Farm
+\subsection{More Fun on the Python Data Farm}
 
 \notes{If you want to explore more of the things
 you can do with movies and python you might be interested in the `imdbpy` python
@@ -65,8 +65,8 @@ for movie in ia.search_movie('python'):
 
 \includeyoutube{GX8VLYUYScM}
 
-\slides{### Reading
-
+\newslide{Reading}
+\slides{
 -   See probability review at end of slides for reminders.
 
 -   Read and *understand* @Rogers:book11 on:
@@ -100,6 +100,6 @@ for movie in ia.search_movie('python'):
 
     3.  @Bishop:book06 Exercise 1.9}
 
-### References
+\subsection{References}
 
 

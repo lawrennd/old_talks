@@ -21,6 +21,7 @@ transition: None
 \include{talk-macros.tex}
 
 \include{_ml/includes/what-is-ml.md}
+\include{_ml/includes/nigerian-nmis-data.md}
 \include{_ml/includes/probability-intro.md}
 \include{_ml/includes/probabilistic-modelling.md}
 

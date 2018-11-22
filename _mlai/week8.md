@@ -1,8 +1,20 @@
 ---
 layout: lectures
 title: "Dimensionality Reduction: Latent Variable Modelling"
+abstract: "In this lecture we turn to *unsupervised learning*. Specifically, we introduce the idea of a latent variable model. Latent variable models are a probabilistic perspective on unsupervised learning which lead to dimensionality reduction algorithms. "
+ipynb: 2015-11-17-week8.ipynb
+reveal: 2015-11-17-week8.slides.html
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
+  institute: Amazon Cambridge and University of Sheffield
+  twitter: lawrennd
+  url: http://inverseprobability.com
+date: 2015-11-17
+venue: University of Sheffield
+transition: None
 author: Neil D. Lawrence
-date: 2015/11/17
 transition: None
 ---
 
@@ -14,13 +26,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 %matplotlib inline}
 
-### Review
+\newslide{Review}
 
 * Last time: Looked at Bayesian Regression.
 * Introduced priors and marginal likelihoods.
 * This time: Unsupervised Learning
 
-### Unsupervised Learning
+\newslide{Unsupervised Learning}
 
 * Supervised learning is learning where each data has a label (e.g. regression output)
 * In unsupervised learning we have no labels for the data.
@@ -56,7 +68,7 @@ mlai.write_figure(../slides/diagrams/ml/cluster_data01.svg')}
 
 \displaycode{pods.notebook.display_plots('cluster_data{counter:0>2}.svg', directory='../slides/diagrams/ml', counter=(0, 1))}
 
-### Clustering
+\newslide{Clustering}
 
 * One common approach, not deeply covered in this course. 
 * Associate each data point, $\dataVector_{i, :}$ with one of $k$ different discrete groups.
@@ -67,18 +79,18 @@ mlai.write_figure(../slides/diagrams/ml/cluster_data01.svg')}
   * Very useful when interacting with biologists.
 * Subtle difference between clustering and *vector quantisation*
 
-### Trying to Teach About Infinity
+\newslide{Trying to Teach About Infinity}
 
 * Little anecdote.
 
-### Clustering and Vector Quantisation
+\newslide{Clustering and Vector Quantisation}
 
 * To my mind difference is in clustering there should be a reduction in data density between samples.
 * This definition is not universally applied.
 * For today's purposes we merge them:
   * Determine how to allocate each point to a group and *harder* total number of groups.
 
-### $k$-means Clustering
+\newslide{$k$-means Clustering}
 
 * Simple algorithm for allocating points to groups. 
 * *Require*: Set of $k$ cluster centres & assignment of each points to a cluster.
@@ -87,7 +99,7 @@ mlai.write_figure(../slides/diagrams/ml/cluster_data01.svg')}
     3. Update each cluster centre by setting it to the mean of assigned data points.
     4. Repeat 2 and 3 until cluster allocations do not change.
 
-### Objective Function
+\newslide{Objective Function}
 
 * This minimizes the objective
   $$
@@ -152,7 +164,7 @@ for i in range(6):
 \displaycode{pods.notebook.display_plots('kmeans_clustering_{counter:0>3}.svg', directory='../slides/diagrams/ml', 
                             text_top='kmeans_clustering_{counter:0>3}.tex', counter=(0, 13))}
 
-### Other Clustering Approaches
+\newslide{Other Clustering Approaches}
 
 * Spectral clustering (@Shi:normalized00,@Ng:spectral02)
   * Allows clusters which aren't convex hulls.
@@ -162,7 +174,7 @@ for i in range(6):
 clusters
   * In practice useful for dealing with previously unknown species (e.g. a "Black Swan Event").
 
-### High Dimensional Data
+\newslide{High Dimensional Data}
 
 * USPS Data Set Handwritten Digit
 * 3648 dimensions (64 rows, 57 columns)
@@ -184,11 +196,12 @@ for i in range(3):
 \setupcode{from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('dem_six{counter:0>3}.png', directory='../slides/diagrams/ml', counter=IntSlider(0, 0, 3, 1))}
 
-### USPS Samples
+\newslide{USPS Samples}
 
 * Even if we sample every nanonsecond from now until end of universe you won't see original six!
 
-### Simple Model of Digit
+\newslide{Simple Model of Digit}
+
 * Rotate a prototype 
 
 \setupcode{from scipy.misc import imrotate}
@@ -207,7 +220,7 @@ for angle in angles:
 
 \displaycode{pods.notebook.display_plots('dem_six_rotate{counter:0>3}.png', directory='../slides/diagrams/ml', counter=(0, 3))}
 
-### Low Dimensional Manifolds
+\newslide{Low Dimensional Manifolds}
 
 * Pure rotation is too simple
   * In practice data may undergo several distortions.
@@ -216,7 +229,7 @@ for angle in angles:
   * Therefore we expect the data to live on a lower dimensional manifold.
   * Conclusion: Deal with high dimensional data by looking for a lower dimensional non-linear embedding.
 
-### Principal Component Analysis
+\newslide{Principal Component Analysis}
 
 * PCA (@Hotelling:analysis33) is a linear embedding.
 * Today its presented as:
@@ -227,11 +240,11 @@ for angle in angles:
   \mathbf{S}=\frac{1}{\numData}\sum_{i=1}^n \left(\dataVector_{i, :}-\boldsymbol{\mu}\right)\left(\dataVector_{i, :} - \boldsymbol{\mu}\right)^\top
   $$
 
-### Principal Component Analysis
+\newslide{Principal Component Analysis}
 
 * Find directions in the data, $\mathbf{x} = \mathbf{U}\dataVector$, for which variance is maximized.
 
-### Lagrangian
+\newslide{Lagrangian}
 
 * Solution is found via constrained optimisation (which uses [Lagrange multipliers](https://en.wikipedia.org/wiki/Lagrange_multiplier)):
   $$
@@ -245,7 +258,7 @@ for angle in angles:
   Which is known as an [*eigenvalue problem*](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors).
 * Further directions that are *orthogonal* to the first can also be shown to be eigenvectors of the covariance.
 
-### Linear Dimensionality Reduction
+\newslide{Linear Dimensionality Reduction}
 
 * Represent data, $\dataMatrix$, with a lower dimensional set of latent variables $\latentMatrix$.
 * Assume a linear relationship of the form
@@ -257,7 +270,8 @@ for angle in angles:
   \boldsymbol{\epsilon}_{i,:} \sim \mathcal{N}(\mathbf{0}, \sigma^2\mathbf{I})
   $$
 
-### Linear Latent Variable Model
+\newslide{Linear Latent Variable Model}
+
 **Probabilistic PCA**
 
 * Define *linear-Gaussian relationship* between latent variables and data.
@@ -290,14 +304,15 @@ $$p\left(\latentMatrix\right)=\prod_{i=1}^{\numData}\mathcal{N}\left(\mathbf{x}_
 
 $$p\left(\dataMatrix|\mappingMatrix\right)=\prod_{i=1}^{\numData}\mathcal{N}\left(\dataVector_{i,:}|\mathbf{0},\mappingMatrix\mappingMatrix^{\top}+\sigma^{2}\mathbf{I}\right)$$
 
-### Computation of the Marginal Likelihood
+\newslide{Computation of the Marginal Likelihood}
+
 $$\dataVector_{i,:}=\mappingMatrix\mathbf{x}_{i,:}+\boldsymbol{\epsilon}_{i,:},\quad \mathbf{x}_{i,:} \sim \mathcal{N}(\mathbf{0},\mathbf{I}), \quad \boldsymbol{\epsilon}_{i,:} \sim \mathcal{N}(\mathbf{0},\sigma^{2}\mathbf{I})$$
 
 $$\mappingMatrix\mathbf{x}_{i,:} \sim \mathcal{N}(\mathbf{0},\mappingMatrix\mappingMatrix^\top)$$
 
 $$\mappingMatrix\mathbf{x}_{i, :} + \boldsymbol{\epsilon}_{i, :} \sim \mathcal{N}\left(\mathbf{0},\mappingMatrix\mappingMatrix^\top + \sigma^2 \mathbf{I}\right)$$
 
-### Linear Latent Variable Model II
+\newslide{Linear Latent Variable Model II}
   **Probabilistic PCA Max. Likelihood Soln**
 (@Tipping:probpca99)
 
@@ -317,7 +332,7 @@ Connect the nodes
 
 $$p\left(\dataMatrix|\mappingMatrix\right)=\prod_{i=1}^{\numData}\mathcal{N}\left(\dataVector_{i, :}|\mathbf{0}, \mappingMatrix\mappingMatrix^{\top}+\sigma^{2}\mathbf{I}\right)$$
 
-### Linear Latent Variable Model II
+\newslide{Linear Latent Variable Model II}
   
 **Probabilistic PCA Max. Likelihood Soln** (@Tipping:probpca99)
   $$
@@ -332,7 +347,7 @@ $$p\left(\dataMatrix|\mappingMatrix\right)=\prod_{i=1}^{\numData}\mathcal{N}\lef
   $$
   where $\mathbf{R}$ is an arbitrary rotation matrix.
 
-### Reading
+\newslide{Reading}
 
 - Chapter 7 of @Rogers:book11 up to pg 249.
 
@@ -353,8 +368,7 @@ filtering](./week2.ipynb),  which we introduces in the context of *objective
 functions*. Now we will introduce a more probabilistic approach to such models,
 specifically we are interested in *latent variable* modelling.
 
-## Latent
-Variables
+\section{Latent Variables}
 
 Latent means hidden, and hidden variables are simply *unobservable*
 variables. The idea of a latent variable is crucial to the concept of artificial
@@ -438,7 +452,7 @@ modelling. In this session we are going to explore the idea in a simple linear
 system and see how it relates to *factor analysis* and *principal component
 analysis*.
 
-## Your Personality
+\section{Your Personality}
 
 At the beginning of the 20th century there was
 a great deal of interest amoungst psychologists in formalizing patterns of
@@ -453,7 +467,7 @@ characteristic traits that we are looking to discern. These traits or factors
 can be extracted by assimilating the high dimensional characteristics of the
 individual into a few latent factors. 
 
-### Factor Analysis Model
+\subsection{Factor Analysis Model}
 
 This causes
 us to consider a model as follows, if we are given a high dimensional vector of
@@ -626,7 +640,8 @@ understanding personality and intelligence. [Charles
 Spearman](http://en.wikipedia.org/wiki/Charles_Spearman) was concerned with the
 measurements of "the abilities of man" and is credited with the earliest version
 of factor analysis.
-## Principal Component Analysis
+
+\section{Principal Component Analysis}
 
 In 1933 [Harold
 Hotelling](http://en.wikipedia.org/wiki/Harold_Hotelling) published on
@@ -703,7 +718,7 @@ When performing the eigendecomposition on a Gaussian covariances,
 diagonalisation is very important because it returns the covariance to a form
 where there is no correlation between points. 
 
-### Positive Definite
+\subsection{Positive Definite}
 
 We are
 interested in the case where $\mathbf{A}$ is a covariance matrix, which implies
@@ -755,7 +770,7 @@ along its diagonal.
 
 Write your answer to the question in this box.
 
-## Eigenvectors of a Symmetric Matric
+\section{Eigenvectors of a Symmetric Matric}
 
 Symmetric matrices have *orthonormal*
 eigenvectors. This means that $\mathbf{U}$ is an [orthogonal
@@ -763,7 +778,7 @@ matrix](http://en.wikipedia.org/wiki/Orthogonal_matrix),
 $\mathbf{U}^\top\mathbf{U} = \mathbf{I}$. This implies that $\mathbf{u}_{:, i}
 ^\top \mathbf{u}_{:, j}$ is equal to 0 if $i\neq j$ and 1 if $i=j$.
 
-## Probabilistic PCA
+\section{Probabilistic PCA}
 
 In 1997 [Tipping and
 Bishop](http://research.microsoft.com/pubs/67218/bishop-ppca-jrss.pdf)  and
@@ -808,7 +823,8 @@ $$
 where $\sigma^2$ is the noise variance. Note that
 if $\sigma^2$ is larger than any particular eigenvalue, then that eigenvalue
 (along with its corresponding eigenvector) is *discarded* from the solution.
-### Python Implementation of Probabilistic PCA
+
+\subsection{Python Implementation of Probabilistic PCA}
 
 We will now implement this
 algorithm in python.
@@ -840,7 +856,7 @@ problem](./week3.ipynb), where we also wished to avoid computation of
 $\latentMatrix^\top\latentMatrix$ (or in the case of [nonlinear regression with basis
 functions](./week4.ipynb) $\boldsymbol{\Phi}^\top\boldsymbol{\Phi}$).
 
-## Posterior for Principal Component Analysis
+\section{Posterior for Principal Component Analysis}
 
 Under the latent variable model
 justification for principal component analysis, we are normally interested in
@@ -907,7 +923,7 @@ similar forms? What matches and what differs?
 Write your answer to the question in this box. Use latex
 to write your derivations, show each step of your work.
 
-### Python Implementation of the Posterior
+\subsection{Python Implementation of the Posterior}
 
 Now let's implement the system in
 code.
@@ -969,7 +985,7 @@ The eigenvalues of the matrix $\dataMatrix^\top\dataMatrix$ are then given by th
 singular values of the matrix $\dataMatrix^\top$ squared and the eigenvectors are
 given by $\mathbf{U}$.
 
-### Solution for $\mappingMatrix$
+\subsection{Solution for $\mappingMatrix$}
 
 Given the singular value
 decomposition of $\dataMatrix$ then we have
@@ -1038,7 +1054,7 @@ def posterior(Y, U, ell, sigma2, center=True):
     mu_x = np.dot(Y_cent, U)*d[None, :]
     return mu_x, C_x}
 
-## Examples
+\section{Examples}
 
 For our first example we'll consider some motion capture data of a
 man breaking into a run. [Motion capture
@@ -1069,7 +1085,7 @@ much residual variance there is in the system by looking at `sigma2`.
 
 \code{print(sigma2)}
 
-## Robot Navigation Example
+\section{Robot Navigation Example}
 
 In the next example we will load in data from a
 robot navigation problem. The data consists of wireless access point strengths
@@ -1103,7 +1119,7 @@ ax.set_title('Access Point Inferred Locations')}
 
 \code{U, ell, sigma2 = ppca(Y.T, q)}
 
-## Relationship to Matrix Factorization
+\section{Relationship to Matrix Factorization}
 
 We can use the robot naviation example
 to realise that PCA (and factor analysis) are very reminiscient of the [*matrix
@@ -1147,8 +1163,7 @@ $$
 for probabilistic PCA
 and factor analysis are the same.
 
-## Other Interpretations of PCA: Separating
-Model and Algorithm
+\section{Other Interpretations of PCA: Separating Model and Algorithm}
 
 Since Hotelling first introduced his perspective on factor
 analysis as PCA there has been somewhat of a conflation of the idea of the model
@@ -1194,8 +1209,7 @@ $\boldsymbol{\Lambda}^2$ is now the eigenvalues of the covariane matrix and
 $\mathbf{U}$ are the eigenvectors. So performing the SVD can simply be seen as
 another approach to determining the principal components.
 
-### Separating Model
-and Algorithm
+\subsection{Separating Model and Algorithm}
 
 I've given a fair amount of personal thought to this situation
 and my own opinion that this confusion about method arises because of a
@@ -1232,7 +1246,7 @@ of model and algorithm is not always a bad thing. But for clarity of thinking
 and understanding it is necessary to maintain the separation and to maintain a
 handle on when and why we perform the conflation.
 
-## PCA in Practice
+\section{PCA in Practice}
 
 Principal
 component analysis is so effective in practice that there has almost developed a
@@ -1259,8 +1273,7 @@ the nature of your data. Intelligent plotting and interaction with your data is
 always a good think, and for high dimensional data that means that you need some
 way of visualisation, PCA is typically a good starting point.
 
-## Marginal
-Likelihood
+\section{Marginal Likelihood}
 
 We have developed the posterior density over the latent variables
 given the data and the parameters, and due to symmetries in the underlying
@@ -1285,7 +1298,8 @@ where
 $\dataVector_{i, :}$ is a row of the data matrix $\dataMatrix$ and the
 independence is across the data points.
 
-## Computation of the Log Likelihood
+\section{Computation of the Log Likelihood}
+
 The quality of the model can be assessed using the log likelihood of this
 Gaussian form.
 $$
@@ -1349,7 +1363,7 @@ be computed faster as the sum of all the elements of
 $\dataMatrix\circ\dataMatrix$, where $\circ$ denotes the element-wise (or
 [Hadamard](http://en.wikipedia.org/wiki/Hadamard_product_(matrices)) product.
 
-### Reconstruction of the Data
+\subsection{Reconstruction of the Data}
 
 Given any posterior projection of a data point,
 we can replot the original data as a function of the input space. 
@@ -1360,7 +1374,7 @@ We will now try to reconstruct the motion capture figure form some different pla
 
 \writeassignment{Project the motion capture data onto its principal components, and then use the *mean posterior estimate* to reconstruct the data from the latent variables at the data points. Use two latent dimensions. What is the sum of squares error for the reconstruction?}{5}{25}
 
-### Other Data Sets to Explore
+\subsection{Other Data Sets to Explore}
 
 Below there are a few other data sets from `pods` you might want to explore with PCA. Both of them have $p$>$n$ so you need to consider how to do the larger eigenvalue probleme efficiently without large demands on computer memory.
 
@@ -1391,7 +1405,7 @@ $$
 \left.\mathbf{U}^\prime\right.^\top\mathbf{U}^\prime = \mathbf{I}
 $$
 
-### Olivetti Faces
+\subsection{Olivetti Faces}
 
 You too can create your own eigenfaces. In this example we load in the 'Olivetti Face' data set, a small data set of 200 faces from the [Olivetti Research Laboratory](http://en.wikipedia.org/wiki/Olivetti_Research_Laboratory). Below we load in the data and display an image of the second face in the data set (i.e., indexed by 1).
 
@@ -1408,7 +1422,7 @@ Note that to display the face we had to reshape the appropriate row of the data 
 
 recovers the original image into a matrix `im` by using the `np.reshape` function to return the vector to a matrix.
 
-### Visualizing the Eigenvectors
+\subsection{Visualizing the Eigenvectors}
 
 Each retained eigenvector is stored in the $j$th column of $\mathbf{U}$. Each of these eigenvectors is associated with particular directions of variation in the original data. Principal component analysis implies that we can reconstruct any face by using a weighted sum of these eigenvectors where the weights for each face are given by the relevant vector of the latent variables, $\mathbf{x}_{i, :}$ and the diagonal elements of the matrix $\mathbf{L}$. We can visualize the eigenvectors $\mathbf{U}$ as images by performing the same reshape operation we used to recover the image associated with a data point above. Below we do this for the first nine eigenvectors of the Olivetti Faces data.
 
@@ -1425,7 +1439,7 @@ for i in range(width):
         ax[i, j].set_title('Principle Component ' + str(lat+1))
         lat += 1}
 
-### Reconstruction
+\subsection{Reconstruction}
 
 We can now attempt to reconstruct a given training point from these eigenvectors. As we mentioned above, the reconstruction is dependent on the value of the latent variable and the weights from the matrix $\mathbf{L}$. First let's compute the value of the latent variables for the point we want to construct. Then we'll use them to compute the weightings of each of the eigenvectors.
 
@@ -1443,7 +1457,7 @@ ax[1].set_title('Reconstruction of Example from ' + str(len(reconstruction_weigh
 
 The quality of the reconstruction is a bit blurry, it can be improved by increasing the number of template images used (i.e. increasing the *latent dimensionality*).
 
-### Gene Expression
+\subsection{Gene Expression}
 
 Each of the cells in your body stores your entire genetic code in your DNA, but at any one moment it is only 'expressing' a small portion of that code. Your cells are mainly constructed of protein, and these proteins are manufactured by first transcribing the DNA to RNA and then translating the RNA to protein. If the DNA is the cells hard drive, then one role of the RNA is to act like a cache of data that is being read from the hard drive at any one time. Gene expression arrays allow us to measure the quantity of different types of RNA in the cell, effectively analyzing what's in the cache (although we have to destroy the cell or the tissue to access it). A gene expression experiment often consists of a time course or a series of experiments that characterise the gene expression of cells at any given time.
 
