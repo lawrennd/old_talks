@@ -8,11 +8,9 @@
 
 \notes{This notion is known as *Laplace's demon* or *Laplace's superman*.}
 
-
 \newslide{}
 
 \includepng{../slides/diagrams/laplacesDeterminismEnglish}{60%}
-
 
 \notes{Unfortunately, most analyses of his ideas stop at that point, whereas his real point is that such a notion is unreachable. Not so much *superman* as *strawman*. Just three pages later in the "Philosophical Essay on Probabilities" [@Laplace:essai14], Laplace goes on to observe:
 

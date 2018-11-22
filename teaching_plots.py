@@ -253,7 +253,10 @@ def base_plot(K, ind=[0, 1], ax=None,
 
 
 def prob_diagram(fontsize=20, diagrams='../diagrams'):
-    """Plot a diagram demonstrating marginal and joint probabilities."""
+    """Plot a diagram demonstrating marginal and joint probabilities.
+    :param fontsize: the fontsize to use in the plot
+    :param diagrams: the folder to place the plots in."""
+
     marg = 0.05 # Distance between lines and boxes
     indent = 0.1 # indent of n indicators
     axis_indent = 0.3 # Axis indent.
@@ -297,13 +300,16 @@ def prob_diagram(fontsize=20, diagrams='../diagrams'):
 
     plt.text(3, -2*axis_indent, '$X$', fontsize=fontsize)
     plt.text(-2*axis_indent, 2, '$Y$', fontsize=fontsize)
-    #ylabel('\variableTwo')
 
     mlai.write_figure(os.path.join(diagrams, 'prob_diagram.svg'), transparent=True)
 
 
 def bernoulli_urn(ax, diagrams='../diagrams'):
-    """Plot the urn of Jacob Bernoulli's analogy for the Bernoulli distribution."""
+    """Plot the urn of Jacob Bernoulli's analogy for the Bernoulli distribution.
+
+    :param ax: axis to draw plot on.
+    :param diagrams: the folder to store the diagram in.
+    """
 
     black_prob = 0.3
     ball_radius = 0.1
@@ -338,7 +344,11 @@ def bernoulli_urn(ax, diagrams='../diagrams'):
     mlai.write_figure(os.path.join(diagrams, 'bernoulli-urn.svg'), transparent=True)
 
 def bayes_billiard(ax, diagrams='../diagrams'):
-    """Plot a series of figures representing Thomas Bayes' billiard table for the Bernoulli distribution representation."""
+    """Plot a series of figures representing Thomas Bayes' billiard table for the Bernoulli distribution representation.
+
+    :param ax: axis to draw plot on.
+    :param diagrams: the folder to store the diagram in.
+    """
     
     black_prob = 0.3
     ball_radius = 0.1
@@ -379,7 +389,10 @@ def bayes_billiard(ax, diagrams='../diagrams'):
 
             
 def hyperplane_coordinates(w, b, plot_limits):
-    """Helper function for plotting the decision boundary of the perceptron."""
+    """Helper function for plotting the decision boundary of the perceptron.
+
+    :param w: the weight vector for the perceptron.
+    :param b: the bias parameter for the perdeptron."""
 
     if abs(w[1])>abs(w[0]):
         # If w[1]>w[0] in absolute value, plane is likely to be leaving tops of plot.
@@ -392,7 +405,15 @@ def hyperplane_coordinates(w, b, plot_limits):
     return x0, x1
 
 def init_perceptron(f, ax, x_plus, x_minus, w, b, fontsize=18):
-    """Initialise a plot for showing the perceptron decision boundary."""
+    """Initialise a plot for showing the perceptron decision boundary.
+
+    :param f: 
+    :param ax:
+    :param x_plus:
+    :param x_minus:
+    :param w:
+    :param b:
+    :param fontsize: """
 
     h = {}
 
@@ -428,7 +449,7 @@ def init_perceptron(f, ax, x_plus, x_minus, w, b, fontsize=18):
 
 def update_perceptron(h, f, ax, x_plus, x_minus, i, w, b):
     """Update plots after decision boundary has changed."""
-    # Helper function for updating plots
+
     # Re-plot the hyper plane 
     plot_limits = {}
     plot_limits['x'] = np.asarray(ax[0].get_xlim())
@@ -732,7 +753,20 @@ def rmse_fit(x, y, param_name, param_range,
              model=mlai.LM, #plot_objectives={'RMSE':mlai.MapModel.rmse},
              objective_ylim=None, xlim=None,
              plot_fit=marathon_fit, diagrams='../diagrams', **kwargs):
-    """Fit a model and show RMSE error"""
+
+    """Fit a model and show RMSE error
+
+    :param x: the input x data.
+    :param y: the input y data.
+    :param param_name: the parameter name to vary.
+    :param param_range: the range over which to vary the parameter.
+    :param model: the model to fit (default is mlai.LM).
+    :param objective_ylim: the y limits for the plot of the objective.
+    :param xlim: the x limits for the plot.
+    :param plot_fit: the plotting function to use for the fit.
+    :param diagrams: the folder to place the diagrams in (default is ../diagrams).
+    :kwargs: arguments to pass to the model construction."""
+
     f, ax = plt.subplots(1, 2, figsize=two_figsize)
     num_data = x.shape[0]
     
@@ -758,7 +792,19 @@ def rmse_fit(x, y, param_name, param_range,
 def holdout_fit(x, y, param_name, param_range, model=mlai.LM, val_start=20,
                 objective_ylim=None, xlim=None, plot_fit=marathon_fit,
                 permute=True, prefix='olympic_val', diagrams='../diagrams', **kwargs):
-    "Fit a model and show holdout error."
+    """Fit a model and show holdout error.
+
+    :param x: the input x data.
+    :param y: the input y data.
+    :param param_name: the parameter name to vary.
+    :param param_range: the range over which to vary the parameter.
+    :param model: the model to fit (default is mlai.LM).
+    :param objective_ylim: the y limits for the plot of the objective.
+    :param xlim: the x limits for the plot.
+    :param plot_fit: the plotting function to use for the fit.
+    :param prefix: the prefix to use for filenames (default is olympic_val).
+    :param diagrams: the folder to place the diagrams in (default is ../diagrams).
+    :kwargs: arguments to pass to the model construction."""
 
     f, ax = plt.subplots(1, 2, figsize=two_figsize)
     num_data = x.shape[0]
@@ -797,9 +843,25 @@ def holdout_fit(x, y, param_name, param_range, model=mlai.LM, val_start=20,
                  x_val=x_val, y_val=y_val, diagrams=diagrams)
         count+=1
 
-def loo_fit(x, y, param_name, param_range, model=mlai.LM, objective_ylim=None, 
-            xlim=None, plot_fit=marathon_fit, prefix='olympic_loo', diagrams='../diagrams', **kwargs):
-    "Fit a model and show leave one out error"
+def loo_fit(x, y, param_name, param_range,
+            model=mlai.LM, objective_ylim=None, 
+            xlim=None, plot_fit=marathon_fit,
+            prefix='olympic_loo', diagrams='../diagrams',
+            **kwargs):
+    """Fit a model and show leave one out error
+
+    :param x: the input x data.
+    :param y: the input y data.
+    :param param_name: the parameter name to vary.
+    :param param_range: the range over which to vary the parameter.
+    :param model: the model to fit (default is mlai.LM).
+    :param objective_ylim: the y limits for the plot of the objective.
+    :param xlim: the x limits for the plot.
+    :param plot_fit: the plotting function to use for the fit.
+    :param prefix: the prefix to use for filenames (default is olympic_loo).
+    :param diagrams: the folder to place the diagrams in (default is ../diagrams).
+    :kwargs: arguments to pass to the model construction."""
+
     f, ax = plt.subplots(1, 2, figsize=two_figsize)
 
 
@@ -835,13 +897,12 @@ def loo_fit(x, y, param_name, param_range, model=mlai.LM, objective_ylim=None,
                 f_val, _ = m.predict(x_val)
                 ss_val_temp += ((y_val-f_val)**2).mean() 
                 plot_fit(model=m, value=param, xlim=xlim, param_name=param_name, param_range=param_range,
-                         objective=np.sqrt(ss_val[count]), objective_ylim=objective_ylim,
+                         objective=np.nan, objective_ylim=objective_ylim,
                          fig=f, ax=ax, prefix='olympic_loo{part:0>3}'.format(part=part),
                          x_val=x_val, y_val=y_val, diagrams=diagrams)
             ss[count] = ss_temp/(num_parts)
             ll[count] = ll_temp/(num_parts)
             ss_val[count] = ss_val_temp/(num_parts)
-            #ax[1].cla()
             plot_fit(model=m, value=param, xlim=xlim, param_name=param_name, param_range=param_range,
                      objective=np.sqrt(ss_val[count]), objective_ylim=objective_ylim,
                      fig=f, ax=ax, prefix='olympic_loo{part:0>3}'.format(part=len(partitions)),
@@ -852,6 +913,19 @@ def loo_fit(x, y, param_name, param_range, model=mlai.LM, objective_ylim=None,
 
 def cv_fit(x, y, param_name, param_range, model=mlai.LM, objective_ylim=None, 
                xlim=None, plot_fit=marathon_fit, num_parts=5, diagrams='../diagrams', **kwargs):
+    """Fit a model and show cross validation error
+
+    :param x: the input x data.
+    :param y: the input y data.
+    :param param_name: the parameter name to vary.
+    :param param_range: the range over which to vary the parameter.
+    :param model: the model to fit (default is mlai.LM).
+    :param objective_ylim: the y limits for the plot of the objective.
+    :param xlim: the x limits for the plot.
+    :param plot_fit: the plotting function to use for the fit.
+    :param diagrams: the folder to place the diagrams in (default is ../diagrams).
+    :kwargs: arguments to pass to the model construction."""
+
     f, ax = plt.subplots(1, 2, figsize=two_figsize)
     num_data = x.shape[0]
     partitions = []

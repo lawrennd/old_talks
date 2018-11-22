@@ -1,14 +1,25 @@
 ---
 layout: lectures
 title: Linear Algebra and Linear Regression
-author: Neil D. Lawrence
-date: 2015/10/13
+abstract: |
+  In this session we combine the objective function perspective and the probabilistic perspective on *linear regression*. We motivate the importance of *linear algebra* by showing how much faster we can complete a linear regression using linear algebra.
+date: 2015-10-13
+ipynb: 2015-10-13-week3.ipynb
+reveal: 2015-10-13-week3.slides.html
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
+  institute: Amazon Cambridge and University of Sheffield
+  twitter: lawrennd
+  url: http://inverseprobability.com
+venue: University of Sheffield
 transition: None
 ---
 
 \include{talk-macros.tex}
 
-### Review
+\subsection{Review}
 
 * Last time: Looked at objective functions for movie recommendation.
 * Minimized sum of squares objective by steepest descent and stochastic gradients.
@@ -16,13 +27,13 @@ transition: None
 
 \include{_ml/includes/regression-examples.md}
 
-### Olympic 100m Data
+\subsection{Olympic 100m Data}
 
 *  Gold medal times for Olympic 100 m runners since 1896.
 \includeimg{../slides/diagrams/ml/100m_final_start.jpg}
 \aligncenter{*Image from Wikimedia Commons*}<http://bit.ly/191adDC>
 
-### Olympic 100m Data
+\subsection{Olympic 100m Data}
 
 \setupcode{import pods
 from matplotlib import pyplot as plt

@@ -50,6 +50,7 @@ import pods}
 \newframe{\includesvg{../slides/diagrams/ml/over_determined_system005.svg}}{over_determined_system}
 \newframe{\includesvg{../slides/diagrams/ml/over_determined_system006.svg}}{over_determined_system}
 \newframe{\includesvg{../slides/diagrams/ml/over_determined_system007.svg}}{over_determined_system}
+\endanimation
 }
 
 

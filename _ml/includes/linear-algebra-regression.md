@@ -1,4 +1,4 @@
-### Regression: Linear Releationship
+\subsection{Regression: Linear Releationship}
 
 \notes{For many their first encounter with what might be termed a machine learning method is fitting a straight line. A straight line is characterized by two parameters, the scale, $m$, and the offset $c$.}
 
@@ -21,7 +21,7 @@ pace.
 
 \section{Laplace's Idea}
 
-### A Probabilistic Process
+\newslide{A Probabilistic Process}
 
 \slides{Set the mean of Gaussian to be a function.
 
@@ -39,7 +39,7 @@ This gives us a 'noisy function'.
 This is known as a stochastic process.}
 \notes{This is known as *stochastic process*. It is a function that is corrupted by noise. Laplace didn't suggest the Gaussian density for that purpose, that was an innovation from Carl Friederich Gauss, which is what gives the Gaussian density its name.}
 
-### Height as a Function of Weight
+\subsection{Height as a Function of Weight}
 
 In the standard Gaussian, parametized by mean and variance.
 
@@ -55,17 +55,17 @@ $$
 
 Assume $\dataScalar_i$ is height and $\inputScalar_i$ is weight.
 
+\newslide{Data Point Likelihood}
 \slides{
-### Data Point Likelihood
-}
 Likelihood of an individual data point
 $$
 p\left(\dataScalar_i|\inputScalar_i,m,c\right)=\frac{1}{\sqrt{2\pi \dataStd^2}}\exp\left(-\frac{\left(\dataScalar_i-m\inputScalar_i-c\right)^{2}}{2\dataStd^2}\right).
 $$
 Parameters are gradient, $m$, offset, $c$ of the function and noise variance $\dataStd^2$.
+}
 
-### Data Set Likelihood
-
+\newslide{Data Set Likelihood}
+\sides{
 If the noise, $\epsilon_i$ is sampled independently for each data point.
 Each data point is independent (given $m$ and $c$).
 For *independent* variables:
@@ -75,9 +75,10 @@ $$
 $$
 p(\dataVector|\inputVector, m, c) = \prod_{i=1}^\numData p(\dataScalar_i|\inputScalar_i, m, c)
 $$
+}
 
-### For Gaussian 
-
+\newslide{For Gaussian}
+\slides{
 i.i.d. assumption
 $$
 p(\dataVector|\inputVector, m, c) = \prod_{i=1}^\numData \frac{1}{\sqrt{2\pi \dataStd^2}}\exp \left(-\frac{\left(\dataScalar_i- m\inputScalar_i-c\right)^{2}}{2\dataStd^2}\right).
@@ -85,51 +86,56 @@ $$
 $$
 p(\dataVector|\inputVector, m, c) = \frac{1}{\left(2\pi \dataStd^2\right)^{\frac{\numData}{2}}}\exp\left(-\frac{\sum_{i=1}^\numData\left(\dataScalar_i-m\inputScalar_i-c\right)^{2}}{2\dataStd^2}\right).
 $$
+}
 
-### Log Likelihood Function
-
+\newslide{Log Likelihood Function}
+\slides{
 * Normally work with the log likelihood:
 $$
 L(m,c,\dataStd^{2})=-\frac{\numData}{2}\log 2\pi -\frac{\numData}{2}\log \dataStd^2 -\sum_{i=1}^{\numData}\frac{\left(\dataScalar_i-m\inputScalar_i-c\right)^{2}}{2\dataStd^2}.
 $$
+}
 
-### Consistency of Maximum Likelihood
-
+\newslide{Consistency of Maximum Likelihood}
+\slides{
 * If data was really generated according to probability we specified.
 * Correct parameters will be recovered in limit as $\numData \rightarrow \infty$.
 * This can be proven through sample based approximations (law of large numbers) of "KL divergences".
-* Mainstay of classical statistics.
+* Mainstay of classical statistics [@Wasserman:all03].
+}
 
-### Probabilistic Interpretation of the Error Function
-
+\newslide{Probabilistic Interpretation of the Error Function}
+\slides{
 * Probabilistic Interpretation for Error Function is Negative Log Likelihood.
 * *Minimizing* error function is equivalent to *maximizing* log likelihood.
 * Maximizing *log likelihood* is equivalent to maximizing the *likelihood* because $\log$ is monotonic.
 * Probabilistic interpretation: Minimizing error function is equivalent to maximum likelihood with respect to parameters.
+}
 
-### Error Function
-
+\newslide{Error Function}
+\slides{
 * Negative log likelihood is the error function leading to an error function 
   $$\errorFunction(m,c,\dataStd^{2})=\frac{\numData}{2}\log \dataStd^2+\frac{1}{2\dataStd^2}\sum _{i=1}^{\numData}\left(\dataScalar_i-m\inputScalar_i-c\right)^{2}.$$
 * Learning proceeds by minimizing this error function for the data set provided.
+}
 
-### Connection: Sum of Squares Error
-
+\newslide{Connection: Sum of Squares Error}
+\slides{
 * Ignoring terms which don’t depend on $m$ and $c$ gives
   $$\errorFunction(m, c) \propto \sum_{i=1}^\numData (\dataScalar_i - \mappingFunction(\inputScalar_i))^2$$
   where $\mappingFunction(\inputScalar_i) = m\inputScalar_i + c$.
 * This is known as the *sum of squares* error function.
 * Commonly used and is closely associated with the Gaussian likelihood.
-
-### Reminder
-
+}
+\newslide{Reminder}
+\slides{
 * Two functions involved:
     * *Prediction function*: $\mappingFunction(\inputScalar_i)$
     * Error, or *Objective function*: $\errorFunction(m, c)$
 * Error function depends on parameters through prediction function.
-
-### Mathematical Interpretation
-
+}
+\newslide{Mathematical Interpretation}
+\slides{
 * What is the mathematical interpretation?
 * There is a cost function.
     * It expresses mismatch between your prediction and reality.
@@ -137,7 +143,7 @@ $$
       \errorFunction(m, c)=\sum_{i=1}^\numData \left(\dataScalar_i - m\inputScalar_i-c\right)^2
 	  $$
     * This is known as the sum of squares error.
-
+}
 \section{Sum of Squares Error}
 
 \notes{Minimizing the sum of squares error was first proposed by [Legendre](http://en.wikipedia.org/wiki/Adrien-Marie_Legendre) in 1805. His book, which was on the orbit of comets, is available on google books, we can take a look at the relevant page by calling the code below.
@@ -218,10 +224,11 @@ which are each indexed by their position in the vector.}
 \notes{Linear algebra provides a very similar role, when we introduce [linear algebra](http://en.wikipedia.org/wiki/Linear_algebra), it is because we are faced with a large number of addition and multiplication operations. These operations need to be done together and would be very tedious to write down as a group. So the first reason we reach for linear algebra is for a more compact representation of our mathematical formulae.}
 
 \notes{
-### Running Example: Olympic Marathons
+\subsection{Running Example: Olympic Marathons}
 
 Now we will load in the Olympic marathon data. This is data of the olympic marath times for the men's marathon from the first olympics in 1896 up until the London 2012 olympics.}
 
+\setupcode{import pods}
 \code{data = pods.datasets.olympic_marathon_men()
 x = data['X']
 y = data['Y']}
@@ -236,11 +243,11 @@ print(y)}
 \notes{The aim of this lab is to have you coding linear regression in python. We will do it in two ways, once using iterative updates (coordinate ascent) and then using linear algebra. The linear algebra approach will not only work much better, it is easy to extend to multiple input linear regression and *non-linear* regression using basis functions.}
 
 \notes{
-### Plotting the Data
+\subsection{Plotting the Data}
 
 You can make a plot of $\dataScalar$ vs $\inputScalar$ with the following command:}
 
-\plotcode{%matplotlib inline 
+\setupplotcode{%matplotlib inline 
 import matplotlib.pyplot as plt}
 
 \plotcode{plt.plot(x, y, 'rx')
@@ -248,7 +255,7 @@ plt.xlabel('year')
 plt.ylabel('pace in min/km')}
 
 \notes{
-### Maximum Likelihood: Iterative Solution
+\subsection{Maximum Likelihood: Iterative Solution}
 
 Now we will take the maximum likelihood approach we derived in the lecture to fit a line, $\dataScalar_i=m\inputScalar_i + c$, to the data you've plotted. We are trying to minimize the error function:
 $$
@@ -261,14 +268,14 @@ c = 80}
 
 \notes{Then we use the maximum likelihood update to find an estimate for the offset, $c$.}
 
-### Coordinate Descent
+\subsection{Coordinate Descent}
 
 \notes{In the movie recommender system example, we minimised the objective function by steepest descent based gradient methods. Our updates required us to compute the gradient at the position we were located, then to update the gradient according to the direction of steepest descent. This time, we will take another approach. It is known as *coordinate descent*. In coordinate descent, we choose to move one parameter at a time. Ideally, we design an algorithm that at each step moves the parameter to its minimum value. At each step we choose to move the individual parameter to its minimum.}
 
 \notes{To find the minimum, we look for the point in the curve where the gradient is zero. This can be found by taking the gradient of $\errorFunction(m,c)$ with respect to the parameter.}
 
+\newslide{Learning is Optimization}
 \slides{
-### Learning is Optimization
 
 * Learning is minimization of the cost function.
 * At the minima the gradient is zero.
@@ -276,15 +283,15 @@ c = 80}
   $$\frac{\text{d}\errorFunction(c)}{\text{d}c} = -2\sum_{i=1}^\numData \left(\dataScalar_i- m \inputScalar_i - c \right)$$
   $$0 = -2\sum_{i=1}^\numData\left(\dataScalar_i- m\inputScalar_i - c \right)$$}
 
+\newslide{Learning is Optimization}
 \slides{
-### Learning is Optimization
 
 * Fixed point equations
   $$0 = -2\sum_{i=1}^\numData \dataScalar_i +2\sum_{i=1}^\numData m \inputScalar_i +2n c$$
   $$c = \frac{\sum_{i=1}^\numData \left(\dataScalar_i - m\inputScalar_i\right)}{\numData}$$}
 
 \notes{
-#### Update for Offset
+\subsubsection{Update for Offset}
 
 Let's consider the parameter $c$ first. The gradient goes nicely through the summation operator, and we obtain
 $$
@@ -327,7 +334,7 @@ print(c)}
   $$m  =    \frac{\sum_{i=1}^\numData \left(\dataScalar_i -c\right)\inputScalar_i}{\sum_{i=1}^\numData\inputScalar_i^2}$$
 }
 \notes{
-### Update for Slope
+\subsection{Update for Slope}
 
 Now we have the offset set to the minimum value, in coordinate descent, the next step is to optimise another parameter. Only one further parameter remains. That is the slope of the system.}
 
@@ -338,7 +345,7 @@ $$m^* = \frac{\sum_{i=1}^\numData (\dataScalar_i - c)\inputScalar_i}{\sum_{i=1}^
 \notes{Communication of mathematics in data science is an essential skill, in a moment, you will be asked to rederive the equation above. Before we do that, however, we will briefly review how to write mathematics in the notebook.}
 
 \notes{
-### $\LaTeX$ for Maths
+\subsection{$\LaTeX$ for Maths}
 
 These cells use [Markdown format](http://en.wikipedia.org/wiki/Markdown). You can include maths in your markdown using [$\LaTeX$ syntax](http://en.wikipedia.org/wiki/LaTeX), all you have to do is write your answer inside dollar signs, as follows:}
 
@@ -355,7 +362,7 @@ These cells use [Markdown format](http://en.wikipedia.org/wiki/Markdown). You ca
 ```(c) g = (x*w).sum()```}{1}{15}
 
 
-### Fixed Point Updates
+\subsection{Fixed Point Updates}
 
 \alignleft{Worked example.}
 $$
@@ -370,7 +377,7 @@ _{i=1}^{\numData}\left(\dataScalar_i-m^{*}\inputScalar_i-c^{*}\right)^{2}}{\numD
 $$
 
 \notes{
-### Gradient With Respect to the Slope
+\subsection{Gradient With Respect to the Slope}
 
 Now that you've had a little training in writing maths with $\LaTeX$, we will be able to use it to answer questions. The next thing we are going to do is a little differentiation practice.}
 
@@ -384,8 +391,8 @@ print(m)}
 
 \notes{We can have a look at how good our fit is by computing the prediction across the input space. First create a vector of 'test points',}
 
-\code{import numpy as np
-x_test = np.linspace(1890, 2020, 130)[:, None]}
+\setupcode{import numpy as np}
+\code{x_test = np.linspace(1890, 2020, 130)[:, None]}
 
 \notes{Now use this vector to compute some test predictions,}
 
@@ -393,7 +400,8 @@ x_test = np.linspace(1890, 2020, 130)[:, None]}
 
 \notes{Now plot those test predictions with a blue line on the same plot as the data,}
 
-\code{plt.plot(x_test, f_test, 'b-')
+\setupplotcode{import matplotlib.pyplot as plt}
+\plotcode{plt.plot(x_test, f_test, 'b-')
 plt.plot(x, y, 'rx')}
 
 \notes{The fit isn't very good, we need to iterate between these parameter updates in a loop to improve the fit, we have to do this several times,}
@@ -425,21 +433,20 @@ a stopping criterion.
 
 Why do we need so many iterations to get to the solution?}{3}{25}
 
-### Important Concepts Not Covered
+\subsection{Important Concepts Not Covered}
 
 * Other optimization methods:
     * Second order methods, conjugate gradient, quasi-Newton and Newton.
 * Effective heuristics such as momentum.
 * Local vs global solutions.
 
-### Reading
+\subsection{Reading}
 
 * Section 1.1-1.2 of @Rogers:book11 for fitting linear models. 
 * Section 1.2.5 of @Bishop:book06 up to equation 1.65.
 
+\newslide{Multi-dimensional Inputs}
 \slides{
-### Multi-dimensional Inputs
-
 * Multivariate functions involve more than one input.
 * Height might be a function of weight and gender.
 * There could be other contributory factors.
@@ -448,8 +455,8 @@ Why do we need so many iterations to get to the solution?}{3}{25}
   $$\mappingFunction(\inputVector_i) = \sum_{j=1}^p w_j \inputScalar_{i, j} + c$$
 }
 
+\newslide{Vector Notation}
 \slides{
-### Vector Notation
 
 * Write in vector notation,
   $$\mappingFunction(\inputVector_i) = \mappingVector^\top \inputVector_i + c$$
@@ -460,9 +467,9 @@ Why do we need so many iterations to get to the solution?}{3}{25}
 \include{_ml/includes/linear-regression-iterative.md}
 
 
-\slides{
-### Log Likelihood for Multivariate Regression
+\newslide{Log Likelihood for Multivariate Regression}
 
+\slides{
 The likelihood of a single data point is
 
 . . .
@@ -476,15 +483,15 @@ Leading to a log likelihood for the data set of
 . . . 
 
 $$L(\mappingVector,\dataStd^2)= -\frac{\numData}{2}\log \dataStd^2-\frac{\numData}{2}\log 2\pi -\frac{\sum_{i=1}^{\numData}\left(\dataScalar_i-\mappingVector^{\top}\inputVector_i\right)^{2}}{2\dataStd^2}.$$
-
-### Error Function
-
+}
+\newslide{Error Function}
+\slides{
 And a corresponding error function of
 $$\errorFunction(\mappingVector,\dataStd^2)=\frac{\numData}{2}\log\dataStd^2 + \frac{\sum_{i=1}^{\numData}\left(\dataScalar_i-\mappingVector^{\top}\inputVector_i\right)^{2}}{2\dataStd^2}.$$
 }
 
+\newslide{Expand the Brackets}
 \slides{
-### Expand the Brackets
 
 $$
 \begin{align*}
@@ -541,6 +548,7 @@ $$
 $$
 In `numpy` we can define this vector as follows}
 
+\setupcode{import numpy as np}
 \code{# define the vector w
 w = np.zeros(shape=(2, 1))
 w[0] = m
@@ -580,6 +588,7 @@ $$\inputMatrix
 
 \notes{which in `numpy` can be done with the following commands:}
 
+\setupcode{import numpy as np}
 \code{X = np.hstack((np.ones_like(x), x))
 print(X)}
 
@@ -644,6 +653,7 @@ $$
 \mappingFunctionVector = \inputMatrix\mappingVector.
 $$}
 
+\setupcode{import numpy as np}
 \code{f = np.dot(X, w) # np.dot does matrix multiplication in python}
 
 \notes{Combining this result with our objective function,
@@ -684,7 +694,7 @@ where $\frac{\text{d}\errorFunction(\mappingVector)}{\text{d}\mappingScalar_1}$ 
 \notes{Differentiation through multiplications and additions is relatively straightforward, and since linear algebra is just multiplication and addition, then its rules of diffentiation are quite straightforward too, but slightly more complex than regular derivatives. }
 
 
-### Multivariate Derivatives
+\subsection{Multivariate Derivatives}
 
 \slides{* We will need some multivariate calculus.
 * For now some simple multivariate differentiation:
@@ -753,7 +763,7 @@ $$
 2\mathbf{C}\mathbf{z}.
 $$}}
 
-### Differentiate the Objective
+\subsection{Differentiate the Objective}
 
 \slides{\alignleft{Differentiating with respect to the vector $\mappingVector$ we obtain}
 $$
@@ -768,7 +778,7 @@ _{i=1}^{\numData}\inputVector_i\inputVector_i^{\top}\right]^{-1}\sum
 _{i=1}^{\numData}\inputVector_i\dataScalar_i,
 $$\slides{
 
-### Differentiate the Objective
+\subsection{Differentiate the Objective}
 
 }
 Rewrite in matrix notation:
@@ -828,10 +838,11 @@ $$
 $$ 
 where $\mathbf{A}^{-1}$ denotes [*matrix inverse*](http://en.wikipedia.org/wiki/Invertible_matrix).}
 
-### Solving the Multivariate System
+\subsection{Solving the Multivariate System}
 
 \notes{The solution for $\mappingVector$ is given in terms of a matrix inverse, but computation of a matrix inverse requires, in itself, an algorithm to resolve it. You'll know this if you had to invert, by hand, a $3\times 3$ matrix in high school. From a numerical stability perspective, it is also best not to compute the matrix inverse directly, but rather to ask the computer to *solve* the  system of linear equations given by $$\inputMatrix^\top\inputMatrix \mappingVector = \inputMatrix^\top\dataVector$$ for $\mappingVector$. This can be done in `numpy` using the command}
 
+\setupcode{import numpy as np}
 \code{np.linalg.solve?}
 
 \notes{so we can obtain the solution using}
@@ -841,21 +852,23 @@ print(w)}
 
 \notes{We can map it back to the liner regression and plot the fit as follows}
 
-\code{m = w[1]; c=w[0]
+\setupplotcode{import matplotlib.pyplot as plt}
+\plotcode{m = w[1]; c=w[0]
 f_test = m*x_test + c
 print(m)
 print(c)
 plt.plot(x_test, f_test, 'b-')
 plt.plot(x, y, 'rx')}
 
-\notes{### Multivariate Linear Regression
+\notes{\subsection{Multivariate Linear Regression}
 
 A major advantage of the new system is that we can build a linear regression on a multivariate system. The matrix calculus didn't specify what the length of the vector $\inputVector$ should be, or equivalently the size of the design matrix. }
 
-\notes{### Movie Body Count Data
+\notes{\subsection{Movie Body Count Data}
 
 Let's consider the movie body count data.}
 
+\setupcode{import pods}
 \code{data = pods.datasets.movie_body_count()
 movies = data['Y']}
 
@@ -865,7 +878,7 @@ movies = data['Y']}
 
 \notes{Now we will build a design matrix based on the numeric features: year, Body_Count, Length_Minutes in an effort to predict the rating. We build the design matrix as follows:}
 
-\notes{### Relation to Single Input System
+\notes{\subsection{Relation to Single Input System}
 
 Bias as an additional feature.}
 
@@ -876,8 +889,8 @@ y = movies[['IMDB_Rating']]}
 
 \notes{Now let's perform a linear regression. But this time, we will create a pandas data frame for the result so we can store it in a form that we can visualise easily.}
 
-\code{import pandas as pd
-w = pd.DataFrame(data=np.linalg.solve(np.dot(X.T, X), np.dot(X.T, y)),  # solve linear regression here
+\setupcode{import pandas as pd}
+\code{w = pd.DataFrame(data=np.linalg.solve(np.dot(X.T, X), np.dot(X.T, y)),  # solve linear regression here
                  index = X.columns,  # columns of X become rows of w
                  columns=['regression_coefficient']) # the column of X is the value of regression coefficient}
 
@@ -897,7 +910,7 @@ w = pd.DataFrame(data=np.linalg.solve(np.dot(X.T, X), np.dot(X.T, y)),  # solve 
 \includeyoutube{78YNphT90-k}
 }
 
-\notes{### Solution with QR Decomposition
+\notes{\subsection{Solution with QR Decomposition}
 
 Performing a solve instead of a matrix inverse is the more numerically stable approach, but we can do even better. A [QR-decomposition](http://en.wikipedia.org/wiki/QR_decomposition) of a matrix factorises it into a matrix which is an orthogonal matrix $\mathbf{Q}$, so that $\mathbf{Q}^\top \mathbf{Q} = \eye$. And a matrix which is upper triangular, $\mathbf{R}$. 
 $$
@@ -924,13 +937,13 @@ This is a more numerically stable solution because it removes the need to comput
 
 \notes{This can be more particularly seen when we begin to work with *basis functions* in the next session. Some systems that can be resolved with the QR decomposition can not be resolved by using solve directly.}
 
-\code{import scipy as sp
-Q, R = np.linalg.qr(X)
+\setupcode{import scipy as sp}
+\code{Q, R = np.linalg.qr(X)
 w = sp.linalg.solve_triangular(R, np.dot(Q.T, y)) 
 w = pd.DataFrame(w, index=X.columns)
 w}
 
 
-### Reading
+\subsection{Reading}
 
 * Section 1.3 of @Rogers:book11 for Matrix & Vector Review.
