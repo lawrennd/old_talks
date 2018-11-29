@@ -50,7 +50,8 @@ transition: None
     * Maintain interpretability.
 
 
-\newslide{References}
+\subsection{References}
+
 
 
 

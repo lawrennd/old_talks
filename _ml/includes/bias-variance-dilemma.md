@@ -19,5 +19,4 @@ $$\mathbb{E}\left[ \left(\dataScalar - \mappingFunction(\dataVector)\right)^2 \r
   $$\text{variance}\left[\mappingFunction^*(\dataVector)\right] = \mathbb{E}\left[\left(\mappingFunction^*(\dataVector) - \mathbb{E}\left[\mappingFunction^*(\dataVector)\right]\right)^2\right]$$
 * Slight variations in the training set cause changes in the prediction. Error due to variance is error in the model due to an overly complex model.
 
-
 \include{_ml/includes/bias-variance-plots.md}
