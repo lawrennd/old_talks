@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="dcterms.date" content="2018-11-30">
+  <meta name="dcterms.date" content="2019-02-19">
   <title>Data Science and Digital Systems</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -62,7 +62,7 @@
       </script>
 </head>
 <body>
-$$\newcommand{\Amatrix}{\mathbf{A}}
+\[\newcommand{\Amatrix}{\mathbf{A}}
 \newcommand{\KL}[2]{\text{KL}\left( #1\,\|\,#2 \right)}
 \newcommand{\Kaast}{\kernelMatrix_{\mathbf{ \ast}\mathbf{ \ast}}}
 \newcommand{\Kastu}{\kernelMatrix_{\mathbf{ \ast} \inducingVector}}
@@ -354,7 +354,7 @@ $$\newcommand{\Amatrix}{\mathbf{A}}
 \newcommand{\weightedAdjacencyVector}{\mathbf{ \weightedAdjacencyScalar}}
 \newcommand{\onesVector}{\mathbf{1}}
 \newcommand{\zerosVector}{\mathbf{0}}
-$$
+\]
   <div class="reveal">
     <div class="slides">
 
@@ -362,12 +362,13 @@ $$
   <h1 class="title">Data Science and Digital Systems</h1>
   <p class="subtitle" style="text-align:center">Data First Design</p>
   <p class="author" style="text-align:center"><a href="http://inverseprobability.com">Neil D. Lawrence</a></p>
-  <p class="date" style="text-align:center"><time>2018-11-30</time></p>
-  <p class="venue" style="text-align:center">Fifth International Workshop on Sustainable Road Freight, Cambridge</p>
+  <p class="date" style="text-align:center"><time>2019-02-19</time></p>
+  <p class="venue" style="text-align:center">Stu Hunter Resesearch Conference, Milan</p>
 </section>
 
 <section class="slide level3">
 
+<!-- Enables links to pages-->
 <p><!--% not ipynb--></p>
 <p><!--% not notes--></p>
 <!-- SECTION The Gartner Hype Cycle -->
@@ -375,44 +376,72 @@ $$
 <section id="gartner-hype-cycle" class="slide level3">
 <h3>Gartner Hype Cycle</h3>
 <p><img class="negate" src="../slides/diagrams/Gartner_Hype_Cycle.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none;"></p>
-
 </section>
 <section id="gartner-hype-cycle-1" class="slide level3">
 <h3>Gartner Hype Cycle</h3>
 <script>
 showDivs(0, 'ai-bd-dm-dl-ml-google-trends');
 </script>
-<input id="range-ai-bd-dm-dl-ml-google-trends" type="range" min="0" max="4" value="0" onchange="setDivs('ai-bd-dm-dl-ml-google-trends')" oninput="setDivs('ai-bd-dm-dl-ml-google-trends')">
+<small></small> <input id="range-ai-bd-dm-dl-ml-google-trends" type="range" min="0" max="4" value="0" onchange="setDivs('ai-bd-dm-dl-ml-google-trends')" oninput="setDivs('ai-bd-dm-dl-ml-google-trends')">
 <button onclick="plusDivs(-1, 'ai-bd-dm-dl-ml-google-trends')">
 ❮
 </button>
 <button onclick="plusDivs(1, 'ai-bd-dm-dl-ml-google-trends')">
 ❯
 </button>
-<object class="svgplot ai-bd-dm-dl-ml-google-trends" align data="../slides/diagrams/data-science/ai-bd-dm-dl-ml-google-trends000.svg" style>
+<div class="ai-bd-dm-dl-ml-google-trends" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/data-science/ai-bd-dm-dl-ml-google-trends000.svg" style>
 </object>
-<object class="svgplot ai-bd-dm-dl-ml-google-trends" align data="../slides/diagrams/data-science/ai-bd-dm-dl-ml-google-trends001.svg" style>
+</div>
+</div>
+<div class="ai-bd-dm-dl-ml-google-trends" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/data-science/ai-bd-dm-dl-ml-google-trends001.svg" style>
 </object>
-<object class="svgplot ai-bd-dm-dl-ml-google-trends" align data="../slides/diagrams/data-science/ai-bd-dm-dl-ml-google-trends002.svg" style>
+</div>
+</div>
+<div class="ai-bd-dm-dl-ml-google-trends" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/data-science/ai-bd-dm-dl-ml-google-trends002.svg" style>
 </object>
-<object class="svgplot ai-bd-dm-dl-ml-google-trends" align data="../slides/diagrams/data-science/ai-bd-dm-dl-ml-google-trends003.svg" style>
+</div>
+</div>
+<div class="ai-bd-dm-dl-ml-google-trends" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/data-science/ai-bd-dm-dl-ml-google-trends003.svg" style>
 </object>
-<object class="svgplot ai-bd-dm-dl-ml-google-trends" align data="../slides/diagrams/data-science/ai-bd-dm-dl-ml-google-trends004.svg" style>
+</div>
+</div>
+<div class="ai-bd-dm-dl-ml-google-trends" style="text-align:center;">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/data-science/ai-bd-dm-dl-ml-google-trends004.svg" style>
 </object>
+</div>
+</div>
 </section>
 <section id="section" class="slide level3">
 <h3></h3>
 <div style="text-align:center">
-<img class="rotateimg90" src="../slides/diagrams/2017-10-12 16.47.34.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+<img class="" src="../slides/diagrams/science-holborn-viaduct.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
 </div>
 </section>
 <section id="section-1" class="slide level3">
 <h3></h3>
 <div style="text-align:center">
-<img class="center" src="../slides/diagrams/SteamEngine_Boulton&Watt_1784_neg.png" width="50%" height="auto" align="" style="background:none; border:none; box-shadow:none;">
+<img class="negate" src="../slides/diagrams/SteamEngine_Boulton&Watt_1784.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
 </div>
+<center>
+<em>Watt’s Steam Engine which made Steam Power Efficient and Practical </em>
+</center>
 </section>
 <section id="section-2" class="slide level3">
+<h3></h3>
+<div style="text-align:center">
+<img class="negate" src="../slides/diagrams/Centrifugal_governor.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
+</section>
+<section id="section-3" class="slide level3">
 <h3></h3>
 <p><span class="math display">\[ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span></p>
 </section>
@@ -458,7 +487,7 @@ showDivs(0, 'ai-bd-dm-dl-ml-google-trends');
 ### Machine Learning in Supply Chain
 
 * *Supply chain*: Large Automated Decision Making Network
-* Our supply chain: Possibly the world's largest 'AI'
+* Amazon's supply chain: Possibly the world's largest 'AI'
 * Major Challenge: 
     * We have a *mechanistic* understanding of supply chain.
     * Machine learning is a *data driven* technology.
@@ -586,7 +615,7 @@ $$ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$
 <h3>Machine Learning in Supply Chain</h3>
 <ul>
 <li><em>Supply chain</em>: Large Automated Decision Making Network</li>
-<li>Our supply chain: Possibly the world’s largest ‘AI’</li>
+<li>Amazon’s supply chain: Possibly the world’s largest ‘AI’</li>
 <li>Major Challenge:
 <ul>
 <li>We have a <em>mechanistic</em> understanding of supply chain.</li>
@@ -676,30 +705,27 @@ $$ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$
 <li>It’s not comfortable, but it’s vital.</li>
 </ul>
 </section>
-<section id="the-3d-challenges" class="slide level3">
-<h3>The 3D Challenges</h3>
+<section id="the-three-ds-of-machine-learning-systems-design" class="slide level3">
+<h3>The Three Ds of Machine Learning Systems Design</h3>
 <ul>
 <li>Three primary challenges of Machine Learning Systems Design.</li>
 </ul>
 <ol type="1">
-<li>Design</li>
+<li>Decomposition</li>
 <li>Data</li>
 <li>Deployment</li>
 </ol>
 </section>
-<section id="design" class="slide level3">
-<h3>Design</h3>
-</section>
-<section id="design-1" class="slide level3">
-<h3>Design</h3>
+<section id="decomposition" class="slide level3">
+<h3>Decomposition</h3>
 <ul>
 <li>ML is not Magical Pixie Dust.</li>
 <li>It cannot be sprinkled thoughtlessly.</li>
 <li>We cannot simply <em>automate all decisions through data</em></li>
 </ul>
 </section>
-<section id="design-2" class="slide level3">
-<h3>Design</h3>
+<section id="decomposition-1" class="slide level3">
+<h3>Decomposition</h3>
 <p>We are constrained by:</p>
 <ol type="1">
 <li>Our <em>data</em>.</li>
@@ -753,9 +779,6 @@ $$ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$
 </section>
 <section id="data" class="slide level3">
 <h3>Data</h3>
-</section>
-<section id="data-1" class="slide level3">
-<h3>Data</h3>
 <ul>
 <li>Hard to overstate its importance.</li>
 <li>Half the equation of <span class="math inline">\(\text{data} + \text{model}\)</span>.</li>
@@ -792,14 +815,20 @@ $$ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$
 </blockquote>
 <p></small></p>
 </section>
-<section id="the-mordern-data-crisis" class="slide level3">
-<h3>The Mordern Data Crisis</h3>
+<section id="the-data-crisis-1" class="slide level3">
+<h3>The Data Crisis</h3>
 <p><small></p>
 <blockquote>
 <p>The major cause of the data crisis is that machines have become more interconnected than ever before. Data access is therefore cheap, but data quality is often poor. What we need is cheap high quality data. That implies that we develop processes for improving and verifying data quality that are efficient.</p>
 <p>There would seem to be two ways for improving efficiency. Firstly, we should not duplicate work. Secondly, where possible we should automate work.</p>
 <p>Me </small></p>
 </blockquote>
+</section>
+<section id="the-data-first-paradigm" class="slide level3">
+<h3>The Data First Paradigm</h3>
+</section>
+<section id="data-quality" class="slide level3">
+<h3>Data Quality</h3>
 <!-- SECTION Data Readiness Levels -->
 </section>
 <section id="data-readiness-levels" class="slide level3">
@@ -903,19 +932,22 @@ $$ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$
 <li>Encourage <em>visualization</em> of data</li>
 </ul>
 </section>
+<section id="move-beyond-software-engineering-to-data-engineering" class="slide level3">
+<h3>Move Beyond Software Engineering to Data Engineering</h3>
+</section>
 <section id="data-science-as-debugging" class="slide level3">
 <h3>Data Science as Debugging</h3>
 <ul>
 <li>Analogies: For Software Engineers <a href="http://inverseprobability.com/2017/03/14/data-science-as-debugging">describe data science as <em>debugging</em></a>.</li>
 </ul>
 </section>
-<section id="section-3" class="slide level3">
+<section id="section-4" class="slide level3">
 <h3></h3>
 <div style="text-align;center">
 <img class="" src="../slides/diagrams/data-science/water-bridge-hill-transport-arch-calm-544448-pxhere.com.jpg" width="80%" height="auto" align="" style="background:none; border:none; box-shadow:none;">
 </div>
 </section>
-<section id="section-4" class="slide level3">
+<section id="section-5" class="slide level3">
 <h3></h3>
 <div style="text-align;center">
 <img class="" src="../slides/diagrams/data-science/1024px-Lake_District_picture.JPG" width="80%" height="auto" align="" style="background:none; border:none; box-shadow:none;">
@@ -946,6 +978,21 @@ $$ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$
 <ul>
 <li>The world around us is changing, we should monitor the effect.</li>
 </ul></li>
+<li>Update our notions of testing: <em>progression testing</em></li>
+</ul>
+</section>
+<section id="data-orientated-architectures" class="slide level3">
+<h3>Data Orientated Architectures</h3>
+<ul>
+<li>Historically we’ve been <em>software first</em>
+<ul>
+<li>A necessary but not sufficient condition for <em>data first</em></li>
+</ul></li>
+<li>Move from
+<ol type="1">
+<li>software orientated architectures</li>
+<li><em>data orientated architectures</em></li>
+</ol></li>
 </ul>
 </section>
 <section id="streaming-architectures" class="slide level3">
