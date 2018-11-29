@@ -57,25 +57,32 @@ transition: None
 * *Gaussian Process Based Approaches for Survival Analysis*
     @Saul:thesis2016
 
+\include{_ml/includes/process-emulation.md}
+\include{_uq/includes/emukit-playground.md}
 \include{_uq/includes/uncertainty-quantification.md}
+\include{_uq/includes/emukit.md}
+\include{_ml/includes/mxfusion.md}
+
+\subsection{Long term Aim}
+
+* Simulate/Emulate the components of the system.
+    * Validate with real world using multifidelity.
+	* Interpret system using e.g. sensitivity analysis.
+* Perform end to end learning to optimize.
+    * Maintain interpretability.
+
 
 \newslide{Acknowledgments}
 
 Stefanos  Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Dai, Javier Gonzalez, Andreas Damianou, Mark Pullin.
 
-\newslide{Ongoing Code}
-
-* Powerful framework but
-* Software isn't there yet.
-* Our focus: Gaussian Processes driven by MXNet
-* Composition of GPs, Neural Networks, Other Models
 
 \newslide{Thanks!}
 
 * twitter: \@lawrennd
 * blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
 
-\newslide{References} {.allowframebreaks}
+\subsection{References}
 
 
 
