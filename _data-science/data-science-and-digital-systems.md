@@ -27,7 +27,7 @@ transition: None
 \include{talk-macros.tex}
 
 \include{_data-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
-\include{_ai/includes/centrifugal-governor.md}
+<!--include{_ai/includes/centrifugal-governor.md}-->
 
 \include{_ml/includes/what-is-ml-2.md}
 \include{_ai/includes/ai-vs-data-science-2.md}
