@@ -41,7 +41,7 @@ transition: None
 \include{_uq/includes/emukit.md}
 \include{_ml/includes/mxfusion.md}
 
-\newslide{Long term Aim}
+\subsection{Long term Aim}
 
 * Simulate/Emulate the components of the system.
     * Validate with real world using multifidelity.
@@ -50,7 +50,7 @@ transition: None
     * Maintain interpretability.
 
 
-### References
+\newslide{References}
 
 
 

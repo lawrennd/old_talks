@@ -9,9 +9,14 @@ _site
 .#*
 *.slides.md
 *.notes.md
+*.tmp.html
+*.ipynb.md
 *.bak
 _*/*.ipynb
 _*/*.slides.html
 _*/*.notes.html
-*.ipynb.md
+_*/*.posts.html
+_*/*.notes.tex
 _*/*.notes.pdf
+*-checkpoint.ipynb
+_amazon/
