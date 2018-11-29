@@ -65,7 +65,7 @@ p(\dataScalar_*|\dataVector, \inputMatrix, \inputVector_*) = \int p(\dataScalar_
 $$</span><br /></p>
 <p>where, for convenience, we are assuming <em>all</em> the parameters of the model are now represented by <span class="math inline">$\parameterVector$</span> (which contains <span class="math inline">$\mappingMatrix$</span> and <span class="math inline">$\mappingMatrixTwo$</span>) and <span class="math inline">$p(\parameterVector | \dataVector, \inputMatrix)$</span> is recognised as the posterior density of the parameters given data and <span class="math inline">$p(\dataScalar_*|\inputVector_*, \parameterVector)$</span> is the <em>likelihood</em> of an individual test data point given the parameters.</p>
 <p>The likelihood of the data is normally assumed to be independent across the parameters, <br /><span class="math display">$$
-p(\dataVector|\inputMatrix, \mappingMatrix) \prod_{i=1}^\numData p(\dataScalar_i|\inputVector_i, \mappingMatrix),$$</span><br /></p>
+p(\dataVector|\inputMatrix, \mappingMatrix) = \prod_{i=1}^\numData p(\dataScalar_i|\inputVector_i, \mappingMatrix),$$</span><br /></p>
 <p>and if that is so, it is easy to extend our predictions across all future, potential, locations, <br /><span class="math display">$$
 p(\dataVector_*|\dataVector, \inputMatrix, \inputMatrix_*) = \int p(\dataVector_*|\inputMatrix_*, \parameterVector) p(\parameterVector | \dataVector, \inputMatrix) \text{d} \parameterVector.
 $$</span><br /></p>
@@ -277,11 +277,6 @@ $$</span><br /> where <span class="math inline">ℓ</span> is the <em>length sca
 </td>
 </tr>
 </table>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
-<span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
-<span class="im">import</span> pods
-<span class="im">import</span> teaching_plots <span class="im">as</span> plot
-<span class="im">import</span> mlai</code></pre></div>
 <h3 id="olympic-marathon-data">Olympic Marathon Data</h3>
 <p>The first thing we will do is load a standard data set for regression modelling. The data consists of the pace of Olympic Gold Medal Marathon winners for the Olympics from 1896 to present. First we load in the data and plot.</p>
 <h3 id="olympic-marathon-data-1">Olympic Marathon Data</h3>
@@ -296,12 +291,17 @@ $$</span><br /> where <span class="math inline">ℓ</span> is the <em>length sca
 </ul>
 </td>
 <td width="30%">
-<img src="../slides/diagrams/Stephen_Kiprotich.jpg" alt="image" /> <small>Image from Wikimedia Commons <a href="http://bit.ly/16kMKHQ" class="uri">http://bit.ly/16kMKHQ</a></small>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/Stephen_Kiprotich.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</div>
+<small>Image from Wikimedia Commons <a href="http://bit.ly/16kMKHQ" class="uri">http://bit.ly/16kMKHQ</a></small>
 </td>
 </tr>
 </table>
+<div style="text-align:center">
 <object class="svgplot " align data="../slides/diagrams/datasets/olympic-marathon.svg" style>
 </object>
+</div>
 <p>Things to notice about the data include the outlier in 1904, in this year, the olympics was in St Louis, USA. Organizational problems and challenges with dust kicked up by the cars following the race meant that participants got lost, and only very few participants completed.</p>
 <p>More recent years see more consistently quick marathons.</p>
 <p>Our first objective will be to perform a Gaussian process fit to the data, we'll do this using the <a href="https://github.com/SheffieldML/GPy">GPy software</a>.</p>
@@ -630,11 +630,6 @@ rc(<span class="st">&quot;text&quot;</span>, usetex<span class="op">=</span><spa
 <li><p><em>How Deep Are Deep Gaussian Processes?</em> <span class="citation">Dunlop et al. (n.d.)</span> perform a theoretical analysis possible through conditional Gaussian Markov property.</p></li>
 </ul>
 <p><a href="https://www.youtube.com/watch?v=XhIvygQYFFQ&amp;t="><img src="https://img.youtube.com/vi/XhIvygQYFFQ/0.jpg" /></a></p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
-<span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
-<span class="im">import</span> pods
-<span class="im">import</span> teaching_plots <span class="im">as</span> plot
-<span class="im">import</span> mlai</code></pre></div>
 <h3 id="olympic-marathon-data-2">Olympic Marathon Data</h3>
 <p>The first thing we will do is load a standard data set for regression modelling. The data consists of the pace of Olympic Gold Medal Marathon winners for the Olympics from 1896 to present. First we load in the data and plot.</p>
 <h3 id="olympic-marathon-data-3">Olympic Marathon Data</h3>
@@ -649,12 +644,17 @@ rc(<span class="st">&quot;text&quot;</span>, usetex<span class="op">=</span><spa
 </ul>
 </td>
 <td width="30%">
-<img src="../slides/diagrams/Stephen_Kiprotich.jpg" alt="image" /> <small>Image from Wikimedia Commons <a href="http://bit.ly/16kMKHQ" class="uri">http://bit.ly/16kMKHQ</a></small>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/Stephen_Kiprotich.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</div>
+<small>Image from Wikimedia Commons <a href="http://bit.ly/16kMKHQ" class="uri">http://bit.ly/16kMKHQ</a></small>
 </td>
 </tr>
 </table>
+<div style="text-align:center">
 <object class="svgplot " align data="../slides/diagrams/datasets/olympic-marathon.svg" style>
 </object>
+</div>
 <p>Things to notice about the data include the outlier in 1904, in this year, the olympics was in St Louis, USA. Organizational problems and challenges with dust kicked up by the cars following the race meant that participants got lost, and only very few participants completed.</p>
 <p>More recent years see more consistently quick marathons.</p>
 <p>Our first objective will be to perform a Gaussian process fit to the data, we'll do this using the <a href="https://github.com/SheffieldML/GPy">GPy software</a>.</p>
@@ -1325,6 +1325,18 @@ x <span class="op">=</span> np.random.multivariate_normal(np.zeros(rows<span cla
 <li><em>Recurrent Gaussian Processes</em> <span class="citation">Mattos et al. (2015)</span></li>
 <li><p><em>Gaussian Process Based Approaches for Survival Analysis</em> <span class="citation">A. D. Saul (2016)</span></p></li>
 </ul>
+<div style="text-align:center">
+<a href="https://amzn.github.io/emukit-playground/"><img class="" src="../slides/diagrams/uq/emukit-playground.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto"></a>
+</div>
+<center>
+<em>Emukit playground is a tutorial for understanding the simulation/emulation relationship. </em>
+</center>
+<div style="text-align:center">
+<a href="https://amzn.github.io/emukit-playground/#!/learn/bayesian_optimization"><img class="negate" src="../slides/diagrams/uq/emukit-playground-bayes-opt.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto"></a>
+</div>
+<center>
+<em>Tutorial on Bayesian optimization of the number of taxis deployed from Emukit playground. </em>
+</center>
 <h3 id="uncertainty-quantification">Uncertainty Quantification</h3>
 <blockquote>
 <p>Uncertainty quantification (UQ) is the science of quantitative characterization and reduction of uncertainties in both computational and real world applications. It tries to determine how likely certain outcomes are if some aspects of the system are not exactly known.</p>
@@ -1538,16 +1550,47 @@ anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Bes
 <iframe src="../slides/diagrams/uq/mountain_car_multi_fidelity.html" width="1024" height="768" allowtransparency="true" frameborder="0">
 </iframe>
 <p>And problem solved! We see how the problem is also solved with 250 observations of the high fidelity simulator and 250 of the low fidelity simulator.</p>
+<ul>
+<li><em>Multi-fidelity emulation</em>: build surrogate models when data is obtained from multiple information sources that have different fidelity and/or cost;</li>
+<li><em>Bayesian optimisation</em>: optimise physical experiments and tune parameters of machine learning algorithms;</li>
+<li><em>Experimental design/Active learning</em>: design the most informative experiments and perform active learning with machine learning models;</li>
+<li><em>Sensitivity analysis</em>: analyse the influence of inputs on the outputs of a given system;</li>
+<li><em>Bayesian quadrature</em>: efficiently compute the integrals of functions that are expensive to evaluate.</li>
+</ul>
+<h3 id="mxfusion">MxFusion</h3>
+<table>
+<tr>
+<td width="70%">
+<ul>
+<li>Work by Eric Meissner and Zhenwen Dai.</li>
+<li>Probabilistic programming.</li>
+<li>Available on <a href="https://github.com/amzn/mxfusion">Github</a>
+</td>
+<td width="30%">
+<img class="" src="../slides/diagrams/mxfusion-logo.png" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</td>
+</tr>
+</table></li>
+</ul>
+<h3 id="mxfusion-1">MxFusion</h3>
+<h3 id="long-term-aim">Long term Aim</h3>
+<ul>
+<li>Simulate/Emulate the components of the system.
+<ul>
+<li>Validate with real world using multifidelity.</li>
+<li>Interpret system using e.g. sensitivity analysis.</li>
+</ul></li>
+<li>Perform end to end learning to optimize.
+<ul>
+<li>Maintain interpretability.</li>
+</ul></li>
+</ul>
 <p>Stefanos Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Dai, Javier Gonzalez, Andreas Damianou, Mark Pullin.</p>
 <ul>
-<li>Powerful framework but</li>
-<li>Software isn't there yet.</li>
-<li>Our focus: Gaussian Processes driven by MXNet</li>
-<li><p>Composition of GPs, Neural Networks, Other Models</p></li>
 <li>twitter: @lawrennd</li>
-<li><p>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></p></li>
+<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
 </ul>
-<p>{.allowframebreaks}</p>
+<h3 id="references" class="unnumbered">References</h3>
 <div id="refs" class="references">
 <div id="ref-Alaa:deep2017">
 <p>Alaa, Ahmed M., and Mihaela van der Schaar. 2017. “Deep Multi-Task Gaussian Processes for Survival Analysis with Competing Risks.” In <em>Advances in Neural Information Processing Systems 30</em>, edited by I. Guyon, U. V. Luxburg, S. Bengio, H. Wallach, R. Fergus, S. Vishwanathan, and R. Garnett, 2326–34. Curran Associates, Inc. <a href="http://papers.nips.cc/paper/6827-deep-multi-task-gaussian-processes-for-survival-analysis-with-competing-risks.pdf" class="uri">http://papers.nips.cc/paper/6827-deep-multi-task-gaussian-processes-for-survival-analysis-with-competing-risks.pdf</a>.</p>

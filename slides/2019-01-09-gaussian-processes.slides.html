@@ -479,7 +479,7 @@ p(\dataScalar_*|\dataVector, \inputMatrix, \inputVector_*) = \int p(\dataScalar_
 <p><span class="math inline">\(p(\dataScalar|\inputVector, \mappingMatrix)\)</span> is the <em>likelihood</em> of data point</p>
 <div class="fragment">
 <p>Normally assume independence: <span class="math display">\[
-p(\dataVector|\inputMatrix, \mappingMatrix) \prod_{i=1}^\numData p(\dataScalar_i|\inputVector_i, \mappingMatrix),\]</span></p>
+p(\dataVector|\inputMatrix, \mappingMatrix) = \prod_{i=1}^\numData p(\dataScalar_i|\inputVector_i, \mappingMatrix),\]</span></p>
 </div>
 </section>
 <section id="likelihood-and-prediction-function" class="slide level3">
@@ -800,7 +800,7 @@ x
 <script>
 showDivs(0, 'two_point_sample');
 </script>
-<input id="range-two_point_sample" type="range" min="0" max="8" value="0" onchange="setDivs('two_point_sample')" oninput="setDivs('two_point_sample')">
+<small></small> <input id="range-two_point_sample" type="range" min="0" max="8" value="0" onchange="setDivs('two_point_sample')" oninput="setDivs('two_point_sample')">
 <button onclick="plusDivs(-1, 'two_point_sample')">
 ❮
 </button>
@@ -867,7 +867,7 @@ showDivs(0, 'two_point_sample');
 <script>
 showDivs(9, 'two_point_sample2');
 </script>
-<input id="range-two_point_sample2" type="range" min="9" max="12" value="9" onchange="setDivs('two_point_sample2')" oninput="setDivs('two_point_sample2')">
+<small></small> <input id="range-two_point_sample2" type="range" min="9" max="12" value="9" onchange="setDivs('two_point_sample2')" oninput="setDivs('two_point_sample2')">
 <button onclick="plusDivs(-1, 'two_point_sample2')">
 ❮
 </button>
@@ -921,7 +921,7 @@ p(\mappingFunction_2|\mappingFunction_1) = \gaussianDist{\mappingFunction_2}{\fr
 <script>
 showDivs(13, 'two_point_sample3');
 </script>
-<input id="range-two_point_sample3" type="range" min="13" max="17" value="13" onchange="setDivs('two_point_sample3')" oninput="setDivs('two_point_sample3')">
+<small></small> <input id="range-two_point_sample3" type="range" min="13" max="17" value="13" onchange="setDivs('two_point_sample3')" oninput="setDivs('two_point_sample3')">
 <button onclick="plusDivs(-1, 'two_point_sample3')">
 ❮
 </button>
@@ -1026,16 +1026,21 @@ showDivs(13, 'two_point_sample3');
 </ul>
 </td>
 <td width="30%">
-<img src="../slides/diagrams/Stephen_Kiprotich.jpg" alt="image" /> <small>Image from Wikimedia Commons <a href="http://bit.ly/16kMKHQ" class="uri">http://bit.ly/16kMKHQ</a></small>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/Stephen_Kiprotich.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
+<small>Image from Wikimedia Commons <a href="http://bit.ly/16kMKHQ" class="uri">http://bit.ly/16kMKHQ</a></small>
 </td>
 </tr>
 </table>
 </section>
 <section id="olympic-marathon-data-1" class="slide level3">
 <h3>Olympic Marathon Data</h3>
+<div style="text-align:center">
 <div style="text-align:">
 <object class="svgplot " align data="../slides/diagrams/datasets/olympic-marathon.svg" style>
 </object>
+</div>
 </div>
 </section>
 <section id="olympic-marathon-data-gp" class="slide level3">
@@ -1516,16 +1521,21 @@ showDivs(13, 'two_point_sample3');
 </ul>
 </td>
 <td width="30%">
-<img src="../slides/diagrams/Stephen_Kiprotich.jpg" alt="image" /> <small>Image from Wikimedia Commons <a href="http://bit.ly/16kMKHQ" class="uri">http://bit.ly/16kMKHQ</a></small>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/Stephen_Kiprotich.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
+<small>Image from Wikimedia Commons <a href="http://bit.ly/16kMKHQ" class="uri">http://bit.ly/16kMKHQ</a></small>
 </td>
 </tr>
 </table>
 </section>
 <section id="olympic-marathon-data-3" class="slide level3">
 <h3>Olympic Marathon Data</h3>
+<div style="text-align:center">
 <div style="text-align:">
 <object class="svgplot " align data="../slides/diagrams/datasets/olympic-marathon.svg" style>
 </object>
+</div>
 </div>
 </section>
 <section id="olympic-marathon-data-gp-1" class="slide level3">
@@ -1841,6 +1851,42 @@ showDivs(13, 'two_point_sample3');
 <li><em>Gaussian Process Based Approaches for Survival Analysis</em> <span class="citation" data-cites="Saul:thesis2016">Saul (2016)</span></li>
 </ul>
 </section>
+<section id="data-driven" class="slide level3">
+<h3>Data Driven</h3>
+<ul>
+<li>Machine Learning: Replicate Processes through <em>direct use of data</em>.</li>
+<li>Aim to emulate cognitive processes through the use of data.</li>
+<li>Use data to provide new approaches in control and optimization that should allow for emulation of human motor skills.</li>
+</ul>
+</section>
+<section id="process-emulation" class="slide level3">
+<h3>Process Emulation</h3>
+<ul>
+<li>Key idea: emulate the process as a mathematical function.</li>
+<li>Each function has a set of <em>parameters</em> which control its behavior.</li>
+<li><em>Learning</em> is the process of changing these parameters to change the shape of the function</li>
+<li>Choice of which class of mathematical functions we use is a vital component of our <em>model</em>.</li>
+</ul>
+</section>
+<section id="emukit-playground" class="slide level3">
+<h3>Emukit Playground</h3>
+<ul>
+<li><p>Work <a href="https://twitter.com/_AdamHirst">Adam Hirst</a>, Software Engineering Intern and Cliff McCollum.</p></li>
+<li><p>Tutorial on emulation.</p></li>
+</ul>
+</section>
+<section id="emukit-playground-1" class="slide level3">
+<h3>Emukit Playground</h3>
+<div style="text-align:center">
+<a href="https://amzn.github.io/emukit-playground/"><img class="" src="../slides/diagrams/uq/emukit-playground.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none;"></a>
+</div>
+</section>
+<section id="emukit-playground-2" class="slide level3">
+<h3>Emukit Playground</h3>
+<div style="text-align:center">
+<a href="https://amzn.github.io/emukit-playground/#!/learn/bayesian_optimization"><img class="negate" src="../slides/diagrams/uq/emukit-playground-bayes-opt.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none;"></a>
+</div>
+</section>
 <section id="uncertainty-quantification" class="slide level3">
 <h3>Uncertainty Quantification</h3>
 <ul>
@@ -1973,18 +2019,67 @@ showDivs(13, 'two_point_sample3');
 </iframe>
 <p>250 observations of high fidelity simulator and 250 of the low fidelity simulator</p>
 </section>
+<section id="emukit" class="slide level3">
+<h3>Emukit</h3>
+<ul>
+<li>Work by Javier Gonzalez, Andrei Paleyes, Mark Pullin, Maren Mahsereci.</li>
+<li>Available on <a href="https://github.com/amzn/emukit">Github</a></li>
+<li>Example <a href="https://github.com/amzn/emukit/blob/develop/notebooks/Emukit-sensitivity-montecarlo.ipynb">sensitivity notebook</a>.</li>
+</ul>
+</section>
+<section id="emukit-software" class="slide level3">
+<h3>Emukit Software</h3>
+<ul>
+<li><em>Multi-fidelity emulation</em>: build surrogate models for multiple sources of information;</li>
+<li><em>Bayesian optimisation</em>: optimise physical experiments and tune parameters ML algorithms;</li>
+<li><em>Experimental design/Active learning</em>: design experiments and perform active learning with ML models;</li>
+<li><em>Sensitivity analysis</em>: analyse the influence of inputs on the outputs</li>
+<li><em>Bayesian quadrature</em>: compute integrals of functions that are expensive to evaluate.</li>
+</ul>
+</section>
+<section id="mxfusion" class="slide level3">
+<h3>MxFusion</h3>
+<table>
+<tr>
+<td width="70%">
+<ul>
+<li>Work by Eric Meissner and Zhenwen Dai.</li>
+<li>Probabilistic programming.</li>
+<li>Available on <a href="https://github.com/amzn/mxfusion">Github</a>
+</td>
+<td width="30%">
+<img class="" src="../slides/diagrams/mxfusion-logo.png" width="" height="auto" align="" style="background:none; border:none; box-shadow:none;">
+</td>
+</tr>
+</table></li>
+</ul>
+</section>
+<section id="mxfusion-1" class="slide level3">
+<h3>MxFusion</h3>
+<ul>
+<li>Targeted at challenges we face in emulation.</li>
+<li>Composition of Gaussian processes (Deep GPs)</li>
+<li>Combining GPs with neural networks.</li>
+<li>Example <a href="https://github.com/amzn/MXFusion/blob/master/examples/notebooks/ppca_tutorial.ipynb">PPCA Tutorial</a>.</li>
+</ul>
+</section>
+<section id="long-term-aim" class="slide level3">
+<h3>Long term Aim</h3>
+<ul>
+<li>Simulate/Emulate the components of the system.
+<ul>
+<li>Validate with real world using multifidelity.</li>
+<li>Interpret system using e.g. sensitivity analysis.</li>
+</ul></li>
+<li>Perform end to end learning to optimize.
+<ul>
+<li>Maintain interpretability.</li>
+</ul></li>
+</ul>
+</section>
 <section id="acknowledgments" class="slide level3">
 <h3>Acknowledgments</h3>
 <p>Stefanos Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Dai, Javier Gonzalez, Andreas Damianou, Mark Pullin.</p>
-</section>
-<section id="ongoing-code" class="slide level3">
-<h3>Ongoing Code</h3>
-<ul>
-<li>Powerful framework but</li>
-<li>Software isn’t there yet.</li>
-<li>Our focus: Gaussian Processes driven by MXNet</li>
-<li>Composition of GPs, Neural Networks, Other Models</li>
-</ul>
 </section>
 <section id="thanks" class="slide level3">
 <h3>Thanks!</h3>
@@ -1993,9 +2088,8 @@ showDivs(13, 'two_point_sample3');
 <li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
 </ul>
 </section>
-<section id="references" class="slide level3">
+<section id="references" class="slide level3 unnumbered">
 <h3>References</h3>
-<p>{.allowframebreaks}</p>
 <div id="refs" class="references">
 <div id="ref-Alaa:deep2017">
 <p>Alaa, A.M., van der Schaar, M., 2017. Deep multi-task Gaussian processes for survival analysis with competing risks, in: Guyon, I., Luxburg, U.V., Bengio, S., Wallach, H., Fergus, R., Vishwanathan, S., Garnett, R. (Eds.), Advances in Neural Information Processing Systems 30. Curran Associates, Inc., pp. 2326–2334.</p>
