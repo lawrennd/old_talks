@@ -18,6 +18,7 @@ author:
   institute: Amazon Cambridge and University of Sheffield
   twitter: lawrennd
   url: http://inverseprobability.com
+blog: 2018-11-05-the-3ds-of-machine-learning-systems-design.md
 date: 2018-11-30
 venue: Fifth International Workshop on Sustainable Road Freight, Cambridge
 transition: None
@@ -90,7 +91,31 @@ include{_data-science/includes/data-readiness-levels.md}
 
 \include{_ml/includes/ml-and-supply-chain.md}
 \include{_ml/includes/or-control-econometrics-statistics-ml.md}
-\include{_ml/includes/general-ml-challenges.md}
+\subsection{The Three Ds of Machine Learning Systems Design}
+
+\slides{
+* Three primary challenges of Machine Learning Systems Design.
+1. Decomposition
+2. Data 
+3. Deployment
+}
+
+\newslide{The Three Ds of Machine Learning Systems Design}
+
+\slides{
+* Three primary challenges of Machine Learning Systems Design.
+1. <s>Decomposition</s>
+2. Data 
+3. <s>Deployment</s>
+}
+
+
+\notes{We can characterize the challenges for integrating machine learning within our systems as the three Ds. Decomposition, Data and Deployment.}
+
+\notes{The first two components *decomposition* and *data* are interlinked, but we will first outline the decomposition challenge. Below we will mainly focus on *supervised learning* because this is arguably the technology that is best understood within machine learning.}
+
+\include{_ml/includes/ml-data-challenge.md}
+\include{_ml/includes/ml-combining-data-and-systems-design-challenge.md}
 \include{_ml/includes/ml-outlook.md}
 
 \subsection{Conclusion}
@@ -110,10 +135,11 @@ include{_data-science/includes/data-readiness-levels.md}
 * blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
 * podcast: <http://thetalkingmachines.com>
 * [Natural vs Artifical Intelligence](http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence)
+* [Three Ds of Machine Learning Systems Design Blog Post](http://inverseprobability.com/2018/11/05/the-3ds-of-machine-learning-systems-design)
 * [Mike Jordan's Medium Post](https://medium.com/@mijordan3/artificial-intelligence-the-revolution-hasnt-happened-yet-5e1d5812e1e7)
 }
 
-### References
+\subsection{References}
 
 
 

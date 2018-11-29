@@ -716,66 +716,16 @@ $$ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$
 <li>Deployment</li>
 </ol>
 </section>
-<section id="decomposition" class="slide level3">
-<h3>Decomposition</h3>
+<section id="the-three-ds-of-machine-learning-systems-design-1" class="slide level3">
+<h3>The Three Ds of Machine Learning Systems Design</h3>
 <ul>
-<li>ML is not Magical Pixie Dust.</li>
-<li>It cannot be sprinkled thoughtlessly.</li>
-<li>We cannot simply <em>automate all decisions through data</em></li>
+<li>Three primary challenges of Machine Learning Systems Design.</li>
 </ul>
-</section>
-<section id="decomposition-1" class="slide level3">
-<h3>Decomposition</h3>
-<p>We are constrained by:</p>
 <ol type="1">
-<li>Our <em>data</em>.</li>
-<li>The <em>models</em>.</li>
+<li><s>Decomposition</s></li>
+<li>Data</li>
+<li><s>Deployment</s></li>
 </ol>
-</section>
-<section id="decomposition-of-task" class="slide level3">
-<h3>Decomposition of Task</h3>
-<ul>
-<li>Careful thought needs to be put into sub-processes of task.</li>
-<li>Any repetitive task is a candidate for automation.</li>
-</ul>
-</section>
-<section id="pigeonholing" class="slide level3">
-<h3>Pigeonholing</h3>
-<div style="text-align:center">
-<img class="" src="../slides/diagrams/TooManyPigeons.jpg" width="60%" height="auto" align="" style="background:none; border:none; box-shadow:none;">
-</div>
-</section>
-<section id="pigeonholing-1" class="slide level3">
-<h3>Pigeonholing</h3>
-<ol type="1">
-<li>Can we decompose decision we need to repetitive sub-tasks where inputs and outputs are well defined?</li>
-<li>Are those repetitive sub-tasks well represent by a mathematical mapping?</li>
-</ol>
-</section>
-<section id="a-trap" class="slide level3">
-<h3>A Trap</h3>
-<ul>
-<li>Over emphasis on the <em>type</em> of model we’re deploying.</li>
-<li>Under emphasis on the appropriateness of the task decomposition.</li>
-</ul>
-</section>
-<section id="chicken-and-egg" class="slide level3">
-<h3>Chicken and Egg</h3>
-<div style="text-align:center">
-<img class="" src="../slides/diagrams/ai/chicken-and-egg.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none;">
-</div>
-</section>
-<section id="co-evolution" class="slide level3">
-<h3>Co-evolution</h3>
-<ul>
-<li>Absolute decomposition is impossible.</li>
-<li>If we deploy a weak component in one place, downstream system will compensate.</li>
-<li>Systems <em>co-evolve</em> … there is no <em>simple</em> solution</li>
-<li>Trade off between <em>performance</em> and <em>decomposability</em>.
-<ul>
-<li>Need to monitor deployment</li>
-</ul></li>
-</ul>
 </section>
 <section id="data" class="slide level3">
 <h3>Data</h3>
@@ -953,60 +903,6 @@ $$ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$
 <img class="" src="../slides/diagrams/data-science/1024px-Lake_District_picture.JPG" width="80%" height="auto" align="" style="background:none; border:none; box-shadow:none;">
 </div>
 </section>
-<section id="deployment" class="slide level3">
-<h3>Deployment</h3>
-</section>
-<section id="premise" class="slide level3">
-<h3>Premise</h3>
-<p>Our <em>machine learning</em> is based on a <em>software systems</em> view that is 20 years out of date.</p>
-</section>
-<section id="continuous-deployment" class="slide level3">
-<h3>Continuous Deployment</h3>
-<ul>
-<li>Deployment of modeling code.</li>
-<li>Data dependent models in production need <em>continuous monitoring</em>.</li>
-</ul>
-</section>
-<section id="continuous-monitoring" class="slide level3">
-<h3>Continuous Monitoring</h3>
-<ul>
-<li>Continuous deployment:
-<ul>
-<li>We’ve changed the code, we should test the effect.</li>
-</ul></li>
-<li>Continuous Monitoring:
-<ul>
-<li>The world around us is changing, we should monitor the effect.</li>
-</ul></li>
-<li>Update our notions of testing: <em>progression testing</em></li>
-</ul>
-</section>
-<section id="data-orientated-architectures" class="slide level3">
-<h3>Data Orientated Architectures</h3>
-<ul>
-<li>Historically we’ve been <em>software first</em>
-<ul>
-<li>A necessary but not sufficient condition for <em>data first</em></li>
-</ul></li>
-<li>Move from
-<ol type="1">
-<li>software orientated architectures</li>
-<li><em>data orientated architectures</em></li>
-</ol></li>
-</ul>
-</section>
-<section id="streaming-architectures" class="slide level3">
-<h3>Streaming Architectures</h3>
-<ul>
-<li>AWS Kinesis, Apache Kafka</li>
-<li>Not just about streaming
-<ul>
-<li>Nodes in the architecture are <em>stateless</em></li>
-<li>They persist through storing state on <em>streams</em></li>
-</ul></li>
-<li>This brings the data <em>inside out</em></li>
-</ul>
-</section>
 <section id="outlook-for-machine-learning" class="slide level3">
 <h3>Outlook for Machine Learning</h3>
 <ul>
@@ -1032,6 +928,7 @@ $$ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$
 <li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
 <li>podcast: <a href="http://thetalkingmachines.com" class="uri">http://thetalkingmachines.com</a></li>
 <li><a href="http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence">Natural vs Artifical Intelligence</a></li>
+<li><a href="http://inverseprobability.com/2018/11/05/the-3ds-of-machine-learning-systems-design">Three Ds of Machine Learning Systems Design Blog Post</a></li>
 <li><a href="https://medium.com/@mijordan3/artificial-intelligence-the-revolution-hasnt-happened-yet-5e1d5812e1e7">Mike Jordan’s Medium Post</a></li>
 </ul>
 </section>

@@ -10,6 +10,7 @@ author:
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
   orchid: 
+blog: 2018-11-05-the-3ds-of-machine-learning-systems-design.md
 date: 2018-11-30
 published: 2018-11-30
 reveal: 2018-11-30-data-science-and-digital-systems.slides.html
@@ -193,38 +194,6 @@ Classically, in the field of statistics, data analysis proceeds by assuming that
 <h3 id="the-three-ds-of-machine-learning-systems-design">The Three Ds of Machine Learning Systems Design</h3>
 <p>We can characterize the challenges for integrating machine learning within our systems as the three Ds. Decomposition, Data and Deployment.</p>
 <p>The first two components <em>decomposition</em> and <em>data</em> are interlinked, but we will first outline the decomposition challenge. Below we will mainly focus on <em>supervised learning</em> because this is arguably the technology that is best understood within machine learning.</p>
-<h3 id="decomposition">Decomposition</h3>
-<p>Machine learning is not magical pixie dust, we cannot simply automate all decisions through data. We are constrained by our data (see below) and the models we use.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> Machine learning models are relatively simple function mappings that include characteristics such as smoothness. With some famous exceptions, e.g. speech and image data, inputs are constrained in the form of vectors and the model consists of a mathematically well behaved function. This means that some careful thought has to be put in to the right sub-process to automate with machine learning. This is the challenge of <em>decomposition</em> of the machine learning system.</p>
-<p>Any repetitive task is a candidate for automation, but many of the repetitive tasks we perform as humans are more complex than any individual algorithm can replace. The selection of which task to automate becomes critical and has downstream effects on our overall system design.</p>
-<h3 id="pigeonholing">Pigeonholing</h3>
-<div style="text-align:center">
-<img class="" src="../slides/diagrams/TooManyPigeons.jpg" width="60%" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
-</div>
-<center>
-<em>The machine learning systems decomposition process calls for separating a complex task into decomposable separate entities. A process we can think of as </em><a href="https://en.wikipedia.org/wiki/Pigeonholing">pigeonholing</a><em>. </em>
-</center>
-<p>Some aspects to take into account are</p>
-<p>Some aspects to take into account are</p>
-<ol style="list-style-type: decimal">
-<li>Can we refine the decision we need to a set of repetitive tasks where input information and output decision/value is well defined?</li>
-<li>Can we represent each sub-task we’ve defined with a mathematical mapping?</li>
-</ol>
-<p>The representation necessary for the second aspect may involve massaging of the problem: feature selection or adaptation. It may also involve filtering out exception cases (perhaps through a pre-classification).</p>
-<p>All else being equal, we’d like to keep our models simple and interpretable. If we can convert a complex mapping to a linear mapping through clever selection of sub-tasks and features this is a big win.</p>
-<p>For example, Facebook have <em>feature engineers</em>, individuals whose main role is to design features they think might be useful for one of their tasks (e.g. newsfeed ranking, or ad matching). Facebook have a training/testing pipeline called <a href="https://www.facebook.com/Engineering/posts/fblearner-flow-is-a-machine-learning-platform-capable-of-easily-reusing-algorith/10154077833317200/">FBLearner</a>. Facebook have predefined the sub-tasks they are interested in, and they are tightly connected to their business model.</p>
-<p>It is easier for Facebook to do this because their business model is heavily focused on user interaction. A challenge for companies that have a more diversified portfolio of activities driving their business is the identification of the most appropriate sub-task. A potential solution to feature and model selection is known as <em>AutoML</em> <span class="citation">(Feurer et al., n.d.)</span>. Or we can think of it as using Machine Learning to assist Machine Learning. It’s also called meta-learning. Learning about learning. The input to the ML algorithm is a machine learning task, the output is a proposed model to solve the task.</p>
-<p>One trap that is easy to fall in is too much emphasis on the type of model we have deployed rather than the appropriateness of the task decomposition we have chosen.</p>
-<p><strong>Recommendation</strong>: Conditioned on task decomposition, we should automate the process of model improvement. Model updates should not be discussed in management meetings, they should be deployed and updated as a matter of course. Further details below on model deployment, but model updating needs to be considered at design time. This is the domain of AutoML.</p>
-<div style="text-align:center">
-<img class="" src="../slides/diagrams/ai/chicken-and-egg.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
-</div>
-<center>
-<em>The answer to the question which comes first, the chicken or the egg is simple, they co-evolve <span class="citation">(Popper 1963)</span>. Similarly, when we place components together in a complex machine learning system, they will tend to co-evolve and compensate for one another. </em>
-</center>
-<p>To form modern decision making systems, many components are interlinked. We decompose our complex decision making into individual tasks, but the performance of each component is dependent on those upstream of it.</p>
-<p>This naturally leads to co-evolution of systems, upstream errors can be compensated by downstream corrections.</p>
-<p>To embrace this characteristic, end-to-end training could be considered. Why produce the best forecast by metrics when we can just produce the best forecast for our systems? End to end training can lead to improvements in performance, but it would also damage our systems decomposability and its interpretability, and perhaps its adaptability.</p>
-<p>The less human interpretable our systems are, the harder they are to adapt to different circumstances or diagnose when there's a challenge. The trade-off between interpretability and performance is a constant tension which we should always retain in our minds when performing our system design.</p>
 <h3 id="data">Data</h3>
 <p>It is difficult to overstate the importance of data. It is half of the equation for machine learning, but is often utterly neglected. We can speculate that there are two reasons for this. Firstly, data cleaning is perceived as tedious. It doesn’t seem to consist of the same intellectual challenges that are inherent in constructing complex mathematical models and implementing them in code. Secondly, data cleaning is highly complex, it requires a deep understanding of how machine learning systems operate and good intuitions about the data itself, the domain from which data is drawn (e.g. Supply Chain) and what downstream problems might be caused by poor data quality.</p>
 <p>A consequence of these two reasons, data cleaning seems difficult to formulate into a readily teachable set of principles. As a result it is heavily neglected in courses on machine learning and data science. Despite data being half the equation, most University courses spend little to no time on its challenges.</p>
@@ -247,9 +216,9 @@ Classically, in the field of statistics, data analysis proceeds by assuming that
 <p>Data is the new software, and the data crisis is already upon us. It is driven by the cost of cleaning data, the paucity of tools for monitoring and maintaining our deployments, the provenance of our models (e.g. with respect to the data they’re trained on).</p>
 <p>Three principal changes need to occur in response. They are cultural and infrastructural.</p>
 <h3 id="the-data-first-paradigm">The Data First Paradigm</h3>
-<p>First of all, to excel in data driven decision making we need to move from a <em>software first</em> paradigm to a <em>data first</em> paradigm. That means refocusing on data as the product. Software is the intermediary to producing the data, and its quality standards must be maintained, but not at the expense of the data we are producing. Data cleaning and maintenance need to be prized as highly as software debugging and maintenance. Instead of <em>software</em> as a service, we should refocus around <em>data</em> as a service. This first change is a cultural change in which our teams think about their outputs in terms of data. Instead of decomposing our systems around the software components, we need to decompose them around the data generating and consuming components.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> Software first is only an intermediate step on the way to be coming <em>data first</em>. It is a necessary, but not a sufficient condition for efficient machine learning systems design and deployment. We must move from <em>software orientated architecture</em> to a <em>data orientated architecture</em>.</p>
+<p>First of all, to excel in data driven decision making we need to move from a <em>software first</em> paradigm to a <em>data first</em> paradigm. That means refocusing on data as the product. Software is the intermediary to producing the data, and its quality standards must be maintained, but not at the expense of the data we are producing. Data cleaning and maintenance need to be prized as highly as software debugging and maintenance. Instead of <em>software</em> as a service, we should refocus around <em>data</em> as a service. This first change is a cultural change in which our teams think about their outputs in terms of data. Instead of decomposing our systems around the software components, we need to decompose them around the data generating and consuming components.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> Software first is only an intermediate step on the way to be coming <em>data first</em>. It is a necessary, but not a sufficient condition for efficient machine learning systems design and deployment. We must move from <em>software orientated architecture</em> to a <em>data orientated architecture</em>.</p>
 <h3 id="data-quality">Data Quality</h3>
-<p>Secondly, we need to improve our language around data quality. We cannot assess the costs of improving data quality unless we generate a language around what data quality means. Data Readiness Levels<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> are an assessment of data quality that is based on the usage to which data is put.</p>
+<p>Secondly, we need to improve our language around data quality. We cannot assess the costs of improving data quality unless we generate a language around what data quality means. Data Readiness Levels<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> are an assessment of data quality that is based on the usage to which data is put.</p>
 <h2 id="data-readiness-levels">Data Readiness Levels</h2>
 <p><a href="http://inverseprobability.com/2017/01/12/data-readiness-levels">Data Readiness Levels</a> <span class="citation">(Lawrence 2017)</span> are an attempt to develop a language around data quality that can bridge the gap between technical solutions and decision makers such as managers and project planners. The are inspired by Technology Readiness Levels which attempt to quantify the readiness of technologies for deployment.</p>
 <p>Data-readiness describes, at its coarsest level, three separate stages of data graduation.</p>
@@ -297,32 +266,17 @@ Classically, in the field of statistics, data analysis proceeds by assuming that
 <em>For a data first architecture we need to clean our data at source, rather than individually cleaning data for each task. This involves a shift of focus from our inputs to our outputs. We should provide data streams that are consumable by many teams without purification. </em>
 </center>
 <p><strong>Recommendation</strong>: We need to share best practice around data deployment across our teams. We should make best use of our processes where applicable, but we need to develop them to become <em>data first</em> organizations. Data needs to be cleaned at <em>output</em> not at <em>input</em>.</p>
-<h3 id="deployment">Deployment</h3>
-<h3 id="continuous-deployment">Continuous Deployment</h3>
-<p>Once the decomposition is understood, the data is sourced and the models are created, the model code needs to be deployed.</p>
-<p>To extend the USB stick analogy further, how would we deploy that code if we thought it was likely to evolve in production? This is what datadoes. We cannot assume that the conditions under which we trained our model will be retained as we move forward, indeed the only constant we have is change.</p>
-<p>This means that when any data dependent model is deployed into production, it requires <em>continuous monitoring</em> to ensure the assumptions of design have not been invalidated. Software changes are qualified through testing, in particular a regression test ensures that existing functionality is not broken by change. Since data is continually evolving, machine learning systems require 'continual regression testing': oversight by systems that ensure their existing functionality has not been broken as the world evolves around them. An approach we refer to as <em>progression testing</em>. Unfortunately, standards around ML model deployment yet been developed. The modern world of continuous deployment does rely on testing, but it does not recognize the continuous evolution of the world around us.</p>
-<p>If the world has changed around our decision making ecosystem, how are we alerted to those changes?</p>
-<p><strong>Recommendation</strong>: We establish best practice around model deployment. We need to shift our culture from standing up a software service, to standing up a <em>data as a service</em>. Data as a Service would involve continual monitoring of our deployed models in production. This would be regulated by 'hypervisor' systems<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> that understand the context in which models are deployed and recognize when circumstance has changed and models need retraining or restructuring.</p>
-<p><strong>Recommendation</strong>: We should consider a major re-architecting of systems around our services. In particular we should scope the use of a <em>streaming architecture</em> (such as Apache Kafka) that ensures data persistence and enables asynchronous operation of our systems.<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> This would enable the provision of QC streams, and real time dash boards as well as hypervisors..</p>
-<p>Importantly a streaming architecture implies the services we build are <em>stateless</em>, internal state is deployed on streams alongside external state. This allows for rapid assessment of other services' data.</p>
 <h3 id="outlook-for-machine-learning">Outlook for Machine Learning</h3>
 <p>Machine learning has risen to prominence as an approach to <em>scaling</em> our activities. For us to continue to automate in the manner we have over the last two decades, we need to make more use of computer-based automation. Machine learning is allowing us to automate processes that were out of reach before.</p>
 <h3 id="conclusion">Conclusion</h3>
 <p>We operate in a technologically evolving environment. Machine learning is becoming a key coponent in our decision making capabilities, our intelligence and strategic command. However, technology drove changes in battlefield strategy. From the stalemate of the first world war to the tank-dominated Blitzkrieg of the second, to the asymmetric warfare of the present. Our technology, tactics and strategies are also constantly evolving. Machine learning is part of that evolution solution, but the main challenge is not to become so fixated on the tactics of today that we miss the evolution of strategy that the technology is suggesting.</p>
 <h3 id="references" class="unnumbered">References</h3>
 <div id="refs" class="references">
-<div id="ref-Feurer:automl15">
-<p>Feurer, Matthias, Aaron Klein, Katharina Eggensperger, Jost Tobias Springenberg, Manuel Blum, and Frank Hutter. n.d. “Efficient and Robust Automated Machine Learning.” In <em>Advances in Neural Information Processing Systems</em>.</p>
-</div>
 <div id="ref-Lawrence:drl17">
 <p>Lawrence, Neil D. 2017. “Data Readiness Levels.” arXiv.</p>
 </div>
 <div id="ref-Maxwell:governors1867">
 <p>Maxwell, James Clerk. 1867. “On Governors.” <em>Proceedings of the Royal Society of London</em> 16. The Royal Society: 270–83. <a href="http://www.jstor.org/stable/112510" class="uri">http://www.jstor.org/stable/112510</a>.</p>
-</div>
-<div id="ref-Popper:conjectures63">
-<p>Popper, Karl R. 1963. <em>Conjectures and Refutations: The Growth of Scientific Knowledge</em>. London: Routledge.</p>
 </div>
 <div id="ref-Sculley:debt15">
 <p>Sculley, D., Gary Holt, Daniel Golovin, Eugene Davydov, Todd Phillips, Dietmar Ebner, Vinay Chaudhary, Michael Young, Jean-François Crespo, and Dan Dennison. 2015. “Hidden Technical Debt in Machine Learning Systems.” In <em>Advances in Neural Information Processing Systems 28</em>, edited by Corinna Cortes, Neil D. Lawrence, Daniel D. Lee, Masashi Sugiyama, and Roman Garnett, 2503–11. Curran Associates, Inc. <a href="http://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems.pdf" class="uri">http://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems.pdf</a>.</p>
@@ -337,11 +291,8 @@ Classically, in the field of statistics, data analysis proceeds by assuming that
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>We can also become constrained by our tribal thinking, just as each of the other groups can.<a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p>This is related to challenges of machine learning and technical debt <span class="citation">(Sculley et al. 2015)</span>, although we are trying to frame the solution here rather than the problem.<a href="#fnref2">↩</a></p></li>
-<li id="fn3"><p><a href="http://inverseprobability.com/2017/01/12/data-readiness-levels">Data Readiness Levels</a> <span class="citation">(Lawrence 2017)</span> are an attempt to develop a language around data quality that can bridge the gap between technical solutions and decision makers such as managers and project planners. The are inspired by Technology Readiness Levels which attempt to quantify the readiness of technologies for deployment.<a href="#fnref3">↩</a></p></li>
-<li id="fn4"><p>Emulation, or surrogate modelling, is one very promising approach to forming such a hypervisor. Emulators are models we fit to other models, often simulations, but the could also be other machine learning modles. These models operate at the meta-level, not on the systems directly. This means they can be used to model how the sub-systems interact. As well as emulators we shoulc consider real time dash boards, anomaly detection, mutlivariate analysis, data visualization and classical statistical approaches for hypervision of our deployed systems.<a href="#fnref4">↩</a></p></li>
-<li id="fn5"><p>These approaches are one area of focus for my own team's reasearch. A data first architecture is a prerequisite for efficient deployment of machine learning systems.<a href="#fnref5">↩</a></p></li>
+<li id="fn1"><p>This is related to challenges of machine learning and technical debt <span class="citation">(Sculley et al. 2015)</span>, although we are trying to frame the solution here rather than the problem.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p><a href="http://inverseprobability.com/2017/01/12/data-readiness-levels">Data Readiness Levels</a> <span class="citation">(Lawrence 2017)</span> are an attempt to develop a language around data quality that can bridge the gap between technical solutions and decision makers such as managers and project planners. The are inspired by Technology Readiness Levels which attempt to quantify the readiness of technologies for deployment.<a href="#fnref2">↩</a></p></li>
 </ol>
 </div>
 
