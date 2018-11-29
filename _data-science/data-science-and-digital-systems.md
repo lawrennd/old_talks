@@ -90,7 +90,7 @@ include{_data-science/includes/data-readiness-levels.md}
 -->
 
 \include{_ml/includes/ml-and-supply-chain.md}
-\include{_ml/includes/or-control-econometrics-statistics-ml.md}
+<!--include{_ml/includes/or-control-econometrics-statistics-ml.md}-->
 \subsection{The Three Ds of Machine Learning Systems Design}
 
 \slides{
