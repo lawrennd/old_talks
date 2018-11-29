@@ -8,6 +8,7 @@
 	* Machine translation
 }
 \notes{Artificial intelligence has the objective of endowing computers with human-like intelligent capabilities. For example, understanding an image (computer vision) or the contents of some speech (speech recognition), the meaning of a sentence (natural language processing) or the translation of a sentence (machine translation).}
+
 \subsection{Supervised Learning for AI}
 \slides{
 * Dominant approach today:
