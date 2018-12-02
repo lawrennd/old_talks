@@ -1,4 +1,4 @@
-BASE=gaussian-processes
+BASE=what-is-a-gp
 include ../make-talk-flags.mk
-DATE=2019-01-09
+DATE=1970-01-01
 include ../make-talk.mk

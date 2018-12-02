@@ -20,11 +20,11 @@ bibliography: deep-probabilistic-modelling-with-gaussian-processes.bib
 \include{_gp/includes/what-is-a-gp.md}
 
 
-### Deep Gaussian Processes 
+\subsection{Deep Gaussian Processes}
 
 \include{_gp/includes/approximate-gps-short.md}
 
-### Modern Review
+\subsection{Modern Review}
 
 * *A Unifying Framework for Gaussian Process Pseudo-Point Approximations using Power Expectation Propagation*
     @Thang:unifying17
@@ -34,7 +34,7 @@ bibliography: deep-probabilistic-modelling-with-gaussian-processes.bib
 
 \include{_deepgp/includes/deep-gaussian-processes.md}
 
-### At this Year's NIPS
+\subsection{At this Year's NIPS}
 
 * *Gaussian process based nonlinear latent structure discovery in multivariate spike train data*
     @Anqi:gpspike2017
@@ -46,7 +46,7 @@ bibliography: deep-probabilistic-modelling-with-gaussian-processes.bib
     @Schulam:counterfactual17
 
 
-### Some Other Works
+\subsection{Some Other Works}
 
 * *Deep Survival Analysis*
     @Ranganath-survival16
@@ -57,11 +57,11 @@ bibliography: deep-probabilistic-modelling-with-gaussian-processes.bib
 
 \include{_uq/includes/uncertainty-quantification.md}
 
-### Acknowledgments
+\subsection{Acknowledgments}
 
 Stefanos  Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Dai, Javier Gonzalez, Andreas Damianou, Mark Pullin.
 
-### Ongoing Code
+\subsection{Ongoing Code}
 
 * Powerful framework but
 
@@ -71,11 +71,11 @@ Stefanos  Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Da
 
 * Composition of GPs, Neural Networks, Other Models
 
-### Thanks!
+\subsection{Thanks!}
 
 * twitter: \@lawrennd
 * blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
 
-### References {.allowframebreaks}
+\subsection{References}
 
 

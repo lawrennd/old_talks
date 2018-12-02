@@ -1,6 +1,6 @@
-\include{../_deepgp/includes/deep-nn.md}
+\include{_deepgp/includes/deep-nn.md}
 
-### Mathematically 
+\subsection{Mathematically 
 
 $$
 \begin{align}
@@ -11,7 +11,7 @@ $$
 \end{align}
 $$
 
-### Overfitting 
+\subsection{Overfitting 
 
 -   Potential problem: if number of nodes in two adjacent layers is big,
     corresponding $\mappingMatrix$ is also very big and there is the
@@ -64,20 +64,20 @@ ax[3].axes.get_yaxis().set_visible(True)
 mlai.write_figure(figure=fig, filename='../../slides/diagrams/wisuvt.svg')
 }
 
-### Low Rank Approximation
+\subsection{Low Rank Approximation}
 
 \includesvg{../../slides/diagrams/wisuvt.svg}
 
 \plotcode{plot.deep_nn_bottleneck(diagrams='../../slides/diagrams/deepgp')}
 
-### Deep Neural Network
+\subsection{Deep Neural Network}
 
 \includesvg{../../slides/diagrams/deepgp/deep-nn-bottleneck2.svg}
 
-### What is a Deep Gaussian Process?
+\subsection{What is a Deep Gaussian Process?}
 
 * Function Composition
- (Introduce as stacked processes ... check Oxford Talk fromw ay back.
+ (Introduce as stacked processes ... check Oxford Talk from way back).
 
 * Stochastic Process Composition
 
@@ -125,7 +125,7 @@ mlai.write_figure(figure=fig, filename='../../slides/diagrams/wisuvt.svg')
 
 <!-- \include{../../_gplvm/includes/mrd_gplvm.md} -->
 
-### What Can We Do that Google Can’t?
+\subsection{What Can We Do that Google Can’t?}
 
 -   Google’s resources give them access to volumes of data (or Facebook,
     or Microsoft, or Amazon).

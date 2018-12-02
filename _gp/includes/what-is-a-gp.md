@@ -1,12 +1,11 @@
 \include{_ml/includes/what-is-ml.md}
 
-\newslides{Artificial Intelligence}
+\newslide{Artificial Intelligence}
 \slides{
 * Machine learning is a mainstay because of importance of prediction.
 }
-\notes{}
 
-\newslides{Uncertainty}
+\newslide{Uncertainty}
 
 \slides{
 * Uncertainty in prediction arises from:
@@ -28,12 +27,12 @@ There are also challenges around specification of the objective function, but fo
 \include{_ml/includes/graphical-models.md}
 \include{_ml/includes/performing-inference.md}
 
-\newslides{Multivariate Gaussian Properties}
+\newslide{Multivariate Gaussian Properties}
 
 \include{_ml/includes/multivariate-gaussian-properties-summary.md}
 
 \slides{
-\newslides{Linear Gaussian Models}
+\newslide{Linear Gaussian Models}
 }\notes{Gaussian processes are initially of interest because}
 
 1. linear Gaussian models are easier to deal with 
@@ -47,20 +46,18 @@ There are also challenges around specification of the objective function, but fo
 
 <!-- include{_ml/includes/two-d-gaussian.md} -->
 
-\newslides{Distributions over Functions}
+\newslide{Distributions over Functions}
 
 \include{_gp/includes/gpdistfunc.md}
 
-\newslides{Key Object}
+\newslide{Key Object}
 
 * Covariance function, $\kernelMatrix$
-
 * Determines properties of samples.
-
 * Function of $\inputMatrix$,
     $$\kernelScalar_{i,j} = \kernelScalar(\inputVector_i, \inputVector_j)$$
 
-\newslides{Linear Algebra}
+\newslide{Linear Algebra}
 
 * Posterior mean
 
@@ -71,7 +68,7 @@ There are also challenges around specification of the objective function, but fo
     $$\mathbf{C}_* = \kernelMatrix_{*,*} - \kernelMatrix_{*,\mappingFunctionVector}
 \kernelMatrix^{-1} \kernelMatrix_{\mappingFunctionVector, *}$$
 
-\newslides{Linear Algebra}
+\newslide{Linear Algebra}
 
 * Posterior mean
 
@@ -81,17 +78,27 @@ There are also challenges around specification of the objective function, but fo
     $$\covarianceMatrix_* = \kernelMatrix_{*,*} - \kernelMatrix_{*,\mappingFunctionVector}
 \kernelMatrix^{-1} \kernelMatrix_{\mappingFunctionVector, *}$$
 
-\newslides{}
+\slides{
+\newslide{}
 
-\includesvg{../slides/diagrams/gp_prior_samples_data.svg}
+\includepng{../slides/diagrams/gp/gp_rejection_sample001}{100%}{negate}
 
-\newslides{}
+\newslide{}
 
-\includesvg{../slides/diagrams/gp_rejection_samples.svg}
+\includepng{../slides/diagrams/gp/gp_rejection_sample002}{100%}{negate}
 
-\newslides{}
+\newslide{}
 
-\includesvg{../slides/diagrams/gp_prediction.svg}
+\includepng{../slides/diagrams/gp/gp_rejection_sample003}{100%}{negate}
+
+\newslide{}
+
+\includepng{../slides/diagrams/gp/gp_rejection_sample004}{100%}{negate}
+
+\newslide{} 
+
+\includepng{../slides/diagrams/gp/gp_rejection_sample005}{100%}{negate}
+}
 
 
 \include{_kern/includes/eq-covariance.md}

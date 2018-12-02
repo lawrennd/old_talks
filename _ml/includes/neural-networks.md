@@ -1,19 +1,16 @@
-### Neural Networks and Prediction Functions
+\subsection{Neural Networks and Prediction Functions}
 
 \slides{
 *  adaptive non-linear function models inspired by simple neuron models [@McCulloch:neuron43]
-
-*  have become popular because of their ability to model data.
-
+* have become popular because of their ability to model data.
 * can be composed to form highly complex functions
-
 * start by focussing on one hidden layer
 }
 \notes{Neural networks are adaptive non-linear function models. Originally, they were studied (by McCulloch and Pitts [@McCulloch:neuron43]) as simple models for neurons, but over the last decade they have become popular because they are a flexible approach to modelling complex data. A particular characteristic of neural network models is that they can be composed to form highly complex functions which encode many of our expectations of the real world. They allow us to encode our assumptions about how the world works.}
 
-\slides{
-### Prediction Function of One Hidden Layer
+\newslide{Prediction Function of One Hidden Layer}
 
+\slides{
 $$
 \mappingFunction(\inputVector) = \left.\mappingVector^{(2)}\right.^\top \activationVector(\mappingMatrix_{1}, \inputVector)
 $$
@@ -40,7 +37,7 @@ Where in this case $\mappingFunction(\cdot)$ is a scalar function with vector in
 
 }
 
-### Relations with Classical Statistics
+\subsection{Relations with Classical Statistics}
 
 \slides{
 * In statistics activation functions are known as *basis functions*.
@@ -51,12 +48,12 @@ Where in this case $\mappingFunction(\cdot)$ is a scalar function with vector in
 }
 \notes{In statistics activation functions are traditionally known as *basis functions*. And we would think of this as a *linear model*. It's doesn't make linear predictions, but it's linear because in statistics estimation focuses on the parameters, $\mappingMatrix$, not the parameters, $\mappingMatrixTwo$. The linear model terminology refers to the fact that the model is *linear in the parameters*, but it is *not* linear in the data unless the activation functions are chosen to be linear.}
 
-### Adaptive Basis Functions
+\subsection{Adaptive Basis Functions}
 
 \slides{
 * In machine learning we optimize $\mappingMatrix_{1}$ as well as  $\mappingMatrix_{2}$ (which would normally be denoted in statistics by $\boldsymbol{\beta}$).
 
-* This tutorial: revisit that decision: follow the path of @Neal:bayesian94 and @MacKay:bayesian92.
+* Revisit that decision: follow the path of @Neal:bayesian94 and @MacKay:bayesian92.
 
 * Consider the probabilistic approach.
 }

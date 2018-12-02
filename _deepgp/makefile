@@ -1,4 +1,4 @@
-BASE=deep-probabilistic-modelling-with-gaussian-processes
+BASE=what-is-a-deep-gp
 include ../make-talk-flags.mk
-DATE=2017-12-04
+DATE=1970-01-01
 include ../make-talk.mk

@@ -23,23 +23,20 @@
 \notesfigure{\includejpg{../slides/diagrams/sparse-gps.jpg}{45%}}
 \notes{\caption{Image credit: Kai Arulkumaran}}
 
-\setupcode{import numpy as np
-import matplotlib.pyplot as plt
-from IPython.display import display
-import GPy
-
-import mlai
-import teaching_plots as plot 
-from gp_tutorial import gpplot}
-
-\setupcode{np.random.seed(101)}
 
 \notes{
 \subsection{A Simple Regression Problem}
 
 Here we set up a simple one dimensional regression problem. The input locations, $\inputMatrix$, are in two separate clusters. The response variable, $\dataVector$, is sampled from a Gaussian process with an exponentiated quadratic covariance.}
 
-		
+
+\setupcode{import numpy as np
+import GPy}
+
+
+\setupcode{np.random.seed(101)}
+
+
 \code{N = 50
 noise_var = 0.01
 X = np.zeros((50, 1))
@@ -55,7 +52,12 @@ y = np.random.multivariate_normal(np.zeros(N),k.K(X)+np.eye(N)*np.sqrt(noise_var
 \code{m_full = GPy.models.GPRegression(X,y)
 _ = m_full.optimize(messages=True) # Optimize parameters of covariance function}
 
-\plotcode{fig, ax = plt.subplots(figsize=plot.wide_figsize)
+\setupdisplaycode{import matplotlib.pyplot as plt
+import mlai
+import teaching_plots as plot 
+from gp_tutorial import gpplot}
+
+\displaycode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot.model_output(m_full, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2)
 xlim = ax.get_xlim()
 ylim = ax.get_ylim()
@@ -79,7 +81,7 @@ m.noise_var = noise_var
 m.inducing_inputs.constrain_fixed()
 display(m)}
 
-\plotcode{fig, ax = plt.subplots(figsize=plot.wide_figsize)
+\displaycode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot.model_output(m, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2, xlim=xlim, ylim=ylim)
 mlai.write_figure(figure=fig,
                   filename='../slides/diagrams/gp/sparse-demo-constrained-inducing-6-unlearned-gp.svg', 
@@ -93,10 +95,10 @@ mlai.write_figure(figure=fig,
 \code{_ = m.optimize(messages=True)
 display(m)}
 
-\plotcode{fig, ax = plt.subplots(figsize=plot.wide_figsize)
+\displaycode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot.model_output(m, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2, xlim=xlim, ylim=ylim)
 mlai.write_figure(figure=fig,
-                  filename='../slides/diagrams/gp/sparse-demo-full-gp.svg', 
+                  filename='../slides/diagrams/gp/sparse-demo-constrained-inducing-6-learned-gp.svg', 
                   transparent=True, frameon=True)}
 
 \newslide{Inducing Variable Param Optimize}
@@ -108,7 +110,7 @@ mlai.write_figure(figure=fig,
 m.inducing_inputs.unconstrain()
 _ = m.optimize(messages=True)}
 
-\plotcode{fig, ax = plt.subplots(figsize=plot.wide_figsize)
+\displaycode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot.model_output(m, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2,xlim=xlim, ylim=ylim)
 mlai.write_figure(figure=fig,
                   filename='../slides/diagrams/gp/sparse-demo-unconstrained-inducing-6-gp.svg', 
@@ -128,7 +130,7 @@ m.set_Z(np.random.rand(M,1)*12)
 
 _ = m.optimize(messages=True)}
 
-\plotcode{fig, ax = plt.subplots(figsize=plot.wide_figsize)
+\displaycode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot.model_output(m, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2, xlim=xlim, ylim=ylim)
 mlai.write_figure(figure=fig,
                   filename='../slides/diagrams/gp/sparse-demo-sparse-inducing-8-gp.svg', 

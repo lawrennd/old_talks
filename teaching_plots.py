@@ -31,7 +31,12 @@ notation_map={'variance': '\\alpha',
            'period':'\omega'}
 
 def pred_range(x, portion=0.2, points=200, randomize=False):
-    """Return a one dimensional range for prediction across given a data set, x"""
+    """Return a one dimensional range for prediction across given a data set, x
+
+    :param x: input data from which to create a range.
+    :param portion: portion of the range to extend (default 0.2)
+    :param points: number of points in the range.
+    :param randomize: whether tho randomize the points slightly (add small Gaussian noise to each input location)."""
     span = x.max()-x.min()
     xt=np.linspace(x.min()-portion*span, x.max()+portion*span, points)[:,np.newaxis]
     if not randomize:
@@ -1588,14 +1593,14 @@ def covariance_func(kernel, x=None,
     fhand = open(os.path.join(diagrams, filename + '.html'), 'w')
     fhand.write(out)
 
-def rejection_samples(kernel_function, x=None, num_few=20, num_many=2000,  diagrams='../diagrams', **kwargs):
+def rejection_samples(kernel, x=None, num_few=20, num_many=1000,  diagrams='../diagrams', **kwargs):
     """Plot samples from a GP, a small sample of data and a rejection sample."""
 
     fig, ax = plt.subplots(nrows=1, ncols=1, figsize=big_wide_figsize)
     if x is None:
         x = np.linspace(-1, 1, 250)[:, np.newaxis]
     resolution = x.shape[0]
-    K = kernel_function(x, x, **kwargs)
+    K = kernel.K(x, x, **kwargs)
     f = np.random.multivariate_normal(np.zeros(resolution), K, size=num_few).T
     #ax.set_xticks(range(1, 26, 2))
     #ax.set_yticks([-1, 0, 1])
@@ -1606,12 +1611,12 @@ def rejection_samples(kernel_function, x=None, num_few=20, num_many=2000,  diagr
     ax.set_position([0., 0., 1., 1.])
     ax.set_axis_off()
     h_f = ax.plot(x, f)
-    mlai.write_figure(os.path.join(diagrams, 'gp_rejection_sample001.svg'), transparent=True)
+    mlai.write_figure(os.path.join(diagrams, 'gp_rejection_sample001.png'), transparent=True)
 
     fnew = np.random.multivariate_normal(np.zeros(resolution), K, size=num_many-num_few).T
     f = np.hstack((f, fnew))
     h_f += ax.plot(x, fnew)
-    mlai.write_figure(os.path.join(diagrams, 'gp_rejection_sample002.svg'), transparent=True)
+    mlai.write_figure(os.path.join(diagrams, 'gp_rejection_sample002.png'), transparent=True)
 
     ind = [int(resolution/5.), int(2*resolution/3.), int(4*resolution/5.)]
     K_data = K[ind][:, ind]
@@ -1619,18 +1624,18 @@ def rejection_samples(kernel_function, x=None, num_few=20, num_many=2000,  diagr
     y_data = np.random.multivariate_normal(np.zeros(len(ind)), K_data, size=1).T
     
     h_data=ax.plot(x_data, y_data, 'o', markersize=25, linewidth=3, color=[0., 0., 0.])
-    mlai.write_figure(os.path.join(diagrams, 'gp_rejection_sample003.svg'), transparent=True)
+    mlai.write_figure(os.path.join(diagrams, 'gp_rejection_sample003.png'), transparent=True)
     delta = y_data - f[ind, :]
     dist = (delta*delta).sum(0)
     del_ind = np.argsort(dist)[10:]
     for i in del_ind:
         h_f[i].remove()
-    mlai.write_figure(os.path.join(diagrams, 'gp_rejection_sample004.svg'), transparent=True)
+    mlai.write_figure(os.path.join(diagrams, 'gp_rejection_sample004.png'), transparent=True)
 
     # This is not the numerically stable way to do this!
     Kinv = np.linalg.inv(K_data)
     Kinvy = np.dot(Kinv, y_data)
-    K_star = kernel_function(x_data, x, **kwargs)
+    K_star = kernel.K(x_data, x, **kwargs)
     A = np.dot(Kinv, K_star)
     mu_f = np.dot(A.T, y_data)
     c_f = np.diag(K - np.dot(A.T, K_star))[:, np.newaxis]
@@ -1639,7 +1644,7 @@ def rejection_samples(kernel_function, x=None, num_few=20, num_many=2000,  diagr
                            mu_f-2*np.sqrt(c_f),
                            mu_f+2*np.sqrt(c_f), 
                            ax=ax)
-    mlai.write_figure(os.path.join(diagrams, 'gp_rejection_sample005.svg'), transparent=True)
+    mlai.write_figure(os.path.join(diagrams, 'gp_rejection_sample005.png'), transparent=True)
     
     
 def two_point_sample(kernel_function, diagrams='../diagrams'):
@@ -2736,26 +2741,52 @@ def three_pillars_innovation(diagrams='./diagrams'):
     matplotlib.rc('font', weight=orig_font_weight)
 
 
-def model_output(model, output_dim=0, scale=1.0, offset=0.0, ax=None, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2):
-    """Plot the output of a GP."""
+def model_output(model, output_dim=0, scale=1.0, offset=0.0, ax=None, xlabel='$x$', ylabel='$y$', xlim=None, ylim=None, fontsize=20, portion=0.2):
+    """Plot the output of a GP.
+    :param model: the model for the output plotting.
+    :param output_dim: the output dimension to plot.
+    :param scale: how to scale the output.
+    :param offset: how to offset the output.
+    :param ax: axis to plot on.
+    :param xlabel: label for the x axis (default: '$x$').
+    :param ylabel: label for the y axis (default: '$y$').
+    :param xlim: limits of the x axis
+    :param ylim: limits of the y axis
+    :param fontsize: fontsize (default 20)
+    :param portion: What proportion of the input range to put outside the data."""
     if ax is None:
         fig, ax = plt.subplots(figsize=big_figsize)
     ax.plot(model.X.flatten(), model.Y[:, output_dim]*scale + offset, 'r.',markersize=10)
     ax.set_xlabel(xlabel, fontsize=fontsize)
     ax.set_ylabel(ylabel, fontsize=fontsize)
     xt = pred_range(model.X, portion=portion)
+    if xlim is None:
+        xlim = [xt.min(), xt.max()]
+
     yt_mean, yt_var = model.predict(xt)
     yt_mean = yt_mean*scale + offset
     yt_var *= scale*scale
-    yt_sd=np.sqrt(yt_var)
+    yt_sd = np.sqrt(yt_var)
     if yt_sd.shape[1]>1:
         yt_sd = yt_sd[:, output_dim]
 
     _ = gp_tutorial.gpplot(xt.flatten(),
-               yt_mean[:, output_dim],
-               yt_mean[:, output_dim]-2*yt_sd.flatten(),
-               yt_mean[:, output_dim]+2*yt_sd.flatten(), 
-               ax=ax)
+                           yt_mean[:, output_dim],
+                           yt_mean[:, output_dim]-2*yt_sd.flatten(),
+                           yt_mean[:, output_dim]+2*yt_sd.flatten(), 
+                           ax=ax)
+
+
+    if ylim is None:
+        ylim=ax.get_ylim()
+    else:
+        ax.set_ylim(ylim)
+    
+    if hasattr(model, 'Z'):
+        z = model.Z.flatten()
+        ax.plot(z, np.full_like(z, ylim[0]), 'k^', markersize='20')
+
+    ax.autoscale(enable=True, axis='x', tight=True)
 
 def model_sample(model, output_dim=0, scale=1.0, offset=0.0,
                  samps=10, ax=None, xlabel='$x$', ylabel='$y$', 

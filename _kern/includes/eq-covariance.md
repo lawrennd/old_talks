@@ -1,20 +1,15 @@
 
+\loadplotcode{Kernel}{mlai}
 \loadplotcode{eq_cov}{mlai}
 
-\setupplotcode{import teaching_plots as plot
-import mlai
-import numpy as np}
-
-\setupplotcode{import teaching_plots as plot
-import mlai
-import numpy as np}
-
-\plotcode{kernel = mlai.Kernel(function=eq_cov,
+\plotcode{kernel = Kernel(function=eq_cov,
                      name='Exponentiated Quadratic',
                      shortname='eq',					 
                      formula='\formula',
-					 lengthscale=0.2)
-plot.covariance_func(kernel, diagrams='../slides/diagrams/kern/')}
+					 lengthscale=0.2)}
+
+\setupplotcode{import teaching_plots as plot}
+\plotcode{plot.covariance_func(kernel=kernel, diagrams='../slides/diagrams/kern/')}
 
 \subsection{Exponentiated Quadratic Covariance}
 

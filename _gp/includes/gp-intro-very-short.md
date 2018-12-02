@@ -16,48 +16,49 @@ In practice, the algorithm is often too slow to be practical, because most sampl
 
 However, in the Gaussian process case, when the likelihood also assumes Gaussian noise, we can operate this mechanims mathematically, and obtain the posterior density *analytically*. This is the benefit of Gaussian processes.}
 
-\setupcode{import numpy as np}
-\loadcode{compute_kernel}{mlai}
-\loadcode{exponentiated_quadratic}{mlai}
+\loadplotcode{Kernel}{mlai}
+\loadplotcode{eq_cov}{mlai}
+
+\plotcode{kernel = Kernel(function=eq_cov,
+                     name='Exponentiated Quadratic',
+                     shortname='eq',					 
+					 lengthscale=0.25)}
 
 
 \setupplotcode{import numpy as np
 np.random.seed(10)
-import teaching_plots as plot
-from mlai import Kernel}
-\plotcode{kernel = Kernel(function=exponentiated_quadratic, lengthscale=0.25)
-plot.rejection_samples(kernel.K,
-                       lengthscale=0.25, 
-					   diagrams='../slides/diagrams/gp')}
+import teaching_plots as plot}
+\plotcode{plot.rejection_samples(kernel=kernel, 
+    diagrams='../slides/diagrams/gp')}
 
 
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
-\displaycode{pods.notebook.display_plots('gp_rejection_sample{sample:0>3}.svg', 
+\displaycode{pods.notebook.display_plots('gp_rejection_sample{sample:0>3}.png', 
                             directory='../slides/diagrams/gp', 
 							sample=IntSlider(1,1,5,1))}
 \slides{
-###  {data-transition="none"}
+\newslide{}
 
-\includesvg{../slides/diagrams/gp/gp_rejection_sample001.svg}
+\includepng{../slides/diagrams/gp/gp_rejection_sample001}{100%}{negate}
 
-###  {data-transition="none"}
+\newslide{}
 
-\includesvg{../slides/diagrams/gp/gp_rejection_sample002.svg}
+\includepng{../slides/diagrams/gp/gp_rejection_sample002}{100%}{negate}
 
-###  {data-transition="none"}
+\newslide{}
 
-\includesvg{../slides/diagrams/gp/gp_rejection_sample003.svg}
+\includepng{../slides/diagrams/gp/gp_rejection_sample003}{100%}{negate}
 
-###  {data-transition="none"}
+\newslide{}
 
-\includesvg{../slides/diagrams/gp/gp_rejection_sample004.svg}
+\includepng{../slides/diagrams/gp/gp_rejection_sample004}{100%}{negate}
 
-###  {data-transition="none"}
-x
-\includesvg{../slides/diagrams/gp/gp_rejection_sample005.svg}
+\newslide{} 
+
+\includepng{../slides/diagrams/gp/gp_rejection_sample005}{100%}{negate}
 }
-\notesfigure{\includesvg{../slides/diagrams/gp/gp_rejection_sample003.svg}
-\includesvg{../slides/diagrams/gp/gp_rejection_sample004.svg}
-\includesvg{../slides/diagrams/gp/gp_rejection_sample005.svg}}
+\notesfigure{\includesvg{../slides/diagrams/gp/gp_rejection_sample003}
+\includepng{../slides/diagrams/gp/gp_rejection_sample004}
+\includepng{../slides/diagrams/gp/gp_rejection_sample005}}
 \notes{\caption{One view of Bayesian inference is we have a machine for generating samples (the *prior*), and we discard all samples inconsistent with our data, leaving the samples of interest (the *posterior*). The Gaussian process allows us to do this analytically.}}

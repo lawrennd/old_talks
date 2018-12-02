@@ -1,15 +1,9 @@
-### Non-degenerate Gaussian Processes
+\subsection{Non-degenerate Gaussian Processes}
 
 \slides{
 * This process is *degenerate*.
-
-
 + Covariance function is of rank at most $\numHidden$.
-
-
 + As $\numData \rightarrow \infty$, covariance matrix is not full rank.
-
-
 + Leading to $\det{\kernelMatrix} = 0$
 }\notes{
 The process described above is degenerate. The covariance function is of rank at most $\numHidden$ and since the theoretical amount of data could always increase $\numData \rightarrow \infty$, the covariance function is not full rank. 
@@ -20,19 +14,18 @@ $$
 and a non-degenerate kernel matrix leads to $\det{\kernelMatrix} = 0$ defeating the normalization (it's equivalent to finding a projection in the high dimensional Gaussian where the variance of the the resulting univariate Gaussian is zero, i.e. there is a null space on the covariance, or alternatively you can imagine there are one or more directions where the Gaussian has become the delta function).
 }
 
-\slides{
-### Infinite Networks
+\newslide{Infinite Networks}
 
+\slides{
 * In ML Radford Neal [@Neal:bayesian94] asked "what would happen if you took  $\numHidden \rightarrow \infty$?"
 }\notes{In the machine learning field, it was Radford Neal [@Neal:bayesian94] that realized the potential of the next step. In his 1994 thesis, he was considering Bayesian neural networks, of the type we described above, and in considered what would happen if you took the number of hidden nodes, or neurons, to infinity, i.e. $\numHidden \rightarrow \infty$.}
 
-[\includeimg{../slides/diagrams/neal-infinite-priors.png}{80%}](http://www.cs.toronto.edu/~radford/ftp/thesis.pdf)
+\div{[\includepng{../slides/diagrams/neal-infinite-priors}{80%}](http://www.cs.toronto.edu/~radford/ftp/thesis.pdf)}{}{text-align:center}
+\caption{Page 37 of Radford Neal's 1994 thesis}
 
-*Page 37 of Radford Neal's 1994 thesis*
+\newslide{Roughly Speaking}
 
 \slides{
-### Roughly Speaking
-
 * Instead of
 }\notes{In loose terms, what Radford considers is what happens to the elements of the covariance function,}
   $$
@@ -51,9 +44,9 @@ $$
 * Also applies for non-Gaussian $p(\mappingVector^{(1)})$ because of the *central limit theorem*.
 }\notes{And that's not *only* for Gaussian $p(\mappingVectorTwo)$. In fact this result holds for a range of activations, and a range of prior densities because of the *central limit theorem*.}
 
-\slides{
-### Simple Probabilistic Program
+\newslide{Simple Probabilistic Program}
 
+\slides{
 * If
   $$
   \begin{align*} 
@@ -72,7 +65,8 @@ has finite variance.
   $$
 has finite variance, then the result of taking the number of hidden units to infinity, with appropriate scaling, is also a Gaussian process.}
 
-### Further Reading
+\subsection{Further Reading}
+
 \slides{
 * Chapter 2 of Neal's thesis [@Neal:bayesian94]
 
@@ -80,5 +74,5 @@ has finite variance, then the result of taking the number of hidden units to inf
 
 * David MacKay's PhD thesis [@MacKay:bayesian92] 
 }
-\notes{To understand this argument in more detail, I highly recommend reading chapter 2 of Neal's thesis, which remains easy to read and clear today. Indeed, for readers interested in Bayesian neural networks, both Raford Neal's and David MacKay's PhD thesis [@MacKay:bayesian92] remain essential reading. Both theses embody a clarity of thought, and an ability to weave together threads from different fields that was the business of machine learning in the 1990s. Radford and David were also pioneers in making their software widely available and publishing material on the web.}
+\notes{To understand this argument in more detail, I highly recommend reading chapter 2 of Neal's thesis [@Neal:bayesian94], which remains easy to read and clear today. Indeed, for readers interested in Bayesian neural networks, both Raford Neal's and David MacKay's PhD thesis [@MacKay:bayesian92] remain essential reading. Both theses embody a clarity of thought, and an ability to weave together threads from different fields that was the business of machine learning in the 1990s. Radford and David were also pioneers in making their software widely available and publishing material on the web.}
 
