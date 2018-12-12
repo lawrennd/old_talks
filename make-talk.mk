@@ -1,6 +1,6 @@
 OUT=$(DATE)-$(BASE)
 
-all: ${BASE}.slides.html ${BASE}.notes.html ${BASE}.posts.html ${BASE}.slides.ipynb ${BASE}.ipynb ${BASE}.notes.tex
+all: ${BASE}.slides.html ${BASE}.notes.html ${BASE}.posts.html ${BASE}.slides.ipynb ${BASE}.ipynb ${BASE}.notes.tex ${BASE}.notes.pdf
 
 ${BASE}.slides.html: ${BASE}.slides.md
 	printf '' > ../include.tmp
@@ -17,7 +17,7 @@ ${BASE}.notes.pdf: ${BASE}.notes.tex
 	pdflatex ${BASE}.notes.tex
 
 ${BASE}.notes.tex: ${BASE}.notes.md
-	pandoc  --template pandoc-notes-tex-template \
+	pandoc  --template pandoc-notes-tex-template.tex \
 		-B ../_includes/talk-notation.tex \
 		${PDSFLAGS} \
 		-o ${BASE}.notes.tex  \

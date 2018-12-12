@@ -12,7 +12,7 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 date: 2018-12-10
-venue: Laboratory for Intelligent Probabilistic Systems, Princeton
+venue: Center for Statistics and Machine Learning, Princeton
 transition: None
 ---
 
@@ -40,6 +40,7 @@ transition: None
 \include{_uq/includes/uncertainty-quantification.md}
 \include{_uq/includes/emukit.md}
 \include{_ml/includes/mxfusion.md}
+\include{_ml/includes/mxfusion-pilco.md}
 
 \subsection{Long term Aim}
 

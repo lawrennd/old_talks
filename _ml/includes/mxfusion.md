@@ -13,7 +13,7 @@
 * Example [PPCA Tutorial](https://github.com/amzn/MXFusion/blob/master/examples/notebooks/ppca_tutorial.ipynb).
 }
 
-\subsection{Why another one?}
+\subsection{Why another framework?}
 
 \slides{
 Existing libraries had either:
@@ -63,21 +63,20 @@ Existing libraries had either:
 ```python
 m = Model()
 m.mu = Variable()
-m.s =
-Variable(transformation=PositiveTransformation())
-m.Y =
-Normal.define_variable(mean=m.mu, variance=m.s)
+m.s = Variable(transformation=PositiveTransformation())
+m.Y = Normal.define_variable(mean=m.mu, variance=m.s)
 ```
 
-\newslide{}
+\newslide{3 primary components in modeling}
 
-* 3 primary components in modeling
-   * Variable
-   * Distribution
-   * Function 
-* 2 primary methods for models 
-   * log_pdf
-   * draw_samples
+* Variable
+* Distribution
+* Function 
+
+\newslide{2 primary methods for models}
+
+* `log_pdf`
+* `draw_samples`
 
 \newslide{Inference: Two Classes}
 
@@ -86,11 +85,6 @@ Normal.define_variable(mean=m.mu, variance=m.s)
 Built on MXNet Gluon (imperative code, not static graph)
 
 \newslide{Example}
-
-```
-infr = GradBasedInference(inference_algorithm=MAP(model=m, observed=[m.Y]))
-infr.run(Y=data)
-```
 
 ```python
 infr = GradBasedInference(inference_algorithm=MAP(model=m, observed=[m.Y]))

@@ -1,6 +1,6 @@
 ---
 title: "Machine Learning and the Physical World"
-venue: "Laboratory for Intelligent Probabilistic Systems, Princeton"
+venue: "Center for Statistics and Machine Learning, Princeton"
 abstract: "<p>Machine learning is a data driven endeavour, but real world systems are physical and mechanistic. In this talk we will review approaches to integrating machine learning with real world systems. Our focus will be on emulation (otherwise known as surrogate modeling).</p>"
 author:
 - given: Neil D.
@@ -55,7 +55,8 @@ categories:
 <p>The rapid increase in the availability of compute and data has led to the increased prominence of machine learning. This prominence is surfacing in two different, but overlapping domains: data science and artificial intelligence.</p>
 <p><a href="https://www.youtube.com/watch?v=vNySOrI2Ny8&amp;t="><img src="https://img.youtube.com/vi/vNySOrI2Ny8/0.jpg" /></a></p>
 <h3 id="artificial-intelligence-and-data-science">Artificial Intelligence and Data Science</h3>
-<p>Artificial intelligence has the objective of endowing computers with human-like intelligent capabilities. For example, understanding an image (computer vision) or the contents of some speech (speech recognition), the meaning of a sentence (natural language processing) or the translation of a sentence (machine translation). ### Supervised Learning for AI</p>
+<p>Artificial intelligence has the objective of endowing computers with human-like intelligent capabilities. For example, understanding an image (computer vision) or the contents of some speech (speech recognition), the meaning of a sentence (natural language processing) or the translation of a sentence (machine translation).</p>
+<h3 id="supervised-learning-for-ai">Supervised Learning for AI</h3>
 <p>The machine learning approach to artificial intelligence is to collect and annotate a large data set from humans. The problem is characterized by input data (e.g. a particular image) and a label (e.g. is there a car in the image yes/no). The machine learning algorithm fits a mathematical function (I call this the <em>prediction function</em>) to map from the input image to the label. The parameters of the prediction function are set by minimizing an error between the function’s predictions and the true data. This mathematical function that encapsulates this error is known as the <em>objective function</em>.</p>
 <p>This approach to machine learning is known as <em>supervised learning</em>. Various approaches to supervised learning use different prediction functions, objective functions or different optimization algorithms to fit them.</p>
 <p>For example, <em>deep learning</em> makes use of <em>neural networks</em> to form the predictions. A neural network is a particular type of mathematical function that allows the algorithm designer to introduce invariances into the function.</p>
@@ -323,10 +324,313 @@ anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Bes
 </table></li>
 </ul>
 <h3 id="mxfusion-1">MxFusion</h3>
+<h3 id="why-another-framework">Why another framework?</h3>
+<h3 id="key-requirements">Key Requirements</h3>
+<p>Specialized inference methods + models, without requiring users to reimplement nor understand them every time. Leverage expert knowledge. Efficient inference, flexible framework. Existing frameworks either did one or the other: flexible, or efficient.</p>
+<h3 id="what-does-it-look-like">What does it look like?</h3>
+<p><strong>Modelling</strong></p>
+<p><strong>Inference</strong></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m <span class="op">=</span> Model()
+m.mu <span class="op">=</span> Variable()
+m.s <span class="op">=</span> Variable(transformation<span class="op">=</span>PositiveTransformation())
+m.Y <span class="op">=</span> Normal.define_variable(mean<span class="op">=</span>m.mu, variance<span class="op">=</span>m.s)</code></pre></div>
+<ul>
+<li>Variable</li>
+<li>Distribution</li>
+<li><p>Function</p></li>
+<li><code>log_pdf</code></li>
+<li><p><code>draw_samples</code></p></li>
+<li>Variational Inference</li>
+<li><p>MCMC Sampling (<em>soon</em>) Built on MXNet Gluon (imperative code, not static graph)</p></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">infr <span class="op">=</span> GradBasedInference(inference_algorithm<span class="op">=</span>MAP(model<span class="op">=</span>m, observed<span class="op">=</span>[m.Y]))
+infr.run(Y<span class="op">=</span>data)</code></pre></div>
+<ul>
+<li>Model + Inference together form building blocks.
+<ul>
+<li>Just doing modular modeling with universal inference doesn't really scale, need specialized inference methods for specialized modelling objects like non-parametrics.</li>
+</ul></li>
+</ul>
+<h3 id="pilco-a-model-based-policy-search">PILCO: A Model-based Policy Search</h3>
+<p>Common reinforcement learning methods suffer from data inefficiency, which can be a issue in real world applications where gathering sufficiently large amounts of data pose economic issues and may be impossible. propose a model-based policy search method known as PILCO in part to address this issue. PILCO uses a Gaussian process (GP) for learning the dynamics of the environment and optimizes a parametric policy function using the learned dynamics model.</p>
+<p>We construct an implementation of PILCO using MXFusion. This implementation follows the main idea of PILCO and has a few enhancements in addition to the published implementation. The enhancements are as follows: * <strong>Use Monte Carlo integration instead of moment estimation.</strong> We approximate the expected reward using Monte Carlo integration instead of the proposed moment estimation approach. This removes the bias in the expected reward computation and enables a wide range of choices of kernels and policy functions. In the original work, only RBF and linear kernel and only linear and RBF network policy can be used. * <strong>Use automatic differentiation.</strong> Thanks to automatic differentiation, no gradient derivation is needed. * <strong>A unified interface of Gaussian process.</strong> MXFusion provides an unified inferface of GP modules. We allows us to easily switch among plan GP, variational sparse GP and stocastic variational GP implementations.</p>
+<p>This notebook depends on MXNet, MXFusion and Open AI Gym. These packages can be installed into your Python environment by running the following commands.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">pip</span> install mxnet mxfusion gym</code></pre></div>
+<p>Set the global configuration.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> os
+os.environ[<span class="st">&#39;MXNET_ENGINE_TYPE&#39;</span>] <span class="op">=</span> <span class="st">&#39;NaiveEngine&#39;</span>
+<span class="im">from</span> mxfusion.common <span class="im">import</span> config
+config.DEFAULT_DTYPE <span class="op">=</span> <span class="st">&#39;float64&#39;</span>
+<span class="op">%</span>matplotlib inline</code></pre></div>
+<p>We use the inverted pendulum swingup problem as an example. We use the <a href="https://gym.openai.com/envs/Pendulum-v0/">Pendulum-v0</a> environment in Open AI Gym. The task is to swing the pendulum up and balance it at the inverted position. This is a classical control problem and is known to be unsolvable with a linear controller.</p>
+<p>To solve this problem with PILCO, we need three components:</p>
+<ul>
+<li>Execute a policy in an real environment (an Open AI Gym simulator in this example) and collect data.</li>
+<li>Fit a GP model as the model for the dynamics of the environment.</li>
+<li>Optimize the policy given the dynamics model learned from all the data that have been collected so far.</li>
+</ul>
+<p>The overall PILCO algorithm is to iterate the above three steps until a policy that can solve the problem is found.</p>
+<h3 id="execute-the-environment">Execute the Environment</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> gym
+env <span class="op">=</span> gym.make(<span class="st">&#39;Pendulum-v0&#39;</span>)</code></pre></div>
+<p>The state of the pendulum environment is a 3D vector. The first two dimensions are the 2D location of the end point of the pendulum. The third dimension encodes the angular speed of the pendulum. The action space is a 1D vector in [-2, 2].</p>
+<p>We write a helper function for executing the environment with a given policy.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
+<span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
+<span class="im">from</span> matplotlib <span class="im">import</span> animation</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> run_one_episode(env, policy, initial_state<span class="op">=</span><span class="va">None</span>, max_steps<span class="op">=</span><span class="dv">200</span>, verbose<span class="op">=</span><span class="va">False</span>, render<span class="op">=</span><span class="va">False</span>):
+    <span class="co">&quot;&quot;&quot;</span>
+<span class="co">    Drives an episode of the OpenAI gym environment using the policy to decide next actions.</span>
+<span class="co">    &quot;&quot;&quot;</span>
+    observation <span class="op">=</span> env.reset()
+    <span class="cf">if</span> initial_state <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:
+        env.env.state <span class="op">=</span> initial_state
+        observation <span class="op">=</span> env.env._get_obs()
+    env._max_episode_steps <span class="op">=</span> max_steps
+    step_idx <span class="op">=</span> <span class="dv">0</span>
+    done <span class="op">=</span> <span class="va">False</span>
+    total_reward <span class="op">=</span> <span class="dv">0</span>
+    frames <span class="op">=</span> []
+    all_actions <span class="op">=</span> []
+    all_observations <span class="op">=</span> [observation]
+    <span class="cf">while</span> <span class="kw">not</span> done:
+        <span class="cf">if</span> render:
+            frames.append(env.render(mode <span class="op">=</span> <span class="st">&#39;rgb_array&#39;</span>))
+        <span class="cf">if</span> verbose:
+            <span class="bu">print</span>(observation)
+        action <span class="op">=</span> policy(observation)
+        observation, reward, done, info <span class="op">=</span> env.step(action)
+        all_observations.append(observation)
+        all_actions.append(action)
+        total_reward <span class="op">+=</span> reward
+        step_idx <span class="op">+=</span> <span class="dv">1</span>
+        <span class="cf">if</span> done <span class="kw">or</span> step_idx<span class="op">&gt;=</span>max_steps<span class="op">-</span><span class="dv">1</span>:
+            <span class="bu">print</span>(<span class="st">&quot;Episode finished after </span><span class="sc">{}</span><span class="st"> timesteps because </span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(step_idx<span class="op">+</span><span class="dv">1</span>, <span class="st">&quot;&#39;done&#39; reached&quot;</span> <span class="cf">if</span> done <span class="cf">else</span> <span class="st">&quot;Max timesteps reached&quot;</span>))
+            <span class="cf">break</span>
+    <span class="cf">if</span> render:
+        fig <span class="op">=</span> plt.figure()
+        ax <span class="op">=</span> fig.gca()
+        fig.tight_layout()
+        patch <span class="op">=</span> ax.imshow(frames[<span class="dv">0</span>])
+        ax.axis(<span class="st">&#39;off&#39;</span>)
+        <span class="kw">def</span> animate(i):
+            patch.set_data(frames[i])
+        anim <span class="op">=</span> animation.FuncAnimation(plt.gcf(), animate, frames <span class="op">=</span> <span class="bu">len</span>(frames), interval<span class="op">=</span><span class="dv">20</span>)
+        <span class="cf">return</span> total_reward, np.array(all_observations, dtype<span class="op">=</span>np.float64,), np.array(all_actions, dtype<span class="op">=</span>np.float64), anim
+    <span class="cf">else</span>:
+        <span class="cf">return</span> total_reward, np.array(all_observations, dtype<span class="op">=</span>np.float64,), np.array(all_actions, dtype<span class="op">=</span>np.float64)</code></pre></div>
+<p>We first apply a random policy and see how the environment reacts. The random policy uniformly samples in the space of action.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> random_policy(state):
+    <span class="cf">return</span> env.action_space.sample()</code></pre></div>
+<p>The animation is generated with the following commands:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">anim <span class="op">=</span> run_one_episode(env, random_policy, max_steps<span class="op">=</span><span class="dv">500</span>, render<span class="op">=</span><span class="va">True</span>, verbose<span class="op">=</span><span class="va">False</span>)[<span class="op">-</span><span class="dv">1</span>]
+
+<span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;animation_random_policy.html&#39;</span>, <span class="st">&#39;w&#39;</span>) <span class="im">as</span> f:
+    f.write(anim.to_jshtml())</code></pre></div>
+<h3 id="pendulum">Pendulum</h3>
+<iframe src="../slides/diagrams/ml/animation_random_policy.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+</iframe>
+<p>The dynamics model of pendulum can be written as <br /><span class="math display">$$
+p(\dataScalar_{t+1}|\dataScalar_t, a_t)
+$$</span><br /> where <span class="math inline">$\dataScalar_t$</span> is the state vector at the time <span class="math inline"><em>t</em></span> and <span class="math inline"><em>a</em><sub><em>t</em></sub></span> is the action taken at the time <span class="math inline"><em>t</em></span>.</p>
+<p>PILCO uses a Gaussian process to model the above dynamics.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> prepare_data(state_list, action_list, win_in):
+    <span class="co">&quot;&quot;&quot;</span>
+<span class="co">    Prepares a list of states and a list of actions as inputs to the Gaussian Process for training.</span>
+<span class="co">    &quot;&quot;&quot;</span>
+    
+    X_list <span class="op">=</span> []
+    Y_list <span class="op">=</span> []
+    
+    <span class="cf">for</span> state_array, action_array <span class="kw">in</span> <span class="bu">zip</span>(state_list, action_list):
+        <span class="co"># the state and action array shape should be aligned.</span>
+        <span class="cf">assert</span> state_array.shape[<span class="dv">0</span>]<span class="op">-</span><span class="dv">1</span> <span class="op">==</span> action_array.shape[<span class="dv">0</span>]
+        
+        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(state_array.shape[<span class="dv">0</span>]<span class="op">-</span>win_in):
+            Y_list.append(state_array[i<span class="op">+</span>win_in:i<span class="op">+</span>win_in<span class="op">+</span><span class="dv">1</span>])
+            X_list.append(np.hstack([state_array[i:i<span class="op">+</span>win_in].flatten(), action_array[i:i<span class="op">+</span>win_in].flatten()]))
+    X <span class="op">=</span> np.vstack(X_list)
+    Y <span class="op">=</span> np.vstack(Y_list)
+    <span class="cf">return</span> X, Y</code></pre></div>
+<p>In this example, we do a maximum likelihood estimate for the model hyper- parameters. In <code>MXFusion</code>, Gaussian process regression model is available as a module, which includes a dediated inference algorithm.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> mxnet <span class="im">as</span> mx
+<span class="im">from</span> mxfusion <span class="im">import</span> Model, Variable
+<span class="im">from</span> mxfusion.components.variables <span class="im">import</span> PositiveTransformation
+<span class="im">from</span> mxfusion.components.distributions.gp.kernels <span class="im">import</span> RBF
+<span class="im">from</span> mxfusion.modules.gp_modules <span class="im">import</span> GPRegression
+<span class="im">from</span> mxfusion.inference <span class="im">import</span> GradBasedInference, MAP</code></pre></div>
+<h3 id="define-and-fit-the-model">Define and fit the model</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> fit_model(state_list, action_list, win_in, verbose<span class="op">=</span><span class="va">True</span>):
+    <span class="co">&quot;&quot;&quot;</span>
+<span class="co">    Fits a Gaussian Process model to the state / action pairs passed in. </span>
+<span class="co">    This creates a model of the environment which is used during</span>
+<span class="co">    policy optimization instead of querying the environment directly.</span>
+<span class="co">    </span>
+<span class="co">    See mxfusion.gp_modules for additional types of GP models to fit,</span>
+<span class="co">    including Sparse GP and Stochastic Varitional Inference Sparse GP.</span>
+<span class="co">    &quot;&quot;&quot;</span>
+    X, Y <span class="op">=</span> prepare_data(state_list, action_list, win_in)
+
+    m <span class="op">=</span> Model()
+    m.N <span class="op">=</span> Variable()
+    m.X <span class="op">=</span> Variable(shape<span class="op">=</span>(m.N, X.shape[<span class="op">-</span><span class="dv">1</span>]))
+    m.noise_var <span class="op">=</span> Variable(shape<span class="op">=</span>(<span class="dv">1</span>,), transformation<span class="op">=</span>PositiveTransformation(),
+                           initial_value<span class="op">=</span><span class="fl">0.01</span>)
+    m.kernel <span class="op">=</span> RBF(input_dim<span class="op">=</span>X.shape[<span class="op">-</span><span class="dv">1</span>], variance<span class="op">=</span><span class="dv">1</span>, lengthscale<span class="op">=</span><span class="dv">1</span>, ARD<span class="op">=</span><span class="va">True</span>)
+    m.Y <span class="op">=</span> GPRegression.define_variable(
+        X<span class="op">=</span>m.X, kernel<span class="op">=</span>m.kernel, noise_var<span class="op">=</span>m.noise_var,
+        shape<span class="op">=</span>(m.N, Y.shape[<span class="op">-</span><span class="dv">1</span>]))
+    m.Y.factor.gp_log_pdf.jitter <span class="op">=</span> <span class="fl">1e-6</span>
+
+    infr <span class="op">=</span> GradBasedInference(
+        inference_algorithm<span class="op">=</span>MAP(model<span class="op">=</span>m, observed<span class="op">=</span>[m.X, m.Y]))
+    infr.run(X<span class="op">=</span>mx.nd.array(X, dtype<span class="op">=</span><span class="st">&#39;float64&#39;</span>),
+             Y<span class="op">=</span>mx.nd.array(Y, dtype<span class="op">=</span><span class="st">&#39;float64&#39;</span>),
+             max_iter<span class="op">=</span><span class="dv">1000</span>, learning_rate<span class="op">=</span><span class="fl">0.1</span>, verbose<span class="op">=</span>verbose)
+    <span class="cf">return</span> m, infr, X, Y</code></pre></div>
+<h3 id="policy">Policy</h3>
+<p>PILCO computes the expected reward of a policy given the dynamics model. First, we need to define the parametric form of the policy. In this example, we use a neural network with one hidden layer. As the action space is [-2, 2], we apply a <code>tanh</code> transformation and multiply the come with two. This enforces the returned actions stay within the range.</p>
+<p>We define a neural network with one hidden layer and and output constrained between [-2,2] for the policy.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mxnet.gluon <span class="im">import</span> HybridBlock
+<span class="im">from</span> mxnet.gluon.nn <span class="im">import</span> Dense
+
+<span class="kw">class</span> NNController(HybridBlock):
+    <span class="co">&quot;&quot;&quot;Define a neural network policy network.&quot;&quot;&quot;</span>
+    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, prefix<span class="op">=</span><span class="va">None</span>, params<span class="op">=</span><span class="va">None</span>):
+        <span class="bu">super</span>(NNController, <span class="va">self</span>).<span class="fu">__init__</span>(prefix<span class="op">=</span>prefix, params<span class="op">=</span>params)
+        <span class="va">self</span>.dense1 <span class="op">=</span> Dense(<span class="dv">100</span>, in_units<span class="op">=</span><span class="bu">len</span>(env.observation_space.high), dtype<span class="op">=</span><span class="st">&#39;float64&#39;</span>, activation<span class="op">=</span><span class="st">&#39;relu&#39;</span>)
+        <span class="va">self</span>.dense2 <span class="op">=</span> Dense(<span class="dv">1</span>, in_units<span class="op">=</span><span class="dv">100</span>, dtype<span class="op">=</span><span class="st">&#39;float64&#39;</span>, activation<span class="op">=</span><span class="st">&#39;tanh&#39;</span>)
+
+    <span class="kw">def</span> hybrid_forward(<span class="va">self</span>, F, x):
+        out <span class="op">=</span> <span class="va">self</span>.dense2(<span class="va">self</span>.dense1(x))<span class="op">*</span><span class="dv">2</span> <span class="co"># Scale up the output</span>
+        <span class="cf">return</span> out 
+    
+policy <span class="op">=</span> NNController()
+policy.collect_params().initialize(mx.initializer.Xavier(magnitude<span class="op">=</span><span class="dv">1</span>))</code></pre></div>
+<p>To compute the expected reward, we also need to define a reward function. This reward function is defined by us according to the task. The main component is the height of the pendulum. We also penalize the force and the angular momentum.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">class</span> CostFunction(mx.gluon.HybridBlock):
+    <span class="co">&quot;&quot;&quot;</span>
+<span class="co">    The goal is to get the pendulum upright and stable as quickly as possible.</span>
+
+<span class="co">    Taken from the code for Pendulum.</span>
+<span class="co">    &quot;&quot;&quot;</span>
+    <span class="kw">def</span> hybrid_forward(<span class="va">self</span>, F, state, action):
+        <span class="co">&quot;&quot;&quot;</span>
+<span class="co">        :param state: [np.cos(theta), np.sin(theta), ~ momentum(theta)]</span>
+<span class="co">        a -&gt; 0 when pendulum is upright, largest when pendulum is hanging down completely.</span>
+<span class="co">        b -&gt; penalty for taking action</span>
+<span class="co">        c -&gt; penalty for pendulum momentum</span>
+<span class="co">        &quot;&quot;&quot;</span>
+        a_scale <span class="op">=</span> <span class="dv">2</span>.
+        b_scale <span class="op">=</span> .<span class="dv">001</span>
+        c_scale <span class="op">=</span> .<span class="dv">1</span>
+        a <span class="op">=</span> F.<span class="bu">sum</span>(a_scale <span class="op">*</span> (state[:,:,<span class="dv">0</span>:<span class="dv">1</span>] <span class="op">-</span><span class="dv">1</span>) <span class="op">**</span> <span class="dv">2</span>, axis<span class="op">=-</span><span class="dv">1</span>)
+        b <span class="op">=</span> F.<span class="bu">sum</span>(b_scale <span class="op">*</span> action <span class="op">**</span> <span class="dv">2</span>, axis<span class="op">=-</span><span class="dv">1</span>)
+        c <span class="op">=</span> F.<span class="bu">sum</span>(c_scale <span class="op">*</span> state[:,:,<span class="dv">2</span>:<span class="dv">3</span>] <span class="op">**</span> <span class="dv">2</span>, axis<span class="op">=-</span><span class="dv">1</span>)
+        <span class="cf">return</span> (a <span class="op">+</span> c <span class="op">+</span> b)
+    
+cost <span class="op">=</span> CostFunction()</code></pre></div>
+<p>The expected reward function can be written as <br /><span class="math display">$$
+R = \mathbb{E}_{p(\dataScalar_T, \ldots,
+\dataScalar_0)}\left(\sum_{t=0}^\top r(\dataScalar_t)\right)
+$$</span><br /> where <span class="math inline"><em>r</em>(⋅)</span> is the reward function, <span class="math inline">$p(\dataScalar_T, \ldots, \dataScalar_0)$</span> is the joint distribution when applying the policy to the dynamics model: <br /><span class="math display">$$
+p(\dataScalar_T, \ldots, \dataScalar_0) = p(\dataScalar_0) \prod_{t=1}^\top p(\dataScalar_t|\dataScalar_{t-1}, a_{t-1}),
+$$</span><br /> where <span class="math inline">$a_{t-1} = \pi(\dataScalar_{t-1})$</span> is the action taken at the time <span class="math inline"><em>t</em> − 1</span>, which is the outcome of the policy <span class="math inline"><em>π</em>(⋅)</span>.</p>
+<p>The expected reward function is implemented as follows.</p>
+<h3 id="obtaining-the-policy-gradients">Obtaining the policy gradients</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mxfusion.inference.inference_alg <span class="im">import</span> SamplingAlgorithm</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">class</span> PolicyUpdateGPParametricApprox(SamplingAlgorithm):
+    <span class="co">&quot;&quot;&quot;Class for the policy update for PILCO.&quot;&quot;&quot;</span>
+    <span class="kw">def</span> compute(<span class="va">self</span>, F, variables):
+        
+        s_0 <span class="op">=</span> <span class="va">self</span>.initial_state_generator(<span class="va">self</span>.num_samples)
+        a_0 <span class="op">=</span> <span class="va">self</span>.policy(s_0)
+        a_t_plus_1 <span class="op">=</span> a_0
+        x_t <span class="op">=</span> F.expand_dims(F.concat(s_0, a_0, dim<span class="op">=</span><span class="dv">1</span>), axis<span class="op">=</span><span class="dv">1</span>)
+
+        gp <span class="op">=</span> <span class="va">self</span>.model.Y.factor
+        sample_func <span class="op">=</span> gp.draw_parametric_samples(F, variables, <span class="va">self</span>.num_samples, <span class="va">self</span>.approx_samples)
+        cost <span class="op">=</span> <span class="dv">0</span>
+        <span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(<span class="va">self</span>.n_time_steps):
+            s_t_plus_1 <span class="op">=</span> sample_func(F, x_t)
+            cost <span class="op">=</span> cost <span class="op">+</span> <span class="va">self</span>.cost_function(s_t_plus_1, a_t_plus_1)
+            a_t_plus_1 <span class="op">=</span> mx.nd.expand_dims(<span class="va">self</span>.policy(s_t_plus_1), axis<span class="op">=</span><span class="dv">2</span>)
+            x_t <span class="op">=</span> mx.nd.concat(s_t_plus_1, a_t_plus_1, dim<span class="op">=</span><span class="dv">2</span>)
+        total_cost <span class="op">=</span> F.mean(cost)
+        <span class="cf">return</span> total_cost, total_cost</code></pre></div>
+<p>We optimize the policy with respect to the expected reward by using a gradient optimizer.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mxfusion.inference <span class="im">import</span> GradTransferInference</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> optimize_policy(policy, cost_func, model, infr, model_data_X, model_data_Y,
+                    initial_state_generator, num_grad_steps,
+                    learning_rate<span class="op">=</span><span class="fl">1e-2</span>, num_time_steps<span class="op">=</span><span class="dv">100</span>, 
+                    num_samples<span class="op">=</span><span class="dv">10</span>, verbose<span class="op">=</span><span class="va">True</span>):
+    <span class="co">&quot;&quot;&quot;</span>
+<span class="co">    Takes as primary inputs a policy, cost function, and trained model.</span>
+<span class="co">    Optimizes the policy for num_grad_steps number of iterations.</span>
+<span class="co">    &quot;&quot;&quot;</span>
+    mb_alg <span class="op">=</span> PolicyUpdateGPParametricApprox(
+        model<span class="op">=</span>model, observed<span class="op">=</span>[model.X, model.Y], cost_function<span class="op">=</span>cost_func,
+        policy<span class="op">=</span>policy, n_time_steps<span class="op">=</span>num_time_steps,
+        initial_state_generator<span class="op">=</span>initial_state_generator,
+        num_samples<span class="op">=</span>num_samples)
+
+    infr_pred <span class="op">=</span> GradTransferInference(
+        mb_alg, infr_params<span class="op">=</span>infr.params, train_params<span class="op">=</span>policy.collect_params())
+    infr_pred.run(
+        max_iter<span class="op">=</span>num_grad_steps,
+        X<span class="op">=</span>mx.nd.array(model_data_X, dtype<span class="op">=</span><span class="st">&#39;float64&#39;</span>),
+        Y<span class="op">=</span>mx.nd.array(model_data_Y, dtype<span class="op">=</span><span class="st">&#39;float64&#39;</span>),
+        verbose<span class="op">=</span>verbose, learning_rate<span class="op">=</span>learning_rate)
+    <span class="cf">return</span> policy</code></pre></div>
+<h3 id="the-loop">The Loop</h3>
+<p>We need to define a function that provides random initial states.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> initial_state_generator(num_initial_states):
+    <span class="co">&quot;&quot;&quot;</span>
+<span class="co">    Starts from valid states by drawing theta and momentum</span>
+<span class="co">    then computing np.cos(theta) and np.sin(theta) for state[0:2].s</span>
+<span class="co">    &quot;&quot;&quot;</span>
+    <span class="cf">return</span> mx.nd.array(
+        [env.observation_space.sample() <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(num_initial_states)],
+        dtype<span class="op">=</span><span class="st">&#39;float64&#39;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">num_episode <span class="op">=</span> <span class="dv">20</span> <span class="co"># how many model fit + policy optimization episodes to run</span>
+num_samples <span class="op">=</span> <span class="dv">100</span> <span class="co"># how many sample trajectories the policy optimization loop uses</span>
+num_grad_steps <span class="op">=</span> <span class="dv">1000</span> <span class="co"># how many gradient steps the optimizer takes per episode</span>
+num_time_steps <span class="op">=</span> <span class="dv">100</span> <span class="co"># how far to roll out each sample trajectory</span>
+learning_rate <span class="op">=</span> <span class="fl">1e-3</span> <span class="co"># learning rate for the policy optimization</span>
+
+all_states <span class="op">=</span> []
+all_actions <span class="op">=</span> []</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">for</span> i_ep <span class="kw">in</span> <span class="bu">range</span>(num_episode):
+    <span class="co"># Run an episode and collect data.</span>
+    <span class="cf">if</span> i_ep <span class="op">==</span> <span class="dv">0</span>:
+        policy_func <span class="op">=</span> <span class="kw">lambda</span> x: env.action_space.sample()
+    <span class="cf">else</span>:
+        policy_func <span class="op">=</span> <span class="kw">lambda</span> x: policy(mx.nd.expand_dims(mx.nd.array(x, dtype<span class="op">=</span><span class="st">&#39;float64&#39;</span>), axis<span class="op">=</span><span class="dv">0</span>)).asnumpy()[<span class="dv">0</span>]
+    total_reward, states, actions <span class="op">=</span> run_one_episode(
+        env, policy_func, max_steps<span class="op">=</span>num_time_steps)
+    all_states.append(states)
+    all_actions.append(actions)
+
+    <span class="co"># Fit a model.</span>
+    model, infr, model_data_X, model_data_Y <span class="op">=</span> fit_model(
+        all_states, all_actions, win_in<span class="op">=</span><span class="dv">1</span>, verbose<span class="op">=</span><span class="va">True</span>)
+
+    <span class="co"># Optimize the policy.</span>
+    policy <span class="op">=</span> optimize_policy(
+        policy, cost, model, infr, model_data_X, model_data_Y,
+        initial_state_generator, num_grad_steps<span class="op">=</span>num_grad_steps,
+        num_samples<span class="op">=</span>num_samples, learning_rate<span class="op">=</span>learning_rate,
+        num_time_steps<span class="op">=</span>num_time_steps)</code></pre></div>
+<p>Policy after the first episode (random exploration):</p>
+<iframe src="../slides/diagrams/ml/animation_policy_iter_0.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+</iframe>
+<p>Policy after the 5th episode:</p>
+<iframe src="../slides/diagrams/ml/animation_policy_iter_4.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+</iframe>
+<p><a href="https://github.com/amzn/mxfusion" class="uri">https://github.com/amzn/mxfusion</a></p>
 <h3 id="long-term-aim">Long term Aim</h3>
 <ul>
-
-  <li>Simulate/Emulate the components of the system.
+<li>Simulate/Emulate the components of the system.
 <ul>
 <li>Validate with real world using multifidelity.</li>
 <li>Interpret system using e.g. sensitivity analysis.</li>
@@ -336,10 +640,7 @@ anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Bes
 <li>Maintain interpretability.</li>
 </ul></li>
 </ul>
-<<<<<<< HEAD
-=======
 <h3 id="references" class="unnumbered">References</h3>
->>>>>>> 0b07e03a17bd0a70f55f7cfc25726d4c10a6342f
 <div id="refs" class="references">
 <div id="ref-Maxwell:governors1867">
 <p>Maxwell, James Clerk. 1867. “On Governors.” <em>Proceedings of the Royal Society of London</em> 16. The Royal Society: 270–83. <a href="http://www.jstor.org/stable/112510" class="uri">http://www.jstor.org/stable/112510</a>.</p>

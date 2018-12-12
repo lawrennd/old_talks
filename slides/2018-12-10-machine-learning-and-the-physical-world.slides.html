@@ -15,6 +15,43 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
   <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
   <link rel="stylesheet" href="talks.css"/>
   <!-- Printing and PDF exports -->
@@ -362,7 +399,7 @@
   <h1 class="title">Machine Learning and the Physical World</h1>
   <p class="author" style="text-align:center"><a href="http://inverseprobability.com">Neil D. Lawrence</a></p>
   <p class="date" style="text-align:center"><time>2018-12-10</time></p>
-  <p class="venue" style="text-align:center">Laboratory for Intelligent Probabilistic Systems, Princeton</p>
+  <p class="venue" style="text-align:center">Center for Statistics and Machine Learning, Princeton</p>
 </section>
 
 <section class="slide level3">
@@ -736,6 +773,171 @@
 <li>Example <a href="https://github.com/amzn/MXFusion/blob/master/examples/notebooks/ppca_tutorial.ipynb">PPCA Tutorial</a>.</li>
 </ul>
 </section>
+<section id="why-another-framework" class="slide level3">
+<h3>Why another framework?</h3>
+<p>Existing libraries had either: * Probabilistic modelling with rich, flexible models and universal inference or * Specialized, efficient inference over a subset of models</p>
+<p><strong>We needed both</strong></p>
+</section>
+<section id="key-requirements" class="slide level3">
+<h3>Key Requirements</h3>
+<ul>
+<li>Integration with deep learning</li>
+<li>Flexiblility</li>
+<li>Scalability</li>
+<li>Specialized inference and models support
+<ul>
+<li>Bayesian Deep Learning methods</li>
+<li>Rapid prototyping and software re-use</li>
+<li>GPUs, specialized inference methods</li>
+</ul></li>
+</ul>
+</section>
+<section id="modularity" class="slide level3">
+<h3>Modularity</h3>
+<ul>
+<li>Specialized Inference</li>
+<li>Composability (tinkerability)
+<ul>
+<li>Better leveraging of expert expertise</li>
+</ul></li>
+</ul>
+</section>
+<section id="what-does-it-look-like" class="slide level3">
+<h3>What does it look like?</h3>
+<p><strong>Modelling</strong></p>
+<p><strong>Inference</strong></p>
+</section>
+<section id="modelling" class="slide level3">
+<h3>Modelling</h3>
+</section>
+<section id="directed-graphs" class="slide level3">
+<h3>Directed Graphs</h3>
+<ul>
+<li>Variable</li>
+<li>Function</li>
+<li>Distribution</li>
+</ul>
+</section>
+<section id="example" class="slide level3">
+<h3>Example</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m <span class="op">=</span> Model()
+m.mu <span class="op">=</span> Variable()
+m.s <span class="op">=</span> Variable(transformation<span class="op">=</span>PositiveTransformation())
+m.Y <span class="op">=</span> Normal.define_variable(mean<span class="op">=</span>m.mu, variance<span class="op">=</span>m.s)</code></pre></div>
+</section>
+<section id="primary-components-in-modeling" class="slide level3">
+<h3>3 primary components in modeling</h3>
+<ul>
+<li>Variable</li>
+<li>Distribution</li>
+<li>Function</li>
+</ul>
+</section>
+<section id="primary-methods-for-models" class="slide level3">
+<h3>2 primary methods for models</h3>
+<ul>
+<li><code>log_pdf</code></li>
+<li><code>draw_samples</code></li>
+</ul>
+</section>
+<section id="inference-two-classes" class="slide level3">
+<h3>Inference: Two Classes</h3>
+<ul>
+<li>Variational Inference</li>
+<li>MCMC Sampling (<em>soon</em>) Built on MXNet Gluon (imperative code, not static graph)</li>
+</ul>
+</section>
+<section id="example-1" class="slide level3">
+<h3>Example</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">infr <span class="op">=</span> GradBasedInference(inference_algorithm<span class="op">=</span>MAP(model<span class="op">=</span>m, observed<span class="op">=</span>[m.Y]))
+infr.run(Y<span class="op">=</span>data)</code></pre></div>
+</section>
+<section id="modules" class="slide level3">
+<h3>Modules</h3>
+<ul>
+<li>Model + Inference together form building blocks.
+<ul>
+<li>Just doing modular modeling with universal inference doesn’t really scale, need specialized inference methods for specialized modelling objects like non-parametrics.</li>
+</ul></li>
+</ul>
+</section>
+<section id="pilco-a-model-based-policy-search" class="slide level3">
+<h3>PILCO: A Model-based Policy Search</h3>
+<p>PILCO <span class="citation" data-cites="Deisenroth:pilco11">(Deisenroth and Rasmussen, n.d.)</span> is a model-based data-efficient algorithm that solves the RL problem by the following two step iterative process:</p>
+<ol type="1">
+<li>Fit a Gaussian Process that models the state dynamics, using calls to a simulator</li>
+<li>Optimize a parametric policy using our GP instead of calling the simulator.</li>
+</ol>
+</section>
+<section id="enhancements-mxfusion-brings" class="slide level3">
+<h3>Enhancements MXFusion Brings</h3>
+<ul>
+<li>Use Monte Carlo integration instead of moment estimation</li>
+<li>Use automatic differentiation</li>
+<li>A flexible interface for Gaussian processes, trivial to switch to sparse or stochastic variational</li>
+</ul>
+</section>
+<section id="preparation" class="slide level3">
+<h3>Preparation</h3>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">pip</span> install mxnet mxfusion gym</code></pre></div>
+<p>Set the global configuration.</p>
+</section>
+<section id="example-pendulum" class="slide level3">
+<h3>Example: Pendulum</h3>
+</section>
+<section id="pendulum" class="slide level3">
+<h3>Pendulum</h3>
+<iframe src="../slides/diagrams/ml/animation_random_policy.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+</iframe>
+</section>
+<section id="fit-the-dynamics-model" class="slide level3">
+<h3>Fit the Dynamics Model</h3>
+<ul>
+<li>Dynamics:</li>
+</ul>
+<p><span class="math display">\[
+p(\dataScalar_{t+1}|\dataScalar_t, a_t)
+\]</span></p>
+</section>
+<section id="define-and-fit-the-model" class="slide level3">
+<h3>Define and fit the model</h3>
+</section>
+<section id="policy-1" class="slide level3">
+<h3>Policy</h3>
+<ul>
+<li>Make use of neural network with one hidden layer</li>
+</ul>
+</section>
+<section id="obtaining-the-policy-gradients" class="slide level3">
+<h3>Obtaining the policy gradients</h3>
+</section>
+<section id="the-loop" class="slide level3">
+<h3>The Loop</h3>
+</section>
+<section id="after-first-epsiode" class="slide level3">
+<h3>After First Epsiode</h3>
+<p>Policy after the first episode (random exploration):</p>
+<iframe src="../slides/diagrams/ml/animation_policy_iter_0.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+</iframe>
+</section>
+<section id="after-fifth-episode" class="slide level3">
+<h3>After Fifth Episode</h3>
+<p>Policy after the 5th episode:</p>
+<iframe src="../slides/diagrams/ml/animation_policy_iter_4.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+</iframe>
+</section>
+<section id="contribute" class="slide level3">
+<h3>Contribute!</h3>
+<p><a href="https://github.com/amzn/mxfusion" class="uri">https://github.com/amzn/mxfusion</a></p>
+</section>
+<section id="future-plans" class="slide level3">
+<h3>Future plans</h3>
+<ul>
+<li>Deep GPs (implemented, not yet merged)</li>
+<li>MCMC Methods</li>
+<li>Time series models (RGPs)</li>
+</ul>
+</section>
 <section id="long-term-aim" class="slide level3">
 <h3>Long term Aim</h3>
 <ul>
@@ -753,6 +955,9 @@
 <section id="references" class="slide level3 unnumbered">
 <h3>References</h3>
 <div id="refs" class="references">
+<div id="ref-Deisenroth:pilco11">
+<p>Deisenroth, M.P., Rasmussen, C.E., n.d. PILCO: A model-based and data-efficient approach to policy search, in:.</p>
+</div>
 <div id="ref-Russakovsky-imagenet15">
 <p>Russakovsky, O., Deng, J., Su, H., Krause, J., Satheesh, S., Ma, S., Huang, Z., Karpathy, A., Khosla, A., Bernstein, M., Berg, A.C., Fei-Fei, L., 2015. ImageNet Large Scale Visual Recognition Challenge. International Journal of Computer Vision (IJCV) 115, 211–252. <a href="https://doi.org/10.1007/s11263-015-0816-y" class="uri">https://doi.org/10.1007/s11263-015-0816-y</a></p>
 </div>

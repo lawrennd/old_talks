@@ -5,6 +5,7 @@
 \slides{PILCO [@Deisenroth:pilco11] is a model-based data-efficient
 algorithm that solves the RL problem by the following two step iterative
 process:
+
 1. Fit a Gaussian Process that models the state dynamics, using calls to a simulator 
 2. Optimize a parametric policy using our GP instead of calling the simulator.}
 
@@ -56,7 +57,7 @@ env = gym.make('Pendulum-v0')}
 The state of the pendulum environment is a 3D vector. The first two dimensions
 are the 2D location of the end point of the pendulum. The third dimension
 encodes the angular speed of the pendulum. The action space is a 1D vector in
-[-2, 2].}
+[-2, 2].
 
 We write a helper function for executing the environment with a given policy.}
 
@@ -127,7 +128,12 @@ with open('animation_random_policy.html', 'w') as f:
 
 \newslide{Fit the Dynamics Model}
 
-\notes{The dynamics model of pendulum can be written as $$p(\dataScalar_{t+1}|\dataScalar_t, a_t)$$ where $\dataScalar_t$ is the state vector at the time $t$ and $a_t$ is the action taken at the time $t$. 
+\slides{* Dynamics:}
+\notes{The dynamics model of pendulum can be written as}
+$$
+p(\dataScalar_{t+1}|\dataScalar_t, a_t)
+$$ 
+\notes{where $\dataScalar_t$ is the state vector at the time $t$ and $a_t$ is the action taken at the time $t$.
 
 PILCO uses a Gaussian process to model the above dynamics.}
 
@@ -192,15 +198,14 @@ from mxfusion.inference import GradBasedInference, MAP}
              max_iter=1000, learning_rate=0.1, verbose=verbose)
     return m, infr, X, Y}
 
-\newslide{Policy Optimization}
+\subsection{Policy}
 
+\slides{* Make use of neural network with one hidden layer}
 \notes{PILCO computes the expected reward of a policy given
 the dynamics model. First, we need to define the parametric form of the policy.
 In this example, we use a neural network with one hidden layer. As the action
-space is [-2, 2], we apply a tanh transformation and multiply the come with two.
+space is [-2, 2], we apply a `tanh` transformation and multiply the come with two.
 This enforces the returned actions stay within the range.}
-
-\subsection{Policy}
 
 \notes{We define a neural network with one hidden layer and and output constrained between [-2,2] for the policy.}
 
@@ -208,13 +213,14 @@ This enforces the returned actions stay within the range.}
 from mxnet.gluon.nn import Dense
 
 class NNController(HybridBlock):
+	"""Define a neural network policy network."""
     def __init__(self, prefix=None, params=None):
         super(NNController, self).__init__(prefix=prefix, params=params)
         self.dense1 = Dense(100, in_units=len(env.observation_space.high), dtype='float64', activation='relu')
         self.dense2 = Dense(1, in_units=100, dtype='float64', activation='tanh')
 
     def hybrid_forward(self, F, x):
-        out = self.dense2(self.dense1(x))*2
+        out = self.dense2(self.dense1(x))*2 # Scale up the output
         return out 
     
 policy = NNController()
@@ -225,7 +231,8 @@ policy.collect_params().initialize(mx.initializer.Xavier(magnitude=1))}
 \code{class CostFunction(mx.gluon.HybridBlock):
     """
     The goal is to get the pendulum upright and stable as quickly as possible.
-    Taken from the code for Pendulum.
+
+	Taken from the code for Pendulum.
     """
     def hybrid_forward(self, F, state, action):
         """
@@ -263,7 +270,7 @@ The expected reward function is implemented as follows.}
 \setupcode{from mxfusion.inference.inference_alg import SamplingAlgorithm}
 
 \code{class PolicyUpdateGPParametricApprox(SamplingAlgorithm):
-
+	"""Class for the policy update for PILCO."""
     def compute(self, F, variables):
         
         s_0 = self.initial_state_generator(self.num_samples)
@@ -284,8 +291,7 @@ The expected reward function is implemented as follows.}
 
 \notes{We optimize the policy with respect to the expected reward by using a gradient optimizer.}
 
-\setupcode{from mxfusion.inference import GradTransferInference
-from mxfusion.inference.pilco_alg import PolicyUpdateGPParametricApprox}
+\setupcode{from mxfusion.inference import GradTransferInference}
 
 \code{def optimize_policy(policy, cost_func, model, infr, model_data_X, model_data_Y,
                     initial_state_generator, num_grad_steps,
@@ -310,7 +316,8 @@ from mxfusion.inference.pilco_alg import PolicyUpdateGPParametricApprox}
         verbose=verbose, learning_rate=learning_rate)
     return policy}
 
-\newslide{The Loop}
+\subsection{The Loop}
+
 
 \notes{We need to define a function that provides random initial states.}
 
@@ -323,7 +330,6 @@ from mxfusion.inference.pilco_alg import PolicyUpdateGPParametricApprox}
         [env.observation_space.sample() for i in range(num_initial_states)],
         dtype='float64')}
 
-\subsection{The Loop}
 
 \code{num_episode = 20 # how many model fit + policy optimization episodes to run
 num_samples = 100 # how many sample trajectories the policy optimization loop uses
@@ -368,17 +374,9 @@ Policy after the 5th episode:
 
 \includehtml{../slides/diagrams/ml/animation_policy_iter_4.html}{1024}{768}
 
-\subsection{Conclusion}
-\slides{
-* Modular probabilistic programming library
-* Flexibly pair specialized models/inference algorithms with a wide range of probabilistic models
-}
-
 \newslide{Contribute!}
 
 [https://github.com/amzn/mxfusion](https://github.com/amzn/mxfusion)
-
-Launched Sept. 2018, very recent.
 
 \newslide{Future plans}
 
@@ -386,4 +384,3 @@ Launched Sept. 2018, very recent.
 * MCMC Methods
 * Time series models (RGPs)}
 
-\subsection{References}
