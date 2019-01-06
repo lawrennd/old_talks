@@ -15,6 +15,43 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
   <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
   <link rel="stylesheet" href="talks.css"/>
   <!-- Printing and PDF exports -->
@@ -406,11 +443,15 @@
 <li class="fragment"><strong>a prediction function</strong> <span class="math inline">\(\mappingFunction(\cdot)\)</span> includes our beliefs about the regularities of the universe</li>
 <li class="fragment"><strong>an objective function</strong> <span class="math inline">\(\errorFunction(\cdot)\)</span> defines the cost of misprediction.</li>
 </ul>
-
+</section>
+<section id="artificial-intelligence" class="slide level3">
+<h3>Artificial Intelligence</h3>
 <ul>
 <li>Machine learning is a mainstay because of importance of prediction.</li>
 </ul>
-
+</section>
+<section id="uncertainty" class="slide level3">
+<h3>Uncertainty</h3>
 <ul>
 <li>Uncertainty in prediction arises from:</li>
 <li>scarcity of training data and</li>
@@ -421,10 +462,10 @@
 <section id="neural-networks-and-prediction-functions" class="slide level3">
 <h3>Neural Networks and Prediction Functions</h3>
 <ul>
-<li><p>adaptive non-linear function models inspired by simple neuron models <span class="citation" data-cites="McCulloch:neuron43">(McCulloch and Pitts, 1943)</span></p></li>
-<li><p>have become popular because of their ability to model data.</p></li>
-<li><p>can be composed to form highly complex functions</p></li>
-<li><p>start by focussing on one hidden layer</p></li>
+<li>adaptive non-linear function models inspired by simple neuron models <span class="citation" data-cites="McCulloch:neuron43">(McCulloch and Pitts, 1943)</span></li>
+<li>have become popular because of their ability to model data.</li>
+<li>can be composed to form highly complex functions</li>
+<li>start by focussing on one hidden layer</li>
 </ul>
 </section>
 <section id="prediction-function-of-one-hidden-layer" class="slide level3">
@@ -452,7 +493,7 @@
 <h3>Adaptive Basis Functions</h3>
 <ul>
 <li><p>In machine learning we optimize <span class="math inline">\(\mappingMatrix_{1}\)</span> as well as <span class="math inline">\(\mappingMatrix_{2}\)</span> (which would normally be denoted in statistics by <span class="math inline">\(\boldsymbol{\beta}\)</span>).</p></li>
-<li><p>This tutorial: revisit that decision: follow the path of <span class="citation" data-cites="Neal:bayesian94">Neal (1994)</span> and <span class="citation" data-cites="MacKay:bayesian92">MacKay (1992)</span>.</p></li>
+<li><p>Revisit that decision: follow the path of <span class="citation" data-cites="Neal:bayesian94">Neal (1994)</span> and <span class="citation" data-cites="MacKay:bayesian92">MacKay (1992)</span>.</p></li>
 <li><p>Consider the probabilistic approach.</p></li>
 </ul>
 </section>
@@ -553,7 +594,9 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatr
 <ul>
 <li>Normally integrals are complex but for this Gaussian linear case they are trivial.</li>
 </ul>
-
+</section>
+<section id="multivariate-gaussian-properties" class="slide level3">
+<h3>Multivariate Gaussian Properties</h3>
 </section>
 <section id="recall-univariate-gaussian-properties" class="slide level3">
 <h3>Recall Univariate Gaussian Properties</h3>
@@ -587,14 +630,16 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatr
 </div>
 <div class="fragment">
 <p><span style="text-align:left">Then</span> <span class="math display">\[\dataVector \sim \gaussianSamp{\mappingMatrix\meanVector}{\mappingMatrix\covarianceMatrix\mappingMatrix^\top}\]</span></p>
-
+</div>
+</section>
+<section id="linear-gaussian-models-1" class="slide level3">
+<h3>Linear Gaussian Models</h3>
 <ol type="1">
 <li>linear Gaussian models are easier to deal with</li>
 <li>Even the parameters <em>within</em> the process can be handled, by considering a particular limit.</li>
 </ol>
-</div>
 </section>
-<section id="multivariate-gaussian-properties" class="slide level3">
+<section id="multivariate-gaussian-properties-1" class="slide level3">
 <h3>Multivariate Gaussian Properties</h3>
 <ul>
 <li><p>If <span class="math display">\[
@@ -691,10 +736,10 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatr
 <section id="non-degenerate-gaussian-processes" class="slide level3">
 <h3>Non-degenerate Gaussian Processes</h3>
 <ul>
-<li><p>This process is <em>degenerate</em>.</p></li>
-<li><p>Covariance function is of rank at most <span class="math inline">\(\numHidden\)</span>.</p></li>
-<li><p>As <span class="math inline">\(\numData \rightarrow \infty\)</span>, covariance matrix is not full rank.</p></li>
-<li><p>Leading to <span class="math inline">\(\det{\kernelMatrix} = 0\)</span></p></li>
+<li>This process is <em>degenerate</em>.</li>
+<li>Covariance function is of rank at most <span class="math inline">\(\numHidden\)</span>.</li>
+<li>As <span class="math inline">\(\numData \rightarrow \infty\)</span>, covariance matrix is not full rank.</li>
+<li>Leading to <span class="math inline">\(\det{\kernelMatrix} = 0\)</span></li>
 </ul>
 </section>
 <section id="infinite-networks" class="slide level3">
@@ -702,8 +747,16 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatr
 <ul>
 <li>In ML Radford Neal <span class="citation" data-cites="Neal:bayesian94">(Neal, 1994)</span> asked “what would happen if you took <span class="math inline">\(\numHidden \rightarrow \infty\)</span>?”</li>
 </ul>
-<p><a href="http://www.cs.toronto.edu/~radford/ftp/thesis.pdf"><img class="" src="../slides/diagrams/neal-infinite-priors.png" width="80%" height="auto" align="" style="background:none; border:none; box-shadow:none;"></a></p>
-<p><em>Page 37 of Radford Neal’s 1994 thesis</em></p>
+<div style="text-align:center">
+[
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/neal-infinite-priors.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
+](http://www.cs.toronto.edu/~radford/ftp/thesis.pdf)
+</div>
+<center>
+<em>Page 37 of Radford Neal’s 1994 thesis </em>
+</center>
 </section>
 <section id="roughly-speaking" class="slide level3">
 <h3>Roughly Speaking</h3>
@@ -745,44 +798,40 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatr
 <li><p>David MacKay’s PhD thesis <span class="citation" data-cites="MacKay:bayesian92">(MacKay, 1992)</span></p></li>
 </ul>
 </section>
-<section id="section-1" class="slide level3" data-transition="none">
+<section id="section-1" class="slide level3">
 <h3></h3>
-<div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/gp/gp_rejection_sample001.svg" style>
-</object>
+<div style="text-align:center">
+<img class="negate" src="../slides/diagrams/gp/gp_rejection_sample001.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
 </div>
 </section>
-<section id="section-2" class="slide level3" data-transition="none">
+<section id="section-2" class="slide level3">
 <h3></h3>
-<div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/gp/gp_rejection_sample002.svg" style>
-</object>
+<div style="text-align:center">
+<img class="negate" src="../slides/diagrams/gp/gp_rejection_sample002.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
 </div>
 </section>
-<section id="section-3" class="slide level3" data-transition="none">
+<section id="section-3" class="slide level3">
 <h3></h3>
-<div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/gp/gp_rejection_sample003.svg" style>
-</object>
+<div style="text-align:center">
+<img class="negate" src="../slides/diagrams/gp/gp_rejection_sample003.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
 </div>
 </section>
-<section id="section-4" class="slide level3" data-transition="none">
+<section id="section-4" class="slide level3">
 <h3></h3>
-<div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/gp/gp_rejection_sample004.svg" style>
-</object>
+<div style="text-align:center">
+<img class="negate" src="../slides/diagrams/gp/gp_rejection_sample004.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
 </div>
 </section>
-<section id="section-5" class="slide level3" data-transition="none">
+<section id="section-5" class="slide level3">
 <h3></h3>
-x
-<div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/gp/gp_rejection_sample005.svg" style>
-</object>
+<div style="text-align:center">
+<img class="negate" src="../slides/diagrams/gp/gp_rejection_sample005.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
 </div>
 <!-- ### Two Dimensional Gaussian Distribution -->
 <!-- include{_ml/includes/two-d-gaussian.md} -->
-
+</section>
+<section id="distributions-over-functions" class="slide level3">
+<h3>Distributions over Functions</h3>
 </section>
 <section id="sampling-a-function" class="slide level3">
 <h3>Sampling a Function</h3>
@@ -958,13 +1007,17 @@ showDivs(13, 'two_point_sample3');
 </object>
 </div>
 </div>
-
+</section>
+<section id="key-object" class="slide level3">
+<h3>Key Object</h3>
 <ul>
-<li><p>Covariance function, <span class="math inline">\(\kernelMatrix\)</span></p></li>
-<li><p>Determines properties of samples.</p></li>
-<li><p>Function of <span class="math inline">\(\inputMatrix\)</span>, <span class="math display">\[\kernelScalar_{i,j} = \kernelScalar(\inputVector_i, \inputVector_j)\]</span></p></li>
+<li>Covariance function, <span class="math inline">\(\kernelMatrix\)</span></li>
+<li>Determines properties of samples.</li>
+<li>Function of <span class="math inline">\(\inputMatrix\)</span>, <span class="math display">\[\kernelScalar_{i,j} = \kernelScalar(\inputVector_i, \inputVector_j)\]</span></li>
 </ul>
-
+</section>
+<section id="linear-algebra" class="slide level3">
+<h3>Linear Algebra</h3>
 <ul>
 <li><p>Posterior mean</p>
 <p><span class="math display">\[\mappingFunction_D(\inputVector_*) = \kernelVector(\inputVector_*, \inputMatrix) \kernelMatrix^{-1}
@@ -972,29 +1025,45 @@ showDivs(13, 'two_point_sample3');
 <li><p>Posterior covariance <span class="math display">\[\mathbf{C}_* = \kernelMatrix_{*,*} - \kernelMatrix_{*,\mappingFunctionVector}
 \kernelMatrix^{-1} \kernelMatrix_{\mappingFunctionVector, *}\]</span></p></li>
 </ul>
-
+</section>
+<section id="linear-algebra-1" class="slide level3">
+<h3>Linear Algebra</h3>
 <ul>
 <li><p>Posterior mean</p>
 <p><span class="math display">\[\mappingFunction_D(\inputVector_*) = \kernelVector(\inputVector_*, \inputMatrix) \boldsymbol{\alpha}\]</span></p></li>
 <li><p>Posterior covariance <span class="math display">\[\covarianceMatrix_* = \kernelMatrix_{*,*} - \kernelMatrix_{*,\mappingFunctionVector}
 \kernelMatrix^{-1} \kernelMatrix_{\mappingFunctionVector, *}\]</span></p></li>
 </ul>
-
-<div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/gp_prior_samples_data.svg" style>
-</object>
+</section>
+<section id="section-6" class="slide level3">
+<h3></h3>
+<div style="text-align:center">
+<img class="negate" src="../slides/diagrams/gp/gp_rejection_sample001.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
 </div>
-
-<div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/gp_rejection_samples.svg" style>
-</object>
+</section>
+<section id="section-7" class="slide level3">
+<h3></h3>
+<div style="text-align:center">
+<img class="negate" src="../slides/diagrams/gp/gp_rejection_sample002.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
 </div>
-
-<div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/gp_prediction.svg" style>
-</object>
+</section>
+<section id="section-8" class="slide level3">
+<h3></h3>
+<div style="text-align:center">
+<img class="negate" src="../slides/diagrams/gp/gp_rejection_sample003.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
 </div>
-
+</section>
+<section id="section-9" class="slide level3">
+<h3></h3>
+<div style="text-align:center">
+<img class="negate" src="../slides/diagrams/gp/gp_rejection_sample004.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
+</section>
+<section id="section-10" class="slide level3">
+<h3></h3>
+<div style="text-align:center">
+<img class="negate" src="../slides/diagrams/gp/gp_rejection_sample005.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
 </section>
 <section id="exponentiated-quadratic-covariance" class="slide level3">
 <h3>Exponentiated Quadratic Covariance</h3>
@@ -1050,21 +1119,18 @@ showDivs(13, 'two_point_sample3');
 </object>
 </div>
 </section>
-<section id="section-6" class="slide level3">
+<section id="section-11" class="slide level3">
 <h3></h3>
 <table>
 <tr>
 <td width="40%">
-<img class="" src="../slides/diagrams/turing-run.jpg" width="40%" height="auto" align="" style="background:none; border:none; box-shadow:none;">
+<img class="" src="../slides/diagrams/turing-run.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none;">
 </td>
 <td width="50%">
-<img class="" src="../slides/diagrams/turing-times.gif" width="50%" height="auto" align="" style="background:none; border:none; box-shadow:none;">
+<img class="" src="../slides/diagrams/turing-times.gif" width="" height="auto" align="" style="background:none; border:none; box-shadow:none;">
 </td>
 </tr>
 </table>
-<center>
-<em>Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: <a href="http://www.turing.org.uk/scrapbook/run.html">Alan Turing Internet Scrapbook</a> </em>
-</center>
 </section>
 <section id="basis-function-covariance" class="slide level3">
 <h3>Basis Function Covariance</h3>
@@ -1128,14 +1194,16 @@ showDivs(13, 'two_point_sample3');
 </tr>
 </table>
 </section>
-<section id="section-7" class="slide level3">
+<section id="section-12" class="slide level3">
 <h3></h3>
-<p><img class="" src="../slides/diagrams/Planck_CMB.png" width="70%" height="auto" align="" style="background:none; border:none; box-shadow:none;"></p>
+<div style="text-align:center">
+<img class="vertical-align:middle" src="../slides/diagrams/Planck_CMB.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
 </section>
-<section id="section-8" class="slide level3">
+<section id="section-13" class="slide level3">
 <h3></h3>
-<div style="fontsize:120px;vertical-align:middle;">
-<img src="../slides/diagrams/earth_PNG37.png" width="20%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">\(=f\Bigg(\)</span> <img src="../slides/diagrams/Planck_CMB.png"  width="50%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">\(\Bigg)\)</span>
+<div style="fontsize:120px;vertical-align:middle">
+<img src="../slides/diagrams/earth_PNG37.png" width="20%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">\(=f\Bigg(\)</span><img src="../slides/diagrams/Planck_CMB.png"  width="50%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">\(\Bigg)\)</span>
 </div>
 </section>
 <section id="deep-gaussian-processes" class="slide level3">
@@ -1347,7 +1415,7 @@ showDivs(13, 'two_point_sample3');
 </object>
 </div>
 </section>
-<section id="section-9" class="slide level3">
+<section id="section-14" class="slide level3">
 <h3></h3>
 <div style="text-align:">
 <object class="svgplot " align data="../slides/diagrams/deepgp/deep-markov-vertical.svg" style>
@@ -1372,14 +1440,14 @@ showDivs(13, 'two_point_sample3');
 <li><p>A (new?) way of constructing more complex <em>processes</em> based on simpler components.</p></li>
 </ul>
 </section>
-<section id="section-10" class="slide level3">
+<section id="section-15" class="slide level3">
 <h3></h3>
 <div style="text-align:">
 <object class="svgplot " align data="../slides/diagrams/deepgp/deep-markov-vertical.svg" style>
 </object>
 </div>
 </section>
-<section id="section-11" class="slide level3">
+<section id="section-16" class="slide level3">
 <h3></h3>
 <div style="text-align:">
 <object class="svgplot " align data="../slides/diagrams/deepgp/deep-markov-vertical-side.svg" style>
@@ -1503,7 +1571,7 @@ showDivs(13, 'two_point_sample3');
 <li><p><em>How Deep Are Deep Gaussian Processes?</em> <span class="citation" data-cites="Dunlop:deep2017">Dunlop et al. (n.d.)</span> perform a theoretical analysis possible through conditional Gaussian Markov property.</p></li>
 </ul>
 </section>
-<section id="section-12" class="slide level3">
+<section id="section-17" class="slide level3">
 <h3></h3>
 <iframe width="1120" height="630" src="https://www.youtube.com/embed/XhIvygQYFFQ?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
@@ -1545,21 +1613,18 @@ showDivs(13, 'two_point_sample3');
 </object>
 </div>
 </section>
-<section id="section-13" class="slide level3">
+<section id="section-18" class="slide level3">
 <h3></h3>
 <table>
 <tr>
 <td width="40%">
-<img class="" src="../slides/diagrams/turing-run.jpg" width="40%" height="auto" align="" style="background:none; border:none; box-shadow:none;">
+<img class="" src="../slides/diagrams/turing-run.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none;">
 </td>
 <td width="50%">
-<img class="" src="../slides/diagrams/turing-times.gif" width="50%" height="auto" align="" style="background:none; border:none; box-shadow:none;">
+<img class="" src="../slides/diagrams/turing-times.gif" width="" height="auto" align="" style="background:none; border:none; box-shadow:none;">
 </td>
 </tr>
 </table>
-<center>
-<em>Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: <a href="http://www.turing.org.uk/scrapbook/run.html">Alan Turing Internet Scrapbook</a> </em>
-</center>
 </section>
 <section id="deep-gp-fit" class="slide level3">
 <h3>Deep GP Fit</h3>
@@ -1778,47 +1843,47 @@ showDivs(13, 'two_point_sample3');
 </object>
 </div>
 </section>
-<section id="section-14" class="slide level3" data-transition="none">
+<section id="section-19" class="slide level3" data-transition="none">
 <h3></h3>
 <p><img class="negate" src="../slides/diagrams/deep-gp-high-five2.png" width="100%" height="auto" align="" style="background:none; border:none; box-shadow:none;"></p>
 <p><small><span style="text-align:right">Thanks to: Zhenwen Dai and Neil D. Lawrence</span></small></p>
 </section>
-<section id="section-15" class="slide level3" data-transition="none">
+<section id="section-20" class="slide level3" data-transition="none">
 <h3></h3>
 <div style="text-align:">
 <object class="svgplot " align data="../slides/diagrams/usps-digits-latent.svg" style>
 </object>
 </div>
 </section>
-<section id="section-16" class="slide level3" data-transition="none">
+<section id="section-21" class="slide level3" data-transition="none">
 <h3></h3>
 <div style="text-align:">
 <object class="svgplot " align data="../slides/diagrams/usps-digits-hidden-1-0.svg" style>
 </object>
 </div>
 </section>
-<section id="section-17" class="slide level3" data-transition="none">
+<section id="section-22" class="slide level3" data-transition="none">
 <h3></h3>
 <div style="text-align:">
 <object class="svgplot " align data="../slides/diagrams/usps-digits-hidden-2-0.svg" style>
 </object>
 </div>
 </section>
-<section id="section-18" class="slide level3" data-transition="none">
+<section id="section-23" class="slide level3" data-transition="none">
 <h3></h3>
 <div style="text-align:">
 <object class="svgplot " align data="../slides/diagrams/usps-digits-hidden-3-0.svg" style>
 </object>
 </div>
 </section>
-<section id="section-19" class="slide level3" data-transition="none">
+<section id="section-24" class="slide level3" data-transition="none">
 <h3></h3>
 <div style="text-align:">
 <object class="svgplot " align data="../slides/diagrams/usps-digits-hidden-4-0.svg" style>
 </object>
 </div>
 </section>
-<section id="section-20" class="slide level3" data-transition="none">
+<section id="section-25" class="slide level3" data-transition="none">
 <h3></h3>
 <div style="text-align:">
 <object class="svgplot " align data="../slides/diagrams/digit-samples-deep-gp.svg" style>
@@ -2061,6 +2126,94 @@ showDivs(13, 'two_point_sample3');
 <li>Composition of Gaussian processes (Deep GPs)</li>
 <li>Combining GPs with neural networks.</li>
 <li>Example <a href="https://github.com/amzn/MXFusion/blob/master/examples/notebooks/ppca_tutorial.ipynb">PPCA Tutorial</a>.</li>
+</ul>
+</section>
+<section id="why-another-framework" class="slide level3">
+<h3>Why another framework?</h3>
+<p>Existing libraries had either: * Probabilistic modelling with rich, flexible models and universal inference or * Specialized, efficient inference over a subset of models</p>
+<p><strong>We needed both</strong></p>
+</section>
+<section id="key-requirements" class="slide level3">
+<h3>Key Requirements</h3>
+<ul>
+<li>Integration with deep learning</li>
+<li>Flexiblility</li>
+<li>Scalability</li>
+<li>Specialized inference and models support
+<ul>
+<li>Bayesian Deep Learning methods</li>
+<li>Rapid prototyping and software re-use</li>
+<li>GPUs, specialized inference methods</li>
+</ul></li>
+</ul>
+</section>
+<section id="modularity" class="slide level3">
+<h3>Modularity</h3>
+<ul>
+<li>Specialized Inference</li>
+<li>Composability (tinkerability)
+<ul>
+<li>Better leveraging of expert expertise</li>
+</ul></li>
+</ul>
+</section>
+<section id="what-does-it-look-like" class="slide level3">
+<h3>What does it look like?</h3>
+<p><strong>Modelling</strong></p>
+<p><strong>Inference</strong></p>
+</section>
+<section id="modelling" class="slide level3">
+<h3>Modelling</h3>
+</section>
+<section id="directed-graphs" class="slide level3">
+<h3>Directed Graphs</h3>
+<ul>
+<li>Variable</li>
+<li>Function</li>
+<li>Distribution</li>
+</ul>
+</section>
+<section id="example" class="slide level3">
+<h3>Example</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m <span class="op">=</span> Model()
+m.mu <span class="op">=</span> Variable()
+m.s <span class="op">=</span> Variable(transformation<span class="op">=</span>PositiveTransformation())
+m.Y <span class="op">=</span> Normal.define_variable(mean<span class="op">=</span>m.mu, variance<span class="op">=</span>m.s)</code></pre></div>
+</section>
+<section id="primary-components-in-modeling" class="slide level3">
+<h3>3 primary components in modeling</h3>
+<ul>
+<li>Variable</li>
+<li>Distribution</li>
+<li>Function</li>
+</ul>
+</section>
+<section id="primary-methods-for-models" class="slide level3">
+<h3>2 primary methods for models</h3>
+<ul>
+<li><code>log_pdf</code></li>
+<li><code>draw_samples</code></li>
+</ul>
+</section>
+<section id="inference-two-classes" class="slide level3">
+<h3>Inference: Two Classes</h3>
+<ul>
+<li>Variational Inference</li>
+<li>MCMC Sampling (<em>soon</em>) Built on MXNet Gluon (imperative code, not static graph)</li>
+</ul>
+</section>
+<section id="example-1" class="slide level3">
+<h3>Example</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">infr <span class="op">=</span> GradBasedInference(inference_algorithm<span class="op">=</span>MAP(model<span class="op">=</span>m, observed<span class="op">=</span>[m.Y]))
+infr.run(Y<span class="op">=</span>data)</code></pre></div>
+</section>
+<section id="modules" class="slide level3">
+<h3>Modules</h3>
+<ul>
+<li>Model + Inference together form building blocks.
+<ul>
+<li>Just doing modular modeling with universal inference doesn’t really scale, need specialized inference methods for specialized modelling objects like non-parametrics.</li>
+</ul></li>
 </ul>
 </section>
 <section id="long-term-aim" class="slide level3">
