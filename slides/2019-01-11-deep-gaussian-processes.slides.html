@@ -502,6 +502,30 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </object>
 </div>
 </section>
+<section id="leads-to-other-approximations" class="slide level3">
+<h3>Leads to Other Approximations …</h3>
+<ul>
+<li>Let’s be explicity about storing approximate posterior of <span class="math inline">\(\inducingVector\)</span>, <span class="math inline">\(q(\inducingVector)\)</span>.</li>
+<li>Now we have <span class="math display">\[p(\dataVector^*|\dataVector) = \int p(\dataVector^*| \inducingVector) q(\inducingVector | \dataVector) \text{d} \inducingVector\]</span></li>
+</ul>
+</section>
+<section id="leads-to-other-approximations-1" class="slide level3">
+<h3>Leads to Other Approximations …</h3>
+<ul>
+<li>Inducing variables look a lot like regular parameters.</li>
+<li><em>But</em>: their dimensionality does not need to be set at design time.</li>
+<li>They can be modified arbitrarily at run time without effecting the model likelihood.</li>
+<li>They only effect the quality of compression and the lower bound.</li>
+</ul>
+</section>
+<section id="in-gps-for-big-data" class="slide level3">
+<h3>In GPs for Big Data</h3>
+<ul>
+<li>Exploit the resulting factorization … <span class="math display">\[p(\dataVector^*|\dataVector) = \int p(\dataVector^*| \inducingVector) q(\inducingVector | \dataVector) \text{d} \inducingVector\]</span> </li>
+<li>The distribution now <em>factorizes</em>: <span class="math display">\[p(\dataVector^*|\dataVector) = \int \prod_{i=1}^{\numData^*}p(\dataScalar^*_i| \inducingVector) q(\inducingVector | \dataVector) \text{d} \inducingVector\]</span></li>
+<li>This factorization can be exploited for stochastic variational inference <span class="citation" data-cites="Hoffman:stochastic12">(Hoffman et al., 2012)</span>.</li>
+</ul>
+</section>
 <section id="nonparametrics-for-very-large-data-sets" class="slide level3">
 <h3>Nonparametrics for Very Large Data Sets</h3>
 <center>
@@ -564,30 +588,6 @@ Actually index of deprivation is a proxy for this …
 <img class="" src="../slides/diagrams/health/244_6_clip.png" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
 </div>
 <p>](http://auai.org/uai2013/prints/papers/244.pdf)</p>
-</section>
-<section id="leads-to-other-approximations" class="slide level3">
-<h3>Leads to Other Approximations …</h3>
-<ul>
-<li>Let’s be explicity about storing approximate posterior of <span class="math inline">\(\inducingVector\)</span>, <span class="math inline">\(q(\inducingVector)\)</span>.</li>
-<li>Now we have <span class="math display">\[p(\dataVector^*|\dataVector) = \int p(\dataVector^*| \inducingVector) q(\inducingVector | \dataVector) \text{d} \inducingVector\]</span></li>
-</ul>
-</section>
-<section id="leads-to-other-approximations-1" class="slide level3">
-<h3>Leads to Other Approximations …</h3>
-<ul>
-<li>Inducing variables look a lot like regular parameters.</li>
-<li><em>But</em>: their dimensionality does not need to be set at design time.</li>
-<li>They can be modified arbitrarily at run time without effecting the model likelihood.</li>
-<li>They only effect the quality of compression and the lower bound.</li>
-</ul>
-</section>
-<section id="in-gps-for-big-data" class="slide level3">
-<h3>In GPs for Big Data</h3>
-<ul>
-<li>Exploit the resulting factorization … <span class="math display">\[p(\dataVector^*|\dataVector) = \int p(\dataVector^*| \inducingVector) q(\inducingVector | \dataVector) \text{d} \inducingVector\]</span> </li>
-<li>The distribution now <em>factorizes</em>: <span class="math display">\[p(\dataVector^*|\dataVector) = \int \prod_{i=1}^{\numData^*}p(\dataScalar^*_i| \inducingVector) q(\inducingVector | \dataVector) \text{d} \inducingVector\]</span></li>
-<li>This factorization can be exploited for stochastic variational inference <span class="citation" data-cites="Hoffman:stochastic12">(Hoffman et al., 2012)</span>.</li>
-</ul>
 </section>
 <section id="modern-review" class="slide level3">
 <h3>Modern Review</h3>

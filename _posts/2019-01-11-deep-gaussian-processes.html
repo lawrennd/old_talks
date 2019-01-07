@@ -111,6 +111,17 @@ _ <span class="op">=</span> m.optimize(messages<span class="op">=</span><span cl
 </center>
 <p>And we can compare the probability of the result to the full model.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(m.log_likelihood(), m_full.log_likelihood())</code></pre></div>
+<ul>
+<li>Let’s be explicity about storing approximate posterior of <span class="math inline">$\inducingVector$</span>, <span class="math inline">$q(\inducingVector)$</span>.</li>
+<li><p>Now we have <br /><span class="math display">$$p(\dataVector^*|\dataVector) = \int p(\dataVector^*| \inducingVector) q(\inducingVector | \dataVector) \text{d} \inducingVector$$</span><br /></p></li>
+<li>Inducing variables look a lot like regular parameters.</li>
+<li><em>But</em>: their dimensionality does not need to be set at design time.</li>
+<li>They can be modified arbitrarily at run time without effecting the model likelihood.</li>
+<li><p>They only effect the quality of compression and the lower bound.</p></li>
+<li>Exploit the resulting factorization ... <br /><span class="math display">$$p(\dataVector^*|\dataVector) = \int p(\dataVector^*| \inducingVector) q(\inducingVector | \dataVector) \text{d} \inducingVector$$</span><br /> </li>
+<li>The distribution now <em>factorizes</em>: <br /><span class="math display">$$p(\dataVector^*|\dataVector) = \int \prod_{i=1}^{\numData^*}p(\dataScalar^*_i| \inducingVector) q(\inducingVector | \dataVector) \text{d} \inducingVector$$</span><br /></li>
+<li><p>This factorization can be exploited for stochastic variational inference <span class="citation">(Hoffman et al. 2012)</span>.</p></li>
+</ul>
 <center>
 Modern data availability
 </center>
@@ -160,15 +171,6 @@ Actually index of deprivation is a proxy for this ...
 </div>
 <p>](http://auai.org/uai2013/prints/papers/244.pdf)</p>
 <ul>
-<li>Let’s be explicity about storing approximate posterior of <span class="math inline">$\inducingVector$</span>, <span class="math inline">$q(\inducingVector)$</span>.</li>
-<li><p>Now we have <br /><span class="math display">$$p(\dataVector^*|\dataVector) = \int p(\dataVector^*| \inducingVector) q(\inducingVector | \dataVector) \text{d} \inducingVector$$</span><br /></p></li>
-<li>Inducing variables look a lot like regular parameters.</li>
-<li><em>But</em>: their dimensionality does not need to be set at design time.</li>
-<li>They can be modified arbitrarily at run time without effecting the model likelihood.</li>
-<li><p>They only effect the quality of compression and the lower bound.</p></li>
-<li>Exploit the resulting factorization ... <br /><span class="math display">$$p(\dataVector^*|\dataVector) = \int p(\dataVector^*| \inducingVector) q(\inducingVector | \dataVector) \text{d} \inducingVector$$</span><br /> </li>
-<li>The distribution now <em>factorizes</em>: <br /><span class="math display">$$p(\dataVector^*|\dataVector) = \int \prod_{i=1}^{\numData^*}p(\dataScalar^*_i| \inducingVector) q(\inducingVector | \dataVector) \text{d} \inducingVector$$</span><br /></li>
-<li><p>This factorization can be exploited for stochastic variational inference <span class="citation">(Hoffman et al. 2012)</span>.</p></li>
 <li><p><em>A Unifying Framework for Gaussian Process Pseudo-Point Approximations using Power Expectation Propagation</em> <span class="citation">Bui, Yan, and Turner (2017)</span></p></li>
 <li><p><em>Deep Gaussian Processes and Variational Propagation of Uncertainty</em> <span class="citation">A. Damianou (2015)</span></p></li>
 </ul>
