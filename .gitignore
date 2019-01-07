@@ -13,6 +13,7 @@ _site
 *.ipynb.md
 *.bak
 _*/*.ipynb
+!_notebooks/*.ipynb
 _*/*.slides.html
 _*/*.notes.html
 _*/*.posts.html
