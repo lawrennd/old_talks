@@ -5,7 +5,8 @@ abstract: >
   
   In these sessions I will introduce Gaussian processes and explain why sustaining uncertainty is important. We’ll then look at some extensions of Gaussian process models, in particular composition of Gaussian processes, or deep Gaussian processes.
 ipynb: 2019-01-09-gaussian-processes.ipynb
-reveal: 2019-01-09-gaussian-processes..slides.html
+pdfnotes: 2019-01-09-gaussian-processes.notes.pdf
+reveal: 2019-01-09-gaussian-processes.slides.html
 author:
 - family: Lawrence
   given: Neil D.
@@ -21,15 +22,17 @@ transition: None
 \include{talk-macros.tex}
 \include{_gp/includes/what-is-a-gp.md}
 
-\newslide{Acknowledgments}
+\subsection{Acknowledgments}
 
 Stefanos Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Dai, Javier Gonzalez, Andreas Damianou, Mark Pullin.
 
 
 \newslide{Thanks!}
 
+\slides{
 * twitter: \@lawrennd
 * blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
+}
 
 \subsection{References}
 
@@ -37,3 +40,7 @@ Stefanos Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Dai
 
 
 
+
+TODO: PARAMETER OPTIMIZATION
+TODO: SPATIAL DATA
+TODO: MALARIA EXAMPLE

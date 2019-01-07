@@ -15,6 +15,8 @@ ${BASE}.slides.html: ${BASE}.slides.md
 
 ${BASE}.notes.pdf: ${BASE}.notes.tex
 	pdflatex ${BASE}.notes.tex
+	cp ${BASE}.notes.pdf ../_notes/${OUT}.notes.pdf
+
 
 ${BASE}.notes.tex: ${BASE}.notes.md
 	pandoc  --template pandoc-notes-tex-template.tex \

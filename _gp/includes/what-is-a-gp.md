@@ -111,5 +111,3 @@ There are also challenges around specification of the objective function, but fo
 
 \include{_kern/includes/mlp-covariance.md}
 
-\include{_gp/includes/planck-cmp-master-gp.md}
-

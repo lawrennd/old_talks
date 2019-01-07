@@ -407,6 +407,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <!-- Enables links to pages-->
 <p><!--% not ipynb--></p>
 <p><!--% not notes--></p>
+<p>% Requires  % trim in includegraphics is left bottom right top (not easy to remember!)</p>
+</section>
+<section id="section" class="slide level3">
+<h3></h3>
+<div style="text-align:center">
+<img class="vertical-align:middle" src="../slides/diagrams/Planck_CMB.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
+</section>
+<section id="section-1" class="slide level3">
+<h3></h3>
+<div style="fontsize:120px;vertical-align:middle">
+<img src="../slides/diagrams/earth_PNG37.png" width="20%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">\(=f\Bigg(\)</span><img src="../slides/diagrams/Planck_CMB.png"  width="50%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">\(\Bigg)\)</span>
+</div>
 </section>
 <section id="deep-gaussian-processes" class="slide level3">
 <h3>Deep Gaussian Processes</h3>
@@ -488,6 +501,93 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-full-gp.svg" style>
 </object>
 </div>
+</section>
+<section id="nonparametrics-for-very-large-data-sets" class="slide level3">
+<h3>Nonparametrics for Very Large Data Sets</h3>
+<center>
+Modern data availability
+</center>
+<div style="text-align:center">
+<img class="negate" src="../slides/diagrams/ml/house_price_country.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
+</section>
+<section id="nonparametrics-for-very-large-data-sets-1" class="slide level3">
+<h3>Nonparametrics for Very Large Data Sets</h3>
+<center>
+Proxy for index of deprivation?
+</center>
+<div style="text-align:center">
+<img class="negate" src="../slides/diagrams/ml/house_price_peak_district.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
+</section>
+<section id="nonparametrics-for-very-large-data-sets-2" class="slide level3">
+<h3>Nonparametrics for Very Large Data Sets</h3>
+<center>
+Actually index of deprivation is a proxy for this …
+</center>
+<div style="text-align:center">
+<img class="negate" src="../slides/diagrams/ml/house_price_peak_district.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
+</section>
+<section id="section-2" class="slide level3">
+<h3></h3>
+<table>
+<tr>
+<td width>
+<span style="text-align:left"><span class="citation" data-cites="Hensman:bigdata13">(Hensman et al., n.d.)</span></span>
+</td>
+<td width>
+<span style="text-align:right"></span>
+</td>
+</tr>
+</table>
+[
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/health/244_1_clip.png" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
+<p>](http://auai.org/uai2013/prints/papers/244.pdf)</p>
+</section>
+<section id="section-3" class="slide level3">
+<h3></h3>
+<table>
+<tr>
+<td width>
+<span style="text-align:left"><span class="citation" data-cites="Hensman:bigdata13">(Hensman et al., n.d.)</span></span>
+</td>
+<td width>
+<span style="text-align:right"></span>
+</td>
+</tr>
+</table>
+[
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/health/244_6_clip.png" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
+<p>](http://auai.org/uai2013/prints/papers/244.pdf)</p>
+</section>
+<section id="leads-to-other-approximations" class="slide level3">
+<h3>Leads to Other Approximations …</h3>
+<ul>
+<li>Let’s be explicity about storing approximate posterior of <span class="math inline">\(\inducingVector\)</span>, <span class="math inline">\(q(\inducingVector)\)</span>.</li>
+<li>Now we have <span class="math display">\[p(\dataVector^*|\dataVector) = \int p(\dataVector^*| \inducingVector) q(\inducingVector | \dataVector) \text{d} \inducingVector\]</span></li>
+</ul>
+</section>
+<section id="leads-to-other-approximations-1" class="slide level3">
+<h3>Leads to Other Approximations …</h3>
+<ul>
+<li>Inducing variables look a lot like regular parameters.</li>
+<li><em>But</em>: their dimensionality does not need to be set at design time.</li>
+<li>They can be modified arbitrarily at run time without effecting the model likelihood.</li>
+<li>They only effect the quality of compression and the lower bound.</li>
+</ul>
+</section>
+<section id="in-gps-for-big-data" class="slide level3">
+<h3>In GPs for Big Data</h3>
+<ul>
+<li>Exploit the resulting factorization … <span class="math display">\[p(\dataVector^*|\dataVector) = \int p(\dataVector^*| \inducingVector) q(\inducingVector | \dataVector) \text{d} \inducingVector\]</span> </li>
+<li>The distribution now <em>factorizes</em>: <span class="math display">\[p(\dataVector^*|\dataVector) = \int \prod_{i=1}^{\numData^*}p(\dataScalar^*_i| \inducingVector) q(\inducingVector | \dataVector) \text{d} \inducingVector\]</span></li>
+<li>This factorization can be exploited for stochastic variational inference <span class="citation" data-cites="Hoffman:stochastic12">(Hoffman et al., 2012)</span>.</li>
+</ul>
 </section>
 <section id="modern-review" class="slide level3">
 <h3>Modern Review</h3>
@@ -617,7 +717,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </object>
 </div>
 </section>
-<section id="section" class="slide level3">
+<section id="section-4" class="slide level3">
 <h3></h3>
 <div style="text-align:">
 <object class="svgplot " align data="../slides/diagrams/deepgp/deep-markov-vertical.svg" style>
@@ -642,14 +742,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><p>A (new?) way of constructing more complex <em>processes</em> based on simpler components.</p></li>
 </ul>
 </section>
-<section id="section-1" class="slide level3">
+<section id="section-5" class="slide level3">
 <h3></h3>
 <div style="text-align:">
 <object class="svgplot " align data="../slides/diagrams/deepgp/deep-markov-vertical.svg" style>
 </object>
 </div>
 </section>
-<section id="section-2" class="slide level3">
+<section id="section-6" class="slide level3">
 <h3></h3>
 <div style="text-align:">
 <object class="svgplot " align data="../slides/diagrams/deepgp/deep-markov-vertical-side.svg" style>
@@ -773,7 +873,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><p><em>How Deep Are Deep Gaussian Processes?</em> <span class="citation" data-cites="Dunlop:deep2017">Dunlop et al. (n.d.)</span> perform a theoretical analysis possible through conditional Gaussian Markov property.</p></li>
 </ul>
 </section>
-<section id="section-3" class="slide level3">
+<section id="section-7" class="slide level3">
 <h3></h3>
 <iframe width="1120" height="630" src="https://www.youtube.com/embed/XhIvygQYFFQ?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
@@ -808,14 +908,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 </div>
 </section>
-<section id="olympic-marathon-data-gp" class="slide level3">
-<h3>Olympic Marathon Data GP</h3>
-<div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/gp/olympic-marathon-gp.svg" style>
-</object>
-</div>
-</section>
-<section id="section-4" class="slide level3">
+<section id="section-8" class="slide level3">
 <h3></h3>
 <table>
 <tr>
@@ -827,6 +920,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </td>
 </tr>
 </table>
+<p>k</p>
+</section>
+<section id="olympic-marathon-data-gp" class="slide level3">
+<h3>Olympic Marathon Data GP</h3>
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/olympic-marathon-gp.svg" style>
+</object>
+</div>
 </section>
 <section id="deep-gp-fit" class="slide level3">
 <h3>Deep GP Fit</h3>
@@ -1045,47 +1146,47 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </object>
 </div>
 </section>
-<section id="section-5" class="slide level3" data-transition="none">
+<section id="section-9" class="slide level3" data-transition="none">
 <h3></h3>
 <p><img class="negate" src="../slides/diagrams/deep-gp-high-five2.png" width="100%" height="auto" align="" style="background:none; border:none; box-shadow:none;"></p>
 <p><small><span style="text-align:right">Thanks to: Zhenwen Dai and Neil D. Lawrence</span></small></p>
 </section>
-<section id="section-6" class="slide level3" data-transition="none">
+<section id="section-10" class="slide level3" data-transition="none">
 <h3></h3>
 <div style="text-align:">
 <object class="svgplot " align data="../slides/diagrams/usps-digits-latent.svg" style>
 </object>
 </div>
 </section>
-<section id="section-7" class="slide level3" data-transition="none">
+<section id="section-11" class="slide level3" data-transition="none">
 <h3></h3>
 <div style="text-align:">
 <object class="svgplot " align data="../slides/diagrams/usps-digits-hidden-1-0.svg" style>
 </object>
 </div>
 </section>
-<section id="section-8" class="slide level3" data-transition="none">
+<section id="section-12" class="slide level3" data-transition="none">
 <h3></h3>
 <div style="text-align:">
 <object class="svgplot " align data="../slides/diagrams/usps-digits-hidden-2-0.svg" style>
 </object>
 </div>
 </section>
-<section id="section-9" class="slide level3" data-transition="none">
+<section id="section-13" class="slide level3" data-transition="none">
 <h3></h3>
 <div style="text-align:">
 <object class="svgplot " align data="../slides/diagrams/usps-digits-hidden-3-0.svg" style>
 </object>
 </div>
 </section>
-<section id="section-10" class="slide level3" data-transition="none">
+<section id="section-14" class="slide level3" data-transition="none">
 <h3></h3>
 <div style="text-align:">
 <object class="svgplot " align data="../slides/diagrams/usps-digits-hidden-4-0.svg" style>
 </object>
 </div>
 </section>
-<section id="section-11" class="slide level3" data-transition="none">
+<section id="section-15" class="slide level3" data-transition="none">
 <h3></h3>
 <div style="text-align:">
 <object class="svgplot " align data="../slides/diagrams/digit-samples-deep-gp.svg" style>
@@ -1464,8 +1565,14 @@ infr.run(Y<span class="op">=</span>data)</code></pre></div>
 <div id="ref-Duvenaud:pathologies14">
 <p>Duvenaud, D., Rippel, O., Adams, R., Ghahramani, Z., 2014. Avoiding pathologies in very deep networks, in:.</p>
 </div>
+<div id="ref-Hensman:bigdata13">
+<p>Hensman, J., Fusi, N., Lawrence, N.D., n.d. Gaussian processes for big data, in:.</p>
+</div>
 <div id="ref-Hinton:fast06">
 <p>Hinton, G.E., Osindero, S., 2006. A fast learning algorithm for deep belief nets. Neural Computation 18, 2006.</p>
+</div>
+<div id="ref-Hoffman:stochastic12">
+<p>Hoffman, M., Blei, D.M., Wang, C., Paisley, J., 2012. Stochastic variational inference, arXiv preprint arXiv:1206.7051.</p>
 </div>
 <div id="ref-Mattos:recurrent15">
 <p>Mattos, C.L.C., Dai, Z., Damianou, A.C., Forth, J., Barreto, G.A., Lawrence, N.D., 2015. Recurrent gaussian processes. CoRR abs/1511.06644.</p>

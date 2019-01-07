@@ -110,7 +110,7 @@ $$</span><br /> where <span class="math inline">$\dataVector$</span>, <span clas
 \end{align}$$</span><br /> then we know that <span class="math inline">$\dataVector$</span> is also drawn from a multivariate Gaussian with, <br /><span class="math display">$$
 \dataVector \sim \gaussianSamp{\mappingMatrix\meanVector}{\mappingMatrix\covarianceMatrix\mappingMatrix^\top + \covarianceMatrixTwo}.
 $$</span><br /></p>
-<p>With apprioriately defined covariance, <span class="math inline">$\covarianceTwoMatrix$</span>, this is actually the marginal likelihood for Factor Analysis, or Probabilistic Principal Component Analysis <span class="citation">(Tipping and Bishop 1999)</span>, because we integrated out the inputs (or <em>latent</em> variables they would be called in that case).</p>
+<p>With apprioriately defined covariance, <span class="math inline">$\covarianceMatrixTwo$</span>, this is actually the marginal likelihood for Factor Analysis, or Probabilistic Principal Component Analysis <span class="citation">(Tipping and Bishop 1999)</span>, because we integrated out the inputs (or <em>latent</em> variables they would be called in that case).</p>
 <p>However, we are focussing on what happens in models which are non-linear in the inputs, whereas the above would be <em>linear</em> in the inputs. To consider these, we introduce a matrix, called the design matrix. We set each activation function computed at each data point to be <br /><span class="math display">$$
 \activationScalar_{i,j} = \activationScalar(\mappingVector^{(1)}_{j}, \inputVector_{i})
 $$</span><br /> and define the matrix of activations (known as the <em>design matrix</em> in statistics) to be, <br /><span class="math display">$$
@@ -402,18 +402,6 @@ $$</span><br /></p>
 </table>
 <center>
 <em>The multi-layer perceptron covariance function. This is derived by considering the infinite limit of a neural network with probit activation functions. </em>
-</center>
-<div style="text-align:center">
-<img class="vertical-align:middle" src="../slides/diagrams/Planck_CMB.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
-</div>
-<center>
-<em>The cosmic microwave background is, to a very high degree of precision, a Gaussian process. The parameters of its covariance function are given by fundamental parameters of the universe, such as the amount of dark matter and mass. </em>
-</center>
-<div style="fontsize:120px;vertical-align:middle">
-<img src="../slides/diagrams/earth_PNG37.png" width="20%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">=<em>f</em>(</span><img src="../slides/diagrams/Planck_CMB.png"  width="50%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">)</span>
-</div>
-<center>
-<em>What we observe today is some non-linear function of the cosmic microwave background. </em>
 </center>
 <p>Stefanos Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Dai, Javier Gonzalez, Andreas Damianou, Mark Pullin.</p>
 <ul>

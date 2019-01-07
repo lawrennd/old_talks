@@ -43,9 +43,10 @@ ax.set_ylabel('pace min/km', fontsize=20)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 
-mlai.write_figure(figure=fig, filename='../slides/diagrams/datasets/olympic-marathon.svg', transparent=True, frameon=True)}
-
-
+mlai.write_figure(figure=fig, 
+                  filename='../slides/diagrams/datasets/olympic-marathon.svg', 
+				  transparent=True, 
+				  frameon=True)}
 
 \newslide{Olympic Marathon Data}
 

@@ -20,9 +20,13 @@ transition: None
 
 \include{talk-macros.tex}
 
+\include{_gp/includes/planck-cmp-master-gp.md}
+
 \newslide{Deep Gaussian Processes}
 
 \include{_gp/includes/approximate-gps-short.md}
+\include{_gp/includes/gp-big-data-technical.md}
+\include{_gp/includes/gp-big-data.md}
 
 \newslide{Modern Review}
 
