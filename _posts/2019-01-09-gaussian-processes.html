@@ -234,8 +234,7 @@ $$</span><br /> in the figure below we plot these data on the <span class="math 
 <li>Covariance function, <span class="math inline">$\kernelMatrix$</span></li>
 <li>Determines properties of samples.</li>
 <li><p>Function of <span class="math inline">$\inputMatrix$</span>, <br /><span class="math display">$$\kernelScalar_{i,j} = \kernelScalar(\inputVector_i, \inputVector_j)$$</span><br /></p></li>
-<li><p>Posterior mean</p>
-<p><br /><span class="math display">$$\mappingFunction_D(\inputVector_*) = \kernelVector(\inputVector_*, \inputMatrix) \kernelMatrix^{-1}
+<li><p>Posterior mean <br /><span class="math display">$$\mappingFunction_D(\inputVector_*) = \kernelVector(\inputVector_*, \inputMatrix) \kernelMatrix^{-1}
 \mathbf{y}$$</span><br /></p></li>
 <li><p>Posterior covariance <br /><span class="math display">$$\mathbf{C}_* = \kernelMatrix_{*,*} - \kernelMatrix_{*,\mappingFunctionVector}
 \kernelMatrix^{-1} \kernelMatrix_{\mappingFunctionVector, *}$$</span><br /></p></li>
@@ -244,6 +243,8 @@ $$</span><br /> in the figure below we plot these data on the <span class="math 
 <li><p>Posterior covariance <br /><span class="math display">$$\covarianceMatrix_* = \kernelMatrix_{*,*} - \kernelMatrix_{*,\mappingFunctionVector}
 \kernelMatrix^{-1} \kernelMatrix_{\mappingFunctionVector, *}$$</span><br /></p></li>
 </ul>
+<p><br />
+</p>
 <h3 id="exponentiated-quadratic-covariance">Exponentiated Quadratic Covariance</h3>
 <p>The exponentiated quadratic covariance, also known as the Gaussian covariance or the RBF covariance and the squared exponential. Covariance between two points is related to the negative exponential of the squared distnace between those points. This covariance function can be derived in a few different ways: as the infinite limit of a radial basis function neural network, as diffusion in the heat equation, as a Gaussian filter in <em>Fourier space</em> or as the composition as a series of linear filters applied to a base function.</p>
 <p>The covariance takes the following form, <br /><span class="math display">$$
@@ -297,27 +298,6 @@ scale <span class="op">=</span> np.sqrt(y.var())</code></pre></div>
 </div>
 <p>Things to notice about the data include the outlier in 1904, in this year, the olympics was in St Louis, USA. Organizational problems and challenges with dust kicked up by the cars following the race meant that participants got lost, and only very few participants completed.</p>
 <p>More recent years see more consistently quick marathons.</p>
-<p>Our first objective will be to perform a Gaussian process fit to the data, we'll do this using the <a href="https://github.com/SheffieldML/GPy">GPy software</a>.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> GPy</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_full <span class="op">=</span> GPy.models.GPRegression(x,yhat)
-_ <span class="op">=</span> m_full.optimize() <span class="co"># Optimize parameters of covariance function</span></code></pre></div>
-<p>The first command sets up the model, then</p>
-<pre><code>m_full.optimize()</code></pre>
-<p>optimizes the parameters of the covariance function and the noise level of the model. Once the fit is complete, we'll try creating some test points, and computing the output of the GP model in terms of the mean and standard deviation of the posterior functions between 1870 and 2030. We plot the mean function and the standard deviation at 200 locations. We can obtain the predictions using</p>
-<pre><code>y_mean, y_var = m_full.predict(xt)</code></pre>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">xt <span class="op">=</span> np.linspace(<span class="dv">1870</span>,<span class="dv">2030</span>,<span class="dv">200</span>)[:,np.newaxis]
-yt_mean, yt_var <span class="op">=</span> m_full.predict(xt)
-yt_sd<span class="op">=</span>np.sqrt(yt_var)</code></pre></div>
-<p>Now we plot the results using the helper function in <code>teaching_plots</code>.</p>
-<object class="svgplot " align data="../slides/diagrams/gp/olympic-marathon-gp.svg" style>
-</object>
-<h3 id="fit-quality">Fit Quality</h3>
-<p>In the fit we see that the error bars (coming mainly from the noise variance) are quite large. This is likely due to the outlier point in 1904, ignoring that point we can see that a tighter fit is obtained. To see this making a version of the model, <code>m_clean</code>, where that point is removed.</p>
-<pre><code>x_clean=np.vstack((x[0:2, :], x[3:, :]))
-y_clean=np.vstack((y[0:2, :], y[3:, :]))
-
-m_clean = GPy.models.GPRegression(x_clean,y_clean)
-_ = m_clean.optimize()</code></pre>
 <p>Data is fine for answering very specific questions, like &quot;Who won the Olympic Marathon in 2012?&quot;, because we have that answer stored, however, we are not given the answer to many other questions. For example, Alan Turing was a formidable marathon runner, in 1946 he ran a time 2 hours 46 minutes (just under four minutes per kilometer, faster than I and most of the other <a href="http://www.parkrun.org.uk/sheffieldhallam/">Endcliffe Park Run</a> runners can do 5 km). What is the probability he would have won an Olympics if one had been held in 1946?</p>
 <table>
 <tr>
@@ -332,6 +312,45 @@ _ = m_clean.optimize()</code></pre>
 <center>
 <em>Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: <a href="http://www.turing.org.uk/scrapbook/run.html">Alan Turing Internet Scrapbook</a> </em>
 </center>
+<p>Our first objective will be to perform a Gaussian process fit to the data, we'll do this using the <a href="https://github.com/SheffieldML/GPy">GPy software</a>.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> GPy</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_full <span class="op">=</span> GPy.models.GPRegression(x,yhat)
+_ <span class="op">=</span> m_full.optimize() <span class="co"># Optimize parameters of covariance function</span></code></pre></div>
+<p>The first command sets up the model, then <code>m_full.optimize()</code> optimizes the parameters of the covariance function and the noise level of the model. Once the fit is complete, we'll try creating some test points, and computing the output of the GP model in terms of the mean and standard deviation of the posterior functions between 1870 and 2030. We plot the mean function and the standard deviation at 200 locations. We can obtain the predictions using <code>y_mean, y_var = m_full.predict(xt)</code></p>
+<p>k</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">xt <span class="op">=</span> np.linspace(<span class="dv">1870</span>,<span class="dv">2030</span>,<span class="dv">200</span>)[:,np.newaxis]
+yt_mean, yt_var <span class="op">=</span> m_full.predict(xt)
+yt_sd<span class="op">=</span>np.sqrt(yt_var)</code></pre></div>
+<p>Now we plot the results using the helper function in <code>teaching_plots</code>.</p>
+<object class="svgplot " align data="../slides/diagrams/gp/olympic-marathon-gp.svg" style>
+</object>
+<h3 id="fit-quality">Fit Quality</h3>
+<p>In the fit we see that the error bars (coming mainly from the noise variance) are quite large. This is likely due to the outlier point in 1904, ignoring that point we can see that a tighter fit is obtained. To see this making a version of the model, <code>m_clean</code>, where that point is removed.</p>
+<pre><code>x_clean=np.vstack((x[0:2, :], x[3:, :]))
+y_clean=np.vstack((y[0:2, :], y[3:, :]))
+
+m_clean = GPy.models.GPRegression(x_clean,y_clean)
+_ = m_clean.optimize()</code></pre>
+<ul>
+<li>Work with John Quinn and Martin Mubaganzi (Makerere University, Uganda)</li>
+<li>See <a href="http://air.ug/research.html">AI-DEV Group</a>.</li>
+</ul>
+<p><span style="text-align:right"><img class="" src="../slides/diagrams/people/2013_03_28_180606.JPG" width="1.5cm" align="" style="background:none; border:none; box-shadow:none; position:absolute; clip:rect(2662px,1780px,1110px,600px)"></span></p>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/health/SRTM_WithUgandaDistricts2006.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</div>
+<p><span style="text-align:right"><span class="citation">(Andrade-Pacheco et al. 2014,<span class="citation">Mubangizi et al. (2014)</span>)</span></span></p>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/health/sentinel_nagongera.png" width="negate" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</div>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/health/mubende.png" width="negate" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</div>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/gpss/1157497_513423392066576_1845599035_n.jpg" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</div>
+
+
 <h3 id="basis-function-covariance">Basis Function Covariance</h3>
 <p>The fixed basis function covariance just comes from the properties of a multivariate Gaussian, if we decide <br /><span class="math display">$$
 \mappingFunctionVector=\basisMatrix\mappingVector
@@ -403,13 +422,14 @@ $$</span><br /></p>
 <center>
 <em>The multi-layer perceptron covariance function. This is derived by considering the infinite limit of a neural network with probit activation functions. </em>
 </center>
+<h3 id="acknowledgments">Acknowledgments</h3>
 <p>Stefanos Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Dai, Javier Gonzalez, Andreas Damianou, Mark Pullin.</p>
-<ul>
-<li>twitter: @lawrennd</li>
-<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
-</ul>
-<h3 id="references" class="unnumbered">References</h3>
+<h3 id="references">References</h3>
+<p>TODO: PARAMETER OPTIMIZATION TODO: SPATIAL DATA TODO: MALARIA EXAMPLE</p>
 <div id="refs" class="references">
+<div id="ref-Andrade:consistent14">
+<p>Andrade-Pacheco, Ricardo, Martin Mubangizi, John Quinn, and Neil D. Lawrence. 2014. “Consistent Mapping of Government Malaria Records Across a Changing Territory Delimitation.” <em>Malaria Journal</em> 13 (Suppl 1). doi:<a href="https://doi.org/10.1186/1475-2875-13-S1-P5">10.1186/1475-2875-13-S1-P5</a>.</p>
+</div>
 <div id="ref-Cho:deep09">
 <p>Cho, Youngmin, and Lawrence K. Saul. 2009. “Kernel Methods for Deep Learning.” In <em>Advances in Neural Information Processing Systems 22</em>, edited by Y. Bengio, D. Schuurmans, J. D. Lafferty, C. K. I. Williams, and A. Culotta, 342–50. Curran Associates, Inc. <a href="http://papers.nips.cc/paper/3628-kernel-methods-for-deep-learning.pdf" class="uri">http://papers.nips.cc/paper/3628-kernel-methods-for-deep-learning.pdf</a>.</p>
 </div>
@@ -421,6 +441,9 @@ $$</span><br /></p>
 </div>
 <div id="ref-McCulloch:neuron43">
 <p>McCulloch, Warren S., and Walter Pitts. 1943. “A Logical Calculus of the Ideas Immanent in Nervous Activity.” <em>Bulletin of Mathematical Biophysics</em> 5: 115–33.</p>
+</div>
+<div id="ref-Mubangizi:malaria14">
+<p>Mubangizi, Martin, Ricardo Andrade-Pacheco, Michael Thomas Smith, John Quinn, and Neil D. Lawrence. 2014. “Malaria Surveillance with Multiple Data Sources Using Gaussian Process Models.” In <em>1st International Conference on the Use of Mobile Ict in Africa</em>.</p>
 </div>
 <div id="ref-Neal:bayesian94">
 <p>Neal, Radford M. 1994. “Bayesian Learning for Neural Networks.” PhD thesis, Dept. of Computer Science, University of Toronto.</p>

@@ -60,7 +60,6 @@ There are also challenges around specification of the objective function, but fo
 \newslide{Linear Algebra}
 
 * Posterior mean
-
     $$\mappingFunction_D(\inputVector_*) = \kernelVector(\inputVector_*, \inputMatrix) \kernelMatrix^{-1}
 \mathbf{y}$$
 
@@ -100,10 +99,12 @@ There are also challenges around specification of the objective function, but fo
 \includepng{../slides/diagrams/gp/gp_rejection_sample005}{100%}{negate}
 }
 
+\
 
 \include{_kern/includes/eq-covariance.md}
 
 \include{_gp/includes/olympic-marathon-gp.md}
+\include{_health/includes/malaria.md}
 
 \include{_kern/includes/basis-covariance.md}
 

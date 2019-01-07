@@ -982,8 +982,7 @@ showDivs(13, 'two_point_sample3');
 <section id="linear-algebra" class="slide level3">
 <h3>Linear Algebra</h3>
 <ul>
-<li><p>Posterior mean</p>
-<p><span class="math display">\[\mappingFunction_D(\inputVector_*) = \kernelVector(\inputVector_*, \inputMatrix) \kernelMatrix^{-1}
+<li><p>Posterior mean <span class="math display">\[\mappingFunction_D(\inputVector_*) = \kernelVector(\inputVector_*, \inputMatrix) \kernelMatrix^{-1}
 \mathbf{y}\]</span></p></li>
 <li><p>Posterior covariance <span class="math display">\[\mathbf{C}_* = \kernelMatrix_{*,*} - \kernelMatrix_{*,\mappingFunctionVector}
 \kernelMatrix^{-1} \kernelMatrix_{\mappingFunctionVector, *}\]</span></p></li>
@@ -1027,6 +1026,8 @@ showDivs(13, 'two_point_sample3');
 <div style="text-align:center">
 <img class="negate" src="../slides/diagrams/gp/gp_rejection_sample005.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
 </div>
+<p><br />
+</p>
 </section>
 <section id="exponentiated-quadratic-covariance" class="slide level3">
 <h3>Exponentiated Quadratic Covariance</h3>
@@ -1075,13 +1076,6 @@ showDivs(13, 'two_point_sample3');
 </div>
 </div>
 </section>
-<section id="olympic-marathon-data-gp" class="slide level3">
-<h3>Olympic Marathon Data GP</h3>
-<div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/gp/olympic-marathon-gp.svg" style>
-</object>
-</div>
-</section>
 <section id="section-11" class="slide level3">
 <h3></h3>
 <table>
@@ -1094,6 +1088,55 @@ showDivs(13, 'two_point_sample3');
 </td>
 </tr>
 </table>
+<p>k</p>
+</section>
+<section id="olympic-marathon-data-gp" class="slide level3">
+<h3>Olympic Marathon Data GP</h3>
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/olympic-marathon-gp.svg" style>
+</object>
+</div>
+</section>
+<section id="example-prediction-of-malaria-incidence-in-uganda" class="slide level3">
+<h3>Example: Prediction of Malaria Incidence in Uganda</h3>
+<ul>
+<li>Work with John Quinn and Martin Mubaganzi (Makerere University, Uganda)</li>
+<li>See <a href="http://air.ug/research.html">AI-DEV Group</a>.</li>
+</ul>
+</section>
+<section id="malaria-prediction-in-uganda" class="slide level3">
+<h3>Malaria Prediction in Uganda</h3>
+<p><span style="text-align:right"><img class="" src="../slides/diagrams/people/2013_03_28_180606.JPG" width="1.5cm" align="" style="background:none; border:none; box-shadow:none; position:absolute; clip:rect(2662px,1780px,1110px,600px)"></span></p>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/health/SRTM_WithUgandaDistricts2006.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
+<p><span style="text-align:right"><span class="citation" data-cites="Andrade:consistent14">(Andrade-Pacheco et al., 2014,<span class="citation" data-cites="Mubangizi:malaria14">Mubangizi et al. (2014)</span>)</span></span></p>
+</section>
+<section id="malaria-prediction-in-uganda-1" class="slide level3">
+<h3>Malaria Prediction in Uganda</h3>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/health/sentinel_nagongera.png" width="negate" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
+</section>
+<section id="malaria-prediction-in-uganda-2" class="slide level3">
+<h3>Malaria Prediction in Uganda</h3>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/health/mubende.png" width="negate" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
+</section>
+<section id="gp-school-at-makerere" class="slide level3">
+<h3>GP School at Makerere</h3>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/gpss/1157497_513423392066576_1845599035_n.jpg" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
+</section>
+<section id="early-warning-systems" class="slide level3">
+<h3>Early Warning Systems</h3>
+
+</section>
+<section id="early-warning-systems-1" class="slide level3">
+<h3>Early Warning Systems</h3>
+
 </section>
 <section id="basis-function-covariance" class="slide level3">
 <h3>Basis Function Covariance</h3>
@@ -1168,9 +1211,13 @@ showDivs(13, 'two_point_sample3');
 <li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
 </ul>
 </section>
-<section id="references" class="slide level3 unnumbered">
+<section id="references" class="slide level3">
 <h3>References</h3>
+<p>TODO: PARAMETER OPTIMIZATION TODO: SPATIAL DATA TODO: MALARIA EXAMPLE</p>
 <div id="refs" class="references">
+<div id="ref-Andrade:consistent14">
+<p>Andrade-Pacheco, R., Mubangizi, M., Quinn, J., Lawrence, N.D., 2014. Consistent mapping of government malaria records across a changing territory delimitation. Malaria Journal 13. <a href="https://doi.org/10.1186/1475-2875-13-S1-P5" class="uri">https://doi.org/10.1186/1475-2875-13-S1-P5</a></p>
+</div>
 <div id="ref-Cho:deep09">
 <p>Cho, Y., Saul, L.K., 2009. Kernel methods for deep learning, in: Bengio, Y., Schuurmans, D., Lafferty, J.D., Williams, C.K.I., Culotta, A. (Eds.), Advances in Neural Information Processing Systems 22. Curran Associates, Inc., pp. 342–350.</p>
 </div>
@@ -1182,6 +1229,9 @@ showDivs(13, 'two_point_sample3');
 </div>
 <div id="ref-McCulloch:neuron43">
 <p>McCulloch, W.S., Pitts, W., 1943. A logical calculus of the ideas immanent in nervous activity. Bulletin of Mathematical Biophysics 5, 115–133.</p>
+</div>
+<div id="ref-Mubangizi:malaria14">
+<p>Mubangizi, M., Andrade-Pacheco, R., Smith, M.T., Quinn, J., Lawrence, N.D., 2014. Malaria surveillance with multiple data sources using Gaussian process models, in: 1st International Conference on the Use of Mobile Ict in Africa.</p>
 </div>
 <div id="ref-Neal:bayesian94">
 <p>Neal, R.M., 1994. Bayesian learning for neural networks (PhD thesis). Dept. of Computer Science, University of Toronto.</p>
