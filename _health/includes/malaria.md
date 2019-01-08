@@ -11,21 +11,41 @@
 
 \alignright{[@Andrade:consistent14,@Mubangizi:malaria14]}
 
+\newslide{Nagongera District}
+
+\includesvg{../slides/diagrams/health/Nagongera_District_in_Uganda.svg}{70%}
+
+\newslide{Kapchorwa District}
+
+\includesvg{../slides/diagrams/health/Kapchorwa_District_in_Uganda.svg}{70%}
+
+  \newslide{Tororo District}
+
+\includesvg{../slides/diagrams/health/Tororo_District_in_Uganda.svg}{70%}
+
+\newslide{Malaria Prediction in Nagongera (Sentinel Site)}
+
+\includepng{../slides/diagrams/health/sentinel_nagongera}{100%}{negate}
+
+\newslide{Mubende District}
+
+\includesvg{../slides/diagrams/health/Mubende_District_in_Uganda.svg}{70%}
+
 \newslide{Malaria Prediction in Uganda}
 
-\includepng{../slides/diagrams/health/sentinel_nagongera}{70%}{negate}
-
-\newslide{Malaria Prediction in Uganda}
-
-\includepng{../slides/diagrams/health/mubende}{50%}{negate}
+\includepng{../slides/diagrams/health/mubende}{70%}{negate}
 
 \newslide{GP School at Makerere}
 
-\includejpg{../slides/diagrams/gpss/1157497_513423392066576_1845599035_n}
+\includejpg{../slides/diagrams/gpss/1157497_513423392066576_1845599035_n}{90%}
+
+\newslide{Kabarole District}
+
+\includesvg{../slides/diagrams/health/Kabarole_District_in_Uganda.svg}{70%}
 
 \newslide{Early Warning Systems}
 
-\includegif{../slides/diagrams/health/kabarole}{80%}
+\includegif{../slides/diagrams/health/kabarole}{100%}
 
 \newslide{Early Warning Systems}
 

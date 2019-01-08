@@ -873,3 +873,35 @@ def add_cov(x, x_prime, kerns, kern_args):
 def basis_cov(x, x_prime, basis):
     """Basis function covariance."""
     return (basis.Phi(x)*basis.Phi(x_prime)).sum()
+def contour_data(model, data, length_scales, log_SNRs):
+    """
+    Evaluate the GP objective function for a given data set for a range of
+    signal to noise ratios and a range of lengthscales.
+
+    :data_set: A data set from the utils.datasets director.
+    :length_scales: a list of length scales to explore for the contour plot.
+    :log_SNRs: a list of base 10 logarithm signal to noise ratios to explore for the contour plot.
+    :kernel: a kernel to use for the 'signal' portion of the data.
+    """
+
+    
+    lls = []
+    total_var = np.var(data['Y'])
+    for log_SNR in log_SNRs:
+        SNR = 10.**log_SNR
+        noise_var = total_var / (1. + SNR)
+        signal_var = total_var - noise_var
+        model.kern['.*variance'] = signal_var
+        model.likelihood.variance = noise_var
+        length_scale_lls = []
+
+        for length_scale in length_scales:
+            model['.*lengthscale'] = length_scale
+            length_scale_lls.append(model.log_likelihood())
+
+        lls.append(length_scale_lls)
+
+    return np.array(lls)
+
+
+

@@ -2126,36 +2126,6 @@ def perceptron(x_plus, x_minus, learn_rate=0.1, max_iters=10000,
     return count
 
 
-def contour_data(data, length_scales, log_SNRs, kernel_call=GPy.kern.RBF):
-    """
-    Evaluate the GP objective function for a given data set for a range of
-    signal to noise ratios and a range of lengthscales.
-
-    :data_set: A data set from the utils.datasets director.
-    :length_scales: a list of length scales to explore for the contour plot.
-    :log_SNRs: a list of base 10 logarithm signal to noise ratios to explore for the contour plot.
-    :kernel: a kernel to use for the 'signal' portion of the data.
-    """
-
-    lls = []
-    total_var = np.var(data['Y'])
-    kernel = kernel_call(1, variance=1., lengthscale=1.)
-    model = GPy.models.GPRegression(data['X'], data['Y'], kernel=kernel)
-    for log_SNR in log_SNRs:
-        SNR = 10.**log_SNR
-        noise_var = total_var / (1. + SNR)
-        signal_var = total_var - noise_var
-        model.kern['.*variance'] = signal_var
-        model.likelihood.variance = noise_var
-        length_scale_lls = []
-
-        for length_scale in length_scales:
-            model['.*lengthscale'] = length_scale
-            length_scale_lls.append(model.log_likelihood())
-
-        lls.append(length_scale_lls)
-
-    return np.array(lls)
 
 def dist2(X, Y):
     """Computer squared distances between two design matrices"""
@@ -2834,3 +2804,68 @@ def save_animation(anim, diagrams, filename):
     f = open(os.path.join(diagrams, filename), 'w')
     f.write(anim.to_jshtml())
     f.close()
+
+
+def multiple_optima(ax=None, gene_number=937, resolution=80, model_restarts=10, seed=10000, max_iters=300, optimize=True, fontsize=20, diagrams='./diagrams'):
+    """
+    Show an example of a multimodal error surface for Gaussian process
+    regression. Gene 937 has bimodal behaviour where the noisy mode is
+    higher.
+    """
+
+    if ax is None:
+        fig, ax = plt.subplots(figsize=big_figsize)
+    
+    # Contour over a range of length scales and signal/noise ratios.
+    length_scales = np.linspace(0.1, 60., resolution)
+    log_SNRs = np.linspace(-3., 4., resolution)
+
+    try:
+        import pods
+    except ImportError:
+        print('pods unavailable, see https://github.com/sods/ods for example datasets')
+        return
+    data = pods.datasets.della_gatta_TRP63_gene_expression(data_set='della_gatta',gene_number=gene_number)
+
+    data['Y'] = data['Y'] - np.mean(data['Y'])
+    kernel = GPy.kern.RBF(1, variance=1., lengthscale=1.)
+    model = GPy.models.GPRegression(data['X'], data['Y'], kernel=kernel)
+    lls = mlai.contour_data(model, data, length_scales, log_SNRs)
+    ax.contour(length_scales, log_SNRs, np.exp(lls), 20, cmap=plt.cm.jet)
+    ax.set_xlabel('length scale', fontsize=fontsize)
+    ax.set_ylabel('$\log_10$ SNR', fontsize=fontsize)
+
+    xlim = ax.get_xlim()
+    ylim = ax.get_ylim()
+
+    # Now run a few optimizations
+    models = []
+    optim_point_x = np.empty(2)
+    optim_point_y = np.empty(2)
+    np.random.seed(seed=seed)
+    for i in range(0, model_restarts):
+        kern = GPy.kern.RBF(1, variance=np.random.uniform(1e-3, 1), lengthscale=np.random.uniform(5, 50))
+
+        m = GPy.models.GPRegression(data['X'], data['Y'], kernel=kern)
+        m.likelihood.variance = np.random.uniform(1e-3, 1)
+        optim_point_x[0] = m.rbf.lengthscale
+        optim_point_y[0] = np.log10(m.rbf.variance) - np.log10(m.likelihood.variance);
+
+        # optimize
+        if optimize:
+            m.optimize('scg', xtol=1e-6, ftol=1e-6, max_iters=max_iters)
+
+        optim_point_x[1] = m.rbf.lengthscale
+        optim_point_y[1] = np.log10(m.rbf.variance) - np.log10(m.likelihood.variance);
+
+        ax.arrow(optim_point_x[0], optim_point_y[0], optim_point_x[1] - optim_point_x[0], optim_point_y[1] - optim_point_y[0], label=str(i), head_length=1, head_width=0.5, fc='k', ec='k')
+        models.append(m)
+
+    ax.set_xlim(xlim)
+    ax.set_ylim(ylim)
+
+    mlai.write_figure(os.path.join(diagrams, 'multiple-optima.svg'),
+                      figure=ax.figure,
+                      transparent=True)
+    
+    return m # (models, lls)

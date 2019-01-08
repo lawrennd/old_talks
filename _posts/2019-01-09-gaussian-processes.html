@@ -25,6 +25,10 @@ categories:
 
 <!-- Enables links to pages-->
 <p><!--% not ipynb--></p>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/gp/rasmussen-williams-book.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</div>
+<p><span class="citation">Rasmussen and Williams (2006)</span> is still one of the most important references on Gaussian process models. It is available freely online.</p>
 <h2 id="what-is-machine-learning">What is Machine Learning?</h2>
 <p>What is machine learning? At its most basic level machine learning is a combination of</p>
 <p><br /><span class="math display">$$\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$</span><br /></p>
@@ -329,6 +333,56 @@ y_clean=np.vstack((y[0:2, :], y[3:, :]))
 
 m_clean = GPy.models.GPRegression(x_clean,y_clean)
 _ = m_clean.optimize()</code></pre>
+<h3 id="della-gatta-gene-data">Della Gatta Gene Data</h3>
+<ul>
+<li>Given given expression levels in the form of a time series from <span class="citation">Della Gatta et al. (2008)</span>.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
+<span class="im">import</span> pods</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data <span class="op">=</span> pods.datasets.della_gatta_TRP63_gene_expression(data_set<span class="op">=</span><span class="st">&#39;della_gatta&#39;</span>,gene_number<span class="op">=</span><span class="dv">937</span>)
+
+x <span class="op">=</span> data[<span class="st">&#39;X&#39;</span>]
+y <span class="op">=</span> data[<span class="st">&#39;Y&#39;</span>]
+
+offset <span class="op">=</span> y.mean()
+scale <span class="op">=</span> np.sqrt(y.var())</code></pre></div>
+<div style="text-align:center">
+<object class="svgplot " align data="../slides/diagrams/datasets/della-gatta-gene.svg" style>
+</object>
+</div>
+<ul>
+<li>Want to detect if a gene is expressed or not, fit a GP to each gene <span class="citation">Kalaitzis and Lawrence (2011)</span>.</li>
+</ul>
+[
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/health/1471-2105-12-180_1.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</div>
+<p>](http://www.biomedcentral.com/1471-2105/12/180)</p>
+<p>Our first objective will be to perform a Gaussian process fit to the data, we'll do this using the <a href="https://github.com/SheffieldML/GPy">GPy software</a>.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> GPy</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_full <span class="op">=</span> GPy.models.GPRegression(x,yhat)
+m_full.kern.lengthscale<span class="op">=</span><span class="dv">50</span>
+_ <span class="op">=</span> m_full.optimize() <span class="co"># Optimize parameters of covariance function</span></code></pre></div>
+<p>Initialize the length scale parameter (which here actually represents a <em>time scale</em> of the covariance function to a reasonable value. Default would be 1, but here we set it to 50 minutes, given points are arriving across zero to 250 minutes.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">xt <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">20</span>,<span class="dv">260</span>,<span class="dv">200</span>)[:,np.newaxis]
+yt_mean, yt_var <span class="op">=</span> m_full.predict(xt)
+yt_sd<span class="op">=</span>np.sqrt(yt_var)</code></pre></div>
+<p>Now we plot the results using the helper function in <code>teaching_plots</code>.</p>
+<object class="svgplot " align data="../slides/diagrams/gp/della-gatta-gene-gp.svg" style>
+</object>
+<p>Now we try a model initialized with a longer length scale.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_full2 <span class="op">=</span> GPy.models.GPRegression(x,yhat)
+m_full2.kern.lengthscale<span class="op">=</span><span class="dv">2000</span>
+_ <span class="op">=</span> m_full2.optimize() <span class="co"># Optimize parameters of covariance function</span></code></pre></div>
+<object class="svgplot " align data="../slides/diagrams/gp/della-gatta-gene-gp2.svg" style>
+</object>
+<p>Now we try a model initialized with a longer length scale.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_full3 <span class="op">=</span> GPy.models.GPRegression(x,yhat)
+m_full3.kern.lengthscale<span class="op">=</span><span class="dv">20</span>
+m_full3.likelihood.variance<span class="op">=</span><span class="fl">0.001</span>
+_ <span class="op">=</span> m_full3.optimize() <span class="co"># Optimize parameters of covariance function</span></code></pre></div>
+<object class="svgplot " align data="../slides/diagrams/gp/della-gatta-gene-gp3.svg" style>
+</object>
 <ul>
 <li>Work with John Quinn and Martin Mubaganzi (Makerere University, Uganda)</li>
 <li>See <a href="http://air.ug/research.html">AI-DEV Group</a>.</li>
@@ -342,16 +396,16 @@ _ = m_clean.optimize()</code></pre>
 </center>
 <p><span style="text-align:right"><span class="citation">(Andrade-Pacheco et al. 2014,<span class="citation">Mubangizi et al. (2014)</span>)</span></span></p>
 <div style="text-align:center">
-<img class="negate" src="../slides/diagrams/health/sentinel_nagongera.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+<img class="negate" src="../slides/diagrams/health/sentinel_nagongera.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 </div>
 <div style="text-align:center">
-<img class="negate" src="../slides/diagrams/health/mubende.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+<img class="negate" src="../slides/diagrams/health/mubende.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 </div>
 <div style="text-align:center">
-<img class="" src="../slides/diagrams/gpss/1157497_513423392066576_1845599035_n.jpg" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+<img class="" src="../slides/diagrams/gpss/1157497_513423392066576_1845599035_n.jpg" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 </div>
 <div style="text-align:center">
-<img class="" src="../slides/diagrams/health/kabarole.gif" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+<img class="" src="../slides/diagrams/health/kabarole.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 </div>
 <div style="text-align:center">
 <img class="" src="../slides/diagrams/health/monitor.gif" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
@@ -433,6 +487,7 @@ $$</span><br /></p>
 <center>
 <em>The multi-layer perceptron covariance function. This is derived by considering the infinite limit of a neural network with probit activation functions. </em>
 </center>
+<!--include{_gp/includes/gp-optimize.md}-->
 <table>
 <tr>
 <td width="50%">
@@ -492,7 +547,7 @@ $$</span><br /></p>
 <h3 id="acknowledgments">Acknowledgments</h3>
 <p>Stefanos Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Dai, Javier Gonzalez, Andreas Damianou, Mark Pullin.</p>
 <h3 id="references">References</h3>
-<p>TODO: Additive Covariance TODO: multpilicitabe covariance TODO: PARAMETER OPTIMIZATION TODO: SPATIAL DATA</p>
+<p>TODO: Additive Covariance TODO: multpilicitabe covariance TODO: PARAMETER OPTIMIZATION</p>
 <div id="refs" class="references">
 <div id="ref-Andrade:consistent14">
 <p>Andrade-Pacheco, Ricardo, Martin Mubangizi, John Quinn, and Neil D. Lawrence. 2014. “Consistent Mapping of Government Malaria Records Across a Changing Territory Delimitation.” <em>Malaria Journal</em> 13 (Suppl 1). doi:<a href="https://doi.org/10.1186/1475-2875-13-S1-P5">10.1186/1475-2875-13-S1-P5</a>.</p>
@@ -500,8 +555,14 @@ $$</span><br /></p>
 <div id="ref-Cho:deep09">
 <p>Cho, Youngmin, and Lawrence K. Saul. 2009. “Kernel Methods for Deep Learning.” In <em>Advances in Neural Information Processing Systems 22</em>, edited by Y. Bengio, D. Schuurmans, J. D. Lafferty, C. K. I. Williams, and A. Culotta, 342–50. Curran Associates, Inc. <a href="http://papers.nips.cc/paper/3628-kernel-methods-for-deep-learning.pdf" class="uri">http://papers.nips.cc/paper/3628-kernel-methods-for-deep-learning.pdf</a>.</p>
 </div>
+<div id="ref-DellaGatta:direct08">
+<p>Della Gatta, Giusy, Mukesh Bansal, Alberto Ambesi-Impiombato, Dario Antonini, Caterina Missero, and Diego di Bernardo. 2008. “Direct Targets of the Trp63 Transcription Factor Revealed by a Combination of Gene Expression Profiling and Reverse Engineering.” <em>Genome Research</em> 18 (6). Telethon Institute of Genetics; Medicine, 80131 Naples, Italy.: 939–48. doi:<a href="https://doi.org/10.1101/gr.073601.107">10.1101/gr.073601.107</a>.</p>
+</div>
 <div id="ref-Ioffe:batch15">
 <p>Ioffe, Sergey, and Christian Szegedy. 2015. “Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift.” In <em>Proceedings of the 32nd International Conference on Machine Learning</em>, edited by Francis Bach and David Blei, 37:448–56. Proceedings of Machine Learning Research. Lille, France: PMLR. <a href="http://proceedings.mlr.press/v37/ioffe15.html" class="uri">http://proceedings.mlr.press/v37/ioffe15.html</a>.</p>
+</div>
+<div id="ref-Kalaitzis:simple11">
+<p>Kalaitzis, Alfredo A., and Neil D. Lawrence. 2011. “A Simple Approach to Ranking Differentially Expressed Gene Expression Time Courses Through Gaussian Process Regression.” <em>BMC Bioinformatics</em> 12 (180). doi:<a href="https://doi.org/10.1186/1471-2105-12-180">10.1186/1471-2105-12-180</a>.</p>
 </div>
 <div id="ref-MacKay:bayesian92">
 <p>MacKay, David J. C. 1992. “Bayesian Methods for Adaptive Models.” PhD thesis, California Institute of Technology.</p>
@@ -517,6 +578,9 @@ $$</span><br /></p>
 </div>
 <div id="ref-Pearl:causality95">
 <p>Pearl, Judea. 1995. “From Bayesian Networks to Causal Networks.” In <em>Probabilistic Reasoning and Bayesian Belief Networks</em>, edited by A. Gammerman, 1–31. Alfred Waller.</p>
+</div>
+<div id="ref-Rasmussen:book06">
+<p>Rasmussen, Carl Edward, and Christopher K. I. Williams. 2006. <em>Gaussian Processes for Machine Learning</em>. Cambridge, MA: mit.</p>
 </div>
 <div id="ref-Steele:predictive12">
 <p>Steele, S, A Bilchik, J Eberhardt, P Kalina, A Nissan, E Johnson, I Avital, and A Stojadinovic. 2012. “Using Machine-Learned Bayesian Belief Networks to Predict Perioperative Risk of Clostridium Difficile Infection Following Colon Surgery.” <em>Interact J Med Res</em> 1 (2): e6. doi:<a href="https://doi.org/10.2196/ijmr.2131">10.2196/ijmr.2131</a>.</p>

@@ -20,8 +20,10 @@ transition: None
 ---
 
 \include{talk-macros.tex}
+\include{_gp/includes/gp-book.md}
 \include{_gp/includes/what-is-a-gp.md}
 
+<!--include{_gp/includes/gp-optimize.md}-->
 \include{_gp/includes/gpss.md}
 \include{_gp/includes/gpy.md}
 \include{_gp/includes/other-software.md}
@@ -48,4 +50,3 @@ Stefanos Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Dai
 TODO: Additive Covariance
 TODO: multpilicitabe covariance
 TODO: PARAMETER OPTIMIZATION
-TODO: SPATIAL DATA
