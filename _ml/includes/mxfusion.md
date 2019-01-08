@@ -1,8 +1,4 @@
-\subsection{MxFusion}
-
-\columns{* Work by Eric Meissner and Zhenwen Dai.
-* Probabilistic programming.
-* Available on [Github](https://github.com/amzn/mxfusion)}{\includeimg{../slides/diagrams/mxfusion-logo.png}}{70%}{30%}
+\include{_ml/includes/mxfusion-intro.md}
 
 \subsection{MxFusion}
 
@@ -16,9 +12,9 @@
 \subsection{Why another framework?}
 
 \slides{
-Existing libraries had either:
-* Probabilistic modelling with rich, flexible models and universal inference or
-* Specialized, efficient inference over a subset of models
+* Existing libraries had either:
+  * Probabilistic modelling with rich, flexible models and universal inference or
+  * Specialized, efficient inference over a subset of models
 
 **We needed both**
 }

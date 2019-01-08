@@ -243,8 +243,6 @@ $$</span><br /> in the figure below we plot these data on the <span class="math 
 <li><p>Posterior covariance <br /><span class="math display">$$\covarianceMatrix_* = \kernelMatrix_{*,*} - \kernelMatrix_{*,\mappingFunctionVector}
 \kernelMatrix^{-1} \kernelMatrix_{\mappingFunctionVector, *}$$</span><br /></p></li>
 </ul>
-<p><br />
-</p>
 <h3 id="exponentiated-quadratic-covariance">Exponentiated Quadratic Covariance</h3>
 <p>The exponentiated quadratic covariance, also known as the Gaussian covariance or the RBF covariance and the squared exponential. Covariance between two points is related to the negative exponential of the squared distnace between those points. This covariance function can be derived in a few different ways: as the infinite limit of a radial basis function neural network, as diffusion in the heat equation, as a Gaussian filter in <em>Fourier space</em> or as the composition as a series of linear filters applied to a base function.</p>
 <p>The covariance takes the following form, <br /><span class="math display">$$
@@ -355,6 +353,12 @@ _ = m_clean.optimize()</code></pre>
 <div style="text-align:center">
 <img class="" src="../slides/diagrams/health/Monitor.gif" width="negate" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 </div>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/ml/bialik-fridaythe13th-1.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</div>
+<center>
+<em>This is a retrospective analysis of US births by Aki Vehtari. The challenges of forecasting. Even with seasonal and weekly effects removed there are significant effects on holidays, weekends, etc. </em>
+</center>
 <h3 id="basis-function-covariance">Basis Function Covariance</h3>
 <p>The fixed basis function covariance just comes from the properties of a multivariate Gaussian, if we decide <br /><span class="math display">$$
 \mappingFunctionVector=\basisMatrix\mappingVector
@@ -442,7 +446,7 @@ $$</span><br /></p>
 </tr>
 </table>
 <div style="text-align:center">
-<img class="" src="../slides/diagrams/gp/gpy.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+<img class="" src="../slides/diagrams/gp/gpy.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 </div>
 <center>
 <a href="https://github.com/SheffieldML/GPy" class="uri">https://github.com/SheffieldML/GPy</a>

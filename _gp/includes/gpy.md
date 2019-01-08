@@ -1,6 +1,6 @@
 \newslide{GPy: A Gaussian Process Framework in Python}
 
-\includepng{../slides/diagrams/gp/gpy}
+\includepng{../slides/diagrams/gp/gpy}{70%}
 
 \aligncenter{<https://github.com/SheffieldML/GPy>}
 
