@@ -266,6 +266,9 @@ $$</span><br /> where <span class="math inline">ℓ</span> is the <em>length sca
 </td>
 </tr>
 </table>
+<center>
+<em>The exponentiated quadratic covariance function. </em>
+</center>
 <h3 id="olympic-marathon-data">Olympic Marathon Data</h3>
 <table>
 <tr>
@@ -333,6 +336,39 @@ y_clean=np.vstack((y[0:2, :], y[3:, :]))
 
 m_clean = GPy.models.GPRegression(x_clean,y_clean)
 _ = m_clean.optimize()</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">gpoptimizeInit</code></pre></div>
+<p>Can we determine covariance parameters from the data?</p>
+<p><br /><span class="math display">$$\gaussianDist{\dataVector}{\mathbf{0}}{\kernelMatrix}=\frac{1}{(2\pi)^\frac{\numData}{2}{\det{\kernelMatrix}^{\frac{1}{2}}}}{\exp\left(-\frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}\right)}$$</span><br /></p>
+<p><br /><span class="math display">$$\begin{aligned}
+    \gaussianDist{\dataVector}{\mathbf{0}}{\kernelMatrix}=\frac{1}{(2\pi)^\frac{\numData}{2}{\color{yellow} \det{\kernelMatrix}^{\frac{1}{2}}}}{\color{cyan}\exp\left(-\frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}\right)}
+    \end{aligned}$$</span><br /></p>
+<p><br /><span class="math display">$$\begin{aligned}
+    \log \gaussianDist{\dataVector}{\mathbf{0}}{\kernelMatrix}=&amp;{\color{yellow}-\frac{1}{2}\log\det{\kernelMatrix}}{\color{cyan}-\frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}} \\ &amp;-\frac{\numData}{2}\log2\pi
+    \end{aligned}$$</span><br />  <br /><span class="math display">$$\errorFunction(\parameterVector) = {\color{yellow} \frac{1}{2}\log\det{\kernelMatrix}} + {\color{cyan} \frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}}$$</span><br /></p>
+<p>The parameters are <em>inside</em> the covariance function (matrix). <br /><span class="math display">$$\kernelScalar_{i, j} = \kernelScalar(\inputVals_i, \inputVals_j; \parameterVector)$$</span><br /></p>
+<p><span><br /><span class="math display">$$\kernelMatrix = \rotationMatrix \eigenvalueMatrix^2 \rotationMatrix^\top$$</span><br /></span></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">gpoptimizePlot1</code></pre></div>
+<table>
+<tr>
+<td width="50%">
+<div style="text-align:center">
+<img class="negate" src="../slides/diagrams/gp/gp-optimize-eigen.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</div>
+</td>
+<td width="50%">
+<span class="math inline">$\eigenvalueMatrix$</span> represents distance on axes. <span class="math inline">$\rotationMatrix$</span> gives rotation.
+</td>
+</tr>
+</table>
+<p><span class="math inline">$\eigenvalueMatrix$</span> is <em>diagonal</em>, <span class="math inline">$\rotationMatrix^\top\rotationMatrix = \eye$</span>. Useful representation since <span class="math inline">$\det{\kernelMatrix} = \det{\eigenvalueMatrix^2} = \det{\eigenvalueMatrix}^2$</span>.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">gpoptimizePlot2</code></pre></div>
+<p></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">gpoptimizePlot3</code></pre></div>
+<p></p>
+<p>Can we determine length scales and noise levels from the data?</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">gpoptimizePlot4</code></pre></div>
+<p></p>
+<p><br /><span class="math display">$$\errorFunction(\parameterVector) = {\color{yellow}\frac{1}{2}\log\det{\kernelMatrix}}+{\color{cyan}\frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}}$$</span><br /></p>
 <h3 id="della-gatta-gene-data">Della Gatta Gene Data</h3>
 <ul>
 <li>Given given expression levels in the form of a time series from <span class="citation">Della Gatta et al. (2008)</span>.</li>
@@ -395,21 +431,52 @@ _ <span class="op">=</span> m_full3.optimize() <span class="co"># Optimize param
 <em>Data SRTM/NASA from <a href="https://dds.cr.usgs.gov/srtm/version2_1" class="uri">https://dds.cr.usgs.gov/srtm/version2_1</a> </em>
 </center>
 <p><span style="text-align:right"><span class="citation">(Andrade-Pacheco et al. 2014,<span class="citation">Mubangizi et al. (2014)</span>)</span></span></p>
+<object class="svgplot " align="70%" data="../slides/diagrams/health/Nagongera_District_in_Uganda.svg" style>
+</object>
+<object class="svgplot " align="70%" data="../slides/diagrams/health/Kapchorwa_District_in_Uganda.svg" style>
+</object>
+<object class="svgplot " align="70%" data="../slides/diagrams/health/Tororo_District_in_Uganda.svg" style>
+</object>
 <div style="text-align:center">
 <img class="negate" src="../slides/diagrams/health/sentinel_nagongera.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 </div>
+<object class="svgplot " align="70%" data="../slides/diagrams/health/Mubende_District_in_Uganda.svg" style>
+</object>
 <div style="text-align:center">
 <img class="negate" src="../slides/diagrams/health/mubende.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 </div>
 <div style="text-align:center">
 <img class="" src="../slides/diagrams/gpss/1157497_513423392066576_1845599035_n.jpg" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 </div>
+<object class="svgplot " align="70%" data="../slides/diagrams/health/Kabarole_District_in_Uganda.svg" style>
+</object>
 <div style="text-align:center">
 <img class="" src="../slides/diagrams/health/kabarole.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 </div>
 <div style="text-align:center">
 <img class="" src="../slides/diagrams/health/monitor.gif" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 </div>
+<h3 id="additive-covariance">Additive Covariance</h3>
+<p>An additive covariance function is derived from considering the result of summing two Gaussian processes together. If the first Gaussian process is <span class="math inline"><em>g</em>(⋅)</span>, governed by covariance <span class="math inline">$\kernelScalar_g(\cdot, \cdot)$</span> and the second process is <span class="math inline"><em>h</em>(⋅)</span>, governed by covariance <span class="math inline">$\kernelScalar_h(\cdot, \cdot)$</span> then the combined process <span class="math inline"><em>f</em>(⋅)=<em>g</em>(⋅)+<em>h</em>(⋅)</span> is govererned by a covariance function, <br /><span class="math display">$$
+\kernelScalar_f(\inputVector, \inputVector^\prime) = \kernelScalar_g(\inputVector, \inputVector^\prime) + \kernelScalar_h(\inputVector, \inputVector^\prime)
+$$</span><br /></p>
+<center>
+<br /><span class="math display">$$\kernelScalar_f(\inputVector, \inputVector^\prime) = \kernelScalar_g(\inputVector, \inputVector^\prime) + \kernelScalar_h(\inputVector, \inputVector^\prime)$$</span><br />
+</center>
+<br>
+<table>
+<tr>
+<td width="45%">
+<object class align data="../slides/diagrams/kern/add_covariance.svg">
+</object>
+<td width="45%">
+<img class="negate" src="../slides/diagrams/kern/add_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</td>
+</tr>
+</table>
+<center>
+<em>An additive covariance function formed by combining two exponentiated quadratic covariance functions. </em>
+</center>
 <div style="text-align:center">
 <img class="" src="../slides/diagrams/ml/bialik-fridaythe13th-1.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 </div>
@@ -440,7 +507,6 @@ $$</span><br /> meaning that the vector of observations from the function is joi
 </td>
 </tr>
 </table>
-{
 <center>
 <em>A covariance function based on a non-linear basis given by <span class="math inline">$\basisVector(\inputVector)$</span>. </em>
 </center>

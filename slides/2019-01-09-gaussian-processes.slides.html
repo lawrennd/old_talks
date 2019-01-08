@@ -1102,6 +1102,64 @@ showDivs(13, 'two_point_sample3');
 </object>
 </div>
 </section>
+<section id="learning-covariance-parameters" class="slide level3">
+<h3>Learning Covariance Parameters</h3>
+<p>Can we determine covariance parameters from the data?</p>
+</section>
+<section id="section-13" class="slide level3">
+<h3></h3>
+<p><span class="math display">\[\gaussianDist{\dataVector}{\mathbf{0}}{\kernelMatrix}=\frac{1}{(2\pi)^\frac{\numData}{2}{\det{\kernelMatrix}^{\frac{1}{2}}}}{\exp\left(-\frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}\right)}\]</span></p>
+</section>
+<section id="section-14" class="slide level3">
+<h3></h3>
+<p><span class="math display">\[\begin{aligned}
+    \gaussianDist{\dataVector}{\mathbf{0}}{\kernelMatrix}=\frac{1}{(2\pi)^\frac{\numData}{2}{\color{yellow} \det{\kernelMatrix}^{\frac{1}{2}}}}{\color{cyan}\exp\left(-\frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}\right)}
+    \end{aligned}\]</span></p>
+</section>
+<section id="section-15" class="slide level3">
+<h3></h3>
+<p><span class="math display">\[\begin{aligned}
+    \log \gaussianDist{\dataVector}{\mathbf{0}}{\kernelMatrix}=&amp;{\color{yellow}-\frac{1}{2}\log\det{\kernelMatrix}}{\color{cyan}-\frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}} \\ &amp;-\frac{\numData}{2}\log2\pi
+    \end{aligned}\]</span>  <span class="math display">\[\errorFunction(\parameterVector) = {\color{yellow} \frac{1}{2}\log\det{\kernelMatrix}} + {\color{cyan} \frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}}\]</span></p>
+</section>
+<section id="section-16" class="slide level3">
+<h3></h3>
+<p>The parameters are <em>inside</em> the covariance function (matrix). <span class="math display">\[\kernelScalar_{i, j} = \kernelScalar(\inputVals_i, \inputVals_j; \parameterVector)\]</span></p>
+</section>
+<section id="eigendecomposition-of-covariance" class="slide level3">
+<h3>Eigendecomposition of Covariance</h3>
+<p><span><span class="math display">\[\kernelMatrix = \rotationMatrix \eigenvalueMatrix^2 \rotationMatrix^\top\]</span></span></p>
+<table>
+<tr>
+<td width="50%">
+<div style="text-align:center">
+<img class="negate" src="../slides/diagrams/gp/gp-optimize-eigen.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
+</td>
+<td width="50%">
+<span class="math inline">\(\eigenvalueMatrix\)</span> represents distance on axes. <span class="math inline">\(\rotationMatrix\)</span> gives rotation.
+</td>
+</tr>
+</table>
+</section>
+<section id="eigendecomposition-of-covariance-1" class="slide level3">
+<h3>Eigendecomposition of Covariance</h3>
+<p><span class="math inline">\(\eigenvalueMatrix\)</span> is <em>diagonal</em>, <span class="math inline">\(\rotationMatrix^\top\rotationMatrix = \eye\)</span>. Useful representation since <span class="math inline">\(\det{\kernelMatrix} = \det{\eigenvalueMatrix^2} = \det{\eigenvalueMatrix}^2\)</span>.</p>
+</section>
+<section id="capacity-control-coloryellow-log-detkernelmatrix" class="slide level3">
+<h3>Capacity control: <span class="math inline">\({\color{yellow} \log \det{\kernelMatrix}}\)</span></h3>
+<p></p>
+</section>
+<section id="data-fit-colorcyan-fracdatavectortopkernelmatrix-1datavector2" class="slide level3">
+<h3>Data Fit: <span class="math inline">\({\color{cyan} \frac{\dataVector^\top\kernelMatrix^{-1}\dataVector}{2}}\)</span></h3>
+<p></p>
+</section>
+<section id="learning-covariance-parameters-1" class="slide level3">
+<h3>Learning Covariance Parameters</h3>
+<p>Can we determine length scales and noise levels from the data?</p>
+<p></p>
+<p><span class="math display">\[\errorFunction(\parameterVector) = {\color{yellow}\frac{1}{2}\log\det{\kernelMatrix}}+{\color{cyan}\frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}}\]</span></p>
+</section>
 <section id="della-gatta-gene-data" class="slide level3">
 <h3>Della Gatta Gene Data</h3>
 <ul>
@@ -1123,7 +1181,7 @@ showDivs(13, 'two_point_sample3');
 <li>Want to detect if a gene is expressed or not, fit a GP to each gene <span class="citation" data-cites="Kalaitzis:simple11">Kalaitzis and Lawrence (2011)</span>.</li>
 </ul>
 </section>
-<section id="section-13" class="slide level3">
+<section id="section-17" class="slide level3">
 <h3></h3>
 [
 <div style="text-align:center">
@@ -1131,7 +1189,7 @@ showDivs(13, 'two_point_sample3');
 </div>
 <p>](http://www.biomedcentral.com/1471-2105/12/180)</p>
 </section>
-<section id="section-14" class="slide level3">
+<section id="section-18" class="slide level3">
 <h3></h3>
 </section>
 <section id="tp53-gene-data-gp" class="slide level3">
@@ -1167,13 +1225,39 @@ showDivs(13, 'two_point_sample3');
 </center>
 <p><span style="text-align:right"><span class="citation" data-cites="Andrade:consistent14">(Andrade-Pacheco et al., 2014,<span class="citation" data-cites="Mubangizi:malaria14">Mubangizi et al. (2014)</span>)</span></span></p>
 </section>
-<section id="malaria-prediction-in-uganda-1" class="slide level3">
-<h3>Malaria Prediction in Uganda</h3>
+<section id="nagongera-district" class="slide level3">
+<h3>Nagongera District</h3>
+<div style="text-align:70%">
+<object class="svgplot " align="70%" data="../slides/diagrams/health/Nagongera_District_in_Uganda.svg" style>
+</object>
+</div>
+</section>
+<section id="kapchorwa-district" class="slide level3">
+<h3>Kapchorwa District</h3>
+<div style="text-align:70%">
+<object class="svgplot " align="70%" data="../slides/diagrams/health/Kapchorwa_District_in_Uganda.svg" style>
+</object>
+</div>
+<p>### Tororo District</p>
+<div style="text-align:70%">
+<object class="svgplot " align="70%" data="../slides/diagrams/health/Tororo_District_in_Uganda.svg" style>
+</object>
+</div>
+</section>
+<section id="malaria-prediction-in-nagongera-sentinel-site" class="slide level3">
+<h3>Malaria Prediction in Nagongera (Sentinel Site)</h3>
 <div style="text-align:center">
 <img class="negate" src="../slides/diagrams/health/sentinel_nagongera.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
 </div>
 </section>
-<section id="malaria-prediction-in-uganda-2" class="slide level3">
+<section id="mubende-district" class="slide level3">
+<h3>Mubende District</h3>
+<div style="text-align:70%">
+<object class="svgplot " align="70%" data="../slides/diagrams/health/Mubende_District_in_Uganda.svg" style>
+</object>
+</div>
+</section>
+<section id="malaria-prediction-in-uganda-1" class="slide level3">
 <h3>Malaria Prediction in Uganda</h3>
 <div style="text-align:center">
 <img class="negate" src="../slides/diagrams/health/mubende.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
@@ -1183,6 +1267,13 @@ showDivs(13, 'two_point_sample3');
 <h3>GP School at Makerere</h3>
 <div style="text-align:center">
 <img class="" src="../slides/diagrams/gpss/1157497_513423392066576_1845599035_n.jpg" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
+</section>
+<section id="kabarole-district" class="slide level3">
+<h3>Kabarole District</h3>
+<div style="text-align:70%">
+<object class="svgplot " align="70%" data="../slides/diagrams/health/Kabarole_District_in_Uganda.svg" style>
+</object>
 </div>
 </section>
 <section id="early-warning-systems" class="slide level3">
@@ -1197,7 +1288,24 @@ showDivs(13, 'two_point_sample3');
 <img class="" src="../slides/diagrams/health/monitor.gif" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
 </div>
 </section>
-<section id="section-15" class="slide level3">
+<section id="additive-covariance" class="slide level3">
+<h3>Additive Covariance</h3>
+<center>
+<span class="math display">\[\kernelScalar_f(\inputVector, \inputVector^\prime) = \kernelScalar_g(\inputVector, \inputVector^\prime) + \kernelScalar_h(\inputVector, \inputVector^\prime)\]</span>
+</center>
+<br>
+<table>
+<tr>
+<td width="45%">
+<object class align data="../slides/diagrams/kern/add_covariance.svg">
+</object>
+<td width="45%">
+<img class="negate" src="../slides/diagrams/kern/add_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</td>
+</tr>
+</table>
+</section>
+<section id="section-19" class="slide level3">
 <h3></h3>
 <div style="text-align:center">
 <img class="" src="../slides/diagrams/ml/bialik-fridaythe13th-1.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
@@ -1237,10 +1345,6 @@ showDivs(13, 'two_point_sample3');
 </td>
 </tr>
 </table>
-{
-<center>
-<em>A covariance function based on a non-linear basis given by <span class="math inline">\(\basisVector(\inputVector)\)</span>. </em>
-</center>
 </section>
 <section id="brownian-covariance" class="slide level3">
 <h3>Brownian Covariance</h3>

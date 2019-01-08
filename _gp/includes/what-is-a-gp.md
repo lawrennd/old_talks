@@ -104,8 +104,12 @@ There are also challenges around specification of the objective function, but fo
 \include{_kern/includes/eq-covariance.md}
 
 \include{_gp/includes/olympic-marathon-gp.md}
+\include{_gp/includes/gp-optimize.md}
+
 \include{_gp/includes/della-gatta-gene-gp.md}
 \include{_health/includes/malaria.md}
+
+\include{_kern/includes/add-covariance.md}
 \include{_gp/includes/bda-forecasting.md}
 
 \include{_kern/includes/basis-covariance.md}
