@@ -22,6 +22,11 @@ transition: None
 \include{talk-macros.tex}
 \include{_gp/includes/what-is-a-gp.md}
 
+\include{_gp/includes/gpss.md}
+\include{_gp/includes/gpy.md}
+\include{_gp/includes/other-software.md}
+\include{_ml/includes/mxfusion.md}
+
 \subsection{Acknowledgments}
 
 Stefanos Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Dai, Javier Gonzalez, Andreas Damianou, Mark Pullin.
@@ -43,4 +48,3 @@ Stefanos Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Dai
 
 TODO: PARAMETER OPTIMIZATION
 TODO: SPATIAL DATA
-TODO: MALARIA EXAMPLE

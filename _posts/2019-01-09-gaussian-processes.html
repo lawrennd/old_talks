@@ -349,8 +349,12 @@ _ = m_clean.optimize()</code></pre>
 <div style="text-align:center">
 <img class="" src="../slides/diagrams/gpss/1157497_513423392066576_1845599035_n.jpg" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 </div>
-
-
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/health/Kabarole.gif" width="negate" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</div>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/health/Monitor.gif" width="negate" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</div>
 <h3 id="basis-function-covariance">Basis Function Covariance</h3>
 <p>The fixed basis function covariance just comes from the properties of a multivariate Gaussian, if we decide <br /><span class="math display">$$
 \mappingFunctionVector=\basisMatrix\mappingVector
@@ -422,10 +426,82 @@ $$</span><br /></p>
 <center>
 <em>The multi-layer perceptron covariance function. This is derived by considering the infinite limit of a neural network with probit activation functions. </em>
 </center>
+<pre><code>&lt;span style=&quot;text-align:right&quot;&gt;&lt;object class=&quot;svgplot &quot; align=&quot;2.5cm&quot; data=&quot;../slides/diagrams/gpss-logo.svg&quot; style=&quot;&quot;&gt;&lt;/object&gt;&lt;/span&gt;</code></pre>
+<ul>
+<li><a href="http://ml.dcs.shef.ac.uk/gpss/" class="uri">http://ml.dcs.shef.ac.uk/gpss/</a></li>
+<li>Next one is in Sheffield in <em>September 2019</em>.</li>
+<li>Many lectures from past meetings available online</li>
+<li>Introductions to GPs from Carl Rasmussen, Rich Turner, Philipp Hennig, Rich Wilkinson, Jeremy Oakleyxs</li>
+</ul>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/gp/gpy.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</div>
+<center>
+<a href="https://github.com/SheffieldML/GPy" class="uri">https://github.com/SheffieldML/GPy</a>
+</center>
+<ul>
+<li>BSD Licensed software base.</li>
+<li>Wide availability of libraries, ``modern'' scripting language.</li>
+<li>Allows us to set projects to undergraduates in Comp Sci that use GPs.</li>
+<li>Available through GitHub </li>
+<li><p>Reproducible Research with IPython Notebook.</p></li>
+<li>Non-Gaussian likelihoods.</li>
+<li>Multivariate outputs.</li>
+<li>Dimensionality reduction.</li>
+<li>Approximations for large data sets.</li>
+<li>Probabilistic-style programming (specify the model, not the algorithm).</li>
+<li>A range of covariance functions, ability to implement your own symbolically.</li>
+<li><p>Data missing at random.</p></li>
+<li><a href="https://github.com/GPflow/GPflow">GPflow</a></li>
+<li><p><a href="https://github.com/cornellius-gp/gpytorch">GPyTorch</a></p></li>
+</ul>
+<h3 id="mxfusion">MxFusion</h3>
+<table>
+<tr>
+<td width="70%">
+<ul>
+<li>Work by Eric Meissner and Zhenwen Dai.</li>
+<li>Probabilistic programming.</li>
+<li>Available on <a href="https://github.com/amzn/mxfusion">Github</a>
+</td>
+<td width="30%">
+<img class="" src="../slides/diagrams/mxfusion-logo.png" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</td>
+</tr>
+</table></li>
+</ul>
+<h3 id="mxfusion-1">MxFusion</h3>
+<h3 id="why-another-framework">Why another framework?</h3>
+<h3 id="key-requirements">Key Requirements</h3>
+<p>Specialized inference methods + models, without requiring users to reimplement nor understand them every time. Leverage expert knowledge. Efficient inference, flexible framework. Existing frameworks either did one or the other: flexible, or efficient.</p>
+<h3 id="what-does-it-look-like">What does it look like?</h3>
+<p><strong>Modelling</strong></p>
+<p><strong>Inference</strong></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m <span class="op">=</span> Model()
+m.mu <span class="op">=</span> Variable()
+m.s <span class="op">=</span> Variable(transformation<span class="op">=</span>PositiveTransformation())
+m.Y <span class="op">=</span> Normal.define_variable(mean<span class="op">=</span>m.mu, variance<span class="op">=</span>m.s)</code></pre></div>
+<ul>
+<li>Variable</li>
+<li>Distribution</li>
+<li><p>Function</p></li>
+<li><code>log_pdf</code></li>
+<li><p><code>draw_samples</code></p></li>
+<li>Variational Inference</li>
+<li><p>MCMC Sampling (<em>soon</em>) Built on MXNet Gluon (imperative code, not static graph)</p></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">infr <span class="op">=</span> GradBasedInference(inference_algorithm<span class="op">=</span>MAP(model<span class="op">=</span>m, observed<span class="op">=</span>[m.Y]))
+infr.run(Y<span class="op">=</span>data)</code></pre></div>
+<ul>
+<li>Model + Inference together form building blocks.
+<ul>
+<li>Just doing modular modeling with universal inference doesn't really scale, need specialized inference methods for specialized modelling objects like non-parametrics.</li>
+</ul></li>
+</ul>
 <h3 id="acknowledgments">Acknowledgments</h3>
 <p>Stefanos Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Dai, Javier Gonzalez, Andreas Damianou, Mark Pullin.</p>
 <h3 id="references">References</h3>
-<p>TODO: PARAMETER OPTIMIZATION TODO: SPATIAL DATA TODO: MALARIA EXAMPLE</p>
+<p>TODO: PARAMETER OPTIMIZATION TODO: SPATIAL DATA</p>
 <div id="refs" class="references">
 <div id="ref-Andrade:consistent14">
 <p>Andrade-Pacheco, Ricardo, Martin Mubangizi, John Quinn, and Neil D. Lawrence. 2014. “Consistent Mapping of Government Malaria Records Across a Changing Territory Delimitation.” <em>Malaria Journal</em> 13 (Suppl 1). doi:<a href="https://doi.org/10.1186/1475-2875-13-S1-P5">10.1186/1475-2875-13-S1-P5</a>.</p>

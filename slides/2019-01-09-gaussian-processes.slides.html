@@ -15,6 +15,43 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
   <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
   <link rel="stylesheet" href="talks.css"/>
   <!-- Printing and PDF exports -->
@@ -1132,11 +1169,15 @@ showDivs(13, 'two_point_sample3');
 </section>
 <section id="early-warning-systems" class="slide level3">
 <h3>Early Warning Systems</h3>
-
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/health/Kabarole.gif" width="negate" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
 </section>
 <section id="early-warning-systems-1" class="slide level3">
 <h3>Early Warning Systems</h3>
-
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/health/Monitor.gif" width="negate" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
 </section>
 <section id="basis-function-covariance" class="slide level3">
 <h3>Basis Function Covariance</h3>
@@ -1200,6 +1241,168 @@ showDivs(13, 'two_point_sample3');
 </tr>
 </table>
 </section>
+<section id="gpss-gaussian-process-summer-school" class="slide level3">
+<h3>GPSS: Gaussian Process Summer School</h3>
+<pre><code>&lt;span style=&quot;text-align:right&quot;&gt;&lt;div style=&quot;text-align:2.5cm&quot; class=&quot;&quot;&gt;&lt;object class=&quot;svgplot &quot; align=&quot;2.5cm&quot; data=&quot;../slides/diagrams/gpss-logo.svg&quot; style=&quot;&quot;&gt;&lt;/object&gt;&lt;/div&gt;&lt;/span&gt;</code></pre>
+<ul>
+<li><a href="http://ml.dcs.shef.ac.uk/gpss/" class="uri">http://ml.dcs.shef.ac.uk/gpss/</a></li>
+<li>Next one is in Sheffield in <em>September 2019</em>.</li>
+<li>Many lectures from past meetings available online</li>
+<li>Introductions to GPs from Carl Rasmussen, Rich Turner, Philipp Hennig, Rich Wilkinson, Jeremy Oakleyxs</li>
+</ul>
+</section>
+<section id="gpy-a-gaussian-process-framework-in-python" class="slide level3">
+<h3>GPy: A Gaussian Process Framework in Python</h3>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/gp/gpy.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
+<center>
+<a href="https://github.com/SheffieldML/GPy" class="uri">https://github.com/SheffieldML/GPy</a>
+</center>
+</section>
+<section id="gpy-a-gaussian-process-framework-in-python-1" class="slide level3">
+<h3>GPy: A Gaussian Process Framework in Python</h3>
+<ul>
+<li>BSD Licensed software base.</li>
+<li>Wide availability of libraries, ``modern’’ scripting language.</li>
+<li>Allows us to set projects to undergraduates in Comp Sci that use GPs.</li>
+<li>Available through GitHub </li>
+<li>Reproducible Research with IPython Notebook.</li>
+</ul>
+</section>
+<section id="features-present-and-imminent" class="slide level3">
+<h3>Features, Present and Imminent</h3>
+<ul>
+<li>Non-Gaussian likelihoods.</li>
+<li>Multivariate outputs.</li>
+<li>Dimensionality reduction.</li>
+<li>Approximations for large data sets.</li>
+<li>Probabilistic-style programming (specify the model, not the algorithm).</li>
+<li>A range of covariance functions, ability to implement your own symbolically.</li>
+<li>Data missing at random.</li>
+</ul>
+</section>
+<section id="other-software" class="slide level3">
+<h3>Other Software</h3>
+<ul>
+<li><a href="https://github.com/GPflow/GPflow">GPflow</a></li>
+<li><a href="https://github.com/cornellius-gp/gpytorch">GPyTorch</a></li>
+</ul>
+</section>
+<section id="mxfusion" class="slide level3">
+<h3>MxFusion</h3>
+<table>
+<tr>
+<td width="70%">
+<ul>
+<li>Work by Eric Meissner and Zhenwen Dai.</li>
+<li>Probabilistic programming.</li>
+<li>Available on <a href="https://github.com/amzn/mxfusion">Github</a>
+</td>
+<td width="30%">
+<img class="" src="../slides/diagrams/mxfusion-logo.png" width="" height="auto" align="" style="background:none; border:none; box-shadow:none;">
+</td>
+</tr>
+</table></li>
+</ul>
+</section>
+<section id="mxfusion-1" class="slide level3">
+<h3>MxFusion</h3>
+<ul>
+<li>Targeted at challenges we face in emulation.</li>
+<li>Composition of Gaussian processes (Deep GPs)</li>
+<li>Combining GPs with neural networks.</li>
+<li>Example <a href="https://github.com/amzn/MXFusion/blob/master/examples/notebooks/ppca_tutorial.ipynb">PPCA Tutorial</a>.</li>
+</ul>
+</section>
+<section id="why-another-framework" class="slide level3">
+<h3>Why another framework?</h3>
+<p>Existing libraries had either: * Probabilistic modelling with rich, flexible models and universal inference or * Specialized, efficient inference over a subset of models</p>
+<p><strong>We needed both</strong></p>
+</section>
+<section id="key-requirements" class="slide level3">
+<h3>Key Requirements</h3>
+<ul>
+<li>Integration with deep learning</li>
+<li>Flexiblility</li>
+<li>Scalability</li>
+<li>Specialized inference and models support
+<ul>
+<li>Bayesian Deep Learning methods</li>
+<li>Rapid prototyping and software re-use</li>
+<li>GPUs, specialized inference methods</li>
+</ul></li>
+</ul>
+</section>
+<section id="modularity" class="slide level3">
+<h3>Modularity</h3>
+<ul>
+<li>Specialized Inference</li>
+<li>Composability (tinkerability)
+<ul>
+<li>Better leveraging of expert expertise</li>
+</ul></li>
+</ul>
+</section>
+<section id="what-does-it-look-like" class="slide level3">
+<h3>What does it look like?</h3>
+<p><strong>Modelling</strong></p>
+<p><strong>Inference</strong></p>
+</section>
+<section id="modelling" class="slide level3">
+<h3>Modelling</h3>
+</section>
+<section id="directed-graphs" class="slide level3">
+<h3>Directed Graphs</h3>
+<ul>
+<li>Variable</li>
+<li>Function</li>
+<li>Distribution</li>
+</ul>
+</section>
+<section id="example" class="slide level3">
+<h3>Example</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m <span class="op">=</span> Model()
+m.mu <span class="op">=</span> Variable()
+m.s <span class="op">=</span> Variable(transformation<span class="op">=</span>PositiveTransformation())
+m.Y <span class="op">=</span> Normal.define_variable(mean<span class="op">=</span>m.mu, variance<span class="op">=</span>m.s)</code></pre></div>
+</section>
+<section id="primary-components-in-modeling" class="slide level3">
+<h3>3 primary components in modeling</h3>
+<ul>
+<li>Variable</li>
+<li>Distribution</li>
+<li>Function</li>
+</ul>
+</section>
+<section id="primary-methods-for-models" class="slide level3">
+<h3>2 primary methods for models</h3>
+<ul>
+<li><code>log_pdf</code></li>
+<li><code>draw_samples</code></li>
+</ul>
+</section>
+<section id="inference-two-classes" class="slide level3">
+<h3>Inference: Two Classes</h3>
+<ul>
+<li>Variational Inference</li>
+<li>MCMC Sampling (<em>soon</em>) Built on MXNet Gluon (imperative code, not static graph)</li>
+</ul>
+</section>
+<section id="example-1" class="slide level3">
+<h3>Example</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">infr <span class="op">=</span> GradBasedInference(inference_algorithm<span class="op">=</span>MAP(model<span class="op">=</span>m, observed<span class="op">=</span>[m.Y]))
+infr.run(Y<span class="op">=</span>data)</code></pre></div>
+</section>
+<section id="modules" class="slide level3">
+<h3>Modules</h3>
+<ul>
+<li>Model + Inference together form building blocks.
+<ul>
+<li>Just doing modular modeling with universal inference doesn’t really scale, need specialized inference methods for specialized modelling objects like non-parametrics.</li>
+</ul></li>
+</ul>
+</section>
 <section id="acknowledgments" class="slide level3">
 <h3>Acknowledgments</h3>
 <p>Stefanos Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Dai, Javier Gonzalez, Andreas Damianou, Mark Pullin.</p>
@@ -1213,7 +1416,7 @@ showDivs(13, 'two_point_sample3');
 </section>
 <section id="references" class="slide level3">
 <h3>References</h3>
-<p>TODO: PARAMETER OPTIMIZATION TODO: SPATIAL DATA TODO: MALARIA EXAMPLE</p>
+<p>TODO: PARAMETER OPTIMIZATION TODO: SPATIAL DATA</p>
 <div id="refs" class="references">
 <div id="ref-Andrade:consistent14">
 <p>Andrade-Pacheco, R., Mubangizi, M., Quinn, J., Lawrence, N.D., 2014. Consistent mapping of government malaria records across a changing territory delimitation. Malaria Journal 13. <a href="https://doi.org/10.1186/1475-2875-13-S1-P5" class="uri">https://doi.org/10.1186/1475-2875-13-S1-P5</a></p>

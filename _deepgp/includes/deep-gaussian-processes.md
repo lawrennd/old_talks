@@ -1,3 +1,5 @@
+
+\include{_gp/includes/mackay-bathwater.md}
 \include{_deepgp/includes/deep-nn-gp.md}
 \include{_deepgp/includes/deeptheory.md}
 

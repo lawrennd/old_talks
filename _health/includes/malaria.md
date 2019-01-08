@@ -24,9 +24,9 @@
 
 \newslide{Early Warning Systems}
 
-\includegif{../slides/diagrams/health/Kabarole.gif}{negate}
+\includegif{../slides/diagrams/health/Kabarole}{negate}
 
 \newslide{Early Warning Systems}
 
-\includegif{../slides/diagrams/health/Monitor.gif}{negate}
+\includegif{../slides/diagrams/health/Monitor}{negate}
 
