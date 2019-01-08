@@ -1,3 +1,4 @@
+\define{\formula}{\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\ltwoNorm{\inputVector-\inputVector^\prime}^2}{2\lengthScale^2}\right)}
 
 \loadplotcode{Kernel}{mlai}
 \loadplotcode{eq_cov}{mlai}

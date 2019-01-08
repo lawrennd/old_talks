@@ -55,7 +55,7 @@ YouTubeVideo('\id')
 
 \define{\columns{one}{two}{width1}{width2}}{<table><tr><td width="\width1">\one</td><td width="\width2">\two</td></tr></table>}
 
-\define{\includecovariance{shortname}}{<table><tr><td width="45%">\includesvgclass{../slides/diagrams/kern/\concat{\shortname}{_covariance.svg}}<td width="45%">\includeimg{../slides/diagrams/kern/\concat{\shortname}{_covariance.gif}}{100%}{negate}{center}</td></tr></table>}
+\define{\includecovariance{shortname}}{\columns{\includesvgclass{../slides/diagrams/kern/\concat{\shortname}{_covariance.svg}}}{\includegif{../slides/diagrams/kern/\concat{\shortname}{_covariance}}{100%}{negate}}{45%}{45%}}
 
 
 \ifdef{slides} <!-- ipynb and slides-->

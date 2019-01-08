@@ -15,43 +15,6 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-  </style>
   <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
   <link rel="stylesheet" href="talks.css"/>
   <!-- Printing and PDF exports -->
@@ -1067,7 +1030,7 @@ showDivs(13, 'two_point_sample3');
 <section id="exponentiated-quadratic-covariance" class="slide level3">
 <h3>Exponentiated Quadratic Covariance</h3>
 <center>
-<span class="math display">\[\formula\]</span>
+<span class="math display">\[\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\ltwoNorm{\inputVector-\inputVector^\prime}^2}{2\lengthScale^2}\right)\]</span>
 </center>
 <br>
 <table>
@@ -1319,6 +1282,15 @@ showDivs(13, 'two_point_sample3');
 <li><a href="https://github.com/cornellius-gp/gpytorch">GPyTorch</a></li>
 </ul>
 </section>
+<section id="mxfusion-modular-probabilistic-programming-on-mxnet" class="slide level3">
+<h3>MXFusion: Modular Probabilistic Programming on MXNet</h3>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/ml/mxfusion.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+</div>
+<center>
+<a href="https://github.com/amzn/MXFusion" class="uri">https://github.com/amzn/MXFusion</a>
+</center>
+</section>
 <section id="mxfusion" class="slide level3">
 <h3>MxFusion</h3>
 <table>
@@ -1336,103 +1308,6 @@ showDivs(13, 'two_point_sample3');
 </table></li>
 </ul>
 </section>
-<section id="mxfusion-1" class="slide level3">
-<h3>MxFusion</h3>
-<ul>
-<li>Targeted at challenges we face in emulation.</li>
-<li>Composition of Gaussian processes (Deep GPs)</li>
-<li>Combining GPs with neural networks.</li>
-<li>Example <a href="https://github.com/amzn/MXFusion/blob/master/examples/notebooks/ppca_tutorial.ipynb">PPCA Tutorial</a>.</li>
-</ul>
-</section>
-<section id="why-another-framework" class="slide level3">
-<h3>Why another framework?</h3>
-<p>Existing libraries had either: * Probabilistic modelling with rich, flexible models and universal inference or * Specialized, efficient inference over a subset of models</p>
-<p><strong>We needed both</strong></p>
-</section>
-<section id="key-requirements" class="slide level3">
-<h3>Key Requirements</h3>
-<ul>
-<li>Integration with deep learning</li>
-<li>Flexiblility</li>
-<li>Scalability</li>
-<li>Specialized inference and models support
-<ul>
-<li>Bayesian Deep Learning methods</li>
-<li>Rapid prototyping and software re-use</li>
-<li>GPUs, specialized inference methods</li>
-</ul></li>
-</ul>
-</section>
-<section id="modularity" class="slide level3">
-<h3>Modularity</h3>
-<ul>
-<li>Specialized Inference</li>
-<li>Composability (tinkerability)
-<ul>
-<li>Better leveraging of expert expertise</li>
-</ul></li>
-</ul>
-</section>
-<section id="what-does-it-look-like" class="slide level3">
-<h3>What does it look like?</h3>
-<p><strong>Modelling</strong></p>
-<p><strong>Inference</strong></p>
-</section>
-<section id="modelling" class="slide level3">
-<h3>Modelling</h3>
-</section>
-<section id="directed-graphs" class="slide level3">
-<h3>Directed Graphs</h3>
-<ul>
-<li>Variable</li>
-<li>Function</li>
-<li>Distribution</li>
-</ul>
-</section>
-<section id="example" class="slide level3">
-<h3>Example</h3>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m <span class="op">=</span> Model()
-m.mu <span class="op">=</span> Variable()
-m.s <span class="op">=</span> Variable(transformation<span class="op">=</span>PositiveTransformation())
-m.Y <span class="op">=</span> Normal.define_variable(mean<span class="op">=</span>m.mu, variance<span class="op">=</span>m.s)</code></pre></div>
-</section>
-<section id="primary-components-in-modeling" class="slide level3">
-<h3>3 primary components in modeling</h3>
-<ul>
-<li>Variable</li>
-<li>Distribution</li>
-<li>Function</li>
-</ul>
-</section>
-<section id="primary-methods-for-models" class="slide level3">
-<h3>2 primary methods for models</h3>
-<ul>
-<li><code>log_pdf</code></li>
-<li><code>draw_samples</code></li>
-</ul>
-</section>
-<section id="inference-two-classes" class="slide level3">
-<h3>Inference: Two Classes</h3>
-<ul>
-<li>Variational Inference</li>
-<li>MCMC Sampling (<em>soon</em>) Built on MXNet Gluon (imperative code, not static graph)</li>
-</ul>
-</section>
-<section id="example-1" class="slide level3">
-<h3>Example</h3>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">infr <span class="op">=</span> GradBasedInference(inference_algorithm<span class="op">=</span>MAP(model<span class="op">=</span>m, observed<span class="op">=</span>[m.Y]))
-infr.run(Y<span class="op">=</span>data)</code></pre></div>
-</section>
-<section id="modules" class="slide level3">
-<h3>Modules</h3>
-<ul>
-<li>Model + Inference together form building blocks.
-<ul>
-<li>Just doing modular modeling with universal inference doesn’t really scale, need specialized inference methods for specialized modelling objects like non-parametrics.</li>
-</ul></li>
-</ul>
-</section>
 <section id="acknowledgments" class="slide level3">
 <h3>Acknowledgments</h3>
 <p>Stefanos Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Dai, Javier Gonzalez, Andreas Damianou, Mark Pullin.</p>
@@ -1446,7 +1321,7 @@ infr.run(Y<span class="op">=</span>data)</code></pre></div>
 </section>
 <section id="references" class="slide level3">
 <h3>References</h3>
-<p>TODO: PARAMETER OPTIMIZATION TODO: SPATIAL DATA</p>
+<p>TODO: Additive Covariance TODO: multpilicitabe covariance TODO: PARAMETER OPTIMIZATION TODO: SPATIAL DATA</p>
 <div id="refs" class="references">
 <div id="ref-Andrade:consistent14">
 <p>Andrade-Pacheco, R., Mubangizi, M., Quinn, J., Lawrence, N.D., 2014. Consistent mapping of government malaria records across a changing territory delimitation. Malaria Journal 13. <a href="https://doi.org/10.1186/1475-2875-13-S1-P5" class="uri">https://doi.org/10.1186/1475-2875-13-S1-P5</a></p>

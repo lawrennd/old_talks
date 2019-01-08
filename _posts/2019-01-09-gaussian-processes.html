@@ -246,10 +246,10 @@ $$</span><br /> in the figure below we plot these data on the <span class="math 
 <h3 id="exponentiated-quadratic-covariance">Exponentiated Quadratic Covariance</h3>
 <p>The exponentiated quadratic covariance, also known as the Gaussian covariance or the RBF covariance and the squared exponential. Covariance between two points is related to the negative exponential of the squared distnace between those points. This covariance function can be derived in a few different ways: as the infinite limit of a radial basis function neural network, as diffusion in the heat equation, as a Gaussian filter in <em>Fourier space</em> or as the composition as a series of linear filters applied to a base function.</p>
 <p>The covariance takes the following form, <br /><span class="math display">$$
-\formula
+\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\ltwoNorm{\inputVector-\inputVector^\prime}^2}{2\lengthScale^2}\right)
 $$</span><br /> where <span class="math inline">ℓ</span> is the <em>length scale</em> or <em>time scale</em> of the process and <span class="math inline"><em>α</em></span> represents the overall process variance.</p>
 <center>
-<br /><span class="math display">$$\formula$$</span><br />
+<br /><span class="math display">$$\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\ltwoNorm{\inputVector-\inputVector^\prime}^2}{2\lengthScale^2}\right)$$</span><br />
 </center>
 <br>
 <table>
@@ -465,6 +465,12 @@ $$</span><br /></p>
 <li><a href="https://github.com/GPflow/GPflow">GPflow</a></li>
 <li><p><a href="https://github.com/cornellius-gp/gpytorch">GPyTorch</a></p></li>
 </ul>
+<div style="text-align:center">
+<img class="" src="../slides/diagrams/ml/mxfusion.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</div>
+<center>
+<a href="https://github.com/amzn/MXFusion" class="uri">https://github.com/amzn/MXFusion</a>
+</center>
 <h3 id="mxfusion">MxFusion</h3>
 <table>
 <tr>
@@ -480,38 +486,10 @@ $$</span><br /></p>
 </tr>
 </table></li>
 </ul>
-<h3 id="mxfusion-1">MxFusion</h3>
-<h3 id="why-another-framework">Why another framework?</h3>
-<h3 id="key-requirements">Key Requirements</h3>
-<p>Specialized inference methods + models, without requiring users to reimplement nor understand them every time. Leverage expert knowledge. Efficient inference, flexible framework. Existing frameworks either did one or the other: flexible, or efficient.</p>
-<h3 id="what-does-it-look-like">What does it look like?</h3>
-<p><strong>Modelling</strong></p>
-<p><strong>Inference</strong></p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m <span class="op">=</span> Model()
-m.mu <span class="op">=</span> Variable()
-m.s <span class="op">=</span> Variable(transformation<span class="op">=</span>PositiveTransformation())
-m.Y <span class="op">=</span> Normal.define_variable(mean<span class="op">=</span>m.mu, variance<span class="op">=</span>m.s)</code></pre></div>
-<ul>
-<li>Variable</li>
-<li>Distribution</li>
-<li><p>Function</p></li>
-<li><code>log_pdf</code></li>
-<li><p><code>draw_samples</code></p></li>
-<li>Variational Inference</li>
-<li><p>MCMC Sampling (<em>soon</em>) Built on MXNet Gluon (imperative code, not static graph)</p></li>
-</ul>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">infr <span class="op">=</span> GradBasedInference(inference_algorithm<span class="op">=</span>MAP(model<span class="op">=</span>m, observed<span class="op">=</span>[m.Y]))
-infr.run(Y<span class="op">=</span>data)</code></pre></div>
-<ul>
-<li>Model + Inference together form building blocks.
-<ul>
-<li>Just doing modular modeling with universal inference doesn't really scale, need specialized inference methods for specialized modelling objects like non-parametrics.</li>
-</ul></li>
-</ul>
 <h3 id="acknowledgments">Acknowledgments</h3>
 <p>Stefanos Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Dai, Javier Gonzalez, Andreas Damianou, Mark Pullin.</p>
 <h3 id="references">References</h3>
-<p>TODO: PARAMETER OPTIMIZATION TODO: SPATIAL DATA</p>
+<p>TODO: Additive Covariance TODO: multpilicitabe covariance TODO: PARAMETER OPTIMIZATION TODO: SPATIAL DATA</p>
 <div id="refs" class="references">
 <div id="ref-Andrade:consistent14">
 <p>Andrade-Pacheco, Ricardo, Martin Mubangizi, John Quinn, and Neil D. Lawrence. 2014. “Consistent Mapping of Government Malaria Records Across a Changing Territory Delimitation.” <em>Malaria Journal</em> 13 (Suppl 1). doi:<a href="https://doi.org/10.1186/1475-2875-13-S1-P5">10.1186/1475-2875-13-S1-P5</a>.</p>
