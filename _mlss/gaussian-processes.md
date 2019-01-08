@@ -25,7 +25,7 @@ transition: None
 \include{_gp/includes/gpss.md}
 \include{_gp/includes/gpy.md}
 \include{_gp/includes/other-software.md}
-\include{_ml/includes/mxfusion.md}
+\include{_ml/includes/mxfusion-intro.md}
 
 \subsection{Acknowledgments}
 
