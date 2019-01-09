@@ -1144,20 +1144,236 @@ showDivs(13, 'two_point_sample3');
 </section>
 <section id="eigendecomposition-of-covariance-1" class="slide level3">
 <h3>Eigendecomposition of Covariance</h3>
-<p><span class="math inline">\(\eigenvalueMatrix\)</span> is <em>diagonal</em>, <span class="math inline">\(\rotationMatrix^\top\rotationMatrix = \eye\)</span>. Useful representation since <span class="math inline">\(\det{\kernelMatrix} = \det{\eigenvalueMatrix^2} = \det{\eigenvalueMatrix}^2\)</span>.</p>
+<ul>
+<li><span class="math inline">\(\eigenvalueMatrix\)</span> is <em>diagonal</em>, <span class="math inline">\(\rotationMatrix^\top\rotationMatrix = \eye\)</span>.</li>
+<li>Useful representation since <span class="math inline">\(\det{\kernelMatrix} = \det{\eigenvalueMatrix^2} = \det{\eigenvalueMatrix}^2\)</span>.</li>
+</ul>
 </section>
 <section id="capacity-control-coloryellow-log-detkernelmatrix" class="slide level3">
 <h3>Capacity control: <span class="math inline">\({\color{yellow} \log \det{\kernelMatrix}}\)</span></h3>
-<p></p>
+<!--
+\only<1>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseDeterminant1}}\only<2>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseDeterminant2}}\only<3>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseDeterminant3}}\only<4>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseDeterminant4}}\only<5>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseDeterminant5}}\only<6>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseDeterminant6}}\only<7>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseDeterminant7}}\only<8>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseDeterminant8}}\only<9>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseDeterminant9}}\only<10>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseDeterminant10}}-->
 </section>
 <section id="data-fit-colorcyan-fracdatavectortopkernelmatrix-1datavector2" class="slide level3">
 <h3>Data Fit: <span class="math inline">\({\color{cyan} \frac{\dataVector^\top\kernelMatrix^{-1}\dataVector}{2}}\)</span></h3>
-<p></p>
+<!--
+
+\only<1>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseQuadratic1}}\only<2>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseQuadratic2}}\only<3>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseQuadratic3}}-->
 </section>
 <section id="learning-covariance-parameters-1" class="slide level3">
 <h3>Learning Covariance Parameters</h3>
-<p>Can we determine length scales and noise levels from the data?</p>
-<p></p>
+<script>
+showDivs(0, 'gp-optimise');
+</script>
+<small></small> <input id="range-gp-optimise" type="range" min="0" max="10" value="0" onchange="setDivs('gp-optimise')" oninput="setDivs('gp-optimise')">
+<button onclick="plusDivs(-1, 'gp-optimise')">
+❮
+</button>
+<button onclick="plusDivs(1, 'gp-optimise')">
+❯
+</button>
+<div class="gp-optimise" style="text-align:center;">
+<table>
+<tr>
+<td width="50%">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/gp-optimise000.svg" style>
+</object>
+</div>
+</td>
+<td width="50%">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/gp-optimise001.svg" style>
+</object>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="gp-optimise" style="text-align:center;">
+<table>
+<tr>
+<td width="50%">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/gp-optimise002.svg" style>
+</object>
+</div>
+</td>
+<td width="50%">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/gp-optimise003.svg" style>
+</object>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="gp-optimise" style="text-align:center;">
+<table>
+<tr>
+<td width="50%">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/gp-optimise004.svg" style>
+</object>
+</div>
+</td>
+<td width="50%">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/gp-optimise005.svg" style>
+</object>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="gp-optimise" style="text-align:center;">
+<table>
+<tr>
+<td width="50%">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/gp-optimise006.svg" style>
+</object>
+</div>
+</td>
+<td width="50%">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/gp-optimise007.svg" style>
+</object>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="gp-optimise" style="text-align:center;">
+<table>
+<tr>
+<td width="50%">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/gp-optimise008.svg" style>
+</object>
+</div>
+</td>
+<td width="50%">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/gp-optimise009.svg" style>
+</object>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="gp-optimise" style="text-align:center;">
+<table>
+<tr>
+<td width="50%">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/gp-optimise010.svg" style>
+</object>
+</div>
+</td>
+<td width="50%">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/gp-optimise011.svg" style>
+</object>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="gp-optimise" style="text-align:center;">
+<table>
+<tr>
+<td width="50%">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/gp-optimise012.svg" style>
+</object>
+</div>
+</td>
+<td width="50%">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/gp-optimise013.svg" style>
+</object>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="gp-optimise" style="text-align:center;">
+<table>
+<tr>
+<td width="50%">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/gp-optimise014.svg" style>
+</object>
+</div>
+</td>
+<td width="50%">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/gp-optimise015.svg" style>
+</object>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="gp-optimise" style="text-align:center;">
+<table>
+<tr>
+<td width="50%">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/gp-optimise016.svg" style>
+</object>
+</div>
+</td>
+<td width="50%">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/gp-optimise017.svg" style>
+</object>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="gp-optimise" style="text-align:center;">
+<table>
+<tr>
+<td width="50%">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/gp-optimise018.svg" style>
+</object>
+</div>
+</td>
+<td width="50%">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/gp-optimise019.svg" style>
+</object>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="gp-optimise" style="text-align:center;">
+<table>
+<tr>
+<td width="50%">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/gp-optimise020.svg" style>
+</object>
+</div>
+</td>
+<td width="50%">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/gp-optimise021.svg" style>
+</object>
+</div>
+</td>
+</tr>
+</table>
+</div>
+{
+<center>
+<em>Variation in the data fit term, the capacity term and the negative log likelihood for different lengthscales. </em>
+</center>
 <p><span class="math display">\[\errorFunction(\parameterVector) = {\color{yellow}\frac{1}{2}\log\det{\kernelMatrix}}+{\color{cyan}\frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}}\]</span></p>
 </section>
 <section id="della-gatta-gene-data" class="slide level3">
@@ -1198,10 +1414,16 @@ showDivs(13, 'two_point_sample3');
 <object class="svgplot " align data="../slides/diagrams/gp/della-gatta-gene-gp.svg" style>
 </object>
 </div>
+</section>
+<section id="tp53-gene-data-gp-1" class="slide level3">
+<h3>TP53 Gene Data GP</h3>
 <div style="text-align:">
 <object class="svgplot " align data="../slides/diagrams/gp/della-gatta-gene-gp2.svg" style>
 </object>
 </div>
+</section>
+<section id="tp53-gene-data-gp-2" class="slide level3">
+<h3>TP53 Gene Data GP</h3>
 <div style="text-align:">
 <object class="svgplot " align data="../slides/diagrams/gp/della-gatta-gene-gp3.svg" style>
 </object>

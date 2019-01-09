@@ -2858,7 +2858,12 @@ def multiple_optima(ax=None, gene_number=937, resolution=80, model_restarts=10, 
         optim_point_x[1] = m.rbf.lengthscale
         optim_point_y[1] = np.log10(m.rbf.variance) - np.log10(m.likelihood.variance);
 
-        ax.arrow(optim_point_x[0], optim_point_y[0], optim_point_x[1] - optim_point_x[0], optim_point_y[1] - optim_point_y[0], label=str(i), head_length=1, head_width=0.5, fc='k', ec='k')
+        ax.arrow(optim_point_x[0],
+                 optim_point_y[0],
+                 optim_point_x[1] - optim_point_x[0],
+                 optim_point_y[1] - optim_point_y[0],
+                 label=str(i), head_length=1,
+                 head_width=0.5, fc='k', ec='k')
         models.append(m)
 
     ax.set_xlim(xlim)
@@ -2869,3 +2874,18 @@ def multiple_optima(ax=None, gene_number=937, resolution=80, model_restarts=10, 
                       transparent=True)
     
     return m # (models, lls)
+
+
+# def rotate_object(rotation_matrix, handles):
+#     """Rotate an object in an image"""
+#     for i in handles:
+# 	if type(handle) is text:
+#             handle.get('position')
+#             xy[0:1] = np.dot(rotation_matrix,xy[0:1].T)
+#             handle.set('position', xy)
+#         else:
+#             xd = handle.get('xdata')
+#             yd = handle.get('ydata')
+#             new = np.dot(rotation_matrix,np.column_stack((xd[:].T, yd[:].T)))
+#             handle.set('xdata', new[0, :])
+#             handle.set('ydata', new[1, :])

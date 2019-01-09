@@ -360,14 +360,45 @@ _ = m_clean.optimize()</code></pre>
 </td>
 </tr>
 </table>
-<p><span class="math inline">$\eigenvalueMatrix$</span> is <em>diagonal</em>, <span class="math inline">$\rotationMatrix^\top\rotationMatrix = \eye$</span>. Useful representation since <span class="math inline">$\det{\kernelMatrix} = \det{\eigenvalueMatrix^2} = \det{\eigenvalueMatrix}^2$</span>.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">gpoptimizePlot2</code></pre></div>
-<p></p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">gpoptimizePlot3</code></pre></div>
-<p></p>
-<p>Can we determine length scales and noise levels from the data?</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">gpoptimizePlot4</code></pre></div>
-<p></p>
+<ul>
+<li><span class="math inline">$\eigenvalueMatrix$</span> is <em>diagonal</em>, <span class="math inline">$\rotationMatrix^\top\rotationMatrix = \eye$</span>.</li>
+<li>Useful representation since <span class="math inline">$\det{\kernelMatrix} = \det{\eigenvalueMatrix^2} = \det{\eigenvalueMatrix}^2$</span>.</li>
+</ul>
+<!--
+\only<1>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseDeterminant1}}\only<2>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseDeterminant2}}\only<3>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseDeterminant3}}\only<4>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseDeterminant4}}\only<5>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseDeterminant5}}\only<6>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseDeterminant6}}\only<7>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseDeterminant7}}\only<8>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseDeterminant8}}\only<9>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseDeterminant9}}\only<10>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseDeterminant10}}-->
+<!--```{.python}
+gpoptimizePlot3
+```
+
+\only<1>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseQuadratic1}}\only<2>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseQuadratic2}}\only<3>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseQuadratic3}}-->
+<table>
+<tr>
+<td width="50%">
+<object class="svgplot " align data="../slides/diagrams/gp/gp-optimise006.svg" style>
+</object>
+</td>
+<td width="50%">
+<object class="svgplot " align data="../slides/diagrams/gp/gp-optimise010.svg" style>
+</object>
+</td>
+</tr>
+</table>
+<table>
+<tr>
+<td width="50%">
+<object class="svgplot " align data="../slides/diagrams/gp/gp-optimise016.svg" style>
+</object>
+</td>
+<td width="50%">
+<object class="svgplot " align data="../slides/diagrams/gp/gp-optimise021.svg" style>
+</object>
+</td>
+</tr>
+</table>
+{
+<center>
+<em>Variation in the data fit term, the capacity term and the negative log likelihood for different lengthscales. </em>
+</center>
 <p><br /><span class="math display">$$\errorFunction(\parameterVector) = {\color{yellow}\frac{1}{2}\log\det{\kernelMatrix}}+{\color{cyan}\frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}}$$</span><br /></p>
 <h3 id="della-gatta-gene-data">Della Gatta Gene Data</h3>
 <ul>
@@ -412,7 +443,7 @@ m_full2.kern.lengthscale<span class="op">=</span><span class="dv">2000</span>
 _ <span class="op">=</span> m_full2.optimize() <span class="co"># Optimize parameters of covariance function</span></code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/gp/della-gatta-gene-gp2.svg" style>
 </object>
-<p>Now we try a model initialized with a longer length scale.</p>
+<p>Now we try a model initialized with a lower noise.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_full3 <span class="op">=</span> GPy.models.GPRegression(x,yhat)
 m_full3.kern.lengthscale<span class="op">=</span><span class="dv">20</span>
 m_full3.likelihood.variance<span class="op">=</span><span class="fl">0.001</span>
