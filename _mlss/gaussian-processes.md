@@ -47,6 +47,3 @@ Stefanos Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Dai
 
 
 
-TODO: Additive Covariance
-TODO: multpilicitabe covariance
-TODO: PARAMETER OPTIMIZATION
