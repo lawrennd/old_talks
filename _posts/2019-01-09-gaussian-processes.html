@@ -395,11 +395,9 @@ gpoptimizePlot3
 </td>
 </tr>
 </table>
-{
 <center>
 <em>Variation in the data fit term, the capacity term and the negative log likelihood for different lengthscales. </em>
 </center>
-<p><br /><span class="math display">$$\errorFunction(\parameterVector) = {\color{yellow}\frac{1}{2}\log\det{\kernelMatrix}}+{\color{cyan}\frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}}$$</span><br /></p>
 <h3 id="della-gatta-gene-data">Della Gatta Gene Data</h3>
 <ul>
 <li>Given given expression levels in the form of a time series from <span class="citation">Della Gatta et al. (2008)</span>.</li>
@@ -450,6 +448,11 @@ m_full3.likelihood.variance<span class="op">=</span><span class="fl">0.001</span
 _ <span class="op">=</span> m_full3.optimize() <span class="co"># Optimize parameters of covariance function</span></code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/gp/della-gatta-gene-gp3.svg" style>
 </object>
+<object class="svgplot " align data="../slides/diagrams/gp/multiple-optima000.svg" style>
+</object>
+<!--
+
+<object class="svgplot " align="" data="../slides/diagrams/gp/multiple-optima001.svg" style=""></object>-->
 <ul>
 <li>Work with John Quinn and Martin Mubaganzi (Makerere University, Uganda)</li>
 <li>See <a href="http://air.ug/research.html">AI-DEV Group</a>.</li>
@@ -462,8 +465,6 @@ _ <span class="op">=</span> m_full3.optimize() <span class="co"># Optimize param
 <em>Data SRTM/NASA from <a href="https://dds.cr.usgs.gov/srtm/version2_1" class="uri">https://dds.cr.usgs.gov/srtm/version2_1</a> </em>
 </center>
 <p><span style="text-align:right"><span class="citation">(Andrade-Pacheco et al. 2014,<span class="citation">Mubangizi et al. (2014)</span>)</span></span></p>
-<object class="svgplot " align="70%" data="../slides/diagrams/health/Nagongera_District_in_Uganda.svg" style>
-</object>
 <object class="svgplot " align="70%" data="../slides/diagrams/health/Kapchorwa_District_in_Uganda.svg" style>
 </object>
 <object class="svgplot " align="70%" data="../slides/diagrams/health/Tororo_District_in_Uganda.svg" style>
@@ -471,7 +472,7 @@ _ <span class="op">=</span> m_full3.optimize() <span class="co"># Optimize param
 <div style="text-align:center">
 <img class="negate" src="../slides/diagrams/health/sentinel_nagongera.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 </div>
-<object class="svgplot " align="70%" data="../slides/diagrams/health/Mubende_District_in_Uganda.svg" style>
+<object class="svgplot svgplot_normal" align="center" data="../slides/diagrams/health/Mubende_District_in_Uganda.svg" style>
 </object>
 <div style="text-align:center">
 <img class="negate" src="../slides/diagrams/health/mubende.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">

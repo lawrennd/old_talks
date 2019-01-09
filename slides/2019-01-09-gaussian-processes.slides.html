@@ -1160,8 +1160,8 @@ showDivs(13, 'two_point_sample3');
 
 \only<1>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseQuadratic1}}\only<2>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseQuadratic2}}\only<3>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseQuadratic3}}-->
 </section>
-<section id="learning-covariance-parameters-1" class="slide level3">
-<h3>Learning Covariance Parameters</h3>
+<section id="errorfunctionparametervector-coloryellowfrac12logdetkernelmatrixcolorcyanfracdatavectortopkernelmatrix-1datavector2" class="slide level3">
+<h3><span class="math display">\[\errorFunction(\parameterVector) = {\color{yellow}\frac{1}{2}\log\det{\kernelMatrix}}+{\color{cyan}\frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}}\]</span></h3>
 <script>
 showDivs(0, 'gp-optimise');
 </script>
@@ -1370,11 +1370,6 @@ showDivs(0, 'gp-optimise');
 </tr>
 </table>
 </div>
-{
-<center>
-<em>Variation in the data fit term, the capacity term and the negative log likelihood for different lengthscales. </em>
-</center>
-<p><span class="math display">\[\errorFunction(\parameterVector) = {\color{yellow}\frac{1}{2}\log\det{\kernelMatrix}}+{\color{cyan}\frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}}\]</span></p>
 </section>
 <section id="della-gatta-gene-data" class="slide level3">
 <h3>Della Gatta Gene Data</h3>
@@ -1429,6 +1424,17 @@ showDivs(0, 'gp-optimise');
 </object>
 </div>
 </section>
+<section id="multiple-optima" class="slide level3">
+<h3>Multiple Optima</h3>
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/gp/multiple-optima000.svg" style>
+</object>
+</div>
+<!--### Multiple Optima
+
+
+<div style="text-align:" class=""><object class="svgplot " align="" data="../slides/diagrams/gp/multiple-optima001.svg" style=""></object></div>-->
+</section>
 <section id="example-prediction-of-malaria-incidence-in-uganda" class="slide level3">
 <h3>Example: Prediction of Malaria Incidence in Uganda</h3>
 <ul>
@@ -1447,20 +1453,15 @@ showDivs(0, 'gp-optimise');
 </center>
 <p><span style="text-align:right"><span class="citation" data-cites="Andrade:consistent14">(Andrade-Pacheco et al., 2014,<span class="citation" data-cites="Mubangizi:malaria14">Mubangizi et al. (2014)</span>)</span></span></p>
 </section>
-<section id="nagongera-district" class="slide level3">
-<h3>Nagongera District</h3>
-<div style="text-align:70%">
-<object class="svgplot " align="70%" data="../slides/diagrams/health/Nagongera_District_in_Uganda.svg" style>
-</object>
-</div>
-</section>
 <section id="kapchorwa-district" class="slide level3">
 <h3>Kapchorwa District</h3>
 <div style="text-align:70%">
 <object class="svgplot " align="70%" data="../slides/diagrams/health/Kapchorwa_District_in_Uganda.svg" style>
 </object>
 </div>
-<p>### Tororo District</p>
+</section>
+<section id="tororo-district" class="slide level3">
+<h3>Tororo District</h3>
 <div style="text-align:70%">
 <object class="svgplot " align="70%" data="../slides/diagrams/health/Tororo_District_in_Uganda.svg" style>
 </object>
@@ -1474,8 +1475,8 @@ showDivs(0, 'gp-optimise');
 </section>
 <section id="mubende-district" class="slide level3">
 <h3>Mubende District</h3>
-<div style="text-align:70%">
-<object class="svgplot " align="70%" data="../slides/diagrams/health/Mubende_District_in_Uganda.svg" style>
+<div class="svgplot_normal" style="text-align:center">
+<object class="svgplot svgplot_normal" align="center" data="../slides/diagrams/health/Mubende_District_in_Uganda.svg" style>
 </object>
 </div>
 </section>

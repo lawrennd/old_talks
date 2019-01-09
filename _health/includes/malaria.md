@@ -11,15 +11,11 @@
 
 \alignright{[@Andrade:consistent14,@Mubangizi:malaria14]}
 
-\newslide{Nagongera District}
-
-\includesvg{../slides/diagrams/health/Nagongera_District_in_Uganda.svg}{70%}
-
 \newslide{Kapchorwa District}
 
 \includesvg{../slides/diagrams/health/Kapchorwa_District_in_Uganda.svg}{70%}
 
-  \newslide{Tororo District}
+\newslide{Tororo District}
 
 \includesvg{../slides/diagrams/health/Tororo_District_in_Uganda.svg}{70%}
 
@@ -29,7 +25,7 @@
 
 \newslide{Mubende District}
 
-\includesvg{../slides/diagrams/health/Mubende_District_in_Uganda.svg}{70%}
+\includesvg{../slides/diagrams/health/Mubende_District_in_Uganda.svg}{center}{svgplot_normal}
 
 \newslide{Malaria Prediction in Uganda}
 

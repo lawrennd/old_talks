@@ -2814,11 +2814,13 @@ def multiple_optima(ax=None, gene_number=937, resolution=80, model_restarts=10, 
     """
 
     if ax is None:
-        fig, ax = plt.subplots(figsize=big_figsize)
-    
+        fig, ax = plt.subplots(figsize=one_figsize)
+
+    ylim = [-1, 5]
+    xlim = [10, 50]
     # Contour over a range of length scales and signal/noise ratios.
-    length_scales = np.linspace(0.1, 60., resolution)
-    log_SNRs = np.linspace(-3., 4., resolution)
+    log_SNRs = np.linspace(ylim[0], ylim[1], resolution)
+    length_scales = np.linspace(xlim[0], xlim[1], resolution)
 
     try:
         import pods
@@ -2827,53 +2829,68 @@ def multiple_optima(ax=None, gene_number=937, resolution=80, model_restarts=10, 
         return
     data = pods.datasets.della_gatta_TRP63_gene_expression(data_set='della_gatta',gene_number=gene_number)
 
-    data['Y'] = data['Y'] - np.mean(data['Y'])
+    y = data['Y']
+    x = data['X']
+    offset = y.mean()
+    scale = np.sqrt(y.var())
+
+    yhat = (y-offset)/scale
+
     kernel = GPy.kern.RBF(1, variance=1., lengthscale=1.)
-    model = GPy.models.GPRegression(data['X'], data['Y'], kernel=kernel)
+    model = GPy.models.GPRegression(x, yhat, kernel=kernel)
     lls = mlai.contour_data(model, data, length_scales, log_SNRs)
     ax.contour(length_scales, log_SNRs, np.exp(lls), 20, cmap=plt.cm.jet)
+    #ax.set_xscale('log')
+    ax.set_xlim(xlim)
+    ax.set_ylim(ylim)
     ax.set_xlabel('length scale', fontsize=fontsize)
-    ax.set_ylabel('$\log_10$ SNR', fontsize=fontsize)
+    ax.set_ylabel('$\log_{10}$ SNR', fontsize=fontsize)
 
-    xlim = ax.get_xlim()
-    ylim = ax.get_ylim()
+    mlai.write_figure(os.path.join(diagrams, 'multiple-optima000.svg'),
+                      figure=ax.figure,
+                      transparent=True)
+    
 
     # Now run a few optimizations
     models = []
     optim_point_x = np.empty(2)
     optim_point_y = np.empty(2)
-    np.random.seed(seed=seed)
-    for i in range(0, model_restarts):
-        kern = GPy.kern.RBF(1, variance=np.random.uniform(1e-3, 1), lengthscale=np.random.uniform(5, 50))
 
-        m = GPy.models.GPRegression(data['X'], data['Y'], kernel=kern)
-        m.likelihood.variance = np.random.uniform(1e-3, 1)
+    np.random.seed(seed=seed)
+    noises = [1., 1., 0.001]
+    lengthscales = [50., 2000., 20] 
+    for noise, lengthscale in zip(noises, lengthscales):
+        kern = GPy.kern.RBF(1, lengthscale=lengthscale)
+
+        m = GPy.models.GPRegression(x, yhat, kernel=kern)
+        m.likelihood.variance = noise
         optim_point_x[0] = m.rbf.lengthscale
         optim_point_y[0] = np.log10(m.rbf.variance) - np.log10(m.likelihood.variance);
 
         # optimize
         if optimize:
-            m.optimize('scg', xtol=1e-6, ftol=1e-6, max_iters=max_iters)
+            _ = m.optimize()
 
         optim_point_x[1] = m.rbf.lengthscale
         optim_point_y[1] = np.log10(m.rbf.variance) - np.log10(m.likelihood.variance);
 
+        from matplotlib.patches import Arrow
         ax.arrow(optim_point_x[0],
                  optim_point_y[0],
                  optim_point_x[1] - optim_point_x[0],
                  optim_point_y[1] - optim_point_y[0],
-                 label=str(i), head_length=1,
+                 head_length=1,
                  head_width=0.5, fc='k', ec='k')
         models.append(m)
 
     ax.set_xlim(xlim)
     ax.set_ylim(ylim)
 
-    mlai.write_figure(os.path.join(diagrams, 'multiple-optima.svg'),
+    mlai.write_figure(os.path.join(diagrams, 'multiple-optima001.svg'),
                       figure=ax.figure,
                       transparent=True)
     
-    return m # (models, lls)
+    return m, lls 
 
 
 # def rotate_object(rotation_matrix, handles):
