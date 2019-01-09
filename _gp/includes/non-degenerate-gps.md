@@ -20,8 +20,8 @@ and a non-degenerate kernel matrix leads to $\det{\kernelMatrix} = 0$ defeating 
 * In ML Radford Neal [@Neal:bayesian94] asked "what would happen if you took  $\numHidden \rightarrow \infty$?"
 }\notes{In the machine learning field, it was Radford Neal [@Neal:bayesian94] that realized the potential of the next step. In his 1994 thesis, he was considering Bayesian neural networks, of the type we described above, and in considered what would happen if you took the number of hidden nodes, or neurons, to infinity, i.e. $\numHidden \rightarrow \infty$.}
 
-\div{[\includepng{../slides/diagrams/neal-infinite-priors}{80%}](http://www.cs.toronto.edu/~radford/ftp/thesis.pdf)}{}{text-align:center}
-\caption{Page 37 of Radford Neal's 1994 thesis}
+\includepng{../slides/diagrams/neal-infinite-priors}{80%}
+\caption{Page 37 of [Radford Neal's 1994 thesis](http://www.cs.toronto.edu/~radford/ftp/thesis.pdf)}
 
 \newslide{Roughly Speaking}
 

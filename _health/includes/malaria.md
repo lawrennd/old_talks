@@ -13,11 +13,11 @@
 
 \newslide{Kapchorwa District}
 
-\includesvg{../slides/diagrams/health/Kapchorwa_District_in_Uganda.svg}{70%}
+\includesvgclass{../slides/diagrams/health/Kapchorwa_District_in_Uganda.svg}
 
 \newslide{Tororo District}
 
-\includesvg{../slides/diagrams/health/Tororo_District_in_Uganda.svg}{70%}
+\includesvgclass{../slides/diagrams/health/Tororo_District_in_Uganda.svg}
 
 \newslide{Malaria Prediction in Nagongera (Sentinel Site)}
 
@@ -25,11 +25,11 @@
 
 \newslide{Mubende District}
 
-\includesvg{../slides/diagrams/health/Mubende_District_in_Uganda.svg}{center}{svgplot_normal}
+\includesvgclass{../slides/diagrams/health/Mubende_District_in_Uganda.svg}{center}{svgplot_normal}
 
 \newslide{Malaria Prediction in Uganda}
 
-\includepng{../slides/diagrams/health/mubende}{70%}{negate}
+\includepng{../slides/diagrams/health/mubende}
 
 \newslide{GP School at Makerere}
 
@@ -37,7 +37,7 @@
 
 \newslide{Kabarole District}
 
-\includesvg{../slides/diagrams/health/Kabarole_District_in_Uganda.svg}{70%}
+\includesvgclass{../slides/diagrams/health/Kabarole_District_in_Uganda.svg}
 
 \newslide{Early Warning Systems}
 

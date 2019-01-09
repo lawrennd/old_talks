@@ -150,14 +150,10 @@ $$</span><br /> so the elements of the covariance or <em>kernel</em> matrix are 
 $$</span><br /> and a non-degenerate kernel matrix leads to <span class="math inline">$\det{\kernelMatrix} = 0$</span> defeating the normalization (it's equivalent to finding a projection in the high dimensional Gaussian where the variance of the the resulting univariate Gaussian is zero, i.e. there is a null space on the covariance, or alternatively you can imagine there are one or more directions where the Gaussian has become the delta function).</p>
 <p>In the machine learning field, it was Radford Neal <span class="citation">(Neal 1994)</span> that realized the potential of the next step. In his 1994 thesis, he was considering Bayesian neural networks, of the type we described above, and in considered what would happen if you took the number of hidden nodes, or neurons, to infinity, i.e. <span class="math inline">$\numHidden \rightarrow \infty$</span>.</p>
 <div style="text-align:center">
-[
-<div style="text-align:center">
 <img class="" src="../slides/diagrams/neal-infinite-priors.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 </div>
-](http://www.cs.toronto.edu/~radford/ftp/thesis.pdf)
-</div>
 <center>
-<em>Page 37 of Radford Neal's 1994 thesis </em>
+<em>Page 37 of <a href="http://www.cs.toronto.edu/~radford/ftp/thesis.pdf">Radford Neal's 1994 thesis</a> </em>
 </center>
 <p>In loose terms, what Radford considers is what happens to the elements of the covariance function, <br /><span class="math display">$$
   \begin{align*}
@@ -418,11 +414,12 @@ scale <span class="op">=</span> np.sqrt(y.var())</code></pre></div>
 <ul>
 <li>Want to detect if a gene is expressed or not, fit a GP to each gene <span class="citation">Kalaitzis and Lawrence (2011)</span>.</li>
 </ul>
-[
 <div style="text-align:center">
 <img class="" src="../slides/diagrams/health/1471-2105-12-180_1.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 </div>
-<p>](http://www.biomedcentral.com/1471-2105/12/180)</p>
+<center>
+<a href="http://www.biomedcentral.com/1471-2105/12/180" class="uri">http://www.biomedcentral.com/1471-2105/12/180</a>
+</center>
 <p>Our first objective will be to perform a Gaussian process fit to the data, we'll do this using the <a href="https://github.com/SheffieldML/GPy">GPy software</a>.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> GPy</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_full <span class="op">=</span> GPy.models.GPRegression(x,yhat)
@@ -465,22 +462,22 @@ _ <span class="op">=</span> m_full3.optimize() <span class="co"># Optimize param
 <em>Data SRTM/NASA from <a href="https://dds.cr.usgs.gov/srtm/version2_1" class="uri">https://dds.cr.usgs.gov/srtm/version2_1</a> </em>
 </center>
 <p><span style="text-align:right"><span class="citation">(Andrade-Pacheco et al. 2014,<span class="citation">Mubangizi et al. (2014)</span>)</span></span></p>
-<object class="svgplot " align="70%" data="../slides/diagrams/health/Kapchorwa_District_in_Uganda.svg" style>
+<object class align data="../slides/diagrams/health/Kapchorwa_District_in_Uganda.svg">
 </object>
-<object class="svgplot " align="70%" data="../slides/diagrams/health/Tororo_District_in_Uganda.svg" style>
+<object class align data="../slides/diagrams/health/Tororo_District_in_Uganda.svg">
 </object>
 <div style="text-align:center">
 <img class="negate" src="../slides/diagrams/health/sentinel_nagongera.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 </div>
-<object class="svgplot svgplot_normal" align="center" data="../slides/diagrams/health/Mubende_District_in_Uganda.svg" style>
+<object class="center" align="svgplot_normal" data="../slides/diagrams/health/Mubende_District_in_Uganda.svg">
 </object>
 <div style="text-align:center">
-<img class="negate" src="../slides/diagrams/health/mubende.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+<img class="" src="../slides/diagrams/health/mubende.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 </div>
 <div style="text-align:center">
 <img class="" src="../slides/diagrams/gpss/1157497_513423392066576_1845599035_n.jpg" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 </div>
-<object class="svgplot " align="70%" data="../slides/diagrams/health/Kabarole_District_in_Uganda.svg" style>
+<object class align data="../slides/diagrams/health/Kabarole_District_in_Uganda.svg">
 </object>
 <div style="text-align:center">
 <img class="" src="../slides/diagrams/health/kabarole.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
