@@ -15,9 +15,9 @@
        Storage: $\bigO(\numData\numInducing)$
   ------------- ---------------------------------
 
-    where $\numInducing$ is a user chosen parameter.
+  where $\numInducing$ is a user chosen parameter.
 
-[@Snelson:pseudo05,@Quinonero:unifying05,@Lawrence:larger07,@Titsias:variational09,@Thang:unifying17]
+\smalltext{[@Snelson:pseudo05,@Quinonero:unifying05,@Lawrence:larger07,@Titsias:variational09,@Thang:unifying17]}
 }
 \notes{Inference in a Gaussian process has computational complexity of $\bigO(\numData^3)$ and storage demands of $\bigO(\numData^2)$. This is too large for many modern data sets. 
 

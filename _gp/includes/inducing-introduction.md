@@ -1,14 +1,18 @@
-### Introducing $\inducingVector$ {data-transition="None"}
+\ifndef{inducingIntroduction}
+\define{inducingIntroduction}
+\editme
+
+\newslide{Introducing $\inducingVector$}
 
 Take an extra $\numInducing$ points on the function,
 $\inducingVector = \mappingFunction(\inducingInputMatrix)$.
 $$p(\dataVector,\mappingFunctionVector,\inducingVector) = p(\dataVector\given \mappingFunctionVector) p(\mappingFunctionVector\given \inducingVector) p(\inducingVector)$$
 
-### Introducing $\inducingVector$ {#introducing-inducingvector data-transition="None"}
+\newslide{Introducing $\inducingVector$}
 
 \includeimg{../slides/diagrams/cov_inducing_withX.png}{60%}{negate}
 
-### Introducing $\inducingVector$ {#introducing-inducingvector data-transition="None"}
+\newslide{Introducing $\inducingVector$}
 
 Take and extra $M$ points on the function,
 $\inducingVector = \mappingFunction(\inducingInputMatrix)$.
@@ -20,22 +24,22 @@ $$\begin{aligned}
   \end{aligned}$$
 
 
-###  {data-transition="None"}
+\newslide{}
 
 \columns{
 $$\inputMatrix,\,\dataVector$$ $$\mappingFunction(\inputVector) \sim {\mathcal GP}$$ $$p(\mappingFunctionVector) = \gaussianSamp{\zerosVector}{\Kff}$$ $$p(\mappingFunctionVector\given \dataVector,\inputMatrix)$$
 }{
 \includeimg{../slides/diagrams/nomenclature4}{90%}{negate}
-}
+}{30%}{70%}
+$$
 \begin{align}
-                                                                                                           &\qquad\inducingInputMatrix, \inducingVector\\                                                                                                                                                                                                    
-                                                                                               &p({\color{red} \inducingVector})  = \gaussianSamp{\zerosVector}{\Kuu}                                                                                                                                                                                        
-                                                                                                                          \end{align}$$  
+                           &\qquad\inducingInputMatrix, \inducingVector\\                      &p({\color{red} \inducingVector})  = \gaussianSamp{\zerosVector}{\Kuu}\end{align}
+$$
 
-###  {data-transition="None"}
+\newslide{}
 
 \columns{
 $$\inputMatrix,\,\dataVector$$ $$\mappingFunction(\inputVector) \sim {\mathcal GP}$$ $$p(\mappingFunctionVector) = \gaussianSamp{\zerosVector}{\Kff}$$ $$p(\mappingFunctionVector\given \dataVector,\inputMatrix)$$ $$p(\inducingVector)  = \gaussianSamp{\zerosVector}{\Kuu}$$ $$\widetilde p({\color{red}\inducingVector}\given \dataVector,\inputMatrix)$$
 }{
 \includeimg{../slides/diagrams/nomenclature5.png}{90%}{negate}
-}
+}{30%}{70%}

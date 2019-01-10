@@ -1,17 +1,22 @@
-### Standard Variational Approach Fails
+\ifndef{variationalBayesGplvmLong}
+\define{variationalBayesGplvmLong}
+\editme
 
--   <1-> Standard variational bound has the form:
-    $$\likelihoodBound = \expDist{\log p(\dataVector|\latentMatrix)}{q(\latentMatrix)} + \KL{q(\latentMatrix)}{p(\latentMatrix)}$$
+\newslide{Standard Variational Approach Fails}
 
--   <2-> Requires expectation of
-    $\log p(\dataVector|\latentMatrix)$ under $q(\latentMatrix)$.
-    $$\log p(\dataVector|\latentMatrix) = -\frac{1}{2}\dataVector^\top\left(\kernelMatrix_{\mappingFunctionVector, \mappingFunctionVector}+\dataStd^2\eye\right)^{-1}\dataVector -\frac{1}{2}\log \det{\kernelMatrix_{\mappingFunctionVector, \mappingFunctionVector}+\dataStd^2 \eye} -\frac{\numData}{2}\log 2\pi$$
+- \fragmentindex{Standard variational bound has the form:
+  $$
+  \likelihoodBound = \expDist{\log p(\dataVector|\latentMatrix)}{q(\latentMatrix)} + \KL{q(\latentMatrix)}{p(\latentMatrix)}
+  $$}{1}
 
--   <3-> Extremely difficult to compute because
-    $\kernelMatrix_{\mappingFunctionVector, \mappingFunctionVector}$ is
-    dependent on $\latentMatrix$ and appears in the inverse.
+- \fragmentindex{Requires expectation of $\log p(\dataVector|\latentMatrix)$ under $q(\latentMatrix)$.
+  $$
+  \log p(\dataVector|\latentMatrix) = -\frac{1}{2}\dataVector^\top\left(\kernelMatrix_{\mappingFunctionVector, \mappingFunctionVector}+\dataStd^2\eye\right)^{-1}\dataVector -\frac{1}{2}\log \det{\kernelMatrix_{\mappingFunctionVector, \mappingFunctionVector}+\dataStd^2 \eye} -\frac{\numData}{2}\log 2\pi
+  $$}{2}
 
-### Variational Bayesian GP-LVM
+- \fragmentindex{Extremely difficult to compute because $\kernelMatrix_{\mappingFunctionVector, \mappingFunctionVector}$ is dependent on $\latentMatrix$ and appears in the inverse.}{3}
+
+\newslide{Variational Bayesian GP-LVM}
 
 -   <1->Consider collapsed variational bound, \only<1>{\[
               p(\dataVector)\geq \prod_{i=1}^\numData c_i \int \gaussianDist{\dataVector}{\expSamp{\mappingFunctionVector}}{\dataStd^2\eye}p(\inducingVector) \text{d}\inducingVector
@@ -29,7 +34,7 @@
 -   <6-> Which is analytically tractable for Gaussian
     $q(\latentMatrix)$ and some covariance functions.
 
-### Required Expectations
+\newslide{Required Expectations}
 
 -   Need expectations under $q(\latentMatrix)$ of:
     $$\log c_i = \frac{1}{2\dataStd^2} \left[\kernelScalar_{i, i} - \kernelVector_{i, \inducingVector}^\top \kernelMatrix_{\inducingVector, \inducingVector}^{-1} \kernelVector_{i, \inducingVector}\right]$$
@@ -41,5 +46,5 @@
     and
     $$\expDist{\kernelMatrix_{\mappingFunctionVector,\inducingVector}\kernelMatrix_{\inducingVector,\inducingVector}^{-1}\kernelMatrix_{\inducingVector,\mappingFunctionVector}}{q(\latentMatrix)}$$
     which can be computed analytically for some covariance functions.
-
+\endif
 

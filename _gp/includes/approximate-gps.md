@@ -1,7 +1,9 @@
 \ifndef{approximateGps}
 \define{approximateGps}
 \editme
+
 \include{_gp/includes/sparse-gp-comic.md}
+
 \newslide{Approximate Gaussian Processes}
 
 
@@ -12,10 +14,9 @@
 \newslide{Information capture}
 
 * Everything we want to do with a GP involves marginalising $\mappingFunctionVector$
-    * Predictions
-	* Marginal likelihood
-	* Estimating covariance parameters
-
+  * Predictions
+  * Marginal likelihood
+  * Estimating covariance parameters
 * The posterior of $\mappingFunctionVector$ is the central object. This
 means inverting $\Kff$.
 
@@ -26,10 +27,13 @@ means inverting $\Kff$.
 \newslide{The alternative posterior}
 
 [Instead of doing]{}
-$$p(\mappingFunctionVector\given\dataVector,\inputMatrix) = \frac{p(\dataVector\given\mappingFunctionVector)p(\mappingFunctionVector\given\inputMatrix)}{\int p(\dataVector\given\mappingFunctionVector)p(\mappingFunctionVector\given\inputMatrix){\text{d}\mappingFunctionVector}}$$
+$$
+p(\mappingFunctionVector\given\dataVector,\inputMatrix) = \frac{p(\dataVector\given\mappingFunctionVector)p(\mappingFunctionVector\given\inputMatrix)}{\int p(\dataVector\given\mappingFunctionVector)p(\mappingFunctionVector\given\inputMatrix){\text{d}\mappingFunctionVector}}
+$$
 [We’ll do]{}
-$$p(\inducingVector\given\dataVector,\inducingInputMatrix) = \frac{p(\dataVector\given\inducingVector)p(\inducingVector\given\inducingInputMatrix)}{\int p(\dataVector\given\inducingVector)p(\inducingVector\given\inducingInputMatrix){\text{d}\inducingVector}}$$
-\pause
+$$
+p(\inducingVector\given\dataVector,\inducingInputMatrix) = \frac{p(\dataVector\given\inducingVector)p(\inducingVector\given\inducingInputMatrix)}{\int p(\dataVector\given\inducingVector)p(\inducingVector\given\inducingInputMatrix){\text{d}\inducingVector}}
+$$
 \centering\alert{but $p(\dataVector\given\inducingVector)$ involves inverting $\Kff$}
 
 <!--Flexible Parametric Approximation-->
@@ -138,8 +142,8 @@ $$\dataVector|\mappingFunctionVector = \prod_{i} \gaussianSamp{\mappingFunction}
 
 \include{_gp/includes/variational-compression.md}
 \include{_gp/includes/low-rank-variational.md}
-\include{_gplvm/includes/bayes_gplvm_intro.md}
-\include{_gplvm/includes/variational_bayes_gplvm_long.md}
+\include{_gplvm/includes/bayes-gplvm-intro.md}
+\include{_gplvm/includes/variational-bayes-gplvm-long.md}
 \include{_gplvm/includes/nested-variational-compression.md}
 \include{_gp/includes/larger-gaussian.md}
 

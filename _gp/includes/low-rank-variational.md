@@ -37,7 +37,7 @@ $$\widetilde p(\dataScalar\given\inducingVector) = \gaussianDist{\dataScalar}{\k
 
 \newslide{Now we can marginalise $\inducingVector$}
 
-$$\widetilde p(\inducingVector\given\dataVector,\inducingInputMatrix) = \frac{\widetilde p(\dataVector\given\inducingVector)p(\inducingVector\given\inducingInputMatrix)}{\int \widetilde p(\dataVector\given\inducingVector)p(\inducingVector\given\inducingInputMatrix)\dif{\inducingVector}}$$
+$$\widetilde p(\inducingVector\given\dataVector,\inducingInputMatrix) = \frac{\widetilde p(\dataVector\given\inducingVector)p(\inducingVector\given\inducingInputMatrix)}{\int \widetilde p(\dataVector\given\inducingVector)p(\inducingVector\given\inducingInputMatrix)\text{d}{\inducingVector}}$$
 
 -   Computing the posterior costs $\bigO(\numData\numInducing^2)$
 

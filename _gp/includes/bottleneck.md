@@ -5,14 +5,14 @@
 \newslide{Nonparametric Gaussian Processes}
 
 \slides{
--   We’ve seen how we go from parametric to non-parametric.
+* We’ve seen how we go from parametric to non-parametric.
 
--   The limit implies infinite dimensional $\mappingVector$.
+* The limit implies infinite dimensional $\mappingVector$.
 
--   Gaussian processes are generally non-parametric: combine data with
+* Gaussian processes are generally non-parametric: combine data with
     covariance function to get model.
 
--   This representation *cannot* be summarized by a parameter vector of
+* This representation *cannot* be summarized by a parameter vector of
     a fixed size.
 }
 \notes{We’ve seen how we go from parametric to non-parametric. The limit implies infinite dimensional $\mappingVector$. Gaussian processes are generally non-parametric: combine data with covariance function to get model. This representation *cannot* be summarized by a parameter vector of a fixed size.}
@@ -20,23 +20,23 @@
 \newslide{The Parametric Bottleneck}
 
 \slides{
--   Parametric models have a representation that does not respond to increasing training set size.
+* Parametric models have a representation that does not respond to increasing training set size.
 
--   Bayesian posterior distributions over parameters contain the information about the training data.
+* Bayesian posterior distributions over parameters contain the information about the training data.
 
-    -   Use Bayes’ rule from training data,
+    * Use Bayes’ rule from training data,
         $p\left(\mappingVector|\dataVector, \inputMatrix\right)$,
 
-    -   Make predictions on test data
+    * Make predictions on test data
         $$p\left(\dataScalar_*|\inputMatrix_*, \dataVector, \inputMatrix\right) = \int
               p\left(\dataScalar_*|\mappingVector,\inputMatrix_*\right)p\left(\mappingVector|\dataVector,
                 \inputMatrix)\text{d}\mappingVector\right).$$
 
--   $\mappingVector$ becomes a bottleneck for information about the training set to pass to the test set.
+* $\mappingVector$ becomes a bottleneck for information about the training set to pass to the test set.
 
--   Solution: increase $\numBasisFunc$ so that the bottleneck is so large that it no longer presents a problem.
+* Solution: increase $\numBasisFunc$ so that the bottleneck is so large that it no longer presents a problem.
 
--   How big is big enough for $\numBasisFunc$? Non-parametrics says $\numBasisFunc \rightarrow \infty$.
+* How big is big enough for $\numBasisFunc$? Non-parametrics says $\numBasisFunc \rightarrow \infty$.
 }
 \notes{Parametric models have a representation that does not respond to increasing training set size. Bayesian posterior distributions over parameters contain the information about the training data, for example if we use use Bayes’ rule from training data,
 $$

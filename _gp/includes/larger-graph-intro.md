@@ -1,6 +1,7 @@
 \ifndef{largerGraphIntro}
 \define{largerGraphIntro}
 \editme
+
 \newslide{Parametric but Non-parametric}
 \slides{
 *  Augment with a vector of *inducing* variables, $\inducingVector$.* Form a variational lower bound on true likelihood.
