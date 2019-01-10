@@ -1,15 +1,16 @@
+\ifndef{deepNn}
+\define{deepNn}
+\editme
 \setupcode{import teaching_plots as plot}
 \plotcode{plot.deep_nn(diagrams='../slides/diagrams/deepgp/')}
 
-\slides{
-### Deep Neural Network
+\newslide{Deep Neural Network}
 
-\includesvg{../slides/diagrams/deepgp/deep-nn1.svg}
+\slides{\includesvg{../slides/diagrams/deepgp/deep-nn1.svg}}
 
-### Deep Neural Network
+\newslide{Deep Neural Network}
 
-\includesvg{../slides/diagrams/deepgp/deep-nn2.svg}
-}
+\slides{\includesvg{../slides/diagrams/deepgp/deep-nn2.svg}}
 \notesfigure{\includesvg{../slides/diagrams/deepgp/deep-nn2.svg}}
 \notes{\caption{A deep neural network. Input nodes are shown at the bottom. Each hidden layer is the result of applying an affine transformation to the previous layer and placing through an activation function.}}
 
@@ -24,3 +25,4 @@ $$
     \dataVector &= \mappingVector_4 ^\top\hiddenVector_{3}
 \end{align}
 $$
+\endif

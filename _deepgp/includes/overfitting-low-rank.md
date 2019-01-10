@@ -1,4 +1,7 @@
-### Overfitting
+\ifndef{overfittingLowRank}
+\define{overfittingLowRank}
+\editme
+\subsection{Overfitting}
 
 \notes{One potential problem is that as the number of nodes in two adjacent layers increases, the number of parameters in the affine transformation between layers, $\mappingMatrix$, increases. If there are $k_{i-1}$ nodes in one layer, and $k_i$ nodes in the following, then that matrix contains $k_i k_{i-1}$ parameters, when we have layer widths in the 1000s that leads to millions of parameters.
 
@@ -26,3 +29,4 @@ One proposed solution is known as *dropout* where only a sub-set of the neural n
 \includesvg{../slides/diagrams/wisuvt.svg}
 \caption{Pictorial representation of the low rank form of the matrix $\mappingMatrix$}
 
+\endif

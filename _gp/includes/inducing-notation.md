@@ -1,35 +1,23 @@
-### {data-transition="None"}
+\ifndef{inducingNotation}
+\define{inducingNotation}
+\editme
 
-\columns{
-$$\inputMatrix,\,\dataVector$$
-}{
-\includeimg{../slides/diagrams/nomenclature1.png}{90%}{negate}
+\newslide{}
+
+\columns{$$\inputMatrix,\,\dataVector$$}{\includepng{../slides/diagrams/nomenclature1}{90%}{negate}}
+
+
+\newslide{}
+
+\columns{$$\inputMatrix,\,\dataVector$$  $${\color{\blueColor} \mappingFunction(\inputVector)} \sim {\mathcal GP}$$}{\includepng{../slides/diagrams/nomenclature2}{90%}{negate}}
+
+\newslide{}
+
+\columns{$$\inputMatrix,\,\dataVector$$ $$\mappingFunction(\inputVector) \sim {\mathcal GP}$$$$p({\color{\blueColor} \mappingFunctionVector}) = \gaussianSamp{\zerosVector}{\Kff}$$}{\includepng{../slides/diagrams/nomenclature3}{90%}{negate}
 }
 
+\newslide{}
 
-### {data-transition="None"}
+\columns{$$\inputMatrix,\,\dataVector$$ $$\mappingFunction(\inputVector) \sim {\mathcal GP}$$ $$p(\mappingFunctionVector) = \gaussianSamp{\zerosVector}{\Kff}$$  $$p( \mappingFunctionVector \given \dataVector,\inputMatrix)$$}{\includepng{../slides/diagrams/nomenclature3a}{90%}{negate}}
 
-\columns{
-$$\inputMatrix,\,\dataVector$$  $${\color{\blueColor} \mappingFunction(\inputVector)} \sim {\mathcal GP}$$
-}{
-\includeimg{../slides/diagrams/nomenclature2.png}{90%}{negate}
-}
-
-### {data-transition="None"}
-
-\columns{
-$$\inputMatrix,\,\dataVector$$ $$\mappingFunction(\inputVector) \sim {\mathcal GP}$$
-$$p({\color{\blueColor} \mappingFunctionVector}) = \gaussianSamp{\zerosVector}{\Kff}$$
-}{
-\includeimg{../slides/diagrams/nomenclature3.png}{90%}{negate}
-}
-
-### {data-transition="None"}
-
-\columns{
-$$\inputMatrix,\,\dataVector$$ $$\mappingFunction(\inputVector) \sim {\mathcal GP}$$ 
-$$p(\mappingFunctionVector) = \gaussianSamp{\zerosVector}{\Kff}$$  $$p( \mappingFunctionVector \given \dataVector,\inputMatrix)$$
-}{
-\includeimg{../slides/diagrams/nomenclature3a.png}{90%}{negate}
-}
-
+\endif

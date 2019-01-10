@@ -1,19 +1,25 @@
+\ifndef{deepGp}
+\define{deepGp}
+\editme
 \setupcode{import teaching_plots as plot}
 \plotcode{plot.deep_nn_bottleneck(diagrams='../slides/diagrams/deepgp')}
 
+\newslide{Deep Neural Network}
+
 \slides{
-### Deep Neural Network
-
 \includesvg{../slides/diagrams/deepgp/deep-nn-bottleneck1.svg}
+}
 
-### Deep Neural Network
+\newslide{Deep Neural Network}
 
+\slides{
 \includesvg{../slides/diagrams/deepgp/deep-nn-bottleneck2.svg}
 }
 
 \notesfigure{\includesvg{../slides/diagrams/deepgp/deep-nn-bottleneck2.svg}}
 
 \newslide{Mathematically}
+
 \notes{Including the low rank decomposition of $\mappingMatrix$ in the neural network, we obtain a new mathematical form. Effectively, we are adding additional *latent* layers, $\latentVector$, in between each of the existing hidden layers. In a neural network these are sometimes known as *bottleneck* layers.} The network can now be written mathematically as
 $$
 \begin{align}
@@ -27,7 +33,7 @@ $$
 \end{align}
 $$
 
-### A Cascade of Neural Networks
+\newslide{A Cascade of Neural Networks}
 
 $$
 \begin{align}
@@ -38,9 +44,10 @@ $$
 \end{align}
 $$
 
-### Cascade of Gaussian Processes
+\newslide{Cascade of Gaussian Processes}
 
-* Replace each neural network with a Gaussian process
+\notes{Now if we replace each of these neural networks with a Gaussian process. This is equivalent to taking the limit as the width of each layer goes to infinity, while appropriately scaling down the outputs.}
+\slides{* Replace each neural network with a Gaussian process}
 $$
 \begin{align}
   \latentVector_{1} &= \mappingFunctionVector_1\left(\inputVector\right)\\
@@ -50,4 +57,5 @@ $$
 \end{align}
 $$
 
-* Equivalent to prior over parameters, take width of each layer to infinity.
+\slides{* Equivalent to prior over parameters, take width of each layer to infinity.}
+\endif

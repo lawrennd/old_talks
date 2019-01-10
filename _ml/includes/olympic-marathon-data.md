@@ -1,13 +1,12 @@
+\ifndef{olympicMarathonData}
+\define{olympicMarathonData}
 \subsection{Olympic Marathon Data}
 
 \columns{
--   Gold medal times for Olympic Marathon since 1896.
-
--   Marathons before 1924 didn’t have a standardised distance.
-
--   Present results using pace per km.
-
--   In 1904 Marathon was badly organised leading to very slow times.
+* Gold medal times for Olympic Marathon since 1896.
+* Marathons before 1924 didn’t have a standardised distance.
+* Present results using pace per km.
+* In 1904 Marathon was badly organised leading to very slow times.
 }{
 \includejpg{../slides/diagrams/Stephen_Kiprotich}{100%}
 \smalltext{Image from Wikimedia Commons <http://bit.ly/16kMKHQ>}
@@ -56,3 +55,5 @@ mlai.write_figure(figure=fig,
 
 More recent years see more consistently quick marathons.
 }
+
+\endif

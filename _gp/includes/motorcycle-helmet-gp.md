@@ -1,0 +1,23 @@
+\ifndef{motorcycleHelmetGp}
+\define{motorcycleHelmetGp}
+\editme
+\include{_ml/includes/motorcycle-helmet-data.md}
+
+\code{m_full = GPy.models.GPRegression(x,yhat)
+_ = m_full.optimize() # Optimize parameters of covariance function}
+
+\plotcode{fig, ax=plt.subplots(figsize=plot.big_wide_figsize)
+plot.model_output(m_full, scale=scale, offset=offset, ax=ax, xlabel='time', ylabel='acceleration/$g$', fontsize=20, portion=0.5)
+xlim=(-20,80)
+ylim=(-180,120)
+ax.set_ylim(ylim)
+ax.set_xlim(xlim)
+mlai.write_figure(figure=fig,filename='../../slides/diagrams/gp/motorcycle-helmet-gp.svg', 
+            transparent=True, frameon=True)}
+
+
+\subsection{Motorcycle Helmet Data GP}
+
+\includesvg{../slides/diagrams/gp/motorcycle-helmet-gp.svg}
+
+\endif

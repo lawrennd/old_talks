@@ -1,3 +1,5 @@
+\ifndef{movieBodyCountData}
+\define{movieBodyCountData}
 \section{Movie Body Count Example}
 
 \notes{There is a crisis in the movie industry, deaths are
@@ -110,3 +112,4 @@ allowed command entry. The notebook format we are using is slightly different.
 Each of the code entry boxes acts like a separate console window. We can move up
 and down the notebook and run each part in a different order. The *state* of the
 program is always as we left it after running the previous part.}
+\endif

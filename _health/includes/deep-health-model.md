@@ -1,4 +1,9 @@
+\ifndef{deepHealthModel}
+\define{deepHealthModel}
+\editme
+
 \newslide{Deep Health}
 
-\div{\includesvg{../slides/diagrams/deep-health.svg}}{}{text-align:center}
+\includesvg{../slides/diagrams/deep-health.svg}
 
+\endif

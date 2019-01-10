@@ -1,4 +1,9 @@
+\ifndef{processComposition}
+\define{processComposition}
+\editme
+
 \newslide{Mathematically}
+
 \slides{
 * Composite *multivariate* function
 }\notes{Mathematically, a deep Gaussian process can be seen as a composite *multivariate* function,}
@@ -36,7 +41,7 @@ pgm.render().figure.savefig("../slides/diagrams/deepgp/deep-markov-vertical.svg"
 
 \includesvg{../slides/diagrams/deepgp/deep-markov-vertical.svg}
 
-### Why Deep?
+\subsection{Why Deep?}
 
 \slides{* Gaussian processes give priors over functions.
 
@@ -53,7 +58,7 @@ pgm.render().figure.savefig("../slides/diagrams/deepgp/deep-markov-vertical.svg"
 
 A one off discontinuity is easy to model with a Gaussian process, or even multiple discontinuities. They can be introduced in the mean function, or independence can be forced between two covariance functions that apply in different areas of the input space. But in these cases we will need to specify the number of discontinuities and where they occur. In otherwords we need to *parameterise* the discontinuities. If we do not know the number of discontinuities and don't wish to specify where they occur, i.e. if we want a non-parametric representation of discontinuities, then the standard Gaussian process doesn't help.}
 
-### Stochastic Process Composition
+\subsection{Stochastic Process Composition}
 
 \slides{* From a process perspective: *process composition*.
 
@@ -75,3 +80,4 @@ pgm.render().figure.savefig("../slides/diagrams/deepgp/deep-markov-vertical-side
 \includesvg{../slides/diagrams/deepgp/deep-markov-vertical-side.svg}
 
 
+\endif

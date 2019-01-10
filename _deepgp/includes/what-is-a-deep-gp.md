@@ -83,47 +83,45 @@ mlai.write_figure(figure=fig, filename='../../slides/diagrams/wisuvt.svg')
 
 * Geoff Hinton's view of Deep Learning
 
-\include{../../_deepgp/includes/deep-nn-gp.md}
+\include{_deepgp/includes/deep-nn-gp.md}
 
 <!--Deep Gaussian Process Models-->
 
-\include{../../_deepgp/includes/deeptheory.md}
+\include{_deepgp/includes/deep-theory.md}
 
 <!--Bayesian GP-LVM-->
 
 
-<!--include{../../_gplvm/includes/ard_gplvm.md} -->
-<!-- \include{../../_gplvm/includes/bayes_gplvm_intro.md} -->
-<!-- \include{../../_gplvm/includes/variational_bayes_gplvm_long.md} -->
+<!--include{_gplvm/includes/ard_gplvm.md} -->
+<!-- \include{_gplvm/includes/bayes_gplvm_intro.md} -->
+<!-- \include{_gplvm/includes/variational_bayes_gplvm_long.md} -->
 
-<!-- \include{../../_gp/includes/gp_big_data_technical.md} -->
-<!--\include{../../_gp/includes/gp_big_data.md}-->
+<!-- \include{_gp/includes/gp_big_data_technical.md} -->
+<!--\include{_gp/includes/gp_big_data.md}-->
 
-\include{../../_deepgp/includes/deep_gps.md}
+\include{_deepgp/includes/deep-gps.md}
 
-\include{../../_deepgp/includes/stack-gp-intro.md}
-\include{../../_deepgp/includes/stacked-pca.md}
-\include{../../_deepgp/includes/stacked-gp.md}
-\include{../../_deepgp/includes/deep-pathologies.md}
-\include{../../_deepgp/includes/deep-results.md}
-\include{../../_deepgp/includes/deep_step_function.md}
-\include{../../_deepgp/includes/deep_loop_detection.md}
+\include{_deepgp/includes/stack-gp-intro.md}
+\include{_deepgp/includes/stacked-pca.md}
+\include{_deepgp/includes/stacked-gp.md}
+\include{_deepgp/includes/deep-pathologies.md}
+\include{_deepgp/includes/deep-results.md}
 
-\include{../../_health/includes/deep-health-model.md}
+\include{_health/includes/deep-health-model.md}
 
 
 <!--Conclusions-->
 
-<!-- \include{../../_gplvm/includes/ard_model.md} -->
-<!-- \include{../../_gplvm/includes/ard_results.md} -->
+<!-- \include{_gplvm/includes/ard_model.md} -->
+<!-- \include{_gplvm/includes/ard_results.md} -->
 
 <!--Gaussian Process Dynamical Systems-->
 
-<!-- \include{../../_gplvm/includes/gpds.md} -->
+<!-- \include{_gplvm/includes/gpds.md} -->
 
 <!--Shared GP-LVM-->
 
-<!-- \include{../../_gplvm/includes/mrd_gplvm.md} -->
+<!-- \include{_gplvm/includes/mrd_gplvm.md} -->
 
 \subsection{What Can We Do that Google Can’t?}
 
@@ -141,5 +139,5 @@ mlai.write_figure(figure=fig, filename='../../slides/diagrams/wisuvt.svg')
 
 -   These methodologies are part of that picture.
 
-\include{../../_health/includes/deep_health_model.md}
-\include{../../_health/includes/deep_health_rangers.md}
+\include{_health/includes/deep-health-model.md}
+\include{_health/includes/deep-health-rangers.md}

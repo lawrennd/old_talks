@@ -1,3 +1,6 @@
+\ifndef{olympicMarathonGp}
+\define{olympicMarathonGp}
+\editme
 \include{_ml/includes/olympic-marathon-data.md}
 
 \newslide{}
@@ -19,7 +22,7 @@ _ = m_full.optimize() # Optimize parameters of covariance function}
 optimizes the parameters of the covariance function and the noise level of the model. Once the fit is complete, we'll try creating some test points, and computing the output of the GP model in terms of the mean and standard deviation of the posterior functions between 1870 and 2030. We plot the mean function and the standard deviation at 200 locations. We can obtain the predictions using
 ```y_mean, y_var = m_full.predict(xt)```
 }
-k
+
 \code{xt = np.linspace(1870,2030,200)[:,np.newaxis]
 yt_mean, yt_var = m_full.predict(xt)
 yt_sd=np.sqrt(yt_var)}
@@ -54,3 +57,4 @@ _ = m_clean.optimize()
 ```
 }
 
+\endif

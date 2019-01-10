@@ -1,27 +1,26 @@
-\newslide{Approximate Gaussian Processes
+\ifndef{approximateGps}
+\define{approximateGps}
+\editme
+\newslide{Approximate Gaussian Processes}
 
 
-\include{_gp/includes/low_rank_motivation.md}
-\include{_gp/includes/gp_variational_complexity.md}
+\include{_gp/includes/low-rank-motivation.md}
+\include{_gp/includes/gp-variational-complexity.md}
 \include{_gp/includes/bottleneck.md}
 
-\newslide{Information capture {data-transition="None"}
+\newslide{Information capture}
 
--   Everything we want to do with a GP involves marginalising
-$\mappingFunctionVector$
+* Everything we want to do with a GP involves marginalising $\mappingFunctionVector$
+    * Predictions
+	* Marginal likelihood
+	* Estimating covariance parameters
 
-    -   Predictions
-
-    -   Marginal likelihood
-
-    -   Estimating covariance parameters
-
--   The posterior of $\mappingFunctionVector$ is the central object. This
+* The posterior of $\mappingFunctionVector$ is the central object. This
 means inverting $\Kff$.
 
 \include{_gp/includes/nystrom.md}
-\include{_gp/includes/inducing_notation.md}
-\include{_gp/includes/inducing_introduction.md}
+\include{_gp/includes/inducing-notation.md}
+\include{_gp/includes/inducing-introduction.md}
 
 \newslide{The alternative posterior}
 
@@ -132,13 +131,11 @@ $$p(\dataVector|\paramVector)$$
 * Replace true $p(\inducingVector|\dataVector)$ with approximation $q(\inducingVector|\dataVector)$.
 
 * Minimize KL divergence between approximation and truth.
-
 * This is similar to the Bayesian posterior distribution.
-
 * But it's placed over a set of 'pseudo-observations'.
 
 
-###
+\newslide{}
 
 \LARGE$$\mappingFunctionVector, \inducingVector \sim \gaussianSamp{\mathbf{0}}{\begin{bmatrix}\Kff & \Kfu\\\Kuf & \Kuu\end{bmatrix}}$$
 $$\dataVector|\mappingFunctionVector = \prod_{i} \gaussianSamp{\mappingFunction}{\dataStd^2}$$
@@ -161,3 +158,4 @@ $$\dataVector|\mappingFunctionVector = \prod_{i} \gaussianSamp{\mappingFunction}
 * Joint Gaussianity is analytic, but not flexible.
 
 
+\endif

@@ -1,3 +1,5 @@
+\ifndef{recommenderData}
+\define{recommenderData}
 \subsection{Obtaining the Data}
 
 \notes{We are using a functionality of the Open Data Science software library to obtain the data. This functionality involves some prewritten code which distributes to each of you a google spreadsheet where you can rate movies that you've seen. For completeness the code follows. Try and read and understand the code, but don't run it! It has already been run centrally by me.}
@@ -66,3 +68,4 @@ Y = Y.dropna(axis=0)}
 
 \subsection{What is a pivot table? What does the `pandas` command `pd.melt` do?}{3}{10}
 
+\endif

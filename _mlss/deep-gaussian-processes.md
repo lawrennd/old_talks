@@ -17,7 +17,7 @@ date: 2019-01-11
 venue: MLSS, Stellenbosch, South Africa
 transition: None
 ---
-
+\define{draft}
 \include{talk-macros.tex}
 
 \include{_gp/includes/planck-cmp-master-gp.md}
@@ -73,10 +73,9 @@ transition: None
 * Perform end to end learning to optimize.
     * Maintain interpretability.
 
-
 \newslide{Acknowledgments}
 
-Stefanos  Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Dai, Javier Gonzalez, Andreas Damianou, Mark Pullin.
+Stefanos Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Dai, Javier Gonzalez, Andreas Damianou, Mark Pullin, Eric Meissner.
 
 
 \newslide{Thanks!}
