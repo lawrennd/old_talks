@@ -1,36 +1,21 @@
-<!--frame start-->
-### Parametric but Non-parametric
+\ifndef{largerGraphIntro}
+\define{largerGraphIntro}
+\editme
+\newslide{Parametric but Non-parametric}
+\slides{
+*  Augment with a vector of *inducing* variables, $\inducingVector$.* Form a variational lower bound on true likelihood.
+*  Bound *factorizes* given inducing variables.
+*  Inducing variables appear in bound similar to parameters in a parametric model.
+*  *But* number of inducing variables can be changed at run time.
+}
+\newslide{Inducing Variable Approximations}
+*  Date back to [\scriptsize[@Williams:nystrom00; @Smola:sparsegp00; @Csato:sparse02; @Seeger:fast03; @Snelson:pseudo05]]{}.
+    See [\scriptsize[@Quinonero:unifying05; @Thang:unifying17]]{} for reviews.
+*  We follow variational perspective of [\scriptsize[@Titsias:variational09]]{}.
+*  This is an augmented variable method, followed by a collapsed
+    variational approximation [\scriptsize[@King:klcorrection06; @Hensman:fast12]]{}.
 
--   Augment with a vector of *inducing* variables, $\inducingVector$.
-
--   Form a variational lower bound on true likelihood.
-
--   Bound *factorizes* given inducing variables.
-
--   Inducing variables appear in bound similar to parameters in a
-    parametric model.
-
--   *But* number of inducing variables can be changed at run time.
-
-<!--frame end-->
-<!--frame start-->
-### Inducing Variable Approximations
-
--   Date back to
-    [\scriptsize[@Williams:nystrom00; @Smola:sparsegp00; @Csato:sparse02; @Seeger:fast03; @Snelson:pseudo05]]{}.
-    See [\scriptsize[@Quinonero:unifying05]]{} for a review.
-
--   We follow variational perspective of
-    [\scriptsize[@Titsias:variational09]]{}.
-
--   This is an augmented variable method, followed by a collapsed
-    variational approximation
-    [\scriptsize[@King:klcorrection06; @Hensman:fast12]]{}.
-
-<!--frame end-->
-<!--frame failure start-->
-
-### Augmented Variable Model: Not Wrong but Useful?
+\newslide{Augmented Variable Model: Not Wrong but Useful?}
 
   \begin{columns}
     \column{0.6\textwidth}
@@ -93,5 +78,5 @@
   \end{columns}
   
 
-<!--frame failure end-->
 
+\endif

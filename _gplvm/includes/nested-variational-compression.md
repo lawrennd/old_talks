@@ -1,7 +1,11 @@
-### Variational Compression
+\ifndef{nestedVariationalCompression}
+\define{nestedVariationalCompression}
+\editme
 
-\hfill\raggedleft{\andreasPicture{1.5cm}}\
-\hfill\raggedleft{\citep{Damianou:deepgp13}}\
+\newslide{Variational Compression}
+
+\alignright{\andreasPicture{1.5cm}}\
+\alignright{@Damianou:deepgp13}\
 
 -   Augment each layer with inducing variables $\inducingVector_i$.
 
@@ -15,13 +19,13 @@
     $$\tilde p(\hiddenVector_i|\inducingVector_i,\hiddenVector_{i-1})
         = \gaussianDist{\hiddenVector_i}{\kernelMatrix_{\hiddenVector_{i}\inducingVector_{i}}\kernelMatrix_{\inducingVector_i\inducingVector_i}^{-1}\inducingVector_i}{\sigma^2_i\eye}.$$
 
-### Nested Variational Compression
+\newslide{Nested Variational Compression}
 
-\hfill\raggedleft{\jamesPicture{1.5cm}}\
-\hfill\raggedleft{\citep{Hensman:nested14}}
+\alignright{\jamesPicture{1.5cm}}\
+\alignright{@Hensman:nested14}
 
 -   By sustaining explicity distributions over inducing variables James
-    Hensman has developed a nested variatnt of variational compression.
+    Hensman has developed a nested variant of variational compression.
 
 -   Exciting thing: it mathematically looks like a deep neural network,
     but with inducing variables in the place of basis functions.
@@ -64,7 +68,7 @@
         \plate {yhx} {(y)(h2)(h1)(x)} {\,\,$i=1...\numData$};
       }
 
-### Nested Bound
+\newslide{Nested Bound}
 
 \begin{align}
     \log p(\dataVector|\inputMatrix )  \geq &
@@ -90,7 +94,7 @@
     \label{eq:deep_bound}
   \end{align}
 
-### Required Expectations
+\newslide{Required Expectations}
 
 $${\only<1>{\color{\redColor}}\log \gaussianDist{\dataVector}{{\only<2->{\color{\blueColor}}{\boldsymbol
           \Psi}_{\numLayers}}\kernelMatrix_{\inducingVector_{\numLayers}
@@ -110,6 +114,6 @@ $${\only<1>{\color{\redColor}}\log \gaussianDist{\dataVector}{{\only<2->{\color{
       {\color{\magentaColor}q(\hiddenVector_i)} = \int \tilde p(\hiddenVector_i|\inducingVector_i, \mappingFunctionVector_{i-1})q(\inducingVector_i){\color{\magentaColor}q(\mappingFunctionVector_{i-1})}\text{d}\inducingVector_i \text{d}\mappingFunctionVector_i, 
     \]
   }
-\only<4->{\begin{center} \emph{cf} wake sleep algorithm. {\color{\magentaColor}recognition network} and {\color{\blueColor}generation network} \citep{Hinton:science95}.\end{center} }
-
+\only<4->{\begin{center} \emph{cf} wake sleep algorithm. {\color{\magentaColor}recognition network} and {\color{\blueColor}generation network} @Hinton:science95.\end{center} }
+\endif
 

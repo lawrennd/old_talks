@@ -1,4 +1,8 @@
-### Gaussian $p(\dataScalar_i|\mappingFunction_i)$
+\ifndef{variationalCompression}
+\define{variationalCompression}
+\editme
+
+\newslide{Gaussian $p(\dataScalar_i|\mappingFunction_i)$}
 
 For Gaussian likelihoods: \only<1->{\[
   {\only<1>{\color{\blueColor}}\expDist{\log p(\dataScalar_i|\mappingFunction_i)}{p(\mappingFunction_i|\inducingVector)}} = -\frac{1}{2}\log 2\pi\dataStd^2 - \frac{1}{2\dataStd^2}\left(\dataScalar_i - \expSamp{\mappingFunction_i}\right)^2 - \frac{1}{2\dataStd^2} \left(\expSamp{\mappingFunction_i^2} - \expSamp{\mappingFunction_i}^2\right)
@@ -7,7 +11,7 @@ For Gaussian likelihoods: \only<1->{\[
   p(\dataScalar_i|\inducingVector) \geq \exp\expSamp{\log c_i}\gaussianDist{\dataScalar_i}{\expSamp{\mappingFunction_i}}{ \dataStd^2}
   \]}
 
-### Gaussian Process Over $\mappingFunctionVector$ and $\inducingVector$
+\newslide{Gaussian Process Over $\mappingFunctionVector$ and $\inducingVector$}
 
 Define:
 $$q_{i, i} = \varianceDist{\mappingFunction_i}{p(\mappingFunction_i|\inducingVector)} = \expDist{\mappingFunction_i^2}{p(\mappingFunction_i|\inducingVector)} - \expDist{\mappingFunction_i}{p(\mappingFunction_i|\inducingVector)}^2$$
@@ -21,7 +25,7 @@ $\inputMatrix_\inducingVector$.
 
 <!--frame end-->
 <!--frame start-->
-### Total Conditional Variance
+\newslide{Total Conditional Variance}
 
 -   The sum of $q_{i,i}$ is the *total conditional variance*.
 
@@ -36,7 +40,7 @@ $\inputMatrix_\inducingVector$.
 
 <!--frame end-->
 <!--frame start-->
-### Capacity of a Density
+\newslide{Capacity of a Density}
 
 -   Measure the ’capacity of a density’.
 
@@ -52,7 +56,7 @@ $\inputMatrix_\inducingVector$.
 
 <!--frame end-->
 <!--frame start-->
-### Alternative View
+\newslide{Alternative View}
 
 Exponentiated total variance bounds determinant.
 $$\det{\mathbf{Q}} < \exp \trace{\mathbf{Q}}$$ Because
@@ -63,7 +67,7 @@ $$\det{\mathbf{Q}} < \prod_{i=1}^k \exp\left(q_{i,i}\right)$$
 
 <!--frame end-->
 <!--frame start-->
-### Communication Channel
+\newslide{Communication Channel}
 
 -   Conditional density $p(\mappingFunctionVector|\inducingVector)$ can
     be seen as a *communication channel*.
@@ -77,7 +81,7 @@ $$\det{\mathbf{Q}} < \prod_{i=1}^k \exp\left(q_{i,i}\right)$$
 
 <!--frame end-->
 <!--frame start-->
-### Lower Bound on Likelihood
+\newslide{Lower Bound on Likelihood}
 
 Substitute variational bound into marginal likelihood:
 $$p(\dataVector)\geq \prod_{i=1}^\numData c_i \int \gaussianDist{\dataVector}{\expSamp{\mappingFunctionVector}}{\dataStd^2\eye}p(\inducingVector) \text{d}\inducingVector$$
@@ -87,7 +91,7 @@ is *linearly* dependent on $\inducingVector$.
 
 <!--frame end-->
 <!--frame start-->
-### Deterministic Training Conditional
+\newslide{Deterministic Training Conditional}
 
 Making the marginalization of $\inducingVector$ straightforward. In the
 Gaussian case:
@@ -109,3 +113,4 @@ $$p(\inducingVector) = \gaussianDist{\inducingVector}{\zerosVector}{\kernelMatri
 
 <!--frame end-->
 
+\endif

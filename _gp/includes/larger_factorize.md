@@ -1,5 +1,8 @@
-<!--frame start-->
-### Factorizing Likelihoods
+\ifndef{largerFactorize}
+\define{largerFactorize}
+\editme
+
+\newside{Factorizing Likelihoods}
 
 -   If the likelihood, $p(\dataVector|\mappingFunctionVector)$,
     factorizes \only<1-2>{\[
@@ -20,5 +23,4 @@
     $\mappingFunctionVector$ and $\dataVector|\mappingFunctionVector$
     ...
 
-<!--frame end-->
-
+\endif

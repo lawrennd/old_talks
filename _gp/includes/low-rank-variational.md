@@ -1,5 +1,8 @@
-<!--frame start-->
-###  Variational marginalisation of $\mappingFunctionVector$
+\ifndef{lowRankVariational}
+\define{lowRankVariational}
+\editme
+
+\newslide{Variational marginalisation of $\mappingFunctionVector$}
 
 $$\log p(\dataVector\given\inducingVector) = \log\int p(\dataVector \given\mappingFunctionVector)p(\mappingFunctionVector\given\inducingVector,\inputMatrix)\text{d}\mappingFunctionVector$$
 
@@ -12,9 +15,7 @@ $$\log p(\dataVector\given\inducingVector) \geq  \mathbb{E}_{p(\mappingFunctionV
 
 [\color{MyDarkBlue} No inversion of $\Kff$ required]{}
 
-<!--frame end-->
-<!--frame start-->
-### Variational marginalisation of $\mappingFunctionVector$ (another way)
+\newslide{Variational marginalisation of $\mappingFunctionVector$ (another way)}
 
 \alignright{@Titsias:variational09}
 $$p(\dataVector\given\inducingVector) = \frac{p(\dataVector \given\mappingFunctionVector)p(\mappingFunctionVector\given\inducingVector)}{p(\mappingFunctionVector\given\dataVector, \inducingVector)}$$
@@ -27,18 +28,14 @@ $$\log p(\dataVector\given\inducingVector) = \widetilde p(\dataVector\given\indu
 
 [\color{MyDarkBlue} No inversion of $\Kff$ required]{}
 
-<!--frame end-->
-<!--frame start-->
-### A Lower Bound on the Likelihood
+\newslide{A Lower Bound on the Likelihood}
 
 $$\widetilde p(\dataVector\given\inducingVector)  = \prod_{i=1}^\numData \widetilde p(\dataScalar_i\given\inducingVector)$$
 $$\widetilde p(\dataScalar\given\inducingVector) = \gaussianDist{\dataScalar}{\kfu\Kuu^{-1}\inducingVector}{\dataStd^2} \,{\color{red}\exp\left\{-\tfrac{1}{2\dataStd^2}\left(\kff- \kfu\Kuu^{-1}\kuf\right)\right\}}$$
 
 [A straightforward likelihood approximation, and a penalty term]{}
 
-<!--frame end-->
-<!--frame start-->
-### Now we can marginalise $\inducingVector$
+\newslide{Now we can marginalise $\inducingVector$}
 
 $$\widetilde p(\inducingVector\given\dataVector,\inducingInputMatrix) = \frac{\widetilde p(\dataVector\given\inducingVector)p(\inducingVector\given\inducingInputMatrix)}{\int \widetilde p(\dataVector\given\inducingVector)p(\inducingVector\given\inducingInputMatrix)\dif{\inducingVector}}$$
 
@@ -46,9 +43,7 @@ $$\widetilde p(\inducingVector\given\dataVector,\inducingInputMatrix) = \frac{\w
 
 -   We also get a lower bound of the marginal likelihood
 
-<!--frame end-->
-<!--frame start-->
-### What does the penalty term do?
+\newslide{What does the penalty term do?}
 
 $${\color{red}\sum_{i=1}^\numData-\tfrac{1}{2\dataStd^2}\left(\kff- \kfu\Kuu^{-1}\kuf\right)}$$
 
@@ -60,9 +55,7 @@ $${\color{red}\sum_{i=1}^\numData-\tfrac{1}{2\dataStd^2}\left(\kff- \kfu\Kuu^{-1
       $$
     \end{multicols}
   \end{block}
-<!--frame end-->
-<!--frame start-->
-### What does the penalty term do? {#what-does-the-penalty-term-do}
+\newslide{What does the penalty term do?}
 
 $${\color{red}\sum_{i=1}^\numData-\tfrac{1}{2\dataStd^2}\left(\kff - \kfu\Kuu^{-1}\kuf\right)}$$
 
@@ -71,17 +64,13 @@ $${\color{red}\sum_{i=1}^\numData-\tfrac{1}{2\dataStd^2}\left(\kff - \kfu\Kuu^{-
     \widetilde p(\dataVector\given\inducingInputMatrix) = \int \widetilde p(\dataVector\given\inducingVector)p(\inducingVector\given\inducingInputMatrix)\dif{\inducingVector}
     $$
   \end{block}
-<!--frame end-->
-<!--frame start-->
-### What does the penalty term do? {#what-does-the-penalty-term-do}
+\newslide{What does the penalty term do?}
 
 ![image](../../../gp/tex/diagrams/cov_approx){width="60.00000%"}
 
 ![image](../../../gp/tex/diagrams/cov_approx_opt){width="60.00000%"}
 
-<!--frame end-->
-<!--frame start-->
-### How good is the inducing approximation?
+\newslide{How good is the inducing approximation?}
 
 [It’s easy to show that as $\inducingInputMatrix \to \inputMatrix$:]{}
 
@@ -98,9 +87,7 @@ $${\color{red}\sum_{i=1}^\numData-\tfrac{1}{2\dataStd^2}\left(\kff - \kfu\Kuu^{-
 
 -   \alert{We can optimize $\mathbf{Z}$ along with the hyperparameters}
 
-<!--frame end-->
-<!--frame start-->
-### Predictions
+\newslide{Predictions}
 
 \begin{block}{In a `full' GP, we did}
     \[
@@ -112,9 +99,7 @@ $${\color{red}\sum_{i=1}^\numData-\tfrac{1}{2\dataStd^2}\left(\kff - \kfu\Kuu^{-
     p(\mappingFunction_\star\given\dataVector) = \int p(\mappingFunction_\star\given \inducingVector)\widetilde p(\inducingVector\given \dataVector)\text{d} \inducingVector
     \]
   \end{block}
-<!--frame end-->
-<!--frame start-->
-### Recap
+\newslide{Recap}
 
 [\color{MyDarkBlue}So far we:]{}
 
@@ -142,9 +127,7 @@ $${\color{red}\sum_{i=1}^\numData-\tfrac{1}{2\dataStd^2}\left(\kff - \kfu\Kuu^{-
 
 -   historical approximations
 
-<!--frame end-->
-<!--frame start-->
-### Other approximations
+\newslide{Other approximations}
 
 [Subset selection]{} \alignright{@Lawrence:ivm02}
 
@@ -161,9 +144,7 @@ $${\color{red}\sum_{i=1}^\numData-\tfrac{1}{2\dataStd^2}\left(\kff - \kfu\Kuu^{-
     -   $ p(\dataVector_i\given \inducingVector) = 1  \qquad
               \qquad i\notin \text {selection}$
 
-<!--frame end-->
-<!--frame start-->
-### Other approximations {#other-approximations}
+\newslide{Other approximations}
 
 \alignright{@Quinonero:unifying05}
   {Deterministic Training Conditional (DTC)}
@@ -176,9 +157,7 @@ $${\color{red}\sum_{i=1}^\numData-\tfrac{1}{2\dataStd^2}\left(\kff - \kfu\Kuu^{-
 
 Optimization of $\inducingInputMatrix$ is difficult
 
-<!--frame end-->
-<!--frame start-->
-### Other approximations {#other-approximations}
+\newslide{Other approximations}
 
 [Fully Independent Training Conditional]{}
 \alignright{@Snelson:pseudo05}
@@ -190,5 +169,4 @@ Optimization of $\inducingInputMatrix$ is difficult
 Optimization of $\inducingInputMatrix$ is still difficult, and there are
 some weird heteroscedatic effects
 
-<!--frame end-->
-
+\endif

@@ -1,6 +1,7 @@
 \ifndef{approximateGps}
 \define{approximateGps}
 \editme
+\include{_gp/includes/sparse-gp-comic.md}
 \newslide{Approximate Gaussian Processes}
 
 
@@ -33,18 +34,15 @@ $$p(\inducingVector\given\dataVector,\inducingInputMatrix) = \frac{p(\dataVector
 
 <!--Flexible Parametric Approximation-->
 
-\include{_gp/includes/larger_graph_intro.md}
-\include{_gp/includes/larger_variational.md}
-\include{_gp/includes/larger_factorize.md}
+\include{_gp/includes/larger-graph-intro.md}
+\include{_gp/includes/larger-variational.md}
+\include{_gp/includes/larger-factorize.md}
 
 \newslide{Inducing Variables}
 
 * Choose to go a different way.
-
 * Introduce a set of auxiliary variables, $\inducingVector$, which are $m$ in length.
-
 * They are like "artificial data".
-
 * Used to *induce* a distribution: $q(\inducingVector|\dataVector)$
 
 \newslide{Making Parameters non-Parametric}
@@ -59,7 +57,6 @@ $$
 \newslide{Variational Compression}
 
 * Model for our data, $\dataVector$
-
 \columns{
 $$p(\dataVector)$$
 }{
@@ -69,7 +66,6 @@ $$p(\dataVector)$$
 \newslide{Variational Compression}
 
 * Prior density over $\mappingFunctionVector$. Likelihood relates data, $\dataVector$, to $\mappingFunctionVector$.
-
 \columns{
 $$p(\dataVector)=\int p(\dataVector|\mappingFunctionVector)p(\mappingFunctionVector)\text{d}\mappingFunctionVector$$
 }{
@@ -79,7 +75,6 @@ $$p(\dataVector)=\int p(\dataVector|\mappingFunctionVector)p(\mappingFunctionVec
 \newslide{Variational Compression}
 
 * Prior density over $\mappingFunctionVector$. Likelihood relates data, $\dataVector$, to $\mappingFunctionVector$.
-
 \columns{
 $$p(\dataVector)=\int p(\dataVector|\mappingFunctionVector)p(\inducingVector|\mappingFunctionVector)p(\mappingFunctionVector)\text{d}\mappingFunctionVector\text{d}\inducingVector$$
 }{
@@ -129,7 +124,6 @@ $$p(\dataVector|\paramVector)$$
 \newslide{Compression}
 
 * Replace true $p(\inducingVector|\dataVector)$ with approximation $q(\inducingVector|\dataVector)$.
-
 * Minimize KL divergence between approximation and truth.
 * This is similar to the Bayesian posterior distribution.
 * But it's placed over a set of 'pseudo-observations'.
@@ -142,12 +136,12 @@ $$\dataVector|\mappingFunctionVector = \prod_{i} \gaussianSamp{\mappingFunction}
 
 <!--Variational Compression-->
 
-\include{_gp/includes/variational_compression.md}
-\include{_gp/includes/low_rank_variational.md}
+\include{_gp/includes/variational-compression.md}
+\include{_gp/includes/low-rank-variational.md}
 \include{_gplvm/includes/bayes_gplvm_intro.md}
 \include{_gplvm/includes/variational_bayes_gplvm_long.md}
-\include{_gplvm/includes/nested_variational_compression.md}
-\include{_gp/includes/larger_gaussian.md}
+\include{_gplvm/includes/nested-variational-compression.md}
+\include{_gp/includes/larger-gaussian.md}
 
 \newslide{Efficient Computation}
 
@@ -157,5 +151,6 @@ $$\dataVector|\mappingFunctionVector = \prod_{i} \gaussianSamp{\mappingFunction}
 
 * Joint Gaussianity is analytic, but not flexible.
 
+\include{_gp/includes/inducing-variables-demo.md}
 
 \endif

@@ -1,5 +1,7 @@
-<!--frame start-->
-### Gaussian $p(\dataScalar_i|\mappingFunction_i)$
+\ifndef{largerGaussian}
+\define{largerGaussian}
+\editme
+\newslide{Gaussian $p(\dataScalar_i|\mappingFunction_i)$}
 
 For Gaussian likelihoods: \only<1->{\[
   {\only<1>{\color{\blueColor}}\expDist{\log p(\dataScalar_i|\mappingFunction_i)}{p(\mappingFunction_i|\inducingVector)}} = -\frac{1}{2}\log 2\pi\dataStd^2 - \frac{1}{2\dataStd^2}\left(\dataScalar_i - \expSamp{\mappingFunction_i}\right)^2 - \frac{1}{2\dataStd^2} \left(\expSamp{\mappingFunction_i^2} - \expSamp{\mappingFunction_i}^2\right)
@@ -8,9 +10,7 @@ For Gaussian likelihoods: \only<1->{\[
   p(\dataScalar_i|\inducingVector) \geq \exp\expSamp{\log c_i}\gaussianDist{\dataScalar_i}{\expSamp{\mappingFunction_i}}{ \dataStd^2}
   \]}
 
-<!--frame end-->
-<!--frame start-->
-### Gaussian Process Over $\mappingFunctionVector$ and $\inducingVector$
+\newslide{Gaussian Process Over $\mappingFunctionVector$ and $\inducingVector$}
 
 Define:
 $$q_{i, i} = \varianceDist{\mappingFunction_i}{p(\mappingFunction_i|\inducingVector)} = \expDist{\mappingFunction_i^2}{p(\mappingFunction_i|\inducingVector)} - \expDist{\mappingFunction_i}{p(\mappingFunction_i|\inducingVector)}^2$$
@@ -22,9 +22,7 @@ $$q_{i, i} = \kernelScalar_{i, i} - \kernelVector_{i, \inducingVector}^\top \ker
 $c_i$ is not a function of $\inducingVector$ but *is* a function of
 $\inputMatrix_\inducingVector$.
 
-<!--frame end-->
-<!--frame start-->
-### Lower Bound on Likelihood
+\newslide{Lower Bound on Likelihood}
 
 Substitute variational bound into marginal likelihood:
 $$p(\dataVector)\geq \prod_{i=1}^\numData c_i \int \gaussianDist{\dataVector}{\expSamp{\mappingFunctionVector}}{\dataStd^2\eye}p(\inducingVector) \text{d}\inducingVector$$
@@ -32,9 +30,7 @@ Note that:
 $$\expDist{\mappingFunctionVector}{p(\mappingFunctionVector|\inducingVector)} = \kernelMatrix_{\mappingFunctionVector, \inducingVector} \kernelMatrix_{\inducingVector, \inducingVector}^{-1}\inducingVector$$
 is *linearly* dependent on $\inducingVector$.
 
-<!--frame end-->
-<!--frame start-->
-### Deterministic Training Conditional
+\newslide{Deterministic Training Conditional}
 
 Making the marginalization of $\inducingVector$ straightforward. In the
 Gaussian case:
@@ -54,5 +50,4 @@ $$p(\inducingVector) = \gaussianDist{\inducingVector}{\zerosVector}{\kernelMatri
       \item<6->This results in the projected process approximation {\scriptsize \citep{Rasmussen:book06}} or DTC {\scriptsize \citep{Quinonero:unifying05}}. Proposed by {\scriptsize \citep{Smola:sparsegp00,Seeger:fast03,Csato:sparse02,Csato:thesis02}}.
       \end{itemize}}
 
-<!--frame end-->
-
+\endif
