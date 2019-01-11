@@ -1,6 +1,16 @@
 \define{\talksdir}{/Users/neil/lawrennd/talks}
 \define{\concat{argone}{argtwo}}{\argone\argtwo}
 
+\define{\cyanColor}{cyan}
+\define{\magentaColor}{magenta}
+\define{\yellowColor}{yellow}
+\define{\redColor}{red}
+\define{\greenColor}{green}
+\define{\blueColor}{blue}
+\define{\blackColor}{black}
+\define{\whiteColor}{white}
+
+
 <!-- Enables links to pages-->
 \ifdef{draft}
 \define{\editme}{<a href="file://\talksdir/\file">\file</a>
@@ -47,18 +57,15 @@ YouTubeVideo('\id')
 \define{\alignleft{block}}{<span style="text-align:left">\block</span>}
 \define{\largetext{block}}{<large>\block</large>}
 \define{\smalltext{block}}{<small>\block</small>}
-\define{\coloryellow{block}}{\block}
-\define{\colorcyan{block}}{\block}
-\define{\colormagenta{block}}{\block}
-\define{\colorgreen{block}}{\block}
-\define{\colorred{block}}{\block}
-\define{\colorblue{block}}{\block}
+
 
 \define{\columns{one}{two}{width1}{width2}}{<table><tr><td width="\width1">\one</td><td width="\width2">\two</td></tr></table>}
 
 
 
 \ifdef{slides} <!-- ipynb and slides-->
+
+
 \define{\slidenotes{slidetext}{notetext}}{\slidetext}
 
 \define{\setupplotcode{block}}{```{.python}
@@ -103,6 +110,8 @@ from \filename import \object
 
 
 \else <!-- ipynb but not slides -->
+
+
 \define{\slidenotes{slidetext}{notetext}}{\notetext}
 
 <!--%%%%%%%%%% CODE DISPLAY %%%%%%%%%%-->
@@ -181,6 +190,19 @@ from \filename import \object
 
 \endif 
 \else <!--% not ipynb-->
+
+\if{slides} <!--% slides and not ipynb
+
+\define{\cyanColor}{red}
+\define{\magentaColor}{green}
+\define{\yellowColor}{blue}
+\define{\redColor}{cyan}
+\define{\greenColor}{magenta}
+\define{\blueColor}{yellow}
+\define{\blackColor}{white}
+\define{\whiteColor}{black}
+
+\endif
 
 \ifdef{notes}
 \define{\includegooglebook{id}{page}}{[![](../slides/diagrams/books/\id-\page.png)](https://play.google.com/books/reader?id=\id&pg=\page)}
@@ -357,12 +379,6 @@ from \filename import \object
 \define{\alignleft{block}}{<span style="text-align:left">\block</span>}
 \define{\largetext{block}}{<large>\block</large>}
 \define{\smalltext{block}}{<small>\block</small>}
-\define{\colorgreen{block}}{<font color="green">\block</font>}
-\define{\coloryellow{block}}{<font color="yellow">\block</font>}
-\define{\colorcyan{block}}{<font color="cyan">\block</font>}
-\define{\colormagenta{block}}{<font color="magenta">\block</font>}
-\define{\colorred{block}}{<font color="red">\block</font>}
-\define{\colorblue{block}}{<font color="blue">\block</font>}
 
 \define{\columns{one}{two}{width1}{width2}}{<table><tr><td width="\width1">\one</td><td width="\width2">\two</td></tr></table>}
 
@@ -402,6 +418,14 @@ showDivs(\start, '\group');
 \define{\endanimation}{}
 
 \define{\startslides{group}{start}{finish}}{\startanimation{\group}{\start}{\finish}}
+
+
+\define{\colorcyan{block}}{<font color="\cyanColor">\block</font>}
+\define{\colormagenta{block}}{<font color="\magentaColor">\block</font>}
+\define{\coloryellow{block}}{<font color="\yellowColor">\block</font>}
+\define{\colorred{block}}{<font color="cyan">\redColor</font>}
+\define{\colorgreen{block}}{<font color="magenta">\greenColor</font>}
+\define{\colorblue{block}}{<font color="yellow">\blueColor</font>}
 
 \include{talk-people.tex}
 \include{talk-logos.tex}

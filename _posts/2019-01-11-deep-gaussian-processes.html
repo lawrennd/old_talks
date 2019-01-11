@@ -27,35 +27,199 @@ categories:
 <!--define{draft}-->
 <!-- Enables links to pages-->
 <p><!--% not ipynb--></p>
-<div style="text-align:center;vertical-align:middle">
-<img class="vertical-align:middle" src="../slides/diagrams/Planck_CMB.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-<center>
-<em>The cosmic microwave background is, to a very high degree of precision, a Gaussian process. The parameters of its covariance function are given by fundamental parameters of the universe, such as the amount of dark matter and mass. </em>
-</center>
-<div style="fontsize:120px;vertical-align:middle">
-<img src="../slides/diagrams/earth_PNG37.png" width="20%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">=<em>f</em>(</span><img src="../slides/diagrams/Planck_CMB.png"  width="50%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">)</span>
-</div>
-<center>
-<em>What we observe today is some non-linear function of the cosmic microwave background. </em>
-</center>
-<div style="text-align:center;vertical-align:middle">
-<img class="" src="../slides/diagrams/sparse-gps.jpg.jpg" width="45%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-<center>
-<em>Image credit: Kai Arulkumaran </em>
-</center>
-<p>Inference in a Gaussian process has computational complexity of <span class="math inline">$\bigO(\numData^3)$</span> and storage demands of <span class="math inline">$\bigO(\numData^2)$</span>. This is too large for many modern data sets.</p>
-<p>Low rank approximations allow us to work with Gaussian processes with computational complexity of <span class="math inline">$\bigO(\numData\numInducing^2)$</span> and storage demands of <span class="math inline">$\bigO(\numData\numInducing)$</span>, where <span class="math inline">$\numInducing$</span> is a user chosen parameter.</p>
-<p>In machine learning, low rank approximations date back to <span class="citation">Smola and Bartlett (n.d.)</span>, <span class="citation">Williams and Seeger (n.d.)</span>, who considered the Nystr&quot;om approximation and <span class="citation">Csató and Opper (2002)</span>;<span class="citation">Csató (2002)</span> who considered low rank approximations in the context of on-line learning. Selection of active points for the approximation was considered by <span class="citation">Seeger, Williams, and Lawrence (n.d.)</span> and <span class="citation">Snelson and Ghahramani (n.d.)</span> first proposed that the active set could be optimized directly. Those approaches were reviewed by <span class="citation">Quiñonero Candela and Rasmussen (2005)</span> under a unifying likelihood approximation perspective. General rules for deriving the maximum likelihood for these sparse approximations were given in <span class="citation">Lawrence (n.d.)</span>.</p>
-<p>Modern variational interpretations of these low rank approaches were first explored in <span class="citation">Titsias (n.d.)</span>. A more modern summary which considers each of these approximations as an <span class="math inline"><em>α</em></span>-divergence is given by <span class="citation">Bui, Yan, and Turner (2017)</span>.</p>
-<h3 id="variational-compression">Variational Compression</h3>
-<p>Inducing variables are a compression of the real observations. The basic idea is can I create a new data set that summarizes all the information in the original data set. If this data set is smaller, I've compressed the information in the original data set.</p>
-<p>Inducing variables can be thought of as pseudo-data, indeed in <span class="citation">Snelson and Ghahramani (n.d.)</span> they were referred to as <em>pseudo-points</em>.</p>
-<p>The only requirement for inducing variables is that they are jointly distributed as a Gaussian process with the original data. This means that they can be from the space <span class="math inline">$\mappingFunctionVector$</span> or a space that is related through a linear operator (see e.g. <span class="citation">Álvarez et al. (2010)</span>). For example we could choose to store the gradient of the function at particular points or a value from the frequency spectrum of the function <span class="citation">(Lázaro-Gredilla, Quiñonero-Candela, and Rasmussen 2010)</span>.</p>
-<h3 id="variational-compression-ii">Variational Compression II</h3>
-<p>Inducing variables don't only allow for the compression of the non-parameteric information into a reduced data aset but they also allow for computational scaling of the algorithms through, for example stochastic variational approaches <span class="citation">Hensman, Fusi, and Lawrence (n.d.)</span> or parallelization <span class="citation">(<span class="citeproc-not-found" data-reference-id="Gal:Distributed14"><strong>???</strong></span>)</span>,<span class="citation">Dai et al. (2014)</span>, <span class="citation">M. W. Seeger et al. (2017)</span>.</p>
-<!--include{_gp/includes/larger-factorize.md}-->
+<p><!--% slides and not ipynb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="" style="text-align:center;vertical-align:middle"><img class="vertical-align:middle" src="../slides/diagrams/Planck_CMB.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
+
+<center>*The cosmic microwave background is, to a very high degree of precision, a Gaussian process. The parameters of its covariance function are given by fundamental parameters of the universe, such as the amount of dark matter and mass. *</center>
+
+
+
+<div class="" style="fontsize:120px;vertical-align:middle"><img src="../slides/diagrams/earth_PNG37.png" width="20%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;">$=f\Bigg($<img src="../slides/diagrams/Planck_CMB.png"  width="50%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;">$\Bigg)$</div>
+
+<center>*What we observe today is some non-linear function of the cosmic microwave background. *</center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="" style="text-align:center;vertical-align:middle"><img class="" src="../slides/diagrams/sparse-gps.jpg.jpg" width="45%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
+<center>*Image credit: Kai Arulkumaran *</center>
+
+
+
+
+
+
+
+
+
+Inference in a Gaussian process has computational complexity of $\bigO(\numData^3)$ and storage demands of $\bigO(\numData^2)$. This is too large for many modern data sets. 
+
+Low rank approximations allow us to work with Gaussian processes with computational complexity of $\bigO(\numData\numInducing^2)$ and storage demands of $\bigO(\numData\numInducing)$, where $\numInducing$ is a user chosen parameter.
+
+In machine learning, low rank approximations date back to @Smola:sparsegp00, @Williams:nystrom00, who considered the Nystr\"om approximation and @Csato:sparse02;@Csato:thesis02 who considered low rank approximations in the context of on-line learning. Selection of active points for the approximation was considered by @Seeger:fast03 and  @Snelson:pseudo05 first proposed that the active set could be optimized directly. Those approaches were reviewed by @Quinonero:unifying05 under a unifying likelihood approximation perspective. General rules for deriving the maximum likelihood for these sparse approximations were given in @Lawrence:larger07. 
+
+Modern variational interpretations of these low rank approaches were first explored in @Titsias:variational09. A more modern summary which considers each of these approximations as an $\alpha$-divergence is given by @Thang:unifying17.
+
+
+
+
+### Variational Compression
+
+
+Inducing variables are a compression of the real observations. The basic idea is can I create a new data set that summarizes all the information in the original data set. If this data set is smaller, I've compressed the information in the original data set. 
+
+Inducing variables can be thought of as pseudo-data, indeed in @Snelson:pseudo05 they were referred to as *pseudo-points*. 
+
+The only requirement for inducing variables is that they are jointly distributed as a Gaussian process with the original data. This means that they can be from the space $\mappingFunctionVector$ or a space that is related through a linear operator (see e.g. @Alvarez:efficient10). For example we could choose to store the gradient of the function at particular points or a value from the frequency spectrum of the function [@Lazaro:spectrum10].
+
+### Variational Compression II
+
+
+Inducing variables don't only allow for the compression of the non-parameteric information into a reduced data aset but they also allow for computational scaling of the algorithms through, for example stochastic variational approaches @Hensman:bigdata13 or parallelization @Gal:Distributed14,@Dai:gpu14, @Seeger:auto17.
+
+<!--include{_gp/includes/larger-factorize.md}--></p>
 <p>We’ve seen how we go from parametric to non-parametric. The limit implies infinite dimensional <span class="math inline">$\mappingVector$</span>. Gaussian processes are generally non-parametric: combine data with covariance function to get model. This representation <em>cannot</em> be summarized by a parameter vector of a fixed size.</p>
 <p>Parametric models have a representation that does not respond to increasing training set size. Bayesian posterior distributions over parameters contain the information about the training data, for example if we use use Bayes’ rule from training data, <br /><span class="math display">$$
 p\left(\mappingVector|\dataVector, \inputMatrix\right),
@@ -136,8 +300,8 @@ $$</span><br /> where the kernel matrix itself can be decomposed into <br /><spa
 \Kuf &amp; \Kuu
 \end{bmatrix}
 $$</span><br /> Choosing the inducing variables amounts to specifying <span class="math inline">$\Kfu$</span> and <span class="math inline">$\Kuu$</span> such that <span class="math inline">$\kernelMatrix$</span> remains positive definite. The typical choice is to choose <span class="math inline">$\inducingVector$</span> in the same domain as <span class="math inline">$\mappingFunctionVector$</span>, associating each inducing output, <span class="math inline">$\inducingScalar_i$</span> with a corresponding input location <span class="math inline">$\inducingInputVector$</span>. However, more imaginative choices are absolutely possible. In particular, if <span class="math inline">$\inducingVector$</span> is related to <span class="math inline">$\mappingFunctionVector$</span> through a linear operator (see e.g. <span class="citation">Álvarez et al. (2010)</span>), then valid <span class="math inline">$\Kuu$</span> and <span class="math inline">$\Kuf$</span> can be constructed. For example we could choose to store the gradient of the function at particular points or a value from the frequency spectrum of the function <span class="citation">(Lázaro-Gredilla, Quiñonero-Candela, and Rasmussen 2010)</span>.</p>
-<h3 id="variational-compression-ii-1">Variational Compression II</h3>
-<p>Inducing variables don't only allow for the compression of the non-parameteric information into a reduced data set but they also allow for computational scaling of the algorithms through, for example stochastic variational approaches<span class="citation">(Hoffman et al. 2012; Hensman, Fusi, and Lawrence, n.d.)</span> or parallelization <span class="citation">(<span class="citeproc-not-found" data-reference-id="Gal:Distributed14"><strong>???</strong></span>)</span>,<span class="citation">Dai et al. (2014)</span>, <span class="citation">M. W. Seeger et al. (2017)</span>.</p>
+<h3 id="variational-compression-ii">Variational Compression II</h3>
+<p>Inducing variables don't only allow for the compression of the non-parameteric information into a reduced data set but they also allow for computational scaling of the algorithms through, for example stochastic variational approaches<span class="citation">(Hoffman et al. 2012; Hensman, Fusi, and Lawrence, n.d.)</span> or parallelization <span class="citation">(<span class="citeproc-not-found" data-reference-id="Gal:Distributed14"><strong>???</strong></span>)</span>,<span class="citation">Dai et al. (2014)</span>, <span class="citation">Seeger et al. (2017)</span>.</p>
 <!--include{_gp/includes/larger-graph-intro.md}-->
 <h3 id="a-simple-regression-problem">A Simple Regression Problem</h3>
 <p>Here we set up a simple one dimensional regression problem. The input locations, <span class="math inline">$\inputMatrix$</span>, are in two separate clusters. The response variable, <span class="math inline">$\dataVector$</span>, is sampled from a Gaussian process with an exponentiated quadratic covariance.</p>
@@ -1222,12 +1386,6 @@ infr.run(Y<span class="op">=</span>data)</code></pre></div>
 <div id="ref-Cho:deep09">
 <p>Cho, Youngmin, and Lawrence K. Saul. 2009. “Kernel Methods for Deep Learning.” In <em>Advances in Neural Information Processing Systems 22</em>, edited by Y. Bengio, D. Schuurmans, J. D. Lafferty, C. K. I. Williams, and A. Culotta, 342–50. Curran Associates, Inc. <a href="http://papers.nips.cc/paper/3628-kernel-methods-for-deep-learning.pdf" class="uri">http://papers.nips.cc/paper/3628-kernel-methods-for-deep-learning.pdf</a>.</p>
 </div>
-<div id="ref-Csato:thesis02">
-<p>Csató, Lehel. 2002. “Gaussian Processes — Iterative Sparse Approximations.” PhD thesis, Aston University.</p>
-</div>
-<div id="ref-Csato:sparse02">
-<p>Csató, Lehel, and Manfred Opper. 2002. “Sparse on-Line Gaussian Processes.” <em>Neural Computation</em> 14 (3): 641–68.</p>
-</div>
 <div id="ref-Dai:gpu14">
 <p>Dai, Zhenwen, Andreas Damianou, James Hensman, and Neil D. Lawrence. 2014. “Gaussian Process Models with Parallelization and GPU Acceleration.”</p>
 </div>
@@ -1252,9 +1410,6 @@ infr.run(Y<span class="op">=</span>data)</code></pre></div>
 <div id="ref-Kalaitzis:simple11">
 <p>Kalaitzis, Alfredo A., and Neil D. Lawrence. 2011. “A Simple Approach to Ranking Differentially Expressed Gene Expression Time Courses Through Gaussian Process Regression.” <em>BMC Bioinformatics</em> 12 (180). doi:<a href="https://doi.org/10.1186/1471-2105-12-180">10.1186/1471-2105-12-180</a>.</p>
 </div>
-<div id="ref-Lawrence:larger07">
-<p>Lawrence, Neil D. n.d. “Learning for Larger Datasets with the Gaussian Process Latent Variable Model.” In, 243–50.</p>
-</div>
 <div id="ref-Lazaro:spectrum10">
 <p>Lázaro-Gredilla, Miguel, Joaquin Quiñonero-Candela, and Carl Edward Rasmussen. 2010. “Sparse Spectrum Gaussian Processes.” <em>Journal of Machine Learning Research</em> 11: 1865–81.</p>
 </div>
@@ -1266,9 +1421,6 @@ infr.run(Y<span class="op">=</span>data)</code></pre></div>
 </div>
 <div id="ref-Perdikaris:multifidelity17">
 <p>Perdikaris, P., M. Raissi, A. Damianou, N. D. Lawrence, and G. E. Karniadakis. 2017. “Nonlinear Information Fusion Algorithms for Data-Efficient Multi-Fidelity Modelling.” <em>Proceedings of the Royal Society of London A: Mathematical, Physical and Engineering Sciences</em> 473 (2198). The Royal Society. doi:<a href="https://doi.org/10.1098/rspa.2016.0751">10.1098/rspa.2016.0751</a>.</p>
-</div>
-<div id="ref-Quinonero:unifying05">
-<p>Quiñonero Candela, Joaquin, and Carl Edward Rasmussen. 2005. “A Unifying View of Sparse Approximate Gaussian Process Regression.” <em>Journal of Machine Learning Research</em> 6: 1939–59.</p>
 </div>
 <div id="ref-Ranganath-survival16">
 <p>Ranganath, Rajesh, Adler Perotte, Noémie Elhadad, and David Blei. 2016. “Deep Survival Analysis.” In <em>Proceedings of the 1st Machine Learning for Healthcare Conference</em>, edited by Finale Doshi-Velez, Jim Fackler, David Kale, Byron Wallace, and Jenna Wiens, 56:101–14. Proceedings of Machine Learning Research. Children’s Hospital LA, Los Angeles, CA, USA: PMLR. <a href="http://proceedings.mlr.press/v56/Ranganath16.html" class="uri">http://proceedings.mlr.press/v56/Ranganath16.html</a>.</p>
@@ -1285,23 +1437,11 @@ infr.run(Y<span class="op">=</span>data)</code></pre></div>
 <div id="ref-Seeger:auto17">
 <p>Seeger, Matthias W., Asmus Hetzel, Zhenwen Dai, and Neil D. Lawrence. 2017. “Auto-Differentiating Linear Algebra.” <em>CoRR</em> abs/1710.08717. <a href="http://arxiv.org/abs/1710.08717" class="uri">http://arxiv.org/abs/1710.08717</a>.</p>
 </div>
-<div id="ref-Seeger:fast03">
-<p>Seeger, Matthias, Christopher K. I. Williams, and Neil D. Lawrence. n.d. “Fast Forward Selection to Speed up Sparse Gaussian Process Regression.” In.</p>
-</div>
-<div id="ref-Smola:sparsegp00">
-<p>Smola, Alexander J., and Peter L. Bartlett. n.d. “Sparse Greedy Gaussian Process Regression.” In, 619–25.</p>
-</div>
-<div id="ref-Snelson:pseudo05">
-<p>Snelson, Edward, and Zoubin Ghahramani. n.d. “Sparse Gaussian Processes Using Pseudo-Inputs.” In.</p>
-</div>
 <div id="ref-Taigman:deepface14">
 <p>Taigman, Yaniv, Ming Yang, Marc’Aurelio Ranzato, and Lior Wolf. 2014. “DeepFace: Closing the Gap to Human-Level Performance in Face Verification.” In <em>Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition</em>. doi:<a href="https://doi.org/10.1109/CVPR.2014.220">10.1109/CVPR.2014.220</a>.</p>
 </div>
 <div id="ref-Titsias:variational09">
 <p>Titsias, Michalis K. n.d. “Variational Learning of Inducing Variables in Sparse Gaussian Processes.” In, 567–74.</p>
-</div>
-<div id="ref-Williams:nystrom00">
-<p>Williams, Christopher K. I., and Matthias Seeger. n.d. “Using the Nyström Method to Speed up Kernel Machines.” In, 682–88.</p>
 </div>
 <div id="ref-Anqi:gpspike2017">
 <p>Wu, Anqi, Nicholas G Roy, Stephen Keeley, and Jonathan W Pillow. 2017. “Gaussian Process Based Nonlinear Latent Structure Discovery in Multivariate Spike Train Data.” In <em>Advances in Neural Information Processing Systems 30</em>, edited by I. Guyon, U. V. Luxburg, S. Bengio, H. Wallach, R. Fergus, S. Vishwanathan, and R. Garnett, 3499–3508. Curran Associates, Inc. <a href="http://papers.nips.cc/paper/6941-gaussian-process-based-nonlinear-latent-structure-discovery-in-multivariate-spike-train-data.pdf" class="uri">http://papers.nips.cc/paper/6941-gaussian-process-based-nonlinear-latent-structure-discovery-in-multivariate-spike-train-data.pdf</a>.</p>

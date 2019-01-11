@@ -1,8 +1,3 @@
-\ifdefined\blackBackground\global\long\def\redColor{cyan}
-\global\long\def\magentaColor{green} \global\long\def\blueColor{yellow}
-\else\global\long\def\redColor{red}
-\global\long\def\magentaColor{magenta} \global\long\def\blueColor{blue}
-\fi
 
 ``` {#mycode .octave .numberLines startFrom="0"}
 

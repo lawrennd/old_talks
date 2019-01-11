@@ -1,9 +1,8 @@
-\define{\blueColor}{yellow}
-\define{\redColor}{cyan}
-\define{\magentaColor}{green}
+\ifndef{gpOptimize}
+\define{gpOptimize}
+\editme
 
-
-\code{gpoptimizeInit}
+\plotcode{gpoptimizeInit}
 
 \newslide{Learning Covariance Parameters}
 
@@ -473,3 +472,4 @@ for i, ls in enumerate(lengthscales):
 
 
 
+\endif
