@@ -1,9 +1,11 @@
 ---
 title: Deep Gaussian Processes
 abstract: >
-  Classical machine learning and statistical approaches to learning, such as neural networks and linear regression, assume a parametric form for functions. Gaussian process models are an alternative approach that assumes a probabilistic prior over functions. This brings benefits, in that uncertainty of function estimation is sustained throughout inference, and some challenges: algorithms for fitting Gaussian processes tend to be more complex than parametric models. 
+  Gaussian process models provide a flexible, non-parametric approach to modelling that sustains uncertainty about the function. 
   
-  In these sessions I will introduce Gaussian processes and explain why sustaining uncertainty is important. We’ll then look at some extensions of Gaussian process models, in particular composition of Gaussian processes, or deep Gaussian processes.
+  However, computational demands and the joint Gaussian assumption make them inappropriate for some applications. In this talk we review low rank approximations for Gaussian processes and use stochastic process composition to create non-Gaussian processes. 
+  
+  We illustrate the models on simple regression tasks to give a sense of how uncertainty propagates through the model. We end will demonstrations on unsupervised learning of digits and motion capture data.
 ipynb: 2019-01-11-deep-gaussian-processes.ipynb
 reveal: 2019-01-11-deep-gaussian-processes.slides.html
 author:
