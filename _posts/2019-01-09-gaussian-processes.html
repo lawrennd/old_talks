@@ -26,514 +26,175 @@ categories:
 
 <!-- Enables links to pages-->
 <p><!--% not ipynb--></p>
-<p><!--% slides and not ipynb
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-<div class="" style="text-align:center;vertical-align:middle"><img class="" src="../slides/diagrams/gp/rasmussen-williams-book.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
-
-@Rasmussen:book06 is still one of the most important references on Gaussian process models. It is [available freely online](http://www.gaussianprocess.org/gpml/).
-
-
-
-## What is Machine Learning?
-
-
-
-
-What is machine learning? At its most basic level machine learning is a combination of
-
-$$\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$
-
-where *data* is our observations. They can be actively or passively
-acquired (meta-data). The *model* contains our assumptions, based on
-previous experience. That experience can be other data, it can come
-from transfer learning, or it can merely be our beliefs about the
-regularities of the universe. In humans our models include our
-inductive biases. The *prediction* is an action to be taken or a
-categorization or a quality score. The reason that machine learning
-has become a mainstay of artificial intelligence is the importance of
-predictions in artificial intelligence. The data and the model are combined through computation.
-
-
-
-
-
-In practice we normally perform machine learning using two functions. To combine data with a model we typically make use of:
-
-**a prediction function** a function which is used to make the predictions. It includes our beliefs about the regularities of the universe, our assumptions about how the world works, e.g. smoothness, spatial similarities, temporal similarities.
-
-**an objective function** a function which defines the cost of misprediction. Typically it includes knowledge about the world's generating processes (probabilistic objectives) or the costs we pay for mispredictions (empiricial risk minimization).
-
-The combination of data and model through the prediction function and the objectie function leads to a *learning algorithm*. The class of prediction functions and objective functions we can make use of is restricted by the algorithms they lead to. If the prediction function or the objective function are too complex, then it can be difficult to find an appropriate learning algorithm. Much of the acdemic field of machine learning is the quest for new learning algorithms that allow us to bring different types of models and data together.
-
-A useful reference for state of the art in machine learning is the UK Royal Society Report, [Machine Learning: Power and Promise of Computers that Learn by Example](https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf).
-
-You can also check my blog post on ["What is Machine Learning?"](http://inverseprobability.com/2017/07/17/what-is-machine-learning)
-
-
-
-
-
-
-
-
-
-In practice, we normally also have uncertainty associated with these functions. Uncertainty in the prediction function arises from 
-
-1. scarcity of training data and 
-2. mismatch between the set of prediction functions we choose and all possible prediction functions.
-
-There are also challenges around specification of the objective function, but for we will save those for another day. For the moment, let us focus on the prediction function. 
-
-
-### Neural Networks and Prediction Functions
-
-
-Neural networks are adaptive non-linear function models. Originally, they were studied (by McCulloch and Pitts [@McCulloch:neuron43]) as simple models for neurons, but over the last decade they have become popular because they are a flexible approach to modelling complex data. A particular characteristic of neural network models is that they can be composed to form highly complex functions which encode many of our expectations of the real world. They allow us to encode our assumptions about how the world works.
-
-
-
-
-
-
-We will return to composition later, but for the moment, let's focus on a one hidden layer neural network. We are interested in the prediction function, so we'll ignore the objective function (which is often called an error function) for the moment, and just describe the mathematical object of interest
-
-$$
+<p><!--% slides and not ipynb --></p>
+<div style="text-align:center;vertical-align:middle">
+<img class="" src="../slides/diagrams/gp/rasmussen-williams-book.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<p><span class="citation">Rasmussen and Williams (2006)</span> is still one of the most important references on Gaussian process models. It is <a href="http://www.gaussianprocess.org/gpml/">available freely online</a>.</p>
+<h2 id="what-is-machine-learning">What is Machine Learning?</h2>
+<p>What is machine learning? At its most basic level machine learning is a combination of</p>
+<p><br /><span class="math display">$$\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$</span><br /></p>
+<p>where <em>data</em> is our observations. They can be actively or passively acquired (meta-data). The <em>model</em> contains our assumptions, based on previous experience. That experience can be other data, it can come from transfer learning, or it can merely be our beliefs about the regularities of the universe. In humans our models include our inductive biases. The <em>prediction</em> is an action to be taken or a categorization or a quality score. The reason that machine learning has become a mainstay of artificial intelligence is the importance of predictions in artificial intelligence. The data and the model are combined through computation.</p>
+<p>In practice we normally perform machine learning using two functions. To combine data with a model we typically make use of:</p>
+<p><strong>a prediction function</strong> a function which is used to make the predictions. It includes our beliefs about the regularities of the universe, our assumptions about how the world works, e.g. smoothness, spatial similarities, temporal similarities.</p>
+<p><strong>an objective function</strong> a function which defines the cost of misprediction. Typically it includes knowledge about the world's generating processes (probabilistic objectives) or the costs we pay for mispredictions (empiricial risk minimization).</p>
+<p>The combination of data and model through the prediction function and the objectie function leads to a <em>learning algorithm</em>. The class of prediction functions and objective functions we can make use of is restricted by the algorithms they lead to. If the prediction function or the objective function are too complex, then it can be difficult to find an appropriate learning algorithm. Much of the acdemic field of machine learning is the quest for new learning algorithms that allow us to bring different types of models and data together.</p>
+<p>A useful reference for state of the art in machine learning is the UK Royal Society Report, <a href="https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf">Machine Learning: Power and Promise of Computers that Learn by Example</a>.</p>
+<p>You can also check my blog post on <a href="http://inverseprobability.com/2017/07/17/what-is-machine-learning">&quot;What is Machine Learning?&quot;</a></p>
+<p>In practice, we normally also have uncertainty associated with these functions. Uncertainty in the prediction function arises from</p>
+<ol style="list-style-type: decimal">
+<li>scarcity of training data and</li>
+<li>mismatch between the set of prediction functions we choose and all possible prediction functions.</li>
+</ol>
+<p>There are also challenges around specification of the objective function, but for we will save those for another day. For the moment, let us focus on the prediction function.</p>
+<h3 id="neural-networks-and-prediction-functions">Neural Networks and Prediction Functions</h3>
+<p>Neural networks are adaptive non-linear function models. Originally, they were studied (by McCulloch and Pitts <span class="citation">(McCulloch and Pitts 1943)</span>) as simple models for neurons, but over the last decade they have become popular because they are a flexible approach to modelling complex data. A particular characteristic of neural network models is that they can be composed to form highly complex functions which encode many of our expectations of the real world. They allow us to encode our assumptions about how the world works.</p>
+<p>We will return to composition later, but for the moment, let's focus on a one hidden layer neural network. We are interested in the prediction function, so we'll ignore the objective function (which is often called an error function) for the moment, and just describe the mathematical object of interest</p>
+<p><br /><span class="math display">$$
 \mappingFunction(\inputVector) = \mappingMatrix^\top \activationVector(\mappingMatrixTwo, \inputVector)
-$$
-
-Where in this case $\mappingFunction(\cdot)$ is a scalar function with vector inputs, and $\activationVector(\cdot)$ is a vector function with vector inputs. The dimensionality of the vector function is known as the number of hidden units, or the number of neurons. The elements of this vector function are known as the *activation* function of the neural network and $\mappingMatrixTwo$ are the parameters of the activation functions.
-
-
-
-### Relations with Classical Statistics
-
-
-In statistics activation functions are traditionally known as *basis functions*. And we would think of this as a *linear model*. It's doesn't make linear predictions, but it's linear because in statistics estimation focuses on the parameters, $\mappingMatrix$, not the parameters, $\mappingMatrixTwo$. The linear model terminology refers to the fact that the model is *linear in the parameters*, but it is *not* linear in the data unless the activation functions are chosen to be linear.
-
-### Adaptive Basis Functions
-
-
-The first difference in the (early) neural network literature to the classical statistical literature is the decision to optimize these parameters, $\mappingMatrixTwo$, as well as the  parameters, $\mappingMatrix$ (which would normally be denoted in statistics by $\boldsymbol{\beta}$)[^footnote1].
-
-In this tutorial, we're going to go revisit that decision, and follow the path of Radford Neal [@Neal:bayesian94] who, inspired by work of David MacKay [@MacKay:bayesian92] and others did his PhD thesis on Bayesian Neural Networks. If we take a Bayesian approach to parameter inference (note I am using inference here in the classical sense, not in the sense of prediction of test data, which seems to be a newer usage), then we don't wish to fit parameters at all, rather we wish to integrate them away and understand the family of functions that the model describes.
-
-[^footnote1]: In classical statistics we often interpret these parameters, $\beta$, whereas in machine learning we are normally more interested in the result of the prediction, and less in the prediction. Although this is changing with more need for accountability. In honour of this I normally use $\boldsymbol{\beta}$ when I care about the value of these parameters, and $\mappingVector$ when I care more about the quality of the prediction.
-
-
-### Probabilistic Modelling
-
-
-This Bayesian approach is designed to deal with uncertainty arising from fitting our prediction function to the data we have, a reduced data set.
-
-The Bayesian approach can be derived from a broader understanding of what our objective is. If we accept that we can jointly represent all things that happen in the world with a probability distribution, then we can interogate that probability to make predictions. So, if we are interested in predictions, $\dataScalar_*$ at future points input locations of interest, $\inputVector_*$ given previously training data, $\dataVector$ and corresponding inputs, $\inputMatrix$, then we are really interogating the following probability density,
-$$
+$$</span><br /></p>
+<p>Where in this case <span class="math inline">$\mappingFunction(\cdot)$</span> is a scalar function with vector inputs, and <span class="math inline">$\activationVector(\cdot)$</span> is a vector function with vector inputs. The dimensionality of the vector function is known as the number of hidden units, or the number of neurons. The elements of this vector function are known as the <em>activation</em> function of the neural network and <span class="math inline">$\mappingMatrixTwo$</span> are the parameters of the activation functions.</p>
+<h3 id="relations-with-classical-statistics">Relations with Classical Statistics</h3>
+<p>In statistics activation functions are traditionally known as <em>basis functions</em>. And we would think of this as a <em>linear model</em>. It's doesn't make linear predictions, but it's linear because in statistics estimation focuses on the parameters, <span class="math inline">$\mappingMatrix$</span>, not the parameters, <span class="math inline">$\mappingMatrixTwo$</span>. The linear model terminology refers to the fact that the model is <em>linear in the parameters</em>, but it is <em>not</em> linear in the data unless the activation functions are chosen to be linear.</p>
+<h3 id="adaptive-basis-functions">Adaptive Basis Functions</h3>
+<p>The first difference in the (early) neural network literature to the classical statistical literature is the decision to optimize these parameters, <span class="math inline">$\mappingMatrixTwo$</span>, as well as the parameters, <span class="math inline">$\mappingMatrix$</span> (which would normally be denoted in statistics by <span class="math inline"><strong>β</strong></span>)<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>.</p>
+<p>In this tutorial, we're going to go revisit that decision, and follow the path of Radford Neal <span class="citation">(Neal 1994)</span> who, inspired by work of David MacKay <span class="citation">(MacKay 1992)</span> and others did his PhD thesis on Bayesian Neural Networks. If we take a Bayesian approach to parameter inference (note I am using inference here in the classical sense, not in the sense of prediction of test data, which seems to be a newer usage), then we don't wish to fit parameters at all, rather we wish to integrate them away and understand the family of functions that the model describes.</p>
+<h3 id="probabilistic-modelling">Probabilistic Modelling</h3>
+<p>This Bayesian approach is designed to deal with uncertainty arising from fitting our prediction function to the data we have, a reduced data set.</p>
+<p>The Bayesian approach can be derived from a broader understanding of what our objective is. If we accept that we can jointly represent all things that happen in the world with a probability distribution, then we can interogate that probability to make predictions. So, if we are interested in predictions, <span class="math inline">$\dataScalar_*$</span> at future points input locations of interest, <span class="math inline">$\inputVector_*$</span> given previously training data, <span class="math inline">$\dataVector$</span> and corresponding inputs, <span class="math inline">$\inputMatrix$</span>, then we are really interogating the following probability density, <br /><span class="math display">$$
 p(\dataScalar_*|\dataVector, \inputMatrix, \inputVector_*),
-$$
-there is nothing controversial here, as long as you accept that you have a good joint model of the world around you that relates test data to training data, $p(\dataScalar_*, \dataVector, \inputMatrix, \inputVector_*)$ then this conditional distribution can be recovered through standard rules of probability ($\text{data} + \text{model} \rightarrow \text{prediction}$). 
-
-We can construct this joint density through the use of the following decomposition:
-$$
+$$</span><br /> there is nothing controversial here, as long as you accept that you have a good joint model of the world around you that relates test data to training data, <span class="math inline">$p(\dataScalar_*, \dataVector, \inputMatrix, \inputVector_*)$</span> then this conditional distribution can be recovered through standard rules of probability (<span class="math inline">data + model → prediction</span>).</p>
+<p>We can construct this joint density through the use of the following decomposition: <br /><span class="math display">$$
 p(\dataScalar_*|\dataVector, \inputMatrix, \inputVector_*) = \int p(\dataScalar_*|\inputVector_*, \mappingMatrix) p(\mappingMatrix | \dataVector, \inputMatrix) \text{d} \mappingMatrix
-$$
-
-where, for convenience, we are assuming *all* the parameters of the model are now represented by $\parameterVector$ (which contains $\mappingMatrix$ and $\mappingMatrixTwo$) and $p(\parameterVector | \dataVector, \inputMatrix)$ is recognised as the posterior density of the parameters given data and $p(\dataScalar_*|\inputVector_*, \parameterVector)$ is the *likelihood* of an individual test data point given the parameters.
-
-
-The likelihood of the data is normally assumed to be independent across the parameters,
-$$
-p(\dataVector|\inputMatrix, \mappingMatrix) = \prod_{i=1}^\numData p(\dataScalar_i|\inputVector_i, \mappingMatrix),$$
-
-and if that is so, it is easy to extend our predictions across all future, potential, locations,
-$$
+$$</span><br /></p>
+<p>where, for convenience, we are assuming <em>all</em> the parameters of the model are now represented by <span class="math inline">$\parameterVector$</span> (which contains <span class="math inline">$\mappingMatrix$</span> and <span class="math inline">$\mappingMatrixTwo$</span>) and <span class="math inline">$p(\parameterVector | \dataVector, \inputMatrix)$</span> is recognised as the posterior density of the parameters given data and <span class="math inline">$p(\dataScalar_*|\inputVector_*, \parameterVector)$</span> is the <em>likelihood</em> of an individual test data point given the parameters.</p>
+<p>The likelihood of the data is normally assumed to be independent across the parameters, <br /><span class="math display">$$
+p(\dataVector|\inputMatrix, \mappingMatrix) = \prod_{i=1}^\numData p(\dataScalar_i|\inputVector_i, \mappingMatrix),$$</span><br /></p>
+<p>and if that is so, it is easy to extend our predictions across all future, potential, locations, <br /><span class="math display">$$
 p(\dataVector_*|\dataVector, \inputMatrix, \inputMatrix_*) = \int p(\dataVector_*|\inputMatrix_*, \parameterVector) p(\parameterVector | \dataVector, \inputMatrix) \text{d} \parameterVector.
-$$
-
-
-
-The likelihood is also where the *prediction function* is incorporated. For example in the regression case, we consider an objective based around the Gaussian density,
-$$
+$$</span><br /></p>
+<p>The likelihood is also where the <em>prediction function</em> is incorporated. For example in the regression case, we consider an objective based around the Gaussian density, <br /><span class="math display">$$
 p(\dataScalar_i | \mappingFunction(\inputVector_i)) = \frac{1}{\sqrt{2\pi \dataStd^2}} \exp\left(-\frac{\left(\dataScalar_i - \mappingFunction(\inputVector_i)\right)^2}{2\dataStd^2}\right)
-$$
-
-
-
-In short, that is the classical approach to probabilistic inference, and all approaches to Bayesian neural networks fall within this path. For a deep probabilistic model, we can simply take this one stage further and place a probability distribution over the input locations,
-$$
+$$</span><br /></p>
+<p>In short, that is the classical approach to probabilistic inference, and all approaches to Bayesian neural networks fall within this path. For a deep probabilistic model, we can simply take this one stage further and place a probability distribution over the input locations, <br /><span class="math display">$$
 p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \parameterVector) p(\parameterVector | \dataVector, \inputMatrix) p(\inputMatrix) p(\inputMatrix_*) \text{d} \parameterVector \text{d} \inputMatrix \text{d}\inputMatrix_*
-$$
-and we have *unsupervised learning*  (from where we can get deep generative models). 
-
-
-
-### Graphical Models
-
-
-One way of representing a joint distribution is to consider conditional dependencies between data. Conditional dependencies allow us to factorize the distribution. For example, a Markov chain is a factorization of a distribution into components that represent the conditional relationships between points that are neighboring, often in time or space. It can be decomposed in the following form.
-$$p(\dataVector) = p(\dataScalar_\numData | \dataScalar_{\numData-1}) p(\dataScalar_{\numData-1}|\dataScalar_{\numData-2}) \dots p(\dataScalar_{2} | \dataScalar_{1})$$
-
-
-
-
-
-<object class="svgplot " align="" data="../slides/diagrams/ml/markov.svg" style="vertical-align:middle;"></object>
-
-
-
-
-By specifying conditional independencies we can reduce the parameterization required for our data, instead of directly specifying the parameters of the joint distribution, we can specify each set of parameters of the conditonal independently. This can also give an advantage in terms of interpretability. Understanding a conditional independence structure gives a structured understanding of data. If developed correctly, according to causal methodology, it can even inform how we should intervene in the system to drive a desired result [@Pearl:causality95]. 
-
-However, a challenge arise when the data becomes more complex. Consider the graphical model shown below, used to predict the perioperative risk of *C Difficile* infection following colon surgery [@Steele:predictive12].
-
-<div class="" style="text-align:center;vertical-align:middle"><img class="negate" src="../slides/diagrams/bayes-net-diagnosis.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
-
-To capture the complexity in the interelationship between the data the graph becomes more complex, and less interpretable.
-
-### Performing Inference
-
-
-
-As far as combining our data and our model to form our prediction, the devil is in the detail. While everything is easy to write in terms of probability densities, as we move from $\text{data}$ and $\text{model}$ to $\text{prediction}$ there is that simple $\xrightarrow{\text{compute}}$ sign, which is now burying a wealth of difficulties. Each integral sign above is a high dimensional integral which will typically need approximation. Approximations also come with computational demands. As we consider more complex classes of functions, the challenges around the integrals become harder and prediction of future test data given our model and the data becomes so involved as to be impractical or impossible. 
-
-
-Statisticians realized these challenges early on, indeed, so early that they were actually physicists, both Laplace and Gauss worked on models such as this, in Gauss's case he made his career on prediction of the location of the lost planet (later reclassified as a asteroid, then dwarf planet), Ceres. Gauss and Laplace made use of maximum a posteriori estimates for simplifying their computations and Laplace developed Laplace's method (and invented the Gaussian density) to expand around that mode. But classical statistics needs better guarantees around model performance and interpretation, and as a result has focussed more on the *linear* model implied by 
-  $$
+$$</span><br /> and we have <em>unsupervised learning</em> (from where we can get deep generative models).</p>
+<h3 id="graphical-models">Graphical Models</h3>
+<p>One way of representing a joint distribution is to consider conditional dependencies between data. Conditional dependencies allow us to factorize the distribution. For example, a Markov chain is a factorization of a distribution into components that represent the conditional relationships between points that are neighboring, often in time or space. It can be decomposed in the following form. <br /><span class="math display">$$p(\dataVector) = p(\dataScalar_\numData | \dataScalar_{\numData-1}) p(\dataScalar_{\numData-1}|\dataScalar_{\numData-2}) \dots p(\dataScalar_{2} | \dataScalar_{1})$$</span><br /></p>
+<object class="svgplot " align data="../slides/diagrams/ml/markov.svg" style="vertical-align:middle;">
+</object>
+<p>By specifying conditional independencies we can reduce the parameterization required for our data, instead of directly specifying the parameters of the joint distribution, we can specify each set of parameters of the conditonal independently. This can also give an advantage in terms of interpretability. Understanding a conditional independence structure gives a structured understanding of data. If developed correctly, according to causal methodology, it can even inform how we should intervene in the system to drive a desired result <span class="citation">(Pearl 1995)</span>.</p>
+<p>However, a challenge arise when the data becomes more complex. Consider the graphical model shown below, used to predict the perioperative risk of <em>C Difficile</em> infection following colon surgery <span class="citation">(Steele et al. 2012)</span>.</p>
+<div style="text-align:center;vertical-align:middle">
+<img class="negate" src="../slides/diagrams/bayes-net-diagnosis.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<p>To capture the complexity in the interelationship between the data the graph becomes more complex, and less interpretable.</p>
+<h3 id="performing-inference">Performing Inference</h3>
+<p>As far as combining our data and our model to form our prediction, the devil is in the detail. While everything is easy to write in terms of probability densities, as we move from <span class="math inline">data</span> and <span class="math inline">model</span> to <span class="math inline">prediction</span> there is that simple <span class="math inline">$\xrightarrow{\text{compute}}$</span> sign, which is now burying a wealth of difficulties. Each integral sign above is a high dimensional integral which will typically need approximation. Approximations also come with computational demands. As we consider more complex classes of functions, the challenges around the integrals become harder and prediction of future test data given our model and the data becomes so involved as to be impractical or impossible.</p>
+<p>Statisticians realized these challenges early on, indeed, so early that they were actually physicists, both Laplace and Gauss worked on models such as this, in Gauss's case he made his career on prediction of the location of the lost planet (later reclassified as a asteroid, then dwarf planet), Ceres. Gauss and Laplace made use of maximum a posteriori estimates for simplifying their computations and Laplace developed Laplace's method (and invented the Gaussian density) to expand around that mode. But classical statistics needs better guarantees around model performance and interpretation, and as a result has focussed more on the <em>linear</em> model implied by <br /><span class="math display">$$
   \mappingFunction(\inputVector) = \left.\mappingVector^{(2)}\right.^\top \activationVector(\mappingMatrix_1, \inputVector)
-  $$
-
-
-  $$
+  $$</span><br /></p>
+<p><br /><span class="math display">$$
   \mappingVector^{(2)} \sim \gaussianSamp{\zerosVector}{\covarianceMatrix}.
-  $$
-    
-The Gaussian likelihood given above implies that the data observation is related to the function by noise corruption so we have,
-  $$
+  $$</span><br /></p>
+<p>The Gaussian likelihood given above implies that the data observation is related to the function by noise corruption so we have, <br /><span class="math display">$$
   \dataScalar_i = \mappingFunction(\inputVector_i) + \noiseScalar_i,
-  $$
-  where 
-  $$
+  $$</span><br /> where <br /><span class="math display">$$
   \noiseScalar_i \sim \gaussianSamp{0}{\dataStd^2}
-  $$
-and while normally integrating over high dimensional parameter vectors is highly complex, here it is *trivial*. That is because of a property of the multivariate Gaussian.
-
-
-
-
-
-
-
-
-
-
-
-
-Gaussian processes are initially of interest because
-
-1. linear Gaussian models are easier to deal with 
-2. Even the parameters *within* the process can be handled, by considering a particular limit.
-
-
-
-Let's first of all review the properties of the multivariate Gaussian distribution that make linear Gaussian models easier to deal with. We'll return to the, perhaps surprising, result on the parameters within the nonlinearity, $\parameterVector$, shortly.
-
-To work with linear Gaussian models, to find the marginal likelihood all you need to know is the following rules. If
-$$
+  $$</span><br /> and while normally integrating over high dimensional parameter vectors is highly complex, here it is <em>trivial</em>. That is because of a property of the multivariate Gaussian.</p>
+<p>Gaussian processes are initially of interest because</p>
+<ol style="list-style-type: decimal">
+<li>linear Gaussian models are easier to deal with</li>
+<li>Even the parameters <em>within</em> the process can be handled, by considering a particular limit.</li>
+</ol>
+<p>Let's first of all review the properties of the multivariate Gaussian distribution that make linear Gaussian models easier to deal with. We'll return to the, perhaps surprising, result on the parameters within the nonlinearity, <span class="math inline">$\parameterVector$</span>, shortly.</p>
+<p>To work with linear Gaussian models, to find the marginal likelihood all you need to know is the following rules. If <br /><span class="math display">$$
 \dataVector = \mappingMatrix \inputVector + \noiseVector,
-$$
-where $\dataVector$, $\inputVector$ and $\noiseVector$ are vectors and we assume that $\inputVector$ and $\noiseVector$ are drawn from multivariate Gaussians,
-$$\begin{align}
-\inputVector & \sim \gaussianSamp{\meanVector}{\covarianceMatrix}\\
-\noiseVector & \sim \gaussianSamp{\zerosVector}{\covarianceMatrixTwo}
-\end{align}$$
-then we know that $\dataVector$ is also drawn from a multivariate Gaussian with,
-$$
+$$</span><br /> where <span class="math inline">$\dataVector$</span>, <span class="math inline">$\inputVector$</span> and <span class="math inline">$\noiseVector$</span> are vectors and we assume that <span class="math inline">$\inputVector$</span> and <span class="math inline">$\noiseVector$</span> are drawn from multivariate Gaussians, <br /><span class="math display">$$
+\begin{aligned}
+\inputVector &amp; \sim \gaussianSamp{\meanVector}{\covarianceMatrix}\\
+\noiseVector &amp; \sim \gaussianSamp{\zerosVector}{\covarianceMatrixTwo}
+\end{aligned}
+$$</span><br /> then we know that <span class="math inline">$\dataVector$</span> is also drawn from a multivariate Gaussian with, <br /><span class="math display">$$
 \dataVector \sim \gaussianSamp{\mappingMatrix\meanVector}{\mappingMatrix\covarianceMatrix\mappingMatrix^\top + \covarianceMatrixTwo}.
-$$
-
-With apprioriately defined covariance, $\covarianceMatrixTwo$, this is actually the marginal likelihood for Factor Analysis, or Probabilistic Principal Component Analysis [@Tipping:probpca99], because we integrated out the inputs (or *latent* variables they would be called in that case).
-
-
-
-However, we are focussing on what happens in models which are non-linear in the inputs, whereas the above would be *linear* in the inputs. To consider these, we introduce a matrix, called the design matrix. We set each activation function computed at each data point to be
-$$
+$$</span><br /></p>
+<p>With apprioriately defined covariance, <span class="math inline">$\covarianceMatrixTwo$</span>, this is actually the marginal likelihood for Factor Analysis, or Probabilistic Principal Component Analysis <span class="citation">(Tipping and Bishop 1999)</span>, because we integrated out the inputs (or <em>latent</em> variables they would be called in that case).</p>
+<p>However, we are focussing on what happens in models which are non-linear in the inputs, whereas the above would be <em>linear</em> in the inputs. To consider these, we introduce a matrix, called the design matrix. We set each activation function computed at each data point to be <br /><span class="math display">$$
 \activationScalar_{i,j} = \activationScalar(\mappingVector^{(1)}_{j}, \inputVector_{i})
-$$
-and define the matrix of activations (known as the *design matrix* in statistics) to be,
-$$
+$$</span><br /> and define the matrix of activations (known as the <em>design matrix</em> in statistics) to be, <br /><span class="math display">$$
 \activationMatrix = 
 \begin{bmatrix}
-\activationScalar_{1, 1} & \activationScalar_{1, 2} & \dots & \activationScalar_{1, \numHidden} \\
-\activationScalar_{1, 2} & \activationScalar_{1, 2} & \dots & \activationScalar_{1, \numData} \\
-\vdots & \vdots & \ddots & \vdots \\
-\activationScalar_{\numData, 1} & \activationScalar_{\numData, 2} & \dots & \activationScalar_{\numData, \numHidden}
+\activationScalar_{1, 1} &amp; \activationScalar_{1, 2} &amp; \dots &amp; \activationScalar_{1, \numHidden} \\
+\activationScalar_{1, 2} &amp; \activationScalar_{1, 2} &amp; \dots &amp; \activationScalar_{1, \numData} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+\activationScalar_{\numData, 1} &amp; \activationScalar_{\numData, 2} &amp; \dots &amp; \activationScalar_{\numData, \numHidden}
 \end{bmatrix}.
-$$
-By convention this matrix always has $\numData$ rows and $\numHidden$ columns, now if we define the vector of all noise corruptions, $\noiseVector = \left[\noiseScalar_1, \dots \noiseScalar_\numData\right]^\top$.
-
-
-
-
-
-
-
-If we define the prior distribution over the vector $\mappingVector$ to be Gaussian,
-$$
+$$</span><br /> By convention this matrix always has <span class="math inline">$\numData$</span> rows and <span class="math inline">$\numHidden$</span> columns, now if we define the vector of all noise corruptions, <span class="math inline">$\noiseVector = \left[\noiseScalar_1, \dots \noiseScalar_\numData\right]^\top$</span>.</p>
+<p>If we define the prior distribution over the vector <span class="math inline">$\mappingVector$</span> to be Gaussian, <br /><span class="math display">$$
 \mappingVector \sim \gaussianSamp{\zerosVector}{\alpha\eye},
-$$
-
-
-
-then we can use rules of multivariate Gaussians to see that,
-$$
+$$</span><br /></p>
+<p>then we can use rules of multivariate Gaussians to see that, <br /><span class="math display">$$
 \dataVector \sim \gaussianSamp{\zerosVector}{\alpha \activationMatrix \activationMatrix^\top + \dataStd^2 \eye}.
-$$
-
-
-
-In other words, our training data is distributed as a multivariate Gaussian, with zero mean and a covariance given by
-$$
+$$</span><br /></p>
+<p>In other words, our training data is distributed as a multivariate Gaussian, with zero mean and a covariance given by <br /><span class="math display">$$
 \kernelMatrix = \alpha \activationMatrix \activationMatrix^\top + \dataStd^2 \eye.
-$$
-
-This is an $\numData \times \numData$ size matrix. Its elements are in the form of a function. The maths shows that any element, index by $i$ and $j$, is a function *only* of inputs associated with data points $i$ and $j$, $\dataVector_i$, $\dataVector_j$. $\kernel_{i,j} = \kernel\left(\inputVector_i, \inputVector_j\right)$
-
-
-
-If we look at the portion of this function associated only with $\mappingFunction(\cdot)$, i.e. we remove the noise, then we can write down the covariance associated with our neural network,
-$$
+$$</span><br /></p>
+<p>This is an <span class="math inline">$\numData \times \numData$</span> size matrix. Its elements are in the form of a function. The maths shows that any element, index by <span class="math inline"><em>i</em></span> and <span class="math inline"><em>j</em></span>, is a function <em>only</em> of inputs associated with data points <span class="math inline"><em>i</em></span> and <span class="math inline"><em>j</em></span>, <span class="math inline">$\dataVector_i$</span>, <span class="math inline">$\dataVector_j$</span>. <span class="math inline">$\kernel_{i,j} = \kernel\left(\inputVector_i, \inputVector_j\right)$</span></p>
+<p>If we look at the portion of this function associated only with <span class="math inline">$\mappingFunction(\cdot)$</span>, i.e. we remove the noise, then we can write down the covariance associated with our neural network, <br /><span class="math display">$$
 \kernel_\mappingFunction\left(\inputVector_i, \inputVector_j\right) = \alpha \activationVector\left(\mappingMatrix_1, \inputVector_i\right)^\top \activationVector\left(\mappingMatrix_1, \inputVector_j\right)
-$$
-so the elements of the covariance or *kernel* matrix are formed by inner products of the rows of the *design matrix*.
-
-
-### Gaussian Process
-
-This is the essence of a Gaussian process. Instead of making assumptions about our density over each data point, $\dataScalar_i$ as i.i.d. we make a joint Gaussian assumption over our data. The covariance matrix is now a function of both the parameters of the activation function, $\mappingMatrixTwo$, and the input variables, $\inputMatrix$. This comes about through integrating out the parameters of the model, $\mappingVector$. 
-
-
-### Basis Functions
-
-We can basically put anything inside the basis functions, and many people do. These can be deep kernels [@Cho:deep09] or we can learn the parameters of a convolutional neural network inside there.
-
-Viewing a neural network in this way is also what allows us to beform sensible *batch* normalizations [@Ioffe:batch15].
-
-
-
-
-### Non-degenerate Gaussian Processes
-
-
-The process described above is degenerate. The covariance function is of rank at most $\numHidden$ and since the theoretical amount of data could always increase $\numData \rightarrow \infty$, the covariance function is not full rank. 
-This means as we increase the amount of data to infinity, there will come a point where we can't normalize the process because the multivariate Gaussian has the form,
-$$
+$$</span><br /> so the elements of the covariance or <em>kernel</em> matrix are formed by inner products of the rows of the <em>design matrix</em>.</p>
+<h3 id="gaussian-process">Gaussian Process</h3>
+<p>This is the essence of a Gaussian process. Instead of making assumptions about our density over each data point, <span class="math inline">$\dataScalar_i$</span> as i.i.d. we make a joint Gaussian assumption over our data. The covariance matrix is now a function of both the parameters of the activation function, <span class="math inline">$\mappingMatrixTwo$</span>, and the input variables, <span class="math inline">$\inputMatrix$</span>. This comes about through integrating out the parameters of the model, <span class="math inline">$\mappingVector$</span>.</p>
+<h3 id="basis-functions">Basis Functions</h3>
+<p>We can basically put anything inside the basis functions, and many people do. These can be deep kernels <span class="citation">(Cho and Saul 2009)</span> or we can learn the parameters of a convolutional neural network inside there.</p>
+<p>Viewing a neural network in this way is also what allows us to beform sensible <em>batch</em> normalizations <span class="citation">(Ioffe and Szegedy 2015)</span>.</p>
+<h3 id="non-degenerate-gaussian-processes">Non-degenerate Gaussian Processes</h3>
+<p>The process described above is degenerate. The covariance function is of rank at most <span class="math inline">$\numHidden$</span> and since the theoretical amount of data could always increase <span class="math inline">$\numData \rightarrow \infty$</span>, the covariance function is not full rank. This means as we increase the amount of data to infinity, there will come a point where we can't normalize the process because the multivariate Gaussian has the form, <br /><span class="math display">$$
 \gaussianDist{\mappingFunctionVector}{\zerosVector}{\kernelMatrix} = \frac{1}{\left(2\pi\right)^{\frac{\numData}{2}}\det{\kernelMatrix}^\frac{1}{2}} \exp\left(-\frac{\mappingFunctionVector^\top\kernelMatrix \mappingFunctionVector}{2}\right)
-$$
-and a non-degenerate kernel matrix leads to $\det{\kernelMatrix} = 0$ defeating the normalization (it's equivalent to finding a projection in the high dimensional Gaussian where the variance of the the resulting univariate Gaussian is zero, i.e. there is a null space on the covariance, or alternatively you can imagine there are one or more directions where the Gaussian has become the delta function).
-
-
-
-
-In the machine learning field, it was Radford Neal [@Neal:bayesian94] that realized the potential of the next step. In his 1994 thesis, he was considering Bayesian neural networks, of the type we described above, and in considered what would happen if you took the number of hidden nodes, or neurons, to infinity, i.e. $\numHidden \rightarrow \infty$.
-
-<div class="" style="text-align:center;vertical-align:middle"><img class="" src="../slides/diagrams/neal-infinite-priors.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
-<center>*Page 37 of [Radford Neal's 1994 thesis](http://www.cs.toronto.edu/~radford/ftp/thesis.pdf) *</center>
-
-
-
-In loose terms, what Radford considers is what happens to the elements of the covariance function,
-  $$
+$$</span><br /> and a non-degenerate kernel matrix leads to <span class="math inline">$\det{\kernelMatrix} = 0$</span> defeating the normalization (it's equivalent to finding a projection in the high dimensional Gaussian where the variance of the the resulting univariate Gaussian is zero, i.e. there is a null space on the covariance, or alternatively you can imagine there are one or more directions where the Gaussian has become the delta function).</p>
+<p>In the machine learning field, it was Radford Neal <span class="citation">(Neal 1994)</span> that realized the potential of the next step. In his 1994 thesis, he was considering Bayesian neural networks, of the type we described above, and in considered what would happen if you took the number of hidden nodes, or neurons, to infinity, i.e. <span class="math inline">$\numHidden \rightarrow \infty$</span>.</p>
+<div style="text-align:center;vertical-align:middle">
+<img class="" src="../slides/diagrams/neal-infinite-priors.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<center>
+<em>Page 37 of <a href="http://www.cs.toronto.edu/~radford/ftp/thesis.pdf">Radford Neal's 1994 thesis</a> </em>
+</center>
+<p>In loose terms, what Radford considers is what happens to the elements of the covariance function, <br /><span class="math display">$$
   \begin{align*}
-  \kernel_\mappingFunction\left(\inputVector_i, \inputVector_j\right) & = \alpha \activationVector\left(\mappingMatrix_1, \inputVector_i\right)^\top \activationVector\left(\mappingMatrix_1, \inputVector_j\right)\\
-  & = \alpha \sum_k \activationScalar\left(\mappingVector^{(1)}_k, \inputVector_i\right) \activationScalar\left(\mappingVector^{(1)}_k, \inputVector_j\right)
+  \kernel_\mappingFunction\left(\inputVector_i, \inputVector_j\right) &amp; = \alpha \activationVector\left(\mappingMatrix_1, \inputVector_i\right)^\top \activationVector\left(\mappingMatrix_1, \inputVector_j\right)\\
+  &amp; = \alpha \sum_k \activationScalar\left(\mappingVector^{(1)}_k, \inputVector_i\right) \activationScalar\left(\mappingVector^{(1)}_k, \inputVector_j\right)
   \end{align*}
-  $$
-if instead of considering a finite number you sample infinitely many of these activation functions, sampling parameters from a prior density, $p(\mappingVectorTwo)$, for each one,
-$$
+  $$</span><br /> if instead of considering a finite number you sample infinitely many of these activation functions, sampling parameters from a prior density, <span class="math inline">$p(\mappingVectorTwo)$</span>, for each one, <br /><span class="math display">$$
 \kernel_\mappingFunction\left(\inputVector_i, \inputVector_j\right) = \alpha \int \activationScalar\left(\mappingVector^{(1)}, \inputVector_i\right) \activationScalar\left(\mappingVector^{(1)}, \inputVector_j\right) p(\mappingVector^{(1)}) \text{d}\mappingVector^{(1)}
-$$
-And that's not *only* for Gaussian $p(\mappingVectorTwo)$. In fact this result holds for a range of activations, and a range of prior densities because of the *central limit theorem*.
-
-
-
-To write it in the form of a probabilistic program, as long as the distribution for $\phi_i$ implied by this short probabilistic program,
-  $$
+$$</span><br /> And that's not <em>only</em> for Gaussian <span class="math inline">$p(\mappingVectorTwo)$</span>. In fact this result holds for a range of activations, and a range of prior densities because of the <em>central limit theorem</em>.</p>
+<p>To write it in the form of a probabilistic program, as long as the distribution for <span class="math inline"><em>ϕ</em><sub><em>i</em></sub></span> implied by this short probabilistic program, <br /><span class="math display">$$
   \begin{align*}
-  \mappingVectorTwo & \sim p(\cdot)\\
-  \phi_i & = \activationScalar\left(\mappingVectorTwo, \inputVector_i\right), 
+  \mappingVectorTwo &amp; \sim p(\cdot)\\
+  \phi_i &amp; = \activationScalar\left(\mappingVectorTwo, \inputVector_i\right), 
   \end{align*}
-  $$
-has finite variance, then the result of taking the number of hidden units to infinity, with appropriate scaling, is also a Gaussian process.
-
-### Further Reading
-
-
-To understand this argument in more detail, I highly recommend reading chapter 2 of Neal's thesis [@Neal:bayesian94], which remains easy to read and clear today. Indeed, for readers interested in Bayesian neural networks, both Raford Neal's and David MacKay's PhD thesis [@MacKay:bayesian92] remain essential reading. Both theses embody a clarity of thought, and an ability to weave together threads from different fields that was the business of machine learning in the 1990s. Radford and David were also pioneers in making their software widely available and publishing material on the web.
-
-
-
-
-### Bayesian Inference by Rejection Sampling
-
-One view of Bayesian inference is to assume we are given a mechanism for generating samples, where we assume that mechanism is representing on accurate view on the way we believe the world works. 
-
-This mechanism is known as our *prior* belief. 
-
-We combine our prior belief with our observations of the real world by discarding all those samples that are inconsistent with our prior. The *likelihood* defines mathematically what we mean by inconsistent with the prior. The higher the noise level in the likelihood, the looser the notion of consistent.
-
-The samples that remain are considered to be samples from the *posterior*. 
-
-This approach to Bayesian inference is closely related to two sampling techniques known as *rejection sampling* and *importance sampling*. It is realized in practice in an approach known as *approximate Bayesian computation* (ABC) or likelihood-free inference. 
-
-In practice, the algorithm is often too slow to be practical, because most samples will be inconsistent with the data and as a result the mechanism has to be operated many times to obtain a few posterior samples. 
-
-However, in the Gaussian process case, when the likelihood also assumes Gaussian noise, we can operate this mechanims mathematically, and obtain the posterior density *analytically*. This is the benefit of Gaussian processes.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<object class="svgplot " align="" data="../slides/diagrams/gp/gp_rejection_sample003" style="vertical-align:middle;"></object>
-<div class="" style="text-align:center;vertical-align:middle"><img class="" src="../slides/diagrams/gp/gp_rejection_sample004.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
-<div class="" style="text-align:center;vertical-align:middle"><img class="" src="../slides/diagrams/gp/gp_rejection_sample005.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
-<center>*One view of Bayesian inference is we have a machine for generating samples (the *prior*), and we discard all samples inconsistent with our data, leaving the samples of interest (the *posterior*). The Gaussian process allows us to do this analytically. *</center>
-
-
-<!-- ### Two Dimensional Gaussian Distribution --></p>
+  $$</span><br /> has finite variance, then the result of taking the number of hidden units to infinity, with appropriate scaling, is also a Gaussian process.</p>
+<h3 id="further-reading">Further Reading</h3>
+<p>To understand this argument in more detail, I highly recommend reading chapter 2 of Neal's thesis <span class="citation">(Neal 1994)</span>, which remains easy to read and clear today. Indeed, for readers interested in Bayesian neural networks, both Raford Neal's and David MacKay's PhD thesis <span class="citation">(MacKay 1992)</span> remain essential reading. Both theses embody a clarity of thought, and an ability to weave together threads from different fields that was the business of machine learning in the 1990s. Radford and David were also pioneers in making their software widely available and publishing material on the web.</p>
+<h3 id="bayesian-inference-by-rejection-sampling">Bayesian Inference by Rejection Sampling</h3>
+<p>One view of Bayesian inference is to assume we are given a mechanism for generating samples, where we assume that mechanism is representing on accurate view on the way we believe the world works.</p>
+<p>This mechanism is known as our <em>prior</em> belief.</p>
+<p>We combine our prior belief with our observations of the real world by discarding all those samples that are inconsistent with our prior. The <em>likelihood</em> defines mathematically what we mean by inconsistent with the prior. The higher the noise level in the likelihood, the looser the notion of consistent.</p>
+<p>The samples that remain are considered to be samples from the <em>posterior</em>.</p>
+<p>This approach to Bayesian inference is closely related to two sampling techniques known as <em>rejection sampling</em> and <em>importance sampling</em>. It is realized in practice in an approach known as <em>approximate Bayesian computation</em> (ABC) or likelihood-free inference.</p>
+<p>In practice, the algorithm is often too slow to be practical, because most samples will be inconsistent with the data and as a result the mechanism has to be operated many times to obtain a few posterior samples.</p>
+<p>However, in the Gaussian process case, when the likelihood also assumes Gaussian noise, we can operate this mechanims mathematically, and obtain the posterior density <em>analytically</em>. This is the benefit of Gaussian processes.</p>
+<object class="svgplot " align data="../slides/diagrams/gp/gp_rejection_sample003" style="vertical-align:middle;">
+</object>
+<div style="text-align:center;vertical-align:middle">
+<img class="" src="../slides/diagrams/gp/gp_rejection_sample004.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<div style="text-align:center;vertical-align:middle">
+<img class="" src="../slides/diagrams/gp/gp_rejection_sample005.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<center>
+<em>One view of Bayesian inference is we have a machine for generating samples (the </em>prior<em>), and we discard all samples inconsistent with our data, leaving the samples of interest (the </em>posterior<em>). The Gaussian process allows us to do this analytically. </em>
+</center>
+<!-- ### Two Dimensional Gaussian Distribution -->
 <!-- include{_ml/includes/two-d-gaussian.md} -->
 <h3 id="sampling-a-function">Sampling a Function</h3>
 <p>We will consider a Gaussian distribution with a particular structure of covariance matrix. We will generate <em>one</em> sample from a 25-dimensional Gaussian density. <br /><span class="math display">$$
@@ -999,15 +660,48 @@ $$</span><br /></p>
 <div id="ref-Andrade:consistent14">
 <p>Andrade-Pacheco, Ricardo, Martin Mubangizi, John Quinn, and Neil D. Lawrence. 2014. “Consistent Mapping of Government Malaria Records Across a Changing Territory Delimitation.” <em>Malaria Journal</em> 13 (Suppl 1). doi:<a href="https://doi.org/10.1186/1475-2875-13-S1-P5">10.1186/1475-2875-13-S1-P5</a>.</p>
 </div>
+<div id="ref-Cho:deep09">
+<p>Cho, Youngmin, and Lawrence K. Saul. 2009. “Kernel Methods for Deep Learning.” In <em>Advances in Neural Information Processing Systems 22</em>, edited by Y. Bengio, D. Schuurmans, J. D. Lafferty, C. K. I. Williams, and A. Culotta, 342–50. Curran Associates, Inc. <a href="http://papers.nips.cc/paper/3628-kernel-methods-for-deep-learning.pdf" class="uri">http://papers.nips.cc/paper/3628-kernel-methods-for-deep-learning.pdf</a>.</p>
+</div>
 <div id="ref-DellaGatta:direct08">
 <p>Della Gatta, Giusy, Mukesh Bansal, Alberto Ambesi-Impiombato, Dario Antonini, Caterina Missero, and Diego di Bernardo. 2008. “Direct Targets of the Trp63 Transcription Factor Revealed by a Combination of Gene Expression Profiling and Reverse Engineering.” <em>Genome Research</em> 18 (6). Telethon Institute of Genetics; Medicine, 80131 Naples, Italy.: 939–48. doi:<a href="https://doi.org/10.1101/gr.073601.107">10.1101/gr.073601.107</a>.</p>
+</div>
+<div id="ref-Ioffe:batch15">
+<p>Ioffe, Sergey, and Christian Szegedy. 2015. “Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift.” In <em>Proceedings of the 32nd International Conference on Machine Learning</em>, edited by Francis Bach and David Blei, 37:448–56. Proceedings of Machine Learning Research. Lille, France: PMLR. <a href="http://proceedings.mlr.press/v37/ioffe15.html" class="uri">http://proceedings.mlr.press/v37/ioffe15.html</a>.</p>
 </div>
 <div id="ref-Kalaitzis:simple11">
 <p>Kalaitzis, Alfredo A., and Neil D. Lawrence. 2011. “A Simple Approach to Ranking Differentially Expressed Gene Expression Time Courses Through Gaussian Process Regression.” <em>BMC Bioinformatics</em> 12 (180). doi:<a href="https://doi.org/10.1186/1471-2105-12-180">10.1186/1471-2105-12-180</a>.</p>
 </div>
+<div id="ref-MacKay:bayesian92">
+<p>MacKay, David J. C. 1992. “Bayesian Methods for Adaptive Models.” PhD thesis, California Institute of Technology.</p>
+</div>
+<div id="ref-McCulloch:neuron43">
+<p>McCulloch, Warren S., and Walter Pitts. 1943. “A Logical Calculus of the Ideas Immanent in Nervous Activity.” <em>Bulletin of Mathematical Biophysics</em> 5: 115–33.</p>
+</div>
 <div id="ref-Mubangizi:malaria14">
 <p>Mubangizi, Martin, Ricardo Andrade-Pacheco, Michael Thomas Smith, John Quinn, and Neil D. Lawrence. 2014. “Malaria Surveillance with Multiple Data Sources Using Gaussian Process Models.” In <em>1st International Conference on the Use of Mobile Ict in Africa</em>.</p>
 </div>
+<div id="ref-Neal:bayesian94">
+<p>Neal, Radford M. 1994. “Bayesian Learning for Neural Networks.” PhD thesis, Dept. of Computer Science, University of Toronto.</p>
+</div>
+<div id="ref-Pearl:causality95">
+<p>Pearl, Judea. 1995. “From Bayesian Networks to Causal Networks.” In <em>Probabilistic Reasoning and Bayesian Belief Networks</em>, edited by A. Gammerman, 1–31. Alfred Waller.</p>
+</div>
+<div id="ref-Rasmussen:book06">
+<p>Rasmussen, Carl Edward, and Christopher K. I. Williams. 2006. <em>Gaussian Processes for Machine Learning</em>. Cambridge, MA: mit.</p>
+</div>
+<div id="ref-Steele:predictive12">
+<p>Steele, S, A Bilchik, J Eberhardt, P Kalina, A Nissan, E Johnson, I Avital, and A Stojadinovic. 2012. “Using Machine-Learned Bayesian Belief Networks to Predict Perioperative Risk of Clostridium Difficile Infection Following Colon Surgery.” <em>Interact J Med Res</em> 1 (2): e6. doi:<a href="https://doi.org/10.2196/ijmr.2131">10.2196/ijmr.2131</a>.</p>
+</div>
+<div id="ref-Tipping:probpca99">
+<p>Tipping, Michael E., and Christopher M. Bishop. 1999. “Probabilistic Principal Component Analysis.” <em>Journal of the Royal Statistical Society, B</em> 6 (3): 611–22. doi:<a href="https://doi.org/doi:10.1111/1467-9868.00196">doi:10.1111/1467-9868.00196</a>.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>In classical statistics we often interpret these parameters, <span class="math inline"><em>β</em></span>, whereas in machine learning we are normally more interested in the result of the prediction, and less in the prediction. Although this is changing with more need for accountability. In honour of this I normally use <span class="math inline"><strong>β</strong></span> when I care about the value of these parameters, and <span class="math inline">$\mappingVector$</span> when I care more about the quality of the prediction.<a href="#fnref1">↩</a></p></li>
+</ol>
 </div>
 
 

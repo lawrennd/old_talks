@@ -369,20 +369,8 @@
 
 <!-- Enables links to pages-->
 <p><!--% not ipynb--></p>
-<p><!--% slides and not ipynb
-
-
-
-
-
-
-
-
-
-
-
-
- <!--% not notes--></p>
+<p><!--% slides and not ipynb --></p>
+<p><!--% not notes--></p>
 </section>
 <section id="section" class="slide level3">
 <h3></h3>
@@ -628,10 +616,12 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatr
 <li><p>If <span class="math display">\[
 \dataVector = \mappingMatrix \inputVector + \noiseVector,
 \]</span></p></li>
-<li><p>Assume <span class="math display">\[\begin{align}
+<li>Assume <span class="math display">\[
+\begin{aligned}
 \inputVector &amp; \sim \gaussianSamp{\meanVector}{\covarianceMatrix}\\
 \noiseVector &amp; \sim \gaussianSamp{\zerosVector}{\covarianceMatrixTwo}
-\end{align}\]</span></p></li>
+\end{aligned}
+\]</span></li>
 <li><p>Then <span class="math display">\[
 \dataVector \sim \gaussianSamp{\mappingMatrix\meanVector}{\mappingMatrix\covarianceMatrix\mappingMatrix^\top + \covarianceMatrixTwo}.
 \]</span> If <span class="math inline">\(\covarianceMatrixTwo=\dataStd^2\eye\)</span>, this is Probabilistic Principal Component Analysis <span class="citation" data-cites="Tipping:probpca99">(Tipping and Bishop, 1999)</span>, because we integrated out the inputs (or <em>latent</em> variables they would be called in that case).</p></li>

@@ -9,12 +9,13 @@ $$
 $$
 \slides{
 * Assume}\notes{where $\dataVector$, $\inputVector$ and $\noiseVector$ are vectors and we assume that $\inputVector$ and $\noiseVector$ are drawn from multivariate Gaussians,}
-$$\begin{align}
+$$
+\begin{aligned}
 \inputVector & \sim \gaussianSamp{\meanVector}{\covarianceMatrix}\\
 \noiseVector & \sim \gaussianSamp{\zerosVector}{\covarianceMatrixTwo}
-\end{align}$$
-\slides{
-* Then}\notes{then we know that $\dataVector$ is also drawn from a multivariate Gaussian with,}
+\end{aligned}
+$$
+\notes{then we know that $\dataVector$ is also drawn from a multivariate Gaussian with,}\slides{* Then}
 $$
 \dataVector \sim \gaussianSamp{\mappingMatrix\meanVector}{\mappingMatrix\covarianceMatrix\mappingMatrix^\top + \covarianceMatrixTwo}.
 $$
