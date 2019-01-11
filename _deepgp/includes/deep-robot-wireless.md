@@ -57,8 +57,6 @@ ax.set_ylabel('latent dimension 2', fontsize=20)
 mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/robot-wireless-latent-space.svg', 
             transparent=True, frameon=True)}
 			
-\subsection{Robot WiFi Data Latent Space}
-
 \includesvg{../slides/diagrams/deepgp/robot-wireless-latent-space.svg}
 
 
