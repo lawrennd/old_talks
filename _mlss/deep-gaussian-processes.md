@@ -13,7 +13,9 @@ author:
   institute: Amazon Cambridge and University of Sheffield
   twitter: lawrennd
   url: http://inverseprobability.com
+geometry: ["a4paper", "margin=2in"]
 date: 2019-01-11
+papersize: a4paper
 venue: MLSS, Stellenbosch, South Africa
 transition: None
 ---

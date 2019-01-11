@@ -951,21 +951,10 @@ $$</span><br /></p>
 <em>The multi-layer perceptron covariance function. This is derived by considering the infinite limit of a neural network with probit activation functions. </em>
 </center>
 <!--include{_gp/includes/gp-optimize.md}-->
-<table>
-<tr>
-<td width="50%">
-<ul>
-<li><a href="http://gpss.cc" class="uri">http://gpss.cc</a></li>
-<li>Next one is in Sheffield in <em>September 2019</em>.</li>
-<li>Many lectures from past meetings available online</li>
-</ul>
-</td>
-<td width="50%">
+<h3 id="gpss-gaussian-process-summer-school">GPSS: Gaussian Process Summer School</h3>
 <object class="svgplot " align="1.5cm" data="../slides/diagrams/logo/gpss-logo.svg" style="vertical-align:middle;">
 </object>
-</td>
-</tr>
-</table>
+<p>If you're interested in finding out more about Gaussian processes, you can attend the Gaussian process summer school, or view the lectures and material on line. Details of the school, future events and past events can be found at the website <a href="http://gpss.cc" class="uri">http://gpss.cc</a>.</p>
 <h3 id="gpy-a-gaussian-process-framework-in-python">GPy: A Gaussian Process Framework in Python</h3>
 <div style="text-align:center;vertical-align:middle">
 <img class="" src="../slides/diagrams/gp/gpy.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
@@ -973,10 +962,9 @@ $$</span><br /></p>
 <p>GPy is a BSD licensed software code base for implementing Gaussian process models in python. This allows GPs to be combined with a wide variety of software libraries.</p>
 <p>The software itself is avaialble on <a href="https://github.com/SheffieldML/GPy">GitHub</a> and the team welcomes contributions.</p>
 <p>The aim for GPy is to be a probabilistic-style programming language, i.e. you specify the model rather than the algorithm. As well as a large range of covariance functions the software allows for non-Gaussian likelihoods, multivariate outputs, dimensionality reduction and approximations for larger data sets.</p>
-<ul>
-<li><a href="https://github.com/GPflow/GPflow">GPflow</a></li>
-<li><a href="https://github.com/cornellius-gp/gpytorch">GPyTorch</a></li>
-</ul>
+<h3 id="other-software">Other Software</h3>
+<p>GPy has inspired other software solutions, first of all <a href="https://github.com/GPflow/GPflow">GPflow</a>, which uses Tensor Flow's automatic differentiation engine to allow rapid prototyping of new covariance functions and algorithms. More recently, <a href="https://github.com/cornellius-gp/gpytorch">GPyTorch</a> uses PyTorch for the same purpose.</p>
+<p>GPy itself is being restructured with MXFusion as its computational engine to give similiar capabilities.}</p>
 <div style="text-align:center;vertical-align:middle">
 <img class="" src="../slides/diagrams/ml/mxfusion.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>

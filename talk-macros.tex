@@ -320,7 +320,7 @@ from \filename import \object
 \define{\includeimg{filename}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" height="auto" align="\align" style="background:none; border:none; box-shadow:none;vertical-align:middle">}
 \define{\includeimgclip{filename}{top}{right}{bottom}{left}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" align="\align" style="background:none; border:none; box-shadow:none; position:absolute; clip:rect(\top,\right,\bottom,\left);vertical-align:middle">}
 \define{\includesvg{filename}{align}{class}{style}}{<div style="text-align:\align" class="\class"><object class="svgplot \class" align="\align" data="\filename" style="vertical-align:middle;\style"></object></div>}
-\define{\includesvgclass{filename}{class}{align}}{<object class="\class" align="\align" data="\filename" style="vertical-align:middle"></object>}
+\define{\includesvgclass{filename}{class}{align}}{<div style="text-align:\align" class="\class"><object class="\class" align="\align" data="\filename" style="vertical-align:middle"></object></div>}
 \define{\includehtml{filename}{width}{height}}{<iframe src="\filename" width="\width" height="\height" allowtransparency="true" frameborder="0">
 </iframe>}
 \define{\includepdf{filename}{page}{width}{height}}{<object data="\filename" type="application/pdf" width="\width" height="\height">

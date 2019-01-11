@@ -27,6 +27,7 @@ The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboratio
 \newslide{Kapchorwa District}
 
 \includesvgclass{../slides/diagrams/health/Kapchorwa_District_in_Uganda.svg}
+
 \notes{\caption{THe Kapchorwa District, home district of Stephen Kiprotich.}
 \notes{Stephen Kiprotich, the 2012 gold medal winner from the London Olympics, comes from Kapchorwa district, in eastern Uganda, near the border with Kenya.}
 
