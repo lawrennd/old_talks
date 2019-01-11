@@ -107,7 +107,7 @@ There are also challenges around specification of the objective function, but fo
 \include{_gp/includes/gp-optimize.md}
 
 \include{_gp/includes/della-gatta-gene-gp.md}
-\include{_health/includes/malaria.md}
+\include{_health/includes/malaria-gp.md}
 
 \include{_kern/includes/add-covariance.md}
 \include{_gp/includes/bda-forecasting.md}

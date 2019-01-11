@@ -1,11 +1,21 @@
-\newslide{Example: Prediction of Malaria Incidence in Uganda}
+\ifndef{malariaGp}
+\define{malariaGp}
+\editme
 
-* Work with John Quinn and Martin Mubaganzi (Makerere University, Uganda)
-* See [AI-DEV Group](http://air.ug/research.html).
+\subsection{Example: Prediction of Malaria Incidence in Uganda}
 
-\newslide{Malaria Prediction in Uganda}
 \alignright{\ricardoPicture{1.5cm}}
 
+\notes{As an example we'll consider the prediction of Malaria incidence in Uganda. For the purposes of this study malaria reports come in two forms, HMIS reports from health centres and Sentinel data, which is curated by the WHO. There are limited sentinel sites and many HMIS sites.
+
+The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboration with John Quinn and Martin Mubangizi [@Andrade:consistent14,@Mubangizi:malaria14]. Initally of the AI-DEV group from the University of Makerere in Kampala and more latterly based at UN Global Pulse.}
+
+\slides{* Work with Ricardo Andrade Pacheco, John Quinn and Martin Mubaganzi (Makerere University, Uganda)
+* See [AI-DEV Group](http://air.ug/research.html).}
+
+\newslide{Malaria Prediction in Uganda}
+
+\
 \includepng{../slides/diagrams/health/uganda-districts-2006}{50%}
 \caption{Data SRTM/NASA from <https://dds.cr.usgs.gov/srtm/version2_1>}
 
@@ -47,3 +57,4 @@
 
 \includegif{../slides/diagrams/health/monitor}{50%}
 
+\endif
