@@ -24,6 +24,6 @@
 \caption{Image credit: Kai Arulkumaran}
 }
 
-\notesfigure{\includejpg{../slides/diagrams/sparse-gps.jpg}{45%}}
+\notesfigure{\includejpg{../slides/diagrams/sparse-gps}{45%}}
 \notes{\caption{Image credit: Kai Arulkumaran}}
 \endif

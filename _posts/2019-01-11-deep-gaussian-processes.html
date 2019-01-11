@@ -41,7 +41,7 @@ categories:
 <em>What we observe today is some non-linear function of the cosmic microwave background. </em>
 </center>
 <div style="text-align:center;vertical-align:middle">
-<img class="" src="../slides/diagrams/sparse-gps.jpg.jpg" width="45%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="../slides/diagrams/sparse-gps.jpg" width="45%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 <center>
 <em>Image credit: Kai Arulkumaran </em>
@@ -55,7 +55,7 @@ categories:
 <p>Inducing variables can be thought of as pseudo-data, indeed in <span class="citation">Snelson and Ghahramani (n.d.)</span> they were referred to as <em>pseudo-points</em>.</p>
 <p>The only requirement for inducing variables is that they are jointly distributed as a Gaussian process with the original data. This means that they can be from the space <span class="math inline">$\mappingFunctionVector$</span> or a space that is related through a linear operator (see e.g. <span class="citation">Álvarez et al. (2010)</span>). For example we could choose to store the gradient of the function at particular points or a value from the frequency spectrum of the function <span class="citation">(Lázaro-Gredilla, Quiñonero-Candela, and Rasmussen 2010)</span>.</p>
 <h3 id="variational-compression-ii">Variational Compression II</h3>
-<p>Inducing variables don't only allow for the compression of the non-parameteric information into a reduced data aset but they also allow for computational scaling of the algorithms through, for example stochastic variational approaches <span class="citation">Hensman, Fusi, and Lawrence (n.d.)</span> or parallelization <span class="citation">(<span class="citeproc-not-found" data-reference-id="Gal:Distributed14"><strong>???</strong></span>)</span>,<span class="citation">Dai et al. (2014)</span>, <span class="citation">M. W. Seeger et al. (2017)</span>.</p>
+<p>Inducing variables don't only allow for the compression of the non-parameteric information into a reduced data aset but they also allow for computational scaling of the algorithms through, for example stochastic variational approaches <span class="citation">Hensman, Fusi, and Lawrence (n.d.)</span> or parallelization <span class="citation">Gal, Wilk, and Rasmussen (n.d.)</span>,<span class="citation">Dai et al. (2014)</span>, <span class="citation">M. W. Seeger et al. (2017)</span>.</p>
 <!--include{_gp/includes/larger-factorize.md}-->
 <p>We’ve seen how we go from parametric to non-parametric. The limit implies infinite dimensional <span class="math inline">$\mappingVector$</span>. Gaussian processes are generally non-parametric: combine data with covariance function to get model. This representation <em>cannot</em> be summarized by a parameter vector of a fixed size.</p>
 <p>Parametric models have a representation that does not respond to increasing training set size. Bayesian posterior distributions over parameters contain the information about the training data, for example if we use use Bayes’ rule from training data, <br /><span class="math display">$$
@@ -92,7 +92,7 @@ p(\dataVector) = \int p(\dataVector|\mappingFunctionVector) p(\mappingFunctionVe
 $$</span><br /> where for the independent case we have <span class="math inline">$p(\dataVector | \mappingFunctionVector) = \prod_{i=1}^\numData p(\dataScalar_i|\mappingFunction_i)$</span>.</p>
 <p>Inducing variables are like auxilliary variables in Monte Carlo algorithms. We introduce the inducing variables by augmenting this integral with an additional integral over <span class="math inline">$\inducingVector$</span>, <br /><span class="math display">$$
 p(\dataVector) = \int p(\dataVector|\mappingFunctionVector) p(\mappingFunctionVector|\inducingVector)  p(\inducingVector)  \text{d}\inducingVector \text{d}\mappingFunctionVector.
-$$</span><br /> Now, conceptually speaking we are going to integrate out $#, initially leaving $in place. This gives, <br /><span class="math display">$$
+$$</span><br /> Now, conceptually speaking we are going to integrate out <span class="math inline">$\mappingFunctionVector$</span>, initially leaving <span class="math inline">$\inducingVector$</span> in place. This gives, <br /><span class="math display">$$
 p(\dataVector) = \int p(\dataVector|\inducingVector)   p(\inducingVector)  \text{d}\inducingVector.
 $$</span><br /></p>
 <p>Note the similarity between this form and our standard <em>parametric</em> form. If we had defined our model through standard basis functions we would have, <br /><span class="math display">$$
@@ -214,7 +214,7 @@ _ <span class="op">=</span> m.optimize(messages<span class="op">=</span><span cl
 <li><em>But</em>: their dimensionality does not need to be set at design time.</li>
 <li>They can be modified arbitrarily at run time without effecting the model likelihood.</li>
 <li><p>They only effect the quality of compression and the lower bound.</p></li>
-<li>Exploit the resulting factorization ... <br /><span class="math display">$$p(\dataVector^*|\dataVector) = \int p(\dataVector^*| \inducingVector) q(\inducingVector | \dataVector) \text{d} \inducingVector$$</span><br /> </li>
+<li>Exploit the resulting factorization ... <br /><span class="math display">$$p(\dataVector^*|\dataVector) = \int p(\dataVector^*| \inducingVector) q(\inducingVector | \dataVector) \text{d} \inducingVector$$</span><br /></li>
 <li>The distribution now <em>factorizes</em>: <br /><span class="math display">$$p(\dataVector^*|\dataVector) = \int \prod_{i=1}^{\numData^*}p(\dataScalar^*_i| \inducingVector) q(\inducingVector | \dataVector) \text{d} \inducingVector$$</span><br /></li>
 <li><p>This factorization can be exploited for stochastic variational inference <span class="citation">(Hoffman et al. 2012)</span>.</p></li>
 </ul>
@@ -278,7 +278,6 @@ Actually index of deprivation is a proxy for this ...
 <p>According to the hype of 1987, neural networks were meant to be intelligent models which discovered features and patterns in data. Gaussian processes in contrast are simply smoothing devices. How can Gaussian processes possibly repalce neural networks? What is going on?</p>
 <p><span class="citation">MacKay (n.d.)</span></p>
 </blockquote>
-<p>bathwater?” <span class="citation">(Published as MacKay, n.d.)</span>}</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> teaching_plots <span class="im">as</span> plot</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/deepgp/deep-nn2.svg" style="vertical-align:middle;">
 </object>
@@ -1247,6 +1246,9 @@ infr.run(Y<span class="op">=</span>data)</code></pre></div>
 </div>
 <div id="ref-Duvenaud:pathologies14">
 <p>Duvenaud, David, Oren Rippel, Ryan Adams, and Zoubin Ghahramani. 2014. “Avoiding Pathologies in Very Deep Networks.” In.</p>
+</div>
+<div id="ref-Gal:distributed14">
+<p>Gal, Yarin, Mark van der Wilk, and Carl E. Rasmussen. n.d. “Distributed Variational Inference in Sparse Gaussian Process Regression and Latent Variable Models.” In.</p>
 </div>
 <div id="ref-Hensman:bigdata13">
 <p>Hensman, James, Nicoló Fusi, and Neil D. Lawrence. n.d. “Gaussian Processes for Big Data.” In.</p>

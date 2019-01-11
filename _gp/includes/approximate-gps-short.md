@@ -48,7 +48,7 @@ where for the independent case we have $p(\dataVector | \mappingFunctionVector) 
 $$
 p(\dataVector) = \int p(\dataVector|\mappingFunctionVector) p(\mappingFunctionVector|\inducingVector)  p(\inducingVector)  \text{d}\inducingVector \text{d}\mappingFunctionVector.
 $$
-\notes{Now, conceptually speaking we are going to integrate out $\mappingFunctionVector#, initially leaving $\inducingVector in place. This gives,}\slides{Integrating over $\mappingFunctionVector$}
+\notes{Now, conceptually speaking we are going to integrate out $\mappingFunctionVector$, initially leaving $\inducingVector$ in place. This gives,}\slides{Integrating over $\mappingFunctionVector$}
 $$
 p(\dataVector) = \int p(\dataVector|\inducingVector)   p(\inducingVector)  \text{d}\inducingVector.
 $$
