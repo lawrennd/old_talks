@@ -1,5 +1,5 @@
 \ifndef{otherSoftware}
-\defined{otherSoftware}
+\define{otherSoftware}
 
 \subsection{Other Software}
 

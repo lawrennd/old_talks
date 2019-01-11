@@ -1126,13 +1126,19 @@ showDivs(13, 'two_point_sample3');
 <h3></h3>
 <p><span class="math display">\[\begin{aligned}
     \gaussianDist{\dataVector}{\mathbf{0}}{\kernelMatrix}=\frac{1}{(2\pi)^\frac{\numData}{2}{\color{yellow} \det{\kernelMatrix}^{\frac{1}{2}}}}{\color{cyan}\exp\left(-\frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}\right)}
-    \end{aligned}\]</span></p>
+\end{aligned}
+\]</span></p>
 </section>
 <section id="section-15" class="slide level3">
 <h3></h3>
-<p><span class="math display">\[\begin{aligned}
+<p><span class="math display">\[
+\begin{aligned}
     \log \gaussianDist{\dataVector}{\mathbf{0}}{\kernelMatrix}=&amp;{\color{yellow}-\frac{1}{2}\log\det{\kernelMatrix}}{\color{cyan}-\frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}} \\ &amp;-\frac{\numData}{2}\log2\pi
-    \end{aligned}\]</span>  <span class="math display">\[\errorFunction(\parameterVector) = {\color{yellow} \frac{1}{2}\log\det{\kernelMatrix}} + {\color{cyan} \frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}}\]</span></p>
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\errorFunction(\parameterVector) = {\color{yellow} \frac{1}{2}\log\det{\kernelMatrix}} + {\color{cyan} \frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}}
+\]</span></p>
 </section>
 <section id="section-16" class="slide level3">
 <h3></h3>
@@ -1682,7 +1688,6 @@ showDivs(0, 'gp-optimise');
 </section>
 <section id="other-software" class="slide level3">
 <h3>Other Software</h3>
-<p>}</p>
 <ul>
 <li><a href="https://github.com/GPflow/GPflow">GPflow</a></li>
 <li><a href="https://github.com/cornellius-gp/gpytorch">GPyTorch</a></li>

@@ -680,10 +680,16 @@ _ = m_clean.optimize()</code></pre>
 <p><br /><span class="math display">$$\gaussianDist{\dataVector}{\mathbf{0}}{\kernelMatrix}=\frac{1}{(2\pi)^\frac{\numData}{2}{\det{\kernelMatrix}^{\frac{1}{2}}}}{\exp\left(-\frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}\right)}$$</span><br /></p>
 <p><br /><span class="math display">$$\begin{aligned}
     \gaussianDist{\dataVector}{\mathbf{0}}{\kernelMatrix}=\frac{1}{(2\pi)^\frac{\numData}{2}{\color{yellow} \det{\kernelMatrix}^{\frac{1}{2}}}}{\color{cyan}\exp\left(-\frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}\right)}
-    \end{aligned}$$</span><br /></p>
-<p><br /><span class="math display">$$\begin{aligned}
+\end{aligned}
+$$</span><br /></p>
+<p><br /><span class="math display">$$
+\begin{aligned}
     \log \gaussianDist{\dataVector}{\mathbf{0}}{\kernelMatrix}=&amp;{\color{yellow}-\frac{1}{2}\log\det{\kernelMatrix}}{\color{cyan}-\frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}} \\ &amp;-\frac{\numData}{2}\log2\pi
-    \end{aligned}$$</span><br />  <br /><span class="math display">$$\errorFunction(\parameterVector) = {\color{yellow} \frac{1}{2}\log\det{\kernelMatrix}} + {\color{cyan} \frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}}$$</span><br /></p>
+\end{aligned}
+$$</span><br /></p>
+<p><br /><span class="math display">$$
+\errorFunction(\parameterVector) = {\color{yellow} \frac{1}{2}\log\det{\kernelMatrix}} + {\color{cyan} \frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}}
+$$</span><br /></p>
 <p>The parameters are <em>inside</em> the covariance function (matrix). <br /><span class="math display">$$\kernelScalar_{i, j} = \kernelScalar(\inputVals_i, \inputVals_j; \parameterVector)$$</span><br /></p>
 <p><span><br /><span class="math display">$$\kernelMatrix = \rotationMatrix \eigenvalueMatrix^2 \rotationMatrix^\top$$</span><br /></span></p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">gpoptimizePlot1</code></pre></div>
@@ -964,7 +970,7 @@ $$</span><br /></p>
 <p>The aim for GPy is to be a probabilistic-style programming language, i.e. you specify the model rather than the algorithm. As well as a large range of covariance functions the software allows for non-Gaussian likelihoods, multivariate outputs, dimensionality reduction and approximations for larger data sets.</p>
 <h3 id="other-software">Other Software</h3>
 <p>GPy has inspired other software solutions, first of all <a href="https://github.com/GPflow/GPflow">GPflow</a>, which uses Tensor Flow's automatic differentiation engine to allow rapid prototyping of new covariance functions and algorithms. More recently, <a href="https://github.com/cornellius-gp/gpytorch">GPyTorch</a> uses PyTorch for the same purpose.</p>
-<p>GPy itself is being restructured with MXFusion as its computational engine to give similiar capabilities.}</p>
+<p>GPy itself is being restructured with MXFusion as its computational engine to give similiar capabilities.</p>
 <div style="text-align:center;vertical-align:middle">
 <img class="" src="../slides/diagrams/ml/mxfusion.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
