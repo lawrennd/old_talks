@@ -31,7 +31,7 @@ transition: None
 
 \subsection{Acknowledgments}
 
-Stefanos Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Dai, Javier Gonzalez, Andreas Damianou, Mark Pullin.
+Stefanos Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Dai, Javier Gonzalez, Andreas Damianou, Mark Pullin, Michael Smith, James Hensman, John Quinn, Martin Mubangizi.
 
 
 \newslide{Thanks!}

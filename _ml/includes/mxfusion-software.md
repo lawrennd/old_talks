@@ -1,3 +1,7 @@
+\ifndef{mxfusionSoftware}
+\define{mxfusionSoftware}
+\editme
+
 \include{_ml/includes/mxfusion-intro.md}
 
 \subsection{MxFusion}
@@ -91,3 +95,5 @@ infr.run(Y=data)
 
 * Model + Inference together form building blocks.
     * Just doing modular modeling with universal inference doesn't really scale, need specialized inference methods for specialized modelling objects like non-parametrics.
+
+\endif

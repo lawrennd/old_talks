@@ -62,8 +62,8 @@ transition: None
 \include{_ml/includes/process-emulation.md}
 \include{_uq/includes/emukit-playground.md}
 \include{_uq/includes/uncertainty-quantification.md}
-\include{_uq/includes/emukit.md}
-\include{_ml/includes/mxfusion.md}
+\include{_uq/includes/emukit-software.md}
+\include{_ml/includes/mxfusion-software.md}
 
 \subsection{Long term Aim}
 

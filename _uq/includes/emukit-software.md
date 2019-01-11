@@ -1,4 +1,8 @@
-\newslide{Emukit}
+\ifndef{emukitSoftware}
+\define{emukitSoftware}
+\editme
+
+\subsection{Emukit}
 
 \slides{
 * Work by Javier Gonzalez, Andrei Paleyes, Mark Pullin, Maren Mahsereci.
@@ -23,3 +27,4 @@
 * *Bayesian quadrature*: efficiently compute the integrals of functions that are expensive to evaluate.
 }
 
+\endif
