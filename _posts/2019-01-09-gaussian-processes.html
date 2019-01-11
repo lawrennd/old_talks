@@ -111,10 +111,10 @@ $$</span><br /> and we have <em>unsupervised learning</em> (from where we can ge
 <p>To work with linear Gaussian models, to find the marginal likelihood all you need to know is the following rules. If <br /><span class="math display">$$
 \dataVector = \mappingMatrix \inputVector + \noiseVector,
 $$</span><br /> where <span class="math inline">$\dataVector$</span>, <span class="math inline">$\inputVector$</span> and <span class="math inline">$\noiseVector$</span> are vectors and we assume that <span class="math inline">$\inputVector$</span> and <span class="math inline">$\noiseVector$</span> are drawn from multivariate Gaussians, <br /><span class="math display">$$
-\begin{aligned}
+\begin{align}
 \inputVector &amp; \sim \gaussianSamp{\meanVector}{\covarianceMatrix}\\
 \noiseVector &amp; \sim \gaussianSamp{\zerosVector}{\covarianceMatrixTwo}
-\end{aligned}
+\end{align}
 $$</span><br /> then we know that <span class="math inline">$\dataVector$</span> is also drawn from a multivariate Gaussian with, <br /><span class="math display">$$
 \dataVector \sim \gaussianSamp{\mappingMatrix\meanVector}{\mappingMatrix\covarianceMatrix\mappingMatrix^\top + \covarianceMatrixTwo}.
 $$</span><br /></p>
@@ -632,13 +632,13 @@ $$</span><br /></p>
 <h3 id="other-software">Other Software</h3>
 <p>GPy has inspired other software solutions, first of all <a href="https://github.com/GPflow/GPflow">GPflow</a>, which uses Tensor Flow's automatic differentiation engine to allow rapid prototyping of new covariance functions and algorithms. More recently, <a href="https://github.com/cornellius-gp/gpytorch">GPyTorch</a> uses PyTorch for the same purpose.</p>
 <p>GPy itself is being restructured with MXFusion as its computational engine to give similiar capabilities.</p>
+<h3 id="mxfusion-modular-probabilistic-programming-on-mxnet">MXFusion: Modular Probabilistic Programming on MXNet</h3>
 <div style="text-align:center;vertical-align:middle">
 <img class="" src="../slides/diagrams/ml/mxfusion.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 <center>
 <a href="https://github.com/amzn/MXFusion" class="uri">https://github.com/amzn/MXFusion</a>
 </center>
-<h3 id="mxfusion">MxFusion</h3>
 <table>
 <tr>
 <td width="70%">

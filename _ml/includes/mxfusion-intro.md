@@ -2,13 +2,13 @@
 \define{mxfusionIntro}
 \editme
 
-\newslide{MXFusion: Modular Probabilistic Programming on MXNet}
+\subsection{MXFusion: Modular Probabilistic Programming on MXNet}
 
 \includepng{../slides/diagrams/ml/mxfusion}{70%}
 
 \aligncenter{<https://github.com/amzn/MXFusion>}
 
-\subsection{MxFusion}
+\newslide{MxFusion}
 
 \columns{* Work by Eric Meissner and Zhenwen Dai.
 * Probabilistic programming.

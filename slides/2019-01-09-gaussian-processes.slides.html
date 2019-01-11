@@ -617,10 +617,10 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatr
 \dataVector = \mappingMatrix \inputVector + \noiseVector,
 \]</span></p></li>
 <li>Assume <span class="math display">\[
-\begin{aligned}
+\begin{align}
 \inputVector &amp; \sim \gaussianSamp{\meanVector}{\covarianceMatrix}\\
 \noiseVector &amp; \sim \gaussianSamp{\zerosVector}{\covarianceMatrixTwo}
-\end{aligned}
+\end{align}
 \]</span></li>
 <li><p>Then <span class="math display">\[
 \dataVector \sim \gaussianSamp{\mappingMatrix\meanVector}{\mappingMatrix\covarianceMatrix\mappingMatrix^\top + \covarianceMatrixTwo}.
