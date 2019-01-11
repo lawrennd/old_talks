@@ -42,7 +42,7 @@ ylim = (-0.6, 2.0)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 
-mlai.write_figure(figure=fig, filename='../../slides/diagrams/datasets/robot-wireless-dim-' + str(output_dim) + '.svg', 
+mlai.write_figure(figure=fig, filename='../slides/diagrams/datasets/robot-wireless-dim-' + str(output_dim) + '.svg', 
             transparent=True, frameon=True)}
 
 

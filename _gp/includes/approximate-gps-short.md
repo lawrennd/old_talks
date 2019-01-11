@@ -5,7 +5,7 @@
 \include{_gp/includes/sparse-gp-comic.md}
 \include{_gp/includes/low-rank-motivation.md}
 \include{_gp/includes/gp-variational-complexity.md}
-<!--\include{_gp/includes/larger-factorize.md}-->
+<!--include{_gp/includes/larger-factorize.md}-->
 \include{_gp/includes/bottleneck.md}
 
 \subsection{Augment Variable Space}
