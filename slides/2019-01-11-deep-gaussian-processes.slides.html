@@ -404,14 +404,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <section class="slide level3">
 
+<!--define{draft}-->
 <!-- Enables links to pages-->
 <p><!--% not ipynb--></p>
 <p><!--% not notes--></p>
 </section>
 <section id="section" class="slide level3">
 <h3></h3>
-<div style="text-align:center">
-<img class="vertical-align:middle" src="../slides/diagrams/Planck_CMB.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+<div style="text-align:center;vertical-align:middle">
+<img class="vertical-align:middle" src="../slides/diagrams/Planck_CMB.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
 </section>
 <section id="section-1" class="slide level3">
@@ -425,8 +426,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section>
 <section id="approximations" class="slide level3">
 <h3>Approximations</h3>
-<div style="text-align:center">
-<img class="" src="../slides/diagrams/sparse-gps-1.png" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+<div style="text-align:center;vertical-align:middle">
+<img class="" src="../slides/diagrams/sparse-gps-1.png" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
 <center>
 <em>Image credit: Kai Arulkumaran </em>
@@ -434,8 +435,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section>
 <section id="approximations-1" class="slide level3">
 <h3>Approximations</h3>
-<div style="text-align:center">
-<img class="" src="../slides/diagrams/sparse-gps-2.png" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+<div style="text-align:center;vertical-align:middle">
+<img class="" src="../slides/diagrams/sparse-gps-2.png" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
 <center>
 <em>Image credit: Kai Arulkumaran </em>
@@ -443,8 +444,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section>
 <section id="approximations-2" class="slide level3">
 <h3>Approximations</h3>
-<div style="text-align:center">
-<img class="" src="../slides/diagrams/sparse-gps-3.png" width="45%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+<div style="text-align:center;vertical-align:middle">
+<img class="" src="../slides/diagrams/sparse-gps-3.png" width="45%" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
 <center>
 <em>Image credit: Kai Arulkumaran </em>
@@ -452,52 +453,329 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section>
 <section id="approximations-3" class="slide level3">
 <h3>Approximations</h3>
-<div style="text-align:center">
-<img class="" src="../slides/diagrams/sparse-gps-4.png" width="45%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+<div style="text-align:center;vertical-align:middle">
+<img class="" src="../slides/diagrams/sparse-gps-4.png" width="45%" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
 <center>
 <em>Image credit: Kai Arulkumaran </em>
 </center>
 </section>
+<section id="low-rank-motivation" class="slide level3">
+<h3>Low Rank Motivation</h3>
+<ul>
+<li>Inference in a GP has the following demands:</li>
+</ul>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">Complexity:</td>
+<td style="text-align: left;"><span class="math inline">\(\bigO(\numData^3)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">Storage:</td>
+<td style="text-align: left;"><span class="math inline">\(\bigO(\numData^2)\)</span></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Inference in a low rank GP has the following demands:</li>
+</ul>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">Complexity:</td>
+<td style="text-align: left;"><span class="math inline">\(\bigO(\numData\numInducing^2)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">Storage:</td>
+<td style="text-align: left;"><span class="math inline">\(\bigO(\numData\numInducing)\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>where <span class="math inline">\(\numInducing\)</span> is a user chosen parameter.</p>
+<p><small><span class="citation" data-cites="Snelson:pseudo05">Snelson and Ghahramani (n.d.)</span>,<span class="citation" data-cites="Quinonero:unifying05">Quiñonero Candela and Rasmussen (2005)</span>,<span class="citation" data-cites="Lawrence:larger07">Lawrence (n.d.)</span>,<span class="citation" data-cites="Titsias:variational09">Titsias (n.d.)</span>,<span class="citation" data-cites="Thang:unifying17">Bui et al. (2017)</span></small></p>
+</section>
+<section id="variational-compression" class="slide level3">
+<h3>Variational Compression</h3>
+<ul>
+<li>Inducing variables are a compression of the real observations.</li>
+<li>They are like pseudo-data. They can be in space of <span class="math inline">\(\mappingFunctionVector\)</span> or a space that is related through a linear operator <span class="citation" data-cites="Alvarez:efficient10">(Álvarez et al., 2010)</span> — e.g. a gradient or convolution.</li>
+</ul>
+</section>
+<section id="variational-compression-ii" class="slide level3">
+<h3>Variational Compression II</h3>
+<ul>
+<li>Introduce <em>inducing</em> variables.</li>
+<li>Compress information into the inducing variables and avoid the need to store all the data.</li>
+<li>Allow for scaling e.g. stochastic variational <span class="citation" data-cites="Hensman:bigdata13">Hensman et al. (n.d.)</span> or parallelization <span class="citation" data-cites="Gal:distributed14">Gal et al. (n.d.)</span>,<span class="citation" data-cites="Dai:gpu14">Dai et al. (2014)</span>, <span class="citation" data-cites="Seeger:auto17">Seeger et al. (2017)</span></li>
+</ul>
+<!--
+
+
+
+### Factorizing Likelihoods
+
+
+-   If the likelihood, $p(\dataVector|\mappingFunctionVector)$,
+    factorizes \only<1-2>{\[
+          p(\dataVector|\inducingVector) \geq \exp \int p(\mappingFunctionVector|\inducingVector){\only<2>{\color{\blueColor} \log \prod_{i=1}^\numData}}\only<1>{\log \prod_{i=1}^\numData} p(\dataScalar_i|\mappingFunction_i)\text{d}\mappingFunctionVector.
+          \]} \only<3-4>{\[
+          p(\dataVector|\inducingVector) \geq \exp \only<4>{{\color{\blueColor}\int p(\mappingFunctionVector|\inducingVector) \sum_{i=1}^{\numData}}\log} \only<3>{\int p(\mappingFunctionVector|\inducingVector) {\color{\blueColor}\sum_{i=1}^{\numData}\log}}  p(\dataScalar_i|\mappingFunction_i)\text{d}\mappingFunctionVector.
+          \]} \only<5-6>{\[
+          p(\dataVector|\inducingVector) \geq \only<5>{\exp {\color{\blueColor}\sum_{i=1}^{\numData}\int p(\mappingFunction_i|\inducingVector)}} \only<6>{{\color{\blueColor}\exp\sum_{i=1}^{\numData}}\int p(\mappingFunction_i|\inducingVector)}\log p(\dataScalar_i|\mappingFunction_i)\text{d}\mappingFunctionVector.
+          \]} \only<7-8>{\[
+          p(\dataVector|\inducingVector) \geq {\only<7>{\color{\blueColor}}\prod_{i=1}^\numData \exp} \int p(\mappingFunction_i|\inducingVector) \log p(\dataScalar_i|\mappingFunction_i)\text{d}\mappingFunctionVector.
+          \]} \only<9-10>{\[
+          p(\dataVector|\inducingVector) \geq \prod_{i=1}^\numData \exp \only<10>{\color{\blueColor}}\expDist{\log p(\dataScalar_i|\mappingFunction_i)}{p(\mappingFunction_i|\inducingVector)}
+          \]}
+
+-   &lt;8-&gt; Then the bound factorizes.
+
+-   &lt;10-&gt; Now need a choice of distributions for
+    $\mappingFunctionVector$ and $\dataVector|\mappingFunctionVector$
+    ...
+
+
+-->
+</section>
+<section id="nonparametric-gaussian-processes" class="slide level3">
+<h3>Nonparametric Gaussian Processes</h3>
+<ul>
+<li><p>We’ve seen how we go from parametric to non-parametric.</p></li>
+<li><p>The limit implies infinite dimensional <span class="math inline">\(\mappingVector\)</span>.</p></li>
+<li><p>Gaussian processes are generally non-parametric: combine data with covariance function to get model.</p></li>
+<li><p>This representation <em>cannot</em> be summarized by a parameter vector of a fixed size.</p></li>
+</ul>
+</section>
+<section id="the-parametric-bottleneck" class="slide level3">
+<h3>The Parametric Bottleneck</h3>
+<ul>
+<li><p>Parametric models have a representation that does not respond to increasing training set size.</p></li>
+<li><p>Bayesian posterior distributions over parameters contain the information about the training data.</p>
+<ul>
+<li><p>Use Bayes’ rule from training data, <span class="math inline">\(p\left(\mappingVector|\dataVector, \inputMatrix\right)\)</span>,</p></li>
+<li><p>Make predictions on test data <span class="math display">\[p\left(\dataScalar_*|\inputMatrix_*, \dataVector, \inputMatrix\right) = \int
+      p\left(\dataScalar_*|\mappingVector,\inputMatrix_*\right)p\left(\mappingVector|\dataVector,
+        \inputMatrix)\text{d}\mappingVector\right).\]</span></p></li>
+</ul></li>
+<li><p><span class="math inline">\(\mappingVector\)</span> becomes a bottleneck for information about the training set to pass to the test set.</p></li>
+<li><p>Solution: increase <span class="math inline">\(\numBasisFunc\)</span> so that the bottleneck is so large that it no longer presents a problem.</p></li>
+<li><p>How big is big enough for <span class="math inline">\(\numBasisFunc\)</span>? Non-parametrics says <span class="math inline">\(\numBasisFunc \rightarrow \infty\)</span>.</p></li>
+</ul>
+</section>
+<section id="the-parametric-bottleneck-1" class="slide level3">
+<h3>The Parametric Bottleneck</h3>
+<ul>
+<li>Now no longer possible to manipulate the model through the standard parametric form.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>However, it <em>is</em> possible to express <em>parametric</em> as GPs: <span class="math display">\[\kernelScalar\left(\inputVector_i,\inputVector_j\right)=\basisFunction_:\left(\inputVector_i\right)^\top\basisFunction_:\left(\inputVector_j\right).\]</span></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>These are known as degenerate covariance matrices.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Their rank is at most <span class="math inline">\(\numBasisFunc\)</span>, non-parametric models have full rank covariance matrices.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Most well known is the “linear kernel”, <span class="math inline">\(\kernelScalar(\inputVector_i, \inputVector_j) = \inputVector_i^\top\inputVector_j\)</span>.</li>
+</ul>
+</div>
+</section>
+<section id="making-predictions" class="slide level3">
+<h3>Making Predictions</h3>
+<ul>
+<li>For non-parametrics prediction at new points <span class="math inline">\(\mappingFunctionVector_*\)</span> is made by conditioning on <span class="math inline">\(\mappingFunctionVector\)</span> in the joint distribution.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>In GPs this involves combining the training data with the covariance function and the mean function.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Parametric is a special case when conditional prediction can be summarized in a <em>fixed</em> number of parameters.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Complexity of parametric model remains fixed regardless of the size of our training data set.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>For a non-parametric model the required number of parameters grows with the size of the training data.</li>
+</ul>
+</div>
+</section>
+<section id="augment-variable-space" class="slide level3">
+<h3>Augment Variable Space</h3>
+<ul>
+<li>Augment variable space with inducing observations, <span class="math inline">\(\inducingVector\)</span> <span class="math display">\[
+\begin{bmatrix}
+\mappingFunctionVector\\
+\inducingVector
+\end{bmatrix} \sim \gaussianSamp{\zerosVector}{\kernelMatrix}
+\]</span> with <span class="math display">\[
+\kernelMatrix =
+\begin{bmatrix}
+\Kff &amp; \Kfu \\
+\Kuf &amp; \Kuu
+\end{bmatrix}
+\]</span></li>
+</ul>
+</section>
+<section id="joint-density" class="slide level3">
+<h3>Joint Density</h3>
+<p><span class="math display">\[
+p(\mappingFunctionVector, \inducingVector) = p(\mappingFunctionVector| \inducingVector) p(\inducingVector)
+\]</span> to augment our model <span class="math display">\[
+\dataScalar(\inputVector) = \mappingFunction(\inputVector) + \noiseScalar,
+\]</span> giving <span class="math display">\[
+p(\dataVector) = \int p(\dataVector|\mappingFunctionVector) p(\mappingFunctionVector) \text{d}\mappingFunctionVector,
+\]</span> where for the independent case we have <span class="math inline">\(p(\dataVector | \mappingFunctionVector) = \prod_{i=1}^\numData p(\dataScalar_i|\mappingFunction_i)\)</span>.</p>
+</section>
+<section id="auxilliary-variables" class="slide level3">
+<h3>Auxilliary Variables</h3>
+<p><span class="math display">\[
+p(\dataVector) = \int p(\dataVector|\mappingFunctionVector) p(\mappingFunctionVector|\inducingVector)  p(\inducingVector)  \text{d}\inducingVector \text{d}\mappingFunctionVector.
+\]</span> Integrating over <span class="math inline">\(\mappingFunctionVector\)</span> <span class="math display">\[
+p(\dataVector) = \int p(\dataVector|\inducingVector)   p(\inducingVector)  \text{d}\inducingVector.
+\]</span></p>
+</section>
+<section id="parametric-comparison" class="slide level3">
+<h3>Parametric Comparison</h3>
+<p><span class="math display">\[
+\dataScalar(\inputVector) = \weightVector^\top\basisVector(\inputVector) + \noiseScalar
+\]</span></p>
+<p><span class="math display">\[
+p(\dataVector) = \int p(\dataVector|\weightVector) p(\weightVector) \text{d} \weightVector
+\]</span></p>
+<p><span class="math display">\[
+p(\dataVector^*|\dataVector) = \int p(\dataVector^*|\weightVector) p(\weightVector|\dataVector) \text{d} \weightVector
+\]</span></p>
+</section>
+<section id="new-form" class="slide level3">
+<h3>New Form</h3>
+<p><span class="math display">\[
+p(\dataVector^*|\dataVector) = \int p(\dataVector^*|\inducingVector) p(\inducingVector|\dataVector) \text{d} \inducingVector
+\]</span></p>
+<ul>
+<li><p>but <span class="math inline">\(\inducingVector\)</span> is not a <em>parameter</em></p></li>
+<li><p>Unfortunately computing <span class="math inline">\(p(\dataVector|\inducingVector)\)</span> is intractable</p></li>
+</ul>
+</section>
+<section id="variational-bound-on-pdatavector-inducingvector" class="slide level3">
+<h3>Variational Bound on <span class="math inline">\(p(\dataVector |\inducingVector)\)</span></h3>
+<p><span class="math display">\[
+\begin{aligned}
+    \log p(\dataVector|\inducingVector) &amp; = \log \int p(\dataVector|\mappingFunctionVector) p(\mappingFunctionVector|\inducingVector) \text{d}\mappingFunctionVector\\ &amp; = \int q(\mappingFunctionVector) \log \frac{p(\dataVector|\mappingFunctionVector) p(\mappingFunctionVector|\inducingVector)}{q(\mappingFunctionVector)}\text{d}\mappingFunctionVector + \KL{q(\mappingFunctionVector)}{p(\mappingFunctionVector|\dataVector, \inducingVector)}.
+\end{aligned}
+\]</span></p>
+</section>
+<section id="choose-form-for-qcdot" class="slide level3">
+<h3>Choose form for <span class="math inline">\(q(\cdot)\)</span></h3>
+<ul>
+<li>Set <span class="math inline">\(q(\mappingFunctionVector)=p(\mappingFunctionVector|\inducingVector)\)</span>, <span class="math display">\[
+  \log p(\dataVector|\inducingVector) \geq \log \int p(\mappingFunctionVector|\inducingVector) \log p(\dataVector|\mappingFunctionVector)\text{d}\mappingFunctionVector.
+  \]</span> <span class="math display">\[
+  p(\dataVector|\inducingVector) \geq \exp \int p(\mappingFunctionVector|\inducingVector) \log p(\dataVector|\mappingFunctionVector)\text{d}\mappingFunctionVector.
+  \]</span> <span style="text-align:right"></span></li>
+</ul>
+</section>
+<section id="optimal-compression-in-inducing-variables" class="slide level3">
+<h3>Optimal Compression in Inducing Variables</h3>
+<ul>
+<li><p>Maximizing lower bound minimizes the KL divergence (information gain): <span class="math display">\[
+  \KL{p(\mappingFunctionVector|\inducingVector)}{p(\mappingFunctionVector|\dataVector, \inducingVector)} = \int p(\mappingFunctionVector|\inducingVector) \log \frac{p(\mappingFunctionVector|\inducingVector)}{p(\mappingFunctionVector|\dataVector, \inducingVector)}\text{d}\inducingVector
+  \]</span></p></li>
+<li><p>This is minimized when the information stored about <span class="math inline">\(\dataVector\)</span> is stored already in <span class="math inline">\(\inducingVector\)</span>.</p></li>
+<li>The bound seeks an <em>optimal compression</em> from the <em>information gain</em> perspective.</li>
+<li><p>If <span class="math inline">\(\inducingVector = \mappingFunctionVector\)</span> bound is exact (<span class="math inline">\(\mappingFunctionVector\)</span> <span class="math inline">\(d\)</span>-separates <span class="math inline">\(\dataVector\)</span> from <span class="math inline">\(\inducingVector\)</span>).</p></li>
+</ul>
+</section>
+<section id="choice-of-inducing-variables" class="slide level3">
+<h3>Choice of Inducing Variables</h3>
+<ul>
+<li>Free to choose whatever heuristics for the inducing variables.</li>
+<li>Can quantify which heuristics perform better through checking lower bound.</li>
+</ul>
+<p><span class="math display">\[
+\begin{bmatrix}
+\mappingFunctionVector\\
+\inducingVector
+\end{bmatrix} \sim \gaussianSamp{\zerosVector}{\kernelMatrix}
+\]</span> with <span class="math display">\[
+\kernelMatrix =
+\begin{bmatrix}
+\Kff &amp; \Kfu \\
+\Kuf &amp; \Kuu
+\end{bmatrix}
+\]</span></p>
+</section>
+<section id="variational-compression-1" class="slide level3">
+<h3>Variational Compression</h3>
+<ul>
+<li>Inducing variables are a compression of the real observations.</li>
+<li>They are like pseudo-data. They can be in space of <span class="math inline">\(\mappingFunctionVector\)</span> or a space that is related through a linear operator <span class="citation" data-cites="Alvarez:efficient10">(Álvarez et al., 2010)</span> — e.g. a gradient or convolution.</li>
+</ul>
+</section>
+<section id="variational-compression-ii-1" class="slide level3">
+<h3>Variational Compression II</h3>
+<ul>
+<li>Resulting algorithms reduce computational complexity.</li>
+<li>Also allow deployment of more standard scaling techniques.</li>
+<li>E.g. Stochastic variational inference <span class="citation" data-cites="Hoffman:stochastic12">Hoffman et al. (2012)</span></li>
+<li>Allow for scaling e.g. stochastic variational <span class="citation" data-cites="Hensman:bigdata13">Hensman et al. (n.d.)</span> or parallelization <span class="citation" data-cites="Gal:distributed14">Gal et al. (n.d.)</span>,<span class="citation" data-cites="Dai:gpu14">Dai et al. (2014)</span>, <span class="citation" data-cites="Seeger:auto17">Seeger et al. (2017)</span></li>
+</ul>
+<!--include{_gp/includes/larger-graph-intro.md}-->
+</section>
 <section id="full-gaussian-process-fit" class="slide level3">
 <h3>Full Gaussian Process Fit</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-full-gp.svg" style>
+<object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-full-gp.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="inducing-variable-fit" class="slide level3">
 <h3>Inducing Variable Fit</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-constrained-inducing-6-unlearned-gp.svg" style>
+<object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-constrained-inducing-6-unlearned-gp.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="inducing-variable-param-optimize" class="slide level3">
 <h3>Inducing Variable Param Optimize</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-constrained-inducing-6-learned-gp.svg" style>
+<object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-constrained-inducing-6-learned-gp.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="inducing-variable-full-optimize" class="slide level3">
 <h3>Inducing Variable Full Optimize</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-unconstrained-inducing-6-gp.svg" style>
+<object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-unconstrained-inducing-6-gp.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="eight-optimized-inducing-variables" class="slide level3">
 <h3>Eight Optimized Inducing Variables</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-sparse-inducing-8-gp.svg" style>
+<object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-sparse-inducing-8-gp.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="full-gaussian-process-fit-1" class="slide level3">
 <h3>Full Gaussian Process Fit</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-full-gp.svg" style>
+<object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-full-gp.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
@@ -530,8 +808,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <center>
 Modern data availability
 </center>
-<div style="text-align:center">
-<img class="negate" src="../slides/diagrams/ml/house_price_country.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+<div style="text-align:center;vertical-align:middle">
+<img class="negate" src="../slides/diagrams/ml/house_price_country.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
 </section>
 <section id="nonparametrics-for-very-large-data-sets-1" class="slide level3">
@@ -539,8 +817,8 @@ Modern data availability
 <center>
 Proxy for index of deprivation?
 </center>
-<div style="text-align:center">
-<img class="negate" src="../slides/diagrams/ml/house_price_peak_district.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+<div style="text-align:center;vertical-align:middle">
+<img class="negate" src="../slides/diagrams/ml/house_price_peak_district.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
 </section>
 <section id="nonparametrics-for-very-large-data-sets-2" class="slide level3">
@@ -548,8 +826,8 @@ Proxy for index of deprivation?
 <center>
 Actually index of deprivation is a proxy for this …
 </center>
-<div style="text-align:center">
-<img class="negate" src="../slides/diagrams/ml/house_price_peak_district.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+<div style="text-align:center;vertical-align:middle">
+<img class="negate" src="../slides/diagrams/ml/house_price_peak_district.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
 </section>
 <section id="section-2" class="slide level3">
@@ -561,12 +839,12 @@ Actually index of deprivation is a proxy for this …
 <span style="text-align:left"><span class="citation" data-cites="Hensman:bigdata13">(Hensman et al., n.d.)</span></span>
 </td>
 <td width>
-<span style="text-align:right"><img class="" src="../slides/diagrams/people/2013_03_28_180606.JPG" width="1.5cm" align="" style="background:none; border:none; box-shadow:none; position:absolute; clip:rect(100px,2369px,2200px,1370px)"></span>
+<span style="text-align:right"><img class="" src="../slides/diagrams/people/2013_03_28_180606.JPG" width="1.5cm" align="" style="background:none; border:none; box-shadow:none; position:absolute; clip:rect(100px,2369px,2200px,1370px);vertical-align:middle"></span>
 </td>
 </tr>
 </table>
-<div style="text-align:center">
-<img class="" src="../slides/diagrams/health/244_1_clip.png" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+<div style="text-align:center;vertical-align:middle">
+<img class="" src="../slides/diagrams/health/244_1_clip.png" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
 <center>
 <a href="http://auai.org/uai2013/prints/papers/244.pdf" class="uri">http://auai.org/uai2013/prints/papers/244.pdf</a>
@@ -580,12 +858,12 @@ Actually index of deprivation is a proxy for this …
 <span style="text-align:left"><span class="citation" data-cites="Hensman:bigdata13">(Hensman et al., n.d.)</span></span>
 </td>
 <td width>
-<span style="text-align:right"><img class="" src="../slides/diagrams/people/2013_03_28_180606.JPG" width="1.5cm" align="" style="background:none; border:none; box-shadow:none; position:absolute; clip:rect(100px,2369px,2200px,1370px)"></span>
+<span style="text-align:right"><img class="" src="../slides/diagrams/people/2013_03_28_180606.JPG" width="1.5cm" align="" style="background:none; border:none; box-shadow:none; position:absolute; clip:rect(100px,2369px,2200px,1370px);vertical-align:middle"></span>
 </td>
 </tr>
 </table>
-<div style="text-align:center">
-<img class="" src="../slides/diagrams/health/244_6_clip.png" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+<div style="text-align:center;vertical-align:middle">
+<img class="" src="../slides/diagrams/health/244_6_clip.png" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
 <center>
 <a href="http://auai.org/uai2013/prints/papers/244.pdf" class="uri">http://auai.org/uai2013/prints/papers/244.pdf</a>
@@ -597,32 +875,28 @@ Actually index of deprivation is a proxy for this …
 <li><p><em>A Unifying Framework for Gaussian Process Pseudo-Point Approximations using Power Expectation Propagation</em> <span class="citation" data-cites="Thang:unifying17">Bui et al. (2017)</span></p></li>
 <li><p><em>Deep Gaussian Processes and Variational Propagation of Uncertainty</em> <span class="citation" data-cites="Damianou:thesis2015">Damianou (2015)</span></p></li>
 </ul>
-<p><a href="file:///Users/neil/lawrennd/talks/_deepgp/includes/deep-gaussian-processes.md">_deepgp/includes/deep-gaussian-processes.md</a></p>
-<p><a href="file:///Users/neil/lawrennd/talks/_gp/includes/mackay-bathwater.md">_gp/includes/mackay-bathwater.md</a></p>
 </section>
 <section id="section-4" class="slide level3">
 <h3></h3>
-<div style="text-align:center">
-<img class="" src="../slides/diagrams/gp/mackay-baby.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+<div style="text-align:center;vertical-align:middle">
+<img class="" src="../slides/diagrams/gp/mackay-baby.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
 </section>
 <section id="structure-of-priors" class="slide level3">
 <h3>Structure of Priors</h3>
 <p>MacKay: NeurIPS Tutorial 1997 “Have we thrown out the baby with the bathwater?” <span class="citation" data-cites="MacKay:gpintroduction98">(Published as MacKay, n.d.)</span>}</p>
-<p><a href="file:///Users/neil/lawrennd/talks/_deepgp/includes/deep-nn-gp.md">_deepgp/includes/deep-nn-gp.md</a></p>
-<p><a href="file:///Users/neil/lawrennd/talks/_deepgp/includes/deep-nn.md">_deepgp/includes/deep-nn.md</a></p>
 </section>
 <section id="deep-neural-network" class="slide level3">
 <h3>Deep Neural Network</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/deep-nn1.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/deep-nn1.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="deep-neural-network-1" class="slide level3">
 <h3>Deep Neural Network</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/deep-nn2.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/deep-nn2.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
@@ -636,7 +910,6 @@ Actually index of deprivation is a proxy for this …
     \dataVector &amp;= \mappingVector_4 ^\top\hiddenVector_{3}
 \end{align}
 \]</span></p>
-<p><a href="file:///Users/neil/lawrennd/talks/_deepgp/includes/overfitting-low-rank.md">_deepgp/includes/overfitting-low-rank.md</a></p>
 </section>
 <section id="overfitting" class="slide level3">
 <h3>Overfitting</h3>
@@ -653,25 +926,24 @@ Actually index of deprivation is a proxy for this …
 <section id="low-rank-approximation" class="slide level3">
 <h3>Low Rank Approximation</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/wisuvt.svg" style>
+<object class="svgplot " align data="../slides/diagrams/wisuvt.svg" style="vertical-align:middle;">
 </object>
 </div>
 <center>
 <em>Pictorial representation of the low rank form of the matrix <span class="math inline">\(\mappingMatrix\)</span> </em>
 </center>
-<p><a href="file:///Users/neil/lawrennd/talks/_deepgp/includes/deep-gp.md">_deepgp/includes/deep-gp.md</a></p>
 </section>
 <section id="deep-neural-network-2" class="slide level3">
 <h3>Deep Neural Network</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/deep-nn-bottleneck1.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/deep-nn-bottleneck1.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="deep-neural-network-3" class="slide level3">
 <h3>Deep Neural Network</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/deep-nn-bottleneck2.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/deep-nn-bottleneck2.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
@@ -713,8 +985,38 @@ Actually index of deprivation is a proxy for this …
 \]</span></p></li>
 <li><p>Equivalent to prior over parameters, take width of each layer to infinity.</p></li>
 </ul>
-<p><a href="file:///Users/neil/lawrennd/talks/_deepgp/includes/deep-theory.md">_deepgp/includes/deep-theory.md</a></p>
-<p><a href="file:///Users/neil/lawrennd/talks/_deepgp/includes/process-composition.md">_deepgp/includes/process-composition.md</a></p>
+</section>
+<section id="section-5" class="slide level3">
+<h3></h3>
+<p><span class="fragment fade-in"><small>Outline of the DeepFace architecture. A front-end of a single convolution-pooling-convolution filtering on the rectified input, followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected.</small></span></p>
+<div style="width:100%;text-align:center">
+<img class="" src="../slides/diagrams/deepface_neg.png" width="" height="auto" align="" style="background:none; border:none; box-shadow:none;vertical-align:middle">
+</div>
+<p><span style="text-align:right"><small>Source: DeepFace <span class="citation" data-cites="Taigman:deepface14">(Taigman et al., 2014)</span></small></span></p>
+</section>
+<section id="section-6" class="slide level3">
+<h3></h3>
+<div style="height:600px;text-align:center">
+<img class="" src="../slides/diagrams/576px-Early_Pinball.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none;vertical-align:middle">
+</div>
+</section>
+<section id="section-7" class="slide level3">
+<h3></h3>
+<div style="text-align:center">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/pinball001.svg" style="vertical-align:middle;">
+</object>
+</div>
+</div>
+</section>
+<section id="section-8" class="slide level3">
+<h3></h3>
+<div style="text-align:center">
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/pinball002.svg" style="vertical-align:middle;">
+</object>
+</div>
+</div>
 </section>
 <section id="mathematically-2" class="slide level3">
 <h3>Mathematically</h3>
@@ -733,14 +1035,14 @@ Actually index of deprivation is a proxy for this …
   \]</span></li>
 </ul>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/deep-markov.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/deep-markov.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
-<section id="section-5" class="slide level3">
+<section id="section-9" class="slide level3">
 <h3></h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/deep-markov-vertical.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/deep-markov-vertical.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
@@ -762,17 +1064,17 @@ Actually index of deprivation is a proxy for this …
 <li><p>A (new?) way of constructing more complex <em>processes</em> based on simpler components.</p></li>
 </ul>
 </section>
-<section id="section-6" class="slide level3">
+<section id="section-10" class="slide level3">
 <h3></h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/deep-markov-vertical.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/deep-markov-vertical.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
-<section id="section-7" class="slide level3">
+<section id="section-11" class="slide level3">
 <h3></h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/deep-markov-vertical-side.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/deep-markov-vertical-side.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
@@ -783,7 +1085,7 @@ Actually index of deprivation is a proxy for this …
 <li><p>Normalisation of distribution becomes intractable.</p></li>
 </ul>
 <div style="text-align:center">
-<object class="svgplot " align="center" data="../slides/diagrams/dimred/nonlinear-mapping-3d-plot.svg" style>
+<object class="svgplot " align="center" data="../slides/diagrams/dimred/nonlinear-mapping-3d-plot.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
@@ -794,7 +1096,7 @@ Actually index of deprivation is a proxy for this …
 <li><p>Normalisation of distribution becomes intractable.</p></li>
 </ul>
 <div style="text-align:center">
-<object class="svgplot " align="center" data="../slides/diagrams/dimred/nonlinear-mapping-2d-plot.svg" style>
+<object class="svgplot " align="center" data="../slides/diagrams/dimred/nonlinear-mapping-2d-plot.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
@@ -805,10 +1107,9 @@ Actually index of deprivation is a proxy for this …
 <li><p>Normalisation of distribution becomes intractable.</p></li>
 </ul>
 <div style="text-align:center">
-<object class="svgplot " align="center" data="../slides/diagrams/dimred/gaussian-through-nonlinear.svg" style>
+<object class="svgplot " align="center" data="../slides/diagrams/dimred/gaussian-through-nonlinear.svg" style="vertical-align:middle;">
 </object>
 </div>
-<p><a href="file:///Users/neil/lawrennd/talks/_deepgp/includes/stack-gp-intro.md">_deepgp/includes/stack-gp-intro.md</a></p>
 </section>
 <section id="deep-gaussian-processes-1" class="slide level3">
 <h3>Deep Gaussian Processes</h3>
@@ -816,7 +1117,6 @@ Actually index of deprivation is a proxy for this …
 <li>Deep architectures allow abstraction of features <span class="citation" data-cites="Bengio:deep09 Hinton:fast06 Salakhutdinov:quantitative08">(Bengio, 2009; Hinton and Osindero, 2006; Salakhutdinov and Murray, n.d.)</span></li>
 <li>We use variational approach to stack GP models.</li>
 </ul>
-<p><a href="file:///Users/neil/lawrennd/talks/_deepgp/includes/stacked-pca.md">_deepgp/includes/stacked-pca.md</a></p>
 </section>
 <section id="stacked-pca" class="slide level3">
 <h3>Stacked PCA</h3>
@@ -832,35 +1132,34 @@ showDivs(0, 'stack-pca-sample');
 </button>
 <div class="stack-pca-sample" style="text-align:center;">
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/stack-pca-sample-0.svg" style>
+<object class="svgplot " align data="../slides/diagrams/stack-pca-sample-0.svg" style="vertical-align:middle;">
 </object>
 </div>
 </div>
 <div class="stack-pca-sample" style="text-align:center;">
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/stack-pca-sample-1.svg" style>
+<object class="svgplot " align data="../slides/diagrams/stack-pca-sample-1.svg" style="vertical-align:middle;">
 </object>
 </div>
 </div>
 <div class="stack-pca-sample" style="text-align:center;">
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/stack-pca-sample-2.svg" style>
+<object class="svgplot " align data="../slides/diagrams/stack-pca-sample-2.svg" style="vertical-align:middle;">
 </object>
 </div>
 </div>
 <div class="stack-pca-sample" style="text-align:center;">
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/stack-pca-sample-3.svg" style>
+<object class="svgplot " align data="../slides/diagrams/stack-pca-sample-3.svg" style="vertical-align:middle;">
 </object>
 </div>
 </div>
 <div class="stack-pca-sample" style="text-align:center;">
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/stack-pca-sample-4.svg" style>
+<object class="svgplot " align data="../slides/diagrams/stack-pca-sample-4.svg" style="vertical-align:middle;">
 </object>
 </div>
 </div>
-<p><a href="file:///Users/neil/lawrennd/talks/_deepgp/includes/stacked-gp.md">_deepgp/includes/stacked-gp.md</a></p>
 </section>
 <section id="stacked-gp" class="slide level3">
 <h3>Stacked GP</h3>
@@ -876,31 +1175,31 @@ showDivs(0, 'stack-gp-sample');
 </button>
 <div class="stack-gp-sample" style="text-align:center;">
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/stack-gp-sample-0.svg" style>
+<object class="svgplot " align data="../slides/diagrams/stack-gp-sample-0.svg" style="vertical-align:middle;">
 </object>
 </div>
 </div>
 <div class="stack-gp-sample" style="text-align:center;">
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/stack-gp-sample-1.svg" style>
+<object class="svgplot " align data="../slides/diagrams/stack-gp-sample-1.svg" style="vertical-align:middle;">
 </object>
 </div>
 </div>
 <div class="stack-gp-sample" style="text-align:center;">
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/stack-gp-sample-2.svg" style>
+<object class="svgplot " align data="../slides/diagrams/stack-gp-sample-2.svg" style="vertical-align:middle;">
 </object>
 </div>
 </div>
 <div class="stack-gp-sample" style="text-align:center;">
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/stack-gp-sample-3.svg" style>
+<object class="svgplot " align data="../slides/diagrams/stack-gp-sample-3.svg" style="vertical-align:middle;">
 </object>
 </div>
 </div>
 <div class="stack-gp-sample" style="text-align:center;">
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/stack-gp-sample-4.svg" style>
+<object class="svgplot " align data="../slides/diagrams/stack-gp-sample-4.svg" style="vertical-align:middle;">
 </object>
 </div>
 </div>
@@ -912,19 +1211,15 @@ showDivs(0, 'stack-gp-sample');
 <li><p><em>How Deep Are Deep Gaussian Processes?</em> <span class="citation" data-cites="Dunlop:deep2017">Dunlop et al. (n.d.)</span> perform a theoretical analysis possible through conditional Gaussian Markov property.</p></li>
 </ul>
 </section>
-<section id="section-8" class="slide level3">
+<section id="section-12" class="slide level3">
 <h3></h3>
 <iframe width="1120" height="630" src="https://www.youtube.com/embed/XhIvygQYFFQ?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
-<p><a href="file:///Users/neil/lawrennd/talks/_deepgp/includes/deep-results.md">_deepgp/includes/deep-results.md</a></p>
-<p><a href="file:///Users/neil/lawrennd/talks/_deepgp/includes/pydeepgp-include.md">_deepgp/includes/pydeepgp-include.md</a></p>
-<p><a href="file:///Users/neil/lawrennd/talks/_gp/includes/gpy-include.md">_gp/includes/gpy-include.md</a></p>
-<p><a href="file:///Users/neil/lawrennd/talks/_gp/includes/gpy.md">_gp/includes/gpy.md</a></p>
 </section>
 <section id="gpy-a-gaussian-process-framework-in-python" class="slide level3">
 <h3>GPy: A Gaussian Process Framework in Python</h3>
-<div style="text-align:center">
-<img class="" src="../slides/diagrams/gp/gpy.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+<div style="text-align:center;vertical-align:middle">
+<img class="" src="../slides/diagrams/gp/gpy.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
 <center>
 <a href="https://github.com/SheffieldML/GPy" class="uri">https://github.com/SheffieldML/GPy</a>
@@ -949,8 +1244,6 @@ showDivs(0, 'stack-gp-sample');
 <li>Dimensionality reduction.</li>
 <li>Approximations for large data sets.</li>
 </ul>
-<p><a href="file:///Users/neil/lawrennd/talks/_deepgp/includes/deep-olympic.md">_deepgp/includes/deep-olympic.md</a></p>
-<p><a href="file:///Users/neil/lawrennd/talks/_gp/includes/olympic-marathon-gp.md">_gp/includes/olympic-marathon-gp.md</a></p>
 </section>
 <section id="olympic-marathon-data" class="slide level3">
 <h3>Olympic Marathon Data</h3>
@@ -965,8 +1258,8 @@ showDivs(0, 'stack-gp-sample');
 </ul>
 </td>
 <td width="30%">
-<div style="text-align:center">
-<img class="" src="../slides/diagrams/Stephen_Kiprotich.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+<div style="text-align:center;vertical-align:middle">
+<img class="" src="../slides/diagrams/Stephen_Kiprotich.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
 <small>Image from Wikimedia Commons <a href="http://bit.ly/16kMKHQ" class="uri">http://bit.ly/16kMKHQ</a></small>
 </td>
@@ -977,20 +1270,20 @@ showDivs(0, 'stack-gp-sample');
 <h3>Olympic Marathon Data</h3>
 <div style="text-align:center">
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/datasets/olympic-marathon.svg" style>
+<object class="svgplot " align data="../slides/diagrams/datasets/olympic-marathon.svg" style="vertical-align:middle;">
 </object>
 </div>
 </div>
 </section>
-<section id="section-9" class="slide level3">
+<section id="section-13" class="slide level3">
 <h3></h3>
 <table>
 <tr>
 <td width="40%">
-<img class="" src="../slides/diagrams/turing-run.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none;">
+<img class="" src="../slides/diagrams/turing-run.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </td>
 <td width="50%">
-<img class="" src="../slides/diagrams/turing-times.gif" width="" height="auto" align="" style="background:none; border:none; box-shadow:none;">
+<img class="" src="../slides/diagrams/turing-times.gif" width="" height="auto" align="" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </td>
 </tr>
 </table>
@@ -998,7 +1291,7 @@ showDivs(0, 'stack-gp-sample');
 <section id="olympic-marathon-data-gp" class="slide level3">
 <h3>Olympic Marathon Data GP</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/gp/olympic-marathon-gp.svg" style>
+<object class="svgplot " align data="../slides/diagrams/gp/olympic-marathon-gp.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
@@ -1012,38 +1305,37 @@ showDivs(0, 'stack-gp-sample');
 <section id="olympic-marathon-data-deep-gp" class="slide level3">
 <h3>Olympic Marathon Data Deep GP</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="olympic-marathon-data-deep-gp-1" class="slide level3">
 <h3>Olympic Marathon Data Deep GP</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-samples.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-samples.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="olympic-marathon-data-latent-1" class="slide level3">
 <h3>Olympic Marathon Data Latent 1</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-layer-0.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-layer-0.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="olympic-marathon-data-latent-2" class="slide level3">
 <h3>Olympic Marathon Data Latent 2</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-layer-1.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-layer-1.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="olympic-marathon-pinball-plot" class="slide level3">
 <h3>Olympic Marathon Pinball Plot</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg" style="vertical-align:middle;">
 </object>
 </div>
-<p><a href="file:///Users/neil/lawrennd/talks/_deepgp/includes/deep-della-gatta.md">_deepgp/includes/deep-della-gatta.md</a></p>
 </section>
 <section id="della-gatta-gene-data" class="slide level3">
 <h3>Della Gatta Gene Data</h3>
@@ -1055,7 +1347,7 @@ showDivs(0, 'stack-gp-sample');
 <h3>Della Gatta Gene Data</h3>
 <div style="text-align:center">
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/datasets/della-gatta-gene.svg" style>
+<object class="svgplot " align data="../slides/diagrams/datasets/della-gatta-gene.svg" style="vertical-align:middle;">
 </object>
 </div>
 </div>
@@ -1066,252 +1358,245 @@ showDivs(0, 'stack-gp-sample');
 <li>Want to detect if a gene is expressed or not, fit a GP to each gene <span class="citation" data-cites="Kalaitzis:simple11">Kalaitzis and Lawrence (2011)</span>.</li>
 </ul>
 </section>
-<section id="section-10" class="slide level3">
+<section id="section-14" class="slide level3">
 <h3></h3>
-<div style="text-align:center">
-<img class="" src="../slides/diagrams/health/1471-2105-12-180_1.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+<div style="text-align:center;vertical-align:middle">
+<img class="" src="../slides/diagrams/health/1471-2105-12-180_1.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
 <center>
 <a href="http://www.biomedcentral.com/1471-2105/12/180" class="uri">http://www.biomedcentral.com/1471-2105/12/180</a>
 </center>
 </section>
-<section id="section-11" class="slide level3">
+<section id="section-15" class="slide level3">
 <h3></h3>
 </section>
 <section id="tp53-gene-data-gp" class="slide level3">
 <h3>TP53 Gene Data GP</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/gp/della-gatta-gene-gp.svg" style>
+<object class="svgplot " align data="../slides/diagrams/gp/della-gatta-gene-gp.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="tp53-gene-data-gp-1" class="slide level3">
 <h3>TP53 Gene Data GP</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/gp/della-gatta-gene-gp2.svg" style>
+<object class="svgplot " align data="../slides/diagrams/gp/della-gatta-gene-gp2.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="tp53-gene-data-gp-2" class="slide level3">
 <h3>TP53 Gene Data GP</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/gp/della-gatta-gene-gp3.svg" style>
+<object class="svgplot " align data="../slides/diagrams/gp/della-gatta-gene-gp3.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="multiple-optima" class="slide level3">
 <h3>Multiple Optima</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/gp/multiple-optima000.svg" style>
+<object class="svgplot " align data="../slides/diagrams/gp/multiple-optima000.svg" style="vertical-align:middle;">
 </object>
 </div>
 <!--### Multiple Optima
 
 
-<div style="text-align:" class=""><object class="svgplot " align="" data="../slides/diagrams/gp/multiple-optima001.svg" style=""></object></div>-->
+<div style="text-align:" class=""><object class="svgplot " align="" data="../slides/diagrams/gp/multiple-optima001.svg" style="vertical-align:middle;"></object></div>-->
 </section>
 <section id="tp53-gene-data-deep-gp" class="slide level3">
 <h3>TP53 Gene Data Deep GP</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/della-gatta-gene-deep-gp.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/della-gatta-gene-deep-gp.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="tp53-gene-data-deep-gp-1" class="slide level3">
 <h3>TP53 Gene Data Deep GP</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/della-gatta-gene-deep-gp-samples.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/della-gatta-gene-deep-gp-samples.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="tp53-gene-data-latent-1" class="slide level3">
 <h3>TP53 Gene Data Latent 1</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/della-gatta-gene-deep-gp-layer-0.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/della-gatta-gene-deep-gp-layer-0.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="tp53-gene-data-latent-2" class="slide level3">
 <h3>TP53 Gene Data Latent 2</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/della-gatta-gene-deep-gp-layer-1.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/della-gatta-gene-deep-gp-layer-1.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="tp53-gene-pinball-plot" class="slide level3">
 <h3>TP53 Gene Pinball Plot</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/della-gatta-gene-deep-gp-pinball.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/della-gatta-gene-deep-gp-pinball.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="step-function-data" class="slide level3">
 <h3>Step Function Data</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/datasets/step-function.svg" style>
+<object class="svgplot " align data="../slides/diagrams/datasets/step-function.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="step-function-data-gp" class="slide level3">
 <h3>Step Function Data GP</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/gp/step-function-gp.svg" style>
+<object class="svgplot " align data="../slides/diagrams/gp/step-function-gp.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="step-function-data-deep-gp" class="slide level3">
 <h3>Step Function Data Deep GP</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="step-function-data-deep-gp-1" class="slide level3">
 <h3>Step Function Data Deep GP</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp-samples.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp-samples.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="step-function-data-latent-1" class="slide level3">
 <h3>Step Function Data Latent 1</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp-layer-0.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp-layer-0.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="step-function-data-latent-2" class="slide level3">
 <h3>Step Function Data Latent 2</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp-layer-1.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp-layer-1.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="step-function-data-latent-3" class="slide level3">
 <h3>Step Function Data Latent 3</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp-layer-2.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp-layer-2.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="step-function-data-latent-4" class="slide level3">
 <h3>Step Function Data Latent 4</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp-layer-3.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp-layer-3.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="step-function-pinball-plot" class="slide level3">
 <h3>Step Function Pinball Plot</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp-pinball.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp-pinball.svg" style="vertical-align:middle;">
 </object>
 </div>
-<p><a href="file:///Users/neil/lawrennd/talks/_deepgp/includes/deep-motorcycle.md">_deepgp/includes/deep-motorcycle.md</a></p>
-<p><a href="file:///Users/neil/lawrennd/talks/_gp/includes/motorcycle-helmet-gp.md">_gp/includes/motorcycle-helmet-gp.md</a></p>
-<p><a href="file:///Users/neil/lawrennd/talks/_ml/includes/motorcycle-helmet-data.md">_ml/includes/motorcycle-helmet-data.md</a></p>
 </section>
 <section id="motorcycle-helmet-data" class="slide level3">
 <h3>Motorcycle Helmet Data</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/datasets/motorcycle-helmet.svg" style>
+<object class="svgplot " align data="../slides/diagrams/datasets/motorcycle-helmet.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="motorcycle-helmet-data-gp" class="slide level3">
 <h3>Motorcycle Helmet Data GP</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/gp/motorcycle-helmet-gp.svg" style>
+<object class="svgplot " align data="../slides/diagrams/gp/motorcycle-helmet-gp.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="motorcycle-helmet-data-deep-gp" class="slide level3">
 <h3>Motorcycle Helmet Data Deep GP</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="motorcycle-helmet-data-deep-gp-1" class="slide level3">
 <h3>Motorcycle Helmet Data Deep GP</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-samples.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-samples.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="motorcycle-helmet-data-latent-1" class="slide level3">
 <h3>Motorcycle Helmet Data Latent 1</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-layer-0.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-layer-0.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="motorcycle-helmet-data-latent-2" class="slide level3">
 <h3>Motorcycle Helmet Data Latent 2</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-layer-1.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-layer-1.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="motorcycle-helmet-pinball-plot" class="slide level3">
 <h3>Motorcycle Helmet Pinball Plot</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-pinball.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-pinball.svg" style="vertical-align:middle;">
 </object>
 </div>
-<p><a href="file:///Users/neil/lawrennd/talks/_deepgp/includes/deep-robot-wireless.md">_deepgp/includes/deep-robot-wireless.md</a></p>
-<p><a href="file:///Users/neil/lawrennd/talks/_gp/includes/robot-wireless-gp.md">_gp/includes/robot-wireless-gp.md</a></p>
-<p><a href="file:///Users/neil/lawrennd/talks/_ml/includes/robot-wireless-data.md">_ml/includes/robot-wireless-data.md</a></p>
 </section>
 <section id="robot-wireless-ground-truth" class="slide level3">
 <h3>Robot Wireless Ground Truth</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/datasets/robot-wireless-ground-truth.svg" style>
+<object class="svgplot " align data="../slides/diagrams/datasets/robot-wireless-ground-truth.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="robot-wifi-data" class="slide level3">
 <h3>Robot WiFi Data</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/datasets/robot-wireless-dim-1.svg" style>
+<object class="svgplot " align data="../slides/diagrams/datasets/robot-wireless-dim-1.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="robot-wifi-data-gp" class="slide level3">
 <h3>Robot WiFi Data GP</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/gp/robot-wireless-gp-dim-1.svg" style>
+<object class="svgplot " align data="../slides/diagrams/gp/robot-wireless-gp-dim-1.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="robot-wifi-data-deep-gp" class="slide level3">
 <h3>Robot WiFi Data Deep GP</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/robot-wireless-deep-gp-dim-1.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/robot-wireless-deep-gp-dim-1.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="robot-wifi-data-deep-gp-1" class="slide level3">
 <h3>Robot WiFi Data Deep GP</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/robot-wireless-deep-gp-samples-dim-1.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/robot-wireless-deep-gp-samples-dim-1.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="robot-wifi-data-latent-space" class="slide level3">
 <h3>Robot WiFi Data Latent Space</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/robot-wireless-ground-truth.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/robot-wireless-ground-truth.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="robot-wifi-data-latent-space-1" class="slide level3">
 <h3>Robot WiFi Data Latent Space</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deepgp/robot-wireless-latent-space.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deepgp/robot-wireless-latent-space.svg" style="vertical-align:middle;">
 </object>
 </div>
-<p><a href="file:///Users/neil/lawrennd/talks/_deepgp/includes/deep-high-five.md">_deepgp/includes/deep-high-five.md</a></p>
 </section>
 <section id="motion-capture" class="slide level3">
 <h3>Motion Capture</h3>
@@ -1323,63 +1608,61 @@ showDivs(0, 'stack-gp-sample');
 <section id="shared-lvm" class="slide level3">
 <h3>Shared LVM</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/shared.svg" style>
-</object>
-</div>
-</section>
-<section id="section-12" class="slide level3">
-<h3></h3>
-<p><img class="negate" src="../slides/diagrams/deep-gp-high-five2.png" width="100%" height="auto" align="" style="background:none; border:none; box-shadow:none;"></p>
-<p><a href="file:///Users/neil/lawrennd/talks/_deepgp/includes/deep-usps-digits.md">_deepgp/includes/deep-usps-digits.md</a></p>
-<p><small><span style="text-align:right">Thanks to: Zhenwen Dai and Neil D. Lawrence</span></small></p>
-</section>
-<section id="section-13" class="slide level3">
-<h3></h3>
-<div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/usps-digits-latent.svg" style>
-</object>
-</div>
-</section>
-<section id="section-14" class="slide level3">
-<h3></h3>
-<div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/usps-digits-hidden-1-0.svg" style>
-</object>
-</div>
-</section>
-<section id="section-15" class="slide level3">
-<h3></h3>
-<div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/usps-digits-hidden-2-0.svg" style>
+<object class="svgplot " align data="../slides/diagrams/shared.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="section-16" class="slide level3">
 <h3></h3>
-<div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/usps-digits-hidden-3-0.svg" style>
-</object>
-</div>
+<p><img class="negate" src="../slides/diagrams/deep-gp-high-five2.png" width="100%" height="auto" align="" style="background:none; border:none; box-shadow:none;vertical-align:middle"></p>
+<p><small><span style="text-align:right">Thanks to: Zhenwen Dai and Neil D. Lawrence</span></small></p>
 </section>
 <section id="section-17" class="slide level3">
 <h3></h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/usps-digits-hidden-4-0.svg" style>
+<object class="svgplot " align data="../slides/diagrams/usps-digits-latent.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
 <section id="section-18" class="slide level3">
 <h3></h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/digit-samples-deep-gp.svg" style>
+<object class="svgplot " align data="../slides/diagrams/usps-digits-hidden-1-0.svg" style="vertical-align:middle;">
 </object>
 </div>
-<p><a href="file:///Users/neil/lawrennd/talks/_health/includes/deep-health-model.md">_health/includes/deep-health-model.md</a></p>
+</section>
+<section id="section-19" class="slide level3">
+<h3></h3>
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/usps-digits-hidden-2-0.svg" style="vertical-align:middle;">
+</object>
+</div>
+</section>
+<section id="section-20" class="slide level3">
+<h3></h3>
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/usps-digits-hidden-3-0.svg" style="vertical-align:middle;">
+</object>
+</div>
+</section>
+<section id="section-21" class="slide level3">
+<h3></h3>
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/usps-digits-hidden-4-0.svg" style="vertical-align:middle;">
+</object>
+</div>
+</section>
+<section id="section-22" class="slide level3">
+<h3></h3>
+<div style="text-align:">
+<object class="svgplot " align data="../slides/diagrams/digit-samples-deep-gp.svg" style="vertical-align:middle;">
+</object>
+</div>
 </section>
 <section id="deep-health" class="slide level3">
 <h3>Deep Health</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/deep-health.svg" style>
+<object class="svgplot " align data="../slides/diagrams/deep-health.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
@@ -1427,13 +1710,13 @@ showDivs(0, 'stack-gp-sample');
 <section id="emukit-playground-1" class="slide level3">
 <h3>Emukit Playground</h3>
 <div style="text-align:center">
-<a href="https://amzn.github.io/emukit-playground/"><img class="" src="../slides/diagrams/uq/emukit-playground.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none;"></a>
+<a href="https://amzn.github.io/emukit-playground/"><img class="" src="../slides/diagrams/uq/emukit-playground.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle"></a>
 </div>
 </section>
 <section id="emukit-playground-2" class="slide level3">
 <h3>Emukit Playground</h3>
 <div style="text-align:center">
-<a href="https://amzn.github.io/emukit-playground/#!/learn/bayesian_optimization"><img class="negate" src="../slides/diagrams/uq/emukit-playground-bayes-opt.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none;"></a>
+<a href="https://amzn.github.io/emukit-playground/#!/learn/bayesian_optimization"><img class="negate" src="../slides/diagrams/uq/emukit-playground-bayes-opt.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle"></a>
 </div>
 </section>
 <section id="uncertainty-quantification" class="slide level3">
@@ -1484,8 +1767,8 @@ showDivs(0, 'stack-gp-sample');
 </section>
 <section id="mountain-car-simulator" class="slide level3">
 <h3>Mountain Car Simulator</h3>
-<div style="text-align:center">
-<img class="negate" src="../slides/diagrams/uq/mountaincar.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+<div style="text-align:center;vertical-align:middle">
+<img class="negate" src="../slides/diagrams/uq/mountaincar.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
 </section>
 <section id="car-dynamics" class="slide level3">
@@ -1540,7 +1823,7 @@ showDivs(0, 'stack-gp-sample');
 <section id="comparison-of-emulation-and-simulation" class="slide level3">
 <h3>Comparison of Emulation and Simulation</h3>
 <div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/uq/emu_sim_comparison.svg" style>
+<object class="svgplot " align data="../slides/diagrams/uq/emu_sim_comparison.svg" style="vertical-align:middle;">
 </object>
 </div>
 </section>
@@ -1588,8 +1871,8 @@ showDivs(0, 'stack-gp-sample');
 </section>
 <section id="mxfusion-modular-probabilistic-programming-on-mxnet" class="slide level3">
 <h3>MXFusion: Modular Probabilistic Programming on MXNet</h3>
-<div style="text-align:center">
-<img class="" src="../slides/diagrams/ml/mxfusion.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+<div style="text-align:center;vertical-align:middle">
+<img class="" src="../slides/diagrams/ml/mxfusion.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
 <center>
 <a href="https://github.com/amzn/MXFusion" class="uri">https://github.com/amzn/MXFusion</a>
@@ -1606,7 +1889,7 @@ showDivs(0, 'stack-gp-sample');
 <li>Available on <a href="https://github.com/amzn/mxfusion">Github</a>
 </td>
 <td width="30%">
-<img class="" src="../slides/diagrams/mxfusion-logo.png" width="" height="auto" align="" style="background:none; border:none; box-shadow:none;">
+<img class="" src="../slides/diagrams/mxfusion-logo.png" width="" height="auto" align="" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </td>
 </tr>
 </table></li>
@@ -1729,7 +2012,7 @@ infr.run(Y<span class="op">=</span>data)</code></pre></div>
 </section>
 <section id="acknowledgments" class="slide level3">
 <h3>Acknowledgments</h3>
-<p>Stefanos Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Dai, Javier Gonzalez, Andreas Damianou, Mark Pullin.</p>
+<p>Stefanos Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Dai, Javier Gonzalez, Andreas Damianou, Mark Pullin, Eric Meissner.</p>
 </section>
 <section id="thanks" class="slide level3">
 <h3>Thanks!</h3>
@@ -1744,11 +2027,17 @@ infr.run(Y<span class="op">=</span>data)</code></pre></div>
 <div id="ref-Alaa:deep2017">
 <p>Alaa, A.M., van der Schaar, M., 2017. Deep multi-task Gaussian processes for survival analysis with competing risks, in: Guyon, I., Luxburg, U.V., Bengio, S., Wallach, H., Fergus, R., Vishwanathan, S., Garnett, R. (Eds.), Advances in Neural Information Processing Systems 30. Curran Associates, Inc., pp. 2326–2334.</p>
 </div>
+<div id="ref-Alvarez:efficient10">
+<p>Álvarez, M.A., Luengo, D., Titsias, M.K., Lawrence, N.D., 2010. Efficient multioutput Gaussian processes through variational inducing kernels, in:. pp. 25–32.</p>
+</div>
 <div id="ref-Bengio:deep09">
 <p>Bengio, Y., 2009. Learning Deep Architectures for AI. Found. Trends Mach. Learn. 2, 1–127. <a href="https://doi.org/10.1561/2200000006" class="uri">https://doi.org/10.1561/2200000006</a></p>
 </div>
 <div id="ref-Thang:unifying17">
 <p>Bui, T.D., Yan, J., Turner, R.E., 2017. A unifying framework for Gaussian process pseudo-point approximations using power expectation propagation. Journal of Machine Learning Research 18, 1–72.</p>
+</div>
+<div id="ref-Dai:gpu14">
+<p>Dai, Z., Damianou, A., Hensman, J., Lawrence, N.D., 2014. Gaussian process models with parallelization and GPU acceleration.</p>
 </div>
 <div id="ref-Damianou:thesis2015">
 <p>Damianou, A., 2015. Deep Gaussian processes and variational propagation of uncertainty (PhD thesis). University of Sheffield.</p>
@@ -1762,6 +2051,9 @@ infr.run(Y<span class="op">=</span>data)</code></pre></div>
 <div id="ref-Duvenaud:pathologies14">
 <p>Duvenaud, D., Rippel, O., Adams, R., Ghahramani, Z., 2014. Avoiding pathologies in very deep networks, in:.</p>
 </div>
+<div id="ref-Gal:distributed14">
+<p>Gal, Y., Wilk, M. van der, Rasmussen, C.E., n.d. Distributed variational inference in sparse Gaussian process regression and latent variable models, in:.</p>
+</div>
 <div id="ref-Hensman:bigdata13">
 <p>Hensman, J., Fusi, N., Lawrence, N.D., n.d. Gaussian processes for big data, in:.</p>
 </div>
@@ -1774,11 +2066,17 @@ infr.run(Y<span class="op">=</span>data)</code></pre></div>
 <div id="ref-Kalaitzis:simple11">
 <p>Kalaitzis, A.A., Lawrence, N.D., 2011. A simple approach to ranking differentially expressed gene expression time courses through Gaussian process regression. BMC Bioinformatics 12. <a href="https://doi.org/10.1186/1471-2105-12-180" class="uri">https://doi.org/10.1186/1471-2105-12-180</a></p>
 </div>
+<div id="ref-Lawrence:larger07">
+<p>Lawrence, N.D., n.d. Learning for larger datasets with the Gaussian process latent variable model, in:. pp. 243–250.</p>
+</div>
 <div id="ref-MacKay:gpintroduction98">
 <p>MacKay, D.J.C., n.d. Introduction to Gaussian processes, in:. pp. 133–166.</p>
 </div>
 <div id="ref-Mattos:recurrent15">
 <p>Mattos, C.L.C., Dai, Z., Damianou, A.C., Forth, J., Barreto, G.A., Lawrence, N.D., 2015. Recurrent gaussian processes. CoRR abs/1511.06644.</p>
+</div>
+<div id="ref-Quinonero:unifying05">
+<p>Quiñonero Candela, J., Rasmussen, C.E., 2005. A unifying view of sparse approximate Gaussian process regression. Journal of Machine Learning Research 6, 1939–1959.</p>
 </div>
 <div id="ref-Ranganath-survival16">
 <p>Ranganath, R., Perotte, A., Elhadad, N., Blei, D., 2016. Deep survival analysis, in: Doshi-Velez, F., Fackler, J., Kale, D., Wallace, B., Wiens, J. (Eds.), Proceedings of the 1st Machine Learning for Healthcare Conference, Proceedings of Machine Learning Research. PMLR, Children’s Hospital LA, Los Angeles, CA, USA, pp. 101–114.</p>
@@ -1794,6 +2092,18 @@ infr.run(Y<span class="op">=</span>data)</code></pre></div>
 </div>
 <div id="ref-Schulam:counterfactual17">
 <p>Schulam, P., Saria, S., 2017. Counterfactual Gaussian processes for reliable decision-making and what-if reasoning, in: Guyon, I., Luxburg, U.V., Bengio, S., Wallach, H., Fergus, R., Vishwanathan, S., Garnett, R. (Eds.), Advances in Neural Information Processing Systems 30. Curran Associates, Inc., pp. 1696–1706.</p>
+</div>
+<div id="ref-Seeger:auto17">
+<p>Seeger, M.W., Hetzel, A., Dai, Z., Lawrence, N.D., 2017. Auto-differentiating linear algebra. CoRR abs/1710.08717.</p>
+</div>
+<div id="ref-Snelson:pseudo05">
+<p>Snelson, E., Ghahramani, Z., n.d. Sparse Gaussian processes using pseudo-inputs, in:.</p>
+</div>
+<div id="ref-Taigman:deepface14">
+<p>Taigman, Y., Yang, M., Ranzato, M., Wolf, L., 2014. DeepFace: Closing the gap to human-level performance in face verification, in: Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition. <a href="https://doi.org/10.1109/CVPR.2014.220" class="uri">https://doi.org/10.1109/CVPR.2014.220</a></p>
+</div>
+<div id="ref-Titsias:variational09">
+<p>Titsias, M.K., n.d. Variational learning of inducing variables in sparse Gaussian processes, in:. pp. 567–574.</p>
 </div>
 <div id="ref-Anqi:gpspike2017">
 <p>Wu, A., Roy, N.G., Keeley, S., Pillow, J.W., 2017. Gaussian process based nonlinear latent structure discovery in multivariate spike train data, in: Guyon, I., Luxburg, U.V., Bengio, S., Wallach, H., Fergus, R., Vishwanathan, S., Garnett, R. (Eds.), Advances in Neural Information Processing Systems 30. Curran Associates, Inc., pp. 3499–3508.</p>

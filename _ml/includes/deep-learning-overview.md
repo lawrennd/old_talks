@@ -1,3 +1,7 @@
+\ifndef{deepLearningOverview}
+\define{deepLearningOverview}
+\editme
+
 \newslide{}
 \slides{
 
@@ -40,3 +44,4 @@ from ipywidgets import IntSlider}
 \notes{Learning involves moving all the pins to be in the right position, so that the ball falls in the right place. But moving all these pins in hyperspace can be difficult. In a hyper space you have to put a lot of data through the machine for to explore the positions of all the pins. Adversarial learning reflects the fact that a ball can be moved a small distance and lead to a very different result.
 
 Probabilistic methods explore more of the space by considering a range of possible paths for the ball through the machine.}
+\endif

@@ -14,7 +14,7 @@ scale = np.sqrt(y.var())
 offset = y.mean()
 yhat = (y-offset)/scale}
 
-\plotcode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
+\displaycode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 _ = ax.plot(x, y, 'r.',markersize=10)
 _ = ax.set_xlabel('$x$', fontsize=20)
 _ = ax.set_ylabel('$y$', fontsize=20)

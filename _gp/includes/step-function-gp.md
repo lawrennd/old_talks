@@ -1,4 +1,6 @@
 \ifndef{stepFunctionGp}
+\define{stepFunctionGp}
+\editme
 \include{_ml/includes/step-function-data.md}
 
 \code{m_full = GPy.models.GPRegression(x,yhat)
@@ -16,5 +18,4 @@ mlai.write_figure(figure=fig,filename='../../slides/diagrams/gp/step-function-gp
 
 \includesvg{../slides/diagrams/gp/step-function-gp.svg} 
 
-\define{stepFunctionGp}
 \endif

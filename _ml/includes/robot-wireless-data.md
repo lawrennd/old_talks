@@ -17,7 +17,7 @@ yhat = (y-offset)/scale}
 
 \notes{The ground truth is recorded in the data, the actual loop is given in the plot below.}
 
-\plotcode{fig, ax = plt.subplots(figsize=plot.big_figsize)
+\displaycode{fig, ax = plt.subplots(figsize=plot.big_figsize)
 plt.plot(data['X'][:, 1], data['X'][:, 2], 'r.', markersize=5)
 ax.set_xlabel('x position', fontsize=20)
 ax.set_ylabel('y position', fontsize=20)
@@ -29,7 +29,7 @@ mlai.write_figure(figure=fig, filename='../../slides/diagrams/datasets/robot-wir
 
 \notes{We will ignore this ground truth in making our predictions, but see if the model can recover something similar in one of the latent layers.}
 
-\plotcode{output_dim=1
+\displaycode{output_dim=1
 xlim = (-0.3, 1.3)
 fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 _ = ax.plot(x.flatten(), y[:, output_dim], 

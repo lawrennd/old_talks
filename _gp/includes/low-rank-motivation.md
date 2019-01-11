@@ -1,3 +1,7 @@
+\ifndef{lowRankMotivation}
+\define{lowRankMotivation}
+\editme
+
 \newslide{Low Rank Motivation}
 
 \slides{
@@ -17,7 +21,7 @@
 
   where $\numInducing$ is a user chosen parameter.
 
-\smalltext{[@Snelson:pseudo05,@Quinonero:unifying05,@Lawrence:larger07,@Titsias:variational09,@Thang:unifying17]}
+\smalltext{@Snelson:pseudo05,@Quinonero:unifying05,@Lawrence:larger07,@Titsias:variational09,@Thang:unifying17}
 }
 \notes{Inference in a Gaussian process has computational complexity of $\bigO(\numData^3)$ and storage demands of $\bigO(\numData^2)$. This is too large for many modern data sets. 
 
@@ -27,4 +31,5 @@ In machine learning, low rank approximations date back to @Smola:sparsegp00, @Wi
 
 Modern variational interpretations of these low rank approaches were first explored in @Titsias:variational09. A more modern summary which considers each of these approximations as an $\alpha$-divergence is given by @Thang:unifying17.}
 
+\endif
 

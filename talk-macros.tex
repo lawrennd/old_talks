@@ -24,11 +24,10 @@ YouTubeVideo('\id')
 \define{\includempfour{filename}{width}{height}}{<video width="\width" height="\height" controls preload="none">
 <source src="\filename" type="video/mp4"/>
 </video>}
-\define{\includegif{filename}{width}{class}}{<img class="\class" src="\filename" width="\width" style="background:none; border:none; box-shadow:none;">}
-\define{\includeimg{filename}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" height="auto" align="\align" style="background:none; border:none; box-shadow:none;">}
-\define{\includeimgclip{filename}{top}{right}{bottom}{left}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" align="\align" style="background:none; border:none; box-shadow:none; position:absolute; clip:rect(\top,\right,\bottom,\left)">}
-\define{\includesvg{filename}{align}{class}{style}}{<img src="\filename" class="\class" align="\align" style="\style">}
-\define{\includesvgclass{filename}{class}{align}}{<img src="\filename" class="\class" align="\align" >}
+\define{\includeimg{filename}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" height="auto" align="\align" style="background:none; border:none; box-shadow:none;vertical-align:middle">}
+\define{\includeimgclip{filename}{top}{right}{bottom}{left}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" align="\align" style="background:none; border:none; box-shadow:none; position:absolute; clip:rect(\top,\right,\bottom,\left);vertical-align:middle">}
+\define{\includesvg{filename}{align}{class}{style}}{<img src="\filename" class="\class" align="\align" style="vertical-align:middle;\style">}
+\define{\includesvgclass{filename}{class}{align}}{<img src="\filename" class="\class" align="\align" style="vertical-align:middle">}
 \define{\includehtml{filename}{width}{height}}{<iframe src="\filename" width="\width" height="\height" allowtransparency="true" frameborder="0">
 </iframe>}
 \define{\speakernotes{text}}{}
@@ -57,7 +56,6 @@ YouTubeVideo('\id')
 
 \define{\columns{one}{two}{width1}{width2}}{<table><tr><td width="\width1">\one</td><td width="\width2">\two</td></tr></table>}
 
-\define{\includecovariance{shortname}}{\columns{\includesvgclass{../slides/diagrams/kern/\concat{\shortname}{_covariance.svg}}}{\includegif{../slides/diagrams/kern/\concat{\shortname}{_covariance}}{100%}{negate}}{45%}{45%}}
 
 
 \ifdef{slides} <!-- ipynb and slides-->
@@ -191,11 +189,10 @@ from \filename import \object
 <source src="\filename" type="video/mp4"/>
 </video>}
 \define{\slidenotes{slidetext}{notetext}}{\notetext}
-\define{\includeimg{filename}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" height="auto" align="\align" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">}
-\define{\includeimgclip{filename}{top}{right}{bottom}{left}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" align="\align" style="background:none; border:none; box-shadow:none; position:absolute; clip:rect(\top,\right,\bottom,\left)">}
-\define{\includegif{filename}{width}{class}}{<img class="\class" src="\filename" width="\width" style="background:none; border:none; box-shadow:none;">}
-\define{\includesvg{filename}{align}{class}{style}}{<object class="svgplot \class" align="\align" data="\filename" style="\style"></object>}
-\define{\includesvgclass{filename}{class}{align}}{<object class="\class" align="\align" data="\filename"></object>}
+\define{\includeimg{filename}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" height="auto" align="\align" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">}
+\define{\includeimgclip{filename}{top}{right}{bottom}{left}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" align="\align" style="background:none; border:none; box-shadow:none; position:absolute; clip:rect(\top,\right,\bottom,\left);vertical-align:middle">}
+\define{\includesvg{filename}{align}{class}{style}}{<object class="svgplot \class" align="\align" data="\filename" style="vertical-align:middle;\style"></object>}
+\define{\includesvgclass{filename}{class}{align}}{<object class="\class" align="\align" data="\filename" style="vertical-align:middle"></object>}
 \define{\includehtml{filename}{width}{height}}{<iframe src="\filename" width="\width" height="\height" allowtransparency="true" frameborder="0">
 </iframe>}
 \define{\slides{text}}{}
@@ -298,11 +295,10 @@ from \filename import \object
 <source src="\filename" type="video/mp4"/>
 </video>}
 \define{\slidenotes{slidetext}{notetext}}{\slidetext}
-\define{\includeimg{filename}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" height="auto" align="\align" style="background:none; border:none; box-shadow:none;">}
-\define{\includeimgclip{filename}{top}{right}{bottom}{left}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" align="\align" style="background:none; border:none; box-shadow:none; position:absolute; clip:rect(\top,\right,\bottom,\left)">}
-\define{\includegif{filename}{width}{class}}{<img class="\class" src="\filename" width="\width" style="background:none; border:none; box-shadow:none;">}
-\define{\includesvg{filename}{align}{class}{style}}{<div style="text-align:\align" class="\class"><object class="svgplot \class" align="\align" data="\filename" style="\style"></object></div>}
-\define{\includesvgclass{filename}{class}{align}}{<object class="\class" align="\align" data="\filename"></object>}
+\define{\includeimg{filename}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" height="auto" align="\align" style="background:none; border:none; box-shadow:none;vertical-align:middle">}
+\define{\includeimgclip{filename}{top}{right}{bottom}{left}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" align="\align" style="background:none; border:none; box-shadow:none; position:absolute; clip:rect(\top,\right,\bottom,\left);vertical-align:middle">}
+\define{\includesvg{filename}{align}{class}{style}}{<div style="text-align:\align" class="\class"><object class="svgplot \class" align="\align" data="\filename" style="vertical-align:middle;\style"></object></div>}
+\define{\includesvgclass{filename}{class}{align}}{<object class="\class" align="\align" data="\filename" style="vertical-align:middle"></object>}
 \define{\includehtml{filename}{width}{height}}{<iframe src="\filename" width="\width" height="\height" allowtransparency="true" frameborder="0">
 </iframe>}
 \define{\includepdf{filename}{page}{width}{height}}{<object data="\filename" type="application/pdf" width="\width" height="\height">
@@ -375,7 +371,8 @@ from \filename import \object
 \endif
 
 
-\define{\includecovariance{shortname}}{<center>$$\formula$$</center><br><table><tr><td width="45%">\includesvgclass{../slides/diagrams/kern/\concat{\shortname}{_covariance.svg}}<td width="45%">\includeimg{../slides/diagrams/kern/\concat{\shortname}{_covariance.gif}}{100%}{negate}{center}</td></tr></table>}
+\define{\includecovariance{shortname}}{\aligncenter{$$\formula$$}
+\columns{\includesvgclass{../slides/diagrams/kern/\concat{\shortname}{_covariance.svg}}}{\includegif{../slides/diagrams/kern/\concat{\shortname}{_covariance}}{100%}{negate}{center}}{40%}{40%}}
 
 \define{\div{contents}{class}{style}}{<div class="\class" style="\style">\contents</div>}
 \define{\fragmentdiv{contents}{number}{style}}{<div class="fragment" data-fragment-index="\number" style="\style">\contents</div>}
@@ -383,11 +380,11 @@ from \filename import \object
 \define{\linebreak}{<br>}
 
 
-\define{\includejpg{filename}{width}{class}}{\div{\includeimg{\concat{\filename}{.jpg}}{\width}{\class}{center}}{}{text-align:center}}
+\define{\includejpg{filename}{width}{class}}{\div{\includeimg{\concat{\filename}{.jpg}}{\width}{\class}{center}}{}{text-align:center;vertical-align:middle}}
 
-\define{\includepng{filename}{width}{class}}{\div{\includeimg{\concat{\filename}{.png}}{\width}{\class}{center}}{}{text-align:center}}
+\define{\includepng{filename}{width}{class}}{\div{\includeimg{\concat{\filename}{.png}}{\width}{\class}{center}}{}{text-align:center;vertical-align:middle}}
 
-\define{\includegif{filename}{width}{class}}{\div{\includeimg{\concat{\filename}{.gif}}{\width}{\class}{center}}{}{text-align:center}}
+\define{\includegif{filename}{width}{class}}{\div{\includeimg{\concat{\filename}{.gif}}{\width}{\class}{center}}{}{text-align:center;vertical-align:middle}}
 
 \define{\credit{text}}{\smalltext{\alignright{Thanks to: \text}}}
 

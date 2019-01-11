@@ -73,6 +73,7 @@ then $\mappingVector$ becomes a bottleneck for information about the training se
 
 -   Most well known is the “linear kernel”, $\kernelScalar(\inputVector_i, \inputVector_j) = \inputVector_i^\top\inputVector_j$.
 }
+
 \newslide{Making Predictions}
 \slides{
 -   For non-parametrics prediction at new points $\mappingFunctionVector_*$ is made by conditioning on $\mappingFunctionVector$ in the joint distribution.

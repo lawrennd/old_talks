@@ -17,7 +17,7 @@ date: 2019-01-11
 venue: MLSS, Stellenbosch, South Africa
 transition: None
 ---
-\define{draft}
+<!--define{draft}-->
 \include{talk-macros.tex}
 
 \include{_gp/includes/planck-cmp-master-gp.md}
