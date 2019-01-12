@@ -223,6 +223,8 @@ for i in range(10):
 
 \exercise{**Function Space Reflection** How do you include the noise term when sampling in the weight space point of view?}
 
+\include{_gp/includes/non-degenerate-gps.md}
+
 \subsection{Gaussian Process}
 
 \notes{In our [session on Bayesian regression](./week7.ipynb) we sampled from the prior over paraemters. Through the properties of multivariate Gaussian densities this prior over parameters implies a particular density for our data observations, $\dataVector$. In this session we sampled directly from this distribution for our data, avoiding the intermediate weight-space representation. This is the approach taken by *Gaussian processes*. In a Gaussian process you specify the *covariance function* directly, rather than *implicitly* through a basis matrix and a prior over parameters. Gaussian processes have the advantage that they can be *nonparametric*, which in simple terms means that they can have *infinite* basis functions. In the lectures we introduced the *exponentiated quadratic* covariance, also known as the RBF or the Gaussian or the squared exponential covariance function. This covariance function is specified by 
@@ -263,6 +265,8 @@ for i in range(10):
 \exercise{**Moving Parameters** Have a play with the parameters for this
 covariance function (the lengthscale and the variance) and see what effects the
 parameters have on the types of functions you observe.}
+
+\include{_gp/includes/gp-intro-very-short.md}
 
 
 \subsection{Gaussian Process}
@@ -511,6 +515,23 @@ In general we won't be able to find parameters of the covariance function throug
 The objective function can be decomposed into two terms, a capacity control term, and a data fit term. The capacity control term is the log determinant of the covariance. The data fit term is the matrix inner product between the data and the inverse covariance.
 
 \include{_gp/includes/gp-optimize.md}
+
+\include{_kern/includes/eq-covariance.md}
+
+\include{_gp/includes/olympic-marathon-gp.md}
+
+\include{_gp/includes/della-gatta-gene-gp.md}
+\include{_health/includes/malaria-gp.md}
+
+\include{_kern/includes/add-covariance.md}
+\include{_gp/includes/bda-forecasting.md}
+
+\include{_kern/includes/basis-covariance.md}
+\include{_kern/includes/brownian-covariance.md}
+\include{_kern/includes/mlp-covariance.md}
+
+\include{_gp/includes/gp-summer-school.md}
+\include{_gp/includes/gpy-software.md}
 
 \subsection{References}
 
