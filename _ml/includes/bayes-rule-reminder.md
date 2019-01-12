@@ -1,3 +1,7 @@
+\ifndef{bayesRuleReminder}
+\define{bayesRuleReminder}
+\editme
+
 \newslide{Bayes' Rule Reminder}
 
 $$
@@ -11,3 +15,5 @@ Four components:
 2. Likelihood
 3. Posterior distribution
 4. Marginal likelihood
+
+\endif

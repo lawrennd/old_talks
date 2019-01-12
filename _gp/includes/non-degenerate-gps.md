@@ -1,3 +1,6 @@
+\ifndef{nonDegenerateGps}
+\define{nonDegenerateGps}
+\editme
 \subsection{Non-degenerate Gaussian Processes}
 
 \slides{
@@ -76,3 +79,4 @@ has finite variance, then the result of taking the number of hidden units to inf
 }
 \notes{To understand this argument in more detail, I highly recommend reading chapter 2 of Neal's thesis [@Neal:bayesian94], which remains easy to read and clear today. Indeed, for readers interested in Bayesian neural networks, both Raford Neal's and David MacKay's PhD thesis [@MacKay:bayesian92] remain essential reading. Both theses embody a clarity of thought, and an ability to weave together threads from different fields that was the business of machine learning in the 1990s. Radford and David were also pioneers in making their software widely available and publishing material on the web.}
 
+\endif

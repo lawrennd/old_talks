@@ -66,3 +66,4 @@ where $s_{i,j}$ is an indicator variable which is set to 1 if the rating of movi
 
 \include{_ml/includes/linear-algebra-regression.md}
 
+\subsection{References}

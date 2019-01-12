@@ -1,3 +1,7 @@
+\ifndef{tanhBasis}
+\define{tanhBasis}
+\editme
+
 \subsection{Hyperbolic Tangent Basis}
 
 \code{%load -s tanh mlai.py}
@@ -49,3 +53,4 @@ from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('tanh_basis{num_basis:0>3}.svg', 
                             directory='../slides/diagrams/ml', 
 							num_basis=IntSlider(0,0,4,1))}
+\endif

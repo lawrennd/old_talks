@@ -1,5 +1,6 @@
 \ifndef{otherSoftware}
 \define{otherSoftware}
+\editme
 
 \subsection{Other Software}
 

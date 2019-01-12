@@ -1,3 +1,7 @@
+\ifndef{basisFunctions}
+\define{basisFunctions}
+\editme
+
 \include{_ml/includes/basis-functions-intro.md}
 
 \subsection{Different Bases}
@@ -33,3 +37,4 @@ $$
 
 
 
+\endif

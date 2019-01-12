@@ -1,3 +1,7 @@
+\ifndef{bayesianReminder}
+\define{bayesianReminder}
+\editme
+
 \newslide{Reminder on the Term "Bayesian"}
 
 \slides{* We use Bayes' rule to invert probabilities in the Bayesian approach.
@@ -10,3 +14,5 @@
 
 \slides{* The use of Bayes' rule does *not* imply you are being Bayesian.
   * It is just an application of the product rule of probability.}
+
+\endif

@@ -1,3 +1,5 @@
+\ifndef{biasVariancePlots}
+\define{biasVariancePlots}
 \editme
 
 \notes{Helper function for sampling data from two different classes.}
@@ -248,3 +250,5 @@ from ipywidgets import IntSlider}
 
 \caption{simple models on left complex models on right}
 }
+
+\endif

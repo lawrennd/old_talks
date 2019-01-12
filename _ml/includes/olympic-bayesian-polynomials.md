@@ -1,3 +1,7 @@
+\ifndef{olympicBayesianPolynomials}
+\define{olympicBayesianPolynomials}
+\editme
+
 \subsection{Olympic Data with Bayesian Polynomials}
 
 \notes{Five fold cross validation tests the ability of the model to *interpolate*.}
@@ -181,3 +185,5 @@ from ipywidgets import IntSlider}
 
 \notesfigure{\includesvg{../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number026.svg}}{}
 \notes{\caption{Bayesian fit with 26th degree polynomial and five fold cross validation scores.}}
+
+\endif

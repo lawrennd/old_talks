@@ -1,3 +1,6 @@
+\ifndef{whatIsAGp}
+\define{whatIsAGp}
+\editme
 \include{_ml/includes/what-is-ml.md}
 
 \newslide{Artificial Intelligence}
@@ -113,8 +116,7 @@ There are also challenges around specification of the objective function, but fo
 \include{_gp/includes/bda-forecasting.md}
 
 \include{_kern/includes/basis-covariance.md}
-
 \include{_kern/includes/brownian-covariance.md}
-
 \include{_kern/includes/mlp-covariance.md}
 
+\endif

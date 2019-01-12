@@ -1,6 +1,9 @@
+\ifndef{multivariateGaussianProperties}
+\define{multivariateGaussianProperties}
+\editme
 \newslide{Multivariate Gaussian Properties}
-\slides{
-* If}\notes{
+
+\slides{* If}\notes{
 Let's first of all review the properties of the multivariate Gaussian distribution that make linear Gaussian models easier to deal with. We'll return to the, perhaps surprising, result on the parameters within the nonlinearity, $\parameterVector$, shortly.
 
 To work with linear Gaussian models, to find the marginal likelihood all you need to know is the following rules. If}
@@ -120,4 +123,5 @@ We can basically put anything inside the basis functions, and many people do. Th
 Viewing a neural network in this way is also what allows us to beform sensible *batch* normalizations [@Ioffe:batch15].
 }
 
+\endif
 

@@ -1,3 +1,6 @@
+\ifndef{basisFunctionsIntro}
+\define{basisFunctionsIntro}
+\editme
 \subsection{Basis Functions}
 
 \notes{Here's the idea, instead of working directly on the original input space, $\inputVector$, we build models in a new space, $\basisVector(\inputVector)$ where $\basisVector(\cdot)$ is a *vector-valued* function that is defined on the space $\inputVector$.}
@@ -123,3 +126,4 @@ from ipywidgets import IntSlider}
                             directory='../slides/diagrams/ml', 
 							num_basis=IntSlider(0,0,2,1))}
 
+\endif

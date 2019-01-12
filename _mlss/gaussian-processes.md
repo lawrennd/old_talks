@@ -14,7 +14,7 @@ author:
   institute: Amazon Cambridge and University of Sheffield
   twitter: lawrennd
   url: http://inverseprobability.com
-geometry: a4paper,margin=2in
+geometry: a4paper,margin=2cm
 date: 2019-01-09
 venue: MLSS, Stellenbosch, South Africa
 transition: None
@@ -24,9 +24,8 @@ transition: None
 \include{_gp/includes/gp-book.md}
 \include{_gp/includes/what-is-a-gp.md}
 
-<!--include{_gp/includes/gp-optimize.md}-->
-\include{_gp/includes/gpss.md}
-\include{_gp/includes/gpy.md}
+\include{_gp/includes/gp-summer-school.md}
+\include{_gp/includes/gpy-software.md}
 \include{_gp/includes/other-software.md}
 \include{_ml/includes/mxfusion-intro.md}
 

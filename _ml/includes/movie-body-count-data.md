@@ -17,7 +17,7 @@ via github you can also [download the zip file](https://github.com/sjmgarnier/R-
 
 \notes{For ease of use we've packaged this data set in the ```pods``` library}
 
-\include{_ml/includes/pods.md}
+\include{_ml/includes/pods-software.md}
 
 \code{data = pods.datasets.movie_body_count()['Y']
 data.head()}

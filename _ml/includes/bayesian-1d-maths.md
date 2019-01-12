@@ -1,6 +1,9 @@
-\slides{
-### Main Trick
+\ifndef{bayesian1dMaths}
+\define{bayesian1dMaths}
+\editme
 
+\newslide{Main Trick}
+\slides{
 $$
 p(c) = \frac{1}{\sqrt{2\pi\alpha_1}} \exp\left(-\frac{1}{2\alpha_1}c^2\right)
 $$
@@ -29,3 +32,4 @@ $$
 $$
 where $\tau^2 = \left(n\dataStd^{-2} +\alpha_1^{-1}\right)^{-1}$ and $\mu = \frac{\tau^2}{\dataStd^2} \sum_{i=1}^\numData(\dataScalar_i-m\inputScalar_i)$.
 }
+\endif

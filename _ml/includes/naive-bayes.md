@@ -1,3 +1,7 @@
+\ifndef{naiveBayes}
+\define{naiveBayes}
+\editme
+
 \subsection{Naive Bayes Classifiers}
 
 \notes{*Note*: Everything we do below is possible using standard packages like `scikit-learn`, our purpose in this session is to help you understand how those engines are constructed. In practice for an application you should use a library like `scikit-learn`.}
@@ -397,3 +401,4 @@ These characteristics mean that naive Bayes scales very well with big data. To f
 
 Naive Bayes is making very simple assumptions about the data, in particular it is modeling the full *joint* probability of the data set, $p(\dataVector, \inputMatrix | \paramVector, \pi)$ by very strong assumptions about factorizations that are unlikely to be true in practice. The data conditional independence assumption is common, and relies on a rich parameter vector to absorb all the information in the training data. The additional assumption of naive Bayes is that features are conditional independent given the class label $\dataScalar_i$ (and the parameter vector, $\paramVector$. This is quite a strong assumption. However, it causes the objective function to decompose into parts which can be independently fitted to the different feature vectors, meaning it is very easy to fit the model to large data. It is also clear how we should handle *streaming* data and *missing* data. This means that the model can be run 'live', adapting parameters and information as it arrives. Indeed, the model is even capable of dealing with new *features* that might arrive at run time. Such is the strength of the modeling the joint probability density. However, the factorization assumption that allows us to do this efficiently is very strong and may lead to poor decision boundaries in practice.
 }
+\endif

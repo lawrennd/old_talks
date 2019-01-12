@@ -1,3 +1,7 @@
+\ifndef{kFoldValidationOlympics}
+\define{kFoldValidationOlympics}
+\editme
+
 \subsection{$k$-fold Cross Validation}
 
 \slides{* Leave one out error can be very time consuming.
@@ -143,3 +147,5 @@ cross validation always select the same model?
 cross validation error. Don't worry about this too much. Two of the partitions
 will have an extra data point. You might find `np.random.permutation?` useful.
 }{6}{20}
+
+\endif

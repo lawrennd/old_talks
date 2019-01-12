@@ -1,3 +1,5 @@
+\ifndef{gpdistfunc}
+\define{gpdistfunc}
 \editme
 
 \setupplotcode{import numpy as np
@@ -72,3 +74,4 @@ Prediction of $\mappingFunction_2$ given $\mappingFunction_1$ requires the *cond
 \notes{Using these formulae we can determine the conditional density for any of the elements of our vector $\mappingFunctionVector$. For example, the variable $\mappingFunction_8$ is less correlated with $\mappingFunction_1$ than $\mappingFunction_2$. If we consider this variable we see the conditional density is more diffuse.}
 
 \include{_gp/includes/gaussian-predict-index-one-and-eight.md}
+\endif

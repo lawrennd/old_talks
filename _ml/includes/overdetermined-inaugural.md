@@ -1,3 +1,7 @@
+\ifndef{overdeterminedInaugural}
+\defined{overdeterminedInaugural}
+\editme
+
 \subsection{Overdetermined System}
 
 \notes{The challenge with a linear model is that it has two unknowns, $m$, and $c$. Observing data allows us to write down a system of simultaneous linear equations. So, for example if we observe two data points, the first with the input value, $\inputScalar_1 = 1$ and the output value, $\dataScalar_1 =3$ and a second data point, $\inputScalar = 3$, $\dataScalar=1$, then we can write two simultaneous linear equations of the form. 
@@ -147,3 +151,4 @@ This is known as a stochastic process.
 
 \notes{The result is a *noisy* function, a function which has a deterministic part, and a stochastic part. This type of function is sometimes known as a probabilistic or stochastic process, to distinguish it from a deterministic process.}
 
+\endif

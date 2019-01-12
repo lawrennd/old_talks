@@ -1,5 +1,5 @@
-\ifndef{gpy}
-\define{gpy}
+\ifndef{gpySoftware}
+\define{gpySoftware}
 \editme
 
 \subsection{GPy: A Gaussian Process Framework in Python}

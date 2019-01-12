@@ -1,3 +1,7 @@
+\ifndef{alanTuringMarathon}
+\define{alanTuringMarathon}
+\editme
+
 \subsection{Alan Turing}
 
 \columns{\includegif{../slides/diagrams/turing-times}{100%}}{\includejpg{../slides/diagrams/turing-run}{50%}}{50%}{50%}
@@ -17,3 +21,5 @@ $$
 then we see that without a model we can't generalise: we only have data. Data is fine for answering very specific questions, like "Who won the Olympic Marathon in 2012?", because we have that answer stored, however, we are not given the answer to many other questions. For example, Alan Turing was a formidable marathon runner, in 1946 he ran a time 2 hours 46 minutes (just under four minutes per kilometer, faster than I and most of the other [Endcliffe Park Run](http://www.parkrun.org.uk/sheffieldhallam/) runners can do 5 km). What is the probability he would have won an Olympics if one had been held in 1946?}
 
 \notes{To answer this question we need to generalize, but before we formalize the concept of generalization let's introduce some formal representation of what it means to generalize in machine learning.}
+
+\endif

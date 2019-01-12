@@ -1,3 +1,7 @@
+\ifndef{dataPlusModel}
+\define{dataPlusModel}
+\editme
+
 \newslide{What is Machine Learning?}
 \slides{
 . . .
@@ -39,3 +43,5 @@ inductive biases. The *prediction* is an action to be taken or a
 categorization or a quality score. The reason that machine learning
 has become a mainstay of artificial intelligence is the importance of
 predictions in artificial intelligence. The data and the model are combined through computation.}
+
+\endif

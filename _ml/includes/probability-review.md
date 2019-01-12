@@ -1,3 +1,7 @@
+\ifndef{probabilityReview}
+\define{probabilityReview}
+\editme
+
 \newslide{Probability Review}
 
 \slides{
@@ -241,3 +245,4 @@ question you want to answer in terms of probabilities? Should you be using a
 joint or a conditional distribution? If it's conditional, what should the
 distribution be over, and what should it be conditioned on?}{4}{20}
 
+\endif

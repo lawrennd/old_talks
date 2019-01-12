@@ -1,7 +1,7 @@
 ---
 title: "Gaussian Processes"
 venue: "MLSS, Stellenbosch, South Africa"
-abstract: "<p>Classical machine learning and statistical approaches to learning, such as neural networks and linear regression, assume a parametric form for functions. Gaussian process models are an alternative approach that assumes a probabilistic prior over functions. This brings benefits, in that uncertainty of function estimation is sustained throughout inference, and some challenges: algorithms for fitting Gaussian processes tend to be more complex than parametric models. In these sessions I will introduce Gaussian processes and explain why sustaining uncertainty is important. We’ll then look at some extensions of Gaussian process models, in particular composition of Gaussian processes, or deep Gaussian processes.</p>"
+abstract: "<p>Classical machine learning and statistical approaches to learning, such as neural networks and linear regression, assume a parametric form for functions. Gaussian process models are an alternative approach that assumes a probabilistic prior over functions. This brings benefits, in that uncertainty of function estimation is sustained throughout inference, and some challenges: algorithms for fitting Gaussian processes tend to be more complex than parametric models. In this sessions I will introduce Gaussian processes and explain why sustaining uncertainty is important.</p>"
 author:
 - given: Neil D.
   family: Lawrence
@@ -101,7 +101,9 @@ $$</span><br /> and we have <em>unsupervised learning</em> (from where we can ge
   \dataScalar_i = \mappingFunction(\inputVector_i) + \noiseScalar_i,
   $$</span><br /> where <br /><span class="math display">$$
   \noiseScalar_i \sim \gaussianSamp{0}{\dataStd^2}
-  $$</span><br /> and while normally integrating over high dimensional parameter vectors is highly complex, here it is <em>trivial</em>. That is because of a property of the multivariate Gaussian.</p>
+  $$</span><br /></p>
+
+<p>and while normally integrating over high dimensional parameter vectors is highly complex, here it is <em>trivial</em>. That is because of a property of the multivariate Gaussian.</p>
 <p>Gaussian processes are initially of interest because</p>
 <ol style="list-style-type: decimal">
 <li>linear Gaussian models are easier to deal with</li>
@@ -537,12 +539,14 @@ $$</span><br /></p>
 <center>
 <em>An additive covariance function formed by combining two exponentiated quadratic covariance functions. </em>
 </center>
+<p>{### Analysis of US Birth Rates</p>
 <div style="text-align:center;vertical-align:middle">
 <img class="" src="../slides/diagrams/ml/bialik-fridaythe13th-1.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 <center>
 <em>This is a retrospective analysis of US births by Aki Vehtari. The challenges of forecasting. Even with seasonal and weekly effects removed there are significant effects on holidays, weekends, etc. </em>
 </center>
+<p>There's a nice analysis of US birth rates by Gaussian processes with additive covariances in <span class="citation">Gelman et al. (2013)</span>. A combination of covariance functions are used to take account of weekly and yearly trends. The analysis is summarized on the cover of the book.</p>
 <h3 id="basis-function-covariance">Basis Function Covariance</h3>
 <p>The fixed basis function covariance just comes from the properties of a multivariate Gaussian, if we decide <br /><span class="math display">$$
 \mappingFunctionVector=\basisMatrix\mappingVector
@@ -574,24 +578,22 @@ $$</span><br /> meaning that the vector of observations from the function is joi
 </center>
 <h3 id="brownian-covariance">Brownian Covariance</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> brownian_cov</code></pre></div>
-<p>Brownian motion is also a Gaussian process. It follows a Gaussian random walk, with diffusion occuring at each time point driven by a Gaussian input. This implies it is both Markov and Gaussian. The covariane function for Brownian motion has the form <br /><span class="math display">$$
-\kernelScalar(t, t^\prime) = \alpha \min(t, t^\prime)
+<p>Brownian motion is also a Gaussian process. It follows a Gaussian random walk, with diffusion occuring at each time point driven by a Gaussian input. This implies it is both Markov and Gaussian. The covariance function for Brownian motion has the form <br /><span class="math display">$$
+\kernelScalar(t, t^\prime)=\alpha \min(t, t^\prime)
 $$</span><br /></p>
-<!--<table><tr><td width="50%">
-<object class="svgplot " align="" data="../slides/diagrams/kern/brownian_covariance.svg" style="vertical-align:middle;"></object>
-</td><td width="50%">
-<iframe src="../slides/diagrams/kern/brownian_covariance.html" width="512" height="384" allowtransparency="true" frameborder="0">
-</iframe>
-</td></tr></table>
-<center>*The covariance of Brownian motion, and some samples from the covariance showing the functional form. *</center>-->
+<center>
+<br /><span class="math display">$$\kernelScalar(t, t^\prime)=\alpha \min(t, t^\prime)$$</span><br />
+</center>
 <table>
 <tr>
-<td width="45%">
+<td width="40%">
 <object class align data="../slides/diagrams/kern/brownian_covariance.svg" style="vertical-align:middle">
 </object>
 </td>
-<td width="45%">
+<td width="40%">
+<div style="text-align:center;vertical-align:middle">
 <img class="negate" src="../slides/diagrams/kern/brownian_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
 </td>
 </tr>
 </table>
@@ -617,7 +619,6 @@ $$</span><br /></p>
 <center>
 <em>The multi-layer perceptron covariance function. This is derived by considering the infinite limit of a neural network with probit activation functions. </em>
 </center>
-<!--include{_gp/includes/gp-optimize.md}-->
 <h3 id="gpss-gaussian-process-summer-school">GPSS: Gaussian Process Summer School</h3>
 <object class="svgplot " align="1.5cm" data="../slides/diagrams/logo/gpss-logo.svg" style="vertical-align:middle;">
 </object>
@@ -665,6 +666,9 @@ $$</span><br /></p>
 </div>
 <div id="ref-DellaGatta:direct08">
 <p>Della Gatta, Giusy, Mukesh Bansal, Alberto Ambesi-Impiombato, Dario Antonini, Caterina Missero, and Diego di Bernardo. 2008. “Direct Targets of the Trp63 Transcription Factor Revealed by a Combination of Gene Expression Profiling and Reverse Engineering.” <em>Genome Research</em> 18 (6). Telethon Institute of Genetics; Medicine, 80131 Naples, Italy.: 939–48. doi:<a href="https://doi.org/10.1101/gr.073601.107">10.1101/gr.073601.107</a>.</p>
+</div>
+<div id="ref-Gelman:bayesian13">
+<p>Gelman, Andrew, John B. Carlin, Hal S. Stern, and Donald B. Rubin. 2013. <em>Bayesian Data Analysis</em>. 3rd ed. Chapman; Hall.</p>
 </div>
 <div id="ref-Ioffe:batch15">
 <p>Ioffe, Sergey, and Christian Szegedy. 2015. “Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift.” In <em>Proceedings of the 32nd International Conference on Machine Learning</em>, edited by Francis Bach and David Blei, 37:448–56. Proceedings of Machine Learning Research. Lille, France: PMLR. <a href="http://proceedings.mlr.press/v37/ioffe15.html" class="uri">http://proceedings.mlr.press/v37/ioffe15.html</a>.</p>

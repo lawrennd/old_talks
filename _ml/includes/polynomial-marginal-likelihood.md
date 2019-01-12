@@ -1,4 +1,8 @@
-### Marginal Likelihood
+\ifndef{polynomialMarginalLikelihood}
+\define{polynomialMarginalLikelihood}
+\editme
+
+\subsection{Marginal Likelihood}
 
 * The marginal likelihood can also be computed, it has the form:
   $$
@@ -7,3 +11,4 @@
   where $\kernelMatrix = \alpha \basisMatrix\basisMatrix^\top + \dataStd^2 \eye$.
 
 * So it is a zero mean $\numData$-dimensional Gaussian with covariance matrix $\kernelMatrix$.
+\endif

@@ -1,3 +1,6 @@
+\ifndef{neuralNetworks}
+\define{neuralNetworks}
+\editme
 \subsection{Neural Networks and Prediction Functions}
 
 \slides{
@@ -63,3 +66,4 @@ In this tutorial, we're going to go revisit that decision, and follow the path o
 
 [^footnote1]: In classical statistics we often interpret these parameters, $\beta$, whereas in machine learning we are normally more interested in the result of the prediction, and less in the prediction. Although this is changing with more need for accountability. In honour of this I normally use $\boldsymbol{\beta}$ when I care about the value of these parameters, and $\mappingVector$ when I care more about the quality of the prediction.
 }
+\endif

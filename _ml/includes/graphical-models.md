@@ -1,3 +1,6 @@
+\ifndef{graphicalModels}
+\define{graphicalModels}
+\editme
 \subsection{Graphical Models}
 
 \slides{
@@ -41,3 +44,4 @@ However, a challenge arise when the data becomes more complex. Consider the grap
 \includepng{../slides/diagrams/bayes-net-diagnosis}{50%}{negate}
 
 \notes{To capture the complexity in the interelationship between the data the graph becomes more complex, and less interpretable.}
+\endif

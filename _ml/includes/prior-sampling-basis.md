@@ -1,6 +1,10 @@
-\slides{
-### Sampling the Prior
+\ifndef{priorSamplingBasis}
+\define{priorSamplingBasis}
+\editme
 
+\newslide{Sampling the Prior}
+
+\slides{
 * Always useful to perform a ‘sanity check’ and sample from the prior before observing the data.
 * Since $\dataVector = \basisMatrix \mappingVector + \noiseVector$ just need to sample
   $$
@@ -12,7 +16,7 @@
   with $\alpha=1$ and $\dataStd^2 = 0.01$.
 }
 \notes{
-### Generating from the Model
+\subsection{Generating from the Model}
 
 A very important aspect of probabilistic modelling is to *sample* from your model to see what type of assumptions you are making about your data. In this case that involves a two stage process.
 
@@ -49,11 +53,11 @@ Phi_pred = basis.Phi(x_pred)
 Phi = basis.Phi(x)
 }
 
-### Sampling from the Prior
+\subsection{Sampling from the Prior}
 
 Now we will sample from the prior to produce a vector $\mappingVector$ and use it to plot a function which is representative of our belief *before* we fit the data. To do this we are going to use the properties of the Gaussian density and a sample from a *standard normal* using the function `np.random.normal`.
 
-### Scaling Gaussian-distributed Variables
+\subsection{Scaling Gaussian-distributed Variables}
 
 First, let's consider the case where we have one data point and one feature in our basis set. In otherwords $\mappingFunctionVector$ would be a scalar, $\mappingVector$ would be a scalar and $\basisMatrix$ would be a scalar. In this case we have 
 $$
@@ -117,7 +121,7 @@ _ = ax.legend(('$w$', '$z$'))}
 Now re-run this histogram with 100,000 samples and check that the both histograms look qualitatively Gaussian.
 }
 \notes{
-### Sampling from the Prior
+\subsection{Sampling from the Prior}
 
 Let's use this way of constructing samples from a Gaussian to check what functions look like *a priori*. The process will be as follows. First, we sample a random vector $K$ dimensional from `np.random.normal`. Then we scale it by $\sqrt{\alpha}$ to obtain a prior sample of $\mappingVector$.
 
@@ -164,3 +168,4 @@ $$
 This involves a matrix multiplication between a fixed matrix $\basisMatrix$ and a vector that is drawn from a distribution $\mappingVector$. Because $\mappingVector$ is drawn from a distribution, this imples that $\mappingFunctionVector$ should also be drawn from a distribution. There are two distributions we are interested in though. We have just been sampling from the *prior* distribution to see what sort of functions we get *before* looking at the data. In Bayesian inference, we need to computer the *posterior* distribution and sample from that density.
 }
 
+\endif

@@ -207,16 +207,32 @@ from \filename import \object
 \ifdef{notes}
 \define{\includegooglebook{id}{page}}{[![](../slides/diagrams/books/\id-\page.png)](https://play.google.com/books/reader?id=\id&pg=\page)}
 \define{\includeyoutube{id}{width}{height}{time}}{[![](https://img.youtube.com/vi/\id/0.jpg)](https://www.youtube.com/watch?v=\id&t=\time)}
+\define{\slidenotes{slidetext}{notetext}}{\notetext}
+
+\ifdef{tex}
+
+\define{\includempfour{filename}{width}{height}}{\media{\filename}}
+\define{\includeimg{filename}{width}{class}{align}}{\includegraphics[width=\width]{\filename}}}
+\define{\includeimgclip{filename}{top}{right}{bottom}{left}{width}{class}{align}}{\includegraphics[width=\width]{\filename}}}
+\define{\includesvg{filename}{align}{class}{style}}{\includegraphics[width=\width]{\filename}}}
+\define{\includesvgclass{filename}{class}{align}}{\includegraphics[width=\width]{\filename}}}
+\define{\includehtml{filename}{width}{height}}{}
+
+\else
+
 \define{\includempfour{filename}{width}{height}}{<video width="\width" height="\height" controls preload="none">
 <source src="\filename" type="video/mp4"/>
 </video>}
-\define{\slidenotes{slidetext}{notetext}}{\notetext}
 \define{\includeimg{filename}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" height="auto" align="\align" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">}
 \define{\includeimgclip{filename}{top}{right}{bottom}{left}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" align="\align" style="background:none; border:none; box-shadow:none; position:absolute; clip:rect(\top,\right,\bottom,\left);vertical-align:middle">}
 \define{\includesvg{filename}{align}{class}{style}}{<object class="svgplot \class" align="\align" data="\filename" style="vertical-align:middle;\style"></object>}
 \define{\includesvgclass{filename}{class}{align}}{<object class="\class" align="\align" data="\filename" style="vertical-align:middle"></object>}
 \define{\includehtml{filename}{width}{height}}{<iframe src="\filename" width="\width" height="\height" allowtransparency="true" frameborder="0">
 </iframe>}
+
+\endif
+
+
 \define{\slides{text}}{}
 \define{\slidesincremental{text}}{}
 \define{\newslide{text}}{}

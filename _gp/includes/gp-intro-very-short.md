@@ -1,3 +1,5 @@
+\ifndef{gpIntroVeryShort}
+\define{gpIntroVeryShort}
 \editme
 
 \notes{\subsection{Bayesian Inference by Rejection Sampling}
@@ -62,3 +64,4 @@ from ipywidgets import IntSlider}
 \includepng{../slides/diagrams/gp/gp_rejection_sample004}
 \includepng{../slides/diagrams/gp/gp_rejection_sample005}}
 \notes{\caption{One view of Bayesian inference is we have a machine for generating samples (the *prior*), and we discard all samples inconsistent with our data, leaving the samples of interest (the *posterior*). The Gaussian process allows us to do this analytically.}}
+\endif

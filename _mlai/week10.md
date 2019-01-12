@@ -16,7 +16,7 @@ transition: None
 
 \include{talk-macros.tex}
 
-\newslide{Review}
+\subsection{Review}
 
 \slides{
 * Last week: Specified Class Conditional Distributions, $p(\inputVector_i|\dataScalar_i, \parameterVector)$.
@@ -346,7 +346,7 @@ $$
     dw += (Phi[negind]*g[negind]).sum(0)
     return dw[:, None]}
 
-### Optimization of the Function
+\subsection{Optimization of the Function}
 
 Reorganizing the gradient to find a stationary point of the function with respect to the parameters $\mappingVector$ turns out to be impossible. Optimization has to proceed by *numerical methods*. Options include the multidimensional variant of [Newton's method](http://en.wikipedia.org/wiki/Newton%27s_method) or [gradient based optimization methods](http://en.wikipedia.org/wiki/Gradient_method) like we used for optimizing matrix factorization for the movie recommender system. We recall from matrix factorization that, for large data, *stochastic gradient descent* or the Robbins Munro [@Robbins:stoch51] optimization procedure worked best for function minimization.
 }
@@ -404,7 +404,7 @@ $$\begin{align*}
 }
 
 \notes{
-### Movie Body Count Data
+\subsection{Movie Body Count Data}
 
 Let's recreate the movie body count example we used with naive Bayes. We can load in the data from `pods` as follows.
 
@@ -414,7 +414,7 @@ data = pods.datasets.olivetti_glasses()
 X = data['X']
 y = data['Y']}
 
-### Gradient Descent
+\subsection{Gradient Descent}
 
 We will need to define some initial random values for our vector and then minimize the objective by descending the gradient.
 
@@ -436,11 +436,11 @@ Let's look at the weights and how they relate to the inputs.
 
 The weights are fairly small. This makes sense for year, and perhaps also body count, but given the genre only take the value of 0 or 1 it makes less sense for them. Why are the weights so small? What can you do to fix this?
 
-### Stochastic Gradient Descent
+\subsection{Stochastic Gradient Descent}
 
 Now construct a stochastic gradient descent algorithm and run it on the data. Is it faster or slower than batch gradient descent? What can you do to improve convergence speed?
 
-### Going Further: Optimization
+\subsection{Going Further: Optimization}
 
 Other optimization techniques for generalized linear models include [Newton's method](http://en.wikipedia.org/wiki/Newton%27s_method), it requires you to compute the Hessian, or second derivative of the objective function.
 
@@ -448,7 +448,7 @@ Methods that are based on gradients only include [L-BFGS](http://en.wikipedia.or
 }
 
 \notes{
-### Other GLMs
+\subsection{Other GLMs}
 
 We've introduced the formalism for generalized linear models. Have a think about how you might model count data using the [Poisson distribution](http://en.wikipedia.org/wiki/Poisson_distribution) and a log link function for the rate, $\lambda(\inputVector)$. If you want a data set you can try the `pods.datasets.google_trends()` for some count data.
 }
@@ -501,17 +501,15 @@ We've introduced the formalism for generalized linear models. Have a think about
 }
 
 
-### Bayesian Approaches
+\subsection{Bayesian Approaches}
 
 \exercise{Can you place a prior density over the parameters $\mappingVector$ and marginalize them out like we did for linear regression? If not why not?}
 
 
 \newslide{Reading}
 
-\slides{
 * Section 5.2.2 of @Rogers:book11 up to pg 182.
-}
 
-### References
+\subsection{References}
 
 

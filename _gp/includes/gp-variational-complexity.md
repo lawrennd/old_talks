@@ -1,3 +1,6 @@
+\ifndef{gpVariationalComplexity}
+\define{gpVariationalComplexity}
+\editme
 \subsection{Variational Compression}
 
 \slides{
@@ -18,3 +21,4 @@ The only requirement for inducing variables is that they are jointly distributed
 * Allow for scaling e.g. stochastic variational @Hensman:bigdata13 or parallelization @Gal:distributed14,@Dai:gpu14, @Seeger:auto17
 }
 \notes{Inducing variables don't only allow for the compression of the non-parameteric information into a reduced data aset but they also allow for computational scaling of the algorithms through, for example stochastic variational approaches @Hensman:bigdata13 or parallelization @Gal:distributed14,@Dai:gpu14, @Seeger:auto17.}
+\endif

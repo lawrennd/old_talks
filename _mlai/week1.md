@@ -39,7 +39,7 @@ answered and handed in before 09:00 on 7th October 2014 (i.e. before next
 lecture). The hand should be done via file upload through
 [MOLE](http://vle.shef.ac.uk).}
 
-\subsection{More Fun on the Python Data Farm}
+<!--\subsection{More Fun on the Python Data Farm}
 
 \notes{If you want to explore more of the things
 you can do with movies and python you might be interested in the `imdbpy` python
@@ -61,7 +61,7 @@ press `SHIFT-enter` or `CTRL-enter`. Then you can try running the code below.}
 ia = IMDb()
 
 for movie in ia.search_movie('python'):
-    print(movie)}
+    print(movie)}-->
 
 \includeyoutube{GX8VLYUYScM}
 

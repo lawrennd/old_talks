@@ -1,3 +1,7 @@
+\ifndef{basisCovariance}
+\define{basisCovariance}
+\editme
+
 \subsection{Basis Function Covariance}
 
 \notes{The fixed basis function covariance just comes from the properties of a multivariate Gaussian, if we decide 
@@ -40,3 +44,4 @@ plot.covariance_func(kernel, diagrams='../slides/diagrams/kern/')}
 \includecovariance{basis}{\formula}
 \notes{\caption{A covariance function based on a non-linear basis given by $\basisVector(\inputVector)$.}}
 
+\endif

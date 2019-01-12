@@ -69,4 +69,4 @@ $$
 
 \code{Phi*Phi}
 
-\subsection{References
+\subsection{References}

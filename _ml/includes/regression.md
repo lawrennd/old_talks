@@ -1,6 +1,9 @@
-\slides{
-### Objective Functions and Regression
+\ifndef{regression}
+\define{regression}
+\editme
+\newslide{Objective Functions and Regression}
 
+\slides{
 * Classification: map feature to class label.
 * Regression: map feature to real value our *prediction function* is
 
@@ -12,8 +15,9 @@
 
 $$\errorFunction(m, c) = \sum_{i=1}^\numData (\dataScalar_i * \mappingFunction(\inputScalar_i))^2$$}
 
-\slides{### Regression
+\newslide{Regression}
 
+\slides{
 * Create an artifical data set.
 }
 
@@ -32,9 +36,11 @@ $$\dataScalar_i = m\inputScalar_i + c$$ is translated to code as follows:}
 
 \code{y = m_true*x+c_true}
 
-\slides{### Plot of Data
+\newslide{Plot of Data}
 
-We can now plot the artifical data we've created.}
+\slides{We can now plot the artifical data we've created.}
+
+\setupplotcode{import matplotlib.pyplot as plt}
 
 \plotcode{plt.plot(x, y, 'r.', markersize=10) # plot data as red dots
 plt.xlim([-3, 3])
@@ -44,7 +50,7 @@ mlai.write_figure(filename="../slides/diagrams/ml/regression.svg", transparent=T
 
 \slides{These points lie exactly on a straight line, that's not very realistic, let's corrupt them with a bit of Gaussian 'noise'.}
 
-### Noise Corrupted Plot
+\subsection{Noise Corrupted Plot}
 
 \code{noise = np.random.normal(scale=0.5, size=4) # standard deviation of the noise is 0.5
 y = m_true*x + c_true + noise
@@ -53,3 +59,5 @@ plt.xlim([-3, 3])
 mlai.write_figure(filename="../slides/diagrams/ml/regression_noise.svg", transparent=True)}
 
 \includesvg{../slides/diagrams/ml/regression_noise.svg}
+
+\endif

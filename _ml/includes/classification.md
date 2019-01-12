@@ -1,3 +1,7 @@
+\ifndef{classification}
+\define{classification}
+\editme
+
 \include{_ml/includes/classification-intro.md}
 
 \newslide{Classification}
@@ -28,3 +32,5 @@ plt.plot(x_plus[:, 0], x_plus[:, 1], 'rx')
 plt.plot(x_minus[:, 0], x_minus[:, 1], 'go')}
 
 \include{_ml/includes/classification-examples.md}
+
+\endif

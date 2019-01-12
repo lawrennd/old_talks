@@ -40,7 +40,6 @@ transition: None
 
 - Section 1.1.3 of @Rogers:book11 for loss functions.
 
-\notes{
 \notes{In [last week's](./week1.ipynb) class we saw how
 we could load in a data set to pandas and use it for some simple data
 processing. We computed variaous probabilities on the data and I encouraged you
@@ -53,7 +52,7 @@ are going to take a slightly different tack.}
 
 \notes{This week we are going to try and build a simple movie recommender system using an objective function. To do this, the first thing I'd like you to do is to install some software we've written for sharing information across google documents.}
 
-\include{_ml/includes/pods.md}
+\include{_ml/includes/pods-software.md}
 
 \include{_ml/includes/movie-body-count-data.md}
 
@@ -68,6 +67,6 @@ fellow researcher can you publish that data on line?}{1}{10}
 }
 
 
-
+\subsection{References}
 
 <!--include{_ml/includes/matrix-factorization.md}-->

@@ -1,3 +1,6 @@
+\ifndef{eqCovariance}
+\define{eqCovariance}
+\editme
 \subsection{Exponentiated Quadratic Covariance}
 
 \define{\formula}{\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\ltwoNorm{\inputVector-\inputVector^\prime}^2}{2\lengthScale^2}\right)}
@@ -27,3 +30,4 @@ where $\ell$ is the *length scale* or *time scale* of the process and $\alpha$ r
 \notes{\caption{The exponentiated quadratic covariance function.}}
 
 
+\endif

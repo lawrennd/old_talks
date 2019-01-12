@@ -1,3 +1,7 @@
+\ifndef{probabilityIntro}
+\define{probabilityIntro}
+\editme
+
 \section{Probabilities}
 
 \notes{We are now going to do some simple review of probabilities and
@@ -38,3 +42,4 @@ $$}
 \include{_ml/includes/probability-nigerian-nmis.md}
 \include{_ml/includes/probability-review.md}
 
+\endif

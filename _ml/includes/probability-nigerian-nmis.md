@@ -1,3 +1,9 @@
+\ifndef{probabilityNigerianNmis}
+\define{probabilityNigerianNmis}
+\editme
+
+\include{_ml/includes/nigerian-nmis-data.md}
+
 \notes{Let's use the sum rule to compute the estimate the 
 probability that a facility has more than two nurses.}
 
@@ -36,3 +42,5 @@ print("Probability of number of nurses being greater than 2 given number of doct
 \notes{Make sure the plot is included in *this* notebook
 file (the `IPython` magic command `%matplotlib inline` we ran above will do that
 for you, it only needs to be run once per file).}
+
+\endif

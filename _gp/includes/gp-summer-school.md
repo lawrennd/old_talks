@@ -1,5 +1,6 @@
 \ifndef{gpSummerSchool}
 \define{gpSummerSchool}
+\editme
 
 \subsection{GPSS: Gaussian Process Summer School}
 
@@ -13,3 +14,4 @@ If you're interested in finding out more about Gaussian processes, you can atten
 * Many lectures from past meetings available online
 }{\gpssLogo{1.5cm}}{60%}{40%}}
 
+\endif

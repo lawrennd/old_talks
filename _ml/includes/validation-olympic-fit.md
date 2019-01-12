@@ -1,3 +1,7 @@
+\ifndef{validationOlympicFit}
+\define{validationOlympicFit}
+\editme
+
 \notes{The first thing we'll do is fit a standard linear model to the data. We recall from previous lectures and lab classes that to do this we need to solve the system
 $$
 \basisMatrix^\top \basisMatrix \mappingVector = \basisMatrix^\top \dataVector
@@ -113,3 +117,4 @@ num_data = x.shape[0]}
 \endanimation
 }
 
+\endif

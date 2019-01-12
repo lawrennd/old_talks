@@ -1,3 +1,5 @@
+\ifndef{gaussianPredictIndexOneAndEight}
+\define{gaussianPredictIndexOneAndEight}
 \editme
 
 \setupdisplaycode{import pods
@@ -18,6 +20,4 @@ from ipywidgets import IntSlider}
 }
 \notesfigure{\includesvg{../slides/diagrams/gp/two_point_sample017.svg}}
 \notes{\caption{The joint Gaussian over $\mappingFunction_1$ and $\mappingFunction_8$ along with the conditional distribution of $\mappingFunction_8$ given $\mappingFunction_1$}}
-
-
-
+\endif

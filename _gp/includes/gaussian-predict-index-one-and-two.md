@@ -1,3 +1,5 @@
+\ifndef{gaussianPredictIndexOneAndTwo}
+\define{gaussianPredictIndexOneAndTwo}
 \editme
 
 \setupdisplaycode{import pods
@@ -17,3 +19,4 @@ from ipywidgets import IntSlider}
 
 \notesfigure{\includesvg{../slides/diagrams/gp/two_point_sample012.svg}{}}
 \notes{\caption{The joint Gaussian over $\mappingFunction_1$ and $\mappingFunction_2$ along with the conditional distribution of $\mappingFunction_2$ given $\mappingFunction_1$}}
+\endif

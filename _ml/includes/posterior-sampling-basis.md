@@ -1,4 +1,8 @@
-### Sampling from the Posterior
+\ifndef{posteriorSamplingBasis}
+\define{posteriorSamplingBasis}
+\editme
+
+\subsection{Sampling from the Posterior}
 
 \notes{
 Before we were able to sample the prior values for the mean *independently* from a Gaussian using `np.random.normal` and scaling the result. However, observing the data *correlates* the parameters. Recall this from the first lab where we had a correlation between the offset, $c$ and the slope $m$ which caused such problems with the coordinate ascent algorithm. We need to sample from a *correlated* Gaussian. For this we can use `np.random.multivariate_normal`.
@@ -22,11 +26,11 @@ This gives us an idea of what our predictions are. These are the predictions tha
 
 Rather than sampling from the posterior each time to compute our predictions, it might be better if we just summarised the predictions by the expected value of the output funciton, $\mappingFunction(x)$, for any particular input. If we can get formulae for this we don't need to sample the values of $\mappingFunction(x)$ we might be able to compute the distribution directly. Fortunately, in the Gaussian case, we can use properties of multivariate Gaussians to compute both the mean and the variance of these samples.
 
-### Properties of Gaussian Variables
+\subsection{Properties of Gaussian Variables}
 
 Gaussian variables have very particular properties, that many other densities don't exhibit. Perhaps foremost amoungst them is that the sum of any Gaussian distributed set of random variables also turns out to be Gaussian distributed. This property is much rarer than you might expect.
 
-### Sum of Gaussian-distributed Variables
+\subsection{Sum of Gaussian-distributed Variables}
 
 The sum of Gaussian random variables is also Gaussian, so if we have a random variable $\dataScalar_i$ drawn from a Gaussian density with mean $\meanScalar_i$ and variance $\dataStd^2_i$, 
 $$
@@ -38,7 +42,7 @@ $$
 $$
 Let's try that experimentally. First let's generate a vector of samples from a standard normal distribution, $z \sim \gaussianSamp{0}{1}$,  then we will scale and offset them, then keep adding them into a vector `y_vec`.
 
-#### Sampling from Gaussians and Summing Up
+\subsection{Sampling from Gaussians and Summing Up}
 
 \code{K = 10 # how many Gaussians to add.
 num_samples = 1000 # how many samples to have in y_vec
@@ -60,7 +64,7 @@ Of course, we can histogram `y_vec` as well.
 ax.hist(y_vec, bins=30, normed=True)
 ax.legend('$y$')}
 
-### Matrix Multiplication of Gaussian Variables
+\subsection{Matrix Multiplication of Gaussian Variables}
 
 We are interested in what our model is saying about the sort of functions we are observing. The fact that summing of Gaussian variables leads to new Gaussian variables, and scaling of Gaussian variables *also* leads to Gaussian variables means that matrix multiplication (which is just a series of sums and scales) also leads to Gaussian densities. Matrix multiplication is just adding and scaling together, in the formula, $\mappingFunctionVector = \basisMatrix \mappingVector$ we can extract the first element from $\mappingFunctionVector$ as
 $$
@@ -146,3 +150,4 @@ This is our *implicit* assumption for $\dataVector$ given our prior assumption f
   $$ 
   with $\alpha=1$ and $\dataStd^2 = 0.01$.
 }
+\endif

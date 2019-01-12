@@ -1,3 +1,7 @@
+\ifndef{matrixFactorization}
+\define{matrixFactorization}
+\editme
+
 \subsection{Measuring Similarity}
 
 \notes{We now need a measure for determining the similarity between the item and the user: how close the user is sitting to the item in the rooom if you like. We are going to use the inner product between the vector representing the item and the vector representing the user. }
@@ -14,7 +18,7 @@ $$
 
 \notes{Since we want each user to be sitting near each item, then we want the inner product to be large for any two items which are rated highly by that user. We can do this by trying to force the inner product $\mathbf{u}_i^\top\mathbf{v}_j$ to be similar to the rating given by the user, $y_{i,j}$. To ensure this we will use a least squares objective function for all user ratings.}
 
-## Objective Function
+\subsection{Objective Function}
 
 The error function (or objective function, or cost function) we will choose is known as 'sum of squares', we will aim to minimize the sum of squared squared error between the inner product of $\mathbf{u}_i$ and $\mathbf{v}_i$ and the observed score for the user/item pairing, given by $y_{i, j}$. 
 
@@ -32,7 +36,7 @@ $$
 $$
 where again the $j$th row of $\mathbf{V}$ contains the vector associated with the $j$th item and $m$ is the total number of items in the data set.
 
-## Objective Optimization
+\subsection{Objective Optimization}
 
 The idea is to mimimize this objective. A standard, simple, technique for minimizing an objective is *gradient descent* or *steepest descent*. In gradient descent we simply choose to update each parameter in the model by subtracting a multiple of the objective function's gradient with respect to the parameters. So for a parameter $u_{i,j}$ from the matrix $\mathbf{U}$ we would have an update as follows:
 $$
@@ -48,11 +52,11 @@ Similarly each parameter $v_{i,j}$ needs to be updated according to its gradient
 
 \writeassignment{What is the gradient of the objective function with respect to $v_{k, \ell}$? Write your answer in the box below, and explain which differentiation techniques you used to get there. You will be expected to justify your answer in class by oral questioning. Create a function for computing this gradient that is used in the algorithm below.}{4}{20}
 
-## Steepest Descent Algorithm
+\subsection{Steepest Descent Algorithm}
 
 In the steepest descent algorithm we aim to minimize the objective function by subtacting the gradient of the objective function from the parameters. 
 
-### Initialisation
+\subsection{Initialisation}
 
 To start with though, we need initial values for the matrix $\mathbf{U}$ and the matrix $\mathbf{V}$. Let's create them as `pandas` data frames and initialise them randomly with small values.
 
@@ -96,21 +100,21 @@ for i in range(iterations):
 	
 \codeassignment{What happens as you increase the number of iterations? What happens if you increase the learning rate?}{5}{10}
 
-## Stochastic Gradient Descent or Robbins Monroe Algorithm
+\subsection{Stochastic Gradient Descent or Robbins Monroe Algorithm}
 
 Stochastic gradient descent involves updating separating each gradient update according to each separate observation, rather than summing over them all. It is an approximate optimization method, but it has proven convergence under certain conditions and can be much faster in practice. It is used widely by internet companies for doing machine learning in practice. For example, Facebook's ad ranking algorithm uses stochastic gradient descent. 
 
 \codeassignment{Create a stochastic gradient descent version of the algorithm. Monitor the objective function after every 1000 updates to ensure that it is decreasing. When you have finished, plot the movie map and the user map in two dimensions. Label the plots with the name of the movie or user.}{6}{30}
 
-## Making Predictions
+\subsection{Making Predictions}
 
 Predictions can be made from the model of the appropriate rating for a given user, $i$, for a given film, $j$, by simply taking the inner product between their vectors $\mathbf{u}_i$ and $\mathbf{v}_j$. 
 
-## Is Our Map Enough? Are Our Data Enough?
+\subsection{Is Our Map Enough? Are Our Data Enough?}
 
 Is two dimensions really enough to capture the complexity of humans and their artforms? Perhaps we need even more dimensions to capture that complexity. Extending our books analogy further, consider how we should place books that have a historical timeframe as well as some geographical location. Do we really want books from the 2nd World War to sit alongside books from the Roman Empire? Books on the American invasion of Sicily in 1943 are perhaps less related to books about Carthage than those that study the Jewish Revolt from 66-70 (in the Roman Province of Judaea). So books that relate to subjects which are closer in time should be stored together. However, a student of rebellion against empire may also be interested in the relationship between the Jewish Revolt of 66-70 and the Indian Rebellion of 1857, nearly 1800 years later. Whilst the technologies are different, the psychology of the people is shared: a rebellious nation angainst their imperial masters, triggered by misrule with a religious and cultural background. To capture such complexities we would need further dimensions in our latent representation. But are further dimensions justified by the amount of data we have? Can we really understand the facets of a film that only has at most three or four ratings?
 
-## Going Further
+\subsection{Going Further}
 
 If you want to take this model further then you'll need more data. One possible source of data is the [`movielens` data set](http://grouplens.org/datasets/movielens/). They have data sets containing up to ten million movie ratings. The few ratings we were able to collect in the class are not enough to capture the rich structure underlying these films. Imagine if we assume that the ratings are uniformly distributed between 1 and 5. If you know something about information theory then you could use that to work out the maximum number of *bits* of information we could gain per rating. 
 
@@ -121,3 +125,4 @@ Now we'll download the movielens 100k data and see if we can extract information
 Y=d['Y']}
 
 \codeassignment{Use stochastic gradient descent to make a movie map for the movielens data. Plot the map of the movies when you are finished.}{7}{15}
+\endif

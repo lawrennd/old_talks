@@ -1,3 +1,7 @@
+\ifndef{biasVarianceDilemma}
+\define{biasVarianceDilemma}
+\editme
+
 \newslide{Bias Variance Decomposition}
 
 Expected test error for different variations of
@@ -20,3 +24,5 @@ $$\mathbb{E}\left[ \left(\dataScalar - \mappingFunction(\dataVector)\right)^2 \r
 * Slight variations in the training set cause changes in the prediction. Error due to variance is error in the model due to an overly complex model.
 
 \include{_ml/includes/bias-variance-plots.md}
+
+\endif

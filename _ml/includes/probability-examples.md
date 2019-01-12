@@ -1,3 +1,7 @@
+\ifndef{probabilityExamples}
+\define{probabilityExamples}
+\editme
+
 \newslide{Computing Expectations Example}
 
 \slides{
@@ -83,3 +87,5 @@ $y^2_i$    |  3.0976 |  2.9929 |  3.2041 |  3.2761 |  3.4225 |  3.2400
     $y_i$ |  1.76|  1.73| 1.79 | 1.81 | 1.85 |  1.80
 
 * Actually these "data" were sampled from a Gaussian with mean 1.7 and standard deviation 0.15. Are your estimates close to the real values? If not why not?}
+
+\endif

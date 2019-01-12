@@ -1,4 +1,8 @@
-### Choice of Language
+\ifndef{environmentPythonJupyter}
+\define{environmentPythonJupyter}
+\editme
+
+\subsection{Choice of Language}
 
 \notes{In this course we will be using Python for our
 programming language. A prerequisite of attending this course is that you have
@@ -42,4 +46,4 @@ in a code box?
 Once you've had a play with the code we can load in some data
 using the `pandas` library for data analysis.}
 
-
+\editme

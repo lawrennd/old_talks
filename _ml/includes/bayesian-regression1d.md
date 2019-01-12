@@ -1,3 +1,7 @@
+\ifndef{bayesianRegression1d}
+\define{bayesianRegression1d}
+\editme
+
 \include{_ml/includes/bayesian-regression1d-short.md}
 
 \newslide{Main Trick}
@@ -28,3 +32,5 @@ $$\log p(c | \dataVector, \inputVector, m, \dataStd^2) = -\frac{1}{2\tau^2}(c - 
 where $\tau^2 = \left(\numData\dataStd^{-2} +\alpha_1^{-1}\right)^{-1}$
 and
 $\mu = \frac{\tau^2}{\dataStd^2} \sum_{i=1}^\numData(\dataScalar_i-m\inputScalar_i)$.
+
+\endif

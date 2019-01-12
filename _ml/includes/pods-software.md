@@ -1,3 +1,7 @@
+\ifndef{podsSoftware}
+\define{podsSoftware}
+\editme
+
 \notes{\subsection{```pods```}}
 
 
@@ -20,3 +24,5 @@ The code is also available on github: <https://github.com/sods/ods>
 Once ```pods``` is installed, it can be imported in the usual manner.}
 
 \setupcode{import pods}
+
+\endif

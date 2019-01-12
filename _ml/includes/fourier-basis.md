@@ -1,3 +1,7 @@
+\ifndef{fourierBasis}
+\define{fourierBasis}
+\editme
+
 \subsection{Fourier Basis}
 
 \slides{* }
@@ -58,3 +62,4 @@ from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('fourier_function{func_num:0>3}.svg', directory='../slides/diagrams/ml', func_num=IntSlider(0,0,2,1))}
 
 
+\endif

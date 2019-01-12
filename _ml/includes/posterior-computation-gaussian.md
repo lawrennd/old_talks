@@ -1,4 +1,8 @@
-### Computing the Posterior
+\ifndef{posteriorComputationGaussian}
+\define{posteriorComputationGaussian}
+\editme
+
+\subsection{Computing the Posterior}
 
 \notes{
 We will now attampt to compute the *posterior distribution*. In the lecture we went through the maths that allows us to compute the posterior distribution for $\mappingVector$. This distribution is also Gaussian,}
@@ -19,13 +23,13 @@ p(\mappingVector|\dataVector, \inputVector) = \frac{p(\dataVector|\inputVector, 
 $$
 We've looked at the samples for our function $\mappingFunctionVector = \basisMatrix\mappingVector$, which forms the mean of the Gaussian likelihood, under the prior distribution. I.e. we've sampled from $p(\mappingVector)$ and multiplied the result by the basis matrix. Now we will sample from the posterior density, $p(\mappingVector|\dataVector, \inputVector)$, and check that the new samples fit do correspond to the data, i.e. we want to check that the updated distribution includes information from the data set. First we need to compute the posterior mean and *covariance*.
 
-### Bayesian Inference in the Univariate Case
+\subsection{Bayesian Inference in the Univariate Case}
 
 This video talks about Bayesian inference across the single parameter, the offset $c$, illustrating how the prior and the likelihood combine in one dimension to form a posterior.
 
 \includeyoutube{AvlnFnvFw_0}{1024}{768}{15}
 
-### Multivariate Bayesian Inference
+\subsection{Multivariate Bayesian Inference}
 
 This section of the lecture talks about how we extend the idea of Bayesian inference for the multivariate case. It goes through the multivariate Gaussian and how to complete the square in the linear algebra as we managed below.
 
@@ -47,3 +51,4 @@ w_mean =
 }
 
 
+\endif

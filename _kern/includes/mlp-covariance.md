@@ -1,3 +1,6 @@
+\ifndef{mlpCovariance}
+\define{mlpCovariance}
+\editme
 \subsection{MLP Covariance}
 
 \define{\formula}{\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \arcsin\left(\frac{w \inputVector^\top \inputVector^\prime + b}{\sqrt{\left(w \inputVector^\top \inputVector + b + 1\right)\left(w \left.\inputVector^\prime\right.^\top \inputVector^\prime + b + 1\right)}}\right)}
@@ -23,3 +26,5 @@ plot.covariance_func(kernel, diagrams='../slides/diagrams/kern/')}
 \includecovariance{mlp}{\formula}
 
 \notes{\caption{The multi-layer perceptron covariance function. This is derived by considering the infinite limit of a neural network with probit activation functions.}}
+
+\endif

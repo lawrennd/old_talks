@@ -1,5 +1,9 @@
+\ifndef{theBayesianApproach}
+\define{theBayesianApproach}
+\editme
+
 \notes{
-### The Bayesian Approach
+\subsection{The Bayesian Approach}
 
 Now we will study Bayesian approaches to regression. In the Bayesian approach we define a *prior* density over our parameters, $m$ and $c$ or more generally $\mappingVector$. This prior distribution gives us a range of expected values for our parameter *before* we have seen the data. The object in Bayesian inference is to then compute the*posterior* density which is the effect on the density of having observed the data. In standard probability notation we write the prior distribution as, 
 $$
@@ -43,3 +47,5 @@ p(\dataVector|\inputMatrix) = \int p(\dataVector|\mappingVector,\inputMatrix)p(\
 $$
 I like the term marginalisation, and the description of the probability as the *marginal likelihood*, because (for me) it somewhat has the implication that the variable name has been removed, and (perhaps) written in the margin. Marginalisation of a variable goes from a likelihood where the variable is in place, to a new likelihood where all possible values of that variable (under the prior) have been considered and weighted in the integral. This implies that all we need for specifying our model is to define the likelihood and the prior. We already have our likelihood from our earlier discussion, so our focus now turns to the prior density.
 }
+
+\endif

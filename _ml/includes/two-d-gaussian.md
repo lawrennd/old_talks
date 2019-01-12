@@ -1,3 +1,7 @@
+\ifndef{twoDGaussian}
+\define{twoDGaussian}
+\editme
+
 \subsection{Two Dimensional Gaussian}
 \slides{
 * Consider height, $h/m$ and weight, $w/kg$.
@@ -12,7 +16,7 @@
 
 
 \newslide{Height and Weight Models}
-\plotcode{import teaching_plots as plot}
+\setupplotcode{import teaching_plots as plot}
 \plotcode{plot.height_weight(diagrams='../slides/diagrams/ml')}
 
 \includesvg{../slides/diagrams/ml/height_weight_gaussian.svg}
@@ -42,3 +46,5 @@ $$}\slides{
 \include{_ml/includes/two-d-gaussian-correlated-sample.md}
 
 \include{_ml/includes/two-d-gaussian-maths.md}
+
+\endif

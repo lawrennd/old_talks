@@ -1,3 +1,6 @@
+\ifndef{probabilisticModelling}
+\define{probabilisticModelling}
+\editme
 \subsection{Probabilistic Modelling}
 
 \slides{
@@ -89,3 +92,4 @@ and we have *unsupervised learning*  (from where we can get deep generative mode
 
 * Prediction: $p(\dataVector^*| \dataVector)$
 }
+\endif

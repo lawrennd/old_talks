@@ -1,3 +1,7 @@
+\ifndef{bernoulliDistribution}
+\define{bernoulliDistribution}
+\editme
+
 \newslide{Bernoulli Distribution}
 
 \slides{* Binary classification: need a probability distribution for discrete variables. 
@@ -98,3 +102,4 @@ from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('bayes-billiard{counter:0>3}.svg', 
                             directory='../slides/diagrams/ml', 
 							counter=IntSlider(0,0,9,1))}
+\endif

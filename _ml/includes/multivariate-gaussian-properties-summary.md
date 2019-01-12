@@ -1,3 +1,6 @@
+\ifndef{multivariateGaussianPropertiesSummary}
+\define{multivariateGaussianPropertiesSummary}
+\editme
 \newslide{Recall Univariate Gaussian Properties}
 \slides{
 . . .
@@ -40,3 +43,4 @@ $$\dataVector= \mappingMatrix\inputVector$$
 $$\dataVector \sim \gaussianSamp{\mappingMatrix\meanVector}{\mappingMatrix\covarianceMatrix\mappingMatrix^\top}$$
 
 }
+\endif

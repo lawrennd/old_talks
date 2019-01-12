@@ -18,12 +18,12 @@ ${BASE}.notes.pdf: ${BASE}.notes.tex
 	cp ${BASE}.notes.pdf ../_notes/${OUT}.notes.pdf
 
 
-${BASE}.notes.tex: ${BASE}.notes.md
+${BASE}.notes.tex: ${BASE}.tex.md
 	pandoc  --template pandoc-notes-tex-template.tex \
 		-B ../_includes/talk-notation.tex \
 		${PDSFLAGS} \
 		-o ${BASE}.notes.tex  \
-		${BASE}.notes.md 
+		${BASE}.tex.md 
 
 ${BASE}.notes.html: ${BASE}.notes.md
 	pandoc  ${PDSFLAGS} \
@@ -70,6 +70,9 @@ ${BASE}.slides.md: ${BASE}.md
 ${BASE}.notes.md: ${BASE}.md 
 	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -Dnotes=1 ${PPFLAGS} ${BASE}.md -o ${BASE}.notes.md
 
+${BASE}.tex.md: ${BASE}.md 
+	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -Dnotes=1 -Dtex=1 ${PPFLAGS} ${BASE}.md -o ${BASE}.tex.md
+
 ${BASE}.ipynb.md: ${BASE}.md 
 	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -Dipynb=1 -Dnotes=1 ${PPFLAGS} ${BASE}.md -o ${BASE}.ipynb.md
 
@@ -78,4 +81,4 @@ ${BASE}.slides.ipynb.md: ${BASE}.md
 
 
 clean:
-	rm ${BASE}.slides.md ${BASE}.slides.html ${BASE}.notes.md ${BASE}.notes.html ${BASE}.slides.ipynb.md ${BASE}.ipynb.md ${BASE}.posts.html
+	rm ${BASE}.slides.md ${BASE}.slides.html ${BASE}.tex.md ${BASE}.notes.md ${BASE}.notes.html ${BASE}.slides.ipynb.md ${BASE}.ipynb.md ${BASE}.posts.html

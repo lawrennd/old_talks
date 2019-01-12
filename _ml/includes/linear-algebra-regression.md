@@ -1,3 +1,7 @@
+\ifndef{linearAlgebraRegression}
+\define{linearAlgebraRegression}
+\editme
+
 \subsection{Regression: Linear Releationship}
 
 \notes{For many their first encounter with what might be termed a machine learning method is fitting a straight line. A straight line is characterized by two parameters, the scale, $m$, and the offset $c$.}
@@ -947,3 +951,5 @@ w}
 \subsection{Reading}
 
 * Section 1.3 of @Rogers:book11 for Matrix & Vector Review.
+
+\endif

@@ -1,3 +1,6 @@
+\ifndef{twoDGaussianCorrelatedSample}
+\define{twoDGaussianCorrelatedSample}
+\editme
 \subsection{Sampling Two Dimensional Variables}
 
 \plotcode{import teaching_plots as plot}
@@ -25,3 +28,4 @@ pods.notebook.display_plots('correlated_height_weight{fig:0>3}.svg',
 \endanimation
 }
 \notesfigure{\includesvg{../slides/diagrams/ml/correlated_height_weight007.svg}{}}\notes{\caption{Samples from *correlated* Gaussian variables that might represent heights and weights.}}
+\endif

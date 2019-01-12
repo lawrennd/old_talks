@@ -1,7 +1,8 @@
-\notes{
-### The Gaussian Density
-}
-\newslide{The Gaussian Density}
+\ifndef{univariateGaussian}
+\define{univariateGaussian}
+\editme
+
+\subsection{The Gaussian Density}
 
 \notes{The Gaussian density is perhaps the most commonly used probability density. It is defined by a *mean*, $\meanScalar$, and a *variance*, $\dataStd^2$. The variance is taken to be the square of the *standard deviation*, $\dataStd$.}
 \slides{* Perhaps the most common probability density.
@@ -24,7 +25,6 @@
 
 \newslide{Gaussian Density}
 \slides{
-
 \largetext{$$
 \gaussianDist{\dataScalar}{\meanScalar}{\dataStd^2} = \frac{1}{\sqrt{2\pi\dataStd^2}} \exp\left(-\frac{(\dataScalar-\meanScalar)^2}{2\dataStd^2}\right)
 $$}
@@ -34,3 +34,4 @@ $$}
 \aligncenter{$\dataStd^2$ is the variance of the density and $\meanScalar$ is the mean.}}
 
 
+\endif

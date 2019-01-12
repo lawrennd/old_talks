@@ -1,5 +1,6 @@
 \ifndef{nigerianNmisData}
 \define{nigerianNmisData}
+\editme
 \section{Nigerian NMIS Data}
 
 \notes{As an example data set we will use Nigerian NMIS Health Facility data from openAFRICA. It can be found here <https://africaopendata.org/dataset/nigeria-nmis-health-facility-data-2014>}
@@ -19,7 +20,7 @@
 
 \comment{\notes{For ease of use we've packaged this data set in the `pods` library}
 
-include{_ml/includes/pods.md}
+\include{_ml/includes/pods-software.md}
 
 \code{data = pods.datasets.nigerian_nmis_facility_database()['Y']
 data.head()}}

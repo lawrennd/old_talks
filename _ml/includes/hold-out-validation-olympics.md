@@ -1,3 +1,7 @@
+\ifndef{holdOutValidationOlympics}
+\define{holdOutValidationOlympics}
+\editme
+
 \subsection{Hold Out Validation}
 
 \subsection{Overfitting}
@@ -159,3 +163,5 @@ The basis as we've defined it has three arguments as well as the input. The degr
 Write code that tries to fit different models to the data with polynomial basis. Use a maximum degree for your basis from 0 to 17. For each polynomial store the *hold out validation error* and the *training error*. When you have finished the computation plot the hold out error for your models and the training error for your p. When computing your polynomial basis use `offset=1956.` and `scale=120.` to ensure that the data is mapped (roughly) to the -1, 1 range.
 
 Which polynomial has the minimum training error? Which polynomial has the minimum validation error?}{4}{25}
+
+\endif

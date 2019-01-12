@@ -1,3 +1,7 @@
+\ifndef{univariateGaussianProperties}
+\define{univariateGaussianProperties}
+\editme
+
 \subsection{Two Important Gaussian Properties}
 
 \notes{The Gaussian density has many important properties, but for the moment we'll review two of them.}
@@ -48,3 +52,5 @@ $$z \sim \gaussianSamp{0}{1},$$
 then if we scale by $\dataStd$ so we have, $\dataScalar=\dataStd z$, we can write,
 $$\dataScalar =\dataStd z \sim \gaussianSamp{0}{\dataStd^2}$$
 } 
+
+\endif

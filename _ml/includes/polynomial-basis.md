@@ -1,3 +1,7 @@
+\ifndef{polynomialBasis}
+\define{polynomialBasis}
+\editme
+
 \subsection{Polynomial Basis}
 
 \setupcode{import matplotlib.pyplot as plt
@@ -39,3 +43,5 @@ from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('polynomial_basis{num_basis:0>3}.svg', 
                             directory='../slides/diagrams/ml', 
 							num_basis=IntSlider(1,1,4,1))}
+
+\endif

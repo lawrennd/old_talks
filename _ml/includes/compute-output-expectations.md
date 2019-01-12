@@ -1,5 +1,9 @@
+\ifndef{computeOutputExpectations}
+\define{computeOutputExpectations}
+\editme
+
 \notes{
-### Computing the Mean and Error Bars of the Functions
+\subsection{Computing the Mean and Error Bars of the Functions}
 
 These ideas together, now allow us to compute the mean and error bars of the predictions. The mean prediction, before corrupting by noise is given by,
 $$
@@ -27,7 +31,7 @@ f_mean =
 sum_squares = 
 print('The error is: ', sum_squares)}
 
-### Computing Error Bars
+\subsection{Computing Error Bars}
 
 Finally, we can compute error bars for the predictions. The error bars are the standard deviations of the predictions for $\mappingFunctionVector=\basisMatrix\mappingVector$ under the posterior density for $\mappingVector$. The standard deviations of these predictions can be found from the variance of the prediction at each point. Those variances are the diagonal entries of the covariance matrix. We've already computed the form of the covariance under Gaussian expectations, 
 $$
@@ -57,7 +61,7 @@ f_pred_std =
 
 # plot the mean and error bars at 2 standard deviations above and below the mean}
 
-### Validation
+\subsection{Validation}
 
 Now we will test the generalisation ability of these models.  Firstly we are going to use hold out validation to attempt to see which model is best for extrapolating.
 
@@ -66,9 +70,10 @@ Now we will test the generalisation ability of these models.  Firstly we are goi
 \codeassignment{Now we will use leave one out cross validation to attempt to see which model is best at interpolating. Do you get the same result as for hold out validation? Compare plots of the hold out validation area for different degrees and the cross validation error for different degrees. Why are they so different? Select a suitable polynomial for characterising the differences in the predictions. Plot the mean function and the error bars for the full data set (to represent the leave one out solution) and the training data from the hold out experiment. Discuss your answer.}{5}{30}
 }
 
-\slides{
-### Computing the Expected Output
 
+\newslide{Computing the Expected Output}
+
+\slides{
 * Given the posterior for the parameters, how can we compute the expected output at a given location?
 * Output of model at location $\inputVector_i$ is given by
   $$
@@ -80,7 +85,7 @@ Now we will test the generalisation ability of these models.  Firstly we are goi
   \begin{aligned} \left\langle f(\inputVector_i; \mappingVector)\right\rangle_{p(\mappingVector|\dataVector, \inputMatrix, \dataStd^2, \alpha)} &= \basisVector_i^\top \left\langle\mappingVector\right\rangle_{p(\mappingVector|\dataVector, \inputMatrix, \dataStd^2, \alpha)} \\  & = \basisVector_i^\top \meanVector_w \end{aligned}
   $$
 
-### Variance of Expected Output
+\newslide{Variance of Expected Output}
 
 * Variance of model at location $\inputVector_i$ is given by
   $$
@@ -89,3 +94,4 @@ Now we will test the generalisation ability of these models.  Firstly we are goi
   $$ 
   where all these expectations are taken under the posterior density, $p(\mappingVector|\dataVector, \inputMatrix, \dataStd^2, \alpha)$.
 }
+\endif

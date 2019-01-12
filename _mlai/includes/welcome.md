@@ -1,15 +1,18 @@
-\slides{### Course Text
+\ifndef{welcome}
+\define{welcome}
+\editme
+\newslide{Course Text}
+
+\slides{
 
 \includeimg{../slides/diagrams/mlai/a-first-course-in-machine-learning.jpg}{40%}{}{centre}
 
-@Rogers:book11}
+\alignright{@Rogers:book11}}
 
-\slides{### Course Text
+\newslide{Course Text}
+\slides{\includeimg{../slides/diagrams/mlai/978-0-387-31073-2.png}{40%}{}{centre}
 
-
-\includeimg{../slides/diagrams/mlai/978-0-387-31073-2.png}{40%}{}{centre}
-
-@Bishop:book06}
+\alignright{@Bishop:book06}}
 
 \notes{Welcome to the Machine Learning and Adaptive
 Intelligence course. In this course we will introduce the basic concepts of
@@ -57,3 +60,4 @@ available, you may be able to summarize your code with just two or three lines,
 but the amount of intellectual energy that is expended on writing those three
 lines is far greater than in standard code.}
 
+\endif

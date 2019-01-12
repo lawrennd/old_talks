@@ -1,3 +1,7 @@
+\ifndef{bayesianRegression1dShort}
+\define{bayesianRegression1dShort}
+\editme
+
 \subsection{Prior Distribution}
 \slides{
 * Bayesian inference requires a prior on the parameters.
@@ -60,3 +64,5 @@ $$
 and the properties of the exponential mean that the product of two exponentiated quadratics is also an exponentiated quadratic. That implies that the posterior is also Gaussian, because a normalized exponentiated quadratic is a Gaussian distribution.[^normalize-gaussian]
 
 [^normalize-gaussian]: Note not all exponentiated quadratics can be normalized, to do so, the coefficient associated with the variable squared, $\dataScalar^2$, must be strictly positive.}
+
+\endif

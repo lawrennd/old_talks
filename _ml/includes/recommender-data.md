@@ -1,5 +1,7 @@
 \ifndef{recommenderData}
 \define{recommenderData}
+\editme
+
 \subsection{Obtaining the Data}
 
 \notes{We are using a functionality of the Open Data Science software library to obtain the data. This functionality involves some prewritten code which distributes to each of you a google spreadsheet where you can rate movies that you've seen. For completeness the code follows. Try and read and understand the code, but don't run it! It has already been run centrally by me.}

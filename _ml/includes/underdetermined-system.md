@@ -1,3 +1,7 @@
+\ifndef{underdeterminedSystem}
+\define{underdeterminedSystem}
+\editme
+
 \section{Underdetermined System}
 
 \setupplotcode{import teaching_plots as plot}
@@ -31,7 +35,7 @@ from ipywidgets import IntSlider}
                             directory='../slides/diagrams/ml', samp=IntSlider(0, 0, 10, 1))}
 
 \slides{
-\startanimation{under_determined_system}{1}{3}
+\startanimation{under_determined_system}{0}{9}
 \newframe{\includesvg{../slides/diagrams/ml/under_determined_system000.svg}}{under_determined_system}
 \newframe{\includesvg{../slides/diagrams/ml/under_determined_system001.svg}}{under_determined_system}
 \newframe{\includesvg{../slides/diagrams/ml/under_determined_system002.svg}}{under_determined_system}
@@ -48,3 +52,4 @@ from ipywidgets import IntSlider}
 \notesfigure{\includesvg{../slides/diagrams/ml/under_determined_system009.svg}}
 \notes{\caption{Fit underdetermined system by considering uncertainty}}
 
+\endif

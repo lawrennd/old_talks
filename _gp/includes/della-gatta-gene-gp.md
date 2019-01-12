@@ -1,4 +1,7 @@
 \ifndef{dellaGattaGeneGp}
+\define{dellaGattaGeneGp}
+\editme
+
 \include{_ml/includes/della-gatta-gene-data.md}
 
 \newslide{Gene Expression Example}
@@ -99,5 +102,4 @@ mlai.write_figure(figure=fig,
 
 \includesvg{../slides/diagrams/gp/multiple-optima001.svg}-->
 
-\define{dellaGattaGeneGp}
 \endif

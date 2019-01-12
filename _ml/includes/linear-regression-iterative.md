@@ -1,3 +1,7 @@
+\ifndef{linearRegressionIterative}
+\define{linearRegressionIterative}
+\editme
+
 \include{_ml/includes/regression.md}
 
 \subsection{Contour Plot of Error Function}
@@ -320,3 +324,5 @@ Think about:
 1. What effect does the learning rate have in the optimization? What's the effect of making it too small, what's the effect of making it too big? Do you get the same result for both stochastic and steepest gradient descent?
 
 2. The stochastic gradient descent doesn't help very much for such a small data set. It's real advantage comes when there are many, you'll see this in the lab.
+
+\endif

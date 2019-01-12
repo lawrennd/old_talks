@@ -1,3 +1,7 @@
+\ifndef{classificationExamples}
+\define{classificationExamples}
+\editme
+
 \newslide{Classification Examples}
 
 * Classifiying hand written digits from binary images (automatic zip code reading)
@@ -6,3 +10,5 @@
 * Classifying type of cancer given gene expression data.
 * Categorization of document types (different types of news article on the
 internet)
+
+\endif

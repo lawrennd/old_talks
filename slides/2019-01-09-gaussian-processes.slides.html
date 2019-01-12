@@ -559,9 +559,7 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatr
   \noiseScalar_i \sim \gaussianSamp{0}{\dataStd^2}
   \]</span></p></li>
 </ul>
-</section>
-<section id="linear-gaussian-models" class="slide level3">
-<h3>Linear Gaussian Models</h3>
+
 <ul>
 <li>Normally integrals are complex but for this Gaussian linear case they are trivial.</li>
 </ul>
@@ -603,7 +601,7 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatr
 <p><span style="text-align:left">Then</span> <span class="math display">\[\dataVector \sim \gaussianSamp{\mappingMatrix\meanVector}{\mappingMatrix\covarianceMatrix\mappingMatrix^\top}\]</span></p>
 </div>
 </section>
-<section id="linear-gaussian-models-1" class="slide level3">
+<section id="linear-gaussian-models" class="slide level3">
 <h3>Linear Gaussian Models</h3>
 <ol type="1">
 <li>linear Gaussian models are easier to deal with</li>
@@ -1533,9 +1531,7 @@ showDivs(0, 'gp-optimise');
 </td>
 </tr>
 </table>
-</section>
-<section id="section-19" class="slide level3">
-<h3></h3>
+<p>{### Analysis of US Birth Rates ###</p>
 <div style="text-align:center;vertical-align:middle">
 <img class="" src="../slides/diagrams/ml/bialik-fridaythe13th-1.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
@@ -1581,26 +1577,21 @@ showDivs(0, 'gp-optimise');
 </section>
 <section id="brownian-covariance" class="slide level3">
 <h3>Brownian Covariance</h3>
-<p><span class="math display">\[
-\kernelScalar(t, t^\prime) = \alpha \min(t, t^\prime)
-\]</span></p>
-<!--<table><tr><td width="50%">
-<div style="text-align:" class=""><object class="svgplot " align="" data="../slides/diagrams/kern/brownian_covariance.svg" style="vertical-align:middle;"></object></div>
-</td><td width="50%">
-<iframe src="../slides/diagrams/kern/brownian_covariance.html" width="512" height="384" allowtransparency="true" frameborder="0">
-</iframe>
-</td></tr></table>
--->
+<center>
+<span class="math display">\[\kernelScalar(t, t^\prime)=\alpha \min(t, t^\prime)\]</span>
+</center>
 <table>
 <tr>
-<td width="45%">
+<td width="40%">
 <div style="text-align:">
 <object class align data="../slides/diagrams/kern/brownian_covariance.svg" style="vertical-align:middle">
 </object>
 </div>
 </td>
-<td width="45%">
+<td width="40%">
+<div style="text-align:center;vertical-align:middle">
 <img class="negate" src="../slides/diagrams/kern/brownian_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
+</div>
 </td>
 </tr>
 </table>
@@ -1625,7 +1616,6 @@ showDivs(0, 'gp-optimise');
 </td>
 </tr>
 </table>
-<!--include{_gp/includes/gp-optimize.md}-->
 </section>
 <section id="gpss-gaussian-process-summer-school" class="slide level3">
 <h3>GPSS: Gaussian Process Summer School</h3>

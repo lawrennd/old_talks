@@ -1,3 +1,7 @@
+\ifndef{twoDGaussianIndependentSample}
+\define{twoDGaussianIndependentSample}
+\editme
+
 \newslide{Sampling Two Dimensional Variables}
 
 \setupplotcode{import teaching_plots as plot}
@@ -24,3 +28,5 @@ from ipywidgets import IntSlider}
 \endanimation
 }
 \notesfigure{\includesvg{../slides/diagrams/ml/independent_height_weight007.svg}{}}\notes{\caption{Samples from independent Gaussian variables that might represent heights and weights.}}
+
+\endif

@@ -1,8 +1,10 @@
-\newslide{Maximum Likelihood in the Bernoulli}
+\ifndef{bernoulliMaximumLikelihood}
+\define{bernoulliMaximumLikelihood}
+\editme
 
-\notes{### Maximum Likelihood in the Bernoulli Distribution
+\subsection{Maximum Likelihood in the Bernoulli}
 
-Maximum likelihood in the Bernoulli distribution is straightforward. Let's assume we have data, $\dataVector$ which consists of a vector of binary values of length $n$. If we assume each value was sampled independently from the Bernoulli distribution, conditioned on the parameter $\pi$ then our joint probability density has the form}\slides{
+\notes{Maximum likelihood in the Bernoulli distribution is straightforward. Let's assume we have data, $\dataVector$ which consists of a vector of binary values of length $n$. If we assume each value was sampled independently from the Bernoulli distribution, conditioned on the parameter $\pi$ then our joint probability density has the form}\slides{
 * Assume data, $\dataVector$ is binary vector length $\numData$. 
 * Assume each value was sampled independently from the  Bernoulli distribution, given probability $\pi$}
 $$
@@ -47,3 +49,4 @@ and we can derive the gradient with respect to the parameter $\pi$.}
 
 \exercise{Show that the maximum likelihood solution we have found is a *minimum* for our objective.}
 
+\endif

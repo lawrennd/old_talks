@@ -1,3 +1,7 @@
+\ifndef{reluBasis}
+\define{reluBasis}
+\editme
+
 \subsection{Rectified Linear Units}
 
 \setupcode{import numpy as np}
@@ -49,3 +53,4 @@ from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('relu_basis{num_basis:0>3}.svg', 
                             directory='../slides/diagrams/ml', 
 							num_basis=IntSlider(0,0,4,1))}
+\endif

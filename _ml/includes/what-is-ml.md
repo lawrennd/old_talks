@@ -1,3 +1,6 @@
+\ifndef{whatIsMl}
+\define{whatIsMl}
+\editme
 \section{What is Machine Learning?}
 
 \include{_ml/includes/data-plus-model.md}
@@ -22,3 +25,4 @@ The combination of data and model through the prediction function and the object
 A useful reference for state of the art in machine learning is the UK Royal Society Report, [Machine Learning: Power and Promise of Computers that Learn by Example](https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf).
 
 You can also check my blog post on ["What is Machine Learning?"](http://inverseprobability.com/2017/07/17/what-is-machine-learning)}
+\endif

@@ -1,3 +1,7 @@
+\ifndef{radialBasis}
+\define{radialBasis}
+\editme
+
 \subsection{Radial Basis Functions}
 
 \notes{Another type of basis is sometimes known as a 'radial basis' because the effect basis functions are constructed on 'centres' and the effect of each basis function decreases as the radial distance from each centre increases.}
@@ -47,3 +51,4 @@ import pods}
 \displaycode{pods.notebook.display_plots('radial_function{func_num:0>3}.svg', directory='../slides/diagrams/ml', func_num=IntSlider(0,0,2,1))}
 
 
+\endif
