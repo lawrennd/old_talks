@@ -1,3 +1,7 @@
+\ifndef{gptwpointpred}
+\define{gptwopointpred}
+\editme
+
 \setupcode{import numpy as np
 np.random.seed(4949)}
 
@@ -85,4 +89,4 @@ import pods}
   \kernelMatrix= \begin{bmatrix} \kernelMatrix_{\mappingFunctionVector, \mappingFunctionVector} & \kernelMatrix_{*, \mappingFunctionVector}\\ \kernelMatrix_{\mappingFunctionVector, *} & \kernelMatrix_{*, *}\end{bmatrix}
   $$
 
-
+\endif
