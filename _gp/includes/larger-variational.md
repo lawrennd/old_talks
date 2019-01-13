@@ -17,7 +17,7 @@ $$
 \notes{The key innovation from @Titsias:variational09 was to then make a particular choice for $q(\mappingFunctionVector)$. If we set}
 \slides{* Set} $q(\mappingFunctionVector)=p(\mappingFunctionVector|\inducingVector)$,
   $$
-  \log p(\dataVector|\inducingVector) \geq \log \int p(\mappingFunctionVector|\inducingVector) \log p(\dataVector|\mappingFunctionVector)\text{d}\mappingFunctionVector.
+  \log p(\dataVector|\inducingVector) \geq \int p(\mappingFunctionVector|\inducingVector) \log p(\dataVector|\mappingFunctionVector)\text{d}\mappingFunctionVector.
   $$
   $$
   p(\dataVector|\inducingVector) \geq \exp \int p(\mappingFunctionVector|\inducingVector) \log p(\dataVector|\mappingFunctionVector)\text{d}\mappingFunctionVector.
