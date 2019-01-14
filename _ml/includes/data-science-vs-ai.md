@@ -1,5 +1,9 @@
+\ifndef{dataScienceVsAi}
+\define{dataScienceVsAi}
+\editme
+
 \notes{
-### Artificial Intelligence and Data Science
+\subsection{Artificial Intelligence and Data Science}
 
 Machine learning technologies have been the driver of two related, but distinct disciplines. The first is *data science*. Data science is an emerging field that arises from the fact that we now collect so much data by happenstance, rather than by *experimental design*. Classical statistics is the science of drawing conclusions from data, and to do so statistical experiments are carefully designed. In the modern era we collect so much data that there's a desire to draw inferences directly from the data.
 
@@ -12,31 +16,36 @@ Classically artificial intelligence worried more about *logic* and *planning* an
 There are strong overlaps between the fields, the wide availability of data by happenstance makes it easier to collect data for designing AI systems. These relations are coming through wide availability of sensing technologies that are interconnected by celluar networks, WiFi and the internet. This phenomenon is sometimes known as the *Internet of Things*, but this feels like a dangerous misnomer. We must never forget that we are interconnecting people, not things. 
 }
 
-\slides{
-### Machine Learning  {.slide: data-transition="none" }
+\newslide{Machine Learning}
 
+\slides{
 * Driver of two different domains:
     1. *Data Science*: arises from the fact that we now capture data by happenstance.
     2. *Artificial Intelligence*: emulation of human behaviour.
 * Connection: Internet of Things
+}
 
-### Machine Learning  {.slide: data-transition="none" }
+\newslide{Machine Learning}
 
+\slides{
 * Driver of two different domains:
     1. *Data Science*: arises from the fact that we now capture data by happenstance.
     2. *Artificial Intelligence*: emulation of human behaviour.
 * Connection: Internet of ~~Things~~
+}
 
-### Machine Learning  {.slide: data-transition="none" }
+\newslide{Machine Learning}
 
+\slides{
 * Driver of two different domains:
     1. *Data Science*: arises from the fact that we now capture data by happenstance.
     2. *Artificial Intelligence*: emulation of human behaviour.
 * Connection: Internet of People
 }
 
+\newslide{What does Machine Learning do?}
+
 \slides{
-### What does Machine Learning do? 
 
 * ML Automates through Data
     * *Strongly* related to statistics.
@@ -46,3 +55,5 @@ There are strong overlaps between the fields, the wide availability of data by h
 * With Data Science: 
     * *databases*, *data mining*, *statistics*, *visualization*
 }
+
+\endif

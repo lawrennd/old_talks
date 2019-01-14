@@ -1,2 +1,7 @@
-\define{\gpssLogo{width}{class}}{\includesvg{../slides/diagrams/logo/gpss-logo.svg}{\width}{\class}}
+\ifndef{talkLogos}
+\define{talkLogos}
+
+\define{\gpssLogo{width}{class}}{\div{\includesvgclass{../slides/diagrams/logo/gpss-logo.svg}}{\class}{width:\width;text-align:center}}
 \define{\dsaLogo{width}{class}}{\includepng{../slides/diagrams/logo/dsa-logo}{\width}{\class}}
+
+\endif

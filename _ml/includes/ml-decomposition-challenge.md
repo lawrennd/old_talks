@@ -1,3 +1,7 @@
+\ifndef{mlDecompositionChallenge}
+\define{mlDecompositionChallenge}
+\editme
+
 \subsection{Decomposition}
 \slides{
 * ML is not Magical Pixie Dust.
@@ -105,3 +109,4 @@ compensated by downstream corrections.}
 
 \notes{The less human interpretable our systems are, the harder they are to adapt to different circumstances or diagnose when there's a challenge.  The trade-off between interpretability and performance is a constant tension which we should always retain in our minds when performing our system design.}
 
+\endif

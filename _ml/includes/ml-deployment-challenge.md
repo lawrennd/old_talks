@@ -1,3 +1,7 @@
+\ifndef{mlDeploymentChallenge}
+\define{mlDeploymentChallenge}
+\editme
+
 \subsection{Deployment}
 
 \newslide{Premise}
@@ -83,3 +87,4 @@ Importantly a streaming architecture implies the services we build are
 state. This allows for rapid assessment of other services' data.
 }
 
+\endif

@@ -405,10 +405,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <section class="slide level3">
 
 <!--define{draft}-->
+<!-- Front matter -->
 <!-- Enables links to pages-->
-<p><!--% not ipynb--></p>
-<p><!--% slides and not ipynb --></p>
+<p><!--% not ipynb--> <!--% slides and not ipynb --></p>
 <p><!--% not notes--></p>
+<!--Back matter-->
 </section>
 <section id="section" class="slide level3">
 <h3></h3>
@@ -424,6 +425,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section>
 <section id="deep-gaussian-processes" class="slide level3">
 <h3>Deep Gaussian Processes</h3>
+<p><span style="text-align:right"></span></p>
+<p><span style="text-align:right"></span></p>
 </section>
 <section id="approximations" class="slide level3">
 <h3>Approximations</h3>
@@ -460,6 +463,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <center>
 <em>Image credit: Kai Arulkumaran </em>
 </center>
+<p><span style="text-align:right"></span></p>
 </section>
 <section id="low-rank-motivation" class="slide level3">
 <h3>Low Rank Motivation</h3>
@@ -495,6 +499,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </table>
 <p>where <span class="math inline">\(\numInducing\)</span> is a user chosen parameter.</p>
 <p><small><span class="citation" data-cites="Snelson:pseudo05">Snelson and Ghahramani (n.d.)</span>,<span class="citation" data-cites="Quinonero:unifying05">Quiñonero Candela and Rasmussen (2005)</span>,<span class="citation" data-cites="Lawrence:larger07">Lawrence (n.d.)</span>,<span class="citation" data-cites="Titsias:variational09">Titsias (n.d.)</span>,<span class="citation" data-cites="Thang:unifying17">Bui et al. (2017)</span></small></p>
+<p><span style="text-align:right"></span></p>
 </section>
 <section id="variational-compression" class="slide level3">
 <h3>Variational Compression</h3>
@@ -511,6 +516,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Allow for scaling e.g. stochastic variational <span class="citation" data-cites="Hensman:bigdata13">Hensman et al. (n.d.)</span> or parallelization <span class="citation" data-cites="Gal:distributed14">Gal et al. (n.d.)</span>,<span class="citation" data-cites="Dai:gpu14">Dai et al. (2014)</span>, <span class="citation" data-cites="Seeger:auto17">Seeger et al. (2017)</span></li>
 </ul>
 <!--include{_gp/includes/larger-factorize.md}-->
+<p><span style="text-align:right"></span></p>
 </section>
 <section id="nonparametric-gaussian-processes" class="slide level3">
 <h3>Nonparametric Gaussian Processes</h3>
@@ -645,6 +651,7 @@ p(\dataVector^*|\dataVector) = \int p(\dataVector^*|\inducingVector) p(\inducing
 <li><p>but <span class="math inline">\(\inducingVector\)</span> is not a <em>parameter</em></p></li>
 <li><p>Unfortunately computing <span class="math inline">\(p(\dataVector|\inducingVector)\)</span> is intractable</p></li>
 </ul>
+<p><span style="text-align:right"></span></p>
 </section>
 <section id="variational-bound-on-pdatavector-inducingvector" class="slide level3">
 <h3>Variational Bound on <span class="math inline">\(p(\dataVector |\inducingVector)\)</span></h3>
@@ -710,6 +717,7 @@ p(\dataVector^*|\dataVector) = \int p(\dataVector^*|\inducingVector) p(\inducing
 <li>Allow for scaling e.g. stochastic variational <span class="citation" data-cites="Hensman:bigdata13">Hensman et al. (n.d.)</span> or parallelization <span class="citation" data-cites="Gal:distributed14">Gal et al. (n.d.)</span>,<span class="citation" data-cites="Dai:gpu14">Dai et al. (2014)</span>, <span class="citation" data-cites="Seeger:auto17">Seeger et al. (2017)</span></li>
 </ul>
 <!--include{_gp/includes/larger-graph-intro.md}-->
+<p><span style="text-align:right"></span></p>
 </section>
 <section id="full-gaussian-process-fit" class="slide level3">
 <h3>Full Gaussian Process Fit</h3>
@@ -752,6 +760,7 @@ p(\dataVector^*|\dataVector) = \int p(\dataVector^*|\inducingVector) p(\inducing
 <object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-full-gp.svg" style="vertical-align:middle;">
 </object>
 </div>
+<p><span style="text-align:right"></span></p>
 </section>
 <section id="leads-to-other-approximations" class="slide level3">
 <h3>Leads to Other Approximations …</h3>
@@ -849,6 +858,8 @@ Actually index of deprivation is a proxy for this …
 <li><p><em>A Unifying Framework for Gaussian Process Pseudo-Point Approximations using Power Expectation Propagation</em> <span class="citation" data-cites="Thang:unifying17">Bui et al. (2017)</span></p></li>
 <li><p><em>Deep Gaussian Processes and Variational Propagation of Uncertainty</em> <span class="citation" data-cites="Damianou:thesis2015">Damianou (2015)</span></p></li>
 </ul>
+<p><span style="text-align:right"></span></p>
+<p><span style="text-align:right"></span></p>
 </section>
 <section id="section-4" class="slide level3">
 <h3></h3>
@@ -859,6 +870,8 @@ Actually index of deprivation is a proxy for this …
 <section id="structure-of-priors" class="slide level3">
 <h3>Structure of Priors</h3>
 <p>MacKay: NeurIPS Tutorial 1997 “Have we thrown out the baby with the bathwater?” <span class="citation" data-cites="MacKay:gpintroduction98">(Published as MacKay, n.d.)</span></p>
+<p><span style="text-align:right"></span></p>
+<p><span style="text-align:right"></span></p>
 </section>
 <section id="deep-neural-network" class="slide level3">
 <h3>Deep Neural Network</h3>
@@ -884,6 +897,7 @@ Actually index of deprivation is a proxy for this …
     \dataVector &amp;= \mappingVector_4 ^\top\hiddenVector_{3}
 \end{align}
 \]</span></p>
+<p><span style="text-align:right"></span></p>
 </section>
 <section id="overfitting" class="slide level3">
 <h3>Overfitting</h3>
@@ -906,6 +920,7 @@ Actually index of deprivation is a proxy for this …
 <center>
 <em>Pictorial representation of the low rank form of the matrix <span class="math inline">\(\mappingMatrix\)</span> </em>
 </center>
+<p><span style="text-align:right"></span></p>
 </section>
 <section id="deep-neural-network-2" class="slide level3">
 <h3>Deep Neural Network</h3>
@@ -959,6 +974,7 @@ Actually index of deprivation is a proxy for this …
 \]</span></p></li>
 <li><p>Equivalent to prior over parameters, take width of each layer to infinity.</p></li>
 </ul>
+<p><span style="text-align:right"></span></p>
 </section>
 <section id="section-5" class="slide level3">
 <h3></h3>
@@ -991,6 +1007,8 @@ Actually index of deprivation is a proxy for this …
 </object>
 </div>
 </div>
+<p><span style="text-align:right"></span></p>
+<p><span style="text-align:right"></span></p>
 </section>
 <section id="mathematically-2" class="slide level3">
 <h3>Mathematically</h3>
@@ -1084,6 +1102,7 @@ Actually index of deprivation is a proxy for this …
 <object class="svgplot " align="center" data="../slides/diagrams/dimred/gaussian-through-nonlinear.svg" style="vertical-align:middle;">
 </object>
 </div>
+<p><span style="text-align:right"></span></p>
 </section>
 <section id="deep-gaussian-processes-1" class="slide level3">
 <h3>Deep Gaussian Processes</h3>
@@ -1091,6 +1110,7 @@ Actually index of deprivation is a proxy for this …
 <li>Deep architectures allow abstraction of features <span class="citation" data-cites="Bengio:deep09 Hinton:fast06 Salakhutdinov:quantitative08">(Bengio, 2009; Hinton and Osindero, 2006; Salakhutdinov and Murray, n.d.)</span></li>
 <li>We use variational approach to stack GP models.</li>
 </ul>
+<p><span style="text-align:right"></span></p>
 </section>
 <section id="stacked-pca" class="slide level3">
 <h3>Stacked PCA</h3>
@@ -1134,6 +1154,7 @@ showDivs(0, 'stack-pca-sample');
 </object>
 </div>
 </div>
+<p><span style="text-align:right"></span></p>
 </section>
 <section id="stacked-gp" class="slide level3">
 <h3>Stacked GP</h3>
@@ -1189,6 +1210,10 @@ showDivs(0, 'stack-gp-sample');
 <h3></h3>
 <iframe width="1120" height="630" src="https://www.youtube.com/embed/XhIvygQYFFQ?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
+<p><span style="text-align:right"></span></p>
+<p><span style="text-align:right"></span></p>
+<p><span style="text-align:right"></span></p>
+<p><span style="text-align:right"></span></p>
 </section>
 <section id="gpy-a-gaussian-process-framework-in-python" class="slide level3">
 <h3>GPy: A Gaussian Process Framework in Python</h3>
@@ -1218,6 +1243,8 @@ showDivs(0, 'stack-gp-sample');
 <li>Dimensionality reduction.</li>
 <li>Approximations for large data sets.</li>
 </ul>
+<p><span style="text-align:right"></span></p>
+<p><span style="text-align:right"></span></p>
 </section>
 <section id="olympic-marathon-data" class="slide level3">
 <h3>Olympic Marathon Data</h3>
@@ -1248,6 +1275,7 @@ showDivs(0, 'stack-gp-sample');
 </object>
 </div>
 </div>
+<p><span style="text-align:right"></span></p>
 </section>
 <section id="alan-turing" class="slide level3">
 <h3>Alan Turing</h3>
@@ -1337,6 +1365,8 @@ showDivs(0, 'stack-gp-sample');
 <object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg" style="vertical-align:middle;">
 </object>
 </div>
+<p><span style="text-align:right"></span></p>
+<p><span style="text-align:right"></span></p>
 </section>
 <section id="della-gatta-gene-data" class="slide level3">
 <h3>Della Gatta Gene Data</h3>
@@ -1437,6 +1467,7 @@ showDivs(0, 'stack-gp-sample');
 <object class="svgplot " align data="../slides/diagrams/deepgp/della-gatta-gene-deep-gp-pinball.svg" style="vertical-align:middle;">
 </object>
 </div>
+<p><span style="text-align:right"></span></p>
 </section>
 <section id="step-function-data" class="slide level3">
 <h3>Step Function Data</h3>
@@ -1500,6 +1531,9 @@ showDivs(0, 'stack-gp-sample');
 <object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp-pinball.svg" style="vertical-align:middle;">
 </object>
 </div>
+<p><span style="text-align:right"></span></p>
+<p><span style="text-align:right"></span></p>
+<p><span style="text-align:right"></span></p>
 </section>
 <section id="motorcycle-helmet-data" class="slide level3">
 <h3>Motorcycle Helmet Data</h3>
@@ -1549,6 +1583,9 @@ showDivs(0, 'stack-gp-sample');
 <object class="svgplot " align data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-pinball.svg" style="vertical-align:middle;">
 </object>
 </div>
+<p><span style="text-align:right"></span></p>
+<p><span style="text-align:right"></span></p>
+<p><span style="text-align:right"></span></p>
 </section>
 <section id="robot-wireless-ground-truth" class="slide level3">
 <h3>Robot Wireless Ground Truth</h3>
@@ -1595,6 +1632,7 @@ showDivs(0, 'stack-gp-sample');
 <object class="svgplot " align data="../slides/diagrams/deepgp/robot-wireless-latent-space.svg" style="vertical-align:middle;">
 </object>
 </div>
+<p><span style="text-align:right"></span></p>
 </section>
 <section id="motion-capture" class="slide level3">
 <h3>Motion Capture</h3>
@@ -1613,6 +1651,7 @@ showDivs(0, 'stack-gp-sample');
 <section id="section-15" class="slide level3">
 <h3></h3>
 <p><img class="negate" src="../slides/diagrams/deep-gp-high-five2.png" width="100%" height="auto" align="" style="background:none; border:none; box-shadow:none;vertical-align:middle"></p>
+<p><span style="text-align:right"></span></p>
 <p><small><span style="text-align:right">Thanks to: Zhenwen Dai and Neil D. Lawrence</span></small></p>
 </section>
 <section id="section-16" class="slide level3">
@@ -1656,6 +1695,7 @@ showDivs(0, 'stack-gp-sample');
 <object class="svgplot " align data="../slides/diagrams/digit-samples-deep-gp.svg" style="vertical-align:middle;">
 </object>
 </div>
+<p><span style="text-align:right"></span></p>
 </section>
 <section id="deep-health" class="slide level3">
 <h3>Deep Health</h3>
@@ -1697,6 +1737,7 @@ showDivs(0, 'stack-gp-sample');
 <li><em>Learning</em> is the process of changing these parameters to change the shape of the function</li>
 <li>Choice of which class of mathematical functions we use is a vital component of our <em>model</em>.</li>
 </ul>
+<p><span style="text-align:right"></span></p>
 </section>
 <section id="emukit-playground" class="slide level3">
 <h3>Emukit Playground</h3>
@@ -1848,6 +1889,7 @@ showDivs(0, 'stack-gp-sample');
 <iframe src="../slides/diagrams/uq/mountain_car_multi_fidelity.html" width="1024" height="768" allowtransparency="true" frameborder="0">
 </iframe>
 <p>250 observations of high fidelity simulator and 250 of the low fidelity simulator</p>
+<p><span style="text-align:right"></span></p>
 </section>
 <section id="emukit" class="slide level3">
 <h3>Emukit</h3>
@@ -1866,6 +1908,8 @@ showDivs(0, 'stack-gp-sample');
 <li><em>Sensitivity analysis</em>: analyse the influence of inputs on the outputs</li>
 <li><em>Bayesian quadrature</em>: compute integrals of functions that are expensive to evaluate.</li>
 </ul>
+<p><span style="text-align:right"></span></p>
+<p><span style="text-align:right"></span></p>
 </section>
 <section id="mxfusion-modular-probabilistic-programming-on-mxnet" class="slide level3">
 <h3>MXFusion: Modular Probabilistic Programming on MXNet</h3>

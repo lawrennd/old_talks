@@ -1,3 +1,7 @@
+\ifndef{mlDataChallenge}
+\define{mlDataChallenge}
+\editme
+
 \subsection{Data}
 \slides{
 * Hard to overstate its importance.
@@ -97,3 +101,5 @@ put.
 \subsection{Move Beyond Software Engineering to Data Engineering}
 
 \notes{Thirdly, we need to improve our mental model of the separation of data science from applied science. A common trap in our thinking around data is to see data science (and data engineering, data preparation) as a sub-set of the software engineer’s or applied scientist’s skill set. As a result we recruit and deploy the wrong type of resource. Data preparation and question formulation is superficially similar to both because of the need for programming skills, but the day to day problems faced are very different.}
+
+\endif

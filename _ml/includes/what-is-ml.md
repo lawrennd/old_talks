@@ -1,6 +1,7 @@
 \ifndef{whatIsMl}
 \define{whatIsMl}
 \editme
+
 \section{What is Machine Learning?}
 
 \include{_ml/includes/data-plus-model.md}

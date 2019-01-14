@@ -33,7 +33,7 @@ transition: None
 
 \subsection{Amazon: Bits and Atoms}
 
-\include{_ml/includes/ml-and-supply-chain.md}
+\include{_supply-chain/includes/ml-and-supply-chain.md}
 
 include{../_ai/includes/embodiment-factors.md}
 include{_data-science/includes/evolved-relationship.md}
@@ -89,7 +89,7 @@ include{_data-science/includes/data-readiness-levels.md}
 \include{_ai/includes/ai-vs-data-science-2.md}
 -->
 
-\include{_ml/includes/ml-and-supply-chain.md}
+\include{_supply-chain/includes/ml-and-supply-chain.md}
 \include{_ml/includes/or-control-econometrics-statistics-ml.md}
 \include{_ml/includes/general-ml-challenges.md}
 \include{_ml/includes/ml-outlook.md}

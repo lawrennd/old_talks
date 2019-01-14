@@ -1,3 +1,7 @@
+\ifndef{mlCombiningDataAndSystemsDesignChallenge}
+\define{mlCombiningDataAndSystemsDesignChallenge}
+\editme
+
 \notes{\subsection{Combining Data and Systems Design}}
 
 \newslide{Data Science as Debugging}
@@ -56,3 +60,5 @@ shift of focus from our inputs to our outputs. We should provide data
 streams that are consumable by many teams without purification.}}
 
 \recommendation{We need to share best practice around data deployment across our teams. We should make best use of our processes where applicable, but we need to develop them to become *data first* organizations. Data needs to be cleaned at *output* not at *input*.}
+
+\endif

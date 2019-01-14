@@ -1,4 +1,8 @@
-### What does Machine Learning do?
+\ifndef{whatDoesMachineLearningDo}
+\define{whatDoesMachineLearningDo}
+\editme
+
+\subsection{What does Machine Learning do?}
 \slides{
 * Automation scales by codifying processes and automating them.
 * Need:
@@ -75,3 +79,5 @@ $$\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix) = \sum_{i=1}^\nu
 * Objective function, $\errorFunction(\cdot)$
 }
 \notes{If a linear prediction function is combined with the least squares objective function then that gives us a classical *linear regression*, another classical statistical model. Statistics often focusses on linear models because it makes interpretation of the model easier. Interpretation is key in statistics because the aim is normally to validate questions by analysis of data. Machine learning has typically focussed more on the prediction function itself and worried less about the interpretation of parameters, which are normally denoted by $\mathbf{w}$ instead of $\boldsymbol{\beta}$. As a result *non-linear* functions are explored more often as they tend to improve quality of predictions but at the expense of interpretability.}
+
+\endif
