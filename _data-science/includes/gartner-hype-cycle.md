@@ -1,4 +1,4 @@
-\section{The Gartner Hype Cycle}
+\subsection{The Gartner Hype Cycle}
 
 \newslide{Gartner Hype Cycle}
 
