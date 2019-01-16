@@ -1,4 +1,4 @@
-\section{Natural and Artificial Intelligence: Embodiment Factors}
+\subsection{Natural and Artificial Intelligence: Embodiment Factors}
 
 \newslide{"Embodiment Factors"}
 
