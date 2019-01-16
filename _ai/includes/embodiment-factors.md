@@ -1,5 +1,3 @@
-\subsection{Natural and Artificial Intelligence: Embodiment Factors}
-
 \include{_ai/includes/embodiment-factors-short.md}
 
 \newslide{}
