@@ -1,0 +1,13 @@
+\ifndef{talkMacroSlides}
+\define{talkMacroSlides}
+
+\define{\cyanColor}{red}
+\define{\magentaColor}{green}
+\define{\yellowColor}{blue}
+\define{\redColor}{cyan}
+\define{\greenColor}{magenta}
+\define{\blueColor}{yellow}
+\define{\blackColor}{white}
+\define{\whiteColor}{black}
+
+\endif

@@ -1,5 +1,11 @@
+\ifndef{orControlEconometricsStatisticsMl}
+\define{orControlEconometricsStatisticsMl}
+\editme
+
 \notes{\subsection{Operations Research, Control, Econometrics, Statistics and Machine Learning}}
+
 \newslide{The Tribal Mentality}
+
 \slides{
 * $\text{data} + \text{model}$ is *not* new.
     * Dates back to Newton, Laplace, Gauss 
@@ -11,6 +17,7 @@
 	* Machine learning
 	* Data science
 }
+\notes{$\text{data} + \text{model}$ is not new, it dates back to Laplace and Gauss. Gauss fitted the orbit of Ceres using Keplers laws of planetary motion to generate his basis functions, and Laplace's insights on the error function and uncertainty [@Stigler:table99]. Different fields such as Operations Research, Control, Econometrics, Statistics, Machine Learning and now Data Science and AI all rely on $\text{data} + \text{model}$. Under a Popperian view of science, and equating experiment to data, one could argue that all science has $\text{data} + \text{model}$ underpinning it.}
 
 \newslide{The Tribal Mentality}
 \slides{
@@ -20,7 +27,7 @@
 		* Driven by different motivations
 		* Arrive at different solutions
 }
-\notes{Different academic fields are born in different eras, driven by different motivations and arrive at different solutions.}
+\notes{Different academic fields are born in different eras, driven by different motivations and arrive at different solutions. For example, both Operations Research and Control emerged from the Second World War. Operations Research, the science of decision making, driven by the need for improved logistics and supply chain. Control emerged from cybernetics, a field that was driven in the by researchers who had been involved in radar and decryption [@Wiener:cybernetics48;@Husband:mechanicalmind08]. The UK artificial intelligence community had similar origins [@Copeland:colossus06].}
 
 \newslide{Tribalism Can be Good}
 \slides{
@@ -29,7 +36,7 @@
 * Ease of commiunication
 * Rapid deployment of robust solutions 
 }
-\notes{The separation between these fields can almost become tribal, and from one perspective this can be very helpful. Each tribe can agree on a common language, a common set of goals and a shared understanding of the approach they’ve chose for those goals. This ensures that best practice can be developed and shared and as a result quality standards rise.}
+\notes{The separation between these fields has almost become tribal, and from one perspective this can be very helpful. Each tribe can agree on a common language, a common set of goals and a shared understanding of the approach they’ve chose for those goals. This ensures that best practice can be developed and shared and as a result quality standards rise.}
 
 \newslide{Professional Tribes}
 \slides{
@@ -70,6 +77,8 @@ $$\text{data} + \text{model}$$
 
 \notes{For our biggest challenges, focusing on the differences between these fields is unhelpful, we should consider their strengths and how they overlap. Fundamentally all these fields are focused on taking the right action given the information available to us. They need to work in *synergy* for us to make progress.}
 
+\notes{While there is some discomfort in talking across field boundaries, it is critical to disconforming our current beliefs and generating the new techniques we need to address the challenges before us.}
+
 \recommendation{We should be aware of the limitations of a single tribal view of any of our problem sets. Where our modelling is dominated by one perspective (e.g. economics, OR, control, ML) we should ensure cross fertilization of ideas occurs through scientific review and team rotation mechanisms that embed our scientists (for a short period) in different teams across our organizations.}
 
 \newslide{Discomfort and Disconformation}
@@ -78,3 +87,6 @@ $$\text{data} + \text{model}$$
 * It helps us *disconfirm our beliefs*.
 * It's not comfortable, but it's vital.
 }
+
+
+\endif

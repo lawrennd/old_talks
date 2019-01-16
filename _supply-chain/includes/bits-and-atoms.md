@@ -36,7 +36,7 @@ The High Peak Railway was opened in 1832, it is now converted to the High Peak T
 
 * Recent advances in the world have focussed on *information infrastructure*.
 
-* UK developed with roads, rails and 
+* UK developed with roads, rails and canals
 
 \newslide{Bits and Atoms: Information Meets Goods}
 

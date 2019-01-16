@@ -35,7 +35,7 @@ transition: None
 \include{_ai/includes/ai-vs-data-science-2.md}
 
 \subsection{Amazon: Bits and Atoms}
-
+<!--
 include{../_ai/includes/embodiment-factors.md}
 include{_data-science/includes/evolved-relationship.md}
 include{_ml/includes/what-does-machine-learning-do.md}

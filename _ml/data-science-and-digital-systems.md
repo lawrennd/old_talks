@@ -28,16 +28,14 @@ transition: None
 \include{_data-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
 
 \include{_ai/includes/centrifugal-governor.md}
+
 \include{_ml/includes/what-is-ml-2.md}
 \include{_ai/includes/ai-vs-data-science-2.md}
 
-\subsection{Amazon: Bits and Atoms}
 
-\include{_supply-chain/includes/ml-and-supply-chain.md}
-
-include{../_ai/includes/embodiment-factors.md}
-include{_data-science/includes/evolved-relationship.md}
-include{_ml/includes/what-does-machine-learning-do.md}
+\include{../_ai/includes/embodiment-factors.md}
+\include{_data-science/includes/evolved-relationship.md}
+\include{_ml/includes/what-does-machine-learning-do.md}
 
 \newslide{Deep Learning}
 
@@ -47,7 +45,7 @@ include{_ml/includes/what-does-machine-learning-do.md}
 
 * Example: face recognition
 
-\include{_ml/includes/deep-learning-overview.md}-->
+\include{_ml/includes/deep-learning-overview.md}
 \include{_data-science/includes/a-time-for-professionalisation.md}
 
 <!--
@@ -84,10 +82,8 @@ include{_data-science/includes/data-readiness-levels.md}
 * Major new challenge for systems designers.
 * Internet of Intelligence but currently:
 	* AI systems are *fragile*
-
-\include{_ml/includes/what-is-ml-2.md}
-\include{_ai/includes/ai-vs-data-science-2.md}
 -->
+\subsection{Amazon: Bits and Atoms}
 
 \include{_supply-chain/includes/ml-and-supply-chain.md}
 \include{_ml/includes/or-control-econometrics-statistics-ml.md}

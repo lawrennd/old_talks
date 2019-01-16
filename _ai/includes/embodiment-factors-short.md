@@ -1,3 +1,7 @@
+\ifndef{embodimentFactorsShort}
+\define{embodimentFactorsShort}
+\editme
+
 \section{Natural and Artificial Intelligence: Embodiment Factors}
 
 \newslide{"Embodiment Factors"}
@@ -24,7 +28,7 @@
  </tr>
 </table>
 
-\slides{See ["Living Together: Mind and Machine Intelligence"](https://arxiv.org/abs/1705.07996)}
+\slides{See ["Living Together: Mind and Machine Intelligence" @Lawrence:embodiment17](https://arxiv.org/abs/1705.07996)}
 
 \notes{There is a fundamental limit placed on our intelligence based on our ability to communicate. Claude Shannon founded the field of information theory. The clever part of this theory is it allows us to separate our measurement of information from what the information pertains to[^knowledge-representation].
 
@@ -38,3 +42,5 @@ When it comes to compute though, our best estimates indicate our computers are s
 
 It's difficult to get similar estimates for humans, but by some estimates the amount of compute we would require to *simulate* a human brain is equivalent to that in the UK's fastest computer [@Ananthanarayanan-cat09], the MET office machine in Exeter, which in 2018 ranks as the 11th fastest computer in the world. That machine simulates the world's weather each morning, and then simulates the world's climate in the afternoon. It is a 16 petaflop machine, processing around 1,000 *trillion* bits per second.}
 
+
+\endif

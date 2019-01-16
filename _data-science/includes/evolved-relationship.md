@@ -1,3 +1,7 @@
+\ifndef{evolvedRelationship}
+\define{evolvedRelationship}
+\editme
+
 \section{Evolved Relationship with Information}
 
 \notes{The high bandwidth of computers has resulted in a close relationship between the computer and data. Large amounts of information can flow between the two. The degree to which the computer is mediating our relationship with data means that we should consider it an intermediary. 
@@ -16,9 +20,7 @@ For further thoughts see [this Guardian article](https://www.theguardian.com/med
 
 \newslide{Evolved Relationship}
 
-
-
-\define{\divoptions}{maxwidth:100vw; max-height:100vh}
+\define{\divoptions}{max-width:100vw; max-height:100vh}
 \define{\svgstyle}{height:50%}
 \define{\stubname}{new-flow-of-information}
 
@@ -30,3 +32,5 @@ For further thoughts see [this Guardian article](https://www.theguardian.com/med
 
 \notesfigure{\includesvg{../slides/diagrams/data-science/\concat{\stubname}{002.svg}}}
 \notes{\caption{New direction of information flow, information is reaching us mediated by the computer}}
+
+\endif

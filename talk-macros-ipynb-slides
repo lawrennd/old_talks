@@ -1,0 +1,47 @@
+\ifndef{talkMacrosIpynbSlides}
+\define{talkMacrosIpynbSlides}
+
+
+\define{\slidenotes{slidetext}{notetext}}{\slidetext}
+
+\define{\setupplotcode{block}}{```{.python}
+\block
+```}
+\define{\loadplotcode{object}{filename}}{```{.python}
+from \filename import \object
+```}
+\define{\plotcode{block}}{```{.python}
+\block
+```}
+\define{\setupdisplaycode{block}}{```{.python}
+\block
+```}
+\define{\displaycode{block}}{```{.python}
+\block
+```}
+\define{\setupcode{block}}{}
+\define{\loadcode{object}{filename}}{}
+\define{\setuphelpercode{block}}{}
+\define{\helpercode{block}}{}
+\define{\code{block}}{}
+\define{\matlabcode{block}}{}
+
+\define{\notes{text}}{}
+\define{\recommendation{text}}{}
+\define{\writeassignment{text}{question}{marks}}{}
+\define{\codeassignment{text}{question}{marks}}{}
+\define{\exercise{text}{answerstub}{codestub}}{### Exercise
+
+\text
+
+}
+\define{\slides{text}}{\text}
+\define{\slidesincremental{text}}{::: incremental
+
+\text
+
+:::}
+\define{\newslide{text}}{### \text
+}
+
+\endif

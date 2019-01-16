@@ -1,0 +1,63 @@
+\ifndef{talkMacrosBack}
+\define{talkMacrosBack}
+
+<!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
+
+\define{\div{contents}{class}{style}}{<div class="\class" style="\style">\contents</div>}
+\define{\centerdiv{contents}{class}{style}}{<div class="centered \class" style="\style">\contents</div>}
+
+\define{\fragmentdiv{contents}{number}{style}}{<div class="fragment" data-fragment-index="\number" style="\style">\contents</div>}
+
+
+\define{\includejpg{filename}{width}{class}}{\centerdiv{\includeimg{\concat{\filename}{.jpg}}{\width}{\class}{center}}{centered}{}}
+
+
+\define{\includecovariance{shortname}}{\aligncenter{$$\formula$$}
+\columns{\includesvgclass{../slides/diagrams/kern/\concat{\shortname}{_covariance.svg}}}{\includegif{../slides/diagrams/kern/\concat{\shortname}{_covariance}}{100%}{negate}{center}}{40%}{40%}}
+
+
+\define{\linebreak}{<br>}
+
+
+
+\define{\includepng{filename}{width}{class}}{\centerdiv{\includeimg{\concat{\filename}{.png}}{\width}{\class}{center}}{}{}}
+
+\define{\includegif{filename}{width}{class}}{\centerdiv{\includeimg{\concat{\filename}{.gif}}{\width}{\class}{center}}{}{}}
+
+\define{\credit{text}}{\smalltext{\alignright{Thanks to: \text}}}
+
+\define{\comment}{}
+
+\define{\startanimation{group}{start}{finish}{name}}{<script>
+showDivs(\start, '\group');
+</script>
+\smalltext{\name} <input id="range-\group" type="range" min="\start" max="\finish" value="\start" onchange="setDivs('\group')" oninput="setDivs('\group')">
+<button onclick="plusDivs(-1, '\group')">❮</button>
+<button onclick="plusDivs(1, '\group')">❯</button>
+}
+
+\define{\newframe{contents}{name}{style}}{<div style="text-align:center;\style" class="\name">\contents</div>}
+\define{\endanimation}{}
+
+\define{\startslides{group}{start}{finish}}{\startanimation{\group}{\start}{\finish}}
+
+
+\define{\colorcyan{block}}{<font color="\cyanColor">\block</font>}
+\define{\colormagenta{block}}{<font color="\magentaColor">\block</font>}
+\define{\coloryellow{block}}{<font color="\yellowColor">\block</font>}
+\define{\colorred{block}}{<font color="cyan">\redColor</font>}
+\define{\colorgreen{block}}{<font color="magenta">\greenColor</font>}
+\define{\colorblue{block}}{<font color="yellow">\blueColor</font>}
+
+
+\ifdef{draft}
+\define{\editme}{\href{file://\talksDir\file}{\file}}
+
+}
+\else
+\define{\editme}{\alignright{\small{\href{\githubBaseUrl\file}{[edit]}}}}
+
+}
+\endif
+
+\endif

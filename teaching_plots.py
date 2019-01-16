@@ -2906,3 +2906,24 @@ def multiple_optima(ax=None, gene_number=937, resolution=80, model_restarts=10, 
 #             new = np.dot(rotation_matrix,np.column_stack((xd[:].T, yd[:].T)))
 #             handle.set('xdata', new[0, :])
 #             handle.set('ydata', new[1, :])
+
+def google_trends(terms, initials, diagrams='./diagrams'):
+    """Plot google trends data for a number of different terms."""
+    data = pods.datasets.google_trends(terms)
+    data['data frame'].set_index('Date', inplace=True)
+    fig, ax = plt.subplots(figsize=wide_figsize)
+    data['data frame'].plot(ax=ax)
+    _ = ax.set_xticklabels(ax.xaxis.get_majorticklabels(), rotation=45)
+    mlai.write_figure(os.path.join(diagrams,
+                                   initials+'-google-trends.svg'),
+                      transparent=True)
+    handles = ax.get_lines()
+    for handle in handles:
+        handle.set_visible(False)
+    for i, handle in enumerate(handles):
+        handle.set_visible(True)
+        mlai.write_figure(os.path.join(diagrams,
+                                       '{initials}-google-trends{sample:0>3}.svg'.format(initials=initials,sample=i),
+                      transparent=True)
+
+

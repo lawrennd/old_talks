@@ -51,3 +51,8 @@
     -webkit-filter:invert(1);
     filter:invert;
 }
+
+.centered {
+    text-align:center;
+    vertical-align:middle
+}

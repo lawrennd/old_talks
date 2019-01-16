@@ -1,0 +1,23 @@
+\ifndef{talkMacrosNotesTex}
+\define{talkMacrosNotesTex}
+
+\define{\figure{text}{options}}{\begin{figure}[\options]
+\text
+\end{figure}}
+
+\define{\aligncenter{block}}{\centerline{\block}}
+\define{\alignright{text}}{{\raggedleft{\text}}}
+\define{\alignleft{text}}{{\raggedright{\text}}}
+\define{\largetext{block}}{{\large \block}}
+\define{\smalltext{block}}{{\footnotesize \block}}
+
+\define{\includempfour{filename}{width}{height}}{\media{\filename}}
+\define{\includeimg{filename}{width}{class}{align}}{\includegraphics[width=\width]{\filename}}}
+
+\define{\includeimgclip{filename}{top}{right}{bottom}{left}{width}{class}{align}}{\includegraphics[width=\width]{\filename}}}
+\define{\includehtml{filename}{width}{height}}{}
+<!--define{\includesvg{filename}{align}{class}{style}}{\includesvg{\filename}}
+define{\includesvgclass{filename}{class}{align}}{\includesvg{\filename}}}-->
+
+
+\endif

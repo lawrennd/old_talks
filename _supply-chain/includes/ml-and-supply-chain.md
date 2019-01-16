@@ -1,3 +1,7 @@
+\ifndef{mlAndSupplyChain}
+\define{mlAndSupplyChain}
+\editme
+
 \subsection{Machine Learning in Supply Chain}
 \slides{
 * *Supply chain*: Large Automated Decision Making Network
@@ -14,3 +18,4 @@
 
 \notes{This is challenging, because as we introduce more mechanism to the models we use, it becomes harder to develop efficient algorithms to match those models to data.}
 
+\endif

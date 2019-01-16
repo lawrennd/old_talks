@@ -1,0 +1,96 @@
+\ifndef{talkMacrosNotes}
+\define{talkMacrosNotes}
+
+\define{\includegooglebook{id}{page}}{[![](../slides/diagrams/books/\id-\page.png)](https://play.google.com/books/reader?id=\id&pg=\page)}
+\define{\includeyoutube{id}{width}{height}{time}}{[![](https://img.youtube.com/vi/\id/0.jpg)](https://www.youtube.com/watch?v=\id&t=\time)}
+\define{\slidenotes{slidetext}{notetext}}{\notetext}
+
+
+\define{\slides{text}}{}
+\define{\slidesincremental{text}}{}
+\define{\newslide{text}}{}
+\define{\fragment{text}{type}}{\text}
+\define{\fragmentindex{text}{type}{index}}{\text}
+\define{\speakernotes{text}}{}
+\define{\notes{text}}{\text}
+\define{\recommendation{text}}{**Recommendation**: \text}
+\define{\writeassignment{text}{question}{marks}{answerstub}}{### Question \question
+
+\text
+
+*\marks marks*
+
+### Write your answer to Question \question here
+
+\answerstub
+
+}
+\define{\codeassignment{text}{question}{marks}{answerstub}}{### Question \question
+
+\text
+
+*\marks marks*
+
+```{.python}
+# Write code for your answer to Question \question in this box
+# provide the answers so that the code runs correctly otherwise you will loose marks!
+
+\answerstub
+
+```
+}
+
+\define{\exercise{text}{answerstub}{codestub}}{### Exercise
+
+\text
+
+### Write your answer to Exercise here
+
+\answerstub
+
+```{.python}
+# Use this box for any code you need for the exercise
+
+\codestub
+
+```
+}
+
+\define{\section{text}}{## \text}
+\define{\subsection{text}}{### \text}
+
+\define{\code{block}}{```{.python}
+\block
+```}
+\define{\helpercode{block}}{```{.python}
+\block
+```}
+\define{\setupdisplaycode{block}}{}
+\define{\displaycode{block}}{}
+\define{\plotcode{block}}{}
+\define{\setupplotcode{block}}{}
+\define{\loadplotcode{object}{filename}}{}
+\define{\setuphelpercode{block}}{}
+\define{\matlabcode{block}}{```{.matlab}
+\block
+```}
+\define{\setupcode{block}}{```{.python}
+\block
+```}
+
+\define{\loadcode{object}{filename}}{```{.python}
+from \filename import \object
+```}
+\define{\notesfigure{block}}{\block}
+\define{\slidesmall{block}}{\block}
+\define{\coloryellow{block}}{\block}
+\define{\colorcyan{block}}{\block}
+\define{\colormagenta{block}}{\block}
+\define{\colorgreen{block}}{\block}
+\define{\colorred{block}}{\block}
+\define{\colorblue{block}}{\block}
+
+\define{\columns{one}{two}{width1}{width2}}{<table><tr><td width="\width1">\one</td><td width="\width2">\two</td></tr></table>}
+
+
+\endif

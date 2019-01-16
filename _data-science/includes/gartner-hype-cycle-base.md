@@ -1,42 +1,36 @@
-\setupplotcode{import matplotlib.pyplot as plt
-import pods
-import mlai
-import teaching_plots as plot}
+\ifndef{gartnerHypeCycleBase}
+\define{gartnerHypeCycleBase}
+\editme
 
-\plotcode{# calling without arguments uses the default query terms
-data = pods.datasets.google_trends([\terms]) 
-data['data frame'].set_index('Date', inplace=True)
-}
-
-
-\plotcode{fig, ax = plt.subplots(figsize=plot.wide_figsize)
-data['data frame'].plot(ax=ax)
-_ = ax.set_xticklabels(ax.xaxis.get_majorticklabels(), rotation=45)
-handles = ax.get_lines()
-for handle in handles:
-    handle.set_visible(False)
-for i, handle in enumerate(handles):
-    handle.set_visible(True)
-    mlai.write_figure('../slides/diagrams/data-science/\initials-google-trends{sample:0>3}.svg'.format(sample=i))
-}
-
+\setupplotcode{import teaching_plots as plot}
+\plotcode{plot.google_trends(terms=[\terms], 
+                  initials='\initials', 
+				  diagrams='../slides/diagrams/data-science')}
+				  
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('\initials-google-trends{sample:0>3}.svg', 
-                            '../slides/diagrams/data-science/', sample=IntSlider(1, 1, 4, 1))}
+                            '../slides/diagrams/data-science/', sample=IntSlider(0, 1, 4, 1))}
 
 \newslide{Gartner Hype Cycle}
 
+\define{\divstyle}{max-width:100vw; max-height:100vh}
 \slides{
 \startanimation{\initials-google-trends}{0}{4}
-\newframe{\includesvg{../slides/diagrams/data-science/\initials-google-trends000.svg}}{\initials-google-trends}
-\newframe{\includesvg{../slides/diagrams/data-science/\initials-google-trends001.svg}}{\initials-google-trends}
-\newframe{\includesvg{../slides/diagrams/data-science/\initials-google-trends002.svg}}{\initials-google-trends}
-\newframe{\includesvg{../slides/diagrams/data-science/\initials-google-trends003.svg}}{\initials-google-trends}
-\newframe{\includesvg{../slides/diagrams/data-science/\initials-google-trends004.svg}}{\initials-google-trends}
+\newframe{\includesvg{../slides/diagrams/data-science/\initials-google-trends000.svg}}{\initials-google-trends}{\divstyle}
+\newframe{\includesvg{../slides/diagrams/data-science/\initials-google-trends001.svg}}{\initials-google-trends}{\divstyle}
+\newframe{\includesvg{../slides/diagrams/data-science/\initials-google-trends002.svg}}{\initials-google-trends}{\divstyle}
+\newframe{\includesvg{../slides/diagrams/data-science/\initials-google-trends003.svg}}{\initials-google-trends}{\divstyle}
+\newframe{\includesvg{../slides/diagrams/data-science/\initials-google-trends004.svg}}{\initials-google-trends}{\divstyle}
+\newframe{\includesvg{../slides/diagrams/data-science/\initials-google-trends.svg}}{\initials-google-trends}{\divstyle}
 \endanimation
 }
-\notesfigure{\includesvg{../slides/diagrams/data-science/\initials-google-trends004.svg}{}}
+
+\figure{
+\notesfigure{\includesvg{../slides/diagrams/data-science/\initials-google-trends.svg}{}}
 \notes{\caption{Google trends for different technological terms on the hype cycle.}}
+}
 
 \notes{Google trends gives us insight into how far along various technological terms are on the hype cycle.}
+
+\endif

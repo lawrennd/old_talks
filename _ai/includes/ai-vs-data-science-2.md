@@ -1,3 +1,8 @@
+\ifndef{aiVsDataScience2}
+\define{aiVsDataScience2}
+
+\editme
+
 \subsection{Artificial Intelligence and Data Science}
 \slides{
 * AI aims to equip computers with human capabilities
@@ -38,3 +43,5 @@
 \notes{The field of data science is related to AI, but philosophically different. It arises because we are increasingly creating large amounts of data through *happenstance* rather than active collection. In the modern era data is laid down by almost all our activities. The objective of data science is to extract insights from this data.}
 
 \notes{Classically, in the field of statistics, data analysis proceeds by assuming that the question (or scientific hypothesis) comes before the data is created. E.g., if I want to determine the effectiveness of a particular drug I perform a *design* for my data collection. I use foundational approaches such as randomization to account for confounders. This made a lot of sense in an era where data had to be actively collected. The reduction in cost of data collection and storage now means that many data sets are available which weren’t collected with a particular question in mind. This is a challenge because bias in the way data was acquired can corrupt the insights we derive. We can perform randomized control trials (or A/B tests) to verify our conclusions, but the opportunity is to use data science techniques to better guide our question selection or even answer a question without the expense of a full randomized control trial (referred to as A/B testing in modern internet parlance).}
+
+\endif
