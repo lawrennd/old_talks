@@ -2,10 +2,11 @@
 \define{embodimentFactorsShort}
 \editme
 
-\section{Natural and Artificial Intelligence: Embodiment Factors}
+\notes{\subsection{Natural and Artificial Intelligence: Embodiment Factors}}
 
 \newslide{"Embodiment Factors"}
 
+\table{
 <table>
  <tr>
   <td></td>
@@ -27,7 +28,7 @@
   <td align="center">$$10^{14}$$</td>
  </tr>
 </table>
-
+}
 \slides{See ["Living Together: Mind and Machine Intelligence" @Lawrence:embodiment17](https://arxiv.org/abs/1705.07996)}
 
 \notes{There is a fundamental limit placed on our intelligence based on our ability to communicate. Claude Shannon founded the field of information theory. The clever part of this theory is it allows us to separate our measurement of information from what the information pertains to[^knowledge-representation].

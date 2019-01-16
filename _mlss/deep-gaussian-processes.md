@@ -8,6 +8,7 @@ abstract: >
   We illustrate the models on simple regression tasks to give a sense of how uncertainty propagates through the model. We end will demonstrations on unsupervised learning of digits and motion capture data.
 ipynb: 2019-01-11-deep-gaussian-processes.ipynb
 reveal: 2019-01-11-deep-gaussian-processes.slides.html
+youtube: b635kuSqLww
 author:
 - family: Lawrence
   given: Neil D.

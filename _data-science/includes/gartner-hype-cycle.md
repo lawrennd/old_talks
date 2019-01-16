@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 \ifndef{gartnerHypeCycle}
 \define{gartnerHypeCycle}
 \editme
 
 \section{The Gartner Hype Cycle}
+=======
+\subsection{The Gartner Hype Cycle}
+>>>>>>> c4e0c99575d504b14ee0f0d0830875201409affc
 
 \newslide{Gartner Hype Cycle}
 
