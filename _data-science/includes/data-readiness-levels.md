@@ -1,15 +1,17 @@
-\section{Data Readiness Levels}
+\ifndef{dataReadinessLevels}
+\define{dataReadinessLevels}
+\editme
 
 \newslide{Data Readiness Levels}
 \slides{
-[\includeimg{../slides/diagrams/data-science/data-readiness-levels.png}](https://arxiv.org/pdf/1705.02245.pdf)
+[\includepng{../slides/diagrams/data-science/data-readiness-levels}](https://arxiv.org/pdf/1705.02245.pdf)
 
 [Data Readiness Levels](http://inverseprobability.com/2017/01/12/data-readiness-levels) [@Lawrence:drl17]
 }
 
 \notes{[Data Readiness Levels](http://inverseprobability.com/2017/01/12/data-readiness-levels) [@Lawrence:drl17] are an attempt to develop a language around data quality that can bridge the gap between technical solutions and decision makers such as managers and project planners. The are inspired by Technology Readiness Levels which attempt to quantify the readiness of technologies for deployment.}
 
-\newslide{Three Grades of Data Readiness:}
+\newslide{Three Grades of Data Readiness}
 
 \notes{Data-readiness describes, at its coarsest level,  three separate stages of data graduation.}
 
@@ -117,3 +119,4 @@ The processes involved in Grade C and B are often badly taught in courses on dat
 
 These stages of data science are also ridden with ambiguity. In the long term they could do with more formalization, and automation, but best practice needs to be understood by a wider community before that can happen.}
 
+\endif

@@ -1,4 +1,10 @@
-\notes{Anecdotally, talking to data modelling scientists. Most say they spend
+\ifndef{theDataCrisis}
+\define{theDataCrisis}
+\editme 
+
+\notes{\subsection{The Data Crisis}
+
+Anecdotally, talking to data modelling scientists. Most say they spend
 80% of their time acquiring and cleaning data. This is precipitating
 what I refer to as the “data crisis”. This is an analogy with software.
 The “software crisis” was the phenomenon of inability to deliver
@@ -34,7 +40,7 @@ associated with it as the "[Software
 Crisis](https://en.wikipedia.org/wiki/Software_crisis)". Edsger Dijkstra
 referred to the crisis in his 1972 Turing Award winner's address.}
 
-\subsection{The Data Crisis}
+\newslide{The Data Crisis}
 
 \slidesmall{
 
@@ -65,3 +71,5 @@ also require better management of the data science pipeline so that data
 about data science (meta-data science) can be correctly assimilated and
 processed. The Alan Turing institute has a program focussed on this
 area, [AI for Data Analytics](https://www.turing.ac.uk/research_projects/artificial-intelligence-data-analytics/).}
+
+\endif
