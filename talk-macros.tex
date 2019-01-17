@@ -1,5 +1,4 @@
 <!-- Front matter -->
-
 \include{talk-macros-front}
 
 \ifdef{html}
@@ -14,6 +13,21 @@
 \include{talk-macros-tex}
 \endif
 
+\ifdef{slides}
+\include{talk-macros-slides}
+\endif
+
+\ifdef{notes}
+\include{talk-macros-notes}
+\endif
+
+\ifdef{notes}
+\ifdef{tex}
+\include{talk-macros-notes-tex}
+\endif
+\endif
+
+
 \ifdef{ipynb} <!--ipynb-->
 \include{talk-macros-ipynb-front}
 \ifdef{slides} <!-- ipynb and slides-->
@@ -24,19 +38,13 @@
 \else <!--% not ipynb-->
 \if{slides} <!--% slides and not ipynb -->
 \include{talk-macros-slides}
+\ifdef{tex}
+\include{talk-macros-slides-tex}
+\else
+\include{talk-macros-slides-html}
+\endif
 \endif
 
-\ifdef{notes}
-\include{talk-macros-notes}
-\ifdef{tex}
-\include{talk-macros-notes-tex}
-\else
-\include{talk-macros-notes-ipynb}
-\endif
-\else <!--% not notes-->
-\include{talk-macros-not-notes}
-\endif
-\endif
 
 <!--Back matter-->
 \include{talk-macros-back}

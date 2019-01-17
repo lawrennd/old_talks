@@ -14,5 +14,14 @@
 \define{\colorgreen{block}}{<font color="\greenColor">\block</font>}
 \define{\colorblue{block}}{<font color="\blueColor">\block</font>}
 
+\define{\caption{block}}{<center>*\block *</center>}
+\define{\aligncenter{block}}{<center>\block</center>}
+\define{\alignright{block}}{<span style="text-align:right">\block</span>}
+\define{\alignleft{block}}{<span style="text-align:left">\block</span>}
+\define{\largetext{block}}{<large>\block</large>}
+\define{\smalltext{block}}{<small>\block</small>}
+
+\define{\columns{one}{two}{width1}{width2}}{<table><tr><td width="\width1">\one</td><td width="\width2">\two</td></tr></table>}
+
 
 \endif

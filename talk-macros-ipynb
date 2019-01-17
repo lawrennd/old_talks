@@ -1,7 +1,5 @@
 \ifndef{talkMacrosIpynb}
 \define{talkMacrosIpynb}
 
-\define{\div{contents}{class}{style}}{<div class="\class" style="\style">\contents</div>}
-\define{\centerdiv{contents}{class}{style}}{<div class="centered \class" style="\style">\contents</div>}
 
 \endif
