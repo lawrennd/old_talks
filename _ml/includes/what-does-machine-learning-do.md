@@ -53,12 +53,11 @@ $$ p(\text{bought}) =  \sigmoid{\boldsymbol{\beta}^\top \inputVector}$$
 * How does machine learning work?
 * Jumper (jersey/sweater) purchase with logistic regression
 }
-$$ \dataScalar =  \mappingFunction\left(\inputVector, \boldsymbol{\beta}\right)$$
+$$ \dataScalar =  \mappingFunction\left(\inputVector, \boldsymbol{\beta}\right).$$
 \slides{
 . . .
 
-}
-We call $\mappingFunction(\cdot)$ the *prediction function*
+}We call $\mappingFunction(\cdot)$ the *prediction function*.
 
 \notes{To obtain the fit to data, we use a separate function called the *objective function* that gives us a mathematical representation of the difference between our predictions and the real data. }
 
