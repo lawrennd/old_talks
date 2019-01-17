@@ -20,8 +20,7 @@ compare [digital oligarchy](https://www.theguardian.com/media-network/2015/mar/0
 
 \notes{One can also see the modern revolution as a revolution in *information* rather than *energy*.}
 
-\notes{
-Disruptive technologies take time to assimilate, and best practices, as well as the pitfalls of new technologies take time to share. Historically, new technologies led to new professions. [Isambard Kingdom Brunel](https://en.wikipedia.org/wiki/Isambard_Kingdom_Brunel) (born 1806) was a leading innovator in civil, mechanical and naval engineering. Each of these has its own professional institutions founded in 1818, 1847, and 1860 respectively.
+\notes{Disruptive technologies take time to assimilate, and best practices, as well as the pitfalls of new technologies take time to share. Historically, new technologies led to new professions. [Isambard Kingdom Brunel](https://en.wikipedia.org/wiki/Isambard_Kingdom_Brunel) (born 1806) was a leading innovator in civil, mechanical and naval engineering. Each of these has its own professional institutions founded in 1818, 1847, and 1860 respectively.
 
 [Nikola Tesla](https://en.wikipedia.org/wiki/Nikola_Tesla) developed the modern approach to electrical distribution, he was born in 1856 and the American Instiute for Electrical Engineers was founded in 1884, the UK equivalent was founded in 1871. 
 
