@@ -19,4 +19,81 @@
 \define{\includehtml{filename}{width}{height}}{<iframe src="\filename" width="\width" height="\height" allowtransparency="true" frameborder="0">
 </iframe>}
 
+
+\define{\slidenotes{slidetext}{notetext}}{\notetext}
+
+<!--%%%%%%%%%% CODE DISPLAY %%%%%%%%%%-->
+
+\define{\setupplotcode{block}}{}
+\define{\loadplotcode{object}{filename}}{}
+\define{\plotcode{block}}{}
+\define{\setupdisplaycode{block}}{```{.python}
+\block
+```}
+\define{\displaycode{block}}{```{.python}
+\block
+```}
+\define{\setupcode{block}}{```{.python}
+\block
+```}
+\define{\loadcode{object}{filename}}{```{.python}
+%load -s \object \filename.py
+```}
+\define{\setuphelpercode{block}}{```{.python}
+\block
+```}
+\define{\helpercode{block}}{```{.python}
+\block
+```}
+\define{\code{block}}{```{.python}
+\block
+```}
+\define{\matlabcode{block}}{```{.matlab}
+\block
+```}
+
+\define{\notes{text}}{\text}
+\define{\recommendation{text}}{**Recommendation**: \text}
+\define{\writeassignment{text}{question}{marks}}{### Question \question
+
+\text
+
+*\marks marks*
+
+### Write your answer to Question \question here
+
+}
+\define{\codeassignment{text}{question}{marks}}{### Question \question
+
+\text
+
+*\marks marks*
+
+```{.python}
+# Write your answer to Question \question here
+
+```
+
+}
+\define{\exercise{text}{answerstub}{codestub}}{### Exercise
+
+\text
+
+### Write your answer to Exercise here
+
+\answerstub
+
+```{.python}
+# Use this box for any code you need for the exercise
+
+\codestub
+
+```
+}
+
+
+\define{\slides{text}}{}
+\define{\slidesincremental{text}}{}
+\define{\newslide{text}}{}
+
 \endif
