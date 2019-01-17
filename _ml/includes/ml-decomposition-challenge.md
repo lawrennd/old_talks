@@ -34,8 +34,6 @@ We are constrained by:
 \notes{\caption{The machine learning systems decomposition process calls for separating a complex task into decomposable separate entities. A process we can think of as *[pigeonholing](https://en.wikipedia.org/wiki/Pigeonholing)*.}}
 }
 
-\notes{Some aspects to take into account are}
-
 \newslide{Pigeonholing}
 \slides{
 1. Can we decompose decision we need to repetitive sub-tasks where inputs and outputs are well defined?
