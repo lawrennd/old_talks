@@ -3,21 +3,16 @@
 
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
 
-
-\define{\fragmentdiv{contents}{number}{style}}{<div class="fragment" data-fragment-index="\number" style="\style">\contents</div>}
-
-
-
-
-\define{\includecovariance{shortname}}{\aligncenter{$$\formula$$}
-\columns{\includesvgclass{../slides/diagrams/kern/\concat{\shortname}{_covariance.svg}}}{\includegif{../slides/diagrams/kern/\concat{\shortname}{_covariance}}{100%}{negate}{center}}{40%}{40%}}
-
-
 \define{\includejpg{filename}{width}{class}}{\centerdiv{\includeimg{\concat{\filename}{.jpg}}{\width}{\class}{center}}{centered}{}}
 
 \define{\includepng{filename}{width}{class}}{\centerdiv{\includeimg{\concat{\filename}{.png}}{\width}{\class}{center}}{}{}}
 
 \define{\includegif{filename}{width}{class}}{\centerdiv{\includeimg{\concat{\filename}{.gif}}{\width}{\class}{center}}{}{}}
+
+\define{\includecovariance{shortname}}{\aligncenter{$$\formula$$}
+\columns{\includesvgclass{../slides/diagrams/kern/\concat{\shortname}{_covariance.svg}}}{\includegif{../slides/diagrams/kern/\concat{\shortname}{_covariance}}{100%}{negate}{center}}{40%}{40%}}
+
+
 
 \define{\credit{text}}{\smalltext{\alignright{Thanks to: \text}}}
 
