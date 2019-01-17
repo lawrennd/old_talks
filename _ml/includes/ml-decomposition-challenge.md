@@ -27,7 +27,7 @@ We are constrained by:
 }
 \notes{Any repetitive task is a candidate for automation, but many of the repetitive tasks we perform as humans are more complex than any individual algorithm can replace. The selection of which task to automate becomes critical and has downstream effects on our overall system design.}
 
-\subsection{Pigeonholing}
+\subsubsection{Pigeonholing}
 
 \figure{
 \includejpg{../slides/diagrams/TooManyPigeons}{60%}

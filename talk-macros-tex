@@ -13,5 +13,28 @@
 \define{\colorgreen{block}}{{\color{\greenColor} \block}}
 \define{\colorblue{block}}{{\color{\blueColor} \block}}
 
+\define{\figure{text}{options}}{\begin{figure}[\options]
+\text
+\end{figure}}
+
+\define{\table{text}{options}}{\begin{table}[\options]
+\text
+\end{table}}
+
+\define{\aligncenter{block}}{\centerline{\block}}
+\define{\alignright{text}}{\begin{flushright}
+\text
+\end{flushright}}
+\define{\alignleft{text}}{\begin{flushleft}
+\text
+\end{flushleft}}
+\define{\largetext{block}}{{\large \block}}
+\define{\smalltext{block}}{{\footnotesize \block}}
+
+\define{\includempfour{filename}{width}{height}}{\media{\filename}}
+\define{\includeimg{filename}{width}{class}{align}}{\includegraphics[width=\width]{\filename}}
+
+\define{\includeimgclip{filename}{top}{right}{bottom}{left}{width}{class}{align}}{\includegraphics[width=\width]{\filename}}
+\define{\includehtml{filename}{width}{height}}{}
 
 \endif

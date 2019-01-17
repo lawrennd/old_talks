@@ -10,7 +10,7 @@
 }
 
 \notes{One analogy I find helpful for understanding the depth of change we need
-is the following. Imagine as an engineer, you find a USB stick on the
+is the following. Imagine as a software engineer, you find a USB stick on the
 ground. And for some reason you *know* that on that USB stick is a
 particular API call that will enable you to make a significant positive
 difference on a business problem. However, you also know on that USB

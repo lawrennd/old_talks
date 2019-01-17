@@ -8,8 +8,11 @@
 \slides{
 Our *machine learning* is based on a *software systems* view that is 20 years out of date.
 }
+\notes{Much of the academic machine learning systems point of view is based on a software systems point of view that is around 20 years out of date. In particular we build machine learning models on fixed training data sets, and we test them on stationary test data sets. 
 
-\subsection{Continuous Deployment}
+In practice modern software systems involve continuous deployment of models into an ever evolving world of data. These changes are indicated in the software world by greater availaiblity of technologies like *streaming* technologies.}
+
+\subsubsection{Continuous Deployment}
 \slides{
 * Deployment of modeling code.
 * Data dependent models in production need *continuous monitoring*.

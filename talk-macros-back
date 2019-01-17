@@ -37,8 +37,25 @@ showDivs(\start, '\group');
 \define{\startslides{group}{start}{finish}}{\startanimation{\group}{\start}{\finish}}
 
 
+\ifdef{blackAndWhite}
+\define{\coloryellow{block}}{\block}
+\define{\colorcyan{block}}{\block}
+\define{\colormagenta{block}}{\block}
+\define{\colorgreen{block}}{\block}
+\define{\colorred{block}}{\block}
+\define{\colorblue{block}}{\block}
+\else
+\define{\cyanColor}{\blackColor}
+\define{\magentaColor}{\blackColor}
+\define{\yellowColor}{\blackColor}
+\define{\redColor}{\blackColor}
+\define{\greenColor}{\blackColor}
+\define{\blueColor}{\blackColor}
+\endif
+
 \ifdef{draft}
 \define{\editme}{\href{file://\talksDir\file}{\file}}
+\define{\todo{text}}{\colorRed{Todo: \text}}
 
 }
 \else

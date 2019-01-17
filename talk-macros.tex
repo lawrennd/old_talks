@@ -6,7 +6,7 @@
 \endif
 
 \ifdef{ipynb}
-\include{talk-macros-html}
+\include{talk-macros-ipynb}
 \endif
 
 \ifdef{tex}
@@ -16,6 +16,25 @@
 \ifdef{slides}
 \include{talk-macros-slides}
 \endif
+
+\ifdef{slides}
+\ifdef{tex}
+\include{talk-macros-slides-tex}
+\endif
+\endif
+
+\ifdef{slides}
+\ifdef{html}
+\include{talk-macros-slides-html}
+\endif
+\endif
+
+\ifdef{slides}
+\ifdef{ipynb}
+\include{talk-macros-slides-ipynb}
+\endif
+\endif
+
 
 \ifdef{notes}
 \include{talk-macros-notes}
@@ -27,23 +46,19 @@
 \endif
 \endif
 
+\ifdef{notes}
+\ifdef{html}
+\include{talk-macros-notes-html}
+\endif
+\endif
 
-\ifdef{ipynb} <!--ipynb-->
-\include{talk-macros-ipynb-front}
-\ifdef{slides} <!-- ipynb and slides-->
-\include{talk-macros-ipynb-slides}
-\else <!-- ipynb but not slides -->
-\include{talk-macros-ipynb-notes}
-\endif 
-\else <!--% not ipynb-->
-\if{slides} <!--% slides and not ipynb -->
-\include{talk-macros-slides}
-\ifdef{tex}
-\include{talk-macros-slides-tex}
-\else
-\include{talk-macros-slides-html}
+\ifdef{notes}
+\ifdef{ipynb}
+\include{talk-macros-notes-ipynb}
 \endif
 \endif
+
+
 
 
 <!--Back matter-->

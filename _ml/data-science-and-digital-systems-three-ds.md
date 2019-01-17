@@ -53,9 +53,7 @@ This implies a more intelligent decision is one that either used less informatio
 
 \include{_ml/includes/what-does-machine-learning-do.md}
 
-\section{Deep Learning}
-
-\newslide{Deep Learning}
+\subsection{Deep Learning}
 
 \slides{
 * These are interpretable models: vital for disease etc.
@@ -110,7 +108,7 @@ include{_data-science/includes/data-readiness-levels.md}
 \include{_ai/includes/ai-vs-data-science-2.md}
 -->
 
-\section{Where Bits meet Atoms}
+\section{The Physical World: Where Bits meet Atoms}
 
 \notes{Before I joined Amazon I was invited to speak at their annual Machine Learning Conference. It has over two thousand attendees. I met the VP in charge of Amazon Special Projects, Babak Parviz. He said to me, the important thing about Amazon is that it's a "bits and atoms" company, meaning it moves both stuff (atoms) and information (bits). This quote resonated with me because it maps well on to my own definition of intelligence. Moving stuff requires resource. Moving, or processing, of information to move stuff more efficiently requires intelligence. 
 
@@ -119,7 +117,7 @@ That notion is the most fundamental notion for how the modern information infras
 \include{_supply-chain/includes/ml-and-supply-chain.md}
 \include{_ml/includes/or-control-econometrics-statistics-ml.md}
 
-\notes{THE DANGER OF LOST TECHNOLOGIES THE PROGRAMMER CAN DEPLOY QUICKLY}
+\todo{THE DANGER OF LOST TECHNOLOGIES THE PROGRAMMER CAN DEPLOY QUICKLY}
 
 \section{The Three Ds of ML Systems Design}
 

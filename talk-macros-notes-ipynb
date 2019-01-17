@@ -2,58 +2,6 @@
 \define{talkMacrosNotesIpynb}
 
 
-\define{\caption{block}}{<center>*\block *</center>}
-\define{\aligncenter{block}}{<center>\block</center>}
-\define{\alignright{block}}{<span style="text-align:right">\block</span>}
-\define{\alignleft{block}}{<span style="text-align:left">\block</span>}
-\define{\largetext{block}}{<large>\block</large>}
-\define{\smalltext{block}}{<small>\block</small>}
-
-\define{\includempfour{filename}{width}{height}}{<video width="\width" height="\height" controls preload="none">
-<source src="\filename" type="video/mp4"/>
-</video>}
-\define{\includeimg{filename}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" height="auto" align="\align" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">}
-\define{\includeimgclip{filename}{top}{right}{bottom}{left}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" align="\align" style="background:none; border:none; box-shadow:none; position:absolute; clip:rect(\top,\right,\bottom,\left);vertical-align:middle">}
-\define{\includesvg{filename}{align}{class}{style}}{<object class="svgplot \class" align="\align" data="\filename" style="vertical-align:middle;\style"></object>}
-\define{\includesvgclass{filename}{class}{align}}{<object class="\class" align="\align" data="\filename" style="vertical-align:middle"></object>}
-\define{\includehtml{filename}{width}{height}}{<iframe src="\filename" width="\width" height="\height" allowtransparency="true" frameborder="0">
-</iframe>}
-
-
-\define{\slidenotes{slidetext}{notetext}}{\notetext}
-
-<!--%%%%%%%%%% CODE DISPLAY %%%%%%%%%%-->
-
-\define{\setupplotcode{block}}{}
-\define{\loadplotcode{object}{filename}}{}
-\define{\plotcode{block}}{}
-\define{\setupdisplaycode{block}}{```{.python}
-\block
-```}
-\define{\displaycode{block}}{```{.python}
-\block
-```}
-\define{\setupcode{block}}{```{.python}
-\block
-```}
-\define{\loadcode{object}{filename}}{```{.python}
-%load -s \object \filename.py
-```}
-\define{\setuphelpercode{block}}{```{.python}
-\block
-```}
-\define{\helpercode{block}}{```{.python}
-\block
-```}
-\define{\code{block}}{```{.python}
-\block
-```}
-\define{\matlabcode{block}}{```{.matlab}
-\block
-```}
-
-\define{\notes{text}}{\text}
-\define{\recommendation{text}}{**Recommendation**: \text}
 \define{\writeassignment{text}{question}{marks}}{### Question \question
 
 \text
@@ -92,8 +40,46 @@
 }
 
 
-\define{\slides{text}}{}
-\define{\slidesincremental{text}}{}
-\define{\newslide{text}}{}
+\define{\writeassignment{text}{question}{marks}{answerstub}}{### Question \question
+
+\text
+
+*\marks marks*
+
+### Write your answer to Question \question here
+
+\answerstub
+
+}
+\define{\codeassignment{text}{question}{marks}{answerstub}}{### Question \question
+
+\text
+
+*\marks marks*
+
+```{.python}
+# Write code for your answer to Question \question in this box
+# provide the answers so that the code runs correctly otherwise you will loose marks!
+
+\answerstub
+
+```
+}
+
+\define{\exercise{text}{answerstub}{codestub}}{### Exercise
+
+\text
+
+### Write your answer to Exercise here
+
+\answerstub
+
+```{.python}
+# Use this box for any code you need for the exercise
+
+\codestub
+
+```
+}
 
 \endif

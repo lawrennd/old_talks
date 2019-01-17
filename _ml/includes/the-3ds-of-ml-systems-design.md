@@ -2,7 +2,7 @@
 \define{theThreeDsOfMlSystemDesign}
 \editme
 
-\subsection{The Three Ds of Machine Learning Systems Design}
+\newslide{The Three Ds of Machine Learning Systems Design}
 
 \slides{
 * Three primary challenges of Machine Learning Systems Design.

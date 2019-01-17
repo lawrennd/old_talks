@@ -19,7 +19,13 @@ form. From the computer's perspective software *is* data. The first wave
 of the data crisis was known as the *software crisis*.
 }
 
-\subsection{The Software Crisis}
+\subsubsection{The Software Crisis}
+
+\notes{In the late sixties early software programmers made note of the
+increasing costs of software development and termed the challenges
+associated with it as the "[Software
+Crisis](https://en.wikipedia.org/wiki/Software_crisis)". Edsger Dijkstra
+referred to the crisis in his 1972 Turing Award winner's address.}
 
 \slidesmall{
 
@@ -33,12 +39,6 @@ of the data crisis was known as the *software crisis*.
 > Edsger Dijkstra (1930-2002), The Humble Programmer
 
 }
-
-\notes{In the late sixties early software programmers made note of the
-increasing costs of software development and termed the challenges
-associated with it as the "[Software
-Crisis](https://en.wikipedia.org/wiki/Software_crisis)". Edsger Dijkstra
-referred to the crisis in his 1972 Turing Award winner's address.}
 
 \newslide{The Data Crisis}
 
