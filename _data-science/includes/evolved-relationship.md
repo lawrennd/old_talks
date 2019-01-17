@@ -30,7 +30,9 @@ For further thoughts see [this Guardian article](https://www.theguardian.com/med
 
 \slides{\div{\includesvg{../slides/diagrams/data-science/\concat{\stubname}{002.svg}}{}{}{\svgstyle}}{\stubname}{\divoptions}}
 
+\figure{
 \notesfigure{\includesvg{../slides/diagrams/data-science/\concat{\stubname}{002.svg}}}
 \notes{\caption{New direction of information flow, information is reaching us mediated by the computer}}
+}
 
 \endif
