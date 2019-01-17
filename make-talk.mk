@@ -15,22 +15,23 @@ ${BASE}.slides.html: ${BASE}.slides.html.md
 
 
 ${BASE}.notes.pdf: ${BASE}.notes.aux ${BASE}.notes.bbl ${BASE}.notes.tex
-	pdflatex --shell-escape ${BASE}.notes.tex
+	pdflatex -shell-escape ${BASE}.notes.tex
 	cp ${BASE}.notes.pdf ../_notes/${OUT}.notes.pdf
 
 ${BASE}.notes.bbl: ${BASE}.notes.aux
 	bibtex ${BASE}.notes
 
 ${BASE}.notes.aux: ${BASE}.notes.tex
-	pdflatex --shell-escape ${BASE}.notes.tex
+	pdflatex -shell-escape ${BASE}.notes.tex
 
 
 ${BASE}.notes.tex: ${BASE}.notes.tex.md
-	pandoc  --template pandoc-notes-tex-template.tex \
+	pandoc  -s -S \
+		--template pandoc-notes-tex-template.tex \
 		--number-sections \
 		--natbib \
+		${BIBFLAGS} \
 		-B ../_includes/talk-notation.tex \
-		${PDSFLAGS} \
 		-o ${BASE}.notes.tex  \
 		${BASE}.notes.tex.md 
 
@@ -76,8 +77,8 @@ ${BASE}.notes.html.md: ${BASE}.md
 ${BASE}.notes.tex.md: ${BASE}.md 
 	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -Dnotes=1 -Dtex=1 ${PPFLAGS} ${BASE}.md -o ${BASE}.notes.tex.md
 	# Fix percentage width for latex.
-	sed -i -e 's/width=\(..\)\%/width=0.\1\\textwidth/g' ${BASE}.notes.tex.md
-	sed -i -e 's/width=\(..\)\%/height=0.\1\\textheight/g' ${BASE}.notes.tex.md
+	sed -i -e 's/width=\(.*\)\%/width=0.\1\\textwidth/g' ${BASE}.notes.tex.md
+	sed -i -e 's/width=\(.*\)\%/height=0.\1\\textheight/g' ${BASE}.notes.tex.md
 
 ${BASE}.notes.ipynb.md: ${BASE}.md 
 	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -Dipynb=1 -Dnotes=1 ${PPFLAGS} ${BASE}.md -o ${BASE}.notes.ipynb.md

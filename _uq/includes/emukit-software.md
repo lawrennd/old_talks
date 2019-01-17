@@ -5,7 +5,7 @@
 \subsection{Emukit}
 
 \slides{
-* Work by Javier Gonzalez, Andrei Paleyes, Mark Pullin, Maren Mahsereci.
+* Work by Javier Gonzalez, Andrei Paleyes, Mark Pullin, Maren Mahsereci, Alex Gessner, Aaron Klein.
 * Available on [Github](https://github.com/amzn/emukit)
 * Example [sensitivity notebook](https://github.com/amzn/emukit/blob/develop/notebooks/Emukit-sensitivity-montecarlo.ipynb).
 

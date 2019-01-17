@@ -1,5 +1,18 @@
 <!-- Front matter -->
+
 \include{talk-macros-front}
+
+\ifdef{html}
+\include{talk-macros-html}
+\endif
+
+\ifdef{ipynb}
+\include{talk-macros-html}
+\endif
+
+\ifdef{tex}
+\include{talk-macros-tex}
+\endif
 
 \ifdef{ipynb} <!--ipynb-->
 \include{talk-macros-ipynb-front}

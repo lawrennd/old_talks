@@ -5,19 +5,31 @@
 \text
 \end{figure}}
 
+\define{\table{text}{options}}{\begin{table}[\options]
+\text
+\end{table}}
+
 \define{\aligncenter{block}}{\centerline{\block}}
-\define{\alignright{text}}{{\raggedleft{\text}}}
-\define{\alignleft{text}}{{\raggedright{\text}}}
+\define{\alignright{text}}{\begin{flushright}
+\text
+\end{flushright}}
+\define{\alignleft{text}}{\begin{flushleft}
+\text
+\end{flushleft}}
 \define{\largetext{block}}{{\large \block}}
 \define{\smalltext{block}}{{\footnotesize \block}}
 
+\define{\setupdisplaycode{text}}{}
+\define{\displaycode{text}}{}
+\define{\setupplotcode{text}}{}
+\define{\plotcode{text}}{}
+
 \define{\includempfour{filename}{width}{height}}{\media{\filename}}
-\define{\includeimg{filename}{width}{class}{align}}{\includegraphics[width=\width]{\filename}}}
+\define{\includeimg{filename}{width}{class}{align}}{\includegraphics[width=\width]{\filename}}
 
-\define{\includeimgclip{filename}{top}{right}{bottom}{left}{width}{class}{align}}{\includegraphics[width=\width]{\filename}}}
+\define{\includeimgclip{filename}{top}{right}{bottom}{left}{width}{class}{align}}{\includegraphics[width=\width]{\filename}}
 \define{\includehtml{filename}{width}{height}}{}
-<!--define{\includesvg{filename}{align}{class}{style}}{\includesvg{\filename}}
-define{\includesvgclass{filename}{class}{align}}{\includesvg{\filename}}}-->
 
+\define{\references}{}
 
 \endif

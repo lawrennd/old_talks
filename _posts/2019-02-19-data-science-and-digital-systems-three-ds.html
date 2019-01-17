@@ -28,8 +28,7 @@ categories:
 <p><!--% not ipynb--> <!--% slides and not ipynb --></p>
 <!--Back matter-->
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
-<p>}</p>
-<h2 id="introduction">Introduction</h2>
+<h1 id="introduction">Introduction</h1>
 <p><span style="text-align:right"></span></p>
 <h2 id="the-gartner-hype-cycle">The Gartner Hype Cycle</h2>
 <div style="width:60%">
@@ -41,20 +40,12 @@ categories:
 </center>
 <p>The <a href="https://en.wikipedia.org/wiki/Hype_cycle">Gartner Hype Cycle</a> tries to assess where an idea is in terms of maturity and adoption. It splits the evolution of technology into a technological trigger, a peak of expectations followed by a trough of disillusionment and a final ascension into a useful technology. It looks rather like a classical control response to a final set point.</p>
 <p><span style="text-align:right"></span></p>
-<object class="svgplot " align data="../slides/diagrams/data-science/ai-bd-dm-dl-ml-google-trends.svg" style="vertical-align:middle;">
-</object>
-<center>
-<em>Google trends for different technological terms on the hype cycle. </em>
-</center>
+
 <p>Google trends gives us insight into how far along various technological terms are on the hype cycle.</p>
 <p><span style="text-align:right"></span></p>
-<h3 id="the-centrifugal-governor">The Centrifugal Governor</h3>
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/science-holborn-viaduct.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-<center>
-<em>Centrifugal governor as held by &quot;Science&quot; on Holborn Viaduct </em>
-</center>
+<h2 id="the-centrifugal-governor">The Centrifugal Governor</h2>
+
+
 <p>The centrifugal governor was made famous by Boulton and Watt when it was deployed in the steam engine. Studying stability in the governor is the main subject of James Clerk Maxwell's paper on the theoretical analysis of governors <span class="citation">(Maxwell 1867)</span>, a founding paper of control theory. In this spirit, Wiener used the name <a href="https://en.wikipedia.org/wiki/Cybernetics"><em>cybernetics</em></a> to describe the field of control and communication in animals and the machine <span class="citation">(Wiener 1948)</span>. Cybernetics is the Greek word for governor, which comes from the latin for helmsman.</p>
 <p>A governor is one of the simplest artificial intelligence systems. It senses the speed of an engine, and acts to change the position of the valve on the engine to slow it down.</p>
 <p>Although it's a mechanical system a governor can be seen as automating a role that a human would have traditionally played. It is an early example of artificial intelligence.</p>
@@ -64,13 +55,8 @@ categories:
 <li>The centrifugal governor is a physical system and it is an integral part of a wider physical system that it regulates (the engine).</li>
 <li>The parameters of the governor were set by hand, our modern artificial intelligence systems have their parameters set by <em>data</em>.</li>
 </ol>
-<div class="centered" style="">
-<img class="negate" src="../slides/diagrams/Centrifugal_governor.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-<center>
-<em>The centrifugal governor, an early example of a decision making system. The parameters of the governor include the lengths of the linkages (which effect how far the throttle opens in response to movement in the balls), the weight of the balls (which effects inertia) and the limits of to which the balls can rise. </em>
-</center>
-<h2 id="machine-learning-artificial-intelligence-and-data-science">Machine Learning, Artificial Intelligence and Data Science</h2>
+
+<h1 id="machine-learning-artificial-intelligence-and-data-science">Machine Learning, Artificial Intelligence and Data Science</h1>
 <p><span style="text-align:right"></span></p>
 <p>Machine learning allows us to extract knowledge from data to form a prediction.</p>
 <p><br /><span class="math display">$$ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$</span><br /></p>
@@ -79,9 +65,9 @@ categories:
 <p>Machine learning is a technology which strongly overlaps with the methodology of statistics. From a historical/philosophical view point, machine learning differs from statistics in that the focus in the machine learning community has been primarily on accuracy of prediction, whereas the focus in statistics is typically on the interpretability of a model and/or validating a hypothesis through data collection.</p>
 <p>The rapid increase in the availability of compute and data has led to the increased prominence of machine learning. This prominence is surfacing in two different, but overlapping domains: data science and artificial intelligence.</p>
 <p><span style="text-align:right"></span></p>
-<h3 id="artificial-intelligence-and-data-science">Artificial Intelligence and Data Science</h3>
+<h2 id="artificial-intelligence-and-data-science">Artificial Intelligence and Data Science</h2>
 <p>Artificial intelligence has the objective of endowing computers with human-like intelligent capabilities. For example, understanding an image (computer vision) or the contents of some speech (speech recognition), the meaning of a sentence (natural language processing) or the translation of a sentence (machine translation).</p>
-<h3 id="supervised-learning-for-ai">Supervised Learning for AI</h3>
+<h2 id="supervised-learning-for-ai">Supervised Learning for AI</h2>
 <p>The machine learning approach to artificial intelligence is to collect and annotate a large data set from humans. The problem is characterized by input data (e.g. a particular image) and a label (e.g. is there a car in the image yes/no). The machine learning algorithm fits a mathematical function (I call this the <em>prediction function</em>) to map from the input image to the label. The parameters of the prediction function are set by minimizing an error between the function’s predictions and the true data. This mathematical function that encapsulates this error is known as the <em>objective function</em>.</p>
 <p>This approach to machine learning is known as <em>supervised learning</em>. Various approaches to supervised learning use different prediction functions, objective functions or different optimization algorithms to fit them.</p>
 <p>For example, <em>deep learning</em> makes use of <em>neural networks</em> to form the predictions. A neural network is a particular type of mathematical function that allows the algorithm designer to introduce invariances into the function.</p>
@@ -90,56 +76,11 @@ categories:
 <p>Machine learning has been deployed in Speech Recognition (e.g. Alexa, deep neural networks, convolutional neural networks for speech recognition), in computer vision (e.g. Amazon Go, convolutional neural networks for person recognition and pose detection).</p>
 <p>The field of data science is related to AI, but philosophically different. It arises because we are increasingly creating large amounts of data through <em>happenstance</em> rather than active collection. In the modern era data is laid down by almost all our activities. The objective of data science is to extract insights from this data.</p>
 <p>Classically, in the field of statistics, data analysis proceeds by assuming that the question (or scientific hypothesis) comes before the data is created. E.g., if I want to determine the effectiveness of a particular drug I perform a <em>design</em> for my data collection. I use foundational approaches such as randomization to account for confounders. This made a lot of sense in an era where data had to be actively collected. The reduction in cost of data collection and storage now means that many data sets are available which weren’t collected with a particular question in mind. This is a challenge because bias in the way data was acquired can corrupt the insights we derive. We can perform randomized control trials (or A/B tests) to verify our conclusions, but the opportunity is to use data science techniques to better guide our question selection or even answer a question without the expense of a full randomized control trial (referred to as A/B testing in modern internet parlance).</p>
-<h2 id="human-intelligence">Human Intelligence</h2>
+<h1 id="human-intelligence">Human Intelligence</h1>
+<p><span style="text-align:right"></span></p>
 <p><span style="text-align:right"></span></p>
 <h2 id="natural-and-artificial-intelligence-embodiment-factors">Natural and Artificial Intelligence: Embodiment Factors</h2>
-<p><span style="text-align:right"></span></p>
-<h2 id="natural-and-artificial-intelligence-embodiment-factors-1">Natural and Artificial Intelligence: Embodiment Factors</h2>
-<table>
-<tr>
-<td>
-</td>
-<td align="center">
-<img class="" src="../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</td>
-<td align="center">
-<img class="" src="../slides/diagrams/ClaudeShannon_MFO3807.jpg" width="25%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</td>
-</tr>
-<tr>
-<td>
-compute
-</td>
-<td align="center">
-<br /><span class="math display">≈100 gigaflops</span><br />
-</td>
-<td align="center">
-<br /><span class="math display">≈16 petaflops</span><br />
-</td>
-</tr>
-<tr>
-<td>
-communicate
-</td>
-<td align="center">
-<br /><span class="math display">1 gigbit/s</span><br />
-</td>
-<td align="center">
-<br /><span class="math display">100 bit/s</span><br />
-</td>
-</tr>
-<tr>
-<td>
-(compute/communicate)
-</td>
-<td align="center">
-<br /><span class="math display">10<sup>4</sup></span><br />
-</td>
-<td align="center">
-<br /><span class="math display">10<sup>14</sup></span><br />
-</td>
-</tr>
-</table>
+
 <p>There is a fundamental limit placed on our intelligence based on our ability to communicate. Claude Shannon founded the field of information theory. The clever part of this theory is it allows us to separate our measurement of information from what the information pertains to<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>.</p>
 <p>Shannon measured information in bits. One bit of information is the amount of information I pass to you when I give you the result of a coin toss. Shannon was also interested in the amount of information in the English language. He estimated that on average a word in the English language contains 12 bits of information.</p>
 <p>Given typical speaking rates, that gives us an estimate of our ability to communicate of around 100 bits per second <span class="citation">(Reed and Durlach 1998)</span>. Computers on the other hand can communicate much more rapidly. Current wired network speeds are around a billion bits per second, ten million times faster.</p>
@@ -149,18 +90,12 @@ communicate
 <p>So when it comes to our ability to compute we are extraordinary, not compute in our conscious mind, but the underlying neuron firings that underpin both our consciousness, our sbuconsciousness as well as our motor control etc. By analogy I sometimes like to think of us as a Formula One engine. But in terms of our ability to deploy that computation in actual use, to share the results of what we have inferred, we are very limited. So when you imagine the F1 car that represents a psyche, think of an F1 car with bicycle wheels.</p>
 
 <p>In contrast, our computers have less computational power, but they can communicate far more fluidly. They are more like a go-kart, less well powered, but with tires that allow them to deploy that power.</p>
-\figure{
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/Caleb_McDuff_WIX_Silence_Racing_livery.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-<center>
-<em>Caleb McDuff driving for WIX Silence Racing. </em>
-</center>
+
 <p>For humans, that means much of our computation should be dedicated to considering <em>what</em> we should compute. To do that efficiently we need to model the world around us. The most complex thing in the world around us is other humans. So it is no surprise that we model them. We second guess what their intentions are, and our communication is only necessary when they are departing from how we model them. Naturally, for this to work well, we need to understand those we work closely with. So it is no surprise that social communication, social bonding, forms so much of a part of our use of our limited bandwidth.</p>
 <p>There is a second effect here, our need to anthropomorphise objects around us. Our tendency to model our fellow humans extends to when we interact with other entities in our environment. To our pets as well as inanimate objects around us, such as computers or even our cars. This tendency to overinterpret could be a consequence of our limited ability to communicate.</p>
 <p>For more details see this paper <a href="https://arxiv.org/abs/1705.07996">&quot;Living Together: Mind and Machine Intelligence&quot;</a>, and this <a href="http://inverseprobability.com/talks/lawrence-tedx17/living-together.html">TEDx talk</a>.</p>
 <p><span style="text-align:right"></span></p>
-<h2 id="evolved-relationship-with-information">Evolved Relationship with Information</h2>
+<h1 id="evolved-relationship-with-information">Evolved Relationship with Information</h1>
 <p>The high bandwidth of computers has resulted in a close relationship between the computer and data. Large amounts of information can flow between the two. The degree to which the computer is mediating our relationship with data means that we should consider it an intermediary.</p>
 <p>Originaly our low bandwith relationship with data was affected by two characteristics. Firstly, our tendency to over-interpret driven by our need to extract as much knowledge from our low bandwidth information channel as possible. Secondly, by our improved understanding of the domain of <em>mathematical</em> statistics and how our cognitive biases can mislead us.</p>
 <p>With this new set up there is a potential for assimilating far more information via the computer, but the computer can present this to us in various ways. If it's motives are not aligned with ours then it can misrepresent the information. This needn't be nefarious it can be simply as a result of the computer pursuing a different objective from us. For example, if the computer is aiming to maximize our interaction time that may be a different objective from ours which may be to summarize information in a representative manner in the <em>shortest</em> possible length of time.</p>
@@ -173,11 +108,11 @@ communicate
 <center>
 <em>New direction of information flow, information is reaching us mediated by the computer </em>
 </center>
-<h3 id="a-definition-of-intelligence">A Definition of Intelligence</h3>
+<h2 id="a-definition-of-intelligence">A Definition of Intelligence</h2>
 <p>The word intelligence is heavily overloaded, it means different things to different people. My own definition for intelligence is as follows <span class="citation">(Lawrence 2017a)</span>. Intelligence is the use of information to achieve a goal with less resource. Here information is often in the form of data, resource is often energy (or strictly speaking free energy).</p>
 <p>This implies a more intelligent decision is one that either used less information and the same amount of resource or less resource for the same information, or any interpolation between.</p>
 <p><span style="text-align:right"></span></p>
-<h3 id="what-does-machine-learning-do">What does Machine Learning do?</h3>
+<h2 id="what-does-machine-learning-do">What does Machine Learning do?</h2>
 <p>Any process of automation allows us to scale what we do by codifying a process in some way that makes it efficient and repeatable. Machine learning automates by emulating human (or other actions) found in data. Machine learning codifies in the form of a mathematical function that is learnt by a computer. If we can create these mathematical functions in ways in which they can interconnect, then we can also build systems.</p>
 <p>Machine learning works through codifing a prediction of interest into a mathematical function. For example, we can try and predict the probability that a customer wants to by a jersey given knowledge of their age, and the latitude where they live. The technique known as logistic regression estimates the odds that someone will by a jumper as a linear weighted sum of the features of interest.</p>
 <p><br /><span class="math display">$$ \text{odds} = \frac{p(\text{bought})}{p(\text{not bought})} $$</span><br /> <br /><span class="math display">logodds = <em>β</em><sub>0</sub> + <em>β</em><sub>1</sub>age + <em>β</em><sub>2</sub>latitude</span><br /></p>
@@ -192,43 +127,21 @@ communicate
 <p>To obtain the fit to data, we use a separate function called the <em>objective function</em> that gives us a mathematical representation of the difference between our predictions and the real data.</p>
 <p><br /><span class="math display">$$\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix)$$</span><br /> A commonly used examples (for example in a regression problem) is least squares, <br /><span class="math display">$$\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingFunction(\inputVector_i, \boldsymbol{\beta})\right)^2.$$</span><br /></p>
 <p>If a linear prediction function is combined with the least squares objective function then that gives us a classical <em>linear regression</em>, another classical statistical model. Statistics often focusses on linear models because it makes interpretation of the model easier. Interpretation is key in statistics because the aim is normally to validate questions by analysis of data. Machine learning has typically focussed more on the prediction function itself and worried less about the interpretation of parameters, which are normally denoted by <span class="math inline"><strong>w</strong></span> instead of <span class="math inline"><strong>β</strong></span>. As a result <em>non-linear</em> functions are explored more often as they tend to improve quality of predictions but at the expense of interpretability.</p>
-<h2 id="deep-learning">Deep Learning</h2>
+<h1 id="deep-learning">Deep Learning</h1>
 <p>Classical statistical models and simple machine learning models have a great deal in common. The main difference between the fields is philosophical. Machine learning practitioners are typically more concerned with the quality of prediciton (e.g. measured by ROC curve) while statisticians tend to focus more on the interpretability of the model and the validity of any decisions drawn from that interpretation. For example, a statistical model may be used to validate whether a large scale intervention (such as the mass provision of mosquito nets) has had a long term effect on disease (such as malaria). In this case one of the covariates is likely to be the provision level of nets in a particular region. The response variable would be the rate of malaria disease in the region. The parmaeter, <span class="math inline"><em>β</em><sub>1</sub></span> associated with that covariate will demonstrate a positive or negative effect which would be validated in answering the question. The focus in statistics would be less on the accuracy of the response variable and more on the validity of the interpretation of the effect variable, <span class="math inline"><em>β</em><sub>1</sub></span>.</p>
 <p>A machine learning practitioner on the other hand would typically denote the parameter <span class="math inline">$\weightScalar_1$</span>, instead of <span class="math inline"><em>β</em><sub>1</sub></span> and would only be interested in the output of the prediction function, <span class="math inline">$\mappingFunction(\cdot)$</span> rather than the parameter itself.</p>
 <p><span style="text-align:right"></span></p>
-<div style="width:100%;text-align:center">
-<img class="" src="../slides/diagrams/deepface_neg.png" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-<center>
-<em>The DeepFace architecture <span class="citation">(Taigman et al. 2014)</span>, visualized through colors to represent the functional mappings at each layer. There are 120 million parameters in the model. </em>
-</center>
+
 <p>The DeepFace architecture <span class="citation">(Taigman et al. 2014)</span> consists of layers that deal with <em>translation</em> and <em>rotational</em> invariances. These layers are followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected layers.</p>
-<div style="height:600px;text-align:center">
-<img class="" src="../slides/diagrams/576px-Early_Pinball.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-<center>
-<em>Deep learning models are composition of simple functions. We can think of a pinball machine as an analogy. Each layer of pins corresponds to one of the layers of functions in the model. Input data is represented by the location of the ball from left to right when it is dropped in from the top. Output class comes from the position of the ball as it leaves the pins at the bottom. </em>
-</center>
+
 <p>We can think of what these models are doing as being similar to early pin ball machines. In a neural network, we input a number (or numbers), whereas in pinball, we input a ball. The location of the ball on the left-right axis can be thought of as the number. As the ball falls through the machine, each layer of pins can be thought of as a different layer of neurons. Each layer acts to move the ball from left to right.</p>
 <p>In a pinball machine, when the ball gets to the bottom it might fall into a hole defining a score, in a neural network, that is equivalent to the decision: a classification of the input object.</p>
 <p>An image has more than one number associated with it, so it's like playing pinball in a <em>hyper-space</em>.</p>
-<div style="text-align:center">
-<object class="svgplot " align data="../slides/diagrams/pinball001.svg" style="vertical-align:middle;">
-</object>
-</div>
-<center>
-<em>At initialization, the pins, which represent the parameters of the function, aren't in the right place to bring the balls to the correct decisions. </em>
-</center>
-<div style="text-align:center">
-<object class="svgplot " align data="../slides/diagrams/pinball002.svg" style="vertical-align:middle;">
-</object>
-</div>
-<center>
-<em>After learning the pins are now in the right place to bring the balls to the correct decisions. </em>
-</center>
+
+
 <p>Learning involves moving all the pins to be in the right position, so that the ball falls in the right place. But moving all these pins in hyperspace can be difficult. In a hyper space you have to put a lot of data through the machine for to explore the positions of all the pins. Adversarial learning reflects the fact that a ball can be moved a small distance and lead to a very different result.</p>
 <p>Probabilistic methods explore more of the space by considering a range of possible paths for the ball through the machine.</p>
-<h2 id="data-science-and-professionalisation">Data Science and Professionalisation</h2>
+<h1 id="data-science-and-professionalisation">Data Science and Professionalisation</h1>
 <p><span style="text-align:right"></span></p>
 <p>The rise in data science and artificial intelligence technologies has been termed &quot;Industrial Revolution 4.0&quot;, so are we in the midst of an industrial change? Maybe, but if so, it is the first part of the industrial revolution to be named before it has happened. The original industrial revolution occurred between 1760 and 1840, but the term was coined by Arnold Toynbee (1889-1975).</p>
 <p>Whether this is a new revolution or an extension of previous revolutions, an important aspect is that this revolution is dominated by <em>data</em> instead of just <em>capital</em>.</p>
@@ -280,17 +193,17 @@ include{_data-science/includes/data-readiness-levels.md}
 
 
 -->
-<h2 id="where-bits-meet-atoms">Where Bits meet Atoms</h2>
+<h1 id="where-bits-meet-atoms">Where Bits meet Atoms</h1>
 <p>Before I joined Amazon I was invited to speak at their annual Machine Learning Conference. It has over two thousand attendees. I met the VP in charge of Amazon Special Projects, Babak Parviz. He said to me, the important thing about Amazon is that it's a &quot;bits and atoms&quot; company, meaning it moves both stuff (atoms) and information (bits). This quote resonated with me because it maps well on to my own definition of intelligence. Moving stuff requires resource. Moving, or processing, of information to move stuff more efficiently requires intelligence.</p>
 <p>That notion is the most fundamental notion for how the modern information infrastructure can help society. At Amazon the place where bits meet atoms is the <em>supply chain</em>. The movement of goods from manufacturer to customer, the supply chain.</p>
 <p><span style="text-align:right"></span></p>
-<h3 id="machine-learning-in-supply-chain">Machine Learning in Supply Chain</h3>
+<h2 id="machine-learning-in-supply-chain">Machine Learning in Supply Chain</h2>
 <p>Supply chain is a large scale automated decision making network. Our aim is to make decisions not only based on our models of customer behavior (as observed through data), but also by accounting for the structure of our fulfilment center, and delivery network.</p>
 <p>Many of the most important questions in supply chain take the form of counterfactuals. E.g. “What would happen if we opened a manufacturing facility in Cambridge?” A counter factual is a question that implies a mechanistic understanding of a system. It goes beyond simple smoothness assumptions or translation invariants. It requires a physical, or <em>mechanistic</em> understanding of the supply chain network. For this reason the type of models we deploy in supply chain often involve simulations or more mechanistic understanding of the network.</p>
 <p>In supply chain Machine Learning alone is not enough, we need to bridge between models that contain real mechanisms and models that are entirely data driven.</p>
 <p>This is challenging, because as we introduce more mechanism to the models we use, it becomes harder to develop efficient algorithms to match those models to data.</p>
 <p><span style="text-align:right"></span></p>
-<h3 id="operations-research-control-econometrics-statistics-and-machine-learning">Operations Research, Control, Econometrics, Statistics and Machine Learning</h3>
+<h2 id="operations-research-control-econometrics-statistics-and-machine-learning">Operations Research, Control, Econometrics, Statistics and Machine Learning</h2>
 <p><span class="math inline">data + model</span> is not new, it dates back to Laplace and Gauss. Gauss fitted the orbit of Ceres using Keplers laws of planetary motion to generate his basis functions, and Laplace's insights on the error function and uncertainty <span class="citation">(Stigler 1999)</span>. Different fields such as Operations Research, Control, Econometrics, Statistics, Machine Learning and now Data Science and AI all rely on <span class="math inline">data + model</span>. Under a Popperian view of science, and equating experiment to data, one could argue that all science has <span class="math inline">data + model</span> underpinning it.</p>
 <p>Different academic fields are born in different eras, driven by different motivations and arrive at different solutions. For example, both Operations Research and Control emerged from the Second World War. Operations Research, the science of decision making, driven by the need for improved logistics and supply chain. Control emerged from cybernetics, a field that was driven in the by researchers who had been involved in radar and decryption <span class="citation">(Wiener 1948; Husband, Holland, and Wheeler 2008)</span>. The UK artificial intelligence community had similar origins <span class="citation">(Copeland 2006)</span>.</p>
 <p>The separation between these fields has almost become tribal, and from one perspective this can be very helpful. Each tribe can agree on a common language, a common set of goals and a shared understanding of the approach they’ve chose for those goals. This ensures that best practice can be developed and shared and as a result quality standards rise.</p>
@@ -304,16 +217,16 @@ include{_data-science/includes/data-readiness-levels.md}
 <p>While there is some discomfort in talking across field boundaries, it is critical to disconforming our current beliefs and generating the new techniques we need to address the challenges before us.</p>
 <p><strong>Recommendation</strong>: We should be aware of the limitations of a single tribal view of any of our problem sets. Where our modelling is dominated by one perspective (e.g. economics, OR, control, ML) we should ensure cross fertilization of ideas occurs through scientific review and team rotation mechanisms that embed our scientists (for a short period) in different teams across our organizations.</p>
 <p>THE DANGER OF LOST TECHNOLOGIES THE PROGRAMMER CAN DEPLOY QUICKLY</p>
-<h2 id="the-three-ds-of-ml-systems-design">The Three Ds of ML Systems Design</h2>
+<h1 id="the-three-ds-of-ml-systems-design">The Three Ds of ML Systems Design</h1>
 <p><span style="text-align:right"></span></p>
-<h3 id="the-three-ds-of-machine-learning-systems-design">The Three Ds of Machine Learning Systems Design</h3>
+<h2 id="the-three-ds-of-machine-learning-systems-design">The Three Ds of Machine Learning Systems Design</h2>
 <p>We can characterize the challenges for integrating machine learning within our systems as the three Ds. Decomposition, Data and Deployment.</p>
 <p>The first two components <em>decomposition</em> and <em>data</em> are interlinked, but we will first outline the decomposition challenge. Below we will mainly focus on <em>supervised learning</em> because this is arguably the technology that is best understood within machine learning.</p>
 <p><span style="text-align:right"></span></p>
-<h3 id="decomposition">Decomposition</h3>
+<h2 id="decomposition">Decomposition</h2>
 <p>Machine learning is not magical pixie dust, we cannot simply automate all decisions through data. We are constrained by our data (see below) and the models we use.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> Machine learning models are relatively simple function mappings that include characteristics such as smoothness. With some famous exceptions, e.g. speech and image data, inputs are constrained in the form of vectors and the model consists of a mathematically well behaved function. This means that some careful thought has to be put in to the right sub-process to automate with machine learning. This is the challenge of <em>decomposition</em> of the machine learning system.</p>
 <p>Any repetitive task is a candidate for automation, but many of the repetitive tasks we perform as humans are more complex than any individual algorithm can replace. The selection of which task to automate becomes critical and has downstream effects on our overall system design.</p>
-<h3 id="pigeonholing">Pigeonholing</h3>
+<h2 id="pigeonholing">Pigeonholing</h2>
 <div style="text-align:center">
 <img class="" src="../slides/diagrams/TooManyPigeons.jpg" width="60%" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
@@ -343,19 +256,19 @@ include{_data-science/includes/data-readiness-levels.md}
 <p>To embrace this characteristic, end-to-end training could be considered. Why produce the best forecast by metrics when we can just produce the best forecast for our systems? End to end training can lead to improvements in performance, but it would also damage our systems decomposability and its interpretability, and perhaps its adaptability.</p>
 <p>The less human interpretable our systems are, the harder they are to adapt to different circumstances or diagnose when there's a challenge. The trade-off between interpretability and performance is a constant tension which we should always retain in our minds when performing our system design.</p>
 <p><span style="text-align:right"></span></p>
-<h3 id="data">Data</h3>
+<h2 id="data">Data</h2>
 <p>It is difficult to overstate the importance of data. It is half of the equation for machine learning, but is often utterly neglected. We can speculate that there are two reasons for this. Firstly, data cleaning is perceived as tedious. It doesn’t seem to consist of the same intellectual challenges that are inherent in constructing complex mathematical models and implementing them in code. Secondly, data cleaning is highly complex, it requires a deep understanding of how machine learning systems operate and good intuitions about the data itself, the domain from which data is drawn (e.g. Supply Chain) and what downstream problems might be caused by poor data quality.</p>
 <p>A consequence of these two reasons, data cleaning seems difficult to formulate into a readily teachable set of principles. As a result it is heavily neglected in courses on machine learning and data science. Despite data being half the equation, most University courses spend little to no time on its challenges.</p>
 <p>Anecdotally, talking to data modelling scientists. Most say they spend 80% of their time acquiring and cleaning data. This is precipitating what I refer to as the “data crisis”. This is an analogy with software. The “software crisis” was the phenomenon of inability to deliver software solutions due to increasing complexity of implementation. There was no single shot solution for the software crisis, it involved better practice (scrum, test orientated development, sprints, code review), improved programming paradigms (object orientated, functional) and better tools (CVS, then SVN, then git).</p>
 <p>Anecdotally, talking to data modelling scientists. Most say they spend 80% of their time acquiring and cleaning data. This is precipitating what I refer to as the “data crisis”. This is an analogy with software. The “software crisis” was the phenomenon of inability to deliver software solutions due to increasing complexity of implementation. There was no single shot solution for the software crisis, it involved better practice (scrum, test orientated development, sprints, code review), improved programming paradigms (object orientated, functional) and better tools (CVS, then SVN, then git).</p>
 <p>However, these challenges aren't new, they are merely taking a different form. From the computer's perspective software <em>is</em> data. The first wave of the data crisis was known as the <em>software crisis</em>.</p>
-<h3 id="the-software-crisis">The Software Crisis</h3>
+<h2 id="the-software-crisis">The Software Crisis</h2>
 <blockquote>
 <p>The major cause of the software crisis is that the machines have become several orders of magnitude more powerful! To put it quite bluntly: as long as there were no machines, programming was no problem at all; when we had a few weak computers, programming became a mild problem, and now we have gigantic computers, programming has become an equally gigantic problem.</p>
 <p>Edsger Dijkstra (1930-2002), The Humble Programmer</p>
 </blockquote>
 <p>In the late sixties early software programmers made note of the increasing costs of software development and termed the challenges associated with it as the &quot;<a href="https://en.wikipedia.org/wiki/Software_crisis">Software Crisis</a>&quot;. Edsger Dijkstra referred to the crisis in his 1972 Turing Award winner's address.</p>
-<h3 id="the-data-crisis">The Data Crisis</h3>
+<h2 id="the-data-crisis">The Data Crisis</h2>
 <blockquote>
 <p>The major cause of the data crisis is that machines have become more interconnected than ever before. Data access is therefore cheap, but data quality is often poor. What we need is cheap high quality data. That implies that we develop processes for improving and verifying data quality that are efficient.</p>
 <p>There would seem to be two ways for improving efficiency. Firstly, we should not duplicate work. Secondly, where possible we should automate work.</p>
@@ -364,11 +277,11 @@ include{_data-science/includes/data-readiness-levels.md}
 <p>Just as with software, the crisis is most correctly addressed by 'scaling' the manner in which we process our data. Duplication of work occurs because the value of data cleaning is not correctly recognised in management decision making processes. Automation of work is increasingly possible through techniques in &quot;artificial intelligence&quot;, but this will also require better management of the data science pipeline so that data about data science (meta-data science) can be correctly assimilated and processed. The Alan Turing institute has a program focussed on this area, <a href="https://www.turing.ac.uk/research_projects/artificial-intelligence-data-analytics/">AI for Data Analytics</a>.</p>
 <p>Data is the new software, and the data crisis is already upon us. It is driven by the cost of cleaning data, the paucity of tools for monitoring and maintaining our deployments, the provenance of our models (e.g. with respect to the data they’re trained on).</p>
 <p>Three principal changes need to occur in response. They are cultural and infrastructural.</p>
-<h3 id="the-data-first-paradigm">The Data First Paradigm</h3>
+<h2 id="the-data-first-paradigm">The Data First Paradigm</h2>
 <p>First of all, to excel in data driven decision making we need to move from a <em>software first</em> paradigm to a <em>data first</em> paradigm. That means refocusing on data as the product. Software is the intermediary to producing the data, and its quality standards must be maintained, but not at the expense of the data we are producing. Data cleaning and maintenance need to be prized as highly as software debugging and maintenance. Instead of <em>software</em> as a service, we should refocus around <em>data</em> as a service. This first change is a cultural change in which our teams think about their outputs in terms of data. Instead of decomposing our systems around the software components, we need to decompose them around the data generating and consuming components.<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> Software first is only an intermediate step on the way to be coming <em>data first</em>. It is a necessary, but not a sufficient condition for efficient machine learning systems design and deployment. We must move from <em>software orientated architecture</em> to a <em>data orientated architecture</em>.</p>
-<h3 id="data-quality">Data Quality</h3>
+<h2 id="data-quality">Data Quality</h2>
 <p>Secondly, we need to improve our language around data quality. We cannot assess the costs of improving data quality unless we generate a language around what data quality means. Data Readiness Levels<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> are an assessment of data quality that is based on the usage to which data is put.</p>
-<h2 id="data-readiness-levels">Data Readiness Levels</h2>
+<h1 id="data-readiness-levels">Data Readiness Levels</h1>
 <p><a href="http://inverseprobability.com/2017/01/12/data-readiness-levels">Data Readiness Levels</a> <span class="citation">(Lawrence 2017b)</span> are an attempt to develop a language around data quality that can bridge the gap between technical solutions and decision makers such as managers and project planners. The are inspired by Technology Readiness Levels which attempt to quantify the readiness of technologies for deployment.</p>
 <p>Data-readiness describes, at its coarsest level, three separate stages of data graduation.</p>
 <ul>
@@ -376,28 +289,28 @@ include{_data-science/includes/data-readiness-levels.md}
 <li><p>Grade B - validity</p></li>
 <li><p>Grade A - usability</p></li>
 </ul>
-<h3 id="accessibility-grade-c">Accessibility: Grade C</h3>
+<h2 id="accessibility-grade-c">Accessibility: Grade C</h2>
 <p>The first grade refers to the accessibility of data. Most data science practitioners will be used to working with data-providers who, perhaps having had little experience of data-science before, state that they &quot;have the data&quot;. More often than not, they have not verified this. A convenient term for this is &quot;Hearsay Data&quot;, someone has <em>heard</em> that they have the data so they <em>say</em> they have it. This is the lowest grade of data readiness.</p>
 <p>Progressing through Grade C involves ensuring that this data is accessible. Not just in terms of digital accessiblity, but also for regulatory, ethical and intellectual property reasons.</p>
-<h3 id="validity-grade-b">Validity: Grade B</h3>
+<h2 id="validity-grade-b">Validity: Grade B</h2>
 <p>Data transits from Grade C to Grade B once we can begin digital analysis on the computer. Once the challenges of access to the data have been resolved, we can make the data available either via API, or for direct loading into analysis software (such as Python, R, Matlab, Mathematica or SPSS). Once this has occured the data is at B4 level. Grade B involves the <em>validity</em> of the data. Does the data really represent what it purports to? There are challenges such as missing values, outliers, record duplication. Each of these needs to be investigated.</p>
 <p>Grade B and C are important as if the work done in these grades is documented well, it can be reused in other projects. Reuse of this labour is key to reducing the costs of data-driven automated decision making. There is a strong overlap between the work required in this grade and the statistical field of <a href="https://en.wikipedia.org/wiki/Exploratory_data_analysis"><em>exploratory data analysis</em></a> <span class="citation">(Tukey 1977)</span>.</p>
 <p>The need for Grade B emerges due to the fundamental change in the availability of data. Classically, the scientific question came first, and the data came later. This is still the approach in a randomized control trial, e.g. in A/B testing or clinical trials for drugs. Today data is being laid down by happenstance, and the question we wish to ask about the data often comes after the data has been created. The Grade B of data readiness ensures thought can be put into data quality <em>before</em> the question is defined. It is this work that is reusable across multiple teams. It is these processes that the team which is <em>standing up</em> the data must deliver.</p>
-<h3 id="usability-grade-a">Usability: Grade A</h3>
+<h2 id="usability-grade-a">Usability: Grade A</h2>
 <p>Once the validity of the data is determined, the data set can be considered for use in a particular task. This stage of data readiness is more akin to what machine learning scientists are used to doing in Universities. Bringing an algorithm to bear on a well understood data set.</p>
 <p>In Grade A we are concerned about the utility of the data given a particular task. Grade A may involve additional data collection (experimental design in statistics) to ensure that the task is fulfilled.</p>
 <p>This is the stage where the data and the model are brought together, so expertise in learning algorithms and their application is key. Further ethical considerations, such as the fairness of the resulting predictions are required at this stage. At the end of this stage a prototype model is ready for deployment.</p>
 <p>Deployment and maintenance of machine learning models in production is another important issue which Data Readiness Levels are only a part of the solution for.</p>
-<h3 id="recursive-effects">Recursive Effects</h3>
+<h2 id="recursive-effects">Recursive Effects</h2>
 <p>To find out more, or to contribute ideas go to <a href="http://data-readiness.org" class="uri">http://data-readiness.org</a></p>
 <p>Throughout the data preparation pipeline, it is important to have close interaction between data scientists and application domain experts. Decisions on data preparation taken outside the context of application have dangerous downstream consequences. This provides an additional burden on the data scientist as they are required for each project, but it should also be seen as a learning and familiarization exercise for the domain expert. Long term, just as biologists have found it necessary to assimilate the skills of the bioinformatician to be effective in their science, most domains will also require a familiarity with the nature of data driven decision making and its application. Working closely with data-scientists on data preparation is one way to begin this sharing of best practice.</p>
 <p>The processes involved in Grade C and B are often badly taught in courses on data science. Perhaps not due to a lack of interest in the areas, but maybe more due to a lack of access to real world examples where data quality is poor.</p>
 <p>These stages of data science are also ridden with ambiguity. In the long term they could do with more formalization, and automation, but best practice needs to be understood by a wider community before that can happen.</p>
 <p><strong>Recommendation</strong>: Build a shared understanding of the language of data readiness levels for use in planning documents and costing of data cleaning and the benefits of reusing cleaned data.</p>
-<h3 id="move-beyond-software-engineering-to-data-engineering">Move Beyond Software Engineering to Data Engineering</h3>
+<h2 id="move-beyond-software-engineering-to-data-engineering">Move Beyond Software Engineering to Data Engineering</h2>
 <p>Thirdly, we need to improve our mental model of the separation of data science from applied science. A common trap in our thinking around data is to see data science (and data engineering, data preparation) as a sub-set of the software engineer’s or applied scientist’s skill set. As a result we recruit and deploy the wrong type of resource. Data preparation and question formulation is superficially similar to both because of the need for programming skills, but the day to day problems faced are very different.</p>
 <p><span style="text-align:right"></span></p>
-<h3 id="combining-data-and-systems-design">Combining Data and Systems Design</h3>
+<h2 id="combining-data-and-systems-design">Combining Data and Systems Design</h2>
 <p>One analogy I find helpful for understanding the depth of change we need is the following. Imagine as an engineer, you find a USB stick on the ground. And for some reason you <em>know</em> that on that USB stick is a particular API call that will enable you to make a significant positive difference on a business problem. However, you also know on that USB stick there is potentially malicious code. The most secure thing to do would be to <em>not</em> introduce this code into your production system. But what if your manager told you to do so, how would you go about incorporating this code base?</p>
 <p>The answer is <em>very</em> carefully. You would have to engage in a process more akin to debugging than regular software engineering. As you understood the code base, for your work to be reproducible, you should be documenting it, not just what you discovered, but how you discovered it. In the end, you typically find a single API call that is the one that most benefits your system. But more thought has been placed into this line of code than any line of code you have written before.</p>
 <p>Even then, when your API code is introduced into your production system, it needs to be deployed in an environment that monitors it. We cannot rely on an individual’s decision making to ensure the quality of all our systems. We need to create an environment that includes quality controls, checks and bounds, tests, all designed to ensure that assumptions made about this foreign code base are remaining valid.</p>
@@ -417,8 +330,8 @@ include{_data-science/includes/data-readiness-levels.md}
 </center>
 <p><strong>Recommendation</strong>: We need to share best practice around data deployment across our teams. We should make best use of our processes where applicable, but we need to develop them to become <em>data first</em> organizations. Data needs to be cleaned at <em>output</em> not at <em>input</em>.</p>
 <p><span style="text-align:right"></span></p>
-<h3 id="deployment">Deployment</h3>
-<h3 id="continuous-deployment">Continuous Deployment</h3>
+<h2 id="deployment">Deployment</h2>
+<h2 id="continuous-deployment">Continuous Deployment</h2>
 <p>Once the decomposition is understood, the data is sourced and the models are created, the model code needs to be deployed.</p>
 <p>To extend the USB stick analogy further, how would we deploy that code if we thought it was likely to evolve in production? This is what datadoes. We cannot assume that the conditions under which we trained our model will be retained as we move forward, indeed the only constant we have is change.</p>
 <p>This means that when any data dependent model is deployed into production, it requires <em>continuous monitoring</em> to ensure the assumptions of design have not been invalidated. Software changes are qualified through testing, in particular a regression test ensures that existing functionality is not broken by change. Since data is continually evolving, machine learning systems require 'continual regression testing': oversight by systems that ensure their existing functionality has not been broken as the world evolves around them. An approach we refer to as <em>progression testing</em>. Unfortunately, standards around ML model deployment yet been developed. The modern world of continuous deployment does rely on testing, but it does not recognize the continuous evolution of the world around us.</p>
@@ -426,11 +339,11 @@ include{_data-science/includes/data-readiness-levels.md}
 <p><strong>Recommendation</strong>: We establish best practice around model deployment. We need to shift our culture from standing up a software service, to standing up a <em>data as a service</em>. Data as a Service would involve continual monitoring of our deployed models in production. This would be regulated by 'hypervisor' systems<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> that understand the context in which models are deployed and recognize when circumstance has changed and models need retraining or restructuring.</p>
 <p><strong>Recommendation</strong>: We should consider a major re-architecting of systems around our services. In particular we should scope the use of a <em>streaming architecture</em> (such as Apache Kafka) that ensures data persistence and enables asynchronous operation of our systems.<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> This would enable the provision of QC streams, and real time dash boards as well as hypervisors..</p>
 <p>Importantly a streaming architecture implies the services we build are <em>stateless</em>, internal state is deployed on streams alongside external state. This allows for rapid assessment of other services' data.</p>
-<h3 id="outlook-for-machine-learning">Outlook for Machine Learning</h3>
+<h2 id="outlook-for-machine-learning">Outlook for Machine Learning</h2>
 <p>Machine learning has risen to prominence as an approach to <em>scaling</em> our activities. For us to continue to automate in the manner we have over the last two decades, we need to make more use of computer-based automation. Machine learning is allowing us to automate processes that were out of reach before.</p>
-<h2 id="conclusion">Conclusion</h2>
+<h1 id="conclusion">Conclusion</h1>
 <p>We operate in a technologically evolving environment. Machine learning is becoming a key coponent in our decision making capabilities, our intelligence and strategic command. However, technology drove changes in battlefield strategy. From the stalemate of the first world war to the tank-dominated Blitzkrieg of the second, to the asymmetric warfare of the present. Our technology, tactics and strategies are also constantly evolving. Machine learning is part of that evolution solution, but the main challenge is not to become so fixated on the tactics of today that we miss the evolution of strategy that the technology is suggesting.</p>
-<h3 id="references" class="unnumbered">References</h3>
+<h1 id="references" class="unnumbered">References</h1>
 <div id="refs" class="references">
 <div id="ref-Ananthanarayanan-cat09">
 <p>Ananthanarayanan, Rajagopal, Steven K. Esser, Horst D. Simon, and Dharmendra S. Modha. 2009. “The Cat Is Out of the Bag: Cortical Simulations with <span class="math inline">10<sup>9</sup></span> Neurons, <span class="math inline">10<sup>13</sup></span> Synapses.” In <em>Proceedings of the Conference on High Performance Computing Networking, Storage and Analysis - Sc ’09</em>. doi:<a href="https://doi.org/10.1145/1654059.1654124">10.1145/1654059.1654124</a>.</p>

@@ -406,31 +406,27 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <!--define{draft}-->
 <!-- Front matter -->
-<!-- Enables links to pages-->
 <p><!--% not ipynb--> <!--% slides and not ipynb --></p>
 <p><!--% not notes--></p>
 <!--Back matter-->
+<!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
+<p>}</p>
+<!-- SECTION Introduction -->
 </section>
 <section id="section" class="slide level3">
 <h3></h3>
-<div style="text-align:center;vertical-align:middle">
-<img class="vertical-align:middle" src="../slides/diagrams/Planck_CMB.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
-</div>
+
 </section>
 <section id="section-1" class="slide level3">
 <h3></h3>
-<div style="fontsize:120px;vertical-align:middle">
-<img src="../slides/diagrams/earth_PNG37.png" width="20%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">\(=f\Bigg(\)</span><img src="../slides/diagrams/Planck_CMB.png"  width="50%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">\(\Bigg)\)</span>
-</div>
-</section>
-<section id="deep-gaussian-processes" class="slide level3">
-<h3>Deep Gaussian Processes</h3>
+
+<!-- SECTION Low Rank Gaussian Processes -->
 <p><span style="text-align:right"></span></p>
 <p><span style="text-align:right"></span></p>
 </section>
 <section id="approximations" class="slide level3">
 <h3>Approximations</h3>
-<div style="text-align:center;vertical-align:middle">
+<div class="centered" style="">
 <img class="" src="../slides/diagrams/sparse-gps-1.png" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
 <center>
@@ -439,7 +435,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section>
 <section id="approximations-1" class="slide level3">
 <h3>Approximations</h3>
-<div style="text-align:center;vertical-align:middle">
+<div class="centered" style="">
 <img class="" src="../slides/diagrams/sparse-gps-2.png" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
 <center>
@@ -448,7 +444,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section>
 <section id="approximations-2" class="slide level3">
 <h3>Approximations</h3>
-<div style="text-align:center;vertical-align:middle">
+<div class="centered" style="">
 <img class="" src="../slides/diagrams/sparse-gps-3.png" width="45%" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
 <center>
@@ -457,7 +453,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section>
 <section id="approximations-3" class="slide level3">
 <h3>Approximations</h3>
-<div style="text-align:center;vertical-align:middle">
+<div class="centered" style="">
 <img class="" src="../slides/diagrams/sparse-gps-4.png" width="45%" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
 <center>
@@ -499,10 +495,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </table>
 <p>where <span class="math inline">\(\numInducing\)</span> is a user chosen parameter.</p>
 <p><small><span class="citation" data-cites="Snelson:pseudo05">Snelson and Ghahramani (n.d.)</span>,<span class="citation" data-cites="Quinonero:unifying05">Quiñonero Candela and Rasmussen (2005)</span>,<span class="citation" data-cites="Lawrence:larger07">Lawrence (n.d.)</span>,<span class="citation" data-cites="Titsias:variational09">Titsias (n.d.)</span>,<span class="citation" data-cites="Thang:unifying17">Bui et al. (2017)</span></small></p>
-<p><span style="text-align:right"></span></p>
-</section>
-<section id="variational-compression" class="slide level3">
-<h3>Variational Compression</h3>
+<p><span style="text-align:right"></span> ### Variational Compression</p>
 <ul>
 <li>Inducing variables are a compression of the real observations.</li>
 <li>They are like pseudo-data. They can be in space of <span class="math inline">\(\mappingFunctionVector\)</span> or a space that is related through a linear operator <span class="citation" data-cites="Alvarez:efficient10">(Álvarez et al., 2010)</span> — e.g. a gradient or convolution.</li>
@@ -665,7 +658,7 @@ p(\dataVector^*|\dataVector) = \int p(\dataVector^*|\inducingVector) p(\inducing
 <h3>Choose form for <span class="math inline">\(q(\cdot)\)</span></h3>
 <ul>
 <li>Set <span class="math inline">\(q(\mappingFunctionVector)=p(\mappingFunctionVector|\inducingVector)\)</span>, <span class="math display">\[
-  \log p(\dataVector|\inducingVector) \geq \log \int p(\mappingFunctionVector|\inducingVector) \log p(\dataVector|\mappingFunctionVector)\text{d}\mappingFunctionVector.
+  \log p(\dataVector|\inducingVector) \geq \int p(\mappingFunctionVector|\inducingVector) \log p(\dataVector|\mappingFunctionVector)\text{d}\mappingFunctionVector.
   \]</span> <span class="math display">\[
   p(\dataVector|\inducingVector) \geq \exp \int p(\mappingFunctionVector|\inducingVector) \log p(\dataVector|\mappingFunctionVector)\text{d}\mappingFunctionVector.
   \]</span> <span style="text-align:right"></span></li>
@@ -701,7 +694,7 @@ p(\dataVector^*|\dataVector) = \int p(\dataVector^*|\inducingVector) p(\inducing
 \end{bmatrix}
 \]</span></p>
 </section>
-<section id="variational-compression-1" class="slide level3">
+<section id="variational-compression" class="slide level3">
 <h3>Variational Compression</h3>
 <ul>
 <li>Inducing variables are a compression of the real observations.</li>
@@ -760,16 +753,13 @@ p(\dataVector^*|\dataVector) = \int p(\dataVector^*|\inducingVector) p(\inducing
 <object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-full-gp.svg" style="vertical-align:middle;">
 </object>
 </div>
-<p><span style="text-align:right"></span></p>
-</section>
-<section id="leads-to-other-approximations" class="slide level3">
-<h3>Leads to Other Approximations …</h3>
+<p><span style="text-align:right"></span> ### Leads to Other Approximations …</p>
 <ul>
 <li>Let’s be explicity about storing approximate posterior of <span class="math inline">\(\inducingVector\)</span>, <span class="math inline">\(q(\inducingVector)\)</span>.</li>
 <li>Now we have <span class="math display">\[p(\dataVector^*|\dataVector) = \int p(\dataVector^*| \inducingVector) q(\inducingVector | \dataVector) \text{d} \inducingVector\]</span></li>
 </ul>
 </section>
-<section id="leads-to-other-approximations-1" class="slide level3">
+<section id="leads-to-other-approximations" class="slide level3">
 <h3>Leads to Other Approximations …</h3>
 <ul>
 <li>Inducing variables look a lot like regular parameters.</li>
@@ -791,7 +781,7 @@ p(\dataVector^*|\dataVector) = \int p(\dataVector^*|\inducingVector) p(\inducing
 <center>
 Modern data availability
 </center>
-<div style="text-align:center;vertical-align:middle">
+<div class="centered" style="">
 <img class="negate" src="../slides/diagrams/ml/house_price_country.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
 </section>
@@ -800,7 +790,7 @@ Modern data availability
 <center>
 Proxy for index of deprivation?
 </center>
-<div style="text-align:center;vertical-align:middle">
+<div class="centered" style="">
 <img class="negate" src="../slides/diagrams/ml/house_price_peak_district.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
 </section>
@@ -809,7 +799,7 @@ Proxy for index of deprivation?
 <center>
 Actually index of deprivation is a proxy for this …
 </center>
-<div style="text-align:center;vertical-align:middle">
+<div class="centered" style="">
 <img class="negate" src="../slides/diagrams/ml/house_price_peak_district.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
 </section>
@@ -826,7 +816,7 @@ Actually index of deprivation is a proxy for this …
 </td>
 </tr>
 </table>
-<div style="text-align:center;vertical-align:middle">
+<div class="centered" style="">
 <img class="" src="../slides/diagrams/health/244_1_clip.png" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
 <center>
@@ -845,7 +835,7 @@ Actually index of deprivation is a proxy for this …
 </td>
 </tr>
 </table>
-<div style="text-align:center;vertical-align:middle">
+<div class="centered" style="">
 <img class="" src="../slides/diagrams/health/244_6_clip.png" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
 <center>
@@ -863,7 +853,7 @@ Actually index of deprivation is a proxy for this …
 </section>
 <section id="section-4" class="slide level3">
 <h3></h3>
-<div style="text-align:center;vertical-align:middle">
+<div class="centered" style="">
 <img class="" src="../slides/diagrams/gp/mackay-baby.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
 </section>
@@ -897,10 +887,7 @@ Actually index of deprivation is a proxy for this …
     \dataVector &amp;= \mappingVector_4 ^\top\hiddenVector_{3}
 \end{align}
 \]</span></p>
-<p><span style="text-align:right"></span></p>
-</section>
-<section id="overfitting" class="slide level3">
-<h3>Overfitting</h3>
+<p><span style="text-align:right"></span> ### Overfitting</p>
 <ul>
 <li><p>Potential problem: if number of nodes in two adjacent layers is big, corresponding <span class="math inline">\(\mappingMatrix\)</span> is also very big and there is the potential to overfit.</p></li>
 <li><p>Proposed solution: “dropout”.</p></li>
@@ -979,34 +966,19 @@ Actually index of deprivation is a proxy for this …
 <section id="section-5" class="slide level3">
 <h3></h3>
 <p><span class="fragment fade-in"><small>Outline of the DeepFace architecture. A front-end of a single convolution-pooling-convolution filtering on the rectified input, followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected.</small></span></p>
-<div style="width:100%;text-align:center">
-<img class="" src="../slides/diagrams/deepface_neg.png" width="" height="auto" align="" style="background:none; border:none; box-shadow:none;vertical-align:middle">
-</div>
-<p><span style="text-align:right"><small>Source: DeepFace <span class="citation" data-cites="Taigman:deepface14">(Taigman et al., 2014)</span></small></span></p>
+
 </section>
 <section id="section-6" class="slide level3">
 <h3></h3>
-<div style="height:600px;text-align:center">
-<img class="" src="../slides/diagrams/576px-Early_Pinball.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none;vertical-align:middle">
-</div>
+
 </section>
 <section id="section-7" class="slide level3">
 <h3></h3>
-<div style="text-align:center">
-<div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/pinball001.svg" style="vertical-align:middle;">
-</object>
-</div>
-</div>
+
 </section>
 <section id="section-8" class="slide level3">
 <h3></h3>
-<div style="text-align:center">
-<div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/pinball002.svg" style="vertical-align:middle;">
-</object>
-</div>
-</div>
+
 <p><span style="text-align:right"></span></p>
 <p><span style="text-align:right"></span></p>
 </section>
@@ -1104,7 +1076,7 @@ Actually index of deprivation is a proxy for this …
 </div>
 <p><span style="text-align:right"></span></p>
 </section>
-<section id="deep-gaussian-processes-1" class="slide level3">
+<section id="deep-gaussian-processes" class="slide level3">
 <h3>Deep Gaussian Processes</h3>
 <ul>
 <li>Deep architectures allow abstraction of features <span class="citation" data-cites="Bengio:deep09 Hinton:fast06 Salakhutdinov:quantitative08">(Bengio, 2009; Hinton and Osindero, 2006; Salakhutdinov and Murray, n.d.)</span></li>
@@ -1217,7 +1189,7 @@ showDivs(0, 'stack-gp-sample');
 </section>
 <section id="gpy-a-gaussian-process-framework-in-python" class="slide level3">
 <h3>GPy: A Gaussian Process Framework in Python</h3>
-<div style="text-align:center;vertical-align:middle">
+<div class="centered" style="">
 <img class="" src="../slides/diagrams/gp/gpy.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
 <center>
@@ -1259,7 +1231,7 @@ showDivs(0, 'stack-gp-sample');
 </ul>
 </td>
 <td width="30%">
-<div style="text-align:center;vertical-align:middle">
+<div class="centered centered" style="">
 <img class="" src="../slides/diagrams/Stephen_Kiprotich.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
 <small>Image from Wikimedia Commons <a href="http://bit.ly/16kMKHQ" class="uri">http://bit.ly/16kMKHQ</a></small>
@@ -1282,12 +1254,12 @@ showDivs(0, 'stack-gp-sample');
 <table>
 <tr>
 <td width="50%">
-<div style="text-align:center;vertical-align:middle">
+<div class="centered" style="">
 <img class="" src="../slides/diagrams/turing-times.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
 </td>
 <td width="50%">
-<div style="text-align:center;vertical-align:middle">
+<div class="centered centered" style="">
 <img class="" src="../slides/diagrams/turing-run.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
 </td>
@@ -1391,7 +1363,7 @@ showDivs(0, 'stack-gp-sample');
 </section>
 <section id="section-13" class="slide level3">
 <h3></h3>
-<div style="text-align:center;vertical-align:middle">
+<div class="centered" style="">
 <img class="" src="../slides/diagrams/health/1471-2105-12-180_1.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
 <center>
@@ -1806,7 +1778,7 @@ showDivs(0, 'stack-gp-sample');
 </section>
 <section id="mountain-car-simulator" class="slide level3">
 <h3>Mountain Car Simulator</h3>
-<div style="text-align:center;vertical-align:middle">
+<div class="centered" style="">
 <img class="negate" src="../slides/diagrams/uq/mountaincar.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
 </section>
@@ -1894,7 +1866,7 @@ showDivs(0, 'stack-gp-sample');
 <section id="emukit" class="slide level3">
 <h3>Emukit</h3>
 <ul>
-<li>Work by Javier Gonzalez, Andrei Paleyes, Mark Pullin, Maren Mahsereci.</li>
+<li>Work by Javier Gonzalez, Andrei Paleyes, Mark Pullin, Maren Mahsereci, Alex Gessner, Aaron Klein.</li>
 <li>Available on <a href="https://github.com/amzn/emukit">Github</a></li>
 <li>Example <a href="https://github.com/amzn/emukit/blob/develop/notebooks/Emukit-sensitivity-montecarlo.ipynb">sensitivity notebook</a>.</li>
 </ul>
@@ -1913,7 +1885,7 @@ showDivs(0, 'stack-gp-sample');
 </section>
 <section id="mxfusion-modular-probabilistic-programming-on-mxnet" class="slide level3">
 <h3>MXFusion: Modular Probabilistic Programming on MXNet</h3>
-<div style="text-align:center;vertical-align:middle">
+<div class="centered" style="">
 <img class="" src="../slides/diagrams/ml/mxfusion.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none;vertical-align:middle">
 </div>
 <center>
@@ -2140,9 +2112,6 @@ infr.run(Y<span class="op">=</span>data)</code></pre></div>
 </div>
 <div id="ref-Snelson:pseudo05">
 <p>Snelson, E., Ghahramani, Z., n.d. Sparse Gaussian processes using pseudo-inputs, in:.</p>
-</div>
-<div id="ref-Taigman:deepface14">
-<p>Taigman, Y., Yang, M., Ranzato, M., Wolf, L., 2014. DeepFace: Closing the gap to human-level performance in face verification, in: Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition. <a href="https://doi.org/10.1109/CVPR.2014.220" class="uri">https://doi.org/10.1109/CVPR.2014.220</a></p>
 </div>
 <div id="ref-Titsias:variational09">
 <p>Titsias, M.K., n.d. Variational learning of inducing variables in sparse Gaussian processes, in:. pp. 567–574.</p>

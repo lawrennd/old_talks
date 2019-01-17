@@ -25,9 +25,13 @@ transition: None
 <!--define{draft}-->
 \include{talk-macros.tex}
 
+\section{Introduction}
+
+\notes{In the previous session on Gaussian processes, we introduced the Gaussian process model and the covariance function. In this session we are going to address two challenges of the Gaussian process. Firstly, we look at the computational tractability and secondly we look at extending the nature of the process beyond Gaussian.}
+
 \include{_gp/includes/planck-cmp-master-gp.md}
 
-\newslide{Deep Gaussian Processes}
+\section{Low Rank Gaussian Processes}
 
 \include{_gp/includes/approximate-gps-short.md}
 \include{_gp/includes/gp-big-data-technical.md}

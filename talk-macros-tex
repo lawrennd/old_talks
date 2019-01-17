@@ -1,0 +1,17 @@
+\ifndef{talkMacrosTex}
+\define{talkMacrosTex}
+
+\define{\div{text}}{}
+\define{\centerdiv{text}}{}
+
+\define{\linebreak}{\\}
+
+\define{\colorcyan{block}}{{\color{\cyanColor} \block}}
+\define{\colormagenta{block}}{{\color{\magentaColor} \block}}
+\define{\coloryellow{block}}{{\color{\yellowColor} \block}}
+\define{\colorred{block}}{{\color{\redColor} \block}}
+\define{\colorgreen{block}}{{\color{\greenColor} \block}}
+\define{\colorblue{block}}{{\color{\blueColor} \block}}
+
+
+\endif

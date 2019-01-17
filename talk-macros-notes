@@ -56,8 +56,8 @@
 ```
 }
 
-\define{\section{text}}{## \text}
-\define{\subsection{text}}{### \text}
+\define{\section{text}}{# \text}
+\define{\subsection{text}}{## \text}
 
 \define{\code{block}}{```{.python}
 \block
@@ -81,6 +81,7 @@
 \define{\loadcode{object}{filename}}{```{.python}
 from \filename import \object
 ```}
+
 \define{\notesfigure{block}}{\block}
 \define{\slidesmall{block}}{\block}
 \define{\coloryellow{block}}{\block}
@@ -92,5 +93,6 @@ from \filename import \object
 
 \define{\columns{one}{two}{width1}{width2}}{<table><tr><td width="\width1">\one</td><td width="\width2">\two</td></tr></table>}
 
+\define{\references}{\section{References}}
 
 \endif

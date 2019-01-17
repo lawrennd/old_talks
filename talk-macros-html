@@ -1,0 +1,18 @@
+\ifndef{talkMacrosHtml}
+\define{talkMacrosHtml}
+
+\define{\div{contents}{class}{style}}{<div class="\class" style="\style">\contents</div>}
+\define{\centerdiv{contents}{class}{style}}{<div class="centered \class" style="\style">\contents</div>}
+
+\define{\linebreak}{<br>}
+
+
+\define{\colorcyan{block}}{<font color="\cyanColor">\block</font>}
+\define{\colormagenta{block}}{<font color="\magentaColor">\block</font>}
+\define{\coloryellow{block}}{<font color="\yellowColor">\block</font>}
+\define{\colorred{block}}{<font color="\redColor">\block</font>}
+\define{\colorgreen{block}}{<font color="\greenColor">\block</font>}
+\define{\colorblue{block}}{<font color="\blueColor">\block</font>}
+
+
+\endif
