@@ -1,6 +1,6 @@
 OUT=$(DATE)-$(BASE)
 
-all: ${BASE}.slides.html ${BASE}.notes.html ${BASE}.posts.html ${BASE}.slides.ipynb ${BASE}.ipynb ${BASE}.notes.tex ${BASE}.notes.pdf
+all: ${BASE}.slides.html ${BASE}.notes.html ${BASE}.posts.html ${BASE}.slides.ipynb ${BASE}.ipynb ${BASE}.notes.tex ${BASE}.notes.pdf ${BASE}.notes.docx
 
 ${BASE}.slides.html: ${BASE}.slides.html.md
 	printf '' > ../include.tmp
@@ -35,6 +35,12 @@ ${BASE}.notes.tex: ${BASE}.notes.tex.md
 		-o ${BASE}.notes.tex  \
 		${BASE}.notes.tex.md 
 
+${BASE}.notes.docx: ${BASE}.notes.docx.md
+	pandoc  ${CITEFLAGS} \
+		--to docx \
+		--out ${BASE}.notes.docx  \
+		${BASE}.notes.docx.md 
+
 ${BASE}.notes.html: ${BASE}.notes.html.md
 	pandoc  ${PDSFLAGS} \
 		-o ${BASE}.notes.html  \
@@ -42,10 +48,12 @@ ${BASE}.notes.html: ${BASE}.notes.html.md
 
 ${BASE}.posts.html: ${BASE}.notes.html.md
 	pandoc --template pandoc-jekyll-talk-template ${PDFLAGS} \
-	       --atx-headers --metadata date=${DATE} \
+	       --atx-headers \
+	       --metadata date=${DATE} \
                --metadata layout=talk \
                --metadata reveal=${OUT}.slides.html \
                --metadata ipynb=${OUT}.ipynb \
+               --metadata pdf=${OUT}.notes.pdf \
                --metadata published=${DATE} \
                --bibliography=../lawrence.bib \
                --bibliography=../other.bib \
@@ -69,7 +77,7 @@ ${BASE}.slides.ipynb: ${BASE}.slides.ipynb.md
 
 
 ${BASE}.slides.html.md: ${BASE}.md 
-	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -Dhtml=1 ${PPFLAGS} ${BASE}.md -o ${BASE}.slides.html.md
+	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -Dhtml=1 -Dslides=1 ${PPFLAGS} ${BASE}.md -o ${BASE}.slides.html.md
 
 ${BASE}.notes.html.md: ${BASE}.md 
 	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -Dnotes=1 -Dhtml=1 ${PPFLAGS} ${BASE}.md -o ${BASE}.notes.html.md
@@ -80,6 +88,9 @@ ${BASE}.notes.tex.md: ${BASE}.md
 	sed -i -e 's/width=\(.*\)\%/width=0.\1\\textwidth/g' ${BASE}.notes.tex.md
 	sed -i -e 's/width=\(.*\)\%/height=0.\1\\textheight/g' ${BASE}.notes.tex.md
 
+${BASE}.notes.docx.md: ${BASE}.md 
+	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -Dnotes=1 -Ddocx=1 ${PPFLAGS} ${BASE}.md -o ${BASE}.notes.docx.md
+
 ${BASE}.notes.ipynb.md: ${BASE}.md 
 	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -Dipynb=1 -Dnotes=1 ${PPFLAGS} ${BASE}.md -o ${BASE}.notes.ipynb.md
 
@@ -87,4 +98,4 @@ ${BASE}.slides.ipynb.md: ${BASE}.md
 	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -Dipynb=1 -Dslides=1 ${PPFLAGS} ${BASE}.md -o ${BASE}.slides.ipynb.md
 
 clean:
-	rm ${BASE}.slides.md ${BASE}.slides.html ${BASE}.notes.tex.md ${BASE}.notes.ipynb.md ${BASE}.notes.html ${BASE}.slides.ipynb.md ${BASE}.ipynb.md ${BASE}.posts.html ${BASE}.notes.bbl ${BASE}.notes.aux
+	rm ${BASE}.slides.md ${BASE}.slides.html ${BASE}.notes.tex.md ${BASE}.notes.ipynb.md ${BASE}.notes.html ${BASE}.slides.ipynb.md ${BASE}.ipynb.md ${BASE}.posts.html ${BASE}.notes.bbl ${BASE}.notes.aux ${BASE}.notes.docx.md

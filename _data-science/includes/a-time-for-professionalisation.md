@@ -14,7 +14,7 @@ compare [digital oligarchy](https://www.theguardian.com/media-network/2015/mar/0
 
 * Apple vs Nokia: How you handle disruption.
 }
-\notes{The rise in data science and artificial intelligence technologies has been termed "Industrial Revolution 4.0", so are we in the midst of an industrial change? Maybe, but if so, it is the first part of the industrial revolution to be named before it has happened. The original industrial revolution occurred between 1760 and 1840, but the term was coined by Arnold Toynbee (1889-1975).}
+\notes{The rise in data science and artificial intelligence technologies has been termed "Industrial Revolution 4.0", so are we in the midst of an industrial change? Maybe, but if so, it is the first part of the industrial revolution to be named before it has happened. The original industrial revolution occurred between 1760 and 1840, but the term was introduced into English by Arnold Toynbee (1852-1883).}
 
 \notes{Whether this is a new revolution or an extension of previous revolutions, an important aspect is that this revolution is dominated by *data* instead of just *capital*.}
 

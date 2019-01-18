@@ -2,7 +2,8 @@
 \define{talkMacrosSlidesIpynb}
 
 
-\define{\slidenotes{slidetext}{notetext}}{\slidetext}
+<!-- Use HTML macros as the basis -->
+\include{talk-macros-slides-html}
 
 \define{\setupplotcode{block}}{```{.python}
 \block

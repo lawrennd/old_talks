@@ -7,6 +7,6 @@ PP=gpp
 PPFLAGS=-T 
 PPFLAGS=-I./..
 BIBFLAGS=--bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib 
-TEXFLAGS=--filter pandoc-citeproc --csl=../elsevier-harvard.csl --mathjax=${MATHJAX} ${BIBFLAGS}
-PDSFLAGS=-s -S ${TEXFLAGS}
+CITEFLAGS=--filter pandoc-citeproc --csl=../elsevier-harvard.csl ${BIBFLAGS}
+PDSFLAGS=-s -S ${CITEFLAGS} --mathjax=${MATHJAX} 
 SFLAGS=--slide-level 3

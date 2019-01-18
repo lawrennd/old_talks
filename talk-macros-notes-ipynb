@@ -1,6 +1,7 @@
 \ifndef{talkMacrosNotesIpynb}
 \define{talkMacrosNotesIpynb}
 
+\include{talk-macros-notes-html}
 
 \define{\writeassignment{text}{question}{marks}}{### Question \question
 

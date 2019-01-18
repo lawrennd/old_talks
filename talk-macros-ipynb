@@ -1,6 +1,7 @@
 \ifndef{talkMacrosIpynb}
 \define{talkMacrosIpynb}
 
+\include{talk-macros-html}
 
 \define{\includegooglebook{id}{page}}{```
 import pods

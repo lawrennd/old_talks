@@ -1,6 +1,14 @@
 <!-- Front matter -->
 \include{talk-macros-front}
 
+\ifdef{slides}
+\include{talk-macros-slides}
+\endif
+
+\ifdef{notes}
+\include{talk-macros-notes}
+\endif
+
 \ifdef{html}
 \include{talk-macros-html}
 \endif
@@ -13,8 +21,8 @@
 \include{talk-macros-tex}
 \endif
 
-\ifdef{slides}
-\include{talk-macros-slides}
+\ifdef{docx}
+\include{talk-macros-docx}
 \endif
 
 \ifdef{slides}
@@ -37,12 +45,14 @@
 
 
 \ifdef{notes}
-\include{talk-macros-notes}
+\ifdef{tex}
+\include{talk-macros-notes-tex}
+\endif
 \endif
 
 \ifdef{notes}
-\ifdef{tex}
-\include{talk-macros-notes-tex}
+\ifdef{docx}
+\include{talk-macros-notes-docx}
 \endif
 \endif
 
