@@ -44,13 +44,16 @@ the USB stick is evolving over time.}
 \recommendation{Anecdotally, resolving a machine learning challenge requires 80% of the
 resource to be focused on the data and perhaps 20% to be focused on the
 model. But many companies are too keen to employ machine learning
-engineers who focus on the models, not the data. We should change our hiring priorities and training. Universities cannot provide the understanding of how to data-wrangle. Companies must fill this gap.}
+engineers who focus on the models, not the data. We should change our hiring priorities 
+and training. Universities cannot provide the understanding of how to data-wrangle. 
+ompanies must fill this gap.}
 
 \newslide{}
 
 \figure{
 \includejpg{../slides/diagrams/data-science/water-bridge-hill-transport-arch-calm-544448-pxhere.com}{80%}
-\notes{\caption{A reservoir of data has more value if the data is consumbable. The data crisis can only be addressed if we focus on outputs rather than inputs.}}
+\notes{\caption{A reservoir of data has more value if the data is consumbable. The 
+data crisis can only be addressed if we focus on outputs rather than inputs.}}
 }
 
 \newslide{}
