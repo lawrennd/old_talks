@@ -12,6 +12,6 @@
 
 \columns{* Work by Eric Meissner and Zhenwen Dai.
 * Probabilistic programming.
-* Available on [Github](https://github.com/amzn/mxfusion)}{\includeimg{../slides/diagrams/mxfusion-logo.png}}{70%}{30%}
+* Available on [Github](https://github.com/amzn/mxfusion)}{\includepng{../slides/diagrams/mxfusion-logo}}{70%}{30%}
 
 \endif
