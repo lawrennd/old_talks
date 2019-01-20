@@ -12,34 +12,34 @@ import glob
 import datetime
 import subprocess
 
-def get_cvs_version(file_name, full_path):
+def get_cvs_version(filename, full_path):
     # extract CVS version.
     base_dir = os.path.dirname(full_path)
-    cvs_file_name = os.path.join(base_dir, 'CVS', 'Entries')    
+    cvs_filename = os.path.join(base_dir, 'CVS', 'Entries')    
     cvs_ver=''
-    if os.path.exists(cvs_file_name):
-        file = open(cvs_file_name, 'r')
+    if os.path.exists(cvs_filename):
+        file = open(cvs_filename, 'r')
         cvs_lines = file.readlines()
         for line in cvs_lines:
             split_vals = line.split('/')        
-            if len(split_vals)>2 and split_vals[1]==file_name:
+            if len(split_vals)>2 and split_vals[1]==filename:
                 cvs_ver = split_vals[2] 
     return cvs_ver
 
-def get_svn_version(file_name, full_path):
+def get_svn_version(filename, full_path):
     # extract SVN version.
     base_dir = os.path.dirname(full_path)
-    svn_file_name = os.path.join(base_dir, '.svn', 'entries')
+    svn_filename = os.path.join(base_dir, '.svn', 'entries')
     
     file_lines = []
     svn_ver ={}
     in_file = 0
     counter = 11
-    if os.path.exists(svn_file_name):
-        file = open(svn_file_name, 'r')
+    if os.path.exists(svn_filename):
+        file = open(svn_filename, 'r')
         svn_lines = file.readlines()
         for line in svn_lines:
-            if re.findall(re.compile(r'^' + file_name), line):
+            if re.findall(re.compile(r'^' + filename), line):
                 in_file = 1
             if in_file:
                 file_lines.append(line)
@@ -57,49 +57,49 @@ def get_svn_version(file_name, full_path):
         svn_ver = []
     return svn_ver
 
-def get_git_version(file_name, full_path, git_path):
+def get_git_version(filename, full_path, git_path):
     # extract GIT version.
     base_dir = os.path.dirname(full_path)
-    git_file_name = os.path.join(base_dir, file_name)
+    git_filename = os.path.join(base_dir, filename)
     
     file_lines = []
     svn_ver = {}
     in_file = 0
     counter = 11
-    if os.path.exists(git_file_name):
-        out_repo = subprocess.call(["git", "--git-dir", os.path.join(git_path,'.git'), '--work-tree', base_dir, "ls-files", file_name, "--error-unmatch"])
+    if os.path.exists(git_filename):
+        out_repo = subprocess.call(["git", "--git-dir", os.path.join(git_path,'.git'), '--work-tree', base_dir, "ls-files", filename, "--error-unmatch"])
         print out_repo
         if out_repo != 1:
-            output = subprocess.check_output(["git", "--git-dir", os.path.join(git_path,'.git'), '--work-tree', base_dir, "ls-files", file_name, "--error-unmatch"])
+            output = subprocess.check_output(["git", "--git-dir", os.path.join(git_path,'.git'), '--work-tree', base_dir, "ls-files", filename, "--error-unmatch"])
             print output
             git_ver = 0.1
         else:
             git_ver = []
     return git_ver
 
-def read_txt_file(file, dir_name="."):
-    file = os.path.join(dir_name, file)
+def read_txt_file(filename, dir_name="."):
+    fullname = os.path.join(dir_name, filename)
     str_ret = ''
-    if os.path.exists(file):
-        file_handle = open(file, 'r');
-        file_lines = file_handle.readlines()
-        file_handle.close()
-        for line in file_lines:
+    if os.path.exists(fullname):
+        f = open(fullname, 'r');
+        lines = f.readlines()
+        f.close()
+        for line in lines:
             if line[0]=='#':
                 continue
             else:
                 str_ret += line
     return str_ret
 
-def extract_file_details(file, seperator=",", dir_name="."):
+def extract_file_details(filename, seperator=",", dir_name="."):
 
     details = []
-    file = os.path.join(dir_name, file);
-    if os.path.exists(file):
-        file_handle = open(file, 'r');
-        file_lines = file_handle.readlines()
-        file_handle.close()
-        for line in file_lines:
+    fullname = os.path.join(dir_name, filename);
+    if os.path.exists(fullname):
+        f = open(fullname, 'r');
+        lines = f.readlines()
+        f.close()
+        for line in lines:
             if line[0]=='#':
                 continue
             elif line[0]=='\n':

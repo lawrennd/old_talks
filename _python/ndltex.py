@@ -4,14 +4,15 @@ import re
 import os
 
 tex_directories = os.environ['BIBINPUTS'].split(':') + os.environ['TEXINPUTS'].split(':')
-def replace_notation(tex_file_lines, old_notation, new_notation):
-    #    openBracketList ='\(|\[|\{'
-    #closeBracketList = '\)|\]|\}'
-    #mathSymbol = '=|+|-\)|\]|\}'
-    #subSuperList = '\^|_'
-    #notationReg = '[' + openBracketList +'|'+ closeBracketList +'|' + subSuperList+'|'+ '\s' + oldNotation \^|_|\s|\]|\}|oldNotation
+
+def replace_notation(lines, old_notation, new_notation):
+    #    open_bracket_list ='\(|\[|\{'
+    #close_bracket_list = '\)|\]|\}'
+    #math_symbol = '=|+|-\)|\]|\}'
+    #sub_super_list = '\^|_'
+    #notation_reg = '[' + open_bracketList +'|'+ close_bracket_list +'|' + sub_super_list+'|'+ '\s' + old_notation \^|_|\s|\]|\}|old_notation
     filename = ''
-    for line in tex_file_lines:
+    for line in lines:
         filename = filename + line
 
     terminate = '[^\w|_]'
@@ -20,11 +21,11 @@ def replace_notation(tex_file_lines, old_notation, new_notation):
     matches = not_reg.findall(filename)
     return matches
 
-def extract_bib_files(tex_file_lines):
+def extract_bib_files(lines):
     bib_files = []
     match_bib = re.compile(r"""\\bibliography{([^}]*)}""")
     match_bib2 = re.compile(r"""\\begin{btSect}.*{([^}]*)}""")
-    for line in tex_file_lines.split('\n'):
+    for line in lines:
        line_bib = match_bib.findall(line)
        if line_bib:
            for bib in line_bib:
@@ -36,11 +37,11 @@ def extract_bib_files(tex_file_lines):
 
     return bib_files
 
-def substitute_inputs(filename, directories=none):
-
-    print filename
+def substitute_inputs(filename, directories=None):
+    """Take the base file and substitute in any input and include files."""
+    print(filename)
     file_dir = os.path.dirname(filename)
-    if directories == none:
+    if directories == None:
         directories = [file_dir]
         filename = os.path.basename(filename)
     elif len(file_dir)>0:
@@ -51,8 +52,8 @@ def substitute_inputs(filename, directories=none):
         if directory not in directories:
             directories.append(directory)
     if filename[0] == '#': # it's a macro
-        return none
-    tex_file_handle = none
+        return None
+    tex_file_handle = None
     for directory in directories:
         full_filename = os.path.join(directory, filename)
         if os.path.exists(full_filename):
@@ -60,11 +61,11 @@ def substitute_inputs(filename, directories=none):
             dirname = directory
             break
     if not tex_file_handle:
-        return none
-    tex_file_lines = tex_file_handle.readlines()
+        return None
+    lines = tex_file_handle.readlines()
     new_lines = ''
     # Avoid parsing defined commands in notation def.
-    for line in tex_file_lines:
+    for line in lines:
         if not line[0] == '%':
             match_inp = re.compile(r"""\\newsection *{([^}]*)} *{([^}]*)}""")
             for match in match_inp.finditer(line):
@@ -93,6 +94,12 @@ def substitute_inputs(filename, directories=none):
                 if subs:
                     line = line.replace(match.group(0), subs)
 
+            match_inp = re.compile(r"""\\include{([^}]*)}""")
+            for match in match_inp.finditer(line):
+                subs = substitute_inputs(input_file_name(match.group(1)), directories)
+                if subs:
+                    line = line.replace(match.group(0), subs)
+                    
             match_inp = re.compile(r"""\\includetalkfile{([^}]*)}""")
             for match in match_inp.finditer(line):
                 subs = substitute_inputs(input_file_name(match.group(1)), directories)
@@ -104,103 +111,85 @@ def substitute_inputs(filename, directories=none):
     
     return new_lines
 
-def input_file_name(filename):
-    if filename[-4:] == '.tex':
+def input_file_name(filename, extension='.tex'):
+    ext_list = ['md', 'tex']
+    if os.path.exists(filename):
         return filename
     else:
-        return filename + '.tex'
+        for ext in ext_list:
+            if os.path.exists(filename + '.' + ext):
+                return filename + '.' + ext
 
-def process_tex_file(filename):
+def process_file(filename, extension='.tex'):
     tex_file_handle = open(filename, 'r')
-    tex_file_lines = tex_file_handle.readlines()
-    inp_list = extract_inputs(tex_file_lines)
+    lines = tex_file_handle.readlines()
+    inp_list = extract_inputs(lines)
     for inp in inp_list:
         if not inp[0] == '#':
-            if inp[-4:] == '.tex':
-                tex_file_lines += process_tex_file(inp)
+            if inp[-len(extension):] == extension:
+                lines += process_file(inp, extension)
             else:
-                tex_file_lines += process_tex_file(inp + '.tex')
-    return tex_file_lines
+                lines += process_file(inp + extension, extension)
+    return lines
 
-def extract_inputs(tex_file_lines):
+def extract_inputs(lines):
+
+    def extract_input(lines, matchstr):
+        inp_list = []
+        for line in lines:
+            line_inp = re.compile(matchstr).findall(line)
+            if line_inp:
+                for inp in line_inp:
+                    inp_list = inp_list + inp.split(',')
+        return inp_list
     inp_list = []
-    match_inp = re.compile(r"""\\newsection *{[^}]*} *{([^}]*)}""")
-    for line in tex_file_lines.split('\n'):
-        line_inp = match_inp.findall(line)
-        if line_inp:
-            for inp in line_inp:
-                inp_list = inp_list + inp.split(',')
-
-    match_inp = re.compile(r"""\\newsubsection *{[^}]*} *{([^}]*)}""")
-    for line in tex_file_lines:
-        line_inp = match_inp.findall(line)
-        if line_inp:
-            for inp in line_inp:
-                inp_list = inp_list + inp.split(',')
-
-    match_inp = re.compile(r"""\\includetalkfile{([^}]*)}""")
-    for line in tex_file_lines:
-        line_inp = match_inp.findall(line)
-        if line_inp:
-            for inp in line_inp:
-                inp_list = inp_list + inp.split(',')
-
-    match_inp = re.compile(r"""\\input *{([^}]*)}""")
-    for line in tex_file_lines:
-        line_inp = match_inp.findall(line)
-        if line_inp:
-            for inp in line_inp:
-                inp_list = inp_list + inp.split(',')
-
-
-    match_inp = re.compile(r"""\\input{([^}]*)}""")
-    for line in tex_file_lines:
-        line_inp = match_inp.findall(line)
-        if line_inp:
-            for inp in line_inp:
-                inp_list = inp_list + inp.split(',')
+    inp_list += extract_input(lines,
+                              r"""\\newsection *{[^}]*} *{([^}]*)}""")
+    inp_list += extract_input(lines,
+                              r"""\\newsubsection *{[^}]*} *{([^}]*)}""")
+    inp_list += extract_input(lines,
+                              r"""\\includetalkfile{([^}]*)}""")
+    inp_list += extract_input(lines,
+                              r"""\\input *{([^}]*)}""")
+    inp_list += extract_input(lines,
+                              r"""\\include *{([^}]*)}""")
+    inp_list += extract_input(lines,
+                              r"""\\input{([^}]*)}""")
 
 
     return inp_list
 
-def extract_diagrams(tex_file_lines):
+def extract_diagrams(lines):
+    """Extract all the diagrams listed in the file."""
     diagram_list = []
-    match_diagram = re.compile(r"""\\includegraphics *\[[^\]]*\] *{([^}]*)}""")
-    for line in tex_file_lines.split('\n'):
-        line_diagram = match_diagram.findall(line)
-        if line_diagram:
-            for diagram in line_diagram:
-                diagram_list = diagram_list + diagram.split(',')
 
-    match_diagram = re.compile(r"""\\includegraphics<[^>]*>{([^}]*)}""")
-    for line in tex_file_lines.split('\n'):
-        line_diagram = match_diagram.findall(line)
-        if line_diagram:
-            for diagram in line_diagram:
-                diagram_list = diagram_list + diagram.split(',')
-
-    match_diagram = re.compile(r"""\\includegraphics<[^>]*>\[[^\]]*\]{([^}]*)}""")
-    for line in tex_file_lines:
-        line_diagram = match_diagram.findall(line)
-        if line_diagram:
-            for diagram in line_diagram:
-                diagram_list = diagram_list + diagram.split(',')
-
-    match_diagram = re.compile(r"""\\includegraphics{([^}]*)}""")
-    for line in tex_file_lines:
-        line_diagram = match_diagram.findall(line)
-        if line_diagram:
-            for diagram in line_diagram:
-                diagram_list = diagram_list + diagram.split(',')
-
+    rebases = [r'\\includegraphics',
+               r'\\includesvg',
+               r'\\includeimg',
+               r'\\includepng',
+               r'\\includejpg']
+    retails = [r" *\[[^\]]*\] *{([^}]*)}",
+                r"<[^>]*>{([^}]*)}",
+                r"<[^>]*>\[[^\]]*\]{([^}]*)}",
+                r"{([^}]*)}"]
+    for rebase in rebases:
+        for retail in retails:
+            match_diagram = re.compile(rebase + retail)
+            for line in lines:
+                line_diagram = match_diagram.findall(line)
+                if line_diagram:
+                    print(line_diagram)
+                    for diagram in line_diagram:
+                        diagram_list += diagram.split(',')
 
     return diagram_list
 
-def extract_citations(tex_file_lines):
+def extract_citations(lines):
+     """Extract all the citations listed in the file lines."""
      citations_list = []
      match_cite = re.compile(r"""\\cite[^\{]*{([^}\\#]+)}""")
      full_text = ''
-     for line in tex_file_lines.split('\n'):
+     for line in lines:
          full_text += line
      line_cite = match_cite.findall(full_text)
      if line_cite:
@@ -278,10 +267,10 @@ def get_bib_cross_refs(string_list, bib_files):
        return ''
 
 
-def create_bib_file_given_tex(tex_file_lines):
+def create_bib_file_given_tex(lines):
+    """Create a new bibliography file for a given latex file."""
+    bib_files = extract_bib_files(lines)
+    citations_list = extract_citations(lines)
 
-   bib_files = extract_bib_files(tex_file_lines)
-   citations_list = extract_citations(tex_file_lines)
-
-   return make_bib_file(citations_list, bib_files)
+    return make_bib_file(citations_list, bib_files)
 

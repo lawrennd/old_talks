@@ -4,6 +4,7 @@ abstract: >
   Classical machine learning and statistical approaches to learning, such as neural networks and linear regression, assume a parametric form for functions. Gaussian process models are an alternative approach that assumes a probabilistic prior over functions. This brings benefits, in that uncertainty of function estimation is sustained throughout inference, and some challenges: algorithms for fitting Gaussian processes tend to be more complex than parametric models. 
   
   In this sessions I will introduce Gaussian processes and explain why sustaining uncertainty is important. 
+youtube: U85XFCt3Lak
 ipynb: 2019-01-09-gaussian-processes.ipynb
 pdfnotes: 2019-01-09-gaussian-processes.notes.pdf
 reveal: 2019-01-09-gaussian-processes.slides.html
