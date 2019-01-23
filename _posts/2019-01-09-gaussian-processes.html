@@ -53,7 +53,10 @@ categories:
 <li>mismatch between the set of prediction functions we choose and all possible prediction functions.</li>
 </ol>
 <p>There are also challenges around specification of the objective function, but for we will save those for another day. For the moment, let us focus on the prediction function.</p>
-<p><span style="text-align:right"></span> ## Neural Networks and Prediction Functions</p>
+<p><span style="text-align:right"></span> </p>
+
+<h2>Neural Networks and Prediction Functions</h2>
+
 <p>Neural networks are adaptive non-linear function models. Originally, they were studied (by McCulloch and Pitts <span class="citation">(McCulloch and Pitts 1943)</span>) as simple models for neurons, but over the last decade they have become popular because they are a flexible approach to modelling complex data. A particular characteristic of neural network models is that they can be composed to form highly complex functions which encode many of our expectations of the real world. They allow us to encode our assumptions about how the world works.</p>
 <p>We will return to composition later, but for the moment, let's focus on a one hidden layer neural network. We are interested in the prediction function, so we'll ignore the objective function (which is often called an error function) for the moment, and just describe the mathematical object of interest</p>
 <p><br /><span class="math display">$$
@@ -65,7 +68,11 @@ $$</span><br /></p>
 <h2 id="adaptive-basis-functions">Adaptive Basis Functions</h2>
 <p>The first difference in the (early) neural network literature to the classical statistical literature is the decision to optimize these parameters, <span class="math inline">$\mappingMatrixTwo$</span>, as well as the parameters, <span class="math inline">$\mappingMatrix$</span> (which would normally be denoted in statistics by <span class="math inline"><strong>β</strong></span>)<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>.</p>
 <p>In this tutorial, we're going to go revisit that decision, and follow the path of Radford Neal <span class="citation">(Neal 1994)</span> who, inspired by work of David MacKay <span class="citation">(MacKay 1992)</span> and others did his PhD thesis on Bayesian Neural Networks. If we take a Bayesian approach to parameter inference (note I am using inference here in the classical sense, not in the sense of prediction of test data, which seems to be a newer usage), then we don't wish to fit parameters at all, rather we wish to integrate them away and understand the family of functions that the model describes.</p>
-<p><span style="text-align:right"></span> ## Probabilistic Modelling</p>
+<p><span style="text-align:right"></span> 
+</p>
+
+<h2>Probabilistic Modelling</h2>
+
 <p>This Bayesian approach is designed to deal with uncertainty arising from fitting our prediction function to the data we have, a reduced data set.</p>
 <p>The Bayesian approach can be derived from a broader understanding of what our objective is. If we accept that we can jointly represent all things that happen in the world with a probability distribution, then we can interogate that probability to make predictions. So, if we are interested in predictions, <span class="math inline">$\dataScalar_*$</span> at future points input locations of interest, <span class="math inline">$\inputVector_*$</span> given previously training data, <span class="math inline">$\dataVector$</span> and corresponding inputs, <span class="math inline">$\inputMatrix$</span>, then we are really interogating the following probability density, <br /><span class="math display">$$
 p(\dataScalar_*|\dataVector, \inputMatrix, \inputVector_*),
@@ -85,7 +92,10 @@ $$</span><br /></p>
 <p>In short, that is the classical approach to probabilistic inference, and all approaches to Bayesian neural networks fall within this path. For a deep probabilistic model, we can simply take this one stage further and place a probability distribution over the input locations, <br /><span class="math display">$$
 p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \parameterVector) p(\parameterVector | \dataVector, \inputMatrix) p(\inputMatrix) p(\inputMatrix_*) \text{d} \parameterVector \text{d} \inputMatrix \text{d}\inputMatrix_*
 $$</span><br /> and we have <em>unsupervised learning</em> (from where we can get deep generative models).</p>
-<p><span style="text-align:right"></span> ## Graphical Models</p>
+<p><span style="text-align:right"></span> </p>
+
+<h2>Graphical Models</h2>
+
 <p>One way of representing a joint distribution is to consider conditional dependencies between data. Conditional dependencies allow us to factorize the distribution. For example, a Markov chain is a factorization of a distribution into components that represent the conditional relationships between points that are neighboring, often in time or space. It can be decomposed in the following form. <br /><span class="math display">$$p(\dataVector) = p(\dataScalar_\numData | \dataScalar_{\numData-1}) p(\dataScalar_{\numData-1}|\dataScalar_{\numData-2}) \dots p(\dataScalar_{2} | \dataScalar_{1})$$</span><br /></p>
 <object class="svgplot " align data="../slides/diagrams/ml/markov.svg" style="vertical-align:middle;">
 </object>
@@ -158,7 +168,10 @@ $$</span><br /> so the elements of the covariance or <em>kernel</em> matrix are 
 <h2 id="basis-functions">Basis Functions</h2>
 <p>We can basically put anything inside the basis functions, and many people do. These can be deep kernels <span class="citation">(Cho and Saul 2009)</span> or we can learn the parameters of a convolutional neural network inside there.</p>
 <p>Viewing a neural network in this way is also what allows us to beform sensible <em>batch</em> normalizations <span class="citation">(Ioffe and Szegedy 2015)</span>.</p>
-<p><span style="text-align:right"></span> ## Non-degenerate Gaussian Processes</p>
+<p><span style="text-align:right"></span> </p>
+
+<h2>Non-degenerate Gaussian Processes</h2>
+
 <p>The process described above is degenerate. The covariance function is of rank at most <span class="math inline">$\numHidden$</span> and since the theoretical amount of data could always increase <span class="math inline">$\numData \rightarrow \infty$</span>, the covariance function is not full rank. This means as we increase the amount of data to infinity, there will come a point where we can't normalize the process because the multivariate Gaussian has the form, <br /><span class="math display">$$
 \gaussianDist{\mappingFunctionVector}{\zerosVector}{\kernelMatrix} = \frac{1}{\left(2\pi\right)^{\frac{\numData}{2}}\det{\kernelMatrix}^\frac{1}{2}} \exp\left(-\frac{\mappingFunctionVector^\top\kernelMatrix \mappingFunctionVector}{2}\right)
 $$</span><br /> and a non-degenerate kernel matrix leads to <span class="math inline">$\det{\kernelMatrix} = 0$</span> defeating the normalization (it's equivalent to finding a projection in the high dimensional Gaussian where the variance of the the resulting univariate Gaussian is zero, i.e. there is a null space on the covariance, or alternatively you can imagine there are one or more directions where the Gaussian has become the delta function).</p>
@@ -275,7 +288,9 @@ $$</span><br /> in the figure below we plot these data on the <span class="math 
 <li><p>Posterior covariance <br /><span class="math display">$$\covarianceMatrix_* = \kernelMatrix_{*,*} - \kernelMatrix_{*,\mappingFunctionVector}
 \kernelMatrix^{-1} \kernelMatrix_{\mappingFunctionVector, *}$$</span><br /></p></li>
 </ul>
-<p><span style="text-align:right"></span> ## Exponentiated Quadratic Covariance</p>
+<p><span style="text-align:right"></span> 
+  
+ <h2>Exponentiated Quadratic Covariance</p>
 <p>The exponentiated quadratic covariance, also known as the Gaussian covariance or the RBF covariance and the squared exponential. Covariance between two points is related to the negative exponential of the squared distnace between those points. This covariance function can be derived in a few different ways: as the infinite limit of a radial basis function neural network, as diffusion in the heat equation, as a Gaussian filter in <em>Fourier space</em> or as the composition as a series of linear filters applied to a base function.</p>
 <p>The covariance takes the following form, <br /><span class="math display">$$
 \kernelScalar(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\ltwoNorm{\inputVector-\inputVector^\prime}^2}{2\lengthScale^2}\right)
@@ -661,7 +676,7 @@ $$</span><br /></p>
 <em>An additive covariance function formed by combining two exponentiated quadratic covariance functions. </em>
 </center>
 <p><span style="text-align:right"></span></p>
-<p>{## Analysis of US Birth Rates</p>
+<h2>Analysis of US Birth Rates</h2>
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/ml/bialik-fridaythe13th-1.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
@@ -699,7 +714,8 @@ $$</span><br /> meaning that the vector of observations from the function is joi
 <center>
 <em>A covariance function based on a non-linear basis given by <span class="math inline">$\basisVector(\inputVector)$</span>. </em>
 </center>
-<p><span style="text-align:right"></span> ## Brownian Covariance</p>
+<p><span style="text-align:right"></span> </h2>
+<h2>Brownian Covariance</h2>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>load <span class="op">-</span>s brownian_cov mlai.py</code></pre></div>
 <p>Brownian motion is also a Gaussian process. It follows a Gaussian random walk, with diffusion occuring at each time point driven by a Gaussian input. This implies it is both Markov and Gaussian. The covariance function for Brownian motion has the form <br /><span class="math display">$$
 \kernelScalar(t, t^\prime)=\alpha \min(t, t^\prime)
@@ -720,7 +736,10 @@ $$</span><br /></p>
 </td>
 </tr>
 </table>
-<p><span style="text-align:right"></span> ## MLP Covariance</p>
+<p><span style="text-align:right"></span> 
+  
+<h2>MLP Covariance</h2>
+
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>load <span class="op">-</span>s mlp_cov mlai.py</code></pre></div>
 <p>The multi-layer perceptron (MLP) covariance, also known as the neural network covariance or the arcsin covariance, is derived by considering the infinite limit of a neural network.</p>
 <center>
