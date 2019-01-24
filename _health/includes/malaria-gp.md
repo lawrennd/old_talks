@@ -6,7 +6,7 @@
 
 \alignright{\ricardoPicture{1.5cm}}
 
-\notes{As an example we'll consider the prediction of Malaria incidence in Uganda. For the purposes of this study malaria reports come in two forms, HMIS reports from health centres and Sentinel data, which is curated by the WHO. There are limited sentinel sites and many HMIS sites.
+\notes{As an of using Gaussian process models within the full pipeline from data to decsion, we'll consider the prediction of Malaria incidence in Uganda. For the purposes of this study malaria reports come in two forms, HMIS reports from health centres and Sentinel data, which is curated by the WHO. There are limited sentinel sites and many HMIS sites.
 
 The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboration with John Quinn and Martin Mubangizi [@Andrade:consistent14,@Mubangizi:malaria14,]. John and Martin were initally from the AI-DEV group from the University of Makerere in Kampala and more latterly they were based at UN Global Pulse in Kampala.}
 
@@ -26,15 +26,18 @@ The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboratio
 \ifdef{olympicMarathonData}
 \newslide{Kapchorwa District}
 
+\figure{
 \includesvgclass{../slides/diagrams/health/Kapchorwa_District_in_Uganda.svg}
+\notes{\caption{The Kapchorwa District, home district of Stephen Kiprotich.}}
+}
 
-\notes{\caption{THe Kapchorwa District, home district of Stephen Kiprotich.}
 \notes{Stephen Kiprotich, the 2012 gold medal winner from the London Olympics, comes from Kapchorwa district, in eastern Uganda, near the border with Kenya.}
 
 \endif
+
 \newslide{Tororo District}
 
-\includesvgclass{../slides/diagrams/health/Tororo_District_in_Uganda.svg}
+\figure{\includesvgclass{../slides/diagrams/health/Tororo_District_in_Uganda.svg}
 \notes{\caption{The Tororo District, where the sentinel site, Nagongera is located}}}
 
 \newslide{Malaria Prediction in Nagongera (Sentinel Site)}

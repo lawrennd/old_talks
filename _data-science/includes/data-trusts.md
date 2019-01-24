@@ -1,10 +1,14 @@
+\ifndef{dataTrusts}
+\define{dataTrusts}
+\editme
+
 \section{Data Trusts}
 
 \notes{The machine learning solutions we are dependent on to drive automated decision making are dependent on data. But with regard to personal data there are important issues of privacy. Data sharing brings benefits, but also exposes our digital selves. From the use of social media data for targeted advertising to influence us, to the use of genetic data to identify criminals, or natural family members. Control of our virtual selves maps on to control of our actual selves. 
 
 The fuedal system that is implied by current data protection legislation has signficant power asymmetries at its heart, in that the data controller has a duty of care over the data subject, but the data subject may only discover failings in that duty of care when it's too late. Data controllers also may have conflicting motivations, and often their primary motivation is *not* towards the data-subject, but that is a consideration in their wider agenda.
 
-[Data Trusts](https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy) [@Edwards:privacy04,@Lawrence:trusts16] are a potential solution to this problem. Inspired by *land societies* that formed in the 19th century to bring democratic representation to the growing middle classes. A land society was a mutual organisation where resources were pooled for the common good. 
+[Data Trusts](https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy) [@Edwards:privacy04,@Lawrence:trusts16,@Delacroix:trusts18] are a potential solution to this problem. Inspired by *land societies* that formed in the 19th century to bring democratic representation to the growing middle classes. A land society was a mutual organisation where resources were pooled for the common good. 
 
 A Data Trust would be a legal entity where the trustees responsibility was entirely to the members of the trust. So the motivation of the data-controllers is aligned only with the data-subjects. How data is handled would be subject to the terms under which the trust was convened. The success of an individual trust would be contingent on it satisfying its members with appropriate balancing of individual privacy with the benefits of data sharing. 
 
@@ -42,5 +46,7 @@ Formation of Data Trusts became the number one recommendation of the Hall-Presen
 * Trustees are data *controllers*
 * Beneficiaries are data *subjects*
 * Power of data accumulation wielded on the beneficiaries behalf
-* See @Edwards:privacy04 and @Lawrence:trusts16
+* See @Edwards:privacy04, @Delacroix:trusts18 and @Lawrence:trusts16
 }
+
+\endif

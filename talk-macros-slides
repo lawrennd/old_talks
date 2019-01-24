@@ -28,8 +28,13 @@
 \text
 
 :::}
-\define{\newslide{text}}{### \text
-}
+\define{\newslide{text}}{\ifdef{noSlideTitle}
+###
+
+\else
+### \text
+
+\endif}
 
 \define{\code{block}}{}
 \define{\matlabcode{block}}{}

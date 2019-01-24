@@ -25,6 +25,22 @@
 
 \define{\columns{one}{two}{width1}{width2}}{<table><tr><td width="\width1">\one</td><td width="\width2">\two</td></tr></table>}
 
+\define{\threeColumns{one}{two}{three}{width1}{width2}{width3}}{<table><tr><td width="\width1">\one</td><td width="\width2">\two</td><td width="\width3">\three</td></tr></table>}
+
+
+\define{\caption{block}}{\defeval{storeCaption}{\block}}
+
+\defeval{\figure{block}{options}}{
+\define{inFloat}
+\block
+\undef{inFloat}
+\ifdef{storeCaption}
+Store Caption: \storeCaption
+\undef{storeCaption}
+\endif
+}
+
+
 \define{\div{contents}{class}{style}}{<div class="\class" style="\style">\contents</div>}
 \define{\centerdiv{contents}{class}{style}}{<div class="centered \class" style="\style">\contents</div>}
 
@@ -35,7 +51,6 @@
 \define{\includeimgclip{filename}{top}{right}{bottom}{left}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" align="\align" style="background:none; border:none; box-shadow:none; position:absolute; clip:rect(\top,\right,\bottom,\left);vertical-align:middle">}
 \define{\includehtml{filename}{width}{height}}{<iframe src="\filename" width="\width" height="\height" allowtransparency="true" frameborder="0">
 </iframe>}
-\define{\speakernotes{text}}{}
 
 
 
