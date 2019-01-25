@@ -27,23 +27,22 @@ categories:
 
 <!--define{draft}-->
 <!-- Front matter -->
-<p><!--% not ipynb--> <!--% slides and not ipynb --></p>
 <!--Back matter-->
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
-<p>}</p>
 <h1 id="introduction">Introduction</h1>
 <p>In the previous session on Gaussian processes, we introduced the Gaussian process model and the covariance function. In this session we are going to address two challenges of the Gaussian process. Firstly, we look at the computational tractability and secondly we look at extending the nature of the process beyond Gaussian.</p>
-
-
+<div class="centered" style="">
+<img class="vertical-align:middle" src="../slides/diagrams/Planck_CMB.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<div style="fontsize:120px;vertical-align:middle">
+<img src="../slides/diagrams/earth_PNG37.png" width="20%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">=<em>f</em>(</span><img src="../slides/diagrams/Planck_CMB.png"  width="50%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">)</span>
+</div>
 <h1 id="low-rank-gaussian-processes">Low Rank Gaussian Processes</h1>
 <p><span style="text-align:right"></span></p>
 <p><span style="text-align:right"></span></p>
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/sparse-gps.jpg" width="45%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<center>
-<em>Image credit: Kai Arulkumaran </em>
-</center>
 <p><span style="text-align:right"></span></p>
 <p>Inference in a Gaussian process has computational complexity of <span class="math inline">$\bigO(\numData^3)$</span> and storage demands of <span class="math inline">$\bigO(\numData^2)$</span>. This is too large for many modern data sets.</p>
 <p>Low rank approximations allow us to work with Gaussian processes with computational complexity of <span class="math inline">$\bigO(\numData\numInducing^2)$</span> and storage demands of <span class="math inline">$\bigO(\numData\numInducing)$</span>, where <span class="math inline">$\numInducing$</span> is a user chosen parameter.</p>
@@ -159,11 +158,19 @@ y <span class="op">=</span> np.random.multivariate_normal(np.zeros(N),k.K(X)<spa
 <p>First we perform a full Gaussian process regression on the data. We create a GP model, <code>m_full</code>, and fit it to the data, plotting the resulting fit.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_full <span class="op">=</span> GPy.models.GPRegression(X,y)
 _ <span class="op">=</span> m_full.optimize(messages<span class="op">=</span><span class="va">True</span>) <span class="co"># Optimize parameters of covariance function</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
+<span class="im">import</span> mlai
+<span class="im">import</span> teaching_plots <span class="im">as</span> plot 
+<span class="im">from</span> gp_tutorial <span class="im">import</span> gpplot</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+plot.model_output(m_full, ax<span class="op">=</span>ax, xlabel<span class="op">=</span><span class="st">&#39;$x$&#39;</span>, ylabel<span class="op">=</span><span class="st">&#39;$y$&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>, portion<span class="op">=</span><span class="fl">0.2</span>)
+xlim <span class="op">=</span> ax.get_xlim()
+ylim <span class="op">=</span> ax.get_ylim()
+mlai.write_figure(figure<span class="op">=</span>fig,
+                  filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/gp/sparse-demo-full-gp.svg&#39;</span>, 
+                  transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-full-gp.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>Full Gaussian process fitted to the data set. </em>
-</center>
 <p>Now we set up the inducing variables, <span class="math inline"><strong>u</strong></span>. Each inducing variable has its own associated input index, <span class="math inline"><strong>Z</strong></span>, which lives in the same space as <span class="math inline">$\inputMatrix$</span>. Here we are using the true covariance function parameters to generate the fit.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">kern <span class="op">=</span> GPy.kern.RBF(<span class="dv">1</span>)
 Z <span class="op">=</span> np.hstack(
@@ -173,26 +180,32 @@ m <span class="op">=</span> GPy.models.SparseGPRegression(X,y,kernel<span class=
 m.noise_var <span class="op">=</span> noise_var
 m.inducing_inputs.constrain_fixed()
 display(m)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+plot.model_output(m, ax<span class="op">=</span>ax, xlabel<span class="op">=</span><span class="st">&#39;$x$&#39;</span>, ylabel<span class="op">=</span><span class="st">&#39;$y$&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>, portion<span class="op">=</span><span class="fl">0.2</span>, xlim<span class="op">=</span>xlim, ylim<span class="op">=</span>ylim)
+mlai.write_figure(figure<span class="op">=</span>fig,
+                  filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/gp/sparse-demo-constrained-inducing-6-unlearned-gp.svg&#39;</span>, 
+                  transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-constrained-inducing-6-unlearned-gp.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>Sparse Gaussian process fitted with six inducing variables, no optimization of parameters or inducing variables. </em>
-</center>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">_ <span class="op">=</span> m.optimize(messages<span class="op">=</span><span class="va">True</span>)
 display(m)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+plot.model_output(m, ax<span class="op">=</span>ax, xlabel<span class="op">=</span><span class="st">&#39;$x$&#39;</span>, ylabel<span class="op">=</span><span class="st">&#39;$y$&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>, portion<span class="op">=</span><span class="fl">0.2</span>, xlim<span class="op">=</span>xlim, ylim<span class="op">=</span>ylim)
+mlai.write_figure(figure<span class="op">=</span>fig,
+                  filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/gp/sparse-demo-constrained-inducing-6-learned-gp.svg&#39;</span>, 
+                  transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-constrained-inducing-6-learned-gp.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>Gaussian process fitted with inducing variables fixed and parameters optimized </em>
-</center>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.randomize()
 m.inducing_inputs.unconstrain()
 _ <span class="op">=</span> m.optimize(messages<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+plot.model_output(m, ax<span class="op">=</span>ax, xlabel<span class="op">=</span><span class="st">&#39;$x$&#39;</span>, ylabel<span class="op">=</span><span class="st">&#39;$y$&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>, portion<span class="op">=</span><span class="fl">0.2</span>,xlim<span class="op">=</span>xlim, ylim<span class="op">=</span>ylim)
+mlai.write_figure(figure<span class="op">=</span>fig,
+                  filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/gp/sparse-demo-unconstrained-inducing-6-gp.svg&#39;</span>, 
+                  transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-unconstrained-inducing-6-gp.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>Gaussian process fitted with location of inducing variables and parameters both optimized </em>
-</center>
 <p>Now we will vary the number of inducing points used to form the approximation.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.num_inducing<span class="op">=</span><span class="dv">8</span>
 m.randomize()
@@ -200,13 +213,15 @@ M <span class="op">=</span> <span class="dv">8</span>
 m.set_Z(np.random.rand(M,<span class="dv">1</span>)<span class="op">*</span><span class="dv">12</span>)
 
 _ <span class="op">=</span> m.optimize(messages<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+plot.model_output(m, ax<span class="op">=</span>ax, xlabel<span class="op">=</span><span class="st">&#39;$x$&#39;</span>, ylabel<span class="op">=</span><span class="st">&#39;$y$&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>, portion<span class="op">=</span><span class="fl">0.2</span>, xlim<span class="op">=</span>xlim, ylim<span class="op">=</span>ylim)
+mlai.write_figure(figure<span class="op">=</span>fig,
+                  filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/gp/sparse-demo-sparse-inducing-8-gp.svg&#39;</span>, 
+                  transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-sparse-inducing-8-gp.svg" style="vertical-align:middle;">
 </object>
 <object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-full-gp.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>Comparison of the full Gaussian process fit with a sparse Gaussian process using eight inducing varibles. Both inducing variables and parameters are optimized. </em>
-</center>
 <p>And we can compare the probability of the result to the full model.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(m.log_likelihood(), m_full.log_likelihood())</code></pre></div>
 <p><span style="text-align:right"></span></p>
@@ -288,9 +303,6 @@ Actually index of deprivation is a proxy for this ...
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> teaching_plots <span class="im">as</span> plot</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/deepgp/deep-nn2.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>A deep neural network. Input nodes are shown at the bottom. Each hidden layer is the result of applying an affine transformation to the previous layer and placing through an activation function. </em>
-</center>
 <p>Mathematically, each layer of a neural network is given through computing the activation function, <span class="math inline">$\basisFunction(\cdot)$</span>, contingent on the previous layer, or the inputs. In this way the activation functions, are composed to generate more complex interactions than would be possible with any single layer. <br /><span class="math display">$$
 \begin{align}
     \hiddenVector_{1} &amp;= \basisFunction\left(\mappingMatrix_1 \inputVector\right)\\
@@ -309,9 +321,6 @@ $$</span><br /></p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> teaching_plots <span class="im">as</span> plot</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/wisuvt.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>Pictorial representation of the low rank form of the matrix <span class="math inline">$\mappingMatrix$</span> </em>
-</center>
 <p><span style="text-align:right"></span></p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> teaching_plots <span class="im">as</span> plot</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/deepgp/deep-nn-bottleneck2.svg" style="vertical-align:middle;">
@@ -345,36 +354,49 @@ $$</span><br /></p>
 \end{align}
 $$</span><br /></p>
 <p><span style="text-align:right"></span></p>
-
+<!-- No slide titles in this context -->
+<p><span style="text-align:right"></span></p>
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/deepface_neg.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
 <p>The DeepFace architecture <span class="citation">(Taigman et al. 2014)</span> consists of layers that deal with <em>translation</em> and <em>rotational</em> invariances. These layers are followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected layers.</p>
+<p><span style="text-align:right"></span></p>
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/576px-Early_Pinball.jpg" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
 
-<p>We can think of what these models are doing as being similar to early pin ball machines. In a neural network, we input a number (or numbers), whereas in pinball, we input a ball. The location of the ball on the left-right axis can be thought of as the number. As the ball falls through the machine, each layer of pins can be thought of as a different layer of neurons. Each layer acts to move the ball from left to right.</p>
+<p>Sometimes deep learning models are described as being like the brain, or too complex to understand, but one analogy I find useful to help the gist of these models is to think of them as being similar to early pin ball machines.</p>
+<p>In a deep neural network, we input a number (or numbers), whereas in pinball, we input a ball.</p>
+<p>Think of the location of the ball on the left-right axis as a single number. Our simple pinball machine can only take one number at a time. As the ball falls through the machine, each layer of pins can be thought of as a different layer of 'neurons'. Each layer acts to move the ball from left to right.</p>
 <p>In a pinball machine, when the ball gets to the bottom it might fall into a hole defining a score, in a neural network, that is equivalent to the decision: a classification of the input object.</p>
 <p>An image has more than one number associated with it, so it's like playing pinball in a <em>hyper-space</em>.</p>
-
-
-<p>Learning involves moving all the pins to be in the right position, so that the ball falls in the right place. But moving all these pins in hyperspace can be difficult. In a hyper space you have to put a lot of data through the machine for to explore the positions of all the pins. Adversarial learning reflects the fact that a ball can be moved a small distance and lead to a very different result.</p>
-<p>Probabilistic methods explore more of the space by considering a range of possible paths for the ball through the machine.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;pinball</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            <span class="st">&#39;../slides/diagrams&#39;</span>,
+                            sample<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>))</code></pre></div>
+<div style="text-align:center">
+<object class="svgplot " align data="../slides/diagrams/pinball001.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div style="text-align:center">
+<object class="svgplot " align data="../slides/diagrams/pinball002.svg" style="vertical-align:middle;">
+</object>
+</div>
+<p>Learning involves moving all the pins to be in the correct position, so that the ball ends up in the right place when it's fallen through the machine. But moving all these pins in hyperspace can be difficult.</p>
+<p>In a hyper space you have to put a lot of data through the machine for to explore the positions of all the pins. <em>Adversarial examples</em> exploit this idea.</p>
+<p>If you have access to the pinball machine, you can use gradient methods to find a position for the ball in the hyper space where the image looks like one thing, but will be classified as another.</p>
+<p>Probabilistic methods explore more of the space by considering a range of possible paths for the ball through the machine. This helps to make them more data efficient and gives some robustness to adversarial examples.</p>
 <p><span style="text-align:right"></span></p>
 <p><span style="text-align:right"></span></p>
 <p>Mathematically, a deep Gaussian process can be seen as a composite <em>multivariate</em> function, <br /><span class="math display">$$
   \mathbf{g}(\inputVector)=\mappingFunctionVector_5(\mappingFunctionVector_4(\mappingFunctionVector_3(\mappingFunctionVector_2(\mappingFunctionVector_1(\inputVector))))).
   $$</span><br /> Or if we view it from the probabilistic perspective we can see that a deep Gaussian process is specifying a factorization of the joint density, the standard deep model takes the form of a Markov chain.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> matplotlib <span class="im">import</span> rc
-
-rc(<span class="st">&quot;font&quot;</span>, <span class="op">**</span>{<span class="st">&#39;family&#39;</span>:<span class="st">&#39;sans-serif&#39;</span>,<span class="st">&#39;sans-serif&#39;</span>:[<span class="st">&#39;Helvetica&#39;</span>],<span class="st">&#39;size&#39;</span>:<span class="dv">30</span>})
-rc(<span class="st">&quot;text&quot;</span>, usetex<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <p><br /><span class="math display">$$
   p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mappingFunctionVector_5|\mappingFunctionVector_4)p(\mappingFunctionVector_4|\mappingFunctionVector_3)p(\mappingFunctionVector_3|\mappingFunctionVector_2)p(\mappingFunctionVector_2|\mappingFunctionVector_1)p(\mappingFunctionVector_1|\inputVector)
   $$</span><br /></p>
 <object class="svgplot " align data="../slides/diagrams/deepgp/deep-markov.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>Probabilistically the deep Gaussian process can be represented as a Markov chain. </em>
-</center>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> matplotlib <span class="im">import</span> rc
-rc(<span class="st">&quot;font&quot;</span>, <span class="op">**</span>{<span class="st">&#39;family&#39;</span>:<span class="st">&#39;sans-serif&#39;</span>,<span class="st">&#39;sans-serif&#39;</span>:[<span class="st">&#39;Helvetica&#39;</span>], <span class="st">&#39;size&#39;</span>:<span class="dv">15</span>})
-rc(<span class="st">&quot;text&quot;</span>, usetex<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/deepgp/deep-markov-vertical.svg" style="vertical-align:middle;">
 </object>
 <h2 id="why-deep">Why Deep?</h2>
@@ -394,12 +416,12 @@ rc(<span class="st">&quot;text&quot;</span>, usetex<span class="op">=</span><spa
 <p><span style="text-align:right"></span></p>
 <p>The argument in the deep learning revolution is that deep architectures allow us to develop an abstraction of the feature set through model composition. Composing Gaussian processes is analytically intractable. To form deep Gaussian processes we use a variational approach to stack the models.</p>
 <p><span style="text-align:right"></span></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;stack-gp-sample-Linear-</span><span class="sc">{sample:0&gt;1}</span><span class="st">.svg&#39;</span>, 
+                            directory<span class="op">=</span><span class="st">&#39;../../slides/diagrams/deepgp&#39;</span>, sample<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">4</span>))</code></pre></div>
 <h2 id="stacked-pca">Stacked PCA</h2>
 <object class="svgplot " align data="../slides/diagrams/stack-pca-sample-4.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>Composition of linear functions just leads to a new linear function. </em>
-</center>
 <p>Stacking a series of linear functions simply leads to a new linear function. The use of multiple linear function merely changes the covariance of the resulting Gaussian. If <br /><span class="math display">$$
 \latentMatrix \sim \gaussianSamp{\zerosVector}{\eye}
 $$</span><br /> and the <span class="math inline"><em>i</em></span>th hidden layer is a multivariate linear transformation defined by <span class="math inline">$\weightMatrix_i$</span>, <br /><span class="math display">$$
@@ -424,18 +446,18 @@ $$</span><br /> we can obtain <br /><span class="math display">$$\latentMatrix \
 \end{bmatrix}}$$</span><br /> which is a highly structured Gaussian covariance with hierarchical dependencies between the variables <span class="math inline">$\latentMatrix_i$</span>.</p>
 <p><span style="text-align:right"></span></p>
 <h2 id="stacked-gp">Stacked GP</h2>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;stack-gp-sample-RBF-</span><span class="sc">{sample:0&gt;1}</span><span class="st">.svg&#39;</span>, 
+                            directory<span class="op">=</span><span class="st">&#39;../../slides/diagrams/deepgp&#39;</span>, sample<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">4</span>))</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/stack-gp-sample-4.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>Stacking Gaussian process models leads to non linear mappings at each stage. Here we are mapping from two dimensions to two dimensions in each layer. </em>
-</center>
 <p>Note that once the box has folded over on itself, it cannot be unfolded. So a feature that is generated near the top of the model cannot be removed furthr down the model.</p>
 <p>This folding over effect happens in low dimensions. In higher dimensions it is less common.</p>
 <p>Observation of this effect at a talk in Cambridge was one of the things that caused David Duvenaud (and collaborators) to consider the behavior of deeper Gaussian process models <span class="citation">(Duvenaud et al. 2014)</span>.</p>
 <p>Such folding over in the latent spaces necessarily forces the density to be non-Gaussian. Indeed, since folding-over is avoided as we increase the dimensionality of the latent spaces, such processes become more Gaussian. If we take the limit of the latent space dimensionality as it tends to infinity, the entire deep Gaussian process returns to a standard Gaussian process, with a covariance function given as a deep kernel (such as those described by <span class="citation">Cho and Saul (2009)</span>).</p>
 <p>Further analysis of these deep networks has been conducted by <span class="citation">Dunlop et al. (n.d.)</span>, who use analysis of the deep network's stationary density (treating it as a Markov chain across layers), to explore the nature of the implied process prior for a deep GP.</p>
 <p>Both of these works, however, make constraining assumptions on the form of the Gaussian process prior at each layer (e.g. same covariance at each layer). In practice, the form of this covariance can be learnt and the densities described by the deep GP are more general than those mentioned in either of these papers.</p>
-<p><a href="https://www.youtube.com/watch?v=XhIvygQYFFQ&amp;t="><img src="https://img.youtube.com/vi/XhIvygQYFFQ/0.jpg" /></a></p>
+<iframe width="1120" height="630" src="https://www.youtube.com/embed/XhIvygQYFFQ?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
 <p>David Duvenaud also created a YouTube video to help visualize what happens as you drop through the layers of a deep GP.</p>
 <p><span style="text-align:right"></span></p>
 <p><span style="text-align:right"></span></p>
@@ -446,7 +468,7 @@ $$</span><br /> we can obtain <br /><span class="math display">$$\latentMatrix \
 <img class="" src="../slides/diagrams/gp/gpy.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 <p>GPy is a BSD licensed software code base for implementing Gaussian process models in python. This allows GPs to be combined with a wide variety of software libraries.</p>
-<p>The software itself is avaialble on <a href="https://github.com/SheffieldML/GPy">GitHub</a> and the team welcomes contributions.</p>
+<p>The software itself is available on <a href="https://github.com/SheffieldML/GPy">GitHub</a> and the team welcomes contributions.</p>
 <p>The aim for GPy is to be a probabilistic-style programming language, i.e. you specify the model rather than the algorithm. As well as a large range of covariance functions the software allows for non-Gaussian likelihoods, multivariate outputs, dimensionality reduction and approximations for larger data sets.</p>
 <p>The GPy library can be installed via pip:</p>
 <pre><code>pip install GPy</code></pre>
@@ -482,6 +504,25 @@ y <span class="op">=</span> data[<span class="st">&#39;Y&#39;</span>]
 
 offset <span class="op">=</span> y.mean()
 scale <span class="op">=</span> np.sqrt(y.var())</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
+<span class="im">import</span> teaching_plots <span class="im">as</span> plot
+<span class="im">import</span> mlai</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">
+xlim <span class="op">=</span> (<span class="dv">1875</span>,<span class="dv">2030</span>)
+ylim <span class="op">=</span> (<span class="fl">2.5</span>, <span class="fl">6.5</span>)
+yhat <span class="op">=</span> (y<span class="op">-</span>offset)<span class="op">/</span>scale
+
+fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+_ <span class="op">=</span> ax.plot(x, y, <span class="st">&#39;r.&#39;</span>,markersize<span class="op">=</span><span class="dv">10</span>)
+ax.set_xlabel(<span class="st">&#39;year&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>)
+ax.set_ylabel(<span class="st">&#39;pace min/km&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>)
+ax.set_xlim(xlim)
+ax.set_ylim(ylim)
+
+mlai.write_figure(figure<span class="op">=</span>fig, 
+                  filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/datasets/olympic-marathon.svg&#39;</span>, 
+                  transparent<span class="op">=</span><span class="va">True</span>, 
+                  frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <div style="text-align:center">
 <object class="svgplot " align data="../slides/diagrams/datasets/olympic-marathon.svg" style="vertical-align:middle;">
 </object>
@@ -504,9 +545,6 @@ scale <span class="op">=</span> np.sqrt(y.var())</code></pre></div>
 </td>
 </tr>
 </table>
-<center>
-<em>Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: <a href="http://www.turing.org.uk/scrapbook/run.html">Alan Turing Internet Scrapbook</a>. </em>
-</center>
 <p>If we had to summarise the objectives of machine learning in one word, a very good candidate for that word would be <em>generalization</em>. What is generalization? From a human perspective it might be summarised as the ability to take lessons learned in one domain and apply them to another domain. If we accept the definition given in the first session for machine learning, <br /><span class="math display">$$
 \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}
 $$</span><br /> then we see that without a model we can't generalise: we only have data. Data is fine for answering very specific questions, like &quot;Who won the Olympic Marathon in 2012?&quot;, because we have that answer stored, however, we are not given the answer to many other questions. For example, Alan Turing was a formidable marathon runner, in 1946 he ran a time 2 hours 46 minutes (just under four minutes per kilometer, faster than I and most of the other <a href="http://www.parkrun.org.uk/sheffieldhallam/">Endcliffe Park Run</a> runners can do 5 km). What is the probability he would have won an Olympics if one had been held in 1946?</p>
@@ -518,7 +556,7 @@ Data is fine for answering very specific questions, like "Who won the Olympic Ma
 
 <table><tr><td width="40%"><img class="" src="../slides/diagrams/turing-run.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></td><td width="50%"><img class="" src="../slides/diagrams/turing-times.gif" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></td></tr></table>
 
-<center>*Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: [Alan Turing Internet Scrapbook](http://www.turing.org.uk/scrapbook/run.html) *</center>-->
+-->
 <p>Our first objective will be to perform a Gaussian process fit to the data, we'll do this using the <a href="https://github.com/SheffieldML/GPy">GPy software</a>.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> GPy</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_full <span class="op">=</span> GPy.models.GPRegression(x,yhat)
@@ -528,6 +566,14 @@ _ <span class="op">=</span> m_full.optimize() <span class="co"># Optimize parame
 yt_mean, yt_var <span class="op">=</span> m_full.predict(xt)
 yt_sd<span class="op">=</span>np.sqrt(yt_var)</code></pre></div>
 <p>Now we plot the results using the helper function in <code>teaching_plots</code>.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> teaching_plots <span class="im">as</span> plot</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+plot.model_output(m_full, scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, ax<span class="op">=</span>ax, xlabel<span class="op">=</span><span class="st">&#39;year&#39;</span>, ylabel<span class="op">=</span><span class="st">&#39;pace min/km&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>, portion<span class="op">=</span><span class="fl">0.2</span>)
+ax.set_xlim(xlim)
+ax.set_ylim(ylim)
+mlai.write_figure(figure<span class="op">=</span>fig,
+                  filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/gp/olympic-marathon-gp.svg&#39;</span>, 
+                  transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/gp/olympic-marathon-gp.svg" style="vertical-align:middle;">
 </object>
 <h2 id="fit-quality">Fit Quality</h2>
@@ -547,63 +593,45 @@ m <span class="op">=</span> deepgp.DeepGP([y.shape[<span class="dv">1</span>],hi
                   kernels<span class="op">=</span>[GPy.kern.RBF(hidden,ARD<span class="op">=</span><span class="va">True</span>),
                            GPy.kern.RBF(x.shape[<span class="dv">1</span>],ARD<span class="op">=</span><span class="va">True</span>)], <span class="co"># the kernels for each layer</span>
                   num_inducing<span class="op">=</span><span class="dv">50</span>, back_constraint<span class="op">=</span><span class="va">False</span>)</code></pre></div>
-<p>Deep Gaussian process models also can require some thought in initialization. Here we choose to start by setting the noise variance to be one percent of the data variance.</p>
-<p>Optimization requires moving variational parameters in the hidden layer representing the mean and variance of the expected values in that layer. Since all those values can be scaled up, and this only results in a downscaling in the output of the first GP, and a downscaling of the input length scale to the second GP. It makes sense to first of all fix the scales of the covariance function in each of the GPs.</p>
-<p>Sometimes, deep Gaussian processes can find a local minima which involves increasing the noise level of one or more of the GPs. This often occurs because it allows a minimum in the KL divergence term in the lower bound on the likelihood. To avoid this minimum we habitually train with the likelihood variance (the noise on the output of the GP) fixed to some lower value for some iterations.</p>
-<p>Let's create a helper function to initialize the models we use in the notebook.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> deepgp</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> deepgp_tutorial <span class="im">import</span> initialize</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Bind the new method to the Deep GP object.</span>
-deepgp.DeepGP.initialize<span class="op">=</span>initialize</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Call the initalization</span>
 m.initialize()</code></pre></div>
-<p>Now optimize the model. The first stage of optimization is working on variational parameters and lengthscales only.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.optimize(messages<span class="op">=</span><span class="va">False</span>,max_iters<span class="op">=</span><span class="dv">100</span>)</code></pre></div>
-<p>Now we remove the constraints on the scale of the covariance functions associated with each GP and optimize again.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">for</span> layer <span class="kw">in</span> m.layers:
-    <span class="cf">pass</span> <span class="co">#layer.kern.variance.constrain_positive(warning=False)</span>
-m.obslayer.kern.variance.constrain_positive(warning<span class="op">=</span><span class="va">False</span>)
-m.optimize(messages<span class="op">=</span><span class="va">False</span>,max_iters<span class="op">=</span><span class="dv">100</span>)</code></pre></div>
-<p>Finally, we allow the noise variance to change and optimize for a large number of iterations.</p>
+<p>Now optimize the model.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">for</span> layer <span class="kw">in</span> m.layers:
     layer.likelihood.variance.constrain_positive(warning<span class="op">=</span><span class="va">False</span>)
 m.optimize(messages<span class="op">=</span><span class="va">True</span>,max_iters<span class="op">=</span><span class="dv">10000</span>)</code></pre></div>
-<p>For our optimization process we define a new function.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> deepgp_tutorial <span class="im">import</span> staged_optimize</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Bind the new method to the Deep GP object.</span>
-deepgp.DeepGP.staged_optimize<span class="op">=</span>staged_optimize</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.staged_optimize(messages<span class="op">=</span>(<span class="va">True</span>,<span class="va">True</span>,<span class="va">True</span>))</code></pre></div>
-<h2 id="plot-the-prediction">Plot the prediction</h2>
-<p>The prediction of the deep GP can be extracted in a similar way to the normal GP. Although, in this case, it is an approximation to the true distribution, because the true distribution is not Gaussian.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
-plot.model_output(m, scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, ax<span class="op">=</span>ax, xlabel<span class="op">=</span><span class="st">&#39;year&#39;</span>, ylabel<span class="op">=</span><span class="st">&#39;pace min/km&#39;</span>, 
-          fontsize<span class="op">=</span><span class="dv">20</span>, portion<span class="op">=</span><span class="fl">0.2</span>)
-ax.set_xlim(xlim)
-
-ax.set_ylim(ylim)
-mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/olympic-marathon-deep-gp.svg&#39;</span>, 
-                transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <h2 id="olympic-marathon-data-deep-gp">Olympic Marathon Data Deep GP</h2>
 <object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp.svg" style="vertical-align:middle;">
 </object>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> deepgp_tutorial <span class="im">import</span> posterior_sample</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">deepgp.DeepGP.posterior_sample <span class="op">=</span> posterior_sample</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+plot.model_sample(m, scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, samps<span class="op">=</span><span class="dv">10</span>, ax<span class="op">=</span>ax, 
+                  xlabel<span class="op">=</span><span class="st">&#39;year&#39;</span>, ylabel<span class="op">=</span><span class="st">&#39;pace min/km&#39;</span>, portion <span class="op">=</span> <span class="fl">0.225</span>)
+ax.set_xlim(xlim)
+ax.set_ylim(ylim)
+mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/olympic-marathon-deep-gp-samples.svg&#39;</span>, 
+                  transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <h2 id="olympic-marathon-data-deep-gp-1">Olympic Marathon Data Deep GP</h2>
 <object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-samples.svg" style="vertical-align:middle;">
 </object>
 <h2 id="fitted-gp-for-each-layer">Fitted GP for each layer</h2>
 <p>Now we explore the GPs the model has used to fit each layer. First of all, we look at the hidden layer.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> deepgp_tutorial <span class="im">import</span> visualize</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Bind the new method to the Deep GP object.</span>
-deepgp.DeepGP.visualize<span class="op">=</span>visualize</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.visualize(scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, xlabel<span class="op">=</span><span class="st">&#39;year&#39;</span>,
+            ylabel<span class="op">=</span><span class="st">&#39;pace min/km&#39;</span>,xlim<span class="op">=</span>xlim, ylim<span class="op">=</span>ylim,
+            dataset<span class="op">=</span><span class="st">&#39;olympic-marathon&#39;</span>,
+            diagrams<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp&#39;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;olympic-marathon-deep-gp-layer-</span><span class="sc">{sample:0&gt;1}</span><span class="st">.svg&#39;</span>, 
+                            <span class="st">&#39;../slides/diagrams/deepgp&#39;</span>, sample<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">1</span>))</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-layer-0.svg" style="vertical-align:middle;">
 </object>
 <object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-layer-1.svg" style="vertical-align:middle;">
 </object>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> deepgp_tutorial <span class="im">import</span> visualize_pinball</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Bind the new method to the Deep GP object.</span>
-deepgp.DeepGP.visualize_pinball<span class="op">=</span>visualize_pinball</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+m.visualize_pinball(ax<span class="op">=</span>ax, scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, points<span class="op">=</span><span class="dv">30</span>, portion<span class="op">=</span><span class="fl">0.1</span>,
+                    xlabel<span class="op">=</span><span class="st">&#39;year&#39;</span>, ylabel<span class="op">=</span><span class="st">&#39;pace km/min&#39;</span>, vertical<span class="op">=</span><span class="va">True</span>)
+mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg&#39;</span>, 
+                  transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <h2 id="olympic-marathon-pinball-plot">Olympic Marathon Pinball Plot</h2>
 <object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg" style="vertical-align:middle;">
 </object>
@@ -623,6 +651,25 @@ y <span class="op">=</span> data[<span class="st">&#39;Y&#39;</span>]
 
 offset <span class="op">=</span> y.mean()
 scale <span class="op">=</span> np.sqrt(y.var())</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
+<span class="im">import</span> teaching_plots <span class="im">as</span> plot
+<span class="im">import</span> mlai</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">
+xlim <span class="op">=</span> (<span class="op">-</span><span class="dv">20</span>,<span class="dv">260</span>)
+ylim <span class="op">=</span> (<span class="dv">5</span>, <span class="fl">7.5</span>)
+yhat <span class="op">=</span> (y<span class="op">-</span>offset)<span class="op">/</span>scale
+
+fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+_ <span class="op">=</span> ax.plot(x, y, <span class="st">&#39;r.&#39;</span>,markersize<span class="op">=</span><span class="dv">10</span>)
+ax.set_xlabel(<span class="st">&#39;time/min&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>)
+ax.set_ylabel(<span class="st">&#39;expression&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>)
+ax.set_xlim(xlim)
+ax.set_ylim(ylim)
+
+mlai.write_figure(figure<span class="op">=</span>fig, 
+                  filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/datasets/della-gatta-gene.svg&#39;</span>, 
+                  transparent<span class="op">=</span><span class="va">True</span>, 
+                  frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <div style="text-align:center">
 <object class="svgplot " align data="../slides/diagrams/datasets/della-gatta-gene.svg" style="vertical-align:middle;">
 </object>
@@ -646,12 +693,30 @@ _ <span class="op">=</span> m_full.optimize() <span class="co"># Optimize parame
 yt_mean, yt_var <span class="op">=</span> m_full.predict(xt)
 yt_sd<span class="op">=</span>np.sqrt(yt_var)</code></pre></div>
 <p>Now we plot the results using the helper function in <code>teaching_plots</code>.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> teaching_plots <span class="im">as</span> plot</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+plot.model_output(m_full, scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, ax<span class="op">=</span>ax, xlabel<span class="op">=</span><span class="st">&#39;time/min&#39;</span>, ylabel<span class="op">=</span><span class="st">&#39;expression&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>, portion<span class="op">=</span><span class="fl">0.2</span>)
+ax.set_xlim(xlim)
+ax.set_ylim(ylim)
+ax.set_title(<span class="st">&#39;log likelihood: </span><span class="sc">{ll:.3}</span><span class="st">&#39;</span>.<span class="bu">format</span>(ll<span class="op">=</span>m_full.log_likelihood()), fontsize<span class="op">=</span><span class="dv">20</span>)
+mlai.write_figure(figure<span class="op">=</span>fig,
+                  filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/gp/della-gatta-gene-gp.svg&#39;</span>, 
+                  transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/gp/della-gatta-gene-gp.svg" style="vertical-align:middle;">
 </object>
 <p>Now we try a model initialized with a longer length scale.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_full2 <span class="op">=</span> GPy.models.GPRegression(x,yhat)
 m_full2.kern.lengthscale<span class="op">=</span><span class="dv">2000</span>
 _ <span class="op">=</span> m_full2.optimize() <span class="co"># Optimize parameters of covariance function</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> teaching_plots <span class="im">as</span> plot</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+plot.model_output(m_full2, scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, ax<span class="op">=</span>ax, xlabel<span class="op">=</span><span class="st">&#39;time/min&#39;</span>, ylabel<span class="op">=</span><span class="st">&#39;expression&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>, portion<span class="op">=</span><span class="fl">0.2</span>)
+ax.set_xlim(xlim)
+ax.set_ylim(ylim)
+ax.set_title(<span class="st">&#39;log likelihood: </span><span class="sc">{ll:.3}</span><span class="st">&#39;</span>.<span class="bu">format</span>(ll<span class="op">=</span>m_full2.log_likelihood()), fontsize<span class="op">=</span><span class="dv">20</span>)
+mlai.write_figure(figure<span class="op">=</span>fig,
+                  filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/gp/della-gatta-gene-gp2.svg&#39;</span>, 
+                  transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/gp/della-gatta-gene-gp2.svg" style="vertical-align:middle;">
 </object>
 <p>Now we try a model initialized with a lower noise.</p>
@@ -659,6 +724,15 @@ _ <span class="op">=</span> m_full2.optimize() <span class="co"># Optimize param
 m_full3.kern.lengthscale<span class="op">=</span><span class="dv">20</span>
 m_full3.likelihood.variance<span class="op">=</span><span class="fl">0.001</span>
 _ <span class="op">=</span> m_full3.optimize() <span class="co"># Optimize parameters of covariance function</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> teaching_plots <span class="im">as</span> plot</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+plot.model_output(m_full3, scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, ax<span class="op">=</span>ax, xlabel<span class="op">=</span><span class="st">&#39;time/min&#39;</span>, ylabel<span class="op">=</span><span class="st">&#39;expression&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>, portion<span class="op">=</span><span class="fl">0.2</span>)
+ax.set_xlim(xlim)
+ax.set_ylim(ylim)
+ax.set_title(<span class="st">&#39;log likelihood: </span><span class="sc">{ll:.3}</span><span class="st">&#39;</span>.<span class="bu">format</span>(ll<span class="op">=</span>m_full3.log_likelihood()), fontsize<span class="op">=</span><span class="dv">20</span>)
+mlai.write_figure(figure<span class="op">=</span>fig,
+                  filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/gp/della-gatta-gene-gp3.svg&#39;</span>, 
+                  transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/gp/della-gatta-gene-gp3.svg" style="vertical-align:middle;">
 </object>
 <object class="svgplot " align data="../slides/diagrams/gp/multiple-optima000.svg" style="vertical-align:middle;">
@@ -677,18 +751,37 @@ m <span class="op">=</span> deepgp.DeepGP(layers,Y<span class="op">=</span>yhat,
                   num_inducing<span class="op">=</span><span class="dv">20</span>, back_constraint<span class="op">=</span><span class="va">False</span>)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.initialize()
 m.staged_optimize()</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax<span class="op">=</span>plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+plot.model_output(m, scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, ax<span class="op">=</span>ax, fontsize<span class="op">=</span><span class="dv">20</span>, portion<span class="op">=</span><span class="fl">0.5</span>)
+ax.set_ylim(ylim)
+ax.set_xlim(xlim)
+mlai.write_figure(filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/della-gatta-gene-deep-gp.svg&#39;</span>, 
+            transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <h2 id="tp53-gene-data-deep-gp">TP53 Gene Data Deep GP</h2>
 <object class="svgplot " align data="../slides/diagrams/deepgp/della-gatta-gene-deep-gp.svg" style="vertical-align:middle;">
 </object>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax<span class="op">=</span>plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+plot.model_sample(m, scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, samps<span class="op">=</span><span class="dv">10</span>, ax<span class="op">=</span>ax, portion <span class="op">=</span> <span class="fl">0.5</span>)
+ax.set_ylim(ylim)
+ax.set_xlim(xlim)
+mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/della-gatta-gene-deep-gp-samples.svg&#39;</span>, 
+                  transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <h2 id="tp53-gene-data-deep-gp-1">TP53 Gene Data Deep GP</h2>
 <object class="svgplot " align data="../slides/diagrams/deepgp/della-gatta-gene-deep-gp-samples.svg" style="vertical-align:middle;">
 </object>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.visualize(offset<span class="op">=</span>offset, scale<span class="op">=</span>scale, xlim<span class="op">=</span>xlim, ylim<span class="op">=</span>ylim,
+            dataset<span class="op">=</span><span class="st">&#39;della-gatta-gene&#39;</span>,
+            diagrams<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp&#39;</span>)</code></pre></div>
 <h2 id="tp53-gene-data-latent-1">TP53 Gene Data Latent 1</h2>
 <object class="svgplot " align data="../slides/diagrams/deepgp/della-gatta-gene-deep-gp-layer-0.svg" style="vertical-align:middle;">
 </object>
 <h2 id="tp53-gene-data-latent-2">TP53 Gene Data Latent 2</h2>
 <object class="svgplot " align data="../slides/diagrams/deepgp/della-gatta-gene-deep-gp-layer-1.svg" style="vertical-align:middle;">
 </object>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax<span class="op">=</span>plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+m.visualize_pinball(offset<span class="op">=</span>offset, ax<span class="op">=</span>ax, scale<span class="op">=</span>scale, xlim<span class="op">=</span>xlim, ylim<span class="op">=</span>ylim, portion<span class="op">=</span><span class="fl">0.1</span>, points<span class="op">=</span><span class="dv">50</span>)
+mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/della-gatta-gene-deep-gp-pinball.svg&#39;</span>, 
+                  transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>, ax<span class="op">=</span>ax)</code></pre></div>
 <h2 id="tp53-gene-pinball-plot">TP53 Gene Pinball Plot</h2>
 <object class="svgplot " align data="../slides/diagrams/deepgp/della-gatta-gene-deep-gp-pinball.svg" style="vertical-align:middle;">
 </object>
@@ -705,44 +798,90 @@ y <span class="op">=</span> np.vstack((np.zeros((num_low, <span class="dv">1</sp
 scale <span class="op">=</span> np.sqrt(y.var())
 offset <span class="op">=</span> y.mean()
 yhat <span class="op">=</span> (y<span class="op">-</span>offset)<span class="op">/</span>scale</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+_ <span class="op">=</span> ax.plot(x, y, <span class="st">&#39;r.&#39;</span>,markersize<span class="op">=</span><span class="dv">10</span>)
+_ <span class="op">=</span> ax.set_xlabel(<span class="st">&#39;$x$&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>)
+_ <span class="op">=</span> ax.set_ylabel(<span class="st">&#39;$y$&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>)
+xlim <span class="op">=</span> (<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>)
+ylim <span class="op">=</span> (<span class="op">-</span><span class="fl">0.6</span>, <span class="fl">1.6</span>)
+ax.set_ylim(ylim)
+ax.set_xlim(xlim)
+mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../../slides/diagrams/datasets/step-function.svg&#39;</span>, 
+            transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <h2 id="step-function-data">Step Function Data</h2>
 <object class="svgplot " align data="../slides/diagrams/datasets/step-function.svg" style="vertical-align:middle;">
 </object>
+<h2 id="step-function-data-gp">Step Function Data GP</h2>
+<p>We can fit a Gaussian process to the step function data using <code>GPy</code> as follows.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_full <span class="op">=</span> GPy.models.GPRegression(x,yhat)
 _ <span class="op">=</span> m_full.optimize() <span class="co"># Optimize parameters of covariance function</span></code></pre></div>
-<h2 id="step-function-data-gp">Step Function Data GP</h2>
+<p>Where <code>GPy.models.GPRegression()</code> gives us a standard GP regression model with exponentiated quadratic covariance function.</p>
+<p>The model is optimized using <code>m_full.optimize()</code> which calls an L-BGFS gradient based solver in python.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax<span class="op">=</span>plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+plot.model_output(m_full, scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, ax<span class="op">=</span>ax, fontsize<span class="op">=</span><span class="dv">20</span>, portion<span class="op">=</span><span class="fl">0.5</span>)
+ax.set_ylim(ylim)
+ax.set_xlim(xlim)
+
+mlai.write_figure(figure<span class="op">=</span>fig,filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/gp/step-function-gp.svg&#39;</span>, 
+            transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/gp/step-function-gp.svg" style="vertical-align:middle;">
 </object>
+<p>The resulting fit to the step function data shows some challenges. In particular, the over smoothing at the discontinuity. If we know how many discontinuities there are, we can parameterize them in the step function. But by doing this, we form a semi-parametric model. The parameters indicate how many discontinuities are, and where they are. They can be optimized as part of the model fit. But if new, unforeseen, discontinuities arise when the model is being deployed in practice, these won't be accounted for in the predictions.</p>
+<h2 id="step-function-data-deep-gp">Step Function Data Deep GP</h2>
+<p>First we initialize a deep Gaussian process with three latent layers (four layers total). Within each layer we create a GP with an exponentiated quadratic covariance (<code>GPy.kern.RBF</code>).</p>
+<p>At each layer we use 20 inducing points for the variational approximation.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">layers <span class="op">=</span> [y.shape[<span class="dv">1</span>], <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>,x.shape[<span class="dv">1</span>]]
 inits <span class="op">=</span> [<span class="st">&#39;PCA&#39;</span>]<span class="op">*</span>(<span class="bu">len</span>(layers)<span class="op">-</span><span class="dv">1</span>)
 kernels <span class="op">=</span> []
 <span class="cf">for</span> i <span class="kw">in</span> layers[<span class="dv">1</span>:]:
     kernels <span class="op">+=</span> [GPy.kern.RBF(i)]
+    
 m <span class="op">=</span> deepgp.DeepGP(layers,Y<span class="op">=</span>yhat, X<span class="op">=</span>x, 
                   inits<span class="op">=</span>inits, 
                   kernels<span class="op">=</span>kernels, <span class="co"># the kernels for each layer</span>
                   num_inducing<span class="op">=</span><span class="dv">20</span>, back_constraint<span class="op">=</span><span class="va">False</span>)</code></pre></div>
+<p>Once the model is constructed we initialize the parameters, and perform the staged optimization which starts by optimizing variational parameters with a low noise and proceeds to optimize the whole model.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.initialize()
 m.staged_optimize()</code></pre></div>
-<h2 id="step-function-data-deep-gp">Step Function Data Deep GP</h2>
+<p>We plot the output of the deep Gaussian process fitted to the stpe data as follows.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax<span class="op">=</span>plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+plot.model_output(m, scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, ax<span class="op">=</span>ax, fontsize<span class="op">=</span><span class="dv">20</span>, portion<span class="op">=</span><span class="fl">0.5</span>)
+ax.set_ylim(ylim)
+ax.set_xlim(xlim)
+mlai.write_figure(filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/step-function-deep-gp.svg&#39;</span>, 
+            transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<p>The deep Gaussian process does a much better job of fitting the data. It handles the discontinuity easily, and error bars drop to smaller values in the regions of data.</p>
 <object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp.svg" style="vertical-align:middle;">
 </object>
 <h2 id="step-function-data-deep-gp-1">Step Function Data Deep GP</h2>
+<p>The samples of the model can be plotted with the helper function from <code>teaching_plots.py</code>, <code>model_sample</code></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax<span class="op">=</span>plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+
+plot.model_sample(m, scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, samps<span class="op">=</span><span class="dv">10</span>, ax<span class="op">=</span>ax, portion <span class="op">=</span> <span class="fl">0.5</span>)
+ax.set_ylim(ylim)
+ax.set_xlim(xlim)
+mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/step-function-deep-gp-samples.svg&#39;</span>, 
+                  transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<p>The samples from the model show that the error bars, which are informative for Gaussian outputs, are less informative for this model. They make clear that the data points lie, in output mainly at 0 or 1, or occasionally in between.</p>
 <object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp-samples.svg" style="vertical-align:middle;">
 </object>
-<h2 id="step-function-data-latent-1">Step Function Data Latent 1</h2>
+<p>The visualize code allows us to inspect the intermediate layers in the deep GP model to understand how it has reconstructed the step function.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.visualize(offset<span class="op">=</span>offset, scale<span class="op">=</span>scale, xlim<span class="op">=</span>xlim, ylim<span class="op">=</span>ylim,
+            dataset<span class="op">=</span><span class="st">&#39;step-function&#39;</span>,
+            diagrams<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp&#39;</span>)</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp-layer-0.svg" style="vertical-align:middle;">
 </object>
-<h2 id="step-function-data-latent-2">Step Function Data Latent 2</h2>
 <object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp-layer-1.svg" style="vertical-align:middle;">
 </object>
-<h2 id="step-function-data-latent-3">Step Function Data Latent 3</h2>
 <object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp-layer-2.svg" style="vertical-align:middle;">
 </object>
-<h2 id="step-function-data-latent-4">Step Function Data Latent 4</h2>
 <object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp-layer-3.svg" style="vertical-align:middle;">
 </object>
-<h2 id="step-function-pinball-plot">Step Function Pinball Plot</h2>
+<p>A pinball plot can be created for the resulting model to understand how the input is being translated to the output across the different layers.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax<span class="op">=</span>plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+m.visualize_pinball(offset<span class="op">=</span>offset, ax<span class="op">=</span>ax, scale<span class="op">=</span>scale, xlim<span class="op">=</span>xlim, ylim<span class="op">=</span>ylim, portion<span class="op">=</span><span class="fl">0.1</span>, points<span class="op">=</span><span class="dv">50</span>)
+mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/step-function-deep-gp-pinball.svg&#39;</span>, 
+                  transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>, ax<span class="op">=</span>ax)</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp-pinball.svg" style="vertical-align:middle;">
 </object>
 <p><span style="text-align:right"></span></p>
@@ -755,6 +894,16 @@ y <span class="op">=</span> data[<span class="st">&#39;Y&#39;</span>]
 scale<span class="op">=</span>np.sqrt(y.var())
 offset<span class="op">=</span>y.mean()
 yhat <span class="op">=</span> (y <span class="op">-</span> offset)<span class="op">/</span>scale</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+_ <span class="op">=</span> ax.plot(x, y, <span class="st">&#39;r.&#39;</span>,markersize<span class="op">=</span><span class="dv">10</span>)
+_ <span class="op">=</span> ax.set_xlabel(<span class="st">&#39;time&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>)
+_ <span class="op">=</span> ax.set_ylabel(<span class="st">&#39;acceleration&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>)
+xlim <span class="op">=</span> (<span class="op">-</span><span class="dv">20</span>, <span class="dv">80</span>)
+ylim <span class="op">=</span> (<span class="op">-</span><span class="dv">175</span>, <span class="dv">125</span>)
+ax.set_xlim(xlim)
+ax.set_ylim(ylim)
+mlai.write_figure(filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/datasets/motorcycle-helmet.svg&#39;</span>, 
+            transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <h2 id="motorcycle-helmet-data">Motorcycle Helmet Data</h2>
 <object class="svgplot " align data="../slides/diagrams/datasets/motorcycle-helmet.svg" style="vertical-align:middle;">
 </object>
@@ -778,18 +927,44 @@ m <span class="op">=</span> deepgp.DeepGP(layers,Y<span class="op">=</span>yhat,
 
 m.initialize()</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.staged_optimize(iters<span class="op">=</span>(<span class="dv">1000</span>,<span class="dv">1000</span>,<span class="dv">10000</span>), messages<span class="op">=</span>(<span class="va">True</span>, <span class="va">True</span>, <span class="va">True</span>))</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> teaching_plots <span class="im">as</span> plot
+<span class="im">import</span> mlai</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax<span class="op">=</span>plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+plot.model_output(m, scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, ax<span class="op">=</span>ax, xlabel<span class="op">=</span><span class="st">&#39;time&#39;</span>, ylabel<span class="op">=</span><span class="st">&#39;acceleration/$g$&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>, portion<span class="op">=</span><span class="fl">0.5</span>)
+ax.set_ylim(ylim)
+ax.set_xlim(xlim)
+mlai.write_figure(filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/motorcycle-helmet-deep-gp.svg&#39;</span>, 
+            transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <h2 id="motorcycle-helmet-data-deep-gp">Motorcycle Helmet Data Deep GP</h2>
 <object class="svgplot " align data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp.svg" style="vertical-align:middle;">
 </object>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> teaching_plots <span class="im">as</span> plot
+<span class="im">import</span> mlai</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax<span class="op">=</span>plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+plot.model_sample(m, scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, samps<span class="op">=</span><span class="dv">10</span>, ax<span class="op">=</span>ax, xlabel<span class="op">=</span><span class="st">&#39;time&#39;</span>, ylabel<span class="op">=</span><span class="st">&#39;acceleration/$g$&#39;</span>, portion <span class="op">=</span> <span class="fl">0.5</span>)
+ax.set_ylim(ylim)
+ax.set_xlim(xlim)
+
+mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-samples.svg&#39;</span>, 
+                  transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <h2 id="motorcycle-helmet-data-deep-gp-1">Motorcycle Helmet Data Deep GP</h2>
 <object class="svgplot " align data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-samples.svg" style="vertical-align:middle;">
 </object>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.visualize(xlim<span class="op">=</span>xlim, ylim<span class="op">=</span>ylim, scale<span class="op">=</span>scale,offset<span class="op">=</span>offset, 
+            xlabel<span class="op">=</span><span class="st">&quot;time&quot;</span>, ylabel<span class="op">=</span><span class="st">&quot;acceleration/$g$&quot;</span>, portion<span class="op">=</span><span class="fl">0.5</span>,
+            dataset<span class="op">=</span><span class="st">&#39;motorcycle-helmet&#39;</span>,
+            diagrams<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp&#39;</span>)</code></pre></div>
 <h2 id="motorcycle-helmet-data-latent-1">Motorcycle Helmet Data Latent 1</h2>
 <object class="svgplot " align data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-layer-0.svg" style="vertical-align:middle;">
 </object>
 <h2 id="motorcycle-helmet-data-latent-2">Motorcycle Helmet Data Latent 2</h2>
 <object class="svgplot " align data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-layer-1.svg" style="vertical-align:middle;">
 </object>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax<span class="op">=</span>plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+m.visualize_pinball(ax<span class="op">=</span>ax, xlabel<span class="op">=</span><span class="st">&#39;time&#39;</span>, ylabel<span class="op">=</span><span class="st">&#39;acceleration/g&#39;</span>, 
+                    points<span class="op">=</span><span class="dv">50</span>, scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, portion<span class="op">=</span><span class="fl">0.1</span>)
+mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-pinball.svg&#39;</span>, 
+                  transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <h2 id="motorcycle-helmet-pinball-plot">Motorcycle Helmet Pinball Plot</h2>
 <object class="svgplot " align data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-pinball.svg" style="vertical-align:middle;">
 </object>
@@ -806,16 +981,43 @@ offset <span class="op">=</span> y.mean()
 scale <span class="op">=</span> np.sqrt(y.var())
 yhat <span class="op">=</span> (y<span class="op">-</span>offset)<span class="op">/</span>scale</code></pre></div>
 <p>The ground truth is recorded in the data, the actual loop is given in the plot below.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_figsize)
+plt.plot(data[<span class="st">&#39;X&#39;</span>][:, <span class="dv">1</span>], data[<span class="st">&#39;X&#39;</span>][:, <span class="dv">2</span>], <span class="st">&#39;r.&#39;</span>, markersize<span class="op">=</span><span class="dv">5</span>)
+ax.set_xlabel(<span class="st">&#39;x position&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>)
+ax.set_ylabel(<span class="st">&#39;y position&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>)
+mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../../slides/diagrams/datasets/robot-wireless-ground-truth.svg&#39;</span>, transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <h2 id="robot-wireless-ground-truth">Robot Wireless Ground Truth</h2>
 <object class="svgplot " align data="../slides/diagrams/datasets/robot-wireless-ground-truth.svg" style="vertical-align:middle;">
 </object>
 <p>We will ignore this ground truth in making our predictions, but see if the model can recover something similar in one of the latent layers.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">output_dim<span class="op">=</span><span class="dv">1</span>
+xlim <span class="op">=</span> (<span class="op">-</span><span class="fl">0.3</span>, <span class="fl">1.3</span>)
+fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+_ <span class="op">=</span> ax.plot(x.flatten(), y[:, output_dim], 
+            <span class="st">&#39;r.&#39;</span>, markersize<span class="op">=</span><span class="dv">5</span>)
+
+ax.set_xlabel(<span class="st">&#39;time&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>)
+ax.set_ylabel(<span class="st">&#39;signal strength&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>)
+xlim <span class="op">=</span> (<span class="op">-</span><span class="fl">0.2</span>, <span class="fl">1.2</span>)
+ylim <span class="op">=</span> (<span class="op">-</span><span class="fl">0.6</span>, <span class="fl">2.0</span>)
+ax.set_xlim(xlim)
+ax.set_ylim(ylim)
+
+mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/datasets/robot-wireless-dim-&#39;</span> <span class="op">+</span> <span class="bu">str</span>(output_dim) <span class="op">+</span> <span class="st">&#39;.svg&#39;</span>, 
+            transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <h2 id="robot-wifi-data">Robot WiFi Data</h2>
 <object class="svgplot " align data="../slides/diagrams/datasets/robot-wireless-dim-1.svg" style="vertical-align:middle;">
 </object>
 <p>Perform a Gaussian process fit on the data using GPy.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_full <span class="op">=</span> GPy.models.GPRegression(x,yhat)
 _ <span class="op">=</span> m_full.optimize() <span class="co"># Optimize parameters of covariance function</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax<span class="op">=</span>plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+plot.model_output(m_full, output_dim<span class="op">=</span>output_dim, scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, ax<span class="op">=</span>ax, 
+                  xlabel<span class="op">=</span><span class="st">&#39;time&#39;</span>, ylabel<span class="op">=</span><span class="st">&#39;signal strength&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>, portion<span class="op">=</span><span class="fl">0.5</span>)
+ax.set_ylim(ylim)
+ax.set_xlim(xlim)
+mlai.write_figure(filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/gp/robot-wireless-gp-dim-&#39;</span> <span class="op">+</span> <span class="bu">str</span>(output_dim)<span class="op">+</span> <span class="st">&#39;.svg&#39;</span>, 
+            transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <h2 id="robot-wifi-data-gp">Robot WiFi Data GP</h2>
 <object class="svgplot " align data="../slides/diagrams/gp/robot-wireless-gp-dim-1.svg" style="vertical-align:middle;">
 </object>
@@ -829,15 +1031,39 @@ kernels <span class="op">=</span> []
                   num_inducing<span class="op">=</span><span class="dv">50</span>, back_constraint<span class="op">=</span><span class="va">False</span>)
 m.initialize()</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.staged_optimize(messages<span class="op">=</span>(<span class="va">True</span>,<span class="va">True</span>,<span class="va">True</span>))</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax<span class="op">=</span>plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+plot.model_output(m, output_dim<span class="op">=</span>output_dim, scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, ax<span class="op">=</span>ax, 
+                  xlabel<span class="op">=</span><span class="st">&#39;time&#39;</span>, ylabel<span class="op">=</span><span class="st">&#39;signal strength&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>, portion<span class="op">=</span><span class="fl">0.5</span>)
+ax.set_ylim(ylim)
+ax.set_xlim(xlim)
+mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/robot-wireless-deep-gp-dim-&#39;</span> <span class="op">+</span> <span class="bu">str</span>(output_dim)<span class="op">+</span> <span class="st">&#39;.svg&#39;</span>, 
+                  transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <h2 id="robot-wifi-data-deep-gp">Robot WiFi Data Deep GP</h2>
 <object class="svgplot " align data="../slides/diagrams/deepgp/robot-wireless-deep-gp-dim-1.svg" style="vertical-align:middle;">
 </object>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax<span class="op">=</span>plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+plot.model_sample(m, output_dim<span class="op">=</span>output_dim, scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, samps<span class="op">=</span><span class="dv">10</span>, ax<span class="op">=</span>ax,
+                  xlabel<span class="op">=</span><span class="st">&#39;time&#39;</span>, ylabel<span class="op">=</span><span class="st">&#39;signal strength&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>, portion<span class="op">=</span><span class="fl">0.5</span>)
+ax.set_ylim(ylim)
+ax.set_xlim(xlim)
+mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/robot-wireless-deep-gp-samples-dim-&#39;</span> <span class="op">+</span> <span class="bu">str</span>(output_dim)<span class="op">+</span> <span class="st">&#39;.svg&#39;</span>, 
+                  transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <h2 id="robot-wifi-data-deep-gp-1">Robot WiFi Data Deep GP</h2>
 <object class="svgplot " align data="../slides/diagrams/deepgp/robot-wireless-deep-gp-samples-dim-1.svg" style="vertical-align:middle;">
 </object>
 <h2 id="robot-wifi-data-latent-space">Robot WiFi Data Latent Space</h2>
 <object class="svgplot " align data="../slides/diagrams/deepgp/robot-wireless-ground-truth.svg" style="vertical-align:middle;">
 </object>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_figsize)
+ax.plot(m.layers[<span class="op">-</span><span class="dv">2</span>].latent_space.mean[:, <span class="dv">0</span>], 
+        m.layers[<span class="op">-</span><span class="dv">2</span>].latent_space.mean[:, <span class="dv">1</span>], 
+        <span class="st">&#39;r.-&#39;</span>, markersize<span class="op">=</span><span class="dv">5</span>)
+
+ax.set_xlabel(<span class="st">&#39;latent dimension 1&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>)
+ax.set_ylabel(<span class="st">&#39;latent dimension 2&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>)
+
+mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/robot-wireless-latent-space.svg&#39;</span>, 
+            transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/deepgp/robot-wireless-latent-space.svg" style="vertical-align:middle;">
 </object>
 <p><span style="text-align:right"></span></p>
@@ -901,11 +1127,36 @@ m.optimize(messages<span class="op">=</span><span class="va">False</span>,max_it
 m.optimize(messages<span class="op">=</span><span class="va">True</span>,max_iters<span class="op">=</span><span class="dv">10000</span>)</code></pre></div>
 <h2 id="visualize-the-latent-space-of-the-top-layer">Visualize the latent space of the top layer</h2>
 <p>Now the model is trained, let's plot the mean of the posterior distributions in the top latent layer of the model.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
+<span class="im">from</span> matplotlib <span class="im">import</span> rc
+<span class="im">import</span> teaching_plots <span class="im">as</span> plot
+<span class="im">import</span> mlai</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">rc(<span class="st">&quot;font&quot;</span>, <span class="op">**</span>{<span class="st">&#39;family&#39;</span>:<span class="st">&#39;sans-serif&#39;</span>,<span class="st">&#39;sans-serif&#39;</span>:[<span class="st">&#39;Helvetica&#39;</span>],<span class="st">&#39;size&#39;</span>:<span class="dv">20</span>})
+fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_figsize)
+<span class="cf">for</span> d <span class="kw">in</span> digits:
+    ax.plot(m.layer_1.X.mean[labels<span class="op">==</span>d,<span class="dv">0</span>],m.layer_1.X.mean[labels<span class="op">==</span>d,<span class="dv">1</span>],<span class="st">&#39;.&#39;</span>,label<span class="op">=</span><span class="bu">str</span>(d))
+_ <span class="op">=</span> plt.legend()
+mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&quot;../slides/diagrams/deepgp/usps-digits-latent.svg&quot;</span>, transparent<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/usps-digits-latent.svg" style="vertical-align:middle;">
 </object>
 <h2 id="visualize-the-latent-space-of-the-intermediate-layer">Visualize the latent space of the intermediate layer</h2>
 <p>We can also visualize dimensions of the intermediate layer. First the lengthscale of those dimensions is given by</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.obslayer.kern.lengthscale</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
+<span class="im">import</span> mlai</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_figsize)
+<span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):
+    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(i):
+        dims<span class="op">=</span>[i, j]
+        ax.cla()
+        <span class="cf">for</span> d <span class="kw">in</span> digits:
+            ax.plot(m.obslayer.X.mean[labels<span class="op">==</span>d,dims[<span class="dv">0</span>]],
+                 m.obslayer.X.mean[labels<span class="op">==</span>d,dims[<span class="dv">1</span>]],
+                 <span class="st">&#39;.&#39;</span>, label<span class="op">=</span><span class="bu">str</span>(d))
+        plt.legend()
+        plt.xlabel(<span class="st">&#39;dimension &#39;</span> <span class="op">+</span> <span class="bu">str</span>(dims[<span class="dv">0</span>]))
+        plt.ylabel(<span class="st">&#39;dimension &#39;</span> <span class="op">+</span> <span class="bu">str</span>(dims[<span class="dv">1</span>]))
+        mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&quot;../slides/diagrams/deepgp/usps-digits-hidden-&quot;</span> <span class="op">+</span> <span class="bu">str</span>(dims[<span class="dv">0</span>]) <span class="op">+</span> <span class="st">&#39;-&#39;</span> <span class="op">+</span> <span class="bu">str</span>(dims[<span class="dv">1</span>]) <span class="op">+</span> <span class="st">&#39;.svg&#39;</span>, transparent<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/usps-digits-hidden-1-0.svg" style="vertical-align:middle;">
 </object>
 <object class="svgplot " align data="../slides/diagrams/usps-digits-hidden-2-0.svg" style="vertical-align:middle;">
@@ -923,6 +1174,19 @@ t<span class="op">=</span>np.linspace(<span class="op">-</span><span class="dv">
 kern <span class="op">=</span> GPy.kern.RBF(<span class="dv">1</span>,lengthscale<span class="op">=</span><span class="fl">0.05</span>)
 cov <span class="op">=</span> kern.K(t, t)
 x <span class="op">=</span> np.random.multivariate_normal(np.zeros(rows<span class="op">*</span>cols), cov, num_latent).T</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
+<span class="im">import</span> mlai</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">yt <span class="op">=</span> m.predict(x)
+fig, axs <span class="op">=</span> plt.subplots(rows,cols,figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">6</span>))
+<span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(rows):
+    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(cols):
+        <span class="co">#v = np.random.normal(loc=yt[0][i*cols+j, :], scale=np.sqrt(yt[1][i*cols+j, :]))</span>
+        v <span class="op">=</span> yt[<span class="dv">0</span>][i<span class="op">*</span>cols<span class="op">+</span>j, :]
+        axs[i,j].imshow(v.reshape(<span class="dv">28</span>,<span class="dv">28</span>), 
+                        cmap<span class="op">=</span><span class="st">&#39;gray&#39;</span>, interpolation<span class="op">=</span><span class="st">&#39;none&#39;</span>,
+                        aspect<span class="op">=</span><span class="st">&#39;equal&#39;</span>)
+        axs[i,j].set_axis_off()
+mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&quot;../slides/diagrams/deepgp/digit-samples-deep-gp.svg&quot;</span>, transparent<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/digit-samples-deep-gp.svg" style="vertical-align:middle;">
 </object>
 <p><span style="text-align:right"></span></p>
@@ -943,15 +1207,9 @@ x <span class="op">=</span> np.random.multivariate_normal(np.zeros(rows<span cla
 <div style="text-align:center">
 <a href="https://amzn.github.io/emukit-playground/"><img class="" src="../slides/diagrams/uq/emukit-playground.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></a>
 </div>
-<center>
-<em>Emukit playground is a tutorial for understanding the simulation/emulation relationship. </em>
-</center>
 <div style="text-align:center">
 <a href="https://amzn.github.io/emukit-playground/#!/learn/bayesian_optimization"><img class="negate" src="../slides/diagrams/uq/emukit-playground-bayes-opt.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></a>
 </div>
-<center>
-<em>Tutorial on Bayesian optimization of the number of taxis deployed from Emukit playground. </em>
-</center>
 <p>You can explore Bayesian optimization of a taxi simulation.</p>
 <h2 id="uncertainty-quantification">Uncertainty Quantification</h2>
 <blockquote>
@@ -968,9 +1226,6 @@ x <span class="op">=</span> np.random.multivariate_normal(np.zeros(rows<span cla
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/uq/mountaincar.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<center>
-<em>The mountain car simulation from the Open AI gym. </em>
-</center>
 <p>The goal is to define a sequence of actions (push the car right or left with certain intensity) to make the car reach the flag after a number <span class="math inline"><em>T</em></span> of time steps.</p>
 <p>At each time step <span class="math inline"><em>t</em></span>, the car is characterized by a vector <span class="math inline">$\inputVector_{t} = (p_t,v_t)$</span> of states which are respectively the the position and velocity of the car at time <span class="math inline"><em>t</em></span>. For a sequence of states (an episode), the dynamics of the car is given by</p>
 <p><br /><span class="math display">$$\inputVector_{t+1} = \mappingFunction(\inputVector_{t},\textbf{u}_{t})$$</span><br /></p>
@@ -1014,6 +1269,7 @@ initial_design <span class="op">=</span> random_design.get_samples(n_initial_poi
 _, _, _, frames <span class="op">=</span> mc.run_simulation(env, np.atleast_2d(random_controller), render<span class="op">=</span><span class="va">True</span>)
 anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Random linear controller&#39;</span>)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> IPython.core.display <span class="im">import</span> HTML</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">HTML(anim.to_jshtml())</code></pre></div>
 <iframe src="../slides/diagrams/uq/mountain_car_random.html" width="1024" height="768" allowtransparency="true" frameborder="0">
 </iframe>
 <p>As we can see the random linear controller does not manage to push the car to the top of the mountain. Now, let's optimize the regret using Bayesian optimization and the emulator for the reward. We try 50 new parameters chosen by the EI.</p>
@@ -1023,6 +1279,7 @@ bo.run_optimization(max_iter <span class="op">=</span> max_iter )</code></pre></
 <p>Now we visualize the result for the best controller that we have found with Bayesian optimization.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">_, _, _, frames <span class="op">=</span> mc.run_simulation(env, np.atleast_2d(bo.x_opt), render<span class="op">=</span><span class="va">True</span>)
 anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Best controller after 50 iterations of Bayesian optimization&#39;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">HTML(anim.to_jshtml())</code></pre></div>
 <iframe src="../slides/diagrams/uq/mountain_car_simulated.html" width="1024" height="768" allowtransparency="true" frameborder="0">
 </iframe>
 <p>he car can now make it to the top of the mountain! Emulating the reward function and using the EI helped as to find a linear controller that solves the problem.</p>
@@ -1098,6 +1355,7 @@ bo_emulator.run_optimization(max_iter<span class="op">=</span><span class="dv">5
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">_, _, _, frames <span class="op">=</span> mc.run_simulation(env, np.atleast_2d(bo_emulator.x_opt), render<span class="op">=</span><span class="va">True</span>)
 anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Best controller using the emulator of the dynamics&#39;</span>)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> IPython.core.display <span class="im">import</span> HTML</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">HTML(anim.to_jshtml())</code></pre></div>
 <iframe src="../slides/diagrams/uq/mountain_car_emulated.html" width="1024" height="768" allowtransparency="true" frameborder="0">
 </iframe>
 <p>And the problem is again solved, but in this case we have replaced the simulator of the car dynamics by a Gaussian process emulator that we learned by calling the simulator only 500 times. Compared to the 37500 calls that we needed when applying Bayesian optimization directly on the simulator this is a great gain.</p>
@@ -1163,6 +1421,7 @@ bo_multifidelity.run_optimization(max_iter<span class="op">=</span><span class="
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">_, _, _, frames <span class="op">=</span> mc.run_simulation(env, np.atleast_2d(bo_multifidelity.x_opt), render<span class="op">=</span><span class="va">True</span>)
 anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Best controller with multi-fidelity emulator&#39;</span>)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> IPython.core.display <span class="im">import</span> HTML</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">HTML(anim.to_jshtml())</code></pre></div>
 <iframe src="../slides/diagrams/uq/mountain_car_multi_fidelity.html" width="1024" height="768" allowtransparency="true" frameborder="0">
 </iframe>
 <p>And problem solved! We see how the problem is also solved with 250 observations of the high fidelity simulator and 250 of the low fidelity simulator.</p>
@@ -1193,7 +1452,9 @@ anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Bes
 <li>Available on <a href="https://github.com/amzn/mxfusion">Github</a>
 </td>
 <td width="30%">
-<img class="" src="../slides/diagrams/mxfusion-logo.png" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/mxfusion-logo.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
 </td>
 </tr>
 </table></li>
