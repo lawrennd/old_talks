@@ -21,7 +21,7 @@ import numpy as np}
 $$\kernelScalar(i, j, \inputVector, \inputVector^\prime) = b_{i,j} \kernelScalar(\inputVector, \inputVector^\prime)$$
 
 \columns{
-\includesvg{../slides/diagrams/kern/icm_covariance.svg}
+\includediagram{../slides/diagrams/kern/icm_covariance}
 }{
 \includehtml{../slides/diagrams/kern/icm_covariance.html}{512}{384}
 }{50%}{50%}

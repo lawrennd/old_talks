@@ -24,28 +24,29 @@ incremental: True
 \include{_ml/includes/what-is-ml-2.md}
 <!--include{_ai/includes/ai-vs-data-science-2.md}-->
 
-\newslide{data}
+\section{Data}
 
 \include{_ml/includes/ml-three-primary-challenges.md}
 \include{_data-science/includes/data-readiness-levels-short.md}
 \include{_data-science/includes/data-trusts.md}
 
-\newslide{model}
+\section{Model}
 
 \include{_ml/includes/deep-learning-as-pinball.md}
 \include{_gp/includes/planck-cmp-master-gp.md}
 \include{_deepgp/includes/process-composition.md}
+<!-- in this short overview, don't introduce GPy or the data-->
+\define{stepFunctionData} 
+\define{gpySoftware}
 \include{_deepgp/includes/deep-step-function.md}
 \include{_health/includes/deep-health-model.md}
 
-\newslide{Environment and Decision}
+\section{End-to-End: Environment and Decision}
 
 \newslide{Amazon: Bits and Atoms}
 
 \include{_supply-chain/includes/ml-and-supply-chain.md}
-
 \include{_data-science/includes/data-science-africa.md}
-
 \include{_health/includes/malaria-gp.md}
 
 \newslide{Thanks!}

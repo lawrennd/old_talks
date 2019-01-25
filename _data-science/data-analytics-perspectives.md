@@ -27,7 +27,7 @@ abstract: >
 
 ### Operating at Different Time Scales
 
-\includesvg{../slides/diagrams/data-science/ai-time-frame.svg}
+\includediagram{../slides/diagrams/data-science/ai-time-frame}
 
 \center{\coloryellow{data science}&nbsp;&nbsp;\colorcyan{artificial intelligence}}
 

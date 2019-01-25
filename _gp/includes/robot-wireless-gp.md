@@ -19,6 +19,6 @@ mlai.write_figure(filename='../slides/diagrams/gp/robot-wireless-gp-dim-' + str(
 
 \subsection{Robot WiFi Data GP}
 
-\includesvg{../slides/diagrams/gp/robot-wireless-gp-dim-1.svg}
+\includediagram{../slides/diagrams/gp/robot-wireless-gp-dim-1}
 \endif
 

@@ -49,7 +49,7 @@ mlai.write_figure(figure=fig,
 
 \newslide{Olympic Marathon Data}
 
-\div{\includesvg{../slides/diagrams/datasets/olympic-marathon.svg}}{}{text-align:center}
+\div{\includediagram{../slides/diagrams/datasets/olympic-marathon}}{}{text-align:center}
 
 \notes{Things to notice about the data include the outlier in 1904, in this year, the olympics was in St Louis, USA. Organizational problems and challenges with dust kicked up by the cars following the race meant that participants got lost, and only very few participants completed. 
 

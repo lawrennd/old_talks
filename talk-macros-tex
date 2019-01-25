@@ -23,6 +23,10 @@
 \block
 \end{table}}
 
+\define{\includediagram{filename}{align}{class}{style}}{\includegraphicx{\filename.pdf}}
+\define{\includediagramclass{filename}{class}{align}}{\includegraphicx{\filename.pdf}}
+
+
 \define{\aligncenter{block}}{\centerline{\block}}
 \define{\alignright{block}}{\begin{flushright}
 \block

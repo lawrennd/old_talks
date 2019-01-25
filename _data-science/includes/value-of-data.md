@@ -38,7 +38,7 @@ This type of work is somewhat thankless, with the exception of the clinicians' c
 
 \notes{We need to properly incetivize the sharing and production of clean data sets, we need to correctly quantify the value in the contribution of each actor, otherwise there won't be enough clean data to satiate the thirst of our decision making processes.}
 
-\notesfigure{\includesvg{../slides/diagrams/pomdp004.svg}
+\notesfigure{\includediagram{../slides/diagrams/pomdp004}
 \center{*Partially observable Markov decision process observing reward as actions are taken in different states*}}
 
 \setupcode{import pods}
@@ -48,19 +48,19 @@ This type of work is somewhat thankless, with the exception of the clinicians' c
 \slides{
 ## {.slide: data-transition="none"}
 
-\includesvg{../slides/diagrams/pomdp001.svg}
+\includediagram{../slides/diagrams/pomdp001}
 
 ## {.slide: data-transition="none"}
 
-\includesvg{../slides/diagrams/pomdp002.svg}
+\includediagram{../slides/diagrams/pomdp002}
 
 ## {.slide: data-transition="none"}
 
-\includesvg{../slides/diagrams/pomdp003.svg}
+\includediagram{../slides/diagrams/pomdp003}
 
 ## {.slide: data-transition="none"}
 
-\includesvg{../slides/diagrams/pomdp004.svg}
+\includediagram{../slides/diagrams/pomdp004}
 }
 
 \slides{

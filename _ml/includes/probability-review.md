@@ -31,7 +31,7 @@ conditional | $P(X=x\vert Y=y)$ | prob. that X=x *given that* Y=y
 
 \plotcode{plot.prob_diagram(diagrams='../slides/diagrams')}
 
-\includesvg{../slides/diagrams/mlai/prob_diagram.svg}
+\includediagram{../slides/diagrams/mlai/prob_diagram}
 
 \alignright{Inspired by lectures from Christopher Bishop}
 

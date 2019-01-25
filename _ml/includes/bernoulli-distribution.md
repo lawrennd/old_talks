@@ -56,7 +56,7 @@ plot.bernoulli_urn(ax, diagrams='../slides/diagrams/ml/')}
 
 \newslide{Jacob Bernoulli's Bernoulli}
 
-\includesvg{../slides/diagrams/ml/bernoulli-urn.svg}
+\includediagram{../slides/diagrams/ml/bernoulli-urn}
 
 \newslide{Thomas Bayes's Bernoulli}
 
@@ -84,18 +84,18 @@ plot.bayes_billiard(ax, diagrams='../slides/diagrams/ml/')}
 
 \slides{
 \startanimation{bayes_billiard}{1}{10}
-\newframe{\includesvg{../slides/diagrams/ml/bayes-billiard000.svg}}{bayes_billiard}
-\newframe{\includesvg{../slides/diagrams/ml/bayes-billiard001.svg}}{bayes_billiard}
-\newframe{\includesvg{../slides/diagrams/ml/bayes-billiard002.svg}}{bayes_billiard}
-\newframe{\includesvg{../slides/diagrams/ml/bayes-billiard003.svg}}{bayes_billiard}
-\newframe{\includesvg{../slides/diagrams/ml/bayes-billiard004.svg}}{bayes_billiard}
-\newframe{\includesvg{../slides/diagrams/ml/bayes-billiard005.svg}}{bayes_billiard}
-\newframe{\includesvg{../slides/diagrams/ml/bayes-billiard006.svg}}{bayes_billiard}
-\newframe{\includesvg{../slides/diagrams/ml/bayes-billiard007.svg}}{bayes_billiard}
-\newframe{\includesvg{../slides/diagrams/ml/bayes-billiard008.svg}}{bayes_billiard}
-\newframe{\includesvg{../slides/diagrams/ml/bayes-billiard009.svg}}{bayes_billiard}
+\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard000}}{bayes_billiard}
+\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard001}}{bayes_billiard}
+\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard002}}{bayes_billiard}
+\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard003}}{bayes_billiard}
+\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard004}}{bayes_billiard}
+\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard005}}{bayes_billiard}
+\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard006}}{bayes_billiard}
+\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard007}}{bayes_billiard}
+\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard008}}{bayes_billiard}
+\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard009}}{bayes_billiard}
 }
-\notesfigure{\div{\includesvg{../slides/diagrams/ml/bayes-billiard009.svg}}{}{text-align:center}}
+\notesfigure{\div{\includediagram{../slides/diagrams/ml/bayes-billiard009}}{}{text-align:center}}
 
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}

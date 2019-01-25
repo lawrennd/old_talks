@@ -10,13 +10,13 @@ from ipywidgets import IntSlider}
 
 \slides{
 \startanimation{two_point_sample2}{9}{12}
-\newframe{\includesvg{../slides/diagrams/gp/two_point_sample009.svg}}{two_point_sample2}
-\newframe{\includesvg{../slides/diagrams/gp/two_point_sample010.svg}}{two_point_sample2}
-\newframe{\includesvg{../slides/diagrams/gp/two_point_sample011.svg}}{two_point_sample2}
-\newframe{\includesvg{../slides/diagrams/gp/two_point_sample012.svg}}{two_point_sample2}
+\newframe{\includediagram{../slides/diagrams/gp/two_point_sample009}}{two_point_sample2}
+\newframe{\includediagram{../slides/diagrams/gp/two_point_sample010}}{two_point_sample2}
+\newframe{\includediagram{../slides/diagrams/gp/two_point_sample011}}{two_point_sample2}
+\newframe{\includediagram{../slides/diagrams/gp/two_point_sample012}}{two_point_sample2}
 \endanimation
 }
 
-\notesfigure{\includesvg{../slides/diagrams/gp/two_point_sample012.svg}{}}
+\notesfigure{\includediagram{../slides/diagrams/gp/two_point_sample012}{}}
 \notes{\caption{The joint Gaussian over $\mappingFunction_1$ and $\mappingFunction_2$ along with the conditional distribution of $\mappingFunction_2$ given $\mappingFunction_1$}}
 \endif

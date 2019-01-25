@@ -47,7 +47,7 @@ transition: None
 
 ###
 
-\includesvg{../slides/diagrams/data-science/hilbert-info-growth.svg}{80%}
+\includediagram{../slides/diagrams/data-science/hilbert-info-growth}{80%}
 
 \speakernotes{Large amount of digital data accessible to all}
 

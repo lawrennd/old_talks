@@ -13,7 +13,7 @@ $$1 = 3m + c$$
 
 The solution to these two simultaneous equations can be represented graphically as}
 
-\notes{\includesvg{../slides/diagrams/ml/over_determined_system003.svg}}
+\notes{\includediagram{../slides/diagrams/ml/over_determined_system003}}
 \notes{\caption{The solution of two linear equations represented as the fit of a straight line through two data}}
 
 \notes{
@@ -23,12 +23,12 @@ point 3: $\inputScalar = 2$, $\dataScalar=2.5$
 $$2.5 = 2m + c$$
 }
 
-\notes{\includesvg{../slides/diagrams/ml/over_determined_system004.svg}}
+\notes{\includediagram{../slides/diagrams/ml/over_determined_system004}}
 \notes{\caption{A third observation of data is inconsistent with the solution dictated by the first two observations}}
 
 \notes{Now there are three candidate lines, each consistent with our data.}
 
-\notes{\includesvg{../slides/diagrams/ml/over_determined_system007.svg}}
+\notes{\includediagram{../slides/diagrams/ml/over_determined_system007}}
 \notes{\caption{Three solutions to the problem, each consistent with two points of the three observations}}
 
 \notes{This is known as an *overdetermined* system because there are more data than we need to determine our parameters. The problem arises because the model is a simplification of the real world, and the data we observe is therefore inconsistent with our model.}
@@ -47,13 +47,13 @@ import pods}
 
 \slides{
 \startanimation{over_determined_system}{1}{8}
-\newframe{\includesvg{../slides/diagrams/ml/over_determined_system001.svg}}{over_determined_system}
-\newframe{\includesvg{../slides/diagrams/ml/over_determined_system002.svg}}{over_determined_system}
-\newframe{\includesvg{../slides/diagrams/ml/over_determined_system003.svg}}{over_determined_system}
-\newframe{\includesvg{../slides/diagrams/ml/over_determined_system004.svg}}{over_determined_system}
-\newframe{\includesvg{../slides/diagrams/ml/over_determined_system005.svg}}{over_determined_system}
-\newframe{\includesvg{../slides/diagrams/ml/over_determined_system006.svg}}{over_determined_system}
-\newframe{\includesvg{../slides/diagrams/ml/over_determined_system007.svg}}{over_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/over_determined_system001}}{over_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/over_determined_system002}}{over_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/over_determined_system003}}{over_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/over_determined_system004}}{over_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/over_determined_system005}}{over_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/over_determined_system006}}{over_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/over_determined_system007}}{over_determined_system}
 \endanimation
 }
 

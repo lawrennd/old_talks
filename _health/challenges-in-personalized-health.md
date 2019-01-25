@@ -24,7 +24,7 @@ transition: Nonex
 
 ### Evolved Relationship 
 
-\includesvg{../slides/diagrams/data-science-information-flow_neg003.svg}
+\includediagram{../slides/diagrams/data-science-information-flow_neg003}
 
 \include{_data-science/includes/societal-effects.md}
 

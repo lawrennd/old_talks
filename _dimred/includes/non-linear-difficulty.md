@@ -9,7 +9,7 @@
 
 * Normalisation of distribution becomes intractable.
 }
-\includesvg{../slides/diagrams/dimred/nonlinear-mapping-3d-plot.svg}{center}
+\includediagram{../slides/diagrams/dimred/nonlinear-mapping-3d-plot}{center}
 
 \plotcode{plot.non_linear_difficulty_plot_2(diagrams='../../slides/diagrams/dimred/')}
 
@@ -21,7 +21,7 @@
 * Normalisation of distribution becomes intractable.
 }
 
-\includesvg{../slides/diagrams/dimred/nonlinear-mapping-2d-plot.svg}{center}
+\includediagram{../slides/diagrams/dimred/nonlinear-mapping-2d-plot}{center}
 
 \plotcode{plot.non_linear_difficulty_plot_1(diagrams='../../slides/diagrams/dimred')}
 
@@ -33,6 +33,6 @@
 * Normalisation of distribution becomes intractable.
 }
 
-\includesvg{../slides/diagrams/dimred/gaussian-through-nonlinear.svg}{center}
+\includediagram{../slides/diagrams/dimred/gaussian-through-nonlinear}{center}
 
 

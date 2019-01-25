@@ -43,7 +43,7 @@ abstract: >
 
 ### Evolved Relationship 
 
-\includesvg{../slides/diagrams/data-science/information-flow004.svg}
+\includediagram{../slides/diagrams/data-science/information-flow004}
 
 
 \include{_data-science/includes/societal-effects.md}

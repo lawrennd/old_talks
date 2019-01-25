@@ -26,7 +26,7 @@ One proposed solution is known as *dropout* where only a sub-set of the neural n
 
 \newslide{Low Rank Approximation}
 
-\includesvg{../slides/diagrams/wisuvt.svg}
+\includediagram{../slides/diagrams/wisuvt}
 \caption{Pictorial representation of the low rank form of the matrix $\mappingMatrix$}
 
 \endif

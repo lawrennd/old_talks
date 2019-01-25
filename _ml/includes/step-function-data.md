@@ -27,7 +27,7 @@ mlai.write_figure(figure=fig, filename='../../slides/diagrams/datasets/step-func
 			
 \subsection{Step Function Data}
 
-\includesvg{../slides/diagrams/datasets/step-function.svg} 
+\includediagram{../slides/diagrams/datasets/step-function} 
 
 \define{stepFunctionData}
 \endif

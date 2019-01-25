@@ -20,5 +20,5 @@ $$\kernelScalar(\inputVector, \inputVector^\prime) =
 {\sqrt{\left(w \inputVector^\top \inputVector + b + 1\right)
 \left(w \left.\inputVector^\prime\right.^\top \inputVector^\prime + b + 1\right)}}\right)$$
 
-\columns{\includesvgclass{../slides/diagrams/kern/relu_covariance.svg}}{\includeimg{../slides/diagrams/kern/relu_covariance.gif}{100%}{negate}{center}}{45%}{45%}
+\columns{\includediagramclass{../slides/diagrams/kern/relu_covariance}}{\includeimg{../slides/diagrams/kern/relu_covariance.gif}{100%}{negate}{center}}{45%}{45%}
 

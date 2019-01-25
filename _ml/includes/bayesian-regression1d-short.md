@@ -38,13 +38,13 @@ import pods}
 							stage=IntSlider(1, 1, 3, 1))}
 \slides{
 \startanimation{dem_gaussian}{1}{3}
-\newframe{\includesvg{../slides/diagrams/ml/dem_gaussian001.svg}}{dem_gaussian}
-\newframe{\includesvg{../slides/diagrams/ml/dem_gaussian002.svg}}{dem_gaussian}
-\newframe{\includesvg{../slides/diagrams/ml/dem_gaussian003.svg}}{dem_gaussian}
+\newframe{\includediagram{../slides/diagrams/ml/dem_gaussian001}}{dem_gaussian}
+\newframe{\includediagram{../slides/diagrams/ml/dem_gaussian002}}{dem_gaussian}
+\newframe{\includediagram{../slides/diagrams/ml/dem_gaussian003}}{dem_gaussian}
 \endanimation
 }
 
-\notesfigure{\includesvg{../slides/diagrams/ml/dem_gaussian003.svg}}
+\notesfigure{\includediagram{../slides/diagrams/ml/dem_gaussian003}}
 \notes{\caption{Combining a Gaussian likelihood with a Gaussian prior to form a Gaussian posterior}}
 
 \notes{Another way of seeing what's going on is to note that the numerator of Bayes' rule merely multiplies the likelihood by the prior. The denominator, is not a function of $c$. So the functional form is entirely determined by the multiplication of prior and likelihood. This has the effect of ensuring that the posterior only has probability mass in regions where both the prior and the likelihood have probability mass.}

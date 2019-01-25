@@ -37,7 +37,7 @@ mlai.write_figure(figure=fig,
 
 \newslide{Della Gatta Gene Data}
 
-\div{\includesvg{../slides/diagrams/datasets/della-gatta-gene.svg}}{}{text-align:center}
+\div{\includediagram{../slides/diagrams/datasets/della-gatta-gene}}{}{text-align:center}
 
 \notes{}
 

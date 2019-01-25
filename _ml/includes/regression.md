@@ -46,7 +46,7 @@ $$\dataScalar_i = m\inputScalar_i + c$$ is translated to code as follows:}
 plt.xlim([-3, 3])
 mlai.write_figure(filename="../slides/diagrams/ml/regression.svg", transparent=True)}
 
-\includesvg{../slides/diagrams/ml/regression.svg}
+\includediagram{../slides/diagrams/ml/regression}
 
 \slides{These points lie exactly on a straight line, that's not very realistic, let's corrupt them with a bit of Gaussian 'noise'.}
 
@@ -58,6 +58,6 @@ plt.plot(x, y, 'r.', markersize=10)
 plt.xlim([-3, 3])
 mlai.write_figure(filename="../slides/diagrams/ml/regression_noise.svg", transparent=True)}
 
-\includesvg{../slides/diagrams/ml/regression_noise.svg}
+\includediagram{../slides/diagrams/ml/regression_noise}
 
 \endif

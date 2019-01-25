@@ -33,18 +33,18 @@ from ipywidgets import IntSlider}
 \newslide{Gaussian Distribution Sample}
 \slides{
 \startanimation{two_point_sample}{0}{8}
-\newframe{\includesvg{../slides/diagrams/gp/two_point_sample000.svg}}{two_point_sample}
-\newframe{\includesvg{../slides/diagrams/gp/two_point_sample001.svg}}{two_point_sample}
-\newframe{\includesvg{../slides/diagrams/gp/two_point_sample002.svg}}{two_point_sample}
-\newframe{\includesvg{../slides/diagrams/gp/two_point_sample003.svg}}{two_point_sample}
-\newframe{\includesvg{../slides/diagrams/gp/two_point_sample004.svg}}{two_point_sample}
-\newframe{\includesvg{../slides/diagrams/gp/two_point_sample005.svg}}{two_point_sample}
-\newframe{\includesvg{../slides/diagrams/gp/two_point_sample006.svg}}{two_point_sample}
-\newframe{\includesvg{../slides/diagrams/gp/two_point_sample007.svg}}{two_point_sample}
-\newframe{\includesvg{../slides/diagrams/gp/two_point_sample008.svg}}{two_point_sample}
+\newframe{\includediagram{../slides/diagrams/gp/two_point_sample000}}{two_point_sample}
+\newframe{\includediagram{../slides/diagrams/gp/two_point_sample001}}{two_point_sample}
+\newframe{\includediagram{../slides/diagrams/gp/two_point_sample002}}{two_point_sample}
+\newframe{\includediagram{../slides/diagrams/gp/two_point_sample003}}{two_point_sample}
+\newframe{\includediagram{../slides/diagrams/gp/two_point_sample004}}{two_point_sample}
+\newframe{\includediagram{../slides/diagrams/gp/two_point_sample005}}{two_point_sample}
+\newframe{\includediagram{../slides/diagrams/gp/two_point_sample006}}{two_point_sample}
+\newframe{\includediagram{../slides/diagrams/gp/two_point_sample007}}{two_point_sample}
+\newframe{\includediagram{../slides/diagrams/gp/two_point_sample008}}{two_point_sample}
 \endanimation
 }
-\notesfigure{\includesvg{../slides/diagrams/gp/two_point_sample008.svg}{}}
+\notesfigure{\includediagram{../slides/diagrams/gp/two_point_sample008}{}}
 \notes{\caption{A 25 dimensional correlated random variable (values ploted against index)}}
 
 \include{_gp/includes/gaussian-predict-index-one-and-two.md}

@@ -9,7 +9,7 @@ k(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\left\Vert \input
 * For the example above it was based on Euclidean distance.
 
 * The covariance function is also know as a kernel.
-}{\includesvg{../slides/diagrams/kern/eq_covariance.svg}}{50%}{50%}
+}{\includediagram{../slides/diagrams/kern/eq_covariance}}{50%}{50%}
 }
 
 \newslide{Computing Covariance}
@@ -33,28 +33,28 @@ from ipywidgets import IntSlider}
 
 \slides{
 \startanimation{computing_eq_three_covariance}{0}{16}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_covariance000.svg}}{computing_eq_three_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_covariance001.svg}}{computing_eq_three_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_covariance002.svg}}{computing_eq_three_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_covariance003.svg}}{computing_eq_three_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_covariance004.svg}}{computing_eq_three_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_covariance005.svg}}{computing_eq_three_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_covariance006.svg}}{computing_eq_three_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_covariance007.svg}}{computing_eq_three_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_covariance008.svg}}{computing_eq_three_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_covariance009.svg}}{computing_eq_three_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_covariance010.svg}}{computing_eq_three_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_covariance011.svg}}{computing_eq_three_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_covariance012.svg}}{computing_eq_three_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_covariance013.svg}}{computing_eq_three_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_covariance014.svg}}{computing_eq_three_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_covariance015.svg}}{computing_eq_three_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_covariance016.svg}}{computing_eq_three_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_covariance000}}{computing_eq_three_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_covariance001}}{computing_eq_three_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_covariance002}}{computing_eq_three_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_covariance003}}{computing_eq_three_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_covariance004}}{computing_eq_three_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_covariance005}}{computing_eq_three_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_covariance006}}{computing_eq_three_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_covariance007}}{computing_eq_three_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_covariance008}}{computing_eq_three_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_covariance009}}{computing_eq_three_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_covariance010}}{computing_eq_three_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_covariance011}}{computing_eq_three_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_covariance012}}{computing_eq_three_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_covariance013}}{computing_eq_three_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_covariance014}}{computing_eq_three_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_covariance015}}{computing_eq_three_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_covariance016}}{computing_eq_three_covariance}
 \endanimation
 }
 
-\notesfigure{\includesvg{../slides/diagrams/kern/computing_eq_three_covariance016.svg}{}
-\includesvg{../slides/diagrams/kern/computing_eq_three_covariance016.svg}{}}\notes{\caption{Entrywise fill in of the covariance matrix from the covariance function.}}
+\notesfigure{\includediagram{../slides/diagrams/kern/computing_eq_three_covariance016}{}
+\includediagram{../slides/diagrams/kern/computing_eq_three_covariance016}{}}\notes{\caption{Entrywise fill in of the covariance matrix from the covariance function.}}
 
 
 \newslide{Computing Covariance}
@@ -78,39 +78,39 @@ from ipywidgets import IntSlider}
 
 \slides{
 \startanimation{computing_eq_four_covariance}{0}{27}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_four_covariance000.svg}}{computing_eq_four_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_four_covariance001.svg}}{computing_eq_four_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_four_covariance002.svg}}{computing_eq_four_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_four_covariance003.svg}}{computing_eq_four_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_four_covariance004.svg}}{computing_eq_four_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_four_covariance005.svg}}{computing_eq_four_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_four_covariance006.svg}}{computing_eq_four_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_four_covariance007.svg}}{computing_eq_four_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_four_covariance008.svg}}{computing_eq_four_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_four_covariance009.svg}}{computing_eq_four_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_four_covariance010.svg}}{computing_eq_four_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_four_covariance011.svg}}{computing_eq_four_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_four_covariance012.svg}}{computing_eq_four_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_four_covariance013.svg}}{computing_eq_four_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_four_covariance014.svg}}{computing_eq_four_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_four_covariance015.svg}}{computing_eq_four_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_four_covariance016.svg}}{computing_eq_four_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_four_covariance017.svg}}{computing_eq_four_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_four_covariance018.svg}}{computing_eq_four_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_four_covariance019.svg}}{computing_eq_four_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_four_covariance020.svg}}{computing_eq_four_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_four_covariance021.svg}}{computing_eq_four_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_four_covariance022.svg}}{computing_eq_four_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_four_covariance023.svg}}{computing_eq_four_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_four_covariance024.svg}}{computing_eq_four_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_four_covariance025.svg}}{computing_eq_four_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_four_covariance026.svg}}{computing_eq_four_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_four_covariance027.svg}}{computing_eq_four_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_four_covariance000}}{computing_eq_four_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_four_covariance001}}{computing_eq_four_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_four_covariance002}}{computing_eq_four_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_four_covariance003}}{computing_eq_four_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_four_covariance004}}{computing_eq_four_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_four_covariance005}}{computing_eq_four_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_four_covariance006}}{computing_eq_four_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_four_covariance007}}{computing_eq_four_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_four_covariance008}}{computing_eq_four_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_four_covariance009}}{computing_eq_four_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_four_covariance010}}{computing_eq_four_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_four_covariance011}}{computing_eq_four_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_four_covariance012}}{computing_eq_four_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_four_covariance013}}{computing_eq_four_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_four_covariance014}}{computing_eq_four_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_four_covariance015}}{computing_eq_four_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_four_covariance016}}{computing_eq_four_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_four_covariance017}}{computing_eq_four_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_four_covariance018}}{computing_eq_four_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_four_covariance019}}{computing_eq_four_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_four_covariance020}}{computing_eq_four_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_four_covariance021}}{computing_eq_four_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_four_covariance022}}{computing_eq_four_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_four_covariance023}}{computing_eq_four_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_four_covariance024}}{computing_eq_four_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_four_covariance025}}{computing_eq_four_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_four_covariance026}}{computing_eq_four_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_four_covariance027}}{computing_eq_four_covariance}
 \endanimation
 }
 
-\notesfigure{\includesvg{../slides/diagrams/kern/computing_eq_four_covariance027.svg}{}
-\includesvg{../slides/diagrams/kern/computing_eq_four_covariance027.svg}{}}\notes{\caption{Entrywise fill in of the covariance matrix from the covariance function.}}
+\notesfigure{\includediagram{../slides/diagrams/kern/computing_eq_four_covariance027}{}
+\includediagram{../slides/diagrams/kern/computing_eq_four_covariance027}{}}\notes{\caption{Entrywise fill in of the covariance matrix from the covariance function.}}
 
 \newslide{Computing Covariance}
 
@@ -133,25 +133,25 @@ from ipywidgets import IntSlider}
 
 \slides{
 \startanimation{computing_eq_three_2_covariance}{0}{16}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_2_covariance000.svg}}{computing_eq_three_2_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_2_covariance001.svg}}{computing_eq_three_2_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_2_covariance002.svg}}{computing_eq_three_2_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_2_covariance003.svg}}{computing_eq_three_2_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_2_covariance004.svg}}{computing_eq_three_2_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_2_covariance005.svg}}{computing_eq_three_2_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_2_covariance006.svg}}{computing_eq_three_2_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_2_covariance007.svg}}{computing_eq_three_2_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_2_covariance008.svg}}{computing_eq_three_2_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_2_covariance009.svg}}{computing_eq_three_2_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_2_covariance010.svg}}{computing_eq_three_2_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_2_covariance011.svg}}{computing_eq_three_2_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_2_covariance012.svg}}{computing_eq_three_2_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_2_covariance013.svg}}{computing_eq_three_2_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_2_covariance014.svg}}{computing_eq_three_2_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_2_covariance015.svg}}{computing_eq_three_2_covariance}
-\newframe{\includesvg{../slides/diagrams/kern/computing_eq_three_2_covariance016.svg}}{computing_eq_three_2_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_2_covariance000}}{computing_eq_three_2_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_2_covariance001}}{computing_eq_three_2_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_2_covariance002}}{computing_eq_three_2_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_2_covariance003}}{computing_eq_three_2_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_2_covariance004}}{computing_eq_three_2_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_2_covariance005}}{computing_eq_three_2_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_2_covariance006}}{computing_eq_three_2_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_2_covariance007}}{computing_eq_three_2_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_2_covariance008}}{computing_eq_three_2_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_2_covariance009}}{computing_eq_three_2_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_2_covariance010}}{computing_eq_three_2_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_2_covariance011}}{computing_eq_three_2_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_2_covariance012}}{computing_eq_three_2_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_2_covariance013}}{computing_eq_three_2_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_2_covariance014}}{computing_eq_three_2_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_2_covariance015}}{computing_eq_three_2_covariance}
+\newframe{\includediagram{../slides/diagrams/kern/computing_eq_three_2_covariance016}}{computing_eq_three_2_covariance}
 \endanimation
 }
 
-\notesfigure{\includesvg{../slides/diagrams/kern/computing_eq_three_2_covariance016.svg}{}
-\includesvg{../slides/diagrams/kern/computing_eq_three_2_covariance016.svg}{}}\notes{\caption{Entrywise fill in of the covariance matrix from the covariance function.}}
+\notesfigure{\includediagram{../slides/diagrams/kern/computing_eq_three_2_covariance016}{}
+\includediagram{../slides/diagrams/kern/computing_eq_three_2_covariance016}{}}\notes{\caption{Entrywise fill in of the covariance matrix from the covariance function.}}

@@ -24,14 +24,14 @@ For further thoughts see [this Guardian article](https://www.theguardian.com/med
 \define{\svgstyle}{height:50%}
 \define{\stubname}{new-flow-of-information}
 
-\slides{\div{\includesvg{../slides/diagrams/data-science/\concat{\stubname}{001.svg}}{}{}{\svgstyle}}{\stubname}{\divoptions}}
+\slides{\div{\includediagram{../slides/diagrams/data-science/\concat{\stubname}{001}}{}{}{\svgstyle}}{\stubname}{\divoptions}}
 
 \newslide{Evolved Relationship}
 
-\slides{\div{\includesvg{../slides/diagrams/data-science/\concat{\stubname}{002.svg}}{}{}{\svgstyle}}{\stubname}{\divoptions}}
+\slides{\div{\includediagram{../slides/diagrams/data-science/\concat{\stubname}{002}}{}{}{\svgstyle}}{\stubname}{\divoptions}}
 
 \figure{
-\notesfigure{\includesvg{../slides/diagrams/data-science/\concat{\stubname}{002.svg}}}
+\notesfigure{\includediagram{../slides/diagrams/data-science/\concat{\stubname}{002}}}
 \notes{\caption{New direction of information flow, information is reaching us mediated by the computer}}
 }
 

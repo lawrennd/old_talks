@@ -131,7 +131,7 @@ $$
 * [Logistic](http://en.wikipedia.org/wiki/Logistic_function) (or sigmoid) squashes
 real line to between 0  & 1. Sometimes also called a 'squashing function'.
 
-\includesvg{../slides/diagrams/ml/logistic.svg}
+\includediagram{../slides/diagrams/ml/logistic}
 }
 
 \notes{
@@ -160,7 +160,7 @@ This inverse of the link function is known as the [logistic](http://en.wikipedia
 
 \plotcode{plot.logistic('../slides/diagrams/ml/logistic.svg')}
 
-\includesvg{../slides/diagrams/ml/logistic.svg}
+\includediagram{../slides/diagrams/ml/logistic}
 
 
 The function has this characeristic 's'-shape (from where the term sigmoid, as in sigma, comes from). It also takes the input from the entire real line and 'squashes' it into an output that is between zero and one. For this reason it is sometimes also called a 'squashing function'.
@@ -476,7 +476,7 @@ We've introduced the formalism for generalized linear models. Have a think about
 
 \newslide{Poisson Distribution}
 
-\includesvg{../slides/diagrams/ml/poisson.svg}
+\includediagram{../slides/diagrams/ml/poisson}
 
 \newslide{Poisson Regression}
 

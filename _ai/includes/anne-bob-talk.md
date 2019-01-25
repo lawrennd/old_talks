@@ -12,39 +12,39 @@ from ipywidgets import IntSlider}
 
 \newslide{}
 
-\slides{\div{\includesvg{../slides/diagrams/\concat{\stubname}{000.svg}}{}{}{\svgstyle}}{\stubname}{\divoptions}}
+\slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{000}}{}{}{\svgstyle}}{\stubname}{\divoptions}}
 
 \newslide{}
 
-\slides{\div{\includesvg{../slides/diagrams/\concat{\stubname}{001.svg}}{}{}{\svgstyle}}{\stubname}{\divoptions}}
+\slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{001}}{}{}{\svgstyle}}{\stubname}{\divoptions}}
 
 \newslide{}
 
-\slides{\div{\includesvg{../slides/diagrams/\concat{\stubname}{002.svg}}{}{}{\svgstyle}}{\stubname}{\divoptions}}
+\slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{002}}{}{}{\svgstyle}}{\stubname}{\divoptions}}
 
 \newslide{}
 
-\slides{\div{\includesvg{../slides/diagrams/\concat{\stubname}{003.svg}}{}{}{\svgstyle}}{\stubname}{\divoptions}}
+\slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{003}}{}{}{\svgstyle}}{\stubname}{\divoptions}}
 
 \newslide{}
 
-\slides{\div{\includesvg{../slides/diagrams/\concat{\stubname}{004.svg}}{}{}{\svgstyle}}{\stubname}{\divoptions}}
+\slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{004}}{}{}{\svgstyle}}{\stubname}{\divoptions}}
 
 \newslide{}
 
-\slides{\div{\includesvg{../slides/diagrams/\concat{\stubname}{005.svg}}{}{}{\svgstyle}}{\stubname}{\divoptions}}
+\slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{005}}{}{}{\svgstyle}}{\stubname}{\divoptions}}
 
 \newslide{}
 
-\slides{\div{\includesvg{../slides/diagrams/\concat{\stubname}{006.svg}}{}{}{\svgstyle}}{\stubname}{\divoptions}}
+\slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{006}}{}{}{\svgstyle}}{\stubname}{\divoptions}}
 
 \newslide{}
 
-\slides{\div{\includesvg{../slides/diagrams/\concat{\stubname}{007.svg}}{}{}{\svgstyle}}{\stubname}{\divoptions}}
+\slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{007}}{}{}{\svgstyle}}{\stubname}{\divoptions}}
 
 
-\notesfigure{\includesvg{../slides/diagrams/\concat{\stubname}{006.svg}}}
+\notesfigure{\includediagram{../slides/diagrams/\concat{\stubname}{006}}}
 \notes{\caption{Conversation relies on internal models of other individuals.}}
-\notesfigure{\includesvg{../slides/diagrams/\concat{\stubname}{007.svg}}}
+\notesfigure{\includediagram{../slides/diagrams/\concat{\stubname}{007}}}
 \notes{\caption{Misunderstanding of context and who we are talking to leads to arguments.}}
 \speakernotes{This can be disturbing to humans because we are used to a low bandwidth communication rate. }

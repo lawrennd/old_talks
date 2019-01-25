@@ -22,7 +22,7 @@ import numpy as np}
 $$\kernelScalar(i, j, \inputVector, \inputVector^\prime) = w_i w_j \kernelScalar(\inputVector, \inputVector^\prime)$$
 
 \columns{
-\includesvg{../slides/diagrams/kern/slfm_covariance.svg}
+\includediagram{../slides/diagrams/kern/slfm_covariance}
 }{
 \includehtml{../slides/diagrams/kern/slfm_covariance.html}{512}{384}
 }{50%}{50%}

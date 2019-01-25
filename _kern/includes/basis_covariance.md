@@ -20,4 +20,4 @@ plot.covariance_func(kernel, diagrams='../slides/diagrams/')}
 $$k(\inputVector, \inputVector^\prime) = \alpha(w \inputVector^\top
 \inputVector^\prime + b)^d$$
 
-\columns{\includesvgclass{../slides/diagrams/kern/basis_covariance.svg}}{\includeimg{../slides/diagrams/kern/basis_covariance.gif}{100%}{negate}{center}}{45%}{45%}
+\columns{\includediagramclass{../slides/diagrams/kern/basis_covariance}}{\includeimg{../slides/diagrams/kern/basis_covariance.gif}{100%}{negate}{center}}{45%}{45%}

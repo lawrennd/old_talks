@@ -9,7 +9,7 @@
 
 \subsection{Shared LVM}
 
-\includesvg{../slides/diagrams/shared.svg}
+\includediagram{../slides/diagrams/shared}
 
 \newslide
 

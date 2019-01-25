@@ -24,6 +24,6 @@ mlai.write_figure(filename='../slides/diagrams/datasets/motorcycle-helmet.svg',
 
 \subsection{Motorcycle Helmet Data}
 
-\includesvg{../slides/diagrams/datasets/motorcycle-helmet.svg}
+\includediagram{../slides/diagrams/datasets/motorcycle-helmet}
 
 \endif

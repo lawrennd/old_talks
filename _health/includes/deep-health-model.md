@@ -4,6 +4,6 @@
 
 \newslide{Deep Health}
 
-\includesvg{../slides/diagrams/deep-health.svg}
+\includediagram{../slides/diagrams/deep-health}
 
 \endif

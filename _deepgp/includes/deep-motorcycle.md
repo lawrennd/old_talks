@@ -33,7 +33,7 @@ mlai.write_figure(filename='../slides/diagrams/deepgp/motorcycle-helmet-deep-gp.
 
 \subsection{Motorcycle Helmet Data Deep GP}
 
-\includesvg{../slides/diagrams/deepgp/motorcycle-helmet-deep-gp.svg}
+\includediagram{../slides/diagrams/deepgp/motorcycle-helmet-deep-gp}
 
 \setupdisplaycode{import teaching_plots as plot
 import mlai}
@@ -47,7 +47,7 @@ mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/motorcycle-hel
 
 \subsection{Motorcycle Helmet Data Deep GP}
 
-\includesvg{../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-samples.svg}
+\includediagram{../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-samples}
 
 \displaycode{m.visualize(xlim=xlim, ylim=ylim, scale=scale,offset=offset, 
             xlabel="time", ylabel="acceleration/$g$", portion=0.5,
@@ -56,11 +56,11 @@ mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/motorcycle-hel
 
 \subsection{Motorcycle Helmet Data Latent 1}
 
-\includesvg{../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-layer-0.svg}
+\includediagram{../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-layer-0}
 
 \subsection{Motorcycle Helmet Data Latent 2}
 
-\includesvg{../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-layer-1.svg}
+\includediagram{../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-layer-1}
 
 \displaycode{fig, ax=plt.subplots(figsize=plot.big_wide_figsize)
 m.visualize_pinball(ax=ax, xlabel='time', ylabel='acceleration/g', 
@@ -70,5 +70,5 @@ mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/motorcycle-hel
 
 \subsection{Motorcycle Helmet Pinball Plot}
 
-\includesvg{../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-pinball.svg}
+\includediagram{../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-pinball}
 \endif

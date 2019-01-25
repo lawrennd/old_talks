@@ -89,7 +89,7 @@ plt.savefig('../slides/diagrams/ml/logistic.svg')}
 * [Logistic](http://en.wikipedia.org/wiki/Logistic_function) (or sigmoid) squashes
 real line to between 0   & 1. Sometimes also called a 'squashing function'.
 
-\includesvg{../slides/diagrams/ml/logistic.svg}
+\includediagram{../slides/diagrams/ml/logistic}
 }
 
 \newslide{Prediction Function}
@@ -258,7 +258,7 @@ plt.savefig('../slides/diagrams/ml/poisson.svg')}
 
 \newslide{Poisson Distribution}
 
-\includesvg{../slides/diagrams/ml/poisson.svg}
+\includediagram{../slides/diagrams/ml/poisson}
 
 \newslide{Poisson Regression}
 

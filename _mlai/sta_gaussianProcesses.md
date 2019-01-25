@@ -86,7 +86,7 @@ real line to between 0   & 1. Sometimes also called a 'squashing function'.
 \setupplotcode{import teaching_plots as plot}
 \plotcode{plot.logistic(diagrams='../slides/diagrams/ml')}
 
-\includesvg{../slides/diagrams/ml/logistic.svg}
+\includediagram{../slides/diagrams/ml/logistic}
 
 
 \newslide{Prediction Function}
@@ -222,7 +222,7 @@ non-negative integers, $y$, $$P(y) = \frac{\lambda^y}{y!}\exp(-y)$$
 
 \newslide{Poisson Distribution
 
-\includesvg{../slides/diagrams/ml/poisson.svg}
+\includediagram{../slides/diagrams/ml/poisson}
 
 \newslide{Poisson Regression}
 

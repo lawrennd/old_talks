@@ -27,6 +27,7 @@
 ```}
 \define{\setupdisplaycode{block}}{}
 \define{\displaycode{block}}{}
+\define{\displaynotes{block}}{}
 \define{\plotcode{block}}{}
 \define{\setupplotcode{block}}{}
 \define{\loadplotcode{object}{filename}}{}

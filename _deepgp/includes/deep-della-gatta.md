@@ -28,7 +28,7 @@ mlai.write_figure(filename='../slides/diagrams/deepgp/della-gatta-gene-deep-gp.s
 
 \subsection{TP53 Gene Data Deep GP}
 
-\includesvg{../slides/diagrams/deepgp/della-gatta-gene-deep-gp.svg} 
+\includediagram{../slides/diagrams/deepgp/della-gatta-gene-deep-gp} 
 
 \displaycode{fig, ax=plt.subplots(figsize=plot.big_wide_figsize)
 plot.model_sample(m, scale=scale, offset=offset, samps=10, ax=ax, portion = 0.5)
@@ -39,7 +39,7 @@ mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/della-gatta-ge
 
 \subsection{TP53 Gene Data Deep GP}
 
-\includesvg{../slides/diagrams/deepgp/della-gatta-gene-deep-gp-samples.svg} 
+\includediagram{../slides/diagrams/deepgp/della-gatta-gene-deep-gp-samples} 
 				
 
 \displaycode{m.visualize(offset=offset, scale=scale, xlim=xlim, ylim=ylim,
@@ -48,11 +48,11 @@ mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/della-gatta-ge
 			
 \subsection{TP53 Gene Data Latent 1}
 
-\includesvg{../slides/diagrams/deepgp/della-gatta-gene-deep-gp-layer-0.svg} 
+\includediagram{../slides/diagrams/deepgp/della-gatta-gene-deep-gp-layer-0} 
 
 \subsection{TP53 Gene Data Latent 2}
 
-\includesvg{../slides/diagrams/deepgp/della-gatta-gene-deep-gp-layer-1.svg} 
+\includediagram{../slides/diagrams/deepgp/della-gatta-gene-deep-gp-layer-1} 
 
 \displaycode{fig, ax=plt.subplots(figsize=plot.big_wide_figsize)
 m.visualize_pinball(offset=offset, ax=ax, scale=scale, xlim=xlim, ylim=ylim, portion=0.1, points=50)
@@ -61,7 +61,7 @@ mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/della-gatta-ge
 				  
 \subsection{TP53 Gene Pinball Plot}
 
-\includesvg{../slides/diagrams/deepgp/della-gatta-gene-deep-gp-pinball.svg}
+\includediagram{../slides/diagrams/deepgp/della-gatta-gene-deep-gp-pinball}
 
 
 \endif

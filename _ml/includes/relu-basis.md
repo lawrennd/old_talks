@@ -41,12 +41,12 @@ $$
 
 \slides{
 \startanimation{relu_function}{1}{3}
-\newframe{\includesvg{../slides/diagrams/ml/relu_function000.svg}}{relu_function}
-\newframe{\includesvg{../slides/diagrams/ml/relu_function001.svg}}{relu_function}
-\newframe{\includesvg{../slides/diagrams/ml/relu_function002.svg}}{relu_function}
+\newframe{\includediagram{../slides/diagrams/ml/relu_function000}}{relu_function}
+\newframe{\includediagram{../slides/diagrams/ml/relu_function001}}{relu_function}
+\newframe{\includediagram{../slides/diagrams/ml/relu_function002}}{relu_function}
 \endanimation
 }
-\notesfigure{\includesvg{../slides/diagrams/ml/relu_function004.svg}}
+\notesfigure{\includediagram{../slides/diagrams/ml/relu_function004}}
 
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}

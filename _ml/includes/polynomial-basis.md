@@ -31,12 +31,12 @@ $$
 
 \slides{
 \startanimation{polynomial_basis}{1}{3}
-\newframe{\includesvg{../slides/diagrams/ml/polynomial_basis001.svg}}{polynomial_basis}
-\newframe{\includesvg{../slides/diagrams/ml/polynomial_basis002.svg}}{polynomial_basis}
-\newframe{\includesvg{../slides/diagrams/ml/polynomial_basis003.svg}}{polynomial_basis}
+\newframe{\includediagram{../slides/diagrams/ml/polynomial_basis001}}{polynomial_basis}
+\newframe{\includediagram{../slides/diagrams/ml/polynomial_basis002}}{polynomial_basis}
+\newframe{\includediagram{../slides/diagrams/ml/polynomial_basis003}}{polynomial_basis}
 \endanimation
 }
-\notesfigure{\includesvg{../slides/diagrams/ml/polynomial_basis003.svg}{}{}}
+\notesfigure{\includediagram{../slides/diagrams/ml/polynomial_basis003}{}{}}
 
 \displaycode{import pods
 from ipywidgets import IntSlider}

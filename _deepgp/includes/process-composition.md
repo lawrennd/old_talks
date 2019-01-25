@@ -12,7 +12,7 @@
   $$
 \notes{Or if we view it from the probabilistic perspective we can see that a deep Gaussian process is specifying a factorization of the joint density, the standard deep model takes the form of a Markov chain.}
 
-\setupcode{from matplotlib import rc
+\setupplotcode{from matplotlib import rc
 
 rc("font", **{'family':'sans-serif','sans-serif':['Helvetica'],'size':30})
 rc("text", usetex=True)}
@@ -27,10 +27,10 @@ pgm.render().figure.savefig("../slides/diagrams/deepgp/deep-markov.svg", transpa
   p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mappingFunctionVector_5|\mappingFunctionVector_4)p(\mappingFunctionVector_4|\mappingFunctionVector_3)p(\mappingFunctionVector_3|\mappingFunctionVector_2)p(\mappingFunctionVector_2|\mappingFunctionVector_1)p(\mappingFunctionVector_1|\inputVector)
   $$
 
-\includesvg{../slides/diagrams/deepgp/deep-markov.svg}
+\includediagram{../slides/diagrams/deepgp/deep-markov}
 \notes{\caption{Probabilistically the deep Gaussian process can be represented as a Markov chain.}}
 
-\setupcode{from matplotlib import rc
+\setupplotcode{from matplotlib import rc
 rc("font", **{'family':'sans-serif','sans-serif':['Helvetica'], 'size':15})
 rc("text", usetex=True)}
 
@@ -39,7 +39,7 @@ pgm.render().figure.savefig("../slides/diagrams/deepgp/deep-markov-vertical.svg"
 
 \newslide{}
 
-\includesvg{../slides/diagrams/deepgp/deep-markov-vertical.svg}
+\includediagram{../slides/diagrams/deepgp/deep-markov-vertical}
 
 \subsection{Why Deep?}
 
@@ -67,7 +67,7 @@ A one off discontinuity is easy to model with a Gaussian process, or even multip
 
 \newslide{}
 
-\includesvg{../slides/diagrams/deepgp/deep-markov-vertical.svg}
+\includediagram{../slides/diagrams/deepgp/deep-markov-vertical}
 
 \plotcode{pgm = plot.vertical_chain(depth=5, shape=[2, 7])
 pgm.add_node(daft.Node('y_2', r'$\mathbf{y}_2$', 1.5, 3.5, observed=True))
@@ -77,7 +77,7 @@ pgm.render().figure.savefig("../slides/diagrams/deepgp/deep-markov-vertical-side
 \newslide{}
 
 \notes{Additionally, we are not constrained to the formalism of the chain. For example, we can easily add single nodes emerging from some point in the depth of the chain. This allows us to combine the benefits of the graphical modelling formalism, but with a powerful framework for relating one set of variables to another, that of Gaussian processes}
-\includesvg{../slides/diagrams/deepgp/deep-markov-vertical-side.svg}
+\includediagram{../slides/diagrams/deepgp/deep-markov-vertical-side}
 
 
 \endif

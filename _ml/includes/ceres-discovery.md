@@ -78,7 +78,7 @@ Year is 1801 Planet Ceres discovered in January by Giuseppe Piazzi, an italian p
 
 ###
 
-\includesvg{../slides/diagrams/ceres/ceres-data.svg}
+\includediagram{../slides/diagrams/ceres/ceres-data}
 
 ###
 

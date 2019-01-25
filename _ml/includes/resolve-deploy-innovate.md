@@ -4,7 +4,7 @@
 
 \plotcode{plot.three_pillars_innovation(diagrams='../slides/diagrams/ai')}
 
-\notesfigure{\includesvg{../slides/diagrams/ai/three_pillars_innovation003.svg}}
+\notesfigure{\includediagram{../slides/diagrams/ai/three_pillars_innovation003}}
 
 \displaycode{import pods
 pods.notebook.display_plots('three-pillars-innovation{sample:0>3}.svg', 
@@ -13,15 +13,15 @@ pods.notebook.display_plots('three-pillars-innovation{sample:0>3}.svg',
 \slides{
 ### Three Pillars of Disruption {.slide: data-transition="none"}
 
-\includesvg{../slides/diagrams/ai/three-pillars-innovation001.svg}
+\includediagram{../slides/diagrams/ai/three-pillars-innovation001}
 
 ### Three Pillars of Disruption {.slide: data-transition="none"}
 
-\includesvg{../slides/diagrams/ai/three-pillars-innovation002.svg}
+\includediagram{../slides/diagrams/ai/three-pillars-innovation002}
 
 ### Three Pillars of Disruption {.slide: data-transition="none"}
 
-\includesvg{../slides/diagrams/ai/three-pillars-innovation003.svg}
+\includediagram{../slides/diagrams/ai/three-pillars-innovation003}
 }
 
 

@@ -44,7 +44,7 @@ mlai.write_figure(figure=fig,
 
 \newslide{TP53 Gene Data GP}
 
-\includesvg{../slides/diagrams/gp/della-gatta-gene-gp.svg}
+\includediagram{../slides/diagrams/gp/della-gatta-gene-gp}
 
 \notes{Now we try a model initialized with a longer length scale.}
 
@@ -65,7 +65,7 @@ mlai.write_figure(figure=fig,
 
 \newslide{TP53 Gene Data GP}
 
-\includesvg{../slides/diagrams/gp/della-gatta-gene-gp2.svg}
+\includediagram{../slides/diagrams/gp/della-gatta-gene-gp2}
 
 \notes{Now we try a model initialized with a lower noise.}
 
@@ -87,7 +87,7 @@ mlai.write_figure(figure=fig,
 
 \newslide{TP53 Gene Data GP}
 
-\includesvg{../slides/diagrams/gp/della-gatta-gene-gp3.svg}
+\includediagram{../slides/diagrams/gp/della-gatta-gene-gp3}
 
 
 \setupplotcode{import teaching_plots as plot}
@@ -96,10 +96,10 @@ mlai.write_figure(figure=fig,
 
 \newslide{Multiple Optima}
 
-\includesvg{../slides/diagrams/gp/multiple-optima000.svg}
+\includediagram{../slides/diagrams/gp/multiple-optima000}
 
 <!--\newslide{Multiple Optima}
 
-\includesvg{../slides/diagrams/gp/multiple-optima001.svg}-->
+\includediagram{../slides/diagrams/gp/multiple-optima001}-->
 
 \endif

@@ -17,16 +17,16 @@ from ipywidgets import IntSlider}
 
 \slides{
 \startanimation{independent_height_weight}{0}{7}
-\newframe{\includesvg{../slides/diagrams/ml/independent_height_weight000.svg}}{independent_height_weight}
-\newframe{\includesvg{../slides/diagrams/ml/independent_height_weight001.svg}}{independent_height_weight}
-\newframe{\includesvg{../slides/diagrams/ml/independent_height_weight002.svg}}{independent_height_weight}
-\newframe{\includesvg{../slides/diagrams/ml/independent_height_weight003.svg}}{independent_height_weight}
-\newframe{\includesvg{../slides/diagrams/ml/independent_height_weight004.svg}}{independent_height_weight}
-\newframe{\includesvg{../slides/diagrams/ml/independent_height_weight005.svg}}{independent_height_weight}
-\newframe{\includesvg{../slides/diagrams/ml/independent_height_weight006.svg}}{independent_height_weight}
-\newframe{\includesvg{../slides/diagrams/ml/independent_height_weight007.svg}}{independent_height_weight}
+\newframe{\includediagram{../slides/diagrams/ml/independent_height_weight000}}{independent_height_weight}
+\newframe{\includediagram{../slides/diagrams/ml/independent_height_weight001}}{independent_height_weight}
+\newframe{\includediagram{../slides/diagrams/ml/independent_height_weight002}}{independent_height_weight}
+\newframe{\includediagram{../slides/diagrams/ml/independent_height_weight003}}{independent_height_weight}
+\newframe{\includediagram{../slides/diagrams/ml/independent_height_weight004}}{independent_height_weight}
+\newframe{\includediagram{../slides/diagrams/ml/independent_height_weight005}}{independent_height_weight}
+\newframe{\includediagram{../slides/diagrams/ml/independent_height_weight006}}{independent_height_weight}
+\newframe{\includediagram{../slides/diagrams/ml/independent_height_weight007}}{independent_height_weight}
 \endanimation
 }
-\notesfigure{\includesvg{../slides/diagrams/ml/independent_height_weight007.svg}{}}\notes{\caption{Samples from independent Gaussian variables that might represent heights and weights.}}
+\notesfigure{\includediagram{../slides/diagrams/ml/independent_height_weight007}{}}\notes{\caption{Samples from independent Gaussian variables that might represent heights and weights.}}
 
 \endif

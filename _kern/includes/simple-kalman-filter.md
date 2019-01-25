@@ -33,13 +33,13 @@
 
 ### Kronecker Product
 
-\includesvg{../slides/diagrams/kern/kronecker_illustrate.svg}
+\includediagram{../slides/diagrams/kern/kronecker_illustrate}
 
 \plotcode{plot.kronecker_IK(diagrams='../slides/diagrams/kern')}
 
 ### Kronecker Product
 
-\includesvg{../slides/diagrams/kern/kronecker_IK.svg}
+\includediagram{../slides/diagrams/kern/kronecker_IK}
 
 
 ### Stacking and Kronecker Products
@@ -70,23 +70,23 @@ by the block diagonals.
 
 ### {data-transition="none"}
 
-\includesvg{../slides/diagrams/kern/kronecker_IK_highlighted001.svg}
+\includediagram{../slides/diagrams/kern/kronecker_IK_highlighted001}
 
 ### {data-transition="none"}
 
-\includesvg{../slides/diagrams/kern/kronecker_IK_highlighted002.svg}
+\includediagram{../slides/diagrams/kern/kronecker_IK_highlighted002}
 
 ### {data-transition="none"}
 
-\includesvg{../slides/diagrams/kern/kronecker_IK_highlighted003.svg}
+\includediagram{../slides/diagrams/kern/kronecker_IK_highlighted003}
 
 ### {data-transition="none"}
 
-\includesvg{../slides/diagrams/kern/kronecker_IK_highlighted004.svg}
+\includediagram{../slides/diagrams/kern/kronecker_IK_highlighted004}
 
 ### {data-transition="none"}
 
-\includesvg{../slides/diagrams/kern/kronecker_IK_highlighted005.svg}
+\includediagram{../slides/diagrams/kern/kronecker_IK_highlighted005}
 
 ### Two Ways of Stacking
 
@@ -115,28 +115,28 @@ For this stacking the marginal distribution over the latent
 
 ### {data-transition="none"}
 
-\includesvg{../slides/diagrams/kern/kronecker_KI_highlighted001.svg}
+\includediagram{../slides/diagrams/kern/kronecker_KI_highlighted001}
 
 ### {data-transition="none"}
 
-\includesvg{../slides/diagrams/kern/kronecker_KI_highlighted002.svg}
+\includediagram{../slides/diagrams/kern/kronecker_KI_highlighted002}
 
 ### {data-transition="none"}
 
-\includesvg{../slides/diagrams/kern/kronecker_KI_highlighted003.svg}
+\includediagram{../slides/diagrams/kern/kronecker_KI_highlighted003}
 
 ### {data-transition="none"}
 
-\includesvg{../slides/diagrams/kern/kronecker_KI_highlighted004.svg}
+\includediagram{../slides/diagrams/kern/kronecker_KI_highlighted004}
 
 ### {data-transition="none"}
 
-\includesvg{../slides/diagrams/kern/kronecker_KI_highlighted005.svg}
+\includediagram{../slides/diagrams/kern/kronecker_KI_highlighted005}
 
 
 ### Mapping from Latent Process to Observed {data-transition="none"}
 
-\includesvg{../slides/diagrams/kern/kronecker_KI.svg}
+\includediagram{../slides/diagrams/kern/kronecker_KI}
 gpKalmanFilterKroneckerPlot4
 
 
@@ -151,7 +151,7 @@ $$\noiseVector \sim \gaussianSamp{\zerosVector}{\dataStd^2\eye}$$
 
 ### {data-transition="none"}
 
-\includesvg{../slides/diagrams/kern/kronecker_WX.svg}
+\includediagram{../slides/diagrams/kern/kronecker_WX}
 
 ### Output Covariance {data-transition="none"}
 

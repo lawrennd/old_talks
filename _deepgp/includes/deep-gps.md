@@ -9,7 +9,7 @@
 \plotcode{pgm = plot.vertical_chain(depth=5)
 pgm.render().figure.savefig("../slides/diagrams/deepgp/deep-markov-vertical.svg", transparent=True)}}
 
-\columns{\includesvg{../slides/diagrams/deepgp/stack-gp-sample-rbf-2.svg}}{\includesvg{../slides/diagrams/deepgp/deep-markov-vertical.svg}{40%}{60%}
+\columns{\includediagram{../slides/diagrams/deepgp/stack-gp-sample-rbf-2.svg}}{\includesvg{../slides/diagrams/deepgp/deep-markov-vertical}{40%}{60%}
 
 \newslide{} 
 \slides{

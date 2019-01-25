@@ -17,15 +17,15 @@ pods.notebook.display_plots('correlated_height_weight{fig:0>3}.svg',
 
 \slides{
 \startanimation{correlated_height_weight}{0}{7}
-\newframe{\includesvg{../slides/diagrams/ml/correlated_height_weight000.svg}}{correlated_height_weight}
-\newframe{\includesvg{../slides/diagrams/ml/correlated_height_weight001.svg}}{correlated_height_weight}
-\newframe{\includesvg{../slides/diagrams/ml/correlated_height_weight002.svg}}{correlated_height_weight}
-\newframe{\includesvg{../slides/diagrams/ml/correlated_height_weight003.svg}}{correlated_height_weight}
-\newframe{\includesvg{../slides/diagrams/ml/correlated_height_weight004.svg}}{correlated_height_weight}
-\newframe{\includesvg{../slides/diagrams/ml/correlated_height_weight005.svg}}{correlated_height_weight}
-\newframe{\includesvg{../slides/diagrams/ml/correlated_height_weight006.svg}}{correlated_height_weight}
-\newframe{\includesvg{../slides/diagrams/ml/correlated_height_weight007.svg}}{correlated_height_weight}
+\newframe{\includediagram{../slides/diagrams/ml/correlated_height_weight000}}{correlated_height_weight}
+\newframe{\includediagram{../slides/diagrams/ml/correlated_height_weight001}}{correlated_height_weight}
+\newframe{\includediagram{../slides/diagrams/ml/correlated_height_weight002}}{correlated_height_weight}
+\newframe{\includediagram{../slides/diagrams/ml/correlated_height_weight003}}{correlated_height_weight}
+\newframe{\includediagram{../slides/diagrams/ml/correlated_height_weight004}}{correlated_height_weight}
+\newframe{\includediagram{../slides/diagrams/ml/correlated_height_weight005}}{correlated_height_weight}
+\newframe{\includediagram{../slides/diagrams/ml/correlated_height_weight006}}{correlated_height_weight}
+\newframe{\includediagram{../slides/diagrams/ml/correlated_height_weight007}}{correlated_height_weight}
 \endanimation
 }
-\notesfigure{\includesvg{../slides/diagrams/ml/correlated_height_weight007.svg}{}}\notes{\caption{Samples from *correlated* Gaussian variables that might represent heights and weights.}}
+\notesfigure{\includediagram{../slides/diagrams/ml/correlated_height_weight007}{}}\notes{\caption{Samples from *correlated* Gaussian variables that might represent heights and weights.}}
 \endif

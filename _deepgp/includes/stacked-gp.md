@@ -12,14 +12,14 @@
 
 \slides{
 \startanimation{stack-gp-sample}{0}{4}
-\newframe{\includesvg{../slides/diagrams/stack-gp-sample-0.svg}}{stack-gp-sample}
-\newframe{\includesvg{../slides/diagrams/stack-gp-sample-1.svg}}{stack-gp-sample}
-\newframe{\includesvg{../slides/diagrams/stack-gp-sample-2.svg}}{stack-gp-sample}
-\newframe{\includesvg{../slides/diagrams/stack-gp-sample-3.svg}}{stack-gp-sample}
-\newframe{\includesvg{../slides/diagrams/stack-gp-sample-4.svg}}{stack-gp-sample}
+\newframe{\includediagram{../slides/diagrams/stack-gp-sample-0}}{stack-gp-sample}
+\newframe{\includediagram{../slides/diagrams/stack-gp-sample-1}}{stack-gp-sample}
+\newframe{\includediagram{../slides/diagrams/stack-gp-sample-2}}{stack-gp-sample}
+\newframe{\includediagram{../slides/diagrams/stack-gp-sample-3}}{stack-gp-sample}
+\newframe{\includediagram{../slides/diagrams/stack-gp-sample-4}}{stack-gp-sample}
 \endanimation
 }
-\notesfigure{\includesvg{../slides/diagrams/stack-gp-sample-4.svg}}
+\notesfigure{\includediagram{../slides/diagrams/stack-gp-sample-4}}
 \notes{\caption{Stacking Gaussian process models leads to non linear mappings at each stage. Here we are mapping from two dimensions to two dimensions in each layer.}}
 
 \notes{Note that once the box has folded over on itself, it cannot be unfolded. So a feature that is generated near the top of the model cannot be removed furthr down the model.

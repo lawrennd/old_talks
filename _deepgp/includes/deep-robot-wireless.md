@@ -28,7 +28,7 @@ mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/robot-wireless
 				  
 \subsection{Robot WiFi Data Deep GP}
 
-\includesvg{../slides/diagrams/deepgp/robot-wireless-deep-gp-dim-1.svg}
+\includediagram{../slides/diagrams/deepgp/robot-wireless-deep-gp-dim-1}
 
 \displaycode{fig, ax=plt.subplots(figsize=plot.big_wide_figsize)
 plot.model_sample(m, output_dim=output_dim, scale=scale, offset=offset, samps=10, ax=ax,
@@ -40,11 +40,11 @@ mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/robot-wireless
 
 \subsection{Robot WiFi Data Deep GP}
 
-\includesvg{../slides/diagrams/deepgp/robot-wireless-deep-gp-samples-dim-1.svg}
+\includediagram{../slides/diagrams/deepgp/robot-wireless-deep-gp-samples-dim-1}
 
 \subsection{Robot WiFi Data Latent Space}
 
-\includesvg{../slides/diagrams/deepgp/robot-wireless-ground-truth.svg}
+\includediagram{../slides/diagrams/deepgp/robot-wireless-ground-truth}
 
 \displaycode{fig, ax = plt.subplots(figsize=plot.big_figsize)
 ax.plot(m.layers[-2].latent_space.mean[:, 0], 
@@ -57,7 +57,7 @@ ax.set_ylabel('latent dimension 2', fontsize=20)
 mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/robot-wireless-latent-space.svg', 
             transparent=True, frameon=True)}
 			
-\includesvg{../slides/diagrams/deepgp/robot-wireless-latent-space.svg}
+\includediagram{../slides/diagrams/deepgp/robot-wireless-latent-space}
 
 
 \endif

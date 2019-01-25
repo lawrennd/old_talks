@@ -90,25 +90,25 @@ This motivates a simple `if` statement to check which situation we're in.}
 
 \slides{
 \startanimation{perceptron}{0}{14}
-\newframe{\includesvg{../slides/diagrams/ml/perceptron000.svg}}{perceptron}
-\newframe{\includesvg{../slides/diagrams/ml/perceptron001.svg}}{perceptron}
-\newframe{\includesvg{../slides/diagrams/ml/perceptron002.svg}}{perceptron}
-\newframe{\includesvg{../slides/diagrams/ml/perceptron003.svg}}{perceptron}
-\newframe{\includesvg{../slides/diagrams/ml/perceptron004.svg}}{perceptron}
-\newframe{\includesvg{../slides/diagrams/ml/perceptron005.svg}}{perceptron}
-\newframe{\includesvg{../slides/diagrams/ml/perceptron006.svg}}{perceptron}
-\newframe{\includesvg{../slides/diagrams/ml/perceptron007.svg}}{perceptron}
-\newframe{\includesvg{../slides/diagrams/ml/perceptron008.svg}}{perceptron}
-\newframe{\includesvg{../slides/diagrams/ml/perceptron009.svg}}{perceptron}
-\newframe{\includesvg{../slides/diagrams/ml/perceptron010.svg}}{perceptron}
-\newframe{\includesvg{../slides/diagrams/ml/perceptron011.svg}}{perceptron}
-\newframe{\includesvg{../slides/diagrams/ml/perceptron012.svg}}{perceptron}
-\newframe{\includesvg{../slides/diagrams/ml/perceptron013.svg}}{perceptron}
-\newframe{\includesvg{../slides/diagrams/ml/perceptron014.svg}}{perceptron}
+\newframe{\includediagram{../slides/diagrams/ml/perceptron000}}{perceptron}
+\newframe{\includediagram{../slides/diagrams/ml/perceptron001}}{perceptron}
+\newframe{\includediagram{../slides/diagrams/ml/perceptron002}}{perceptron}
+\newframe{\includediagram{../slides/diagrams/ml/perceptron003}}{perceptron}
+\newframe{\includediagram{../slides/diagrams/ml/perceptron004}}{perceptron}
+\newframe{\includediagram{../slides/diagrams/ml/perceptron005}}{perceptron}
+\newframe{\includediagram{../slides/diagrams/ml/perceptron006}}{perceptron}
+\newframe{\includediagram{../slides/diagrams/ml/perceptron007}}{perceptron}
+\newframe{\includediagram{../slides/diagrams/ml/perceptron008}}{perceptron}
+\newframe{\includediagram{../slides/diagrams/ml/perceptron009}}{perceptron}
+\newframe{\includediagram{../slides/diagrams/ml/perceptron010}}{perceptron}
+\newframe{\includediagram{../slides/diagrams/ml/perceptron011}}{perceptron}
+\newframe{\includediagram{../slides/diagrams/ml/perceptron012}}{perceptron}
+\newframe{\includediagram{../slides/diagrams/ml/perceptron013}}{perceptron}
+\newframe{\includediagram{../slides/diagrams/ml/perceptron014}}{perceptron}
 \endanimation
 }
 
-\notesfigure{\includesvg{../slides/diagrams/ml/perceptron014.svg}}
+\notesfigure{\includediagram{../slides/diagrams/ml/perceptron014}}
 \notes{\caption{The perceptron decision boundary.}}
 
 \newslide{Perceptron Reflection}

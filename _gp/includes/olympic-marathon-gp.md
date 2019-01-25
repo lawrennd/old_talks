@@ -44,7 +44,7 @@ mlai.write_figure(figure=fig,
 
 \newslide{Olympic Marathon Data GP}
 
-\includesvg{../slides/diagrams/gp/olympic-marathon-gp.svg}
+\includediagram{../slides/diagrams/gp/olympic-marathon-gp}
 
 \notes{
 \subsection{Fit Quality}

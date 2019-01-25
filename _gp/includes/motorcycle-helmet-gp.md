@@ -18,6 +18,6 @@ mlai.write_figure(figure=fig,filename='../../slides/diagrams/gp/motorcycle-helme
 
 \subsection{Motorcycle Helmet Data GP}
 
-\includesvg{../slides/diagrams/gp/motorcycle-helmet-gp.svg}
+\includediagram{../slides/diagrams/gp/motorcycle-helmet-gp}
 
 \endif

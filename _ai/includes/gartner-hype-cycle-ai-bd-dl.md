@@ -4,24 +4,24 @@
 
 ### {.slide: data-transition="none"}
 
-\includesvg{../slides/diagrams/ai-bd-dm-dl-ml-google-trends000.svg}
+\includediagram{../slides/diagrams/ai-bd-dm-dl-ml-google-trends000}
 
 ### {.slide: data-transition="none"}
 
-\includesvg{../slides/diagrams/ai-bd-dm-dl-ml-google-trends001.svg}
+\includediagram{../slides/diagrams/ai-bd-dm-dl-ml-google-trends001}
 
 ### {.slide: data-transition="none"}
 
-\includesvg{../slides/diagrams/ai-bd-dm-dl-ml-google-trends002.svg}
+\includediagram{../slides/diagrams/ai-bd-dm-dl-ml-google-trends002}
 
 ### {.slide: data-transition="none"}
 
-\includesvg{../slides/diagrams/ai-bd-dm-dl-ml-google-trends003.svg}
+\includediagram{../slides/diagrams/ai-bd-dm-dl-ml-google-trends003}
 
 ### {.slide: data-transition="none"}
 
-\includesvg{../slides/diagrams/ai-bd-dm-dl-ml-google-trends004.svg}
+\includediagram{../slides/diagrams/ai-bd-dm-dl-ml-google-trends004}
 
 ### {.slide: data-transition="none"}
 
-\includesvg{../slides/diagrams/ai-bd-dm-dl-ml-google-trends005.svg}
+\includediagram{../slides/diagrams/ai-bd-dm-dl-ml-google-trends005}

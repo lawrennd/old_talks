@@ -76,12 +76,12 @@ plot.basis(quadratic, x_min=-1.3, x_max=1.3,
 \slides{
 \define{\basisfunction}{quadratic_basis}
 \startanimation{\basisfunction}{0}{2}
-\newframe{\includesvg{../slides/diagrams/ml/\concat{\basisfunction}{000.svg}}}{\basisfunction}
-\newframe{\includesvg{../slides/diagrams/ml/\concat{\basisfunction}{001.svg}}}{\basisfunction}
-\newframe{\includesvg{../slides/diagrams/ml/\concat{\basisfunction}{002.svg}}}{\basisfunction}
+\newframe{\includediagram{../slides/diagrams/ml/\concat{\basisfunction}{000}}}{\basisfunction}
+\newframe{\includediagram{../slides/diagrams/ml/\concat{\basisfunction}{001}}}{\basisfunction}
+\newframe{\includediagram{../slides/diagrams/ml/\concat{\basisfunction}{002}}}{\basisfunction}
 \endanimation
 
-\notesfigure{\includesvg{../slides/diagrams/ml/\concat{\basisfunction}{002.svg}}{}{}}
+\notesfigure{\includediagram{../slides/diagrams/ml/\concat{\basisfunction}{002}}{}{}}
 
 \displaycode{import pods
 from ipywidgets import IntSlider}
@@ -113,12 +113,12 @@ _ = ax.set_title('Quadratic Basis Functions')}
 
 \slides{
 \startanimation{quadratic_function}{0}{2}
-\newframe{\includesvg{../slides/diagrams/ml/quadratic_function000.svg}}{quadratic_function}
-\newframe{\includesvg{../slides/diagrams/ml/quadratic_function001.svg}}{quadratic_function}
-\newframe{\includesvg{../slides/diagrams/ml/quadratic_function002.svg}}{quadratic_function}
+\newframe{\includediagram{../slides/diagrams/ml/quadratic_function000}}{quadratic_function}
+\newframe{\includediagram{../slides/diagrams/ml/quadratic_function001}}{quadratic_function}
+\newframe{\includediagram{../slides/diagrams/ml/quadratic_function002}}{quadratic_function}
 \endanimation
 }
-\notesfigure{\includesvg{../slides/diagrams/ml/quadratic_function002.svg}{}{}}
+\notesfigure{\includediagram{../slides/diagrams/ml/quadratic_function002}{}{}}
 
 \displaycode{import pods
 from ipywidgets import IntSlider}

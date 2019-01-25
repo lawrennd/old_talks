@@ -41,9 +41,9 @@ $$
 $$
 
 \startanimation{radial_function}{1}{3}
-\newframe{\includesvg{../slides/diagrams/ml/radial_function000.svg}}{radial_function}
-\newframe{\includesvg{../slides/diagrams/ml/radial_function001.svg}}{radial_function}
-\newframe{\includesvg{../slides/diagrams/ml/radial_function002.svg}}{radial_function}
+\newframe{\includediagram{../slides/diagrams/ml/radial_function000}}{radial_function}
+\newframe{\includediagram{../slides/diagrams/ml/radial_function001}}{radial_function}
+\newframe{\includediagram{../slides/diagrams/ml/radial_function002}}{radial_function}
 \endanimation
 
 \setupcode{from ipywidgets import IntSlider

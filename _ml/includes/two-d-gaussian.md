@@ -19,7 +19,7 @@
 \setupplotcode{import teaching_plots as plot}
 \plotcode{plot.height_weight(diagrams='../slides/diagrams/ml')}
 
-\includesvg{../slides/diagrams/ml/height_weight_gaussian.svg}
+\includediagram{../slides/diagrams/ml/height_weight_gaussian}
 
 \caption{Gaussian distributions for height and weight.}
 

@@ -2,10 +2,11 @@
 \define{talkMacrosNotesTex}
 
 
-\define{\setupdisplaycode{text}}{}
-\define{\displaycode{text}}{}
-\define{\setupplotcode{text}}{}
-\define{\plotcode{text}}{}
+\define{\displaynotes{block}}{}
+\define{\setupdisplaycode{block}}{}
+\define{\displaycode{block}}{}
+\define{\setupplotcode{block}}{}
+\define{\plotcode{block}}{}
 
 \define{\recommendation{block}}{\paragraph*{Recommendation} \block}
 

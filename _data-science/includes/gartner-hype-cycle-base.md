@@ -17,17 +17,17 @@ from ipywidgets import IntSlider}
 \define{\divstyle}{max-width:100vw; max-height:100vh}
 \slides{
 \startanimation{\initials-google-trends}{0}{4}
-\newframe{\includesvg{../slides/diagrams/data-science/\initials-google-trends000.svg}}{\initials-google-trends}{\divstyle}
-\newframe{\includesvg{../slides/diagrams/data-science/\initials-google-trends001.svg}}{\initials-google-trends}{\divstyle}
-\newframe{\includesvg{../slides/diagrams/data-science/\initials-google-trends002.svg}}{\initials-google-trends}{\divstyle}
-\newframe{\includesvg{../slides/diagrams/data-science/\initials-google-trends003.svg}}{\initials-google-trends}{\divstyle}
-\newframe{\includesvg{../slides/diagrams/data-science/\initials-google-trends004.svg}}{\initials-google-trends}{\divstyle}
-\newframe{\includesvg{../slides/diagrams/data-science/\initials-google-trends.svg}}{\initials-google-trends}{\divstyle}
+\newframe{\includediagram{../slides/diagrams/data-science/\initials-google-trends000}}{\initials-google-trends}{\divstyle}
+\newframe{\includediagram{../slides/diagrams/data-science/\initials-google-trends001}}{\initials-google-trends}{\divstyle}
+\newframe{\includediagram{../slides/diagrams/data-science/\initials-google-trends002}}{\initials-google-trends}{\divstyle}
+\newframe{\includediagram{../slides/diagrams/data-science/\initials-google-trends003}}{\initials-google-trends}{\divstyle}
+\newframe{\includediagram{../slides/diagrams/data-science/\initials-google-trends004}}{\initials-google-trends}{\divstyle}
+\newframe{\includediagram{../slides/diagrams/data-science/\initials-google-trends}}{\initials-google-trends}{\divstyle}
 \endanimation
 }
 
 \figure{
-\notesfigure{\includesvg{../slides/diagrams/data-science/\initials-google-trends.svg}{}}
+\notesfigure{\includediagram{../slides/diagrams/data-science/\initials-google-trends}{}}
 \notes{\caption{Google trends for different technological terms on the hype cycle.}}
 }
 

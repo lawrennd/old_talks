@@ -36,20 +36,20 @@ from ipywidgets import IntSlider}
 
 \slides{
 \startanimation{under_determined_system}{0}{9}
-\newframe{\includesvg{../slides/diagrams/ml/under_determined_system000.svg}}{under_determined_system}
-\newframe{\includesvg{../slides/diagrams/ml/under_determined_system001.svg}}{under_determined_system}
-\newframe{\includesvg{../slides/diagrams/ml/under_determined_system002.svg}}{under_determined_system}
-\newframe{\includesvg{../slides/diagrams/ml/under_determined_system003.svg}}{under_determined_system}
-\newframe{\includesvg{../slides/diagrams/ml/under_determined_system004.svg}}{under_determined_system}
-\newframe{\includesvg{../slides/diagrams/ml/under_determined_system005.svg}}{under_determined_system}
-\newframe{\includesvg{../slides/diagrams/ml/under_determined_system006.svg}}{under_determined_system}
-\newframe{\includesvg{../slides/diagrams/ml/under_determined_system007.svg}}{under_determined_system}
-\newframe{\includesvg{../slides/diagrams/ml/under_determined_system008.svg}}{under_determined_system}
-\newframe{\includesvg{../slides/diagrams/ml/under_determined_system009.svg}}{under_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/under_determined_system000}}{under_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/under_determined_system001}}{under_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/under_determined_system002}}{under_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/under_determined_system003}}{under_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/under_determined_system004}}{under_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/under_determined_system005}}{under_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/under_determined_system006}}{under_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/under_determined_system007}}{under_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/under_determined_system008}}{under_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/under_determined_system009}}{under_determined_system}
 \endanimation
 }
 
-\notesfigure{\includesvg{../slides/diagrams/ml/under_determined_system009.svg}}
+\notesfigure{\includediagram{../slides/diagrams/ml/under_determined_system009}}
 \notes{\caption{Fit underdetermined system by considering uncertainty}}
 
 \endif

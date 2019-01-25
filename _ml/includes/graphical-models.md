@@ -31,7 +31,7 @@ pgm.add_edge("y_2", "y_3")
 
 pgm.render().figure.savefig("../slides/diagrams/ml/markov.svg", transparent=True)}
 
-\includesvg{../slides/diagrams/ml/markov.svg}
+\includediagram{../slides/diagrams/ml/markov}
 
 \newslide{}
 

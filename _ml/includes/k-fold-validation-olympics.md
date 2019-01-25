@@ -45,92 +45,92 @@ import pods}
 \startanimation{olympic_5cv_LM_polynomial}{0}{1}{fold}
 \newframe{
   \startanimation{olympic_5cv00_LM_polynomial}{1}{11}{num basis}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv00_LM_polynomial_number001.svg}}{olympic_5cv00_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv00_LM_polynomial_number002.svg}}{olympic_5cv00_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv00_LM_polynomial_number003.svg}}{olympic_5cv00_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv00_LM_polynomial_number004.svg}}{olympic_5cv00_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv00_LM_polynomial_number005.svg}}{olympic_5cv00_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv00_LM_polynomial_number006.svg}}{olympic_5cv00_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv00_LM_polynomial_number007.svg}}{olympic_5cv00_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv00_LM_polynomial_number008.svg}}{olympic_5cv00_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv01_LM_polynomial_number009.svg}}{olympic_5cv00_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv01_LM_polynomial_number010.svg}}{olympic_5cv00_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv01_LM_polynomial_number011.svg}}{olympic_5cv00_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv00_LM_polynomial_number001}}{olympic_5cv00_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv00_LM_polynomial_number002}}{olympic_5cv00_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv00_LM_polynomial_number003}}{olympic_5cv00_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv00_LM_polynomial_number004}}{olympic_5cv00_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv00_LM_polynomial_number005}}{olympic_5cv00_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv00_LM_polynomial_number006}}{olympic_5cv00_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv00_LM_polynomial_number007}}{olympic_5cv00_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv00_LM_polynomial_number008}}{olympic_5cv00_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv01_LM_polynomial_number009}}{olympic_5cv00_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv01_LM_polynomial_number010}}{olympic_5cv00_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv01_LM_polynomial_number011}}{olympic_5cv00_LM_polynomial}
   \endanimation
 }{olympic_5cv_LM_polynomial}
 \newframe{
   \startanimation{olympic_5cv01_LM_polynomial}{1}{11}{num basis}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv01_LM_polynomial_number001.svg}}{olympic_5cv01_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv01_LM_polynomial_number002.svg}}{olympic_5cv01_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv01_LM_polynomial_number003.svg}}{olympic_5cv01_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv01_LM_polynomial_number004.svg}}{olympic_5cv01_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv01_LM_polynomial_number005.svg}}{olympic_5cv01_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv01_LM_polynomial_number006.svg}}{olympic_5cv01_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv01_LM_polynomial_number007.svg}}{olympic_5cv01_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv01_LM_polynomial_number008.svg}}{olympic_5cv01_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv01_LM_polynomial_number009.svg}}{olympic_5cv01_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv01_LM_polynomial_number010.svg}}{olympic_5cv01_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv01_LM_polynomial_number011.svg}}{olympic_5cv01_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv01_LM_polynomial_number001}}{olympic_5cv01_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv01_LM_polynomial_number002}}{olympic_5cv01_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv01_LM_polynomial_number003}}{olympic_5cv01_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv01_LM_polynomial_number004}}{olympic_5cv01_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv01_LM_polynomial_number005}}{olympic_5cv01_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv01_LM_polynomial_number006}}{olympic_5cv01_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv01_LM_polynomial_number007}}{olympic_5cv01_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv01_LM_polynomial_number008}}{olympic_5cv01_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv01_LM_polynomial_number009}}{olympic_5cv01_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv01_LM_polynomial_number010}}{olympic_5cv01_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv01_LM_polynomial_number011}}{olympic_5cv01_LM_polynomial}
   \endanimation
 }{olympic_5cv_LM_polynomial}
 \newframe{
   \startanimation{olympic_5cv02_LM_polynomial}{1}{11}{num basis}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv02_LM_polynomial_number001.svg}}{olympic_5cv02_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv02_LM_polynomial_number002.svg}}{olympic_5cv02_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv02_LM_polynomial_number003.svg}}{olympic_5cv02_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv02_LM_polynomial_number004.svg}}{olympic_5cv02_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv02_LM_polynomial_number005.svg}}{olympic_5cv02_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv02_LM_polynomial_number006.svg}}{olympic_5cv02_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv02_LM_polynomial_number007.svg}}{olympic_5cv02_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv02_LM_polynomial_number008.svg}}{olympic_5cv02_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv02_LM_polynomial_number009.svg}}{olympic_5cv02_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv02_LM_polynomial_number010.svg}}{olympic_5cv02_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv02_LM_polynomial_number011.svg}}{olympic_5cv02_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv02_LM_polynomial_number001}}{olympic_5cv02_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv02_LM_polynomial_number002}}{olympic_5cv02_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv02_LM_polynomial_number003}}{olympic_5cv02_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv02_LM_polynomial_number004}}{olympic_5cv02_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv02_LM_polynomial_number005}}{olympic_5cv02_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv02_LM_polynomial_number006}}{olympic_5cv02_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv02_LM_polynomial_number007}}{olympic_5cv02_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv02_LM_polynomial_number008}}{olympic_5cv02_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv02_LM_polynomial_number009}}{olympic_5cv02_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv02_LM_polynomial_number010}}{olympic_5cv02_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv02_LM_polynomial_number011}}{olympic_5cv02_LM_polynomial}
   \endanimation
 }{olympic_5cv_LM_polynomial}
 \newframe{
   \startanimation{olympic_5cv03_LM_polynomial}{1}{11}{num basis}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv03_LM_polynomial_number001.svg}}{olympic_5cv03_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv03_LM_polynomial_number002.svg}}{olympic_5cv03_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv03_LM_polynomial_number003.svg}}{olympic_5cv03_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv03_LM_polynomial_number004.svg}}{olympic_5cv03_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv03_LM_polynomial_number005.svg}}{olympic_5cv03_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv03_LM_polynomial_number006.svg}}{olympic_5cv03_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv03_LM_polynomial_number007.svg}}{olympic_5cv03_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv03_LM_polynomial_number008.svg}}{olympic_5cv03_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv03_LM_polynomial_number009.svg}}{olympic_5cv03_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv03_LM_polynomial_number010.svg}}{olympic_5cv03_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv03_LM_polynomial_number011.svg}}{olympic_5cv03_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv03_LM_polynomial_number001}}{olympic_5cv03_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv03_LM_polynomial_number002}}{olympic_5cv03_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv03_LM_polynomial_number003}}{olympic_5cv03_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv03_LM_polynomial_number004}}{olympic_5cv03_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv03_LM_polynomial_number005}}{olympic_5cv03_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv03_LM_polynomial_number006}}{olympic_5cv03_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv03_LM_polynomial_number007}}{olympic_5cv03_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv03_LM_polynomial_number008}}{olympic_5cv03_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv03_LM_polynomial_number009}}{olympic_5cv03_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv03_LM_polynomial_number010}}{olympic_5cv03_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv03_LM_polynomial_number011}}{olympic_5cv03_LM_polynomial}
   \endanimation
 }{olympic_5cv_LM_polynomial}
 \newframe{
   \startanimation{olympic_5cv04_LM_polynomial}{1}{11}{num basis}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv04_LM_polynomial_number001.svg}}{olympic_5cv04_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv04_LM_polynomial_number002.svg}}{olympic_5cv04_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv04_LM_polynomial_number003.svg}}{olympic_5cv04_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv04_LM_polynomial_number004.svg}}{olympic_5cv04_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv04_LM_polynomial_number005.svg}}{olympic_5cv04_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv04_LM_polynomial_number006.svg}}{olympic_5cv04_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv04_LM_polynomial_number007.svg}}{olympic_5cv04_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv04_LM_polynomial_number008.svg}}{olympic_5cv04_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv04_LM_polynomial_number009.svg}}{olympic_5cv04_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv04_LM_polynomial_number010.svg}}{olympic_5cv04_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv04_LM_polynomial_number011.svg}}{olympic_5cv04_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv04_LM_polynomial_number001}}{olympic_5cv04_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv04_LM_polynomial_number002}}{olympic_5cv04_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv04_LM_polynomial_number003}}{olympic_5cv04_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv04_LM_polynomial_number004}}{olympic_5cv04_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv04_LM_polynomial_number005}}{olympic_5cv04_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv04_LM_polynomial_number006}}{olympic_5cv04_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv04_LM_polynomial_number007}}{olympic_5cv04_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv04_LM_polynomial_number008}}{olympic_5cv04_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv04_LM_polynomial_number009}}{olympic_5cv04_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv04_LM_polynomial_number010}}{olympic_5cv04_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv04_LM_polynomial_number011}}{olympic_5cv04_LM_polynomial}
   \endanimation
 }{olympic_5cv_LM_polynomial}
 \newframe{
   \startanimation{olympic_5cv05_LM_polynomial}{1}{11}{num basis}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_LM_polynomial_number001.svg}}{olympic_5cv05_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_LM_polynomial_number002.svg}}{olympic_5cv05_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_LM_polynomial_number003.svg}}{olympic_5cv05_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_LM_polynomial_number004.svg}}{olympic_5cv05_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_LM_polynomial_number005.svg}}{olympic_5cv05_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_LM_polynomial_number006.svg}}{olympic_5cv05_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_LM_polynomial_number007.svg}}{olympic_5cv05_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_LM_polynomial_number008.svg}}{olympic_5cv05_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_LM_polynomial_number009.svg}}{olympic_5cv05_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_LM_polynomial_number010.svg}}{olympic_5cv05_LM_polynomial}
-  \newframe{\includesvg{../slides/diagrams/ml/olympic_5cv05_LM_polynomial_number011.svg}}{olympic_5cv05_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv05_LM_polynomial_number001}}{olympic_5cv05_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv05_LM_polynomial_number002}}{olympic_5cv05_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv05_LM_polynomial_number003}}{olympic_5cv05_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv05_LM_polynomial_number004}}{olympic_5cv05_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv05_LM_polynomial_number005}}{olympic_5cv05_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv05_LM_polynomial_number006}}{olympic_5cv05_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv05_LM_polynomial_number007}}{olympic_5cv05_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv05_LM_polynomial_number008}}{olympic_5cv05_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv05_LM_polynomial_number009}}{olympic_5cv05_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv05_LM_polynomial_number010}}{olympic_5cv05_LM_polynomial}
+  \newframe{\includediagram{../slides/diagrams/ml/olympic_5cv05_LM_polynomial_number011}}{olympic_5cv05_LM_polynomial}
   \endanimation
 }{olympic_5cv_LM_polynomial}
 \endanimation

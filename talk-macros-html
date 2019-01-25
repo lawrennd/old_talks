@@ -6,6 +6,8 @@
 
 \define{\linebreak}{<br>}
 
+\define{\href{link}{label}}{<a href="\link">\label</a>}
+
 
 \define{\colorcyan{block}}{<font color="\cyanColor">\block</font>}
 \define{\colormagenta{block}}{<font color="\magentaColor">\block</font>}
@@ -64,8 +66,8 @@ Store Caption: \storeCaption
 
 \define{\includeimg{filename}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" height="auto" align="\align" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">}
 \define{\includeimgclip{filename}{top}{right}{bottom}{left}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" align="\align" style="background:none; border:none; box-shadow:none; position:absolute; clip:rect(\top,\right,\bottom,\left);vertical-align:middle">}
-\define{\includesvg{filename}{align}{class}{style}}{<object class="svgplot \class" align="\align" data="\filename" style="vertical-align:middle;\style"></object>}
-\define{\includesvgclass{filename}{class}{align}}{<object class="\class" align="\align" data="\filename" style="vertical-align:middle"></object>}
+\define{\includediagram{filename}{align}{class}{style}}{<object class="svgplot \class" align="\align" data="\filename.svg" style="vertical-align:middle;\style"></object>}
+\define{\includediagramclass{filename}{class}{align}}{<object class="\class" align="\align" data="\filename.svg" style="vertical-align:middle"></object>}
 \define{\includehtml{filename}{width}{height}}{<iframe src="\filename" width="\width" height="\height" allowtransparency="true" frameborder="0">
 </iframe>}
 

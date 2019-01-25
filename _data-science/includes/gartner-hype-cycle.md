@@ -4,7 +4,7 @@
 
 \subsection{The Gartner Hype Cycle}
 
-\figure{\div{\includesvg{../slides/diagrams/Gartner_Hype_Cycle.svg}}{}{width:60%}
+\figure{\div{\includediagram{../slides/diagrams/Gartner_Hype_Cycle}}{}{width:60%}
 \notes{\caption{The Gartner Hype Cycle}}}
 
 \notes{

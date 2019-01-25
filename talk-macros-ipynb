@@ -12,7 +12,7 @@ from IPython.lib.display import YouTubeVideo
 YouTubeVideo('\id')
 ```}
 
-\define{\includesvg{filename}{align}{class}{style}}{<img src="\filename" class="\class" align="\align" style="vertical-align:middle;\style">}
-\define{\includesvgclass{filename}{class}{align}}{<img src="\filename" class="\class" align="\align" style="vertical-align:middle">}
+\define{\includediagram{filename}{align}{class}{style}}{<img src="\filename.svg" class="\class" align="\align" style="vertical-align:middle;\style">}
+\define{\includediagramclass{filename}{class}{align}}{<img src="\filename.svg" class="\class" align="\align" style="vertical-align:middle">}
 
 \endif

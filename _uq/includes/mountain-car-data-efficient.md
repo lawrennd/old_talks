@@ -87,7 +87,7 @@ Given some input parameters of the linear controlling, how do the dynamics of th
 
 \newslide{Comparison of Emulation and Simulation}
 
-\includesvg{../slides/diagrams/uq/emu_sim_comparison.svg}
+\includediagram{../slides/diagrams/uq/emu_sim_comparison}
 
 \notes{We now make explicit use of the emulator, using it to replace the simulator and optimize the linear controller. Note that in this optimization, we don't need to query the simulator anymore as we can reproduce the full dynamics of an episode using the emulator. For illustrative purposes, in this example we fix the initial location of the car. 
 

@@ -66,13 +66,13 @@ mlai.write_figure(figure=fig, filename='../../slides/diagrams/wisuvt.svg')
 
 \subsection{Low Rank Approximation}
 
-\includesvg{../../slides/diagrams/wisuvt.svg}
+\includediagram{../../slides/diagrams/wisuvt}
 
 \plotcode{plot.deep_nn_bottleneck(diagrams='../../slides/diagrams/deepgp')}
 
 \subsection{Deep Neural Network}
 
-\includesvg{../../slides/diagrams/deepgp/deep-nn-bottleneck2.svg}
+\includediagram{../../slides/diagrams/deepgp/deep-nn-bottleneck2}
 
 \subsection{What is a Deep Gaussian Process?}
 

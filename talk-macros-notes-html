@@ -5,6 +5,7 @@
 \define{\setupplotcode{block}}{}
 \define{\loadplotcode{object}{filename}}{}
 \define{\plotcode{block}}{}
+\define{\displaynotes{block}}{\notes{\block}}
 \define{\setupdisplaycode{block}}{```{.python}
 \block
 ```}

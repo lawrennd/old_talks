@@ -132,121 +132,121 @@ from ipywidgets import IntSlider}
 \newslide{}
 
 \slides{
-\includesvg{../slides/diagrams/ml/bias-variance000.svg}
+\includediagram{../slides/diagrams/ml/bias-variance000}
 
 \caption{simple models on left complex models on right}
 
 \newslide{}
 
-\includesvg{../slides/diagrams/ml/bias-variance001.svg}
+\includediagram{../slides/diagrams/ml/bias-variance001}
 
 \caption{simple models on left complex models on right}
 
 \newslide{}
 
-\includesvg{../slides/diagrams/ml/bias-variance002.svg}
+\includediagram{../slides/diagrams/ml/bias-variance002}
 
 \caption{simple models on left complex models on right}
 
 \newslide{}
 
-\includesvg{../slides/diagrams/ml/bias-variance003.svg}
+\includediagram{../slides/diagrams/ml/bias-variance003}
 
 \caption{simple models on left complex models on right}
 
 \newslide{}
 
-\includesvg{../slides/diagrams/ml/bias-variance004.svg}
+\includediagram{../slides/diagrams/ml/bias-variance004}
 
 \caption{simple models on left complex models on right}
 
 \newslide{}
 
-\includesvg{../slides/diagrams/ml/bias-variance005.svg}
+\includediagram{../slides/diagrams/ml/bias-variance005}
 
 \caption{simple models on left complex models on right}
 
 \newslide{}
 
-\includesvg{../slides/diagrams/ml/bias-variance006.svg}
+\includediagram{../slides/diagrams/ml/bias-variance006}
 
 \caption{simple models on left complex models on right}
 
 \newslide{}
 
-\includesvg{../slides/diagrams/ml/bias-variance007.svg}
+\includediagram{../slides/diagrams/ml/bias-variance007}
 
 \caption{simple models on left complex models on right}
 
 \newslide{}
 
-\includesvg{../slides/diagrams/ml/bias-variance008.svg}
+\includediagram{../slides/diagrams/ml/bias-variance008}
 
 \caption{simple models on left complex models on right}
 
 \newslide{}
 
-\includesvg{../slides/diagrams/ml/bias-variance009.svg}
+\includediagram{../slides/diagrams/ml/bias-variance009}
 
 \caption{simple models on left complex models on right}
 
 \newslide{}
 
-\includesvg{../slides/diagrams/ml/bias-variance010.svg}
+\includediagram{../slides/diagrams/ml/bias-variance010}
 
 \caption{simple models on left complex models on right}
 
 \newslide{}
 
-\includesvg{../slides/diagrams/ml/bias-variance011.svg}
+\includediagram{../slides/diagrams/ml/bias-variance011}
 
 \caption{simple models on left complex models on right}
 
 \newslide{}
 
-\includesvg{../slides/diagrams/ml/bias-variance012.svg}
+\includediagram{../slides/diagrams/ml/bias-variance012}
 
 \caption{simple models on left complex models on right}
 
 \newslide{}
 
-\includesvg{../slides/diagrams/ml/bias-variance013.svg}
+\includediagram{../slides/diagrams/ml/bias-variance013}
 
 \caption{simple models on left complex models on right}
 
 \newslide{}
 
-\includesvg{../slides/diagrams/ml/bias-variance014.svg}
+\includediagram{../slides/diagrams/ml/bias-variance014}
 
 \caption{simple models on left complex models on right}
 
 \newslide{}
 
-\includesvg{../slides/diagrams/ml/bias-variance015.svg}
+\includediagram{../slides/diagrams/ml/bias-variance015}
 
 \caption{simple models on left complex models on right}
 
 \newslide{}
 
-\includesvg{../slides/diagrams/ml/bias-variance016.svg}
+\includediagram{../slides/diagrams/ml/bias-variance016}
 
 \caption{simple models on left complex models on right}
 
 \newslide{}
 
-\includesvg{../slides/diagrams/ml/bias-variance017.svg}
+\includediagram{../slides/diagrams/ml/bias-variance017}
 
 \caption{simple models on left complex models on right}
 
 \newslide{}
 
-\includesvg{../slides/diagrams/ml/bias-variance018.svg}
+\includediagram{../slides/diagrams/ml/bias-variance018}
 
 \caption{simple models on left complex models on right}
 
 \newslide{}
 
-\includesvg{../slides/diagrams/ml/bias-variance019.svg}
+\includediagram{../slides/diagrams/ml/bias-variance019}
 
 \caption{simple models on left complex models on right}
 }

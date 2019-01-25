@@ -43,7 +43,7 @@ mlai.write_figure(figure=fig,
 
 \newslide{Full Gaussian Process Fit}
 
-\includesvg{../slides/diagrams/gp/sparse-demo-full-gp.svg}
+\includediagram{../slides/diagrams/gp/sparse-demo-full-gp}
 \notes{\caption{Full Gaussian process fitted to the data set.}}
 
 \notes{Now we set up the inducing variables, $\mathbf{u}$. Each inducing variable has its own associated input index, $\mathbf{Z}$, which lives in the same space as $\inputMatrix$. Here we are using the true covariance function parameters to generate the fit.}
@@ -65,7 +65,7 @@ mlai.write_figure(figure=fig,
 
 \newslide{Inducing Variable Fit}
 
-\includesvg{../slides/diagrams/gp/sparse-demo-constrained-inducing-6-unlearned-gp.svg}
+\includediagram{../slides/diagrams/gp/sparse-demo-constrained-inducing-6-unlearned-gp}
 \notes{\caption{Sparse Gaussian process fitted with six inducing variables, no optimization of parameters or inducing variables.}}
 
 \code{_ = m.optimize(messages=True)
@@ -79,7 +79,7 @@ mlai.write_figure(figure=fig,
 
 \newslide{Inducing Variable Param Optimize}
 
-\includesvg{../slides/diagrams/gp/sparse-demo-constrained-inducing-6-learned-gp.svg}
+\includediagram{../slides/diagrams/gp/sparse-demo-constrained-inducing-6-learned-gp}
 \notes{\caption{Gaussian process fitted with inducing variables fixed and parameters optimized}}
 
 \code{m.randomize()
@@ -94,7 +94,7 @@ mlai.write_figure(figure=fig,
 
 \newslide{Inducing Variable Full Optimize}
 
-\includesvg{../slides/diagrams/gp/sparse-demo-unconstrained-inducing-6-gp.svg}
+\includediagram{../slides/diagrams/gp/sparse-demo-unconstrained-inducing-6-gp}
 \notes{\caption{Gaussian process fitted with location of inducing variables and parameters both optimized}}
 
 \notes{Now we will vary the number of inducing points used to form the approximation.}
@@ -115,15 +115,15 @@ mlai.write_figure(figure=fig,
 \slides{
 \newslide{Eight Optimized Inducing Variables}
 
-\includesvg{../slides/diagrams/gp/sparse-demo-sparse-inducing-8-gp.svg}
+\includediagram{../slides/diagrams/gp/sparse-demo-sparse-inducing-8-gp}
 
 \newslide{Full Gaussian Process Fit}
 
-\includesvg{../slides/diagrams/gp/sparse-demo-full-gp.svg}
+\includediagram{../slides/diagrams/gp/sparse-demo-full-gp}
 }
 
-\notesfigure{\includesvg{../slides/diagrams/gp/sparse-demo-sparse-inducing-8-gp.svg}
-\includesvg{../slides/diagrams/gp/sparse-demo-full-gp.svg}}
+\notesfigure{\includediagram{../slides/diagrams/gp/sparse-demo-sparse-inducing-8-gp}
+\includediagram{../slides/diagrams/gp/sparse-demo-full-gp}}
 \notes{\caption{Comparison of the full Gaussian process fit with a sparse Gaussian process using eight inducing varibles. Both inducing variables and parameters are optimized.}}
 
 \notes{And we can compare the probability of the result to the full model.}

@@ -6,7 +6,7 @@
 
 \alignright{\ricardoPicture{1.5cm}}
 
-\notes{As an of using Gaussian process models within the full pipeline from data to decsion, we'll consider the prediction of Malaria incidence in Uganda. For the purposes of this study malaria reports come in two forms, HMIS reports from health centres and Sentinel data, which is curated by the WHO. There are limited sentinel sites and many HMIS sites.
+\notes{As an example of using Gaussian process models within the full pipeline from data to decsion, we'll consider the prediction of Malaria incidence in Uganda. For the purposes of this study malaria reports come in two forms, HMIS reports from health centres and Sentinel data, which is curated by the WHO. There are limited sentinel sites and many HMIS sites.
 
 The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboration with John Quinn and Martin Mubangizi [@Andrade:consistent14,@Mubangizi:malaria14,]. John and Martin were initally from the AI-DEV group from the University of Makerere in Kampala and more latterly they were based at UN Global Pulse in Kampala.}
 
@@ -27,7 +27,7 @@ The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboratio
 \newslide{Kapchorwa District}
 
 \figure{
-\includesvgclass{../slides/diagrams/health/Kapchorwa_District_in_Uganda.svg}
+\includediagramclass{../slides/diagrams/health/Kapchorwa_District_in_Uganda}
 \notes{\caption{The Kapchorwa District, home district of Stephen Kiprotich.}}
 }
 
@@ -37,7 +37,7 @@ The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboratio
 
 \newslide{Tororo District}
 
-\figure{\includesvgclass{../slides/diagrams/health/Tororo_District_in_Uganda.svg}
+\figure{\includediagramclass{../slides/diagrams/health/Tororo_District_in_Uganda}
 \notes{\caption{The Tororo District, where the sentinel site, Nagongera is located}}}
 
 \newslide{Malaria Prediction in Nagongera (Sentinel Site)}
@@ -48,7 +48,7 @@ The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboratio
 
 \newslide{Mubende District}
 
-\includesvgclass{../slides/diagrams/health/Mubende_District_in_Uganda.svg}{center}{svgplot_normal}
+\includediagramclass{../slides/diagrams/health/Mubende_District_in_Uganda}{center}{svgplot_normal}
 
 \newslide{Malaria Prediction in Uganda}
 
@@ -60,7 +60,7 @@ The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboratio
 
 \newslide{Kabarole District}
 
-\includesvgclass{../slides/diagrams/health/Kabarole_District_in_Uganda.svg}
+\includediagramclass{../slides/diagrams/health/Kabarole_District_in_Uganda}
 
 \subsection{Early Warning Systems}
 

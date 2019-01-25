@@ -47,7 +47,7 @@ transition: None
 \define{\newslide{text}}{---}
 \newslide{}
 
-\div{\includesvg{../slides/diagrams/data-science/hilbert-info-growth.svg}}{}{text-align:center}
+\div{\includediagram{../slides/diagrams/data-science/hilbert-info-growth}}{}{text-align:center}
 
 \newslide{}
 
@@ -55,15 +55,15 @@ transition: None
 
 \newslide{}
 
-\div{\includesvg{../slides/diagrams/data-science/uk_tin_coal_railways001.svg}}{}{text-align:center}
+\div{\includediagram{../slides/diagrams/data-science/uk_tin_coal_railways001}}{}{text-align:center}
 
 \newslide{}
 
-\div{\includesvg{../slides/diagrams/data-science/uk_tin_coal_railways002.svg}}{}{text-align:center}
+\div{\includediagram{../slides/diagrams/data-science/uk_tin_coal_railways002}}{}{text-align:center}
 
 \newslide{}
 
-\div{\includesvg{../slides/diagrams/data-science/uk_tin_coal_railways003.svg}}{}{text-align:center}
+\div{\includediagram{../slides/diagrams/data-science/uk_tin_coal_railways003}}{}{text-align:center}
 
 \newslide{}
 
@@ -84,7 +84,7 @@ transition: None
 \newslide{}
  
 <!--<span class="fragment fade-in">-->
-\div{\includesvg{../slides/diagrams/data-science/user-centric-data.svg}}{}{text-align:center}
+\div{\includediagram{../slides/diagrams/data-science/user-centric-data}}{}{text-align:center}
 <!--</span>-->
 
 
@@ -92,11 +92,11 @@ transition: None
 
 \newslide{}
 
-\div{\includesvg{../slides/diagrams/data-science/uk_tin_coal_railways004.svg}}{}{text-align:center}
+\div{\includediagram{../slides/diagrams/data-science/uk_tin_coal_railways004}}{}{text-align:center}
 
 \newslide{}
 
-\div{\includesvg{../slides/diagrams/data-science/uk_tin_coal_railways005.svg}}{}{text-align:center}
+\div{\includediagram{../slides/diagrams/data-science/uk_tin_coal_railways005}}{}{text-align:center}
 
 \define{\newslide{text}}{### \text}
 

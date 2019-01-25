@@ -72,7 +72,7 @@ affiliation: University of Sheffield
 
 ###
 
-\includesvg{../slides/diagrams/mouse-47172.svg}
+\includediagram{../slides/diagrams/mouse-47172}
 
 ###
 
@@ -80,7 +80,7 @@ affiliation: University of Sheffield
 
 ###
 
-\includesvg{../slides/diagrams/ai/IP_stack_connections.svg}
+\includediagram{../slides/diagrams/ai/IP_stack_connections}
 
 ###
 
@@ -106,7 +106,7 @@ affiliation: University of Sheffield
 
 ### 
 
-\includesvg{../slides/diagrams/girls-152345.svg}
+\includediagram{../slides/diagrams/girls-152345}
 
 ###
 
@@ -114,7 +114,7 @@ affiliation: University of Sheffield
 
 ### 
 
-\includesvg{../slides/diagrams/data-science/hilbert-info-growth.svg}
+\includediagram{../slides/diagrams/data-science/hilbert-info-growth}
 
 ###
 

@@ -31,7 +31,7 @@ $$
 
 ### Data Revolution
 
-\includesvg{../slides/diagrams/data-science-information-flow.svg}
+\includediagram{../slides/diagrams/data-science-information-flow}
 
 *Large amounts of data and high interconnection bandwidth mean that we receive much of our information about the world around us through computers.*
 

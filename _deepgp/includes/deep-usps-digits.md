@@ -93,7 +93,7 @@ mlai.write_figure(figure=fig, filename="../slides/diagrams/deepgp/usps-digits-la
 
 \newslide{}
 
-\includesvg{../slides/diagrams/usps-digits-latent.svg}
+\includediagram{../slides/diagrams/usps-digits-latent}
 
 \notes{
 \subsection{Visualize the latent space of the intermediate layer}
@@ -121,19 +121,19 @@ for i in range(5):
 		
 \newslide{}
 
-\includesvg{../slides/diagrams/usps-digits-hidden-1-0.svg}
+\includediagram{../slides/diagrams/usps-digits-hidden-1-0}
 
 \newslide{}
 
-\includesvg{../slides/diagrams/usps-digits-hidden-2-0.svg}
+\includediagram{../slides/diagrams/usps-digits-hidden-2-0}
 
 \newslide{}
 
-\includesvg{../slides/diagrams/usps-digits-hidden-3-0.svg}
+\includediagram{../slides/diagrams/usps-digits-hidden-3-0}
 
 \newslide{}
 
-\includesvg{../slides/diagrams/usps-digits-hidden-4-0.svg}
+\includediagram{../slides/diagrams/usps-digits-hidden-4-0}
 
 \notes{
 \subsection{Generate From Model}
@@ -166,6 +166,6 @@ mlai.write_figure(figure=fig, filename="../slides/diagrams/deepgp/digit-samples-
 
 \newslide{}
 
-\includesvg{../slides/diagrams/digit-samples-deep-gp.svg}
+\includediagram{../slides/diagrams/digit-samples-deep-gp}
 
 \endif

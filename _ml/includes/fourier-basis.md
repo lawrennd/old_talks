@@ -50,9 +50,9 @@ $$
 $$
 
 \startanimation{fourier_function}{1}{3}
-\newframe{\includesvg{../slides/diagrams/ml/fourier_function000.svg}}{fourier_function}
-\newframe{\includesvg{../slides/diagrams/ml/fourier_function001.svg}}{fourier_function}
-\newframe{\includesvg{../slides/diagrams/ml/fourier_function002.svg}}{fourier_function}
+\newframe{\includediagram{../slides/diagrams/ml/fourier_function000}}{fourier_function}
+\newframe{\includediagram{../slides/diagrams/ml/fourier_function001}}{fourier_function}
+\newframe{\includediagram{../slides/diagrams/ml/fourier_function002}}{fourier_function}
 \endanimation
 \setupcode{from ipywidgets import IntSlider
 import pods}

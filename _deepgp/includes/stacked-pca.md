@@ -13,15 +13,15 @@
 \subsection{Stacked PCA}
 \slides{
 \startanimation{stack-pca-sample}{0}{4}
-\newframe{\includesvg{../slides/diagrams/stack-pca-sample-0.svg}}{stack-pca-sample}
-\newframe{\includesvg{../slides/diagrams/stack-pca-sample-1.svg}}{stack-pca-sample}
-\newframe{\includesvg{../slides/diagrams/stack-pca-sample-2.svg}}{stack-pca-sample}
-\newframe{\includesvg{../slides/diagrams/stack-pca-sample-3.svg}}{stack-pca-sample}
-\newframe{\includesvg{../slides/diagrams/stack-pca-sample-4.svg}}{stack-pca-sample}
+\newframe{\includediagram{../slides/diagrams/stack-pca-sample-0}}{stack-pca-sample}
+\newframe{\includediagram{../slides/diagrams/stack-pca-sample-1}}{stack-pca-sample}
+\newframe{\includediagram{../slides/diagrams/stack-pca-sample-2}}{stack-pca-sample}
+\newframe{\includediagram{../slides/diagrams/stack-pca-sample-3}}{stack-pca-sample}
+\newframe{\includediagram{../slides/diagrams/stack-pca-sample-4}}{stack-pca-sample}
 \endanimation
 }
 
-\notesfigure{\includesvg{../slides/diagrams/stack-pca-sample-4.svg}}
+\notesfigure{\includediagram{../slides/diagrams/stack-pca-sample-4}}
 \notes{\caption{Composition of linear functions just leads to a new linear function.}}
 
 \notes{Stacking a series of linear functions simply leads to a new linear function. The use of multiple linear function merely changes the covariance of the resulting Gaussian. If

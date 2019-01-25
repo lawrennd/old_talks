@@ -40,13 +40,13 @@ $$
 
 \slides{
 \startanimation{tanh_function}{1}{3}
-\newframe{\includesvg{../slides/diagrams/ml/tanh_function000.svg}}{tanh_function}
-\newframe{\includesvg{../slides/diagrams/ml/tanh_function001.svg}}{tanh_function}
-\newframe{\includesvg{../slides/diagrams/ml/tanh_function002.svg}}{tanh_function}
+\newframe{\includediagram{../slides/diagrams/ml/tanh_function000}}{tanh_function}
+\newframe{\includediagram{../slides/diagrams/ml/tanh_function001}}{tanh_function}
+\newframe{\includediagram{../slides/diagrams/ml/tanh_function002}}{tanh_function}
 \endanimation
 }
 
-\notesfigure{\includesvg{../slides/diagrams/ml/tanh_basis003.svg}{}{}}
+\notesfigure{\includediagram{../slides/diagrams/ml/tanh_basis003}{}{}}
 
 \setupcode{import pods
 from ipywidgets import IntSlider}

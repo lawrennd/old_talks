@@ -7,16 +7,16 @@
 \newslide{Deep Neural Network}
 
 \slides{
-\includesvg{../slides/diagrams/deepgp/deep-nn-bottleneck1.svg}
+\includediagram{../slides/diagrams/deepgp/deep-nn-bottleneck1}
 }
 
 \newslide{Deep Neural Network}
 
 \slides{
-\includesvg{../slides/diagrams/deepgp/deep-nn-bottleneck2.svg}
+\includediagram{../slides/diagrams/deepgp/deep-nn-bottleneck2}
 }
 
-\notesfigure{\includesvg{../slides/diagrams/deepgp/deep-nn-bottleneck2.svg}}
+\notesfigure{\includediagram{../slides/diagrams/deepgp/deep-nn-bottleneck2}}
 
 \newslide{Mathematically}
 
