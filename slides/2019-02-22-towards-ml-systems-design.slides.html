@@ -1117,136 +1117,26 @@ In a *data first* company teams own their data quality issues at least as far as
 <li>A new name for system failures which aren’t bugs.</li>
 <li>Difference between finding a fly in your soup vs a peppercorn in your soup.</li>
 </ul>
+<p><span style="text-align:right"></span></p>
 </section>
-<section id="uncertainty-quantification" class="slide level3">
-<h3>Uncertainty Quantification</h3>
+<section id="emukit" class="slide level3">
+<h3>Emukit</h3>
 <ul>
-<li>Deep nets are powerful approach to images, speech, language.</li>
-<li>Proposal: Deep GPs may also be a great approach, but better to deploy according to natural strengths.</li>
+<li>Work by Javier Gonzalez, Andrei Paleyes, Mark Pullin, Maren Mahsereci, Alex Gessner, Aaron Klein.</li>
+<li>Available on <a href="https://github.com/amzn/emukit">Github</a></li>
+<li>Example <a href="https://github.com/amzn/emukit/blob/develop/notebooks/Emukit-sensitivity-montecarlo.ipynb">sensitivity notebook</a>.</li>
 </ul>
 </section>
-<section id="uncertainty-quantification-1" class="slide level3">
-<h3>Uncertainty Quantification</h3>
+<section id="emukit-software" class="slide level3">
+<h3>Emukit Software</h3>
 <ul>
-<li>Probabilistic numerics, surrogate modelling, emulation, and UQ.</li>
-<li>Not a fan of AI as a term.</li>
-<li>But we are faced with increasing amounts of <em>algorithmic decision making</em>.</li>
+<li><em>Multi-fidelity emulation</em>: build surrogate models for multiple sources of information;</li>
+<li><em>Bayesian optimisation</em>: optimise physical experiments and tune parameters ML algorithms;</li>
+<li><em>Experimental design/Active learning</em>: design experiments and perform active learning with ML models;</li>
+<li><em>Sensitivity analysis</em>: analyse the influence of inputs on the outputs</li>
+<li><em>Bayesian quadrature</em>: compute integrals of functions that are expensive to evaluate.</li>
 </ul>
-</section>
-<section id="ml-and-decision-making" class="slide level3">
-<h3>ML and Decision Making</h3>
-<ul>
-<li>When trading off decisions: compute or acquire data?</li>
-<li>There is a critical need for uncertainty.</li>
-</ul>
-</section>
-<section id="uncertainty-quantification-2" class="slide level3">
-<h3>Uncertainty Quantification</h3>
-<blockquote>
-<p>Uncertainty quantification (UQ) is the science of quantitative characterization and reduction of uncertainties in both computational and real world applications. It tries to determine how likely certain outcomes are if some aspects of the system are not exactly known.</p>
-</blockquote>
-<ul>
-<li>Interaction between physical and virtual worlds of major interest.</li>
-</ul>
-</section>
-<section id="contrast" class="slide level3">
-<h3>Contrast</h3>
-<ul>
-<li>Simulation in <em>reinforcement learning</em>.</li>
-<li>Known as <em>data augmentation</em>.</li>
-<li>Newer, similar in spirit, but typically ignores uncertainty.</li>
-</ul>
-</section>
-<section id="example-formula-one-racing" class="slide level3">
-<h3>Example: Formula One Racing</h3>
-<ul>
-<li><p>Designing an F1 Car requires CFD, Wind Tunnel, Track Testing etc.</p></li>
-<li><p>How to combine them?</p></li>
-</ul>
-</section>
-<section id="mountain-car-simulator" class="slide level3">
-<h3>Mountain Car Simulator</h3>
-<div class="centered" style="">
-<img class="negate" src="../slides/diagrams/uq/mountaincar.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</section>
-<section id="car-dynamics" class="slide level3">
-<h3>Car Dynamics</h3>
-<p><span class="math display">\[\inputVector_{t+1} = \mappingFunction(\inputVector_{t},\textbf{u}_{t})\]</span></p>
-<p>where <span class="math inline">\(\textbf{u}_t\)</span> is the action force, <span class="math inline">\(\inputVector_t = (p_t, v_t)\)</span> is the vehicle state</p>
-</section>
-<section id="policy" class="slide level3">
-<h3>Policy</h3>
-<ul>
-<li>Assume policy is linear with parameters <span class="math inline">\(\boldsymbol{\theta}\)</span></li>
-</ul>
-<p><span class="math display">\[\pi(\inputVector,\theta)= \theta_0 + \theta_p p + \theta_vv.\]</span></p>
-</section>
-<section id="emulate-the-mountain-car" class="slide level3">
-<h3>Emulate the Mountain Car</h3>
-<ul>
-<li>Goal is find <span class="math inline">\(\theta\)</span> such that</li>
-</ul>
-<p><span class="math display">\[\theta^* = arg \max_{\theta} R_T(\theta).\]</span></p>
-<ul>
-<li>Reward is computed as 100 for target, minus squared sum of actions</li>
-</ul>
-</section>
-<section id="random-linear-controller" class="slide level3">
-<h3>Random Linear Controller</h3>
-<iframe src="../slides/diagrams/uq/mountain_car_random.html" width="1024" height="768" allowtransparency="true" frameborder="0">
-</iframe>
-</section>
-<section id="best-controller-after-50-iterations-of-bayesian-optimization" class="slide level3">
-<h3>Best Controller after 50 Iterations of Bayesian Optimization</h3>
-<iframe src="../slides/diagrams/uq/mountain_car_simulated.html" width="1024" height="768" allowtransparency="true" frameborder="0">
-</iframe>
-</section>
-<section id="data-efficient-emulation" class="slide level3">
-<h3>Data Efficient Emulation</h3>
-<ul>
-<li><p>For standard Bayesian Optimization ignored <em>dynamics</em> of the car.</p></li>
-<li><p>For more data efficiency, first <em>emulate</em> the dynamics.</p></li>
-<li><p>Then do Bayesian optimization of the <em>emulator</em>.</p></li>
-<li><p>Use a Gaussian process to model <span class="math display">\[\Delta v_{t+1} = v_{t+1} - v_{t}\]</span> and <span class="math display">\[\Delta x_{t+1} = p_{t+1} - p_{t}\]</span></p></li>
-<li><p>Two processes, one with mean <span class="math inline">\(v_{t}\)</span> one with mean <span class="math inline">\(p_{t}\)</span></p></li>
-</ul>
-</section>
-<section id="emulator-training" class="slide level3">
-<h3>Emulator Training</h3>
-<ul>
-<li><p>Used 500 randomly selected points to train emulators.</p></li>
-<li><p>Can make proces smore efficient through <em>experimental design</em>.</p></li>
-</ul>
-</section>
-<section id="comparison-of-emulation-and-simulation" class="slide level3">
-<h3>Comparison of Emulation and Simulation</h3>
-<object class="svgplot " align data="../slides/diagrams/uq/emu_sim_comparison.svg" style="vertical-align:middle;">
-</object>
-</section>
-<section id="data-efficiency" class="slide level3">
-<h3>Data Efficiency</h3>
-<ul>
-<li><p>Our emulator used only 500 calls to the simulator.</p></li>
-<li><p>Optimizing the simulator directly required 37,500 calls to the simulator.</p></li>
-</ul>
-</section>
-<section id="best-controller-using-emulator-of-dynamics" class="slide level3">
-<h3>Best Controller using Emulator of Dynamics</h3>
-<iframe src="../slides/diagrams/uq/mountain_car_emulated.html" width="1024" height="768" allowtransparency="true" frameborder="0">
-</iframe>
-<p>500 calls to the simulator vs 37,500 calls to the simulator</p>
-<p><span class="math display">\[\mappingFunction_i\left(\inputVector\right) = \rho\mappingFunction_{i-1}\left(\inputVector\right) + \delta_i\left(\inputVector \right)\]</span></p>
-</section>
-<section id="multi-fidelity-emulation" class="slide level3">
-<h3>Multi-Fidelity Emulation</h3>
-<p><span class="math display">\[\mappingFunction_i\left(\inputVector\right) = \mappingFunctionTwo_{i}\left(\mappingFunction_{i-1}\left(\inputVector\right)\right) + \delta_i\left(\inputVector \right),\]</span></p>
-</section>
-<section id="best-controller-with-multi-fidelity-emulator" class="slide level3">
-<h3>Best Controller with Multi-Fidelity Emulator</h3>
-<iframe src="../slides/diagrams/uq/mountain_car_multi_fidelity.html" width="1024" height="768" allowtransparency="true" frameborder="0">
-</iframe>
-<p>250 observations of high fidelity simulator and 250 of the low fidelity simulator</p>
+<!--include{_uq/includes/uncertainty-quantification.md}-->
 </section>
 <section id="conclusion" class="slide level3">
 <h3>Conclusion</h3>

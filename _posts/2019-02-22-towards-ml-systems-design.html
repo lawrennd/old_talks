@@ -1,7 +1,7 @@
 ---
 title: "Towards Machine Learning Systems Design"
 venue: "Department of Computer Science, University of Glasgow"
-abstract: "<p>Machine learning solutions, in particular those based on deep learning methods, form an underpinning of the current revolution in “artificial intelligence” that has dominated popular press headlines and is having a significant influence on the wider tech agenda. In this talk I will give an overview of where we are now with machine learning solutions, and what challenges we face both in the near and far future. These include practical application of existing algorithms in the face of the need to explain decision making, mechanisms for improving the quality and availability of data, dealing with large unstructured datasets.</p>"
+abstract: "<p>Machine learning solutions, in particular those based on deep learning methods, form an underpinning for the modern artificial intelligence revolution that has dominated popular press headlines and is having a strong influence on the wider tech agenda. In this talk I will give an overview of where we are now with machine learning solutions, and what challenges we face both in the near and far future. These include practical application of existing algorithms in the face of the need to explain decision making, mechanisms for improving the quality and availability of data, and dealing with large unstructured datasets.</p>"
 author:
 - given: Neil D.
   family: Lawrence
@@ -586,229 +586,21 @@ These stages of data science are also ridden with ambiguity. In the long term th
 <p>These unforseen circumstances are likely to lead to need for much more efficient turn-around and update for our intelligent systems. Whether we are correcting for security flaws (which <em>are</em> bugs) or unenvisaged circumstantial challenges: an issue I'm referring to as <em>peppercorns</em>. Rapid deployment of system updates is required. For example, Apple have &quot;fixed&quot; the problem of Siri returning long numbers.</p>
 <p>The challenge is particularly acute because of the <em>scale</em> at which we can deploy AI solutions. This means when something does go wrong, it may be going wrong in billions of households simultaneously.</p>
 <p>See also <a href="http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence">this blog on the differences between natural and artificial intelligence</a> and this paper <a href="http://inverseprobability.com/2017/11/15/decision-making">on the need for diversity in decision making</a>.</p>
-<h2 id="uncertainty-quantification">Uncertainty Quantification</h2>
-<blockquote>
-<p>Uncertainty quantification (UQ) is the science of quantitative characterization and reduction of uncertainties in both computational and real world applications. It tries to determine how likely certain outcomes are if some aspects of the system are not exactly known.</p>
-</blockquote>
-<p>We will to illustrate different concepts of <a href="https://en.wikipedia.org/wiki/Uncertainty_quantification">Uncertainty Quantification</a> (UQ) and the role that Gaussian processes play in this field. Based on a simple simulator of a car moving between a valley and a mountain, we are going to illustrate the following concepts:</p>
+<p><span style="text-align:right"></span></p>
+<h2 id="emukit">Emukit</h2>
 <ul>
-<li><p><strong>Systems emulation</strong>. Many real world decisions are based on simulations that can be computationally very demanding. We will show how simulators can be replaced by <em>emulators</em>: Gaussian process models fitted on a few simulations that can be used to replace the <em>simulator</em>. Emulators are cheap to compute, fast to run, and always provide ways to quantify the uncertainty of how precise they are compared the original simulator.</p></li>
-<li><p><strong>Emulators in optimization problems</strong>. We will show how emulators can be used to optimize black-box functions that are expensive to evaluate. This field is also called Bayesian Optimization and has gained an increasing relevance in machine learning as emulators can be used to optimize computer simulations (and machine learning algorithms) quite efficiently.</p></li>
-<li><p><strong>Multi-fidelity emulation methods</strong>. In many scenarios we have simulators of different quality about the same measure of interest. In these cases the goal is to merge all sources of information under the same model so the final emulator is cheaper and more accurate than an emulator fitted only using data from the most accurate and expensive simulator.</p></li>
+<li><em>Multi-fidelity emulation</em>: build surrogate models when data is obtained from multiple information sources that have different fidelity and/or cost;</li>
+<li><em>Bayesian optimisation</em>: optimise physical experiments and tune parameters of machine learning algorithms;</li>
+<li><em>Experimental design/Active learning</em>: design the most informative experiments and perform active learning with machine learning models;</li>
+<li><em>Sensitivity analysis</em>: analyse the influence of inputs on the outputs of a given system;</li>
+<li><em>Bayesian quadrature</em>: efficiently compute the integrals of functions that are expensive to evaluate.</li>
 </ul>
-<h2 id="mountain-car-simulator">Mountain Car Simulator</h2>
-<p>To illustrate the above mentioned concepts we we use the <a href="https://github.com/openai/gym/wiki/MountainCarContinuous-v0">mountain car simulator</a>. This simulator is widely used in machine learning to test reinforcement learning algorithms. The goal is to define a control policy on a car whose objective is to climb a mountain. Graphically, the problem looks as follows:</p>
-<div class="centered" style="">
-<img class="negate" src="../slides/diagrams/uq/mountaincar.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-<p>The goal is to define a sequence of actions (push the car right or left with certain intensity) to make the car reach the flag after a number <span class="math inline"><em>T</em></span> of time steps.</p>
-<p>At each time step <span class="math inline"><em>t</em></span>, the car is characterized by a vector <span class="math inline">$\inputVector_{t} = (p_t,v_t)$</span> of states which are respectively the the position and velocity of the car at time <span class="math inline"><em>t</em></span>. For a sequence of states (an episode), the dynamics of the car is given by</p>
-<p><br /><span class="math display">$$\inputVector_{t+1} = \mappingFunction(\inputVector_{t},\textbf{u}_{t})$$</span><br /></p>
-<p>where <span class="math inline"><strong>u</strong><sub><em>t</em></sub></span> is the value of an action force, which in this example corresponds to push car to the left (negative value) or to the right (positive value). The actions across a full episode are represented in a policy <span class="math inline">$\textbf{u}_{t} = \pi(\inputVector_{t},\theta)$</span> that acts according to the current state of the car and some parameters <span class="math inline"><em>θ</em></span>. In the following examples we will assume that the policy is linear which allows us to write <span class="math inline">$\pi(\inputVector_{t},\theta)$</span> as</p>
-<p><br /><span class="math display">$$\pi(\inputVector,\theta)= \theta_0 + \theta_p p + \theta_vv.$$</span><br /></p>
-<p>For <span class="math inline"><em>t</em> = 1, …, <em>T</em></span> now given some initial state <span class="math inline">$\inputVector_{0}$</span> and some some values of each <span class="math inline"><strong>u</strong><sub><em>t</em></sub></span>, we can <strong>simulate</strong> the full dynamics of the car for a full episode using <a href="https://gym.openai.com/envs/">Gym</a>. The values of <span class="math inline"><strong>u</strong><sub><em>t</em></sub></span> are fully determined by the parameters of the linear controller.</p>
-<p>After each episode of length <span class="math inline"><em>T</em></span> is complete, a reward function <span class="math inline"><em>R</em><sub><em>T</em></sub>(<em>θ</em>)</span> is computed. In the mountain car example the reward is computed as 100 for reaching the target of the hill on the right hand side, minus the squared sum of actions (a real negative to push to the left and a real positive to push to the right) from start to goal. Note that our reward depend on <span class="math inline"><em>θ</em></span> as we make it dependent on the parameters of the linear controller.</p>
-<h2 id="emulate-the-mountain-car">Emulate the Mountain Car</h2>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> gym</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">env <span class="op">=</span> gym.make(<span class="st">&#39;MountainCarContinuous-v0&#39;</span>)</code></pre></div>
-<p>Our goal in this section is to find the parameters <span class="math inline"><em>θ</em></span> of the linear controller such that</p>
-<p><br /><span class="math display"><em>θ</em><sup>*</sup> = <em>a</em><em>r</em><em>g</em>max<sub><em>θ</em></sub><em>R</em><sub><em>T</em></sub>(<em>θ</em>).</span><br /></p>
-<p>In this section, we directly use Bayesian optimization to solve this problem. We will use <a href="https://sheffieldml.github.io/GPyOpt/">GPyOpt</a> so we first define the objective function:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> mountain_car <span class="im">as</span> mc
-<span class="im">import</span> GPyOpt</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">obj_func <span class="op">=</span> <span class="kw">lambda</span> x: mc.run_simulation(env, x)[<span class="dv">0</span>]
-objective <span class="op">=</span> GPyOpt.core.task.SingleObjective(obj_func)</code></pre></div>
-<p>For each set of parameter values of the linear controller we can run an episode of the simulator (that we fix to have a horizon of <span class="math inline"><em>T</em> = 500</span>) to generate the reward. Using as input the parameters of the controller and as outputs the rewards we can build a Gaussian process emulator of the reward.</p>
-<p>We start defining the input space, which is three-dimensional:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">## --- We define the input space of the emulator</span>
-
-space<span class="op">=</span> [{<span class="st">&#39;name&#39;</span>:<span class="st">&#39;postion_parameter&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="fl">1.2</span>, <span class="op">+</span><span class="dv">1</span>)},
-        {<span class="st">&#39;name&#39;</span>:<span class="st">&#39;velocity_parameter&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="dv">1</span><span class="op">/</span><span class="fl">0.07</span>, <span class="op">+</span><span class="dv">1</span><span class="op">/</span><span class="fl">0.07</span>)},
-        {<span class="st">&#39;name&#39;</span>:<span class="st">&#39;constant&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="dv">1</span>, <span class="op">+</span><span class="dv">1</span>)}]
-
-design_space <span class="op">=</span> GPyOpt.Design_space(space<span class="op">=</span>space)</code></pre></div>
-<p>Now we initizialize a Gaussian process emulator.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">model <span class="op">=</span> GPyOpt.models.GPModel(optimize_restarts<span class="op">=</span><span class="dv">5</span>, verbose<span class="op">=</span><span class="va">False</span>, exact_feval<span class="op">=</span><span class="va">True</span>, ARD<span class="op">=</span><span class="va">True</span>)</code></pre></div>
-<p>In Bayesian optimization an acquisition function is used to balance exploration and exploitation to evaluate new locations close to the optimum of the objective. In this notebook we select the expected improvement (EI). For further details have a look to the review paper of <a href="http://www.cs.ox.ac.uk/people/nando.defreitas/publications/BayesOptLoop.pdf">Shahriari et al (2015)</a>.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">aquisition_optimizer <span class="op">=</span> GPyOpt.optimization.AcquisitionOptimizer(design_space)
-acquisition <span class="op">=</span> GPyOpt.acquisitions.AcquisitionEI(model, design_space, optimizer<span class="op">=</span>aquisition_optimizer)
-evaluator <span class="op">=</span> GPyOpt.core.evaluators.Sequential(acquisition) <span class="co"># Collect points sequentially, no parallelization.</span></code></pre></div>
-<p>To initalize the model we start sampling some initial points (25) for the linear controler randomly.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> GPyOpt.experiment_design.random_design <span class="im">import</span> RandomDesign</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">n_initial_points <span class="op">=</span> <span class="dv">25</span>
-random_design <span class="op">=</span> RandomDesign(design_space)
-initial_design <span class="op">=</span> random_design.get_samples(n_initial_points)</code></pre></div>
-<p>Before we start any optimization, lets have a look to the behavior of the car with the first of these initial points that we have selected randomly.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">random_controller <span class="op">=</span> initial_design[<span class="dv">0</span>,:]
-_, _, _, frames <span class="op">=</span> mc.run_simulation(env, np.atleast_2d(random_controller), render<span class="op">=</span><span class="va">True</span>)
-anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Random linear controller&#39;</span>)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> IPython.core.display <span class="im">import</span> HTML</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">HTML(anim.to_jshtml())</code></pre></div>
-<iframe src="../slides/diagrams/uq/mountain_car_random.html" width="1024" height="768" allowtransparency="true" frameborder="0">
-</iframe>
-<p>As we can see the random linear controller does not manage to push the car to the top of the mountain. Now, let's optimize the regret using Bayesian optimization and the emulator for the reward. We try 50 new parameters chosen by the EI.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">max_iter <span class="op">=</span> <span class="dv">50</span>
-bo <span class="op">=</span> GPyOpt.methods.ModularBayesianOptimization(model, design_space, objective, acquisition, evaluator, initial_design)
-bo.run_optimization(max_iter <span class="op">=</span> max_iter )</code></pre></div>
-<p>Now we visualize the result for the best controller that we have found with Bayesian optimization.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">_, _, _, frames <span class="op">=</span> mc.run_simulation(env, np.atleast_2d(bo.x_opt), render<span class="op">=</span><span class="va">True</span>)
-anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Best controller after 50 iterations of Bayesian optimization&#39;</span>)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">HTML(anim.to_jshtml())</code></pre></div>
-<iframe src="../slides/diagrams/uq/mountain_car_simulated.html" width="1024" height="768" allowtransparency="true" frameborder="0">
-</iframe>
-<p>he car can now make it to the top of the mountain! Emulating the reward function and using the EI helped as to find a linear controller that solves the problem.</p>
-<h2 id="data-efficient-emulation">Data Efficient Emulation</h2>
-<p>In the previous section we solved the mountain car problem by directly emulating the reward but no considerations about the dynamics <span class="math inline">$\inputVector_{t+1} = \mappingFunction(\inputVector_{t},\textbf{u}_{t})$</span> of the system were made. Note that we had to run 75 episodes of 500 steps each to solve the problem, which required to call the simulator <span class="math inline">500 × 75 = 37500</span> times. In this section we will show how it is possible to reduce this number by building an emulator for <span class="math inline"><em>f</em></span> that can later be used to directly optimize the control.</p>
-<p>The inputs of the model for the dynamics are the velocity, the position and the value of the control so create this space accordingly.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> gym</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">env <span class="op">=</span> gym.make(<span class="st">&#39;MountainCarContinuous-v0&#39;</span>)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> GPyOpt</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">space_dynamics <span class="op">=</span> [{<span class="st">&#39;name&#39;</span>:<span class="st">&#39;position&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:[<span class="op">-</span><span class="fl">1.2</span>, <span class="op">+</span><span class="fl">0.6</span>]},
-                  {<span class="st">&#39;name&#39;</span>:<span class="st">&#39;velocity&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:[<span class="op">-</span><span class="fl">0.07</span>, <span class="op">+</span><span class="fl">0.07</span>]},
-                  {<span class="st">&#39;name&#39;</span>:<span class="st">&#39;action&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:[<span class="op">-</span><span class="dv">1</span>, <span class="op">+</span><span class="dv">1</span>]}]
-design_space_dynamics <span class="op">=</span> GPyOpt.Design_space(space<span class="op">=</span>space_dynamics)</code></pre></div>
-<p>The outputs are the velocity and the position. Indeed our model will capture the change in position and velocity on time. That is, we will model</p>
-<p><br /><span class="math display"><em>Δ</em><em>v</em><sub><em>t</em> + 1</sub> = <em>v</em><sub><em>t</em> + 1</sub> − <em>v</em><sub><em>t</em></sub></span><br /></p>
-<p><br /><span class="math display"><em>Δ</em><em>x</em><sub><em>t</em> + 1</sub> = <em>p</em><sub><em>t</em> + 1</sub> − <em>p</em><sub><em>t</em></sub></span><br /></p>
-<p>with Gaussian processes with prior mean <span class="math inline"><em>v</em><sub><em>t</em></sub></span> and <span class="math inline"><em>p</em><sub><em>t</em></sub></span> respectively. As a covariance function, we use a Matern52. We need therefore two models to capture the full dynamics of the system.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">position_model <span class="op">=</span> GPyOpt.models.GPModel(optimize_restarts<span class="op">=</span><span class="dv">5</span>, verbose<span class="op">=</span><span class="va">False</span>, exact_feval<span class="op">=</span><span class="va">True</span>, ARD<span class="op">=</span><span class="va">True</span>)
-velocity_model <span class="op">=</span> GPyOpt.models.GPModel(optimize_restarts<span class="op">=</span><span class="dv">5</span>, verbose<span class="op">=</span><span class="va">False</span>, exact_feval<span class="op">=</span><span class="va">True</span>, ARD<span class="op">=</span><span class="va">True</span>)</code></pre></div>
-<p>Next, we sample some input parameters and use the simulator to compute the outputs. Note that in this case we are not running the full episodes, we are just using the simulator to compute <span class="math inline">$\inputVector_{t+1}$</span> given <span class="math inline">$\inputVector_{t}$</span> and <span class="math inline"><strong>u</strong><sub><em>t</em></sub></span>.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
-<span class="im">from</span> GPyOpt.experiment_design.random_design <span class="im">import</span> RandomDesign
-<span class="im">import</span> mountain_car <span class="im">as</span> mc</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">### --- Random locations of the inputs</span>
-n_initial_points <span class="op">=</span> <span class="dv">500</span>
-random_design_dynamics <span class="op">=</span> RandomDesign(design_space_dynamics)
-initial_design_dynamics <span class="op">=</span> random_design_dynamics.get_samples(n_initial_points)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">### --- Simulation of the (normalized) outputs</span>
-y <span class="op">=</span> np.zeros((initial_design_dynamics.shape[<span class="dv">0</span>], <span class="dv">2</span>))
-<span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(initial_design_dynamics.shape[<span class="dv">0</span>]):
-    y[i, :] <span class="op">=</span> mc.simulation(initial_design_dynamics[i, :])
-
-<span class="co"># Normalize the data from the simulation</span>
-y_normalisation <span class="op">=</span> np.std(y, axis<span class="op">=</span><span class="dv">0</span>)
-y_normalised <span class="op">=</span> y<span class="op">/</span>y_normalisation</code></pre></div>
-<p>In general we might use much smarter strategies to design our emulation of the simulator. For example, we could use the variance of the predictive distributions of the models to collect points using uncertainty sampling, which will give us a better coverage of the space. For simplicity, we move ahead with the 500 randomly selected points.</p>
-<p>Now that we have a data set, we can update the emulators for the location and the velocity.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">position_model.updateModel(initial_design_dynamics, y[:, [<span class="dv">0</span>]], <span class="va">None</span>, <span class="va">None</span>)
-velocity_model.updateModel(initial_design_dynamics, y[:, [<span class="dv">1</span>]], <span class="va">None</span>, <span class="va">None</span>)</code></pre></div>
-<p>We can now have a look to how the emulator and the simulator match. First, we show a contour plot of the car aceleration for each pair of can position and velocity. You can use the bar bellow to play with the values of the controler to compare the emulator and the simulator.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> IPython.html.widgets <span class="im">import</span> interact</code></pre></div>
-<p>We can see how the emulator is doing a fairly good job approximating the simulator. On the edges, however, it struggles to captures the dynamics of the simulator.</p>
-<p>Given some input parameters of the linear controlling, how do the dynamics of the emulator and simulator match? In the following figure we show the position and velocity of the car for the 500 time steps of an episode in which the parameters of the linear controller have been fixed beforehand. The value of the input control is also shown.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">controller_gains <span class="op">=</span> np.atleast_2d([<span class="dv">0</span>, .<span class="dv">6</span>, <span class="dv">1</span>])  <span class="co"># change the valus of the linear controller to observe the trayectories.</span></code></pre></div>
-<object class="svgplot " align data="../slides/diagrams/uq/emu_sim_comparison.svg" style="vertical-align:middle;">
-</object>
-<p>We now make explicit use of the emulator, using it to replace the simulator and optimize the linear controller. Note that in this optimization, we don't need to query the simulator anymore as we can reproduce the full dynamics of an episode using the emulator. For illustrative purposes, in this example we fix the initial location of the car.</p>
-<p>We define the objective reward function in terms of the simulator.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">### --- Optimize control parameters with emulator</span>
-car_initial_location <span class="op">=</span> np.asarray([<span class="op">-</span><span class="fl">0.58912799</span>, <span class="dv">0</span>]) 
-
-<span class="co">### --- Reward objective function using the emulator</span>
-obj_func_emulator <span class="op">=</span> <span class="kw">lambda</span> x: mc.run_emulation([position_model, velocity_model], x, car_initial_location)[<span class="dv">0</span>]
-objective_emulator <span class="op">=</span> GPyOpt.core.task.SingleObjective(obj_func_emulator)</code></pre></div>
-<p>And as before, we use Bayesian optimization to find the best possible linear controller.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">### --- Elements of the optimization that will use the multi-fidelity emulator</span>
-model <span class="op">=</span> GPyOpt.models.GPModel(optimize_restarts<span class="op">=</span><span class="dv">5</span>, verbose<span class="op">=</span><span class="va">False</span>, exact_feval<span class="op">=</span><span class="va">True</span>, ARD<span class="op">=</span><span class="va">True</span>)</code></pre></div>
-<p>The design space is the three continuous variables that make up the linear controller.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">space<span class="op">=</span> [{<span class="st">&#39;name&#39;</span>:<span class="st">&#39;linear_1&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="dv">1</span><span class="op">/</span><span class="fl">1.2</span>, <span class="op">+</span><span class="dv">1</span>)},
-        {<span class="st">&#39;name&#39;</span>:<span class="st">&#39;linear_2&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="dv">1</span><span class="op">/</span><span class="fl">0.07</span>, <span class="op">+</span><span class="dv">1</span><span class="op">/</span><span class="fl">0.07</span>)},
-        {<span class="st">&#39;name&#39;</span>:<span class="st">&#39;constant&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="dv">1</span>, <span class="op">+</span><span class="dv">1</span>)}]
-
-design_space         <span class="op">=</span> GPyOpt.Design_space(space<span class="op">=</span>space)
-aquisition_optimizer <span class="op">=</span> GPyOpt.optimization.AcquisitionOptimizer(design_space)
-
-random_design <span class="op">=</span> RandomDesign(design_space)
-initial_design <span class="op">=</span> random_design.get_samples(<span class="dv">25</span>)</code></pre></div>
-<p>We set the acquisition function to be expected improvement using <code>GPyOpt</code>.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">acquisition          <span class="op">=</span> GPyOpt.acquisitions.AcquisitionEI(model, design_space, optimizer<span class="op">=</span>aquisition_optimizer)
-evaluator            <span class="op">=</span> GPyOpt.core.evaluators.Sequential(acquisition)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">bo_emulator <span class="op">=</span> GPyOpt.methods.ModularBayesianOptimization(model, design_space, objective_emulator, acquisition, evaluator, initial_design)
-bo_emulator.run_optimization(max_iter<span class="op">=</span><span class="dv">50</span>)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">_, _, _, frames <span class="op">=</span> mc.run_simulation(env, np.atleast_2d(bo_emulator.x_opt), render<span class="op">=</span><span class="va">True</span>)
-anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Best controller using the emulator of the dynamics&#39;</span>)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> IPython.core.display <span class="im">import</span> HTML</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">HTML(anim.to_jshtml())</code></pre></div>
-<iframe src="../slides/diagrams/uq/mountain_car_emulated.html" width="1024" height="768" allowtransparency="true" frameborder="0">
-</iframe>
-<p>And the problem is again solved, but in this case we have replaced the simulator of the car dynamics by a Gaussian process emulator that we learned by calling the simulator only 500 times. Compared to the 37500 calls that we needed when applying Bayesian optimization directly on the simulator this is a great gain.</p>
-<p>In some scenarios we have simulators of the same environment that have different fidelities, that is that reflect with different level of accuracy the dynamics of the real world. Running simulations of the different fidelities also have a different cost: hight fidelity simulations are more expensive the cheaper ones. If we have access to these simulators we can combine high and low fidelity simulations under the same model.</p>
-<p>So let's assume that we have two simulators of the mountain car dynamics, one of high fidelity (the one we have used) and another one of low fidelity. The traditional approach to this form of multi-fidelity emulation is to assume that</p>
-<p><br /><span class="math display">$$\mappingFunction_i\left(\inputVector\right) = \rho\mappingFunction_{i-1}\left(\inputVector\right) + \delta_i\left(\inputVector \right)$$</span><br /></p>
-<p>where <span class="math inline">$\mappingFunction_{i-1}\left(\inputVector\right)$</span> is a low fidelity simulation of the problem of interest and <span class="math inline">$\mappingFunction_i\left(\inputVector\right)$</span> is a higher fidelity simulation. The function <span class="math inline">$\delta_i\left(\inputVector \right)$</span> represents the difference between the lower and higher fidelity simulation, which is considered additive. The additive form of this covariance means that if <span class="math inline">$\mappingFunction_{0}\left(\inputVector\right)$</span> and <span class="math inline">$\left\{\delta_i\left(\inputVector \right)\right\}_{i=1}^m$</span> are all Gaussian processes, then the process over all fidelities of simuation will be a joint Gaussian process.</p>
-<p>But with Deep Gaussian processes we can consider the form</p>
-<p><br /><span class="math display">$$\mappingFunction_i\left(\inputVector\right) = \mappingFunctionTwo_{i}\left(\mappingFunction_{i-1}\left(\inputVector\right)\right) + \delta_i\left(\inputVector \right),$$</span><br /></p>
-<p>where the low fidelity representation is non linearly transformed by <span class="math inline">$\mappingFunctionTwo(\cdot)$</span> before use in the process. This is the approach taken in <span class="citation">Perdikaris et al. (2017)</span>. But once we accept that these models can be composed, a highly flexible framework can emerge. A key point is that the data enters the model at different levels, and represents different aspects. For example these correspond to the two fidelities of the mountain car simulator.</p>
-<p>We start by sampling both of them at 250 random input locations.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> gym</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">env <span class="op">=</span> gym.make(<span class="st">&#39;MountainCarContinuous-v0&#39;</span>)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> GPyOpt</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">### --- Collect points from low and high fidelity simulator --- </span><span class="al">###</span>
-
-space <span class="op">=</span> GPyOpt.Design_space([
-        {<span class="st">&#39;name&#39;</span>:<span class="st">&#39;position&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="fl">1.2</span>, <span class="op">+</span><span class="dv">1</span>)},
-        {<span class="st">&#39;name&#39;</span>:<span class="st">&#39;velocity&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="fl">0.07</span>, <span class="op">+</span><span class="fl">0.07</span>)},
-        {<span class="st">&#39;name&#39;</span>:<span class="st">&#39;action&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="dv">1</span>, <span class="op">+</span><span class="dv">1</span>)}])
-
-n_points <span class="op">=</span> <span class="dv">250</span>
-random_design <span class="op">=</span> GPyOpt.experiment_design.RandomDesign(space)
-x_random <span class="op">=</span> random_design.get_samples(n_points)</code></pre></div>
-<p>Next, we evaluate the high and low fidelity simualtors at those locations.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
-<span class="im">import</span> mountain_car <span class="im">as</span> mc</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">d_position_hf <span class="op">=</span> np.zeros((n_points, <span class="dv">1</span>))
-d_velocity_hf <span class="op">=</span> np.zeros((n_points, <span class="dv">1</span>))
-d_position_lf <span class="op">=</span> np.zeros((n_points, <span class="dv">1</span>))
-d_velocity_lf <span class="op">=</span> np.zeros((n_points, <span class="dv">1</span>))
-
-<span class="co"># --- Collect high fidelity points</span>
-<span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, n_points):
-    d_position_hf[i], d_velocity_hf[i] <span class="op">=</span> mc.simulation(x_random[i, :])
-
-<span class="co"># --- Collect low fidelity points  </span>
-<span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, n_points):
-    d_position_lf[i], d_velocity_lf[i] <span class="op">=</span> mc.low_cost_simulation(x_random[i, :])</code></pre></div>
-<p>It is time to build the multi-fidelity model for both the position and the velocity.</p>
-<p>As we did in the previous section we use the emulator to optimize the simulator. In this case we use the high fidelity output of the emulator.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">### --- Optimize controller parameters </span>
-obj_func <span class="op">=</span> <span class="kw">lambda</span> x: mc.run_simulation(env, x)[<span class="dv">0</span>]
-obj_func_emulator <span class="op">=</span> <span class="kw">lambda</span> x: mc.run_emulation([position_model, velocity_model], x, car_initial_location)[<span class="dv">0</span>]
-objective_multifidelity <span class="op">=</span> GPyOpt.core.task.SingleObjective(obj_func)</code></pre></div>
-<p>And we optimize using Bayesian optimzation.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> GPyOpt.experiment_design.random_design <span class="im">import</span> RandomDesign</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">model <span class="op">=</span> GPyOpt.models.GPModel(optimize_restarts<span class="op">=</span><span class="dv">5</span>, verbose<span class="op">=</span><span class="va">False</span>, exact_feval<span class="op">=</span><span class="va">True</span>, ARD<span class="op">=</span><span class="va">True</span>)
-space<span class="op">=</span> [{<span class="st">&#39;name&#39;</span>:<span class="st">&#39;linear_1&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="dv">1</span><span class="op">/</span><span class="fl">1.2</span>, <span class="op">+</span><span class="dv">1</span>)},
-        {<span class="st">&#39;name&#39;</span>:<span class="st">&#39;linear_2&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="dv">1</span><span class="op">/</span><span class="fl">0.07</span>, <span class="op">+</span><span class="dv">1</span><span class="op">/</span><span class="fl">0.07</span>)},
-        {<span class="st">&#39;name&#39;</span>:<span class="st">&#39;constant&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="dv">1</span>, <span class="op">+</span><span class="dv">1</span>)}]
-
-design_space <span class="op">=</span> GPyOpt.Design_space(space<span class="op">=</span>space)
-aquisition_optimizer <span class="op">=</span> GPyOpt.optimization.AcquisitionOptimizer(design_space)
-
-n_initial_points <span class="op">=</span> <span class="dv">25</span>
-random_design <span class="op">=</span> RandomDesign(design_space)
-initial_design <span class="op">=</span> random_design.get_samples(n_initial_points)
-acquisition <span class="op">=</span> GPyOpt.acquisitions.AcquisitionEI(model, design_space, optimizer<span class="op">=</span>aquisition_optimizer)
-evaluator <span class="op">=</span> GPyOpt.core.evaluators.Sequential(acquisition)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">bo_multifidelity <span class="op">=</span> GPyOpt.methods.ModularBayesianOptimization(model, design_space, objective_multifidelity, acquisition, evaluator, initial_design)
-bo_multifidelity.run_optimization(max_iter<span class="op">=</span><span class="dv">50</span>)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">_, _, _, frames <span class="op">=</span> mc.run_simulation(env, np.atleast_2d(bo_multifidelity.x_opt), render<span class="op">=</span><span class="va">True</span>)
-anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Best controller with multi-fidelity emulator&#39;</span>)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> IPython.core.display <span class="im">import</span> HTML</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">HTML(anim.to_jshtml())</code></pre></div>
-<iframe src="../slides/diagrams/uq/mountain_car_multi_fidelity.html" width="1024" height="768" allowtransparency="true" frameborder="0">
-</iframe>
-<p>And problem solved! We see how the problem is also solved with 250 observations of the high fidelity simulator and 250 of the low fidelity simulator.</p>
+<!--include{_uq/includes/uncertainty-quantification.md}-->
 <ul>
 <li><p>Artificial Intelligence and Data Science are fundamentally different.</p></li>
 <li><p>In one you are dealing with data collected by happenstance.</p></li>
 <li><p>In the other you are trying to build systems in the real world, often by actively collecting data.</p></li>
 <li><p>Our approaches to systems design are building powerful machines that will be deployed in evolving environments.</p></li>
-<li>twitter: @lawrennd</li>
-<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
-<li><a href="http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence">Natural vs Artifical Intelligence</a></li>
-<li><p><a href="https://medium.com/@mijordan3/artificial-intelligence-the-revolution-hasnt-happened-yet-5e1d5812e1e7">Mike Jordan's Medium Post</a></p></li>
 </ul>
 <h1 id="references" class="unnumbered">References</h1>
 <div id="refs" class="references">
@@ -817,9 +609,6 @@ anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Bes
 </div>
 <div id="ref-Maxwell:governors1867">
 <p>Maxwell, James Clerk. 1867. “On Governors.” <em>Proceedings of the Royal Society of London</em> 16. The Royal Society: 270–83. <a href="http://www.jstor.org/stable/112510" class="uri">http://www.jstor.org/stable/112510</a>.</p>
-</div>
-<div id="ref-Perdikaris:multifidelity17">
-<p>Perdikaris, P., M. Raissi, A. Damianou, N. D. Lawrence, and G. E. Karniadakis. 2017. “Nonlinear Information Fusion Algorithms for Data-Efficient Multi-Fidelity Modelling.” <em>Proceedings of the Royal Society of London A: Mathematical, Physical and Engineering Sciences</em> 473 (2198). The Royal Society. doi:<a href="https://doi.org/10.1098/rspa.2016.0751">10.1098/rspa.2016.0751</a>.</p>
 </div>
 <div id="ref-Reed-information98">
 <p>Reed, Charlotte, and Nathaniel I. Durlach. 1998. “Note on Information Transfer Rates in Human Communication.” <em>Presence Teleoperators &amp; Virtual Environments</em> 7 (5): 509–18. doi:<a href="https://doi.org/10.1162/105474698565893">10.1162/105474698565893</a>.</p>
