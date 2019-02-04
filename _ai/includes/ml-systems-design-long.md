@@ -13,16 +13,7 @@
   * Componentwise deconstruciton is Important for verification purposes.
 }
 
-\newslide{Pigeonholing}
-\slides{
-\includejpg{../slides/diagrams/TooManyPigeons}{60%}{}{center}
-}
-
-\notes{The way we are deploying artificial intelligence systems in practice is to build up systems of machine learning components. To build a machine learning system, we decompose the task into parts, each of which we can emulate with ML methods. These parts are typically independently constructed and verified. For example, in a driverless car we can decompose the tasks into components such as "pedestrian detection" and "road line detection". Each of these components can be constructed with, for example, an independent classifier. We can then superimpose a logic on top. For example, "Follow the road line unless you detect a pedestrian in the road". 
-
-This allows for verification of car performance, as long as we can verify the individual components. However, it also implies that the AI systems we deploy are *fragile*.
-
-Our intelligent systems are composed by "pigeonholing" each indvidual task, then substituting with a machine learning model.}
+\include{_ai/includes/pigeonholing.md}
 
 \subsection{Rapid Reimplementation}
 
