@@ -1,4 +1,9 @@
-### Machine Learning Systems Design
+\ifndef{mlSystemsDesign}
+\define{mlSystemsDesign}
+\editme
+
+\newslide{Machine Learning Systems Design}
+
 \slides{
 * Major new challenge for systems designers.
 
@@ -10,9 +15,9 @@
 
 Most of our experience with deployment relies on some approximation to the component based model, this is also important for verification of the system. If the components of the system can be verified then the composed system can also, potentially, be verified.}
 
+\newslide{Fragility of AI Systems}
 
 \slides{
-### Fragility of AI Systems
 
 * They are componentwise built from ML Capabilities.
 
@@ -25,7 +30,7 @@ Most of our experience with deployment relies on some approximation to the compo
 * Important for verification purposes.
 }
 
-### Rapid Reimplementation
+\newslide{Rapid Reimplementation}
 
 \slides{
 * Whole systems are being deployed.
@@ -34,11 +39,10 @@ Most of our experience with deployment relies on some approximation to the compo
 }
 \notes{However, the systems we are deploying into the real world actually effect their environment. They change users responses and experience evolved adversarial behaviour.}
 
-\slides{
-### Machine Learning Systems Design
-}
+\newslide{Machine Learning Systems Design}
 
-\includeimg{../slides/diagrams/SteamEngine_Boulton&Watt_1784_neg.png}{50%}{}{center}
+
+\includepng{../slides/diagrams/SteamEngine_Boulton&Watt_1784_neg}{50%}{}{center}
 
 \notes{James Watt's steam engine contained an early machine learning device. In the same way that modern systems are component based, his engine was composed of components. One of which is a speed regulator known as *Watt's governor*. The two balls in the center of the image, when spun fast, rise, and through a linkage mechanism.
 
@@ -46,9 +50,8 @@ This has the basic components of sense and act that we expect in an intelligent 
 
 The first wave of automation did bring about sabotoage as a worker's response. But if machinery was sabotaged, if the linkage between sensor (the spinning balls) and action (the valve closure) was broken, this would be obvious to the engine operator at start up time. The machine could be repaired before operation.}
 
+\newslide{Turnaround And Update}
 \slides{
-### Turnaround And Update
-
 * There is a massive need for turn around and update
 * A redeploy of the entire system.
      * This involves changing the way we design and deploy.
@@ -69,3 +72,4 @@ One example is asking Siri the question "What is 10 trillion to the power of 100
 
 \includeyoutube{1y2UKz47gew}
 }
+\endif

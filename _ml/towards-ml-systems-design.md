@@ -1,5 +1,6 @@
 ---
 title: "Towards Machine Learning Systems Design"
+venue: "Department of Computer Science, University of Glasgow"
 abstract: >
   Machine learning solutions, in particular those based on deep
   learning methods, form an underpinning of the current revolution in
@@ -12,15 +13,22 @@ abstract: >
   algorithms in the face of the need to explain decision making,
   mechanisms for improving the quality and availability of data,
   dealing with large unstructured datasets.
-author: Neil D. Lawrence
-affiliation: Amazon Research Cambridge and University of Sheffield
+author:
+- given: Neil D.
+  family: Lawrence
+  url: http://inverseprobability.com
+  institute: Amazon Cambridge and University of Sheffield
+  twitter: lawrennd
+  gscholar: r3SJcvoAAAAJ
+  orchid: 
+date: 2019-02-22
+layout: talk
+categories:
+- notes
 transition: None
 ---
 
-
 \include{talk-macros.tex}
-
-\include{talk-notation.tex}
 
 \include{_ml/includes/what-is-ml.md}
 \include{_ml/includes/data-science-vs-ai.md}

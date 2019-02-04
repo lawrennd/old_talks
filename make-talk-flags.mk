@@ -1,5 +1,5 @@
 DATE=$(shell date '+%Y-%m-%d')
-DATE=$(shell extractdate_talk.py ${BASE})
+DATE=$(shell ../extractdate_talk.py ${BASE}.md)
 MATHJAX="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG"
 CSS=talks.css
 SLIDESHEADER=../slides-header.html

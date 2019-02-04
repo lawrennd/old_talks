@@ -1,3 +1,7 @@
+\ifndef{mlSystemsDesignLong}
+\define{mlSystemsDesignLong}
+\editme
+
 \section{Machine Learning System Design}
 
 \newslide{Fragility of AI Systems}
@@ -11,7 +15,7 @@
 
 \newslide{Pigeonholing}
 \slides{
-\includeimg{../slides/diagrams/TooManyPigeons.jpg}{60%}{}{center}
+\includejpg{../slides/diagrams/TooManyPigeons}{60%}{}{center}
 }
 
 \notes{The way we are deploying artificial intelligence systems in practice is to build up systems of machine learning components. To build a machine learning system, we decompose the task into parts, each of which we can emulate with ML methods. These parts are typically independently constructed and verified. For example, in a driverless car we can decompose the tasks into components such as "pedestrian detection" and "road line detection". Each of these components can be constructed with, for example, an independent classifier. We can then superimpose a logic on top. For example, "Follow the road line unless you detect a pedestrian in the road". 
@@ -38,7 +42,7 @@ We become exposed to mischief and adversaries. Adversaries intentially may wish 
 
 \newslide{Machine Learning Systems Design}
 
-\include{_ai/includes/centrifugal_governor.md}
+\include{_ai/includes/centrifugal-governor.md}
 
 \newslide{Adversaries}
 \slides{
@@ -86,3 +90,4 @@ See also [this blog on the differences between natural and artificial intelligen
 * Difference between finding a fly in your soup vs a peppercorn in your soup. 
 }
 
+\endif
