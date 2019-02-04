@@ -159,15 +159,30 @@ def extract_inputs(lines):
 
     return inp_list
 
-def extract_diagrams(lines):
+def extract_diagrams(lines, type='all'):
     """Extract all the diagrams listed in the file."""
     diagram_list = []
 
-    rebases = [r'\\includegraphics',
-               r'\\includesvg',
-               r'\\includeimg',
-               r'\\includepng',
-               r'\\includejpg']
+    if type == 'all':
+        rebases = [r'\\includegraphics',
+                   r'\\includediagram',
+                   r'\\includediagramclass',
+                   r'\\includeimg',
+                   r'\\includegif',
+                   r'\\includepng',
+                   r'\\includejpg']
+    elif type == 'diagram':
+        rebases = [r'\\includediagram',
+                   r'\\includediagramclass']
+    elif type == 'img':
+        rebases = [r'\\includeimg']
+    elif type == 'png':
+        rebases = [r'\\includepng']
+    elif type == 'gif':
+        rebases = [r'\\includegif']
+    elif type == 'jpg':
+        rebases = [r'\\includejpg']
+        
     retails = [r" *\[[^\]]*\] *{([^}]*)}",
                 r"<[^>]*>{([^}]*)}",
                 r"<[^>]*>\[[^\]]*\]{([^}]*)}",
@@ -178,11 +193,11 @@ def extract_diagrams(lines):
             for line in lines:
                 line_diagram = match_diagram.findall(line)
                 if line_diagram:
-                    print(line_diagram)
                     for diagram in line_diagram:
                         diagram_list += diagram.split(',')
 
     return diagram_list
+
 
 def extract_citations(lines):
      """Extract all the citations listed in the file lines."""
