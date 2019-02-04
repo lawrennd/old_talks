@@ -102,13 +102,6 @@ transition: None
 * Our approaches to systems design are building powerful machines that
 will be deployed in evolving environments.
 
-
-\newslide{Thanks!}
-\slides{
-* twitter: \@lawrennd
-* blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
-* [Natural vs Artifical Intelligence](http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence)
-* [Mike Jordan's Medium Post](https://medium.com/@mijordan3/artificial-intelligence-the-revolution-hasnt-happened-yet-5e1d5812e1e7)
-}
+\thanks
 
 \references

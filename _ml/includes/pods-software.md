@@ -8,8 +8,9 @@
 \notes{In Sheffield we created a suite of software tools
 for 'Open Data Science'. Open data science is an approach to sharing code,
 models and data that should make it easier for companies, health professionals
-and scientists to gain access to data science techniques. For some background on
-open data science you can read [this blog post](http://inverseprobability.com/2014/07/01/open-data-science/).}
+and scientists to gain access to data science techniques. 
+
+\addblog{Open Data Science}{2014/07/01/open-data-science}
 
 \notes{The software can be installed using
 

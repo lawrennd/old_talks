@@ -51,5 +51,23 @@
 \define{\displaycode{block}}{}
 \define{\notesfigure{block}}{}
 
+\define{\addblog{title}{link}}{\ifndef{blogPosts}\defeval{\blogPosts}{* Blog post on [\title](http://inverseprobability.com/\link)
+}
+\else
+\defeval{\blogPosts}{\blogPosts
+* Blog post on [\title](http://inverseprobability.com/\link)
+}
+\endif}
+
+\define{\thanks}{
+\newslide{Thanks!}
+\slides{
+* twitter: \@lawrennd
+\ifdef{blogPosts}
+\blogPosts
+\else
+* blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
+\endif}}
+
 
 \endif

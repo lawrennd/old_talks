@@ -36,3 +36,5 @@ Evolution is better described as "non-survival of the non-fit". You don't have t
 }
 
 \notes{A mistake we make in the design of our systems is to equate fitness with the objective function, and to assume it is known and static. In practice, a real environment would have an evolving fitness function which would be unknown at any given time.}
+
+\addblog{On Natural and Artificial Intelligence}{2018/02/06/natural-and-artificial-intelligence}.

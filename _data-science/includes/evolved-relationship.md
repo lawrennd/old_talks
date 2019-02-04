@@ -16,7 +16,9 @@ There are great benefits to be had from the huge amount of information we can un
 
 Better mediation of this flow actually requires a better understanding of human-computer interaction. This in turn involves understanding our own intelligence better, what its cognitive biases are and how these might mislead us.
 
-For further thoughts see [this Guardian article](https://www.theguardian.com/media-network/2015/jul/23/data-driven-economy-marketing) from 2015 on marketing in the internet era and [this blog post](http://inverseprobability.com/2015/12/04/what-kind-of-ai) on System Zero.} 
+For further thoughts see [this Guardian article](https://www.theguardian.com/media-network/2015/jul/23/data-driven-economy-marketing) from 2015 on marketing in the internet era.}
+
+\addblog{System Zero}{2015/12/04/what-kind-of-ai}
 
 \newslide{Evolved Relationship}
 

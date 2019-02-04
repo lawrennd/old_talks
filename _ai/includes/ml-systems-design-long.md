@@ -65,7 +65,7 @@ These unforseen circumstances are likely to lead to need for much more efficient
 
 The challenge is particularly acute because of the *scale* at which we can deploy AI solutions. This means when something does go wrong, it may be going wrong in billions of households simultaneously.
 
-See also [this blog on the differences between natural and artificial intelligence](http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence) and this paper [on the need for diversity in decision making](http://inverseprobability.com/2017/11/15/decision-making).}
+\addblog{Decision Making and Diversity}{2017/11/15/decision-making}
 
 \newslide{Turnaround And Update}
 \slides{
@@ -80,5 +80,16 @@ See also [this blog on the differences between natural and artificial intelligen
 * A new name for system failures which aren't bugs.
 * Difference between finding a fly in your soup vs a peppercorn in your soup. 
 }
+\ifdef{blogPosts}
+\defeval{\blogPosts}{
+\blogPosts
+* [Mike Jordan's Medium Post](https://medium.com/@mijordan3/artificial-intelligence-the-revolution-hasnt-happened-yet-5e1d5812e1e7)
+}
+\else
+\define{\blogPosts}{
+* [Mike Jordan's Medium Post](https://medium.com/@mijordan3/artificial-intelligence-the-revolution-hasnt-happened-yet-5e1d5812e1e7)
+}
+\endif
+
 
 \endif
