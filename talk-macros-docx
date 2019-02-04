@@ -1,0 +1,69 @@
+\ifndef{talkMacrosDocx}
+\define{talkMacrosDocx}
+
+\define{\div{block}}{\block}
+\define{\centerdiv{block}}{\block}
+
+\define{\linebreak}{\
+}
+
+\define{\href{link}{label}}{[\label](\link)}
+
+\define{\includediagram{filename}{align}{class}{style}}{![](\filename.png)}
+\define{\includediagramclass{filename}{align}{class}{style}}{![](\filename.png)}
+
+
+\define{\colorcyan{block}}{{\color{\cyanColor} \block}}
+\define{\colormagenta{block}}{{\color{\magentaColor} \block}}
+\define{\coloryellow{block}}{{\color{\yellowColor} \block}}
+\define{\colorred{block}}{{\color{\redColor} \block}}
+\define{\colorgreen{block}}{{\color{\greenColor} \block}}
+\define{\colorblue{block}}{{\color{\blueColor} \block}}
+
+\define{\section{text}}{# \text}
+\define{\subsection{text}}{## \text}
+\define{\subsubsection{text}}{### \text}
+
+\define{\xrightarrow{block}}{\rightarrow{\block}}
+
+\define{\caption{block}}{\define{\storeCaption}{\block}}
+
+\defeval{\figure{block}{options}}{
+\define{inFloat}
+\block
+\undef{inFloat}
+\ifdef{storeCaption}
+Store Caption: \storeCaption
+\undef{storeCaption}
+\endif
+}
+
+\define{\table{block}{options}}{
+\define{inFloat}{1}
+\block
+\undef{inFloat}
+\ifdef{storeCaption}
+Store Caption: \storeCaption
+\undef{storeCaption}
+\endif
+}
+
+
+\define{\aligncenter{block}}{\block}
+\define{\alignright{block}}{\block}
+\define{\alignleft{block}}{\block}
+\define{\largetext{block}}{\block}
+\define{\smalltext{block}}{\block}
+\define{\small{block}}{\block}
+
+\define{\includempfour{filename}{width}{height}}{\media{\filename}}
+
+\defeval{\includeimg{filename}{width}{class}{align}}{![\ifdef{storeCaption}\storeCaption\endif](\filename)\
+
+}
+
+
+
+\include{talk-notation.tex}
+
+\endif

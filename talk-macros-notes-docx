@@ -1,0 +1,16 @@
+\ifndef{talkMacrosNotesDocx}
+\define{talkMacrosNotesDocx}
+
+
+\define{\setupdisplaycode{block}}{}
+\define{\displaycode{block}}{}
+\define{\displaynotes{block}}{}
+\define{\setupplotcode{block}}{}
+\define{\plotcode{block}}{}
+
+
+\define{\references}{# References
+
+}
+
+\endif
