@@ -2,7 +2,36 @@
 \define{mlAndSupplyChain}
 \editme
 
+
+
 \subsection{Machine Learning in Supply Chain}
+
+\figure{
+\includejpg{../slides/diagrams/supply-chain/container-2539942_1920}{70%}
+\notes{\caption{The container, arguably the largest agent of social change in the last 100 years.}}
+}
+
+Containerization has had a dramatic effect on global economics, placing many people in the developing world at the end of the supply chain. 
+
+\newslide{Wild Alaskan Cod}
+\slides{
+\includejpg{../slides/diagrams/supply-chain/wild-alaskan-cod}{30%}
+}
+
+\newslide{Wild Alaskan Cod}
+\slides{
+\includejpg{../slides/diagrams/supply-chain/wild-alaskan-cod-made-in-china}{30%}
+}
+
+\notes{
+\figure{
+\column{\includejpg{../slides/diagrams/supply-chain/wild-alaskan-cod}{90%}}{\includejpg{../slides/diagrams/supply-chain/wild-alaskan-cod-made-in-china}{90%}}{45%}{45%}
+\caption{Wild Alaskan Cod, that is a product of China. It is cheaper to ship the deep frozen fish thousands of kilometers for processing than to process locally.}
+}
+}
+
+
+\newslide{Machine Learning in Supply Chain}
 \slides{
 * *Supply chain*: Large Automated Decision Making Network
 * Amazon's supply chain: Possibly the world's largest 'AI'

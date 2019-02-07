@@ -51,7 +51,9 @@ transition: None
     * Maintain interpretability.
 
 
-\subsection{References}
+\thanks
+
+\references
 
 
 
