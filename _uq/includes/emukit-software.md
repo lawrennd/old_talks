@@ -3,6 +3,18 @@
 \editme
 
 \subsection{Emukit}
+\slides{
+\includepng{../slides/diagrams/uq/emukit-software-page}{80%}
+\center{<https://amzn.github.io/emukit/>}
+}
+
+\newslide{Emukit}
+\slides{
+\includepng{../slides/diagrams/uq/emukit-software-page2}{80%}
+\center{<https://amzn.github.io/emukit/>}
+}
+
+\newslide{Emukit}
 
 \slides{
 * Work by Javier Gonzalez, Andrei Paleyes, Mark Pullin, Maren Mahsereci, Alex Gessner, Aaron Klein.

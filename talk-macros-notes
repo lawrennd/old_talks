@@ -55,6 +55,7 @@ from \filename import \object
 
 \define{\addblog{title}{link}}{You can also check my blog post on ["\title"](http://inverseprobability.com/\link)}.
 
+
 \define{\thanks}{}
 
 \endif
