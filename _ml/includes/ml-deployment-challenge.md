@@ -16,6 +16,7 @@ In practice modern software systems involve continuous deployment of models into
 \slides{
 * Deployment of modeling code.
 * Data dependent models in production need *continuous monitoring*.
+* Continous monitoring implies *statistical tests* rather than classic software tests.
 }
 
 \notes{Once the decomposition is understood, the data is sourced and the models
@@ -39,6 +40,8 @@ approach we refer to as *progression testing*. Unfortunately, standards
 around ML model deployment yet been developed. The modern world of
 continuous deployment does rely on testing, but it does not recognize
 the continuous evolution of the world around us.}
+
+\notes{Progression tests are likely to be *statistical* tests in contrast to classical software tests. The should be monitoring model performance and quality measures. They could also monitor conformance to standardized *fairness* measures.}
 
 \newslide{Continuous Monitoring}
 \slides{

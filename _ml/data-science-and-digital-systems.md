@@ -55,13 +55,20 @@ transition: None
 <!--include{_gp/includes/gp-intro-very-short.md}-->
 <!--include{_deepgp/includes/deep-olympic.md}-->
 
+\subsection{Thoughts from Willis's Talk}
+\slides{
+* Analytics: Data Science for Business Graduates
+* We are entering a golden era for statistics.
+* To take advantage:
+    * Statisticians need to learn to *scale*.
+	* Statisticians need to learn to *code* (properly!).
+* Can do attitude vs Can't do attitude.
+}
+\notes{Before moving on some thoughts triggered by the discussion of Willis's talk.}
 
+\notes{Names are evolving, and should be allowed to evolve, let's not pin down new terms to closely yet. But when it comes to analytics, that feels like it is the education of decision makers (MBA graduates, managers, civil servants) about the limits and capabilities of data driven technologies.}
 
-\todo{Analytics??? MBA based data science?}
-\todo{Statisticians fail to scale}
-\todo{Statisticians fail to code}
-\todo{Statisticians ... sharing code R}
-\todo{Can Do attitude vs Can't do attitude}
+\notes{It's true that the world of data is changing, but this should be leading to a golden era for statistics. But to take advantage statisticians need to learn to scale. That means sharing their expertise and empowering domain experts. That means learning to *code properly*. I.e. to work with software engineers in deployment of solutions. The world is changing around statistics, and these changes require a *can do* attitude. Data science is a garden in which Computer Scientists and Statisticians can finally play together, undoing years of institutional and cultural barriers between the fields.}
 
 \include{_data-science/includes/data-science-challenges.md}
 
@@ -92,7 +99,7 @@ transition: None
 \newslide{THE THREE Ds of ML SYSTEMS DESIGN}
 
 \include{_ml/includes/the-3ds-of-ml-systems-design.md}
-\include{_ml/includes/the-3ds-enough-talk.md}
+<!--\include{_ml/includes/the-3ds-enough-talk.md}-->
 \include{_ml/includes/ml-outlook.md}
 
 \subsection{Conclusion}
