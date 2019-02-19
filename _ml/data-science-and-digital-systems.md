@@ -27,6 +27,8 @@ transition: None
 
 \section{Introduction}
 
+\notes{The modern world is becoming increasingly dominated by data. In this talk we consider consider the emerging field of *data science* and what it takes to build a modern digital system. We will look at the challenges we face now and in the future. Finally we end by considering a set of solutions for deploying machine learning systems today. The three Ds of machine learning systems design.}
+
 \include{_data-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
 
 \include{_data-science/includes/lies-damned-lies.md}
