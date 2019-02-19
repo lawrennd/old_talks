@@ -42,9 +42,19 @@ from ipywidgets import IntSlider}
 
 \slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{007}}{}{}{\svgstyle}}{\stubname}{\divoptions}}
 
+\notes{
+\figure{
+\includediagram{../slides/diagrams/\concat{\stubname}{006}}
+\caption{Conversation relies on internal models of other individuals.}}}
+\notes{
+\figure{
+\includediagram{../slides/diagrams/\concat{\stubname}{007}}
+\caption{Misunderstanding of context and who we are talking to leads to arguments.}}}
 
-\notesfigure{\includediagram{../slides/diagrams/\concat{\stubname}{006}}}
-\notes{\caption{Conversation relies on internal models of other individuals.}}
-\notesfigure{\includediagram{../slides/diagrams/\concat{\stubname}{007}}}
-\notes{\caption{Misunderstanding of context and who we are talking to leads to arguments.}}
-\speakernotes{This can be disturbing to humans because we are used to a low bandwidth communication rate. }
+\notes{Embodiment factors imply that, in our communication between humans, what is *not* said is, perhaps, more important than what is said. To communicate with each other we need to have a model of who each of us are.} 
+
+\notes{To aid this, in society, we are required to perform roles. Whether as a parent, a teacher, an employee or a boss. Each of these roles requires that we conform to certain standards of behaviour to facilitate communication between ourselves.}
+
+\notes{Control of self is vitally important to these communications.}
+
+\notes{The high availability of data available to humans undermines human-to-human communication channels by providing new routes to undermining our control of self.}

@@ -1,3 +1,6 @@
+\ifndef{societalEffects}
+\define{societalEffects}
+\editme
 
 \newslide{Effects}
 \slides{
@@ -34,3 +37,5 @@ There is also great promise for personalized health, but in health the wide data
 }
 
 \notes{The main phenomenon we see across the board is the shift in dynamic from the direct pathway between human and data, as traditionally mediated by classical statistcs, to a new flow of information via the computer. This change of dynamics gives us the modern and emerging domain of *data science*.}
+
+\endif

@@ -22,6 +22,7 @@
 \define{\codeassignment{text}{question}{marks}}{}
 \define{\section{text}}{<!-- SECTION \text -->}
 \define{\subsection{text}}{### \text}
+\define{\subsubsection{text}}{### \text}
 \define{\slides{text}}{\text}
 \define{\slidesincremental{text}}{::: incremental
 

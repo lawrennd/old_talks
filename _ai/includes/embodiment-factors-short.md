@@ -10,8 +10,8 @@
 <table>
  <tr>
   <td></td>
-  <td align="center">\includeimg{../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg}{40%}{}{center}</td>
-  <td align="center">\includeimg{../slides/diagrams/ClaudeShannon_MFO3807.jpg}{25%}{}{center}</td>
+  <td align="center">\includejpg{../slides/diagrams/IBM_Blue_Gene_P_supercomputer}{40%}</td>
+  <td align="center">\includejpg{../slides/diagrams/ClaudeShannon_MFO3807}{25%}{}</td>
  </tr>
  <tr>
   <td>compute</td>
@@ -29,7 +29,7 @@
  </tr>
 </table>
 }
-\slides{See ["Living Together: Mind and Machine Intelligence" @Lawrence:embodiment17](https://arxiv.org/abs/1705.07996)}
+\slides{See \href{https://arxiv.org/abs/1705.07996}{"Living Together: Mind and Machine Intelligence" @Lawrence:embodiment17}}
 
 \notes{There is a fundamental limit placed on our intelligence based on our ability to communicate. Claude Shannon founded the field of information theory. The clever part of this theory is it allows us to separate our measurement of information from what the information pertains to[^knowledge-representation].
 

@@ -32,48 +32,31 @@ abstract: >
 
 \include{_data-science/includes/lies-damned-lies.md}
 
-### Background: Big Data
-
+\newslide{Background: Big Data}
+\slides{
 * Data is Pervasive phenomenon that affects all aspects of our activities
 
 * Data diffusiveness is both a challenge and an opportunity
-
+}
 \include{_data-science/includes/evolved-relationship.md}
 \include{_ai/includes/embodiment-factors.md}
 
-### Evolved Relationship 
+\newslide{Evolved Relationship}
 
 \includediagram{../slides/diagrams/data-science/information-flow004}
 
-
 \include{_data-science/includes/societal-effects.md}
 
-
-### Challenges
-
-1. Paradoxes of the Data Society
-
-2. Quantifying the Value of Data
-
-3. Privacy, loss of control, marginalization
+\include{_data-science/includes/data-science-challenges.md}
 
 
-\include{_data-science/includes/breadth-or-depth.md}
-
-\include{_data-science/includes/value-of-data.md}
-
-\include{_data-science/includes/privacy-loss-of-control.md}
-
-
-### Conclusion
-
+\newslide{Conclusion}
+\slides{
 * Data science offers a great deal of promise
 * There are challenges and pitfalls
 * It is incumbent on us to avoid them
 
 **Many solutions rely on education and awareness**
+}
 
-### Thanks!
-
-* twitter: \@lawrennd
-* blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
+\thanks

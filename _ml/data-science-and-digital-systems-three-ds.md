@@ -27,6 +27,13 @@ venue: Stu Hunter Resesearch Conference, Milan
 transition: None
 ---
 
+\include{../_ml/includes/what-is-ml.md}
+\include{../_ml/includes/data-science-vs-ai.md}
+\include{../_ai/includes/embodiment-factors.md}
+\include{../_data-science/includes/evolved-relationship.md}
+\include{../_ml/includes/what-does-machine-learning-do.md}
+
+
 \include{talk-macros.tex}
 
 \section{Introduction}

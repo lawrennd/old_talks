@@ -25,16 +25,19 @@ transition: None
 
 \include{talk-macros.tex}
 
+\section{Introduction}
+
 \include{_data-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
 
-\include{_ai/includes/centrifugal-governor.md}
+\include{_data-science/includes/lies-damned-lies.md}
 
 \include{_ml/includes/what-is-ml-2.md}
 \include{_ai/includes/ai-vs-data-science-2.md}
 
-
-\include{../_ai/includes/embodiment-factors.md}
+\include{_ai/includes/embodiment-factors.md}
 \include{_data-science/includes/evolved-relationship.md}
+\include{_data-science/includes/societal-effects.md}
+
 \include{_ml/includes/what-does-machine-learning-do.md}
 
 \newslide{Deep Learning}
@@ -51,20 +54,20 @@ transition: None
 <!--
 <!--include{_gp/includes/gp-intro-very-short.md}-->
 <!--include{_deepgp/includes/deep-olympic.md}-->
-<!--
-include{_data-science/includes/the-data-crisis.md} 
 
-newslide{Rest of this Talk: Two Areas of Focus}
 
-* Reusability of Data
-* Deployment of Machine Learning Systems
 
-newslide{Rest of this Talk: Two Areas of Focus}
+\todo{Analytics??? MBA based data science?}
+\todo{Statisticians fail to scale}
+\todo{Statisticians fail to code}
+\todo{Statisticians ... sharing code R}
+\todo{Can Do attitude vs Can't do attitude}
 
-* <s>Reusability of Data</s>
-* Deployment of Machine Learning Systems
+\include{_data-science/includes/data-science-challenges.md}
 
-include{_data-science/includes/data-readiness-levels.md}
+\include{_ai/includes/centrifugal-governor.md}
+
+\subsection{Amazon: Bits and Atoms}
 
 \newslide{Artificial Intelligence}
 
@@ -82,12 +85,14 @@ include{_data-science/includes/data-readiness-levels.md}
 * Major new challenge for systems designers.
 * Internet of Intelligence but currently:
 	* AI systems are *fragile*
--->
-\subsection{Amazon: Bits and Atoms}
 
 \include{_supply-chain/includes/ml-and-supply-chain.md}
 \include{_ml/includes/or-control-econometrics-statistics-ml.md}
-\include{_ml/includes/general-ml-challenges.md}
+
+\newslide{THE THREE Ds of ML SYSTEMS DESIGN}
+
+\include{_ml/includes/the-3ds-of-ml-systems-design.md}
+\include{_ml/includes/the-3ds-enough-talk.md}
 \include{_ml/includes/ml-outlook.md}
 
 \subsection{Conclusion}
@@ -98,20 +103,11 @@ include{_data-science/includes/data-readiness-levels.md}
 * ML is *critically* dependent on data.
 * Challenges in *problem Decomposition*, *Data curation* and *model Deployment* 
 }
-\notes{We operate in a technologically evolving environment.  Machine learning is becoming a key coponent in our decision making capabilities, our intelligence and strategic command. However, technology drove changes in battlefield strategy. From the stalemate of the first world war to the tank-dominated Blitzkrieg of the second, to the asymmetric warfare of the present. Our technology, tactics and strategies are also constantly evolving. Machine learning is part of that evolution solution, but the main challenge is not to become so fixated on the tactics of today that we miss the evolution of strategy that the technology is suggesting.}
+\notes{We operate in a technologically evolving environment.  Machine learning is becoming a key component in our decision making capabilities, our intelligence and strategic command. However, technology drove changes in battlefield strategy. From the stalemate of the first world war to the tank-dominated Blitzkrieg of the second, to the asymmetric warfare of the present. Our technology, tactics and strategies are also constantly evolving. Machine learning is part of that evolution solution, but the main challenge is not to become so fixated on the tactics of today that we miss the evolution of strategy that the technology is suggesting.}
 
-\newslide{Thanks!}
+\thanks
 
-\slides{
-* twitter: \@lawrennd
-* blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
-* podcast: <http://thetalkingmachines.com>
-* [Natural vs Artifical Intelligence](http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence)
-* [Mike Jordan's Medium Post](https://medium.com/@mijordan3/artificial-intelligence-the-revolution-hasnt-happened-yet-5e1d5812e1e7)
-}
-
-\subsection{References}
-
+\references
 
 
 

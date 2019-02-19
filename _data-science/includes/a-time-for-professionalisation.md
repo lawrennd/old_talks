@@ -5,14 +5,14 @@
 \newslide{Data Science}
 \slides{
 * Industrial Revolution 4.0?
-* *Industrial Revolution* (1760-1840) term coined by Arnold Toynbee,
-in 20th century.
+* *Industrial Revolution* (1760-1840) term coined by Arnold Toynbee (1852-1883).
 * Maybe: But this one is dominated by *data* not *capital*
+* A revolution in *information* rather than *energy*.
 * That presents *challenges* and *opportunities* 
+* Consider Apple vs Nokia: How you handle disruption.
 
 compare [digital oligarchy](https://www.theguardian.com/media-network/2015/mar/05/digital-oligarchy-algorithms-personal-data) vs [how Africa can benefit from the data revolution](https://www.theguardian.com/media-network/2015/aug/25/africa-benefit-data-science-information)
 
-* Apple vs Nokia: How you handle disruption.
 }
 \notes{The rise in data science and artificial intelligence technologies has been termed "Industrial Revolution 4.0", so are we in the midst of an industrial change? Maybe, but if so, it is the first part of the industrial revolution to be named before it has happened. The original industrial revolution occurred between 1760 and 1840, but the term was introduced into English by Arnold Toynbee (1852-1883).}
 
@@ -69,4 +69,4 @@ While data science involves programming, it is different in the following way. M
 
 Others are also pointing out these challenges, [this post](https://medium.com/@karpathy/software-2-0-a64152b37c35) from Andrej Karpathy (now head of AI at Tesla) covers the notion of "Software 2.0". Google researchers have highlighted the challenges of "Technical Debt" in machine learning [@Sculley:debt15]. Researchers at Berkeley have characterized the systems challenges associated with machine learning [@Stoica:systemsml17].}
 
-\editme
+\endif

@@ -13,7 +13,8 @@
 
 \newslide{}
 
-\figure{\includejpg{../slides/diagrams/640px-Marcel_Renault_1903}{70%}
+\figure{
+\includejpg{../slides/diagrams/640px-Marcel_Renault_1903}{70%}
 \caption{Marcel Renault races a Renault 40 cv during the Paris-Madrid race, an early Grand Prix, in 1903. Marcel died later in the race after missing a warning flag for a sharp corner at Couhé Vérac, likely due to dust reducing visibility.}}
 
 \notes{In contrast, our computers have less computational power, but they can communicate far more fluidly. They are more like a go-kart, less well powered, but with tires that allow them to deploy that power.}

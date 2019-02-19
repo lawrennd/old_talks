@@ -1,18 +1,17 @@
-### Wood or Tree
+\newslide{Wood or Tree}
 
 * Can either see a wood or a tree. 
 
-<img src="../slides/diagrams/Grib_skov.jpg" width="50%" style="border:none">
-<!-- https://upload.wikimedia.org/wikipedia/commons/5/5b/Grib_skov.jpg-->
+\includejpg{../slides/diagrams/Grib_skov}{50%}
 
-### Examples
+\newslide{Examples}
 
 * Election polls (UK 2015 elections, EU referendum, US 2016 elections)
 
 * Clinical trials vs personalized medicine: Obtaining statistical power where interventions are subtle. e.g. social media
 
 
-### Breadth vs Depth
+\newslide{Breadth vs Depth}
 
 * Modern Measurement deals with *depth* (many subjects)
     ... or *breadth* lots of detail about subject.
@@ -25,7 +24,7 @@
 
 * Advantages for privacy and latency.
 
-### Also need
+\newslide{Also need}
 
 * More classical statistics!
     * Like the 'paperless office'

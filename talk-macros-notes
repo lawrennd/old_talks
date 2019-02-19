@@ -18,6 +18,7 @@
 
 \define{\section{text}}{# \text}
 \define{\subsection{text}}{## \text}
+\define{\subsubsection{text}}{### \text}
 
 \define{\code{block}}{```{.python}
 \block

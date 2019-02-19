@@ -39,7 +39,7 @@ Store Caption: \storeCaption
 }
 
 \define{\table{block}{options}}{
-\define{inFloat}{1}
+\define{inFloat}
 \block
 \undef{inFloat}
 \ifdef{storeCaption}

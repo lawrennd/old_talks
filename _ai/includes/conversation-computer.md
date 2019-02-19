@@ -26,10 +26,14 @@ from ipywidgets import IntSlider}
 \endanimation
 }
 
+\figure{
 \notesfigure{\includediagram{../slides/diagrams/\concat{\stubname}{006}}}
 \notes{\caption{Conversation relies on internal models of other individuals.}}
+}
+\figure{
 \notesfigure{\includediagram{../slides/diagrams/\concat{\stubname}{007}}}
 \notes{\caption{Misunderstanding of context and who we are talking to leads to arguments.}}
+}
 \speakernotes{This can be disturbing to humans because we are used to a low bandwidth communication rate. }
 
 

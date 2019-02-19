@@ -1,8 +1,13 @@
+\ifndef{privacyLossOfControl}
+\define{privacyLossOfControl}
+\editme
 
 \newslide{Privacy, Loss of Control and Marginalization}
-
+\slides{
 * Society is becoming harder to monitor
 * Individual is becoming easier to monitor
+}
+\notes{Society is becoming harder to monitor, but the individual is becoming easier to monitor.}
 
 \include{_ai/includes/conversation-technical.md}
 
@@ -25,17 +30,18 @@
 \newslide{Discrimination}
 
 * Potential for explicit and implicit discrimination on the basis of race, religion, sexuality, health status
+
 * All prohibited under European law, but can pass unawares, or be implicit
+
 * GDPR: General Data Protection Regulation
 
-\newslide{Discrimination {.slide: data-transition="none"}
+\newslide{Discrimination}
 
 * Potential for explicit and implicit discrimination on the basis of race, religion, sexuality, health status
 
 * All prohibited under European law, but can pass unawares, or be implicit
 
 * GDPR: Good Data Practice Rules
-
 
 \newslide{Marginalization}
 
@@ -45,7 +51,13 @@
 
 \newslide{Digital Revolution and Inequality?}
 
-\includeimg{../slides/diagrams/woman-tends-house-in-village-of-uganda-africa.jpg}{50%}
+\includejpg{../slides/diagrams/woman-tends-house-in-village-of-uganda-africa}{50%}
+
+
+\include{_data-science/includes/data-science-africa.md}
+
+\include{_data-science/includes/data-trusts.md}
+
 
 \newslide{Amelioration}
 
@@ -53,3 +65,5 @@
 * We accept privacy in our real lives, need to accept it in our digital
 * Control of persona and ability to project
 * Need better technological solutions: trust and algorithms.
+
+\endif

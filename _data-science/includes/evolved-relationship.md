@@ -34,7 +34,7 @@ For further thoughts see [this Guardian article](https://www.theguardian.com/med
 
 \figure{
 \notesfigure{\includediagram{../slides/diagrams/data-science/\concat{\stubname}{002}}}
-\notes{\caption{New direction of information flow, information is reaching us mediated by the computer}}
+\notes{\caption{The trinity of human, data and computer, and highlights the modern phenomenon. The communication channel between computer and data now has an extremely high bandwidth. The channel between human and computer and the channel between data and human is narrow. New direction of information flow, information is reaching us mediated by the computer.}}
 }
 
 \endif
