@@ -8,7 +8,7 @@
 
 \notes{As an example of using Gaussian process models within the full pipeline from data to decsion, we'll consider the prediction of Malaria incidence in Uganda. For the purposes of this study malaria reports come in two forms, HMIS reports from health centres and Sentinel data, which is curated by the WHO. There are limited sentinel sites and many HMIS sites.
 
-The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboration with John Quinn and Martin Mubangizi [@Andrade:consistent14,@Mubangizi:malaria14,]. John and Martin were initally from the AI-DEV group from the University of Makerere in Kampala and more latterly they were based at UN Global Pulse in Kampala.}
+The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboration with John Quinn and Martin Mubangizi [@Andrade:consistent14,@Mubangizi:malaria14]. John and Martin were initally from the AI-DEV group from the University of Makerere in Kampala and more latterly they were based at UN Global Pulse in Kampala.}
 
 \slides{* Work with Ricardo Andrade Pacheco, John Quinn and Martin Mubaganzi (Makerere University, Uganda)
 * See [AI-DEV Group](http://air.ug/research.html).}
@@ -67,13 +67,13 @@ The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboratio
 \includegif{../slides/diagrams/health/kabarole}{100%}
 \notes{\caption{Estimate of the current disease situation in the Kabarole district over time. Estimate is constructed with a Gaussian process with an additive covariance funciton.}}
 
-\notes{Health monitoring system for the Kabarole district. Here we have fitted the reports with a Gaussian process with an additive covariance function. It has two components, one is a long time scale component (in red above) the other is a short time scale component (in blue). 
+\notes{Health monitoring system for the Kabarole district. Here we have fitted the reports with a Gaussian process with an additive covariance function. It has two components, one is a long time scale component (in red above) the other is a short time scale component (in blue).}
 
-Monitoring proceeds by considering two aspects of the curve. Is the blue line (the short term report signal) above the red (which represents the long term trend? If so we have higher than expected reports. If this is the case *and* the gradient is still positive (i.e. reports are going up) we encode this with a *red* color. If it is the case and the gradient of the blue line is negative (i.e. reports are going down) we encode this with an *amber* color. Conversely, if the blue line is below the red *and* decreasing, we color *green*. On the other hand if it is below red but increasing, we color *yellow*. 
+\notes{Monitoring proceeds by considering two aspects of the curve. Is the blue line (the short term report signal) above the red (which represents the long term trend? If so we have higher than expected reports. If this is the case *and* the gradient is still positive (i.e. reports are going up) we encode this with a *red* color. If it is the case and the gradient of the blue line is negative (i.e. reports are going down) we encode this with an *amber* color. Conversely, if the blue line is below the red *and* decreasing, we color *green*. On the other hand if it is below red but increasing, we color *yellow*.}
 
-This gives us an early warning system for disease. Red is a bad situation getting worse, amber is bad, but improving. Green is good and getting better and yellow good but degrading. 
+\notes{This gives us an early warning system for disease. Red is a bad situation getting worse, amber is bad, but improving. Green is good and getting better and yellow good but degrading.}
 
-Finally, there is a gray region which represents when the scale of the effect is small.}
+\notes{Finally, there is a gray region which represents when the scale of the effect is small.}
 
 \newslide{Early Warning Systems}
 
