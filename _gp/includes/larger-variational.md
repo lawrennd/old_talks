@@ -74,9 +74,9 @@ $$
 * Resulting algorithms reduce computational complexity.
 * Also allow deployment of more standard scaling techniques. 
 * E.g. Stochastic variational inference @Hoffman:stochastic12
-* Allow for scaling e.g. stochastic variational @Hensman:bigdata13 or parallelization @Gal:distributed14,@Dai:gpu14, @Seeger:auto17
+* Allow for scaling e.g. stochastic variational @Hensman:bigdata13 or parallelization [@Gal:distributed14;@Dai:gpu14;@Seeger:auto17]
 }
-\notes{Inducing variables don't only allow for the compression of the non-parameteric information into a reduced data set but they also allow for computational scaling of the algorithms through, for example stochastic variational approaches[@Hoffman:stochastic12; @Hensman:bigdata13] or parallelization @Gal:Distributed14,@Dai:gpu14, @Seeger:auto17.}
+\notes{Inducing variables don't only allow for the compression of the non-parameteric information into a reduced data set but they also allow for computational scaling of the algorithms through, for example stochastic variational approaches[@Hoffman:stochastic12; @Hensman:bigdata13] or parallelization [@Gal:Distributed14;@Dai:gpu14;@Seeger:auto17].}
 
 
 \endif

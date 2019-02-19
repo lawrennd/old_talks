@@ -8,7 +8,7 @@
 
 \notes{As an example of using Gaussian process models within the full pipeline from data to decsion, we'll consider the prediction of Malaria incidence in Uganda. For the purposes of this study malaria reports come in two forms, HMIS reports from health centres and Sentinel data, which is curated by the WHO. There are limited sentinel sites and many HMIS sites.
 
-The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboration with John Quinn and Martin Mubangizi [@Andrade:consistent14,@Mubangizi:malaria14]. John and Martin were initally from the AI-DEV group from the University of Makerere in Kampala and more latterly they were based at UN Global Pulse in Kampala.}
+The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboration with John Quinn and Martin Mubangizi [@Andrade:consistent14;@Mubangizi:malaria14]. John and Martin were initally from the AI-DEV group from the University of Makerere in Kampala and more latterly they were based at UN Global Pulse in Kampala.}
 
 \slides{* Work with Ricardo Andrade Pacheco, John Quinn and Martin Mubaganzi (Makerere University, Uganda)
 * See [AI-DEV Group](http://air.ug/research.html).}
@@ -20,7 +20,7 @@ The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboratio
 \includepng{../slides/diagrams/health/uganda-districts-2006}{50%}
 \caption{Data SRTM/NASA from <https://dds.cr.usgs.gov/srtm/version2_1>}
 
-\alignright{[@Andrade:consistent14,@Mubangizi:malaria14]}
+\alignright{[@Andrade:consistent14;@Mubangizi:malaria14]}
 
 
 \ifdef{olympicMarathonData}
