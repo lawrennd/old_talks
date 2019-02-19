@@ -22,7 +22,6 @@ from ipywidgets import IntSlider}
 \newframe{\includediagram{../slides/diagrams/data-science/\initials-google-trends002}}{\initials-google-trends}{\divstyle}
 \newframe{\includediagram{../slides/diagrams/data-science/\initials-google-trends003}}{\initials-google-trends}{\divstyle}
 \newframe{\includediagram{../slides/diagrams/data-science/\initials-google-trends004}}{\initials-google-trends}{\divstyle}
-\newframe{\includediagram{../slides/diagrams/data-science/\initials-google-trends}}{\initials-google-trends}{\divstyle}
 \endanimation
 }
 
