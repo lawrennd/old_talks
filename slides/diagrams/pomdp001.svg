@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?xml-stylesheet href="diag.css" type="text/css"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -23,7 +24,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -31,19 +32,19 @@
      id="defs3410" />
   <style
      id="style4340">
-      .mycirc { fill-opacity:1;stroke-width:3;stroke:white;fill:black;}
-      .myrect { fill-opacity:1;stroke-width:3;stroke:white;}
+      .mycirc { fill-opacity:1;stroke-width:3;stroke:black;fill:white;}
+      .myrect { fill-opacity:1;stroke-width:3;stroke:black;fill:white;}
       .myarrow { stroke:white;stroke-width:2;marker-end:url(#markerArrow);}
       .mythickarrow { stroke:white;stroke-width:20;marker-end:url(#markerThickArrow);}
-      .myline { stroke:white;stroke-width:2;}
-      .myline2 { fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke:white}
-      .mythickline { stroke:white;stroke-width:30;}
+      .myline { stroke:black;stroke-width:2;}
+      .myline2 { fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke:black}
+      .mythickline { stroke:black;stroke-width:30;}
       .mytext { fill:white;font-size:2em;}
-      .mycentredtext { fill:white;font-size:2em;text-anchor:middle;text-align:center;dominant-baseline="mathematical"}
-      .mysmallinverttext { fill:black;font-size:1.5em;font-family: &quot;Source Sans Pro&quot;, Helvetica, sans-serif;}
-  </style>
+      .mycentredtext { fill:black;font-size:2em;text-anchor:middle;text-align:center;}
+      .mysmallinverttext { fill:white;font-size:1.5em;font-family: &quot;Source Sans Pro&quot;, Helvetica, sans-serif;}
+</style>
   <sodipodi:namedview
-     pagecolor="#000000"
+     pagecolor="#FFFFFF"
      bordercolor="#666666"
      borderopacity="1"
      objecttolerance="10"
@@ -55,9 +56,9 @@
      inkscape:window-height="714"
      id="namedview3408"
      showgrid="false"
-     inkscape:zoom="0.88294712"
-     inkscape:cx="156.66218"
-     inkscape:cy="220.43133"
+     inkscape:zoom="1.2422276"
+     inkscape:cx="216.99647"
+     inkscape:cy="204.90031"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
@@ -68,67 +69,108 @@
      fit-margin-bottom="0" />
   <text
      class="mycentredtext"
-     x="140"
-     y="26"
-     id="p_0_text">
-    <tspan font-style="italic">p</tspan>
-    <tspan baseline-shift="sub" font-size="0.65em">0</tspan>
+     x="142"
+     y="28.06284"
+     id="p_0_text"
+     style="font-size:24px;text-align:center;text-anchor:middle">
+    <tspan
+       font-style="italic"
+       id="tspan7645"
+       style="font-style:italic">p</tspan>
+    <tspan
+       baseline-shift="sub"
+       font-size="0.65em"
+       id="tspan7647"
+       style="font-size:15.59999943px;baseline-shift:sub">0</tspan>
   </text>
   <path
      class="myline"
-     d="m 40,40 200,0"
-     id="p_0" />
+     d="m 42,42.06284 200,0"
+     id="p_0"
+     inkscape:connector-curvature="0"
+     style="stroke-width:2" />
   <path
      class="myline"
-     d="M 40,40 260,400"
-     id="s_0-r_0" />
+     d="m 42,42.06284 220,360"
+     id="s_0-r_0"
+     inkscape:connector-curvature="0"
+     style="stroke-width:2" />
   <circle
      class="mycirc"
      id="s_0"
-     cx="40"
-     cy="40"
-     r="40" />
+     cx="42"
+     cy="42.06284"
+     r="40"
+     style="stroke-width:3" />
   <text
      class="mycentredtext"
-     x="40"
-     y="40"
-     id="s_0_text">
-    <tspan font-style="italic">s</tspan>
-    <tspan baseline-shift="sub" font-size="0.65em">0</tspan>
+     x="42"
+     y="42.06284"
+     id="s_0_text"
+     style="font-size:24px;text-align:center;text-anchor:middle">
+    <tspan
+       font-style="italic"
+       id="tspan7653"
+       style="font-style:italic">s</tspan>
+    <tspan
+       baseline-shift="sub"
+       font-size="0.65em"
+       id="tspan7655"
+       style="font-size:15.59999943px;baseline-shift:sub">0</tspan>
   </text>
   <path
      class="myline"
-     d="M 190,173 260,400"
-     id="a_0-r_0" />
+     d="m 192,175.06284 70,227"
+     id="a_0-r_0"
+     inkscape:connector-curvature="0"
+     style="stroke-width:2" />
   <rect
      class="myrect"
      id="a_0"
      width="80"
      height="80"
-     x="153"
-     y="136" />
+     x="155"
+     y="138.06284"
+     style="stroke-width:3" />
   <text
      class="mycentredtext"
-     x="193"
-     y="176"
-     id="a_0_text">
-    <tspan font-style="italic">a</tspan>
-    <tspan baseline-shift="sub" font-size="0.65em">0</tspan>
+     x="195"
+     y="178.06284"
+     id="a_0_text"
+     style="font-size:24px;text-align:center;text-anchor:middle">
+    <tspan
+       font-style="italic"
+       id="tspan7706"
+       style="font-style:italic">a</tspan>
+    <tspan
+       baseline-shift="sub"
+       font-size="0.65em"
+       id="tspan7708"
+       style="font-size:15.59999943px;baseline-shift:sub">0</tspan>
   </text>
   <rect
      class="myrect"
      id="r_0"
      width="80"
      height="80"
-     x="-40"
-     y="-40"
-     transform="matrix(0.70710678,-0.70710678,-0.70710678,-0.70710678,260,400)" />
+     x="-139.03938"
+     y="-509.56332"
+     transform="matrix(0.70710678,-0.70710678,-0.70710678,-0.70710678,0,0)"
+     style="stroke-width:3" />
   <text
      class="mycentredtext"
-     x="260"
-     y="400"
-     id="r_0_text">
-    <tspan font-style="italic">r</tspan>
-    <tspan baseline-shift="sub" font-size="0.65em">0</tspan>
+     x="262"
+     y="402.06284"
+     id="r_0_text"
+     style="font-size:24px;text-align:center;text-anchor:middle">
+    <tspan
+       font-style="italic"
+       id="tspan7726"
+       style="font-style:italic">r</tspan>
+    <tspan
+       baseline-shift="sub"
+       font-size="0.65em"
+       id="tspan7728"
+       style="font-size:15.59999943px;baseline-shift:sub">0</tspan>
   </text>
 </svg>
