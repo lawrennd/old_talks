@@ -370,13 +370,7 @@
 <!-- Front matter -->
 <!--Back matter-->
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
-<div class="header" style="">
-<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml.md" target="_blank" >[edit]</a></small>
-</div>
 <!-- SECTION What is Machine Learning? -->
-<div class="header" style="">
-<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/data-plus-model.md" target="_blank" >[edit]</a></small>
-</div>
 </section>
 <section id="what-is-machine-learning" class="slide level3">
 <h3>What is Machine Learning?</h3>
@@ -412,9 +406,6 @@
 <li class="fragment"><strong>a prediction function</strong> <span class="math inline">\(\mappingFunction(\cdot)\)</span> includes our beliefs about the regularities of the universe</li>
 <li class="fragment"><strong>an objective function</strong> <span class="math inline">\(\errorFunction(\cdot)\)</span> defines the cost of misprediction.</li>
 </ul>
-<div class="header" style="">
-<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/data-science-vs-ai.md" target="_blank" >[edit]</a></small>
-</div>
 </section>
 <section id="machine-learning" class="slide level3">
 <h3>Machine Learning</h3>
@@ -472,12 +463,6 @@ Convention for the Protection of <em>Individuals</em> with regard to Automatic P
 <li><em>databases</em>, <em>data mining</em>, <em>statistics</em>, <em>visualization</em></li>
 </ul></li>
 </ul>
-<div class="header" style="">
-<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors.md" target="_blank" >[edit]</a></small>
-</div>
-<div class="header" style="">
-<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors-short.md" target="_blank" >[edit]</a></small>
-</div>
 </section>
 <section id="embodiment-factors" class="slide level3">
 <h3>“Embodiment Factors”</h3>
@@ -558,9 +543,6 @@ communicate
 <center>
 <em>Caleb McDuff driving for WIX Silence Racing.</em>
 </center>
-<div class="header" style="">
-<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/evolved-relationship.md" target="_blank" >[edit]</a></small>
-</div>
 <!-- SECTION Evolved Relationship with Information -->
 </section>
 <section id="evolved-relationship" class="slide level3">
@@ -576,11 +558,23 @@ communicate
 <object class="svgplot " align data="../slides/diagrams/data-science/new-flow-of-information002.svg" style="vertical-align:middle;height:50%">
 </object>
 </div>
-<div class="header" style="">
-<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-does-machine-learning-do.md" target="_blank" >[edit]</a></small>
-</div>
 </section>
-<section><section id="what-does-machine-learning-do-1" class="titleslide slide level2"><h2>What does Machine Learning do?</h2></section><section id="codify-through-mathematical-functions" class="slide level3">
+<section id="what-does-machine-learning-do-1" class="slide level3">
+<h3>What does Machine Learning do?</h3>
+<ul>
+<li>Automation scales by codifying processes and automating them.</li>
+<li>Need:
+<ul>
+<li>Interconnected components</li>
+<li>Compatible components</li>
+</ul></li>
+<li>Early examples:
+<ul>
+<li>cf Colt 45, Ford Model T</li>
+</ul></li>
+</ul>
+</section>
+<section id="codify-through-mathematical-functions" class="slide level3">
 <h3>Codify Through Mathematical Functions</h3>
 <ul>
 <li>How does machine learning work?</li>
@@ -588,21 +582,24 @@ communicate
 </ul>
 <p><span class="math display">\[ \text{odds} = \frac{p(\text{bought})}{p(\text{not bought})} \]</span></p>
 <p><span class="math display">\[ \log \text{odds}  = \beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}.\]</span></p>
-</section><section id="codify-through-mathematical-functions-1" class="slide level3">
+</section>
+<section id="codify-through-mathematical-functions-1" class="slide level3">
 <h3>Codify Through Mathematical Functions</h3>
 <ul>
 <li>How does machine learning work?</li>
 <li>Jumper (jersey/sweater) purchase with logistic regression</li>
 </ul>
 <p><span class="math display">\[ p(\text{bought}) =  \sigmoid{\beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}}.\]</span></p>
-</section><section id="codify-through-mathematical-functions-2" class="slide level3">
+</section>
+<section id="codify-through-mathematical-functions-2" class="slide level3">
 <h3>Codify Through Mathematical Functions</h3>
 <ul>
 <li>How does machine learning work?</li>
 <li>Jumper (jersey/sweater) purchase with logistic regression</li>
 </ul>
 <p><span class="math display">\[ p(\text{bought}) =  \sigmoid{\boldsymbol{\beta}^\top \inputVector}.\]</span></p>
-</section><section id="codify-through-mathematical-functions-3" class="slide level3">
+</section>
+<section id="codify-through-mathematical-functions-3" class="slide level3">
 <h3>Codify Through Mathematical Functions</h3>
 <ul>
 <li>How does machine learning work?</li>
@@ -612,7 +609,8 @@ communicate
 <div class="fragment">
 <p>We call <span class="math inline">\(\mappingFunction(\cdot)\)</span> the <em>prediction function</em>.</p>
 </div>
-</section><section id="fit-to-data" class="slide level3">
+</section>
+<section id="fit-to-data" class="slide level3">
 <h3>Fit to Data</h3>
 <ul>
 <li>Use an objective function</li>
@@ -623,96 +621,127 @@ communicate
 <li>E.g. least squares <span class="math display">\[\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingFunction(\inputVector_i, \boldsymbol{\beta})\right)^2.\]</span></li>
 </ul>
 </div>
-</section><section id="two-components" class="slide level3">
+</section>
+<section id="two-components" class="slide level3">
 <h3>Two Components</h3>
 <ul>
 <li>Prediction function, <span class="math inline">\(\mappingFunction(\cdot)\)</span></li>
 <li>Objective function, <span class="math inline">\(\errorFunction(\cdot)\)</span></li>
 </ul>
-<div class="header" style="">
-<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-overview.md" target="_blank" >[edit]</a></small>
-</div>
-<!-- No slide titles in this context -->
-</section></section>
-<section><section id="deep-learning" class="titleslide slide level2"><h2>Deep Learning</h2></section><section id="section-4" class="slide level3">
-<h3></h3>
+<!-- SECTION Deep Learning -->
+</section>
+<section id="deep-learning" class="slide level3">
+<h3>Deep Learning</h3>
 <ul>
 <li><p>These are interpretable models: vital for disease modeling etc.</p></li>
 <li><p>Modern machine learning methods are less interpretable</p></li>
 <li><p>Example: face recognition</p></li>
 </ul>
-<div class="header" style="">
-<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-face.md" target="_blank" >[edit]</a></small>
-</div>
-</section><section id="deepface" class="slide level3">
+<!-- No slide titles in this context -->
+</section>
+<section id="deepface" class="slide level3">
 <h3>DeepFace</h3>
 <p><span class="fragment fade-in"><small>Outline of the DeepFace architecture. A front-end of a single convolution-pooling-convolution filtering on the rectified input, followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected.</small></span></p>
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/deepface_neg.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 <p><span style="text-align:right"><small>Source: DeepFace <span class="citation" data-cites="Taigman:deepface14">(Taigman et al., 2014)</span></small></span></p>
-<div class="header" style="">
-<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-as-pinball.md" target="_blank" >[edit]</a></small>
-</div>
-</section><section id="deep-learning-as-pinball" class="slide level3">
+</section>
+<section id="deep-learning-as-pinball" class="slide level3">
 <h3>Deep Learning as Pinball</h3>
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/576px-Early_Pinball.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-</section><section id="section-5" class="slide level3">
+</section>
+<section id="section-4" class="slide level3">
 <h3></h3>
 <object class="svgplot " align data="../slides/diagrams/pinball001.svg" style="vertical-align:middle;">
 </object>
-</section><section id="section-6" class="slide level3">
+</section>
+<section id="section-5" class="slide level3">
 <h3></h3>
 <object class="svgplot " align data="../slides/diagrams/pinball002.svg" style="vertical-align:middle;">
 </object>
-<div class="header" style="">
-<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gp-intro-very-short.md" target="_blank" >[edit]</a></small>
-</div>
-</section><section id="section-7" class="slide level3">
+</section>
+<section id="section-6" class="slide level3">
 <h3></h3>
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/gp/gp_rejection_sample001.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-</section><section id="section-8" class="slide level3">
+</section>
+<section id="section-7" class="slide level3">
 <h3></h3>
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/gp/gp_rejection_sample002.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-</section><section id="section-9" class="slide level3">
+</section>
+<section id="section-8" class="slide level3">
 <h3></h3>
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/gp/gp_rejection_sample003.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-</section><section id="section-10" class="slide level3">
+</section>
+<section id="section-9" class="slide level3">
 <h3></h3>
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/gp/gp_rejection_sample004.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-</section><section id="section-11" class="slide level3">
+</section>
+<section id="section-10" class="slide level3">
 <h3></h3>
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/gp/gp_rejection_sample005.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<div class="header" style="">
-<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/deep-olympic.md" target="_blank" >[edit]</a></small>
+</section>
+<section id="olympic-marathon-data" class="slide level3">
+<h3>Olympic Marathon Data</h3>
+<table>
+<tr>
+<td width="70%">
+<ul>
+<li>Gold medal times for Olympic Marathon since 1896.</li>
+<li>Marathons before 1924 didn’t have a standardised distance.</li>
+<li>Present results using pace per km.</li>
+<li>In 1904 Marathon was badly organised leading to very slow times.</li>
+</ul>
+</td>
+<td width="30%">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/Stephen_Kiprotich.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<div class="header" style="">
-<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/olympic-marathon-gp.md" target="_blank" >[edit]</a></small>
-</div>
-</section></section>
-<section><section id="olympic-marathon-data" class="titleslide slide level2"><h2>Olympic Marathon Data</h2></section><section id="olympic-marathon-data-1" class="slide level3">
+<small>Image from Wikimedia Commons <a href="http://bit.ly/16kMKHQ" class="uri">http://bit.ly/16kMKHQ</a></small>
+</td>
+</tr>
+</table>
+</section>
+<section id="olympic-marathon-data-1" class="slide level3">
 <h3>Olympic Marathon Data</h3>
 <div style="text-align:center">
 <object class="svgplot " align data="../slides/diagrams/datasets/olympic-marathon.svg" style="vertical-align:middle;">
 </object>
 </div>
-<div class="header" style="">
-<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/alan-turing-marathon.md" target="_blank" >[edit]</a></small>
+</section>
+<section id="alan-turing" class="slide level3">
+<h3>Alan Turing</h3>
+<table>
+<tr>
+<td width="50%">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/turing-times.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-</section></section>
-<section><section id="alan-turing" class="titleslide slide level2"><h2>Alan Turing</h2></section><section id="probability-winning-olympics" class="slide level3">
+</td>
+<td width="50%">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/turing-run.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</td>
+</tr>
+</table>
+<center>
+<em>Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: <a href="http://www.turing.org.uk/scrapbook/run.html">Alan Turing Internet Scrapbook</a>.</em>
+</center>
+</section>
+<section id="probability-winning-olympics" class="slide level3">
 <h3>Probability Winning Olympics?</h3>
 <ul>
 <li>He was a formidable Marathon runner.</li>
@@ -733,24 +762,52 @@ communicate
 <table><tr><td width="40%"><img class="" src="../slides/diagrams/turing-run.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></td><td width="50%"><img class="" src="../slides/diagrams/turing-times.gif" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></td></tr></table>
 
 -->
-</section><section id="olympic-marathon-data-gp" class="slide level3">
+</section>
+<section id="olympic-marathon-data-gp" class="slide level3">
 <h3>Olympic Marathon Data GP</h3>
 <object class="svgplot " align data="../slides/diagrams/gp/olympic-marathon-gp.svg" style="vertical-align:middle;">
 </object>
-</section></section>
-<section><section id="deep-gp-fit" class="titleslide slide level2"><h2>Deep GP Fit</h2></section></section>
-<section><section id="olympic-marathon-data-deep-gp" class="titleslide slide level2"><h2>Olympic Marathon Data Deep GP</h2></section></section>
-<section><section id="olympic-marathon-data-deep-gp-1" class="titleslide slide level2"><h2>Olympic Marathon Data Deep GP</h2></section><section id="olympic-marathon-data-latent-1" class="slide level3">
+</section>
+<section id="deep-gp-fit" class="slide level3">
+<h3>Deep GP Fit</h3>
+<ul>
+<li><p>Can a Deep Gaussian process help?</p></li>
+<li><p>Deep GP is one GP feeding into another.</p></li>
+</ul>
+</section>
+<section id="olympic-marathon-data-deep-gp" class="slide level3">
+<h3>Olympic Marathon Data Deep GP</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp.svg" style="vertical-align:middle;">
+</object>
+</section>
+<section id="olympic-marathon-data-deep-gp-1" class="slide level3">
+<h3>Olympic Marathon Data Deep GP</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-samples.svg" style="vertical-align:middle;">
+</object>
+</section>
+<section id="olympic-marathon-data-latent-1" class="slide level3">
 <h3>Olympic Marathon Data Latent 1</h3>
 <object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-layer-0.svg" style="vertical-align:middle;">
 </object>
-</section><section id="olympic-marathon-data-latent-2" class="slide level3">
+</section>
+<section id="olympic-marathon-data-latent-2" class="slide level3">
 <h3>Olympic Marathon Data Latent 2</h3>
 <object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-layer-1.svg" style="vertical-align:middle;">
 </object>
-</section></section>
-<section><section id="olympic-marathon-pinball-plot" class="titleslide slide level2"><h2>Olympic Marathon Pinball Plot</h2></section></section>
-<section><section id="deploying-artificial-intelligence" class="titleslide slide level2"><h2>Deploying Artificial Intelligence</h2></section><section id="internet-of-people" class="slide level3">
+</section>
+<section id="olympic-marathon-pinball-plot" class="slide level3">
+<h3>Olympic Marathon Pinball Plot</h3>
+<object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg" style="vertical-align:middle;">
+</object>
+</section>
+<section id="deploying-artificial-intelligence" class="slide level3">
+<h3>Deploying Artificial Intelligence</h3>
+<ul>
+<li>Challenges in deploying AI.</li>
+<li>Currently this is in the form of “machine learning systems”</li>
+</ul>
+</section>
+<section id="internet-of-people" class="slide level3">
 <h3>Internet of People</h3>
 <ul>
 <li>Fog computing: barrier between cloud and device blurring.
@@ -760,7 +817,8 @@ communicate
 <li>Complex feedback between algorithm and implementation</li>
 </ul>
 <p>{This effect is amplified through the growth in sensorics, in particular the movement of cloud computing towards the customer. The barrier between cloud and device is blurring. This phenomenon is sometimes known as fog computing, or <em>computing on the edge</em>.</p>
-</section><section id="deploying-ml-in-real-world-machine-learning-systems-design" class="slide level3">
+</section>
+<section id="deploying-ml-in-real-world-machine-learning-systems-design" class="slide level3">
 <h3>Deploying ML in Real World: Machine Learning Systems Design</h3>
 <ul>
 <li>Major new challenge for systems designers.</li>
@@ -769,14 +827,11 @@ communicate
 <li>AI systems are <em>fragile</em></li>
 </ul></li>
 </ul>
-<div class="header" style="">
-<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/ml-systems-design-long.md" target="_blank" >[edit]</a></small>
-</div>
-<div class="header" style="">
-<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/ml-systems-design-short.md" target="_blank" >[edit]</a></small>
-</div>
-</section></section>
-<section><section id="machine-learning-systems-design" class="titleslide slide level2"><h2>Machine Learning Systems Design</h2></section><section id="fragility-of-ai-systems" class="slide level3">
+</section>
+<section id="machine-learning-systems-design" class="slide level3">
+<h3>Machine Learning Systems Design</h3>
+</section>
+<section id="fragility-of-ai-systems" class="slide level3">
 <h3>Fragility of AI Systems</h3>
 <ul>
 <li><p>They are componentwise built from ML Capabilities.</p></li>
@@ -785,25 +840,38 @@ communicate
 <li><p>Road line detection</p></li>
 <li><p>Important for verification purposes.</p></li>
 </ul>
-</section></section>
-<section><section id="pigeonholing" class="titleslide slide level2"><h2>Pigeonholing</h2></section><section id="robust" class="slide level3">
+</section>
+<section id="pigeonholing" class="slide level3">
+<h3>Pigeonholing</h3>
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/TooManyPigeons.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</section>
+<section id="robust" class="slide level3">
 <h3>Robust</h3>
 <ul>
 <li>Need to move beyond pigeonholing tasks.</li>
 <li>Need new approaches to both the design of the individual components, and the combination of components within our AI systems.</li>
 </ul>
-</section></section>
-<section><section id="rapid-reimplementation" class="titleslide slide level2"><h2>Rapid Reimplementation</h2></section><section id="machine-learning-systems-design-1" class="slide level3">
+</section>
+<section id="rapid-reimplementation" class="slide level3">
+<h3>Rapid Reimplementation</h3>
+<ul>
+<li>Whole systems are being deployed.</li>
+<li>But they change their environment.</li>
+<li>The experience evolved adversarial behaviour.</li>
+</ul>
+</section>
+<section id="machine-learning-systems-design-1" class="slide level3">
 <h3>Machine Learning Systems Design</h3>
-<div class="header" style="">
-<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/centrifugal-governor.md" target="_blank" >[edit]</a></small>
-</div>
-</section><section id="section-12" class="slide level3">
+</section>
+<section id="section-11" class="slide level3">
 <h3></h3>
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/science-holborn-viaduct.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-</section><section id="section-13" class="slide level3">
+</section>
+<section id="section-12" class="slide level3">
 <h3></h3>
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/SteamEngine_Boulton&Watt_1784.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
@@ -811,12 +879,14 @@ communicate
 <center>
 <em>Watt’s Steam Engine which made Steam Power Efficient and Practical</em>
 </center>
-</section><section id="section-14" class="slide level3">
+</section>
+<section id="section-13" class="slide level3">
 <h3></h3>
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/Centrifugal_governor.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-</section><section id="adversaries" class="slide level3">
+</section>
+<section id="adversaries" class="slide level3">
 <h3>Adversaries</h3>
 <ul>
 <li>Stuxnet</li>
@@ -828,7 +898,8 @@ communicate
 <p>This challenge of facing a circumstance that was unenvisaged in design but has consequences in deployment becomes far larger when the environment is uncontrolled. Or in the extreme case, where actions of the intelligent system effect the wider environment and change it.</p>
 <p>These unforseen circumstances are likely to lead to need for much more efficient turn-around and update for our intelligent systems. Whether we are correcting for security flaws (which <em>are</em> bugs) or unenvisaged circumstantial challenges: an issue I’m referring to as <em>peppercorns</em>. Rapid deployment of system updates is required. For example, Apple have “fixed” the problem of Siri returning long numbers.</p>
 <p>The challenge is particularly acute because of the <em>scale</em> at which we can deploy AI solutions. This means when something does go wrong, it may be going wrong in billions of households simultaneously.</p>
-</section><section id="turnaround-and-update" class="slide level3">
+</section>
+<section id="turnaround-and-update" class="slide level3">
 <h3>Turnaround And Update</h3>
 <ul>
 <li>There is a massive need for turn around and update</li>
@@ -838,30 +909,37 @@ communicate
 </ul></li>
 <li>Interface between security engineering and machine learning.</li>
 </ul>
-</section><section id="peppercorns" class="slide level3">
+</section>
+<section id="peppercorns" class="slide level3">
 <h3>Peppercorns</h3>
 <ul>
 <li>A new name for system failures which aren’t bugs.</li>
 <li>Difference between finding a fly in your soup vs a peppercorn in your soup.</li>
 </ul>
-<div class="header" style="">
-<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emukit-software.md" target="_blank" >[edit]</a></small>
+</section>
+<section id="emukit" class="slide level3">
+<h3>Emukit</h3>
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/uq/emukit-software-page.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-</section></section>
-<section><section id="emukit" class="titleslide slide level2"><h2>Emukit</h2></section><section id="emukit-1" class="slide level3">
+
+</section>
+<section id="emukit-1" class="slide level3">
 <h3>Emukit</h3>
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/uq/emukit-software-page2.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 
-</section><section id="emukit-2" class="slide level3">
+</section>
+<section id="emukit-2" class="slide level3">
 <h3>Emukit</h3>
 <ul>
 <li>Work by Javier Gonzalez, Andrei Paleyes, Mark Pullin, Maren Mahsereci, Alex Gessner, Aaron Klein.</li>
 <li>Available on <a href="https://github.com/amzn/emukit">Github</a></li>
 <li>Example <a href="https://github.com/amzn/emukit/blob/develop/notebooks/Emukit-sensitivity-montecarlo.ipynb">sensitivity notebook</a>.</li>
 </ul>
-</section><section id="emukit-software" class="slide level3">
+</section>
+<section id="emukit-software" class="slide level3">
 <h3>Emukit Software</h3>
 <ul>
 <li><em>Multi-fidelity emulation</em>: build surrogate models for multiple sources of information;</li>
@@ -870,11 +948,9 @@ communicate
 <li><em>Sensitivity analysis</em>: analyse the influence of inputs on the outputs</li>
 <li><em>Bayesian quadrature</em>: compute integrals of functions that are expensive to evaluate.</li>
 </ul>
-<div class="header" style="">
-<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/towards-ml-systems-design.md" target="_blank" >[edit]</a></small>
-</div>
 <!-- SECTION Conclusion -->
-</section><section id="conclusion" class="slide level3">
+</section>
+<section id="conclusion" class="slide level3">
 <h3>Conclusion</h3>
 <ul>
 <li><p>Artificial Intelligence and Data Science are fundamentally different.</p></li>
@@ -882,7 +958,8 @@ communicate
 <li><p>In the other you are trying to build systems in the real world, often by actively collecting data.</p></li>
 <li><p>Our approaches to systems design are building powerful machines that will be deployed in evolving environments.</p></li>
 </ul>
-</section><section id="thanks" class="slide level3">
+</section>
+<section id="thanks" class="slide level3">
 <h3>Thanks!</h3>
 <ul>
 <li>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></li>
@@ -894,7 +971,8 @@ communicate
 <li><p>Blog post on <a href="http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence">Natural vs Artifical Intelligence</a></p></li>
 <li><p><a href="https://medium.com/@mijordan3/artificial-intelligence-the-revolution-hasnt-happened-yet-5e1d5812e1e7">Mike Jordan’s Medium Post</a></p></li>
 </ul>
-</section><section id="references" class="slide level3 unnumbered">
+</section>
+<section id="references" class="slide level3 unnumbered">
 <h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-Lawrence:embodiment17">
@@ -904,7 +982,7 @@ communicate
 <p>Taigman, Y., Yang, M., Ranzato, M., Wolf, L., 2014. DeepFace: Closing the gap to human-level performance in face verification, in: Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition. <a href="https://doi.org/10.1109/CVPR.2014.220" class="uri">https://doi.org/10.1109/CVPR.2014.220</a></p>
 </div>
 </div>
-</section></section>
+</section>
     </div>
   </div>
 

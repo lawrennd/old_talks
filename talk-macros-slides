@@ -32,7 +32,7 @@
 
 
 \define{\section{text}}{<!-- SECTION \text -->}
-\define{\subsection{text}}{## \text \ifdef{editText}\editText\undef{editText}\endif}
+\define{\subsection{text}}{### \text \ifdef{editText}\editText\undef{editText}\endif}
 \define{\subsubsection{text}}{### \text \ifdef{editText}\editText\undef{editText}\endif}
 \define{\slides{text}}{\text}
 \define{\slidesincremental{text}}{::: incremental
@@ -84,13 +84,5 @@
 \endif}}
 
 
-\ifdef{draft}
-\define{\editme}{\href{file://\talksDir\file}{\file}}
-\define{\todo{text}}{\colorRed{Todo: \text}}
-
-}
-\else
-\define{\editme}{\div{\smalltext{\href{\githubBaseUrl\file}{[edit]}}}{header}}
-\endif
 
 \endif
