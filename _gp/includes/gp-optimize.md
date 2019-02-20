@@ -458,22 +458,22 @@ for i, ls in enumerate(lengthscales):
 
 \slides{
 \startanimation{gp-optimise}{0}{10}
-\newframe{\columns{\includediagram{../slides/diagrams/gp/gp-optimise000.svg}}{\includesvg{../slides/diagrams/gp/gp-optimise001}}{50%}{50%}}{gp-optimise}
-\newframe{\columns{\includediagram{../slides/diagrams/gp/gp-optimise002.svg}}{\includesvg{../slides/diagrams/gp/gp-optimise003}}{50%}{50%}}{gp-optimise}
-\newframe{\columns{\includediagram{../slides/diagrams/gp/gp-optimise004.svg}}{\includesvg{../slides/diagrams/gp/gp-optimise005}}{50%}{50%}}{gp-optimise}
-\newframe{\columns{\includediagram{../slides/diagrams/gp/gp-optimise006.svg}}{\includesvg{../slides/diagrams/gp/gp-optimise007}}{50%}{50%}}{gp-optimise}
-\newframe{\columns{\includediagram{../slides/diagrams/gp/gp-optimise008.svg}}{\includesvg{../slides/diagrams/gp/gp-optimise009}}{50%}{50%}}{gp-optimise}
-\newframe{\columns{\includediagram{../slides/diagrams/gp/gp-optimise010.svg}}{\includesvg{../slides/diagrams/gp/gp-optimise011}}{50%}{50%}}{gp-optimise}
-\newframe{\columns{\includediagram{../slides/diagrams/gp/gp-optimise012.svg}}{\includesvg{../slides/diagrams/gp/gp-optimise013}}{50%}{50%}}{gp-optimise}
-\newframe{\columns{\includediagram{../slides/diagrams/gp/gp-optimise014.svg}}{\includesvg{../slides/diagrams/gp/gp-optimise015}}{50%}{50%}}{gp-optimise}
-\newframe{\columns{\includediagram{../slides/diagrams/gp/gp-optimise016.svg}}{\includesvg{../slides/diagrams/gp/gp-optimise017}}{50%}{50%}}{gp-optimise}
-\newframe{\columns{\includediagram{../slides/diagrams/gp/gp-optimise018.svg}}{\includesvg{../slides/diagrams/gp/gp-optimise019}}{50%}{50%}}{gp-optimise}
-\newframe{\columns{\includediagram{../slides/diagrams/gp/gp-optimise020.svg}}{\includesvg{../slides/diagrams/gp/gp-optimise021}}{50%}{50%}}{gp-optimise}
+\newframe{\columns{\includediagram{../slides/diagrams/gp/gp-optimise000}}{\includesvg{../slides/diagrams/gp/gp-optimise001}}{50%}{50%}}{gp-optimise}
+\newframe{\columns{\includediagram{../slides/diagrams/gp/gp-optimise002}}{\includesvg{../slides/diagrams/gp/gp-optimise003}}{50%}{50%}}{gp-optimise}
+\newframe{\columns{\includediagram{../slides/diagrams/gp/gp-optimise004}}{\includesvg{../slides/diagrams/gp/gp-optimise005}}{50%}{50%}}{gp-optimise}
+\newframe{\columns{\includediagram{../slides/diagrams/gp/gp-optimise006}}{\includesvg{../slides/diagrams/gp/gp-optimise007}}{50%}{50%}}{gp-optimise}
+\newframe{\columns{\includediagram{../slides/diagrams/gp/gp-optimise008}}{\includesvg{../slides/diagrams/gp/gp-optimise009}}{50%}{50%}}{gp-optimise}
+\newframe{\columns{\includediagram{../slides/diagrams/gp/gp-optimise010}}{\includesvg{../slides/diagrams/gp/gp-optimise011}}{50%}{50%}}{gp-optimise}
+\newframe{\columns{\includediagram{../slides/diagrams/gp/gp-optimise012}}{\includesvg{../slides/diagrams/gp/gp-optimise013}}{50%}{50%}}{gp-optimise}
+\newframe{\columns{\includediagram{../slides/diagrams/gp/gp-optimise014}}{\includesvg{../slides/diagrams/gp/gp-optimise015}}{50%}{50%}}{gp-optimise}
+\newframe{\columns{\includediagram{../slides/diagrams/gp/gp-optimise016}}{\includesvg{../slides/diagrams/gp/gp-optimise017}}{50%}{50%}}{gp-optimise}
+\newframe{\columns{\includediagram{../slides/diagrams/gp/gp-optimise018}}{\includesvg{../slides/diagrams/gp/gp-optimise019}}{50%}{50%}}{gp-optimise}
+\newframe{\columns{\includediagram{../slides/diagrams/gp/gp-optimise020}}{\includesvg{../slides/diagrams/gp/gp-optimise021}}{50%}{50%}}{gp-optimise}
 \endanimation
 }
 
-\notesfigure{\columns{\includediagram{../slides/diagrams/gp/gp-optimise006.svg}}{\includesvg{../slides/diagrams/gp/gp-optimise010}}{50%}{50%}
-\columns{\includediagram{../slides/diagrams/gp/gp-optimise016.svg}}{\includesvg{../slides/diagrams/gp/gp-optimise021}}{50%}{50%}}
+\notesfigure{\columns{\includediagram{../slides/diagrams/gp/gp-optimise006}}{\includesvg{../slides/diagrams/gp/gp-optimise010}}{50%}{50%}
+\columns{\includediagram{../slides/diagrams/gp/gp-optimise016}}{\includesvg{../slides/diagrams/gp/gp-optimise021}}{50%}{50%}}
 \notes{\caption{Variation in the data fit term, the capacity term and the negative log likelihood for different lengthscales.}}
 
 

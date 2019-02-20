@@ -35,7 +35,7 @@ The Gaussian likelihood given above implies that the data observation is related
   \noiseScalar_i \sim \gaussianSamp{0}{\dataStd^2}
   $$
 
-\newslides{Linear Gaussian Models}
+\newslide{Linear Gaussian Models}
 
 \slides{* Normally integrals are complex but for this Gaussian linear case they are trivial.}\notes{and while normally integrating over high dimensional parameter vectors is highly complex, here it is *trivial*. That is because of a property of the multivariate Gaussian.}
 
