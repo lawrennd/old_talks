@@ -147,12 +147,10 @@ communicate
 <p>To obtain the fit to data, we use a separate function called the <em>objective function</em> that gives us a mathematical representation of the difference between our predictions and the real data.</p>
 <p><br /><span class="math display">$$\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix)$$</span><br /> A commonly used examples (for example in a regression problem) is least squares, <br /><span class="math display">$$\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingFunction(\inputVector_i, \boldsymbol{\beta})\right)^2.$$</span><br /></p>
 <p>If a linear prediction function is combined with the least squares objective function then that gives us a classical <em>linear regression</em>, another classical statistical model. Statistics often focusses on linear models because it makes interpretation of the model easier. Interpretation is key in statistics because the aim is normally to validate questions by analysis of data. Machine learning has typically focussed more on the prediction function itself and worried less about the interpretation of parameters, which are normally denoted by <span class="math inline"><strong>w</strong></span> instead of <span class="math inline"><strong>β</strong></span>. As a result <em>non-linear</em> functions are explored more often as they tend to improve quality of predictions but at the expense of interpretability.</p>
-<ul>
-<li><p>These are interpretable models: vital for disease etc.</p></li>
-<li><p>Modern machine learning methods are less interpretable</p></li>
-<li><p>Example: face recognition</p></li>
-</ul>
+<h1 id="deep-learning">Deep Learning</h1>
+<p>The models we have described so far are very interpretable because they are linear. But the general formalism of the prediction function allows for <em>non-linear</em> models. In machine learning, the emphasis on prediction over interpretability means that non-linear models are often used.</p>
 <!-- No slide titles in this context -->
+<h3 id="deepface-edit">DeepFace <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-face.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-face.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/deepface_neg.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
@@ -160,34 +158,30 @@ communicate
 <em>The DeepFace architecture <span class="citation">(Taigman et al. 2014)</span>, visualized through colors to represent the functional mappings at each layer. There are 120 million parameters in the model.</em>
 </center>
 <p>The DeepFace architecture <span class="citation">(Taigman et al. 2014)</span> consists of layers that deal with <em>translation</em> and <em>rotational</em> invariances. These layers are followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected layers.</p>
+<h3 id="deep-learning-as-pinball-edit">Deep Learning as Pinball <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-as-pinball.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-as-pinball.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
 <div class="centered centered" style="">
-<img class="" src="../slides/diagrams/576px-Early_Pinball.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="../slides/diagrams/576px-Early_Pinball.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 <center>
 <em>Deep learning models are composition of simple functions. We can think of a pinball machine as an analogy. Each layer of pins corresponds to one of the layers of functions in the model. Input data is represented by the location of the ball from left to right when it is dropped in from the top. Output class comes from the position of the ball as it leaves the pins at the bottom.</em>
 </center>
-<h3 id="deep-learning-as-pinball-edit">Deep Learning as Pinball <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-as-pinball.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-as-pinball.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
 <p>Sometimes deep learning models are described as being like the brain, or too complex to understand, but one analogy I find useful to help the gist of these models is to think of them as being similar to early pin ball machines.</p>
 <p>In a deep neural network, we input a number (or numbers), whereas in pinball, we input a ball.</p>
 <p>Think of the location of the ball on the left-right axis as a single number. Our simple pinball machine can only take one number at a time. As the ball falls through the machine, each layer of pins can be thought of as a different layer of 'neurons'. Each layer acts to move the ball from left to right.</p>
 <p>In a pinball machine, when the ball gets to the bottom it might fall into a hole defining a score, in a neural network, that is equivalent to the decision: a classification of the input object.</p>
-<p>An image has more than one number associated with it, so it's like playing pinball in a <em>hyper-space</em>.</p>
+<p>An image has more than one number associated with it, so it is like playing pinball in a <em>hyper-space</em>.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
 <span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;pinball</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, 
                             <span class="st">&#39;../slides/diagrams&#39;</span>,
                             sample<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>))</code></pre></div>
-<div style="text-align:center">
 <object class="svgplot " align data="../slides/diagrams/pinball001.svg" style="vertical-align:middle;">
 </object>
-</div>
 <center>
 <em>At initialization, the pins, which represent the parameters of the function, aren't in the right place to bring the balls to the correct decisions.</em>
 </center>
-<div style="text-align:center">
 <object class="svgplot " align data="../slides/diagrams/pinball002.svg" style="vertical-align:middle;">
 </object>
-</div>
 <center>
 <em>After learning the pins are now in the right place to bring the balls to the correct decisions.</em>
 </center>
@@ -380,224 +374,15 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 <object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg" style="vertical-align:middle;">
 </object>
 <p>The pinball plot shows the flow of any input ball through the deep Gaussian process. In a pinball plot a series of vertical parallel lines would indicate a purely linear function. For the olypmic marathon data we can see the first layer begins to shift from input towards the right. Note it also does so with some uncertainty (indicated by the shaded backgrounds). The second layer has less uncertainty, but bunches the inputs more strongly to the right. This input layer of uncertainty, followed by a layer that pushes inputs to the right is what gives the heteroschedastic noise.</p>
-<!-- 
-
-
-
-## Data Science and Professionalisation <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/a-time-for-professionalisation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/a-time-for-professionalisation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-
-
-The rise in data science and artificial intelligence technologies has been termed "Industrial Revolution 4.0", so are we in the midst of an industrial change? Maybe, but if so, it is the first part of the industrial revolution to be named before it has happened. The original industrial revolution occurred between 1760 and 1840, but the term was introduced into English by Arnold Toynbee (1852-1883).
-
-Whether this is a new revolution or an extension of previous revolutions, an important aspect is that this revolution is dominated by *data* instead of just *capital*.
-
-One can also see the modern revolution as a revolution in *information* rather than *energy*.
-
-Disruptive technologies take time to assimilate, and best practices, as well as the pitfalls of new technologies take time to share. Historically, new technologies led to new professions. [Isambard Kingdom Brunel](https://en.wikipedia.org/wiki/Isambard_Kingdom_Brunel) (born 1806) was a leading innovator in civil, mechanical and naval engineering. Each of these has its own professional institutions founded in 1818, 1847, and 1860 respectively.
-
-[Nikola Tesla](https://en.wikipedia.org/wiki/Nikola_Tesla) developed the modern approach to electrical distribution, he was born in 1856 and the American Instiute for Electrical Engineers was founded in 1884, the UK equivalent was founded in 1871. 
-
-[William Schockley Jr](https://en.wikipedia.org/wiki/William_Shockley), born 1910, led the group that developed the transistor, referred to as "the man who brought silicon to Silicon Valley", in 1963 the American Institute for Electical Engineers merged with the Institute of Radio Engineers to form the Institute of Electrical and Electronic Engineers. 
-
-[Watts S. Humphrey](https://en.wikipedia.org/wiki/Watts_Humphrey), born 1927, was known as the "father of software quality", in the 1980s he founded a program aimed at understanding and managing the software process. The British Computer Society was founded in 1956.
-
-
-
-
-
-
-
-
-
-
-Why the need for these professions? Much of it is about codification of best practice and developing trust between the public and practitioners. These fundamental characteristics of the professions are shared with the oldest professions (Medicine, Law) as well as the newest (Information Technology).
-
-
-
-
-
-So where are we today? My best guess is we are somewhere equivalent to the 1980s for Software Engineering. In terms of professional deployment we have a basic understanding of the equivalent of "programming" but much less understanding of *machine learning systems design* and *data infrastructure*. How the components we ahve developed interoperate together in a reliable and accountable manner. Best practice is still evolving, but perhaps isn't being shared widely enough.
-
-One problem is that the art of data science is superficially similar to regular software engineering. Although in practice it is rather different. Modern software engineering practice operates to generate code which is well tested as it is written, agile programming techniques provide the appropriate degree of flexibility for the individual programmers alongside sufficient formalization and testing. These techniques have evolved from an overly restrictive formalization that was proposed in the early days of software engineering.
-
-While data science involves programming, it is different in the following way. Most of the work in data science involves understanding the data and the appropriate manipulations to apply to extract knowledge from the data. The eventual number of lines of code that are required to extract that knowledge are often very few, but the amount of thought and attention that needs to be applied to each line is much more than a traditional line of software code. Testing of those lines is also of a different nature, provisions have to be made for evolving data environments. Any development work is often done on a static snapshot of data, but deployment is made in a live environment where the nature of data changes. Quality control involves checking for degradation in performance arising form unanticipated changes in data quality. It may also need to check for regulatory conformity. For example, in the UK the General Data Protection Regulation stipulates standards of explainability and fairness that may need to be monitored. These concerns do not affect traditional software deployments.
-
-Others are also pointing out these challenges, [this post](https://medium.com/@karpathy/software-2-0-a64152b37c35) from Andrej Karpathy (now head of AI at Tesla) covers the notion of "Software 2.0". Google researchers have highlighted the challenges of "Technical Debt" in machine learning [@Sculley:debt15]. Researchers at Berkeley have characterized the systems challenges associated with machine learning [@Stoica:systemsml17].
-
-
- -->
-<!-- 
-
- 
-
-## The Data Crisis <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/the-data-crisis.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/the-data-crisis.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-
-Anecdotally, talking to data modelling scientists. Most say they spend
-80% of their time acquiring and cleaning data. This is precipitating
-what I refer to as the “data crisis”. This is an analogy with software.
-The “software crisis” was the phenomenon of inability to deliver
-software solutions due to increasing complexity of implementation. There
-was no single shot solution for the software crisis, it involved better
-practice (scrum, test orientated development, sprints, code review),
-improved programming paradigms (object orientated, functional) and
-better tools (CVS, then SVN, then git).
-
-However, these challenges aren't new, they are merely taking a different
-form. From the computer's perspective software *is* data. The first wave
-of the data crisis was known as the *software crisis*.
-
-
-### The Software Crisis 
-
-In the late sixties early software programmers made note of the
-increasing costs of software development and termed the challenges
-associated with it as the "[Software
-Crisis](https://en.wikipedia.org/wiki/Software_crisis)". Edsger Dijkstra
-referred to the crisis in his 1972 Turing Award winner's address.
-
-
-
->The major cause of the software crisis is that the machines have
->become several orders of magnitude more powerful! To put it quite
->bluntly: as long as there were no machines, programming was no problem
->at all; when we had a few weak computers, programming became a mild
->problem, and now we have gigantic computers, programming has become an
->equally gigantic problem.
->
-> Edsger Dijkstra (1930-2002), The Humble Programmer
-
-
-
-
-
-
-
->The major cause of the data crisis is that machines have become more
->interconnected than ever before. Data access is therefore cheap, but
->data quality is often poor. What we need is cheap high quality
->data. That implies that we develop processes for improving and
->verifying data quality that are efficient.
->
->There would seem to be two ways for improving efficiency. Firstly, we
->should not duplicate work. Secondly, where possible we should automate
->work. 
-
-
-What I term "The Data Crisis" is the modern equivalent of this problem.
-The quantity of modern data, and the lack of attention paid to data as
-it is initially "laid down" and the costs of data cleaning are bringing
-about a crisis in data-driven decision making. This crisis is at the
-core of the challenge of *technical debt* in machine learning [@Sculley:debt15].
-
-Just as with software, the crisis is most correctly addressed by
-'scaling' the manner in which we process our data. Duplication of work
-occurs because the value of data cleaning is not correctly recognised in
-management decision making processes. Automation of work is increasingly
-possible through techniques in "artificial intelligence", but this will
-also require better management of the data science pipeline so that data
-about data science (meta-data science) can be correctly assimilated and
-processed. The Alan Turing institute has a program focussed on this
-area, [AI for Data Analytics](https://www.turing.ac.uk/research_projects/artificial-intelligence-data-analytics/).
-
-
- -->
+<!-- include{_data-science/includes/a-time-for-professionalisation.md} -->
+<!-- include{_data-science/includes/the-data-crisis.md} -->
 <!-- ### Rest of this Talk: Two Areas of Focus  -->
 <!-- * Reusability of Data -->
 <!-- * Deployment of Machine Learning Systems -->
 <!-- ### Rest of this Talk: Two Areas of Focus  -->
 <!-- * <s>Reusability of Data</s> -->
 <!-- * Deployment of Machine Learning Systems -->
-<!--
-
-
-
-## Data Readiness Levels <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-readiness-levels.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-readiness-levels.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-
-
-
-
-
-
-
-
-
-[Data Readiness Levels](http://inverseprobability.com/2017/01/12/data-readiness-levels) [@Lawrence:drl17] are an attempt to develop a language around data quality that can bridge the gap between technical solutions and decision makers such as managers and project planners. The are inspired by Technology Readiness Levels which attempt to quantify the readiness of technologies for deployment.
-
-
-
-Data-readiness describes, at its coarsest level,  three separate stages of data graduation.
-
-* Grade C - accessibility
-
-* Grade B - validity
-
-* Grade A - usability
-
-
-
-
-## Accessibility: Grade C <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-readiness-levels.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-readiness-levels.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-
-The first grade refers to the accessibility of data. Most data science practitioners will be used to working with data-providers who, perhaps having had little experience of data-science before, state that they "have the data". More often than not, they have not verified this. A convenient term for this is "Hearsay Data", someone has *heard* that they have the data so they *say* they have it. This is the lowest grade of data readiness. 
-
-Progressing through Grade C involves ensuring that this data is accessible. Not just in terms of digital accessiblity, but also for regulatory, ethical and intellectual property reasons.
-
-
-
-## Validity: Grade B 
-
-Data transits from Grade C to Grade B once we can begin digital analysis on the computer. Once the challenges of access to the data have been resolved, we can make the data available either via API, or for direct loading into analysis software (such as Python, R, Matlab, Mathematica or SPSS). Once this has occured the data is at B4 level. Grade B involves the *validity* of the data. Does the data really represent what it purports to? There are challenges such as missing values, outliers, record duplication. Each of these needs to be investigated. 
-
-Grade B and C are important as if the work done in these grades is documented well, it can be reused in other projects. Reuse of this labour is key to reducing the costs of data-driven automated decision making. There is a strong overlap between the work required in this grade and the statistical field of [*exploratory data analysis*](https://en.wikipedia.org/wiki/Exploratory_data_analysis) [@Tukey:exploratory77].
-
-
-
-
-The need for Grade B emerges due to the fundamental change in the availability of data. Classically, the scientific question came first, and the data came later. This is still the approach in a randomized control trial, e.g. in A/B testing or clinical trials for drugs. Today data is being laid down by happenstance, and the question we wish to ask about the data often comes after the data has been created. The Grade B of data readiness ensures thought can be put into data quality *before* the question is defined. It is this work that is reusable across multiple teams. It is these processes that the team which is *standing up* the data must deliver.
-
-
-
-
-
-
-
-
-## Usability: Grade A 
-
-
-Once the validity of the data is determined, the data set can be considered for use in a particular task. This stage of data readiness is more akin to what machine learning scientists are used to doing in Universities. Bringing an algorithm to bear on a well understood data set. 
-
-In Grade A we are concerned about the utility of the data given a particular task. Grade A may involve additional data collection (experimental design in statistics) to ensure that the task is fulfilled.
-
-This is the stage where the data and the model are brought together, so expertise in learning algorithms and their application is key. Further ethical considerations, such as the fairness of the resulting predictions are required at this stage. At the end of this stage a prototype model is ready for deployment.
-
-Deployment and maintenance of machine learning models in production is another important issue which Data Readiness Levels are only a part of the solution for.
-
-
-## Recursive Effects 
-
-
-
-
-
-
-
-
-To find out more, or to contribute ideas go to <http://data-readiness.org>
-
-You can also check my blog post on ["Data Readiness Levels"](http://inverseprobability.com/2017/01/12/data-readiness-levels)
-
-
-
-
-Throughout the data preparation pipeline, it is important to have close interaction between data scientists and application domain experts. Decisions on data preparation taken outside the context of application have dangerous downstream consequences. This provides an additional burden on the data scientist as they are required for each project, but it should also be seen as a learning and familiarization exercise for the domain expert. Long term, just as biologists have found it necessary to assimilate the skills of the bioinformatician to be effective in their science, most domains will also require a familiarity with the nature of data driven decision making and its application. Working closely with data-scientists on data preparation is one way to begin this sharing of best practice.
-
-The processes involved in Grade C and B are often badly taught in courses on data science. Perhaps not due to a lack of interest in the areas, but maybe more due to a lack of access to real world examples where data quality is poor. 
-
-These stages of data science are also ridden with ambiguity. In the long term they could do with more formalization, and automation, but best practice needs to be understood by a wider community before that can happen.
-
-
--->
+<!--include{_data-science/includes/data-readiness-levels.md}-->
 <ul>
 <li><p>Challenges in deploying AI.</p></li>
 <li><p>Currently this is in the form of &quot;machine learning systems&quot;</p></li>
@@ -675,12 +460,8 @@ These stages of data science are also ridden with ambiguity. In the long term th
 <li><em>Bayesian quadrature</em>: efficiently compute the integrals of functions that are expensive to evaluate.</li>
 </ul>
 <!--include{_uq/includes/uncertainty-quantification.md}-->
-<ul>
-<li><p>Artificial Intelligence and Data Science are fundamentally different.</p></li>
-<li><p>In one you are dealing with data collected by happenstance.</p></li>
-<li><p>In the other you are trying to build systems in the real world, often by actively collecting data.</p></li>
-<li><p>Our approaches to systems design are building powerful machines that will be deployed in evolving environments.</p></li>
-</ul>
+<h1 id="conclusion-edit">Conclusion <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/towards-ml-systems-design.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/towards-ml-systems-design.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
+<p>Artificial intelligence and data science are fundamentally different. In one you are dealing with data collecte by happenstance, in the other you are trying to build systems in the real world, often by actively collecting data. Our approaches to systems design are building powerful machines that will be deployed in evolving environments. But this is presenting key challenges in how we maintain and manage our machine learning systems.</p>
 <h1 id="references" class="unnumbered">References</h1>
 <div id="refs" class="references">
 <div id="ref-Ananthanarayanan-cat09">

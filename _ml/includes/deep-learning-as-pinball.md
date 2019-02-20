@@ -2,14 +2,13 @@
 \define{deepLearningAsPinball}
 \editme
 
-\newslide{Deep Learning as Pinball}
+\subsubsection{Deep Learning as Pinball}
 
 \figure{
-\includejpg{../slides/diagrams/576px-Early_Pinball}{40%}
+\includejpg{../slides/diagrams/576px-Early_Pinball}{50%}
 \notes{\caption{Deep learning models are composition of simple functions. We can think of a pinball machine as an analogy. Each layer of pins corresponds to one of the layers of functions in the model. Input data is represented by the location of the ball from left to right when it is dropped in from the top. Output class comes from the position of the ball as it leaves the pins at the bottom.}}
 }
 
-\notes{\subsubsection{Deep Learning as Pinball}}
 
 \notes{Sometimes deep learning models are described as being like the brain, or too complex to understand, but one analogy I find useful to help the gist of these models is to think of them as being similar to early pin ball machines. 
 
@@ -19,7 +18,7 @@ Think of the location of the ball on the left-right axis as a single number. Our
 
 In a pinball machine, when the ball gets to the bottom it might fall into a hole defining a score, in a neural network, that is equivalent to the decision: a classification of the input object. 
 
-An image has more than one number associated with it, so it's like playing pinball in a *hyper-space*.}
+An image has more than one number associated with it, so it is like playing pinball in a *hyper-space*.}
 
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
@@ -29,12 +28,12 @@ from ipywidgets import IntSlider}
 
 \newslide{}
 
-\figure{\div{\includediagram{../slides/diagrams/pinball001}}{}{text-align:center}
+\figure{\includediagram{../slides/diagrams/pinball001}
 \notes{\caption{At initialization, the pins, which represent the parameters of the function, aren't in the right place to bring the balls to the correct decisions.}}}
 
 \newslide{}
 
-\figure{\div{\includediagram{../slides/diagrams/pinball002}}{}{text-align:center}
+\figure{\includediagram{../slides/diagrams/pinball002}
 \notes{\caption{After learning the pins are now in the right place to bring the balls to the correct decisions.}}
 }
 

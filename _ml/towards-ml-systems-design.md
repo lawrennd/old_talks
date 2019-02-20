@@ -38,20 +38,23 @@ categories:
 \include{_data-science/includes/evolved-relationship.md}
 \include{_ml/includes/what-does-machine-learning-do.md}
 
+\section{Deep Learning}
 \newslide{Deep Learning}
-
+\slides{
 * These are interpretable models: vital for disease etc.
 
 * Modern machine learning methods are less interpretable
 
 * Example: face recognition
+}
+\notes{The models we have described so far are very interpretable because they are linear. But the general formalism of the prediction function allows for *non-linear* models. In machine learning, the emphasis on prediction over interpretability means that non-linear models are often used.}
 
 \include{_ml/includes/deep-learning-overview.md}
 \include{_gp/includes/gp-intro-very-short.md}
 \include{_deepgp/includes/deep-olympic.md}
 
-<!-- \include{_data-science/includes/a-time-for-professionalisation.md} -->
-<!-- \include{_data-science/includes/the-data-crisis.md} -->
+<!-- include{_data-science/includes/a-time-for-professionalisation.md} -->
+<!-- include{_data-science/includes/the-data-crisis.md} -->
 
 <!-- ### Rest of this Talk: Two Areas of Focus  -->
 
@@ -65,7 +68,7 @@ categories:
 
 <!-- * Deployment of Machine Learning Systems -->
 
-<!--\include{_data-science/includes/data-readiness-levels.md}-->
+<!--include{_data-science/includes/data-readiness-levels.md}-->
 
 \newslide{Artificial Intelligence}
 
@@ -93,8 +96,10 @@ categories:
 
 <!--include{_uq/includes/uncertainty-quantification.md}-->
 
+\editme
+\section{Conclusion}
 \newslide{Conclusion}
-
+\slides{
 * Artificial Intelligence and Data Science are fundamentally different.
 
 * In one you are dealing with data collected by happenstance.
@@ -103,6 +108,9 @@ categories:
 
 * Our approaches to systems design are building powerful machines that
 will be deployed in evolving environments.
+}
+
+\notes{Artificial intelligence and data science are fundamentally different. In one you are dealing with data collecte by happenstance, in the other you are trying to build systems in the real world, often by actively collecting data. Our approaches to systems design are building powerful machines that will be deployed in evolving environments. But this is presenting key challenges in how we maintain and manage our machine learning systems.}
 
 \thanks
 
