@@ -1,0 +1,165 @@
+---
+title: "Machine Learning and Data Readiness Levels"
+abstract: "<p>In this talk we will look at the challenges facing deployment of machine learning, with a particular focus on the reuse of data and data quality. We suggest data readiness levels as a mechanism for monitoring data quality.</p>"
+author:
+- given: Neil D.
+  family: Lawrence
+  url: http://inverseprobability.com
+  institute: Amazon Cambridge and University of Sheffield
+  twitter: lawrennd
+  gscholar: r3SJcvoAAAAJ
+  orchid: 
+date: 2018-01-25
+published: 2018-01-25
+reveal: 2018-01-25-machine-learning-and-data-readiness-levels.slides.html
+ipynb: 2018-01-25-machine-learning-and-data-readiness-levels.ipynb
+layout: talk
+categories:
+- notes
+---
+
+
+<div style="display:none">
+  $${% include talk-notation.tex %}$$
+</div>
+
+
+
+
+<p> </p>
+
+<p> </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p> </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>  <br /><span class="math display">$$ \text{odds} = \frac{p(\text{bought})}{p(\text{not bought})} $$</span><br /> <br /><span class="math display">logodds = <em>β</em><sub>0</sub> + <em>β</em><sub>1</sub>age + <em>β</em><sub>2</sub>latitude.</span><br /> </p>
+<p>  <br /><span class="math display">$$ p(\text{bought}) =  \sigmoid{\beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}}.$$</span><br /> </p>
+<p>  <br /><span class="math display">$$ p(\text{bought}) =  \sigmoid{\boldsymbol{\beta}^\top \inputVector}.$$</span><br /> </p>
+<p>  <br /><span class="math display">$$ \dataScalar =  \mappingFunction\left(\inputVector, \boldsymbol{\beta}\right).$$</span><br /> We call <span class="math inline">$\mappingFunction(\cdot)$</span> the <em>prediction function</em>.</p>
+
+<p>  <br /><span class="math display">$$\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix)$$</span><br />  <br /><span class="math display">$$\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingFunction(\inputVector_i, \boldsymbol{\beta})\right)^2.$$</span><br /></p>
+<p>  </p>
+
+<!-- No slide titles in this context -->
+
+<p>  </p>
+
+
+
+
+
+
+
+
+
+<p> </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p> </p>
+
+<p>  </p>
+<p> </p>
+
+
+
+
+
+
+
+
+<ul>
+<li><p>Grade C - accessibility</p></li>
+<li><p>Grade B - validity</p></li>
+<li><p>Grade A - usability</p></li>
+</ul>
+
+
+
+
+<p>   </p>
+
+<p> </p>
+<p> </p>
+
+
+
+
+
+<p> </p>
+<p> </p>
+
+
+<p> </p>
+
+<!--include{_ai/includes/deploying-ai.md}-->
+<!--include{_ai/includes/ml-systems-design-long.md}-->
+<p>  </p>
+
+

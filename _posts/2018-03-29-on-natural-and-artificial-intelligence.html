@@ -1,0 +1,397 @@
+---
+title: "Natural and Artificial Intelligence"
+venue: "Amazon Thursday Thoughts"
+abstract: "What is the nature of machine intelligence and how does it differ from humans? In this talk we explore some of the differences between natural and machine intelligence."
+author:
+- given: Neil D.
+  family: Lawrence
+  url: http://inverseprobability.com
+  institute: Amazon and University of Sheffield
+  twitter: lawrennd
+  gscholar: r3SJcvoAAAAJ
+  orchid: 
+date: 2018-03-29
+published: 2018-03-29
+reveal: 2018-03-29-on-natural-and-artificial-intelligence.slides.html
+ipynb: 2018-03-29-on-natural-and-artificial-intelligence.ipynb
+layout: talk
+categories:
+- notes
+---
+
+
+<div style="display:none">
+  $${% include talk-notation.tex %}$$
+</div>
+
+<!--notes:
+- a plastic plant. is poor. It is poorly define
+- it may with us for the did not join us It’s intelligence is based The worth of an idea  A negotiated compromise betwagreed upon , because it is predicated on a shared condition. The constraints on . A shared limitations.  is this condition. This locked in intelligence, because however we create an artificial intelligence it will 
+- The challenge for an artificial intelligence is to emulat
+-, an ingrained world view.or is predisposed to certain
+- to seek out teleological explanations. 
+- Each of To have a shared understanding on intent, we need a shared understanding of each other, of how we’ll likely react to different circumstances. We do this through empathy, through our artificial systems are able to communicate any of their thoughts far While communication does not have to be part of an individuals intelligence, if we consider the populations intelligence, we see that the architecture for sharing information wilI if we assume that sharing of information between individual computers or humans is a key 
+- The average word in English contains 12 
+- The challenges of this new form of systems design have already been explored in systems biology, a field dedicated to the reverse engineering of biological systems. As many researchers have found, classical approaches to reverse engineering, which typically involve subjecting the system to a perturbation. In other words actively changing the system, to obtain a deeper understanding of behaviour normally fail because a natural system will often compensate. Survival dictates that there should be back up systems that kick in. 
+- Robust approaches to systems design for the “don’t fail” predicate are beyond the scope of current engineering practice. They require uncertainty, best default behaviours, worst case analyses. They require you to consider how your artificial intelligence should respond to a mischievous 10 year old. 
+-  (in the simplest case, hitting it with a hammer
+- Firstly, imagine all the different pin configurations there could be in our hyperspace pinball machine. There are many pin configurations that may work well, but in such a complex machine, even if we have a lot of data to test it with, there may be areas of the machine we don’t explore until we test it in the real world, unforeseen circumstances. How do we guarantee that the machine doesn’t mess up?
+- Or what if we get the objective function wrong? How do we distil our desired behaviour into a simple mathematical function. 
+- *Pigeonholed activity*
+- *Natural vs artificial systems*
+- *natural vs human intelligence*
+- The prediction function is the object that is used to make new pr
+- that we are a long way off. Or at least, there are technological breakthroughs that need to happen 
+So what will be the last bastion 
+- In the timeliSuper human performance on specific tasks are hailed as breaDebates around artificial intelligence are confused because the fail to properly define tBroadly My own position is Human intelligence is quite diffrArtificial intelligence is a loaded term, one that is challenging because it means different things to different people. Historically, artificial intelligence practitioners focussed on planning and logic. Recreating the reasoning abilities of humans in our artificial devices, but the new wave of breakthroughs come from something else. From artificial neural network models. 
+- However, just as the origins of Although the origins of - One challenge is that most practitioners of artificial intelligence do not give 
+- Or at least in emulating a set of actions that we regard as intelligent. Whether it’s 
+-->
+<!-- Front matter -->
+<p>.</p>
+<!--Back matter-->
+<!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
+<p><em>How are we making computers do the things we used to associated only with humans? Have we made a breakthrough in understanding human intelligence?</em></p>
+<p>While recent achievements might give the sense that the answer is yes, the short answer is that we are nowhere near. All we’ve achieved for the moment is a breakthrough in <em>emulating intelligence</em>.</p>
+<p>A more recent example comes from the middle of the last century. A hundred years ago <em>computers</em> were human beings, often female, who conducted repetitive mathematical tasks for the creation of mathematical tables such as logarithms. Our modern digital computers were originally called <em>automatic computers</em> to reflect the fact that the intelligence of these human operators had been automated. But despite the efficiency with which they perform these tasks, very few think of their mobile phones or computers as intelligent.</p>
+<p>Norbert Wiener launched last century’s first wave of interest in emulation of intelligence with his book “Cybernetics”. The great modern success that stemmed from that work is the modern engineering discipline of Automatic Control. The technology that allows fighter jets to fly. These ideas came out of the Second World War, when researchers explored the use of radar (automated sensing) and automatic computation for decryption of military codes (automated decision making). Post war a body of researchers, including Alan Turing, were seeing the potential for electronic emulation of what had up until then been the preserve of an animallian nervous system.</p>
+<p>{ * Ideas came out of the Second World War. * Researchers explored the use of radar (automated sensing) e.g. Donald MacKay * Automatic computation for decryption of military codes (automated decision making) e.g. Jack Good and Alan Turing * Post-war potential for electronic emulation of what had up until then been the preserve of an animallian nervous system.</p>
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/science-holborn-viaduct.jpg" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<center>
+<em>Science on Holborn Viaduct, cradling the Centrifugal Governor.</em>
+</center>
+<p>Artificial intelligence is a badly defined term. Successful deployments of intelligent systems are common, but normally they are redefined to be non-intelligent. My favourite example is <a href="https://en.wikipedia.org/wiki/Centrifugal_governor">the Centrifugal governor</a>. Applied to the Steam Engine by Boulton and Watt and immortalised in the arms of the statue of “Science” on the Holborn viaduct in London, the centrifugal governor automatically regulated the speed of a steam engine, closing the inlet valve progressively as the engine ran faster. It did the job that an intelligent operator used to have to do, but few today would describe it as “artificial intelligence”.</p>
+<p>So what of the modern revolution? Is this any different? Are we finally encroaching on the quintessential nature of human intelligence? Or is there a last bastion of our minds that remains out of reach from this latest technical wave?</p>
+<p>My answer has two parts. Firstly, current technology is a long way from emulating all aspects of human intelligence: there are a number of technological breakthroughs that remain before we crack the fundamental nature of human intelligence. Secondly, and perhaps more controversially, I believe that there are aspects of human intelligence that we will never be able to emulate, a preserve that remains uniquely ours.</p>
+<p>Before we explore these ideas though, we first need to give some sense of current technology.</p>
+<p>Recent breakthroughs in artificial intelligence are being driven by advances in machine learning. Or more precisely, a sub domain of that field known as deep learning. So what is deep learning? Well, machine learning algorithms proceed in the following way. They observe data, often from humans, and they attempt to emulate that data creation process with a mathematical function. Let’s explain that in a different way. Whichever activities we are interested in emulating, we acquire data about them. Data is simply a set of numbers representing the activity. It might include location, or number representing past behaviour. Once we have the behaviour represented in a set of numbers, then we can emulate it mathematically.</p>
+<p>Different mathematical functions have different characteristics, in trigonometry we learnt about sine and cosine functions. Those are functions that have a period. They repeat over time. They are useful for emulating behaviour that repeats itself, perhaps behaviour that reflects day/night cycles. But these functions on their own are too simple to emulate human behaviour in all its richness. So how do we make things more complex? In practice we can add functions together, scale them up and scale them down. All these things are done. Deep learning refers to the practice of creating a new function by feeding one function in to another. So we create the output of a function, feed it in to a new function, and take the output of that as our answer. In maths this is known as <em>composition</em> of functions. The advantage is that we can generate much more complex functions from simpler functions. The resulting functions allow us to take an <em>image</em> as an input and produce an output that includes numbers representing what the objects or people are in that image. Doing this accurately is achieved through composition of mathematical functions, otherwise known as deep learning.</p>
+<p>To describe this process, I sometimes use the following analogy. Think of a pinball machine with rows of pins. A plunger is used to fire a ball into the top of the machine. Think of each row of pins as a function. The input to the function is the position of the ball along the left to right axis of the machine at the top. The output of the function is the position of the ball as it leaves each row of pins. Composition of functions is simply feeding the output of one row of pins into the next. If we do this multiple times, then although the machine has multiple functions in it, by feeding one function into another, then the entire machine is in itself representing a single function. Just a more complex function than that that any individual row of pins can represent. Our modern machine learning systems are just like this machine. Except they take very high dimensional inputs. The pinball is only represented by its left to right position, a one dimensional function. A real learning machine will often represent multiple dimensions, like playing pinball in a hyperspace.</p>
+<p>So the intelligence we’ve created is just a (complex) mathematical function. But how do we make this function match what humans do? We use more maths. In fact we use another mathematical function. To avoid confusion let’s call the function represented by our pinball machine the <em>prediction function</em>. In the pinball machine, we can move the pins around, and any configuration of pins leads to a different answer for our functions. So how do we find the correct configuration? For that we use a separate function known as the <em>objective function</em>.</p>
+<p>The objective function measures the dissimilarity between the output of our prediction function, and data we have from the humans. The process of learning in these machines is the process of moving the pins around in the pinball machine to make the prediction more similar to the data. The quality of any given pin configuration is assessed by quantifying the differences between what the humans have done, and what the machine is predicting using the objective function. Different objective functions are used for different tasks, but objective functions are typically much simpler than prediction functions.</p>
+<p>So, we have some background. And some understanding of the challenges for the designer of machine learning algorithms. You need data, you need a prediction function, and you need an objective function. Choice of prediction function and objective function are in the hands of the algorithm designer. Deep learning is a way of making very complex, and flexible, classes of prediction functions that deal well with the type of data we get from speech, written language and images.</p>
+<p>But what if the designer gets the choice of prediction function wrong? Or the choice of the objective function wrong? Or what if they choose the right class of prediction function (such as a convolutional neural network, used for classifying images) but get the location of all those pins in the machine wrong?</p>
+<p>This is a major challenge for our current generation of AI solutions. They are fragile. They are sensitive to incorrect choices and when they fail, they fail catastrophically.</p>
+<p>{Review of Current Technology</p>
+<h1 id="what-is-machine-learning-edit">What is Machine Learning? <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
+<p>What is machine learning? At its most basic level machine learning is a combination of</p>
+<p><br /><span class="math display">$$\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$</span><br /></p>
+<p>where <em>data</em> is our observations. They can be actively or passively acquired (meta-data). The <em>model</em> contains our assumptions, based on previous experience. That experience can be other data, it can come from transfer learning, or it can merely be our beliefs about the regularities of the universe. In humans our models include our inductive biases. The <em>prediction</em> is an action to be taken or a categorization or a quality score. The reason that machine learning has become a mainstay of artificial intelligence is the importance of predictions in artificial intelligence. The data and the model are combined through computation.</p>
+<p>In practice we normally perform machine learning using two functions. To combine data with a model we typically make use of:</p>
+<p><strong>a prediction function</strong> a function which is used to make the predictions. It includes our beliefs about the regularities of the universe, our assumptions about how the world works, e.g. smoothness, spatial similarities, temporal similarities.</p>
+<p><strong>an objective function</strong> a function which defines the cost of misprediction. Typically it includes knowledge about the world's generating processes (probabilistic objectives) or the costs we pay for mispredictions (empiricial risk minimization).</p>
+<p>The combination of data and model through the prediction function and the objectie function leads to a <em>learning algorithm</em>. The class of prediction functions and objective functions we can make use of is restricted by the algorithms they lead to. If the prediction function or the objective function are too complex, then it can be difficult to find an appropriate learning algorithm. Much of the acdemic field of machine learning is the quest for new learning algorithms that allow us to bring different types of models and data together.</p>
+<p>A useful reference for state of the art in machine learning is the UK Royal Society Report, <a href="https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf">Machine Learning: Power and Promise of Computers that Learn by Example</a>.</p>
+<p>You can also check my blog post on <a href="http://inverseprobability.com/2017/07/17/what-is-machine-learning">&quot;What is Machine Learning?&quot;</a></p>
+<h2 id="what-does-machine-learning-do-edit">What does Machine Learning do? <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-does-machine-learning-do.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-does-machine-learning-do.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>Any process of automation allows us to scale what we do by codifying a process in some way that makes it efficient and repeatable. Machine learning automates by emulating human (or other actions) found in data. Machine learning codifies in the form of a mathematical function that is learnt by a computer. If we can create these mathematical functions in ways in which they can interconnect, then we can also build systems.</p>
+<p>Machine learning works through codifing a prediction of interest into a mathematical function. For example, we can try and predict the probability that a customer wants to by a jersey given knowledge of their age, and the latitude where they live. The technique known as logistic regression estimates the odds that someone will by a jumper as a linear weighted sum of the features of interest.</p>
+<p><br /><span class="math display">$$ \text{odds} = \frac{p(\text{bought})}{p(\text{not bought})} $$</span><br /> <br /><span class="math display">logodds = <em>β</em><sub>0</sub> + <em>β</em><sub>1</sub>age + <em>β</em><sub>2</sub>latitude.</span><br /> Here <span class="math inline"><em>β</em><sub>0</sub></span>, <span class="math inline"><em>β</em><sub>1</sub></span> and <span class="math inline"><em>β</em><sub>2</sub></span> are the parameters of the model. If <span class="math inline"><em>β</em><sub>1</sub></span> and <span class="math inline"><em>β</em><sub>2</sub></span> are both positive, then the log-odds that someone will buy a jumper increase with increasing latitude and age, so the further north you are and the older you are the more likely you are to buy a jumper. The parameter <span class="math inline"><em>β</em><sub>0</sub></span> is an offset parameter, and gives the log-odds of buying a jumper at zero age and on the equator. It is likely to be negative<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> indicating that the purchase is odds-against. This is actually a classical statistical model, and models like logistic regression are widely used to estimate probabilities from ad-click prediction to risk of disease.</p>
+<p>This is called a generalized linear model, we can also think of it as estimating the <em>probability</em> of a purchase as a nonlinear function of the features (age, lattitude) and the parameters (the <span class="math inline"><em>β</em></span> values). The function is known as the <em>sigmoid</em> or <a href="https://en.wikipedia.org/wiki/Logistic_regression">logistic function</a>, thus the name <em>logistic</em> regression.</p>
+<p><br /><span class="math display">$$ p(\text{bought}) =  \sigmoid{\beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}}.$$</span><br /> In the case where we have <em>features</em> to help us predict, we sometimes denote such features as a vector, <span class="math inline">$\inputVector$</span>, and we then use an inner product between the features and the parameters, <span class="math inline">$\boldsymbol{\beta}^\top \inputVector = \beta_1 \inputScalar_1 + \beta_2 \inputScalar_2 + \beta_3 \inputScalar_3 ...$</span>, to represent the argument of the sigmoid.</p>
+<p><br /><span class="math display">$$ p(\text{bought}) =  \sigmoid{\boldsymbol{\beta}^\top \inputVector}.$$</span><br /> More generally, we aim to predict some aspect of our data, <span class="math inline">$\dataScalar$</span>, by relating it through a mathematical function, <span class="math inline">$\mappingFunction(\cdot)$</span>, to the parameters, <span class="math inline"><strong>β</strong></span> and the data, <span class="math inline">$\inputVector$</span>.</p>
+<p><br /><span class="math display">$$ \dataScalar =  \mappingFunction\left(\inputVector, \boldsymbol{\beta}\right).$$</span><br /> We call <span class="math inline">$\mappingFunction(\cdot)$</span> the <em>prediction function</em>.</p>
+<p>To obtain the fit to data, we use a separate function called the <em>objective function</em> that gives us a mathematical representation of the difference between our predictions and the real data.</p>
+<p><br /><span class="math display">$$\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix)$$</span><br /> A commonly used examples (for example in a regression problem) is least squares, <br /><span class="math display">$$\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingFunction(\inputVector_i, \boldsymbol{\beta})\right)^2.$$</span><br /></p>
+<p>If a linear prediction function is combined with the least squares objective function then that gives us a classical <em>linear regression</em>, another classical statistical model. Statistics often focusses on linear models because it makes interpretation of the model easier. Interpretation is key in statistics because the aim is normally to validate questions by analysis of data. Machine learning has typically focussed more on the prediction function itself and worried less about the interpretation of parameters, which are normally denoted by <span class="math inline"><strong>w</strong></span> instead of <span class="math inline"><strong>β</strong></span>. As a result <em>non-linear</em> functions are explored more often as they tend to improve quality of predictions but at the expense of interpretability.</p>
+<!-- No slide titles in this context -->
+<h2 id="deep-learning-edit">Deep Learning <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-overview.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-overview.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<h1 id="deep-learning">Deep Learning</h1>
+<p>Classical statistical models and simple machine learning models have a great deal in common. The main difference between the fields is philosophical. Machine learning practitioners are typically more concerned with the quality of prediciton (e.g. measured by ROC curve) while statisticians tend to focus more on the interpretability of the model and the validity of any decisions drawn from that interpretation. For example, a statistical model may be used to validate whether a large scale intervention (such as the mass provision of mosquito nets) has had a long term effect on disease (such as malaria). In this case one of the covariates is likely to be the provision level of nets in a particular region. The response variable would be the rate of malaria disease in the region. The parmaeter, <span class="math inline"><em>β</em><sub>1</sub></span> associated with that covariate will demonstrate a positive or negative effect which would be validated in answering the question. The focus in statistics would be less on the accuracy of the response variable and more on the validity of the interpretation of the effect variable, <span class="math inline"><em>β</em><sub>1</sub></span>.</p>
+<p>A machine learning practitioner on the other hand would typically denote the parameter <span class="math inline"><em>w</em><sub>1</sub></span>, instead of <span class="math inline"><em>β</em><sub>1</sub></span> and would only be interested in the output of the prediction function, <span class="math inline">$\mappingFunction(\cdot)$</span> rather than the parameter itself. The general formalism of the prediction function allows for <em>non-linear</em> models. In machine learning, the emphasis on prediction over interpretability means that non-linear models are often used. The parameters, <span class="math inline"><strong>w</strong></span>, are a means to an end (good prediction) rather than an end in themselves (interpretable.</p>
+<h3 id="deepface-edit">DeepFace <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-face.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-face.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/deepface_neg.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<center>
+<em>The DeepFace architecture <span class="citation">(Taigman et al. 2014)</span>, visualized through colors to represent the functional mappings at each layer. There are 120 million parameters in the model.</em>
+</center>
+<p>The DeepFace architecture <span class="citation">(Taigman et al. 2014)</span> consists of layers that deal with <em>translation</em> and <em>rotational</em> invariances. These layers are followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected layers.</p>
+<h3 id="deep-learning-as-pinball-edit">Deep Learning as Pinball <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-as-pinball.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-as-pinball.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/576px-Early_Pinball.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<center>
+<em>Deep learning models are composition of simple functions. We can think of a pinball machine as an analogy. Each layer of pins corresponds to one of the layers of functions in the model. Input data is represented by the location of the ball from left to right when it is dropped in from the top. Output class comes from the position of the ball as it leaves the pins at the bottom.</em>
+</center>
+<p>Sometimes deep learning models are described as being like the brain, or too complex to understand, but one analogy I find useful to help the gist of these models is to think of them as being similar to early pin ball machines.</p>
+<p>In a deep neural network, we input a number (or numbers), whereas in pinball, we input a ball.</p>
+<p>Think of the location of the ball on the left-right axis as a single number. Our simple pinball machine can only take one number at a time. As the ball falls through the machine, each layer of pins can be thought of as a different layer of 'neurons'. Each layer acts to move the ball from left to right.</p>
+<p>In a pinball machine, when the ball gets to the bottom it might fall into a hole defining a score, in a neural network, that is equivalent to the decision: a classification of the input object.</p>
+<p>An image has more than one number associated with it, so it is like playing pinball in a <em>hyper-space</em>.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;pinball</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            <span class="st">&#39;../slides/diagrams&#39;</span>,
+                            sample<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>))</code></pre></div>
+<object class="svgplot " align data="../slides/diagrams/pinball001.svg" style="vertical-align:middle;">
+</object>
+<center>
+<em>At initialization, the pins, which represent the parameters of the function, aren't in the right place to bring the balls to the correct decisions.</em>
+</center>
+<object class="svgplot " align data="../slides/diagrams/pinball002.svg" style="vertical-align:middle;">
+</object>
+<center>
+<em>After learning the pins are now in the right place to bring the balls to the correct decisions.</em>
+</center>
+<p>Learning involves moving all the pins to be in the correct position, so that the ball ends up in the right place when it's fallen through the machine. But moving all these pins in hyperspace can be difficult.</p>
+<p>In a hyper-space you have to put a lot of data through the machine for to explore the positions of all the pins. <em>Adversarial examples</em> exploit this idea.</p>
+<p>If you have access to the pinball machine, you can use gradient methods to find a position for the ball in the hyper space where the image looks like one thing, but will be classified as another.</p>
+<p>Probabilistic methods explore more of the space by considering a range of possible paths for the ball through the machine. This helps to make them more data efficient and gives some robustness to adversarial examples.</p>
+<h2 id="deploying-artificial-intelligence-edit">Deploying Artificial Intelligence <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/deploying-ai.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/deploying-ai.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>With he wide availability of new techniques, we are currently creating Artififical Intelligence through combination of machine learning algorithms to form machine learning systems.</p>
+<p>{This effect is amplified through the growth in sensorics, in particular the movement of cloud computing towards the customer. The barrier between cloud and device is blurring. This phenomenon is sometimes known as fog computing, or <em>computing on the edge</em>.</p>
+<p>This presents major new challenges for machine learning systems design. We would like an internet of <em>intelligence</em> but currently our AI systems are <em>fragie</em>. A classical systems approach to design does not handle evolving environments well.</p>
+<h1 id="machine-learning-system-design-edit">Machine Learning System Design <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/ml-systems-design-long.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/ml-systems-design-long.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
+<h2 id="pigeonholing">Pigeonholing</h2>
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/TooManyPigeons.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<center>
+<em>Decompartmentalization of the model into parts can be seen as pigeoholing the separate tasks that are required.</em>
+</center>
+<p>To deal with the complexity of systems design, a common approach is to break complex systems down into a series of tasks. An approach we can think of as &quot;pigeonholing&quot;. Classically, a sub-task could perhaps be thought of as a particular stage in machining (automating a factory) or a sub-routine call in computing. Machine learning allows any complex sub-task, that was difficult to decompose by classical methods, to be reconstituted by acquiring data. In particular, when we think of emulating a human, we can ask many humans to perform the sub-task many times and fit machine learning models to reconstruct the performance, or to <em>emulate</em> the human in the performance of the task. For example, the decomposition of a complex process such as driving a car into apparently obvious sub-tasks (following the road, identifying pedestrians, etc).</p>
+<p>The current practitioner's approach to deploying artificial intelligence systems is to build up systems of machine learning components. To build a machine learning system, we decompose the task into parts, each of which we can emulate with ML methods. These parts are typically independently constructed and verified. For example, in a driverless car we can decompose the tasks into components such as &quot;pedestrian detection&quot; and &quot;road line detection&quot;. Each of these components can be constructed with, for example, a classification algorithm. Nowadays, people will often deploy a deep neural network, but for many tasks a random forest algorithm may be sufficient. We can then superimpose a logic on top. For example, &quot;Follow the road line unless you detect a pedestrian in the road&quot;.</p>
+<p>This allows for verification of car performance, as long as we can verify the individual components. However, it also implies that the AI systems we deploy are <em>fragile</em>.</p>
+<p>Our intelligent systems are composed by &quot;pigeonholing&quot; each indvidual task, then substituting with a machine learning model.</p>
+<p>But this is not a robust approach to systems design. The definition of sub-tasks can lead to a single point of failure, where if any sub-task fails, the entire system fails.</p>
+<h2 id="rapid-reimplementation">Rapid Reimplementation</h2>
+<p>This is also the classical approach to automation, but in traditional automation we also ensure the <em>environment</em> in which the system operates becomes controlled. For example, trains run on railway lines, fast cars run on motorways, goods are manufactured in a controlled factory environment.</p>
+<p>The difference with modern automated decision making systems is our intention is to deploy them in the <em>uncontrolled</em> environment that makes up our own world.</p>
+<p>This exposes us to either unforseen circumstances or adversarial action. And yet it is unclear our our intelligent systems are capable of adapting to this.</p>
+<p>We become exposed to mischief and adversaries. Adversaries intentially may wish to take over the artificial intelligence system, and mischief is the constant practice of many in our society. Simply watching a 10 year old interact with a voice agent such as Alexa or Siri shows that they are delighted when the can make the the &quot;intelligent&quot; agent seem foolish.</p>
+<h2 id="the-centrifugal-governor-edit">The Centrifugal Governor <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/centrifugal-governor.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/centrifugal-governor.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/science-holborn-viaduct.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<center>
+<em>Centrifugal governor as held by &quot;Science&quot; on Holborn Viaduct</em>
+</center>
+<p>The centrifugal governor was made famous by Boulton and Watt when it was deployed in the steam engine. Studying stability in the governor is the main subject of James Clerk Maxwell's paper on the theoretical analysis of governors <span class="citation">(Maxwell 1867)</span>, a founding paper of control theory. In this spirit, Wiener used the name <a href="https://en.wikipedia.org/wiki/Cybernetics"><em>cybernetics</em></a> to describe the field of control and communication in animals and the machine <span class="citation">(Wiener 1948)</span>. Cybernetics is the Greek word for governor, which comes from the latin for helmsman.</p>
+<p>A governor is one of the simplest artificial intelligence systems. It senses the speed of an engine, and acts to change the position of the valve on the engine to slow it down.</p>
+<p>Although it's a mechanical system a governor can be seen as automating a role that a human would have traditionally played. It is an early example of artificial intelligence.</p>
+<p>The centrifugal governor has several parameters, the weight of the balls used, the length of the linkages and the limits on the balls movement.</p>
+<p>Two principle differences exist between the centrifugal governor and artificial intelligence systems of today.</p>
+<ol style="list-style-type: decimal">
+<li>The centrifugal governor is a physical system and it is an integral part of a wider physical system that it regulates (the engine).</li>
+<li>The parameters of the governor were set by hand, our modern artificial intelligence systems have their parameters set by <em>data</em>.</li>
+</ol>
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/Centrifugal_governor.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<center>
+<em>The centrifugal governor, an early example of a decision making system. The parameters of the governor include the lengths of the linkages (which effect how far the throttle opens in response to movement in the balls), the weight of the balls (which effects inertia) and the limits of to which the balls can rise.</em>
+</center>
+<p>{One of the first automated decision making systems was Watt's governor, as held by &quot;Science&quot; on Holborns viaduct. Watt's governor was a key component in his steam engine. It senses increases in speed in the engine and closed the steam valve to prevent the engine overspeeding and destroying itself. Until the invention of this device, it was a human job to do this.</p>
+<p>The formal study of governors and other feedback control devices was then began by <a href="https://en.wikipedia.org/wiki/James_Clerk_Maxwell">James Clerk Maxwell</a>, the Scottish physicist. This field became the foundation of our modern techniques of artificial intelligence through Norbert Wiener's book <em>Cybernetics</em> <span class="citation">(Wiener 1948)</span>. Cybernetics is Greek for governor, a word that in itself simply means helmsman in English.</p>
+<p>The recent WannaCry virus that had a wide impact on our health services ecosystem was exploiting a security flaw in Windows systems that was first exploited by a virus called Stuxnet.</p>
+<p>Stuxnet was a virus designed to infect the Iranian nuclear program's Uranium enrichment centrifuges. A centrifuge is prevented from overspeed by a controller, just like Watt's governor. Only now it is implemented in control logic, in this case on a Siemens PLC controller.</p>
+<p>Stuxnet infected these controllers and took over the response signal in the centrifuge, fooling the system into thinking that no overspeed was occuring. As a result, the centrifuges destroyed themselves through spinning too fast.</p>
+<p>This is equivalent to detaching Watt's governor from the steam engine. Such sabotage would be easily recognized by a steam engine operator. The challenge for the operators of the Iranian Uranium centrifuges was that the sabotage was occurring inside the electronics.</p>
+<p>That is the effect of an adversary on an intelligent system, but even without adveraries, the mischief of a 10 year old can confuse our AIs.</p>
+<iframe width height src="https://www.youtube.com/embed/1y2UKz47gew?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+<p>Asking Siri &quot;What is a trillion to the power of a thousand minus one?&quot; leads to a 30 minute response consisting of only 9s. I found this out because my nine year old grabbed my phone and did it. The only way to stop Siri was to force closure. This is an interesting example of a system feature that's <em>not</em> a bug, in fact it requires clever processing from Wolfram Alpha. But it's an unexpected result from the system performing correctly.</p>
+<p>This challenge of facing a circumstance that was unenvisaged in design but has consequences in deployment becomes far larger when the environment is uncontrolled. Or in the extreme case, where actions of the intelligent system effect the wider environment and change it.</p>
+<p>These unforseen circumstances are likely to lead to need for much more efficient turn-around and update for our intelligent systems. Whether we are correcting for security flaws (which <em>are</em> bugs) or unenvisaged circumstantial challenges: an issue I'm referring to as <em>peppercorns</em>. Rapid deployment of system updates is required. For example, Apple have &quot;fixed&quot; the problem of Siri returning long numbers.</p>
+<p>The challenge is particularly acute because of the <em>scale</em> at which we can deploy AI solutions. This means when something does go wrong, it may be going wrong in billions of households simultaneously.</p>
+<p>You can also check my blog post on <a href="http://inverseprobability.com/2017/11/15/decision-making">&quot;Decision Making and Diversity&quot;</a> You can also check my blog post on <a href="http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence">&quot;Natural vs Artifical Intelligence&quot;</a></p>
+<h2 id="artificial-vs-natural-systems-edit">Artificial vs Natural Systems <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/artificial-vs-natural-systems.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/artificial-vs-natural-systems.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>Let’s take a step back from artificial intelligence, and consider natural intelligence. Or even more generally, let’s consider the contrast between an artificial <em>system</em> and an natural system. The key difference between the two is that artificial systems are <em>designed</em> whereas natural systems are <em>evolved</em>.</p>
+<p>Systems design is a major component of all Engineering disciplines. The details differ, but there is a single common theme: achieve your objective with the minimal use of resources to do the job. That provides efficiency. The engineering designer imagines a solution that requires the minimal set of components to achieve the result. A water pump has one route through the pump. That minimises the number of components needed. Redundancy is introduced only in safety critical systems, such as aircraft control systems. Students of biology, however, will be aware that in nature system-redundancy is everywhere. Redundancy leads to robustness. For an organism to survive in an evolving environment it must first be robust, then it can consider how to be efficient. Indeed, organisms that evolve to be too efficient at a particular task, like those that occupy a niche environment, are particularly vulnerable to extinction.</p>
+<p>This notion is akin to the idea that only the best will survive, popularly encoded into an notion of evolution by Herbert Spencer's quote.</p>
+<blockquote>
+<p>Survival of the fittest</p>
+<p><a href="https://en.wikipedia.org/wiki/Herbert_Spencer">Herbet Spencer</a>, 1864</p>
+</blockquote>
+<p>Darwin himself never said &quot;Survival of the Fittest&quot; he talked about evolution by natural selection.</p>
+<blockquote>
+<p>Non-survival of the non-fit</p>
+</blockquote>
+<p>Evolution is better described as &quot;non-survival of the non-fit&quot;. You don't have to be the fittest to survive, you just need to avoid the pitfalls of life. This is the first priority.</p>
+<p>So it is with natural vs artificial intelligences. Any natural intelligence that was not robust to changes in its external environment would not survive, and therefore not reproduce. In contrast the artificial intelligences we produce are designed to be efficient at one specific task: control, computation, playing chess. They are <em>fragile</em>.</p>
+<p>A mistake we make in the design of our systems is to equate fitness with the objective function, and to assume it is known and static. In practice, a real environment would have an evolving fitness function which would be unknown at any given time.</p>
+<p>You can also check my blog post on <a href="http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence">&quot;On Natural and Artificial Intelligence&quot;</a>.</p>
+<p>The first criterion of a natural intelligence is <em>don’t fail</em>, not because it has a will or intent of its own, but because if it had failed it wouldn’t have stood the test of time. It would no longer exist. In contrast, the mantra for artificial systems is to be more efficient. Our artificial systems are often given a single objective (in machine learning it is encoded in a mathematical function) and they aim to achieve that objective efficiently. These are different characteristics. Even if we wanted to incorporate <em>don’t fail</em> in some form, it is difficult to design for. To design for “don’t fail”, you have to consider every which way in which things can go wrong, if you miss one you fail. These cases are sometimes called corner cases. But in a real, uncontrolled environment, almost everything is a corner. It is difficult to imagine everything that can happen. This is why most of our automated systems operate in controlled environments, for example in a factory, or on a set of rails. Deploying automated systems in an uncontrolled environment requires a different approach to systems design. One that accounts for uncertainty in the environment and is robust to unforeseen circumstances.</p>
+<p>The systems we produce today only work well when their tasks are pigeonholed, bounded in some way. To achieve robust artificial intelligences we need new approaches to both the design of the individual components, and the combination of components within our AI systems. We need to deal with uncertainty and increase robustness. Today, it is easy to make a fool of an artificial intelligent agent, technology needs to address the challenge of the uncertain environment to achieve robust intelligences.</p>
+<p>However, even if we find technological solutions for these challenges, it may be that the essence of human intelligence remains out of reach. It may be that the most quintessential element of our intelligence is defined by limitations. Limitations that computers have never experienced.</p>
+<p>Claude Shannon developed the idea of information theory: the mathematics of information. He defined the amount of information we gain when we learn the result of a coin toss as a “bit” of information. A typical computer can communicate with another computer with a billion bits of information per second. Equivalent to a billion coin tosses per second. So how does this compare to us? Well, we can also estimate the amount of information in the English language. Shannon estimated that the average English word contains around 12 bits of information, twelve coin tosses, this means our verbal communication rates are only around the order of tens to hundreds of bits per second. Computers communicate tens of millions of times faster than us, in relative terms we are constrained to a bit of pocket money, while computers are corporate billionaires.</p>
+<p>Our intelligence is not an island, it interacts, it infers the goals or intent of others, it predicts our own actions and how we will respond to others. We are social animals, and together we form a communal intelligence that characterises our species. For intelligence to be communal, our ideas to be shared somehow. We need to overcome this bandwidth limitation. The ability to share and collaborate, despite such constrained ability to communicate, characterises us. We must intellectually commune with one another. We cannot communicate all of what we saw, or the details of how we are about to react. Instead, we need a shared understanding. One that allows us to infer each other’s intent through context and a common sense of humanity. This characteristic is so strong that we anthropomorphise any object with which we interact. We apply moods to our cars, our cats, our environment. We seed the weather, volcanoes, trees with intent. Our desire to communicate renders us intellectually animist.</p>
+<p>But our limited bandwidth doesn’t constrain us in our imaginations. Our consciousness, our sense of self, allows us to play out different scenarios. To internally observe how our self interacts with others. To learn from an internal simulation of the wider world. Empathy allows us to understand others’ likely responses without having the full detail of their mental state. We can infer their perspective. Self-awareness also allows us to understand our own likely future responses, to look forward in time, play out a scenario. Our brains contain a sense of self and a sense of others. Because our communication cannot be complete it is both contextual and cultural. When driving a car in the UK a flash of the lights at a junction concedes the right of way and invites another road user to proceed, whereas in Italy, the same flash asserts the right of way and warns another road user to remain.</p>
+<p>Our main intelligence is our social intelligence, intelligence that is dedicated to overcoming our bandwidth limitation. We are individually complex, but as a society we rely on shared behaviours and oversimplification of our selves to remain coherent.</p>
+<p>This nugget of our intelligence seems impossible for a computer to recreate directly, because it is a consequence of our evolutionary history. The computer, on the other hand, was born into a world of data, of high bandwidth communication. It was not there through the genesis of our minds and the cognitive compromises we made are lost to time. To be a truly human intelligence you need to have shared that journey with us.</p>
+<p>Of course, none of this prevents us emulating those aspects of human intelligence that we observe in humans. We can form those emulations based on data. But even if an artificial intelligence can emulate humans to a high degree of accuracy it is a different type of intelligence. It is not constrained in the way human intelligence is. You may ask does it matter? Well, it is certainly important to us in many domains that there’s a human pulling the strings. Even in pure commerce it matters: the narrative story behind a product is often as important as the product itself. Handmade goods attract a price premium over factory made. Or alternatively in entertainment: people pay more to go to a live concert than for streaming music over the internet. People will also pay more to go to see a play in the theatre rather than a movie in the cinema.</p>
+<p>In many respects I object to the use of the term Artificial Intelligence. It is poorly defined and means different things to different people. But there is one way in which the term is very accurate. The term artificial is appropriate in the same way we can describe a plastic plant as an artificial plant. It is often difficult to pick out from afar whether a plant is artificial or not. A plastic plant can fulfil many of the functions of a natural plant, and plastic plants are more convenient. But they can never replace natural plants.</p>
+<p>In the same way, our natural intelligence is an evolved thing of beauty, a consequence of our limitations. Limitations which don’t apply to artificial intelligences and can only be emulated through artificial means. Our natural intelligence, just like our natural landscapes, should be treasured and can never be fully replaced.</p>
+<h3 id="engineering-systems-design">Engineering Systems Design</h3>
+<p>Engineering systems design is a major component of all engineering disciplines, in each domain the details differ, but there is a common theme. The aim is to achieve your objective with the minimal use of resources to do the job. This provides <em>efficiency</em>. An engineering designer imagines a solution that requires the minimal set of components to achieve a given result.</p>
+<p>For example, a water pump has a single route through the pump, the mechanism of the pump involves a single non-redundant set of linkages. This minimizes the resources needed for manufacturing the pump.</p>
+<h3 id="dont-fail">Don't Fail</h3>
+<p>The first criterion of natural intelligence is <em>don't fail</em>. This is in contrast to the mantra for artificial systems which is to be more efficient. Artificial systems are typically given a single objective (in machine learning it is encoded in a mathematical function). The aim is to achieve that objective efficiently.</p>
+<p>Even if we wanted to incorporate <em>don't fail</em> in some form, it is surprisingly difficult to design for. You would have to consider every which way in which things can go wrong. If you miss one you will fail. These cases are sometimes called corner cases.</p>
+<p>In an uncontrolled environment there are corners everywhere. It is difficult to imagine everything that can happen. As a result most of our automated systems operate in controlled environments, e.g. in a factory, on a set of rails.</p>
+<p>We can imagine a driverless car operating on a highway (a more controlled environment), but it is harder to imagine how one would operate in the city centres of Naples, Kampala or Delhi (less controlled environments).</p>
+<p>Deployment in uncontrolled environments may require a different approach to systems design, one that accounts for uncertainty in the environment and one that is robust to unforeseen circumstances.</p>
+<h2 id="pigeonholing-1">Pigeonholing</h2>
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/TooManyPigeons.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<center>
+<em>Decompartmentalization of the model into parts can be seen as pigeoholing the separate tasks that are required.</em>
+</center>
+<p>To deal with the complexity of systems design, a common approach is to break complex systems down into a series of tasks. An approach we can think of as &quot;pigeonholing&quot;. Classically, a sub-task could perhaps be thought of as a particular stage in machining (automating a factory) or a sub-routine call in computing. Machine learning allows any complex sub-task, that was difficult to decompose by classical methods, to be reconstituted by acquiring data. In particular, when we think of emulating a human, we can ask many humans to perform the sub-task many times and fit machine learning models to reconstruct the performance, or to <em>emulate</em> the human in the performance of the task. For example, the decomposition of a complex process such as driving a car into apparently obvious sub-tasks (following the road, identifying pedestrians, etc).</p>
+<p>The current practitioner's approach to deploying artificial intelligence systems is to build up systems of machine learning components. To build a machine learning system, we decompose the task into parts, each of which we can emulate with ML methods. These parts are typically independently constructed and verified. For example, in a driverless car we can decompose the tasks into components such as &quot;pedestrian detection&quot; and &quot;road line detection&quot;. Each of these components can be constructed with, for example, a classification algorithm. Nowadays, people will often deploy a deep neural network, but for many tasks a random forest algorithm may be sufficient. We can then superimpose a logic on top. For example, &quot;Follow the road line unless you detect a pedestrian in the road&quot;.</p>
+<p>This allows for verification of car performance, as long as we can verify the individual components. However, it also implies that the AI systems we deploy are <em>fragile</em>.</p>
+<p>Our intelligent systems are composed by &quot;pigeonholing&quot; each indvidual task, then substituting with a machine learning model.</p>
+<p>But this is not a robust approach to systems design. The definition of sub-tasks can lead to a single point of failure, where if any sub-task fails, the entire system fails.</p>
+<h3 id="section" class="slide:" data-transition="none"></h3>
+<p><img src="../slides/diagrams/the-diving-bell-and-the-butterfly.jpg" width="40%" align="center" style="background:none; border:none; box-shadow:none;"></p>
+<h3 id="section-1" class="slide:" data-transition="none"></h3>
+<p><img src="../slides/diagrams/Jean-Dominique_Bauby.jpg" align="center" width="70%" style="background:none; border:none; box-shadow:none;"></p>
+<h2 id="embodiment-factors-edit">Embodiment Factors <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors-tedx.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors-tedx.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<table>
+<tr>
+<td>
+</td>
+<td align="center">
+
+</td>
+<td align="center">
+
+</td>
+<td align="center">
+
+</td>
+</tr>
+<tr>
+<td>
+
+</td>
+<td align="center">
+
+</td>
+<td align="center">
+
+</td>
+<td align="center">
+
+</td>
+</tr>
+<tr>
+<td>
+
+</td>
+<td align="center">
+
+</td>
+<td align="center">
+
+</td>
+<td align="center">
+
+</td>
+</tr>
+<tr>
+<td>
+
+</td>
+<td align="center">
+
+</td>
+<td align="center">
+
+</td>
+<td align="center">
+
+</td>
+</tr>
+</table>
+<p>Let me explain what I mean. Claude Shannon introduced a mathematical concept of information for the purposes of understanding telephone exchanges.</p>
+<p>Information has many meanings, but mathematically, Shannon defined a bit of information to be the amount of information you get from tossing a coin.</p>
+<p>If I toss a coin, and look at it, I know the answer. You don't. But if I now tell you the answer I communicate to you 1 bit of information. Shannon defined this as the fundamental unit of information.</p>
+<p>If I toss the coin twice, and tell you the result of both tosses, I give you two bits of information. Information is additive.</p>
+<p>Shannon also estimated the average information associated with the English language. He estimated that the average information in any word is 12 bits, equivalent to twelve coin tosses.</p>
+<p>So every two minutes Bauby was able to communicate 12 bits, or six bits per minute.</p>
+<p>This is the information transfer rate he was limited to, the rate at which he could communicate.</p>
+<p>Compare this to me, talking now. The average speaker for TEDX speaks around 160 words per minute. That's 320 times faster than Bauby or around a 2000 bits per minute. 2000 coin tosses per minute.</p>
+<p>But, just think how much thought Bauby was putting into every sentence. Imagine how carefully chosen each of his words was. Because he was communication constrained he could put more thought into each of his words. Into thinking about his audience.</p>
+<p>So, his intelligence became locked in. He thinks as fast as any of us, but can communicate slower. Like the tree falling in the woods with no one there to hear it, his intelligence is embedded inside him.</p>
+<p>Two thousand coin tosses per minute sounds pretty impressive, but this talk is not just about us, it’s about our computers, and the type of intelligence we are creating within them.</p>
+<p>So how does two thousand compare to our digital companions? When computers talk to each other, they do so with billions of coin tosses per minute.</p>
+<p>Let’s imagine for a moment, that instead of talking about communication of information, we are actually talking about money. Bauby would have 6 dollars. I would have 2000 dollars, and my computer has billions of dollars.</p>
+<p>The internet has interconnected computers and equipped them with extremely high transfer rates.</p>
+<p>However, by our very best estimates, computers actually think slower than us.</p>
+<p>How can that be? You might ask, computers calculate much faster than me. That’s true, but underlying your conscious thoughts there are a lot of calculations going on.</p>
+<p>Each thought involves many thousands, millions or billions of calculations. How many exactly, we don’t know yet, because we don’t know how the brain turns calculations into thoughts.</p>
+<p>Our best estimates suggest that to simulate your brain a computer would have to be as large as the UK Met Office machine here in Exeter. That’s a 250 million pound machine, the fastest in the UK. It can do 16 billion billon calculations per second.</p>
+<p>It simulates the weather across the word every day, that’s how much power we think we need to simulate our brains.</p>
+<p>So, in terms of our computational power we are extraordinary, but in terms of our ability to explain ourselves, just like Bauby, we are locked in.</p>
+<p>For a typical computer, to communicate everything it computes in one second, it would only take it a couple of minutes. For us to do the same would take 15 billion years.</p>
+<p>If intelligence is fundamentally about processing and sharing of information. This gives us a fundamental constraint on human intelligence that dictates its nature.</p>
+<p>I call this ratio between the time it takes to compute something, and the time it takes to say it, the embodiment factor. Because it reflects how embodied our cognition is.</p>
+<p>If it takes you two minutes to say the thing you have thought in a second, then you are a computer. If it takes you 15 billion years, then you are a human.</p>
+<h1 id="section-2"></h1>
+<div style="text-align:center;width:70%">
+<img class="" src="../slides/diagrams/Sahe_tchadensis.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/640px-Marcel_Renault_1903.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<p>But, if you think about our ability to make use of those thoughts, to deploy them on the track, we are F1 cars with bicycle wheels.</p>
+<p>Just think of the control a driver would have to have to deploy such power through such a narrow channel of traction. That is the beauty and the skill of the human mind.</p>
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/Caleb_McDuff_WIX_Silence_Racing_livery.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<p>In contrast, our computers are more like go-karts. Underpowered, but with well-matched tires. More efficient, but somehow less extraordinary, less beautiful.</p>
+<h2 id="human-communication-edit">Human Communication <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/conversation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/conversation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>For human conversation to work, we require an internal model of who we are speaking to. We model each other, and combine our sense of who they are, who they think we are, and what has been said. This is our approach to dealing with the limited bandwidth connection we have. Empathy and understanding of intent. Mental dispositional concepts are used to augment our limited communication bandwidth.</p>
+<p>Fritz Heider referred to the important point of a conversation as being that they are happenings that are &quot;<em>psychologically represented</em> in each of the participants&quot; (his emphasis) <span class="citation">(Heider 1958)</span></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;anne-bob-conversation</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            <span class="st">&#39;../slides/diagrams&#39;</span>,  sample<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">1</span>))</code></pre></div>
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation006.svg" style="vertical-align:middle;">
+</object>
+<center>
+<em>Conversation relies on internal models of other individuals.</em>
+</center>
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation007.svg" style="vertical-align:middle;">
+</object>
+<center>
+<em>Misunderstanding of context and who we are talking to leads to arguments.</em>
+</center>
+<p>Embodiment factors imply that, in our communication between humans, what is <em>not</em> said is, perhaps, more important than what is said. To communicate with each other we need to have a model of who each of us are.</p>
+<p>To aid this, in society, we are required to perform roles. Whether as a parent, a teacher, an employee or a boss. Each of these roles requires that we conform to certain standards of behaviour to facilitate communication between ourselves.</p>
+<p>Control of self is vitally important to these communications.</p>
+<p>The high availability of data available to humans undermines human-to-human communication channels by providing new routes to undermining our control of self.</p>
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/Classic_baby_shoes.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<center>
+<em>For sale: baby shoes, never worn.</em>
+</center>
+<p>But this is a very different kind of intelligence than ours. A computer cannot understand the depth of the Ernest Hemingway's apocryphal six word novel: &quot;For Sale, Baby Shoes, Never worn&quot;, because it isn't equipped with that ability to model the complexity of humanity that underlies that statement.</p>
+<div id="refs" class="references">
+<div id="ref-Heider:interpersonal58">
+<p>Heider, Fritz. 1958. <em>The Psychology of Interpersonal Relations</em>. John Wiley.</p>
+</div>
+<div id="ref-Maxwell:governors1867">
+<p>Maxwell, James Clerk. 1867. “On Governors.” <em>Proceedings of the Royal Society of London</em> 16. The Royal Society: 270–83. <a href="http://www.jstor.org/stable/112510" class="uri">http://www.jstor.org/stable/112510</a>.</p>
+</div>
+<div id="ref-Taigman:deepface14">
+<p>Taigman, Yaniv, Ming Yang, Marc’Aurelio Ranzato, and Lior Wolf. 2014. “DeepFace: Closing the Gap to Human-Level Performance in Face Verification.” In <em>Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition</em>. doi:<a href="https://doi.org/10.1109/CVPR.2014.220">10.1109/CVPR.2014.220</a>.</p>
+</div>
+<div id="ref-Wiener:cybernetics48">
+<p>Wiener, Norbert. 1948. <em>Cybernetics: Control and Communication in the Animal and the Machine</em>. Cambridge, MA: MIT Press.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>The logarithm of a number less than one is negative, for a number greater than one the logarithm is positive. So if odds are greater than evens (odds-on) the log-odds are positive, if the odds are less than evens (odds-against) the log-odds will be negative.<a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
+
+
