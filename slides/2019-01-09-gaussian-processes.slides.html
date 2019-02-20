@@ -370,7 +370,9 @@
 <!-- Front matter -->
 <!--Back matter-->
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
-<p><span style="text-align:right"></span></p>
+<div class="header" style="">
+<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gp-book.md" target="_blank" >[edit]</a></small>
+</div>
 </section>
 <section id="section" class="slide level3">
 <h3></h3>
@@ -378,10 +380,16 @@
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/gp/rasmussen-williams-book.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<p><span style="text-align:right"></span></p>
-<p><span style="text-align:right"></span></p>
+<div class="header" style="">
+<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/what-is-a-gp.md" target="_blank" >[edit]</a></small>
+</div>
+<div class="header" style="">
+<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml.md" target="_blank" >[edit]</a></small>
+</div>
 <!-- SECTION What is Machine Learning? -->
-<p><span style="text-align:right"></span></p>
+<div class="header" style="">
+<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/data-plus-model.md" target="_blank" >[edit]</a></small>
+</div>
 </section>
 <section id="what-is-machine-learning" class="slide level3">
 <h3>What is Machine Learning?</h3>
@@ -432,15 +440,11 @@
 <li>mismatch between the set of prediction functions we choose and all possible prediction functions.</li>
 <li>Also uncertainties in objective, leave those for another day.</li>
 </ul>
-<p><span style="text-align:right"></span> ### Neural Networks and Prediction Functions</p>
-<ul>
-<li>adaptive non-linear function models inspired by simple neuron models <span class="citation" data-cites="McCulloch:neuron43">(McCulloch and Pitts, 1943)</span></li>
-<li>have become popular because of their ability to model data.</li>
-<li>can be composed to form highly complex functions</li>
-<li>start by focussing on one hidden layer</li>
-</ul>
+<div class="header" style="">
+<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/neural-networks.md" target="_blank" >[edit]</a></small>
+</div>
 </section>
-<section id="prediction-function-of-one-hidden-layer" class="slide level3">
+<section><section id="neural-networks-and-prediction-functions" class="titleslide slide level2"><h2>Neural Networks and Prediction Functions</h2></section><section id="prediction-function-of-one-hidden-layer" class="slide level3">
 <h3>Prediction Function of One Hidden Layer</h3>
 <p><span class="math display">\[
 \mappingFunction(\inputVector) = \left.\mappingVector^{(2)}\right.^\top \activationVector(\mappingMatrix_{1}, \inputVector)
@@ -452,30 +456,10 @@
 <li><p>elements of <span class="math inline">\(\activationVector(\cdot)\)</span> are the <em>activation</em> function of the neural network</p></li>
 <li><p>elements of <span class="math inline">\(\mappingMatrix_{1}\)</span> are the parameters of the activation functions.</p></li>
 </ul>
-</section>
-<section id="relations-with-classical-statistics" class="slide level3">
-<h3>Relations with Classical Statistics</h3>
-<ul>
-<li><p>In statistics activation functions are known as <em>basis functions</em>.</p></li>
-<li><p>would think of this as a <em>linear model</em>: not linear predictions, linear in the parameters</p></li>
-<li><p><span class="math inline">\(\mappingVector_{1}\)</span> are <em>static</em> parameters.</p></li>
-</ul>
-</section>
-<section id="adaptive-basis-functions" class="slide level3">
-<h3>Adaptive Basis Functions</h3>
-<ul>
-<li><p>In machine learning we optimize <span class="math inline">\(\mappingMatrix_{1}\)</span> as well as <span class="math inline">\(\mappingMatrix_{2}\)</span> (which would normally be denoted in statistics by <span class="math inline">\(\boldsymbol{\beta}\)</span>).</p></li>
-<li><p>Revisit that decision: follow the path of <span class="citation" data-cites="Neal:bayesian94">Neal (1994)</span> and <span class="citation" data-cites="MacKay:bayesian92">MacKay (1992)</span>.</p></li>
-<li><p>Consider the probabilistic approach.</p></li>
-</ul>
-<p><span style="text-align:right"></span> ### Probabilistic Modelling</p>
-<ul>
-<li>Probabilistically we want, <span class="math display">\[
-p(\dataScalar_*|\dataVector, \inputMatrix, \inputVector_*),
-\]</span> <span class="math inline">\(\dataScalar_*\)</span> is a test output <span class="math inline">\(\inputVector_*\)</span> is a test input <span class="math inline">\(\inputMatrix\)</span> is a training input matrix <span class="math inline">\(\dataVector\)</span> is training outputs</li>
-</ul>
-</section>
-<section id="joint-model-of-world" class="slide level3">
+</section></section>
+<section><section id="relations-with-classical-statistics" class="titleslide slide level2"><h2>Relations with Classical Statistics</h2></section></section>
+<section><section id="adaptive-basis-functions" class="titleslide slide level2"><h2>Adaptive Basis Functions</h2></section></section>
+<section><section id="probabilistic-modelling" class="titleslide slide level2"><h2>Probabilistic Modelling</h2></section><section id="joint-model-of-world" class="slide level3">
 <h3>Joint Model of World</h3>
 <p><span class="math display">\[
 p(\dataScalar_*|\dataVector, \inputMatrix, \inputVector_*) = \int p(\dataScalar_*|\inputVector_*, \mappingMatrix) p(\mappingMatrix | \dataVector, \inputMatrix) \text{d} \mappingMatrix
@@ -484,22 +468,19 @@ p(\dataScalar_*|\dataVector, \inputMatrix, \inputVector_*) = \int p(\dataScalar_
 <p><span class="math inline">\(\mappingMatrix\)</span> contains <span class="math inline">\(\mappingMatrix_1\)</span> and <span class="math inline">\(\mappingMatrix_2\)</span></p>
 <p><span class="math inline">\(p(\mappingMatrix | \dataVector, \inputMatrix)\)</span> is posterior density</p>
 </div>
-</section>
-<section id="likelihood" class="slide level3">
+</section><section id="likelihood" class="slide level3">
 <h3>Likelihood</h3>
 <p><span class="math inline">\(p(\dataScalar|\inputVector, \mappingMatrix)\)</span> is the <em>likelihood</em> of data point</p>
 <div class="fragment">
 <p>Normally assume independence: <span class="math display">\[
 p(\dataVector|\inputMatrix, \mappingMatrix) = \prod_{i=1}^\numData p(\dataScalar_i|\inputVector_i, \mappingMatrix),\]</span></p>
 </div>
-</section>
-<section id="likelihood-and-prediction-function" class="slide level3">
+</section><section id="likelihood-and-prediction-function" class="slide level3">
 <h3>Likelihood and Prediction Function</h3>
 <p><span class="math display">\[
 p(\dataScalar_i | \mappingFunction(\inputVector_i)) = \frac{1}{\sqrt{2\pi \dataStd^2}} \exp\left(-\frac{\left(\dataScalar_i - \mappingFunction(\inputVector_i)\right)^2}{2\dataStd^2}\right)
 \]</span></p>
-</section>
-<section id="unsupervised-learning" class="slide level3">
+</section><section id="unsupervised-learning" class="slide level3">
 <h3>Unsupervised Learning</h3>
 <ul>
 <li><p>Can also consider priors over latents <span class="math display">\[
@@ -507,39 +488,25 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatr
 \]</span></p></li>
 <li><p>This gives <em>unsupervised learning</em>.</p></li>
 </ul>
-</section>
-<section id="probabilistic-inference" class="slide level3">
+</section><section id="probabilistic-inference" class="slide level3">
 <h3>Probabilistic Inference</h3>
 <ul>
 <li><p>Data: <span class="math inline">\(\dataVector\)</span></p></li>
 <li><p>Model: <span class="math inline">\(p(\dataVector, \dataVector^*)\)</span></p></li>
 <li><p>Prediction: <span class="math inline">\(p(\dataVector^*| \dataVector)\)</span></p></li>
 </ul>
-<p><span style="text-align:right"></span> ### Graphical Models</p>
-<ul>
-<li>Represent joint distribution through <em>conditional dependencies</em>.</li>
-<li>E.g. Markov chain</li>
-</ul>
-<p><span class="math display">\[p(\dataVector) = p(\dataScalar_\numData | \dataScalar_{\numData-1}) p(\dataScalar_{\numData-1}|\dataScalar_{\numData-2}) \dots p(\dataScalar_{2} | \dataScalar_{1})\]</span></p>
-<object class="svgplot " align data="../slides/diagrams/ml/markov.svg" style="vertical-align:middle;">
-</object>
-</section>
-<section id="section-1" class="slide level3">
+<div class="header" style="">
+<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/graphical-models.md" target="_blank" >[edit]</a></small>
+</div>
+</section></section>
+<section><section id="graphical-models" class="titleslide slide level2"><h2>Graphical Models</h2></section><section id="section-1" class="slide level3">
 <h3></h3>
 <p>Predict Perioperative Risk of Clostridium Difficile Infection Following Colon Surgery <span class="citation" data-cites="Steele:predictive12">(Steele et al., 2012)</span></p>
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/bayes-net-diagnosis.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-</section>
-<section id="performing-inference" class="slide level3">
-<h3>Performing Inference</h3>
-<ul>
-<li><p>Easy to write in probabilities</p></li>
-<li><p>But underlying this is a wealth of computational challenges.</p></li>
-<li><p>High dimensional integrals typically require approximation.</p></li>
-</ul>
-</section>
-<section id="linear-models" class="slide level3">
+</section></section>
+<section><section id="performing-inference" class="titleslide slide level2"><h2>Performing Inference</h2></section><section id="linear-models" class="slide level3">
 <h3>Linear Models</h3>
 <ul>
 <li><p>In statistics, focussed more on <em>linear</em> model implied by <span class="math display">\[
@@ -558,12 +525,12 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatr
 <ul>
 <li>Normally integrals are complex but for this Gaussian linear case they are trivial.</li>
 </ul>
-</section>
-<section id="multivariate-gaussian-properties" class="slide level3">
+</section><section id="multivariate-gaussian-properties" class="slide level3">
 <h3>Multivariate Gaussian Properties</h3>
-<p><span style="text-align:right"></span></p>
-</section>
-<section id="recall-univariate-gaussian-properties" class="slide level3">
+<div class="header" style="">
+<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/multivariate-gaussian-properties-summary.md" target="_blank" >[edit]</a></small>
+</div>
+</section><section id="recall-univariate-gaussian-properties" class="slide level3">
 <h3>Recall Univariate Gaussian Properties</h3>
 <div class="fragment">
 <ol type="1">
@@ -574,8 +541,7 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatr
 <div class="fragment">
 <p><span class="math display">\[\sum_{i=1}^{\numData} \dataScalar_i \sim \gaussianSamp{\sum_{i=1}^\numData \meanScalar_i}{\sum_{i=1}^\numData\dataStd_i^2}\]</span></p>
 </div>
-</section>
-<section id="recall-univariate-gaussian-properties-1" class="slide level3">
+</section><section id="recall-univariate-gaussian-properties-1" class="slide level3">
 <h3>Recall Univariate Gaussian Properties</h3>
 <ol start="2" type="1">
 <li>Scaling a Gaussian leads to a Gaussian.</li>
@@ -586,8 +552,7 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatr
 <div class="fragment">
 <p><span class="math display">\[\mappingScalar\dataScalar\sim \gaussianSamp{\mappingScalar\meanScalar}{\mappingScalar^2 \dataStd^2}\]</span></p>
 </div>
-</section>
-<section id="multivariate-consequence" class="slide level3">
+</section><section id="multivariate-consequence" class="slide level3">
 <h3>Multivariate Consequence</h3>
 <p><span style="text-align:left">If</span> <span class="math display">\[\inputVector \sim \gaussianSamp{\meanVector}{\covarianceMatrix}\]</span></p>
 <div class="fragment">
@@ -596,16 +561,16 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatr
 <div class="fragment">
 <p><span style="text-align:left">Then</span> <span class="math display">\[\dataVector \sim \gaussianSamp{\mappingMatrix\meanVector}{\mappingMatrix\covarianceMatrix\mappingMatrix^\top}\]</span></p>
 </div>
-</section>
-<section id="linear-gaussian-models" class="slide level3">
+</section><section id="linear-gaussian-models" class="slide level3">
 <h3>Linear Gaussian Models</h3>
 <ol type="1">
 <li>linear Gaussian models are easier to deal with</li>
 <li>Even the parameters <em>within</em> the process can be handled, by considering a particular limit.</li>
 </ol>
-<p><span style="text-align:right"></span></p>
-</section>
-<section id="multivariate-gaussian-properties-1" class="slide level3">
+<div class="header" style="">
+<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/multivariate-gaussian-properties.md" target="_blank" >[edit]</a></small>
+</div>
+</section><section id="multivariate-gaussian-properties-1" class="slide level3">
 <h3>Multivariate Gaussian Properties</h3>
 <ul>
 <li><p>If <span class="math display">\[
@@ -621,8 +586,7 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatr
 \dataVector \sim \gaussianSamp{\mappingMatrix\meanVector}{\mappingMatrix\covarianceMatrix\mappingMatrix^\top + \covarianceMatrixTwo}.
 \]</span> If <span class="math inline">\(\covarianceMatrixTwo=\dataStd^2\eye\)</span>, this is Probabilistic Principal Component Analysis <span class="citation" data-cites="Tipping:probpca99">(Tipping and Bishop, 1999)</span>, because we integrated out the inputs (or <em>latent</em> variables they would be called in that case).</p></li>
 </ul>
-</section>
-<section id="non-linear-on-inputs" class="slide level3">
+</section><section id="non-linear-on-inputs" class="slide level3">
 <h3>Non linear on Inputs</h3>
 <ul>
 <li>Set each activation function computed at each data point to be</li>
@@ -638,8 +602,7 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatr
 \activationScalar_{\numData, 1} &amp; \activationScalar_{\numData, 2} &amp; \dots &amp; \activationScalar_{\numData, \numHidden}
 \end{bmatrix}.
 \]</span></p>
-</section>
-<section id="matrix-representation-of-a-neural-network" class="slide level3">
+</section><section id="matrix-representation-of-a-neural-network" class="slide level3">
 <h3>Matrix Representation of a Neural Network</h3>
 <p><span class="math display">\[\dataScalar\left(\inputVector\right) = \activationVector\left(\inputVector\right)^\top \mappingVector + \noiseScalar\]</span></p>
 <div class="fragment">
@@ -648,8 +611,7 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatr
 <div class="fragment">
 <p><span class="math display">\[\noiseVector \sim \gaussianSamp{\zerosVector}{\dataStd^2\eye}\]</span></p>
 </div>
-</section>
-<section id="prior-density" class="slide level3">
+</section><section id="prior-density" class="slide level3">
 <h3>Prior Density</h3>
 <ul>
 <li>Define</li>
@@ -666,8 +628,7 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatr
 <p><span class="math display">\[
 \kernelMatrix = \alpha \activationMatrix \activationMatrix^\top + \dataStd^2 \eye.
 \]</span></p>
-</section>
-<section id="joint-gaussian-density" class="slide level3">
+</section><section id="joint-gaussian-density" class="slide level3">
 <h3>Joint Gaussian Density</h3>
 <ul>
 <li>Elements are a function <span class="math inline">\(\kernel_{i,j} = \kernel\left(\inputVector_i, \inputVector_j\right)\)</span></li>
@@ -675,8 +636,7 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatr
 <p><span class="math display">\[
 \kernelMatrix = \alpha \activationMatrix \activationMatrix^\top + \dataStd^2 \eye.
 \]</span></p>
-</section>
-<section id="covariance-function" class="slide level3">
+</section><section id="covariance-function" class="slide level3">
 <h3>Covariance Function</h3>
 <p><span class="math display">\[
 \kernel_\mappingFunction\left(\inputVector_i, \inputVector_j\right) = \alpha \activationVector\left(\mappingMatrix_1, \inputVector_i\right)^\top \activationVector\left(\mappingMatrix_1, \inputVector_j\right)
@@ -684,31 +644,10 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatr
 <ul>
 <li>formed by inner products of the rows of the <em>design matrix</em>.</li>
 </ul>
-</section>
-<section id="gaussian-process" class="slide level3">
-<h3>Gaussian Process</h3>
-<ul>
-<li><p>Instead of making assumptions about our density over each data point, <span class="math inline">\(\dataScalar_i\)</span> as i.i.d.</p></li>
-<li><p>make a joint Gaussian assumption over our data.</p></li>
-<li><p>covariance matrix is now a function of both the parameters of the activation function, <span class="math inline">\(\mappingMatrix_1\)</span>, and the input variables, <span class="math inline">\(\inputMatrix\)</span>.</p></li>
-<li><p>Arises from integrating out <span class="math inline">\(\mappingVector^{(2)}\)</span>.</p></li>
-</ul>
-</section>
-<section id="basis-functions" class="slide level3">
-<h3>Basis Functions</h3>
-<ul>
-<li>Can be very complex, such as deep kernels, <span class="citation" data-cites="Cho:deep09">(Cho and Saul, 2009)</span> or could even put a convolutional neural network inside.</li>
-<li>Viewing a neural network in this way is also what allows us to beform sensible <em>batch</em> normalizations <span class="citation" data-cites="Ioffe:batch15">(Ioffe and Szegedy, 2015)</span>.</li>
-</ul>
-<p><span style="text-align:right"></span> ### Non-degenerate Gaussian Processes</p>
-<ul>
-<li>This process is <em>degenerate</em>.</li>
-<li>Covariance function is of rank at most <span class="math inline">\(\numHidden\)</span>.</li>
-<li>As <span class="math inline">\(\numData \rightarrow \infty\)</span>, covariance matrix is not full rank.</li>
-<li>Leading to <span class="math inline">\(\det{\kernelMatrix} = 0\)</span></li>
-</ul>
-</section>
-<section id="infinite-networks" class="slide level3">
+</section></section>
+<section><section id="gaussian-process" class="titleslide slide level2"><h2>Gaussian Process</h2></section></section>
+<section><section id="basis-functions" class="titleslide slide level2"><h2>Basis Functions</h2></section></section>
+<section><section id="non-degenerate-gaussian-processes" class="titleslide slide level2"><h2>Non-degenerate Gaussian Processes</h2></section><section id="infinite-networks" class="slide level3">
 <h3>Infinite Networks</h3>
 <ul>
 <li>In ML Radford Neal <span class="citation" data-cites="Neal:bayesian94">(Neal, 1994)</span> asked “what would happen if you took <span class="math inline">\(\numHidden \rightarrow \infty\)</span>?”</li>
@@ -716,8 +655,10 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatr
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/neal-infinite-priors.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-</section>
-<section id="roughly-speaking" class="slide level3">
+<center>
+<em>Page 37 of <a href="http://www.cs.toronto.edu/~radford/ftp/thesis.pdf">Radford Neal’s 1994 thesis</a></em>
+</center>
+</section><section id="roughly-speaking" class="slide level3">
 <h3>Roughly Speaking</h3>
 <ul>
 <li>Instead of</li>
@@ -737,8 +678,7 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatr
 <ul>
 <li>Also applies for non-Gaussian <span class="math inline">\(p(\mappingVector^{(1)})\)</span> because of the <em>central limit theorem</em>.</li>
 </ul>
-</section>
-<section id="simple-probabilistic-program" class="slide level3">
+</section><section id="simple-probabilistic-program" class="slide level3">
 <h3>Simple Probabilistic Program</h3>
 <ul>
 <li><p>If <span class="math display">\[
@@ -748,64 +688,41 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatr
   \]</span> has finite variance.</p></li>
 <li><p>Then taking number of hidden units to infinity, is also a Gaussian process.</p></li>
 </ul>
-</section>
-<section id="further-reading" class="slide level3">
-<h3>Further Reading</h3>
-<ul>
-<li><p>Chapter 2 of Neal’s thesis <span class="citation" data-cites="Neal:bayesian94">(Neal, 1994)</span></p></li>
-<li><p>Rest of Neal’s thesis. <span class="citation" data-cites="Neal:bayesian94">(Neal, 1994)</span></p></li>
-<li><p>David MacKay’s PhD thesis <span class="citation" data-cites="MacKay:bayesian92">(MacKay, 1992)</span></p></li>
-</ul>
-<p><span style="text-align:right"></span></p>
-</section>
-<section id="section-2" class="slide level3">
+</section></section>
+<section><section id="further-reading" class="titleslide slide level2"><h2>Further Reading</h2></section><section id="section-2" class="slide level3">
 <h3></h3>
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/gp/gp_rejection_sample001.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-</section>
-<section id="section-3" class="slide level3">
+</section><section id="section-3" class="slide level3">
 <h3></h3>
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/gp/gp_rejection_sample002.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-</section>
-<section id="section-4" class="slide level3">
+</section><section id="section-4" class="slide level3">
 <h3></h3>
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/gp/gp_rejection_sample003.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-</section>
-<section id="section-5" class="slide level3">
+</section><section id="section-5" class="slide level3">
 <h3></h3>
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/gp/gp_rejection_sample004.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-</section>
-<section id="section-6" class="slide level3">
+</section><section id="section-6" class="slide level3">
 <h3></h3>
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/gp/gp_rejection_sample005.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 <!-- ### Two Dimensional Gaussian Distribution -->
 <!-- include{_ml/includes/two-d-gaussian.md} -->
-</section>
-<section id="distributions-over-functions" class="slide level3">
+</section><section id="distributions-over-functions" class="slide level3">
 <h3>Distributions over Functions</h3>
-<p><span style="text-align:right"></span></p>
-</section>
-<section id="sampling-a-function" class="slide level3">
-<h3>Sampling a Function</h3>
-<p><strong>Multi-variate Gaussians</strong></p>
-<ul>
-<li>We will consider a Gaussian with a particular structure of covariance matrix.</li>
-<li>Generate a single sample from this 25 dimensional Gaussian density, <span class="math display">\[
-\mappingFunctionVector=\left[\mappingFunction_{1},\mappingFunction_{2}\dots \mappingFunction_{25}\right].
-\]</span></li>
-<li>We will plot these points against their index.</li>
-</ul>
-</section>
-<section id="gaussian-distribution-sample" class="slide level3">
+<div class="header" style="">
+<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gpdistfunc.md" target="_blank" >[edit]</a></small>
+</div>
+</section></section>
+<section><section id="sampling-a-function" class="titleslide slide level2"><h2>Sampling a Function</h2></section><section id="gaussian-distribution-sample" class="slide level3">
 <h3>Gaussian Distribution Sample</h3>
 <script>
 showDivs(0, 'two_point_sample');
@@ -853,9 +770,10 @@ showDivs(0, 'two_point_sample');
 <object class="svgplot " align data="../slides/diagrams/gp/two_point_sample008.svg" style="vertical-align:middle;">
 </object>
 </div>
-<p><span style="text-align:right"></span></p>
-</section>
-<section id="prediction-of-mappingfunction_2-from-mappingfunction_1" class="slide level3">
+<div class="header" style="">
+<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gaussian-predict-index-one-and-two.md" target="_blank" >[edit]</a></small>
+</div>
+</section><section id="prediction-of-mappingfunction_2-from-mappingfunction_1" class="slide level3">
 <h3>Prediction of <span class="math inline">\(\mappingFunction_{2}\)</span> from <span class="math inline">\(\mappingFunction_{1}\)</span></h3>
 <script>
 showDivs(9, 'two_point_sample2');
@@ -883,26 +801,9 @@ showDivs(9, 'two_point_sample2');
 <object class="svgplot " align data="../slides/diagrams/gp/two_point_sample012.svg" style="vertical-align:middle;">
 </object>
 </div>
-</section>
-<section id="uluru" class="slide level3">
-<h3>Uluru</h3>
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/gp/799px-Uluru_Panorama.jpg" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</section>
-<section id="prediction-with-correlated-gaussians" class="slide level3">
-<h3>Prediction with Correlated Gaussians</h3>
-<ul>
-<li>Prediction of <span class="math inline">\(\mappingFunction_2\)</span> from <span class="math inline">\(\mappingFunction_1\)</span> requires <em>conditional density</em>.</li>
-<li>Conditional density is <em>also</em> Gaussian. <span class="math display">\[
-p(\mappingFunction_2|\mappingFunction_1) = \gaussianDist{\mappingFunction_2}{\frac{\kernelScalar_{1, 2}}{\kernelScalar_{1, 1}}\mappingFunction_1}{ \kernelScalar_{2, 2} - \frac{\kernelScalar_{1,2}^2}{\kernelScalar_{1,1}}}
-\]</span> where covariance of joint density is given by <span class="math display">\[
-\kernelMatrix = \begin{bmatrix} \kernelScalar_{1, 1} &amp; \kernelScalar_{1, 2}\\ \kernelScalar_{2, 1} &amp; \kernelScalar_{2, 2}.\end{bmatrix}
-\]</span></li>
-</ul>
-<p><span style="text-align:right"></span></p>
-</section>
-<section id="prediction-of-mappingfunction_8-from-mappingfunction_1" class="slide level3">
+</section></section>
+<section><section id="uluru" class="titleslide slide level2"><h2>Uluru</h2></section></section>
+<section><section id="prediction-with-correlated-gaussians" class="titleslide slide level2"><h2>Prediction with Correlated Gaussians</h2></section><section id="prediction-of-mappingfunction_8-from-mappingfunction_1" class="slide level3">
 <h3>Prediction of <span class="math inline">\(\mappingFunction_{8}\)</span> from <span class="math inline">\(\mappingFunction_{1}\)</span></h3>
 <script>
 showDivs(13, 'two_point_sample3');
@@ -934,16 +835,14 @@ showDivs(13, 'two_point_sample3');
 <object class="svgplot " align data="../slides/diagrams/gp/two_point_sample017.svg" style="vertical-align:middle;">
 </object>
 </div>
-</section>
-<section id="key-object" class="slide level3">
+</section><section id="key-object" class="slide level3">
 <h3>Key Object</h3>
 <ul>
 <li>Covariance function, <span class="math inline">\(\kernelMatrix\)</span></li>
 <li>Determines properties of samples.</li>
 <li>Function of <span class="math inline">\(\inputMatrix\)</span>, <span class="math display">\[\kernelScalar_{i,j} = \kernelScalar(\inputVector_i, \inputVector_j)\]</span></li>
 </ul>
-</section>
-<section id="linear-algebra" class="slide level3">
+</section><section id="linear-algebra" class="slide level3">
 <h3>Linear Algebra</h3>
 <ul>
 <li><p>Posterior mean <span class="math display">\[\mappingFunction_D(\inputVector_*) = \kernelVector(\inputVector_*, \inputMatrix) \kernelMatrix^{-1}
@@ -951,8 +850,7 @@ showDivs(13, 'two_point_sample3');
 <li><p>Posterior covariance <span class="math display">\[\mathbf{C}_* = \kernelMatrix_{*,*} - \kernelMatrix_{*,\mappingFunctionVector}
 \kernelMatrix^{-1} \kernelMatrix_{\mappingFunctionVector, *}\]</span></p></li>
 </ul>
-</section>
-<section id="linear-algebra-1" class="slide level3">
+</section><section id="linear-algebra-1" class="slide level3">
 <h3>Linear Algebra</h3>
 <ul>
 <li><p>Posterior mean</p>
@@ -960,101 +858,47 @@ showDivs(13, 'two_point_sample3');
 <li><p>Posterior covariance <span class="math display">\[\covarianceMatrix_* = \kernelMatrix_{*,*} - \kernelMatrix_{*,\mappingFunctionVector}
 \kernelMatrix^{-1} \kernelMatrix_{\mappingFunctionVector, *}\]</span></p></li>
 </ul>
-</section>
-<section id="section-7" class="slide level3">
+</section><section id="section-7" class="slide level3">
 <h3></h3>
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/gp/gp_rejection_sample001.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-</section>
-<section id="section-8" class="slide level3">
+</section><section id="section-8" class="slide level3">
 <h3></h3>
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/gp/gp_rejection_sample002.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-</section>
-<section id="section-9" class="slide level3">
+</section><section id="section-9" class="slide level3">
 <h3></h3>
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/gp/gp_rejection_sample003.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-</section>
-<section id="section-10" class="slide level3">
+</section><section id="section-10" class="slide level3">
 <h3></h3>
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/gp/gp_rejection_sample004.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-</section>
-<section id="section-11" class="slide level3">
+</section><section id="section-11" class="slide level3">
 <h3></h3>
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/gp/gp_rejection_sample005.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<p><span style="text-align:right"></span> ### Exponentiated Quadratic Covariance</p>
-<center>
-<span class="math display">\[\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\ltwoNorm{\inputVector-\inputVector^\prime}^2}{2\lengthScale^2}\right)\]</span>
-</center>
-<table>
-<tr>
-<td width="40%">
-
-</td>
-<td width="40%">
-<div class="centered" style="">
-<img class="negate" src="../slides/diagrams/kern/eq_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div class="header" style="">
+<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/eq-covariance.md" target="_blank" >[edit]</a></small>
 </div>
-</td>
-</tr>
-</table>
-<p><span style="text-align:right"></span></p>
-</section>
-<section id="olympic-marathon-data" class="slide level3">
-<h3>Olympic Marathon Data</h3>
-<table>
-<tr>
-<td width="70%">
-<ul>
-<li>Gold medal times for Olympic Marathon since 1896.</li>
-<li>Marathons before 1924 didn’t have a standardised distance.</li>
-<li>Present results using pace per km.</li>
-<li>In 1904 Marathon was badly organised leading to very slow times.</li>
-</ul>
-</td>
-<td width="30%">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/Stephen_Kiprotich.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-<small>Image from Wikimedia Commons <a href="http://bit.ly/16kMKHQ" class="uri">http://bit.ly/16kMKHQ</a></small>
-</td>
-</tr>
-</table>
-</section>
-<section id="olympic-marathon-data-1" class="slide level3">
+</section></section>
+<section><section id="exponentiated-quadratic-covariance" class="titleslide slide level2"><h2>Exponentiated Quadratic Covariance</h2></section></section>
+<section><section id="olympic-marathon-data" class="titleslide slide level2"><h2>Olympic Marathon Data</h2></section><section id="olympic-marathon-data-1" class="slide level3">
 <h3>Olympic Marathon Data</h3>
 <div style="text-align:center">
 <object class="svgplot " align data="../slides/diagrams/datasets/olympic-marathon.svg" style="vertical-align:middle;">
 </object>
 </div>
-<p><span style="text-align:right"></span></p>
-</section>
-<section id="alan-turing" class="slide level3">
-<h3>Alan Turing</h3>
-<table>
-<tr>
-<td width="50%">
-<div class="centered" style="">
-<img class="" src="../slides/diagrams/turing-times.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div class="header" style="">
+<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/alan-turing-marathon.md" target="_blank" >[edit]</a></small>
 </div>
-</td>
-<td width="50%">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/turing-run.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</td>
-</tr>
-</table>
-</section>
-<section id="probability-winning-olympics" class="slide level3">
+</section></section>
+<section><section id="alan-turing" class="titleslide slide level2"><h2>Alan Turing</h2></section><section id="probability-winning-olympics" class="slide level3">
 <h3>Probability Winning Olympics?</h3>
 <ul>
 <li>He was a formidable Marathon runner.</li>
@@ -1066,7 +910,7 @@ showDivs(13, 'two_point_sample3');
 </ul>
 <!--
 
-### 
+###  
 
 
 
@@ -1075,29 +919,26 @@ showDivs(13, 'two_point_sample3');
 <table><tr><td width="40%"><img class="" src="../slides/diagrams/turing-run.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></td><td width="50%"><img class="" src="../slides/diagrams/turing-times.gif" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></td></tr></table>
 
 -->
-</section>
-<section id="olympic-marathon-data-gp" class="slide level3">
+</section><section id="olympic-marathon-data-gp" class="slide level3">
 <h3>Olympic Marathon Data GP</h3>
 <object class="svgplot " align data="../slides/diagrams/gp/olympic-marathon-gp.svg" style="vertical-align:middle;">
 </object>
-<p><span style="text-align:right"></span></p>
-</section>
-<section id="learning-covariance-parameters" class="slide level3">
+<div class="header" style="">
+<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gp-optimize.md" target="_blank" >[edit]</a></small>
+</div>
+</section><section id="learning-covariance-parameters" class="slide level3">
 <h3>Learning Covariance Parameters</h3>
 <p>Can we determine covariance parameters from the data?</p>
-</section>
-<section id="section-12" class="slide level3">
+</section><section id="section-12" class="slide level3">
 <h3></h3>
 <p><span class="math display">\[\gaussianDist{\dataVector}{\mathbf{0}}{\kernelMatrix}=\frac{1}{(2\pi)^\frac{\numData}{2}{\det{\kernelMatrix}^{\frac{1}{2}}}}{\exp\left(-\frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}\right)}\]</span></p>
-</section>
-<section id="section-13" class="slide level3">
+</section><section id="section-13" class="slide level3">
 <h3></h3>
 <p><span class="math display">\[\begin{aligned}
     \gaussianDist{\dataVector}{\mathbf{0}}{\kernelMatrix}=\frac{1}{(2\pi)^\frac{\numData}{2}{\color{white} \det{\kernelMatrix}^{\frac{1}{2}}}}{\color{white}\exp\left(-\frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}\right)}
 \end{aligned}
 \]</span></p>
-</section>
-<section id="section-14" class="slide level3">
+</section><section id="section-14" class="slide level3">
 <h3></h3>
 <p><span class="math display">\[
 \begin{aligned}
@@ -1107,12 +948,10 @@ showDivs(13, 'two_point_sample3');
 <p><span class="math display">\[
 \errorFunction(\parameterVector) = {\color{white} \frac{1}{2}\log\det{\kernelMatrix}} + {\color{white} \frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}}
 \]</span></p>
-</section>
-<section id="section-15" class="slide level3">
+</section><section id="section-15" class="slide level3">
 <h3></h3>
 <p>The parameters are <em>inside</em> the covariance function (matrix). <span class="math display">\[\kernelScalar_{i, j} = \kernelScalar(\inputVals_i, \inputVals_j; \parameterVector)\]</span></p>
-</section>
-<section id="eigendecomposition-of-covariance" class="slide level3">
+</section><section id="eigendecomposition-of-covariance" class="slide level3">
 <h3>Eigendecomposition of Covariance</h3>
 <p><span><span class="math display">\[\kernelMatrix = \rotationMatrix \eigenvalueMatrix^2 \rotationMatrix^\top\]</span></span></p>
 <table>
@@ -1127,26 +966,22 @@ showDivs(13, 'two_point_sample3');
 </td>
 </tr>
 </table>
-</section>
-<section id="eigendecomposition-of-covariance-1" class="slide level3">
+</section><section id="eigendecomposition-of-covariance-1" class="slide level3">
 <h3>Eigendecomposition of Covariance</h3>
 <ul>
 <li><span class="math inline">\(\eigenvalueMatrix\)</span> is <em>diagonal</em>, <span class="math inline">\(\rotationMatrix^\top\rotationMatrix = \eye\)</span>.</li>
 <li>Useful representation since <span class="math inline">\(\det{\kernelMatrix} = \det{\eigenvalueMatrix^2} = \det{\eigenvalueMatrix}^2\)</span>.</li>
 </ul>
-</section>
-<section id="capacity-control-colorwhite-log-detkernelmatrix" class="slide level3">
+</section><section id="capacity-control-colorwhite-log-detkernelmatrix" class="slide level3">
 <h3>Capacity control: <span class="math inline">\({\color{white} \log \det{\kernelMatrix}}\)</span></h3>
 <!--
 \only<1>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseDeterminant1}}\only<2>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseDeterminant2}}\only<3>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseDeterminant3}}\only<4>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseDeterminant4}}\only<5>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseDeterminant5}}\only<6>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseDeterminant6}}\only<7>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseDeterminant7}}\only<8>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseDeterminant8}}\only<9>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseDeterminant9}}\only<10>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseDeterminant10}}-->
-</section>
-<section id="data-fit-colorwhite-fracdatavectortopkernelmatrix-1datavector2" class="slide level3">
+</section><section id="data-fit-colorwhite-fracdatavectortopkernelmatrix-1datavector2" class="slide level3">
 <h3>Data Fit: <span class="math inline">\({\color{white} \frac{\dataVector^\top\kernelMatrix^{-1}\dataVector}{2}}\)</span></h3>
 <!--
 
 \only<1>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseQuadratic1}}\only<2>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseQuadratic2}}\only<3>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseQuadratic3}}-->
-</section>
-<section id="errorfunctionparametervector-colorwhitefrac12logdetkernelmatrixcolorwhitefracdatavectortopkernelmatrix-1datavector2" class="slide level3">
+</section><section id="errorfunctionparametervector-colorwhitefrac12logdetkernelmatrixcolorwhitefracdatavectortopkernelmatrix-1datavector2" class="slide level3">
 <h3><span class="math display">\[\errorFunction(\parameterVector) = {\color{white}\frac{1}{2}\log\det{\kernelMatrix}}+{\color{white}\frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}}\]</span></h3>
 <script>
 showDivs(0, 'gp-optimise');
@@ -1301,28 +1136,22 @@ showDivs(0, 'gp-optimise');
 </tr>
 </table>
 </div>
-<p><span style="text-align:right"></span></p>
-</section>
-<section id="della-gatta-gene-data" class="slide level3">
-<h3>Della Gatta Gene Data</h3>
-<ul>
-<li>Given given expression levels in the form of a time series from <span class="citation" data-cites="DellaGatta:direct08">Della Gatta et al. (2008)</span>.</li>
-</ul>
-</section>
-<section id="della-gatta-gene-data-1" class="slide level3">
+<div class="header" style="">
+<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/della-gatta-gene-gp.md" target="_blank" >[edit]</a></small>
+</div>
+</section></section>
+<section><section id="della-gatta-gene-data" class="titleslide slide level2"><h2>Della Gatta Gene Data</h2></section><section id="della-gatta-gene-data-1" class="slide level3">
 <h3>Della Gatta Gene Data</h3>
 <div style="text-align:center">
 <object class="svgplot " align data="../slides/diagrams/datasets/della-gatta-gene.svg" style="vertical-align:middle;">
 </object>
 </div>
-</section>
-<section id="gene-expression-example" class="slide level3">
+</section><section id="gene-expression-example" class="slide level3">
 <h3>Gene Expression Example</h3>
 <ul>
 <li>Want to detect if a gene is expressed or not, fit a GP to each gene <span class="citation" data-cites="Kalaitzis:simple11">Kalaitzis and Lawrence (2011)</span>.</li>
 </ul>
-</section>
-<section id="section-16" class="slide level3">
+</section><section id="section-16" class="slide level3">
 <h3></h3>
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/health/1471-2105-12-180_1.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
@@ -1330,130 +1159,94 @@ showDivs(0, 'gp-optimise');
 <center>
 <a href="http://www.biomedcentral.com/1471-2105/12/180" class="uri">http://www.biomedcentral.com/1471-2105/12/180</a>
 </center>
-</section>
-<section id="section-17" class="slide level3">
+</section><section id="section-17" class="slide level3">
 <h3></h3>
-</section>
-<section id="tp53-gene-data-gp" class="slide level3">
+</section><section id="tp53-gene-data-gp" class="slide level3">
 <h3>TP53 Gene Data GP</h3>
 <object class="svgplot " align data="../slides/diagrams/gp/della-gatta-gene-gp.svg" style="vertical-align:middle;">
 </object>
-</section>
-<section id="tp53-gene-data-gp-1" class="slide level3">
+</section><section id="tp53-gene-data-gp-1" class="slide level3">
 <h3>TP53 Gene Data GP</h3>
 <object class="svgplot " align data="../slides/diagrams/gp/della-gatta-gene-gp2.svg" style="vertical-align:middle;">
 </object>
-</section>
-<section id="tp53-gene-data-gp-2" class="slide level3">
+</section><section id="tp53-gene-data-gp-2" class="slide level3">
 <h3>TP53 Gene Data GP</h3>
 <object class="svgplot " align data="../slides/diagrams/gp/della-gatta-gene-gp3.svg" style="vertical-align:middle;">
 </object>
-</section>
-<section id="multiple-optima" class="slide level3">
+</section><section id="multiple-optima" class="slide level3">
 <h3>Multiple Optima</h3>
 <object class="svgplot " align data="../slides/diagrams/gp/multiple-optima000.svg" style="vertical-align:middle;">
 </object>
 <!--
-### Multiple Optima
+### Multiple Optima 
 
 
 
 <object class="svgplot " align="" data="../slides/diagrams/gp/multiple-optima001.svg" style="vertical-align:middle;"></object>-->
-<p><span style="text-align:right"></span></p>
-</section>
-<section id="example-prediction-of-malaria-incidence-in-uganda" class="slide level3">
-<h3>Example: Prediction of Malaria Incidence in Uganda</h3>
-<p><span style="text-align:right"><img class="" src="../slides/diagrams/people/2013_03_28_180606.JPG" width="1.5cm" align="" style="background:none; border:none; box-shadow:none; position:absolute; clip:rect(2662px,1780px,1110px,600px);vertical-align:middle"></span></p>
-<ul>
-<li>Work with Ricardo Andrade Pacheco, John Quinn and Martin Mubaganzi (Makerere University, Uganda)</li>
-<li>See <a href="http://air.ug/research.html">AI-DEV Group</a>.</li>
-</ul>
-</section>
-<section id="malaria-prediction-in-uganda" class="slide level3">
+<div class="header" style="">
+<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_health/includes/malaria-gp.md" target="_blank" >[edit]</a></small>
+</div>
+</section></section>
+<section><section id="example-prediction-of-malaria-incidence-in-uganda" class="titleslide slide level2"><h2>Example: Prediction of Malaria Incidence in Uganda</h2></section><section id="malaria-prediction-in-uganda" class="slide level3">
 <h3>Malaria Prediction in Uganda</h3>
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/health/uganda-districts-2006.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<p><span style="text-align:right"><span class="citation" data-cites="Andrade:consistent14">(Andrade-Pacheco et al., 2014,<span class="citation" data-cites="Mubangizi:malaria14">Mubangizi et al. (2014)</span>)</span></span></p>
-</section>
-<section id="kapchorwa-district" class="slide level3">
+<center>
+<em>Ugandan districs. Data SRTM/NASA from <a href="https://dds.cr.usgs.gov/srtm/version2_1" class="uri">https://dds.cr.usgs.gov/srtm/version2_1</a></em>
+</center>
+<p><span style="text-align:right"><span class="citation" data-cites="Andrade:consistent14 Mubangizi:malaria14">(Andrade-Pacheco et al., 2014; Mubangizi et al., 2014)</span></span></p>
+</section><section id="kapchorwa-district" class="slide level3">
 <h3>Kapchorwa District</h3>
 <object class align data="../slides/diagrams/health/Kapchorwa_District_in_Uganda.svg" style="vertical-align:middle">
 </object>
-</section>
-<section id="tororo-district" class="slide level3">
+</section><section id="tororo-district" class="slide level3">
 <h3>Tororo District</h3>
 <object class align data="../slides/diagrams/health/Tororo_District_in_Uganda.svg" style="vertical-align:middle">
 </object>
-</section>
-<section id="malaria-prediction-in-nagongera-sentinel-site" class="slide level3">
+</section><section id="malaria-prediction-in-nagongera-sentinel-site" class="slide level3">
 <h3>Malaria Prediction in Nagongera (Sentinel Site)</h3>
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/health/sentinel_nagongera.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-</section>
-<section id="mubende-district" class="slide level3">
+</section><section id="mubende-district" class="slide level3">
 <h3>Mubende District</h3>
 <object class="center" align="svgplot_normal" data="../slides/diagrams/health/Mubende_District_in_Uganda.svg" style="vertical-align:middle">
 </object>
-</section>
-<section id="malaria-prediction-in-uganda-1" class="slide level3">
+</section><section id="malaria-prediction-in-uganda-1" class="slide level3">
 <h3>Malaria Prediction in Uganda</h3>
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/health/mubende.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-</section>
-<section id="gp-school-at-makerere" class="slide level3">
+</section><section id="gp-school-at-makerere" class="slide level3">
 <h3>GP School at Makerere</h3>
+{
 <div class="centered centered" style="">
-<img class="" src="../slides/diagrams/gpss/1157497_513423392066576_1845599035_n.jpg" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="../slides/diagrams/gpss/1157497_513423392066576_1845599035_n.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-</section>
-<section id="kabarole-district" class="slide level3">
+</section></section>
+<section><section id="early-warning-systems" class="titleslide slide level2"><h2>Early Warning Systems</h2></section><section id="kabarole-district" class="slide level3">
 <h3>Kabarole District</h3>
 <object class align data="../slides/diagrams/health/Kabarole_District_in_Uganda.svg" style="vertical-align:middle">
 </object>
-</section>
-<section id="early-warning-systems" class="slide level3">
-<h3>Early Warning Systems</h3>
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/health/kabarole.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-</section>
-<section id="early-warning-systems-1" class="slide level3">
+</section><section id="early-warning-systems-1" class="slide level3">
 <h3>Early Warning Systems</h3>
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/health/monitor.gif" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<p><span style="text-align:right"></span></p>
-</section>
-<section id="additive-covariance" class="slide level3">
-<h3>Additive Covariance</h3>
-<center>
-<span class="math display">\[\kernelScalar_f(\inputVector, \inputVector^\prime) = \kernelScalar_g(\inputVector, \inputVector^\prime) + \kernelScalar_h(\inputVector, \inputVector^\prime)\]</span>
-</center>
-<table>
-<tr>
-<td width="40%">
-
-</td>
-<td width="40%">
-<div class="centered" style="">
-<img class="negate" src="../slides/diagrams/kern/add_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div class="header" style="">
+<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/add-covariance.md" target="_blank" >[edit]</a></small>
 </div>
-</td>
-</tr>
-</table>
-<p><span style="text-align:right"></span></p>
-<p>{### Analysis of US Birth Rates</p>
-</section>
-<section id="section-18" class="slide level3">
+</section></section>
+<section><section id="additive-covariance" class="titleslide slide level2"><h2>Additive Covariance</h2></section><section id="section-18" class="slide level3">
 <h3></h3>
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/ml/bialik-fridaythe13th-1.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-</section>
-<section id="gelman-book" class="slide level3">
+</section><section id="gelman-book" class="slide level3">
 <h3>Gelman Book</h3>
 <table>
 <tr>
@@ -1470,89 +1263,15 @@ showDivs(0, 'gp-optimise');
 </tr>
 </table>
 <p><span class="citation" data-cites="Gelman:bayesian13">Gelman et al. (2013)</span></p>
-<p><span style="text-align:right"></span></p>
-</section>
-<section id="basis-function-covariance" class="slide level3">
-<h3>Basis Function Covariance</h3>
-<center>
-<span class="math display">\[\kernel(\inputVector, \inputVector^\prime) = \basisVector(\inputVector)^\top \basisVector(\inputVector^\prime)\]</span>
-</center>
-<table>
-<tr>
-<td width="40%">
-
-</td>
-<td width="40%">
-<div class="centered" style="">
-<img class="negate" src="../slides/diagrams/kern/basis_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div class="header" style="">
+<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/basis-covariance.md" target="_blank" >[edit]</a></small>
 </div>
-</td>
-</tr>
-</table>
-<p><span style="text-align:right"></span> ### Brownian Covariance</p>
-<center>
-<span class="math display">\[\kernelScalar(t, t^\prime)=\alpha \min(t, t^\prime)\]</span>
-</center>
-<table>
-<tr>
-<td width="40%">
-
-</td>
-<td width="40%">
-<div class="centered" style="">
-<img class="negate" src="../slides/diagrams/kern/brownian_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</td>
-</tr>
-</table>
-<p><span style="text-align:right"></span> ### MLP Covariance</p>
-<center>
-<span class="math display">\[\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \arcsin\left(\frac{w \inputVector^\top \inputVector^\prime + b}{\sqrt{\left(w \inputVector^\top \inputVector + b + 1\right)\left(w \left.\inputVector^\prime\right.^\top \inputVector^\prime + b + 1\right)}}\right)\]</span>
-</center>
-<table>
-<tr>
-<td width="40%">
-
-</td>
-<td width="40%">
-<div class="centered" style="">
-<img class="negate" src="../slides/diagrams/kern/mlp_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</td>
-</tr>
-</table>
-<p><span style="text-align:right"></span></p>
-</section>
-<section id="gpss-gaussian-process-summer-school" class="slide level3">
-<h3>GPSS: Gaussian Process Summer School</h3>
-<table>
-<tr>
-<td width="60%">
-<ul>
-<li><a href="http://gpss.cc" class="uri">http://gpss.cc</a></li>
-<li>Next one is in Sheffield in <em>September 2019</em>.</li>
-<li>Many lectures from past meetings available online</li>
-</ul>
-</td>
-<td width="40%">
-<div style="width:1.5cm;text-align:center">
-
-</div>
-</td>
-</tr>
-</table>
-<p><span style="text-align:right"></span></p>
-</section>
-<section id="gpy-a-gaussian-process-framework-in-python" class="slide level3">
-<h3>GPy: A Gaussian Process Framework in Python</h3>
-<div class="centered" style="">
-<img class="" src="../slides/diagrams/gp/gpy.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-<center>
-<a href="https://github.com/SheffieldML/GPy" class="uri">https://github.com/SheffieldML/GPy</a>
-</center>
-</section>
-<section id="gpy-a-gaussian-process-framework-in-python-1" class="slide level3">
+</section></section>
+<section><section id="basis-function-covariance" class="titleslide slide level2"><h2>Basis Function Covariance</h2></section></section>
+<section><section id="brownian-covariance" class="titleslide slide level2"><h2>Brownian Covariance</h2></section></section>
+<section><section id="mlp-covariance" class="titleslide slide level2"><h2>MLP Covariance</h2></section></section>
+<section><section id="gpss-gaussian-process-summer-school" class="titleslide slide level2"><h2>GPSS: Gaussian Process Summer School</h2></section></section>
+<section><section id="gpy-a-gaussian-process-framework-in-python" class="titleslide slide level2"><h2>GPy: A Gaussian Process Framework in Python</h2></section><section id="gpy-a-gaussian-process-framework-in-python-1" class="slide level3">
 <h3>GPy: A Gaussian Process Framework in Python</h3>
 <ul>
 <li>BSD Licensed software base.</li>
@@ -1561,8 +1280,7 @@ showDivs(0, 'gp-optimise');
 <li>Available through GitHub <a href="https://github.com/SheffieldML/GPy" class="uri">https://github.com/SheffieldML/GPy</a></li>
 <li>Reproducible Research with Jupyter Notebook.</li>
 </ul>
-</section>
-<section id="features" class="slide level3">
+</section><section id="features" class="slide level3">
 <h3>Features</h3>
 <ul>
 <li>Probabilistic-style programming (specify the model, not the algorithm).</li>
@@ -1571,26 +1289,12 @@ showDivs(0, 'gp-optimise');
 <li>Dimensionality reduction.</li>
 <li>Approximations for large data sets.</li>
 </ul>
-<p><span style="text-align:right"></span></p>
-</section>
-<section id="other-software" class="slide level3">
-<h3>Other Software</h3>
-<ul>
-<li><a href="https://github.com/GPflow/GPflow">GPflow</a></li>
-<li><a href="https://github.com/cornellius-gp/gpytorch">GPyTorch</a></li>
-</ul>
-<p><span style="text-align:right"></span></p>
-</section>
-<section id="mxfusion-modular-probabilistic-programming-on-mxnet" class="slide level3">
-<h3>MXFusion: Modular Probabilistic Programming on MXNet</h3>
-<div class="centered" style="">
-<img class="" src="../slides/diagrams/ml/mxfusion.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div class="header" style="">
+<small><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/other-software.md" target="_blank" >[edit]</a></small>
 </div>
-<center>
-<a href="https://github.com/amzn/MXFusion" class="uri">https://github.com/amzn/MXFusion</a>
-</center>
-</section>
-<section id="mxfusion" class="slide level3">
+</section></section>
+<section><section id="other-software" class="titleslide slide level2"><h2>Other Software</h2></section></section>
+<section><section id="mxfusion-modular-probabilistic-programming-on-mxnet" class="titleslide slide level2"><h2>MXFusion: Modular Probabilistic Programming on MXNet</h2></section><section id="mxfusion" class="slide level3">
 <h3>MxFusion</h3>
 <table>
 <tr>
@@ -1608,19 +1312,16 @@ showDivs(0, 'gp-optimise');
 </tr>
 </table></li>
 </ul>
-</section>
-<section id="acknowledgments" class="slide level3">
-<h3>Acknowledgments</h3>
-<p>Stefanos Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Dai, Javier Gonzalez, Andreas Damianou, Mark Pullin, Michael Smith, James Hensman, John Quinn, Martin Mubangizi.</p>
-</section>
-<section id="thanks" class="slide level3">
+</section></section>
+<section><section id="acknowledgments" class="titleslide slide level2"><h2>Acknowledgments</h2></section><section id="thanks" class="slide level3">
 <h3>Thanks!</h3>
 <ul>
-<li>twitter: @lawrennd</li>
-<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
+<li>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></li>
+<li>podcast: <a href="http://thetalkingmachines.com">The Talking Machines</a></li>
+<li><p>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></p></li>
+<li><p>Blog post on <a href="http://inverseprobability.com/2017/07/17/what-is-machine-learning">What is Machine Learning?</a></p></li>
 </ul>
-</section>
-<section id="references" class="slide level3 unnumbered">
+</section><section id="references" class="slide level3 unnumbered">
 <h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-Andrade:consistent14">
@@ -1663,7 +1364,7 @@ showDivs(0, 'gp-optimise');
 <p>Tipping, M.E., Bishop, C.M., 1999. Probabilistic principal component analysis. Journal of the Royal Statistical Society, B 6, 611–622. <a href="https://doi.org/doi:10.1111/1467-9868.00196" class="uri">https://doi.org/doi:10.1111/1467-9868.00196</a></p>
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
