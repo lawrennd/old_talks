@@ -56,6 +56,9 @@ Store Caption: \storeCaption
 \define{\div{contents}{class}{style}}{<div class="\class" style="\style">\contents</div>}
 \define{\centerdiv{contents}{class}{style}}{<div class="centered \class" style="\style">\contents</div>}
 
+\define{\span{contents}{class}{style}}{<span class="\class" style="\style">\contents</span>}
+
+
 \define{\includempfour{filename}{width}{height}}{<video width="\width" height="\height" controls preload="none">
 <source src="\filename" type="video/mp4"/>
 </video>}

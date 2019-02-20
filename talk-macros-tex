@@ -1,10 +1,12 @@
 \ifndef{talkMacrosTex}
 \define{talkMacrosTex}
 
-\define{\div{block}}{\block}
+\define{\div{contents}{class}{style}}{\block}
 \define{\centerdiv{block}}{\begin{center}
 \block
 \end{center}}
+
+\define{\span{block}{class}}{\block}
 
 \define{\linebreak}{\\}
 

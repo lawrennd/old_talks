@@ -1,8 +1,10 @@
 \ifndef{talkMacrosDocx}
 \define{talkMacrosDocx}
 
-\define{\div{block}}{\block}
+\define{\div{block}{class}{style}}{\block}
 \define{\centerdiv{block}}{\block}
+
+\define{\span{block}{class}{style}}{\block}
 
 \define{\linebreak}{\
 }

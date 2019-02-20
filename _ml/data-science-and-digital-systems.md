@@ -18,6 +18,8 @@ author:
   institute: Amazon Cambridge and University of Sheffield
   twitter: lawrennd
   url: http://inverseprobability.com
+geometry: ["a4paper", "margin=2cm"]
+papersize: a4paper
 date: 2019-02-19
 venue: Stu Hunter Resesearch Conference, Milan
 transition: None

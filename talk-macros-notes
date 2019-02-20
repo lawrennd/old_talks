@@ -16,9 +16,18 @@
 \define{\notesfigure{block}}{\block}
 \define{\recommendation{text}}{**Recommendation**: \text}
 
-\define{\section{text}}{# \text}
-\define{\subsection{text}}{## \text}
-\define{\subsubsection{text}}{### \text}
+\ifdef{draft}
+\define{\editme}{\href{file://\talksDir\file}{\file}}
+\define{\todo{text}}{\colorRed{Todo: \text}}
+
+}
+\else
+\define{\editme}{\define{editText}{\span{[}{editsection-bracket}\span{\href{\githubBaseUrl\file}{edit}}{editsection}\span{]}{editsection-bracket}}}
+\endif
+
+\define{\section{text}}{# \text \ifdef{editText}\editText\undef{editText}\endif}
+\define{\subsection{text}}{## \text \ifdef{editText}\editText\undef{editText}\endif}
+\define{\subsubsection{text}}{### \text \ifdef{editText}\editText\undef{editText}\endif}
 
 \define{\code{block}}{```{.python}
 \block
@@ -60,13 +69,5 @@ from \filename import \object
 \define{\thanks}{}
 
 
-\ifdef{draft}
-\define{\editme}{\href{file://\talksDir\file}{\file}}
-\define{\todo{text}}{\colorRed{Todo: \text}}
-
-}
-\else
-\define{\editme}{\alignright{\smalltext{\href{\githubBaseUrl\file}{[edit]}}}}
-\endif
 
 \endif
