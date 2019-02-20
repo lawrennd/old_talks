@@ -1,6 +1,7 @@
 \ifndef{brownianCovariance}
 \define{brownianCovariance}
 \editme
+
 \subsection{Brownian Covariance}
 
 \define{\formula}{\kernelScalar(t, t^\prime)=\alpha \min(t, t^\prime)}
