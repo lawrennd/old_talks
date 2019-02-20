@@ -1,6 +1,7 @@
 \ifndef{nonDegenerateGps}
 \define{nonDegenerateGps}
 \editme
+
 \subsection{Non-degenerate Gaussian Processes}
 
 \slides{
