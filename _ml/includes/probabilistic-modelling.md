@@ -1,6 +1,7 @@
 \ifndef{probabilisticModelling}
 \define{probabilisticModelling}
 \editme
+
 \subsection{Probabilistic Modelling}
 
 \slides{
