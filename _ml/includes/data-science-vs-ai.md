@@ -43,6 +43,11 @@ There are strong overlaps between the fields, the wide availability of data by h
 * Connection: Internet of People
 }
 
+\newslide{}
+
+\aligncenter{Convention for the Protection of *Individuals* with regard to Automatic Processing of *Personal Data* (1981/1/28)}
+
+
 \newslide{What does Machine Learning do?}
 
 \slides{
