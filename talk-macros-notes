@@ -22,7 +22,7 @@
 
 }
 \else
-\define{\editme}{\define{editText}{\span{[}{editsection-bracket}\span{\href{\githubBaseUrl\file}{edit}{onclick="ga('send', 'event', 'Edit Page', 'Edit', '\githubBaseUrl\file', 13);}}{editsection}\span{]}{editsection-bracket}}}
+\define{\editme}{\define{editText}{\span{[}{editsection-bracket}\span{\href{\githubBaseUrl\file}{edit}{onclick="ga('send', 'event', 'Edit Page', 'Edit', '\githubBaseUrl\file', 13);"}}{editsection}\span{]}{editsection-bracket}}}
 \endif
 
 \define{\section{text}}{# \text \ifdef{editText}\editText\undef{editText}\endif}

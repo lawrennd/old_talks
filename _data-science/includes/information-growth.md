@@ -1,4 +1,8 @@
+\ifndef{informationGrowth}
+\define{informationGrowth}
+\editme
 \newslide{} 
 
-\div{\includediagram{../slides/diagrams/hilbert-info-growth}}{}{text-align:center}
+\includediagram{../slides/diagrams/hilbert-info-growth}
 
+\endif

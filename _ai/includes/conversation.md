@@ -1,3 +1,6 @@
+\ifndef{conversation}
+\define{conversation}
+\editme
 \subsection{Human Communication}
 
 
@@ -9,3 +12,4 @@ Fritz Heider referred to the important point of a conversation as being that the
 \define{\stubname}{anne-bob-conversation}
 \include{_ai/includes/anne-bob-talk.md}
 
+\endif

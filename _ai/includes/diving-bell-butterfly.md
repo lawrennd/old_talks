@@ -1,6 +1,11 @@
+\ifndef{divingBellButterfly}
+\define{divingBellButterfly}
+\editme
+
+\notes{\subsection{The Diving Bell and the Butterfly}}
 \newslide{}
 
-\div{\includeimg{../slides/diagrams/the-diving-bell-and-the-butterfly2.jpg}}{}{text-align:center;width:60%}
+\includejpg{../slides/diagrams/the-diving-bell-and-the-butterfly2.jpg}{60%}
 
 \notes{The Diving Bell and the Butterfly is the autobiography of Jean-Dominique Bauby.
 
@@ -24,3 +29,4 @@ Imagine doing all that thinking, but so little speaking, having all those though
 
 The idea behind this talk is that we are all in that situation. While not as extreme as for Bauby, we all have somewhat of a locked in intelligence.}
 
+\endif

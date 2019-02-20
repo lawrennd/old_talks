@@ -45,14 +45,9 @@ ppt: 2018-10-30-mind-and-machine-intelligence.pptx
 }
 
 
+\thanks
 
-\newslide{Thanks!}
-\slides{
-* twitter: \@lawrennd
-* blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
-* podcast: [The Talking Machines](http://thetalkingmachines.com)
-}
 
-### References
+\references
 
 

@@ -1,6 +1,9 @@
+\ifndef{conversationComputer}
+\define{conversationComputer}
+\editme
 \newslide{}
 
-\div{\includediagram{../slides/diagrams/anne-computer-conversation}}{}{text-align:center}
+\includediagram{../slides/diagrams/anne-computer-conversation}
 
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
@@ -56,3 +59,5 @@ This means, that when we worry about artificial intelligence, we worry about the
 In reality, the challenge is that our computers cannot be human enough. They cannot understand us with the depth we understand one another. They drop below our cognitive radar and operate outside our mental models. 
 
 The real danger is that computers don’t anthropomorphize. They’ll make decisions in isolation from us without our supervision, because they can’t communicate truly and deeply with us.}
+
+\endif

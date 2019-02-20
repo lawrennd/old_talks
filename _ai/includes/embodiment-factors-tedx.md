@@ -1,3 +1,8 @@
+\ifndef{embodimentFactorsTedx}
+\define{embodimentFactorsTedx}
+\editme
+
+\notes{\subsection{Embodiment Factors}}
 \newslide{}
 
 \include{_ai/includes/embodiment-factors-table.html}
@@ -49,3 +54,5 @@ If intelligence is fundamentally about processing and sharing of information. Th
 I call this ratio between the time it takes to compute something, and the time it takes to say it, the embodiment factor. Because it reflects how embodied our cognition is.
 
 If it takes you two minutes to say the thing you have thought in a second, then you are a computer. If it takes you 15 billion years, then you are a human.}
+
+\endif
