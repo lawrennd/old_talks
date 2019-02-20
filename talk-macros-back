@@ -48,13 +48,4 @@ showDivs(\start, '\group');
 \define{\blueColor}{\blackColor}
 \endif
 
-\ifdef{draft}
-\define{\editme}{\href{file://\talksDir\file}{\file}}
-\define{\todo{text}}{\colorRed{Todo: \text}}
-
-}
-\else
-\define{\editme}{\alignright{\small{\href{\githubBaseUrl\file}{[edit]}}}}
-\endif
-
 \endif

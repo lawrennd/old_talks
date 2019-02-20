@@ -59,4 +59,14 @@ from \filename import \object
 
 \define{\thanks}{}
 
+
+\ifdef{draft}
+\define{\editme}{\href{file://\talksDir\file}{\file}}
+\define{\todo{text}}{\colorRed{Todo: \text}}
+
+}
+\else
+\define{\editme}{\alignright{\smalltext{\href{\githubBaseUrl\file}{[edit]}}}}
+\endif
+
 \endif

@@ -71,4 +71,13 @@
 \endif}}
 
 
+\ifdef{draft}
+\define{\editme}{\href{file://\talksDir\file}{\file}}
+\define{\todo{text}}{\colorRed{Todo: \text}}
+
+}
+\else
+\define{\editme}{<div class="header">\alignright{\smalltext{\href{\githubBaseUrl\file}{[edit]}}}</div>}
+\endif
+
 \endif
