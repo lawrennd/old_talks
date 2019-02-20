@@ -1,6 +1,7 @@
 \ifndef{graphicalModels}
 \define{graphicalModels}
 \editme
+
 \subsection{Graphical Models}
 
 \slides{
