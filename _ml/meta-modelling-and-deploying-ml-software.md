@@ -11,8 +11,10 @@ author:
   gscholar: r3SJcvoAAAAJ
   orchid: 
 date: 2019-05-23
-published: 2019-05-23
-layout: talk
 categories:
 - notes
+layout: talk
+geometry: ["a4paper", "margin=2cm"]
+papersize: a4paper
+transition: None
 ---

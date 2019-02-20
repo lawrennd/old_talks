@@ -1,6 +1,7 @@
 \ifndef{gpVariationalComplexity}
 \define{gpVariationalComplexity}
 \editme
+
 \subsection{Variational Compression}
 
 \slides{

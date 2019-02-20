@@ -26,17 +26,14 @@ categories:
 </div>
 
 <!-- Front matter -->
+<p>.</p>
 <!--Back matter-->
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
-<p><span style="text-align:right"></span></p>
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/gp/rasmussen-williams-book.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 <p><span class="citation">Rasmussen and Williams (2006)</span> is still one of the most important references on Gaussian process models. It is <a href="http://www.gaussianprocess.org/gpml/">available freely online</a>.</p>
-<p><span style="text-align:right"></span></p>
-<p><span style="text-align:right"></span></p>
-<h1 id="what-is-machine-learning">What is Machine Learning?</h1>
-<p><span style="text-align:right"></span></p>
+<h1 id="what-is-machine-learning-edit">What is Machine Learning? <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
 <p>What is machine learning? At its most basic level machine learning is a combination of</p>
 <p><br /><span class="math display">$$\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$</span><br /></p>
 <p>where <em>data</em> is our observations. They can be actively or passively acquired (meta-data). The <em>model</em> contains our assumptions, based on previous experience. That experience can be other data, it can come from transfer learning, or it can merely be our beliefs about the regularities of the universe. In humans our models include our inductive biases. The <em>prediction</em> is an action to be taken or a categorization or a quality score. The reason that machine learning has become a mainstay of artificial intelligence is the importance of predictions in artificial intelligence. The data and the model are combined through computation.</p>
@@ -52,7 +49,7 @@ categories:
 <li>mismatch between the set of prediction functions we choose and all possible prediction functions.</li>
 </ol>
 <p>There are also challenges around specification of the objective function, but for we will save those for another day. For the moment, let us focus on the prediction function.</p>
-<p><span style="text-align:right"></span> ## Neural Networks and Prediction Functions</p>
+<h2 id="neural-networks-and-prediction-functions-edit">Neural Networks and Prediction Functions <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/neural-networks.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/neural-networks.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Neural networks are adaptive non-linear function models. Originally, they were studied (by McCulloch and Pitts <span class="citation">(McCulloch and Pitts 1943)</span>) as simple models for neurons, but over the last decade they have become popular because they are a flexible approach to modelling complex data. A particular characteristic of neural network models is that they can be composed to form highly complex functions which encode many of our expectations of the real world. They allow us to encode our assumptions about how the world works.</p>
 <p>We will return to composition later, but for the moment, let's focus on a one hidden layer neural network. We are interested in the prediction function, so we'll ignore the objective function (which is often called an error function) for the moment, and just describe the mathematical object of interest</p>
 <p><br /><span class="math display">$$
@@ -64,7 +61,7 @@ $$</span><br /></p>
 <h2 id="adaptive-basis-functions">Adaptive Basis Functions</h2>
 <p>The first difference in the (early) neural network literature to the classical statistical literature is the decision to optimize these parameters, <span class="math inline">$\mappingMatrixTwo$</span>, as well as the parameters, <span class="math inline">$\mappingMatrix$</span> (which would normally be denoted in statistics by <span class="math inline"><strong>β</strong></span>)<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>.</p>
 <p>In this tutorial, we're going to go revisit that decision, and follow the path of Radford Neal <span class="citation">(Neal 1994)</span> who, inspired by work of David MacKay <span class="citation">(MacKay 1992)</span> and others did his PhD thesis on Bayesian Neural Networks. If we take a Bayesian approach to parameter inference (note I am using inference here in the classical sense, not in the sense of prediction of test data, which seems to be a newer usage), then we don't wish to fit parameters at all, rather we wish to integrate them away and understand the family of functions that the model describes.</p>
-<p><span style="text-align:right"></span> ## Probabilistic Modelling</p>
+<h2 id="probabilistic-modelling-edit">Probabilistic Modelling <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/probabilistic-modelling.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/probabilistic-modelling.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>This Bayesian approach is designed to deal with uncertainty arising from fitting our prediction function to the data we have, a reduced data set.</p>
 <p>The Bayesian approach can be derived from a broader understanding of what our objective is. If we accept that we can jointly represent all things that happen in the world with a probability distribution, then we can interogate that probability to make predictions. So, if we are interested in predictions, <span class="math inline">$\dataScalar_*$</span> at future points input locations of interest, <span class="math inline">$\inputVector_*$</span> given previously training data, <span class="math inline">$\dataVector$</span> and corresponding inputs, <span class="math inline">$\inputMatrix$</span>, then we are really interogating the following probability density, <br /><span class="math display">$$
 p(\dataScalar_*|\dataVector, \inputMatrix, \inputVector_*),
@@ -84,7 +81,7 @@ $$</span><br /></p>
 <p>In short, that is the classical approach to probabilistic inference, and all approaches to Bayesian neural networks fall within this path. For a deep probabilistic model, we can simply take this one stage further and place a probability distribution over the input locations, <br /><span class="math display">$$
 p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \parameterVector) p(\parameterVector | \dataVector, \inputMatrix) p(\inputMatrix) p(\inputMatrix_*) \text{d} \parameterVector \text{d} \inputMatrix \text{d}\inputMatrix_*
 $$</span><br /> and we have <em>unsupervised learning</em> (from where we can get deep generative models).</p>
-<p><span style="text-align:right"></span> ## Graphical Models</p>
+<h2 id="graphical-models-edit">Graphical Models <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/graphical-models.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/graphical-models.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>One way of representing a joint distribution is to consider conditional dependencies between data. Conditional dependencies allow us to factorize the distribution. For example, a Markov chain is a factorization of a distribution into components that represent the conditional relationships between points that are neighboring, often in time or space. It can be decomposed in the following form. <br /><span class="math display">$$p(\dataVector) = p(\dataScalar_\numData | \dataScalar_{\numData-1}) p(\dataScalar_{\numData-1}|\dataScalar_{\numData-2}) \dots p(\dataScalar_{2} | \dataScalar_{1})$$</span><br /></p>
 <object class="svgplot " align data="../slides/diagrams/ml/markov.svg" style="vertical-align:middle;">
 </object>
@@ -109,13 +106,11 @@ $$</span><br /> and we have <em>unsupervised learning</em> (from where we can ge
   $$</span><br /></p>
 
 <p>and while normally integrating over high dimensional parameter vectors is highly complex, here it is <em>trivial</em>. That is because of a property of the multivariate Gaussian.</p>
-<p><span style="text-align:right"></span></p>
 <p>Gaussian processes are initially of interest because</p>
 <ol style="list-style-type: decimal">
 <li>linear Gaussian models are easier to deal with</li>
 <li>Even the parameters <em>within</em> the process can be handled, by considering a particular limit.</li>
 </ol>
-<p><span style="text-align:right"></span></p>
 <p>Let's first of all review the properties of the multivariate Gaussian distribution that make linear Gaussian models easier to deal with. We'll return to the, perhaps surprising, result on the parameters within the nonlinearity, <span class="math inline">$\parameterVector$</span>, shortly.</p>
 <p>To work with linear Gaussian models, to find the marginal likelihood all you need to know is the following rules. If <br /><span class="math display">$$
 \dataVector = \mappingMatrix \inputVector + \noiseVector,
@@ -152,12 +147,12 @@ $$</span><br /></p>
 <p>If we look at the portion of this function associated only with <span class="math inline">$\mappingFunction(\cdot)$</span>, i.e. we remove the noise, then we can write down the covariance associated with our neural network, <br /><span class="math display">$$
 \kernel_\mappingFunction\left(\inputVector_i, \inputVector_j\right) = \alpha \activationVector\left(\mappingMatrix_1, \inputVector_i\right)^\top \activationVector\left(\mappingMatrix_1, \inputVector_j\right)
 $$</span><br /> so the elements of the covariance or <em>kernel</em> matrix are formed by inner products of the rows of the <em>design matrix</em>.</p>
-<h2 id="gaussian-process">Gaussian Process</h2>
+<h2 id="gaussian-process-edit">Gaussian Process <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/multivariate-gaussian-properties.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/multivariate-gaussian-properties.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>This is the essence of a Gaussian process. Instead of making assumptions about our density over each data point, <span class="math inline">$\dataScalar_i$</span> as i.i.d. we make a joint Gaussian assumption over our data. The covariance matrix is now a function of both the parameters of the activation function, <span class="math inline">$\mappingMatrixTwo$</span>, and the input variables, <span class="math inline">$\inputMatrix$</span>. This comes about through integrating out the parameters of the model, <span class="math inline">$\mappingVector$</span>.</p>
 <h2 id="basis-functions">Basis Functions</h2>
 <p>We can basically put anything inside the basis functions, and many people do. These can be deep kernels <span class="citation">(Cho and Saul 2009)</span> or we can learn the parameters of a convolutional neural network inside there.</p>
 <p>Viewing a neural network in this way is also what allows us to beform sensible <em>batch</em> normalizations <span class="citation">(Ioffe and Szegedy 2015)</span>.</p>
-<p><span style="text-align:right"></span> ## Non-degenerate Gaussian Processes</p>
+<h2 id="non-degenerate-gaussian-processes-edit">Non-degenerate Gaussian Processes <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/non-degenerate-gps.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/non-degenerate-gps.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>The process described above is degenerate. The covariance function is of rank at most <span class="math inline">$\numHidden$</span> and since the theoretical amount of data could always increase <span class="math inline">$\numData \rightarrow \infty$</span>, the covariance function is not full rank. This means as we increase the amount of data to infinity, there will come a point where we can't normalize the process because the multivariate Gaussian has the form, <br /><span class="math display">$$
 \gaussianDist{\mappingFunctionVector}{\zerosVector}{\kernelMatrix} = \frac{1}{\left(2\pi\right)^{\frac{\numData}{2}}\det{\kernelMatrix}^\frac{1}{2}} \exp\left(-\frac{\mappingFunctionVector^\top\kernelMatrix \mappingFunctionVector}{2}\right)
 $$</span><br /> and a non-degenerate kernel matrix leads to <span class="math inline">$\det{\kernelMatrix} = 0$</span> defeating the normalization (it's equivalent to finding a projection in the high dimensional Gaussian where the variance of the the resulting univariate Gaussian is zero, i.e. there is a null space on the covariance, or alternatively you can imagine there are one or more directions where the Gaussian has become the delta function).</p>
@@ -165,6 +160,9 @@ $$</span><br /> and a non-degenerate kernel matrix leads to <span class="math in
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/neal-infinite-priors.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+<center>
+<em>Page 37 of <a href="http://www.cs.toronto.edu/~radford/ftp/thesis.pdf">Radford Neal's 1994 thesis</a></em>
+</center>
 <p>In loose terms, what Radford considers is what happens to the elements of the covariance function, <br /><span class="math display">$$
   \begin{align*}
   \kernel_\mappingFunction\left(\inputVector_i, \inputVector_j\right) &amp; = \alpha \activationVector\left(\mappingMatrix_1, \inputVector_i\right)^\top \activationVector\left(\mappingMatrix_1, \inputVector_j\right)\\
@@ -181,8 +179,7 @@ $$</span><br /> And that's not <em>only</em> for Gaussian <span class="math inli
   $$</span><br /> has finite variance, then the result of taking the number of hidden units to infinity, with appropriate scaling, is also a Gaussian process.</p>
 <h2 id="further-reading">Further Reading</h2>
 <p>To understand this argument in more detail, I highly recommend reading chapter 2 of Neal's thesis <span class="citation">(Neal 1994)</span>, which remains easy to read and clear today. Indeed, for readers interested in Bayesian neural networks, both Raford Neal's and David MacKay's PhD thesis <span class="citation">(MacKay 1992)</span> remain essential reading. Both theses embody a clarity of thought, and an ability to weave together threads from different fields that was the business of machine learning in the 1990s. Radford and David were also pioneers in making their software widely available and publishing material on the web.</p>
-<p><span style="text-align:right"></span></p>
-<h2 id="bayesian-inference-by-rejection-sampling">Bayesian Inference by Rejection Sampling</h2>
+<h2 id="bayesian-inference-by-rejection-sampling-edit">Bayesian Inference by Rejection Sampling <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gp-intro-very-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gp-intro-very-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>One view of Bayesian inference is to assume we are given a mechanism for generating samples, where we assume that mechanism is representing on accurate view on the way we believe the world works.</p>
 <p>This mechanism is known as our <em>prior</em> belief.</p>
 <p>We combine our prior belief with our observations of the real world by discarding all those samples that are inconsistent with our prior. The <em>likelihood</em> defines mathematically what we mean by inconsistent with the prior. The higher the noise level in the likelihood, the looser the notion of consistent.</p>
@@ -202,10 +199,12 @@ $$</span><br /> And that's not <em>only</em> for Gaussian <span class="math inli
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/gp/gp_rejection_sample005.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+<center>
+<em>One view of Bayesian inference is we have a machine for generating samples (the </em>prior<em>), and we discard all samples inconsistent with our data, leaving the samples of interest (the </em>posterior<em>). The Gaussian process allows us to do this analytically.</em>
+</center>
 <!-- ### Two Dimensional Gaussian Distribution -->
 <!-- include{_ml/includes/two-d-gaussian.md} -->
-<p><span style="text-align:right"></span></p>
-<h2 id="sampling-a-function">Sampling a Function</h2>
+<h2 id="sampling-a-function-edit">Sampling a Function <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gpdistfunc.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gpdistfunc.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>We will consider a Gaussian distribution with a particular structure of covariance matrix. We will generate <em>one</em> sample from a 25-dimensional Gaussian density. <br /><span class="math display">$$
 \mappingFunctionVector=\left[\mappingFunction_{1},\mappingFunction_{2}\dots \mappingFunction_{25}\right].
 $$</span><br /> in the figure below we plot these data on the <span class="math inline"><em>y</em></span>-axis against their <em>indices</em> on the <span class="math inline"><em>x</em></span>-axis.</p>
@@ -217,13 +216,18 @@ $$</span><br /> in the figure below we plot these data on the <span class="math 
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;two_point_sample</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, <span class="st">&#39;../slides/diagrams/gp&#39;</span>, sample<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">8</span>, <span class="dv">1</span>))</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/gp/two_point_sample008.svg" style="vertical-align:middle;">
 </object>
-<p><span style="text-align:right"></span></p>
+<center>
+<em>A 25 dimensional correlated random variable (values ploted against index)</em>
+</center>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
 <span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;two_point_sample</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, <span class="st">&#39;../slides/diagrams/gp&#39;</span>, sample<span class="op">=</span>IntSlider(<span class="dv">9</span>, <span class="dv">9</span>, <span class="dv">12</span>, <span class="dv">1</span>))</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/gp/two_point_sample012.svg" style="vertical-align:middle;">
 </object>
-<h2 id="uluru">Uluru</h2>
+<center>
+<em>The joint Gaussian over <span class="math inline">$\mappingFunction_1$</span> and <span class="math inline">$\mappingFunction_2$</span> along with the conditional distribution of <span class="math inline">$\mappingFunction_2$</span> given <span class="math inline">$\mappingFunction_1$</span></em>
+</center>
+<h2 id="uluru-edit">Uluru <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gpdistfunc.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gpdistfunc.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/gp/799px-Uluru_Panorama.jpg" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
@@ -237,7 +241,6 @@ $$</span><br /> in the figure below we plot these data on the <span class="math 
     \kernelMatrix = \begin{bmatrix} \kernelScalar_{1, 1} &amp; \kernelScalar_{1, 2}\\ \kernelScalar_{2, 1} &amp; \kernelScalar_{2, 2}.\end{bmatrix}
     $$</span><br /></p>
 <p>Using these formulae we can determine the conditional density for any of the elements of our vector <span class="math inline">$\mappingFunctionVector$</span>. For example, the variable <span class="math inline">$\mappingFunction_8$</span> is less correlated with <span class="math inline">$\mappingFunction_1$</span> than <span class="math inline">$\mappingFunction_2$</span>. If we consider this variable we see the conditional density is more diffuse.</p>
-<p><span style="text-align:right"></span></p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
 <span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;two_point_sample</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, <span class="st">&#39;../slides/diagrams/gp&#39;</span>, sample<span class="op">=</span>IntSlider(<span class="dv">13</span>, <span class="dv">13</span>, <span class="dv">17</span>, <span class="dv">1</span>))</code></pre></div>
@@ -245,6 +248,9 @@ $$</span><br /> in the figure below we plot these data on the <span class="math 
 </object>
 <object class="svgplot " align data="../slides/diagrams/gp/two_point_sample017.svg" style="vertical-align:middle;">
 </object>
+<center>
+<em>The joint Gaussian over <span class="math inline">$\mappingFunction_1$</span> and <span class="math inline">$\mappingFunction_8$</span> along with the conditional distribution of <span class="math inline">$\mappingFunction_8$</span> given <span class="math inline">$\mappingFunction_1$</span></em>
+</center>
 <ul>
 <li>Covariance function, <span class="math inline">$\kernelMatrix$</span></li>
 <li>Determines properties of samples.</li>
@@ -258,7 +264,7 @@ $$</span><br /> in the figure below we plot these data on the <span class="math 
 <li><p>Posterior covariance <br /><span class="math display">$$\covarianceMatrix_* = \kernelMatrix_{*,*} - \kernelMatrix_{*,\mappingFunctionVector}
 \kernelMatrix^{-1} \kernelMatrix_{\mappingFunctionVector, *}$$</span><br /></p></li>
 </ul>
-<p><span style="text-align:right"></span> ## Exponentiated Quadratic Covariance</p>
+<h2 id="exponentiated-quadratic-covariance-edit">Exponentiated Quadratic Covariance <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/eq-covariance.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/eq-covariance.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>The exponentiated quadratic covariance, also known as the Gaussian covariance or the RBF covariance and the squared exponential. Covariance between two points is related to the negative exponential of the squared distnace between those points. This covariance function can be derived in a few different ways: as the infinite limit of a radial basis function neural network, as diffusion in the heat equation, as a Gaussian filter in <em>Fourier space</em> or as the composition as a series of linear filters applied to a base function.</p>
 <p>The covariance takes the following form, <br /><span class="math display">$$
 \kernelScalar(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\ltwoNorm{\inputVector-\inputVector^\prime}^2}{2\lengthScale^2}\right)
@@ -278,8 +284,10 @@ $$</span><br /> where <span class="math inline">ℓ</span> is the <em>length sca
 </td>
 </tr>
 </table>
-<p><span style="text-align:right"></span></p>
-<h2 id="olympic-marathon-data">Olympic Marathon Data</h2>
+<center>
+<em>The exponentiated quadratic covariance function.</em>
+</center>
+<h2 id="olympic-marathon-data-edit">Olympic Marathon Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/olympic-marathon-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/olympic-marathon-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <table>
 <tr>
 <td width="70%">
@@ -332,8 +340,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </div>
 <p>Things to notice about the data include the outlier in 1904, in this year, the olympics was in St Louis, USA. Organizational problems and challenges with dust kicked up by the cars following the race meant that participants got lost, and only very few participants completed.</p>
 <p>More recent years see more consistently quick marathons.</p>
-<p><span style="text-align:right"></span></p>
-<h2 id="alan-turing">Alan Turing</h2>
+<h2 id="alan-turing-edit">Alan Turing <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/alan-turing-marathon.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/alan-turing-marathon.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <table>
 <tr>
 <td width="50%">
@@ -348,6 +355,9 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </td>
 </tr>
 </table>
+<center>
+<em>Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: <a href="http://www.turing.org.uk/scrapbook/run.html">Alan Turing Internet Scrapbook</a>.</em>
+</center>
 <p>If we had to summarise the objectives of machine learning in one word, a very good candidate for that word would be <em>generalization</em>. What is generalization? From a human perspective it might be summarised as the ability to take lessons learned in one domain and apply them to another domain. If we accept the definition given in the first session for machine learning, <br /><span class="math display">$$
 \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}
 $$</span><br /> then we see that without a model we can't generalise: we only have data. Data is fine for answering very specific questions, like &quot;Who won the Olympic Marathon in 2012?&quot;, because we have that answer stored, however, we are not given the answer to many other questions. For example, Alan Turing was a formidable marathon runner, in 1946 he ran a time 2 hours 46 minutes (just under four minutes per kilometer, faster than I and most of the other <a href="http://www.parkrun.org.uk/sheffieldhallam/">Endcliffe Park Run</a> runners can do 5 km). What is the probability he would have won an Olympics if one had been held in 1946?</p>
@@ -359,7 +369,7 @@ Data is fine for answering very specific questions, like "Who won the Olympic Ma
 
 <table><tr><td width="40%"><img class="" src="../slides/diagrams/turing-run.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></td><td width="50%"><img class="" src="../slides/diagrams/turing-times.gif" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></td></tr></table>
 
--->
+<center>*Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: [Alan Turing Internet Scrapbook](http://www.turing.org.uk/scrapbook/run.html)*</center>-->
 <p>Our first objective will be to perform a Gaussian process fit to the data, we'll do this using the <a href="https://github.com/SheffieldML/GPy">GPy software</a>.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> GPy</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_full <span class="op">=</span> GPy.models.GPRegression(x,yhat)
@@ -386,7 +396,6 @@ y_clean=np.vstack((y[0:2, :], y[3:, :]))
 
 m_clean = GPy.models.GPRegression(x_clean,y_clean)
 _ = m_clean.optimize()</code></pre>
-<p><span style="text-align:right"></span></p>
 <p>Can we determine covariance parameters from the data?</p>
 <p><br /><span class="math display">$$\gaussianDist{\dataVector}{\mathbf{0}}{\kernelMatrix}=\frac{1}{(2\pi)^\frac{\numData}{2}{\det{\kernelMatrix}^{\frac{1}{2}}}}{\exp\left(-\frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}\right)}$$</span><br /></p>
 <p><br /><span class="math display">$$\begin{aligned}
@@ -449,8 +458,10 @@ gpoptimizePlot3
 </td>
 </tr>
 </table>
-<p><span style="text-align:right"></span></p>
-<h2 id="della-gatta-gene-data">Della Gatta Gene Data</h2>
+<center>
+<em>Variation in the data fit term, the capacity term and the negative log likelihood for different lengthscales.</em>
+</center>
+<h2 id="della-gatta-gene-data-edit">Della Gatta Gene Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/della-gatta-gene-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/della-gatta-gene-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <ul>
 <li>Given given expression levels in the form of a time series from <span class="citation">Della Gatta et al. (2008)</span>.</li>
 </ul>
@@ -552,38 +563,60 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 <!--
 
 <object class="svgplot " align="" data="../slides/diagrams/gp/multiple-optima001.svg" style="vertical-align:middle;"></object>-->
-<p><span style="text-align:right"></span></p>
-<h2 id="example-prediction-of-malaria-incidence-in-uganda">Example: Prediction of Malaria Incidence in Uganda</h2>
+<h2 id="example-prediction-of-malaria-incidence-in-uganda-edit">Example: Prediction of Malaria Incidence in Uganda <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_health/includes/malaria-gp.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_health/includes/malaria-gp.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p><span style="text-align:right"><img class="" src="../slides/diagrams/people/2013_03_28_180606.JPG" width="1.5cm" align="" style="background:none; border:none; box-shadow:none; position:absolute; clip:rect(2662px,1780px,1110px,600px);vertical-align:middle"></span></p>
 <p>As an example of using Gaussian process models within the full pipeline from data to decsion, we'll consider the prediction of Malaria incidence in Uganda. For the purposes of this study malaria reports come in two forms, HMIS reports from health centres and Sentinel data, which is curated by the WHO. There are limited sentinel sites and many HMIS sites.</p>
-<p>The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboration with John Quinn and Martin Mubangizi <span class="citation">(Andrade-Pacheco et al. 2014,<span class="citation">Mubangizi et al. (2014)</span>,)</span>. John and Martin were initally from the AI-DEV group from the University of Makerere in Kampala and more latterly they were based at UN Global Pulse in Kampala.</p>
+<p>The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboration with John Quinn and Martin Mubangizi <span class="citation">(Andrade-Pacheco et al. 2014; Mubangizi et al. 2014)</span>. John and Martin were initally from the AI-DEV group from the University of Makerere in Kampala and more latterly they were based at UN Global Pulse in Kampala.</p>
 <p>Malaria data is spatial data. Uganda is split into districts, and health reports can be found for each district. This suggests that models such as conditional random fields could be used for spatial modelling, but there are two complexities with this. First of all, occasionally districts split into two. Secondly, sentinel sites are a specific location within a district, such as Nagongera which is a sentinel site based in the Tororo district.</p>
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/health/uganda-districts-2006.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<p><span style="text-align:right"><span class="citation">(Andrade-Pacheco et al. 2014,<span class="citation">Mubangizi et al. (2014)</span>)</span></span></p>
+<center>
+<em>Ugandan districs. Data SRTM/NASA from <a href="https://dds.cr.usgs.gov/srtm/version2_1" class="uri">https://dds.cr.usgs.gov/srtm/version2_1</a></em>
+</center>
+<p><span style="text-align:right"><span class="citation">(Andrade-Pacheco et al. 2014; Mubangizi et al. 2014)</span></span></p>
 <object class align data="../slides/diagrams/health/Kapchorwa_District_in_Uganda.svg" style="vertical-align:middle">
 </object>
+<center>
+<em>The Kapchorwa District, home district of Stephen Kiprotich.</em>
+</center>
 <p>Stephen Kiprotich, the 2012 gold medal winner from the London Olympics, comes from Kapchorwa district, in eastern Uganda, near the border with Kenya.</p>
+<p>The common standard for collecting health data on the African continent is from the Health management information systems (HMIS). However, this data suffers from missing values <span class="citation">(Gething et al. 2006)</span> and diagnosis of diseases like typhoid and malaria may be confounded.</p>
 <object class align data="../slides/diagrams/health/Tororo_District_in_Uganda.svg" style="vertical-align:middle">
 </object>
+<center>
+<em>The Tororo district, where the sentinel site, Nagongera is located</em>
+</center>
+<p><a href="https://www.who.int/immunization/monitoring_surveillance/burden/vpd/surveillance_type/sentinel/en/">World Health Organization Sentinel Surveillance systems</a> are set up &quot;when high-quality data are needed about a particular disease that cannot be obtained through a passive system&quot;. Several sentinel sites give accurate assessment of malaria disease levels in Uganda, including a site in Nagongera.</p>
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/health/sentinel_nagongera.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+<center>
+<em>Sentinel and HMIS data along with rainfall and temperature for the Nagongera sentinel station in the Tororo district.</em>
+</center>
+<p>In collaboration with the AI Research Group at Makerere we chose to investigate whether Gaussian process models could be used to assimilate information from these two different sources of disease informaton. Further, we were interested in whether local information on rainfall and temperature could be used to improve malaria estimates.</p>
+<p>The aim of the project was to use WHO Sentinel sites, alongside rainfall and temperature, to improve predictions from HMIS data of levels of malaria.</p>
 <object class="center" align="svgplot_normal" data="../slides/diagrams/health/Mubende_District_in_Uganda.svg" style="vertical-align:middle">
 </object>
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/health/mubende.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+{
 <div class="centered centered" style="">
-<img class="" src="../slides/diagrams/gpss/1157497_513423392066576_1845599035_n.jpg" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="../slides/diagrams/gpss/1157497_513423392066576_1845599035_n.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+<center>
+<em>The project arose out of the Gaussian process summer school held at Makerere in Kampala in 2013. The school led, in turn, to the Data Science Africa initiative.</em>
+</center>
+<h2 id="early-warning-systems">Early Warning Systems</h2>
 <object class align data="../slides/diagrams/health/Kabarole_District_in_Uganda.svg" style="vertical-align:middle">
 </object>
-<h2 id="early-warning-systems">Early Warning Systems</h2>
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/health/kabarole.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+<center>
+<em>Estimate of the current disease situation in the Kabarole district over time. Estimate is constructed with a Gaussian process with an additive covariance funciton.</em>
+</center>
 <p>Health monitoring system for the Kabarole district. Here we have fitted the reports with a Gaussian process with an additive covariance function. It has two components, one is a long time scale component (in red above) the other is a short time scale component (in blue).</p>
 <p>Monitoring proceeds by considering two aspects of the curve. Is the blue line (the short term report signal) above the red (which represents the long term trend? If so we have higher than expected reports. If this is the case <em>and</em> the gradient is still positive (i.e. reports are going up) we encode this with a <em>red</em> color. If it is the case and the gradient of the blue line is negative (i.e. reports are going down) we encode this with an <em>amber</em> color. Conversely, if the blue line is below the red <em>and</em> decreasing, we color <em>green</em>. On the other hand if it is below red but increasing, we color <em>yellow</em>.</p>
 <p>This gives us an early warning system for disease. Red is a bad situation getting worse, amber is bad, but improving. Green is good and getting better and yellow good but degrading.</p>
@@ -591,9 +624,11 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/health/monitor.gif" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+<center>
+<em>The map of Ugandan districts with an overview of the Malaria situation in each district.</em>
+</center>
 <p>These colors can now be observed directly on a spatial map of the districts to give an immediate impression of the current status of the disease across the country.</p>
-<p><span style="text-align:right"></span></p>
-<h2 id="additive-covariance">Additive Covariance</h2>
+<h2 id="additive-covariance-edit">Additive Covariance <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/add-covariance.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/add-covariance.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>An additive covariance function is derived from considering the result of summing two Gaussian processes together. If the first Gaussian process is <span class="math inline"><em>g</em>(⋅)</span>, governed by covariance <span class="math inline">$\kernelScalar_g(\cdot, \cdot)$</span> and the second process is <span class="math inline"><em>h</em>(⋅)</span>, governed by covariance <span class="math inline">$\kernelScalar_h(\cdot, \cdot)$</span> then the combined process <span class="math inline"><em>f</em>(⋅)=<em>g</em>(⋅)+<em>h</em>(⋅)</span> is govererned by a covariance function, <br /><span class="math display">$$
 \kernelScalar_f(\inputVector, \inputVector^\prime) = \kernelScalar_g(\inputVector, \inputVector^\prime) + \kernelScalar_h(\inputVector, \inputVector^\prime)
 $$</span><br /></p>
@@ -612,14 +647,18 @@ $$</span><br /></p>
 </td>
 </tr>
 </table>
-<p><span style="text-align:right"></span></p>
-<p>{## Analysis of US Birth Rates</p>
+<center>
+<em>An additive covariance function formed by combining two exponentiated quadratic covariance functions.</em>
+</center>
+<p>{## Analysis of US Birth Rates <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/bda-forecasting.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/bda-forecasting.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></p>
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/ml/bialik-fridaythe13th-1.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+<center>
+<em>This is a retrospective analysis of US births by Aki Vehtari. The challenges of forecasting. Even with seasonal and weekly effects removed there are significant effects on holidays, weekends, etc.</em>
+</center>
 <p>There's a nice analysis of US birth rates by Gaussian processes with additive covariances in <span class="citation">Gelman et al. (2013)</span>. A combination of covariance functions are used to take account of weekly and yearly trends. The analysis is summarized on the cover of the book.</p>
-<p><span style="text-align:right"></span></p>
-<h2 id="basis-function-covariance">Basis Function Covariance</h2>
+<h2 id="basis-function-covariance-edit">Basis Function Covariance <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/basis-covariance.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/basis-covariance.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>The fixed basis function covariance just comes from the properties of a multivariate Gaussian, if we decide <br /><span class="math display">$$
 \mappingFunctionVector=\basisMatrix\mappingVector
 $$</span><br /> and then we assume <br /><span class="math display">$$
@@ -644,7 +683,10 @@ $$</span><br /> meaning that the vector of observations from the function is joi
 </td>
 </tr>
 </table>
-<p><span style="text-align:right"></span> ## Brownian Covariance</p>
+<center>
+<em>A covariance function based on a non-linear basis given by <span class="math inline">$\basisVector(\inputVector)$</span>.</em>
+</center>
+<h2 id="brownian-covariance-edit">Brownian Covariance <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/brownian-covariance.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/brownian-covariance.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>load <span class="op">-</span>s brownian_cov mlai.py</code></pre></div>
 <p>Brownian motion is also a Gaussian process. It follows a Gaussian random walk, with diffusion occuring at each time point driven by a Gaussian input. This implies it is both Markov and Gaussian. The covariance function for Brownian motion has the form <br /><span class="math display">$$
 \kernelScalar(t, t^\prime)=\alpha \min(t, t^\prime)
@@ -664,7 +706,7 @@ $$</span><br /></p>
 </td>
 </tr>
 </table>
-<p><span style="text-align:right"></span> ## MLP Covariance</p>
+<h2 id="mlp-covariance-edit">MLP Covariance <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/mlp-covariance.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/mlp-covariance.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>load <span class="op">-</span>s mlp_cov mlai.py</code></pre></div>
 <p>The multi-layer perceptron (MLP) covariance, also known as the neural network covariance or the arcsin covariance, is derived by considering the infinite limit of a neural network.</p>
 <center>
@@ -682,26 +724,25 @@ $$</span><br /></p>
 </td>
 </tr>
 </table>
-<p><span style="text-align:right"></span></p>
-<h2 id="gpss-gaussian-process-summer-school">GPSS: Gaussian Process Summer School</h2>
+<center>
+<em>The multi-layer perceptron covariance function. This is derived by considering the infinite limit of a neural network with probit activation functions.</em>
+</center>
+<h2 id="gpss-gaussian-process-summer-school-edit">GPSS: Gaussian Process Summer School <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gp-summer-school.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gp-summer-school.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div style="width:1.5cm;text-align:center">
 
 </div>
 <p>If you're interested in finding out more about Gaussian processes, you can attend the Gaussian process summer school, or view the lectures and material on line. Details of the school, future events and past events can be found at the website <a href="http://gpss.cc" class="uri">http://gpss.cc</a>.</p>
-<p><span style="text-align:right"></span></p>
-<h2 id="gpy-a-gaussian-process-framework-in-python">GPy: A Gaussian Process Framework in Python</h2>
+<h2 id="gpy-a-gaussian-process-framework-in-python-edit">GPy: A Gaussian Process Framework in Python <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gpy-software.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gpy-software.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/gp/gpy.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 <p>GPy is a BSD licensed software code base for implementing Gaussian process models in python. This allows GPs to be combined with a wide variety of software libraries.</p>
 <p>The software itself is available on <a href="https://github.com/SheffieldML/GPy">GitHub</a> and the team welcomes contributions.</p>
 <p>The aim for GPy is to be a probabilistic-style programming language, i.e. you specify the model rather than the algorithm. As well as a large range of covariance functions the software allows for non-Gaussian likelihoods, multivariate outputs, dimensionality reduction and approximations for larger data sets.</p>
-<p><span style="text-align:right"></span></p>
-<h2 id="other-software">Other Software</h2>
+<h2 id="other-software-edit">Other Software <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/other-software.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/other-software.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>GPy has inspired other software solutions, first of all <a href="https://github.com/GPflow/GPflow">GPflow</a>, which uses Tensor Flow's automatic differentiation engine to allow rapid prototyping of new covariance functions and algorithms. More recently, <a href="https://github.com/cornellius-gp/gpytorch">GPyTorch</a> uses PyTorch for the same purpose.</p>
 <p>GPy itself is being restructured with MXFusion as its computational engine to give similiar capabilities.</p>
-<p><span style="text-align:right"></span></p>
-<h2 id="mxfusion-modular-probabilistic-programming-on-mxnet">MXFusion: Modular Probabilistic Programming on MXNet</h2>
+<h2 id="mxfusion-modular-probabilistic-programming-on-mxnet-edit">MXFusion: Modular Probabilistic Programming on MXNet <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/mxfusion-intro.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/mxfusion-intro.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/ml/mxfusion.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
@@ -739,6 +780,9 @@ $$</span><br /></p>
 </div>
 <div id="ref-Gelman:bayesian13">
 <p>Gelman, Andrew, John B. Carlin, Hal S. Stern, and Donald B. Rubin. 2013. <em>Bayesian Data Analysis</em>. 3rd ed. Chapman; Hall.</p>
+</div>
+<div id="ref-Gething:hmis06">
+<p>Gething, Peter W., Abdisalan M. Noor, Priscilla W. Gikandi, Esther A. A. Ogara, Simon I. Hay, Mark S. Nixon, Robert W. Snow, and Peter M. Atkinson. 2006. “Improving Imperfect Data from Health Management Information Systems in Africa Using Space–Time Geostatistics.” <em>PLoS Medicine</em> 3 (6). Public Library of Science. doi:<a href="https://doi.org/10.1371/journal.pmed.0030271">10.1371/journal.pmed.0030271</a>.</p>
 </div>
 <div id="ref-Ioffe:batch15">
 <p>Ioffe, Sergey, and Christian Szegedy. 2015. “Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift.” In <em>Proceedings of the 32nd International Conference on Machine Learning</em>, edited by Francis Bach and David Blei, 37:448–56. Proceedings of Machine Learning Research. Lille, France: PMLR. <a href="http://proceedings.mlr.press/v37/ioffe15.html" class="uri">http://proceedings.mlr.press/v37/ioffe15.html</a>.</p>

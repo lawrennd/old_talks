@@ -28,9 +28,7 @@ categories:
 <p>.</p>
 <!--Back matter-->
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
-<p><span style="text-align:right"></span></p>
-<h1 id="what-is-machine-learning">What is Machine Learning?</h1>
-<p><span style="text-align:right"></span></p>
+<h1 id="what-is-machine-learning-edit">What is Machine Learning? <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
 <p>What is machine learning? At its most basic level machine learning is a combination of</p>
 <p><br /><span class="math display">$$\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$</span><br /></p>
 <p>where <em>data</em> is our observations. They can be actively or passively acquired (meta-data). The <em>model</em> contains our assumptions, based on previous experience. That experience can be other data, it can come from transfer learning, or it can merely be our beliefs about the regularities of the universe. In humans our models include our inductive biases. The <em>prediction</em> is an action to be taken or a categorization or a quality score. The reason that machine learning has become a mainstay of artificial intelligence is the importance of predictions in artificial intelligence. The data and the model are combined through computation.</p>
@@ -40,17 +38,62 @@ categories:
 <p>The combination of data and model through the prediction function and the objectie function leads to a <em>learning algorithm</em>. The class of prediction functions and objective functions we can make use of is restricted by the algorithms they lead to. If the prediction function or the objective function are too complex, then it can be difficult to find an appropriate learning algorithm. Much of the acdemic field of machine learning is the quest for new learning algorithms that allow us to bring different types of models and data together.</p>
 <p>A useful reference for state of the art in machine learning is the UK Royal Society Report, <a href="https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf">Machine Learning: Power and Promise of Computers that Learn by Example</a>.</p>
 <p>You can also check my blog post on <a href="http://inverseprobability.com/2017/07/17/what-is-machine-learning">&quot;What is Machine Learning?&quot;</a></p>
-<p><span style="text-align:right"></span></p>
-<h2 id="artificial-intelligence-and-data-science">Artificial Intelligence and Data Science</h2>
+<h2 id="artificial-intelligence-and-data-science-edit">Artificial Intelligence and Data Science <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/data-science-vs-ai.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/data-science-vs-ai.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Machine learning technologies have been the driver of two related, but distinct disciplines. The first is <em>data science</em>. Data science is an emerging field that arises from the fact that we now collect so much data by happenstance, rather than by <em>experimental design</em>. Classical statistics is the science of drawing conclusions from data, and to do so statistical experiments are carefully designed. In the modern era we collect so much data that there's a desire to draw inferences directly from the data.</p>
 <p>As well as machine learning, the field of data science draws from statistics, cloud computing, data storage (e.g. streaming data), visualization and data mining.</p>
 <p>In contrast, artificial intelligence technologies typically focus on emulating some form of human behaviour, such as understanding an image, or some speech, or translating text from one form to another. The recent advances in artifcial intelligence have come from machine learning providing the automation. But in contrast to data science, in artifcial intelligence the data is normally collected with the specific task in mind. In this sense it has strong relations to classical statistics.</p>
 <p>Classically artificial intelligence worried more about <em>logic</em> and <em>planning</em> and focussed less on data driven decision making. Modern machine learning owes more to the field of <em>Cybernetics</em> <span class="citation">(Wiener 1948)</span> than artificial intelligence. Related fields include <em>robotics</em>, <em>speech recognition</em>, <em>language understanding</em> and <em>computer vision</em>.</p>
 <p>There are strong overlaps between the fields, the wide availability of data by happenstance makes it easier to collect data for designing AI systems. These relations are coming through wide availability of sensing technologies that are interconnected by celluar networks, WiFi and the internet. This phenomenon is sometimes known as the <em>Internet of Things</em>, but this feels like a dangerous misnomer. We must never forget that we are interconnecting people, not things.</p>
-<p><span style="text-align:right"></span></p>
-<p><span style="text-align:right"></span></p>
-<h2 id="natural-and-artificial-intelligence-embodiment-factors">Natural and Artificial Intelligence: Embodiment Factors</h2>
-
+<h2 id="natural-and-artificial-intelligence-embodiment-factors-edit">Natural and Artificial Intelligence: Embodiment Factors <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<table>
+<tr>
+<td>
+</td>
+<td align="center">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</td>
+<td align="center">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/ClaudeShannon_MFO3807.jpg" width="25%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</td>
+</tr>
+<tr>
+<td>
+compute
+</td>
+<td align="center">
+<br /><span class="math display">≈100 gigaflops</span><br />
+</td>
+<td align="center">
+<br /><span class="math display">≈16 petaflops</span><br />
+</td>
+</tr>
+<tr>
+<td>
+communicate
+</td>
+<td align="center">
+<br /><span class="math display">1 gigbit/s</span><br />
+</td>
+<td align="center">
+<br /><span class="math display">100 bit/s</span><br />
+</td>
+</tr>
+<tr>
+<td>
+(compute/communicate)
+</td>
+<td align="center">
+<br /><span class="math display">10<sup>4</sup></span><br />
+</td>
+<td align="center">
+<br /><span class="math display">10<sup>14</sup></span><br />
+</td>
+</tr>
+</table>
 <p>There is a fundamental limit placed on our intelligence based on our ability to communicate. Claude Shannon founded the field of information theory. The clever part of this theory is it allows us to separate our measurement of information from what the information pertains to<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>.</p>
 <p>Shannon measured information in bits. One bit of information is the amount of information I pass to you when I give you the result of a coin toss. Shannon was also interested in the amount of information in the English language. He estimated that on average a word in the English language contains 12 bits of information.</p>
 <p>Given typical speaking rates, that gives us an estimate of our ability to communicate of around 100 bits per second <span class="citation">(Reed and Durlach 1998)</span>. Computers on the other hand can communicate much more rapidly. Current wired network speeds are around a billion bits per second, ten million times faster.</p>
@@ -59,19 +102,27 @@ categories:
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/Lotus_49-2.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+<center>
+<em>The Lotus 49, view from the rear. The Lotus 49 was one of the last Formula One cars before the introduction of aerodynamic aids.</em>
+</center>
 <p>So when it comes to our ability to compute we are extraordinary, not compute in our conscious mind, but the underlying neuron firings that underpin both our consciousness, our sbuconsciousness as well as our motor control etc. By analogy I sometimes like to think of us as a Formula One engine. But in terms of our ability to deploy that computation in actual use, to share the results of what we have inferred, we are very limited. So when you imagine the F1 car that represents a psyche, think of an F1 car with bicycle wheels.</p>
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/640px-Marcel_Renault_1903.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+<center>
+<em>Marcel Renault races a Renault 40 cv during the Paris-Madrid race, an early Grand Prix, in 1903. Marcel died later in the race after missing a warning flag for a sharp corner at Couhé Vérac, likely due to dust reducing visibility.</em>
+</center>
 <p>In contrast, our computers have less computational power, but they can communicate far more fluidly. They are more like a go-kart, less well powered, but with tires that allow them to deploy that power.</p>
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/Caleb_McDuff_WIX_Silence_Racing_livery.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+<center>
+<em>Caleb McDuff driving for WIX Silence Racing.</em>
+</center>
 <p>For humans, that means much of our computation should be dedicated to considering <em>what</em> we should compute. To do that efficiently we need to model the world around us. The most complex thing in the world around us is other humans. So it is no surprise that we model them. We second guess what their intentions are, and our communication is only necessary when they are departing from how we model them. Naturally, for this to work well, we need to understand those we work closely with. So it is no surprise that social communication, social bonding, forms so much of a part of our use of our limited bandwidth.</p>
 <p>There is a second effect here, our need to anthropomorphise objects around us. Our tendency to model our fellow humans extends to when we interact with other entities in our environment. To our pets as well as inanimate objects around us, such as computers or even our cars. This tendency to overinterpret could be a consequence of our limited ability to communicate.</p>
 <p>For more details see this paper <a href="https://arxiv.org/abs/1705.07996">&quot;Living Together: Mind and Machine Intelligence&quot;</a>, and this <a href="http://inverseprobability.com/talks/lawrence-tedx17/living-together.html">TEDx talk</a>.</p>
-<p><span style="text-align:right"></span></p>
-<h1 id="evolved-relationship-with-information">Evolved Relationship with Information</h1>
+<h1 id="evolved-relationship-with-information-edit">Evolved Relationship with Information <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/evolved-relationship.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/evolved-relationship.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
 <p>The high bandwidth of computers has resulted in a close relationship between the computer and data. Large amounts of information can flow between the two. The degree to which the computer is mediating our relationship with data means that we should consider it an intermediary.</p>
 <p>Originaly our low bandwith relationship with data was affected by two characteristics. Firstly, our tendency to over-interpret driven by our need to extract as much knowledge from our low bandwidth information channel as possible. Secondly, by our improved understanding of the domain of <em>mathematical</em> statistics and how our cognitive biases can mislead us.</p>
 <p>With this new set up there is a potential for assimilating far more information via the computer, but the computer can present this to us in various ways. If it's motives are not aligned with ours then it can misrepresent the information. This needn't be nefarious it can be simply as a result of the computer pursuing a different objective from us. For example, if the computer is aiming to maximize our interaction time that may be a different objective from ours which may be to summarize information in a representative manner in the <em>shortest</em> possible length of time.</p>
@@ -82,8 +133,10 @@ categories:
 <p>You can also check my blog post on <a href="http://inverseprobability.com/2015/12/04/what-kind-of-ai">&quot;System Zero&quot;</a></p>
 <object class="svgplot " align data="../slides/diagrams/data-science/new-flow-of-information002.svg" style="vertical-align:middle;">
 </object>
-<p><span style="text-align:right"></span></p>
-<h2 id="what-does-machine-learning-do">What does Machine Learning do?</h2>
+<center>
+<em>The trinity of human, data and computer, and highlights the modern phenomenon. The communication channel between computer and data now has an extremely high bandwidth. The channel between human and computer and the channel between data and human is narrow. New direction of information flow, information is reaching us mediated by the computer.</em>
+</center>
+<h2 id="what-does-machine-learning-do-edit">What does Machine Learning do? <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-does-machine-learning-do.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-does-machine-learning-do.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Any process of automation allows us to scale what we do by codifying a process in some way that makes it efficient and repeatable. Machine learning automates by emulating human (or other actions) found in data. Machine learning codifies in the form of a mathematical function that is learnt by a computer. If we can create these mathematical functions in ways in which they can interconnect, then we can also build systems.</p>
 <p>Machine learning works through codifing a prediction of interest into a mathematical function. For example, we can try and predict the probability that a customer wants to by a jersey given knowledge of their age, and the latitude where they live. The technique known as logistic regression estimates the odds that someone will by a jumper as a linear weighted sum of the features of interest.</p>
 <p><br /><span class="math display">$$ \text{odds} = \frac{p(\text{bought})}{p(\text{not bought})} $$</span><br /> <br /><span class="math display">logodds = <em>β</em><sub>0</sub> + <em>β</em><sub>1</sub>age + <em>β</em><sub>2</sub>latitude.</span><br /> Here <span class="math inline"><em>β</em><sub>0</sub></span>, <span class="math inline"><em>β</em><sub>1</sub></span> and <span class="math inline"><em>β</em><sub>2</sub></span> are the parameters of the model. If <span class="math inline"><em>β</em><sub>1</sub></span> and <span class="math inline"><em>β</em><sub>2</sub></span> are both positive, then the log-odds that someone will buy a jumper increase with increasing latitude and age, so the further north you are and the older you are the more likely you are to buy a jumper. The parameter <span class="math inline"><em>β</em><sub>0</sub></span> is an offset parameter, and gives the log-odds of buying a jumper at zero age and on the equator. It is likely to be negative<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> indicating that the purchase is odds-against. This is actually a classical statistical model, and models like logistic regression are widely used to estimate probabilities from ad-click prediction to risk of disease.</p>
@@ -99,18 +152,21 @@ categories:
 <li><p>Modern machine learning methods are less interpretable</p></li>
 <li><p>Example: face recognition</p></li>
 </ul>
-<p><span style="text-align:right"></span></p>
 <!-- No slide titles in this context -->
-<p><span style="text-align:right"></span></p>
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/deepface_neg.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+<center>
+<em>The DeepFace architecture <span class="citation">(Taigman et al. 2014)</span>, visualized through colors to represent the functional mappings at each layer. There are 120 million parameters in the model.</em>
+</center>
 <p>The DeepFace architecture <span class="citation">(Taigman et al. 2014)</span> consists of layers that deal with <em>translation</em> and <em>rotational</em> invariances. These layers are followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected layers.</p>
-<p><span style="text-align:right"></span></p>
 <div class="centered centered" style="">
-<img class="" src="../slides/diagrams/576px-Early_Pinball.jpg" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="../slides/diagrams/576px-Early_Pinball.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-
+<center>
+<em>Deep learning models are composition of simple functions. We can think of a pinball machine as an analogy. Each layer of pins corresponds to one of the layers of functions in the model. Input data is represented by the location of the ball from left to right when it is dropped in from the top. Output class comes from the position of the ball as it leaves the pins at the bottom.</em>
+</center>
+<h3 id="deep-learning-as-pinball-edit">Deep Learning as Pinball <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-as-pinball.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-as-pinball.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
 <p>Sometimes deep learning models are described as being like the brain, or too complex to understand, but one analogy I find useful to help the gist of these models is to think of them as being similar to early pin ball machines.</p>
 <p>In a deep neural network, we input a number (or numbers), whereas in pinball, we input a ball.</p>
 <p>Think of the location of the ball on the left-right axis as a single number. Our simple pinball machine can only take one number at a time. As the ball falls through the machine, each layer of pins can be thought of as a different layer of 'neurons'. Each layer acts to move the ball from left to right.</p>
@@ -125,16 +181,21 @@ categories:
 <object class="svgplot " align data="../slides/diagrams/pinball001.svg" style="vertical-align:middle;">
 </object>
 </div>
+<center>
+<em>At initialization, the pins, which represent the parameters of the function, aren't in the right place to bring the balls to the correct decisions.</em>
+</center>
 <div style="text-align:center">
 <object class="svgplot " align data="../slides/diagrams/pinball002.svg" style="vertical-align:middle;">
 </object>
 </div>
+<center>
+<em>After learning the pins are now in the right place to bring the balls to the correct decisions.</em>
+</center>
 <p>Learning involves moving all the pins to be in the correct position, so that the ball ends up in the right place when it's fallen through the machine. But moving all these pins in hyperspace can be difficult.</p>
-<p>In a hyper space you have to put a lot of data through the machine for to explore the positions of all the pins. <em>Adversarial examples</em> exploit this idea.</p>
+<p>In a hyper-space you have to put a lot of data through the machine for to explore the positions of all the pins. <em>Adversarial examples</em> exploit this idea.</p>
 <p>If you have access to the pinball machine, you can use gradient methods to find a position for the ball in the hyper space where the image looks like one thing, but will be classified as another.</p>
 <p>Probabilistic methods explore more of the space by considering a range of possible paths for the ball through the machine. This helps to make them more data efficient and gives some robustness to adversarial examples.</p>
-<p><span style="text-align:right"></span></p>
-<h2 id="bayesian-inference-by-rejection-sampling">Bayesian Inference by Rejection Sampling</h2>
+<h2 id="bayesian-inference-by-rejection-sampling-edit">Bayesian Inference by Rejection Sampling <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gp-intro-very-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gp-intro-very-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>One view of Bayesian inference is to assume we are given a mechanism for generating samples, where we assume that mechanism is representing on accurate view on the way we believe the world works.</p>
 <p>This mechanism is known as our <em>prior</em> belief.</p>
 <p>We combine our prior belief with our observations of the real world by discarding all those samples that are inconsistent with our prior. The <em>likelihood</em> defines mathematically what we mean by inconsistent with the prior. The higher the noise level in the likelihood, the looser the notion of consistent.</p>
@@ -154,9 +215,10 @@ categories:
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/gp/gp_rejection_sample005.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<p><span style="text-align:right"></span></p>
-<p><span style="text-align:right"></span></p>
-<h2 id="olympic-marathon-data">Olympic Marathon Data</h2>
+<center>
+<em>One view of Bayesian inference is we have a machine for generating samples (the </em>prior<em>), and we discard all samples inconsistent with our data, leaving the samples of interest (the </em>posterior<em>). The Gaussian process allows us to do this analytically.</em>
+</center>
+<h2 id="olympic-marathon-data-edit">Olympic Marathon Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/olympic-marathon-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/olympic-marathon-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <table>
 <tr>
 <td width="70%">
@@ -209,8 +271,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </div>
 <p>Things to notice about the data include the outlier in 1904, in this year, the olympics was in St Louis, USA. Organizational problems and challenges with dust kicked up by the cars following the race meant that participants got lost, and only very few participants completed.</p>
 <p>More recent years see more consistently quick marathons.</p>
-<p><span style="text-align:right"></span></p>
-<h2 id="alan-turing">Alan Turing</h2>
+<h2 id="alan-turing-edit">Alan Turing <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/alan-turing-marathon.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/alan-turing-marathon.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <table>
 <tr>
 <td width="50%">
@@ -225,6 +286,9 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </td>
 </tr>
 </table>
+<center>
+<em>Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: <a href="http://www.turing.org.uk/scrapbook/run.html">Alan Turing Internet Scrapbook</a>.</em>
+</center>
 <p>If we had to summarise the objectives of machine learning in one word, a very good candidate for that word would be <em>generalization</em>. What is generalization? From a human perspective it might be summarised as the ability to take lessons learned in one domain and apply them to another domain. If we accept the definition given in the first session for machine learning, <br /><span class="math display">$$
 \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}
 $$</span><br /> then we see that without a model we can't generalise: we only have data. Data is fine for answering very specific questions, like &quot;Who won the Olympic Marathon in 2012?&quot;, because we have that answer stored, however, we are not given the answer to many other questions. For example, Alan Turing was a formidable marathon runner, in 1946 he ran a time 2 hours 46 minutes (just under four minutes per kilometer, faster than I and most of the other <a href="http://www.parkrun.org.uk/sheffieldhallam/">Endcliffe Park Run</a> runners can do 5 km). What is the probability he would have won an Olympics if one had been held in 1946?</p>
@@ -236,7 +300,7 @@ Data is fine for answering very specific questions, like "Who won the Olympic Ma
 
 <table><tr><td width="40%"><img class="" src="../slides/diagrams/turing-run.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></td><td width="50%"><img class="" src="../slides/diagrams/turing-times.gif" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></td></tr></table>
 
--->
+<center>*Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: [Alan Turing Internet Scrapbook](http://www.turing.org.uk/scrapbook/run.html)*</center>-->
 <p>Our first objective will be to perform a Gaussian process fit to the data, we'll do this using the <a href="https://github.com/SheffieldML/GPy">GPy software</a>.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> GPy</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_full <span class="op">=</span> GPy.models.GPRegression(x,yhat)
@@ -318,8 +382,9 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 <p>The pinball plot shows the flow of any input ball through the deep Gaussian process. In a pinball plot a series of vertical parallel lines would indicate a purely linear function. For the olypmic marathon data we can see the first layer begins to shift from input towards the right. Note it also does so with some uncertainty (indicated by the shaded backgrounds). The second layer has less uncertainty, but bunches the inputs more strongly to the right. This input layer of uncertainty, followed by a layer that pushes inputs to the right is what gives the heteroschedastic noise.</p>
 <!-- 
 
-<span style="text-align:right">\small{<a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/a-time-for-professionalisation.md">[edit]</a>}</span>
 
+
+## Data Science and Professionalisation <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/a-time-for-professionalisation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/a-time-for-professionalisation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 
 
 The rise in data science and artificial intelligence technologies has been termed "Industrial Revolution 4.0", so are we in the midst of an industrial change? Maybe, but if so, it is the first part of the industrial revolution to be named before it has happened. The original industrial revolution occurred between 1760 and 1840, but the term was introduced into English by Arnold Toynbee (1852-1883).
@@ -345,15 +410,13 @@ Disruptive technologies take time to assimilate, and best practices, as well as 
 
 
 
-
 Why the need for these professions? Much of it is about codification of best practice and developing trust between the public and practitioners. These fundamental characteristics of the professions are shared with the oldest professions (Medicine, Law) as well as the newest (Information Technology).
 
 
 
 
 
-
-So where are we today? My best guess is we are somewhere equivalent to the 1980s for Software Engineering. In terms of professional deployment we have a basic understanding of the equivalent of "programming" but much less understanding of *machine learning systems design* and *data infrastructure*. How the components we ahve developed interoperate together in a reliable and accountable manner. Best practice is still evolving, but perhaps isn't being shared widely enough. 
+So where are we today? My best guess is we are somewhere equivalent to the 1980s for Software Engineering. In terms of professional deployment we have a basic understanding of the equivalent of "programming" but much less understanding of *machine learning systems design* and *data infrastructure*. How the components we ahve developed interoperate together in a reliable and accountable manner. Best practice is still evolving, but perhaps isn't being shared widely enough.
 
 One problem is that the art of data science is superficially similar to regular software engineering. Although in practice it is rather different. Modern software engineering practice operates to generate code which is well tested as it is written, agile programming techniques provide the appropriate degree of flexibility for the individual programmers alongside sufficient formalization and testing. These techniques have evolved from an overly restrictive formalization that was proposed in the early days of software engineering.
 
@@ -361,13 +424,13 @@ While data science involves programming, it is different in the following way. M
 
 Others are also pointing out these challenges, [this post](https://medium.com/@karpathy/software-2-0-a64152b37c35) from Andrej Karpathy (now head of AI at Tesla) covers the notion of "Software 2.0". Google researchers have highlighted the challenges of "Technical Debt" in machine learning [@Sculley:debt15]. Researchers at Berkeley have characterized the systems challenges associated with machine learning [@Stoica:systemsml17].
 
-<span style="text-align:right">\small{<a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/a-time-for-professionalisation.md">[edit]</a>}</span>
+
  -->
 <!-- 
 
-<span style="text-align:right">\small{<a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/the-data-crisis.md">[edit]</a>}</span> 
+ 
 
-## The Data Crisis
+## The Data Crisis <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/the-data-crisis.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/the-data-crisis.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 
 Anecdotally, talking to data modelling scientists. Most say they spend
 80% of their time acquiring and cleaning data. This is precipitating
@@ -384,7 +447,7 @@ form. From the computer's perspective software *is* data. The first wave
 of the data crisis was known as the *software crisis*.
 
 
-\subsubsection{The Software Crisis}
+### The Software Crisis 
 
 In the late sixties early software programmers made note of the
 increasing costs of software development and termed the challenges
@@ -446,13 +509,13 @@ area, [AI for Data Analytics](https://www.turing.ac.uk/research_projects/artific
 <!-- * Deployment of Machine Learning Systems -->
 <!--
 
-<span style="text-align:right">\small{<a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-readiness-levels.md">[edit]</a>}</span>
-
-## Data Readiness Levels
 
 
+## Data Readiness Levels <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-readiness-levels.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-readiness-levels.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 
-<span style="text-align:right">\small{<a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-readiness-levels-short.md">[edit]</a>}</span>
+
+
+
 
 
 
@@ -473,7 +536,7 @@ Data-readiness describes, at its coarsest level,  three separate stages of data 
 
 
 
-## Accessibility: Grade C
+## Accessibility: Grade C <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-readiness-levels.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-readiness-levels.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 
 The first grade refers to the accessibility of data. Most data science practitioners will be used to working with data-providers who, perhaps having had little experience of data-science before, state that they "have the data". More often than not, they have not verified this. A convenient term for this is "Hearsay Data", someone has *heard* that they have the data so they *say* they have it. This is the lowest grade of data readiness. 
 
@@ -481,7 +544,7 @@ Progressing through Grade C involves ensuring that this data is accessible. Not 
 
 
 
-## Validity: Grade B
+## Validity: Grade B 
 
 Data transits from Grade C to Grade B once we can begin digital analysis on the computer. Once the challenges of access to the data have been resolved, we can make the data available either via API, or for direct loading into analysis software (such as Python, R, Matlab, Mathematica or SPSS). Once this has occured the data is at B4 level. Grade B involves the *validity* of the data. Does the data really represent what it purports to? There are challenges such as missing values, outliers, record duplication. Each of these needs to be investigated. 
 
@@ -499,7 +562,7 @@ The need for Grade B emerges due to the fundamental change in the availability o
 
 
 
-## Usability: Grade A
+## Usability: Grade A 
 
 
 Once the validity of the data is determined, the data set can be considered for use in a particular task. This stage of data readiness is more akin to what machine learning scientists are used to doing in Universities. Bringing an algorithm to bear on a well understood data set. 
@@ -511,7 +574,7 @@ This is the stage where the data and the model are brought together, so expertis
 Deployment and maintenance of machine learning models in production is another important issue which Data Readiness Levels are only a part of the solution for.
 
 
-## Recursive Effects
+## Recursive Effects 
 
 
 
@@ -521,6 +584,8 @@ Deployment and maintenance of machine learning models in production is another i
 
 
 To find out more, or to contribute ideas go to <http://data-readiness.org>
+
+You can also check my blog post on ["Data Readiness Levels"](http://inverseprobability.com/2017/01/12/data-readiness-levels)
 
 
 
@@ -547,12 +612,14 @@ These stages of data science are also ridden with ambiguity. In the long term th
 <li>AI systems are <em>fragile</em></li>
 </ul></li>
 </ul>
-<p><span style="text-align:right"></span></p>
-<h1 id="machine-learning-system-design">Machine Learning System Design</h1>
+<h1 id="machine-learning-system-design-edit">Machine Learning System Design <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/ml-systems-design-long.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/ml-systems-design-long.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
 <h2 id="pigeonholing">Pigeonholing</h2>
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/TooManyPigeons.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+<center>
+<em>Decompartmentalization of the model into parts can be seen as pigeoholing the separate tasks that are required.</em>
+</center>
 <p>To deal with the complexity of systems design, a common approach is to break complex systems down into a series of tasks. An approach we can think of as &quot;pigeonholing&quot;. Classically, a sub-task could perhaps be thought of as a particular stage in machining (automating a factory) or a sub-routine call in computing. Machine learning allows any complex sub-task, that was difficult to decompose by classical methods, to be reconstituted by acquiring data. In particular, when we think of emulating a human, we can ask many humans to perform the sub-task many times and fit machine learning models to reconstruct the performance, or to <em>emulate</em> the human in the performance of the task. For example, the decomposition of a complex process such as driving a car into apparently obvious sub-tasks (following the road, identifying pedestrians, etc).</p>
 <p>The current practitioner's approach to deploying artificial intelligence systems is to build up systems of machine learning components. To build a machine learning system, we decompose the task into parts, each of which we can emulate with ML methods. These parts are typically independently constructed and verified. For example, in a driverless car we can decompose the tasks into components such as &quot;pedestrian detection&quot; and &quot;road line detection&quot;. Each of these components can be constructed with, for example, a classification algorithm. Nowadays, people will often deploy a deep neural network, but for many tasks a random forest algorithm may be sufficient. We can then superimpose a logic on top. For example, &quot;Follow the road line unless you detect a pedestrian in the road&quot;.</p>
 <p>This allows for verification of car performance, as long as we can verify the individual components. However, it also implies that the AI systems we deploy are <em>fragile</em>.</p>
@@ -563,11 +630,13 @@ These stages of data science are also ridden with ambiguity. In the long term th
 <p>The difference with modern automated decision making systems is our intention is to deploy them in the <em>uncontrolled</em> environment that makes up our own world.</p>
 <p>This exposes us to either unforseen circumstances or adversarial action. And yet it is unclear our our intelligent systems are capable of adapting to this.</p>
 <p>We become exposed to mischief and adversaries. Adversaries intentially may wish to take over the artificial intelligence system, and mischief is the constant practice of many in our society. Simply watching a 10 year old interact with a voice agent such as Alexa or Siri shows that they are delighted when the can make the the &quot;intelligent&quot; agent seem foolish.</p>
-<p><span style="text-align:right"></span></p>
-<h2 id="the-centrifugal-governor">The Centrifugal Governor</h2>
+<h2 id="the-centrifugal-governor-edit">The Centrifugal Governor <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/centrifugal-governor.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/centrifugal-governor.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/science-holborn-viaduct.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+<center>
+<em>Centrifugal governor as held by &quot;Science&quot; on Holborn Viaduct</em>
+</center>
 <p>The centrifugal governor was made famous by Boulton and Watt when it was deployed in the steam engine. Studying stability in the governor is the main subject of James Clerk Maxwell's paper on the theoretical analysis of governors <span class="citation">(Maxwell 1867)</span>, a founding paper of control theory. In this spirit, Wiener used the name <a href="https://en.wikipedia.org/wiki/Cybernetics"><em>cybernetics</em></a> to describe the field of control and communication in animals and the machine <span class="citation">(Wiener 1948)</span>. Cybernetics is the Greek word for governor, which comes from the latin for helmsman.</p>
 <p>A governor is one of the simplest artificial intelligence systems. It senses the speed of an engine, and acts to change the position of the valve on the engine to slow it down.</p>
 <p>Although it's a mechanical system a governor can be seen as automating a role that a human would have traditionally played. It is an early example of artificial intelligence.</p>
@@ -580,6 +649,9 @@ These stages of data science are also ridden with ambiguity. In the long term th
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/Centrifugal_governor.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+<center>
+<em>The centrifugal governor, an early example of a decision making system. The parameters of the governor include the lengths of the linkages (which effect how far the throttle opens in response to movement in the balls), the weight of the balls (which effects inertia) and the limits of to which the balls can rise.</em>
+</center>
 <p>{One of the first automated decision making systems was Watt's governor, as held by &quot;Science&quot; on Holborns viaduct. Watt's governor was a key component in his steam engine. It senses increases in speed in the engine and closed the steam valve to prevent the engine overspeeding and destroying itself. Until the invention of this device, it was a human job to do this.</p>
 <p>The formal study of governors and other feedback control devices was then began by <a href="https://en.wikipedia.org/wiki/James_Clerk_Maxwell">James Clerk Maxwell</a>, the Scottish physicist. This field became the foundation of our modern techniques of artificial intelligence through Norbert Wiener's book <em>Cybernetics</em> <span class="citation">(Wiener 1948)</span>. Cybernetics is Greek for governor, a word that in itself simply means helmsman in English.</p>
 <p>The recent WannaCry virus that had a wide impact on our health services ecosystem was exploiting a security flaw in Windows systems that was first exploited by a virus called Stuxnet.</p>
@@ -594,8 +666,7 @@ These stages of data science are also ridden with ambiguity. In the long term th
 <p>These unforseen circumstances are likely to lead to need for much more efficient turn-around and update for our intelligent systems. Whether we are correcting for security flaws (which <em>are</em> bugs) or unenvisaged circumstantial challenges: an issue I'm referring to as <em>peppercorns</em>. Rapid deployment of system updates is required. For example, Apple have &quot;fixed&quot; the problem of Siri returning long numbers.</p>
 <p>The challenge is particularly acute because of the <em>scale</em> at which we can deploy AI solutions. This means when something does go wrong, it may be going wrong in billions of households simultaneously.</p>
 <p>You can also check my blog post on <a href="http://inverseprobability.com/2017/11/15/decision-making">&quot;Decision Making and Diversity&quot;</a></p>
-<p><span style="text-align:right"></span></p>
-<h2 id="emukit">Emukit</h2>
+<h2 id="emukit-edit">Emukit <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emukit-software.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emukit-software.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <ul>
 <li><em>Multi-fidelity emulation</em>: build surrogate models when data is obtained from multiple information sources that have different fidelity and/or cost;</li>
 <li><em>Bayesian optimisation</em>: optimise physical experiments and tune parameters of machine learning algorithms;</li>

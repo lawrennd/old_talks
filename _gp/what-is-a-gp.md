@@ -10,16 +10,16 @@ author:
   institute: Amazon and University of Sheffield
   twitter: lawrennd
   url: http://inverseprobability.com
+date: 1970-01-01
+geometry: ["a4paper", "margin=2cm"]
+papersize: a4paper
 transition: None
 ---
 
 \include{talk-macros.tex}
 \include{_gp/includes/what-is-a-gp.md}
-\subsection{Thanks!}
 
-* twitter: \@lawrennd
-* blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
+\thanks
 
-\subsection{References}
-
+\references
 

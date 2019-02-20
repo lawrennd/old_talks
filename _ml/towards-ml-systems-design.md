@@ -23,9 +23,11 @@ author:
   orchid: 
 date: 2019-02-22
 layout: talk
+geometry: ["a4paper", "margin=2cm"]
+papersize: a4paper
+transition: None
 categories:
 - notes
-transition: None
 ---
 
 \include{talk-macros.tex}

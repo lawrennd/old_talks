@@ -16,6 +16,7 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 geometry: a4paper,margin=2cm
+papersize: a4paper
 date: 2019-01-09
 venue: MLSS, Stellenbosch, South Africa
 transition: None
