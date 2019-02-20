@@ -1,6 +1,7 @@
 \ifndef{eqCovariance}
 \define{eqCovariance}
 \editme
+
 \subsection{Exponentiated Quadratic Covariance}
 
 \define{\formula}{\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\ltwoNorm{\inputVector-\inputVector^\prime}^2}{2\lengthScale^2}\right)}
