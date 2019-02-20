@@ -2,7 +2,7 @@
 \define{bdaForecasting}
 \editme
 
-\notes{\subsection{Analysis of US Birth Rates}
+\notes{\subsection{Analysis of US Birth Rates}}
 \newslide{}
 
 \includepng{../slides/diagrams/ml/bialik-fridaythe13th-1}{70%}
