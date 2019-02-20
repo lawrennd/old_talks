@@ -13,6 +13,7 @@ author:
 date: 2018-10-30
 published: 2018-10-30
 reveal: 2018-10-30-mind-and-machine-intelligence.slides.html
+ipynb: 2018-10-30-mind-and-machine-intelligence.ipynb
 layout: talk
 categories:
 - notes
@@ -23,9 +24,12 @@ categories:
   $${% include talk-notation.tex %}$$
 </div>
 
-<p><!--% not ipynb--></p>
+<!-- Front matter -->
+<p>.</p>
+<!--Back matter-->
+<!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
 <div style="text-align:center;width:60%">
-<img class="" src="../slides/diagrams/the-diving-bell-and-the-butterfly2.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+<img class="" src="../slides/diagrams/the-diving-bell-and-the-butterfly2.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 <p>The Diving Bell and the Butterfly is the autobiography of Jean-Dominique Bauby.</p>
 <p>In 1995, when he was editor-in-chief of the French Elle magazine, he suffered a stroke, which destroyed his brainstem. He became almost totally physically paralyzed, but was still mentally active. He acquired what is known as locked-in syndrome.</p>
@@ -43,87 +47,55 @@ E S A R I N T U L <br> O M D P C F B V <br> H G J Q Z Y X K W
 <td>
 </td>
 <td align="center">
-<div class="fragment" data-fragment-index="6" style="">
-<object class="svgplot " align data="../slides/diagrams/computer-clip-art.svg" style>
-</object>
-</div>
+
 </td>
 <td align="center">
-<div class="fragment" data-fragment-index="4" style="">
-<object class="svgplot " align data="../slides/diagrams/computer.svg" style>
-</object>
-</div>
+
 </td>
 <td align="center">
-<div class="fragment" data-fragment-index="1" style="">
-<img class="" src="../slides/diagrams/Jean-Dominique_Bauby.jpg" width="150%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
-</div>
+
 </td>
 </tr>
 <tr>
 <td>
-<div class="fragment" data-fragment-index="2" style="">
-bits/min
-</div>
+
 </td>
 <td align="center">
-<div class="fragment" data-fragment-index="6" style="">
-billions
-</div>
+
 </td>
 <td align="center">
-<div class="fragment" data-fragment-index="5" style="">
-2000
-</div>
+
 </td>
 <td align="center">
-<div class="fragment" data-fragment-index="3" style="">
-6
-</div>
+
 </td>
 </tr>
 <tr>
 <td>
-<div class="fragment" data-fragment-index="7" style="">
-billion<br>calculations/s
-</div>
+
 </td>
 <td align="center">
-<div class="fragment" data-fragment-index="9" style="">
-~100
-</div>
+
 </td>
 <td align="center">
-<div class="fragment" data-fragment-index="8" style="">
-a billion
-</div>
+
 </td>
 <td align="center">
-<div class="fragment" data-fragment-index="8" style="">
-a billion
-</div>
+
 </td>
 </tr>
 <tr>
 <td>
-<div class="fragment" data-fragment-index="10" style="">
-embodiment
-</div>
+
 </td>
 <td align="center">
-<div class="fragment" data-fragment-index="11" style="">
-20 minutes
-</div>
+
 </td>
 <td align="center">
-<div class="fragment" data-fragment-index="12" style="">
-5 billion years
-</div>
+
 </td>
 <td align="center">
-<div class="fragment" data-fragment-index="12" style="">
-15 trillion years
-</div>
+
 </td>
 </tr>
 </table>
@@ -151,58 +123,68 @@ embodiment
 <p>If intelligence is fundamentally about processing and sharing of information. This gives us a fundamental constraint on human intelligence that dictates its nature.</p>
 <p>I call this ratio between the time it takes to compute something, and the time it takes to say it, the embodiment factor. Because it reflects how embodied our cognition is.</p>
 <p>If it takes you two minutes to say the thing you have thought in a second, then you are a computer. If it takes you 15 billion years, then you are a human.</p>
-<div style="text-align:center;width:70%">
-<img class="" src="../slides/diagrams/Lotus_49-2.JPG" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/Lotus_49-2.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 <p>If we think of ourselves as vehicles, then we are massively overpowered. Our ability to generate derived information from raw fuel is extraordinary. Intellectually we have formula one engines.</p>
 <div style="text-align:center;width:70%">
-<img class="" src="../slides/diagrams/640px-Marcel_Renault_1903.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+<img class="" src="../slides/diagrams/640px-Marcel_Renault_1903.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 <p>But, if you think about our ability to make use of those thoughts, to deploy them on the track, we are F1 cars with bicycle wheels.</p>
 <p>Just think of the control a driver would have to have to deploy such power through such a narrow channel of traction. That is the beauty and the skill of the human mind.</p>
 <div style="width:70%;text-align:center">
-<img class="" src="../slides/diagrams/Caleb_McDuff_WIX_Silence_Racing_livery.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+<img class="" src="../slides/diagrams/Caleb_McDuff_WIX_Silence_Racing_livery.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 <p>In contrast, our computers are more like go-karts. Underpowered, but with well-matched tires. More efficient, but somehow less extraordinary, less beautiful.</p>
-<h3 id="human-communication">Human Communication</h3>
+<h2 id="human-communication-edit">Human Communication <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/conversation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/conversation.md', 13);>edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>For human conversation to work, we require an internal model of who we are speaking to. We model each other, and combine our sense of who they are, who they think we are, and what has been said. This is our approach to dealing with the limited bandwidth connection we have. Empathy and understanding of intent. Mental dispositional concepts are used to augment our limited communication bandwidth.</p>
-<p>Fritz Heider referred to the important point of a conversation as being that they are happenings that are &quot;<em>psychologically represented</em> in each of the participants&quot; (his emphasis) <span class="citation">(Heider, 1958)</span></p>
-
-<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation006.svg" style>
+<p>Fritz Heider referred to the important point of a conversation as being that they are happenings that are &quot;<em>psychologically represented</em> in each of the participants&quot; (his emphasis) <span class="citation">(Heider 1958)</span></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;anne-bob-conversation</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            <span class="st">&#39;../slides/diagrams&#39;</span>,  sample<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">1</span>))</code></pre></div>
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation006.svg" style="vertical-align:middle;">
 </object>
 <center>
-<em>Conversation relies on internal models of other individuals. </em>
+<em>Conversation relies on internal models of other individuals.</em>
 </center>
-<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation007.svg" style>
+<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation007.svg" style="vertical-align:middle;">
 </object>
 <center>
-<em>Misunderstanding of context and who we are talking to leads to arguments. </em>
+<em>Misunderstanding of context and who we are talking to leads to arguments.</em>
 </center>
+<p>Embodiment factors imply that, in our communication between humans, what is <em>not</em> said is, perhaps, more important than what is said. To communicate with each other we need to have a model of who each of us are.</p>
+<p>To aid this, in society, we are required to perform roles. Whether as a parent, a teacher, an employee or a boss. Each of these roles requires that we conform to certain standards of behaviour to facilitate communication between ourselves.</p>
+<p>Control of self is vitally important to these communications.</p>
+<p>The high availability of data available to humans undermines human-to-human communication channels by providing new routes to undermining our control of self.</p>
 <div style="text-align:center">
-<object class="svgplot " align data="../slides/diagrams/hilbert-info-growth.svg" style>
+<object class="svgplot " align data="../slides/diagrams/hilbert-info-growth.svg" style="vertical-align:middle;">
 </object>
 </div>
 <div style="text-align:center;width:60%">
-<img class="" src="../slides/diagrams/Classic_baby_shoes.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+<img class="" src="../slides/diagrams/Classic_baby_shoes.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 <center>
-<em>For sale: baby shoes, never worn. </em>
+<em>For sale: baby shoes, never worn.</em>
 </center>
 <p>But this is a very different kind of intelligence than ours. A computer cannot understand the depth of the Ernest Hemingway's apocryphal six word novel: &quot;For Sale, Baby Shoes, Never worn&quot;, because it isn't equipped with that ability to model the complexity of humanity that underlies that statement.</p>
 <div style="text-align:center">
-<object class="svgplot " align data="../slides/diagrams/anne-computer-conversation.svg" style>
+<object class="svgplot " align data="../slides/diagrams/anne-computer-conversation.svg" style="vertical-align:middle;">
 </object>
 </div>
-
-<object class="svgplot " align data="../slides/diagrams/anne-computer-conversation006.svg" style>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;anne-bob-conversation</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            <span class="st">&#39;../slides/diagrams&#39;</span>,  sample<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">1</span>))</code></pre></div>
+<object class="svgplot " align data="../slides/diagrams/anne-computer-conversation006.svg" style="vertical-align:middle;">
 </object>
 <center>
-<em>Conversation relies on internal models of other individuals. </em>
+<em>Conversation relies on internal models of other individuals.</em>
 </center>
-<object class="svgplot " align data="../slides/diagrams/anne-computer-conversation007.svg" style>
+<object class="svgplot " align data="../slides/diagrams/anne-computer-conversation007.svg" style="vertical-align:middle;">
 </object>
 <center>
-<em>Misunderstanding of context and who we are talking to leads to arguments. </em>
+<em>Misunderstanding of context and who we are talking to leads to arguments.</em>
 </center>
 <p>Similarly, we find it difficult to comprehend how computers are making decisions. Because they do so with more data than we can possibly imagine.</p>
 <p>In many respects, this is not a problem, it's a good thing. Computers and us are good at different things. But when we interact with a computer, when it acts in a different way to us, we need to remember why.</p>
@@ -214,83 +196,106 @@ embodiment
 <p>This means, that when we worry about artificial intelligence, we worry about the wrong things. We fear computers that behave like more powerful versions of ourselves that will struggle to outcompete us.</p>
 <p>In reality, the challenge is that our computers cannot be human enough. They cannot understand us with the depth we understand one another. They drop below our cognitive radar and operate outside our mental models.</p>
 <p>The real danger is that computers don’t anthropomorphize. They’ll make decisions in isolation from us without our supervision, because they can’t communicate truly and deeply with us.</p>
-<h2 id="evolved-relationship-with-information">Evolved Relationship with Information</h2>
+<h1 id="evolved-relationship-with-information-edit">Evolved Relationship with Information <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/evolved-relationship.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/evolved-relationship.md', 13);>edit</a></span><span class="editsection-bracket" style="">]</span></h1>
 <p>The high bandwidth of computers has resulted in a close relationship between the computer and data. Large amounts of information can flow between the two. The degree to which the computer is mediating our relationship with data means that we should consider it an intermediary.</p>
 <p>Originaly our low bandwith relationship with data was affected by two characteristics. Firstly, our tendency to over-interpret driven by our need to extract as much knowledge from our low bandwidth information channel as possible. Secondly, by our improved understanding of the domain of <em>mathematical</em> statistics and how our cognitive biases can mislead us.</p>
 <p>With this new set up there is a potential for assimilating far more information via the computer, but the computer can present this to us in various ways. If it's motives are not aligned with ours then it can misrepresent the information. This needn't be nefarious it can be simply as a result of the computer pursuing a different objective from us. For example, if the computer is aiming to maximize our interaction time that may be a different objective from ours which may be to summarize information in a representative manner in the <em>shortest</em> possible length of time.</p>
-<p>For example, for me it was a common experience to pick up my telephone with the intention of checking when my next appointment was, but to soon find myself distracted by another application on the phone, and end up reading something on the internet. By the time I'd finished reading, I would often have forgotten the reason I picked up my phone in the first place.</p>
+<p>For example, for me, it was a common experience to pick up my telephone with the intention of checking when my next appointment was, but to soon find myself distracted by another application on the phone, and end up reading something on the internet. By the time I'd finished reading, I would often have forgotten the reason I picked up my phone in the first place.</p>
 <p>There are great benefits to be had from the huge amount of information we can unlock from this evolved relationship between us and data. In biology, large scale data sharing has been driven by a revolution in genomic, transcriptomic and epigenomic measurement. The improved inferences that that can be drawn through summarizing data by computer have fundamentally changed the nature of biological science, now this phenomenon is also infuencing us in our daily lives as data measured by <em>happenstance</em> is increasingly used to characterize us.</p>
 <p>Better mediation of this flow actually requires a better understanding of human-computer interaction. This in turn involves understanding our own intelligence better, what its cognitive biases are and how these might mislead us.</p>
-<p>For further thoughts see <a href="https://www.theguardian.com/media-network/2015/jul/23/data-driven-economy-marketing">this Guardian article</a> from 2015 on marketing in the internet era and <a href="http://inverseprobability.com/2015/12/04/what-kind-of-ai">this blog post</a> on System Zero.</p>
-<object class="svgplot " align data="../slides/diagrams/data-science/new-flow-of-information002.svg" style>
+<p>For further thoughts see <a href="https://www.theguardian.com/media-network/2015/jul/23/data-driven-economy-marketing">this Guardian article</a> from 2015 on marketing in the internet era.</p>
+<p>You can also check my blog post on <a href="http://inverseprobability.com/2015/12/04/what-kind-of-ai">&quot;System Zero&quot;</a></p>
+<object class="svgplot " align data="../slides/diagrams/data-science/new-flow-of-information002.svg" style="vertical-align:middle;">
 </object>
 <center>
-<em>New direction of information flow, information is reaching us mediated by the computer </em>
+<em>The trinity of human, data and computer, and highlights the modern phenomenon. The communication channel between computer and data now has an extremely high bandwidth. The channel between human and computer and the channel between data and human is narrow. New direction of information flow, information is reaching us mediated by the computer.</em>
 </center>
-<div style="text-align:center">
-<img class="" src="../slides/diagrams/science-holborn-viaduct.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+<h2 id="the-centrifugal-governor-edit">The Centrifugal Governor <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/centrifugal-governor.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/centrifugal-governor.md', 13);>edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/science-holborn-viaduct.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 <center>
-<em>Centrifugal governor as held by &quot;Science&quot; on Holborn Viaduct </em>
+<em>Centrifugal governor as held by &quot;Science&quot; on Holborn Viaduct</em>
 </center>
-<div style="text-align:center">
-<img class="negate" src="../slides/diagrams/SteamEngine_Boulton&Watt_1784.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+<p>The centrifugal governor was made famous by Boulton and Watt when it was deployed in the steam engine. Studying stability in the governor is the main subject of James Clerk Maxwell's paper on the theoretical analysis of governors <span class="citation">(Maxwell 1867)</span>, a founding paper of control theory. In this spirit, Wiener used the name <a href="https://en.wikipedia.org/wiki/Cybernetics"><em>cybernetics</em></a> to describe the field of control and communication in animals and the machine <span class="citation">(Wiener 1948)</span>. Cybernetics is the Greek word for governor, which comes from the latin for helmsman.</p>
+<p>A governor is one of the simplest artificial intelligence systems. It senses the speed of an engine, and acts to change the position of the valve on the engine to slow it down.</p>
+<p>Although it's a mechanical system a governor can be seen as automating a role that a human would have traditionally played. It is an early example of artificial intelligence.</p>
+<p>The centrifugal governor has several parameters, the weight of the balls used, the length of the linkages and the limits on the balls movement.</p>
+<p>Two principle differences exist between the centrifugal governor and artificial intelligence systems of today.</p>
+<ol style="list-style-type: decimal">
+<li>The centrifugal governor is a physical system and it is an integral part of a wider physical system that it regulates (the engine).</li>
+<li>The parameters of the governor were set by hand, our modern artificial intelligence systems have their parameters set by <em>data</em>.</li>
+</ol>
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/Centrifugal_governor.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 <center>
-<em>Watt's Steam Engine which made Steam Power Efficient and Practical </em>
+<em>The centrifugal governor, an early example of a decision making system. The parameters of the governor include the lengths of the linkages (which effect how far the throttle opens in response to movement in the balls), the weight of the balls (which effects inertia) and the limits of to which the balls can rise.</em>
 </center>
-<div style="text-align:center">
-<img class="negate" src="../slides/diagrams/Centrifugal_governor.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
-</div>
-<center>
-<em>The centrifugal governor, an early example of a decision making system. </em>
-</center>
+<h2 id="what-is-machine-learning-edit">What is Machine Learning? <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml-2.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml-2.md', 13);>edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Machine learning allows us to extract knowledge from data to form a prediction.</p>
-<p><span class="math display">\[ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span></p>
+<p><br /><span class="math display">$$\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$</span><br /></p>
 <p>A machine learning prediction is made by combining a model with data to form the prediction. The manner in which this is done gives us the machine learning <em>algorithm</em>.</p>
 <p>Machine learning models are <em>mathematical models</em> which make weak assumptions about data, e.g. smoothness assumptions. By combining these assumptions with the data we observe we can interpolate between data points or, occasionally, extrapolate into the future.</p>
 <p>Machine learning is a technology which strongly overlaps with the methodology of statistics. From a historical/philosophical view point, machine learning differs from statistics in that the focus in the machine learning community has been primarily on accuracy of prediction, whereas the focus in statistics is typically on the interpretability of a model and/or validating a hypothesis through data collection.</p>
 <p>The rapid increase in the availability of compute and data has led to the increased prominence of machine learning. This prominence is surfacing in two different, but overlapping domains: data science and artificial intelligence.</p>
-<div style="width:100%;text-align:center">
-<img class="" src="../slides/diagrams/deepface_neg.png" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+<p>The real challenge, however, is end-to-end decision making. Taking information from the enviroment and using it to drive decision making to achieve goals.</p>
+<!-- No slide titles in this context -->
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/deepface_neg.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 <center>
-<em>The DeepFace architecture <span class="citation">(Taigman et al., 2014)</span>, visualized through colors to represent the functional mappings at each layer. There are 120 million parameters in the model. </em>
+<em>The DeepFace architecture <span class="citation">(Taigman et al. 2014)</span>, visualized through colors to represent the functional mappings at each layer. There are 120 million parameters in the model.</em>
 </center>
-<p>The DeepFace architecture <span class="citation">(Taigman et al., 2014)</span> consists of layers that deal with <em>translation</em> and <em>rotational</em> invariances. These layers are followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected layers.</p>
-<div style="height:600px;text-align:center">
-<img class="" src="../slides/diagrams/576px-Early_Pinball.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+<p>The DeepFace architecture <span class="citation">(Taigman et al. 2014)</span> consists of layers that deal with <em>translation</em> and <em>rotational</em> invariances. These layers are followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected layers.</p>
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/576px-Early_Pinball.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 <center>
-<em>Deep learning models are composition of simple functions. We can think of a pinball machine as an analogy. Each layer of pins corresponds to one of the layers of functions in the model. Input data is represented by the location of the ball from left to right when it is dropped in from the top. Output class comes from the position of the ball as it leaves the pins at the bottom. </em>
+<em>Deep learning models are composition of simple functions. We can think of a pinball machine as an analogy. Each layer of pins corresponds to one of the layers of functions in the model. Input data is represented by the location of the ball from left to right when it is dropped in from the top. Output class comes from the position of the ball as it leaves the pins at the bottom.</em>
 </center>
-<p>We can think of what these models are doing as being similar to early pin ball machines. In a neural network, we input a number (or numbers), whereas in pinball, we input a ball. The location of the ball on the left-right axis can be thought of as the number. As the ball falls through the machine, each layer of pins can be thought of as a different layer of neurons. Each layer acts to move the ball from left to right.</p>
+<h3 id="deep-learning-as-pinball-edit">Deep Learning as Pinball <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-as-pinball.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-as-pinball.md', 13);>edit</a></span><span class="editsection-bracket" style="">]</span></h3>
+<p>Sometimes deep learning models are described as being like the brain, or too complex to understand, but one analogy I find useful to help the gist of these models is to think of them as being similar to early pin ball machines.</p>
+<p>In a deep neural network, we input a number (or numbers), whereas in pinball, we input a ball.</p>
+<p>Think of the location of the ball on the left-right axis as a single number. Our simple pinball machine can only take one number at a time. As the ball falls through the machine, each layer of pins can be thought of as a different layer of 'neurons'. Each layer acts to move the ball from left to right.</p>
 <p>In a pinball machine, when the ball gets to the bottom it might fall into a hole defining a score, in a neural network, that is equivalent to the decision: a classification of the input object.</p>
 <p>An image has more than one number associated with it, so it's like playing pinball in a <em>hyper-space</em>.</p>
-
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;pinball</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            <span class="st">&#39;../slides/diagrams&#39;</span>,
+                            sample<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>))</code></pre></div>
 <div style="text-align:center">
-<object class="svgplot " align data="../slides/diagrams/pinball001.svg" style>
+<object class="svgplot " align data="../slides/diagrams/pinball001.svg" style="vertical-align:middle;">
 </object>
 </div>
 <center>
-<em>At initialization, the pins, which represent the parameters of the function, aren't in the right place to bring the balls to the correct decisions. </em>
+<em>At initialization, the pins, which represent the parameters of the function, aren't in the right place to bring the balls to the correct decisions.</em>
 </center>
 <div style="text-align:center">
-<object class="svgplot " align data="../slides/diagrams/pinball002.svg" style>
+<object class="svgplot " align data="../slides/diagrams/pinball002.svg" style="vertical-align:middle;">
 </object>
 </div>
 <center>
-<em>After learning the pins are now in the right place to bring the balls to the correct decisions. </em>
+<em>After learning the pins are now in the right place to bring the balls to the correct decisions.</em>
 </center>
-<p>Learning involves moving all the pins to be in the right position, so that the ball falls in the right place. But moving all these pins in hyperspace can be difficult. In a hyper space you have to put a lot of data through the machine for to explore the positions of all the pins. Adversarial learning reflects the fact that a ball can be moved a small distance and lead to a very different result.</p>
-<p>Probabilistic methods explore more of the space by considering a range of possible paths for the ball through the machine.</p>
+<p>Learning involves moving all the pins to be in the correct position, so that the ball ends up in the right place when it's fallen through the machine. But moving all these pins in hyperspace can be difficult.</p>
+<p>In a hyper-space you have to put a lot of data through the machine for to explore the positions of all the pins. <em>Adversarial examples</em> exploit this idea.</p>
+<p>If you have access to the pinball machine, you can use gradient methods to find a position for the ball in the hyper space where the image looks like one thing, but will be classified as another.</p>
+<p>Probabilistic methods explore more of the space by considering a range of possible paths for the ball through the machine. This helps to make them more data efficient and gives some robustness to adversarial examples.</p>
 <h3 id="references" class="unnumbered">References</h3>
 <div id="refs" class="references">
 <div id="ref-Heider:interpersonal58">
-<p>Heider, F., 1958. The psychology of interpersonal relations. John Wiley.</p>
+<p>Heider, Fritz. 1958. <em>The Psychology of Interpersonal Relations</em>. John Wiley.</p>
+</div>
+<div id="ref-Maxwell:governors1867">
+<p>Maxwell, James Clerk. 1867. “On Governors.” <em>Proceedings of the Royal Society of London</em> 16. The Royal Society: 270–83. <a href="http://www.jstor.org/stable/112510" class="uri">http://www.jstor.org/stable/112510</a>.</p>
 </div>
 <div id="ref-Taigman:deepface14">
-<p>Taigman, Y., Yang, M., Ranzato, M., Wolf, L., 2014. DeepFace: Closing the gap to human-level performance in face verification, in: Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition. <a href="https://doi.org/10.1109/CVPR.2014.220" class="uri">https://doi.org/10.1109/CVPR.2014.220</a></p>
+<p>Taigman, Yaniv, Ming Yang, Marc’Aurelio Ranzato, and Lior Wolf. 2014. “DeepFace: Closing the Gap to Human-Level Performance in Face Verification.” In <em>Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition</em>. doi:<a href="https://doi.org/10.1109/CVPR.2014.220">10.1109/CVPR.2014.220</a>.</p>
+</div>
+<div id="ref-Wiener:cybernetics48">
+<p>Wiener, Norbert. 1948. <em>Cybernetics: Control and Communication in the Animal and the Machine</em>. Cambridge, MA: MIT Press.</p>
 </div>
 </div>
 
