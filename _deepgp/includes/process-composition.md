@@ -63,7 +63,7 @@ A one off discontinuity is easy to model with a Gaussian process, or even multip
 \slides{* From a process perspective: *process composition*.
 
 * A (new?) way of constructing more complex *processes* based on simpler components.
-}\notes{The deep Gaussian process leads to *non-Gaussian* models, and non-Gaussian characteristics in the covariance function. In effect, what we are proposing is that we change the properties of the functions we are considering by *composing stochastic processes$. This is an approach to creating new stochastic processes from well known processes.} 
+}\notes{The deep Gaussian process leads to *non-Gaussian* models, and non-Gaussian characteristics in the covariance function. In effect, what we are proposing is that we change the properties of the functions we are considering by *composing stochastic processes*. This is an approach to creating new stochastic processes from well known processes.} 
 
 \newslide{}
 
