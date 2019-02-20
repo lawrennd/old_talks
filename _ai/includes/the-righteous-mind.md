@@ -1,3 +1,10 @@
-### {.slide: data-transition="none"}
+\ifndef{theRighteousMind}
+\define{theRighteousMind}
+\editme
 
-<img src="../slides/diagrams/The-Righteous-Mind-Cover1.png" align="center" width="40%" style="background:none; border:none; box-shadow:none;">
+\notes{\subsubsection{The Righteous Mind}}
+\newslide{}
+
+\includepng{../slides/diagrams/The-Righteous-Mind-Cover1}{40%}
+
+\endif

@@ -1,3 +1,10 @@
-### {.slide: data-transition="none"}
+\ifndef{rapidDiagnosisAndConsulting}
+\define{rapidDiagnosisAndConsulting}
+\editme
 
-<img src="../slides/diagrams/rapid-diagnosis-and-consultation-save-lives.png" align="center" width="70%" style="background:none; border:none; box-shadow:none;">
+\notes{\subsubsection{Rapid Diagnosis and Consulting}}
+\newslide{}
+
+\includepng{../slides/diagrams/rapid-diagnosis-and-consultation-save-lives}{70%}
+
+\endif

@@ -1,11 +1,15 @@
-### {data-transition="None"}
+\ifndef{theAssaultOnPrivacy}
+\define{theAssaultOnPrivacy}
+\editme
 
-<img src="../slides/diagrams/20160609_132315.jpg" 
-align="center" width="70%" style="background:none; border:none;
-box-shadow:none;" class="rotateimg90">
+\notes{\subsubsection{The Assault on Privacy}}
 
-### {data-transition="None"}
+\newslide{}
 
-<img src="../slides/diagrams/20160609_132338.jpg"
-align="center" width="70%" style="background:none; border:none;
-box-shadow:none;" class="rotateimg90">
+\includejpg{../slides/diagrams/20160609_132315}{70%}{rotateimg90}
+
+\newslide{}
+
+\includejpg{../slides/diagrams/20160609_132338}{70%}{rotateimg90}
+
+\endif

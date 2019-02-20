@@ -1,3 +1,10 @@
-### {.slide: data-transition="none"}
+\ifndef{mechanicalElephant}
+\define{mechanicalElephant}
+\editme
 
-<img src="../slides/diagrams/16281468370_ea3702e83f_k.jpg" align="center" width="70%" style="background:none; border:none; box-shadow:none;">
+\notes{\subsubsection{The Mechanical Elephant}}
+\newslide{}
+
+\includejpg{../slides/diagrams/16281468370_ea3702e83f_k}{70%}
+
+\endif

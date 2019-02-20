@@ -26,6 +26,9 @@ geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
 transition: None
 ---
+
+\include{talk-macros.tex}
+
 \include{_ai/includes/the-diving-bell-butterfly.md}
 \include{_ai/includes/jean-dominique-bauby.md}
 \include{_ai/includes/embodiment-factors-tedx.md}
@@ -42,14 +45,14 @@ transition: None
 \include{_ai/includes/the-circle.md}
 \include{_ai/includes/the-invisible-man.md}
 
-###
+\newslide{}
 
 * Internet of People
 
 * Convention for the Protection of Individuals with regard to Automatic
 Processing of Personal Data (1981/1/28)
 
-\include{_ai/includes/computer-conversation.md}
+\include{_ai/includes/conversation-computer.md}
 \include{_data-science/includes/data-science-africa.md}
 \include{_ai/includes/thinking-fast-and-slow.md}
 \include{_ai/includes/the-righteous-mind.md}
@@ -76,13 +79,17 @@ Hollrith Calculating machines vs ebola
 
 Consent is neither necessary nor sufficient for giving up privacy.-->
 
+\ifdef{blogPosts}
+\defeval{\blogPosts}{
+\blogPosts
+* [Guardian Op-Ed on Data Trusts](https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy)
+}
+\else
+\define{\blogPosts}{
+* [Guardian Op-Ed on Data Trusts](https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy)
+}
+\endif
 
-### Thanks!
+\thanks
 
-* twitter: \@lawrennd
-* blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
-
-
-[Arxiv Article on Embodiment Factors](https://arxiv.org/abs/1705.07996),
-[Blog Post on System Zero](http://inverseprobability.com/2015/12/04/what-kind-of-ai),
-[Guardian Op-Ed on Data Trusts](https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy)
+\references

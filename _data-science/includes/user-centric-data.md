@@ -1,4 +1,10 @@
-### {.slide: data-transition="none"}
+\ifndef{userCentricData}
+\define{userCentricData}
+\editme
 
-<object class="svgplot" data="../slides/diagrams/user-centric-data.svg">
-</object>
+\notes{\subsubsection{User Centric Data}}
+\newslide{}
+
+\includediagram{../slides/diagrams/user-centric-data}
+
+\endif

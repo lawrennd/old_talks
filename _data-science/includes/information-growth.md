@@ -3,6 +3,6 @@
 \editme
 \newslide{} 
 
-\includediagram{../slides/diagrams/hilbert-info-growth}
+\includediagram{../slides/diagrams/data-science/hilbert-info-growth}
 
 \endif

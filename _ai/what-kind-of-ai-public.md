@@ -49,17 +49,12 @@ transition: None
 
 \includejpg{../slides/diagrams/ai/superintelligence-paths-dangers-strategies}{50%}-->
 
-\newslide{}
+\include{_ai/includes/thinking-fast-and-slow.md}
 
-\includejpg{../slides/diagrams/ai/thinking-fast-and-slow}{60%}
+\include{_ai/includes/the-righteous-mind.md}
 
-\newslide{}
-
-\includepng{../slides/diagrams/ai/the-righteous-mind}{40%}
-
-\newslide{}
-
-\includejpg{../slides/diagrams/ai/elephant-boy-poster}{40%}
+\include{_ai/includes/elephant-boy-poster.md}
+\undef{elephantBoyPoster}
 
 
 \newslide{}
@@ -187,9 +182,7 @@ transition: None
 
 \includeyoutube{tUlAV-stPvE}
 
-\newslide{}
-
-\includejpg{../slides/diagrams/ai/elephant-boy-poster}{80%}
+\include{_ai/includes/elephant-boy-poster.md}
 
 \section{Unconscious Bias and System Zero}
 
@@ -197,15 +190,15 @@ transition: None
 
 \newslide{}
 
-\includejpg{../slides/diagrams/ai/mechanical-elephant}{80%}
+\include{_ai/includes/mechanical-elephant.md}
 
 \newslide{}
 
 \includejpg{../slides/diagrams/ai/star-trek-borg}{80%}
 
-\newslide{}
-
-\includejpg{../slides/diagrams/ai/the-hindoo-earth}{70%}
+\include{_ai/includes/thinking-fast-and-slow.md}
+\include{_ml/includes/deep-learning-overview.md}
+\include{_ai/includes/the-hindoo-earth.md}
 
 \newslide{}
 

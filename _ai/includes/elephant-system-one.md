@@ -1,3 +1,9 @@
-### {data-transition="None"}
+\ifndef{elephantSystemOne}
+\define{elephantSystemOne}
 
-<img src="../slides/diagrams/Sahe_tchadensis.jpg" width="80%" align="center" width="70%" style="background:none; border:none; box-shadow:none;">
+\notes{\subsubsection{Elephant as System One}}
+\newslide{}
+
+\includejpg{../slides/diagrams/Sahe_tchadensis}{80%}
+
+\endif

@@ -1,3 +1,10 @@
-### {data-transition="None"}
+\ifndef{theHindooEarth}
+\define{theHindooEarth}
+\editme
 
-<img src="../slides/diagrams/The_hindoo_earth.jpg" align="center" width="70%" style="background:none; border:none; box-shadow:none;">
+\notes{\subsubsection{The Hindoo Earth}}
+\newslide{}
+
+\includejpg{../slides/diagrams/The_hindoo_earth}{70%}
+
+\endif

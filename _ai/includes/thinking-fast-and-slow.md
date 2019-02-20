@@ -1,4 +1,10 @@
-### {.slide: data-transition="none"}
+\ifndef{thinkingFastAndSlow}
+\define{thinkingFastAndSlow}
+\editme
+\notes{\subsubsection{Thinking Fast and Slow}}
 
-<img src="../slides/diagrams/Thinking,_Fast_and_Slow.jpg"
-align="center" width="40%" style="background:none; border:none; box-shadow:none;">
+\newslide{}
+
+\includejpg../slides/diagrams/Thinking,_Fast_and_Slow.jpg}{40%}
+
+\endif
