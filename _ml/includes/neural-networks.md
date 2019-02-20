@@ -1,6 +1,7 @@
 \ifndef{neuralNetworks}
 \define{neuralNetworks}
 \editme
+
 \subsection{Neural Networks and Prediction Functions}
 
 \slides{
