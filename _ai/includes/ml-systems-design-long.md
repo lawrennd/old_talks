@@ -2,16 +2,7 @@
 \define{mlSystemsDesignLong}
 \editme
 
-\section{Machine Learning System Design}
-
-\newslide{Fragility of AI Systems}
-\slides{
-> * They are componentwise built from ML capabilities.
-  * Each capability is independently constructed and verified.
-      * Pedestrian detection
-      * Road line detection
-  * Componentwise deconstruciton is Important for verification purposes.
-}
+\include{_ai/includes/ml-systems-design-short.md}
 
 \include{_ai/includes/pigeonholing.md}
 
@@ -41,19 +32,19 @@ We become exposed to mischief and adversaries. Adversaries intentially may wish 
 * Mischevious-Adversarial
 }
 
-\notes{One of the first automated decision making systems was Watt's governor, as held by "Science" on Holborns viaduct. Watt's governor was a key component in his steam engine. It senses increases in speed in the engine and closed the steam valve to prevent the engine overspeeding and destroying itself. Until the invention of this device, it was a human job to do this. 
+\notes{One of the first automated decision making systems was the centrifugal governor, as held by "Science" on Holborns viaduct. The centrifugal governor was a key component in his steam engine. It senses increases in speed in the engine and closed the steam valve to prevent the engine overspeeding and destroying itself. Until the invention of this device, it was a human job to do this.}
 
-The formal study of governors and other feedback control devices was then began by [James Clerk Maxwell](https://en.wikipedia.org/wiki/James_Clerk_Maxwell), the Scottish physicist. This field became the foundation of our modern techniques of artificial intelligence through Norbert Wiener's book *Cybernetics* [@Wiener:cybernetics48]. Cybernetics is Greek for governor, a word that in itself simply means helmsman in English. 
+\notes{The formal study of governors and other feedback control devices was then began by [James Clerk Maxwell](https://en.wikipedia.org/wiki/James_Clerk_Maxwell), the Scottish physicist. This field became the foundation of our modern techniques of artificial intelligence through Norbert Wiener's book *Cybernetics* [@Wiener:cybernetics48]. Cybernetics is Greek for governor, a word that in itself simply means helmsman in English.}
 
-The recent WannaCry virus that had a wide impact on our health services ecosystem was exploiting a security flaw in Windows systems that was first exploited by a virus called Stuxnet.
+\notes{The recent WannaCry virus that had a wide impact on our health services ecosystem was exploiting a security flaw in Windows systems that was first exploited by a virus called Stuxnet.}
 
-Stuxnet was a virus designed to infect the Iranian nuclear program's Uranium enrichment centrifuges. A centrifuge is prevented from overspeed by a controller, just like Watt's governor. Only now it is implemented in control logic, in this case on a Siemens PLC controller. 
+\notes{Stuxnet was a virus designed to infect the Iranian nuclear program's Uranium enrichment centrifuges. A centrifuge is prevented from overspeed by a controller, just like the centrifugal governor. Only now it is implemented in control logic, in this case on a Siemens PLC controller. }
 
-Stuxnet infected these controllers and took over the response signal in the centrifuge, fooling the system into thinking that no overspeed was occuring. As a result, the centrifuges destroyed themselves through spinning too fast. 
+\notes{Stuxnet infected these controllers and took over the response signal in the centrifuge, fooling the system into thinking that no overspeed was occuring. As a result, the centrifuges destroyed themselves through spinning too fast. }
 
-This is equivalent to detaching Watt's governor from the steam engine. Such sabotage would be easily recognized by a steam engine operator. The challenge for the operators of the Iranian Uranium centrifuges was that the sabotage was occurring inside the electronics.
+\notes{This is equivalent to detaching the governor from the steam engine. Such sabotage would be easily recognized by a steam engine operator. The challenge for the operators of the Iranian Uranium centrifuges was that the sabotage was occurring inside the electronics.}
 
-That is the effect of an adversary on an intelligent system, but even without adveraries, the mischief of a 10 year old can confuse our AIs.
+\notes{That is the effect of an adversary on an intelligent system, but even without adveraries, the mischief of a 10 year old can confuse our AIs.}
 
 \includeyoutube{1y2UKz47gew}
 
