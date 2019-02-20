@@ -43,5 +43,5 @@ However, a challenge arises when the data becomes more complex. Consider the gra
 
 \includepng{../slides/diagrams/bayes-net-diagnosis}{50%}{negate}
 
-\notes{To capture the complexity in the interelationship between the data the graph becomes more complex, and less interpretable.}
+\notes{To capture the complexity in the interelationship between the data, the graph itself becomes more complex, and less interpretable.}
 \endif
