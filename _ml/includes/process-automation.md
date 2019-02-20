@@ -1,3 +1,7 @@
+\ifndef{processAutomation}
+\define{processAutomation}
+\editme
+
 \newslide{Efficiency}
 \slides{
 * Economies driven by 'production'.
@@ -43,3 +47,5 @@
 \newslide{Worked Example: Delivery Drones}
 
 \includeyoutube{vNySOrI2Ny8}{800}{600}
+
+\endif

@@ -17,10 +17,10 @@
 
 \slides{
 * Existing libraries had either:
-  * Probabilistic modelling with rich, flexible models and universal inference or
-  * Specialized, efficient inference over a subset of models
+    * Probabilistic modelling with rich, flexible models and universal inference or
+    * Specialized, efficient inference over a subset of models
 
-**We needed both**
+**We need both**
 }
 
 \subsection{Key Requirements}

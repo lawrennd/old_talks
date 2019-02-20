@@ -47,4 +47,9 @@
 
 \notes{This is challenging, because as we introduce more mechanism to the models we use, it becomes harder to develop efficient algorithms to match those models to data.}
 
+\newslide{Amazon Supply Chain Optimization}
+
+\includeyoutube{ncwsr1Of6Cw}{800}{600}
+
+
 \endif
