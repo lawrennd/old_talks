@@ -1,7 +1,6 @@
 ---
 title: "Uncertainty in Loss Functions"
 abstract: "Bayesian formalisms deal with uncertainty in parameters, frequentist formalisms deal with the *risk* of a data set, uncertainty in the data sample. In this talk, we consider uncertainty in the *loss function*. Uncertainty in the loss function. We introduce uncertainty through linear weightings of terms in the loss function and show how a distribution over the loss can be maintained through the *maximum entropy principle*. This allows us minimize the expected loss under our maximum entropy distribution of the loss function. We recover weighted least squares and a LOESS-like regression from the formalism."
-ipynb: 2018-05-29-uncertainty-in-loss-functions.ipynb
 author:
 - family: Lawrence
   given: Neil D.
@@ -11,6 +10,8 @@ author:
   url: http://inverseprobability.com
 date: 2018-05-29
 venue: IWCV 2018, Modena, Italy
+geometry: ["a4paper", "margin=2cm"]
+papersize: a4paper
 transition: None
 ---
 
@@ -146,7 +147,7 @@ $$}
 
 \include{_ml/includes/olympic-marathon-data.md}
 
-### Example: Linear Regression
+\subsection{Example: Linear Regression}
 
 \setupcode{import mlai
 import numpy as np
@@ -257,18 +258,19 @@ mlai.write_figure('../slides/diagrams/ml/olympic-loss-linear-regression001.svg',
 pods.notebook.display_plots('olympic-loss-linear-regression{number:0>3}.svg', 
                             directory='../slides/diagrams/ml', number=(0, 1))}
 
-\slides{
-### Linear Regression on Olympic Data {.slide: data-transition="none"}
+\newslide{Linear Regression on Olympic Data}
 
+\slides{
 \includediagram{../slides/diagrams/ml/olympic-loss-linear-regression000}
 
-### Linear Regression on Olympic Data {.slide: data-transition="none"}
+\newslide{Linear Regression on Olympic Data}
 }
-
+\figure{
 \includediagram{../slides/diagrams/ml/olympic-loss-linear-regression001}
 \notes{\caption{Linear regression for the standard quadratic loss in *red* and the probabilistically weighted loss in *blue*.}}
+}
 
-### Parameter Uncertainty
+\subsection{Parameter Uncertainty}
 
 \slides{* In Bayesian inference we consider parameter uncertainty}
 \notes{Classical Bayesian inference is concerned with
@@ -294,14 +296,14 @@ q(\mappingFunction, \scaleScalar) \propto
 \mappingFunction(\inputVector_i)) \right) m(\scaleScalar)m(\mappingFunction)
 $$
 
-### Approximation
+\subsection{Approximation}
 
 * Generally intractable, so assume:
 $$
 q(\mappingFunction, \scaleScalar) = q(\mappingFunction)q(\scaleScalar)
 $$
 
-\slides{### Approximation II}
+\newslide{Approximation II}
 
 * Entropy maximization proceeds as before but with
 $$
@@ -316,7 +318,7 @@ q(\mappingFunction) \propto
 \mappingFunction(\inputVector_i)) \right) m(\mappingFunction)
 $$
 
-\slides{### Approximation III}
+\newslide{Approximation III}
 
 * Can now proceed with iteration between $q(\scaleScalar)$, $q(\mappingFunction)$
 
@@ -414,18 +416,18 @@ pods.notebook.display_plots('olympic-loss-bayes-linear-regression{number:0>3}.sv
                             directory='../slides/diagrams/ml', number=(0, 1))}
 
 
-\slides{
-### Probabilistic Linear Regression on Olympic Data {.slide: data-transition="none"}
+\newslide{Probabilistic Linear Regression on Olympic Data}
 
 \includediagram{../slides/diagrams/ml/olympic-loss-bayes-linear-regression000}
 
-### Probabilistic Linear Regression on Olympic Data {.slide: data-transition="none"}
-}
+\newslide{Probabilistic Linear Regression on Olympic Data}
+
+\figure{
 \includediagram{../slides/diagrams/ml/olympic-loss-bayes-linear-regression001}
 \notes{\caption{Probabilistic linear regression for the standard quadratic loss in *red* and the probabilistically weighted loss in *blue*.}}
+}
 
-
-### Correlated Scales
+\subsection{Correlated Scales}
 
 \notes{Going beyond independence between weights, we now consider
 $m(\vScalar)$ to be a Gaussian process, and scale by the *square* of $\vScalar$,
@@ -435,8 +437,8 @@ $$
 $$
 \slides{* Assume $\scaleScalar = \vScalar^2$}
 
-\slides{### Correlated Scales II
-
+\newslide{Correlated Scales II}
+\slides{
 * Implies
 $$
 q(\vScalar) \propto
@@ -465,8 +467,8 @@ $$
 \mappingFunction(\inputVector_i))$ along its diagonal elements with zeros
 elsewhere.}
 
-\slides{### Expectation Update
-
+\newslide{Expectation Update}
+\slides{
 * }The update is given by 
 $$
 \expectationDist{\vScalar_i^2}{q(\vScalar)} = \meanTwoScalar_i^2 +
@@ -479,7 +481,7 @@ $$
 which is the same as we had before for the exponential prior over
 $\scaleScalar$.
 
-### Conditioning the Measure
+\subsection{Conditioning the Measure}
 
 \notes{Now that we have defined a process over $\vScalar$, we could define a region in which we're certain that we would like the weights to be high. For example, if we were looking to have a test point at location $\inputVector_\ast$, we could update our measure to be a Gaussian process that is conditioned on the observation of $\vScalar_\ast$ set appropriately at $\inputScalar_\ast$. In this case we have,}
 \slides{* Condition measure to be high weight in *test* region}
@@ -579,21 +581,19 @@ mlai.write_figure('../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression
 \code{pods.notebook.display_plots('olympic-gp-loss-bayes-linear-regression{number:0>3}.svg', 
                             directory='../slides/diagrams/ml', number=(0, 1))}
 
+
+\newslide{Olympic Data: GP Measure}
+
 \slides{
-
-### Olympic Data: GP Measure {.slide: data-transition="none"}
-
 \includediagram{../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression000}
-
-### Olympic Data: GP Measure {.slide: data-transition="none"}
 }
+\newslide{Olympic Data: GP Measure}
+
 \includediagram{../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression001}
 \notes{\caption{Probabilistic linear regression for the standard quadratic loss in *red* and the probabilistically weighted loss with a Gaussian process measure in *blue*.}}
 
 
-\slides{
-### Joint Uncertainty {.slide: data-transition="none"}
-}
+\newslide{Joint Uncertainty}
 
 \notes{Finally, we make an attempt to show the joint uncertainty
 by first of all sampling from the loss function weights density, $q(\scaleScalar)$.}
@@ -607,8 +607,10 @@ ax.set_xlabel('year')
 _ = ax.set_ylabel('$s_i$')
 mlai.write_figure('../slides/diagrams/ml/olympic-gp-loss-samples.svg', transparent=True)}
 
+\figure{
 \includediagram{../slides/diagrams/ml/olympic-gp-loss-samples}
 \notes{\caption{Samples of loss weightings from the density $q(\scaleSamples)$.}}
+}
 
 \code{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 ax.plot(x, y, 'r.', markersize=10)
@@ -632,37 +634,34 @@ mlai.write_figure('../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression
 pods.notebook.display_plots('olympic-gp-loss-bayes-linear-regression-and-samples{number:0>3}.svg', 
                             directory='../slides/diagrams/ml', number=(0, 1))}
 
+\newslide{Joint Samples from Regression}
 \slides{
-### Joint Samples from Regression {.slide: data-transition="none"}
-
 \includediagram{../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression-and-samples000}
-
-### Joint Samples from Regression {.slide: data-transition="none"}
 }
+
+\newslide{Joint Samples from Regression}
+
+\figure{
 \includediagram{../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression-and-samples001}
 \notes{\caption{Samples from the joint density of loss weightings and regression weights show the full distribution of function predictions.}}
-
+}
 
 \code{fig, ax = plt.subplots(figsize=plot.big_figsize)
 ax.hist(np.asarray(allsamps), bins=30, density=True)
 ax.set_xlabel='pace min/kim'
 mlai.write_figure('../slides/diagrams/ml/olympic-gp-loss-histogram-2020.svg', transparent=True)}
 
-\slides{
-### Histogram from 2020 {.slide: data-transition="none"}
-}
+\newslide{Histogram from 2020}
 
+\figure{
 \includediagram{../slides/diagrams/ml/olympic-gp-loss-histogram-2020}
 \notes{\caption{Histogram of samples from the year 2020, where the weight of the loss function was pinned to ensure that the model focussed its predictions on this region for test data.}}
+}
 
-
-### Conclusions
+\subsection{Conclusions}
 
 * Maximum Entropy Framework for uncertainty in 
     * Loss functions
     * Prediction functions
 
-### Thanks!
-
-* twitter: \@lawrennd
-* blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
+\thanks

@@ -13,6 +13,8 @@ author:
   url: http://inverseprobability.com
 date: 2018-12-10
 venue: Center for Statistics and Machine Learning, Princeton
+geometry: ["a4paper", "margin=2cm"]
+papersize: a4paper
 transition: None
 ---
 
@@ -38,8 +40,8 @@ transition: None
 \include{_ml/includes/process-emulation.md}
 \include{_uq/includes/emukit-playground.md}
 \include{_uq/includes/uncertainty-quantification.md}
-\include{_uq/includes/emukit.md}
-\include{_ml/includes/mxfusion.md}
+\include{_uq/includes/emukit-software.md}
+\include{_ml/includes/mxfusion-software.md}
 \include{_ml/includes/mxfusion-pilco.md}
 
 \subsection{Long term Aim}

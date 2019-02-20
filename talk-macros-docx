@@ -28,15 +28,14 @@
 
 \define{\xrightarrow{block}}{\rightarrow{\block}}
 
-\define{\caption{block}}{\define{\storeCaption}{\block}}
+\define{\caption{block}}{\defeval{\storeCaption}{\block}}
 
-\defeval{\figure{block}{options}}{
-\define{inFloat}
+\define{\includeimg{filename}{width}{class}{align}}{![](\filename)}
+
+\define{\figure{block}{options}}{
 \block
-\undef{inFloat}
 \ifdef{storeCaption}
-Store Caption: \storeCaption
-\undef{storeCaption}
+*\storeCaption*
 \endif
 }
 
@@ -60,7 +59,6 @@ Store Caption: \storeCaption
 
 \define{\includempfour{filename}{width}{height}}{\media{\filename}}
 
-\defeval{\includeimg{filename}{width}{class}{align}}{![\ifdef{storeCaption}\storeCaption\endif](\filename)\
 
 }
 
