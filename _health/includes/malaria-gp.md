@@ -78,9 +78,10 @@ The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboratio
 
 \includediagramclass{../slides/diagrams/health/Kabarole_District_in_Uganda}
 
-
+\figure{
 \includegif{../slides/diagrams/health/kabarole}{100%}
 \notes{\caption{Estimate of the current disease situation in the Kabarole district over time. Estimate is constructed with a Gaussian process with an additive covariance funciton.}}
+}
 
 \notes{Health monitoring system for the Kabarole district. Here we have fitted the reports with a Gaussian process with an additive covariance function. It has two components, one is a long time scale component (in red above) the other is a short time scale component (in blue).}
 
@@ -92,8 +93,10 @@ The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboratio
 
 \newslide{Early Warning Systems}
 
+\figure{
 \includegif{../slides/diagrams/health/monitor}{50%}
 \notes{\caption{The map of Ugandan districts with an overview of the Malaria situation in each district.}}
+}
 
 \notes{These colors can now be observed directly on a spatial map of the districts to give an immediate impression of the current status of the disease across the country.}
 
