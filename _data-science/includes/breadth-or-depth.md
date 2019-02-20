@@ -14,7 +14,7 @@
 * As we measure more, we understand less}
 
 
-\notes{The first paradox is the paradox of measurement in the data society. We are now able to quantify to a greater and greater degree the actions of individuals in society, and this might lead us to believe that social science, politics, economics are becoming quantifiable. We are able to get a far richer characterization of the world around us. Paradoxically it seems that as we measure more, we understand less.}
+\notes{We are now able to quantify to a greater and greater degree the actions of individuals in society, and this might lead us to believe that social science, politics, economics are becoming quantifiable. We are able to get a far richer characterization of the world around us. Paradoxically it seems that as we measure more, we understand less.}
 
 \newslide{What?}
 
