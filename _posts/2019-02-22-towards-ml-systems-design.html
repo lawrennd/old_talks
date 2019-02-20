@@ -302,13 +302,20 @@ mlai.write_figure(figure<span class="op">=</span>fig,
                   filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/datasets/olympic-marathon.svg&#39;</span>, 
                   transparent<span class="op">=</span><span class="va">True</span>, 
                   frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
-<div style="text-align:center">
+<div class="thumb tright" style="">
+<div class="thumbinner" style="width:222px;">
 <object class="svgplot " align data="../slides/diagrams/datasets/olympic-marathon.svg" style="vertical-align:middle;">
 </object>
+<div class="thumbcaption" style="">
+Olympic marathon pace times since 1892.
+</div>
+</div>
 </div>
 <p>Things to notice about the data include the outlier in 1904, in this year, the olympics was in St Louis, USA. Organizational problems and challenges with dust kicked up by the cars following the race meant that participants got lost, and only very few participants completed.</p>
 <p>More recent years see more consistently quick marathons.</p>
 <h2 id="alan-turing-edit">Alan Turing <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/alan-turing-marathon.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/alan-turing-marathon.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="thumb tright" style="">
+<div class="thumbinner" style="width:222px;">
 <table>
 <tr>
 <td width="50%">
@@ -325,6 +332,8 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </table>
 <div class="thumbcaption" style="">
 Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: <a href="http://www.turing.org.uk/scrapbook/run.html">Alan Turing Internet Scrapbook</a>.
+</div>
+</div>
 </div>
 <p>If we had to summarise the objectives of machine learning in one word, a very good candidate for that word would be <em>generalization</em>. What is generalization? From a human perspective it might be summarised as the ability to take lessons learned in one domain and apply them to another domain. If we accept the definition given in the first session for machine learning, <br /><span class="math display">$$
 \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}
@@ -355,8 +364,15 @@ ax.set_ylim(ylim)
 mlai.write_figure(figure<span class="op">=</span>fig,
                   filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/gp/olympic-marathon-gp.svg&#39;</span>, 
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<div class="thumb tright" style="">
+<div class="thumbinner" style="width:222px;">
 <object class="svgplot " align data="../slides/diagrams/gp/olympic-marathon-gp.svg" style="vertical-align:middle;">
 </object>
+<div class="thumbcaption" style="">
+Gaussian process fit to the olympic marathon data. The error bars are too large, perhaps due to the outlier from 1904.
+</div>
+</div>
+</div>
 <h2 id="fit-quality">Fit Quality</h2>
 <p>In the fit we see that the error bars (coming mainly from the noise variance) are quite large. This is likely due to the outlier point in 1904, ignoring that point we can see that a tighter fit is obtained. To see this making a version of the model, <code>m_clean</code>, where that point is removed.</p>
 <pre><code>x_clean=np.vstack((x[0:2, :], x[3:, :]))

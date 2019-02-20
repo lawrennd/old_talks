@@ -49,7 +49,9 @@ mlai.write_figure(figure=fig,
 
 \newslide{Olympic Marathon Data}
 
-\div{\includediagram{../slides/diagrams/datasets/olympic-marathon}}{}{text-align:center}
+\figure{
+\includediagram{../slides/diagrams/datasets/olympic-marathon}
+\notes{\caption{Olympic marathon pace times since 1892.}}}
 
 \notes{Things to notice about the data include the outlier in 1904, in this year, the olympics was in St Louis, USA. Organizational problems and challenges with dust kicked up by the cars following the race meant that participants got lost, and only very few participants completed. 
 

@@ -1,6 +1,7 @@
 \ifndef{olympicMarathonGp}
 \define{olympicMarathonGp}
 \editme
+
 \include{_ml/includes/olympic-marathon-data.md}
 
 \include{_ml/includes/alan-turing-marathon.md}
@@ -44,7 +45,10 @@ mlai.write_figure(figure=fig,
 
 \newslide{Olympic Marathon Data GP}
 
+\figure{
 \includediagram{../slides/diagrams/gp/olympic-marathon-gp}
+\notes{\caption{Gaussian process fit to the olympic marathon data. The error bars are too large, perhaps due to the outlier from 1904.}}
+}
 
 \notes{
 \subsection{Fit Quality}
