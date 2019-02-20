@@ -1,5 +1,4 @@
 ---
-layout: slides
 title: "Embodiment Factors and Privacy"
 abstract: >
   In this talk we will explore a fundamental limitation of human
@@ -7,7 +6,7 @@ abstract: >
   will relate this to our machine intelligences and speculate about
   how there may be challenges at the interace. Finally we propose Data
   Trusts as a solution for these challenges.
-published: 2017-10-26
+date: 2017-10-26
 venue: The Israel Academy of Science and Humanities
 blog: 2017-01-12-data-readiness-levels.md
 blog1: 2015-12-04-what-kind-of-ai.md
@@ -16,7 +15,16 @@ extras:
   label: Data Trusts Op-Ed
 - link: https://arxiv.org/abs/1705.07996
   label: "Arxiv Paper: 'Living Together: Mind and Machine Intelligence'"
-author: Neil D. Lawrence
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
+  institute: University of Sheffield and Amazon Cambridge
+  twitter: lawrennd
+  url: http://inverseprobability.com
+geometry: ["a4paper", "margin=2cm"]
+papersize: a4paper
+transition: None
 ---
 \include{_ai/includes/the-diving-bell-butterfly.md}
 \include{_ai/includes/jean-dominique-bauby.md}

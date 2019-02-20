@@ -66,6 +66,7 @@ These unforseen circumstances are likely to lead to need for much more efficient
 The challenge is particularly acute because of the *scale* at which we can deploy AI solutions. This means when something does go wrong, it may be going wrong in billions of households simultaneously.
 
 \addblog{Decision Making and Diversity}{2017/11/15/decision-making}
+\addblog{Natural vs Artifical Intelligence}{2018/02/06/natural-and-artificial-intelligence}
 
 \newslide{Turnaround And Update}
 \slides{
@@ -80,6 +81,7 @@ The challenge is particularly acute because of the *scale* at which we can deplo
 * A new name for system failures which aren't bugs.
 * Difference between finding a fly in your soup vs a peppercorn in your soup. 
 }
+
 \ifdef{blogPosts}
 \defeval{\blogPosts}{
 \blogPosts

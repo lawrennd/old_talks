@@ -9,21 +9,15 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 date: 2018-05-31
-affiliation: University of Sheffield and Amazon, Cambridge
 venue: Faith and AI Event, St George's House, Windsor
+geometry: ["a4paper", "margin=2cm"]
+papersize: a4paper
 transition: None
 ---
 
 \include{talk-macros.tex}
 
-\slides{
-#### Faith and AI
-#### 2018-05-31
-#### Neil D. Lawrence
-#### Amazon Cambridge and **University of Sheffield**
-\aligncenter{```@lawrennd``` [inverseprobability.com]()}
-}
-
+\section{Introduction}
 
 \include{_ml/includes/what-is-ml.md}
 \include{_ml/includes/data-science-vs-ai.md}
@@ -35,7 +29,6 @@ transition: None
 \include{_ai/includes/faith-and-ai.md}
 \include{_ai/includes/faith-and-ai-conclusions.md}
 
-### Thanks!
+\thanks
 
-* twitter: \@lawrennd
-* blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
+\references

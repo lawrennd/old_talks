@@ -20,9 +20,20 @@
 \define{\recommendation{text}}{}
 \define{\writeassignment{text}{question}{marks}}{}
 \define{\codeassignment{text}{question}{marks}}{}
+
+\ifdef{draft}
+\define{\editme}{\href{file://\talksDir\file}{\file}}
+\define{\todo{text}}{\colorRed{Todo: \text}}
+
+}
+\else
+\define{\editme}{\define{editText}{\span{[}{editsection-bracket}\span{\href{\githubBaseUrl\file}{edit}{onclick="ga('send', 'event', 'Edit Page', 'Edit', '\githubBaseUrl\file', 13);"}}{editsection}\span{]}{editsection-bracket}}}
+\endif
+
+
 \define{\section{text}}{<!-- SECTION \text -->}
-\define{\subsection{text}}{### \text}
-\define{\subsubsection{text}}{### \text}
+\define{\subsection{text}}{## \text \ifdef{editText}\editText\undef{editText}\endif}
+\define{\subsubsection{text}}{### \text \ifdef{editText}\editText\undef{editText}\endif}
 \define{\slides{text}}{\text}
 \define{\slidesincremental{text}}{::: incremental
 
@@ -30,10 +41,10 @@
 
 :::}
 \define{\newslide{text}}{\ifdef{noSlideTitle}
-###
+### 
 
 \else
-### \text
+### \text \ifdef{editText}\editText\undef{editText}\endif
 
 \endif}
 
@@ -65,6 +76,7 @@
 \slides{
 * twitter: [\@lawrennd](https://twitter.com/lawrennd)
 * podcast: [The Talking Machines](http://thetalkingmachines.com)
+* newspaper: [Guardian Profile Page](http://www.theguardian.com/profile/neil-lawrence)
 \ifdef{blogPosts}
 \blogPosts
 \else
@@ -78,7 +90,7 @@
 
 }
 \else
-\define{\editme}{<div class="header">\alignright{\smalltext{\href{\githubBaseUrl\file}{[edit]}}}</div>}
+\define{\editme}{\div{\smalltext{\href{\githubBaseUrl\file}{[edit]}}}{header}}
 \endif
 
 \endif

@@ -10,7 +10,6 @@ abstract: >
   we face both in the near and far future. These include practical application of existing algorithms in the 
   face of the need to explain decision making, mechanisms for improving the quality and availability of data, 
   dealing with large unstructured datasets.
-reveal: 2019-02-19-data-science-and-digital-systems.slides.html
 author:
 - family: Lawrence
   given: Neil D.
@@ -43,15 +42,6 @@ transition: None
 \include{_data-science/includes/societal-effects.md}
 
 \include{_ml/includes/what-does-machine-learning-do.md}
-
-\newslide{Deep Learning}
-
-* These are interpretable models: vital for disease etc.
-
-* Modern machine learning methods are less interpretable
-
-* Example: face recognition
-
 \include{_ml/includes/deep-learning-overview.md}
 \include{_data-science/includes/a-time-for-professionalisation.md}
 

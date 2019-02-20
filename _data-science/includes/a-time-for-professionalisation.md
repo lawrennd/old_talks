@@ -67,4 +67,16 @@ compare [digital oligarchy](https://www.theguardian.com/media-network/2015/mar/0
 
 \notes{Others are also pointing out these challenges, [this post](https://medium.com/@karpathy/software-2-0-a64152b37c35) from Andrej Karpathy (now head of AI at Tesla) covers the notion of "Software 2.0". Google researchers have highlighted the challenges of "Technical Debt" in machine learning [@Sculley:debt15]. Researchers at Berkeley have characterized the systems challenges associated with machine learning [@Stoica:systemsml17].}
 
+\ifdef{blogPosts}
+\defeval{\blogPosts}{
+\blogPosts
+* [Andrej Karpathy's Medium Post](https://medium.com/@karpathy/software-2-0-a64152b37c35)
+}
+\else
+\define{\blogPosts}{
+* [Andrej Karpathy's Medium Post](https://medium.com/@karpathy/software-2-0-a64152b37c35)
+}
+\endif
+
+
 \endif

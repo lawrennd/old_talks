@@ -12,46 +12,33 @@ abstract: "Machine learning is fundamental to two important
   bugs, in that the system will be performing as designed, but
   failures of imagination of the designers we introduce a new term for
   them: 'peppercorns'."
-css: talks.css
-published: 2017-06-02
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
+  institute: Amazon Cambridge and University of Sheffield
+  twitter: lawrennd
+  url: http://inverseprobability.com
+date: 2017-06-02
 venue: Sheffield ML Research Retreat
-layout: slides
+geometry: ["a4paper", "margin=2cm"]
+papersize: a4paper
 transition: None
-author: Neil D. Lawrence
-affiliation: Amazon Research Cambridge and University of Sheffield
 ---
 
-#### Peppercorns and Machine Learning System Design
-#### 2017-06-02
-#### Neil D. Lawrence
-#### Amazon Research Cambridge and University of Sheffield
-```@lawrennd``` [inverseprobability.com](http://inverseprobability.com)
+\include{talk-macros.tex}
+
+\section{Introduction}
 
 \include{_ml/includes/what-is-ml.md}
 \include{_ml/includes/data-science-vs-ai.md}
 \include{_ai/includes/embodiment-factors.md}
-
-
-### Internet of People
-
-* Fog computing: barrier between cloud and device blurring.
-
-* Stuxnet: Adversarial and Security implications for intelligent systems.
-
-* Complex feedback between algorithm and implementation
-  
-### Deploying ML in Real World: Machine Learning Systems Design
-
-* Major new challenge for systems designers.
-
-* Internet of Intelligence but currently:
-
-	* AI systems are currently *fragile*
-
+\include{_ai/includes/deploying-ai.md}
 \include{_ai/includes/ml-systems-design-long.md}
 \include{_ai/includes/intelligent-system-paolo.md}
 
-### Conclusion
+\section{Conclusion}
+\newslide{Conclusion}
 
 * Difference between Artificial Intelligence and Data Science are fundamentally different.
 
@@ -62,7 +49,6 @@ affiliation: Amazon Research Cambridge and University of Sheffield
 * Our approaches to systems design are building powerful machines that
 will be deployed in evolving environments.
 
-### Thanks!
+\thanks
 
-* twitter: \@lawrennd
-* blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
+\references

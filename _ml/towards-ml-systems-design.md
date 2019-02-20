@@ -38,16 +38,6 @@ categories:
 \include{_data-science/includes/evolved-relationship.md}
 \include{_ml/includes/what-does-machine-learning-do.md}
 
-\section{Deep Learning}
-\newslide{Deep Learning}
-\slides{
-* These are interpretable models: vital for disease etc.
-
-* Modern machine learning methods are less interpretable
-
-* Example: face recognition
-}
-\notes{The models we have described so far are very interpretable because they are linear. But the general formalism of the prediction function allows for *non-linear* models. In machine learning, the emphasis on prediction over interpretability means that non-linear models are often used.}
 
 \include{_ml/includes/deep-learning-overview.md}
 \include{_gp/includes/gp-intro-very-short.md}

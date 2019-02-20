@@ -1,5 +1,4 @@
 ---
-layout: slides
 transition: None
 title: "Mind and Machine Intelligence"
 venue: FinTECHTalents 2018
@@ -16,8 +15,10 @@ extras:
   label: Paper on Mind and Machine Intelligence
 layout: talk
 month: 10
-published: 2018-10-30
-reveal: 2018-10-30-mind-and-machine-intelligence.slides.html
+date: 2018-10-30
+geometry: ["a4paper", "margin=2cm"]
+papersize: a4paper
+transition: None
 ppt: 2018-10-30-mind-and-machine-intelligence.pptx
 ---
 

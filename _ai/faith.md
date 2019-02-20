@@ -5,12 +5,13 @@ author:
 - family: Lawrence
   given: Neil D.
   gscholar: r3SJcvoAAAAJ
-  institute: Amazon Cambridge and University of Sheffield
+  institute: University of Sheffield and Amazon Cambridge
   twitter: lawrennd
   url: http://inverseprobability.com
 date: 2018-09-12
-affiliation: University of Sheffield and Amazon, Cambridge
 venue: Landor Associates, London
+geometry: ["a4paper", "margin=2cm"]
+papersize: a4paper
 transition: None
 ---
 
@@ -27,7 +28,4 @@ transition: None
 \include{_ai/includes/faith-and-ai.md}
 \include{_ai/includes/faith-and-ai-conclusions.md}
 
-### Thanks!
-
-* twitter: \@lawrennd
-* blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
+\thanks

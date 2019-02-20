@@ -17,12 +17,13 @@ author:
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
   orchid: 
-published: 2018-09-05
-reveal: 2018-09-05-data-science-time-for-professionalism.slides.html
-ipynb: 2018-09-05-data-science-time-for-professionalism.ipynb
-layout: talk
-transition: None
 date: 2018-09-05
+layout: talk
+geometry: ["a4paper", "margin=2cm"]
+papersize: a4paper
+transition: None
+categories:
+- notes
 ---
 
 \include{../talk-macros.tex}
@@ -31,19 +32,8 @@ date: 2018-09-05
 \include{../_ai/includes/embodiment-factors.md}
 \include{../_data-science/includes/evolved-relationship.md}
 \include{../_ml/includes/what-does-machine-learning-do.md}
-
-\newslide{Deep Learning}
-
-* These are interpretable models: vital for disease etc.
-
-* Modern machine learning methods are less interpretable
-
-* Example: face recognition
-
 \include{../_ml/includes/deep-learning-overview.md}
-
 \include{_data-science/includes/a-time-for-professionalisation.md}
-
 \include{../_data-science/includes/the-data-crisis.md}
 
 \newslide{Rest of this Talk: Two Areas of Focus}
@@ -57,19 +47,18 @@ date: 2018-09-05
 \include{../_ai/includes/deploying-ai.md}
 \include{../_ai/includes/ml-systems-design-long.md}
 
+\section{Conclusion}
 \newslide{Conclusion}
-
+\slides{
 * Artificial Intelligence and Data Science are fundamentally different.
-
 * In one you are dealing with data collected by happenstance.
-
 * In the other you are trying to build systems in the real world, often by actively collecting data.
-
 * Our approaches to systems design are building powerful machines that
 will be deployed in evolving environments.
+}
+\notes{Artificial Intelligence and Data Science are fundamentally different. In one you are dealing with data collected by happenstance. In the other you are trying to build systems in the real world, often by actively collecting data. Our approaches to systems design are building powerful machines that
+will be deployed in evolving environments. There is an urgent need for new ideas and methodologies for safe deployment and redployment of these systems.}
 
+\thanks
 
-\newslide{Thanks!}
-
-* twitter: \@lawrennd
-* blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
+\references

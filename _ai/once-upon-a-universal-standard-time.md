@@ -1,8 +1,28 @@
 ---
 layout: slides
 title: "Once Upon a Universal Standard Time: Embodiment and AI Narratives"
-author: Neil D. Lawrence
+abstract: >
+  In this talk we consider a fundamental difference between human and
+  machine intelligence, a ratio between their ability to compute and
+  their ability to communicate we refer to as the embodiment
+  factor. Having suggested why this makes us fundamentally different
+  we speculate on implications for developing *narrative* structure
+  from data.
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
+  institute: Amazon Cambridge and University of Sheffield
+  twitter: lawrennd
+  url: http://inverseprobability.com
+date: 2017-07-13
+venue: CFI Annual Conference
+youtube: ExTDnppYB0w&t=6h20m0s
+geometry: ["a4paper", "margin=2cm"]
+papersize: a4paper
 transition: None
+categories:
+- Lawrence-cfi17
 ---
 
 \include{talk-macros.tex}
@@ -10,9 +30,6 @@ transition: None
 \include{_data-science/includes/evolved-relationship.md}
 \include{_ai/includes/embodiment-and-narrative.md}
 
-### Thanks!
-
-* twitter: \@lawrennd
-* blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
+\thanks
 
 

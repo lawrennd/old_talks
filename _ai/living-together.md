@@ -22,8 +22,12 @@ key: Lawrence-tedx17
 layout: talk
 month: 10
 published: 2017-10-06
+date: 2017-10-06
 reveal: 2017-10-06-living-together.slides.html
 venue: TEDx Exeter
+geometry: ["a4paper", "margin=2cm"]
+papersize: a4paper
+transition: None
 ---
 
 \include{talk-macros.tex}
@@ -72,9 +76,7 @@ Do not fool yourselves into thinking these computers are the same thing as us, t
 The flower that is this book, that is this fight, can never bud from an artificial plant.}
 
 
-\newslide{Thanks!}
+\thanks
 
-* twitter: \@lawrennd
-* blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
-
+\references
 
