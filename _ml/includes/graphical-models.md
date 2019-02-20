@@ -39,7 +39,7 @@ pgm.render().figure.savefig("../slides/diagrams/ml/markov.svg", transparent=True
 Predict Perioperative Risk of Clostridium Difficile Infection Following Colon Surgery [@Steele:predictive12]}
 \notes{By specifying conditional independencies we can reduce the parameterization required for our data, instead of directly specifying the parameters of the joint distribution, we can specify each set of parameters of the conditonal independently. This can also give an advantage in terms of interpretability. Understanding a conditional independence structure gives a structured understanding of data. If developed correctly, according to causal methodology, it can even inform how we should intervene in the system to drive a desired result [@Pearl:causality95]. 
 
-However, a challenge arise when the data becomes more complex. Consider the graphical model shown below, used to predict the perioperative risk of *C Difficile* infection following colon surgery [@Steele:predictive12].}
+However, a challenge arises when the data becomes more complex. Consider the graphical model shown below, used to predict the perioperative risk of *C Difficile* infection following colon surgery [@Steele:predictive12].}
 
 \includepng{../slides/diagrams/bayes-net-diagnosis}{50%}{negate}
 
