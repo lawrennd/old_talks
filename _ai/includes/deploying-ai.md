@@ -15,7 +15,7 @@
     * Computing on the Edge
 * Complex feedback between algorithm and implementation
 }
-\notes{This effect is amplified through the growth in sensorics, in particular the movement of cloud computing towards the customer. The barrier between cloud and device is blurring. This phenomenon is sometimes known as fog computing, or *computing on the edge*.
+\notes{This effect is amplified through the growth in sensorics, in particular the movement of cloud computing towards the customer. The barrier between cloud and device is blurring. This phenomenon is sometimes known as fog computing, or *computing on the edge*.}
 
 
 \newslide{Deploying ML in Real World: Machine Learning Systems Design}
