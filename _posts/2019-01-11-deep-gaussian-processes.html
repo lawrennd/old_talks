@@ -27,6 +27,7 @@ categories:
 
 <!--define{draft}-->
 <!-- Front matter -->
+<p>.</p>
 <!--Back matter-->
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
 <h1 id="introduction">Introduction</h1>
@@ -34,28 +35,33 @@ categories:
 <div class="centered" style="">
 <img class="vertical-align:middle" src="../slides/diagrams/Planck_CMB.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+<center>
+<em>The cosmic microwave background is, to a very high degree of precision, a Gaussian process. The parameters of its covariance function are given by fundamental parameters of the universe, such as the amount of dark matter and mass.</em>
+</center>
 <div style="fontsize:120px;vertical-align:middle">
 <img src="../slides/diagrams/earth_PNG37.png" width="20%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">=<em>f</em>(</span><img src="../slides/diagrams/Planck_CMB.png"  width="50%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">)</span>
 </div>
+<center>
+<em>What we observe today is some non-linear function of the cosmic microwave background.</em>
+</center>
 <h1 id="low-rank-gaussian-processes">Low Rank Gaussian Processes</h1>
-<p><span style="text-align:right"></span></p>
-<p><span style="text-align:right"></span></p>
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/sparse-gps.jpg" width="45%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<p><span style="text-align:right"></span></p>
+<center>
+<em>Image credit: Kai Arulkumaran</em>
+</center>
 <p>Inference in a Gaussian process has computational complexity of <span class="math inline">$\bigO(\numData^3)$</span> and storage demands of <span class="math inline">$\bigO(\numData^2)$</span>. This is too large for many modern data sets.</p>
 <p>Low rank approximations allow us to work with Gaussian processes with computational complexity of <span class="math inline">$\bigO(\numData\numInducing^2)$</span> and storage demands of <span class="math inline">$\bigO(\numData\numInducing)$</span>, where <span class="math inline">$\numInducing$</span> is a user chosen parameter.</p>
 <p>In machine learning, low rank approximations date back to <span class="citation">Smola and Bartlett (n.d.)</span>, <span class="citation">Williams and Seeger (n.d.)</span>, who considered the Nystr&quot;om approximation and <span class="citation">Csató and Opper (2002)</span>;<span class="citation">Csató (2002)</span> who considered low rank approximations in the context of on-line learning. Selection of active points for the approximation was considered by <span class="citation">Seeger, Williams, and Lawrence (n.d.)</span> and <span class="citation">Snelson and Ghahramani (n.d.)</span> first proposed that the active set could be optimized directly. Those approaches were reviewed by <span class="citation">Quiñonero Candela and Rasmussen (2005)</span> under a unifying likelihood approximation perspective. General rules for deriving the maximum likelihood for these sparse approximations were given in <span class="citation">Lawrence (n.d.)</span>.</p>
 <p>Modern variational interpretations of these low rank approaches were first explored in <span class="citation">Titsias (n.d.)</span>. A more modern summary which considers each of these approximations as an <span class="math inline"><em>α</em></span>-divergence is given by <span class="citation">Bui, Yan, and Turner (2017)</span>.</p>
-<p><span style="text-align:right"></span> ## Variational Compression</p>
+<h2 id="variational-compression-edit">Variational Compression <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gp-variational-complexity.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gp-variational-complexity.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Inducing variables are a compression of the real observations. The basic idea is can I create a new data set that summarizes all the information in the original data set. If this data set is smaller, I've compressed the information in the original data set.</p>
 <p>Inducing variables can be thought of as pseudo-data, indeed in <span class="citation">Snelson and Ghahramani (n.d.)</span> they were referred to as <em>pseudo-points</em>.</p>
 <p>The only requirement for inducing variables is that they are jointly distributed as a Gaussian process with the original data. This means that they can be from the space <span class="math inline">$\mappingFunctionVector$</span> or a space that is related through a linear operator (see e.g. <span class="citation">Álvarez et al. (2010)</span>). For example we could choose to store the gradient of the function at particular points or a value from the frequency spectrum of the function <span class="citation">(Lázaro-Gredilla, Quiñonero-Candela, and Rasmussen 2010)</span>.</p>
 <h2 id="variational-compression-ii">Variational Compression II</h2>
 <p>Inducing variables don't only allow for the compression of the non-parameteric information into a reduced data aset but they also allow for computational scaling of the algorithms through, for example stochastic variational approaches <span class="citation">Hensman, Fusi, and Lawrence (n.d.)</span> or parallelization <span class="citation">Gal, Wilk, and Rasmussen (n.d.)</span>,<span class="citation">Dai et al. (2014)</span>, <span class="citation">M. W. Seeger et al. (2017)</span>.</p>
 <!--include{_gp/includes/larger-factorize.md}-->
-<p><span style="text-align:right"></span></p>
 <p>We’ve seen how we go from parametric to non-parametric. The limit implies infinite dimensional <span class="math inline">$\mappingVector$</span>. Gaussian processes are generally non-parametric: combine data with covariance function to get model. This representation <em>cannot</em> be summarized by a parameter vector of a fixed size.</p>
 <p>Parametric models have a representation that does not respond to increasing training set size. Bayesian posterior distributions over parameters contain the information about the training data, for example if we use use Bayes’ rule from training data, <br /><span class="math display">$$
 p\left(\mappingVector|\dataVector, \inputMatrix\right),
@@ -69,7 +75,7 @@ $$</span><br /> then <span class="math inline">$\mappingVector$</span> becomes a
 $$</span><br /> These are known as degenerate covariance matrices. Their rank is at most <span class="math inline">$\numBasisFunc$</span>, non-parametric models have full rank covariance matrices. Most well known is the “linear kernel”, <br /><span class="math display">$$
 \kernelScalar(\inputVector_i, \inputVector_j) = \inputVector_i^\top\inputVector_j.
 $$</span><br /> For non-parametrics prediction at a new point, <span class="math inline">$\mappingFunctionVector_*$</span>, is made by conditioning on <span class="math inline">$\mappingFunctionVector$</span> in the joint distribution. In GPs this involves combining the training data with the covariance function and the mean function. Parametric is a special case when conditional prediction can be summarized in a <em>fixed</em> number of parameters. Complexity of parametric model remains fixed regardless of the size of our training data set. For a non-parametric model the required number of parameters grows with the size of the training data.</p>
-<h2 id="augment-variable-space">Augment Variable Space</h2>
+<h2 id="augment-variable-space-edit">Augment Variable Space <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/approximate-gps-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/approximate-gps-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>In inducing variable approximations, we augment the variable space with a set of inducing points, <span class="math inline">$\inducingVector$</span>. These inducing points are jointly Gaussian distributed with the points from our function, <span class="math inline">$\mappingFunctionVector$</span>. So we have a joint Gaussian process with covariance, <br /><span class="math display">$$
 \begin{bmatrix}
 \mappingFunctionVector\\
@@ -105,8 +111,7 @@ $$</span><br /></p>
 p(\dataVector^*|\dataVector) = \int p(\dataVector^*|\inducingVector) p(\inducingVector|\dataVector) \text{d} \inducingVector
 $$</span><br /> but <em>importantly</em> the length of <span class="math inline">$\inducingVector$</span> is not fixed at <em>design</em> time like the number of parameters were. We can vary the number of inducing variables we use to give us the model capacity we require.</p>
 <p>Unfortunately, computation of <span class="math inline">$p(\dataVector|\inducingVector)$</span> turns out to be intractable. As a result, we need to turn to approximations to make progress.</p>
-<p><span style="text-align:right"></span></p>
-<h2 id="variational-bound-on-pdatavector-inducingvector">Variational Bound on <span class="math inline">$p(\dataVector |\inducingVector)$</span></h2>
+<h2 id="variational-bound-on-pdatavector-inducingvector-edit">Variational Bound on <span class="math inline">$p(\dataVector |\inducingVector)$</span> <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/larger-variational.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/larger-variational.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>The conditional density of the data given the inducing points can be <em>lower</em> bounded variationally <br /><span class="math display">$$
 \begin{aligned}
     \log p(\dataVector|\inducingVector) &amp; = \log \int p(\dataVector|\mappingFunctionVector) p(\mappingFunctionVector|\inducingVector) \text{d}\mappingFunctionVector\\ &amp; = \int q(\mappingFunctionVector) \log \frac{p(\dataVector|\mappingFunctionVector) p(\mappingFunctionVector|\inducingVector)}{q(\mappingFunctionVector)}\text{d}\mappingFunctionVector + \KL{q(\mappingFunctionVector)}{p(\mappingFunctionVector|\dataVector, \inducingVector)}.
@@ -138,10 +143,9 @@ $$</span><br /> where the kernel matrix itself can be decomposed into <br /><spa
 \end{bmatrix}
 $$</span><br /> Choosing the inducing variables amounts to specifying <span class="math inline">$\Kfu$</span> and <span class="math inline">$\Kuu$</span> such that <span class="math inline">$\kernelMatrix$</span> remains positive definite. The typical choice is to choose <span class="math inline">$\inducingVector$</span> in the same domain as <span class="math inline">$\mappingFunctionVector$</span>, associating each inducing output, <span class="math inline">$\inducingScalar_i$</span> with a corresponding input location <span class="math inline">$\inducingInputVector$</span>. However, more imaginative choices are absolutely possible. In particular, if <span class="math inline">$\inducingVector$</span> is related to <span class="math inline">$\mappingFunctionVector$</span> through a linear operator (see e.g. <span class="citation">Álvarez et al. (2010)</span>), then valid <span class="math inline">$\Kuu$</span> and <span class="math inline">$\Kuf$</span> can be constructed. For example we could choose to store the gradient of the function at particular points or a value from the frequency spectrum of the function <span class="citation">(Lázaro-Gredilla, Quiñonero-Candela, and Rasmussen 2010)</span>.</p>
 <h2 id="variational-compression-ii-1">Variational Compression II</h2>
-<p>Inducing variables don't only allow for the compression of the non-parameteric information into a reduced data set but they also allow for computational scaling of the algorithms through, for example stochastic variational approaches<span class="citation">(Hoffman et al. 2012; Hensman, Fusi, and Lawrence, n.d.)</span> or parallelization <span class="citation">(<span class="citeproc-not-found" data-reference-id="Gal:Distributed14"><strong>???</strong></span>)</span>,<span class="citation">Dai et al. (2014)</span>, <span class="citation">M. W. Seeger et al. (2017)</span>.</p>
+<p>Inducing variables don't only allow for the compression of the non-parameteric information into a reduced data set but they also allow for computational scaling of the algorithms through, for example stochastic variational approaches<span class="citation">(Hoffman et al. 2012; Hensman, Fusi, and Lawrence, n.d.)</span> or parallelization <span class="citation">(Gal, Wilk, and Rasmussen, n.d.; Dai et al. 2014; M. W. Seeger et al. 2017)</span>.</p>
 <!--include{_gp/includes/larger-graph-intro.md}-->
-<p><span style="text-align:right"></span></p>
-<h2 id="a-simple-regression-problem">A Simple Regression Problem</h2>
+<h2 id="a-simple-regression-problem-edit">A Simple Regression Problem <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/inducing-variables-demo.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/inducing-variables-demo.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Here we set up a simple one dimensional regression problem. The input locations, <span class="math inline">$\inputMatrix$</span>, are in two separate clusters. The response variable, <span class="math inline">$\dataVector$</span>, is sampled from a Gaussian process with an exponentiated quadratic covariance.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
 <span class="im">import</span> GPy</code></pre></div>
@@ -171,6 +175,9 @@ mlai.write_figure(figure<span class="op">=</span>fig,
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-full-gp.svg" style="vertical-align:middle;">
 </object>
+<center>
+<em>Full Gaussian process fitted to the data set.</em>
+</center>
 <p>Now we set up the inducing variables, <span class="math inline"><strong>u</strong></span>. Each inducing variable has its own associated input index, <span class="math inline"><strong>Z</strong></span>, which lives in the same space as <span class="math inline">$\inputMatrix$</span>. Here we are using the true covariance function parameters to generate the fit.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">kern <span class="op">=</span> GPy.kern.RBF(<span class="dv">1</span>)
 Z <span class="op">=</span> np.hstack(
@@ -187,6 +194,9 @@ mlai.write_figure(figure<span class="op">=</span>fig,
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-constrained-inducing-6-unlearned-gp.svg" style="vertical-align:middle;">
 </object>
+<center>
+<em>Sparse Gaussian process fitted with six inducing variables, no optimization of parameters or inducing variables.</em>
+</center>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">_ <span class="op">=</span> m.optimize(messages<span class="op">=</span><span class="va">True</span>)
 display(m)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
@@ -196,6 +206,9 @@ mlai.write_figure(figure<span class="op">=</span>fig,
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-constrained-inducing-6-learned-gp.svg" style="vertical-align:middle;">
 </object>
+<center>
+<em>Gaussian process fitted with inducing variables fixed and parameters optimized</em>
+</center>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.randomize()
 m.inducing_inputs.unconstrain()
 _ <span class="op">=</span> m.optimize(messages<span class="op">=</span><span class="va">True</span>)</code></pre></div>
@@ -206,6 +219,9 @@ mlai.write_figure(figure<span class="op">=</span>fig,
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-unconstrained-inducing-6-gp.svg" style="vertical-align:middle;">
 </object>
+<center>
+<em>Gaussian process fitted with location of inducing variables and parameters both optimized</em>
+</center>
 <p>Now we will vary the number of inducing points used to form the approximation.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.num_inducing<span class="op">=</span><span class="dv">8</span>
 m.randomize()
@@ -222,9 +238,11 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </object>
 <object class="svgplot " align data="../slides/diagrams/gp/sparse-demo-full-gp.svg" style="vertical-align:middle;">
 </object>
+<center>
+<em>Comparison of the full Gaussian process fit with a sparse Gaussian process using eight inducing varibles. Both inducing variables and parameters are optimized.</em>
+</center>
 <p>And we can compare the probability of the result to the full model.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(m.log_likelihood(), m_full.log_likelihood())</code></pre></div>
-<p><span style="text-align:right"></span></p>
 <ul>
 <li>Let’s be explicity about storing approximate posterior of <span class="math inline">$\inducingVector$</span>, <span class="math inline">$q(\inducingVector)$</span>.</li>
 <li><p>Now we have <br /><span class="math display">$$p(\dataVector^*|\dataVector) = \int p(\dataVector^*| \inducingVector) q(\inducingVector | \dataVector) \text{d} \inducingVector$$</span><br /></p></li>
@@ -291,18 +309,17 @@ Actually index of deprivation is a proxy for this ...
 <li><p><em>A Unifying Framework for Gaussian Process Pseudo-Point Approximations using Power Expectation Propagation</em> <span class="citation">Bui, Yan, and Turner (2017)</span></p></li>
 <li><p><em>Deep Gaussian Processes and Variational Propagation of Uncertainty</em> <span class="citation">Damianou (2015)</span></p></li>
 </ul>
-<p><span style="text-align:right"></span></p>
-<p><span style="text-align:right"></span></p>
 <p>Even in the early days of Gaussian processes in machine learning, it was understood that we were throwing something fundamental away. This is perhaps captured best by David MacKay in his 1997 NeurIPS tutorial on Gaussian processes, where he asked &quot;Have we thrown out the baby with the bathwater?&quot;. The quote below is from his summarization paper.</p>
 <blockquote>
 <p>According to the hype of 1987, neural networks were meant to be intelligent models which discovered features and patterns in data. Gaussian processes in contrast are simply smoothing devices. How can Gaussian processes possibly repalce neural networks? What is going on?</p>
 <p><span class="citation">MacKay (n.d.)</span></p>
 </blockquote>
-<p><span style="text-align:right"></span></p>
-<p><span style="text-align:right"></span></p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> teaching_plots <span class="im">as</span> plot</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/deepgp/deep-nn2.svg" style="vertical-align:middle;">
 </object>
+<center>
+<em>A deep neural network. Input nodes are shown at the bottom. Each hidden layer is the result of applying an affine transformation to the previous layer and placing through an activation function.</em>
+</center>
 <p>Mathematically, each layer of a neural network is given through computing the activation function, <span class="math inline">$\basisFunction(\cdot)$</span>, contingent on the previous layer, or the inputs. In this way the activation functions, are composed to generate more complex interactions than would be possible with any single layer. <br /><span class="math display">$$
 \begin{align}
     \hiddenVector_{1} &amp;= \basisFunction\left(\mappingMatrix_1 \inputVector\right)\\
@@ -311,7 +328,7 @@ Actually index of deprivation is a proxy for this ...
     \dataVector &amp;= \mappingVector_4 ^\top\hiddenVector_{3}
 \end{align}
 $$</span><br /></p>
-<p><span style="text-align:right"></span> ## Overfitting</p>
+<h2 id="overfitting-edit">Overfitting <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/overfitting-low-rank.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/overfitting-low-rank.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>One potential problem is that as the number of nodes in two adjacent layers increases, the number of parameters in the affine transformation between layers, <span class="math inline">$\mappingMatrix$</span>, increases. If there are <span class="math inline"><em>k</em><sub><em>i</em> − 1</sub></span> nodes in one layer, and <span class="math inline"><em>k</em><sub><em>i</em></sub></span> nodes in the following, then that matrix contains <span class="math inline"><em>k</em><sub><em>i</em></sub><em>k</em><sub><em>i</em> − 1</sub></span> parameters, when we have layer widths in the 1000s that leads to millions of parameters.</p>
 <p>One proposed solution is known as <em>dropout</em> where only a sub-set of the neural network is trained at each iteration. An alternative solution would be to reparameterize <span class="math inline">$\mappingMatrix$</span> with its <em>singular value decomposition</em>. <br /><span class="math display">$$
   \mappingMatrix = \eigenvectorMatrix\eigenvalueMatrix\eigenvectwoMatrix^\top
@@ -321,7 +338,9 @@ $$</span><br /></p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> teaching_plots <span class="im">as</span> plot</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/wisuvt.svg" style="vertical-align:middle;">
 </object>
-<p><span style="text-align:right"></span></p>
+<center>
+<em>Pictorial representation of the low rank form of the matrix <span class="math inline">$\mappingMatrix$</span></em>
+</center>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> teaching_plots <span class="im">as</span> plot</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/deepgp/deep-nn-bottleneck2.svg" style="vertical-align:middle;">
 </object>
@@ -353,18 +372,21 @@ $$</span><br /></p>
   \dataVector &amp;= \mappingFunctionVector_4\left(\latentVector_{3}\right)
 \end{align}
 $$</span><br /></p>
-<p><span style="text-align:right"></span></p>
 <!-- No slide titles in this context -->
-<p><span style="text-align:right"></span></p>
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/deepface_neg.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+<center>
+<em>The DeepFace architecture <span class="citation">(Taigman et al. 2014)</span>, visualized through colors to represent the functional mappings at each layer. There are 120 million parameters in the model.</em>
+</center>
 <p>The DeepFace architecture <span class="citation">(Taigman et al. 2014)</span> consists of layers that deal with <em>translation</em> and <em>rotational</em> invariances. These layers are followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected layers.</p>
-<p><span style="text-align:right"></span></p>
 <div class="centered centered" style="">
-<img class="" src="../slides/diagrams/576px-Early_Pinball.jpg" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="../slides/diagrams/576px-Early_Pinball.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-
+<center>
+<em>Deep learning models are composition of simple functions. We can think of a pinball machine as an analogy. Each layer of pins corresponds to one of the layers of functions in the model. Input data is represented by the location of the ball from left to right when it is dropped in from the top. Output class comes from the position of the ball as it leaves the pins at the bottom.</em>
+</center>
+<h3 id="deep-learning-as-pinball-edit">Deep Learning as Pinball <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-as-pinball.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-as-pinball.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
 <p>Sometimes deep learning models are described as being like the brain, or too complex to understand, but one analogy I find useful to help the gist of these models is to think of them as being similar to early pin ball machines.</p>
 <p>In a deep neural network, we input a number (or numbers), whereas in pinball, we input a ball.</p>
 <p>Think of the location of the ball on the left-right axis as a single number. Our simple pinball machine can only take one number at a time. As the ball falls through the machine, each layer of pins can be thought of as a different layer of 'neurons'. Each layer acts to move the ball from left to right.</p>
@@ -379,16 +401,20 @@ $$</span><br /></p>
 <object class="svgplot " align data="../slides/diagrams/pinball001.svg" style="vertical-align:middle;">
 </object>
 </div>
+<center>
+<em>At initialization, the pins, which represent the parameters of the function, aren't in the right place to bring the balls to the correct decisions.</em>
+</center>
 <div style="text-align:center">
 <object class="svgplot " align data="../slides/diagrams/pinball002.svg" style="vertical-align:middle;">
 </object>
 </div>
+<center>
+<em>After learning the pins are now in the right place to bring the balls to the correct decisions.</em>
+</center>
 <p>Learning involves moving all the pins to be in the correct position, so that the ball ends up in the right place when it's fallen through the machine. But moving all these pins in hyperspace can be difficult.</p>
-<p>In a hyper space you have to put a lot of data through the machine for to explore the positions of all the pins. <em>Adversarial examples</em> exploit this idea.</p>
+<p>In a hyper-space you have to put a lot of data through the machine for to explore the positions of all the pins. <em>Adversarial examples</em> exploit this idea.</p>
 <p>If you have access to the pinball machine, you can use gradient methods to find a position for the ball in the hyper space where the image looks like one thing, but will be classified as another.</p>
 <p>Probabilistic methods explore more of the space by considering a range of possible paths for the ball through the machine. This helps to make them more data efficient and gives some robustness to adversarial examples.</p>
-<p><span style="text-align:right"></span></p>
-<p><span style="text-align:right"></span></p>
 <p>Mathematically, a deep Gaussian process can be seen as a composite <em>multivariate</em> function, <br /><span class="math display">$$
   \mathbf{g}(\inputVector)=\mappingFunctionVector_5(\mappingFunctionVector_4(\mappingFunctionVector_3(\mappingFunctionVector_2(\mappingFunctionVector_1(\inputVector))))).
   $$</span><br /> Or if we view it from the probabilistic perspective we can see that a deep Gaussian process is specifying a factorization of the joint density, the standard deep model takes the form of a Markov chain.</p>
@@ -397,9 +423,12 @@ $$</span><br /></p>
   $$</span><br /></p>
 <object class="svgplot " align data="../slides/diagrams/deepgp/deep-markov.svg" style="vertical-align:middle;">
 </object>
+<center>
+<em>Probabilistically the deep Gaussian process can be represented as a Markov chain.</em>
+</center>
 <object class="svgplot " align data="../slides/diagrams/deepgp/deep-markov-vertical.svg" style="vertical-align:middle;">
 </object>
-<h2 id="why-deep">Why Deep?</h2>
+<h2 id="why-deep-edit">Why Deep? <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/process-composition.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/process-composition.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>If the result of composing many functions together is simply another function, then why do we bother? The key point is that we can change the class of functions we are modeling by composing in this manner. A Gaussian process is specifying a prior over functions, and one with a number of elegant properties. For example, the derivative process (if it exists) of a Gaussian process is also Gaussian distributed. That makes it easy to assimilate, for example, derivative observations. But that also might raise some alarm bells. That implies that the <em>marginal derivative distribution</em> is also Gaussian distributed. If that's the case, then it means that functions which occasionally exhibit very large derivatives are hard to model with a Gaussian process. For example, a function with jumps in.</p>
 <p>A one off discontinuity is easy to model with a Gaussian process, or even multiple discontinuities. They can be introduced in the mean function, or independence can be forced between two covariance functions that apply in different areas of the input space. But in these cases we will need to specify the number of discontinuities and where they occur. In otherwords we need to <em>parameterise</em> the discontinuities. If we do not know the number of discontinuities and don't wish to specify where they occur, i.e. if we want a non-parametric representation of discontinuities, then the standard Gaussian process doesn't help.</p>
 <h2 id="stochastic-process-composition">Stochastic Process Composition</h2>
@@ -413,15 +442,16 @@ $$</span><br /></p>
 </object>
 <object class="svgplot " align="center" data="../slides/diagrams/dimred/gaussian-through-nonlinear.svg" style="vertical-align:middle;">
 </object>
-<p><span style="text-align:right"></span></p>
 <p>The argument in the deep learning revolution is that deep architectures allow us to develop an abstraction of the feature set through model composition. Composing Gaussian processes is analytically intractable. To form deep Gaussian processes we use a variational approach to stack the models.</p>
-<p><span style="text-align:right"></span></p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;stack-gp-sample-Linear-</span><span class="sc">{sample:0&gt;1}</span><span class="st">.svg&#39;</span>, 
                             directory<span class="op">=</span><span class="st">&#39;../../slides/diagrams/deepgp&#39;</span>, sample<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">4</span>))</code></pre></div>
-<h2 id="stacked-pca">Stacked PCA</h2>
+<h2 id="stacked-pca-edit">Stacked PCA <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/stacked-pca.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/stacked-pca.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <object class="svgplot " align data="../slides/diagrams/stack-pca-sample-4.svg" style="vertical-align:middle;">
 </object>
+<center>
+<em>Composition of linear functions just leads to a new linear function.</em>
+</center>
 <p>Stacking a series of linear functions simply leads to a new linear function. The use of multiple linear function merely changes the covariance of the resulting Gaussian. If <br /><span class="math display">$$
 \latentMatrix \sim \gaussianSamp{\zerosVector}{\eye}
 $$</span><br /> and the <span class="math inline"><em>i</em></span>th hidden layer is a multivariate linear transformation defined by <span class="math inline">$\weightMatrix_i$</span>, <br /><span class="math display">$$
@@ -444,12 +474,14 @@ $$</span><br /> we can obtain <br /><span class="math display">$$\latentMatrix \
 \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
 \vMatrix &amp; \vMatrix   \weightMatrix_1^\top  &amp; \vMatrix \weightMatrix_1^\top \weightMatrix_2^\top&amp; \dots &amp; \vMatrix\vMatrix^\top
 \end{bmatrix}}$$</span><br /> which is a highly structured Gaussian covariance with hierarchical dependencies between the variables <span class="math inline">$\latentMatrix_i$</span>.</p>
-<p><span style="text-align:right"></span></p>
-<h2 id="stacked-gp">Stacked GP</h2>
+<h2 id="stacked-gp-edit">Stacked GP <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/stacked-gp.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/stacked-gp.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;stack-gp-sample-RBF-</span><span class="sc">{sample:0&gt;1}</span><span class="st">.svg&#39;</span>, 
                             directory<span class="op">=</span><span class="st">&#39;../../slides/diagrams/deepgp&#39;</span>, sample<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">4</span>))</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/stack-gp-sample-4.svg" style="vertical-align:middle;">
 </object>
+<center>
+<em>Stacking Gaussian process models leads to non linear mappings at each stage. Here we are mapping from two dimensions to two dimensions in each layer.</em>
+</center>
 <p>Note that once the box has folded over on itself, it cannot be unfolded. So a feature that is generated near the top of the model cannot be removed furthr down the model.</p>
 <p>This folding over effect happens in low dimensions. In higher dimensions it is less common.</p>
 <p>Observation of this effect at a talk in Cambridge was one of the things that caused David Duvenaud (and collaborators) to consider the behavior of deeper Gaussian process models <span class="citation">(Duvenaud et al. 2014)</span>.</p>
@@ -459,11 +491,7 @@ $$</span><br /> we can obtain <br /><span class="math display">$$\latentMatrix \
 <iframe width="1120" height="630" src="https://www.youtube.com/embed/XhIvygQYFFQ?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
 <p>David Duvenaud also created a YouTube video to help visualize what happens as you drop through the layers of a deep GP.</p>
-<p><span style="text-align:right"></span></p>
-<p><span style="text-align:right"></span></p>
-<p><span style="text-align:right"></span></p>
-<p><span style="text-align:right"></span></p>
-<h2 id="gpy-a-gaussian-process-framework-in-python">GPy: A Gaussian Process Framework in Python</h2>
+<h2 id="gpy-a-gaussian-process-framework-in-python-edit">GPy: A Gaussian Process Framework in Python <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gpy-software.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gpy-software.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/gp/gpy.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
@@ -474,9 +502,7 @@ $$</span><br /> we can obtain <br /><span class="math display">$$\latentMatrix \
 <pre><code>pip install GPy</code></pre>
 <p>This notebook depends on PyDeepGP. These libraries can be installed via pip:</p>
 <pre><code>pip install git+https://github.com/SheffieldML/PyDeepGP.git</code></pre>
-<p><span style="text-align:right"></span></p>
-<p><span style="text-align:right"></span></p>
-<h2 id="olympic-marathon-data">Olympic Marathon Data</h2>
+<h2 id="olympic-marathon-data-edit">Olympic Marathon Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/olympic-marathon-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/olympic-marathon-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <table>
 <tr>
 <td width="70%">
@@ -529,8 +555,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </div>
 <p>Things to notice about the data include the outlier in 1904, in this year, the olympics was in St Louis, USA. Organizational problems and challenges with dust kicked up by the cars following the race meant that participants got lost, and only very few participants completed.</p>
 <p>More recent years see more consistently quick marathons.</p>
-<p><span style="text-align:right"></span></p>
-<h2 id="alan-turing">Alan Turing</h2>
+<h2 id="alan-turing-edit">Alan Turing <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/alan-turing-marathon.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/alan-turing-marathon.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <table>
 <tr>
 <td width="50%">
@@ -545,6 +570,9 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </td>
 </tr>
 </table>
+<center>
+<em>Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: <a href="http://www.turing.org.uk/scrapbook/run.html">Alan Turing Internet Scrapbook</a>.</em>
+</center>
 <p>If we had to summarise the objectives of machine learning in one word, a very good candidate for that word would be <em>generalization</em>. What is generalization? From a human perspective it might be summarised as the ability to take lessons learned in one domain and apply them to another domain. If we accept the definition given in the first session for machine learning, <br /><span class="math display">$$
 \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}
 $$</span><br /> then we see that without a model we can't generalise: we only have data. Data is fine for answering very specific questions, like &quot;Who won the Olympic Marathon in 2012?&quot;, because we have that answer stored, however, we are not given the answer to many other questions. For example, Alan Turing was a formidable marathon runner, in 1946 he ran a time 2 hours 46 minutes (just under four minutes per kilometer, faster than I and most of the other <a href="http://www.parkrun.org.uk/sheffieldhallam/">Endcliffe Park Run</a> runners can do 5 km). What is the probability he would have won an Olympics if one had been held in 1946?</p>
@@ -556,7 +584,7 @@ Data is fine for answering very specific questions, like "Who won the Olympic Ma
 
 <table><tr><td width="40%"><img class="" src="../slides/diagrams/turing-run.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></td><td width="50%"><img class="" src="../slides/diagrams/turing-times.gif" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></td></tr></table>
 
--->
+<center>*Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: [Alan Turing Internet Scrapbook](http://www.turing.org.uk/scrapbook/run.html)*</center>-->
 <p>Our first objective will be to perform a Gaussian process fit to the data, we'll do this using the <a href="https://github.com/SheffieldML/GPy">GPy software</a>.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> GPy</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_full <span class="op">=</span> GPy.models.GPRegression(x,yhat)
@@ -636,9 +664,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 <object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg" style="vertical-align:middle;">
 </object>
 <p>The pinball plot shows the flow of any input ball through the deep Gaussian process. In a pinball plot a series of vertical parallel lines would indicate a purely linear function. For the olypmic marathon data we can see the first layer begins to shift from input towards the right. Note it also does so with some uncertainty (indicated by the shaded backgrounds). The second layer has less uncertainty, but bunches the inputs more strongly to the right. This input layer of uncertainty, followed by a layer that pushes inputs to the right is what gives the heteroschedastic noise.</p>
-<p><span style="text-align:right"></span></p>
-<p><span style="text-align:right"></span></p>
-<h2 id="della-gatta-gene-data">Della Gatta Gene Data</h2>
+<h2 id="della-gatta-gene-data-edit">Della Gatta Gene Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/della-gatta-gene-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/della-gatta-gene-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <ul>
 <li>Given given expression levels in the form of a time series from <span class="citation">Della Gatta et al. (2008)</span>.</li>
 </ul>
@@ -785,8 +811,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 <h2 id="tp53-gene-pinball-plot">TP53 Gene Pinball Plot</h2>
 <object class="svgplot " align data="../slides/diagrams/deepgp/della-gatta-gene-deep-gp-pinball.svg" style="vertical-align:middle;">
 </object>
-<p><span style="text-align:right"></span></p>
-<h2 id="step-function">Step Function</h2>
+<h2 id="step-function-edit">Step Function <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/step-function-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/step-function-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Next we consider a simple step function data set.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">num_low<span class="op">=</span><span class="dv">25</span>
 num_high<span class="op">=</span><span class="dv">25</span>
@@ -826,6 +851,9 @@ mlai.write_figure(figure<span class="op">=</span>fig,filename<span class="op">=<
             transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/gp/step-function-gp.svg" style="vertical-align:middle;">
 </object>
+<center>
+<em>Gaussian process fit to the step function data. Note the large error bars and the over-smoothing of the discontinuity. Error bars are shown at two standard deviations.</em>
+</center>
 <p>The resulting fit to the step function data shows some challenges. In particular, the over smoothing at the discontinuity. If we know how many discontinuities there are, we can parameterize them in the step function. But by doing this, we form a semi-parametric model. The parameters indicate how many discontinuities are, and where they are. They can be optimized as part of the model fit. But if new, unforeseen, discontinuities arise when the model is being deployed in practice, these won't be accounted for in the predictions.</p>
 <h2 id="step-function-data-deep-gp">Step Function Data Deep GP</h2>
 <p>First we initialize a deep Gaussian process with three latent layers (four layers total). Within each layer we create a GP with an exponentiated quadratic covariance (<code>GPy.kern.RBF</code>).</p>
@@ -877,6 +905,9 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </object>
 <object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp-layer-3.svg" style="vertical-align:middle;">
 </object>
+<center>
+<em>From top to bottom, the Gaussian process mapping function that makes up each layer of the resulting deep Gaussian process.</em>
+</center>
 <p>A pinball plot can be created for the resulting model to understand how the input is being translated to the output across the different layers.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax<span class="op">=</span>plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
 m.visualize_pinball(offset<span class="op">=</span>offset, ax<span class="op">=</span>ax, scale<span class="op">=</span>scale, xlim<span class="op">=</span>xlim, ylim<span class="op">=</span>ylim, portion<span class="op">=</span><span class="fl">0.1</span>, points<span class="op">=</span><span class="dv">50</span>)
@@ -884,9 +915,9 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>, ax<span class="op">=</span>ax)</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/deepgp/step-function-deep-gp-pinball.svg" style="vertical-align:middle;">
 </object>
-<p><span style="text-align:right"></span></p>
-<p><span style="text-align:right"></span></p>
-<p><span style="text-align:right"></span></p>
+<center>
+<em>Pinball plot of the deep GP fitted to the step function data. Each layer of the model pushes the 'ball' towards the left or right, saturating at 1 and 0. This causes the final density to be be peaked at 0 and 1. Transitions occur driven by the uncertainty of the mapping in each layer.</em>
+</center>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data <span class="op">=</span> pods.datasets.mcycle()
 x <span class="op">=</span> data[<span class="st">&#39;X&#39;</span>]
@@ -904,7 +935,7 @@ ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 mlai.write_figure(filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/datasets/motorcycle-helmet.svg&#39;</span>, 
             transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
-<h2 id="motorcycle-helmet-data">Motorcycle Helmet Data</h2>
+<h2 id="motorcycle-helmet-data-edit">Motorcycle Helmet Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/motorcycle-helmet-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/motorcycle-helmet-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <object class="svgplot " align data="../slides/diagrams/datasets/motorcycle-helmet.svg" style="vertical-align:middle;">
 </object>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_full <span class="op">=</span> GPy.models.GPRegression(x,yhat)
@@ -968,10 +999,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 <h2 id="motorcycle-helmet-pinball-plot">Motorcycle Helmet Pinball Plot</h2>
 <object class="svgplot " align data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-pinball.svg" style="vertical-align:middle;">
 </object>
-<p><span style="text-align:right"></span></p>
-<p><span style="text-align:right"></span></p>
-<p><span style="text-align:right"></span></p>
-<h2 id="robot-wireless-data">Robot Wireless Data</h2>
+<h2 id="robot-wireless-data-edit">Robot Wireless Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/robot-wireless-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/robot-wireless-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>The robot wireless data is taken from an experiment run by Brian Ferris at University of Washington. It consists of the measurements of WiFi access point signal strengths as Brian walked in a loop.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data<span class="op">=</span>pods.datasets.robot_wireless()
 
@@ -1066,8 +1094,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
             transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/deepgp/robot-wireless-latent-space.svg" style="vertical-align:middle;">
 </object>
-<p><span style="text-align:right"></span></p>
-<h2 id="motion-capture">Motion Capture</h2>
+<h2 id="motion-capture-edit">Motion Capture <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/deep-high-five.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/deep-high-five.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <ul>
 <li>‘High five’ data.</li>
 <li>Model learns structure between two interacting subjects.</li>
@@ -1076,7 +1103,6 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 <object class="svgplot " align data="../slides/diagrams/shared.svg" style="vertical-align:middle;">
 </object>
 <p><img class="negate" src="../slides/diagrams/deep-gp-high-five2.png" width="100%" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></p>
-<p><span style="text-align:right"></span></p>
 <p><small><span style="text-align:right">Thanks to: Zhenwen Dai and Neil D. Lawrence</span></small></p>
 <p>We now look at the deep Gaussian processes' capacity to perform unsupervised learning.</p>
 <p>We will look at a sub-sample of the MNIST digit data set.</p>
@@ -1097,7 +1123,7 @@ labels <span class="op">=</span> []
 Y <span class="op">=</span> np.vstack(Y).astype(np.float64)
 labels <span class="op">=</span> np.hstack(labels)
 Y <span class="op">/=</span> <span class="dv">255</span>.</code></pre></div>
-<h2 id="fit-a-deep-gp">Fit a Deep GP</h2>
+<h2 id="fit-a-deep-gp-edit">Fit a Deep GP <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/deep-usps-digits.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/deep-usps-digits.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>We're going to fit a Deep Gaussian process model to the MNIST data with two hidden layers. Each of the two Gaussian processes (one from the first hidden layer to the second, one from the second hidden layer to the data) has an exponentiated quadratic covariance.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> deepgp
 <span class="im">import</span> GPy</code></pre></div>
@@ -1189,7 +1215,6 @@ fig, axs <span class="op">=</span> plt.subplots(rows,cols,figsize<span class="op
 mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&quot;../slides/diagrams/deepgp/digit-samples-deep-gp.svg&quot;</span>, transparent<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <object class="svgplot " align data="../slides/diagrams/digit-samples-deep-gp.svg" style="vertical-align:middle;">
 </object>
-<p><span style="text-align:right"></span></p>
 <object class="svgplot " align data="../slides/diagrams/deep-health.svg" style="vertical-align:middle;">
 </object>
 <ul>
@@ -1201,15 +1226,20 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 <li><em>Recurrent Gaussian Processes</em> <span class="citation">Mattos et al. (2015)</span></li>
 <li><p><em>Gaussian Process Based Approaches for Survival Analysis</em> <span class="citation">A. D. Saul (2016)</span></p></li>
 </ul>
-<p><span style="text-align:right"></span></p>
-<h2 id="emukit-playground">Emukit Playground</h2>
+<h2 id="emukit-playground-edit">Emukit Playground <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emukit-playground.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emukit-playground.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Emukit playground is a software toolkit for exploring the use of statistical emulation as a tool. It was built by <a href="https://twitter.com/_AdamHirst">Adam Hirst</a>, during his software engineering internship at Amazon and supervised by Cliff McCollum.</p>
 <div style="text-align:center">
 <a href="https://amzn.github.io/emukit-playground/"><img class="" src="../slides/diagrams/uq/emukit-playground.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></a>
 </div>
+<center>
+<em>Emukit playground is a tutorial for understanding the simulation/emulation relationship.</em>
+</center>
 <div style="text-align:center">
 <a href="https://amzn.github.io/emukit-playground/#!/learn/bayesian_optimization"><img class="negate" src="../slides/diagrams/uq/emukit-playground-bayes-opt.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></a>
 </div>
+<center>
+<em>Tutorial on Bayesian optimization of the number of taxis deployed from Emukit playground.</em>
+</center>
 <p>You can explore Bayesian optimization of a taxi simulation.</p>
 <h2 id="uncertainty-quantification">Uncertainty Quantification</h2>
 <blockquote>
@@ -1226,6 +1256,9 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/uq/mountaincar.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+<center>
+<em>The mountain car simulation from the Open AI gym.</em>
+</center>
 <p>The goal is to define a sequence of actions (push the car right or left with certain intensity) to make the car reach the flag after a number <span class="math inline"><em>T</em></span> of time steps.</p>
 <p>At each time step <span class="math inline"><em>t</em></span>, the car is characterized by a vector <span class="math inline">$\inputVector_{t} = (p_t,v_t)$</span> of states which are respectively the the position and velocity of the car at time <span class="math inline"><em>t</em></span>. For a sequence of states (an episode), the dynamics of the car is given by</p>
 <p><br /><span class="math display">$$\inputVector_{t+1} = \mappingFunction(\inputVector_{t},\textbf{u}_{t})$$</span><br /></p>
@@ -1425,8 +1458,7 @@ anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Bes
 <iframe src="../slides/diagrams/uq/mountain_car_multi_fidelity.html" width="1024" height="768" allowtransparency="true" frameborder="0">
 </iframe>
 <p>And problem solved! We see how the problem is also solved with 250 observations of the high fidelity simulator and 250 of the low fidelity simulator.</p>
-<p><span style="text-align:right"></span></p>
-<h2 id="emukit">Emukit</h2>
+<h2 id="emukit-edit">Emukit <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emukit-software.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emukit-software.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <ul>
 <li><em>Multi-fidelity emulation</em>: build surrogate models when data is obtained from multiple information sources that have different fidelity and/or cost;</li>
 <li><em>Bayesian optimisation</em>: optimise physical experiments and tune parameters of machine learning algorithms;</li>
@@ -1434,9 +1466,7 @@ anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Bes
 <li><em>Sensitivity analysis</em>: analyse the influence of inputs on the outputs of a given system;</li>
 <li><em>Bayesian quadrature</em>: efficiently compute the integrals of functions that are expensive to evaluate.</li>
 </ul>
-<p><span style="text-align:right"></span></p>
-<p><span style="text-align:right"></span></p>
-<h2 id="mxfusion-modular-probabilistic-programming-on-mxnet">MXFusion: Modular Probabilistic Programming on MXNet</h2>
+<h2 id="mxfusion-modular-probabilistic-programming-on-mxnet-edit">MXFusion: Modular Probabilistic Programming on MXNet <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/mxfusion-intro.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/mxfusion-intro.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/ml/mxfusion.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
