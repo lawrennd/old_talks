@@ -1,4 +1,4 @@
-BASE=towards-ml-systems-design
+BASE=bayesian-methods
 include ../make-talk-flags.mk
 include ../make-talk.mk
 
