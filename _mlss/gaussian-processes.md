@@ -36,16 +36,9 @@ transition: None
 Stefanos Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Dai, Javier Gonzalez, Andreas Damianou, Mark Pullin, Michael Smith, James Hensman, John Quinn, Martin Mubangizi.
 
 
-\newslide{Thanks!}
+\thanks
 
-\slides{
-* twitter: \@lawrennd
-* blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
-}
-
-\subsection{References}
-
-
+\references
 
 
 
