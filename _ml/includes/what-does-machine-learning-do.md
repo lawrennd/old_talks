@@ -22,6 +22,7 @@
 * Jumper (jersey/sweater) purchase with logistic regression
 }
 $$ \text{odds} = \frac{p(\text{bought})}{p(\text{not bought})} $$
+
 $$ \log \text{odds}  = \beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}.$$
 \notes{Here $\beta_0$, $\beta_1$ and $\beta_2$ are the parameters of the model. If $\beta_1$ and $\beta_2$  are both positive, then the log-odds that someone will buy a jumper increase with increasing latitude and age, so the further north you are and the older you are the more likely you are to buy a jumper. The parameter $\beta_0$ is an offset parameter, and gives the log-odds of buying a jumper at zero age and on the equator. It is likely to be negative[^logarithm] indicating that the purchase is odds-against. This is actually a classical statistical model, and models like logistic regression are widely used to estimate probabilities from ad-click prediction to risk of disease.
 
