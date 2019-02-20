@@ -22,7 +22,7 @@ $$\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$
 
 \newslide{}
 
-\slides{\threeColumns{\includepng{../slides/diagrams/earth_PNG37}{100%}}{$$\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$}{\includediagram{../slides/diagrams/ai/1969018}{center}{100%}}{35%}{45%}{20%}}
+\slides{\threeColumns{\includepng{../slides/diagrams/earth_PNG37}{100%}}{$$\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$}{\includediagram{../slides/diagrams/ai/1969018}{center}}{35%}{45%}{20%}}
 
 \notes{The real challenge, however, is end-to-end decision making. Taking information from the enviroment and using it to drive decision making to achieve goals.}
 
