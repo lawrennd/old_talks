@@ -2,7 +2,8 @@
 \define{societalEffects}
 \editme
 
-\newslide{Effects}
+
+\subsection{Societal Effects}
 \slides{
 * This phenomenon has already revolutionised biology.
     * Large scale data acquisition and distribution.
@@ -10,14 +11,11 @@
 * Great *promise* for personalized health.
 }
 
-\notes{
-\subsection{Societal Effects}
+\notes{We have already seen the effects of this changed dynamic in biology and computational biology. Improved sensorics have led to the new domains of transcriptomics, epigenomics, and 'rich phenomics' as well as considerably augmenting our capabilities in genomics.} 
 
-We have already seen the effects of this changed dynamic in biology and computational biology. Improved sensorics have led to the new domains of transcriptomics, epigenomics, and 'rich phenomics' as well as considerably augmenting our capabilities in genomics. 
+\notes{Biologists have had to become data-savvy, they require a rich understanding of the available data resources and need to assimilate existing data sets in their hypothesis generation as well as their experimental design. Modern biology has become a far more quantitative science, but the quantitativeness has required new methods developed in the domains of *computational biology* and *bioinformatics*.}
 
-Biologists have had to become data-savvy, they require a rich understanding of the available data resources and need to assimilate existing data sets in their hypothesis generation as well as their experimental design. Modern biology has become a far more quantitative science, but the quantitativeness has required new methods developed in the domains of *computational biology* and *bioinformatics*.
-
-There is also great promise for personalized health, but in health the wide data-sharing that has underpinned success in the computational biology community is much harder to cary out.} 
+\notes{There is also great promise for personalized health, but in health the wide data-sharing that has underpinned success in the computational biology community is much harder to cary out.} 
 
 
 \newslide{Societal Effects}
