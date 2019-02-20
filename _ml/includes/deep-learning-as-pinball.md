@@ -5,7 +5,7 @@
 \newslide{Deep Learning as Pinball}
 
 \figure{
-\includejpg{../slides/diagrams/576px-Early_Pinball}{30%}
+\includejpg{../slides/diagrams/576px-Early_Pinball}{40%}
 \notes{\caption{Deep learning models are composition of simple functions. We can think of a pinball machine as an analogy. Each layer of pins corresponds to one of the layers of functions in the model. Input data is represented by the location of the ball from left to right when it is dropped in from the top. Output class comes from the position of the ball as it leaves the pins at the bottom.}}
 }
 
@@ -23,8 +23,6 @@ An image has more than one number associated with it, so it's like playing pinba
 
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
-
-
 \displaycode{pods.notebook.display_plots('pinball{sample:0>3}.svg', 
                             '../slides/diagrams',
 							sample=IntSlider(1, 1, 2, 1))}
@@ -32,7 +30,7 @@ from ipywidgets import IntSlider}
 \newslide{}
 
 \figure{\div{\includediagram{../slides/diagrams/pinball001}}{}{text-align:center}
-\notes{\caption{At initialization, the pins, which represent the parameters of the function,  aren't in the right place to bring the balls to the correct decisions.}}}
+\notes{\caption{At initialization, the pins, which represent the parameters of the function, aren't in the right place to bring the balls to the correct decisions.}}}
 
 \newslide{}
 
@@ -42,7 +40,7 @@ from ipywidgets import IntSlider}
 
 \notes{Learning involves moving all the pins to be in the correct position, so that the ball ends up in the right place when it's fallen through the machine. But moving all these pins in hyperspace can be difficult. 
 
-In a hyper space you have to put a lot of data through the machine for to explore the positions of all the pins. *Adversarial examples* exploit this idea. 
+In a hyper-space you have to put a lot of data through the machine for to explore the positions of all the pins. *Adversarial examples* exploit this idea. 
 
 If you have access to the pinball machine, you can use gradient methods to find a position for the ball in the hyper space where the image looks like one thing, but will be classified as another.}
 
