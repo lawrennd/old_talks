@@ -30,16 +30,10 @@
 \define{\threeColumns{one}{two}{three}{width1}{width2}{width3}}{<table><tr><td width="\width1">\one</td><td width="\width2">\two</td><td width="\width3">\three</td></tr></table>}
 
 
-\define{\caption{block}}{\aligncenter{*\block*}}
+\define{\caption{block}}{\div{\block}{thumbcaption}}
 
 \defeval{\figure{block}{options}}{
-\define{inFloat}
-\block
-\undef{inFloat}
-\ifdef{storeCaption}
-Store Caption: \storeCaption
-\undef{storeCaption}
-\endif
+\div{\div{\block}{thumbinner}{width:222px;}}{thumb tright}
 }
 
 \defeval{\table{block}{options}}{
