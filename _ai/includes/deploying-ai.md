@@ -24,6 +24,6 @@
 * Internet of Intelligence but currently:
 	* AI systems are *fragile*
 }
-\notes{This presents major new challenges for machine learning systems design. We would like an internet of *intelligence* but currently our AI systems are *fragie*. A classical systems approach to design does not handle evolving environments well.}
+\notes{This presents major new challenges for machine learning systems design. We would like an internet of *intelligence* but currently our AI systems are *fragile*. A classical systems approach to design does not handle evolving environments well.}
 
 \endif
