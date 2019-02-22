@@ -33,8 +33,9 @@
 \define{\caption{block}}{\div{\block}{thumbcaption}}
 
 \defeval{\figure{block}{options}}{
-\div{\div{\block}{thumbinner}{width:222px;}}{thumb tright}
+\div{\block}{figure}
 }
+
 
 \defeval{\table{block}{options}}{
 \define{inFloat}
@@ -56,8 +57,8 @@ Store Caption: \storeCaption
 \define{\includempfour{filename}{width}{height}}{<video width="\width" height="\height" controls preload="none">
 <source src="\filename" type="video/mp4"/>
 </video>}
-\define{\includeimg{filename}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" height="auto" align="\align" style="background:none; border:none; box-shadow:none;vertical-align:middle">}
-\define{\includeimgclip{filename}{top}{right}{bottom}{left}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" align="\align" style="background:none; border:none; box-shadow:none; position:absolute; clip:rect(\top,\right,\bottom,\left);vertical-align:middle">}
+\define{\includeimg{filename}{width}{class}}{<img class="\class" src="\filename" style="width:\width">}
+\define{\includeimgclip{filename}{top}{right}{bottom}{left}{width}{class}{align}}{<img class="\class" src="\filename" style="width:\width;clip:rect(\top,\right,\bottom,\left)">}
 \define{\includehtml{filename}{width}{height}}{<iframe src="\filename" width="\width" height="\height" allowtransparency="true" frameborder="0">
 </iframe>}
 
