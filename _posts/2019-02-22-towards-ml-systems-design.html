@@ -375,8 +375,13 @@ m.initialize()</code></pre></div>
 m.optimize(messages<span class="op">=</span><span class="va">True</span>,max_iters<span class="op">=</span><span class="dv">10000</span>)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.staged_optimize(messages<span class="op">=</span>(<span class="va">True</span>,<span class="va">True</span>,<span class="va">True</span>))</code></pre></div>
 <h2 id="olympic-marathon-data-deep-gp">Olympic Marathon Data Deep GP</h2>
+<div class="figure" style="">
 <object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp.svg" style="vertical-align:middle;">
 </object>
+<div class="thumbcaption" style="">
+Deep GP fit to the Olympic marathon data. Error bars now change as the prediction evolves.
+</div>
+</div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
 plot.model_sample(m, scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, samps<span class="op">=</span><span class="dv">10</span>, ax<span class="op">=</span>ax, 
                   xlabel<span class="op">=</span><span class="st">&#39;year&#39;</span>, ylabel<span class="op">=</span><span class="st">&#39;pace min/km&#39;</span>, portion <span class="op">=</span> <span class="fl">0.225</span>)
@@ -385,8 +390,13 @@ ax.set_ylim(ylim)
 mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/olympic-marathon-deep-gp-samples.svg&#39;</span>, 
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <h2 id="olympic-marathon-data-deep-gp-1">Olympic Marathon Data Deep GP</h2>
+<div class="figure" style="">
 <object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-samples.svg" style="vertical-align:middle;">
 </object>
+<div class="thumbcaption" style="">
+Point samples run through the deep Gaussian process show the distribution of output locations.
+</div>
+</div>
 <h2 id="fitted-gp-for-each-layer">Fitted GP for each layer</h2>
 <p>Now we explore the GPs the model has used to fit each layer. First of all, we look at the hidden layer.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.visualize(scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, xlabel<span class="op">=</span><span class="st">&#39;year&#39;</span>,
@@ -396,18 +406,33 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;olympic-marathon-deep-gp-layer-</span><span class="sc">{sample:0&gt;1}</span><span class="st">.svg&#39;</span>, 
                             <span class="st">&#39;../slides/diagrams/deepgp&#39;</span>, sample<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">1</span>))</code></pre></div>
+<div class="figure" style="">
 <object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-layer-0.svg" style="vertical-align:middle;">
 </object>
+<div class="thumbcaption" style="">
+The mapping from input to the latent layer is broadly linear.
+</div>
+</div>
+<div class="figure" style="">
 <object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-layer-1.svg" style="vertical-align:middle;">
 </object>
+<div class="thumbcaption" style="">
+
+</div>
+</div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
 m.visualize_pinball(ax<span class="op">=</span>ax, scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, points<span class="op">=</span><span class="dv">30</span>, portion<span class="op">=</span><span class="fl">0.1</span>,
                     xlabel<span class="op">=</span><span class="st">&#39;year&#39;</span>, ylabel<span class="op">=</span><span class="st">&#39;pace km/min&#39;</span>, vertical<span class="op">=</span><span class="va">True</span>)
 mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg&#39;</span>, 
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <h2 id="olympic-marathon-pinball-plot">Olympic Marathon Pinball Plot</h2>
+<div class="figure" style="">
 <object class="svgplot " align data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg" style="vertical-align:middle;">
 </object>
+<div class="thumbcaption" style="">
+A pinball plot shows the movement of the 'ball' as it passes through each layer of the Gaussian processes. Mean directions of movement are shown by lines. Shading gives one standard deviation of movement position. At each layer, the uncertainty is reset. The overal uncertainty is the cumulative uncertainty from all the layers. There is some grouping of later points towards the right in the first layer, which also injects a large amount of uncertainty. Due to flattening of the curve in the second layer towards the right the uncertainty is reduced in final output.
+</div>
+</div>
 <p>The pinball plot shows the flow of any input ball through the deep Gaussian process. In a pinball plot a series of vertical parallel lines would indicate a purely linear function. For the olypmic marathon data we can see the first layer begins to shift from input towards the right. Note it also does so with some uncertainty (indicated by the shaded backgrounds). The second layer has less uncertainty, but bunches the inputs more strongly to the right. This input layer of uncertainty, followed by a layer that pushes inputs to the right is what gives the heteroschedastic noise.</p>
 <h2 id="machine-learning-in-supply-chain-edit">Machine Learning in Supply Chain <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_supply-chain/includes/ml-and-supply-chain.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_supply-chain/includes/ml-and-supply-chain.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="figure" style="">
