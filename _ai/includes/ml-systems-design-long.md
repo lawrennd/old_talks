@@ -32,7 +32,7 @@ We become exposed to mischief and adversaries. Adversaries intentially may wish 
 * Mischevious-Adversarial
 }
 
-\notes{One of the first automated decision making systems was the centrifugal governor, as held by "Science" on Holborns viaduct. The centrifugal governor was a key component in his steam engine. It senses increases in speed in the engine and closed the steam valve to prevent the engine overspeeding and destroying itself. Until the invention of this device, it was a human job to do this.}
+\notes{The centrifugal governor was a key component in the Boulton-Watt steam engine. It senses increases in speed in the engine and closed the steam valve to prevent the engine overspeeding and destroying itself. Until the invention of this device, it was a human job to do this.}
 
 \notes{The formal study of governors and other feedback control devices was then began by [James Clerk Maxwell](https://en.wikipedia.org/wiki/James_Clerk_Maxwell), the Scottish physicist. This field became the foundation of our modern techniques of artificial intelligence through Norbert Wiener's book *Cybernetics* [@Wiener:cybernetics48]. Cybernetics is Greek for governor, a word that in itself simply means helmsman in English.}
 
