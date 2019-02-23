@@ -8,39 +8,39 @@ from ipywidgets import IntSlider}
                             '../slides/diagrams',  sample=IntSlider(0, 0, 7, 1))}
 
 \define{\divoptions}{maxwidth:100vw; max-height:100vh}
-\define{\svgstyle}{width:80%;}
+\define{\widthVal}{80%}
 
 \newslide{}
 
-\slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{000}}{}{}{\svgstyle}}{\stubname}{\divoptions}}
+\slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{000}}{\widthVal}}{\stubname}{\divoptions}}
 
 \newslide{}
 
-\slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{001}}{}{}{\svgstyle}}{\stubname}{\divoptions}}
+\slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{001}}{\widthVal}}{\stubname}{\divoptions}}
 
 \newslide{}
 
-\slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{002}}{}{}{\svgstyle}}{\stubname}{\divoptions}}
+\slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{002}}{\widthVal}}{\stubname}{\divoptions}}
 
 \newslide{}
 
-\slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{003}}{}{}{\svgstyle}}{\stubname}{\divoptions}}
+\slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{003}}{\widthVal}}{\stubname}{\divoptions}}
 
 \newslide{}
 
-\slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{004}}{}{}{\svgstyle}}{\stubname}{\divoptions}}
+\slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{004}}{\widthVal}}{\stubname}{\divoptions}}
 
 \newslide{}
 
-\slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{005}}{}{}{\svgstyle}}{\stubname}{\divoptions}}
+\slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{005}}{\widthVal}}{\stubname}{\divoptions}}
 
 \newslide{}
 
-\slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{006}}{}{}{\svgstyle}}{\stubname}{\divoptions}}
+\slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{006}}{\widthVal}}{\stubname}{\divoptions}}
 
 \newslide{}
 
-\slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{007}}{}{}{\svgstyle}}{\stubname}{\divoptions}}
+\slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{007}}{\widthVal}}{\stubname}{\divoptions}}
 
 \notes{
 \figure{
