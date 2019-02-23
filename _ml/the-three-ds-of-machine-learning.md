@@ -19,7 +19,6 @@ transition: None
 
 \include{talk-macros.tex}
 
-
 \section{Introduction}
 
 \include{_data-science/includes/lies-damned-lies.md}
