@@ -1,6 +1,6 @@
 ---
 title: "Towards Machine Learning Systems Design"
-venue: "Department of Computer Science, University of Glasgow"
+venue: "Department of Computing Science, University of Glasgow"
 abstract: >
   Machine learning solutions, in particular those based on deep learning 
   methods, form an underpinning for the modern artificial intelligence 
@@ -17,7 +17,7 @@ author:
 - given: Neil D.
   family: Lawrence
   url: http://inverseprobability.com
-  institute: Amazon Cambridge and University of Sheffield
+  institute: University of Sheffield and Amazon Cambridge
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
   orchid: 
