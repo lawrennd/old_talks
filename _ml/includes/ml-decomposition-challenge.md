@@ -107,7 +107,7 @@ AutoML.}
 \notes{This naturally leads to co-evolution of systems, upstream errors can be
 compensated by downstream corrections.}
 
-\notes{To embrace this characteristic, end-to-end training could be considered. Why produce the best forecast by metrics when we can just produce the best forecast for our systems? End to end training can lead to improvements in performance, but it would also damage our systems decomposability and its interpretability, and perhaps its adaptability.}
+\notes{To embrace this characteristic, end-to-end training could be considered. Why produce the best forecast by metrics when we can just produce the best forecast for our systems? End-to-end training can lead to improvements in performance, but it would also damage our systems decomposability and its interpretability, and perhaps its adaptability.}
 
 \notes{The less human interpretable our systems are, the harder they are to adapt to different circumstances or diagnose when there's a challenge.  The trade-off between interpretability and performance is a constant tension which we should always retain in our minds when performing our system design.}
 
