@@ -2,7 +2,7 @@
 \define{privacyLossOfControl}
 \editme
 
-\newslide{Privacy, Loss of Control and Marginalization}
+\subsection{Privacy, Loss of Control and Marginalization}
 \slides{
 * Society is becoming harder to monitor
 * Individual is becoming easier to monitor

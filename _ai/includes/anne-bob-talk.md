@@ -42,14 +42,8 @@ from ipywidgets import IntSlider}
 
 \slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{007}}{\widthVal}}{\stubname}{\divoptions}}
 
-\notes{
-\rawfigure{
-\includediagram{../slides/diagrams/\concat{\stubname}{006}}
-\caption{Conversation relies on internal models of other individuals.}}}
-\notes{
-\rawfigure{
-\includediagram{../slides/diagrams/\concat{\stubname}{007}}
-\caption{Misunderstanding of context and who we are talking to leads to arguments.}}}
+\notes{\figure{\includediagram{../slides/diagrams/\concat{\stubname}{006}}{70%}}{Conversation relies on internal models of other individuals.}{\concat{\stubname}{-civil}}
+\figure{\includediagram{../slides/diagrams/\concat{\stubname}{007}}{70%}}{Misunderstanding of context and who we are talking to leads to arguments.}{\concat{\stubname}{-argument}}}
 
 \notes{Embodiment factors imply that, in our communication between humans, what is *not* said is, perhaps, more important than what is said. To communicate with each other we need to have a model of who each of us are.} 
 

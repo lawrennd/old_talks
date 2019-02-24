@@ -485,27 +485,34 @@ communicate
 <p>These stages of data science are also ridden with ambiguity. In the long term they could do with more formalization, and automation, but best practice needs to be understood by a wider community before that can happen.</p>
 <h1 id="assessing-the-organizations-readiness-edit">Assessing the Organizations Readiness <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-joel-tests.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-joel-tests.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
 <p>Assessing the readiness of data for analysis is one action that can be taken, but assessing teams that need to assimilate the information in the data is the other side of the coin. With this in mind both <a href="https://medium.com/@damoncivin/the-joel-test-for-data-readiness-4882aae64753">Damon Civin</a> and <a href="https://blog.dominodatalab.com/joel-test-data-science/">Nick Elprin</a> have independently proposed the idea of a &quot;Data Joel Test&quot;. A &quot;<a href="https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/">Joel Test</a>&quot; is a short questionaire to establish the ability of a team to handle software engineering tasks. It is designed as a rough and ready capability assessment. A &quot;Data Joel Test&quot; is similar, but for assessing the capability of a team in performing data science.</p>
+<h2 id="privacy-loss-of-control-and-marginalization-edit">Privacy, Loss of Control and Marginalization <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/privacy-loss-of-control.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/privacy-loss-of-control.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Society is becoming harder to monitor, but the individual is becoming easier to monitor. Social media monitoring for 'hate speech' can easily be turned to monitoring of political dissent. Marketing becomes more sinister when the target of the marketing is so well understood and the digital environment of the target is so well controlled.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
 <span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;anne-bob-conversation</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, 
                             <span class="st">&#39;../slides/diagrams&#39;</span>,  sample<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">1</span>))</code></pre></div>
-<div class="figure" style="">
-<div class="figure-frame" style="">
+<div class="figure">
+<div id="anne-bob-conversation-civil-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/anne-bob-conversation006.svg" style="vertical-align:middle;">
 </object>
-<div class="caption" style="">
-Figure: Conversation relies on internal models of other individuals.
+</div>
+<div id="anne-bob-conversation-civil-magnify" class="magnify" onclick="magnifyFigure(&#39;anne-bob-conversation-civil&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="anne-bob-conversation-civil-caption" class="caption-frame">
+<p>Figure: Conversation relies on internal models of other individuals.</p>
 </div>
 </div>
-</div>
-<div class="figure" style="">
-<div class="figure-frame" style="">
+<div class="figure">
+<div id="anne-bob-conversation-argument-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/anne-bob-conversation007.svg" style="vertical-align:middle;">
 </object>
-<div class="caption" style="">
-Figure: Misunderstanding of context and who we are talking to leads to arguments.
 </div>
+<div id="anne-bob-conversation-argument-magnify" class="magnify" onclick="magnifyFigure(&#39;anne-bob-conversation-argument&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="anne-bob-conversation-argument-caption" class="caption-frame">
+<p>Figure: Misunderstanding of context and who we are talking to leads to arguments.</p>
 </div>
 </div>
 <p>Embodiment factors imply that, in our communication between humans, what is <em>not</em> said is, perhaps, more important than what is said. To communicate with each other we need to have a model of who each of us are.</p>
