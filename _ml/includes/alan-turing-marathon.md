@@ -4,10 +4,7 @@
 
 \subsection{Alan Turing}
 
-\rawfigure{
-\columns{\includegif{../slides/diagrams/turing-times}{100%}}{\includejpg{../slides/diagrams/turing-run}{50%}}{50%}{50%}
-\notes{\caption{Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: [Alan Turing Internet Scrapbook](http://www.turing.org.uk/scrapbook/run.html).}}
-}
+\figure{\columns{\includegif{../slides/diagrams/turing-times}{100%}}{\includejpg{../slides/diagrams/turing-run}{50%}}{50%}{50%}}{Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: [Alan Turing Internet Scrapbook](http://www.turing.org.uk/scrapbook/run.html).}{turing-times}
 
 \newslide{Probability Winning Olympics?}
 
