@@ -36,10 +36,8 @@ mlai.write_figure(figure=fig,
 
 \newslide{Olympic Marathon Data GP}
 
-\rawfigure{
-\includediagram{../slides/diagrams/gp/olympic-marathon-gp}
-\notes{\caption{Gaussian process fit to the olympic marathon data. The error bars are too large, perhaps due to the outlier from 1904.}}
-}
+\figure{\includediagram{../slides/diagrams/gp/olympic-marathon-gp}}{Gaussian process fit to the olympic marathon data. The error bars are too large, perhaps due to the outlier from 1904.}{olympic-marathon-gp}
+
 
 \notes{
 \subsection{Fit Quality}

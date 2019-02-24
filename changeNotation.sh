@@ -10,3 +10,12 @@ for i in ${list[@]}; do
 	sed -i .bak "$expression" _${i}/includes/*.md
     fi
 done
+
+list=(talk-macros-back talk-macros-docx talk-macros-front talk-macros-html talk-macros-ipynb talk-macros-notes talk-macros-notes-docx talk-macros-notes-html talk-macros-notes-ipynb talk-macros-notes-tex tal-macros-slides talk-macros-slides.html talk-macros-slides-ipynb talk-macros-slides-tex talk-macros-tex)
+for i in ${list[@]}; do
+    if [ -f "${i}" ]; then
+	expression="s/\\\\${1}{/\\\\${2}{/g"
+	echo File ${i} searching $expression
+	sed -i .bak "$expression" ${i}
+    fi
+done

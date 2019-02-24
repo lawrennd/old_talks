@@ -32,9 +32,21 @@
 
 \define{\caption{block}}{\div{Figure: \block}{caption}}
 
-\defeval{\figure{block}{options}}{
+\defeval{\rawfigure{block}{options}}{
 \div{\div{\block}{figure-frame}}{figure}
 }
+
+\defeval{\figure{contents}{captionContents}{label}}{<div class="figure">
+<div class="figure-frame" id="\concat{\label}{-figure}">
+\contents
+</div>
+<div class="magnify" id="\concat{\label}{-magnify}" onclick="magnifyFigure('olympic')">
+<img class="img-button" src="./icons/Magnify_Large.svg" style="width:1.5ex">
+</div>
+<div class="caption-frame" id="\concat{\label}{-caption}">
+\captionContents
+</div>
+</div>}
 
 
 \defeval{\table{block}{options}}{

@@ -17,7 +17,7 @@
 \define{\colorgreen{block}}{{\color{\greenColor} \block}}
 \define{\colorblue{block}}{{\color{\blueColor} \block}}
 
-\define{\figure{block}{options}}{\begin{figure}[\options]
+\define{\rawfigure{block}{options}}{\begin{figure}[\options]
 \block
 \end{figure}}
 

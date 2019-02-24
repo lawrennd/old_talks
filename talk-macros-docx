@@ -32,7 +32,7 @@
 
 \define{\includeimg{filename}{width}{class}{align}}{![](\filename)}
 
-\define{\figure{block}{options}}{
+\define{\rawfigure{block}{options}}{
 \block
 \ifdef{storeCaption}
 *\storeCaption*
