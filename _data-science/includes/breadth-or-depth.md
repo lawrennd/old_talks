@@ -58,10 +58,8 @@
 \newslide{Wood or Tree}
 \slides{
 * Can either see a wood or a tree.}
-\rawfigure{
-\includejpg{../slides/diagrams/Grib_skov}{50%}
-\caption{Our methods give us either the woods or the trees, not the local structure such as a glade in the woods.}
-}
+\figure{\includejpg{../slides/diagrams/Grib_skov}{50%}}{Our methods give us either the woods or the trees, not the local structure such as a glade in the woods.}[wood-or-tree}
+
 <!-- https://upload.wikimedia.org/wikipedia/commons/5/5b/Grib_skov.jpg-->
 
 \notes{So we can know an individual extremely well, or we can know a population well. The saying "Can't see the wood for the trees", means we are distracted by the individual trees in a forest, and can't see the wider context. This seems appropriate for what may be going on here. We are becoming distracted by the information on the individual and we can't see the wider context of the data. 
