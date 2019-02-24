@@ -343,8 +343,8 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 <p>Things to notice about the data include the outlier in 1904, in this year, the olympics was in St Louis, USA. Organizational problems and challenges with dust kicked up by the cars following the race meant that participants got lost, and only very few participants completed.</p>
 <p>More recent years see more consistently quick marathons.</p>
 <h2 id="alan-turing-edit">Alan Turing <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/alan-turing-marathon.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/alan-turing-marathon.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
-<div class="figure" style="">
-<div class="figure-frame" style="">
+<div class="figure">
+<div id="turing-times-figure" class="figure-frame">
 <table>
 <tr>
 <td width="50%">
@@ -359,9 +359,12 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </td>
 </tr>
 </table>
-<div class="caption" style="">
-Figure: Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: <a href="http://www.turing.org.uk/scrapbook/run.html">Alan Turing Internet Scrapbook</a>.
 </div>
+<div id="turing-times-magnify" class="magnify" onclick="magnifyFigure(&#39;turing-times&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="turing-times-caption" class="caption-frame">
+<p>Figure: Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: <a href="http://www.turing.org.uk/scrapbook/run.html">Alan Turing Internet Scrapbook</a>.</p>
 </div>
 </div>
 <p>If we had to summarise the objectives of machine learning in one word, a very good candidate for that word would be <em>generalization</em>. What is generalization? From a human perspective it might be summarised as the ability to take lessons learned in one domain and apply them to another domain. If we accept the definition given in the first session for machine learning, <br /><span class="math display">$$
@@ -561,14 +564,17 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 <p>The challenges of integrating different machine learning components into a whole that acts effectively as a system seem unresolved. In software engineering, separating parts of a system in this way is known as <a href="">component-based software engineering</a>. The core idea is that the different parts of the system can be independently designed according to a sub-specfication. This is sometimes known as <em>separation of concerns</em>. However, once the components are machine learning based, tighter coupling becomes a side effect of the learned nature of the system. For example if a driverless car's detection of cyclist is dependent on its detection of the road surface, a change in the road surface detection algorithm will have downstream effects on the cyclist detection. Even if the road detection system has been improved by objective measures, the cyclist detection system may have become sensitive to the foibles of the previous version of road detection and will need to be retrained.</p>
 <p>Most of our experience with deployment relies on some approximation to the component based model, this is also important for verification of the system. If the components of the system can be verified then the composed system can also, potentially, be verified.</p>
 <h2 id="pigeonholing-edit">Pigeonholing <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/pigeonholing.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/pigeonholing.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
-<div class="figure" style="">
-<div class="figure-frame" style="">
+<div class="figure">
+<div id="too-many-pigeons-figure" class="figure-frame">
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/TooManyPigeons.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<div class="caption" style="">
-Figure: Decompartmentalization of the model into parts can be seen as pigeonholing the separate tasks that are required.
 </div>
+<div id="too-many-pigeons-magnify" class="magnify" onclick="magnifyFigure(&#39;too-many-pigeons&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="too-many-pigeons-caption" class="caption-frame">
+<p>Figure: Decompartmentalization of the model into parts can be seen as pigeonholing the separate tasks that are required.</p>
 </div>
 </div>
 <p>To deal with the complexity of systems design, a common approach is to break complex systems down into a series of tasks. An approach we can think of as &quot;pigeonholing&quot;. Classically, a sub-task could be thought of as a particular stage in machining (by analogy to productionlines in factories) or a sub-routine call in computing. Machine learning allows any complex sub-task, that was difficult to decompose by classical methods, to be reconstituted by acquiring data. In particular, when we think of emulating a human, we can ask many humans to perform the sub-task many times and fit machine learning models to reconstruct the performance, or to <em>emulate</em> the human in the performance of the task. For example, the decomposition of a complex process such as driving a car into apparently obvious sub-tasks (following the road, identifying pedestrians, etc).</p>
