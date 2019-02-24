@@ -6,10 +6,8 @@
 
 \subsection{Machine Learning in Supply Chain}
 
-\rawfigure{
-\includejpg{../slides/diagrams/supply-chain/container-2539942_1920}{70%}
-\notes{\caption{The container, arguably the largest agent of social change in the last 100 years.}}
-}
+\figure{\includejpg{../slides/diagrams/supply-chain/container-2539942_1920}{70%}}{The container, arguably the largest agent of social change in the last 100 years.}{container-2539942_1920}
+
 
 \notes{Containerization has had a dramatic effect on global economics, placing many people in the developing world at the end of the supply chain. }
 
@@ -24,11 +22,9 @@
 }
 
 \notes{
-\rawfigure{
-\columns{\includejpg{../slides/diagrams/supply-chain/wild-alaskan-cod}{90%}}{\includejpg{../slides/diagrams/supply-chain/wild-alaskan-cod-made-in-china}{90%}}{45%}{45%}
-\caption{Wild Alaskan Cod, that is a product of China. It is cheaper to ship the deep frozen fish thousands of kilometers for processing than to process locally.}
+\figure{\columns{\includejpg{../slides/diagrams/supply-chain/wild-alaskan-cod}{90%}}{\includejpg{../slides/diagrams/supply-chain/wild-alaskan-cod-made-in-china}{90%}}{45%}{45%}}{Wild Alaskan Cod, that is a product of China. It is cheaper to ship the deep frozen fish thousands of kilometers for processing than to process locally.}{wild-alaskan-cod}
 }
-}
+
 \notes{For example, you can buy Wild Alaskan Cod fished from Alaska, processed in China, sold in North America. This is driven by the low cost of transport for frozen cod vs the higher relative cost of cod processing in the US versus China. Similarly, \href{https://www.telegraph.co.uk/news/uknews/1534286/12000-mile-trip-to-have-seafood-shelled.html}{Scottish prawns are also processed in China for sale in the UK.} }
 
 \newslide{Machine Learning in Supply Chain}
@@ -50,6 +46,5 @@
 \newslide{Amazon Supply Chain Optimization}
 
 \includeyoutube{ncwsr1Of6Cw}{800}{600}
-
 
 \endif
