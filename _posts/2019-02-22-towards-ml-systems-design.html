@@ -116,36 +116,45 @@ communicate
 <p>Given typical speaking rates, that gives us an estimate of our ability to communicate of around 100 bits per second <span class="citation">(Reed and Durlach 1998)</span>. Computers on the other hand can communicate much more rapidly. Current wired network speeds are around a billion bits per second, ten million times faster.</p>
 <p>When it comes to compute though, our best estimates indicate our computers are slower. A typical modern computer can process make around 100 billion floating point operations per second, each floating point operation involves a 64 bit number. So the computer is processing around 6,400 billion bits per second.</p>
 <p>It's difficult to get similar estimates for humans, but by some estimates the amount of compute we would require to <em>simulate</em> a human brain is equivalent to that in the UK's fastest computer <span class="citation">(Ananthanarayanan et al. 2009)</span>, the MET office machine in Exeter, which in 2018 ranks as the 11th fastest computer in the world. That machine simulates the world's weather each morning, and then simulates the world's climate in the afternoon. It is a 16 petaflop machine, processing around 1,000 <em>trillion</em> bits per second.</p>
-<div class="figure" style="">
-<div class="figure-frame" style="">
+<div class="figure">
+<div id="lotus-49-figure" class="figure-frame">
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/Lotus_49-2.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<div class="caption" style="">
-Figure: The Lotus 49, view from the rear. The Lotus 49 was one of the last Formula One cars before the introduction of aerodynamic aids.
 </div>
+<div id="lotus-49-magnify" class="magnify" onclick="magnifyFigure(&#39;lotus-49&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="lotus-49-caption" class="caption-frame">
+<p>Figure: The Lotus 49, view from the rear. The Lotus 49 was one of the last Formula One cars before the introduction of aerodynamic aids.</p>
 </div>
 </div>
 <p>So when it comes to our ability to compute we are extraordinary, not compute in our conscious mind, but the underlying neuron firings that underpin both our consciousness, our sbuconsciousness as well as our motor control etc. By analogy I sometimes like to think of us as a Formula One engine. But in terms of our ability to deploy that computation in actual use, to share the results of what we have inferred, we are very limited. So when you imagine the F1 car that represents a psyche, think of an F1 car with bicycle wheels.</p>
-<div class="figure" style="">
-<div class="figure-frame" style="">
+<div class="figure">
+<div id="marcel-renault-figure" class="figure-frame">
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/640px-Marcel_Renault_1903.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<div class="caption" style="">
-Figure: Marcel Renault races a Renault 40 cv during the Paris-Madrid race, an early Grand Prix, in 1903. Marcel died later in the race after missing a warning flag for a sharp corner at Couhé Vérac, likely due to dust reducing visibility.
 </div>
+<div id="marcel-renault-magnify" class="magnify" onclick="magnifyFigure(&#39;marcel-renault&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="marcel-renault-caption" class="caption-frame">
+<p>Figure: Marcel Renault races a Renault 40 cv during the Paris-Madrid race, an early Grand Prix, in 1903. Marcel died later in the race after missing a warning flag for a sharp corner at Couhé Vérac, likely due to dust reducing visibility.</p>
 </div>
 </div>
 <p>In contrast, our computers have less computational power, but they can communicate far more fluidly. They are more like a go-kart, less well powered, but with tires that allow them to deploy that power.</p>
-<div class="figure" style="">
-<div class="figure-frame" style="">
+<div class="figure">
+<div id="caleb-mcduff-figure" class="figure-frame">
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/Caleb_McDuff_WIX_Silence_Racing_livery.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<div class="caption" style="">
-Figure: Caleb McDuff driving for WIX Silence Racing.
 </div>
+<div id="caleb-mcduff-magnify" class="magnify" onclick="magnifyFigure(&#39;caleb-mcduff&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="caleb-mcduff-caption" class="caption-frame">
+<p>Figure: Caleb McDuff driving for WIX Silence Racing.</p>
 </div>
 </div>
 <p>For humans, that means much of our computation should be dedicated to considering <em>what</em> we should compute. To do that efficiently we need to model the world around us. The most complex thing in the world around us is other humans. So it is no surprise that we model them. We second guess what their intentions are, and our communication is only necessary when they are departing from how we model them. Naturally, for this to work well, we need to understand those we work closely with. So it is no surprise that social communication, social bonding, forms so much of a part of our use of our limited bandwidth.</p>
@@ -413,7 +422,8 @@ m.optimize(messages<span class="op">=</span><span class="va">True</span>,max_ite
 <h2 id="olympic-marathon-data-deep-gp">Olympic Marathon Data Deep GP</h2>
 <div class="figure">
 <div id="olympic-marathon-deep-gp-figure" class="figure-frame">
-<p>../slides/diagrams/deepgp/olympic-marathon-deep-gp</p>
+<object class="svgplot " data="../slides/diagrams/deepgp/olympic-marathon-deep-gp.svg" style="vertical-align:middle;">
+</object>
 </div>
 <div id="olympic-marathon-deep-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-marathon-deep-gp&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
@@ -431,17 +441,17 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <h2 id="olympic-marathon-data-deep-gp-1">Olympic Marathon Data Deep GP</h2>
 <div class="figure">
-<div id="-figure" class="figure-frame">
-
+<div id="olympic-marathon-deep-gp-samples-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-samples.svg" style="vertical-align:middle;">
+</object>
 </div>
-<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<div id="olympic-marathon-deep-gp-samples-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-marathon-deep-gp-samples&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
-<div id="-caption" class="caption-frame">
-<p>Figure:</p>
+<div id="olympic-marathon-deep-gp-samples-caption" class="caption-frame">
+<p>Figure: Point samples run through the deep Gaussian process show the distribution of output locations.</p>
 </div>
 </div>
-<p>{<object class="svgplot olympic-marathon-deep-gp-samples"  data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-samples.svg"  style="vertical-align:middle;"></object></p>
 <h2 id="fitted-gp-for-each-layer">Fitted GP for each layer</h2>
 <p>Now we explore the GPs the model has used to fit each layer. First of all, we look at the hidden layer.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.visualize(scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, xlabel<span class="op">=</span><span class="st">&#39;year&#39;</span>,
@@ -460,7 +470,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
 <div id="olympic-marathon-deep-gp-layer-0-caption" class="caption-frame">
-<p>Figure: The mapping from input to the latent layer is broadly linear.</p>
+<p>Figure: The mapping from input to the latent layer is broadly, with some flattening as time goes on. Variance is high across the input range.</p>
 </div>
 </div>
 <div class="figure">
@@ -472,7 +482,7 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
 <div id="olympic-marathon-deep-gp-layer-1-caption" class="caption-frame">
-<p>Figure:</p>
+<p>Figure: The mapping from the latent layer to the output layer.</p>
 </div>
 </div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
@@ -482,14 +492,14 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <h2 id="olympic-marathon-pinball-plot">Olympic Marathon Pinball Plot</h2>
 <div class="figure">
-<div id="olympic-marathon-deep-gp-figure" class="figure-frame">
+<div id="olympic-marathon-deep-gp-pinball-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg" style="vertical-align:middle;">
 </object>
 </div>
-<div id="olympic-marathon-deep-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-marathon-deep-gp&#39;)">
+<div id="olympic-marathon-deep-gp-pinball-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-marathon-deep-gp-pinball&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
-<div id="olympic-marathon-deep-gp-caption" class="caption-frame">
+<div id="olympic-marathon-deep-gp-pinball-caption" class="caption-frame">
 <p>Figure: A pinball plot shows the movement of the 'ball' as it passes through each layer of the Gaussian processes. Mean directions of movement are shown by lines. Shading gives one standard deviation of movement position. At each layer, the uncertainty is reset. The overal uncertainty is the cumulative uncertainty from all the layers. There is some grouping of later points towards the right in the first layer, which also injects a large amount of uncertainty. Due to flattening of the curve in the second layer towards the right the uncertainty is reduced in final output.</p>
 </div>
 </div>
