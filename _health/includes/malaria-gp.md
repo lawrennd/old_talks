@@ -17,7 +17,7 @@ The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboratio
 
 \notes{Malaria data is spatial data. Uganda is split into districts, and health reports can be found for each district. This suggests that models such as conditional random fields could be used for spatial modelling, but there are two complexities with this. First of all, occasionally districts split into two. Secondly, sentinel sites are a specific location within a district, such as Nagongera which is a sentinel site based in the Tororo district.}
 
-\figure{
+\rawfigure{
 \includepng{../slides/diagrams/health/uganda-districts-2006}{50%}
 \caption{Ugandan districs. Data SRTM/NASA from <https://dds.cr.usgs.gov/srtm/version2_1>}
 }
@@ -28,7 +28,7 @@ The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboratio
 \ifdef{olympicMarathonData}
 \newslide{Kapchorwa District}
 
-\figure{
+\rawfigure{
 \includediagramclass{../slides/diagrams/health/Kapchorwa_District_in_Uganda}
 \notes{\caption{The Kapchorwa District, home district of Stephen Kiprotich.}}
 }
@@ -41,14 +41,14 @@ The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboratio
 
 \notes{The common standard for collecting health data on the African continent is from the Health management information systems (HMIS). However, this data suffers from missing values [@Gething:hmis06] and diagnosis of diseases like typhoid and malaria may be confounded.}
 
-\figure{\includediagramclass{../slides/diagrams/health/Tororo_District_in_Uganda}
+\rawfigure{\includediagramclass{../slides/diagrams/health/Tororo_District_in_Uganda}
 \notes{\caption{The Tororo district, where the sentinel site, Nagongera is located}}}
 
 \notes{[World Health Organization Sentinel Surveillance systems](https://www.who.int/immunization/monitoring_surveillance/burden/vpd/surveillance_type/sentinel/en/) are set up "when high-quality data are needed about a particular disease that cannot be obtained through a passive system". Several sentinel sites give accurate assessment of malaria disease levels in Uganda, including a site in Nagongera.}
 
 \newslide{Malaria Prediction in Nagongera (Sentinel Site)}
 
-\figure{
+\rawfigure{
 \includepng{../slides/diagrams/health/sentinel_nagongera}{100%}{negate}
 \notes{\caption{Sentinel and HMIS data along with rainfall and temperature for the Nagongera sentinel station in the Tororo district.}}
 }
@@ -67,7 +67,7 @@ The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboratio
 
 \newslide{GP School at Makerere}
 
-\figure{
+\rawfigure{
 \includejpg{../slides/diagrams/gpss/1157497_513423392066576_1845599035_n}{80%}
 \notes{\caption{The project arose out of the Gaussian process summer school held at Makerere in Kampala in 2013. The school led, in turn, to the Data Science Africa initiative.}
 }
@@ -78,7 +78,7 @@ The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboratio
 
 \includediagramclass{../slides/diagrams/health/Kabarole_District_in_Uganda}
 
-\figure{
+\rawfigure{
 \includegif{../slides/diagrams/health/kabarole}{100%}
 \notes{\caption{Estimate of the current disease situation in the Kabarole district over time. Estimate is constructed with a Gaussian process with an additive covariance funciton.}}
 }
@@ -93,7 +93,7 @@ The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboratio
 
 \newslide{Early Warning Systems}
 
-\figure{
+\rawfigure{
 \includegif{../slides/diagrams/health/monitor}{50%}
 \notes{\caption{The map of Ugandan districts with an overview of the Malaria situation in each district.}}
 }

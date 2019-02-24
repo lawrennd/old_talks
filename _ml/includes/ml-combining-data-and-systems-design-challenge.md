@@ -14,7 +14,7 @@
 
 \newslide{}
 
-\figure{
+\rawfigure{
 \includejpg{../slides/diagrams/data-science/water-bridge-hill-transport-arch-calm-544448-pxhere}{80%}
 \notes{\caption{A reservoir of data has more value if the data is
 consumbable. The data crisis can only be addressed if we focus on
@@ -23,7 +23,7 @@ outputs rather than inputs.}}
 
 \newslide{}
 
-\figure{
+\rawfigure{
 \includejpg{../slides/diagrams/data-science/1024px-Lake_District_picture}{80%}
 \notes{\caption{For a data first architecture we need to clean our
 data at source, rather than individually cleaning data for each

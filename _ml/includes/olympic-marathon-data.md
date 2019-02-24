@@ -49,7 +49,7 @@ mlai.write_figure(figure=fig,
 
 \newslide{Olympic Marathon Data}
 
-\figure{
+\rawfigure{
 \includediagram{../slides/diagrams/datasets/olympic-marathon}
 \notes{\caption{Olympic marathon pace times since 1892.}}}
 

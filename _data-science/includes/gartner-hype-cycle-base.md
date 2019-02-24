@@ -25,7 +25,7 @@ from ipywidgets import IntSlider}
 \endanimation
 }
 
-\figure{
+\rawfigure{
 \notesfigure{\includediagram{../slides/diagrams/data-science/\initials-google-trends}{}}
 \notes{\caption{Google trends for different technological terms on the hype cycle.}}
 }

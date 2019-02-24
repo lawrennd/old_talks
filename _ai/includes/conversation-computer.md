@@ -29,11 +29,11 @@ from ipywidgets import IntSlider}
 \endanimation
 }
 
-\figure{
+\rawfigure{
 \notesfigure{\includediagram{../slides/diagrams/\concat{\stubname}{006}}}
 \notes{\caption{Conversation relies on internal models of other individuals.}}
 }
-\figure{
+\rawfigure{
 \notesfigure{\includediagram{../slides/diagrams/\concat{\stubname}{007}}}
 \notes{\caption{Misunderstanding of context and who we are talking to leads to arguments.}}
 }

@@ -76,7 +76,7 @@ mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/step-function-
 
 \slides{\includediagram{../slides/diagrams/deepgp/step-function-deep-gp-layer-3}}
 
-\figure{\includediagram{../slides/diagrams/deepgp/step-function-deep-gp-layer-0} 
+\rawfigure{\includediagram{../slides/diagrams/deepgp/step-function-deep-gp-layer-0} 
 \includediagram{../slides/diagrams/deepgp/step-function-deep-gp-layer-1} 
 \includediagram{../slides/diagrams/deepgp/step-function-deep-gp-layer-2} 
 \includediagram{../slides/diagrams/deepgp/step-function-deep-gp-layer-3}
@@ -91,7 +91,7 @@ m.visualize_pinball(offset=offset, ax=ax, scale=scale, xlim=xlim, ylim=ylim, por
 mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/step-function-deep-gp-pinball.svg', 
                   transparent=True, frameon=True, ax=ax)}
 				  
-\figure{\includediagram{../slides/diagrams/deepgp/step-function-deep-gp-pinball}
+\rawfigure{\includediagram{../slides/diagrams/deepgp/step-function-deep-gp-pinball}
 \notes{\caption{Pinball plot of the deep GP fitted to the step function data. Each layer of the model pushes the 'ball' towards the left or right, saturating at 1 and 0. This causes the final density to be be peaked at 0 and 1. Transitions occur driven by the uncertainty of the mapping in each layer.}}}
 
 

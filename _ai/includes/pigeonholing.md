@@ -3,7 +3,7 @@
 \editme
 \subsection{Pigeonholing}
 
-\figure{
+\rawfigure{
 \includejpg{../slides/diagrams/TooManyPigeons}{60%}
 \notes{\caption{Decompartmentalization of the model into parts can be seen as pigeonholing the separate tasks that are required.}}
 }

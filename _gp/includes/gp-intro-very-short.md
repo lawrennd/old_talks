@@ -60,7 +60,7 @@ from ipywidgets import IntSlider}
 
 \includepng{../slides/diagrams/gp/gp_rejection_sample005}{100%}{negate}
 }
-\figure{
+\rawfigure{
 \notesfigure{\includepng{../slides/diagrams/gp/gp_rejection_sample003}
 \includepng{../slides/diagrams/gp/gp_rejection_sample004}
 \includepng{../slides/diagrams/gp/gp_rejection_sample005}}

@@ -64,7 +64,7 @@ We require data-desalination before it can be consumed!
 }
 
 \notes{
-\figure{
+\rawfigure{
 \notesfigure{\includediagram{../slides/diagrams/pomdp004}}
 \notes{\caption{Partially observable Markov decision process observing reward as actions are taken in different states}}
 }}

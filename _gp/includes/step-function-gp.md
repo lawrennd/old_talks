@@ -25,7 +25,7 @@ mlai.write_figure(figure=fig,filename='../slides/diagrams/gp/step-function-gp.sv
             transparent=True, frameon=True)}
 			
 
-\figure{\includediagram{../slides/diagrams/gp/step-function-gp} 
+\rawfigure{\includediagram{../slides/diagrams/gp/step-function-gp} 
 \caption{Gaussian process fit to the step function data. Note the large error bars and the over-smoothing of the discontinuity. Error bars are shown at two standard deviations.}
 }
 

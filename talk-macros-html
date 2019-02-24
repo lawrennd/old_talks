@@ -33,7 +33,7 @@
 \define{\caption{block}}{\div{Figure: \block}{caption}}
 
 \defeval{\figure{block}{options}}{
-\div{\block}{figure}
+\div{\div{\block}{figure-frame}}{figure}
 }
 
 
@@ -54,13 +54,6 @@ Store Caption: \storeCaption
 \define{\span{contents}{class}{style}}{<span class="\class" style="\style">\contents</span>}
 
 
-\define{\includempfour{filename}{width}{height}}{<video width="\width" height="\height" controls preload="none">
-<source src="\filename" type="video/mp4"/>
-</video>}
-\define{\includeimg{filename}{width}{class}}{<img class="\class" src="\filename" style="width:\width">}
-\define{\includeimgclip{filename}{top}{right}{bottom}{left}{width}{class}{align}}{<img class="\class" src="\filename" style="width:\width;clip:rect(\top,\right,\bottom,\left)">}
-\define{\includehtml{filename}{width}{height}}{<iframe src="\filename" width="\width" height="\height" allowtransparency="true" frameborder="0">
-</iframe>}
 
 
 
@@ -71,11 +64,18 @@ Store Caption: \storeCaption
 \define{\includempfour{filename}{width}{height}}{<video width="\width" height="\height" controls preload="none">
 <source src="\filename" type="video/mp4"/>
 </video>}
+\define{\includempfour{filename}{width}{height}}{<video width="\width" height="\height" controls preload="none">
+<source src="\filename" type="video/mp4"/>
+</video>}
 
+\define{\includeimg{filename}{width}{class}}{<img class="\class" src="\filename" style="width:\width">}
 \define{\includeimg{filename}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" height="auto" align="\align" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">}
+\define{\includeimgclip{filename}{top}{right}{bottom}{left}{width}{class}{align}}{<img class="\class" src="\filename" style="width:\width;clip:rect(\top,\right,\bottom,\left)">}
 \define{\includeimgclip{filename}{top}{right}{bottom}{left}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" align="\align" style="background:none; border:none; box-shadow:none; position:absolute; clip:rect(\top,\right,\bottom,\left);vertical-align:middle">}
-\define{\includediagram{filename}{align}{class}{style}}{<object class="svgplot \class" align="\align" data="\filename.svg" style="vertical-align:middle;\style"></object>}
+\defeval{\includediagram{filename}{width}{class}{align}{style}}{<object class="svgplot \class" \ifdef{align}align="\align"\endif data="\filename.svg" \ifdef{width}width="\width"\endif style="vertical-align:middle;\style"></object>}
 \define{\includediagramclass{filename}{class}{align}}{<object class="\class" align="\align" data="\filename.svg" style="vertical-align:middle"></object>}
+\define{\includehtml{filename}{width}{height}}{<iframe src="\filename" width="\width" height="\height" allowtransparency="true" frameborder="0">
+</iframe>}
 \define{\includehtml{filename}{width}{height}}{<iframe src="\filename" width="\width" height="\height" allowtransparency="true" frameborder="0">
 </iframe>}
 

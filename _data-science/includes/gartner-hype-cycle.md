@@ -4,7 +4,7 @@
 
 \subsection{The Gartner Hype Cycle}
 
-\figure{
+\rawfigure{
 \includediagram{../slides/diagrams/Gartner_Hype_Cycle}{60%}
 \notes{\caption{The Gartner Hype Cycle}}
 }

@@ -49,10 +49,6 @@ incremental: True
 \include{_data-science/includes/data-science-africa.md}
 \include{_health/includes/malaria-gp.md}
 
-\newslide{Thanks!}
-
-* twitter: \@lawrennd
-* blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
-* podcast: <http://thetalkingmachines.com>
+\thanks
 
 \references

@@ -67,7 +67,7 @@ I have in the past argued strongly against the term artificial intelligence but 
 
 \subsection{The Digital Catch 22}
 
-\figure{
+\rawfigure{
 \includejpg{../slides/diagrams/ai/Catch22}{30%}
 \notes{\caption{A digital Catch 22: for systems to watch over us they have to watch us.}}}
 
@@ -82,7 +82,7 @@ Big Brother refers to the surveillance society and the control of populations th
 
 \newslide{Dys-utopian View}
 
-\figure{
+\rawfigure{
 \columns{\includepng{../slides/diagrams/ai/Cropped-big-brother-is-watching-1984}{80%}}{\includepng{../slides/diagrams/ai/548px-Plakat_Mutti_is_Watching_You}{80%}{}{center}}{50%}{50%}
 \notes{\caption{The Big Brother to Big Mother dilemma. As computers help us they constrain us, leading to a form of dys-utopia.}}
 }
@@ -91,7 +91,7 @@ Big Brother refers to the surveillance society and the control of populations th
 
 \newslide{}
 
-\figure{
+\rawfigure{
 \includejpg{../slides/diagrams/ai/1024px-Thomas_Cole_The_Garden_of_Eden_Amon_Carter_Museum}{80%}
 \notes{\caption{The Garden of Eden by Thomas Cole}}
 }

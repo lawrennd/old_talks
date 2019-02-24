@@ -3,7 +3,7 @@
 \editme
 \newslide{}
 
-\figure{
+\rawfigure{
 \includejpg{../slides/diagrams/Classic_baby_shoes}{60%}
 \caption{For sale: baby shoes, never worn.}
 }

@@ -29,7 +29,7 @@ We are constrained by:
 
 \subsubsection{Pigeonholing}
 
-\figure{
+\rawfigure{
 \includejpg{../slides/diagrams/TooManyPigeons}{60%}
 \notes{\caption{The machine learning systems decomposition process calls for separating a complex task into decomposable separate entities. A process we can think of as *[pigeonholing](https://en.wikipedia.org/wiki/Pigeonholing)*.}}
 }
@@ -89,7 +89,7 @@ AutoML.}
 
 \newslide{Chicken and Egg}
 
-\figure{
+\rawfigure{
 \includejpg{../slides/diagrams/ai/chicken-and-egg}
 \notes{\caption{The answer to the question which comes first, the chicken or the egg is simple, they co-evolve [@Popper:conjectures63]. Similarly, when we place components together in a complex machine learning system, they will tend to co-evolve and compensate for one another.}}
 }

@@ -4,7 +4,7 @@
 
 \subsubsection{Deep Learning as Pinball}
 
-\figure{
+\rawfigure{
 \includejpg{../slides/diagrams/576px-Early_Pinball}{50%}
 \notes{\caption{Deep learning models are composition of simple functions. We can think of a pinball machine as an analogy. Each layer of pins corresponds to one of the layers of functions in the model. Input data is represented by the location of the ball from left to right when it is dropped in from the top. Output class comes from the position of the ball as it leaves the pins at the bottom.}}
 }
@@ -28,12 +28,12 @@ from ipywidgets import IntSlider}
 
 \newslide{}
 
-\figure{\includediagram{../slides/diagrams/pinball001}
+\rawfigure{\includediagram{../slides/diagrams/pinball001}
 \notes{\caption{At initialization, the pins, which represent the parameters of the function, aren't in the right place to bring the balls to the correct decisions.}}}
 
 \newslide{}
 
-\figure{\includediagram{../slides/diagrams/pinball002}
+\rawfigure{\includediagram{../slides/diagrams/pinball002}
 \notes{\caption{After learning the pins are now in the right place to bring the balls to the correct decisions.}}
 }
 

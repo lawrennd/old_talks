@@ -6,14 +6,14 @@
 
 \newslide{}
 
-\figure{
+\rawfigure{
 \includejpg{../slides/diagrams/science-holborn-viaduct}{50%}
 \notes{\caption{Centrifugal governor as held by "Science" on Holborn Viaduct}}
 }
 
 \newslide{}
 
-\figure{
+\rawfigure{
 \slides{\includepng{../slides/diagrams/SteamEngine_Boulton&Watt_1784}{70%}{negate}
 \caption{Watt's Steam Engine which made Steam Power Efficient and Practical}}
 }
@@ -34,7 +34,7 @@
 
 \newslide{}
 
-\figure{
+\rawfigure{
 \includepng{../slides/diagrams/Centrifugal_governor}{70%}{negate}
 \notes{\caption{The centrifugal governor, an early example of a decision making system. The parameters of the governor include the lengths of the linkages (which effect how far the throttle opens in response to movement in the balls), the weight of the balls (which effects inertia) and the limits of to which the balls can rise.}}
 }

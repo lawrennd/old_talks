@@ -54,7 +54,7 @@ mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/olympic-marath
 
 \subsection{Olympic Marathon Data Deep GP}
 
-\figure{
+\rawfigure{
 \includediagram{../slides/diagrams/deepgp/olympic-marathon-deep-gp}
 \notes{\caption{Deep GP fit to the Olympic marathon data. Error bars now change as the prediction evolves.}}
 }
@@ -69,7 +69,7 @@ mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/olympic-marath
 
 \subsection{Olympic Marathon Data Deep GP}
 
-\figure{
+\rawfigure{
 \includediagram{../slides/diagrams/deepgp/olympic-marathon-deep-gp-samples}
 \notes{\caption{Point samples run through the deep Gaussian process show the distribution of output locations.}}
 }
@@ -91,14 +91,14 @@ Now we explore the GPs the model has used to fit each layer. First of all, we lo
 
 \newslide{Olympic Marathon Data Latent 1}
 
-\figure{
+\rawfigure{
 \includediagram{../slides/diagrams/deepgp/olympic-marathon-deep-gp-layer-0}
 \notes{\caption{The mapping from input to the latent layer is broadly linear.}}
 }
 
 \newslide{Olympic Marathon Data Latent 2}
 
-\figure{
+\rawfigure{
 \includediagram{../slides/diagrams/deepgp/olympic-marathon-deep-gp-layer-1}
 \notes{\caption{}}
 }
@@ -111,7 +111,7 @@ mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/olympic-marath
 
 \subsection{Olympic Marathon Pinball Plot}
 
-\figure{
+\rawfigure{
 \includediagram{../slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball}
 \notes{\caption{\ifndef{pinballPlot}\define{pinBallPlot}A pinball plot shows the movement of the 'ball' as it passes through each layer of the Gaussian processes. Mean directions of movement are shown by lines. Shading gives one standard deviation of movement position. At each layer, the uncertainty is reset. The overal uncertainty is the cumulative uncertainty from all the layers.\endif There is some grouping of later points towards the right in the first layer, which also injects a large amount of uncertainty. Due to flattening of the curve in the second layer towards the right the uncertainty is reduced in final output.}}
 }

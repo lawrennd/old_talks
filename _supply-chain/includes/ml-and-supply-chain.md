@@ -6,7 +6,7 @@
 
 \subsection{Machine Learning in Supply Chain}
 
-\figure{
+\rawfigure{
 \includejpg{../slides/diagrams/supply-chain/container-2539942_1920}{70%}
 \notes{\caption{The container, arguably the largest agent of social change in the last 100 years.}}
 }
@@ -24,7 +24,7 @@
 }
 
 \notes{
-\figure{
+\rawfigure{
 \columns{\includejpg{../slides/diagrams/supply-chain/wild-alaskan-cod}{90%}}{\includejpg{../slides/diagrams/supply-chain/wild-alaskan-cod-made-in-china}{90%}}{45%}{45%}
 \caption{Wild Alaskan Cod, that is a product of China. It is cheaper to ship the deep frozen fish thousands of kilometers for processing than to process locally.}
 }

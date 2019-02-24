@@ -26,7 +26,7 @@ With this in mind The Wellcome Trust launched a report on ["Understanding Patien
 
 \newslide{Bush Pilot Model}
 
-\figure{
+\rawfigure{
 \includejpg{../slides/diagrams/health/bush-pilot-grant-mcconachie}{60%}
 \notes{\caption{Bush Pilot Grant McConachie}}
 }
@@ -41,7 +41,7 @@ With this in mind The Wellcome Trust launched a report on ["Understanding Patien
 
 \newslide{}
 
-\figure{\includejpg{../slides/diagrams/health/British_Airways_at_SFO}{50%}
+\rawfigure{\includejpg{../slides/diagrams/health/British_Airways_at_SFO}{50%}
 \caption{British Airways 747 at SFO}}
 
 \notes{I suspect most passengers would find it disconcerting if the pilot of a 747 was seen working on the engine shortly before a flight. As aviation has become more widespread, there is now a separation of responsibilities between pilots and mechanics. Indeed, Rolls Royce maintain ownership of their engines today, and merely lease them to the aircraft company. The responsibility for maintenance of the engine is entirely with Rolls Royce, yet the pilot is responsibility for the safety of the aircraft and its passengers.

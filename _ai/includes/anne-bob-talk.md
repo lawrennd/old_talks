@@ -43,11 +43,11 @@ from ipywidgets import IntSlider}
 \slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{007}}{\widthVal}}{\stubname}{\divoptions}}
 
 \notes{
-\figure{
+\rawfigure{
 \includediagram{../slides/diagrams/\concat{\stubname}{006}}
 \caption{Conversation relies on internal models of other individuals.}}}
 \notes{
-\figure{
+\rawfigure{
 \includediagram{../slides/diagrams/\concat{\stubname}{007}}
 \caption{Misunderstanding of context and who we are talking to leads to arguments.}}}
 
