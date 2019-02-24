@@ -10,7 +10,8 @@
 
 There's a sea of data, but most of it is undrinkable.
 
-\includejpg{../slides/diagrams/sea-water-ocean-waves}{50%}
+\slides{\includejpg{../slides/diagrams/sea-water-ocean-waves}{50%}}
+\notes{\figure{\includejpg{../slides/diagrams/sea-water-ocean-waves}{50%}}{The abundance of uncurated data is reminiscent of the abundance of undrinkable water for those cast adrift at sea.}{sea-water-ocean-waves}}
 
 We require data-desalination before it can be consumed!
 
@@ -48,26 +49,22 @@ We require data-desalination before it can be consumed!
 \slides{
 \newslide{}
 
-\includediagram{../slides/diagrams/pomdp001}
+\includediagram{../slides/diagrams/pomdp001}{80%}
 
 \newslide{}
 
-\includediagram{../slides/diagrams/pomdp002}
+\includediagram{../slides/diagrams/pomdp002}{80%}
 
 \newslide{}
 
-\includediagram{../slides/diagrams/pomdp003}
+\includediagram{../slides/diagrams/pomdp003}{80%}
 
 \newslide{}
 
-\includediagram{../slides/diagrams/pomdp004}
+\includediagram{../slides/diagrams/pomdp004}{80%}
 }
 
-\notes{
-\rawfigure{
-\notesfigure{\includediagram{../slides/diagrams/pomdp004}}
-\notes{\caption{Partially observable Markov decision process observing reward as actions are taken in different states}}
-}}
+\notes{\figure{\includediagram{../slides/diagrams/pomdp004}{80%}}{Partially observable Markov decision process observing reward as actions are taken in different states}}{pomdp-credit-assignment}}
 
 \newslide{Credit Allocation}
 \slides{
