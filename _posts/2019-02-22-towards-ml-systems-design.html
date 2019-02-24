@@ -198,26 +198,32 @@ communicate
 <p>A machine learning practitioner on the other hand would typically denote the parameter <span class="math inline"><em>w</em><sub>1</sub></span>, instead of <span class="math inline"><em>β</em><sub>1</sub></span> and would only be interested in the output of the prediction function, <span class="math inline">$\mappingFunction(\cdot)$</span> rather than the parameter itself. The general formalism of the prediction function allows for <em>non-linear</em> models. In machine learning, the emphasis on prediction over interpretability means that non-linear models are often used. The parameters, <span class="math inline"><strong>w</strong></span>, are a means to an end (good prediction) rather than an end in themselves (interpretable).</p>
 <!-- No slide titles in this context -->
 <h3 id="deepface-edit">DeepFace <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-face.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-face.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
-<div class="figure" style="">
-<div class="figure-frame" style="">
+<div class="figure">
+<div id="deep-face-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/deepface_neg.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<div class="caption" style="">
-Figure: The DeepFace architecture <span class="citation">(Taigman et al. 2014)</span>, visualized through colors to represent the functional mappings at each layer. There are 120 million parameters in the model.
 </div>
+<div id="deep-face-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-face&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="deep-face-caption" class="caption-frame">
+<p>Figure: The DeepFace architecture <span class="citation">(Taigman et al. 2014)</span>, visualized through colors to represent the functional mappings at each layer. There are 120 million parameters in the model.</p>
 </div>
 </div>
 <p>The DeepFace architecture <span class="citation">(Taigman et al. 2014)</span> consists of layers that deal with <em>translation</em> and <em>rotational</em> invariances. These layers are followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected layers.</p>
 <h3 id="deep-learning-as-pinball-edit">Deep Learning as Pinball <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-as-pinball.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-as-pinball.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
-<div class="figure" style="">
-<div class="figure-frame" style="">
+<div class="figure">
+<div id="early-pinball-figure" class="figure-frame">
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/576px-Early_Pinball.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<div class="caption" style="">
-Figure: Deep learning models are composition of simple functions. We can think of a pinball machine as an analogy. Each layer of pins corresponds to one of the layers of functions in the model. Input data is represented by the location of the ball from left to right when it is dropped in from the top. Output class comes from the position of the ball as it leaves the pins at the bottom.
 </div>
+<div id="early-pinball-magnify" class="magnify" onclick="magnifyFigure(&#39;early-pinball&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="early-pinball-caption" class="caption-frame">
+<p>Figure: Deep learning models are composition of simple functions. We can think of a pinball machine as an analogy. Each layer of pins corresponds to one of the layers of functions in the model. Input data is represented by the location of the ball from left to right when it is dropped in from the top. Output class comes from the position of the ball as it leaves the pins at the bottom.</p>
 </div>
 </div>
 <p>Sometimes deep learning models are described as being like the brain, or too complex to understand, but one analogy I find useful to help the gist of these models is to think of them as being similar to early pin ball machines.</p>
@@ -230,22 +236,28 @@ Figure: Deep learning models are composition of simple functions. We can think o
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;pinball</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, 
                             <span class="st">&#39;../slides/diagrams&#39;</span>,
                             sample<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>))</code></pre></div>
-<div class="figure" style="">
-<div class="figure-frame" style="">
+<div class="figure">
+<div id="pinball-initialization-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/pinball001.svg" style="vertical-align:middle;">
 </object>
-<div class="caption" style="">
-Figure: At initialization, the pins, which represent the parameters of the function, aren't in the right place to bring the balls to the correct decisions.
+</div>
+<div id="pinball-initialization-magnify" class="magnify" onclick="magnifyFigure(&#39;pinball-initialization&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="pinball-initialization-caption" class="caption-frame">
+<p>Figure: At initialization, the pins, which represent the parameters of the function, aren't in the right place to bring the balls to the correct decisions.</p>
 </div>
 </div>
-</div>
-<div class="figure" style="">
-<div class="figure-frame" style="">
+<div class="figure">
+<div id="pinball-trained-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/pinball002.svg" style="vertical-align:middle;">
 </object>
-<div class="caption" style="">
-Figure: After learning the pins are now in the right place to bring the balls to the correct decisions.
 </div>
+<div id="pinball-trained-magnify" class="magnify" onclick="magnifyFigure(&#39;pinball-trained&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="pinball-trained-caption" class="caption-frame">
+<p>Figure: After learning the pins are now in the right place to bring the balls to the correct decisions.</p>
 </div>
 </div>
 <p>Learning involves moving all the pins to be in the correct position, so that the ball ends up in the right place when it's fallen through the machine. But moving all these pins in hyperspace can be difficult.</p>
@@ -651,11 +663,22 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 <p>The challenge is particularly acute because of the <em>scale</em> at which we can deploy AI solutions. This means when something does go wrong, it may be going wrong in billions of households simultaneously.</p>
 <p>You can also check my blog post on <a href="http://inverseprobability.com/2017/11/15/decision-making">&quot;Decision Making and Diversity&quot;</a> You can also check my blog post on <a href="http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence">&quot;Natural vs Artifical Intelligence&quot;</a></p>
 <h2 id="emukit-edit">Emukit <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emukit-software.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emukit-software.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="figure">
+<div id="-figure" class="figure-frame">
+
+</div>
+<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="-caption" class="caption-frame">
+<p>Figure:</p>
+</div>
+</div>
+{
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/uq/emukit-software-page.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-
-<p>The Emukit software is a set of software tools for emulation and surrogate modeling.</p>
+<p>}{The Emukit software is a set of software tools for emulation and surrogate modeling. </p>
 <p>The aim is to provide a suite where different approaches to emulation are assimilated under one roof. The current version of Emukit includes <em>ulti-fidelity emulation</em> for build surrogate models when data is obtained from multiple information sources that have different fidelity and/or cost; <em>Bayesian optimisation</em> for optimising physical experiments and tune parameters of machine learning algorithms or other computational simulations; <em>experimental design and active learning</em>: design the most informative experiments and perform active learning with machine learning models; <em>sensitivity analysis</em>: analyse the influence of inputs on the outputs of a given system; and <em>Bayesian quadrature</em>: efficiently compute the integrals of functions that are expensive to evaluate.</p>
 <h1 id="conclusion-edit">Conclusion <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/towards-ml-systems-design.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/towards-ml-systems-design.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
 <p>Artificial intelligence and data science are fundamentally different. In one you are dealing with data collecte by happenstance, in the other you are trying to build systems in the real world, often by actively collecting data. Our approaches to systems design are building powerful machines that will be deployed in evolving environments. But this is presenting key challenges in how we maintain and manage our machine learning systems.</p>
