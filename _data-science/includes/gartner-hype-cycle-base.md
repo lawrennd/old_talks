@@ -25,10 +25,8 @@ from ipywidgets import IntSlider}
 \endanimation
 }
 
-\rawfigure{
-\notesfigure{\includediagram{../slides/diagrams/data-science/\initials-google-trends}{}}
-\notes{\caption{Google trends for different technological terms on the hype cycle.}}
-}
+\notes{\figure{\includediagram{../slides/diagrams/data-science/\initials-google-trends}{80%}}{Google trends for different technological terms on the hype cycle.}{gartner-hype-cycle-google-trends}}
+
 
 \notes{Google trends gives us insight into how far along various technological terms are on the hype cycle.}
 
