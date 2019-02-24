@@ -316,13 +316,16 @@ mlai.write_figure(figure<span class="op">=</span>fig,
                   filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/datasets/olympic-marathon.svg&#39;</span>, 
                   transparent<span class="op">=</span><span class="va">True</span>, 
                   frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
-<div class="figure" style="">
-<div class="figure-frame" style="">
+<div class="figure">
+<div id="olympic-marathon-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/datasets/olympic-marathon.svg" style="vertical-align:middle;">
 </object>
-<div class="caption" style="">
-Figure: Olympic marathon pace times since 1892.
 </div>
+<div id="olympic-marathon-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-marathon&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="olympic-marathon-caption" class="caption-frame">
+<p>Figure: Olympic marathon pace times since 1892.</p>
 </div>
 </div>
 <p>Things to notice about the data include the outlier in 1904, in this year, the olympics was in St Louis, USA. Organizational problems and challenges with dust kicked up by the cars following the race meant that participants got lost, and only very few participants completed.</p>
@@ -408,13 +411,15 @@ m.initialize()</code></pre></div>
 m.optimize(messages<span class="op">=</span><span class="va">True</span>,max_iters<span class="op">=</span><span class="dv">10000</span>)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.staged_optimize(messages<span class="op">=</span>(<span class="va">True</span>,<span class="va">True</span>,<span class="va">True</span>))</code></pre></div>
 <h2 id="olympic-marathon-data-deep-gp">Olympic Marathon Data Deep GP</h2>
-<div class="figure" style="">
-<div class="figure-frame" style="">
-<object class="svgplot " data="../slides/diagrams/deepgp/olympic-marathon-deep-gp.svg" style="vertical-align:middle;">
-</object>
-<div class="caption" style="">
-Figure: Deep GP fit to the Olympic marathon data. Error bars now change as the prediction evolves.
+<div class="figure">
+<div id="olympic-marathon-deep-gp-figure" class="figure-frame">
+<p>../slides/diagrams/deepgp/olympic-marathon-deep-gp</p>
 </div>
+<div id="olympic-marathon-deep-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-marathon-deep-gp&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="olympic-marathon-deep-gp-caption" class="caption-frame">
+<p>Figure: Deep GP fit to the Olympic marathon data. Error bars now change as the prediction evolves.</p>
 </div>
 </div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
@@ -425,15 +430,18 @@ ax.set_ylim(ylim)
 mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/olympic-marathon-deep-gp-samples.svg&#39;</span>, 
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <h2 id="olympic-marathon-data-deep-gp-1">Olympic Marathon Data Deep GP</h2>
-<div class="figure" style="">
-<div class="figure-frame" style="">
-<object class="svgplot " data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-samples.svg" style="vertical-align:middle;">
-</object>
-<div class="caption" style="">
-Figure: Point samples run through the deep Gaussian process show the distribution of output locations.
+<div class="figure">
+<div id="-figure" class="figure-frame">
+
+</div>
+<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="-caption" class="caption-frame">
+<p>Figure:</p>
 </div>
 </div>
-</div>
+<p>{<object class="svgplot olympic-marathon-deep-gp-samples"  data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-samples.svg"  style="vertical-align:middle;"></object></p>
 <h2 id="fitted-gp-for-each-layer">Fitted GP for each layer</h2>
 <p>Now we explore the GPs the model has used to fit each layer. First of all, we look at the hidden layer.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.visualize(scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, xlabel<span class="op">=</span><span class="st">&#39;year&#39;</span>,
@@ -443,22 +451,28 @@ Figure: Point samples run through the deep Gaussian process show the distributio
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;olympic-marathon-deep-gp-layer-</span><span class="sc">{sample:0&gt;1}</span><span class="st">.svg&#39;</span>, 
                             <span class="st">&#39;../slides/diagrams/deepgp&#39;</span>, sample<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">1</span>))</code></pre></div>
-<div class="figure" style="">
-<div class="figure-frame" style="">
+<div class="figure">
+<div id="olympic-marathon-deep-gp-layer-0-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-layer-0.svg" style="vertical-align:middle;">
 </object>
-<div class="caption" style="">
-Figure: The mapping from input to the latent layer is broadly linear.
+</div>
+<div id="olympic-marathon-deep-gp-layer-0-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-marathon-deep-gp-layer-0&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="olympic-marathon-deep-gp-layer-0-caption" class="caption-frame">
+<p>Figure: The mapping from input to the latent layer is broadly linear.</p>
 </div>
 </div>
-</div>
-<div class="figure" style="">
-<div class="figure-frame" style="">
+<div class="figure">
+<div id="olympic-marathon-deep-gp-layer-1-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-layer-1.svg" style="vertical-align:middle;">
 </object>
-<div class="caption" style="">
-Figure:
 </div>
+<div id="olympic-marathon-deep-gp-layer-1-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-marathon-deep-gp-layer-1&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="olympic-marathon-deep-gp-layer-1-caption" class="caption-frame">
+<p>Figure:</p>
 </div>
 </div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
@@ -467,13 +481,16 @@ m.visualize_pinball(ax<span class="op">=</span>ax, scale<span class="op">=</span
 mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg&#39;</span>, 
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <h2 id="olympic-marathon-pinball-plot">Olympic Marathon Pinball Plot</h2>
-<div class="figure" style="">
-<div class="figure-frame" style="">
+<div class="figure">
+<div id="olympic-marathon-deep-gp-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/deepgp/olympic-marathon-deep-gp-pinball.svg" style="vertical-align:middle;">
 </object>
-<div class="caption" style="">
-Figure: A pinball plot shows the movement of the 'ball' as it passes through each layer of the Gaussian processes. Mean directions of movement are shown by lines. Shading gives one standard deviation of movement position. At each layer, the uncertainty is reset. The overal uncertainty is the cumulative uncertainty from all the layers. There is some grouping of later points towards the right in the first layer, which also injects a large amount of uncertainty. Due to flattening of the curve in the second layer towards the right the uncertainty is reduced in final output.
 </div>
+<div id="olympic-marathon-deep-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-marathon-deep-gp&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="olympic-marathon-deep-gp-caption" class="caption-frame">
+<p>Figure: A pinball plot shows the movement of the 'ball' as it passes through each layer of the Gaussian processes. Mean directions of movement are shown by lines. Shading gives one standard deviation of movement position. At each layer, the uncertainty is reset. The overal uncertainty is the cumulative uncertainty from all the layers. There is some grouping of later points towards the right in the first layer, which also injects a large amount of uncertainty. Due to flattening of the curve in the second layer towards the right the uncertainty is reduced in final output.</p>
 </div>
 </div>
 <p>The pinball plot shows the flow of any input ball through the deep Gaussian process. In a pinball plot a series of vertical parallel lines would indicate a purely linear function. For the olypmic marathon data we can see the first layer begins to shift from input towards the right. Note it also does so with some uncertainty (indicated by the shaded backgrounds). The second layer has less uncertainty, but bunches the inputs more strongly to the right. This input layer of uncertainty, followed by a layer that pushes inputs to the right is what gives the heteroschedastic noise.</p>
