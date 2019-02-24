@@ -41,10 +41,10 @@
 \contents
 </div>
 <div class="magnify" id="\concat{\label}{-magnify}" onclick="magnifyFigure('olympic')">
-<img class="img-button" src="./icons/Magnify_Large.svg" style="width:1.5ex">
+<img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex">
 </div>
 <div class="caption-frame" id="\concat{\label}{-caption}">
-\captionContents
+Figure: \captionContents
 </div>
 </div>}
 
