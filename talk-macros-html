@@ -81,7 +81,7 @@ Store Caption: \storeCaption
 </video>}
 
 \define{\includeimg{filename}{width}{class}}{<img class="\class" src="\filename" style="width:\width">}
-\define{\includeimg{filename}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" height="auto" align="\align" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">}
+<!--\define{\includeimg{filename}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" height="auto" align="\align" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">}-->
 \define{\includeimgclip{filename}{top}{right}{bottom}{left}{width}{class}{align}}{<img class="\class" src="\filename" style="width:\width;clip:rect(\top,\right,\bottom,\left)">}
 \define{\includeimgclip{filename}{top}{right}{bottom}{left}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" align="\align" style="background:none; border:none; box-shadow:none; position:absolute; clip:rect(\top,\right,\bottom,\left);vertical-align:middle">}
 \defeval{\includediagram{filename}{width}{class}{align}{style}}{<object class="svgplot \class" \ifdef{align}align="\align"\endif data="\filename.svg" \ifdef{width}width="\width"\endif style="vertical-align:middle;\style"></object>}
