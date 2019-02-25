@@ -1,3 +1,6 @@
+\ifndef{mountainCarSimulator}
+\define{mountainCarSimulator}
+\editme
 
 \subsection{Mountain Car Simulator}
 
@@ -125,3 +128,5 @@ anim=mc.animate_frames(frames, 'Best controller after 50 iterations of Bayesian 
 \includehtml{../slides/diagrams/uq/mountain_car_simulated.html}{1024}{768}
 
 \notes{he car can now make it to the top of the mountain! Emulating the reward function and using the EI helped as to find a linear controller that solves the problem.}
+
+\endif

@@ -1,3 +1,7 @@
+\ifndef{uncertaintyQuantification}
+\define{uncertaintyQuantification}
+\editme
+
 \subsection{Uncertainty Quantification}
 
 \slides{
@@ -56,3 +60,4 @@
 \include{_uq/includes/mountain-car-data-efficient.md}
 \include{_uq/includes/mountain-car-multi-fidelity.md}
 
+\endif

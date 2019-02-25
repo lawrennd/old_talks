@@ -1,3 +1,7 @@
+\ifndef{mountainCarDataEfficient}
+\define{mountainCarDataEfficient}
+\editme
+
 \subsection{Data Efficient Emulation}
 
 \slides{
@@ -151,3 +155,5 @@ anim=mc.animate_frames(frames, 'Best controller using the emulator of the dynami
 \slides{500 calls to the simulator vs 37,500 calls to the simulator}
 
 \notes{And the problem is again solved, but in this case we have replaced the simulator of the car dynamics by a Gaussian process emulator that we learned by calling the simulator only 500 times. Compared to the 37500 calls that we needed when applying Bayesian optimization directly on the simulator this is a great gain.}
+
+\endif

@@ -1,3 +1,7 @@
+\ifndef{mountainCarMultiFidelity}
+\define{mountainCarMultiFidelity}
+\editme
+
 \notes{In some scenarios we have simulators of the same environment that have different fidelities, that is that reflect with different level of accuracy the dynamics of the real world. Running simulations of the different fidelities also have a different cost: hight fidelity simulations are more expensive the cheaper ones. If we have access to these simulators we can combine high and low fidelity simulations under the same model.
 
 So let's assume that we have two simulators of the mountain car dynamics, one of high fidelity (the one we have used) and another one of low fidelity. The traditional approach to this form of multi-fidelity emulation is to assume that}
@@ -96,3 +100,5 @@ anim=mc.animate_frames(frames, 'Best controller with multi-fidelity emulator')}
 
 \slides{250 observations of high fidelity simulator and 250 of the low fidelity simulator}
 \notes{And problem solved! We see how the problem is also solved with 250 observations of the high fidelity simulator and 250 of the low fidelity simulator.}
+
+\endif
