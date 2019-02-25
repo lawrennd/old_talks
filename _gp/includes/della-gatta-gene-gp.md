@@ -2,6 +2,10 @@
 \define{dellaGattaGeneGp}
 \editme
 
+\notes{\subsection{Gene Expression Example}}
+
+\notes{We now consider an example in gene expression. Gene expression is the measurement of mRNA levels expressed in cells. These mRNA levels show which genes are 'switched on' and producing data. In the example we will use a Gaussian process to determine whether a given gene is active, or we are merely observing a noise response.}
+
 \include{_ml/includes/della-gatta-gene-data.md}
 
 \newslide{Gene Expression Example}
@@ -10,7 +14,8 @@
 
 \newslide{}
 
-\includepng{../slides/diagrams/health/1471-2105-12-180_1}
+\figure{\includepng{../slides/diagrams/health/1471-2105-12-180_1}{80%}}{The example is taken from the paper "A Simple Approach to Ranking Differentially Expressed Gene Expression Time Courses through Gaussian Process Regression." @Kalaitzis:simple11.}{a-simple-approach-to-ranking}
+
 \aligncenter{<http://www.biomedcentral.com/1471-2105/12/180>}
 
 \newslide{}
@@ -23,7 +28,7 @@ Our first objective will be to perform a Gaussian process fit to the data, we'll
 m_full.kern.lengthscale=50
 _ = m_full.optimize() # Optimize parameters of covariance function}
 
-\notes{Initialize the length scale parameter (which here actually represents a *time scale* of the covariance function to a reasonable value. Default would be 1, but here we set it to 50 minutes, given points are arriving across zero to 250 minutes.}
+\notes{Initialize the length scale parameter (which here actually represents a *time scale* of the covariance function) to a reasonable value. Default would be 1, but here we set it to 50 minutes, given points are arriving across zero to 250 minutes.}
 
 \code{xt = np.linspace(-20,260,200)[:,np.newaxis]
 yt_mean, yt_var = m_full.predict(xt)
@@ -44,7 +49,7 @@ mlai.write_figure(figure=fig,
 
 \newslide{TP53 Gene Data GP}
 
-\includediagram{../slides/diagrams/gp/della-gatta-gene-gp}
+\figure{\includediagram{../slides/diagrams/gp/della-gatta-gene-gp}{80%}}{Result of the fit of the Gaussian process model with the time scale parameter initialized to 50 minutes.}{della-gatta-gene-gp}
 
 \notes{Now we try a model initialized with a longer length scale.}
 
@@ -65,7 +70,7 @@ mlai.write_figure(figure=fig,
 
 \newslide{TP53 Gene Data GP}
 
-\includediagram{../slides/diagrams/gp/della-gatta-gene-gp2}
+\figure{\includediagram{../slides/diagrams/gp/della-gatta-gene-gp2}{80%}}{Result of the fit of the Gaussian process model with the time scale parameter initialized to 2000 minutes.}{della-gatta-gene-gp2}
 
 \notes{Now we try a model initialized with a lower noise.}
 
@@ -87,7 +92,7 @@ mlai.write_figure(figure=fig,
 
 \newslide{TP53 Gene Data GP}
 
-\includediagram{../slides/diagrams/gp/della-gatta-gene-gp3}
+\figure{\includediagram{../slides/diagrams/gp/della-gatta-gene-gp3}{80%}}{Result of the fit of the Gaussian process model with the noise initialized low (standard deviation 0.1) and the time scale parameter initialized to 20 minutes.}{della-gatta-gene-gp3}
 
 
 \setupplotcode{import teaching_plots as plot}
@@ -96,7 +101,7 @@ mlai.write_figure(figure=fig,
 
 \newslide{Multiple Optima}
 
-\includediagram{../slides/diagrams/gp/multiple-optima000}
+\figure{\includediagram{../slides/diagrams/gp/multiple-optima000}{50%}}{}{gp-multiple-optima000}
 
 <!--\newslide{Multiple Optima}
 
