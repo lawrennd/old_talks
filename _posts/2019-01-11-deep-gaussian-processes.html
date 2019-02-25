@@ -47,35 +47,44 @@ categories:
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
 <h1 id="introduction">Introduction</h1>
 <p>In the previous session on Gaussian processes, we introduced the Gaussian process model and the covariance function. In this session we are going to address two challenges of the Gaussian process. Firstly, we look at the computational tractability and secondly we look at extending the nature of the process beyond Gaussian.</p>
-<div class="figure" style="">
-<div class="figure-frame" style="">
+<div class="figure">
+<div id="cosmic-microwave-background-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="vertical-align:middle" src="../slides/diagrams/Planck_CMB.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<div class="caption" style="">
-Figure: The cosmic microwave background is, to a very high degree of precision, a Gaussian process. The parameters of its covariance function are given by fundamental parameters of the universe, such as the amount of dark matter and mass.
+</div>
+<div id="cosmic-microwave-background-magnify" class="magnify" onclick="magnifyFigure(&#39;cosmic-microwave-background&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="cosmic-microwave-background-caption" class="caption-frame">
+<p>Figure: The cosmic microwave background is, to a very high degree of precision, a Gaussian process. The parameters of its covariance function are given by fundamental parameters of the universe, such as the amount of dark matter and mass.</p>
 </div>
 </div>
-</div>
-<div class="figure" style="">
-<div class="figure-frame" style="">
+<div class="figure">
+<div id="modern-universe-non-linear-function-figure" class="figure-frame">
 <div style="fontsize:120px;vertical-align:middle">
 <img src="../slides/diagrams/earth_PNG37.png" width="20%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">=<em>f</em>(</span><img src="../slides/diagrams/Planck_CMB.png"  width="50%" style="display:inline-block;background:none;vertical-align:middle;border:none;box-shadow:none;"><span class="math inline">)</span>
 </div>
-<div class="caption" style="">
-Figure: What we observe today is some non-linear function of the cosmic microwave background.
 </div>
+<div id="modern-universe-non-linear-function-magnify" class="magnify" onclick="magnifyFigure(&#39;modern-universe-non-linear-function&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="modern-universe-non-linear-function-caption" class="caption-frame">
+<p>Figure: What we observe today is some non-linear function of the cosmic microwave background.</p>
 </div>
 </div>
 <h1 id="low-rank-gaussian-processes">Low Rank Gaussian Processes</h1>
-<div class="figure" style="">
-<div class="figure-frame" style="">
+<div class="figure">
+<div id="sparse-gp-comic-figure" class="figure-frame">
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/sparse-gps.jpg" width="45%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<div class="caption" style="">
-Figure: Image credit: Kai Arulkumaran
 </div>
+<div id="sparse-gp-comic-magnify" class="magnify" onclick="magnifyFigure(&#39;sparse-gp-comic&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="sparse-gp-comic-caption" class="caption-frame">
+<p>Figure: In recent years, approximations for Gaussian process models haven't been the most fashionable approach to machine learning. Image credit: Kai Arulkumaran</p>
 </div>
 </div>
 <p>Inference in a Gaussian process has computational complexity of <span class="math inline">$\bigO(\numData^3)$</span> and storage demands of <span class="math inline">$\bigO(\numData^2)$</span>. This is too large for many modern data sets.</p>
@@ -284,20 +293,34 @@ Figure: Comparison of the full Gaussian process fit with a sparse Gaussian proce
 <center>
 Modern data availability
 </center>
+<div class="figure">
+<div id="house-price-country-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/ml/house_price_country.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="house-price-country-magnify" class="magnify" onclick="magnifyFigure(&#39;house-price-country&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="house-price-country-caption" class="caption-frame">
+<p>Figure: House prices across the UK are now easily available. <a href="http://landregistry.data.gov.uk/" class="uri">http://landregistry.data.gov.uk/</a></p>
+</div>
 </div>
 <center>
 Proxy for index of deprivation?
 </center>
+<div class="figure">
+<div id="house-price-peak-district-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/ml/house_price_peak_district.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<center>
-Actually index of deprivation is a proxy for this ...
-</center>
-<div class="centered" style="">
-<img class="negate" src="../slides/diagrams/ml/house_price_peak_district.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<div id="house-price-peak-district-magnify" class="magnify" onclick="magnifyFigure(&#39;house-price-peak-district&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="house-price-peak-district-caption" class="caption-frame">
+<p>Figure: Zooming in on house prices across the UK's Peak District shows different areas of wealth. Could these house prices be used, e.g., as a proxy for the <a href="https://en.wikipedia.org/wiki/Multiple_deprivation_index">Index of Multiple Deprivation</a>. Or are such indices merely intermediate indices for the real measures we're interested in?</p>
+</div>
 </div>
 
 <table>
@@ -310,8 +333,18 @@ Actually index of deprivation is a proxy for this ...
 </td>
 </tr>
 </table>
+<div class="figure">
+<div id="gps-for-big-data-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/health/244_1_clip.png" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="gps-for-big-data-magnify" class="magnify" onclick="magnifyFigure(&#39;gps-for-big-data&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="gps-for-big-data-caption" class="caption-frame">
+<p>Figure: We can now take advantage of modern variational scaling techniques such as stochastic variational inference to fit Gaussian processes to very large data sets. <a href="http://auai.org/uai2013/prints/papers/244.pdf" class="uri">http://auai.org/uai2013/prints/papers/244.pdf</a></p>
+</div>
 </div>
 <center>
 <a href="http://auai.org/uai2013/prints/papers/244.pdf" class="uri">http://auai.org/uai2013/prints/papers/244.pdf</a>
@@ -326,8 +359,18 @@ Actually index of deprivation is a proxy for this ...
 </td>
 </tr>
 </table>
+<div class="figure">
+<div id="svi-gps-for-big-data-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/health/244_6_clip.png" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="svi-gps-for-big-data-magnify" class="magnify" onclick="magnifyFigure(&#39;svi-gps-for-big-data&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="svi-gps-for-big-data-caption" class="caption-frame">
+<p>Figure: New approaches to scaling Gaussian processes bring the potential to model these indices and others directly. <a href="http://auai.org/uai2013/prints/papers/244.pdf" class="uri">http://auai.org/uai2013/prints/papers/244.pdf</a></p>
+</div>
 </div>
 <center>
 <a href="http://auai.org/uai2013/prints/papers/244.pdf" class="uri">http://auai.org/uai2013/prints/papers/244.pdf</a>
@@ -342,10 +385,17 @@ Actually index of deprivation is a proxy for this ...
 <p><span class="citation">MacKay (n.d.)</span></p>
 </blockquote>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> teaching_plots <span class="im">as</span> plot</code></pre></div>
+<div class="figure">
+<div id="deep-neural-network-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/deepgp/deep-nn2.svg" style="vertical-align:middle;">
 </object>
-<div class="caption" style="">
-Figure: A deep neural network. Input nodes are shown at the bottom. Each hidden layer is the result of applying an affine transformation to the previous layer and placing through an activation function.
+</div>
+<div id="deep-neural-network-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-neural-network&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="deep-neural-network-caption" class="caption-frame">
+<p>Figure: A deep neural network. Input nodes are shown at the bottom. Each hidden layer is the result of applying an affine transformation to the previous layer and placing through an activation function.</p>
+</div>
 </div>
 <p>Mathematically, each layer of a neural network is given through computing the activation function, <span class="math inline">$\basisFunction(\cdot)$</span>, contingent on the previous layer, or the inputs. In this way the activation functions, are composed to generate more complex interactions than would be possible with any single layer. <br /><span class="math display">$$
 \begin{align}
@@ -363,14 +413,31 @@ $$</span><br /></p>
   \mappingMatrix = \eigenvectorMatrix\eigenvectwoMatrix^\top
   $$</span><br /> where if <span class="math inline">$\mappingMatrix \in \Re^{k_1\times k_2}$</span> then <span class="math inline">$\eigenvectorMatrix\in \Re^{k_1\times q}$</span> and <span class="math inline">$\eigenvectwoMatrix \in \Re^{k_2\times q}$</span>, i.e. we have a low rank matrix factorization for the weights.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> teaching_plots <span class="im">as</span> plot</code></pre></div>
+<div class="figure">
+<div id="low-rank-mapping-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/wisuvt.svg" style="vertical-align:middle;">
 </object>
-<div class="caption" style="">
-Figure: Pictorial representation of the low rank form of the matrix <span class="math inline">$\mappingMatrix$</span>
+</div>
+<div id="low-rank-mapping-magnify" class="magnify" onclick="magnifyFigure(&#39;low-rank-mapping&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="low-rank-mapping-caption" class="caption-frame">
+<p>Figure: Pictorial representation of the low rank form of the matrix <span class="math inline">$\mappingMatrix$</span>.</p>
+</div>
 </div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> teaching_plots <span class="im">as</span> plot</code></pre></div>
+<div class="figure">
+<div id="deep-nn-bottleneck-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/deepgp/deep-nn-bottleneck2.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="deep-nn-bottleneck-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-nn-bottleneck&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="deep-nn-bottleneck-caption" class="caption-frame">
+<p>Figure: Inserting the bottleneck layers introduces a new set of variables.</p>
+</div>
+</div>
 <p>Including the low rank decomposition of <span class="math inline">$\mappingMatrix$</span> in the neural network, we obtain a new mathematical form. Effectively, we are adding additional <em>latent</em> layers, <span class="math inline">$\latentVector$</span>, in between each of the existing hidden layers. In a neural network these are sometimes known as <em>bottleneck</em> layers. The network can now be written mathematically as <br /><span class="math display">$$
 \begin{align}
   \latentVector_{1} &amp;= \eigenvectwoMatrix^\top_1 \inputVector\\
@@ -545,8 +612,18 @@ Figure: Stacking Gaussian process models leads to non linear mappings at each st
 </iframe>
 <p>David Duvenaud also created a YouTube video to help visualize what happens as you drop through the layers of a deep GP.</p>
 <h2 id="gpy-a-gaussian-process-framework-in-python-edit">GPy: A Gaussian Process Framework in Python <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gpy-software.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gpy-software.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="figure">
+<div id="gpy-software-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/gp/gpy.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="gpy-software-magnify" class="magnify" onclick="magnifyFigure(&#39;gpy-software&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="gpy-software-caption" class="caption-frame">
+<p>Figure: GPy is a BSD licensed software code base for implementing Gaussian process models in Python. It is designed for teaching and modelling. We welcome contributions which can be made through the Github repository <a href="https://github.com/SheffieldML/GPy" class="uri">https://github.com/SheffieldML/GPy</a></p>
+</div>
 </div>
 <p>GPy is a BSD licensed software code base for implementing Gaussian process models in python. This allows GPs to be combined with a wide variety of software libraries.</p>
 <p>The software itself is available on <a href="https://github.com/SheffieldML/GPy">GitHub</a> and the team welcomes contributions.</p>
@@ -784,6 +861,8 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </div>
 </div>
 <p>The pinball plot shows the flow of any input ball through the deep Gaussian process. In a pinball plot a series of vertical parallel lines would indicate a purely linear function. For the olypmic marathon data we can see the first layer begins to shift from input towards the right. Note it also does so with some uncertainty (indicated by the shaded backgrounds). The second layer has less uncertainty, but bunches the inputs more strongly to the right. This input layer of uncertainty, followed by a layer that pushes inputs to the right is what gives the heteroschedastic noise.</p>
+<h2 id="gene-expression-example-edit">Gene Expression Example <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/della-gatta-gene-gp.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/della-gatta-gene-gp.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>We now consider an example in gene expression. Gene expression is the measurement of mRNA levels expressed in cells. These mRNA levels show which genes are 'switched on' and producing data. In the example we will use a Gaussian process to determine whether a given gene is active, or we are merely observing a noise response.</p>
 <h2 id="della-gatta-gene-data-edit">Della Gatta Gene Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/della-gatta-gene-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/della-gatta-gene-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <ul>
 <li>Given given expression levels in the form of a time series from <span class="citation">Della Gatta et al. (2008)</span>.</li>
@@ -816,15 +895,33 @@ mlai.write_figure(figure<span class="op">=</span>fig,
                   filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/datasets/della-gatta-gene.svg&#39;</span>, 
                   transparent<span class="op">=</span><span class="va">True</span>, 
                   frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
-<div style="text-align:center">
+<div class="figure">
+<div id="della-gatta-gene-data-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/datasets/della-gatta-gene.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="della-gatta-gene-data-magnify" class="magnify" onclick="magnifyFigure(&#39;della-gatta-gene-data&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="della-gatta-gene-data-caption" class="caption-frame">
+<p>Figure: Gene expression levels over time for a gene from data provided by <span class="citation">Della Gatta et al. (2008)</span>. We would like to understand whethere there is signal in the data, or we are only observing noise.</p>
+</div>
 </div>
 <ul>
 <li>Want to detect if a gene is expressed or not, fit a GP to each gene <span class="citation">Kalaitzis and Lawrence (2011)</span>.</li>
 </ul>
+<div class="figure">
+<div id="a-simple-approach-to-ranking-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="" src="../slides/diagrams/health/1471-2105-12-180_1.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="../slides/diagrams/health/1471-2105-12-180_1.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="a-simple-approach-to-ranking-magnify" class="magnify" onclick="magnifyFigure(&#39;a-simple-approach-to-ranking&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="a-simple-approach-to-ranking-caption" class="caption-frame">
+<p>Figure: The example is taken from the paper &quot;A Simple Approach to Ranking Differentially Expressed Gene Expression Time Courses through Gaussian Process Regression.&quot; <span class="citation">Kalaitzis and Lawrence (2011)</span>.</p>
+</div>
 </div>
 <center>
 <a href="http://www.biomedcentral.com/1471-2105/12/180" class="uri">http://www.biomedcentral.com/1471-2105/12/180</a>
@@ -834,7 +931,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_full <span class="op">=</span> GPy.models.GPRegression(x,yhat)
 m_full.kern.lengthscale<span class="op">=</span><span class="dv">50</span>
 _ <span class="op">=</span> m_full.optimize() <span class="co"># Optimize parameters of covariance function</span></code></pre></div>
-<p>Initialize the length scale parameter (which here actually represents a <em>time scale</em> of the covariance function to a reasonable value. Default would be 1, but here we set it to 50 minutes, given points are arriving across zero to 250 minutes.</p>
+<p>Initialize the length scale parameter (which here actually represents a <em>time scale</em> of the covariance function) to a reasonable value. Default would be 1, but here we set it to 50 minutes, given points are arriving across zero to 250 minutes.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">xt <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">20</span>,<span class="dv">260</span>,<span class="dv">200</span>)[:,np.newaxis]
 yt_mean, yt_var <span class="op">=</span> m_full.predict(xt)
 yt_sd<span class="op">=</span>np.sqrt(yt_var)</code></pre></div>
@@ -848,8 +945,18 @@ ax.set_title(<span class="st">&#39;log likelihood: </span><span class="sc">{ll:.
 mlai.write_figure(figure<span class="op">=</span>fig,
                   filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/gp/della-gatta-gene-gp.svg&#39;</span>, 
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<div class="figure">
+<div id="della-gatta-gene-gp-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/gp/della-gatta-gene-gp.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="della-gatta-gene-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;della-gatta-gene-gp&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="della-gatta-gene-gp-caption" class="caption-frame">
+<p>Figure: Result of the fit of the Gaussian process model with the time scale parameter initialized to 50 minutes.</p>
+</div>
+</div>
 <p>Now we try a model initialized with a longer length scale.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_full2 <span class="op">=</span> GPy.models.GPRegression(x,yhat)
 m_full2.kern.lengthscale<span class="op">=</span><span class="dv">2000</span>
@@ -863,8 +970,18 @@ ax.set_title(<span class="st">&#39;log likelihood: </span><span class="sc">{ll:.
 mlai.write_figure(figure<span class="op">=</span>fig,
                   filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/gp/della-gatta-gene-gp2.svg&#39;</span>, 
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<div class="figure">
+<div id="della-gatta-gene-gp2-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/gp/della-gatta-gene-gp2.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="della-gatta-gene-gp2-magnify" class="magnify" onclick="magnifyFigure(&#39;della-gatta-gene-gp2&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="della-gatta-gene-gp2-caption" class="caption-frame">
+<p>Figure: Result of the fit of the Gaussian process model with the time scale parameter initialized to 2000 minutes.</p>
+</div>
+</div>
 <p>Now we try a model initialized with a lower noise.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_full3 <span class="op">=</span> GPy.models.GPRegression(x,yhat)
 m_full3.kern.lengthscale<span class="op">=</span><span class="dv">20</span>
@@ -879,10 +996,30 @@ ax.set_title(<span class="st">&#39;log likelihood: </span><span class="sc">{ll:.
 mlai.write_figure(figure<span class="op">=</span>fig,
                   filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/gp/della-gatta-gene-gp3.svg&#39;</span>, 
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<div class="figure">
+<div id="della-gatta-gene-gp3-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/gp/della-gatta-gene-gp3.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="della-gatta-gene-gp3-magnify" class="magnify" onclick="magnifyFigure(&#39;della-gatta-gene-gp3&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="della-gatta-gene-gp3-caption" class="caption-frame">
+<p>Figure: Result of the fit of the Gaussian process model with the noise initialized low (standard deviation 0.1) and the time scale parameter initialized to 20 minutes.</p>
+</div>
+</div>
+<div class="figure">
+<div id="gp-multiple-optima000-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/gp/multiple-optima000.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="gp-multiple-optima000-magnify" class="magnify" onclick="magnifyFigure(&#39;gp-multiple-optima000&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="gp-multiple-optima000-caption" class="caption-frame">
+<p>Figure:</p>
+</div>
+</div>
 <!--
 
 <object class="svgplot "  data="../slides/diagrams/gp/multiple-optima001.svg"  style="vertical-align:middle;"></object>-->
@@ -1373,7 +1510,7 @@ Figure: Emukit playground is a tutorial for understanding the simulation/emulati
 Figure: Tutorial on Bayesian optimization of the number of taxis deployed from Emukit playground.
 </div>
 <p>You can explore Bayesian optimization of a taxi simulation.</p>
-<h2 id="uncertainty-quantification">Uncertainty Quantification</h2>
+<h2 id="uncertainty-quantification-edit">Uncertainty Quantification <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/uncertainty-quantification.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/uncertainty-quantification.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <blockquote>
 <p>Uncertainty quantification (UQ) is the science of quantitative characterization and reduction of uncertainties in both computational and real world applications. It tries to determine how likely certain outcomes are if some aspects of the system are not exactly known.</p>
 </blockquote>
@@ -1383,13 +1520,22 @@ Figure: Tutorial on Bayesian optimization of the number of taxis deployed from E
 <li><p><strong>Emulators in optimization problems</strong>. We will show how emulators can be used to optimize black-box functions that are expensive to evaluate. This field is also called Bayesian Optimization and has gained an increasing relevance in machine learning as emulators can be used to optimize computer simulations (and machine learning algorithms) quite efficiently.</p></li>
 <li><p><strong>Multi-fidelity emulation methods</strong>. In many scenarios we have simulators of different quality about the same measure of interest. In these cases the goal is to merge all sources of information under the same model so the final emulator is cheaper and more accurate than an emulator fitted only using data from the most accurate and expensive simulator.</p></li>
 </ul>
-<h2 id="mountain-car-simulator">Mountain Car Simulator</h2>
+<h2 id="mountain-car-simulator-edit">Mountain Car Simulator <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/mountain-car-simulation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/mountain-car-simulation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>To illustrate the above mentioned concepts we we use the <a href="https://github.com/openai/gym/wiki/MountainCarContinuous-v0">mountain car simulator</a>. This simulator is widely used in machine learning to test reinforcement learning algorithms. The goal is to define a control policy on a car whose objective is to climb a mountain. Graphically, the problem looks as follows:</p>
+<div class="figure">
+<div id="-figure" class="figure-frame">
+
+</div>
+<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="-caption" class="caption-frame">
+<p>Figure:</p>
+</div>
+</div>
+{
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/uq/mountaincar.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-<div class="caption" style="">
-Figure: The mountain car simulation from the Open AI gym.
 </div>
 <p>The goal is to define a sequence of actions (push the car right or left with certain intensity) to make the car reach the flag after a number <span class="math inline"><em>T</em></span> of time steps.</p>
 <p>At each time step <span class="math inline"><em>t</em></span>, the car is characterized by a vector <span class="math inline">$\inputVector_{t} = (p_t,v_t)$</span> of states which are respectively the the position and velocity of the car at time <span class="math inline"><em>t</em></span>. For a sequence of states (an episode), the dynamics of the car is given by</p>
@@ -1435,8 +1581,18 @@ _, _, _, frames <span class="op">=</span> mc.run_simulation(env, np.atleast_2d(r
 anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Random linear controller&#39;</span>)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> IPython.core.display <span class="im">import</span> HTML</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">HTML(anim.to_jshtml())</code></pre></div>
+<div class="figure">
+<div id="mountain-car-random-figure" class="figure-frame">
 <iframe src="../slides/diagrams/uq/mountain_car_random.html" width="1024" height="768" allowtransparency="true" frameborder="0">
 </iframe>
+</div>
+<div id="mountain-car-random-magnify" class="magnify" onclick="magnifyFigure(&#39;mountain-car-random&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="mountain-car-random-caption" class="caption-frame">
+<p>Figure: Random linear controller for the Mountain car. It fails to move the car to the top of the mountain.</p>
+</div>
+</div>
 <p>As we can see the random linear controller does not manage to push the car to the top of the mountain. Now, let's optimize the regret using Bayesian optimization and the emulator for the reward. We try 50 new parameters chosen by the EI.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">max_iter <span class="op">=</span> <span class="dv">50</span>
 bo <span class="op">=</span> GPyOpt.methods.ModularBayesianOptimization(model, design_space, objective, acquisition, evaluator, initial_design)
@@ -1445,10 +1601,20 @@ bo.run_optimization(max_iter <span class="op">=</span> max_iter )</code></pre></
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">_, _, _, frames <span class="op">=</span> mc.run_simulation(env, np.atleast_2d(bo.x_opt), render<span class="op">=</span><span class="va">True</span>)
 anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Best controller after 50 iterations of Bayesian optimization&#39;</span>)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">HTML(anim.to_jshtml())</code></pre></div>
+<div class="figure">
+<div id="mountain-car-similated-bayes-opt-figure" class="figure-frame">
 <iframe src="../slides/diagrams/uq/mountain_car_simulated.html" width="1024" height="768" allowtransparency="true" frameborder="0">
 </iframe>
+</div>
+<div id="mountain-car-similated-bayes-opt-magnify" class="magnify" onclick="magnifyFigure(&#39;mountain-car-similated-bayes-opt&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="mountain-car-similated-bayes-opt-caption" class="caption-frame">
+<p>Figure: Mountain car simulator trained using Bayesian optimization and the simulator of the dynamics. Fifty iterations of Bayesian optimization are used to optimize the controler.</p>
+</div>
+</div>
 <p>he car can now make it to the top of the mountain! Emulating the reward function and using the EI helped as to find a linear controller that solves the problem.</p>
-<h2 id="data-efficient-emulation">Data Efficient Emulation</h2>
+<h2 id="data-efficient-emulation-edit">Data Efficient Emulation <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/mountain-car-data-efficient.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/mountain-car-data-efficient.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>In the previous section we solved the mountain car problem by directly emulating the reward but no considerations about the dynamics <span class="math inline">$\inputVector_{t+1} = \mappingFunction(\inputVector_{t},\textbf{u}_{t})$</span> of the system were made. Note that we had to run 75 episodes of 500 steps each to solve the problem, which required to call the simulator <span class="math inline">500 × 75 = 37500</span> times. In this section we will show how it is possible to reduce this number by building an emulator for <span class="math inline"><em>f</em></span> that can later be used to directly optimize the control.</p>
 <p>The inputs of the model for the dynamics are the velocity, the position and the value of the control so create this space accordingly.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> gym</code></pre></div>
@@ -1489,8 +1655,18 @@ velocity_model.updateModel(initial_design_dynamics, y[:, [<span class="dv">1</sp
 <p>We can see how the emulator is doing a fairly good job approximating the simulator. On the edges, however, it struggles to captures the dynamics of the simulator.</p>
 <p>Given some input parameters of the linear controlling, how do the dynamics of the emulator and simulator match? In the following figure we show the position and velocity of the car for the 500 time steps of an episode in which the parameters of the linear controller have been fixed beforehand. The value of the input control is also shown.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">controller_gains <span class="op">=</span> np.atleast_2d([<span class="dv">0</span>, .<span class="dv">6</span>, <span class="dv">1</span>])  <span class="co"># change the valus of the linear controller to observe the trayectories.</span></code></pre></div>
+<div class="figure">
+<div id="emu-sim-comparison-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/uq/emu_sim_comparison.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="emu-sim-comparison-magnify" class="magnify" onclick="magnifyFigure(&#39;emu-sim-comparison&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="emu-sim-comparison-caption" class="caption-frame">
+<p>Figure: Comparison between the mountain car simulator and the emulator.</p>
+</div>
+</div>
 <p>We now make explicit use of the emulator, using it to replace the simulator and optimize the linear controller. Note that in this optimization, we don't need to query the simulator anymore as we can reproduce the full dynamics of an episode using the emulator. For illustrative purposes, in this example we fix the initial location of the car.</p>
 <p>We define the objective reward function in terms of the simulator.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">### --- Optimize control parameters with emulator</span>
@@ -1521,8 +1697,18 @@ bo_emulator.run_optimization(max_iter<span class="op">=</span><span class="dv">5
 anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Best controller using the emulator of the dynamics&#39;</span>)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> IPython.core.display <span class="im">import</span> HTML</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">HTML(anim.to_jshtml())</code></pre></div>
+<div class="figure">
+<div id="mountain-car-emulated-figure" class="figure-frame">
 <iframe src="../slides/diagrams/uq/mountain_car_emulated.html" width="1024" height="768" allowtransparency="true" frameborder="0">
 </iframe>
+</div>
+<div id="mountain-car-emulated-magnify" class="magnify" onclick="magnifyFigure(&#39;mountain-car-emulated&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="mountain-car-emulated-caption" class="caption-frame">
+<p>Figure: Mountain car controller learnt through emulation. Here 500 calls to the simulator are used to fit the controller rather than 37,500 calls to the simulator required in the standard learning.</p>
+</div>
+</div>
 <p>And the problem is again solved, but in this case we have replaced the simulator of the car dynamics by a Gaussian process emulator that we learned by calling the simulator only 500 times. Compared to the 37500 calls that we needed when applying Bayesian optimization directly on the simulator this is a great gain.</p>
 <p>In some scenarios we have simulators of the same environment that have different fidelities, that is that reflect with different level of accuracy the dynamics of the real world. Running simulations of the different fidelities also have a different cost: hight fidelity simulations are more expensive the cheaper ones. If we have access to these simulators we can combine high and low fidelity simulations under the same model.</p>
 <p>So let's assume that we have two simulators of the mountain car dynamics, one of high fidelity (the one we have used) and another one of low fidelity. The traditional approach to this form of multi-fidelity emulation is to assume that</p>
@@ -1587,50 +1773,74 @@ bo_multifidelity.run_optimization(max_iter<span class="op">=</span><span class="
 anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Best controller with multi-fidelity emulator&#39;</span>)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> IPython.core.display <span class="im">import</span> HTML</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">HTML(anim.to_jshtml())</code></pre></div>
+<div class="figure">
+<div id="mountain-car-multi-fidelity-figure" class="figure-frame">
 <iframe src="../slides/diagrams/uq/mountain_car_multi_fidelity.html" width="1024" height="768" allowtransparency="true" frameborder="0">
 </iframe>
+</div>
+<div id="mountain-car-multi-fidelity-magnify" class="magnify" onclick="magnifyFigure(&#39;mountain-car-multi-fidelity&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="mountain-car-multi-fidelity-caption" class="caption-frame">
+<p>Figure: Mountain car learnt with multi-fidelity model. Here 250 observations of the high fidelity simulator and 250 observations of the low fidelity simulator are used to learn the controller.</p>
+</div>
+</div>
 <p>And problem solved! We see how the problem is also solved with 250 observations of the high fidelity simulator and 250 of the low fidelity simulator.</p>
 <h2 id="emukit-edit">Emukit <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emukit-software.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emukit-software.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="figure">
-<div id="-figure" class="figure-frame">
-
-</div>
-<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
-</div>
-<div id="-caption" class="caption-frame">
-<p>Figure:</p>
-</div>
-</div>
-{
+<div id="emukit-software-page-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/uq/emukit-software-page.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<p>}{The Emukit software is a set of software tools for emulation and surrogate modeling. </p>
+</div>
+<div id="emukit-software-page-magnify" class="magnify" onclick="magnifyFigure(&#39;emukit-software-page&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="emukit-software-page-caption" class="caption-frame">
+<p>Figure: The Emukit software is a set of software tools for emulation and surrogate modeling. </p>
+</div>
+</div>
 <p>The aim is to provide a suite where different approaches to emulation are assimilated under one roof. The current version of Emukit includes <em>ulti-fidelity emulation</em> for build surrogate models when data is obtained from multiple information sources that have different fidelity and/or cost; <em>Bayesian optimisation</em> for optimising physical experiments and tune parameters of machine learning algorithms or other computational simulations; <em>experimental design and active learning</em>: design the most informative experiments and perform active learning with machine learning models; <em>sensitivity analysis</em>: analyse the influence of inputs on the outputs of a given system; and <em>Bayesian quadrature</em>: efficiently compute the integrals of functions that are expensive to evaluate.</p>
 <h2 id="mxfusion-modular-probabilistic-programming-on-mxnet-edit">MXFusion: Modular Probabilistic Programming on MXNet <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/mxfusion-intro.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/mxfusion-intro.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="figure">
+<div id="mxfusion-software-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/ml/mxfusion.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<center>
-<a href="https://github.com/amzn/MXFusion" class="uri">https://github.com/amzn/MXFusion</a>
-</center>
+</div>
+<div id="mxfusion-software-magnify" class="magnify" onclick="magnifyFigure(&#39;mxfusion-software&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="mxfusion-software-caption" class="caption-frame">
+<p>Figure: MXFusion is a probabilistic programming language targeted specifically at Gaussian process models and combining them with probaiblistic neural network. It is available through the MIT license and we welcome contributions throguh the Github repository <a href="https://github.com/amzn/MXFusion" class="uri">https://github.com/amzn/MXFusion</a>.</p>
+</div>
+</div>
+<div class="figure">
+<div id="mxfusion-software-logo-figure" class="figure-frame">
 <table>
 <tr>
 <td width="70%">
 <ul>
 <li>Work by Eric Meissner and Zhenwen Dai.</li>
 <li>Probabilistic programming.</li>
-<li>Available on <a href="https://github.com/amzn/mxfusion">Github</a>
+<li>Available on <a href="https://github.com/amzn/mxfusion">Github</a></li>
+</ul>
 </td>
 <td width="30%">
 <div class="centered" style="">
-<img class="" src="../slides/diagrams/mxfusion-logo.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="../slides/diagrams/mxfusion-logo.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </td>
 </tr>
-</table></li>
-</ul>
+</table>
+</div>
+<div id="mxfusion-software-logo-magnify" class="magnify" onclick="magnifyFigure(&#39;mxfusion-software-logo&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="mxfusion-software-logo-caption" class="caption-frame">
+<p>Figure: The MXFusion software.</p>
+</div>
+</div>
 <h2 id="mxfusion">MxFusion</h2>
 <h2 id="why-another-framework">Why another framework?</h2>
 <h2 id="key-requirements">Key Requirements</h2>
