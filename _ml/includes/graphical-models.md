@@ -32,7 +32,7 @@ pgm.add_edge("y_2", "y_3")
 
 pgm.render().figure.savefig("../slides/diagrams/ml/markov.svg", transparent=True)}
 
-\figure{\includediagram{../slides/diagrams/ml/markov}{100%}}{A Markov chain is a simple form of probabilistic graphical model providing a particular decomposition of the joint density.}{markov-chain}
+\figure{\includediagram{../slides/diagrams/ml/markov}{50%}}{A Markov chain is a simple form of probabilistic graphical model providing a particular decomposition of the joint density.}{markov-chain}
 
 \newslide{}
 
