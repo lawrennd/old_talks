@@ -1,4 +1,4 @@
-BASE=the-three-ds-of-machine-learning
+BASE=machine-learning-and-the-physical-world
 include ../make-talk-flags.mk
 include ../make-talk.mk
 
