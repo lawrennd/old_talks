@@ -44,14 +44,14 @@ from ipywidgets import IntSlider}
 \newframe{\includediagram{../slides/diagrams/gp/two_point_sample008}}{two_point_sample}
 \endanimation
 }
-\notesfigure{\includediagram{../slides/diagrams/gp/two_point_sample008}{}}
-\notes{\caption{A 25 dimensional correlated random variable (values ploted against index)}}
+
+\figure{\includediagram{../slides/diagrams/gp/two_point_sample008}{80%}}{A 25 dimensional correlated random variable (values ploted against index){gp-two-point-sample-1}
 
 \include{_gp/includes/gaussian-predict-index-one-and-two.md}
 
 \subsection{Uluru}
 
-\includejpg{../slides/diagrams/gp/799px-Uluru_Panorama}
+\figure{\includejpg{../slides/diagrams/gp/799px-Uluru_Panorama}}{Uluru, the sacred rock in Australia. If we think of it as a probability density, viewing it from this side gives us one *marginal* from the density. Figuratively speaking, slicing through the rock would give a conditional density.}{uluru-as-probability}
 
 \notes{When viewing these contour plots, I sometimes find it helpful to think of Uluru, the prominent rock formation in Australia. The rock rises above the surface of the plane, just like a probability density rising above the zero line. The rock is three dimensional, but when we view Uluru from the classical position, we are looking at one side of it. This is equivalent to viewing the marginal density. 
 
