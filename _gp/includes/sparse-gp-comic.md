@@ -24,8 +24,6 @@
 \caption{Image credit: Kai Arulkumaran}
 }
 
-\rawfigure{
-\notesfigure{\includejpg{../slides/diagrams/sparse-gps}{45%}}
-\notes{\caption{Image credit: Kai Arulkumaran}}
-}
+\figure{\includejpg{../slides/diagrams/sparse-gps}{45%}}{In recent years, approximations for Gaussian process models haven't been the most fashionable approach to machine learning. Image credit: Kai Arulkumaran}{sparse-gp-comic}
+
 \endif
