@@ -4,7 +4,7 @@
 
 \subsection{GPy: A Gaussian Process Framework in Python}
 
-\includepng{../slides/diagrams/gp/gpy}{70%}
+\figure{\includepng{../slides/diagrams/gp/gpy}{70%}}{GPy is a BSD licensed software code base for implementing Gaussian process models in Python. It is designed for teaching and modelling. We welcome contributions which can be made through the Github repository <https://github.com/SheffieldML/GPy>}{gpy-software}
 
 \slides{\aligncenter{<https://github.com/SheffieldML/GPy>}}
 
