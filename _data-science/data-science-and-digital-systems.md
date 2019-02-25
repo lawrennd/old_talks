@@ -127,18 +127,9 @@ include{_data-science/includes/data-readiness-levels.md}
 }
 \notes{We operate in a technologically evolving environment.  Machine learning is becoming a key coponent in our decision making capabilities, our intelligence and strategic command. However, technology drove changes in battlefield strategy. From the stalemate of the first world war to the tank-dominated Blitzkrieg of the second, to the asymmetric warfare of the present. Our technology, tactics and strategies are also constantly evolving. Machine learning is part of that evolution solution, but the main challenge is not to become so fixated on the tactics of today that we miss the evolution of strategy that the technology is suggesting.}
 
-\newslide{Thanks!}
+\thanks
 
-\slides{
-* twitter: \@lawrennd
-* blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
-* podcast: <http://thetalkingmachines.com>
-* [Natural vs Artifical Intelligence](http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence)
-* [Three Ds of Machine Learning Systems Design Blog Post](http://inverseprobability.com/2018/11/05/the-3ds-of-machine-learning-systems-design)
-* [Mike Jordan's Medium Post](https://medium.com/@mijordan3/artificial-intelligence-the-revolution-hasnt-happened-yet-5e1d5812e1e7)
-}
-
-\subsection{References}
+\references
 
 
 
