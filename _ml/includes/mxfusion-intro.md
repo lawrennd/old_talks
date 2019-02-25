@@ -11,9 +11,11 @@
 \newslide{MxFusion}
 
 \figure{\columns{
+
 * Work by Eric Meissner and Zhenwen Dai.
 * Probabilistic programming.
 * Available on [Github](https://github.com/amzn/mxfusion)
+
 }{\includepng{../slides/diagrams/mxfusion-logo}{80%}}{70%}{30%}}{The MXFusion software.}{mxfusion-software-logo}
 
 \endif
