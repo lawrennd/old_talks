@@ -96,7 +96,7 @@ anim=mc.animate_frames(frames, 'Best controller with multi-fidelity emulator')}
 
 \newslide{Best Controller with Multi-Fidelity Emulator}
 
-\includehtml{../slides/diagrams/uq/mountain_car_multi_fidelity.html}{1024}{768}
+\figure{\includehtml{../slides/diagrams/uq/mountain_car_multi_fidelity.html}{1024}{768}}{Mountain car learnt with multi-fidelity model. Here 250 observations of the high fidelity simulator and 250 observations of the low fidelity simulator are used to learn the controller.}{mountain-car-multi-fidelity}
 
 \slides{250 observations of high fidelity simulator and 250 of the low fidelity simulator}
 \notes{And problem solved! We see how the problem is also solved with 250 observations of the high fidelity simulator and 250 of the low fidelity simulator.}

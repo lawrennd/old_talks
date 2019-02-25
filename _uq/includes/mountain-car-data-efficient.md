@@ -91,7 +91,7 @@ Given some input parameters of the linear controlling, how do the dynamics of th
 
 \newslide{Comparison of Emulation and Simulation}
 
-\includediagram{../slides/diagrams/uq/emu_sim_comparison}
+\figure{\includediagram{../slides/diagrams/uq/emu_sim_comparison}{80%}}{Comparison between the mountain car simulator and the emulator.}{emu-sim-comparison}
 
 \notes{We now make explicit use of the emulator, using it to replace the simulator and optimize the linear controller. Note that in this optimization, we don't need to query the simulator anymore as we can reproduce the full dynamics of an episode using the emulator. For illustrative purposes, in this example we fix the initial location of the car. 
 
@@ -150,7 +150,7 @@ anim=mc.animate_frames(frames, 'Best controller using the emulator of the dynami
 
 \newslide{Best Controller using Emulator of Dynamics}
 
-\includehtml{../slides/diagrams/uq/mountain_car_emulated.html}{1024}{768}
+\figure{\includehtml{../slides/diagrams/uq/mountain_car_emulated.html}{1024}{768}}{Mountain car controller learnt through emulation. Here 500 calls to the simulator are used to fit the controller rather than 37,500 calls to the simulator required in the standard learning.}{mountain-car-emulated}
 
 \slides{500 calls to the simulator vs 37,500 calls to the simulator}
 

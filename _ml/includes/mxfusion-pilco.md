@@ -124,7 +124,7 @@ with open('animation_random_policy.html', 'w') as f:
 
 \subsection{Pendulum}
 
-\includehtml{../slides/diagrams/ml/animation_random_policy.html}{1024}{768}
+\figure{\includehtml{../slides/diagrams/ml/animation_random_policy.html}{1024}{768}}{Random policy for the control of the pendulum.}{pendulum-random-policy}
 
 \newslide{Fit the Dynamics Model}
 
@@ -366,13 +366,13 @@ all_actions = []}
 
 Policy after the first episode (random exploration):
 
-\includehtml{../slides/diagrams/ml/animation_policy_iter_0.html}{1024}{768}
+\figure{\includehtml{../slides/diagrams/ml/animation_policy_iter_0.html}{1024}{768}}{PILCO policy for control of the animation after first episode (using random exploration).}{pilco-pendulum-policy-iter-0}
 
 \newslide{After Fifth Episode}
 
 Policy after the 5th episode:
 
-\includehtml{../slides/diagrams/ml/animation_policy_iter_4.html}{1024}{768}
+\figure{\includehtml{../slides/diagrams/ml/animation_policy_iter_4.html}{1024}{768}}{PILCO policy for control of the animation after the fifth episode.}{pilco-pendulum-policy-iter-0}
 
 \newslide{Contribute!}
 
