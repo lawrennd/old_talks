@@ -44,8 +44,18 @@ categories:
 <!---->
 <!--Back matter-->
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
+<div class="figure">
+<div id="gaussian-processes-for-machine-learning-figure" class="figure-frame">
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/gp/rasmussen-williams-book.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="gaussian-processes-for-machine-learning-magnify" class="magnify" onclick="magnifyFigure(&#39;gaussian-processes-for-machine-learning&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="gaussian-processes-for-machine-learning-caption" class="caption-frame">
+<p>Figure: A key reference for Gaussian process models remains the excellent book &quot;Gaussian Processes for Machine Learning&quot; (<span class="citation">Rasmussen and Williams (2006)</span>). The book is also <a href="http://www.gaussianprocess.org/gpml/" target="_blank" >freely available online</a>.</p>
+</div>
 </div>
 <p><span class="citation">Rasmussen and Williams (2006)</span> is still one of the most important references on Gaussian process models. It is <a href="http://www.gaussianprocess.org/gpml/">available freely online</a>.</p>
 <h1 id="what-is-machine-learning-edit">What is Machine Learning? <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
@@ -98,12 +108,32 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \parameterVe
 $$</span><br /> and we have <em>unsupervised learning</em> (from where we can get deep generative models).</p>
 <h2 id="graphical-models-edit">Graphical Models <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/graphical-models.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/graphical-models.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>One way of representing a joint distribution is to consider conditional dependencies between data. Conditional dependencies allow us to factorize the distribution. For example, a Markov chain is a factorization of a distribution into components that represent the conditional relationships between points that are neighboring, often in time or space. It can be decomposed in the following form. <br /><span class="math display">$$p(\dataVector) = p(\dataScalar_\numData | \dataScalar_{\numData-1}) p(\dataScalar_{\numData-1}|\dataScalar_{\numData-2}) \dots p(\dataScalar_{2} | \dataScalar_{1})$$</span><br /></p>
+<div class="figure">
+<div id="markov-chain-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/ml/markov.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="markov-chain-magnify" class="magnify" onclick="magnifyFigure(&#39;markov-chain&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="markov-chain-caption" class="caption-frame">
+<p>Figure: A Markov chain is a simple form of probabilistic graphical model providing a particular decomposition of the joint density.</p>
+</div>
+</div>
 <p>By specifying conditional independencies we can reduce the parameterization required for our data, instead of directly specifying the parameters of the joint distribution, we can specify each set of parameters of the conditonal independently. This can also give an advantage in terms of interpretability. Understanding a conditional independence structure gives a structured understanding of data. If developed correctly, according to causal methodology, it can even inform how we should intervene in the system to drive a desired result <span class="citation">(Pearl 1995)</span>.</p>
 <p>However, a challenge arises when the data becomes more complex. Consider the graphical model shown below, used to predict the perioperative risk of <em>C Difficile</em> infection following colon surgery <span class="citation">(Steele et al. 2012)</span>.</p>
+<div class="figure">
+<div id="c-difficile-bayes-net-diagnosis-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/bayes-net-diagnosis.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="c-difficile-bayes-net-diagnosis-magnify" class="magnify" onclick="magnifyFigure(&#39;c-difficile-bayes-net-diagnosis&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="c-difficile-bayes-net-diagnosis-caption" class="caption-frame">
+<p>Figure: A probabilistic directed graph used to predict the perioperative risk of <em>C Difficile</em> infection following colon surgery. When these models have good predictive performance they are often difficult to interpret. This may be due to the limited representation capability of the conditional densities in the model.</p>
+</div>
 </div>
 <p>To capture the complexity in the interelationship between the data, the graph itself becomes more complex, and less interpretable.</p>
 <h2 id="performing-inference">Performing Inference</h2>
@@ -171,14 +201,17 @@ $$</span><br /> so the elements of the covariance or <em>kernel</em> matrix are 
 \gaussianDist{\mappingFunctionVector}{\zerosVector}{\kernelMatrix} = \frac{1}{\left(2\pi\right)^{\frac{\numData}{2}}\det{\kernelMatrix}^\frac{1}{2}} \exp\left(-\frac{\mappingFunctionVector^\top\kernelMatrix \mappingFunctionVector}{2}\right)
 $$</span><br /> and a non-degenerate kernel matrix leads to <span class="math inline">$\det{\kernelMatrix} = 0$</span> defeating the normalization (it's equivalent to finding a projection in the high dimensional Gaussian where the variance of the the resulting univariate Gaussian is zero, i.e. there is a null space on the covariance, or alternatively you can imagine there are one or more directions where the Gaussian has become the delta function).</p>
 <p>In the machine learning field, it was Radford Neal <span class="citation">(Neal 1994)</span> that realized the potential of the next step. In his 1994 thesis, he was considering Bayesian neural networks, of the type we described above, and in considered what would happen if you took the number of hidden nodes, or neurons, to infinity, i.e. <span class="math inline">$\numHidden \rightarrow \infty$</span>.</p>
-<div class="figure" style="">
-<div class="figure-frame" style="">
+<div class="figure">
+<div id="neal-infinite-priors-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/neal-infinite-priors.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<div class="caption" style="">
-Figure: Page 37 of <a href="http://www.cs.toronto.edu/~radford/ftp/thesis.pdf">Radford Neal's 1994 thesis</a>
 </div>
+<div id="neal-infinite-priors-magnify" class="magnify" onclick="magnifyFigure(&#39;neal-infinite-priors&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="neal-infinite-priors-caption" class="caption-frame">
+<p>Figure: Page 37 of <a href="http://www.cs.toronto.edu/~radford/ftp/thesis.pdf">Radford Neal's 1994 thesis</a></p>
 </div>
 </div>
 <p>In loose terms, what Radford considers is what happens to the elements of the covariance function, <br /><span class="math display">$$
@@ -242,11 +275,18 @@ $$</span><br /> in the figure below we plot these data on the <span class="math 
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
 <span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;two_point_sample</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, <span class="st">&#39;../slides/diagrams/gp&#39;</span>, sample<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">8</span>, <span class="dv">1</span>))</code></pre></div>
-<object class="svgplot " data="../slides/diagrams/gp/two_point_sample008.svg" style="vertical-align:middle;">
-</object>
-<div class="caption" style="">
-Figure: A 25 dimensional correlated random variable (values ploted against index)
+<div class="figure">
+<div id="-figure" class="figure-frame">
+
 </div>
+<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="-caption" class="caption-frame">
+<p>Figure:</p>
+</div>
+</div>
+<p>{<object class="svgplot "  data="../slides/diagrams/gp/two_point_sample008.svg"  style="vertical-align:middle;"></object>}{A 25 dimensional correlated random variable (values ploted against index){gp-two-point-sample-1}</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
 <span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;two_point_sample</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, <span class="st">&#39;../slides/diagrams/gp&#39;</span>, sample<span class="op">=</span>IntSlider(<span class="dv">9</span>, <span class="dv">9</span>, <span class="dv">12</span>, <span class="dv">1</span>))</code></pre></div>
@@ -256,8 +296,18 @@ Figure: A 25 dimensional correlated random variable (values ploted against index
 Figure: The joint Gaussian over <span class="math inline">$\mappingFunction_1$</span> and <span class="math inline">$\mappingFunction_2$</span> along with the conditional distribution of <span class="math inline">$\mappingFunction_2$</span> given <span class="math inline">$\mappingFunction_1$</span>
 </div>
 <h2 id="uluru-edit">Uluru <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gpdistfunc.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gpdistfunc.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="figure">
+<div id="uluru-as-probability-figure" class="figure-frame">
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/gp/799px-Uluru_Panorama.jpg" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="uluru-as-probability-magnify" class="magnify" onclick="magnifyFigure(&#39;uluru-as-probability&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="uluru-as-probability-caption" class="caption-frame">
+<p>Figure: Uluru, the sacred rock in Australia. If we think of it as a probability density, viewing it from this side gives us one <em>marginal</em> from the density. Figuratively speaking, slicing through the rock would give a conditional density.</p>
+</div>
 </div>
 <p>When viewing these contour plots, I sometimes find it helpful to think of Uluru, the prominent rock formation in Australia. The rock rises above the surface of the plane, just like a probability density rising above the zero line. The rock is three dimensional, but when we view Uluru from the classical position, we are looking at one side of it. This is equivalent to viewing the marginal density.</p>
 <p>The joint density can be viewed from above, using contours. The conditional density is equivalent to <em>slicing</em> the rock. Uluru is a holy rock, so this has to be an imaginary slice. Imagine we cut down a vertical plane orthogonal to our view point (e.g. coming across our view point). This would give a profile of the rock, which when renormalized, would give us the conditional distribution, the value of conditioning would be the location of the slice in the direction we are facing.</p>
