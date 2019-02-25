@@ -559,6 +559,8 @@ gpoptimizePlot3
 <div class="caption" style="">
 Figure: Variation in the data fit term, the capacity term and the negative log likelihood for different lengthscales.
 </div>
+<h2 id="gene-expression-example-edit">Gene Expression Example <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/della-gatta-gene-gp.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/della-gatta-gene-gp.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>We now consider an example in gene expression. Gene expression is the measurement of mRNA levels expressed in cells. These mRNA levels show which genes are 'switched on' and producing data. In the example we will use a Gaussian process to determine whether a given gene is active, or we are merely observing a noise response.</p>
 <h2 id="della-gatta-gene-data-edit">Della Gatta Gene Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/della-gatta-gene-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/della-gatta-gene-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <ul>
 <li>Given given expression levels in the form of a time series from <span class="citation">Della Gatta et al. (2008)</span>.</li>
@@ -606,8 +608,18 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 <ul>
 <li>Want to detect if a gene is expressed or not, fit a GP to each gene <span class="citation">Kalaitzis and Lawrence (2011)</span>.</li>
 </ul>
+<div class="figure">
+<div id="a-simple-approach-to-ranking-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="" src="../slides/diagrams/health/1471-2105-12-180_1.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="../slides/diagrams/health/1471-2105-12-180_1.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="a-simple-approach-to-ranking-magnify" class="magnify" onclick="magnifyFigure(&#39;a-simple-approach-to-ranking&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="a-simple-approach-to-ranking-caption" class="caption-frame">
+<p>Figure: The example is taken from the paper &quot;A Simple Approach to Ranking Differentially Expressed Gene Expression Time Courses through Gaussian Process Regression.&quot; <span class="citation">Kalaitzis and Lawrence (2011)</span>.</p>
+</div>
 </div>
 <center>
 <a href="http://www.biomedcentral.com/1471-2105/12/180" class="uri">http://www.biomedcentral.com/1471-2105/12/180</a>
@@ -617,7 +629,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_full <span class="op">=</span> GPy.models.GPRegression(x,yhat)
 m_full.kern.lengthscale<span class="op">=</span><span class="dv">50</span>
 _ <span class="op">=</span> m_full.optimize() <span class="co"># Optimize parameters of covariance function</span></code></pre></div>
-<p>Initialize the length scale parameter (which here actually represents a <em>time scale</em> of the covariance function to a reasonable value. Default would be 1, but here we set it to 50 minutes, given points are arriving across zero to 250 minutes.</p>
+<p>Initialize the length scale parameter (which here actually represents a <em>time scale</em> of the covariance function) to a reasonable value. Default would be 1, but here we set it to 50 minutes, given points are arriving across zero to 250 minutes.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">xt <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">20</span>,<span class="dv">260</span>,<span class="dv">200</span>)[:,np.newaxis]
 yt_mean, yt_var <span class="op">=</span> m_full.predict(xt)
 yt_sd<span class="op">=</span>np.sqrt(yt_var)</code></pre></div>
@@ -631,8 +643,18 @@ ax.set_title(<span class="st">&#39;log likelihood: </span><span class="sc">{ll:.
 mlai.write_figure(figure<span class="op">=</span>fig,
                   filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/gp/della-gatta-gene-gp.svg&#39;</span>, 
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<div class="figure">
+<div id="della-gatta-gene-gp-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/gp/della-gatta-gene-gp.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="della-gatta-gene-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;della-gatta-gene-gp&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="della-gatta-gene-gp-caption" class="caption-frame">
+<p>Figure: Result of the fit of the Gaussian process model with the time scale parameter initialized to 50 minutes.</p>
+</div>
+</div>
 <p>Now we try a model initialized with a longer length scale.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_full2 <span class="op">=</span> GPy.models.GPRegression(x,yhat)
 m_full2.kern.lengthscale<span class="op">=</span><span class="dv">2000</span>
@@ -646,8 +668,18 @@ ax.set_title(<span class="st">&#39;log likelihood: </span><span class="sc">{ll:.
 mlai.write_figure(figure<span class="op">=</span>fig,
                   filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/gp/della-gatta-gene-gp2.svg&#39;</span>, 
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<div class="figure">
+<div id="della-gatta-gene-gp2-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/gp/della-gatta-gene-gp2.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="della-gatta-gene-gp2-magnify" class="magnify" onclick="magnifyFigure(&#39;della-gatta-gene-gp2&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="della-gatta-gene-gp2-caption" class="caption-frame">
+<p>Figure: Result of the fit of the Gaussian process model with the time scale parameter initialized to 2000 minutes.</p>
+</div>
+</div>
 <p>Now we try a model initialized with a lower noise.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_full3 <span class="op">=</span> GPy.models.GPRegression(x,yhat)
 m_full3.kern.lengthscale<span class="op">=</span><span class="dv">20</span>
@@ -662,10 +694,30 @@ ax.set_title(<span class="st">&#39;log likelihood: </span><span class="sc">{ll:.
 mlai.write_figure(figure<span class="op">=</span>fig,
                   filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/gp/della-gatta-gene-gp3.svg&#39;</span>, 
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<div class="figure">
+<div id="della-gatta-gene-gp3-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/gp/della-gatta-gene-gp3.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="della-gatta-gene-gp3-magnify" class="magnify" onclick="magnifyFigure(&#39;della-gatta-gene-gp3&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="della-gatta-gene-gp3-caption" class="caption-frame">
+<p>Figure: Result of the fit of the Gaussian process model with the noise initialized low (standard deviation 0.1) and the time scale parameter initialized to 20 minutes.</p>
+</div>
+</div>
+<div class="figure">
+<div id="gp-multiple-optima000-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/gp/multiple-optima000.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="gp-multiple-optima000-magnify" class="magnify" onclick="magnifyFigure(&#39;gp-multiple-optima000&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="gp-multiple-optima000-caption" class="caption-frame">
+<p>Figure:</p>
+</div>
+</div>
 <!--
 
 <object class="svgplot "  data="../slides/diagrams/gp/multiple-optima001.svg"  style="vertical-align:middle;"></object>-->
@@ -836,13 +888,38 @@ $$</span><br /></p>
 Figure: An additive covariance function formed by combining two exponentiated quadratic covariance functions.
 </div>
 <h2 id="analysis-of-us-birth-rates-edit">Analysis of US Birth Rates <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/bda-forecasting.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/bda-forecasting.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="figure">
+<div id="bialik-friday-the-13th-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/ml/bialik-fridaythe13th-1.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<div class="caption" style="">
-Figure: This is a retrospective analysis of US births by Aki Vehtari. The challenges of forecasting. Even with seasonal and weekly effects removed there are significant effects on holidays, weekends, etc.
+</div>
+<div id="bialik-friday-the-13th-magnify" class="magnify" onclick="magnifyFigure(&#39;bialik-friday-the-13th&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="bialik-friday-the-13th-caption" class="caption-frame">
+<p>Figure: This is a retrospective analysis of US births by Aki Vehtari. The challenges of forecasting. Even with seasonal and weekly effects removed there are significant effects on holidays, weekends, etc.</p>
+</div>
 </div>
 <p>There's a nice analysis of US birth rates by Gaussian processes with additive covariances in <span class="citation">Gelman et al. (2013)</span>. A combination of covariance functions are used to take account of weekly and yearly trends. The analysis is summarized on the cover of the book.</p>
+<div class="figure">
+<div id="50%-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/ml/bda_cover_1.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="50%-magnify" class="magnify" onclick="magnifyFigure(&#39;50%&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="50%-caption" class="caption-frame">
+Figure:
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/ml/bda_cover.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<p>}{Two different editions of Bayesian Data Analysis <span class="citation">(Gelman et al. 2013)</span>.}{bayesian-data-analysis}</p>
+<p><span class="citation">Gelman et al. (2013)</span>}</p>
 <h2 id="basis-function-covariance-edit">Basis Function Covariance <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/basis-covariance.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/basis-covariance.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>The fixed basis function covariance just comes from the properties of a multivariate Gaussian, if we decide <br /><span class="math display">$$
 \mappingFunctionVector=\basisMatrix\mappingVector
@@ -921,8 +998,18 @@ Figure: The multi-layer perceptron covariance function. This is derived by consi
 </div>
 <p>If you're interested in finding out more about Gaussian processes, you can attend the Gaussian process summer school, or view the lectures and material on line. Details of the school, future events and past events can be found at the website <a href="http://gpss.cc" class="uri">http://gpss.cc</a>.</p>
 <h2 id="gpy-a-gaussian-process-framework-in-python-edit">GPy: A Gaussian Process Framework in Python <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gpy-software.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gpy-software.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="figure">
+<div id="gpy-software-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/gp/gpy.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="gpy-software-magnify" class="magnify" onclick="magnifyFigure(&#39;gpy-software&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="gpy-software-caption" class="caption-frame">
+<p>Figure: GPy is a BSD licensed software code base for implementing Gaussian process models in Python. It is designed for teaching and modelling. We welcome contributions which can be made through the Github repository <a href="https://github.com/SheffieldML/GPy" class="uri">https://github.com/SheffieldML/GPy</a></p>
+</div>
 </div>
 <p>GPy is a BSD licensed software code base for implementing Gaussian process models in python. This allows GPs to be combined with a wide variety of software libraries.</p>
 <p>The software itself is available on <a href="https://github.com/SheffieldML/GPy">GitHub</a> and the team welcomes contributions.</p>
@@ -931,28 +1018,45 @@ Figure: The multi-layer perceptron covariance function. This is derived by consi
 <p>GPy has inspired other software solutions, first of all <a href="https://github.com/GPflow/GPflow">GPflow</a>, which uses Tensor Flow's automatic differentiation engine to allow rapid prototyping of new covariance functions and algorithms. More recently, <a href="https://github.com/cornellius-gp/gpytorch">GPyTorch</a> uses PyTorch for the same purpose.</p>
 <p>GPy itself is being restructured with MXFusion as its computational engine to give similiar capabilities.</p>
 <h2 id="mxfusion-modular-probabilistic-programming-on-mxnet-edit">MXFusion: Modular Probabilistic Programming on MXNet <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/mxfusion-intro.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/mxfusion-intro.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="figure">
+<div id="mxfusion-software-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/ml/mxfusion.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<center>
-<a href="https://github.com/amzn/MXFusion" class="uri">https://github.com/amzn/MXFusion</a>
-</center>
+</div>
+<div id="mxfusion-software-magnify" class="magnify" onclick="magnifyFigure(&#39;mxfusion-software&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="mxfusion-software-caption" class="caption-frame">
+<p>Figure: MXFusion is a probabilistic programming language targeted specifically at Gaussian process models and combining them with probaiblistic neural network. It is available through the MIT license and we welcome contributions throguh the Github repository <a href="https://github.com/amzn/MXFusion" class="uri">https://github.com/amzn/MXFusion</a>.</p>
+</div>
+</div>
+<div class="figure">
+<div id="mxfusion-software-logo-figure" class="figure-frame">
 <table>
 <tr>
 <td width="70%">
 <ul>
 <li>Work by Eric Meissner and Zhenwen Dai.</li>
 <li>Probabilistic programming.</li>
-<li>Available on <a href="https://github.com/amzn/mxfusion">Github</a>
+<li>Available on <a href="https://github.com/amzn/mxfusion">Github</a></li>
+</ul>
 </td>
 <td width="30%">
 <div class="centered" style="">
-<img class="" src="../slides/diagrams/mxfusion-logo.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="../slides/diagrams/mxfusion-logo.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </td>
 </tr>
-</table></li>
-</ul>
+</table>
+</div>
+<div id="mxfusion-software-logo-magnify" class="magnify" onclick="magnifyFigure(&#39;mxfusion-software-logo&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="mxfusion-software-logo-caption" class="caption-frame">
+<p>Figure: The MXFusion software.</p>
+</div>
+</div>
 <h2 id="acknowledgments">Acknowledgments</h2>
 <p>Stefanos Eleftheriadis, John Bronskill, Hugh Salimbeni, Rich Turner, Zhenwen Dai, Javier Gonzalez, Andreas Damianou, Mark Pullin, Michael Smith, James Hensman, John Quinn, Martin Mubangizi.</p>
 <h1 id="references" class="unnumbered">References</h1>
