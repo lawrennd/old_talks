@@ -1,4 +1,7 @@
 \ifndef{dellaGattaGeneData}
+\define{dellaGattaGeneData}
+\editme
+
 \subsection{Della Gatta Gene Data}
 
 * Given given expression levels in the form of a time series from @DellaGatta:direct08. 
@@ -37,9 +40,9 @@ mlai.write_figure(figure=fig,
 
 \newslide{Della Gatta Gene Data}
 
-\div{\includediagram{../slides/diagrams/datasets/della-gatta-gene}}{}{text-align:center}
+\figure{\includediagram{../slides/diagrams/datasets/della-gatta-gene}{80%}}{Gene expression levels over time for a gene from data provided by @DellaGatta:direct08. We would like to understand whethere there is signal in the data, or we are only observing noise.}{della-gatta-gene-data}
 
 \notes{}
 
-\define{dellaGattaGeneData}
+
 \endif
