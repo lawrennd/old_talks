@@ -1,3 +1,3 @@
-BASE=data-science-time-for-professionalisation
+BASE=data-readiness-levels
 include ../make-talk-flags.mk
 include ../make-talk.mk
