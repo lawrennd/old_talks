@@ -64,7 +64,7 @@ We require data-desalination before it can be consumed!
 \includediagram{../slides/diagrams/pomdp004}{80%}
 }
 
-\notes{\figure{\includediagram{../slides/diagrams/pomdp004}{80%}}{Partially observable Markov decision process observing reward as actions are taken in different states}}{pomdp-credit-assignment}}
+\notes{\figure{\includediagram{../slides/diagrams/pomdp004}{80%}}{Partially observable Markov decision process observing reward as actions are taken in different states}{pomdp-credit-assignment}}
 
 \newslide{Credit Allocation}
 \slides{
