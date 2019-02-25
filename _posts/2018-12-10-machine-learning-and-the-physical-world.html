@@ -24,17 +24,52 @@ categories:
   $${% include talk-notation.tex %}$$
 </div>
 
+<script src="/talks/figure-magnify.js"></script>
+<script src="/talks/figure-animate.js"></script>
+    
+<div id="modal-frame" class="modal">
+  <span class="close" onclick="closeMagnify()">&times;</span>
+  <div class="modal-figure">
+    <div class="figure-frame">
+      <div class="modal-content" id="modal01"></div>
+      <!--<img class="modal-content" id="object01">-->
+    </div>
+    <div class="caption-frame" id="modal-caption"></div>
+  </div>
+</div>	  
+
 <!-- Front matter -->
 <p>.</p>
+<!---->
 <!--Back matter-->
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
 <h2 id="the-centrifugal-governor-edit">The Centrifugal Governor <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/centrifugal-governor.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/centrifugal-governor.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="figure">
+<div id="science-holborn-viaduct-figure" class="figure-frame">
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/science-holborn-viaduct.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<center>
-<em>Centrifugal governor as held by &quot;Science&quot; on Holborn Viaduct</em>
-</center>
+</div>
+<div id="science-holborn-viaduct-magnify" class="magnify" onclick="magnifyFigure(&#39;science-holborn-viaduct&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="science-holborn-viaduct-caption" class="caption-frame">
+<p>Figure: Centrifugal governor as held by &quot;Science&quot; on Holborn Viaduct</p>
+</div>
+</div>
+<div class="figure">
+<div id="steam-engine-boulton-watt-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/SteamEngine_Boulton&Watt_1784.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="steam-engine-boulton-watt-magnify" class="magnify" onclick="magnifyFigure(&#39;steam-engine-boulton-watt&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="steam-engine-boulton-watt-caption" class="caption-frame">
+<p>Figure: Watt's Steam Engine which made Steam Power Efficient and Practical.</p>
+</div>
+</div>
 <p>The centrifugal governor was made famous by Boulton and Watt when it was deployed in the steam engine. Studying stability in the governor is the main subject of James Clerk Maxwell's paper on the theoretical analysis of governors <span class="citation">(Maxwell 1867)</span>, a founding paper of control theory. In this spirit, Wiener used the name <a href="https://en.wikipedia.org/wiki/Cybernetics"><em>cybernetics</em></a> to describe the field of control and communication in animals and the machine <span class="citation">(Wiener 1948)</span>. Cybernetics is the Greek word for governor, which comes from the latin for helmsman.</p>
 <p>A governor is one of the simplest artificial intelligence systems. It senses the speed of an engine, and acts to change the position of the valve on the engine to slow it down.</p>
 <p>Although it's a mechanical system a governor can be seen as automating a role that a human would have traditionally played. It is an early example of artificial intelligence.</p>
@@ -44,12 +79,19 @@ categories:
 <li>The centrifugal governor is a physical system and it is an integral part of a wider physical system that it regulates (the engine).</li>
 <li>The parameters of the governor were set by hand, our modern artificial intelligence systems have their parameters set by <em>data</em>.</li>
 </ol>
+<div class="figure">
+<div id="centrifugal-governor-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/Centrifugal_governor.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<center>
-<em>The centrifugal governor, an early example of a decision making system. The parameters of the governor include the lengths of the linkages (which effect how far the throttle opens in response to movement in the balls), the weight of the balls (which effects inertia) and the limits of to which the balls can rise.</em>
-</center>
+</div>
+<div id="centrifugal-governor-magnify" class="magnify" onclick="magnifyFigure(&#39;centrifugal-governor&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="centrifugal-governor-caption" class="caption-frame">
+<p>Figure: The centrifugal governor, an early example of a decision making system. The parameters of the governor include the lengths of the linkages (which effect how far the throttle opens in response to movement in the balls), the weight of the balls (which effects inertia) and the limits of to which the balls can rise.</p>
+</div>
+</div>
 <h2 id="what-is-machine-learning-edit">What is Machine Learning? <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml-2.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml-2.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Machine learning allows us to extract knowledge from data to form a prediction.</p>
 <p><br /><span class="math display">$$\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$</span><br /></p>
@@ -77,13 +119,22 @@ categories:
 <li>E.g. Causal understanding.</li>
 </ul>
 <h2 id="machine-learning-in-supply-chain-edit">Machine Learning in Supply Chain <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_supply-chain/includes/ml-and-supply-chain.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_supply-chain/includes/ml-and-supply-chain.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="figure">
+<div id="container-2539942_1920-figure" class="figure-frame">
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/supply-chain/container-2539942_1920.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<center>
-<em>The container, arguably the largest agent of social change in the last 100 years.</em>
-</center>
+</div>
+<div id="container-2539942_1920-magnify" class="magnify" onclick="magnifyFigure(&#39;container-2539942_1920&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="container-2539942_1920-caption" class="caption-frame">
+<p>Figure: The container, arguably the largest agent of social change in the last 100 years.</p>
+</div>
+</div>
 <p>Containerization has had a dramatic effect on global economics, placing many people in the developing world at the end of the supply chain.</p>
+<div class="figure">
+<div id="wild-alaskan-cod-figure" class="figure-frame">
 <table>
 <tr>
 <td width="45%">
@@ -98,29 +149,36 @@ categories:
 </td>
 </tr>
 </table>
-<center>
-<em>Wild Alaskan Cod, that is a product of China. It is cheaper to ship the deep frozen fish thousands of kilometers for processing than to process locally.</em>
-</center>
+</div>
+<div id="wild-alaskan-cod-magnify" class="magnify" onclick="magnifyFigure(&#39;wild-alaskan-cod&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="wild-alaskan-cod-caption" class="caption-frame">
+<p>Figure: Wild Alaskan Cod, that is a product of China. It is cheaper to ship the deep frozen fish thousands of kilometers for processing than to process locally.</p>
+</div>
+</div>
 <p>For example, you can buy Wild Alaskan Cod fished from Alaska, processed in China, sold in North America. This is driven by the low cost of transport for frozen cod vs the higher relative cost of cod processing in the US versus China. Similarly, <a href="https://www.telegraph.co.uk/news/uknews/1534286/12000-mile-trip-to-have-seafood-shelled.html" target="_blank" >Scottish prawns are also processed in China for sale in the UK.</a></p>
 <p>Supply chain is a large scale automated decision making network. Our aim is to make decisions not only based on our models of customer behavior (as observed through data), but also by accounting for the structure of our fulfilment center, and delivery network.</p>
 <p>Many of the most important questions in supply chain take the form of counterfactuals. E.g. “What would happen if we opened a manufacturing facility in Cambridge?” A counter factual is a question that implies a mechanistic understanding of a system. It goes beyond simple smoothness assumptions or translation invariants. It requires a physical, or <em>mechanistic</em> understanding of the supply chain network. For this reason the type of models we deploy in supply chain often involve simulations or more mechanistic understanding of the network.</p>
 <p>In supply chain Machine Learning alone is not enough, we need to bridge between models that contain real mechanisms and models that are entirely data driven.</p>
 <p>This is challenging, because as we introduce more mechanism to the models we use, it becomes harder to develop efficient algorithms to match those models to data.</p>
+<iframe width="800" height="600" src="https://www.youtube.com/embed/ncwsr1Of6Cw?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
 <!--include{_ml/includes/or-control-econometrics-statistics-ml.md}-->
 <h2 id="emukit-playground-edit">Emukit Playground <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emukit-playground.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emukit-playground.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Emukit playground is a software toolkit for exploring the use of statistical emulation as a tool. It was built by <a href="https://twitter.com/_AdamHirst">Adam Hirst</a>, during his software engineering internship at Amazon and supervised by Cliff McCollum.</p>
 <div style="text-align:center">
 <a href="https://amzn.github.io/emukit-playground/"><img class="" src="../slides/diagrams/uq/emukit-playground.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></a>
 </div>
-<center>
-<em>Emukit playground is a tutorial for understanding the simulation/emulation relationship.</em>
-</center>
+<div class="caption" style="">
+Figure: Emukit playground is a tutorial for understanding the simulation/emulation relationship.
+</div>
 <div style="text-align:center">
 <a href="https://amzn.github.io/emukit-playground/#!/learn/bayesian_optimization"><img class="negate" src="../slides/diagrams/uq/emukit-playground-bayes-opt.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></a>
 </div>
-<center>
-<em>Tutorial on Bayesian optimization of the number of taxis deployed from Emukit playground.</em>
-</center>
+<div class="caption" style="">
+Figure: Tutorial on Bayesian optimization of the number of taxis deployed from Emukit playground.
+</div>
 <p>You can explore Bayesian optimization of a taxi simulation.</p>
 <h2 id="uncertainty-quantification">Uncertainty Quantification</h2>
 <blockquote>
@@ -137,9 +195,9 @@ categories:
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/uq/mountaincar.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<center>
-<em>The mountain car simulation from the Open AI gym.</em>
-</center>
+<div class="caption" style="">
+Figure: The mountain car simulation from the Open AI gym.
+</div>
 <p>The goal is to define a sequence of actions (push the car right or left with certain intensity) to make the car reach the flag after a number <span class="math inline"><em>T</em></span> of time steps.</p>
 <p>At each time step <span class="math inline"><em>t</em></span>, the car is characterized by a vector <span class="math inline">$\inputVector_{t} = (p_t,v_t)$</span> of states which are respectively the the position and velocity of the car at time <span class="math inline"><em>t</em></span>. For a sequence of states (an episode), the dynamics of the car is given by</p>
 <p><br /><span class="math display">$$\inputVector_{t+1} = \mappingFunction(\inputVector_{t},\textbf{u}_{t})$$</span><br /></p>
@@ -238,7 +296,7 @@ velocity_model.updateModel(initial_design_dynamics, y[:, [<span class="dv">1</sp
 <p>We can see how the emulator is doing a fairly good job approximating the simulator. On the edges, however, it struggles to captures the dynamics of the simulator.</p>
 <p>Given some input parameters of the linear controlling, how do the dynamics of the emulator and simulator match? In the following figure we show the position and velocity of the car for the 500 time steps of an episode in which the parameters of the linear controller have been fixed beforehand. The value of the input control is also shown.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">controller_gains <span class="op">=</span> np.atleast_2d([<span class="dv">0</span>, .<span class="dv">6</span>, <span class="dv">1</span>])  <span class="co"># change the valus of the linear controller to observe the trayectories.</span></code></pre></div>
-<object class="svgplot " align data="../slides/diagrams/uq/emu_sim_comparison.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/uq/emu_sim_comparison.svg" style="vertical-align:middle;">
 </object>
 <p>We now make explicit use of the emulator, using it to replace the simulator and optimize the linear controller. Note that in this optimization, we don't need to query the simulator anymore as we can reproduce the full dynamics of an episode using the emulator. For illustrative purposes, in this example we fix the initial location of the car.</p>
 <p>We define the objective reward function in terms of the simulator.</p>
@@ -340,13 +398,23 @@ anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Bes
 </iframe>
 <p>And problem solved! We see how the problem is also solved with 250 observations of the high fidelity simulator and 250 of the low fidelity simulator.</p>
 <h2 id="emukit-edit">Emukit <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emukit-software.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emukit-software.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
-<ul>
-<li><em>Multi-fidelity emulation</em>: build surrogate models when data is obtained from multiple information sources that have different fidelity and/or cost;</li>
-<li><em>Bayesian optimisation</em>: optimise physical experiments and tune parameters of machine learning algorithms;</li>
-<li><em>Experimental design/Active learning</em>: design the most informative experiments and perform active learning with machine learning models;</li>
-<li><em>Sensitivity analysis</em>: analyse the influence of inputs on the outputs of a given system;</li>
-<li><em>Bayesian quadrature</em>: efficiently compute the integrals of functions that are expensive to evaluate.</li>
-</ul>
+<div class="figure">
+<div id="-figure" class="figure-frame">
+
+</div>
+<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="-caption" class="caption-frame">
+<p>Figure:</p>
+</div>
+</div>
+{
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/uq/emukit-software-page.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<p>}{The Emukit software is a set of software tools for emulation and surrogate modeling. </p>
+<p>The aim is to provide a suite where different approaches to emulation are assimilated under one roof. The current version of Emukit includes <em>ulti-fidelity emulation</em> for build surrogate models when data is obtained from multiple information sources that have different fidelity and/or cost; <em>Bayesian optimisation</em> for optimising physical experiments and tune parameters of machine learning algorithms or other computational simulations; <em>experimental design and active learning</em>: design the most informative experiments and perform active learning with machine learning models; <em>sensitivity analysis</em>: analyse the influence of inputs on the outputs of a given system; and <em>Bayesian quadrature</em>: efficiently compute the integrals of functions that are expensive to evaluate.</p>
 <h2 id="mxfusion-modular-probabilistic-programming-on-mxnet-edit">MXFusion: Modular Probabilistic Programming on MXNet <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/mxfusion-intro.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/mxfusion-intro.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/ml/mxfusion.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
