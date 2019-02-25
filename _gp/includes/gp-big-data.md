@@ -21,14 +21,14 @@
 \jamesPicture{1cm}
 \columns{\alignleft{[@Hensman:bigdata13]}}{\alignright{\jamesPicture{1.5cm}}}
 
-\includepng{../slides/diagrams/health/244_1_clip}{90%}
+\figure{\includepng{../slides/diagrams/health/244_1_clip}{90%}}{We can now take advantage of modern variational scaling techniques such as stochastic variational inference to fit Gaussian processes to very large data sets. <http://auai.org/uai2013/prints/papers/244.pdf>}{gps-for-big-data}
 \aligncenter{<http://auai.org/uai2013/prints/papers/244.pdf>}
 
 \newslide{}
 
 \columns{\alignleft{[@Hensman:bigdata13]}}{\alignright{\jamesPicture{1.5cm}}}
 
-\figure{\includepng{../slides/diagrams/health/244_6_clip}{90%}}{New approaches to scaling Gaussian processes bring the potential to model these indices and others directly. <http://auai.org/uai2013/prints/papers/244.pdf>}{gps-for-big-data}
+\figure{\includepng{../slides/diagrams/health/244_6_clip}{90%}}{New approaches to scaling Gaussian processes bring the potential to model these indices and others directly. <http://auai.org/uai2013/prints/papers/244.pdf>}{svi-gps-for-big-data}
 
 \aligncenter{<http://auai.org/uai2013/prints/papers/244.pdf>}
 
