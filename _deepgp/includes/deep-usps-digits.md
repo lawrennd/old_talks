@@ -2,6 +2,8 @@
 \define{deepUspsDigits}
 \editme
 
+\subsection{Fitting a GP to the USPS Digits Data}
+
 \credit{Zhenwen Dai and Neil D. Lawrence}
 
 \notes{We now look at the deep Gaussian processes' capacity to perform unsupervised learning.
@@ -93,7 +95,7 @@ mlai.write_figure(figure=fig, filename="../slides/diagrams/deepgp/usps-digits-la
 
 \newslide{}
 
-\includediagram{../slides/diagrams/usps-digits-latent}
+\figure{\includediagram{../slides/diagrams/usps-digits-latent}{60%}}{Latent space for the deep Gaussian process learned through unsupervised learning and fitted to a subset of the USPS digit data.}{usps-digits-latent}
 
 \notes{
 \subsection{Visualize the latent space of the intermediate layer}
@@ -121,19 +123,19 @@ for i in range(5):
 		
 \newslide{}
 
-\includediagram{../slides/diagrams/usps-digits-hidden-1-0}
+\figure{\includediagram{../slides/diagrams/usps-digits-hidden-1-0}{60%}}{Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.}{usps-digits-hidden-1-0}
 
 \newslide{}
 
-\includediagram{../slides/diagrams/usps-digits-hidden-2-0}
+\figure{\includediagram{../slides/diagrams/usps-digits-hidden-2-0}{60%}}{Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.}{usps-digits-hidden-1-0}
 
 \newslide{}
 
-\includediagram{../slides/diagrams/usps-digits-hidden-3-0}
+\figure{\includediagram{../slides/diagrams/usps-digits-hidden-3-0}{60%}}{Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.}{usps-digits-hidden-1-0}
 
 \newslide{}
 
-\includediagram{../slides/diagrams/usps-digits-hidden-4-0}
+\figure{\includediagram{../slides/diagrams/usps-digits-hidden-4-0}{60%}}{Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.}{usps-digits-hidden-1-0}
 
 \notes{
 \subsection{Generate From Model}
@@ -166,6 +168,6 @@ mlai.write_figure(figure=fig, filename="../slides/diagrams/deepgp/digit-samples-
 
 \newslide{}
 
-\includediagram{../slides/diagrams/digit-samples-deep-gp}
+\figure{\includediagram{../slides/diagrams/digit-samples-deep-gp}{80%}}{These digits are produced by taking a tour of the two dimensional latent space (as described by a Gaussian process sample) and mapping the tour into the data space. We visualize the mean of the mapping in the images.}{digit-samples-deep-gp}
 
 \endif
