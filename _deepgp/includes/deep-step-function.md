@@ -36,7 +36,7 @@ mlai.write_figure(filename='../slides/diagrams/deepgp/step-function-deep-gp.svg'
 
 \notes{The deep Gaussian process does a much better job of fitting the data. It handles the discontinuity easily, and error bars drop to smaller values in the regions of data.}
 
-\includediagram{../slides/diagrams/deepgp/step-function-deep-gp} 
+\figure{\includediagram{../slides/diagrams/deepgp/step-function-deep-gp}{80%}}{Deep Gaussian process fit to the step function data.}{step-function-deep-gp}
 
 \subsection{Step Function Data Deep GP}
 
@@ -52,7 +52,7 @@ mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/step-function-
 
 \notes{The samples from the model show that the error bars, which are informative for Gaussian outputs, are less informative for this model. They make clear that the data points lie, in output mainly at 0 or 1, or occasionally in between.}
 
-\includediagram{../slides/diagrams/deepgp/step-function-deep-gp-samples} 
+\figure{\includediagram{../slides/diagrams/deepgp/step-function-deep-gp-samples}{80%}}{Samples from the deep Gaussian process model for the step function fit.}{step-function-deep-gp-samples}
 				
 \displaynotes{The visualize code allows us to inspect the intermediate layers in the deep GP model to understand how it has reconstructed the step function.}
 
@@ -76,11 +76,10 @@ mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/step-function-
 
 \slides{\includediagram{../slides/diagrams/deepgp/step-function-deep-gp-layer-3}}
 
-\rawfigure{\includediagram{../slides/diagrams/deepgp/step-function-deep-gp-layer-0} 
-\includediagram{../slides/diagrams/deepgp/step-function-deep-gp-layer-1} 
-\includediagram{../slides/diagrams/deepgp/step-function-deep-gp-layer-2} 
-\includediagram{../slides/diagrams/deepgp/step-function-deep-gp-layer-3}
-\notes{\caption{From top to bottom, the Gaussian process mapping function that makes up each layer of the resulting deep Gaussian process.}}}
+\figure{\includediagram{../slides/diagrams/deepgp/step-function-deep-gp-layer-0}{60%} 
+\includediagram{../slides/diagrams/deepgp/step-function-deep-gp-layer-1}{60%}
+\includediagram{../slides/diagrams/deepgp/step-function-deep-gp-layer-2}{60%}
+\includediagram{../slides/diagrams/deepgp/step-function-deep-gp-layer-3}{60%}}{From top to bottom, the Gaussian process mapping function that makes up each layer of the resulting deep Gaussian process.}{step-function-deep-gp-mappings}
 
 \newslide{Step Function Pinball Plot}
 
@@ -91,8 +90,7 @@ m.visualize_pinball(offset=offset, ax=ax, scale=scale, xlim=xlim, ylim=ylim, por
 mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/step-function-deep-gp-pinball.svg', 
                   transparent=True, frameon=True, ax=ax)}
 				  
-\rawfigure{\includediagram{../slides/diagrams/deepgp/step-function-deep-gp-pinball}
-\notes{\caption{Pinball plot of the deep GP fitted to the step function data. Each layer of the model pushes the 'ball' towards the left or right, saturating at 1 and 0. This causes the final density to be be peaked at 0 and 1. Transitions occur driven by the uncertainty of the mapping in each layer.}}}
+\figure{\includediagram{../slides/diagrams/deepgp/step-function-deep-gp-pinball}{60%}}{Pinball plot of the deep GP fitted to the step function data. Each layer of the model pushes the 'ball' towards the left or right, saturating at 1 and 0. This causes the final density to be be peaked at 0 and 1. Transitions occur driven by the uncertainty of the mapping in each layer.}{step-function-deep-gp-pinball}
 
 
 \endif

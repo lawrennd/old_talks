@@ -1250,8 +1250,18 @@ ax.set_xlim(xlim)
 mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../../slides/diagrams/datasets/step-function.svg&#39;</span>, 
             transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <h2 id="step-function-data">Step Function Data</h2>
+<div class="figure">
+<div id="step-function-data-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/datasets/step-function.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="step-function-data-magnify" class="magnify" onclick="magnifyFigure(&#39;step-function-data&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="step-function-data-caption" class="caption-frame">
+<p>Figure: Simulation study of step function data artificially generated. Here there is a small overlap between the two lines.</p>
+</div>
+</div>
 <h2 id="step-function-data-gp">Step Function Data GP</h2>
 <p>We can fit a Gaussian process to the step function data using <code>GPy</code> as follows.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_full <span class="op">=</span> GPy.models.GPRegression(x,yhat)
@@ -1364,8 +1374,18 @@ ax.set_ylim(ylim)
 mlai.write_figure(filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/datasets/motorcycle-helmet.svg&#39;</span>, 
             transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <h2 id="motorcycle-helmet-data-edit">Motorcycle Helmet Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/motorcycle-helmet-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/motorcycle-helmet-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="figure">
+<div id="motorcycle-helment-data-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/datasets/motorcycle-helmet.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="motorcycle-helment-data-magnify" class="magnify" onclick="magnifyFigure(&#39;motorcycle-helment-data&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="motorcycle-helment-data-caption" class="caption-frame">
+<p>Figure: Motorcycle helmet data. The data consists of acceleration readings on a motorcycle helmet undergoing a collision. The data exhibits heteroschedastic (time varying) noise levles and non-stationarity.</p>
+</div>
+</div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_full <span class="op">=</span> GPy.models.GPRegression(x,yhat)
 _ <span class="op">=</span> m_full.optimize() <span class="co"># Optimize parameters of covariance function</span></code></pre></div>
 <h2 id="motorcycle-helmet-data-gp">Motorcycle Helmet Data GP</h2>
@@ -1443,8 +1463,18 @@ ax.set_xlabel(<span class="st">&#39;x position&#39;</span>, fontsize<span class=
 ax.set_ylabel(<span class="st">&#39;y position&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>)
 mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../../slides/diagrams/datasets/robot-wireless-ground-truth.svg&#39;</span>, transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <h2 id="robot-wireless-ground-truth">Robot Wireless Ground Truth</h2>
+<div class="figure">
+<div id="robot-wireless-ground-truth-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/datasets/robot-wireless-ground-truth.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="robot-wireless-ground-truth-magnify" class="magnify" onclick="magnifyFigure(&#39;robot-wireless-ground-truth&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="robot-wireless-ground-truth-caption" class="caption-frame">
+<p>Figure: Ground truth movement for the position taken while recording the multivariate time-course of wireless access point signal strengths.</p>
+</div>
+</div>
 <p>We will ignore this ground truth in making our predictions, but see if the model can recover something similar in one of the latent layers.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">output_dim<span class="op">=</span><span class="dv">1</span>
 xlim <span class="op">=</span> (<span class="op">-</span><span class="fl">0.3</span>, <span class="fl">1.3</span>)
@@ -1462,8 +1492,18 @@ ax.set_ylim(ylim)
 mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/datasets/robot-wireless-dim-&#39;</span> <span class="op">+</span> <span class="bu">str</span>(output_dim) <span class="op">+</span> <span class="st">&#39;.svg&#39;</span>, 
             transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <h2 id="robot-wifi-data">Robot WiFi Data</h2>
+<div class="figure">
+<div id="robot-wireless-data-dim-1-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/datasets/robot-wireless-dim-1.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="robot-wireless-data-dim-1-magnify" class="magnify" onclick="magnifyFigure(&#39;robot-wireless-data-dim-1&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="robot-wireless-data-dim-1-caption" class="caption-frame">
+<p>Figure: Output dimension 1 from the robot wireless data. This plot shows signal strength changing over time.</p>
+</div>
+</div>
 <p>Perform a Gaussian process fit on the data using GPy.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_full <span class="op">=</span> GPy.models.GPRegression(x,yhat)
 _ <span class="op">=</span> m_full.optimize() <span class="co"># Optimize parameters of covariance function</span></code></pre></div>
@@ -1528,9 +1568,30 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 <li>Model learns structure between two interacting subjects.</li>
 </ul>
 <h2 id="shared-lvm">Shared LVM</h2>
+<div class="figure">
+<div id="shared-latent-variable-model-graph-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/shared.svg" style="vertical-align:middle;">
 </object>
-<p><img class="negate" src="../slides/diagrams/deep-gp-high-five2.png" width="100%" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></p>
+</div>
+<div id="shared-latent-variable-model-graph-magnify" class="magnify" onclick="magnifyFigure(&#39;shared-latent-variable-model-graph&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="shared-latent-variable-model-graph-caption" class="caption-frame">
+<p>Figure: Shared latent variable model structure. Here two related data sets are brought together with a set of latent variables that are partially shared and partially specific to one of the data sets.</p>
+</div>
+</div>
+<div class="figure">
+<div id="deep-gp-high-five-figure" class="figure-frame">
+<p><img class="" src="../slides/diagrams/deep-gp-high-five2.png" width="80%" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></p>
+</div>
+<div id="deep-gp-high-five-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-gp-high-five&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="deep-gp-high-five-caption" class="caption-frame">
+<p>Figure: Latent spaces of the 'high five' data. The structure of the model is automatically learnt. One of the latent spaces is coordinating how the two figures walk together, the other latent spaces contain latent variables that are specific to each of the figures separately.</p>
+</div>
+</div>
+<h2 id="fitting-a-gp-to-the-usps-digits-data-edit">Fitting a GP to the USPS Digits Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/deep-usps-digits.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/deep-usps-digits.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p><small><span style="text-align:right">Thanks to: Zhenwen Dai and Neil D. Lawrence</span></small></p>
 <p>We now look at the deep Gaussian processes' capacity to perform unsupervised learning.</p>
 <p>We will look at a sub-sample of the MNIST digit data set.</p>
@@ -1551,7 +1612,7 @@ labels <span class="op">=</span> []
 Y <span class="op">=</span> np.vstack(Y).astype(np.float64)
 labels <span class="op">=</span> np.hstack(labels)
 Y <span class="op">/=</span> <span class="dv">255</span>.</code></pre></div>
-<h2 id="fit-a-deep-gp-edit">Fit a Deep GP <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/deep-usps-digits.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/deep-usps-digits.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<h2 id="fit-a-deep-gp">Fit a Deep GP</h2>
 <p>We're going to fit a Deep Gaussian process model to the MNIST data with two hidden layers. Each of the two Gaussian processes (one from the first hidden layer to the second, one from the second hidden layer to the data) has an exponentiated quadratic covariance.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> deepgp
 <span class="im">import</span> GPy</code></pre></div>
@@ -1591,8 +1652,18 @@ fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>p
     ax.plot(m.layer_1.X.mean[labels<span class="op">==</span>d,<span class="dv">0</span>],m.layer_1.X.mean[labels<span class="op">==</span>d,<span class="dv">1</span>],<span class="st">&#39;.&#39;</span>,label<span class="op">=</span><span class="bu">str</span>(d))
 _ <span class="op">=</span> plt.legend()
 mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&quot;../slides/diagrams/deepgp/usps-digits-latent.svg&quot;</span>, transparent<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<div class="figure">
+<div id="usps-digits-latent-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/usps-digits-latent.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="usps-digits-latent-magnify" class="magnify" onclick="magnifyFigure(&#39;usps-digits-latent&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="usps-digits-latent-caption" class="caption-frame">
+<p>Figure: Latent space for the deep Gaussian process learned through unsupervised learning and fitted to a subset of the USPS digit data.</p>
+</div>
+</div>
 <h2 id="visualize-the-latent-space-of-the-intermediate-layer">Visualize the latent space of the intermediate layer</h2>
 <p>We can also visualize dimensions of the intermediate layer. First the lengthscale of those dimensions is given by</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.obslayer.kern.lengthscale</code></pre></div>
@@ -1611,14 +1682,54 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
         plt.xlabel(<span class="st">&#39;dimension &#39;</span> <span class="op">+</span> <span class="bu">str</span>(dims[<span class="dv">0</span>]))
         plt.ylabel(<span class="st">&#39;dimension &#39;</span> <span class="op">+</span> <span class="bu">str</span>(dims[<span class="dv">1</span>]))
         mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&quot;../slides/diagrams/deepgp/usps-digits-hidden-&quot;</span> <span class="op">+</span> <span class="bu">str</span>(dims[<span class="dv">0</span>]) <span class="op">+</span> <span class="st">&#39;-&#39;</span> <span class="op">+</span> <span class="bu">str</span>(dims[<span class="dv">1</span>]) <span class="op">+</span> <span class="st">&#39;.svg&#39;</span>, transparent<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<div class="figure">
+<div id="usps-digits-hidden-1-0-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/usps-digits-hidden-1-0.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="usps-digits-hidden-1-0-magnify" class="magnify" onclick="magnifyFigure(&#39;usps-digits-hidden-1-0&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="usps-digits-hidden-1-0-caption" class="caption-frame">
+<p>Figure: Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.</p>
+</div>
+</div>
+<div class="figure">
+<div id="usps-digits-hidden-1-0-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/usps-digits-hidden-2-0.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="usps-digits-hidden-1-0-magnify" class="magnify" onclick="magnifyFigure(&#39;usps-digits-hidden-1-0&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="usps-digits-hidden-1-0-caption" class="caption-frame">
+<p>Figure: Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.</p>
+</div>
+</div>
+<div class="figure">
+<div id="usps-digits-hidden-1-0-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/usps-digits-hidden-3-0.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="usps-digits-hidden-1-0-magnify" class="magnify" onclick="magnifyFigure(&#39;usps-digits-hidden-1-0&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="usps-digits-hidden-1-0-caption" class="caption-frame">
+<p>Figure: Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.</p>
+</div>
+</div>
+<div class="figure">
+<div id="usps-digits-hidden-1-0-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/usps-digits-hidden-4-0.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="usps-digits-hidden-1-0-magnify" class="magnify" onclick="magnifyFigure(&#39;usps-digits-hidden-1-0&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="usps-digits-hidden-1-0-caption" class="caption-frame">
+<p>Figure: Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.</p>
+</div>
+</div>
 <h2 id="generate-from-model">Generate From Model</h2>
 <p>Now we can take a look at a sample from the model, by drawing a Gaussian random sample in the latent space and propagating it through the model.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">
@@ -1641,8 +1752,18 @@ fig, axs <span class="op">=</span> plt.subplots(rows,cols,figsize<span class="op
                         aspect<span class="op">=</span><span class="st">&#39;equal&#39;</span>)
         axs[i,j].set_axis_off()
 mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&quot;../slides/diagrams/deepgp/digit-samples-deep-gp.svg&quot;</span>, transparent<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<div class="figure">
+<div id="digit-samples-deep-gp-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/digit-samples-deep-gp.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="digit-samples-deep-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;digit-samples-deep-gp&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="digit-samples-deep-gp-caption" class="caption-frame">
+<p>Figure: These digits are produced by taking a tour of the two dimensional latent space (as described by a Gaussian process sample) and mapping the tour into the data space. We visualize the mean of the mapping in the images.</p>
+</div>
+</div>
 <object class="svgplot " data="../slides/diagrams/deep-health.svg" style="vertical-align:middle;">
 </object>
 <ul>
@@ -1656,18 +1777,41 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </ul>
 <h2 id="emukit-playground-edit">Emukit Playground <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emukit-playground.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emukit-playground.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Emukit playground is a software toolkit for exploring the use of statistical emulation as a tool. It was built by <a href="https://twitter.com/_AdamHirst">Adam Hirst</a>, during his software engineering internship at Amazon and supervised by Cliff McCollum.</p>
+<div class="figure">
+<div id="emukit-playground-figure" class="figure-frame">
 <div style="text-align:center">
-<a href="https://amzn.github.io/emukit-playground/"><img class="" src="../slides/diagrams/uq/emukit-playground.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></a>
+[
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/uq/emukit-playground.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<div class="caption" style="">
-Figure: Emukit playground is a tutorial for understanding the simulation/emulation relationship.
+](https://amzn.github.io/emukit-playground/)
 </div>
+</div>
+<div id="emukit-playground-magnify" class="magnify" onclick="magnifyFigure(&#39;emukit-playground&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="emukit-playground-caption" class="caption-frame">
+<p>Figure: Emukit playground is a tutorial for understanding the simulation/emulation relationship.</p>
+</div>
+</div>
+<div class="figure">
+<div id="-figure" class="figure-frame">
 <div style="text-align:center">
-<a href="https://amzn.github.io/emukit-playground/#!/learn/bayesian_optimization"><img class="negate" src="../slides/diagrams/uq/emukit-playground-bayes-opt.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></a>
+[
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/uq/emukit-playground-bayes-opt.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<div class="caption" style="">
-Figure: Tutorial on Bayesian optimization of the number of taxis deployed from Emukit playground.
+](https://amzn.github.io/emukit-playground/#!/learn/bayesian_optimization)
 </div>
+</div>
+<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="-caption" class="caption-frame">
+<p>Figure:</p>
+</div>
+</div>
+<p>{Tutorial on Bayesian optimization of the number of taxis deployed from Emukit playground.}{emukit-playground-bayes-opt}</p>
 <p>You can explore Bayesian optimization of a taxi simulation.</p>
 <h2 id="uncertainty-quantification-edit">Uncertainty Quantification <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/uncertainty-quantification.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/uncertainty-quantification.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <blockquote>

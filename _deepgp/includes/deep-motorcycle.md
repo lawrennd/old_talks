@@ -33,7 +33,7 @@ mlai.write_figure(filename='../slides/diagrams/deepgp/motorcycle-helmet-deep-gp.
 
 \subsection{Motorcycle Helmet Data Deep GP}
 
-\includediagram{../slides/diagrams/deepgp/motorcycle-helmet-deep-gp}
+\figure{\includediagram{../slides/diagrams/deepgp/motorcycle-helmet-deep-gp}{80%}}{Deep Gaussian process fit to the motorcycle helmet accelerometer data.}{motorcycle-helmet-deep-gp}
 
 \setupdisplaycode{import teaching_plots as plot
 import mlai}
@@ -47,7 +47,7 @@ mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/motorcycle-hel
 
 \subsection{Motorcycle Helmet Data Deep GP}
 
-\includediagram{../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-samples}
+\figure{\includediagram{../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-samples}}{Samples from the deep Gaussian process as fitted to the motorcycle helmet accelerometer data.}{motorcycle-helmet-deep-gp-samples}
 
 \displaycode{m.visualize(xlim=xlim, ylim=ylim, scale=scale,offset=offset, 
             xlabel="time", ylabel="acceleration/$g$", portion=0.5,
@@ -56,11 +56,11 @@ mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/motorcycle-hel
 
 \subsection{Motorcycle Helmet Data Latent 1}
 
-\includediagram{../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-layer-0}
+\figure{\includediagram{../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-layer-0}{60%}}{Mappings from the input to the latent layer for the motorcycle helmet accelerometer data.}{motorcycle-helmet-deep-gp-layer-0}
 
 \subsection{Motorcycle Helmet Data Latent 2}
 
-\includediagram{../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-layer-1}
+\figure{\includediagram{../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-layer-1}{60%}}{Mappings from the latent layer to the output layer for the motorcycle helmet accelerometer data.}{motorcycle-helmet-deep-gp-layer-1}
 
 \displaycode{fig, ax=plt.subplots(figsize=plot.big_wide_figsize)
 m.visualize_pinball(ax=ax, xlabel='time', ylabel='acceleration/g', 
@@ -70,5 +70,5 @@ mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/motorcycle-hel
 
 \subsection{Motorcycle Helmet Pinball Plot}
 
-\includediagram{../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-pinball}
+\figure{\includediagram{../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-pinball}{60%}}{Pinball plot for the mapping from input to output layer for the motorcycle helmet accelerometer data.}{motorcycle-helmet-deep-gp-pinball}
 \endif
