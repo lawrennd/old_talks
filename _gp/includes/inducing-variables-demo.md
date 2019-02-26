@@ -43,8 +43,7 @@ mlai.write_figure(figure=fig,
 
 \newslide{Full Gaussian Process Fit}
 
-\includediagram{../slides/diagrams/gp/sparse-demo-full-gp}
-\notes{\caption{Full Gaussian process fitted to the data set.}}
+\figure{\includediagram{../slides/diagrams/gp/sparse-demo-full-gp}{80%}}{Full Gaussian process fitted to the data set.}{sparse-demo-full-gp}
 
 \notes{Now we set up the inducing variables, $\mathbf{u}$. Each inducing variable has its own associated input index, $\mathbf{Z}$, which lives in the same space as $\inputMatrix$. Here we are using the true covariance function parameters to generate the fit.}
 
@@ -65,8 +64,7 @@ mlai.write_figure(figure=fig,
 
 \newslide{Inducing Variable Fit}
 
-\includediagram{../slides/diagrams/gp/sparse-demo-constrained-inducing-6-unlearned-gp}
-\notes{\caption{Sparse Gaussian process fitted with six inducing variables, no optimization of parameters or inducing variables.}}
+\figure{\includediagram{../slides/diagrams/gp/sparse-demo-constrained-inducing-6-unlearned-gp}{80%}}{Sparse Gaussian process fitted with six inducing variables, no optimization of parameters or inducing variables.}{sparse-demo-constrained-inducing-6-unlearned-gp}
 
 \code{_ = m.optimize(messages=True)
 display(m)}
@@ -79,8 +77,7 @@ mlai.write_figure(figure=fig,
 
 \newslide{Inducing Variable Param Optimize}
 
-\includediagram{../slides/diagrams/gp/sparse-demo-constrained-inducing-6-learned-gp}
-\notes{\caption{Gaussian process fitted with inducing variables fixed and parameters optimized}}
+\figure{\includediagram{../slides/diagrams/gp/sparse-demo-constrained-inducing-6-learned-gp}{80%}}{Gaussian process fitted with inducing variables fixed and parameters optimized}{sparse-demo-constrained-inducing-6-learned-gp}
 
 \code{m.randomize()
 m.inducing_inputs.unconstrain()
@@ -94,8 +91,7 @@ mlai.write_figure(figure=fig,
 
 \newslide{Inducing Variable Full Optimize}
 
-\includediagram{../slides/diagrams/gp/sparse-demo-unconstrained-inducing-6-gp}
-\notes{\caption{Gaussian process fitted with location of inducing variables and parameters both optimized}}
+\figure{\includediagram{../slides/diagrams/gp/sparse-demo-unconstrained-inducing-6-gp}{80%}}{Gaussian process fitted with location of inducing variables and parameters both optimized}{sparse-demo-unconstrained-inducing-6-gp}
 
 \notes{Now we will vary the number of inducing points used to form the approximation.}
 
@@ -122,9 +118,8 @@ mlai.write_figure(figure=fig,
 \includediagram{../slides/diagrams/gp/sparse-demo-full-gp}
 }
 
-\notesfigure{\includediagram{../slides/diagrams/gp/sparse-demo-sparse-inducing-8-gp}
-\includediagram{../slides/diagrams/gp/sparse-demo-full-gp}}
-\notes{\caption{Comparison of the full Gaussian process fit with a sparse Gaussian process using eight inducing varibles. Both inducing variables and parameters are optimized.}}
+\figure{\includediagram{../slides/diagrams/gp/sparse-demo-sparse-inducing-8-gp}{80%}
+\includediagram{../slides/diagrams/gp/sparse-demo-full-gp}}{80%}}{Comparison of the full Gaussian process fit with a sparse Gaussian process using eight inducing varibles. Both inducing variables and parameters are optimized.}{sparse-demo-sparse-inducing-8}
 
 \notes{And we can compare the probability of the result to the full model.}
 \code{print(m.log_likelihood(), m_full.log_likelihood())}
