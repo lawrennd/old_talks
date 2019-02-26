@@ -1,4 +1,7 @@
 \ifndef{stepFunctionData}
+\define{stepFunctionData}
+\editme
+
 \notes{\subsection{Step Function}
 
 Next we consider a simple step function data set.}
@@ -27,7 +30,6 @@ mlai.write_figure(figure=fig, filename='../../slides/diagrams/datasets/step-func
 			
 \subsection{Step Function Data}
 
-\includediagram{../slides/diagrams/datasets/step-function} 
+\figure{\includediagram{../slides/diagrams/datasets/step-function}{80%}}{Simulation study of step function data artificially generated. Here there is a small overlap between the two lines.}{step-function-data}
 
-\define{stepFunctionData}
 \endif
