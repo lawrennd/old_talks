@@ -6,7 +6,7 @@
 
 \notes{To illustrate the above mentioned concepts we we use the [mountain car simulator](https://github.com/openai/gym/wiki/MountainCarContinuous-v0). This simulator is widely used in machine learning to test reinforcement learning algorithms. The goal is to define a control policy on a car whose objective is to climb a mountain. Graphically, the problem looks as follows:}
 
-\figure{\includepng{../slides/diagrams/uq/mountaincar}{}{negate}{The mountain car simulation from the Open AI gym.}{mountain-car}
+\figure{\includepng{../slides/diagrams/uq/mountaincar}{60%}{negate}}{The mountain car simulation from the Open AI gym.}{mountain-car}
 
 \notes{The goal is to define a sequence of actions (push the car right or left with certain intensity) to make the car reach the flag after a number $T$ of time steps.
 
