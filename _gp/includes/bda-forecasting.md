@@ -11,7 +11,7 @@
 
 \newslide{Gelman Book}
 
-\figure{\includepng{../slides/diagrams/ml/bda_cover_1}{80%}}{\includepng{../slides/diagrams/ml/bda_cover}{80%}}{50%}{50%}}{Two different editions of Bayesian Data Analysis [@Gelman:bayesian13].}{bayesian-data-analysis}
+\figure{\columns{\includepng{../slides/diagrams/ml/bda_cover_1}{80%}}{\includepng{../slides/diagrams/ml/bda_cover}{80%}}{50%}{50%}}{Two different editions of Bayesian Data Analysis [@Gelman:bayesian13].}{bayesian-data-analysis}
 
 \slides{\alignright{@Gelman:bayesian13}}
 
