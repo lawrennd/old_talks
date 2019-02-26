@@ -13,12 +13,11 @@
 
 \newslide{Emukit Playground}
 
-\figure{\div{[\includepng{../slides/diagrams/uq/emukit-playground}{80%}{negate}](https://amzn.github.io/emukit-playground/)}{}{text-align:center}}{Emukit playground is a tutorial for understanding the simulation/emulation relationship.}{emukit-playground}
+\figure{\href{https://amzn.github.io/emukit-playground/}{\includepng{../slides/diagrams/uq/emukit-playground}{80%}{negate}}}{Emukit playground is a tutorial for understanding the simulation/emulation relationship.}{emukit-playground}
 
 \newslide{Emukit Playground}
 
-\figure{\div{[\includepng{../slides/diagrams/uq/emukit-playground-bayes-opt}{80%}{negate}](https://amzn.github.io/emukit-playground/#!/learn/bayesian_optimization)}{}{text-align:center}}
-{Tutorial on Bayesian optimization of the number of taxis deployed from Emukit playground.}{emukit-playground-bayes-opt}
+\figure{\href{https://amzn.github.io/emukit-playground/#!/learn/bayesian_optimization}{\includepng{../slides/diagrams/uq/emukit-playground-bayes-opt}{80%}{negate}}}{Tutorial on Bayesian optimization of the number of taxis deployed from Emukit playground.}{emukit-playground-bayes-opt}
 
 \notes{You can explore Bayesian optimization of a taxi simulation.}
 

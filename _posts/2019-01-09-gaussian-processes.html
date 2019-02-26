@@ -290,10 +290,18 @@ $$</span><br /> in the figure below we plot these data on the <span class="math 
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
 <span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;two_point_sample</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, <span class="st">&#39;../slides/diagrams/gp&#39;</span>, sample<span class="op">=</span>IntSlider(<span class="dv">9</span>, <span class="dv">9</span>, <span class="dv">12</span>, <span class="dv">1</span>))</code></pre></div>
+{
+<div class="figure">
+<div id="two-point-sample-one-two-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/gp/two_point_sample012.svg" style="vertical-align:middle;">
 </object>
-<div class="caption" style="">
-Figure: The joint Gaussian over <span class="math inline">$\mappingFunction_1$</span> and <span class="math inline">$\mappingFunction_2$</span> along with the conditional distribution of <span class="math inline">$\mappingFunction_2$</span> given <span class="math inline">$\mappingFunction_1$</span>
+</div>
+<div id="two-point-sample-one-two-magnify" class="magnify" onclick="magnifyFigure(&#39;two-point-sample-one-two&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="two-point-sample-one-two-caption" class="caption-frame">
+<p>Figure: The joint Gaussian over <span class="math inline">$\mappingFunction_1$</span> and <span class="math inline">$\mappingFunction_2$</span> along with the conditional distribution of <span class="math inline">$\mappingFunction_2$</span> given <span class="math inline">$\mappingFunction_1$</span></p>
+</div>
 </div>
 <h2 id="uluru-edit">Uluru <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gpdistfunc.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gpdistfunc.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="figure">
@@ -324,10 +332,18 @@ Figure: The joint Gaussian over <span class="math inline">$\mappingFunction_1$</
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;two_point_sample</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, <span class="st">&#39;../slides/diagrams/gp&#39;</span>, sample<span class="op">=</span>IntSlider(<span class="dv">13</span>, <span class="dv">13</span>, <span class="dv">17</span>, <span class="dv">1</span>))</code></pre></div>
 <object class="svgplot " data="../slides/diagrams/gp/two_point_sample013.svg" style="vertical-align:middle;">
 </object>
+{
+<div class="figure">
+<div id="two-point-sample-one-eight-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/gp/two_point_sample017.svg" style="vertical-align:middle;">
 </object>
-<div class="caption" style="">
-Figure: The joint Gaussian over <span class="math inline">$\mappingFunction_1$</span> and <span class="math inline">$\mappingFunction_8$</span> along with the conditional distribution of <span class="math inline">$\mappingFunction_8$</span> given <span class="math inline">$\mappingFunction_1$</span>
+</div>
+<div id="two-point-sample-one-eight-magnify" class="magnify" onclick="magnifyFigure(&#39;two-point-sample-one-eight&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="two-point-sample-one-eight-caption" class="caption-frame">
+<p>Figure: The joint Gaussian over <span class="math inline">$\mappingFunction_1$</span> and <span class="math inline">$\mappingFunction_8$</span> along with the conditional distribution of <span class="math inline">$\mappingFunction_8$</span> given <span class="math inline">$\mappingFunction_1$</span></p>
+</div>
 </div>
 <ul>
 <li>Covariance function, <span class="math inline">$\kernelMatrix$</span></li>
@@ -532,6 +548,8 @@ gpoptimizePlot3
 ```
 
 \only<1>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseQuadratic1}}\only<2>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseQuadratic2}}\only<3>{\inputdiagram{../../../gp/tex/diagrams/gpOptimiseQuadratic3}}-->
+<div class="figure">
+<div id="-figure" class="figure-frame">
 <table>
 <tr>
 <td width="50%">
@@ -544,6 +562,14 @@ gpoptimizePlot3
 </td>
 </tr>
 </table>
+</div>
+<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="-caption" class="caption-frame">
+<p>Figure:</p>
+</div>
+</div>
 <table>
 <tr>
 <td width="50%">
@@ -556,9 +582,7 @@ gpoptimizePlot3
 </td>
 </tr>
 </table>
-<div class="caption" style="">
-Figure: Variation in the data fit term, the capacity term and the negative log likelihood for different lengthscales.
-</div>
+<p>}</p>
 <h2 id="gene-expression-example-edit">Gene Expression Example <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/della-gatta-gene-gp.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/della-gatta-gene-gp.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>We now consider an example in gene expression. Gene expression is the measurement of mRNA levels expressed in cells. These mRNA levels show which genes are 'switched on' and producing data. In the example we will use a Gaussian process to determine whether a given gene is active, or we are merely observing a noise response.</p>
 <h2 id="della-gatta-gene-data-edit">Della Gatta Gene Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/della-gatta-gene-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/della-gatta-gene-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
