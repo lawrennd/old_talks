@@ -662,10 +662,17 @@ $$</span><br /></p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;stack-gp-sample-Linear-</span><span class="sc">{sample:0&gt;1}</span><span class="st">.svg&#39;</span>, 
                             directory<span class="op">=</span><span class="st">&#39;../../slides/diagrams/deepgp&#39;</span>, sample<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">4</span>))</code></pre></div>
 <h2 id="stacked-pca-edit">Stacked PCA <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/stacked-pca.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/stacked-pca.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="figure">
+<div id="stack-pca-sample-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/stack-pca-sample-4.svg" style="vertical-align:middle;">
 </object>
-<div class="caption" style="">
-Figure: Composition of linear functions just leads to a new linear function.
+</div>
+<div id="stack-pca-sample-magnify" class="magnify" onclick="magnifyFigure(&#39;stack-pca-sample&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="stack-pca-sample-caption" class="caption-frame">
+<p>Figure: Composition of linear functions just leads to a new linear function. Here you see the result of multiple affine transformations applied to a square in two dimensions.</p>
+</div>
 </div>
 <p>Stacking a series of linear functions simply leads to a new linear function. The use of multiple linear function merely changes the covariance of the resulting Gaussian. If <br /><span class="math display">$$
 \latentMatrix \sim \gaussianSamp{\zerosVector}{\eye}
@@ -692,10 +699,17 @@ $$</span><br /> we can obtain <br /><span class="math display">$$\latentMatrix \
 <h2 id="stacked-gp-edit">Stacked GP <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/stacked-gp.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/stacked-gp.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;stack-gp-sample-RBF-</span><span class="sc">{sample:0&gt;1}</span><span class="st">.svg&#39;</span>, 
                             directory<span class="op">=</span><span class="st">&#39;../../slides/diagrams/deepgp&#39;</span>, sample<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">4</span>))</code></pre></div>
+<div class="figure">
+<div id="stack-gp-sample-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/stack-gp-sample-4.svg" style="vertical-align:middle;">
 </object>
-<div class="caption" style="">
-Figure: Stacking Gaussian process models leads to non linear mappings at each stage. Here we are mapping from two dimensions to two dimensions in each layer.
+</div>
+<div id="stack-gp-sample-magnify" class="magnify" onclick="magnifyFigure(&#39;stack-gp-sample&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="stack-gp-sample-caption" class="caption-frame">
+<p>Figure: Stacking Gaussian process models leads to non linear mappings at each stage. Here we are mapping from two dimensions to two dimensions in each layer.</p>
+</div>
 </div>
 <p>Note that once the box has folded over on itself, it cannot be unfolded. So a feature that is generated near the top of the model cannot be removed furthr down the model.</p>
 <p>This folding over effect happens in low dimensions. In higher dimensions it is less common.</p>
@@ -1135,34 +1149,84 @@ ax.set_ylim(ylim)
 ax.set_xlim(xlim)
 mlai.write_figure(filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/della-gatta-gene-deep-gp.svg&#39;</span>, 
             transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
-<h2 id="tp53-gene-data-deep-gp">TP53 Gene Data Deep GP</h2>
+<h2 id="della-gatta-gene-data-deep-gp">Della Gatta Gene Data Deep GP</h2>
+<div class="figure">
+<div id="della-gatta-gene-deep-gp-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/deepgp/della-gatta-gene-deep-gp.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="della-gatta-gene-deep-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;della-gatta-gene-deep-gp&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="della-gatta-gene-deep-gp-caption" class="caption-frame">
+<p>Figure: Deep Gaussian process fit to the Della Gatta gene expression data.</p>
+</div>
+</div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax<span class="op">=</span>plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
 plot.model_sample(m, scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, samps<span class="op">=</span><span class="dv">10</span>, ax<span class="op">=</span>ax, portion <span class="op">=</span> <span class="fl">0.5</span>)
 ax.set_ylim(ylim)
 ax.set_xlim(xlim)
 mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/della-gatta-gene-deep-gp-samples.svg&#39;</span>, 
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
-<h2 id="tp53-gene-data-deep-gp-1">TP53 Gene Data Deep GP</h2>
+<h2 id="della-gatta-gene-data-deep-gp-1">Della Gatta Gene Data Deep GP</h2>
+<div class="figure">
+<div id="della-gatta-gene-deep-gp-samples-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/deepgp/della-gatta-gene-deep-gp-samples.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="della-gatta-gene-deep-gp-samples-magnify" class="magnify" onclick="magnifyFigure(&#39;della-gatta-gene-deep-gp-samples&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="della-gatta-gene-deep-gp-samples-caption" class="caption-frame">
+<p>Figure: Deep Gaussian process samples fitted to the Della Gatta gene expression data.</p>
+</div>
+</div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.visualize(offset<span class="op">=</span>offset, scale<span class="op">=</span>scale, xlim<span class="op">=</span>xlim, ylim<span class="op">=</span>ylim,
             dataset<span class="op">=</span><span class="st">&#39;della-gatta-gene&#39;</span>,
             diagrams<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp&#39;</span>)</code></pre></div>
-<h2 id="tp53-gene-data-latent-1">TP53 Gene Data Latent 1</h2>
+<h2 id="della-gatta-gene-data-latent-1">Della Gatta Gene Data Latent 1</h2>
+<div class="figure">
+<div id="della-gatta-gene-deep-gp-layer-0-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/deepgp/della-gatta-gene-deep-gp-layer-0.svg" style="vertical-align:middle;">
 </object>
-<h2 id="tp53-gene-data-latent-2">TP53 Gene Data Latent 2</h2>
+</div>
+<div id="della-gatta-gene-deep-gp-layer-0-magnify" class="magnify" onclick="magnifyFigure(&#39;della-gatta-gene-deep-gp-layer-0&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="della-gatta-gene-deep-gp-layer-0-caption" class="caption-frame">
+<p>Figure: Gaussian process mapping from input to latent layer for the della Gatta gene expression data.</p>
+</div>
+</div>
+<h2 id="della-gatta-gene-data-latent-2">Della Gatta Gene Data Latent 2</h2>
+<div class="figure">
+<div id="della-gatta-gene-deep-gp-layer-1-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/deepgp/della-gatta-gene-deep-gp-layer-1.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="della-gatta-gene-deep-gp-layer-1-magnify" class="magnify" onclick="magnifyFigure(&#39;della-gatta-gene-deep-gp-layer-1&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="della-gatta-gene-deep-gp-layer-1-caption" class="caption-frame">
+<p>Figure: Gaussian process mapping from latent to output layer for the della Gatta gene expression data.</p>
+</div>
+</div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax<span class="op">=</span>plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
 m.visualize_pinball(offset<span class="op">=</span>offset, ax<span class="op">=</span>ax, scale<span class="op">=</span>scale, xlim<span class="op">=</span>xlim, ylim<span class="op">=</span>ylim, portion<span class="op">=</span><span class="fl">0.1</span>, points<span class="op">=</span><span class="dv">50</span>)
 mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/della-gatta-gene-deep-gp-pinball.svg&#39;</span>, 
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>, ax<span class="op">=</span>ax)</code></pre></div>
 <h2 id="tp53-gene-pinball-plot">TP53 Gene Pinball Plot</h2>
+<div class="figure">
+<div id="della-gatta-gene-deep-gp-pinball-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/deepgp/della-gatta-gene-deep-gp-pinball.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="della-gatta-gene-deep-gp-pinball-magnify" class="magnify" onclick="magnifyFigure(&#39;della-gatta-gene-deep-gp-pinball&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="della-gatta-gene-deep-gp-pinball-caption" class="caption-frame">
+<p>Figure: A pinball plot shows the movement of the 'ball' as it passes through each layer of the Gaussian processes. Mean directions of movement are shown by lines. Shading gives one standard deviation of movement position. At each layer, the uncertainty is reset. The overal uncertainty is the cumulative uncertainty from all the layers. Pinball plot of the della Gatta gene expression data.</p>
+</div>
+</div>
 <h2 id="step-function-edit">Step Function <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/step-function-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/step-function-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Next we consider a simple step function data set.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">num_low<span class="op">=</span><span class="dv">25</span>
