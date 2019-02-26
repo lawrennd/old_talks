@@ -24,6 +24,6 @@ mlai.write_figure(filename='../slides/diagrams/datasets/motorcycle-helmet.svg',
 
 \subsection{Motorcycle Helmet Data}
 
-\includediagram{../slides/diagrams/datasets/motorcycle-helmet}
+\figure{\includediagram{../slides/diagrams/datasets/motorcycle-helmet}{80%}}{Motorcycle helmet data. The data consists of acceleration readings on a motorcycle helmet undergoing a collision. The data exhibits heteroschedastic (time varying) noise levles and non-stationarity.}{motorcycle-helment-data}
 
 \endif
