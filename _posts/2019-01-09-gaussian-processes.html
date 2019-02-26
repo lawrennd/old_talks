@@ -380,7 +380,7 @@ $$</span><br /> where <span class="math inline">ℓ</span> is the <em>length sca
 <br /><span class="math display">$$\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\ltwoNorm{\inputVector-\inputVector^\prime}^2}{2\lengthScale^2}\right)$$</span><br />
 </center>
 <div class="figure">
-<div id="-figure" class="figure-frame">
+<div id="eq-covariance-plot-figure" class="figure-frame">
 <table>
 <tr>
 <td width="45%">
@@ -395,10 +395,10 @@ $$</span><br /> where <span class="math inline">ℓ</span> is the <em>length sca
 </tr>
 </table>
 </div>
-<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<div id="eq-covariance-plot-magnify" class="magnify" onclick="magnifyFigure(&#39;eq-covariance-plot&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
-<div id="-caption" class="caption-frame">
+<div id="eq-covariance-plot-caption" class="caption-frame">
 <p>Figure: The exponentiated quadratic covariance function.</p>
 </div>
 </div>
@@ -915,7 +915,7 @@ $$</span><br /></p>
 <br /><span class="math display">$$\kernelScalar_f(\inputVector, \inputVector^\prime) = \kernelScalar_g(\inputVector, \inputVector^\prime) + \kernelScalar_h(\inputVector, \inputVector^\prime)$$</span><br />
 </center>
 <div class="figure">
-<div id="-figure" class="figure-frame">
+<div id="add-covariance-plot-figure" class="figure-frame">
 <table>
 <tr>
 <td width="45%">
@@ -930,10 +930,10 @@ $$</span><br /></p>
 </tr>
 </table>
 </div>
-<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<div id="add-covariance-plot-magnify" class="magnify" onclick="magnifyFigure(&#39;add-covariance-plot&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
-<div id="-caption" class="caption-frame">
+<div id="add-covariance-plot-caption" class="caption-frame">
 <p>Figure: An additive covariance function formed by combining two exponentiated quadratic covariance functions.</p>
 </div>
 </div>
@@ -990,7 +990,7 @@ $$</span><br /> meaning that the vector of observations from the function is joi
 <br /><span class="math display">$$\kernel(\inputVector, \inputVector^\prime) = \basisVector(\inputVector)^\top \basisVector(\inputVector^\prime)$$</span><br />
 </center>
 <div class="figure">
-<div id="-figure" class="figure-frame">
+<div id="basis-covariance-plot-figure" class="figure-frame">
 <table>
 <tr>
 <td width="45%">
@@ -1005,10 +1005,10 @@ $$</span><br /> meaning that the vector of observations from the function is joi
 </tr>
 </table>
 </div>
-<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<div id="basis-covariance-plot-magnify" class="magnify" onclick="magnifyFigure(&#39;basis-covariance-plot&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
-<div id="-caption" class="caption-frame">
+<div id="basis-covariance-plot-caption" class="caption-frame">
 <p>Figure: A covariance function based on a non-linear basis given by <span class="math inline">$\basisVector(\inputVector)$</span>.</p>
 </div>
 </div>
@@ -1021,7 +1021,7 @@ $$</span><br /></p>
 <br /><span class="math display">$$\kernelScalar(t, t^\prime)=\alpha \min(t, t^\prime)$$</span><br />
 </center>
 <div class="figure">
-<div id="-figure" class="figure-frame">
+<div id="brownian-covariance-plot-figure" class="figure-frame">
 <table>
 <tr>
 <td width="45%">
@@ -1036,10 +1036,10 @@ $$</span><br /></p>
 </tr>
 </table>
 </div>
-<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<div id="brownian-covariance-plot-magnify" class="magnify" onclick="magnifyFigure(&#39;brownian-covariance-plot&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
-<div id="-caption" class="caption-frame">
+<div id="brownian-covariance-plot-caption" class="caption-frame">
 <p>Figure: Brownian motion covariance function.</p>
 </div>
 </div>
@@ -1050,7 +1050,7 @@ $$</span><br /></p>
 <br /><span class="math display">$$\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \arcsin\left(\frac{w \inputVector^\top \inputVector^\prime + b}{\sqrt{\left(w \inputVector^\top \inputVector + b + 1\right)\left(w \left.\inputVector^\prime\right.^\top \inputVector^\prime + b + 1\right)}}\right)$$</span><br />
 </center>
 <div class="figure">
-<div id="-figure" class="figure-frame">
+<div id="mlp-covariance-plot-figure" class="figure-frame">
 <table>
 <tr>
 <td width="45%">
@@ -1065,10 +1065,10 @@ $$</span><br /></p>
 </tr>
 </table>
 </div>
-<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<div id="mlp-covariance-plot-magnify" class="magnify" onclick="magnifyFigure(&#39;mlp-covariance-plot&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
-<div id="-caption" class="caption-frame">
+<div id="mlp-covariance-plot-caption" class="caption-frame">
 <p>Figure: The multi-layer perceptron covariance function. This is derived by considering the infinite limit of a neural network with probit activation functions.</p>
 </div>
 </div>
@@ -1081,7 +1081,7 @@ $$</span><br /></p>
 \left(w \left.\inputVector^\prime\right.^\top \inputVector^\prime + b + 1\right)}}\right)$$</span><br />
 </center>
 <div class="figure">
-<div id="-figure" class="figure-frame">
+<div id="relu-covariance-plot-figure" class="figure-frame">
 <table>
 <tr>
 <td width="45%">
@@ -1096,10 +1096,10 @@ $$</span><br /></p>
 </tr>
 </table>
 </div>
-<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<div id="relu-covariance-plot-magnify" class="magnify" onclick="magnifyFigure(&#39;relu-covariance-plot&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
-<div id="-caption" class="caption-frame">
+<div id="relu-covariance-plot-caption" class="caption-frame">
 <p>Figure: Rectified linear unit covariance function.</p>
 </div>
 </div>
@@ -1115,7 +1115,7 @@ $$</span><br /></p>
 <br /><span class="math display">$$\kernelScalar(\inputVector, \inputVector^\prime) = \alpha(w \inputVector^\top\inputVector^\prime + b)^d$$</span><br />
 </center>
 <div class="figure">
-<div id="-figure" class="figure-frame">
+<div id="polynomial-covariance-plot-figure" class="figure-frame">
 <table>
 <tr>
 <td width="45%">
@@ -1130,10 +1130,10 @@ $$</span><br /></p>
 </tr>
 </table>
 </div>
-<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<div id="polynomial-covariance-plot-magnify" class="magnify" onclick="magnifyFigure(&#39;polynomial-covariance-plot&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
-<div id="-caption" class="caption-frame">
+<div id="polynomial-covariance-plot-caption" class="caption-frame">
 <p>Figure: Polynomial covariance function.</p>
 </div>
 </div>
@@ -1142,7 +1142,7 @@ $$</span><br /></p>
 <br /><span class="math display">$$\kernelScalar(\inputVector, \inputVector^\prime) = \alpha\exp\left(\frac{-2\sin(\pi rw)^2}{\lengthScale^2}\right)$$</span><br />
 </center>
 <div class="figure">
-<div id="-figure" class="figure-frame">
+<div id="periodic-covariance-plot-figure" class="figure-frame">
 <table>
 <tr>
 <td width="45%">
@@ -1157,10 +1157,10 @@ $$</span><br /></p>
 </tr>
 </table>
 </div>
-<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<div id="periodic-covariance-plot-magnify" class="magnify" onclick="magnifyFigure(&#39;periodic-covariance-plot&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
-<div id="-caption" class="caption-frame">
+<div id="periodic-covariance-plot-caption" class="caption-frame">
 <p>Figure: Periodic covariance function.</p>
 </div>
 </div>
@@ -1175,7 +1175,7 @@ $$</span><br /></p>
 <br /><span class="math display">$$\kernelScalar(i, j, \inputVector, \inputVector^\prime) = b_{i,j} \kernelScalar(\inputVector, \inputVector^\prime)$$</span><br />
 </center>
 <div class="figure">
-<div id="-figure" class="figure-frame">
+<div id="lmc-covariance-plot-figure" class="figure-frame">
 <table>
 <tr>
 <td width="45%">
@@ -1190,10 +1190,10 @@ $$</span><br /></p>
 </tr>
 </table>
 </div>
-<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<div id="lmc-covariance-plot-magnify" class="magnify" onclick="magnifyFigure(&#39;lmc-covariance-plot&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
-<div id="-caption" class="caption-frame">
+<div id="lmc-covariance-plot-caption" class="caption-frame">
 <p>Figure: Linear model of coregionalization covariance function.</p>
 </div>
 </div>
@@ -1208,7 +1208,7 @@ $$</span><br /></p>
 <br /><span class="math display">$$\kernelScalar(i, j, \inputVector, \inputVector^\prime) = b_{i,j} \kernelScalar(\inputVector, \inputVector^\prime)$$</span><br />
 </center>
 <div class="figure">
-<div id="-figure" class="figure-frame">
+<div id="lmc-covariance-plot-figure" class="figure-frame">
 <table>
 <tr>
 <td width="45%">
@@ -1223,10 +1223,10 @@ $$</span><br /></p>
 </tr>
 </table>
 </div>
-<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<div id="lmc-covariance-plot-magnify" class="magnify" onclick="magnifyFigure(&#39;lmc-covariance-plot&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
-<div id="-caption" class="caption-frame">
+<div id="lmc-covariance-plot-caption" class="caption-frame">
 <p>Figure: Intrinsic coregionalization model covariance function.</p>
 </div>
 </div>
