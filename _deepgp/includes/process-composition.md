@@ -27,8 +27,7 @@ pgm.render().figure.savefig("../slides/diagrams/deepgp/deep-markov.svg", transpa
   p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mappingFunctionVector_5|\mappingFunctionVector_4)p(\mappingFunctionVector_4|\mappingFunctionVector_3)p(\mappingFunctionVector_3|\mappingFunctionVector_2)p(\mappingFunctionVector_2|\mappingFunctionVector_1)p(\mappingFunctionVector_1|\inputVector)
   $$
 
-\includediagram{../slides/diagrams/deepgp/deep-markov}
-\notes{\caption{Probabilistically the deep Gaussian process can be represented as a Markov chain.}}
+\figure{\includediagram{../slides/diagrams/deepgp/deep-markov}{80%}}{Probabilistically the deep Gaussian process can be represented as a Markov chain.}{deep-markov}
 
 \setupplotcode{from matplotlib import rc
 rc("font", **{'family':'sans-serif','sans-serif':['Helvetica'], 'size':15})
@@ -39,7 +38,7 @@ pgm.render().figure.savefig("../slides/diagrams/deepgp/deep-markov-vertical.svg"
 
 \newslide{}
 
-\includediagram{../slides/diagrams/deepgp/deep-markov-vertical}
+\figure{\includediagram{../slides/diagrams/deepgp/deep-markov-vertical}{15%}}{More usually deep probabilistic models are written vertically rather than horizontally as in the Markov chain.}{deep-markov-vertical}
 
 \subsection{Why Deep?}
 
@@ -47,11 +46,8 @@ pgm.render().figure.savefig("../slides/diagrams/deepgp/deep-markov-vertical.svg"
 
 * Elegant properties:
   * e.g. *Derivatives* of process are also Gaussian distributed (if they exist).
-
 * For particular covariance functions they are ‘universal approximators’, i.e. all functions can have support under the prior.
-
 * Gaussian derivatives might ring alarm bells.
-
 * E.g. a priori they don’t believe in function ‘jumps’.
 }
 \notes{If the result of composing many functions together is simply another function, then why do we bother? The key point is that we can change the class of functions we are modeling by composing in this manner. A Gaussian process is specifying a prior over functions, and one with a number of elegant properties. For example, the derivative process (if it exists) of a Gaussian process is also Gaussian distributed. That makes it easy to assimilate, for example, derivative observations. But that also might raise some alarm bells. That implies that the *marginal derivative distribution* is also Gaussian distributed. If that's the case, then it means that functions which occasionally exhibit very large derivatives are hard to model with a Gaussian process. For example, a function with jumps in. 
@@ -67,7 +63,7 @@ A one off discontinuity is easy to model with a Gaussian process, or even multip
 
 \newslide{}
 
-\includediagram{../slides/diagrams/deepgp/deep-markov-vertical}
+\slides{\includediagram{../slides/diagrams/deepgp/deep-markov-vertical}}
 
 \plotcode{pgm = plot.vertical_chain(depth=5, shape=[2, 7])
 pgm.add_node(daft.Node('y_2', r'$\mathbf{y}_2$', 1.5, 3.5, observed=True))
@@ -77,7 +73,8 @@ pgm.render().figure.savefig("../slides/diagrams/deepgp/deep-markov-vertical-side
 \newslide{}
 
 \notes{Additionally, we are not constrained to the formalism of the chain. For example, we can easily add single nodes emerging from some point in the depth of the chain. This allows us to combine the benefits of the graphical modelling formalism, but with a powerful framework for relating one set of variables to another, that of Gaussian processes}
-\includediagram{../slides/diagrams/deepgp/deep-markov-vertical-side}
+
+\figure{\includediagram{../slides/diagrams/deepgp/deep-markov-vertical-side}{15%}}{More generally we aren't constrained by the Markov chain. We can design structures that respect our belief about the underlying conditional dependencies. Here we are adding a side note from the chain.}{deep-markov-vertical-side}
 
 
 \endif
