@@ -1275,13 +1275,16 @@ ax.set_xlim(xlim)
 
 mlai.write_figure(figure<span class="op">=</span>fig,filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/gp/step-function-gp.svg&#39;</span>, 
             transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
-<div class="figure" style="">
-<div class="figure-frame" style="">
+<div class="figure">
+<div id="step-function-gp-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/gp/step-function-gp.svg" style="vertical-align:middle;">
 </object>
-<div class="caption" style="">
-Figure: Gaussian process fit to the step function data. Note the large error bars and the over-smoothing of the discontinuity. Error bars are shown at two standard deviations.
 </div>
+<div id="step-function-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;step-function-gp&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="step-function-gp-caption" class="caption-frame">
+<p>Figure: Gaussian process fit to the step function data. Note the large error bars and the over-smoothing of the discontinuity. Error bars are shown at two standard deviations.</p>
 </div>
 </div>
 <p>The resulting fit to the step function data shows some challenges. In particular, the over smoothing at the discontinuity. If we know how many discontinuities there are, we can parameterize them in the step function. But by doing this, we form a semi-parametric model. The parameters indicate how many discontinuities are, and where they are. They can be optimized as part of the model fit. But if new, unforeseen, discontinuities arise when the model is being deployed in practice, these won't be accounted for in the predictions.</p>
@@ -1415,8 +1418,18 @@ mlai.write_figure(filename<span class="op">=</span><span class="st">&#39;../slid
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_full <span class="op">=</span> GPy.models.GPRegression(x,yhat)
 _ <span class="op">=</span> m_full.optimize() <span class="co"># Optimize parameters of covariance function</span></code></pre></div>
 <h2 id="motorcycle-helmet-data-gp">Motorcycle Helmet Data GP</h2>
+<div class="figure">
+<div id="motorcycle-helmet-gp-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/gp/motorcycle-helmet-gp.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="motorcycle-helmet-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;motorcycle-helmet-gp&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="motorcycle-helmet-gp-caption" class="caption-frame">
+<p>Figure: Gaussian process fit to the motorcycle helmet accelerometer data.</p>
+</div>
+</div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> deepgp</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">layers <span class="op">=</span> [y.shape[<span class="dv">1</span>], <span class="dv">1</span>, x.shape[<span class="dv">1</span>]]
 inits <span class="op">=</span> [<span class="st">&#39;PCA&#39;</span>]<span class="op">*</span>(<span class="bu">len</span>(layers)<span class="op">-</span><span class="dv">1</span>)
@@ -1591,8 +1604,19 @@ ax.set_xlim(xlim)
 mlai.write_figure(filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/gp/robot-wireless-gp-dim-&#39;</span> <span class="op">+</span> <span class="bu">str</span>(output_dim)<span class="op">+</span> <span class="st">&#39;.svg&#39;</span>, 
             transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <h2 id="robot-wifi-data-gp">Robot WiFi Data GP</h2>
+<div class="figure">
+<div id="-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/gp/robot-wireless-gp-dim-1.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="-caption" class="caption-frame">
+<p>Figure:</p>
+</div>
+</div>
+<p>}{Gaussian process fit to the Robot Wireless dimension 1.}{robot-wireless-gp-dim-1}</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">layers <span class="op">=</span> [y.shape[<span class="dv">1</span>], <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">2</span>, x.shape[<span class="dv">1</span>]]
 inits <span class="op">=</span> [<span class="st">&#39;PCA&#39;</span>]<span class="op">*</span>(<span class="bu">len</span>(layers)<span class="op">-</span><span class="dv">1</span>)
 kernels <span class="op">=</span> []
@@ -1868,8 +1892,19 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 <p>Figure: These digits are produced by taking a tour of the two dimensional latent space (as described by a Gaussian process sample) and mapping the tour into the data space. We visualize the mean of the mapping in the images.</p>
 </div>
 </div>
+<h2 id="deep-health-edit">Deep Health <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_health/includes/deep-health-model.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_health/includes/deep-health-model.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="figure">
+<div id="deep-health-model-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/deep-health.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="deep-health-model-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-health-model&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="deep-health-model-caption" class="caption-frame">
+<p>Figure: The deep health model uses different layers of abstraction in the deep Gaussian process to represent information about diagnostics and treatment to model interelationships between a patients different data modalities.</p>
+</div>
+</div>
 <ul>
 <li><em>Gaussian process based nonlinear latent structure discovery in multivariate spike train data</em> <span class="citation">Wu et al. (2017)</span></li>
 <li><em>Doubly Stochastic Variational Inference for Deep Gaussian Processes</em> <span class="citation">Salimbeni and Deisenroth (2017)</span></li>
@@ -1930,19 +1965,17 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 <h2 id="mountain-car-simulator-edit">Mountain Car Simulator <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/mountain-car-simulation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/mountain-car-simulation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>To illustrate the above mentioned concepts we we use the <a href="https://github.com/openai/gym/wiki/MountainCarContinuous-v0">mountain car simulator</a>. This simulator is widely used in machine learning to test reinforcement learning algorithms. The goal is to define a control policy on a car whose objective is to climb a mountain. Graphically, the problem looks as follows:</p>
 <div class="figure">
-<div id="-figure" class="figure-frame">
-
+<div id="mountain-car-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/uq/mountaincar.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+</div>
+<div id="mountain-car-magnify" class="magnify" onclick="magnifyFigure(&#39;mountain-car&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
-<div id="-caption" class="caption-frame">
-<p>Figure:</p>
+<div id="mountain-car-caption" class="caption-frame">
+<p>Figure: The mountain car simulation from the Open AI gym.</p>
 </div>
-</div>
-{
-<div class="centered" style="">
-<img class="negate" src="../slides/diagrams/uq/mountaincar.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 <p>The goal is to define a sequence of actions (push the car right or left with certain intensity) to make the car reach the flag after a number <span class="math inline"><em>T</em></span> of time steps.</p>
 <p>At each time step <span class="math inline"><em>t</em></span>, the car is characterized by a vector <span class="math inline">$\inputVector_{t} = (p_t,v_t)$</span> of states which are respectively the the position and velocity of the car at time <span class="math inline"><em>t</em></span>. For a sequence of states (an episode), the dynamics of the car is given by</p>

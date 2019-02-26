@@ -18,6 +18,5 @@ from ipywidgets import IntSlider}
 \newframe{\includediagram{../slides/diagrams/gp/two_point_sample017}}{two_point_sample3}
 \endanimation
 }
-\notesfigure{\includediagram{../slides/diagrams/gp/two_point_sample017}}
-\notes{\caption{The joint Gaussian over $\mappingFunction_1$ and $\mappingFunction_8$ along with the conditional distribution of $\mappingFunction_8$ given $\mappingFunction_1$}}
+\notes{\figure{\includediagram{../slides/diagrams/gp/two_point_sample017}{80%}}{The joint Gaussian over $\mappingFunction_1$ and $\mappingFunction_8$ along with the conditional distribution of $\mappingFunction_8$ given $\mappingFunction_1$}{two-point-sample-one-eight}
 \endif
