@@ -4,7 +4,7 @@
 
 \subsection{Emukit}
 
-\figure{\includepng{../slides/diagrams/uq/emukit-software-page}{80%}}{The Emukit software is a set of software tools for emulation and surrogate modeling. \center{<https://amzn.github.io/emukit/>}}{emukit-software-page}
+\figure{\includepng{../slides/diagrams/uq/emukit-software-page}{80%}}{The Emukit software is a set of software tools for emulation and surrogate modeling. <https://amzn.github.io/emukit/>}{emukit-software-page}
 
 \newslide{Emukit}
 \slides{
