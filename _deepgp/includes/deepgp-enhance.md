@@ -27,7 +27,7 @@ Finally, all parameters of the model are optimized together.}
 
 \loadcode{visualize}{deepgp_tutorial}
 
-\notes{The pinball visualization is to bring the pinball-analogy to life in the model. It shows how a ball would fall through the model to end up in the right position. This visualization is only appropriate for models with intermediate layers containing a single latent variable.}
+\notes{The pinball visualization is to bring the pinball-analogy to life in the model. It shows how a ball would fall through the model to end up in the right pbosition. This visualization is only appropriate for models with intermediate layers containing a single latent variable.}
 
 \loadcode{visualize_pinball}{deepgp_tutorial}
 

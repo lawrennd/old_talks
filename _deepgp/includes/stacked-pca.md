@@ -21,8 +21,7 @@
 \endanimation
 }
 
-\notesfigure{\includediagram{../slides/diagrams/stack-pca-sample-4}}
-\notes{\caption{Composition of linear functions just leads to a new linear function.}}
+\notes{\figure{\includediagram{../slides/diagrams/stack-pca-sample-4}{20%}}{Composition of linear functions just leads to a new linear function. Here you see the result of multiple affine transformations applied to a square in two dimensions.}{stack-pca-sample}}
 
 \notes{Stacking a series of linear functions simply leads to a new linear function. The use of multiple linear function merely changes the covariance of the resulting Gaussian. If
 $$

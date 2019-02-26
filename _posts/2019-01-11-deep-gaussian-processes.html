@@ -577,27 +577,86 @@ $$</span><br /></p>
 <p><br /><span class="math display">$$
   p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mappingFunctionVector_5|\mappingFunctionVector_4)p(\mappingFunctionVector_4|\mappingFunctionVector_3)p(\mappingFunctionVector_3|\mappingFunctionVector_2)p(\mappingFunctionVector_2|\mappingFunctionVector_1)p(\mappingFunctionVector_1|\inputVector)
   $$</span><br /></p>
+<div class="figure">
+<div id="deep-markov-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/deepgp/deep-markov.svg" style="vertical-align:middle;">
 </object>
-<div class="caption" style="">
-Figure: Probabilistically the deep Gaussian process can be represented as a Markov chain.
 </div>
+<div id="deep-markov-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-markov&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="deep-markov-caption" class="caption-frame">
+<p>Figure: Probabilistically the deep Gaussian process can be represented as a Markov chain.</p>
+</div>
+</div>
+<div class="figure">
+<div id="deep-markov-vertical-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/deepgp/deep-markov-vertical.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="deep-markov-vertical-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-markov-vertical&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="deep-markov-vertical-caption" class="caption-frame">
+<p>Figure: More usually deep probabilistic models are written vertically rather than horizontally as in the Markov chain.</p>
+</div>
+</div>
 <h2 id="why-deep-edit">Why Deep? <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/process-composition.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/process-composition.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>If the result of composing many functions together is simply another function, then why do we bother? The key point is that we can change the class of functions we are modeling by composing in this manner. A Gaussian process is specifying a prior over functions, and one with a number of elegant properties. For example, the derivative process (if it exists) of a Gaussian process is also Gaussian distributed. That makes it easy to assimilate, for example, derivative observations. But that also might raise some alarm bells. That implies that the <em>marginal derivative distribution</em> is also Gaussian distributed. If that's the case, then it means that functions which occasionally exhibit very large derivatives are hard to model with a Gaussian process. For example, a function with jumps in.</p>
 <p>A one off discontinuity is easy to model with a Gaussian process, or even multiple discontinuities. They can be introduced in the mean function, or independence can be forced between two covariance functions that apply in different areas of the input space. But in these cases we will need to specify the number of discontinuities and where they occur. In otherwords we need to <em>parameterise</em> the discontinuities. If we do not know the number of discontinuities and don't wish to specify where they occur, i.e. if we want a non-parametric representation of discontinuities, then the standard Gaussian process doesn't help.</p>
 <h2 id="stochastic-process-composition">Stochastic Process Composition</h2>
 <p>The deep Gaussian process leads to <em>non-Gaussian</em> models, and non-Gaussian characteristics in the covariance function. In effect, what we are proposing is that we change the properties of the functions we are considering by <em>composing stochastic processes</em>. This is an approach to creating new stochastic processes from well known processes.</p>
-<object class="svgplot " data="../slides/diagrams/deepgp/deep-markov-vertical.svg" style="vertical-align:middle;">
+<p>Additionally, we are not constrained to the formalism of the chain. For example, we can easily add single nodes emerging from some point in the depth of the chain. This allows us to combine the benefits of the graphical modelling formalism, but with a powerful framework for relating one set of variables to another, that of Gaussian processes</p>
+<div class="figure">
+<div id="deep-markov-vertical-side-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/deepgp/deep-markov-vertical-side.svg" style="vertical-align:middle;">
 </object>
-<p>Additionally, we are not constrained to the formalism of the chain. For example, we can easily add single nodes emerging from some point in the depth of the chain. This allows us to combine the benefits of the graphical modelling formalism, but with a powerful framework for relating one set of variables to another, that of Gaussian processes <object class="svgplot "  data="../slides/diagrams/deepgp/deep-markov-vertical-side.svg"  style="vertical-align:middle;"></object></p>
-<h2 id="difficulty-for-probabilistic-approaches">Difficulty for Probabilistic Approaches</h2>
-<p>The challenge for composition of probabilistic models is that you need to propagate a probability densities through non linear mappings. This allows you to create broader classes of probability density. Unfortunately it renders the resulting densities <em>intractable</em>. <object class="svgplot "  data="../slides/diagrams/dimred/nonlinear-mapping-3d-plot.svg"  style="vertical-align:middle;"></object></p>
-<object class="svgplot " data="../slides/diagrams/dimred/nonlinear-mapping-2d-plot.svg" style="vertical-align:middle;">
+</div>
+<div id="deep-markov-vertical-side-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-markov-vertical-side&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="deep-markov-vertical-side-caption" class="caption-frame">
+<p>Figure: More generally we aren't constrained by the Markov chain. We can design structures that respect our belief about the underlying conditional dependencies. Here we are adding a side note from the chain.</p>
+</div>
+</div>
+<h2 id="difficulty-for-probabilistic-approaches-edit">Difficulty for Probabilistic Approaches <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_dimred/includes/non-linear-difficulty.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_dimred/includes/non-linear-difficulty.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>The challenge for composition of probabilistic models is that you need to propagate a probability densities through non linear mappings. This allows you to create broader classes of probability density. Unfortunately it renders the resulting densities <em>intractable</em>.</p>
+<div class="figure">
+<div id="nonlinear-mapping-3d-plot-figure" class="figure-frame">
+<object class="svgplot 80%" data="../slides/diagrams/dimred/nonlinear-mapping-3d-plot.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="nonlinear-mapping-3d-plot-magnify" class="magnify" onclick="magnifyFigure(&#39;nonlinear-mapping-3d-plot&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="nonlinear-mapping-3d-plot-caption" class="caption-frame">
+<p>Figure: A two dimensional grid mapped into three dimensions to form a two dimensional manifold.</p>
+</div>
+</div>
+<div class="figure">
+<div id="non-linear-mapping-2d-plot-figure" class="figure-frame">
+<object class="svgplot 80%" data="../slides/diagrams/dimred/nonlinear-mapping-2d-plot.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="non-linear-mapping-2d-plot-magnify" class="magnify" onclick="magnifyFigure(&#39;non-linear-mapping-2d-plot&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="non-linear-mapping-2d-plot-caption" class="caption-frame">
+<p>Figure: A one dimensional line mapped into two dimensions by two separate independent functions. Each point can be mapped exactly through the mappings.</p>
+</div>
+</div>
+<div class="figure">
+<div id="gaussian-through-nonlinear-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/dimred/gaussian-through-nonlinear.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="gaussian-through-nonlinear-magnify" class="magnify" onclick="magnifyFigure(&#39;gaussian-through-nonlinear&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="gaussian-through-nonlinear-caption" class="caption-frame">
+<p>Figure: A Gaussian density over the input of a non linear function leads to a very non Gaussian output. Here the output is multimodal.</p>
+</div>
+</div>
 <p>The argument in the deep learning revolution is that deep architectures allow us to develop an abstraction of the feature set through model composition. Composing Gaussian processes is analytically intractable. To form deep Gaussian processes we use a variational approach to stack the models.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;stack-gp-sample-Linear-</span><span class="sc">{sample:0&gt;1}</span><span class="st">.svg&#39;</span>, 
