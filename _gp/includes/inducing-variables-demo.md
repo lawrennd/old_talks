@@ -119,7 +119,7 @@ mlai.write_figure(figure=fig,
 }
 
 \figure{\includediagram{../slides/diagrams/gp/sparse-demo-sparse-inducing-8-gp}{80%}
-\includediagram{../slides/diagrams/gp/sparse-demo-full-gp}}{80%}}{Comparison of the full Gaussian process fit with a sparse Gaussian process using eight inducing varibles. Both inducing variables and parameters are optimized.}{sparse-demo-sparse-inducing-8}
+\includediagram{../slides/diagrams/gp/sparse-demo-full-gp}{80%}}{Comparison of the full Gaussian process fit with a sparse Gaussian process using eight inducing varibles. Both inducing variables and parameters are optimized.}{sparse-demo-sparse-inducing-8}
 
 \notes{And we can compare the probability of the result to the full model.}
 \code{print(m.log_likelihood(), m_full.log_likelihood())}
