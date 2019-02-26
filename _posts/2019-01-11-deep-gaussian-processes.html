@@ -1309,8 +1309,18 @@ ax.set_xlim(xlim)
 mlai.write_figure(filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/step-function-deep-gp.svg&#39;</span>, 
             transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <p>The deep Gaussian process does a much better job of fitting the data. It handles the discontinuity easily, and error bars drop to smaller values in the regions of data.</p>
+<div class="figure">
+<div id="step-function-deep-gp-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/deepgp/step-function-deep-gp.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="step-function-deep-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;step-function-deep-gp&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="step-function-deep-gp-caption" class="caption-frame">
+<p>Figure: Deep Gaussian process fit to the step function data.</p>
+</div>
+</div>
 <h2 id="step-function-data-deep-gp-1">Step Function Data Deep GP</h2>
 <p>The samples of the model can be plotted with the helper function from <code>teaching_plots.py</code>, <code>model_sample</code></p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax<span class="op">=</span>plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
@@ -1321,14 +1331,24 @@ ax.set_xlim(xlim)
 mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/step-function-deep-gp-samples.svg&#39;</span>, 
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <p>The samples from the model show that the error bars, which are informative for Gaussian outputs, are less informative for this model. They make clear that the data points lie, in output mainly at 0 or 1, or occasionally in between.</p>
+<div class="figure">
+<div id="step-function-deep-gp-samples-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/deepgp/step-function-deep-gp-samples.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="step-function-deep-gp-samples-magnify" class="magnify" onclick="magnifyFigure(&#39;step-function-deep-gp-samples&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="step-function-deep-gp-samples-caption" class="caption-frame">
+<p>Figure: Samples from the deep Gaussian process model for the step function fit.</p>
+</div>
+</div>
 <p>The visualize code allows us to inspect the intermediate layers in the deep GP model to understand how it has reconstructed the step function.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.visualize(offset<span class="op">=</span>offset, scale<span class="op">=</span>scale, xlim<span class="op">=</span>xlim, ylim<span class="op">=</span>ylim,
             dataset<span class="op">=</span><span class="st">&#39;step-function&#39;</span>,
             diagrams<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp&#39;</span>)</code></pre></div>
-<div class="figure" style="">
-<div class="figure-frame" style="">
+<div class="figure">
+<div id="step-function-deep-gp-mappings-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/deepgp/step-function-deep-gp-layer-0.svg" style="vertical-align:middle;">
 </object>
 <object class="svgplot " data="../slides/diagrams/deepgp/step-function-deep-gp-layer-1.svg" style="vertical-align:middle;">
@@ -1337,9 +1357,12 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 </object>
 <object class="svgplot " data="../slides/diagrams/deepgp/step-function-deep-gp-layer-3.svg" style="vertical-align:middle;">
 </object>
-<div class="caption" style="">
-Figure: From top to bottom, the Gaussian process mapping function that makes up each layer of the resulting deep Gaussian process.
 </div>
+<div id="step-function-deep-gp-mappings-magnify" class="magnify" onclick="magnifyFigure(&#39;step-function-deep-gp-mappings&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="step-function-deep-gp-mappings-caption" class="caption-frame">
+<p>Figure: From top to bottom, the Gaussian process mapping function that makes up each layer of the resulting deep Gaussian process.</p>
 </div>
 </div>
 <p>A pinball plot can be created for the resulting model to understand how the input is being translated to the output across the different layers.</p>
@@ -1347,13 +1370,16 @@ Figure: From top to bottom, the Gaussian process mapping function that makes up 
 m.visualize_pinball(offset<span class="op">=</span>offset, ax<span class="op">=</span>ax, scale<span class="op">=</span>scale, xlim<span class="op">=</span>xlim, ylim<span class="op">=</span>ylim, portion<span class="op">=</span><span class="fl">0.1</span>, points<span class="op">=</span><span class="dv">50</span>)
 mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/step-function-deep-gp-pinball.svg&#39;</span>, 
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>, ax<span class="op">=</span>ax)</code></pre></div>
-<div class="figure" style="">
-<div class="figure-frame" style="">
+<div class="figure">
+<div id="step-function-deep-gp-pinball-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/deepgp/step-function-deep-gp-pinball.svg" style="vertical-align:middle;">
 </object>
-<div class="caption" style="">
-Figure: Pinball plot of the deep GP fitted to the step function data. Each layer of the model pushes the 'ball' towards the left or right, saturating at 1 and 0. This causes the final density to be be peaked at 0 and 1. Transitions occur driven by the uncertainty of the mapping in each layer.
 </div>
+<div id="step-function-deep-gp-pinball-magnify" class="magnify" onclick="magnifyFigure(&#39;step-function-deep-gp-pinball&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="step-function-deep-gp-pinball-caption" class="caption-frame">
+<p>Figure: Pinball plot of the deep GP fitted to the step function data. Each layer of the model pushes the 'ball' towards the left or right, saturating at 1 and 0. This causes the final density to be be peaked at 0 and 1. Transitions occur driven by the uncertainty of the mapping in each layer.</p>
 </div>
 </div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods</code></pre></div>
@@ -1415,8 +1441,18 @@ ax.set_xlim(xlim)
 mlai.write_figure(filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/motorcycle-helmet-deep-gp.svg&#39;</span>, 
             transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <h2 id="motorcycle-helmet-data-deep-gp">Motorcycle Helmet Data Deep GP</h2>
+<div class="figure">
+<div id="motorcycle-helmet-deep-gp-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="motorcycle-helmet-deep-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;motorcycle-helmet-deep-gp&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="motorcycle-helmet-deep-gp-caption" class="caption-frame">
+<p>Figure: Deep Gaussian process fit to the motorcycle helmet accelerometer data.</p>
+</div>
+</div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> teaching_plots <span class="im">as</span> plot
 <span class="im">import</span> mlai</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax<span class="op">=</span>plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
@@ -1427,26 +1463,66 @@ ax.set_xlim(xlim)
 mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-samples.svg&#39;</span>, 
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <h2 id="motorcycle-helmet-data-deep-gp-1">Motorcycle Helmet Data Deep GP</h2>
+<div class="figure">
+<div id="motorcycle-helmet-deep-gp-samples-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-samples.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="motorcycle-helmet-deep-gp-samples-magnify" class="magnify" onclick="magnifyFigure(&#39;motorcycle-helmet-deep-gp-samples&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="motorcycle-helmet-deep-gp-samples-caption" class="caption-frame">
+<p>Figure: Samples from the deep Gaussian process as fitted to the motorcycle helmet accelerometer data.</p>
+</div>
+</div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m.visualize(xlim<span class="op">=</span>xlim, ylim<span class="op">=</span>ylim, scale<span class="op">=</span>scale,offset<span class="op">=</span>offset, 
             xlabel<span class="op">=</span><span class="st">&quot;time&quot;</span>, ylabel<span class="op">=</span><span class="st">&quot;acceleration/$g$&quot;</span>, portion<span class="op">=</span><span class="fl">0.5</span>,
             dataset<span class="op">=</span><span class="st">&#39;motorcycle-helmet&#39;</span>,
             diagrams<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp&#39;</span>)</code></pre></div>
 <h2 id="motorcycle-helmet-data-latent-1">Motorcycle Helmet Data Latent 1</h2>
+<div class="figure">
+<div id="motorcycle-helmet-deep-gp-layer-0-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-layer-0.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="motorcycle-helmet-deep-gp-layer-0-magnify" class="magnify" onclick="magnifyFigure(&#39;motorcycle-helmet-deep-gp-layer-0&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="motorcycle-helmet-deep-gp-layer-0-caption" class="caption-frame">
+<p>Figure: Mappings from the input to the latent layer for the motorcycle helmet accelerometer data.</p>
+</div>
+</div>
 <h2 id="motorcycle-helmet-data-latent-2">Motorcycle Helmet Data Latent 2</h2>
+<div class="figure">
+<div id="motorcycle-helmet-deep-gp-layer-1-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-layer-1.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="motorcycle-helmet-deep-gp-layer-1-magnify" class="magnify" onclick="magnifyFigure(&#39;motorcycle-helmet-deep-gp-layer-1&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="motorcycle-helmet-deep-gp-layer-1-caption" class="caption-frame">
+<p>Figure: Mappings from the latent layer to the output layer for the motorcycle helmet accelerometer data.</p>
+</div>
+</div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax<span class="op">=</span>plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
 m.visualize_pinball(ax<span class="op">=</span>ax, xlabel<span class="op">=</span><span class="st">&#39;time&#39;</span>, ylabel<span class="op">=</span><span class="st">&#39;acceleration/g&#39;</span>, 
                     points<span class="op">=</span><span class="dv">50</span>, scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, portion<span class="op">=</span><span class="fl">0.1</span>)
 mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-pinball.svg&#39;</span>, 
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <h2 id="motorcycle-helmet-pinball-plot">Motorcycle Helmet Pinball Plot</h2>
+<div class="figure">
+<div id="motorcycle-helmet-deep-gp-pinball-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-pinball.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="motorcycle-helmet-deep-gp-pinball-magnify" class="magnify" onclick="magnifyFigure(&#39;motorcycle-helmet-deep-gp-pinball&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="motorcycle-helmet-deep-gp-pinball-caption" class="caption-frame">
+<p>Figure: Pinball plot for the mapping from input to output layer for the motorcycle helmet accelerometer data.</p>
+</div>
+</div>
 <h2 id="robot-wireless-data-edit">Robot Wireless Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/robot-wireless-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/robot-wireless-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>The robot wireless data is taken from an experiment run by Brian Ferris at University of Washington. It consists of the measurements of WiFi access point signal strengths as Brian walked in a loop.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data<span class="op">=</span>pods.datasets.robot_wireless()
@@ -1535,8 +1611,18 @@ ax.set_xlim(xlim)
 mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/robot-wireless-deep-gp-dim-&#39;</span> <span class="op">+</span> <span class="bu">str</span>(output_dim)<span class="op">+</span> <span class="st">&#39;.svg&#39;</span>, 
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <h2 id="robot-wifi-data-deep-gp">Robot WiFi Data Deep GP</h2>
+<div class="figure">
+<div id="robot-wireless-deep-gp-dim-1-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/deepgp/robot-wireless-deep-gp-dim-1.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="robot-wireless-deep-gp-dim-1-magnify" class="magnify" onclick="magnifyFigure(&#39;robot-wireless-deep-gp-dim-1&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="robot-wireless-deep-gp-dim-1-caption" class="caption-frame">
+<p>Figure: Fit of the deep Gaussian process to dimension 1 of the robot wireless data.</p>
+</div>
+</div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax<span class="op">=</span>plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
 plot.model_sample(m, output_dim<span class="op">=</span>output_dim, scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, samps<span class="op">=</span><span class="dv">10</span>, ax<span class="op">=</span>ax,
                   xlabel<span class="op">=</span><span class="st">&#39;time&#39;</span>, ylabel<span class="op">=</span><span class="st">&#39;signal strength&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>, portion<span class="op">=</span><span class="fl">0.5</span>)
@@ -1545,11 +1631,19 @@ ax.set_xlim(xlim)
 mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/robot-wireless-deep-gp-samples-dim-&#39;</span> <span class="op">+</span> <span class="bu">str</span>(output_dim)<span class="op">+</span> <span class="st">&#39;.svg&#39;</span>, 
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <h2 id="robot-wifi-data-deep-gp-1">Robot WiFi Data Deep GP</h2>
-<object class="svgplot " data="../slides/diagrams/deepgp/robot-wireless-deep-gp-samples-dim-1.svg" style="vertical-align:middle;">
+<div class="figure">
+<div id="-figure" class="figure-frame">
+<object class="svgplot Samples from the deep Gaussian process fit to dimension 1 of the robot wireless data." data="../slides/diagrams/deepgp/robot-wireless-deep-gp-samples-dim-1.svg" style="vertical-align:middle;">
 </object>
 <h2 id="robot-wifi-data-latent-space">Robot WiFi Data Latent Space</h2>
-<object class="svgplot " data="../slides/diagrams/deepgp/robot-wireless-ground-truth.svg" style="vertical-align:middle;">
-</object>
+</div>
+<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="-caption" class="caption-frame">
+<p>Figure:</p>
+</div>
+</div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_figsize)
 ax.plot(m.layers[<span class="op">-</span><span class="dv">2</span>].latent_space.mean[:, <span class="dv">0</span>], 
         m.layers[<span class="op">-</span><span class="dv">2</span>].latent_space.mean[:, <span class="dv">1</span>], 
@@ -1560,8 +1654,18 @@ ax.set_ylabel(<span class="st">&#39;latent dimension 2&#39;</span>, fontsize<spa
 
 mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/robot-wireless-latent-space.svg&#39;</span>, 
             transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<div class="figure">
+<div id="robot-wireless-latent-space-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/deepgp/robot-wireless-latent-space.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="robot-wireless-latent-space-magnify" class="magnify" onclick="magnifyFigure(&#39;robot-wireless-latent-space&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="robot-wireless-latent-space-caption" class="caption-frame">
+<p>Figure: Inferred two dimensional latent space of the model for the robot wireless data.</p>
+</div>
+</div>
 <h2 id="motion-capture-edit">Motion Capture <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/deep-high-five.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/deep-high-five.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <ul>
 <li>‘High five’ data.</li>

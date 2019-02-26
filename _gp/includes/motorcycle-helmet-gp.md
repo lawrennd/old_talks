@@ -1,6 +1,7 @@
 \ifndef{motorcycleHelmetGp}
 \define{motorcycleHelmetGp}
 \editme
+
 \include{_ml/includes/motorcycle-helmet-data.md}
 
 \code{m_full = GPy.models.GPRegression(x,yhat)
@@ -18,6 +19,6 @@ mlai.write_figure(figure=fig,filename='../../slides/diagrams/gp/motorcycle-helme
 
 \subsection{Motorcycle Helmet Data GP}
 
-\includediagram{../slides/diagrams/gp/motorcycle-helmet-gp}
+\figure{\includediagram{../slides/diagrams/gp/motorcycle-helmet-gp}{80%}}{Gaussian process fit to the motorcycle helmet accelerometer data.}{motorcycle-helmet-gp}
 
 \endif
