@@ -472,7 +472,7 @@ for i, ls in enumerate(lengthscales):
 \endanimation
 }
 
-\notes{\figure{\columns{\includediagram{../slides/diagrams/gp/gp-optimise006}{100%}}{\includediagram{../slides/diagrams/gp/gp-optimise010}{100%}}{50%}{50%}}
+\notes{\figure{\columns{\includediagram{../slides/diagrams/gp/gp-optimise006}{100%}}{\includediagram{../slides/diagrams/gp/gp-optimise010}{100%}}{50%}{50%}
 \columns{\includediagram{../slides/diagrams/gp/gp-optimise016}{100%}}{\includediagram{../slides/diagrams/gp/gp-optimise021}{100%}}{50%}{50%}}{Variation in the data fit term, the capacity term and the negative log likelihood for different lengthscales.}{gp-optimise}}
 
 

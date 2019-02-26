@@ -24,7 +24,7 @@ $$
 \formula
 $$}
 
-\includecovariance{brownian}{\formula}
+\includecovariance{brownian}{\formula}{Brownian motion covariance function.}
 
 
 \endif

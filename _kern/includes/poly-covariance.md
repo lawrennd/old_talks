@@ -15,5 +15,5 @@ import numpy as np}
 					 
 plot.covariance_func(kernel, diagrams='../slides/diagrams/kern/')}
 
-\includecovariance{polynomial}{\formula}
+\includecovariance{polynomial}{\formula}{Polynomial covariance function.}
 

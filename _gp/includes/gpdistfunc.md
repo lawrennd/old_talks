@@ -45,7 +45,7 @@ from ipywidgets import IntSlider}
 \endanimation
 }
 
-\figure{\includediagram{../slides/diagrams/gp/two_point_sample008}{80%}}{A 25 dimensional correlated random variable (values ploted against index){gp-two-point-sample-1}
+\notes{\figure{\includediagram{../slides/diagrams/gp/two_point_sample008}{80%}}{A 25 dimensional correlated random variable (values ploted against index)}{gp-two-point-sample-1}}
 
 \include{_gp/includes/gaussian-predict-index-one-and-two.md}
 

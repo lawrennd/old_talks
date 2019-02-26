@@ -26,9 +26,7 @@ $$
 $$
 where $\ell$ is the *length scale* or *time scale* of the process and $\alpha$ represents the overall process variance.}
 
-\includecovariance{eq}{\formula}
-
-\notes{\caption{The exponentiated quadratic covariance function.}}
+\includecovariance{eq}{\formula}{The exponentiated quadratic covariance function.}
 
 
 \endif

@@ -2,6 +2,12 @@
 
 \loadcode{relu_cov}{mlai}
 
+\define{formula}{\kernelScalar(\inputVector, \inputVector^\prime) = 
+\alpha \arcsin\left(\frac{w \inputVector^\top \inputVector^\prime + b}
+{\sqrt{\left(w \inputVector^\top \inputVector + b + 1\right)
+\left(w \left.\inputVector^\prime\right.^\top \inputVector^\prime + b + 1\right)}}\right)}
+
+
 \setupplotcode{import teaching_plots as plot
 import mlai
 import numpy as np}
@@ -14,11 +20,6 @@ import numpy as np}
 					 
 plot.covariance_func(kernel, diagrams='../slides/diagrams/kern/')}
 
+\includecovariance{relu}{\formula}{Rectified linear unit covariance function.}
 
-$$\kernelScalar(\inputVector, \inputVector^\prime) = 
-\alpha \arcsin\left(\frac{w \inputVector^\top \inputVector^\prime + b}
-{\sqrt{\left(w \inputVector^\top \inputVector + b + 1\right)
-\left(w \left.\inputVector^\prime\right.^\top \inputVector^\prime + b + 1\right)}}\right)$$
-
-\columns{\includediagramclass{../slides/diagrams/kern/relu_covariance}}{\includeimg{../slides/diagrams/kern/relu_covariance.gif}{100%}{negate}{center}}{45%}{45%}
 

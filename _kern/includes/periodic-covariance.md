@@ -16,4 +16,4 @@ import numpy as np}
 					 
 plot.covariance_func(kernel, diagrams='../slides/diagrams/kern/')}
 
-\includecovariance{periodic}{\formula}
+\includecovariance{periodic}{\formula}{Periodic covariance function.}

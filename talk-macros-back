@@ -9,8 +9,8 @@
 
 \define{\includegif{filename}{width}{class}}{\centerdiv{\includeimg{\concat{\filename}{.gif}}{\width}{\class}{center}}{}{}}
 
-\define{\includecovariance{shortname}}{\aligncenter{$$\formula$$}
-\columns{\includediagramclass{../slides/diagrams/kern/\concat{\shortname}{_covariance}}}{\includegif{../slides/diagrams/kern/\concat{\shortname}{_covariance}}{100%}{negate}{center}}{40%}{40%}}
+\define{\includecovariance{shortname}{covFormula}{figureCaption}}{\aligncenter{$$\covFormula$$}
+\figure{\columns{\includediagramclass{../slides/diagrams/kern/\concat{\shortname}{_covariance}}}{\includegif{../slides/diagrams/kern/\concat{\shortname}{_covariance}}{100%}{negate}{center}}{40%}{40%}}}{\figureCaption}}
 
 
 
