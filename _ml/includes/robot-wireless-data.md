@@ -25,7 +25,7 @@ mlai.write_figure(figure=fig, filename='../../slides/diagrams/datasets/robot-wir
 
 \subsection{Robot Wireless Ground Truth}
 
-\includediagram{../slides/diagrams/datasets/robot-wireless-ground-truth}
+\figure{\includediagram{../slides/diagrams/datasets/robot-wireless-ground-truth}{60%}}{Ground truth movement for the position taken while recording the multivariate time-course of wireless access point signal strengths.}{robot-wireless-ground-truth}
 
 \notes{We will ignore this ground truth in making our predictions, but see if the model can recover something similar in one of the latent layers.}
 
@@ -48,5 +48,5 @@ mlai.write_figure(figure=fig, filename='../slides/diagrams/datasets/robot-wirele
 
 \subsection{Robot WiFi Data}
 			
-\includediagram{../slides/diagrams/datasets/robot-wireless-dim-1}
+\figure{\includediagram{../slides/diagrams/datasets/robot-wireless-dim-1}{60%}}{Output dimension 1 from the robot wireless data. This plot shows signal strength changing over time.}{robot-wireless-data-dim-1}
 \endif
