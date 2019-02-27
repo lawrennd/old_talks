@@ -2,7 +2,7 @@
 \define{embodimentFactorsShort}
 \editme
 
-\notes{\subsection{Natural and Artificial Intelligence: Embodiment Factors}}
+\notes{\subsection{Embodiment Factors}}
 
 \newslide{"Embodiment Factors"}
 
