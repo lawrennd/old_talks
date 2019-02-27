@@ -27,7 +27,7 @@
   <td align="center">$$10^{4}$$</td>
   <td align="center">$$10^{14}$$</td>
  </tr>
-</table>}{}{embodiment-factors}
+</table>}{The embodiment factor is the ratio of compute to communicate in the model.}{embodiment-factors}
 
 \slides{See \href{https://arxiv.org/abs/1705.07996}{"Living Together: Mind and Machine Intelligence" @Lawrence:embodiment17}}
 
