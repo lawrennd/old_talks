@@ -2,9 +2,7 @@
 \define{embodimentFactorsShort}
 \editme
 
-\notes{\subsection{Embodiment Factors}}
-
-\newslide{"Embodiment Factors"}
+\subsection{Embodiment Factors}
 
 \table{
 <table>
