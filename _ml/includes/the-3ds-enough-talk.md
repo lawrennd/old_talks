@@ -1,20 +1,15 @@
-\newslide{Technical Contributions}
+\ifndef{the3dsEnoughTalk}
+\define{the3dsEnoughTalk}
+\editme
+
+\subsection{Technical Contributions}
+
+\include{_gp/includes/gpy-software.md}
+\include{_ml/includes/mxfusion-software.md}
+
+\include{_ml/includes/mxfusion-pilco.md}
+\include{_ml/includes/xfer-software.md}
+\include{_uq/includes/emukit-software.md}
 
 
-\newslide{AutoML and MXFusion}
-
-* <https://github.com/SheffieldML/GPy>
-    * <https://github.com/GPflow/GPflow>
-    * <https://github.com/cornellius-gp/gpytorch>
-
-* <https://github.com/SheffieldML/GPyOpt>
-
-\newslide{Emukit}
-
-<https://amzn.github.io/emukit-playground/>
-<https://amzn.github.io/emukit/>
-
-\newslide{MxFusion}
-
-<https://github.com/amzn/mxfusion>
-<https://github.com/amzn/xfer>
+\endif

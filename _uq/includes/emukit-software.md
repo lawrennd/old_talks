@@ -30,7 +30,7 @@
 * *Bayesian quadrature*: compute integrals of functions that are expensive to evaluate.
 }
 \notes{
-The aim is to provide a suite where different approaches to emulation are assimilated under one roof. The current version of Emukit includes *ulti-fidelity emulation* for build surrogate models when data is obtained from multiple information sources that have different fidelity and/or cost; *Bayesian optimisation* for optimising physical experiments and tune parameters of machine learning algorithms or other computational simulations; *experimental design and active learning*: design the most informative experiments and perform active learning with machine learning models; *sensitivity analysis*: analyse the influence of inputs on the outputs of a given system; and
+The aim is to provide a suite where different approaches to emulation are assimilated under one roof. The current version of Emukit includes *multi-fidelity emulation* for build surrogate models when data is obtained from multiple information sources that have different fidelity and/or cost; *Bayesian optimisation* for optimising physical experiments and tune parameters of machine learning algorithms or other computational simulations; *experimental design and active learning*: design the most informative experiments and perform active learning with machine learning models; *sensitivity analysis*: analyse the influence of inputs on the outputs of a given system; and
 *Bayesian quadrature*: efficiently compute the integrals of functions that are expensive to evaluate.
 }
 

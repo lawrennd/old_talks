@@ -63,13 +63,13 @@ The joint density can be viewed from above, using contours. The conditional dens
 
 Prediction of $\mappingFunction_2$ given $\mappingFunction_1$ requires the *conditional density*, $p(\mappingFunction_2|\mappingFunction_1)$.}\slides{
 * Conditional density is *also* Gaussian.}\notes{Another remarkable property of the Gaussian density is that this conditional distribution is *also* guaranteed to be a Gaussian density. It has the form,}
-    $$
-    p(\mappingFunction_2|\mappingFunction_1) = \gaussianDist{\mappingFunction_2}{\frac{\kernelScalar_{1, 2}}{\kernelScalar_{1, 1}}\mappingFunction_1}{ \kernelScalar_{2, 2} - \frac{\kernelScalar_{1,2}^2}{\kernelScalar_{1,1}}}
-    $$\slides{
-    where covariance of joint density is given by}\notes{where we have assumed that the covariance of the original joint density was given by}
-    $$
-    \kernelMatrix = \begin{bmatrix} \kernelScalar_{1, 1} & \kernelScalar_{1, 2}\\ \kernelScalar_{2, 1} & \kernelScalar_{2, 2}.\end{bmatrix}
-    $$
+$$
+p(\mappingFunction_2|\mappingFunction_1) = \gaussianDist{\mappingFunction_2}{\frac{\kernelScalar_{1, 2}}{\kernelScalar_{1, 1}}\mappingFunction_1}{ \kernelScalar_{2, 2} - \frac{\kernelScalar_{1,2}^2}{\kernelScalar_{1,1}}}
+$$\slides{
+where covariance of joint density is given by}\notes{where we have assumed that the covariance of the original joint density was given by}
+$$
+\kernelMatrix = \begin{bmatrix} \kernelScalar_{1, 1} & \kernelScalar_{1, 2}\\ \kernelScalar_{2, 1} & \kernelScalar_{2, 2}.\end{bmatrix}
+$$
 
 \notes{Using these formulae we can determine the conditional density for any of the elements of our vector $\mappingFunctionVector$. For example, the variable $\mappingFunction_8$ is less correlated with $\mappingFunction_1$ than $\mappingFunction_2$. If we consider this variable we see the conditional density is more diffuse.}
 
