@@ -45,8 +45,9 @@ categories:
 <!---->
 <!--Back matter-->
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
-<h1 id="introduction">Introduction</h1>
+<h1 id="introduction-edit">Introduction <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/deep-gaussian-processes.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/deep-gaussian-processes.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
 <p>In the previous session on Gaussian processes, we introduced the Gaussian process model and the covariance function. In this session we are going to address two challenges of the Gaussian process. Firstly, we look at the computational tractability and secondly we look at extending the nature of the process beyond Gaussian.</p>
+<h2 id="universe-isnt-as-gaussian-as-it-was-edit">Universe isn't as Gaussian as it Was <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/planck-cmp-master-gp.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/planck-cmp-master-gp.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="figure">
 <div id="cosmic-microwave-background-figure" class="figure-frame">
 <div class="centered" style="">
@@ -73,7 +74,8 @@ categories:
 <p>Figure: What we observe today is some non-linear function of the cosmic microwave background.</p>
 </div>
 </div>
-<h1 id="low-rank-gaussian-processes">Low Rank Gaussian Processes</h1>
+<h1 id="computational-complexity">Computational Complexity</h1>
+<h2 id="low-rank-gaussian-processes-edit">Low Rank Gaussian Processes <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/approximate-gps-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/approximate-gps-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="figure">
 <div id="sparse-gp-comic-figure" class="figure-frame">
 <div class="centered centered" style="">
@@ -89,7 +91,7 @@ categories:
 </div>
 <p>Inference in a Gaussian process has computational complexity of <span class="math inline">$\bigO(\numData^3)$</span> and storage demands of <span class="math inline">$\bigO(\numData^2)$</span>. This is too large for many modern data sets.</p>
 <p>Low rank approximations allow us to work with Gaussian processes with computational complexity of <span class="math inline">$\bigO(\numData\numInducing^2)$</span> and storage demands of <span class="math inline">$\bigO(\numData\numInducing)$</span>, where <span class="math inline">$\numInducing$</span> is a user chosen parameter.</p>
-<p>In machine learning, low rank approximations date back to <span class="citation">Smola and Bartlett (n.d.)</span>, <span class="citation">Williams and Seeger (n.d.)</span>, who considered the Nystr&quot;om approximation and <span class="citation">Csató and Opper (2002)</span>;<span class="citation">Csató (2002)</span> who considered low rank approximations in the context of on-line learning. Selection of active points for the approximation was considered by <span class="citation">Seeger, Williams, and Lawrence (n.d.)</span> and <span class="citation">Snelson and Ghahramani (n.d.)</span> first proposed that the active set could be optimized directly. Those approaches were reviewed by <span class="citation">Quiñonero Candela and Rasmussen (2005)</span> under a unifying likelihood approximation perspective. General rules for deriving the maximum likelihood for these sparse approximations were given in <span class="citation">Lawrence (n.d.)</span>.</p>
+<p>In machine learning, low rank approximations date back to <span class="citation">Smola and Bartlett (n.d.)</span>, <span class="citation">Williams and Seeger (n.d.)</span>, who considered the Nyström approximation and <span class="citation">Csató and Opper (2002)</span>;<span class="citation">Csató (2002)</span> who considered low rank approximations in the context of on-line learning. Selection of active points for the approximation was considered by <span class="citation">Seeger, Williams, and Lawrence (n.d.)</span> and <span class="citation">Snelson and Ghahramani (n.d.)</span> first proposed that the active set could be optimized directly. Those approaches were reviewed by <span class="citation">Quiñonero Candela and Rasmussen (2005)</span> under a unifying likelihood approximation perspective. General rules for deriving the maximum likelihood for these sparse approximations were given in <span class="citation">Lawrence (n.d.)</span>.</p>
 <p>Modern variational interpretations of these low rank approaches were first explored in <span class="citation">Titsias (n.d.)</span>. A more modern summary which considers each of these approximations as an <span class="math inline"><em>α</em></span>-divergence is given by <span class="citation">Bui, Yan, and Turner (2017)</span>.</p>
 <h2 id="variational-compression-edit">Variational Compression <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gp-variational-complexity.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gp-variational-complexity.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Inducing variables are a compression of the real observations. The basic idea is can I create a new data set that summarizes all the information in the original data set. If this data set is smaller, I've compressed the information in the original data set.</p>
@@ -314,6 +316,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </div>
 <p>And we can compare the probability of the result to the full model.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(m.log_likelihood(), m_full.log_likelihood())</code></pre></div>
+<h2 id="gps-for-big-data-edit">GPs for Big Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gp-big-data-technical.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gp-big-data-technical.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <ul>
 <li>Let’s be explicity about storing approximate posterior of <span class="math inline">$\inducingVector$</span>, <span class="math inline">$q(\inducingVector)$</span>.</li>
 <li><p>Now we have <br /><span class="math display">$$p(\dataVector^*|\dataVector) = \int p(\dataVector^*| \inducingVector) q(\inducingVector | \dataVector) \text{d} \inducingVector$$</span><br /></p></li>
@@ -325,9 +328,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 <li>The distribution now <em>factorizes</em>: <br /><span class="math display">$$p(\dataVector^*|\dataVector) = \int \prod_{i=1}^{\numData^*}p(\dataScalar^*_i| \inducingVector) q(\inducingVector | \dataVector) \text{d} \inducingVector$$</span><br /></li>
 <li><p>This factorization can be exploited for stochastic variational inference <span class="citation">(Hoffman et al. 2012)</span>.</p></li>
 </ul>
-<center>
-Modern data availability
-</center>
+<h2 id="nonparametrics-for-very-large-data-sets-edit">Nonparametrics for Very Large Data Sets <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gp-big-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gp-big-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="figure">
 <div id="house-price-country-figure" class="figure-frame">
 <div class="centered" style="">
@@ -1917,32 +1918,28 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 <p>Emukit playground is a software toolkit for exploring the use of statistical emulation as a tool. It was built by <a href="https://twitter.com/_AdamHirst">Adam Hirst</a>, during his software engineering internship at Amazon and supervised by Cliff McCollum.</p>
 <div class="figure">
 <div id="emukit-playground-figure" class="figure-frame">
-<a href="https://amzn.github.io/emukit-playground/" target="_blank" >
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/uq/emukit-playground.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<p></a></p>
 </div>
 <div id="emukit-playground-magnify" class="magnify" onclick="magnifyFigure(&#39;emukit-playground&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
 <div id="emukit-playground-caption" class="caption-frame">
-<p>Figure: Emukit playground is a tutorial for understanding the simulation/emulation relationship.</p>
+<p>Figure: Emukit playground is a tutorial for understanding the simulation/emulation relationship. <a href="https://amzn.github.io/emukit-playground/" class="uri">https://amzn.github.io/emukit-playground/</a></p>
 </div>
 </div>
 <div class="figure">
 <div id="emukit-playground-bayes-opt-figure" class="figure-frame">
-<a href="https://amzn.github.io/emukit-playground/#!/learn/bayesian_optimization" target="_blank" >
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/uq/emukit-playground-bayes-opt.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<p></a></p>
 </div>
 <div id="emukit-playground-bayes-opt-magnify" class="magnify" onclick="magnifyFigure(&#39;emukit-playground-bayes-opt&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
 <div id="emukit-playground-bayes-opt-caption" class="caption-frame">
-<p>Figure: Tutorial on Bayesian optimization of the number of taxis deployed from Emukit playground.</p>
+<p>Figure: Tutorial on Bayesian optimization of the number of taxis deployed from Emukit playground. <a href="https://amzn.github.io/emukit-playground/#!/learn/bayesian_optimization" class="uri">https://amzn.github.io/emukit-playground/#!/learn/bayesian_optimization</a></p>
 </div>
 </div>
 <p>You can explore Bayesian optimization of a taxi simulation.</p>
@@ -2234,7 +2231,7 @@ anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Bes
 <p>Figure: The Emukit software is a set of software tools for emulation and surrogate modeling. <a href="https://amzn.github.io/emukit/" class="uri">https://amzn.github.io/emukit/</a></p>
 </div>
 </div>
-<p>The aim is to provide a suite where different approaches to emulation are assimilated under one roof. The current version of Emukit includes <em>ulti-fidelity emulation</em> for build surrogate models when data is obtained from multiple information sources that have different fidelity and/or cost; <em>Bayesian optimisation</em> for optimising physical experiments and tune parameters of machine learning algorithms or other computational simulations; <em>experimental design and active learning</em>: design the most informative experiments and perform active learning with machine learning models; <em>sensitivity analysis</em>: analyse the influence of inputs on the outputs of a given system; and <em>Bayesian quadrature</em>: efficiently compute the integrals of functions that are expensive to evaluate.</p>
+<p>The aim is to provide a suite where different approaches to emulation are assimilated under one roof. The current version of Emukit includes <em>multi-fidelity emulation</em> for build surrogate models when data is obtained from multiple information sources that have different fidelity and/or cost; <em>Bayesian optimisation</em> for optimising physical experiments and tune parameters of machine learning algorithms or other computational simulations; <em>experimental design and active learning</em>: design the most informative experiments and perform active learning with machine learning models; <em>sensitivity analysis</em>: analyse the influence of inputs on the outputs of a given system; and <em>Bayesian quadrature</em>: efficiently compute the integrals of functions that are expensive to evaluate.</p>
 <h2 id="mxfusion-modular-probabilistic-programming-on-mxnet-edit">MXFusion: Modular Probabilistic Programming on MXNet <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/mxfusion-intro.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/mxfusion-intro.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="figure">
 <div id="mxfusion-software-figure" class="figure-frame">
