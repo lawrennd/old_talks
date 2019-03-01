@@ -2,6 +2,8 @@
 \define{approximateGpsShort}
 \editme
 
+\subsection{Low Rank Gaussian Processes}
+
 \include{_gp/includes/sparse-gp-comic.md}
 \include{_gp/includes/low-rank-motivation.md}
 \include{_gp/includes/gp-variational-complexity.md}

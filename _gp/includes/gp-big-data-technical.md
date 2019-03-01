@@ -2,6 +2,8 @@
 \define{gpBigDataTechnical}
 \editme
 
+\notes{\subsection{GPs for Big Data}}
+
 \newslide{Leads to Other Approximations ...}
 
 * Let’s be explicity about storing approximate posterior of $\inducingVector$, $q(\inducingVector)$.

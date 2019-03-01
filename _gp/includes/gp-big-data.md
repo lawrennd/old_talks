@@ -1,6 +1,10 @@
-\newslide{Nonparametrics for Very Large Data Sets}
+\ifndef{gpBigData}
+\define{gpBigData}
+\editme
 
-\aligncenter{Modern data availability}
+\subsection{Nonparametrics for Very Large Data Sets}
+
+\slides{\aligncenter{Modern data availability}}
 
 \figure{\includepng{../slides/diagrams/ml/house_price_country}{60%}{negate}}{House prices across the UK are now easily available. <http://landregistry.data.gov.uk/>}{house-price-country}
 
@@ -32,3 +36,4 @@
 
 \aligncenter{<http://auai.org/uai2013/prints/papers/244.pdf>}
 
+\endif

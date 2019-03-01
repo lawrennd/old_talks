@@ -14,4 +14,11 @@
 
 
 
+\defeval{\figure{contents}{captionContents}{label}}{<div class="figure">
+<div class="figure-frame" id="\concat{\label}{-figure}">
+\contents
+</div>
+</div>}
+
+
 \endif
