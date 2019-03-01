@@ -2,16 +2,14 @@
 \define{embodimentFactorsShort}
 \editme
 
-\notes{\subsection{Natural and Artificial Intelligence: Embodiment Factors}}
-
-\newslide{"Embodiment Factors"}
+\subsection{Embodiment Factors}
 
 \table{
 <table>
  <tr>
   <td></td>
-  <td align="center">\includejpg{../slides/diagrams/IBM_Blue_Gene_P_supercomputer}{40%}</td>
-  <td align="center">\includejpg{../slides/diagrams/ClaudeShannon_MFO3807}{25%}{}</td>
+  <td align="center">\includejpg{../slides/diagrams/IBM_Blue_Gene_P_supercomputer}{50%}</td>
+  <td align="center">\includejpg{../slides/diagrams/ClaudeShannon_MFO3807}{50%}{}</td>
  </tr>
  <tr>
   <td>compute</td>
@@ -27,7 +25,7 @@
   <td align="center">$$10^{4}$$</td>
   <td align="center">$$10^{14}$$</td>
  </tr>
-</table>}{}{embodiment-factors}
+</table>}{The embodiment factor is the ratio of compute to communicate in the model.}{embodiment-factors}
 
 \slides{See \href{https://arxiv.org/abs/1705.07996}{"Living Together: Mind and Machine Intelligence" @Lawrence:embodiment17}}
 
