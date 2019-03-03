@@ -24,8 +24,23 @@ categories:
   $${% include talk-notation.tex %}$$
 </div>
 
+<script src="/talks/figure-magnify.js"></script>
+<script src="/talks/figure-animate.js"></script>
+    
+<div id="modal-frame" class="modal">
+  <span class="close" onclick="closeMagnify()">&times;</span>
+  <div class="modal-figure">
+    <div class="figure-frame">
+      <div class="modal-content" id="modal01"></div>
+      <!--<img class="modal-content" id="object01">-->
+    </div>
+    <div class="caption-frame" id="modal-caption"></div>
+  </div>
+</div>	  
+
 <!-- Front matter -->
 <p>.</p>
+<!---->
 <!--Back matter-->
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
 <h1 id="what-is-machine-learning-edit">What is Machine Learning? <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
@@ -85,9 +100,17 @@ mlai.write_figure(figure<span class="op">=</span>fig,
                   filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/datasets/olympic-marathon.svg&#39;</span>, 
                   transparent<span class="op">=</span><span class="va">True</span>, 
                   frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
-<div style="text-align:center">
-<object class="svgplot " align data="../slides/diagrams/datasets/olympic-marathon.svg" style="vertical-align:middle;">
+<div class="figure">
+<div id="olympic-marathon-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/datasets/olympic-marathon.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="olympic-marathon-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-marathon&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="olympic-marathon-caption" class="caption-frame">
+<p>Figure: Olympic marathon pace times since 1892.</p>
+</div>
 </div>
 <p>Things to notice about the data include the outlier in 1904, in this year, the olympics was in St Louis, USA. Organizational problems and challenges with dust kicked up by the cars following the race meant that participants got lost, and only very few participants completed.</p>
 <p>More recent years see more consistently quick marathons.</p>
@@ -100,35 +123,66 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 <p>The challenge with a linear model is that it has two unknowns, <span class="math inline"><em>m</em></span>, and <span class="math inline"><em>c</em></span>. Observing data allows us to write down a system of simultaneous linear equations. So, for example if we observe two data points, the first with the input value, <span class="math inline">$\inputScalar_1 = 1$</span> and the output value, <span class="math inline">$\dataScalar_1 =3$</span> and a second data point, <span class="math inline">$\inputScalar = 3$</span>, <span class="math inline">$\dataScalar=1$</span>, then we can write two simultaneous linear equations of the form.</p>
 <p>point 1: <span class="math inline">$\inputScalar = 1$</span>, <span class="math inline">$\dataScalar=3$</span> <br /><span class="math display">3 = <em>m</em> + <em>c</em></span><br /> point 2: <span class="math inline">$\inputScalar = 3$</span>, <span class="math inline">$\dataScalar=1$</span> <br /><span class="math display">1 = 3<em>m</em> + <em>c</em></span><br /></p>
 <p>The solution to these two simultaneous equations can be represented graphically as</p>
-<object class="svgplot " align data="../slides/diagrams/ml/over_determined_system003.svg" style="vertical-align:middle;">
+<div class="figure">
+<div id="over-determined-system-3-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/over_determined_system003.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>The solution of two linear equations represented as the fit of a straight line through two data</em>
-</center>
+</div>
+<div id="over-determined-system-3-magnify" class="magnify" onclick="magnifyFigure(&#39;over-determined-system-3&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="over-determined-system-3-caption" class="caption-frame">
+<p>Figure: The solution of two linear equations represented as the fit of a straight line through two data</p>
+</div>
+</div>
 <p>The challenge comes when a third data point is observed and it doesn't naturally fit on the straight line.</p>
 <p>point 3: <span class="math inline">$\inputScalar = 2$</span>, <span class="math inline">$\dataScalar=2.5$</span> <br /><span class="math display">2.5 = 2<em>m</em> + <em>c</em></span><br /></p>
-<object class="svgplot " align data="../slides/diagrams/ml/over_determined_system004.svg" style="vertical-align:middle;">
+{
+<div class="figure">
+<div id="over-determined-system-4-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/over_determined_system004.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>A third observation of data is inconsistent with the solution dictated by the first two observations</em>
-</center>
+</div>
+<div id="over-determined-system-4-magnify" class="magnify" onclick="magnifyFigure(&#39;over-determined-system-4&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="over-determined-system-4-caption" class="caption-frame">
+<p>Figure: A third observation of data is inconsistent with the solution dictated by the first two observations</p>
+</div>
+</div>
 <p>Now there are three candidate lines, each consistent with our data.</p>
-<object class="svgplot " align data="../slides/diagrams/ml/over_determined_system007.svg" style="vertical-align:middle;">
+{
+<div class="figure">
+<div id="over-determined-system-7-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/over_determined_system007.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>Three solutions to the problem, each consistent with two points of the three observations</em>
-</center>
+</div>
+<div id="over-determined-system-7-magnify" class="magnify" onclick="magnifyFigure(&#39;over-determined-system-7&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="over-determined-system-7-caption" class="caption-frame">
+<p>Figure: Three solutions to the problem, each consistent with two points of the three observations</p>
+</div>
+</div>
 <p>This is known as an <em>overdetermined</em> system because there are more data than we need to determine our parameters. The problem arises because the model is a simplification of the real world, and the data we observe is therefore inconsistent with our model.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;over_determined_system</span><span class="sc">{samp:0&gt;3}</span><span class="st">.svg&#39;</span>,
                             directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, 
                             samp<span class="op">=</span>IntSlider(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">7</span>,<span class="dv">1</span>))</code></pre></div>
 <p>The solution was proposed by Pierre-Simon Laplace. His idea was to accept that the model was an incomplete representation of the real world, and the manner in which it was incomplete is <em>unknown</em>. His idea was that such unknowns could be dealt with through probability.</p>
+<h3 id="pierre-simon-laplace-edit">Pierre-Simon Laplace <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/laplace-portrait.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/laplace-portrait.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
+<div class="figure">
+<div id="pierre-simon-laplace-image-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/ml/Pierre-Simon_Laplace.png" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<center>
-<em>Pierre Simon Laplace</em>
-</center>
+</div>
+<div id="pierre-simon-laplace-image-magnify" class="magnify" onclick="magnifyFigure(&#39;pierre-simon-laplace-image&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="pierre-simon-laplace-image-caption" class="caption-frame">
+<p>Figure: Pierre-Simon Laplace 1749-1827.</p>
+</div>
+</div>
 <iframe frameborder="0" scrolling="no" style="border:0px" src="http://books.google.co.uk/books?id=1YQPAAAAQAAJ&amp;pg=PR17-IA2&amp;output=embed" , width="700" height="500">
 </iframe>
 <p>Famously, Laplace considered the idea of a deterministic Universe, one in which the model is <em>known</em>, or as the below translation refers to it, &quot;an intelligence which could comprehend all the forces by which nature is animated&quot;. He speculates on an &quot;intelligence&quot; that can submit this vast data to analysis and propsoses that such an entity would be able to predict the future.</p>
@@ -136,8 +190,18 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 <p>Given for one instant an intelligence which could comprehend all the forces by which nature is animated and the respective situation of the beings who compose it---an intelligence sufficiently vast to submit these data to analysis---it would embrace in the same formulate the movements of the greatest bodies of the universe and those of the lightest atom; for it, nothing would be uncertain and the future, as the past, would be present in its eyes.</p>
 </blockquote>
 <p>This notion is known as <em>Laplace's demon</em> or <em>Laplace's superman</em>.</p>
+<div class="figure">
+<div id="laplaces-determinism-english-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/laplacesDeterminismEnglish.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="laplaces-determinism-english-magnify" class="magnify" onclick="magnifyFigure(&#39;laplaces-determinism-english&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="laplaces-determinism-english-caption" class="caption-frame">
+<p>Figure: Laplace's determinsim in English translation.</p>
+</div>
 </div>
 <p>Unfortunately, most analyses of his ideas stop at that point, whereas his real point is that such a notion is unreachable. Not so much <em>superman</em> as <em>strawman</em>. Just three pages later in the &quot;Philosophical Essay on Probabilities&quot; <span class="citation">(Laplace 1814)</span>, Laplace goes on to observe:</p>
 <blockquote>
@@ -146,8 +210,18 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </blockquote>
 <iframe frameborder="0" scrolling="no" style="border:0px" src="http://books.google.co.uk/books?id=1YQPAAAAQAAJ&amp;pg=PR17-IA4&amp;output=embed" , width="700" height="500">
 </iframe>
+<div class="figure">
+<div id="probability-relative-in-part-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/philosophicaless00lapliala.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="probability-relative-in-part-magnify" class="magnify" onclick="magnifyFigure(&#39;probability-relative-in-part&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="probability-relative-in-part-caption" class="caption-frame">
+<p>Figure: To Laplace, determinism is a strawman. Ignorance of mechanism and data leads to uncertainty which should be dealt with through probability.</p>
+</div>
 </div>
 <p>In other words, we can never make use of the idealistic deterministc Universe due to our ignorance about the world, Laplace's suggestion, and focus in this essay is that we turn to probability to deal with this uncertainty. This is also our inspiration for using probabilit in machine learning.</p>
 <p>The &quot;forces by which nature is animated&quot; is our <em>model</em>, the &quot;situation of beings that compose it&quot; is our <em>data</em> and the &quot;intelligence sufficiently vast enough to submit these data to analysis&quot; is our compute. The fly in the ointment is our <em>ignorance</em> about these aspects. And <em>probability</em> is the tool we use to incorporate this ignorance leading to uncertainty or <em>doubt</em> in our predictions.</p>
@@ -168,11 +242,18 @@ $$</span><br /></p>
 <p><br /><span class="math display">$$\begin{align}
   p(\dataScalar| \meanScalar, \dataStd^2) &amp; = \frac{1}{\sqrt{2\pi\dataStd^2}}\exp\left(-\frac{(\dataScalar - \meanScalar)^2}{2\dataStd^2}\right)\\&amp; \buildrel\triangle\over = \gaussianDist{\dataScalar}{\meanScalar}{\dataStd^2}
   \end{align}$$</span><br /></p>
-<object class="svgplot " align data="../slides/diagrams/ml/gaussian_of_height.svg" style="vertical-align:middle;">
+<div class="figure">
+<div id="gaussian-of-height-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/gaussian_of_height.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>The Gaussian PDF with <span class="math inline">${\meanScalar}=1.7$</span> and variance <span class="math inline">${\dataStd}^2=0.0225$</span>. Mean shown as red line. It could represent the heights of a population of students.</em>
-</center>
+</div>
+<div id="gaussian-of-height-magnify" class="magnify" onclick="magnifyFigure(&#39;gaussian-of-height&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="gaussian-of-height-caption" class="caption-frame">
+<p>Figure: The Gaussian PDF with <span class="math inline">${\meanScalar}=1.7$</span> and variance <span class="math inline">${\dataStd}^2=0.0225$</span>. Mean shown as red line. It could represent the heights of a population of students.</p>
+</div>
+</div>
 <h2 id="two-important-gaussian-properties-edit">Two Important Gaussian Properties <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/univariate-gaussian-properties.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/univariate-gaussian-properties.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>The Gaussian density has many important properties, but for the moment we'll review two of them.</p>
 <h2 id="sum-of-gaussians">Sum of Gaussians</h2>
@@ -339,6 +420,7 @@ plt.plot(x, y, <span class="st">&#39;rx&#39;</span>)</code></pre></div>
 <li>Section 1.1-1.2 of <span class="citation">Rogers and Girolami (2011)</span> for fitting linear models.</li>
 <li>Section 1.2.5 of <span class="citation">Bishop (2006)</span> up to equation 1.65.</li>
 </ul>
+<h2 id="objective-functions-and-regression-edit">Objective Functions and Regression <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/regression.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/regression.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
 <span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
 <span class="im">import</span> mlai</code></pre></div>
@@ -346,16 +428,36 @@ plt.plot(x, y, <span class="st">&#39;rx&#39;</span>)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_true <span class="op">=</span> <span class="fl">1.4</span>
 c_true <span class="op">=</span> <span class="op">-</span><span class="fl">3.1</span></code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">y <span class="op">=</span> m_true<span class="op">*</span>x<span class="op">+</span>c_true</code></pre></div>
-<object class="svgplot " align data="../slides/diagrams/ml/regression.svg" style="vertical-align:middle;">
+<div class="figure">
+<div id="linear-regression-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/regression.svg" style="vertical-align:middle;">
 </object>
-<h2 id="noise-corrupted-plot-edit">Noise Corrupted Plot <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/regression.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/regression.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+</div>
+<div id="linear-regression-magnify" class="magnify" onclick="magnifyFigure(&#39;linear-regression&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="linear-regression-caption" class="caption-frame">
+<p>Figure: A simple linear regression.</p>
+</div>
+</div>
+<h2 id="noise-corrupted-plot">Noise Corrupted Plot</h2>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">noise <span class="op">=</span> np.random.normal(scale<span class="op">=</span><span class="fl">0.5</span>, size<span class="op">=</span><span class="dv">4</span>) <span class="co"># standard deviation of the noise is 0.5</span>
 y <span class="op">=</span> m_true<span class="op">*</span>x <span class="op">+</span> c_true <span class="op">+</span> noise
 plt.plot(x, y, <span class="st">&#39;r.&#39;</span>, markersize<span class="op">=</span><span class="dv">10</span>)
 plt.xlim([<span class="op">-</span><span class="dv">3</span>, <span class="dv">3</span>])
 mlai.write_figure(filename<span class="op">=</span><span class="st">&quot;../slides/diagrams/ml/regression_noise.svg&quot;</span>, transparent<span class="op">=</span><span class="va">True</span>)</code></pre></div>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_noise.svg" style="vertical-align:middle;">
+<div class="figure">
+<div id="linear-regression-noise-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/regression_noise.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="linear-regression-noise-magnify" class="magnify" onclick="magnifyFigure(&#39;linear-regression-noise&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="linear-regression-noise-caption" class="caption-frame">
+<p>Figure: A simple linear regression with noise.</p>
+</div>
+</div>
 <h2 id="contour-plot-of-error-function">Contour Plot of Error Function</h2>
 <ul>
 <li>Visualise the error function surface, create vectors of values.</li>
@@ -377,8 +479,18 @@ c_vals <span class="op">=</span> np.linspace(c_true<span class="op">-</span><spa
         E_grid[i, j] <span class="op">=</span> ((y <span class="op">-</span> m_grid[i, j]<span class="op">*</span>x <span class="op">-</span> c_grid[i, j])<span class="op">**</span><span class="dv">2</span>).<span class="bu">sum</span>()</code></pre></div>
 <h2 id="contour-plot-of-error">Contour Plot of Error</h2>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>load <span class="op">-</span>s regression_contour teaching_plots.py</code></pre></div>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_contour.svg" style="vertical-align:middle;">
+<div class="figure">
+<div id="regression-contour-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/regression_contour.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="regression-contour-magnify" class="magnify" onclick="magnifyFigure(&#39;regression-contour&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="regression-contour-caption" class="caption-frame">
+<p>Figure: Contours of the objective function for linear regression by minimizing least squares.</p>
+</div>
+</div>
 <h2 id="steepest-descent">Steepest Descent</h2>
 <h2 id="algorithm">Algorithm</h2>
 <ul>
@@ -416,9 +528,18 @@ c)$$</span><br /></p>
 <li>We want to follow the gradient to get to the minimum, the gradient changes all the time.</li>
 </ul>
 <h2 id="move-in-direction-of-gradient">Move in Direction of Gradient</h2>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> teaching_plots <span class="im">as</span> plot</code></pre></div>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_step001.svg" style="vertical-align:middle;">
+<div class="figure">
+<div id="regression-contour-step-1-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/regression_contour_step001.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="regression-contour-step-1-magnify" class="magnify" onclick="magnifyFigure(&#39;regression-contour-step-1&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="regression-contour-step-1-caption" class="caption-frame">
+<p>Figure: Single update descending the contours of the error surface for regression.</p>
+</div>
+</div>
 <h2 id="update-equations-1">Update Equations</h2>
 <ul>
 <li><p>The step size has already been introduced, it's again known as the learning rate and is denoted by <span class="math inline">$\learnRate$</span>. <br /><span class="math display">$$
@@ -447,11 +568,19 @@ m_star <span class="op">=</span> m_star <span class="op">-</span> learn_rate<spa
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
 <span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;regression_contour_fit</span><span class="sc">{num:0&gt;3}</span><span class="st">.svg&#39;</span>, directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, num<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, num_plots, <span class="dv">1</span>))</code></pre></div>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_contour_fit028.svg" style="vertical-align:middle;">
+{
+<div class="figure">
+<div id="regression-contour-fit-28-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/regression_contour_fit028.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>Stochastic gradient descent for linear regression</em>
-</center>
+</div>
+<div id="regression-contour-fit-28-magnify" class="magnify" onclick="magnifyFigure(&#39;regression-contour-fit-28&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="regression-contour-fit-28-caption" class="caption-frame">
+<p>Figure: Stochastic gradient descent for linear regression</p>
+</div>
+</div>
 <h2 id="stochastic-gradient-descent">Stochastic Gradient Descent</h2>
 <ul>
 <li>If <span class="math inline">$\numData$</span> is small, gradient descent is fine.</li>
@@ -501,11 +630,18 @@ c_star <span class="op">=</span> c_star <span class="op">+</span> <span class="d
 <span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;regression_sgd_contour_fit</span><span class="sc">{num:0&gt;3}</span><span class="st">.svg&#39;</span>, 
     directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/mlai&#39;</span>, num<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, num_plots, <span class="dv">1</span>))</code></pre></div>
-<object class="svgplot " align data="../slides/diagrams/ml/regression_sgd_contour_fit058.svg" style="vertical-align:middle;">
+<div class="figure">
+<div id="regression-sgd-contour0fit-58-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/regression_sgd_contour_fit058.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>Stochastic gradient descent for linear regression</em>
-</center>
+</div>
+<div id="regression-sgd-contour0fit-58-magnify" class="magnify" onclick="magnifyFigure(&#39;regression-sgd-contour0fit-58&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="regression-sgd-contour0fit-58-caption" class="caption-frame">
+<p>Figure: Stochastic gradient descent for linear regression.</p>
+</div>
+</div>
 <h2 id="reflection-on-linear-regression-and-supervised-learning">Reflection on Linear Regression and Supervised Learning</h2>
 <p>Think about:</p>
 <ol style="list-style-type: decimal">
@@ -560,7 +696,7 @@ $$</span><br /></p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">X <span class="op">=</span> np.hstack((np.ones_like(x), x))
 <span class="bu">print</span>(X)</code></pre></div>
-<h3 id="writing-the-objective-with-linear-algebra">Writing the Objective with Linear Algebra</h3>
+<h2 id="writing-the-objective-with-linear-algebra">Writing the Objective with Linear Algebra</h2>
 <p>When we think of the objective function, we can think of it as the errors where the error is defined in a similar way to what it was in Legendre's day <span class="math inline">$\dataScalar_i - \mappingFunction(\inputVector_i)$</span>, in statistics these errors are also sometimes called <a href="http://en.wikipedia.org/wiki/Errors_and_residuals_in_statistics"><em>residuals</em></a>. So we can think as the objective and the prediction function as two separate parts, first we have, <br /><span class="math display">$$
 \errorFunction(\mappingVector) = \sum_{i=1}^\numData (\dataScalar_i - \mappingFunction(\inputVector_i; \mappingVector))^2,
 $$</span><br /> where we've made the function <span class="math inline">$\mappingFunction(\cdot)$</span>'s dependence on the parameters <span class="math inline">$\mappingVector$</span> explicit in this equation. Then we have the definition of the function itself, <br /><span class="math display">$$
@@ -618,7 +754,7 @@ $$</span><br /> and by our definition of multivariate derivatives we can simply 
 \frac{\text{d}}{\text{d}\mathbf{z}}
 \mathbf{a}^\top \mathbf{z} = \mathbf{a}.
 $$</span><br /> The second rule that's required is differentiation of a 'matrix quadratic'. A scalar quadratic in <span class="math inline"><em>z</em></span> with coefficient <span class="math inline"><em>c</em></span> has the form <span class="math inline"><em>c</em><em>z</em><sup>2</sup></span>. If <span class="math inline"><strong>z</strong></span> is a <span class="math inline"><em>k</em> × 1</span> vector and <span class="math inline"><strong>C</strong></span> is a <span class="math inline"><em>k</em> × <em>k</em></span> <em>matrix</em> of coefficients then the matrix quadratic form is written as <span class="math inline"><strong>z</strong><sup>⊤</sup><strong>C</strong><strong>z</strong></span>, which is itself a <em>scalar</em> quantity, but it is a function of a <em>vector</em>.</p>
-<h4 id="matching-dimensions-in-matrix-multiplications">Matching Dimensions in Matrix Multiplications</h4>
+<h3 id="matching-dimensions-in-matrix-multiplications">Matching Dimensions in Matrix Multiplications</h3>
 <p>There's a trick for telling that it's a scalar result. When you are doing maths with matrices, it's always worth pausing to perform a quick sanity check on the dimensions. Matrix multplication only works when the dimensions match. To be precise, the 'inner' dimension of the matrix must match. What is the inner dimension. If we multiply two matrices <span class="math inline"><strong>A</strong></span> and <span class="math inline"><strong>B</strong></span>, the first of which has <span class="math inline"><em>k</em></span> rows and <span class="math inline">ℓ</span> columns and the second of which has <span class="math inline"><em>p</em></span> rows and <span class="math inline"><em>q</em></span> columns, then we can check whether the multiplication works by writing the dimensionalities next to each other, <br /><span class="math display">$$
 \mathbf{A} \mathbf{B} \rightarrow (k \times
 \underbrace{\ell)(p}_\text{inner dimensions} \times q) \rightarrow (k\times q).
@@ -641,7 +777,7 @@ $$</span><br /> where a <span class="math inline">(1 × 1)</span> matrix is 
 $$</span><br /> Note that in the special case where <span class="math inline"><strong>C</strong></span> is symmetric then we have <span class="math inline"><strong>C</strong> = <strong>C</strong><sup>⊤</sup></span> and the derivative simplifies to <br /><span class="math display">$$
 \frac{\text{d}}{\text{d}\mathbf{z}} \mathbf{z}^\top\mathbf{C}\mathbf{z}=
 2\mathbf{C}\mathbf{z}.
-$$</span><br /></p>
+$$</span><br />}</p>
 <h2 id="differentiate-the-objective">Differentiate the Objective</h2>
 <p>First, we need to compute the full objective by substituting our prediction function into the objective function to obtain the objective in terms of <span class="math inline">$\mappingVector$</span>. Doing this we obtain <br /><span class="math display">$$
 \errorFunction(\mappingVector)= (\dataVector - \inputMatrix\mappingVector)^\top (\dataVector - \inputMatrix\mappingVector).
@@ -696,9 +832,9 @@ y <span class="op">=</span> movies[[<span class="st">&#39;IMDB_Rating&#39;</span
 <p>Which shows our model <em>hasn't</em> yet done a great job of representation, because the spread of values is large. We can check what the rating is dominated by in terms of regression coefficients.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">w</code></pre></div>
 <p>Although we have to be a little careful about interpretation because our input values live on different scales, however it looks like we are dominated by the bias, with a small negative effect for later films (but bear in mind the years are large, so this effect is probably larger than it looks) and a positive effect for length. So it looks like long earlier films generally do better, but the residuals are so high that we probably haven't modelled the system very well.</p>
-<iframe width height src="https://www.youtube.com/embed/ui-uNlFHoms?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+<iframe width="800" height="600" src="https://www.youtube.com/embed/ui-uNlFHoms?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
-<iframe width height src="https://www.youtube.com/embed/78YNphT90-k?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+<iframe width="800" height="600" src="https://www.youtube.com/embed/78YNphT90-k?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
 <h2 id="solution-with-qr-decomposition">Solution with QR Decomposition</h2>
 <p>Performing a solve instead of a matrix inverse is the more numerically stable approach, but we can do even better. A <a href="http://en.wikipedia.org/wiki/QR_decomposition">QR-decomposition</a> of a matrix factorises it into a matrix which is an orthogonal matrix <span class="math inline"><strong>Q</strong></span>, so that <span class="math inline">$\mathbf{Q}^\top \mathbf{Q} = \eye$</span>. And a matrix which is upper triangular, <span class="math inline"><strong>R</strong></span>. <br /><span class="math display">$$
@@ -758,50 +894,35 @@ $$</span><br /> where we are still in the one dimensional input setting so <span
 <p><br /><span class="math display">$$
 \mappingFunction(\inputScalar) = {\color{cyan}\mappingScalar_0}   + {\color{green}\mappingScalar_1 \inputScalar} + {\color{yellow}\mappingScalar_2 \inputScalar^2}
 $$</span><br /></p>
-<p>{</p>
-<script>
-showDivs(0, 'quadratic_basis');
-</script>
-<small></small> <input id="range-quadratic_basis" type="range" min="0" max="2" value="0" onchange="setDivs('quadratic_basis')" oninput="setDivs('quadratic_basis')">
-<button onclick="plusDivs(-1, 'quadratic_basis')">
-❮
-</button>
-<button onclick="plusDivs(1, 'quadratic_basis')">
-❯
-</button>
-<div class="quadratic_basis" style="text-align:center;">
-<object class="svgplot " align data="../slides/diagrams/ml/quadratic_basis000.svg" style="vertical-align:middle;">
-</object>
-</div>
-<div class="quadratic_basis" style="text-align:center;">
-<object class="svgplot " align data="../slides/diagrams/ml/quadratic_basis001.svg" style="vertical-align:middle;">
-</object>
-</div>
-<div class="quadratic_basis" style="text-align:center;">
-<object class="svgplot " align data="../slides/diagrams/ml/quadratic_basis002.svg" style="vertical-align:middle;">
-</object>
-</div>
-<object class="svgplot " align data="../slides/diagrams/ml/quadratic_basis002.svg" style="vertical-align:middle;">
-</object>
+<p>{figure{<object class="svgplot quadratic-basis-2"  data="../slides/diagrams/ml/\basisfunction002.svg"  style="vertical-align:middle;"></object></p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
 <span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;quadratic_basis</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;</span><span class="ch">\b</span><span class="st">asisfunction</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>, 
                             directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, 
                             num_basis<span class="op">=</span>IntSlider(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">1</span>))</code></pre></div>
 <p>This function takes in an <span class="math inline">$\numData \times 1$</span> dimensional vector and returns an <span class="math inline">$\numData \times 3$</span> dimensional <em>design matrix</em> containing the basis functions. We can plot those basis functions against there input as follows.</p>
 <p>The actual function we observe is then made up of a sum of these functions. This is the reason for the name basis. The term <em>basis</em> means 'the underlying support or foundation for an idea, argument, or process', and in this context they form the underlying support for our prediction function. Our prediction function can only be composed of a weighted linear sum of our basis functions.</p>
 <h2 id="quadratic-functions">Quadratic Functions</h2>
-<object class="svgplot " align data="../slides/diagrams/ml/quadratic_function002.svg" style="vertical-align:middle;">
+<div class="figure">
+<div id="quadratic-function-2-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/quadratic_function002.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="quadratic-function-2-magnify" class="magnify" onclick="magnifyFigure(&#39;quadratic-function-2&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="quadratic-function-2-caption" class="caption-frame">
+<p>Figure: Functions constructed by weighted sum of the components of a quadratic basis.</p>
+</div>
+</div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
 <span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;quadratic_function</span><span class="sc">{num_function:0&gt;3}</span><span class="st">.svg&#39;</span>, 
                             directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, 
                             num_basis<span class="op">=</span>IntSlider(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">1</span>))</code></pre></div>
-<h2 id="polynomial-fits-to-olympic-data">Polynomial Fits to Olympic Data</h2>
+<h2 id="polynomial-fits-to-olympic-data-edit">Polynomial Fits to Olympic Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/olympic-polynomials.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/olympic-polynomials.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
 <span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt
-<span class="im">import</span> teaching_plots <span class="im">as</span> plot
 <span class="im">import</span> mlai
 <span class="im">import</span> pods</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">basis <span class="op">=</span> mlai.polynomial
@@ -819,8 +940,18 @@ basis<span class="op">=</span>mlai.Basis(mlai.polynomial, number<span class="op"
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;olympic_LM_polynomial_num_basis</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>,
                             directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, 
                             num_basis<span class="op">=</span>IntSlider(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">27</span>,<span class="dv">1</span>))</code></pre></div>
-<object class="svgplot " align data="../slides/diagrams/ml/olympic_LM_polynomial_num_basis026.svg" style="vertical-align:middle;">
+<div class="figure">
+<div id="olympic-lm-polynomial-num-basis-26-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_num_basis026.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="olympic-lm-polynomial-num-basis-26-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-lm-polynomial-num-basis-26&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="olympic-lm-polynomial-num-basis-26-caption" class="caption-frame">
+<p>Figure: Fit of a 26 degree polynomial to the olympic marathon data.</p>
+</div>
+</div>
 <h1 id="underdetermined-system-edit">Underdetermined System <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/underdetermined-system.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/underdetermined-system.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
 <p>What about the situation where you have more parameters than data in your simultaneous equation? This is known as an <em>underdetermined</em> system. In fact this set up is in some sense <em>easier</em> to solve, because we don't need to think about introducing a slack variable (although it might make a lot of sense from a <em>modelling</em> perspective to do so).</p>
 <p>The way Laplace proposed resolving an overdetermined system, was to introduce slack variables, <span class="math inline">$\noiseScalar_i$</span>, which needed to be estimated for each point. The slack variable represented the difference between our actual prediction and the true observation. This is known as the <em>residual</em>. By introducing the slack variable we now have an additional <span class="math inline"><em>n</em></span> variables to estimate, one for each data point, <span class="math inline">$\{\noiseScalar_i\}$</span>. This actually turns the overdetermined system into an underdetermined system. Introduction of <span class="math inline"><em>n</em></span> variables, plus the original <span class="math inline"><em>m</em></span> and <span class="math inline"><em>c</em></span> gives us <span class="math inline">$\numData+2$</span> parameters to be estimated from <span class="math inline"><em>n</em></span> observations, which actually makes the system <em>underdetermined</em>. However, we then made a probabilistic assumption about the slack variables, we assumed that the slack variables were distributed according to a probability density. And for the moment we have been assuming that density was the Gaussian, <br /><span class="math display">$$\noiseScalar_i \sim \gaussianSamp{0}{\dataStd^2},$$</span><br /> with zero mean and variance <span class="math inline">$\dataStd^2$</span>.</p>
@@ -830,12 +961,21 @@ basis<span class="op">=</span>mlai.Basis(mlai.polynomial, number<span class="op"
 <span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;under_determined_system</span><span class="sc">{samp:0&gt;3}</span><span class="st">.svg&#39;</span>, 
                             directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, samp<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">1</span>))</code></pre></div>
-<object class="svgplot " align data="../slides/diagrams/ml/under_determined_system009.svg" style="vertical-align:middle;">
+<div class="figure">
+<div id="under-determined-system-9-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/under_determined_system009.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>Fit underdetermined system by considering uncertainty</em>
-</center>
+</div>
+<div id="under-determined-system-9-magnify" class="magnify" onclick="magnifyFigure(&#39;under-determined-system-9&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="under-determined-system-9-caption" class="caption-frame">
+<p>Figure: An underdetermined system can be fit by considering uncertainty. Multiple solutions are consistent with one specified point.</p>
+</div>
+</div>
 <h2 id="alan-turing-edit">Alan Turing <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/alan-turing-marathon.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/alan-turing-marathon.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="figure">
+<div id="turing-run-times-figure" class="figure-frame">
 <table>
 <tr>
 <td width="50%">
@@ -850,9 +990,14 @@ basis<span class="op">=</span>mlai.Basis(mlai.polynomial, number<span class="op"
 </td>
 </tr>
 </table>
-<center>
-<em>Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: <a href="http://www.turing.org.uk/scrapbook/run.html">Alan Turing Internet Scrapbook</a>.</em>
-</center>
+</div>
+<div id="turing-run-times-magnify" class="magnify" onclick="magnifyFigure(&#39;turing-run-times&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="turing-run-times-caption" class="caption-frame">
+<p>Figure: Alan Turing, in 1946 he was only 11 minutes slower than the winner of the 1948 games. Would he have won a hypothetical games held in 1946? Source: <a href="http://www.turing.org.uk/scrapbook/run.html">Alan Turing Internet Scrapbook</a>.</p>
+</div>
+</div>
 <p>If we had to summarise the objectives of machine learning in one word, a very good candidate for that word would be <em>generalization</em>. What is generalization? From a human perspective it might be summarised as the ability to take lessons learned in one domain and apply them to another domain. If we accept the definition given in the first session for machine learning, <br /><span class="math display">$$
 \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}
 $$</span><br /> then we see that without a model we can't generalise: we only have data. Data is fine for answering very specific questions, like &quot;Who won the Olympic Marathon in 2012?&quot;, because we have that answer stored, however, we are not given the answer to many other questions. For example, Alan Turing was a formidable marathon runner, in 1946 he ran a time 2 hours 46 minutes (just under four minutes per kilometer, faster than I and most of the other <a href="http://www.parkrun.org.uk/sheffieldhallam/">Endcliffe Park Run</a> runners can do 5 km). What is the probability he would have won an Olympics if one had been held in 1946?</p>
@@ -870,11 +1015,18 @@ $$</span><br /> then we see that without a model we can't generalise: we only ha
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;dem_gaussian</span><span class="sc">{stage:0&gt;2}</span><span class="st">.svg&#39;</span>, 
                             diagrams<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, 
                             stage<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>))</code></pre></div>
-<object class="svgplot " align data="../slides/diagrams/ml/dem_gaussian003.svg" style="vertical-align:middle;">
+<div class="figure">
+<div id="dem-gaussian-3-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/dem_gaussian003.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>Combining a Gaussian likelihood with a Gaussian prior to form a Gaussian posterior</em>
-</center>
+</div>
+<div id="dem-gaussian-3-magnify" class="magnify" onclick="magnifyFigure(&#39;dem-gaussian-3&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="dem-gaussian-3-caption" class="caption-frame">
+<p>Figure: Combining a Gaussian likelihood with a Gaussian prior to form a Gaussian posterior</p>
+</div>
+</div>
 <p>Another way of seeing what's going on is to note that the numerator of Bayes' rule merely multiplies the likelihood by the prior. The denominator, is not a function of <span class="math inline"><em>c</em></span>. So the functional form is entirely determined by the multiplication of prior and likelihood. This has the effect of ensuring that the posterior only has probability mass in regions where both the prior and the likelihood have probability mass.</p>
 <p>The marginal likelihood, <span class="math inline">$p(\dataScalar)$</span>, operates to ensure that the distribution is normalised.</p>
 <p>For the Gaussian case, the normalisation of the posterior can be performed analytically. This is because both the prior and the likelihood have the form of an <em>exponentiated quadratic</em>, <br /><span class="math display">exp(<em>a</em><sup>2</sup>)exp(<em>b</em><sup>2</sup>)=exp(<em>a</em><sup>2</sup> + <em>b</em><sup>2</sup>),</span><br /> and the properties of the exponential mean that the product of two exponentiated quadratics is also an exponentiated quadratic. That implies that the posterior is also Gaussian, because a normalized exponentiated quadratic is a Gaussian distribution.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
@@ -894,11 +1046,18 @@ $$</span><br /> then we see that without a model we can't generalise: we only ha
   $$</span><br /> Similarly, we assume that weights of the population are distributed a Gaussian density with a mean of <span class="math inline">75kg</span> and a standard deviation of <span class="math inline">6<em>k</em><em>g</em></span> (implying a variance of 36), <br /><span class="math display">$$
   p(w) \sim \gaussianSamp{75}{36}.
   $$</span><br /></p>
-<object class="svgplot " align data="../slides/diagrams/ml/height_weight_gaussian.svg" style="vertical-align:middle;">
+<div class="figure">
+<div id="height-weight-gaussian-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/height_weight_gaussian.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>Gaussian distributions for height and weight.</em>
-</center>
+</div>
+<div id="height-weight-gaussian-magnify" class="magnify" onclick="magnifyFigure(&#39;height-weight-gaussian&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="height-weight-gaussian-caption" class="caption-frame">
+<p>Figure: Gaussian distributions for height and weight.</p>
+</div>
+</div>
 <h2 id="independence-assumption">Independence Assumption</h2>
 <p>First of all, we make an independence assumption, we assume that height and weight are independent. The definition of probabilistic independence is that the joint density, <span class="math inline"><em>p</em>(<em>w</em>, <em>h</em>)</span>, factorizes into its marginal densities, <br /><span class="math display"><em>p</em>(<em>w</em>, <em>h</em>)=<em>p</em>(<em>w</em>)<em>p</em>(<em>h</em>).</span><br /> Given this assumption we can sample from the joint distribution by independently sampling weights and heights.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
@@ -906,11 +1065,18 @@ $$</span><br /> then we see that without a model we can't generalise: we only ha
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;independent_height_weight</span><span class="sc">{fig:0&gt;3}</span><span class="st">.svg&#39;</span>, 
                             directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, 
                             fig<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">1</span>))</code></pre></div>
-<object class="svgplot " align data="../slides/diagrams/ml/independent_height_weight007.svg" style="vertical-align:middle;">
+<div class="figure">
+<div id="independent-height-weight-7-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/independent_height_weight007.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>Samples from independent Gaussian variables that might represent heights and weights.</em>
-</center>
+</div>
+<div id="independent-height-weight-7-magnify" class="magnify" onclick="magnifyFigure(&#39;independent-height-weight-7&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="independent-height-weight-7-caption" class="caption-frame">
+<p>Figure: Samples from independent Gaussian variables that might represent heights and weights.</p>
+</div>
+</div>
 <p>In reality height and weight are <em>not</em> independent. Taller people tend on average to be heavier, and heavier people are likely to be taller. This is reflected by the <em>body mass index</em>. A ratio suggested by one of the fathers of statistics, Adolphe Quetelet. Quetelet was interested in the notion of the <em>average man</em> and collected various statistics about people. He defined the BMI to be, <br /><span class="math display">$$
 \text{BMI} = \frac{w}{h^2}
 $$</span><br />To deal with this dependence we now introduce the notion of <em>correlation</em> to the multivariate Gaussian density.</p>
@@ -921,14 +1087,20 @@ $$</span><br />To deal with this dependence we now introduce the notion of <em>c
 pods.notebook.display_plots(<span class="st">&#39;correlated_height_weight</span><span class="sc">{fig:0&gt;3}</span><span class="st">.svg&#39;</span>, 
                             directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, 
                             fig<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">1</span>))</code></pre></div>
-<object class="svgplot " align data="../slides/diagrams/ml/correlated_height_weight007.svg" style="vertical-align:middle;">
+<div class="figure">
+<div id="correlated-height-weight-7-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/correlated_height_weight007.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>Samples from </em>correlated* Gaussian variables that might represent heights and weights.*
-</center>
+</div>
+<div id="correlated-height-weight-7-magnify" class="magnify" onclick="magnifyFigure(&#39;correlated-height-weight-7&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="correlated-height-weight-7-caption" class="caption-frame">
+<p>Figure: Samples from <em>correlated</em> Gaussian variables that might represent heights and weights.</p>
+</div>
+</div>
 <h2 id="independent-gaussians-edit">Independent Gaussians <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/two-d-gaussian-maths.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/two-d-gaussian-maths.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p><br /><span class="math display"><em>p</em>(<em>w</em>, <em>h</em>)=<em>p</em>(<em>w</em>)<em>p</em>(<em>h</em>)</span><br /></p>
-<p>{Independent Gaussians</p>
 <p><br /><span class="math display">$$
 p(w, h) = \frac{1}{\sqrt{2\pi \dataStd_1^2}\sqrt{2\pi\dataStd_2^2}} \exp\left(-\frac{1}{2}\left(\frac{(w-\meanScalar_1)^2}{\dataStd_1^2} + \frac{(h-\meanScalar_2)^2}{\dataStd_2^2}\right)\right)
 $$</span><br /></p>
@@ -1044,11 +1216,11 @@ p(\mappingVector|\dataVector, \inputVector) = \frac{p(\dataVector|\inputVector, 
 $$</span><br /> We've looked at the samples for our function <span class="math inline">$\mappingFunctionVector = \basisMatrix\mappingVector$</span>, which forms the mean of the Gaussian likelihood, under the prior distribution. I.e. we've sampled from <span class="math inline">$p(\mappingVector)$</span> and multiplied the result by the basis matrix. Now we will sample from the posterior density, <span class="math inline">$p(\mappingVector|\dataVector, \inputVector)$</span>, and check that the new samples fit do correspond to the data, i.e. we want to check that the updated distribution includes information from the data set. First we need to compute the posterior mean and <em>covariance</em>.</p>
 <h2 id="bayesian-inference-in-the-univariate-case">Bayesian Inference in the Univariate Case</h2>
 <p>This video talks about Bayesian inference across the single parameter, the offset <span class="math inline"><em>c</em></span>, illustrating how the prior and the likelihood combine in one dimension to form a posterior.</p>
-<iframe width="1024" height="768" src="https://www.youtube.com/embed/AvlnFnvFw_0?start=15" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+<iframe width="800" height="600" src="https://www.youtube.com/embed/AvlnFnvFw_0?start=15" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
 <h2 id="multivariate-bayesian-inference">Multivariate Bayesian Inference</h2>
 <p>This section of the lecture talks about how we extend the idea of Bayesian inference for the multivariate case. It goes through the multivariate Gaussian and how to complete the square in the linear algebra as we managed below.</p>
-<iframe width="1024" height="768" src="https://www.youtube.com/embed/Os1iqgpelPw?start=1362" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+<iframe width="800" height="600" src="https://www.youtube.com/embed/Os1iqgpelPw?start=1362" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
 <p>The lecture informs us the the posterior density for <span class="math inline">$\mappingVector$</span> is given by a Gaussian density with covariance <br /><span class="math display">$$
 \covarianceMatrix_w = \left(\dataStd^{-2}\basisMatrix^\top \basisMatrix + \alpha^{-1}\eye\right)^{-1}
@@ -1074,12 +1246,18 @@ max_basis <span class="op">=</span> y.shape[<span class="dv">0</span>]</code></p
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;olympic_BLM_polynomial_number</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>, 
                             directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml/&#39;</span>, 
                             num_basis<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">27</span>, <span class="dv">1</span>))</code></pre></div>
-<object class="svgplot " align data="../slides/diagrams/ml/olympic_BLM_polynomial_number026.svg" style="vertical-align:middle;">
+<div class="figure">
+<div id="olympic-blm-polynomial-number-26-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_BLM_polynomial_number026.svg" style="vertical-align:middle;">
 </object>
-}
-<center>
-<em>Bayesian fit with 26th degree polynomial and negative marginal log likelihood.</em>
-</center>
+</div>
+<div id="olympic-blm-polynomial-number-26-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-blm-polynomial-number-26&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="olympic-blm-polynomial-number-26-caption" class="caption-frame">
+<p>Figure: Bayesian fit with 26th degree polynomial and negative marginal log likelihood.</p>
+</div>
+</div>
 <h2 id="hold-out-validation">Hold Out Validation</h2>
 <p>For the polynomial fit, we will now look at <em>hold out</em> validation, where we are holding out some of the most recent points. This tests the abilit of our model to <em>extrapolate</em>.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
@@ -1087,11 +1265,18 @@ max_basis <span class="op">=</span> y.shape[<span class="dv">0</span>]</code></p
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;olympic_val_BLM_polynomial_number</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>, 
                             directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, 
                             num_basis<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">27</span>, <span class="dv">1</span>))</code></pre></div>
-<object class="svgplot " align data="../slides/diagrams/ml/olympic_val_BLM_polynomial_number026.svg" style="vertical-align:middle;">
+<div class="figure">
+<div id="olympic-val-blm-polynomial-number-26-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_val_BLM_polynomial_number026.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>Bayesian fit with 26th degree polynomial and hold out validation scores.</em>
-</center>
+</div>
+<div id="olympic-val-blm-polynomial-number-26-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-val-blm-polynomial-number-26&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="olympic-val-blm-polynomial-number-26-caption" class="caption-frame">
+<p>Figure: Bayesian fit with 26th degree polynomial and hold out validation scores.</p>
+</div>
+</div>
 <h2 id="fold-cross-validation">5-fold Cross Validation</h2>
 <p>Five fold cross validation tests the ability of the model to <em>interpolate</em>.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
@@ -1100,11 +1285,18 @@ max_basis <span class="op">=</span> y.shape[<span class="dv">0</span>]</code></p
                             directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, 
                             part<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">5</span>), 
                             num_basis<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">27</span>, <span class="dv">1</span>))</code></pre></div>
-<object class="svgplot " align data="../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number026.svg" style="vertical-align:middle;">
+<div class="figure">
+<div id="olympic-5cv05-blm-polynomial-number-26-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number026.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>Bayesian fit with 26th degree polynomial and five fold cross validation scores.</em>
-</center>
+</div>
+<div id="olympic-5cv05-blm-polynomial-number-26-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-5cv05-blm-polynomial-number-26&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="olympic-5cv05-blm-polynomial-number-26-caption" class="caption-frame">
+<p>Figure: Bayesian fit with 26th degree polynomial and five fold cross validation scores.</p>
+</div>
+</div>
 <h2 id="marginal-likelihood-edit">Marginal Likelihood <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/polynomial-marginal-likelihood.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/polynomial-marginal-likelihood.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <ul>
 <li><p>The marginal likelihood can also be computed, it has the form: <br /><span class="math display">$$

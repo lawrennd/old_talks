@@ -1,5 +1,6 @@
 ---
-title: "Decision Making and Diversity: The Folly of Value Alignment"
+title: "Decision Making and Diversity"
+subtitle: "The Folly of Value Alignment"
 abstract: 
 venue: CFI Lunchtime Seminar
 reveal: 2018-04-30-decision-making-and-diversity.slides.html
@@ -14,7 +15,7 @@ author:
   institute: Amazon Cambridge and University of Sheffield
   twitter: lawrennd
   url: http://inverseprobability.com
-published: 2018-04-30
+date: 2018-04-30
 transition: None
 ---
 
@@ -36,6 +37,9 @@ transition: None
 * Society would be more robust if diversity of solutions and opinions are sustained and respected. 
 }
 
+\thanks
+
+
 \newslide{Links}
 \slides{
 * Articles in the Guardian are available from my [Guardian Profile Page](http://www.theguardian.com/profile/neil-lawrence)
@@ -45,11 +49,4 @@ transition: None
 * [This paper on decision making and diversity](http://inverseprobability.com/2017/11/15/decision-making)
 }
 
-\newslide{Thanks!}
-
-* twitter: ```@lawrennd```
-* blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
-
-
-\newslide{References}
-
+\references

@@ -24,10 +24,26 @@ categories:
   $${% include talk-notation.tex %}$$
 </div>
 
+<script src="/talks/figure-magnify.js"></script>
+<script src="/talks/figure-animate.js"></script>
+    
+<div id="modal-frame" class="modal">
+  <span class="close" onclick="closeMagnify()">&times;</span>
+  <div class="modal-figure">
+    <div class="figure-frame">
+      <div class="modal-content" id="modal01"></div>
+      <!--<img class="modal-content" id="object01">-->
+    </div>
+    <div class="caption-frame" id="modal-caption"></div>
+  </div>
+</div>	  
+
 <!-- Front matter -->
 <p>.</p>
+<!---->
 <!--Back matter-->
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
+<h1 id="introduction-edit">Introduction <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/uncertainty-in-loss-functions.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/uncertainty-in-loss-functions.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
 <h1 id="what-is-machine-learning-edit">What is Machine Learning? <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
 <p>What is machine learning? At its most basic level machine learning is a combination of</p>
 <p><br /><span class="math display">$$\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$</span><br /></p>
@@ -83,7 +99,7 @@ $$</span><br /> Bayesian inference considers uncertainty in <span class="math in
 <p>The loss function and the log likelihood may take a mathematically similar form but they are philosophically very different. The log likelihood assumes something about the <em>generating</em> function of the data, whereas the loss function assumes something about the cost we pay. Importantly the loss function in Bayesian inference only normally enters at the point of decision.</p>
 <p>The key idea in Bayesian inference is that the probabilistic inference can be performed <em>without</em> knowing the loss becasue if the model is correct, then the form of the loss function is irrelevant when performing inference. In practice, however, for real data sets the model is almost never correct.</p>
 <p>Some of the maths below looks similar to the maths we can find in Bayesian methods, in particular variational Bayes, but that is merely a consequence of the availability of analytical mathematics. There are only particular ways of developing tractable algorithms, one route involves linear algebra. However, the similarity of the mathematics belies a difference in interpretation. It is similar to travelling a road (e.g. Ermine Street) in a wild landscape. We travel together because that is where efficient progress is to be made, but in practice a our destinations (Lincoln, York), may be different.</p>
-<h3 id="introduce-uncertainty">Introduce Uncertainty</h3>
+<h2 id="introduce-uncertainty">Introduce Uncertainty</h2>
 <p>To introduce uncertainty we consider a weighted version of the loss function, we introduce positive weights, <span class="math inline">$\left\{ \scaleScalar_i\right\}_{i=1}^\numData$</span>. <br /><span class="math display">$$
 \errorFunction(\dataVector, \inputMatrix) = \sum_{i}
 \scaleScalar_i L(\dataScalar_i, \mappingFunction(\inputVector_i))
@@ -94,7 +110,7 @@ $$</span><br /> We now assume that tmake the assumption that these weights are d
 &amp; =\sum_{i}\expectationDist{\scaleScalar_i }{q(\scaleScalar)}L(\dataScalar_i, \mappingFunction(\inputVector_i))
 \end{align*}
 $$</span><br /> We will assume that our process, <span class="math inline">$q(\scaleScalar)$</span> can depend on a variety of inputs such as <span class="math inline">$\dataVector$</span>, <span class="math inline">$\inputMatrix$</span> and time, <span class="math inline"><em>t</em></span>.</p>
-<h3 id="principle-of-maximum-entropy">Principle of Maximum Entropy</h3>
+<h2 id="principle-of-maximum-entropy">Principle of Maximum Entropy</h2>
 <p>To maximize uncertainty in <span class="math inline">$q(\scaleScalar)$</span> we maximize its entropy. Following Jaynes formalism of maximum entropy, in the continuous space we do this with respect to an invariant measure, <br /><span class="math display">$$
 H(\scaleScalar)= - \int q(\scaleScalar) \log \frac{q(\scaleScalar)}{m(\scaleScalar)} \text{d}\scaleScalar
 $$</span><br /> and since we minimize the loss, we balance this by adding in this term to form <br /><span class="math display">$$
@@ -179,9 +195,17 @@ mlai.write_figure(figure<span class="op">=</span>fig,
                   filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/datasets/olympic-marathon.svg&#39;</span>, 
                   transparent<span class="op">=</span><span class="va">True</span>, 
                   frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
-<div style="text-align:center">
-<object class="svgplot " align data="../slides/diagrams/datasets/olympic-marathon.svg" style="vertical-align:middle;">
+<div class="figure">
+<div id="olympic-marathon-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/datasets/olympic-marathon.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="olympic-marathon-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-marathon&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="olympic-marathon-caption" class="caption-frame">
+<p>Figure: Olympic marathon pace times since 1892.</p>
+</div>
 </div>
 <p>Things to notice about the data include the outlier in 1904, in this year, the olympics was in St Louis, USA. Organizational problems and challenges with dust kicked up by the cars following the race meant that participants got lost, and only very few participants completed.</p>
 <p>More recent years see more consistently quick marathons.</p>
@@ -282,11 +306,18 @@ mlai.write_figure(<span class="st">&#39;../slides/diagrams/ml/olympic-loss-linea
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
 pods.notebook.display_plots(<span class="st">&#39;olympic-loss-linear-regression</span><span class="sc">{number:0&gt;3}</span><span class="st">.svg&#39;</span>, 
                             directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, number<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">1</span>))</code></pre></div>
-<object class="svgplot " align data="../slides/diagrams/ml/olympic-loss-linear-regression001.svg" style="vertical-align:middle;">
+<div class="figure">
+<div id="olympic-loss-linear-regression-1-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/olympic-loss-linear-regression001.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>Linear regression for the standard quadratic loss in </em>red* and the probabilistically weighted loss in <em>blue</em>.*
-</center>
+</div>
+<div id="olympic-loss-linear-regression-1-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-loss-linear-regression-1&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="olympic-loss-linear-regression-1-caption" class="caption-frame">
+<p>Figure: Linear regression for the standard quadratic loss in <em>red</em> and the probabilistically weighted loss in <em>blue</em>.</p>
+</div>
+</div>
 <h2 id="parameter-uncertainty">Parameter Uncertainty</h2>
 <p>Classical Bayesian inference is concerned with parameter uncertainty, which equates to uncertainty in the <em>prediction function</em>, <span class="math inline">$\mappingFunction(\inputVector)$</span>. The prediction function is normally an estimate of the value of <span class="math inline">$\dataScalar$</span> or constructs a probability density for <span class="math inline">$\dataScalar$</span>.</p>
 <p>Uncertainty in the prediction function can arise through uncertainty in our loss function, but also through uncertainty in parameters in the classical Bayesian sense. The full maximum entropy formalism would now be <br /><span class="math display">$$
@@ -402,13 +433,30 @@ mlai.write_figure(<span class="st">&#39;../slides/diagrams/ml/olympic-loss-bayes
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
 pods.notebook.display_plots(<span class="st">&#39;olympic-loss-bayes-linear-regression</span><span class="sc">{number:0&gt;3}</span><span class="st">.svg&#39;</span>, 
                             directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, number<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">1</span>))</code></pre></div>
-<object class="svgplot " align data="../slides/diagrams/ml/olympic-loss-bayes-linear-regression000.svg" style="vertical-align:middle;">
+<div class="figure">
+<div id="olympic-loss-bayes-linear-regression-0-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/olympic-loss-bayes-linear-regression000.svg" style="vertical-align:middle;">
 </object>
-<object class="svgplot " align data="../slides/diagrams/ml/olympic-loss-bayes-linear-regression001.svg" style="vertical-align:middle;">
+</div>
+<div id="olympic-loss-bayes-linear-regression-0-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-loss-bayes-linear-regression-0&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="olympic-loss-bayes-linear-regression-0-caption" class="caption-frame">
+<p>Figure: Probabilistic linear regression for the standard quadratic loss in <em>red</em> and the probabilistically weighted loss in <em>blue</em>.</p>
+</div>
+</div>
+<div class="figure">
+<div id="olympic-loss-bayes-linear-regression-1-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/olympic-loss-bayes-linear-regression001.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>Probabilistic linear regression for the standard quadratic loss in </em>red* and the probabilistically weighted loss in <em>blue</em>.*
-</center>
+</div>
+<div id="olympic-loss-bayes-linear-regression-1-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-loss-bayes-linear-regression-1&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="olympic-loss-bayes-linear-regression-1-caption" class="caption-frame">
+<p>Figure: Probabilistic linear regression for the standard quadratic loss in <em>red</em> and the probabilistically weighted loss in <em>blue</em>.</p>
+</div>
+</div>
 <h2 id="correlated-scales">Correlated Scales</h2>
 <p>Going beyond independence between weights, we now consider <span class="math inline">$m(\vScalar)$</span> to be a Gaussian process, and scale by the <em>square</em> of <span class="math inline">$\vScalar$</span>, <span class="math inline">$\scaleScalar=\vScalar^2$</span> <br /><span class="math display">$$
 \vScalar \sim \mathcal{GP}\left(\meanScalar(\inputVector), \kernel(\inputVector, \inputVector^\prime)\right)
@@ -508,11 +556,18 @@ mlai.write_figure(<span class="st">&#39;../slides/diagrams/ml/olympic-gp-loss-ba
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;olympic-gp-loss-bayes-linear-regression</span><span class="sc">{number:0&gt;3}</span><span class="st">.svg&#39;</span>, 
                             directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, number<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">1</span>))</code></pre></div>
-<object class="svgplot " align data="../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression001.svg" style="vertical-align:middle;">
+<div class="figure">
+<div id="olympic-gp-loss-bayes-linear-regression-1-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression001.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>Probabilistic linear regression for the standard quadratic loss in </em>red* and the probabilistically weighted loss with a Gaussian process measure in <em>blue</em>.*
-</center>
+</div>
+<div id="olympic-gp-loss-bayes-linear-regression-1-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-gp-loss-bayes-linear-regression-1&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="olympic-gp-loss-bayes-linear-regression-1-caption" class="caption-frame">
+<p>Figure: Probabilistic linear regression for the standard quadratic loss in <em>red</em> and the probabilistically weighted loss with a Gaussian process measure in <em>blue</em>.</p>
+</div>
+</div>
 <p>Finally, we make an attempt to show the joint uncertainty by first of all sampling from the loss function weights density, <span class="math inline">$q(\scaleScalar)$</span>.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
 num_samps<span class="op">=</span><span class="dv">10</span>
@@ -522,11 +577,19 @@ ax.set_xlim(data_limits[<span class="dv">0</span>], data_limits[<span class="dv"
 ax.set_xlabel(<span class="st">&#39;year&#39;</span>)
 _ <span class="op">=</span> ax.set_ylabel(<span class="st">&#39;$s_i$&#39;</span>)
 mlai.write_figure(<span class="st">&#39;../slides/diagrams/ml/olympic-gp-loss-samples.svg&#39;</span>, transparent<span class="op">=</span><span class="va">True</span>)</code></pre></div>
-<object class="svgplot " align data="../slides/diagrams/ml/olympic-gp-loss-samples.svg" style="vertical-align:middle;">
+<div class="figure">
+<div id="-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/olympic-gp-loss-samples.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>Samples of loss weightings from the density <span class="math inline">$q(\scaleSamples)$</span>.</em>
-</center>
+</div>
+<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="-caption" class="caption-frame">
+<p>Figure: Samples of loss weightings from the density <span class="math inline">$q(\scaleSamples)$</span>.</p>
+</div>
+</div>
+<p>}{olympic-gp-loss-samples}</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
 ax.plot(x, y, <span class="st">&#39;r.&#39;</span>, markersize<span class="op">=</span><span class="dv">10</span>)
 ax.set_xlim(data_limits[<span class="dv">0</span>], data_limits[<span class="dv">1</span>])
@@ -547,20 +610,51 @@ mlai.write_figure(<span class="st">&#39;../slides/diagrams/ml/olympic-gp-loss-ba
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
 pods.notebook.display_plots(<span class="st">&#39;olympic-gp-loss-bayes-linear-regression-and-samples</span><span class="sc">{number:0&gt;3}</span><span class="st">.svg&#39;</span>, 
                             directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, number<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">1</span>))</code></pre></div>
-<object class="svgplot " align data="../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression-and-samples001.svg" style="vertical-align:middle;">
+{
+<div class="figure">
+<div id="olympic-gp-loss-bayes-linear-regression-and-samples-0
+-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression-and-samples000.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>Samples from the joint density of loss weightings and regression weights show the full distribution of function predictions.</em>
-</center>
+</div>
+<div id="olympic-gp-loss-bayes-linear-regression-and-samples-0
+-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-gp-loss-bayes-linear-regression-and-samples-0
+&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="olympic-gp-loss-bayes-linear-regression-and-samples-0
+-caption" class="caption-frame">
+<p>Figure: Samples from the joint density of loss weightings and regression weights.</p>
+</div>
+</div>
+<div class="figure">
+<div id="olympic-gp-loss-bayes-linear-regression-and-samples-1-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression-and-samples001.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="olympic-gp-loss-bayes-linear-regression-and-samples-1-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-gp-loss-bayes-linear-regression-and-samples-1&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="olympic-gp-loss-bayes-linear-regression-and-samples-1-caption" class="caption-frame">
+<p>Figure: Samples from the joint density of loss weightings and regression weights show the full distribution of function predictions.</p>
+</div>
+</div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_figsize)
 ax.hist(np.asarray(allsamps), bins<span class="op">=</span><span class="dv">30</span>, density<span class="op">=</span><span class="va">True</span>)
 ax.set_xlabel<span class="op">=</span><span class="st">&#39;pace min/kim&#39;</span>
 mlai.write_figure(<span class="st">&#39;../slides/diagrams/ml/olympic-gp-loss-histogram-2020.svg&#39;</span>, transparent<span class="op">=</span><span class="va">True</span>)</code></pre></div>
-<object class="svgplot " align data="../slides/diagrams/ml/olympic-gp-loss-histogram-2020.svg" style="vertical-align:middle;">
+<div class="figure">
+<div id="olympic-gp-loss-histogram-2020-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/olympic-gp-loss-histogram-2020.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>Histogram of samples from the year 2020, where the weight of the loss function was pinned to ensure that the model focussed its predictions on this region for test data.</em>
-</center>
+</div>
+<div id="olympic-gp-loss-histogram-2020-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-gp-loss-histogram-2020&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="olympic-gp-loss-histogram-2020-caption" class="caption-frame">
+<p>Figure: Histogram of samples from the year 2020, where the weight of the loss function was pinned to ensure that the model focussed its predictions on this region for test data.</p>
+</div>
+</div>
 <h2 id="conclusions">Conclusions</h2>
 <ul>
 <li>Maximum Entropy Framework for uncertainty in
@@ -569,5 +663,6 @@ mlai.write_figure(<span class="st">&#39;../slides/diagrams/ml/olympic-gp-loss-hi
 <li>Prediction functions</li>
 </ul></li>
 </ul>
+<h1 id="references">References</h1>
 
 

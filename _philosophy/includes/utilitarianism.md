@@ -2,7 +2,7 @@
 \define{utilitarianism}
 \editme
 
-\include{_philosopy/includes/justice-sandel.md}
-\include{_philosopy/includes/trolley-switch.md}
+\include{_philosophy/includes/justice-sandel.md}
+\include{_philosophy/includes/trolley-switch.md}
 
 \endif

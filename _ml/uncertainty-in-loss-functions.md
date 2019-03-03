@@ -17,6 +17,8 @@ transition: None
 
 \include{talk-macros.tex}
 
+\editme
+\section{Introduction}
 
 \include{_ml/includes/what-is-ml.md}
 \include{_ai/includes/artificial-vs-natural-systems.md}
@@ -59,7 +61,7 @@ The key idea in Bayesian inference is that the probabilistic inference can be pe
 
 Some of the maths below looks similar to the maths we can find in Bayesian methods, in particular variational Bayes, but that is merely a consequence of the availability of analytical mathematics. There are only particular ways of developing tractable algorithms, one route involves linear algebra. However, the similarity of the mathematics belies a difference in interpretation. It is similar to travelling a road (e.g. Ermine Street) in a wild landscape. We travel together because that is where efficient progress is to be made, but in practice a our destinations (Lincoln, York), may be different.}
 
-### Introduce Uncertainty
+\subsection{Introduce Uncertainty}
 
 \notes{To introduce uncertainty we consider a weighted version of the loss function, we introduce positive weights,}\slides{* Introduce} $\left\{ \scaleScalar_i\right\}_{i=1}^\numData$.
 $$
@@ -76,7 +78,7 @@ $$
 $$
 \notes{We will assume that our process, $q(\scaleScalar)$ can depend on a variety of inputs such as $\dataVector$, $\inputMatrix$ and time, $t$.}
 
-### Principle of Maximum Entropy 
+\subsection{Principle of Maximum Entropy}
 
 \notes{To maximize uncertainty in $q(\scaleScalar)$ we maximize its entropy. Following Jaynes formalism of maximum entropy, in the continuous space we do this with respect to an invariant measure,}\slides{* Maximum entropy principle}
 $$
@@ -261,14 +263,11 @@ pods.notebook.display_plots('olympic-loss-linear-regression{number:0>3}.svg',
 \newslide{Linear Regression on Olympic Data}
 
 \slides{
-\includediagram{../slides/diagrams/ml/olympic-loss-linear-regression000}
+\figure{\includediagram{../slides/diagrams/ml/olympic-loss-linear-regression000}{80%}}{}{olympic-loss-linear-regression-0}
 
 \newslide{Linear Regression on Olympic Data}
 }
-\figure{
-\includediagram{../slides/diagrams/ml/olympic-loss-linear-regression001}
-\notes{\caption{Linear regression for the standard quadratic loss in *red* and the probabilistically weighted loss in *blue*.}}
-}
+\figure{\includediagram{../slides/diagrams/ml/olympic-loss-linear-regression001}{80%}}{Linear regression for the standard quadratic loss in *red* and the probabilistically weighted loss in *blue*.}{olympic-loss-linear-regression-1}
 
 \subsection{Parameter Uncertainty}
 
@@ -418,14 +417,11 @@ pods.notebook.display_plots('olympic-loss-bayes-linear-regression{number:0>3}.sv
 
 \newslide{Probabilistic Linear Regression on Olympic Data}
 
-\includediagram{../slides/diagrams/ml/olympic-loss-bayes-linear-regression000}
+\figure{\includediagram{../slides/diagrams/ml/olympic-loss-bayes-linear-regression000}{80%}}{Probabilistic linear regression for the standard quadratic loss in *red* and the probabilistically weighted loss in *blue*.}{olympic-loss-bayes-linear-regression-0}
 
 \newslide{Probabilistic Linear Regression on Olympic Data}
 
-\figure{
-\includediagram{../slides/diagrams/ml/olympic-loss-bayes-linear-regression001}
-\notes{\caption{Probabilistic linear regression for the standard quadratic loss in *red* and the probabilistically weighted loss in *blue*.}}
-}
+\figure{\includediagram{../slides/diagrams/ml/olympic-loss-bayes-linear-regression001}{80%}}{Probabilistic linear regression for the standard quadratic loss in *red* and the probabilistically weighted loss in *blue*.}{olympic-loss-bayes-linear-regression-1}
 
 \subsection{Correlated Scales}
 
@@ -584,13 +580,11 @@ mlai.write_figure('../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression
 
 \newslide{Olympic Data: GP Measure}
 
-\slides{
-\includediagram{../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression000}
+\slides{\figure{\includediagram{../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression000}{80%}}{}{olympic-gp-loss-bayes-linear-0}
 }
 \newslide{Olympic Data: GP Measure}
 
-\includediagram{../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression001}
-\notes{\caption{Probabilistic linear regression for the standard quadratic loss in *red* and the probabilistically weighted loss with a Gaussian process measure in *blue*.}}
+\figure{\includediagram{../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression001}{80%}}{Probabilistic linear regression for the standard quadratic loss in *red* and the probabilistically weighted loss with a Gaussian process measure in *blue*.}{olympic-gp-loss-bayes-linear-regression-1}
 
 
 \newslide{Joint Uncertainty}
@@ -607,10 +601,7 @@ ax.set_xlabel('year')
 _ = ax.set_ylabel('$s_i$')
 mlai.write_figure('../slides/diagrams/ml/olympic-gp-loss-samples.svg', transparent=True)}
 
-\figure{
-\includediagram{../slides/diagrams/ml/olympic-gp-loss-samples}
-\notes{\caption{Samples of loss weightings from the density $q(\scaleSamples)$.}}
-}
+\figure{\includediagram{../slides/diagrams/ml/olympic-gp-loss-samples}{80%}}{Samples of loss weightings from the density $q(\scaleSamples)$.}}{olympic-gp-loss-samples}
 
 \code{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 ax.plot(x, y, 'r.', markersize=10)
@@ -636,15 +627,13 @@ pods.notebook.display_plots('olympic-gp-loss-bayes-linear-regression-and-samples
 
 \newslide{Joint Samples from Regression}
 \slides{
-\includediagram{../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression-and-samples000}
+\figure{\includediagram{../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression-and-samples000}{80%}}{Samples from the joint density of loss weightings and regression weights.}{olympic-gp-loss-bayes-linear-regression-and-samples-0
 }
 
 \newslide{Joint Samples from Regression}
 
-\figure{
-\includediagram{../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression-and-samples001}
-\notes{\caption{Samples from the joint density of loss weightings and regression weights show the full distribution of function predictions.}}
-}
+\figure{\includediagram{../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression-and-samples001}{80%}}{Samples from the joint density of loss weightings and regression weights show the full distribution of function predictions.}{olympic-gp-loss-bayes-linear-regression-and-samples-1}
+
 
 \code{fig, ax = plt.subplots(figsize=plot.big_figsize)
 ax.hist(np.asarray(allsamps), bins=30, density=True)
@@ -653,10 +642,7 @@ mlai.write_figure('../slides/diagrams/ml/olympic-gp-loss-histogram-2020.svg', tr
 
 \newslide{Histogram from 2020}
 
-\figure{
-\includediagram{../slides/diagrams/ml/olympic-gp-loss-histogram-2020}
-\notes{\caption{Histogram of samples from the year 2020, where the weight of the loss function was pinned to ensure that the model focussed its predictions on this region for test data.}}
-}
+\figure{\includediagram{../slides/diagrams/ml/olympic-gp-loss-histogram-2020}{80%}}{Histogram of samples from the year 2020, where the weight of the loss function was pinned to ensure that the model focussed its predictions on this region for test data.}{olympic-gp-loss-histogram-2020}
 
 \subsection{Conclusions}
 
@@ -665,3 +651,5 @@ mlai.write_figure('../slides/diagrams/ml/olympic-gp-loss-histogram-2020.svg', tr
     * Prediction functions
 
 \thanks
+
+\references
