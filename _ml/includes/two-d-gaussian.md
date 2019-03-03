@@ -19,9 +19,7 @@
 \setupplotcode{import teaching_plots as plot}
 \plotcode{plot.height_weight(diagrams='../slides/diagrams/ml')}
 
-\includediagram{../slides/diagrams/ml/height_weight_gaussian}
-
-\caption{Gaussian distributions for height and weight.}
+\figure{\includediagram{../slides/diagrams/ml/height_weight_gaussian}{70%}}{Gaussian distributions for height and weight.}{height-weight-gaussian}
 
 
 \subsection{Independence Assumption}
