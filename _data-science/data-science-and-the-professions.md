@@ -75,7 +75,6 @@ date: 2018-09-05
 will be deployed in evolving environments.
 
 
-\newslide{Thanks!}
+\thanks
 
-* twitter: \@lawrennd
-* blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
+\references

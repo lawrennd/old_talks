@@ -1,7 +1,12 @@
+\ifndef{howTheGdprMayHelp}
+\define{howTheGdprMayHelp}
+
+\edit
+
 \section{How the GDPR May Help}
 
-\slides{### How GDPR May Help
-
+\newslide{How GDPR May Help}
+\slides{
 * Reflection on data eco-systems.
 
 * GDPR: Good Data Practice Rules
@@ -16,5 +21,5 @@ Similarly, with regard to data minimization principles. Retaing the minimum amou
 
 If GDPR is truly reflecting the interests of individuals, then it is also reflecting the interests of consumers, patients, users etc, each of whom make use of these systems. For any company that is customer facing, or any service that prides itself on the quality of its delivery to those individuals, "good data practice" should become part of the DNA of the organization.}
 
-
+\endif
 
