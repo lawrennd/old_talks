@@ -5,7 +5,7 @@
 \notes{\subsection{The Diving Bell and the Butterfly}}
 \newslide{}
 
-\includejpg{../slides/diagrams/the-diving-bell-and-the-butterfly2}{60%}
+\figure{\includejpg{../slides/diagrams/the-diving-bell-and-the-butterfly2}{60%}}{The Diving Bell and the Butterful}{the-diving-bell-and-the-butterfly-2}
 
 \notes{The Diving Bell and the Butterfly is the autobiography of Jean-Dominique Bauby.
 
@@ -17,9 +17,9 @@ His left eye was the only muscle he could voluntarily move, and he wrote the ent
 
 \newslide{}
 
-\div{E S A R I N T U L \linebreak
+\figure{\div{E S A R I N T U L \linebreak
 O M D P C F B V \linebreak
-H G J Q Z Y X K W}{}{text-align:center;font-size:200%}
+H G J Q Z Y X K W}{}{text-align:center;font-size:200%}}{The ordering of the letters that Bauby used for writing his autobiography.}{diving-bell-letters}
 
 \notes{How could he do that? Well, first, they set up a mechanism where he could scan across letters and blink at the letter he wanted to use. In this way, he was able to write each letter.
 
