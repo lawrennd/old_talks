@@ -1,8 +1,8 @@
-\newslide{}
+\ifndef{utilitarianism}
+\define{utilitarianism}
+\editme
 
+\include{_philosopy/includes/justice-sandel.md}
+\include{_philosopy/includes/trolley-switch.md}
 
-\includejpg{../slides/diagrams/philosophy/justice-whats-the-right-thing-to-do}{50%}
-
-\newslide{}
-
-\includejpg{../slides/diagrams/ai/Trolley_1}{80%}{negate}
+\endif
