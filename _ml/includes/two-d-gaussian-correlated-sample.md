@@ -1,9 +1,10 @@
 \ifndef{twoDGaussianCorrelatedSample}
 \define{twoDGaussianCorrelatedSample}
 \editme
+
 \subsection{Sampling Two Dimensional Variables}
 
-\plotcode{import teaching_plots as plot}
+\setupplotcode{import teaching_plots as plot}
 \plotcode{plot.correlated_height_weight(num_samps=8, 
                               diagrams='../slides/diagrams/ml')}
 
@@ -16,16 +17,19 @@ pods.notebook.display_plots('correlated_height_weight{fig:0>3}.svg',
 
 
 \slides{
+\define{weight}{70%}
 \startanimation{correlated_height_weight}{0}{7}
-\newframe{\includediagram{../slides/diagrams/ml/correlated_height_weight000}}{correlated_height_weight}
-\newframe{\includediagram{../slides/diagrams/ml/correlated_height_weight001}}{correlated_height_weight}
-\newframe{\includediagram{../slides/diagrams/ml/correlated_height_weight002}}{correlated_height_weight}
-\newframe{\includediagram{../slides/diagrams/ml/correlated_height_weight003}}{correlated_height_weight}
-\newframe{\includediagram{../slides/diagrams/ml/correlated_height_weight004}}{correlated_height_weight}
-\newframe{\includediagram{../slides/diagrams/ml/correlated_height_weight005}}{correlated_height_weight}
-\newframe{\includediagram{../slides/diagrams/ml/correlated_height_weight006}}{correlated_height_weight}
-\newframe{\includediagram{../slides/diagrams/ml/correlated_height_weight007}}{correlated_height_weight}
+\newframe{\includediagram{../slides/diagrams/ml/correlated_height_weight000}{\width}}{correlated_height_weight}
+\newframe{\includediagram{../slides/diagrams/ml/correlated_height_weight001}{\width}}{correlated_height_weight}
+\newframe{\includediagram{../slides/diagrams/ml/correlated_height_weight002}{\width}}{correlated_height_weight}
+\newframe{\includediagram{../slides/diagrams/ml/correlated_height_weight003}{\width}}{correlated_height_weight}
+\newframe{\includediagram{../slides/diagrams/ml/correlated_height_weight004}{\width}}{correlated_height_weight}
+\newframe{\includediagram{../slides/diagrams/ml/correlated_height_weight005}{\width}}{correlated_height_weight}
+\newframe{\includediagram{../slides/diagrams/ml/correlated_height_weight006}{\width}}{correlated_height_weight}
+\newframe{\includediagram{../slides/diagrams/ml/correlated_height_weight007}{\width}}{correlated_height_weight}
 \endanimation
 }
-\notesfigure{\includediagram{../slides/diagrams/ml/correlated_height_weight007}{}}\notes{\caption{Samples from *correlated* Gaussian variables that might represent heights and weights.}}
+
+\notes{\figure{\includediagram{../slides/diagrams/ml/correlated_height_weight007}{70%}}{Samples from *correlated* Gaussian variables that might represent heights and weights.}{correlated-height-weight-7}}
+
 \endif
