@@ -13,6 +13,7 @@ author:
 date: 2018-09-03
 published: 2018-09-03
 reveal: 2018-09-03-gpss-session-1.slides.html
+ipynb: 2018-09-03-gpss-session-1.ipynb
 layout: talk
 categories:
 - notes
@@ -23,14 +24,41 @@ categories:
   $${% include talk-notation.tex %}$$
 </div>
 
+<script src="/talks/figure-magnify.js"></script>
+<script src="/talks/figure-animate.js"></script>
+    
+<div id="modal-frame" class="modal">
+  <span class="close" onclick="closeMagnify()">&times;</span>
+  <div class="modal-figure">
+    <div class="figure-frame">
+      <div class="modal-content" id="modal01"></div>
+      <!--<img class="modal-content" id="object01">-->
+    </div>
+    <div class="caption-frame" id="modal-caption"></div>
+  </div>
+</div>	  
+
 <!-- To compile -->
-<!-- Enables links to pages-->
-<p><!--% not ipynb--></p>
-<div style="text-align:center">
-<img class="" src="../slides/diagrams/gp/rasmussen-williams-book.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+<!-- Front matter -->
+<p>.</p>
+<!---->
+<!--Back matter-->
+<!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
+<div class="figure">
+<div id="gaussian-processes-for-machine-learning-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/gp/rasmussen-williams-book.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<p><span class="citation">Rasmussen and Williams (2006)</span> is still one of the most important references on Gaussian process models. It is available freely online.</p>
-<h2 id="what-is-machine-learning">What is Machine Learning?</h2>
+</div>
+<div id="gaussian-processes-for-machine-learning-magnify" class="magnify" onclick="magnifyFigure(&#39;gaussian-processes-for-machine-learning&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="gaussian-processes-for-machine-learning-caption" class="caption-frame">
+<p>Figure: A key reference for Gaussian process models remains the excellent book &quot;Gaussian Processes for Machine Learning&quot; (<span class="citation">Rasmussen and Williams (2006)</span>). The book is also <a href="http://www.gaussianprocess.org/gpml/" target="_blank" >freely available online</a>.</p>
+</div>
+</div>
+<p><span class="citation">Rasmussen and Williams (2006)</span> is still one of the most important references on Gaussian process models. It is <a href="http://www.gaussianprocess.org/gpml/">available freely online</a>.</p>
+<h1 id="what-is-machine-learning-edit">What is Machine Learning? <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
 <p>What is machine learning? At its most basic level machine learning is a combination of</p>
 <p><br /><span class="math display">$$\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$</span><br /></p>
 <p>where <em>data</em> is our observations. They can be actively or passively acquired (meta-data). The <em>model</em> contains our assumptions, based on previous experience. That experience can be other data, it can come from transfer learning, or it can merely be our beliefs about the regularities of the universe. In humans our models include our inductive biases. The <em>prediction</em> is an action to be taken or a categorization or a quality score. The reason that machine learning has become a mainstay of artificial intelligence is the importance of predictions in artificial intelligence. The data and the model are combined through computation.</p>
@@ -40,80 +68,171 @@ categories:
 <p>The combination of data and model through the prediction function and the objectie function leads to a <em>learning algorithm</em>. The class of prediction functions and objective functions we can make use of is restricted by the algorithms they lead to. If the prediction function or the objective function are too complex, then it can be difficult to find an appropriate learning algorithm. Much of the acdemic field of machine learning is the quest for new learning algorithms that allow us to bring different types of models and data together.</p>
 <p>A useful reference for state of the art in machine learning is the UK Royal Society Report, <a href="https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf">Machine Learning: Power and Promise of Computers that Learn by Example</a>.</p>
 <p>You can also check my blog post on <a href="http://inverseprobability.com/2017/07/17/what-is-machine-learning">&quot;What is Machine Learning?&quot;</a></p>
-<h3 id="olympic-marathon-data">Olympic Marathon Data</h3>
-<p>The first thing we will do is load a standard data set for regression modelling. The data consists of the pace of Olympic Gold Medal Marathon winners for the Olympics from 1896 to present. First we load in the data and plot.</p>
-<h3 id="olympic-marathon-data-1">Olympic Marathon Data</h3>
+<h2 id="olympic-marathon-data-edit">Olympic Marathon Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/olympic-marathon-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/olympic-marathon-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <table>
 <tr>
 <td width="70%">
 <ul>
-<li><p>Gold medal times for Olympic Marathon since 1896.</p></li>
-<li><p>Marathons before 1924 didn’t have a standardised distance.</p></li>
-<li><p>Present results using pace per km.</p></li>
+<li>Gold medal times for Olympic Marathon since 1896.</li>
+<li>Marathons before 1924 didn’t have a standardised distance.</li>
+<li>Present results using pace per km.</li>
 <li>In 1904 Marathon was badly organised leading to very slow times.</li>
 </ul>
 </td>
 <td width="30%">
-<div style="text-align:center">
-<img class="" src="../slides/diagrams/Stephen_Kiprotich.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/Stephen_Kiprotich.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 <small>Image from Wikimedia Commons <a href="http://bit.ly/16kMKHQ" class="uri">http://bit.ly/16kMKHQ</a></small>
 </td>
 </tr>
 </table>
-<div style="text-align:center">
-<object class="svgplot " align data="../slides/diagrams/datasets/olympic-marathon.svg" style>
+<p>The first thing we will do is load a standard data set for regression modelling. The data consists of the pace of Olympic Gold Medal Marathon winners for the Olympics from 1896 to present. First we load in the data and plot.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
+<span class="im">import</span> pods</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data <span class="op">=</span> pods.datasets.olympic_marathon_men()
+x <span class="op">=</span> data[<span class="st">&#39;X&#39;</span>]
+y <span class="op">=</span> data[<span class="st">&#39;Y&#39;</span>]
+
+offset <span class="op">=</span> y.mean()
+scale <span class="op">=</span> np.sqrt(y.var())</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
+<span class="im">import</span> teaching_plots <span class="im">as</span> plot
+<span class="im">import</span> mlai</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">
+xlim <span class="op">=</span> (<span class="dv">1875</span>,<span class="dv">2030</span>)
+ylim <span class="op">=</span> (<span class="fl">2.5</span>, <span class="fl">6.5</span>)
+yhat <span class="op">=</span> (y<span class="op">-</span>offset)<span class="op">/</span>scale
+
+fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+_ <span class="op">=</span> ax.plot(x, y, <span class="st">&#39;r.&#39;</span>,markersize<span class="op">=</span><span class="dv">10</span>)
+ax.set_xlabel(<span class="st">&#39;year&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>)
+ax.set_ylabel(<span class="st">&#39;pace min/km&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>)
+ax.set_xlim(xlim)
+ax.set_ylim(ylim)
+
+mlai.write_figure(figure<span class="op">=</span>fig, 
+                  filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/datasets/olympic-marathon.svg&#39;</span>, 
+                  transparent<span class="op">=</span><span class="va">True</span>, 
+                  frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<div class="figure">
+<div id="olympic-marathon-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/datasets/olympic-marathon.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="olympic-marathon-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-marathon&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="olympic-marathon-caption" class="caption-frame">
+<p>Figure: Olympic marathon pace times since 1892.</p>
+</div>
 </div>
 <p>Things to notice about the data include the outlier in 1904, in this year, the olympics was in St Louis, USA. Organizational problems and challenges with dust kicked up by the cars following the race meant that participants got lost, and only very few participants completed.</p>
 <p>More recent years see more consistently quick marathons.</p>
-<h3 id="overdetermined-system">Overdetermined System</h3>
+
+<h2 id="overdetermined-system-edit">Overdetermined System <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/overdetermined-inaugural.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/overdetermined-inaugural.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>The challenge with a linear model is that it has two unknowns, <span class="math inline"><em>m</em></span>, and <span class="math inline"><em>c</em></span>. Observing data allows us to write down a system of simultaneous linear equations. So, for example if we observe two data points, the first with the input value, <span class="math inline">$\inputScalar_1 = 1$</span> and the output value, <span class="math inline">$\dataScalar_1 =3$</span> and a second data point, <span class="math inline">$\inputScalar = 3$</span>, <span class="math inline">$\dataScalar=1$</span>, then we can write two simultaneous linear equations of the form.</p>
 <p>point 1: <span class="math inline">$\inputScalar = 1$</span>, <span class="math inline">$\dataScalar=3$</span> <br /><span class="math display">3 = <em>m</em> + <em>c</em></span><br /> point 2: <span class="math inline">$\inputScalar = 3$</span>, <span class="math inline">$\dataScalar=1$</span> <br /><span class="math display">1 = 3<em>m</em> + <em>c</em></span><br /></p>
 <p>The solution to these two simultaneous equations can be represented graphically as</p>
-<object class="svgplot " align data="../slides/diagrams/ml/over_determined_system003.svg" style>
+<div class="figure">
+<div id="over-determined-system-3-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/over_determined_system003.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>The solution of two linear equations represented as the fit of a straight line through two data </em>
-</center>
+</div>
+<div id="over-determined-system-3-magnify" class="magnify" onclick="magnifyFigure(&#39;over-determined-system-3&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="over-determined-system-3-caption" class="caption-frame">
+<p>Figure: The solution of two linear equations represented as the fit of a straight line through two data</p>
+</div>
+</div>
 <p>The challenge comes when a third data point is observed and it doesn't naturally fit on the straight line.</p>
 <p>point 3: <span class="math inline">$\inputScalar = 2$</span>, <span class="math inline">$\dataScalar=2.5$</span> <br /><span class="math display">2.5 = 2<em>m</em> + <em>c</em></span><br /></p>
-<object class="svgplot " align data="../slides/diagrams/ml/over_determined_system004.svg" style>
+{
+<div class="figure">
+<div id="over-determined-system-4-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/over_determined_system004.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>A third observation of data is inconsistent with the solution dictated by the first two observations </em>
-</center>
-<p>Now there are three candidate lines, each consistent with our data.</p>
-<object class="svgplot " align data="../slides/diagrams/ml/over_determined_system007.svg" style>
-</object>
-<center>
-<em>Three solutions to the problem, each consistent with two points of the three observations </em>
-</center>
-<p>This is known as an <em>overdetermined</em> system because there are more data than we need to determine our parameters. The problem arises because the model is a simplification of the real world, and the data we observe is therefore inconsistent with our model.</p>
-<p>The solution was proposed by Pierre-Simon Laplace. His idea was to accept that the model was an incomplete representation of the real world, and the manner in which it was incomplete is <em>unknown</em>. His idea was that such unknowns could be dealt with through probability.</p>
-<div style="text-align:center">
-<img class="" src="../slides/diagrams/ml/Pierre-Simon_Laplace.png" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 </div>
-<center>
-<em>Pierre Simon Laplace </em>
-</center>
-<p><a href="https://play.google.com/books/reader?id=1YQPAAAAQAAJ&amp;pg=PR17-IA2"><img src="../slides/diagrams/books/1YQPAAAAQAAJ-PR17-IA2.png" /></a></p>
+<div id="over-determined-system-4-magnify" class="magnify" onclick="magnifyFigure(&#39;over-determined-system-4&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="over-determined-system-4-caption" class="caption-frame">
+<p>Figure: A third observation of data is inconsistent with the solution dictated by the first two observations</p>
+</div>
+</div>
+<p>Now there are three candidate lines, each consistent with our data.</p>
+{
+<div class="figure">
+<div id="over-determined-system-7-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/over_determined_system007.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="over-determined-system-7-magnify" class="magnify" onclick="magnifyFigure(&#39;over-determined-system-7&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="over-determined-system-7-caption" class="caption-frame">
+<p>Figure: Three solutions to the problem, each consistent with two points of the three observations</p>
+</div>
+</div>
+<p>This is known as an <em>overdetermined</em> system because there are more data than we need to determine our parameters. The problem arises because the model is a simplification of the real world, and the data we observe is therefore inconsistent with our model.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;over_determined_system</span><span class="sc">{samp:0&gt;3}</span><span class="st">.svg&#39;</span>,
+                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, 
+                            samp<span class="op">=</span>IntSlider(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">7</span>,<span class="dv">1</span>))</code></pre></div>
+<p>The solution was proposed by Pierre-Simon Laplace. His idea was to accept that the model was an incomplete representation of the real world, and the manner in which it was incomplete is <em>unknown</em>. His idea was that such unknowns could be dealt with through probability.</p>
+<h3 id="pierre-simon-laplace-edit">Pierre-Simon Laplace <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/laplace-portrait.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/laplace-portrait.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
+<div class="figure">
+<div id="pierre-simon-laplace-image-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/ml/Pierre-Simon_Laplace.png" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="pierre-simon-laplace-image-magnify" class="magnify" onclick="magnifyFigure(&#39;pierre-simon-laplace-image&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="pierre-simon-laplace-image-caption" class="caption-frame">
+<p>Figure: Pierre-Simon Laplace 1749-1827.</p>
+</div>
+</div>
+<iframe frameborder="0" scrolling="no" style="border:0px" src="http://books.google.co.uk/books?id=1YQPAAAAQAAJ&amp;pg=PR17-IA2&amp;output=embed" , width="700" height="500">
+</iframe>
 <p>Famously, Laplace considered the idea of a deterministic Universe, one in which the model is <em>known</em>, or as the below translation refers to it, &quot;an intelligence which could comprehend all the forces by which nature is animated&quot;. He speculates on an &quot;intelligence&quot; that can submit this vast data to analysis and propsoses that such an entity would be able to predict the future.</p>
 <blockquote>
 <p>Given for one instant an intelligence which could comprehend all the forces by which nature is animated and the respective situation of the beings who compose it---an intelligence sufficiently vast to submit these data to analysis---it would embrace in the same formulate the movements of the greatest bodies of the universe and those of the lightest atom; for it, nothing would be uncertain and the future, as the past, would be present in its eyes.</p>
 </blockquote>
 <p>This notion is known as <em>Laplace's demon</em> or <em>Laplace's superman</em>.</p>
-<div style="text-align:center">
-<img class="" src="../slides/diagrams/laplacesDeterminismEnglish.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+<div class="figure">
+<div id="laplaces-determinism-english-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/laplacesDeterminismEnglish.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="laplaces-determinism-english-magnify" class="magnify" onclick="magnifyFigure(&#39;laplaces-determinism-english&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="laplaces-determinism-english-caption" class="caption-frame">
+<p>Figure: Laplace's determinsim in English translation.</p>
+</div>
 </div>
 <p>Unfortunately, most analyses of his ideas stop at that point, whereas his real point is that such a notion is unreachable. Not so much <em>superman</em> as <em>strawman</em>. Just three pages later in the &quot;Philosophical Essay on Probabilities&quot; <span class="citation">(Laplace 1814)</span>, Laplace goes on to observe:</p>
 <blockquote>
 <p>The curve described by a simple molecule of air or vapor is regulated in a manner just as certain as the planetary orbits; the only difference between them is that which comes from our ignorance.</p>
 <p>Probability is relative, in part to this ignorance, in part to our knowledge.</p>
 </blockquote>
-<p><a href="https://play.google.com/books/reader?id=1YQPAAAAQAAJ&amp;pg=PR17-IA4"><img src="../slides/diagrams/books/1YQPAAAAQAAJ-PR17-IA4.png" /></a></p>
-<div style="text-align:center">
-<img class="" src="../slides/diagrams/philosophicaless00lapliala.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+<iframe frameborder="0" scrolling="no" style="border:0px" src="http://books.google.co.uk/books?id=1YQPAAAAQAAJ&amp;pg=PR17-IA4&amp;output=embed" , width="700" height="500">
+</iframe>
+<div class="figure">
+<div id="probability-relative-in-part-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/philosophicaless00lapliala.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="probability-relative-in-part-magnify" class="magnify" onclick="magnifyFigure(&#39;probability-relative-in-part&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="probability-relative-in-part-caption" class="caption-frame">
+<p>Figure: To Laplace, determinism is a strawman. Ignorance of mechanism and data leads to uncertainty which should be dealt with through probability.</p>
+</div>
 </div>
 <p>In other words, we can never make use of the idealistic deterministc Universe due to our ignorance about the world, Laplace's suggestion, and focus in this essay is that we turn to probability to deal with this uncertainty. This is also our inspiration for using probabilit in machine learning.</p>
 <p>The &quot;forces by which nature is animated&quot; is our <em>model</em>, the &quot;situation of beings that compose it&quot; is our <em>data</em> and the &quot;intelligence sufficiently vast enough to submit these data to analysis&quot; is our compute. The fly in the ointment is our <em>ignorance</em> about these aspects. And <em>probability</em> is the tool we use to incorporate this ignorance leading to uncertainty or <em>doubt</em> in our predictions.</p>
@@ -126,69 +245,98 @@ $$</span><br /> point 3: <span class="math inline">$\inputScalar = 2$</span>, <s
 2.5 = 2m + c + \noiseScalar_3
 $$</span><br /></p>
 <p>Laplace's trick has converted the <em>overdetermined</em> system into an <em>underdetermined</em> system. He has now added three variables, <span class="math inline">$\{\noiseScalar_i\}_{i=1}^3$</span>, which represent the unknown corruptions of the real world. Laplace's idea is that we should represent that unknown corruption with a <em>probability distribution</em>.</p>
-<h3 id="a-probabilistic-process">A Probabilistic Process</h3>
+<h2 id="a-probabilistic-process">A Probabilistic Process</h2>
 <p>However, it was left to an admirer of Gauss to develop a practical probability density for that purpose. It was Carl Friederich Gauss who suggested that the <em>Gaussian</em> density (which at the time was unnamed!) should be used to represent this error.</p>
 <p>The result is a <em>noisy</em> function, a function which has a deterministic part, and a stochastic part. This type of function is sometimes known as a probabilistic or stochastic process, to distinguish it from a deterministic process.</p>
-<h3 id="the-gaussian-density">The Gaussian Density</h3>
+<h2 id="the-gaussian-density-edit">The Gaussian Density <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/univariate-gaussian.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/univariate-gaussian.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>The Gaussian density is perhaps the most commonly used probability density. It is defined by a <em>mean</em>, <span class="math inline">$\meanScalar$</span>, and a <em>variance</em>, <span class="math inline">$\dataStd^2$</span>. The variance is taken to be the square of the <em>standard deviation</em>, <span class="math inline">$\dataStd$</span>.</p>
 <p><br /><span class="math display">$$\begin{align}
   p(\dataScalar| \meanScalar, \dataStd^2) &amp; = \frac{1}{\sqrt{2\pi\dataStd^2}}\exp\left(-\frac{(\dataScalar - \meanScalar)^2}{2\dataStd^2}\right)\\&amp; \buildrel\triangle\over = \gaussianDist{\dataScalar}{\meanScalar}{\dataStd^2}
   \end{align}$$</span><br /></p>
-<object class="svgplot " align data="../slides/diagrams/ml/gaussian_of_height.svg" style>
+<div class="figure">
+<div id="gaussian-of-height-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/gaussian_of_height.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>The Gaussian PDF with <span class="math inline">${\meanScalar}=1.7$</span> and variance <span class="math inline">${\dataStd}^2=0.0225$</span>. Mean shown as red line. It could represent the heights of a population of students. </em>
-</center>
-<h3 id="two-important-gaussian-properties">Two Important Gaussian Properties</h3>
+</div>
+<div id="gaussian-of-height-magnify" class="magnify" onclick="magnifyFigure(&#39;gaussian-of-height&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="gaussian-of-height-caption" class="caption-frame">
+<p>Figure: The Gaussian PDF with <span class="math inline">${\meanScalar}=1.7$</span> and variance <span class="math inline">${\dataStd}^2=0.0225$</span>. Mean shown as red line. It could represent the heights of a population of students.</p>
+</div>
+</div>
+<h2 id="two-important-gaussian-properties-edit">Two Important Gaussian Properties <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/univariate-gaussian-properties.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/univariate-gaussian-properties.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>The Gaussian density has many important properties, but for the moment we'll review two of them.</p>
-<h3 id="sum-of-gaussians">Sum of Gaussians</h3>
+<h2 id="sum-of-gaussians">Sum of Gaussians</h2>
 <p>If we assume that a variable, <span class="math inline">$\dataScalar_i$</span>, is sampled from a Gaussian density,</p>
 <p><br /><span class="math display">$$\dataScalar_i \sim \gaussianSamp{\meanScalar_i}{\sigma_i^2}$$</span><br /></p>
 <p>Then we can show that the sum of a set of variables, each drawn independently from such a density is also distributed as Gaussian. The mean of the resulting density is the sum of the means, and the variance is the sum of the variances,</p>
 <p><br /><span class="math display">$$\sum_{i=1}^{\numData} \dataScalar_i \sim \gaussianSamp{\sum_{i=1}^\numData \meanScalar_i}{\sum_{i=1}^\numData \sigma_i^2}$$</span><br /></p>
 <p>Since we are very familiar with the Gaussian density and its properties, it is not immediately apparent how unusual this is. Most random variables, when you add them together, change the family of density they are drawn from. For example, the Gaussian is exceptional in this regard. Indeed, other random variables, if they are independently drawn and summed together tend to a Gaussian density. That is the <a href="https://en.wikipedia.org/wiki/Central_limit_theorem"><em>central limit theorem</em></a> which is a major justification for the use of a Gaussian density.</p>
-<h3 id="scaling-a-gaussian">Scaling a Gaussian</h3>
+<h2 id="scaling-a-gaussian">Scaling a Gaussian</h2>
 <p>Less unusual is the <em>scaling</em> property of a Gaussian density. If a variable, <span class="math inline">$\dataScalar$</span>, is sampled from a Gaussian density,</p>
 <p><br /><span class="math display">$$\dataScalar \sim \gaussianSamp{\meanScalar}{\sigma^2}$$</span><br /> and we choose to scale that variable by a <em>deterministic</em> value, <span class="math inline">$\mappingScalar$</span>, then the <em>scaled variable</em> is distributed as</p>
 <p><br /><span class="math display">$$\mappingScalar \dataScalar \sim \gaussianSamp{\mappingScalar\meanScalar}{\mappingScalar^2 \sigma^2}.$$</span><br /> Unlike the summing properties, where adding two or more random variables independently sampled from a family of densitites typically brings the summed variable <em>outside</em> that family, scaling many densities leaves the distribution of that variable in the same <em>family</em> of densities. Indeed, many densities include a <em>scale</em> parameter (e.g. the <a href="https://en.wikipedia.org/wiki/Gamma_distribution">Gamma density</a>) which is purely for this purpose. In the Gaussian the standard deviation, <span class="math inline">$\dataStd$</span>, is the scale parameter. To see why this makes sense, let's consider, <br /><span class="math display">$$z \sim \gaussianSamp{0}{1},$$</span><br /> then if we scale by <span class="math inline">$\dataStd$</span> so we have, <span class="math inline">$\dataScalar=\dataStd z$</span>, we can write, <br /><span class="math display">$$\dataScalar =\dataStd z \sim \gaussianSamp{0}{\dataStd^2}$$</span><br /></p>
-<h3 id="regression-examples">Regression Examples</h3>
+<h2 id="regression-examples-edit">Regression Examples <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/regression-examples.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/regression-examples.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Regression involves predicting a real value, <span class="math inline">$\dataScalar_i$</span>, given an input vector, <span class="math inline">$\inputVector_i$</span>. For example, the Tecator data involves predicting the quality of meat given spectral measurements. Or in radiocarbon dating, the C14 calibration curve maps from radiocarbon age to age measured through a back-trace of tree rings. Regression has also been used to predict the quality of board game moves given expert rated training data.</p>
-<h2 id="underdetermined-system">Underdetermined System</h2>
+<h1 id="underdetermined-system-edit">Underdetermined System <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/underdetermined-system.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/underdetermined-system.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
 <p>What about the situation where you have more parameters than data in your simultaneous equation? This is known as an <em>underdetermined</em> system. In fact this set up is in some sense <em>easier</em> to solve, because we don't need to think about introducing a slack variable (although it might make a lot of sense from a <em>modelling</em> perspective to do so).</p>
 <p>The way Laplace proposed resolving an overdetermined system, was to introduce slack variables, <span class="math inline">$\noiseScalar_i$</span>, which needed to be estimated for each point. The slack variable represented the difference between our actual prediction and the true observation. This is known as the <em>residual</em>. By introducing the slack variable we now have an additional <span class="math inline"><em>n</em></span> variables to estimate, one for each data point, <span class="math inline">$\{\noiseScalar_i\}$</span>. This actually turns the overdetermined system into an underdetermined system. Introduction of <span class="math inline"><em>n</em></span> variables, plus the original <span class="math inline"><em>m</em></span> and <span class="math inline"><em>c</em></span> gives us <span class="math inline">$\numData+2$</span> parameters to be estimated from <span class="math inline"><em>n</em></span> observations, which actually makes the system <em>underdetermined</em>. However, we then made a probabilistic assumption about the slack variables, we assumed that the slack variables were distributed according to a probability density. And for the moment we have been assuming that density was the Gaussian, <br /><span class="math display">$$\noiseScalar_i \sim \gaussianSamp{0}{\dataStd^2},$$</span><br /> with zero mean and variance <span class="math inline">$\dataStd^2$</span>.</p>
 <p>The follow up question is whether we can do the same thing with the parameters. If we have two parameters and only one unknown can we place a probability distribution over the parameters, as we did with the slack variables? The answer is yes.</p>
-<h3 id="underdetermined-system-1">Underdetermined System</h3>
-<object class="svgplot " align data="../slides/diagrams/ml/under_determined_system009.svg" style>
+<h2 id="underdetermined-system">Underdetermined System</h2>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;under_determined_system</span><span class="sc">{samp:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, samp<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">1</span>))</code></pre></div>
+<div class="figure">
+<div id="under-determined-system-9-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/under_determined_system009.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>Fit underdetermined system by considering uncertainty </em>
-</center>
+</div>
+<div id="under-determined-system-9-magnify" class="magnify" onclick="magnifyFigure(&#39;under-determined-system-9&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="under-determined-system-9-caption" class="caption-frame">
+<p>Figure: An underdetermined system can be fit by considering uncertainty. Multiple solutions are consistent with one specified point.</p>
+</div>
+</div>
 <p>Classically, there are two types of uncertainty that we consider. The first is known as <em>aleatoric</em> uncertainty. This is uncertainty we couldn't resolve even if we wanted to. An example, would be the result of a football match before it's played, or where a sheet of paper lands on the floor.</p>
 <p>The second is known as <em>epistemic</em> uncertainty. This is uncertainty that we could, in principle, resolve. We just haven't yet made the observation. For example, the result of a football match <em>after</em> it is played, or the color of socks that a lecturer is wearing.</p>
 <p>Note, that there isn't a clean difference between the two. It is arguable, that if we knew enough about a football match, or the physics of a falling sheet of paper then we might be able to resolve the uncertainty. The reason we can't is because <em>chaotic</em> behaviour means that a very small change in any of the initial conditions we would need to resolve can have a large change in downstream effects. By this argument, the only truly aleatoric uncertainty might be quantum uncertainty. However, in practice the distinction is often applied.</p>
 <p>In classical statistics, the frequentist approach only treats <em>aleatoric</em> uncertainty with probability. The key philosophical difference in the <em>Bayesian</em> approach is to treat any unknowns through probability. This approach was formally justified seperately by <span class="citation">Cox (1946)</span> and <span class="citation">Finetti (1937)</span>.</p>
 <p>The term Bayesian was a mocking term promoted by Fisher, it comes from the use, by Bayes, of a billiard table formulation to justify the Bernoulli distribution. Bayes considers a ball landing uniform at random between two sides of a billiard table. He then considers the outcome of the Bernoulli as being whether a second ball comes to rest to the right or left of the original. In this way, the parameter of his Bernoulli distribution is a <em>stochastic variable</em> (the uncertainty in the parameter is aleatoric). In contrast, when Bernoulli formulates the distribution he considers a bag of red and black balls. The parameter of his Bernoulli is the ratio of red balls to total balls, a deterministic variable.</p>
 <p>Note how this relates to Laplace's demon. Laplace describes the deterministic universe (&quot;... for it nothing would be uncertain and the future, as the past, would be present in its eyes&quot;), but acknowledges the impossibility of achieving this in practice, (&quot; ... the curve described by a simple molecule of air or vapor is regulated in a manner just as certain as the planetary orbits; the only difference between them is that which comes from our ignorance. <em>Probability</em> is relative in part to this ignorance, in part to our knowledge ...)</p>
-<h3 id="prior-distribution">Prior Distribution</h3>
+<h2 id="prior-distribution-edit">Prior Distribution <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/bayesian-regression1d-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/bayesian-regression1d-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>The tradition in Bayesian inference is to place a probability density over the parameters of interest in your model. This choice is made regardless of whether you generally believe those parameters to be stochastic or deterministic in origin. In other words, to a Bayesian, the modelling treatment does not differentiate between epistemic and aleatoric uncertainty. For linear regression we could consider the following Gaussian prior on the intercept parameter, <br /><span class="math display">$$c \sim \gaussianSamp{0}{\alpha_1}$$</span><br /> where <span class="math inline"><em>α</em><sub>1</sub></span> is the variance of the prior distribution, its mean being zero.</p>
-<h3 id="posterior-distribution">Posterior Distribution</h3>
+<h2 id="posterior-distribution">Posterior Distribution</h2>
 <p>The prior distribution is combined with the likelihood of the data given the parameters <span class="math inline">$p(\dataScalar|c)$</span> to give the posterior via <em>Bayes' rule</em>, <br /><span class="math display">$$
   p(c|\dataScalar) = \frac{p(\dataScalar|c)p(c)}{p(\dataScalar)}
   $$</span><br /> where <span class="math inline">$p(\dataScalar)$</span> is the marginal probability of the data, obtained through integration over the joint density, <span class="math inline">$p(\dataScalar, c)=p(\dataScalar|c)p(c)$</span>. Overall the equation can be summarized as, <br /><span class="math display">$$
   \text{posterior} = \frac{\text{likelihood}\times \text{prior}}{\text{marginal likelihood}}.
   $$</span><br /></p>
-
-<object class="svgplot " align data="../slides/diagrams/ml/dem_gaussian003.svg" style>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider
+<span class="im">import</span> pods</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;dem_gaussian</span><span class="sc">{stage:0&gt;2}</span><span class="st">.svg&#39;</span>, 
+                            diagrams<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, 
+                            stage<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>))</code></pre></div>
+<div class="figure">
+<div id="dem-gaussian-3-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/dem_gaussian003.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>Combining a Gaussian likelihood with a Gaussian prior to form a Gaussian posterior </em>
-</center>
+</div>
+<div id="dem-gaussian-3-magnify" class="magnify" onclick="magnifyFigure(&#39;dem-gaussian-3&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="dem-gaussian-3-caption" class="caption-frame">
+<p>Figure: Combining a Gaussian likelihood with a Gaussian prior to form a Gaussian posterior</p>
+</div>
+</div>
 <p>Another way of seeing what's going on is to note that the numerator of Bayes' rule merely multiplies the likelihood by the prior. The denominator, is not a function of <span class="math inline"><em>c</em></span>. So the functional form is entirely determined by the multiplication of prior and likelihood. This has the effect of ensuring that the posterior only has probability mass in regions where both the prior and the likelihood have probability mass.</p>
 <p>The marginal likelihood, <span class="math inline">$p(\dataScalar)$</span>, operates to ensure that the distribution is normalised.</p>
 <p>For the Gaussian case, the normalisation of the posterior can be performed analytically. This is because both the prior and the likelihood have the form of an <em>exponentiated quadratic</em>, <br /><span class="math display">exp(<em>a</em><sup>2</sup>)exp(<em>b</em><sup>2</sup>)=exp(<em>a</em><sup>2</sup> + <em>b</em><sup>2</sup>),</span><br /> and the properties of the exponential mean that the product of two exponentiated quadratics is also an exponentiated quadratic. That implies that the posterior is also Gaussian, because a normalized exponentiated quadratic is a Gaussian distribution.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
 <p>For general Bayesian inference, over more than one parameter, we need <em>multivariate priors</em>. For example, consider the multivariate linear regression where an observation, <span class="math inline">$\dataScalar_i$</span> is related to a vector of features, <span class="math inline">$\inputVector_{i, :}$</span>, through a vector of parameters, <span class="math inline">$\weightVector$</span>, <br /><span class="math display">$$\dataScalar_i = \sum_j \weightScalar_j \inputScalar_{i, j} + \noiseScalar_i,$$</span><br /> or in vector notation, <br /><span class="math display">$$\dataScalar_i = \weightVector^\top \inputVector_{i, :} + \noiseScalar_i.$$</span><br /> Here we've dropped the intercpet for convenience, it can be reintroduced by augmenting the feature vector, <span class="math inline">$\inputVector_{i, :}$</span>, with a constant valued feature.</p>
 <p>This motivates the need for a <em>multivariate</em> Gaussian density.</p>
-<h3 id="multivariate-regression-likelihood">Multivariate Regression Likelihood</h3>
+<h2 id="multivariate-regression-likelihood">Multivariate Regression Likelihood</h2>
 <ul>
 <li>Noise corrupted data point <br /><span class="math display">$$\dataScalar_i = \weightVector^\top \inputVector_{i, :} + {\noiseScalar}_i$$</span><br /></li>
 </ul>
@@ -202,34 +350,66 @@ $$</span><br /></p>
 <li>Now use a <em>multivariate</em> Gaussian prior: <br /><span class="math display">$$p(\weightVector) = \frac{1}{\left(2\pi \alpha\right)^\frac{\dataDim}{2}} \exp \left(-\frac{1}{2\alpha} \weightVector^\top \weightVector\right)$$</span><br /></li>
 </ul>
 </div>
-<h3 id="two-dimensional-gaussian">Two Dimensional Gaussian</h3>
+<h2 id="two-dimensional-gaussian-edit">Two Dimensional Gaussian <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/two-d-gaussian.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/two-d-gaussian.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Consider the distribution of height (in meters) of an adult male human population. We will approximate the marginal density of heights as a Gaussian density with mean given by <span class="math inline">1.7m</span> and a standard deviation of <span class="math inline">0.15m</span>, implying a variance of <span class="math inline">$\dataStd^2=0.0225$</span>, <br /><span class="math display">$$
   p(h) \sim \gaussianSamp{1.7}{0.0225}.
   $$</span><br /> Similarly, we assume that weights of the population are distributed a Gaussian density with a mean of <span class="math inline">75kg</span> and a standard deviation of <span class="math inline">6<em>k</em><em>g</em></span> (implying a variance of 36), <br /><span class="math display">$$
   p(w) \sim \gaussianSamp{75}{36}.
   $$</span><br /></p>
-<object class="svgplot " align data="../slides/diagrams/ml/height_weight_gaussian.svg" style>
+<div class="figure">
+<div id="height-weight-gaussian-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/height_weight_gaussian.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>Gaussian distributions for height and weight. </em>
-</center>
-<h3 id="independence-assumption">Independence Assumption</h3>
+</div>
+<div id="height-weight-gaussian-magnify" class="magnify" onclick="magnifyFigure(&#39;height-weight-gaussian&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="height-weight-gaussian-caption" class="caption-frame">
+<p>Figure: Gaussian distributions for height and weight.</p>
+</div>
+</div>
+<h2 id="independence-assumption">Independence Assumption</h2>
 <p>First of all, we make an independence assumption, we assume that height and weight are independent. The definition of probabilistic independence is that the joint density, <span class="math inline"><em>p</em>(<em>w</em>, <em>h</em>)</span>, factorizes into its marginal densities, <br /><span class="math display"><em>p</em>(<em>w</em>, <em>h</em>)=<em>p</em>(<em>w</em>)<em>p</em>(<em>h</em>).</span><br /> Given this assumption we can sample from the joint distribution by independently sampling weights and heights.</p>
-<object class="svgplot " align data="../slides/diagrams/ml/independent_height_weight007.svg" style>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;independent_height_weight</span><span class="sc">{fig:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, 
+                            fig<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">1</span>))</code></pre></div>
+<div class="figure">
+<div id="independent-height-weight-7-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/independent_height_weight007.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>Samples from independent Gaussian variables that might represent heights and weights. </em>
-</center>
+</div>
+<div id="independent-height-weight-7-magnify" class="magnify" onclick="magnifyFigure(&#39;independent-height-weight-7&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="independent-height-weight-7-caption" class="caption-frame">
+<p>Figure: Samples from independent Gaussian variables that might represent heights and weights.</p>
+</div>
+</div>
 <p>In reality height and weight are <em>not</em> independent. Taller people tend on average to be heavier, and heavier people are likely to be taller. This is reflected by the <em>body mass index</em>. A ratio suggested by one of the fathers of statistics, Adolphe Quetelet. Quetelet was interested in the notion of the <em>average man</em> and collected various statistics about people. He defined the BMI to be, <br /><span class="math display">$$
 \text{BMI} = \frac{w}{h^2}
 $$</span><br />To deal with this dependence we now introduce the notion of <em>correlation</em> to the multivariate Gaussian density.</p>
-<h3 id="sampling-two-dimensional-variables">Sampling Two Dimensional Variables</h3>
-<object class="svgplot " align data="../slides/diagrams/ml/correlated_height_weight007.svg" style>
+<h2 id="sampling-two-dimensional-variables-edit">Sampling Two Dimensional Variables <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/two-d-gaussian-correlated-sample.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/two-d-gaussian-correlated-sample.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">
+pods.notebook.display_plots(<span class="st">&#39;correlated_height_weight</span><span class="sc">{fig:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, 
+                            fig<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">1</span>))</code></pre></div>
+<div class="figure">
+<div id="correlated-height-weight-7-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/correlated_height_weight007.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>Samples from </em>correlated* Gaussian variables that might represent heights and weights. *
-</center>
-<h3 id="independent-gaussians">Independent Gaussians</h3>
+</div>
+<div id="correlated-height-weight-7-magnify" class="magnify" onclick="magnifyFigure(&#39;correlated-height-weight-7&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="correlated-height-weight-7-caption" class="caption-frame">
+<p>Figure: Samples from <em>correlated</em> Gaussian variables that might represent heights and weights.</p>
+</div>
+</div>
+<h2 id="independent-gaussians-edit">Independent Gaussians <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/two-d-gaussian-maths.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/two-d-gaussian-maths.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p><br /><span class="math display"><em>p</em>(<em>w</em>, <em>h</em>)=<em>p</em>(<em>w</em>)<em>p</em>(<em>h</em>)</span><br /></p>
 <p><br /><span class="math display">$$
 p(w, h) = \frac{1}{\sqrt{2\pi \dataStd_1^2}\sqrt{2\pi\dataStd_2^2}} \exp\left(-\frac{1}{2}\left(\frac{(w-\meanScalar_1)^2}{\dataStd_1^2} + \frac{(h-\meanScalar_2)^2}{\dataStd_2^2}\right)\right)
@@ -240,7 +420,7 @@ $$</span><br /></p>
 <p><br /><span class="math display">$$
 p(\dataVector) = \frac{1}{\det{2\pi \mathbf{D}}^{\frac{1}{2}}} \exp\left(-\frac{1}{2}(\dataVector - \meanVector)^\top\mathbf{D}^{-1}(\dataVector - \meanVector)\right)
 $$</span><br /></p>
-<h3 id="correlated-gaussian">Correlated Gaussian</h3>
+<h2 id="correlated-gaussian">Correlated Gaussian</h2>
 <p>Form correlated from original by rotating the data space using matrix <span class="math inline">$\rotationMatrix$</span>.</p>
 <p><br /><span class="math display">$$
 p(\dataVector) = \frac{1}{\det{2\pi\mathbf{D}}^{\frac{1}{2}}} \exp\left(-\frac{1}{2}(\dataVector - \meanVector)^\top\mathbf{D}^{-1}(\dataVector - \meanVector)\right)
@@ -261,13 +441,15 @@ $$</span><br /></p>
 <p>Let's first of all review the properties of the multivariate Gaussian distribution that make linear Gaussian models easier to deal with. We'll return to the, perhaps surprising, result on the parameters within the nonlinearity, <span class="math inline">$\parameterVector$</span>, shortly.</p>
 <p>To work with linear Gaussian models, to find the marginal likelihood all you need to know is the following rules. If <br /><span class="math display">$$
 \dataVector = \mappingMatrix \inputVector + \noiseVector,
-$$</span><br /> where <span class="math inline">$\dataVector$</span>, <span class="math inline">$\inputVector$</span> and <span class="math inline">$\noiseVector$</span> are vectors and we assume that <span class="math inline">$\inputVector$</span> and <span class="math inline">$\noiseVector$</span> are drawn from multivariate Gaussians, <br /><span class="math display">$$\begin{align}
+$$</span><br /> where <span class="math inline">$\dataVector$</span>, <span class="math inline">$\inputVector$</span> and <span class="math inline">$\noiseVector$</span> are vectors and we assume that <span class="math inline">$\inputVector$</span> and <span class="math inline">$\noiseVector$</span> are drawn from multivariate Gaussians, <br /><span class="math display">$$
+\begin{align}
 \inputVector &amp; \sim \gaussianSamp{\meanVector}{\covarianceMatrix}\\
 \noiseVector &amp; \sim \gaussianSamp{\zerosVector}{\covarianceMatrixTwo}
-\end{align}$$</span><br /> then we know that <span class="math inline">$\dataVector$</span> is also drawn from a multivariate Gaussian with, <br /><span class="math display">$$
+\end{align}
+$$</span><br /> then we know that <span class="math inline">$\dataVector$</span> is also drawn from a multivariate Gaussian with, <br /><span class="math display">$$
 \dataVector \sim \gaussianSamp{\mappingMatrix\meanVector}{\mappingMatrix\covarianceMatrix\mappingMatrix^\top + \covarianceMatrixTwo}.
 $$</span><br /></p>
-<p>With apprioriately defined covariance, <span class="math inline">$\covarianceTwoMatrix$</span>, this is actually the marginal likelihood for Factor Analysis, or Probabilistic Principal Component Analysis <span class="citation">(Tipping and Bishop 1999)</span>, because we integrated out the inputs (or <em>latent</em> variables they would be called in that case).</p>
+<p>With apprioriately defined covariance, <span class="math inline">$\covarianceMatrixTwo$</span>, this is actually the marginal likelihood for Factor Analysis, or Probabilistic Principal Component Analysis <span class="citation">(Tipping and Bishop 1999)</span>, because we integrated out the inputs (or <em>latent</em> variables they would be called in that case).</p>
 <p>However, we are focussing on what happens in models which are non-linear in the inputs, whereas the above would be <em>linear</em> in the inputs. To consider these, we introduce a matrix, called the design matrix. We set each activation function computed at each data point to be <br /><span class="math display">$$
 \activationScalar_{i,j} = \activationScalar(\mappingVector^{(1)}_{j}, \inputVector_{i})
 $$</span><br /> and define the matrix of activations (known as the <em>design matrix</em> in statistics) to be, <br /><span class="math display">$$
@@ -292,12 +474,12 @@ $$</span><br /></p>
 <p>If we look at the portion of this function associated only with <span class="math inline">$\mappingFunction(\cdot)$</span>, i.e. we remove the noise, then we can write down the covariance associated with our neural network, <br /><span class="math display">$$
 \kernel_\mappingFunction\left(\inputVector_i, \inputVector_j\right) = \alpha \activationVector\left(\mappingMatrix_1, \inputVector_i\right)^\top \activationVector\left(\mappingMatrix_1, \inputVector_j\right)
 $$</span><br /> so the elements of the covariance or <em>kernel</em> matrix are formed by inner products of the rows of the <em>design matrix</em>.</p>
-<h3 id="gaussian-process">Gaussian Process</h3>
+<h2 id="gaussian-process-edit">Gaussian Process <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/multivariate-gaussian-properties.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/multivariate-gaussian-properties.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>This is the essence of a Gaussian process. Instead of making assumptions about our density over each data point, <span class="math inline">$\dataScalar_i$</span> as i.i.d. we make a joint Gaussian assumption over our data. The covariance matrix is now a function of both the parameters of the activation function, <span class="math inline">$\mappingMatrixTwo$</span>, and the input variables, <span class="math inline">$\inputMatrix$</span>. This comes about through integrating out the parameters of the model, <span class="math inline">$\mappingVector$</span>.</p>
-<h3 id="basis-functions">Basis Functions</h3>
+<h2 id="basis-functions">Basis Functions</h2>
 <p>We can basically put anything inside the basis functions, and many people do. These can be deep kernels <span class="citation">(Cho and Saul 2009)</span> or we can learn the parameters of a convolutional neural network inside there.</p>
 <p>Viewing a neural network in this way is also what allows us to beform sensible <em>batch</em> normalizations <span class="citation">(Ioffe and Szegedy 2015)</span>.</p>
-<h3 id="bayesian-inference-by-rejection-sampling">Bayesian Inference by Rejection Sampling</h3>
+<h2 id="bayesian-inference-by-rejection-sampling-edit">Bayesian Inference by Rejection Sampling <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gp-intro-very-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gp-intro-very-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>One view of Bayesian inference is to assume we are given a mechanism for generating samples, where we assume that mechanism is representing on accurate view on the way we believe the world works.</p>
 <p>This mechanism is known as our <em>prior</em> belief.</p>
 <p>We combine our prior belief with our observations of the real world by discarding all those samples that are inconsistent with our prior. The <em>likelihood</em> defines mathematically what we mean by inconsistent with the prior. The higher the noise level in the likelihood, the looser the notion of consistent.</p>
@@ -305,135 +487,248 @@ $$</span><br /> so the elements of the covariance or <em>kernel</em> matrix are 
 <p>This approach to Bayesian inference is closely related to two sampling techniques known as <em>rejection sampling</em> and <em>importance sampling</em>. It is realized in practice in an approach known as <em>approximate Bayesian computation</em> (ABC) or likelihood-free inference.</p>
 <p>In practice, the algorithm is often too slow to be practical, because most samples will be inconsistent with the data and as a result the mechanism has to be operated many times to obtain a few posterior samples.</p>
 <p>However, in the Gaussian process case, when the likelihood also assumes Gaussian noise, we can operate this mechanims mathematically, and obtain the posterior density <em>analytically</em>. This is the benefit of Gaussian processes.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> compute_kernel</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> exponentiated_quadratic</code></pre></div>
-<object class="svgplot " align data="../slides/diagrams/gp/gp_rejection_sample003.svg" style>
-</object>
-<object class="svgplot " align data="../slides/diagrams/gp/gp_rejection_sample004.svg" style>
-</object>
-<object class="svgplot " align data="../slides/diagrams/gp/gp_rejection_sample005.svg" style>
-</object>
-<center>
-<em>One view of Bayesian inference is we have a machine for generating samples (the </em>prior<em>), and we discard all samples inconsistent with our data, leaving the samples of interest (the </em>posterior<em>). The Gaussian process allows us to do this analytically. </em>
-</center>
-<h3 id="sampling-a-function">Sampling a Function</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;gp_rejection_sample</span><span class="sc">{sample:0&gt;3}</span><span class="st">.png&#39;</span>, 
+                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/gp&#39;</span>, 
+                            sample<span class="op">=</span>IntSlider(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">1</span>))</code></pre></div>
+{
+<div class="figure">
+<div id="gp-rejection-samples-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/gp/gp_rejection_sample003.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/gp/gp_rejection_sample004.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/gp/gp_rejection_sample005.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="gp-rejection-samples-magnify" class="magnify" onclick="magnifyFigure(&#39;gp-rejection-samples&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="gp-rejection-samples-caption" class="caption-frame">
+<p>Figure: One view of Bayesian inference is we have a machine for generating samples (the <em>prior</em>), and we discard all samples inconsistent with our data, leaving the samples of interest (the <em>posterior</em>). The Gaussian process allows us to do this analytically.</p>
+</div>
+</div>
+<h2 id="sampling-a-function-edit">Sampling a Function <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gpdistfunc.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gpdistfunc.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>We will consider a Gaussian distribution with a particular structure of covariance matrix. We will generate <em>one</em> sample from a 25-dimensional Gaussian density. <br /><span class="math display">$$
 \mappingFunctionVector=\left[\mappingFunction_{1},\mappingFunction_{2}\dots \mappingFunction_{25}\right].
 $$</span><br /> in the figure below we plot these data on the <span class="math inline"><em>y</em></span>-axis against their <em>indices</em> on the <span class="math inline"><em>x</em></span>-axis.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> Kernel</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> polynomial_cov</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> exponentiated_quadratic</code></pre></div>
-<object class="svgplot " align data="../slides/diagrams/gp/two_point_sample008.svg" style>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>load <span class="op">-</span>s Kernel mlai.py</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>load <span class="op">-</span>s polynomial_cov mlai.py</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>load <span class="op">-</span>s exponentiated_quadratic mlai.py</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;two_point_sample</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, <span class="st">&#39;../slides/diagrams/gp&#39;</span>, sample<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">8</span>, <span class="dv">1</span>))</code></pre></div>
+<div class="figure">
+<div id="gp-two-point-sample-1-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/gp/two_point_sample008.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>A 25 dimensional correlated random variable (values ploted against index) </em>
-</center>
-<object class="svgplot " align data="../slides/diagrams/gp/two_point_sample012.svg" style>
+</div>
+<div id="gp-two-point-sample-1-magnify" class="magnify" onclick="magnifyFigure(&#39;gp-two-point-sample-1&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="gp-two-point-sample-1-caption" class="caption-frame">
+<p>Figure: A 25 dimensional correlated random variable (values ploted against index)</p>
+</div>
+</div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;two_point_sample</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            <span class="st">&#39;../slides/diagrams/gp&#39;</span>, 
+                            sample<span class="op">=</span>IntSlider(<span class="dv">9</span>, <span class="dv">9</span>, <span class="dv">12</span>, <span class="dv">1</span>))</code></pre></div>
+{
+<div class="figure">
+<div id="two-point-sample-one-two-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/gp/two_point_sample012.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>The joint Gaussian over <span class="math inline">$\mappingFunction_1$</span> and <span class="math inline">$\mappingFunction_2$</span> along with the conditional distribution of <span class="math inline">$\mappingFunction_2$</span> given <span class="math inline">$\mappingFunction_1$</span> </em>
-</center>
-<h3 id="uluru">Uluru</h3>
-<div style="text-align:center">
-<img class="" src="../slides/diagrams/gp/799px-Uluru_Panorama.jpg" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+</div>
+<div id="two-point-sample-one-two-magnify" class="magnify" onclick="magnifyFigure(&#39;two-point-sample-one-two&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="two-point-sample-one-two-caption" class="caption-frame">
+<p>Figure: The joint Gaussian over <span class="math inline">$\mappingFunction_1$</span> and <span class="math inline">$\mappingFunction_2$</span> along with the conditional distribution of <span class="math inline">$\mappingFunction_2$</span> given <span class="math inline">$\mappingFunction_1$</span></p>
+</div>
+</div>
+<h2 id="uluru-edit">Uluru <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gpdistfunc.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gpdistfunc.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="figure">
+<div id="uluru-as-probability-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/gp/799px-Uluru_Panorama.jpg" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="uluru-as-probability-magnify" class="magnify" onclick="magnifyFigure(&#39;uluru-as-probability&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="uluru-as-probability-caption" class="caption-frame">
+<p>Figure: Uluru, the sacred rock in Australia. If we think of it as a probability density, viewing it from this side gives us one <em>marginal</em> from the density. Figuratively speaking, slicing through the rock would give a conditional density.</p>
+</div>
 </div>
 <p>When viewing these contour plots, I sometimes find it helpful to think of Uluru, the prominent rock formation in Australia. The rock rises above the surface of the plane, just like a probability density rising above the zero line. The rock is three dimensional, but when we view Uluru from the classical position, we are looking at one side of it. This is equivalent to viewing the marginal density.</p>
 <p>The joint density can be viewed from above, using contours. The conditional density is equivalent to <em>slicing</em> the rock. Uluru is a holy rock, so this has to be an imaginary slice. Imagine we cut down a vertical plane orthogonal to our view point (e.g. coming across our view point). This would give a profile of the rock, which when renormalized, would give us the conditional distribution, the value of conditioning would be the location of the slice in the direction we are facing.</p>
-<h3 id="prediction-with-correlated-gaussians">Prediction with Correlated Gaussians</h3>
+<h2 id="prediction-with-correlated-gaussians">Prediction with Correlated Gaussians</h2>
 <p>Of course in practice, rather than manipulating mountains physically, the advantage of the Gaussian density is that we can perform these manipulations mathematically.</p>
 <p>Prediction of <span class="math inline">$\mappingFunction_2$</span> given <span class="math inline">$\mappingFunction_1$</span> requires the <em>conditional density</em>, <span class="math inline">$p(\mappingFunction_2|\mappingFunction_1)$</span>.Another remarkable property of the Gaussian density is that this conditional distribution is <em>also</em> guaranteed to be a Gaussian density. It has the form, <br /><span class="math display">$$
-    p(\mappingFunction_2|\mappingFunction_1) = \gaussianDist{\mappingFunction_2}{\frac{\kernelScalar_{1, 2}}{\kernelScalar_{1, 1}}\mappingFunction_1}{ \kernelScalar_{2, 2} - \frac{\kernelScalar_{1,2}^2}{\kernelScalar_{1,1}}}
-    $$</span><br />where we have assumed that the covariance of the original joint density was given by <br /><span class="math display">$$
-    \kernelMatrix = \begin{bmatrix} \kernelScalar_{1, 1} &amp; \kernelScalar_{1, 2}\\ \kernelScalar_{2, 1} &amp; \kernelScalar_{2, 2}.\end{bmatrix}
-    $$</span><br /></p>
+p(\mappingFunction_2|\mappingFunction_1) = \gaussianDist{\mappingFunction_2}{\frac{\kernelScalar_{1, 2}}{\kernelScalar_{1, 1}}\mappingFunction_1}{ \kernelScalar_{2, 2} - \frac{\kernelScalar_{1,2}^2}{\kernelScalar_{1,1}}}
+$$</span><br />where we have assumed that the covariance of the original joint density was given by <br /><span class="math display">$$
+\kernelMatrix = \begin{bmatrix} \kernelScalar_{1, 1} &amp; \kernelScalar_{1, 2}\\ \kernelScalar_{2, 1} &amp; \kernelScalar_{2, 2}.\end{bmatrix}
+$$</span><br /></p>
 <p>Using these formulae we can determine the conditional density for any of the elements of our vector <span class="math inline">$\mappingFunctionVector$</span>. For example, the variable <span class="math inline">$\mappingFunction_8$</span> is less correlated with <span class="math inline">$\mappingFunction_1$</span> than <span class="math inline">$\mappingFunction_2$</span>. If we consider this variable we see the conditional density is more diffuse.</p>
-<object class="svgplot " align data="../slides/diagrams/gp/two_point_sample013.svg" style>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;two_point_sample</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            <span class="st">&#39;../slides/diagrams/gp&#39;</span>, 
+                            sample<span class="op">=</span>IntSlider(<span class="dv">13</span>, <span class="dv">13</span>, <span class="dv">17</span>, <span class="dv">1</span>))</code></pre></div>
+<div class="figure">
+<div id="two-point-sample-13-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/gp/two_point_sample013.svg" style="vertical-align:middle;">
 </object>
-<object class="svgplot " align data="../slides/diagrams/gp/two_point_sample017.svg" style>
+</div>
+<div id="two-point-sample-13-magnify" class="magnify" onclick="magnifyFigure(&#39;two-point-sample-13&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="two-point-sample-13-caption" class="caption-frame">
+<p>Figure: Sample from the joint Gaussian model, points indexed by 1 and 8 highlighted.</p>
+</div>
+</div>
+<div class="figure">
+<div id="two-point-sample-one-eight-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/gp/two_point_sample017.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>The joint Gaussian over <span class="math inline">$\mappingFunction_1$</span> and <span class="math inline">$\mappingFunction_8$</span> along with the conditional distribution of <span class="math inline">$\mappingFunction_8$</span> given <span class="math inline">$\mappingFunction_1$</span> </em>
-</center>
-<h3 id="where-did-this-covariance-matrix-come-from">Where Did This Covariance Matrix Come From?</h3>
+</div>
+<div id="two-point-sample-one-eight-magnify" class="magnify" onclick="magnifyFigure(&#39;two-point-sample-one-eight&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="two-point-sample-one-eight-caption" class="caption-frame">
+<p>Figure: The joint Gaussian over <span class="math inline">$\mappingFunction_1$</span> and <span class="math inline">$\mappingFunction_8$</span> along with the conditional distribution of <span class="math inline">$\mappingFunction_8$</span> given <span class="math inline">$\mappingFunction_1$</span></p>
+</div>
+</div>
+<h2 id="where-did-this-covariance-matrix-come-from-edit">Where Did This Covariance Matrix Come From? <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/computing-rbf-covariance.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/computing-rbf-covariance.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p><br /><span class="math display">$$
 k(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\left\Vert \inputVector - \inputVector^\prime\right\Vert^2_2}{2\lengthScale^2}\right)$$</span><br /></p>
-<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_covariance016.svg" style>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;computing_eq_three_covariance</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/kern&#39;</span>, 
+                            sample<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">16</span>, <span class="dv">1</span>))</code></pre></div>
+<object class="svgplot " data="../slides/diagrams/kern/computing_eq_three_covariance016.svg" style="vertical-align:middle;">
 </object>
-<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_covariance016.svg" style>
+<object class="svgplot " data="../slides/diagrams/kern/computing_eq_three_covariance016.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>Entrywise fill in of the covariance matrix from the covariance function. </em>
-</center>
-<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_four_covariance027.svg" style>
+<div class="caption" style="">
+Figure: Entrywise fill in of the covariance matrix from the covariance function.
+</div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;computing_eq_four_covariance</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/kern&#39;</span>, 
+                            sample<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">27</span>, <span class="dv">1</span>))</code></pre></div>
+<object class="svgplot " data="../slides/diagrams/kern/computing_eq_four_covariance027.svg" style="vertical-align:middle;">
 </object>
-<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_four_covariance027.svg" style>
+<object class="svgplot " data="../slides/diagrams/kern/computing_eq_four_covariance027.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>Entrywise fill in of the covariance matrix from the covariance function. </em>
-</center>
-<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_2_covariance016.svg" style>
+<div class="caption" style="">
+Figure: Entrywise fill in of the covariance matrix from the covariance function.
+</div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;computing_eq_three_2_covariance</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/kern&#39;</span>, 
+                            sample<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">16</span>, <span class="dv">1</span>))</code></pre></div>
+<object class="svgplot " data="../slides/diagrams/kern/computing_eq_three_2_covariance016.svg" style="vertical-align:middle;">
 </object>
-<object class="svgplot " align data="../slides/diagrams/kern/computing_eq_three_2_covariance016.svg" style>
+<object class="svgplot " data="../slides/diagrams/kern/computing_eq_three_2_covariance016.svg" style="vertical-align:middle;">
 </object>
-<center>
-<em>Entrywise fill in of the covariance matrix from the covariance function. </em>
-</center>
-<h3 id="polynomial-covariance">Polynomial Covariance</h3>
-
+<div class="caption" style="">
+Figure: Entrywise fill in of the covariance matrix from the covariance function.
+</div>
+<h2 id="polynomial-covariance">Polynomial Covariance</h2>
 <center>
 <br /><span class="math display">$$\kernelScalar(\inputVector, \inputVector^\prime) = \alpha(w \inputVector^\top\inputVector^\prime + b)^d$$</span><br />
 </center>
-<br>
+<div class="figure">
+<div id="polynomial-covariance-plot-figure" class="figure-frame">
 <table>
 <tr>
 <td width="45%">
-<object class align data="../slides/diagrams/kern/polynomial_covariance.svg">
+<object class="100%" align data="../slides/diagrams/kern/polynomial_covariance.svg" style="vertical-align:middle">
 </object>
+</td>
 <td width="45%">
-<img class="negate" src="../slides/diagrams/kern/polynomial_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/kern/polynomial_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
 </td>
 </tr>
 </table>
-<h3 id="brownian-covariance">Brownian Covariance</h3>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> brownian_cov</code></pre></div>
-<p>Brownian motion is also a Gaussian process. It follows a Gaussian random walk, with diffusion occuring at each time point driven by a Gaussian input. This implies it is both Markov and Gaussian. The covariane function for Brownian motion has the form <br /><span class="math display">$$
-\kernelScalar(t, t^\prime) = \alpha \min(t, t^\prime)
+</div>
+<div id="polynomial-covariance-plot-magnify" class="magnify" onclick="magnifyFigure(&#39;polynomial-covariance-plot&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="polynomial-covariance-plot-caption" class="caption-frame">
+<p>Figure: Polynomial covariance function.</p>
+</div>
+</div>
+<h2 id="brownian-covariance-edit">Brownian Covariance <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/brownian-covariance.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/brownian-covariance.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>load <span class="op">-</span>s brownian_cov mlai.py</code></pre></div>
+<p>Brownian motion is also a Gaussian process. It follows a Gaussian random walk, with diffusion occuring at each time point driven by a Gaussian input. This implies it is both Markov and Gaussian. The covariance function for Brownian motion has the form <br /><span class="math display">$$
+\kernelScalar(t, t^\prime)=\alpha \min(t, t^\prime)
 $$</span><br /></p>
-<!--<table><tr><td width="50%">
-<object class="svgplot " align="" data="../slides/diagrams/kern/brownian_covariance.svg" style=""></object>
-</td><td width="50%">
-<iframe src="../slides/diagrams/kern/brownian_covariance.html" width="512" height="384" allowtransparency="true" frameborder="0">
-</iframe>
-</td></tr></table>
-<center>*The covariance of Brownian motion, and some samples from the covariance showing the functional form. *</center>-->
+<center>
+<br /><span class="math display">$$\kernelScalar(t, t^\prime)=\alpha \min(t, t^\prime)$$</span><br />
+</center>
+<div class="figure">
+<div id="brownian-covariance-plot-figure" class="figure-frame">
 <table>
 <tr>
 <td width="45%">
-<object class align data="../slides/diagrams/kern/brownian_covariance.svg">
+<object class="100%" align data="../slides/diagrams/kern/brownian_covariance.svg" style="vertical-align:middle">
 </object>
 </td>
 <td width="45%">
-<img class="negate" src="../slides/diagrams/kern/brownian_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/kern/brownian_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
 </td>
 </tr>
 </table>
-<h3 id="periodic-covariance">Periodic Covariance</h3>
-
+</div>
+<div id="brownian-covariance-plot-magnify" class="magnify" onclick="magnifyFigure(&#39;brownian-covariance-plot&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="brownian-covariance-plot-caption" class="caption-frame">
+<p>Figure: Brownian motion covariance function.</p>
+</div>
+</div>
+<h2 id="periodic-covariance">Periodic Covariance</h2>
 <center>
 <br /><span class="math display">$$\kernelScalar(\inputVector, \inputVector^\prime) = \alpha\exp\left(\frac{-2\sin(\pi rw)^2}{\lengthScale^2}\right)$$</span><br />
 </center>
-<br>
+<div class="figure">
+<div id="periodic-covariance-plot-figure" class="figure-frame">
 <table>
 <tr>
 <td width="45%">
-<object class align data="../slides/diagrams/kern/periodic_covariance.svg">
+<object class="100%" align data="../slides/diagrams/kern/periodic_covariance.svg" style="vertical-align:middle">
 </object>
+</td>
 <td width="45%">
-<img class="negate" src="../slides/diagrams/kern/periodic_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/kern/periodic_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
 </td>
 </tr>
 </table>
+</div>
+<div id="periodic-covariance-plot-magnify" class="magnify" onclick="magnifyFigure(&#39;periodic-covariance-plot&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="periodic-covariance-plot-caption" class="caption-frame">
+<p>Figure: Periodic covariance function.</p>
+</div>
+</div>
 <p>Any linear basis function can also be incorporated into a covariance function. For example, an RBF network is a type of neural network with a set of radial basis functions. Meaning, the basis funciton is radially symmetric. These basis functions take the form, <br /><span class="math display">$$
 \basisFunction_k(\inputScalar) = \exp\left(-\frac{\ltwoNorm{\inputScalar-\meanScalar_k}^{2}}{\lengthScale^{2}}\right).
 $$</span><br /> Given a set of parameters, <br /><span class="math display">$$
@@ -441,7 +736,7 @@ $$</span><br /> Given a set of parameters, <br /><span class="math display">$$
 $$</span><br /> we can construct the corresponding covariance function, which has the form, <br /><span class="math display">$$
 \kernelScalar\left(\inputVals,\inputVals^{\prime}\right)=\alpha\basisVector(\inputVals)^\top \basisVector(\inputVals^\prime).
 $$</span><br /></p>
-<h3 id="basis-function-covariance">Basis Function Covariance</h3>
+<h2 id="basis-function-covariance-edit">Basis Function Covariance <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/basis-covariance.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/basis-covariance.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>The fixed basis function covariance just comes from the properties of a multivariate Gaussian, if we decide <br /><span class="math display">$$
 \mappingFunctionVector=\basisMatrix\mappingVector
 $$</span><br /> and then we assume <br /><span class="math display">$$
@@ -449,27 +744,35 @@ $$</span><br /> and then we assume <br /><span class="math display">$$
 $$</span><br /> then it follows from the properties of a multivariate Gaussian that <br /><span class="math display">$$
 \mappingFunctionVector \sim \gaussianSamp{\zerosVector}{\alpha\basisMatrix\basisMatrix^\top}
 $$</span><br /> meaning that the vector of observations from the function is jointly distributed as a Gaussian process and the covariance matrix is <span class="math inline">$\kernelMatrix = \alpha\basisMatrix \basisMatrix^\top$</span>, each element of the covariance matrix can then be found as the inner product between two rows of the basis funciton matrix.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> basis_cov</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> radial</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>load <span class="op">-</span>s basis_cov mlai.py</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>load <span class="op">-</span>s radial mlai.py</code></pre></div>
 <center>
 <br /><span class="math display">$$\kernel(\inputVector, \inputVector^\prime) = \basisVector(\inputVector)^\top \basisVector(\inputVector^\prime)$$</span><br />
 </center>
-<br>
+<div class="figure">
+<div id="basis-covariance-plot-figure" class="figure-frame">
 <table>
 <tr>
 <td width="45%">
-<object class align data="../slides/diagrams/kern/basis_covariance.svg">
+<object class="100%" align data="../slides/diagrams/kern/basis_covariance.svg" style="vertical-align:middle">
 </object>
+</td>
 <td width="45%">
-<img class="negate" src="../slides/diagrams/kern/basis_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/kern/basis_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
 </td>
 </tr>
 </table>
-{
-<center>
-<em>A covariance function based on a non-linear basis given by <span class="math inline">$\basisVector(\inputVector)$</span>. </em>
-</center>
-<h3 id="selecting-number-and-location-of-basis">Selecting Number and Location of Basis</h3>
+</div>
+<div id="basis-covariance-plot-magnify" class="magnify" onclick="magnifyFigure(&#39;basis-covariance-plot&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="basis-covariance-plot-caption" class="caption-frame">
+<p>Figure: A covariance function based on a non-linear basis given by <span class="math inline">$\basisVector(\inputVector)$</span>.</p>
+</div>
+</div>
+<h2 id="selecting-number-and-location-of-basis">Selecting Number and Location of Basis</h2>
 <p>In practice for a basis function model we need to choose both 1. the location of the basis functions 2. the number of basis functions</p>
 <p>One very clever of finessing this problem is to choose to have <em>infinite</em> basis functions and place them <em>everywhere</em>. To show how this is possible, we will consider a one dimensional system, <span class="math inline">$\inputScalar$</span>, which should give the intuition of how to do this. However, these ideas also extend to multidimensional systems as shown in, for example, <span class="citation">Williams (n.d.)</span> and <span class="citation">Neal (1994)</span>.</p>
 <p>We consider a one dimensional set up with exponentiated quadratic basis functions, <br /><span class="math display">$$
@@ -502,36 +805,44 @@ $$</span><br /> <br /><span class="math display">$$\begin{aligned}
 <p>In conclusion, an RBF model with infinite basis functions is a Gaussian process with the exponentiated quadratic covariance function <br /><span class="math display">$$\kernelScalar\left(\inputScalar_i,\inputScalar_j\right) = \alpha \exp\left(
           -\frac{\left(\inputScalar_i-\inputScalar_j\right)^2}{4\rbfWidth^2}\right).$$</span><br /></p>
 <p>Note that while the functional form of the basis function and the covariance function are similar, in general if we repeated this analysis for other basis functions the covariance function will have a very different form. For example the error function, <span class="math inline">erf(⋅)</span>, results in an <span class="math inline">$\asin(\cdot)$</span> form. See <span class="citation">Williams (n.d.)</span> for more details.</p>
-<h3 id="mlp-covariance">MLP Covariance</h3>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> mlp_cov</code></pre></div>
+<h2 id="mlp-covariance-edit">MLP Covariance <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/mlp-covariance.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/mlp-covariance.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>load <span class="op">-</span>s mlp_cov mlai.py</code></pre></div>
 <p>The multi-layer perceptron (MLP) covariance, also known as the neural network covariance or the arcsin covariance, is derived by considering the infinite limit of a neural network.</p>
 <center>
 <br /><span class="math display">$$\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \arcsin\left(\frac{w \inputVector^\top \inputVector^\prime + b}{\sqrt{\left(w \inputVector^\top \inputVector + b + 1\right)\left(w \left.\inputVector^\prime\right.^\top \inputVector^\prime + b + 1\right)}}\right)$$</span><br />
 </center>
-<br>
+<div class="figure">
+<div id="mlp-covariance-plot-figure" class="figure-frame">
 <table>
 <tr>
 <td width="45%">
-<object class align data="../slides/diagrams/kern/mlp_covariance.svg">
+<object class="100%" align data="../slides/diagrams/kern/mlp_covariance.svg" style="vertical-align:middle">
 </object>
+</td>
 <td width="45%">
-<img class="negate" src="../slides/diagrams/kern/mlp_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/kern/mlp_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
 </td>
 </tr>
 </table>
-<center>
-<em>The multi-layer perceptron covariance function. This is derived by considering the infinite limit of a neural network with probit activation functions. </em>
-</center>
+</div>
+<div id="mlp-covariance-plot-magnify" class="magnify" onclick="magnifyFigure(&#39;mlp-covariance-plot&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="mlp-covariance-plot-caption" class="caption-frame">
+<p>Figure: The multi-layer perceptron covariance function. This is derived by considering the infinite limit of a neural network with probit activation functions.</p>
+</div>
+</div>
 <!--include{_kern/includes/relu-covariance.md}-->
-<h3 id="sinc-covariance">Sinc Covariance</h3>
+<h2 id="sinc-covariance">Sinc Covariance</h2>
 <p>Another approach to developing covariance function exploits Bochner's theorem <span class="citation">Bochner (1959)</span>. Bochner's theorem tells us that any positve filter in Fourier space implies has an associated Gaussian process with a stationary covariance function. The covariance function is the <em>inverse Fourier transform</em> of the filter applied in Fourier space.</p>
 <p>For example, in signal processing, <em>band limitations</em> are commonly applied as an assumption. For example, we may believe that no frequency above <span class="math inline"><em>w</em> = 2</span> exists in the signal. This is equivalent to a rectangle function being applied as a the filter in Fourier space.</p>
 <p>The inverse Fourier transform of the rectangle function is the <span class="math inline">sinc(⋅)</span> function. So the sinc is a valid covariance function, and it represents <em>band limited</em> signals.</p>
 <p>Note that other covariance functions we've introduced can also be interpreted in this way. For example, the exponentiated quadratic covariance function can be Fourier transformed to see what the implied filter in Fourier space is. The Fourier transform of the exponentiated quadratic is an exponentiated quadratic, so the standard EQ-covariance implies a EQ filter in Fourier space.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> mlai <span class="im">import</span> sinc_cov</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>load <span class="op">-</span>s sinc_cov mlai.py</code></pre></div>
 
-
-
+<h1 id="references" class="unnumbered">References</h1>
 <div id="refs" class="references">
 <div id="ref-Bochner:book59">
 <p>Bochner, Salomon. 1959. <em>Lectures on Fourier Integrals</em>. Princeton University Press. <a href="http://books.google.co.uk/books?id=-vU02QewWK8C" class="uri">http://books.google.co.uk/books?id=-vU02QewWK8C</a>.</p>

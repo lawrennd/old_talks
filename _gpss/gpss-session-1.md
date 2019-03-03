@@ -180,11 +180,8 @@ Gaussian processes are initially of interest because
 
 \include{_kern/includes/sinc-covariance.md}
 
+\thanks
 
-\newslide{References}
-
-\tiny
-
-\bibliographystyle{pdf_abbrvnat}
+\references
 
 
