@@ -1,8 +1,11 @@
 \ifndef{probabilityNigerianNmis}
 \define{probabilityNigerianNmis}
-\editme
 
 \include{_ml/includes/nigerian-nmis-data.md}
+
+\editme
+
+\subsection{Probability and the NMIS Data}
 
 \notes{Let's use the sum rule to compute the estimate the 
 probability that a facility has more than two nurses.}
