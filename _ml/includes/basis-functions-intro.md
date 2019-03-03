@@ -1,6 +1,7 @@
 \ifndef{basisFunctionsIntro}
 \define{basisFunctionsIntro}
 \editme
+
 \subsection{Basis Functions}
 
 \notes{Here's the idea, instead of working directly on the original input space, $\inputVector$, we build models in a new space, $\basisVector(\inputVector)$ where $\basisVector(\cdot)$ is a *vector-valued* function that is defined on the space $\inputVector$.}
@@ -57,7 +58,7 @@ $$
 \mappingFunction(\inputScalar) = {\color{cyan}\mappingScalar_0}   + {\color{green}\mappingScalar_1 \inputScalar} + {\color{yellow}\mappingScalar_2 \inputScalar^2}
 $$
 
-\plotcode{import matplotlib.pyplot as plt
+\setupplotcode{import matplotlib.pyplot as plt
 import teaching_plots as plot}
 
 \plotcode{f, ax = plt.subplots(figsize=plot.big_wide_figsize)
@@ -75,13 +76,15 @@ plot.basis(quadratic, x_min=-1.3, x_max=1.3,
 
 \slides{
 \define{\basisfunction}{quadratic_basis}
+\define{\width}{80%}
 \startanimation{\basisfunction}{0}{2}
-\newframe{\includediagram{../slides/diagrams/ml/\concat{\basisfunction}{000}}}{\basisfunction}
-\newframe{\includediagram{../slides/diagrams/ml/\concat{\basisfunction}{001}}}{\basisfunction}
-\newframe{\includediagram{../slides/diagrams/ml/\concat{\basisfunction}{002}}}{\basisfunction}
+\newframe{\includediagram{../slides/diagrams/ml/\concat{\basisfunction}{000}{\width}}}{\basisfunction}
+\newframe{\includediagram{../slides/diagrams/ml/\concat{\basisfunction}{001}{\width}}}{\basisfunction}
+\newframe{\includediagram{../slides/diagrams/ml/\concat{\basisfunction}{002}{\width}}}{\basisfunction}
 \endanimation
+}
 
-\notesfigure{\includediagram{../slides/diagrams/ml/\concat{\basisfunction}{002}}{}{}}
+\notes{figure{\includediagram{../slides/diagrams/ml/\concat{\basisfunction}{002}{80%}}{The set of functions which are combined to form a *quadratic* basis.}{quadratic-basis-2}
 
 \displaycode{import pods
 from ipywidgets import IntSlider}
@@ -112,15 +115,16 @@ _ = ax.set_title('Quadratic Basis Functions')}
 \subsection{Quadratic Functions}
 
 \slides{
+\define{\width}{80%}
 \startanimation{quadratic_function}{0}{2}
-\newframe{\includediagram{../slides/diagrams/ml/quadratic_function000}}{quadratic_function}
-\newframe{\includediagram{../slides/diagrams/ml/quadratic_function001}}{quadratic_function}
-\newframe{\includediagram{../slides/diagrams/ml/quadratic_function002}}{quadratic_function}
+\newframe{\includediagram{../slides/diagrams/ml/quadratic_function000}{\width}}{quadratic_function}
+\newframe{\includediagram{../slides/diagrams/ml/quadratic_function001}{\width}}{quadratic_function}
+\newframe{\includediagram{../slides/diagrams/ml/quadratic_function002}{\width}}{quadratic_function}
 \endanimation
 }
-\notesfigure{\includediagram{../slides/diagrams/ml/quadratic_function002}{}{}}
+\notes{\figure{\includediagram{../slides/diagrams/ml/quadratic_function002}{80%}}{Functions constructed by weighted sum of the components of a quadratic basis.}{quadratic-function-2}}
 
-\displaycode{import pods
+\setupdisplaycode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('quadratic_function{num_function:0>3}.svg', 
                             directory='../slides/diagrams/ml', 
