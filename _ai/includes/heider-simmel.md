@@ -1,5 +1,9 @@
-### Heider and Simmel (1944)
+\ifndef{heiderSimmel}
+\define{heiderSimmel}
+\editme
 
-<iframe width="840" height="630"
-src="https://www.youtube.com/embed/8FIEZXMUM2I">
-</iframe>
+\newslide{Heider and Simmel (1944)}
+
+\includeyoutube{8FIEZXMUM2I}{800}{600}
+
+\endif
