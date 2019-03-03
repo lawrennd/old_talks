@@ -13,8 +13,7 @@ $$1 = 3m + c$$
 
 The solution to these two simultaneous equations can be represented graphically as}
 
-\notes{\includediagram{../slides/diagrams/ml/over_determined_system003}}
-\notes{\caption{The solution of two linear equations represented as the fit of a straight line through two data}}
+\notes{\figure{\includediagram{../slides/diagrams/ml/over_determined_system003}{40%}}{The solution of two linear equations represented as the fit of a straight line through two data}{over-determined-system-3}}
 
 \notes{
 The challenge comes when a third data point is observed and it doesn't naturally fit on the straight line. 
@@ -23,13 +22,11 @@ point 3: $\inputScalar = 2$, $\dataScalar=2.5$
 $$2.5 = 2m + c$$
 }
 
-\notes{\includediagram{../slides/diagrams/ml/over_determined_system004}}
-\notes{\caption{A third observation of data is inconsistent with the solution dictated by the first two observations}}
+\notes{\figure{\includediagram{../slides/diagrams/ml/over_determined_system004}{40%}}{A third observation of data is inconsistent with the solution dictated by the first two observations}{over-determined-system-4}
 
 \notes{Now there are three candidate lines, each consistent with our data.}
 
-\notes{\includediagram{../slides/diagrams/ml/over_determined_system007}}
-\notes{\caption{Three solutions to the problem, each consistent with two points of the three observations}}
+\notes{\figure{\includediagram{../slides/diagrams/ml/over_determined_system007}{40%}}{Three solutions to the problem, each consistent with two points of the three observations}{over-determined-system-7}
 
 \notes{This is known as an *overdetermined* system because there are more data than we need to determine our parameters. The problem arises because the model is a simplification of the real world, and the data we observe is therefore inconsistent with our model.}
 
@@ -47,13 +44,13 @@ import pods}
 
 \slides{
 \startanimation{over_determined_system}{1}{8}
-\newframe{\includediagram{../slides/diagrams/ml/over_determined_system001}}{over_determined_system}
-\newframe{\includediagram{../slides/diagrams/ml/over_determined_system002}}{over_determined_system}
-\newframe{\includediagram{../slides/diagrams/ml/over_determined_system003}}{over_determined_system}
-\newframe{\includediagram{../slides/diagrams/ml/over_determined_system004}}{over_determined_system}
-\newframe{\includediagram{../slides/diagrams/ml/over_determined_system005}}{over_determined_system}
-\newframe{\includediagram{../slides/diagrams/ml/over_determined_system006}}{over_determined_system}
-\newframe{\includediagram{../slides/diagrams/ml/over_determined_system007}}{over_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/over_determined_system001}{40%}}{over_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/over_determined_system002}{40%}}{over_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/over_determined_system003}{40%}}{over_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/over_determined_system004}{40%}}{over_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/over_determined_system005}{40%}}{over_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/over_determined_system006}{40%}}{over_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/over_determined_system007}{40%}}{over_determined_system}
 \endanimation
 }
 
@@ -85,9 +82,7 @@ $$2.5 = 2m + c$$}
 
 \notes{The solution was proposed by Pierre-Simon Laplace. His idea was to accept that the model was an incomplete representation of the real world, and the manner in which it was incomplete is *unknown*. His idea was that such unknowns could be dealt with through probability.}
 
-\includepng{../slides/diagrams/ml/Pierre-Simon_Laplace}{30%}{}
-\notes{\caption{Pierre Simon Laplace}}
-
+\include{_ml/includes/laplace-portrait.md}
 \include{_ai/includes/laplaces-determinism.md}
 
 \notes{Laplace's concept was that the reason that the data doesn't match up to the model is because of unconsidered factors, and that these might be well represented through probability densities. He tackles the challenge of the unknown factors by adding a variable, $\noiseScalar$, that represents the unknown. In modern parlance we would call this a *latent* variable. But in the context Laplace uses it, the variable is so common that it has other names such as a "slack" variable or the *noise* in the system.
