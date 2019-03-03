@@ -131,11 +131,34 @@ from ipywidgets import IntSlider}
 							
 \newslide{}
 
+
 \slides{
-\includediagram{../slides/diagrams/ml/bias-variance000}
-
+\define{width}{80%} 
+\startanimation{bias-variance-plots}{1}{26} 
+\startanimation
+\newframe{\includediagram{../slides/diagrams/ml/bias-variance000}{\width}}{bias-variance-plots}
+\newframe{\includediagram{../slides/diagrams/ml/bias-variance001}{\width}}{bias-variance-plots}
+\newframe{\includediagram{../slides/diagrams/ml/bias-variance002}{\width}}{bias-variance-plots}
+\newframe{\includediagram{../slides/diagrams/ml/bias-variance003}{\width}}{bias-variance-plots}
+\newframe{\includediagram{../slides/diagrams/ml/bias-variance004}{\width}}{bias-variance-plots}
+\newframe{\includediagram{../slides/diagrams/ml/bias-variance005}{\width}}{bias-variance-plots}
+\newframe{\includediagram{../slides/diagrams/ml/bias-variance006}{\width}}{bias-variance-plots}
+\newframe{\includediagram{../slides/diagrams/ml/bias-variance007}{\width}}{bias-variance-plots}
+\newframe{\includediagram{../slides/diagrams/ml/bias-variance008}{\width}}{bias-variance-plots}
+\newframe{\includediagram{../slides/diagrams/ml/bias-variance009}{\width}}{bias-variance-plots}
+\newframe{\includediagram{../slides/diagrams/ml/bias-variance010}{\width}}{bias-variance-plots}
+\newframe{\includediagram{../slides/diagrams/ml/bias-variance011}{\width}}{bias-variance-plots}
+\newframe{\includediagram{../slides/diagrams/ml/bias-variance012}{\width}}{bias-variance-plots}
+\newframe{\includediagram{../slides/diagrams/ml/bias-variance013}{\width}}{bias-variance-plots}
+\newframe{\includediagram{../slides/diagrams/ml/bias-variance014}{\width}}{bias-variance-plots}
+\newframe{\includediagram{../slides/diagrams/ml/bias-variance015}{\width}}{bias-variance-plots}
+\newframe{\includediagram{../slides/diagrams/ml/bias-variance016}{\width}}{bias-variance-plots}
+\newframe{\includediagram{../slides/diagrams/ml/bias-variance017}{\width}}{bias-variance-plots}
+\newframe{\includediagram{../slides/diagrams/ml/bias-variance018}{\width}}{bias-variance-plots}
+\newframe{\includediagram{../slides/diagrams/ml/bias-variance019}{\width}}{bias-variance-plots}
+\endanimation
 \caption{simple models on left complex models on right}
-
+}
 \newslide{}
 
 \includediagram{../slides/diagrams/ml/bias-variance001}
