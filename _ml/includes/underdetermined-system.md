@@ -35,21 +35,21 @@ from ipywidgets import IntSlider}
                             directory='../slides/diagrams/ml', samp=IntSlider(0, 0, 10, 1))}
 
 \slides{
+\define{width}{40%}
 \startanimation{under_determined_system}{0}{9}
-\newframe{\includediagram{../slides/diagrams/ml/under_determined_system000}}{under_determined_system}
-\newframe{\includediagram{../slides/diagrams/ml/under_determined_system001}}{under_determined_system}
-\newframe{\includediagram{../slides/diagrams/ml/under_determined_system002}}{under_determined_system}
-\newframe{\includediagram{../slides/diagrams/ml/under_determined_system003}}{under_determined_system}
-\newframe{\includediagram{../slides/diagrams/ml/under_determined_system004}}{under_determined_system}
-\newframe{\includediagram{../slides/diagrams/ml/under_determined_system005}}{under_determined_system}
-\newframe{\includediagram{../slides/diagrams/ml/under_determined_system006}}{under_determined_system}
-\newframe{\includediagram{../slides/diagrams/ml/under_determined_system007}}{under_determined_system}
-\newframe{\includediagram{../slides/diagrams/ml/under_determined_system008}}{under_determined_system}
-\newframe{\includediagram{../slides/diagrams/ml/under_determined_system009}}{under_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/under_determined_system000}{\width}}{under_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/under_determined_system001}{\width}}{under_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/under_determined_system002}{\width}}{under_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/under_determined_system003}{\width}}{under_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/under_determined_system004}{\width}}{under_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/under_determined_system005}{\width}}{under_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/under_determined_system006}{\width}}{under_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/under_determined_system007}{\width}}{under_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/under_determined_system008}{\width}}{under_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/under_determined_system009}{\width}}{under_determined_system}
 \endanimation
 }
 
-\notesfigure{\includediagram{../slides/diagrams/ml/under_determined_system009}}
-\notes{\caption{Fit underdetermined system by considering uncertainty}}
+\notes{\figure{\includediagram{../slides/diagrams/ml/under_determined_system009}{40%}}{An underdetermined system can be fit by considering uncertainty. Multiple solutions are consistent with one specified point.}{under-determined-system-9}}
 
 \endif
