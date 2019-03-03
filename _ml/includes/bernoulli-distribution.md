@@ -56,7 +56,7 @@ plot.bernoulli_urn(ax, diagrams='../slides/diagrams/ml/')}
 
 \newslide{Jacob Bernoulli's Bernoulli}
 
-\includediagram{../slides/diagrams/ml/bernoulli-urn}
+\figure{\includediagram{../slides/diagrams/ml/bernoulli-urn}{40%}}{Jacob Bernoulli described the Bernoulli distribution through an urn in which there are black and red balls.}{bernoulli-urn}
 
 \newslide{Thomas Bayes's Bernoulli}
 
@@ -83,19 +83,20 @@ import teaching_plots as plot}
 plot.bayes_billiard(ax, diagrams='../slides/diagrams/ml/')}
 
 \slides{
+\define{width}{40%}
 \startanimation{bayes_billiard}{1}{10}
-\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard000}}{bayes_billiard}
-\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard001}}{bayes_billiard}
-\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard002}}{bayes_billiard}
-\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard003}}{bayes_billiard}
-\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard004}}{bayes_billiard}
-\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard005}}{bayes_billiard}
-\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard006}}{bayes_billiard}
-\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard007}}{bayes_billiard}
-\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard008}}{bayes_billiard}
-\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard009}}{bayes_billiard}
+\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard000}{\width}}{bayes_billiard}
+\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard001}{\width}}{bayes_billiard}
+\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard002}{\width}}{bayes_billiard}
+\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard003}{\width}}{bayes_billiard}
+\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard004}{\width}}{bayes_billiard}
+\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard005}{\width}}{bayes_billiard}
+\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard006}{\width}}{bayes_billiard}
+\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard007}{\width}}{bayes_billiard}
+\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard008}{\width}}{bayes_billiard}
+\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard009}{\width}}{bayes_billiard}
 }
-\notesfigure{\div{\includediagram{../slides/diagrams/ml/bayes-billiard009}}{}{text-align:center}}
+\notes{\figure{\includediagram{../slides/diagrams/ml/bayes-billiard009}{40%}}{Thomas Bayes described the Bernoulli distribution independently of Jacob Bernoulli. He used the analogy of a billiard table. Any ball on the table is given a uniformly random position between the left and right side of the table. The first ball gives the parameter of the Bernoulli distribution. The second ball gives the outcome as either left or right (relative to the first ball). This is the origin of the term Bayesian because the parameter of the distribution is drawn from a probsbility.}{bayes-billiard-9}
 
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
