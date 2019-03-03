@@ -3,7 +3,9 @@
 \editme
 \newslide{}
 
-\includediagram{../slides/diagrams/anne-computer-conversation}
+\notes{\subsection{Computer Conversations}}
+
+\figure{\includediagram{../slides/diagrams/anne-computer-conversation}{60%}}{Our efforts to understand the computer suffer from a lack of a good mental model for what the computer is and how it communicates.}{anne-computer-conversation}
 
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
@@ -29,14 +31,10 @@ from ipywidgets import IntSlider}
 \endanimation
 }
 
-\rawfigure{
-\notesfigure{\includediagram{../slides/diagrams/\concat{\stubname}{006}}}
-\notes{\caption{Conversation relies on internal models of other individuals.}}
-}
-\rawfigure{
-\notesfigure{\includediagram{../slides/diagrams/\concat{\stubname}{007}}}
-\notes{\caption{Misunderstanding of context and who we are talking to leads to arguments.}}
-}
+\notes{\figure{\includediagram{../slides/diagrams/\concat{\stubname}{006}}{80%}}{Conversation relies on internal models of other individuals.}{anne-computer-conversation-6}}
+
+\notes{\figure{\includediagram{../slides/diagrams/\concat{\stubname}{007}}{80%}}{Misunderstanding of context and who we are talking to leads to arguments.}{anne-computer-conversation-8}}
+
 \speakernotes{This can be disturbing to humans because we are used to a low bandwidth communication rate. }
 
 
