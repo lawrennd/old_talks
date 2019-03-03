@@ -23,7 +23,7 @@
 
 \newslide{}
 
-\includeimg{../slides/diagrams/ml/Pierre-Simon_Laplace.png}{30%}{}{center}
+\figure{\includepng{../slides/diagrams/ml/Pierre-Simon_Laplace}{30%}}{Pierre-Simon Laplace 1749-1827.}{pierre-simon-laplace-image}
 
 \include{_ai/includes/laplaces-determinism.md}
 
@@ -45,9 +45,11 @@ In Singualrism doomsday is the 'technological singularity', the moment at which 
 
 \slides{* *Singularism* and religion equivalent to *scientology* and science?}
 
-\notes{For further reading see [this post on Singularism](http://inverseprobability.com/2016/05/09/machine-learning-futures-5) as well as this 
-[paper by Luciano Floridi](http://www.academia.edu/15037984/Singularitarians_AItheists_and_Why_the_Problem_with_Artificial_Intelligence_is_H.A.L._Humanity_At_Large_not_HAL) and this [review of Superintelligence](http://inverseprobability.com/2016/05/09/machine-learning-futures-6) [@Bostrom-superintelligence14].
-}
+\addblog{Singularianism}{2016/05/09/machine-learning-futures-5}
+
+\notes{See also this [paper by Luciano Floridi](http://www.academia.edu/15037984/Singularitarians_AItheists_and_Why_the_Problem_with_Artificial_Intelligence_is_H.A.L._Humanity_At_Large_not_HAL)}
+
+\addblog{Review of Superintelligence [@Bostrom-superintelligence14]}{2016/05/09/machine-learning-futures-6}
 
 \subsection{Artificial Intelligence and Introspection}
 
@@ -67,9 +69,7 @@ I have in the past argued strongly against the term artificial intelligence but 
 
 \subsection{The Digital Catch 22}
 
-\rawfigure{
-\includejpg{../slides/diagrams/ai/Catch22}{30%}
-\notes{\caption{A digital Catch 22: for systems to watch over us they have to watch us.}}}
+\figure{\includejpg{../slides/diagrams/ai/Catch22}{30%}}{A digital Catch 22: for systems to watch over us they have to watch us.}{digital-catch-22}
 
 \newslide{}
 \slides{
@@ -82,18 +82,13 @@ Big Brother refers to the surveillance society and the control of populations th
 
 \newslide{Dys-utopian View}
 
-\rawfigure{
-\columns{\includepng{../slides/diagrams/ai/Cropped-big-brother-is-watching-1984}{80%}}{\includepng{../slides/diagrams/ai/548px-Plakat_Mutti_is_Watching_You}{80%}{}{center}}{50%}{50%}
-\notes{\caption{The Big Brother to Big Mother dilemma. As computers help us they constrain us, leading to a form of dys-utopia.}}
-}
+\figure{\columns{\includepng{../slides/diagrams/ai/Cropped-big-brother-is-watching-1984}{80%}}{\includepng{../slides/diagrams/ai/548px-Plakat_Mutti_is_Watching_You}{80%}{}{center}}{50%}{50%}}{The Big Brother to Big Mother dilemma. As computers help us they constrain us, leading to a form of dys-utopia.}{big-brother-mother-watching}
 
 \notes{But for a system to *watch over* us it first has to *watch us*. So the same understanding of individual is also necessary for the "Big Mother" scenario, where intelligent agents provide for us in the manner in which our parents did for us when we were young. Both scenarios are disempowering in terms of individual liberties. In a metaphorical sense, this could be seen as a return to Eden, a surrendering of individual liberties for a perceived paradise. But those individual liberties are also what we value. There is a tension between a desire to create the perfect environment, where no evil exists and our individual liberty. Our society chooses a balance between the pros and cons that attempts to sustain a diversity of perspectives and beliefs. Even if it were possible to use AI to organzie society in such a way that particular malevolent behaviours were prevented, doing so may come at the cost of the individual freedom we enjoy. These are difficult trade offs, and the exist both when explaining the nature of religious belief and when considering the nature of either the dystopian Big Brother or the "dys-utopian" Big Mother view of AI.}
 
 \newslide{}
 
-\rawfigure{
-\includejpg{../slides/diagrams/ai/1024px-Thomas_Cole_The_Garden_of_Eden_Amon_Carter_Museum}{80%}
-\notes{\caption{The Garden of Eden by Thomas Cole}}
-}
+\figure{\includejpg{../slides/diagrams/ai/1024px-Thomas_Cole_The_Garden_of_Eden_Amon_Carter_Museum}{80%}}
+{The Garden of Eden by Thomas Cole}{thomas-cole-garden-of-eden}
 
 \endif
