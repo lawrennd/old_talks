@@ -8,7 +8,7 @@
 import mlai
 import teaching_plots as plot}
 
-\code{%load -s polynomial mlai.py}
+\loadcode{polynomial}{mlai}
 
 \plotcode{f, ax = plt.subplots(figsize=plot.big_wide_figsize)
 loc =[[0, 1.4,],
@@ -36,7 +36,7 @@ $$
 \newframe{\includediagram{../slides/diagrams/ml/polynomial_basis003}}{polynomial_basis}
 \endanimation
 }
-\notesfigure{\includediagram{../slides/diagrams/ml/polynomial_basis003}{}{}}
+\notes{\figure{\includediagram{../slides/diagrams/ml/polynomial_basis003}{80%}}{A polynomial basis is made up of different degrees of polynomial.}{polynomial-basis-3}}
 
 \displaycode{import pods
 from ipywidgets import IntSlider}
