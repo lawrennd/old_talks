@@ -43,14 +43,15 @@ import pods}
                             samp=IntSlider(1,1,7,1))}
 
 \slides{
+\define{\width}{40%}
 \startanimation{over_determined_system}{1}{8}
-\newframe{\includediagram{../slides/diagrams/ml/over_determined_system001}{40%}}{over_determined_system}
-\newframe{\includediagram{../slides/diagrams/ml/over_determined_system002}{40%}}{over_determined_system}
-\newframe{\includediagram{../slides/diagrams/ml/over_determined_system003}{40%}}{over_determined_system}
-\newframe{\includediagram{../slides/diagrams/ml/over_determined_system004}{40%}}{over_determined_system}
-\newframe{\includediagram{../slides/diagrams/ml/over_determined_system005}{40%}}{over_determined_system}
-\newframe{\includediagram{../slides/diagrams/ml/over_determined_system006}{40%}}{over_determined_system}
-\newframe{\includediagram{../slides/diagrams/ml/over_determined_system007}{40%}}{over_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/over_determined_system001}{\width}}{over_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/over_determined_system002}{\width}}{over_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/over_determined_system003}{\width}}{over_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/over_determined_system004}{\width}}{over_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/over_determined_system005}{\width}}{over_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/over_determined_system006}{\width}}{over_determined_system}
+\newframe{\includediagram{../slides/diagrams/ml/over_determined_system007}{\width}}{over_determined_system}
 \endanimation
 }
 
