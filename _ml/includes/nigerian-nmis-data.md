@@ -1,6 +1,7 @@
 \ifndef{nigerianNmisData}
 \define{nigerianNmisData}
 \editme
+
 \section{Nigerian NMIS Data}
 
 \notes{As an example data set we will use Nigerian NMIS Health Facility data from openAFRICA. It can be found here <https://africaopendata.org/dataset/nigeria-nmis-health-facility-data-2014>}
@@ -99,4 +100,5 @@ plt.ylabel('number of nurses')
 plt.xlabel('number of doctors')}
 
 \notes{Note a few things. We are interacting with our data. In particular, we are replotting the data according to what we have learned so far. We are using the progamming language as a *scripting* language to give the computer one command or another, and then the next command we enter is dependent on the result of the previous. This is a very different paradigm to classical software engineering. In classical software engineering we normally write many lines of code (entire object classes or functions) before compiling the code and running it. Our approach is more similar to the approach we take whilst debugging. Historically, researchers interacted with data using a *console*. A command line window which allowed command entry. The notebook format we are using is slightly different. Each of the code entry boxes acts like a separate console window. We can move up and down the notebook and run each part in a different order. The *state* of the program is always as we left it after running the previous part.}
+
 \endif
