@@ -29,13 +29,13 @@ for i in range(100):
 
 \slides{* We can now make a contour plot.}
 
-\code{%load -s regression_contour teaching_plots.py}
+\loadcode{regression_contour}{teaching_plots}
 
 \plotcode{f, ax = plt.subplots(figsize=(5,5))
 regression_contour(f, ax, m_vals, c_vals, E_grid)
 mlai.write_figure(filename='../slides/diagrams/ml/regression_contour.svg')}
 
-\includediagram{../slides/diagrams/ml/regression_contour}
+\figure{\includediagram{../slides/diagrams/ml/regression_contour}{60%}}{Contours of the objective function for linear regression by minimizing least squares.}{regression-contour}
 
 \subsection{Steepest Descent}
 
@@ -103,14 +103,14 @@ changes all the time.
 
 \subsection{Move in Direction of Gradient}
 
-\setupcode{import teaching_plots as plot}
+\setupplotcode{import teaching_plots as plot}
 \plotcode{f, ax = plt.subplots(figsize=plot.big_figsize)
 plot.regression_contour(f, ax, m_vals, c_vals, E_grid)
 ax.plot(m_star, c_star, 'g*', markersize=20)
 ax.arrow(m_star, c_star, -m_grad*0.1, -c_grad*0.1, head_width=0.2)
 mlai.write_figure(filename='../slides/diagrams/ml/regression_contour_step001.svg', transparent=True)}
 
-\includediagram{../slides/diagrams/ml/regression_contour_step001}
+\figure{\includediagram{../slides/diagrams/ml/regression_contour_step001}{60%}}{Single update descending the contours of the error surface for regression.}{regression-contour-step-1}
 
 \subsection{Update Equations}
 
@@ -148,40 +148,41 @@ from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('regression_contour_fit{num:0>3}.svg', directory='../slides/diagrams/ml', num=IntSlider(0, 0, num_plots, 1))}
 
 \slides{
+\define{width}{60%}
 \startanimation{regression_contour_fit}{1}{28}
-\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit000}}{regression_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit001}}{regression_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit002}}{regression_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit003}}{regression_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit004}}{regression_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit005}}{regression_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit006}}{regression_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit007}}{regression_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit008}}{regression_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit009}}{regression_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit010}}{regression_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit011}}{regression_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit012}}{regression_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit013}}{regression_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit014}}{regression_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit015}}{regression_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit016}}{regression_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit017}}{regression_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit018}}{regression_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit019}}{regression_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit020}}{regression_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit021}}{regression_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit022}}{regression_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit023}}{regression_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit024}}{regression_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit025}}{regression_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit026}}{regression_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit027}}{regression_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit028}}{regression_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit000}{\width}}{regression_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit001}{\width}}{regression_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit002}{\width}}{regression_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit003}{\width}}{regression_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit004}{\width}}{regression_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit005}{\width}}{regression_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit006}{\width}}{regression_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit007}{\width}}{regression_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit008}{\width}}{regression_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit009}{\width}}{regression_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit010}{\width}}{regression_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit011}{\width}}{regression_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit012}{\width}}{regression_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit013}{\width}}{regression_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit014}{\width}}{regression_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit015}{\width}}{regression_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit016}{\width}}{regression_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit017}{\width}}{regression_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit018}{\width}}{regression_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit019}{\width}}{regression_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit020}{\width}}{regression_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit021}{\width}}{regression_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit022}{\width}}{regression_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit023}{\width}}{regression_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit024}{\width}}{regression_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit025}{\width}}{regression_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit026}{\width}}{regression_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit027}{\width}}{regression_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_contour_fit028}{\width}}{regression_contour_fit}
+\endanimation
 }
 
-\notesfigure{\includediagram{../slides/diagrams/ml/regression_contour_fit028}}
-\notes{\caption{Stochastic gradient descent for linear regression}}
+\notes{\figure{\includediagram{../slides/diagrams/ml/regression_contour_fit028}{60%}}{Stochastic gradient descent for linear regression}{regression-contour-fit-28}
 
 \subsection{Stochastic Gradient Descent}
 
@@ -252,70 +253,69 @@ from ipywidgets import IntSlider}
 
 \slides{
 \startanimation{regression_sgd_contour_fit}{0}{58}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit000}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit001}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit002}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit003}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit004}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit005}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit006}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit007}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit008}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit009}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit010}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit011}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit012}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit013}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit014}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit015}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit016}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit017}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit018}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit019}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit020}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit021}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit022}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit023}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit024}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit025}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit026}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit027}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit028}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit029}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit030}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit031}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit032}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit033}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit034}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit035}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit036}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit037}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit038}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit039}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit040}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit041}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit042}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit043}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit044}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit045}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit046}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit047}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit048}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit049}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit050}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit051}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit052}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit053}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit054}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit055}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit056}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit057}}{regression_sgd_contour_fit}
-\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit058}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit000}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit001}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit002}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit003}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit004}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit005}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit006}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit007}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit008}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit009}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit010}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit011}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit012}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit013}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit014}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit015}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit016}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit017}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit018}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit019}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit020}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit021}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit022}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit023}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit024}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit025}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit026}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit027}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit028}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit029}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit030}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit031}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit032}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit033}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit034}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit035}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit036}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit037}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit038}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit039}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit040}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit041}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit042}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit043}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit044}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit045}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit046}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit047}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit048}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit049}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit050}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit051}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit052}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit053}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit054}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit055}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit056}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit057}{\width}}{regression_sgd_contour_fit}
+\newframe{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit058}{\width}}{regression_sgd_contour_fit}
 \endanimation
 }
 
-\notesfigure{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit058}}
-\notes{\caption{Stochastic gradient descent for linear regression}}
+\notes{\figure{\includediagram{../slides/diagrams/ml/regression_sgd_contour_fit058}{60%}}{Stochastic gradient descent for linear regression.}{regression-sgd-contour0fit-58}}
 
 \subsection{Reflection on Linear Regression and Supervised Learning}
 
