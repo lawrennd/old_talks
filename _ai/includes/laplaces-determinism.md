@@ -10,7 +10,7 @@
 
 \newslide{}
 
-\includepng{../slides/diagrams/laplacesDeterminismEnglish}{60%}
+\figure{\includepng{../slides/diagrams/laplacesDeterminismEnglish}{60%}}{Laplace's determinsim in English translation.}{laplaces-determinism-english}
 
 \notes{Unfortunately, most analyses of his ideas stop at that point, whereas his real point is that such a notion is unreachable. Not so much *superman* as *strawman*. Just three pages later in the "Philosophical Essay on Probabilities" [@Laplace:essai14], Laplace goes on to observe:
 
@@ -24,7 +24,7 @@
 
 \newslide{}
 
-\includepng{../slides/diagrams/philosophicaless00lapliala}{60%}
+\figure{\includepng{../slides/diagrams/philosophicaless00lapliala}{60%}}{To Laplace, determinism is a strawman. Ignorance of mechanism and data leads to uncertainty which should be dealt with through probability.}{probability-relative-in-part}
 
 \notes{In other words, we can never make use of the idealistic deterministc Universe due to our ignorance about the world, Laplace's suggestion, and focus in this essay is that we turn to probability to deal with this uncertainty. This is also our inspiration for using probabilit in machine learning. 
 
