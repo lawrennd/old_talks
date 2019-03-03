@@ -4,8 +4,7 @@
 
 \subsection{Computing the Posterior}
 
-\notes{
-We will now attampt to compute the *posterior distribution*. In the lecture we went through the maths that allows us to compute the posterior distribution for $\mappingVector$. This distribution is also Gaussian,}
+\notes{We will now attampt to compute the *posterior distribution*. In the lecture we went through the maths that allows us to compute the posterior distribution for $\mappingVector$. This distribution is also Gaussian,}
 $$
 p(\mappingVector | \dataVector, \inputVector, \dataStd^2) = \gaussianDist{\mappingVector}{\meanVector_\mappingScalar}{\covarianceMatrix_\mappingScalar}
 $$
@@ -27,13 +26,13 @@ We've looked at the samples for our function $\mappingFunctionVector = \basisMat
 
 This video talks about Bayesian inference across the single parameter, the offset $c$, illustrating how the prior and the likelihood combine in one dimension to form a posterior.
 
-\includeyoutube{AvlnFnvFw_0}{1024}{768}{15}
+\includeyoutube{AvlnFnvFw_0}{800}{600}{15}
 
 \subsection{Multivariate Bayesian Inference}
 
 This section of the lecture talks about how we extend the idea of Bayesian inference for the multivariate case. It goes through the multivariate Gaussian and how to complete the square in the linear algebra as we managed below.
 
-\includeyoutube{Os1iqgpelPw}{1024}{768}{1362}
+\includeyoutube{Os1iqgpelPw}{800}{600}{1362}
 
 The lecture informs us the the posterior density for $\mappingVector$ is given by a Gaussian density with covariance
 $$
