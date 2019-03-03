@@ -300,6 +300,7 @@ $$</span><br /> and we have <em>unsupervised learning</em> (from where we can ge
 <li>Classifying type of cancer given gene expression data.</li>
 <li>Categorization of document types (different types of news article on the internet)</li>
 </ul>
+<h2 id="bernoulli-distribution-edit">Bernoulli Distribution <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/bernoulli-distribution.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/bernoulli-distribution.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Our focus has been on models where the objective function is inspired by a probabilistic analysis of the problem. In particular we've argued that we answer questions about the data set by placing probability distributions over the various quantities of interest. For the case of binary classification this will normally involve introducing probability distributions for discrete variables. Such probability distributions, are in some senses easier than those for continuous variables, in particular we can represent a probability distribution over <span class="math inline">$\dataScalar$</span>, where <span class="math inline">$\dataScalar$</span> is binary, with one value. If we specify the probability that <span class="math inline">$\dataScalar=1$</span> with a number that is between 0 and 1, i.e. let's say that <span class="math inline">$P(\dataScalar=1) = \pi$</span> (here we don't mean <span class="math inline"><em>π</em></span> the number, we are setting <span class="math inline"><em>π</em></span> to be a variable) then we can specify the probability distribution through a table.</p>
 <table>
 <thead>
@@ -345,7 +346,6 @@ $$</span><br /> and we have <em>unsupervised learning</em> (from where we can ge
 <p>Let's assume that the first ball is rolled, and that it comes to reset at a position that is <span class="math inline"><em>π</em></span> times the width of the table from the left hand side.</p>
 <p>Now, we roll the second ball. We are interested if the second ball ends up on the left side (+ve result) or the right side (-ve result) of the first ball. We use the Bernoulli distribution to determine this.</p>
 <p>For this reason in Bayes's distribution there is considered to be <em>aleatoric</em> uncertainty about the distribution parameter.</p>
-{
 <div class="figure">
 <div id="bayes-billiard-9-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/ml/bayes-billiard009.svg" style="vertical-align:middle;">
