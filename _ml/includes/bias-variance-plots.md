@@ -2,6 +2,8 @@
 \define{biasVariancePlots}
 \editme
 
+\notes{\subsection{Bias vs Variance Error Plots}}
+
 \notes{Helper function for sampling data from two different classes.}
 
 \setupcode{import numpy as np}
@@ -159,119 +161,7 @@ from ipywidgets import IntSlider}
 \endanimation
 \caption{simple models on left complex models on right}
 }
-\newslide{}
 
-\includediagram{../slides/diagrams/ml/bias-variance001}
-
-\caption{simple models on left complex models on right}
-
-\newslide{}
-
-\includediagram{../slides/diagrams/ml/bias-variance002}
-
-\caption{simple models on left complex models on right}
-
-\newslide{}
-
-\includediagram{../slides/diagrams/ml/bias-variance003}
-
-\caption{simple models on left complex models on right}
-
-\newslide{}
-
-\includediagram{../slides/diagrams/ml/bias-variance004}
-
-\caption{simple models on left complex models on right}
-
-\newslide{}
-
-\includediagram{../slides/diagrams/ml/bias-variance005}
-
-\caption{simple models on left complex models on right}
-
-\newslide{}
-
-\includediagram{../slides/diagrams/ml/bias-variance006}
-
-\caption{simple models on left complex models on right}
-
-\newslide{}
-
-\includediagram{../slides/diagrams/ml/bias-variance007}
-
-\caption{simple models on left complex models on right}
-
-\newslide{}
-
-\includediagram{../slides/diagrams/ml/bias-variance008}
-
-\caption{simple models on left complex models on right}
-
-\newslide{}
-
-\includediagram{../slides/diagrams/ml/bias-variance009}
-
-\caption{simple models on left complex models on right}
-
-\newslide{}
-
-\includediagram{../slides/diagrams/ml/bias-variance010}
-
-\caption{simple models on left complex models on right}
-
-\newslide{}
-
-\includediagram{../slides/diagrams/ml/bias-variance011}
-
-\caption{simple models on left complex models on right}
-
-\newslide{}
-
-\includediagram{../slides/diagrams/ml/bias-variance012}
-
-\caption{simple models on left complex models on right}
-
-\newslide{}
-
-\includediagram{../slides/diagrams/ml/bias-variance013}
-
-\caption{simple models on left complex models on right}
-
-\newslide{}
-
-\includediagram{../slides/diagrams/ml/bias-variance014}
-
-\caption{simple models on left complex models on right}
-
-\newslide{}
-
-\includediagram{../slides/diagrams/ml/bias-variance015}
-
-\caption{simple models on left complex models on right}
-
-\newslide{}
-
-\includediagram{../slides/diagrams/ml/bias-variance016}
-
-\caption{simple models on left complex models on right}
-
-\newslide{}
-
-\includediagram{../slides/diagrams/ml/bias-variance017}
-
-\caption{simple models on left complex models on right}
-
-\newslide{}
-
-\includediagram{../slides/diagrams/ml/bias-variance018}
-
-\caption{simple models on left complex models on right}
-
-\newslide{}
-
-\includediagram{../slides/diagrams/ml/bias-variance019}
-
-\caption{simple models on left complex models on right}
-}
+\notes{\figure{\columns{\includediagram{../slides/diagrams/ml/bias-variance000}{80%}}{\includediagram{../slides/diagram/ml/bias-variance019}{80%}}{45%}{45%}}{In each figure the more simple model is on the left, and the more complex model is on the right. Each fit is done to a different version of the data set. The simpler model is more consistent in its errors (bias error), whereas the more complex model is varying in its errors (variance error).}{bias-variance-errors}}
 
 \endif
