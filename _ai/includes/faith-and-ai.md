@@ -85,7 +85,6 @@ Big Brother refers to the surveillance society and the control of populations th
 
 \newslide{}
 
-\figure{\includejpg{../slides/diagrams/ai/1024px-Thomas_Cole_The_Garden_of_Eden_Amon_Carter_Museum}{80%}}
-{The Garden of Eden by Thomas Cole}{thomas-cole-garden-of-eden}
+\figure{\includejpg{../slides/diagrams/ai/1024px-Thomas_Cole_The_Garden_of_Eden_Amon_Carter_Museum}{80%}}{The Garden of Eden by Thomas Cole}{thomas-cole-garden-of-eden}
 
 \endif
