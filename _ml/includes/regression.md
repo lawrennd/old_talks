@@ -1,7 +1,8 @@
 \ifndef{regression}
 \define{regression}
 \editme
-\newslide{Objective Functions and Regression}
+
+\subsection{Objective Functions and Regression}
 
 \slides{
 * Classification: map feature to class label.
@@ -46,7 +47,7 @@ $$\dataScalar_i = m\inputScalar_i + c$$ is translated to code as follows:}
 plt.xlim([-3, 3])
 mlai.write_figure(filename="../slides/diagrams/ml/regression.svg", transparent=True)}
 
-\includediagram{../slides/diagrams/ml/regression}
+\figure{\includediagram{../slides/diagrams/ml/regression}{60%}}{A simple linear regression.}{linear-regression}
 
 \slides{These points lie exactly on a straight line, that's not very realistic, let's corrupt them with a bit of Gaussian 'noise'.}
 
@@ -58,6 +59,6 @@ plt.plot(x, y, 'r.', markersize=10)
 plt.xlim([-3, 3])
 mlai.write_figure(filename="../slides/diagrams/ml/regression_noise.svg", transparent=True)}
 
-\includediagram{../slides/diagrams/ml/regression_noise}
+\figure{\includediagram{../slides/diagrams/ml/regression_noise}{60%}}{A simple linear regression with noise.}{linear-regression-noise}
 
 \endif
