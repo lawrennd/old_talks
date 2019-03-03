@@ -19,9 +19,7 @@
 
 \newslide{Gaussian Density}
 
-\includediagram{../slides/diagrams/ml/gaussian_of_height}
-
-\caption{The Gaussian PDF with ${\meanScalar}=1.7$ and variance ${\dataStd}^2=0.0225$. Mean shown as \slides{cyan}\notes{red} line. It could represent the heights of a population of students.}
+\figure{\includediagram{../slides/diagrams/ml/gaussian_of_height}{60%}}{The Gaussian PDF with ${\meanScalar}=1.7$ and variance ${\dataStd}^2=0.0225$. Mean shown as \slides{cyan}\notes{red} line. It could represent the heights of a population of students.}{gaussian-of-height}
 
 \newslide{Gaussian Density}
 \slides{
