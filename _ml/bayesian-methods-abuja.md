@@ -38,4 +38,6 @@ transition: None
 
 * Chapter 5 of @Rogers:book11 up to pg 179 (Section 5.1, and 5.2 up to 5.2.2).
 
-\subsection{References}
+\references
+
+\thanks
