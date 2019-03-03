@@ -8,7 +8,7 @@ $$
 p(w, h) = p(w)p(h)
 $$
 
-\newslide{Independent Gaussians
+\newslide{Independent Gaussians}
 
 $$
 p(w, h) = \frac{1}{\sqrt{2\pi \dataStd_1^2}\sqrt{2\pi\dataStd_2^2}} \exp\left(-\frac{1}{2}\left(\frac{(w-\meanScalar_1)^2}{\dataStd_1^2} + \frac{(h-\meanScalar_2)^2}{\dataStd_2^2}\right)\right)
