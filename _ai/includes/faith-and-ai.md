@@ -21,10 +21,7 @@
 
 \notes{The notion of a ultra-intelligence is similar to the notion of an interventionist god, with omniscience in the past, present and the future. This notion was described by Pierre Simon Laplace.}
 
-\newslide{}
-
-\figure{\includepng{../slides/diagrams/ml/Pierre-Simon_Laplace}{30%}}{Pierre-Simon Laplace 1749-1827.}{pierre-simon-laplace-image}
-
+\include{_ml/includes/laplace-portrait.md}
 \include{_ai/includes/laplaces-determinism.md}
 
 \newslide{Singularians}
