@@ -1,7 +1,7 @@
 \ifndef{olympicPolynomial}
 \define{olympicPolynomial}
 
-\include{_ml/includes/olympic-data.md}
+\include{_ml/includes/olympic-marathon-data.md}
 
 \editme
 
