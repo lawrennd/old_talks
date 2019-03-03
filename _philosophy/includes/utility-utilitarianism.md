@@ -1,3 +1,8 @@
+\ifndef{utilityUtilitarianism}
+\define{utilityUtilitarianism}
+
+\editme
+
 \newslide{Utility Theory and Utilitarianism}
 
 \slides{
@@ -14,3 +19,5 @@
 \slides{
 * define a *utility function*
 }
+
+\endif
