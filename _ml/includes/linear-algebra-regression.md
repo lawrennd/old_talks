@@ -320,9 +320,9 @@ c = (y - m*x).mean()
 print(c)}
 
 
-\slides{
-### Learning is Optimization
+\newslide{Learning is Optimization}
 
+\slides{
 * Learning is minimization of the cost function.
 * At the minima the gradient is zero.
 * Coordinate ascent, find gradient in each coordinate and set to zero.
@@ -330,9 +330,8 @@ print(c)}
   $$0 = -2\sum_{i=1}^\numData \inputScalar_i \left(\dataScalar_i-m \inputScalar_i - c \right)$$
 }
 
+\newslide{Learning is Optimization}
 \slides{
-### Learning is Optimization
-
 * Fixed point equations
   $$0 = -2\sum_{i=1}^\numData \inputScalar_i\dataScalar_i+2\sum_{i=1}^\numData m \inputScalar_i^2+2\sum_{i=1}^\numData c\inputScalar_i$$
   $$m  =    \frac{\sum_{i=1}^\numData \left(\dataScalar_i -c\right)\inputScalar_i}{\sum_{i=1}^\numData\inputScalar_i^2}$$
@@ -597,7 +596,7 @@ $$\inputMatrix
 print(X)}
 
 \notes{
-### Writing the Objective with Linear Algebra
+\subsection{Writing the Objective with Linear Algebra}
 
 When we think of the objective function, we can think of it as the errors where the error is defined in a similar way to what it was in Legendre's day $\dataScalar_i - \mappingFunction(\inputVector_i)$, in statistics these errors are also sometimes called [*residuals*](http://en.wikipedia.org/wiki/Errors_and_residuals_in_statistics). So we can think as the objective and the prediction function as two separate parts, first we have,
 $$
@@ -726,7 +725,7 @@ $$
 $$
 The second rule that's required is differentiation of a 'matrix quadratic'. A scalar quadratic in $z$ with coefficient $c$ has the form $cz^2$. If $\mathbf{z}$ is a $k\times 1$ vector and $\mathbf{C}$ is a $k \times k$ *matrix* of coefficients then the matrix quadratic form is written as $\mathbf{z}^\top \mathbf{C}\mathbf{z}$, which is itself a *scalar* quantity, but it is a function of a *vector*.}
 
-\notes{#### Matching Dimensions in Matrix Multiplications
+\notes{\subsubsection{Matching Dimensions in Matrix Multiplications}}
 
 \notes{There's a trick for telling that it's a scalar result. When you are doing maths with matrices, it's always worth pausing to perform a quick sanity check on the dimensions. Matrix multplication only works when the dimensions match. To be precise, the 'inner' dimension of the matrix must match. What is the inner dimension. If we multiply two matrices $\mathbf{A}$ and $\mathbf{B}$, the first of which has $k$ rows and $\ell$ columns and the second of which has $p$ rows and $q$ columns, then we can check whether the multiplication works by writing the dimensionalities next to each other,
 $$
@@ -823,8 +822,9 @@ to match the gradients we've computed directly for $\frac{\text{d}\errorFunction
 
 \section{Update Equation for Global Optimum}
 
-\slides{### Update Equations
+\newslide{Update Equations}
 
+\slides{
 * Update for $\mappingVector^{*}$.
   $$\mappingVector^{*} = \left(\inputMatrix^\top \inputMatrix\right)^{-1} \inputMatrix^\top \dataVector$$
 * The equation for $\left.\dataStd^2\right.^{*}$ may also be found
@@ -909,9 +909,9 @@ y = movies[['IMDB_Rating']]}
 \notes{Although we have to be a little careful about interpretation because our input values live on different scales, however it looks like we are dominated by the bias, with a small negative effect for later films (but bear in mind the years are large, so this effect is probably larger than it looks) and a positive effect for length. So it looks like long earlier films generally do better, but the residuals are so high that we probably haven't modelled the system very well.}
 
 \notes{
-\includeyoutube{ui-uNlFHoms}
+\includeyoutube{ui-uNlFHoms}{800}{600}
 
-\includeyoutube{78YNphT90-k}
+\includeyoutube{78YNphT90-k}{800}{600}
 }
 
 \notes{\subsection{Solution with QR Decomposition}
