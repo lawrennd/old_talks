@@ -324,10 +324,10 @@ $$</span><br /> in the figure below we plot these data on the <span class="math 
 <h2 id="prediction-with-correlated-gaussians">Prediction with Correlated Gaussians</h2>
 <p>Of course in practice, rather than manipulating mountains physically, the advantage of the Gaussian density is that we can perform these manipulations mathematically.</p>
 <p>Prediction of <span class="math inline">$\mappingFunction_2$</span> given <span class="math inline">$\mappingFunction_1$</span> requires the <em>conditional density</em>, <span class="math inline">$p(\mappingFunction_2|\mappingFunction_1)$</span>.Another remarkable property of the Gaussian density is that this conditional distribution is <em>also</em> guaranteed to be a Gaussian density. It has the form, <br /><span class="math display">$$
-    p(\mappingFunction_2|\mappingFunction_1) = \gaussianDist{\mappingFunction_2}{\frac{\kernelScalar_{1, 2}}{\kernelScalar_{1, 1}}\mappingFunction_1}{ \kernelScalar_{2, 2} - \frac{\kernelScalar_{1,2}^2}{\kernelScalar_{1,1}}}
-    $$</span><br />where we have assumed that the covariance of the original joint density was given by <br /><span class="math display">$$
-    \kernelMatrix = \begin{bmatrix} \kernelScalar_{1, 1} &amp; \kernelScalar_{1, 2}\\ \kernelScalar_{2, 1} &amp; \kernelScalar_{2, 2}.\end{bmatrix}
-    $$</span><br /></p>
+p(\mappingFunction_2|\mappingFunction_1) = \gaussianDist{\mappingFunction_2}{\frac{\kernelScalar_{1, 2}}{\kernelScalar_{1, 1}}\mappingFunction_1}{ \kernelScalar_{2, 2} - \frac{\kernelScalar_{1,2}^2}{\kernelScalar_{1,1}}}
+$$</span><br />where we have assumed that the covariance of the original joint density was given by <br /><span class="math display">$$
+\kernelMatrix = \begin{bmatrix} \kernelScalar_{1, 1} &amp; \kernelScalar_{1, 2}\\ \kernelScalar_{2, 1} &amp; \kernelScalar_{2, 2}.\end{bmatrix}
+$$</span><br /></p>
 <p>Using these formulae we can determine the conditional density for any of the elements of our vector <span class="math inline">$\mappingFunctionVector$</span>. For example, the variable <span class="math inline">$\mappingFunction_8$</span> is less correlated with <span class="math inline">$\mappingFunction_1$</span> than <span class="math inline">$\mappingFunction_2$</span>. If we consider this variable we see the conditional density is more diffuse.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
 <span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>

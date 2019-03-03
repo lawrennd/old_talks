@@ -62,19 +62,19 @@ categories:
 <center>
 Convention for the Protection of <em>Individuals</em> with regard to Automatic Processing of <em>Personal Data</em> (1981/1/28)
 </center>
-<h2 id="natural-and-artificial-intelligence-embodiment-factors-edit">Natural and Artificial Intelligence: Embodiment Factors <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<h2 id="embodiment-factors-edit">Embodiment Factors <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <table>
 <tr>
 <td>
 </td>
 <td align="center">
 <div class="centered centered" style="">
-<img class="" src="../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </td>
 <td align="center">
 <div class="centered centered" style="">
-<img class="" src="../slides/diagrams/ClaudeShannon_MFO3807.jpg" width="25%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="../slides/diagrams/ClaudeShannon_MFO3807.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </td>
 </tr>
@@ -171,14 +171,14 @@ communicate
 <p>For further thoughts see <a href="https://www.theguardian.com/media-network/2015/jul/23/data-driven-economy-marketing">this Guardian article</a> from 2015 on marketing in the internet era.</p>
 <p>You can also check my blog post on <a href="http://inverseprobability.com/2015/12/04/what-kind-of-ai">&quot;System Zero&quot;</a></p>
 <div class="figure">
-<div id="-figure" class="figure-frame">
+<div id="trinity-human-data-computer-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/data-science/new-flow-of-information002.svg" style="vertical-align:middle;">
 </object>
 </div>
-<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<div id="trinity-human-data-computer-magnify" class="magnify" onclick="magnifyFigure(&#39;trinity-human-data-computer&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
-<div id="-caption" class="caption-frame">
+<div id="trinity-human-data-computer-caption" class="caption-frame">
 <p>Figure: The trinity of human, data and computer, and highlights the modern phenomenon. The communication channel between computer and data now has an extremely high bandwidth. The channel between human and computer and the channel between data and human is narrow. New direction of information flow, information is reaching us mediated by the computer.</p>
 </div>
 </div>
@@ -262,8 +262,8 @@ communicate
 </div>
 </div>
 <p>Learning involves moving all the pins to be in the correct position, so that the ball ends up in the right place when it's fallen through the machine. But moving all these pins in hyperspace can be difficult.</p>
-<p>In a hyper-space you have to put a lot of data through the machine for to explore the positions of all the pins. <em>Adversarial examples</em> exploit this idea.</p>
-<p>If you have access to the pinball machine, you can use gradient methods to find a position for the ball in the hyper space where the image looks like one thing, but will be classified as another.</p>
+<p>In a hyper-space you have to put a lot of data through the machine for to explore the positions of all the pins. Even when you feed many millions of data points through the machine, there are likely to be regions in the hyper-space where no ball has passed. When future test data passes through the machine in a new route unusual things can happen.</p>
+<p><em>Adversarial examples</em> exploit this high dimensional space. If you have access to the pinball machine, you can use gradient methods to find a position for the ball in the hyper space where the image looks like one thing, but will be classified as another.</p>
 <p>Probabilistic methods explore more of the space by considering a range of possible paths for the ball through the machine. This helps to make them more data efficient and gives some robustness to adversarial examples.</p>
 <h2 id="bayesian-inference-by-rejection-sampling-edit">Bayesian Inference by Rejection Sampling <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gp-intro-very-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gp-intro-very-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>One view of Bayesian inference is to assume we are given a mechanism for generating samples, where we assume that mechanism is representing on accurate view on the way we believe the world works.</p>
@@ -669,22 +669,19 @@ mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=
 <p>You can also check my blog post on <a href="http://inverseprobability.com/2017/11/15/decision-making">&quot;Decision Making and Diversity&quot;</a> You can also check my blog post on <a href="http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence">&quot;Natural vs Artifical Intelligence&quot;</a></p>
 <h2 id="emukit-edit">Emukit <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emukit-software.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emukit-software.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="figure">
-<div id="-figure" class="figure-frame">
-
-</div>
-<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
-</div>
-<div id="-caption" class="caption-frame">
-<p>Figure:</p>
-</div>
-</div>
-{
+<div id="emukit-software-page-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/uq/emukit-software-page.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<p>}{The Emukit software is a set of software tools for emulation and surrogate modeling. </p>
-<p>The aim is to provide a suite where different approaches to emulation are assimilated under one roof. The current version of Emukit includes <em>ulti-fidelity emulation</em> for build surrogate models when data is obtained from multiple information sources that have different fidelity and/or cost; <em>Bayesian optimisation</em> for optimising physical experiments and tune parameters of machine learning algorithms or other computational simulations; <em>experimental design and active learning</em>: design the most informative experiments and perform active learning with machine learning models; <em>sensitivity analysis</em>: analyse the influence of inputs on the outputs of a given system; and <em>Bayesian quadrature</em>: efficiently compute the integrals of functions that are expensive to evaluate.</p>
+</div>
+<div id="emukit-software-page-magnify" class="magnify" onclick="magnifyFigure(&#39;emukit-software-page&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="emukit-software-page-caption" class="caption-frame">
+<p>Figure: The Emukit software is a set of software tools for emulation and surrogate modeling. <a href="https://amzn.github.io/emukit/" class="uri">https://amzn.github.io/emukit/</a></p>
+</div>
+</div>
+<p>The aim is to provide a suite where different approaches to emulation are assimilated under one roof. The current version of Emukit includes <em>multi-fidelity emulation</em> for build surrogate models when data is obtained from multiple information sources that have different fidelity and/or cost; <em>Bayesian optimisation</em> for optimising physical experiments and tune parameters of machine learning algorithms or other computational simulations; <em>experimental design and active learning</em>: design the most informative experiments and perform active learning with machine learning models; <em>sensitivity analysis</em>: analyse the influence of inputs on the outputs of a given system; and <em>Bayesian quadrature</em>: efficiently compute the integrals of functions that are expensive to evaluate.</p>
 <h1 id="conclusion-edit">Conclusion <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/towards-ml-systems-design.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/towards-ml-systems-design.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
 <p>Artificial intelligence and data science are fundamentally different. In one you are dealing with data collecte by happenstance, in the other you are trying to build systems in the real world, often by actively collecting data. Our approaches to systems design are building powerful machines that will be deployed in evolving environments. But this is presenting key challenges in how we maintain and manage our machine learning systems.</p>
 <h1 id="references" class="unnumbered">References</h1>

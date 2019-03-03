@@ -9,7 +9,6 @@ abstract: >
   
   In machine learning this is known as the bias-variance dilemma. In this talk we consider the implications of the bias-variance dilemma for fairness of decision making. 
 venue: Center for the Advanced Studies of the Behavioral Sciences, Joint American Academy and Royal Society Workshop
-reveal: 2018-11-08-fairness-and-diversity-of-decision-making.slides.html
 blog: 2017-11-15-decision-making.md
 blog1: 2018-02-06-natural-and-artificial-intelligence.md
 blog2: 2015-12-04-what-kind-of-ai.md
@@ -21,7 +20,7 @@ author:
   institute: Amazon Cambridge and University of Sheffield
   twitter: lawrennd
   url: http://inverseprobability.com
-published: 2018-11-08
+date: 2018-11-08
 transition: None
 ---
 

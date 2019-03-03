@@ -12,8 +12,8 @@ author:
   orchid: 
 date: 2018-11-14
 published: 2018-11-14
-ipynb: 2018-11-14-bayesian-methods-abuja.ipynb
 reveal: 2018-11-14-bayesian-methods-abuja.slides.html
+ipynb: 2018-11-14-bayesian-methods-abuja.ipynb
 layout: talk
 categories:
 - notes
@@ -24,10 +24,28 @@ categories:
   $${% include talk-notation.tex %}$$
 </div>
 
-<p><!--% not ipynb--></p>
-<h2 id="what-is-machine-learning">What is Machine Learning?</h2>
+<script src="/talks/figure-magnify.js"></script>
+<script src="/talks/figure-animate.js"></script>
+    
+<div id="modal-frame" class="modal">
+  <span class="close" onclick="closeMagnify()">&times;</span>
+  <div class="modal-figure">
+    <div class="figure-frame">
+      <div class="modal-content" id="modal01"></div>
+      <!--<img class="modal-content" id="object01">-->
+    </div>
+    <div class="caption-frame" id="modal-caption"></div>
+  </div>
+</div>	  
+
+<!-- Front matter -->
+<p>.</p>
+<!---->
+<!--Back matter-->
+<!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
+<h1 id="what-is-machine-learning-edit">What is Machine Learning? <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
 <p>What is machine learning? At its most basic level machine learning is a combination of</p>
-<p><span class="math display">\[\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span></p>
+<p><br /><span class="math display">$$\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$</span><br /></p>
 <p>where <em>data</em> is our observations. They can be actively or passively acquired (meta-data). The <em>model</em> contains our assumptions, based on previous experience. That experience can be other data, it can come from transfer learning, or it can merely be our beliefs about the regularities of the universe. In humans our models include our inductive biases. The <em>prediction</em> is an action to be taken or a categorization or a quality score. The reason that machine learning has become a mainstay of artificial intelligence is the importance of predictions in artificial intelligence. The data and the model are combined through computation.</p>
 <p>In practice we normally perform machine learning using two functions. To combine data with a model we typically make use of:</p>
 <p><strong>a prediction function</strong> a function which is used to make the predictions. It includes our beliefs about the regularities of the universe, our assumptions about how the world works, e.g. smoothness, spatial similarities, temporal similarities.</p>
@@ -35,20 +53,7 @@ categories:
 <p>The combination of data and model through the prediction function and the objectie function leads to a <em>learning algorithm</em>. The class of prediction functions and objective functions we can make use of is restricted by the algorithms they lead to. If the prediction function or the objective function are too complex, then it can be difficult to find an appropriate learning algorithm. Much of the acdemic field of machine learning is the quest for new learning algorithms that allow us to bring different types of models and data together.</p>
 <p>A useful reference for state of the art in machine learning is the UK Royal Society Report, <a href="https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf">Machine Learning: Power and Promise of Computers that Learn by Example</a>.</p>
 <p>You can also check my blog post on <a href="http://inverseprobability.com/2017/07/17/what-is-machine-learning">&quot;What is Machine Learning?&quot;</a></p>
-<h2 id="probabilities">Probabilities</h2>
-<p>We are now going to do some simple review of probabilities and use this review to explore some aspects of our data.</p>
-<p>A probability distribution expresses uncertainty about the outcome of an event. We often encode this uncertainty in a variable. So if we are considering the outcome of an event, <span class="math inline">\(Y\)</span>, to be a coin toss, then we might consider <span class="math inline">\(Y=1\)</span> to be heads and <span class="math inline">\(Y=0\)</span> to be tails. We represent the probability of a given outcome with the notation: <span class="math display">\[
-P(Y=1) = 0.5
-\]</span> The first rule of probability is that the probability must normalize. The sum of the probability of all events must equal 1. So if the probability of heads (<span class="math inline">\(Y=1\)</span>) is 0.5, then the probability of tails (the only other possible outcome) is given by <span class="math display">\[
-P(Y=0) = 1-P(Y=1) = 0.5
-\]</span></p>
-<p>Probabilities are often defined as the limit of the ratio between the number of positive outcomes (e.g. <em>heads</em>) given the number of trials. If the number of positive outcomes for event <span class="math inline">\(y\)</span> is denoted by <span class="math inline">\(n\)</span> and the number of trials is denoted by <span class="math inline">\(N\)</span> then this gives the ratio <span class="math display">\[
-P(Y=y) = \lim_{N\rightarrow
-\infty}\frac{n_y}{N}.
-\]</span> In practice we never get to observe an event infinite times, so rather than considering this we often use the following estimate <span class="math display">\[
-P(Y=y) \approx \frac{n_y}{N}.
-\]</span></p>
-<h2 id="nigerian-nmis-data">Nigerian NMIS Data</h2>
+<h1 id="nigerian-nmis-data-edit">Nigerian NMIS Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/nigerian-nmis-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/nigerian-nmis-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
 <p>As an example data set we will use Nigerian NMIS Health Facility data from openAFRICA. It can be found here <a href="https://africaopendata.org/dataset/nigeria-nmis-health-facility-data-2014" class="uri">https://africaopendata.org/dataset/nigeria-nmis-health-facility-data-2014</a></p>
 <p>Taking from the information on the site,</p>
 <blockquote>
@@ -70,7 +75,7 @@ P(Y=y) \approx \frac{n_y}{N}.
 <p>The NMIS facility data is stored in an object known as a 'data frame'. Data frames come from the statistical family of programming languages based on <code>S</code>, the most widely used of which is <a href="http://en.wikipedia.org/wiki/R_(programming_language)"><code>R</code></a>. The data frame gives us a convenient object for manipulating data. The describe method summarizes which columns there are in the data frame and gives us counts, means, standard deviations and percentiles for the values in those columns. To access a column directly we can write</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(data[<span class="st">&#39;num_doctors_fulltime&#39;</span>])
 <span class="co">#print(data[&#39;num_nurses_fulltime&#39;])</span></code></pre></div>
-<p>This shows the number of doctors per facility. We can plot the data against the number of nurses as follows.</p>
+<p>This shows the number of doctors per facility, number of nurses and number of community health workers (CHEWS). We can plot the number of doctors against the number of nurses as follows.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># this ensures the plot appears in the web browser</span>
 <span class="op">%</span>matplotlib inline 
 <span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <span class="co"># this imports the plotting library in python</span></code></pre></div>
@@ -82,18 +87,15 @@ P(Y=y) \approx \frac{n_y}{N}.
 <p>Here we are using the command <code>data['num_nurses_fulltime']&gt;100</code> to index the facilities in the pandas data frame which have over 100 nurses. To sort them in order we can also use the <code>sort</code> command. The result of this command on its own is a data <code>Series</code> of <code>True</code> and <code>False</code> values. However, when it is passed to the <code>data</code> data frame it returns a new data frame which contains only those values for which the data series is <code>True</code>. We can also sort the result. To sort the result by the values in the <code>num_nurses_fulltime</code> column in <em>descending</em> order we use the following command.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data[data[<span class="st">&#39;num_nurses_fulltime&#39;</span>]<span class="op">&gt;</span><span class="dv">100</span>].sort_values(by<span class="op">=</span><span class="st">&#39;num_nurses_fulltime&#39;</span>, ascending<span class="op">=</span><span class="va">False</span>)</code></pre></div>
 <p>We now see that the 'University of Calabar Teaching Hospital' is a large outlier with 513 nurses. We can try and determine how much of an outlier by histograming the data.</p>
-<h3 id="plotting-the-data">Plotting the Data</h3>
+<h2 id="plotting-the-data">Plotting the Data</h2>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data[<span class="st">&#39;num_nurses_fulltime&#39;</span>].hist(bins<span class="op">=</span><span class="dv">20</span>) <span class="co"># histogram the data with 20 bins.</span>
 plt.title(<span class="st">&#39;Histogram of Number of Nurses&#39;</span>)</code></pre></div>
-<p>We can't see very much here. Two things are happening. There are so many facilities with zero or one nurse that we don't see the histogram for hospitals with many nurses. We can try more bins and using a <em>log</em> scale on the <span class="math inline">\(y\)</span>-axis.</p>
+<p>We can't see very much here. Two things are happening. There are so many facilities with zero or one nurse that we don't see the histogram for hospitals with many nurses. We can try more bins and using a <em>log</em> scale on the <span class="math inline"><em>y</em></span>-axis.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data[<span class="st">&#39;num_nurses_fulltime&#39;</span>].hist(bins<span class="op">=</span><span class="dv">100</span>) <span class="co"># histogram the data with 20 bins.</span>
 plt.title(<span class="st">&#39;Histogram of Number of Nurses&#39;</span>)
 ax <span class="op">=</span> plt.gca()
 ax.set_yscale(<span class="st">&#39;log&#39;</span>)</code></pre></div>
-<h3 id="question-1">Question 1</h3>
-<p>Read on the internet about the following python libraries: <code>numpy</code>, <code>matplotlib</code>, <code>scipy</code> and <code>pandas</code>. What functionality does each provide python?</p>
-<p><em>10 marks</em></p>
-<h3 id="write-your-answer-to-question-1-here">Write your answer to Question 1 here</h3>
+
 <p>Let's try and see how the number of nurses relates to the number of doctors.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">7</span>)) 
 ax.plot(data[<span class="st">&#39;num_doctors_fulltime&#39;</span>], data[<span class="st">&#39;num_nurses_fulltime&#39;</span>], <span class="st">&#39;rx&#39;</span>)
@@ -104,27 +106,29 @@ plt.title(<span class="st">&#39;Number of Nurses against Number of Doctors&#39;<
 plt.ylabel(<span class="st">&#39;number of nurses&#39;</span>)
 plt.xlabel(<span class="st">&#39;number of doctors&#39;</span>)</code></pre></div>
 <p>Note a few things. We are interacting with our data. In particular, we are replotting the data according to what we have learned so far. We are using the progamming language as a <em>scripting</em> language to give the computer one command or another, and then the next command we enter is dependent on the result of the previous. This is a very different paradigm to classical software engineering. In classical software engineering we normally write many lines of code (entire object classes or functions) before compiling the code and running it. Our approach is more similar to the approach we take whilst debugging. Historically, researchers interacted with data using a <em>console</em>. A command line window which allowed command entry. The notebook format we are using is slightly different. Each of the code entry boxes acts like a separate console window. We can move up and down the notebook and run each part in a different order. The <em>state</em> of the program is always as we left it after running the previous part.</p>
+<h1 id="probabilities-edit">Probabilities <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/probability-intro.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/probability-intro.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
+<p>We are now going to do some simple review of probabilities and use this review to explore some aspects of our data.</p>
+<p>A probability distribution expresses uncertainty about the outcome of an event. We often encode this uncertainty in a variable. So if we are considering the outcome of an event, <span class="math inline"><em>Y</em></span>, to be a coin toss, then we might consider <span class="math inline"><em>Y</em> = 1</span> to be heads and <span class="math inline"><em>Y</em> = 0</span> to be tails. We represent the probability of a given outcome with the notation: <br /><span class="math display"><em>P</em>(<em>Y</em> = 1)=0.5</span><br /> The first rule of probability is that the probability must normalize. The sum of the probability of all events must equal 1. So if the probability of heads (<span class="math inline"><em>Y</em> = 1</span>) is 0.5, then the probability of tails (the only other possible outcome) is given by <br /><span class="math display"><em>P</em>(<em>Y</em> = 0)=1 − <em>P</em>(<em>Y</em> = 1)=0.5</span><br /></p>
+<p>Probabilities are often defined as the limit of the ratio between the number of positive outcomes (e.g. <em>heads</em>) given the number of trials. If the number of positive outcomes for event <span class="math inline"><em>y</em></span> is denoted by <span class="math inline"><em>n</em></span> and the number of trials is denoted by <span class="math inline"><em>N</em></span> then this gives the ratio <br /><span class="math display">$$
+P(Y=y) = \lim_{N\rightarrow
+\infty}\frac{n_y}{N}.
+$$</span><br /> In practice we never get to observe an event infinite times, so rather than considering this we often use the following estimate <br /><span class="math display">$$
+P(Y=y) \approx \frac{n_y}{N}.
+$$</span><br /></p>
+<h2 id="probability-and-the-nmis-data-edit">Probability and the NMIS Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/probability-nigerian-nmis.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/probability-nigerian-nmis.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Let's use the sum rule to compute the estimate the probability that a facility has more than two nurses.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">large <span class="op">=</span> (data.num_nurses_fulltime<span class="op">&gt;</span><span class="dv">2</span>).<span class="bu">sum</span>()  <span class="co"># number of positive outcomes (in sum True counts as 1, False counts as 0)</span>
 total_facilities <span class="op">=</span> data.num_nurses_fulltime.count()
 
 prob_large <span class="op">=</span> <span class="bu">float</span>(large)<span class="op">/</span><span class="bu">float</span>(total_facilities)
 <span class="bu">print</span>(<span class="st">&quot;Probability of number of nurses being greather than 2 is:&quot;</span>, prob_large)</code></pre></div>
-<h2 id="conditioning">Conditioning</h2>
-<p>When predicting whether a coin turns up head or tails, we might think that this event is <em>independent</em> of the year or time of day. If we include an observation such as time, then in a probability this is known as <em>condtioning</em>. We use this notation, <span class="math inline">\(P(Y=y|X=x)\)</span>, to condition the outcome on a second variable (in this case the number of doctors). Or, often, for a shorthand we use <span class="math inline">\(P(y|x)\)</span> to represent this distribution (the <span class="math inline">\(Y=\)</span> and <span class="math inline">\(X=\)</span> being implicit). If two variables are independent then we find that <span class="math display">\[
-P(y|x) = p(y).
-\]</span> However, we might believe that the number of nurses is dependent on the number of doctors. For this we can try estimating <span class="math inline">\(P(Y&gt;2 | X&gt;1)\)</span> and compare the result, for example to <span class="math inline">\(P(Y&gt;2|X\leq 1)\)</span> using our empirical estimate of the probability.</p>
+<h1 id="conditioning">Conditioning</h1>
+<p>When predicting whether a coin turns up head or tails, we might think that this event is <em>independent</em> of the year or time of day. If we include an observation such as time, then in a probability this is known as <em>condtioning</em>. We use this notation, <span class="math inline"><em>P</em>(<em>Y</em> = <em>y</em>|<em>X</em> = <em>x</em>)</span>, to condition the outcome on a second variable (in this case the number of doctors). Or, often, for a shorthand we use <span class="math inline"><em>P</em>(<em>y</em>|<em>x</em>)</span> to represent this distribution (the <span class="math inline"><em>Y</em>=</span> and <span class="math inline"><em>X</em>=</span> being implicit). If two variables are independent then we find that <br /><span class="math display"><em>P</em>(<em>y</em>|<em>x</em>)=<em>p</em>(<em>y</em>).</span><br /> However, we might believe that the number of nurses is dependent on the number of doctors. For this we can try estimating <span class="math inline"><em>P</em>(<em>Y</em> &gt; 2|<em>X</em> &gt; 1)</span> and compare the result, for example to <span class="math inline"><em>P</em>(<em>Y</em> &gt; 2|<em>X</em> ≤ 1)</span> using our empirical estimate of the probability.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">large <span class="op">=</span> ((data.num_nurses_fulltime<span class="op">&gt;</span><span class="dv">2</span>) <span class="op">&amp;</span> (data.num_doctors_fulltime<span class="op">&gt;</span><span class="dv">1</span>)).<span class="bu">sum</span>()
 total_large_doctors <span class="op">=</span> (data.num_doctors_fulltime<span class="op">&gt;</span><span class="dv">1</span>).<span class="bu">sum</span>()
 prob_both_large <span class="op">=</span> large<span class="op">/</span>total_large_doctors
 <span class="bu">print</span>(<span class="st">&quot;Probability of number of nurses being greater than 2 given number of doctors is greater than 1 is:&quot;</span>, prob_both_large)</code></pre></div>
-<h3 id="question-2">Question 2</h3>
-<p>Write code that prints out the probability of nurses being greater than 2 for different numbers of doctors.</p>
-<p><em>15 marks</em></p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Write code for your answer to Question 2 in this box</span>
-<span class="co"># provide the answers so that the code runs correctly otherwise you will loose marks!</span>
 
-</code></pre></div>
 <h4 id="notes-for-question">Notes for Question</h4>
 <p>Make sure the plot is included in <em>this</em> notebook file (the <code>IPython</code> magic command <code>%matplotlib inline</code> we ran above will do that for you, it only needs to be run once per file).</p>
 <table>
@@ -138,17 +142,17 @@ prob_both_large <span class="op">=</span> large<span class="op">/</span>total_la
 <tbody>
 <tr class="odd">
 <td>joint</td>
-<td><span class="math inline">\(P(X=x, Y=y)\)</span></td>
+<td><span class="math inline"><em>P</em>(<em>X</em> = <em>x</em>, <em>Y</em> = <em>y</em>)</span></td>
 <td>prob. that X=x <em>and</em> Y=y</td>
 </tr>
 <tr class="even">
 <td>marginal</td>
-<td><span class="math inline">\(P(X=x)\)</span></td>
+<td><span class="math inline"><em>P</em>(<em>X</em> = <em>x</em>)</span></td>
 <td>prob. that X=x <em>regardless of</em> Y</td>
 </tr>
 <tr class="odd">
 <td>conditional</td>
-<td><span class="math inline">\(P(X=x\vert Y=y)\)</span></td>
+<td><span class="math inline"><em>P</em>(<em>X</em> = <em>x</em>|<em>Y</em> = <em>y</em>)</span></td>
 <td>prob. that X=x <em>given that</em> Y=y</td>
 </tr>
 </tbody>
@@ -156,11 +160,21 @@ prob_both_large <span class="op">=</span> large<span class="op">/</span>total_la
 <center>
 The different basic probability distributions.
 </center>
-<h3 id="a-pictorial-definition-of-probability">A Pictorial Definition of Probability</h3>
-<object class="svgplot " align data="../slides/diagrams/mlai/prob_diagram.svg" style>
+<h2 id="a-pictorial-definition-of-probability-edit">A Pictorial Definition of Probability <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/probability-review.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/probability-review.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="figure">
+<div id="prob-diagram-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/mlai/prob_diagram.svg" style="vertical-align:middle;">
 </object>
+</div>
+<div id="prob-diagram-magnify" class="magnify" onclick="magnifyFigure(&#39;prob-diagram&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="prob-diagram-caption" class="caption-frame">
+<p>Figure: Diagram representing the different probabilities, joint, marginal and conditional. This diagram was inspired by lectures given by Christopher Bishop.</p>
+</div>
+</div>
 <p><span style="text-align:right">Inspired by lectures from Christopher Bishop</span></p>
-<h3 id="definition-of-probability-distributions">Definition of probability distributions</h3>
+<h2 id="definition-of-probability-distributions">Definition of probability distributions</h2>
 <table>
 <colgroup>
 <col width="20%" />
@@ -177,45 +191,35 @@ The different basic probability distributions.
 <tbody>
 <tr class="odd">
 <td>Joint Probability</td>
-<td><span class="math inline">\(\lim_{N\rightarrow\infty}\frac{n_{X=3,Y=4}}{N}\)</span></td>
-<td><span class="math inline">\(P\left(X=3,Y=4\right)\)</span></td>
+<td><span class="math inline">$\lim_{N\rightarrow\infty}\frac{n_{X=3,Y=4}}{N}$</span></td>
+<td><span class="math inline"><em>P</em>(<em>X</em>=3,<em>Y</em>=4)</span></td>
 </tr>
 <tr class="even">
 <td>Marginal Probability</td>
-<td><span class="math inline">\(\lim_{N\rightarrow\infty}\frac{n_{X=5}}{N}\)</span></td>
-<td><span class="math inline">\(P\left(X=5\right)\)</span></td>
+<td><span class="math inline">$\lim_{N\rightarrow\infty}\frac{n_{X=5}}{N}$</span></td>
+<td><span class="math inline"><em>P</em>(<em>X</em>=5)</span></td>
 </tr>
 <tr class="odd">
 <td>Conditional Probability</td>
-<td><span class="math inline">\(\lim_{N\rightarrow\infty}\frac{n_{X=3,Y=4}}{n_{Y=4}}\)</span></td>
-<td><span class="math inline">\(P\left(X=3\vert Y=4\right)\)</span></td>
+<td><span class="math inline">$\lim_{N\rightarrow\infty}\frac{n_{X=3,Y=4}}{n_{Y=4}}$</span></td>
+<td><span class="math inline"><em>P</em>(<em>X</em>=3|<em>Y</em>=4)</span></td>
 </tr>
 </tbody>
 </table>
-<h3 id="notational-details">Notational Details</h3>
-<p>Typically we should write out <span class="math inline">\(P\left(X=x,Y=y\right)\)</span>, but in practice we often shorten this to <span class="math inline">\(P\left(x,y\right)\)</span>. This looks very much like we might write a multivariate function, <em>e.g.</em> <span class="math display">\[
+<h2 id="notational-details">Notational Details</h2>
+<p>Typically we should write out <span class="math inline"><em>P</em>(<em>X</em>=<em>x</em>,<em>Y</em>=<em>y</em>)</span>, but in practice we often shorten this to <span class="math inline"><em>P</em>(<em>x</em>,<em>y</em>)</span>. This looks very much like we might write a multivariate function, <em>e.g.</em> <br /><span class="math display">$$
   f\left(x,y\right)=\frac{x}{y},
-  \]</span> but for a multivariate function <span class="math display">\[
-f\left(x,y\right)\neq f\left(y,x\right).
-\]</span> However, <span class="math display">\[
-P\left(x,y\right)=P\left(y,x\right)
-\]</span> because <span class="math display">\[
-P\left(X=x,Y=y\right)=P\left(Y=y,X=x\right).
-\]</span> Sometimes I think of this as akin to the way in Python we can write 'keyword arguments' in functions. If we use keyword arguments, the ordering of arguments doesn't matter.</p>
-<p>We've now introduced conditioning and independence to the notion of probability and computed some conditional probabilities on a practical example The scatter plot of deaths vs year that we created above can be seen as a <em>joint</em> probability distribution. We represent a joint probability using the notation <span class="math inline">\(P(Y=y, X=x)\)</span> or <span class="math inline">\(P(y, x)\)</span> for short. Computing a joint probability is equivalent to answering the simultaneous questions, what's the probability that the number of nurses was over 2 and the number of doctors was 1? Or any other question that may occur to us. Again we can easily use pandas to ask such questions.</p>
+  $$</span><br /> but for a multivariate function <br /><span class="math display"><em>f</em>(<em>x</em>,<em>y</em>) ≠ <em>f</em>(<em>y</em>,<em>x</em>).</span><br /> However, <br /><span class="math display"><em>P</em>(<em>x</em>,<em>y</em>) = <em>P</em>(<em>y</em>,<em>x</em>)</span><br /> because <br /><span class="math display"><em>P</em>(<em>X</em>=<em>x</em>,<em>Y</em>=<em>y</em>) = <em>P</em>(<em>Y</em>=<em>y</em>,<em>X</em>=<em>x</em>).</span><br /> Sometimes I think of this as akin to the way in Python we can write 'keyword arguments' in functions. If we use keyword arguments, the ordering of arguments doesn't matter.</p>
+<p>We've now introduced conditioning and independence to the notion of probability and computed some conditional probabilities on a practical example The scatter plot of deaths vs year that we created above can be seen as a <em>joint</em> probability distribution. We represent a joint probability using the notation <span class="math inline"><em>P</em>(<em>Y</em> = <em>y</em>, <em>X</em> = <em>x</em>)</span> or <span class="math inline"><em>P</em>(<em>y</em>, <em>x</em>)</span> for short. Computing a joint probability is equivalent to answering the simultaneous questions, what's the probability that the number of nurses was over 2 and the number of doctors was 1? Or any other question that may occur to us. Again we can easily use pandas to ask such questions.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">num_doctors <span class="op">=</span> <span class="dv">1</span>
 large <span class="op">=</span> (data.num_nurses_fulltime[data.num_doctors_fulltime<span class="op">==</span>num_doctors]<span class="op">&gt;</span><span class="dv">2</span>).<span class="bu">sum</span>()
 total_facilities <span class="op">=</span> data.num_nurses_fulltime.count() <span class="co"># this is total number of films</span>
 prob_large <span class="op">=</span> <span class="bu">float</span>(large)<span class="op">/</span><span class="bu">float</span>(total_facilities)
 <span class="bu">print</span>(<span class="st">&quot;Probability of nurses being greater than 2 and number of doctors being&quot;</span>, num_doctors, <span class="st">&quot;is:&quot;</span>, prob_large)</code></pre></div>
-<h3 id="the-product-rule">The Product Rule</h3>
-<p>This number is the joint probability, <span class="math inline">\(P(Y, X)\)</span> which is much <em>smaller</em> than the conditional probability. The number can never be bigger than the conditional probabililty because it is computed using the <em>product rule</em>. <span class="math display">\[
-p(Y=y, X=x) = p(Y=y|X=x)p(X=x)
-\]</span> and <span class="math display">\[p(X=x)\]</span> is a probability distribution, which is equal or less than 1, ensuring the joint distribution is typically smaller than the conditional distribution.</p>
+<h2 id="the-product-rule">The Product Rule</h2>
+<p>This number is the joint probability, <span class="math inline"><em>P</em>(<em>Y</em>, <em>X</em>)</span> which is much <em>smaller</em> than the conditional probability. The number can never be bigger than the conditional probabililty because it is computed using the <em>product rule</em>. <br /><span class="math display"><em>p</em>(<em>Y</em> = <em>y</em>, <em>X</em> = <em>x</em>)=<em>p</em>(<em>Y</em> = <em>y</em>|<em>X</em> = <em>x</em>)<em>p</em>(<em>X</em> = <em>x</em>)</span><br /> and <br /><span class="math display"><em>p</em>(<em>X</em> = <em>x</em>)</span><br /> is a probability distribution, which is equal or less than 1, ensuring the joint distribution is typically smaller than the conditional distribution.</p>
 <p>The product rule is a <em>fundamental</em> rule of probability, and you must remember it! It gives the relationship between the two questions: 1) What's the probability that a facility has over two nurses <em>and</em> one doctor? and 2) What's the probability that a facility has over two nurses <em>given that</em> it has one doctor?</p>
-<p>In our shorter notation we can write the product rule as <span class="math display">\[
-p(y, x) = p(y|x)p(x)
-\]</span> We can see the relation working in practice for our data above by computing the different values for <span class="math inline">\(x=1\)</span>.</p>
+<p>In our shorter notation we can write the product rule as <br /><span class="math display"><em>p</em>(<em>y</em>, <em>x</em>)=<em>p</em>(<em>y</em>|<em>x</em>)<em>p</em>(<em>x</em>)</span><br /> We can see the relation working in practice for our data above by computing the different values for <span class="math inline"><em>x</em> = 1</span>.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">num_doctors<span class="op">=</span><span class="dv">1</span>
 num_nurses<span class="op">=</span><span class="dv">2</span>
 p_x <span class="op">=</span> <span class="bu">float</span>((data.num_doctors_fulltime<span class="op">==</span>num_doctors).<span class="bu">sum</span>())<span class="op">/</span><span class="bu">float</span>(data.num_nurses_fulltime.count())
@@ -225,64 +229,70 @@ p_y_and_x <span class="op">=</span> <span class="bu">float</span>((data.num_nurs
 <span class="bu">print</span>(<span class="st">&quot;P(x) is&quot;</span>, p_x)
 <span class="bu">print</span>(<span class="st">&quot;P(y|x) is&quot;</span>, p_y_given_x)
 <span class="bu">print</span>(<span class="st">&quot;P(y,x) is&quot;</span>, p_y_and_x)</code></pre></div>
-<h3 id="the-sum-rule">The Sum Rule</h3>
-<p>The other <em>fundamental rule</em> of probability is the <em>sum rule</em> this tells us how to get a <em>marginal</em> distribution from the joint distribution. Simply put it says that we need to sum across the value we'd like to remove. <span class="math display">\[
-P(Y=y) = \sum_{x} P(Y=y, X=x)
-\]</span> Or in our shortened notation <span class="math display">\[
-P(y) = \sum_{x} P(y, x)
-\]</span></p>
-<h3 id="question-3">Question 3</h3>
-<p>Write code that computes <span class="math inline">\(P(y)\)</span> by adding <span class="math inline">\(P(y, x)\)</span> for all values of <span class="math inline">\(x\)</span>.</p>
-<p><em>10 marks</em></p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Write code for your answer to Question 3 in this box</span>
-<span class="co"># provide the answers so that the code runs correctly otherwise you will loose marks!</span>
+<h2 id="the-sum-rule">The Sum Rule</h2>
+<p>The other <em>fundamental rule</em> of probability is the <em>sum rule</em> this tells us how to get a <em>marginal</em> distribution from the joint distribution. Simply put it says that we need to sum across the value we'd like to remove. <br /><span class="math display"><em>P</em>(<em>Y</em> = <em>y</em>)=∑<sub><em>x</em></sub><em>P</em>(<em>Y</em> = <em>y</em>, <em>X</em> = <em>x</em>)</span><br /> Or in our shortened notation <br /><span class="math display"><em>P</em>(<em>y</em>)=∑<sub><em>x</em></sub><em>P</em>(<em>y</em>, <em>x</em>)</span><br /></p>
 
-</code></pre></div>
-<h3 id="bayes-rule">Bayes’ Rule</h3>
-<p>Bayes rule is a very simple rule, it's hardly worth the name of a rule at all. It follows directly from the product rule of probability. Because <span class="math inline">\(P(y, x) = P(y|x)P(x)\)</span> and by symmetry <span class="math inline">\(P(y,x)=P(x,y)=P(x|y)P(y)\)</span> then by equating these two equations and dividing through by <span class="math inline">\(P(y)\)</span> we have <span class="math display">\[
+<h2 id="bayes-rule">Bayes’ Rule</h2>
+<p>Bayes rule is a very simple rule, it's hardly worth the name of a rule at all. It follows directly from the product rule of probability. Because <span class="math inline"><em>P</em>(<em>y</em>, <em>x</em>)=<em>P</em>(<em>y</em>|<em>x</em>)<em>P</em>(<em>x</em>)</span> and by symmetry <span class="math inline"><em>P</em>(<em>y</em>, <em>x</em>)=<em>P</em>(<em>x</em>, <em>y</em>)=<em>P</em>(<em>x</em>|<em>y</em>)<em>P</em>(<em>y</em>)</span> then by equating these two equations and dividing through by <span class="math inline"><em>P</em>(<em>y</em>)</span> we have <br /><span class="math display">$$
 P(x|y) =
 \frac{P(y|x)P(x)}{P(y)}
-\]</span> which is known as Bayes' rule (or Bayes's rule, it depends how you choose to pronounce it). It's not difficult to derive, and its importance is more to do with the semantic operation that it enables. Each of these probability distributions represents the answer to a question we have about the world. Bayes rule (via the product rule) tells us how to <em>invert</em> the probability.</p>
-<h3 id="probabilities-for-extracting-information-from-data">Probabilities for Extracting Information from Data</h3>
+$$</span><br /> which is known as Bayes' rule (or Bayes's rule, it depends how you choose to pronounce it). It's not difficult to derive, and its importance is more to do with the semantic operation that it enables. Each of these probability distributions represents the answer to a question we have about the world. Bayes rule (via the product rule) tells us how to <em>invert</em> the probability.</p>
+<h2 id="probabilities-for-extracting-information-from-data-edit">Probabilities for Extracting Information from Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/probability-review.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/probability-review.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>What use is all this probability in data science? Let's think about how we might use the probabilities to do some decision making. Let's look at the information data.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data.columns</code></pre></div>
-<h3 id="question-4">Question 4</h3>
-<p>Now we see we have several additional features. Let's assume we want to predict <code>maternal_health_delivery_services</code>. How would we go about doing it?</p>
-<p>Using what you've learnt about joint, conditional and marginal probabilities, as well as the sum and product rule, how would you formulate the question you want to answer in terms of probabilities? Should you be using a joint or a conditional distribution? If it's conditional, what should the distribution be over, and what should it be conditioned on?</p>
-<p><em>20 marks</em></p>
-<h3 id="write-your-answer-to-question-4-here">Write your answer to Question 4 here</h3>
-<h3 id="probabilistic-modelling">Probabilistic Modelling</h3>
+
+<h2 id="probabilistic-modelling-edit">Probabilistic Modelling <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/probabilistic-modelling.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/probabilistic-modelling.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>This Bayesian approach is designed to deal with uncertainty arising from fitting our prediction function to the data we have, a reduced data set.</p>
-<p>The Bayesian approach can be derived from a broader understanding of what our objective is. If we accept that we can jointly represent all things that happen in the world with a probability distribution, then we can interogate that probability to make predictions. So, if we are interested in predictions, <span class="math inline">\(\dataScalar_*\)</span> at future points input locations of interest, <span class="math inline">\(\inputVector_*\)</span> given previously training data, <span class="math inline">\(\dataVector\)</span> and corresponding inputs, <span class="math inline">\(\inputMatrix\)</span>, then we are really interogating the following probability density, <span class="math display">\[
+<p>The Bayesian approach can be derived from a broader understanding of what our objective is. If we accept that we can jointly represent all things that happen in the world with a probability distribution, then we can interogate that probability to make predictions. So, if we are interested in predictions, <span class="math inline">$\dataScalar_*$</span> at future points input locations of interest, <span class="math inline">$\inputVector_*$</span> given previously training data, <span class="math inline">$\dataVector$</span> and corresponding inputs, <span class="math inline">$\inputMatrix$</span>, then we are really interogating the following probability density, <br /><span class="math display">$$
 p(\dataScalar_*|\dataVector, \inputMatrix, \inputVector_*),
-\]</span> there is nothing controversial here, as long as you accept that you have a good joint model of the world around you that relates test data to training data, <span class="math inline">\(p(\dataScalar_*, \dataVector, \inputMatrix, \inputVector_*)\)</span> then this conditional distribution can be recovered through standard rules of probability (<span class="math inline">\(\text{data} + \text{model} \rightarrow \text{prediction}\)</span>).</p>
-<p>We can construct this joint density through the use of the following decomposition: <span class="math display">\[
+$$</span><br /> there is nothing controversial here, as long as you accept that you have a good joint model of the world around you that relates test data to training data, <span class="math inline">$p(\dataScalar_*, \dataVector, \inputMatrix, \inputVector_*)$</span> then this conditional distribution can be recovered through standard rules of probability (<span class="math inline">data + model → prediction</span>).</p>
+<p>We can construct this joint density through the use of the following decomposition: <br /><span class="math display">$$
 p(\dataScalar_*|\dataVector, \inputMatrix, \inputVector_*) = \int p(\dataScalar_*|\inputVector_*, \mappingMatrix) p(\mappingMatrix | \dataVector, \inputMatrix) \text{d} \mappingMatrix
-\]</span></p>
-<p>where, for convenience, we are assuming <em>all</em> the parameters of the model are now represented by <span class="math inline">\(\parameterVector\)</span> (which contains <span class="math inline">\(\mappingMatrix\)</span> and <span class="math inline">\(\mappingMatrixTwo\)</span>) and <span class="math inline">\(p(\parameterVector | \dataVector, \inputMatrix)\)</span> is recognised as the posterior density of the parameters given data and <span class="math inline">\(p(\dataScalar_*|\inputVector_*, \parameterVector)\)</span> is the <em>likelihood</em> of an individual test data point given the parameters.</p>
-<p>The likelihood of the data is normally assumed to be independent across the parameters, <span class="math display">\[
-p(\dataVector|\inputMatrix, \mappingMatrix) \prod_{i=1}^\numData p(\dataScalar_i|\inputVector_i, \mappingMatrix),\]</span></p>
-<p>and if that is so, it is easy to extend our predictions across all future, potential, locations, <span class="math display">\[
+$$</span><br /></p>
+<p>where, for convenience, we are assuming <em>all</em> the parameters of the model are now represented by <span class="math inline">$\parameterVector$</span> (which contains <span class="math inline">$\mappingMatrix$</span> and <span class="math inline">$\mappingMatrixTwo$</span>) and <span class="math inline">$p(\parameterVector | \dataVector, \inputMatrix)$</span> is recognised as the posterior density of the parameters given data and <span class="math inline">$p(\dataScalar_*|\inputVector_*, \parameterVector)$</span> is the <em>likelihood</em> of an individual test data point given the parameters.</p>
+<p>The likelihood of the data is normally assumed to be independent across the parameters, <br /><span class="math display">$$
+p(\dataVector|\inputMatrix, \mappingMatrix) = \prod_{i=1}^\numData p(\dataScalar_i|\inputVector_i, \mappingMatrix),$$</span><br /></p>
+<p>and if that is so, it is easy to extend our predictions across all future, potential, locations, <br /><span class="math display">$$
 p(\dataVector_*|\dataVector, \inputMatrix, \inputMatrix_*) = \int p(\dataVector_*|\inputMatrix_*, \parameterVector) p(\parameterVector | \dataVector, \inputMatrix) \text{d} \parameterVector.
-\]</span></p>
-<p>The likelihood is also where the <em>prediction function</em> is incorporated. For example in the regression case, we consider an objective based around the Gaussian density, <span class="math display">\[
+$$</span><br /></p>
+<p>The likelihood is also where the <em>prediction function</em> is incorporated. For example in the regression case, we consider an objective based around the Gaussian density, <br /><span class="math display">$$
 p(\dataScalar_i | \mappingFunction(\inputVector_i)) = \frac{1}{\sqrt{2\pi \dataStd^2}} \exp\left(-\frac{\left(\dataScalar_i - \mappingFunction(\inputVector_i)\right)^2}{2\dataStd^2}\right)
-\]</span></p>
-<p>In short, that is the classical approach to probabilistic inference, and all approaches to Bayesian neural networks fall within this path. For a deep probabilistic model, we can simply take this one stage further and place a probability distribution over the input locations, <span class="math display">\[
+$$</span><br /></p>
+<p>In short, that is the classical approach to probabilistic inference, and all approaches to Bayesian neural networks fall within this path. For a deep probabilistic model, we can simply take this one stage further and place a probability distribution over the input locations, <br /><span class="math display">$$
 p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \parameterVector) p(\parameterVector | \dataVector, \inputMatrix) p(\inputMatrix) p(\inputMatrix_*) \text{d} \parameterVector \text{d} \inputMatrix \text{d}\inputMatrix_*
-\]</span> and we have <em>unsupervised learning</em> (from where we can get deep generative models).</p>
-<h3 id="graphical-models">Graphical Models</h3>
-<p>One way of representing a joint distribution is to consider conditional dependencies between data. Conditional dependencies allow us to factorize the distribution. For example, a Markov chain is a factorization of a distribution into components that represent the conditional relationships between points that are neighboring, often in time or space. It can be decomposed in the following form. <span class="math display">\[p(\dataVector) = p(\dataScalar_\numData | \dataScalar_{\numData-1}) p(\dataScalar_{\numData-1}|\dataScalar_{\numData-2}) \dots p(\dataScalar_{2} | \dataScalar_{1})\]</span></p>
-<object class="svgplot " align data="../slides/diagrams/ml/markov.svg" style>
+$$</span><br /> and we have <em>unsupervised learning</em> (from where we can get deep generative models).</p>
+<h2 id="graphical-models-edit">Graphical Models <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/graphical-models.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/graphical-models.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>One way of representing a joint distribution is to consider conditional dependencies between data. Conditional dependencies allow us to factorize the distribution. For example, a Markov chain is a factorization of a distribution into components that represent the conditional relationships between points that are neighboring, often in time or space. It can be decomposed in the following form. <br /><span class="math display">$$p(\dataVector) = p(\dataScalar_\numData | \dataScalar_{\numData-1}) p(\dataScalar_{\numData-1}|\dataScalar_{\numData-2}) \dots p(\dataScalar_{2} | \dataScalar_{1})$$</span><br /></p>
+<div class="figure">
+<div id="markov-chain-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/markov.svg" style="vertical-align:middle;">
 </object>
-<p>By specifying conditional independencies we can reduce the parameterization required for our data, instead of directly specifying the parameters of the joint distribution, we can specify each set of parameters of the conditonal independently. This can also give an advantage in terms of interpretability. Understanding a conditional independence structure gives a structured understanding of data. If developed correctly, according to causal methodology, it can even inform how we should intervene in the system to drive a desired result <span class="citation">(Pearl, 1995)</span>.</p>
-<p>However, a challenge arise when the data becomes more complex. Consider the graphical model shown below, used to predict the perioperative risk of <em>C Difficile</em> infection following colon surgery <span class="citation">(Steele et al., 2012)</span>.</p>
-<div style="text-align:center">
-<img class="negate" src="../slides/diagrams/bayes-net-diagnosis.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto">
 </div>
-<p>To capture the complexity in the interelationship between the data the graph becomes more complex, and less interpretable.</p>
-<p>Machine learning problems normally involve a prediction function and an objective function. So far in the course we've mainly focussed on the case where the prediction function was over the real numbers, so the codomain of the functions, <span class="math inline">\(\mappingFunction(\inputMatrix)\)</span> was the real numbers or sometimes real vectors. The classification problem consists of predicting whether or not a particular example is a member of a particular class. So we may want to know if a particular image represents a digit 6 or if a particular user will click on a given advert. These are classification problems, and they require us to map to <em>yes</em> or <em>no</em> answers. That makes them naturally discrete mappings.</p>
-<p>In classification we are given an input vector, <span class="math inline">\(\inputVector\)</span>, and an associated label, <span class="math inline">\(\dataScalar\)</span> which either takes the value <span class="math inline">\(-1\)</span> to represent <em>no</em> or <span class="math inline">\(1\)</span> to represent <em>yes</em>.</p>
+<div id="markov-chain-magnify" class="magnify" onclick="magnifyFigure(&#39;markov-chain&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="markov-chain-caption" class="caption-frame">
+<p>Figure: A Markov chain is a simple form of probabilistic graphical model providing a particular decomposition of the joint density.</p>
+</div>
+</div>
+<p>By specifying conditional independencies we can reduce the parameterization required for our data, instead of directly specifying the parameters of the joint distribution, we can specify each set of parameters of the conditonal independently. This can also give an advantage in terms of interpretability. Understanding a conditional independence structure gives a structured understanding of data. If developed correctly, according to causal methodology, it can even inform how we should intervene in the system to drive a desired result <span class="citation">(Pearl 1995)</span>.</p>
+<p>However, a challenge arises when the data becomes more complex. Consider the graphical model shown below, used to predict the perioperative risk of <em>C Difficile</em> infection following colon surgery <span class="citation">(Steele et al. 2012)</span>.</p>
+<div class="figure">
+<div id="c-difficile-bayes-net-diagnosis-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/bayes-net-diagnosis.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="c-difficile-bayes-net-diagnosis-magnify" class="magnify" onclick="magnifyFigure(&#39;c-difficile-bayes-net-diagnosis&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="c-difficile-bayes-net-diagnosis-caption" class="caption-frame">
+<p>Figure: A probabilistic directed graph used to predict the perioperative risk of <em>C Difficile</em> infection following colon surgery. When these models have good predictive performance they are often difficult to interpret. This may be due to the limited representation capability of the conditional densities in the model.</p>
+</div>
+</div>
+<p>To capture the complexity in the interelationship between the data, the graph itself becomes more complex, and less interpretable.</p>
+<p>Machine learning problems normally involve a prediction function and an objective function. So far in the course we've mainly focussed on the case where the prediction function was over the real numbers, so the codomain of the functions, <span class="math inline">$\mappingFunction(\inputMatrix)$</span> was the real numbers or sometimes real vectors. The classification problem consists of predicting whether or not a particular example is a member of a particular class. So we may want to know if a particular image represents a digit 6 or if a particular user will click on a given advert. These are classification problems, and they require us to map to <em>yes</em> or <em>no</em> answers. That makes them naturally discrete mappings.</p>
+<p>In classification we are given an input vector, <span class="math inline">$\inputVector$</span>, and an associated label, <span class="math inline">$\dataScalar$</span> which either takes the value <span class="math inline">−1</span> to represent <em>no</em> or <span class="math inline">1</span> to represent <em>yes</em>.</p>
 <ul>
 <li>Classifiying hand written digits from binary images (automatic zip code reading)</li>
 <li>Detecting faces in images (e.g. digital cameras).</li>
@@ -290,66 +300,85 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \parameterVe
 <li>Classifying type of cancer given gene expression data.</li>
 <li>Categorization of document types (different types of news article on the internet)</li>
 </ul>
-<p>Our focus has been on models where the objective function is inspired by a probabilistic analysis of the problem. In particular we've argued that we answer questions about the data set by placing probability distributions over the various quantities of interest. For the case of binary classification this will normally involve introducing probability distributions for discrete variables. Such probability distributions, are in some senses easier than those for continuous variables, in particular we can represent a probability distribution over <span class="math inline">\(\dataScalar\)</span>, where <span class="math inline">\(\dataScalar\)</span> is binary, with one value. If we specify the probability that <span class="math inline">\(\dataScalar=1\)</span> with a number that is between 0 and 1, i.e. let's say that <span class="math inline">\(P(\dataScalar=1) = \pi\)</span> (here we don't mean <span class="math inline">\(\pi\)</span> the number, we are setting <span class="math inline">\(\pi\)</span> to be a variable) then we can specify the probability distribution through a table.</p>
+<p>Our focus has been on models where the objective function is inspired by a probabilistic analysis of the problem. In particular we've argued that we answer questions about the data set by placing probability distributions over the various quantities of interest. For the case of binary classification this will normally involve introducing probability distributions for discrete variables. Such probability distributions, are in some senses easier than those for continuous variables, in particular we can represent a probability distribution over <span class="math inline">$\dataScalar$</span>, where <span class="math inline">$\dataScalar$</span> is binary, with one value. If we specify the probability that <span class="math inline">$\dataScalar=1$</span> with a number that is between 0 and 1, i.e. let's say that <span class="math inline">$P(\dataScalar=1) = \pi$</span> (here we don't mean <span class="math inline"><em>π</em></span> the number, we are setting <span class="math inline"><em>π</em></span> to be a variable) then we can specify the probability distribution through a table.</p>
 <table>
 <thead>
 <tr class="header">
-<th align="center"><span class="math inline">\(\dataScalar\)</span></th>
+<th align="center"><span class="math inline">$\dataScalar$</span></th>
 <th align="center">0</th>
 <th align="center">1</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center"><span class="math inline">\(P(\dataScalar)\)</span></td>
-<td align="center"><span class="math inline">\((1-\pi)\)</span></td>
-<td align="center"><span class="math inline">\(\pi\)</span></td>
+<td align="center"><span class="math inline">$P(\dataScalar)$</span></td>
+<td align="center"><span class="math inline">(1 − <em>π</em>)</span></td>
+<td align="center"><span class="math inline"><em>π</em></span></td>
 </tr>
 </tbody>
 </table>
-<p>Mathematically we can use a trick to implement this same table. We can use the value <span class="math inline">\(\dataScalar\)</span> as a mathematical switch and write that <span class="math display">\[
+<p>Mathematically we can use a trick to implement this same table. We can use the value <span class="math inline">$\dataScalar$</span> as a mathematical switch and write that <br /><span class="math display">$$
   P(\dataScalar) = \pi^\dataScalar (1-\pi)^{(1-\dataScalar)}
-  \]</span> where our probability distribution is now written as a function of <span class="math inline">\(\dataScalar\)</span>. This probability distribution is known as the <a href="http://en.wikipedia.org/wiki/Bernoulli_distribution">Bernoulli distribution</a>. The Bernoulli distribution is a clever trick for mathematically switching between two probabilities if we were to write it as code it would be better described as</p>
+  $$</span><br /> where our probability distribution is now written as a function of <span class="math inline">$\dataScalar$</span>. This probability distribution is known as the <a href="http://en.wikipedia.org/wiki/Bernoulli_distribution">Bernoulli distribution</a>. The Bernoulli distribution is a clever trick for mathematically switching between two probabilities if we were to write it as code it would be better described as</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> bernoulli(y_i, pi):
     <span class="cf">if</span> y_i <span class="op">==</span> <span class="dv">1</span>:
         <span class="cf">return</span> pi
     <span class="cf">else</span>:
         <span class="cf">return</span> <span class="dv">1</span><span class="op">-</span>pi</code></pre></div>
-<p>If we insert <span class="math inline">\(\dataScalar=1\)</span> then the function is equal to <span class="math inline">\(\pi\)</span>, and if we insert <span class="math inline">\(\dataScalar=0\)</span> then the function is equal to <span class="math inline">\(1-\pi\)</span>. So the function recreates the table for the distribution given above.</p>
+<p>If we insert <span class="math inline">$\dataScalar=1$</span> then the function is equal to <span class="math inline"><em>π</em></span>, and if we insert <span class="math inline">$\dataScalar=0$</span> then the function is equal to <span class="math inline">1 − <em>π</em></span>. So the function recreates the table for the distribution given above.</p>
 <p>The probability distribution is named for <a href="http://en.wikipedia.org/wiki/Jacob_Bernoulli">Jacob Bernoulli</a>, the swiss mathematician. In his book Ars Conjectandi he considered the distribution and the result of a number of 'trials' under the Bernoulli distribution to form the <em>binomial</em> distribution. Below is the page where he considers Pascal's triangle in forming combinations of the Bernoulli distribution to realise the binomial distribution for the outcome of positive trials.</p>
-<p><a href="https://play.google.com/books/reader?id=CF4UAAAAQAAJ&amp;pg=PA87"><img src="../slides/diagrams/books/CF4UAAAAQAAJ-PA87.png" /></a></p>
-<object class="svgplot " align data="../slides/diagrams/ml/bernoulli-urn.svg" style>
-</object>
-<p>Thomas Bayes also described the Bernoulli distribution, only he didn't refer to Jacob Bernoulli's work, so he didn't call it by that name. He described the distribution in terms of a table (think of a <em>billiard table</em>) and two balls. Bayes suggests that each ball can be rolled across the table such that it comes to rest at a position that is <em>uniformly distributed</em> between the sides of the table.</p>
-<p>Let's assume that the first ball is rolled, and that it comes to reset at a position that is <span class="math inline">\(\pi\)</span> times the width of the table from the left hand side.</p>
-<p>Now, we roll the second ball. We are interested if the second ball ends up on the left side (+ve result) or the right side (-ve result) of the first ball. We use the Bernoulli distribution to determine this.</p>
-<p>For this reason in Bayes's distribution there is considered to be <em>aleatoric</em> uncertainty about the distribution parameter.</p>
-<div style="text-align:center">
-<object class="svgplot " align data="../slides/diagrams/ml/bayes-billiard009.svg" style>
+<iframe frameborder="0" scrolling="no" style="border:0px" src="http://books.google.co.uk/books?id=CF4UAAAAQAAJ&amp;pg=PA87&amp;output=embed" , width="700" height="500">
+</iframe>
+<div class="figure">
+<div id="bernoulli-urn-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/bernoulli-urn.svg" style="vertical-align:middle;">
 </object>
 </div>
-
-<h3 id="maximum-likelihood-in-the-bernoulli-distribution">Maximum Likelihood in the Bernoulli Distribution</h3>
-<p>Maximum likelihood in the Bernoulli distribution is straightforward. Let's assume we have data, <span class="math inline">\(\dataVector\)</span> which consists of a vector of binary values of length <span class="math inline">\(n\)</span>. If we assume each value was sampled independently from the Bernoulli distribution, conditioned on the parameter <span class="math inline">\(\pi\)</span> then our joint probability density has the form <span class="math display">\[
+<div id="bernoulli-urn-magnify" class="magnify" onclick="magnifyFigure(&#39;bernoulli-urn&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="bernoulli-urn-caption" class="caption-frame">
+<p>Figure: Jacob Bernoulli described the Bernoulli distribution through an urn in which there are black and red balls.</p>
+</div>
+</div>
+<p>Thomas Bayes also described the Bernoulli distribution, only he didn't refer to Jacob Bernoulli's work, so he didn't call it by that name. He described the distribution in terms of a table (think of a <em>billiard table</em>) and two balls. Bayes suggests that each ball can be rolled across the table such that it comes to rest at a position that is <em>uniformly distributed</em> between the sides of the table.</p>
+<p>Let's assume that the first ball is rolled, and that it comes to reset at a position that is <span class="math inline"><em>π</em></span> times the width of the table from the left hand side.</p>
+<p>Now, we roll the second ball. We are interested if the second ball ends up on the left side (+ve result) or the right side (-ve result) of the first ball. We use the Bernoulli distribution to determine this.</p>
+<p>For this reason in Bayes's distribution there is considered to be <em>aleatoric</em> uncertainty about the distribution parameter.</p>
+{
+<div class="figure">
+<div id="bayes-billiard-9-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/bayes-billiard009.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="bayes-billiard-9-magnify" class="magnify" onclick="magnifyFigure(&#39;bayes-billiard-9&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="bayes-billiard-9-caption" class="caption-frame">
+<p>Figure: Thomas Bayes described the Bernoulli distribution independently of Jacob Bernoulli. He used the analogy of a billiard table. Any ball on the table is given a uniformly random position between the left and right side of the table. The first ball (in the figure) gives the parameter of the Bernoulli distribution. The second ball (in the figure) gives the outcome as either left or right (relative to the first ball). This is the origin of the term Bayesian because the parameter of the distribution is drawn from a probsbility.</p>
+</div>
+</div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;bayes-billiard</span><span class="sc">{counter:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, 
+                            counter<span class="op">=</span>IntSlider(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">9</span>,<span class="dv">1</span>))</code></pre></div>
+<h2 id="maximum-likelihood-in-the-bernoulli-edit">Maximum Likelihood in the Bernoulli <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/bernoulli-maximum-likelihood.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/bernoulli-maximum-likelihood.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>Maximum likelihood in the Bernoulli distribution is straightforward. Let's assume we have data, <span class="math inline">$\dataVector$</span> which consists of a vector of binary values of length <span class="math inline"><em>n</em></span>. If we assume each value was sampled independently from the Bernoulli distribution, conditioned on the parameter <span class="math inline"><em>π</em></span> then our joint probability density has the form <br /><span class="math display">$$
 p(\dataVector|\pi) = \prod_{i=1}^{\numData} \pi^{\dataScalar_i} (1-\pi)^{1-\dataScalar_i}.
-\]</span> As normal in maximum likelihood we consider the negative log likelihood as our objective, <span class="math display">\[\begin{align*}
+$$</span><br /> As normal in maximum likelihood we consider the negative log likelihood as our objective, <br /><span class="math display">$$\begin{align*}
   \errorFunction(\pi)&amp; = -\log p(\dataVector|\pi)\\ 
                      &amp; = -\sum_{i=1}^{\numData} \dataScalar_i \log \pi - \sum_{i=1}^{\numData} (1-\dataScalar_i) \log(1-\pi),
-  \end{align*}\]</span></p>
-<p>and we can derive the gradient with respect to the parameter <span class="math inline">\(\pi\)</span>. <span class="math display">\[\frac{\text{d}\errorFunction(\pi)}{\text{d}\pi} = -\frac{\sum_{i=1}^{\numData} \dataScalar_i}{\pi}  + \frac{\sum_{i=1}^{\numData} (1-\dataScalar_i)}{1-\pi},\]</span></p>
-<p>and as normal we look for a stationary point for the log likelihood by setting this derivative to zero, <span class="math display">\[0 = -\frac{\sum_{i=1}^{\numData} \dataScalar_i}{\pi}  + \frac{\sum_{i=1}^{\numData} (1-\dataScalar_i)}{1-\pi},\]</span> rearranging we form <span class="math display">\[(1-\pi)\sum_{i=1}^{\numData} \dataScalar_i =   \pi\sum_{i=1}^{\numData} (1-\dataScalar_i),\]</span> which implies <span class="math display">\[\sum_{i=1}^{\numData} \dataScalar_i =   \pi\left(\sum_{i=1}^{\numData} (1-\dataScalar_i) + \sum_{i=1}^{\numData} \dataScalar_i\right),\]</span></p>
-<p>and now we recognise that <span class="math inline">\(\sum_{i=1}^{\numData} (1-\dataScalar_i) + \sum_{i=1}^{\numData} \dataScalar_i = \numData\)</span> so we have <span class="math display">\[\pi = \frac{\sum_{i=1}^{\numData} \dataScalar_i}{\numData}\]</span></p>
-<p>so in other words we estimate the probability associated with the Bernoulli by setting it to the number of observed positives, divided by the total length of <span class="math inline">\(\dataScalar\)</span>. This makes intiutive sense. If I asked you to estimate the probability of a coin being heads, and you tossed the coin 100 times, and recovered 47 heads, then the estimate of the probability of heads should be <span class="math inline">\(\frac{47}{100}\)</span>.</p>
-<h3 id="exercise">Exercise</h3>
-<p>Show that the maximum likelihood solution we have found is a <em>minimum</em> for our objective.</p>
-<h3 id="write-your-answer-to-exercise-here">Write your answer to Exercise here</h3>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Use this box for any code you need for the exercise</span>
+  \end{align*}$$</span><br /></p>
+<p>and we can derive the gradient with respect to the parameter <span class="math inline"><em>π</em></span>. <br /><span class="math display">$$\frac{\text{d}\errorFunction(\pi)}{\text{d}\pi} = -\frac{\sum_{i=1}^{\numData} \dataScalar_i}{\pi}  + \frac{\sum_{i=1}^{\numData} (1-\dataScalar_i)}{1-\pi},$$</span><br /></p>
+<p>and as normal we look for a stationary point for the log likelihood by setting this derivative to zero, <br /><span class="math display">$$0 = -\frac{\sum_{i=1}^{\numData} \dataScalar_i}{\pi}  + \frac{\sum_{i=1}^{\numData} (1-\dataScalar_i)}{1-\pi},$$</span><br /> rearranging we form <br /><span class="math display">$$(1-\pi)\sum_{i=1}^{\numData} \dataScalar_i =   \pi\sum_{i=1}^{\numData} (1-\dataScalar_i),$$</span><br /> which implies <br /><span class="math display">$$\sum_{i=1}^{\numData} \dataScalar_i =   \pi\left(\sum_{i=1}^{\numData} (1-\dataScalar_i) + \sum_{i=1}^{\numData} \dataScalar_i\right),$$</span><br /></p>
+<p>and now we recognise that <span class="math inline">$\sum_{i=1}^{\numData} (1-\dataScalar_i) + \sum_{i=1}^{\numData} \dataScalar_i = \numData$</span> so we have <br /><span class="math display">$$\pi = \frac{\sum_{i=1}^{\numData} \dataScalar_i}{\numData}$$</span><br /></p>
+<p>so in other words we estimate the probability associated with the Bernoulli by setting it to the number of observed positives, divided by the total length of <span class="math inline">$\dataScalar$</span>. This makes intiutive sense. If I asked you to estimate the probability of a coin being heads, and you tossed the coin 100 times, and recovered 47 heads, then the estimate of the probability of heads should be <span class="math inline">$\frac{47}{100}$</span>.</p>
 
-</code></pre></div>
-<p><span class="math display">\[
+<p><br /><span class="math display">$$
 \text{posterior} =
 \frac{\text{likelihood}\times\text{prior}}{\text{marginal likelihood}}
-\]</span></p>
+$$</span><br /></p>
 <p>Four components:</p>
 <ol style="list-style-type: decimal">
 <li>Prior distribution</li>
@@ -357,55 +386,55 @@ p(\dataVector|\pi) = \prod_{i=1}^{\numData} \pi^{\dataScalar_i} (1-\pi)^{1-\data
 <li>Posterior distribution</li>
 <li>Marginal likelihood</li>
 </ol>
-<h3 id="naive-bayes-classifiers">Naive Bayes Classifiers</h3>
+<h2 id="naive-bayes-classifiers-edit">Naive Bayes Classifiers <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/naive-bayes.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/naive-bayes.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p><em>Note</em>: Everything we do below is possible using standard packages like <code>scikit-learn</code>, our purpose in this session is to help you understand how those engines are constructed. In practice for an application you should use a library like <code>scikit-learn</code>.</p>
 <p>In probabilistic machine learning we place probability distributions (or densities) over all the variables of interest, our first classification algorithm will do just that. We will consider how to form a classification by making assumptions about the <em>joint</em> density of our observations. We need to make assumptions to reduce the number of parameters we need to optimise.</p>
-<p>In the ideal world, given label data <span class="math inline">\(\dataVector\)</span> and the inputs <span class="math inline">\(\inputMatrix\)</span> we should be able to specify the joint density of all potential values of <span class="math inline">\(\dataVector\)</span> and <span class="math inline">\(\inputMatrix\)</span>, <span class="math inline">\(p(\dataVector, \inputMatrix)\)</span>. If <span class="math inline">\(\inputMatrix\)</span> and <span class="math inline">\(\dataVector\)</span> are our training data, and we can somehow extend our density to incorporate future test data (by augmenting <span class="math inline">\(\dataVector\)</span> with a new observation <span class="math inline">\(\dataScalar^*\)</span> and <span class="math inline">\(\inputMatrix\)</span> with the corresponding inputs, <span class="math inline">\(\inputVector^*\)</span>), then we can answer any given question about a future test point <span class="math inline">\(\dataScalar^*\)</span> given its covariates <span class="math inline">\(\inputVector^*\)</span> by conditioning on the training variables to recover, <span class="math display">\[
+<p>In the ideal world, given label data <span class="math inline">$\dataVector$</span> and the inputs <span class="math inline">$\inputMatrix$</span> we should be able to specify the joint density of all potential values of <span class="math inline">$\dataVector$</span> and <span class="math inline">$\inputMatrix$</span>, <span class="math inline">$p(\dataVector, \inputMatrix)$</span>. If <span class="math inline">$\inputMatrix$</span> and <span class="math inline">$\dataVector$</span> are our training data, and we can somehow extend our density to incorporate future test data (by augmenting <span class="math inline">$\dataVector$</span> with a new observation <span class="math inline">$\dataScalar^*$</span> and <span class="math inline">$\inputMatrix$</span> with the corresponding inputs, <span class="math inline">$\inputVector^*$</span>), then we can answer any given question about a future test point <span class="math inline">$\dataScalar^*$</span> given its covariates <span class="math inline">$\inputVector^*$</span> by conditioning on the training variables to recover, <br /><span class="math display">$$
 p(\dataScalar^*|\inputMatrix, \dataVector, \inputVector^*),
-\]</span></p>
-<p>We can compute this distribution using the product and sum rules. However, to specify this density we must give the probability associated with all possible combinations of <span class="math inline">\(\dataVector\)</span> and <span class="math inline">\(\inputMatrix\)</span>. There are <span class="math inline">\(2^{\numData}\)</span> possible combinations for the vector <span class="math inline">\(\dataVector\)</span> and the probability for each of these combinations must be jointly specified along with the joint density of the matrix <span class="math inline">\(\inputMatrix\)</span>, as well as being able to <em>extend</em> the density for any chosen test location <span class="math inline">\(\inputVector^*\)</span>.</p>
+$$</span><br /></p>
+<p>We can compute this distribution using the product and sum rules. However, to specify this density we must give the probability associated with all possible combinations of <span class="math inline">$\dataVector$</span> and <span class="math inline">$\inputMatrix$</span>. There are <span class="math inline">$2^{\numData}$</span> possible combinations for the vector <span class="math inline">$\dataVector$</span> and the probability for each of these combinations must be jointly specified along with the joint density of the matrix <span class="math inline">$\inputMatrix$</span>, as well as being able to <em>extend</em> the density for any chosen test location <span class="math inline">$\inputVector^*$</span>.</p>
 <p>In naive Bayes we make certain simplifying assumptions that allow us to perform all of the above in practice.</p>
-<h3 id="data-conditional-independence">Data Conditional Independence</h3>
-<p>If we are given model parameters <span class="math inline">\(\paramVector\)</span> we assume that conditioned on all these parameters that all data points in the model are independent. In other words we have, <span class="math display">\[
+<h2 id="data-conditional-independence">Data Conditional Independence</h2>
+<p>If we are given model parameters <span class="math inline">$\paramVector$</span> we assume that conditioned on all these parameters that all data points in the model are independent. In other words we have, <br /><span class="math display">$$
   p(\dataScalar^*, \inputVector^*, \dataVector, \inputMatrix|\paramVector) = p(\dataScalar^*, \inputVector^*|\paramVector)\prod_{i=1}^{\numData} p(\dataScalar_i, \inputVector_i | \paramVector).
-  \]</span> This is a conditional independence assumption because we are not assuming our data are purely independent. If we were to assume that, then there would be nothing to learn about our test data given our training data. We are assuming that they are independent <em>given</em> our parameters, <span class="math inline">\(\paramVector\)</span>. We made similar assumptions for regression, where our parameter set included <span class="math inline">\(\mappingVector\)</span> and <span class="math inline">\(\dataStd^2\)</span>. Given those parameters we assumed that the density over <span class="math inline">\(\dataVector, \dataScalar^*\)</span> was <em>independent</em>. Here we are going a little further with that assumption because we are assuming the <em>joint</em> density of <span class="math inline">\(\dataVector\)</span> and <span class="math inline">\(\inputMatrix\)</span> is independent across the data given the parameters.</p>
+  $$</span><br /> This is a conditional independence assumption because we are not assuming our data are purely independent. If we were to assume that, then there would be nothing to learn about our test data given our training data. We are assuming that they are independent <em>given</em> our parameters, <span class="math inline">$\paramVector$</span>. We made similar assumptions for regression, where our parameter set included <span class="math inline">$\mappingVector$</span> and <span class="math inline">$\dataStd^2$</span>. Given those parameters we assumed that the density over <span class="math inline">$\dataVector, \dataScalar^*$</span> was <em>independent</em>. Here we are going a little further with that assumption because we are assuming the <em>joint</em> density of <span class="math inline">$\dataVector$</span> and <span class="math inline">$\inputMatrix$</span> is independent across the data given the parameters.</p>
 <p>Computing posterior distribution in this case becomes easier, this is known as the 'Bayes classifier'.</p>
-<h3 id="feature-conditional-independence">Feature Conditional Independence</h3>
-<p><span class="math display">\[
+<h2 id="feature-conditional-independence">Feature Conditional Independence</h2>
+<p><br /><span class="math display">$$
 p(\inputVector_i | \dataScalar_i, \paramVector) = \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)
-\]</span> where <span class="math inline">\(\dataDim\)</span> is the dimensionality of our inputs.</p>
-<p>The assumption that is particular to naive Bayes is to now consider that the <em>features</em> are also conditionally independent, but not only given the parameters. We assume that the features are independent given the parameters <em>and</em> the label. So for each data point we have <span class="math display">\[p(\inputVector_i | \dataScalar_i, \paramVector) = \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i,\paramVector)\]</span> where <span class="math inline">\(\dataDim\)</span> is the dimensionality of our inputs.</p>
-<h3 id="marginal-density-for-datascalar_i">Marginal Density for <span class="math inline">\(\dataScalar_i\)</span></h3>
-<p><span class="math display">\[
+$$</span><br /> where <span class="math inline">$\dataDim$</span> is the dimensionality of our inputs.</p>
+<p>The assumption that is particular to naive Bayes is to now consider that the <em>features</em> are also conditionally independent, but not only given the parameters. We assume that the features are independent given the parameters <em>and</em> the label. So for each data point we have <br /><span class="math display">$$p(\inputVector_i | \dataScalar_i, \paramVector) = \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i,\paramVector)$$</span><br /> where <span class="math inline">$\dataDim$</span> is the dimensionality of our inputs.</p>
+<h2 id="marginal-density-for-datascalar_i">Marginal Density for <span class="math inline">$\dataScalar_i$</span></h2>
+<p><br /><span class="math display">$$
 p(\inputScalar_{i,j},\dataScalar_i| \paramVector) = p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i).
-\]</span></p>
-<p>We now have nearly all of the components we need to specify the full joint density. However, the feature conditional independence doesn't yet give us the joint density over <span class="math inline">\(p(\dataScalar_i, \inputVector_i)\)</span> which is required to subsitute in to our data conditional independence to give us the full density. To recover the joint density given the conditional distribution of each feature, <span class="math inline">\(p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)\)</span>, we need to make use of the product rule and combine it with a marginal density for <span class="math inline">\(\dataScalar_i\)</span>,</p>
-<p><span class="math display">\[p(\inputScalar_{i,j},\dataScalar_i| \paramVector) = p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i).\]</span> Because <span class="math inline">\(\dataScalar_i\)</span> is binary the <em>Bernoulli</em> density makes a suitable choice for our prior over <span class="math inline">\(\dataScalar_i\)</span>, <span class="math display">\[p(\dataScalar_i|\pi) = \pi^{\dataScalar_i} (1-\pi)^{1-\dataScalar_i}\]</span> where <span class="math inline">\(\pi\)</span> now has the interpretation as being the <em>prior</em> probability that the classification should be positive.</p>
-<h3 id="joint-density-for-naive-bayes">Joint Density for Naive Bayes</h3>
-<p>This allows us to write down the full joint density of the training data, <span class="math display">\[
+$$</span><br /></p>
+<p>We now have nearly all of the components we need to specify the full joint density. However, the feature conditional independence doesn't yet give us the joint density over <span class="math inline">$p(\dataScalar_i, \inputVector_i)$</span> which is required to subsitute in to our data conditional independence to give us the full density. To recover the joint density given the conditional distribution of each feature, <span class="math inline">$p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)$</span>, we need to make use of the product rule and combine it with a marginal density for <span class="math inline">$\dataScalar_i$</span>,</p>
+<p><br /><span class="math display">$$p(\inputScalar_{i,j},\dataScalar_i| \paramVector) = p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i).$$</span><br /> Because <span class="math inline">$\dataScalar_i$</span> is binary the <em>Bernoulli</em> density makes a suitable choice for our prior over <span class="math inline">$\dataScalar_i$</span>, <br /><span class="math display">$$p(\dataScalar_i|\pi) = \pi^{\dataScalar_i} (1-\pi)^{1-\dataScalar_i}$$</span><br /> where <span class="math inline"><em>π</em></span> now has the interpretation as being the <em>prior</em> probability that the classification should be positive.</p>
+<h2 id="joint-density-for-naive-bayes">Joint Density for Naive Bayes</h2>
+<p>This allows us to write down the full joint density of the training data, <br /><span class="math display">$$
   p(\dataVector, \inputMatrix|\paramVector, \pi) = \prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)
-  \]</span></p>
+  $$</span><br /></p>
 <p>which can now be fit by maximum likelihood. As normal we form our objective as the negative log likelihood,</p>
-<p><span class="math display">\[\begin{align*}
+<p><br /><span class="math display">$$\begin{align*}
 \errorFunction(\paramVector, \pi)&amp; =  -\log p(\dataVector, \inputMatrix|\paramVector, \pi) \\ &amp;= -\sum_{i=1}^{\numData} \sum_{j=1}^{\dataDim} \log p(\inputScalar_{i, j}|\dataScalar_i, \paramVector) -  \sum_{i=1}^{\numData} \log p(\dataScalar_i|\pi),
-\end{align*}\]</span> which we note <em>decomposes</em> into two objective functions, one which is dependent on <span class="math inline">\(\pi\)</span> alone and one which is dependent on <span class="math inline">\(\paramVector\)</span> alone so we have, <span class="math display">\[
+\end{align*}$$</span><br /> which we note <em>decomposes</em> into two objective functions, one which is dependent on <span class="math inline"><em>π</em></span> alone and one which is dependent on <span class="math inline">$\paramVector$</span> alone so we have, <br /><span class="math display">$$
 \errorFunction(\pi, \paramVector) = \errorFunction(\paramVector) + \errorFunction(\pi).
-\]</span> Since the two objective functions are separately dependent on the parameters <span class="math inline">\(\pi\)</span> and <span class="math inline">\(\paramVector\)</span> we can minimize them independently. Firstly, minimizing the Bernoulli likelihood over the labels we have, <span class="math display">\[
+$$</span><br /> Since the two objective functions are separately dependent on the parameters <span class="math inline"><em>π</em></span> and <span class="math inline">$\paramVector$</span> we can minimize them independently. Firstly, minimizing the Bernoulli likelihood over the labels we have, <br /><span class="math display">$$
 \errorFunction(\pi) = -\sum_{i=1}^{\numData}\log p(\dataScalar_i|\pi) = -\sum_{i=1}^{\numData} \dataScalar_i \log \pi - \sum_{i=1}^{\numData} (1-\dataScalar_i) \log (1-\pi)
-\]</span> which we already minimized above recovering <span class="math display">\[
+$$</span><br /> which we already minimized above recovering <br /><span class="math display">$$
 \pi = \frac{\sum_{i=1}^{\numData} \dataScalar_i}{\numData}.
-\]</span></p>
-<p>We now need to minimize the objective associated with the conditional distributions for the features, <span class="math display">\[
+$$</span><br /></p>
+<p>We now need to minimize the objective associated with the conditional distributions for the features, <br /><span class="math display">$$
 \errorFunction(\paramVector) = -\sum_{i=1}^{\numData} \sum_{j=1}^{\dataDim} \log p(\inputScalar_{i, j} |\dataScalar_i, \paramVector),
-\]</span> which necessarily implies making some assumptions about the form of the conditional distributions. The right assumption will depend on the nature of our input data. For example, if we have an input which is real valued, we could use a Gaussian density and we could allow the mean and variance of the Gaussian to be different according to whether the class was positive or negative and according to which feature we were measuring. That would give us the form, <span class="math display">\[
+$$</span><br /> which necessarily implies making some assumptions about the form of the conditional distributions. The right assumption will depend on the nature of our input data. For example, if we have an input which is real valued, we could use a Gaussian density and we could allow the mean and variance of the Gaussian to be different according to whether the class was positive or negative and according to which feature we were measuring. That would give us the form, <br /><span class="math display">$$
 p(\inputScalar_{i, j} | \dataScalar_i,\paramVector) = \frac{1}{\sqrt{2\pi \dataStd_{\dataScalar_i,j}^2}} \exp \left(-\frac{(\inputScalar_{i,j} - \mu_{\dataScalar_i, j})^2}{\dataStd_{\dataScalar_i,j}^2}\right),
-\]</span> where <span class="math inline">\(\dataStd_{1, j}^2\)</span> is the variance of the density for the <span class="math inline">\(j\)</span>th output and the class <span class="math inline">\(\dataScalar_i=1\)</span> and <span class="math inline">\(\dataStd_{0, j}^2\)</span> is the variance if the class is 0. The means can vary similarly. Our parameters, <span class="math inline">\(\paramVector\)</span> would consist of all the means and all the variances for the different dimensions.</p>
-<p>As normal we form our objective as the negative log likelihood, <span class="math display">\[
+$$</span><br /> where <span class="math inline">$\dataStd_{1, j}^2$</span> is the variance of the density for the <span class="math inline"><em>j</em></span>th output and the class <span class="math inline">$\dataScalar_i=1$</span> and <span class="math inline">$\dataStd_{0, j}^2$</span> is the variance if the class is 0. The means can vary similarly. Our parameters, <span class="math inline">$\paramVector$</span> would consist of all the means and all the variances for the different dimensions.</p>
+<p>As normal we form our objective as the negative log likelihood, <br /><span class="math display">$$
 \errorFunction(\paramVector, \pi) = -\log p(\dataVector, \inputMatrix|\paramVector, \pi) = -\sum_{i=1}^{\numData} \sum_{j=1}^{\dataDim} \log p(\inputScalar_{i, j}|\dataScalar_i, \paramVector) - \sum_{i=1}^{\numData} \log p(\dataScalar_i|\pi),
-\]</span> which we note <em>decomposes</em> into two objective functions, one which is dependent on <span class="math inline">\(\pi\)</span> alone and one which is dependent on <span class="math inline">\(\paramVector\)</span> alone so we have, <span class="math display">\[
+$$</span><br /> which we note <em>decomposes</em> into two objective functions, one which is dependent on <span class="math inline"><em>π</em></span> alone and one which is dependent on <span class="math inline">$\paramVector$</span> alone so we have, <br /><span class="math display">$$
 \errorFunction(\pi, \paramVector) = \errorFunction(\paramVector) + \errorFunction(\pi).
-\]</span></p>
-<h3 id="nigerian-nmis-data-1">Nigerian NMIS Data</h3>
+$$</span><br /></p>
+<h2 id="nigerian-nmis-data">Nigerian NMIS Data</h2>
 <p>First we will load in the Nigerian NMIS health data. Our aim will be to predict whether a center has maternal health delivery services given the attributes in the data. We will predict of the number of nurses, the number of doctors, location etc.</p>
 <p>Let's first remind ourselves of the data.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data.head()</code></pre></div>
@@ -485,45 +514,50 @@ y_test <span class="op">=</span> y.iloc[test_indices]<span class="op">==</span><
         Bernoulli[column][<span class="st">&#39;theta_1&#39;</span>] <span class="op">=</span> X_train[column][y_train].<span class="bu">sum</span>()<span class="op">/</span>(y_train).<span class="bu">sum</span>()</code></pre></div>
 <p>We can examine the nature of the distributions we've fitted to the model by looking at the entries in these data frames.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">Bernoulli</code></pre></div>
+<p>The distributions show the parameters of the <em>independent</em> class conditional probabilities for no maternity services. It is a Bernoulli distribution with the parameter, <span class="math inline"><em>π</em></span>, given by (<code>theta_0</code>) for the facilities without maternity services and <code>theta_1</code> for the facilities with maternity services. The parameters whow that, facilities with maternity services also are more likely to have other services such as grid electricity, emergency transport, immunization programs etc.</p>
+<p>The naive Bayes assumption says that the joint probability for these services is given by the product of each of these Bernoulli distributions.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">Gaussian</code></pre></div>
-<p>The final model parameter is the prior probability of the positive class, <span class="math inline">\(\pi\)</span>, which is computed by maximum likelihood.</p>
+<p>We have modelled the numbers in our table with a Gaussian density. Since several of these numbers are counts, a more appropriate distribution might be the Poisson distribution. But here we can see that the average number of nurses, healthworkers and doctors is <em>higher</em> in the facilities with maternal services (<code>mu_1</code>) than those without maternal services (<code>mu_0</code>). There is also a small difference between the mean latitude and longitudes. However, the <em>standard deviation</em> which would be given by the square root of the variance parameters (<code>sigma_0</code> and <code>sigma_1</code>) is large, implying that a difference in latitude and longitude may be due to sampling error. To be sure more analysis would be required.</p>
+<p>The final model parameter is the prior probability of the positive class, <span class="math inline"><em>π</em></span>, which is computed by maximum likelihood.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">prior <span class="op">=</span> <span class="bu">float</span>(y_train.<span class="bu">sum</span>())<span class="op">/</span><span class="bu">len</span>(y_train)</code></pre></div>
-<h3 id="making-predictions">Making Predictions</h3>
-<p>Naive Bayes has given us the class conditional densities: <span class="math inline">\(p(\inputVector_i | \dataScalar_i, \paramVector)\)</span>. To make predictions with these densities we need to form the distribution given by <span class="math display">\[
+<p>The prior probability tells us that slightly more facilities have maternity services than those that don't.</p>
+<h2 id="making-predictions">Making Predictions</h2>
+<p>Naive Bayes has given us the class conditional densities: <span class="math inline">$p(\inputVector_i | \dataScalar_i, \paramVector)$</span>. To make predictions with these densities we need to form the distribution given by <br /><span class="math display">$$
 P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector)
-\]</span> This can be computed by using the product rule. We know that <span class="math display">\[
+$$</span><br /> This can be computed by using the product rule. We know that <br /><span class="math display">$$
 P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector)p(\dataVector, \inputMatrix, \inputVector^*|\paramVector) = p(\dataScalar*, \dataVector, \inputMatrix, \inputVector^*| \paramVector)
-\]</span> implying that <span class="math display">\[
+$$</span><br /> implying that <br /><span class="math display">$$
 P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector) = \frac{p(\dataScalar*, \dataVector, \inputMatrix, \inputVector^*| \paramVector)}{p(\dataVector, \inputMatrix, \inputVector^*|\paramVector)}
-\]</span> and we've already defined <span class="math inline">\(p(\dataScalar^*, \dataVector, \inputMatrix, \inputVector^*| \paramVector)\)</span> using our conditional independence assumptions above <span class="math display">\[
+$$</span><br /> and we've already defined <span class="math inline">$p(\dataScalar^*, \dataVector, \inputMatrix, \inputVector^*| \paramVector)$</span> using our conditional independence assumptions above <br /><span class="math display">$$
 p(\dataScalar^*, \dataVector, \inputMatrix, \inputVector^*| \paramVector) = \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)
-\]</span> The other required density is <span class="math display">\[
+$$</span><br /> The other required density is <br /><span class="math display">$$
 p(\dataVector, \inputMatrix, \inputVector^*|\paramVector)
-\]</span> which can be found from <span class="math display">\[p(\dataScalar^*, \dataVector, \inputMatrix, \inputVector^*| \paramVector)\]</span> using the <em>sum rule</em> of probability, <span class="math display">\[
+$$</span><br /> which can be found from <br /><span class="math display">$$p(\dataScalar^*, \dataVector, \inputMatrix, \inputVector^*| \paramVector)$$</span><br /> using the <em>sum rule</em> of probability, <br /><span class="math display">$$
 p(\dataVector, \inputMatrix, \inputVector^*|\paramVector) = \sum_{\dataScalar^*=0}^1 p(\dataScalar^*, \dataVector, \inputMatrix, \inputVector^*| \paramVector).
-\]</span> Because of our independence assumptions that is simply equal to <span class="math display">\[
+$$</span><br /> Because of our independence assumptions that is simply equal to <br /><span class="math display">$$
 p(\dataVector, \inputMatrix, \inputVector^*| \paramVector) = \sum_{\dataScalar^*=0}^1 \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi).
-\]</span> Substituting both forms in to recover our distribution over the test label conditioned on the training data we have, <span class="math display">\[
+$$</span><br /> Substituting both forms in to recover our distribution over the test label conditioned on the training data we have, <br /><span class="math display">$$
 P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector) = \frac{\prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)}{\sum_{\dataScalar^*=0}^1 \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)}
-\]</span> and we notice that all the terms associated with the training data actually cancel, the test prediction is <em>conditionally independent</em> of the training data <em>given</em> the parameters. This is a result of our conditional independence assumptions over the data points. <span class="math display">\[
+$$</span><br /> and we notice that all the terms associated with the training data actually cancel, the test prediction is <em>conditionally independent</em> of the training data <em>given</em> the parameters. This is a result of our conditional independence assumptions over the data points. <br /><span class="math display">$$
 p(\dataScalar^*| \inputVector^*, \paramVector) = \frac{\prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i,
 \paramVector)p(\dataScalar^*|\pi)}{\sum_{\dataScalar^*=0}^1 \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)}
-\]</span> This formula is also fairly straightforward to implement. First we implement the log probabilities for the Gaussian density.</p>
+$$</span><br /> This formula is also fairly straightforward to implement. First we implement the log probabilities for the Gaussian density.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> log_gaussian(x, mu, sigma2):
     <span class="cf">return</span> <span class="op">-</span><span class="fl">0.5</span><span class="op">*</span> np.log(<span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>sigma2)<span class="op">-</span>((x<span class="op">-</span>mu)<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>(<span class="dv">2</span><span class="op">*</span>sigma2)</code></pre></div>
 <p>Now for any test point we compute the joint distribution of the Gaussian features by <em>summing</em> their log probabilities. Working in log space can be a considerable advantage over computing the probabilities directly: as the number of features we include goes up, because all the probabilities are less than 1, the joint probability will become smaller and smaller, and may be difficult to represent accurately (or even underflow). Working in log space can ameliorate this problem. We can also compute the log probability for the Bernoulli distribution.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> log_bernoulli(x, theta):
     <span class="cf">return</span> x<span class="op">*</span>np.log(theta) <span class="op">+</span> (<span class="dv">1</span><span class="op">-</span>x)<span class="op">*</span>np.log(<span class="dv">1</span><span class="op">-</span>theta)</code></pre></div>
-<h3 id="laplace-smoothing">Laplace Smoothing</h3>
-<p>Before we proceed, let's just pause and think for a moment what will happen if <code>theta</code> here is either zero or one. This will result in <span class="math inline">\(\log 0 = -\infty\)</span> and cause numerical problems. This definitely can happen in practice. If some of the features are rare or very common across the data set then the maximum likelihood solution could find values of zero or one respectively. Such values are problematic because they cause posterior probabilities of class membership of either one or zero. In practice we deal with this using <em>Laplace smoothing</em> (which actually has an interpretation as a Bayesian fit of the Bernoulli distribution. Laplace used an example of the sun rising each day, and a wish to predict the sun rise the following day to describe his idea of smoothing, which can be found at the bottom of following page from Laplace's 'Essai Philosophique ...'</p>
-<p><a href="https://play.google.com/books/reader?id=1YQPAAAAQAAJ&amp;pg=PA16"><img src="../slides/diagrams/books/1YQPAAAAQAAJ-PA16.png" /></a></p>
-<p>Laplace suggests that when computing the probability of an event where a success or failure is rare (he uses an example of the sun rising across the last 5,000 years or 1,826,213 days) that even though only successes have been observed (in the sun rising case) that the odds for tomorrow shouldn't be given as <span class="math display">\[
+<h2 id="laplace-smoothing">Laplace Smoothing</h2>
+<p>Before we proceed, let's just pause and think for a moment what will happen if <code>theta</code> here is either zero or one. This will result in <span class="math inline">log0 = −∞</span> and cause numerical problems. This definitely can happen in practice. If some of the features are rare or very common across the data set then the maximum likelihood solution could find values of zero or one respectively. Such values are problematic because they cause posterior probabilities of class membership of either one or zero. In practice we deal with this using <em>Laplace smoothing</em> (which actually has an interpretation as a Bayesian fit of the Bernoulli distribution. Laplace used an example of the sun rising each day, and a wish to predict the sun rise the following day to describe his idea of smoothing, which can be found at the bottom of following page from Laplace's 'Essai Philosophique ...'</p>
+<iframe frameborder="0" scrolling="no" style="border:0px" src="http://books.google.co.uk/books?id=1YQPAAAAQAAJ&amp;pg=PA16&amp;output=embed" , width="700" height="500">
+</iframe>
+<p>Laplace suggests that when computing the probability of an event where a success or failure is rare (he uses an example of the sun rising across the last 5,000 years or 1,826,213 days) that even though only successes have been observed (in the sun rising case) that the odds for tomorrow shouldn't be given as <br /><span class="math display">$$
 \frac{1,826,213}{1,826,213} = 1
-\]</span> but rather by adding one to the numerator and two to the denominator, <span class="math display">\[
+$$</span><br /> but rather by adding one to the numerator and two to the denominator, <br /><span class="math display">$$
 \frac{1,826,213 + 1}{1,826,213 + 2} = 0.99999945.
-\]</span> This technique is sometimes called a 'pseudocount technique' because it has an intepretation of assuming some observations before you start, it's as if instead of observing <span class="math inline">\(\sum_{i}\dataScalar_i\)</span> successes you have an additional success, <span class="math inline">\(\sum_{i}\dataScalar_i + 1\)</span> and instead of having observed <span class="math inline">\(n\)</span> events you've observed <span class="math inline">\(\numData + 2\)</span>. So we can think of Laplace's idea saying (before we start) that we have 'two observations worth of belief, that the odds are 50/50', because before we start (i.e. when <span class="math inline">\(\numData=0\)</span>) our estimate is 0.5, yet because the effective <span class="math inline">\(n\)</span> is only 2, this estimate is quickly overwhelmed by data. Laplace used ideas like this a lot, and it is known as his 'principle of insufficient reason'. His idea was that in the absence of knowledge (i.e. before we start) we should assume that all possible outcomes are equally likely. This idea has a modern counterpart, known as the <a href="http://en.wikipedia.org/wiki/Principle_of_maximum_entropy">principle of maximum entropy</a>. A lot of the theory of this approach was developed by <a href="http://en.wikipedia.org/wiki/Edwin_Thompson_Jaynes">Ed Jaynes</a>, who according to his erstwhile collaborator and friend, John Skilling, learnt French as an undergraduate by reading the works of Laplace. Although John also related that Jaynes's spoken French was not up to the standard of his scientific French. For me Ed Jaynes's work very much carries on the tradition of Laplace into the modern era, in particular his focus on Bayesian approaches. I'm very proud to have met those that knew and worked with him. It turns out that Laplace's idea also has a Bayesian interpretation (as Laplace understood), it comes from assuming a particular prior density for the parameter <span class="math inline">\(\pi\)</span>, but we won't explore that interpretation for the moment, and merely choose to estimate the probability as, <span class="math display">\[
+$$</span><br /> This technique is sometimes called a 'pseudocount technique' because it has an intepretation of assuming some observations before you start, it's as if instead of observing <span class="math inline">$\sum_{i}\dataScalar_i$</span> successes you have an additional success, <span class="math inline">$\sum_{i}\dataScalar_i + 1$</span> and instead of having observed <span class="math inline"><em>n</em></span> events you've observed <span class="math inline">$\numData + 2$</span>. So we can think of Laplace's idea saying (before we start) that we have 'two observations worth of belief, that the odds are 50/50', because before we start (i.e. when <span class="math inline">$\numData=0$</span>) our estimate is 0.5, yet because the effective <span class="math inline"><em>n</em></span> is only 2, this estimate is quickly overwhelmed by data. Laplace used ideas like this a lot, and it is known as his 'principle of insufficient reason'. His idea was that in the absence of knowledge (i.e. before we start) we should assume that all possible outcomes are equally likely. This idea has a modern counterpart, known as the <a href="http://en.wikipedia.org/wiki/Principle_of_maximum_entropy">principle of maximum entropy</a>. A lot of the theory of this approach was developed by <a href="http://en.wikipedia.org/wiki/Edwin_Thompson_Jaynes">Ed Jaynes</a>, who according to his erstwhile collaborator and friend, John Skilling, learnt French as an undergraduate by reading the works of Laplace. Although John also related that Jaynes's spoken French was not up to the standard of his scientific French. For me Ed Jaynes's work very much carries on the tradition of Laplace into the modern era, in particular his focus on Bayesian approaches. I'm very proud to have met those that knew and worked with him. It turns out that Laplace's idea also has a Bayesian interpretation (as Laplace understood), it comes from assuming a particular prior density for the parameter <span class="math inline"><em>π</em></span>, but we won't explore that interpretation for the moment, and merely choose to estimate the probability as, <br /><span class="math display">$$
 \pi = \frac{\sum_{i=1}^{\numData} \dataScalar_i + 1}{\numData + 2}
-\]</span> to prevent problems with certainty causing numerical issues and misclassifications. Let's refit the Bernoulli features now.</p>
+$$</span><br /> to prevent problems with certainty causing numerical issues and misclassifications. Let's refit the Bernoulli features now.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># fit the Bernoulli with Laplace smoothing.</span>
 <span class="cf">for</span> column <span class="kw">in</span> X_train:
     <span class="cf">if</span> column <span class="kw">in</span> Bernoulli:
@@ -564,62 +598,43 @@ confusion_matrix[<span class="st">&#39;predicted maternity&#39;</span>][<span cl
 confusion_matrix[<span class="st">&#39;predicted no maternity&#39;</span>][<span class="st">&#39;actual maternity&#39;</span>] <span class="op">=</span> (y_test <span class="op">&amp;</span> <span class="op">~</span>(p_y<span class="op">&gt;</span><span class="fl">0.5</span>)).<span class="bu">sum</span>()
 confusion_matrix[<span class="st">&#39;predicted no maternity&#39;</span>][<span class="st">&#39;actual no maternity&#39;</span>] <span class="op">=</span> (<span class="op">~</span>y_test <span class="op">&amp;</span> <span class="op">~</span>(p_y<span class="op">&gt;</span><span class="fl">0.5</span>)).<span class="bu">sum</span>()
 confusion_matrix</code></pre></div>
-<h3 id="exercise-1">Exercise</h3>
-<p>How can you improve your classification, are all the features equally valid? Are some features more helpful than others? What happens if you remove features that appear to be less helpful. How might you select such features?</p>
-<h3 id="write-your-answer-to-exercise-here-1">Write your answer to Exercise here</h3>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Use this box for any code you need for the exercise</span>
 
-</code></pre></div>
-<h3 id="exercise-2">Exercise</h3>
-<p>We have decided to classify positive if probability of maternity is greater than 0.5. This has led us to accidentally classify some facilities as havien't facilities for maternity when in fact they don't. Imagine you wish to ensure that a facility handles maternity. With your test set how low do you have to set the threshold to avoid all the false negatives (i.e. facilities where you predicted there was no maternity, but in actuality there were?</p>
-<h3 id="write-your-answer-to-exercise-here-2">Write your answer to Exercise here</h3>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Use this box for any code you need for the exercise</span>
 
-</code></pre></div>
-<h3 id="making-predictions-1">Making Predictions</h3>
-<p>Naive Bayes has given us the class conditional densities: <span class="math inline">\(p(\inputVector_i | \dataScalar_i, \paramVector)\)</span>. To make predictions with these densities we need to form the distribution given by <span class="math display">\[
+<h2 id="making-predictions-1">Making Predictions</h2>
+<p>Naive Bayes has given us the class conditional densities: <span class="math inline">$p(\inputVector_i | \dataScalar_i, \paramVector)$</span>. To make predictions with these densities we need to form the distribution given by <br /><span class="math display">$$
 P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector)
-\]</span></p>
-<h3 id="exercise-3">Exercise</h3>
-<p>Write down the negative log likelihood of the Gaussian density over a vector of variables <span class="math inline">\(\inputVector\)</span>. Assume independence between each variable. Minimize this objective to obtain the maximum likelihood solution of the form. <span class="math display">\[
-\mu = \frac{\sum_{i=1}^{\numData} \inputScalar_i}{\numData}
-\]</span> <span class="math display">\[
-\dataStd^2 = \frac{\sum_{i=1}^{\numData} (\inputScalar_i - \mu)^2}{\numData}
-\]</span></p>
-<h3 id="write-your-answer-to-exercise-here-3">Write your answer to Exercise here</h3>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Use this box for any code you need for the exercise</span>
+$$</span><br /></p>
 
-</code></pre></div>
-<p>If the input data was <em>binary</em> then we could also make use of the Bernoulli distribution for the features. For that case we would have the form, <span class="math display">\[
+<p>If the input data was <em>binary</em> then we could also make use of the Bernoulli distribution for the features. For that case we would have the form, <br /><span class="math display">$$
 p(\inputScalar_{i, j} | \dataScalar_i,\paramVector) = \theta_{\dataScalar_i, j}^{\inputScalar_{i, j}}(1-\theta_{\dataScalar_i, j})^{(1-\inputScalar_{i,j})},
-\]</span> where <span class="math inline">\(\theta_{1, j}\)</span> is the probability that the <span class="math inline">\(j\)</span>th feature is on if <span class="math inline">\(\dataScalar_i\)</span> is 1.</p>
-<p>In either case, maximum likelihood fitting would proceed in the same way. The objective has the form, <span class="math display">\[
+$$</span><br /> where <span class="math inline"><em>θ</em><sub>1, <em>j</em></sub></span> is the probability that the <span class="math inline"><em>j</em></span>th feature is on if <span class="math inline">$\dataScalar_i$</span> is 1.</p>
+<p>In either case, maximum likelihood fitting would proceed in the same way. The objective has the form, <br /><span class="math display">$$
 \errorFunction(\paramVector) = -\sum_{j=1}^{\dataDim} \sum_{i=1}^{\numData} \log p(\inputScalar_{i,j} |\dataScalar_i, \paramVector),
-\]</span> and if, as above, the parameters of the distributions are specific to each feature vector (we had means and variances for each continuous feature, and a probability for each binary feature) then we can use the fact that these parameters separate into disjoint subsets across the features to write, <span class="math display">\[
+$$</span><br /> and if, as above, the parameters of the distributions are specific to each feature vector (we had means and variances for each continuous feature, and a probability for each binary feature) then we can use the fact that these parameters separate into disjoint subsets across the features to write, <br /><span class="math display">$$
 \begin{align*}
 \errorFunction(\paramVector) &amp;= -\sum_{j=1}^{\dataDim} \sum_{i=1}^{\numData} \log
 p(\inputScalar_{i,j} |\dataScalar_i, \paramVector_j)\\
 &amp; \sum_{j=1}^{\dataDim}
 \errorFunction(\paramVector_j),
 \end{align*}
-\]</span> which means we can minimize our objective on each feature independently.</p>
+$$</span><br /> which means we can minimize our objective on each feature independently.</p>
 <p>These characteristics mean that naive Bayes scales very well with big data. To fit the model we consider each feature in turn, we select the positive class and fit parameters for that class, then we select each negative class and fit features for that class. We have code below.</p>
-<h3 id="naive-bayes-summary">Naive Bayes Summary</h3>
-<p>Naive Bayes is making very simple assumptions about the data, in particular it is modeling the full <em>joint</em> probability of the data set, <span class="math inline">\(p(\dataVector, \inputMatrix | \paramVector, \pi)\)</span> by very strong assumptions about factorizations that are unlikely to be true in practice. The data conditional independence assumption is common, and relies on a rich parameter vector to absorb all the information in the training data. The additional assumption of naive Bayes is that features are conditional independent given the class label <span class="math inline">\(\dataScalar_i\)</span> (and the parameter vector, <span class="math inline">\(\paramVector\)</span>. This is quite a strong assumption. However, it causes the objective function to decompose into parts which can be independently fitted to the different feature vectors, meaning it is very easy to fit the model to large data. It is also clear how we should handle <em>streaming</em> data and <em>missing</em> data. This means that the model can be run 'live', adapting parameters and information as it arrives. Indeed, the model is even capable of dealing with new <em>features</em> that might arrive at run time. Such is the strength of the modeling the joint probability density. However, the factorization assumption that allows us to do this efficiently is very strong and may lead to poor decision boundaries in practice.</p>
-<h3 id="other-reading">Other Reading</h3>
+<h2 id="naive-bayes-summary">Naive Bayes Summary</h2>
+<p>Naive Bayes is making very simple assumptions about the data, in particular it is modeling the full <em>joint</em> probability of the data set, <span class="math inline">$p(\dataVector, \inputMatrix | \paramVector, \pi)$</span> by very strong assumptions about factorizations that are unlikely to be true in practice. The data conditional independence assumption is common, and relies on a rich parameter vector to absorb all the information in the training data. The additional assumption of naive Bayes is that features are conditional independent given the class label <span class="math inline">$\dataScalar_i$</span> (and the parameter vector, <span class="math inline">$\paramVector$</span>. This is quite a strong assumption. However, it causes the objective function to decompose into parts which can be independently fitted to the different feature vectors, meaning it is very easy to fit the model to large data. It is also clear how we should handle <em>streaming</em> data and <em>missing</em> data. This means that the model can be run 'live', adapting parameters and information as it arrives. Indeed, the model is even capable of dealing with new <em>features</em> that might arrive at run time. Such is the strength of the modeling the joint probability density. However, the factorization assumption that allows us to do this efficiently is very strong and may lead to poor decision boundaries in practice.</p>
+<h2 id="other-reading">Other Reading</h2>
 <ul>
 <li>Chapter 5 of <span class="citation">Rogers and Girolami (2011)</span> up to pg 179 (Section 5.1, and 5.2 up to 5.2.2).</li>
 </ul>
-<h3 id="references" class="unnumbered">References</h3>
+<h1 id="references" class="unnumbered">References</h1>
 <div id="refs" class="references">
 <div id="ref-Pearl:causality95">
-<p>Pearl, J., 1995. From Bayesian networks to causal networks, in: Gammerman, A. (Ed.), Probabilistic Reasoning and Bayesian Belief Networks. Alfred Waller, pp. 1–31.</p>
+<p>Pearl, Judea. 1995. “From Bayesian Networks to Causal Networks.” In <em>Probabilistic Reasoning and Bayesian Belief Networks</em>, edited by A. Gammerman, 1–31. Alfred Waller.</p>
 </div>
 <div id="ref-Rogers:book11">
-<p>Rogers, S., Girolami, M., 2011. A first course in machine learning. CRC Press.</p>
+<p>Rogers, Simon, and Mark Girolami. 2011. <em>A First Course in Machine Learning</em>. CRC Press.</p>
 </div>
 <div id="ref-Steele:predictive12">
-<p>Steele, S., Bilchik, A., Eberhardt, J., Kalina, P., Nissan, A., Johnson, E., Avital, I., Stojadinovic, A., 2012. Using machine-learned Bayesian belief networks to predict perioperative risk of clostridium difficile infection following colon surgery. Interact J Med Res 1, e6. <a href="https://doi.org/10.2196/ijmr.2131" class="uri">https://doi.org/10.2196/ijmr.2131</a></p>
+<p>Steele, S, A Bilchik, J Eberhardt, P Kalina, A Nissan, E Johnson, I Avital, and A Stojadinovic. 2012. “Using Machine-Learned Bayesian Belief Networks to Predict Perioperative Risk of Clostridium Difficile Infection Following Colon Surgery.” <em>Interact J Med Res</em> 1 (2): e6. doi:<a href="https://doi.org/10.2196/ijmr.2131">10.2196/ijmr.2131</a>.</p>
 </div>
 </div>
 

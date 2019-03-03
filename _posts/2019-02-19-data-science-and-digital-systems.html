@@ -134,19 +134,19 @@ categories:
 <p>Machine learning has been deployed in Speech Recognition (e.g. Alexa, deep neural networks, convolutional neural networks for speech recognition), in computer vision (e.g. Amazon Go, convolutional neural networks for person recognition and pose detection).</p>
 <p>The field of data science is related to AI, but philosophically different. It arises because we are increasingly creating large amounts of data through <em>happenstance</em> rather than active collection. In the modern era data is laid down by almost all our activities. The objective of data science is to extract insights from this data.</p>
 <p>Classically, in the field of statistics, data analysis proceeds by assuming that the question (or scientific hypothesis) comes before the data is created. E.g., if I want to determine the effectiveness of a particular drug I perform a <em>design</em> for my data collection. I use foundational approaches such as randomization to account for confounders. This made a lot of sense in an era where data had to be actively collected. The reduction in cost of data collection and storage now means that many data sets are available which weren’t collected with a particular question in mind. This is a challenge because bias in the way data was acquired can corrupt the insights we derive. We can perform randomized control trials (or A/B tests) to verify our conclusions, but the opportunity is to use data science techniques to better guide our question selection or even answer a question without the expense of a full randomized control trial (referred to as A/B testing in modern internet parlance).</p>
-<h2 id="natural-and-artificial-intelligence-embodiment-factors-edit">Natural and Artificial Intelligence: Embodiment Factors <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<h2 id="embodiment-factors-edit">Embodiment Factors <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <table>
 <tr>
 <td>
 </td>
 <td align="center">
 <div class="centered centered" style="">
-<img class="" src="../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </td>
 <td align="center">
 <div class="centered centered" style="">
-<img class="" src="../slides/diagrams/ClaudeShannon_MFO3807.jpg" width="25%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="../slides/diagrams/ClaudeShannon_MFO3807.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </td>
 </tr>
@@ -340,8 +340,8 @@ communicate
 </div>
 </div>
 <p>Learning involves moving all the pins to be in the correct position, so that the ball ends up in the right place when it's fallen through the machine. But moving all these pins in hyperspace can be difficult.</p>
-<p>In a hyper-space you have to put a lot of data through the machine for to explore the positions of all the pins. <em>Adversarial examples</em> exploit this idea.</p>
-<p>If you have access to the pinball machine, you can use gradient methods to find a position for the ball in the hyper space where the image looks like one thing, but will be classified as another.</p>
+<p>In a hyper-space you have to put a lot of data through the machine for to explore the positions of all the pins. Even when you feed many millions of data points through the machine, there are likely to be regions in the hyper-space where no ball has passed. When future test data passes through the machine in a new route unusual things can happen.</p>
+<p><em>Adversarial examples</em> exploit this high dimensional space. If you have access to the pinball machine, you can use gradient methods to find a position for the ball in the hyper space where the image looks like one thing, but will be classified as another.</p>
 <p>Probabilistic methods explore more of the space by considering a range of possible paths for the ball through the machine. This helps to make them more data efficient and gives some robustness to adversarial examples.</p>
 <h2 id="data-science-and-professionalisation-edit">Data Science and Professionalisation <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/a-time-for-professionalisation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/a-time-for-professionalisation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>The rise in data science and artificial intelligence technologies has been termed &quot;Industrial Revolution 4.0&quot;, so are we in the midst of an industrial change? Maybe, but if so, it is the first part of the industrial revolution to be named before it has happened. The original industrial revolution occurred between 1760 and 1840, but the term was introduced into English by Arnold Toynbee (1852-1883).</p>
@@ -456,14 +456,18 @@ communicate
 </ul>
 <p>But incentivising sharing requires incentivising collection and collation of data, and the associated credit allocation models.</p>
 <h2 id="data-readiness-levels-edit">Data Readiness Levels <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-readiness-levels.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-readiness-levels.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
-<p><a href="http://inverseprobability.com/2017/01/12/data-readiness-levels">Data Readiness Levels</a> <span class="citation">(Lawrence 2017)</span> are an attempt to develop a language around data quality that can bridge the gap between technical solutions and decision makers such as managers and project planners. The are inspired by Technology Readiness Levels which attempt to quantify the readiness of technologies for deployment.</p>
+<p><a href="http://inverseprobability.com/2017/01/12/data-readiness-levels">Data Readiness Levels</a> <span class="citation">(Lawrence 2017)</span> are an attempt to develop a language around data quality that can bridge the gap between technical solutions and decision makers such as managers and project planners. The are inspired by Technology Readiness Levels which attempt to quantify the readiness of technologies for deployment.b</p>
+<h3 id="three-grades-of-data-readiness-edit">Three Grades of Data Readiness <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/three-grades-of-data-readiness.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/three-grades-of-data-readiness.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
 <p>Data-readiness describes, at its coarsest level, three separate stages of data graduation.</p>
 <ul>
-<li><p>Grade C - accessibility</p></li>
-<li><p>Grade B - validity</p></li>
-<li><p>Grade A - usability</p></li>
+<li>Grade C - accessibility</li>
+<li>Transition: data becomes electronically available</li>
+<li>Grade B - validity</li>
+<li>Transition: pose a question to the data.</li>
+<li>Grade A - usability</li>
 </ul>
-<h2 id="accessibility-grade-c-edit">Accessibility: Grade C <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-readiness-levels.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-readiness-levels.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>The important definitions are at the transition. The move from Grade C data to Grade B data is delimited by the <em>electronic availability</em> of the data. The move from Grade B to Grade A data is delimited by posing a question or task to the data <span class="citation">(Lawrence 2017)</span>.</p>
+<h2 id="accessibility-grade-c">Accessibility: Grade C</h2>
 <p>The first grade refers to the accessibility of data. Most data science practitioners will be used to working with data-providers who, perhaps having had little experience of data-science before, state that they &quot;have the data&quot;. More often than not, they have not verified this. A convenient term for this is &quot;Hearsay Data&quot;, someone has <em>heard</em> that they have the data so they <em>say</em> they have it. This is the lowest grade of data readiness.</p>
 <p>Progressing through Grade C involves ensuring that this data is accessible. Not just in terms of digital accessiblity, but also for regulatory, ethical and intellectual property reasons.</p>
 <h2 id="validity-grade-b">Validity: Grade B</h2>
@@ -967,24 +971,575 @@ communicate
 
 
 
-
-* <https://github.com/SheffieldML/GPy>
-    * <https://github.com/GPflow/GPflow>
-    * <https://github.com/cornellius-gp/gpytorch>
-
-* <https://github.com/SheffieldML/GPyOpt>
+## Technical Contributions <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/the-3ds-enough-talk.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/the-3ds-enough-talk.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 
 
 
-<https://amzn.github.io/emukit-playground/>
-<https://amzn.github.io/emukit/>
+
+
+## GPy: A Gaussian Process Framework in Python <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gpy-software.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gpy-software.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+
+<div class="figure">
+<div class="figure-frame" id="gpy-software-figure">
+<div class="centered " style=""><img class="" src="../slides/diagrams/gp/gpy.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
+</div>
+<div class="magnify" id="gpy-software-magnify" onclick="magnifyFigure('gpy-software')">
+<img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex">
+</div>
+<div class="caption-frame" id="gpy-software-caption">
+Figure: GPy is a BSD licensed software code base for implementing Gaussian process models in Python. It is designed for teaching and modelling. We welcome contributions which can be made through the Github repository <https://github.com/SheffieldML/GPy>
+</div>
+</div>
 
 
 
-<https://github.com/amzn/mxfusion>
-<https://github.com/amzn/xfer>
+
+
+
+GPy is a BSD licensed software code base for implementing Gaussian process models in python. This allows GPs to be combined with a wide variety of software libraries. 
+
+The software itself is available on [GitHub](https://github.com/SheffieldML/GPy) and the team welcomes contributions.
+
+
+
+
+
+The aim for GPy is to be a probabilistic-style programming language, i.e. you specify the model rather than the algorithm. As well as a large range of covariance functions the software allows for non-Gaussian likelihoods, multivariate outputs, dimensionality reduction and approximations for larger data sets.
+
+
+
+
+
+
+
+## MXFusion: Modular Probabilistic Programming on MXNet <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/mxfusion-intro.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/mxfusion-intro.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+
+<div class="figure">
+<div class="figure-frame" id="mxfusion-software-figure">
+<div class="centered " style=""><img class="" src="../slides/diagrams/ml/mxfusion.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
+</div>
+<div class="magnify" id="mxfusion-software-magnify" onclick="magnifyFigure('mxfusion-software')">
+<img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex">
+</div>
+<div class="caption-frame" id="mxfusion-software-caption">
+Figure: MXFusion is a probabilistic programming language targeted specifically at Gaussian process models and combining them with probaiblistic neural network. It is available through the MIT license and we welcome contributions throguh the Github repository <https://github.com/amzn/MXFusion>.
+</div>
+</div>
+
+
+
+
+
+<div class="figure">
+<div class="figure-frame" id="mxfusion-software-logo-figure">
+<table><tr><td width="70%">
+
+* Work by Eric Meissner and Zhenwen Dai.
+* Probabilistic programming.
+* Available on [Github](https://github.com/amzn/mxfusion)
+
+</td><td width="30%"><div class="centered " style=""><img class="" src="../slides/diagrams/mxfusion-logo.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div></td></tr></table>
+</div>
+<div class="magnify" id="mxfusion-software-logo-magnify" onclick="magnifyFigure('mxfusion-software-logo')">
+<img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex">
+</div>
+<div class="caption-frame" id="mxfusion-software-logo-caption">
+Figure: The MXFusion software.
+</div>
+</div>
+
+
+
+
+<!--## PILCO: A Model-based Policy Search 
+
+Common reinforcement learning methods suffer from data inefficiency, which can be a issue in real world applications where gathering sufficiently large amounts of data pose economic issues and may be impossible.  propose a model-based policy search method known as PILCO in part to address this issue. PILCO uses a Gaussian process (GP) for learning the dynamics of the environment and optimizes a parametric policy function using the learned dynamics model.
+
+
+
+
+
+We construct an implementation of PILCO using MXFusion. This implementation follows the main idea of PILCO and has a few enhancements in addition to the published implementation. The enhancements are as follows:
+* **Use Monte Carlo integration instead of moment estimation.** We approximate the expected reward using Monte Carlo integration instead of the proposed moment estimation approach. This removes the bias in the expected reward computation and enables a wide range of choices of kernels and policy functions. In the original work, only RBF and linear kernel and only linear and RBF network policy can be used.
+* **Use automatic differentiation.** Thanks to automatic differentiation, no gradient derivation is needed.
+* **A unified interface of Gaussian process.** MXFusion provides an unified inferface of GP modules. We allows us to easily switch among plan GP, variational sparse GP and stocastic variational GP implementations.
+
+
+
+
+
+This notebook depends on MXNet, MXFusion and Open AI Gym. These packages can be installed into your Python environment by running the following commands.
+
+```bash
+pip install mxnet mxfusion gym
+```
+
+Set the global configuration.
+
+```{.python}
+import os
+os.environ['MXNET_ENGINE_TYPE'] = 'NaiveEngine'
+from mxfusion.common import config
+config.DEFAULT_DTYPE = 'float64'
+%matplotlib inline
+```
+
+
+
+We use the inverted pendulum swingup problem as an example. We use the [Pendulum-v0](https://gym.openai.com/envs/Pendulum-v0/) environment in Open AI Gym. The task is to swing the pendulum up and balance it at the inverted position. This is a classical control problem and is known to be unsolvable with a linear controller.
+
+To solve this problem with PILCO, we need three components:
+
+* Execute a policy in an real environment (an Open AI Gym simulator in this example) and collect data.
+* Fit a GP model as the model for the dynamics of the environment.
+* Optimize the policy given the dynamics model learned from all the data that have been collected so far.
+
+The overall PILCO algorithm is to iterate the above three steps until a policy that can solve the problem is found.
+
+
+## Execute the Environment 
+
+```{.python}
+import gym
+env = gym.make('Pendulum-v0')
+```
+
+The state of the pendulum environment is a 3D vector. The first two dimensions
+are the 2D location of the end point of the pendulum. The third dimension
+encodes the angular speed of the pendulum. The action space is a 1D vector in
+[-2, 2].
+
+We write a helper function for executing the environment with a given policy.
+
+```{.python}
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib import animation
+```
+
+```{.python}
+def run_one_episode(env, policy, initial_state=None, max_steps=200, verbose=False, render=False):
+    """
+    Drives an episode of the OpenAI gym environment using the policy to decide next actions.
+    """
+    observation = env.reset()
+    if initial_state is not None:
+        env.env.state = initial_state
+        observation = env.env._get_obs()
+    env._max_episode_steps = max_steps
+    step_idx = 0
+    done = False
+    total_reward = 0
+    frames = []
+    all_actions = []
+    all_observations = [observation]
+    while not done:
+        if render:
+            frames.append(env.render(mode = 'rgb_array'))
+        if verbose:
+            print(observation)
+        action = policy(observation)
+        observation, reward, done, info = env.step(action)
+        all_observations.append(observation)
+        all_actions.append(action)
+        total_reward += reward
+        step_idx += 1
+        if done or step_idx>=max_steps-1:
+            print("Episode finished after {} timesteps because {}".format(step_idx+1, "'done' reached" if done else "Max timesteps reached"))
+            break
+    if render:
+        fig = plt.figure()
+        ax = fig.gca()
+        fig.tight_layout()
+        patch = ax.imshow(frames[0])
+        ax.axis('off')
+        def animate(i):
+            patch.set_data(frames[i])
+        anim = animation.FuncAnimation(plt.gcf(), animate, frames = len(frames), interval=20)
+        return total_reward, np.array(all_observations, dtype=np.float64,), np.array(all_actions, dtype=np.float64), anim
+    else:
+        return total_reward, np.array(all_observations, dtype=np.float64,), np.array(all_actions, dtype=np.float64)
+```
+
+We first apply a random policy and see how the environment reacts. The random policy uniformly samples in the space of action.
+
+```{.python}
+def random_policy(state):
+    return env.action_space.sample()
+```
+
+
+The animation is generated with the following commands:
+```python
+anim = run_one_episode(env, random_policy, max_steps=500, render=True, verbose=False)[-1]
+
+with open('animation_random_policy.html', 'w') as f:
+    f.write(anim.to_jshtml())
+```
+
+
+## Pendulum 
+
+<div class="figure">
+<div class="figure-frame" id="pendulum-random-policy-figure">
+<iframe src="../slides/diagrams/ml/animation_random_policy.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+</iframe>
+</div>
+<div class="magnify" id="pendulum-random-policy-magnify" onclick="magnifyFigure('pendulum-random-policy')">
+<img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex">
+</div>
+<div class="caption-frame" id="pendulum-random-policy-caption">
+Figure: Random policy for the control of the pendulum.
+</div>
+</div>
+
+
+
+
+The dynamics model of pendulum can be written as
+$$
+p(\dataScalar_{t+1}|\dataScalar_t, a_t)
+$$ 
+where $\dataScalar_t$ is the state vector at the time $t$ and $a_t$ is the action taken at the time $t$.
+
+PILCO uses a Gaussian process to model the above dynamics.
+
+```{.python}
+def prepare_data(state_list, action_list, win_in):
+    """
+    Prepares a list of states and a list of actions as inputs to the Gaussian Process for training.
+    """
+    
+    X_list = []
+    Y_list = []
+    
+    for state_array, action_array in zip(state_list, action_list):
+        # the state and action array shape should be aligned.
+        assert state_array.shape[0]-1 == action_array.shape[0]
+        
+        for i in range(state_array.shape[0]-win_in):
+            Y_list.append(state_array[i+win_in:i+win_in+1])
+            X_list.append(np.hstack([state_array[i:i+win_in].flatten(), action_array[i:i+win_in].flatten()]))
+    X = np.vstack(X_list)
+    Y = np.vstack(Y_list)
+    return X, Y
+```
+
+In this example, we do a maximum likelihood estimate for the model hyper-
+parameters. In `MXFusion`, Gaussian process regression model is available as a
+module, which includes a dediated inference algorithm.
+
+```{.python}
+import mxnet as mx
+from mxfusion import Model, Variable
+from mxfusion.components.variables import PositiveTransformation
+from mxfusion.components.distributions.gp.kernels import RBF
+from mxfusion.modules.gp_modules import GPRegression
+from mxfusion.inference import GradBasedInference, MAP
+```
+
+## Define and fit the model 
+
+```{.python}
+def fit_model(state_list, action_list, win_in, verbose=True):
+    """
+    Fits a Gaussian Process model to the state / action pairs passed in. 
+    This creates a model of the environment which is used during
+    policy optimization instead of querying the environment directly.
+    
+    See mxfusion.gp_modules for additional types of GP models to fit,
+    including Sparse GP and Stochastic Varitional Inference Sparse GP.
+    """
+    X, Y = prepare_data(state_list, action_list, win_in)
+
+    m = Model()
+    m.N = Variable()
+    m.X = Variable(shape=(m.N, X.shape[-1]))
+    m.noise_var = Variable(shape=(1,), transformation=PositiveTransformation(),
+                           initial_value=0.01)
+    m.kernel = RBF(input_dim=X.shape[-1], variance=1, lengthscale=1, ARD=True)
+    m.Y = GPRegression.define_variable(
+        X=m.X, kernel=m.kernel, noise_var=m.noise_var,
+        shape=(m.N, Y.shape[-1]))
+    m.Y.factor.gp_log_pdf.jitter = 1e-6
+
+    infr = GradBasedInference(
+        inference_algorithm=MAP(model=m, observed=[m.X, m.Y]))
+    infr.run(X=mx.nd.array(X, dtype='float64'),
+             Y=mx.nd.array(Y, dtype='float64'),
+             max_iter=1000, learning_rate=0.1, verbose=verbose)
+    return m, infr, X, Y
+```
+
+## Policy 
+
+
+PILCO computes the expected reward of a policy given
+the dynamics model. First, we need to define the parametric form of the policy.
+In this example, we use a neural network with one hidden layer. As the action
+space is [-2, 2], we apply a `tanh` transformation and multiply the come with two.
+This enforces the returned actions stay within the range.
+
+We define a neural network with one hidden layer and and output constrained between [-2,2] for the policy.
+
+```{.python}
+from mxnet.gluon import HybridBlock
+from mxnet.gluon.nn import Dense
+
+class NNController(HybridBlock):
+    """Define a neural network policy network."""
+    def __init__(self, prefix=None, params=None):
+        super(NNController, self).__init__(prefix=prefix, params=params)
+        self.dense1 = Dense(100, in_units=len(env.observation_space.high), dtype='float64', activation='relu')
+        self.dense2 = Dense(1, in_units=100, dtype='float64', activation='tanh')
+
+    def hybrid_forward(self, F, x):
+        out = self.dense2(self.dense1(x))*2 # Scale up the output
+        return out 
+    
+policy = NNController()
+policy.collect_params().initialize(mx.initializer.Xavier(magnitude=1))
+```
+
+To compute the expected reward, we also need to define a reward function. This reward function is defined by us according to the task. The main component is the height of the pendulum. We also penalize the force and the angular momentum.
+
+```{.python}
+class CostFunction(mx.gluon.HybridBlock):
+    """
+    The goal is to get the pendulum upright and stable as quickly as possible.
+
+    Taken from the code for Pendulum.
+    """
+    def hybrid_forward(self, F, state, action):
+        """
+        :param state: [np.cos(theta), np.sin(theta), ~ momentum(theta)]
+        a -> 0 when pendulum is upright, largest when pendulum is hanging down completely.
+        b -> penalty for taking action
+        c -> penalty for pendulum momentum
+        """
+        a_scale = 2.
+        b_scale = .001
+        c_scale = .1
+        a = F.sum(a_scale * (state[:,:,0:1] -1) ** 2, axis=-1)
+        b = F.sum(b_scale * action ** 2, axis=-1)
+        c = F.sum(c_scale * state[:,:,2:3] ** 2, axis=-1)
+        return (a + c + b)
+    
+cost = CostFunction()
+```
+
+The expected reward function can be written as 
+$$
+R = \mathbb{E}_{p(\dataScalar_T, \ldots,
+\dataScalar_0)}\left(\sum_{t=0}^\top r(\dataScalar_t)\right)
+$$
+where $r(\cdot)$ is the reward function, $p(\dataScalar_T, \ldots, \dataScalar_0)$ is the joint distribution when applying the policy to the
+dynamics model:
+$$
+p(\dataScalar_T, \ldots, \dataScalar_0) = p(\dataScalar_0) \prod_{t=1}^\top p(\dataScalar_t|\dataScalar_{t-1}, a_{t-1}),
+$$
+where $a_{t-1} = \pi(\dataScalar_{t-1})$ is the action taken at the time $t-1$, which is the outcome of the policy $\pi(\cdot)$.
+
+The expected reward function is implemented as follows.
+
+## Obtaining the policy gradients 
+
+```{.python}
+from mxfusion.inference.inference_alg import SamplingAlgorithm
+```
+
+```{.python}
+class PolicyUpdateGPParametricApprox(SamplingAlgorithm):
+    """Class for the policy update for PILCO."""
+    def compute(self, F, variables):
+        
+        s_0 = self.initial_state_generator(self.num_samples)
+        a_0 = self.policy(s_0)
+        a_t_plus_1 = a_0
+        x_t = F.expand_dims(F.concat(s_0, a_0, dim=1), axis=1)
+
+        gp = self.model.Y.factor
+        sample_func = gp.draw_parametric_samples(F, variables, self.num_samples, self.approx_samples)
+        cost = 0
+        for t in range(self.n_time_steps):
+            s_t_plus_1 = sample_func(F, x_t)
+            cost = cost + self.cost_function(s_t_plus_1, a_t_plus_1)
+            a_t_plus_1 = mx.nd.expand_dims(self.policy(s_t_plus_1), axis=2)
+            x_t = mx.nd.concat(s_t_plus_1, a_t_plus_1, dim=2)
+        total_cost = F.mean(cost)
+        return total_cost, total_cost
+```
+
+We optimize the policy with respect to the expected reward by using a gradient optimizer.
+
+```{.python}
+from mxfusion.inference import GradTransferInference
+```
+
+```{.python}
+def optimize_policy(policy, cost_func, model, infr, model_data_X, model_data_Y,
+                    initial_state_generator, num_grad_steps,
+                    learning_rate=1e-2, num_time_steps=100, 
+                    num_samples=10, verbose=True):
+    """
+    Takes as primary inputs a policy, cost function, and trained model.
+    Optimizes the policy for num_grad_steps number of iterations.
+    """
+    mb_alg = PolicyUpdateGPParametricApprox(
+        model=model, observed=[model.X, model.Y], cost_function=cost_func,
+        policy=policy, n_time_steps=num_time_steps,
+        initial_state_generator=initial_state_generator,
+        num_samples=num_samples)
+
+    infr_pred = GradTransferInference(
+        mb_alg, infr_params=infr.params, train_params=policy.collect_params())
+    infr_pred.run(
+        max_iter=num_grad_steps,
+        X=mx.nd.array(model_data_X, dtype='float64'),
+        Y=mx.nd.array(model_data_Y, dtype='float64'),
+        verbose=verbose, learning_rate=learning_rate)
+    return policy
+```
+
+## The Loop 
+
+
+We need to define a function that provides random initial states.
+
+```{.python}
+def initial_state_generator(num_initial_states):
+    """
+    Starts from valid states by drawing theta and momentum
+    then computing np.cos(theta) and np.sin(theta) for state[0:2].s
+    """
+    return mx.nd.array(
+        [env.observation_space.sample() for i in range(num_initial_states)],
+        dtype='float64')
+```
+
+
+```{.python}
+num_episode = 20 # how many model fit + policy optimization episodes to run
+num_samples = 100 # how many sample trajectories the policy optimization loop uses
+num_grad_steps = 1000 # how many gradient steps the optimizer takes per episode
+num_time_steps = 100 # how far to roll out each sample trajectory
+learning_rate = 1e-3 # learning rate for the policy optimization
+
+all_states = []
+all_actions = []
+```
+
+```{.python}
+for i_ep in range(num_episode):
+    # Run an episode and collect data.
+    if i_ep == 0:
+        policy_func = lambda x: env.action_space.sample()
+    else:
+        policy_func = lambda x: policy(mx.nd.expand_dims(mx.nd.array(x, dtype='float64'), axis=0)).asnumpy()[0]
+    total_reward, states, actions = run_one_episode(
+        env, policy_func, max_steps=num_time_steps)
+    all_states.append(states)
+    all_actions.append(actions)
+
+    # Fit a model.
+    model, infr, model_data_X, model_data_Y = fit_model(
+        all_states, all_actions, win_in=1, verbose=True)
+
+    # Optimize the policy.
+    policy = optimize_policy(
+        policy, cost, model, infr, model_data_X, model_data_Y,
+        initial_state_generator, num_grad_steps=num_grad_steps,
+        num_samples=num_samples, learning_rate=learning_rate,
+        num_time_steps=num_time_steps)
+```
+
+
+
+Policy after the first episode (random exploration):
+
+<div class="figure">
+<div class="figure-frame" id="pilco-pendulum-policy-iter-0-figure">
+<iframe src="../slides/diagrams/ml/animation_policy_iter_0.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+</iframe>
+</div>
+<div class="magnify" id="pilco-pendulum-policy-iter-0-magnify" onclick="magnifyFigure('pilco-pendulum-policy-iter-0')">
+<img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex">
+</div>
+<div class="caption-frame" id="pilco-pendulum-policy-iter-0-caption">
+Figure: PILCO policy for control of the animation after first episode (using random exploration).
+</div>
+</div>
+
+
+
+Policy after the 5th episode:
+
+<div class="figure">
+<div class="figure-frame" id="pilco-pendulum-policy-iter-0-figure">
+<iframe src="../slides/diagrams/ml/animation_policy_iter_4.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+</iframe>
+</div>
+<div class="magnify" id="pilco-pendulum-policy-iter-0-magnify" onclick="magnifyFigure('pilco-pendulum-policy-iter-0')">
+<img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex">
+</div>
+<div class="caption-frame" id="pilco-pendulum-policy-iter-0-caption">
+Figure: PILCO policy for control of the animation after the fifth episode.
+</div>
+</div>
+
+
+
+[https://github.com/amzn/mxfusion](https://github.com/amzn/mxfusion)
+
+
+
+
+
 -->
-<h2 id="outlook-for-machine-learning">Outlook for Machine Learning</h2>
+<div class="figure">
+<div id="xfer-software-logo-figure" class="figure-frame">
+<table>
+<tr>
+<td width="70%">
+<ul>
+<li>Work by Andreas Damianou, Pablo Moreno, Keerthana Elango, Jordan Massiah, Cliff McCollum</li>
+<li>Available on <a href="https://github.com/amzn/xfer">Github</a></li>
+</ul>
+</td>
+<td width="30%">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/ml/xfer-logo.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="xfer-software-logo-magnify" class="magnify" onclick="magnifyFigure(&#39;xfer-software-logo&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="xfer-software-logo-caption" class="caption-frame">
+<p>Figure: The Xfer software.</p>
+</div>
+</div>
+<ul>
+<li><a href="https://xfer.readthedocs.io/en/master/demos/xfer-overview.html">Deep learning transfer tutorial</a>.</li>
+</ul>
+<h2 id="emukit-edit">Emukit <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emukit-software.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emukit-software.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="figure">
+<div id="emukit-software-page-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/uq/emukit-software-page.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="emukit-software-page-magnify" class="magnify" onclick="magnifyFigure(&#39;emukit-software-page&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="emukit-software-page-caption" class="caption-frame">
+<p>Figure: The Emukit software is a set of software tools for emulation and surrogate modeling. <a href="https://amzn.github.io/emukit/" class="uri">https://amzn.github.io/emukit/</a></p>
+</div>
+</div>
+<p>The aim is to provide a suite where different approaches to emulation are assimilated under one roof. The current version of Emukit includes <em>multi-fidelity emulation</em> for build surrogate models when data is obtained from multiple information sources that have different fidelity and/or cost; <em>Bayesian optimisation</em> for optimising physical experiments and tune parameters of machine learning algorithms or other computational simulations; <em>experimental design and active learning</em>: design the most informative experiments and perform active learning with machine learning models; <em>sensitivity analysis</em>: analyse the influence of inputs on the outputs of a given system; and <em>Bayesian quadrature</em>: efficiently compute the integrals of functions that are expensive to evaluate.</p>
+<p>--&gt; ## Outlook for Machine Learning</p>
 <p>Machine learning has risen to prominence as an approach to <em>scaling</em> our activities. For us to continue to automate in the manner we have over the last two decades, we need to make more use of computer-based automation. Machine learning is allowing us to automate processes that were out of reach before.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>We operate in a technologically evolving environment. Machine learning is becoming a key component in our decision making capabilities, our intelligence and strategic command. However, technology drove changes in battlefield strategy. From the stalemate of the first world war to the tank-dominated Blitzkrieg of the second, to the asymmetric warfare of the present. Our technology, tactics and strategies are also constantly evolving. Machine learning is part of that evolution solution, but the main challenge is not to become so fixated on the tactics of today that we miss the evolution of strategy that the technology is suggesting.</p>
