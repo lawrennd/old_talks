@@ -22,11 +22,11 @@ point 3: $\inputScalar = 2$, $\dataScalar=2.5$
 $$2.5 = 2m + c$$
 }
 
-\notes{\figure{\includediagram{../slides/diagrams/ml/over_determined_system004}{40%}}{A third observation of data is inconsistent with the solution dictated by the first two observations}{over-determined-system-4}
+\notes{\figure{\includediagram{../slides/diagrams/ml/over_determined_system004}{40%}}{A third observation of data is inconsistent with the solution dictated by the first two observations}{over-determined-system-4}}
 
 \notes{Now there are three candidate lines, each consistent with our data.}
 
-\notes{\figure{\includediagram{../slides/diagrams/ml/over_determined_system007}{40%}}{Three solutions to the problem, each consistent with two points of the three observations}{over-determined-system-7}
+\notes{\figure{\includediagram{../slides/diagrams/ml/over_determined_system007}{40%}}{Three solutions to the problem, each consistent with two points of the three observations}{over-determined-system-7}}
 
 \notes{This is known as an *overdetermined* system because there are more data than we need to determine our parameters. The problem arises because the model is a simplification of the real world, and the data we observe is therefore inconsistent with our model.}
 
