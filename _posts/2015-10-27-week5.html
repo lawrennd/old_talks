@@ -85,13 +85,13 @@ R(\mappingVector) = \int L(\dataScalar, \inputScalar, \mappingVector) \mathbb{P}
 \text{d}\inputScalar.
 $$</span><br /> Of course, in practice, this value can't be computed <em>but</em> it serves as a reminder of what it is we are aiming to minimize and under certain circumstances it can be approximated.</p>
 <h2 id="sample-based-approximations">Sample Based Approximations</h2>
-<p>A sample based approximation to an expectation involves replacing the true expectation with a sum over samples from the distribution. <br /><span class="math display">$$
-  \int \mappingFunction(z) p(z) \text{d}\dataScalar
-  \text{d}z\approx \frac{1}{s}\sum_{i=1}^s \mappingFunction(z_i).
-  $$</span><br /> if <span class="math inline">{<em>z</em><sub><em>i</em></sub>}<sub><em>i</em> = 1</sub><sup><em>s</em></sup></span> are a set of <span class="math inline"><em>s</em></span> independent and identically distributed samples from the distribution <span class="math inline"><em>p</em>(<em>z</em>)</span>. This approximation becomes better for larger <span class="math inline"><em>s</em></span>, although the <em>rate of convergence</em> to the true integral will be very dependent on the distribution <span class="math inline"><em>p</em>(<em>z</em>)</span> <em>and</em> the function <span class="math inline">$\mappingFunction(z)$</span>.</p>
+<p>A sample based approximation to an expectation involves replacing the true expectation with a sum over samples from the distribution.</p>
+<p><br /><span class="math display">$$
+\int \mappingFunction(z) p(z) \text{d}z\approx \frac{1}{s}\sum_{i=1}^s \mappingFunction(z_i).
+$$</span><br /> if <span class="math inline">{<em>z</em><sub><em>i</em></sub>}<sub><em>i</em> = 1</sub><sup><em>s</em></sup></span> are a set of <span class="math inline"><em>s</em></span> independent and identically distributed samples from the distribution <span class="math inline"><em>p</em>(<em>z</em>)</span>. This approximation becomes better for larger <span class="math inline"><em>s</em></span>, although the <em>rate of convergence</em> to the true integral will be very dependent on the distribution <span class="math inline"><em>p</em>(<em>z</em>)</span> <em>and</em> the function <span class="math inline">$\mappingFunction(z)$</span>.</p>
 <p>That said, this means we can approximate our true integral with the sum, <br /><span class="math display">$$
-  R(\mappingVector) \approx \frac{1}{\numData}\sum_{i=1}^{\numData} L(\dataScalar_i, \inputScalar_i, \mappingVector),
-  $$</span><br /></p>
+R(\mappingVector) \approx \frac{1}{\numData}\sum_{i=1}^{\numData} L(\dataScalar_i, \inputScalar_i, \mappingVector).
+$$</span><br /></p>
 <p>if <span class="math inline">$\dataScalar_i$</span> and <span class="math inline">$\inputScalar_i$</span> are independent samples from the true distribution <span class="math inline">$\mathbb{P}(\dataScalar, \inputScalar)$</span>. Minimizing this sum directly is known as <em>empirical risk minimization</em>. The sum of squares error we have been using can be recovered for this case by considering a <em>squared loss</em>, <br /><span class="math display">$$
 L(\dataScalar, \inputScalar, \mappingVector) = (\dataScalar-\mappingVector^\top\boldsymbol{\phi}(\inputScalar))^2,
 $$</span><br /> which gives an empirical risk of the form <br /><span class="math display">$$

@@ -401,13 +401,12 @@ R(\mappingVector) = \int L(\dataScalar, \inputScalar, \mappingVector) \mathbb{P}
 <section id="sample-based-approximations" class="slide level3">
 <h3>Sample Based Approximations</h3>
 <ul>
-<li>Sample based approximation: replace true expectation with sum over samples. <span class="math display">\[
-  \int \mappingFunction(z) p(z) \text{d}\dataScalar
-  \text{d}z\approx \frac{1}{s}\sum_{i=1}^s \mappingFunction(z_i).
-  \]</span></li>
-<li>Allows us to approximate true integral with sum <span class="math display">\[
-  R(\mappingVector) \approx \frac{1}{\numData}\sum_{i=1}^{\numData} L(\dataScalar_i, \inputScalar_i, \mappingVector),
-  \]</span></li>
+<li><p>Sample based approximation: replace true expectation with sum over samples. <span class="math display">\[
+\int \mappingFunction(z) p(z) \text{d}z\approx \frac{1}{s}\sum_{i=1}^s \mappingFunction(z_i).
+\]</span></p></li>
+<li><p>Allows us to approximate true integral with a sum <span class="math display">\[
+R(\mappingVector) \approx \frac{1}{\numData}\sum_{i=1}^{\numData} L(\dataScalar_i, \inputScalar_i, \mappingVector).
+\]</span></p></li>
 </ul>
 </section>
 <section id="empirical-risk-minimization" class="slide level3">
