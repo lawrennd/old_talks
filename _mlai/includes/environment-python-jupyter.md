@@ -46,4 +46,4 @@ in a code box?
 Once you've had a play with the code we can load in some data
 using the `pandas` library for data analysis.}
 
-\editme
+\endif
