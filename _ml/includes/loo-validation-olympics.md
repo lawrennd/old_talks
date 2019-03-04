@@ -1,11 +1,13 @@
 \ifndef{looValidationOlympics}
 \define{looValidationOlympics}
+
+\include{_ml/includes/olympic-marathon-data.md}
+
 \editme
 
 \subsection{Leave One Out Validation}
 
 \newslide{Leave One Out Error}
-
 \slides{
 * Take training set and remove one point.
 * Train on the remaining data.

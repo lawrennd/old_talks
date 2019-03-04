@@ -35,4 +35,6 @@ transition: None
 
 * Section 1.5 of @Rogers:book11
 
-\subsection{References}
+\thanks
+
+\references

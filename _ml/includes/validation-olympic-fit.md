@@ -1,6 +1,11 @@
 \ifndef{validationOlympicFit}
 \define{validationOlympicFit}
+
+\include{_ml/includes/olympic-marathon-data.md}
+
 \editme
+
+\subsection{Validation on the Olympic Marathon Data}
 
 \notes{The first thing we'll do is fit a standard linear model to the data. We recall from previous lectures and lab classes that to do this we need to solve the system
 $$

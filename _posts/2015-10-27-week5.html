@@ -100,10 +100,11 @@ R(\mappingVector) \approx \frac{1}{\numData} \sum_{i=1}^{\numData}
 $$</span><br /> which up to the constant <span class="math inline">$\frac{1}{\numData}$</span> is identical to the objective function we have been using so far.</p>
 <h2 id="estimating-risk-through-validation-edit">Estimating Risk through Validation <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/empirical-risk-minimization.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/empirical-risk-minimization.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Unfortuantely, minimising the empirial risk only guarantees something about our performance on the training data. If we don't have enough data for the approximation to the risk to be valid, then we can end up performing significantly worse on test data. Fortunately, we can also estimate the risk for test data through estimating the risk for unseen data. The main trick here is to 'hold out' a portion of our data from training and use the models performance on that sub-set of the data as a proxy for the true risk. This data is known as 'validation' data. It contrasts with test data, because its values are known at the model design time. However, in contrast to test date we don't use it to fit our model. This means that it doesn't exhibit the same bias that the empirical risk does when estimating the true risk.</p>
+<h2 id="validation-edit">Validation <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/validation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/validation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>In this lab we will explore techniques for model selection that make use of validation data. Data that isn't seen by the model in the learning (or fitting) phase, but is used to <em>validate</em> our choice of model from amoungst the different designs we have selected.</p>
 <p>In machine learning, we are looking to minimise the value of our objective function <span class="math inline"><em>E</em></span> with respect to its parameters <span class="math inline">$\mappingVector$</span>. We do this by considering our training data. We minimize the value of the objective function as it's observed at each training point. However we are really interested in how the model will perform on future data. For evaluating that we choose to <em>hold out</em> a portion of the data for evaluating the quality of the model.</p>
 <p>We will review the different methods of model selection on the Olympics marathon data. Firstly we import the Olympic marathon data.</p>
-<h2 id="olympic-marathon-data-edit">Olympic Marathon Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/olympic-marathon-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/olympic-marathon-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<h2 id="olympic-marathon-data">Olympic Marathon Data</h2>
 <table>
 <tr>
 <td width="70%">
@@ -164,6 +165,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </div>
 <p>Things to notice about the data include the outlier in 1904, in this year, the olympics was in St Louis, USA. Organizational problems and challenges with dust kicked up by the cars following the race meant that participants got lost, and only very few participants completed.</p>
 <p>More recent years see more consistently quick marathons.</p>
+<h2 id="validation-on-the-olympic-marathon-data-edit">Validation on the Olympic Marathon Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/validation-olympic-fit.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/validation-olympic-fit.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>The first thing we'll do is fit a standard linear model to the data. We recall from previous lectures and lab classes that to do this we need to solve the system <br /><span class="math display">$$
 \basisMatrix^\top \basisMatrix \mappingVector = \basisMatrix^\top \dataVector
 $$</span><br /> for <span class="math inline">$\mappingVector$</span> and use the resulting vector to make predictions at the training points and test points, <br /><span class="math display">$$
@@ -174,7 +176,7 @@ $$</span><br /> by substituting in the prediction in vector form we have <br /><
 E(\mappingVector) =  (\dataVector - \mappingFunctionVector)^\top(\dataVector - \mappingFunctionVector)
 $$</span><br /></p>
 
-<h2 id="polynomial-fit-training-error-edit">Polynomial Fit: Training Error <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/validation-olympic-fit.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/validation-olympic-fit.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<h2 id="polynomial-fit-training-error">Polynomial Fit: Training Error</h2>
 
 <h2 id="polynomial-fits-to-olympics-data">Polynomial Fits to Olympics Data</h2>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
@@ -194,13 +196,24 @@ num_data <span class="op">=</span> x.shape[<span class="dv">0</span>]</code></pr
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;olympic_LM_polynomial_num_basis</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>, 
                             directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, 
                             num_basis<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, max_basis, <span class="dv">1</span>))</code></pre></div>
-<h2 id="hold-out-validation-edit">Hold Out Validation <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/hold-out-validation-olympics.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/hold-out-validation-olympics.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
-<h2 id="overfitting">Overfitting</h2>
+<h2 id="hold-out-validation-on-olympic-marathon-data-edit">Hold Out Validation on Olympic Marathon Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/hold-out-validation-olympics.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/hold-out-validation-olympics.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
 <span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;olympic_val_extra_LM_polynomial_num_basis</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>, 
                             directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, 
                             num_basis<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, max_basis, <span class="dv">1</span>))</code></pre></div>
+<div class="figure">
+<div id="olympic-val-extra-LM-polynomial-num-basis-26-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_val_extra_LM_polynomial_num_basis026.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="olympic-val-extra-LM-polynomial-num-basis-26-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-val-extra-LM-polynomial-num-basis-26&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="olympic-val-extra-LM-polynomial-num-basis-26-caption" class="caption-frame">
+<p>Figure: Olympic marathon data with validation error for extrapolation.</p>
+</div>
+</div>
 <h2 id="extrapolation">Extrapolation</h2>
 <h2 id="interpolation">Interpolation</h2>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
@@ -208,6 +221,18 @@ num_data <span class="op">=</span> x.shape[<span class="dv">0</span>]</code></pr
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;olympic_val_inter_LM_polynomial_num_basis</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>, 
                             directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, 
                             num_basis<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, max_basis, <span class="dv">1</span>))</code></pre></div>
+<div class="figure">
+<div id="olympic-val-inter-LM-polynomial-num-basis-26-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_val_inter_LM_polynomial_num_basis026.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="olympic-val-inter-LM-polynomial-num-basis-26-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-val-inter-LM-polynomial-num-basis-26&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="olympic-val-inter-LM-polynomial-num-basis-26-caption" class="caption-frame">
+<p>Figure: Olympic marathon data with validation error for interpolation.</p>
+</div>
+</div>
 <h2 id="choice-of-validation-set">Choice of Validation Set</h2>
 <h2 id="hold-out-data">Hold Out Data</h2>
 <p>You have a conclusion as to which model fits best under the training error, but how do the two models perform in terms of validation? In this section we consider <em>hold out</em> validation. In hold out validation we remove a portion of the training data for <em>validating</em> the model on. The remaining data is used for fitting the model (training). Because this is a time series prediction, it makes sense for us to hold out data at the end of the time series. This means that we are validating on future predictions. We will hold out data from after 1980 and fit the model to the data before 1980.</p>
@@ -391,7 +416,7 @@ ylim<span class="op">=</span><span class="va">None</span>
 <ul>
 <li>Section 1.5 of <span class="citation">Rogers and Girolami (2011)</span></li>
 </ul>
-<h2 id="references" class="unnumbered">References</h2>
+<h1 id="references" class="unnumbered">References</h1>
 <div id="refs" class="references">
 <div id="ref-Rogers:book11">
 <p>Rogers, Simon, and Mark Girolami. 2011. <em>A First Course in Machine Learning</em>. CRC Press.</p>

@@ -1,5 +1,8 @@
 \ifndef{kFoldValidationOlympics}
 \define{kFoldValidationOlympics}
+
+\include{_ml/includes/olympic-marathon-data.md}
+
 \editme
 
 \subsection{$k$-fold Cross Validation}
