@@ -1,18 +1,18 @@
 \ifndef{welcome}
 \define{welcome}
 \editme
-\newslide{Course Text}
 
-\slides{
+\subsection{Course Text}
 
-\includeimg{../slides/diagrams/mlai/a-first-course-in-machine-learning.jpg}{40%}{}{centre}
+\figure{\includejpg{../slides/diagrams/mlai/a-first-course-in-machine-learning}{40%}}{The main course text is "A First Course in Machine Learning" by @Rogers:book11.}{a-first-course-in-machine-learning}
 
-\alignright{@Rogers:book11}}
+\slides{\alignright{@Rogers:book11}}}
 
-\newslide{Course Text}
-\slides{\includeimg{../slides/diagrams/mlai/978-0-387-31073-2.png}{40%}{}{centre}
+\newslide{Additional Course Text}
 
-\alignright{@Bishop:book06}}
+\figure{\includepng{../slides/diagrams/mlai/978-0-387-31073-2}{40%}}{For additional reading we will regularly refer to "Pattern Recognition and Machine Learning" by @Bishop:book06}{pattern-recognition-and-machine-learning}
+
+\slides{\alignright{@Bishop:book06}}
 
 \notes{Welcome to the Machine Learning and Adaptive
 Intelligence course. In this course we will introduce the basic concepts of
@@ -33,21 +33,18 @@ analysis, testing remains very important, but the design is often evolving. The
 design evolves through a process known as *exploratory data analysis*. You will
 learn some of the techniques of exploratory data analysis in this course.}
 
-\notes{A
-particular difference between classical software engineering and data analysis
+\notes{A particular difference between classical software engineering and data analysis
 is the way in which programs are run. Classically we spend a deal of time
 working with a text editor, writing code. Compilations are done on a regular
 basis and aspects of the code are tested (perhaps with unit tests).}
 
-\notes{Data
-analysis is more like coding in a debugger. In a debugger (particularly a visual
+\notes{Data analysis is more like coding in a debugger. In a debugger (particularly a visual
 debugger) you interact with the data stored in the memory of the computer to try
 and understand what is happening in the computer, you need to understand exactly
 what your bug is: you often have a fixed idea of what the program is trying to
 do, you are just struggling to find out why it isn't doing it.}
 
-\notes{Naturally,
-debugging is an important part of data analysis also, but in some sense it can
+\notes{Naturally, debugging is an important part of data analysis also, but in some sense it can
 be seen as its entire premise. You load in a data set into a computer that you
 don't understand, your entire objective is to understand the data. This is best
 done by interogating the data to visualise it or summarize it, just like in a
