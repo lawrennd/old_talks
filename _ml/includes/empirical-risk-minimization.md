@@ -3,7 +3,6 @@
 \editme
 
 \newslide{Empirical Risk Minimization}
-
 \slides{
 * If the loss is the *squared loss*}\notes{if $\dataScalar_i$ and $\inputScalar_i$ are independent samples from the true distribution $\mathbb{P}(\dataScalar, \inputScalar)$. Minimizing this sum directly is known as *empirical risk minimization*. The sum of squares error we have been using can be recovered for this case by considering a *squared loss*,}
 $$
