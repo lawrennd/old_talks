@@ -36,11 +36,9 @@ The [naive Bayes assumption](./week9.ipynb) allowed us to specify a class condit
 Modeling the entire joint density allows us to deal with different questions, that we may not have envisaged at the model *design time*.  It contrasts with the approach we took for regression where we specifically chose to model the conditional density for the target values, $\dataVector$, given the input locations, $\inputMatrix$. That density, $p(\dataVector|\inputMatrix)$, effectively assumes that the question we'll be asked at *run time* is known. In particular, we expect to be asked about the value of the function, $y^*$, given a particular input location, $\inputVector^*$. We don't expect to be asked about the value of an input given a particular observation.  That would require placing an additional prior over the input location for each point, $p(\inputVector_i)$. Of course, it's possible to conceive of a model like this, and indeed that is how we proceeded for [dimensionality reduction](./week8.ipynb). However, if we know we will always have all the inputs at run time, it may make sense to *directly* model the conditional density, $p(\dataVector|\inputMatrix)$.
 }
 
-\notes{
-### Logistic Regression
+\notes{\subsection{Logistic Regression}}
 
-A logistic regression is an approach to classification which extends the linear basis function models we've already explored. Rather than modeling the output of the function directly the assumption is that we model the *log-odds* with the basis functions.
-}
+\notes{A logistic regression is an approach to classification which extends the linear basis function models we've already explored. Rather than modeling the output of the function directly the assumption is that we model the *log-odds* with the basis functions.}
 
 \newslide{Logistic Regression and GLMs}
 
@@ -134,15 +132,14 @@ real line to between 0  & 1. Sometimes also called a 'squashing function'.
 \includediagram{../slides/diagrams/ml/logistic}
 }
 
-\notes{
-### Basis Function
+\subsection{Basis Function}
 
-We'll define our prediction, objective and gradient functions below. But before we start, we need to define a basis function for our model. Let's start with the linear basis.
+\notes{We'll define our prediction, objective and gradient functions below. But before we start, we need to define a basis function for our model. Let's start with the linear basis.
 
 \setupcode{import numpy as np}
 \loadcode{linear}{mlai}
 
-### Prediction Function
+\subsection{Prediction Function}
 
 Now we have the basis function let's define the prediction function.
 
@@ -160,7 +157,7 @@ This inverse of the link function is known as the [logistic](http://en.wikipedia
 
 \plotcode{plot.logistic('../slides/diagrams/ml/logistic.svg')}
 
-\includediagram{../slides/diagrams/ml/logistic}
+\figure{\includediagram{../slides/diagrams/ml/logistic}{80%}}{The logistic function.}{the-logistic-function}
 
 
 The function has this characeristic 's'-shape (from where the term sigmoid, as in sigma, comes from). It also takes the input from the entire real line and 'squashes' it into an output that is between zero and one. For this reason it is sometimes also called a 'squashing function'.
@@ -218,8 +215,7 @@ return 1-pi
 ```
 }
 
-\notes{
-### Maximum Likelihood
+\notes{\subsection{Maximum Likelihood}
 
 To obtain the parameters of the model, we need to maximize the likelihood, or minimize the objective function, normally taken to be the negative log likelihood. With a data conditional independence assumption the likelihood has the form,
 $$
@@ -476,7 +472,7 @@ We've introduced the formalism for generalized linear models. Have a think about
 
 \newslide{Poisson Distribution}
 
-\includediagram{../slides/diagrams/ml/poisson}
+\figure{\includediagram{../slides/diagrams/ml/poisson}{80%}}{The Poisson distribution.}{the-poisson-distribution}
 
 \newslide{Poisson Regression}
 
@@ -510,6 +506,7 @@ We've introduced the formalism for generalized linear models. Have a think about
 
 * Section 5.2.2 of @Rogers:book11 up to pg 182.
 
-\subsection{References}
+\thanks
 
+\references
 
