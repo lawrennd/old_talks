@@ -64,7 +64,6 @@ fellow researcher can you publish that data on line?}{1}{10}
 \include{_ml/includes/recommender-data.md}
 \include{_ml/includes/matrix-factorization.md}
 
-}
 
 \thanks
 

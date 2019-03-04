@@ -429,7 +429,7 @@ plt.plot(x, y, 'rx')}
 2. Every 10 iterations
 compute the value of the objective function for the training data and print it
 to the screen (you'll find hints on this in [the lab from last
-week](./week2.ipynb).
+week](./week2.ipynb)).
 3. Cause the code to stop running when the error change
 over less than 10 iterations is smaller than $1\times10^{-4}$. This is known as
 a stopping criterion.
@@ -531,7 +531,7 @@ the classical form for a straight line. From a linear algebraic perspective we a
 
 \notes{What we'd like to create is a vector of parameters and a vector of data. Then we could represent the system with vectors that represent the data, and vectors that represent the parameters.}
 
-\notes{We look to turn the multiplications and additions into a linear algebraic form, we have one multiplication ($m\times c$ and one addition ($mx + c$). But we can turn this into a inner product by writing it in the following way,
+\notes{We look to turn the multiplications and additions into a linear algebraic form, we have one multiplication ($m\times c$) and one addition ($mx + c$). But we can turn this into a inner product by writing it in the following way,
 $$
 \mappingFunction(x) = m \times x +
 c \times 1,
@@ -764,7 +764,7 @@ Note that in the special case where $\mathbf{C}$ is symmetric then we have $\mat
 $$
 \frac{\text{d}}{\text{d}\mathbf{z}} \mathbf{z}^\top\mathbf{C}\mathbf{z}=
 2\mathbf{C}\mathbf{z}.
-$$}}
+$$}
 
 \subsection{Differentiate the Objective}
 

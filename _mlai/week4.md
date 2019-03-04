@@ -74,7 +74,7 @@ $$
 
 \subsection{Lecture on Basis Functions from GPRS Uganda}
 
-\includeyoutube{PoNbOnUnOao}
+\includeyoutube{PoNbOnUnOao}{800}{600}
 
 \subsection{Use of QR Decomposition for Numerical Stability}
 

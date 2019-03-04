@@ -66,7 +66,7 @@ for movie in ia.search_movie('python'):
 \includeyoutube{GX8VLYUYScM}{800}{600}
 
 \newslide{Reading}
-\slides{
+
 -   See probability review at end of slides for reminders.
 
 -   Read and *understand* @Rogers:book11 on:
@@ -99,6 +99,8 @@ for movie in ia.search_movie('python'):
     2.  @Bishop:book06 Exercise 1.8
 
     3.  @Bishop:book06 Exercise 1.9}
+
+\thanks
 
 \references
 

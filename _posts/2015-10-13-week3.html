@@ -165,7 +165,6 @@ $$</span><br /> where <span class="math inline"><em>s</em><sub><em>i</em>, <em
 </div>
 <p>The challenge comes when a third data point is observed and it doesn't naturally fit on the straight line.</p>
 <p>point 3: <span class="math inline">$\inputScalar = 2$</span>, <span class="math inline">$\dataScalar=2.5$</span> <br /><span class="math display">2.5 = 2<em>m</em> + <em>c</em></span><br /></p>
-{
 <div class="figure">
 <div id="over-determined-system-4-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/ml/over_determined_system004.svg" style="vertical-align:middle;">
@@ -179,7 +178,6 @@ $$</span><br /> where <span class="math inline"><em>s</em><sub><em>i</em>, <em
 </div>
 </div>
 <p>Now there are three candidate lines, each consistent with our data.</p>
-{
 <div class="figure">
 <div id="over-determined-system-7-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/ml/over_determined_system007.svg" style="vertical-align:middle;">
@@ -681,7 +679,7 @@ c_star <span class="op">=</span> c_star <span class="op">+</span> <span class="d
 \mappingFunction(x) = mx + c
 $$</span><br /> the classical form for a straight line. From a linear algebraic perspective we are looking for multiplications and additions. We are also looking to separate our parameters from our data. The data is the <em>givens</em> remember, in French the word is données literally translated means <em>givens</em> that's great, because we don't need to change the data, what we need to change are the parameters (or variables) of the model. In this function the data comes in through <span class="math inline"><em>x</em></span>, and the parameters are <span class="math inline"><em>m</em></span> and <span class="math inline"><em>c</em></span>.</p>
 <p>What we'd like to create is a vector of parameters and a vector of data. Then we could represent the system with vectors that represent the data, and vectors that represent the parameters.</p>
-<p>We look to turn the multiplications and additions into a linear algebraic form, we have one multiplication (<span class="math inline"><em>m</em> × <em>c</em></span> and one addition (<span class="math inline"><em>m</em><em>x</em> + <em>c</em></span>). But we can turn this into a inner product by writing it in the following way, <br /><span class="math display">$$
+<p>We look to turn the multiplications and additions into a linear algebraic form, we have one multiplication (<span class="math inline"><em>m</em> × <em>c</em></span>) and one addition (<span class="math inline"><em>m</em><em>x</em> + <em>c</em></span>). But we can turn this into a inner product by writing it in the following way, <br /><span class="math display">$$
 \mappingFunction(x) = m \times x +
 c \times 1,
 $$</span><br /> in other words we've extracted the unit value, from the offset, <span class="math inline"><em>c</em></span>. We can think of this unit value like an extra item of data, because it is always given to us, and it is always set to 1 (unlike regular data, which is likely to vary!). We can therefore write each input data location, <span class="math inline">$\inputVector$</span>, as a vector <br /><span class="math display">$$
@@ -805,7 +803,7 @@ $$</span><br /> where a <span class="math inline">(1 × 1)</span> matrix is 
 $$</span><br /> Note that in the special case where <span class="math inline"><strong>C</strong></span> is symmetric then we have <span class="math inline"><strong>C</strong> = <strong>C</strong><sup>⊤</sup></span> and the derivative simplifies to <br /><span class="math display">$$
 \frac{\text{d}}{\text{d}\mathbf{z}} \mathbf{z}^\top\mathbf{C}\mathbf{z}=
 2\mathbf{C}\mathbf{z}.
-$$</span><br />}</p>
+$$</span><br /></p>
 <h2 id="differentiate-the-objective">Differentiate the Objective</h2>
 <p>First, we need to compute the full objective by substituting our prediction function into the objective function to obtain the objective in terms of <span class="math inline">$\mappingVector$</span>. Doing this we obtain <br /><span class="math display">$$
 \errorFunction(\mappingVector)= (\dataVector - \inputMatrix\mappingVector)^\top (\dataVector - \inputMatrix\mappingVector).
