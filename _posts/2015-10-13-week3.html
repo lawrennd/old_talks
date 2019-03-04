@@ -1,0 +1,907 @@
+---
+title: "Linear Algebra and Linear Regression"
+venue: "University of Sheffield"
+abstract: "<p>In this session we combine the objective function perspective and the probabilistic perspective on <em>linear regression</em>. We motivate the importance of <em>linear algebra</em> by showing how much faster we can complete a linear regression using linear algebra.</p>"
+author:
+- given: Neil D.
+  family: Lawrence
+  url: http://inverseprobability.com
+  institute: Amazon Cambridge and University of Sheffield
+  twitter: lawrennd
+  gscholar: r3SJcvoAAAAJ
+  orchid: 
+date: 2015-10-13
+published: 2015-10-13
+reveal: 2015-10-13-week3.slides.html
+ipynb: 2015-10-13-week3.ipynb
+layout: talk
+categories:
+- notes
+---
+
+
+<div style="display:none">
+  $${% include talk-notation.tex %}$$
+</div>
+
+<script src="/talks/figure-magnify.js"></script>
+<script src="/talks/figure-animate.js"></script>
+    
+<div id="modal-frame" class="modal">
+  <span class="close" onclick="closeMagnify()">&times;</span>
+  <div class="modal-figure">
+    <div class="figure-frame">
+      <div class="modal-content" id="modal01"></div>
+      <!--<img class="modal-content" id="object01">-->
+    </div>
+    <div class="caption-frame" id="modal-caption"></div>
+  </div>
+</div>	  
+
+<!-- Front matter -->
+<p>.</p>
+<!---->
+<!--Back matter-->
+<p>.</p>
+<!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
+<h2 id="review">Review</h2>
+<ul>
+<li>Last time: Looked at objective functions for movie recommendation.</li>
+<li>Minimized sum of squares objective by steepest descent and stochastic gradients.</li>
+<li>This time: explore least squares for regression.</li>
+</ul>
+<h2 id="regression-examples-edit">Regression Examples <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/regression-examples.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/regression-examples.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>Regression involves predicting a real value, <span class="math inline">$\dataScalar_i$</span>, given an input vector, <span class="math inline">$\inputVector_i$</span>. For example, the Tecator data involves predicting the quality of meat given spectral measurements. Or in radiocarbon dating, the C14 calibration curve maps from radiocarbon age to age measured through a back-trace of tree rings. Regression has also been used to predict the quality of board game moves given expert rated training data.</p>
+<h2 id="olympic-100m-data">Olympic 100m Data</h2>
+<ul>
+<li>Gold medal times for Olympic 100 m runners since 1896. <img class="" src="../slides/diagrams/ml/100m_final_start.jpg" width="" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<center>
+<em>Image from Wikimedia Commons</em>
+</center>
+<a href="http://bit.ly/191adDC" class="uri">http://bit.ly/191adDC</a></li>
+</ul>
+<h2 id="olympic-100m-data-1">Olympic 100m Data</h2>
+<h2 id="olympic-marathon-data">Olympic Marathon Data</h2>
+<table>
+<tr>
+<td width="70%">
+<ul>
+<li>Gold medal times for Olympic Marathon since 1896.</li>
+<li>Marathons before 1924 didn’t have a standardised distance.</li>
+<li>Present results using pace per km.</li>
+<li>In 1904 Marathon was badly organised leading to very slow times.</li>
+</ul>
+</td>
+<td width="30%">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/Stephen_Kiprotich.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<small>Image from Wikimedia Commons <a href="http://bit.ly/16kMKHQ" class="uri">http://bit.ly/16kMKHQ</a></small>
+</td>
+</tr>
+</table>
+<p>The first thing we will do is load a standard data set for regression modelling. The data consists of the pace of Olympic Gold Medal Marathon winners for the Olympics from 1896 to present. First we load in the data and plot.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
+<span class="im">import</span> pods</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data <span class="op">=</span> pods.datasets.olympic_marathon_men()
+x <span class="op">=</span> data[<span class="st">&#39;X&#39;</span>]
+y <span class="op">=</span> data[<span class="st">&#39;Y&#39;</span>]
+
+offset <span class="op">=</span> y.mean()
+scale <span class="op">=</span> np.sqrt(y.var())</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
+<span class="im">import</span> teaching_plots <span class="im">as</span> plot
+<span class="im">import</span> mlai</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">
+xlim <span class="op">=</span> (<span class="dv">1875</span>,<span class="dv">2030</span>)
+ylim <span class="op">=</span> (<span class="fl">2.5</span>, <span class="fl">6.5</span>)
+yhat <span class="op">=</span> (y<span class="op">-</span>offset)<span class="op">/</span>scale
+
+fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)
+_ <span class="op">=</span> ax.plot(x, y, <span class="st">&#39;r.&#39;</span>,markersize<span class="op">=</span><span class="dv">10</span>)
+ax.set_xlabel(<span class="st">&#39;year&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>)
+ax.set_ylabel(<span class="st">&#39;pace min/km&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>)
+ax.set_xlim(xlim)
+ax.set_ylim(ylim)
+
+mlai.write_figure(figure<span class="op">=</span>fig, 
+                  filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/datasets/olympic-marathon.svg&#39;</span>, 
+                  transparent<span class="op">=</span><span class="va">True</span>, 
+                  frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<div class="figure">
+<div id="olympic-marathon-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/datasets/olympic-marathon.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="olympic-marathon-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-marathon&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="olympic-marathon-caption" class="caption-frame">
+<p>Figure: Olympic marathon pace times since 1892.</p>
+</div>
+</div>
+<p>Things to notice about the data include the outlier in 1904, in this year, the olympics was in St Louis, USA. Organizational problems and challenges with dust kicked up by the cars following the race meant that participants got lost, and only very few participants completed.</p>
+<p>More recent years see more consistently quick marathons.</p>
+<h1 id="what-is-machine-learning-edit">What is Machine Learning? <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
+<p>What is machine learning? At its most basic level machine learning is a combination of</p>
+<p><br /><span class="math display">$$\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$</span><br /></p>
+<p>where <em>data</em> is our observations. They can be actively or passively acquired (meta-data). The <em>model</em> contains our assumptions, based on previous experience. That experience can be other data, it can come from transfer learning, or it can merely be our beliefs about the regularities of the universe. In humans our models include our inductive biases. The <em>prediction</em> is an action to be taken or a categorization or a quality score. The reason that machine learning has become a mainstay of artificial intelligence is the importance of predictions in artificial intelligence. The data and the model are combined through computation.</p>
+<p>In practice we normally perform machine learning using two functions. To combine data with a model we typically make use of:</p>
+<p><strong>a prediction function</strong> a function which is used to make the predictions. It includes our beliefs about the regularities of the universe, our assumptions about how the world works, e.g. smoothness, spatial similarities, temporal similarities.</p>
+<p><strong>an objective function</strong> a function which defines the cost of misprediction. Typically it includes knowledge about the world's generating processes (probabilistic objectives) or the costs we pay for mispredictions (empiricial risk minimization).</p>
+<p>The combination of data and model through the prediction function and the objectie function leads to a <em>learning algorithm</em>. The class of prediction functions and objective functions we can make use of is restricted by the algorithms they lead to. If the prediction function or the objective function are too complex, then it can be difficult to find an appropriate learning algorithm. Much of the acdemic field of machine learning is the quest for new learning algorithms that allow us to bring different types of models and data together.</p>
+<p>A useful reference for state of the art in machine learning is the UK Royal Society Report, <a href="https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf">Machine Learning: Power and Promise of Computers that Learn by Example</a>.</p>
+<p>You can also check my blog post on <a href="http://inverseprobability.com/2017/07/17/what-is-machine-learning">&quot;What is Machine Learning?&quot;</a></p>
+<h1 id="sum-of-squares-error-edit">Sum of Squares Error <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/week3.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/week3.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
+<p>Last week we considered a cost function for minimization of the error. We considered items (films) and users and assumed that each movie rating, <span class="math inline">$\dataScalar_{i,j}$</span> could be summarised by an inner product between a vector associated with the item, <span class="math inline"><strong>v</strong><sub><em>j</em></sub></span> and one associated with the user <span class="math inline"><strong>u</strong><sub><em>i</em></sub></span>. We justified the inner product as a measure of similarity in the space of 'movie subjects', where both the users and the items lived, giving the analogy of a library.</p>
+<p>To make predictions we encouraged the similarity to be high if the movie rating was high using the quadratic error function, <br /><span class="math display">$$
+E_{i,j}(\mathbf{u}_i, \mathbf{v}_j) = \left(\mathbf{u}_i^\top \mathbf{v}_j -
+\dataScalar_{i,j}\right)^2,
+$$</span><br /> which we then summed across all the observations to form the total error <br /><span class="math display">$$
+\errorFunction(\mathbf{U}, \mathbf{V}) =
+\sum_{i,j}s_{i,j}\left(\mathbf{u}_i^\top \mathbf{v}_j - \dataScalar_{i,j}\right)^2,
+$$</span><br /> where <span class="math inline"><em>s</em><sub><em>i</em>, <em>j</em></sub></span> is an indicator variable which is set to 1 if the rating of movie <span class="math inline"><em>j</em></span> by user <span class="math inline"><em>i</em></span> is provided in our data set. This is known as a sum of squares error.</p>
+<p>This week we will reinterpret the error as a <em>probabilistic model</em>. We will consider the difference between our data and our model to have come from unconsidered factors which exhibit as a probability density. This leads to a more principled definition of least squares error that is originally due to <a href="https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss">Carl Friederich Gauss</a>, but is mainly inspired by the thinking of <a href="https://en.wikipedia.org/wiki/Pierre-Simon_Laplace">Pierre-Simon Laplace</a>.</p>
+<h2 id="regression-linear-releationship-edit">Regression: Linear Releationship <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/linear-algebra-regression.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/linear-algebra-regression.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>For many their first encounter with what might be termed a machine learning method is fitting a straight line. A straight line is characterized by two parameters, the scale, <span class="math inline"><em>m</em></span>, and the offset <span class="math inline"><em>c</em></span>.</p>
+<p><br /><span class="math display">$$\dataScalar_i = m \inputScalar_i + c$$</span><br /></p>
+<p>For the olympic marathon example <span class="math inline">$\dataScalar_i$</span> is the winning pace and it is given as a function of the year which is represented by <span class="math inline">$\inputScalar_i$</span>. There are two further parameters of the prediction function. For the olympics example we can interpret these parameters, the scale <span class="math inline"><em>m</em></span> is the rate of improvement of the olympic marathon pace on a yearly basis. And <span class="math inline"><em>c</em></span> is the winning pace as estimated at year 0.</p>
+
+<h2 id="overdetermined-system-edit">Overdetermined System <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/overdetermined-inaugural.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/overdetermined-inaugural.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>The challenge with a linear model is that it has two unknowns, <span class="math inline"><em>m</em></span>, and <span class="math inline"><em>c</em></span>. Observing data allows us to write down a system of simultaneous linear equations. So, for example if we observe two data points, the first with the input value, <span class="math inline">$\inputScalar_1 = 1$</span> and the output value, <span class="math inline">$\dataScalar_1 =3$</span> and a second data point, <span class="math inline">$\inputScalar = 3$</span>, <span class="math inline">$\dataScalar=1$</span>, then we can write two simultaneous linear equations of the form.</p>
+<p>point 1: <span class="math inline">$\inputScalar = 1$</span>, <span class="math inline">$\dataScalar=3$</span> <br /><span class="math display">3 = <em>m</em> + <em>c</em></span><br /> point 2: <span class="math inline">$\inputScalar = 3$</span>, <span class="math inline">$\dataScalar=1$</span> <br /><span class="math display">1 = 3<em>m</em> + <em>c</em></span><br /></p>
+<p>The solution to these two simultaneous equations can be represented graphically as</p>
+<div class="figure">
+<div id="over-determined-system-3-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/over_determined_system003.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="over-determined-system-3-magnify" class="magnify" onclick="magnifyFigure(&#39;over-determined-system-3&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="over-determined-system-3-caption" class="caption-frame">
+<p>Figure: The solution of two linear equations represented as the fit of a straight line through two data</p>
+</div>
+</div>
+<p>The challenge comes when a third data point is observed and it doesn't naturally fit on the straight line.</p>
+<p>point 3: <span class="math inline">$\inputScalar = 2$</span>, <span class="math inline">$\dataScalar=2.5$</span> <br /><span class="math display">2.5 = 2<em>m</em> + <em>c</em></span><br /></p>
+{
+<div class="figure">
+<div id="over-determined-system-4-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/over_determined_system004.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="over-determined-system-4-magnify" class="magnify" onclick="magnifyFigure(&#39;over-determined-system-4&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="over-determined-system-4-caption" class="caption-frame">
+<p>Figure: A third observation of data is inconsistent with the solution dictated by the first two observations</p>
+</div>
+</div>
+<p>Now there are three candidate lines, each consistent with our data.</p>
+{
+<div class="figure">
+<div id="over-determined-system-7-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/over_determined_system007.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="over-determined-system-7-magnify" class="magnify" onclick="magnifyFigure(&#39;over-determined-system-7&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="over-determined-system-7-caption" class="caption-frame">
+<p>Figure: Three solutions to the problem, each consistent with two points of the three observations</p>
+</div>
+</div>
+<p>This is known as an <em>overdetermined</em> system because there are more data than we need to determine our parameters. The problem arises because the model is a simplification of the real world, and the data we observe is therefore inconsistent with our model.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;over_determined_system</span><span class="sc">{samp:0&gt;3}</span><span class="st">.svg&#39;</span>,
+                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, 
+                            samp<span class="op">=</span>IntSlider(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">7</span>,<span class="dv">1</span>))</code></pre></div>
+<p>The solution was proposed by Pierre-Simon Laplace. His idea was to accept that the model was an incomplete representation of the real world, and the manner in which it was incomplete is <em>unknown</em>. His idea was that such unknowns could be dealt with through probability.</p>
+<h3 id="pierre-simon-laplace-edit">Pierre-Simon Laplace <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/laplace-portrait.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/laplace-portrait.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
+<div class="figure">
+<div id="pierre-simon-laplace-image-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/ml/Pierre-Simon_Laplace.png" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="pierre-simon-laplace-image-magnify" class="magnify" onclick="magnifyFigure(&#39;pierre-simon-laplace-image&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="pierre-simon-laplace-image-caption" class="caption-frame">
+<p>Figure: Pierre-Simon Laplace 1749-1827.</p>
+</div>
+</div>
+<iframe frameborder="0" scrolling="no" style="border:0px" src="http://books.google.co.uk/books?id=1YQPAAAAQAAJ&amp;pg=PR17-IA2&amp;output=embed" , width="700" height="500">
+</iframe>
+<p>Famously, Laplace considered the idea of a deterministic Universe, one in which the model is <em>known</em>, or as the below translation refers to it, &quot;an intelligence which could comprehend all the forces by which nature is animated&quot;. He speculates on an &quot;intelligence&quot; that can submit this vast data to analysis and propsoses that such an entity would be able to predict the future.</p>
+<blockquote>
+<p>Given for one instant an intelligence which could comprehend all the forces by which nature is animated and the respective situation of the beings who compose it---an intelligence sufficiently vast to submit these data to analysis---it would embrace in the same formulate the movements of the greatest bodies of the universe and those of the lightest atom; for it, nothing would be uncertain and the future, as the past, would be present in its eyes.</p>
+</blockquote>
+<p>This notion is known as <em>Laplace's demon</em> or <em>Laplace's superman</em>.</p>
+<div class="figure">
+<div id="laplaces-determinism-english-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/laplacesDeterminismEnglish.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="laplaces-determinism-english-magnify" class="magnify" onclick="magnifyFigure(&#39;laplaces-determinism-english&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="laplaces-determinism-english-caption" class="caption-frame">
+<p>Figure: Laplace's determinsim in English translation.</p>
+</div>
+</div>
+<p>Unfortunately, most analyses of his ideas stop at that point, whereas his real point is that such a notion is unreachable. Not so much <em>superman</em> as <em>strawman</em>. Just three pages later in the &quot;Philosophical Essay on Probabilities&quot; <span class="citation">(Laplace 1814)</span>, Laplace goes on to observe:</p>
+<blockquote>
+<p>The curve described by a simple molecule of air or vapor is regulated in a manner just as certain as the planetary orbits; the only difference between them is that which comes from our ignorance.</p>
+<p>Probability is relative, in part to this ignorance, in part to our knowledge.</p>
+</blockquote>
+<iframe frameborder="0" scrolling="no" style="border:0px" src="http://books.google.co.uk/books?id=1YQPAAAAQAAJ&amp;pg=PR17-IA4&amp;output=embed" , width="700" height="500">
+</iframe>
+<div class="figure">
+<div id="probability-relative-in-part-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/philosophicaless00lapliala.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="probability-relative-in-part-magnify" class="magnify" onclick="magnifyFigure(&#39;probability-relative-in-part&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="probability-relative-in-part-caption" class="caption-frame">
+<p>Figure: To Laplace, determinism is a strawman. Ignorance of mechanism and data leads to uncertainty which should be dealt with through probability.</p>
+</div>
+</div>
+<p>In other words, we can never make use of the idealistic deterministc Universe due to our ignorance about the world, Laplace's suggestion, and focus in this essay is that we turn to probability to deal with this uncertainty. This is also our inspiration for using probabilit in machine learning.</p>
+<p>The &quot;forces by which nature is animated&quot; is our <em>model</em>, the &quot;situation of beings that compose it&quot; is our <em>data</em> and the &quot;intelligence sufficiently vast enough to submit these data to analysis&quot; is our compute. The fly in the ointment is our <em>ignorance</em> about these aspects. And <em>probability</em> is the tool we use to incorporate this ignorance leading to uncertainty or <em>doubt</em> in our predictions.</p>
+<p>Laplace's concept was that the reason that the data doesn't match up to the model is because of unconsidered factors, and that these might be well represented through probability densities. He tackles the challenge of the unknown factors by adding a variable, <span class="math inline">$\noiseScalar$</span>, that represents the unknown. In modern parlance we would call this a <em>latent</em> variable. But in the context Laplace uses it, the variable is so common that it has other names such as a &quot;slack&quot; variable or the <em>noise</em> in the system.</p>
+<p>point 1: <span class="math inline">$\inputScalar = 1$</span>, <span class="math inline">$\dataScalar=3$</span> <br /><span class="math display">$$
+3 = m + c + \noiseScalar_1
+$$</span><br /> point 2: <span class="math inline">$\inputScalar = 3$</span>, <span class="math inline">$\dataScalar=1$</span> <br /><span class="math display">$$
+1 = 3m + c + \noiseScalar_2
+$$</span><br /> point 3: <span class="math inline">$\inputScalar = 2$</span>, <span class="math inline">$\dataScalar=2.5$</span> <br /><span class="math display">$$
+2.5 = 2m + c + \noiseScalar_3
+$$</span><br /></p>
+<p>Laplace's trick has converted the <em>overdetermined</em> system into an <em>underdetermined</em> system. He has now added three variables, <span class="math inline">$\{\noiseScalar_i\}_{i=1}^3$</span>, which represent the unknown corruptions of the real world. Laplace's idea is that we should represent that unknown corruption with a <em>probability distribution</em>.</p>
+<h2 id="a-probabilistic-process">A Probabilistic Process</h2>
+<p>However, it was left to an admirer of Gauss to develop a practical probability density for that purpose. It was Carl Friederich Gauss who suggested that the <em>Gaussian</em> density (which at the time was unnamed!) should be used to represent this error.</p>
+<p>The result is a <em>noisy</em> function, a function which has a deterministic part, and a stochastic part. This type of function is sometimes known as a probabilistic or stochastic process, to distinguish it from a deterministic process.</p>
+<h2 id="the-gaussian-density-edit">The Gaussian Density <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/univariate-gaussian.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/univariate-gaussian.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>The Gaussian density is perhaps the most commonly used probability density. It is defined by a <em>mean</em>, <span class="math inline">$\meanScalar$</span>, and a <em>variance</em>, <span class="math inline">$\dataStd^2$</span>. The variance is taken to be the square of the <em>standard deviation</em>, <span class="math inline">$\dataStd$</span>.</p>
+<p><br /><span class="math display">$$\begin{align}
+  p(\dataScalar| \meanScalar, \dataStd^2) &amp; = \frac{1}{\sqrt{2\pi\dataStd^2}}\exp\left(-\frac{(\dataScalar - \meanScalar)^2}{2\dataStd^2}\right)\\&amp; \buildrel\triangle\over = \gaussianDist{\dataScalar}{\meanScalar}{\dataStd^2}
+  \end{align}$$</span><br /></p>
+<div class="figure">
+<div id="gaussian-of-height-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/gaussian_of_height.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="gaussian-of-height-magnify" class="magnify" onclick="magnifyFigure(&#39;gaussian-of-height&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="gaussian-of-height-caption" class="caption-frame">
+<p>Figure: The Gaussian PDF with <span class="math inline">${\meanScalar}=1.7$</span> and variance <span class="math inline">${\dataStd}^2=0.0225$</span>. Mean shown as red line. It could represent the heights of a population of students.</p>
+</div>
+</div>
+<h2 id="two-important-gaussian-properties-edit">Two Important Gaussian Properties <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/univariate-gaussian-properties.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/univariate-gaussian-properties.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>The Gaussian density has many important properties, but for the moment we'll review two of them.</p>
+<h2 id="sum-of-gaussians">Sum of Gaussians</h2>
+<p>If we assume that a variable, <span class="math inline">$\dataScalar_i$</span>, is sampled from a Gaussian density,</p>
+<p><br /><span class="math display">$$\dataScalar_i \sim \gaussianSamp{\meanScalar_i}{\sigma_i^2}$$</span><br /></p>
+<p>Then we can show that the sum of a set of variables, each drawn independently from such a density is also distributed as Gaussian. The mean of the resulting density is the sum of the means, and the variance is the sum of the variances,</p>
+<p><br /><span class="math display">$$\sum_{i=1}^{\numData} \dataScalar_i \sim \gaussianSamp{\sum_{i=1}^\numData \meanScalar_i}{\sum_{i=1}^\numData \sigma_i^2}$$</span><br /></p>
+<p>Since we are very familiar with the Gaussian density and its properties, it is not immediately apparent how unusual this is. Most random variables, when you add them together, change the family of density they are drawn from. For example, the Gaussian is exceptional in this regard. Indeed, other random variables, if they are independently drawn and summed together tend to a Gaussian density. That is the <a href="https://en.wikipedia.org/wiki/Central_limit_theorem"><em>central limit theorem</em></a> which is a major justification for the use of a Gaussian density.</p>
+<h2 id="scaling-a-gaussian">Scaling a Gaussian</h2>
+<p>Less unusual is the <em>scaling</em> property of a Gaussian density. If a variable, <span class="math inline">$\dataScalar$</span>, is sampled from a Gaussian density,</p>
+<p><br /><span class="math display">$$\dataScalar \sim \gaussianSamp{\meanScalar}{\sigma^2}$$</span><br /> and we choose to scale that variable by a <em>deterministic</em> value, <span class="math inline">$\mappingScalar$</span>, then the <em>scaled variable</em> is distributed as</p>
+<p><br /><span class="math display">$$\mappingScalar \dataScalar \sim \gaussianSamp{\mappingScalar\meanScalar}{\mappingScalar^2 \sigma^2}.$$</span><br /> Unlike the summing properties, where adding two or more random variables independently sampled from a family of densitites typically brings the summed variable <em>outside</em> that family, scaling many densities leaves the distribution of that variable in the same <em>family</em> of densities. Indeed, many densities include a <em>scale</em> parameter (e.g. the <a href="https://en.wikipedia.org/wiki/Gamma_distribution">Gamma density</a>) which is purely for this purpose. In the Gaussian the standard deviation, <span class="math inline">$\dataStd$</span>, is the scale parameter. To see why this makes sense, let's consider, <br /><span class="math display">$$z \sim \gaussianSamp{0}{1},$$</span><br /> then if we scale by <span class="math inline">$\dataStd$</span> so we have, <span class="math inline">$\dataScalar=\dataStd z$</span>, we can write, <br /><span class="math display">$$\dataScalar =\dataStd z \sim \gaussianSamp{0}{\dataStd^2}$$</span><br /></p>
+<h1 id="laplaces-idea">Laplace's Idea</h1>
+<p>Laplace had the idea to augment the observations by noise, that is equivalent to considering a probability density whose mean is given by the <em>prediction function</em> <br /><span class="math display">$$p\left(\dataScalar_i|\inputScalar_i\right)=\frac{1}{\sqrt{2\pi\dataStd^2}}\exp\left(-\frac{\left(\dataScalar_i-f\left(\inputScalar_i\right)\right)^{2}}{2\dataStd^2}\right).$$</span><br /></p>
+<p>This is known as <em>stochastic process</em>. It is a function that is corrupted by noise. Laplace didn't suggest the Gaussian density for that purpose, that was an innovation from Carl Friederich Gauss, which is what gives the Gaussian density its name.</p>
+<h2 id="height-as-a-function-of-weight">Height as a Function of Weight</h2>
+<p>In the standard Gaussian, parametized by mean and variance.</p>
+<p>Make the mean a linear function of an <em>input</em>.</p>
+<p>This leads to a regression model. <br /><span class="math display">$$
+\begin{align*}
+  \dataScalar_i=&amp;\mappingFunction\left(\inputScalar_i\right)+\noiseScalar_i,\\
+         \noiseScalar_i \sim &amp; \gaussianSamp{0}{\dataStd^2}.
+  \end{align*}
+$$</span><br /></p>
+<p>Assume <span class="math inline">$\dataScalar_i$</span> is height and <span class="math inline">$\inputScalar_i$</span> is weight.</p>
+
+<h1 id="sum-of-squares-error">Sum of Squares Error</h1>
+<p>Minimizing the sum of squares error was first proposed by <a href="http://en.wikipedia.org/wiki/Adrien-Marie_Legendre">Legendre</a> in 1805. His book, which was on the orbit of comets, is available on google books, we can take a look at the relevant page by calling the code below.</p>
+<iframe frameborder="0" scrolling="no" style="border:0px" src="http://books.google.co.uk/books?id=spcAAAAAMAAJ&amp;pg=PA72&amp;output=embed" , width="700" height="500">
+</iframe>
+<p>Of course, the main text is in French, but the key part we are interested in can be roughly translated as</p>
+<blockquote>
+<p>In most matters where we take measures data through observation, the most accurate results they can offer, it is almost always leads to a system of equations of the form <br /><span class="math display"><em>E</em> = <em>a</em> + <em>b</em><em>x</em> + <em>c</em><em>y</em> + <em>f</em><em>z</em> + <em>e</em><em>t</em><em>c</em>.</span><br /> where <span class="math inline"><em>a</em></span>, <span class="math inline"><em>b</em></span>, <span class="math inline"><em>c</em></span>, <span class="math inline"><em>f</em></span> etc are the known coefficients and <span class="math inline"><em>x</em></span>, <span class="math inline"><em>y</em></span>, <span class="math inline"><em>z</em></span> etc are unknown and must be determined by the condition that the value of E is reduced, for each equation, to an amount or zero or very small.</p>
+</blockquote>
+<p>He continues</p>
+<blockquote>
+Of all the principles that we can offer for this item, I think it is not broader, more accurate, nor easier than the one we have used in previous research application, and that is to make the minimum sum of the squares of the errors. By this means, it is between the errors a kind of balance that prevents extreme to prevail, is very specific to make known the state of the closest to the truth system. The sum of the squares of the errors <span class="math inline"><em>E</em><sup>2</sup> + <em>E</em><sup>′</sup><sup>2</sup> + <em>E</em><sup>′′</sup><sup>2</sup> + <em>e</em><em>t</em><em>c</em></span> being
+
+<p>if we wanted a minimum, by varying x alone, we will have the equation ...</p>
+</blockquote>
+<p>This is the earliest know printed version of the problem of least squares. The notation, however, is a little awkward for mordern eyes. In particular Legendre doesn't make use of the sum sign, <br /><span class="math display">$$
+\sum_{i=1}^3 z_i = z_1
++ z_2 + z_3
+$$</span><br /> nor does he make use of the inner product.</p>
+<p>In our notation, if we were to do linear regression, we would need to subsititue: <br /><span class="math display">$$\begin{align*}
+a &amp;\leftarrow \dataScalar_1-c, \\ a^\prime &amp;\leftarrow \dataScalar_2-c,\\ a^{\prime\prime} &amp;\leftarrow
+\dataScalar_3 -c,\\ 
+\text{etc.} 
+\end{align*}$$</span><br /> to introduce the data observations <span class="math inline">$\{\dataScalar_i\}_{i=1}^{\numData}$</span> alongside <span class="math inline"><em>c</em></span>, the offset. We would then introduce the input locations <br /><span class="math display">$$\begin{align*}
+b &amp; \leftarrow \inputScalar_1,\\
+b^\prime &amp; \leftarrow \inputScalar_2,\\
+b^{\prime\prime} &amp; \leftarrow \inputScalar_3\\
+\text{etc.}
+\end{align*}$$</span><br /> and finally the gradient of the function <br /><span class="math display"><em>x</em> ← −<em>m</em>.</span><br /> The remaining coefficients (<span class="math inline"><em>c</em></span> and <span class="math inline"><em>f</em></span>) would then be zero. That would give us <br /><span class="math display">$$\begin{align*}   &amp;(\dataScalar_1 -
+(m\inputScalar_1+c))^2 \\
++ &amp;(\dataScalar_2 -(m\inputScalar_2 + c))^2\\
++ &amp;(\dataScalar_3 -(m\inputScalar_3 + c))^2 \\
++ &amp;
+\text{etc.}
+\end{align*}$$</span><br /> which we would write in the modern notation for sums as <br /><span class="math display">$$
+\sum_{i=1}^\numData (\dataScalar_i-(m\inputScalar_i + c))^2
+$$</span><br /> which is recognised as the sum of squares error for a linear regression.</p>
+<p>This shows the advantage of modern <a href="http://en.wikipedia.org/wiki/Summation">summation operator</a>, <span class="math inline">∑</span>, in keeping our mathematical notation compact. Whilst it may look more complicated the first time you see it, understanding the mathematical rules that go around it, allows us to go much further with the notation.</p>
+<p>Inner products (or <a href="http://en.wikipedia.org/wiki/Dot_product">dot products</a>) are similar. They allow us to write <br /><span class="math display">$$
+\sum_{i=1}^q u_i v_i
+$$</span><br /> in a more compact notation, <span class="math inline"><strong>u</strong> ⋅ <strong>v</strong>.</span></p>
+<p>Here we are using bold face to represent vectors, and we assume that the individual elements of a vector <span class="math inline"><strong>z</strong></span> are given as a series of scalars <br /><span class="math display">$$
+\mathbf{z} = \begin{bmatrix} z_1\\ z_2\\ \vdots\\ z_\numData
+\end{bmatrix}
+$$</span><br /> which are each indexed by their position in the vector.</p>
+<h1 id="linear-algebra">Linear Algebra</h1>
+<p>Linear algebra provides a very similar role, when we introduce <a href="http://en.wikipedia.org/wiki/Linear_algebra">linear algebra</a>, it is because we are faced with a large number of addition and multiplication operations. These operations need to be done together and would be very tedious to write down as a group. So the first reason we reach for linear algebra is for a more compact representation of our mathematical formulae.</p>
+<h2 id="running-example-olympic-marathons">Running Example: Olympic Marathons</h2>
+<p>Now we will load in the Olympic marathon data. This is data of the olympic marath times for the men's marathon from the first olympics in 1896 up until the London 2012 olympics.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data <span class="op">=</span> pods.datasets.olympic_marathon_men()
+x <span class="op">=</span> data[<span class="st">&#39;X&#39;</span>]
+y <span class="op">=</span> data[<span class="st">&#39;Y&#39;</span>]</code></pre></div>
+<p>You can see what these values are by typing:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(x)
+<span class="bu">print</span>(y)</code></pre></div>
+<p>Note that they are not <code>pandas</code> data frames for this example, they are just arrays of dimensionality <span class="math inline">$\numData\times 1$</span>, where <span class="math inline">$\numData$</span> is the number of data.</p>
+<p>The aim of this lab is to have you coding linear regression in python. We will do it in two ways, once using iterative updates (coordinate ascent) and then using linear algebra. The linear algebra approach will not only work much better, it is easy to extend to multiple input linear regression and <em>non-linear</em> regression using basis functions.</p>
+<h2 id="plotting-the-data">Plotting the Data</h2>
+<p>You can make a plot of <span class="math inline">$\dataScalar$</span> vs <span class="math inline">$\inputScalar$</span> with the following command:</p>
+<h2 id="maximum-likelihood-iterative-solution">Maximum Likelihood: Iterative Solution</h2>
+<p>Now we will take the maximum likelihood approach we derived in the lecture to fit a line, <span class="math inline">$\dataScalar_i=m\inputScalar_i + c$</span>, to the data you've plotted. We are trying to minimize the error function: <br /><span class="math display">$$
+\errorFunction(m, c) =  \sum_{i=1}^\numData(\dataScalar_i-m\inputScalar_i-c)^2
+$$</span><br /> with respect to <span class="math inline"><em>m</em></span>, <span class="math inline"><em>c</em></span> and <span class="math inline"><em>σ</em><sup>2</sup></span>. We can start with an initial guess for <span class="math inline"><em>m</em></span>,</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m <span class="op">=</span> <span class="op">-</span><span class="fl">0.4</span>
+c <span class="op">=</span> <span class="dv">80</span></code></pre></div>
+<p>Then we use the maximum likelihood update to find an estimate for the offset, <span class="math inline"><em>c</em></span>.</p>
+<h2 id="coordinate-descent">Coordinate Descent</h2>
+<p>In the movie recommender system example, we minimised the objective function by steepest descent based gradient methods. Our updates required us to compute the gradient at the position we were located, then to update the gradient according to the direction of steepest descent. This time, we will take another approach. It is known as <em>coordinate descent</em>. In coordinate descent, we choose to move one parameter at a time. Ideally, we design an algorithm that at each step moves the parameter to its minimum value. At each step we choose to move the individual parameter to its minimum.</p>
+<p>To find the minimum, we look for the point in the curve where the gradient is zero. This can be found by taking the gradient of <span class="math inline">$\errorFunction(m,c)$</span> with respect to the parameter.</p>
+<h3 id="update-for-offset">Update for Offset</h3>
+<p>Let's consider the parameter <span class="math inline"><em>c</em></span> first. The gradient goes nicely through the summation operator, and we obtain <br /><span class="math display">$$
+\frac{\text{d}\errorFunction(m,c)}{\text{d}c} = -\sum_{i=1}^\numData 2(\dataScalar_i-m\inputScalar_i-c).
+$$</span><br /> Now we want the point that is a minimum. A minimum is an example of a <a href="http://en.wikipedia.org/wiki/Stationary_point"><em>stationary point</em></a>, the stationary points are those points of the function where the gradient is zero. They are found by solving the equation for <span class="math inline">$\frac{\text{d}\errorFunction(m,c)}{\text{d}c} = 0$</span>. Substituting in to our gradient, we can obtain the following equation, <br /><span class="math display">$$
+0 = -\sum_{i=1}^\numData 2(\dataScalar_i-m\inputScalar_i-c)
+$$</span><br /> which can be reorganised as follows, <br /><span class="math display">$$
+c^* = \frac{\sum_{i=1}^\numData(\dataScalar_i-m^*\inputScalar_i)}{\numData}.
+$$</span><br /> The fact that the stationary point is easily extracted in this manner implies that the solution is <em>unique</em>. There is only one stationary point for this system. Traditionally when trying to determine the type of stationary point we have encountered we now compute the <em>second derivative</em>, <br /><span class="math display">$$
+\frac{\text{d}^2\errorFunction(m,c)}{\text{d}c^2} = 2n.
+$$</span><br /> The second derivative is positive, which in turn implies that we have found a minimum of the function. This means that setting <span class="math inline"><em>c</em></span> in this way will take us to the lowest point along that axes.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># set c to the minimum</span>
+c <span class="op">=</span> (y <span class="op">-</span> m<span class="op">*</span>x).mean()
+<span class="bu">print</span>(c)</code></pre></div>
+<h2 id="update-for-slope">Update for Slope</h2>
+<p>Now we have the offset set to the minimum value, in coordinate descent, the next step is to optimise another parameter. Only one further parameter remains. That is the slope of the system.</p>
+<p>Now we can turn our attention to the slope. We once again peform the same set of computations to find the minima. We end up with an update equation of the following form.</p>
+<p><br /><span class="math display">$$m^* = \frac{\sum_{i=1}^\numData (\dataScalar_i - c)\inputScalar_i}{\sum_{i=1}^\numData \inputScalar_i^2}$$</span><br /></p>
+<p>Communication of mathematics in data science is an essential skill, in a moment, you will be asked to rederive the equation above. Before we do that, however, we will briefly review how to write mathematics in the notebook.</p>
+<h2 id="latex-for-maths"><span class="math inline">$\LaTeX$</span> for Maths</h2>
+<p>These cells use <a href="http://en.wikipedia.org/wiki/Markdown">Markdown format</a>. You can include maths in your markdown using <a href="http://en.wikipedia.org/wiki/LaTeX"><span class="math inline">$\LaTeX$</span> syntax</a>, all you have to do is write your answer inside dollar signs, as follows:</p>
+<p>To write a fraction, we write <code>$\frac{a}{b}$</code>, and it will display like this <span class="math inline">$\frac{a}{b}$</span>. To write a subscript we write <code>$a_b$</code> which will appear as <span class="math inline"><em>a</em><sub><em>b</em></sub></span>. To write a superscript (for example in a polynomial) we write <code>$a^b$</code> which will appear as <span class="math inline"><em>a</em><sup><em>b</em></sup></span>. There are lots of other macros as well, for example we can do greek letters such as <code>$\alpha, \beta, \gamma$</code> rendering as <span class="math inline"><em>α</em>, <em>β</em>, <em>γ</em></span>. And we can do sum and intergral signs as <code>$\sum \int \int$</code>.</p>
+<p>You can combine many of these operations together for composing expressions.</p>
+
+<h2 id="fixed-point-updates">Fixed Point Updates</h2>
+<p><span style="text-align:left">Worked example.</span> <br /><span class="math display">$$
+\begin{aligned}
+    c^{*}=&amp;\frac{\sum
+_{i=1}^{\numData}\left(\dataScalar_i-m^{*}\inputScalar_i\right)}{\numData},\\
+    m^{*}=&amp;\frac{\sum
+_{i=1}^{\numData}\inputScalar_i\left(\dataScalar_i-c^{*}\right)}{\sum _{i=1}^{\numData}\inputScalar_i^{2}},\\
+\left.\dataStd^2\right.^{*}=&amp;\frac{\sum
+_{i=1}^{\numData}\left(\dataScalar_i-m^{*}\inputScalar_i-c^{*}\right)^{2}}{\numData}
+\end{aligned}
+$$</span><br /></p>
+<h2 id="gradient-with-respect-to-the-slope">Gradient With Respect to the Slope</h2>
+<p>Now that you've had a little training in writing maths with <span class="math inline">$\LaTeX$</span>, we will be able to use it to answer questions. The next thing we are going to do is a little differentiation practice.</p>
+
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m <span class="op">=</span> ((y <span class="op">-</span> c)<span class="op">*</span>x).<span class="bu">sum</span>()<span class="op">/</span>(x<span class="op">**</span><span class="dv">2</span>).<span class="bu">sum</span>()
+<span class="bu">print</span>(m)</code></pre></div>
+<p>We can have a look at how good our fit is by computing the prediction across the input space. First create a vector of 'test points',</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x_test <span class="op">=</span> np.linspace(<span class="dv">1890</span>, <span class="dv">2020</span>, <span class="dv">130</span>)[:, <span class="va">None</span>]</code></pre></div>
+<p>Now use this vector to compute some test predictions,</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">f_test <span class="op">=</span> m<span class="op">*</span>x_test <span class="op">+</span> c</code></pre></div>
+<p>Now plot those test predictions with a blue line on the same plot as the data,</p>
+<p>The fit isn't very good, we need to iterate between these parameter updates in a loop to improve the fit, we have to do this several times,</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">for</span> i <span class="kw">in</span> np.arange(<span class="dv">10</span>):
+    m <span class="op">=</span> ((y <span class="op">-</span> c)<span class="op">*</span>x).<span class="bu">sum</span>()<span class="op">/</span>(x<span class="op">*</span>x).<span class="bu">sum</span>()
+    c <span class="op">=</span> (y<span class="op">-</span>m<span class="op">*</span>x).<span class="bu">sum</span>()<span class="op">/</span>y.shape[<span class="dv">0</span>]
+<span class="bu">print</span>(m)
+<span class="bu">print</span>(c)</code></pre></div>
+<p>And let's try plotting the result again</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">f_test <span class="op">=</span> m<span class="op">*</span>x_test <span class="op">+</span> c
+plt.plot(x_test, f_test, <span class="st">&#39;b-&#39;</span>)
+plt.plot(x, y, <span class="st">&#39;rx&#39;</span>)</code></pre></div>
+<p>Clearly we need more iterations than 10! In the next question you will add more iterations and report on the error as optimisation proceeds.</p>
+
+<h2 id="important-concepts-not-covered">Important Concepts Not Covered</h2>
+<ul>
+<li>Other optimization methods:
+<ul>
+<li>Second order methods, conjugate gradient, quasi-Newton and Newton.</li>
+</ul></li>
+<li>Effective heuristics such as momentum.</li>
+<li>Local vs global solutions.</li>
+</ul>
+<h2 id="reading">Reading</h2>
+<ul>
+<li>Section 1.1-1.2 of <span class="citation">Rogers and Girolami (2011)</span> for fitting linear models.</li>
+<li>Section 1.2.5 of <span class="citation">Bishop (2006)</span> up to equation 1.65.</li>
+</ul>
+<h2 id="objective-functions-and-regression-edit">Objective Functions and Regression <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/regression.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/regression.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
+<span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
+<span class="im">import</span> mlai</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">=</span> np.random.normal(size<span class="op">=</span><span class="dv">4</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_true <span class="op">=</span> <span class="fl">1.4</span>
+c_true <span class="op">=</span> <span class="op">-</span><span class="fl">3.1</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">y <span class="op">=</span> m_true<span class="op">*</span>x<span class="op">+</span>c_true</code></pre></div>
+<div class="figure">
+<div id="linear-regression-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/regression.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="linear-regression-magnify" class="magnify" onclick="magnifyFigure(&#39;linear-regression&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="linear-regression-caption" class="caption-frame">
+<p>Figure: A simple linear regression.</p>
+</div>
+</div>
+<h2 id="noise-corrupted-plot">Noise Corrupted Plot</h2>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">noise <span class="op">=</span> np.random.normal(scale<span class="op">=</span><span class="fl">0.5</span>, size<span class="op">=</span><span class="dv">4</span>) <span class="co"># standard deviation of the noise is 0.5</span>
+y <span class="op">=</span> m_true<span class="op">*</span>x <span class="op">+</span> c_true <span class="op">+</span> noise
+plt.plot(x, y, <span class="st">&#39;r.&#39;</span>, markersize<span class="op">=</span><span class="dv">10</span>)
+plt.xlim([<span class="op">-</span><span class="dv">3</span>, <span class="dv">3</span>])
+mlai.write_figure(filename<span class="op">=</span><span class="st">&quot;../slides/diagrams/ml/regression_noise.svg&quot;</span>, transparent<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<div class="figure">
+<div id="linear-regression-noise-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/regression_noise.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="linear-regression-noise-magnify" class="magnify" onclick="magnifyFigure(&#39;linear-regression-noise&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="linear-regression-noise-caption" class="caption-frame">
+<p>Figure: A simple linear regression with noise.</p>
+</div>
+</div>
+<h2 id="contour-plot-of-error-function">Contour Plot of Error Function</h2>
+<ul>
+<li>Visualise the error function surface, create vectors of values.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># create an array of linearly separated values around m_true</span>
+m_vals <span class="op">=</span> np.linspace(m_true<span class="op">-</span><span class="dv">3</span>, m_true<span class="op">+</span><span class="dv">3</span>, <span class="dv">100</span>) 
+<span class="co"># create an array of linearly separated values ae</span>
+c_vals <span class="op">=</span> np.linspace(c_true<span class="op">-</span><span class="dv">3</span>, c_true<span class="op">+</span><span class="dv">3</span>, <span class="dv">100</span>)</code></pre></div>
+<ul>
+<li>create a grid of values to evaluate the error function in 2D.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_grid, c_grid <span class="op">=</span> np.meshgrid(m_vals, c_vals)</code></pre></div>
+<ul>
+<li>compute the error function at each combination of <span class="math inline"><em>c</em></span> and <span class="math inline"><em>m</em></span>.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">E_grid <span class="op">=</span> np.zeros((<span class="dv">100</span>, <span class="dv">100</span>))
+<span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>):
+    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>):
+        E_grid[i, j] <span class="op">=</span> ((y <span class="op">-</span> m_grid[i, j]<span class="op">*</span>x <span class="op">-</span> c_grid[i, j])<span class="op">**</span><span class="dv">2</span>).<span class="bu">sum</span>()</code></pre></div>
+<h2 id="contour-plot-of-error">Contour Plot of Error</h2>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>load <span class="op">-</span>s regression_contour teaching_plots.py</code></pre></div>
+<div class="figure">
+<div id="regression-contour-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/regression_contour.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="regression-contour-magnify" class="magnify" onclick="magnifyFigure(&#39;regression-contour&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="regression-contour-caption" class="caption-frame">
+<p>Figure: Contours of the objective function for linear regression by minimizing least squares.</p>
+</div>
+</div>
+<h2 id="steepest-descent">Steepest Descent</h2>
+<h2 id="algorithm">Algorithm</h2>
+<ul>
+<li>We start with a guess for <span class="math inline"><em>m</em></span> and <span class="math inline"><em>c</em></span>.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_star <span class="op">=</span> <span class="fl">0.0</span>
+c_star <span class="op">=</span> <span class="op">-</span><span class="fl">5.0</span></code></pre></div>
+<h2 id="offset-gradient">Offset Gradient</h2>
+<ul>
+<li>Now we need to compute the gradient of the error function, firstly with respect to <span class="math inline"><em>c</em></span>,</li>
+</ul>
+<p><br /><span class="math display">$$\frac{\text{d}\errorFunction(m, c)}{\text{d} c} =
+-2\sum_{i=1}^\numData (\dataScalar_i - m\inputScalar_i - c)$$</span><br /></p>
+<ul>
+<li>This is computed in python as follows</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">c_grad <span class="op">=</span> <span class="op">-</span><span class="dv">2</span><span class="op">*</span>(y<span class="op">-</span>m_star<span class="op">*</span>x <span class="op">-</span> c_star).<span class="bu">sum</span>()
+<span class="bu">print</span>(<span class="st">&quot;Gradient with respect to c is &quot;</span>, c_grad)</code></pre></div>
+<h2 id="deriving-the-gradient">Deriving the Gradient</h2>
+<p>To see how the gradient was derived, first note that the <span class="math inline"><em>c</em></span> appears in every term in the sum. So we are just differentiating <span class="math inline">$(\dataScalar_i - m\inputScalar_i - c)^2$</span> for each term in the sum. The gradient of this term with respect to <span class="math inline"><em>c</em></span> is simply the gradient of the outer quadratic, multiplied by the gradient with respect to <span class="math inline"><em>c</em></span> of the part inside the quadratic. The gradient of a quadratic is two times the argument of the quadratic, and the gradient of the inside linear term is just minus one. This is true for all terms in the sum, so we are left with the sum in the gradient.</p>
+<h2 id="slope-gradient">Slope Gradient</h2>
+<p>The gradient with respect tom <span class="math inline"><em>m</em></span> is similar, but now the gradient of the quadratic's argument is <span class="math inline">$-\inputScalar_i$</span> so the gradient with respect to <span class="math inline"><em>m</em></span> is</p>
+<p><br /><span class="math display">$$\frac{\text{d}\errorFunction(m, c)}{\text{d} m} = -2\sum_{i=1}^\numData \inputScalar_i(\dataScalar_i - m\inputScalar_i -
+c)$$</span><br /></p>
+<p>which can be implemented in python (numpy) as</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m_grad <span class="op">=</span> <span class="op">-</span><span class="dv">2</span><span class="op">*</span>(x<span class="op">*</span>(y<span class="op">-</span>m_star<span class="op">*</span>x <span class="op">-</span> c_star)).<span class="bu">sum</span>()
+<span class="bu">print</span>(<span class="st">&quot;Gradient with respect to m is &quot;</span>, m_grad)</code></pre></div>
+<h2 id="update-equations">Update Equations</h2>
+<ul>
+<li>Now we have gradients with respect to <span class="math inline"><em>m</em></span> and <span class="math inline"><em>c</em></span>.</li>
+<li>Can update our inital guesses for <span class="math inline"><em>m</em></span> and <span class="math inline"><em>c</em></span> using the gradient.</li>
+<li>We don't want to just subtract the gradient from <span class="math inline"><em>m</em></span> and <span class="math inline"><em>c</em></span>,</li>
+<li>We need to take a <em>small</em> step in the gradient direction.</li>
+<li>Otherwise we might overshoot the minimum.</li>
+<li>We want to follow the gradient to get to the minimum, the gradient changes all the time.</li>
+</ul>
+<h2 id="move-in-direction-of-gradient">Move in Direction of Gradient</h2>
+<div class="figure">
+<div id="regression-contour-step-1-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/regression_contour_step001.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="regression-contour-step-1-magnify" class="magnify" onclick="magnifyFigure(&#39;regression-contour-step-1&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="regression-contour-step-1-caption" class="caption-frame">
+<p>Figure: Single update descending the contours of the error surface for regression.</p>
+</div>
+</div>
+<h2 id="update-equations-1">Update Equations</h2>
+<ul>
+<li><p>The step size has already been introduced, it's again known as the learning rate and is denoted by <span class="math inline">$\learnRate$</span>. <br /><span class="math display">$$
+  c_\text{new}\leftarrow c_{\text{old}} - \learnRate \frac{\text{d}\errorFunction(m, c)}{\text{d}c}
+$$</span><br /></p></li>
+<li>gives us an update for our estimate of <span class="math inline"><em>c</em></span> (which in the code we've been calling <code>c_star</code> to represent a common way of writing a parameter estimate, <span class="math inline"><em>c</em><sup>*</sup></span>) and <br /><span class="math display">$$
+m_\text{new} \leftarrow m_{\text{old}} - \learnRate \frac{\text{d}\errorFunction(m, c)}{\text{d}m}
+$$</span><br /></li>
+<li><p>Giving us an update for <span class="math inline"><em>m</em></span>.</p></li>
+</ul>
+<h2 id="update-code">Update Code</h2>
+<ul>
+<li>These updates can be coded as</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="st">&quot;Original m was&quot;</span>, m_star, <span class="st">&quot;and original c was&quot;</span>, c_star)
+learn_rate <span class="op">=</span> <span class="fl">0.01</span>
+c_star <span class="op">=</span> c_star <span class="op">-</span> learn_rate<span class="op">*</span>c_grad
+m_star <span class="op">=</span> m_star <span class="op">-</span> learn_rate<span class="op">*</span>m_grad
+<span class="bu">print</span>(<span class="st">&quot;New m is&quot;</span>, m_star, <span class="st">&quot;and new c is&quot;</span>, c_star)</code></pre></div>
+<h1 id="iterating-updates">Iterating Updates</h1>
+<ul>
+<li>Fit model by descending gradient.</li>
+</ul>
+<h2 id="gradient-descent-algorithm">Gradient Descent Algorithm</h2>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">num_plots <span class="op">=</span> plot.regression_contour_fit(x, y, diagrams<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;regression_contour_fit</span><span class="sc">{num:0&gt;3}</span><span class="st">.svg&#39;</span>, directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, num<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, num_plots, <span class="dv">1</span>))</code></pre></div>
+{
+<div class="figure">
+<div id="regression-contour-fit-28-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/regression_contour_fit028.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="regression-contour-fit-28-magnify" class="magnify" onclick="magnifyFigure(&#39;regression-contour-fit-28&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="regression-contour-fit-28-caption" class="caption-frame">
+<p>Figure: Stochastic gradient descent for linear regression</p>
+</div>
+</div>
+<h2 id="stochastic-gradient-descent">Stochastic Gradient Descent</h2>
+<ul>
+<li>If <span class="math inline">$\numData$</span> is small, gradient descent is fine.</li>
+<li>But sometimes (e.g. on the internet <span class="math inline">$\numData$</span> could be a billion.</li>
+<li>Stochastic gradient descent is more similar to perceptron.</li>
+<li>Look at gradient of one data point at a time rather than summing across <em>all</em> data points)</li>
+<li>This gives a stochastic estimate of gradient.</li>
+</ul>
+<h2 id="stochastic-gradient-descent-1">Stochastic Gradient Descent</h2>
+<ul>
+<li>The real gradient with respect to <span class="math inline"><em>m</em></span> is given by</li>
+</ul>
+<p><br /><span class="math display">$$\frac{\text{d}\errorFunction(m, c)}{\text{d} m} = -2\sum_{i=1}^\numData \inputScalar_i(\dataScalar_i -
+m\inputScalar_i - c)$$</span><br /></p>
+<p>but it has <span class="math inline">$\numData$</span> terms in the sum. Substituting in the gradient we can see that the full update is of the form</p>
+<p><br /><span class="math display">$$m_\text{new} \leftarrow
+m_\text{old} + 2\learnRate \left[\inputScalar_1 (\dataScalar_1 - m_\text{old}\inputScalar_1 - c_\text{old}) + (\inputScalar_2 (\dataScalar_2 -   m_\text{old}\inputScalar_2 - c_\text{old}) + \dots + (\inputScalar_n (\dataScalar_n - m_\text{old}\inputScalar_n - c_\text{old})\right]$$</span><br /></p>
+<p>This could be split up into lots of individual updates <br /><span class="math display">$$m_1 \leftarrow m_\text{old} + 2\learnRate \left[\inputScalar_1 (\dataScalar_1 - m_\text{old}\inputScalar_1 -
+c_\text{old})\right]$$</span><br /> <br /><span class="math display">$$m_2 \leftarrow m_1 + 2\learnRate \left[\inputScalar_2 (\dataScalar_2 -
+m_\text{old}\inputScalar_2 - c_\text{old})\right]$$</span><br /> <br /><span class="math display">$$m_3 \leftarrow m_2 + 2\learnRate
+\left[\dots\right]$$</span><br /> <br /><span class="math display">$$m_n \leftarrow m_{n-1} + 2\learnRate \left[\inputScalar_n (\dataScalar_n -
+m_\text{old}\inputScalar_n - c_\text{old})\right]$$</span><br /></p>
+<p>which would lead to the same final update.</p>
+<h2 id="updating-c-and-m">Updating <span class="math inline"><em>c</em></span> and <span class="math inline"><em>m</em></span></h2>
+<ul>
+<li>In the sum we don't <span class="math inline"><em>m</em></span> and <span class="math inline"><em>c</em></span> we use for computing the gradient term at each update.</li>
+<li>In stochastic gradient descent we <em>do</em> change them.</li>
+<li>This means it's not quite the same as steepest desceint.</li>
+<li>But we can present each data point in a random order, like we did for the perceptron.</li>
+<li>This makes the algorithm suitable for large scale web use (recently this domain is know as 'Big Data') and algorithms like this are widely used by Google, Microsoft, Amazon, Twitter and Facebook.</li>
+</ul>
+<h2 id="stochastic-gradient-descent-2">Stochastic Gradient Descent</h2>
+<ul>
+<li>Or more accurate, since the data is normally presented in a random order we just can write <br /><span class="math display">$$
+  m_\text{new} = m_\text{old} + 2\learnRate\left[\inputScalar_i (\dataScalar_i - m_\text{old}\inputScalar_i - c_\text{old})\right]
+  $$</span><br /></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># choose a random point for the update </span>
+i <span class="op">=</span> np.random.randint(x.shape[<span class="dv">0</span>]<span class="op">-</span><span class="dv">1</span>)
+<span class="co"># update m</span>
+m_star <span class="op">=</span> m_star <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>learn_rate<span class="op">*</span>(x[i]<span class="op">*</span>(y[i]<span class="op">-</span>m_star<span class="op">*</span>x[i] <span class="op">-</span> c_star))
+<span class="co"># update c</span>
+c_star <span class="op">=</span> c_star <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>learn_rate<span class="op">*</span>(y[i]<span class="op">-</span>m_star<span class="op">*</span>x[i] <span class="op">-</span> c_star)</code></pre></div>
+<h2 id="sgd-for-linear-regression">SGD for Linear Regression</h2>
+<p>Putting it all together in an algorithm, we can do stochastic gradient descent for our regression data.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;regression_sgd_contour_fit</span><span class="sc">{num:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+    directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/mlai&#39;</span>, num<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, num_plots, <span class="dv">1</span>))</code></pre></div>
+<div class="figure">
+<div id="regression-sgd-contour0fit-58-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/regression_sgd_contour_fit058.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="regression-sgd-contour0fit-58-magnify" class="magnify" onclick="magnifyFigure(&#39;regression-sgd-contour0fit-58&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="regression-sgd-contour0fit-58-caption" class="caption-frame">
+<p>Figure: Stochastic gradient descent for linear regression.</p>
+</div>
+</div>
+<h2 id="reflection-on-linear-regression-and-supervised-learning">Reflection on Linear Regression and Supervised Learning</h2>
+<p>Think about:</p>
+<ol style="list-style-type: decimal">
+<li><p>What effect does the learning rate have in the optimization? What's the effect of making it too small, what's the effect of making it too big? Do you get the same result for both stochastic and steepest gradient descent?</p></li>
+<li><p>The stochastic gradient descent doesn't help very much for such a small data set. It's real advantage comes when there are many, you'll see this in the lab.</p></li>
+</ol>
+<h1 id="multiple-input-solution-with-linear-algebra">Multiple Input Solution with Linear Algebra</h1>
+<p>You've now seen how slow it can be to perform a coordinate ascent on a system. Another approach to solving the system (which is not always possible, particularly in <em>non-linear</em> systems) is to go direct to the minimum. To do this we need to introduce <em>linear algebra</em>. We will represent all our errors and functions in the form of linear algebra. As we mentioned above, linear algebra is just a shorthand for performing lots of multiplications and additions simultaneously. What does it have to do with our system then? Well the first thing to note is that the linear function we were trying to fit has the following form: <br /><span class="math display">$$
+\mappingFunction(x) = mx + c
+$$</span><br /> the classical form for a straight line. From a linear algebraic perspective we are looking for multiplications and additions. We are also looking to separate our parameters from our data. The data is the <em>givens</em> remember, in French the word is données literally translated means <em>givens</em> that's great, because we don't need to change the data, what we need to change are the parameters (or variables) of the model. In this function the data comes in through <span class="math inline"><em>x</em></span>, and the parameters are <span class="math inline"><em>m</em></span> and <span class="math inline"><em>c</em></span>.</p>
+<p>What we'd like to create is a vector of parameters and a vector of data. Then we could represent the system with vectors that represent the data, and vectors that represent the parameters.</p>
+<p>We look to turn the multiplications and additions into a linear algebraic form, we have one multiplication (<span class="math inline"><em>m</em> × <em>c</em></span> and one addition (<span class="math inline"><em>m</em><em>x</em> + <em>c</em></span>). But we can turn this into a inner product by writing it in the following way, <br /><span class="math display">$$
+\mappingFunction(x) = m \times x +
+c \times 1,
+$$</span><br /> in other words we've extracted the unit value, from the offset, <span class="math inline"><em>c</em></span>. We can think of this unit value like an extra item of data, because it is always given to us, and it is always set to 1 (unlike regular data, which is likely to vary!). We can therefore write each input data location, <span class="math inline">$\inputVector$</span>, as a vector <br /><span class="math display">$$
+\inputVector = \begin{bmatrix} 1\\ x\end{bmatrix}.
+$$</span><br /></p>
+<p>Now we choose to also turn our parameters into a vector. The parameter vector will be defined to contain <br /><span class="math display">$$
+\mappingVector = \begin{bmatrix} c \\ m\end{bmatrix}
+$$</span><br /> because if we now take the inner product between these to vectors we recover <br /><span class="math display">$$
+\inputVector\cdot\mappingVector = 1 \times c + x \times m = mx + c
+$$</span><br /> In <code>numpy</code> we can define this vector as follows</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># define the vector w</span>
+w <span class="op">=</span> np.zeros(shape<span class="op">=</span>(<span class="dv">2</span>, <span class="dv">1</span>))
+w[<span class="dv">0</span>] <span class="op">=</span> m
+w[<span class="dv">1</span>] <span class="op">=</span> c</code></pre></div>
+<p>This gives us the equivalence between original operation and an operation in vector space. Whilst the notation here isn't a lot shorter, the beauty is that we will be able to add as many features as we like and still keep the seame representation. In general, we are now moving to a system where each of our predictions is given by an inner product. When we want to represent a linear product in linear algebra, we tend to do it with the transpose operation, so since we have <span class="math inline"><strong>a</strong> ⋅ <strong>b</strong> = <strong>a</strong><sup>⊤</sup><strong>b</strong></span> we can write <br /><span class="math display">$$
+\mappingFunction(\inputVector_i) = \inputVector_i^\top\mappingVector.
+$$</span><br /> Where we've assumed that each data point, <span class="math inline">$\inputVector_i$</span>, is now written by appending a 1 onto the original vector <br /><span class="math display">$$
+\inputVector_i = \begin{bmatrix} 
+1 \\
+\inputScalar_i
+\end{bmatrix}
+$$</span><br /></p>
+<h1 id="design-matrix">Design Matrix</h1>
+<p>We can do this for the entire data set to form a <a href="http://en.wikipedia.org/wiki/Design_matrix"><em>design matrix</em></a> <span class="math inline">$\inputMatrix$</span>,</p>
+<p><br /><span class="math display">$$\inputMatrix
+= \begin{bmatrix} 
+\inputVector_1^\top \\\ 
+\inputVector_2^\top \\\ 
+\vdots \\\
+\inputVector_\numData^\top
+\end{bmatrix} = \begin{bmatrix}
+1 &amp; \inputScalar_1 \\\
+1 &amp; \inputScalar_2 \\\
+\vdots
+&amp; \vdots \\\
+1 &amp; \inputScalar_\numData 
+\end{bmatrix},$$</span><br /></p>
+<p>which in <code>numpy</code> can be done with the following commands:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">X <span class="op">=</span> np.hstack((np.ones_like(x), x))
+<span class="bu">print</span>(X)</code></pre></div>
+<h2 id="writing-the-objective-with-linear-algebra">Writing the Objective with Linear Algebra</h2>
+<p>When we think of the objective function, we can think of it as the errors where the error is defined in a similar way to what it was in Legendre's day <span class="math inline">$\dataScalar_i - \mappingFunction(\inputVector_i)$</span>, in statistics these errors are also sometimes called <a href="http://en.wikipedia.org/wiki/Errors_and_residuals_in_statistics"><em>residuals</em></a>. So we can think as the objective and the prediction function as two separate parts, first we have, <br /><span class="math display">$$
+\errorFunction(\mappingVector) = \sum_{i=1}^\numData (\dataScalar_i - \mappingFunction(\inputVector_i; \mappingVector))^2,
+$$</span><br /> where we've made the function <span class="math inline">$\mappingFunction(\cdot)$</span>'s dependence on the parameters <span class="math inline">$\mappingVector$</span> explicit in this equation. Then we have the definition of the function itself, <br /><span class="math display">$$
+\mappingFunction(\inputVector_i; \mappingVector) = \inputVector_i^\top \mappingVector.
+$$</span><br /> Let's look again at these two equations and see if we can identify any inner products. The first equation is a sum of squares, which is promising. Any sum of squares can be represented by an inner product, <br /><span class="math display">$$
+a = \sum_{i=1}^{k} b^2_i = \mathbf{b}^\top\mathbf{b},
+$$</span><br /> so if we wish to represent <span class="math inline">$\errorFunction(\mappingVector)$</span> in this way, all we need to do is convert the sum operator to an inner product. We can get a vector from that sum operator by placing both <span class="math inline">$\dataScalar_i$</span> and <span class="math inline">$\mappingFunction(\inputVector_i; \mappingVector)$</span> into vectors, which we do by defining <br /><span class="math display">$$
+\dataVector = \begin{bmatrix}\dataScalar_1\\ \dataScalar_2\\ \vdots \\ \dataScalar_\numData\end{bmatrix}
+$$</span><br /> and defining <br /><span class="math display">$$
+\mappingFunctionVector(\inputVector_1; \mappingVector) = \begin{bmatrix}\mappingFunction(\inputVector_1; \mappingVector)\\ \mappingFunction(\inputVector_2; \mappingVector)\\ \vdots \\ \mappingFunction(\inputVector_\numData; \mappingVector)\end{bmatrix}.
+$$</span><br /> The second of these is actually a vector-valued function. This term may appear intimidating, but the idea is straightforward. A vector valued function is simply a vector whose elements are themselves defined as <em>functions</em>, i.e. it is a vector of functions, rather than a vector of scalars. The idea is so straightforward, that we are going to ignore it for the moment, and barely use it in the derivation. But it will reappear later when we introduce <em>basis functions</em>. So we will, for the moment, ignore the dependence of <span class="math inline">$\mappingFunctionVector$</span> on <span class="math inline">$\mappingVector$</span> and <span class="math inline">$\inputMatrix$</span> and simply summarise it by a vector of numbers <br /><span class="math display">$$
+\mappingFunctionVector = \begin{bmatrix}\mappingFunction_1\\\mappingFunction_2\\
+\vdots \\ \mappingFunction_\numData\end{bmatrix}.
+$$</span><br /> This allows us to write our objective in the folowing, linear algebraic form, <br /><span class="math display">$$
+\errorFunction(\mappingVector) = (\dataVector - \mappingFunctionVector)^\top(\dataVector - \mappingFunctionVector)
+$$</span><br /> from the rules of inner products. But what of our matrix <span class="math inline">$\inputMatrix$</span> of input data? At this point, we need to dust off <a href="http://en.wikipedia.org/wiki/Matrix_multiplication"><em>matrix-vector multiplication</em></a>. Matrix multiplication is simply a convenient way of performing many inner products together, and it's exactly what we need to summarise the operation <br /><span class="math display">$$
+f_i = \inputVector_i^\top\mappingVector.
+$$</span><br /> This operation tells us that each element of the vector <span class="math inline">$\mappingFunctionVector$</span> (our vector valued function) is given by an inner product between <span class="math inline">$\inputVector_i$</span> and <span class="math inline">$\mappingVector$</span>. In other words it is a series of inner products. Let's look at the definition of matrix multiplication, it takes the form <br /><span class="math display"><strong>c</strong> = <strong>B</strong><strong>a</strong></span><br /> where <span class="math inline"><strong>c</strong></span> might be a <span class="math inline"><em>k</em></span> dimensional vector (which we can intepret as a <span class="math inline"><em>k</em> × 1</span> dimensional matrix), and <span class="math inline"><strong>B</strong></span> is a <span class="math inline"><em>k</em> × <em>k</em></span> dimensional matrix and <span class="math inline"><strong>a</strong></span> is a <span class="math inline"><em>k</em></span> dimensional vector (<span class="math inline"><em>k</em> × 1</span> dimensional matrix).</p>
+<p>The result of this multiplication is of the form <br /><span class="math display">$$
+\begin{bmatrix}c_1\\c_2 \\ \vdots \\
+a_k\end{bmatrix} = 
+\begin{bmatrix} b_{1,1} &amp; b_{1, 2} &amp; \dots &amp; b_{1, k} \\
+b_{2, 1} &amp; b_{2, 2} &amp; \dots &amp; b_{2, k} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+b_{k, 1} &amp; b_{k, 2} &amp; \dots &amp; b_{k, k} \end{bmatrix} \begin{bmatrix}a_1\\a_2 \\
+\vdots\\ c_k\end{bmatrix} = \begin{bmatrix} b_{1, 1}a_1 + b_{1, 2}a_2 + \dots +
+b_{1, k}a_k\\
+b_{2, 1}a_1 + b_{2, 2}a_2 + \dots + b_{2, k}a_k \\ 
+\vdots\\
+b_{k, 1}a_1 + b_{k, 2}a_2 + \dots + b_{k, k}a_k\end{bmatrix}
+$$</span><br /> so we see that each element of the result, <span class="math inline"><strong>a</strong></span> is simply the inner product between each <em>row</em> of <span class="math inline"><strong>B</strong></span> and the vector <span class="math inline"><strong>c</strong></span>. Because we have defined each element of <span class="math inline">$\mappingFunctionVector$</span> to be given by the inner product between each <em>row</em> of the design matrix and the vector <span class="math inline">$\mappingVector$</span> we now can write the full operation in one matrix multiplication, <br /><span class="math display">$$
+\mappingFunctionVector = \inputMatrix\mappingVector.
+$$</span><br /></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">f <span class="op">=</span> np.dot(X, w) <span class="co"># np.dot does matrix multiplication in python</span></code></pre></div>
+<p>Combining this result with our objective function, <br /><span class="math display">$$
+\errorFunction(\mappingVector) = (\dataVector - \mappingFunctionVector)^\top(\dataVector - \mappingFunctionVector)
+$$</span><br /> we find we have defined the <em>model</em> with two equations. One equation tells us the form of our predictive function and how it depends on its parameters, the other tells us the form of our objective function.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">resid <span class="op">=</span> (y<span class="op">-</span>f)
+E <span class="op">=</span> np.dot(resid.T, resid) <span class="co"># matrix multiplication on a single vector is equivalent to a dot product.</span>
+<span class="bu">print</span>(<span class="st">&quot;Error function is:&quot;</span>, E)</code></pre></div>
+
+<h1 id="objective-optimisation">Objective Optimisation</h1>
+<p>Our <em>model</em> has now been defined with two equations, the prediction function and the objective function. Next we will use multivariate calculus to define an <em>algorithm</em> to fit the model. The separation between model and algorithm is important and is often overlooked. Our model contains a function that shows how it will be used for prediction, and a function that describes the objective function we need to optimise to obtain a good set of parameters.</p>
+<p>The model linear regression model we have described is still the same as the one we fitted above with a coordinate ascent algorithm. We have only played with the notation to obtain the same model in a matrix and vector notation. However, we will now fit this model with a different algorithm, one that is much faster. It is such a widely used algorithm that from the end user's perspective it doesn't even look like an algorithm, it just appears to be a single operation (or function). However, underneath the computer calls an algorithm to find the solution. Further, the algorithm we obtain is very widely used, and because of this it turns out to be highly optimised.</p>
+<p>Once again we are going to try and find the stationary points of our objective by finding the <em>stationary points</em>. However, the stationary points of a multivariate function, are a little bit more complext to find. Once again we need to find the point at which the derivative is zero, but now we need to use <em>multivariate calculus</em> to find it. This involves learning a few additional rules of differentiation (that allow you to do the derivatives of a function with respect to vector), but in the end it makes things quite a bit easier. We define vectorial derivatives as follows, <br /><span class="math display">$$
+\frac{\text{d}\errorFunction(\mappingVector)}{\text{d}\mappingVector} =
+\begin{bmatrix}\frac{\text{d}\errorFunction(\mappingVector)}{\text{d}\mappingScalar_1}\\\frac{\text{d}\errorFunction(\mappingVector)}{\text{d}\mappingScalar_2}\end{bmatrix}.
+$$</span><br /> where <span class="math inline">$\frac{\text{d}\errorFunction(\mappingVector)}{\text{d}\mappingScalar_1}$</span> is the <a href="http://en.wikipedia.org/wiki/Partial_derivative">partial derivative</a> of the error function with respect to <span class="math inline">$\mappingScalar_1$</span>.</p>
+<p>Differentiation through multiplications and additions is relatively straightforward, and since linear algebra is just multiplication and addition, then its rules of diffentiation are quite straightforward too, but slightly more complex than regular derivatives.</p>
+<h2 id="multivariate-derivatives">Multivariate Derivatives</h2>
+<p>We will need two rules of multivariate or <em>matrix</em> differentiation. The first is diffentiation of an inner product. By remembering that the inner product is made up of multiplication and addition, we can hope that its derivative is quite straightforward, and so it proves to be. We can start by thinking about the definition of the inner product, <br /><span class="math display"><strong>a</strong><sup>⊤</sup><strong>z</strong> = ∑<sub><em>i</em></sub><em>a</em><sub><em>i</em></sub><em>z</em><sub><em>i</em></sub>,</span><br /> which if we were to take the derivative with respect to <span class="math inline"><em>z</em><sub><em>k</em></sub></span> would simply return the gradient of the one term in the sum for which the derivative was non zero, that of <span class="math inline"><em>a</em><sub><em>k</em></sub></span>, so we know that <br /><span class="math display">$$
+\frac{\text{d}}{\text{d}z_k} \mathbf{a}^\top \mathbf{z} = a_k
+$$</span><br /> and by our definition of multivariate derivatives we can simply stack all the partial derivatives of this form in a vector to obtain the result that <br /><span class="math display">$$
+\frac{\text{d}}{\text{d}\mathbf{z}}
+\mathbf{a}^\top \mathbf{z} = \mathbf{a}.
+$$</span><br /> The second rule that's required is differentiation of a 'matrix quadratic'. A scalar quadratic in <span class="math inline"><em>z</em></span> with coefficient <span class="math inline"><em>c</em></span> has the form <span class="math inline"><em>c</em><em>z</em><sup>2</sup></span>. If <span class="math inline"><strong>z</strong></span> is a <span class="math inline"><em>k</em> × 1</span> vector and <span class="math inline"><strong>C</strong></span> is a <span class="math inline"><em>k</em> × <em>k</em></span> <em>matrix</em> of coefficients then the matrix quadratic form is written as <span class="math inline"><strong>z</strong><sup>⊤</sup><strong>C</strong><strong>z</strong></span>, which is itself a <em>scalar</em> quantity, but it is a function of a <em>vector</em>.</p>
+<h3 id="matching-dimensions-in-matrix-multiplications">Matching Dimensions in Matrix Multiplications</h3>
+<p>There's a trick for telling that it's a scalar result. When you are doing maths with matrices, it's always worth pausing to perform a quick sanity check on the dimensions. Matrix multplication only works when the dimensions match. To be precise, the 'inner' dimension of the matrix must match. What is the inner dimension. If we multiply two matrices <span class="math inline"><strong>A</strong></span> and <span class="math inline"><strong>B</strong></span>, the first of which has <span class="math inline"><em>k</em></span> rows and <span class="math inline">ℓ</span> columns and the second of which has <span class="math inline"><em>p</em></span> rows and <span class="math inline"><em>q</em></span> columns, then we can check whether the multiplication works by writing the dimensionalities next to each other, <br /><span class="math display">$$
+\mathbf{A} \mathbf{B} \rightarrow (k \times
+\underbrace{\ell)(p}_\text{inner dimensions} \times q) \rightarrow (k\times q).
+$$</span><br /> The inner dimensions are the two inside dimensions, <span class="math inline">ℓ</span> and <span class="math inline"><em>p</em></span>. The multiplication will only work if <span class="math inline">ℓ = <em>p</em></span>. The result of the multiplication will then be a <span class="math inline"><em>k</em> × <em>q</em></span> matrix: this dimensionality comes from the 'outer dimensions'. Note that matrix multiplication is not <a href="http://en.wikipedia.org/wiki/Commutative_property"><em>commutative</em></a>. And if you change the order of the multiplication, <br /><span class="math display">$$
+\mathbf{B} \mathbf{A} \rightarrow (\ell \times \underbrace{k)(q}_\text{inner dimensions} \times p) \rightarrow (\ell \times p).
+$$</span><br /> firstly it may no longer even work, because now the condition is that <span class="math inline"><em>k</em> = <em>q</em></span>, and secondly the result could be of a different dimensionality. An exception is if the matrices are square matrices (e.g. same number of rows as columns) and they are both <em>symmetric</em>. A symmetric matrix is one for which <span class="math inline"><strong>A</strong> = <strong>A</strong><sup>⊤</sup></span>, or equivalently, <span class="math inline"><em>a</em><sub><em>i</em>, <em>j</em></sub> = <em>a</em><sub><em>j</em>, <em>i</em></sub></span> for all <span class="math inline"><em>i</em></span> and <span class="math inline"><em>j</em></span>.</p>
+<p>You will need to get used to working with matrices and vectors applying and developing new machine learning techniques. You should have come across them before, but you may not have used them as extensively as we will now do in this course. You should get used to using this trick to check your work and ensure you know what the dimension of an output matrix should be. For our matrix quadratic form, it turns out that we can see it as a special type of inner product. <br /><span class="math display">$$
+\mathbf{z}^\top\mathbf{C}\mathbf{z} \rightarrow (1\times
+\underbrace{k) (k}_\text{inner dimensions}\times k) (k\times 1) \rightarrow
+\mathbf{b}^\top\mathbf{z}
+$$</span><br /> where <span class="math inline"><strong>b</strong> = <strong>C</strong><strong>z</strong></span> so therefore the result is a scalar, <br /><span class="math display">$$
+\mathbf{b}^\top\mathbf{z} \rightarrow
+(1\times \underbrace{k) (k}_\text{inner dimensions}\times 1) \rightarrow
+(1\times 1)
+$$</span><br /> where a <span class="math inline">(1 × 1)</span> matrix is recognised as a scalar.</p>
+<p>This implies that we should be able to differentiate this form, and indeed the rule for its differentiation is slightly more complex than the inner product, but still quite simple, <br /><span class="math display">$$
+\frac{\text{d}}{\text{d}\mathbf{z}}
+\mathbf{z}^\top\mathbf{C}\mathbf{z}= \mathbf{C}\mathbf{z} + \mathbf{C}^\top
+\mathbf{z}.
+$$</span><br /> Note that in the special case where <span class="math inline"><strong>C</strong></span> is symmetric then we have <span class="math inline"><strong>C</strong> = <strong>C</strong><sup>⊤</sup></span> and the derivative simplifies to <br /><span class="math display">$$
+\frac{\text{d}}{\text{d}\mathbf{z}} \mathbf{z}^\top\mathbf{C}\mathbf{z}=
+2\mathbf{C}\mathbf{z}.
+$$</span><br />}</p>
+<h2 id="differentiate-the-objective">Differentiate the Objective</h2>
+<p>First, we need to compute the full objective by substituting our prediction function into the objective function to obtain the objective in terms of <span class="math inline">$\mappingVector$</span>. Doing this we obtain <br /><span class="math display">$$
+\errorFunction(\mappingVector)= (\dataVector - \inputMatrix\mappingVector)^\top (\dataVector - \inputMatrix\mappingVector).
+$$</span><br /> We now need to differentiate this <em>quadratic form</em> to find the minimum. We differentiate with respect to the <em>vector</em> <span class="math inline">$\mappingVector$</span>. But before we do that, we'll expand the brackets in the quadratic form to obtain a series of scalar terms. The rules for bracket expansion across the vectors are similar to those for the scalar system giving, <br /><span class="math display">(<strong>a</strong> − <strong>b</strong>)<sup>⊤</sup>(<strong>c</strong> − <strong>d</strong>)=<strong>a</strong><sup>⊤</sup><strong>c</strong> − <strong>a</strong><sup>⊤</sup><strong>d</strong> − <strong>b</strong><sup>⊤</sup><strong>c</strong> + <strong>b</strong><sup>⊤</sup><strong>d</strong></span><br /> which substituting for <span class="math inline">$\mathbf{a} = \mathbf{c} = \dataVector$</span> and <span class="math inline">$\mathbf{b}=\mathbf{d} = \inputMatrix\mappingVector$</span> gives <br /><span class="math display">$$
+\errorFunction(\mappingVector)=
+\dataVector^\top\dataVector - 2\dataVector^\top\inputMatrix\mappingVector +
+\mappingVector^\top\inputMatrix^\top\inputMatrix\mappingVector
+$$</span><br /> where we used the fact that <span class="math inline">$\dataVector^\top\inputMatrix\mappingVector=\mappingVector^\top\inputMatrix^\top\dataVector$</span>. Now we can use our rules of differentiation to compute the derivative of this form, which is, <br /><span class="math display">$$
+\frac{\text{d}}{\text{d}\mappingVector}\errorFunction(\mappingVector)=- 2\inputMatrix^\top \dataVector +
+2\inputMatrix^\top\inputMatrix\mappingVector,
+$$</span><br /> where we have exploited the fact that <span class="math inline">$\inputMatrix^\top\inputMatrix$</span> is symmetric to obtain this result.</p>
+
+<h1 id="update-equation-for-global-optimum">Update Equation for Global Optimum</h1>
+<p>Once again, we need to find the minimum of our objective function. Using our likelihood for multiple input regression we can now minimize for our parameter vector <span class="math inline">$\mappingVector$</span>. Firstly, just as in the single input case, we seek stationary points by find parameter vectors that solve for when the gradients are zero, <br /><span class="math display">$$
+\mathbf{0}=- 2\inputMatrix^\top
+\dataVector + 2\inputMatrix^\top\inputMatrix\mappingVector,
+$$</span><br /> where <span class="math inline"><strong>0</strong></span> is a <em>vector</em> of zeros. Rearranging this equation we find the solution to be <br /><span class="math display">$$
+\mappingVector = \left[\inputMatrix^\top \inputMatrix\right]^{-1} \inputMatrix^\top
+\dataVector
+$$</span><br /> where <span class="math inline"><strong>A</strong><sup>−1</sup></span> denotes <a href="http://en.wikipedia.org/wiki/Invertible_matrix"><em>matrix inverse</em></a>.</p>
+<h2 id="solving-the-multivariate-system">Solving the Multivariate System</h2>
+<p>The solution for <span class="math inline">$\mappingVector$</span> is given in terms of a matrix inverse, but computation of a matrix inverse requires, in itself, an algorithm to resolve it. You'll know this if you had to invert, by hand, a <span class="math inline">3 × 3</span> matrix in high school. From a numerical stability perspective, it is also best not to compute the matrix inverse directly, but rather to ask the computer to <em>solve</em> the system of linear equations given by <br /><span class="math display">$$\inputMatrix^\top\inputMatrix \mappingVector = \inputMatrix^\top\dataVector$$</span><br /> for <span class="math inline">$\mappingVector$</span>. This can be done in <code>numpy</code> using the command</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">np.linalg.solve?</code></pre></div>
+<p>so we can obtain the solution using</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">w <span class="op">=</span> np.linalg.solve(np.dot(X.T, X), np.dot(X.T, y))
+<span class="bu">print</span>(w)</code></pre></div>
+<p>We can map it back to the liner regression and plot the fit as follows</p>
+<h2 id="multivariate-linear-regression">Multivariate Linear Regression</h2>
+<p>A major advantage of the new system is that we can build a linear regression on a multivariate system. The matrix calculus didn't specify what the length of the vector <span class="math inline">$\inputVector$</span> should be, or equivalently the size of the design matrix.</p>
+<h2 id="movie-body-count-data">Movie Body Count Data</h2>
+<p>Let's consider the movie body count data.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data <span class="op">=</span> pods.datasets.movie_body_count()
+movies <span class="op">=</span> data[<span class="st">&#39;Y&#39;</span>]</code></pre></div>
+<p>Let's remind ourselves of the features we've been provided with.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="st">&#39;, &#39;</span>.join(movies.columns))</code></pre></div>
+<p>Now we will build a design matrix based on the numeric features: year, Body_Count, Length_Minutes in an effort to predict the rating. We build the design matrix as follows:</p>
+<h2 id="relation-to-single-input-system">Relation to Single Input System</h2>
+<p>Bias as an additional feature.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">select_features <span class="op">=</span> [<span class="st">&#39;Year&#39;</span>, <span class="st">&#39;Body_Count&#39;</span>, <span class="st">&#39;Length_Minutes&#39;</span>]
+X <span class="op">=</span> movies[select_features]
+X[<span class="st">&#39;Eins&#39;</span>] <span class="op">=</span> <span class="dv">1</span> <span class="co"># add a column for the offset</span>
+y <span class="op">=</span> movies[[<span class="st">&#39;IMDB_Rating&#39;</span>]]</code></pre></div>
+<p>Now let's perform a linear regression. But this time, we will create a pandas data frame for the result so we can store it in a form that we can visualise easily.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pandas <span class="im">as</span> pd</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">w <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>np.linalg.solve(np.dot(X.T, X), np.dot(X.T, y)),  <span class="co"># solve linear regression here</span>
+                 index <span class="op">=</span> X.columns,  <span class="co"># columns of X become rows of w</span>
+                 columns<span class="op">=</span>[<span class="st">&#39;regression_coefficient&#39;</span>]) <span class="co"># the column of X is the value of regression coefficient</span></code></pre></div>
+<p>We can check the residuals to see how good our estimates are</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">(y <span class="op">-</span> np.dot(X, w)).hist()</code></pre></div>
+<p>Which shows our model <em>hasn't</em> yet done a great job of representation, because the spread of values is large. We can check what the rating is dominated by in terms of regression coefficients.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">w</code></pre></div>
+<p>Although we have to be a little careful about interpretation because our input values live on different scales, however it looks like we are dominated by the bias, with a small negative effect for later films (but bear in mind the years are large, so this effect is probably larger than it looks) and a positive effect for length. So it looks like long earlier films generally do better, but the residuals are so high that we probably haven't modelled the system very well.</p>
+<iframe width="800" height="600" src="https://www.youtube.com/embed/ui-uNlFHoms?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+<iframe width="800" height="600" src="https://www.youtube.com/embed/78YNphT90-k?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+<h2 id="solution-with-qr-decomposition">Solution with QR Decomposition</h2>
+<p>Performing a solve instead of a matrix inverse is the more numerically stable approach, but we can do even better. A <a href="http://en.wikipedia.org/wiki/QR_decomposition">QR-decomposition</a> of a matrix factorises it into a matrix which is an orthogonal matrix <span class="math inline"><strong>Q</strong></span>, so that <span class="math inline">$\mathbf{Q}^\top \mathbf{Q} = \eye$</span>. And a matrix which is upper triangular, <span class="math inline"><strong>R</strong></span>. <br /><span class="math display">$$
+\inputMatrix^\top \inputMatrix \boldsymbol{\beta} =
+\inputMatrix^\top \dataVector
+$$</span><br /> <br /><span class="math display">$$
+(\mathbf{Q}\mathbf{R})^\top
+(\mathbf{Q}\mathbf{R})\boldsymbol{\beta} = (\mathbf{Q}\mathbf{R})^\top
+\dataVector
+$$</span><br /> <br /><span class="math display">$$
+\mathbf{R}^\top (\mathbf{Q}^\top \mathbf{Q}) \mathbf{R}
+\boldsymbol{\beta} = \mathbf{R}^\top \mathbf{Q}^\top \dataVector
+$$</span><br /> <br /><span class="math display">$$
+\mathbf{R}^\top \mathbf{R} \boldsymbol{\beta} = \mathbf{R}^\top \mathbf{Q}^\top
+\dataVector
+$$</span><br /> <br /><span class="math display">$$
+\mathbf{R} \boldsymbol{\beta} = \mathbf{Q}^\top \dataVector
+$$</span><br /> This is a more numerically stable solution because it removes the need to compute <span class="math inline">$\inputMatrix^\top\inputMatrix$</span> as an intermediate. Computing <span class="math inline">$\inputMatrix^\top\inputMatrix$</span> is a bad idea because it involves squaring all the elements of <span class="math inline">$\inputMatrix$</span> and thereby potentially reducing the numerical precision with which we can represent the solution. Operating on <span class="math inline">$\inputMatrix$</span> directly preserves the numerical precision of the model.</p>
+<p>This can be more particularly seen when we begin to work with <em>basis functions</em> in the next session. Some systems that can be resolved with the QR decomposition can not be resolved by using solve directly.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> scipy <span class="im">as</span> sp</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">Q, R <span class="op">=</span> np.linalg.qr(X)
+w <span class="op">=</span> sp.linalg.solve_triangular(R, np.dot(Q.T, y)) 
+w <span class="op">=</span> pd.DataFrame(w, index<span class="op">=</span>X.columns)
+w</code></pre></div>
+<h2 id="reading-1">Reading</h2>
+<ul>
+<li>Section 1.3 of <span class="citation">Rogers and Girolami (2011)</span> for Matrix &amp; Vector Review.</li>
+</ul>
+<h1 id="references" class="unnumbered">References</h1>
+<div id="refs" class="references">
+<div id="ref-Bishop:book06">
+<p>Bishop, Christopher M. 2006. <em>Pattern Recognition and Machine Learning</em>. springer.</p>
+</div>
+<div id="ref-Laplace:essai14">
+<p>Laplace, Pierre Simon. 1814. <em>Essai Philosophique Sur Les Probabilités</em>. 2nd ed. Paris: Courcier.</p>
+</div>
+<div id="ref-Rogers:book11">
+<p>Rogers, Simon, and Mark Girolami. 2011. <em>A First Course in Machine Learning</em>. CRC Press.</p>
+</div>
+</div>
+
+

@@ -1,4 +1,4 @@
-\ifndef{talkMacrosBack}
+.\ifndef{talkMacrosBack}
 \define{talkMacrosBack}
 
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
@@ -13,7 +13,7 @@
 
 \figure{\columns{\includediagramclass{../slides/diagrams/kern/\concat{\shortname}{_covariance}}{100%}}{\includegif{../slides/diagrams/kern/\concat{\shortname}{_covariance}}{100%}{negate}{center}}{45%}{45%}}{\figureCaption}{\concat{\shortname}{-covariance-plot}}}
 
-
+\define{\installcode{library}}{\code{%pip install \library}}
 
 \define{\credit{text}}{\smalltext{\alignright{Thanks to: \text}}}
 

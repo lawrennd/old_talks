@@ -1,0 +1,272 @@
+---
+title: "Objective Functions: A Simple Example with Matrix Factorisation"
+venue: "University of Sheffield"
+abstract: "<p>In this session we introduce the notion of objective functions and show how they can be used in a simple recommender system based on <em>matrix factorisation</em>.</p>"
+author:
+- given: Neil D.
+  family: Lawrence
+  url: http://inverseprobability.com
+  institute: Amazon Cambridge and University of Sheffield
+  twitter: lawrennd
+  gscholar: r3SJcvoAAAAJ
+  orchid: 
+date: 2015-10-06
+published: 2015-10-06
+reveal: 2015-10-06-week2.slides.html
+ipynb: 2015-10-06-week2.ipynb
+layout: talk
+categories:
+- notes
+---
+
+
+<div style="display:none">
+  $${% include talk-notation.tex %}$$
+</div>
+
+<script src="/talks/figure-magnify.js"></script>
+<script src="/talks/figure-animate.js"></script>
+    
+<div id="modal-frame" class="modal">
+  <span class="close" onclick="closeMagnify()">&times;</span>
+  <div class="modal-figure">
+    <div class="figure-frame">
+      <div class="modal-content" id="modal01"></div>
+      <!--<img class="modal-content" id="object01">-->
+    </div>
+    <div class="caption-frame" id="modal-caption"></div>
+  </div>
+</div>	  
+
+<!-- Front matter -->
+<p>.</p>
+<!---->
+<!--Back matter-->
+<p>.</p>
+<!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
+<h2 id="lab-class">Lab Class</h2>
+<ul>
+<li>You will take the ideas you have learnt.</li>
+<li>You will apply them in the domain of <em>matrix factorisation</em>.</li>
+<li>Matrix factorization presents a different error function.</li>
+</ul>
+<h2 id="reading">Reading</h2>
+<ul>
+<li>Section 1.1.3 of <span class="citation">Rogers and Girolami (2011)</span> for loss functions.</li>
+</ul>
+<p>In <a href="./week1.ipynb">last week's</a> class we saw how we could load in a data set to pandas and use it for some simple data processing. We computed variaous probabilities on the data and I encouraged you to think about what sort of probabilities you need for prediction. This week we are going to take a slightly different tack.</p>
+<p>Broadly speaking there are two dominating approaches to machine learning problems. We started to consider the first approach last week: constructing models based on defining the relationship between variables using probabilities. This week we will consider the second approach: which involves defining an <em>objective function</em> and optimizing it. What do we mean by an objective function? An objective function could be an <em>error function</em> a <em>cost function</em> or a <em>benefit</em> function. In evolutionary computing they are called <em>fitness</em> functions. But the idea is always the same. We write down a mathematical equation which is then optimized to do the learning. The equation should be a function of the <em>data</em> and our model <em>parameters</em>. We have a choice when optimizing, either minimize or maximize. To avoid confusion, in the optimization field, we always choose to minimize the function. If we have function that we would like to maximize, we simply choose to minimize the negative of that function.</p>
+<p>So for this lab session, we are going to ignore probabilities, but don't worry, they will return!</p>
+<p>This week we are going to try and build a simple movie recommender system using an objective function. To do this, the first thing I'd like you to do is to install some software we've written for sharing information across google documents.</p>
+<h2 id="pods-edit"><code>pods</code> <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/pods-software.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/pods-software.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>In Sheffield we created a suite of software tools for 'Open Data Science'. Open data science is an approach to sharing code, models and data that should make it easier for companies, health professionals and scientists to gain access to data science techniques.</p>
+<p>You can also check my blog post on <a href="http://inverseprobability.com/2014/07/01/open-data-science">&quot;Open Data Science&quot;</a></p>
+<p>The software can be installed using</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>pip install pods</code></pre></div>
+<p>from the command prompt where you can access your python installation.</p>
+<p>The code is also available on github: <a href="https://github.com/sods/ods" class="uri">https://github.com/sods/ods</a></p>
+<p>Once <code>pods</code> is installed, it can be imported in the usual manner.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods</code></pre></div>
+<h1 id="movie-body-count-example-edit">Movie Body Count Example <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/movie-body-count-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/movie-body-count-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
+<p>There is a crisis in the movie industry, deaths are occuring on a massive scale. In every feature film the body count is tolling up. But what is the cause of all these deaths? Let's try and investigate.</p>
+<p>For our first example of data science, we take inspiration from work by <a href="http://www.theswarmlab.com/r-vs-python-round-2/">researchers at NJIT</a>. They researchers were comparing the qualities of Python with R (my brief thoughts on the subject are available in a Google+ post here: https://plus.google.com/116220678599902155344/posts/5iKyqcrNN68). They put together a data base of results from the the &quot;Internet Movie Database&quot; and the <a href="http://www.moviebodycounts.com/">Movie Body Count</a> website which will allow us to do some preliminary investigation.</p>
+<p>We will make use of data that has already been 'scraped' from the <a href="http://www.moviebodycounts.com/">Movie Body Count</a> website. Code and the data is available at <a href="https://github.com/sjmgarnier/R-vs-%20Python/tree/master/Deadliest%20movies%20scrape/code">a github repository</a>. Git is a version control system and github is a website that hosts code that can be accessed through git. By sharing the code publicly through github, the authors are licensing the code publicly and allowing you to access and edit it. As well as accessing the code via github you can also <a href="https://github.com/sjmgarnier/R-vs-Python/archive/master.zip">download the zip file</a>.</p>
+<p>For ease of use we've packaged this data set in the <code>pods</code> library</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data <span class="op">=</span> pods.datasets.movie_body_count()[<span class="st">&#39;Y&#39;</span>]
+data.head()</code></pre></div>
+<p>Once it is loaded in the data can be summarized using the <code>describe</code> method in pandas.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data.describe()</code></pre></div>
+<p>In jupyter and jupyter notebook it is possible to see a list of all possible functions and attributes by typing the name of the object followed by <code>.&lt;Tab&gt;</code> for example in the above case if we type <code>data.&lt;Tab&gt;</code> it show the columns available (these are attributes in pandas dataframes) such as <code>Body_Count</code>, and also functions, such as .describe().</p>
+<p>For functions we can also see the documentation about the function by following the name with a question mark. This will open a box with documentation at the bottom which can be closed with the x button.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data.describe?</code></pre></div>
+<p>The film deaths data is stored in an object known as a 'data frame'. Data frames come from the statistical family of programming languages based on <code>S</code>, the most widely used of which is <a href="http://en.wikipedia.org/wiki/R_(programming_language)"><code>R</code></a>. The data frame gives us a convenient object for manipulating data. The describe method summarizes which columns there are in the data frame and gives us counts, means, standard deviations and percentiles for the values in those columns. To access a column directly we can write</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(data[<span class="st">&#39;Year&#39;</span>])
+<span class="co">#print(data[&#39;Body_Count&#39;])</span></code></pre></div>
+<p>This shows the number of deaths per film across the years. We can plot the data as follows.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># this ensures the plot appears in the web browser</span>
+<span class="op">%</span>matplotlib inline 
+<span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <span class="co"># this imports the plotting library in python</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">plt.plot(data[<span class="st">&#39;Year&#39;</span>], data[<span class="st">&#39;Body_Count&#39;</span>], <span class="st">&#39;rx&#39;</span>)</code></pre></div>
+<p>You may be curious what the arguments we give to <code>plt.plot</code> are for, now is the perfect time to look at the documentation</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">plt.plot?</code></pre></div>
+<p>We immediately note that some films have a lot of deaths, which prevent us seeing the detail of the main body of films. First lets identify the films with the most deaths.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data[data[<span class="st">&#39;Body_Count&#39;</span>]<span class="op">&gt;</span><span class="dv">200</span>]</code></pre></div>
+<p>Here we are using the command <code>data['Kill_Count']&gt;200</code> to index the films in the pandas data frame which have over 200 deaths. To sort them in order we can also use the <code>sort</code> command. The result of this command on its own is a data series of <code>True</code> and <code>False</code> values. However, when it is passed to the <code>data</code> data frame it returns a new data frame which contains only those values for which the data series is <code>True</code>. We can also sort the result. To sort the result by the values in the <code>Kill_Count</code> column in <em>descending</em> order we use the following command.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data[data[<span class="st">&#39;Body_Count&#39;</span>]<span class="op">&gt;</span><span class="dv">200</span>].sort_values(by<span class="op">=</span><span class="st">&#39;Body_Count&#39;</span>, ascending<span class="op">=</span><span class="va">False</span>)</code></pre></div>
+<p>We now see that the 'Lord of the Rings' is a large outlier with a very large number of kills. We can try and determine how much of an outlier by histograming the data.</p>
+<h2 id="plotting-the-data">Plotting the Data</h2>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data[<span class="st">&#39;Body_Count&#39;</span>].hist(bins<span class="op">=</span><span class="dv">20</span>) <span class="co"># histogram the data with 20 bins.</span>
+plt.title(<span class="st">&#39;Histogram of Film Kill Count&#39;</span>)</code></pre></div>
+
+<p>We could try and remove these outliers, but another approach would be plot the logarithm of the counts against the year.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">plt.plot(data[<span class="st">&#39;Year&#39;</span>], data[<span class="st">&#39;Body_Count&#39;</span>], <span class="st">&#39;rx&#39;</span>)
+ax <span class="op">=</span> plt.gca() <span class="co"># obtain a handle to the current axis</span>
+ax.set_yscale(<span class="st">&#39;log&#39;</span>) <span class="co"># use a logarithmic death scale</span>
+<span class="co"># give the plot some titles and labels</span>
+plt.title(<span class="st">&#39;Film Deaths against Year&#39;</span>)
+plt.ylabel(<span class="st">&#39;deaths&#39;</span>)
+plt.xlabel(<span class="st">&#39;year&#39;</span>)</code></pre></div>
+<p>Note a few things. We are interacting with our data. In particular, we are replotting the data according to what we have learned so far. We are using the progamming language as a <em>scripting</em> language to give the computer one command or another, and then the next command we enter is dependent on the result of the previous. This is a very different paradigm to classical software engineering. In classical software engineering we normally write many lines of code (entire object classes or functions) before compiling the code and running it. Our approach is more similar to the approach we take whilst debugging. Historically, researchers interacted with data using a <em>console</em>. A command line window which allowed command entry. The notebook format we are using is slightly different. Each of the code entry boxes acts like a separate console window. We can move up and down the notebook and run each part in a different order. The <em>state</em> of the program is always as we left it after running the previous part.</p>
+
+<h1 id="recommender-systems-edit">Recommender Systems <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/recommender-systems.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/recommender-systems.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
+<p>A recommender system aims to make suggestions for items (films, books, other commercial products) given what it knows about users' tastes. The recommendation engine needs to represent the <em>taste</em> of all the users and the <em>characteristics</em> of each object.</p>
+<p>A common way for organizing objects is to place related objects spatially close together. For example in a library we try and put books that are on related topics near to each other on the shelves. One system for doing this is known as <a href="http://en.wikipedia.org/wiki/Dewey_Decimal_Classification">Dewey Decimal Classification</a>. In the Dewey Decimal Classification system (which dates from 1876) each subject is given a number (in fact it's a decimal number). For example, the field of Natural Sciences and Mathematics is given numbers which start with 500. Subjects based on Computer Science are given numbers which start 004 and works on the 'mathematical principles' of Computer science are given the series 004.0151 (which we might store as 4.0151 on a Computer). Whilst it's a classification system, the books in the library are typically laid out in the same order as the numbers, so we might expect that neighbouring numbers represent books that are related in subject. That seems to be exactly what we want when also representing films. Could we somehow represent each film's subject according to a number? In a similar way we could then imagine representing users with a list of numbers that represent things that each user is interested in.</p>
+<p>Actually a one dimensional representation of a subject can be very awkward. To see this, let's have a look at the Dewey Decimal Classification numbers for the 900s, which is listed as 'History and Geography'. We will focus on subjects in the 940s which can be found in this list from <a href="http://www.nova.edu/library/help/misc/lc_dewey/dewey900.html#40">Nova Southeastern University</a>. Whilst the ordering for places is somewhat sensible, it is also rather arbitrary. In the 940s we have Europe listed from 940-949, Asia listed from 950-959 and Africa listed from 960-969. Whilst it's true that Asia borders Europe, Africa is also very close, and the history of the Roman Empire spreads into <a href="http://en.wikipedia.org/wiki/Carthage">Carthage</a> and later on Egypt. This image from Wikipedia shows a map of the Cathaginian Empire which fell after fighting with Rome.</p>
+<div class="figure">
+<div id="carthaginian-empire-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/mlai/carthaginian-empire.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="carthaginian-empire-magnify" class="magnify" onclick="magnifyFigure(&#39;carthaginian-empire&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="carthaginian-empire-caption" class="caption-frame">
+<p>Figure: The Carhaginian Empire at its peak.</p>
+</div>
+</div>
+<p>We now need to make a decision about whether Roman Histories are European or African, ideally we'd like them to be somewhere between the two, but we can't place them there in the Dewey Decimal system because between Europe and Africa is Asia, which has less to do with the Roman Empire than either Europe or Africa. Of course the fact that we've used a map provides a clue as to what to do next. Libraries are actually laid out on floors, so what if we were to use the spatial lay out to organise the sujbects of the books in two dimensions. Books on Geography could be laid out according to where in the world they are referring to.</p>
+<p>Such complexities are very hard to encapsulate in one number, but inspired by the map examples we can start considering how we might lay out films in two dimensions. Similarly, we can consider laying out a map of people's interests. If the two maps correspond to one another, the map of people could reflect where they might want to live in 'subject space'. We can think of representing people's tastes as where they might best like to sit in the library to access easily the books they are most interested in.</p>
+<h2 id="inner-products-for-representing-similarity">Inner Products for Representing Similarity</h2>
+<p>Ideas like the above are good for gaining intuitions about what we might want, but the one of the skills of data science is representing those ideas mathematically. Mathematical abstraction of a problem is one of the key ways in which we've been able to progress as a society. Understanding planetary motions, as well as those of the smallest molecule (to quote Laplace's <a href="http://books.google.co.uk/books?id=1YQPAAAAQAAJ&amp;printsec=frontcover&amp;source=gbs_ge_summary_r&amp;cad=0#v=onepage&amp;q&amp;f=false">Philosophical Essay on Probabilities</a>) needed to be done mathematically. The right mathematical model in machine learning can be slightly more elusive, because constructing it is a two stage process.</p>
+<ol style="list-style-type: decimal">
+<li><p>We have to determine the right intuition for the system we want to represent. Notions such as 'subject' and 'interest' are not mathematically well defined, and even when we create a new interpretation of what they might mean, each interpretation may have its own weaknesses.</p></li>
+<li><p>Once we have our interpretation we can attempt to mathematically formalize it. In our library interpretation, that's what we need to do next.</p></li>
+</ol>
+<h2 id="the-library-on-an-infinite-plane">The Library on an Infinite Plane</h2>
+<p>Let's imagine a library which stores all the items we are interested in, not just books, but films and shopping items too. Such a library is likely to be very large, so we'll create it on an infinite two dimensional plane. This means we can use all the real numbers to represent the location of each item on the plane. For a two dimensional plane, we need to store the locations in a vector of numbers: we can decide that the <span class="math inline"><em>j</em></span>th item's location in the library is given by <br /><span class="math display">$$
+\mathbf{v}_j = \begin{bmatrix} v_{j,1} \\ v_{j,2}\end{bmatrix},
+$$</span><br /> where <span class="math inline"><em>v</em><sub><em>j</em>, 1</sub></span> represents the <span class="math inline"><em>j</em></span>th item's location in the East-West direction (or the <span class="math inline"><em>x</em></span>-axis) and <span class="math inline"><em>v</em><sub><em>j</em>, 2</sub></span> represents the <span class="math inline"><em>j</em></span>th item's location in the North-South direction (or the <span class="math inline"><em>y</em></span>-axis). Now we need to specify the location where each user sits so that all the items that interest them are nearby: we can also represent the <span class="math inline"><em>i</em></span>th user's location with a vector <br /><span class="math display">$$
+\mathbf{u}_i = \begin{bmatrix} u_{i,1} \\ u_{i,2}\end{bmatrix}.
+$$</span><br /> Finally, we need some way of recording a given user's affinity for a given item. This affinity might be the rating that the user gives the film. We can use <span class="math inline"><em>y</em><sub><em>i</em>, <em>j</em></sub></span> to represent user <span class="math inline"><em>i</em></span>'s affinity for item <span class="math inline"><em>j</em></span>.</p>
+<p>For our film example we might imagine wanting to order films in a few ways. We could imagine organising films in the North-South direction as to how romantic they are. We could place the more romantic films further North and the less romantic films further South. For the East-West direction we could imagine ordering them according to how historic they are: we can imagine placing science fiction films to the East and historical drama to the West. In this case, fans of historical romances would be based in the North-West location, whilst fans of Science Fiction Action films might be located in the South-East (if we assume that 'Action' is the opposite of 'Romance', which is not necessarily the case). How do we lay out all these films? Have we got the right axes? In machine learning the answer is to 'let the data speak'. Use the data to try and obtain such a lay out. To do this we first need to obtain the data.</p>
+<h2 id="obtaining-the-data-edit">Obtaining the Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/recommender-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/recommender-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>We are using a functionality of the Open Data Science software library to obtain the data. This functionality involves some prewritten code which distributes to each of you a google spreadsheet where you can rate movies that you've seen. For completeness the code follows. Try and read and understand the code, but don't run it! It has already been run centrally by me.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">import</span> pandas <span class="im">as</span> pd
+<span class="im">import</span> numpy <span class="im">as</span> np
+user_data <span class="op">=</span> pd.DataFrame(index<span class="op">=</span>movies.index, columns<span class="op">=</span>[<span class="st">&#39;title&#39;</span>, <span class="st">&#39;year&#39;</span>, <span class="st">&#39;rating&#39;</span>, <span class="st">&#39;prediction&#39;</span>])
+user_data[<span class="st">&#39;title&#39;</span>]<span class="op">=</span>movies.Film
+user_data[<span class="st">&#39;year&#39;</span>]<span class="op">=</span>movies.Year
+
+accumulator<span class="op">=</span>pods.lab.distributor(spreadsheet_title<span class="op">=</span><span class="st">&#39;COM4509/6509 Movie Ratings:&#39;</span>, user_sep<span class="op">=</span><span class="st">&#39;</span><span class="ch">\t</span><span class="st">&#39;</span>)
+<span class="co"># function to apply to data before giving it to user </span>
+<span class="co"># Select 50 movies at random and order them according to year.</span>
+max_movies <span class="op">=</span> <span class="dv">50</span>
+function <span class="op">=</span> <span class="kw">lambda</span> x: x.loc[np.random.permutation(x.index)[:max_movies]].sort(columns<span class="op">=</span><span class="st">&#39;year&#39;</span>)
+accumulator.write(data_frame<span class="op">=</span>user_data, comment<span class="op">=</span><span class="st">&#39;Film Ratings&#39;</span>, 
+                  function<span class="op">=</span>function)
+accumulator.write_comment(<span class="st">&#39;Rate Movie Here (score 1-5)&#39;</span>, row<span class="op">=</span><span class="dv">1</span>, column<span class="op">=</span><span class="dv">4</span>)
+accumulator.share(share_type<span class="op">=</span><span class="st">&#39;writer&#39;</span>, send_notifications<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<p>In your Google docs account you should be able to find a spreadsheet called 'COM4509/6509 Movie Ratings: Your Name'. In the spreadsheet You should find a number of movies listed according to year. In the column titled 'rating' please place your rating using a score of 1-5 for <em>any</em> of the movies you've seen from the list.</p>
+<p>Once you have placed your ratings we can download the data from your spreadsheets to a central file where the ratings of the whole class can be stored. We will build an algorithm on these ratings and use them to make predictions for the rest of the class. Firstly, here's the code for reading the ratings from each of the spreadsheets.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
+<span class="im">import</span> pandas <span class="im">as</span> pd
+<span class="im">import</span> os
+
+accumulator <span class="op">=</span> pods.lab.distributor(user_sep<span class="op">=</span><span class="st">&#39;</span><span class="ch">\t</span><span class="st">&#39;</span>)
+data <span class="op">=</span> accumulator.read(usecols<span class="op">=</span>[<span class="st">&#39;rating&#39;</span>], dtype<span class="op">=</span>{<span class="st">&#39;index&#39;</span>:<span class="bu">int</span>, <span class="st">&#39;rating&#39;</span>:np.float64}, header<span class="op">=</span><span class="dv">2</span>)
+
+<span class="cf">for</span> user <span class="kw">in</span> data:
+    <span class="cf">if</span> data[user].rating.count()<span class="op">&gt;</span><span class="dv">0</span>: <span class="co"># only add user if they rated something</span>
+        <span class="co"># add a new field to movies with that user&#39;s ratings.</span>
+        movies[user] <span class="op">=</span> data[user][<span class="st">&#39;rating&#39;</span>]
+
+<span class="co"># Store the csv on disk where it will be shared through dropbox.</span>
+movies.to_csv(os.path.join(pods.lab.class_dir,<span class="st">&#39;movies.csv&#39;</span>), index_label<span class="op">=</span><span class="st">&#39;index&#39;</span>)</code></pre></div>
+<p>Now we will convert our data structure into a form that is appropriate for processing. We will convert the <code>movies</code> object into a data base which contains the movie, the user and the score using the following command.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pandas <span class="im">as</span> pd
+<span class="im">import</span> os</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># uncomment the line below if you are doing this task by self study.</span>
+pods.util.download_url(<span class="st">&#39;https://dl.dropboxusercontent.com/u/4347554/mlai_movies.csv&#39;</span>, store_directory <span class="op">=</span> <span class="st">&#39;class_movie&#39;</span>, save_name<span class="op">=</span><span class="st">&#39;movies.csv&#39;</span>)
+<span class="co">#pods.util.download_url(&#39;https://www.dropbox.com/s/s6gqvp9b383b59y/movies.csv?dl=0&amp;raw=1&#39;, store_directory = &#39;class_movie&#39;, save_name=&#39;movies.csv&#39;)</span>
+movies <span class="op">=</span> pd.read_csv(os.path.join(<span class="st">&#39;class_movie&#39;</span>, <span class="st">&#39;movies.csv&#39;</span>),encoding<span class="op">=</span><span class="st">&#39;latin-1&#39;</span>).set_index(<span class="st">&#39;index&#39;</span>)</code></pre></div>
+
+<h2 id="processing-the-data">Processing the Data</h2>
+<p>We will now prepare the data set for processing. To do this we are going to conver the data into a new format using the <code>melt</code> command.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">user_names <span class="op">=</span> <span class="bu">list</span>(<span class="bu">set</span>(movies.columns)<span class="op">-</span><span class="bu">set</span>(movies.columns[:<span class="dv">9</span>]))
+Y <span class="op">=</span> pd.melt(movies.reset_index(), id_vars<span class="op">=</span>[<span class="st">&#39;Film&#39;</span>, <span class="st">&#39;index&#39;</span>], 
+            var_name<span class="op">=</span><span class="st">&#39;user&#39;</span>, value_name<span class="op">=</span><span class="st">&#39;rating&#39;</span>, 
+            value_vars<span class="op">=</span>user_names)
+Y <span class="op">=</span> Y.dropna(axis<span class="op">=</span><span class="dv">0</span>)</code></pre></div>
+<h2 id="what-is-a-pivot-table-what-does-the-pandas-command">What is a pivot table? What does the <code>pandas</code> command</h2>
+<p><code>pd.melt</code> do?</p>
+<h2 id="measuring-similarity-edit">Measuring Similarity <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/matrix-factorization.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/matrix-factorization.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>We now need a measure for determining the similarity between the item and the user: how close the user is sitting to the item in the rooom if you like. We are going to use the inner product between the vector representing the item and the vector representing the user.</p>
+<p>An inner product (or <a href="http://en.wikipedia.org/wiki/Dot_product">dot product</a>) between two vectors <span class="math inline"><strong>a</strong></span> and <span class="math inline"><strong>b</strong></span> is written as <span class="math inline"><strong>a</strong> ⋅ <strong>b</strong></span>. Or in vector notation we sometimes write it as <span class="math inline"><strong>a</strong><sup>⊤</sup><strong>b</strong></span>. An inner product is simply the sume of the products of each element of the vector, <br /><span class="math display"><strong>a</strong><sup>⊤</sup><strong>b</strong> = ∑<sub><em>i</em></sub><em>a</em><sub><em>i</em></sub><em>b</em><sub><em>i</em></sub></span><br /> The inner product can be seen as a measure of similarity. The inner product gives us the cosine of the angle between the two vectors multiplied by their length. The smaller the angle between two vectors the larger the inner product. <br /><span class="math display"><strong>a</strong><sup>⊤</sup><strong>b</strong> = |<strong>a</strong>||<strong>b</strong>|cos(<em>θ</em>)</span><br /> where <span class="math inline"><em>θ</em></span> is the angle between two vectors and <span class="math inline">|<strong>a</strong>|</span> and <span class="math inline">|<strong>b</strong>|</span> are the respective lengths of the two vectors.</p>
+<p>Since we want each user to be sitting near each item, then we want the inner product to be large for any two items which are rated highly by that user. We can do this by trying to force the inner product <span class="math inline"><strong>u</strong><sub><em>i</em></sub><sup>⊤</sup><strong>v</strong><sub><em>j</em></sub></span> to be similar to the rating given by the user, <span class="math inline"><em>y</em><sub><em>i</em>, <em>j</em></sub></span>. To ensure this we will use a least squares objective function for all user ratings.</p>
+<h2 id="objective-function">Objective Function</h2>
+<p>The error function (or objective function, or cost function) we will choose is known as 'sum of squares', we will aim to minimize the sum of squared squared error between the inner product of <span class="math inline"><strong>u</strong><sub><em>i</em></sub></span> and <span class="math inline"><strong>v</strong><sub><em>i</em></sub></span> and the observed score for the user/item pairing, given by <span class="math inline"><em>y</em><sub><em>i</em>, <em>j</em></sub></span>.</p>
+<p>The total objective function can be written as <br /><span class="math display"><em>E</em>(<strong>U</strong>, <strong>V</strong>)=∑<sub><em>i</em>, <em>j</em></sub><em>s</em><sub><em>i</em>, <em>j</em></sub>(<em>y</em><sub><em>i</em>, <em>j</em></sub> − <strong>u</strong><sub><em>i</em></sub><sup>⊤</sup><strong>v</strong><sub><em>j</em></sub>)<sup>2</sup></span><br /> where <span class="math inline"><em>s</em><sub><em>i</em>, <em>j</em></sub></span> is an <em>indicator</em> variable that is 1 if user <span class="math inline"><em>i</em></span> has rated item <span class="math inline"><em>j</em></span> and is zero otherwise. Here <span class="math inline"><strong>U</strong></span> is the matrix made up of all the vectors <span class="math inline"><strong>u</strong></span>, <br /><span class="math display">$$
+\mathbf{U} = \begin{bmatrix} \mathbf{u}_1 \dots \mathbf{u}_n\end{bmatrix}^\top
+$$</span><br /> where we note that <span class="math inline"><em>i</em></span>th <em>row</em> of <span class="math inline"><strong>U</strong></span> contains the vector associated with the <span class="math inline"><em>i</em></span>th user and <span class="math inline"><em>n</em></span> is the total number of users. This form of matrix is known as a <em>design matrix</em>. Similarly, we define the matrix <br /><span class="math display">$$
+\mathbf{V} = \begin{bmatrix} \mathbf{v}_1 \dots \mathbf{v}_m\end{bmatrix}^\top
+$$</span><br /> where again the <span class="math inline"><em>j</em></span>th row of <span class="math inline"><strong>V</strong></span> contains the vector associated with the <span class="math inline"><em>j</em></span>th item and <span class="math inline"><em>m</em></span> is the total number of items in the data set.</p>
+<h2 id="objective-optimization">Objective Optimization</h2>
+<p>The idea is to mimimize this objective. A standard, simple, technique for minimizing an objective is <em>gradient descent</em> or <em>steepest descent</em>. In gradient descent we simply choose to update each parameter in the model by subtracting a multiple of the objective function's gradient with respect to the parameters. So for a parameter <span class="math inline"><em>u</em><sub><em>i</em>, <em>j</em></sub></span> from the matrix <span class="math inline"><strong>U</strong></span> we would have an update as follows: <br /><span class="math display">$$ 
+u_{k,\ell} \leftarrow u_{k,\ell} - \eta \frac{\text{d}
+E(\mathbf{U}, \mathbf{V})}{\text{d}u_{k,\ell}} 
+$$</span><br /> where <span class="math inline"><em>η</em></span> (which is pronounced <em>eta</em> in English) is a Greek letter representing the <em>learning rate</em>.</p>
+<p>We can compute the gradient of the objective function with respect to <span class="math inline"><em>u</em><sub><em>k</em>, ℓ</sub></span> as <br /><span class="math display">$$
+\frac{\text{d}E(\mathbf{U}, \mathbf{V})}{\text{d}u_{k,\ell}} = -2
+\sum_j s_{k,j}v_{j,\ell}(y_{k, j} - \mathbf{u}_k^\top\mathbf{v}_{j}).
+$$</span><br /> Similarly each parameter <span class="math inline"><em>v</em><sub><em>i</em>, <em>j</em></sub></span> needs to be updated according to its gradient.</p>
+
+<h2 id="steepest-descent-algorithm">Steepest Descent Algorithm</h2>
+<p>In the steepest descent algorithm we aim to minimize the objective function by subtacting the gradient of the objective function from the parameters.</p>
+<h2 id="initialisation">Initialisation</h2>
+<p>To start with though, we need initial values for the matrix <span class="math inline"><strong>U</strong></span> and the matrix <span class="math inline"><strong>V</strong></span>. Let's create them as <code>pandas</code> data frames and initialise them randomly with small values.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">q <span class="op">=</span> <span class="dv">2</span> <span class="co"># the dimension of our map of the &#39;library&#39;</span>
+learn_rate <span class="op">=</span> <span class="fl">0.01</span>
+U <span class="op">=</span> pd.DataFrame(np.random.normal(size<span class="op">=</span>(<span class="bu">len</span>(user_names), q))<span class="op">*</span><span class="fl">0.001</span>, index<span class="op">=</span>user_names)
+V <span class="op">=</span> pd.DataFrame(np.random.normal(size<span class="op">=</span>(<span class="bu">len</span>(movies.index), q))<span class="op">*</span><span class="fl">0.001</span>, index<span class="op">=</span>movies.index)</code></pre></div>
+<p>We also will subtract the mean from the rating before we try and predict them predictions. Have a think about why this might be a good idea (hint, what will the gradients be if we don't subtract the mean).</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">Y[<span class="st">&#39;rating&#39;</span>] <span class="op">-=</span> Y[<span class="st">&#39;rating&#39;</span>].mean()</code></pre></div>
+<p>Now that we have the initial values set, we can start the optimization. First we define a function for the gradient of the objective and the objective function itself.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> objective_gradient(Y, U, V):
+    gU <span class="op">=</span> pd.DataFrame(np.zeros((U.shape)), index<span class="op">=</span>U.index)
+    gV <span class="op">=</span> pd.DataFrame(np.zeros((V.shape)), index<span class="op">=</span>V.index)
+    obj <span class="op">=</span> <span class="dv">0</span>.
+    <span class="cf">for</span> ind, series <span class="kw">in</span> Y.iterrows():
+        film <span class="op">=</span> series[<span class="st">&#39;index&#39;</span>]
+        user <span class="op">=</span> series[<span class="st">&#39;user&#39;</span>]
+        rating <span class="op">=</span> series[<span class="st">&#39;rating&#39;</span>]
+        prediction <span class="op">=</span> np.dot(U.loc[user], V.loc[film]) <span class="co"># vTu</span>
+        diff <span class="op">=</span> prediction <span class="op">-</span> rating <span class="co"># vTu - y</span>
+        obj <span class="op">+=</span> diff<span class="op">*</span>diff
+        gU.loc[user] <span class="op">+=</span> <span class="dv">2</span><span class="op">*</span>diff<span class="op">*</span>V.loc[film]
+        gV.loc[film] <span class="op">+=</span> <span class="dv">2</span><span class="op">*</span>diff<span class="op">*</span>U.loc[user]
+    <span class="cf">return</span> obj, gU, gV</code></pre></div>
+<p>Now we can write our simple optimisation route. This allows us to observe the objective function as the optimization proceeds.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> sys
+iterations <span class="op">=</span> <span class="dv">100</span>
+<span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(iterations):
+    obj, gU, gV <span class="op">=</span> objective_gradient(Y, U, V)
+    <span class="bu">print</span>(<span class="st">&quot;Iteration&quot;</span>, i, <span class="st">&quot;Objective function: &quot;</span>, obj)
+    U <span class="op">-=</span> learn_rate<span class="op">*</span>gU
+    V <span class="op">-=</span> learn_rate<span class="op">*</span>gV</code></pre></div>
+
+<h2 id="stochastic-gradient-descent-or-robbins-monroe-algorithm">Stochastic Gradient Descent or Robbins Monroe Algorithm</h2>
+<p>Stochastic gradient descent involves updating separating each gradient update according to each separate observation, rather than summing over them all. It is an approximate optimization method, but it has proven convergence under certain conditions and can be much faster in practice. It is used widely by internet companies for doing machine learning in practice. For example, Facebook's ad ranking algorithm uses stochastic gradient descent.</p>
+
+<h2 id="making-predictions">Making Predictions</h2>
+<p>Predictions can be made from the model of the appropriate rating for a given user, <span class="math inline"><em>i</em></span>, for a given film, <span class="math inline"><em>j</em></span>, by simply taking the inner product between their vectors <span class="math inline"><strong>u</strong><sub><em>i</em></sub></span> and <span class="math inline"><strong>v</strong><sub><em>j</em></sub></span>.</p>
+<h2 id="is-our-map-enough-are-our-data-enough">Is Our Map Enough? Are Our Data Enough?</h2>
+<p>Is two dimensions really enough to capture the complexity of humans and their artforms? Perhaps we need even more dimensions to capture that complexity. Extending our books analogy further, consider how we should place books that have a historical timeframe as well as some geographical location. Do we really want books from the 2nd World War to sit alongside books from the Roman Empire? Books on the American invasion of Sicily in 1943 are perhaps less related to books about Carthage than those that study the Jewish Revolt from 66-70 (in the Roman Province of Judaea). So books that relate to subjects which are closer in time should be stored together. However, a student of rebellion against empire may also be interested in the relationship between the Jewish Revolt of 66-70 and the Indian Rebellion of 1857, nearly 1800 years later. Whilst the technologies are different, the psychology of the people is shared: a rebellious nation angainst their imperial masters, triggered by misrule with a religious and cultural background. To capture such complexities we would need further dimensions in our latent representation. But are further dimensions justified by the amount of data we have? Can we really understand the facets of a film that only has at most three or four ratings?</p>
+<h2 id="going-further">Going Further</h2>
+<p>If you want to take this model further then you'll need more data. One possible source of data is the <a href="http://grouplens.org/datasets/movielens/"><code>movielens</code> data set</a>. They have data sets containing up to ten million movie ratings. The few ratings we were able to collect in the class are not enough to capture the rich structure underlying these films. Imagine if we assume that the ratings are uniformly distributed between 1 and 5. If you know something about information theory then you could use that to work out the maximum number of <em>bits</em> of information we could gain per rating.</p>
+<p>Now we'll download the movielens 100k data and see if we can extract information about these movies.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">d <span class="op">=</span> pods.datasets.movielens100k()
+Y<span class="op">=</span>d[<span class="st">&#39;Y&#39;</span>]</code></pre></div>
+
+<p>}</p>
+<h1 id="references" class="unnumbered">References</h1>
+<div id="refs" class="references">
+<div id="ref-Rogers:book11">
+<p>Rogers, Simon, and Mark Girolami. 2011. <em>A First Course in Machine Learning</em>. CRC Press.</p>
+</div>
+</div>
+
+

@@ -47,7 +47,7 @@ library.}
 
 \notes{You can try installing it using `pip` as follows.}
 
-\installcode{install}{IMDbPY}
+\installcode{IMDbPY}
 
 \notes{If this doesn't work on your machine, try following instructions on
 (http://imdbpy.sourceforge.net/)}

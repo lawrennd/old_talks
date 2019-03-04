@@ -66,7 +66,8 @@ fellow researcher can you publish that data on line?}{1}{10}
 
 }
 
+\thanks
 
-\subsection{References}
+\references
 
-<!--include{_ml/includes/matrix-factorization.md}-->
+

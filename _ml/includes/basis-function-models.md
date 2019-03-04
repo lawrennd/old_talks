@@ -1,3 +1,8 @@
+\ifndef{basisFunctionModels}
+\define{basisFunctionModels}
+
+\editme
+
 \subsection{Fitting to Data}
 
 Now we are going to consider how these basis functions can be adjusted to fit to
@@ -16,7 +21,7 @@ y /= y.std()}
 
 \writeassignment{Now we are going to redefine our polynomial basis. Have a careful look at the operations we perform on `x` to create `z`. We use `z` in the polynomial computation. What are we doing to the inputs? Why do you think we are changing `x` in this manner?}{2}{10}
 
-\code{%load -s polynomial mlai.py}
+\loadcode{polynomial}{mlai}
 
 \plotcode{#x[:, 0] = np.linspace(1888, 2020, 1000)
 fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
@@ -253,3 +258,5 @@ Compute the corresponding error on the training data. How does it
 compare to the error you were able to achieve fitting the basis above? Plot the
 form of your prediction function from the least squares estimate alongside the
 form of you prediction function you fitted by hand.}{5}{35}
+
+\endif

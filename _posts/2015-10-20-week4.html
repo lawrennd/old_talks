@@ -1,0 +1,414 @@
+---
+title: "Basis Functions"
+venue: "University of Sheffield"
+abstract: "<p>In the last session we explored least squares for univariate and multivariate <em>regression</em>. We introduced <em>matrices</em>, <em>linear algebra</em> and <em>derivatives</em>.</p>
+<p>In this session we will introduce <em>basis functions</em> which allow us to implement <em>non-linear regression models</em>.</p>"
+author:
+- given: Neil D.
+  family: Lawrence
+  url: http://inverseprobability.com
+  institute: Amazon Cambridge and University of Sheffield
+  twitter: lawrennd
+  gscholar: r3SJcvoAAAAJ
+  orchid: 
+date: 2015-10-20
+published: 2015-10-20
+reveal: 2015-10-20-week4.slides.html
+ipynb: 2015-10-20-week4.ipynb
+layout: talk
+categories:
+- notes
+---
+
+
+<div style="display:none">
+  $${% include talk-notation.tex %}$$
+</div>
+
+<script src="/talks/figure-magnify.js"></script>
+<script src="/talks/figure-animate.js"></script>
+    
+<div id="modal-frame" class="modal">
+  <span class="close" onclick="closeMagnify()">&times;</span>
+  <div class="modal-figure">
+    <div class="figure-frame">
+      <div class="modal-content" id="modal01"></div>
+      <!--<img class="modal-content" id="object01">-->
+    </div>
+    <div class="caption-frame" id="modal-caption"></div>
+  </div>
+</div>	  
+
+<!-- Front matter -->
+<p>.</p>
+<!---->
+<!--Back matter-->
+<p>.</p>
+<!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>matplotlib inline</code></pre></div>
+<h2 id="nonlinear-regression">Nonlinear Regression</h2>
+<p>We've now seen how we may perform linear regression. Now, we are going to consider how we can perform <em>non-linear</em> regression. However, before we get into the details of how to do that we first need to consider in what ways the regression can be non-linear. Multivariate linear regression allows us to build models that take many features into account when making our prediction. In this session we are going to introduce <em>basis functions</em>. The term seems complicted, but they are actually based on rather a simple idea. If we are doing a multivariate linear regression, we get extra features that <em>might</em> help us predict our required response varible (or target value), <span class="math inline"><em>y</em></span>. But what if we only have one input value? We can actually artificially generate more input values with basis functions.</p>
+<h2 id="non-linear-in-the-inputs">Non-linear in the Inputs</h2>
+<p>When we refer to non-linear regression, we are normally referring to whether the regression is non-linear in the input space, or non-linear in the <em>covariates</em>. The covariates are the observations that move with the target (or <em>response</em>) variable. In our notation we have been using <span class="math inline">$\inputVector_i$</span> to represent a vector of the covariates associated with the <span class="math inline"><em>i</em></span>th observation. The coresponding response variable is <span class="math inline">$\dataScalar_i$</span>. If a model is non-linear in the inputs, it means that there is a non-linear function between the inputs and the response variable. Linear functions are functions that only involve multiplication and addition, in other words they can be represented through <em>linear algebra</em>. Linear regression involves assuming that a function takes the form <br /><span class="math display">$$
+\mappingFunction(\inputVector) = \mappingVector^\top \inputVector
+$$</span><br /> where <span class="math inline">$\mappingVector$</span> are our regression weights. A very easy way to make the linear regression non-linear is to introduce non-linear functions. When we are introducing non-linear regression these functions are known as <em>basis functions</em>.</p>
+<h1 id="basis-functions">Basis Functions</h1>
+<h2 id="basis-functions-edit">Basis Functions <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/basis-functions-intro.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/basis-functions-intro.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>Here's the idea, instead of working directly on the original input space, <span class="math inline">$\inputVector$</span>, we build models in a new space, <span class="math inline">$\basisVector(\inputVector)$</span> where <span class="math inline">$\basisVector(\cdot)$</span> is a <em>vector-valued</em> function that is defined on the space <span class="math inline">$\inputVector$</span>.</p>
+<h2 id="quadratic-basis">Quadratic Basis</h2>
+<p>Remember, that a <em>vector-valued function</em> is just a vector that contains functions instead of values. Here's an example for a one dimensional input space, <span class="math inline"><em>x</em></span>, being projected to a <em>quadratic</em> basis. First we consider each basis function in turn, we can think of the elements of our vector as being indexed so that we have <br /><span class="math display">$$
+\begin{align*}
+\basisFunc_1(\inputScalar) = 1, \\
+\basisFunc_2(\inputScalar) = x, \\
+\basisFunc_3(\inputScalar) = \inputScalar^2.
+\end{align*}
+$$</span><br /> Now we can consider them together by placing them in a vector, <br /><span class="math display">$$
+\basisVector(\inputScalar) = \begin{bmatrix} 1\\ x \\ \inputScalar^2\end{bmatrix}.
+$$</span><br /> For the vector-valued function, we have simply collected the different functions together in the same vector making them notationally easier to deal with in our mathematics.</p>
+<p>When we consider the vector-valued function for each data point, then we place all the data into a matrix. The result is a matrix valued function, <br /><span class="math display">$$
+\basisMatrix(\inputVector) = 
+\begin{bmatrix} 1 &amp; \inputScalar_1 &amp;
+\inputScalar_1^2 \\
+1 &amp; \inputScalar_2 &amp; \inputScalar_2^2\\
+\vdots &amp; \vdots &amp; \vdots \\
+1 &amp; \inputScalar_n &amp; \inputScalar_n^2
+\end{bmatrix}
+$$</span><br /> where we are still in the one dimensional input setting so <span class="math inline">$\inputVector$</span> here represents a vector of our inputs with <span class="math inline">$\numData$</span> elements.</p>
+<p>Let's try constructing such a matrix for a set of inputs. First of all, we create a function that returns the matrix valued function</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> quadratic(x, <span class="op">**</span>kwargs):
+    <span class="co">&quot;&quot;&quot;Take in a vector of input values and return the design matrix associated </span>
+<span class="co">    with the basis functions.&quot;&quot;&quot;</span>
+    <span class="cf">return</span> np.hstack([np.ones((x.shape[<span class="dv">0</span>], <span class="dv">1</span>)), x, x<span class="op">**</span><span class="dv">2</span>])</code></pre></div>
+<h2 id="functions-derived-from-quadratic-basis">Functions Derived from Quadratic Basis</h2>
+<p><br /><span class="math display">$$
+\mappingFunction(\inputScalar) = {\color{cyan}\mappingScalar_0}   + {\color{green}\mappingScalar_1 \inputScalar} + {\color{yellow}\mappingScalar_2 \inputScalar^2}
+$$</span><br /></p>
+<p>{figure{<object class="svgplot quadratic-basis-2"  data="../slides/diagrams/ml/\basisfunction002.svg"  style="vertical-align:middle;"></object></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;</span><span class="ch">\b</span><span class="st">asisfunction</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, 
+                            num_basis<span class="op">=</span>IntSlider(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">1</span>))</code></pre></div>
+<p>This function takes in an <span class="math inline">$\numData \times 1$</span> dimensional vector and returns an <span class="math inline">$\numData \times 3$</span> dimensional <em>design matrix</em> containing the basis functions. We can plot those basis functions against there input as follows.</p>
+<p>The actual function we observe is then made up of a sum of these functions. This is the reason for the name basis. The term <em>basis</em> means 'the underlying support or foundation for an idea, argument, or process', and in this context they form the underlying support for our prediction function. Our prediction function can only be composed of a weighted linear sum of our basis functions.</p>
+<h2 id="quadratic-functions">Quadratic Functions</h2>
+<div class="figure">
+<div id="quadratic-function-2-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/quadratic_function002.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="quadratic-function-2-magnify" class="magnify" onclick="magnifyFigure(&#39;quadratic-function-2&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="quadratic-function-2-caption" class="caption-frame">
+<p>Figure: Functions constructed by weighted sum of the components of a quadratic basis.</p>
+</div>
+</div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;quadratic_function</span><span class="sc">{num_function:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, 
+                            num_basis<span class="op">=</span>IntSlider(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">1</span>))</code></pre></div>
+<h2 id="different-bases-edit">Different Bases <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/basis-functions.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/basis-functions.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>Our choice of basis can be made based on what our beliefs about what is appropriate for the data. For example, the polynomial basis extends the quadratic basis to aribrary degree, so we might define the <span class="math inline"><em>j</em></span>th basis function associated with the model as <br /><span class="math display">$$
+\basisFunc_j(\inputScalar_i) = \inputScalar_i^j
+$$</span><br /> which is known as the <em>polynomial basis</em>.</p>
+<h2 id="polynomial-basis-edit">Polynomial Basis <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/polynomial-basis.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/polynomial-basis.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
+<span class="im">import</span> mlai
+<span class="im">import</span> teaching_plots <span class="im">as</span> plot</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>load <span class="op">-</span>s polynomial mlai.py</code></pre></div>
+<h2 id="functions-derived-from-polynomial-basis">Functions Derived from Polynomial Basis</h2>
+<p><br /><span class="math display">$$
+\mappingFunction(\inputScalar) = {\color{cyan}\mappingScalar_0}   + {\color{green}\mappingScalar_1 \inputScalar} + {\color{yellow}\mappingScalar_2 \inputScalar^2}
+$$</span><br /></p>
+<div class="figure">
+<div id="polynomial-basis-3-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/polynomial_basis003.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="polynomial-basis-3-magnify" class="magnify" onclick="magnifyFigure(&#39;polynomial-basis-3&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="polynomial-basis-3-caption" class="caption-frame">
+<p>Figure: A polynomial basis is made up of different degrees of polynomial.</p>
+</div>
+</div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;polynomial_basis</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, 
+                            num_basis<span class="op">=</span>IntSlider(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">1</span>))</code></pre></div>
+<p>To aid in understanding how a basis works, we've provided you with a small interactive tool for exploring this polynomial basis. The tool can be summoned with the following command.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_prediction(basis<span class="op">=</span>mlai.polynomial, num_basis<span class="op">=</span><span class="dv">4</span>)</code></pre></div>
+<p>Try moving the sliders around to change the weight of each basis function. Click the control box <code>display_basis</code> to show the underlying basis functions (in red). The prediction function is shown in a thick blue line. <em>Warning</em> the sliders aren't presented quite in the correct order. <code>w_0</code> is associated with the bias, <code>w_1</code> is the linear term, <code>w_2</code> the quadratic and here (because we have four basis functions) we have <code>w_3</code> for the <em>cubic</em> term. So the subscript of the weight parameter is always associated with the corresponding polynomial's degree.</p>
+<h2 id="different-basis">Different Basis</h2>
+<p>The polynomial basis is widely used in Engineering and graphics, but it has some drawbacks in machine learning: outside the input region between -1 and 1, the values of the polynomial basis rise very quickly.</p>
+<p>Now we look at basis functions that have been used as the <em>activation</em> functions in neural network model.</p>
+<h2 id="radial-basis-functions-edit">Radial Basis Functions <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/radial-basis.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/radial-basis.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>Another type of basis is sometimes known as a 'radial basis' because the effect basis functions are constructed on 'centres' and the effect of each basis function decreases as the radial distance from each centre increases.</p>
+<p><br /><span class="math display">$$\basisFunc_j(\inputScalar) = \exp\left(-\frac{(\inputScalar-\mu_j)^2}{\lengthScale^2}\right)$$</span><br /></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
+<span class="im">import</span> mlai
+<span class="im">import</span> teaching_plots <span class="im">as</span> plot</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>load <span class="op">-</span>s radial mlai.py</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_prediction(basis<span class="op">=</span>mlai.radial, num_basis<span class="op">=</span><span class="dv">4</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider
+<span class="im">import</span> pods</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;radial_basis</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, 
+                            num_basis<span class="op">=</span>IntSlider(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">1</span>))</code></pre></div>
+<h2 id="functions-derived-from-radial-basis">Functions Derived from Radial Basis</h2>
+<p><br /><span class="math display">$$
+\mappingFunction(\inputScalar) = {\color{cyan}\mappingScalar_1 e^{-2(\inputScalar+1)^2}}  + {\color{green}\mappingScalar_2e^{-2\inputScalar^2}} + {\color{yellow}\mappingScalar_3 e^{-2(\inputScalar-1)^2}}
+$$</span><br /></p>
+<div class="figure">
+<div id="radial-basis-3-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/radial_basis003.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="radial-basis-3-magnify" class="magnify" onclick="magnifyFigure(&#39;radial-basis-3&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="radial-basis-3-caption" class="caption-frame">
+<p>Figure: A radial basis is made up of different locally effective functions centered at different points.</p>
+</div>
+</div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider
+<span class="im">import</span> pods</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;radial_function</span><span class="sc">{func_num:0&gt;3}</span><span class="st">.svg&#39;</span>, directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, func_num<span class="op">=</span>IntSlider(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">1</span>))</code></pre></div>
+<h2 id="rectified-linear-units-edit">Rectified Linear Units <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/relu-basis.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/relu-basis.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>load <span class="op">-</span>s relu mlai.py</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_prediction(basis<span class="op">=</span>mlai.relu, num_basis<span class="op">=</span><span class="dv">4</span>)</code></pre></div>
+<p>Rectified linear units are popular in the current generation of multilayer perceptron models, or deep networks. These basis functions start flat, and then become linear functions at a certain threshold.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
+<span class="im">import</span> teaching_plots <span class="im">as</span> plot
+<span class="im">import</span> mlai</code></pre></div>
+<h2 id="functions-derived-from-relu-basis">Functions Derived from Relu Basis</h2>
+<p><br /><span class="math display">$$
+\mappingFunction(\inputScalar) = {\color{cyan}\mappingScalar_0}   + {\color{green}\mappingScalar_1 xH(x+1.0) } + {\color{yellow}\mappingScalar_2 xH(x+0.33) } + {\color{magenta}\mappingScalar_3 xH(x-0.33)} +  {\color{red}\mappingScalar_4 xH(x-1.0)}
+$$</span><br /></p>
+<div class="figure">
+<div id="relu-basis-4-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/relu_basis004.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="relu-basis-4-magnify" class="magnify" onclick="magnifyFigure(&#39;relu-basis-4&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="relu-basis-4-caption" class="caption-frame">
+<p>Figure: A rectified linear unit basis is made up of different rectified linear unit functions centered at different points.</p>
+</div>
+</div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;relu_basis</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, 
+                            num_basis<span class="op">=</span>IntSlider(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">4</span>,<span class="dv">1</span>))</code></pre></div>
+<h2 id="hyperbolic-tangent-basis-edit">Hyperbolic Tangent Basis <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/tanh-basis.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/tanh-basis.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>load <span class="op">-</span>s tanh mlai.py</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_prediction(basis<span class="op">=</span>mlai.tanh, num_basis<span class="op">=</span><span class="dv">4</span>)</code></pre></div>
+<p>Sigmoid or hyperbolic tangent basis was popular in the original generation of multilayer perceptron models, or deep networks. These basis functions start flat, rise and then saturate.</p>
+<h2 id="functions-derived-from-tanh-basis">Functions Derived from Tanh Basis</h2>
+<p><br /><span class="math display">$$
+\mappingFunction(\inputScalar) = {\color{cyan}\mappingScalar_0}   + {\color{green}\mappingScalar_1 } + {\color{yellow}\mappingScalar_3 }
+$$</span><br /></p>
+<div class="figure">
+<div id="tanh-basis-4-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/tanh_basis004.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="tanh-basis-4-magnify" class="magnify" onclick="magnifyFigure(&#39;tanh-basis-4&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="tanh-basis-4-caption" class="caption-frame">
+<p>Figure: A hyperbolic tangent basis is made up of s-shaped basis functions centered at different points.</p>
+</div>
+</div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;tanh_basis</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, 
+                            num_basis<span class="op">=</span>IntSlider(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">4</span>,<span class="dv">1</span>))</code></pre></div>
+<h2 id="fourier-basis-edit">Fourier Basis <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/fourier-basis.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/fourier-basis.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p><a href="https://en.wikipedia.org/wiki/Joseph_Fourier">Joseph Fourier</a> suggested that functions could be converted to a sum of sines and cosines. A Fourier basis is a linear weighted sum of these functions. <br /><span class="math display">$$\basisFunc_j(\inputScalar) = \mappingScalar_0  + \mappingScalar_1 \sin(\inputScalar) + \mappingScalar_2 \cos(\inputScalar) + \mappingScalar_3 \sin(2\inputScalar) + \mappingScalar_4 \cos(2\inputScalar)$$</span><br /></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>load <span class="op">-</span>s fourier mlai.py</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
+<span class="im">import</span> mlai
+<span class="im">import</span> teaching_plots <span class="im">as</span> plot</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;fourier_basis</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, 
+                            num_basis<span class="op">=</span>IntSlider(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">4</span>,<span class="dv">1</span>))</code></pre></div>
+<p>In this code, basis functions with an <em>odd</em> index are sine and basis functions with an <em>even</em> index are cosine. The first basis function (index 0, so cosine) has a frequency of 0 and then frequencies increase every time a sine and cosine are included.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_prediction(basis<span class="op">=</span>mlai.fourier, num_basis<span class="op">=</span><span class="dv">5</span>)</code></pre></div>
+<h2 id="functions-derived-from-fourier-basis">Functions Derived from Fourier Basis</h2>
+<p><br /><span class="math display">$$
+\mappingFunction(\inputScalar) = {\color{cyan}\mappingScalar_0}  + {\color{green}\mappingScalar_1 \sin(\inputScalar)} + {\color{yellow}\mappingScalar_2 \cos(\inputScalar)} + {\color{magenta}\mappingScalar_3 \sin(2\inputScalar)} + {\color{red}\mappingScalar_4 \cos(2\inputScalar)}
+$$</span><br /></p>
+<div class="figure">
+<div id="fourier-basis-4-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/fourier_basis004.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="fourier-basis-4-magnify" class="magnify" onclick="magnifyFigure(&#39;fourier-basis-4&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="fourier-basis-4-caption" class="caption-frame">
+<p>Figure: A Fourier basis is made up of sine and cosine functions with different frequencies.</p>
+</div>
+</div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;fourier_function</span><span class="sc">{func_num:0&gt;3}</span><span class="st">.svg&#39;</span>, directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, func_num<span class="op">=</span>IntSlider(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">1</span>))</code></pre></div>
+
+<h2 id="fitting-to-data-edit">Fitting to Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/basis-function-models.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/basis-function-models.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>Now we are going to consider how these basis functions can be adjusted to fit to a particular data set. We will return to the olympic marathon data from last time. First we will scale the output of the data to be zero mean and variance 1.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">import</span> numpy <span class="im">as</span> np
+<span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data <span class="op">=</span> pods.datasets.olympic_marathon_men()
+y <span class="op">=</span> data[<span class="st">&#39;Y&#39;</span>]
+x <span class="op">=</span> data[<span class="st">&#39;X&#39;</span>]
+y <span class="op">-=</span> y.mean()
+y <span class="op">/=</span> y.std()</code></pre></div>
+
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>load <span class="op">-</span>s polynomial mlai.py</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_prediction(basis<span class="op">=</span><span class="bu">dict</span>(radial<span class="op">=</span>mlai.radial, 
+                                            polynomial<span class="op">=</span>mlai.polynomial, 
+                                            fourier<span class="op">=</span>mlai.fourier, 
+                                            relu<span class="op">=</span>mlai.relu), 
+                                 data_limits<span class="op">=</span>(<span class="dv">1888</span>, <span class="dv">2020</span>),
+                                 fig<span class="op">=</span>fig, ax<span class="op">=</span>ax,
+                                 offset<span class="op">=</span><span class="dv">0</span>.,
+                                 wlim <span class="op">=</span> (<span class="op">-</span><span class="dv">4</span>., <span class="dv">4</span>.),
+                                 num_basis<span class="op">=</span><span class="dv">4</span>)</code></pre></div>
+
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">np.asarray([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]]).shape</code></pre></div>
+<h2 id="basis-function-models">Basis Function Models</h2>
+<p><br /><span class="math display">$$
+  \mappingFunction(\inputVector_i) = \sum_{j=1}^\numBasisFunc \mappingScalar_j \basisFunc_{i, j}
+  $$</span><br /></p>
+<p><br /><span class="math display">$$
+  \mappingFunction(\inputVector_i) = \mappingVector^\top \basisVector_i
+  $$</span><br /></p>
+<h2 id="log-likelihood-for-basis-function-model">Log Likelihood for Basis Function Model</h2>
+<p><br /><span class="math display">$$
+  p\left(\dataScalar_i|\inputScalar_i\right)=\frac{1}{\sqrt{2\pi\dataStd^2}}\exp\left(-\frac{\left(\dataScalar_i-\mappingVector^{\top}\basisVector_i\right)^{2}}{2\dataStd^2}\right).
+  $$</span><br /></p>
+<p><br /><span class="math display">$$
+  L(\mappingVector,\dataStd^2)= -\frac{\numData}{2}\log \dataStd^2-\frac{\numData}{2}\log 2\pi -\frac{\sum_{i=1}^{\numData}\left(\dataScalar_i-\mappingVector^{\top}\basisVector_i\right)^{2}}{2\dataStd^2}.
+  $$</span><br /></p>
+<h2 id="objective-function">Objective Function</h2>
+<p><br /><span class="math display">$$
+  \errorFunction(\mappingVector,\dataStd^2)= \frac{\numData}{2}\log\dataStd^2 + \frac{\sum_{i=1}^{\numData}\left(\dataScalar_i-\mappingVector^{\top}\basisVector_i\right)^{2}}{2\dataStd^2}.
+  $$</span><br /></p>
+<h2 id="expand-the-brackets">Expand the Brackets</h2>
+<p><br /><span class="math display">$$
+\begin{align}
+  \errorFunction(\mappingVector,\dataStd^2) = &amp;\frac{\numData}{2}\log \dataStd^2 + \frac{1}{2\dataStd^2}\sum_{i=1}^{\numData}\dataScalar_i^{2}-\frac{1}{\dataStd^2}\sum_{i=1}^{\numData}\dataScalar_i\mappingVector^{\top}\basisVector_i\\ &amp;+\frac{1}{2\dataStd^2}\sum_{i=1}^{\numData}\mappingVector^{\top}\basisVector_i\basisVector_i^{\top}\mappingVector+\text{const}.
+\end{align}
+$$</span><br /></p>
+<h2 id="expand-the-brackets-1">Expand the Brackets</h2>
+<p><br /><span class="math display">$$\begin{align} \errorFunction(\mappingVector, \dataStd^2) = &amp; \frac{\numData}{2}\log \dataStd^2 + \frac{1}{2\dataStd^2}\sum_{i=1}^{\numData}\dataScalar_i^{2}-\frac{1}{\dataStd^2} \mappingVector^\top\sum_{i=1}^{\numData}\basisVector_i \dataScalar_i\\ &amp; +\frac{1}{2\dataStd^2}\mappingVector^{\top}\left[\sum_{i=1}^{\numData}\basisVector_i\basisVector_i^{\top}\right]\mappingVector+\text{const}.\end{align}$$</span><br /></p>
+<h2 id="design-matrices">Design Matrices</h2>
+<p>We like to make use of <em>design</em> matrices for our data. Design matrices, as you will recall, involve placing the data points into rows of the matrix and data features into the columns of the matrix. By convention, we are referincing a vector with a bold lower case letter, and a matrix with a bold upper case letter. The design matrix is therefore given by <br /><span class="math display">$$
+  \basisMatrix = \begin{bmatrix} \mathbf{1} &amp; \inputVector &amp; \inputVector^2\end{bmatrix}
+  $$</span><br /> so that <br /><span class="math display">$$
+  \basisMatrix \in \Re^{\numData \times \dataDim}.
+  $$</span><br /></p>
+<h2 id="multivariate-derivatives-reminder">Multivariate Derivatives Reminder</h2>
+<p><br /><span class="math display">$$\frac{\text{d}\mathbf{a}^{\top}\mappingVector}{\text{d}\mappingVector}=\mathbf{a}$$</span><br /> and <br /><span class="math display">$$\frac{\text{d}\mappingVector^{\top}\mathbf{A}\mappingVector}{\text{d}\mappingVector}=\left(\mathbf{A}+\mathbf{A}^{\top}\right)\mappingVector$$</span><br /> or if <span class="math inline"><strong>A</strong></span> is symmetric (<em>i.e.</em> <span class="math inline"><strong>A</strong> = <strong>A</strong><sup>⊤</sup></span>) <br /><span class="math display">$$\frac{\text{d}\mappingVector^{\top}\mathbf{A}\mappingVector}{\text{d}\mappingVector}=2\mathbf{A}\mappingVector.$$</span><br /></p>
+<h2 id="differentiate">Differentiate</h2>
+<p>Differentiating with respect to the vector <span class="math inline">$\mappingVector$</span> we obtain <br /><span class="math display">$$\frac{\text{d} E\left(\mappingVector,\dataStd^2 \right)}{\text{d}\mappingVector}=-\frac{1}{\dataStd^2} \sum_{i=1}^{\numData}\basisVector_i\dataScalar_i+\frac{1}{\dataStd^2} \left[\sum_{i=1}^{\numData}\basisVector_i\basisVector_i^{\top}\right]\mappingVector$$</span><br /> Leading to <br /><span class="math display">$$\mappingVector^{*}=\left[\sum_{i=1}^{\numData}\basisVector_i\basisVector_i^{\top}\right]^{-1}\sum_{i=1}^{\numData}\basisVector_i\dataScalar_i,$$</span><br /></p>
+<h2 id="matrix-notation">Matrix Notation</h2>
+<p>Rewrite in matrix notation: <br /><span class="math display">$$
+\sum_{i=1}^{\numData}\basisVector_i\basisVector_i^\top = \basisMatrix^\top \basisMatrix$$</span><br /> <br /><span class="math display">$$\sum _{i=1}^{\numData}\basisVector_i\dataScalar_i = \basisMatrix^\top \dataVector
+$$</span><br /></p>
+<h2 id="update-equations">Update Equations</h2>
+<ul>
+<li>Update for <span class="math inline">$\mappingVector^{*}$</span> <br /><span class="math display">$$
+  \mappingVector^{*} = \left(\basisMatrix^\top \basisMatrix\right)^{-1} \basisMatrix^\top \dataVector
+  $$</span><br /></li>
+<li>The equation for <span class="math inline">$\left.\dataStd^2\right.^{*}$</span> may also be found <br /><span class="math display">$$
+  \left.\dataStd^2\right.^{{*}}=\frac{\sum_{i=1}^{\numData}\left(\dataScalar_i-\left.\mappingVector^{*}\right.^{\top}\basisVector_i\right)^{2}}{\numData}.
+  $$</span><br /></li>
+</ul>
+<h2 id="avoid-direct-inverse">Avoid Direct Inverse</h2>
+<ul>
+<li>E.g. Solve for <span class="math inline">$\mappingVector$</span> <br /><span class="math display">$$
+  \left(\basisMatrix^\top \basisMatrix\right)\mappingVector = \basisMatrix^\top \dataVector
+  $$</span><br /></li>
+<li>See <code>np.linalg.solve</code></li>
+<li>In practice use <span class="math inline"><strong>Q</strong><strong>R</strong></span> decomposition (see lab class notes).</li>
+</ul>
+<h2 id="polynomial-fits-to-olympic-data">Polynomial Fits to Olympic Data</h2>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
+<span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt
+<span class="im">import</span> teaching_plots <span class="im">as</span> plot
+<span class="im">import</span> mlai
+<span class="im">import</span> pods</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">basis <span class="op">=</span> mlai.polynomial
+
+data <span class="op">=</span> pods.datasets.olympic_marathon_men()
+
+x <span class="op">=</span> data[<span class="st">&#39;X&#39;</span>]
+y <span class="op">=</span> data[<span class="st">&#39;Y&#39;</span>]
+
+xlim <span class="op">=</span> [<span class="dv">1892</span>, <span class="dv">2020</span>]
+max_basis <span class="op">=</span> <span class="dv">27</span>
+
+ll <span class="op">=</span> np.array([np.nan]<span class="op">*</span>(max_basis))
+sum_squares <span class="op">=</span> np.array([np.nan]<span class="op">*</span>(max_basis))</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;olympic_LM_polynomial_num_basis</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>,
+                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, 
+                            num_basis<span class="op">=</span>IntSlider(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">28</span>,<span class="dv">1</span>))</code></pre></div>
+<h2 id="non-linear-but-linear-in-the-parameters">Non-linear but Linear in the Parameters</h2>
+<p>One rather nice aspect of our model is that whilst it is non-linear in the inputs, it is still linear in the parameters <span class="math inline">$\mappingVector$</span>. This means that our derivations from before continue to operate to allow us to work with this model. In fact, although this is a non-linear regression it is still known as a <em>linear model</em> because it is linear in the parameters,</p>
+<p><br /><span class="math display">$$
+\mappingFunction(\inputVector) = \mappingVector^\top \basisVector(\inputVector)
+$$</span><br /> where the vector <span class="math inline">$\inputVector$</span> appears inside the basis functions, making our result, <span class="math inline">$\mappingFunction(\inputVector)$</span> non-linear in the inputs, but <span class="math inline">$\mappingVector$</span> appears outside our basis function, making our result <em>linear</em> in the parameters. In practice, our basis function itself may contain its own set of parameters, <br /><span class="math display">$$
+\mappingFunction(\inputVector) = \mappingVector^\top \basisVector(\inputVector;
+\boldsymbol{\theta}),
+$$</span><br /> that we've denoted here as <span class="math inline"><strong>θ</strong></span>. If these parameters appear inside the basis function then our model is <em>non-linear</em> in these parameters.</p>
+
+<h2 id="fitting-the-model-yourself">Fitting the Model Yourself</h2>
+<p>You now have everything you need to fit a non- linear (in the inputs) basis function model to the marathon data.</p>
+
+<h2 id="reading">Reading</h2>
+<ul>
+<li>Section 1.4 of <span class="citation">Rogers and Girolami (2011)</span>.</li>
+<li>Chapter 1, pg 1-6 of <span class="citation">Bishop (2006)</span>.</li>
+<li>Chapter 3, Section 3.1 of <span class="citation">Bishop (2006)</span> up to pg 143.</li>
+</ul>
+<h2 id="lecture-on-basis-functions-from-gprs-uganda">Lecture on Basis Functions from GPRS Uganda</h2>
+<iframe width height src="https://www.youtube.com/embed/PoNbOnUnOao?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+<h2 id="use-of-qr-decomposition-for-numerical-stability">Use of QR Decomposition for Numerical Stability</h2>
+<p>In the last session we showed how rather than computing <span class="math inline">$\inputMatrix^\top\inputMatrix$</span> as an intermediate step to our solution, we could compute the solution to the regressiond directly through <a href="http://en.wikipedia.org/wiki/QR_decomposition">QR-decomposition</a>. Now we will consider an example with non linear basis functions where such computation is critical for forming the right answer.</p>
+<p><em>TODO</em> example with polynomials.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">=</span> np.random.normal(size<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">1</span>))</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">Phi <span class="op">=</span> fourier(x, <span class="dv">5</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">(np.dot(Phi.T,Phi))</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">Phi<span class="op">*</span>Phi</code></pre></div>
+<h2 id="references" class="unnumbered">References</h2>
+<div id="refs" class="references">
+<div id="ref-Bishop:book06">
+<p>Bishop, Christopher M. 2006. <em>Pattern Recognition and Machine Learning</em>. springer.</p>
+</div>
+<div id="ref-Rogers:book11">
+<p>Rogers, Simon, and Mark Girolami. 2011. <em>A First Course in Machine Learning</em>. CRC Press.</p>
+</div>
+</div>
+
+

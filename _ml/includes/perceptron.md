@@ -1,10 +1,11 @@
 \ifndef{perceptron}
 \define{perceptron}
-\editme 
 
 \include{_ml/includes/classification.md}
 
-\newslide{Mathematical Drawing of Decision Boundary}
+\editme 
+
+\subsection{Mathematical Drawing of Decision Boundary}
 
 \slides{
 **Refresher**: draw a hyper plane at decision boundary.
@@ -57,8 +58,21 @@ handle = plot.init_perceptron(f, ax, x_plus, x_minus, w, b)}
 
 \subsection{Drawing Decision Boundary}
 
-\notes{
-The decision boundary is where the output of the function changes from -1 to +1 (or vice versa) so it's the point at which the argument of the $\text{sign}$ function is zero. So in other words, the decision boundary is given by the *line* defined by $\inputScalar_1 w_1 + \inputScalar_2 w_2 = -b$ (where we have dropped the index $i$ for convenience). In this two dimensional space the decision boundary is defined by a line. In a three dimensional space it would be defined by a *plane*  and in higher dimensional spaces it is defined by something called a *hyperplane* (http://en.wikipedia.org/wiki/Hyperplane). This equation is therefore often known as the *separating hyperplane* because it defines the hyperplane that separates the data. To draw it in 2-D we can choose some values to plot from $\inputScalar_1$ and then find the corresponding values for $\inputScalar_2$ to plot using the rearrangement of the hyperplane formula as follows
+\notes{The decision boundary is where the output of the function
+changes from -1 to +1 (or vice versa) so it's the point at which the
+argument of the $\text{sign}$ function is zero. So in other words, the
+decision boundary is given by the *line* defined by $\inputScalar_1
+w_1 + \inputScalar_2 w_2 = -b$ (where we have dropped the index $i$
+for convenience). In this two dimensional space the decision boundary
+is defined by a line. In a three dimensional space it would be defined
+by a *plane* and in higher dimensional spaces it is defined by
+something called a
+[*hyperplane*](http://en.wikipedia.org/wiki/Hyperplane). This equation
+is therefore often known as the *separating hyperplane* because it
+defines the hyperplane that separates the data. To draw it in 2-D we
+can choose some values to plot from $\inputScalar_1$ and then find the
+corresponding values for $\inputScalar_2$ to plot using the
+rearrangement of the hyperplane formula as follows
 
 $$\inputScalar_2 = -\frac{(b+\inputScalar_1w_1)}{w_2}$$
 
@@ -80,7 +94,7 @@ This motivates a simple `if` statement to check which situation we're in.}
 
 \newslide{Code for Perceptron}
 
-\code{%load -s update_perceptron mlai.py}
+\loadcode{update_perceptron}{mlai}
 
 \plotcode{plots = plot.perceptron(x_plus, x_minus, diagrams='../slides/diagrams/mlai')}
 
@@ -89,27 +103,27 @@ This motivates a simple `if` statement to check which situation we're in.}
 \displaycode{pods.notebook.display_plots('perceptron{samp:0>3}.svg', directory='../slides/diagrams/ml', samp=(0, plots))}
 
 \slides{
+\define{width}{60%}
 \startanimation{perceptron}{0}{14}
-\newframe{\includediagram{../slides/diagrams/ml/perceptron000}}{perceptron}
-\newframe{\includediagram{../slides/diagrams/ml/perceptron001}}{perceptron}
-\newframe{\includediagram{../slides/diagrams/ml/perceptron002}}{perceptron}
-\newframe{\includediagram{../slides/diagrams/ml/perceptron003}}{perceptron}
-\newframe{\includediagram{../slides/diagrams/ml/perceptron004}}{perceptron}
-\newframe{\includediagram{../slides/diagrams/ml/perceptron005}}{perceptron}
-\newframe{\includediagram{../slides/diagrams/ml/perceptron006}}{perceptron}
-\newframe{\includediagram{../slides/diagrams/ml/perceptron007}}{perceptron}
-\newframe{\includediagram{../slides/diagrams/ml/perceptron008}}{perceptron}
-\newframe{\includediagram{../slides/diagrams/ml/perceptron009}}{perceptron}
-\newframe{\includediagram{../slides/diagrams/ml/perceptron010}}{perceptron}
-\newframe{\includediagram{../slides/diagrams/ml/perceptron011}}{perceptron}
-\newframe{\includediagram{../slides/diagrams/ml/perceptron012}}{perceptron}
-\newframe{\includediagram{../slides/diagrams/ml/perceptron013}}{perceptron}
-\newframe{\includediagram{../slides/diagrams/ml/perceptron014}}{perceptron}
+\newframe{\includediagram{../slides/diagrams/ml/perceptron000}{\width}}{perceptron}
+\newframe{\includediagram{../slides/diagrams/ml/perceptron001}{\width}}{perceptron}
+\newframe{\includediagram{../slides/diagrams/ml/perceptron002}{\width}}{perceptron}
+\newframe{\includediagram{../slides/diagrams/ml/perceptron003}{\width}}{perceptron}
+\newframe{\includediagram{../slides/diagrams/ml/perceptron004}{\width}}{perceptron}
+\newframe{\includediagram{../slides/diagrams/ml/perceptron005}{\width}}{perceptron}
+\newframe{\includediagram{../slides/diagrams/ml/perceptron006}{\width}}{perceptron}
+\newframe{\includediagram{../slides/diagrams/ml/perceptron007}{\width}}{perceptron}
+\newframe{\includediagram{../slides/diagrams/ml/perceptron008}{\width}}{perceptron}
+\newframe{\includediagram{../slides/diagrams/ml/perceptron009}{\width}}{perceptron}
+\newframe{\includediagram{../slides/diagrams/ml/perceptron010}{\width}}{perceptron}
+\newframe{\includediagram{../slides/diagrams/ml/perceptron011}{\width}}{perceptron}
+\newframe{\includediagram{../slides/diagrams/ml/perceptron012}{\width}}{perceptron}
+\newframe{\includediagram{../slides/diagrams/ml/perceptron013}{\width}}{perceptron}
+\newframe{\includediagram{../slides/diagrams/ml/perceptron014}{\width}}{perceptron}
 \endanimation
 }
 
-\notesfigure{\includediagram{../slides/diagrams/ml/perceptron014}}
-\notes{\caption{The perceptron decision boundary.}}
+\notes{\figure{\includediagram{../slides/diagrams/ml/perceptron014}{60%}}{The perceptron decision boundary.}{perceptron-decision-boundary}
 
 \newslide{Perceptron Reflection}
 
@@ -123,4 +137,5 @@ This motivates a simple `if` statement to check which situation we're in.}
      - error function
      - cost function}
 }
+
 \endif

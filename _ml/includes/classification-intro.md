@@ -2,7 +2,7 @@
 \define{classificationIntro}
 \editme
 
-\newslide{Classification}
+\subsection{Introduction to Classification}
 
 \notes{Machine learning problems normally involve a prediction function and an objective function. So far in the course we've mainly focussed on the case where the prediction function was over the real numbers, so the codomain of the functions, $\mappingFunction(\inputMatrix)$ was the real numbers or sometimes real vectors. The classification problem consists of predicting whether or not a particular example is a member of a particular class. So we may want to know if a particular image represents a digit 6 or if a particular user will click on a given advert. These are classification problems, and they require us to map to *yes* or *no* answers. That makes them naturally discrete mappings.}
 

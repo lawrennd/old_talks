@@ -14,9 +14,7 @@ and scientists to gain access to data science techniques.
 
 \notes{The software can be installed using
 
-```
-pip install pods
-```
+\installcode{pods}
 
 from the command prompt where you can access your python installation.}
 

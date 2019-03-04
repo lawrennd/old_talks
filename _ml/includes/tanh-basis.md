@@ -39,14 +39,17 @@ $$
 $$
 
 \slides{
-\startanimation{tanh_function}{1}{3}
-\newframe{\includediagram{../slides/diagrams/ml/tanh_function000}}{tanh_function}
-\newframe{\includediagram{../slides/diagrams/ml/tanh_function001}}{tanh_function}
-\newframe{\includediagram{../slides/diagrams/ml/tanh_function002}}{tanh_function}
+\define{width}{80%}
+\startanimation{tanh_function}{0}{4}
+\newframe{\includediagram{../slides/diagrams/ml/tanh_function000}{\width}}{tanh_function}
+\newframe{\includediagram{../slides/diagrams/ml/tanh_function001}{\width}}{tanh_function}
+\newframe{\includediagram{../slides/diagrams/ml/tanh_function002}{\width}}{tanh_function}
+\newframe{\includediagram{../slides/diagrams/ml/tanh_function003}{\width}}{tanh_function}
+\newframe{\includediagram{../slides/diagrams/ml/tanh_function004}{\width}}{tanh_function}
 \endanimation
 }
 
-\notesfigure{\includediagram{../slides/diagrams/ml/tanh_basis003}{}{}}
+\notes{\figure{\includediagram{../slides/diagrams/ml/tanh_basis004}{80%}}{A hyperbolic tangent basis is made up of s-shaped basis functions centered at different points.}{tanh-basis-4}}
 
 \setupcode{import pods
 from ipywidgets import IntSlider}

@@ -1,10 +1,11 @@
 \ifndef{basisFunctions}
 \define{basisFunctions}
-\editme
 
 \section{Basis Functions}
 
 \include{_ml/includes/basis-functions-intro.md}
+
+\editme
 
 \subsection{Different Bases}
 

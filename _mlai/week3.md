@@ -35,11 +35,11 @@ transition: None
 
 \subsection{Olympic 100m Data}
 
-\setupcode{import pods
+\setupplotcode{import pods
 from matplotlib import pyplot as plt
 %matplotlib inline}
 
-\code{data = pods.datasets.olympic_100m_men()
+\plotcode{data = pods.datasets.olympic_100m_men()
 f, ax = plt.subplots(figsize=(7,7))
 ax.plot(data['X'], data['Y'], 'ro', markersize=10)}
 
@@ -66,4 +66,6 @@ where $s_{i,j}$ is an indicator variable which is set to 1 if the rating of movi
 
 \include{_ml/includes/linear-algebra-regression.md}
 
-\subsection{References}
+\thanks
+
+\references

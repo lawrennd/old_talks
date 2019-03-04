@@ -1,8 +1,10 @@
 \ifndef{regressionExamples}
 \define{regressionExamples}
+
 \editme
 
 \subsection{Regression Examples}
+
 \slides{
 * Predict a real value, $\dataScalar_i$ given some inputs $\inputVector_i$.
 * Predict quality of meat given spectral measurements (Tecator data).

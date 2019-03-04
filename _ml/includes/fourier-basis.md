@@ -49,13 +49,18 @@ $$
 \mappingFunction(\inputScalar) = {\color{cyan}\mappingScalar_0}  + {\color{green}\mappingScalar_1 \sin(\inputScalar)} + {\color{yellow}\mappingScalar_2 \cos(\inputScalar)} + {\color{magenta}\mappingScalar_3 \sin(2\inputScalar)} + {\color{red}\mappingScalar_4 \cos(2\inputScalar)}
 $$
 
-\startanimation{fourier_function}{1}{3}
-\newframe{\includediagram{../slides/diagrams/ml/fourier_function000}}{fourier_function}
-\newframe{\includediagram{../slides/diagrams/ml/fourier_function001}}{fourier_function}
-\newframe{\includediagram{../slides/diagrams/ml/fourier_function002}}{fourier_function}
+\slides{
+\define{width}{80%}
+\startanimation{fourier_function}{0}{4}
+\newframe{\includediagram{../slides/diagrams/ml/fourier_function000}{\width}}{fourier_function}
+\newframe{\includediagram{../slides/diagrams/ml/fourier_function001}{\width}}{fourier_function}
+\newframe{\includediagram{../slides/diagrams/ml/fourier_function002}{\width}}{fourier_function}
+\newframe{\includediagram{../slides/diagrams/ml/fourier_function003}{\width}}{fourier_function}
+\newframe{\includediagram{../slides/diagrams/ml/fourier_function004}{\width}}{fourier_function}
 \endanimation
-\setupcode{from ipywidgets import IntSlider
-import pods}
+}
+
+\notes{\figure{\includediagram{../slides/diagrams/ml/fourier_basis004}{80%}}{A Fourier basis is made up of sine and cosine functions with different frequencies.}{fourier-basis-4}}
 
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}

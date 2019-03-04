@@ -1,10 +1,12 @@
 \ifndef{classification}
 \define{classification}
-\editme
 
 \include{_ml/includes/classification-intro.md}
+\include{_ml/includes/classification-examples.md}
 
-\newslide{Classification}
+\editme
+
+\subsection{Hyperplane}
 
 \slides{
 * predict the class label, $\dataScalar_i$, given the features associated with that data point, $\inputVector_i$, using the *prediction function*: 
@@ -19,7 +21,7 @@
 \slides{
 - Need to draw a decision boundary that separates red crosses from green circles.}
 
-\setupcode{import numpy as np
+\setupplotcode{import numpy as np
 import matplotlib.pyplot as plt
 %matplotlib inline}
 
@@ -31,6 +33,5 @@ x_minus = np.random.normal(loc=-1.3, size=(30, 2))
 plt.plot(x_plus[:, 0], x_plus[:, 1], 'rx')
 plt.plot(x_minus[:, 0], x_minus[:, 1], 'go')}
 
-\include{_ml/includes/classification-examples.md}
 
 \endif

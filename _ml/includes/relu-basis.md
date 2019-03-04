@@ -40,13 +40,17 @@ $$
 $$
 
 \slides{
-\startanimation{relu_function}{1}{3}
-\newframe{\includediagram{../slides/diagrams/ml/relu_function000}}{relu_function}
-\newframe{\includediagram{../slides/diagrams/ml/relu_function001}}{relu_function}
-\newframe{\includediagram{../slides/diagrams/ml/relu_function002}}{relu_function}
+\define{width}{80%}
+\startanimation{relu_function}{0}{4}
+\newframe{\includediagram{../slides/diagrams/ml/relu_function000}{\width}}{relu_function}
+\newframe{\includediagram{../slides/diagrams/ml/relu_function001}{\width}}{relu_function}
+\newframe{\includediagram{../slides/diagrams/ml/relu_function002}{\width}}{relu_function}
+\newframe{\includediagram{../slides/diagrams/ml/relu_function003}{\width}}{relu_function}
+\newframe{\includediagram{../slides/diagrams/ml/relu_function004}{\width}}{relu_function}
 \endanimation
 }
-\notesfigure{\includediagram{../slides/diagrams/ml/relu_function004}}
+\notes{\figure{\includediagram{../slides/diagrams/ml/relu_basis004}{80%}}{A rectified linear unit basis is made up of different rectified linear unit functions centered at different points.}{relu-basis-4}}
+
 
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
