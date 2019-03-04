@@ -42,6 +42,7 @@ categories:
 <p>.</p>
 <!---->
 <!--Back matter-->
+<p>.</p>
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
 <h2 id="course-text-edit">Course Text <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_mlai/includes/welcome.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_mlai/includes/welcome.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="figure">
@@ -78,7 +79,7 @@ categories:
 <p>Naturally, debugging is an important part of data analysis also, but in some sense it can be seen as its entire premise. You load in a data set into a computer that you don't understand, your entire objective is to understand the data. This is best done by interogating the data to visualise it or summarize it, just like in a power visual debugger. However, for data science the requirements for visualization and summarization are far greater than in a regular program. When the data is well understood, the actual number of lines of your program may well be very few (particularly if you disregard commands that load in the data and commands which plot your results). If a powerful data science library is available, you may be able to summarize your code with just two or three lines, but the amount of intellectual energy that is expended on writing those three lines is far greater than in standard code.</p>
 <h1 id="assumed-knowledge-edit">Assumed Knowledge <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_mlai/includes/assumed-knowledge.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_mlai/includes/assumed-knowledge.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
 <h2 id="linear-algebra-probability-and-differential-calculus">Linear Algebra, Probability and Differential Calculus</h2>
-<p>We will be assuming that you have good background in maths. In particular we will be making use of linear algrebra (matrix operations including inverse, inner products, determinant etc), probability (sum rule of probability, product rule of probability), and the calculus of differentiation (and integration!). A new concept for the course is multivariate differentiation and integration. This combines linear algebra and differential calculus. These techniques are vital in understanding probability distributions over high dimensional distributions.</p>
+<p>We will be assuming that you have good background in maths. In particular we will be making use of linear algrebra (matrix operations including inverse, inner products, determinant etc), probability (sum rule of probability, product rule of probability), and the calculus of variation, e.g. differentiation and integration. A new concept for the course is multivariate differentiation and integration. This combines linear algebra and differential calculus. These techniques are vital in understanding probability distributions over high dimensional distributions.</p>
 <h2 id="choice-of-language-edit">Choice of Language <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_mlai/includes/environment-python-jupyter.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_mlai/includes/environment-python-jupyter.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>In this course we will be using Python for our programming language. A prerequisite of attending this course is that you have learnt at least one programming language in the past. It is not our objective to teach you python. At Level 4 and Masters we expect our students to be able pick up a language as they go. If you have not experienced python before it may be worth your while spending some time understanding the language. There are resources available for you to do this <a href="https://docs.python.org/2/tutorial/">here</a> that are based on the standard console. An introduction to the Jupyter notebook (formerly known as the IPython notebook) is available <a href="http://ipython.org/ipython-%20doc/2/notebook/index.html">here</a>.</p>
 
@@ -420,7 +421,9 @@ library.
 
 You can try installing it using `pip` as follows.
 
-\installcode{install}{IMDbPY}
+```{.python}
+%pip install IMDbPY
+```
 
 If this doesn't work on your machine, try following instructions on
 (http://imdbpy.sourceforge.net/)
