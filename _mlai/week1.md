@@ -47,7 +47,7 @@ library.}
 
 \notes{You can try installing it using `pip` as follows.}
 
-\code{!pip install IMDbPY}
+\installcode{install}{IMDbPY}
 
 \notes{If this doesn't work on your machine, try following instructions on
 (http://imdbpy.sourceforge.net/)}
@@ -63,7 +63,7 @@ ia = IMDb()
 for movie in ia.search_movie('python'):
     print(movie)}-->
 
-\includeyoutube{GX8VLYUYScM}
+\includeyoutube{GX8VLYUYScM}{800}{600}
 
 \newslide{Reading}
 \slides{
@@ -100,6 +100,6 @@ for movie in ia.search_movie('python'):
 
     3.  @Bishop:book06 Exercise 1.9}
 
-\subsection{References}
+\references
 
 
