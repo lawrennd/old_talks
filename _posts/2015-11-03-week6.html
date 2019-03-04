@@ -1,0 +1,558 @@
+---
+title: "Bayesian Regression"
+venue: "University of Sheffield"
+abstract: "Bayesian formalisms deal with uncertainty in parameters,"
+author:
+- given: Neil D.
+  family: Lawrence
+  url: http://inverseprobability.com
+  institute: Amazon Cambridge and University of Sheffield
+  twitter: lawrennd
+  gscholar: r3SJcvoAAAAJ
+  orchid: 
+date: 2015-11-03
+published: 2015-11-03
+reveal: 2015-11-03-week6.slides.html
+ipynb: 2015-11-03-week6.ipynb
+layout: talk
+categories:
+- notes
+---
+
+
+<div style="display:none">
+  $${% include talk-notation.tex %}$$
+</div>
+
+<script src="/talks/figure-magnify.js"></script>
+<script src="/talks/figure-animate.js"></script>
+    
+<div id="modal-frame" class="modal">
+  <span class="close" onclick="closeMagnify()">&times;</span>
+  <div class="modal-figure">
+    <div class="figure-frame">
+      <div class="modal-content" id="modal01"></div>
+      <!--<img class="modal-content" id="object01">-->
+    </div>
+    <div class="caption-frame" id="modal-caption"></div>
+  </div>
+</div>	  
+
+<!-- Front matter -->
+<p>.</p>
+<!---->
+<!--Back matter-->
+<p>.</p>
+<!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
+<h2 id="overdetermined-system">Overdetermined System</h2>
+<p>We can motivate the introduction of probability by considering systems where there were more observations than unknowns. In particular we can consider the simple fitting of the gradient and an offset of a line, <br /><span class="math display">$$ 
+\dataScalar = m\inputScalar +c.
+$$</span><br /> What happens if we have three pairs of observations of <span class="math inline">$\inputScalar$</span> and <span class="math inline">$\dataScalar$</span>, <span class="math inline">$\{\inputScalar_i, \dataScalar_i\}_{i=1}^3$</span>. The issue can be solved by introducing a type of <a href="http://en.wikipedia.org/wiki/Slack_variable">slack variable</a>, <span class="math inline">$\noiseScalar_i$</span>, known as noise, such that for each observation we had the equation, <br /><span class="math display">$$
+\dataScalar_i = m\inputScalar_i + c + \noiseScalar_i.
+$$</span><br /></p>
+<!--  -->
+<h1 id="underdetermined-system-edit">Underdetermined System <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/underdetermined-system.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/underdetermined-system.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
+<p>What about the situation where you have more parameters than data in your simultaneous equation? This is known as an <em>underdetermined</em> system. In fact this set up is in some sense <em>easier</em> to solve, because we don't need to think about introducing a slack variable (although it might make a lot of sense from a <em>modelling</em> perspective to do so).</p>
+<p>The way Laplace proposed resolving an overdetermined system, was to introduce slack variables, <span class="math inline">$\noiseScalar_i$</span>, which needed to be estimated for each point. The slack variable represented the difference between our actual prediction and the true observation. This is known as the <em>residual</em>. By introducing the slack variable we now have an additional <span class="math inline"><em>n</em></span> variables to estimate, one for each data point, <span class="math inline">$\{\noiseScalar_i\}$</span>. This actually turns the overdetermined system into an underdetermined system. Introduction of <span class="math inline"><em>n</em></span> variables, plus the original <span class="math inline"><em>m</em></span> and <span class="math inline"><em>c</em></span> gives us <span class="math inline">$\numData+2$</span> parameters to be estimated from <span class="math inline"><em>n</em></span> observations, which actually makes the system <em>underdetermined</em>. However, we then made a probabilistic assumption about the slack variables, we assumed that the slack variables were distributed according to a probability density. And for the moment we have been assuming that density was the Gaussian, <br /><span class="math display">$$\noiseScalar_i \sim \gaussianSamp{0}{\dataStd^2},$$</span><br /> with zero mean and variance <span class="math inline">$\dataStd^2$</span>.</p>
+<p>The follow up question is whether we can do the same thing with the parameters. If we have two parameters and only one unknown can we place a probability distribution over the parameters, as we did with the slack variables? The answer is yes.</p>
+<h2 id="underdetermined-system">Underdetermined System</h2>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;under_determined_system</span><span class="sc">{samp:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, samp<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">1</span>))</code></pre></div>
+<div class="figure">
+<div id="under-determined-system-9-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/under_determined_system009.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="under-determined-system-9-magnify" class="magnify" onclick="magnifyFigure(&#39;under-determined-system-9&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="under-determined-system-9-caption" class="caption-frame">
+<p>Figure: An underdetermined system can be fit by considering uncertainty. Multiple solutions are consistent with one specified point.</p>
+</div>
+</div>
+<h2 id="a-philosophical-dispute-probabilistic-treatment-of-parameters-edit">A Philosophical Dispute: Probabilistic Treatment of Parameters? <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/types-of-uncertainty.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/types-of-uncertainty.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>From a philosophical perspective placing a probability distribution over the <em>parameters</em> is known as the <em>Bayesian</em> approach. This is because Thomas Bayes, in a <a href="http://en.wikipedia.org/wiki/An_Essay_towards_solving_a_Problem_in_the_Doctrine_of_Chances">1763 essay</a> published at the Royal Society introduced the <a href="http://en.wikipedia.org/wiki/Bernoulli_distribution">Bernoulli distribution</a> with a probabilistic interpretation for the <em>parameters</em>. Later statisticians such as <a href="http://en.wikipedia.org/wiki/Ronald_Fisher">Ronald Fisher</a> objected to the use of probability distributions for <em>parameters</em>, and so in an effort to discredit the approach the referred to it as Bayesian. However, the earliest practioners of modelling, such as Laplace applied the approach as the most natural thing to do for dealing with unknowns (whether they were parameters or variables). Unfortunately, this dispute led to a split in the modelling community that still has echoes today. It is known as the Bayesian vs Frequentist controversy. From my own perspective, I think that it is a false dichotomy, and that the two approaches are actually complementary. My own focus research focus is on <em>modelling</em> and in that context, the use of probability is vital. For frequenstist statisticians, such as Fisher, the emphasis was on the value of the evidence in the data for a particular hypothesis. This is known as hypothesis testing. The two approaches can be unified because one of the most important approaches to hypothesis testing is to <a href="http://en.wikipedia.org/wiki/Likelihood-ratio_test">compute the ratio of the likelihoods</a>, and the result of applying a probability distribution to the parameters is merely to arrive at a different form of the likelihood.</p>
+<h2 id="the-bayesian-controversy-philosophical-underpinnings">The Bayesian Controversy: Philosophical Underpinnings</h2>
+<p>A segment from the lecture in 2012 on philsophical underpinnings.</p>
+<iframe width="1024" height="768" src="https://www.youtube.com/embed/AvlnFnvFw_0?start=1215" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+<h2 id="reading">Reading</h2>
+<ul>
+<li><span class="citation">Bishop (2006)</span> Section 1.2.3 (pg 21–24).</li>
+<li><span class="citation">Bishop (2006)</span> Section 1.2.6 (start from just past eq 1.64 pg 30-32).</li>
+<li>Bayesian Inference</li>
+<li><span class="citation">Rogers and Girolami (2011)</span> use an example of a coin toss for introducing Bayesian inference Chapter 3, Sections 3.1-3.4 (pg 95-117). Although you also need the beta density which we haven’t yet discussed. This is also the example that <span class="citation">Laplace (1774)</span> used.</li>
+<li><span class="citation">Bishop (2006)</span> Section 1.2.3 (pg 21–24).</li>
+<li><span class="citation">Bishop (2006)</span> Section 1.2.6 (start from just past eq 1.64 pg 30-32).</li>
+</ul>
+<h2 id="sum-of-squares-and-probability">Sum of Squares and Probability</h2>
+<p>In the overdetermined system we introduced a new set of slack variables, <span class="math inline">$\{\noiseScalar_i\}_{i=1}^\numData$</span>, on top of our parameters <span class="math inline"><em>m</em></span> and <span class="math inline"><em>c</em></span>. We dealt with the variables by placing a probability distribution over them. This gives rise to the likelihood and for the case of Gaussian distributed variables, it gives rise to the sum of squares error. It was Gauss who first made this connection in his volume on &quot;Theoria Motus Corprum Coelestium&quot; (written in Latin)</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_google_book(<span class="bu">id</span><span class="op">=</span><span class="st">&#39;ORUOAAAAQAAJ&#39;</span>, page<span class="op">=</span><span class="st">&#39;213&#39;</span>)</code></pre></div>
+<p>The relevant section roughly translates as</p>
+<blockquote>
+<p>... It is clear, that for the product <span class="math inline"><em>Ω</em> = <em>h</em><sup><em>μ</em></sup><em>π</em><sup>−<em>f</em><em>r</em><em>a</em><em>c</em>12<em>μ</em></sup><em>e</em><sup>−<em>h</em><em>h</em>(<em>v</em><em>v</em> + <em>v</em><sup>′</sup><em>v</em><sup>′</sup> + <em>v</em><sup>′′</sup><em>v</em><sup>′′</sup> + …)</sup></span> to be maximised the sum <span class="math inline"><em>v</em><em>v</em> + <em>v</em><sup>′</sup><em>v</em><sup>′</sup> + <em>v</em><sup>′′</sup><em>v</em><sup>′′</sup> + etc.</span> ought to be minimized. <em>Therefore, the most probable values of the unknown quantities <span class="math inline"><em>p</em>, <em>q</em>, <em>r</em>, <em>s</em>etc.</span>, should be that in which the sum of the squares of the differences between the functions <span class="math inline"><em>V</em>, <em>V</em><sup>′</sup>, <em>V</em><sup>′′</sup>etc</span>, and the observed values is minimized</em>, for all observations of the same degree of precision is presumed.</p>
+</blockquote>
+<p>It's on the strength of this paragraph that the density is known as the Gaussian, despite the fact that four pages later Gauss credits the necessary integral for the density to Laplace, and it was also Laplace that did a lot of the original work on dealing with these errors through probability. <a href="http://www.hup.harvard.edu/catalog.php?isbn=9780674403413">Stephen Stigler's book on the measurement of uncertainty before 1900</a> has a nice chapter on this.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_google_book(<span class="bu">id</span><span class="op">=</span><span class="st">&#39;ORUOAAAAQAAJ&#39;</span>, page<span class="op">=</span><span class="st">&#39;217&#39;</span>)</code></pre></div>
+<p>where the crediting to the Laplace is about halfway through the last paragraph. This book was published in 1809, four years after <a href="./week3.ipynb">Legendre presented least squares</a> in an appendix to one of his chapters on the orbit of comets. Gauss goes on to make a claim for priority on the method on page 221 (towards the end of the first paragraph ...).</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_google_book(<span class="bu">id</span><span class="op">=</span><span class="st">&#39;ORUOAAAAQAAJ&#39;</span>, page<span class="op">=</span><span class="st">&#39;221&#39;</span>)</code></pre></div>
+<h2 id="the-bayesian-approach-edit">The Bayesian Approach <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/the-bayesian-approach.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/the-bayesian-approach.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>Now we will study Bayesian approaches to regression. In the Bayesian approach we define a <em>prior</em> density over our parameters, <span class="math inline"><em>m</em></span> and <span class="math inline"><em>c</em></span> or more generally <span class="math inline">$\mappingVector$</span>. This prior distribution gives us a range of expected values for our parameter <em>before</em> we have seen the data. The object in Bayesian inference is to then compute the<em>posterior</em> density which is the effect on the density of having observed the data. In standard probability notation we write the prior distribution as, <br /><span class="math display">$$
+p(\mappingVector),
+$$</span><br /> so it is the <em>marginal</em> distribution for the parameters, i.e. the distribution we have for the parameters without any knowledge about the data. The posterior distribution is written as, <br /><span class="math display">$$
+p(\mappingVector|\dataVector, \inputMatrix).
+$$</span><br /> So the posterior distribution is the <em>conditional</em> distribution for the parameters given the data (which in this case consists of pairs of observations including response variables (or targets), <span class="math inline">$\dataScalar_i$</span>, and covariates (or inputs) <span class="math inline">$\inputVector_i$</span>. Where here we are allowing the inputs to be multivariate.</p>
+<p>The posterior is recovered from the prior using <em>Bayes' rule</em>. Which is simply a rewriting of the product rule. We can recover Bayes' rule as follows. The product rule of probability tells us that the joint distribution is given as the product of the conditional and the marginal. Dropping the inputs from our conditioning for the moment we have, <br /><span class="math display">$$
+p(\mappingVector, \dataVector)=p(\dataVector|\mappingVector)p(\mappingVector),
+$$</span><br /> where we see we have related the joint density to the prior density and the <em>likelihood</em> from our previous investigation of regression, <br /><span class="math display">$$
+p(\dataVector|\mappingVector) = \prod_{i=1}^\numData\gaussianDist{\dataScalar_i}{\mappingVector^\top \inputVector_i}{ \dataStd^2}
+$$</span><br /> which arises from the assumption that our observation is given by <br /><span class="math display">$$
+\dataScalar_i = \mappingVector^\top \inputVector_i + \noiseScalar_i.
+$$</span><br /> In other words this is the Gaussian likelihood we have been fitting by minimizing the sum of squares. Have a look at <a href="./week3.ipynb">the session on multivariate regression</a> as a reminder.</p>
+<p>We've introduce the likelihood, but we don't have relationship with the posterior, however, the product rule can also be written in the following way <br /><span class="math display">$$
+p(\mappingVector, \dataVector) = p(\mappingVector|\dataVector)p(\dataVector),
+$$</span><br /> where here we have simply used the opposite conditioning. We've already introduced the <em>posterior</em> density above. This is the density that represents our belief about the parameters <em>after</em> observing the data. This is combined with the <em>marginal likelihood</em>, sometimes also known as the evidence. It is the marginal likelihood, because it is the original likelihood of the data with the parameters marginalised, <span class="math inline">$p(\dataVector)$</span>. Here it's conditioned on nothing, but in practice you should always remember that everything here is conditioned on things like model choice: which set of basis functions. Because it's a regression problem, its also conditioned on the inputs. Using the equalitybetween the two different forms of the joint density we recover <br /><span class="math display">$$
+p(\mappingVector|\dataVector) = \frac{p(\dataVector|\mappingVector)p(\mappingVector)}{p(\dataVector)}
+$$</span><br /> where we divided both sides by <span class="math inline">$p(\dataVector)$</span> to recover this result. Let's re-introduce the conditioning on the input locations (or covariates), <span class="math inline">$\inputMatrix$</span> to write the full form of Bayes' rule for the regression problem. <br /><span class="math display">$$
+p(\mappingVector|\dataVector, \inputMatrix) = \frac{p(\dataVector|\mappingVector, \inputMatrix)p(\mappingVector)}{p(\dataVector|\inputMatrix)}
+$$</span><br /> where the posterior density for the parameters given the data is <span class="math inline">$p(\mappingVector|\dataVector, \inputMatrix)$</span>, the marginal likelihood is <span class="math inline">$p(\dataVector|\inputMatrix)$</span>, the prior density is <span class="math inline">$p(\mappingVector)$</span> and our original regression likelihood is given by <span class="math inline">$p(\dataVector|\mappingVector, \inputMatrix)$</span>. It turns out that to compute the posterior the only things we need to do are define the prior and the likelihood. The other term on the right hand side can be computed by <em>the sum rule</em>. It is one of the key equations of Bayesian inference, the expectation of the likelihood under the prior, this process is known as marginalisation, <br /><span class="math display">$$
+p(\dataVector|\inputMatrix) = \int p(\dataVector|\mappingVector,\inputMatrix)p(\mappingVector) \text{d}\mappingVector
+$$</span><br /> I like the term marginalisation, and the description of the probability as the <em>marginal likelihood</em>, because (for me) it somewhat has the implication that the variable name has been removed, and (perhaps) written in the margin. Marginalisation of a variable goes from a likelihood where the variable is in place, to a new likelihood where all possible values of that variable (under the prior) have been considered and weighted in the integral. This implies that all we need for specifying our model is to define the likelihood and the prior. We already have our likelihood from our earlier discussion, so our focus now turns to the prior density.</p>
+<h2 id="prior-distribution-edit">Prior Distribution <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/bayesian-regression1d-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/bayesian-regression1d-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>The tradition in Bayesian inference is to place a probability density over the parameters of interest in your model. This choice is made regardless of whether you generally believe those parameters to be stochastic or deterministic in origin. In other words, to a Bayesian, the modelling treatment does not differentiate between epistemic and aleatoric uncertainty. For linear regression we could consider the following Gaussian prior on the intercept parameter, <br /><span class="math display">$$c \sim \gaussianSamp{0}{\alpha_1}$$</span><br /> where <span class="math inline"><em>α</em><sub>1</sub></span> is the variance of the prior distribution, its mean being zero.</p>
+<h2 id="posterior-distribution">Posterior Distribution</h2>
+<p>The prior distribution is combined with the likelihood of the data given the parameters <span class="math inline">$p(\dataScalar|c)$</span> to give the posterior via <em>Bayes' rule</em>, <br /><span class="math display">$$
+  p(c|\dataScalar) = \frac{p(\dataScalar|c)p(c)}{p(\dataScalar)}
+  $$</span><br /> where <span class="math inline">$p(\dataScalar)$</span> is the marginal probability of the data, obtained through integration over the joint density, <span class="math inline">$p(\dataScalar, c)=p(\dataScalar|c)p(c)$</span>. Overall the equation can be summarized as, <br /><span class="math display">$$
+  \text{posterior} = \frac{\text{likelihood}\times \text{prior}}{\text{marginal likelihood}}.
+  $$</span><br /></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider
+<span class="im">import</span> pods</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;dem_gaussian</span><span class="sc">{stage:0&gt;2}</span><span class="st">.svg&#39;</span>, 
+                            diagrams<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, 
+                            stage<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>))</code></pre></div>
+<div class="figure">
+<div id="dem-gaussian-3-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/dem_gaussian003.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="dem-gaussian-3-magnify" class="magnify" onclick="magnifyFigure(&#39;dem-gaussian-3&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="dem-gaussian-3-caption" class="caption-frame">
+<p>Figure: Combining a Gaussian likelihood with a Gaussian prior to form a Gaussian posterior</p>
+</div>
+</div>
+<p>Another way of seeing what's going on is to note that the numerator of Bayes' rule merely multiplies the likelihood by the prior. The denominator, is not a function of <span class="math inline"><em>c</em></span>. So the functional form is entirely determined by the multiplication of prior and likelihood. This has the effect of ensuring that the posterior only has probability mass in regions where both the prior and the likelihood have probability mass.</p>
+<p>The marginal likelihood, <span class="math inline">$p(\dataScalar)$</span>, operates to ensure that the distribution is normalised.</p>
+<p>For the Gaussian case, the normalisation of the posterior can be performed analytically. This is because both the prior and the likelihood have the form of an <em>exponentiated quadratic</em>, <br /><span class="math display">exp(<em>a</em><sup>2</sup>)exp(<em>b</em><sup>2</sup>)=exp(<em>a</em><sup>2</sup> + <em>b</em><sup>2</sup>),</span><br /> and the properties of the exponential mean that the product of two exponentiated quadratics is also an exponentiated quadratic. That implies that the posterior is also Gaussian, because a normalized exponentiated quadratic is a Gaussian distribution.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
+<p><br /><span class="math display">$$p(c) = \frac{1}{\sqrt{2\pi\alpha_1}} \exp\left(-\frac{1}{2\alpha_1}c^2\right)$$</span><br /> <br /><span class="math display">$$p(\dataVector|\inputVector, c, m, \dataStd^2) = \frac{1}{\left(2\pi\dataStd^2\right)^{\frac{\numData}{2}}} \exp\left(-\frac{1}{2\dataStd^2}\sum_{i=1}^\numData(\dataScalar_i - m\inputScalar_i - c)^2\right)$$</span><br /></p>
+<p><br /><span class="math display">$$p(c| \dataVector, \inputVector, m, \dataStd^2) = \frac{p(\dataVector|\inputVector, c, m, \dataStd^2)p(c)}{p(\dataVector|\inputVector, m, \dataStd^2)}$$</span><br /></p>
+<p><br /><span class="math display">$$p(c| \dataVector, \inputVector, m, \dataStd^2) =  \frac{p(\dataVector|\inputVector, c, m, \dataStd^2)p(c)}{\int p(\dataVector|\inputVector, c, m, \dataStd^2)p(c) \text{d} c}$$</span><br /></p>
+<p><br /><span class="math display">$$p(c| \dataVector, \inputVector, m, \dataStd^2) \propto  p(\dataVector|\inputVector, c, m, \dataStd^2)p(c)$$</span><br /></p>
+<p><br /><span class="math display">$$\begin{aligned}
+    \log p(c | \dataVector, \inputVector, m, \dataStd^2) =&amp;-\frac{1}{2\dataStd^2} \sum_{i=1}^\numData(\dataScalar_i-c - m\inputScalar_i)^2-\frac{1}{2\alpha_1} c^2 + \text{const}\\
+     = &amp;-\frac{1}{2\dataStd^2}\sum_{i=1}^\numData(\dataScalar_i-m\inputScalar_i)^2 -\left(\frac{\numData}{2\dataStd^2} + \frac{1}{2\alpha_1}\right)c^2\\
+    &amp; + c\frac{\sum_{i=1}^\numData(\dataScalar_i-m\inputScalar_i)}{\dataStd^2},
+  \end{aligned}$$</span><br /></p>
+<p>complete the square of the quadratic form to obtain <br /><span class="math display">$$\log p(c | \dataVector, \inputVector, m, \dataStd^2) = -\frac{1}{2\tau^2}(c - \mu)^2 +\text{const},$$</span><br /> where <span class="math inline">$\tau^2 = \left(\numData\dataStd^{-2} +\alpha_1^{-1}\right)^{-1}$</span> and <span class="math inline">$\mu = \frac{\tau^2}{\dataStd^2} \sum_{i=1}^\numData(\dataScalar_i-m\inputScalar_i)$</span>.</p>
+<h2 id="the-joint-density-edit">The Joint Density <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/week6.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/week6.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<ul>
+<li>Really want to know the <em>joint</em> posterior density over the parameters <span class="math inline"><em>c</em></span> <em>and</em> <span class="math inline"><em>m</em></span>.</li>
+<li>Could now integrate out over <span class="math inline"><em>m</em></span>, but it’s easier to consider the multivariate case.</li>
+</ul>
+<h2 id="two-dimensional-gaussian-edit">Two Dimensional Gaussian <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/two-d-gaussian.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/two-d-gaussian.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>Consider the distribution of height (in meters) of an adult male human population. We will approximate the marginal density of heights as a Gaussian density with mean given by <span class="math inline">1.7m</span> and a standard deviation of <span class="math inline">0.15m</span>, implying a variance of <span class="math inline">$\dataStd^2=0.0225$</span>, <br /><span class="math display">$$
+  p(h) \sim \gaussianSamp{1.7}{0.0225}.
+  $$</span><br /> Similarly, we assume that weights of the population are distributed a Gaussian density with a mean of <span class="math inline">75kg</span> and a standard deviation of <span class="math inline">6<em>k</em><em>g</em></span> (implying a variance of 36), <br /><span class="math display">$$
+  p(w) \sim \gaussianSamp{75}{36}.
+  $$</span><br /></p>
+<div class="figure">
+<div id="height-weight-gaussian-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/height_weight_gaussian.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="height-weight-gaussian-magnify" class="magnify" onclick="magnifyFigure(&#39;height-weight-gaussian&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="height-weight-gaussian-caption" class="caption-frame">
+<p>Figure: Gaussian distributions for height and weight.</p>
+</div>
+</div>
+<h2 id="independence-assumption">Independence Assumption</h2>
+<p>First of all, we make an independence assumption, we assume that height and weight are independent. The definition of probabilistic independence is that the joint density, <span class="math inline"><em>p</em>(<em>w</em>, <em>h</em>)</span>, factorizes into its marginal densities, <br /><span class="math display"><em>p</em>(<em>w</em>, <em>h</em>)=<em>p</em>(<em>w</em>)<em>p</em>(<em>h</em>).</span><br /> Given this assumption we can sample from the joint distribution by independently sampling weights and heights.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;independent_height_weight</span><span class="sc">{fig:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, 
+                            fig<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">1</span>))</code></pre></div>
+<div class="figure">
+<div id="independent-height-weight-7-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/independent_height_weight007.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="independent-height-weight-7-magnify" class="magnify" onclick="magnifyFigure(&#39;independent-height-weight-7&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="independent-height-weight-7-caption" class="caption-frame">
+<p>Figure: Samples from independent Gaussian variables that might represent heights and weights.</p>
+</div>
+</div>
+<p>In reality height and weight are <em>not</em> independent. Taller people tend on average to be heavier, and heavier people are likely to be taller. This is reflected by the <em>body mass index</em>. A ratio suggested by one of the fathers of statistics, Adolphe Quetelet. Quetelet was interested in the notion of the <em>average man</em> and collected various statistics about people. He defined the BMI to be, <br /><span class="math display">$$
+\text{BMI} = \frac{w}{h^2}
+$$</span><br />To deal with this dependence we now introduce the notion of <em>correlation</em> to the multivariate Gaussian density.</p>
+<h2 id="sampling-two-dimensional-variables-edit">Sampling Two Dimensional Variables <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/two-d-gaussian-correlated-sample.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/two-d-gaussian-correlated-sample.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">
+pods.notebook.display_plots(<span class="st">&#39;correlated_height_weight</span><span class="sc">{fig:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, 
+                            fig<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">1</span>))</code></pre></div>
+<div class="figure">
+<div id="correlated-height-weight-7-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/correlated_height_weight007.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="correlated-height-weight-7-magnify" class="magnify" onclick="magnifyFigure(&#39;correlated-height-weight-7&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="correlated-height-weight-7-caption" class="caption-frame">
+<p>Figure: Samples from <em>correlated</em> Gaussian variables that might represent heights and weights.</p>
+</div>
+</div>
+<h2 id="independent-gaussians-edit">Independent Gaussians <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/two-d-gaussian-maths.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/two-d-gaussian-maths.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p><br /><span class="math display"><em>p</em>(<em>w</em>, <em>h</em>)=<em>p</em>(<em>w</em>)<em>p</em>(<em>h</em>)</span><br /></p>
+<p><br /><span class="math display">$$
+p(w, h) = \frac{1}{\sqrt{2\pi \dataStd_1^2}\sqrt{2\pi\dataStd_2^2}} \exp\left(-\frac{1}{2}\left(\frac{(w-\meanScalar_1)^2}{\dataStd_1^2} + \frac{(h-\meanScalar_2)^2}{\dataStd_2^2}\right)\right)
+$$</span><br /></p>
+<p><br /><span class="math display">$$
+p(w, h) = \frac{1}{\sqrt{2\pi\dataStd_1^22\pi\dataStd_2^2}} \exp\left(-\frac{1}{2}\left(\begin{bmatrix}w \\ h\end{bmatrix} - \begin{bmatrix}\meanScalar_1 \\ \meanScalar_2\end{bmatrix}\right)^\top\begin{bmatrix}\dataStd_1^2&amp; 0\\0&amp;\dataStd_2^2\end{bmatrix}^{-1}\left(\begin{bmatrix}w \\ h\end{bmatrix} - \begin{bmatrix}\meanScalar_1 \\ \meanScalar_2\end{bmatrix}\right)\right)
+$$</span><br /></p>
+<p><br /><span class="math display">$$
+p(\dataVector) = \frac{1}{\det{2\pi \mathbf{D}}^{\frac{1}{2}}} \exp\left(-\frac{1}{2}(\dataVector - \meanVector)^\top\mathbf{D}^{-1}(\dataVector - \meanVector)\right)
+$$</span><br /></p>
+<h2 id="correlated-gaussian">Correlated Gaussian</h2>
+<p>Form correlated from original by rotating the data space using matrix <span class="math inline">$\rotationMatrix$</span>.</p>
+<p><br /><span class="math display">$$
+p(\dataVector) = \frac{1}{\det{2\pi\mathbf{D}}^{\frac{1}{2}}} \exp\left(-\frac{1}{2}(\dataVector - \meanVector)^\top\mathbf{D}^{-1}(\dataVector - \meanVector)\right)
+$$</span><br /></p>
+<p><br /><span class="math display">$$
+p(\dataVector) = \frac{1}{\det{2\pi\mathbf{D}}^{\frac{1}{2}}} \exp\left(-\frac{1}{2}(\rotationMatrix^\top\dataVector - \rotationMatrix^\top\meanVector)^\top\mathbf{D}^{-1}(\rotationMatrix^\top\dataVector - \rotationMatrix^\top\meanVector)\right)
+$$</span><br /></p>
+<p><br /><span class="math display">$$
+p(\dataVector) = \frac{1}{\det{2\pi\mathbf{D}}^{\frac{1}{2}}} \exp\left(-\frac{1}{2}(\dataVector - \meanVector)^\top\rotationMatrix\mathbf{D}^{-1}\rotationMatrix^\top(\dataVector - \meanVector)\right)
+$$</span><br /> this gives a covariance matrix: <br /><span class="math display">$$
+\covarianceMatrix^{-1} = \rotationMatrix \mathbf{D}^{-1} \rotationMatrix^\top
+$$</span><br /></p>
+<p><br /><span class="math display">$$
+p(\dataVector) = \frac{1}{\det{2\pi\covarianceMatrix}^{\frac{1}{2}}} \exp\left(-\frac{1}{2}(\dataVector - \meanVector)^\top\covarianceMatrix^{-1} (\dataVector - \meanVector)\right)
+$$</span><br /> this gives a covariance matrix: <br /><span class="math display">$$
+\covarianceMatrix = \rotationMatrix \mathbf{D} \rotationMatrix^\top
+$$</span><br /></p>
+<h2 id="the-prior-density">The Prior Density</h2>
+<p>Let's assume that the prior density is given by a zero mean Gaussian, which is independent across each of the parameters, <br /><span class="math display">$$
+\mappingVector \sim \gaussianSamp{\zerosVector}{\alpha \eye}
+$$</span><br /> In other words, we are assuming, for the prior, that each element of the parameters vector, <span class="math inline">$\mappingScalar_i$</span>, was drawn from a Gaussian density as follows <br /><span class="math display">$$
+\mappingScalar_i \sim \gaussianSamp{0}{\alpha}
+$$</span><br /> Let's start by assigning the parameter of the prior distribution, which is the variance of the prior distribution, <span class="math inline"><em>α</em></span>.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># set prior variance on w</span>
+alpha <span class="op">=</span> <span class="dv">4</span>.
+<span class="co"># set the order of the polynomial basis set</span>
+order <span class="op">=</span> <span class="dv">5</span>
+<span class="co"># set the noise variance</span>
+sigma2 <span class="op">=</span> <span class="fl">0.01</span></code></pre></div>
+<h2 id="reading-1">Reading</h2>
+<ul>
+<li><p>Section 2.3 of <span class="citation">Bishop (2006)</span> up to top of pg 85 (multivariate Gaussians).</p></li>
+<li><p>Section 3.3 of <span class="citation">Bishop (2006)</span> up to 159 (pg 152–159).</p></li>
+</ul>
+<h2 id="generating-from-the-model-edit">Generating from the Model <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/prior-sampling-basis.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/prior-sampling-basis.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>A very important aspect of probabilistic modelling is to <em>sample</em> from your model to see what type of assumptions you are making about your data. In this case that involves a two stage process.</p>
+<ol style="list-style-type: decimal">
+<li>Sample a candiate parameter vector from the prior.</li>
+<li>Place the candidate parameter vector in the likelihood and sample functions conditiond on that candidate vector.</li>
+<li>Repeat to try and characterise the type of functions you are generating.</li>
+</ol>
+<p>Given a prior variance (as defined above) we can now sample from the prior distribution and combine with a basis set to see what assumptions we are making about the functions <em>a priori</em> (i.e. before we've seen the data). Firstly we compute the basis function matrix. We will do it both for our training data, and for a range of prediction locations (<code>x_pred</code>).</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
+<span class="im">import</span> pods</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data <span class="op">=</span> pods.datasets.olympic_marathon_men()
+x <span class="op">=</span> data[<span class="st">&#39;X&#39;</span>]
+y <span class="op">=</span> data[<span class="st">&#39;Y&#39;</span>]
+num_data <span class="op">=</span> x.shape[<span class="dv">0</span>]
+num_pred_data <span class="op">=</span> <span class="dv">100</span> <span class="co"># how many points to use for plotting predictions</span>
+x_pred <span class="op">=</span> np.linspace(<span class="dv">1890</span>, <span class="dv">2016</span>, num_pred_data)[:, <span class="va">None</span>] <span class="co"># input locations for predictions</span></code></pre></div>
+<p>now let's build the basis matrices. We define the polynomial basis as follows.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> polynomial(x, num_basis<span class="op">=</span><span class="dv">2</span>, loc<span class="op">=</span><span class="dv">0</span>., scale<span class="op">=</span><span class="dv">1</span>.):
+    degree<span class="op">=</span>num_basis<span class="op">-</span><span class="dv">1</span>
+    degrees <span class="op">=</span> np.arange(degree<span class="op">+</span><span class="dv">1</span>)
+    <span class="cf">return</span> ((x<span class="op">-</span>loc)<span class="op">/</span>scale)<span class="op">**</span>degrees</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> mlai</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">loc<span class="op">=</span><span class="dv">1950</span>
+scale<span class="op">=</span><span class="dv">1</span>
+degree<span class="op">=</span><span class="dv">4</span>
+basis <span class="op">=</span> mlai.Basis(polynomial, number<span class="op">=</span>degree<span class="op">+</span><span class="dv">1</span>, loc<span class="op">=</span>loc, scale<span class="op">=</span>scale)
+Phi_pred <span class="op">=</span> basis.Phi(x_pred)
+Phi <span class="op">=</span> basis.Phi(x)</code></pre></div>
+<h2 id="sampling-from-the-prior">Sampling from the Prior</h2>
+<p>Now we will sample from the prior to produce a vector <span class="math inline">$\mappingVector$</span> and use it to plot a function which is representative of our belief <em>before</em> we fit the data. To do this we are going to use the properties of the Gaussian density and a sample from a <em>standard normal</em> using the function <code>np.random.normal</code>.</p>
+<h2 id="scaling-gaussian-distributed-variables">Scaling Gaussian-distributed Variables</h2>
+<p>First, let's consider the case where we have one data point and one feature in our basis set. In otherwords <span class="math inline">$\mappingFunctionVector$</span> would be a scalar, <span class="math inline">$\mappingVector$</span> would be a scalar and <span class="math inline">$\basisMatrix$</span> would be a scalar. In this case we have <br /><span class="math display">$$
+\mappingFunction = \basisScalar \mappingScalar
+$$</span><br /> If <span class="math inline">$\mappingScalar$</span> is drawn from a normal density, <br /><span class="math display">$$
+\mappingScalar \sim \gaussianSamp{\meanScalar_\mappingScalar}{c_\mappingScalar}
+$$</span><br /> and <span class="math inline">$\basisScalar$</span> is a scalar value which we are given, then properties of the Gaussian density tell us that <br /><span class="math display">$$
+\basisScalar \mappingScalar \sim \gaussianSamp{\basisScalar\meanScalar_\mappingScalar}{\basisScalar^2c_\mappingScalar}
+$$</span><br /> Let's test this out numerically. First we will draw 200 samples from a standard normal,</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">w_vec <span class="op">=</span> np.random.normal(size<span class="op">=</span><span class="dv">200</span>)</code></pre></div>
+<p>We can compute the mean of these samples and their variance</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="st">&#39;w sample mean is &#39;</span>, w_vec.mean())
+<span class="bu">print</span>(<span class="st">&#39;w sample variance is &#39;</span>, w_vec.var())</code></pre></div>
+<p>These are close to zero (the mean) and one (the variance) as you'd expect. Now compute the mean and variance of the scaled version,</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">phi <span class="op">=</span> <span class="dv">7</span>
+f_vec <span class="op">=</span> phi<span class="op">*</span>w_vec
+<span class="bu">print</span>(<span class="st">&#39;True mean should be phi*0 = 0.&#39;</span>)
+<span class="bu">print</span>(<span class="st">&#39;True variance should be phi*phi*1 = &#39;</span>, phi<span class="op">*</span>phi)
+<span class="bu">print</span>(<span class="st">&#39;f sample mean is &#39;</span>, f_vec.mean())
+<span class="bu">print</span>(<span class="st">&#39;f sample variance is &#39;</span>, f_vec.var())</code></pre></div>
+<p>If you increase the number of samples then you will see that the sample mean and the sample variance begin to converge towards the true mean and the true variance. Obviously adding an offset to a sample from <code>np.random.normal</code> will change the mean. So if you want to sample from a Gaussian with mean <code>mu</code> and standard deviation <code>sigma</code> one way of doing it is to sample from the standard normal and scale and shift the result, so to sample a set of <span class="math inline">$\mappingScalar$</span> from a Gaussian with mean <span class="math inline">$\meanScalar$</span> and variance <span class="math inline"><em>α</em></span>, <br /><span class="math display">$$\mappingScalar \sim \gaussianSamp{\meanScalar}{\alpha}$$</span><br /> We can simply scale and offset samples from the <em>standard normal</em>.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">mu <span class="op">=</span> <span class="dv">4</span> <span class="co"># mean of the distribution</span>
+alpha <span class="op">=</span> <span class="dv">2</span> <span class="co"># variance of the distribution</span>
+w_vec <span class="op">=</span> np.random.normal(size<span class="op">=</span><span class="dv">200</span>)<span class="op">*</span>np.sqrt(alpha) <span class="op">+</span> mu
+<span class="bu">print</span>(<span class="st">&#39;w sample mean is &#39;</span>, w_vec.mean())
+<span class="bu">print</span>(<span class="st">&#39;w sample variance is &#39;</span>, w_vec.var())</code></pre></div>
+<p>Here the <code>np.sqrt</code> is necesssary because we need to multiply by the standard deviation and we specified the variance as <code>alpha</code>. So scaling and offsetting a Gaussian distributed variable keeps the variable Gaussian, but it effects the mean and variance of the resulting variable.</p>
+<p>To get an idea of the overall shape of the resulting distribution, let's do the same thing with a histogram of the results.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>matplotlib inline</code></pre></div>
+<p>Now re-run this histogram with 100,000 samples and check that the both histograms look qualitatively Gaussian.</p>
+<h2 id="sampling-from-the-prior-1">Sampling from the Prior</h2>
+<p>Let's use this way of constructing samples from a Gaussian to check what functions look like <em>a priori</em>. The process will be as follows. First, we sample a random vector <span class="math inline"><em>K</em></span> dimensional from <code>np.random.normal</code>. Then we scale it by <span class="math inline">$\sqrt{\alpha}$</span> to obtain a prior sample of <span class="math inline">$\mappingVector$</span>.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">K <span class="op">=</span> degree <span class="op">+</span> <span class="dv">1</span>
+z_vec <span class="op">=</span> np.random.normal(size<span class="op">=</span>K)
+w_sample <span class="op">=</span> z_vec<span class="op">*</span>np.sqrt(alpha)
+<span class="bu">print</span>(w_sample)</code></pre></div>
+<p>Now we can combine our sample from the prior with the basis functions to create a function,</p>
+<p>This shows the recurring problem with the polynomial basis (note the scale on the left hand side!). Our prior allows relatively large coefficients for the basis associated with high polynomial degrees. Because we are operating with input values of around 2000, this leads to output functions of very high values. The fix we have used for this before is to rescale our data before we apply the polynomial basis to it. Above, we set the scale of the basis to 1. Here let's set it to 100 and try again.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">scale <span class="op">=</span> <span class="dv">100</span>.
+basis <span class="op">=</span> mlai.Basis(polynomial, number<span class="op">=</span>degree<span class="op">+</span><span class="dv">1</span>, loc<span class="op">=</span>loc, scale<span class="op">=</span>scale)
+Phi_pred <span class="op">=</span> basis.Phi(x_pred)
+Phi <span class="op">=</span> basis.Phi(x)</code></pre></div>
+<p>Now we need to recompute the basis functions from above,</p>
+<p>Now let's loop through some samples and plot various functions as samples from this system,</p>
+<p>The predictions for the mean output can now be computed. We want the expected value of the predictions under the posterior distribution. In matrix form, the predictions can be computed as <br /><span class="math display">$$
+\mappingFunctionVector = \basisMatrix \mappingVector.
+$$</span><br /> This involves a matrix multiplication between a fixed matrix <span class="math inline">$\basisMatrix$</span> and a vector that is drawn from a distribution <span class="math inline">$\mappingVector$</span>. Because <span class="math inline">$\mappingVector$</span> is drawn from a distribution, this imples that <span class="math inline">$\mappingFunctionVector$</span> should also be drawn from a distribution. There are two distributions we are interested in though. We have just been sampling from the <em>prior</em> distribution to see what sort of functions we get <em>before</em> looking at the data. In Bayesian inference, we need to computer the <em>posterior</em> distribution and sample from that density.</p>
+<h2 id="computing-the-posterior-edit">Computing the Posterior <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/posterior-computation-gaussian.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/posterior-computation-gaussian.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>We will now attampt to compute the <em>posterior distribution</em>. In the lecture we went through the maths that allows us to compute the posterior distribution for <span class="math inline">$\mappingVector$</span>. This distribution is also Gaussian, <br /><span class="math display">$$
+p(\mappingVector | \dataVector, \inputVector, \dataStd^2) = \gaussianDist{\mappingVector}{\meanVector_\mappingScalar}{\covarianceMatrix_\mappingScalar}
+$$</span><br /> with covariance, <span class="math inline">$\covarianceMatrix_\mappingScalar$</span>, given by <br /><span class="math display">$$
+\covarianceMatrix_\mappingScalar = \left(\dataStd^{-2}\basisMatrix^\top \basisMatrix + \alpha^{-1}\eye\right)^{-1}
+$$</span><br /> whilst the mean is given by <br /><span class="math display">$$
+\meanVector_\mappingScalar = \covarianceMatrix_\mappingScalar \dataStd^{-2}\basisMatrix^\top \dataVector
+$$</span><br /> Let's compute the posterior covariance and mean, then we'll sample from these densities to have a look at the posterior belief about <span class="math inline">$\mappingVector$</span> once the data has been accounted for. Remember, the process of Bayesian inference involves combining the prior, <span class="math inline">$p(\mappingVector)$</span> with the likelihood, <span class="math inline">$p(\dataVector|\inputVector, \mappingVector)$</span> to form the posterior, <span class="math inline">$p(\mappingVector | \dataVector, \inputVector)$</span> through Bayes' rule, <br /><span class="math display">$$
+p(\mappingVector|\dataVector, \inputVector) = \frac{p(\dataVector|\inputVector, \mappingVector)p(\mappingVector)}{p(\dataVector)}
+$$</span><br /> We've looked at the samples for our function <span class="math inline">$\mappingFunctionVector = \basisMatrix\mappingVector$</span>, which forms the mean of the Gaussian likelihood, under the prior distribution. I.e. we've sampled from <span class="math inline">$p(\mappingVector)$</span> and multiplied the result by the basis matrix. Now we will sample from the posterior density, <span class="math inline">$p(\mappingVector|\dataVector, \inputVector)$</span>, and check that the new samples fit do correspond to the data, i.e. we want to check that the updated distribution includes information from the data set. First we need to compute the posterior mean and <em>covariance</em>.</p>
+<h2 id="bayesian-inference-in-the-univariate-case">Bayesian Inference in the Univariate Case</h2>
+<p>This video talks about Bayesian inference across the single parameter, the offset <span class="math inline"><em>c</em></span>, illustrating how the prior and the likelihood combine in one dimension to form a posterior.</p>
+<iframe width="800" height="600" src="https://www.youtube.com/embed/AvlnFnvFw_0?start=15" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+<h2 id="multivariate-bayesian-inference">Multivariate Bayesian Inference</h2>
+<p>This section of the lecture talks about how we extend the idea of Bayesian inference for the multivariate case. It goes through the multivariate Gaussian and how to complete the square in the linear algebra as we managed below.</p>
+<iframe width="800" height="600" src="https://www.youtube.com/embed/Os1iqgpelPw?start=1362" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+<p>The lecture informs us the the posterior density for <span class="math inline">$\mappingVector$</span> is given by a Gaussian density with covariance <br /><span class="math display">$$
+\covarianceMatrix_w = \left(\dataStd^{-2}\basisMatrix^\top \basisMatrix + \alpha^{-1}\eye\right)^{-1}
+$$</span><br /> and mean <br /><span class="math display">$$
+\meanVector_w = \covarianceMatrix_w\dataStd^{-2}\basisMatrix^\top \dataVector.
+$$</span><br /></p>
+
+<h2 id="olympic-data-with-bayesian-polynomials-edit">Olympic Data with Bayesian Polynomials <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/olympic-bayesian-polynomials.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/olympic-bayesian-polynomials.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>Five fold cross validation tests the ability of the model to <em>interpolate</em>.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> mlai
+<span class="im">import</span> pods</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data <span class="op">=</span> pods.datasets.olympic_marathon_men()
+x <span class="op">=</span> data[<span class="st">&#39;X&#39;</span>]
+y <span class="op">=</span> data[<span class="st">&#39;Y&#39;</span>]
+num_data <span class="op">=</span> x.shape[<span class="dv">0</span>]
+
+data_limits <span class="op">=</span> [<span class="dv">1892</span>, <span class="dv">2020</span>]
+basis <span class="op">=</span> mlai.Basis(mlai.polynomial, number<span class="op">=</span><span class="dv">1</span>, data_limits<span class="op">=</span>data_limits)
+
+max_basis <span class="op">=</span> y.shape[<span class="dv">0</span>]</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;olympic_BLM_polynomial_number</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml/&#39;</span>, 
+                            num_basis<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">27</span>, <span class="dv">1</span>))</code></pre></div>
+<div class="figure">
+<div id="olympic-blm-polynomial-number-26-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_BLM_polynomial_number026.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="olympic-blm-polynomial-number-26-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-blm-polynomial-number-26&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="olympic-blm-polynomial-number-26-caption" class="caption-frame">
+<p>Figure: Bayesian fit with 26th degree polynomial and negative marginal log likelihood.</p>
+</div>
+</div>
+<h2 id="hold-out-validation">Hold Out Validation</h2>
+<p>For the polynomial fit, we will now look at <em>hold out</em> validation, where we are holding out some of the most recent points. This tests the abilit of our model to <em>extrapolate</em>.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;olympic_val_BLM_polynomial_number</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, 
+                            num_basis<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">27</span>, <span class="dv">1</span>))</code></pre></div>
+<div class="figure">
+<div id="olympic-val-blm-polynomial-number-26-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_val_BLM_polynomial_number026.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="olympic-val-blm-polynomial-number-26-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-val-blm-polynomial-number-26&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="olympic-val-blm-polynomial-number-26-caption" class="caption-frame">
+<p>Figure: Bayesian fit with 26th degree polynomial and hold out validation scores.</p>
+</div>
+</div>
+<h2 id="fold-cross-validation">5-fold Cross Validation</h2>
+<p>Five fold cross validation tests the ability of the model to <em>interpolate</em>.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;olympic_5cv</span><span class="sc">{part:0&gt;2}</span><span class="st">_BLM_polynomial_number</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, 
+                            part<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">5</span>), 
+                            num_basis<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">27</span>, <span class="dv">1</span>))</code></pre></div>
+<div class="figure">
+<div id="olympic-5cv05-blm-polynomial-number-26-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number026.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="olympic-5cv05-blm-polynomial-number-26-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-5cv05-blm-polynomial-number-26&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="olympic-5cv05-blm-polynomial-number-26-caption" class="caption-frame">
+<p>Figure: Bayesian fit with 26th degree polynomial and five fold cross validation scores.</p>
+</div>
+</div>
+<h2 id="sampling-from-the-posterior-edit">Sampling from the Posterior <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/posterior-sampling-basis.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/posterior-sampling-basis.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>Before we were able to sample the prior values for the mean <em>independently</em> from a Gaussian using <code>np.random.normal</code> and scaling the result. However, observing the data <em>correlates</em> the parameters. Recall this from the first lab where we had a correlation between the offset, <span class="math inline"><em>c</em></span> and the slope <span class="math inline"><em>m</em></span> which caused such problems with the coordinate ascent algorithm. We need to sample from a <em>correlated</em> Gaussian. For this we can use <code>np.random.multivariate_normal</code>.</p>
+<p>Now let's sample several functions and plot them all to see how the predictions fluctuate.</p>
+<p>This gives us an idea of what our predictions are. These are the predictions that are consistent with data and our prior. Try plotting different numbers of predictions. You can also try plotting beyond the range of where the data is and see what the functions do there.</p>
+<p>Rather than sampling from the posterior each time to compute our predictions, it might be better if we just summarised the predictions by the expected value of the output funciton, <span class="math inline">$\mappingFunction(x)$</span>, for any particular input. If we can get formulae for this we don't need to sample the values of <span class="math inline">$\mappingFunction(x)$</span> we might be able to compute the distribution directly. Fortunately, in the Gaussian case, we can use properties of multivariate Gaussians to compute both the mean and the variance of these samples.</p>
+<h2 id="properties-of-gaussian-variables">Properties of Gaussian Variables</h2>
+<p>Gaussian variables have very particular properties, that many other densities don't exhibit. Perhaps foremost amoungst them is that the sum of any Gaussian distributed set of random variables also turns out to be Gaussian distributed. This property is much rarer than you might expect.</p>
+<h2 id="sum-of-gaussian-distributed-variables">Sum of Gaussian-distributed Variables</h2>
+<p>The sum of Gaussian random variables is also Gaussian, so if we have a random variable <span class="math inline">$\dataScalar_i$</span> drawn from a Gaussian density with mean <span class="math inline">$\meanScalar_i$</span> and variance <span class="math inline">$\dataStd^2_i$</span>, <br /><span class="math display">$$
+\dataScalar_i \sim \gaussianSamp{\meanScalar_i}{\dataStd^2_i}
+$$</span><br /> Then the sum of <span class="math inline"><em>K</em></span> independently sampled values of <span class="math inline">$\dataScalar_i$</span> will be drawn from a Gaussian with mean <span class="math inline">$\sum_{i=1}^K \mu_i$</span> and variance <span class="math inline">$\sum_{i=1}^K \dataStd_i^2$</span>, <br /><span class="math display">$$
+\sum_{i=1}^K \dataScalar_i \sim \gaussianSamp{\sum_{i=1}^K \meanScalar_i}{\sum_{i=1}^K \dataStd_i^2}.
+$$</span><br /> Let's try that experimentally. First let's generate a vector of samples from a standard normal distribution, <span class="math inline">$z \sim \gaussianSamp{0}{1}$</span>, then we will scale and offset them, then keep adding them into a vector <code>y_vec</code>.</p>
+<h2 id="sampling-from-gaussians-and-summing-up">Sampling from Gaussians and Summing Up</h2>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">K <span class="op">=</span> <span class="dv">10</span> <span class="co"># how many Gaussians to add.</span>
+num_samples <span class="op">=</span> <span class="dv">1000</span> <span class="co"># how many samples to have in y_vec</span>
+mus <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">5</span>, K) <span class="co"># mean values generated linearly spaced between 0 and 5</span>
+sigmas <span class="op">=</span> np.linspace(<span class="fl">0.5</span>, <span class="dv">2</span>, K) <span class="co"># sigmas generated linearly spaced between 0.5 and 2</span>
+y_vec <span class="op">=</span> np.zeros(num_samples)
+<span class="cf">for</span> mu, sigma <span class="kw">in</span> <span class="bu">zip</span>(mus, sigmas):
+    z_vec <span class="op">=</span> np.random.normal(size<span class="op">=</span>num_samples) <span class="co"># z is from standard normal</span>
+    y_vec <span class="op">+=</span> z_vec<span class="op">*</span>sigma <span class="op">+</span> mu <span class="co"># add to y z*sigma + mu</span>
+
+<span class="co"># now y_vec is the sum of each scaled and off set z.</span>
+<span class="bu">print</span>(<span class="st">&#39;Sample mean is &#39;</span>, y_vec.mean(), <span class="st">&#39; and sample variance is &#39;</span>, y_vec.var())
+<span class="bu">print</span>(<span class="st">&#39;True mean should be &#39;</span>, mus.<span class="bu">sum</span>())
+<span class="bu">print</span>(<span class="st">&#39;True variance should be &#39;</span>, (sigmas<span class="op">**</span><span class="dv">2</span>).<span class="bu">sum</span>(), <span class="st">&#39; standard deviation &#39;</span>, np.sqrt((sigmas<span class="op">**</span><span class="dv">2</span>).<span class="bu">sum</span>())) </code></pre></div>
+<p>Of course, we can histogram <code>y_vec</code> as well.</p>
+<h2 id="matrix-multiplication-of-gaussian-variables">Matrix Multiplication of Gaussian Variables</h2>
+<p>We are interested in what our model is saying about the sort of functions we are observing. The fact that summing of Gaussian variables leads to new Gaussian variables, and scaling of Gaussian variables <em>also</em> leads to Gaussian variables means that matrix multiplication (which is just a series of sums and scales) also leads to Gaussian densities. Matrix multiplication is just adding and scaling together, in the formula, <span class="math inline">$\mappingFunctionVector = \basisMatrix \mappingVector$</span> we can extract the first element from <span class="math inline">$\mappingFunctionVector$</span> as <br /><span class="math display">$$
+\mappingFunction_i = \basisVector_i^\top \mappingVector
+$$</span><br /> where <span class="math inline">$\basisVector$</span> is a column vector from the <span class="math inline"><em>i</em></span>th row of <span class="math inline">$\basisMatrix$</span> and <span class="math inline">$\mappingFunction_i$</span> is the <span class="math inline"><em>i</em></span>th element of <span class="math inline">$\mappingFunctionVector$</span>.This vector inner product itself merely implies that <br /><span class="math display">$$
+\mappingFunction_i = \sum_{j=1}^K \mappingScalar_j \basisScalar_{i, j}
+$$</span><br /> and if we now say that <span class="math inline">$\mappingScalar_i$</span> is Gaussian distributed, then because a scaled Gaussian is also Gaussian, and because a sum of Gaussians is also Gaussian, we know that <span class="math inline">$\mappingFunction_i$</span> is also Gaussian distributed. It merely remains to work out its mean and covariance. We can do this by looking at the expectation under a Gaussian distribution. The expectation of the mean vector is given by <br /><span class="math display">$$
+\expDist{\mappingFunctionVector}{\gaussianDist{\mappingVector}{\meanVector}{\covarianceMatrix}} = \int \mappingFunctionVector
+\gaussianDist{\mappingVector}{\meanVector}{\covarianceMatrix}
+\text{d}\mappingVector = \int \basisMatrix\mappingVector
+\gaussianDist{\mappingVector}{\meanVector}{\covarianceMatrix}
+\text{d}\mappingVector = \basisMatrix \int \mappingVector
+\gaussianDist{\mappingVector}{\meanVector}{\covarianceMatrix}
+\text{d}\mappingVector = \basisMatrix \meanVector
+$$</span><br /></p>
+<p>Which is straightforward. The expectation of <span class="math inline">$\mappingFunctionVector=\basisMatrix\mappingVector$</span> under the Gaussian distribution for <span class="math inline">$\mappingFunctionVector$</span> is simply <span class="math inline">$\mappingFunctionVector=\basisMatrix\meanVector$</span>, where <span class="math inline">$\meanVector$</span> is the <em>mean</em> of the Gaussian density for <span class="math inline">$\mappingVector$</span>. Because our prior distribution was Gaussian with zero mean, the expectation under the prior is given by <br /><span class="math display">$$
+\expDist{\mappingFunctionVector}{\gaussianDist{\mappingVector}{\zerosVector}{\alpha\eye}} = \zerosVector
+$$</span><br /></p>
+<p>The covariance is a little more complicated. A covariance matrix is defined as <br /><span class="math display">$$
+\text{cov}\left(\mappingFunctionVector\right)_{\gaussianDist{\mappingVector}{\meanVector}{\covarianceMatrix}}
+= \expDist{\mappingFunctionVector\mappingFunctionVector^\top}{\gaussianDist{\mappingVector}{\meanVector}{\covarianceMatrix}}
+- \expDist{\mappingFunctionVector}{\gaussianDist{\mappingVector}{\meanVector}{\covarianceMatrix}}\expDist{\mappingFunctionVector}{\gaussianDist{\mappingVector}{\meanVector}{\covarianceMatrix}}^\top
+$$</span><br /> we've already computed <span class="math inline">$\expDist{\mappingFunctionVector}{\gaussianDist{\mappingVector}{\meanVector}{\covarianceMatrix}}=\basisMatrix \meanVector$</span> so we can substitute that in to recover <br /><span class="math display">$$
+\text{cov}\left(\mappingFunctionVector\right)_{\gaussianDist{\mappingVector}{\meanVector}{\covarianceMatrix}} = \expDist{\mappingFunctionVector\mappingFunctionVector^\top}{\gaussianDist{\mappingVector}{\meanVector}{\covarianceMatrix}} - \basisMatrix \meanVector \meanVector^\top \basisMatrix^\top
+$$</span><br /></p>
+<p>So we need the expectation of <span class="math inline">$\mappingFunctionVector\mappingFunctionVector^\top$</span>. Substituting in <span class="math inline">$\mappingFunctionVector = \basisMatrix \mappingVector$</span> we have <br /><span class="math display">$$
+\text{cov}\left(\mappingFunctionVector\right)_{\gaussianDist{\mappingVector}{\meanVector}{\covarianceMatrix}} = \expDist{\basisMatrix\mappingVector\mappingVector^\top \basisMatrix^\top}{\gaussianDist{\mappingVector}{\meanVector}{\covarianceMatrix}} - \basisMatrix \meanVector \meanVector^\top \basisMatrix^\top
+$$</span><br /> <br /><span class="math display">$$
+\text{cov}\left(\mappingFunctionVector\right)_{\gaussianDist{\mappingVector}{\meanVector}{\covarianceMatrix}} = \basisMatrix\expDist{\mappingVector\mappingVector^\top}{\gaussianDist{\mappingVector}{\meanVector}{\covarianceMatrix}} \basisMatrix^\top - \basisMatrix \meanVector \meanVector^\top\basisMatrix^\top
+$$</span><br /> Which is dependent on the second moment of the Gaussian, <br /><span class="math display">$$
+\expDist{\mappingVector\mappingVector^\top}{\gaussianDist{\mappingVector}{\meanVector}{\covarianceMatrix}} = \covarianceMatrix + \meanVector\meanVector^\top
+$$</span><br /> that can be substituted in to recover, <br /><span class="math display">$$
+\text{cov}\left(\mappingFunctionVector\right)_{\gaussianDist{\mappingVector}{\meanVector}{\covarianceMatrix}} = \basisMatrix\covarianceMatrix \basisMatrix^\top
+$$</span><br /> so in the case of the prior distribution, where we have <span class="math inline">$\covarianceMatrix = \alpha \eye$</span> we can write <br /><span class="math display">$$
+\text{cov}\left(\mappingFunctionVector\right)_{\gaussianDist{\mappingVector}{\zerosVector}{\alpha \eye}} = \alpha \basisMatrix \basisMatrix^\top
+$$</span><br /></p>
+<p>This implies that the prior we have suggested for <span class="math inline">$\mappingVector$</span>, which is Gaussian with a mean of zero and covariance of <span class="math inline">$\alpha \eye$</span> suggests that the distribution for <span class="math inline">$\mappingVector$</span> is also Gaussian with a mean of zero and covariance of <span class="math inline">$\alpha \basisMatrix\basisMatrix^\top$</span>. Since our observed output, <span class="math inline">$\dataVector$</span>, is given by a noise corrupted variation of <span class="math inline">$\mappingFunctionVector$</span>, the final distribution for <span class="math inline">$\dataVector$</span> is given as <br /><span class="math display">$$
+\dataVector = \mappingFunctionVector + \noiseVector
+$$</span><br /> where the noise, <span class="math inline">$\noiseVector$</span>, is sampled from a Gaussian density: <span class="math inline">$\noiseVector \sim \gaussianSamp{\zerosVector}{\dataStd^2\eye}$</span>. So, in other words, we are taking a Gaussian distributed random value <span class="math inline">$\mappingFunctionVector$</span>, <br /><span class="math display">$$
+\mappingFunctionVector \sim \gaussianSamp{\zerosVector}{\alpha\basisMatrix\basisMatrix^\top}
+$$</span><br /> and adding to it another Gaussian distributed value, <span class="math inline">$\noiseVector \sim \gaussianSamp{\zerosVector}{\dataStd^2\eye}$</span>, to form our data observations, <span class="math inline">$\dataVector$</span>. Once again the sum of two (multivariate) Gaussian distributed variables is also Gaussian, with a mean given by the sum of the means (both zero in this case) and the covariance given by the sum of the covariances. So we now have that the marginal likelihood for the data, <span class="math inline">$p(\dataVector)$</span> is given by <br /><span class="math display">$$
+p(\dataVector) = \gaussianDist{\dataVector}{\zerosVector}{\alpha \basisMatrix \basisMatrix^\top + \dataStd^2\eye}
+$$</span><br /> This is our <em>implicit</em> assumption for <span class="math inline">$\dataVector$</span> given our prior assumption for <span class="math inline">$\mappingVector$</span>.</p>
+<h2 id="marginal-likelihood-edit">Marginal Likelihood <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/polynomial-marginal-likelihood.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/polynomial-marginal-likelihood.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<ul>
+<li><p>The marginal likelihood can also be computed, it has the form: <br /><span class="math display">$$
+  p(\dataVector|\inputMatrix, \dataStd^2, \alpha) = \frac{1}{(2\pi)^\frac{n}{2}\left|\kernelMatrix\right|^\frac{1}{2}} \exp\left(-\frac{1}{2} \dataVector^\top \kernelMatrix^{-1} \dataVector\right)
+  $$</span><br /> where <span class="math inline">$\kernelMatrix = \alpha \basisMatrix\basisMatrix^\top + \dataStd^2 \eye$</span>.</p></li>
+<li><p>So it is a zero mean <span class="math inline">$\numData$</span>-dimensional Gaussian with covariance matrix <span class="math inline">$\kernelMatrix$</span>.</p></li>
+</ul>
+<h2 id="computing-the-mean-and-error-bars-of-the-functions-edit">Computing the Mean and Error Bars of the Functions <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/compute-output-expectations.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/compute-output-expectations.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>These ideas together, now allow us to compute the mean and error bars of the predictions. The mean prediction, before corrupting by noise is given by, <br /><span class="math display">$$
+\mappingFunctionVector = \basisMatrix\mappingVector
+$$</span><br /> in matrix form. This gives you enough information to compute the predictive mean.</p>
+
+<h2 id="computing-error-bars">Computing Error Bars</h2>
+<p>Finally, we can compute error bars for the predictions. The error bars are the standard deviations of the predictions for <span class="math inline">$\mappingFunctionVector=\basisMatrix\mappingVector$</span> under the posterior density for <span class="math inline">$\mappingVector$</span>. The standard deviations of these predictions can be found from the variance of the prediction at each point. Those variances are the diagonal entries of the covariance matrix. We've already computed the form of the covariance under Gaussian expectations, <br /><span class="math display">$$
+\text{cov}\left(\mappingFunctionVector\right)_{\gaussianDist{\mappingVector}{\meanVector}{\covarianceMatrix}} = \basisMatrix\covarianceMatrix \basisMatrix^\top
+$$</span><br /> which under the posterior density is given by <br /><span class="math display">$$
+\text{cov}\left(\mappingFunctionVector\right)_{\gaussianDist{\mappingVector}{\meanVector_w}{\covarianceMatrix_w}} = \basisMatrix\covarianceMatrix_w \basisMatrix^\top
+$$</span><br /></p>
+
+<h2 id="validation">Validation</h2>
+<p>Now we will test the generalisation ability of these models. Firstly we are going to use hold out validation to attempt to see which model is best for extrapolating.</p>
+
+
+<h2 id="reading-2">Reading</h2>
+<ul>
+<li><p>Section 3.7–3.8 of <span class="citation">Rogers and Girolami (2011)</span> (pg 122–133).</p></li>
+<li><p>Section 3.4 of <span class="citation">Bishop (2006)</span> (pg 161–165).</p></li>
+</ul>
+<h2 id="references" class="unnumbered">References</h2>
+<div id="refs" class="references">
+<div id="ref-Bishop:book06">
+<p>Bishop, Christopher M. 2006. <em>Pattern Recognition and Machine Learning</em>. springer.</p>
+</div>
+<div id="ref-Laplace:memoire74">
+<p>Laplace, Pierre Simon. 1774. “Mémoire Sur La Probabilité Des Causes Par Les évènemens.” In <em>Mémoires de Mathèmatique et de Physique, Presentés à lAcadémie Royale Des Sciences, Par Divers Savans, &amp; Lù Dans Ses Assemblées 6</em>, 621–56.</p>
+</div>
+<div id="ref-Rogers:book11">
+<p>Rogers, Simon, and Mark Girolami. 2011. <em>A First Course in Machine Learning</em>. CRC Press.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Note not all exponentiated quadratics can be normalized, to do so, the coefficient associated with the variable squared, <span class="math inline">$\dataScalar^2$</span>, must be strictly positive.<a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
+
+

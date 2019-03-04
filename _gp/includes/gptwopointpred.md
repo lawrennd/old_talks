@@ -37,7 +37,7 @@ import pods}
   \kernelMatrix= \begin{bmatrix} \kernelScalar_{1, 1} & \kernelScalar_{1, 2}\\ \kernelScalar_{2, 1} & \kernelScalar_{2, 2}\end{bmatrix}
   $$
 
-\include{../../_gp/includes/gaussian-predict-index-one-and-eight.md}
+\include{_gp/includes/gaussian-predict-index-one-and-eight.md}
 
 \newslide{Details}
 

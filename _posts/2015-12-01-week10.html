@@ -1,0 +1,204 @@
+---
+title: "Logistic Regression and GLMs"
+venue: "University of Sheffield"
+abstract: "Naive Bayes assumptions allow us to specify class conditional densities through assuming that the data are conditionally independent given parameters. A logistic regression is an approach to classification which extends the linear basis function models we've already explored. Rather than modeling the output of the function directly the assumption is that we model the <em>log-odds</em> with the basis functions."
+author:
+- given: Neil D.
+  family: Lawrence
+  url: http://inverseprobability.com
+  institute: Amazon Cambridge and University of Sheffield
+  twitter: lawrennd
+  gscholar: r3SJcvoAAAAJ
+  orchid: 
+date: 2015-12-01
+published: 2015-12-01
+reveal: 2015-12-01-week10.slides.html
+ipynb: 2015-12-01-week10.ipynb
+layout: talk
+categories:
+- notes
+---
+
+
+<div style="display:none">
+  $${% include talk-notation.tex %}$$
+</div>
+
+<script src="/talks/figure-magnify.js"></script>
+<script src="/talks/figure-animate.js"></script>
+    
+<div id="modal-frame" class="modal">
+  <span class="close" onclick="closeMagnify()">&times;</span>
+  <div class="modal-figure">
+    <div class="figure-frame">
+      <div class="modal-content" id="modal01"></div>
+      <!--<img class="modal-content" id="object01">-->
+    </div>
+    <div class="caption-frame" id="modal-caption"></div>
+  </div>
+</div>	  
+
+<!-- Front matter -->
+<p>.</p>
+<!---->
+<!--Back matter-->
+<p>.</p>
+<!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
+<h2 id="review">Review</h2>
+<p>The <a href="./week9.ipynb">naive Bayes assumption</a> allowed us to specify a class conditional density, <span class="math inline">$p(\inputVector_i|\dataScalar_i, \parameterVector)$</span>, through assuming that the features were conditionally independent given the label. Combined with our assumption that the data points are conditionally independent given the parameters, <span class="math inline">$\parameterVector$</span>, this allowed us to specify a joint density over the entire data set, <span class="math inline">$p(\dataVector, \inputMatrix)$</span>. We argued that modeling the joint density is a powerful approach because we can answer any particular question we have about the data through the sum rule and the product rule of probability. We can condition on the training data and query the value of an unseen test point. If we have missing data, then we can integrate over the missing point (marginalise) and obtain our best prediction despite the absence of some of the features for a point. However, it comes at the cost of a particular modeling assumption. Namely, to make modeling practical we assumed that the features were conditionally independent given the feature label. In other words, for any given point, if we know its class, then its features will be independent. This is a very strong assumption. For example, if we were classifying the sex of an individual given their height and weight, naive Bayes would assume that if we knew their sex, then the height and weight would be independent. This is clearly wrong, the dependence between height and weight is not dictated only by the sex of an individual, there is a natural correlation between them.</p>
+<p>Modeling the entire joint density allows us to deal with different questions, that we may not have envisaged at the model <em>design time</em>. It contrasts with the approach we took for regression where we specifically chose to model the conditional density for the target values, <span class="math inline">$\dataVector$</span>, given the input locations, <span class="math inline">$\inputMatrix$</span>. That density, <span class="math inline">$p(\dataVector|\inputMatrix)$</span>, effectively assumes that the question we'll be asked at <em>run time</em> is known. In particular, we expect to be asked about the value of the function, <span class="math inline"><em>y</em><sup>*</sup></span>, given a particular input location, <span class="math inline">$\inputVector^*$</span>. We don't expect to be asked about the value of an input given a particular observation. That would require placing an additional prior over the input location for each point, <span class="math inline">$p(\inputVector_i)$</span>. Of course, it's possible to conceive of a model like this, and indeed that is how we proceeded for <a href="./week8.ipynb">dimensionality reduction</a>. However, if we know we will always have all the inputs at run time, it may make sense to <em>directly</em> model the conditional density, <span class="math inline">$p(\dataVector|\inputMatrix)$</span>.</p>
+<h3 id="logistic-regression">Logistic Regression</h3>
+<p>A logistic regression is an approach to classification which extends the linear basis function models we've already explored. Rather than modeling the output of the function directly the assumption is that we model the <em>log-odds</em> with the basis functions.</p>
+<p>The <a href="http://en.wikipedia.org/wiki/Odds">odds</a> are defined as the ratio of the probability of a positive outcome, to the probability of a negative outcome. If the probability of a positive outcome is denoted by <span class="math inline"><em>π</em></span>, then the odds are computed as <span class="math inline">$\frac{\pi}{1-\pi}$</span>. Odds are widely used by <a href="http://en.wikipedia.org/wiki/Bookmaker">bookmakers</a> in gambling, although a bookmakers odds won't normalise: i.e. if you look at the equivalent probabilities, and sum over the probability of all outcomes the bookmakers are considering, then you won't get one. This is how the bookmaker makes a profit. Because a probability is always between zero and one, the odds are always between <span class="math inline">0</span> and <span class="math inline">∞</span>. If the positive outcome is unlikely the odds are close to zero, if it is very likely then the odds become close to infinite. Taking the logarithm of the odds maps the odds from the positive half space to being across the entire real line. Odds that were between 0 and 1 (where the negative outcome was more likely) are mapped to the range between <span class="math inline">−∞</span> and <span class="math inline">0</span>. Odds that are greater than 1 are mapped to the range between <span class="math inline">0</span> and <span class="math inline">∞</span>. Considering the log odds therefore takes a number between 0 and 1 (the probability of positive outcome) and maps it to the entire real line. The function that does this is known as the <a href="http://en.wikipedia.org/wiki/Logit">logit function</a>, <span class="math inline">$g^{-1}(p_i) = \log\frac{p_i}{1-p_i}$</span>. This function is known as a <em>link function</em>.</p>
+<p>For a standard regression we take, <br /><span class="math display">$$
+\mappingFunction(\inputVector) = \mappingVector^\top
+\basisVector(\inputVector),
+$$</span><br /> if we want to perform classification we perform a logistic regression. <br /><span class="math display">$$
+\log \frac{\pi}{(1-\pi)} = \mappingVector^\top
+\basisVector(\inputVector)
+$$</span><br /> where the odds ratio between the positive class and the negative class is given by <br /><span class="math display">$$
+\frac{\pi}{(1-\pi)}
+$$</span><br /> The odds can never be negative, but can take any value from 0 to <span class="math inline">∞</span>. We have defined the link function as taking the form <span class="math inline"><em>g</em><sup>−1</sup>(⋅)</span> implying that the inverse link function is given by <span class="math inline"><em>g</em>(⋅)</span>. Since we have defined, <br /><span class="math display">$$
+g^{-1}(\pi) =
+\mappingVector^\top \basisVector(\inputVector)
+$$</span><br /> we can write <span class="math inline"><em>π</em></span> in terms of the <em>inverse link</em> function, <span class="math inline"><em>g</em>(⋅)</span> as <br /><span class="math display">$$
+\pi = g(\mappingVector^\top
+\basisVector(\inputVector)).
+$$</span><br /></p>
+<h3 id="basis-function">Basis Function</h3>
+<p>We'll define our prediction, objective and gradient functions below. But before we start, we need to define a basis function for our model. Let's start with the linear basis.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>load <span class="op">-</span>s linear mlai.py</code></pre></div>
+<h3 id="prediction-function">Prediction Function</h3>
+<p>Now we have the basis function let's define the prediction function.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> predict(w, x, basis<span class="op">=</span>linear, <span class="op">**</span>kwargs):
+    <span class="co">&quot;Generates the prediction function and the basis matrix.&quot;</span>
+    Phi <span class="op">=</span> basis(x, <span class="op">**</span>kwargs)
+    f <span class="op">=</span> np.dot(Phi, w)
+    <span class="cf">return</span> <span class="dv">1</span>.<span class="op">/</span>(<span class="dv">1</span><span class="op">+</span>np.exp(<span class="op">-</span>f)), Phi</code></pre></div>
+<p>This inverse of the link function is known as the <a href="http://en.wikipedia.org/wiki/Logistic_function">logistic</a> (thus the name logistic regression) or sometimes it is called the sigmoid function. For a particular value of the input to the link function, <span class="math inline">$\mappingFunction_i = \mappingVector^\top \basisVector(\inputVector_i)$</span> we can plot the value of the link function as below.</p>
+<object class="svgplot " data="../slides/diagrams/ml/logistic.svg" style="vertical-align:middle;">
+</object>
+<p>The function has this characeristic 's'-shape (from where the term sigmoid, as in sigma, comes from). It also takes the input from the entire real line and 'squashes' it into an output that is between zero and one. For this reason it is sometimes also called a 'squashing function'.</p>
+<p>By replacing the inverse link with the sigmoid we can write <span class="math inline"><em>π</em></span> as a function of the input and the parameter vector as, <br /><span class="math display">$$
+\pi(\inputVector,\mappingVector) = \frac{1}{1+
+\exp\left(-\mappingVector^\top \basisVector(\inputVector)\right)}.
+$$</span><br /></p>
+<p>The process for logistic regression is as follows. Compute the output of a standard linear basis function composition (<span class="math inline">$\mappingVector^\top \basisVector(\inputVector)$</span>, as we did for linear regression) and then apply the inverse link function, <span class="math inline">$g(\mappingVector^\top \basisVector(\inputVector))$</span>. In logistic regression this involves <em>squashing</em> it with the logistic (or sigmoid) function. Use this value, which now has an interpretation as a <em>probability</em> in a Bernoulli distribution to form the likelihood. Then we can assume conditional independence of each data point given the parameters and develop a likelihod for the entire data set.</p>
+<p>As we discussed last time, the Bernoulli likelihood is of the form, <br /><span class="math display">$$
+P(\dataScalar_i|\mappingVector, \inputVector) =
+\pi_i^{\dataScalar_i} (1-\pi_i)^{1-\dataScalar_i}
+$$</span><br /> which we can think of as clever trick for mathematically switching between two probabilities if we were to write it as code it would be better described as</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> bernoulli(x, y, pi):
+    <span class="cf">if</span> y <span class="op">==</span> <span class="dv">1</span>:
+        <span class="cf">return</span> pi(x)
+    <span class="cf">else</span>:
+        <span class="cf">return</span> <span class="dv">1</span><span class="op">-</span>pi(x)</code></pre></div>
+<p>but writing it mathematically makes it easier to write our objective function within a single mathematical equation.</p>
+<h3 id="maximum-likelihood">Maximum Likelihood</h3>
+<p>To obtain the parameters of the model, we need to maximize the likelihood, or minimize the objective function, normally taken to be the negative log likelihood. With a data conditional independence assumption the likelihood has the form, <br /><span class="math display">$$
+P(\dataVector|\mappingVector,
+\inputMatrix) = \prod_{i=1}^\numData P(\dataScalar_i|\mappingVector, \inputVector_i). 
+$$</span><br /> which can be written as a log likelihood in the form <br /><span class="math display">$$
+\log P(\dataVector|\mappingVector,
+\inputMatrix) = \sum_{i=1}^\numData \log P(\dataScalar_i|\mappingVector, \inputVector_i) = \sum_{i=1}^\numData
+\dataScalar_i \log \pi_i + \sum_{i=1}^\numData (1-\dataScalar_i)\log (1-\pi_i)
+$$</span><br /> and if we take the probability of positive outcome for the <span class="math inline"><em>i</em></span>th data point to be given by <br /><span class="math display">$$
+\pi_i = g\left(\mappingVector^\top \basisVector(\inputVector_i)\right),
+$$</span><br /> where <span class="math inline"><em>g</em>(⋅)</span> is the <em>inverse</em> link function, then this leads to an objective function of the form, <br /><span class="math display">$$
+E(\mappingVector) = -  \sum_{i=1}^\numData \dataScalar_i \log
+g\left(\mappingVector^\top \basisVector(\inputVector_i)\right) -
+\sum_{i=1}^\numData(1-\dataScalar_i)\log \left(1-g\left(\mappingVector^\top
+\basisVector(\inputVector_i)\right)\right).
+$$</span><br /></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> objective(g, y):
+    <span class="co">&quot;Computes the objective function.&quot;</span>
+    posind <span class="op">=</span> np.where(y.flatten()<span class="op">==</span><span class="dv">1</span>)
+    negind <span class="op">=</span> np.where(y.flatten()<span class="op">==</span><span class="dv">0</span>)
+    <span class="cf">return</span> <span class="op">-</span>np.log(g[posind, :]).<span class="bu">sum</span>() <span class="op">-</span> np.log(<span class="dv">1</span><span class="op">-</span>g[negind, :]).<span class="bu">sum</span>()</code></pre></div>
+<p>As normal, we would like to minimize this objective. This can be done by differentiating with respect to the parameters of our prediction function, <span class="math inline">$\pi(\inputVector;\mappingVector)$</span>, for optimisation. The gradient of the likelihood with respect to <span class="math inline">$\pi(\inputVector;\mappingVector)$</span> is of the form, <br /><span class="math display">$$
+\frac{\text{d}E(\mappingVector)}{\text{d}\mappingVector} = -\sum_{i=1}^\numData
+\frac{\dataScalar_i}{g\left(\mappingVector^\top
+\basisVector(\inputVector)\right)}\frac{\text{d}g(\mappingFunction_i)}{\text{d}\mappingFunction_i}
+\basisVector(\inputVector_i) +  \sum_{i=1}^\numData
+\frac{1-\dataScalar_i}{1-g\left(\mappingVector^\top
+\basisVector(\inputVector)\right)}\frac{\text{d}g(\mappingFunction_i)}{\text{d}\mappingFunction_i}
+\basisVector(\inputVector_i)
+$$</span><br /> where we used the chain rule to develop the derivative in terms of <span class="math inline">$\frac{\text{d}g(\mappingFunction_i)}{\text{d}\mappingFunction_i}$</span>, which is the gradient of the inverse link function (in our case the gradient of the sigmoid function).</p>
+<p>So the objective function now depends on the gradient of the inverse link function, as well as the likelihood depends on the gradient of the inverse link function, as well as the gradient of the log likelihood, and naturally the gradient of the argument of the inverse link function with respect to the parameters, which is simply <span class="math inline">$\basisVector(\inputVector_i)$</span>.</p>
+<p>The only missing term is the gradient of the inverse link function. For the sigmoid squashing function we have, <br /><span class="math display">$$\begin{align*}
+g(\mappingFunction_i) &amp;= \frac{1}{1+\exp(-\mappingFunction_i)}\\
+&amp;=(1+\exp(-\mappingFunction_i))^{-1}
+\end{align*}$$</span><br /> and the gradient can be computed as <br /><span class="math display">$$\begin{align*}
+\frac{\text{d}g(\mappingFunction_i)}{\text{d} \mappingFunction_i} &amp; =
+\exp(-\mappingFunction_i)(1+\exp(-\mappingFunction_i))^{-2}\\
+&amp; = \frac{1}{1+\exp(-\mappingFunction_i)}
+\frac{\exp(-\mappingFunction_i)}{1+\exp(-\mappingFunction_i)} \\
+&amp; = g(\mappingFunction_i) (1-g(\mappingFunction_i))
+\end{align*}$$</span><br /> so the full gradient can be written down as <br /><span class="math display">$$
+\frac{\text{d}E(\mappingVector)}{\text{d}\mappingVector} = -\sum_{i=1}^\numData
+\dataScalar_i\left(1-g\left(\mappingVector^\top \basisVector(\inputVector)\right)\right)
+\basisVector(\inputVector_i) +  \sum_{i=1}^\numData
+(1-\dataScalar_i)\left(g\left(\mappingVector^\top \basisVector(\inputVector)\right)\right)
+\basisVector(\inputVector_i).
+$$</span><br /></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> gradient(g, Phi, y):
+    <span class="co">&quot;Generates the gradient of the parameter vector.&quot;</span>
+    posind <span class="op">=</span> np.where(y.flatten()<span class="op">==</span><span class="dv">1</span>)
+    dw <span class="op">=</span> <span class="op">-</span>(Phi[posind]<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>g[posind])).<span class="bu">sum</span>(<span class="dv">0</span>)
+    negind <span class="op">=</span> np.where(y.flatten()<span class="op">==</span><span class="dv">0</span> )
+    dw <span class="op">+=</span> (Phi[negind]<span class="op">*</span>g[negind]).<span class="bu">sum</span>(<span class="dv">0</span>)
+    <span class="cf">return</span> dw[:, <span class="va">None</span>]</code></pre></div>
+<h2 id="optimization-of-the-function">Optimization of the Function</h2>
+<p>Reorganizing the gradient to find a stationary point of the function with respect to the parameters <span class="math inline">$\mappingVector$</span> turns out to be impossible. Optimization has to proceed by <em>numerical methods</em>. Options include the multidimensional variant of <a href="http://en.wikipedia.org/wiki/Newton%27s_method">Newton's method</a> or <a href="http://en.wikipedia.org/wiki/Gradient_method">gradient based optimization methods</a> like we used for optimizing matrix factorization for the movie recommender system. We recall from matrix factorization that, for large data, <em>stochastic gradient descent</em> or the Robbins Munro <span class="citation">(Robbins and Monro 1951)</span> optimization procedure worked best for function minimization.</p>
+<h2 id="movie-body-count-data">Movie Body Count Data</h2>
+<p>Let's recreate the movie body count example we used with naive Bayes. We can load in the data from <code>pods</code> as follows.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Change this example for 2016#data = pods.datasets.movie_body_count_r_classify()</span>
+data <span class="op">=</span> pods.datasets.olivetti_glasses()
+X <span class="op">=</span> data[<span class="st">&#39;X&#39;</span>]
+y <span class="op">=</span> data[<span class="st">&#39;Y&#39;</span>]</code></pre></div>
+<h2 id="gradient-descent">Gradient Descent</h2>
+<p>We will need to define some initial random values for our vector and then minimize the objective by descending the gradient.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># gradient descent algorithm</span>
+w <span class="op">=</span> np.random.normal(size<span class="op">=</span>(X.shape[<span class="dv">1</span>]<span class="op">+</span><span class="dv">1</span>, <span class="dv">1</span>), scale <span class="op">=</span> <span class="fl">0.001</span>)
+eta <span class="op">=</span> <span class="fl">1e-9</span>
+iters <span class="op">=</span> <span class="dv">10000</span>
+<span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(iters):
+    g, Phi <span class="op">=</span> predict(w, X, linear)
+    w <span class="op">-=</span> eta<span class="op">*</span>gradient(g, Phi, y) <span class="op">+</span> <span class="fl">0.001</span><span class="op">*</span>w
+    <span class="cf">if</span> <span class="kw">not</span> i <span class="op">%</span> <span class="dv">100</span>:
+        <span class="bu">print</span>(<span class="st">&quot;Iter&quot;</span>, i, <span class="st">&quot;Objective&quot;</span>, objective(g, y))</code></pre></div>
+<p>Let's look at the weights and how they relate to the inputs.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">plt.matshow(X[<span class="dv">40</span>, :].reshape(<span class="dv">64</span>, <span class="dv">64</span>).T)</code></pre></div>
+<p>The weights are fairly small. This makes sense for year, and perhaps also body count, but given the genre only take the value of 0 or 1 it makes less sense for them. Why are the weights so small? What can you do to fix this?</p>
+<h2 id="stochastic-gradient-descent">Stochastic Gradient Descent</h2>
+<p>Now construct a stochastic gradient descent algorithm and run it on the data. Is it faster or slower than batch gradient descent? What can you do to improve convergence speed?</p>
+<h2 id="going-further-optimization">Going Further: Optimization</h2>
+<p>Other optimization techniques for generalized linear models include <a href="http://en.wikipedia.org/wiki/Newton%27s_method">Newton's method</a>, it requires you to compute the Hessian, or second derivative of the objective function.</p>
+<p>Methods that are based on gradients only include <a href="http://en.wikipedia.org/wiki/Limited-memory_BFGS">L-BFGS</a> and <a href="http://en.wikipedia.org/wiki/Conjugate_gradient_method">conjugate gradients</a>. Can you find these in python? Are they suitable for very large data sets?</p>
+<h2 id="other-glms">Other GLMs</h2>
+<p>We've introduced the formalism for generalized linear models. Have a think about how you might model count data using the <a href="http://en.wikipedia.org/wiki/Poisson_distribution">Poisson distribution</a> and a log link function for the rate, <span class="math inline">$\lambda(\inputVector)$</span>. If you want a data set you can try the <code>pods.datasets.google_trends()</code> for some count data.</p>
+<object class="svgplot " data="../slides/diagrams/ml/poisson.svg" style="vertical-align:middle;">
+</object>
+<h2 id="bayesian-approaches">Bayesian Approaches</h2>
+
+<ul>
+<li>Section 5.2.2 of <span class="citation">Rogers and Girolami (2011)</span> up to pg 182.</li>
+</ul>
+<h2 id="references" class="unnumbered">References</h2>
+<div id="refs" class="references">
+<div id="ref-Robbins:stoch51">
+<p>Robbins, H., and S. Monro. 1951. “A Stochastic Approximation Method.” <em>Annals of Mathematical Statistics</em> 22: 400–407.</p>
+</div>
+<div id="ref-Rogers:book11">
+<p>Rogers, Simon, and Mark Girolami. 2011. <em>A First Course in Machine Learning</em>. CRC Press.</p>
+</div>
+</div>
+
+
