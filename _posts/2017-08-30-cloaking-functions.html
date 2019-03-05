@@ -250,17 +250,20 @@ communicate
 <li><p>We want to protect a user from a linkage attack...</p>
 <p>...while still performing inference over the whole group.</p></li>
 <li><p>Making a dataset private is more than just erasing names.</p></li>
+</ul>
+<p><span class="citation">Narayanan and Felten (2014)</span>;<span class="citation">Ohm (2010)</span></p>
+<ul>
 <li><p>To achieve a level of privacy one needs to add <strong>randomness</strong> to the data.</p></li>
 <li><p>This is a fundamental feature of differential privacy.</p></li>
 </ul>
-<p>See <a href="https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf">The Algorithmic Foundations of Differential Privacy</a> by Dwork and Roth for a rigorous introduction to the framework.</p>
+<p>See <a href="https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf">The Algorithmic Foundations of Differential Privacy</a> by <span class="citation">Dwork and Roth (2014)</span> for a rigorous introduction to the framework.</p>
 <h2 id="differential-privacy-for-gaussian-processes-edit">Differential Privacy for Gaussian Processes <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_privacy/includes/differential-privacy-for-gps.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_privacy/includes/differential-privacy-for-gps.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>We have a dataset in which the inputs, <span class="math inline">$\inputMatrix$</span>, are <strong>public</strong>. The outputs, <span class="math inline">$\dataVector$</span>, we want to keep <strong>private</strong>.</p>
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/privacy/kung_pseudo_pert.png" width="65%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<p><strong>Data consists of the heights and weights of 287 women from a census of the !Kung</strong></p>
-<p>Hall et al. (2013) showed that one can ensure that a version of <span class="math inline">$\mappingFunction$</span>, function <span class="math inline">$\tilde{f}$</span> is <span class="math inline">(<em>ε</em>, <em>δ</em>)</span>-differentially private by adding a scaled sample from a GP prior.</p>
+<p><strong>Data consists of the heights and weights of 287 women from a census of the !Kung <span class="citation">(Howell 1967)</span></strong></p>
+<p><span class="citation">Hall, Rinaldo, and Wasserman (2013)</span> showed that one can ensure that a version of <span class="math inline">$\mappingFunction$</span>, function <span class="math inline">$\tilde{f}$</span> is <span class="math inline">(<em>ε</em>, <em>δ</em>)</span>-differentially private by adding a scaled sample from a GP prior.</p>
 <p><img class="negate" src="../slides/diagrams/privacy/hall1.png" width="30%" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></p>
 <p>3 pages of maths ahead!</p>
 <ul>
@@ -397,24 +400,61 @@ communicate
 <li><p><strong>Future work</strong> Multiple outputs, GP classification, DP Optimising hyperparameters, Making the inputs private.</p></li>
 <li><p><strong>Thanks</strong> Funders: EPSRC; Colleagues: <strong>Michael T. Smith</strong>, Mauricio, Max.</p></li>
 <li><p><strong>Recruiting</strong> Deep Probabilistic Models: 2 year postdoc (<a href="http://tinyurl.com/shefpostdoc">tinyurl.com/shefpostdoc</a>)</p></li>
-</ul>
-<h1 id="references">References</h1>
-<h3 id="section" class="allowframebreaks" data-background="../slides/diagrams/pres_bg.png"></h3>
-<ul>
-<li><p><span style="margin-left:-50px;"><strong>The go-to book on differential privacy, by Dwork and Roth;</strong><br />
-</span> Dwork, Cynthia, and Aaron Roth. &quot;The algorithmic foundations of differential privacy.&quot; Theoretical Computer Science 9.3-4 (2013): 211-407. <a href="https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf">link</a></p></li>
-<li><p><span style="margin-left:-50px;"><strong>Original basis of applying DP to GPs;</strong><br />
-</span> Hall, Rob, Alessandro Rinaldo, and Larry Wasserman. &quot;Differential privacy for functions and functional data.&quot; The Journal of Machine Learning Research 14.1 (2013): 703-727. <a href="http://www.stat.cmu.edu/~arinaldo/papers/hall13a.pdf">link</a></p></li>
-<li><p><span style="margin-left:-50px;"><strong>Articles about the Massachusetts privacy debate</strong><br />
-</span> Barth-Jones, Daniel C. &quot;The 're-identification' of Governor William Weld's medical information: a critical re-examination of health data identification risks and privacy protections, then and now.&quot; Then and Now (June 4, 2012) (2012). <a href="http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2076397">link</a></p></li>
-<li><p>Ohm, Paul. &quot;Broken promises of privacy: Responding to the surprising failure of anonymization.&quot; UCLA Law Review 57 (2010): 1701. <a href="https://epic.org/privacy/reidentification/ohm_article.pdf">link</a></p></li>
-<li><p>Narayanan, Arvind, and Edward W. Felten. &quot;No silver bullet: De-identification still doesn’t work.&quot; White Paper (2014). <a href="http://randomwalker.info/publications/no-silver-bullet-de-identification.pdf">link</a></p></li>
-<li><p>Howell, N. Data from a partial census of the !kung san, dobe. 1967-1969. <a href="https://public.tableau.com/profile/john.marriott\#!/vizhome/kung-san/Attributes" class="uri">https://public.tableau.com/profile/john.marriott\#!/vizhome/kung-san/Attributes</a>, 1967.</p></li>
 <li><p><strong>Images used:</strong> BostonGlobe: <a href="https://c.o0bg.com/rf/image_960w/Boston/2011-2020/2015/05/29/BostonGlobe.com/Business/Images/MassMutual_04.jpg">Mass Mutual</a>, <a href="https://c.o0bg.com/rf/image_960w/Boston/2011-2020/2014/10/20/BostonGlobe.com/Metro/Images/Gov.%20Bill%20Weld%201-100425.jpg">Weld</a>. Harvard: <a href="http://www.gov.harvard.edu/files/Sweeney6crop.jpg">Sweeney</a>. Rich on flickr: <a href="https://www.flickr.com/photos/rich_b1982/13114665103/in/pool-sheffieldskyline/">Sheffield skyline</a>.</p></li>
 </ul>
+<h1 id="references">References</h1>
+<!--###  {.allowframebreaks data-background="../slides/diagrams/pres_bg.png"}
+
+* [**The go-to book on differential privacy, by Dwork and Roth;**\
+]{style="margin-left:-50px;"} Dwork, Cynthia, and Aaron Roth. "The
+algorithmic foundations of differential privacy." Theoretical Computer
+Science 9.3-4 (2013): 211-407.
+[link](https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf)
+
+* [**Original basis of applying DP to GPs;**\
+]{style="margin-left:-50px;"} Hall, Rob, Alessandro Rinaldo, and Larry
+Wasserman. "Differential privacy for functions and functional data." The
+Journal of Machine Learning Research 14.1 (2013): 703-727.
+[link](http://www.stat.cmu.edu/~arinaldo/papers/hall13a.pdf)
+
+
+* [**Articles about the Massachusetts privacy debate**\
+]{style="margin-left:-50px;"} Barth-Jones, Daniel C.
+"The 're-identification' of Governor William Weld's medical information: a
+critical re-examination of health data identification risks and privacy
+protections, then and now." Then and Now (June 4, 2012) (2012).
+[link](http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2076397)
+
+
+* Ohm, Paul. "Broken promises of privacy: Responding to the surprising
+failure of anonymization." UCLA Law Review 57 (2010): 1701.
+[link](https://epic.org/privacy/reidentification/ohm_article.pdf)
+
+* Narayanan, Arvind, and Edward W. Felten. "No silver bullet:
+De-identification still doesn’t work." White Paper (2014).
+[link](http://randomwalker.info/publications/no-silver-bullet-de-identification.pdf)
+
+* Howell, N. Data from a partial census of the !kung san, dobe. 1967-1969.
+<https://public.tableau.com/profile/john.marriott\#!/vizhome/kung-san/Attributes>, 1967.
+-->
 <div id="refs" class="references">
 <div id="ref-Ananthanarayanan-cat09">
 <p>Ananthanarayanan, Rajagopal, Steven K. Esser, Horst D. Simon, and Dharmendra S. Modha. 2009. “The Cat Is Out of the Bag: Cortical Simulations with <span class="math inline">10<sup>9</sup></span> Neurons, <span class="math inline">10<sup>13</sup></span> Synapses.” In <em>Proceedings of the Conference on High Performance Computing Networking, Storage and Analysis - Sc ’09</em>. doi:<a href="https://doi.org/10.1145/1654059.1654124">10.1145/1654059.1654124</a>.</p>
+</div>
+<div id="ref-Dwork:algorithmic14">
+<p>Dwork, Cynthia, and Aaron Roth. 2014. “The Algorithmic Foundations of Differential Privacy.” <em>Foundations and Trends in Theoretical Computer Science</em> 9 (3-4): 211–407.</p>
+</div>
+<div id="ref-Hall:dpfunctions13">
+<p>Hall, Rob, Alessandro Rinaldo, and Larry Wasserman. 2013. “Differential Privacy for Functions and Functional Data.” <em>Journal of Machine Learning Research</em> 14 (1): 703–27. <a href="http://jmlr.csail.mit.edu/papers/v14/hall13a.html" class="uri">http://jmlr.csail.mit.edu/papers/v14/hall13a.html</a>.</p>
+</div>
+<div id="ref-Howell:kungsan67">
+<p>Howell, Nancy. 1967. “Data from a Partial Census of the !Kung San, Dobe. 1967-1969.” https://public.tableau.com/profile/john.marriott#!/vizhome/kung-san/Attributes.</p>
+</div>
+<div id="ref-Narayanan:nosilver14">
+<p>Narayanan, Arvind, and Edward W. Felten. 2014. “No Silver Bullet: De-Identification Still Doesn’t Work.”</p>
+</div>
+<div id="ref-Ohm:broken10">
+<p>Ohm, Paul. 2010. “Broken Promises of Privacy: Responding to the Surprising Failure of Anonymization.” <em>UCLA Law Review</em> 57: 1701.</p>
 </div>
 <div id="ref-Rasmussen:book06">
 <p>Rasmussen, Carl Edward, and Christopher K. I. Williams. 2006. <em>Gaussian Processes for Machine Learning</em>. Cambridge, MA: mit.</p>

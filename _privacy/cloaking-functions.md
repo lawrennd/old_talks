@@ -50,10 +50,18 @@ hyperparameters, Making the inputs private.
 * **Recruiting** Deep Probabilistic Models: 2 year postdoc ([tinyurl.com/shefpostdoc](http://tinyurl.com/shefpostdoc))
 
 
-\references
 \thanks
 
-###  {.allowframebreaks data-background="../slides/diagrams/pres_bg.png"}
+* **Images used:** BostonGlobe: [Mass
+Mutual](https://c.o0bg.com/rf/image_960w/Boston/2011-2020/2015/05/29/BostonGlobe.com/Business/Images/MassMutual_04.jpg),
+[Weld](https://c.o0bg.com/rf/image_960w/Boston/2011-2020/2014/10/20/BostonGlobe.com/Metro/Images/Gov.%20Bill%20Weld%201-100425.jpg).
+Harvard: [Sweeney](http://www.gov.harvard.edu/files/Sweeney6crop.jpg).
+Rich on flickr: [Sheffield
+skyline](https://www.flickr.com/photos/rich_b1982/13114665103/in/pool-sheffieldskyline/).
+
+\references
+
+<!--###  {.allowframebreaks data-background="../slides/diagrams/pres_bg.png"}
 
 * [**The go-to book on differential privacy, by Dwork and Roth;**\
 ]{style="margin-left:-50px;"} Dwork, Cynthia, and Aaron Roth. "The
@@ -86,13 +94,8 @@ De-identification still doesn’t work." White Paper (2014).
 
 * Howell, N. Data from a partial census of the !kung san, dobe. 1967-1969.
 <https://public.tableau.com/profile/john.marriott\#!/vizhome/kung-san/Attributes>, 1967.
+-->
 
-* **Images used:** BostonGlobe: [Mass
-Mutual](https://c.o0bg.com/rf/image_960w/Boston/2011-2020/2015/05/29/BostonGlobe.com/Business/Images/MassMutual_04.jpg),
-[Weld](https://c.o0bg.com/rf/image_960w/Boston/2011-2020/2014/10/20/BostonGlobe.com/Metro/Images/Gov.%20Bill%20Weld%201-100425.jpg).
-Harvard: [Sweeney](http://www.gov.harvard.edu/files/Sweeney6crop.jpg).
-Rich on flickr: [Sheffield
-skyline](https://www.flickr.com/photos/rich_b1982/13114665103/in/pool-sheffieldskyline/).
 
 
 

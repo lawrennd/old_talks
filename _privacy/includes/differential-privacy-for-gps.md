@@ -11,6 +11,8 @@
 
 * Making a dataset private is more than just erasing names.
 
+@Narayanan:nosilver14;@Ohm:broken10
+
 * To achieve a level of privacy one needs to add **randomness** to the
 data.
 
@@ -18,7 +20,7 @@ data.
 
 See [The Algorithmic Foundations of Differential
 Privacy](https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf) by
-Dwork and Roth for a rigorous introduction to the framework.
+@Dwork:algorithmic14 for a rigorous introduction to the framework.
 
 
 \subsection{Differential Privacy for Gaussian Processes}
@@ -29,11 +31,11 @@ outputs, $\dataVector$, we want to keep **private**.
 \includepng{../slides/diagrams/privacy/kung_pseudo_pert}{65%}{negate}
 
 **Data consists of the heights and weights of 287 women from a census of
-the !Kung**
+the !Kung [@Howell:kungsan67]**
 
 \newslide{Vectors and Functions}
 
-Hall et al. (2013) showed that one can ensure that a version of $\mappingFunction$,
+@Hall:dpfunctions13 showed that one can ensure that a version of $\mappingFunction$,
 function $\tilde{f}$ is $(\varepsilon, \delta)$-differentially
 private by adding a scaled sample from a GP prior.
 
