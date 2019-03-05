@@ -1,7 +1,13 @@
-\slides{
-###
-}
-\includeimg{../slides/diagrams/Medievalplowingwoodcut.jpg}
+\ifndef{feudalEraDataEcosystem}
+\define{feudalEraDataEcosystem}
+
+\editme
+
+\notes{\subsection{Feudal Era Data Ecosystem}}
+
+\newslide{}
+
+\figure{\includejpg{../slides/diagrams/Medievalplowingwoodcut}{80%}}{Feudal systems consist of serfs and vassals who are under the protection of a Lord.}{feudal-data-system}
 
 \slides{[Information Barons threaten our Privacy](https://www.theguardian.com/media-network/2015/nov/16/information-barons-threaten-autonomy-privacy-online)}
 
@@ -9,3 +15,4 @@
 
 I explored this idea further in [this Guardian Op-Ed from 2015](https://www.theguardian.com/media-network/2015/nov/16/information-barons-threaten-autonomy-privacy-online).}
 
+\endif

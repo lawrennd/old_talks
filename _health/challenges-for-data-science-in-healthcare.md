@@ -31,6 +31,7 @@ transition: None
 \include{_data-science/includes/societal-effects.md}
 
 \include{_data-science/includes/the-data-crisis.md}
+\include{_data-science/includes/feudal-era-data-ecosystem.md}
 
 \include{_data-science/includes/value-of-data.md}
 \include{_health/includes/rolls-royce-analogy.md}

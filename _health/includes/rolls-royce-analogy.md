@@ -26,10 +26,8 @@ With this in mind The Wellcome Trust launched a report on ["Understanding Patien
 
 \newslide{Bush Pilot Model}
 
-\rawfigure{
-\includejpg{../slides/diagrams/health/bush-pilot-grant-mcconachie}{60%}
-\notes{\caption{Bush Pilot Grant McConachie}}
-}
+\figure{\includejpg{../slides/diagrams/health/bush-pilot-grant-mcconachie}{60%}}{Bush Pilot Grant McConachie. A Bush Pilot is expected to fly the plane, but also to be able to repair it in difficult and isolated conditions.}{bush-pilot-grant-mcconachie}
+
 
 \notes{The situation is somewhat reminiscient of early aviation. This is where we are with our data science capabilities. By analogy, the engine of the plane is our data security infrastructure, the basic required technology to make us safe. The pilot is the health professional performing data analytics. The nature of the job of early pilots and indeed today's *bush pilots* (who fly to remote places) included a need to understand the mechanics of the engine. Just as a health data scientist, today, needs to deal with security of the infrastructure as well as the nature of the analysis.}
 
@@ -41,8 +39,7 @@ With this in mind The Wellcome Trust launched a report on ["Understanding Patien
 
 \newslide{}
 
-\rawfigure{\includejpg{../slides/diagrams/health/British_Airways_at_SFO}{50%}
-\caption{British Airways 747 at SFO}}
+\figure{\includejpg{../slides/diagrams/health/British_Airways_at_SFO}{50%}}{British Airways 747 at SFO}{british-airways-at-sfo}
 
 \notes{I suspect most passengers would find it disconcerting if the pilot of a 747 was seen working on the engine shortly before a flight. As aviation has become more widespread, there is now a separation of responsibilities between pilots and mechanics. Indeed, Rolls Royce maintain ownership of their engines today, and merely lease them to the aircraft company. The responsibility for maintenance of the engine is entirely with Rolls Royce, yet the pilot is responsibility for the safety of the aircraft and its passengers.
 
@@ -52,7 +49,7 @@ This separation of responsibility according to expertise needs to be emulated wh
 
 \newslide{}
 \slides{
-\href{https://www.amazon.co.uk/Black-Box-Thinking-Surprising-Success-ebook/dp/B00PW634YQ}{\includejpg{../slides/diagrams/health/black-box-thinking}{40%}}
+\figure{\href{https://www.amazon.co.uk/Black-Box-Thinking-Surprising-Success-ebook/dp/B00PW634YQ}{\includejpg{../slides/diagrams/health/black-box-thinking}{40%}}}{Black Box Thinking by Matthew Syed}{black-box-thinking}
 }
 
 \notes{\subsection{Propagation of Best Practice}
