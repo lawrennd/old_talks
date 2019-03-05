@@ -39,7 +39,7 @@ data.head()}}
 
 \code{data.describe()}
 
-\notes{In python and jupyter notebook it is possible to see a list of all possible functions and attributes by typing the name of the object followed by .<Tab> for example in the above case if we type data.<Tab> it show the columns available (these are attributes in pandas dataframes) such as `num_nurses_fulltime`, and also functions, such as `.describe()`.}
+\notes{In python and jupyter notebook it is possible to see a list of all possible functions and attributes by typing the name of the object followed by `.<Tab>` for example in the above case if we type `data.<Tab>` it show the columns available (these are attributes in pandas dataframes) such as `num_nurses_fulltime`, and also functions, such as `.describe()`.}
 
 \notes{For functions we can also see the documentation about the function by following the name with a question mark. This will open a box with documentation at the bottom which can be closed with the x button.}
 
