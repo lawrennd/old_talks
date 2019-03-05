@@ -11,7 +11,7 @@
 
 * Making a dataset private is more than just erasing names.
 
-@Narayanan:nosilver14;@Ohm:broken10
+@Narayanan:nosilver14;@Ohm:broken10;@BarthJones:governor12
 
 * To achieve a level of privacy one needs to add **randomness** to the
 data.
