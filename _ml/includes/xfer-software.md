@@ -1,5 +1,5 @@
-\ifndef{emukitSoftware}
-\define{emukitSoftware}
+\ifndef{xferSoftware}
+\define{xferSoftware}
 \editme
 
 \include{_ml/includes/xfer-intro.md}

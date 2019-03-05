@@ -1,54 +1,59 @@
-### Cloaking {data-transition="None"}
+\ifndef{differentialPrivacyWithCloaking}
+\define{differentialPrivacyWithCloaking}
+
+\editme
+
+\subsection{Cloaking}
 
 * So far we've made the whole posterior mean function private...
 
     ...what if we just concentrate on making particular predictions private?
 
 
-### Effect of perturbation {data-transition="None"}
+\newslide{Effect of perturbation}
 
 * Standard approach: sample the noise is from the GP's
 **prior**.
 
 * Not necessarily the most 'efficient' covariance to use.
 
-### Cloaking {#cloaking-1 data-transition="None"}
+\newslide{Cloaking}
 
 \includediagram{../slides/diagrams/privacy/dp-firstpoint000}
 
 *Left*: Function change. *Right*: test point change
 
-### Cloaking {#cloaking-1 data-transition="None"}
+\newslide{Cloaking}
 
-\includediagram{../slides/diagrams/privacy/dp-firstpoint002}
-
-*Left*: Function change. *Right*: test point change
-
-### Cloaking {#cloaking-1 data-transition="None"}
-
-\includediagram{../slides/diagrams/privacy/dp-secondpoint000}
+\includediagram{../slides/diagrams/privacy/dp-firstpoint002}{80%}
 
 *Left*: Function change. *Right*: test point change
 
-### Cloaking {#cloaking-1 data-transition="None"}
+\newslide{Cloaking}
 
-\includediagram{../slides/diagrams/privacy/dp-secondpoint002}
-
-*Left*: Function change. *Right*: test point change
-
-### Cloaking {#cloaking-1 data-transition="None"}
-
-\includediagram{../slides/diagrams/privacy/dp-with-ellipse001}
+\includediagram{../slides/diagrams/privacy/dp-secondpoint000}{80%}
 
 *Left*: Function change. *Right*: test point change
 
-### Cloaking {#cloaking-1 data-transition="None"}
+\newslide{Cloaking}
 
-\includediagram{../slides/diagrams/privacy/dp-with-ellipse002}
+\includediagram{../slides/diagrams/privacy/dp-secondpoint002}{80%}
 
 *Left*: Function change. *Right*: test point change
 
-### DP Vectors  {data-background="../slides/diagrams/pres_bg.png"}
+\newslide{Cloaking}
+
+\includediagram{../slides/diagrams/privacy/dp-with-ellipse001}{80%}
+
+*Left*: Function change. *Right*: test point change
+
+\newslide{Cloaking}
+
+\includediagram{../slides/diagrams/privacy/dp-with-ellipse002}{80%}
+
+*Left*: Function change. *Right*: test point change
+
+\newslide{DP Vectors}{data-background="../slides/diagrams/pres_bg.png"}
 
 * Hall et al. (2013) also presented a bound on vectors.
 
@@ -64,7 +69,7 @@ its Mahalanobis distance (wrt the added noise covariance).
     We get to pick $\mathbf{M}$
 
 
-### Cloaking  {data-background="../slides/diagrams/pres_bg.png"}
+\newslide{Cloaking}{data-background="../slides/diagrams/pres_bg.png"}
 
 * Intuitively we want to construct $\mathbf{M}$ so that it has greatest
 covariance in those directions most affected by changes in training
@@ -80,7 +85,7 @@ represented in the cloaking matrix,
     $$\mathbf{C} = \kernelMatrix_{*f} \kernelMatrix^{-1}$$
 
 
-### Cloaking  {data-background="../slides/diagrams/pres_bg.png"}
+\newslide{Cloaking}{data-background="../slides/diagrams/pres_bg.png"}
 
 * We assume we are protecting only one training input's change, by at most
 $d$.
@@ -99,7 +104,7 @@ element, $i$.\
     where $\mathbf{c}_i \triangleq \mathbf{C}_{:i}$
 
 
-### Cloaking  {data-background="../slides/diagrams/pres_bg.png"}
+\newslide{Cloaking}{data-background="../slides/diagrams/pres_bg.png"}
 
 * Dealing with $d$ elsewhere and setting $\Delta = 1$ (thus $0 \leq
 \mathbf{c}_i^\top \mathbf{M}^{-1} \mathbf{c}_i \leq 1$) and minimise
@@ -109,15 +114,15 @@ $\log |\mathbf{M}|$ (minimises the partial entropy).
 
     $$\mathbf{M} = \sum_i{\lambda_i \mathbf{c}_i \mathbf{c}_i^\top}$$
 
-### Cloaking: Results {data-transition="None"}
+\newslide{Cloaking: Results}
 
 The noise added by this method is now practical.
 
-\includeimg{../slides/diagrams/kung_cloaking_simple.png}{100%}{negate}
+\includepng{../slides/diagrams/privacy/kung_cloaking_simple}{100%}{negate}
 
 EQ kernel, $l = 25$ years, $\Delta=100$cm, $\varepsilon=1$
 
-### Cloaking: Results {data-background="../slides/diagrams/pres_bg.png"}
+\newslide{Cloaking: Results}{data-background="../slides/diagrams/pres_bg.png"}
 
 It also has some interesting features;
 
@@ -125,16 +130,16 @@ It also has some interesting features;
 -   Least noise far from any data
 -   Most noise just outside data
 
-### Cloaking: Results  {data-transition="None"}
+\newslide{Cloaking: Results}
 
-\includeimg{../slides/diagrams/kung_cloaking_simple.png}{100%}{negate}
+\includepng{../slides/diagrams/privacy/kung_cloaking_simple}{100%}{negate}
 
 
-### House Prices Around London  {data-transition="None"}
+\newslide{House Prices Around London}
 
-\includeimg{../slides/diagrams/houseprices_bigcirc_15km_0_labels.png}{60%}{negate}
+\includepng{../slides/diagrams/privacy/houseprices_bigcirc_15km_0_labels}{60%}{negate}
 
-### Citibike {#citibike data-transition="None"}
+\newslide{Citibike}
 
 * Tested on 4D citibike dataset (predicting journey durations from
 start/finish station locations).
@@ -142,12 +147,12 @@ start/finish station locations).
 * The method appears to achieve lower noise than binning alternatives (for
 reasonable $\varepsilon$).
 
-### Citibike {data-transition="None"}
+\newslide{Citibike}
 
-\includeimg{../slides/diagrams/privacy/newtable2.png}{80%}{negate} lengthscale in degrees, values
-above, journey duration (in seconds)
+\includepng{../slides/diagrams/privacy/newtable2}{80%}{negate} 
+lengthscale in degrees, values above, journey duration (in seconds)
 
-### Cloaking and Inducing Inputs {#cloaking-and-inducing-inputs}
+\newslide{Cloaking and Inducing Inputs}
 
 * Outliers poorly predicted.
 
@@ -155,16 +160,15 @@ above, journey duration (in seconds)
 
 * Use inducing inputs to reduce the sensitivity to these outliers.
 
-### Cloaking (no) Inducing Inputs {#cloaking-no-inducing-inputs  data-transition="None"}
+\newslide{Cloaking (no) Inducing Inputs}
 
-\includeing{../slides/diagrams/privacy/cloaking-no-inducing.png}{100%}{negate}
+\includepng{../slides/diagrams/privacy/cloaking-no-inducing}{100%}{negate}
 
-### Cloaking and Inducing Inputs {#cloaking-and-inducing-inputs-1
-   data-transition="None"}
+\newslide{Cloaking and Inducing Inputs}
 
-\includeimg{../slides/diagrams/privacy/cloaking-inducing.png}{80%}{negate}
+\includepng{../slides/diagrams/privacy/cloaking-inducing}{80%}{negate}
 
-### Results {#results}
+\newslide{Results}
 
 * For 1D !Kung, RMSE improved from $15.0 \pm 2.0 \text{cm}$ to $11.1 \pm 0.8 \text{cm}$
 
@@ -174,10 +178,12 @@ above, journey duration (in seconds)
 
     Note that the uncertainty across cross-validation runs smaller. 2D version benefits from data's 1D manifold.
 
-### Cloaking (no) Inducing Inputs {#cloaking-no-inducing-inputs-1 data-transition="none"}
+\newslide{Cloaking (no) Inducing Inputs}
 
-\includeimg{../slides/diagrams/privacy/housing-no-inducing.png}{80%}{negate}
+\includepng{../slides/diagrams/privacy/housing-no-inducing}{80%}{negate}
 
-### Cloaking and Inducing Inputs {#cloaking-and-inducing-inputs-2 data-transition="none"}
+\newslide{Cloaking and Inducing Inputs}
 
-\includeimg{../slides/diagrams/privacy/housing-inducing.png}{80%}{negate}
+\includepng{../slides/diagrams/privacy/housing-inducing}{80%}{negate}
+
+\endif

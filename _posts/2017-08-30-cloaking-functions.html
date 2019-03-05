@@ -1,0 +1,433 @@
+---
+title: "Cloaking Functions: Differential Privacy with Gaussian Processes"
+abstract: "<p>Processing of personally sensitive information should respect an individual's privacy. One promising framework is Differential Privacy (DP). In this talk I'll present work led by Michael Smith at the University of Sheffield on the use of cloaking functions to make Gaussian process (GP) predictions differentially private. Gaussian process models are flexible models with particular advantages in handling missing and noisy data. Our hope is that advances in DP for GPs will make it easier to 'learn without looking', i.e. gain the advantages of prediction from patient data without impinging on their privacy. Joint work with <strong>Michael T. Smith</strong>, Max Zwiessele and Mauricio Alvarez</p>"
+author:
+- given: Neil D.
+  family: Lawrence
+  url: http://inverseprobability.com
+  institute: Amazon Cambridge and University of Sheffield
+  twitter: lawrennd
+  gscholar: r3SJcvoAAAAJ
+  orchid: 
+date: 2017-08-30
+published: 2017-08-30
+reveal: 2017-08-30-cloaking-functions.slides.html
+ipynb: 2017-08-30-cloaking-functions.ipynb
+layout: talk
+categories:
+- notes
+---
+
+
+<div style="display:none">
+  $${% include talk-notation.tex %}$$
+</div>
+
+<script src="/talks/figure-magnify.js"></script>
+<script src="/talks/figure-animate.js"></script>
+    
+<div id="modal-frame" class="modal">
+  <span class="close" onclick="closeMagnify()">&times;</span>
+  <div class="modal-figure">
+    <div class="figure-frame">
+      <div class="modal-content" id="modal01"></div>
+      <!--<img class="modal-content" id="object01">-->
+    </div>
+    <div class="caption-frame" id="modal-caption"></div>
+  </div>
+</div>	  
+
+<!-- Front matter -->
+<p>.</p>
+<!---->
+<!--Back matter-->
+<p>.</p>
+<!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
+<h2 id="embodiment-factors-edit">Embodiment Factors <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<table>
+<tr>
+<td>
+</td>
+<td align="center">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</td>
+<td align="center">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/ClaudeShannon_MFO3807.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</td>
+</tr>
+<tr>
+<td>
+compute
+</td>
+<td align="center">
+<br /><span class="math display">≈100 gigaflops</span><br />
+</td>
+<td align="center">
+<br /><span class="math display">≈16 petaflops</span><br />
+</td>
+</tr>
+<tr>
+<td>
+communicate
+</td>
+<td align="center">
+<br /><span class="math display">1 gigbit/s</span><br />
+</td>
+<td align="center">
+<br /><span class="math display">100 bit/s</span><br />
+</td>
+</tr>
+<tr>
+<td>
+(compute/communicate)
+</td>
+<td align="center">
+<br /><span class="math display">10<sup>4</sup></span><br />
+</td>
+<td align="center">
+<br /><span class="math display">10<sup>14</sup></span><br />
+</td>
+</tr>
+</table>
+<p>There is a fundamental limit placed on our intelligence based on our ability to communicate. Claude Shannon founded the field of information theory. The clever part of this theory is it allows us to separate our measurement of information from what the information pertains to<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>.</p>
+<p>Shannon measured information in bits. One bit of information is the amount of information I pass to you when I give you the result of a coin toss. Shannon was also interested in the amount of information in the English language. He estimated that on average a word in the English language contains 12 bits of information.</p>
+<p>Given typical speaking rates, that gives us an estimate of our ability to communicate of around 100 bits per second <span class="citation">(Reed and Durlach 1998)</span>. Computers on the other hand can communicate much more rapidly. Current wired network speeds are around a billion bits per second, ten million times faster.</p>
+<p>When it comes to compute though, our best estimates indicate our computers are slower. A typical modern computer can process make around 100 billion floating point operations per second, each floating point operation involves a 64 bit number. So the computer is processing around 6,400 billion bits per second.</p>
+<p>It's difficult to get similar estimates for humans, but by some estimates the amount of compute we would require to <em>simulate</em> a human brain is equivalent to that in the UK's fastest computer <span class="citation">(Ananthanarayanan et al. 2009)</span>, the MET office machine in Exeter, which in 2018 ranks as the 11th fastest computer in the world. That machine simulates the world's weather each morning, and then simulates the world's climate in the afternoon. It is a 16 petaflop machine, processing around 1,000 <em>trillion</em> bits per second.</p>
+<div class="figure">
+<div id="lotus-49-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/Lotus_49-2.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="lotus-49-magnify" class="magnify" onclick="magnifyFigure(&#39;lotus-49&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="lotus-49-caption" class="caption-frame">
+<p>Figure: The Lotus 49, view from the rear. The Lotus 49 was one of the last Formula One cars before the introduction of aerodynamic aids.</p>
+</div>
+</div>
+<p>So when it comes to our ability to compute we are extraordinary, not compute in our conscious mind, but the underlying neuron firings that underpin both our consciousness, our sbuconsciousness as well as our motor control etc.</p>
+<p>If we think of ourselves as vehicles, then we are massively overpowered. Our ability to generate derived information from raw fuel is extraordinary. Intellectually we have formula one engines.</p>
+<p>But in terms of our ability to deploy that computation in actual use, to share the results of what we have inferred, we are very limited. So when you imagine the F1 car that represents a psyche, think of an F1 car with bicycle wheels.</p>
+<div class="figure">
+<div id="marcel-renault-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/640px-Marcel_Renault_1903.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="marcel-renault-magnify" class="magnify" onclick="magnifyFigure(&#39;marcel-renault&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="marcel-renault-caption" class="caption-frame">
+<p>Figure: Marcel Renault races a Renault 40 cv during the Paris-Madrid race, an early Grand Prix, in 1903. Marcel died later in the race after missing a warning flag for a sharp corner at Couhé Vérac, likely due to dust reducing visibility.</p>
+</div>
+</div>
+<p>Just think of the control a driver would have to have to deploy such power through such a narrow channel of traction. That is the beauty and the skill of the human mind.</p>
+<p>In contrast, our computers are more like go-karts. Underpowered, but with well-matched tires. They can communicate far more fluidly. They are more efficient, but somehow less extraordinary, less beautiful.</p>
+<div class="figure">
+<div id="caleb-mcduff-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/Caleb_McDuff_WIX_Silence_Racing_livery.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="caleb-mcduff-magnify" class="magnify" onclick="magnifyFigure(&#39;caleb-mcduff&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="caleb-mcduff-caption" class="caption-frame">
+<p>Figure: Caleb McDuff driving for WIX Silence Racing.</p>
+</div>
+</div>
+<p>For humans, that means much of our computation should be dedicated to considering <em>what</em> we should compute. To do that efficiently we need to model the world around us. The most complex thing in the world around us is other humans. So it is no surprise that we model them. We second guess what their intentions are, and our communication is only necessary when they are departing from how we model them. Naturally, for this to work well, we need to understand those we work closely with. So it is no surprise that social communication, social bonding, forms so much of a part of our use of our limited bandwidth.</p>
+<p>There is a second effect here, our need to anthropomorphise objects around us. Our tendency to model our fellow humans extends to when we interact with other entities in our environment. To our pets as well as inanimate objects around us, such as computers or even our cars. This tendency to overinterpret could be a consequence of our limited ability to communicate.</p>
+<p>For more details see this paper <a href="https://arxiv.org/abs/1705.07996">&quot;Living Together: Mind and Machine Intelligence&quot;</a>, and this <a href="http://inverseprobability.com/talks/lawrence-tedx17/living-together.html">TEDx talk</a>.</p>
+<h1 id="evolved-relationship-with-information-edit">Evolved Relationship with Information <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/evolved-relationship.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/evolved-relationship.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
+<p>The high bandwidth of computers has resulted in a close relationship between the computer and data. Large amounts of information can flow between the two. The degree to which the computer is mediating our relationship with data means that we should consider it an intermediary.</p>
+<p>Originaly our low bandwith relationship with data was affected by two characteristics. Firstly, our tendency to over-interpret driven by our need to extract as much knowledge from our low bandwidth information channel as possible. Secondly, by our improved understanding of the domain of <em>mathematical</em> statistics and how our cognitive biases can mislead us.</p>
+<p>With this new set up there is a potential for assimilating far more information via the computer, but the computer can present this to us in various ways. If it's motives are not aligned with ours then it can misrepresent the information. This needn't be nefarious it can be simply as a result of the computer pursuing a different objective from us. For example, if the computer is aiming to maximize our interaction time that may be a different objective from ours which may be to summarize information in a representative manner in the <em>shortest</em> possible length of time.</p>
+<p>For example, for me, it was a common experience to pick up my telephone with the intention of checking when my next appointment was, but to soon find myself distracted by another application on the phone, and end up reading something on the internet. By the time I'd finished reading, I would often have forgotten the reason I picked up my phone in the first place.</p>
+<p>There are great benefits to be had from the huge amount of information we can unlock from this evolved relationship between us and data. In biology, large scale data sharing has been driven by a revolution in genomic, transcriptomic and epigenomic measurement. The improved inferences that that can be drawn through summarizing data by computer have fundamentally changed the nature of biological science, now this phenomenon is also infuencing us in our daily lives as data measured by <em>happenstance</em> is increasingly used to characterize us.</p>
+<p>Better mediation of this flow actually requires a better understanding of human-computer interaction. This in turn involves understanding our own intelligence better, what its cognitive biases are and how these might mislead us.</p>
+<p>For further thoughts see <a href="https://www.theguardian.com/media-network/2015/jul/23/data-driven-economy-marketing">this Guardian article</a> from 2015 on marketing in the internet era.</p>
+<p>You can also check my blog post on <a href="http://inverseprobability.com/2015/12/04/what-kind-of-ai">&quot;System Zero&quot;</a></p>
+<div class="figure">
+<div id="trinity-human-data-computer-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/data-science/new-flow-of-information002.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="trinity-human-data-computer-magnify" class="magnify" onclick="magnifyFigure(&#39;trinity-human-data-computer&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="trinity-human-data-computer-caption" class="caption-frame">
+<p>Figure: The trinity of human, data and computer, and highlights the modern phenomenon. The communication channel between computer and data now has an extremely high bandwidth. The channel between human and computer and the channel between data and human is narrow. New direction of information flow, information is reaching us mediated by the computer.</p>
+</div>
+</div>
+<h3 id="bandwidth-constrained-conversations">Bandwidth Constrained Conversations</h3>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;anne-bob</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            <span class="st">&#39;../slides/diagrams&#39;</span>,  sample<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">1</span>))</code></pre></div>
+<div class="figure">
+<div id="anne-bob-civil-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/anne-bob006.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="anne-bob-civil-magnify" class="magnify" onclick="magnifyFigure(&#39;anne-bob-civil&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="anne-bob-civil-caption" class="caption-frame">
+<p>Figure: Conversation relies on internal models of other individuals.</p>
+</div>
+</div>
+<div class="figure">
+<div id="anne-bob-argument-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/anne-bob007.svg" style="vertical-align:middle;">
+</object>
+</div>
+<div id="anne-bob-argument-magnify" class="magnify" onclick="magnifyFigure(&#39;anne-bob-argument&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="anne-bob-argument-caption" class="caption-frame">
+<p>Figure: Misunderstanding of context and who we are talking to leads to arguments.</p>
+</div>
+</div>
+<p>Embodiment factors imply that, in our communication between humans, what is <em>not</em> said is, perhaps, more important than what is said. To communicate with each other we need to have a model of who each of us are.</p>
+<p>To aid this, in society, we are required to perform roles. Whether as a parent, a teacher, an employee or a boss. Each of these roles requires that we conform to certain standards of behaviour to facilitate communication between ourselves.</p>
+<p>Control of self is vitally important to these communications.</p>
+<p>The high availability of data available to humans undermines human-to-human communication channels by providing new routes to undermining our control of self.</p>
+<div class="figure">
+<div id="gaussian-processes-for-machine-learning-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/gp/rasmussen-williams-book.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="gaussian-processes-for-machine-learning-magnify" class="magnify" onclick="magnifyFigure(&#39;gaussian-processes-for-machine-learning&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="gaussian-processes-for-machine-learning-caption" class="caption-frame">
+<p>Figure: A key reference for Gaussian process models remains the excellent book &quot;Gaussian Processes for Machine Learning&quot; (<span class="citation">Rasmussen and Williams (2006)</span>). The book is also <a href="http://www.gaussianprocess.org/gpml/" target="_blank" >freely available online</a>.</p>
+</div>
+</div>
+<p><span class="citation">Rasmussen and Williams (2006)</span> is still one of the most important references on Gaussian process models. It is <a href="http://www.gaussianprocess.org/gpml/">available freely online</a>.</p>
+<h2 id="bayesian-inference-by-rejection-sampling-edit">Bayesian Inference by Rejection Sampling <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gp-intro-very-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gp-intro-very-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>One view of Bayesian inference is to assume we are given a mechanism for generating samples, where we assume that mechanism is representing on accurate view on the way we believe the world works.</p>
+<p>This mechanism is known as our <em>prior</em> belief.</p>
+<p>We combine our prior belief with our observations of the real world by discarding all those samples that are inconsistent with our prior. The <em>likelihood</em> defines mathematically what we mean by inconsistent with the prior. The higher the noise level in the likelihood, the looser the notion of consistent.</p>
+<p>The samples that remain are considered to be samples from the <em>posterior</em>.</p>
+<p>This approach to Bayesian inference is closely related to two sampling techniques known as <em>rejection sampling</em> and <em>importance sampling</em>. It is realized in practice in an approach known as <em>approximate Bayesian computation</em> (ABC) or likelihood-free inference.</p>
+<p>In practice, the algorithm is often too slow to be practical, because most samples will be inconsistent with the data and as a result the mechanism has to be operated many times to obtain a few posterior samples.</p>
+<p>However, in the Gaussian process case, when the likelihood also assumes Gaussian noise, we can operate this mechanims mathematically, and obtain the posterior density <em>analytically</em>. This is the benefit of Gaussian processes.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;gp_rejection_sample</span><span class="sc">{sample:0&gt;3}</span><span class="st">.png&#39;</span>, 
+                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/gp&#39;</span>, 
+                            sample<span class="op">=</span>IntSlider(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">1</span>))</code></pre></div>
+{
+<div class="figure">
+<div id="gp-rejection-samples-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/gp/gp_rejection_sample003.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/gp/gp_rejection_sample004.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/gp/gp_rejection_sample005.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="gp-rejection-samples-magnify" class="magnify" onclick="magnifyFigure(&#39;gp-rejection-samples&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="gp-rejection-samples-caption" class="caption-frame">
+<p>Figure: One view of Bayesian inference is we have a machine for generating samples (the <em>prior</em>), and we discard all samples inconsistent with our data, leaving the samples of interest (the <em>posterior</em>). The Gaussian process allows us to do this analytically.</p>
+</div>
+</div>
+<ul>
+<li><p>We want to protect a user from a linkage attack...</p>
+<p>...while still performing inference over the whole group.</p></li>
+<li><p>Making a dataset private is more than just erasing names.</p></li>
+<li><p>To achieve a level of privacy one needs to add <strong>randomness</strong> to the data.</p></li>
+<li><p>This is a fundamental feature of differential privacy.</p></li>
+</ul>
+<p>See <a href="https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf">The Algorithmic Foundations of Differential Privacy</a> by Dwork and Roth for a rigorous introduction to the framework.</p>
+<h2 id="differential-privacy-for-gaussian-processes-edit">Differential Privacy for Gaussian Processes <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_privacy/includes/differential-privacy-for-gps.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_privacy/includes/differential-privacy-for-gps.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>We have a dataset in which the inputs, <span class="math inline">$\inputMatrix$</span>, are <strong>public</strong>. The outputs, <span class="math inline">$\dataVector$</span>, we want to keep <strong>private</strong>.</p>
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/privacy/kung_pseudo_pert.png" width="65%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<p><strong>Data consists of the heights and weights of 287 women from a census of the !Kung</strong></p>
+<p>Hall et al. (2013) showed that one can ensure that a version of <span class="math inline">$\mappingFunction$</span>, function <span class="math inline">$\tilde{f}$</span> is <span class="math inline">(<em>ε</em>, <em>δ</em>)</span>-differentially private by adding a scaled sample from a GP prior.</p>
+<p><img class="negate" src="../slides/diagrams/privacy/hall1.png" width="30%" height="auto" align="" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></p>
+<p>3 pages of maths ahead!</p>
+<ul>
+<li><p>We applied this method to the GP posterior.</p></li>
+<li><p>The covariance of the posterior only depends on the inputs, <span class="math inline">$\inputMatrix$</span>. So we can compute this without applying DP.</p></li>
+<li><p>The mean function, <span class="math inline">$\mappingFunction_D(\inputVector_*)$</span>, does depend on <span class="math inline">$\dataVector$</span>. <br /><span class="math display">$$\mappingFunction_D(\inputVector_*) = \kernelVector(x_*, \inputMatrix)
+\kernelMatrix^{-1} \dataVector$$</span><br /></p></li>
+<li><p>We are interested in finding</p>
+<p><br /><span class="math display">$$|| \mappingFunction_D(\inputVector_*) -
+\mappingFunction_{D^\prime}(\inputVector_*) ||_H^2$$</span><br /></p>
+<p>...how much the mean function (in RKHS) can change due to a change in <span class="math inline">$\dataVector$</span>.</p></li>
+<li><p>Using the representer theorem, we can write <br /><span class="math display">$$|| \mappingFunction_D(\inputVector_*) -
+\mappingFunction_{D^\prime}(\inputVector_*) ||_H^2$$</span><br /></p>
+<p>as:</p>
+<p><br /><span class="math display">$$\Big|\Big|\sum_{i=1}^\numData \kernelScalar(\inputVector_*,\inputVector_i)
+\left(\alpha_i - \alpha^\prime_i\right)\Big|\Big|_H^2$$</span><br /></p>
+<p>where <span class="math inline">$\boldsymbol{\alpha} - \boldsymbol{\alpha}^\prime = \kernelMatrix^{-1} \left(\dataVector - \dataVector^\prime \right)$</span></p></li>
+<li><p>L2 Norm</p>
+<p><br /><span class="math display">$$\Big|\Big|\sum_{i=1}^\numData \kernelScalar(\inputVector_*,\inputVector_i)
+\left(\alpha_i - \alpha^\prime_i\right)\Big|\Big|_H^2$$</span><br /></p>
+<p>where <span class="math inline">$\boldsymbol{\alpha} - \boldsymbol{\alpha}^\prime = \kernelMatrix^{-1} \left(\dataVector - \dataVector^\prime \right)$</span></p></li>
+<li><p>We constrain the kernel: <span class="math inline">$-1\leq \kernelScalar(\cdot,\cdot) \leq 1$</span> and we only allow one element of <span class="math inline">$\dataVector$</span> and <span class="math inline">$\dataVector^\prime$</span> to differ (by at most <span class="math inline"><em>d</em></span>).</p></li>
+<li><p>So only one column of <span class="math inline">$\kernelMatrix^{-1}$</span> will be involved in the change of mean (which we are summing over).</p></li>
+<li><p>The distance above can then be shown to be no greater than <span class="math inline">$d\;||\kernelMatrix^{-1}||_\infty$</span></p></li>
+</ul>
+<p>This 'works' in that it allows DP predictions...but to avoid too much noise, the value of <span class="math inline"><em>ε</em></span> is too large (here it is 100)</p>
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/privacy/kung_standard_simple.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<p>EQ kernel, <span class="math inline">$\lengthScale = 25$</span> years, <span class="math inline"><em>Δ</em> = 100</span>cm</p>
+<p>Using sparse methods (i.e. inducing inputs) can help reduce the sensitivity a little. We'll see more on this later.</p>
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/privacy/kung_inducing_simple.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<h2 id="cloaking-edit">Cloaking <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_privacy/includes/differential-privacy-with-cloaking.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_privacy/includes/differential-privacy-with-cloaking.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<ul>
+<li><p>So far we've made the whole posterior mean function private...</p>
+<p>...what if we just concentrate on making particular predictions private?</p></li>
+<li><p>Standard approach: sample the noise is from the GP's <strong>prior</strong>.</p></li>
+<li><p>Not necessarily the most 'efficient' covariance to use.</p></li>
+</ul>
+<object class="svgplot " data="../slides/diagrams/privacy/dp-firstpoint000.svg" style="vertical-align:middle;">
+</object>
+<p><em>Left</em>: Function change. <em>Right</em>: test point change</p>
+<object class="svgplot " data="../slides/diagrams/privacy/dp-firstpoint002.svg" style="vertical-align:middle;">
+</object>
+<p><em>Left</em>: Function change. <em>Right</em>: test point change</p>
+<object class="svgplot " data="../slides/diagrams/privacy/dp-secondpoint000.svg" style="vertical-align:middle;">
+</object>
+<p><em>Left</em>: Function change. <em>Right</em>: test point change</p>
+<object class="svgplot " data="../slides/diagrams/privacy/dp-secondpoint002.svg" style="vertical-align:middle;">
+</object>
+<p><em>Left</em>: Function change. <em>Right</em>: test point change</p>
+<object class="svgplot " data="../slides/diagrams/privacy/dp-with-ellipse001.svg" style="vertical-align:middle;">
+</object>
+<p><em>Left</em>: Function change. <em>Right</em>: test point change</p>
+<object class="svgplot " data="../slides/diagrams/privacy/dp-with-ellipse002.svg" style="vertical-align:middle;">
+</object>
+<p><em>Left</em>: Function change. <em>Right</em>: test point change</p>
+<ul>
+<li><p>Hall et al. (2013) also presented a bound on vectors.</p></li>
+<li><p>Find a bound (<span class="math inline"><em>Δ</em></span>) on the scale of the output change, in term of its Mahalanobis distance (wrt the added noise covariance).</p>
+<p><br /><span class="math display">$$\sup_{D \sim {D^\prime}} ||\mathbf{M}^{-1/2} (\dataVector_* - \dataVector_{*}^\prime)||_2 \leq \Delta$$</span><br /></p></li>
+<li><p>We use this to scale the noise we add:</p>
+<p><br /><span class="math display">$$\frac{\text{c}(\delta)\Delta}{\varepsilon} \mathcal{N}_d(0,\mathbf{M})$$</span><br /></p>
+<p>We get to pick <span class="math inline"><strong>M</strong></span></p></li>
+<li><p>Intuitively we want to construct <span class="math inline"><strong>M</strong></span> so that it has greatest covariance in those directions most affected by changes in training points, so that it will be most able to mask those changes.</p></li>
+<li><p>The change in posterior mean predictions is,</p>
+<p><br /><span class="math display">$$\dataVector_* - \dataVector^\prime_* = \kernelMatrix_{*f} \kernelMatrix^{-1} (\dataVector-\dataVector^\prime)$$</span><br /></p></li>
+<li><p>Effect of perturbing each training point on each test point is represented in the cloaking matrix,</p>
+<p><br /><span class="math display">$$\mathbf{C} = \kernelMatrix_{*f} \kernelMatrix^{-1}$$</span><br /></p></li>
+<li><p>We assume we are protecting only one training input's change, by at most <span class="math inline"><em>d</em></span>.</p></li>
+<li>So <span class="math inline">$\dataVector-\dataVector^\prime$</span> will be all zeros except for one element, <span class="math inline"><em>i</em></span>.<br />
+</li>
+<li><p>So the change in test points will be (at most)</p>
+<p><br /><span class="math display">$$\dataVector_*^\prime - \dataVector_* = d \mathbf{C}_{:i}$$</span><br /></p></li>
+<li><p>We're able to write the earlier bound as,</p>
+<p><br /><span class="math display"><em>d</em><sup>2</sup>sup<sub><em>i</em></sub><strong>c</strong><sub><em>i</em></sub><sup>⊤</sup><strong>M</strong><sup>−1</sup><strong>c</strong><sub><em>i</em></sub> ≤ <em>Δ</em></span><br /></p>
+<p>where <span class="math inline"><strong>c</strong><sub><em>i</em></sub> ≜ <strong>C</strong><sub>:<em>i</em></sub></span></p></li>
+<li><p>Dealing with <span class="math inline"><em>d</em></span> elsewhere and setting <span class="math inline"><em>Δ</em> = 1</span> (thus <span class="math inline">0 ≤ <strong>c</strong><sub><em>i</em></sub><sup>⊤</sup><strong>M</strong><sup>−1</sup><strong>c</strong><sub><em>i</em></sub> ≤ 1</span>) and minimise <span class="math inline">log|<strong>M</strong>|</span> (minimises the partial entropy).</p></li>
+<li><p>Using Lagrange multipliers and gradient descent, we find</p>
+<p><br /><span class="math display"><strong>M</strong> = ∑<sub><em>i</em></sub><em>λ</em><sub><em>i</em></sub><strong>c</strong><sub><em>i</em></sub><strong>c</strong><sub><em>i</em></sub><sup>⊤</sup></span><br /></p></li>
+</ul>
+<p>The noise added by this method is now practical.</p>
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/privacy/kung_cloaking_simple.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<p>EQ kernel, <span class="math inline"><em>l</em> = 25</span> years, <span class="math inline"><em>Δ</em> = 100</span>cm, <span class="math inline"><em>ε</em> = 1</span></p>
+<p>It also has some interesting features;</p>
+<ul>
+<li>Less noise where data is concentrated</li>
+<li>Least noise far from any data</li>
+<li>Most noise just outside data</li>
+</ul>
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/privacy/kung_cloaking_simple.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/privacy/houseprices_bigcirc_15km_0_labels.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<ul>
+<li><p>Tested on 4D citibike dataset (predicting journey durations from start/finish station locations).</p></li>
+<li><p>The method appears to achieve lower noise than binning alternatives (for reasonable <span class="math inline"><em>ε</em></span>).</p></li>
+</ul>
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/privacy/newtable2.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<p>lengthscale in degrees, values above, journey duration (in seconds)</p>
+<ul>
+<li><p>Outliers poorly predicted.</p></li>
+<li><p>Too much noise around data 'edges'.</p></li>
+<li><p>Use inducing inputs to reduce the sensitivity to these outliers.</p></li>
+</ul>
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/privacy/cloaking-no-inducing.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/privacy/cloaking-inducing.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<ul>
+<li><p>For 1D !Kung, RMSE improved from <span class="math inline">15.0 ± 2.0cm</span> to <span class="math inline">11.1 ± 0.8cm</span></p>
+<p>Use Age and Weight to predict Height</p></li>
+<li><p>For 2D !Kung, RMSE improved from <span class="math inline">22.8 ± 1.9cm</span> to <span class="math inline">8.8 ± 0.6cm</span></p>
+<p>Note that the uncertainty across cross-validation runs smaller. 2D version benefits from data's 1D manifold.</p></li>
+</ul>
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/privacy/housing-no-inducing.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/privacy/housing-inducing.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<ul>
+<li><p><strong>Summary</strong> We have developed an improved method for performing differentially private regression.</p></li>
+<li><p><strong>Future work</strong> Multiple outputs, GP classification, DP Optimising hyperparameters, Making the inputs private.</p></li>
+<li><p><strong>Thanks</strong> Funders: EPSRC; Colleagues: <strong>Michael T. Smith</strong>, Mauricio, Max.</p></li>
+<li><p><strong>Recruiting</strong> Deep Probabilistic Models: 2 year postdoc (<a href="http://tinyurl.com/shefpostdoc">tinyurl.com/shefpostdoc</a>)</p></li>
+</ul>
+<h1 id="references">References</h1>
+<h3 id="section" class="allowframebreaks" data-background="../slides/diagrams/pres_bg.png"></h3>
+<ul>
+<li><p><span style="margin-left:-50px;"><strong>The go-to book on differential privacy, by Dwork and Roth;</strong><br />
+</span> Dwork, Cynthia, and Aaron Roth. &quot;The algorithmic foundations of differential privacy.&quot; Theoretical Computer Science 9.3-4 (2013): 211-407. <a href="https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf">link</a></p></li>
+<li><p><span style="margin-left:-50px;"><strong>Original basis of applying DP to GPs;</strong><br />
+</span> Hall, Rob, Alessandro Rinaldo, and Larry Wasserman. &quot;Differential privacy for functions and functional data.&quot; The Journal of Machine Learning Research 14.1 (2013): 703-727. <a href="http://www.stat.cmu.edu/~arinaldo/papers/hall13a.pdf">link</a></p></li>
+<li><p><span style="margin-left:-50px;"><strong>Articles about the Massachusetts privacy debate</strong><br />
+</span> Barth-Jones, Daniel C. &quot;The 're-identification' of Governor William Weld's medical information: a critical re-examination of health data identification risks and privacy protections, then and now.&quot; Then and Now (June 4, 2012) (2012). <a href="http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2076397">link</a></p></li>
+<li><p>Ohm, Paul. &quot;Broken promises of privacy: Responding to the surprising failure of anonymization.&quot; UCLA Law Review 57 (2010): 1701. <a href="https://epic.org/privacy/reidentification/ohm_article.pdf">link</a></p></li>
+<li><p>Narayanan, Arvind, and Edward W. Felten. &quot;No silver bullet: De-identification still doesn’t work.&quot; White Paper (2014). <a href="http://randomwalker.info/publications/no-silver-bullet-de-identification.pdf">link</a></p></li>
+<li><p>Howell, N. Data from a partial census of the !kung san, dobe. 1967-1969. <a href="https://public.tableau.com/profile/john.marriott\#!/vizhome/kung-san/Attributes" class="uri">https://public.tableau.com/profile/john.marriott\#!/vizhome/kung-san/Attributes</a>, 1967.</p></li>
+<li><p><strong>Images used:</strong> BostonGlobe: <a href="https://c.o0bg.com/rf/image_960w/Boston/2011-2020/2015/05/29/BostonGlobe.com/Business/Images/MassMutual_04.jpg">Mass Mutual</a>, <a href="https://c.o0bg.com/rf/image_960w/Boston/2011-2020/2014/10/20/BostonGlobe.com/Metro/Images/Gov.%20Bill%20Weld%201-100425.jpg">Weld</a>. Harvard: <a href="http://www.gov.harvard.edu/files/Sweeney6crop.jpg">Sweeney</a>. Rich on flickr: <a href="https://www.flickr.com/photos/rich_b1982/13114665103/in/pool-sheffieldskyline/">Sheffield skyline</a>.</p></li>
+</ul>
+<div id="refs" class="references">
+<div id="ref-Ananthanarayanan-cat09">
+<p>Ananthanarayanan, Rajagopal, Steven K. Esser, Horst D. Simon, and Dharmendra S. Modha. 2009. “The Cat Is Out of the Bag: Cortical Simulations with <span class="math inline">10<sup>9</sup></span> Neurons, <span class="math inline">10<sup>13</sup></span> Synapses.” In <em>Proceedings of the Conference on High Performance Computing Networking, Storage and Analysis - Sc ’09</em>. doi:<a href="https://doi.org/10.1145/1654059.1654124">10.1145/1654059.1654124</a>.</p>
+</div>
+<div id="ref-Rasmussen:book06">
+<p>Rasmussen, Carl Edward, and Christopher K. I. Williams. 2006. <em>Gaussian Processes for Machine Learning</em>. Cambridge, MA: mit.</p>
+</div>
+<div id="ref-Reed-information98">
+<p>Reed, Charlotte, and Nathaniel I. Durlach. 1998. “Note on Information Transfer Rates in Human Communication.” <em>Presence Teleoperators &amp; Virtual Environments</em> 7 (5): 509–18. doi:<a href="https://doi.org/10.1162/105474698565893">10.1162/105474698565893</a>.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>the challenge of understanding what information pertains to is known as knowledge representation.<a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
+
+

@@ -40,11 +40,11 @@
 \text
 
 :::}
-\define{\newslide{text}}{\ifdef{noSlideTitle}
-### 
+\define{\newslide{text}{commands}}{\ifdef{noSlideTitle}
+### {\commands}
 
 \else
-### \text \ifdef{editText}\editText\undef{editText}\endif
+### \text \ifdef{editText}\editText\undef{editText}\endif {\commands}
 
 \endif}
 

@@ -1,4 +1,9 @@
-### Differential Privacy, summary {data-background="../slides/diagrams/pres_bg.png"}
+\ifndef{differentialPrivacyForGps}
+\define{differentialPrivacyForGps}
+
+\editme
+
+\newslide{Differential Privacy, summary}{data-background="../slides/diagrams/pres_bg.png"}
 
 * We want to protect a user from a linkage attack...
 
@@ -16,17 +21,17 @@ Privacy](https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf) by
 Dwork and Roth for a rigorous introduction to the framework.
 
 
-### Differential Privacy for Gaussian Processes {data-transition="None"}
+\subsection{Differential Privacy for Gaussian Processes}
 
 We have a dataset in which the inputs, $\inputMatrix$, are **public**. The
 outputs, $\dataVector$, we want to keep **private**.
 
-\includeimg{../slides/diagrams/privacy/kung_pseudo_pert.png}{65%}{negate}
+\includepng{../slides/diagrams/privacy/kung_pseudo_pert}{65%}{negate}
 
 **Data consists of the heights and weights of 287 women from a census of
 the !Kung**
 
-### Vectors and Functions {data-transition="None"}
+\newslide{Vectors and Functions}
 
 Hall et al. (2013) showed that one can ensure that a version of $\mappingFunction$,
 function $\tilde{f}$ is $(\varepsilon, \delta)$-differentially
@@ -36,7 +41,7 @@ private by adding a scaled sample from a GP prior.
 
 3 pages of maths ahead!
 
-### Applied to Gaussian Processes  {data-background="../slides/diagrams/pres_bg.png"}
+\newslide{Applied to Gaussian Processes}{data-background="../slides/diagrams/pres_bg.png"}
 
 * We applied this method to the GP posterior.
 
@@ -57,7 +62,7 @@ $\dataVector$.
 $\dataVector$.
 
 
-### Applied to Gaussian Processes {data-background="../slides/diagrams/pres_bg.png"}
+\newslide{Applied to Gaussian Processes}{data-background="../slides/diagrams/pres_bg.png"}
 
 * Using the representer theorem, we can write
     $$|| \mappingFunction_D(\inputVector_*) -
@@ -72,7 +77,7 @@ $\dataVector$.
 \left(\dataVector - \dataVector^\prime \right)$
 
 
-### {data-background="../slides/diagrams/pres_bg.png" }
+\newslide{}{data-background="../slides/diagrams/pres_bg.png" }
 
 * L2 Norm
 
@@ -93,19 +98,21 @@ $d$).
 $d\;||\kernelMatrix^{-1}||_\infty$
 
 
-### Applied to Gaussian Processes
+\newslide{Applied to Gaussian Processes}
 
 This 'works' in that it allows DP predictions...but to avoid too much
 noise, the value of $\varepsilon$ is too large (here it is 100)
 
-\includeimg{../slides/diagrams/privacy/kung_standard_simple.png}{50%}{negate}
+\includepng{../slides/diagrams/privacy/kung_standard_simple}{50%}{negate}
 
 EQ kernel, $\lengthScale = 25$ years, $\Delta=100$cm
 
 
-### Inducing Inputs 
+\newslide{Inducing Inputs}
 
 Using sparse methods (i.e. inducing inputs) can help reduce the
 sensitivity a little. We'll see more on this later.
 
-\includeimg{../slides/diagrams/privacy/kung_inducing_simple.png}{70%}{negate}
+\includepng{../slides/diagrams/privacy/kung_inducing_simple}{70%}{negate}
+
+\endif

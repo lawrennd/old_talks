@@ -1,9 +1,6 @@
 ---
 layout: slides
 title:  "Cloaking Functions: Differential Privacy with Gaussian Processes"
-author: >
-  Neil D. Lawrence
-  with **Michael T. Smith**, Max Zwiessele and Mauricio Alvarez
 abstract: > 
   Processing of personally sensitive information should respect an individual's
   privacy. One promising framework is Differential Privacy (DP). In this talk
@@ -16,21 +13,18 @@ abstract: >
   their privacy.
 
   Joint work with **Michael T. Smith**, Max Zwiessele and Mauricio Alvarez
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
+  institute: Amazon Cambridge and University of Sheffield
+  twitter: lawrennd
+  url: http://inverseprobability.com
 date: 2017-08-30
-affiliation: Amazon and University of Sheffield
 transition: None
 ---
 
 
-####  Cloaking Functions: Differential Privacy with Gaussian Processes  
-#### 2017-08-30
-#### Neil D. Lawrence
-#### with **Michael T. Smith**, Max Zwiessele and Mauricio Alvarez
-#### Amazon and University of Sheffield
-```@lawrennd``` [inverseprobability.com](http://inverseprobability.com)
-[Paper on Arxiv](https://arxiv.org/pdf/1606.00720.pdf)
-<!--  pandoc -s -S -c talks.css -t revealjs --mathjax="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -o 2017-08-30-cloaking-functions.slides.html 2017-08-30-cloaking-functions.md
--->
 
 \include{../talk-macros.tex}
 
@@ -43,7 +37,7 @@ transition: None
 \include{_privacy/includes/differential-privacy-with-cloaking.md}
 
 
-###  Conclusions {data-background="../slides/diagrams/pres_bg.png"}
+\newslide{Conclusions}{data-background="../slides/diagrams/pres_bg.png"}
 
 * **Summary** We have developed an improved method for performing
 differentially private regression.
@@ -55,6 +49,9 @@ hyperparameters, Making the inputs private.
 
 * **Recruiting** Deep Probabilistic Models: 2 year postdoc ([tinyurl.com/shefpostdoc](http://tinyurl.com/shefpostdoc))
 
+
+\references
+\thanks
 
 ###  {.allowframebreaks data-background="../slides/diagrams/pres_bg.png"}
 
