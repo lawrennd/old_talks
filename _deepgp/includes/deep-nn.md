@@ -12,7 +12,7 @@
 
 \slides{\includediagram{../slides/diagrams/deepgp/deep-nn2}{40%}}
 
-\figure{\includediagram{../slides/diagrams/deepgp/deep-nn2}{40%}}{A deep neural network. Input nodes are shown at the bottom. Each hidden layer is the result of applying an affine transformation to the previous layer and placing through an activation function.}{deep-neural-network}
+\figure{\includediagram{../slides/diagrams/deepgp/deep-nn2}{70%}}{A deep neural network. Input nodes are shown at the bottom. Each hidden layer is the result of applying an affine transformation to the previous layer and placing through an activation function.}{deep-neural-network}
 
 \newslide{Mathematically}
 
