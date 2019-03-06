@@ -1,3 +1,12 @@
+\ifndef{slfmCovariance}
+\define{slfmCovariance}
+
+\editme
+
+\subsection{Semi Parametric Latent Factor Covariance}
+
+\define{formula}{\kernelScalar(i, j, \inputVector, \inputVector^\prime) = w_i w_j \kernelScalar(\inputVector, \inputVector^\prime)}
+
 \helpercode{%load -s icm_cov mlai.py}
 \helpercode{%load -s slfm_cov mlai.py}
 \setupcode{import teaching_plots as plot
@@ -17,13 +26,6 @@ import numpy as np}
 				    filename='slfm_covariance.html')}
 
 
-### Semi Parametric Latent Factor Covariance
+\includecovariane{slfm}{\formula}{Semi-parametric latent factor model covariance function.}
 
-$$\kernelScalar(i, j, \inputVector, \inputVector^\prime) = w_i w_j \kernelScalar(\inputVector, \inputVector^\prime)$$
-
-\columns{
-\includediagram{../slides/diagrams/kern/slfm_covariance}
-}{
-\includehtml{../slides/diagrams/kern/slfm_covariance.html}{512}{384}
-}{50%}{50%}
-
+\endif

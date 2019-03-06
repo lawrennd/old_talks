@@ -24,6 +24,6 @@ import numpy as np}
 				    filename='icm_covariance.html')}
 
 
-\includecovariance{lmc}{\formula}{Intrinsic coregionalization model covariance function.}
+\includecovariance{icm}{\formula}{Intrinsic coregionalization model covariance function.}
 
 \endif

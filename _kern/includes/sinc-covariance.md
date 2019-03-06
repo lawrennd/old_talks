@@ -1,3 +1,8 @@
+\ifndef{sincCovariance}
+\define{sincCovariance}
+
+\editme
+
 \subsection{Sinc Covariance}
 
 \notes{Another approach to developing covariance function exploits Bochner's theorem @Bochner:book59. Bochner's theorem tells us that any positve filter in Fourier space implies has an associated Gaussian process with a stationary covariance function. The covariance function is the *inverse Fourier transform* of the filter applied in Fourier space.
@@ -23,5 +28,6 @@ import numpy as np}
 					 
 plot.covariance_func(kernel, diagrams='../slides/diagrams/kern/')}
 
-
 \includecovariane{sinc}{\formula}{Sinc covariance function.}
+
+\endif

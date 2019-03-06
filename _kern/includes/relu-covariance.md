@@ -1,3 +1,8 @@
+\ifndef{reluCovariance}
+\define{reluCovariance}
+
+\editme
+
 \subsection{RELU Covariance}
 
 \loadcode{relu_cov}{mlai}
@@ -23,3 +28,4 @@ plot.covariance_func(kernel, diagrams='../slides/diagrams/kern/')}
 \includecovariance{relu}{\formula}{Rectified linear unit covariance function.}
 
 
+\endif

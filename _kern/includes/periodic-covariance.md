@@ -1,3 +1,8 @@
+\ifndef{periodicCovariance}
+\define{periodicCovariance}
+
+\editme
+
 \subsection{Periodic Covariance}
 
 \define{\formula}{\kernelScalar(\inputVector, \inputVector^\prime) = \alpha\exp\left(\frac{-2\sin(\pi rw)^2}{\lengthScale^2}\right)}
@@ -17,3 +22,5 @@ import numpy as np}
 plot.covariance_func(kernel, diagrams='../slides/diagrams/kern/')}
 
 \includecovariance{periodic}{\formula}{Periodic covariance function.}
+
+\endif

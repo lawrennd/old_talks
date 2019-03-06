@@ -1,3 +1,8 @@
+\ifndef{polyCovariance}
+\define{polyCovariance}
+
+\editme
+
 \subsection{Polynomial Covariance}
 
 \loadplotcode{polynomial_cov}{mlai}
@@ -17,3 +22,4 @@ plot.covariance_func(kernel, diagrams='../slides/diagrams/kern/')}
 
 \includecovariance{polynomial}{\formula}{Polynomial covariance function.}
 
+\endif

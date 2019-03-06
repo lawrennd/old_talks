@@ -1,4 +1,10 @@
-\newslide{Covariance Functions}
+\ifndef{rbfBasisCovariance}
+\define{rbfBasisCovariance}
+
+\editme
+
+\subsection{Degenerate Covariance Functions}
+
 \slides{**RBF Basis Functions**}
 \notes{Any linear basis function can also be incorporated into a covariance function. For example, an RBF network is a type of neural network with a set of radial basis functions. Meaning, the basis funciton is radially symmetric. These basis functions take the form,}
 $$
@@ -14,3 +20,5 @@ $$
 $$
 
 \include{_kern/includes/basis-covariance.md}
+
+\endif
