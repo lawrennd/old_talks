@@ -38,7 +38,7 @@ pgm.render().figure.savefig("../slides/diagrams/deepgp/deep-markov-vertical.svg"
 
 \newslide{}
 
-\figure{\includediagram{../slides/diagrams/deepgp/deep-markov-vertical}{15%}}{More usually deep probabilistic models are written vertically rather than horizontally as in the Markov chain.}{deep-markov-vertical}
+\figure{\includediagram{../slides/diagrams/deepgp/deep-markov-vertical}{7%}}{More usually deep probabilistic models are written vertically rather than horizontally as in the Markov chain.}{deep-markov-vertical}
 
 \subsection{Why Deep?}
 
