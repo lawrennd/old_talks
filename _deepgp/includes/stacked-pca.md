@@ -12,12 +12,13 @@
 
 \subsection{Stacked PCA}
 \slides{
+\define{\width}{20%}
 \startanimation{stack-pca-sample}{0}{4}
-\newframe{\includediagram{../slides/diagrams/stack-pca-sample-0}}{stack-pca-sample}
-\newframe{\includediagram{../slides/diagrams/stack-pca-sample-1}}{stack-pca-sample}
-\newframe{\includediagram{../slides/diagrams/stack-pca-sample-2}}{stack-pca-sample}
-\newframe{\includediagram{../slides/diagrams/stack-pca-sample-3}}{stack-pca-sample}
-\newframe{\includediagram{../slides/diagrams/stack-pca-sample-4}}{stack-pca-sample}
+\newframe{\includediagram{../slides/diagrams/stack-pca-sample-0}{\width}}{stack-pca-sample}
+\newframe{\includediagram{../slides/diagrams/stack-pca-sample-1}{\width}}{stack-pca-sample}
+\newframe{\includediagram{../slides/diagrams/stack-pca-sample-2}{\width}}{stack-pca-sample}
+\newframe{\includediagram{../slides/diagrams/stack-pca-sample-3}{\width}}{stack-pca-sample}
+\newframe{\includediagram{../slides/diagrams/stack-pca-sample-4}{\width}}{stack-pca-sample}
 \endanimation
 }
 
