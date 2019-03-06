@@ -1,4 +1,4 @@
-BASE=outlook-for-uk-ai-and-ml
+BASE=towards-ml-systems-design
 include ../make-talk-flags.mk
 include ../make-talk.mk
 

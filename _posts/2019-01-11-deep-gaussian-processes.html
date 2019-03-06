@@ -424,7 +424,7 @@ Proxy for index of deprivation?
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> teaching_plots <span class="im">as</span> plot</code></pre></div>
 <div class="figure">
 <div id="deep-neural-network-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/deepgp/deep-nn2.svg" width="40%" style=" ">
+<object class="svgplot " data="../slides/diagrams/deepgp/deep-nn2.svg" width="70%" style=" ">
 </object>
 </div>
 <div id="deep-neural-network-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-neural-network&#39;)">
@@ -712,13 +712,13 @@ $$</span><br /> we can obtain <br /><span class="math display">$$\latentMatrix \
 <p>Figure: Stacking Gaussian process models leads to non linear mappings at each stage. Here we are mapping from two dimensions to two dimensions in each layer.</p>
 </div>
 </div>
-<p>Note that once the box has folded over on itself, it cannot be unfolded. So a feature that is generated near the top of the model cannot be removed furthr down the model.</p>
+<p>Note that once the box has folded over on itself, it cannot be unfolded. So a feature that is generated near the top of the model cannot be removed further down the model.</p>
 <p>This folding over effect happens in low dimensions. In higher dimensions it is less common.</p>
 <p>Observation of this effect at a talk in Cambridge was one of the things that caused David Duvenaud (and collaborators) to consider the behavior of deeper Gaussian process models <span class="citation">(Duvenaud et al. 2014)</span>.</p>
 <p>Such folding over in the latent spaces necessarily forces the density to be non-Gaussian. Indeed, since folding-over is avoided as we increase the dimensionality of the latent spaces, such processes become more Gaussian. If we take the limit of the latent space dimensionality as it tends to infinity, the entire deep Gaussian process returns to a standard Gaussian process, with a covariance function given as a deep kernel (such as those described by <span class="citation">Cho and Saul (2009)</span>).</p>
 <p>Further analysis of these deep networks has been conducted by <span class="citation">Dunlop et al. (n.d.)</span>, who use analysis of the deep network's stationary density (treating it as a Markov chain across layers), to explore the nature of the implied process prior for a deep GP.</p>
 <p>Both of these works, however, make constraining assumptions on the form of the Gaussian process prior at each layer (e.g. same covariance at each layer). In practice, the form of this covariance can be learnt and the densities described by the deep GP are more general than those mentioned in either of these papers.</p>
-<iframe width="1120" height="630" src="https://www.youtube.com/embed/XhIvygQYFFQ?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+<iframe width="800" height="600" src="https://www.youtube.com/embed/XhIvygQYFFQ?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
 <p>David Duvenaud also created a YouTube video to help visualize what happens as you drop through the layers of a deep GP.</p>
 <h2 id="gpy-a-gaussian-process-framework-in-python-edit">GPy: A Gaussian Process Framework in Python <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gpy-software.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gpy-software.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
@@ -868,7 +868,7 @@ y_clean=np.vstack((y[0:2, :], y[3:, :]))
 
 m_clean = GPy.models.GPRegression(x_clean,y_clean)
 _ = m_clean.optimize()</code></pre>
-<h2 id="deep-gp-fit">Deep GP Fit</h2>
+<h2 id="deep-gp-fit-edit">Deep GP Fit <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/deep-olympic.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/deep-olympic.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Let's see if a deep Gaussian process can help here. We will construct a deep Gaussian process with one hidden layer (i.e. one Gaussian process feeding into another).</p>
 <p>Build a Deep GP with an additional hidden layer (one dimensional) to fit the model.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> GPy
