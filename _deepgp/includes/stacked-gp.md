@@ -43,7 +43,7 @@ Both of these works, however, make constraining assumptions on the form of the G
 \define{deepPathologies} 
 \newslide{}
 
-\includeyoutube{XhIvygQYFFQ}{1120}{630}
+\includeyoutube{XhIvygQYFFQ}{800}{600}
 
 \notes{David Duvenaud also created a YouTube video to help visualize what happens as you drop through the layers of a deep GP.}
 
