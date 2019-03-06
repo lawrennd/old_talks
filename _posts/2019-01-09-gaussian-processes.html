@@ -43,6 +43,7 @@ categories:
 <p>.</p>
 <!---->
 <!--Back matter-->
+<p>.</p>
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
 <div class="figure">
 <div id="gaussian-processes-for-machine-learning-figure" class="figure-frame">
@@ -110,7 +111,7 @@ $$</span><br /> and we have <em>unsupervised learning</em> (from where we can ge
 <p>One way of representing a joint distribution is to consider conditional dependencies between data. Conditional dependencies allow us to factorize the distribution. For example, a Markov chain is a factorization of a distribution into components that represent the conditional relationships between points that are neighboring, often in time or space. It can be decomposed in the following form. <br /><span class="math display">$$p(\dataVector) = p(\dataScalar_\numData | \dataScalar_{\numData-1}) p(\dataScalar_{\numData-1}|\dataScalar_{\numData-2}) \dots p(\dataScalar_{2} | \dataScalar_{1})$$</span><br /></p>
 <div class="figure">
 <div id="markov-chain-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/markov.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/markov.svg" width="50%" style=" ">
 </object>
 </div>
 <div id="markov-chain-magnify" class="magnify" onclick="magnifyFigure(&#39;markov-chain&#39;)">
@@ -125,7 +126,7 @@ $$</span><br /> and we have <em>unsupervised learning</em> (from where we can ge
 <div class="figure">
 <div id="c-difficile-bayes-net-diagnosis-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="negate" src="../slides/diagrams/bayes-net-diagnosis.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="negate" src="../slides/diagrams/bayes-net-diagnosis.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 <div id="c-difficile-bayes-net-diagnosis-magnify" class="magnify" onclick="magnifyFigure(&#39;c-difficile-bayes-net-diagnosis&#39;)">
@@ -277,7 +278,7 @@ $$</span><br /> in the figure below we plot these data on the <span class="math 
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;two_point_sample</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, <span class="st">&#39;../slides/diagrams/gp&#39;</span>, sample<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">8</span>, <span class="dv">1</span>))</code></pre></div>
 <div class="figure">
 <div id="gp-two-point-sample-1-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/gp/two_point_sample008.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/gp/two_point_sample008.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="gp-two-point-sample-1-magnify" class="magnify" onclick="magnifyFigure(&#39;gp-two-point-sample-1&#39;)">
@@ -295,7 +296,7 @@ $$</span><br /> in the figure below we plot these data on the <span class="math 
 {
 <div class="figure">
 <div id="two-point-sample-one-two-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/gp/two_point_sample012.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/gp/two_point_sample012.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="two-point-sample-one-two-magnify" class="magnify" onclick="magnifyFigure(&#39;two-point-sample-one-two&#39;)">
@@ -336,7 +337,7 @@ $$</span><br /></p>
                             sample<span class="op">=</span>IntSlider(<span class="dv">13</span>, <span class="dv">13</span>, <span class="dv">17</span>, <span class="dv">1</span>))</code></pre></div>
 <div class="figure">
 <div id="two-point-sample-13-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/gp/two_point_sample013.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/gp/two_point_sample013.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="two-point-sample-13-magnify" class="magnify" onclick="magnifyFigure(&#39;two-point-sample-13&#39;)">
@@ -348,7 +349,7 @@ $$</span><br /></p>
 </div>
 <div class="figure">
 <div id="two-point-sample-one-eight-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/gp/two_point_sample017.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/gp/two_point_sample017.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="two-point-sample-one-eight-magnify" class="magnify" onclick="magnifyFigure(&#39;two-point-sample-one-eight&#39;)">
@@ -384,7 +385,7 @@ $$</span><br /> where <span class="math inline">ℓ</span> is the <em>length sca
 <table>
 <tr>
 <td width="45%">
-<object class="100%" align data="../slides/diagrams/kern/eq_covariance.svg" style="vertical-align:middle">
+<object class width="100%" data="../slides/diagrams/kern/eq_covariance.svg">
 </object>
 </td>
 <td width="45%">
@@ -451,7 +452,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
                   frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <div class="figure">
 <div id="olympic-marathon-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/datasets/olympic-marathon.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/datasets/olympic-marathon.svg" width style=" ">
 </object>
 </div>
 <div id="olympic-marathon-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-marathon&#39;)">
@@ -511,7 +512,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <div class="figure">
 <div id="olympic-marathon-gp-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/gp/olympic-marathon-gp.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/gp/olympic-marathon-gp.svg" width style=" ">
 </object>
 </div>
 <div id="olympic-marathon-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-marathon-gp&#39;)">
@@ -573,11 +574,11 @@ gpoptimizePlot3
 <table>
 <tr>
 <td width="50%">
-<object class="svgplot " data="../slides/diagrams/gp/gp-optimise006.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/gp/gp-optimise006.svg" width="100%" style=" ">
 </object>
 </td>
 <td width="50%">
-<object class="svgplot " data="../slides/diagrams/gp/gp-optimise010.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/gp/gp-optimise010.svg" width="100%" style=" ">
 </object>
 </td>
 </tr>
@@ -585,11 +586,11 @@ gpoptimizePlot3
 <table>
 <tr>
 <td width="50%">
-<object class="svgplot " data="../slides/diagrams/gp/gp-optimise016.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/gp/gp-optimise016.svg" width="100%" style=" ">
 </object>
 </td>
 <td width="50%">
-<object class="svgplot " data="../slides/diagrams/gp/gp-optimise021.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/gp/gp-optimise021.svg" width="100%" style=" ">
 </object>
 </td>
 </tr>
@@ -638,7 +639,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
                   frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <div class="figure">
 <div id="della-gatta-gene-data-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/datasets/della-gatta-gene.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/datasets/della-gatta-gene.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="della-gatta-gene-data-magnify" class="magnify" onclick="magnifyFigure(&#39;della-gatta-gene-data&#39;)">
@@ -688,7 +689,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <div class="figure">
 <div id="della-gatta-gene-gp-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/gp/della-gatta-gene-gp.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/gp/della-gatta-gene-gp.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="della-gatta-gene-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;della-gatta-gene-gp&#39;)">
@@ -713,7 +714,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <div class="figure">
 <div id="della-gatta-gene-gp2-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/gp/della-gatta-gene-gp2.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/gp/della-gatta-gene-gp2.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="della-gatta-gene-gp2-magnify" class="magnify" onclick="magnifyFigure(&#39;della-gatta-gene-gp2&#39;)">
@@ -739,7 +740,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <div class="figure">
 <div id="della-gatta-gene-gp3-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/gp/della-gatta-gene-gp3.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/gp/della-gatta-gene-gp3.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="della-gatta-gene-gp3-magnify" class="magnify" onclick="magnifyFigure(&#39;della-gatta-gene-gp3&#39;)">
@@ -751,7 +752,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </div>
 <div class="figure">
 <div id="gp-multiple-optima000-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/gp/multiple-optima000.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/gp/multiple-optima000.svg" width="50%" style=" ">
 </object>
 </div>
 <div id="gp-multiple-optima000-magnify" class="magnify" onclick="magnifyFigure(&#39;gp-multiple-optima000&#39;)">
@@ -763,9 +764,9 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </div>
 <!--
 
-<object class="svgplot "  data="../slides/diagrams/gp/multiple-optima001.svg"  style="vertical-align:middle;"></object>-->
+<object class="svgplot " data="../slides/diagrams/gp/multiple-optima001.svg" width="" style=" "></object>-->
 <h2 id="example-prediction-of-malaria-incidence-in-uganda-edit">Example: Prediction of Malaria Incidence in Uganda <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_health/includes/malaria-gp.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_health/includes/malaria-gp.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
-<p><span style="text-align:right"><img class="" src="../slides/diagrams/people/2013_03_28_180606.JPG" width="1.5cm" align="" style="background:none; border:none; box-shadow:none; position:absolute; clip:rect(2662px,1780px,1110px,600px);vertical-align:middle"></span></p>
+<p><span style="text-align:right"><img class="" src="../slides/diagrams/people/2013_03_28_180606.JPG" width="1.5cm" style="background:none; border:none; box-shadow:none; position:absolute; clip:rect(2662px,1780px,1110px,600px);vertical-align:middle"></span></p>
 <p>As an example of using Gaussian process models within the full pipeline from data to decsion, we'll consider the prediction of Malaria incidence in Uganda. For the purposes of this study malaria reports come in two forms, HMIS reports from health centres and Sentinel data, which is curated by the WHO. There are limited sentinel sites and many HMIS sites.</p>
 <p>The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboration with John Quinn and Martin Mubangizi <span class="citation">(Andrade-Pacheco et al. 2014; Mubangizi et al. 2014)</span>. John and Martin were initally from the AI-DEV group from the University of Makerere in Kampala and more latterly they were based at UN Global Pulse in Kampala.</p>
 <p>Malaria data is spatial data. Uganda is split into districts, and health reports can be found for each district. This suggests that models such as conditional random fields could be used for spatial modelling, but there are two complexities with this. First of all, occasionally districts split into two. Secondly, sentinel sites are a specific location within a district, such as Nagongera which is a sentinel site based in the Tororo district.</p>
@@ -785,7 +786,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 <p><span style="text-align:right"><span class="citation">(Andrade-Pacheco et al. 2014; Mubangizi et al. 2014)</span></span></p>
 <div class="figure">
 <div id="kapchorwa-district-in-uganda-figure" class="figure-frame">
-<object class="50%" align data="../slides/diagrams/health/Kapchorwa_District_in_Uganda.svg" style="vertical-align:middle">
+<object class width="50%" data="../slides/diagrams/health/Kapchorwa_District_in_Uganda.svg">
 </object>
 </div>
 <div id="kapchorwa-district-in-uganda-magnify" class="magnify" onclick="magnifyFigure(&#39;kapchorwa-district-in-uganda&#39;)">
@@ -799,7 +800,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 <p>The common standard for collecting health data on the African continent is from the Health management information systems (HMIS). However, this data suffers from missing values <span class="citation">(Gething et al. 2006)</span> and diagnosis of diseases like typhoid and malaria may be confounded.</p>
 <div class="figure">
 <div id="tororo-district-in-uganda-figure" class="figure-frame">
-<object class="50%" align data="../slides/diagrams/health/Tororo_District_in_Uganda.svg" style="vertical-align:middle">
+<object class width="50%" data="../slides/diagrams/health/Tororo_District_in_Uganda.svg">
 </object>
 </div>
 <div id="tororo-district-in-uganda-magnify" class="magnify" onclick="magnifyFigure(&#39;tororo-district-in-uganda&#39;)">
@@ -827,7 +828,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 <p>The aim of the project was to use WHO Sentinel sites, alongside rainfall and temperature, to improve predictions from HMIS data of levels of malaria.</p>
 <div class="figure">
 <div id="mubende-district-in-uganda-figure" class="figure-frame">
-<object class="50%" align data="../slides/diagrams/health/Mubende_District_in_Uganda.svg" style="vertical-align:middle">
+<object class width="50%" data="../slides/diagrams/health/Mubende_District_in_Uganda.svg">
 </object>
 </div>
 <div id="mubende-district-in-uganda-magnify" class="magnify" onclick="magnifyFigure(&#39;mubende-district-in-uganda&#39;)">
@@ -866,7 +867,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 <h2 id="early-warning-systems">Early Warning Systems</h2>
 <div class="figure">
 <div id="kabarole-district-in-uganda-figure" class="figure-frame">
-<object class="50%" align data="../slides/diagrams/health/Kabarole_District_in_Uganda.svg" style="vertical-align:middle">
+<object class width="50%" data="../slides/diagrams/health/Kabarole_District_in_Uganda.svg">
 </object>
 </div>
 <div id="kabarole-district-in-uganda-magnify" class="magnify" onclick="magnifyFigure(&#39;kabarole-district-in-uganda&#39;)">
@@ -919,7 +920,7 @@ $$</span><br /></p>
 <table>
 <tr>
 <td width="45%">
-<object class="100%" align data="../slides/diagrams/kern/add_covariance.svg" style="vertical-align:middle">
+<object class width="100%" data="../slides/diagrams/kern/add_covariance.svg">
 </object>
 </td>
 <td width="45%">
@@ -994,7 +995,7 @@ $$</span><br /> meaning that the vector of observations from the function is joi
 <table>
 <tr>
 <td width="45%">
-<object class="100%" align data="../slides/diagrams/kern/basis_covariance.svg" style="vertical-align:middle">
+<object class width="100%" data="../slides/diagrams/kern/basis_covariance.svg">
 </object>
 </td>
 <td width="45%">
@@ -1025,7 +1026,7 @@ $$</span><br /></p>
 <table>
 <tr>
 <td width="45%">
-<object class="100%" align data="../slides/diagrams/kern/brownian_covariance.svg" style="vertical-align:middle">
+<object class width="100%" data="../slides/diagrams/kern/brownian_covariance.svg">
 </object>
 </td>
 <td width="45%">
@@ -1054,7 +1055,7 @@ $$</span><br /></p>
 <table>
 <tr>
 <td width="45%">
-<object class="100%" align data="../slides/diagrams/kern/mlp_covariance.svg" style="vertical-align:middle">
+<object class width="100%" data="../slides/diagrams/kern/mlp_covariance.svg">
 </object>
 </td>
 <td width="45%">
@@ -1072,7 +1073,7 @@ $$</span><br /></p>
 <p>Figure: The multi-layer perceptron covariance function. This is derived by considering the infinite limit of a neural network with probit activation functions.</p>
 </div>
 </div>
-<h2 id="relu-covariance">RELU Covariance</h2>
+<h2 id="relu-covariance-edit">RELU Covariance <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/relu-covariance.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/relu-covariance.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>load <span class="op">-</span>s relu_cov mlai.py</code></pre></div>
 <center>
 <br /><span class="math display">$$\kernelScalar(\inputVector, \inputVector^\prime) = 
@@ -1085,7 +1086,7 @@ $$</span><br /></p>
 <table>
 <tr>
 <td width="45%">
-<object class="100%" align data="../slides/diagrams/kern/relu_covariance.svg" style="vertical-align:middle">
+<object class width="100%" data="../slides/diagrams/kern/relu_covariance.svg">
 </object>
 </td>
 <td width="45%">
@@ -1103,14 +1104,14 @@ $$</span><br /></p>
 <p>Figure: Rectified linear unit covariance function.</p>
 </div>
 </div>
-<h2 id="sinc-covariance">Sinc Covariance</h2>
+<h2 id="sinc-covariance-edit">Sinc Covariance <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/sinc-covariance.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/sinc-covariance.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Another approach to developing covariance function exploits Bochner's theorem <span class="citation">Bochner (1959)</span>. Bochner's theorem tells us that any positve filter in Fourier space implies has an associated Gaussian process with a stationary covariance function. The covariance function is the <em>inverse Fourier transform</em> of the filter applied in Fourier space.</p>
 <p>For example, in signal processing, <em>band limitations</em> are commonly applied as an assumption. For example, we may believe that no frequency above <span class="math inline"><em>w</em> = 2</span> exists in the signal. This is equivalent to a rectangle function being applied as a the filter in Fourier space.</p>
 <p>The inverse Fourier transform of the rectangle function is the <span class="math inline">sinc(⋅)</span> function. So the sinc is a valid covariance function, and it represents <em>band limited</em> signals.</p>
 <p>Note that other covariance functions we've introduced can also be interpreted in this way. For example, the exponentiated quadratic covariance function can be Fourier transformed to see what the implied filter in Fourier space is. The Fourier transform of the exponentiated quadratic is an exponentiated quadratic, so the standard EQ-covariance implies a EQ filter in Fourier space.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>load <span class="op">-</span>s sinc_cov mlai.py</code></pre></div>
 
-<h2 id="polynomial-covariance">Polynomial Covariance</h2>
+<h2 id="polynomial-covariance-edit">Polynomial Covariance <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/poly-covariance.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/poly-covariance.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <center>
 <br /><span class="math display">$$\kernelScalar(\inputVector, \inputVector^\prime) = \alpha(w \inputVector^\top\inputVector^\prime + b)^d$$</span><br />
 </center>
@@ -1119,7 +1120,7 @@ $$</span><br /></p>
 <table>
 <tr>
 <td width="45%">
-<object class="100%" align data="../slides/diagrams/kern/polynomial_covariance.svg" style="vertical-align:middle">
+<object class width="100%" data="../slides/diagrams/kern/polynomial_covariance.svg">
 </object>
 </td>
 <td width="45%">
@@ -1137,7 +1138,7 @@ $$</span><br /></p>
 <p>Figure: Polynomial covariance function.</p>
 </div>
 </div>
-<h2 id="periodic-covariance">Periodic Covariance</h2>
+<h2 id="periodic-covariance-edit">Periodic Covariance <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/periodic-covariance.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/periodic-covariance.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <center>
 <br /><span class="math display">$$\kernelScalar(\inputVector, \inputVector^\prime) = \alpha\exp\left(\frac{-2\sin(\pi rw)^2}{\lengthScale^2}\right)$$</span><br />
 </center>
@@ -1146,7 +1147,7 @@ $$</span><br /></p>
 <table>
 <tr>
 <td width="45%">
-<object class="100%" align data="../slides/diagrams/kern/periodic_covariance.svg" style="vertical-align:middle">
+<object class width="100%" data="../slides/diagrams/kern/periodic_covariance.svg">
 </object>
 </td>
 <td width="45%">
@@ -1179,7 +1180,7 @@ $$</span><br /></p>
 <table>
 <tr>
 <td width="45%">
-<object class="100%" align data="../slides/diagrams/kern/lmc_covariance.svg" style="vertical-align:middle">
+<object class width="100%" data="../slides/diagrams/kern/lmc_covariance.svg">
 </object>
 </td>
 <td width="45%">
@@ -1208,25 +1209,25 @@ $$</span><br /></p>
 <br /><span class="math display">$$\kernelScalar(i, j, \inputVector, \inputVector^\prime) = b_{i,j} \kernelScalar(\inputVector, \inputVector^\prime)$$</span><br />
 </center>
 <div class="figure">
-<div id="lmc-covariance-plot-figure" class="figure-frame">
+<div id="icm-covariance-plot-figure" class="figure-frame">
 <table>
 <tr>
 <td width="45%">
-<object class="100%" align data="../slides/diagrams/kern/lmc_covariance.svg" style="vertical-align:middle">
+<object class width="100%" data="../slides/diagrams/kern/icm_covariance.svg">
 </object>
 </td>
 <td width="45%">
 <div class="centered" style="">
-<img class="negate" src="../slides/diagrams/kern/lmc_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="negate" src="../slides/diagrams/kern/icm_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </td>
 </tr>
 </table>
 </div>
-<div id="lmc-covariance-plot-magnify" class="magnify" onclick="magnifyFigure(&#39;lmc-covariance-plot&#39;)">
+<div id="icm-covariance-plot-magnify" class="magnify" onclick="magnifyFigure(&#39;icm-covariance-plot&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
-<div id="lmc-covariance-plot-caption" class="caption-frame">
+<div id="icm-covariance-plot-caption" class="caption-frame">
 <p>Figure: Intrinsic coregionalization model covariance function.</p>
 </div>
 </div>
