@@ -1,8 +1,10 @@
 \ifndef{deepOlympic}
 \define{deepOlympic}
 \define{deepGpEnhanced}
-\editme
+
 \include{_gp/includes/olympic-marathon-gp.md}
+
+\editme
 
 \subsection{Deep GP Fit}
 
