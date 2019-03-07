@@ -132,12 +132,12 @@ It also has some interesting features;
 
 \newslide{Cloaking: Results}
 
-\includepng{../slides/diagrams/privacy/kung_cloaking_simple}{100%}{negate}
+\figure{\includepng{../slides/diagrams/privacy/kung_cloaking_simple}{100%}{negate}}{Simple cloaking function.}{kung-cloaking-simple}
 
 
 \newslide{House Prices Around London}
 
-\includepng{../slides/diagrams/privacy/houseprices_bigcirc_15km_0_labels}{60%}{negate}
+\figure{\includepng{../slides/diagrams/privacy/houseprices_bigcirc_15km_0_labels}{60%}{negate}}{Simple cloaking function on house price data.}{house-prices-cloaking}
 
 \newslide{Citibike}
 
@@ -149,8 +149,9 @@ reasonable $\varepsilon$).
 
 \newslide{Citibike}
 
-\includepng{../slides/diagrams/privacy/newtable2}{80%}{negate} 
-lengthscale in degrees, values above, journey duration (in seconds)
+\figure{\includepng{../slides/diagrams/privacy/newtable2}{80%}{negate}}{Citibike data. Lengthscale in degrees, values above, journey duration (in seconds).}{citibike-data} 
+
+\slides{lengthscale in degrees, values above, journey duration (in seconds)}
 
 \newslide{Cloaking and Inducing Inputs}
 
@@ -162,11 +163,11 @@ lengthscale in degrees, values above, journey duration (in seconds)
 
 \newslide{Cloaking (no) Inducing Inputs}
 
-\includepng{../slides/diagrams/privacy/cloaking-no-inducing}{100%}{negate}
+\figure{\includepng{../slides/diagrams/privacy/cloaking-no-inducing}{100%}{negate}}{Cloaking function with no inducing inputs.}{cloaking-no-inducing}
 
 \newslide{Cloaking and Inducing Inputs}
 
-\includepng{../slides/diagrams/privacy/cloaking-inducing}{80%}{negate}
+\figure{\includepng{../slides/diagrams/privacy/cloaking-inducing}{80%}{negate}}{Cloaking function with inducing inputs.}{cloaking-inducing}
 
 \newslide{Results}
 
@@ -180,10 +181,10 @@ lengthscale in degrees, values above, journey duration (in seconds)
 
 \newslide{Cloaking (no) Inducing Inputs}
 
-\includepng{../slides/diagrams/privacy/housing-no-inducing}{80%}{negate}
+\figure{\includepng{../slides/diagrams/privacy/housing-no-inducing}{80%}{negate}}{Cloaking functions on the housing data with no inducing inputs.}{cloaking-housing-no-inducing}
 
 \newslide{Cloaking and Inducing Inputs}
 
-\includepng{../slides/diagrams/privacy/housing-inducing}{80%}{negate}
+\figure{\includepng{../slides/diagrams/privacy/housing-inducing}{80%}{negate}}{Cloaking functions on the housing data with inducing inputs.}{cloaking-housing-inducing}
 
 \endif

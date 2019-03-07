@@ -16,7 +16,7 @@ This approach to Bayesian inference is closely related to two sampling technique
 
 In practice, the algorithm is often too slow to be practical, because most samples will be inconsistent with the data and as a result the mechanism has to be operated many times to obtain a few posterior samples. 
 
-However, in the Gaussian process case, when the likelihood also assumes Gaussian noise, we can operate this mechanims mathematically, and obtain the posterior density *analytically*. This is the benefit of Gaussian processes.}
+However, in the Gaussian process case, when the likelihood also assumes Gaussian noise, we can operate this mechanism mathematically, and obtain the posterior density *analytically*. This is the benefit of Gaussian processes.}
 
 \loadplotcode{Kernel}{mlai}
 \loadplotcode{eq_cov}{mlai}
@@ -63,4 +63,5 @@ from ipywidgets import IntSlider}
 \notes{\figure{\includepng{../slides/diagrams/gp/gp_rejection_sample003}{100%}
 \includepng{../slides/diagrams/gp/gp_rejection_sample004}{100%}
 \includepng{../slides/diagrams/gp/gp_rejection_sample005}{100%}}{One view of Bayesian inference is we have a machine for generating samples (the *prior*), and we discard all samples inconsistent with our data, leaving the samples of interest (the *posterior*). The Gaussian process allows us to do this analytically.}{gp-rejection-samples}
+
 \endif
