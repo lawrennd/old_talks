@@ -238,7 +238,7 @@ $$</span><br /> And that's not <em>only</em> for Gaussian <span class="math inli
 <p>The samples that remain are considered to be samples from the <em>posterior</em>.</p>
 <p>This approach to Bayesian inference is closely related to two sampling techniques known as <em>rejection sampling</em> and <em>importance sampling</em>. It is realized in practice in an approach known as <em>approximate Bayesian computation</em> (ABC) or likelihood-free inference.</p>
 <p>In practice, the algorithm is often too slow to be practical, because most samples will be inconsistent with the data and as a result the mechanism has to be operated many times to obtain a few posterior samples.</p>
-<p>However, in the Gaussian process case, when the likelihood also assumes Gaussian noise, we can operate this mechanims mathematically, and obtain the posterior density <em>analytically</em>. This is the benefit of Gaussian processes.</p>
+<p>However, in the Gaussian process case, when the likelihood also assumes Gaussian noise, we can operate this mechanism mathematically, and obtain the posterior density <em>analytically</em>. This is the benefit of Gaussian processes.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
 <span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;gp_rejection_sample</span><span class="sc">{sample:0&gt;3}</span><span class="st">.png&#39;</span>, 
@@ -519,7 +519,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
 <div id="olympic-marathon-gp-caption" class="caption-frame">
-<p>Figure: Gaussian process fit to the olympic marathon data. The error bars are too large, perhaps due to the outlier from 1904.</p>
+<p>Figure: Gaussian process fit to the Olympic Marathon data. The error bars are too large, perhaps due to the outlier from 1904.</p>
 </div>
 </div>
 <h2 id="fit-quality">Fit Quality</h2>
