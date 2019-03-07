@@ -3,7 +3,6 @@
 \editme
 
 \include{_ml/includes/olympic-marathon-data.md}
-
 \include{_ml/includes/alan-turing-marathon.md}
 
 \notes{
@@ -36,7 +35,7 @@ mlai.write_figure(figure=fig,
 
 \newslide{Olympic Marathon Data GP}
 
-\figure{\includediagram{../slides/diagrams/gp/olympic-marathon-gp}}{Gaussian process fit to the olympic marathon data. The error bars are too large, perhaps due to the outlier from 1904.}{olympic-marathon-gp}
+\figure{\includediagram{../slides/diagrams/gp/olympic-marathon-gp}}{Gaussian process fit to the Olympic Marathon data. The error bars are too large, perhaps due to the outlier from 1904.}{olympic-marathon-gp}
 
 
 \notes{
