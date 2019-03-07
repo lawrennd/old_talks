@@ -35,7 +35,7 @@ The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboratio
 
 \notes{The common standard for collecting health data on the African continent is from the Health management information systems (HMIS). However, this data suffers from missing values [@Gething:hmis06] and diagnosis of diseases like typhoid and malaria may be confounded.}
 
-\figure{\includediagramclass{../slides/diagrams/health/Tororo_District_in_Uganda}{50%}}{The Tororo district, where the sentinel site, Nagongera is located.}{tororo-district-in-uganda}
+\figure{\includediagramclass{../slides/diagrams/health/Tororo_District_in_Uganda}{50%}}{The Tororo district, where the sentinel site, Nagongera, is located.}{tororo-district-in-uganda}
 
 \notes{[World Health Organization Sentinel Surveillance systems](https://www.who.int/immunization/monitoring_surveillance/burden/vpd/surveillance_type/sentinel/en/) are set up "when high-quality data are needed about a particular disease that cannot be obtained through a passive system". Several sentinel sites give accurate assessment of malaria disease levels in Uganda, including a site in Nagongera.}
 
