@@ -77,7 +77,7 @@ The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboratio
 
 \newslide{Early Warning Systems}
 
-\figure{\includegif{../slides/diagrams/health/monitor}{50%}}{The map of Ugandan districts with an overview of the Malaria situation in each district.}{Kabarole early warning system over time.}
+\figure{\includegif{../slides/diagrams/health/monitor}{50%}}{The map of Ugandan districts with an overview of the Malaria situation in each district.}{early-warning-system-map}
 
 \notes{These colors can now be observed directly on a spatial map of the districts to give an immediate impression of the current status of the disease across the country.}
 
