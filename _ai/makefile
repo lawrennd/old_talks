@@ -1,3 +1,3 @@
-BASE=mind-and-machine-intelligence
+BASE=faith-and-ai
 include ../make-talk-flags.mk
 include ../make-talk.mk
