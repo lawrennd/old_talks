@@ -1,3 +1,8 @@
+\ifndef{multivariateBayesianLinearShort}
+\define{multivariateBayesianLinearShort}
+
+\editme
+
 \subsection{Multivariate Regression Likelihood}
 
 * Noise corrupted data point
@@ -13,3 +18,5 @@
 * Now use a *multivariate* Gaussian prior:
   $$p(\weightVector) = \frac{1}{\left(2\pi \alpha\right)^\frac{\dataDim}{2}} \exp \left(-\frac{1}{2\alpha} \weightVector^\top \weightVector\right)$$
 
+
+\endif
