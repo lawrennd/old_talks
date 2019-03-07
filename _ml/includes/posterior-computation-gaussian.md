@@ -26,13 +26,13 @@ We've looked at the samples for our function $\mappingFunctionVector = \basisMat
 
 This video talks about Bayesian inference across the single parameter, the offset $c$, illustrating how the prior and the likelihood combine in one dimension to form a posterior.
 
-\includeyoutube{AvlnFnvFw_0}{800}{600}{15}
+\figure{\includeyoutube{AvlnFnvFw_0}{100%}{auto}{15}}{Univariate Bayesian inference. Lecture 10 from 2012 MLAI Course.}{univariate-bayesian-inference-video}
 
 \subsection{Multivariate Bayesian Inference}
 
 This section of the lecture talks about how we extend the idea of Bayesian inference for the multivariate case. It goes through the multivariate Gaussian and how to complete the square in the linear algebra as we managed below.
 
-\includeyoutube{Os1iqgpelPw}{800}{600}{1362}
+\figure{\includeyoutube{Os1iqgpelPw}{100%}{auto}{1362}}{Multivariate Bayesian inference. Lecture 11 from 2012 MLAI course.}{multivariate-bayesian-inference}
 
 The lecture informs us the the posterior density for $\mappingVector$ is given by a Gaussian density with covariance
 $$

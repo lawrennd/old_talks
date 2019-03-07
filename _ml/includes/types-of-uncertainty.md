@@ -11,7 +11,7 @@ From a philosophical perspective placing a probability distribution over the *pa
 
 A segment from the lecture in 2012 on philsophical underpinnings.
 
-\includeyoutube{AvlnFnvFw_0}{1024}{768}{1215}
+\figure{\includeyoutube{AvlnFnvFw_0}{100}{auto}{1215}}{The philosophical underpinnings of uncertainty, as discussed in 2012 MLAI lecture.}{philosophical-underpinnings-uncertainty}
 
 \newslide{Noise Models}
 

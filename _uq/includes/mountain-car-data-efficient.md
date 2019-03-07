@@ -150,7 +150,7 @@ anim=mc.animate_frames(frames, 'Best controller using the emulator of the dynami
 
 \newslide{Best Controller using Emulator of Dynamics}
 
-\figure{\includehtml{../slides/diagrams/uq/mountain_car_emulated.html}{1024}{768}}{Mountain car controller learnt through emulation. Here 500 calls to the simulator are used to fit the controller rather than 37,500 calls to the simulator required in the standard learning.}{mountain-car-emulated}
+\figure{\includehtml{../slides/diagrams/uq/mountain_car_emulated.html}{100%}{auto}}{Mountain car controller learnt through emulation. Here 500 calls to the simulator are used to fit the controller rather than 37,500 calls to the simulator required in the standard learning.}{mountain-car-emulated}
 
 \slides{500 calls to the simulator vs 37,500 calls to the simulator}
 

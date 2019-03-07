@@ -4,6 +4,8 @@
 
 \subsection{Stacked GPs (video by David Duvenaud)}
 
-\includeyoutube{XhIvygQYFFQ}{560}{315}
+\figure{\includeyoutube{XhIvygQYFFQ}{100%}{auto}}{Visualization of mapping of a two dimensional space through a deep Gaussian process.}{visualization-deep-gp}
+
+\notes{David Duvenaud also created a YouTube video to help visualize what happens as you drop through the layers of a deep GP.}
 
 \endif

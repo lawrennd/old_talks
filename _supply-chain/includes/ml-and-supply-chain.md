@@ -1,8 +1,7 @@
 \ifndef{mlAndSupplyChain}
 \define{mlAndSupplyChain}
+
 \editme
-
-
 
 \subsection{Machine Learning in Supply Chain}
 
@@ -45,6 +44,6 @@
 
 \newslide{Amazon Supply Chain Optimization}
 
-\includeyoutube{ncwsr1Of6Cw}{800}{600}
+\figure{\includeyoutube{ncwsr1Of6Cw}{100%}{auto}}{The Supply Chain Optimization Team (SCOT) at Amazon is responsible for the automated decision making in (probably) the world's largest AI.}{supply-chain-optimization-team}
 
 \endif

@@ -909,9 +909,9 @@ y = movies[['IMDB_Rating']]}
 \notes{Although we have to be a little careful about interpretation because our input values live on different scales, however it looks like we are dominated by the bias, with a small negative effect for later films (but bear in mind the years are large, so this effect is probably larger than it looks) and a positive effect for length. So it looks like long earlier films generally do better, but the residuals are so high that we probably haven't modelled the system very well.}
 
 \notes{
-\includeyoutube{ui-uNlFHoms}{800}{600}
+\figure{\includeyoutube{ui-uNlFHoms}{100%}{auto}}{MLAI Lecture 15 from 2014 on Multivariate Regression.}{mlai-15-multivariate-regression}}
 
-\includeyoutube{78YNphT90-k}{800}{600}
+\figure{\includeyoutube{78YNphT90-k}{100%}{auto}}{MLAI Lecture 3 from 2012 on Maximum Likelihood}{mlai-3-maximum-likelihood}
 }
 
 \notes{\subsection{Solution with QR Decomposition}

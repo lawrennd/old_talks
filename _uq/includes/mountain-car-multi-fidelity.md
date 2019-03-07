@@ -1,6 +1,9 @@
 \ifndef{mountainCarMultiFidelity}
 \define{mountainCarMultiFidelity}
+
 \editme
+
+\subsection{Multi-Fidelity Emulation}
 
 \notes{In some scenarios we have simulators of the same environment that have different fidelities, that is that reflect with different level of accuracy the dynamics of the real world. Running simulations of the different fidelities also have a different cost: hight fidelity simulations are more expensive the cheaper ones. If we have access to these simulators we can combine high and low fidelity simulations under the same model.
 
@@ -11,8 +14,6 @@ $$\mappingFunction_i\left(\inputVector\right) = \rho\mappingFunction_{i-1}\left(
 \notes{where $\mappingFunction_{i-1}\left(\inputVector\right)$ is a low fidelity simulation of the problem of interest and $\mappingFunction_i\left(\inputVector\right)$ is a higher fidelity simulation. The function $\delta_i\left(\inputVector \right)$ represents the difference between the lower and higher fidelity simulation, which is considered additive. The additive form of this covariance means that if $\mappingFunction_{0}\left(\inputVector\right)$ and $\left\{\delta_i\left(\inputVector \right)\right\}_{i=1}^m$ are all Gaussian processes, then the process over all fidelities of simuation will be a joint Gaussian process.
 
 But with Deep Gaussian processes we can consider the form }
-
-\newslide{Multi-Fidelity Emulation}
 
 $$\mappingFunction_i\left(\inputVector\right) = \mappingFunctionTwo_{i}\left(\mappingFunction_{i-1}\left(\inputVector\right)\right) + \delta_i\left(\inputVector \right),$$
 
@@ -94,9 +95,9 @@ anim=mc.animate_frames(frames, 'Best controller with multi-fidelity emulator')}
                   diagrams='../slides/diagrams/uq', 
 				  filename='mountain_car_multi_fidelity.html')}
 
-\newslide{Best Controller with Multi-Fidelity Emulator}
+\subsubsection{Best Controller with Multi-Fidelity Emulator}
 
-\figure{\includehtml{../slides/diagrams/uq/mountain_car_multi_fidelity.html}{1024}{768}}{Mountain car learnt with multi-fidelity model. Here 250 observations of the high fidelity simulator and 250 observations of the low fidelity simulator are used to learn the controller.}{mountain-car-multi-fidelity}
+\figure{\includehtml{../slides/diagrams/uq/mountain_car_multi_fidelity.html}{100%}{auto}}{Mountain car learnt with multi-fidelity model. Here 250 observations of the high fidelity simulator and 250 observations of the low fidelity simulator are used to learn the controller.}{mountain-car-multi-fidelity}
 
 \slides{250 observations of high fidelity simulator and 250 of the low fidelity simulator}
 \notes{And problem solved! We see how the problem is also solved with 250 observations of the high fidelity simulator and 250 of the low fidelity simulator.}

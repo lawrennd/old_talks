@@ -41,11 +41,7 @@ Both of these works, however, make constraining assumptions on the form of the G
 * *How Deep Are Deep Gaussian Processes?* @Dunlop:deep2017 perform a theoretical analysis possible through conditional Gaussian Markov property.
 }
 
-\define{deepPathologies} 
-\newslide{}
+\include{_deepgp/includes/deep-pathologies.md}
 
-\includeyoutube{XhIvygQYFFQ}{800}{600}
-
-\notes{David Duvenaud also created a YouTube video to help visualize what happens as you drop through the layers of a deep GP.}
 
 \endif

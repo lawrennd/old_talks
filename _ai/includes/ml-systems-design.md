@@ -44,6 +44,7 @@ Stuxnet exploited bugs in the software to enter the system and take control, but
 
 One example is asking Siri the question "What is 10 trillion to the power of 1000 minus one? Originally, Siri read out the answer which consists of thirteen thousand nines in sequence. It would take Siri over an hour to read out this answer, likely draining the battery of the iPhone. The answer could only be interrupted by forcing Siri to close. The answer is correct, but foolish. Apple has now updated the iPhone to relate the answer in less than an hour.
 
-\includeyoutube{1y2UKz47gew}
 }
+
+\include{_ai/includes/peppercorns.md}
 \endif
