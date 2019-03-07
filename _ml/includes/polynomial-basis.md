@@ -30,10 +30,11 @@ $$
 $$
 
 \slides{
+\define{width}{80%}
 \startanimation{polynomial_basis}{1}{3}
-\newframe{\includediagram{../slides/diagrams/ml/polynomial_basis001}}{polynomial_basis}
-\newframe{\includediagram{../slides/diagrams/ml/polynomial_basis002}}{polynomial_basis}
-\newframe{\includediagram{../slides/diagrams/ml/polynomial_basis003}}{polynomial_basis}
+\newframe{\includediagram{../slides/diagrams/ml/polynomial_basis001}{\width}}{polynomial_basis}
+\newframe{\includediagram{../slides/diagrams/ml/polynomial_basis002}{\width}}{polynomial_basis}
+\newframe{\includediagram{../slides/diagrams/ml/polynomial_basis003}{\width}}{polynomial_basis}
 \endanimation
 }
 \notes{\figure{\includediagram{../slides/diagrams/ml/polynomial_basis003}{80%}}{A polynomial basis is made up of different degrees of polynomial.}{polynomial-basis-3}}
