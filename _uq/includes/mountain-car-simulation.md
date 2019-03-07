@@ -102,7 +102,7 @@ anim=mc.animate_frames(frames, 'Random linear controller')}
 
 \newslide{Random Linear Controller}
 
-\figure{\includehtml{../slides/diagrams/uq/mountain_car_random.html}{1024}{768}}{Random linear controller for the Mountain car. It fails to move the car to the top of the mountain.}{mountain-car-random}
+\figure{\includehtml{../slides/diagrams/uq/mountain_car_random.html}{70%}{auto}}{Random linear controller for the Mountain car. It fails to move the car to the top of the mountain.}{mountain-car-random}
 
 
 \notes{As we can see the random linear controller does not manage to push the car to the top of the mountain. Now, let's optimize the regret using Bayesian optimization and the emulator for the reward. We try 50 new parameters chosen by the EI.}
