@@ -46,5 +46,5 @@ One example is asking Siri the question "What is 10 trillion to the power of 100
 
 }
 
-\include{_ai/includes/peppercorns.md}
+\include{_ai/includes/peppercorn.md}
 \endif

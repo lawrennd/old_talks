@@ -48,7 +48,7 @@ We become exposed to mischief and adversaries. Adversaries intentially may wish 
 
 
 \include{_ai/includes/intelligent-system-paolo.md}
-\include{_ai/includes/peppercorns.md}
+\include{_ai/includes/peppercorn.md}
 
 
 \newslide{Turnaround And Update}
@@ -59,11 +59,6 @@ We become exposed to mischief and adversaries. Adversaries intentially may wish 
 * Interface between security engineering and machine learning.
 }
 
-\newslide{Peppercorns}
-\slides{
-* A new name for system failures which aren't bugs.
-* Difference between finding a fly in your soup vs a peppercorn in your soup. 
-}
 
 \ifdef{blogPosts}
 \defeval{\blogPosts}{
