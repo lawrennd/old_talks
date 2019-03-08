@@ -1,10 +1,16 @@
 ---
 title: Where Next for AI?
 venue: CWTech AI Conference
-layout: slides
 date: 2017-10-02
-author: Neil D. Lawrence
-affiliation: Amazon and University of Sheffield
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
+  institute: Amazon Cambridge and University of Sheffield
+  twitter: lawrennd
+  url: http://inverseprobability.com
+transition: None
+incremental: True
 ---
 
 \include{_data-science/includes/gartner-hype-cycle-ai-bd-dl.md}
