@@ -26,9 +26,25 @@ categories:
   $${% include talk-notation.tex %}$$
 </div>
 
+<script src="/talks/figure-magnify.js"></script>
+<script src="/talks/figure-animate.js"></script>
+    
+<div id="modal-frame" class="modal">
+  <span class="close" onclick="closeMagnify()">&times;</span>
+  <div class="modal-figure">
+    <div class="figure-frame">
+      <div class="modal-content" id="modal01"></div>
+      <!--<img class="modal-content" id="object01">-->
+    </div>
+    <div class="caption-frame" id="modal-caption"></div>
+  </div>
+</div>	  
+
 <!-- Front matter -->
 <p>.</p>
+<!---->
 <!--Back matter-->
+<p>.</p>
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
 <h3 id="section" class="slide:" data-transition="none"></h3>
 <p><img src="../slides/diagrams/the-diving-bell-and-the-butterfly.jpg" width="40%" align="center" style="background:none; border:none; box-shadow:none;"></p>
@@ -116,48 +132,115 @@ categories:
 <p>If intelligence is fundamentally about processing and sharing of information. This gives us a fundamental constraint on human intelligence that dictates its nature.</p>
 <p>I call this ratio between the time it takes to compute something, and the time it takes to say it, the embodiment factor. Because it reflects how embodied our cognition is.</p>
 <p>If it takes you two minutes to say the thing you have thought in a second, then you are a computer. If it takes you 15 billion years, then you are a human.</p>
+<div class="figure">
+<div id="lotus-49-figure" class="figure-frame">
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/Lotus_49-2.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+</div>
+<div id="lotus-49-magnify" class="magnify" onclick="magnifyFigure(&#39;lotus-49&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="lotus-49-caption" class="caption-frame">
+<p>Figure: The Lotus 49, view from the rear. The Lotus 49 was one of the last Formula One cars before the introduction of aerodynamic aids.</p>
+</div>
+</div>
+<p>So when it comes to our ability to compute we are extraordinary, not compute in our conscious mind, but the underlying neuron firings that underpin both our consciousness, our subconsciousness as well as our motor control etc.</p>
 <p>If we think of ourselves as vehicles, then we are massively overpowered. Our ability to generate derived information from raw fuel is extraordinary. Intellectually we have formula one engines.</p>
+<p>But in terms of our ability to deploy that computation in actual use, to share the results of what we have inferred, we are very limited. So when you imagine the F1 car that represents a psyche, think of an F1 car with bicycle wheels.</p>
+<div class="figure">
+<div id="marcel-renault-figure" class="figure-frame">
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/640px-Marcel_Renault_1903.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<p>But, if you think about our ability to make use of those thoughts, to deploy them on the track, we are F1 cars with bicycle wheels.</p>
+</div>
+<div id="marcel-renault-magnify" class="magnify" onclick="magnifyFigure(&#39;marcel-renault&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="marcel-renault-caption" class="caption-frame">
+<p>Figure: Marcel Renault races a Renault 40 cv during the Paris-Madrid race, an early Grand Prix, in 1903. Marcel died later in the race after missing a warning flag for a sharp corner at Couhé Vérac, likely due to dust reducing visibility.</p>
+</div>
+</div>
 <p>Just think of the control a driver would have to have to deploy such power through such a narrow channel of traction. That is the beauty and the skill of the human mind.</p>
+<p>In contrast, our computers are more like go-karts. Underpowered, but with well-matched tires. They can communicate far more fluidly. They are more efficient, but somehow less extraordinary, less beautiful.</p>
+<div class="figure">
+<div id="caleb-mcduff-figure" class="figure-frame">
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/Caleb_McDuff_WIX_Silence_Racing_livery.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<p>In contrast, our computers are more like go-karts. Underpowered, but with well-matched tires. More efficient, but somehow less extraordinary, less beautiful.</p>
+</div>
+<div id="caleb-mcduff-magnify" class="magnify" onclick="magnifyFigure(&#39;caleb-mcduff&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="caleb-mcduff-caption" class="caption-frame">
+<p>Figure: Caleb McDuff driving for WIX Silence Racing.</p>
+</div>
+</div>
 <h2 id="human-communication-edit">Human Communication <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/conversation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/conversation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>For human conversation to work, we require an internal model of who we are speaking to. We model each other, and combine our sense of who they are, who they think we are, and what has been said. This is our approach to dealing with the limited bandwidth connection we have. Empathy and understanding of intent. Mental dispositional concepts are used to augment our limited communication bandwidth.</p>
 <p>Fritz Heider referred to the important point of a conversation as being that they are happenings that are &quot;<em>psychologically represented</em> in each of the participants&quot; (his emphasis) <span class="citation">(Heider 1958)</span></p>
+<h3 id="bandwidth-constrained-conversations">Bandwidth Constrained Conversations</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
 <span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;anne-bob-conversation</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, 
                             <span class="st">&#39;../slides/diagrams&#39;</span>,  sample<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">1</span>))</code></pre></div>
-<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation006.svg" style="vertical-align:middle;">
+<div class="figure">
+<div id="anne-bob-conversation-civil-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/anne-bob-conversation006.svg" width="70%" style=" ">
 </object>
-<center>
-<em>Conversation relies on internal models of other individuals.</em>
-</center>
-<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation007.svg" style="vertical-align:middle;">
+</div>
+<div id="anne-bob-conversation-civil-magnify" class="magnify" onclick="magnifyFigure(&#39;anne-bob-conversation-civil&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="anne-bob-conversation-civil-caption" class="caption-frame">
+<p>Figure: Conversation relies on internal models of other individuals.</p>
+</div>
+</div>
+<div class="figure">
+<div id="anne-bob-conversation-argument-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/anne-bob-conversation007.svg" width="70%" style=" ">
 </object>
-<center>
-<em>Misunderstanding of context and who we are talking to leads to arguments.</em>
-</center>
+</div>
+<div id="anne-bob-conversation-argument-magnify" class="magnify" onclick="magnifyFigure(&#39;anne-bob-conversation-argument&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="anne-bob-conversation-argument-caption" class="caption-frame">
+<p>Figure: Misunderstanding of context and who we are talking to leads to arguments.</p>
+</div>
+</div>
 <p>Embodiment factors imply that, in our communication between humans, what is <em>not</em> said is, perhaps, more important than what is said. To communicate with each other we need to have a model of who each of us are.</p>
 <p>To aid this, in society, we are required to perform roles. Whether as a parent, a teacher, an employee or a boss. Each of these roles requires that we conform to certain standards of behaviour to facilitate communication between ourselves.</p>
 <p>Control of self is vitally important to these communications.</p>
 <p>The high availability of data available to humans undermines human-to-human communication channels by providing new routes to undermining our control of self.</p>
-<object class="svgplot " align data="../slides/diagrams/data-science/hilbert-info-growth.svg" style="vertical-align:middle;">
+<div class="figure">
+<div id="hilbert-info-growth-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/data-science/hilbert-info-growth.svg" width="80%" style=" ">
 </object>
+</div>
+<div id="hilbert-info-growth-magnify" class="magnify" onclick="magnifyFigure(&#39;hilbert-info-growth&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="hilbert-info-growth-caption" class="caption-frame">
+<p>Figure: The Global storage capacity between 1986 and 2007 <span class="citation">Hilbert and López (2011)</span></p>
+</div>
+</div>
+<h3 id="a-six-word-novel-edit">A Six Word Novel <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/baby-shoes.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/baby-shoes.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
+<div class="figure">
+<div id="classic-baby-shoes-figure" class="figure-frame">
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/Classic_baby_shoes.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 <center>
-<em>For sale: baby shoes, never worn.</em>
+For sale: baby shoes, never worn
 </center>
+</div>
+<div id="classic-baby-shoes-magnify" class="magnify" onclick="magnifyFigure(&#39;classic-baby-shoes&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="classic-baby-shoes-caption" class="caption-frame">
+<p>Figure: Consider the six word novel, apocraphally credited to Ernest Hemingway, &quot;For sale: baby shoes, never worn&quot;. To understand what that means to a human, you need a great deal of additional context. Context that is not directly accessible to a machine that has not got both the evolved and contextual understanding of our own condition to realize both the implication of the advert and what that implication means emotionally to the previous owner.</p>
+</div>
+</div>
 <p>But this is a very different kind of intelligence than ours. A computer cannot understand the depth of the Ernest Hemingway's apocryphal six word novel: &quot;For Sale, Baby Shoes, Never worn&quot;, because it isn't equipped with that ability to model the complexity of humanity that underlies that statement.</p>
 <h1 id="evolved-relationship-with-information-edit">Evolved Relationship with Information <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/evolved-relationship.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/evolved-relationship.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
 <p>The high bandwidth of computers has resulted in a close relationship between the computer and data. Large amounts of information can flow between the two. The degree to which the computer is mediating our relationship with data means that we should consider it an intermediary.</p>
@@ -168,21 +251,48 @@ categories:
 <p>Better mediation of this flow actually requires a better understanding of human-computer interaction. This in turn involves understanding our own intelligence better, what its cognitive biases are and how these might mislead us.</p>
 <p>For further thoughts see <a href="https://www.theguardian.com/media-network/2015/jul/23/data-driven-economy-marketing">this Guardian article</a> from 2015 on marketing in the internet era.</p>
 <p>You can also check my blog post on <a href="http://inverseprobability.com/2015/12/04/what-kind-of-ai">&quot;System Zero&quot;</a></p>
-<object class="svgplot " align data="../slides/diagrams/data-science/new-flow-of-information002.svg" style="vertical-align:middle;">
+<div class="figure">
+<div id="trinity-human-data-computer-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/data-science/new-flow-of-information002.svg" width="50%" style=" ">
 </object>
-<center>
-<em>The trinity of human, data and computer, and highlights the modern phenomenon. The communication channel between computer and data now has an extremely high bandwidth. The channel between human and computer and the channel between data and human is narrow. New direction of information flow, information is reaching us mediated by the computer.</em>
-</center>
+</div>
+<div id="trinity-human-data-computer-magnify" class="magnify" onclick="magnifyFigure(&#39;trinity-human-data-computer&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="trinity-human-data-computer-caption" class="caption-frame">
+<p>Figure: The trinity of human, data and computer, and highlights the modern phenomenon. The communication channel between computer and data now has an extremely high bandwidth. The channel between human and computer and the channel between data and human is narrow. New direction of information flow, information is reaching us mediated by the computer.</p>
+</div>
+</div>
 <h3 id="rapid-diagnosis-and-consulting-edit">Rapid Diagnosis and Consulting <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/rapid-diagnosis-and-consultation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/rapid-diagnosis-and-consultation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/rapid-diagnosis-and-consultation-save-lives.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 <h3 id="the-assault-on-privacy-edit">The Assault on Privacy <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/the-assault-on-privacy.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/the-assault-on-privacy.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
+<div class="figure">
+<div id="the-assault-on-privacy-figure" class="figure-frame">
 <div class="centered centered" style="">
 <img class="rotateimg90" src="../slides/diagrams/20160609_132315.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+</div>
+<div id="the-assault-on-privacy-magnify" class="magnify" onclick="magnifyFigure(&#39;the-assault-on-privacy&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="the-assault-on-privacy-caption" class="caption-frame">
+<p>Figure: The Assault on Privacy by Arthur Miller. Prepared in 1969 and published in 1970.</p>
+</div>
+</div>
+<div class="figure">
+<div id="the-assault-on-privacy-back-cover-figure" class="figure-frame">
 <div class="centered centered" style="">
 <img class="rotateimg90" src="../slides/diagrams/20160609_132338.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="the-assault-on-privacy-back-cover-magnify" class="magnify" onclick="magnifyFigure(&#39;the-assault-on-privacy-back-cover&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="the-assault-on-privacy-back-cover-caption" class="caption-frame">
+<p>Figure: Today's laser technology already makes it feasible to store a twenty-page dossier on every American on a piece of tape that is less than 5000 feet long.&quot; The warnings of Arthur Miller's book are being realised today, connectivity of the modern internet has been a major driver.</p>
+</div>
 </div>
 <h3 id="edit">1984 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/1984.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/1984.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
 <div class="centered centered" style="">
@@ -200,22 +310,47 @@ categories:
 <li><p>Internet of People</p></li>
 <li><p>Convention for the Protection of Individuals with regard to Automatic Processing of Personal Data (1981/1/28)</p></li>
 </ul>
-<object class="svgplot " align data="../slides/diagrams/anne-computer-conversation.svg" style="vertical-align:middle;">
+<h2 id="computer-conversations-edit">Computer Conversations <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/conversation-computer.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/conversation-computer.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="figure">
+<div id="anne-computer-conversation-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/anne-computer-conversation.svg" width="60%" style=" ">
 </object>
+</div>
+<div id="anne-computer-conversation-magnify" class="magnify" onclick="magnifyFigure(&#39;anne-computer-conversation&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="anne-computer-conversation-caption" class="caption-frame">
+<p>Figure: Our efforts to understand the computer suffer from a lack of a good mental model for what the computer is and how it communicates.</p>
+</div>
+</div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
 <span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;new-flow-of-information</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, 
                             <span class="st">&#39;../slides/diagrams&#39;</span>,  sample<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">1</span>))</code></pre></div>
-<object class="svgplot " align data="../slides/diagrams/anne-computer-conversation006.svg" style="vertical-align:middle;">
+<div class="figure">
+<div id="anne-computer-conversation-6-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/anne-computer-conversation006.svg" width="80%" style=" ">
 </object>
-<center>
-<em>Conversation relies on internal models of other individuals.</em>
-</center>
-<object class="svgplot " align data="../slides/diagrams/anne-computer-conversation007.svg" style="vertical-align:middle;">
+</div>
+<div id="anne-computer-conversation-6-magnify" class="magnify" onclick="magnifyFigure(&#39;anne-computer-conversation-6&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="anne-computer-conversation-6-caption" class="caption-frame">
+<p>Figure: Conversation relies on internal models of other individuals.</p>
+</div>
+</div>
+<div class="figure">
+<div id="anne-computer-conversation-8-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/anne-computer-conversation007.svg" width="80%" style=" ">
 </object>
-<center>
-<em>Misunderstanding of context and who we are talking to leads to arguments.</em>
-</center>
+</div>
+<div id="anne-computer-conversation-8-magnify" class="magnify" onclick="magnifyFigure(&#39;anne-computer-conversation-8&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="anne-computer-conversation-8-caption" class="caption-frame">
+<p>Figure: Misunderstanding of context and who we are talking to leads to arguments.</p>
+</div>
+</div>
 <p>Similarly, we find it difficult to comprehend how computers are making decisions. Because they do so with more data than we can possibly imagine.</p>
 <p>In many respects, this is not a problem, it's a good thing. Computers and us are good at different things. But when we interact with a computer, when it acts in a different way to us, we need to remember why.</p>
 <p>Just as the first step to getting along with other humans is understanding other humans, so it needs to be with getting along with our computers.</p>
@@ -227,19 +362,37 @@ categories:
 <p>In reality, the challenge is that our computers cannot be human enough. They cannot understand us with the depth we understand one another. They drop below our cognitive radar and operate outside our mental models.</p>
 <p>The real danger is that computers don’t anthropomorphize. They’ll make decisions in isolation from us without our supervision, because they can’t communicate truly and deeply with us.</p>
 <h2 id="data-science-africa-edit">Data Science Africa <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-science-africa.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-science-africa.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="figure">
+<div id="data-science-africa-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/data-science-africa-logo.png" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="data-science-africa-magnify" class="magnify" onclick="magnifyFigure(&#39;data-science-africa&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="data-science-africa-caption" class="caption-frame">
+<p>Figure: Data Science Africa <a href="http://datascienceafrica.org" class="uri">http://datascienceafrica.org</a> is a ground up initiative for capacity building around data science, machine learning and artificial intelligence on the African continent.</p>
+</div>
 </div>
 <p>Data Science Africa is a bottom up initiative for capacity building in data science, machine learning and artificial intelligence on the African continent.</p>
 <p>As of 2019 there have been five colocated schools and workshops located in Nyeri, Kenya (twice); Kampala, Uganda; Arusha, Tanzania and Abuja, Nigeria. In 2019 there are two events scheduled in Addis Ababa, Ethiopia and Accra, Ghana.</p>
 <p>The main notion is <em>end-to-end</em> data science. E.g., going from data collection in the farmer's field to decision making in the Ministry of Agriculture. Or from malaria counts in health centers, to medicine distribution.</p>
 <p>The philosophy is laid out in <span class="citation">(Lawrence 2015)</span>. The key idea is that the modern <em>information infrastructure</em> presents new solutions to old problems. Modes of development change because less capital investment is required to take advantage of this infrastructure. The philosophy is that local capacity building is the right way to leverage these challenges in addressing data science problems in the African context.</p>
 <p>Data Science Africa is now a non-govermental organization registered in Kenya. The organising board of the meeting is entirely made up of scientists and academics based on the African continent.</p>
-<a href="https://www.theguardian.com/media-network/2015/aug/25/africa-benefit-data-science-information" target="_blank" >
+<div class="figure">
+<div id="africa-benefit-data-revolution-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/data-science/africa-benefit-data-revolution.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<p></a></p>
+</div>
+<div id="africa-benefit-data-revolution-magnify" class="magnify" onclick="magnifyFigure(&#39;africa-benefit-data-revolution&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="africa-benefit-data-revolution-caption" class="caption-frame">
+<p>Figure: The lack of existing physical infrastructure on the African continent makes it a particularly interesting environment for deploying solutions based on the <em>information infrastructure</em>. The idea is explored more in this <a href="https://www.theguardian.com/media-network/2015/aug/25/africa-benefit-data-science-information" target="_blank" >this Guardian Op-ed</a>.</p>
+</div>
+</div>
 <h3 id="thinking-fast-and-slow-edit">Thinking Fast and Slow <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/thinking-fast-and-slow.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/thinking-fast-and-slow.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
 <div class="centered centered" style="">
 <img class="" src=".jpg" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
@@ -253,24 +406,37 @@ categories:
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/Elephantboyposter.jpg.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+<h1 id="deep-learning-edit">Deep Learning <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-overview.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-overview.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
 <!-- No slide titles in this context -->
-<h2 id="deep-learning-edit">Deep Learning <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-overview.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-overview.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
-<h1 id="deep-learning">Deep Learning</h1>
 <h3 id="deepface-edit">DeepFace <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-face.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-face.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
+<div class="figure">
+<div id="deep-face-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/deepface_neg.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<center>
-<em>The DeepFace architecture <span class="citation">(Taigman et al. 2014)</span>, visualized through colors to represent the functional mappings at each layer. There are 120 million parameters in the model.</em>
-</center>
-<p>The DeepFace architecture <span class="citation">(Taigman et al. 2014)</span> consists of layers that deal with <em>translation</em> and <em>rotational</em> invariances. These layers are followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected layers.</p>
+</div>
+<div id="deep-face-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-face&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="deep-face-caption" class="caption-frame">
+<p>Figure: The DeepFace architecture <span class="citation">(Taigman et al. 2014)</span>, visualized through colors to represent the functional mappings at each layer. There are 120 million parameters in the model.</p>
+</div>
+</div>
+<p>The DeepFace architecture <span class="citation">(Taigman et al. 2014)</span> consists of layers that deal with <em>translation</em> and <em>rotational</em> invariances. These layers are followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The neural network includes more than 120 million parameters, where more than 95% come from the local and fully connected layers.</p>
 <h3 id="deep-learning-as-pinball-edit">Deep Learning as Pinball <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-as-pinball.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-as-pinball.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
+<div class="figure">
+<div id="early-pinball-figure" class="figure-frame">
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/576px-Early_Pinball.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<center>
-<em>Deep learning models are composition of simple functions. We can think of a pinball machine as an analogy. Each layer of pins corresponds to one of the layers of functions in the model. Input data is represented by the location of the ball from left to right when it is dropped in from the top. Output class comes from the position of the ball as it leaves the pins at the bottom.</em>
-</center>
+</div>
+<div id="early-pinball-magnify" class="magnify" onclick="magnifyFigure(&#39;early-pinball&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="early-pinball-caption" class="caption-frame">
+<p>Figure: Deep learning models are composition of simple functions. We can think of a pinball machine as an analogy. Each layer of pins corresponds to one of the layers of functions in the model. Input data is represented by the location of the ball from left to right when it is dropped in from the top. Output class comes from the position of the ball as it leaves the pins at the bottom.</p>
+</div>
+</div>
 <p>Sometimes deep learning models are described as being like the brain, or too complex to understand, but one analogy I find useful to help the gist of these models is to think of them as being similar to early pin ball machines.</p>
 <p>In a deep neural network, we input a number (or numbers), whereas in pinball, we input a ball.</p>
 <p>Think of the location of the ball on the left-right axis as a single number. Our simple pinball machine can only take one number at a time. As the ball falls through the machine, each layer of pins can be thought of as a different layer of 'neurons'. Each layer acts to move the ball from left to right.</p>
@@ -281,19 +447,33 @@ categories:
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;pinball</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, 
                             <span class="st">&#39;../slides/diagrams&#39;</span>,
                             sample<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>))</code></pre></div>
-<object class="svgplot " align data="../slides/diagrams/pinball001.svg" style="vertical-align:middle;">
+<div class="figure">
+<div id="pinball-initialization-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/pinball001.svg" width="80%" style=" ">
 </object>
-<center>
-<em>At initialization, the pins, which represent the parameters of the function, aren't in the right place to bring the balls to the correct decisions.</em>
-</center>
-<object class="svgplot " align data="../slides/diagrams/pinball002.svg" style="vertical-align:middle;">
+</div>
+<div id="pinball-initialization-magnify" class="magnify" onclick="magnifyFigure(&#39;pinball-initialization&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="pinball-initialization-caption" class="caption-frame">
+<p>Figure: At initialization, the pins, which represent the parameters of the function, aren't in the right place to bring the balls to the correct decisions.</p>
+</div>
+</div>
+<div class="figure">
+<div id="pinball-trained-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/pinball002.svg" width="80%" style=" ">
 </object>
-<center>
-<em>After learning the pins are now in the right place to bring the balls to the correct decisions.</em>
-</center>
+</div>
+<div id="pinball-trained-magnify" class="magnify" onclick="magnifyFigure(&#39;pinball-trained&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="pinball-trained-caption" class="caption-frame">
+<p>Figure: After learning the pins are now in the right place to bring the balls to the correct decisions.</p>
+</div>
+</div>
 <p>Learning involves moving all the pins to be in the correct position, so that the ball ends up in the right place when it's fallen through the machine. But moving all these pins in hyperspace can be difficult.</p>
-<p>In a hyper-space you have to put a lot of data through the machine for to explore the positions of all the pins. <em>Adversarial examples</em> exploit this idea.</p>
-<p>If you have access to the pinball machine, you can use gradient methods to find a position for the ball in the hyper space where the image looks like one thing, but will be classified as another.</p>
+<p>In a hyper-space you have to put a lot of data through the machine for to explore the positions of all the pins. Even when you feed many millions of data points through the machine, there are likely to be regions in the hyper-space where no ball has passed. When future test data passes through the machine in a new route unusual things can happen.</p>
+<p><em>Adversarial examples</em> exploit this high dimensional space. If you have access to the pinball machine, you can use gradient methods to find a position for the ball in the hyper space where the image looks like one thing, but will be classified as another.</p>
 <p>Probabilistic methods explore more of the space by considering a range of possible paths for the ball through the machine. This helps to make them more data efficient and gives some robustness to adversarial examples.</p>
 <h3 id="the-mechanical-elephant-edit">The Mechanical Elephant <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/mechanical-elephant.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/mechanical-elephant.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
 <div class="centered centered" style="">
@@ -304,7 +484,7 @@ categories:
 <img class="" src="../slides/diagrams/The_hindoo_earth.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 <h3 id="user-centric-data-edit">User Centric Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/user-centric-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/user-centric-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
-<object class="svgplot " align data="../slides/diagrams/user-centric-data.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/user-centric-data.svg" width style=" ">
 </object>
 <!--Ruth Gavison:
 
@@ -325,6 +505,9 @@ Consent is neither necessary nor sufficient for giving up privacy.-->
 <div id="refs" class="references">
 <div id="ref-Heider:interpersonal58">
 <p>Heider, Fritz. 1958. <em>The Psychology of Interpersonal Relations</em>. John Wiley.</p>
+</div>
+<div id="ref-Hilbert:information11">
+<p>Hilbert, Martin, and Priscila López. 2011. “The World’s Technological Capcity to Store, Communicate and Compute Information.” <em>Science</em> 332 (6025): 60–65. doi:<a href="https://doi.org/10.1126/science.1200970">10.1126/science.1200970</a>.</p>
 </div>
 <div id="ref-Lawrence:dsa15">
 <p>Lawrence, Neil D. 2015. “How Africa Can Benefit from the Data Revolution.” The Guardian Media &amp; Tech Network. <a href="https://www.theguardian.com/media-network/2015/aug/25/africa-benefit-data-science-information" class="uri">https://www.theguardian.com/media-network/2015/aug/25/africa-benefit-data-science-information</a>.</p>

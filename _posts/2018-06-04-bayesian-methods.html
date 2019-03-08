@@ -42,6 +42,7 @@ categories:
 <p>.</p>
 <!---->
 <!--Back matter-->
+<p>.</p>
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
 <h1 id="what-is-machine-learning-edit">What is Machine Learning? <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
 <p>What is machine learning? At its most basic level machine learning is a combination of</p>
@@ -102,7 +103,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
                   frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <div class="figure">
 <div id="olympic-marathon-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/datasets/olympic-marathon.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/datasets/olympic-marathon.svg" width style=" ">
 </object>
 </div>
 <div id="olympic-marathon-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-marathon&#39;)">
@@ -125,7 +126,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 <p>The solution to these two simultaneous equations can be represented graphically as</p>
 <div class="figure">
 <div id="over-determined-system-3-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/over_determined_system003.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/over_determined_system003.svg" width="40%" style=" ">
 </object>
 </div>
 <div id="over-determined-system-3-magnify" class="magnify" onclick="magnifyFigure(&#39;over-determined-system-3&#39;)">
@@ -137,10 +138,9 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </div>
 <p>The challenge comes when a third data point is observed and it doesn't naturally fit on the straight line.</p>
 <p>point 3: <span class="math inline">$\inputScalar = 2$</span>, <span class="math inline">$\dataScalar=2.5$</span> <br /><span class="math display">2.5 = 2<em>m</em> + <em>c</em></span><br /></p>
-{
 <div class="figure">
 <div id="over-determined-system-4-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/over_determined_system004.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/over_determined_system004.svg" width="40%" style=" ">
 </object>
 </div>
 <div id="over-determined-system-4-magnify" class="magnify" onclick="magnifyFigure(&#39;over-determined-system-4&#39;)">
@@ -151,10 +151,9 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </div>
 </div>
 <p>Now there are three candidate lines, each consistent with our data.</p>
-{
 <div class="figure">
 <div id="over-determined-system-7-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/over_determined_system007.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/over_determined_system007.svg" width="40%" style=" ">
 </object>
 </div>
 <div id="over-determined-system-7-magnify" class="magnify" onclick="magnifyFigure(&#39;over-determined-system-7&#39;)">
@@ -244,7 +243,7 @@ $$</span><br /></p>
   \end{align}$$</span><br /></p>
 <div class="figure">
 <div id="gaussian-of-height-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/gaussian_of_height.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/gaussian_of_height.svg" width="60%" style=" ">
 </object>
 </div>
 <div id="gaussian-of-height-magnify" class="magnify" onclick="magnifyFigure(&#39;gaussian-of-height&#39;)">
@@ -430,7 +429,7 @@ c_true <span class="op">=</span> <span class="op">-</span><span class="fl">3.1</
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">y <span class="op">=</span> m_true<span class="op">*</span>x<span class="op">+</span>c_true</code></pre></div>
 <div class="figure">
 <div id="linear-regression-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/regression.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/regression.svg" width="60%" style=" ">
 </object>
 </div>
 <div id="linear-regression-magnify" class="magnify" onclick="magnifyFigure(&#39;linear-regression&#39;)">
@@ -448,7 +447,7 @@ plt.xlim([<span class="op">-</span><span class="dv">3</span>, <span class="dv">3
 mlai.write_figure(filename<span class="op">=</span><span class="st">&quot;../slides/diagrams/ml/regression_noise.svg&quot;</span>, transparent<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <div class="figure">
 <div id="linear-regression-noise-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/regression_noise.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/regression_noise.svg" width="60%" style=" ">
 </object>
 </div>
 <div id="linear-regression-noise-magnify" class="magnify" onclick="magnifyFigure(&#39;linear-regression-noise&#39;)">
@@ -481,7 +480,7 @@ c_vals <span class="op">=</span> np.linspace(c_true<span class="op">-</span><spa
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>load <span class="op">-</span>s regression_contour teaching_plots.py</code></pre></div>
 <div class="figure">
 <div id="regression-contour-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/regression_contour.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/regression_contour.svg" width="60%" style=" ">
 </object>
 </div>
 <div id="regression-contour-magnify" class="magnify" onclick="magnifyFigure(&#39;regression-contour&#39;)">
@@ -530,7 +529,7 @@ c)$$</span><br /></p>
 <h2 id="move-in-direction-of-gradient">Move in Direction of Gradient</h2>
 <div class="figure">
 <div id="regression-contour-step-1-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/regression_contour_step001.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/regression_contour_step001.svg" width="60%" style=" ">
 </object>
 </div>
 <div id="regression-contour-step-1-magnify" class="magnify" onclick="magnifyFigure(&#39;regression-contour-step-1&#39;)">
@@ -571,7 +570,7 @@ m_star <span class="op">=</span> m_star <span class="op">-</span> learn_rate<spa
 {
 <div class="figure">
 <div id="regression-contour-fit-28-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/regression_contour_fit028.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/regression_contour_fit028.svg" width="60%" style=" ">
 </object>
 </div>
 <div id="regression-contour-fit-28-magnify" class="magnify" onclick="magnifyFigure(&#39;regression-contour-fit-28&#39;)">
@@ -632,7 +631,7 @@ c_star <span class="op">=</span> c_star <span class="op">+</span> <span class="d
     directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/mlai&#39;</span>, num<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, num_plots, <span class="dv">1</span>))</code></pre></div>
 <div class="figure">
 <div id="regression-sgd-contour0fit-58-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/regression_sgd_contour_fit058.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/regression_sgd_contour_fit058.svg" width="60%" style=" ">
 </object>
 </div>
 <div id="regression-sgd-contour0fit-58-magnify" class="magnify" onclick="magnifyFigure(&#39;regression-sgd-contour0fit-58&#39;)">
@@ -653,7 +652,7 @@ c_star <span class="op">=</span> c_star <span class="op">+</span> <span class="d
 \mappingFunction(x) = mx + c
 $$</span><br /> the classical form for a straight line. From a linear algebraic perspective we are looking for multiplications and additions. We are also looking to separate our parameters from our data. The data is the <em>givens</em> remember, in French the word is données literally translated means <em>givens</em> that's great, because we don't need to change the data, what we need to change are the parameters (or variables) of the model. In this function the data comes in through <span class="math inline"><em>x</em></span>, and the parameters are <span class="math inline"><em>m</em></span> and <span class="math inline"><em>c</em></span>.</p>
 <p>What we'd like to create is a vector of parameters and a vector of data. Then we could represent the system with vectors that represent the data, and vectors that represent the parameters.</p>
-<p>We look to turn the multiplications and additions into a linear algebraic form, we have one multiplication (<span class="math inline"><em>m</em> × <em>c</em></span> and one addition (<span class="math inline"><em>m</em><em>x</em> + <em>c</em></span>). But we can turn this into a inner product by writing it in the following way, <br /><span class="math display">$$
+<p>We look to turn the multiplications and additions into a linear algebraic form, we have one multiplication (<span class="math inline"><em>m</em> × <em>c</em></span>) and one addition (<span class="math inline"><em>m</em><em>x</em> + <em>c</em></span>). But we can turn this into a inner product by writing it in the following way, <br /><span class="math display">$$
 \mappingFunction(x) = m \times x +
 c \times 1,
 $$</span><br /> in other words we've extracted the unit value, from the offset, <span class="math inline"><em>c</em></span>. We can think of this unit value like an extra item of data, because it is always given to us, and it is always set to 1 (unlike regular data, which is likely to vary!). We can therefore write each input data location, <span class="math inline">$\inputVector$</span>, as a vector <br /><span class="math display">$$
@@ -777,7 +776,7 @@ $$</span><br /> where a <span class="math inline">(1 × 1)</span> matrix is 
 $$</span><br /> Note that in the special case where <span class="math inline"><strong>C</strong></span> is symmetric then we have <span class="math inline"><strong>C</strong> = <strong>C</strong><sup>⊤</sup></span> and the derivative simplifies to <br /><span class="math display">$$
 \frac{\text{d}}{\text{d}\mathbf{z}} \mathbf{z}^\top\mathbf{C}\mathbf{z}=
 2\mathbf{C}\mathbf{z}.
-$$</span><br />}</p>
+$$</span><br /></p>
 <h2 id="differentiate-the-objective">Differentiate the Objective</h2>
 <p>First, we need to compute the full objective by substituting our prediction function into the objective function to obtain the objective in terms of <span class="math inline">$\mappingVector$</span>. Doing this we obtain <br /><span class="math display">$$
 \errorFunction(\mappingVector)= (\dataVector - \inputMatrix\mappingVector)^\top (\dataVector - \inputMatrix\mappingVector).
@@ -832,10 +831,31 @@ y <span class="op">=</span> movies[[<span class="st">&#39;IMDB_Rating&#39;</span
 <p>Which shows our model <em>hasn't</em> yet done a great job of representation, because the spread of values is large. We can check what the rating is dominated by in terms of regression coefficients.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">w</code></pre></div>
 <p>Although we have to be a little careful about interpretation because our input values live on different scales, however it looks like we are dominated by the bias, with a small negative effect for later films (but bear in mind the years are large, so this effect is probably larger than it looks) and a positive effect for length. So it looks like long earlier films generally do better, but the residuals are so high that we probably haven't modelled the system very well.</p>
-<iframe width="800" height="600" src="https://www.youtube.com/embed/ui-uNlFHoms?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+<div class="figure">
+<div id="mlai-15-multivariate-regression-figure" class="figure-frame">
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/ui-uNlFHoms?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
-<iframe width="800" height="600" src="https://www.youtube.com/embed/78YNphT90-k?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</div>
+<div id="mlai-15-multivariate-regression-magnify" class="magnify" onclick="magnifyFigure(&#39;mlai-15-multivariate-regression&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="mlai-15-multivariate-regression-caption" class="caption-frame">
+<p>Figure: MLAI Lecture 15 from 2014 on Multivariate Regression.</p>
+</div>
+</div>
+<div class="figure">
+<div id="mlai-3-maximum-likelihood-figure" class="figure-frame">
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/78YNphT90-k?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
+</div>
+<div id="mlai-3-maximum-likelihood-magnify" class="magnify" onclick="magnifyFigure(&#39;mlai-3-maximum-likelihood&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="mlai-3-maximum-likelihood-caption" class="caption-frame">
+<p>Figure: MLAI Lecture 3 from 2012 on Maximum Likelihood</p>
+</div>
+</div>
+<p>}</p>
 <h2 id="solution-with-qr-decomposition">Solution with QR Decomposition</h2>
 <p>Performing a solve instead of a matrix inverse is the more numerically stable approach, but we can do even better. A <a href="http://en.wikipedia.org/wiki/QR_decomposition">QR-decomposition</a> of a matrix factorises it into a matrix which is an orthogonal matrix <span class="math inline"><strong>Q</strong></span>, so that <span class="math inline">$\mathbf{Q}^\top \mathbf{Q} = \eye$</span>. And a matrix which is upper triangular, <span class="math inline"><strong>R</strong></span>. <br /><span class="math display">$$
 \inputMatrix^\top \inputMatrix \boldsymbol{\beta} =
@@ -894,7 +914,7 @@ $$</span><br /> where we are still in the one dimensional input setting so <span
 <p><br /><span class="math display">$$
 \mappingFunction(\inputScalar) = {\color{cyan}\mappingScalar_0}   + {\color{green}\mappingScalar_1 \inputScalar} + {\color{yellow}\mappingScalar_2 \inputScalar^2}
 $$</span><br /></p>
-<p>{figure{<object class="svgplot quadratic-basis-2"  data="../slides/diagrams/ml/\basisfunction002.svg"  style="vertical-align:middle;"></object></p>
+<p>{figure{<object class="svgplot quadratic-basis-2" data="../slides/diagrams/ml/\basisfunction002.svg" width="The set of functions which are combined to form a *quadratic* basis." style=" "></object></p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
 <span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;</span><span class="ch">\b</span><span class="st">asisfunction</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>, 
@@ -905,7 +925,7 @@ $$</span><br /></p>
 <h2 id="quadratic-functions">Quadratic Functions</h2>
 <div class="figure">
 <div id="quadratic-function-2-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/quadratic_function002.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/quadratic_function002.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="quadratic-function-2-magnify" class="magnify" onclick="magnifyFigure(&#39;quadratic-function-2&#39;)">
@@ -942,7 +962,7 @@ basis<span class="op">=</span>mlai.Basis(mlai.polynomial, number<span class="op"
                             num_basis<span class="op">=</span>IntSlider(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">27</span>,<span class="dv">1</span>))</code></pre></div>
 <div class="figure">
 <div id="olympic-lm-polynomial-num-basis-26-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_num_basis026.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_num_basis026.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="olympic-lm-polynomial-num-basis-26-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-lm-polynomial-num-basis-26&#39;)">
@@ -963,7 +983,7 @@ basis<span class="op">=</span>mlai.Basis(mlai.polynomial, number<span class="op"
                             directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, samp<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">1</span>))</code></pre></div>
 <div class="figure">
 <div id="under-determined-system-9-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/under_determined_system009.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/under_determined_system009.svg" width="40%" style=" ">
 </object>
 </div>
 <div id="under-determined-system-9-magnify" class="magnify" onclick="magnifyFigure(&#39;under-determined-system-9&#39;)">
@@ -1017,7 +1037,7 @@ $$</span><br /> then we see that without a model we can't generalise: we only ha
                             stage<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>))</code></pre></div>
 <div class="figure">
 <div id="dem-gaussian-3-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/dem_gaussian003.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/dem_gaussian003.svg" width="70%" style=" ">
 </object>
 </div>
 <div id="dem-gaussian-3-magnify" class="magnify" onclick="magnifyFigure(&#39;dem-gaussian-3&#39;)">
@@ -1048,7 +1068,7 @@ $$</span><br /> then we see that without a model we can't generalise: we only ha
   $$</span><br /></p>
 <div class="figure">
 <div id="height-weight-gaussian-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/height_weight_gaussian.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/height_weight_gaussian.svg" width="70%" style=" ">
 </object>
 </div>
 <div id="height-weight-gaussian-magnify" class="magnify" onclick="magnifyFigure(&#39;height-weight-gaussian&#39;)">
@@ -1067,7 +1087,7 @@ $$</span><br /> then we see that without a model we can't generalise: we only ha
                             fig<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">1</span>))</code></pre></div>
 <div class="figure">
 <div id="independent-height-weight-7-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/independent_height_weight007.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/independent_height_weight007.svg" width="70%" style=" ">
 </object>
 </div>
 <div id="independent-height-weight-7-magnify" class="magnify" onclick="magnifyFigure(&#39;independent-height-weight-7&#39;)">
@@ -1089,7 +1109,7 @@ pods.notebook.display_plots(<span class="st">&#39;correlated_height_weight</span
                             fig<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">1</span>))</code></pre></div>
 <div class="figure">
 <div id="correlated-height-weight-7-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/correlated_height_weight007.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/correlated_height_weight007.svg" width="70%" style=" ">
 </object>
 </div>
 <div id="correlated-height-weight-7-magnify" class="magnify" onclick="magnifyFigure(&#39;correlated-height-weight-7&#39;)">
@@ -1216,12 +1236,32 @@ p(\mappingVector|\dataVector, \inputVector) = \frac{p(\dataVector|\inputVector, 
 $$</span><br /> We've looked at the samples for our function <span class="math inline">$\mappingFunctionVector = \basisMatrix\mappingVector$</span>, which forms the mean of the Gaussian likelihood, under the prior distribution. I.e. we've sampled from <span class="math inline">$p(\mappingVector)$</span> and multiplied the result by the basis matrix. Now we will sample from the posterior density, <span class="math inline">$p(\mappingVector|\dataVector, \inputVector)$</span>, and check that the new samples fit do correspond to the data, i.e. we want to check that the updated distribution includes information from the data set. First we need to compute the posterior mean and <em>covariance</em>.</p>
 <h2 id="bayesian-inference-in-the-univariate-case">Bayesian Inference in the Univariate Case</h2>
 <p>This video talks about Bayesian inference across the single parameter, the offset <span class="math inline"><em>c</em></span>, illustrating how the prior and the likelihood combine in one dimension to form a posterior.</p>
-<iframe width="800" height="600" src="https://www.youtube.com/embed/AvlnFnvFw_0?start=15" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+<div class="figure">
+<div id="univariate-bayesian-inference-video-figure" class="figure-frame">
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/AvlnFnvFw_0?start=15" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
+</div>
+<div id="univariate-bayesian-inference-video-magnify" class="magnify" onclick="magnifyFigure(&#39;univariate-bayesian-inference-video&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="univariate-bayesian-inference-video-caption" class="caption-frame">
+<p>Figure: Univariate Bayesian inference. Lecture 10 from 2012 MLAI Course.</p>
+</div>
+</div>
 <h2 id="multivariate-bayesian-inference">Multivariate Bayesian Inference</h2>
 <p>This section of the lecture talks about how we extend the idea of Bayesian inference for the multivariate case. It goes through the multivariate Gaussian and how to complete the square in the linear algebra as we managed below.</p>
-<iframe width="800" height="600" src="https://www.youtube.com/embed/Os1iqgpelPw?start=1362" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+<div class="figure">
+<div id="multivariate-bayesian-inference-figure" class="figure-frame">
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/Os1iqgpelPw?start=1362" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
+</div>
+<div id="multivariate-bayesian-inference-magnify" class="magnify" onclick="magnifyFigure(&#39;multivariate-bayesian-inference&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="multivariate-bayesian-inference-caption" class="caption-frame">
+<p>Figure: Multivariate Bayesian inference. Lecture 11 from 2012 MLAI course.</p>
+</div>
+</div>
 <p>The lecture informs us the the posterior density for <span class="math inline">$\mappingVector$</span> is given by a Gaussian density with covariance <br /><span class="math display">$$
 \covarianceMatrix_w = \left(\dataStd^{-2}\basisMatrix^\top \basisMatrix + \alpha^{-1}\eye\right)^{-1}
 $$</span><br /> and mean <br /><span class="math display">$$
@@ -1248,7 +1288,7 @@ max_basis <span class="op">=</span> y.shape[<span class="dv">0</span>]</code></p
                             num_basis<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">27</span>, <span class="dv">1</span>))</code></pre></div>
 <div class="figure">
 <div id="olympic-blm-polynomial-number-26-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/olympic_BLM_polynomial_number026.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_BLM_polynomial_number026.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="olympic-blm-polynomial-number-26-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-blm-polynomial-number-26&#39;)">
@@ -1267,7 +1307,7 @@ max_basis <span class="op">=</span> y.shape[<span class="dv">0</span>]</code></p
                             num_basis<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">27</span>, <span class="dv">1</span>))</code></pre></div>
 <div class="figure">
 <div id="olympic-val-blm-polynomial-number-26-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/olympic_val_BLM_polynomial_number026.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_val_BLM_polynomial_number026.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="olympic-val-blm-polynomial-number-26-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-val-blm-polynomial-number-26&#39;)">
@@ -1287,7 +1327,7 @@ max_basis <span class="op">=</span> y.shape[<span class="dv">0</span>]</code></p
                             num_basis<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">27</span>, <span class="dv">1</span>))</code></pre></div>
 <div class="figure">
 <div id="olympic-5cv05-blm-polynomial-number-26-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number026.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number026.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="olympic-5cv05-blm-polynomial-number-26-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-5cv05-blm-polynomial-number-26&#39;)">

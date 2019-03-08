@@ -1,3 +1,3 @@
-BASE=paradoxes-of-the-data-society
+BASE=the-data-delusion
 include ../make-talk-flags.mk
 include ../make-talk.mk

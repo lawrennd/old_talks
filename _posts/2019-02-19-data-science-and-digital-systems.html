@@ -42,13 +42,14 @@ categories:
 <p>.</p>
 <!---->
 <!--Back matter-->
+<p>.</p>
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
 <h1 id="introduction">Introduction</h1>
 <p>The modern world is becoming increasingly dominated by data. In this talk we consider consider the emerging field of <em>data science</em> and what it takes to build a modern digital system. We will look at the challenges we face now and in the future. Finally we end by considering a set of solutions for deploying machine learning systems today. The three Ds of machine learning systems design.</p>
 <h2 id="the-gartner-hype-cycle-edit">The Gartner Hype Cycle <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/gartner-hype-cycle.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/gartner-hype-cycle.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="figure">
 <div id="gartner-hype-cycle-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/Gartner_Hype_Cycle.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/Gartner_Hype_Cycle.svg" width="60%" style=" ">
 </object>
 </div>
 <div id="gartner-hype-cycle-magnify" class="magnify" onclick="magnifyFigure(&#39;gartner-hype-cycle&#39;)">
@@ -64,15 +65,15 @@ categories:
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;ai-bd-dm-dl-ml-google-trends</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, 
                             <span class="st">&#39;../slides/diagrams/data-science/&#39;</span>, sample<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">1</span>))</code></pre></div>
 <div class="figure">
-<div id="gartner-hype-cycle-google-trends-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/data-science/ai-bd-dm-dl-ml-google-trends.svg" style="vertical-align:middle;">
+<div id="ai-bd-dm-dl-ml-gartner-hype-cycle-google-trends-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/data-science/ai-bd-dm-dl-ml-google-trends.svg" width="80%" style=" ">
 </object>
 </div>
-<div id="gartner-hype-cycle-google-trends-magnify" class="magnify" onclick="magnifyFigure(&#39;gartner-hype-cycle-google-trends&#39;)">
+<div id="ai-bd-dm-dl-ml-gartner-hype-cycle-google-trends-magnify" class="magnify" onclick="magnifyFigure(&#39;ai-bd-dm-dl-ml-gartner-hype-cycle-google-trends&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
-<div id="gartner-hype-cycle-google-trends-caption" class="caption-frame">
-<p>Figure: Google trends for different technological terms on the hype cycle.</p>
+<div id="ai-bd-dm-dl-ml-gartner-hype-cycle-google-trends-caption" class="caption-frame">
+<p>Figure: Google trends for 'artificial intelligence', 'big data', 'data mining', 'deep learning', 'machine learning' as different technological terms on the hype cycle.</p>
 </div>
 </div>
 <p>Google trends gives us insight into how far along various technological terms are on the hype cycle.</p>
@@ -202,7 +203,9 @@ communicate
 <p>Figure: The Lotus 49, view from the rear. The Lotus 49 was one of the last Formula One cars before the introduction of aerodynamic aids.</p>
 </div>
 </div>
-<p>So when it comes to our ability to compute we are extraordinary, not compute in our conscious mind, but the underlying neuron firings that underpin both our consciousness, our sbuconsciousness as well as our motor control etc. By analogy I sometimes like to think of us as a Formula One engine. But in terms of our ability to deploy that computation in actual use, to share the results of what we have inferred, we are very limited. So when you imagine the F1 car that represents a psyche, think of an F1 car with bicycle wheels.</p>
+<p>So when it comes to our ability to compute we are extraordinary, not compute in our conscious mind, but the underlying neuron firings that underpin both our consciousness, our subconsciousness as well as our motor control etc.</p>
+<p>If we think of ourselves as vehicles, then we are massively overpowered. Our ability to generate derived information from raw fuel is extraordinary. Intellectually we have formula one engines.</p>
+<p>But in terms of our ability to deploy that computation in actual use, to share the results of what we have inferred, we are very limited. So when you imagine the F1 car that represents a psyche, think of an F1 car with bicycle wheels.</p>
 <div class="figure">
 <div id="marcel-renault-figure" class="figure-frame">
 <div class="centered centered" style="">
@@ -216,7 +219,8 @@ communicate
 <p>Figure: Marcel Renault races a Renault 40 cv during the Paris-Madrid race, an early Grand Prix, in 1903. Marcel died later in the race after missing a warning flag for a sharp corner at Couhé Vérac, likely due to dust reducing visibility.</p>
 </div>
 </div>
-<p>In contrast, our computers have less computational power, but they can communicate far more fluidly. They are more like a go-kart, less well powered, but with tires that allow them to deploy that power.</p>
+<p>Just think of the control a driver would have to have to deploy such power through such a narrow channel of traction. That is the beauty and the skill of the human mind.</p>
+<p>In contrast, our computers are more like go-karts. Underpowered, but with well-matched tires. They can communicate far more fluidly. They are more efficient, but somehow less extraordinary, less beautiful.</p>
 <div class="figure">
 <div id="caleb-mcduff-figure" class="figure-frame">
 <div class="centered centered" style="">
@@ -231,7 +235,7 @@ communicate
 </div>
 </div>
 <p>For humans, that means much of our computation should be dedicated to considering <em>what</em> we should compute. To do that efficiently we need to model the world around us. The most complex thing in the world around us is other humans. So it is no surprise that we model them. We second guess what their intentions are, and our communication is only necessary when they are departing from how we model them. Naturally, for this to work well, we need to understand those we work closely with. So it is no surprise that social communication, social bonding, forms so much of a part of our use of our limited bandwidth.</p>
-<p>There is a second effect here, our need to anthropomorphise objects around us. Our tendency to model our fellow humans extends to when we interact with other entities in our environment. To our pets as well as inanimate objects around us, such as computers or even our cars. This tendency to overinterpret could be a consequence of our limited ability to communicate.</p>
+<p>There is a second effect here, our need to anthropomorphise objects around us. Our tendency to model our fellow humans extends to when we interact with other entities in our environment. To our pets as well as inanimate objects around us, such as computers or even our cars. This tendency to over interpret could be a consequence of our limited ability to communicate.</p>
 <p>For more details see this paper <a href="https://arxiv.org/abs/1705.07996">&quot;Living Together: Mind and Machine Intelligence&quot;</a>, and this <a href="http://inverseprobability.com/talks/lawrence-tedx17/living-together.html">TEDx talk</a>.</p>
 <h1 id="evolved-relationship-with-information-edit">Evolved Relationship with Information <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/evolved-relationship.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/evolved-relationship.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
 <p>The high bandwidth of computers has resulted in a close relationship between the computer and data. Large amounts of information can flow between the two. The degree to which the computer is mediating our relationship with data means that we should consider it an intermediary.</p>
@@ -244,7 +248,7 @@ communicate
 <p>You can also check my blog post on <a href="http://inverseprobability.com/2015/12/04/what-kind-of-ai">&quot;System Zero&quot;</a></p>
 <div class="figure">
 <div id="trinity-human-data-computer-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/data-science/new-flow-of-information002.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/data-science/new-flow-of-information002.svg" width="50%" style=" ">
 </object>
 </div>
 <div id="trinity-human-data-computer-magnify" class="magnify" onclick="magnifyFigure(&#39;trinity-human-data-computer&#39;)">
@@ -290,7 +294,7 @@ communicate
 <p>Figure: The DeepFace architecture <span class="citation">(Taigman et al. 2014)</span>, visualized through colors to represent the functional mappings at each layer. There are 120 million parameters in the model.</p>
 </div>
 </div>
-<p>The DeepFace architecture <span class="citation">(Taigman et al. 2014)</span> consists of layers that deal with <em>translation</em> and <em>rotational</em> invariances. These layers are followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected layers.</p>
+<p>The DeepFace architecture <span class="citation">(Taigman et al. 2014)</span> consists of layers that deal with <em>translation</em> and <em>rotational</em> invariances. These layers are followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The neural network includes more than 120 million parameters, where more than 95% come from the local and fully connected layers.</p>
 <h3 id="deep-learning-as-pinball-edit">Deep Learning as Pinball <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-as-pinball.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-as-pinball.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
 <div class="figure">
 <div id="early-pinball-figure" class="figure-frame">
@@ -317,7 +321,7 @@ communicate
                             sample<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>))</code></pre></div>
 <div class="figure">
 <div id="pinball-initialization-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/pinball001.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/pinball001.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="pinball-initialization-magnify" class="magnify" onclick="magnifyFigure(&#39;pinball-initialization&#39;)">
@@ -329,7 +333,7 @@ communicate
 </div>
 <div class="figure">
 <div id="pinball-trained-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/pinball002.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/pinball002.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="pinball-trained-magnify" class="magnify" onclick="magnifyFigure(&#39;pinball-trained&#39;)">
@@ -438,7 +442,7 @@ communicate
                             directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/&#39;</span>, samp<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">4</span>))</code></pre></div>
 <div class="figure">
 <div id="pomdp-credit-assignment-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/pomdp004.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/pomdp004.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="pomdp-credit-assignment-magnify" class="magnify" onclick="magnifyFigure(&#39;pomdp-credit-assignment&#39;)">
@@ -496,7 +500,7 @@ communicate
                             <span class="st">&#39;../slides/diagrams&#39;</span>,  sample<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">1</span>))</code></pre></div>
 <div class="figure">
 <div id="anne-bob-conversation-civil-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/anne-bob-conversation006.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/anne-bob-conversation006.svg" width="70%" style=" ">
 </object>
 </div>
 <div id="anne-bob-conversation-civil-magnify" class="magnify" onclick="magnifyFigure(&#39;anne-bob-conversation-civil&#39;)">
@@ -508,7 +512,7 @@ communicate
 </div>
 <div class="figure">
 <div id="anne-bob-conversation-argument-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/anne-bob-conversation007.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/anne-bob-conversation007.svg" width="70%" style=" ">
 </object>
 </div>
 <div id="anne-bob-conversation-argument-magnify" class="magnify" onclick="magnifyFigure(&#39;anne-bob-conversation-argument&#39;)">
@@ -575,7 +579,7 @@ communicate
 </div>
 </div>
 <h2 id="example-prediction-of-malaria-incidence-in-uganda-edit">Example: Prediction of Malaria Incidence in Uganda <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_health/includes/malaria-gp.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_health/includes/malaria-gp.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
-<p><span style="text-align:right"><img class="" src="../slides/diagrams/people/2013_03_28_180606.JPG" width="1.5cm" align="" style="background:none; border:none; box-shadow:none; position:absolute; clip:rect(2662px,1780px,1110px,600px);vertical-align:middle"></span></p>
+<p><span style="text-align:right"><img class="" src="../slides/diagrams/people/2013_03_28_180606.JPG" width="1.5cm" style="background:none; border:none; box-shadow:none; position:absolute; clip:rect(2662px,1780px,1110px,600px);vertical-align:middle"></span></p>
 <p>As an example of using Gaussian process models within the full pipeline from data to decsion, we'll consider the prediction of Malaria incidence in Uganda. For the purposes of this study malaria reports come in two forms, HMIS reports from health centres and Sentinel data, which is curated by the WHO. There are limited sentinel sites and many HMIS sites.</p>
 <p>The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboration with John Quinn and Martin Mubangizi <span class="citation">(Andrade-Pacheco et al. 2014; Mubangizi et al. 2014)</span>. John and Martin were initally from the AI-DEV group from the University of Makerere in Kampala and more latterly they were based at UN Global Pulse in Kampala.</p>
 <p>Malaria data is spatial data. Uganda is split into districts, and health reports can be found for each district. This suggests that models such as conditional random fields could be used for spatial modelling, but there are two complexities with this. First of all, occasionally districts split into two. Secondly, sentinel sites are a specific location within a district, such as Nagongera which is a sentinel site based in the Tororo district.</p>
@@ -596,14 +600,14 @@ communicate
 <p>The common standard for collecting health data on the African continent is from the Health management information systems (HMIS). However, this data suffers from missing values <span class="citation">(Gething et al. 2006)</span> and diagnosis of diseases like typhoid and malaria may be confounded.</p>
 <div class="figure">
 <div id="tororo-district-in-uganda-figure" class="figure-frame">
-<object class="50%" align data="../slides/diagrams/health/Tororo_District_in_Uganda.svg" style="vertical-align:middle">
+<object class width="50%" data="../slides/diagrams/health/Tororo_District_in_Uganda.svg">
 </object>
 </div>
 <div id="tororo-district-in-uganda-magnify" class="magnify" onclick="magnifyFigure(&#39;tororo-district-in-uganda&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
 <div id="tororo-district-in-uganda-caption" class="caption-frame">
-<p>Figure: The Tororo district, where the sentinel site, Nagongera is located.</p>
+<p>Figure: The Tororo district, where the sentinel site, Nagongera, is located.</p>
 </div>
 </div>
 <p><a href="https://www.who.int/immunization/monitoring_surveillance/burden/vpd/surveillance_type/sentinel/en/">World Health Organization Sentinel Surveillance systems</a> are set up &quot;when high-quality data are needed about a particular disease that cannot be obtained through a passive system&quot;. Several sentinel sites give accurate assessment of malaria disease levels in Uganda, including a site in Nagongera.</p>
@@ -624,7 +628,7 @@ communicate
 <p>The aim of the project was to use WHO Sentinel sites, alongside rainfall and temperature, to improve predictions from HMIS data of levels of malaria.</p>
 <div class="figure">
 <div id="mubende-district-in-uganda-figure" class="figure-frame">
-<object class="50%" align data="../slides/diagrams/health/Mubende_District_in_Uganda.svg" style="vertical-align:middle">
+<object class width="50%" data="../slides/diagrams/health/Mubende_District_in_Uganda.svg">
 </object>
 </div>
 <div id="mubende-district-in-uganda-magnify" class="magnify" onclick="magnifyFigure(&#39;mubende-district-in-uganda&#39;)">
@@ -663,7 +667,7 @@ communicate
 <h2 id="early-warning-systems">Early Warning Systems</h2>
 <div class="figure">
 <div id="kabarole-district-in-uganda-figure" class="figure-frame">
-<object class="50%" align data="../slides/diagrams/health/Kabarole_District_in_Uganda.svg" style="vertical-align:middle">
+<object class width="50%" data="../slides/diagrams/health/Kabarole_District_in_Uganda.svg">
 </object>
 </div>
 <div id="kabarole-district-in-uganda-magnify" class="magnify" onclick="magnifyFigure(&#39;kabarole-district-in-uganda&#39;)">
@@ -691,15 +695,15 @@ communicate
 <p>This gives us an early warning system for disease. Red is a bad situation getting worse, amber is bad, but improving. Green is good and getting better and yellow good but degrading.</p>
 <p>Finally, there is a gray region which represents when the scale of the effect is small.</p>
 <div class="figure">
-<div id="Kabarole early warning system over time.-figure" class="figure-frame">
+<div id="early-warning-system-map-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/health/monitor.gif" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
-<div id="Kabarole early warning system over time.-magnify" class="magnify" onclick="magnifyFigure(&#39;Kabarole early warning system over time.&#39;)">
+<div id="early-warning-system-map-magnify" class="magnify" onclick="magnifyFigure(&#39;early-warning-system-map&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
-<div id="Kabarole early warning system over time.-caption" class="caption-frame">
+<div id="early-warning-system-map-caption" class="caption-frame">
 <p>Figure: The map of Ugandan districts with an overview of the Malaria situation in each district.</p>
 </div>
 </div>
@@ -728,6 +732,7 @@ communicate
 <p>Figure: Centrifugal governor as held by &quot;Science&quot; on Holborn Viaduct</p>
 </div>
 </div>
+<h2 id="boulton-and-watts-steam-engine-edit">Boulton and Watt's Steam Engine <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/watt-steam-engine.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/watt-steam-engine.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="figure">
 <div id="steam-engine-boulton-watt-figure" class="figure-frame">
 <div class="centered" style="">
@@ -741,7 +746,8 @@ communicate
 <p>Figure: Watt's Steam Engine which made Steam Power Efficient and Practical.</p>
 </div>
 </div>
-<p>The centrifugal governor was made famous by Boulton and Watt when it was deployed in the steam engine. Studying stability in the governor is the main subject of James Clerk Maxwell's paper on the theoretical analysis of governors <span class="citation">(Maxwell 1867)</span>, a founding paper of control theory. In this spirit, Wiener used the name <a href="https://en.wikipedia.org/wiki/Cybernetics"><em>cybernetics</em></a> to describe the field of control and communication in animals and the machine <span class="citation">(Wiener 1948)</span>. Cybernetics is the Greek word for governor, which comes from the latin for helmsman.</p>
+<p>James Watt's steam engine contained an early machine learning device. In the same way that modern systems are component based, his engine was composed of components. One of which is a speed regulator sometimes known as <em>Watt's governor</em>. The two balls in the center of the image, when spun fast, rise, and through a linkage mechanism.</p>
+<p>The centrifugal governor was made famous by Boulton and Watt when it was deployed in the steam engine. Studying stability in the governor is the main subject of James Clerk Maxwell's paper on the theoretical analysis of governors <span class="citation">(Maxwell 1867)</span>. This paper is a founding paper of control theory. In an acknowledgment of its influence, Wiener used the name <a href="https://en.wikipedia.org/wiki/Cybernetics"><em>cybernetics</em></a> to describe the field of control and communication in animals and the machine <span class="citation">(Wiener 1948)</span>. Cybernetics is the Greek word for governor, which comes from the latin for helmsman.</p>
 <p>A governor is one of the simplest artificial intelligence systems. It senses the speed of an engine, and acts to change the position of the valve on the engine to slow it down.</p>
 <p>Although it's a mechanical system a governor can be seen as automating a role that a human would have traditionally played. It is an early example of artificial intelligence.</p>
 <p>The centrifugal governor has several parameters, the weight of the balls used, the length of the linkages and the limits on the balls movement.</p>
@@ -763,6 +769,8 @@ communicate
 <p>Figure: The centrifugal governor, an early example of a decision making system. The parameters of the governor include the lengths of the linkages (which effect how far the throttle opens in response to movement in the balls), the weight of the balls (which effects inertia) and the limits of to which the balls can rise.</p>
 </div>
 </div>
+<p>This has the basic components of sense and act that we expect in an intelligent system, and this system saved the need for a human operator to manually adjust the system in the case of overspeed. Overspeed has the potential to destroy an engine, so the governor operates as a safety device.</p>
+<p>The first wave of automation did bring about sabotoage as a worker's response. But if machinery was sabotaged, for example, if the linkage between sensor (the spinning balls) and action (the valve closure) was broken, this would be obvious to the engine operator at start up time. The machine could be repaired before operation.</p>
 <h2 id="amazon-bits-and-atoms">Amazon: Bits and Atoms</h2>
 <ul>
 <li>Challenges in deploying AI.</li>
@@ -822,8 +830,18 @@ communicate
 <p>Many of the most important questions in supply chain take the form of counterfactuals. E.g. “What would happen if we opened a manufacturing facility in Cambridge?” A counter factual is a question that implies a mechanistic understanding of a system. It goes beyond simple smoothness assumptions or translation invariants. It requires a physical, or <em>mechanistic</em> understanding of the supply chain network. For this reason the type of models we deploy in supply chain often involve simulations or more mechanistic understanding of the network.</p>
 <p>In supply chain Machine Learning alone is not enough, we need to bridge between models that contain real mechanisms and models that are entirely data driven.</p>
 <p>This is challenging, because as we introduce more mechanism to the models we use, it becomes harder to develop efficient algorithms to match those models to data.</p>
-<iframe width="800" height="600" src="https://www.youtube.com/embed/ncwsr1Of6Cw?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+<div class="figure">
+<div id="supply-chain-optimization-team-figure" class="figure-frame">
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/ncwsr1Of6Cw?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
+</div>
+<div id="supply-chain-optimization-team-magnify" class="magnify" onclick="magnifyFigure(&#39;supply-chain-optimization-team&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="supply-chain-optimization-team-caption" class="caption-frame">
+<p>Figure: The Supply Chain Optimization Team (SCOT) at Amazon is responsible for the automated decision making in (probably) the world's largest AI.</p>
+</div>
+</div>
 <h2 id="operations-research-control-econometrics-statistics-and-machine-learning-edit">Operations Research, Control, Econometrics, Statistics and Machine Learning <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/or-control-econometrics-statistics-ml.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/or-control-econometrics-statistics-ml.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p><span class="math inline">data + model</span> is not new, it dates back to Laplace and Gauss. Gauss fitted the orbit of Ceres using Keplers laws of planetary motion to generate his basis functions, and Laplace's insights on the error function and uncertainty <span class="citation">(Stigler 1999)</span>. Different fields such as Operations Research, Control, Econometrics, Statistics, Machine Learning and now Data Science and AI all rely on <span class="math inline">data + model</span>. Under a Popperian view of science, and equating experiment to data, one could argue that all science has <span class="math inline">data + model</span> underpinning it.</p>
 <p>Different academic fields are born in different eras, driven by different motivations and arrive at different solutions. For example, both Operations Research and Control emerged from the Second World War. Operations Research, the science of decision making, driven by the need for improved logistics and supply chain. Control emerged from cybernetics, a field that was driven in the by researchers who had been involved in radar and decryption <span class="citation">(Wiener 1948; Husband, Holland, and Wheeler 2008)</span>. The UK artificial intelligence community had similar origins <span class="citation">(Copeland 2006)</span>.</p>
@@ -1051,7 +1069,12 @@ Figure: The MXFusion software.
 
 
 
-<!--## PILCO: A Model-based Policy Search 
+<!--
+
+
+
+
+## PILCO: A Model-based Policy Search <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/mxfusion-pilco.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/mxfusion-pilco.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 
 Common reinforcement learning methods suffer from data inefficiency, which can be a issue in real world applications where gathering sufficiently large amounts of data pose economic issues and may be impossible.  propose a model-based policy search method known as PILCO in part to address this issue. PILCO uses a Gaussian process (GP) for learning the dynamics of the environment and optimizes a parametric policy function using the learned dynamics model.
 
@@ -1182,7 +1205,7 @@ with open('animation_random_policy.html', 'w') as f:
 
 <div class="figure">
 <div class="figure-frame" id="pendulum-random-policy-figure">
-<iframe src="../slides/diagrams/ml/animation_random_policy.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+<iframe src="../slides/diagrams/ml/animation_random_policy.html" width="100%" height="auto" allowtransparency="true" frameborder="0">
 </iframe>
 </div>
 <div class="magnify" id="pendulum-random-policy-magnify" onclick="magnifyFigure('pendulum-random-policy')">
@@ -1459,7 +1482,7 @@ Policy after the first episode (random exploration):
 
 <div class="figure">
 <div class="figure-frame" id="pilco-pendulum-policy-iter-0-figure">
-<iframe src="../slides/diagrams/ml/animation_policy_iter_0.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+<iframe src="../slides/diagrams/ml/animation_policy_iter_0.html" width="100%" height="auto" allowtransparency="true" frameborder="0">
 </iframe>
 </div>
 <div class="magnify" id="pilco-pendulum-policy-iter-0-magnify" onclick="magnifyFigure('pilco-pendulum-policy-iter-0')">
@@ -1476,7 +1499,7 @@ Policy after the 5th episode:
 
 <div class="figure">
 <div class="figure-frame" id="pilco-pendulum-policy-iter-0-figure">
-<iframe src="../slides/diagrams/ml/animation_policy_iter_4.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+<iframe src="../slides/diagrams/ml/animation_policy_iter_4.html" width="100%" height="auto" allowtransparency="true" frameborder="0">
 </iframe>
 </div>
 <div class="magnify" id="pilco-pendulum-policy-iter-0-magnify" onclick="magnifyFigure('pilco-pendulum-policy-iter-0')">
@@ -1490,6 +1513,7 @@ Figure: PILCO policy for control of the animation after the fifth episode.
 
 
 [https://github.com/amzn/mxfusion](https://github.com/amzn/mxfusion)
+
 
 
 

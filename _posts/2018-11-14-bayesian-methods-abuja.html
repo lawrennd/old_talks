@@ -42,6 +42,7 @@ categories:
 <p>.</p>
 <!---->
 <!--Back matter-->
+<p>.</p>
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
 <h1 id="what-is-machine-learning-edit">What is Machine Learning? <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
 <p>What is machine learning? At its most basic level machine learning is a combination of</p>
@@ -69,7 +70,7 @@ categories:
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data <span class="op">=</span> pd.read_csv(<span class="st">&#39;healthmopupandbaselinenmisfacility.csv&#39;</span>)</code></pre></div>
 <p>Once it is loaded in the data can be summarized using the <code>describe</code> method in pandas.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data.describe()</code></pre></div>
-<p>In python and jupyter notebook it is possible to see a list of all possible functions and attributes by typing the name of the object followed by .<Tab> for example in the above case if we type data.<Tab> it show the columns available (these are attributes in pandas dataframes) such as <code>num_nurses_fulltime</code>, and also functions, such as <code>.describe()</code>.</p>
+<p>In python and jupyter notebook it is possible to see a list of all possible functions and attributes by typing the name of the object followed by <code>.&lt;Tab&gt;</code> for example in the above case if we type <code>data.&lt;Tab&gt;</code> it show the columns available (these are attributes in pandas dataframes) such as <code>num_nurses_fulltime</code>, and also functions, such as <code>.describe()</code>.</p>
 <p>For functions we can also see the documentation about the function by following the name with a question mark. This will open a box with documentation at the bottom which can be closed with the x button.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data.describe?</code></pre></div>
 <p>The NMIS facility data is stored in an object known as a 'data frame'. Data frames come from the statistical family of programming languages based on <code>S</code>, the most widely used of which is <a href="http://en.wikipedia.org/wiki/R_(programming_language)"><code>R</code></a>. The data frame gives us a convenient object for manipulating data. The describe method summarizes which columns there are in the data frame and gives us counts, means, standard deviations and percentiles for the values in those columns. To access a column directly we can write</p>
@@ -163,7 +164,7 @@ The different basic probability distributions.
 <h2 id="a-pictorial-definition-of-probability-edit">A Pictorial Definition of Probability <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/probability-review.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/probability-review.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="figure">
 <div id="prob-diagram-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/mlai/prob_diagram.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/mlai/prob_diagram.svg" width="60%" style=" ">
 </object>
 </div>
 <div id="prob-diagram-magnify" class="magnify" onclick="magnifyFigure(&#39;prob-diagram&#39;)">
@@ -265,7 +266,7 @@ $$</span><br /> and we have <em>unsupervised learning</em> (from where we can ge
 <p>One way of representing a joint distribution is to consider conditional dependencies between data. Conditional dependencies allow us to factorize the distribution. For example, a Markov chain is a factorization of a distribution into components that represent the conditional relationships between points that are neighboring, often in time or space. It can be decomposed in the following form. <br /><span class="math display">$$p(\dataVector) = p(\dataScalar_\numData | \dataScalar_{\numData-1}) p(\dataScalar_{\numData-1}|\dataScalar_{\numData-2}) \dots p(\dataScalar_{2} | \dataScalar_{1})$$</span><br /></p>
 <div class="figure">
 <div id="markov-chain-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/markov.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/markov.svg" width="50%" style=" ">
 </object>
 </div>
 <div id="markov-chain-magnify" class="magnify" onclick="magnifyFigure(&#39;markov-chain&#39;)">
@@ -291,12 +292,14 @@ $$</span><br /> and we have <em>unsupervised learning</em> (from where we can ge
 </div>
 </div>
 <p>To capture the complexity in the interelationship between the data, the graph itself becomes more complex, and less interpretable.</p>
+<h2 id="introduction-to-classification-edit">Introduction to Classification <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/classification-intro.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/classification-intro.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Machine learning problems normally involve a prediction function and an objective function. So far in the course we've mainly focussed on the case where the prediction function was over the real numbers, so the codomain of the functions, <span class="math inline">$\mappingFunction(\inputMatrix)$</span> was the real numbers or sometimes real vectors. The classification problem consists of predicting whether or not a particular example is a member of a particular class. So we may want to know if a particular image represents a digit 6 or if a particular user will click on a given advert. These are classification problems, and they require us to map to <em>yes</em> or <em>no</em> answers. That makes them naturally discrete mappings.</p>
 <p>In classification we are given an input vector, <span class="math inline">$\inputVector$</span>, and an associated label, <span class="math inline">$\dataScalar$</span> which either takes the value <span class="math inline">−1</span> to represent <em>no</em> or <span class="math inline">1</span> to represent <em>yes</em>.</p>
+<h2 id="classification-examples-edit">Classification Examples <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/classification-examples.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/classification-examples.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <ul>
 <li>Classifiying hand written digits from binary images (automatic zip code reading)</li>
 <li>Detecting faces in images (e.g. digital cameras).</li>
-<li>Who a detected face belongs to (e.g. Picasa, Facebook, DeepFace, GaussianFace)</li>
+<li>Who a detected face belongs to (e.g. Facebook, DeepFace)</li>
 <li>Classifying type of cancer given gene expression data.</li>
 <li>Categorization of document types (different types of news article on the internet)</li>
 </ul>
@@ -332,7 +335,7 @@ $$</span><br /> and we have <em>unsupervised learning</em> (from where we can ge
 </iframe>
 <div class="figure">
 <div id="bernoulli-urn-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/bernoulli-urn.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/bernoulli-urn.svg" width="40%" style=" ">
 </object>
 </div>
 <div id="bernoulli-urn-magnify" class="magnify" onclick="magnifyFigure(&#39;bernoulli-urn&#39;)">
@@ -348,7 +351,7 @@ $$</span><br /> and we have <em>unsupervised learning</em> (from where we can ge
 <p>For this reason in Bayes's distribution there is considered to be <em>aleatoric</em> uncertainty about the distribution parameter.</p>
 <div class="figure">
 <div id="bayes-billiard-9-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/bayes-billiard009.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/bayes-billiard009.svg" width="40%" style=" ">
 </object>
 </div>
 <div id="bayes-billiard-9-magnify" class="magnify" onclick="magnifyFigure(&#39;bayes-billiard-9&#39;)">

@@ -1,6 +1,6 @@
 ---
 title: "What Kind of AI have we Created?"
-venue: "Birley Community College"
+venue: "Birley Community College, Sheffield"
 abstract: "<p>There have been fears voiced by Elon Musk and Stephen Hawking about the direction of artificial intelligent research. They worry about the creation of a sentient AI, one that might outwit us. However, the nature of the AI we have actually created is a long way distant from this. In this talk we will try and relate our models of artificial intelligence to models that have been proposed for the way humans think. The AI that Hawking and Musk fear is not yet here, but is the AI we have actually developed more or less disturbing than the vision they project?</p>"
 author:
 - given: Neil D.
@@ -16,7 +16,7 @@ reveal: 2016-03-10-what-kind-of-ai-have-we-created.slides.html
 ipynb: 2016-03-10-what-kind-of-ai-have-we-created.ipynb
 layout: talk
 categories:
-- notes
+- Lawrence-birley15
 ---
 
 
@@ -24,9 +24,25 @@ categories:
   $${% include talk-notation.tex %}$$
 </div>
 
+<script src="/talks/figure-magnify.js"></script>
+<script src="/talks/figure-animate.js"></script>
+    
+<div id="modal-frame" class="modal">
+  <span class="close" onclick="closeMagnify()">&times;</span>
+  <div class="modal-figure">
+    <div class="figure-frame">
+      <div class="modal-content" id="modal01"></div>
+      <!--<img class="modal-content" id="object01">-->
+    </div>
+    <div class="caption-frame" id="modal-caption"></div>
+  </div>
+</div>	  
+
 <!-- Front matter -->
 <p>.</p>
+<!---->
 <!--Back matter-->
+<p>.</p>
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
 <h1 id="high-profile-advances">High Profile Advances</h1>
 <div class="centered centered" style="">
@@ -76,12 +92,12 @@ categories:
 <img class="" src="../slides/diagrams/ai/star-trek-klingons.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 <h1 id="models-and-emulation">Models and Emulation</h1>
-<object class="svgplot " align data="../slides/diagrams/mouse-47172.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/mouse-47172.svg" width style=" ">
 </object>
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/ai/human-brain-project.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<object class="svgplot " align data="../slides/diagrams/ai/IP_stack_connections.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ai/IP_stack_connections.svg" width style=" ">
 </object>
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/ai/rude-goldbergs-self-operating-napikin.gif" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
@@ -99,12 +115,12 @@ categories:
 <img class="" src="../slides/diagrams/ai/the-new-revelation.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 <p>Next slide represents cold reading.</p>
-<object class="svgplot " align data="../slides/diagrams/girls-152345.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/girls-152345.svg" width style=" ">
 </object>
 <div class="centered" style="">
 <img class="" src="../slides/ai/diagrams/htm-hierarchy-example.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<object class="svgplot " align data="../slides/diagrams/data-science/hilbert-info-growth.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/data-science/hilbert-info-growth.svg" width style=" ">
 </object>
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/ai/emulation.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
@@ -126,25 +142,26 @@ categories:
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/ai/discworld-anhk-morpork-cover-art.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<table border="0">
+<table>
 <tr>
-<td>
-<div class="centered" style="">
-<img class="" src="../slides/diagrams/ai/big-data.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
+<td width>
 </td>
-<td>
-<div class="centered" style="">
-<img class="" src="../slides/diagrams/ai/rude-goldbergs-self-operating-napkin.gif" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
+<td width>
 </td>
-<td>
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/ai/discworld-anhk-morpork-cover-art.jpg" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
+<td width>
 </td>
 </tr>
 </table>
+{
+<div class="centered" style="">
+<img class="" src=".png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+{../slides/diagrams/ai/big-data}{100%}{
+<div class="centered" style="">
+<img class="<div class="centered centered" style=""><img class="" src="../slides/diagrams/ai/discworld-anhk-morpork-cover-art.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+&quot; src=&quot;../slides/diagrams/ai/rude-goldbergs-self-operating-napkin.gif&quot; width=&quot;100%&quot; height=&quot;auto&quot; align=&quot;center&quot; style=&quot;background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle&quot;&gt;
+</div>
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/ai/world-turtle-model.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>

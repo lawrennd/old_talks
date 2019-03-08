@@ -23,27 +23,24 @@ categories:
   $${% include talk-notation.tex %}$$
 </div>
 
+<script src="/talks/figure-magnify.js"></script>
+<script src="/talks/figure-animate.js"></script>
+    
+<div id="modal-frame" class="modal">
+  <span class="close" onclick="closeMagnify()">&times;</span>
+  <div class="modal-figure">
+    <div class="figure-frame">
+      <div class="modal-content" id="modal01"></div>
+      <!--<img class="modal-content" id="object01">-->
+    </div>
+    <div class="caption-frame" id="modal-caption"></div>
+  </div>
+</div>	  
+
 
 
 
 <p> </p>
-
-<p> </p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <p> </p>
 
@@ -70,7 +67,33 @@ categories:
 
 
 
-<p>  <br /><span class="math display">$$ \text{odds} = \frac{p(\text{bought})}{p(\text{not bought})} $$</span><br /> <br /><span class="math display">logodds = <em>β</em><sub>0</sub> + <em>β</em><sub>1</sub>age + <em>β</em><sub>2</sub>latitude.</span><br /> </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>  <br /><span class="math display">$$ \text{odds} = \frac{p(\text{bought})}{p(\text{not bought})} $$</span><br /></p>
+<p><br /><span class="math display">logodds = <em>β</em><sub>0</sub> + <em>β</em><sub>1</sub>age + <em>β</em><sub>2</sub>latitude.</span><br /> </p>
 <p>  <br /><span class="math display">$$ p(\text{bought}) =  \sigmoid{\beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}}.$$</span><br /> </p>
 <p>  <br /><span class="math display">$$ p(\text{bought}) =  \sigmoid{\boldsymbol{\beta}^\top \inputVector}.$$</span><br /> </p>
 <p>  <br /><span class="math display">$$ \dataScalar =  \mappingFunction\left(\inputVector, \boldsymbol{\beta}\right).$$</span><br /> We call <span class="math inline">$\mappingFunction(\cdot)$</span> the <em>prediction function</em>.</p>
@@ -78,13 +101,14 @@ categories:
 <p>  <br /><span class="math display">$$\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix)$$</span><br />  <br /><span class="math display">$$\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingFunction(\inputVector_i, \boldsymbol{\beta})\right)^2.$$</span><br /></p>
 <p>  </p>
 
+
+<p> </p>
+
 <!-- No slide titles in this context -->
 
-<p>  </p>
 
 
-
-
+<p> </p>
 
 
 
@@ -126,6 +150,7 @@ categories:
 
 <p>  </p>
 <p> </p>
+
 
 
 
@@ -135,10 +160,13 @@ categories:
 
 
 <ul>
-<li><p>Grade C - accessibility</p></li>
-<li><p>Grade B - validity</p></li>
-<li><p>Grade A - usability</p></li>
+<li>Grade C - accessibility</li>
+<li>Transition: data becomes electronically available</li>
+<li>Grade B - validity</li>
+<li>Transition: pose a question to the data.</li>
+<li>Grade A - usability</li>
 </ul>
+
 
 
 

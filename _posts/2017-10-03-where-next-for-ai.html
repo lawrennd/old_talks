@@ -45,26 +45,39 @@ categories:
 <p>.</p>
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
 <h1 id="introduction">Introduction</h1>
-<h3 id="gartner-hype-cycle">Gartner Hype Cycle</h3>
-<p><img src="../slides/diagrams/Gartner_Hype_Cycle-neg.png" align="center" width="70%" style="background:none; border:none; box-shadow:none;"></p>
-<h3 id="section" class="slide:" data-transition="none"></h3>
-<object class="svgplot" data="../slides/diagrams/ai-bd-dm-dl-ml-google-trends000.svg">
+<h2 id="the-gartner-hype-cycle-edit">The Gartner Hype Cycle <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/gartner-hype-cycle.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/gartner-hype-cycle.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="figure">
+<div id="gartner-hype-cycle-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/Gartner_Hype_Cycle.svg" width="60%" style=" ">
 </object>
-<h3 id="section-1" class="slide:" data-transition="none"></h3>
-<object class="svgplot" data="../slides/diagrams/ai-bd-dm-dl-ml-google-trends001.svg">
+</div>
+<div id="gartner-hype-cycle-magnify" class="magnify" onclick="magnifyFigure(&#39;gartner-hype-cycle&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="gartner-hype-cycle-caption" class="caption-frame">
+<p>Figure: The Gartner Hype Cycle</p>
+</div>
+</div>
+<p>The <a href="https://en.wikipedia.org/wiki/Hype_cycle">Gartner Hype Cycle</a> tries to assess where an idea is in terms of maturity and adoption. It splits the evolution of technology into a technological trigger, a peak of expectations followed by a trough of disillusionment and a final ascension into a useful technology. It looks rather like a classical control response to a final set point.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
+<span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;ai-bd-dm-dl-ml-google-trends</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, 
+                            <span class="st">&#39;../slides/diagrams/data-science/&#39;</span>, sample<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">1</span>))</code></pre></div>
+<div class="figure">
+<div id="ai-bd-dm-dl-ml-gartner-hype-cycle-google-trends-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/data-science/ai-bd-dm-dl-ml-google-trends.svg" width="80%" style=" ">
 </object>
-<h3 id="section-2" class="slide:" data-transition="none"></h3>
-<object class="svgplot" data="../slides/diagrams/ai-bd-dm-dl-ml-google-trends002.svg">
-</object>
-<h3 id="section-3" class="slide:" data-transition="none"></h3>
-<object class="svgplot" data="../slides/diagrams/ai-bd-dm-dl-ml-google-trends003.svg">
-</object>
-<h3 id="section-4" class="slide:" data-transition="none"></h3>
-<object class="svgplot" data="../slides/diagrams/ai-bd-dm-dl-ml-google-trends004.svg">
-</object>
-<h3 id="section-5" class="slide:" data-transition="none"></h3>
-<object class="svgplot" data="../slides/diagrams/ai-bd-dm-dl-ml-google-trends005.svg">
-</object>
+</div>
+<div id="ai-bd-dm-dl-ml-gartner-hype-cycle-google-trends-magnify" class="magnify" onclick="magnifyFigure(&#39;ai-bd-dm-dl-ml-gartner-hype-cycle-google-trends&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="ai-bd-dm-dl-ml-gartner-hype-cycle-google-trends-caption" class="caption-frame">
+<p>Figure: Google trends for 'artificial intelligence', 'big data', 'data mining', 'deep learning', 'machine learning' as different technological terms on the hype cycle.</p>
+</div>
+</div>
+<p>Google trends gives us insight into how far along various technological terms are on the hype cycle.</p>
+<p>Examining Google treds for 'artificial intelligence', 'big data', 'data mining', 'deep learning' and 'machine learning' we can see that 'artificial intelligence' <em>may</em> be entering a plateau of productivity, 'big data' is entering the trough of disillusionment, and 'data mining' seems to be deeply within the trough. On the other hand 'deep learning' and 'machine learning' appear to be ascending to the peak of inflated expectations having experienced a technology trigger.</p>
+<p>For deep learning that technology trigger was the ImageNet result of 2012 <span class="citation">(Krizhevsky, Sutskever, and Hinton, n.d.)</span>. This step change in performance on object detection in images was achieved through convolutional neural networks, popularly known as 'deep learning'.</p>
 <h2 id="tracking-hype-about-hype-edit">Tracking Hype about Hype <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/hype-about-hype.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/hype-about-hype.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <blockquote class="twitter-tweet" data-lang="en">
 <p lang="en" dir="ltr">
@@ -141,7 +154,12 @@ Just checking where the Gartner hype cycle is on the Gartner hype cycle (seems t
 </div>
 </div>
 <p>James Watt's steam engine contained an early machine learning device. In the same way that modern systems are component based, his engine was composed of components. One of which is a speed regulator sometimes known as <em>Watt's governor</em>. The two balls in the center of the image, when spun fast, rise, and through a linkage mechanism.</p>
-<h1 id="references">References</h1>
+<h1 id="references" class="unnumbered">References</h1>
+<div id="refs" class="references">
+<div id="ref-Krizhevsky:imagenet12">
+<p>Krizhevsky, Alex, Ilya Sutskever, and Geoffrey E. Hinton. n.d. “ImageNet Classification with Deep Convolutional Neural Networks.” In, 1097–1105.</p>
+</div>
+</div>
 <div class="footnotes">
 <hr />
 <ol>

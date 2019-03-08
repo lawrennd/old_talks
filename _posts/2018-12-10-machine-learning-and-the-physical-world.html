@@ -42,6 +42,7 @@ categories:
 <p>.</p>
 <!---->
 <!--Back matter-->
+<p>.</p>
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
 <h2 id="the-centrifugal-governor-edit">The Centrifugal Governor <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/centrifugal-governor.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/centrifugal-governor.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="figure">
@@ -57,6 +58,7 @@ categories:
 <p>Figure: Centrifugal governor as held by &quot;Science&quot; on Holborn Viaduct</p>
 </div>
 </div>
+<h2 id="boulton-and-watts-steam-engine-edit">Boulton and Watt's Steam Engine <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/watt-steam-engine.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/watt-steam-engine.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="figure">
 <div id="steam-engine-boulton-watt-figure" class="figure-frame">
 <div class="centered" style="">
@@ -70,7 +72,8 @@ categories:
 <p>Figure: Watt's Steam Engine which made Steam Power Efficient and Practical.</p>
 </div>
 </div>
-<p>The centrifugal governor was made famous by Boulton and Watt when it was deployed in the steam engine. Studying stability in the governor is the main subject of James Clerk Maxwell's paper on the theoretical analysis of governors <span class="citation">(Maxwell 1867)</span>, a founding paper of control theory. In this spirit, Wiener used the name <a href="https://en.wikipedia.org/wiki/Cybernetics"><em>cybernetics</em></a> to describe the field of control and communication in animals and the machine <span class="citation">(Wiener 1948)</span>. Cybernetics is the Greek word for governor, which comes from the latin for helmsman.</p>
+<p>James Watt's steam engine contained an early machine learning device. In the same way that modern systems are component based, his engine was composed of components. One of which is a speed regulator sometimes known as <em>Watt's governor</em>. The two balls in the center of the image, when spun fast, rise, and through a linkage mechanism.</p>
+<p>The centrifugal governor was made famous by Boulton and Watt when it was deployed in the steam engine. Studying stability in the governor is the main subject of James Clerk Maxwell's paper on the theoretical analysis of governors <span class="citation">(Maxwell 1867)</span>. This paper is a founding paper of control theory. In an acknowledgment of its influence, Wiener used the name <a href="https://en.wikipedia.org/wiki/Cybernetics"><em>cybernetics</em></a> to describe the field of control and communication in animals and the machine <span class="citation">(Wiener 1948)</span>. Cybernetics is the Greek word for governor, which comes from the latin for helmsman.</p>
 <p>A governor is one of the simplest artificial intelligence systems. It senses the speed of an engine, and acts to change the position of the valve on the engine to slow it down.</p>
 <p>Although it's a mechanical system a governor can be seen as automating a role that a human would have traditionally played. It is an early example of artificial intelligence.</p>
 <p>The centrifugal governor has several parameters, the weight of the balls used, the length of the linkages and the limits on the balls movement.</p>
@@ -92,6 +95,8 @@ categories:
 <p>Figure: The centrifugal governor, an early example of a decision making system. The parameters of the governor include the lengths of the linkages (which effect how far the throttle opens in response to movement in the balls), the weight of the balls (which effects inertia) and the limits of to which the balls can rise.</p>
 </div>
 </div>
+<p>This has the basic components of sense and act that we expect in an intelligent system, and this system saved the need for a human operator to manually adjust the system in the case of overspeed. Overspeed has the potential to destroy an engine, so the governor operates as a safety device.</p>
+<p>The first wave of automation did bring about sabotoage as a worker's response. But if machinery was sabotaged, for example, if the linkage between sensor (the spinning balls) and action (the valve closure) was broken, this would be obvious to the engine operator at start up time. The machine could be repaired before operation.</p>
 <h2 id="what-is-machine-learning-edit">What is Machine Learning? <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml-2.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml-2.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Machine learning allows us to extract knowledge from data to form a prediction.</p>
 <p><br /><span class="math display">$$\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$</span><br /></p>
@@ -100,8 +105,18 @@ categories:
 <p>Machine learning is a technology which strongly overlaps with the methodology of statistics. From a historical/philosophical view point, machine learning differs from statistics in that the focus in the machine learning community has been primarily on accuracy of prediction, whereas the focus in statistics is typically on the interpretability of a model and/or validating a hypothesis through data collection.</p>
 <p>The rapid increase in the availability of compute and data has led to the increased prominence of machine learning. This prominence is surfacing in two different, but overlapping domains: data science and artificial intelligence.</p>
 <p>The real challenge, however, is end-to-end decision making. Taking information from the enviroment and using it to drive decision making to achieve goals.</p>
-<iframe width="800" height="600" src="https://www.youtube.com/embed/vNySOrI2Ny8?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+<div class="figure">
+<div id="amazon-drone-delivery-figure" class="figure-frame">
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/vNySOrI2Ny8?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
+</div>
+<div id="amazon-drone-delivery-magnify" class="magnify" onclick="magnifyFigure(&#39;amazon-drone-delivery&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="amazon-drone-delivery-caption" class="caption-frame">
+<p>Figure: Amazon's proposed drone delivery system.</p>
+</div>
+</div>
 <h2 id="artificial-intelligence-and-data-science-edit">Artificial Intelligence and Data Science <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/ai-vs-data-science-2.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/ai-vs-data-science-2.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Artificial intelligence has the objective of endowing computers with human-like intelligent capabilities. For example, understanding an image (computer vision) or the contents of some speech (speech recognition), the meaning of a sentence (natural language processing) or the translation of a sentence (machine translation).</p>
 <h3 id="supervised-learning-for-ai">Supervised Learning for AI</h3>
@@ -162,8 +177,18 @@ categories:
 <p>Many of the most important questions in supply chain take the form of counterfactuals. E.g. “What would happen if we opened a manufacturing facility in Cambridge?” A counter factual is a question that implies a mechanistic understanding of a system. It goes beyond simple smoothness assumptions or translation invariants. It requires a physical, or <em>mechanistic</em> understanding of the supply chain network. For this reason the type of models we deploy in supply chain often involve simulations or more mechanistic understanding of the network.</p>
 <p>In supply chain Machine Learning alone is not enough, we need to bridge between models that contain real mechanisms and models that are entirely data driven.</p>
 <p>This is challenging, because as we introduce more mechanism to the models we use, it becomes harder to develop efficient algorithms to match those models to data.</p>
-<iframe width="800" height="600" src="https://www.youtube.com/embed/ncwsr1Of6Cw?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+<div class="figure">
+<div id="supply-chain-optimization-team-figure" class="figure-frame">
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/ncwsr1Of6Cw?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
+</div>
+<div id="supply-chain-optimization-team-magnify" class="magnify" onclick="magnifyFigure(&#39;supply-chain-optimization-team&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="supply-chain-optimization-team-caption" class="caption-frame">
+<p>Figure: The Supply Chain Optimization Team (SCOT) at Amazon is responsible for the automated decision making in (probably) the world's largest AI.</p>
+</div>
+</div>
 <!--include{_ml/includes/or-control-econometrics-statistics-ml.md}-->
 <h2 id="emukit-playground-edit">Emukit Playground <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emukit-playground.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/emukit-playground.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Emukit playground is a software toolkit for exploring the use of statistical emulation as a tool. It was built by <a href="https://twitter.com/_AdamHirst">Adam Hirst</a>, during his software engineering internship at Amazon and supervised by Cliff McCollum.</p>
@@ -265,7 +290,7 @@ anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Ran
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">HTML(anim.to_jshtml())</code></pre></div>
 <div class="figure">
 <div id="mountain-car-random-figure" class="figure-frame">
-<iframe src="../slides/diagrams/uq/mountain_car_random.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+<iframe src="../slides/diagrams/uq/mountain_car_random.html" width="100%" height="auto" allowtransparency="true" frameborder="0">
 </iframe>
 </div>
 <div id="mountain-car-random-magnify" class="magnify" onclick="magnifyFigure(&#39;mountain-car-random&#39;)">
@@ -285,7 +310,7 @@ anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Bes
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">HTML(anim.to_jshtml())</code></pre></div>
 <div class="figure">
 <div id="mountain-car-similated-bayes-opt-figure" class="figure-frame">
-<iframe src="../slides/diagrams/uq/mountain_car_simulated.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+<iframe src="../slides/diagrams/uq/mountain_car_simulated.html" width="100%" height="auto" allowtransparency="true" frameborder="0">
 </iframe>
 </div>
 <div id="mountain-car-similated-bayes-opt-magnify" class="magnify" onclick="magnifyFigure(&#39;mountain-car-similated-bayes-opt&#39;)">
@@ -339,7 +364,7 @@ velocity_model.updateModel(initial_design_dynamics, y[:, [<span class="dv">1</sp
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">controller_gains <span class="op">=</span> np.atleast_2d([<span class="dv">0</span>, .<span class="dv">6</span>, <span class="dv">1</span>])  <span class="co"># change the valus of the linear controller to observe the trayectories.</span></code></pre></div>
 <div class="figure">
 <div id="emu-sim-comparison-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/uq/emu_sim_comparison.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/uq/emu_sim_comparison.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="emu-sim-comparison-magnify" class="magnify" onclick="magnifyFigure(&#39;emu-sim-comparison&#39;)">
@@ -381,7 +406,7 @@ anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Bes
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">HTML(anim.to_jshtml())</code></pre></div>
 <div class="figure">
 <div id="mountain-car-emulated-figure" class="figure-frame">
-<iframe src="../slides/diagrams/uq/mountain_car_emulated.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+<iframe src="../slides/diagrams/uq/mountain_car_emulated.html" width="100%" height="auto" allowtransparency="true" frameborder="0">
 </iframe>
 </div>
 <div id="mountain-car-emulated-magnify" class="magnify" onclick="magnifyFigure(&#39;mountain-car-emulated&#39;)">
@@ -392,6 +417,7 @@ anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Bes
 </div>
 </div>
 <p>And the problem is again solved, but in this case we have replaced the simulator of the car dynamics by a Gaussian process emulator that we learned by calling the simulator only 500 times. Compared to the 37500 calls that we needed when applying Bayesian optimization directly on the simulator this is a great gain.</p>
+<h2 id="multi-fidelity-emulation-edit">Multi-Fidelity Emulation <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/mountain-car-multi-fidelity.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/mountain-car-multi-fidelity.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>In some scenarios we have simulators of the same environment that have different fidelities, that is that reflect with different level of accuracy the dynamics of the real world. Running simulations of the different fidelities also have a different cost: hight fidelity simulations are more expensive the cheaper ones. If we have access to these simulators we can combine high and low fidelity simulations under the same model.</p>
 <p>So let's assume that we have two simulators of the mountain car dynamics, one of high fidelity (the one we have used) and another one of low fidelity. The traditional approach to this form of multi-fidelity emulation is to assume that</p>
 <p><br /><span class="math display">$$\mappingFunction_i\left(\inputVector\right) = \rho\mappingFunction_{i-1}\left(\inputVector\right) + \delta_i\left(\inputVector \right)$$</span><br /></p>
@@ -455,9 +481,10 @@ bo_multifidelity.run_optimization(max_iter<span class="op">=</span><span class="
 anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Best controller with multi-fidelity emulator&#39;</span>)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> IPython.core.display <span class="im">import</span> HTML</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">HTML(anim.to_jshtml())</code></pre></div>
+<h3 id="best-controller-with-multi-fidelity-emulator">Best Controller with Multi-Fidelity Emulator</h3>
 <div class="figure">
 <div id="mountain-car-multi-fidelity-figure" class="figure-frame">
-<iframe src="../slides/diagrams/uq/mountain_car_multi_fidelity.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+<iframe src="../slides/diagrams/uq/mountain_car_multi_fidelity.html" width="100%" height="auto" allowtransparency="true" frameborder="0">
 </iframe>
 </div>
 <div id="mountain-car-multi-fidelity-magnify" class="magnify" onclick="magnifyFigure(&#39;mountain-car-multi-fidelity&#39;)">
@@ -551,7 +578,7 @@ infr.run(Y<span class="op">=</span>data)</code></pre></div>
 <li>Just doing modular modeling with universal inference doesn't really scale, need specialized inference methods for specialized modelling objects like non-parametrics.</li>
 </ul></li>
 </ul>
-<h2 id="pilco-a-model-based-policy-search">PILCO: A Model-based Policy Search</h2>
+<h2 id="pilco-a-model-based-policy-search-edit">PILCO: A Model-based Policy Search <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/mxfusion-pilco.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/mxfusion-pilco.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Common reinforcement learning methods suffer from data inefficiency, which can be a issue in real world applications where gathering sufficiently large amounts of data pose economic issues and may be impossible. propose a model-based policy search method known as PILCO in part to address this issue. PILCO uses a Gaussian process (GP) for learning the dynamics of the environment and optimizes a parametric policy function using the learned dynamics model.</p>
 <p>We construct an implementation of PILCO using MXFusion. This implementation follows the main idea of PILCO and has a few enhancements in addition to the published implementation. The enhancements are as follows: * <strong>Use Monte Carlo integration instead of moment estimation.</strong> We approximate the expected reward using Monte Carlo integration instead of the proposed moment estimation approach. This removes the bias in the expected reward computation and enables a wide range of choices of kernels and policy functions. In the original work, only RBF and linear kernel and only linear and RBF network policy can be used. * <strong>Use automatic differentiation.</strong> Thanks to automatic differentiation, no gradient derivation is needed. * <strong>A unified interface of Gaussian process.</strong> MXFusion provides an unified inferface of GP modules. We allows us to easily switch among plan GP, variational sparse GP and stocastic variational GP implementations.</p>
 <p>This notebook depends on MXNet, MXFusion and Open AI Gym. These packages can be installed into your Python environment by running the following commands.</p>
@@ -630,7 +657,7 @@ env <span class="op">=</span> gym.make(<span class="st">&#39;Pendulum-v0&#39;</s
 <h2 id="pendulum">Pendulum</h2>
 <div class="figure">
 <div id="pendulum-random-policy-figure" class="figure-frame">
-<iframe src="../slides/diagrams/ml/animation_random_policy.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+<iframe src="../slides/diagrams/ml/animation_random_policy.html" width="100%" height="auto" allowtransparency="true" frameborder="0">
 </iframe>
 </div>
 <div id="pendulum-random-policy-magnify" class="magnify" onclick="magnifyFigure(&#39;pendulum-random-policy&#39;)">
@@ -834,7 +861,7 @@ all_actions <span class="op">=</span> []</code></pre></div>
 <p>Policy after the first episode (random exploration):</p>
 <div class="figure">
 <div id="pilco-pendulum-policy-iter-0-figure" class="figure-frame">
-<iframe src="../slides/diagrams/ml/animation_policy_iter_0.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+<iframe src="../slides/diagrams/ml/animation_policy_iter_0.html" width="100%" height="auto" allowtransparency="true" frameborder="0">
 </iframe>
 </div>
 <div id="pilco-pendulum-policy-iter-0-magnify" class="magnify" onclick="magnifyFigure(&#39;pilco-pendulum-policy-iter-0&#39;)">
@@ -847,7 +874,7 @@ all_actions <span class="op">=</span> []</code></pre></div>
 <p>Policy after the 5th episode:</p>
 <div class="figure">
 <div id="pilco-pendulum-policy-iter-0-figure" class="figure-frame">
-<iframe src="../slides/diagrams/ml/animation_policy_iter_4.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+<iframe src="../slides/diagrams/ml/animation_policy_iter_4.html" width="100%" height="auto" allowtransparency="true" frameborder="0">
 </iframe>
 </div>
 <div id="pilco-pendulum-policy-iter-0-magnify" class="magnify" onclick="magnifyFigure(&#39;pilco-pendulum-policy-iter-0&#39;)">

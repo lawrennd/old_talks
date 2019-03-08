@@ -17,7 +17,7 @@ ipynb: 2017-07-13-once-upon-a-universal-standard-time.ipynb
 youtube: "ExTDnppYB0w&amp;t=6h20m0s"
 layout: talk
 categories:
-- notes
+- Lawrence-cfi17
 ---
 
 
@@ -25,23 +25,39 @@ categories:
   $${% include talk-notation.tex %}$$
 </div>
 
+<script src="/talks/figure-magnify.js"></script>
+<script src="/talks/figure-animate.js"></script>
+    
+<div id="modal-frame" class="modal">
+  <span class="close" onclick="closeMagnify()">&times;</span>
+  <div class="modal-figure">
+    <div class="figure-frame">
+      <div class="modal-content" id="modal01"></div>
+      <!--<img class="modal-content" id="object01">-->
+    </div>
+    <div class="caption-frame" id="modal-caption"></div>
+  </div>
+</div>	  
+
 <!-- Front matter -->
 <p>.</p>
+<!---->
 <!--Back matter-->
+<p>.</p>
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
-<h2 id="natural-and-artificial-intelligence-embodiment-factors-edit">Natural and Artificial Intelligence: Embodiment Factors <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<h2 id="embodiment-factors-edit">Embodiment Factors <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <table>
 <tr>
 <td>
 </td>
 <td align="center">
 <div class="centered centered" style="">
-<img class="" src="../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </td>
 <td align="center">
 <div class="centered centered" style="">
-<img class="" src="../slides/diagrams/ClaudeShannon_MFO3807.jpg" width="25%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="../slides/diagrams/ClaudeShannon_MFO3807.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </td>
 </tr>
@@ -84,28 +100,52 @@ communicate
 <p>Given typical speaking rates, that gives us an estimate of our ability to communicate of around 100 bits per second <span class="citation">(Reed and Durlach 1998)</span>. Computers on the other hand can communicate much more rapidly. Current wired network speeds are around a billion bits per second, ten million times faster.</p>
 <p>When it comes to compute though, our best estimates indicate our computers are slower. A typical modern computer can process make around 100 billion floating point operations per second, each floating point operation involves a 64 bit number. So the computer is processing around 6,400 billion bits per second.</p>
 <p>It's difficult to get similar estimates for humans, but by some estimates the amount of compute we would require to <em>simulate</em> a human brain is equivalent to that in the UK's fastest computer <span class="citation">(Ananthanarayanan et al. 2009)</span>, the MET office machine in Exeter, which in 2018 ranks as the 11th fastest computer in the world. That machine simulates the world's weather each morning, and then simulates the world's climate in the afternoon. It is a 16 petaflop machine, processing around 1,000 <em>trillion</em> bits per second.</p>
+<div class="figure">
+<div id="lotus-49-figure" class="figure-frame">
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/Lotus_49-2.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<center>
-<em>The Lotus 49, view from the rear. The Lotus 49 was one of the last Formula One cars before the introduction of aerodynamic aids.</em>
-</center>
-<p>So when it comes to our ability to compute we are extraordinary, not compute in our conscious mind, but the underlying neuron firings that underpin both our consciousness, our sbuconsciousness as well as our motor control etc. By analogy I sometimes like to think of us as a Formula One engine. But in terms of our ability to deploy that computation in actual use, to share the results of what we have inferred, we are very limited. So when you imagine the F1 car that represents a psyche, think of an F1 car with bicycle wheels.</p>
+</div>
+<div id="lotus-49-magnify" class="magnify" onclick="magnifyFigure(&#39;lotus-49&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="lotus-49-caption" class="caption-frame">
+<p>Figure: The Lotus 49, view from the rear. The Lotus 49 was one of the last Formula One cars before the introduction of aerodynamic aids.</p>
+</div>
+</div>
+<p>So when it comes to our ability to compute we are extraordinary, not compute in our conscious mind, but the underlying neuron firings that underpin both our consciousness, our subconsciousness as well as our motor control etc.</p>
+<p>If we think of ourselves as vehicles, then we are massively overpowered. Our ability to generate derived information from raw fuel is extraordinary. Intellectually we have formula one engines.</p>
+<p>But in terms of our ability to deploy that computation in actual use, to share the results of what we have inferred, we are very limited. So when you imagine the F1 car that represents a psyche, think of an F1 car with bicycle wheels.</p>
+<div class="figure">
+<div id="marcel-renault-figure" class="figure-frame">
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/640px-Marcel_Renault_1903.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<center>
-<em>Marcel Renault races a Renault 40 cv during the Paris-Madrid race, an early Grand Prix, in 1903. Marcel died later in the race after missing a warning flag for a sharp corner at Couhé Vérac, likely due to dust reducing visibility.</em>
-</center>
-<p>In contrast, our computers have less computational power, but they can communicate far more fluidly. They are more like a go-kart, less well powered, but with tires that allow them to deploy that power.</p>
+</div>
+<div id="marcel-renault-magnify" class="magnify" onclick="magnifyFigure(&#39;marcel-renault&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="marcel-renault-caption" class="caption-frame">
+<p>Figure: Marcel Renault races a Renault 40 cv during the Paris-Madrid race, an early Grand Prix, in 1903. Marcel died later in the race after missing a warning flag for a sharp corner at Couhé Vérac, likely due to dust reducing visibility.</p>
+</div>
+</div>
+<p>Just think of the control a driver would have to have to deploy such power through such a narrow channel of traction. That is the beauty and the skill of the human mind.</p>
+<p>In contrast, our computers are more like go-karts. Underpowered, but with well-matched tires. They can communicate far more fluidly. They are more efficient, but somehow less extraordinary, less beautiful.</p>
+<div class="figure">
+<div id="caleb-mcduff-figure" class="figure-frame">
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/Caleb_McDuff_WIX_Silence_Racing_livery.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<center>
-<em>Caleb McDuff driving for WIX Silence Racing.</em>
-</center>
+</div>
+<div id="caleb-mcduff-magnify" class="magnify" onclick="magnifyFigure(&#39;caleb-mcduff&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="caleb-mcduff-caption" class="caption-frame">
+<p>Figure: Caleb McDuff driving for WIX Silence Racing.</p>
+</div>
+</div>
 <p>For humans, that means much of our computation should be dedicated to considering <em>what</em> we should compute. To do that efficiently we need to model the world around us. The most complex thing in the world around us is other humans. So it is no surprise that we model them. We second guess what their intentions are, and our communication is only necessary when they are departing from how we model them. Naturally, for this to work well, we need to understand those we work closely with. So it is no surprise that social communication, social bonding, forms so much of a part of our use of our limited bandwidth.</p>
-<p>There is a second effect here, our need to anthropomorphise objects around us. Our tendency to model our fellow humans extends to when we interact with other entities in our environment. To our pets as well as inanimate objects around us, such as computers or even our cars. This tendency to overinterpret could be a consequence of our limited ability to communicate.</p>
+<p>There is a second effect here, our need to anthropomorphise objects around us. Our tendency to model our fellow humans extends to when we interact with other entities in our environment. To our pets as well as inanimate objects around us, such as computers or even our cars. This tendency to over interpret could be a consequence of our limited ability to communicate.</p>
 <p>For more details see this paper <a href="https://arxiv.org/abs/1705.07996">&quot;Living Together: Mind and Machine Intelligence&quot;</a>, and this <a href="http://inverseprobability.com/talks/lawrence-tedx17/living-together.html">TEDx talk</a>.</p>
 <h1 id="evolved-relationship-with-information-edit">Evolved Relationship with Information <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/evolved-relationship.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/evolved-relationship.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
 <p>The high bandwidth of computers has resulted in a close relationship between the computer and data. Large amounts of information can flow between the two. The degree to which the computer is mediating our relationship with data means that we should consider it an intermediary.</p>
@@ -116,40 +156,85 @@ communicate
 <p>Better mediation of this flow actually requires a better understanding of human-computer interaction. This in turn involves understanding our own intelligence better, what its cognitive biases are and how these might mislead us.</p>
 <p>For further thoughts see <a href="https://www.theguardian.com/media-network/2015/jul/23/data-driven-economy-marketing">this Guardian article</a> from 2015 on marketing in the internet era.</p>
 <p>You can also check my blog post on <a href="http://inverseprobability.com/2015/12/04/what-kind-of-ai">&quot;System Zero&quot;</a></p>
-<object class="svgplot " align data="../slides/diagrams/data-science/new-flow-of-information002.svg" style="vertical-align:middle;">
+<div class="figure">
+<div id="trinity-human-data-computer-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/data-science/new-flow-of-information002.svg" width="50%" style=" ">
 </object>
-<center>
-<em>The trinity of human, data and computer, and highlights the modern phenomenon. The communication channel between computer and data now has an extremely high bandwidth. The channel between human and computer and the channel between data and human is narrow. New direction of information flow, information is reaching us mediated by the computer.</em>
-</center>
+</div>
+<div id="trinity-human-data-computer-magnify" class="magnify" onclick="magnifyFigure(&#39;trinity-human-data-computer&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="trinity-human-data-computer-caption" class="caption-frame">
+<p>Figure: The trinity of human, data and computer, and highlights the modern phenomenon. The communication channel between computer and data now has an extremely high bandwidth. The channel between human and computer and the channel between data and human is narrow. New direction of information flow, information is reaching us mediated by the computer.</p>
+</div>
+</div>
 <h2 id="human-communication-edit">Human Communication <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/conversation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/conversation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>For human conversation to work, we require an internal model of who we are speaking to. We model each other, and combine our sense of who they are, who they think we are, and what has been said. This is our approach to dealing with the limited bandwidth connection we have. Empathy and understanding of intent. Mental dispositional concepts are used to augment our limited communication bandwidth.</p>
 <p>Fritz Heider referred to the important point of a conversation as being that they are happenings that are &quot;<em>psychologically represented</em> in each of the participants&quot; (his emphasis) <span class="citation">(Fritz Heider 1958)</span></p>
+<h3 id="bandwidth-constrained-conversations">Bandwidth Constrained Conversations</h3>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
 <span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;anne-bob-conversation</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, 
                             <span class="st">&#39;../slides/diagrams&#39;</span>,  sample<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">1</span>))</code></pre></div>
-<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation006.svg" style="vertical-align:middle;">
+<div class="figure">
+<div id="anne-bob-conversation-civil-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/anne-bob-conversation006.svg" width="70%" style=" ">
 </object>
-<center>
-<em>Conversation relies on internal models of other individuals.</em>
-</center>
-<object class="svgplot " align data="../slides/diagrams/anne-bob-conversation007.svg" style="vertical-align:middle;">
+</div>
+<div id="anne-bob-conversation-civil-magnify" class="magnify" onclick="magnifyFigure(&#39;anne-bob-conversation-civil&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="anne-bob-conversation-civil-caption" class="caption-frame">
+<p>Figure: Conversation relies on internal models of other individuals.</p>
+</div>
+</div>
+<div class="figure">
+<div id="anne-bob-conversation-argument-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/anne-bob-conversation007.svg" width="70%" style=" ">
 </object>
-<center>
-<em>Misunderstanding of context and who we are talking to leads to arguments.</em>
-</center>
+</div>
+<div id="anne-bob-conversation-argument-magnify" class="magnify" onclick="magnifyFigure(&#39;anne-bob-conversation-argument&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="anne-bob-conversation-argument-caption" class="caption-frame">
+<p>Figure: Misunderstanding of context and who we are talking to leads to arguments.</p>
+</div>
+</div>
 <p>Embodiment factors imply that, in our communication between humans, what is <em>not</em> said is, perhaps, more important than what is said. To communicate with each other we need to have a model of who each of us are.</p>
 <p>To aid this, in society, we are required to perform roles. Whether as a parent, a teacher, an employee or a boss. Each of these roles requires that we conform to certain standards of behaviour to facilitate communication between ourselves.</p>
 <p>Control of self is vitally important to these communications.</p>
 <p>The high availability of data available to humans undermines human-to-human communication channels by providing new routes to undermining our control of self.</p>
-<h2 id="machine-learning-and-narratives">Machine Learning and Narratives</h2>
-<p><img class="" src="../slides/diagrams/Classic_baby_shoes.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></p>
+<h3 id="a-six-word-novel-edit">A Six Word Novel <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/baby-shoes.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/baby-shoes.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
+<div class="figure">
+<div id="classic-baby-shoes-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/Classic_baby_shoes.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
 <center>
-<em>For sale: baby shoes, never worn.</em>
+For sale: baby shoes, never worn
 </center>
-<p>Consider the six word novel, apocraphally credited to Ernest Hemingway, &quot;For sale: baby shoes, never worn&quot;. To understand what that means to a human, you need a great deal of additional context. Context that is not directly accessible to a machine that has not got both the evolved and contextual understanding of our own condition to realize both the implication of the advert and what that implication means emotionally to the previous owner.</p>
-<iframe width="840" height="630" src="https://www.youtube.com/embed/8FIEZXMUM2I?start=7" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</div>
+<div id="classic-baby-shoes-magnify" class="magnify" onclick="magnifyFigure(&#39;classic-baby-shoes&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="classic-baby-shoes-caption" class="caption-frame">
+<p>Figure: Consider the six word novel, apocraphally credited to Ernest Hemingway, &quot;For sale: baby shoes, never worn&quot;. To understand what that means to a human, you need a great deal of additional context. Context that is not directly accessible to a machine that has not got both the evolved and contextual understanding of our own condition to realize both the implication of the advert and what that implication means emotionally to the previous owner.</p>
+</div>
+</div>
+<p>But this is a very different kind of intelligence than ours. A computer cannot understand the depth of the Ernest Hemingway's apocryphal six word novel: &quot;For Sale, Baby Shoes, Never worn&quot;, because it isn't equipped with that ability to model the complexity of humanity that underlies that statement.</p>
+<h3 id="heider-and-simmel-1944-edit">Heider and Simmel (1944) <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/heider-simmel.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/heider-simmel.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
+<div class="figure">
+<div id="heider-simmel-shapes-figure" class="figure-frame">
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/8FIEZXMUM2I?start=7" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
+</div>
+<div id="heider-simmel-shapes-magnify" class="magnify" onclick="magnifyFigure(&#39;heider-simmel-shapes&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="heider-simmel-shapes-caption" class="caption-frame">
+<p>Figure: Fritz Heider and Marianne Simmel's video of shapes from <span class="citation">F. Heider and Simmel (1944)</span>.</p>
+</div>
+</div>
 <p><a href="https://en.wikipedia.org/wiki/Fritz_Heider">Fritz Heider</a> and <a href="https://en.wikipedia.org/wiki/Marianne_Simmel">Marianne Simmel</a>'s experiments with animated shapes from 1944 <span class="citation">(F. Heider and Simmel 1944)</span>. Our interpretation of these objects as showing motives and even emotion is a combination of our desire for narrative, a need for understanding of each other, and our ability to empathise. At one level, these are crudely drawn objects, but in another key way, the animator has communicated a story through simple facets such as their relative motions, their sizes and their actions. We apply our psychological representations to these faceless shapes in an effort to interpret their actions.</p>
 <div id="refs" class="references">
 <div id="ref-Ananthanarayanan-cat09">
