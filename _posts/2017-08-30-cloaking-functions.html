@@ -111,7 +111,7 @@ communicate
 <p>Figure: The Lotus 49, view from the rear. The Lotus 49 was one of the last Formula One cars before the introduction of aerodynamic aids.</p>
 </div>
 </div>
-<p>So when it comes to our ability to compute we are extraordinary, not compute in our conscious mind, but the underlying neuron firings that underpin both our consciousness, our sbuconsciousness as well as our motor control etc.</p>
+<p>So when it comes to our ability to compute we are extraordinary, not compute in our conscious mind, but the underlying neuron firings that underpin both our consciousness, our subconsciousness as well as our motor control etc.</p>
 <p>If we think of ourselves as vehicles, then we are massively overpowered. Our ability to generate derived information from raw fuel is extraordinary. Intellectually we have formula one engines.</p>
 <p>But in terms of our ability to deploy that computation in actual use, to share the results of what we have inferred, we are very limited. So when you imagine the F1 car that represents a psyche, think of an F1 car with bicycle wheels.</p>
 <div class="figure">
@@ -143,7 +143,7 @@ communicate
 </div>
 </div>
 <p>For humans, that means much of our computation should be dedicated to considering <em>what</em> we should compute. To do that efficiently we need to model the world around us. The most complex thing in the world around us is other humans. So it is no surprise that we model them. We second guess what their intentions are, and our communication is only necessary when they are departing from how we model them. Naturally, for this to work well, we need to understand those we work closely with. So it is no surprise that social communication, social bonding, forms so much of a part of our use of our limited bandwidth.</p>
-<p>There is a second effect here, our need to anthropomorphise objects around us. Our tendency to model our fellow humans extends to when we interact with other entities in our environment. To our pets as well as inanimate objects around us, such as computers or even our cars. This tendency to overinterpret could be a consequence of our limited ability to communicate.</p>
+<p>There is a second effect here, our need to anthropomorphise objects around us. Our tendency to model our fellow humans extends to when we interact with other entities in our environment. To our pets as well as inanimate objects around us, such as computers or even our cars. This tendency to over interpret could be a consequence of our limited ability to communicate.</p>
 <p>For more details see this paper <a href="https://arxiv.org/abs/1705.07996">&quot;Living Together: Mind and Machine Intelligence&quot;</a>, and this <a href="http://inverseprobability.com/talks/lawrence-tedx17/living-together.html">TEDx talk</a>.</p>
 <h1 id="evolved-relationship-with-information-edit">Evolved Relationship with Information <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/evolved-relationship.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/evolved-relationship.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
 <p>The high bandwidth of computers has resulted in a close relationship between the computer and data. Large amounts of information can flow between the two. The degree to which the computer is mediating our relationship with data means that we should consider it an intermediary.</p>
@@ -156,7 +156,7 @@ communicate
 <p>You can also check my blog post on <a href="http://inverseprobability.com/2015/12/04/what-kind-of-ai">&quot;System Zero&quot;</a></p>
 <div class="figure">
 <div id="trinity-human-data-computer-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/data-science/new-flow-of-information002.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/data-science/new-flow-of-information002.svg" width="50%" style=" ">
 </object>
 </div>
 <div id="trinity-human-data-computer-magnify" class="magnify" onclick="magnifyFigure(&#39;trinity-human-data-computer&#39;)">
@@ -173,7 +173,7 @@ communicate
                             <span class="st">&#39;../slides/diagrams&#39;</span>,  sample<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">1</span>))</code></pre></div>
 <div class="figure">
 <div id="anne-bob-civil-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/anne-bob006.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/anne-bob006.svg" width="70%" style=" ">
 </object>
 </div>
 <div id="anne-bob-civil-magnify" class="magnify" onclick="magnifyFigure(&#39;anne-bob-civil&#39;)">
@@ -185,7 +185,7 @@ communicate
 </div>
 <div class="figure">
 <div id="anne-bob-argument-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/anne-bob007.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/anne-bob007.svg" width="70%" style=" ">
 </object>
 </div>
 <div id="anne-bob-argument-magnify" class="magnify" onclick="magnifyFigure(&#39;anne-bob-argument&#39;)">
@@ -220,7 +220,7 @@ communicate
 <p>The samples that remain are considered to be samples from the <em>posterior</em>.</p>
 <p>This approach to Bayesian inference is closely related to two sampling techniques known as <em>rejection sampling</em> and <em>importance sampling</em>. It is realized in practice in an approach known as <em>approximate Bayesian computation</em> (ABC) or likelihood-free inference.</p>
 <p>In practice, the algorithm is often too slow to be practical, because most samples will be inconsistent with the data and as a result the mechanism has to be operated many times to obtain a few posterior samples.</p>
-<p>However, in the Gaussian process case, when the likelihood also assumes Gaussian noise, we can operate this mechanims mathematically, and obtain the posterior density <em>analytically</em>. This is the benefit of Gaussian processes.</p>
+<p>However, in the Gaussian process case, when the likelihood also assumes Gaussian noise, we can operate this mechanism mathematically, and obtain the posterior density <em>analytically</em>. This is the benefit of Gaussian processes.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
 <span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;gp_rejection_sample</span><span class="sc">{sample:0&gt;3}</span><span class="st">.png&#39;</span>, 
@@ -305,22 +305,22 @@ communicate
 <li><p>Standard approach: sample the noise is from the GP's <strong>prior</strong>.</p></li>
 <li><p>Not necessarily the most 'efficient' covariance to use.</p></li>
 </ul>
-<object class="svgplot " data="../slides/diagrams/privacy/dp-firstpoint000.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/privacy/dp-firstpoint000.svg" width="80%" style=" ">
 </object>
 <p><em>Left</em>: Function change. <em>Right</em>: test point change</p>
-<object class="svgplot " data="../slides/diagrams/privacy/dp-firstpoint002.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/privacy/dp-firstpoint002.svg" width="80%" style=" ">
 </object>
 <p><em>Left</em>: Function change. <em>Right</em>: test point change</p>
-<object class="svgplot " data="../slides/diagrams/privacy/dp-secondpoint000.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/privacy/dp-secondpoint000.svg" width="80%" style=" ">
 </object>
 <p><em>Left</em>: Function change. <em>Right</em>: test point change</p>
-<object class="svgplot " data="../slides/diagrams/privacy/dp-secondpoint002.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/privacy/dp-secondpoint002.svg" width="80%" style=" ">
 </object>
 <p><em>Left</em>: Function change. <em>Right</em>: test point change</p>
-<object class="svgplot " data="../slides/diagrams/privacy/dp-with-ellipse001.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/privacy/dp-with-ellipse001.svg" width="80%" style=" ">
 </object>
 <p><em>Left</em>: Function change. <em>Right</em>: test point change</p>
-<object class="svgplot " data="../slides/diagrams/privacy/dp-with-ellipse002.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/privacy/dp-with-ellipse002.svg" width="80%" style=" ">
 </object>
 <p><em>Left</em>: Function change. <em>Right</em>: test point change</p>
 <ul>
@@ -331,25 +331,42 @@ communicate
 <p><br /><span class="math display">$$\frac{\text{c}(\delta)\Delta}{\varepsilon} \mathcal{N}_d(0,\mathbf{M})$$</span><br /></p>
 <p>We get to pick <span class="math inline"><strong>M</strong></span></p></li>
 <li><p>Intuitively we want to construct <span class="math inline"><strong>M</strong></span> so that it has greatest covariance in those directions most affected by changes in training points, so that it will be most able to mask those changes.</p></li>
-<li><p>The change in posterior mean predictions is,</p>
-<p><br /><span class="math display">$$\dataVector_* - \dataVector^\prime_* = \kernelMatrix_{*f} \kernelMatrix^{-1} (\dataVector-\dataVector^\prime)$$</span><br /></p></li>
-<li><p>Effect of perturbing each training point on each test point is represented in the cloaking matrix,</p>
-<p><br /><span class="math display">$$\mathbf{C} = \kernelMatrix_{*f} \kernelMatrix^{-1}$$</span><br /></p></li>
+<li><p>The change in posterior mean predictions is,</p></li>
+</ul>
+<p><br /><span class="math display">$$\dataVector_* - \dataVector^\prime_* = \kernelMatrix_{*f} \kernelMatrix^{-1} (\dataVector-\dataVector^\prime)$$</span><br /></p>
+<ul>
+<li>Effect of perturbing each training point on each test point is represented in the cloaking matrix,</li>
+</ul>
+<p><br /><span class="math display">$$\mathbf{C} = \kernelMatrix_{*f} \kernelMatrix^{-1}$$</span><br /></p>
+<ul>
 <li><p>We assume we are protecting only one training input's change, by at most <span class="math inline"><em>d</em></span>.</p></li>
 <li>So <span class="math inline">$\dataVector-\dataVector^\prime$</span> will be all zeros except for one element, <span class="math inline"><em>i</em></span>.<br />
 </li>
-<li><p>So the change in test points will be (at most)</p>
-<p><br /><span class="math display">$$\dataVector_*^\prime - \dataVector_* = d \mathbf{C}_{:i}$$</span><br /></p></li>
-<li><p>We're able to write the earlier bound as,</p>
+<li><p>So the change in test points will be (at most)</p></li>
+</ul>
+<p><br /><span class="math display">$$\dataVector_*^\prime - \dataVector_* = d \mathbf{C}_{:i}$$</span><br /></p>
+<ul>
+<li>We're able to write the earlier bound as,</li>
+</ul>
 <p><br /><span class="math display"><em>d</em><sup>2</sup>sup<sub><em>i</em></sub><strong>c</strong><sub><em>i</em></sub><sup>⊤</sup><strong>M</strong><sup>−1</sup><strong>c</strong><sub><em>i</em></sub> ≤ <em>Δ</em></span><br /></p>
-<p>where <span class="math inline"><strong>c</strong><sub><em>i</em></sub> ≜ <strong>C</strong><sub>:<em>i</em></sub></span></p></li>
+<p>where <span class="math inline"><strong>c</strong><sub><em>i</em></sub> ≜ <strong>C</strong><sub>:<em>i</em></sub></span></p>
+<ul>
 <li><p>Dealing with <span class="math inline"><em>d</em></span> elsewhere and setting <span class="math inline"><em>Δ</em> = 1</span> (thus <span class="math inline">0 ≤ <strong>c</strong><sub><em>i</em></sub><sup>⊤</sup><strong>M</strong><sup>−1</sup><strong>c</strong><sub><em>i</em></sub> ≤ 1</span>) and minimise <span class="math inline">log|<strong>M</strong>|</span> (minimises the partial entropy).</p></li>
-<li><p>Using Lagrange multipliers and gradient descent, we find</p>
-<p><br /><span class="math display"><strong>M</strong> = ∑<sub><em>i</em></sub><em>λ</em><sub><em>i</em></sub><strong>c</strong><sub><em>i</em></sub><strong>c</strong><sub><em>i</em></sub><sup>⊤</sup></span><br /></p></li>
+<li><p>Using Lagrange multipliers and gradient descent, we find <br /><span class="math display"><strong>M</strong> = ∑<sub><em>i</em></sub><em>λ</em><sub><em>i</em></sub><strong>c</strong><sub><em>i</em></sub><strong>c</strong><sub><em>i</em></sub><sup>⊤</sup></span><br /></p></li>
 </ul>
 <p>The noise added by this method is now practical.</p>
+<div class="figure">
+<div id="kung-cloaking-simple-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/privacy/kung_cloaking_simple.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="kung-cloaking-simple-magnify" class="magnify" onclick="magnifyFigure(&#39;kung-cloaking-simple&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="kung-cloaking-simple-caption" class="caption-frame">
+<p>Figure:</p>
+</div>
 </div>
 <p>EQ kernel, <span class="math inline"><em>l</em> = 25</span> years, <span class="math inline"><em>Δ</em> = 100</span>cm, <span class="math inline"><em>ε</em> = 1</span></p>
 <p>It also has some interesting features;</p>
@@ -358,30 +375,79 @@ communicate
 <li>Least noise far from any data</li>
 <li>Most noise just outside data</li>
 </ul>
+<div class="figure">
+<div id="kung-cloaking-simple-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/privacy/kung_cloaking_simple.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+</div>
+<div id="kung-cloaking-simple-magnify" class="magnify" onclick="magnifyFigure(&#39;kung-cloaking-simple&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="kung-cloaking-simple-caption" class="caption-frame">
+<p>Figure: Simple cloaking function.</p>
+</div>
+</div>
+<div class="figure">
+<div id="house-prices-cloaking-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/privacy/houseprices_bigcirc_15km_0_labels.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="house-prices-cloaking-magnify" class="magnify" onclick="magnifyFigure(&#39;house-prices-cloaking&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="house-prices-cloaking-caption" class="caption-frame">
+<p>Figure: Simple cloaking function on house price data.</p>
+</div>
 </div>
 <ul>
 <li><p>Tested on 4D citibike dataset (predicting journey durations from start/finish station locations).</p></li>
 <li><p>The method appears to achieve lower noise than binning alternatives (for reasonable <span class="math inline"><em>ε</em></span>).</p></li>
 </ul>
+<div class="figure">
+<div id="citibike-data-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/privacy/newtable2.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<p>lengthscale in degrees, values above, journey duration (in seconds)</p>
+</div>
+<div id="citibike-data-magnify" class="magnify" onclick="magnifyFigure(&#39;citibike-data&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="citibike-data-caption" class="caption-frame">
+<p>Figure: Citibike data. Lengthscale in degrees, values above, journey duration (in seconds).</p>
+</div>
+</div>
 <ul>
 <li><p>Outliers poorly predicted.</p></li>
 <li><p>Too much noise around data 'edges'.</p></li>
 <li><p>Use inducing inputs to reduce the sensitivity to these outliers.</p></li>
 </ul>
+<div class="figure">
+<div id="cloaking-no-inducing-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/privacy/cloaking-no-inducing.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+</div>
+<div id="cloaking-no-inducing-magnify" class="magnify" onclick="magnifyFigure(&#39;cloaking-no-inducing&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="cloaking-no-inducing-caption" class="caption-frame">
+<p>Figure: Cloaking function with no inducing inputs.</p>
+</div>
+</div>
+<div class="figure">
+<div id="cloaking-inducing-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/privacy/cloaking-inducing.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="cloaking-inducing-magnify" class="magnify" onclick="magnifyFigure(&#39;cloaking-inducing&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="cloaking-inducing-caption" class="caption-frame">
+<p>Figure: Cloaking function with inducing inputs.</p>
+</div>
 </div>
 <ul>
 <li><p>For 1D !Kung, RMSE improved from <span class="math inline">15.0 ± 2.0cm</span> to <span class="math inline">11.1 ± 0.8cm</span></p>
@@ -389,11 +455,31 @@ communicate
 <li><p>For 2D !Kung, RMSE improved from <span class="math inline">22.8 ± 1.9cm</span> to <span class="math inline">8.8 ± 0.6cm</span></p>
 <p>Note that the uncertainty across cross-validation runs smaller. 2D version benefits from data's 1D manifold.</p></li>
 </ul>
+<div class="figure">
+<div id="cloaking-housing-no-inducing-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/privacy/housing-no-inducing.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+</div>
+<div id="cloaking-housing-no-inducing-magnify" class="magnify" onclick="magnifyFigure(&#39;cloaking-housing-no-inducing&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="cloaking-housing-no-inducing-caption" class="caption-frame">
+<p>Figure: Cloaking functions on the housing data with no inducing inputs.</p>
+</div>
+</div>
+<div class="figure">
+<div id="cloaking-housing-inducing-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/privacy/housing-inducing.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="cloaking-housing-inducing-magnify" class="magnify" onclick="magnifyFigure(&#39;cloaking-housing-inducing&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="cloaking-housing-inducing-caption" class="caption-frame">
+<p>Figure: Cloaking functions on the housing data with inducing inputs.</p>
+</div>
 </div>
 <ul>
 <li><p><strong>Summary</strong> We have developed an improved method for performing differentially private regression.</p></li>
