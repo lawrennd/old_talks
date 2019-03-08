@@ -11,15 +11,10 @@ Most of our experience with deployment relies on some approximation to the compo
 \newslide{Fragility of AI Systems}
 
 \slides{
-
 * They are componentwise built from ML Capabilities.
-
 * Each capability is independently constructed and verified.
-
    * Pedestrian detection
-   
    * Road line detection
-
 * Important for verification purposes.
 }
 

@@ -7,69 +7,60 @@ author: Neil D. Lawrence
 affiliation: Amazon and University of Sheffield
 ---
 
-\include{../_ai/includes/gartner-hype-cycle-ai-bd-dl.md}
+\include{_data-science/includes/gartner-hype-cycle-ai-bd-dl.md}
 
-## What about IoT?
+\newslide{What about IoT?}
 
-\include{../_ai/includes/gartner-hype-cycle-bd-iot.md}
+\include{_ai/includes/gartner-hype-cycle-bd-iot.md}
 
-
-## Background: Big Data
+\newslide{Background: Big Data}
 
 * The pervasiveness of data brings forward particular challenges.
-
 * Emerging themes: Devolving compute onto device. 
-
 * Data preprocessing: Internet of Intelligence.
 
-\include{../_ai/includes/embodiment-factors.md}
-\include{../_data-science/includes/evolved-relationship.md}
+\include{_ai/includes/embodiment-factors.md}
+\include{_data-science/includes/evolved-relationship.md}
 
 
 
-## Effects
+\newslide{Effects}
 
 * This phenomenon has already revolutionised biology.
-
 * Large scale data acquisition and distribution.
-
 * What does it mean for IoT
 
-## Internet of People
+\newslide{Internet of People}
 
 * Fog computing: barrier between cloud and device blurring.
-
 * Stuxnet: Adversarial and Security implications for intelligent systems.
-
 * Complex feedback between algorithm and implementation
   
-
-## Challenges
+\newslide{Challenges}
 
 1. Paradoxes of the Data Society
-
 2. Quantifying the Value of Data
-
 3. Privacy, loss of control, marginalisation
 
+\include{_data-science/includes/value-of-data.md}
 
-## Quantifying the Value of Data
+\newslide{Quantifying the Value of Data}
 
 There's a sea of data, but most of it is undrinkable
 
-<img src="../slides/diagrams/sea-water-ocean-waves.jpg" width="50%">
+\includejpg{../slides/diagrams/sea-water-ocean-waves}
 
 We require data-desalination before it can be consumed!
 
 
-## Data --- Quotes from NIPS Workshop on ML for Healthcare
+\newslide{Data --- Quotes from NeurIPS 2017 Workshop on ML for Healthcare}
 
 * 90% of our time is spent on validation and integration (Leo Anthony Celi)
 * "The Dirty Work We Don't Want to Think About" (Eric Xing)
 * "Voodoo to get it decompressed" (Francisco Giminez)
 * In health care clinicians collect the data and often control the direction of research through guardianship of data.
 
-## Value
+\newslide{Value}
 
 * How do we measure value in the data economy?
 * How do we encourage data workers: curation and management
@@ -77,18 +68,16 @@ We require data-desalination before it can be consumed!
     * Quantifying the value in the contribution of *each actor*.
 
 
-## Embodiment: Data Readiness Levels
+\newslide{Embodiment: Data Readiness Levels}
 
 * Three Bands of Data Readiness:
 
 * Band C - accessibility
-
 * Band B - validity
-
 * Band A - usability
 
 
-## Accessibility: Band C
+\newslide{Accessibility: Band C}
 
 * Hearsay data.
 * Availability, is it actually being recorded?
@@ -96,7 +85,7 @@ We require data-desalination before it can be consumed!
 * Format: log books, PDF ...
 * limitations on access due to topology (e.g. it's distributed across a number of devices)
 
-## Validity: Band B
+\newslide{Validity: Band B}
 
 *  faithfulness and representation
 * visualisations.
@@ -104,21 +93,21 @@ We require data-desalination before it can be consumed!
 * Missing values.
 * Example, was a column or columns accidentally perturbed (e.g. through a sort operation that missed one or more columns)? Or was a [gene name accidentally converted to a date](http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-5-80)?
 
-## Usability: Band A
+\newslide{Usability: Band A}
 
 * The usability of data
 * Band A is about data in context.
 * Consider appropriateness of a given data set to answer a particular
 question or to be subject to a particular analysis.
 
-## Recursive Effects
+\newslide{Recursive Effects}
 
 * Band A may also require
     * active collection of new data. 
     * annotation of data by human experts
     * revisiting the collection (and running through the appropriate stages again)
 
-## Also ...
+\newslide{Also ...}
 
 * Encourage greater interaction between application domains and data scientists
 
@@ -126,18 +115,18 @@ question or to be subject to a particular analysis.
 
 * Incentivise the delivery of data.
 
-## See Also ...
+\newslide{See Also ...}
 
 * Data Joel Tests proposal by Damon Civin (ARM)
 
 
-## Privacy, Loss of Control and Marginalization
+\newslide{Privacy, Loss of Control and Marginalization}
 
 * Society is becoming harder to monitor
 
 * Individual is becoming easier to monitor
 
-## Discrimination
+\newslide{Discrimination}
 
 * Marketing can become more sinister when the target of the marketing is well understood and the (digital) environment of the target is also so well controlled
 
@@ -146,17 +135,17 @@ question or to be subject to a particular analysis.
 * All prohibited under European law, but can pass unawares, or be implicit
 
 
-## Marginalization
+\newslide{Marginalization}
 
 * Credit scoring, insurance, medical treatment
 * What if certain sectors of society are under-represented in our aanalysis?
 * What if Silicon Valley develops everything for us?
 
-## Digital Revolution and Inequality?
+\newslide{Digital Revolution and Inequality?}
 
 <img src="../slides/diagrams/woman-tends-house-in-village-of-uganda-africa.jpg" width="50%" style="border:none">
 
-## Amelioration
+\newslide{Amelioration}
 
 * Work to ensure individual retains control of their own data
 * We accept privacy in our real lives, need to accept it in our digital
@@ -166,7 +155,7 @@ question or to be subject to a particular analysis.
 
 \include{../_ai/includes/ml-systems-design.md}
 
-## Conclusion
+\newslide{Conclusion}
 
 * Data science offers a great deal of promise for personalized health
 * There are challenges and pitfalls
@@ -176,7 +165,6 @@ question or to be subject to a particular analysis.
 
 * There are particular challenges around the Internet of Intelligence. 
 
-## Thanks!
+\thanks
 
-* twitter: @lawrennd
-* blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
+\references

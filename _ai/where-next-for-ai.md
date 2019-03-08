@@ -22,27 +22,14 @@ transition: None
 \include{../talk-macros.tex}
 
 \section{Introduction}
-
-\include{_ai/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
-
-\newslide{Tracking Hype about Hype}
-
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Just checking where the Gartner hype cycle is on the Gartner hype cycle (seems to be at &quot;technology trigger&quot;) <a href="https://t.co/XbqRJ1bNck">https://t.co/XbqRJ1bNck</a></p>&mdash; Neil Lawrence (\@lawrennd) <a href="https://twitter.com/lawrennd/status/915182865335357440?ref_src=twsrc%5Etfw">October 3, 2017</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+\include{_data-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
+\include{_ai/includes/hype-about-hype.md}
 \include{_data-science/includes/lies-damned-lies.md}
-
-\newslide{Electricity}
-
-\includejpg{../slides/diagrams/why-didnt-electricity-immediately-change-manufacturing_neg}{70%}
-
-[Why didn't electricity immediately change manufacturing?](http://www.bbc.co.uk/news/business-40673694)
-by Tim Harford
-
+\include{_data-science/includes/why-didnt-electricity.md}
 \newslide{Internet of People}
-
 \newslide{Machine Learning Systems Design}
-
-\includepng{../slides/diagrams/SteamEngine_Boulton&Watt_1784}{50%}{negate}
+\include{_ai/includes/watt-steam-engine.md}
 
 \thanks
+
+\references

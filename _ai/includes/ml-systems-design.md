@@ -14,15 +14,7 @@
 
 \notes{However, the systems we are deploying into the real world actually effect their environment. They change users responses and experience evolved adversarial behaviour.}
 
-\newslide{Machine Learning Systems Design}
-
-\includepng{../slides/diagrams/SteamEngine_Boulton&Watt_1784_neg}{50%}{}{center}
-
-\notes{James Watt's steam engine contained an early machine learning device. In the same way that modern systems are component based, his engine was composed of components. One of which is a speed regulator known as *Watt's governor*. The two balls in the center of the image, when spun fast, rise, and through a linkage mechanism.
-
-This has the basic components of sense and act that we expect in an intelligent system, and this system saved the need for a human operator to manually adjust the system in the case of overspeed. Overspeed has the potential to destroy an engine, so the governor operates as a safety device.
-
-The first wave of automation did bring about sabotoage as a worker's response. But if machinery was sabotaged, if the linkage between sensor (the spinning balls) and action (the valve closure) was broken, this would be obvious to the engine operator at start up time. The machine could be repaired before operation.}
+\include{_ai/includes/centrifugal-governor.md}
 
 \newslide{Turnaround And Update}
 \slides{
