@@ -5,7 +5,7 @@
 \subsection{Rectified Linear Units}
 
 \setupcode{import numpy as np}
-\code{%load -s relu mlai.py}
+\loadcode{relu}{mlai}
 
 \setupdisplaycode{import pods}
 \displaycode{pods.notebook.display_prediction(basis=mlai.relu, num_basis=4)}
@@ -56,5 +56,5 @@ $$
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('relu_basis{num_basis:0>3}.svg', 
                             directory='../slides/diagrams/ml', 
-							num_basis=IntSlider(0,0,4,1))}
+			    num_basis=IntSlider(0,0,4,1))}
 \endif
