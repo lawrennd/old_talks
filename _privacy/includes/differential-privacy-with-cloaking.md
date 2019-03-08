@@ -19,7 +19,7 @@
 
 \newslide{Cloaking}
 
-\includediagram{../slides/diagrams/privacy/dp-firstpoint000}
+\includediagram{../slides/diagrams/privacy/dp-firstpoint000}{80%}
 
 *Left*: Function change. *Right*: test point change
 
@@ -77,12 +77,12 @@ points, so that it will be most able to mask those changes.
 
 * The change in posterior mean predictions is,
 
-     $$\dataVector_* - \dataVector^\prime_* = \kernelMatrix_{*f} \kernelMatrix^{-1} (\dataVector-\dataVector^\prime)$$
+  $$\dataVector_* - \dataVector^\prime_* = \kernelMatrix_{*f} \kernelMatrix^{-1} (\dataVector-\dataVector^\prime)$$
 
 * Effect of perturbing each training point on each test point is
 represented in the cloaking matrix,
 
-    $$\mathbf{C} = \kernelMatrix_{*f} \kernelMatrix^{-1}$$
+  $$\mathbf{C} = \kernelMatrix_{*f} \kernelMatrix^{-1}$$
 
 
 \newslide{Cloaking}{data-background="../slides/diagrams/pres_bg.png"}
@@ -95,13 +95,13 @@ element, $i$.\
 
 * So the change in test points will be (at most)
 
-    $$\dataVector_*^\prime - \dataVector_* = d \mathbf{C}_{:i}$$
+  $$\dataVector_*^\prime - \dataVector_* = d \mathbf{C}_{:i}$$
 
 * We're able to write the earlier bound as,
 
-    $$d^2 \sup_{i} \mathbf{c}_i^\top \mathbf{M}^{-1} \mathbf{c}_i \leq\Delta$$
+  $$d^2 \sup_{i} \mathbf{c}_i^\top \mathbf{M}^{-1} \mathbf{c}_i \leq\Delta$$
 
-    where $\mathbf{c}_i \triangleq \mathbf{C}_{:i}$
+  where $\mathbf{c}_i \triangleq \mathbf{C}_{:i}$
 
 
 \newslide{Cloaking}{data-background="../slides/diagrams/pres_bg.png"}
@@ -111,14 +111,15 @@ element, $i$.\
 $\log |\mathbf{M}|$ (minimises the partial entropy).
 
 * Using Lagrange multipliers and gradient descent, we find
-
-    $$\mathbf{M} = \sum_i{\lambda_i \mathbf{c}_i \mathbf{c}_i^\top}$$
+  $$
+  \mathbf{M} = \sum_i{\lambda_i \mathbf{c}_i \mathbf{c}_i^\top}
+  $$
 
 \newslide{Cloaking: Results}
 
 The noise added by this method is now practical.
 
-\includepng{../slides/diagrams/privacy/kung_cloaking_simple}{100%}{negate}
+\figure{\includepng{../slides/diagrams/privacy/kung_cloaking_simple}{100%}{negate}}{}{kung-cloaking-simple}
 
 EQ kernel, $l = 25$ years, $\Delta=100$cm, $\varepsilon=1$
 
