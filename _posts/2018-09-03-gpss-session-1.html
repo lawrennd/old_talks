@@ -43,6 +43,7 @@ categories:
 <p>.</p>
 <!---->
 <!--Back matter-->
+<p>.</p>
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
 <div class="figure">
 <div id="gaussian-processes-for-machine-learning-figure" class="figure-frame">
@@ -117,7 +118,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
                   frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <div class="figure">
 <div id="olympic-marathon-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/datasets/olympic-marathon.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/datasets/olympic-marathon.svg" width style=" ">
 </object>
 </div>
 <div id="olympic-marathon-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-marathon&#39;)">
@@ -136,7 +137,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 <p>The solution to these two simultaneous equations can be represented graphically as</p>
 <div class="figure">
 <div id="over-determined-system-3-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/over_determined_system003.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/over_determined_system003.svg" width="40%" style=" ">
 </object>
 </div>
 <div id="over-determined-system-3-magnify" class="magnify" onclick="magnifyFigure(&#39;over-determined-system-3&#39;)">
@@ -148,10 +149,9 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </div>
 <p>The challenge comes when a third data point is observed and it doesn't naturally fit on the straight line.</p>
 <p>point 3: <span class="math inline">$\inputScalar = 2$</span>, <span class="math inline">$\dataScalar=2.5$</span> <br /><span class="math display">2.5 = 2<em>m</em> + <em>c</em></span><br /></p>
-{
 <div class="figure">
 <div id="over-determined-system-4-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/over_determined_system004.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/over_determined_system004.svg" width="40%" style=" ">
 </object>
 </div>
 <div id="over-determined-system-4-magnify" class="magnify" onclick="magnifyFigure(&#39;over-determined-system-4&#39;)">
@@ -162,10 +162,9 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </div>
 </div>
 <p>Now there are three candidate lines, each consistent with our data.</p>
-{
 <div class="figure">
 <div id="over-determined-system-7-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/over_determined_system007.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/over_determined_system007.svg" width="40%" style=" ">
 </object>
 </div>
 <div id="over-determined-system-7-magnify" class="magnify" onclick="magnifyFigure(&#39;over-determined-system-7&#39;)">
@@ -255,7 +254,7 @@ $$</span><br /></p>
   \end{align}$$</span><br /></p>
 <div class="figure">
 <div id="gaussian-of-height-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/gaussian_of_height.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/gaussian_of_height.svg" width="60%" style=" ">
 </object>
 </div>
 <div id="gaussian-of-height-magnify" class="magnify" onclick="magnifyFigure(&#39;gaussian-of-height&#39;)">
@@ -290,7 +289,7 @@ $$</span><br /></p>
                             directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, samp<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">1</span>))</code></pre></div>
 <div class="figure">
 <div id="under-determined-system-9-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/under_determined_system009.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/under_determined_system009.svg" width="40%" style=" ">
 </object>
 </div>
 <div id="under-determined-system-9-magnify" class="magnify" onclick="magnifyFigure(&#39;under-determined-system-9&#39;)">
@@ -321,7 +320,7 @@ $$</span><br /></p>
                             stage<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>))</code></pre></div>
 <div class="figure">
 <div id="dem-gaussian-3-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/dem_gaussian003.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/dem_gaussian003.svg" width="70%" style=" ">
 </object>
 </div>
 <div id="dem-gaussian-3-magnify" class="magnify" onclick="magnifyFigure(&#39;dem-gaussian-3&#39;)">
@@ -336,7 +335,7 @@ $$</span><br /></p>
 <p>For the Gaussian case, the normalisation of the posterior can be performed analytically. This is because both the prior and the likelihood have the form of an <em>exponentiated quadratic</em>, <br /><span class="math display">exp(<em>a</em><sup>2</sup>)exp(<em>b</em><sup>2</sup>)=exp(<em>a</em><sup>2</sup> + <em>b</em><sup>2</sup>),</span><br /> and the properties of the exponential mean that the product of two exponentiated quadratics is also an exponentiated quadratic. That implies that the posterior is also Gaussian, because a normalized exponentiated quadratic is a Gaussian distribution.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
 <p>For general Bayesian inference, over more than one parameter, we need <em>multivariate priors</em>. For example, consider the multivariate linear regression where an observation, <span class="math inline">$\dataScalar_i$</span> is related to a vector of features, <span class="math inline">$\inputVector_{i, :}$</span>, through a vector of parameters, <span class="math inline">$\weightVector$</span>, <br /><span class="math display">$$\dataScalar_i = \sum_j \weightScalar_j \inputScalar_{i, j} + \noiseScalar_i,$$</span><br /> or in vector notation, <br /><span class="math display">$$\dataScalar_i = \weightVector^\top \inputVector_{i, :} + \noiseScalar_i.$$</span><br /> Here we've dropped the intercpet for convenience, it can be reintroduced by augmenting the feature vector, <span class="math inline">$\inputVector_{i, :}$</span>, with a constant valued feature.</p>
 <p>This motivates the need for a <em>multivariate</em> Gaussian density.</p>
-<h2 id="multivariate-regression-likelihood">Multivariate Regression Likelihood</h2>
+<h2 id="multivariate-regression-likelihood-edit">Multivariate Regression Likelihood <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/multivariate-bayesian-linear-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/multivariate-bayesian-linear-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <ul>
 <li>Noise corrupted data point <br /><span class="math display">$$\dataScalar_i = \weightVector^\top \inputVector_{i, :} + {\noiseScalar}_i$$</span><br /></li>
 </ul>
@@ -358,7 +357,7 @@ $$</span><br /></p>
   $$</span><br /></p>
 <div class="figure">
 <div id="height-weight-gaussian-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/height_weight_gaussian.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/height_weight_gaussian.svg" width="70%" style=" ">
 </object>
 </div>
 <div id="height-weight-gaussian-magnify" class="magnify" onclick="magnifyFigure(&#39;height-weight-gaussian&#39;)">
@@ -377,7 +376,7 @@ $$</span><br /></p>
                             fig<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">1</span>))</code></pre></div>
 <div class="figure">
 <div id="independent-height-weight-7-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/independent_height_weight007.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/independent_height_weight007.svg" width="70%" style=" ">
 </object>
 </div>
 <div id="independent-height-weight-7-magnify" class="magnify" onclick="magnifyFigure(&#39;independent-height-weight-7&#39;)">
@@ -399,7 +398,7 @@ pods.notebook.display_plots(<span class="st">&#39;correlated_height_weight</span
                             fig<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">1</span>))</code></pre></div>
 <div class="figure">
 <div id="correlated-height-weight-7-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/correlated_height_weight007.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/correlated_height_weight007.svg" width="70%" style=" ">
 </object>
 </div>
 <div id="correlated-height-weight-7-magnify" class="magnify" onclick="magnifyFigure(&#39;correlated-height-weight-7&#39;)">
@@ -486,7 +485,7 @@ $$</span><br /> so the elements of the covariance or <em>kernel</em> matrix are 
 <p>The samples that remain are considered to be samples from the <em>posterior</em>.</p>
 <p>This approach to Bayesian inference is closely related to two sampling techniques known as <em>rejection sampling</em> and <em>importance sampling</em>. It is realized in practice in an approach known as <em>approximate Bayesian computation</em> (ABC) or likelihood-free inference.</p>
 <p>In practice, the algorithm is often too slow to be practical, because most samples will be inconsistent with the data and as a result the mechanism has to be operated many times to obtain a few posterior samples.</p>
-<p>However, in the Gaussian process case, when the likelihood also assumes Gaussian noise, we can operate this mechanims mathematically, and obtain the posterior density <em>analytically</em>. This is the benefit of Gaussian processes.</p>
+<p>However, in the Gaussian process case, when the likelihood also assumes Gaussian noise, we can operate this mechanism mathematically, and obtain the posterior density <em>analytically</em>. This is the benefit of Gaussian processes.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
 <span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;gp_rejection_sample</span><span class="sc">{sample:0&gt;3}</span><span class="st">.png&#39;</span>, 
@@ -524,7 +523,7 @@ $$</span><br /> in the figure below we plot these data on the <span class="math 
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;two_point_sample</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, <span class="st">&#39;../slides/diagrams/gp&#39;</span>, sample<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">8</span>, <span class="dv">1</span>))</code></pre></div>
 <div class="figure">
 <div id="gp-two-point-sample-1-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/gp/two_point_sample008.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/gp/two_point_sample008.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="gp-two-point-sample-1-magnify" class="magnify" onclick="magnifyFigure(&#39;gp-two-point-sample-1&#39;)">
@@ -542,7 +541,7 @@ $$</span><br /> in the figure below we plot these data on the <span class="math 
 {
 <div class="figure">
 <div id="two-point-sample-one-two-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/gp/two_point_sample012.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/gp/two_point_sample012.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="two-point-sample-one-two-magnify" class="magnify" onclick="magnifyFigure(&#39;two-point-sample-one-two&#39;)">
@@ -583,7 +582,7 @@ $$</span><br /></p>
                             sample<span class="op">=</span>IntSlider(<span class="dv">13</span>, <span class="dv">13</span>, <span class="dv">17</span>, <span class="dv">1</span>))</code></pre></div>
 <div class="figure">
 <div id="two-point-sample-13-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/gp/two_point_sample013.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/gp/two_point_sample013.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="two-point-sample-13-magnify" class="magnify" onclick="magnifyFigure(&#39;two-point-sample-13&#39;)">
@@ -595,7 +594,7 @@ $$</span><br /></p>
 </div>
 <div class="figure">
 <div id="two-point-sample-one-eight-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/gp/two_point_sample017.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/gp/two_point_sample017.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="two-point-sample-one-eight-magnify" class="magnify" onclick="magnifyFigure(&#39;two-point-sample-one-eight&#39;)">
@@ -613,9 +612,9 @@ k(\inputVector, \inputVector^\prime) = \alpha \exp\left(-\frac{\left\Vert \input
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;computing_eq_three_covariance</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, 
                             directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/kern&#39;</span>, 
                             sample<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">16</span>, <span class="dv">1</span>))</code></pre></div>
-<object class="svgplot " data="../slides/diagrams/kern/computing_eq_three_covariance016.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/kern/computing_eq_three_covariance016.svg" width style=" ">
 </object>
-<object class="svgplot " data="../slides/diagrams/kern/computing_eq_three_covariance016.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/kern/computing_eq_three_covariance016.svg" width style=" ">
 </object>
 <div class="caption" style="">
 Figure: Entrywise fill in of the covariance matrix from the covariance function.
@@ -625,9 +624,9 @@ Figure: Entrywise fill in of the covariance matrix from the covariance function.
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;computing_eq_four_covariance</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, 
                             directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/kern&#39;</span>, 
                             sample<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">27</span>, <span class="dv">1</span>))</code></pre></div>
-<object class="svgplot " data="../slides/diagrams/kern/computing_eq_four_covariance027.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/kern/computing_eq_four_covariance027.svg" width style=" ">
 </object>
-<object class="svgplot " data="../slides/diagrams/kern/computing_eq_four_covariance027.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/kern/computing_eq_four_covariance027.svg" width style=" ">
 </object>
 <div class="caption" style="">
 Figure: Entrywise fill in of the covariance matrix from the covariance function.
@@ -637,14 +636,14 @@ Figure: Entrywise fill in of the covariance matrix from the covariance function.
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;computing_eq_three_2_covariance</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, 
                             directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/kern&#39;</span>, 
                             sample<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">16</span>, <span class="dv">1</span>))</code></pre></div>
-<object class="svgplot " data="../slides/diagrams/kern/computing_eq_three_2_covariance016.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/kern/computing_eq_three_2_covariance016.svg" width style=" ">
 </object>
-<object class="svgplot " data="../slides/diagrams/kern/computing_eq_three_2_covariance016.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/kern/computing_eq_three_2_covariance016.svg" width style=" ">
 </object>
 <div class="caption" style="">
 Figure: Entrywise fill in of the covariance matrix from the covariance function.
 </div>
-<h2 id="polynomial-covariance">Polynomial Covariance</h2>
+<h2 id="polynomial-covariance-edit">Polynomial Covariance <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/poly-covariance.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/poly-covariance.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <center>
 <br /><span class="math display">$$\kernelScalar(\inputVector, \inputVector^\prime) = \alpha(w \inputVector^\top\inputVector^\prime + b)^d$$</span><br />
 </center>
@@ -653,7 +652,7 @@ Figure: Entrywise fill in of the covariance matrix from the covariance function.
 <table>
 <tr>
 <td width="45%">
-<object class="100%" align data="../slides/diagrams/kern/polynomial_covariance.svg" style="vertical-align:middle">
+<object class width="100%" data="../slides/diagrams/kern/polynomial_covariance.svg">
 </object>
 </td>
 <td width="45%">
@@ -684,7 +683,7 @@ $$</span><br /></p>
 <table>
 <tr>
 <td width="45%">
-<object class="100%" align data="../slides/diagrams/kern/brownian_covariance.svg" style="vertical-align:middle">
+<object class width="100%" data="../slides/diagrams/kern/brownian_covariance.svg">
 </object>
 </td>
 <td width="45%">
@@ -702,7 +701,7 @@ $$</span><br /></p>
 <p>Figure: Brownian motion covariance function.</p>
 </div>
 </div>
-<h2 id="periodic-covariance">Periodic Covariance</h2>
+<h2 id="periodic-covariance-edit">Periodic Covariance <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/periodic-covariance.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/periodic-covariance.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <center>
 <br /><span class="math display">$$\kernelScalar(\inputVector, \inputVector^\prime) = \alpha\exp\left(\frac{-2\sin(\pi rw)^2}{\lengthScale^2}\right)$$</span><br />
 </center>
@@ -711,7 +710,7 @@ $$</span><br /></p>
 <table>
 <tr>
 <td width="45%">
-<object class="100%" align data="../slides/diagrams/kern/periodic_covariance.svg" style="vertical-align:middle">
+<object class width="100%" data="../slides/diagrams/kern/periodic_covariance.svg">
 </object>
 </td>
 <td width="45%">
@@ -729,6 +728,7 @@ $$</span><br /></p>
 <p>Figure: Periodic covariance function.</p>
 </div>
 </div>
+<h2 id="degenerate-covariance-functions-edit">Degenerate Covariance Functions <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/rbf-basis-covariance.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/rbf-basis-covariance.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Any linear basis function can also be incorporated into a covariance function. For example, an RBF network is a type of neural network with a set of radial basis functions. Meaning, the basis funciton is radially symmetric. These basis functions take the form, <br /><span class="math display">$$
 \basisFunction_k(\inputScalar) = \exp\left(-\frac{\ltwoNorm{\inputScalar-\meanScalar_k}^{2}}{\lengthScale^{2}}\right).
 $$</span><br /> Given a set of parameters, <br /><span class="math display">$$
@@ -754,7 +754,7 @@ $$</span><br /> meaning that the vector of observations from the function is joi
 <table>
 <tr>
 <td width="45%">
-<object class="100%" align data="../slides/diagrams/kern/basis_covariance.svg" style="vertical-align:middle">
+<object class width="100%" data="../slides/diagrams/kern/basis_covariance.svg">
 </object>
 </td>
 <td width="45%">
@@ -816,7 +816,7 @@ $$</span><br /> <br /><span class="math display">$$\begin{aligned}
 <table>
 <tr>
 <td width="45%">
-<object class="100%" align data="../slides/diagrams/kern/mlp_covariance.svg" style="vertical-align:middle">
+<object class width="100%" data="../slides/diagrams/kern/mlp_covariance.svg">
 </object>
 </td>
 <td width="45%">
@@ -835,7 +835,7 @@ $$</span><br /> <br /><span class="math display">$$\begin{aligned}
 </div>
 </div>
 <!--include{_kern/includes/relu-covariance.md}-->
-<h2 id="sinc-covariance">Sinc Covariance</h2>
+<h2 id="sinc-covariance-edit">Sinc Covariance <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/sinc-covariance.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/sinc-covariance.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Another approach to developing covariance function exploits Bochner's theorem <span class="citation">Bochner (1959)</span>. Bochner's theorem tells us that any positve filter in Fourier space implies has an associated Gaussian process with a stationary covariance function. The covariance function is the <em>inverse Fourier transform</em> of the filter applied in Fourier space.</p>
 <p>For example, in signal processing, <em>band limitations</em> are commonly applied as an assumption. For example, we may believe that no frequency above <span class="math inline"><em>w</em> = 2</span> exists in the signal. This is equivalent to a rectangle function being applied as a the filter in Fourier space.</p>
 <p>The inverse Fourier transform of the rectangle function is the <span class="math inline">sinc(⋅)</span> function. So the sinc is a valid covariance function, and it represents <em>band limited</em> signals.</p>
