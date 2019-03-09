@@ -12,14 +12,11 @@ author:
   gscholar: r3SJcvoAAAAJ
   orchid: 
 published: 2018-09-03
-reveal: 2018-09-03-gpss-session-1.slides.html
-ipynb: 2018-09-03-gpss-session-1.ipynb
 layout: talk
 transition: None
 date: 2018-09-03
 ---
 
-<!-- To compile -->
 
 \include{talk-macros.tex}
 
@@ -176,7 +173,7 @@ Gaussian processes are initially of interest because
 \include{_gp/includes/infinite-basis.md}
 
 \include{_kern/includes/mlp-covariance.md}
-<!--include{_kern/includes/relu-covariance.md}-->
+\include{_kern/includes/relu-covariance.md}
 
 \include{_kern/includes/sinc-covariance.md}
 

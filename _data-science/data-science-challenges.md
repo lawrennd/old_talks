@@ -1,8 +1,6 @@
 ---
 title: Challenges in Data Science
-layout: slides
-author: Neil D. Lawrence
-transition: None
+venue: Open Data Science Conference, London, UK
 abstract: >
   Data science presents new opportunities but also new challenges. In
   this talk we will focus on three separate challenges for data
@@ -19,14 +17,9 @@ abstract: >
   data driven society, allowing us to reap the benefits of data
   science in applications from personalized health to the developing
   world.
+transition: None
+date: 2018-05-08
 ---
-
-#### Challenges in Data Science
-#### Open Data Science Conference
-#### London, UK
-#### Neil D. Lawrence
-#### Amazon and University of Sheffield
-```@lawrennd``` [inverseprobability.com](http://inverseprobability.com)
 
 \include{talk-macros.tex}
 

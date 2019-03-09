@@ -7,7 +7,7 @@ author:
 - given: Neil D.
   family: Lawrence
   url: http://inverseprobability.com
-  institute: Amazon Cambridge and University of Sheffield
+  institute: University of Sheffield
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
   orchid: 
@@ -84,7 +84,7 @@ $$</span><br /> where we are still in the one dimensional input setting so <span
 <p><br /><span class="math display">$$
 \mappingFunction(\inputScalar) = {\color{cyan}\mappingScalar_0}   + {\color{green}\mappingScalar_1 \inputScalar} + {\color{yellow}\mappingScalar_2 \inputScalar^2}
 $$</span><br /></p>
-<p>{figure{<object class="svgplot quadratic-basis-2"  data="../slides/diagrams/ml/\basisfunction002.svg"  style="vertical-align:middle;"></object></p>
+<p>{figure{<object class="svgplot quadratic-basis-2" data="../slides/diagrams/ml/\basisfunction002.svg" width="The set of functions which are combined to form a *quadratic* basis." style=" "></object></p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
 <span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;</span><span class="ch">\b</span><span class="st">asisfunction</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>, 
@@ -95,7 +95,7 @@ $$</span><br /></p>
 <h2 id="quadratic-functions">Quadratic Functions</h2>
 <div class="figure">
 <div id="quadratic-function-2-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/quadratic_function002.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/quadratic_function002.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="quadratic-function-2-magnify" class="magnify" onclick="magnifyFigure(&#39;quadratic-function-2&#39;)">
@@ -125,7 +125,7 @@ $$</span><br /> which is known as the <em>polynomial basis</em>.</p>
 $$</span><br /></p>
 <div class="figure">
 <div id="polynomial-basis-3-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/polynomial_basis003.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/polynomial_basis003.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="polynomial-basis-3-magnify" class="magnify" onclick="magnifyFigure(&#39;polynomial-basis-3&#39;)">
@@ -139,7 +139,7 @@ $$</span><br /></p>
 <span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;polynomial_basis</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>, 
                             directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, 
-                            num_basis<span class="op">=</span>IntSlider(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">1</span>))</code></pre></div>
+                num_basis<span class="op">=</span>IntSlider(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">1</span>))</code></pre></div>
 <p>To aid in understanding how a basis works, we've provided you with a small interactive tool for exploring this polynomial basis. The tool can be summoned with the following command.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_prediction(basis<span class="op">=</span>mlai.polynomial, num_basis<span class="op">=</span><span class="dv">4</span>)</code></pre></div>
@@ -165,14 +165,14 @@ $$</span><br /></p>
 \mappingFunction(\inputScalar) = {\color{cyan}\mappingScalar_1 e^{-2(\inputScalar+1)^2}}  + {\color{green}\mappingScalar_2e^{-2\inputScalar^2}} + {\color{yellow}\mappingScalar_3 e^{-2(\inputScalar-1)^2}}
 $$</span><br /></p>
 <div class="figure">
-<div id="radial-basis-3-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/radial_basis003.svg" style="vertical-align:middle;">
+<div id="radial-basis-2-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/radial_basis002.svg" width="80%" style=" ">
 </object>
 </div>
-<div id="radial-basis-3-magnify" class="magnify" onclick="magnifyFigure(&#39;radial-basis-3&#39;)">
+<div id="radial-basis-2-magnify" class="magnify" onclick="magnifyFigure(&#39;radial-basis-2&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
-<div id="radial-basis-3-caption" class="caption-frame">
+<div id="radial-basis-2-caption" class="caption-frame">
 <p>Figure: A radial basis is made up of different locally effective functions centered at different points.</p>
 </div>
 </div>
@@ -194,7 +194,7 @@ $$</span><br /></p>
 $$</span><br /></p>
 <div class="figure">
 <div id="relu-basis-4-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/relu_basis004.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/relu_basis004.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="relu-basis-4-magnify" class="magnify" onclick="magnifyFigure(&#39;relu-basis-4&#39;)">
@@ -208,7 +208,7 @@ $$</span><br /></p>
 <span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;relu_basis</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>, 
                             directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, 
-                            num_basis<span class="op">=</span>IntSlider(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">4</span>,<span class="dv">1</span>))</code></pre></div>
+                num_basis<span class="op">=</span>IntSlider(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">4</span>,<span class="dv">1</span>))</code></pre></div>
 <h2 id="hyperbolic-tangent-basis-edit">Hyperbolic Tangent Basis <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/tanh-basis.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/tanh-basis.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>load <span class="op">-</span>s tanh mlai.py</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods</code></pre></div>
@@ -220,7 +220,7 @@ $$</span><br /></p>
 $$</span><br /></p>
 <div class="figure">
 <div id="tanh-basis-4-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/tanh_basis004.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/tanh_basis004.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="tanh-basis-4-magnify" class="magnify" onclick="magnifyFigure(&#39;tanh-basis-4&#39;)">
@@ -255,7 +255,7 @@ $$</span><br /></p>
 $$</span><br /></p>
 <div class="figure">
 <div id="fourier-basis-4-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/fourier_basis004.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/fourier_basis004.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="fourier-basis-4-magnify" class="magnify" onclick="magnifyFigure(&#39;fourier-basis-4&#39;)">

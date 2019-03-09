@@ -5,7 +5,7 @@ author:
 - given: Neil D.
   family: Lawrence
   url: http://inverseprobability.com
-  institute: Amazon Cambridge and University of Sheffield
+  institute: University of Sheffield
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
   orchid: 
@@ -74,6 +74,7 @@ p(\dataVector|\inputMatrix, \mappingVector) =
 $$</span><br /> Gaussian processes are <em>not</em> normally considered to be <em>generative models</em>, but we will be much more interested in the principles of conditioning in Gaussian processes because we will use conditioning to make predictions between our test and training data. We will avoid the data conditional indpendence assumption in favour of a richer assumption about the data, in a Gaussian process we assume data is <em>jointly Gaussian</em> with a particular mean and covariance, <br /><span class="math display">$$
 \dataVector|\inputMatrix \sim \gaussianSamp{\mathbf{m}(\inputMatrix)}{\kernelMatrix(\inputMatrix)},
 $$</span><br /> where the conditioning is on the inputs <span class="math inline">$\inputMatrix$</span> which are used for computing the mean and covariance. For this reason they are known as mean and covariance functions.</p>
+<h2 id="prediction-across-two-points-with-gps-edit">Prediction Across Two Points with GPs <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gptwopointpred.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gptwopointpred.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
 np.random.seed(<span class="dv">4949</span>)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> teaching_plots <span class="im">as</span> plot
@@ -86,7 +87,7 @@ np.random.seed(<span class="dv">4949</span>)</code></pre></div>
 {
 <div class="figure">
 <div id="two-point-sample-one-two-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/gp/two_point_sample012.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/gp/two_point_sample012.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="two-point-sample-one-two-magnify" class="magnify" onclick="magnifyFigure(&#39;two-point-sample-one-two&#39;)">
@@ -121,7 +122,7 @@ np.random.seed(<span class="dv">4949</span>)</code></pre></div>
                             sample<span class="op">=</span>IntSlider(<span class="dv">13</span>, <span class="dv">13</span>, <span class="dv">17</span>, <span class="dv">1</span>))</code></pre></div>
 <div class="figure">
 <div id="two-point-sample-13-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/gp/two_point_sample013.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/gp/two_point_sample013.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="two-point-sample-13-magnify" class="magnify" onclick="magnifyFigure(&#39;two-point-sample-13&#39;)">
@@ -133,7 +134,7 @@ np.random.seed(<span class="dv">4949</span>)</code></pre></div>
 </div>
 <div class="figure">
 <div id="two-point-sample-one-eight-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/gp/two_point_sample017.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/gp/two_point_sample017.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="two-point-sample-one-eight-magnify" class="magnify" onclick="magnifyFigure(&#39;two-point-sample-one-eight&#39;)">
@@ -329,7 +330,7 @@ fig.colorbar(im)</code></pre></div>
 <p>The samples that remain are considered to be samples from the <em>posterior</em>.</p>
 <p>This approach to Bayesian inference is closely related to two sampling techniques known as <em>rejection sampling</em> and <em>importance sampling</em>. It is realized in practice in an approach known as <em>approximate Bayesian computation</em> (ABC) or likelihood-free inference.</p>
 <p>In practice, the algorithm is often too slow to be practical, because most samples will be inconsistent with the data and as a result the mechanism has to be operated many times to obtain a few posterior samples.</p>
-<p>However, in the Gaussian process case, when the likelihood also assumes Gaussian noise, we can operate this mechanims mathematically, and obtain the posterior density <em>analytically</em>. This is the benefit of Gaussian processes.</p>
+<p>However, in the Gaussian process case, when the likelihood also assumes Gaussian noise, we can operate this mechanism mathematically, and obtain the posterior density <em>analytically</em>. This is the benefit of Gaussian processes.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods
 <span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;gp_rejection_sample</span><span class="sc">{sample:0&gt;3}</span><span class="st">.png&#39;</span>, 
@@ -499,11 +500,11 @@ gpoptimizePlot3
 <table>
 <tr>
 <td width="50%">
-<object class="svgplot " data="../slides/diagrams/gp/gp-optimise006.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/gp/gp-optimise006.svg" width="100%" style=" ">
 </object>
 </td>
 <td width="50%">
-<object class="svgplot " data="../slides/diagrams/gp/gp-optimise010.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/gp/gp-optimise010.svg" width="100%" style=" ">
 </object>
 </td>
 </tr>
@@ -511,11 +512,11 @@ gpoptimizePlot3
 <table>
 <tr>
 <td width="50%">
-<object class="svgplot " data="../slides/diagrams/gp/gp-optimise016.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/gp/gp-optimise016.svg" width="100%" style=" ">
 </object>
 </td>
 <td width="50%">
-<object class="svgplot " data="../slides/diagrams/gp/gp-optimise021.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/gp/gp-optimise021.svg" width="100%" style=" ">
 </object>
 </td>
 </tr>
@@ -541,7 +542,7 @@ $$</span><br /> where <span class="math inline">ℓ</span> is the <em>length sca
 <table>
 <tr>
 <td width="45%">
-<object class="100%" align data="../slides/diagrams/kern/eq_covariance.svg" style="vertical-align:middle">
+<object class width="100%" data="../slides/diagrams/kern/eq_covariance.svg">
 </object>
 </td>
 <td width="45%">
@@ -608,7 +609,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
                   frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <div class="figure">
 <div id="olympic-marathon-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/datasets/olympic-marathon.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/datasets/olympic-marathon.svg" width style=" ">
 </object>
 </div>
 <div id="olympic-marathon-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-marathon&#39;)">
@@ -668,14 +669,14 @@ mlai.write_figure(figure<span class="op">=</span>fig,
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <div class="figure">
 <div id="olympic-marathon-gp-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/gp/olympic-marathon-gp.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/gp/olympic-marathon-gp.svg" width style=" ">
 </object>
 </div>
 <div id="olympic-marathon-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-marathon-gp&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
 <div id="olympic-marathon-gp-caption" class="caption-frame">
-<p>Figure: Gaussian process fit to the olympic marathon data. The error bars are too large, perhaps due to the outlier from 1904.</p>
+<p>Figure: Gaussian process fit to the Olympic Marathon data. The error bars are too large, perhaps due to the outlier from 1904.</p>
 </div>
 </div>
 <h2 id="fit-quality">Fit Quality</h2>
@@ -721,7 +722,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
                   frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <div class="figure">
 <div id="della-gatta-gene-data-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/datasets/della-gatta-gene.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/datasets/della-gatta-gene.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="della-gatta-gene-data-magnify" class="magnify" onclick="magnifyFigure(&#39;della-gatta-gene-data&#39;)">
@@ -771,7 +772,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <div class="figure">
 <div id="della-gatta-gene-gp-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/gp/della-gatta-gene-gp.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/gp/della-gatta-gene-gp.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="della-gatta-gene-gp-magnify" class="magnify" onclick="magnifyFigure(&#39;della-gatta-gene-gp&#39;)">
@@ -796,7 +797,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <div class="figure">
 <div id="della-gatta-gene-gp2-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/gp/della-gatta-gene-gp2.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/gp/della-gatta-gene-gp2.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="della-gatta-gene-gp2-magnify" class="magnify" onclick="magnifyFigure(&#39;della-gatta-gene-gp2&#39;)">
@@ -822,7 +823,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
                   transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</code></pre></div>
 <div class="figure">
 <div id="della-gatta-gene-gp3-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/gp/della-gatta-gene-gp3.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/gp/della-gatta-gene-gp3.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="della-gatta-gene-gp3-magnify" class="magnify" onclick="magnifyFigure(&#39;della-gatta-gene-gp3&#39;)">
@@ -834,7 +835,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </div>
 <div class="figure">
 <div id="gp-multiple-optima000-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/gp/multiple-optima000.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/gp/multiple-optima000.svg" width="50%" style=" ">
 </object>
 </div>
 <div id="gp-multiple-optima000-magnify" class="magnify" onclick="magnifyFigure(&#39;gp-multiple-optima000&#39;)">
@@ -846,9 +847,9 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 </div>
 <!--
 
-<object class="svgplot "  data="../slides/diagrams/gp/multiple-optima001.svg"  style="vertical-align:middle;"></object>-->
+<object class="svgplot " data="../slides/diagrams/gp/multiple-optima001.svg" width="" style=" "></object>-->
 <h2 id="example-prediction-of-malaria-incidence-in-uganda-edit">Example: Prediction of Malaria Incidence in Uganda <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_health/includes/malaria-gp.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_health/includes/malaria-gp.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
-<p><span style="text-align:right"><img class="" src="../slides/diagrams/people/2013_03_28_180606.JPG" width="1.5cm" align="" style="background:none; border:none; box-shadow:none; position:absolute; clip:rect(2662px,1780px,1110px,600px);vertical-align:middle"></span></p>
+<p><span style="text-align:right"><img class="" src="../slides/diagrams/people/2013_03_28_180606.JPG" width="1.5cm" style="background:none; border:none; box-shadow:none; position:absolute; clip:rect(2662px,1780px,1110px,600px);vertical-align:middle"></span></p>
 <p>As an example of using Gaussian process models within the full pipeline from data to decsion, we'll consider the prediction of Malaria incidence in Uganda. For the purposes of this study malaria reports come in two forms, HMIS reports from health centres and Sentinel data, which is curated by the WHO. There are limited sentinel sites and many HMIS sites.</p>
 <p>The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboration with John Quinn and Martin Mubangizi <span class="citation">(Andrade-Pacheco et al. 2014; Mubangizi et al. 2014)</span>. John and Martin were initally from the AI-DEV group from the University of Makerere in Kampala and more latterly they were based at UN Global Pulse in Kampala.</p>
 <p>Malaria data is spatial data. Uganda is split into districts, and health reports can be found for each district. This suggests that models such as conditional random fields could be used for spatial modelling, but there are two complexities with this. First of all, occasionally districts split into two. Secondly, sentinel sites are a specific location within a district, such as Nagongera which is a sentinel site based in the Tororo district.</p>
@@ -868,7 +869,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 <p><span style="text-align:right"><span class="citation">(Andrade-Pacheco et al. 2014; Mubangizi et al. 2014)</span></span></p>
 <div class="figure">
 <div id="kapchorwa-district-in-uganda-figure" class="figure-frame">
-<object class="50%" align data="../slides/diagrams/health/Kapchorwa_District_in_Uganda.svg" style="vertical-align:middle">
+<object class width="50%" data="../slides/diagrams/health/Kapchorwa_District_in_Uganda.svg">
 </object>
 </div>
 <div id="kapchorwa-district-in-uganda-magnify" class="magnify" onclick="magnifyFigure(&#39;kapchorwa-district-in-uganda&#39;)">
@@ -882,14 +883,14 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 <p>The common standard for collecting health data on the African continent is from the Health management information systems (HMIS). However, this data suffers from missing values <span class="citation">(Gething et al. 2006)</span> and diagnosis of diseases like typhoid and malaria may be confounded.</p>
 <div class="figure">
 <div id="tororo-district-in-uganda-figure" class="figure-frame">
-<object class="50%" align data="../slides/diagrams/health/Tororo_District_in_Uganda.svg" style="vertical-align:middle">
+<object class width="50%" data="../slides/diagrams/health/Tororo_District_in_Uganda.svg">
 </object>
 </div>
 <div id="tororo-district-in-uganda-magnify" class="magnify" onclick="magnifyFigure(&#39;tororo-district-in-uganda&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
 <div id="tororo-district-in-uganda-caption" class="caption-frame">
-<p>Figure: The Tororo district, where the sentinel site, Nagongera is located.</p>
+<p>Figure: The Tororo district, where the sentinel site, Nagongera, is located.</p>
 </div>
 </div>
 <p><a href="https://www.who.int/immunization/monitoring_surveillance/burden/vpd/surveillance_type/sentinel/en/">World Health Organization Sentinel Surveillance systems</a> are set up &quot;when high-quality data are needed about a particular disease that cannot be obtained through a passive system&quot;. Several sentinel sites give accurate assessment of malaria disease levels in Uganda, including a site in Nagongera.</p>
@@ -910,7 +911,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 <p>The aim of the project was to use WHO Sentinel sites, alongside rainfall and temperature, to improve predictions from HMIS data of levels of malaria.</p>
 <div class="figure">
 <div id="mubende-district-in-uganda-figure" class="figure-frame">
-<object class="50%" align data="../slides/diagrams/health/Mubende_District_in_Uganda.svg" style="vertical-align:middle">
+<object class width="50%" data="../slides/diagrams/health/Mubende_District_in_Uganda.svg">
 </object>
 </div>
 <div id="mubende-district-in-uganda-magnify" class="magnify" onclick="magnifyFigure(&#39;mubende-district-in-uganda&#39;)">
@@ -949,7 +950,7 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 <h2 id="early-warning-systems">Early Warning Systems</h2>
 <div class="figure">
 <div id="kabarole-district-in-uganda-figure" class="figure-frame">
-<object class="50%" align data="../slides/diagrams/health/Kabarole_District_in_Uganda.svg" style="vertical-align:middle">
+<object class width="50%" data="../slides/diagrams/health/Kabarole_District_in_Uganda.svg">
 </object>
 </div>
 <div id="kabarole-district-in-uganda-magnify" class="magnify" onclick="magnifyFigure(&#39;kabarole-district-in-uganda&#39;)">
@@ -977,15 +978,15 @@ mlai.write_figure(figure<span class="op">=</span>fig,
 <p>This gives us an early warning system for disease. Red is a bad situation getting worse, amber is bad, but improving. Green is good and getting better and yellow good but degrading.</p>
 <p>Finally, there is a gray region which represents when the scale of the effect is small.</p>
 <div class="figure">
-<div id="Kabarole early warning system over time.-figure" class="figure-frame">
+<div id="early-warning-system-map-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/health/monitor.gif" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
-<div id="Kabarole early warning system over time.-magnify" class="magnify" onclick="magnifyFigure(&#39;Kabarole early warning system over time.&#39;)">
+<div id="early-warning-system-map-magnify" class="magnify" onclick="magnifyFigure(&#39;early-warning-system-map&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
-<div id="Kabarole early warning system over time.-caption" class="caption-frame">
+<div id="early-warning-system-map-caption" class="caption-frame">
 <p>Figure: The map of Ugandan districts with an overview of the Malaria situation in each district.</p>
 </div>
 </div>
@@ -1002,7 +1003,7 @@ $$</span><br /></p>
 <table>
 <tr>
 <td width="45%">
-<object class="100%" align data="../slides/diagrams/kern/add_covariance.svg" style="vertical-align:middle">
+<object class width="100%" data="../slides/diagrams/kern/add_covariance.svg">
 </object>
 </td>
 <td width="45%">
@@ -1077,7 +1078,7 @@ $$</span><br /> meaning that the vector of observations from the function is joi
 <table>
 <tr>
 <td width="45%">
-<object class="100%" align data="../slides/diagrams/kern/basis_covariance.svg" style="vertical-align:middle">
+<object class width="100%" data="../slides/diagrams/kern/basis_covariance.svg">
 </object>
 </td>
 <td width="45%">
@@ -1108,7 +1109,7 @@ $$</span><br /></p>
 <table>
 <tr>
 <td width="45%">
-<object class="100%" align data="../slides/diagrams/kern/brownian_covariance.svg" style="vertical-align:middle">
+<object class width="100%" data="../slides/diagrams/kern/brownian_covariance.svg">
 </object>
 </td>
 <td width="45%">
@@ -1137,7 +1138,7 @@ $$</span><br /></p>
 <table>
 <tr>
 <td width="45%">
-<object class="100%" align data="../slides/diagrams/kern/mlp_covariance.svg" style="vertical-align:middle">
+<object class width="100%" data="../slides/diagrams/kern/mlp_covariance.svg">
 </object>
 </td>
 <td width="45%">

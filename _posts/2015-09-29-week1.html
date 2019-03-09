@@ -6,7 +6,7 @@ author:
 - given: Neil D.
   family: Lawrence
   url: http://inverseprobability.com
-  institute: Amazon Cambridge and University of Sheffield
+  institute: University of Sheffield
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
   orchid: 
@@ -111,7 +111,7 @@ words <span class="op">=</span> [<span class="st">&#39;Open&#39;</span>, <span c
 <p>The solution to these two simultaneous equations can be represented graphically as</p>
 <div class="figure">
 <div id="over-determined-system-3-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/over_determined_system003.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/over_determined_system003.svg" width="40%" style=" ">
 </object>
 </div>
 <div id="over-determined-system-3-magnify" class="magnify" onclick="magnifyFigure(&#39;over-determined-system-3&#39;)">
@@ -125,7 +125,7 @@ words <span class="op">=</span> [<span class="st">&#39;Open&#39;</span>, <span c
 <p>point 3: <span class="math inline">$\inputScalar = 2$</span>, <span class="math inline">$\dataScalar=2.5$</span> <br /><span class="math display">2.5 = 2<em>m</em> + <em>c</em></span><br /></p>
 <div class="figure">
 <div id="over-determined-system-4-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/over_determined_system004.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/over_determined_system004.svg" width="40%" style=" ">
 </object>
 </div>
 <div id="over-determined-system-4-magnify" class="magnify" onclick="magnifyFigure(&#39;over-determined-system-4&#39;)">
@@ -138,7 +138,7 @@ words <span class="op">=</span> [<span class="st">&#39;Open&#39;</span>, <span c
 <p>Now there are three candidate lines, each consistent with our data.</p>
 <div class="figure">
 <div id="over-determined-system-7-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/over_determined_system007.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/over_determined_system007.svg" width="40%" style=" ">
 </object>
 </div>
 <div id="over-determined-system-7-magnify" class="magnify" onclick="magnifyFigure(&#39;over-determined-system-7&#39;)">
@@ -237,7 +237,7 @@ $$</span><br /></p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data <span class="op">=</span> pd.read_csv(<span class="st">&#39;healthmopupandbaselinenmisfacility.csv&#39;</span>)</code></pre></div>
 <p>Once it is loaded in the data can be summarized using the <code>describe</code> method in pandas.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data.describe()</code></pre></div>
-<p>In python and jupyter notebook it is possible to see a list of all possible functions and attributes by typing the name of the object followed by .<Tab> for example in the above case if we type data.<Tab> it show the columns available (these are attributes in pandas dataframes) such as <code>num_nurses_fulltime</code>, and also functions, such as <code>.describe()</code>.</p>
+<p>In python and jupyter notebook it is possible to see a list of all possible functions and attributes by typing the name of the object followed by <code>.&lt;Tab&gt;</code> for example in the above case if we type <code>data.&lt;Tab&gt;</code> it show the columns available (these are attributes in pandas dataframes) such as <code>num_nurses_fulltime</code>, and also functions, such as <code>.describe()</code>.</p>
 <p>For functions we can also see the documentation about the function by following the name with a question mark. This will open a box with documentation at the bottom which can be closed with the x button.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data.describe?</code></pre></div>
 <p>The NMIS facility data is stored in an object known as a 'data frame'. Data frames come from the statistical family of programming languages based on <code>S</code>, the most widely used of which is <a href="http://en.wikipedia.org/wiki/R_(programming_language)"><code>R</code></a>. The data frame gives us a convenient object for manipulating data. The describe method summarizes which columns there are in the data frame and gives us counts, means, standard deviations and percentiles for the values in those columns. To access a column directly we can write</p>
@@ -331,7 +331,7 @@ The different basic probability distributions.
 <h2 id="a-pictorial-definition-of-probability-edit">A Pictorial Definition of Probability <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/probability-review.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/probability-review.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="figure">
 <div id="prob-diagram-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/mlai/prob_diagram.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/mlai/prob_diagram.svg" width="60%" style=" ">
 </object>
 </div>
 <div id="prob-diagram-magnify" class="magnify" onclick="magnifyFigure(&#39;prob-diagram&#39;)">

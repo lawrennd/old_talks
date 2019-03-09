@@ -6,7 +6,7 @@ author:
 - given: Neil D.
   family: Lawrence
   url: http://inverseprobability.com
-  institute: Amazon Cambridge and University of Sheffield
+  institute: University of Sheffield
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
   orchid: 
@@ -62,7 +62,7 @@ $$</span><br /></p>
                             directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, samp<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">1</span>))</code></pre></div>
 <div class="figure">
 <div id="under-determined-system-9-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/under_determined_system009.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/under_determined_system009.svg" width="40%" style=" ">
 </object>
 </div>
 <div id="under-determined-system-9-magnify" class="magnify" onclick="magnifyFigure(&#39;under-determined-system-9&#39;)">
@@ -76,8 +76,18 @@ $$</span><br /></p>
 <p>From a philosophical perspective placing a probability distribution over the <em>parameters</em> is known as the <em>Bayesian</em> approach. This is because Thomas Bayes, in a <a href="http://en.wikipedia.org/wiki/An_Essay_towards_solving_a_Problem_in_the_Doctrine_of_Chances">1763 essay</a> published at the Royal Society introduced the <a href="http://en.wikipedia.org/wiki/Bernoulli_distribution">Bernoulli distribution</a> with a probabilistic interpretation for the <em>parameters</em>. Later statisticians such as <a href="http://en.wikipedia.org/wiki/Ronald_Fisher">Ronald Fisher</a> objected to the use of probability distributions for <em>parameters</em>, and so in an effort to discredit the approach the referred to it as Bayesian. However, the earliest practioners of modelling, such as Laplace applied the approach as the most natural thing to do for dealing with unknowns (whether they were parameters or variables). Unfortunately, this dispute led to a split in the modelling community that still has echoes today. It is known as the Bayesian vs Frequentist controversy. From my own perspective, I think that it is a false dichotomy, and that the two approaches are actually complementary. My own focus research focus is on <em>modelling</em> and in that context, the use of probability is vital. For frequenstist statisticians, such as Fisher, the emphasis was on the value of the evidence in the data for a particular hypothesis. This is known as hypothesis testing. The two approaches can be unified because one of the most important approaches to hypothesis testing is to <a href="http://en.wikipedia.org/wiki/Likelihood-ratio_test">compute the ratio of the likelihoods</a>, and the result of applying a probability distribution to the parameters is merely to arrive at a different form of the likelihood.</p>
 <h2 id="the-bayesian-controversy-philosophical-underpinnings">The Bayesian Controversy: Philosophical Underpinnings</h2>
 <p>A segment from the lecture in 2012 on philsophical underpinnings.</p>
-<iframe width="1024" height="768" src="https://www.youtube.com/embed/AvlnFnvFw_0?start=1215" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+<div class="figure">
+<div id="philosophical-underpinnings-uncertainty-figure" class="figure-frame">
+<iframe width="100" height="auto" src="https://www.youtube.com/embed/AvlnFnvFw_0?start=1215" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
+</div>
+<div id="philosophical-underpinnings-uncertainty-magnify" class="magnify" onclick="magnifyFigure(&#39;philosophical-underpinnings-uncertainty&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="philosophical-underpinnings-uncertainty-caption" class="caption-frame">
+<p>Figure: The philosophical underpinnings of uncertainty, as discussed in 2012 MLAI lecture.</p>
+</div>
+</div>
 <h2 id="reading">Reading</h2>
 <ul>
 <li><span class="citation">Bishop (2006)</span> Section 1.2.3 (pg 21–24).</li>
@@ -136,7 +146,7 @@ $$</span><br /> I like the term marginalisation, and the description of the prob
                             stage<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>))</code></pre></div>
 <div class="figure">
 <div id="dem-gaussian-3-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/dem_gaussian003.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/dem_gaussian003.svg" width="70%" style=" ">
 </object>
 </div>
 <div id="dem-gaussian-3-magnify" class="magnify" onclick="magnifyFigure(&#39;dem-gaussian-3&#39;)">
@@ -172,7 +182,7 @@ $$</span><br /> I like the term marginalisation, and the description of the prob
   $$</span><br /></p>
 <div class="figure">
 <div id="height-weight-gaussian-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/height_weight_gaussian.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/height_weight_gaussian.svg" width="70%" style=" ">
 </object>
 </div>
 <div id="height-weight-gaussian-magnify" class="magnify" onclick="magnifyFigure(&#39;height-weight-gaussian&#39;)">
@@ -191,7 +201,7 @@ $$</span><br /> I like the term marginalisation, and the description of the prob
                             fig<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">1</span>))</code></pre></div>
 <div class="figure">
 <div id="independent-height-weight-7-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/independent_height_weight007.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/independent_height_weight007.svg" width="70%" style=" ">
 </object>
 </div>
 <div id="independent-height-weight-7-magnify" class="magnify" onclick="magnifyFigure(&#39;independent-height-weight-7&#39;)">
@@ -213,7 +223,7 @@ pods.notebook.display_plots(<span class="st">&#39;correlated_height_weight</span
                             fig<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">1</span>))</code></pre></div>
 <div class="figure">
 <div id="correlated-height-weight-7-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/correlated_height_weight007.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/correlated_height_weight007.svg" width="70%" style=" ">
 </object>
 </div>
 <div id="correlated-height-weight-7-magnify" class="magnify" onclick="magnifyFigure(&#39;correlated-height-weight-7&#39;)">
@@ -357,12 +367,32 @@ p(\mappingVector|\dataVector, \inputVector) = \frac{p(\dataVector|\inputVector, 
 $$</span><br /> We've looked at the samples for our function <span class="math inline">$\mappingFunctionVector = \basisMatrix\mappingVector$</span>, which forms the mean of the Gaussian likelihood, under the prior distribution. I.e. we've sampled from <span class="math inline">$p(\mappingVector)$</span> and multiplied the result by the basis matrix. Now we will sample from the posterior density, <span class="math inline">$p(\mappingVector|\dataVector, \inputVector)$</span>, and check that the new samples fit do correspond to the data, i.e. we want to check that the updated distribution includes information from the data set. First we need to compute the posterior mean and <em>covariance</em>.</p>
 <h2 id="bayesian-inference-in-the-univariate-case">Bayesian Inference in the Univariate Case</h2>
 <p>This video talks about Bayesian inference across the single parameter, the offset <span class="math inline"><em>c</em></span>, illustrating how the prior and the likelihood combine in one dimension to form a posterior.</p>
-<iframe width="800" height="600" src="https://www.youtube.com/embed/AvlnFnvFw_0?start=15" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+<div class="figure">
+<div id="univariate-bayesian-inference-video-figure" class="figure-frame">
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/AvlnFnvFw_0?start=15" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
+</div>
+<div id="univariate-bayesian-inference-video-magnify" class="magnify" onclick="magnifyFigure(&#39;univariate-bayesian-inference-video&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="univariate-bayesian-inference-video-caption" class="caption-frame">
+<p>Figure: Univariate Bayesian inference. Lecture 10 from 2012 MLAI Course.</p>
+</div>
+</div>
 <h2 id="multivariate-bayesian-inference">Multivariate Bayesian Inference</h2>
 <p>This section of the lecture talks about how we extend the idea of Bayesian inference for the multivariate case. It goes through the multivariate Gaussian and how to complete the square in the linear algebra as we managed below.</p>
-<iframe width="800" height="600" src="https://www.youtube.com/embed/Os1iqgpelPw?start=1362" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+<div class="figure">
+<div id="multivariate-bayesian-inference-figure" class="figure-frame">
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/Os1iqgpelPw?start=1362" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
+</div>
+<div id="multivariate-bayesian-inference-magnify" class="magnify" onclick="magnifyFigure(&#39;multivariate-bayesian-inference&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="multivariate-bayesian-inference-caption" class="caption-frame">
+<p>Figure: Multivariate Bayesian inference. Lecture 11 from 2012 MLAI course.</p>
+</div>
+</div>
 <p>The lecture informs us the the posterior density for <span class="math inline">$\mappingVector$</span> is given by a Gaussian density with covariance <br /><span class="math display">$$
 \covarianceMatrix_w = \left(\dataStd^{-2}\basisMatrix^\top \basisMatrix + \alpha^{-1}\eye\right)^{-1}
 $$</span><br /> and mean <br /><span class="math display">$$
@@ -389,7 +419,7 @@ max_basis <span class="op">=</span> y.shape[<span class="dv">0</span>]</code></p
                             num_basis<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">27</span>, <span class="dv">1</span>))</code></pre></div>
 <div class="figure">
 <div id="olympic-blm-polynomial-number-26-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/olympic_BLM_polynomial_number026.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_BLM_polynomial_number026.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="olympic-blm-polynomial-number-26-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-blm-polynomial-number-26&#39;)">
@@ -408,7 +438,7 @@ max_basis <span class="op">=</span> y.shape[<span class="dv">0</span>]</code></p
                             num_basis<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">27</span>, <span class="dv">1</span>))</code></pre></div>
 <div class="figure">
 <div id="olympic-val-blm-polynomial-number-26-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/olympic_val_BLM_polynomial_number026.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_val_BLM_polynomial_number026.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="olympic-val-blm-polynomial-number-26-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-val-blm-polynomial-number-26&#39;)">
@@ -428,7 +458,7 @@ max_basis <span class="op">=</span> y.shape[<span class="dv">0</span>]</code></p
                             num_basis<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">27</span>, <span class="dv">1</span>))</code></pre></div>
 <div class="figure">
 <div id="olympic-5cv05-blm-polynomial-number-26-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number026.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number026.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="olympic-5cv05-blm-polynomial-number-26-magnify" class="magnify" onclick="magnifyFigure(&#39;olympic-5cv05-blm-polynomial-number-26&#39;)">

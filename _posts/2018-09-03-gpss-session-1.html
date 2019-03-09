@@ -38,7 +38,6 @@ categories:
   </div>
 </div>	  
 
-<!-- To compile -->
 <!-- Front matter -->
 <p>.</p>
 <!---->
@@ -834,7 +833,37 @@ $$</span><br /> <br /><span class="math display">$$\begin{aligned}
 <p>Figure: The multi-layer perceptron covariance function. This is derived by considering the infinite limit of a neural network with probit activation functions.</p>
 </div>
 </div>
-<!--include{_kern/includes/relu-covariance.md}-->
+<h2 id="relu-covariance-edit">RELU Covariance <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/relu-covariance.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/relu-covariance.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">%</span>load <span class="op">-</span>s relu_cov mlai.py</code></pre></div>
+<center>
+<br /><span class="math display">$$\kernelScalar(\inputVector, \inputVector^\prime) = 
+\alpha \arcsin\left(\frac{w \inputVector^\top \inputVector^\prime + b}
+{\sqrt{\left(w \inputVector^\top \inputVector + b + 1\right)
+\left(w \left.\inputVector^\prime\right.^\top \inputVector^\prime + b + 1\right)}}\right)$$</span><br />
+</center>
+<div class="figure">
+<div id="relu-covariance-plot-figure" class="figure-frame">
+<table>
+<tr>
+<td width="45%">
+<object class width="100%" data="../slides/diagrams/kern/relu_covariance.svg">
+</object>
+</td>
+<td width="45%">
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/kern/relu_covariance.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="relu-covariance-plot-magnify" class="magnify" onclick="magnifyFigure(&#39;relu-covariance-plot&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="relu-covariance-plot-caption" class="caption-frame">
+<p>Figure: Rectified linear unit covariance function.</p>
+</div>
+</div>
 <h2 id="sinc-covariance-edit">Sinc Covariance <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/sinc-covariance.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_kern/includes/sinc-covariance.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Another approach to developing covariance function exploits Bochner's theorem <span class="citation">Bochner (1959)</span>. Bochner's theorem tells us that any positve filter in Fourier space implies has an associated Gaussian process with a stationary covariance function. The covariance function is the <em>inverse Fourier transform</em> of the filter applied in Fourier space.</p>
 <p>For example, in signal processing, <em>band limitations</em> are commonly applied as an assumption. For example, we may believe that no frequency above <span class="math inline"><em>w</em> = 2</span> exists in the signal. This is equivalent to a rectangle function being applied as a the filter in Fourier space.</p>
