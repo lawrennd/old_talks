@@ -45,12 +45,18 @@ font}.
 
 \include{_dimred/includes/supplementary.md}
 
-\newsection{Thinking in High Dimensions}{../../../dimred/tex/talks/thinking}
-\newsection{Probabilistic Linear Dimensionality Reduction}{../../../dimred/tex/talks/linear}
-\newsection{Spectral Methods}{../../../dimred/tex/talks/spectral}
-\newsection{Density Networks and GTM}{../../../dimred/tex/talks/generative}
-\newsection{Dual Probabilistic PCA and GP-LVM}{../../../dimred/tex/talks/gplvm}
-\newsection{Conclusions}{../../../dimred/tex/talks/conclusions}
+\section{Thinking in High Dimensions}
+\include{_dimred/tex/talks/thinking}
+\section{Probabilistic Linear Dimensionality Reduction}
+\include{_dimred/tex/talks/linear}
+\section{Spectral Methods}
+\include{_dimred/tex/talks/spectral}
+\section{Density Networks and GTM}
+\include{_dimred/tex/talks/generative}
+\section{Dual Probabilistic PCA and GP-LVM}
+\include{_dimred/tex/talks/gplvm}
+\section{Conclusions}
+\include{_dimred/tex/talks/conclusions}
 
 \begin{frame}[allowframebreaks]
   \frametitle{References}
@@ -62,6 +68,8 @@ font}.
   
 \end{frame}
 \appendix
-\newsection{Probabilistic PCA Proof}{../../../dimred/tex/talks/supplementary}
+\section{Probabilistic PCA Proof}{_dimred/tex/talks/supplementary}
 
-\end{document}
+\thanks
+
+\references
