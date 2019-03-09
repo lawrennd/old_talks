@@ -7,7 +7,7 @@
 
 \newslide{}
 
-\figure{\includejpg{../slides/diagrams/Medievalplowingwoodcut}{80%}}{Feudal systems consist of serfs and vassals who are under the protection of a Lord.}{feudal-data-system}
+\figure{\includejpg{../slides/diagrams/Medievalplowingwoodcut}{80%}}{Feudal systems consist of serfs and vassals who are under the protection of a Lord. The Lord has a duty of care over the vassals, but due to power asymmetries that duty of care can be difficult to monitor and enforce. This is similar to the way our information is managed. Data controllers have a duty of care towards their data subjects, but there is also a power asymmetry between controller and subject.}{feudal-data-system}
 
 \slides{[Information Barons threaten our Privacy](https://www.theguardian.com/media-network/2015/nov/16/information-barons-threaten-autonomy-privacy-online)}
 
