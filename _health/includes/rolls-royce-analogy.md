@@ -39,9 +39,9 @@ With this in mind The Wellcome Trust launched a report on ["Understanding Patien
 
 \newslide{}
 
-\figure{\includejpg{../slides/diagrams/health/British_Airways_at_SFO}{50%}}{British Airways 747 at SFO}{british-airways-at-sfo}
+\figure{\includejpg{../slides/diagrams/health/British_Airways_at_SFO}{50%}}{British Airways 747 at SFO. Today airlines lease their engines from Rolls Royce who take care of maintenance independently from the pilot.}{british-airways-at-sfo}
 
-\notes{I suspect most passengers would find it disconcerting if the pilot of a 747 was seen working on the engine shortly before a flight. As aviation has become more widespread, there is now a separation of responsibilities between pilots and mechanics. Indeed, Rolls Royce maintain ownership of their engines today, and merely lease them to the aircraft company. The responsibility for maintenance of the engine is entirely with Rolls Royce, yet the pilot is responsibility for the safety of the aircraft and its passengers.
+\notes{I suspect most passengers would find it disconcerting if the pilot of a 747 was seen working on the engine shortly before a flight. As aviation has become more widespread, there is now a separation of responsibilities between pilots and mechanics. For example, Rolls Royce goes so far as to maintain ownership of their engines, and lease them to the airline. The responsibility for maintenance of the engine is entirely with Rolls Royce, yet the pilot is responsibility for the safety of the aircraft and its passengers.
 
  We need to develop a modern data-infrastructure for which separates the need for security of infrastructure from the decision making of the data analyst.
  
