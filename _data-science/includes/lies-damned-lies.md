@@ -64,8 +64,7 @@
 \subsection{'Mathematical Data Science'}
 
 \slides{
-  \includeimg{../slides/diagrams/Question_mark.png}{30%}{}{center}
-\caption{'Founded' by ? (?-?)}
+  \figure{\includepng{../slides/diagrams/Question_mark}{30%}}{'Founded' by ? (?-?)}{question-mark}
 }
 
 \notes{As a term 'big data' promises much and delivers little, to get true value from data, it needs to be curated and evaluated. The three stages of awareness, availability and analysis provide a broad framework through which organizations should be assessing the potential in the data they hold. Hand waving about big data solutions will not do, it will only lead to self-deception. The castles we build on our data landscapes must be based on firm foundations, process and scientific analysis. If we do things right, those are the foundations that will be provided by the new field of data science.}
