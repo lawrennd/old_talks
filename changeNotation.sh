@@ -1,4 +1,4 @@
-#!/bin/bash
+b#!/bin/bash
 
 # usage changeNotation.sh figure rawfigure will change instances of \figure{ to \rawfigure{
 

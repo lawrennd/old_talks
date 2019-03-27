@@ -1,4 +1,9 @@
-### Reinforcement Learning
+\ifndef{reinforcementLearning}
+\define{reinforcementLearning}
+
+\editme
+
+\subsection{Reinforcement Learning}
 
 * The final domain of learning we will review is known as reinforcement learning. 
 
@@ -6,7 +11,7 @@
 
 * Idea of general intelligence is develop algorithms that are adaptable to many different circumstances.
 
-### Reinforcement Learning
+\subsection{Reinforcement Learning}
 
 * Supervised learning algorithms are designed to resolve particular challenges.
 
@@ -14,13 +19,13 @@
 
 * Unsupervised attempts to build representations without any context. 
 
-### "Reward"
+\subsection{"Reward"}
 
 * In reinforcement learning some context is given, in the form of a reward. But it is often *delayed*
 
 * Credit allocation problem: many actions that affected the outcome, but which actions had a positive effect and which a negative effect?
 
-### A/B Testing and Reward
+\subsection{A/B Testing and Reward}
 
 * Advert clicks can be seen as a reward.
 
@@ -32,7 +37,7 @@
 
 * Success of Facebook is driven by its ability to draw us in when likely we should be doing something else. This is driven by large scale A/B testing. 
 
-### Longer Term
+\subsection{Longer Term}
 
 * One open question is how to drive non-visual interfaces through equivalents to A/B testing.
 
@@ -40,13 +45,13 @@
 
 * Improving interaction with them is therefore less exact science than the visual interface.
 
-### Data Efficiency
+\subsection{Data Efficiency}
 
 * Data efficient reinforcement learning methods are likely to be key to improving these agent's ability to interact.
 
 * However, they are not yet mature enough to be deployed yet. 
 
-### Game Play
+\subsection{Game Play}
 
 * Reinforcement learning methods have been deployed with high profile success is game play.
 
@@ -56,7 +61,7 @@
 
 * Many of the recent advances in reinforcement learning have occurred with methods that are not data efficient. 
 
-### DeepMind
+\subsection{DeepMind}
 
 * The company DeepMind is set up around reinforcement learning as an approach to general intelligence.
 
@@ -64,7 +69,7 @@
 
 * For example, Atari game play and AlphaGo. 
 
-### Deep Q Learning
+\subsection{Deep Q Learning}
 
 * DeepMind uses an approach to Machine Learning where there are two mathematical functions at work.
 
@@ -74,7 +79,7 @@
 
 * In AlphaGo make use of convolutional neural networks for both these models. 
 
-### AlphaGo
+\subsection{AlphaGo}
 
 * Go was considered a challenge for artificial intelligence for two reasons.
 
@@ -86,7 +91,7 @@
 
 * AlphaGo played more than 30,000,000 games to learn value and policy.
 
-### Model Based Approach
+\subsection{Model Based Approach}
 
 * An alternative approach to reinforcement learning is to use a prediction function.
 
@@ -94,7 +99,7 @@
 
 * Known as *model based* reinforcement learning.
 
-### Optimization Methods
+\subsection{Optimization Methods}
 
 * Reinforcement learning can also used to improve user experience.
 
@@ -104,7 +109,7 @@
 
 * Optimization of our user interfaces is like reinforcement learning task, but normally approached through *Bayesian optimization* or *bandit learning*.
 
-### Optimization
+\subsection{Optimization}
 
 * Normal optimization we have a mathematical representation of our objective function as a direct function of the parameters.
 
@@ -118,13 +123,13 @@
 
 3. Which product should I return top of the list in response to this user's search?
 
-### Bayesian Optimization
+\subsection{Bayesian Optimization}
 
 * Can't directly relate the parameters in the system of interest to our objective through a mathematical function.
 
 * E.g. What is the mathematical function that relates a user's experience to the probability that they will buy a product? 
 
-### Bayesian Optimization
+\subsection{Bayesian Optimization}
 
 * Use machine learning to develop a  *surrogate model* for the optimization task.
 
@@ -132,7 +137,7 @@
 
 * Try to simultaneously fit the surrogate model and optimize the process.
 
-### Surrogate Models
+\subsection{Surrogate Models}
 
 * Bayesian optimization methods use a *surrogate model* (normally a specific form of regression model).
 
@@ -141,9 +146,10 @@
 * Optimize in the surrogate model. 
 
 
-### Conclusion
+\subsection{Conclusion}
 
 * Introduce range of ML approaches.
 
 * Focussed on where they use mathematical functions as a general overview.
 
+\endif

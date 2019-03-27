@@ -15,14 +15,14 @@ A Data Trust would be a legal entity where the trustees responsibility was entir
 Formation of Data Trusts became the number one recommendation of the Hall-Presenti report on AI, but the manner in which this is done will have a significant impact on their utility. It feels important to have a diversity of approaches, and yet it feels important that any individual trust would be large enough to be taken seriously in representing the views of its members in wider negotiations.}
 
 \newslide{}
-\slides{
-[\includeimg{../slides/diagrams/data-science/data-trusts.png}{100%}](https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy)
-}
+
+\figure{\includepng{../slides/diagrams/data-science/data-trusts}{100%}}{For thoughts on data trusts see \href{https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy}{this Guardian Op-Ed.}}{data-trusts}
+
 
 \newslide{}
-\slides{
-[\includeimg{../slides/diagrams/data-science/data-trusts-review.png}](https://www.out-law.com/en/articles/2017/october/review-calls-for-data-trusts-to-help-grow-artificial-intelligence-in-the-uk/)
-}
+
+\figure{\includepng{../slides/diagrams/data-science/data-trusts-review}{50%}}{Data Trusts were the first recommendation of the \href{https://www.out-law.com/en/articles/2017/october/review-calls-for-data-trusts-to-help-grow-artificial-intelligence-in-the-uk/}{Hall-Presenti Report}}{hall-presenti-report}
+
 
 \newslide{Motivation}
 \slides{

@@ -1,6 +1,11 @@
-\newslide{}
+\ifndef{whyAfrica}
+\define{whyAfrica}
 
-\includepersonpicture{mike}{1cm}
+\editme 
+
+<!--\newslide{}
+
+\includepersonpicture{mike}{1cm}-->
 
 \newslide{Why Africa?}
 
@@ -10,6 +15,6 @@
     * User-centric models of data management.
 * Store personal data on mobile phone within control of individual.
 
-\newslide{citizenme}
+\include{_data-science/includes/citizenme.md}
 
-\includepng{../slides/diagrams/health/citizenme.png}
+\endif
