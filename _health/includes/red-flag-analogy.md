@@ -43,7 +43,7 @@
 
 \newslide{}
   
-\figure{\includejpg{../slides/diagrams/health/1024px-Modern_Beijing_Traffic}{80%}}{Modern Bejing traffic. Image from \href{http://en.wikipedia.org/wiki/File:Modern_Beijing_Traffic.jpg}{Wikimedia Commons}.}{modern-beijing-traffic}
+\figure{\includejpg{../slides/diagrams/health/1024px-Modern_Beijing_Traffic}{80%}}{Modern Bejing traffic. If regulation isn't handled properly, the advantages fo the new technology are available to none, but the previous system has been broadly eliminated. Image from \href{http://en.wikipedia.org/wiki/File:Modern_Beijing_Traffic.jpg}{Wikimedia Commons}.}{modern-beijing-traffic}
 
 
 \endif
