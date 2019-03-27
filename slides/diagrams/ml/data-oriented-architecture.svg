@@ -1,0 +1,1053 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.0"
+   width="400"
+   height="630"
+   viewBox="0 0 400 630"
+   id="svg3720"
+   sodipodi:docname="data-oriented-architecture.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata3724">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2736"
+     inkscape:window-height="1699"
+     id="namedview3722"
+     showgrid="false"
+     inkscape:zoom="1.5641782"
+     inkscape:cx="169.50201"
+     inkscape:cy="286.42174"
+     inkscape:window-x="-13"
+     inkscape:window-y="-13"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3720"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <defs
+     id="defs3714">
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker14839"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path1351"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(-0.6)"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <defs
+     id="defs13236">
+    <style
+       id="style13234">
+    .mycylinder {
+    fill:none;
+    stroke:#000000;
+    stroke-opacity:1
+    }
+    .mytriangle {
+    fill:none;
+    stroke:#000000;
+    stroke-opacity:1
+    }
+    .myrect {
+    fill:none;
+    stroke:#000000;
+    stroke-opacity:1
+    }
+    .myarrow {
+    fill:none;
+    stroke:#000000;
+    stroke-width:1px;
+    stroke-linecap:butt;
+    stroke-linejoin:miter;
+    stroke-opacity:1;
+    marker-end:url(#marker14839)
+    }
+  .mytext {
+  font-style:normal;
+  font-variant:normal;
+  font-weight:normal;
+  font-stretch:normal;
+  font-size:8px;
+  line-height:1.25;
+  font-family:sans-serif;
+  -inkscape-font-specification:'sans-serif, Normal';
+  font-variant-ligatures:normal;
+  font-variant-caps:normal;
+  font-variant-numeric:normal;
+  font-feature-settings:normal;
+  text-align:center;
+  letter-spacing:0px;
+  word-spacing:0px;
+  writing-mode:lr-tb;
+  dominant-baseline:middle;
+  text-anchor:middle;
+  fill:#000000;
+  fill-opacity:1;
+  stroke:none
+  }
+  </style>
+  </defs>
+  <g
+     id="g4632">
+    <g
+       id="g4072">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4543-7-9"
+         class="mycylinder"
+         d="m 200,220 
+		      a 20,10 0 0 0 -20,10
+		      20,10 0 0 0 0,0
+		      v 30
+		      a 20,10 0 0 0 0,0
+		      20,10 0 0 0 20,10
+		      20,10 0 0 0 20,-10
+		      20,10 0 0 0 0,0
+		      v -30
+		      a 20,10 0 0 0 0,0
+		      20,10 0 0 0 -20,-10
+		      z
+		      m 20,10
+		      a 20,10 0 0 1 -20,10
+		      20,10 0 0 1 -20,-10
+		      20,10 0 0 1 20,-10
+		      20,10 0 0 1 20,10
+		      z" />
+      <text
+         xml:space="preserve"
+         class="mytext"
+         x="200"
+         y="250"
+         id="text4649-5"><tspan
+           sodipodi:role="line"
+           id="tspan4669"
+           x="200"
+           y="250">ONE</tspan></text>
+    </g>
+    <path
+       sodipodi:nodetypes="ccc"
+       inkscape:connector-curvature="0"
+       id="path201-4-7"
+       d="m 178.83635,259.34425 -40,0 v 20"
+       class="myarrow" />
+  </g>
+  <g
+     id="g4672">
+    <path
+       sodipodi:nodetypes="ccc"
+       inkscape:connector-curvature="0"
+       id="path201-4-1"
+       d="m 180,450 -40,0 v 20"
+       class="myarrow" />
+    <g
+       id="g4083">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4543-7-8-5"
+         class="mycylinder"
+         d="m 200,410 
+	    a 20,10 0 0 0 -20,10
+	    20,10 0 0 0 0,0
+	    v 30
+	    a 20,10 0 0 0 0,0
+	    20,10 0 0 0 20,10
+	    20,10 0 0 0 20,-10
+	    20,10 0 0 0 0,0
+	    v -30
+	    a 20,10 0 0 0 0,0
+	    20,10 0 0 0 -20,-10
+	    z
+	    m 20,10
+	    a 20,10 0 0 1 -20,10
+	    20,10 0 0 1 -20,-10
+	    20,10 0 0 1 20,-10
+	    20,10 0 0 1 20,10
+	    z" />
+    </g>
+  </g>
+  <g
+     id="g6476">
+    <text
+       id="text4789-22"
+       y="340"
+       x="355"
+       class="mytext"
+       xml:space="preserve"><tspan
+         y="340"
+         x="355"
+         id="tspan179"
+         sodipodi:role="line">Request per Item, Repository</tspan></text>
+    <g
+       id="g6309">
+      <g
+         id="g4747">
+        <g
+           id="g4112">
+          <rect
+             class="myrect"
+             id="rect4737-0-50"
+             width="70"
+             height="40"
+             x="320"
+             y="370" />
+          <text
+             xml:space="preserve"
+             class="mytext"
+             x="355"
+             y="390"
+             id="text4789-2-7"><tspan
+               sodipodi:role="line"
+               id="tspan4787-7-5"
+               x="355"
+               y="390">Compute Pre-request</tspan></text>
+        </g>
+        <path
+           sodipodi:nodetypes="cc"
+           inkscape:connector-curvature="0"
+           id="path1349-0-3-0-2-8"
+           d="m 355,370 v -60"
+	   class="myarrow" />
+      </g>
+      <g
+         id="g6145">
+        <g
+           id="g4740">
+          <g
+             id="g4118">
+            <path
+               inkscape:connector-curvature="0"
+               id="path3726-7"
+               d="m 320,470 h 70 l -35,-40 z"
+               class="mytriangle" />
+            <text
+               class="mytext"
+               id="text4535-6"
+               y="455"
+               x="355"
+               class="mytext"
+               xml:space="preserve"><tspan
+                 y="455"
+                 x="355"
+                 id="tspan4533-3"
+                 sodipodi:role="line">Group by</tspan><tspan
+                 id="tspan4537-1"
+                 y="465"
+                 x="355"
+                 sodipodi:role="line">Item</tspan></text>
+          </g>
+          <path
+             class="myarrow"
+             d="m 355,430 v -20"
+             id="path1349-0-3-5"
+             inkscape:connector-curvature="0"
+             sodipodi:nodetypes="cc" />
+        </g>
+        <g
+           id="g5988">
+          <g
+             id="g4732">
+            <g
+               id="g4124">
+              <path
+                 class="mytriangle"
+                 d="m 320,530 h 70 l -35,-40 z"
+                 id="path3726-7-5"
+                 inkscape:connector-curvature="0" />
+              <text
+                  xml:space="preserve"
+		  class="mytext"
+                 x="355"
+                 y="515"
+                 id="text4535-6-8"><tspan
+                   sodipodi:role="line"
+                   id="tspan112"
+                   x="355"
+                   y="515">Join by </tspan><tspan
+                   sodipodi:role="line"
+                   id="tspan114"
+                   x="355"
+                   y="525">Distributor, Item</tspan></text>
+            </g>
+            <path
+               sodipodi:nodetypes="cc"
+               inkscape:connector-curvature="0"
+               id="path1349-0-3-0"
+               d="m 355,490 v -20"
+               class="myarrow" />
+          </g>
+          <g
+             id="g5839">
+            <g
+               id="g4724">
+              <g
+                 id="g4095">
+                <path
+                   d="m 260,540
+		      a 25,10 0 0 0 -25,10
+		      25,10 0 0 0 0,0
+		      v 33
+		      a 25,10 0 0 0 0,0
+		      25,10 0 0 0 25,10
+		      25,10 0 0 0 25,-10
+		      25,10 0 0 0 0,0
+		      v -33
+		      a 25,10 0 0 0 0,0
+		      25,10 0 0 0 -25,-10
+		      z
+		      m 25,10
+		      a 25,10 0 0 1 -25,10
+		      25,10 0 0 1 -25,-10
+		      25,10 0 0 1 25,-10
+		      25,10 0 0 1 25,10
+		      z"
+                   class="mycylinder"
+                   id="path4543-7-98-4"
+                   inkscape:connector-curvature="0" />
+                <text
+                   id="text4673-76"
+                   y="565"
+                   x="260"
+                   class="mytext"
+                   xml:space="preserve"><tspan
+                     y="565"
+                     x="260"
+                     id="tspan5342"
+                     sodipodi:role="line">Distributor </tspan><tspan
+                     y="575"
+                     x="260"
+                     id="tspan5346"
+                     sodipodi:role="line">Constraints</tspan></text>
+              </g>
+              <path
+                 class="myarrow"
+                 d="m 285,550 35,0 v -20"
+                 id="path201-4-2-9"
+                 inkscape:connector-curvature="0"
+                 sodipodi:nodetypes="ccc" />
+            </g>
+            <g
+               id="g5698">
+              <g
+                 id="g4715">
+                <g
+                   id="g4129">
+                  <rect
+                     class="myrect"
+                     id="rect4737-0-5"
+                     width="70"
+                     height="40"
+                     x="320"
+                     y="590" />
+                  <text
+                     xml:space="preserve"
+                     class="mytext"
+                     x="355"
+                     y="610"
+                     id="text4789-2-5"><tspan
+                       sodipodi:role="line"
+                       id="tspan4833"
+                       x="355"
+                       y="610">Compute</tspan></text>
+                </g>
+                <g
+                   id="g4139">
+                  <text
+                     xml:space="preserve"
+                     class="mytext"
+                     x="355"
+                     y="560"
+                     id="text4789-23"><tspan
+                       sodipodi:role="line"
+                       id="tspan199"
+                       x="355"
+                       y="560">Compute per Item, Distributor</tspan></text>
+                  <path
+                     class="myarrow"
+                     d="m 355,590 v -60"
+                     id="path1349-0-3-0-2"
+                     inkscape:connector-curvature="0"
+                     sodipodi:nodetypes="cc" />
+                </g>
+              </g>
+              <g
+                 id="g5566">
+                <g
+                   id="g4705">
+                  <g
+                     id="g4056">
+                    <rect
+                       y="590"
+                       x="70"
+                       height="40"
+                       width="70"
+                       id="rect4737-0"
+                       class="myrect" />
+                    <text
+                       id="text4789-2"
+                       y="610"
+                       x="105"
+                       class="mytext"
+                       xml:space="preserve"><tspan
+                         y="610"
+                         x="105"
+                         id="tspan4787-7"
+                         sodipodi:role="line">Compute Pre-request</tspan></text>
+                  </g>
+                  <g
+                     id="g4134">
+                    <path
+                       sodipodi:nodetypes="cc"
+                       inkscape:connector-curvature="0"
+                       id="path4845"
+                       d="m 140,610 h 180"
+		       class="myarrow" />
+                    <text
+                       id="text4789-4"
+                       y="600"
+                       x="230"
+                       class="mytext"
+                       xml:space="preserve"><tspan
+                         y="600"
+                         x="230"
+                         id="tspan169"
+                         sodipodi:role="line">Pre-request per Item</tspan></text>
+                  </g>
+                </g>
+                <g
+                   id="g5444">
+                  <g
+                     id="g4695">
+                    <g
+                       id="g4051">
+                      <path
+                         class="mytriangle"
+                         d="m 70,530 h 70 l -35,40 z"
+                         id="path3726-72-8"
+                         inkscape:connector-curvature="0" />
+                      <text
+                         xml:space="preserve"
+                         class="mytext"
+                         x="105"
+                         y="540"
+                         id="text4535-66-5"
+                         class="mytext"><tspan
+                           sodipodi:role="line"
+                           id="tspan4533-5-5"
+                           x="105"
+                           y="540"
+                           >Join on</tspan><tspan
+                           sodipodi:role="line"
+                           x="105"
+                           y="550"
+                           id="tspan4537-0-6"
+                           >Item</tspan></text>
+                    </g>
+                    <path
+                       sodipodi:nodetypes="cc"
+                       inkscape:connector-curvature="0"
+                       id="path1349-0-9-6"
+                       d="m 105,570 v 20"
+                       class="myarrow" />
+                  </g>
+                  <g
+                     id="g5332">
+                    <g
+                       id="g4687">
+                      <g
+                         id="g4088">
+                        <path
+                            d="m 200,470
+			       a 20,10 0 0 0 -20,10
+			         20,10 0 0 0 0,0
+			       v 30
+			       a 20,10 0 0 0 0,0
+			         20,10 0 0 0 20,10
+			         20,10 0 0 0 20,-10
+			         20,10 0 0 0 0,0
+			       v -30
+			       a 20,10 0 0 0 0,0
+			         20,10 0 0 0 -20,-10
+			       z
+			       m 20,10
+			       a 20,10 0 0 1 -20,10
+			         20,10 0 0 1 -20,-10
+			         20,10 0 0 1 20,-10
+			         20,10 0 0 1 20,10
+			       z"
+                           class="mycylinder"
+                           id="path4543-7-98"
+                           inkscape:connector-curvature="0" />
+                        <text
+                           id="text4789-6"
+                           y="500"
+                           x="200"
+                           class="mytext"
+                           xml:space="preserve"><tspan
+                             y="500"
+                             x="200"
+                             id="tspan159"
+                             sodipodi:role="line">Fairness</tspan></text>
+                      </g>
+                      <path
+                         class="myarrow"
+                         d="m 180,510 -40,0 v 20"
+                         id="path201-4-2"
+                         inkscape:connector-curvature="0"
+                         sodipodi:nodetypes="ccc" />
+                    </g>
+                    <g
+                       id="g5228">
+                      <g
+                         id="g4680">
+                        <g
+                           id="g4045">
+                          <path
+                             class="mytriangle"
+                             d="m 70,470 h 70 l -35,40 z"
+                             id="path3726-72-9"
+                             inkscape:connector-curvature="0" />
+                          <text
+                             xml:space="preserve"
+                             class="mytext"
+                             x="105"
+                             y="480"
+                             id="text4535-66-1"
+                             class="mytext"><tspan
+                               sodipodi:role="line"
+                               id="tspan4533-5-8"
+                               x="105"
+                               y="480">Join on</tspan><tspan
+                               sodipodi:role="line"
+                               x="105"
+                               y="490"
+                               id="tspan4537-0-5">Item</tspan></text>
+                        </g>
+                        <path
+                           sodipodi:nodetypes="cc"
+                           inkscape:connector-curvature="0"
+                           id="path1349-0-9"
+                           d="m 105,510 v 20"
+                           class="myarrow" />
+                      </g>
+                      <g
+                         id="g5131">
+                        <text
+                           id="text4789-8"
+                           y="440"
+                           x="200"
+                           class="mytext"
+                           xml:space="preserve"><tspan
+                             y="440"
+                             x="200"
+                             id="tspan149"
+                             sodipodi:role="line">Inventory</tspan></text>
+                        <g
+                           id="g5042">
+                          <g
+                             id="g4665">
+                            <g
+                               id="g4039">
+                              <path
+                                 class="mytriangle"
+                                 d="m 70,410 h 70 l -35,40 z"
+                                 id="path3726-72-2"
+                                 inkscape:connector-curvature="0"
+                                 sodipodi:nodetypes="cccc" />
+                              <text
+                                 xml:space="preserve"
+                                 class="mytext"
+                                 x="105"
+                                 y="420"
+                                 id="text4535-66-8"
+                                 class="mytext"><tspan
+                                   sodipodi:role="line"
+                                   id="tspan4533-5-0"
+                                   x="105"
+                                   y="420">Join on</tspan><tspan
+                                   sodipodi:role="line"
+                                   x="105"
+                                   y="430"
+                                   id="tspan4537-0-2">Item</tspan></text>
+                            </g>
+                            <path
+                               sodipodi:nodetypes="cc"
+                               inkscape:connector-curvature="0"
+                               id="path1349-0-3"
+                               d="m 105,450 v 20"
+                               class="myarrow" />
+                          </g>
+                          <g
+                             id="g4956">
+                            <g
+                               id="g4657">
+                              <g
+                                 id="g4078">
+                                <path
+                                    d="m 200,350
+				       a 20,10 0 0 0 -20,10
+				       20,10 0 0 0 0,0
+				       v 30
+				       a 20,10 0 0 0 0,0
+				         20,10 0 0 0 20,10
+				         20,10 0 0 0 20,-10
+				         20,10 0 0 0 0,0
+				       v -30
+				       a 20,10 0 0 0 0,0
+				         20,10 0 0 0 -20,-10
+				       z
+				       m 20,10
+				       a 20,10 0 0 1 -20,10
+				         20,10 0 0 1 -20,-10
+				         20,10 0 0 1 20,-10
+				         20,10 0 0 1 20,10
+				       z"
+                                   class="mycylinder"
+                                   id="path4543-7-8"
+                                   inkscape:connector-curvature="0" />
+                                <text
+                                   id="text4673"
+                                   y="377"
+                                   x="200"
+                                   class="mytext"
+                                   xml:space="preserve"><tspan
+                                   y="377"
+                                   x="200"
+                                   id="tspan4671"
+                                   sodipodi:role="line">Repository</tspan><tspan
+                                   id="tspan4675"
+                                   y="387"
+                                   x="200"
+                                   sodipodi:role="line">Quality</tspan></text>
+                              </g>
+                              <path
+                                 class="myarrow"
+                                 d="m 180,390 -40,0 v 20"
+                                 id="path201-4-5"
+                                 inkscape:connector-curvature="0"
+                                 sodipodi:nodetypes="ccc" />
+                            </g>
+                            <g
+                               id="g4878">
+                              <g
+                                 id="g4649">
+                                <g
+                                   id="g4033">
+                                <rect
+                                   class="myrect"
+                                   id="rect4737"
+                                   width="70"
+                                   height="40"
+                                   x="70"
+                                   y="340" />
+                                <text
+                                   xml:space="preserve"
+                                   class="mytext"
+                                   x="105"
+                                   y="360"
+                                   id="text4789"><tspan
+                                   sodipodi:role="line"
+                                   id="tspan4787"
+                                   x="105"
+                                   y="360">Model</tspan></text>
+                                </g>
+                                <text
+                                   id="text4789-66"
+                                   y="395"
+                                   x="105"
+                                   class="mytext"
+                                   xml:space="preserve"><tspan
+                                   y="395"
+                                   x="105"
+                                   id="tspan189"
+                                   sodipodi:role="line">Response per Item</tspan></text>
+                                <path
+                                   sodipodi:nodetypes="cc"
+                                   inkscape:connector-curvature="0"
+                                   id="path1349-0-6"
+                                   d="m 105,380 v 30"
+                                   class="myarrow" />
+                              </g>
+                              <g
+                                 id="g4808">
+                                <g
+                                   id="g4640">
+                                <g
+                                   id="g4028">
+                                <path
+                                   sodipodi:nodetypes="cccc"
+                                   inkscape:connector-curvature="0"
+                                   id="path3726-3"
+                                   d="m 70,280 h 70 l -35,40 z"
+                                   class="mytriangle" />
+                                <text
+                                   class="mytext"
+                                   id="text4535-62"
+                                   y="290"
+                                   x="105"
+                                   class="mytext"
+                                   xml:space="preserve"><tspan
+                                   y="290"
+                                   x="105"
+                                   id="tspan4533-53"
+                                   sodipodi:role="line">Join on</tspan><tspan
+                                                     id="tspan4537-10"
+                                   y="300"
+                                   x="105"
+                                   sodipodi:role="line">Item</tspan></text>
+                                </g>
+                                <path
+                                   class="myarrow"
+                                   d="m 105,320 v 20"
+                                   id="path1349-0-1-3"
+                                   inkscape:connector-curvature="0"
+                                   sodipodi:nodetypes="cc" />
+                                </g>
+                                <g
+                                   id="g4625">
+                                <g
+                                   id="g4572">
+                                <g
+                                   id="g4022">
+                                <path
+                                   class="mytriangle"
+                                   d="m 70,220 h 70 l -35,40 z"
+                                   id="path3726-72"
+                                   inkscape:connector-curvature="0"
+                                   sodipodi:nodetypes="cccc" />
+                                <text
+                                   xml:space="preserve"
+                                   class="mytext"
+                                   x="105"
+                                   y="230"
+                                   id="text4535-66"
+                                   class="mytext"><tspan
+                                   sodipodi:role="line"
+                                   id="tspan4533-5"
+                                   x="105"
+                                   y="230">Join on</tspan><tspan
+                                   sodipodi:role="line"
+                                   x="105"
+                                   y="240"
+                                   id="tspan4537-0">Item</tspan></text>
+                                </g>
+                                <path
+                                   sodipodi:nodetypes="cc"
+                                   inkscape:connector-curvature="0"
+                                   id="path1349-0-1"
+                                   d="m 105,260 v 20"
+                                   class="myarrow" />
+                                </g>
+                                <g
+                                   id="g4564">
+                                <g
+                                   id="g4458">
+                                <g
+                                   id="g4067">
+                                <path
+                                   d="m 200,160 
+		      a 20,10 0 0 0 -20,10
+		      20,10 0 0 0 0,0
+		      v 30
+		      a 20,10 0 0 0 0,0
+		      20,10 0 0 0 20,10
+		      20,10 0 0 0 20,-10
+		      20,10 0 0 0 0,0
+		      v -30
+		      a 20,10 0 0 0 0,0
+		      20,10 0 0 0 -20,-10
+		      z
+		      m 20,10
+		      a 20,10 0 0 1 -20,10
+		      20,10 0 0 1 -20,-10
+		      20,10 0 0 1 20,-10
+		      20,10 0 0 1 20,10
+		      z"
+                                   class="mycylinder"
+                                   id="path4543-7-5"
+                                   inkscape:connector-curvature="0" />
+                                <text
+                                   id="text4649"
+                                   y="190"
+                                   x="200"
+                                   class="mytext"
+                                   xml:space="preserve"><tspan
+                                   y="190"
+                                   x="200"
+                                   id="tspan4647"
+                                   sodipodi:role="line">Value</tspan></text>
+                                </g>
+                                <path
+                                   class="myarrow"
+                                   d="m 180,200 -40,0 v 20"
+                                   id="path201-4"
+                                   inkscape:connector-curvature="0"
+                                   sodipodi:nodetypes="ccc" />
+                                </g>
+                                <g
+                                   id="g4519">
+                                <g
+                                   id="g4443">
+                                <path
+                                   sodipodi:nodetypes="ccc"
+                                   inkscape:connector-curvature="0"
+                                   id="path201"
+                                   d="m 180,140 -40,0 v 20"
+                                   class="myarrow" />
+                                <g
+                                   id="g4062">
+                                <path
+                                   inkscape:connector-curvature="0"
+                                   id="path4543-7-3"
+                                   class="mycylinder"
+                                   d="m 200,100
+		      a 20,10 0 0 0 -20,10
+		      20,10 0 0 0 0,0
+		      v 30
+		      a 20,10 0 0 0 0,0
+		      20,10 0 0 0 20,10
+		      20,10 0 0 0 20,-10
+		      20,10 0 0 0 0,0
+		      v -30
+		      a 20,10 0 0 0 0,0
+		      20,10 0 0 0 -20,-10
+		      z
+		      m 20,10
+		      a 20,10 0 0 1 -20,10
+		      20,10 0 0 1 -20,-10
+		      20,10 0 0 1 20,-10
+		      20,10 0 0 1 20,10
+		      z" />
+                                <text
+                                   xml:space="preserve"
+                                   class="mytext"
+                                   x="200"
+                                   y="127"
+                                   id="text4649-4"><tspan
+                                   sodipodi:role="line"
+                                   id="tspan1345"
+                                   x="200"
+                                   y="127">Distributor</tspan><tspan
+                                   sodipodi:role="line"
+                                   id="tspan1347"
+                                   x="200"
+                                   y="137">Selection</tspan></text>
+                                </g>
+                                </g>
+                                <g
+                                   id="g4451">
+                                <g
+                                   id="g4016">
+                                <path
+                                   class="mytriangle"
+                                   d="m 70,160 h 70 l -35,40 z"
+                                   id="path3726-4"
+                                   inkscape:connector-curvature="0"
+                                   sodipodi:nodetypes="cccc" />
+                                <text
+                                   xml:space="preserve"
+                                   class="mytext"
+                                   x="105"
+                                   y="170"
+                                   id="text4535-5"
+                                   class="mytext"><tspan
+                                   sodipodi:role="line"
+                                   id="tspan4533-2"
+                                   x="105"
+                                   y="170">Join on</tspan><tspan
+                                   sodipodi:role="line"
+                                   x="105"
+                                   y="180.21384"
+                                   id="tspan4537-7">Item</tspan></text>
+                                </g>
+                                <path
+                                   sodipodi:nodetypes="cc"
+                                   inkscape:connector-curvature="0"
+                                   id="path1349-0"
+                                   d="m 105,200 v 20"
+                                   class="myarrow" />
+                                </g>
+                                <g
+                                   id="g4481">
+                                <g
+                                   id="g4435">
+                                <g
+                                   id="g4010">
+                                <path
+                                   sodipodi:nodetypes="cccc"
+                                   inkscape:connector-curvature="0"
+                                   id="path3726"
+                                   d="m 70,100 h 70 l -35,40 z"
+                                   class="mytriangle" />
+                                <text
+                                   class="mytext"
+                                   id="text4535"
+                                   y="110"
+                                   x="105"
+                                   class="mytext"
+                                   xml:space="preserve"><tspan
+                                   y="110"
+                                   x="105"
+                                   id="tspan4533"
+                                   sodipodi:role="line">Join on</tspan><tspan
+                                                     id="tspan4537"
+                                   y="120"
+                                   x="105"
+                                   sodipodi:role="line">Item</tspan></text>
+                                </g>
+                                <path
+                                   class="myarrow"
+                                   d="m 105,140 v 20"
+                                   id="path1349"
+                                   inkscape:connector-curvature="0"
+                                   sodipodi:nodetypes="cc" />
+                                </g>
+                                <g
+                                   id="g4419">
+                                <g
+                                   id="g4107">
+                                <path
+                                   d="m 20,45 
+		      a 20,10 0 0 0 -20,10
+		      20,10 0 0 0 0,0
+		      v 30
+		      a 20,10 0 0 0 0,0
+		      20,10 0 0 0 20,10
+		      20,10 0 0 0 20,-10
+		      20,10 0 0 0 0,0
+		      v -30
+		      a 20,10 0 0 0 0,0
+		      20,10 0 0 0 -20,-10
+		      z
+		      m 20,10
+		      a 20,10 0 0 1 -20,10
+		      20,10 0 0 1 -20,-10
+		      20,10 0 0 1 20,-10
+		      20,10 0 0 1 20,10
+		      z"
+                                   class="mycylinder"
+                                   id="path4543-7-0"
+                                   inkscape:connector-curvature="0" />
+                                <text
+                                   id="text4673-8"
+                                   y="72"
+                                   x="20"
+                                   class="mytext"
+                                   xml:space="preserve"><tspan
+                                   y="72"
+                                   x="20"
+                                   id="tspan4671-5"
+                                   sodipodi:role="line">Repository</tspan><tspan
+                                   id="tspan4675-2"
+                                   y="82"
+                                   x="20"
+                                   sodipodi:role="line">Transfers</tspan></text>
+                                </g>
+                                <path
+                                   class="myarrow"
+                                   d="m 40,80 30,0 v 20"
+                                   id="path201-7"
+                                   inkscape:connector-curvature="0"
+                                   sodipodi:nodetypes="ccc" />
+                                </g>
+                                <g
+                                   id="g4427">
+                                <g
+                                   id="g4101">
+                                <path
+                                   inkscape:connector-curvature="0"
+                                   d="m 140,0
+		      a 20,10 0 0 0 -20,10
+		      20,10 0 0 0 0,0
+		      v 30
+		      a 20,10 0 0 0 0,0
+		      20,10 0 0 0 20,10
+		      20,10 0 0 0 20,-10
+		      20,10 0 0 0 0,0
+		      v -30
+		      a 20,10 0 0 0 0,0
+		      20,10 0 0 0 -20,-10
+		      z
+		      m 20,10
+		      a 20,10 0 0 1 -20,10
+		      20,10 0 0 1 -20,-10
+		      20,10 0 0 1 20,-10
+		      20,10 0 0 1 20,10
+		      z"
+                                   class="mycylinder"
+                                   id="path4543-7" />
+                                <text
+                                   id="text4673-1"
+                                   y="27"
+                                   x="140"
+                                   class="mytext"
+                                   xml:space="preserve"><tspan
+                                   y="27"
+                                   x="140"
+                                   id="tspan3230"
+                                   sodipodi:role="line">Item</tspan><tspan
+                                   y="37"
+                                   x="140"
+                                   id="tspan3232"
+                                   sodipodi:role="line">Forecasts</tspan></text>
+                                </g>
+                                <path
+                                   class="myarrow"
+                                   d="m 140,50 0,50"
+                                   id="path1349-3"
+                                   inkscape:connector-curvature="0"
+                                   sodipodi:nodetypes="cc" />
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                              </g>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
