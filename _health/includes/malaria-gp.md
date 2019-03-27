@@ -59,11 +59,13 @@ The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboratio
 
 \figure{\includejpg{../slides/diagrams/gpss/1157497_513423392066576_1845599035_n}{80%}}{The project arose out of the Gaussian process summer school held at Makerere in Kampala in 2013. The school led, in turn, to the Data Science Africa initiative.}
 
-\subsection{Early Warning Systems}
+\notes{\subsection{Early Warning Systems}}
 
 \newslide{Kabarole District}
 
 \figure{\includediagramclass{../slides/diagrams/health/Kabarole_District_in_Uganda}{50%}}{The Kabarole district in Uganda.}{kabarole-district-in-uganda}
+
+\newslide{Early Warning System}
 
 \figure{\includegif{../slides/diagrams/health/kabarole}{100%}}{Estimate of the current disease situation in the Kabarole district over time. Estimate is constructed with a Gaussian process with an additive covariance funciton.}{kabarole-disease-over-time}
 

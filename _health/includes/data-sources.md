@@ -17,7 +17,7 @@
 
 \subsection{EMIS Patient Access}
 
-\figure{\includepng{../slides/diagrams/health/EMIS_medical_record}{80%}}{\href{https://patient.uservoice.com/knowledgebase/articles/214226-how-do-i-view-my-medical-record-}{Returning records to patients}{returning-records}
+\figure{\includepng{../slides/diagrams/health/EMIS_medical_record}{80%}}{\href{https://patient.uservoice.com/knowledgebase/articles/214226-how-do-i-view-my-medical-record-}{Returning records to patients}}{returning-records}
 
 
 \subsection{midata project}
@@ -26,11 +26,11 @@
 
 \subsection{Botched}
 
-\figure{\includepng{../slides/diagrams/health/botched}{80%}}{\href{http://www.computing.co.uk/ctg/analysis/2398603/nhs-caredata-a-horribly-botched-operation}{NHS Care.data Botched}}{care-data-botched}
+\figure{\includepng{../slides/diagrams/health/botched}{90%}}{\href{http://www.computing.co.uk/ctg/analysis/2398603/nhs-caredata-a-horribly-botched-operation}{NHS Care.data Botched}}{care-data-botched}
 
 \subsection{Topol Review}
 
-\figure{\includepng{../slides/diagrams/health/topol-review}{80%}}{\href{https://topol.hee.nhs.uk/}{Eric Topol's review of the health service in a digital era.}{eric-topol-review}
+\figure{\includepng{../slides/diagrams/health/topol-review}{90%}}{\href{https://topol.hee.nhs.uk/}{Eric Topol's review of the health service in a digital era.}}{eric-topol-review}
 
 
 
