@@ -26,7 +26,7 @@
 
 \notes{The majority of general practioner patient data is held by two companies in the UK. EMIS and SystemOne. EMIS made their data available through a web portal, <patient.co.uk>.}
 
-\subsection{midata project}
+\newslide{midata project}
 
 \figure{\includepng{../slides/diagrams/health/midata}{80%}}{\href{https://www.gov.uk/government/policies/providing-better-information-and-protection-for-consumers/supporting-pages/personal-data}{midata project}}{midata-project}
 
