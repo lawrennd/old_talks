@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -15,7 +13,7 @@
    height="600"
    viewBox="-5 0 385 600"
    sodipodi:docname="service-oriented-architecture.svg"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+   inkscape:version="0.91 r13725">
   <metadata
      id="metadata10587">
     <rdf:RDF>
@@ -53,19 +51,8 @@
      objecttolerance="10"
      gridtolerance="10"
      guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="2736"
-     inkscape:window-height="1699"
      id="namedview10583"
-     showgrid="false"
-     inkscape:zoom="3.025641"
-     inkscape:cx="46.094666"
-     inkscape:cy="753.74723"
-     inkscape:window-x="-13"
-     inkscape:window-y="-13"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg10581" />
+     showgrid="false"/>
   <defs
      id="defs13236">
     <style
@@ -110,99 +97,74 @@
   </style>
   </defs>
   <g
-     id="g16590">
-    <g
-       id="prediction-group">
-      <text
-         class="mytext"
-         xml:space="preserve"
+     id="prediction-group">
+    <text
+       id="prediction-text"
+       y="47.5"
+       x="325"
+       xml:space="preserve"
+       class="mytext"><tspan
+         y="47.5"
          x="325"
-         y="62.5"
-         id="prediction-text"><tspan
-           sodipodi:role="line"
-           id="tspan11151"
-           x="325"
-           y="62.5">Prediction</tspan></text>
-      <rect
-         class="myrect"
-         id="prediction-rectangle"
-         width="110"
-         height="45"
-         x="270"
-         y="40" />
-      <path
-         class="myarrow"
-         d="m 210,62.5 h 60 v 0"
-         id="prediction-arrow"
-         inkscape:connector-curvature="0"
-         sodipodi:nodetypes="ccc" />
-    </g>
-    <g
-       id="service-group">
-      <text
-         xml:space="preserve"
-         class="mytext"
-         x="325"
-         y="122.5"
-         id="service-text"><tspan
-           sodipodi:role="line"
-           id="tspan11176">Service</tspan></text>
-      <rect
-         class="myrect"
-         id="service-rect"
-         width="110"
-         height="45"
-         x="270"
-         y="100" />
-      <path
-         class="myarrow"
-         d="m 210,122.5 h 60 v 0"
-         id="service-arrow"
-         inkscape:connector-curvature="0"
-         sodipodi:nodetypes="ccc" />
-    </g>
-    <g
-       id="lead-group">
-      <text
-         xml:space="preserve"
-         class="mytext"
-         x="325"
+         id="tspan11151"
+         sodipodi:role="line">Data Source 1</tspan></text>
+    <rect
+       y="25"
+       x="270"
+       height="45"
+       width="110"
+       id="prediction-rectangle"
+       class="myrect" />
+    <path
+       sodipodi:nodetypes="ccc"
+       inkscape:connector-curvature="0"
+       id="prediction-arrow"
+       d="m 210,47.5 60,0 0,0"
+       class="myarrow" />
+  </g>
+  <g
+     id="lead-group">
+    <text
+       id="lead-text"
+       y="102.5"
+       x="325"
+       class="mytext"
+       xml:space="preserve"><tspan
          y="182.5"
-         id="lead-text"><tspan
-           sodipodi:role="line"
-           id="tspan11250">Lead</tspan></text>
-      <rect
-         class="myrect"
-         id="lead-rect"
-         width="110"
-         height="45"
-         x="270"
-         y="160" />
-      <path
-         class="myarrow"
-         d="m 210,182.5 h 60 v 0"
-         id="lead-arrow"
-         inkscape:connector-curvature="0"
-         sodipodi:nodetypes="ccc" />
-    </g>
+         x="325"
+         id="tspan11250"
+         sodipodi:role="line">Data Source 2</tspan></text>
+    <rect
+       y="80"
+       x="270"
+       height="45"
+       width="110"
+       id="lead-rect"
+       class="myrect" />
+    <path
+       sodipodi:nodetypes="ccc"
+       inkscape:connector-curvature="0"
+       id="lead-arrow"
+       d="m 210,102.5 60,0 0,0"
+       class="myarrow" />
   </g>
   <g
      id="model-group">
     <path
        inkscape:connector-curvature="0"
        id="model-arrow"
-       d="m 155,205 h 0 v 35"
+       d="m 155,125 h 0 v 35"
        class="myarrow" />
     <text
        id="model-text"
-       y="262.5"
+       y="182.5"
        x="155"
        class="mytext"
        xml:space="preserve"><tspan
          id="tspan11314"
          sodipodi:role="line">Model</tspan></text>
     <rect
-       y="240"
+       y="160"
        x="100"
        height="45"
        width="110"
@@ -214,20 +176,20 @@
     <path
        inkscape:connector-curvature="0"
        id="collect-2-arrow"
-       d="m 155,285 h 0 v 35"
+       d="m 155,205 h 0 v 35"
        class="myarrow" />
     <text
        id="collect-2-text"
-       y="410"
+       y="290d"
        x="155"
        class="mytext"
        xml:space="preserve"><tspan
          id="tspan11318"
          sodipodi:role="line">Collect Data</tspan></text>
     <rect
-       y="320"
+       y="240"
        x="100"
-       height="180"
+       height="100"
        width="110"
        id="collect-2-rect"
        class="myrect" />
@@ -268,9 +230,7 @@
     <path
        class="myarrow"
        d="m 100,575 -90,0"
-       id="response-arrow"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc" />
+       id="response-arrow"/>
   </g>
   <g
      id="roq-service-group">
@@ -291,13 +251,13 @@
        height="20"
        x="90"
        y="0" />
-  <rect
-     class="myrect"
-     id="rect11322"
-     width="130"
-     height="580"
-     x="90"
-     y="20" />
+    <rect
+       class="myrect"
+       id="rect11322"
+       width="130"
+       height="580"
+       x="90"
+       y="20" />
   </g>
   <g
      id="g16612">
@@ -314,9 +274,7 @@
       <path
          class="myarrow"
          d="m 210,332.5 h 60 v 0"
-         id="quality-check-arrow"
-         inkscape:connector-curvature="0"
-         sodipodi:nodetypes="ccc" />
+         id="quality-check-arrow"/>
       <rect
          class="myrect"
          id="quality-check-rect"
@@ -340,8 +298,8 @@
          id="fairness-rect"
          width="110"
          height="45"
-         x="270"
-         y="420" />
+         x="295"
+         y="270" />
       <path
          class="myarrow"
          d="m 210,442.5 h 60 v 0"
@@ -350,10 +308,11 @@
          sodipodi:nodetypes="ccc" />
     </g>
   </g>
-  <g id="collect-1-group">
+  <g
+     id="collect-1-group">
     <text
        id="collect-1-text"
-       y="115"
+       y="75"
        x="155"
        class="mytext"
        xml:space="preserve"><tspan
@@ -362,7 +321,7 @@
     <rect
        y="25"
        x="100"
-       height="180"
+       height="100"
        width="110"
        id="collect-1-rect"
        class="myrect" />
