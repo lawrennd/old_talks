@@ -5,7 +5,7 @@
 
 \notes{\subsection{Red Flag Analogy}}
 
-When considering new technologies and their effect on regulation, it is sometimes helpful to consider the past. Our new technologies are about moving information, but a previous revolution occurred around moving people and goods. A revolution in transport.}
+\notes{When considering new technologies and their effect on regulation, it is sometimes helpful to consider the past. Our new technologies are about moving information, but a previous revolution occurred around moving people and goods. A revolution in transport.}
 
 \newslide{}
 
