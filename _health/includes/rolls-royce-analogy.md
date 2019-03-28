@@ -12,9 +12,9 @@ With this in mind The Wellcome Trust launched a report on ["Understanding Patien
 
 
 \newslide{Understanding Patient Data}
-\slides{
-\href{https://wellcome.ac.uk/news/understanding-patient-data-launches-today}{\includepng{../slides/diagrams/health/understanding-patient-data}{80%}}
-}
+
+\figure{\includepng{../slides/diagrams/health/understanding-patient-data}{80%}}{The Wellcome Trust \href{https://wellcome.ac.uk/news/understanding-patient-data-launches-today}{surveyed patients} to determine their attitudes to the sharing of their data.}{wellcome-trust}
+
 
 \notes{From this report we know that patients trust Universities and hospitals more than the trust commercial entities and insurers. However, there are a number of different ways in which data can be mishandled, it is not only the intent of the data-controllers that effects our data security.}
 
@@ -39,7 +39,7 @@ With this in mind The Wellcome Trust launched a report on ["Understanding Patien
 
 \newslide{}
 
-\figure{\includejpg{../slides/diagrams/health/British_Airways_at_SFO}{50%}}{British Airways 747 at SFO. Today airlines lease their engines from Rolls Royce who take care of maintenance independently from the pilot.}{british-airways-at-sfo}
+\figure{\includejpg{../slides/diagrams/health/British_Airways_at_SFO}{70%}}{British Airways 747 at SFO. Today airlines lease their engines from Rolls Royce who take care of maintenance independently from the pilot.}{british-airways-at-sfo}
 
 \notes{I suspect most passengers would find it disconcerting if the pilot of a 747 was seen working on the engine shortly before a flight. As aviation has become more widespread, there is now a separation of responsibilities between pilots and mechanics. For example, Rolls Royce goes so far as to maintain ownership of their engines, and lease them to the airline. The responsibility for maintenance of the engine is entirely with Rolls Royce, yet the pilot is responsibility for the safety of the aircraft and its passengers.
 
@@ -49,7 +49,7 @@ This separation of responsibility according to expertise needs to be emulated wh
 
 \newslide{}
 \slides{
-\figure{\href{https://www.amazon.co.uk/Black-Box-Thinking-Surprising-Success-ebook/dp/B00PW634YQ}{\includejpg{../slides/diagrams/health/black-box-thinking}{40%}}}{Black Box Thinking by Matthew Syed}{black-box-thinking}
+\figure{\href{https://www.amazon.co.uk/Black-Box-Thinking-Surprising-Success-ebook/dp/B00PW634YQ}{\includejpg{../slides/diagrams/health/black-box-thinking}{40%}}}{Black Box Thinking by Matthew Syed. Matthew compares the open approach to erros taken in the airline industry to way errors are dealt with in the health system.}{black-box-thinking}
 }
 
 \notes{\subsection{Propagation of Best Practice}

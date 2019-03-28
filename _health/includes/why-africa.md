@@ -7,13 +7,17 @@
 
 \includepersonpicture{mike}{1cm}-->
 
+\newslide{\subsection{Africa}}
+
 \newslide{Why Africa?}
 
-* Short circuit the process.    
+\slides{* Short circuit the process.
     * For UK---infrastructure paralysis.
     * For Africa---potential for distributed architectures.
     * User-centric models of data management.
-* Store personal data on mobile phone within control of individual.
+* Store personal data on mobile phone within control of individual.}
+
+\notes{When we turn to the developing world, we see many of these issues amplified. The relative lack of an existing health infrastructure leads to great opportunities to bring individual benefits for health. But the pitfalls, in terms of the vulnerability of the population to manipulation, are also greater.}
 
 \include{_data-science/includes/citizenme.md}
 

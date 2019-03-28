@@ -222,87 +222,6 @@ communicate
 <p>Figure: The trinity of human, data and computer, and highlights the modern phenomenon. The communication channel between computer and data now has an extremely high bandwidth. The channel between human and computer and the channel between data and human is narrow. New direction of information flow, information is reaching us mediated by the computer.</p>
 </div>
 </div>
-<h1 id="quantifying-the-value-of-data-edit">Quantifying the Value of Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/value-of-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/value-of-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
-<p>The situation is reminiscent of a thirsty castaway, set adrift. There is a sea of data, but it is not fit to drink. We need some form of data desalination before it can be consumed. But like real desalination, this is a non trivial process, particularly if we want to achieve it at scale.</p>
-<p>There's a sea of data, but most of it is undrinkable.</p>
-<div class="figure">
-<div id="sea-water-ocean-waves-figure" class="figure-frame">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/sea-water-ocean-waves.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-<div id="sea-water-ocean-waves-magnify" class="magnify" onclick="magnifyFigure(&#39;sea-water-ocean-waves&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
-</div>
-<div id="sea-water-ocean-waves-caption" class="caption-frame">
-<p>Figure: The abundance of uncurated data is reminiscent of the abundance of undrinkable water for those cast adrift at sea.</p>
-</div>
-</div>
-<p>We require data-desalination before it can be consumed!</p>
-<p>I spoke about the challenges in data science at the NIPS 2016 Workshop on Machine Learning for Health. NIPS mainly focuses on machine learning methodologies, and many of the speakers were doing so. But before my talk, I listened to some of the other speakers talk about the challenges they had with data preparation.</p>
-<ul>
-<li>90% of our time is spent on validation and integration (Leo Anthony Celi)</li>
-<li>&quot;The Dirty Work We Don't Want to Think About&quot; (Eric Xing)</li>
-<li>&quot;Voodoo to get it decompressed&quot; (Francisco Giminez)</li>
-</ul>
-<p>A further challenge in healthcare is that the data is collected by clinicians, often at great inconvenience to both themselves and the patient, but the control of the data is sometimes used to steer the direction of research.</p>
-<p>The fact that we put so much effort into processing the data, but so little into allocating credit for this work is a major challenge for realizing the benefit in the data we have.</p>
-<p>This type of work is somewhat thankless, with the exception of the clinicians' control of the data, which probably takes things too far, those that collate and correct data sets gain little credit. In the domain of <em>reinforcement learning</em> the aim is to take a series of actions to achieve a stated goal and gain a reward. The <em>credit assignment problem</em> is the challenge in the learning algorithm of distributing credit to each of the actions which brought about the reward. We also experience this problem in society, we use proxies such as monetary reward to incentivise intermediate steps in our economy. Modern society functions because we agree to make basic expenditure on infrastructure, such as roads, which we all make use of. Our data-society is not sufficiently mature to be correctly crediting and rewarding those that undertake this work.</p>
-<p>We need to properly incetivize the sharing and production of clean data sets, we need to correctly quantify the value in the contribution of each actor, otherwise there won't be enough clean data to satiate the thirst of our decision making processes.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pods</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">pods.notebook.display_plots(<span class="st">&#39;pomdp</span><span class="sc">{samp:0&gt;3}</span><span class="st">.svg&#39;</span>, 
-                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/&#39;</span>, samp<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">4</span>))</code></pre></div>
-<div class="figure">
-<div id="pomdp-credit-assignment-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/pomdp004.svg" width="80%" style=" ">
-</object>
-</div>
-<div id="pomdp-credit-assignment-magnify" class="magnify" onclick="magnifyFigure(&#39;pomdp-credit-assignment&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
-</div>
-<div id="pomdp-credit-assignment-caption" class="caption-frame">
-<p>Figure: Partially observable Markov decision process observing reward as actions are taken in different states</p>
-</div>
-</div>
-<p>The value of shared data infrastructures in computational biology was recognized by the 2010 joint statement from the Wellcome Trust and other funders of research at the &quot;Foggy Bottom&quot; meeting. They recognised three key benefits to sharing of health data:</p>
-<ul>
-<li>faster progress in improving health</li>
-<li>better value for money</li>
-<li>higher quality science</li>
-</ul>
-<p>But incentivising sharing requires incentivising collection and collation of data, and the associated credit allocation models.</p>
-<h2 id="data-readiness-levels-edit">Data Readiness Levels <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-readiness-levels.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-readiness-levels.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
-<p><a href="http://inverseprobability.com/2017/01/12/data-readiness-levels">Data Readiness Levels</a> <span class="citation">(Lawrence 2017)</span> are an attempt to develop a language around data quality that can bridge the gap between technical solutions and decision makers such as managers and project planners. The are inspired by Technology Readiness Levels which attempt to quantify the readiness of technologies for deployment.b</p>
-<h3 id="three-grades-of-data-readiness-edit">Three Grades of Data Readiness <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/three-grades-of-data-readiness.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/three-grades-of-data-readiness.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
-<p>Data-readiness describes, at its coarsest level, three separate stages of data graduation.</p>
-<ul>
-<li>Grade C - accessibility</li>
-<li>Transition: data becomes electronically available</li>
-<li>Grade B - validity</li>
-<li>Transition: pose a question to the data.</li>
-<li>Grade A - usability</li>
-</ul>
-<p>The important definitions are at the transition. The move from Grade C data to Grade B data is delimited by the <em>electronic availability</em> of the data. The move from Grade B to Grade A data is delimited by posing a question or task to the data <span class="citation">(Lawrence 2017)</span>.</p>
-<h2 id="accessibility-grade-c">Accessibility: Grade C</h2>
-<p>The first grade refers to the accessibility of data. Most data science practitioners will be used to working with data-providers who, perhaps having had little experience of data-science before, state that they &quot;have the data&quot;. More often than not, they have not verified this. A convenient term for this is &quot;Hearsay Data&quot;, someone has <em>heard</em> that they have the data so they <em>say</em> they have it. This is the lowest grade of data readiness.</p>
-<p>Progressing through Grade C involves ensuring that this data is accessible. Not just in terms of digital accessiblity, but also for regulatory, ethical and intellectual property reasons.</p>
-<h2 id="validity-grade-b">Validity: Grade B</h2>
-<p>Data transits from Grade C to Grade B once we can begin digital analysis on the computer. Once the challenges of access to the data have been resolved, we can make the data available either via API, or for direct loading into analysis software (such as Python, R, Matlab, Mathematica or SPSS). Once this has occured the data is at B4 level. Grade B involves the <em>validity</em> of the data. Does the data really represent what it purports to? There are challenges such as missing values, outliers, record duplication. Each of these needs to be investigated.</p>
-<p>Grade B and C are important as if the work done in these grades is documented well, it can be reused in other projects. Reuse of this labour is key to reducing the costs of data-driven automated decision making. There is a strong overlap between the work required in this grade and the statistical field of <a href="https://en.wikipedia.org/wiki/Exploratory_data_analysis"><em>exploratory data analysis</em></a> <span class="citation">(Tukey 1977)</span>.</p>
-<p>The need for Grade B emerges due to the fundamental change in the availability of data. Classically, the scientific question came first, and the data came later. This is still the approach in a randomized control trial, e.g. in A/B testing or clinical trials for drugs. Today data is being laid down by happenstance, and the question we wish to ask about the data often comes after the data has been created. The Grade B of data readiness ensures thought can be put into data quality <em>before</em> the question is defined. It is this work that is reusable across multiple teams. It is these processes that the team which is <em>standing up</em> the data must deliver.</p>
-<h2 id="usability-grade-a">Usability: Grade A</h2>
-<p>Once the validity of the data is determined, the data set can be considered for use in a particular task. This stage of data readiness is more akin to what machine learning scientists are used to doing in Universities. Bringing an algorithm to bear on a well understood data set.</p>
-<p>In Grade A we are concerned about the utility of the data given a particular task. Grade A may involve additional data collection (experimental design in statistics) to ensure that the task is fulfilled.</p>
-<p>This is the stage where the data and the model are brought together, so expertise in learning algorithms and their application is key. Further ethical considerations, such as the fairness of the resulting predictions are required at this stage. At the end of this stage a prototype model is ready for deployment.</p>
-<p>Deployment and maintenance of machine learning models in production is another important issue which Data Readiness Levels are only a part of the solution for.</p>
-<h2 id="recursive-effects">Recursive Effects</h2>
-<p>To find out more, or to contribute ideas go to <a href="http://data-readiness.org" class="uri">http://data-readiness.org</a></p>
-<p>You can also check my blog post on <a href="http://inverseprobability.com/2017/01/12/data-readiness-levels">&quot;Data Readiness Levels&quot;</a></p>
-<p>Throughout the data preparation pipeline, it is important to have close interaction between data scientists and application domain experts. Decisions on data preparation taken outside the context of application have dangerous downstream consequences. This provides an additional burden on the data scientist as they are required for each project, but it should also be seen as a learning and familiarization exercise for the domain expert. Long term, just as biologists have found it necessary to assimilate the skills of the bioinformatician to be effective in their science, most domains will also require a familiarity with the nature of data driven decision making and its application. Working closely with data-scientists on data preparation is one way to begin this sharing of best practice.</p>
-<p>The processes involved in Grade C and B are often badly taught in courses on data science. Perhaps not due to a lack of interest in the areas, but maybe more due to a lack of access to real world examples where data quality is poor.</p>
-<p>These stages of data science are also ridden with ambiguity. In the long term they could do with more formalization, and automation, but best practice needs to be understood by a wider community before that can happen.</p>
-<h1 id="assessing-the-organizations-readiness-edit">Assessing the Organizations Readiness <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-joel-tests.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-joel-tests.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
-<p>Assessing the readiness of data for analysis is one action that can be taken, but assessing teams that need to assimilate the information in the data is the other side of the coin. With this in mind both <a href="https://medium.com/@damoncivin/the-joel-test-for-data-readiness-4882aae64753">Damon Civin</a> and <a href="https://blog.dominodatalab.com/joel-test-data-science/">Nick Elprin</a> have independently proposed the idea of a &quot;Data Joel Test&quot;. A &quot;<a href="https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/">Joel Test</a>&quot; is a short questionaire to establish the ability of a team to handle software engineering tasks. It is designed as a rough and ready capability assessment. A &quot;Data Joel Test&quot; is similar, but for assessing the capability of a team in performing data science.</p>
 <h2 id="feudal-era-data-ecosystem-edit">Feudal Era Data Ecosystem <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/feudal-era-data-ecosystem.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/feudal-era-data-ecosystem.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="figure">
 <div id="feudal-data-system-figure" class="figure-frame">
@@ -324,14 +243,22 @@ communicate
 <li>Try Googling for: ``patient data ''...</li>
 </ul>
 <div class="figure">
-<div id="-figure" class="figure-frame">
+<div id="bicycling-big-wheelers-figure" class="figure-frame">
 <div class="centered centered" style="">
-<img class="Image from [Wikimedia Commons](http://en.wikipedia.org/wiki/File:Bicycling-ca1887-bigwheelers.jpg)" src="../slides/diagrams/health/Bicycling-ca1887-bigwheelers.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="../slides/diagrams/health/Bicycling-ca1887-bigwheelers.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="bicycling-big-wheelers-magnify" class="magnify" onclick="magnifyFigure(&#39;bicycling-big-wheelers&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="bicycling-big-wheelers-caption" class="caption-frame">
+<p>Figure: Image from <a href="http://en.wikipedia.org/wiki/File:Bicycling-ca1887-bigwheelers.jpg">Wikimedia Commons</a></p>
+</div>
 </div>
 <div class="figure">
 <div id="riley-car-with-chauffeur-figure" class="figure-frame">
 <div class="centered centered" style="">
-<img class="" src="../slides/diagrams/health/538px-Riley_car_with_chauffeur_c1910.jpg" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="../slides/diagrams/health/538px-Riley_car_with_chauffeur_c1910.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 <div id="riley-car-with-chauffeur-magnify" class="magnify" onclick="magnifyFigure(&#39;riley-car-with-chauffeur&#39;)">
@@ -341,14 +268,30 @@ communicate
 <p>Figure: Image from <a href="http://en.wikipedia.org/wiki/File:Riley_car_with_chauffeur,_c1910.jpg">Wikimedia Commons</a></p>
 </div>
 </div>
-
-<p><a href="http://www.direct.gov.uk/prod_consum_dg/groups/dg_digitalassets/@dg/@en/@motor/documents/digitalasset/dg_180212.pdf" target="_blank" ></a></p>
+<div class="figure">
+<div id="regulation-motor-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/health/a-brief-history-of-registration.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+</div>
+<div id="regulation-motor-magnify" class="magnify" onclick="magnifyFigure(&#39;regulation-motor&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
-<div id="-caption" class="caption-frame">
-<p>Figure:</p>
+<div id="regulation-motor-caption" class="caption-frame">
+<p>Figure: <a href="http://www.direct.gov.uk/prod_consum_dg/groups/dg_digitalassets/@dg/@en/@motor/documents/digitalasset/dg_180212.pdf" target="_blank" >The early regulation of the modern motor car.</a></p>
+</div>
+</div>
+<div class="figure">
+<div id="regulation-motor-p3-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/health/a-brief-history-of-registration-p3.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="regulation-motor-p3-magnify" class="magnify" onclick="magnifyFigure(&#39;regulation-motor-p3&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="regulation-motor-p3-caption" class="caption-frame">
+<p>Figure: <a href="http://www.direct.gov.uk/prod_consum_dg/groups/dg_digitalassets/@dg/@en/@motor/documents/digitalasset/dg_180212.pdf" target="_blank" >The early regulation of the modern motor car.</a></p>
 </div>
 </div>
 <div class="figure">
@@ -387,31 +330,29 @@ communicate
 </div>
 </div>
 <div class="figure">
-<div id="-figure" class="figure-frame">
-
+<div id="bejing-ferrari-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/health/bejing-ferrari.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+</div>
+<div id="bejing-ferrari-magnify" class="magnify" onclick="magnifyFigure(&#39;bejing-ferrari&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
-<div id="-caption" class="caption-frame">
-<p>Figure:</p>
+<div id="bejing-ferrari-caption" class="caption-frame">
+<p>Figure: Challenges arise when the old meets new. New technologies bring opportunities and challenges.<a href="http://www.npr.org/2013/07/18/202335743/in-todays-beijing-flash-ferraris-and-fading-traditions" class="uri">http://www.npr.org/2013/07/18/202335743/in-todays-beijing-flash-ferraris-and-fading-traditions</a></p>
 </div>
-</div>
-{
-<div class="centered" style="">
-<img class="bejing-ferrari" src="../slides/diagrams/health/bejing-ferrari.png" width="<http://www.npr.org/2013/07/18/202335743/in-todays-beijing-flash-ferraris-and-fading-traditions>&quot; height=&quot;auto&quot; align=&quot;center&quot; style=&quot;background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle&quot;&gt;
 </div>
 <div class="figure">
 <div id="modern-beijing-traffic-figure" class="figure-frame">
 <div class="centered centered" style="">
-<img class="" src="../slides/diagrams/health/1024px-Modern_Beijing_Traffic.jpg" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="../slides/diagrams/health/1024px-Modern_Beijing_Traffic.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 <div id="modern-beijing-traffic-magnify" class="magnify" onclick="magnifyFigure(&#39;modern-beijing-traffic&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
 <div id="modern-beijing-traffic-caption" class="caption-frame">
-<p>Figure: Image from <a href="http://en.wikipedia.org/wiki/File:Modern_Beijing_Traffic.jpg" target="_blank" >Wikimedia Commons</a>.</p>
+<p>Figure: Modern Bejing traffic. If regulation isn't handled properly, the advantages fo the new technology are available to none, but the previous system has been broadly eliminated. Image from <a href="http://en.wikipedia.org/wiki/File:Modern_Beijing_Traffic.jpg" target="_blank" >Wikimedia Commons</a>.</p>
 </div>
 </div>
 <h2 id="whats-changed-changing-for-medical-data">What's Changed (Changing) for Medical Data?</h2>
@@ -478,7 +419,104 @@ communicate
 </div>
 </div>
 <p>Citizenme are a UK start up who were one of the early movers in the personal data space. They aim to return control of data to the individual.</p>
-<h1 id="section">%</h1>
+<h2 id="uk-government-stipulation-on-data-availability-edit">UK Government Stipulation on Data Availability <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_health/includes/data-sources.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_health/includes/data-sources.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="figure">
+<div id="health-data-availability-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/health/telegraph_stipulation.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="health-data-availability-magnify" class="magnify" onclick="magnifyFigure(&#39;health-data-availability&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="health-data-availability-caption" class="caption-frame">
+<p>Figure: Government stipulation on data availability as reported in <a href="http://www.telegraph.co.uk/health/healthnews/9673802/Patients-will-view-their-NHS-records-online-in-three-years.html" target="_blank" >the Telegraph</a></p>
+</div>
+</div>
+<h2 id="patient-online-roadmap">Patient Online: Roadmap</h2>
+<div class="figure">
+<div id="rcgp-patient-online-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/health/rcgp_patient_online.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="rcgp-patient-online-magnify" class="magnify" onclick="magnifyFigure(&#39;rcgp-patient-online&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="rcgp-patient-online-caption" class="caption-frame">
+<p>Figure: <a href="http://www.rcgp.org.uk/news/2013/march/patient-online-launch-with-secretary-of-state.aspx" target="_blank" >Patient Online: Roadmap</a></p>
+</div>
+</div>
+<h2 id="pulse-report">PULSE Report</h2>
+<div class="figure">
+<div id="rcgp-pulse-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/health/pulse_rcgp.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="rcgp-pulse-magnify" class="magnify" onclick="magnifyFigure(&#39;rcgp-pulse&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="rcgp-pulse-caption" class="caption-frame">
+<p>Figure: <a href="http://tinyurl.com/q2ns2vk" target="_blank" >Royal College of General Practioners PULSE Report</a></p>
+</div>
+</div>
+<h2 id="emis-patient-access">EMIS Patient Access</h2>
+<div class="figure">
+<div id="returning-records-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/health/EMIS_medical_record.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="returning-records-magnify" class="magnify" onclick="magnifyFigure(&#39;returning-records&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="returning-records-caption" class="caption-frame">
+<p>Figure: <a href="https://patient.uservoice.com/knowledgebase/articles/214226-how-do-i-view-my-medical-record-" target="_blank" >Returning records to patients</a></p>
+</div>
+</div>
+<h2 id="midata-project">midata project</h2>
+<div class="figure">
+<div id="midata-project-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/health/midata.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="midata-project-magnify" class="magnify" onclick="magnifyFigure(&#39;midata-project&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="midata-project-caption" class="caption-frame">
+<p>Figure: <a href="https://www.gov.uk/government/policies/providing-better-information-and-protection-for-consumers/supporting-pages/personal-data" target="_blank" >midata project</a></p>
+</div>
+</div>
+<h2 id="botched">Botched</h2>
+<div class="figure">
+<div id="care-data-botched-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/health/botched.png" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="care-data-botched-magnify" class="magnify" onclick="magnifyFigure(&#39;care-data-botched&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="care-data-botched-caption" class="caption-frame">
+<p>Figure: <a href="http://www.computing.co.uk/ctg/analysis/2398603/nhs-caredata-a-horribly-botched-operation" target="_blank" >NHS Care.data Botched</a></p>
+</div>
+</div>
+<h2 id="topol-review">Topol Review</h2>
+<div class="figure">
+<div id="eric-topol-review-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/health/topol-review.png" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="eric-topol-review-magnify" class="magnify" onclick="magnifyFigure(&#39;eric-topol-review&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="eric-topol-review-caption" class="caption-frame">
+<p>Figure: <a href="https://topol.hee.nhs.uk/" target="_blank" >Eric Topol's review of the health service in a digital era.</a></p>
+</div>
+</div>
 <h2 id="example-prediction-of-malaria-incidence-in-uganda-edit">Example: Prediction of Malaria Incidence in Uganda <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_health/includes/malaria-gp.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_health/includes/malaria-gp.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p><span style="text-align:right"><img class="" src="../slides/diagrams/people/2013_03_28_180606.JPG" width="1.5cm" style="background:none; border:none; box-shadow:none; position:absolute; clip:rect(2662px,1780px,1110px,600px);vertical-align:middle"></span></p>
 <p>As an example of using Gaussian process models within the full pipeline from data to decsion, we'll consider the prediction of Malaria incidence in Uganda. For the purposes of this study malaria reports come in two forms, HMIS reports from health centres and Sentinel data, which is curated by the WHO. There are limited sentinel sites and many HMIS sites.</p>
@@ -722,9 +760,6 @@ communicate
 <div id="ref-Lawrence:trusts16">
 <p>Lawrence, Neil D. 2016. “Data Trusts Could Allay Our Privacy Fears.” The Guardian Media &amp; Tech Network. <a href="https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy" class="uri">https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy</a>.</p>
 </div>
-<div id="ref-Lawrence:drl17">
-<p>———. 2017. “Data Readiness Levels.” arXiv.</p>
-</div>
 <div id="ref-Mubangizi:malaria14">
 <p>Mubangizi, Martin, Ricardo Andrade-Pacheco, Michael Thomas Smith, John Quinn, and Neil D. Lawrence. 2014. “Malaria Surveillance with Multiple Data Sources Using Gaussian Process Models.” In <em>1st International Conference on the Use of Mobile Ict in Africa</em>.</p>
 </div>
@@ -733,9 +768,6 @@ communicate
 </div>
 <div id="ref-Syed:blackbox15">
 <p>Syed, Matthew. 2015. <em>Black Box Thinking: The Surprising Truth About Success</em>. John Murray.</p>
-</div>
-<div id="ref-Tukey:exploratory77">
-<p>Tukey, John W. 1977. <em>Exploratory Data Analysis</em>. Addison-Wesley.</p>
 </div>
 <div id="ref-Wiener:cybernetics48">
 <p>Wiener, Norbert. 1948. <em>Cybernetics: Control and Communication in the Animal and the Machine</em>. Cambridge, MA: MIT Press.</p>
