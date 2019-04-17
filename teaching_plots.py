@@ -2925,6 +2925,5 @@ def google_trends(terms, initials, diagrams='./diagrams'):
         mlai.write_figure(os.path.join(diagrams,
                                        '{initials}-google-trends{sample:0>3}.svg'.format(initials=initials,sample=i),
                       transparent=True)
-                         )
 
 
