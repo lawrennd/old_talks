@@ -22,7 +22,7 @@ categories:
 
 \include{talk-macros.tex}
 
-\subsection{Machine Learning}}
+\subsection{Machine Learning}
 
 $$\text{data} + \text{model} \rightarrow \text{prediction}$$
 
