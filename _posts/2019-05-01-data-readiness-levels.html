@@ -1,0 +1,89 @@
+---
+title: "Data Readiness Levels"
+venue: "Data Bootcamp"
+abstract: "<p>In this talk we consider data readiness levels and how they may be deployed.</p>"
+author:
+- given: Neil D.
+  family: Lawrence
+  url: http://inverseprobability.com
+  institute: Amazon Cambridge and University of Sheffield
+  twitter: lawrennd
+  gscholar: r3SJcvoAAAAJ
+  orchid: 
+date: 2019-05-01
+published: 2019-05-01
+reveal: 2019-05-01-data-readiness-levels.slides.html
+ipynb: 2019-05-01-data-readiness-levels.ipynb
+layout: talk
+categories:
+- notes
+---
+
+
+<div style="display:none">
+  $${% include talk-notation.tex %}$$
+</div>
+
+<script src="/talks/figure-magnify.js"></script>
+<script src="/talks/figure-animate.js"></script>
+    
+<div id="modal-frame" class="modal">
+  <span class="close" onclick="closeMagnify()">&times;</span>
+  <div class="modal-figure">
+    <div class="figure-frame">
+      <div class="modal-content" id="modal01"></div>
+      <!--<img class="modal-content" id="object01">-->
+    </div>
+    <div class="caption-frame" id="modal-caption"></div>
+  </div>
+</div>	  
+
+<!-- Front matter -->
+<p>.</p>
+<!---->
+<!--Back matter-->
+<p>.</p>
+<!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
+<h2 id="machine-learning">Machine Learning }</h2>
+<p><br /><span class="math display">data + model → prediction</span><br /></p>
+<h2 id="data-readiness-levels-edit">Data Readiness Levels <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-readiness-levels.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-readiness-levels.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p><a href="http://inverseprobability.com/2017/01/12/data-readiness-levels">Data Readiness Levels</a> <span class="citation">(Lawrence 2017)</span> are an attempt to develop a language around data quality that can bridge the gap between technical solutions and decision makers such as managers and project planners. The are inspired by Technology Readiness Levels which attempt to quantify the readiness of technologies for deployment.b</p>
+<h3 id="three-grades-of-data-readiness-edit">Three Grades of Data Readiness <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/three-grades-of-data-readiness.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/three-grades-of-data-readiness.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
+<p>Data-readiness describes, at its coarsest level, three separate stages of data graduation.</p>
+<ul>
+<li>Grade C - accessibility</li>
+<li>Transition: data becomes electronically available</li>
+<li>Grade B - validity</li>
+<li>Transition: pose a question to the data.</li>
+<li>Grade A - usability</li>
+</ul>
+<p>The important definitions are at the transition. The move from Grade C data to Grade B data is delimited by the <em>electronic availability</em> of the data. The move from Grade B to Grade A data is delimited by posing a question or task to the data <span class="citation">(Lawrence 2017)</span>.</p>
+<h2 id="accessibility-grade-c">Accessibility: Grade C</h2>
+<p>The first grade refers to the accessibility of data. Most data science practitioners will be used to working with data-providers who, perhaps having had little experience of data-science before, state that they &quot;have the data&quot;. More often than not, they have not verified this. A convenient term for this is &quot;Hearsay Data&quot;, someone has <em>heard</em> that they have the data so they <em>say</em> they have it. This is the lowest grade of data readiness.</p>
+<p>Progressing through Grade C involves ensuring that this data is accessible. Not just in terms of digital accessiblity, but also for regulatory, ethical and intellectual property reasons.</p>
+<h2 id="validity-grade-b">Validity: Grade B</h2>
+<p>Data transits from Grade C to Grade B once we can begin digital analysis on the computer. Once the challenges of access to the data have been resolved, we can make the data available either via API, or for direct loading into analysis software (such as Python, R, Matlab, Mathematica or SPSS). Once this has occured the data is at B4 level. Grade B involves the <em>validity</em> of the data. Does the data really represent what it purports to? There are challenges such as missing values, outliers, record duplication. Each of these needs to be investigated.</p>
+<p>Grade B and C are important as if the work done in these grades is documented well, it can be reused in other projects. Reuse of this labour is key to reducing the costs of data-driven automated decision making. There is a strong overlap between the work required in this grade and the statistical field of <a href="https://en.wikipedia.org/wiki/Exploratory_data_analysis"><em>exploratory data analysis</em></a> <span class="citation">(Tukey 1977)</span>.</p>
+<p>The need for Grade B emerges due to the fundamental change in the availability of data. Classically, the scientific question came first, and the data came later. This is still the approach in a randomized control trial, e.g. in A/B testing or clinical trials for drugs. Today data is being laid down by happenstance, and the question we wish to ask about the data often comes after the data has been created. The Grade B of data readiness ensures thought can be put into data quality <em>before</em> the question is defined. It is this work that is reusable across multiple teams. It is these processes that the team which is <em>standing up</em> the data must deliver.</p>
+<h2 id="usability-grade-a">Usability: Grade A</h2>
+<p>Once the validity of the data is determined, the data set can be considered for use in a particular task. This stage of data readiness is more akin to what machine learning scientists are used to doing in Universities. Bringing an algorithm to bear on a well understood data set.</p>
+<p>In Grade A we are concerned about the utility of the data given a particular task. Grade A may involve additional data collection (experimental design in statistics) to ensure that the task is fulfilled.</p>
+<p>This is the stage where the data and the model are brought together, so expertise in learning algorithms and their application is key. Further ethical considerations, such as the fairness of the resulting predictions are required at this stage. At the end of this stage a prototype model is ready for deployment.</p>
+<p>Deployment and maintenance of machine learning models in production is another important issue which Data Readiness Levels are only a part of the solution for.</p>
+<h2 id="recursive-effects">Recursive Effects</h2>
+<p>To find out more, or to contribute ideas go to <a href="http://data-readiness.org" class="uri">http://data-readiness.org</a></p>
+<p>You can also check my blog post on <a href="http://inverseprobability.com/2017/01/12/data-readiness-levels">&quot;Data Readiness Levels&quot;</a></p>
+<p>Throughout the data preparation pipeline, it is important to have close interaction between data scientists and application domain experts. Decisions on data preparation taken outside the context of application have dangerous downstream consequences. This provides an additional burden on the data scientist as they are required for each project, but it should also be seen as a learning and familiarization exercise for the domain expert. Long term, just as biologists have found it necessary to assimilate the skills of the bioinformatician to be effective in their science, most domains will also require a familiarity with the nature of data driven decision making and its application. Working closely with data-scientists on data preparation is one way to begin this sharing of best practice.</p>
+<p>The processes involved in Grade C and B are often badly taught in courses on data science. Perhaps not due to a lack of interest in the areas, but maybe more due to a lack of access to real world examples where data quality is poor.</p>
+<p>These stages of data science are also ridden with ambiguity. In the long term they could do with more formalization, and automation, but best practice needs to be understood by a wider community before that can happen.</p>
+<h1 id="references" class="unnumbered">References</h1>
+<div id="refs" class="references">
+<div id="ref-Lawrence:drl17">
+<p>Lawrence, Neil D. 2017. “Data Readiness Levels.” arXiv.</p>
+</div>
+<div id="ref-Tukey:exploratory77">
+<p>Tukey, John W. 1977. <em>Exploratory Data Analysis</em>. Addison-Wesley.</p>
+</div>
+</div>
+
+
