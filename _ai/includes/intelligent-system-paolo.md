@@ -1,13 +1,21 @@
-\slides{
-### An Intelligent System I Created 
+\ifndef{intelligentSystemPaolo}
+\define{intelligentSystemPaolo}
 
-\includempfour{../slides/diagrams/paolo-save.mp4}{80%}
+\editme
+
+\slides{
+
+\newslide{An Intelligent System I Created}
+
+\includempfour{../slides/diagrams/personal/paolo-save.mp4}{80%}
 
 \alignright{\small{Joint work with M. Milo}}
 
-### An Intelligent System I Created 
+\newslide{An Intelligent System I Created}
 
-\includempfour{../slides/diagrams/paolo-peppercorn.mp4}{30%}{60%}
+\includempfour{../slides/diagrams/personal/paolo-peppercorn.mp4}{30%}{60%}
 
 \alignright{\small{Joint work with M. Milo}}
 }
+
+\endif
