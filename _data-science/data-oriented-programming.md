@@ -17,8 +17,8 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 blog: 
-date: 2018-11-30
-venue: Fifth International Workshop on Sustainable Road Freight, Cambridge
+date: 2019-05-21
+venue: Advances and Challenges in Machine Learning Languages, Centre for Mathematical Sciences, Cambridge
 transition: None
 ---
 
