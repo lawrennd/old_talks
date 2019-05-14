@@ -1,5 +1,5 @@
 ---
-title: "Faith and AI"
+title: "What is AI and What are the Implications of Advances in AI for Religion?"
 abstract: "What is artificial intelligence and what are the implications of advances in artificial intelligence for religion? How does artificial intelligences differ from natural intelligences. We consider these ideas from the perspective of information theory. In the context of these differences we then consider parallels between the perspectives on religion and AI both in today’s popular culture, but also with a more optimistic perspective looking forward."
 author:
 - family: Lawrence
