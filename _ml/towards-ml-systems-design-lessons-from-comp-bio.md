@@ -1,7 +1,7 @@
 ---
 title: "Towards Machine Learning Systems Design"
 subtitle: "Lessons from Computational Biology"
-venue: "Mathamatical Genomics Away Day"
+venue: "Mathematical Genomics Away Day"
 abstract: >
   Machine learning solutions, in particular those based on deep learning 
   methods, form an underpinning for the modern artificial intelligence 
