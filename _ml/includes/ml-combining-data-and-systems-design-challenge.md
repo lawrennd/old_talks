@@ -20,7 +20,6 @@ data at source, rather than individually cleaning data for each
 task. This involves a shift of focus from our inputs to our
 outputs. We should provide data streams that are consumable by many
 teams without purification.}{lake-district-stream}
-}
 
 \recommendation{We need to share best practice around data deployment across our teams. We should make best use of our processes where applicable, but we need to develop them to become *data first* organizations. Data needs to be cleaned at *output* not at *input*.}
 
