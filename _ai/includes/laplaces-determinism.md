@@ -1,3 +1,8 @@
+\ifndef{laplacesDeterminism}
+\define{laplacesDeterminism}
+
+\editme
+
 \newslide{}
 
 \includegooglebook{1YQPAAAAQAAJ}{PR17-IA2}
@@ -29,3 +34,5 @@
 \notes{In other words, we can never make use of the idealistic deterministc Universe due to our ignorance about the world, Laplace's suggestion, and focus in this essay is that we turn to probability to deal with this uncertainty. This is also our inspiration for using probabilit in machine learning. 
 
 The "forces by which nature is animated" is our *model*, the "situation of beings that compose it" is our *data* and the "intelligence sufficiently vast enough to submit these data to analysis" is our compute. The fly in the ointment is our *ignorance* about these aspects. And *probability* is the tool we use to incorporate this ignorance leading to uncertainty or *doubt* in our predictions.}
+
+\endif
