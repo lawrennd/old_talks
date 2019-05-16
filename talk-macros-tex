@@ -6,7 +6,7 @@
 \block
 \end{center}}
 
-\define{\span{block}{class}}{\block}
+\define{\span{block}{class}{style}}{\block}
 
 \define{\linebreak}{\\}
 
