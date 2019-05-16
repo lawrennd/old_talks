@@ -19,7 +19,7 @@
 3. Immortality through uploading the connectome 
 4. The day of judgement as the "singularity"
 
-\notes{The notion of a ultra-intelligence is similar to the notion of an interventionist god, with omniscience in the past, present and the future. This notion was described by Pierre Simon Laplace.}
+\notes{Ultraintelligence [@Good:ultraintelligent66] is similar to the notion of an interventionist god, with omniscience in the past, present and the future. This notion was described by Pierre Simon Laplace.}
 
 \include{_ml/includes/laplace-portrait.md}
 \include{_ai/includes/laplaces-determinism.md}

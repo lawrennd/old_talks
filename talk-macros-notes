@@ -17,6 +17,8 @@
 \define{\notesfigure{block}}{\block}
 \define{\recommendation{text}}{**Recommendation**: \text}
 
+
+
 \ifdef{draft}
 \define{\editme}{\href{file://\talksDir\file}{\file}}
 \define{\todo{text}}{\colorRed{Todo: \text}}

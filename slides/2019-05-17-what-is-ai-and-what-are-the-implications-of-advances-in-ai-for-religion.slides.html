@@ -390,36 +390,12 @@
 </section>
 <section id="machine-learning" class="slide level3">
 <h3>Machine Learning</h3>
-<ul>
-<li>Driver of two different domains:
-<ol type="1">
-<li><em>Data Science</em>: arises from the fact that we now capture data by happenstance.</li>
-<li><em>Artificial Intelligence</em>: emulation of human behaviour.</li>
-</ol></li>
-<li>Connection: Internet of Things</li>
-</ul>
 </section>
 <section id="machine-learning-1" class="slide level3">
 <h3>Machine Learning</h3>
-<ul>
-<li>Driver of two different domains:
-<ol type="1">
-<li><em>Data Science</em>: arises from the fact that we now capture data by happenstance.</li>
-<li><em>Artificial Intelligence</em>: emulation of human behaviour.</li>
-</ol></li>
-<li>Connection: Internet of <del>Things</del></li>
-</ul>
 </section>
 <section id="machine-learning-2" class="slide level3">
 <h3>Machine Learning</h3>
-<ul>
-<li>Driver of two different domains:
-<ol type="1">
-<li><em>Data Science</em>: arises from the fact that we now capture data by happenstance.</li>
-<li><em>Artificial Intelligence</em>: emulation of human behaviour.</li>
-</ol></li>
-<li>Connection: Internet of People</li>
-</ul>
 </section>
 <section id="section" class="slide level3">
 <h3></h3>
@@ -429,105 +405,42 @@ Convention for the Protection of <em>Individuals</em> with regard to Automatic P
 </section>
 <section id="what-does-machine-learning-do" class="slide level3">
 <h3>What does Machine Learning do?</h3>
-<ul>
-<li>ML Automates through Data
-<ul>
-<li><em>Strongly</em> related to statistics.</li>
-<li>Field underpins revolution in <em>data science</em> and <em>AI</em></li>
-</ul></li>
-<li>With AI:
-<ul>
-<li><em>logic</em>, <em>robotics</em>, <em>computer vision</em>, <em>speech</em></li>
-</ul></li>
-<li>With Data Science:
-<ul>
-<li><em>databases</em>, <em>data mining</em>, <em>statistics</em>, <em>visualization</em></li>
-</ul></li>
-</ul>
 </section>
 <section id="what-does-machine-learning-do-1" class="slide level3">
 <h3>What does Machine Learning do?</h3>
-<ul>
-<li>Automation scales by codifying processes and automating them.</li>
-<li>Need:
-<ul>
-<li>Interconnected components</li>
-<li>Compatible components</li>
-</ul></li>
-<li>Early examples:
-<ul>
-<li>cf Colt 45, Ford Model T</li>
-</ul></li>
-</ul>
 </section>
 <section id="codify-through-mathematical-functions" class="slide level3">
 <h3>Codify Through Mathematical Functions</h3>
-<ul>
-<li>How does machine learning work?</li>
-<li>Jumper (jersey/sweater) purchase with logistic regression</li>
-</ul>
 <p><span class="math display">\[ \text{odds} = \frac{p(\text{bought})}{p(\text{not bought})} \]</span></p>
 <p><span class="math display">\[ \log \text{odds}  = \beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}.\]</span></p>
 </section>
 <section id="codify-through-mathematical-functions-1" class="slide level3">
 <h3>Codify Through Mathematical Functions</h3>
-<ul>
-<li>How does machine learning work?</li>
-<li>Jumper (jersey/sweater) purchase with logistic regression</li>
-</ul>
 <p><span class="math display">\[ p(\text{bought}) =  \sigmoid{\beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}}.\]</span></p>
 </section>
 <section id="codify-through-mathematical-functions-2" class="slide level3">
 <h3>Codify Through Mathematical Functions</h3>
-<ul>
-<li>How does machine learning work?</li>
-<li>Jumper (jersey/sweater) purchase with logistic regression</li>
-</ul>
 <p><span class="math display">\[ p(\text{bought}) =  \sigmoid{\boldsymbol{\beta}^\top \inputVector}.\]</span></p>
 </section>
 <section id="codify-through-mathematical-functions-3" class="slide level3">
 <h3>Codify Through Mathematical Functions</h3>
-<ul>
-<li>How does machine learning work?</li>
-<li>Jumper (jersey/sweater) purchase with logistic regression</li>
-</ul>
-<p><span class="math display">\[ \dataScalar =  \mappingFunction\left(\inputVector, \boldsymbol{\beta}\right).\]</span></p>
-<div class="fragment">
-<p>We call <span class="math inline">\(\mappingFunction(\cdot)\)</span> the <em>prediction function</em>.</p>
-</div>
+<p><span class="math display">\[ \dataScalar =  \mappingFunction\left(\inputVector, \boldsymbol{\beta}\right).\]</span> We call <span class="math inline">\(\mappingFunction(\cdot)\)</span> the <em>prediction function</em>.</p>
 </section>
 <section id="fit-to-data" class="slide level3">
 <h3>Fit to Data</h3>
-<ul>
-<li>Use an objective function</li>
-</ul>
 <p><span class="math display">\[\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix)\]</span></p>
-<div class="fragment">
-<ul>
-<li>E.g. least squares <span class="math display">\[\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingFunction(\inputVector_i, \boldsymbol{\beta})\right)^2.\]</span></li>
-</ul>
-</div>
+<p><span class="math display">\[\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingFunction(\inputVector_i, \boldsymbol{\beta})\right)^2.\]</span></p>
 </section>
 <section id="two-components" class="slide level3">
 <h3>Two Components</h3>
-<ul>
-<li>Prediction function, <span class="math inline">\(\mappingFunction(\cdot)\)</span></li>
-<li>Objective function, <span class="math inline">\(\errorFunction(\cdot)\)</span></li>
-</ul>
 <!-- SECTION Deep Learning -->
 </section>
 <section id="deep-learning" class="slide level3">
 <h3>Deep Learning</h3>
-<ul>
-<li><p>These are interpretable models: vital for disease modeling etc.</p></li>
-<li><p>Modern machine learning methods are less interpretable</p></li>
-<li><p>Example: face recognition</p></li>
-</ul>
 <!-- No slide titles in this context -->
 </section>
 <section id="deepface" class="slide level3">
 <h3>DeepFace</h3>
-<p><span class="fragment fade-in"><small>Outline of the DeepFace architecture. A front-end of a single convolution-pooling-convolution filtering on the rectified input, followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected.</small></span></p>
 <div class="figure">
 <div id="deep-face-figure" class="figure-frame">
 <div class="centered" style="">
@@ -535,7 +448,6 @@ Convention for the Protection of <em>Individuals</em> with regard to Automatic P
 </div>
 </div>
 </div>
-<p><span style="text-align:right"><small>Source: DeepFace <span class="citation" data-cites="Taigman:deepface14">(Taigman et al., 2014)</span></small></span></p>
 </section>
 <section id="deep-learning-as-pinball" class="slide level3">
 <h3>Deep Learning as Pinball</h3>
@@ -647,6 +559,15 @@ communicate
 </div>
 </div>
 </div>
+<!--
+
+
+
+
+
+
+
+
 <!-- SECTION Evolved Relationship with Information -->
 </section>
 <section id="evolved-relationship" class="slide level3">
@@ -695,6 +616,7 @@ communicate
 </ul></li>
 <li>This change of dynamics gives us the modern and emerging domain of data science</li>
 </ul>
+<p>–&gt;</p>
 </section>
 <section id="human-communication" class="slide level3">
 <h3>Human Communication</h3>
@@ -839,20 +761,10 @@ Ernest Hemingway’s apocrophal six word novel would mean nothing to a computer.
 </section>
 <section id="singularians" class="slide level3">
 <h3>Singularians</h3>
-<ul>
-<li>Removing the bandwidth limitation: removing our humanity?</li>
-</ul>
 <p>{In Singularianism doomsday is the ‘technological singularity’, the moment at which computers rapidly outstrip our capabilities and take over our world. The high priests are the scientists, and the aim is to bring about the latter while restraining the former.</p>
-<ul>
-<li><em>Singularianism</em> and religion equivalent to <em>scientology</em> and science?</li>
-</ul>
 </section>
 <section id="artificial-intelligence-and-introspection" class="slide level3">
 <h3>Artificial Intelligence and Introspection</h3>
-<ul>
-<li>Religion at its most powerful contextualizes us</li>
-<li>Creating artificial systems described as intelligence also contextualises us</li>
-</ul>
 </section>
 <section id="the-artificial-plant" class="slide level3">
 <h3>The Artificial Plant</h3>
@@ -869,9 +781,6 @@ Ernest Hemingway’s apocrophal six word novel would mean nothing to a computer.
 </section>
 <section id="section-20" class="slide level3">
 <h3></h3>
-<blockquote>
-<p>For a system to watch over us it first has to watch us</p>
-</blockquote>
 </section>
 <section id="dys-utopian-view" class="slide level3">
 <h3>Dys-utopian View</h3>
@@ -906,12 +815,6 @@ Ernest Hemingway’s apocrophal six word novel would mean nothing to a computer.
 </section>
 <section id="conclusion" class="slide level3">
 <h3>Conclusion</h3>
-<ul>
-<li>Overview of AI and ML</li>
-<li>Embodiment Factors</li>
-<li>Narrative as a mode of communication</li>
-<li>Relations between Faith and AI</li>
-</ul>
 </section>
 <section id="thanks" class="slide level3">
 <h3>Thanks!</h3>
@@ -933,9 +836,6 @@ Ernest Hemingway’s apocrophal six word novel would mean nothing to a computer.
 </div>
 <div id="ref-Lawrence:embodiment17">
 <p>Lawrence, N.D., 2017. Living together: Mind and machine intelligence. arXiv.</p>
-</div>
-<div id="ref-Taigman:deepface14">
-<p>Taigman, Y., Yang, M., Ranzato, M., Wolf, L., 2014. DeepFace: Closing the gap to human-level performance in face verification, in: Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition. <a href="https://doi.org/10.1109/CVPR.2014.220" class="uri">https://doi.org/10.1109/CVPR.2014.220</a></p>
 </div>
 </div>
 </section>
