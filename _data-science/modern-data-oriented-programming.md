@@ -41,6 +41,7 @@ transition: None
 \include{_ai/includes/ai-vs-data-science-2.md}
 
 \subsection{Amazon: Bits and Atoms}
+
 <!--
 include{../_ai/includes/embodiment-factors.md}
 include{_data-science/includes/evolved-relationship.md}
@@ -95,6 +96,11 @@ include{_data-science/includes/data-readiness-levels.md}
 -->
 
 \include{_supply-chain/includes/ml-and-supply-chain.md}
+
+\newslide{Team's Motto}
+
+> Solve Supply Chain, then solve everything else
+
 <!--include{_ml/includes/or-control-econometrics-statistics-ml.md}-->
 \subsection{The Three Ds of Machine Learning Systems Design}
 
