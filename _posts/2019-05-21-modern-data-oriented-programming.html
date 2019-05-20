@@ -447,7 +447,7 @@ include{_data-science/includes/data-readiness-levels.md}
 <p>There are constraints on the hypothetical, they include: the <em>input</em> information, the upper limit of latency between input and prediction, and the decision Anne needs to make (how far ahead, what her upside, downside risks are). These three constraints mean that we can only recover an approximation to the hypothetical.</p>
 <h2 id="hypothetical-advantage">Hypothetical Advantage</h2>
 <p>What is the advantage to defining things in this way? By defining clearly the two streams as real and hypothetical variants of each other, we now enable automation of the deployment and any redeployment process. The hypothetical can be <em>instantiated</em> against the real, and design criteria can be constantly evaluated triggering retraining when necessary.</p>
-<h2 id="taxi-ordering-system">Taxi Ordering System</h2>
+<h2 id="ride-sharing-system">Ride Sharing System</h2>
 <p>As a second example, we’ll consider a ride sharing app.</p>
 <p>Anne is on her way home now, she wishes to hail a car using a ride sharing app.</p>
 <p>The app is designed in the following way. On opening her app Anne is notified about driverss in the nearby neighborhood, and given an estimate of the time a ride may take to come.</p>
@@ -494,7 +494,7 @@ include{_data-science/includes/data-readiness-levels.md}
 </div>
 <p>For the ride sharing system, we start to see a common issue with a more complex algorithmic decision making system. Several decisions are being made multilple times. Let’s look at the decisions we need along with some design criteria.</p>
 <ol type="1">
-<li>Car Availability: Estimate time to arrival for Anne’s taxi using Anne’s location and local available car locations. Latency 50 milliseconds</li>
+<li>Car Availability: Estimate time to arrival for Anne’s ride using Anne’s location and local available car locations. Latency 50 milliseconds</li>
 <li>Cost Estimate: Estimate cost for journey using Anne’s destination, location and local available car current destinations and availability. Latency 50 milliseconds</li>
 <li>Driver Allocation: Allocate car to minimize transport cost to destination. Latency 2 seconds.</li>
 </ol>
@@ -505,8 +505,8 @@ include{_data-science/includes/data-readiness-levels.md}
 </ol>
 <p>Simultaneously, drivers in this data ecosystem have an app which notifies them about new jobs and recommends them where to go.</p>
 <p>Further advantages. Strategies for data retention (when to snapshot) can be set globally.</p>
-<p>A few decisions need to be made in this system. First of all, when the user opens the app, the estimate of the time to the nearest taxi may need to be computed quickly, to avoid latency in the service.</p>
-<p>This may require a quick estimate of the taxi availability</p>
+<p>A few decisions need to be made in this system. First of all, when the user opens the app, the estimate of the time to the nearest ride may need to be computed quickly, to avoid latency in the service.</p>
+<p>This may require a quick estimate of the ride availability.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>We operate in a technologically evolving environment. Machine learning is becoming a key coponent in our decision making capabilities, our intelligence and strategic command. However, technology drove changes in battlefield strategy. From the stalemate of the first world war to the tank-dominated Blitzkrieg of the second, to the asymmetric warfare of the present. Our technology, tactics and strategies are also constantly evolving. Machine learning is part of that evolution solution, but the main challenge is not to become so fixated on the tactics of today that we miss the evolution of strategy that the technology is suggesting.</p>
 <p>Data oriented programming offers a set of development methodologies which ensure that the system designer considers what decisions are required, how they will be made, and critically, declares this within the system architecture.</p>
