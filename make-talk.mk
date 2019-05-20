@@ -31,7 +31,7 @@ ${BASE}.notes.aux: ${BASE}.notes.tex
 
 
 ${BASE}.notes.tex: ${BASE}.notes.tex.markdown 
-	pandoc  -s -S \
+	pandoc  -s \
 		--template pandoc-notes-tex-template.tex \
 		--number-sections \
 		--natbib \

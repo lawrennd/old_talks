@@ -10,5 +10,5 @@ PPFLAGS=-T
 PPFLAGS=-I./..
 BIBFLAGS=--bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib 
 CITEFLAGS=--filter pandoc-citeproc --csl=../elsevier-harvard.csl ${BIBFLAGS}
-PDSFLAGS=-s -S ${CITEFLAGS} --mathjax=${MATHJAX} 
+PDSFLAGS=-s ${CITEFLAGS} --mathjax=${MATHJAX} 
 SFLAGS=--slide-level 3

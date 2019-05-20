@@ -1,13 +1,24 @@
 ---
 title: "Modern Data Oriented Programming"
 abstract: >
-  There has been a great deal of interest in probabilistic programs: placing modeling at the heart of programming language. In this talk we set the scene for data oriented programming. 
-	
-  Data is a fundamental component of machine learning, yet the availability, quality and discoverability of data are often ignored in formal computer science. 
+
+  There has been a great deal of interest in probabilistic programs:
+  placing modeling at the heart of programming language. In this talk
+  we set the scene for data oriented programming.
   
-  While languages for data manipulation exist (for example SQL), they are not suitable for the modern world of machine learning data. Modern data oriented languages should place data at the center of modern digital systems design and provide an infrastructure in which monitoring of data quality and model decision making are automaticaly available. 
+  Data is a fundamental component of machine learning, yet the
+  availability, quality and discoverability of data are often ignored
+  in formal computer science.  
   
-  We provide the context for Modern Data Oriented Programming, and give some insight into our initial ideas in this space.
+  While languages for data manipulation exist (for example SQL), they
+  are not suitable for the modern world of machine learning
+  data. Modern data oriented languages should place data at the center
+  of modern digital systems design and provide an infrastructure in
+  which monitoring of data quality and model decision making are
+  automaticaly available.
+  
+  We provide the context for Modern Data Oriented Programming, and
+  give some insight into our initial ideas in this space.
 author:
 - family: Lawrence
   given: Neil D.
@@ -23,7 +34,7 @@ transition: None
 
 \include{talk-macros.tex}
 
-\include{_data-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}
+<!--\include{_data-science/includes/gartner-hype-cycle-ai-bd-dm-dl-ml.md}-->
 \include{_ai/includes/centrifugal-governor.md}
 
 \include{_ml/includes/what-is-ml-2.md}
@@ -94,14 +105,15 @@ include{_data-science/includes/data-readiness-levels.md}
 3. Deployment
 }
 
-\newslide{The Three Ds of Machine Learning Systems Design}
+\include{_data-science/includes/experiment-analyze-design.md}
 
-\slides{
-* Three primary challenges of Machine Learning Systems Design.
-1. <s>Decomposition</s>
-2. Data 
-3. <s>Deployment</s>
-}
+\include{_data-science/includes/data-oriented-architectures.md}
+
+\newslide{CASE STUDY I}
+
+
+\newslide{CASE STUDY II}
+
 
 
 \notes{We can characterize the challenges for integrating machine learning within our systems as the three Ds. Decomposition, Data and Deployment.}
