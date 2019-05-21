@@ -3,6 +3,21 @@
 
 \editme
 
+\subsection{Data Oriented Architectures}
+
+* Convert data to a *first class citizen*.
+* View system as operations on *data streams*.
+* Expose data operations in a programmatic way.
+
+\subsection{Streaming System}
+
+* Move from pull updates to push updates.
+* Operate on rows rather than columns.
+* Lead to stateless logic: persistence handled by system.
+* Example Apache Kafka + Apache Flink
+
+\include{_data-science/includes/apache-flink.md}
+
 \subsection{Trading System}
 
 \slides{* High frequency share trading.
@@ -10,9 +25,52 @@
 * Trades required on millisecond time line
 }
 
+\setupcode{import pandas as pd
+import numpy as np
+import os}
+
+\code{days=pd.date_range(start='21/5/2017', end='21/05/2020')
+z = np.random.randn(len(days), 1)
+x=z.cumsum()+400}
+
+\code{prices = pd.Series(x, index=days)
+hypothetical = prices.loc['21/5/2019':]
+real = prices.copy()
+real['21/5/2019':] = np.NaN}
+
+\setupplotcode{import mlai
+import teaching_plots as plot
+import matplotlib.pyplot as plt}
+
+\plotcode{diagrams = '../slides/diagrams/data-science/'
+fontsize=16}
+
+\plotcode{fig, ax = plt.subplots(figsize=plot.wide_figsize)
+real.plot(color='k', fontsize=fontsize)
+
+hypothetical.plot(color='b')
+mlai.write_figure(os.path.join(diagrams, 'hypothetical-prices.svg'), transparent=True)
+ylim = ax.get_ylim()}
+
+\plotcode{fig, ax = plt.subplots(figsize=plot.wide_figsize)
+real.plot(color='k', fontsize=fontsize)
+mlai.write_figure(os.path.join(diagrams, 'real-prices.svg'), transparent=True)
+ax.set_ylim(ylim)}
+
 \notes{Anne wishes to build a share trading system. She has access to a high frequency trading system which provides prices and allows trades at millisecond intervals. She wishes to build an automated trading system.
 
 Let's assume that price trading data is available as a data stream. But the price now is not the only information that Anne needs, she needs an estimate of the price in the future.}
+
+\newslide{Real Price}
+
+\slides{\includediagram{../slides/diagrams/data-science/real-prices}{80%}}
+
+\newslide{Future Price}
+
+\slides{\includediagram{../slides/diagrams/data-science/hypothetical-prices}{80%}}
+
+
+\figure{\includediagram{../slides/diagrams/data-science/hypothetical-prices}{80%}}{Anne has access to the share prices in the black stream but not in the blue stream. A hypothetical stream is the stream of future prices. Anne can define this hypothetical under constraints (latency, input etc). The need for a model is now exposed in the software infrastructure}{hypothetical-prices}
 
 \subsection{Hypothetical Streams}
 
@@ -72,21 +130,21 @@ This best guess may well be driven by previous data.
 
 \newslide{Ride Sharing: Service Oriented}
 
-\slides{\includediagram{../slides/diagrams/data-science/taxi-service-soa}}
+\slides{\includediagram{../slides/diagrams/data-science/ride-share-service-soa}{80%}}
 
 \newslide{Ride Sharing: Data Oriented}
 
-\slides{\includediagram{../slides/diagrams/data-science/taxi-service-doa}}
+\slides{\includediagram{../slides/diagrams/data-science/ride-share-service-doa}{80%}}
 
 \newslide{Ride Sharing: Hypothetical}
 
-\slides{\includediagram{../slides/diagrams/data-science/taxi-service-doa-hypothetical}}
+\slides{\includediagram{../slides/diagrams/data-science/ride-share-service-doa-hypothetical}{80%}}
 
-\notes{\figure{\includediagram{../slides/diagrams/data-science/taxi-service-soa}}{Service oriented architecture. The data access is buried in the cost allocation service. Data dependencies of the service cannot be found without trawling through the underlying code base.}{taxi-service-soa}}
+\notes{\figure{\includediagram{../slides/diagrams/data-science/ride-share-service-soa}{80%}}{Service oriented architecture. The data access is buried in the cost allocation service. Data dependencies of the service cannot be found without trawling through the underlying code base.}{ride-share-service-soa}}
 
-\notes{\figure{\includediagram{../slides/diagrams/data-science/taxi-service-doa}}{Data oriented architecture. Now the joins and the updates are exposed within the streaming ecosystem. We can programatically determine the factor graph which gives the thread through the model.}{taxi-service-doa}}
+\notes{\figure{\includediagram{../slides/diagrams/data-science/ride-share-service-doa}{80%}}{Data oriented architecture. Now the joins and the updates are exposed within the streaming ecosystem. We can programatically determine the factor graph which gives the thread through the model.}{ride-share-service-doa}}
 
-\notes{\figure{\includediagram{../slides/diagrams/data-science/taxi-service-doa-hypothetical}}{Data oriented programing. There is a requirement for an estimate of the driver allocation to give a rough cost estimate before the user has confirmed the ride. In data oriented programming, this is achieved through declaring a *hypothetical* stream which approximates the true driver allocation, but with restricted input information and constraints on the computational latency.}{taxi-service-doa-hypothetical}}
+\notes{\figure{\includediagram{../slides/diagrams/data-science/ride-share-service-doa-hypothetical}{80%}}{Data oriented programing. There is a requirement for an estimate of the driver allocation to give a rough cost estimate before the user has confirmed the ride. In data oriented programming, this is achieved through declaring a *hypothetical* stream which approximates the true driver allocation, but with restricted input information and constraints on the computational latency.}{ride-share-service-doa-hypothetical}}
 
 \notes{For the ride sharing system, we start to see a common issue with a more complex algorithmic decision making system. Several decisions are being made multilple times. Let's look at the decisions we need along with some design criteria.
 

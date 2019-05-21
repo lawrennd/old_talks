@@ -1,22 +1,27 @@
 \ifndef{apacheFlink}
-\define[apacheFlink}
+\define{apacheFlink}
 
 \editme
 
 \subsection{Apache Flink}
 
+\columns{
+* Streams and transformations
+* a stream is a (potentially never-ending) flow of data records
+* a transformation is an operation that takes one or more streams as input, and produces one or more output streams as a result.}{\includediagram{../slides/diagrams/data-science/apache-flink-logo}{80%}}{50%}{40%}
+
+\newslide{Join}
+
 ```
-DataSet<User> input1 = // [...]
-DataSet<Store> input2 = // [...]
-// result dataset is typed as Tuple2
-DataSet<Tuple2<User, Store>>
-            result = input1.join(input2)
-                           .where("zip")       // key of the first input (users)
-                           .equalTo("zip");    // key of the second input (stores)
+stream.join(otherStream)
+    .where(<KeySelector>)
+    .equalTo(<KeySelector>)
+    .window(<WindowAssigner>)
+    .apply(<JoinFunction>)
 ```
 
-\notes{Apache Flink allows operations on streams. For example the join operation above. In a traditional data base management system, this join operation may be written in SQL and called on demand. In a streaming ecosystem, this join is processed as and when the streams update. 
+\notes{Apache Flink allows operations on streams. For example the join operation above. In a traditional data base management system, this join operation may be written in SQL and called on demand. In a streaming ecosystem, computations occur as and when the streams update. 
 
-The join is handled by the ecosystem surrounding the}
+The join is handled by the ecosystem surrounding the business logic.}
 
 \endif
