@@ -70,7 +70,7 @@ Let's assume that price trading data is available as a data stream. But the pric
 \slides{\includediagram{../slides/diagrams/data-science/hypothetical-prices}{80%}}
 
 
-\figure{\includediagram{../slides/diagrams/data-science/hypothetical-prices}{80%}}{Anne has access to the share prices in the black stream but not in the blue stream. A hypothetical stream is the stream of future prices. Anne can define this hypothetical under constraints (latency, input etc). The need for a model is now exposed in the software infrastructure}{hypothetical-prices}
+\notes{\figure{\includediagram{../slides/diagrams/data-science/hypothetical-prices}{80%}}{Anne has access to the share prices in the black stream but not in the blue stream. A hypothetical stream is the stream of future prices. Anne can define this hypothetical under constraints (latency, input etc). The need for a model is now exposed in the software infrastructure}{hypothetical-prices}}
 
 \subsection{Hypothetical Streams}
 
