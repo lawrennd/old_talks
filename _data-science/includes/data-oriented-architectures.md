@@ -167,6 +167,22 @@ A few decisions need to be made in this system. First of all, when the user open
 
 This may require a quick estimate of the ride availability.}
 
+\subsection{Information Dyanmics}
 
+\slides{* Potential for information feedback loops.
+* Hypothetical streams are instantiated.
+* Nature hypothesis (e.g. price prediction) can effect reality.
+* Leads to information dynamics, similar to dynamics of governors.
+* See e.g. [Closed Loop Data Science](https://www.gla.ac.uk/schools/computing/research/researchsections/ida-section/closedloop/) at Glasgow.
+}
+
+\notes{With all the second guessing within a complex automated decision making system, there are potential problems with information dynamics, the 'closed loop' problem, where the sub-systems are being approximated (second guessing) and predictions downstream are being affected.
+
+This leads to the need for a closed loop analysis, for example, see the ["Closed Loop Data Science"](https://www.gla.ac.uk/schools/computing/research/researchsections/ida-section/closedloop/) project led by Rod Murray-Smith at Glasgow.}
+
+\newslide{Our Efforts}
+
+\notes{Our aim is to release our first version of a data-oriented programming environment by end of June 2019 (pending internal approval).}
+\slide{* Our framework due for release end of June 2019 (pending approval).}
 
 \endif
