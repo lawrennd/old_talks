@@ -5,10 +5,9 @@
 
 \subsection{Apache Flink}
 
-\columns{
 * Streams and transformations
 * a stream is a (potentially never-ending) flow of data records
-* a transformation is an operation that takes one or more streams as input, and produces one or more output streams as a result.}{\includediagram{../slides/diagrams/data-science/apache-flink-logo}{80%}}{50%}{40%}
+* a transformation is an operation that takes one or more streams as input, and produces one or more output streams as a result.
 
 \newslide{Join}
 
