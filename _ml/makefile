@@ -1,3 +1,3 @@
-BASE=towards-ml-systems-design-lessons-from-comp-bio
+BASE=meta-modelling-and-deploying-ml-software
 include ../make-talk-flags.mk
 include ../make-talk.mk

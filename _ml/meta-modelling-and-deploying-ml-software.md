@@ -18,3 +18,21 @@ geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
 transition: None
 ---
+
+
+
+\include{talk-macros.tex}
+
+\section{Introduction}
+
+\include{_ml/includes/deep-learning-overview.md}
+
+\include{_ai/includes/ml-systems-design-long.md}
+
+\section{The Three Ds of ML Systems Design}
+\include{_ml/includes/the-3ds-of-ml-systems-design.md}
+\include{_uq/includes/uncertainty-quantification.md}
+
+\thanks
+
+\references
