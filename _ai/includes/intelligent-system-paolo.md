@@ -13,7 +13,7 @@
 
 \newslide{An Intelligent System I Created}
 
-\includempfour{../slides/diagrams/personal/paolo-peppercorn.mp4}{30%}{60%}
+\includempfour{../slides/diagrams/personal/paolo-peppercorn.mp4}{80%}
 
 \alignright{\small{Joint work with M. Milo}}
 }
