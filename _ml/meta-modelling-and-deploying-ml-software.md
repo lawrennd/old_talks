@@ -23,9 +23,11 @@ transition: None
 
 \section{Introduction}
 
+\include{_ai/includes/intelligent-system-paolo.md}
 \include{_ml/includes/deep-learning-overview.md}
 
-\include{_ai/includes/ml-systems-design-long.md}
+<!--\include{_ai/includes/ml-systems-design-long.md}-->
+\include{_uq/includes/emulation.md}
 
 \include{_uq/includes/uncertainty-quantification.md}
 
