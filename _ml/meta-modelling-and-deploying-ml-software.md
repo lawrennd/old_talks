@@ -27,6 +27,7 @@ transition: None
 \include{_ml/includes/deep-learning-overview.md}
 
 <!--\include{_ai/includes/ml-systems-design-long.md}-->
+\include{_supply-chain/includes/containerisation.md}
 \include{_uq/includes/emulation.md}
 
 \include{_uq/includes/uncertainty-quantification.md}

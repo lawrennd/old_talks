@@ -22,7 +22,7 @@ transition: None
 
 \include{talk-macros.tex}
 
-\include{_supply-chain/includes/ml-and-supply-chain.md}
+\include{_supply-chain/includes/supply-chain.md}
 
 \thanks
 

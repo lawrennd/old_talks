@@ -113,111 +113,286 @@ categories:
 <p>In a hyper-space you have to put a lot of data through the machine for to explore the positions of all the pins. Even when you feed many millions of data points through the machine, there are likely to be regions in the hyper-space where no ball has passed. When future test data passes through the machine in a new route unusual things can happen.</p>
 <p><em>Adversarial examples</em> exploit this high dimensional space. If you have access to the pinball machine, you can use gradient methods to find a position for the ball in the hyper space where the image looks like one thing, but will be classified as another.</p>
 <p>Probabilistic methods explore more of the space by considering a range of possible paths for the ball through the machine. This helps to make them more data efficient and gives some robustness to adversarial examples.</p>
-<h2 id="machine-learning-systems-design-edit">Machine Learning Systems Design <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/ml-systems-design-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/ml-systems-design-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
-<p>The challenges of integrating different machine learning components into a whole that acts effectively as a system seem unresolved. In software engineering, separating parts of a system in this way is known as <a href="">component-based software engineering</a>. The core idea is that the different parts of the system can be independently designed according to a sub-specfication. This is sometimes known as <em>separation of concerns</em>. However, once the components are machine learning based, tighter coupling becomes a side effect of the learned nature of the system. For example if a driverless car’s detection of cyclist is dependent on its detection of the road surface, a change in the road surface detection algorithm will have downstream effects on the cyclist detection. Even if the road detection system has been improved by objective measures, the cyclist detection system may have become sensitive to the foibles of the previous version of road detection and will need to be retrained.</p>
-<p>Most of our experience with deployment relies on some approximation to the component based model, this is also important for verification of the system. If the components of the system can be verified then the composed system can also, potentially, be verified.</p>
-<h2 id="pigeonholing-edit">Pigeonholing <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/pigeonholing.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/pigeonholing.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<!--
+
+
+
+
+
+
+
+## Machine Learning Systems Design <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/ml-systems-design-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/ml-systems-design-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+    
+The challenges of integrating different machine learning components into a whole that acts effectively as a system seem unresolved. In software engineering, separating parts of a system in this way is known as [component-based software engineering](). The core idea is that the different parts of the system can be independently designed according to a sub-specfication. This is sometimes known as *separation of concerns*. However, once the components are machine learning based, tighter coupling becomes a side effect of the learned nature of the system. For example if a driverless car's detection of cyclist is dependent on its detection of the road surface, a change in the road surface detection algorithm will have downstream effects on the cyclist detection. Even if the road detection system has been improved by objective measures, the cyclist detection system may have become sensitive to the foibles of the previous version of road detection and will need to be retrained. 
+
+Most of our experience with deployment relies on some approximation to the component based model, this is also important for verification of the system. If the components of the system can be verified then the composed system can also, potentially, be verified.
+
+
+
+
+
+
+
+
+
+
+
+## Pigeonholing <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/pigeonholing.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/pigeonholing.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+
 <div class="figure">
-<div id="too-many-pigeons-figure" class="figure-frame">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/TooManyPigeons.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div class="figure-frame" id="too-many-pigeons-figure">
+<div class="centered centered" style=""><img class="" src="../slides/diagrams/TooManyPigeons.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
+</div>
+<div class="magnify" id="too-many-pigeons-magnify" onclick="magnifyFigure('too-many-pigeons')">
+<img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex">
+</div>
+<div class="caption-frame" id="too-many-pigeons-caption">
+Figure: Decompartmentalization of the model into parts can be seen as pigeonholing the separate tasks that are required.
 </div>
 </div>
-<div id="too-many-pigeons-magnify" class="magnify" onclick="magnifyFigure(&#39;too-many-pigeons&#39;)">
+
+To deal with the complexity of systems design, a common approach is to break complex systems down into a series of tasks. An approach we can think of as "pigeonholing". Classically, a sub-task could be thought of as a particular stage in machining (by analogy to productionlines in factories) or a sub-routine call in computing. Machine learning allows any complex sub-task, that was difficult to decompose by classical methods, to be reconstituted by acquiring data. In particular, when we think of emulating a human, we can ask many humans to perform the sub-task many times and fit machine learning models to reconstruct the performance, or to *emulate* the human in the performance of the task. For example, the decomposition of a complex process such as driving a car into apparently obvious sub-tasks (following the road, identifying pedestrians, etc).
+
+The practitioner's approach to deploying artificial intelligence systems is to build up systems of machine learning components. To build a machine learning system, we decompose the task into parts, each of which we can emulate with ML methods. These parts are typically independently constructed and verified. For example, in a driverless car we can decompose the tasks into components such as "pedestrian detection" and "road line detection". Each of these components can be constructed with, for example, a classification algorithm. Nowadays, people will often deploy a deep neural network, but for many tasks a random forest algorithm may be sufficient. We can then superimpose a logic on top. For example, "Follow the road line unless you detect a pedestrian in the road". 
+
+This allows for verification of car performance, as long as we can verify the individual components. However, it also implies that the AI systems we deploy are *fragile*.
+
+Our intelligent systems are composed by "pigeonholing" each indvidual task, then substituting with a machine learning model.
+
+
+
+
+
+But this is not a robust approach to systems design. The definition of sub-tasks can lead to a single point of failure, where if any sub-task fails, the entire system fails.
+
+
+
+
+## Rapid Reimplementation 
+
+
+
+This is also the classical approach to automation, but in traditional automation we also ensure the *environment* in which the system operates becomes controlled. For example, trains run on railway lines, fast cars run on motorways, goods are manufactured in a controlled factory environment. 
+
+The difference with modern automated decision making systems is our intention is to deploy them in the *uncontrolled* environment that makes up our own world.
+
+This exposes us to either unforseen circumstances or adversarial action. And yet it is unclear our our intelligent systems are capable of adapting to this.
+
+We become exposed to mischief and adversaries. Adversaries intentially may wish to take over the artificial intelligence system, and mischief is the constant practice of many in our society. Simply watching a 10 year old interact with a voice agent such as Alexa or Siri shows that they are delighted when the can make the the "intelligent" agent seem foolish. 
+
+
+
+
+
+
+
+## The Centrifugal Governor <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/centrifugal-governor.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/centrifugal-governor.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+
+
+
+<div class="figure">
+<div class="figure-frame" id="science-holborn-viaduct-figure">
+<div class="centered centered" style=""><img class="" src="../slides/diagrams/science-holborn-viaduct.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
+</div>
+<div class="magnify" id="science-holborn-viaduct-magnify" onclick="magnifyFigure('science-holborn-viaduct')">
+<img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex">
+</div>
+<div class="caption-frame" id="science-holborn-viaduct-caption">
+Figure: Centrifugal governor as held by "Science" on Holborn Viaduct
+</div>
+</div>
+
+
+
+
+
+
+## Boulton and Watt's Steam Engine <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/watt-steam-engine.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/watt-steam-engine.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+
+
+<div class="figure">
+<div class="figure-frame" id="steam-engine-boulton-watt-figure">
+<div class="centered " style=""><img class="negate" src="../slides/diagrams/SteamEngine_Boulton&Watt_1784.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
+</div>
+<div class="magnify" id="steam-engine-boulton-watt-magnify" onclick="magnifyFigure('steam-engine-boulton-watt')">
+<img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex">
+</div>
+<div class="caption-frame" id="steam-engine-boulton-watt-caption">
+Figure: Watt's Steam Engine which made Steam Power Efficient and Practical.
+</div>
+</div>
+
+James Watt's steam engine contained an early machine learning device. In the same way that modern systems are component based, his engine was composed of components. One of which is a speed regulator sometimes known as *Watt's governor*. The two balls in the center of the image, when spun fast, rise, and through a linkage mechanism.
+
+
+
+
+The centrifugal governor was made famous by Boulton and Watt when it was deployed in the steam engine. Studying stability in the governor is the main subject of James Clerk Maxwell's paper on the theoretical analysis of governors [@Maxwell:governors1867]. This paper is a founding paper of control theory. In an acknowledgment of its influence, Wiener used the name [*cybernetics*](https://en.wikipedia.org/wiki/Cybernetics) to describe the field of control and communication in animals and the machine [@Wiener:cybernetics48]. Cybernetics is the Greek word for governor, which comes from the latin for helmsman.
+
+A governor is one of the simplest artificial intelligence systems. It senses the speed of an engine, and acts to change the position of the valve on the engine to slow it down.
+
+Although it's a mechanical system a governor can be seen as automating a role that a human would have traditionally played. It is an early example of artificial intelligence.
+
+The centrifugal governor has several parameters, the weight of the balls used, the length of the linkages and the limits on the balls movement.
+
+Two principle differences exist between the centrifugal governor and artificial intelligence systems of today.
+
+1. The centrifugal governor is a physical system and it is an integral part of a wider physical system that it regulates (the engine).
+2. The parameters of the governor were set by hand, our modern artificial intelligence systems have their parameters set by *data*.
+
+
+
+
+<div class="figure">
+<div class="figure-frame" id="centrifugal-governor-figure">
+<div class="centered " style=""><img class="negate" src="../slides/diagrams/Centrifugal_governor.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
+</div>
+<div class="magnify" id="centrifugal-governor-magnify" onclick="magnifyFigure('centrifugal-governor')">
+<img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex">
+</div>
+<div class="caption-frame" id="centrifugal-governor-caption">
+Figure: The centrifugal governor, an early example of a decision making system. The parameters of the governor include the lengths of the linkages (which effect how far the throttle opens in response to movement in the balls), the weight of the balls (which effects inertia) and the limits of to which the balls can rise.
+</div>
+</div>
+
+
+This has the basic components of sense and act that we expect in an intelligent system, and this system saved the need for a human operator to manually adjust the system in the case of overspeed. Overspeed has the potential to destroy an engine, so the governor operates as a safety device.
+
+The first wave of automation did bring about sabotoage as a worker's response. But if machinery was sabotaged, for example, if the linkage between sensor (the spinning balls) and action (the valve closure) was broken, this would be obvious to the engine operator at start up time. The machine could be repaired before operation.
+
+
+
+
+
+
+
+
+The centrifugal governor was a key component in the Boulton-Watt steam engine. It senses increases in speed in the engine and closed the steam valve to prevent the engine overspeeding and destroying itself. Until the invention of this device, it was a human job to do this.
+
+The formal study of governors and other feedback control devices was then began by [James Clerk Maxwell](https://en.wikipedia.org/wiki/James_Clerk_Maxwell), the Scottish physicist. This field became the foundation of our modern techniques of artificial intelligence through Norbert Wiener's book *Cybernetics* [@Wiener:cybernetics48]. Cybernetics is Greek for governor, a word that in itself simply means helmsman in English.
+
+The recent WannaCry virus that had a wide impact on our health services ecosystem was exploiting a security flaw in Windows systems that was first exploited by a virus called Stuxnet.
+
+Stuxnet was a virus designed to infect the Iranian nuclear program's Uranium enrichment centrifuges. A centrifuge is prevented from overspeed by a controller, just like the centrifugal governor. Only now it is implemented in control logic, in this case on a Siemens PLC controller. 
+
+Stuxnet infected these controllers and took over the response signal in the centrifuge, fooling the system into thinking that no overspeed was occuring. As a result, the centrifuges destroyed themselves through spinning too fast. 
+
+This is equivalent to detaching the governor from the steam engine. Such sabotage would be easily recognized by a steam engine operator. The challenge for the operators of the Iranian Uranium centrifuges was that the sabotage was occurring inside the electronics.
+
+That is the effect of an adversary on an intelligent system, but even without adveraries, the mischief of a 10 year old can confuse our AIs.
+
+
+
+
+
+
+
+
+
+## Peppercorns <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/peppercorn.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/peppercorn.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+
+
+
+
+<div class="figure">
+<div class="figure-frame" id="peppercorn-siri-figure">
+<iframe width="800px" height="600px" src="https://www.youtube.com/embed/1y2UKz47gew?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+<div class="magnify" id="peppercorn-siri-magnify" onclick="magnifyFigure('peppercorn-siri')">
+<img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex">
+</div>
+<div class="caption-frame" id="peppercorn-siri-caption">
+Figure: A peppercorn is a system design failure which is not a bug, but a conformance to design specification that causes problems when the system is deployed in the real world with mischevious and adversarial actors.
+</div>
+</div>
+
+Asking Siri "What is a trillion to the power of a thousand minus one?" leads to a 30 minute response consisting of only 9s. I found this out because my nine year old grabbed my phone and did it. The only way to stop Siri was to force closure. This is an interesting example of a system feature that's *not* a bug, in fact it requires clever processing from Wolfram Alpha. But it's an unexpected result from the system performing correctly.
+
+This challenge of facing a circumstance that was unenvisaged in design but has consequences in deployment becomes far larger when the environment is uncontrolled. Or in the extreme case, where actions of the intelligent system effect the wider environment and change it.
+
+These unforseen circumstances are likely to lead to need for much more efficient turn-around and update for our intelligent systems. Whether we are correcting for security flaws (which *are* bugs) or unenvisaged circumstantial challenges: an issue I'm referring to as *peppercorns*. Rapid deployment of system updates is required. For example, Apple have "fixed" the problem of Siri returning long numbers.
+
+The challenge is particularly acute because of the *scale* at which we can deploy AI solutions. This means when something does go wrong, it may be going wrong in billions of households simultaneously.
+
+
+You can also check my blog post on ["Decision Making and Diversity"](http://inverseprobability.com/2017/11/15/decision-making)
+You can also check my blog post on ["Natural vs Artifical Intelligence"](http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->
+<div class="figure">
+<div id="statistical-emulation-1-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/uq/statistical-emulation000.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="statistical-emulation-1-magnify" class="magnify" onclick="magnifyFigure(&#39;statistical-emulation-1&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
-<div id="too-many-pigeons-caption" class="caption-frame">
-<p>Figure: Decompartmentalization of the model into parts can be seen as pigeonholing the separate tasks that are required.</p>
+<div id="statistical-emulation-1-caption" class="caption-frame">
+<p>Figure: Real world systems consiste of simulators, that capture our domain knowledge about how our systems operate. Different simulators run at different speeds and granularities.</p>
 </div>
 </div>
-<p>To deal with the complexity of systems design, a common approach is to break complex systems down into a series of tasks. An approach we can think of as “pigeonholing”. Classically, a sub-task could be thought of as a particular stage in machining (by analogy to productionlines in factories) or a sub-routine call in computing. Machine learning allows any complex sub-task, that was difficult to decompose by classical methods, to be reconstituted by acquiring data. In particular, when we think of emulating a human, we can ask many humans to perform the sub-task many times and fit machine learning models to reconstruct the performance, or to <em>emulate</em> the human in the performance of the task. For example, the decomposition of a complex process such as driving a car into apparently obvious sub-tasks (following the road, identifying pedestrians, etc).</p>
-<p>The practitioner’s approach to deploying artificial intelligence systems is to build up systems of machine learning components. To build a machine learning system, we decompose the task into parts, each of which we can emulate with ML methods. These parts are typically independently constructed and verified. For example, in a driverless car we can decompose the tasks into components such as “pedestrian detection” and “road line detection”. Each of these components can be constructed with, for example, a classification algorithm. Nowadays, people will often deploy a deep neural network, but for many tasks a random forest algorithm may be sufficient. We can then superimpose a logic on top. For example, “Follow the road line unless you detect a pedestrian in the road”.</p>
-<p>This allows for verification of car performance, as long as we can verify the individual components. However, it also implies that the AI systems we deploy are <em>fragile</em>.</p>
-<p>Our intelligent systems are composed by “pigeonholing” each indvidual task, then substituting with a machine learning model.</p>
-<p>But this is not a robust approach to systems design. The definition of sub-tasks can lead to a single point of failure, where if any sub-task fails, the entire system fails.</p>
-<h2 id="rapid-reimplementation">Rapid Reimplementation</h2>
-<p>This is also the classical approach to automation, but in traditional automation we also ensure the <em>environment</em> in which the system operates becomes controlled. For example, trains run on railway lines, fast cars run on motorways, goods are manufactured in a controlled factory environment.</p>
-<p>The difference with modern automated decision making systems is our intention is to deploy them in the <em>uncontrolled</em> environment that makes up our own world.</p>
-<p>This exposes us to either unforseen circumstances or adversarial action. And yet it is unclear our our intelligent systems are capable of adapting to this.</p>
-<p>We become exposed to mischief and adversaries. Adversaries intentially may wish to take over the artificial intelligence system, and mischief is the constant practice of many in our society. Simply watching a 10 year old interact with a voice agent such as Alexa or Siri shows that they are delighted when the can make the the “intelligent” agent seem foolish.</p>
-<h2 id="the-centrifugal-governor-edit">The Centrifugal Governor <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/centrifugal-governor.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/centrifugal-governor.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="figure">
-<div id="science-holborn-viaduct-figure" class="figure-frame">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/science-holborn-viaduct.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div id="statistical-emulation-2-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/uq/statistical-emulation001.svg" width="80%" style=" ">
+</object>
 </div>
-</div>
-<div id="science-holborn-viaduct-magnify" class="magnify" onclick="magnifyFigure(&#39;science-holborn-viaduct&#39;)">
+<div id="statistical-emulation-2-magnify" class="magnify" onclick="magnifyFigure(&#39;statistical-emulation-2&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
-<div id="science-holborn-viaduct-caption" class="caption-frame">
-<p>Figure: Centrifugal governor as held by “Science” on Holborn Viaduct</p>
+<div id="statistical-emulation-2-caption" class="caption-frame">
+<p>Figure: A statistical emulator is a system that reconstructs the simulation with a statistical model.</p>
 </div>
 </div>
-<h2 id="boulton-and-watts-steam-engine-edit">Boulton and Watt’s Steam Engine <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/watt-steam-engine.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/watt-steam-engine.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="figure">
-<div id="steam-engine-boulton-watt-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="negate" src="../slides/diagrams/SteamEngine_Boulton&Watt_1784.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div id="statistical-emulation-3-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/uq/statistical-emulation002.svg" width="80%" style=" ">
+</object>
 </div>
-</div>
-<div id="steam-engine-boulton-watt-magnify" class="magnify" onclick="magnifyFigure(&#39;steam-engine-boulton-watt&#39;)">
+<div id="statistical-emulation-3-magnify" class="magnify" onclick="magnifyFigure(&#39;statistical-emulation-3&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
-<div id="steam-engine-boulton-watt-caption" class="caption-frame">
-<p>Figure: Watt’s Steam Engine which made Steam Power Efficient and Practical.</p>
+<div id="statistical-emulation-3-caption" class="caption-frame">
+<p>Figure: A statistical emulator is a system that reconstructs the simulation with a statistical model.</p>
 </div>
 </div>
-<p>James Watt’s steam engine contained an early machine learning device. In the same way that modern systems are component based, his engine was composed of components. One of which is a speed regulator sometimes known as <em>Watt’s governor</em>. The two balls in the center of the image, when spun fast, rise, and through a linkage mechanism.</p>
-<p>The centrifugal governor was made famous by Boulton and Watt when it was deployed in the steam engine. Studying stability in the governor is the main subject of James Clerk Maxwell’s paper on the theoretical analysis of governors <span class="citation" data-cites="Maxwell:governors1867">(Maxwell 1867)</span>. This paper is a founding paper of control theory. In an acknowledgment of its influence, Wiener used the name <a href="https://en.wikipedia.org/wiki/Cybernetics"><em>cybernetics</em></a> to describe the field of control and communication in animals and the machine <span class="citation" data-cites="Wiener:cybernetics48">(Wiener 1948)</span>. Cybernetics is the Greek word for governor, which comes from the latin for helmsman.</p>
-<p>A governor is one of the simplest artificial intelligence systems. It senses the speed of an engine, and acts to change the position of the valve on the engine to slow it down.</p>
-<p>Although it’s a mechanical system a governor can be seen as automating a role that a human would have traditionally played. It is an early example of artificial intelligence.</p>
-<p>The centrifugal governor has several parameters, the weight of the balls used, the length of the linkages and the limits on the balls movement.</p>
-<p>Two principle differences exist between the centrifugal governor and artificial intelligence systems of today.</p>
-<ol type="1">
-<li>The centrifugal governor is a physical system and it is an integral part of a wider physical system that it regulates (the engine).</li>
-<li>The parameters of the governor were set by hand, our modern artificial intelligence systems have their parameters set by <em>data</em>.</li>
-</ol>
 <div class="figure">
-<div id="centrifugal-governor-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="negate" src="../slides/diagrams/Centrifugal_governor.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div id="statistical-emulation-4-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/uq/statistical-emulation003.svg" width="80%" style=" ">
+</object>
 </div>
-</div>
-<div id="centrifugal-governor-magnify" class="magnify" onclick="magnifyFigure(&#39;centrifugal-governor&#39;)">
+<div id="statistical-emulation-4-magnify" class="magnify" onclick="magnifyFigure(&#39;statistical-emulation-4&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
-<div id="centrifugal-governor-caption" class="caption-frame">
-<p>Figure: The centrifugal governor, an early example of a decision making system. The parameters of the governor include the lengths of the linkages (which effect how far the throttle opens in response to movement in the balls), the weight of the balls (which effects inertia) and the limits of to which the balls can rise.</p>
+<div id="statistical-emulation-4-caption" class="caption-frame">
+<p>Figure: As well as reconstructing the simulation, a statistical emulator can be used to correlate with the real world.</p>
 </div>
 </div>
-<p>This has the basic components of sense and act that we expect in an intelligent system, and this system saved the need for a human operator to manually adjust the system in the case of overspeed. Overspeed has the potential to destroy an engine, so the governor operates as a safety device.</p>
-<p>The first wave of automation did bring about sabotoage as a worker’s response. But if machinery was sabotaged, for example, if the linkage between sensor (the spinning balls) and action (the valve closure) was broken, this would be obvious to the engine operator at start up time. The machine could be repaired before operation.</p>
-<p>The centrifugal governor was a key component in the Boulton-Watt steam engine. It senses increases in speed in the engine and closed the steam valve to prevent the engine overspeeding and destroying itself. Until the invention of this device, it was a human job to do this.</p>
-<p>The formal study of governors and other feedback control devices was then began by <a href="https://en.wikipedia.org/wiki/James_Clerk_Maxwell">James Clerk Maxwell</a>, the Scottish physicist. This field became the foundation of our modern techniques of artificial intelligence through Norbert Wiener’s book <em>Cybernetics</em> <span class="citation" data-cites="Wiener:cybernetics48">(Wiener 1948)</span>. Cybernetics is Greek for governor, a word that in itself simply means helmsman in English.</p>
-<p>The recent WannaCry virus that had a wide impact on our health services ecosystem was exploiting a security flaw in Windows systems that was first exploited by a virus called Stuxnet.</p>
-<p>Stuxnet was a virus designed to infect the Iranian nuclear program’s Uranium enrichment centrifuges. A centrifuge is prevented from overspeed by a controller, just like the centrifugal governor. Only now it is implemented in control logic, in this case on a Siemens PLC controller.</p>
-<p>Stuxnet infected these controllers and took over the response signal in the centrifuge, fooling the system into thinking that no overspeed was occuring. As a result, the centrifuges destroyed themselves through spinning too fast.</p>
-<p>This is equivalent to detaching the governor from the steam engine. Such sabotage would be easily recognized by a steam engine operator. The challenge for the operators of the Iranian Uranium centrifuges was that the sabotage was occurring inside the electronics.</p>
-<p>That is the effect of an adversary on an intelligent system, but even without adveraries, the mischief of a 10 year old can confuse our AIs.</p>
-<h2 id="peppercorns-edit">Peppercorns <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/peppercorn.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/peppercorn.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <div class="figure">
-<div id="peppercorn-siri-figure" class="figure-frame">
-<iframe width="800px" height="600px" src="https://www.youtube.com/embed/1y2UKz47gew?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-</iframe>
+<div id="statistical-emulation-5-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/uq/statistical-emulation.svg" width="80%" style=" ">
+</object>
 </div>
-<div id="peppercorn-siri-magnify" class="magnify" onclick="magnifyFigure(&#39;peppercorn-siri&#39;)">
+<div id="statistical-emulation-5-magnify" class="magnify" onclick="magnifyFigure(&#39;statistical-emulation-5&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
-<div id="peppercorn-siri-caption" class="caption-frame">
-<p>Figure: A peppercorn is a system design failure which is not a bug, but a conformance to design specification that causes problems when the system is deployed in the real world with mischevious and adversarial actors.</p>
+<div id="statistical-emulation-5-caption" class="caption-frame">
+<p>Figure: Real world systems consiste of simulators, that capture our domain knowledge about how our systems operate. Different simulators run at different speeds and granularities.</p>
 </div>
 </div>
-<p>Asking Siri “What is a trillion to the power of a thousand minus one?” leads to a 30 minute response consisting of only 9s. I found this out because my nine year old grabbed my phone and did it. The only way to stop Siri was to force closure. This is an interesting example of a system feature that’s <em>not</em> a bug, in fact it requires clever processing from Wolfram Alpha. But it’s an unexpected result from the system performing correctly.</p>
-<p>This challenge of facing a circumstance that was unenvisaged in design but has consequences in deployment becomes far larger when the environment is uncontrolled. Or in the extreme case, where actions of the intelligent system effect the wider environment and change it.</p>
-<p>These unforseen circumstances are likely to lead to need for much more efficient turn-around and update for our intelligent systems. Whether we are correcting for security flaws (which <em>are</em> bugs) or unenvisaged circumstantial challenges: an issue I’m referring to as <em>peppercorns</em>. Rapid deployment of system updates is required. For example, Apple have “fixed” the problem of Siri returning long numbers.</p>
-<p>The challenge is particularly acute because of the <em>scale</em> at which we can deploy AI solutions. This means when something does go wrong, it may be going wrong in billions of households simultaneously.</p>
-<p>You can also check my blog post on <a href="http://inverseprobability.com/2017/11/15/decision-making">“Decision Making and Diversity”</a> You can also check my blog post on <a href="http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence">“Natural vs Artifical Intelligence”</a></p>
 <h2 id="uncertainty-quantification-edit">Uncertainty Quantification <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/uncertainty-quantification.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/uncertainty-quantification.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <blockquote>
 <p>Uncertainty quantification (UQ) is the science of quantitative characterization and reduction of uncertainties in both computational and real world applications. It tries to determine how likely certain outcomes are if some aspects of the system are not exactly known.</p>
@@ -895,17 +1070,11 @@ _ = m_clean.optimize()</code></pre>
 <p>Deep Gaussian processes are a flexible approach to meta modelling.</p>
 <h1 id="references" class="unnumbered">References</h1>
 <div id="refs" class="references">
-<div id="ref-Maxwell:governors1867">
-<p>Maxwell, James Clerk. 1867. “On Governors.” <em>Proceedings of the Royal Society of London</em> 16. The Royal Society: 270–83. <a href="http://www.jstor.org/stable/112510" class="uri">http://www.jstor.org/stable/112510</a>.</p>
-</div>
 <div id="ref-Perdikaris:multifidelity17">
 <p>Perdikaris, P., M. Raissi, A. Damianou, N. D. Lawrence, and G. E. Karniadakis. 2017. “Nonlinear Information Fusion Algorithms for Data-Efficient Multi-Fidelity Modelling.” <em>Proceedings of the Royal Society of London A: Mathematical, Physical and Engineering Sciences</em> 473 (2198). The Royal Society. <a href="https://doi.org/10.1098/rspa.2016.0751" class="uri">https://doi.org/10.1098/rspa.2016.0751</a>.</p>
 </div>
 <div id="ref-Taigman:deepface14">
 <p>Taigman, Yaniv, Ming Yang, Marc’Aurelio Ranzato, and Lior Wolf. 2014. “DeepFace: Closing the Gap to Human-Level Performance in Face Verification.” In <em>Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition</em>. <a href="https://doi.org/10.1109/CVPR.2014.220" class="uri">https://doi.org/10.1109/CVPR.2014.220</a>.</p>
-</div>
-<div id="ref-Wiener:cybernetics48">
-<p>Wiener, Norbert. 1948. <em>Cybernetics: Control and Communication in the Animal and the Machine</em>. Cambridge, MA: MIT Press.</p>
 </div>
 </div>
 

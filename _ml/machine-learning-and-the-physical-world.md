@@ -32,7 +32,7 @@ transition: None
 * The mapping of the virtual onto the physical world.
 * E.g. Causal understanding. 
 
-\include{_supply-chain/includes/ml-and-supply-chain.md}
+\include{_supply-chain/includes/supply-chain.md}
 <!--include{_ml/includes/or-control-econometrics-statistics-ml.md}-->
 
 \newslide{UNCERTAINTY QUANTIFICATION}

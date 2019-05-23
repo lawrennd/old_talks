@@ -34,7 +34,7 @@ transition: None
 \include{_ml/includes/what-is-ml-2.md}
 <!-- include{_ml/includes/process-automation.md} -->
 <!-- include{_ai/includes/ai-vs-data-science-2.md} -->
-\include{_supply-chain/includes/ml-and-supply-chain.md}
+\include{_supply-chain/includes/supply-chain.md}
 \include{_ml/includes/or-control-econometrics-statistics-ml.md}
 
 

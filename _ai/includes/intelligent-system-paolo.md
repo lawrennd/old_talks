@@ -5,17 +5,18 @@
 
 \slides{
 
-\newslide{An Intelligent System I Created}
+\newslide{An Intelligent System}
+
+\alignright{\small{Joint work with M. Milo}}
 
 \includempfour{../slides/diagrams/personal/paolo-save.mp4}{80%}
 
+
+\newslide{An Intelligent System}
+
 \alignright{\small{Joint work with M. Milo}}
-
-\newslide{An Intelligent System I Created}
-
 \includempfour{../slides/diagrams/personal/paolo-peppercorn.mp4}{80%}
 
-\alignright{\small{Joint work with M. Milo}}
 }
 
 \endif

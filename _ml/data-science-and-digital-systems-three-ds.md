@@ -51,7 +51,7 @@ transition: None
 \section{Data Science and Professionalisation}
 \include{_data-science/includes/a-time-for-professionalisation.md}
 \include{_supply-chain/includes/bits-and-atoms.md}
-\include{_supply-chain/includes/ml-and-supply-chain.md}
+\include{_supply-chain/includes/supply-chain.md}
 \include{_ml/includes/or-control-econometrics-statistics-ml.md}
 
 \todo{THE DANGER OF LOST TECHNOLOGIES THE PROGRAMMER CAN DEPLOY QUICKLY}

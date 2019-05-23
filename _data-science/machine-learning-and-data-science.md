@@ -85,7 +85,7 @@ include{_data-science/includes/data-readiness-levels.md}
 \include{_ai/includes/ai-vs-data-science-2.md}
 -->
 
-\include{_supply-chain/includes/ml-and-supply-chain.md}
+\include{_supply-chain/includes/supply-chain.md}
 \include{_ml/includes/or-control-econometrics-statistics-ml.md}
 \subsection{The Three Ds of Machine Learning Systems Design}
 

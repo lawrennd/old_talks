@@ -45,7 +45,7 @@ incremental: True
 
 \newslide{Amazon: Bits and Atoms}
 
-\include{_supply-chain/includes/ml-and-supply-chain.md}
+\include{_supply-chain/includes/supply-chain.md}
 \include{_data-science/includes/data-science-africa.md}
 \include{_health/includes/malaria-gp.md}
 
