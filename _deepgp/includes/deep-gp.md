@@ -7,13 +7,13 @@
 \newslide{Deep Neural Network}
 
 \slides{
-\includediagram{../slides/diagrams/deepgp/deep-nn-bottleneck1}{50%}
+\includediagram{../slides/diagrams/deepgp/deep-nn-bottleneck1}{60%}
 }
 
 \newslide{Deep Neural Network}
 
 \slides{
-\includediagram{../slides/diagrams/deepgp/deep-nn-bottleneck2}{50%}
+\includediagram{../slides/diagrams/deepgp/deep-nn-bottleneck2}{60%}
 }
 
 \notes{\figure{\includediagram{../slides/diagrams/deepgp/deep-nn-bottleneck2}{70%}}{Inserting the bottleneck layers introduces a new set of variables.}{deep-nn-bottleneck}}
