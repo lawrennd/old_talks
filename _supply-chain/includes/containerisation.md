@@ -1,5 +1,5 @@
 \ifndef{containerisation}
-\define(containerisation}
+\define{containerisation}
 
 \editme
 

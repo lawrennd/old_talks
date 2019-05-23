@@ -27,8 +27,12 @@ transition: None
 \include{_ml/includes/deep-learning-overview.md}
 
 \include{_supply-chain/includes/containerisation.md}
+\include{_supply-chain/includes/supply-chain-motto.md}
+
+
 \include{_uq/includes/emulation.md}
 
+\notes{\include{_uq/includes/uq-intro.md}}
 \include{_uq/includes/uncertainty-quantification.md}
 
 \include{_uq/includes/emukit-playground.md}

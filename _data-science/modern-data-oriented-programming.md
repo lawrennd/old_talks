@@ -97,9 +97,7 @@ include{_data-science/includes/data-readiness-levels.md}
 
 \include{_supply-chain/includes/supply-chain.md}
 
-\newslide{Team's Motto}
-
-> Solve Supply Chain, then solve everything else
+\include{_supply-chain/includes/supply-chain-motto.md}
 
 <!--include{_ml/includes/or-control-econometrics-statistics-ml.md}-->
 \subsection{The Three Ds of Machine Learning Systems Design}
