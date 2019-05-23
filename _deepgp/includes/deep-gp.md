@@ -16,7 +16,7 @@
 \includediagram{../slides/diagrams/deepgp/deep-nn-bottleneck2}{40%}
 }
 
-\figure{\includediagram{../slides/diagrams/deepgp/deep-nn-bottleneck2}{40%}}{Inserting the bottleneck layers introduces a new set of variables.}{deep-nn-bottleneck}
+\notes{\figure{\includediagram{../slides/diagrams/deepgp/deep-nn-bottleneck2}{40%}}{Inserting the bottleneck layers introduces a new set of variables.}{deep-nn-bottleneck}}
 
 \newslide{Mathematically}
 

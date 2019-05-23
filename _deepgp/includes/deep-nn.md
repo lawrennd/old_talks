@@ -1,6 +1,7 @@
 \ifndef{deepNn}
 \define{deepNn}
 \editme
+
 \setupcode{import teaching_plots as plot}
 \plotcode{plot.deep_nn(diagrams='../slides/diagrams/deepgp/')}
 
@@ -25,4 +26,5 @@ $$
     \dataVector &= \mappingVector_4 ^\top\hiddenVector_{3}
 \end{align}
 $$
+
 \endif
