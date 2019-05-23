@@ -38,7 +38,7 @@ transition: None
 \include{_uq/includes/emukit-playground.md}
 \include{_uq/includes/emukit-software.md}
 
-\include{_deepgp/includes/deep-nn-gp.md}
+\include{_deepgp/includes/deep-gp.md}
 \include{_deepgp/includes/deep-olympic.md}
 
 \include{_ml/includes/mxfusion-intro.md}
