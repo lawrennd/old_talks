@@ -1,7 +1,7 @@
 ---
 title: "Meta-Modelling and Deploying ML Software"
 venue: "The Mathematics of Deep Learning and Data Science"
-abstract: "Data is not so much the new oil, it is the new software. Data driven  algorithms are increasingly present in continuously deployed production software. What challenges does this present and how can the mathematical sciences help?"
+abstract: "Data is not so much the new oil, it is the new software. Data driven algorithms are increasingly present in continuously deployed production software. What challenges does this present and how can the mathematical sciences help?"
 author:
 - given: Neil D.
   family: Lawrence
@@ -12,7 +12,670 @@ author:
   orchid: 
 date: 2019-05-23
 published: 2019-05-23
+reveal: 2019-05-23-meta-modelling-and-deploying-ml-software.slides.html
+ipynb: 2019-05-23-meta-modelling-and-deploying-ml-software.ipynb
 layout: talk
 categories:
 - notes
 ---
+
+
+<div style="display:none">
+  $${% include talk-notation.tex %}$$
+</div>
+
+<script src="/talks/figure-magnify.js"></script>
+<script src="/talks/figure-animate.js"></script>
+    
+<div id="modal-frame" class="modal">
+  <span class="close" onclick="closeMagnify()">&times;</span>
+  <div class="modal-figure">
+    <div class="figure-frame">
+      <div class="modal-content" id="modal01"></div>
+      <!--<img class="modal-content" id="object01">-->
+    </div>
+    <div class="caption-frame" id="modal-caption"></div>
+  </div>
+</div>	  
+
+<!-- Front matter -->
+<p>.</p>
+<!---->
+<!--Back matter-->
+<p>.</p>
+<!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
+<h1 id="introduction">Introduction</h1>
+<h1 id="deep-learning-edit">Deep Learning <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-overview.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-overview.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
+<!-- No slide titles in this context -->
+<h3 id="deepface-edit">DeepFace <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-face.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-face.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
+<div class="figure">
+<div id="deep-face-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/deepface_neg.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="deep-face-magnify" class="magnify" onclick="magnifyFigure(&#39;deep-face&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="deep-face-caption" class="caption-frame">
+<p>Figure: The DeepFace architecture <span class="citation" data-cites="Taigman:deepface14">(Taigman et al. 2014)</span>, visualized through colors to represent the functional mappings at each layer. There are 120 million parameters in the model.</p>
+</div>
+</div>
+<p>The DeepFace architecture <span class="citation" data-cites="Taigman:deepface14">(Taigman et al. 2014)</span> consists of layers that deal with <em>translation</em> and <em>rotational</em> invariances. These layers are followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The neural network includes more than 120 million parameters, where more than 95% come from the local and fully connected layers.</p>
+<h3 id="deep-learning-as-pinball-edit">Deep Learning as Pinball <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-as-pinball.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-as-pinball.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
+<div class="figure">
+<div id="early-pinball-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/576px-Early_Pinball.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="early-pinball-magnify" class="magnify" onclick="magnifyFigure(&#39;early-pinball&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="early-pinball-caption" class="caption-frame">
+<p>Figure: Deep learning models are composition of simple functions. We can think of a pinball machine as an analogy. Each layer of pins corresponds to one of the layers of functions in the model. Input data is represented by the location of the ball from left to right when it is dropped in from the top. Output class comes from the position of the ball as it leaves the pins at the bottom.</p>
+</div>
+</div>
+<p>Sometimes deep learning models are described as being like the brain, or too complex to understand, but one analogy I find useful to help the gist of these models is to think of them as being similar to early pin ball machines.</p>
+<p>In a deep neural network, we input a number (or numbers), whereas in pinball, we input a ball.</p>
+<p>Think of the location of the ball on the left-right axis as a single number. Our simple pinball machine can only take one number at a time. As the ball falls through the machine, each layer of pins can be thought of as a different layer of ‘neurons’. Each layer acts to move the ball from left to right.</p>
+<p>In a pinball machine, when the ball gets to the bottom it might fall into a hole defining a score, in a neural network, that is equivalent to the decision: a classification of the input object.</p>
+<p>An image has more than one number associated with it, so it is like playing pinball in a <em>hyper-space</em>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="im">import</span> pods</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" data-line-number="1">pods.notebook.display_plots(<span class="st">&#39;pinball</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, </a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">                            <span class="st">&#39;../slides/diagrams&#39;</span>,</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">                            sample<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>))</a></code></pre></div>
+<div class="figure">
+<div id="pinball-initialization-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/pinball001.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="pinball-initialization-magnify" class="magnify" onclick="magnifyFigure(&#39;pinball-initialization&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="pinball-initialization-caption" class="caption-frame">
+<p>Figure: At initialization, the pins, which represent the parameters of the function, aren’t in the right place to bring the balls to the correct decisions.</p>
+</div>
+</div>
+<div class="figure">
+<div id="pinball-trained-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/pinball002.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="pinball-trained-magnify" class="magnify" onclick="magnifyFigure(&#39;pinball-trained&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="pinball-trained-caption" class="caption-frame">
+<p>Figure: After learning the pins are now in the right place to bring the balls to the correct decisions.</p>
+</div>
+</div>
+<p>Learning involves moving all the pins to be in the correct position, so that the ball ends up in the right place when it’s fallen through the machine. But moving all these pins in hyperspace can be difficult.</p>
+<p>In a hyper-space you have to put a lot of data through the machine for to explore the positions of all the pins. Even when you feed many millions of data points through the machine, there are likely to be regions in the hyper-space where no ball has passed. When future test data passes through the machine in a new route unusual things can happen.</p>
+<p><em>Adversarial examples</em> exploit this high dimensional space. If you have access to the pinball machine, you can use gradient methods to find a position for the ball in the hyper space where the image looks like one thing, but will be classified as another.</p>
+<p>Probabilistic methods explore more of the space by considering a range of possible paths for the ball through the machine. This helps to make them more data efficient and gives some robustness to adversarial examples.</p>
+<h2 id="machine-learning-systems-design-edit">Machine Learning Systems Design <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/ml-systems-design-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/ml-systems-design-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>The challenges of integrating different machine learning components into a whole that acts effectively as a system seem unresolved. In software engineering, separating parts of a system in this way is known as <a href="">component-based software engineering</a>. The core idea is that the different parts of the system can be independently designed according to a sub-specfication. This is sometimes known as <em>separation of concerns</em>. However, once the components are machine learning based, tighter coupling becomes a side effect of the learned nature of the system. For example if a driverless car’s detection of cyclist is dependent on its detection of the road surface, a change in the road surface detection algorithm will have downstream effects on the cyclist detection. Even if the road detection system has been improved by objective measures, the cyclist detection system may have become sensitive to the foibles of the previous version of road detection and will need to be retrained.</p>
+<p>Most of our experience with deployment relies on some approximation to the component based model, this is also important for verification of the system. If the components of the system can be verified then the composed system can also, potentially, be verified.</p>
+<h2 id="pigeonholing-edit">Pigeonholing <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/pigeonholing.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/pigeonholing.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="figure">
+<div id="too-many-pigeons-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/TooManyPigeons.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="too-many-pigeons-magnify" class="magnify" onclick="magnifyFigure(&#39;too-many-pigeons&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="too-many-pigeons-caption" class="caption-frame">
+<p>Figure: Decompartmentalization of the model into parts can be seen as pigeonholing the separate tasks that are required.</p>
+</div>
+</div>
+<p>To deal with the complexity of systems design, a common approach is to break complex systems down into a series of tasks. An approach we can think of as “pigeonholing”. Classically, a sub-task could be thought of as a particular stage in machining (by analogy to productionlines in factories) or a sub-routine call in computing. Machine learning allows any complex sub-task, that was difficult to decompose by classical methods, to be reconstituted by acquiring data. In particular, when we think of emulating a human, we can ask many humans to perform the sub-task many times and fit machine learning models to reconstruct the performance, or to <em>emulate</em> the human in the performance of the task. For example, the decomposition of a complex process such as driving a car into apparently obvious sub-tasks (following the road, identifying pedestrians, etc).</p>
+<p>The practitioner’s approach to deploying artificial intelligence systems is to build up systems of machine learning components. To build a machine learning system, we decompose the task into parts, each of which we can emulate with ML methods. These parts are typically independently constructed and verified. For example, in a driverless car we can decompose the tasks into components such as “pedestrian detection” and “road line detection”. Each of these components can be constructed with, for example, a classification algorithm. Nowadays, people will often deploy a deep neural network, but for many tasks a random forest algorithm may be sufficient. We can then superimpose a logic on top. For example, “Follow the road line unless you detect a pedestrian in the road”.</p>
+<p>This allows for verification of car performance, as long as we can verify the individual components. However, it also implies that the AI systems we deploy are <em>fragile</em>.</p>
+<p>Our intelligent systems are composed by “pigeonholing” each indvidual task, then substituting with a machine learning model.</p>
+<p>But this is not a robust approach to systems design. The definition of sub-tasks can lead to a single point of failure, where if any sub-task fails, the entire system fails.</p>
+<h2 id="rapid-reimplementation">Rapid Reimplementation</h2>
+<p>This is also the classical approach to automation, but in traditional automation we also ensure the <em>environment</em> in which the system operates becomes controlled. For example, trains run on railway lines, fast cars run on motorways, goods are manufactured in a controlled factory environment.</p>
+<p>The difference with modern automated decision making systems is our intention is to deploy them in the <em>uncontrolled</em> environment that makes up our own world.</p>
+<p>This exposes us to either unforseen circumstances or adversarial action. And yet it is unclear our our intelligent systems are capable of adapting to this.</p>
+<p>We become exposed to mischief and adversaries. Adversaries intentially may wish to take over the artificial intelligence system, and mischief is the constant practice of many in our society. Simply watching a 10 year old interact with a voice agent such as Alexa or Siri shows that they are delighted when the can make the the “intelligent” agent seem foolish.</p>
+<h2 id="the-centrifugal-governor-edit">The Centrifugal Governor <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/centrifugal-governor.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/centrifugal-governor.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="figure">
+<div id="science-holborn-viaduct-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/science-holborn-viaduct.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="science-holborn-viaduct-magnify" class="magnify" onclick="magnifyFigure(&#39;science-holborn-viaduct&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="science-holborn-viaduct-caption" class="caption-frame">
+<p>Figure: Centrifugal governor as held by “Science” on Holborn Viaduct</p>
+</div>
+</div>
+<h2 id="boulton-and-watts-steam-engine-edit">Boulton and Watt’s Steam Engine <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/watt-steam-engine.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/watt-steam-engine.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="figure">
+<div id="steam-engine-boulton-watt-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/SteamEngine_Boulton&Watt_1784.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="steam-engine-boulton-watt-magnify" class="magnify" onclick="magnifyFigure(&#39;steam-engine-boulton-watt&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="steam-engine-boulton-watt-caption" class="caption-frame">
+<p>Figure: Watt’s Steam Engine which made Steam Power Efficient and Practical.</p>
+</div>
+</div>
+<p>James Watt’s steam engine contained an early machine learning device. In the same way that modern systems are component based, his engine was composed of components. One of which is a speed regulator sometimes known as <em>Watt’s governor</em>. The two balls in the center of the image, when spun fast, rise, and through a linkage mechanism.</p>
+<p>The centrifugal governor was made famous by Boulton and Watt when it was deployed in the steam engine. Studying stability in the governor is the main subject of James Clerk Maxwell’s paper on the theoretical analysis of governors <span class="citation" data-cites="Maxwell:governors1867">(Maxwell 1867)</span>. This paper is a founding paper of control theory. In an acknowledgment of its influence, Wiener used the name <a href="https://en.wikipedia.org/wiki/Cybernetics"><em>cybernetics</em></a> to describe the field of control and communication in animals and the machine <span class="citation" data-cites="Wiener:cybernetics48">(Wiener 1948)</span>. Cybernetics is the Greek word for governor, which comes from the latin for helmsman.</p>
+<p>A governor is one of the simplest artificial intelligence systems. It senses the speed of an engine, and acts to change the position of the valve on the engine to slow it down.</p>
+<p>Although it’s a mechanical system a governor can be seen as automating a role that a human would have traditionally played. It is an early example of artificial intelligence.</p>
+<p>The centrifugal governor has several parameters, the weight of the balls used, the length of the linkages and the limits on the balls movement.</p>
+<p>Two principle differences exist between the centrifugal governor and artificial intelligence systems of today.</p>
+<ol type="1">
+<li>The centrifugal governor is a physical system and it is an integral part of a wider physical system that it regulates (the engine).</li>
+<li>The parameters of the governor were set by hand, our modern artificial intelligence systems have their parameters set by <em>data</em>.</li>
+</ol>
+<div class="figure">
+<div id="centrifugal-governor-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/Centrifugal_governor.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="centrifugal-governor-magnify" class="magnify" onclick="magnifyFigure(&#39;centrifugal-governor&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="centrifugal-governor-caption" class="caption-frame">
+<p>Figure: The centrifugal governor, an early example of a decision making system. The parameters of the governor include the lengths of the linkages (which effect how far the throttle opens in response to movement in the balls), the weight of the balls (which effects inertia) and the limits of to which the balls can rise.</p>
+</div>
+</div>
+<p>This has the basic components of sense and act that we expect in an intelligent system, and this system saved the need for a human operator to manually adjust the system in the case of overspeed. Overspeed has the potential to destroy an engine, so the governor operates as a safety device.</p>
+<p>The first wave of automation did bring about sabotoage as a worker’s response. But if machinery was sabotaged, for example, if the linkage between sensor (the spinning balls) and action (the valve closure) was broken, this would be obvious to the engine operator at start up time. The machine could be repaired before operation.</p>
+<p>The centrifugal governor was a key component in the Boulton-Watt steam engine. It senses increases in speed in the engine and closed the steam valve to prevent the engine overspeeding and destroying itself. Until the invention of this device, it was a human job to do this.</p>
+<p>The formal study of governors and other feedback control devices was then began by <a href="https://en.wikipedia.org/wiki/James_Clerk_Maxwell">James Clerk Maxwell</a>, the Scottish physicist. This field became the foundation of our modern techniques of artificial intelligence through Norbert Wiener’s book <em>Cybernetics</em> <span class="citation" data-cites="Wiener:cybernetics48">(Wiener 1948)</span>. Cybernetics is Greek for governor, a word that in itself simply means helmsman in English.</p>
+<p>The recent WannaCry virus that had a wide impact on our health services ecosystem was exploiting a security flaw in Windows systems that was first exploited by a virus called Stuxnet.</p>
+<p>Stuxnet was a virus designed to infect the Iranian nuclear program’s Uranium enrichment centrifuges. A centrifuge is prevented from overspeed by a controller, just like the centrifugal governor. Only now it is implemented in control logic, in this case on a Siemens PLC controller.</p>
+<p>Stuxnet infected these controllers and took over the response signal in the centrifuge, fooling the system into thinking that no overspeed was occuring. As a result, the centrifuges destroyed themselves through spinning too fast.</p>
+<p>This is equivalent to detaching the governor from the steam engine. Such sabotage would be easily recognized by a steam engine operator. The challenge for the operators of the Iranian Uranium centrifuges was that the sabotage was occurring inside the electronics.</p>
+<p>That is the effect of an adversary on an intelligent system, but even without adveraries, the mischief of a 10 year old can confuse our AIs.</p>
+<h2 id="peppercorns-edit">Peppercorns <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/peppercorn.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/peppercorn.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="figure">
+<div id="peppercorn-siri-figure" class="figure-frame">
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/1y2UKz47gew?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+</div>
+<div id="peppercorn-siri-magnify" class="magnify" onclick="magnifyFigure(&#39;peppercorn-siri&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="peppercorn-siri-caption" class="caption-frame">
+<p>Figure: A peppercorn is a system design failure which is not a bug, but a conformance to design specification that causes problems when the system is deployed in the real world with mischevious and adversarial actors.</p>
+</div>
+</div>
+<p>Asking Siri “What is a trillion to the power of a thousand minus one?” leads to a 30 minute response consisting of only 9s. I found this out because my nine year old grabbed my phone and did it. The only way to stop Siri was to force closure. This is an interesting example of a system feature that’s <em>not</em> a bug, in fact it requires clever processing from Wolfram Alpha. But it’s an unexpected result from the system performing correctly.</p>
+<p>This challenge of facing a circumstance that was unenvisaged in design but has consequences in deployment becomes far larger when the environment is uncontrolled. Or in the extreme case, where actions of the intelligent system effect the wider environment and change it.</p>
+<p>These unforseen circumstances are likely to lead to need for much more efficient turn-around and update for our intelligent systems. Whether we are correcting for security flaws (which <em>are</em> bugs) or unenvisaged circumstantial challenges: an issue I’m referring to as <em>peppercorns</em>. Rapid deployment of system updates is required. For example, Apple have “fixed” the problem of Siri returning long numbers.</p>
+<p>The challenge is particularly acute because of the <em>scale</em> at which we can deploy AI solutions. This means when something does go wrong, it may be going wrong in billions of households simultaneously.</p>
+<p>You can also check my blog post on <a href="http://inverseprobability.com/2017/11/15/decision-making">“Decision Making and Diversity”</a> You can also check my blog post on <a href="http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence">“Natural vs Artifical Intelligence”</a></p>
+<h1 id="the-three-ds-of-ml-systems-design">The Three Ds of ML Systems Design</h1>
+<h1 id="the-three-ds-of-machine-learning-systems-design-edit">The Three Ds of Machine Learning Systems Design <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/the-3ds-of-ml-systems-design.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/the-3ds-of-ml-systems-design.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
+<p>We can characterize the challenges for integrating machine learning within our systems as the three Ds. Decomposition, Data and Deployment.</p>
+<p>You can also check my blog post on <a href="http://inverseprobability.com/2018/11/05/the-3ds-of-machine-learning-systems-design">“The 3Ds of Machine Learning Systems Design”</a></p>
+<p>The first two components <em>decomposition</em> and <em>data</em> are interlinked, but we will first outline the decomposition challenge. Below we will mainly focus on <em>supervised learning</em> because this is arguably the technology that is best understood within machine learning.</p>
+<h2 id="decomposition-edit">Decomposition <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/ml-decomposition-challenge.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/ml-decomposition-challenge.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>Machine learning is not magical pixie dust, we cannot simply automate all decisions through data. We are constrained by our data (see below) and the models we use.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> Machine learning models are relatively simple function mappings that include characteristics such as smoothness. With some famous exceptions, e.g. speech and image data, inputs are constrained in the form of vectors and the model consists of a mathematically well behaved function. This means that some careful thought has to be put in to the right sub-process to automate with machine learning. This is the challenge of <em>decomposition</em> of the machine learning system.</p>
+<p>Any repetitive task is a candidate for automation, but many of the repetitive tasks we perform as humans are more complex than any individual algorithm can replace. The selection of which task to automate becomes critical and has downstream effects on our overall system design.</p>
+<h3 id="pigeonholing">Pigeonholing</h3>
+<div class="figure">
+<div id="too-many-pigeons2-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/TooManyPigeons.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="too-many-pigeons2-magnify" class="magnify" onclick="magnifyFigure(&#39;too-many-pigeons2&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="too-many-pigeons2-caption" class="caption-frame">
+<p>Figure: The machine learning systems decomposition process calls for separating a complex task into decomposable separate entities. A process we can think of as <a href="https://en.wikipedia.org/wiki/Pigeonholing" target="_blank" >pigeonholing</a>.</p>
+</div>
+</div>
+<p>Some aspects to take into account are</p>
+<ol type="1">
+<li>Can we refine the decision we need to a set of repetitive tasks where input information and output decision/value is well defined?</li>
+<li>Can we represent each sub-task we’ve defined with a mathematical mapping?</li>
+</ol>
+<p>The representation necessary for the second aspect may involve massaging of the problem: feature selection or adaptation. It may also involve filtering out exception cases (perhaps through a pre-classification).</p>
+<p>All else being equal, we’d like to keep our models simple and interpretable. If we can convert a complex mapping to a linear mapping through clever selection of sub-tasks and features this is a big win.</p>
+<p>For example, Facebook have <em>feature engineers</em>, individuals whose main role is to design features they think might be useful for one of their tasks (e.g. newsfeed ranking, or ad matching). Facebook have a training/testing pipeline called <a href="https://www.facebook.com/Engineering/posts/fblearner-flow-is-a-machine-learning-platform-capable-of-easily-reusing-algorith/10154077833317200/">FBLearner</a>. Facebook have predefined the sub-tasks they are interested in, and they are tightly connected to their business model.</p>
+<p>It is easier for Facebook to do this because their business model is heavily focused on user interaction. A challenge for companies that have a more diversified portfolio of activities driving their business is the identification of the most appropriate sub-task. A potential solution to feature and model selection is known as <em>AutoML</em> <span class="citation" data-cites="Feurer:automl15">(Feurer et al., n.d.)</span>. Or we can think of it as using Machine Learning to assist Machine Learning. It’s also called meta-learning. Learning about learning. The input to the ML algorithm is a machine learning task, the output is a proposed model to solve the task.</p>
+<p>One trap that is easy to fall in is too much emphasis on the type of model we have deployed rather than the appropriateness of the task decomposition we have chosen.</p>
+<p><strong>Recommendation</strong>: Conditioned on task decomposition, we should automate the process of model improvement. Model updates should not be discussed in management meetings, they should be deployed and updated as a matter of course. Further details below on model deployment, but model updating needs to be considered at design time. This is the domain of AutoML.</p>
+<div class="figure">
+<div id="chicken-and-egg2-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/ai/chicken-and-egg.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="chicken-and-egg2-magnify" class="magnify" onclick="magnifyFigure(&#39;chicken-and-egg2&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="chicken-and-egg2-caption" class="caption-frame">
+<p>Figure: The answer to the question which comes first, the chicken or the egg is simple, they co-evolve <span class="citation" data-cites="Popper:conjectures63">(Popper 1963)</span>. Similarly, when we place components together in a complex machine learning system, they will tend to co-evolve and compensate for one another.</p>
+</div>
+</div>
+<p>To form modern decision making systems, many components are interlinked. We decompose our complex decision making into individual tasks, but the performance of each component is dependent on those upstream of it.</p>
+<p>This naturally leads to co-evolution of systems, upstream errors can be compensated by downstream corrections.</p>
+<p>To embrace this characteristic, end-to-end training could be considered. Why produce the best forecast by metrics when we can just produce the best forecast for our systems? End-to-end training can lead to improvements in performance, but it would also damage our systems decomposability and its interpretability, and perhaps its adaptability.</p>
+<p>The less human interpretable our systems are, the harder they are to adapt to different circumstances or diagnose when there’s a challenge. The trade-off between interpretability and performance is a constant tension which we should always retain in our minds when performing our system design.</p>
+<h2 id="data-edit">Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/ml-data-challenge.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/ml-data-challenge.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>It is difficult to overstate the importance of data. It is half of the equation for machine learning, but is often utterly neglected. We can speculate that there are two reasons for this. Firstly, data cleaning is perceived as tedious. It doesn’t seem to consist of the same intellectual challenges that are inherent in constructing complex mathematical models and implementing them in code. Secondly, data cleaning is highly complex, it requires a deep understanding of how machine learning systems operate and good intuitions about the data itself, the domain from which data is drawn (e.g. Supply Chain) and what downstream problems might be caused by poor data quality.</p>
+<p>A consequence of these two reasons, data cleaning seems difficult to formulate into a readily teachable set of principles. As a result it is heavily neglected in courses on machine learning and data science. Despite data being half the equation, most University courses spend little to no time on its challenges.</p>
+<p>Anecdotally, talking to data modelling scientists. Most say they spend 80% of their time acquiring and cleaning data. This is precipitating what I refer to as the “data crisis”. This is an analogy with software. The “software crisis” was the phenomenon of inability to deliver software solutions due to increasing complexity of implementation. There was no single shot solution for the software crisis, it involved better practice (scrum, test orientated development, sprints, code review), improved programming paradigms (object orientated, functional) and better tools (CVS, then SVN, then git).</p>
+<h2 id="the-data-crisis-edit">The Data Crisis <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/the-data-crisis.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/the-data-crisis.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>Anecdotally, talking to data modelling scientists. Most say they spend 80% of their time acquiring and cleaning data. This is precipitating what I refer to as the “data crisis”. This is an analogy with software. The “software crisis” was the phenomenon of inability to deliver software solutions due to increasing complexity of implementation. There was no single shot solution for the software crisis, it involved better practice (scrum, test orientated development, sprints, code review), improved programming paradigms (object orientated, functional) and better tools (CVS, then SVN, then git).</p>
+<p>However, these challenges aren’t new, they are merely taking a different form. From the computer’s perspective software <em>is</em> data. The first wave of the data crisis was known as the <em>software crisis</em>.</p>
+<h3 id="the-software-crisis">The Software Crisis</h3>
+<p>In the late sixties early software programmers made note of the increasing costs of software development and termed the challenges associated with it as the “<a href="https://en.wikipedia.org/wiki/Software_crisis">Software Crisis</a>”. Edsger Dijkstra referred to the crisis in his 1972 Turing Award winner’s address.</p>
+<blockquote>
+<p>The major cause of the software crisis is that the machines have become several orders of magnitude more powerful! To put it quite bluntly: as long as there were no machines, programming was no problem at all; when we had a few weak computers, programming became a mild problem, and now we have gigantic computers, programming has become an equally gigantic problem.</p>
+<p>Edsger Dijkstra (1930-2002), The Humble Programmer</p>
+</blockquote>
+<blockquote>
+<p>The major cause of the data crisis is that machines have become more interconnected than ever before. Data access is therefore cheap, but data quality is often poor. What we need is cheap high quality data. That implies that we develop processes for improving and verifying data quality that are efficient.</p>
+<p>There would seem to be two ways for improving efficiency. Firstly, we should not duplicate work. Secondly, where possible we should automate work.</p>
+</blockquote>
+<p>What I term “The Data Crisis” is the modern equivalent of this problem. The quantity of modern data, and the lack of attention paid to data as it is initially “laid down” and the costs of data cleaning are bringing about a crisis in data-driven decision making. This crisis is at the core of the challenge of <em>technical debt</em> in machine learning <span class="citation" data-cites="Sculley:debt15">(Sculley et al. 2015)</span>.</p>
+<p>Just as with software, the crisis is most correctly addressed by ‘scaling’ the manner in which we process our data. Duplication of work occurs because the value of data cleaning is not correctly recognised in management decision making processes. Automation of work is increasingly possible through techniques in “artificial intelligence”, but this will also require better management of the data science pipeline so that data about data science (meta-data science) can be correctly assimilated and processed. The Alan Turing institute has a program focussed on this area, <a href="https://www.turing.ac.uk/research_projects/artificial-intelligence-data-analytics/">AI for Data Analytics</a>.</p>
+<p>Data is the new software, and the data crisis is already upon us. It is driven by the cost of cleaning data, the paucity of tools for monitoring and maintaining our deployments, the provenance of our models (e.g. with respect to the data they’re trained on).</p>
+<p>Three principal changes need to occur in response. They are cultural and infrastructural.</p>
+<h3 id="the-data-first-paradigm">The Data First Paradigm</h3>
+<p>First of all, to excel in data driven decision making we need to move from a <em>software first</em> paradigm to a <em>data first</em> paradigm. That means refocusing on data as the product. Software is the intermediary to producing the data, and its quality standards must be maintained, but not at the expense of the data we are producing. Data cleaning and maintenance need to be prized as highly as software debugging and maintenance. Instead of <em>software</em> as a service, we should refocus around <em>data</em> as a service. This first change is a cultural change in which our teams think about their outputs in terms of data. Instead of decomposing our systems around the software components, we need to decompose them around the data generating and consuming components.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> Software first is only an intermediate step on the way to be coming <em>data first</em>. It is a necessary, but not a sufficient condition for efficient machine learning systems design and deployment. We must move from <em>software orientated architecture</em> to a <em>data orientated architecture</em>.</p>
+<h3 id="data-quality">Data Quality</h3>
+<p>Secondly, we need to improve our language around data quality. We cannot assess the costs of improving data quality unless we generate a language around what data quality means. Data Readiness Levels<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> are an assessment of data quality that is based on the usage to which data is put.</p>
+<h3 id="data-readiness-levels">Data Readiness Levels</h3>
+<p><a href="http://inverseprobability.com/2017/01/12/data-readiness-levels">Data Readiness Levels</a> <span class="citation" data-cites="Lawrence:drl17">(Lawrence 2017)</span> are an attempt to develop a language around data quality that can bridge the gap between technical solutions and decision makers such as managers and project planners. The are inspired by Technology Readiness Levels which attempt to quantify the readiness of technologies for deployment.b</p>
+<h3 id="three-grades-of-data-readiness-edit">Three Grades of Data Readiness <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/three-grades-of-data-readiness.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/three-grades-of-data-readiness.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
+<p>Data-readiness describes, at its coarsest level, three separate stages of data graduation.</p>
+<ul>
+<li>Grade C - accessibility
+<ul>
+<li>Transition: data becomes electronically available</li>
+</ul></li>
+<li>Grade B - validity
+<ul>
+<li>Transition: pose a question to the data.</li>
+</ul></li>
+<li>Grade A - usability</li>
+</ul>
+<p>The important definitions are at the transition. The move from Grade C data to Grade B data is delimited by the <em>electronic availability</em> of the data. The move from Grade B to Grade A data is delimited by posing a question or task to the data <span class="citation" data-cites="Lawrence:drl17">(Lawrence 2017)</span>.</p>
+<p><strong>Recommendation</strong>: Build a shared understanding of the language of data readiness levels for use in planning documents and costing of data cleaning and the benefits of reusing cleaned data.</p>
+<h3 id="move-beyond-software-engineering-to-data-engineering">Move Beyond Software Engineering to Data Engineering</h3>
+<p>Thirdly, we need to improve our mental model of the separation of data science from applied science. A common trap in our thinking around data is to see data science (and data engineering, data preparation) as a sub-set of the software engineer’s or applied scientist’s skill set. As a result we recruit and deploy the wrong type of resource. Data preparation and question formulation is superficially similar to both because of the need for programming skills, but the day to day problems faced are very different.</p>
+<h2 id="combining-data-and-systems-design-edit">Combining Data and Systems Design <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/ml-combining-data-and-systems-design-challenge.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/ml-combining-data-and-systems-design-challenge.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<h2 id="data-science-as-debugging-edit">Data Science as Debugging <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-science-as-debugging.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-science-as-debugging.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>One challenge for existing information technology professionals is realizing the extent to which a software ecosystem based on data differs from a classical ecosystem. In particular, by ingesting data we bring unknowns/uncontrollables into our decision making system. This presents opportunity for adversarial exploitation and unforeseen operation.</p>
+<p>You can also check my blog post on <a href="http://inverseprobability.com/2017/03/14/data-science-as-debugging">“Data Science as Debugging”</a></p>
+<p>Starting with the analysis of a data set, the nature of data science is somewhat difference from classical software engineering.</p>
+<p>One analogy I find helpful for understanding the depth of change we need is the following. Imagine as a software engineer, you find a USB stick on the ground. And for some reason you <em>know</em> that on that USB stick is a particular API call that will enable you to make a significant positive difference on a business problem. You don’t know which of the many library functions on the USB stick are the ones that will help. And it could be that some of those library functions will hinder, perhaps because they are just inappropriate or perhaps because they have been placed there malisciously. The most secure thing to do would be to <em>not</em> introduce this code into your production system at all. But what if your manager told you to do so, how would you go about incorporating this code base?</p>
+<p>The answer is <em>very</em> carefully. You would have to engage in a process more akin to debugging than regular software engineering. As you understood the code base, for your work to be reproducible, you should be documenting it, not just what you discovered, but how you discovered it. In the end, you typically find a single API call that is the one that most benefits your system. But more thought has been placed into this line of code than any line of code you have written before.</p>
+<p>An enormous amount of debugging would be required. As the nature of the code base is understood, software tests to verify it also need to be constructed. At the end of all your work, the lines of software you write to actually interact with the software on the USB stick are likely to be minimal. But more thought would be put into those lines than perhaps any other lines of code in the system.</p>
+<p>Even then, when your API code is introduced into your production system, it needs to be deployed in an environment that monitors it. We cannot rely on an individual’s decision making to ensure the quality of all our systems. We need to create an environment that includes quality controls, checks and bounds, tests, all designed to ensure that assumptions made about this foreign code base are remaining valid.</p>
+<p>This situation is akin to what we are doing when we incorporate data in our production systems. When we are consuming data from others, we cannot assume that it has been produced in alignment with our goals for our own systems. Worst case, it may have been adversarialy produced. A further challenge is that data is dynamic. So, in effect, the code on the USB stick is evolving over time.</p>
+<p>It might see that this process is easy to formalize now, we simply need to check what the formal software engineering process is for debugging, because that is the current software engineering activity that data science is closest to. But when we look for a formalization of debugging we find that there is none. Indeed, modern software engineering mainly focusses on ensuring that code is written without bugs in the first place.</p>
+<p><strong>Recommendation</strong>: Anecdotally, resolving a machine learning challenge requires 80% of the resource to be focused on the data and perhaps 20% to be focused on the model. But many companies are too keen to employ machine learning engineers who focus on the models, not the data. We should change our hiring priorities and training. Universities cannot provide the understanding of how to data-wrangle. Companies must fill this gap.</p>
+<div class="figure">
+<div id="derwent-valley-resevoir-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/data-science/water-bridge-hill-transport-arch-calm-544448-pxhere.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="derwent-valley-resevoir-magnify" class="magnify" onclick="magnifyFigure(&#39;derwent-valley-resevoir&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="derwent-valley-resevoir-caption" class="caption-frame">
+<p>Figure: A reservoir of data has more value if the data is consumbable. The data crisis can only be addressed if we focus on outputs rather than inputs.</p>
+</div>
+</div>
+<div class="figure">
+<div id="lake-district-stream-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/data-science/1024px-Lake_District_picture.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="lake-district-stream-magnify" class="magnify" onclick="magnifyFigure(&#39;lake-district-stream&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="lake-district-stream-caption" class="caption-frame">
+<p>Figure: For a data first architecture we need to clean our data at source, rather than individually cleaning data for each task. This involves a shift of focus from our inputs to our outputs. We should provide data streams that are consumable by many teams without purification.</p>
+</div>
+</div>
+<p><strong>Recommendation</strong>: We need to share best practice around data deployment across our teams. We should make best use of our processes where applicable, but we need to develop them to become <em>data first</em> organizations. Data needs to be cleaned at <em>output</em> not at <em>input</em>.</p>
+<h2 id="deployment-edit">Deployment <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/ml-deployment-challenge.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/ml-deployment-challenge.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>Much of the academic machine learning systems point of view is based on a software systems point of view that is around 20 years out of date. In particular we build machine learning models on fixed training data sets, and we test them on stationary test data sets.</p>
+<p>In practice modern software systems involve continuous deployment of models into an ever evolving world of data. These changes are indicated in the software world by greater availaiblity of technologies like <em>streaming</em> technologies.</p>
+<h3 id="continuous-deployment">Continuous Deployment</h3>
+<p>Once the decomposition is understood, the data is sourced and the models are created, the model code needs to be deployed.</p>
+<p>To extend the USB stick analogy further, how would we deploy that code if we thought it was likely to evolve in production? This is what datadoes. We cannot assume that the conditions under which we trained our model will be retained as we move forward, indeed the only constant we have is change.</p>
+<p>This means that when any data dependent model is deployed into production, it requires <em>continuous monitoring</em> to ensure the assumptions of design have not been invalidated. Software changes are qualified through testing, in particular a regression test ensures that existing functionality is not broken by change. Since data is continually evolving, machine learning systems require ‘continual regression testing’: oversight by systems that ensure their existing functionality has not been broken as the world evolves around them. An approach we refer to as <em>progression testing</em>. Unfortunately, standards around ML model deployment yet been developed. The modern world of continuous deployment does rely on testing, but it does not recognize the continuous evolution of the world around us.</p>
+<p>Progression tests are likely to be <em>statistical</em> tests in contrast to classical software tests. The should be monitoring model performance and quality measures. They could also monitor conformance to standardized <em>fairness</em> measures.</p>
+<p>If the world has changed around our decision making ecosystem, how are we alerted to those changes?</p>
+<p><strong>Recommendation</strong>: We establish best practice around model deployment. We need to shift our culture from standing up a software service, to standing up a <em>data as a service</em>. Data as a Service would involve continual monitoring of our deployed models in production. This would be regulated by ‘hypervisor’ systems<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> that understand the context in which models are deployed and recognize when circumstance has changed and models need retraining or restructuring.</p>
+<p><strong>Recommendation</strong>: We should consider a major re-architecting of systems around our services. In particular we should scope the use of a <em>streaming architecture</em> (such as Apache Kafka) that ensures data persistence and enables asynchronous operation of our systems.<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> This would enable the provision of QC streams, and real time dash boards as well as hypervisors..</p>
+<p>Importantly a streaming architecture implies the services we build are <em>stateless</em>, internal state is deployed on streams alongside external state. This allows for rapid assessment of other services’ data.</p>
+<h2 id="uncertainty-quantification-edit">Uncertainty Quantification <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/uncertainty-quantification.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/uncertainty-quantification.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<blockquote>
+<p>Uncertainty quantification (UQ) is the science of quantitative characterization and reduction of uncertainties in both computational and real world applications. It tries to determine how likely certain outcomes are if some aspects of the system are not exactly known.</p>
+</blockquote>
+<p>We will to illustrate different concepts of <a href="https://en.wikipedia.org/wiki/Uncertainty_quantification">Uncertainty Quantification</a> (UQ) and the role that Gaussian processes play in this field. Based on a simple simulator of a car moving between a valley and a mountain, we are going to illustrate the following concepts:</p>
+<ul>
+<li><p><strong>Systems emulation</strong>. Many real world decisions are based on simulations that can be computationally very demanding. We will show how simulators can be replaced by <em>emulators</em>: Gaussian process models fitted on a few simulations that can be used to replace the <em>simulator</em>. Emulators are cheap to compute, fast to run, and always provide ways to quantify the uncertainty of how precise they are compared the original simulator.</p></li>
+<li><p><strong>Emulators in optimization problems</strong>. We will show how emulators can be used to optimize black-box functions that are expensive to evaluate. This field is also called Bayesian Optimization and has gained an increasing relevance in machine learning as emulators can be used to optimize computer simulations (and machine learning algorithms) quite efficiently.</p></li>
+<li><p><strong>Multi-fidelity emulation methods</strong>. In many scenarios we have simulators of different quality about the same measure of interest. In these cases the goal is to merge all sources of information under the same model so the final emulator is cheaper and more accurate than an emulator fitted only using data from the most accurate and expensive simulator.</p></li>
+</ul>
+<h2 id="mountain-car-simulator-edit">Mountain Car Simulator <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/mountain-car-simulation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/mountain-car-simulation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>To illustrate the above mentioned concepts we we use the <a href="https://github.com/openai/gym/wiki/MountainCarContinuous-v0">mountain car simulator</a>. This simulator is widely used in machine learning to test reinforcement learning algorithms. The goal is to define a control policy on a car whose objective is to climb a mountain. Graphically, the problem looks as follows:</p>
+<div class="figure">
+<div id="mountain-car-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/uq/mountaincar.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="mountain-car-magnify" class="magnify" onclick="magnifyFigure(&#39;mountain-car&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="mountain-car-caption" class="caption-frame">
+<p>Figure: The mountain car simulation from the Open AI gym.</p>
+</div>
+</div>
+<p>The goal is to define a sequence of actions (push the car right or left with certain intensity) to make the car reach the flag after a number <span class="math inline"><em>T</em></span> of time steps.</p>
+<p>At each time step <span class="math inline"><em>t</em></span>, the car is characterized by a vector <span class="math inline">$\inputVector_{t} = (p_t,v_t)$</span> of states which are respectively the the position and velocity of the car at time <span class="math inline"><em>t</em></span>. For a sequence of states (an episode), the dynamics of the car is given by</p>
+<p><br /><span class="math display">$$\inputVector_{t+1} = \mappingFunction(\inputVector_{t},\textbf{u}_{t})$$</span><br /></p>
+<p>where <span class="math inline"><strong>u</strong><sub><em>t</em></sub></span> is the value of an action force, which in this example corresponds to push car to the left (negative value) or to the right (positive value). The actions across a full episode are represented in a policy <span class="math inline">$\textbf{u}_{t} = \pi(\inputVector_{t},\theta)$</span> that acts according to the current state of the car and some parameters <span class="math inline"><em>θ</em></span>. In the following examples we will assume that the policy is linear which allows us to write <span class="math inline">$\pi(\inputVector_{t},\theta)$</span> as</p>
+<p><br /><span class="math display">$$\pi(\inputVector,\theta)= \theta_0 + \theta_p p + \theta_vv.$$</span><br /></p>
+<p>For <span class="math inline"><em>t</em> = 1, …, <em>T</em></span> now given some initial state <span class="math inline">$\inputVector_{0}$</span> and some some values of each <span class="math inline"><strong>u</strong><sub><em>t</em></sub></span>, we can <strong>simulate</strong> the full dynamics of the car for a full episode using <a href="https://gym.openai.com/envs/">Gym</a>. The values of <span class="math inline"><strong>u</strong><sub><em>t</em></sub></span> are fully determined by the parameters of the linear controller.</p>
+<p>After each episode of length <span class="math inline"><em>T</em></span> is complete, a reward function <span class="math inline"><em>R</em><sub><em>T</em></sub>(<em>θ</em>)</span> is computed. In the mountain car example the reward is computed as 100 for reaching the target of the hill on the right hand side, minus the squared sum of actions (a real negative to push to the left and a real positive to push to the right) from start to goal. Note that our reward depend on <span class="math inline"><em>θ</em></span> as we make it dependent on the parameters of the linear controller.</p>
+<h2 id="emulate-the-mountain-car">Emulate the Mountain Car</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="im">import</span> gym</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" data-line-number="1">env <span class="op">=</span> gym.make(<span class="st">&#39;MountainCarContinuous-v0&#39;</span>)</a></code></pre></div>
+<p>Our goal in this section is to find the parameters <span class="math inline"><em>θ</em></span> of the linear controller such that</p>
+<p><br /><span class="math display"><em>θ</em><sup>*</sup> = <em>a</em><em>r</em><em>g</em>max<sub><em>θ</em></sub><em>R</em><sub><em>T</em></sub>(<em>θ</em>).</span><br /></p>
+<p>In this section, we directly use Bayesian optimization to solve this problem. We will use <a href="https://sheffieldml.github.io/GPyOpt/">GPyOpt</a> so we first define the objective function:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="im">import</span> mountain_car <span class="im">as</span> mc</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="im">import</span> GPyOpt</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" data-line-number="1">obj_func <span class="op">=</span> <span class="kw">lambda</span> x: mc.run_simulation(env, x)[<span class="dv">0</span>]</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2">objective <span class="op">=</span> GPyOpt.core.task.SingleObjective(obj_func)</a></code></pre></div>
+<p>For each set of parameter values of the linear controller we can run an episode of the simulator (that we fix to have a horizon of <span class="math inline"><em>T</em> = 500</span>) to generate the reward. Using as input the parameters of the controller and as outputs the rewards we can build a Gaussian process emulator of the reward.</p>
+<p>We start defining the input space, which is three-dimensional:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co">## --- We define the input space of the emulator</span></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb7-3" data-line-number="3">space<span class="op">=</span> [{<span class="st">&#39;name&#39;</span>:<span class="st">&#39;postion_parameter&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="fl">1.2</span>, <span class="op">+</span><span class="dv">1</span>)},</a>
+<a class="sourceLine" id="cb7-4" data-line-number="4">        {<span class="st">&#39;name&#39;</span>:<span class="st">&#39;velocity_parameter&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="dv">1</span><span class="op">/</span><span class="fl">0.07</span>, <span class="op">+</span><span class="dv">1</span><span class="op">/</span><span class="fl">0.07</span>)},</a>
+<a class="sourceLine" id="cb7-5" data-line-number="5">        {<span class="st">&#39;name&#39;</span>:<span class="st">&#39;constant&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="dv">1</span>, <span class="op">+</span><span class="dv">1</span>)}]</a>
+<a class="sourceLine" id="cb7-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb7-7" data-line-number="7">design_space <span class="op">=</span> GPyOpt.Design_space(space<span class="op">=</span>space)</a></code></pre></div>
+<p>Now we initizialize a Gaussian process emulator.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb8-1" data-line-number="1">model <span class="op">=</span> GPyOpt.models.GPModel(optimize_restarts<span class="op">=</span><span class="dv">5</span>, verbose<span class="op">=</span><span class="va">False</span>, exact_feval<span class="op">=</span><span class="va">True</span>, ARD<span class="op">=</span><span class="va">True</span>)</a></code></pre></div>
+<p>In Bayesian optimization an acquisition function is used to balance exploration and exploitation to evaluate new locations close to the optimum of the objective. In this notebook we select the expected improvement (EI). For further details have a look to the review paper of <a href="http://www.cs.ox.ac.uk/people/nando.defreitas/publications/BayesOptLoop.pdf">Shahriari et al (2015)</a>.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb9-1" data-line-number="1">aquisition_optimizer <span class="op">=</span> GPyOpt.optimization.AcquisitionOptimizer(design_space)</a>
+<a class="sourceLine" id="cb9-2" data-line-number="2">acquisition <span class="op">=</span> GPyOpt.acquisitions.AcquisitionEI(model, design_space, optimizer<span class="op">=</span>aquisition_optimizer)</a>
+<a class="sourceLine" id="cb9-3" data-line-number="3">evaluator <span class="op">=</span> GPyOpt.core.evaluators.Sequential(acquisition) <span class="co"># Collect points sequentially, no parallelization.</span></a></code></pre></div>
+<p>To initalize the model we start sampling some initial points (25) for the linear controler randomly.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="im">from</span> GPyOpt.experiment_design.random_design <span class="im">import</span> RandomDesign</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb11-1" data-line-number="1">n_initial_points <span class="op">=</span> <span class="dv">25</span></a>
+<a class="sourceLine" id="cb11-2" data-line-number="2">random_design <span class="op">=</span> RandomDesign(design_space)</a>
+<a class="sourceLine" id="cb11-3" data-line-number="3">initial_design <span class="op">=</span> random_design.get_samples(n_initial_points)</a></code></pre></div>
+<p>Before we start any optimization, lets have a look to the behavior of the car with the first of these initial points that we have selected randomly.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="im">import</span> numpy <span class="im">as</span> np</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb13-1" data-line-number="1">random_controller <span class="op">=</span> initial_design[<span class="dv">0</span>,:]</a>
+<a class="sourceLine" id="cb13-2" data-line-number="2">_, _, _, frames <span class="op">=</span> mc.run_simulation(env, np.atleast_2d(random_controller), render<span class="op">=</span><span class="va">True</span>)</a>
+<a class="sourceLine" id="cb13-3" data-line-number="3">anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Random linear controller&#39;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="im">from</span> IPython.core.display <span class="im">import</span> HTML</a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb15-1" data-line-number="1">HTML(anim.to_jshtml())</a></code></pre></div>
+<div class="figure">
+<div id="mountain-car-random-figure" class="figure-frame">
+<iframe src="../slides/diagrams/uq/mountain_car_random.html" width="100%" height="auto" allowtransparency="true" frameborder="0">
+</iframe>
+</div>
+<div id="mountain-car-random-magnify" class="magnify" onclick="magnifyFigure(&#39;mountain-car-random&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="mountain-car-random-caption" class="caption-frame">
+<p>Figure: Random linear controller for the Mountain car. It fails to move the car to the top of the mountain.</p>
+</div>
+</div>
+<p>As we can see the random linear controller does not manage to push the car to the top of the mountain. Now, let’s optimize the regret using Bayesian optimization and the emulator for the reward. We try 50 new parameters chosen by the EI.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb16-1" data-line-number="1">max_iter <span class="op">=</span> <span class="dv">50</span></a>
+<a class="sourceLine" id="cb16-2" data-line-number="2">bo <span class="op">=</span> GPyOpt.methods.ModularBayesianOptimization(model, design_space, objective, acquisition, evaluator, initial_design)</a>
+<a class="sourceLine" id="cb16-3" data-line-number="3">bo.run_optimization(max_iter <span class="op">=</span> max_iter )</a></code></pre></div>
+<p>Now we visualize the result for the best controller that we have found with Bayesian optimization.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb17-1" data-line-number="1">_, _, _, frames <span class="op">=</span> mc.run_simulation(env, np.atleast_2d(bo.x_opt), render<span class="op">=</span><span class="va">True</span>)</a>
+<a class="sourceLine" id="cb17-2" data-line-number="2">anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Best controller after 50 iterations of Bayesian optimization&#39;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb18-1" data-line-number="1">HTML(anim.to_jshtml())</a></code></pre></div>
+<div class="figure">
+<div id="mountain-car-similated-bayes-opt-figure" class="figure-frame">
+<iframe src="../slides/diagrams/uq/mountain_car_simulated.html" width="100%" height="auto" allowtransparency="true" frameborder="0">
+</iframe>
+</div>
+<div id="mountain-car-similated-bayes-opt-magnify" class="magnify" onclick="magnifyFigure(&#39;mountain-car-similated-bayes-opt&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="mountain-car-similated-bayes-opt-caption" class="caption-frame">
+<p>Figure: Mountain car simulator trained using Bayesian optimization and the simulator of the dynamics. Fifty iterations of Bayesian optimization are used to optimize the controler.</p>
+</div>
+</div>
+<p>he car can now make it to the top of the mountain! Emulating the reward function and using the EI helped as to find a linear controller that solves the problem.</p>
+<h2 id="data-efficient-emulation-edit">Data Efficient Emulation <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/mountain-car-data-efficient.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/mountain-car-data-efficient.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>In the previous section we solved the mountain car problem by directly emulating the reward but no considerations about the dynamics <span class="math inline">$\inputVector_{t+1} = \mappingFunction(\inputVector_{t},\textbf{u}_{t})$</span> of the system were made. Note that we had to run 75 episodes of 500 steps each to solve the problem, which required to call the simulator <span class="math inline">500 × 75 = 37500</span> times. In this section we will show how it is possible to reduce this number by building an emulator for <span class="math inline"><em>f</em></span> that can later be used to directly optimize the control.</p>
+<p>The inputs of the model for the dynamics are the velocity, the position and the value of the control so create this space accordingly.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="im">import</span> gym</a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb20-1" data-line-number="1">env <span class="op">=</span> gym.make(<span class="st">&#39;MountainCarContinuous-v0&#39;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="im">import</span> GPyOpt</a></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb22-1" data-line-number="1">space_dynamics <span class="op">=</span> [{<span class="st">&#39;name&#39;</span>:<span class="st">&#39;position&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:[<span class="op">-</span><span class="fl">1.2</span>, <span class="fl">+0.6</span>]},</a>
+<a class="sourceLine" id="cb22-2" data-line-number="2">                  {<span class="st">&#39;name&#39;</span>:<span class="st">&#39;velocity&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:[<span class="op">-</span><span class="fl">0.07</span>, <span class="fl">+0.07</span>]},</a>
+<a class="sourceLine" id="cb22-3" data-line-number="3">                  {<span class="st">&#39;name&#39;</span>:<span class="st">&#39;action&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:[<span class="op">-</span><span class="dv">1</span>, <span class="op">+</span><span class="dv">1</span>]}]</a>
+<a class="sourceLine" id="cb22-4" data-line-number="4">design_space_dynamics <span class="op">=</span> GPyOpt.Design_space(space<span class="op">=</span>space_dynamics)</a></code></pre></div>
+<p>The outputs are the velocity and the position. Indeed our model will capture the change in position and velocity on time. That is, we will model</p>
+<p><br /><span class="math display"><em>Δ</em><em>v</em><sub><em>t</em> + 1</sub> = <em>v</em><sub><em>t</em> + 1</sub> − <em>v</em><sub><em>t</em></sub></span><br /></p>
+<p><br /><span class="math display"><em>Δ</em><em>x</em><sub><em>t</em> + 1</sub> = <em>p</em><sub><em>t</em> + 1</sub> − <em>p</em><sub><em>t</em></sub></span><br /></p>
+<p>with Gaussian processes with prior mean <span class="math inline"><em>v</em><sub><em>t</em></sub></span> and <span class="math inline"><em>p</em><sub><em>t</em></sub></span> respectively. As a covariance function, we use a Matern52. We need therefore two models to capture the full dynamics of the system.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb23-1" data-line-number="1">position_model <span class="op">=</span> GPyOpt.models.GPModel(optimize_restarts<span class="op">=</span><span class="dv">5</span>, verbose<span class="op">=</span><span class="va">False</span>, exact_feval<span class="op">=</span><span class="va">True</span>, ARD<span class="op">=</span><span class="va">True</span>)</a>
+<a class="sourceLine" id="cb23-2" data-line-number="2">velocity_model <span class="op">=</span> GPyOpt.models.GPModel(optimize_restarts<span class="op">=</span><span class="dv">5</span>, verbose<span class="op">=</span><span class="va">False</span>, exact_feval<span class="op">=</span><span class="va">True</span>, ARD<span class="op">=</span><span class="va">True</span>)</a></code></pre></div>
+<p>Next, we sample some input parameters and use the simulator to compute the outputs. Note that in this case we are not running the full episodes, we are just using the simulator to compute <span class="math inline">$\inputVector_{t+1}$</span> given <span class="math inline">$\inputVector_{t}$</span> and <span class="math inline"><strong>u</strong><sub><em>t</em></sub></span>.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="im">import</span> numpy <span class="im">as</span> np</a>
+<a class="sourceLine" id="cb24-2" data-line-number="2"><span class="im">from</span> GPyOpt.experiment_design.random_design <span class="im">import</span> RandomDesign</a>
+<a class="sourceLine" id="cb24-3" data-line-number="3"><span class="im">import</span> mountain_car <span class="im">as</span> mc</a></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="co">### --- Random locations of the inputs</span></a>
+<a class="sourceLine" id="cb25-2" data-line-number="2">n_initial_points <span class="op">=</span> <span class="dv">500</span></a>
+<a class="sourceLine" id="cb25-3" data-line-number="3">random_design_dynamics <span class="op">=</span> RandomDesign(design_space_dynamics)</a>
+<a class="sourceLine" id="cb25-4" data-line-number="4">initial_design_dynamics <span class="op">=</span> random_design_dynamics.get_samples(n_initial_points)</a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="co">### --- Simulation of the (normalized) outputs</span></a>
+<a class="sourceLine" id="cb26-2" data-line-number="2">y <span class="op">=</span> np.zeros((initial_design_dynamics.shape[<span class="dv">0</span>], <span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb26-3" data-line-number="3"><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(initial_design_dynamics.shape[<span class="dv">0</span>]):</a>
+<a class="sourceLine" id="cb26-4" data-line-number="4">    y[i, :] <span class="op">=</span> mc.simulation(initial_design_dynamics[i, :])</a>
+<a class="sourceLine" id="cb26-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb26-6" data-line-number="6"><span class="co"># Normalize the data from the simulation</span></a>
+<a class="sourceLine" id="cb26-7" data-line-number="7">y_normalisation <span class="op">=</span> np.std(y, axis<span class="op">=</span><span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb26-8" data-line-number="8">y_normalised <span class="op">=</span> y<span class="op">/</span>y_normalisation</a></code></pre></div>
+<p>In general we might use much smarter strategies to design our emulation of the simulator. For example, we could use the variance of the predictive distributions of the models to collect points using uncertainty sampling, which will give us a better coverage of the space. For simplicity, we move ahead with the 500 randomly selected points.</p>
+<p>Now that we have a data set, we can update the emulators for the location and the velocity.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb27-1" data-line-number="1">position_model.updateModel(initial_design_dynamics, y[:, [<span class="dv">0</span>]], <span class="va">None</span>, <span class="va">None</span>)</a>
+<a class="sourceLine" id="cb27-2" data-line-number="2">velocity_model.updateModel(initial_design_dynamics, y[:, [<span class="dv">1</span>]], <span class="va">None</span>, <span class="va">None</span>)</a></code></pre></div>
+<p>We can now have a look to how the emulator and the simulator match. First, we show a contour plot of the car aceleration for each pair of can position and velocity. You can use the bar bellow to play with the values of the controler to compare the emulator and the simulator.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="im">from</span> IPython.html.widgets <span class="im">import</span> interact</a></code></pre></div>
+<p>We can see how the emulator is doing a fairly good job approximating the simulator. On the edges, however, it struggles to captures the dynamics of the simulator.</p>
+<p>Given some input parameters of the linear controlling, how do the dynamics of the emulator and simulator match? In the following figure we show the position and velocity of the car for the 500 time steps of an episode in which the parameters of the linear controller have been fixed beforehand. The value of the input control is also shown.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb29-1" data-line-number="1">controller_gains <span class="op">=</span> np.atleast_2d([<span class="dv">0</span>, <span class="fl">.6</span>, <span class="dv">1</span>])  <span class="co"># change the valus of the linear controller to observe the trayectories.</span></a></code></pre></div>
+<div class="figure">
+<div id="emu-sim-comparison-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/uq/emu_sim_comparison.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="emu-sim-comparison-magnify" class="magnify" onclick="magnifyFigure(&#39;emu-sim-comparison&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="emu-sim-comparison-caption" class="caption-frame">
+<p>Figure: Comparison between the mountain car simulator and the emulator.</p>
+</div>
+</div>
+<p>We now make explicit use of the emulator, using it to replace the simulator and optimize the linear controller. Note that in this optimization, we don’t need to query the simulator anymore as we can reproduce the full dynamics of an episode using the emulator. For illustrative purposes, in this example we fix the initial location of the car.</p>
+<p>We define the objective reward function in terms of the simulator.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="co">### --- Optimize control parameters with emulator</span></a>
+<a class="sourceLine" id="cb30-2" data-line-number="2">car_initial_location <span class="op">=</span> np.asarray([<span class="op">-</span><span class="fl">0.58912799</span>, <span class="dv">0</span>]) </a>
+<a class="sourceLine" id="cb30-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb30-4" data-line-number="4"><span class="co">### --- Reward objective function using the emulator</span></a>
+<a class="sourceLine" id="cb30-5" data-line-number="5">obj_func_emulator <span class="op">=</span> <span class="kw">lambda</span> x: mc.run_emulation([position_model, velocity_model], x, car_initial_location)[<span class="dv">0</span>]</a>
+<a class="sourceLine" id="cb30-6" data-line-number="6">objective_emulator <span class="op">=</span> GPyOpt.core.task.SingleObjective(obj_func_emulator)</a></code></pre></div>
+<p>And as before, we use Bayesian optimization to find the best possible linear controller.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="co">### --- Elements of the optimization that will use the multi-fidelity emulator</span></a>
+<a class="sourceLine" id="cb31-2" data-line-number="2">model <span class="op">=</span> GPyOpt.models.GPModel(optimize_restarts<span class="op">=</span><span class="dv">5</span>, verbose<span class="op">=</span><span class="va">False</span>, exact_feval<span class="op">=</span><span class="va">True</span>, ARD<span class="op">=</span><span class="va">True</span>)</a></code></pre></div>
+<p>The design space is the three continuous variables that make up the linear controller.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb32-1" data-line-number="1">space<span class="op">=</span> [{<span class="st">&#39;name&#39;</span>:<span class="st">&#39;linear_1&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="dv">1</span><span class="op">/</span><span class="fl">1.2</span>, <span class="op">+</span><span class="dv">1</span>)},</a>
+<a class="sourceLine" id="cb32-2" data-line-number="2">        {<span class="st">&#39;name&#39;</span>:<span class="st">&#39;linear_2&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="dv">1</span><span class="op">/</span><span class="fl">0.07</span>, <span class="op">+</span><span class="dv">1</span><span class="op">/</span><span class="fl">0.07</span>)},</a>
+<a class="sourceLine" id="cb32-3" data-line-number="3">        {<span class="st">&#39;name&#39;</span>:<span class="st">&#39;constant&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="dv">1</span>, <span class="op">+</span><span class="dv">1</span>)}]</a>
+<a class="sourceLine" id="cb32-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb32-5" data-line-number="5">design_space         <span class="op">=</span> GPyOpt.Design_space(space<span class="op">=</span>space)</a>
+<a class="sourceLine" id="cb32-6" data-line-number="6">aquisition_optimizer <span class="op">=</span> GPyOpt.optimization.AcquisitionOptimizer(design_space)</a>
+<a class="sourceLine" id="cb32-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb32-8" data-line-number="8">random_design <span class="op">=</span> RandomDesign(design_space)</a>
+<a class="sourceLine" id="cb32-9" data-line-number="9">initial_design <span class="op">=</span> random_design.get_samples(<span class="dv">25</span>)</a></code></pre></div>
+<p>We set the acquisition function to be expected improvement using <code>GPyOpt</code>.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb33-1" data-line-number="1">acquisition          <span class="op">=</span> GPyOpt.acquisitions.AcquisitionEI(model, design_space, optimizer<span class="op">=</span>aquisition_optimizer)</a>
+<a class="sourceLine" id="cb33-2" data-line-number="2">evaluator            <span class="op">=</span> GPyOpt.core.evaluators.Sequential(acquisition)</a></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb34-1" data-line-number="1">bo_emulator <span class="op">=</span> GPyOpt.methods.ModularBayesianOptimization(model, design_space, objective_emulator, acquisition, evaluator, initial_design)</a>
+<a class="sourceLine" id="cb34-2" data-line-number="2">bo_emulator.run_optimization(max_iter<span class="op">=</span><span class="dv">50</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb35-1" data-line-number="1">_, _, _, frames <span class="op">=</span> mc.run_simulation(env, np.atleast_2d(bo_emulator.x_opt), render<span class="op">=</span><span class="va">True</span>)</a>
+<a class="sourceLine" id="cb35-2" data-line-number="2">anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Best controller using the emulator of the dynamics&#39;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb36-1" data-line-number="1"><span class="im">from</span> IPython.core.display <span class="im">import</span> HTML</a></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb37-1" data-line-number="1">HTML(anim.to_jshtml())</a></code></pre></div>
+<div class="figure">
+<div id="mountain-car-emulated-figure" class="figure-frame">
+<iframe src="../slides/diagrams/uq/mountain_car_emulated.html" width="100%" height="auto" allowtransparency="true" frameborder="0">
+</iframe>
+</div>
+<div id="mountain-car-emulated-magnify" class="magnify" onclick="magnifyFigure(&#39;mountain-car-emulated&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="mountain-car-emulated-caption" class="caption-frame">
+<p>Figure: Mountain car controller learnt through emulation. Here 500 calls to the simulator are used to fit the controller rather than 37,500 calls to the simulator required in the standard learning.</p>
+</div>
+</div>
+<p>And the problem is again solved, but in this case we have replaced the simulator of the car dynamics by a Gaussian process emulator that we learned by calling the simulator only 500 times. Compared to the 37500 calls that we needed when applying Bayesian optimization directly on the simulator this is a great gain.</p>
+<h2 id="multi-fidelity-emulation-edit">Multi-Fidelity Emulation <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/mountain-car-multi-fidelity.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/mountain-car-multi-fidelity.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>In some scenarios we have simulators of the same environment that have different fidelities, that is that reflect with different level of accuracy the dynamics of the real world. Running simulations of the different fidelities also have a different cost: hight fidelity simulations are more expensive the cheaper ones. If we have access to these simulators we can combine high and low fidelity simulations under the same model.</p>
+<p>So let’s assume that we have two simulators of the mountain car dynamics, one of high fidelity (the one we have used) and another one of low fidelity. The traditional approach to this form of multi-fidelity emulation is to assume that</p>
+<p><br /><span class="math display">$$\mappingFunction_i\left(\inputVector\right) = \rho\mappingFunction_{i-1}\left(\inputVector\right) + \delta_i\left(\inputVector \right)$$</span><br /></p>
+<p>where <span class="math inline">$\mappingFunction_{i-1}\left(\inputVector\right)$</span> is a low fidelity simulation of the problem of interest and <span class="math inline">$\mappingFunction_i\left(\inputVector\right)$</span> is a higher fidelity simulation. The function <span class="math inline">$\delta_i\left(\inputVector \right)$</span> represents the difference between the lower and higher fidelity simulation, which is considered additive. The additive form of this covariance means that if <span class="math inline">$\mappingFunction_{0}\left(\inputVector\right)$</span> and <span class="math inline">$\left\{\delta_i\left(\inputVector \right)\right\}_{i=1}^m$</span> are all Gaussian processes, then the process over all fidelities of simuation will be a joint Gaussian process.</p>
+<p>But with Deep Gaussian processes we can consider the form</p>
+<p><br /><span class="math display">$$\mappingFunction_i\left(\inputVector\right) = \mappingFunctionTwo_{i}\left(\mappingFunction_{i-1}\left(\inputVector\right)\right) + \delta_i\left(\inputVector \right),$$</span><br /></p>
+<p>where the low fidelity representation is non linearly transformed by <span class="math inline">$\mappingFunctionTwo(\cdot)$</span> before use in the process. This is the approach taken in <span class="citation" data-cites="Perdikaris:multifidelity17">Perdikaris et al. (2017)</span>. But once we accept that these models can be composed, a highly flexible framework can emerge. A key point is that the data enters the model at different levels, and represents different aspects. For example these correspond to the two fidelities of the mountain car simulator.</p>
+<p>We start by sampling both of them at 250 random input locations.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb38-1" data-line-number="1"><span class="im">import</span> gym</a></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb39-1" data-line-number="1">env <span class="op">=</span> gym.make(<span class="st">&#39;MountainCarContinuous-v0&#39;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="im">import</span> GPyOpt</a></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="co">### --- Collect points from low and high fidelity simulator --- </span><span class="al">###</span></a>
+<a class="sourceLine" id="cb41-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb41-3" data-line-number="3">space <span class="op">=</span> GPyOpt.Design_space([</a>
+<a class="sourceLine" id="cb41-4" data-line-number="4">        {<span class="st">&#39;name&#39;</span>:<span class="st">&#39;position&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="fl">1.2</span>, <span class="op">+</span><span class="dv">1</span>)},</a>
+<a class="sourceLine" id="cb41-5" data-line-number="5">        {<span class="st">&#39;name&#39;</span>:<span class="st">&#39;velocity&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="fl">0.07</span>, <span class="fl">+0.07</span>)},</a>
+<a class="sourceLine" id="cb41-6" data-line-number="6">        {<span class="st">&#39;name&#39;</span>:<span class="st">&#39;action&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="dv">1</span>, <span class="op">+</span><span class="dv">1</span>)}])</a>
+<a class="sourceLine" id="cb41-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb41-8" data-line-number="8">n_points <span class="op">=</span> <span class="dv">250</span></a>
+<a class="sourceLine" id="cb41-9" data-line-number="9">random_design <span class="op">=</span> GPyOpt.experiment_design.RandomDesign(space)</a>
+<a class="sourceLine" id="cb41-10" data-line-number="10">x_random <span class="op">=</span> random_design.get_samples(n_points)</a></code></pre></div>
+<p>Next, we evaluate the high and low fidelity simualtors at those locations.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="im">import</span> numpy <span class="im">as</span> np</a>
+<a class="sourceLine" id="cb42-2" data-line-number="2"><span class="im">import</span> mountain_car <span class="im">as</span> mc</a></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb43-1" data-line-number="1">d_position_hf <span class="op">=</span> np.zeros((n_points, <span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb43-2" data-line-number="2">d_velocity_hf <span class="op">=</span> np.zeros((n_points, <span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb43-3" data-line-number="3">d_position_lf <span class="op">=</span> np.zeros((n_points, <span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb43-4" data-line-number="4">d_velocity_lf <span class="op">=</span> np.zeros((n_points, <span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb43-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb43-6" data-line-number="6"><span class="co"># --- Collect high fidelity points</span></a>
+<a class="sourceLine" id="cb43-7" data-line-number="7"><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, n_points):</a>
+<a class="sourceLine" id="cb43-8" data-line-number="8">    d_position_hf[i], d_velocity_hf[i] <span class="op">=</span> mc.simulation(x_random[i, :])</a>
+<a class="sourceLine" id="cb43-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb43-10" data-line-number="10"><span class="co"># --- Collect low fidelity points  </span></a>
+<a class="sourceLine" id="cb43-11" data-line-number="11"><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, n_points):</a>
+<a class="sourceLine" id="cb43-12" data-line-number="12">    d_position_lf[i], d_velocity_lf[i] <span class="op">=</span> mc.low_cost_simulation(x_random[i, :])</a></code></pre></div>
+<p>It is time to build the multi-fidelity model for both the position and the velocity.</p>
+<p>As we did in the previous section we use the emulator to optimize the simulator. In this case we use the high fidelity output of the emulator.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="co">### --- Optimize controller parameters </span></a>
+<a class="sourceLine" id="cb44-2" data-line-number="2">obj_func <span class="op">=</span> <span class="kw">lambda</span> x: mc.run_simulation(env, x)[<span class="dv">0</span>]</a>
+<a class="sourceLine" id="cb44-3" data-line-number="3">obj_func_emulator <span class="op">=</span> <span class="kw">lambda</span> x: mc.run_emulation([position_model, velocity_model], x, car_initial_location)[<span class="dv">0</span>]</a>
+<a class="sourceLine" id="cb44-4" data-line-number="4">objective_multifidelity <span class="op">=</span> GPyOpt.core.task.SingleObjective(obj_func)</a></code></pre></div>
+<p>And we optimize using Bayesian optimzation.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb45-1" data-line-number="1"><span class="im">from</span> GPyOpt.experiment_design.random_design <span class="im">import</span> RandomDesign</a></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb46-1" data-line-number="1">model <span class="op">=</span> GPyOpt.models.GPModel(optimize_restarts<span class="op">=</span><span class="dv">5</span>, verbose<span class="op">=</span><span class="va">False</span>, exact_feval<span class="op">=</span><span class="va">True</span>, ARD<span class="op">=</span><span class="va">True</span>)</a>
+<a class="sourceLine" id="cb46-2" data-line-number="2">space<span class="op">=</span> [{<span class="st">&#39;name&#39;</span>:<span class="st">&#39;linear_1&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="dv">1</span><span class="op">/</span><span class="fl">1.2</span>, <span class="op">+</span><span class="dv">1</span>)},</a>
+<a class="sourceLine" id="cb46-3" data-line-number="3">        {<span class="st">&#39;name&#39;</span>:<span class="st">&#39;linear_2&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="dv">1</span><span class="op">/</span><span class="fl">0.07</span>, <span class="op">+</span><span class="dv">1</span><span class="op">/</span><span class="fl">0.07</span>)},</a>
+<a class="sourceLine" id="cb46-4" data-line-number="4">        {<span class="st">&#39;name&#39;</span>:<span class="st">&#39;constant&#39;</span>, <span class="st">&#39;type&#39;</span>:<span class="st">&#39;continuous&#39;</span>, <span class="st">&#39;domain&#39;</span>:(<span class="op">-</span><span class="dv">1</span>, <span class="op">+</span><span class="dv">1</span>)}]</a>
+<a class="sourceLine" id="cb46-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb46-6" data-line-number="6">design_space <span class="op">=</span> GPyOpt.Design_space(space<span class="op">=</span>space)</a>
+<a class="sourceLine" id="cb46-7" data-line-number="7">aquisition_optimizer <span class="op">=</span> GPyOpt.optimization.AcquisitionOptimizer(design_space)</a>
+<a class="sourceLine" id="cb46-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb46-9" data-line-number="9">n_initial_points <span class="op">=</span> <span class="dv">25</span></a>
+<a class="sourceLine" id="cb46-10" data-line-number="10">random_design <span class="op">=</span> RandomDesign(design_space)</a>
+<a class="sourceLine" id="cb46-11" data-line-number="11">initial_design <span class="op">=</span> random_design.get_samples(n_initial_points)</a>
+<a class="sourceLine" id="cb46-12" data-line-number="12">acquisition <span class="op">=</span> GPyOpt.acquisitions.AcquisitionEI(model, design_space, optimizer<span class="op">=</span>aquisition_optimizer)</a>
+<a class="sourceLine" id="cb46-13" data-line-number="13">evaluator <span class="op">=</span> GPyOpt.core.evaluators.Sequential(acquisition)</a></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb47-1" data-line-number="1">bo_multifidelity <span class="op">=</span> GPyOpt.methods.ModularBayesianOptimization(model, design_space, objective_multifidelity, acquisition, evaluator, initial_design)</a>
+<a class="sourceLine" id="cb47-2" data-line-number="2">bo_multifidelity.run_optimization(max_iter<span class="op">=</span><span class="dv">50</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb48-1" data-line-number="1">_, _, _, frames <span class="op">=</span> mc.run_simulation(env, np.atleast_2d(bo_multifidelity.x_opt), render<span class="op">=</span><span class="va">True</span>)</a>
+<a class="sourceLine" id="cb48-2" data-line-number="2">anim<span class="op">=</span>mc.animate_frames(frames, <span class="st">&#39;Best controller with multi-fidelity emulator&#39;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb49-1" data-line-number="1"><span class="im">from</span> IPython.core.display <span class="im">import</span> HTML</a></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb50-1" data-line-number="1">HTML(anim.to_jshtml())</a></code></pre></div>
+<h3 id="best-controller-with-multi-fidelity-emulator">Best Controller with Multi-Fidelity Emulator</h3>
+<div class="figure">
+<div id="mountain-car-multi-fidelity-figure" class="figure-frame">
+<iframe src="../slides/diagrams/uq/mountain_car_multi_fidelity.html" width="100%" height="auto" allowtransparency="true" frameborder="0">
+</iframe>
+</div>
+<div id="mountain-car-multi-fidelity-magnify" class="magnify" onclick="magnifyFigure(&#39;mountain-car-multi-fidelity&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="mountain-car-multi-fidelity-caption" class="caption-frame">
+<p>Figure: Mountain car learnt with multi-fidelity model. Here 250 observations of the high fidelity simulator and 250 observations of the low fidelity simulator are used to learn the controller.</p>
+</div>
+</div>
+<p>And problem solved! We see how the problem is also solved with 250 observations of the high fidelity simulator and 250 of the low fidelity simulator.</p>
+<h1 id="references" class="unnumbered">References</h1>
+<div id="refs" class="references">
+<div id="ref-Feurer:automl15">
+<p>Feurer, Matthias, Aaron Klein, Katharina Eggensperger, Jost Tobias Springenberg, Manuel Blum, and Frank Hutter. n.d. “Efficient and Robust Automated Machine Learning.” In <em>Advances in Neural Information Processing Systems</em>.</p>
+</div>
+<div id="ref-Lawrence:drl17">
+<p>Lawrence, Neil D. 2017. “Data Readiness Levels.” arXiv.</p>
+</div>
+<div id="ref-Maxwell:governors1867">
+<p>Maxwell, James Clerk. 1867. “On Governors.” <em>Proceedings of the Royal Society of London</em> 16. The Royal Society: 270–83. <a href="http://www.jstor.org/stable/112510" class="uri">http://www.jstor.org/stable/112510</a>.</p>
+</div>
+<div id="ref-Perdikaris:multifidelity17">
+<p>Perdikaris, P., M. Raissi, A. Damianou, N. D. Lawrence, and G. E. Karniadakis. 2017. “Nonlinear Information Fusion Algorithms for Data-Efficient Multi-Fidelity Modelling.” <em>Proceedings of the Royal Society of London A: Mathematical, Physical and Engineering Sciences</em> 473 (2198). The Royal Society. <a href="https://doi.org/10.1098/rspa.2016.0751" class="uri">https://doi.org/10.1098/rspa.2016.0751</a>.</p>
+</div>
+<div id="ref-Popper:conjectures63">
+<p>Popper, Karl R. 1963. <em>Conjectures and Refutations: The Growth of Scientific Knowledge</em>. London: Routledge.</p>
+</div>
+<div id="ref-Sculley:debt15">
+<p>Sculley, D., Gary Holt, Daniel Golovin, Eugene Davydov, Todd Phillips, Dietmar Ebner, Vinay Chaudhary, Michael Young, Jean-François Crespo, and Dan Dennison. 2015. “Hidden Technical Debt in Machine Learning Systems.” In <em>Advances in Neural Information Processing Systems 28</em>, edited by Corinna Cortes, Neil D. Lawrence, Daniel D. Lee, Masashi Sugiyama, and Roman Garnett, 2503–11. Curran Associates, Inc. <a href="http://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems.pdf" class="uri">http://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems.pdf</a>.</p>
+</div>
+<div id="ref-Taigman:deepface14">
+<p>Taigman, Yaniv, Ming Yang, Marc’Aurelio Ranzato, and Lior Wolf. 2014. “DeepFace: Closing the Gap to Human-Level Performance in Face Verification.” In <em>Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition</em>. <a href="https://doi.org/10.1109/CVPR.2014.220" class="uri">https://doi.org/10.1109/CVPR.2014.220</a>.</p>
+</div>
+<div id="ref-Wiener:cybernetics48">
+<p>Wiener, Norbert. 1948. <em>Cybernetics: Control and Communication in the Animal and the Machine</em>. Cambridge, MA: MIT Press.</p>
+</div>
+</div>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>We can also become constrained by our tribal thinking, just as each of the other groups can.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>This is related to challenges of machine learning and technical debt <span class="citation" data-cites="Sculley:debt15">(Sculley et al. 2015)</span>, although we are trying to frame the solution here rather than the problem.<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p><a href="http://inverseprobability.com/2017/01/12/data-readiness-levels">Data Readiness Levels</a> <span class="citation" data-cites="Lawrence:drl17">(Lawrence 2017)</span> are an attempt to develop a language around data quality that can bridge the gap between technical solutions and decision makers such as managers and project planners. The are inspired by Technology Readiness Levels which attempt to quantify the readiness of technologies for deployment.<a href="#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p>Emulation, or surrogate modelling, is one very promising approach to forming such a hypervisor. Emulators are models we fit to other models, often simulations, but the could also be other machine learning models. These models operate at the meta-level, not on the systems directly. This means they can be used to model how the sub-systems interact. As well as emulators we should consider real time dash boards, anomaly detection, mutlivariate analysis, data visualization and classical statistical approaches for hypervision of our deployed systems.<a href="#fnref4" class="footnote-back">↩</a></p></li>
+<li id="fn5"><p>These approaches are one area of focus for my own team’s reasearch. A data first architecture is a prerequisite for efficient deployment of machine learning systems.<a href="#fnref5" class="footnote-back">↩</a></p></li>
+</ol>
+</section>
+
+
