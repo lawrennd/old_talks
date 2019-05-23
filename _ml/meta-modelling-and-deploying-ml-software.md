@@ -28,8 +28,15 @@ transition: None
 \include{_ai/includes/ml-systems-design-long.md}
 
 \include{_uq/includes/uncertainty-quantification.md}
+
+\include{_uq/includes/emukit-playground.md}
+\include{_uq/includes/emukit-software.md}
+
 \include{_deepgp/includes/deep-nn-gp.md}
 \include{_deepgp/includes/deep-olympic.md}
+
+\include{_ml/includes/mxfusion-software.md}
+
 
 \subsection{Conclusion}
 

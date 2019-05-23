@@ -7,4 +7,8 @@ bibliography: uncertainty-quantification.bib
 
 
 \include{talk-macros.tex}
-\include{./_uq/includes/uncertainty-quantification.md}
+\include{_uq/includes/uncertainty-quantification.md}
+
+\thanks
+
+\references

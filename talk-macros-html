@@ -86,7 +86,7 @@ Store Caption: \storeCaption
 \define{\includediagramclass{filename}{width}{class}}{<object class="\class" width="\width" data="\filename.svg"></object>}
 \define{\includehtml{filename}{width}{height}}{<iframe src="\filename" width="\width" height="\height" allowtransparency="true" frameborder="0">
 </iframe>}
-\define{\includehtml{filename}{width}{height}}{<iframe src="\filename" width="\width" height="\height" allowtransparency="true" frameborder="0">
+\define{\includehtml{filename}{width}{height}}{<iframe src="\filename" width="800px" height="600px" allowtransparency="true" frameborder="0">
 </iframe>}
 
 
