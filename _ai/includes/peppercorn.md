@@ -13,7 +13,9 @@
 
 \figure{\includeyoutube{1y2UKz47gew}{800px}{600px}}{A peppercorn is a system design failure which is not a bug, but a conformance to design specification that causes problems when the system is deployed in the real world with mischevious and adversarial actors.}{peppercorn-siri}
 
-\notes{Asking Siri "What is a trillion to the power of a thousand minus one?" leads to a 30 minute response consisting of only 9s. I found this out because my nine year old grabbed my phone and did it. The only way to stop Siri was to force closure. This is an interesting example of a system feature that's *not* a bug, in fact it requires clever processing from Wolfram Alpha. But it's an unexpected result from the system performing correctly.}
+\notes{Asking Siri "What is a trillion to the power of a thousand minus one?" leads to a 30 minute response[^fixed] consisting of only 9s. I found this out because my nine year old grabbed my phone and did it. The only way to stop Siri was to force closure. This is an interesting example of a system feature that's *not* a bug, in fact it requires clever processing from Wolfram Alpha. But it's an unexpected result from the system performing correctly.
+
+[^fixed]: Apple has fixed this issue so that Siri no longer does this.}
 
 \notes{This challenge of facing a circumstance that was unenvisaged in design but has consequences in deployment becomes far larger when the environment is uncontrolled. Or in the extreme case, where actions of the intelligent system effect the wider environment and change it.}
 
