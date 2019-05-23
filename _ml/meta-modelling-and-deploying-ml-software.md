@@ -32,8 +32,8 @@ transition: None
 <!--\section{The Three Ds of ML Systems Design}
 \include{_ml/includes/the-3ds-of-ml-systems-design.md}-->
 \include{_uq/includes/uncertainty-quantification.md}
-
-\include{_deepgp/includes/deep-gaussian-processes.md}
+\include{_deepgp/includes/deep-nn-gp.md}
+\include{_deepgp/includes/deep-olympic.md}
 
 
 \thanks
