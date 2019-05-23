@@ -289,7 +289,7 @@ categories:
 <div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb15-1" data-line-number="1">HTML(anim.to_jshtml())</a></code></pre></div>
 <div class="figure">
 <div id="mountain-car-random-figure" class="figure-frame">
-<iframe src="../slides/diagrams/uq/mountain_car_random.html" width="100%" height="100%" allowtransparency="true" frameborder="0">
+<iframe src="../slides/diagrams/uq/mountain_car_random.html" width="800px" height="600px" allowtransparency="true" frameborder="0">
 </iframe>
 </div>
 <div id="mountain-car-random-magnify" class="magnify" onclick="magnifyFigure(&#39;mountain-car-random&#39;)">
@@ -309,7 +309,7 @@ categories:
 <div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb18-1" data-line-number="1">HTML(anim.to_jshtml())</a></code></pre></div>
 <div class="figure">
 <div id="mountain-car-similated-bayes-opt-figure" class="figure-frame">
-<iframe src="../slides/diagrams/uq/mountain_car_simulated.html" width="100%" height="100%" allowtransparency="true" frameborder="0">
+<iframe src="../slides/diagrams/uq/mountain_car_simulated.html" width="800px" height="600px" allowtransparency="true" frameborder="0">
 </iframe>
 </div>
 <div id="mountain-car-similated-bayes-opt-magnify" class="magnify" onclick="magnifyFigure(&#39;mountain-car-similated-bayes-opt&#39;)">
@@ -405,7 +405,7 @@ categories:
 <div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb37-1" data-line-number="1">HTML(anim.to_jshtml())</a></code></pre></div>
 <div class="figure">
 <div id="mountain-car-emulated-figure" class="figure-frame">
-<iframe src="../slides/diagrams/uq/mountain_car_emulated.html" width="100%" height="100%" allowtransparency="true" frameborder="0">
+<iframe src="../slides/diagrams/uq/mountain_car_emulated.html" width="800px" height="600px" allowtransparency="true" frameborder="0">
 </iframe>
 </div>
 <div id="mountain-car-emulated-magnify" class="magnify" onclick="magnifyFigure(&#39;mountain-car-emulated&#39;)">
@@ -483,7 +483,7 @@ categories:
 <h3 id="best-controller-with-multi-fidelity-emulator">Best Controller with Multi-Fidelity Emulator</h3>
 <div class="figure">
 <div id="mountain-car-multi-fidelity-figure" class="figure-frame">
-<iframe src="../slides/diagrams/uq/mountain_car_multi_fidelity.html" width="100%" height="100%" allowtransparency="true" frameborder="0">
+<iframe src="../slides/diagrams/uq/mountain_car_multi_fidelity.html" width="800px" height="600px" allowtransparency="true" frameborder="0">
 </iframe>
 </div>
 <div id="mountain-car-multi-fidelity-magnify" class="magnify" onclick="magnifyFigure(&#39;mountain-car-multi-fidelity&#39;)">
@@ -499,7 +499,7 @@ categories:
 <div class="figure">
 <div id="emukit-playground-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="negate" src="../slides/diagrams/uq/emukit-playground.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="../slides/diagrams/uq/emukit-playground.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 <div id="emukit-playground-magnify" class="magnify" onclick="magnifyFigure(&#39;emukit-playground&#39;)">
@@ -889,34 +889,6 @@ _ = m_clean.optimize()</code></pre>
 <p>Figure: The MXFusion software.</p>
 </div>
 </div>
-<h2 id="mxfusion">MxFusion</h2>
-<h2 id="why-another-framework">Why another framework?</h2>
-<h2 id="key-requirements">Key Requirements</h2>
-<p>Specialized inference methods + models, without requiring users to reimplement nor understand them every time. Leverage expert knowledge. Efficient inference, flexible framework. Existing frameworks either did one or the other: flexible, or efficient.</p>
-<h2 id="what-does-it-look-like">What does it look like?</h2>
-<p><strong>Modelling</strong></p>
-<p><strong>Inference</strong></p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb75-1" data-line-number="1">m <span class="op">=</span> Model()</a>
-<a class="sourceLine" id="cb75-2" data-line-number="2">m.mu <span class="op">=</span> Variable()</a>
-<a class="sourceLine" id="cb75-3" data-line-number="3">m.s <span class="op">=</span> Variable(transformation<span class="op">=</span>PositiveTransformation())</a>
-<a class="sourceLine" id="cb75-4" data-line-number="4">m.Y <span class="op">=</span> Normal.define_variable(mean<span class="op">=</span>m.mu, variance<span class="op">=</span>m.s)</a></code></pre></div>
-<ul>
-<li>Variable</li>
-<li>Distribution</li>
-<li><p>Function</p></li>
-<li><code>log_pdf</code></li>
-<li><p><code>draw_samples</code></p></li>
-<li>Variational Inference</li>
-<li><p>MCMC Sampling (<em>soon</em>) Built on MXNet Gluon (imperative code, not static graph)</p></li>
-</ul>
-<div class="sourceCode" id="cb76"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb76-1" data-line-number="1">infr <span class="op">=</span> GradBasedInference(inference_algorithm<span class="op">=</span>MAP(model<span class="op">=</span>m, observed<span class="op">=</span>[m.Y]))</a>
-<a class="sourceLine" id="cb76-2" data-line-number="2">infr.run(Y<span class="op">=</span>data)</a></code></pre></div>
-<ul>
-<li>Model + Inference together form building blocks.
-<ul>
-<li>Just doing modular modeling with universal inference doesn’t really scale, need specialized inference methods for specialized modelling objects like non-parametrics.</li>
-</ul></li>
-</ul>
 <h2 id="conclusion">Conclusion</h2>
 <p>Machine learning models are deployed as components in an interacting system to achieve modern AI. Some of those components are inspired by a mechanistic understanding of the world around us (e.g. economic or physical understanding).</p>
 <p>Meta modelling involves fiting machine learning models to existing systems to improve speed and interpretability.</p>

@@ -35,7 +35,7 @@ transition: None
 \include{_deepgp/includes/deep-nn-gp.md}
 \include{_deepgp/includes/deep-olympic.md}
 
-\include{_ml/includes/mxfusion-software.md}
+\include{_ml/includes/mxfusion-intro.md}
 
 
 \subsection{Conclusion}

@@ -13,7 +13,7 @@
 
 \newslide{Emukit Playground}
 
-\figure{\includepng{../slides/diagrams/uq/emukit-playground}{80%}{negate}}{Emukit playground is a tutorial for understanding the simulation/emulation relationship. <https://amzn.github.io/emukit-playground/>}{emukit-playground}
+\figure{\includepng{../slides/diagrams/uq/emukit-playground}{80%}}{Emukit playground is a tutorial for understanding the simulation/emulation relationship. <https://amzn.github.io/emukit-playground/>}{emukit-playground}
 
 \newslide{Emukit Playground}
 
