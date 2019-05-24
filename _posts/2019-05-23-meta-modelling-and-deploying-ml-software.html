@@ -813,6 +813,7 @@ _ = m_clean.optimize()</code></pre>
 </div>
 <p>The pinball plot shows the flow of any input ball through the deep Gaussian process. In a pinball plot a series of vertical parallel lines would indicate a purely linear function. For the olypmic marathon data we can see the first layer begins to shift from input towards the right. Note it also does so with some uncertainty (indicated by the shaded backgrounds). The second layer has less uncertainty, but bunches the inputs more strongly to the right. This input layer of uncertainty, followed by a layer that pushes inputs to the right is what gives the heteroschedastic noise.</p>
 <h2 id="mxfusion-modular-probabilistic-programming-on-mxnet-edit">MXFusion: Modular Probabilistic Programming on MXNet <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/mxfusion-intro.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/mxfusion-intro.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>One challenge for practitioners in Gaussian processes, is flexible software that allows the construction of the relevant GP modle. With this in mind, the Amazon Cambridge team has developed MXFusion. It is a modular probabilistic programming language focussed on efficient implementation of hybrid GP-neural network models, but with additional probabilistic programming capabilities.</p>
 <div class="figure">
 <div id="mxfusion-software-figure" class="figure-frame">
 <div class="centered" style="">
@@ -826,6 +827,7 @@ _ = m_clean.optimize()</code></pre>
 <p>Figure: MXFusion is a probabilistic programming language targeted specifically at Gaussian process models and combining them with probaiblistic neural network. It is available through the MIT license and we welcome contributions throguh the Github repository <a href="https://github.com/amzn/MXFusion" class="uri">https://github.com/amzn/MXFusion</a>.</p>
 </div>
 </div>
+<p>We developed the framework for greater ease of transitioning models from ‘science’ to ‘production’, our aim was to have code that could be created by scientists, but deployed in our systems through solutions such as AWS SageMaker.</p>
 <div class="figure">
 <div id="mxfusion-software-logo-figure" class="figure-frame">
 <table>

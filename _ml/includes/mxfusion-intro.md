@@ -4,7 +4,12 @@
 
 \subsection{MXFusion: Modular Probabilistic Programming on MXNet}
 
+\notes{One challenge for practitioners in Gaussian processes, is flexible software that allows the construction of the relevant GP modle. With this in mind, the Amazon Cambridge team has developed MXFusion. It is a modular probabilistic programming language focussed on efficient implementation of hybrid GP-neural network models, but with additional probabilistic programming capabilities.} 
+
 \figure{\includepng{../slides/diagrams/ml/mxfusion}{70%}}{MXFusion is a probabilistic programming language targeted specifically at Gaussian process models and combining them with probaiblistic neural network. It is available through the MIT license and we welcome contributions throguh the Github repository <https://github.com/amzn/MXFusion>.}{mxfusion-software}
+
+\notes{We developed the framework for greater ease of transitioning models from 'science' to 'production', our aim was to have code that could be created by scientists, but deployed in our systems through solutions such as AWS SageMaker.}
+
 
 \slides{\aligncenter{<https://github.com/amzn/MXFusion>}}
 
