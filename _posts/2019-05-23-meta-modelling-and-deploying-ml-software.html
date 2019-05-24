@@ -537,6 +537,11 @@ categories:
 </div>
 </div>
 <p>The aim is to provide a suite where different approaches to emulation are assimilated under one roof. The current version of Emukit includes <em>multi-fidelity emulation</em> for build surrogate models when data is obtained from multiple information sources that have different fidelity and/or cost; <em>Bayesian optimisation</em> for optimising physical experiments and tune parameters of machine learning algorithms or other computational simulations; <em>experimental design and active learning</em>: design the most informative experiments and perform active learning with machine learning models; <em>sensitivity analysis</em>: analyse the influence of inputs on the outputs of a given system; and <em>Bayesian quadrature</em>: efficiently compute the integrals of functions that are expensive to evaluate.</p>
+<p>{For monitoring systems in production, emulation needn’t just be about simulator models. What we envisage, is that even data driven models could be emulated. This is important for understanding system behaviour, how the different components are interconnected. This drives the notion of the <em>information dynamics</em> of the machine learning system. What is the effect of one particular intervention in the wider system? One way of answering this is through emulation. But it requires that our machine learning models (and our simulators) are deployed in an environment where emulation can be automatically deployed. The resulting system would allow us to monitor the downstream effects of indivdiual decision making on the wider system.</p>
+<p>You can also check my blog post on <a href="http://inverseprobability.com/2016/11/29/new-directions-in-kernels-and-gaussian-processes">“New Directions in Kernels and Gaussian Processes”</a></p>
+<h1 id="deep-gaussian-processes">Deep Gaussian Processes</h1>
+<p>One challenge is developing flexible enough models to perform the emulation that also propagate uncertainty through the model. One candidate set of models for this challenge is <em>deep Gaussian processes</em> (DGPs). For the remainder of these notes we introduce the theory behind DGPs.</p>
+<p>While there are some difficulties in algorithmically implementing these algorithms at scale, they are mathematically far simpler than the equivalent neural network models, and perhaps as a result offer greater promise for theoretical understanding of deep learning <span class="citation" data-cites="Dunlop:deep2017">(see e.g. Dunlop et al., n.d.)</span>.</p>
 <div class="sourceCode" id="cb51"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb51-1" data-line-number="1"><span class="im">import</span> teaching_plots <span class="im">as</span> plot</a></code></pre></div>
 <div class="figure">
 <div id="deep-nn-bottleneck-figure" class="figure-frame">
@@ -850,9 +855,12 @@ _ = m_clean.optimize()</code></pre>
 <h2 id="conclusion">Conclusion</h2>
 <p>Machine learning models are deployed as components in an interacting system to achieve modern AI. Some of those components are inspired by a mechanistic understanding of the world around us (e.g. economic or physical understanding).</p>
 <p>Meta modelling involves fiting machine learning models to existing systems to improve speed and interpretability.</p>
-<p>Deep Gaussian processes are a flexible approach to meta modelling.</p>
+<p>Deep Gaussian processes are a flexible approach to meta modelling, which provide the necessary uncertainty estimates and the potential for being more mathematically tractable.</p>
 <h1 id="references" class="unnumbered">References</h1>
 <div id="refs" class="references">
+<div id="ref-Dunlop:deep2017">
+<p>Dunlop, Matthew M., Mark A. Girolami, Andrew M. Stuart, and Aretha L. Teckentrup. n.d. “How Deep Are Deep Gaussian Processes?” <em>Journal of Machine Learning Research</em> 19 (54): 1–46. <a href="http://jmlr.org/papers/v19/18-015.html" class="uri">http://jmlr.org/papers/v19/18-015.html</a>.</p>
+</div>
 <div id="ref-Perdikaris:multifidelity17">
 <p>Perdikaris, P., M. Raissi, A. Damianou, N. D. Lawrence, and G. E. Karniadakis. 2017. “Nonlinear Information Fusion Algorithms for Data-Efficient Multi-Fidelity Modelling.” <em>Proceedings of the Royal Society of London A: Mathematical, Physical and Engineering Sciences</em> 473 (2198). The Royal Society. <a href="https://doi.org/10.1098/rspa.2016.0751" class="uri">https://doi.org/10.1098/rspa.2016.0751</a>.</p>
 </div>

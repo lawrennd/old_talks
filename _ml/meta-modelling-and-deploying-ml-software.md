@@ -26,6 +26,7 @@ transition: None
 \include{_ai/includes/intelligent-system-paolo.md}
 \include{_ml/includes/deep-learning-overview.md}
 
+
 \include{_supply-chain/includes/containerisation.md}
 \include{_supply-chain/includes/supply-chain-motto.md}
 
@@ -37,6 +38,16 @@ transition: None
 
 \include{_uq/includes/emukit-playground.md}
 \include{_uq/includes/emukit-software.md}
+
+\notes{For monitoring systems in production, emulation needn't just be about simulator models. What we envisage, is that even data driven models could be emulated. This is important for understanding system behaviour, how the different components are interconnected. This drives the notion of the *information dynamics* of the machine learning system. What is the effect of one particular intervention in the wider system? One way of answering this is through emulation. But it requires that our machine learning models (and our simulators) are deployed in an environment where emulation can be automatically deployed. The resulting system would allow us to monitor the downstream effects of indivdiual decision making on the wider system. 
+
+\addblog{New Directions in Kernels and Gaussian Processes}{2016/11/29/new-directions-in-kernels-and-gaussian-processes}
+
+\section{Deep Gaussian Processes}
+
+\notes{One challenge is developing flexible enough models to perform the emulation that also propagate uncertainty through the model. One candidate set of models for this challenge is *deep Gaussian processes* (DGPs). For the remainder of these notes we introduce the theory behind DGPs. 
+
+While there are some difficulties in algorithmically implementing these algorithms at scale, they are mathematically far simpler than the equivalent neural network models, and perhaps as a result offer greater promise for theoretical understanding of deep learning [see e.g. @Dunlop:deep2017]. }
 
 \include{_deepgp/includes/deep-gp.md}
 \include{_deepgp/includes/deep-olympic.md}
@@ -50,7 +61,7 @@ transition: None
 
 \notes{Meta modelling involves fiting machine learning models to existing systems to improve speed and interpretability.}
 
-\notes{Deep Gaussian processes are a flexible approach to meta modelling.}
+\notes{Deep Gaussian processes are a flexible approach to meta modelling, which provide the necessary uncertainty estimates and the potential for being more mathematically tractable.}
 
 \slides{* ML deployed in interacting systems.
 * Meta modelling fits statistical models to existing *mechanistic* models.
