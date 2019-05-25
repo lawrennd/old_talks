@@ -9,27 +9,27 @@
 * Label is *not* provided.
 * Quite intuitive for humans, we do it naturally.
 
-\newslide{Platonic Ideals}
+\subsection{Platonic Ideals}
 
 * Names for animals originally invented by humans through 'clustering'
 * Can we have the computer to recreate that process of inventing the label?
 * Greek philosopher, Plato, thought about ideas, he considered the concept of the Platonic ideal.
 * Platonic ideal bird is the bird that is most bird-like or the chair that is most chair-like.
 
-\newslide{Cluster Center}
+\subsection{Cluster Center}
 
 * Can define different clusters, by finding their Platonic ideal (known as the cluster center)
 * Allocate each data point to the relevant nearest cluster center.
 * Allocate each animal to the class defined by its nearest cluster center.
 
-\newslide{Similarity and Distance Measures}
+\subsection{Similarity and Distance Measures}
 
 * Define a notion of either similarity or distance between the objects and their Platonic ideal.
 * If objects are vectors of data, $\inputVector_i$.
 * Represent cluster center for category $j$ by a vector $\meanVector_j$.
 * This vector contains the ideal features of a bird, a chair, or whatever category $j$ is.
 
-\newslide{Similarity or Distance}
+\subsection{Similarity or Distance}
 
 * Can either think in terms of similarity of the objects, or distances.
 * We want objects that are similar to each other to cluster together. We want objects that are distant from each other to cluster apart.
@@ -38,7 +38,7 @@ $$
 \distanceScalar_{ij} = \mappingFunction(\inputVector_i, \meanVector_j).
 $$
 
-\newslide{Squared Distance}
+\subsection{Squared Distance}
 
 
 * Find cluster centers that are close to as many data points as possible.
@@ -48,7 +48,7 @@ $$
 $$
 * Already seen for regression.
 
-\newslide{Objective Function}
+\subsection{Objective Function}
 
 * Given similarity measure, need number of  cluster centers, $\numComps$.
 * Find their location by allocating each center to a sub-set of the points and minimizing the sum of the squared errors,
@@ -57,19 +57,19 @@ $$
 $$
 here $\mathbf{i}_j$ is all indices of  data points allocated to the $j$th center. 
 
-\newslide{$k$-Means Clustering}
+\subsection{$k$-Means Clustering}
 
 * *$k$-means clustering* is simple and quick to implement.
 * Very *initialisation* sensitive.
 
-\newslide{Initialisation}
+\subsection{Initialisation}
 
 * Initialisation is the process of selecting a starting set of parameters.
 * Optimisation result can depend on the starting point.
 * For $k$-means clustering you need to choose an initial set of centers.
 * Optimisation surface has many local optima, algorithm gets stuck in ones near initialisation.
 
-\newslide{$k$-Means Clustering}
+\subsection{$k$-Means Clustering}
 
 \slides{
 \define{\width}{80%}
@@ -94,33 +94,33 @@ here $\mathbf{i}_j$ is all indices of  data points allocated to the $j$th center
 
 \notes{\figure{\includediagram{../slides/diagrams/ml/kmeans-clustering/kmeans_clustering_013}{\width}}{Clustering with the $k$-means clustering algorithm.}{kmeans-clustering-13}}
 
-\newslide{$k$-Means Clustering}
+\subsection{$k$-Means Clustering}
 
 \figure{\includeyoutube{mfqmoUN-Cuw}{800}{600}}{$k$-means clustering by Alex Ihler.}{k-means-clustering}
 \slides{*$k$-means clustering by Alex Ihler*}
 
-\newslide{Hierarchical Clustering}
+\subsection{Hierarchical Clustering}
 
 * Form taxonomies of the cluster centers
 * Like humans apply to animals, to form *phylogenies*
 
-\figure{\includeyoutube{OcoE7JlbXvY){800}{600}}{Hierarchical Clustering by Alex Ihler.}{alex-ihler-hierarchical-clustering}
+\figure{\includeyoutube{OcoE7JlbXvY}{800}{600}}{Hierarchical Clustering by Alex Ihler.}{alex-ihler-hierarchical-clustering}
 
-\newslide{Phylogenetic Trees}
+\subsection{Phylogenetic Trees}
 
 * Perform a hierarchical clustering based on genetic data, i.e. the actual contents of the genome.
 * Perform across a number of species and produce a *phylogenetic tree*.
 * Represents a guess at actual evolution of the species.
 * Used to estimate the origin of viruses like AIDS or Bird flu
 
-\newslide{Product Clustering}
+\subsection{Product Clustering}
 
 * Could apply hierarchical clustering to Amazon's products.
 * Would give us a phylogeny of products.
 * Each cluster of products would be split into sub-clusters of products until we got down to individual products.
     * E.g. at high level Electronics/Clothing
 
-\newslide{Hierarchical Clustering Challenge}
+\subsection{Hierarchical Clustering Challenge}
 
 * Many products belong in more than one cluster: e.g. running shoes are 'sporting goods' and they are 'clothing'.
 * Tree structure doesn't allow this allocation.

@@ -360,39 +360,64 @@ $$</span><br /></p></li>
 <ul>
 <li><em>Task</em>: associate each data point with a different label.</li>
 <li>Label is <em>not</em> provided.</li>
-<li><p>Quite intuitive for humans, we do it naturally.</p></li>
+<li>Quite intuitive for humans, we do it naturally.</li>
+</ul>
+<h2 id="platonic-ideals">Platonic Ideals</h2>
+<ul>
 <li>Names for animals originally invented by humans through ‘clustering’</li>
 <li>Can we have the computer to recreate that process of inventing the label?</li>
 <li>Greek philosopher, Plato, thought about ideas, he considered the concept of the Platonic ideal.</li>
-<li><p>Platonic ideal bird is the bird that is most bird-like or the chair that is most chair-like.</p></li>
+<li>Platonic ideal bird is the bird that is most bird-like or the chair that is most chair-like.</li>
+</ul>
+<h2 id="cluster-center">Cluster Center</h2>
+<ul>
 <li>Can define different clusters, by finding their Platonic ideal (known as the cluster center)</li>
 <li>Allocate each data point to the relevant nearest cluster center.</li>
-<li><p>Allocate each animal to the class defined by its nearest cluster center.</p></li>
+<li>Allocate each animal to the class defined by its nearest cluster center.</li>
+</ul>
+<h2 id="similarity-and-distance-measures">Similarity and Distance Measures</h2>
+<ul>
 <li>Define a notion of either similarity or distance between the objects and their Platonic ideal.</li>
 <li>If objects are vectors of data, <span class="math inline">$\inputVector_i$</span>.</li>
 <li>Represent cluster center for category <span class="math inline"><em>j</em></span> by a vector <span class="math inline">$\meanVector_j$</span>.</li>
-<li><p>This vector contains the ideal features of a bird, a chair, or whatever category <span class="math inline"><em>j</em></span> is.</p></li>
+<li>This vector contains the ideal features of a bird, a chair, or whatever category <span class="math inline"><em>j</em></span> is.</li>
+</ul>
+<h2 id="similarity-or-distance">Similarity or Distance</h2>
+<ul>
 <li>Can either think in terms of similarity of the objects, or distances.</li>
 <li>We want objects that are similar to each other to cluster together. We want objects that are distant from each other to cluster apart.</li>
-<li><p>Use mathematical function to formalize this notion, e.g. for distance <br /><span class="math display">$$
+<li>Use mathematical function to formalize this notion, e.g. for distance <br /><span class="math display">$$
 \distanceScalar_{ij} = \mappingFunction(\inputVector_i, \meanVector_j).
-$$</span><br /></p></li>
+$$</span><br /></li>
+</ul>
+<h2 id="squared-distance">Squared Distance</h2>
+<ul>
 <li>Find cluster centers that are close to as many data points as possible.</li>
 <li>A commonly used distance is the squared distance, <br /><span class="math display">$$
 \distanceScalar_{ij} = (\inputVector_i - \meanVector_j)^2.
 $$</span><br /></li>
-<li><p>Already seen for regression.</p></li>
+<li>Already seen for regression.</li>
+</ul>
+<h2 id="objective-function">Objective Function</h2>
+<ul>
 <li>Given similarity measure, need number of cluster centers, <span class="math inline">$\numComps$</span>.</li>
-<li><p>Find their location by allocating each center to a sub-set of the points and minimizing the sum of the squared errors, <br /><span class="math display">$$
+<li>Find their location by allocating each center to a sub-set of the points and minimizing the sum of the squared errors, <br /><span class="math display">$$
 \errorFunction(\meanMatrix) = \sum_{i \in \mathbf{i}_j} (\inputVector_i - \meanVector_j)^2
-$$</span><br /> here <span class="math inline"><strong>i</strong><sub><em>j</em></sub></span> is all indices of data points allocated to the <span class="math inline"><em>j</em></span>th center.</p></li>
+$$</span><br /> here <span class="math inline"><strong>i</strong><sub><em>j</em></sub></span> is all indices of data points allocated to the <span class="math inline"><em>j</em></span>th center.</li>
+</ul>
+<h2 id="k-means-clustering"><span class="math inline"><em>k</em></span>-Means Clustering</h2>
+<ul>
 <li><em><span class="math inline"><em>k</em></span>-means clustering</em> is simple and quick to implement.</li>
-<li><p>Very <em>initialisation</em> sensitive.</p></li>
+<li>Very <em>initialisation</em> sensitive.</li>
+</ul>
+<h2 id="initialisation">Initialisation</h2>
+<ul>
 <li>Initialisation is the process of selecting a starting set of parameters.</li>
 <li>Optimisation result can depend on the starting point.</li>
 <li>For <span class="math inline"><em>k</em></span>-means clustering you need to choose an initial set of centers.</li>
-<li><p>Optimisation surface has many local optima, algorithm gets stuck in ones near initialisation.</p></li>
+<li>Optimisation surface has many local optima, algorithm gets stuck in ones near initialisation.</li>
 </ul>
+<h2 id="k-means-clustering-1"><span class="math inline"><em>k</em></span>-Means Clustering</h2>
 <div class="figure">
 <div id="kmeans-clustering-13-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/ml/kmeans-clustering/kmeans_clustering_013.svg" width="\width" style=" ">
@@ -405,6 +430,7 @@ $$</span><br /> here <span class="math inline"><strong>i</strong><sub><em>j</em>
 <p>Figure: Clustering with the <span class="math inline"><em>k</em></span>-means clustering algorithm.</p>
 </div>
 </div>
+<h2 id="k-means-clustering-2"><span class="math inline"><em>k</em></span>-Means Clustering</h2>
 <div class="figure">
 <div id="k-means-clustering-figure" class="figure-frame">
 <iframe width="800" height="600" src="https://www.youtube.com/embed/mfqmoUN-Cuw?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
@@ -417,40 +443,48 @@ $$</span><br /> here <span class="math inline"><strong>i</strong><sub><em>j</em>
 <p>Figure: <span class="math inline"><em>k</em></span>-means clustering by Alex Ihler.</p>
 </div>
 </div>
+<h2 id="hierarchical-clustering">Hierarchical Clustering</h2>
 <ul>
 <li>Form taxonomies of the cluster centers</li>
 <li>Like humans apply to animals, to form <em>phylogenies</em></li>
 </ul>
 <div class="figure">
-<div id="-figure" class="figure-frame">
-
+<div id="alex-ihler-hierarchical-clustering-figure" class="figure-frame">
+<iframe width="800" height="600" src="https://www.youtube.com/embed/OcoE7JlbXvY?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
 </div>
-<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<div id="alex-ihler-hierarchical-clustering-magnify" class="magnify" onclick="magnifyFigure(&#39;alex-ihler-hierarchical-clustering&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
-<div id="-caption" class="caption-frame">
-<p>Figure:</p>
+<div id="alex-ihler-hierarchical-clustering-caption" class="caption-frame">
+<p>Figure: Hierarchical Clustering by Alex Ihler.</p>
 </div>
 </div>
-<p>{<iframe width="Hierarchical Clustering by Alex Ihler." height="alex-ihler-hierarchical-clustering" src="https://www.youtube.com/embed/OcoE7JlbXvY){800}{600}?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>
+<h2 id="phylogenetic-trees">Phylogenetic Trees</h2>
 <ul>
 <li>Perform a hierarchical clustering based on genetic data, i.e. the actual contents of the genome.</li>
 <li>Perform across a number of species and produce a <em>phylogenetic tree</em>.</li>
 <li>Represents a guess at actual evolution of the species.</li>
-<li><p>Used to estimate the origin of viruses like AIDS or Bird flu</p></li>
+<li>Used to estimate the origin of viruses like AIDS or Bird flu</li>
+</ul>
+<h2 id="product-clustering">Product Clustering</h2>
+<ul>
 <li>Could apply hierarchical clustering to Amazon’s products.</li>
 <li>Would give us a phylogeny of products.</li>
 <li>Each cluster of products would be split into sub-clusters of products until we got down to individual products.
 <ul>
 <li>E.g. at high level Electronics/Clothing</li>
 </ul></li>
+</ul>
+<h2 id="hierarchical-clustering-challenge">Hierarchical Clustering Challenge</h2>
+<ul>
 <li>Many products belong in more than one cluster: e.g. running shoes are ‘sporting goods’ and they are ‘clothing’.</li>
 <li>Tree structure doesn’t allow this allocation.</li>
 <li>Our own psychological grouping capabilities are in cognitive science.
 <ul>
 <li>E.g. Josh Tenenbaum and collaborators cluster data in more complex ways.</li>
 </ul></li>
-<li><p>Compress the data by replacing the original data with reduced number of continuous variables.</p></li>
+<li>Compress the data by replacing the original data with reduced number of continuous variables.</li>
 </ul>
 <div class="figure">
 <div id="marionette-figure" class="figure-frame">
