@@ -96,7 +96,7 @@ here $\mathbf{i}_j$ is all indices of  data points allocated to the $j$th center
 
 \newslide{$k$-Means Clustering}
 
-\figure\includeyoutube{mfqmoUN-Cuw}{800}{600}}{$k$-means clustering by Alex Ihler.}{k-means-clustering}
+\figure{\includeyoutube{mfqmoUN-Cuw}{800}{600}}{$k$-means clustering by Alex Ihler.}{k-means-clustering}
 \slides{*$k$-means clustering by Alex Ihler*}
 
 \newslide{Hierarchical Clustering}
