@@ -11,7 +11,7 @@ affiliation: Amazon and University of Sheffield
 
 \include{../talk-macros.tex}
 
-### Introduction
+\subsection{Introduction}
 
 * General introduction to machine learning.
 
@@ -19,7 +19,7 @@ affiliation: Amazon and University of Sheffield
 
 * What is machine learning? And why is it important?
 
-### Rise of Machine Learning
+\subsection{Rise of Machine Learning}
 
 * Driven by data and computation
 
@@ -29,21 +29,18 @@ $$
 \text{data} + \text{model} + \text{compute} \rightarrow \text{prediction}
 $$
 
-### Data Revolution
+\subsection{Data Revolution}
 
-\includediagram{../slides/diagrams/data-science-information-flow}
-
-*Large amounts of data and high interconnection bandwidth mean that we receive much of our information about the world around us through computers.*
+\figure{\includediagram{../slides/diagrams/data-science-information-flow}{60%}}{Large amounts of data and high interconnection bandwidth mean that we receive much of our information about the world around us through computers.}{data-science-information-flow}
 
 \include{_ml/includes/process-automation.md}
 \include{_ml/includes/process-emulation.md}
 \include{_ml/includes/polynomial-fit.md}
 \include{_ai/includes/ai-vs-data-science.md}
 
-### Machine Learning
+\subsection{Machine Learning}
 
 1. observe a system in practice
-
 2. emulate its behavior with mathematics.
 
 * Design challenge: where to put mathematical function.
@@ -55,3 +52,6 @@ $$
 \include{../_ml/includes/reinforcement-learning.md}
 \include{../_ml/includes/deployment.md}
 
+\thanks
+
+\referenes
