@@ -7,7 +7,7 @@
 
 * Compress the data by replacing the original data with reduced number of continuous variables.
 
-\figure{\includediagram{../slides/diagrams/ml/marionette}{40%}}{We observe pose, $\dataVector$, puppeteer's hand, $\latentVector$ remains hidden to us.}{marionette}
+\figure{\includediagramclass{../slides/diagrams/ml/marionette}{40%}}{We observe pose, $\dataVector$, puppeteer's hand, $\latentVector$ remains hidden to us.}{marionette}
 
 \newslide{Dimensionality Reduction}
 
