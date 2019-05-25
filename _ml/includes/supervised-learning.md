@@ -78,7 +78,7 @@ $$
 * Prediction function can be any set of parameterized functions.
 * In the Olympic marathon example above we used a polynomial fit,
 $$
-\mappingFunction(x) = \weightScalar_0 + \weightScalar_1 x+ \weightScalar_2 x^2 + \weightScalar_3 x^3 + \weightScalar_4 x^4.
+\mappingFunction(\inputScalar) = \weightScalar_0 + \weightScalar_1 \inputScalar+ \weightScalar_2 \inputScalar^2 + \weightScalar_3 \inputScalar^3 + \weightScalar_4 \inputScalar^4.
 $$
 * Olympic example is a supervised learning challenge. But it is a *regression* problem.
 * A regression problem is one where the output is a continuous value (such as the pace in the marathon).
@@ -192,7 +192,6 @@ $$
 \subsection{Overfitting}
 
 \figure{\includeyoutube{py8QrZPT48s}{100%}{auto}{4m0s}}{Alex Ihler discusses polynomials and overfitting.}{alex-ihler-overfitting}
-
 
 \slides{*Alex Ihler on Polynomials and Overfitting*}
 

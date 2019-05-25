@@ -1,12 +1,24 @@
 ---
 layout: slides
 title: What is Machine Learning?
-venue: Data Science Africa Summer School
-author: Neil D. Lawrence
+venue: Data Science Africa Summer School, Addis Ababa, Ethiopia
+author:
+- given: Neil D.
+  family: Lawrence
+  url: http://inverseprobability.com
+  institute: Amazon Cambridge and University of Sheffield
+  twitter: lawrennd
+  gscholar: r3SJcvoAAAAJ
+  orchid: 
 abstract: >
   In this talk we will introduce the fundamental ideas in machine learning. We'll develop our exposition around the ideas of prediction function and the objective function. We don't so much focus on the derivation of particular algorithms, but more the general principles involved to give an idea of the machine learning *landscape*.
-date: 2017-07-17
-affiliation: Amazon and University of Sheffield
+date: 2019-06-03
+categories:
+- notes
+layout: talk
+geometry: ["a4paper", "margin=2cm"]
+papersize: a4paper
+transition: None
 ---
 
 \include{../talk-macros.tex}
@@ -31,7 +43,7 @@ $$
 
 \subsection{Data Revolution}
 
-\figure{\includediagram{../slides/diagrams/data-science-information-flow}{60%}}{Large amounts of data and high interconnection bandwidth mean that we receive much of our information about the world around us through computers.}{data-science-information-flow}
+\figure{\includediagram{../slides/diagrams/data-science/new-flow-of-information}{60%}}{Large amounts of data and high interconnection bandwidth mean that we receive much of our information about the world around us through computers.}{data-science-information-flow}
 
 \include{_ml/includes/process-automation.md}
 \include{_ml/includes/process-emulation.md}
@@ -47,10 +59,10 @@ $$
 
 * Where it's placed leads to different ML domains.
 
-\include{../_ml/includes/supervised-learning.md}
-\include{../_ml/includes/unsupervised-learning.md}
-\include{../_ml/includes/reinforcement-learning.md}
-\include{../_ml/includes/deployment.md}
+\include{_ml/includes/supervised-learning.md}
+\include{_ml/includes/unsupervised-learning.md}
+\include{_ml/includes/reinforcement-learning.md}
+\include{_ml/includes/deployment.md}
 
 \thanks
 

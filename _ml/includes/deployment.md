@@ -1,4 +1,9 @@
-### Deployment
+\ifndef{deployment}
+\define{deployment}
+
+\editme
+
+\subsection{Deployment}
 
 * Introduced almost in order of difficulty of deployment.
 
@@ -6,26 +11,27 @@
 
 * Therefore major focus with supervised learning should always be on maintaining data quality.
 
-### Where to Deploy
+\addblog{The 3Ds of Machine Learning Systems Design}{2018/11/05/the-3ds-of-machine-learning-systems-design}
 
- 
+\subsection{Where to Deploy?}
+
 > If a typical person can do a mental task with less than one second of thought, we can probably automate it using AI either now or in the near future.
 >
 > Andrew Ng
 
-### Is this Right?
+\subsection{Is this Right?}
 
 * Broadly agree with this quote but only in the context of supervised learning.
 
 * The picture with regard to unsupervised learning and reinforcement learning is more clouded. 
 
-### Getting Easier
+\subsection{Getting Easier}
 
 * We seem to be moving beyond the era where very deep machine learning expertise is required to deploy methods.
 
 * Just require a  solid understanding of machine learning (say to Masters level)
 
-### Streaming Data
+\subsection{Streaming Data}
 
 * Supervised machine learning solutions are normally trained offline.
 
@@ -33,8 +39,11 @@
 
 * This compounds the brittleness of our solutions.
 
-### Model Choice
+\subsection{Model Choice}
 
 * For  all machine learning methods is the initial choice of useful classes of functions.
 
 * The deep learning revolution is associated with a particular class of mathematical functions.
+
+
+\endif

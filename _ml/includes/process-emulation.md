@@ -1,3 +1,8 @@
+\ifndef{processEmulation}
+\define{processEmulation}
+
+\editme
+
 \newslide{Data Driven}
 
 \slides{
@@ -14,3 +19,5 @@
 * *Learning* is the process of changing these parameters to change the shape of the function
 * Choice of which class of mathematical functions we use is a vital component of our *model*. 
 }
+
+\endif

@@ -71,129 +71,60 @@ here $\mathbf{i}_j$ is all indices of  data points allocated to the $j$th center
 
 \newslide{$k$-Means Clustering}
 
-\includediagram{../slides/diagrams/kmeans-clustering/kmeans_clustering_000}
+\slides{
+\define{\width}{80%}
+\startanimation{kmeans_clustering}{1}{26}
+\newframe{\includediagram{../slides/diagrams/ml/kmeans-clustering/kmeans_clustering_001}{\width}}{kmeans_clustering}
+\newframe{\includediagram{../slides/diagrams/ml/kmeans-clustering/kmeans_clustering_002}{\width}}{kmeans_clustering}
+\newframe{\includediagram{../slides/diagrams/ml/kmeans-clustering/kmeans_clustering_003}{\width}}{kmeans_clustering}
+\newframe{\includediagram{../slides/diagrams/ml/kmeans-clustering/kmeans_clustering_004}{\width}}{kmeans_clustering}
+\newframe{\includediagram{../slides/diagrams/ml/kmeans-clustering/kmeans_clustering_005}{\width}}{kmeans_clustering}
+\newframe{\includediagram{../slides/diagrams/ml/kmeans-clustering/kmeans_clustering_006}{\width}}{kmeans_clustering}
+\newframe{\includediagram{../slides/diagrams/ml/kmeans-clustering/kmeans_clustering_007}{\width}}{kmeans_clustering}
+\newframe{\includediagram{../slides/diagrams/ml/kmeans-clustering/kmeans_clustering_008}{\width}}{kmeans_clustering}
+\newframe{\includediagram{../slides/diagrams/ml/kmeans-clustering/kmeans_clustering_009}{\width}}{kmeans_clustering}
+\newframe{\includediagram{../slides/diagrams/ml/kmeans-clustering/kmeans_clustering_010}{\width}}{kmeans_clustering}
+\newframe{\includediagram{../slides/diagrams/ml/kmeans-clustering/kmeans_clustering_011}{\width}}{kmeans_clustering}
+\newframe{\includediagram{../slides/diagrams/ml/kmeans-clustering/kmeans_clustering_012}{\width}}{kmeans_clustering}
+\newframe{\includediagram{../slides/diagrams/ml/kmeans-clustering/kmeans_clustering_013}{\width}}{kmeans_clustering}
+\endanimation
 
 *Clustering with the $k$-means clustering algorithm.*
+}
+
+\notes{\figure{\includediagram{../slides/diagrams/ml/kmeans-clustering/kmeans_clustering_013}{\width}}{Clustering with the $k$-means clustering algorithm.}{kmeans-clustering-13}}
 
 \newslide{$k$-Means Clustering}
 
-\includediagram{../slides/diagrams/kmeans-clustering/kmeans_clustering_001}
-
-*Clustering with the $k$-means clustering algorithm.*
-
-\newslide{$k$-Means Clustering}
-
-\includediagram{../slides/diagrams/kmeans-clustering/kmeans_clustering_002}
-
-*Clustering with the $k$-means clustering algorithm.*
-
-\newslide{$k$-Means Clustering}
-
-\includediagram{../slides/diagrams/kmeans-clustering/kmeans_clustering_003}
-
-*Clustering with the $k$-means clustering algorithm.*
-
-\newslide{$k$-Means Clustering}
-
-\includediagram{../slides/diagrams/kmeans-clustering/kmeans_clustering_004}
-
-*Clustering with the $k$-means clustering algorithm.*
-
-\newslide{$k$-Means Clustering}
-
-\includediagram{../slides/diagrams/kmeans-clustering/kmeans_clustering_005}
-
-*Clustering with the $k$-means clustering algorithm.*
-
-\newslide{$k$-Means Clustering}
-
-\includediagram{../slides/diagrams/kmeans-clustering/kmeans_clustering_006}
-
-*Clustering with the $k$-means clustering algorithm.*
-
-\newslide{$k$-Means Clustering}
-
-\includediagram{../slides/diagrams/kmeans-clustering/kmeans_clustering_007}
-
-*Clustering with the $k$-means clustering algorithm.*
-
-\newslide{$k$-Means Clustering}
-
-\includediagram{../slides/diagrams/kmeans-clustering/kmeans_clustering_008}
-
-*Clustering with the $k$-means clustering algorithm.*
-
-\newslide{$k$-Means Clustering}
-
-\includediagram{../slides/diagrams/kmeans-clustering/kmeans_clustering_009}
-
-*Clustering with the $k$-means clustering algorithm.*
-
-\newslide{$k$-Means Clustering}
-
-\includediagram{../slides/diagrams/kmeans-clustering/kmeans_clustering_010}
-
-*Clustering with the $k$-means clustering algorithm.*
-
-\newslide{$k$-Means Clustering}
-
-\includediagram{../slides/diagrams/kmeans-clustering/kmeans_clustering_011}
-
-*Clustering with the $k$-means clustering algorithm.*
-
-\newslide{$k$-Means Clustering}
-
-\includediagram{../slides/diagrams/kmeans-clustering/kmeans_clustering_012}
-
-*Clustering with the $k$-means clustering algorithm.*
-
-\newslide{$k$-Means Clustering}
-
-\includediagram{../slides/diagrams/kmeans-clustering/kmeans_clustering_013}
-
-*Clustering with the $k$-means clustering algorithm.*
-
-\newslide{$k$-Means Clustering}
-
-\figure\includeyoutube{mfqmoUN-Cuw}{100%}{auto}}{$k$-means clustering by Alex Ihler.}{k-means-clustering}
+\figure\includeyoutube{mfqmoUN-Cuw}{800}{600}}{$k$-means clustering by Alex Ihler.}{k-means-clustering}
 \slides{*$k$-means clustering by Alex Ihler*}
 
 \newslide{Hierarchical Clustering}
 
 * Form taxonomies of the cluster centers
-
 * Like humans apply to animals, to form *phylogenies*
 
-\figure{\includeyoutube{OcoE7JlbXvY){100%}{auto}}{Hierarchical Clustering by Alex Ihler.}{alex-ihler-hierarchical-clustering}
+\figure{\includeyoutube{OcoE7JlbXvY){800}{600}}{Hierarchical Clustering by Alex Ihler.}{alex-ihler-hierarchical-clustering}
 
 \newslide{Phylogenetic Trees}
 
 * Perform a hierarchical clustering based on genetic data, i.e. the actual contents of the genome.
-
 * Perform across a number of species and produce a *phylogenetic tree*.
-
 * Represents a guess at actual evolution of the species.
-
 * Used to estimate the origin of viruses like AIDS or Bird flu
 
 \newslide{Product Clustering}
 
 * Could apply hierarchical clustering to Amazon's products.
-
 * Would give us a phylogeny of products.
-
 * Each cluster of products would be split into sub-clusters of products until we got down to individual products.
-
     * E.g. at high level Electronics/Clothing
 
 \newslide{Hierarchical Clustering Challenge}
 
 * Many products belong in more than one cluster: e.g. running shoes are 'sporting goods' and they are 'clothing'.
-
 * Tree structure doesn't allow this allocation.
-
 * Our own psychological grouping capabilities are in cognitive science.
-
     * E.g. Josh Tenenbaum and collaborators cluster data in more complex ways.
 
 \endif
