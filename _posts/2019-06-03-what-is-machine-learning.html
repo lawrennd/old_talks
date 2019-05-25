@@ -484,6 +484,9 @@ $$</span><br /> here <span class="math inline"><strong>i</strong><sub><em>j</em>
 <ul>
 <li>E.g. Josh Tenenbaum and collaborators cluster data in more complex ways.</li>
 </ul></li>
+</ul>
+<h2 id="dimensionality-reduction-edit">Dimensionality Reduction <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/dimensionality-reduction.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/dimensionality-reduction.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<ul>
 <li>Compress the data by replacing the original data with reduced number of continuous variables.</li>
 </ul>
 <div class="figure">
@@ -498,46 +501,72 @@ $$</span><br /> here <span class="math inline"><strong>i</strong><sub><em>j</em>
 <p>Figure: We observe pose, <span class="math inline">$\dataVector$</span>, puppeteer’s hand, <span class="math inline">$\latentVector$</span> remains hidden to us.</p>
 </div>
 </div>
+<h2 id="dimensionality-reduction">Dimensionality Reduction</h2>
 <ul>
 <li>Position of each body part of a marionette could be thought of as our data, <span class="math inline">$\inputVector_i$</span>.</li>
 <li>Each data point is the 3-D co-ordinates of all the different body parts</li>
 <li>Movement of parts determined by puppeteer via strings.</li>
-<li><p>For a simple puppet with one stick can move the stick up and down, left and right and twist.</p></li>
+<li>For a simple puppet with one stick can move the stick up and down, left and right and twist.</li>
+</ul>
+<h2 id="dimensionality-reduction-1">Dimensionality Reduction</h2>
+<ul>
 <li>This gives three parameters in the puppeteers control.</li>
 <li>Implies that the puppet we see moving is controlled by only 3 variables.</li>
 <li>These 3 variables are often called the hidden or <em>latent variables</em>.</li>
-<li><p>Assume similar for real world data, observations are derived from lower dimensional underlying process</p></li>
+<li>Assume similar for real world data, observations are derived from lower dimensional underlying process</li>
+</ul>
+<h2 id="examples-in-social-sciences">Examples in Social Sciences</h2>
+<ul>
 <li>Underpins <em>psychological scoring</em> such as <em>IQ</em> or <em>personality tests</em></li>
 <li>Myers-Briggs assumes personality is four dimensional.</li>
 <li>Political belief (left/right wing).</li>
-<li><p>Also language modelling has taken similar approaches: <a href="https://arxiv.org/abs/1301.3781">word2vec</a></p></li>
+<li>Also language modelling has taken similar approaches: <a href="https://arxiv.org/abs/1301.3781">word2vec</a></li>
+</ul>
+<h2 id="principal-component-analysis">Principal Component Analysis</h2>
+<ul>
 <li>Principal component analysis (PCA) a linear dimensionality reduction technique</li>
 <li>In Hotelling’s formulation of PCA: a assume <span class="math inline">$\inputVector$</span> is a linear weighted sum of the latent factors of interest.</li>
-<li><p>E.g. IQ test we would try and predict subject <span class="math inline"><em>i</em></span>’s answer to the <span class="math inline"><em>j</em></span>th question with the following function <br /><span class="math display">$$
+<li>E.g. IQ test we would try and predict subject <span class="math inline"><em>i</em></span>’s answer to the <span class="math inline"><em>j</em></span>th question with the following function <br /><span class="math display">$$
 \dataScalar_{ij} = \mappingFunction_j(\latentScalar_i; \weightVector).
-$$</span><br /> <span class="math inline">$\latentScalar_i$</span> would be the IQ of subject <span class="math inline"><em>i</em></span> and <span class="math inline">$\mappingFunction_j(\cdot)$</span> would function relating IQ and question answer.</p></li>
+$$</span><br /> <span class="math inline">$\latentScalar_i$</span> would be the IQ of subject <span class="math inline"><em>i</em></span> and <span class="math inline">$\mappingFunction_j(\cdot)$</span> would function relating IQ and question answer.</li>
+</ul>
+<h2 id="hotellings-pca">Hotelling’s PCA</h2>
+<ul>
 <li>Assume function is linear function. This idea is taken from a wider field known as <em>factor analysis</em>, so Hotelling described the challenge as <br /><span class="math display">$$
 \mappingFunction_j(\latentScalar_i; \weightVector) = \weightScalar_j \latentScalar_i
 $$</span><br /></li>
 <li>Answer to the <span class="math inline"><em>j</em></span>th question is predicted to be a scaling of the subject’s IQ.</li>
-<li><p>Scale factor is given by <span class="math inline">$\weightScalar_j$</span>.</p></li>
+<li>Scale factor is given by <span class="math inline">$\weightScalar_j$</span>.</li>
+</ul>
+<h2 id="higher-latent-dimensions">Higher Latent Dimensions</h2>
+<ul>
 <li>For more latent dimensions matrix of scales, <span class="math inline">$\weightVector$</span> <br /><span class="math display">$$
 \mappingFunction_j(\latentVector_i; \weightVector) = \weightScalar_{1j} \latentScalar_{1i} + \weightScalar_{2j} \latentScalar_{2i}
 $$</span><br /></li>
-<li><p><span class="math inline">$\latentScalar_{1i}$</span> might be extrovert/introvert and <span class="math inline">$\latentScalar_{2i}$</span> might rational/perceptual</p></li>
+<li><span class="math inline">$\latentScalar_{1i}$</span> might be extrovert/introvert and <span class="math inline">$\latentScalar_{2i}$</span> might rational/perceptual</li>
+</ul>
+<h2 id="parameters">Parameters</h2>
+<ul>
 <li>Parameters <span class="math inline">$\weightVector$</span> are known as the factor <em>loadings</em> in FA.</li>
 <li>In PCA they are known as the principal components.</li>
 <li>To fit the model need <em>loadings</em>, <span class="math inline">$\weightVector$</span>, and latent variables, <span class="math inline">$\latentMatrix$</span>.</li>
 <li>Can use least squares (leads to <em>matrix factorization</em> and recommender systems).</li>
-<li><p>Recommender systems most elements of <span class="math inline">$\inputVector_i$</span> are missing.</p></li>
+<li>Recommender systems most elements of <span class="math inline">$\inputVector_i$</span> are missing.</li>
+</ul>
+<h2 id="probability">Probability</h2>
+<ul>
 <li>PCA and factor analysis the unknown latent factors are dealt with through a probability distribution.</li>
 <li>Assume these “unknowns” are drawn from a zero mean, unit variance normal distribution.</li>
 <li>That implies a particular <em>probability</em> density for data (PDF).</li>
-<li><p>The PDF has parameters depending on factor loadings to be estimated.</p></li>
+<li>The PDF has parameters depending on factor loadings to be estimated.</li>
+</ul>
+<h2 id="maximum-likelihood">Maximum Likelihood</h2>
+<ul>
 <li>Fit model by “maximising likelihood of data” under the PDF.</li>
 <li>Maxium likelihood for PCA is the <em>eigenvalue decomposition</em> of the data covariance matrix.</li>
-<li><p>Algorithmically simple and convenient, but slow to compute for very large data sets with many features and many subjects.</p></li>
+<li>Algorithmically simple and convenient, but slow to compute for very large data sets with many features and many subjects.</li>
 </ul>
+<h2 id="principal-component-analysis-1">Principal Component Analysis</h2>
 <div class="figure">
 <div id="dem-manifold-print-all-1-2-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/ml/demManifoldPrint_all_1_2.svg" width="60%" style=" ">
