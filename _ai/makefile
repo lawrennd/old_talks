@@ -1,3 +1,3 @@
-BASE=what-is-ai-and-what-are-the-implications-of-advances-in-ai-for-religion
+BASE=on-natural-and-artificial-intelligence
 include ../make-talk-flags.mk
 include ../make-talk.mk
