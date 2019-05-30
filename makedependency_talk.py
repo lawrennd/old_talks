@@ -20,11 +20,13 @@ def extract_inputs(filename):
             list_files.append(filename)
         elif os.path.isfile(includepos):
             list_files.append(includepos)
+        else:
+            list_files.append(filename)
     filenames = list_files
-    
-    for i, filename in enumerate(filenames):
-        list_files[i+1:i+1] = extract_inputs(filename) 
 
+    for i, filename in enumerate(filenames):
+        if os.path.isfile(filename):
+            list_files[i+1:i+1] = extract_inputs(filename) 
     return list_files
 
 filename = sys.argv[1]

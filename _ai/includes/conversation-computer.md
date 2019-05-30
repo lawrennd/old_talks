@@ -5,8 +5,6 @@
 
 \notes{\subsection{Computer Conversations}}
 
-\figure{\includediagram{../slides/diagrams/anne-computer-conversation}{60%}}{Our efforts to understand the computer suffer from a lack of a good mental model for what the computer is and how it communicates.}{anne-computer-conversation}
-
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
 

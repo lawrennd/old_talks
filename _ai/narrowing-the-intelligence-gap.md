@@ -1,6 +1,6 @@
 ---
 layout: slides
-title: "Narrowing the Intelligence Gap
+title: "Narrowing the Intelligence Gap"
 abstract: >
   How are we making computers do the things we used to associate only with humans? Have we made a breakthrough in understanding human intelligence?
   
@@ -21,9 +21,19 @@ transition: None
 ---
 
 \include{talk-macros.tex}
+\include{_ai/includes/are-we-close-to-creating-intelligence.md}
 \include{_ai/includes/locked-in-intelligence.md}
 
+\subsection{Conclusion}
 
+\slides{* We are defined by our limitations.
+* We can emulate tasks we perform.
+* But the essence of human intelligence may always be out of reach.
+}
+
+\notes{Great advances have been made in artificial intelligence, but as we chip away at our notions of what human intelligence means we discover that we are more defined by our limitations than our capabilities. We can emulate tasks we do, but the essence of human intelligence will remain out of reach from artificial entities that do not have the same constraints on life. 
+
+As a result, I hope/believe that over time we will come to treasure our social intelligence more and celebrate that which is specific to us.}
 
 \thanks
 

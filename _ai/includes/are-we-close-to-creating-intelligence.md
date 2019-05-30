@@ -14,14 +14,16 @@ While recent achievements might give the sense that the answer is yes, the short
 
 \include{_ai/includes/what-is-intelligence.md}
 \include{_ai/includes/current-situation.md}
-\include{_ai/includes/a-man-and-his-dog.md}
 
 \newslide{}
 \slides{
 * Successful deployments of intelligent systems are common.
 * But they are redefined to be non-intelligent. 
-* My favourite example is [Watt’s governor](https://en.wikipedia.org/wiki/Centrifugal_governor). 
+* My favourite example is the [Centrifugal governor](https://en.wikipedia.org/wiki/Centrifugal_governor). 
 }
+
+\include{_ai/includes/a-man-and-his-dog.md}
+
 
 \newslide{Computers}
 \slides{

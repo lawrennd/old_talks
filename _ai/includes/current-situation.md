@@ -3,7 +3,8 @@
 
 \editme
 
-\newslide{Review of Current Technology
+\newslide{Review of Current Technology}
+
 \slides{ 
 * Recent breakthroughs  driven by machine learning. 
     * More precisely: deep learning
@@ -16,9 +17,7 @@
 \newslide{Deep Learning}
 \slides{
 * These are interpretable models: vital for disease etc.
-
 * Modern machine learning methods are less interpretable
-
 * Example: face recognition
 }
 

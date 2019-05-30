@@ -1,3 +1,4 @@
+
 OUT=$(DATE)-$(BASE)
 DEPS=$(shell ../makedependency_talk.py $(BASE).md)
 DIAGDEPS=$(shell ../makediagdependency_talk.py $(BASE).md)
@@ -81,7 +82,7 @@ ${BASE}.slides.ipynb: ${BASE}.slides.ipynb.markdown
 	rm ${BASE}.tmp.markdown
 
 
-%.slides.html.markdown: %.md ${DEPS}
+${BASE}.slides.html.markdown: ${BASE}.md ${DEPS}
 	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -DHTML=1 -DSLIDES=1 ${PPFLAGS} $< -o $@  
 
 %.notes.html.markdown: %.md ${DEPS}

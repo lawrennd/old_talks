@@ -48,6 +48,7 @@ So what will be the last bastion
 
 \include{_ai/includes/are-we-close-to-creating-intelligence.md}
 \include{_ai/includes/locked-in-intelligence.md}
+\include{_ai/includes/transhumanism.md}
 
 \section{Conclusions}
 \newslide{Conclusion I}

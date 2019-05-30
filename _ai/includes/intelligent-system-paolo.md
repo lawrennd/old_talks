@@ -14,7 +14,7 @@
 
 \newslide{An Intelligent System}
 
-\figure{\includempfour{../slides/diagrams/personal/paolo-peppercorn.mp4}{80%}}{A peppercorn is a system failure that's the result of designed behavior.}{paolo-peppercorn}
+\figure{\includempfour{../slides/diagrams/personal/paolo-peppercorn.mp4}{40%}}{A peppercorn is a system failure that's the result of designed behavior.}{paolo-peppercorn}
 
 \alignright{\smalltext{Joint work with M. Milo}}
 
