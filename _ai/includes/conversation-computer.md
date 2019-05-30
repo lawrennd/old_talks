@@ -14,20 +14,39 @@ from ipywidgets import IntSlider}
 
 \define{\stubname}{anne-computer-conversation}
 
-\slides{
 \define{\divoptions}{maxwidth:100vw; max-height:100vh}
 \define{\widthVal}{80%}
-\startanimation{\stubname}{0}{7}
-\newframe{\includediagram{../slides/diagrams/\concat{\stubname}{000}}{\widthVal}}{\stubname}{\divoptions}
-\newframe{\includediagram{../slides/diagrams/\concat{\stubname}{001}}{\widthVal}}{\stubname}{\divoptions}
-\newframe{\includediagram{../slides/diagrams/\concat{\stubname}{002}}{\widthVal}}{\stubname}{\divoptions}
-\newframe{\includediagram{../slides/diagrams/\concat{\stubname}{003}}{\widthVal}}{\stubname}{\divoptions}
-\newframe{\includediagram{../slides/diagrams/\concat{\stubname}{004}}{\widthVal}}{\stubname}{\divoptions}
-\newframe{\includediagram{../slides/diagrams/\concat{\stubname}{005}}{\widthVal}}{\stubname}{\divoptions}
-\newframe{\includediagram{../slides/diagrams/\concat{\stubname}{006}}{\widthVal}}{\stubname}{\divoptions}
-\newframe{\includediagram{../slides/diagrams/\concat{\stubname}{007}}{\widthVal}}{\stubname}{\divoptions}
-\endanimation
-}
+\newslide{}
+
+\slides{\includediagram{../slides/diagrams/\concat{\stubname}{000}}{\widthVal}}
+
+\newslide{}
+
+\slides{\includediagram{../slides/diagrams/\concat{\stubname}{001}}{\widthVal}}
+
+\newslide{}
+
+\slides{\includediagram{../slides/diagrams/\concat{\stubname}{002}}{\widthVal}}
+
+\newslide{}
+
+\slides{\includediagram{../slides/diagrams/\concat{\stubname}{003}}{\widthVal}}
+
+\newslide{}
+
+\slides{\includediagram{../slides/diagrams/\concat{\stubname}{004}}{\widthVal}}
+
+\newslide{}
+
+\slides{\includediagram{../slides/diagrams/\concat{\stubname}{005}}{\widthVal}}
+
+\newslide{}
+
+\slides{\includediagram{../slides/diagrams/\concat{\stubname}{006}}{\widthVal}}
+
+\newslide{}
+
+\slides{\includediagram{../slides/diagrams/\concat{\stubname}{007}}{\widthVal}}
 
 \notes{\figure{\includediagram{../slides/diagrams/\concat{\stubname}{006}}{80%}}{Conversation relies on internal models of other individuals.}{anne-computer-conversation-6}}
 
