@@ -13,7 +13,7 @@
 While recent achievements might give the sense that the answer is yes, the short answer is that we are nowhere near. All we’ve achieved for the moment is a breakthrough in *emulating intelligence*. }
 
 \include{_ai/includes/what-is-intelligence.md}
-\include{_ai/includes/current-situation.md}
+\include{_ai/includes/current-situation-short.md}
 
 \newslide{}
 \slides{
