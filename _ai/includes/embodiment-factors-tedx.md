@@ -5,7 +5,7 @@
 \notes{\subsection{Embodiment Factors}}
 \newslide{}
 
-\notes{\include{_ai/includes/embodiment-factors-table.html}}
+\slides{\include{_ai/includes/embodiment-factors-table.html}}
 
 \notes{\figure{\include{_ai/includes/embodiment-factors-table.html}}{Embodiment factors are the ratio between our ability to compute and our ability to communicate. Jean Dominique Bauby suffered from locked-in syndrome. The embodiment factors show that relative to the machine we are also locked in. In the table we represent embodiment as the length of time it would take to communicate one second's worth of computation. For computers it is a matter of minutes, but for a human, whether locked in or not, it is a matter of many millions of years.}{embodiment-factors-table}}
 
@@ -53,7 +53,7 @@ For a typical computer, to communicate everything it computes in one second, it 
 
 If intelligence is fundamentally about processing and sharing of information. This gives us a fundamental constraint on human intelligence that dictates its nature.
 
-I call this ratio between the time it takes to compute something, and the time it takes to say it, the embodiment factor. Because it reflects how embodied our cognition is.
+I call this ratio between the time it takes to compute something, and the time it takes to say it, the embodiment factor [@Lawrence:embodiment17]. Because it reflects how embodied our cognition is.
 
 If it takes you two minutes to say the thing you have thought in a second, then you are a computer. If it takes you 15 billion years, then you are a human.}
 
