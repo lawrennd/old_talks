@@ -13,6 +13,6 @@
 \include{_ai/includes/baby-shoes.md}
 \include{_ai/includes/conversation-computer.md}
 
-* \addblog{Natural vs Artifical Intelligence}{2018/02/06/natural-and-artificial-intelligence}
+* \addblog{Natural and Artifical Intelligence}{2018/02/06/natural-and-artificial-intelligence}
 
 \endif

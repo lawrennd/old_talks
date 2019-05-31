@@ -62,4 +62,6 @@
 
 \notes{Artificial intelligence is a badly defined term. Successful deployments of intelligent systems are common, but normally they are redefined to be non-intelligent. My favourite example is [the Centrifugal governor](https://en.wikipedia.org/wiki/Centrifugal_governor). Applied to the Steam Engine by Boulton and Watt and immortalised in the arms of the statue of “Science” on the Holborn viaduct in London, the centrifugal governor automatically regulated the speed of a steam engine, closing the inlet valve progressively as the engine ran faster. It did the job that an intelligent operator used to have to do, but few today would describe it as “artificial intelligence”.}
 
+\notes{The current revolution in AI is being driven by machine learning. Machine learning is an approach to prediction which is data driven. It is not the first approach to focus on data, the statistical sciences have combined models with data for a number of years. But machine learning has taken a particular focus on improving the quality of prediction, whereas statistical sciences have traditionally focussed more on explaination. Machine learning is giving us information processing engines that are equivalent to the steam engines of the industrial revolution.}
+
 \endif
