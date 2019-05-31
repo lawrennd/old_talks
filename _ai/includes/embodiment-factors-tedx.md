@@ -7,6 +7,8 @@
 
 \include{_ai/includes/embodiment-factors-table.html}
 
+\notes{\figure{\include{_ai/includes/embodiment-factors-table.html}}{Embodiment factors are the ratio between our ability to compute and our ability to communicate. Jean Dominique Bauby suffered from locked-in syndrome. The embodiment factors show that relative to the machine we are also locked in.}{embodiment-factors-table}
+
 \notes{Let me explain what I mean. Claude Shannon introduced a mathematical concept of information for the purposes of understanding telephone exchanges.
 
 Information has many meanings, but mathematically, Shannon defined a bit of information to be the amount of information you get from tossing a coin.

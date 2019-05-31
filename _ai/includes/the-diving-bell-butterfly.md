@@ -2,6 +2,7 @@
 \define{theDivingBellAndTheButterfly}
 \editme
 
+\notes{\subsection{The Diving Bell and the Butterfly}}
 \newslide{}
 
 \figure{\includejpg{../slides/diagrams/the-diving-bell-and-the-butterfly}{40%}}{The Diving Bell and the Buttefly is the autobiography of Jean Dominique Bauby.}{diving-bell-and-butterfly}
