@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import sys
-import _python.ndltex as latex
+import ._python.ndltex as latex
 import os
 
 def readlines(filename):
