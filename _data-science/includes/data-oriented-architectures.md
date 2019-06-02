@@ -167,7 +167,7 @@ A few decisions need to be made in this system. First of all, when the user open
 
 This may require a quick estimate of the ride availability.}
 
-\subsection{Information Dyanmics}
+\subsection{Information Dynamics}
 
 \slides{* Potential for information feedback loops.
 * Hypothetical streams are instantiated.
