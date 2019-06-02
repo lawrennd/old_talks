@@ -1,0 +1,86 @@
+\ifndef{talkMacrosNotesIpynb}
+\define{talkMacrosNotesIpynb}
+
+\include{talk-macros-notes-html.gpp}
+
+\define{\writeassignment{text}{question}{marks}}{### Question \question
+
+\text
+
+*\marks marks*
+
+### Write your answer to Question \question here
+
+}
+\define{\codeassignment{text}{question}{marks}}{### Question \question
+
+\text
+
+*\marks marks*
+
+```{.python}
+# Write your answer to Question \question here
+
+```
+
+}
+\define{\exercise{text}{answerstub}{codestub}}{### Exercise
+
+\text
+
+### Write your answer to Exercise here
+
+\answerstub
+
+```{.python}
+# Use this box for any code you need for the exercise
+
+\codestub
+
+```
+}
+
+
+\define{\writeassignment{text}{question}{marks}{answerstub}}{### Question \question
+
+\text
+
+*\marks marks*
+
+### Write your answer to Question \question here
+
+\answerstub
+
+}
+\define{\codeassignment{text}{question}{marks}{answerstub}}{### Question \question
+
+\text
+
+*\marks marks*
+
+```{.python}
+# Write code for your answer to Question \question in this box
+# provide the answers so that the code runs correctly otherwise you will loose marks!
+
+\answerstub
+
+```
+}
+
+\define{\exercise{text}{answerstub}{codestub}}{### Exercise
+
+\text
+
+### Write your answer to Exercise here
+
+\answerstub
+
+```{.python}
+# Use this box for any code you need for the exercise
+
+\codestub
+
+```
+}
+
+\endif

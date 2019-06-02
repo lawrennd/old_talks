@@ -1,0 +1,77 @@
+\ifndef{talkMacrosNotes}
+\define{talkMacrosNotes}
+
+\define{\includegooglebook{id}{page}}{[![](../slides/diagrams/books/\id-\page.png)](https://play.google.com/books/reader?id=\id&pg=\page)}
+
+\define{\includeyoutube{id}{width}{height}{time}}{[![](https://img.youtube.com/vi/\id/0.jpg)](https://www.youtube.com/watch?v=\id&t=\time)}
+
+\define{\recommendation{text}}{**Recommendation**: \text}
+\define{\slides{text}}{}
+\define{\slidenotes{slidetext}{notetext}}{\notetext}
+\define{\slidesincremental{text}}{}
+\define{\newslide{text}}{}
+\define{\fragment{text}{type}}{\text}
+\define{\fragmentindex{text}{type}{index}}{\text}
+\define{\fragmentdiv{contents}{number}{style}}{\contents}
+\define{\speakernotes{text}}{}
+\define{\notes{text}}{\text}
+\define{\notesfigure{block}}{\block}
+\define{\recommendation{text}}{**Recommendation**: \text}
+
+
+
+\ifdef{draft}
+\define{\editme}{\href{file://\talksDir\file}{\file}}
+\define{\todo{text}}{\colorRed{Todo: \text}}
+
+}
+\else
+\define{\editme}{\define{editText}{\span{[}{editsection-bracket}\span{\href{\githubBaseUrl\file}{edit}{onclick="ga('send', 'event', 'Edit Page', 'Edit', '\githubBaseUrl\file', 13);"}}{editsection}\span{]}{editsection-bracket}}}
+\endif
+
+\define{\section{text}}{# \text \ifdef{editText}\editText\undef{editText}\endif}
+\define{\subsection{text}}{## \text \ifdef{editText}\editText\undef{editText}\endif}
+\define{\subsubsection{text}}{### \text \ifdef{editText}\editText\undef{editText}\endif}
+
+\define{\code{block}}{```{.python}
+\block
+```}
+\define{\helpercode{block}}{```{.python}
+\block
+```}
+\define{\setupdisplaycode{block}}{}
+\define{\displaycode{block}}{}
+\define{\displaynotes{block}}{}
+\define{\plotcode{block}}{}
+\define{\setupplotcode{block}}{}
+\define{\loadplotcode{object}{filename}}{}
+\define{\setuphelpercode{block}}{}
+\define{\matlabcode{block}}{```{.matlab}
+\block
+```}
+\define{\setupcode{block}}{```{.python}
+\block
+```}
+
+\define{\loadcode{object}{filename}}{```{.python}
+from \filename import \object
+```}
+
+\define{\notesfigure{block}}{\block}
+\define{\slidesmall{block}}{\block}
+
+\define{\columns{one}{two}{width1}{width2}}{<table><tr><td width="\width1">\one</td><td width="\width2">\two</td></tr></table>}
+\define{\threeColumns{one}{two}{three}{width1}{width2}{width3}}{<table><tr><td width="\width1">\one</td><td width="\width2">\two</td><td width="\width3">\three</td></tr></table>}
+
+\define{\references}{\section{References}}
+
+\define{\speakernotes{text}}{}
+
+\define{\addblog{title}{link}}{You can also check my blog post on ["\title"](http://inverseprobability.com/\link)}.
+
+
+\define{\thanks}{}
+
+
+
+\endif
