@@ -103,7 +103,7 @@ mlai.write_figure(../slides/diagrams/ml/cluster_data01.svg')}
 
 * This minimizes the objective
   $$
-  E=\sum_{j=1}^K \sum_{i\ \text{allocated to}\ j}  \left(\dataVector_{i, :} - \boldsymbol{\mu}_{j, :}\right)^\top\left(\dataVector_{i, :} - \boldsymbol{\mu}_{j, :}\right)
+  E=\sum_{j=1}^K \sum_{i\ \text{allocated to}\ j}  \left(\dataVector_{i, :} - \meanVector_{j, :}\right)^\top\left(\dataVector_{i, :} - \meanVector_{j, :}\right)
   $$
   *i.e.* it minimizes thesum of Euclidean squared distances betwen points and their associated centres.
 * The minimum is *not* guaranteed to be *global* or *unique*.
@@ -237,12 +237,12 @@ for angle in angles:
   * How do we find these directions?
 * Algorithmically we do this by diagonalizing the sample covariance matrix 
   $$
-  \mathbf{S}=\frac{1}{\numData}\sum_{i=1}^n \left(\dataVector_{i, :}-\boldsymbol{\mu}\right)\left(\dataVector_{i, :} - \boldsymbol{\mu}\right)^\top
+  \mathbf{S}=\frac{1}{\numData}\sum_{i=1}^\numData \left(\dataVector_{i, :}-\meanVector\right)\left(\dataVector_{i, :} - \meanVector\right)^\top
   $$
 
 \newslide{Principal Component Analysis}
 
-* Find directions in the data, $\mathbf{x} = \mathbf{U}\dataVector$, for which variance is maximized.
+* Find directions in the data, $\latentVector = \mathbf{U}\dataVector$, for which variance is maximized.
 
 \newslide{Lagrangian}
 
@@ -263,11 +263,11 @@ for angle in angles:
 * Represent data, $\dataMatrix$, with a lower dimensional set of latent variables $\latentMatrix$.
 * Assume a linear relationship of the form
   $$
-  \dataVector_{i,:}=\mappingMatrix\mathbf{x}_{i,:}+\boldsymbol{\epsilon}_{i,:},
+  \dataVector_{i,:}=\mappingMatrix\latentVector_{i,:}+\noiseVector_{i,:},
   $$
   where
   $$
-  \boldsymbol{\epsilon}_{i,:} \sim \mathcal{N}(\mathbf{0}, \sigma^2\mathbf{I})
+  \noiseVector_{i,:} \sim \gaussianSamp{\zerosVector}{\noiseStd^2\eye}
   $$
 
 \newslide{Linear Latent Variable Model}
@@ -295,22 +295,33 @@ for angle in angles:
           \edge
 {X,W,sigma} {Y} ; %
           
-        \end{tikzpicture}
+\end{tikzpicture}
 
-$$p\left(\dataMatrix|\latentMatrix,\mappingMatrix\right)=\prod_{i=1}^{\numData}\mathcal{N}\left(\dataVector_{i,:}|\mappingMatrix\mathbf{x}_{i,:},
-\sigma^2\mathbf{I}\right)$$
+$$
+p\left(\dataMatrix|\latentMatrix,\mappingMatrix\right)=\prod_{i=1}^{\numData}\gaussianDist{\dataVector_{i,:}}{\mappingMatrix\latentVector_{i,:}}{\noiseStd^2\eye}
+$$
 
-$$p\left(\latentMatrix\right)=\prod_{i=1}^{\numData}\mathcal{N}\left(\mathbf{x}_{i,:}|\mathbf{0},\mathbf{I}\right)$$
+$$
+p\left(\latentMatrix\right)=\prod_{i=1}^{\numData}\gaussianDist{\latentVector_{i,:}}{\zerosVector}{\eye}
+$$
 
-$$p\left(\dataMatrix|\mappingMatrix\right)=\prod_{i=1}^{\numData}\mathcal{N}\left(\dataVector_{i,:}|\mathbf{0},\mappingMatrix\mappingMatrix^{\top}+\sigma^{2}\mathbf{I}\right)$$
+$$
+p\left(\dataMatrix|\mappingMatrix\right)=\prod_{i=1}^{\numData}\gaussianDist{\dataVector_{i,:}}{\zerosVector}{\mappingMatrix\mappingMatrix^{\top}+\noiseStd^{2}\eye}
+$$
 
 \newslide{Computation of the Marginal Likelihood}
 
-$$\dataVector_{i,:}=\mappingMatrix\mathbf{x}_{i,:}+\boldsymbol{\epsilon}_{i,:},\quad \mathbf{x}_{i,:} \sim \mathcal{N}(\mathbf{0},\mathbf{I}), \quad \boldsymbol{\epsilon}_{i,:} \sim \mathcal{N}(\mathbf{0},\sigma^{2}\mathbf{I})$$
+$$
+\dataVector_{i,:}=\mappingMatrix\latentVector_{i,:}+\noiseVector_{i,:},\quad \latentVector_{i,:} \sim \gaussianSamp{\zerosVector}{\eye}, \quad \noiseVector_{i,:} \sim \gaussianSamp{\zerosVector}{\noiseStd^{2}\eye}
+$$
 
-$$\mappingMatrix\mathbf{x}_{i,:} \sim \mathcal{N}(\mathbf{0},\mappingMatrix\mappingMatrix^\top)$$
+$$
+\mappingMatrix\latentVector_{i,:} \sim \gaussianSamp{\zerosVector}{\mappingMatrix\mappingMatrix^\top}
+$$
 
-$$\mappingMatrix\mathbf{x}_{i, :} + \boldsymbol{\epsilon}_{i, :} \sim \mathcal{N}\left(\mathbf{0},\mappingMatrix\mappingMatrix^\top + \sigma^2 \mathbf{I}\right)$$
+$$
+\mappingMatrix\latentVector_{i, :} + \noiseVector_{i, :} \sim \gaussianSamp{\zerosVector}{\mappingMatrix\mappingMatrix^\top + \noiseStd^2 \eye}
+$$
 
 \newslide{Linear Latent Variable Model II}
   **Probabilistic PCA Max. Likelihood Soln**
@@ -330,20 +341,20 @@ Connect the nodes
       \edge {W,sigma} {Y} ; %
     \end{tikzpicture}
 
-$$p\left(\dataMatrix|\mappingMatrix\right)=\prod_{i=1}^{\numData}\mathcal{N}\left(\dataVector_{i, :}|\mathbf{0}, \mappingMatrix\mappingMatrix^{\top}+\sigma^{2}\mathbf{I}\right)$$
+$$p\left(\dataMatrix|\mappingMatrix\right)=\prod_{i=1}^{\numData}\gaussianDist{\dataVector_{i, :}}{\zerosVector}{\mappingMatrix\mappingMatrix^{\top}+\noiseStd^{2}\eye}$$
 
 \newslide{Linear Latent Variable Model II}
   
 **Probabilistic PCA Max. Likelihood Soln** (@Tipping:probpca99)
   $$
-  p\left(\dataMatrix|\mappingMatrix\right)=\prod_{i=1}^{\numData}\mathcal{N}\left(\dataVector_{i,:}|\mathbf{0},\mathbf{C}\right),\quad \mathbf{C}=\mappingMatrix\mappingMatrix^{\top}+\sigma^{2}\mathbf{I}
+  p\left(\dataMatrix|\mappingMatrix\right)=\prod_{i=1}^{\numData}\gaussianDist{\dataVector_{i,:}}{\zerosVector}{\covarianceMatrix},\quad \covarianceMatrix=\mappingMatrix\mappingMatrix^{\top}+\noiseStd^{2}\eye
   $$
   $$
-  \log p\left(\dataMatrix|\mappingMatrix\right)=-\frac{\numData}{2}\log\left|\mathbf{C}\right|-\frac{1}{2}\text{tr}\left(\mathbf{C}^{-1}\dataMatrix^{\top}\dataMatrix\right)+\text{const.}
+  \log p\left(\dataMatrix|\mappingMatrix\right)=-\frac{\numData}{2}\log\left|\covarianceMatrix\right|-\frac{1}{2}\text{tr}\left(\covarianceMatrix^{-1}\dataMatrix^{\top}\dataMatrix\right)+\text{const.}
   $$
   If $\mathbf{U}_{q}$ are first $q$ principal eigenvectors of $n^{-1}\dataMatrix^{\top}\dataMatrix$ and the corresponding eigenvalues are $\boldsymbol{\Lambda}_{q}$,
   $$
-  \mappingMatrix=\mathbf{U}_{q}\mathbf{L}\mathbf{R}^{\top},\quad\mathbf{L}=\left(\boldsymbol{\Lambda}_{q}-\sigma^{2}\mathbf{I}\right)^{\frac{1}{2}}
+  \mappingMatrix=\mathbf{U}_{q}\mathbf{L}\mathbf{R}^{\top},\quad\mathbf{L}=\left(\boldsymbol{\Lambda}_{q}-\noiseStd^{2}\eye\right)^{\frac{1}{2}}
   $$
   where $\mathbf{R}$ is an arbitrary rotation matrix.
 
@@ -476,13 +487,13 @@ $\dataVector$, we assume that these factors are actually generated from a low
 dimensional vector latent traits, or latent variables, which determine the
 personality.
 $$
-\dataVector = \mathbf{f}(\mathbf{x}) + \boldsymbol{\epsilon}
+\dataVector = \mathbf{f}(\latentVector) + \noiseVector
 $$
-where $\mathbf{f}(\mathbf{x})$ is a *vector valued* function that is dependent
-on the latent traits and $\boldsymbol{\epsilon}$ is some corrupting noise. For
+where $\mathbf{f}(\latentVector)$ is a *vector valued* function that is dependent
+on the latent traits and $\noiseVector$ is some corrupting noise. For
 simplicity, we assume that the function is given by a *linear* relationship,
 $$
-\mathbf{f}(\mathbf{x}) = \mappingMatrix\mathbf{x}
+\mathbf{f}(\latentVector) = \mappingMatrix\latentVector
 $$
 where we have introduced a
 matrix $\mappingMatrix$ that is sometimes referred to as the *factor loadings* but
@@ -490,19 +501,19 @@ we also immediately see is related to our *multivariate linear regression*
 models from the [previous session on linear regression](./week3.ipynb). That is
 because our vector valued function is of the form
 $$
-\mathbf{f}(\mathbf{x}) =
-\begin{bmatrix} f_1(\mathbf{x}) \\ f_2(\mathbf{x}) \\ \vdots \\
-f_p(\mathbf{x})\end{bmatrix}
+\mathbf{f}(\latentVector) =
+\begin{bmatrix} f_1(\latentVector) \\ f_2(\latentVector) \\ \vdots \\
+f_p(\latentVector)\end{bmatrix}
 $$
 where there are $p$ features associated with the
 individual. If we consider any of these functions individually we have a
 prediction function that looks like a regression model,
 $$
-f_j(\mathbf{x}) =
-\mathbf{w}_{j, :}^\top \mathbf{x},
+f_j(\latentVector) =
+\weightVector_{j, :}^\top \latentVector,
 $$
 for each element of the vector valued
-function, where $\mathbf{w}_{:, j}$ is the $j$th column of the matrix
+function, where $\weightVector_{:, j}$ is the $j$th column of the matrix
 $\mappingMatrix$. In that context each column of $\mappingMatrix$ is a vector of
 *regression weights*. This is a multiple input and multiple output regression.
 Our inputs (or covariates) have dimensionality greater than 1 and our outputs
@@ -510,11 +521,11 @@ Our inputs (or covariates) have dimensionality greater than 1 and our outputs
 standard regression, we are assuming that we don't observe the function directly
 (note that this *also* makes the function a *type* of latent variable), but we
 observe some corrupted variant of the function, where the corruption is given by
-$\boldsymbol{\epsilon}$. Just as in linear regression we can assume that this
+$\noiseVector$. Just as in linear regression we can assume that this
 corruption is given by Gaussian noise, where the noise for the $j$th element of
 $\dataVector$ is by,
 $$
-\epsilon_j \sim \mathcal{N}(0, \sigma^2_j).
+\epsilon_j \sim \gaussianSamp{0}{\noiseStd^2_j}.
 $$
 Of course,
 just as in a regression problem we also need to make an assumption across the
@@ -552,13 +563,13 @@ $$
 and the elements of the vector valued
 function $\mathbf{F}$ are given by 
 $$
-f_{i, j} = f_j(\mathbf{x}_{i, :}),
+f_{i, j} = f_j(\latentVector_{i, :}),
 $$
-where $\mathbf{x}_{i, :}$ is the $i$th row of the latent variables,
+where $\latentVector_{i, :}$ is the $i$th row of the latent variables,
 $\latentMatrix$, then show that
 $$
-f_j(\mathbf{x}_{i, :}) = \mathbf{w}_{j, :}^\top
-\mathbf{x}_{i, :}
+f_j(\latentVector_{i, :}) = \weightVector_{j, :}^\top
+\latentVector_{i, :}
 $$
 
 *10 marks*
@@ -579,55 +590,53 @@ latent variables associated with the different data points, and across those
 associated with different data features, so we have,
 $$
 x_{i,j} \sim
-\mathcal{N}(0, 1),
+\gaussianSamp{0}{1},
 $$
 and we can write the density governing the latent variable
 associated with a single point as,
 $$
-\mathbf{x}_{i, :} \sim
-\mathcal{N}(\mathbf{0}, \mathbf{I}).
+\latentVector_{i, :} \sim \gaussianSamp{\zerosVector}{\eye}.
 $$
 If we consider the values of the
 function for the $i$th data point as
 $$
 \mathbf{f}_{i, :} =
-\mathbf{f}(\mathbf{x}_{i, :}) = \mappingMatrix\mathbf{x}_{i, :} 
+\mathbf{f}(\latentVector_{i, :}) = \mappingMatrix\latentVector_{i, :} 
 $$
 then we can use
 the rules for multivariate Gaussian relationships to write that
 $$
-\mathbf{f}_{i, :} \sim \mathcal{N}(\mathbf{0}, \mappingMatrix\mappingMatrix^\top)
+\mathbf{f}_{i, :} \sim \gaussianSamp{\zerosVector}{\mappingMatrix\mappingMatrix^\top}
 $$
 which implies that the distribution for $\dataVector_{i, :}$ is given by
 $$
-\dataVector_{i, :} = \sim \mathcal{N}(\mathbf{0}, \mappingMatrix\mappingMatrix^\top +
-\boldsymbol{\Sigma})
+\dataVector_{i, :} = \sim \gaussianSamp{\zerosVector}{\mappingMatrix\mappingMatrix^\top + \boldsymbol{\Sigma}}
 $$
 where $\boldsymbol{\Sigma}$ the covariance of the noise
 variable, $\epsilon_{i, :}$ which for factor analysis is a diagonal matrix
 (because we have assumed that the noise was *independent* across the features),
 $$
-\boldsymbol{\Sigma} = \begin{bmatrix}\sigma^2_{1} & 0 & 0 & 0\\
-0 & \sigma^2_{2} & 0 & 0\\
+\boldsymbol{\Sigma} = \begin{bmatrix}\noiseStd^2_{1} & 0 & 0 & 0\\
+0 & \noiseStd^2_{2} & 0 & 0\\
                                      0 & 0 & \ddots &
 0\\
-                                     0 & 0 & 0 & \sigma^2_p\end{bmatrix}.
+                                     0 & 0 & 0 & \noiseStd^2_p\end{bmatrix}.
 $$
 For completeness, we could also add in a *mean* for the data vector
-$\boldsymbol{\mu}$, 
+$\meanVector$, 
 $$
-\dataVector_{i, :} = \mappingMatrix \mathbf{x}_{i, :} +
-\boldsymbol{\mu} + \boldsymbol{\epsilon}_{i, :}
+\dataVector_{i, :} = \mappingMatrix \latentVector_{i, :} +
+\meanVector + \noiseVector_{i, :}
 $$
 which would give our marginal
-distribution for $\dataVector_{i, :}$ a mean $\boldsymbol{\mu}$. However, the
-maximum likelihood solution for $\boldsymbol{\mu}$ turns out to equal the
+distribution for $\dataVector_{i, :}$ a mean $\meanVector$. However, the
+maximum likelihood solution for $\meanVector$ turns out to equal the
 empirical mean of the data,
 $$
-\boldsymbol{\mu} = \frac{1}{\numData} \sum_{i=1}^n
+\meanVector = \frac{1}{\numData} \sum_{i=1}^\numData
 \dataVector_{i, :},
 $$
-*regardless* of the form of the covariance, $\mathbf{C} =
+*regardless* of the form of the covariance, $\covarianceMatrix =
 \mappingMatrix\mappingMatrix^\top + \boldsymbol{\Sigma}$. As a result it is very common
 to simply preprocess the data and ensure it is zero mean. We will follow that
 convention for this session.
@@ -649,10 +658,9 @@ Hotelling](http://en.wikipedia.org/wiki/Harold_Hotelling) published on
 inspiration was to provide mathematical foundation for factor analysis methods
 that were by then widely used within psychology and the social sciences. His
 model was a factor analysis model, but he considered the noiseless 'limit' of
-the model. In other words he took $\sigma^2_i \rightarrow 0$ so that he had
+the model. In other words he took $\noiseStd^2_i \rightarrow 0$ so that he had
 $$
-\dataVector_{i, :} \sim \lim_{\sigma^2 \rightarrow 0} \mathcal{N}(\mathbf{0},
-\mappingMatrix\mappingMatrix^\top + \sigma^2 \mathbf{I}).
+\dataVector_{i, :} \sim \lim_{\noiseStd^2 \rightarrow 0} \gaussianSamp{\zerosVector}{\mappingMatrix\mappingMatrix^\top + \noiseStd^2 \eye}.
 $$
 The paper had two
 unfortunate effects. Firstly, the resulting model is no longer valid
@@ -662,18 +670,18 @@ the dimensionality reduction) the determinant of the covariance is zero, meaning
 the inverse doesn't exist so the density,
 $$
 p(\dataVector_{i, :}|\mappingMatrix) =
-\lim_{\sigma^2 \rightarrow 0} \frac{1}{(2\pi)^\frac{p}{2}
-|\mappingMatrix\mappingMatrix^\top + \sigma^2 \mathbf{I}|^{-1}}
-\exp\left(-\frac{1}{2}\dataVector_{i, :}\left[\mappingMatrix\mappingMatrix^\top+ \sigma^2
-\mathbf{I}\right]^{-1}\dataVector_{i, :}\right),
+\lim_{\noiseStd^2 \rightarrow 0} \frac{1}{(2\pi)^\frac{p}{2}
+|\mappingMatrix\mappingMatrix^\top + \noiseStd^2 \eye|^{-1}}
+\exp\left(-\frac{1}{2}\dataVector_{i, :}\left[\mappingMatrix\mappingMatrix^\top+ \noiseStd^2
+\eye\right]^{-1}\dataVector_{i, :}\right),
 $$
 is *not* valid for $q<p$
 (where $\mappingMatrix\in \Re^{p\times q}$). This mathematical consequence is a
 probability density which has no 'support' in large regions of the space for
 $\dataVector_{i, :}$. There are regions for which the probability of
 $\dataVector_{i, :}$ is zero. These are any regions that lie off the hyperplane
-defined by mapping from $\mathbf{x}$ to $\dataVector$ with the matrix
-$\mappingMatrix$. In factor analysis the noise corruption, $\boldsymbol{\epsilon}$,
+defined by mapping from $\latentVector$ to $\dataVector$ with the matrix
+$\mappingMatrix$. In factor analysis the noise corruption, $\noiseVector$,
 allows for points to be found away from the hyperplane. In Hotelling's PCA the
 noise variance is zero, so there is only support for points that fall precisely
 on the hyperplane. Secondly, Hotelling explicity chose to rename factor analysis
@@ -681,7 +689,7 @@ as principal component analysis, arguing that the factors social scientist
 sought were different in nature to the concept of a mathematical factor. This
 was unfortunate because the factor loadings, $\mappingMatrix$ can also be seen as
 factors in the mathematical sense because the model Hotelling defined is a
-Gaussian model with covariance given by $\mathbf{C} = \mappingMatrix\mappingMatrix^\top$
+Gaussian model with covariance given by $\covarianceMatrix = \mappingMatrix\mappingMatrix^\top$
 so $\mappingMatrix$ is a *factor* of the covariance in the mathematical sense, as
 well as a factor loading. 
 
@@ -725,57 +733,50 @@ interested in the case where $\mathbf{A}$ is a covariance matrix, which implies
 it is *positive definite*. A positive definite matrix is one for which the inner
 product,
 $$
-\mathbf{w}^\top \mathbf{C}\mathbf{w}
+\weightVector^\top \covarianceMatrix\weightVector
 $$
 is positive for *all* values
-of the vector $\mathbf{w}$ other than the zero vector. One way of creating a
+of the vector $\weightVector$ other than the zero vector. One way of creating a
 positive definite matrix is to assume that the symmetric and positive definite
-matrix $\mathbf{C}\in \Re^{p\times p}$ is factorised into, $\mathbf{A}in
+matrix $\covarianceMatrix\in \Re^{p\times p}$ is factorised into, $\mathbf{A}in
 \Re^{p\times p}$, a *full rank* matrix, so that
 $$
-\mathbf{C} = \mathbf{A}^\top
+\covarianceMatrix = \mathbf{A}^\top
 \mathbf{A}.
 $$
-This ensures that $\mathbf{C}$ must be positive definite because
+This ensures that $\covarianceMatrix$ must be positive definite because
 $$
-\mathbf{w}^\top \mathbf{C}\mathbf{w}=\mathbf{w}^\top
-\mathbf{A}^\top\mathbf{A}\mathbf{w} 
+\weightVector^\top \covarianceMatrix\weightVector=\weightVector^\top
+\mathbf{A}^\top\mathbf{A}\weightVector 
 $$
 and if we now define a new *vector*
 $\mathbf{b}$ as
 $$
-\mathbf{b} = \mathbf{A}\mathbf{w}
+\mathbf{b} = \mathbf{A}\weightVector
 $$
 we can now rewrite as
 $$
-\mathbf{w}^\top \mathbf{C}\mathbf{w} = \mathbf{b}^\top\mathbf{b} = \sum_{i}
+\weightVector^\top \covarianceMatrix\weightVector = \mathbf{b}^\top\mathbf{b} = \sum_{i}
 b_i^2
 $$
 which, since it is a sum of squares, is positive or zero. The
 constraint that $\mathbf{A}$ must be *full rank* ensures that there is no vector
-$\mathbf{w}$, other than the zero vector, which causes the vector $\mathbf{b}$
+$\weightVector$, other than the zero vector, which causes the vector $\mathbf{b}$
 to be all zeros.
 
-### Assignment Question 2
-
-If $\mathbf{C}=\mathbf{A}^\top \mathbf{A}$ then
+\writeassignment{If $\covarianceMatrix=\mathbf{A}^\top \mathbf{A}$ then
 express $c_{i,j}$, the value of the element at the $i$th row and the $j$th
-column of $\mathbf{C}$, in terms of the columns of $\mathbf{A}$. Use this to
+column of $\covarianceMatrix$, in terms of the columns of $\mathbf{A}$. Use this to
 show that (i) the matrix is symmetric and (ii) the matrix has positive elements
-along its diagonal.
+along its diagonal.}{2}{15}
 
-*15 marks*
-
-#### Question 2 Answer
-
-Write your answer to the question in this box.
 
 \section{Eigenvectors of a Symmetric Matric}
 
 Symmetric matrices have *orthonormal*
 eigenvectors. This means that $\mathbf{U}$ is an [orthogonal
 matrix](http://en.wikipedia.org/wiki/Orthogonal_matrix),
-$\mathbf{U}^\top\mathbf{U} = \mathbf{I}$. This implies that $\mathbf{u}_{:, i}
+$\mathbf{U}^\top\mathbf{U} = \eye$. This implies that $\mathbf{u}_{:, i}
 ^\top \mathbf{u}_{:, j}$ is equal to 0 if $i\neq j$ and 1 if $i=j$.
 
 \section{Probabilistic PCA}
@@ -787,17 +788,16 @@ revisited Hotelling's model and considered the case where the noise variance was
 finite, but *shared* across all output dimensons. Their model can be thought of
 as a factor analysis where
 $$
-\boldsymbol{\Sigma} = \sigma^2 \mathbf{I}.
+\boldsymbol{\Sigma} = \noiseStd^2 \eye.
 $$
 This
 leads to a marginal likelihood of the form
 $$
-p(\dataMatrix|\mappingMatrix, \sigma^2)
-= \prod_{i=1}^n\mathcal{N}(\dataVector_{i, :} | \mathbf{0},
-\mappingMatrix\mappingMatrix^\top + \sigma^2 \mathbf{I})
+p(\dataMatrix|\mappingMatrix, \noiseStd^2)
+= \prod_{i=1}^\numData\gaussianDist{\dataVector_{i, :}}{\zerosVector}{\mappingMatrix\mappingMatrix^\top + \noiseStd^2 \eye}
 $$
 where the limit of
-$\sigma^2\rightarrow 0$ is *not* taken. This defines a proper probabilistic
+$\noiseStd^2\rightarrow 0$ is *not* taken. This defines a proper probabilistic
 model. Tippping and Bishop then went on to prove that the *maximum likelihood*
 solution of this model with respect to $\mappingMatrix$ is given by an eigenvalue
 problem. In the probabilistic PCA case the eigenvalues and eigenvectors are
@@ -808,8 +808,8 @@ $$
 where
 $\mathbf{U}$ is the eigenvectors of the empirical covariance matrix 
 $$
-\mathbf{S} = \sum_{i=1}^n (\dataVector_{i, :} - \boldsymbol{\mu})(\dataVector_{i,
-:} - \boldsymbol{\mu})^\top,
+\mathbf{S} = \sum_{i=1}^\numData (\dataVector_{i, :} - \meanVector)(\dataVector_{i,
+:} - \meanVector)^\top,
 $$ 
 which can be written $\mathbf{S} = \frac{1}{\numData}
 \dataMatrix^\top\dataMatrix$ if the data is zero mean. The matrix $\mathbf{L}$ is
@@ -818,10 +818,10 @@ $\boldsymbol{\Lambda}$. If the $i$th diagonal element of this matrix is given by
 $\lambda_i$ then the corresponding element of $\mathbf{L}$ is 
 $$
 \ell_i =
-\sqrt{\lambda_i - \sigma^2}
+\sqrt{\lambda_i - \noiseStd^2}
 $$
-where $\sigma^2$ is the noise variance. Note that
-if $\sigma^2$ is larger than any particular eigenvalue, then that eigenvalue
+where $\noiseStd^2$ is the noise variance. Note that
+if $\noiseStd^2$ is larger than any particular eigenvalue, then that eigenvalue
 (along with its corresponding eigenvector) is *discarded* from the solution.
 
 \subsection{Python Implementation of Probabilistic PCA}
@@ -863,74 +863,63 @@ justification for principal component analysis, we are normally interested in
 inferring something about the latent variables given the data. This is the
 distribution,
 $$
-p(\mathbf{x}_{i, :} | \dataVector_{i, :})
+p(\latentVector_{i, :} | \dataVector_{i, :})
 $$
 for any given data
 point. Determining this density turns out to be very similar to the approach for
-determining the Bayesian posterior of $\mathbf{w}$ in Bayesian linear
-regression, only this time we place the prior density over $\mathbf{x}_{i, :}$
-instead of $\mathbf{w}$. The posterior is proportional to the joint density as
+determining the Bayesian posterior of $\weightVector$ in Bayesian linear
+regression, only this time we place the prior density over $\latentVector_{i, :}$
+instead of $\weightVector$. The posterior is proportional to the joint density as
 follows,
 $$
-p(\mathbf{x}_{i, :} | \dataVector_{i, :}) \propto p(\dataVector_{i,
-:}|\mappingMatrix, \mathbf{x}_{i, :}, \sigma^2) p(\mathbf{x}_{i, :})
+p(\latentVector_{i, :} | \dataVector_{i, :}) \propto p(\dataVector_{i,
+:}|\mappingMatrix, \latentVector_{i, :}, \noiseStd^2) p(\latentVector_{i, :})
 $$
 And as in
 the Bayesian linear regression case we first consider the log posterior,
 $$
 \log
-p(\mathbf{x}_{i, :} | \dataVector_{i, :}) = \log p(\dataVector_{i, :}|\mappingMatrix,
-\mathbf{x}_{i, :}, \sigma^2) + \log p(\mathbf{x}_{i, :}) + \text{const}
+p(\latentVector_{i, :} | \dataVector_{i, :}) = \log p(\dataVector_{i, :}|\mappingMatrix,
+\latentVector_{i, :}, \noiseStd^2) + \log p(\latentVector_{i, :}) + \text{const}
 $$
 where
-the constant is not dependent on $\mathbf{x}$. As before we collect the
-quadratic terms in $\mathbf{x}_{i, :}$ and we assemble them into a Gaussian
-density over $\mathbf{x}$.
+the constant is not dependent on $\latentVector$. As before we collect the
+quadratic terms in $\latentVector_{i, :}$ and we assemble them into a Gaussian
+density over $\latentVector$.
 $$
-\log p(\mathbf{x}_{i, :} | \dataVector_{i, :}) =
--\frac{1}{2\sigma^2} (\dataVector_{i, :} - \mappingMatrix\mathbf{x}_{i,
-:})^\top(\dataVector_{i, :} - \mappingMatrix\mathbf{x}_{i, :}) - \frac{1}{2}
-\mathbf{x}_{i, :}^\top \mathbf{x}_{i, :} + \text{const}
+\log p(\latentVector_{i, :} | \dataVector_{i, :}) =
+-\frac{1}{2\noiseStd^2} (\dataVector_{i, :} - \mappingMatrix\latentVector_{i,
+:})^\top(\dataVector_{i, :} - \mappingMatrix\latentVector_{i, :}) - \frac{1}{2}
+\latentVector_{i, :}^\top \latentVector_{i, :} + \text{const}
 $$
 
-### Assignment Question 3
-
-Multiply out the terms in the brackets. Then collect
+\writeassignment{Multiply out the terms in the brackets. Then collect
 the quadratic term and the linear terms together. Show that the posterior has
 the form
 $$
-\mathbf{x}_{i, :} | \mappingMatrix \sim \mathcal{N}( \boldsymbol{\mu}_x,
-\mathbf{C}_x)
+\latentVector_{i, :} | \mappingMatrix \sim \gaussianSamp{\meanVector_x}{\covarianceMatrix_x}
 $$
 where 
 $$
-\mathbf{C}_x = \left(\sigma^{-2}
-\mappingMatrix^\top\mappingMatrix + \mathbf{I}\right)^{-1}
+\covarianceMatrix_x = \left(\noiseStd^{-2}
+\mappingMatrix^\top\mappingMatrix + \eye\right)^{-1}
 $$
 and 
 $$
-\boldsymbol{\mu}_x
-= \mathbf{C}_x \sigma^{-2}\mappingMatrix^\top \dataVector_{i, :} 
+\meanVector_x
+= \covarianceMatrix_x \noiseStd^{-2}\mappingMatrix^\top \dataVector_{i, :} 
 $$
 Compare this to
 the posterior for the Bayesian linear regression from last week, do they have
-similar forms? What matches and what differs?
-
-*30 marks*
-
-#### Question 3 Answer
-
-Write your answer to the question in this box. Use latex
-to write your derivations, show each step of your work.
+similar forms? What matches and what differs?}{3}{30}
 
 \subsection{Python Implementation of the Posterior}
 
 Now let's implement the system in
 code.
 
-### Assignment Question 4
 
-Use the values for $\mappingMatrix$ and $\sigma^2$ you
+\codeassignment{Use the values for $\mappingMatrix$ and $\noiseStd^2$ you
 have computed, along with the data set $\dataMatrix$ to compute the posterior
 density over $\latentMatrix$. Write a function of the form}python
 mu_x, C_x =
@@ -941,10 +930,7 @@ posterior covariance for the given $\dataMatrix$.
 Don't forget to subtract the
 mean of the data `Y` inside your function before computing the posterior:
 remember we assumed at the beginning of our analysis that the data had been
-centred (i.e. the mean was removed).
-
-
-*20 marks*
+centred (i.e. the mean was removed).}{4}{20}
 
 \code{# Question 4 Answer Code
 # Write code for you answer to this question in this box
@@ -976,11 +962,11 @@ $$
 $$
 where
 $\mathbf{U}$ is a matrix of orthogonal vectors in the columns, meaning
-$\mathbf{U}^\top\mathbf{U} = \mathbf{I}$. It has the same number of rows and
+$\mathbf{U}^\top\mathbf{U} = \eye$. It has the same number of rows and
 columns as $\mathbf{Z}$. The matrices $\mathbf{\Lambda}$ and $\mathbf{V}$ are
 both square with dimensionality given by the number of columns of $\mathbf{Z}$.
 The matrix $\mathbf{\Lambda}$ is *diagonal* and $\mathbf{V}$ is an orthogonal
-matrix so $\mathbf{V}^\top\mathbf{V} = \mathbf{V}\mathbf{V}^\top = \mathbf{I}$.
+matrix so $\mathbf{V}^\top\mathbf{V} = \mathbf{V}\mathbf{V}^\top = \eye$.
 The eigenvalues of the matrix $\dataMatrix^\top\dataMatrix$ are then given by the
 singular values of the matrix $\dataMatrix^\top$ squared and the eigenvectors are
 given by $\mathbf{U}$.
@@ -996,37 +982,37 @@ $$
 where $\mathbf{R}$ is an arbitrary
 rotation matrix. This implies that the posterior is given by
 $$
-\mathbf{C}_x =
-\left[\sigma^{-2}\mathbf{R}\mathbf{L}^2\mathbf{R}^\top + \mathbf{I}\right]^{-1}
+\covarianceMatrix_x =
+\left[\noiseStd^{-2}\mathbf{R}\mathbf{L}^2\mathbf{R}^\top + \eye\right]^{-1}
 $$
-because $\mathbf{U}^\top \mathbf{U} = \mathbf{I}$. Since, by convention, we
-normally take $\mathbf{R} = \mathbf{I}$ to ensure that the principal components
+because $\mathbf{U}^\top \mathbf{U} = \eye$. Since, by convention, we
+normally take $\mathbf{R} = \eye$ to ensure that the principal components
 are orthonormal we can write
 $$
-\mathbf{C}_x = \left[\sigma^{-2}\mathbf{L}^2 +
-\mathbf{I}\right]^{-1}
+\covarianceMatrix_x = \left[\noiseStd^{-2}\mathbf{L}^2 +
+\eye\right]^{-1}
 $$
-which implies that $\mathbf{C}_x$ is actually diagonal
+which implies that $\covarianceMatrix_x$ is actually diagonal
 with elements given by
 $$
-c_i = \frac{\sigma^2}{\sigma^2 + \ell^2_i}
+c_i = \frac{\noiseStd^2}{\noiseStd^2 + \ell^2_i}
 $$
 and
 allows us to write
 $$
-\boldsymbol{\mu}_x = [\mathbf{L}^2 + \sigma^2
-\mathbf{I}]^{-1} \mathbf{L} \mathbf{U}^\top \dataVector_{i, :}
+\meanVector_x = [\mathbf{L}^2 + \noiseStd^2
+\eye]^{-1} \mathbf{L} \mathbf{U}^\top \dataVector_{i, :}
 $$
 $$
-\boldsymbol{\mu}_x = \mathbf{D}\mathbf{U}^\top \dataVector_{i, :}
+\meanVector_x = \mathbf{D}\mathbf{U}^\top \dataVector_{i, :}
 $$
 where
 $\mathbf{D}$ is a diagonal matrix with diagonal elements given by $d_{i} =
-\frac{\ell_i}{\sigma^2 + \ell_i^2}$.
+\frac{\ell_i}{\noiseStd^2 + \ell_i^2}$.
 
+\setupcode{import scipy as sp
+import numpy as np}
 \code{# probabilistic PCA algorithm using SVD
-import scipy as sp
-import numpy as np
 def ppca(Y, q, center=True):
     """Probabilistic PCA through singular value decomposition"""
     # remove mean
@@ -1057,15 +1043,10 @@ def posterior(Y, U, ell, sigma2, center=True):
 \section{Examples}
 
 For our first example we'll consider some motion capture data of a
-man breaking into a run. [Motion capture
-data](http://en.wikipedia.org/wiki/Motion_capture) involves capturing a 3-d
-point cloud to represent a character, often by an underlying skeleton. For this
-data set, from Ohio State University, we have 54 frame of motion capture, each
-frame containing 102 values, which are the 3-d locations of 34 different points
-from the subjects skeleton.
+man breaking into a run. [Motion capture data](http://en.wikipedia.org/wiki/Motion_capture) involves capturing a 3-d point cloud to represent a character, often by an underlying skeleton. For this data set, from Ohio State University, we have 54 frame of motion capture, each frame containing 102 values, which are the 3-d locations of 34 different points from the subjects skeleton.
 
-\code{import pods
-data = pods.datasets.osu_run1()
+\setupcode{import pods}
+\code{data = pods.datasets.osu_run1()
 Y = data['Y']}
 
 Once the data is loaded in we can examine the first two principal components as
@@ -1073,10 +1054,10 @@ follows,
 
 \code{q = 2
 U, ell, sigma2 = ppca(Y, q)
-mu_x, C_x = posterior(Y, U, ell, sigma2)
-import matplotlib.pyplot as plt
-%matplotlib inline
-plt.plot(mu_x[:, 0], mu_x[:, 1], 'rx-')}
+mu_x, C_x = posterior(Y, U, ell, sigma2)}
+\setupplotcode{import matplotlib.pyplot as plt
+%matplotlib inline}
+\plotcode{plt.plot(mu_x[:, 0], mu_x[:, 1], 'rx-')}
 
 Here because the data is a time course, we have connected points that are
 neighbouring in time. This highlights the form of the run, which involves 3
@@ -1101,7 +1082,7 @@ There are 215 observations of 30 different access points. In this case the model
 is suggesting that the access point signal strength should be linearly dependent
 on the location in the map. In other words we are expecting the access point
 strength for the $j$th access point at robot position $x_{i, :}$ to be
-represented by $y_{i, j} = \mathbf{w}_{j, :}^\top \mathbf{x}_{i, :} +
+represented by $y_{i, j} = \weightVector_{j, :}^\top \latentVector_{i, :} +
 \epsilon_{i,j}$.
 
 \code{q = 2
@@ -1158,7 +1139,7 @@ f_{i, j} =
 $$
 for matrix factorization or
 $$
-f_{i, j} = \mathbf{x}_{i, :}^\top \mathbf{w}_{j, :} 
+f_{i, j} = \latentVector_{i, :}^\top \weightVector_{j, :} 
 $$
 for probabilistic PCA
 and factor analysis are the same.
@@ -1234,44 +1215,47 @@ problem in a nonlinear space, and my own work in this area [non-linearises the
 dual probabilistic
 PCA](http://jmlr.org/papers/volume6/lawrence05a/lawrence05a.pdf). 
 
-My
-conclusion is that when you are doing machine learning you should always have it
-clear in your mind what your *model* is and what your *algorithm* is. You can
-recognise your model because it normally contains a prediction function and an
-objective function. The algorithm on the other hand is the sequence of steps you
-implement on the computer to solve for the parameters of this model. For
-efficient implementation, we often modify our model to allow for faster
-algorithms, and this is a perfectly valid pragmatist's approach, so conflation
-of model and algorithm is not always a bad thing. But for clarity of thinking
-and understanding it is necessary to maintain the separation and to maintain a
-handle on when and why we perform the conflation.
+My conclusion is that when you are doing machine learning you should
+always have it clear in your mind what your *model* is and what your
+*algorithm* is. You can recognise your model because it normally
+contains a prediction function and an objective function. The
+algorithm on the other hand is the sequence of steps you implement on
+the computer to solve for the parameters of this model. For efficient
+implementation, we often modify our model to allow for faster
+algorithms, and this is a perfectly valid pragmatist's approach, so
+conflation of model and algorithm is not always a bad thing. But for
+clarity of thinking and understanding it is necessary to maintain the
+separation and to maintain a handle on when and why we perform the
+conflation.
 
 \section{PCA in Practice}
 
-Principal
-component analysis is so effective in practice that there has almost developed a
-mini-industry in renaming the method itself (which is ironic, given its origin).
-In particular [Latent Semantic
-Indexing](http://en.wikipedia.org/wiki/Latent_semantic_indexing) in text
-processing is simply PCA on a particular representation of the term frequencies
-of the document. There is a particular fad to rename the eigenvectors after the
-nature of the data you are examining, perhaps initially triggered by [Turk and
-Pentland's](http://www.face-rec.org/algorithms/PCA/jcn.pdf) paper on eigenfaces,
-but also with
+Principal component analysis is so effective in practice that there
+has almost developed a mini-industry in renaming the method itself
+(which is ironic, given its origin).  In particular
+[Latent Semantic Indexing](http://en.wikipedia.org/wiki/Latent_semantic_indexing)
+in text processing is simply PCA on a particular representation of the
+term frequencies of the document. There is a particular fad to rename
+the eigenvectors after the nature of the data you are examining,
+perhaps initially triggered by
+[Turk and Pentland's](http://www.face-rec.org/algorithms/PCA/jcn.pdf)
+paper on eigenfaces, but also with
 [eigenvoices](https://wiki.inf.ed.ac.uk/twiki/pub/CSTR/ListenSemester1_2007_8/kuhn-
 junqua-eigenvoice-icslp1998.pdf) and
-[eigengenes](http://www.biomedcentral.com/1752-0509/1/54). This seems to be an
-instantiation of a wider, and hopefully subconcious, tendency in academia to
-attempt to differentiate one idea from the same idea in related fields in order
-to emphasise the novelty. The unfortunate result is somewhat of a confusing
-literature for relatively simple model. My recommendations would be as follows.
-If you have multivariate data, applying some form of principal component would
-seem to be a very good idea as a first step. Even if you intend to later perform
-classification or regression on your data, it can give you understanding of the
-structure of the underlying data and help you to develop your intuitions about
-the nature of your data. Intelligent plotting and interaction with your data is
-always a good think, and for high dimensional data that means that you need some
-way of visualisation, PCA is typically a good starting point.
+[eigengenes](http://www.biomedcentral.com/1752-0509/1/54). This seems
+to be an instantiation of a wider, and hopefully subconcious, tendency
+in academia to attempt to differentiate one idea from the same idea in
+related fields in order to emphasise the novelty. The unfortunate
+result is somewhat of a confusing literature for relatively simple
+model. My recommendations would be as follows.  If you have
+multivariate data, applying some form of principal component would
+seem to be a very good idea as a first step. Even if you intend to
+later perform classification or regression on your data, it can give
+you understanding of the structure of the underlying data and help you
+to develop your intuitions about the nature of your data. Intelligent
+plotting and interaction with your data is always a good think, and
+for high dimensional data that means that you need some way of
+visualisation, PCA is typically a good starting point.
 
 \section{Marginal Likelihood}
 
@@ -1284,15 +1268,15 @@ regression we would find that the marginal likelihood of the data is independent
 across the features and correlated across the data,
 $$
 p(\dataMatrix|\latentMatrix)
-= \prod_{j=1}^p \mathcal{N}(\dataVector_{:, j}|\mathbf{0},
-\alpha\latentMatrix\latentMatrix^\top + \sigma^2 \mathbf{I})
+= \prod_{j=1}^p \gaussianDist{\dataVector_{:, j}}{\zerosVector}{
+\alpha\latentMatrix\latentMatrix^\top + \noiseStd^2 \eye}
 $$
 where $\dataVector_{:,
 j}$ is a column of the data matrix and the independence is across the
 *features*, in probabilistic PCA the marginal likelihood has the form,
 $$
-p(\dataMatrix|\mappingMatrix) = \prod_{i=1}^n \mathcal{N}(\dataVector_{i,
-:}|\mathbf{0}, \mappingMatrix\mappingMatrix^\top + \sigma^2 \mathbf{I})
+p(\dataMatrix|\mappingMatrix) = \prod_{i=1}^\numData \gaussianDist{\dataVector_{i,
+:}}{\zerosVector}{\mappingMatrix\mappingMatrix^\top + \noiseStd^2 \eye}
 $$
 where
 $\dataVector_{i, :}$ is a row of the data matrix $\dataMatrix$ and the
@@ -1304,19 +1288,20 @@ The quality of the model can be assessed using the log likelihood of this
 Gaussian form.
 $$
 \log p(\dataMatrix|\mappingMatrix) = -\frac{\numData}{2} \log \left|
-\mappingMatrix\mappingMatrix^\top + \sigma^2 \mathbf{I} \right| -\frac{1}{2}
-\sum_{i=1}^n \dataVector_{i, :}^\top \left(\mappingMatrix\mappingMatrix^\top + \sigma^2
-\mathbf{I}\right)^{-1} \dataVector_{i, :} +\text{const}
+\mappingMatrix\mappingMatrix^\top + \noiseStd^2 \eye \right| -\frac{1}{2}
+\sum_{i=1}^\numData \dataVector_{i, :}^\top \left(\mappingMatrix\mappingMatrix^\top + \noiseStd^2
+\eye\right)^{-1} \dataVector_{i, :} +\text{const}
 $$
-but this can be
-computed more rapidly by exploiting the low rank form of the covariance
-covariance, $\mathbf{C} = \mappingMatrix\mappingMatrix^\top + \sigma^2 \mathbf{I}$ and
-the fact that $\mappingMatrix = \mathbf{U}\mathbf{L}\mathbf{R}^\top$.
-Specifically, we first use the decomposition of $\mappingMatrix$ to write:
+but this can be computed more rapidly by exploiting the low rank form
+of the covariance covariance, $\covarianceMatrix =
+\mappingMatrix\mappingMatrix^\top + \noiseStd^2 \eye$ and the fact
+that $\mappingMatrix = \mathbf{U}\mathbf{L}\mathbf{R}^\top$.
+Specifically, we first use the decomposition of $\mappingMatrix$ to
+write:
 $$
--\frac{\numData}{2} \log \left| \mappingMatrix\mappingMatrix^\top + \sigma^2 \mathbf{I} \right|
-= -\frac{\numData}{2} \sum_{i=1}^q \log (\ell_i^2 + \sigma^2) - \frac{n(p-q)}{2}\log
-\sigma^2 ,
+-\frac{\numData}{2} \log \left| \mappingMatrix\mappingMatrix^\top + \noiseStd^2 \eye \right|
+= -\frac{\numData}{2} \sum_{i=1}^q \log (\ell_i^2 + \noiseStd^2) - \frac{n(p-q)}{2}\log
+\noiseStd^2,
 $$
 where $\ell_i$ is the $i$th diagonal element of $\mathbf{L}$.
 Next, we use the [Woodbury matrix
@@ -1324,41 +1309,41 @@ identity](http://en.wikipedia.org/wiki/Woodbury_matrix_identity) which allows us
 to write the inverse as a quantity which contains another inverse in a smaller
 matrix:
 $$
-(\sigma^2 \mathbf{I} + \mappingMatrix\mappingMatrix^\top)^{-1} =
-\sigma^{-2}\mathbf{I}-\sigma^{-4}\mappingMatrix{\underbrace{(\mathbf{I}+\sigma^{-2}\mappingMatrix^\top\mappingMatrix)}_{\mathbf{C}_x}}^{-1}\mappingMatrix^\top
+(\noiseStd^2 \eye + \mappingMatrix\mappingMatrix^\top)^{-1} =
+\noiseStd^{-2}\eye-\noiseStd^{-4}\mappingMatrix{\underbrace{(\eye+\noiseStd^{-2}\mappingMatrix^\top\mappingMatrix)}_{\covarianceMatrix_x}}^{-1}\mappingMatrix^\top
 $$
 So, it turns out that the original inversion of the $p \times p$ matrix can
 be done by forming a quantity which contains the inversion of a $q \times q$
-matrix which, moreover, turns out to be the quantity $\mathbf{C}_x$ of the
+matrix which, moreover, turns out to be the quantity $\covarianceMatrix_x$ of the
 posterior.
 
 Now, we put everything together to obtain:
 $$
-\log
-p(\dataMatrix|\mappingMatrix) = -\frac{\numData}{2} \sum_{i=1}^q \log (\ell_i^2 + \sigma^2)
-- \frac{n(p-q)}{2}\log \sigma^2 - \frac{1}{2} \text{tr} \left( \dataMatrix^\top
-\left( \sigma^{-2}\mathbf{I}-\sigma^{-4}\mappingMatrix \mathbf{C}_x \mappingMatrix^\top
-\right) \dataMatrix  \right) + \text{const}
+\log p(\dataMatrix|\mappingMatrix) = -\frac{\numData}{2} \sum_{i=1}^q
+\log (\ell_i^2 + \noiseStd^2)
+- \frac{n(p-q)}{2}\log \noiseStd^2 - \frac{1}{2} \trace{\dataMatrix^\top \left(
+\noiseStd^{-2}\eye-\noiseStd^{-4}\mappingMatrix \covarianceMatrix_x
+\mappingMatrix^\top \right) \dataMatrix} + \text{const},
 $$
-where we used the fact that a
-scalar sum can be written as $\sum_{i=1}^n \dataVector_{i,:}^\top \kernelMatrix
-\dataVector_{i,:} = \text{tr}\left( \dataMatrix^\top \kernelMatrix \dataMatrix
-\right)$, for any matrix $\kernelMatrix$ of appropriate dimensions. We now use the
-properties of the trace
-$\text{tr}(\mathbf{A}+\mathbf{B})=\text{tr}(\mathbf{A})+\text{tr}(\mathbf{B})$
-and $\text{tr}(c \mathbf{A}) = c \text{tr}(\mathbf{A})$, where $c$ is a scalar
-and $\mathbf{A},\mathbf{B}$ matrices of compatible sizes. Therefore, the final
-log likelihood takes the form:
+where we used the fact that a scalar sum can be written as
+$\sum_{i=1}^\numData \dataVector_{i,:}^\top \kernelMatrix
+\dataVector_{i,:} = \trace{\dataMatrix^\top \kernelMatrix
+\dataMatrix}$, for any matrix $\kernelMatrix$ of appropriate
+dimensions. We now use the properties of the trace
+$\trace{\mathbf{A}+\mathbf{B}}=\trace{\mathbf{A}}+\trace{\mathbf{B}}$
+and $\trace{c \mathbf{A}} = c \trace{\mathbf{A}}$, where $c$ is
+a scalar and $\mathbf{A},\mathbf{B}$ matrices of compatible
+sizes. Therefore, the final log likelihood takes the form:
 $$
 \log p(\dataMatrix|\mappingMatrix) = -\frac{\numData}{2}
-\sum_{i=1}^q \log (\ell_i^2 + \sigma^2) - \frac{\numData(p-q)}{2}\log \sigma^2 -
-\frac{\sigma^{-2}}{2} \text{tr}(\dataMatrix^\top \dataMatrix)
-+\frac{\sigma^{-4}}{2} \text{tr}(\mathbf{B}\mathbf{C}_x\mathbf{B}^\top) +
+\sum_{i=1}^q \log (\ell_i^2 + \noiseStd^2) - \frac{\numData(p-q)}{2}\log \noiseStd^2 -
+\frac{\noiseStd^{-2}}{2} \trace{\dataMatrix^\top \dataMatrix}
++\frac{\noiseStd^{-4}}{2} \trace{\mathbf{B}\covarianceMatrix_x\mathbf{B}^\top} +
 \text{const}
 $$
 where we also defined $\mathbf{B}=\dataMatrix^\top\mappingMatrix$.
 Finally, notice that
-$\text{tr}(\dataMatrix\dataMatrix^\top)=\text{tr}(\dataMatrix^\top\dataMatrix)$ can
+$\trace{\dataMatrix\dataMatrix^\top}=\trace{\dataMatrix^\top\dataMatrix}$ can
 be computed faster as the sum of all the elements of
 $\dataMatrix\circ\dataMatrix$, where $\circ$ denotes the element-wise (or
 [Hadamard](http://en.wikipedia.org/wiki/Hadamard_product_(matrices)) product.
@@ -1369,8 +1354,6 @@ Given any posterior projection of a data point,
 we can replot the original data as a function of the input space. 
 
 We will now try to reconstruct the motion capture figure form some different places in the latent plot.
-
-### Assignment Question 5
 
 \writeassignment{Project the motion capture data onto its principal components, and then use the *mean posterior estimate* to reconstruct the data from the latent variables at the data points. Use two latent dimensions. What is the sum of squares error for the reconstruction?}{5}{25}
 
@@ -1402,7 +1385,7 @@ $$
 $$
 then 
 $$
-\left.\mathbf{U}^\prime\right.^\top\mathbf{U}^\prime = \mathbf{I}
+\left.\mathbf{U}^\prime\right.^\top\mathbf{U}^\prime = \eye
 $$
 
 \subsection{Olivetti Faces}
@@ -1424,7 +1407,7 @@ recovers the original image into a matrix `im` by using the `np.reshape` functio
 
 \subsection{Visualizing the Eigenvectors}
 
-Each retained eigenvector is stored in the $j$th column of $\mathbf{U}$. Each of these eigenvectors is associated with particular directions of variation in the original data. Principal component analysis implies that we can reconstruct any face by using a weighted sum of these eigenvectors where the weights for each face are given by the relevant vector of the latent variables, $\mathbf{x}_{i, :}$ and the diagonal elements of the matrix $\mathbf{L}$. We can visualize the eigenvectors $\mathbf{U}$ as images by performing the same reshape operation we used to recover the image associated with a data point above. Below we do this for the first nine eigenvectors of the Olivetti Faces data.
+Each retained eigenvector is stored in the $j$th column of $\mathbf{U}$. Each of these eigenvectors is associated with particular directions of variation in the original data. Principal component analysis implies that we can reconstruct any face by using a weighted sum of these eigenvectors where the weights for each face are given by the relevant vector of the latent variables, $\latentVector_{i, :}$ and the diagonal elements of the matrix $\mathbf{L}$. We can visualize the eigenvectors $\mathbf{U}$ as images by performing the same reshape operation we used to recover the image associated with a data point above. Below we do this for the first nine eigenvectors of the Olivetti Faces data.
 
 \plotcode{width=3
 height=3

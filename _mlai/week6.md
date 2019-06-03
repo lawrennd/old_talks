@@ -2,8 +2,6 @@
 layout: lectures
 title: "Bayesian Regression"
 abstract: "Bayesian formalisms deal with uncertainty in parameters, "
-ipynb: 2015-11-03-week6.ipynb
-reveal: 2015-11-03-week6.slides.html
 author:
 - family: Lawrence
   given: Neil D.
@@ -206,7 +204,7 @@ sigma2 = 0.01}
 
 *   Section 3.4 of @Bishop:book06 (pg 161–165).
 
-\subsection{References}
+\references
 
 
 

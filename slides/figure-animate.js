@@ -4,7 +4,7 @@ function setDivs(group) {
   showDivs(slideIndex, group);
 }
 
-function plusDivs(n, group) {
+function plusDivs(n, group) {  
   showDivs(slideIndex += n, group);
   document.setElementById("range-".concat(group)) = slideIndex
 }
