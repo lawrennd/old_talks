@@ -154,6 +154,6 @@ from ipywidgets import IntSlider}
 \caption{simple models on left complex models on right}
 }
 
-\notes{\figure{\includepng{../slides/diagrams/ml/bias-variance000}{80%}}\includepng{../slides/diagrams/ml/bias-variance010}{80%}}{In each figure the more simple model is on the left, and the more complex model is on the right. Each fit is done to a different version of the data set. The simpler model is more consistent in its errors (bias error), whereas the more complex model is varying in its errors (variance error).}{bias-variance-errors}}
+\notes{\figure{\includepng{../slides/diagrams/ml/bias-variance000}{80%}\includepng{../slides/diagrams/ml/bias-variance010}{80%}}{In each figure the more simple model is on the left, and the more complex model is on the right. Each fit is done to a different version of the data set. The simpler model is more consistent in its errors (bias error), whereas the more complex model is varying in its errors (variance error).}{bias-variance-errors}}
 
 \endif
