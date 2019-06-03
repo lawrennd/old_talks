@@ -215,7 +215,7 @@ categories:
 <p>This talk is a general introduction to machine learning, we will highlight the technical challenges and the current solutions. We will give an overview of what is machine learning and why it is important.</p>
 <h2 id="rise-of-machine-learning">Rise of Machine Learning</h2>
 <p>Machine learning is the combination of data and models, through computation, to make predictions. <br /><span class="math display">$$
-\text{data} + \text{model} + \xrightarrow{\text{compute}} \text{prediction}
+\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}
 $$</span><br /></p>
 <h2 id="data-revolution">Data Revolution</h2>
 Machine learning has risen in prominence due to the rise in data availability, and its interconnection with computers. The high bandwidth connection between data and computer leads to a new interaction between us and data via the computer. It is that channel that is being mediated by machine learning techniques.
@@ -823,29 +823,22 @@ $$</span><br /> where the data is provided to us as a set of <span class="math i
 <a class="sourceLine" id="cb24-2" data-line-number="2">                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, </a>
 <a class="sourceLine" id="cb24-3" data-line-number="3">                            samp<span class="op">=</span>IntSlider(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">10</span>,<span class="dv">1</span>))</a></code></pre></div>
 <div class="figure">
-<div id="bias-variance-errors-figure" class="figure-frame">
-<table>
-<tr>
-<td width="45%">
+<div id="-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/ml/bias-variance000.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-</td>
-<td width="45%">
+</div>
+<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="-caption" class="caption-frame">
+<p>Figure:</p>
+</div>
+</div>
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/ml/bias-variance010.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-</td>
-</tr>
-</table>
-</div>
-<div id="bias-variance-errors-magnify" class="magnify" onclick="magnifyFigure(&#39;bias-variance-errors&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
-</div>
-<div id="bias-variance-errors-caption" class="caption-frame">
-<p>Figure: In each figure the more simple model is on the left, and the more complex model is on the right. Each fit is done to a different version of the data set. The simpler model is more consistent in its errors (bias error), whereas the more complex model is varying in its errors (variance error).</p>
-</div>
-</div>
+<p>}</p>
 <h2 id="overfitting">Overfitting</h2>
 <div class="figure">
 <div id="alex-ihler-overfitting-figure" class="figure-frame">
@@ -1047,8 +1040,7 @@ $$</span><br /> where, if this were a personality test, then <span class="math i
 <p>One issue for many companies is that the best way of testing the customer experience, A/B testing, prioritizes short term reward. The internet is currently being driven by short term rewards which make it distracting in the short term, but perhaps less useful in the long term. Click-bait is an example, but there are more subtle effects. The success of Facebook is driven by its ability to draw us in when likely we should be doing something else. This is driven by large scale A/B testing.</p>
 <p>One open question is how to drive non-visual interfaces through equivalents to A/B testing. Speech interfaces, such as those used in intelligent agents, are less amenable to A/B testing when determining the quality of the interface. Improving interaction with them is therefore less exact science than the visual interface. Data efficient reinforcement learning methods are likely to be key to improving these agent’s ability to interact with the user and understand intent. However, they are not yet mature enough to be deployed in this application.</p>
 <h2 id="game-play">Game Play</h2>
-<p><br />
-An area where reinforcement learning methods have been deployed with high profile success is game play. In game play the reward is delayed to the end of the game, and it comes in the form of victory or defeat. A significant advantage of game play as an application area is that, through simulation of the game, it is possible to generate as much data as is required to solve the problem. For this reason, many of the recent advances in reinforcement learning have occurred with methods that are not data efficient.</p>
+<p>An area where reinforcement learning methods have been deployed with high profile success is game play. In game play the reward is delayed to the end of the game, and it comes in the form of victory or defeat. A significant advantage of game play as an application area is that, through simulation of the game, it is possible to generate as much data as is required to solve the problem. For this reason, many of the recent advances in reinforcement learning have occurred with methods that are not data efficient.</p>
 <p>The company DeepMind is set up around reinforcement learning as an approach to general intelligence. All their most well-known achievements are centered around artificial intelligence in game play. In reinforcement learning a decision made at any given time have a downstream effect on the result. Whether the effect if beneficial or not is unknown until a future moment.</p>
 <p>We can think of reinforcement learning as providing a label, but the label is associated with a series of data involving a number of decisions taken. Each decision was taken given the understanding of game play at any given moment. Understanding which of these decisions was important in victory or defeat is a hard problem.</p>
 <p>In machine learning the process of understanding which decisions were beneficial and which were detrimental is known as the credit allocation problem. You wish to reward decisions that led to success to encourage them, but punish decisions that lead to failure.</p>
@@ -1057,7 +1049,7 @@ An area where reinforcement learning methods have been deployed with high profil
 <p>The ancient Chinese game of Go was considered a challenge for artificial intelligence for two reasons. Firstly, the game tree has a very high branching factor. The game tree is a discrete representation of the game. Every node in the game tree is associated with a board position. You can move through the game tree by making legal a move on the board to change the position. In Go, there are so many legal moves that the game tree increases exponentially. This challenge in Go was addressed by using stochastic game tree search. Rather than exploring the game tree exhaustively they explored it randomly.</p>
 <p>Secondly, evaluating the quality of any given board position was deemed to be very hard.<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> The value function determines for each player whether they are winning or losing. Skilled Go players can assess a board position, but they do it by instinct, by intuition. Just as early AI researchers struggled to give rules for detecting cancer, it is challenging to give rules to assess a Go board. The machine learning approach that AlphaGo took is to train a value function network to make this assessment.</p>
 <p>The approach that DeepMind took to conquering Go is a <em>model-free</em> approach known as <em>Q-learning</em>.<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a> The model-free approach refers to the fact that they don’t directly include a model of how the world evolves in the reinforcement learning algorithm. They make extensive use of the game tree, but they don’t model how it evolves. They do model the expected reward of each position in the game tree (the value function) but that is not the same as modeling how the game will proceed.</p>
-<p>Reinforcement Learning and Classical Control</p>
+<h2 id="reinforcement-learning-and-classical-control">Reinforcement Learning and Classical Control</h2>
 <p>An alternative approach to reinforcement learning is to use a prediction function to suggest how the world will evolve in response to your actions. To predict how the game tree will evolve. You can then use this prediction to indirectly infer the expected reward associated with any action. This is known as <em>model-based</em> reinforcement learning.</p>
 <p>This model-based approach is also closer to a control system. A classical control system is one where you give the system a set point. For example, a thermostat in the house. You set the temperature and the boiler switches off when it reaches it. Optimal control is about getting the house to the right temperature as quickly as possible. Classical control is widely used in robotic control and flight control.</p>
 <p>One interesting crossover between classical control and machine learning arises because classical optimal control can be seen as a form of model-based reinforcement learning. One where the reward is recovered when the set point is reached. In control engineering the prediction function is known as the <em>transfer function</em>. The process of fitting the transfer function in control is known as <em>system identification</em>.</p>

@@ -48,16 +48,19 @@ for filename in filenames:
         listdiagrams.extend(diag_list)
     diagrams = latex.extract_diagrams(lines, 'diagram')
     png_list = []
+    emf_list = []
     pdf_list = []
     diag_list = []
     for i, diag_str in enumerate(diagrams):
         if "\\" not in diag_str:
             diag_list.append(diag_str + '.svg')
             png_list.append(diag_str + '.png')
+            emf_list.append(diag_str + '.emf')
             pdf_list.append(diag_str + '.pdf')
     
     listdiagrams.extend(diag_list)
     listdiagrams.extend(png_list)
+    listdiagrams.extend(emf_list)
     listdiagrams.extend(pdf_list)
 
 full_list = []

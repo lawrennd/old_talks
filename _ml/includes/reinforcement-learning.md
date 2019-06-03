@@ -53,8 +53,7 @@ The domain of reinforcement learning is one that many researchers seem to believ
 * Reward is delayed to the end of the game, victory or defeat.
 * Can acquire lots of data through simulation.
 * Many of the recent advances in reinforcement learning have occurred with methods that are not data efficient.}
-\notes{\
-An area where reinforcement learning methods have been deployed with high profile success is game play. In game play the reward is delayed to the end of the game, and it comes in the form of victory or defeat. A significant advantage of game play as an application area is that, through simulation of the game, it is possible to generate as much data as is required to solve the problem. For this reason, many of the recent advances in reinforcement learning have occurred with methods that are not data efficient.}
+\notes{An area where reinforcement learning methods have been deployed with high profile success is game play. In game play the reward is delayed to the end of the game, and it comes in the form of victory or defeat. A significant advantage of game play as an application area is that, through simulation of the game, it is possible to generate as much data as is required to solve the problem. For this reason, many of the recent advances in reinforcement learning have occurred with methods that are not data efficient.}
 
 \newslide{DeepMind}
 \slides{
@@ -94,7 +93,7 @@ The approach that DeepMind took to conquering Go is a *model-free* approach know
 
 [^qlearning]: The approach was described early on in the history of machine learning by Chris Watkins, during his PhD thesis in the 1980s. It is known as Q-learning. It's recent success in the games domain is driven by the use of deep learning for the policy and value functions as well as the use of fast compute to generate and process very large quantities of data. In its standard form it is not seen as a very data-efficient approach.}
 
-\notes{Reinforcement Learning and Classical Control}
+\notes{\subsection{Reinforcement Learning and Classical Control}}
 \newslide{Model-Based Approach}
 \slides{
 * An alternative approach to reinforcement learning is to use a prediction function.
