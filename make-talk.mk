@@ -105,10 +105,13 @@ ${BASE}.slides.html.markdown: ${BASE}.md ${DEPS}
 
 
 %.pdf: %.svg
-	/Applications/Inkscape.app/Contents/Resources/bin/inkscape $< -A=$@ --without-gui
+	${INKSCAPE} $< --export-pdf=$@ --without-gui
 
 %.png: %.svg
-	/Applications/Inkscape.app/Contents/Resources/bin/inkscape $< -A=$@ --without-gui
+	${INKSCAPE} $< --export-png=$@ --without-gui
+
+%.emf: %.svg
+	${INKSCAPE} $< --export-emf=$@ --without-gui
 
 clean:
 	rm ${BASE}.slides.html.markdown \

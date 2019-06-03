@@ -14,7 +14,7 @@
 
 \setupplotcode{import teaching_plots as plot}
 
-\plotcode{plot.poisson('../slides/diagram/ml/')}
+\plotcode{plot.poisson('../slides/diagrams/ml/')}
 
 \newslide{Poisson Distribution}
 
