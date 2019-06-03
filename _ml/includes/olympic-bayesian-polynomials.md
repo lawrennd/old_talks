@@ -1,5 +1,8 @@
 \ifndef{olympicBayesianPolynomials}
 \define{olympicBayesianPolynomials}
+
+\include{_ml/includes/olympic-marathon-data.md}
+
 \editme
 
 \subsection{Olympic Data with Bayesian Polynomials}
@@ -9,12 +12,7 @@
 \setupcode{import mlai
 import pods}
 
-\code{data = pods.datasets.olympic_marathon_men()
-x = data['X']
-y = data['Y']
-num_data = x.shape[0]
-
-data_limits = [1892, 2020]
+\plotcode{data_limits = [1892, 2020]
 basis = mlai.Basis(mlai.polynomial, number=1, data_limits=data_limits)
 
 max_basis = y.shape[0]}

@@ -13,54 +13,46 @@
 * How will the model perform on previously unseen data?
 * Let's consider predicting the future.}
 
-\setupplotcode{import teaching_plots as plot}
-\plotcode{plot.holdout_fit(x, y, param_name='num_basis', 
+\setupplotcode{import teaching_plots as plot
+import mlai}
+
+\plotcode{data_limits=xlim
+basis = mlai.Basis(mlai.polynomial, number=1, data_limits=data_limits)
+max_basis = 11}
+
+\plotcode{plot.holdout_fit(x, y, param_name='number', 
                  param_range=(1, max_basis+1), 
-                 model=mlai.LM, basis=basis, data_limits=data_limits,
+                 model=mlai.LM, basis=basis, 
                  permute=False, objective_ylim=[0, 0.8], 
-				 xlim=data_limits, prefix='olympic_val_extra', 
-    		     diagrams='../slides/diagrams/ml')}
+                 xlim=data_limits, prefix='olympic_val_extra', 
+                 diagrams='../slides/diagrams/ml')}
 
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
-\displaycode{pods.notebook.display_plots('olympic_val_extra_LM_polynomial_num_basis{num_basis:0>3}.svg', 
+\displaycode{pods.notebook.display_plots('olympic_val_extra_LM_polynomial_number{num_basis:0>3}.svg', 
                             directory='../slides/diagrams/ml', 
 							num_basis=IntSlider(1, 1, max_basis, 1))}
 
 \newslide{Future Prediction: Extrapolation}
 \slides{
 \define{width}{80%}
-\startanimation{olympic_val_extra_LM_polynomial_num_basis}{1}{26}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_num_basis001}{\width}}{olympic_val_extra_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_num_basis002}{\width}}{olympic_val_extra_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_num_basis003}{\width}}{olympic_val_extra_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_num_basis004}{\width}}{olympic_val_extra_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_num_basis005}{\width}}{olympic_val_extra_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_num_basis006}{\width}}{olympic_val_extra_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_num_basis007}{\width}}{olympic_val_extra_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_num_basis008}{\width}}{olympic_val_extra_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_num_basis009}{\width}}{olympic_val_extra_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_num_basis010}{\width}}{olympic_val_extra_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_num_basis011}{\width}}{olympic_val_extra_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_num_basis012}{\width}}{olympic_val_extra_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_num_basis013}{\width}}{olympic_val_extra_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_num_basis014}{\width}}{olympic_val_extra_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_num_basis015}{\width}}{olympic_val_extra_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_num_basis016}{\width}}{olympic_val_extra_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_num_basis017}{\width}}{olympic_val_extra_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_num_basis018}{\width}}{olympic_val_extra_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_num_basis019}{\width}}{olympic_val_extra_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_num_basis020}{\width}}{olympic_val_extra_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_num_basis021}{\width}}{olympic_val_extra_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_num_basis022}{\width}}{olympic_val_extra_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_num_basis023}{\width}}{olympic_val_extra_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_num_basis024}{\width}}{olympic_val_extra_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_num_basis025}{\width}}{olympic_val_extra_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_num_basis026}{\width}}{olympic_val_extra_LM_polynomial_num_basis}
+\define{animationName}{olympic_val_extra_LM_polynomial_number}
+\startanimation{\animationName}{1}{11}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_number001}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_number002}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_number003}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_number004}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_number005}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_number006}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_number007}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_number008}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_number009}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_number010}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_number011}{\width}}{\animationName}
 \endanimation
 }
 
-\notes{\figure{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_num_basis026}{80%}}{Olympic marathon data with validation error for extrapolation.}{olympic-val-extra-LM-polynomial-num-basis-26}}
+\notes{\figure{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_number011}{80%}}{Olympic marathon data with validation error for extrapolation.}{olympic-val-extra-LM-polynomial-number-11}}
 
 
 
@@ -80,15 +72,15 @@ from ipywidgets import IntSlider}
 * One trick is to sample the validation set from throughout the data set.}
 
 \setupplotcode{import teaching_plots as plot}
-\plotcode{plot.holdout_fit(x, y, param_name='num_basis', param_range=(1, max_basis+1), 
-                 model=mlai.LM, basis=basis, data_limits=data_limits, 
+\plotcode{plot.holdout_fit(x, y, param_name='number', param_range=(1, max_basis+1), 
+                 model=mlai.LM, basis=basis, 
                  xlim=data_limits, prefix='olympic_val_inter', 
 				 objective_ylim=[0.1, 0.6], permute=True,
    			     diagrams='../slides/diagrams/ml')}
 
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
-\displaycode{pods.notebook.display_plots('olympic_val_inter_LM_polynomial_num_basis{num_basis:0>3}.svg', 
+\displaycode{pods.notebook.display_plots('olympic_val_inter_LM_polynomial_number{num_basis:0>3}.svg', 
                             directory='../slides/diagrams/ml', 
 							num_basis=IntSlider(1, 1, max_basis, 1))}
 
@@ -96,37 +88,23 @@ from ipywidgets import IntSlider}
 
 \slides{
 \define{width}{80%}
-\startanimation{olympic_val_inter_LM_polynomial_num_basis}{1}{26}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_num_basis001}{\width}}{olympic_val_inter_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_num_basis002}{\width}}{olympic_val_inter_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_num_basis003}{\width}}{olympic_val_inter_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_num_basis004}{\width}}{olympic_val_inter_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_num_basis005}{\width}}{olympic_val_inter_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_num_basis006}{\width}}{olympic_val_inter_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_num_basis007}{\width}}{olympic_val_inter_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_num_basis008}{\width}}{olympic_val_inter_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_num_basis009}{\width}}{olympic_val_inter_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_num_basis010}{\width}}{olympic_val_inter_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_num_basis011}{\width}}{olympic_val_inter_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_num_basis012}{\width}}{olympic_val_inter_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_num_basis013}{\width}}{olympic_val_inter_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_num_basis014}{\width}}{olympic_val_inter_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_num_basis015}{\width}}{olympic_val_inter_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_num_basis016}{\width}}{olympic_val_inter_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_num_basis017}{\width}}{olympic_val_inter_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_num_basis018}{\width}}{olympic_val_inter_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_num_basis019}{\width}}{olympic_val_inter_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_num_basis020}{\width}}{olympic_val_inter_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_num_basis021}{\width}}{olympic_val_inter_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_num_basis022}{\width}}{olympic_val_inter_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_num_basis023}{\width}}{olympic_val_inter_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_num_basis024}{\width}}{olympic_val_inter_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_num_basis025}{\width}}{olympic_val_inter_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_num_basis026}{\width}}{olympic_val_inter_LM_polynomial_num_basis}
+\define{animationName}{olympic_val_inter_LM_polynomial_number}
+\startanimation{\animationName}{1}{11}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_number001}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_number002}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_number003}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_number004}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_number005}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_number006}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_number007}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_number008}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_number009}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_number010}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_number011}{\width}}{\animationName}
 \endanimation
 }
 
-\notes{\figure{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_num_basis026}{80%}}{Olympic marathon data with validation error for interpolation.}{olympic-val-inter-LM-polynomial-num-basis-26}}
+\notes{\figure{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_number011}{80%}}{Olympic marathon data with validation error for interpolation.}{olympic-val-inter-LM-polynomial-number-11}}
 
 
 \subsection{Choice of Validation Set}
@@ -136,10 +114,11 @@ from ipywidgets import IntSlider}
 * For interpolation we chose validation set from data.
 * For different validation sets we could get different results.}
 
+\notes{
 \subsection{Hold Out Data}
 
 You have a conclusion as to which model fits best under the training error, but how do the two models perform in terms of validation? In this section we consider *hold out* validation. In hold out validation we remove a portion of the training data for *validating* the model on. The remaining data is used for fitting the model (training). Because this is a time series prediction, it makes sense for us to hold out data at the end of the time series. This means that we are validating on future predictions. We will hold out data from after 1980 and fit the model to the data before 1980.
-
+}
 \code{# select indices of data to 'hold out'
 indices_hold_out = np.flatnonzero(x>1980)
 
@@ -153,11 +132,13 @@ y_valid = np.take(y, indices_hold_out, axis=0)}
 
 \codeassignment{For both the linear and quadratic models, fit the model to the data up until 1980 and then compute the error on the held out data (from 1980 onwards). Which model performs better on the validation data?}{3}{10}
 
+\notes{
 \subsection{Richer Basis Set}
 
 Now we have an approach for deciding which model to
 retain, we can consider the entire family of polynomial bases, with arbitrary
 degrees.
+}
 
 \codeassignment{Now we are going to build a more sophisticated form of basis function, one that can accept arguments to its inputs (similar to those we used in [this lab](./week4.ipynb)). Here we will start with a polynomial basis.
 

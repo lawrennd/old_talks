@@ -2,7 +2,7 @@
 \define{biasVarianceDilemma}
 \editme
 
-\newslide{Bias Variance Decomposition}
+\subsection{Bias Variance Decomposition}
 
 Expected test error for different variations of
 the *training data* sampled from, $\Pr(\dataVector, \dataScalar)$

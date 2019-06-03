@@ -56,14 +56,8 @@ Where in this case $\mappingFunction(\cdot)$ is a scalar function with vector in
 
 \slides{
 * In machine learning we optimize $\mappingMatrix_{1}$ as well as  $\mappingMatrix_{2}$ (which would normally be denoted in statistics by $\boldsymbol{\beta}$).
-
-* Revisit that decision: follow the path of @Neal:bayesian94 and @MacKay:bayesian92.
-
-* Consider the probabilistic approach.
 }
 \notes{The first difference in the (early) neural network literature to the classical statistical literature is the decision to optimize these parameters, $\mappingMatrixTwo$, as well as the  parameters, $\mappingMatrix$ (which would normally be denoted in statistics by $\boldsymbol{\beta}$)[^footnote1].
-
-In this tutorial, we're going to go revisit that decision, and follow the path of Radford Neal [@Neal:bayesian94] who, inspired by work of David MacKay [@MacKay:bayesian92] and others did his PhD thesis on Bayesian Neural Networks. If we take a Bayesian approach to parameter inference (note I am using inference here in the classical sense, not in the sense of prediction of test data, which seems to be a newer usage), then we don't wish to fit parameters at all, rather we wish to integrate them away and understand the family of functions that the model describes.
 
 [^footnote1]: In classical statistics we often interpret these parameters, $\beta$, whereas in machine learning we are normally more interested in the result of the prediction, and less in the prediction. Although this is changing with more need for accountability. In honour of this I normally use $\boldsymbol{\beta}$ when I care about the value of these parameters, and $\mappingVector$ when I care more about the quality of the prediction.
 }

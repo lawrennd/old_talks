@@ -12,13 +12,13 @@
 }
 \newslide{Physical Processes}
 \slides{
-* Manufacturing processes consist of production lines and robotic automation.
-* Logistics can also be decomposed into the supply chain processes.
-* Efficiency can be improved by automation.
+* Production lines, robotic automation
+* Supply chain, logistics
+* Efficiency through automation.
 }
 \newslide{Goods and Information}
 \slides{
-* For modern society: management of flow of goods and  information.
+* Manage flow of goods and information.
 * Flow of information is highly automated.
 * Processing of data is decomposed into stages in computer code. 
 }

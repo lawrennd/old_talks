@@ -14,14 +14,8 @@
 \setupplotcode{import mlai
 import pods}
 
-\plotcode{data = pods.datasets.olympic_marathon_men()
-x = data['X']
-y = data['Y']
-num_data = x.shape[0]
-
-data_limits = [1892, 2020]
+\plotcode{data_limits=xlim
 basis = mlai.Basis(mlai.polynomial, number=1, data_limits=data_limits)
-
 max_basis = 11}
 
 \newslide{$k$-fold Cross Validation}

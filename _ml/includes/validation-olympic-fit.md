@@ -65,64 +65,60 @@ Use this to compute the quadratic fit for the model, again plotting the result t
 
 \subsection{Polynomial Fits to Olympics Data}
 
-\setupcode{import pods
+\setupplotcode{import pods
 import mlai}
 
-\code{max_basis = 26
-basis = mlai.polynomial
-
-data = pods.datasets.olympic_marathon_men()
-x = data['X']
-y = data['Y']
-
+\plotcode{max_basis = 26
+basis = mlai.Basis(mlai.polynomial, number=1, data_limits=data_limits)
 data_limits = [1892, 2020]
 num_data = x.shape[0]}
 
-\setupcode{import teaching_plots as plot
+\setupplotcode{import teaching_plots as plot
 %matplotlib inline}
 
-\plotcode{plot.rmse_fit(x, y, param_name='num_basis', param_range=(1, max_basis+1), 
-              model=mlai.LM, basis=basis, data_limits=data_limits, 
+\plotcode{plot.rmse_fit(x, y, param_name='number', param_range=(1, max_basis+1), 
+              model=mlai.LM, basis=basis, 
               xlim=data_limits, objective_ylim=[0, 0.8],
 			  diagrams='../slides/diagrams/ml')}
 
-\setupcode{from ipywidgets import IntSlider}
-\displaycode{pods.notebook.display_plots('olympic_LM_polynomial_num_basis{num_basis:0>3}.svg', 
+\setupdisplaycode{from ipywidgets import IntSlider}
+\displaycode{pods.notebook.display_plots('olympic_LM_polynomial_number{num_basis:0>3}.svg', 
                             directory='../slides/diagrams/ml', 
 							num_basis=IntSlider(1, 1, max_basis, 1))}
 
 \slides{
 \define{\width}{80%}
-\startanimation{olympic_LM_polynomial_num_basis}{1}{26}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_num_basis001}{\width}}{olympic_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_num_basis002}{\width}}{olympic_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_num_basis003}{\width}}{olympic_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_num_basis004}{\width}}{olympic_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_num_basis005}{\width}}{olympic_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_num_basis006}{\width}}{olympic_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_num_basis007}{\width}}{olympic_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_num_basis008}{\width}}{olympic_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_num_basis009}{\width}}{olympic_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_num_basis010}{\width}}{olympic_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_num_basis011}{\width}}{olympic_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_num_basis012}{\width}}{olympic_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_num_basis013}{\width}}{olympic_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_num_basis014}{\width}}{olympic_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_num_basis015}{\width}}{olympic_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_num_basis016}{\width}}{olympic_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_num_basis017}{\width}}{olympic_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_num_basis018}{\width}}{olympic_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_num_basis019}{\width}}{olympic_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_num_basis020}{\width}}{olympic_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_num_basis021}{\width}}{olympic_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_num_basis022}{\width}}{olympic_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_num_basis023}{\width}}{olympic_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_num_basis024}{\width}}{olympic_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_num_basis025}{\width}}{olympic_LM_polynomial_num_basis}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_num_basis026}{\width}}{olympic_LM_polynomial_num_basis}
+\define{animationName}{olympic_LM_polynomial_number}
+\startanimation{\animationName}{1}{26}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_number001}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_number002}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_number003}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_number004}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_number005}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_number006}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_number007}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_number008}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_number009}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_number010}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_number011}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_number012}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_number013}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_number014}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_number015}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_number016}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_number017}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_number018}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_number019}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_number020}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_number021}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_number022}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_number023}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_number024}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_number025}{\width}}{\animationName}
+\newframe{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_number026}{\width}}{\animationName}
 \endanimation
 }
 
-\notes{\figure{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_num_basis026}{80%}}{Polynomial fit to olympic data with 26 basis functions.}{olympic-lm-polynomial-num-basis-26}}
+\notes{\figure{\includediagram{../slides/diagrams/ml/olympic_LM_polynomial_number026}{80%}}{Polynomial fit to olympic data with 26 basis functions.}{olympic-lm-polynomial-num-basis-26}}
 
 \endif

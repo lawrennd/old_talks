@@ -4,6 +4,14 @@
 
 \include{talk-macros-html.gpp}
 
+\define{\centerdiv{contents}{class}{style}}{\contents}
+
+\defeval{\figure{contents}{captionContents}{label}}{
+\contents
+
+Figure: <i>\captionContents</i>}
+
+
 \define{\includegooglebook{id}{page}}{```
 import pods
 pods.notebook.display_google_book(id='\id', page='\page')

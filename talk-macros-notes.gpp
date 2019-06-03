@@ -29,6 +29,10 @@
 \define{\editme}{\define{editText}{\span{[}{editsection-bracket}\span{\href{\githubBaseUrl\file}{edit}{onclick="ga('send', 'event', 'Edit Page', 'Edit', '\githubBaseUrl\file', 13);"}}{editsection}\span{]}{editsection-bracket}}}
 \endif
 
+\define{\startanimation{group}{start}{finish}{name}}{}
+\define{\newframe{contents}{name}{style}}{\contents}
+\define{\endanimation}{}
+
 \define{\section{text}}{# \text \ifdef{editText}\editText\undef{editText}\endif}
 \define{\subsection{text}}{## \text \ifdef{editText}\editText\undef{editText}\endif}
 \define{\subsubsection{text}}{### \text \ifdef{editText}\editText\undef{editText}\endif}

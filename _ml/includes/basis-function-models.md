@@ -200,15 +200,16 @@ xlim = [1892, 2020]
 max_basis = 27
 
 ll = np.array([np.nan]*(max_basis))
-sum_squares = np.array([np.nan]*(max_basis))}
+sum_squares = np.array([np.nan]*(max_basis))
+basis=mlai.Basis(mlai.polynomial, number=1, data_limits=xlim)}
 
-\plotcode{plot.rmse_fit(x, y, param_name='num_basis', param_range=(1, 28), 
-              model=mlai.LM, basis=mlai.polynomial, data_limits=xlim, 
+\plotcode{plot.rmse_fit(x, y, param_name='number', param_range=(1, 28), 
+              model=mlai.LM, basis=basis, 
               xlim=xlim, objective_ylim=[0, 0.8],
               diagrams='../slides/diagrams/ml')}
 
 \setupcode{from ipywidgets import IntSlider}
-\displaycode{pods.notebook.display_plots('olympic_LM_polynomial_num_basis{num_basis:0>3}.svg',
+\displaycode{pods.notebook.display_plots('olympic_LM_polynomial_number{num_basis:0>3}.svg',
                             directory='../slides/diagrams/ml', 
                             num_basis=IntSlider(1,1,28,1))}
 

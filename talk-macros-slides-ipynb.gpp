@@ -6,6 +6,17 @@
 <!-- Use HTML macros as the basis -->
 \include{talk-macros-slides-html.gpp}
 
+
+\define{\startanimation{group}{start}{finish}{name}}{}
+\define{\newframe{contents}{name}{style}}{\contents}
+\define{\endanimation}{}
+
+
+\defeval{\figure{contents}{captionContents}{label}}{
+\contents
+
+Figure: *\captionContents*}
+
 \define{\setupplotcode{block}}{```{.python}
 \block
 ```}
@@ -21,11 +32,21 @@ from \filename import \object
 \define{\displaycode{block}}{```{.python}
 \block
 ```}
-\define{\setupcode{block}}{}
-\define{\loadcode{object}{filename}}{}
-\define{\setuphelpercode{block}}{}
-\define{\helpercode{block}}{}
-\define{\code{block}}{}
+\define{\setupcode{block}}{```{.python}
+\block
+```}
+\define{\loadcode{object}{filename}}{```{.python}
+%load -s \object \filename.py
+```}
+\define{\setuphelpercode{block}}{```{.python}
+\block
+```}
+\define{\helpercode{block}}{```{.python}
+\block
+```}
+\define{\code{block}}{```{.python}
+\block
+```}
 \define{\matlabcode{block}}{}
 
 \define{\recommendation{text}}{}

@@ -27,14 +27,14 @@ categories:
 ---
 
 \include{../talk-macros.tex}
-\include{../_ml/includes/what-is-ml.md}
-\include{../_ml/includes/data-science-vs-ai.md}
-\include{../_ai/includes/embodiment-factors.md}
-\include{../_data-science/includes/evolved-relationship.md}
-\include{../_ml/includes/what-does-machine-learning-do.md}
-\include{../_ml/includes/deep-learning-overview.md}
+\include{_ml/includes/what-is-ml.md}
+\include{_ml/includes/data-science-vs-ai.md}
+\include{_ai/includes/embodiment-factors.md}
+\include{_data-science/includes/evolved-relationship.md}
+\include{_ml/includes/what-does-machine-learning-do.md}
+\include{_ml/includes/deep-learning-overview.md}
 \include{_data-science/includes/a-time-for-professionalisation.md}
-\include{../_data-science/includes/the-data-crisis.md}
+\include{_data-science/includes/the-data-crisis.md}
 
 \newslide{Rest of this Talk: Two Areas of Focus}
 
@@ -42,10 +42,10 @@ categories:
 
 * Deployment of Machine Learning Systems
 
-\include{../_data-science/includes/data-readiness-levels.md}
-\include{../_data-science/includes/data-joel-tests.md}
-\include{../_ai/includes/deploying-ai.md}
-\include{../_ai/includes/ml-systems-design-long.md}
+\include{_data-science/includes/data-readiness-levels.md}
+\include{_data-science/includes/data-joel-tests.md}
+\include{_ai/includes/deploying-ai.md}
+\include{_ai/includes/ml-systems-design-long.md}
 
 \section{Conclusion}
 \newslide{Conclusion}

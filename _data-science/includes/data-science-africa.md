@@ -12,7 +12,7 @@
 
 \notes{Data Science Africa is a bottom up initiative for capacity building in data science, machine learning and artificial intelligence on the African continent. 
 
-As of 2019 there have been five workshops and five schools, located in Nyeri, Kenya (twice); Kampala, Uganda; Arusha, Tanzania and Abuja, Nigeria. In 2019 there are two events scheduled in Addis Ababa, Ethiopia and Accra, Ghana.
+As of 2019 there have been five workshops and five schools, located in Nyeri, Kenya (twice); Kampala, Uganda; Arusha, Tanzania; Abuja, Nigeria and Addis Ababa, Ethiopia. The next event is scheduled for October 2019 in Accra, Ghana.
 
 The main notion is *end-to-end* data science. For example, going from data collection in the farmer's field to decision making in the Ministry of Agriculture. Or going from malaria disease counts in health centers, to medicine distribution.}
 

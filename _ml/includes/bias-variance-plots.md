@@ -129,39 +129,31 @@ for samp in range(num_samps):
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('bias-variance{samp:0>3}.svg', 
                             directory='../slides/diagrams/ml', 
-						    samp=IntSlider(0,0,19,1))}
+						    samp=IntSlider(0,0,10,1))}
 							
 \newslide{}
 
 
 \slides{
 \define{width}{80%} 
+\define{animationName}{bias-variance-plots}
 \startanimation{bias-variance-plots}{1}{26} 
-\startanimation
-\newframe{\includediagram{../slides/diagrams/ml/bias-variance000}{\width}}{bias-variance-plots}
-\newframe{\includediagram{../slides/diagrams/ml/bias-variance001}{\width}}{bias-variance-plots}
-\newframe{\includediagram{../slides/diagrams/ml/bias-variance002}{\width}}{bias-variance-plots}
-\newframe{\includediagram{../slides/diagrams/ml/bias-variance003}{\width}}{bias-variance-plots}
-\newframe{\includediagram{../slides/diagrams/ml/bias-variance004}{\width}}{bias-variance-plots}
-\newframe{\includediagram{../slides/diagrams/ml/bias-variance005}{\width}}{bias-variance-plots}
-\newframe{\includediagram{../slides/diagrams/ml/bias-variance006}{\width}}{bias-variance-plots}
-\newframe{\includediagram{../slides/diagrams/ml/bias-variance007}{\width}}{bias-variance-plots}
-\newframe{\includediagram{../slides/diagrams/ml/bias-variance008}{\width}}{bias-variance-plots}
-\newframe{\includediagram{../slides/diagrams/ml/bias-variance009}{\width}}{bias-variance-plots}
-\newframe{\includediagram{../slides/diagrams/ml/bias-variance010}{\width}}{bias-variance-plots}
-\newframe{\includediagram{../slides/diagrams/ml/bias-variance011}{\width}}{bias-variance-plots}
-\newframe{\includediagram{../slides/diagrams/ml/bias-variance012}{\width}}{bias-variance-plots}
-\newframe{\includediagram{../slides/diagrams/ml/bias-variance013}{\width}}{bias-variance-plots}
-\newframe{\includediagram{../slides/diagrams/ml/bias-variance014}{\width}}{bias-variance-plots}
-\newframe{\includediagram{../slides/diagrams/ml/bias-variance015}{\width}}{bias-variance-plots}
-\newframe{\includediagram{../slides/diagrams/ml/bias-variance016}{\width}}{bias-variance-plots}
-\newframe{\includediagram{../slides/diagrams/ml/bias-variance017}{\width}}{bias-variance-plots}
-\newframe{\includediagram{../slides/diagrams/ml/bias-variance018}{\width}}{bias-variance-plots}
-\newframe{\includediagram{../slides/diagrams/ml/bias-variance019}{\width}}{bias-variance-plots}
+\newframe{\includepng{../slides/diagrams/ml/bias-variance000}{\width}}{\animationName}
+\newframe{\includepng{../slides/diagrams/ml/bias-variance001}{\width}}{\animationName}
+\newframe{\includepng{../slides/diagrams/ml/bias-variance002}{\width}}{\animationName}
+\newframe{\includepng{../slides/diagrams/ml/bias-variance003}{\width}}{\animationName}
+\newframe{\includepng{../slides/diagrams/ml/bias-variance004}{\width}}{\animationName}
+\newframe{\includepng{../slides/diagrams/ml/bias-variance005}{\width}}{\animationName}
+\newframe{\includepng{../slides/diagrams/ml/bias-variance006}{\width}}{\animationName}
+\newframe{\includepng{../slides/diagrams/ml/bias-variance007}{\width}}{\animationName}
+\newframe{\includepng{../slides/diagrams/ml/bias-variance008}{\width}}{\animationName}
+\newframe{\includepng{../slides/diagrams/ml/bias-variance009}{\width}}{\animationName}
+\newframe{\includepng{../slides/diagrams/ml/bias-variance010}{\width}}{\animationName}
+
 \endanimation
 \caption{simple models on left complex models on right}
 }
 
-\notes{\figure{\columns{\includediagram{../slides/diagrams/ml/bias-variance000}{80%}}{\includediagram{../slides/diagram/ml/bias-variance019}{80%}}{45%}{45%}}{In each figure the more simple model is on the left, and the more complex model is on the right. Each fit is done to a different version of the data set. The simpler model is more consistent in its errors (bias error), whereas the more complex model is varying in its errors (variance error).}{bias-variance-errors}}
+\notes{\figure{\columns{\includepng{../slides/diagrams/ml/bias-variance000}{80%}}{\includepng{../slides/diagram/ml/bias-variance010}{80%}}{45%}{45%}}{In each figure the more simple model is on the left, and the more complex model is on the right. Each fit is done to a different version of the data set. The simpler model is more consistent in its errors (bias error), whereas the more complex model is varying in its errors (variance error).}{bias-variance-errors}}
 
 \endif

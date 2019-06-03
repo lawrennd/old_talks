@@ -21,5 +21,16 @@
 </div>
 </div>}
 
+\define{\startanimation{group}{start}{finish}{name}}{<script>
+showDivs(\start, '\group');
+</script>
+\smalltext{\name} <input id="range-\group" type="range" min="\start" max="\finish" value="\start" onchange="setDivs('\group')" oninput="setDivs('\group')">
+<button onclick="plusDivs(-1, '\group')">❮</button>
+<button onclick="plusDivs(1, '\group')">❯</button>
+}
+
+\define{\newframe{contents}{name}{style}}{<div style="text-align:center;\style" class="\name">\contents</div>}
+\define{\endanimation}{}
+
 
 \endif
