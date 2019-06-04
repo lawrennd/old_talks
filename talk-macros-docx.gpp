@@ -40,14 +40,18 @@
 \endif
 }
 
-\define{\table{block}{options}}{
-\define{inFloat}
-\block
-\undef{inFloat}
-\ifdef{storeCaption}
-Store Caption: \storeCaption
-\undef{storeCaption}
-\endif
+\defeval{\figure{contents}{captionContents}{ref}}{
+\contents
+
+Figure: *\captionContents*
+}
+
+
+\define{\table{contents}{captionContents}{ref}}{
+Table: *\captionContents*
+
+\contents
+
 }
 
 

@@ -20,48 +20,20 @@ transition: None
 \include{talk-macros.tex}
 
 \section{Introduction}
-
-\include{_data-science/includes/lies-damned-lies.md}
-
-<!--\include{_ai/includes/centrifugal-governor.md}-->
-
-\include{_ai/includes/embodiment-factors.md}
-\include{_data-science/includes/evolved-relationship.md}
-\include{_data-science/includes/societal-effects.md}
-
-\include{_ml/includes/what-does-machine-learning-do.md}
+\include{_ai/includes/centrifugal-governor.md}
 
 \include{_ml/includes/what-is-ml-2.md}
-<!-- include{_ml/includes/process-automation.md} -->
-<!-- include{_ai/includes/ai-vs-data-science-2.md} -->
+\include{_ai/includes/ai-vs-data-science-2.md}
+
+\subsection{Amazon: Bits and Atoms}
+
 \include{_supply-chain/includes/supply-chain.md}
-\include{_ml/includes/or-control-econometrics-statistics-ml.md}
-
-
-\todo{Analytics??? MBA based data science?}
-\todo{Statisticians fail to scale}
-\todo{Statisticians fail to code}
-\todo{Statisticians ... sharing code R}
-\todo{Can Do attitude vs Can't do attitude}
-
-\include{_data-science/includes/data-science-challenges.md}
-
-
-\newslide{THE THREE Ds of ML SYSTEMS DESIGN}
+\include{_supply-chain/includes/supply-chain-motto.md}
 
 \include{_ml/includes/the-3ds-of-ml-systems-design.md}
-\include{_ml/includes/the-3ds-enough-talk.md}
-\include{_ml/includes/ml-outlook.md}
 
-\subsection{Conclusion}
-\slides{
-* Technologically *evolving* environment.
-* ML is a key component of decision making.
-* Data is the key component of ML.
-* ML is *critically* dependent on data.
-* Challenges in system **decomposition**, **data** curation and model **deployment**. 
-}
-\notes{We operate in a technologically evolving environment. Machine learning is becoming a key component in our decision making capabilities. But the evolving nature of data driven systems means that new approaches to model deployment are necessary. We have characterized three parts of the machine learning systems design process. *Decomposition* of the problem into separate tasks that are addressable with a machine learning solution. Collection and curation of appropriate *data*. Verificaction of data quality through data readiness levels. Using *progression* testing in our *deployments*. Continuously updating models as appropriate to ensure performance and quality is maintained.}
+\include{_data-science/includes/data-oriented-architectures.md}
+\include{_data-science/includes/data-oriented-conclusions.md}
 
 \thanks
 
