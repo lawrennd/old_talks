@@ -46,7 +46,7 @@ referred to the crisis in his 1972 Turing Award winner's address.}
 
 >The major cause of the data crisis is that machines have become more
 >interconnected than ever before. Data access is therefore cheap, but
->data quality is often poor. What we need is cheap high quality
+>data quality is often poor. What we need is cheap high-quality
 >data. That implies that we develop processes for improving and
 >verifying data quality that are efficient.
 >

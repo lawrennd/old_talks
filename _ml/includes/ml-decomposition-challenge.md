@@ -16,7 +16,7 @@ We are constrained by:
 2. The *models*.
 }
 
-\notes{Machine learning is not magical pixie dust, we cannot simply automate all decisions through data. We are constrained by our data (see below) and the models we use.[^tribal]  Machine learning models are relatively simple function mappings that include characteristics such as smoothness. With some famous exceptions, e.g. speech and image data, inputs are constrained in the form of vectors and the model consists of a mathematically well behaved function. This means that some careful thought has to be put in to the right sub-process to automate with machine learning. This is the challenge of *decomposition* of the machine learning system.
+\notes{Machine learning is not magical pixie dust, we cannot simply automate all decisions through data. We are constrained by our data (see below) and the models we use.[^tribal]  Machine learning models are relatively simple function mappings that include characteristics such as smoothness. With some famous exceptions, e.g. speech and image data, inputs are constrained in the form of vectors and the model consists of a mathematically well-behaved function. This means that some careful thought has to be put in to the right sub-process to automate with machine learning. This is the challenge of *decomposition* of the machine learning system.
 
 [^tribal]: We can also become constrained by our tribal thinking, just as each of the other groups can.
 }
@@ -98,9 +98,9 @@ AutoML.}
 * Trade off between *performance* and *decomposability*.
     * Need to monitor deployment
 }
-\notes{To form modern decision making systems, many components are interlinked.  We decompose our complex decision making into individual tasks, but the performance of each component is dependent on those upstream of it.}
+\notes{To form modern decision-making systems, many components are interlinked.  We decompose our complex decision making into individual tasks, but the performance of each component is dependent on those upstream of it.}
 
-\notes{This naturally leads to co-evolution of systems, upstream errors can be
+\notes{This naturally leads to co-evolution of systems; upstream errors can be
 compensated by downstream corrections.}
 
 \notes{To embrace this characteristic, end-to-end training could be considered. Why produce the best forecast by metrics when we can just produce the best forecast for our systems? End-to-end training can lead to improvements in performance, but it would also damage our systems decomposability and its interpretability, and perhaps its adaptability.}

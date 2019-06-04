@@ -15,7 +15,7 @@
 	2. Data cleaning is complex.
 }	
 \notes{It is difficult to overstate the importance of data. It is half of the
-equation for machine learning, but is often utterly neglected. We can
+equation for machine learning but is often utterly neglected. We can
 speculate that there are two reasons for this. Firstly, data cleaning is
 perceived as tedious. It doesn’t seem to consist of the same
 intellectual challenges that are inherent in constructing complex
@@ -33,7 +33,7 @@ downstream problems might be caused by poor data quality.}
 }
 
 \notes{A consequence of these two reasons, data cleaning seems difficult to
-formulate into a readily teachable set of principles. As a result it is
+formulate into a readily teachable set of principles. As a result, it is
 heavily neglected in courses on machine learning and data science.
 Despite data being half the equation, most University courses spend
 little to no time on its challenges.}
@@ -76,7 +76,7 @@ around *data* as a service. This first change is a cultural change in
 which our teams think about their outputs in terms of data. Instead of
 decomposing our systems around the software components, we need to
 decompose them around the data generating and consuming components.[^technical-debt]
-Software first is only an intermediate step on the way to be coming
+Software first is only an intermediate step on the way to becoming
 *data first*. It is a necessary, but not a sufficient condition for
 efficient machine learning systems design and deployment. We must move
 from *software orientated architecture* to a *data orientated
@@ -91,7 +91,7 @@ assess the costs of improving data quality unless we generate a language
 around what data quality means. Data Readiness Levels[^data-readiness-levels] are an assessment of data quality that is based on the usage to which data is
 put.
 
-[^data-readiness-levels]: [Data Readiness Levels](http://inverseprobability.com/2017/01/12/data-readiness-levels) [@Lawrence:drl17] are an attempt to develop a language around data quality that can bridge the gap between technical solutions and decision makers such as managers and project planners. The are inspired by Technology Readiness Levels which attempt to quantify the readiness of technologies for deployment.
+[^data-readiness-levels]: [Data Readiness Levels](http://inverseprobability.com/2017/01/12/data-readiness-levels) [@Lawrence:drl17] are an attempt to develop a language around data quality that can bridge the gap between technical solutions and decision makers such as managers and project planners. They are inspired by Technology Readiness Levels which attempt to quantify the readiness of technologies for deployment.
 }
 
 \subsubsection{Data Readiness Levels}
@@ -102,6 +102,6 @@ put.
 
 \subsubsection{Move Beyond Software Engineering to Data Engineering}
 
-\notes{Thirdly, we need to improve our mental model of the separation of data science from applied science. A common trap in our thinking around data is to see data science (and data engineering, data preparation) as a sub-set of the software engineer’s or applied scientist’s skill set. As a result we recruit and deploy the wrong type of resource. Data preparation and question formulation is superficially similar to both because of the need for programming skills, but the day to day problems faced are very different.}
+\notes{Thirdly, we need to improve our mental model of the separation of data science from applied science. A common trap in our thinking around data is to see data science (and data engineering, data preparation) as a sub-set of the software engineer’s or applied scientist’s skill set. As a result, we recruit and deploy the wrong type of resource. Data preparation and question formulation is superficially similar to both because of the need for programming skills, but the day to day problems faced are very different.}
 
 \endif

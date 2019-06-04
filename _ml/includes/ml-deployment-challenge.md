@@ -10,7 +10,7 @@ Our *machine learning* is based on a *software systems* view that is 20 years ou
 }
 \notes{Much of the academic machine learning systems point of view is based on a software systems point of view that is around 20 years out of date. In particular we build machine learning models on fixed training data sets, and we test them on stationary test data sets. 
 
-In practice modern software systems involve continuous deployment of models into an ever evolving world of data. These changes are indicated in the software world by greater availaiblity of technologies like *streaming* technologies.}
+In practice modern software systems involve continuous deployment of models into an ever-evolving world of data. These changes are indicated in the software world by greater availability of technologies like *streaming* technologies.}
 
 \subsubsection{Continuous Deployment}
 \slides{
@@ -24,7 +24,7 @@ are created, the model code needs to be deployed.}
 
 \notes{To extend the USB stick analogy further, how would we deploy that code
 if we thought it was likely to evolve in production? This is what
-datadoes. We cannot assume that the conditions under which we trained
+data does. We cannot assume that the conditions under which we trained
 our model will be retained as we move forward, indeed the only constant
 we have is change.}
 
@@ -41,7 +41,7 @@ around ML model deployment yet been developed. The modern world of
 continuous deployment does rely on testing, but it does not recognize
 the continuous evolution of the world around us.}
 
-\notes{Progression tests are likely to be *statistical* tests in contrast to classical software tests. The should be monitoring model performance and quality measures. They could also monitor conformance to standardized *fairness* measures.}
+\notes{Progression tests are likely to be *statistical* tests in contrast to classical software tests. The tests should be monitoring model performance and quality measures. They could also monitor conformance to standardized *fairness* measures.}
 
 \newslide{Continuous Monitoring}
 \slides{
@@ -52,14 +52,14 @@ the continuous evolution of the world around us.}
 * Update our notions of testing: *progression testing*
 }
 
-\notes{If the world has changed around our decision making ecosystem, how are we alerted to those changes?}
+\notes{If the world has changed around our decision-making ecosystem, how are we alerted to those changes?}
 
 \recommendation{We establish best practice around model deployment.
 We need to shift our culture from standing up a software service, to
 standing up a *data as a service*. Data as a Service would involve
 continual monitoring of our deployed models in production. This would be
 regulated by 'hypervisor' systems[^emulation] that understand the context in
-which models are deployed and recognize when circumstance has changed
+which models are deployed and recognize when circumstances have changed,
 and models need retraining or restructuring.
 
 [^emulation]: Emulation, or surrogate modelling, is one very promising approach to forming such a hypervisor. Emulators are models we fit to other models, often simulations, but the could also be other machine learning models. These models operate at the meta-level, not on the systems directly. This means they can be used to model how the sub-systems interact. As well as emulators we should consider real time dash boards, anomaly detection, mutlivariate analysis, data visualization and classical statistical approaches for hypervision of our deployed systems.
@@ -84,9 +84,9 @@ and models need retraining or restructuring.
 * This brings the data *inside out*
 }
 
-\recommendation{We should consider a major re-architecting of systems around our services. In particular we should scope the use of a *streaming architecture* (such as Apache Kafka) that ensures data persistence and enables asynchronous operation of our systems.[^data-orientated-architecture] This would enable the provision of QC streams, and real time dash boards as well as hypervisors..
+\recommendation{We should consider a major re-architecting of systems around our services. In particular we should scope the use of a *streaming architecture* (such as Apache Kafka) that ensures data persistence and enables asynchronous operation of our systems.[^data-orientated-architecture] This would enable the provision of QC streams, and real time dash boards as well as hypervisors.
 
-[^data-orientated-architecture]: These approaches are one area of focus for my own team's reasearch. A data first architecture is a prerequisite for efficient deployment of machine learning systems.
+[^data-orientated-architecture]: These approaches are one area of focus for my own team's research. A data first architecture is a prerequisite for efficient deployment of machine learning systems.
 
 Importantly a streaming architecture implies the services we build are
 *stateless*, internal state is deployed on streams alongside external
