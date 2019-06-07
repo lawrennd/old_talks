@@ -42,8 +42,8 @@
 }
 
 
-\define{\includediagram{filename}{align}{class}{style}}{\includegraphics{\filename.pdf}}
-\define{\includediagramclass{filename}{class}{align}}{\includegraphics{\filename.pdf}}
+\define{\includediagram{filename}{width}{class}{style}}{\includegraphics[width=\width]{\filename.pdf}}
+\define{\includediagramclass{filename}{width}{class}}{\includegraphics[width=\width]{\filename.pdf}}
 
 
 \define{\aligncenter{block}}{\centerline{\block}}

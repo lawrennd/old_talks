@@ -29,6 +29,7 @@
   <script src="reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
     TeX: {
@@ -496,7 +497,7 @@
 <h3>Machine Learning in Supply Chain</h3>
 <ul>
 <li><em>Supply chain</em>: Large Automated Decision Making Network</li>
-<li>Amazon’s supply chain: Possibly the world’s largest ‘AI’</li>
+<li>Amazon's supply chain: Possibly the world's largest 'AI'</li>
 <li>Major Challenge:
 <ul>
 <li>We have a <em>mechanistic</em> understanding of supply chain.</li>
@@ -574,7 +575,7 @@
 <section id="a-trap" class="slide level3">
 <h3>A Trap</h3>
 <ul>
-<li>Over emphasis on the <em>type</em> of model we’re deploying.</li>
+<li>Over emphasis on the <em>type</em> of model we're deploying.</li>
 <li>Under emphasis on the appropriateness of the task decomposition.</li>
 </ul>
 </section>
@@ -593,7 +594,7 @@
 <ul>
 <li>Absolute decomposition is impossible.</li>
 <li>If we deploy a weak component in one place, downstream system will compensate.</li>
-<li>Systems <em>co-evolve</em> … there is no <em>simple</em> solution</li>
+<li>Systems <em>co-evolve</em> ... there is no <em>simple</em> solution</li>
 <li>Trade off between <em>performance</em> and <em>decomposability</em>.
 <ul>
 <li>Need to monitor deployment</li>
@@ -666,14 +667,10 @@
 <section id="three-grades-of-data-readiness" class="slide level3">
 <h3>Three Grades of Data Readiness</h3>
 <ul>
-<li>Grade C - accessibility
-<ul>
+<li>Grade C - accessibility</li>
 <li>Transition: data becomes electronically available</li>
-</ul></li>
-<li>Grade B - validity
-<ul>
+<li>Grade B - validity</li>
 <li>Transition: pose a question to the data.</li>
-</ul></li>
 <li>Grade A - usability</li>
 </ul>
 </section>
@@ -738,7 +735,7 @@
 <ul>
 <li>Continuous deployment:
 <ul>
-<li>We’ve changed the code, we should test the effect.</li>
+<li>We've changed the code, we should test the effect.</li>
 </ul></li>
 <li>Continuous Monitoring:
 <ul>
@@ -750,7 +747,7 @@
 <section id="data-orientated-architectures" class="slide level3">
 <h3>Data Orientated Architectures</h3>
 <ul>
-<li>Historically we’ve been <em>software first</em>
+<li>Historically we've been <em>software first</em>
 <ul>
 <li>A necessary but not sufficient condition for <em>data first</em></li>
 </ul></li>
@@ -827,9 +824,9 @@
 <section id="hypothetical-streams" class="slide level3">
 <h3>Hypothetical Streams</h3>
 <ul>
-<li>Real stream — share prices
+<li>Real stream --- share prices
 <ul>
-<li>derived <em>hypothetical</em> stream — share prices in futrure.</li>
+<li>derived <em>hypothetical</em> stream --- share prices in future.</li>
 </ul></li>
 <li>Hypothetical constrained by
 <ul>
@@ -844,7 +841,7 @@
 <ul>
 <li>Modelling is now required.</li>
 <li>But modelling is declared in the ecosystem.</li>
-<li>If it’s manual, warnings can be used
+<li>If it's manual, warnings can be used
 <ul>
 <li>calibration, fairness, dataset shift</li>
 </ul></li>
@@ -874,14 +871,16 @@
 <ul>
 <li>Potential for information feedback loops.</li>
 <li>Hypothetical streams are instantiated.</li>
-<li>Nature hypothesis (e.g. price prediction) can effect reality.</li>
+<li>Nature hypothesis (e.g. price prediction) can effect reality.</li>
 <li>Leads to information dynamics, similar to dynamics of governors.</li>
 <li>See e.g. <a href="https://www.gla.ac.uk/schools/computing/research/researchsections/ida-section/closedloop/">Closed Loop Data Science</a> at Glasgow.</li>
 </ul>
 </section>
 <section id="our-efforts" class="slide level3">
 <h3>Our Efforts</h3>
-
+<ul>
+<li>Our framework due for release end of June 2019 (pending approval).</li>
+</ul>
 </section>
 <section id="conclusion" class="slide level3">
 <h3>Conclusion</h3>
@@ -928,28 +927,11 @@
         history: true,
         // Transition style
         transition: 'None', // none/fade/slide/convex/concave/zoom
-        math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
-          config: 'TeX-AMS_HTML-full',
-          tex2jax: {
-            inlineMath: [['\\(','\\)']],
-            displayMath: [['\\[','\\]']],
-            balanceBraces: true,
-            processEscapes: false,
-            processRefs: true,
-            processEnvironments: true,
-            preview: 'TeX',
-            skipTags: ['script','noscript','style','textarea','pre','code'],
-            ignoreClass: 'tex2jax_ignore',
-            processClass: 'tex2jax_process'
-          },
-        },
 
         // Optional reveal.js plugins
         dependencies: [
           { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: 'reveal.js/plugin/math/math.js', async: true },
           { src: 'reveal.js/plugin/notes/notes.js', async: true }
         ]
       });

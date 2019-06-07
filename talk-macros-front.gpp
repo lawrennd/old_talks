@@ -16,5 +16,12 @@
 \define{\blackColor}{black}
 \define{\whiteColor}{white}
 
+\ifdef{draft}
+\define{\todo{text}}{\colorRed{Todo: \text}}
+\define{\tk{text}}{\colorRed{TK: \text}}
+\else
+\define{\todo{text}}{}
+\define{\tk{text}}{}
+\endif
 
 \endif
