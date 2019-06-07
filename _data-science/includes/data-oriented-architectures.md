@@ -82,7 +82,7 @@ ax.set_ylim(ylim)}
 
 \slides{
 * Real stream --- share prices
-    * derived *hypothetical* stream --- share prices in futrure.
+    * derived *hypothetical* stream --- share prices in future.
 * Hypothetical constrained by
     * input constraints.
     * decision functional
@@ -187,8 +187,7 @@ This may require a quick estimate of the ride availability.}
 This leads to the need for a closed loop analysis, for example, see the ["Closed Loop Data Science"](https://www.gla.ac.uk/schools/computing/research/researchsections/ida-section/closedloop/) project led by Rod Murray-Smith at Glasgow.}
 
 \newslide{Our Efforts}
-
+\slides{* Our framework due for release end of June 2019 (pending approval).}
 \notes{Our aim is to release our first version of a data-oriented programming environment by end of June 2019 (pending internal approval).}
-\slide{* Our framework due for release end of June 2019 (pending approval).}
 
 \endif

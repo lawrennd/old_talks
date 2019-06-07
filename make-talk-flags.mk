@@ -12,4 +12,4 @@ BIBFLAGS=--bibliography=../lawrence.bib --bibliography=../other.bib --bibliograp
 CITEFLAGS=--filter pandoc-citeproc --csl=../elsevier-harvard.csl ${BIBFLAGS}
 PDSFLAGS=-s ${CITEFLAGS} --mathjax=${MATHJAX} 
 SFLAGS=--slide-level 3
-INKSCAPE=/Applications/Inkscape.app/Contents/Resources/bin/inkscape
+INKSCAPE=inkscape #/Applications/Inkscape.app/Contents/Resources/bin/inkscape
