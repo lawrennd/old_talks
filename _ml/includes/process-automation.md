@@ -46,6 +46,7 @@
 }
 \newslide{Worked Example: Delivery Drones}
 
-\figure{\includeyoutube{vNySOrI2Ny8}{800}{600}}{Amazon's proposed drone delivery system.}{amazon-drone-delivery}
+<!-- first drone delivery vNySOrI2Ny8 -->
+\figure{\includeyoutube{3HJtmx5f1Fc}{800}{600}}{Amazon's proposed drone delivery system.}{amazon-drone-delivery}
 
 \endif

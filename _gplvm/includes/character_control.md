@@ -35,6 +35,6 @@ frame start
    &autohide=1       % controlbar autohide
    &showinfo=0       % no title and other info before start
   }
-]{}{https://youtube.googleapis.com/v/hr3pdDl5IAg?rel=0}
+]{}{\includeyoutube{hr3pdDl5IAg}{800}{600}}
 
 frame end

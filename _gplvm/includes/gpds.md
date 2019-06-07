@@ -41,17 +41,16 @@
 
 <!--frame failure end-->
 <!--frame start-->
-### Gaussian Process over Latent Space
+\newslide{Gaussian Process over Latent Space}
 
--   Assume a GP prior for $p(\latentMatrix)$.
-
--   Input to the process is time, $p(\latentMatrix|t)$.
+- Assume a GP prior for $p(\latentMatrix)$.
+- Input to the process is time, $p(\latentMatrix|t)$.
 
 <!--frame end-->
 <!--frame start-->
-### Interpolation of HD Video
+\newslide{Interpolation of HD Video}
 
-\figure{\includeyoutube{i9TEoYxaBxQ}{100%}{auto}}{Probabilistic video reconstruction with a variational Gaussian process dynamical system}{probabilistic-video-reconstruction}
+\figure{\includeyoutube{i9TEoYxaBxQ}{800}{600}}{Probabilistic video reconstruction with a variational Gaussian process dynamical system}{probabilistic-video-reconstruction}
 
 <!--frame end-->
 

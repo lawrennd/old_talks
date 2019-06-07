@@ -51,7 +51,7 @@
 <!--frame start-->
 ### Interpolation of HD Video
 
-\figure{\includeyoutube{i9TEoYxaBxQ}{100%}{auto}}{Probabilistic video reconstruction with a variational Gaussian process dynamical system}{probabilistic-video-reconstruction}
+\figure{\includeyoutube{i9TEoYxaBxQ}{800}{600}}{Probabilistic video reconstruction with a variational Gaussian process dynamical system}{probabilistic-video-reconstruction}
 
 <!--frame end-->
 
