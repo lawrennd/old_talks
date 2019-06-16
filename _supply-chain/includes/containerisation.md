@@ -7,7 +7,7 @@
 
 \newslide{}
 
-\figure{\includejpg{../slides/diagrams/supply-chain/container-2539942_1920}{80%}}{The container is one of the major drivers of globalization, and arguably the largest agent of social change in the last 100 years. It reduces the cost of transportation, significantly changing the appropriate topology of distribution networks. The container makes it possible to ship goods half way around the world for cheaper than it costs to process those goods, leading to an extended distribution topology.}{container-2539942_1920}
+\figure{\includejpg{../slides/diagrams/supply-chain/container-2539942_1920}{80%}}{The container is one of the major drivers of globalization, and arguably the largest agent of social change in the last 100 years. It reduces the cost of transportation, significantly changing the appropriate topology of distribution networks. The container makes it possible to ship goods halfway around the world for cheaper than it costs to process those goods, leading to an extended distribution topology.}{container-2539942_1920}
 
 \notes{Containerization has had a dramatic effect on global economics, placing many people in the developing world at the end of the supply chain. }
 
