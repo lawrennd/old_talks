@@ -19,10 +19,6 @@ $$\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$
 
 \notes{The rapid increase in the availability of compute and data has led to the increased prominence of machine learning. This prominence is surfacing in two different, but overlapping domains: data science and artificial intelligence.}
 
-\newslide{}
-
-\slides{\threeColumns{\includepng{../slides/diagrams/earth_PNG37}{100%}{}{center}}{$$\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$}{\includediagram{../slides/diagrams/ai/1969018}{100%}{}{center}}{35%}{45%}{20%}}
-
-\notes{The real challenge, however, is end-to-end decision making. Taking information from the enviroment and using it to drive decision making to achieve goals.}
+\include{_ml/includes/what-is-ml-end-to-end.md}
 
 \endif
