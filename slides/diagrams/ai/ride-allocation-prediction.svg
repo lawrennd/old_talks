@@ -14,10 +14,52 @@
    viewBox="0 0 297 210"
    version="1.1"
    id="svg4082"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:version="0.91 r13725"
    sodipodi:docname="ride-allocation-prediction.svg">
   <defs
      id="defs4076" />
+  <style
+     id="style13997">
+    .mytext {
+    font-style:normal;
+    font-variant:normal;
+    font-weight:normal;
+    font-stretch:normal;
+    font-size:6.5px;
+    font-family:sans-serif;
+    line-height:1.25;
+    fill:#000000;
+    fill-opacity:1;
+    text-anchor:middle;
+    text-align:center;
+    }
+    .myrect {
+    fill:none;
+    stroke:#000000;
+    stroke-width:1;
+    stroke-miterlimit:4;
+    stroke-dasharray:none;
+    stroke-opacity:1
+    }
+    .myellipse {
+    fill:none;
+    stroke:#000000;
+    stroke-width:1;
+    stroke-miterlimit:4;
+    stroke-dasharray:none;
+    stroke-opacity:1
+    }
+    .myarrow {
+    fill:none;
+    stroke:#000000;
+    stroke-width:0.70555556;
+    stroke-linecap:butt;
+    stroke-linejoin:miter;
+    stroke-opacity:1;
+    stroke-miterlimit:4;
+    stroke-dasharray:none
+    }
+  </style>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -26,15 +68,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="293.55448"
+     inkscape:cx="-42.874091"
      inkscape:cy="338.26357"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1676"
-     inkscape:window-height="1155"
-     inkscape:window-x="-13"
-     inkscape:window-y="-13"
+     inkscape:window-width="3440"
+     inkscape:window-height="1352"
+     inkscape:window-x="0"
+     inkscape:window-y="1"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata4079">
@@ -44,7 +86,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -53,284 +95,276 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,-87)">
+    <g id="current-journeys" class="real">
     <rect
        id="rect4084"
-       width="49.339779"
-       height="24.339781"
-       x="136.70937"
-       y="174.98412"
-       style="fill:none;stroke:#000000;stroke-width:0.70555556;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       width="50"
+       height="25"
+       x="135"
+       y="175"
+       class="myrect" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.3499999px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="160.77403"
-       y="186.62039"
+       class="mytext"
+       x="160"
+       y="185"
        id="text4893"><tspan
          sodipodi:role="line"
-         id="tspan5047"
-         x="160.77403"
-         y="186.62039">current</tspan><tspan
+         id="tspan5047">current</tspan><tspan
          sodipodi:role="line"
-         id="tspan5049"
-         x="160.77403"
-         y="194.55789">journeys</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.3499999px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="33.814636"
-       y="200.54639"
-       id="text4893-7"><tspan
-         sodipodi:role="line"
-         id="tspan4943"
-         x="33.814636"
-         y="200.54639">routing</tspan><tspan
-         sodipodi:role="line"
-         id="tspan4945"
-         x="33.814636"
-         y="208.48389">service</tspan></text>
+         id="tspan5049">journeys</tspan></text>
+    </g>
+    <g id="driver-availability" class="hypothetical">
     <ellipse
-       style="fill:none;stroke:#000000;stroke-width:0.7055555;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       class="myellipse"
        id="path4951"
-       cx="42.401669"
-       cy="167.48845"
-       rx="24.647223"
-       ry="14.647223" />
+       cx="40"
+       cy="165"
+       rx="25"
+       ry="15" />
+    
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.3499999px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="42.068764"
-       y="167.9704"
+       class="mytext"
+       x="40"
+       y="165"
        id="text4955"><tspan
          sodipodi:role="line"
-         id="tspan4953"
-         x="42.068764"
-         y="167.9704"
-         style="stroke-width:0.26458332">driver</tspan><tspan
+         id="tspan4953">driver</tspan><tspan
          sodipodi:role="line"
-         x="42.068764"
-         y="175.9079"
-         style="stroke-width:0.26458332"
          id="tspan4957">availability</tspan></text>
+  </g>
+    <g id="routing-service" class="hypothetical">
+    <text
+       xml:space="preserve"
+       class="mytext"
+       x="35"
+       y="200"
+       id="text4893-7"><tspan
+         sodipodi:role="line"
+         id="tspan4943">routing</tspan><tspan
+         sodipodi:role="line"
+         id="tspan4945">service</tspan></text>
     <ellipse
-       style="fill:none;stroke:#000000;stroke-width:0.7055555;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       class="myellipse"
        id="path4951-9"
-       cx="33.624374"
-       cy="202.26015"
-       rx="24.647224"
-       ry="14.647223" />
+       cx="35"
+       cy="200"
+       rx="25"
+       ry="15" />
+    </g>
+    <g id="maps" class="real">
     <rect
        id="rect4084-1"
-       width="49.339779"
-       height="24.339781"
-       x="188.30728"
-       y="93.267311"
-       style="fill:none;stroke:#000000;stroke-width:0.70555556;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       width="50"
+       height="25"
+       x="190"
+       y="95"
+       class="myrect" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.3499999px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="212.37196"
-       y="104.90359"
+       class="mytext"
+       x="215"
+       y="105"
        id="text4893-5"><tspan
          sodipodi:role="line"
-         id="tspan5022"
-         x="212.37196"
-         y="104.90359">maps</tspan></text>
+         id="tspan5022">maps</tspan></text>
+    </g>
+    <g id="traffic" class="real">
     <rect
        id="rect4084-1-9"
-       width="49.339779"
-       height="24.339781"
-       x="30.181944"
-       y="93.087364"
-       style="fill:none;stroke:#000000;stroke-width:0.70555556;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       width="50"
+       height="25"
+       x="30"
+       y="95"
+       class="myrect" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.3499999px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="54.246628"
-       y="104.72364"
+       class="mytext"
+       x="55"
+       y="105"
        id="text4893-5-3"><tspan
          sodipodi:role="line"
-         id="tspan5045"
-         x="54.246628"
-         y="104.72364">traffic</tspan></text>
-    <flowRoot
-       xml:space="preserve"
-       id="flowRoot5051"
-       style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:24px;line-height:1.25;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:'sans-serif, Normal';font-stretch:normal;font-variant:normal;text-anchor:middle;text-align:center;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal"><flowRegion
-         id="flowRegion5053"><rect
-           id="rect5055"
-           width="270.72089"
-           height="139.40105"
-           x="766.70581"
-           y="189.62958" /></flowRegion><flowPara
-         id="flowPara5057"></flowPara></flowRoot>    <rect
+         id="tspan5045">traffic</tspan></text>
+  </g>
+    <g id="driver-locations" class="real">
+    <rect
        id="rect4084-3"
-       width="49.339779"
-       height="24.339781"
-       x="216.6745"
-       y="166.946"
-       style="fill:none;stroke:#000000;stroke-width:0.70555556;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       width="50"
+       height="25"
+       x="215"
+       y="165"
+       class="myrect" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;"
-       x="240.73917"
-       y="178.58228"
+       class="mytext"
+       x="240"
+       y="175"
        id="text4893-2"><tspan
          sodipodi:role="line"
          id="tspan5083">driver</tspan><tspan
          sodipodi:role="line"
          id="tspan5085">locations</tspan></text>
-    <g
-       id="g5184"
-       transform="translate(-79.828612,-19.427979)">
-      <rect
-         style="fill:none;stroke:#000000;stroke-width:0.70555556;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         y="231.08202"
-         x="216.93225"
-         height="24.339781"
-         width="49.339779"
-         id="rect4084-1-9-8" />
+  </g>
+    <g id="available-drivers" class="real">
+    <rect
+       class="myrect"
+       y="215"
+       x="135"
+       height="25"
+       width="50"
+       id="rect4084-1-9-8" />
+    <text
+       id="text4893-5-3-5"
+       x="160"
+       y="225"
+       class="mytext"
+       xml:space="preserve"><tspan
+         sodipodi:role="line"
+         id="tspan5261">available</tspan><tspan
+         sodipodi:role="line"
+         id="tspan5263">drivers</tspan></text>
+  </g>
+    <path
+       class="myarrow"
+       d="M 215,242 185,242"
+       id="path5265"
+       inkscape:connector-curvature="0"
+       style="myarrow"
+       sodipodi:nodetypes="ccc" />
+    <path
+       class="myarrow"
+       d="M 215,260 185,242"
+       id="path5267"
+       inkscape:connector-curvature="0"
+       style="myarrow"
+       sodipodi:nodetypes="cc" />
+    <path
+       class="myarrow"
+       d="M 265,242 Z"
+       id="path5269"
+       inkscape:connector-curvature="0" />
+    <g id="journey-demand" class="hypothetical">
       <text
-         id="text4893-5-3-5"
-         y="242.71829"
-         x="240.99693"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;"
-         xml:space="preserve"><tspan
+         xml:space="preserve"
+         class="mytext"
+         x="70"
+         y="245"
+         id="text4893-7-4"><tspan
            sodipodi:role="line"
-           id="tspan5261">available</tspan><tspan
+           id="tspan5136">journey</tspan><tspan
            sodipodi:role="line"
-           id="tspan5263">drivers</tspan></text>
-      <path
-         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         d="m 296.78694,198.12144 c -30.61607,44.97916 -30.61607,44.97916 -30.61607,44.97916 v 0 -0.37797"
-         id="path5265"
-         inkscape:connector-curvature="0" />
-      <path
-         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         d="m 297.92087,260.86548 -31.75,-18.14285"
-         id="path5267"
-         inkscape:connector-curvature="0" />
-      <path
-         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         d="M 266.17087,242.72263 Z"
-         id="path5269"
-         inkscape:connector-curvature="0" />
+           id="tspan5138">demand</tspan></text>
+      <ellipse
+         class="myellipse"
+         id="path4951-9-8"
+         cx="70"
+         cy="245"
+         rx="25"
+         ry="15" />
     </g>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.3499999px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="72.005737"
-       y="243.50349"
-       id="text4893-7-4"><tspan
-         sodipodi:role="line"
-         id="tspan5136"
-         x="72.005737"
-         y="243.50349">journey</tspan><tspan
-         sodipodi:role="line"
-         id="tspan5138"
-         x="72.005737"
-         y="251.44099">demand</tspan></text>
-    <ellipse
-       style="fill:none;stroke:#000000;stroke-width:0.7055555;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="path4951-9-8"
-       cx="71.815483"
-       cy="245.21725"
-       rx="24.647224"
-       ry="14.647223" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;"
-       x="135.88371"
-       y="103.27434"
-       id="text4893-7-5"><tspan
-         sodipodi:role="line"
-         id="tspan5152">driver</tspan><tspan
-         sodipodi:role="line"
-         id="tspan5154">wait</tspan></text>
-    <ellipse
-       style="fill:none;stroke:#000000;stroke-width:0.7055555;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="path4951-9-3"
-       cx="135.69345"
-       cy="104.9881"
-       rx="24.647224"
-       ry="14.647223" />
+    <g id="driver-wait" class="hypothetical">
+      <text
+         xml:space="preserve"
+         class="mytext"
+         x="135"
+         y="105"
+         id="text4893-7-5"><tspan
+           sodipodi:role="line"
+           id="tspan5152">driver</tspan><tspan
+           sodipodi:role="line"
+           id="tspan5154">wait</tspan></text>
+      <ellipse
+         class="myellipse"
+         id="path4951-9-3"
+         cx="135"
+         cy="105"
+         rx="25"
+         ry="15" />
+    </g>
+    <g id="rider-destinations" class="real">
     <rect
        id="rect4084-1-9-8-7"
-       width="49.339779"
-       height="24.339781"
-       x="217.08263"
-       y="197.59392"
-       style="fill:none;stroke:#000000;stroke-width:0.70555556;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       width="50"
+       height="25"
+       x="215"
+       y="195"
+       class="myrect" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;"
-       x="241.14731"
-       y="208.17152"
+       class="mytext"
+       x="240"
+       y="205"
        id="text4893-5-3-5-8"><tspan
          sodipodi:role="line"
          id="tspan5223">rider</tspan><tspan
          sodipodi:role="line"
          id="tspan5225">destinations</tspan></text>
-    <g
-       id="g5184-0"
-       transform="translate(1.0585741,-1.4364302)">
-      <rect
-         style="fill:none;stroke:#000000;stroke-width:0.70555556;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         y="231.08202"
-         x="216.93225"
-         height="24.339781"
-         width="49.339779"
-         id="rect4084-1-9-8-3" />
-      <text
-         id="text4893-5-3-5-6"
-         y="242.71829"
-         x="240.99693"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;"
-         xml:space="preserve"><tspan
-           sodipodi:role="line"
-           id="tspan5227">rider-driver</tspan><tspan
-           sodipodi:role="line"
-           id="tspan5229">allocations</tspan></text>
-      <rect
-         id="rect4084-3-6"
-         width="49.339779"
-         height="24.339781"
-         x="216.47852"
-         y="134.92485"
-         style="fill:none;stroke:#000000;stroke-width:0.70555556;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.3499999px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-         x="240.5432"
-         y="146.56113"
-         id="text4893-2-2"><tspan
-           sodipodi:role="line"
-           id="tspan5255"
-           x="240.5432"
-           y="146.56113">pickup</tspan><tspan
-           sodipodi:role="line"
-           id="tspan5257"
-           x="240.5432"
-           y="154.49863">status</tspan></text>
-      <path
-         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         d="M 215.52178,147.62394 184.9057,186.93346"
-         id="path5259"
-         inkscape:connector-curvature="0" />
+    </g>
+    <g id="rider-driver-allocations" class="real">
+    <rect
+       class="myrect"
+       y="225"
+       x="215"
+       height="25"
+       width="50"
+       id="rect4084-1-9-8-3" />
+    <text
+       id="text4893-5-3-5-6"
+       y="235"
+       x="240"
+       class="mytext"
+       xml:space="preserve"><tspan
+         sodipodi:role="line"
+         id="tspan5227">rider-driver</tspan><tspan
+         sodipodi:role="line"
+         id="tspan5229">allocations</tspan></text>
+    </g>
+    <g id="pickup-status">
+    <rect
+       id="rect4084-3-6"
+       width="50"
+       height="25"
+       x="215"
+       y="135"
+       class="myrect" />
+    <text
+       xml:space="preserve"
+       class="mytext"
+       x="240"
+       y="145"
+       id="text4893-2-2"><tspan
+         sodipodi:role="line"
+         id="tspan5255">pickup</tspan><tspan
+         sodipodi:role="line"
+         id="tspan5257">status</tspan></text>
     </g>
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.70555556;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
-       d="m 216.95833,178.69346 c -30.61607,6.80357 -30.99405,6.80357 -30.99405,6.80357 v 0"
+       class="myarrow"
+       d="M 215,145 185,185"
+       id="path5259"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       class="myarrow"
+       d="M 215,180 185,185"
        id="path5217"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:0.70555556;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       sodipodi:nodetypes="ccc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.70555556;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
-       d="M 217.33631,210.06548 185.96428,185.49703"
+       class="myarrow"
+       d="M 215,207 185,185"
        id="path5219"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:0.70555556;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.70555556;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
-       d="M 218.09226,241.4375 185.96428,185.49703"
+       class="myarrow"
+       d="M 215,237 185,185"
        id="path5221"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:0.70555556;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       sodipodi:nodetypes="cc" />
   </g>
 </svg>
