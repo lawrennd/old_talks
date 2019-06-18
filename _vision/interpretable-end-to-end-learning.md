@@ -87,7 +87,7 @@ $$\dataVector = \mappingFunctionVector_4\left(\mappingFunctionVector_3\left(\map
 \include{_ml/includes/graphical-models.md}
 
 
-\include{_health/includes/malaria-gp.md}-->
+<!--\include{_health/includes/malaria-gp.md}-->
 
 \subsection{Related Papers}
 
@@ -129,6 +129,7 @@ $$\dataVector = \mappingFunctionVector_4\left(\mappingFunctionVector_3\left(\map
 \newslide{ML in Cambridge}
 
 \slides{* ML Systems Design
+    * Software for ML, Languages for ML
 * Challenges in Optimization, Monitoring, Deployment
 * Application Areas: Comp Bio, Health, **Developing Economies**
 }
