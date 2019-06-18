@@ -42,7 +42,7 @@ Predict Perioperative Risk of Clostridium Difficile Infection Following Colon Su
 
 However, a challenge arises when the data becomes more complex. Consider the graphical model shown below, used to predict the perioperative risk of *C Difficile* infection following colon surgery [@Steele:predictive12].}
 
-\figure{\includepng{../slides/diagrams/bayes-net-diagnosis}{80%}{negate}}{A probabilistic directed graph used to predict the perioperative risk of *C Difficile* infection following colon surgery. When these models have good predictive performance they are often difficult to interpret. This may be due to the limited representation capability of the conditional densities in the model.}{c-difficile-bayes-net-diagnosis}
+\figure{\includepng{../slides/diagrams/bayes-net-diagnosis}{60%}{negate}}{A probabilistic directed graph used to predict the perioperative risk of *C Difficile* infection following colon surgery. When these models have good predictive performance they are often difficult to interpret. This may be due to the limited representation capability of the conditional densities in the model.}{c-difficile-bayes-net-diagnosis}
 
 \notes{To capture the complexity in the interelationship between the data, the graph itself becomes more complex, and less interpretable.}
 \endif

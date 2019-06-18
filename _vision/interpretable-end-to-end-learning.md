@@ -29,15 +29,30 @@ incremental: True
 
 \include{_ai/includes/amazon-delivery-drone.md}
 
-\newslide{Amazon: Bits and Atoms}
+\newslide{Bits and Atoms}
 
-\include{_supply-chain/includes/supply-chain.md}
+\figure{\includejpg{../slides/diagrams/supply-chain/container-2539942_1920}{80%}}{The container is one of the major drivers of globalization, and arguably the largest agent of social change in the last 100 years. It reduces the cost of transportation, significantly changing the appropriate topology of distribution networks. The container makes it possible to ship goods halfway around the world for cheaper than it costs to process those goods, leading to an extended distribution topology.}{container-2539942_1920}
 
 \section{End-to-End: Environment and Decision}
 
 \include{_ml/includes/what-is-ml-end-to-end.md}
 
+\newslide{}
+
+\figure{\includediagram{../slides/diagrams/ai/ride-allocation-prediction}{60%}}{Some software components in a ride allocation system. Circled components are hypothetical, rectangles represent actual data.}{ride-allocation-system}
+
+\newslide{}
+
+\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-pedestrian}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
+
 \include{_uq/includes/emulation.md}
+
+\include{_ml/includes/deep-face.md}
+<!--\include{_ml/includes/deep-learning-as-pinball.md}-->
+
+\include{_deepgp/includes/deep-nn.md}
+\include{_deepgp/includes/overfitting-low-rank.md}
+\include{_deepgp/includes/deep-gp.md}
 
 
 <!--include{_ai/includes/ai-vs-data-science-2.md}-->
@@ -46,18 +61,19 @@ incremental: True
 <!--\define{stepFunctionData} -->
 \define{gpySoftware}
 \include{_deepgp/includes/deep-motorcycle.md}
+\include{_ml/includes/graphical-models.md}
 
 
 <!--\include{_data-science/includes/data-science-africa.md}
 \include{_health/includes/malaria-gp.md}-->
 
-\subsection{Conclusions}
+\subsection{Directions}
 
-\slides{* AI is algorithmic decision making.
-* Machine learning systems are *not* decomposable.
-* Deep emulation as a methodological solution.
-* Bayesian Systems Optimization as a Decision Making Framework.}
-
+\slides{* Mechanistic modelling
+* Automated Abstraction
+* Deep emulation
+* Bayesian Systems Optimization
+}
 \thanks
 
 \references

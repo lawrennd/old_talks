@@ -13,12 +13,12 @@
 
 \newslide{Wild Alaskan Cod}
 \slides{
-\includejpg{../slides/diagrams/supply-chain/wild-alaskan-cod}{30%}
+\figure{\includejpg{../slides/diagrams/supply-chain/wild-alaskan-cod}{30%}}{Wild Alaskan Cod, being solid in the Pacific Northwest.}{wild-alaskan-cod}
 }
 
 \newslide{Wild Alaskan Cod}
 \slides{
-\includejpg{../slides/diagrams/supply-chain/wild-alaskan-cod-made-in-china}{30%}
+\figure{\includejpg{../slides/diagrams/supply-chain/wild-alaskan-cod-made-in-china}{30%}}{Wild Alaskan Cod that is a product of China. It is cheaper to ship the deep frozen fish thousands of kilometers for processing than to process locally.}{wild-alaskan-cod-made-in-china}
 }
 
 \notes{
