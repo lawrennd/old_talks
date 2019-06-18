@@ -43,9 +43,30 @@ incremental: True
 
 \newslide{}
 
-\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-pedestrian}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
+\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-pedestrian000}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
 
 \include{_uq/includes/emulation.md}
+
+\newslide{}
+
+\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-pedestrian000}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
+
+
+\newslide{}
+
+\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-pedestrian001}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
+
+\newslide{}
+
+\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-pedestrian}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
+
+\newslide{Bayesian *System* Optimization}
+
+* Aim: maintain interpretable compoents.
+* Monitor downstream/upstream effects through emulation.
+* Optimize individual components considering upstream and downstream.
+
+\newslide{Technology: Deep Emulation}
 
 \include{_ml/includes/deep-face.md}
 <!--\include{_ml/includes/deep-learning-as-pinball.md}-->
@@ -54,7 +75,9 @@ incremental: True
 \include{_deepgp/includes/overfitting-low-rank.md}
 \include{_deepgp/includes/deep-gp.md}
 
+\newslide{Stochastic Process Composition}
 
+$$\dataVector = \mappingFunctionVector_4\left(\mappingFunctionVector_3\left(\mappingFunctionVector_2\left(\mappingFunctionVector_1\left(\inputVector\right)\right)\right)\right)$$
 <!--include{_ai/includes/ai-vs-data-science-2.md}-->
 
 <!-- in this short overview, don't introduce GPy or the data-->
@@ -64,8 +87,34 @@ incremental: True
 \include{_ml/includes/graphical-models.md}
 
 
-<!--\include{_data-science/includes/data-science-africa.md}
 \include{_health/includes/malaria-gp.md}-->
+
+\subsection{Related Papers}
+
+* *Deep Gaussian Processes*
+    @Damianou:deepgp13
+
+* *Latent Force Models*
+  @Alvarez:llfm13
+
+* *Gaussian Process Latent Force Models for Learning and Stochastic Control of Physical Systems*
+  @Sarkka:control18
+
+* *The Emergence of Organizing Structure in Conceptual Representation*
+  @Lake:emergence18
+
+\subsection{Other's Work}
+
+* *How Deep Are Deep Gaussian Processes?*
+  @Dunlop:deep2017
+* *Doubly Stochastic Variational Inference for Deep Gaussian Processes*
+  @Salimbeni:doubly2017
+* *Deep Multi-task Gaussian Processes for Survival Analysis with Competing Risks*
+  @Alaa:deep2017
+* *Counterfactual Gaussian Processes for Reliable Decision-making and What-if Reasoning*
+    @Schulam:counterfactual17
+
+
 
 \subsection{Directions}
 
@@ -74,6 +123,9 @@ incremental: True
 * Deep emulation
 * Bayesian Systems Optimization
 }
+
+\include{_data-science/includes/data-science-africa.md}
+
 \thanks
 
 \references

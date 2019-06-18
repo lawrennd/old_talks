@@ -47,7 +47,7 @@ mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/motorcycle-hel
 
 \subsection{Motorcycle Helmet Data Deep GP}
 
-\figure{\includediagram{../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-samples}}{Samples from the deep Gaussian process as fitted to the motorcycle helmet accelerometer data.}{motorcycle-helmet-deep-gp-samples}
+\figure{\includediagram{../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-samples}{80%}}{Samples from the deep Gaussian process as fitted to the motorcycle helmet accelerometer data.}{motorcycle-helmet-deep-gp-samples}
 
 \displaycode{m.visualize(xlim=xlim, ylim=ylim, scale=scale,offset=offset, 
             xlabel="time", ylabel="acceleration/$g$", portion=0.5,
