@@ -126,6 +126,13 @@ $$\dataVector = \mappingFunctionVector_4\left(\mappingFunctionVector_3\left(\map
 
 \include{_data-science/includes/data-science-africa.md}
 
+\newslide{ML in Cambridge}
+
+\slides{* ML Systems Design
+* Challenges in Optimization, Monitoring, Deployment
+* Application Areas: Comp Bio, Health, **Developing Economies**
+}
+
 \thanks
 
 \references
