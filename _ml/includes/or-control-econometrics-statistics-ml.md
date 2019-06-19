@@ -36,7 +36,7 @@
 * Ease of commiunication
 * Rapid deployment of robust solutions 
 }
-\notes{The separation between these fields has almost become tribal, and from one perspective this can be very helpful. Each tribe can agree on a common language, a common set of goals and a shared understanding of the approach they’ve chose for those goals. This ensures that best practice can be developed and shared and as a result quality standards rise.}
+\notes{The separation between these fields has almost become tribal, and from one perspective this can be very helpful. Each tribe can agree on a common language, a common set of goals and a shared understanding of the approach they’ve chose for those goals. This ensures that best practice can be developed and shared and as a result, quality standards can rise.}
 
 \newslide{Professional Tribes}
 \slides{
@@ -69,15 +69,15 @@ $$\text{data} + \text{model}$$
 	* rapid deployment and continuous monitoring
 * This is the era of *data science*
 }
-\notes{We are doing something that has never been done before, optimizing and evolving very large scale automated decision making networks. The ambition to scale and automate in a *data driven* manner means that a tribal approach to problem solving can hinder our progress. Any tribe of hunter gatherers would struggle to understand the operation of a modern city. Similarly, supply chain needs to develop cross-functional skill sets to address the modern problems we face, not the problems that were formulated in the past.}
+\notes{We are doing something that has never been done before, optimizing and evolving very large-scale automated decision making networks. The ambition to scale and automate, in a *data driven* manner, means that a tribal approach to problem solving can hinder our progress. Any tribe of hunter gatherers would struggle to understand the operation of a modern city. Similarly, supply chain needs to develop cross-functional skill sets to address the modern problems we face, not the problems that were formulated in the past.}
 
-\notes{Many of the challenges we face are at the interface between our tribal expertize. We have particular cost functions we are trying to minimize (an expertise of OR) but we have large scale feedbacks in our system (an expertise of control). We also want our systems to be adaptive to changing circumstances, to perform the best action given the data available (an expertise of machine learning and statistics).}
+\notes{Many of the challenges we face are at the interface between our tribal expertise. We have particular cost functions we are trying to minimize (an expertise of OR) but we have large scale feedbacks in our system (an expertise of control). We also want our systems to be adaptive to changing circumstances, to perform the best action given the data available (an expertise of machine learning and statistics).}
 
 \notes{Taking the tribal analogy further, we could imagine each of our professions as a separate tribe of hunter-gathers, each with particular expertise (e.g. fishing, deer hunting, trapping). Each of these tribes has their own approach to eating to survive, just as each of our localized professions has its own approach to modelling. But in this analogy, the technological landscapes we face are not wildernesses, they are emerging metropolises. Our new task is to feed our population through a budding network of supermarkets. While we may be sourcing our food in the same way, this requires new types of thinking that don't belong in the pure domain of any of our existing tribes.}
 
 \notes{For our biggest challenges, focusing on the differences between these fields is unhelpful, we should consider their strengths and how they overlap. Fundamentally all these fields are focused on taking the right action given the information available to us. They need to work in *synergy* for us to make progress.}
 
-\notes{While there is some discomfort in talking across field boundaries, it is critical to disconforming our current beliefs and generating the new techniques we need to address the challenges before us.}
+\notes{While there is some discomfort in talking across field boundaries, it is critical to disconfirming our current beliefs and generating the new techniques we need to address the challenges before us.}
 
 \recommendation{We should be aware of the limitations of a single tribal view of any of our problem sets. Where our modelling is dominated by one perspective (e.g. economics, OR, control, ML) we should ensure cross fertilization of ideas occurs through scientific review and team rotation mechanisms that embed our scientists (for a short period) in different teams across our organizations.}
 

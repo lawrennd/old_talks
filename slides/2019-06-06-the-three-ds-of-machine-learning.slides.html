@@ -29,7 +29,6 @@
   <script src="reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
     TeX: {
@@ -40,7 +39,9 @@
   <script src="figure-animate.js"></script>
 </head>
 <body>
-\[\newcommand{\Amatrix}{\mathbf{A}}
+\[<!--\newcommand{\tk}[1]{}-->
+\newcommand{\tk}[1]{\textbf{TK}: #1}
+\newcommand{\Amatrix}{\mathbf{A}}
 \newcommand{\KL}[2]{\text{KL}\left( #1\,\|\,#2 \right)}
 \newcommand{\Kaast}{\kernelMatrix_{\mathbf{ \ast}\mathbf{ \ast}}}
 \newcommand{\Kastu}{\kernelMatrix_{\mathbf{ \ast} \inducingVector}}
@@ -392,6 +393,9 @@
 <h3></h3>
 <p><span class="math display">\[\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span></p>
 </section>
+<section id="from-model-to-decision" class="slide level3">
+<h3>From Model to Decision</h3>
+</section>
 <section id="section-4" class="slide level3">
 <h3></h3>
 <table>
@@ -483,21 +487,29 @@
 </section>
 <section id="wild-alaskan-cod" class="slide level3">
 <h3>Wild Alaskan Cod</h3>
+<div class="figure">
+<div id="wild-alaskan-cod-figure" class="figure-frame">
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/supply-chain/wild-alaskan-cod.jpg" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
 </div>
 </section>
 <section id="wild-alaskan-cod-1" class="slide level3">
 <h3>Wild Alaskan Cod</h3>
+<div class="figure">
+<div id="wild-alaskan-cod-made-in-china-figure" class="figure-frame">
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/supply-chain/wild-alaskan-cod-made-in-china.jpg" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
 </div>
 </section>
 <section id="machine-learning-in-supply-chain-1" class="slide level3">
 <h3>Machine Learning in Supply Chain</h3>
 <ul>
 <li><em>Supply chain</em>: Large Automated Decision Making Network</li>
-<li>Amazon's supply chain: Possibly the world's largest 'AI'</li>
+<li>Amazon’s supply chain: Possibly the world’s largest ‘AI’</li>
 <li>Major Challenge:
 <ul>
 <li>We have a <em>mechanistic</em> understanding of supply chain.</li>
@@ -575,7 +587,7 @@
 <section id="a-trap" class="slide level3">
 <h3>A Trap</h3>
 <ul>
-<li>Over emphasis on the <em>type</em> of model we're deploying.</li>
+<li>Over emphasis on the <em>type</em> of model we’re deploying.</li>
 <li>Under emphasis on the appropriateness of the task decomposition.</li>
 </ul>
 </section>
@@ -594,7 +606,7 @@
 <ul>
 <li>Absolute decomposition is impossible.</li>
 <li>If we deploy a weak component in one place, downstream system will compensate.</li>
-<li>Systems <em>co-evolve</em> ... there is no <em>simple</em> solution</li>
+<li>Systems <em>co-evolve</em> … there is no <em>simple</em> solution</li>
 <li>Trade off between <em>performance</em> and <em>decomposability</em>.
 <ul>
 <li>Need to monitor deployment</li>
@@ -667,10 +679,14 @@
 <section id="three-grades-of-data-readiness" class="slide level3">
 <h3>Three Grades of Data Readiness</h3>
 <ul>
-<li>Grade C - accessibility</li>
+<li>Grade C - accessibility
+<ul>
 <li>Transition: data becomes electronically available</li>
-<li>Grade B - validity</li>
+</ul></li>
+<li>Grade B - validity
+<ul>
 <li>Transition: pose a question to the data.</li>
+</ul></li>
 <li>Grade A - usability</li>
 </ul>
 </section>
@@ -735,7 +751,7 @@
 <ul>
 <li>Continuous deployment:
 <ul>
-<li>We've changed the code, we should test the effect.</li>
+<li>We’ve changed the code, we should test the effect.</li>
 </ul></li>
 <li>Continuous Monitoring:
 <ul>
@@ -747,7 +763,7 @@
 <section id="data-orientated-architectures" class="slide level3">
 <h3>Data Orientated Architectures</h3>
 <ul>
-<li>Historically we've been <em>software first</em>
+<li>Historically we’ve been <em>software first</em>
 <ul>
 <li>A necessary but not sufficient condition for <em>data first</em></li>
 </ul></li>
@@ -824,9 +840,9 @@
 <section id="hypothetical-streams" class="slide level3">
 <h3>Hypothetical Streams</h3>
 <ul>
-<li>Real stream --- share prices
+<li>Real stream — share prices
 <ul>
-<li>derived <em>hypothetical</em> stream --- share prices in future.</li>
+<li>derived <em>hypothetical</em> stream — share prices in future.</li>
 </ul></li>
 <li>Hypothetical constrained by
 <ul>
@@ -841,7 +857,7 @@
 <ul>
 <li>Modelling is now required.</li>
 <li>But modelling is declared in the ecosystem.</li>
-<li>If it's manual, warnings can be used
+<li>If it’s manual, warnings can be used
 <ul>
 <li>calibration, fairness, dataset shift</li>
 </ul></li>
@@ -871,7 +887,7 @@
 <ul>
 <li>Potential for information feedback loops.</li>
 <li>Hypothetical streams are instantiated.</li>
-<li>Nature hypothesis (e.g. price prediction) can effect reality.</li>
+<li>Nature hypothesis (e.g. price prediction) can effect reality.</li>
 <li>Leads to information dynamics, similar to dynamics of governors.</li>
 <li>See e.g. <a href="https://www.gla.ac.uk/schools/computing/research/researchsections/ida-section/closedloop/">Closed Loop Data Science</a> at Glasgow.</li>
 </ul>
@@ -927,11 +943,28 @@
         history: true,
         // Transition style
         transition: 'None', // none/fade/slide/convex/concave/zoom
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
 
         // Optional reveal.js plugins
         dependencies: [
           { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/math/math.js', async: true },
           { src: 'reveal.js/plugin/notes/notes.js', async: true }
         ]
       });

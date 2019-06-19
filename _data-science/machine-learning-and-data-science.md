@@ -114,15 +114,18 @@ include{_data-science/includes/data-readiness-levels.md}
 \include{_ml/includes/ml-combining-data-and-systems-design-challenge.md}
 \include{_ml/includes/ml-outlook.md}
 
+\include{_data-science/includes/data-oriented-architectures.md}
+\include{_data-science/includes/data-oriented-conclusions.md}
+
 \subsection{Conclusion}
 \slides{
 * Technologically *evolving* environment.
-* ML is a key component of decision making.
+* ML is a key component of decision-making.
 * Data is the key component of ML.
 * ML is *critically* dependent on data.
 * Challenges in *design*, *data curation* and *model deployment* 
 }
-\notes{We operate in a technologically evolving environment.  Machine learning is becoming a key coponent in our decision making capabilities, our intelligence and strategic command. However, technology drove changes in battlefield strategy. From the stalemate of the first world war to the tank-dominated Blitzkrieg of the second, to the asymmetric warfare of the present. Our technology, tactics and strategies are also constantly evolving. Machine learning is part of that evolution solution, but the main challenge is not to become so fixated on the tactics of today that we miss the evolution of strategy that the technology is suggesting.}
+\notes{We operate in a technologically evolving environment.  Machine learning is becoming a key coponent in our decision-making capabilities, our intelligence and strategic command. However, technology drove changes in battlefield strategy. From the stalemate of the first world war to the tank-dominated Blitzkrieg of the second, to the asymmetric warfare of the present. Our technology, tactics and strategies are also constantly evolving. Machine learning is part of that evolution solution, but the main challenge is not to become so fixated on the tactics of today that we miss the evolution of strategy that the technology is suggesting.}
 
 \thanks
 

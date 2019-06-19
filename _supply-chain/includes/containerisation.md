@@ -11,14 +11,14 @@
 
 \notes{Containerization has had a dramatic effect on global economics, placing many people in the developing world at the end of the supply chain. }
 
-\newslide{Wild Alaskan Cod}
+\newslide{Deep Freeze}
 \slides{
 \figure{\includejpg{../slides/diagrams/supply-chain/wild-alaskan-cod}{30%}}{Wild Alaskan Cod, being solid in the Pacific Northwest.}{wild-alaskan-cod}
 }
 
-\newslide{Wild Alaskan Cod}
+\newslide{Deep Freeze}
 \slides{
-\figure{\includejpg{../slides/diagrams/supply-chain/wild-alaskan-cod-made-in-china}{30%}}{Wild Alaskan Cod that is a product of China. It is cheaper to ship the deep frozen fish thousands of kilometers for processing than to process locally.}{wild-alaskan-cod-made-in-china}
+\figure{\includejpg{../slides/diagrams/supply-chain/wild-alaskan-cod-made-in-china}{30%}}{Wild Alaskan Cod that is a product of China. It is cheaper to ship the deep-frozen fish thousands of kilometers for processing than to process locally.}{wild-alaskan-cod-made-in-china}
 }
 
 \notes{
