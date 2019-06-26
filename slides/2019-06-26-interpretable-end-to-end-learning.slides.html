@@ -29,6 +29,7 @@
   <script src="reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
     TeX: {
@@ -424,7 +425,7 @@
 <h3>Machine Learning in Supply Chain</h3>
 <ul>
 <li><em>Supply chain</em>: Large Automated Decision Making Network</li>
-<li>Amazon’s supply chain: Possibly the world’s largest ‘AI’</li>
+<li>Amazon's supply chain: Possibly the world's largest 'AI'</li>
 <li>Major Challenge:
 <ul>
 <li>We have a <em>mechanistic</em> understanding of supply chain.</li>
@@ -482,7 +483,7 @@
 <section id="our-vision" class="slide level3">
 <h3>Our Vision</h3>
 <blockquote>
-<p>We don’t know what science we’ll want to do in 5 years time, but we won’t want slower experiments, we won’t want more expensive experiments and we won’t want a narrower selection of experiments.</p>
+<p>We don't know what science we'll want to do in 5 years time, but we won't want slower experiments, we won't want more expensive experiments and we won't want a narrower selection of experiments.</p>
 </blockquote>
 </section>
 <section id="what-do-we-want" class="slide level3">
@@ -547,9 +548,9 @@
 <section id="hypothetical-streams" class="slide level3">
 <h3>Hypothetical Streams</h3>
 <ul>
-<li>Real stream — share prices
+<li>Real stream --- share prices
 <ul>
-<li>derived <em>hypothetical</em> stream — share prices in future.</li>
+<li>derived <em>hypothetical</em> stream --- share prices in future.</li>
 </ul></li>
 <li>Hypothetical constrained by
 <ul>
@@ -564,7 +565,7 @@
 <ul>
 <li>Modelling is now required.</li>
 <li>But modelling is declared in the ecosystem.</li>
-<li>If it’s manual, warnings can be used
+<li>If it's manual, warnings can be used
 <ul>
 <li>calibration, fairness, dataset shift</li>
 </ul></li>
@@ -600,7 +601,7 @@
 <ul>
 <li>Potential for information feedback loops.</li>
 <li>Hypothetical streams are instantiated.</li>
-<li>Nature hypothesis (e.g. price prediction) can effect reality.</li>
+<li>Nature hypothesis (e.g. price prediction) can effect reality.</li>
 <li>Leads to information dynamics, similar to dynamics of governors.</li>
 <li>See e.g. <a href="https://www.gla.ac.uk/schools/computing/research/researchsections/ida-section/closedloop/">Closed Loop Data Science</a> at Glasgow.</li>
 </ul>
@@ -802,10 +803,10 @@
 <li><p>Potential problem: if number of nodes in two adjacent layers is big, corresponding <span class="math inline">\(\mappingMatrix\)</span> is also very big and there is the potential to overfit.</p></li>
 <li><p>Proposed solution: “dropout”.</p></li>
 <li><p>Alternative solution: parameterize <span class="math inline">\(\mappingMatrix\)</span> with its SVD. <span class="math display">\[
-\mappingMatrix = \eigenvectorMatrix\eigenvalueMatrix\eigenvectwoMatrix^\top
-\]</span> or <span class="math display">\[
-\mappingMatrix = \eigenvectorMatrix\eigenvectwoMatrix^\top
-\]</span> where if <span class="math inline">\(\mappingMatrix \in \Re^{k_1\times k_2}\)</span> then <span class="math inline">\(\eigenvectorMatrix\in \Re^{k_1\times q}\)</span> and <span class="math inline">\(\eigenvectwoMatrix \in \Re^{k_2\times q}\)</span>, i.e. we have a low rank matrix factorization for the weights.</p></li>
+  \mappingMatrix = \eigenvectorMatrix\eigenvalueMatrix\eigenvectwoMatrix^\top
+  \]</span> or <span class="math display">\[
+  \mappingMatrix = \eigenvectorMatrix\eigenvectwoMatrix^\top
+  \]</span> where if <span class="math inline">\(\mappingMatrix \in \Re^{k_1\times k_2}\)</span> then <span class="math inline">\(\eigenvectorMatrix\in \Re^{k_1\times q}\)</span> and <span class="math inline">\(\eigenvectwoMatrix \in \Re^{k_2\times q}\)</span>, i.e. we have a low rank matrix factorization for the weights.</p></li>
 </ul>
 </section>
 <section id="low-rank-approximation" class="slide level3">
@@ -857,10 +858,10 @@
 <ul>
 <li><p>Replace each neural network with a Gaussian process <span class="math display">\[
 \begin{align}
-\latentVector_{1} &amp;= \mappingFunctionVector_1\left(\inputVector\right)\\
-\latentVector_{2} &amp;= \mappingFunctionVector_2\left(\latentVector_{1}\right)\\
-\latentVector_{3} &amp;= \mappingFunctionVector_3\left(\latentVector_{2}\right)\\
-\dataVector &amp;= \mappingFunctionVector_4\left(\latentVector_{3}\right)
+  \latentVector_{1} &amp;= \mappingFunctionVector_1\left(\inputVector\right)\\
+  \latentVector_{2} &amp;= \mappingFunctionVector_2\left(\latentVector_{1}\right)\\
+  \latentVector_{3} &amp;= \mappingFunctionVector_3\left(\latentVector_{2}\right)\\
+  \dataVector &amp;= \mappingFunctionVector_4\left(\latentVector_{3}\right)
 \end{align}
 \]</span></p></li>
 <li><p>Equivalent to prior over parameters, take width of each layer to infinity.</p></li>
@@ -1121,7 +1122,7 @@
 </ul>
 </section>
 <section id="others-work" class="slide level3">
-<h3>Other’s Work</h3>
+<h3>Other's Work</h3>
 <ul>
 <li><em>How Deep Are Deep Gaussian Processes?</em> <span class="citation" data-cites="Dunlop:deep2017">Dunlop et al. (n.d.)</span></li>
 <li><em>Doubly Stochastic Variational Inference for Deep Gaussian Processes</em> <span class="citation" data-cites="Salimbeni:doubly2017">Salimbeni and Deisenroth (2017)</span></li>
@@ -1198,28 +1199,11 @@
         history: true,
         // Transition style
         transition: 'None', // none/fade/slide/convex/concave/zoom
-        math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
-          config: 'TeX-AMS_HTML-full',
-          tex2jax: {
-            inlineMath: [['\\(','\\)']],
-            displayMath: [['\\[','\\]']],
-            balanceBraces: true,
-            processEscapes: false,
-            processRefs: true,
-            processEnvironments: true,
-            preview: 'TeX',
-            skipTags: ['script','noscript','style','textarea','pre','code'],
-            ignoreClass: 'tex2jax_ignore',
-            processClass: 'tex2jax_process'
-          },
-        },
 
         // Optional reveal.js plugins
         dependencies: [
           { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: 'reveal.js/plugin/math/math.js', async: true },
           { src: 'reveal.js/plugin/notes/notes.js', async: true }
         ]
       });

@@ -29,6 +29,7 @@
   <script src="reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
     TeX: {
@@ -541,7 +542,7 @@ include{_data-science/includes/data-readiness-levels.md}
 <h3>Machine Learning in Supply Chain</h3>
 <ul>
 <li><em>Supply chain</em>: Large Automated Decision Making Network</li>
-<li>Amazon’s supply chain: Possibly the world’s largest ‘AI’</li>
+<li>Amazon's supply chain: Possibly the world's largest 'AI'</li>
 <li>Major Challenge:
 <ul>
 <li>We have a <em>mechanistic</em> understanding of supply chain.</li>
@@ -620,8 +621,8 @@ include{_data-science/includes/data-readiness-levels.md}
 <li>More things <em>unite</em> us rather than <em>divide</em> us.</li>
 </ul>
 </section>
-<section id="were-no-longer-hunter-gatherers" class="slide level3">
-<h3>We’re no longer hunter gatherers …</h3>
+<section id="were-no-longer-hunter-gatherers-..." class="slide level3">
+<h3>We're no longer hunter gatherers ...</h3>
 <ul>
 <li>The automation challenges we face require
 <ul>
@@ -637,7 +638,7 @@ include{_data-science/includes/data-readiness-levels.md}
 <ul>
 <li>Talking across field boundaries is <em>critical</em>.</li>
 <li>It helps us <em>disconfirm our beliefs</em>.</li>
-<li>It’s not comfortable, but it’s vital.</li>
+<li>It's not comfortable, but it's vital.</li>
 </ul>
 </section>
 <section id="the-three-ds-of-machine-learning-systems-design" class="slide level3">
@@ -728,14 +729,10 @@ include{_data-science/includes/data-readiness-levels.md}
 <section id="three-grades-of-data-readiness" class="slide level3">
 <h3>Three Grades of Data Readiness</h3>
 <ul>
-<li>Grade C - accessibility
-<ul>
+<li>Grade C - accessibility</li>
 <li>Transition: data becomes electronically available</li>
-</ul></li>
-<li>Grade B - validity
-<ul>
+<li>Grade B - validity</li>
 <li>Transition: pose a question to the data.</li>
-</ul></li>
 <li>Grade A - usability</li>
 </ul>
 </section>
@@ -842,9 +839,9 @@ include{_data-science/includes/data-readiness-levels.md}
 <section id="hypothetical-streams" class="slide level3">
 <h3>Hypothetical Streams</h3>
 <ul>
-<li>Real stream — share prices
+<li>Real stream --- share prices
 <ul>
-<li>derived <em>hypothetical</em> stream — share prices in future.</li>
+<li>derived <em>hypothetical</em> stream --- share prices in future.</li>
 </ul></li>
 <li>Hypothetical constrained by
 <ul>
@@ -859,7 +856,7 @@ include{_data-science/includes/data-readiness-levels.md}
 <ul>
 <li>Modelling is now required.</li>
 <li>But modelling is declared in the ecosystem.</li>
-<li>If it’s manual, warnings can be used
+<li>If it's manual, warnings can be used
 <ul>
 <li>calibration, fairness, dataset shift</li>
 </ul></li>
@@ -889,7 +886,7 @@ include{_data-science/includes/data-readiness-levels.md}
 <ul>
 <li>Potential for information feedback loops.</li>
 <li>Hypothetical streams are instantiated.</li>
-<li>Nature hypothesis (e.g. price prediction) can effect reality.</li>
+<li>Nature hypothesis (e.g. price prediction) can effect reality.</li>
 <li>Leads to information dynamics, similar to dynamics of governors.</li>
 <li>See e.g. <a href="https://www.gla.ac.uk/schools/computing/research/researchsections/ida-section/closedloop/">Closed Loop Data Science</a> at Glasgow.</li>
 </ul>
@@ -954,28 +951,11 @@ include{_data-science/includes/data-readiness-levels.md}
         history: true,
         // Transition style
         transition: 'None', // none/fade/slide/convex/concave/zoom
-        math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
-          config: 'TeX-AMS_HTML-full',
-          tex2jax: {
-            inlineMath: [['\\(','\\)']],
-            displayMath: [['\\[','\\]']],
-            balanceBraces: true,
-            processEscapes: false,
-            processRefs: true,
-            processEnvironments: true,
-            preview: 'TeX',
-            skipTags: ['script','noscript','style','textarea','pre','code'],
-            ignoreClass: 'tex2jax_ignore',
-            processClass: 'tex2jax_process'
-          },
-        },
 
         // Optional reveal.js plugins
         dependencies: [
           { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: 'reveal.js/plugin/math/math.js', async: true },
           { src: 'reveal.js/plugin/notes/notes.js', async: true }
         ]
       });

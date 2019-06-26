@@ -4,7 +4,7 @@ DEPS=$(shell ../makedependency_talk.py $(BASE).md)
 DIAGDEPS=$(shell ../makediagdependency_talk.py $(BASE).md)
 BIBDEPS=../lawrence.bib ../other.bib ../zbooks.bib
 
-all: ${BASE}.slides.html ${BASE}.notes.html ${BASE}.posts.html ${BASE}.slides.ipynb ${BASE}.ipynb ${BASE}.notes.docx ${BASE}.notes.pdf
+all: ${BASE}.slides.html ${BASE}.notes.html ${BASE}.posts.html ${BASE}.slides.ipynb ${BASE}.ipynb ${BASE}.notes.docx ${BASE}.notes.pdf ${BASE}.pptx
 
 ##${BASE}.notes.tex ${BASE}.notes.pdf 
 
@@ -19,6 +19,9 @@ ${BASE}.slides.html: ${BASE}.slides.html.markdown ${BIBDEPS}
 	cp ${BASE}.slides.html ../slides/${OUT}.slides.html
 	rm ../include.tmp
 
+${BASE}.pptx: ${BASE}.slides.pptx.markdown
+	pandoc -t pptx -o $@ $<
+	cp ${BASE}.pptx ../slides/${OUT}.pptx
 
 ${BASE}.notes.pdf: ${BASE}.notes.aux ${BASE}.notes.bbl ${BASE}.notes.tex
 	pdflatex -shell-escape ${BASE}.notes.tex
@@ -81,6 +84,9 @@ ${BASE}.slides.ipynb: ${BASE}.slides.ipynb.markdown
 	cp ${BASE}.slides.ipynb ../_notebooks/${OUT}.slides.ipynb
 	rm ${BASE}.tmp.markdown
 
+
+${BASE}.slides.pptx.markdown: ${BASE}.md ${DEPS}
+	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -DPPTX=1 -DSLIDES=1 ${PPFLAGS} $< -o $@  
 
 ${BASE}.slides.html.markdown: ${BASE}.md ${DEPS}
 	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -DHTML=1 -DSLIDES=1 ${PPFLAGS} $< -o $@  

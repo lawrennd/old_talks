@@ -64,8 +64,6 @@ from \filename import \object
 \define{\notesfigure{block}}{\block}
 \define{\slidesmall{block}}{\block}
 
-\define{\columns{one}{two}{width1}{width2}}{<table><tr><td width="\width1">\one</td><td width="\width2">\two</td></tr></table>}
-\define{\threeColumns{one}{two}{three}{width1}{width2}{width3}}{<table><tr><td width="\width1">\one</td><td width="\width2">\two</td><td width="\width3">\three</td></tr></table>}
 
 \define{\references}{\section{References}}
 
