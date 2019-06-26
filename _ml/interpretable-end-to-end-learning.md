@@ -42,34 +42,15 @@ incremental: True
 
 \include{_data-science/includes/data-oriented-architectures.md}
 
-\newslide{}
-
-\figure{\includediagram{../slides/diagrams/ai/ride-allocation-prediction}{60%}}{Some software components in a ride allocation system. Circled components are hypothetical, rectangles represent actual data.}{ride-allocation-system}
-
-\newslide{}
+\newslide{Autonomous Vehicles}
 
 \figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-pedestrian000}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
 
 \include{_uq/includes/emulation.md}
+\include{_uq/includes/deep-emulation.md}
+\include{_uq/includes/bayesian-system-optimization.md}
 
-\newslide{}
-
-\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-pedestrian000}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
-
-
-\newslide{}
-
-\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-pedestrian001}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
-
-\newslide{}
-
-\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-pedestrian}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
-
-\newslide{Bayesian *System* Optimization}
-
-* Aim: maintain interpretable compoents.
-* Monitor downstream/upstream effects through emulation.
-* Optimize individual components considering upstream and downstream.
+\include{_uq/includes/auto-ai.md}
 
 \newslide{Technology: Deep Emulation}
 
@@ -79,10 +60,8 @@ incremental: True
 \include{_deepgp/includes/deep-nn.md}
 \include{_deepgp/includes/overfitting-low-rank.md}
 \include{_deepgp/includes/deep-gp.md}
+\include{_deepgp/includes/stochastic-process-composition.md}
 
-\newslide{Stochastic Process Composition}
-
-$$\dataVector = \mappingFunctionVector_4\left(\mappingFunctionVector_3\left(\mappingFunctionVector_2\left(\mappingFunctionVector_1\left(\inputVector\right)\right)\right)\right)$$
 <!--include{_ai/includes/ai-vs-data-science-2.md}-->
 
 <!-- in this short overview, don't introduce GPy or the data-->
@@ -118,27 +97,26 @@ $$\dataVector = \mappingFunctionVector_4\left(\mappingFunctionVector_3\left(\map
 * *Deep Multi-task Gaussian Processes for Survival Analysis with Competing Risks*
   @Alaa:deep2017
 * *Counterfactual Gaussian Processes for Reliable Decision-making and What-if Reasoning*
-    @Schulam:counterfactual17
+  @Schulam:counterfactual17
 
-
-
-\subsection{Directions}
+\subsection{Conclusions and Directions}
 
 \slides{* Mechanistic modelling
 * Automated Abstraction
 * Deep emulation
 * Bayesian Systems Optimization
+* Auto AI
 }
 
-\include{_data-science/includes/data-science-africa.md}
+\notes{We've introduce some of the challenges of real-world systems and outlined how to address them. The new ideas we are focussing on extend the field of uncertainty quantification and surrogate modelling to four different areas.
 
-\newslide{ML in Cambridge}
+1. **Automated Abstraction** is the automated deployment of surrogate models, or emulators, for summarizing the underlying components in the system. It relies on *data oriented architectures* to be possible.
 
-\slides{* ML Systems Design
-    * Software for ML, Languages for ML
-* Challenges in Optimization, Monitoring, Deployment
-* Application Areas: Comp Bio, Health, **Developing Economies**
-}
+2. **Deep emulation** is the combination of chains of different emulators across the system to assess downstream performance.
+
+3. **Bayesain System Optimization** is the resulting optimization of the entire system, end-to-end, in a manner that doesn't destroy interpretability because end-to-end signals are propagted down to the system components through the deep emulator.
+
+4. **Auto AI** is the result, moving beyond Auto ML, we will be able to develop systems that identify problems in deployment and assess the appropriate system responses.}
 
 \thanks
 

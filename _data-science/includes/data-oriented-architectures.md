@@ -117,6 +117,10 @@ There are constraints on the hypothetical, they include: the *input* information
 
 \subsection{Ride Sharing System}
 
+
+\figure{\includediagram{../slides/diagrams/ai/ride-allocation-prediction}{60%}}{Some software components in a ride allocation system. Circled components are hypothetical, rectangles represent actual data.}{ride-allocation-system}
+
+
 \notes{As a second example, we'll consider a ride sharing app. 
 
 Anne is on her way home now; she wishes to hail a car using a ride sharing app. 
