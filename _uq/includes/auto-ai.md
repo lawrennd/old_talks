@@ -4,10 +4,14 @@
 \editme
 
 
-\notes{\subsection{Auto AI}
+\subsection{Auto AI}
 
+\slides{* Auto ML is great but not sufficient
+* Interacting components in an ML system
+* Identify problems, and automatically deploy solutions
+}
 
-Supervised machine learning models are data-driven statistical functional
+\notes{Supervised machine learning models are data-driven statistical functional
 estimators. Each ML model is trained to perform a task. Machine learning
 systems are created when these models are integrated as interacting
 components in a more complex system that carries out a larger scale

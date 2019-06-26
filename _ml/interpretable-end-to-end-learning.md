@@ -31,6 +31,7 @@ incremental: True
 
 \newslide{Bits and Atoms}
 
+
 \include{_supply-chain/includes/supply-chain.md}
 \include{_supply-chain/includes/supply-chain-motto.md}
 
