@@ -62,6 +62,6 @@ from ipywidgets import IntSlider}
 }
 \notes{\figure{\includepng{../slides/diagrams/gp/gp_rejection_sample003}{100%}
 \includepng{../slides/diagrams/gp/gp_rejection_sample004}{100%}
-\includepng{../slides/diagrams/gp/gp_rejection_sample005}{100%}}{One view of Bayesian inference is we have a machine for generating samples (the *prior*), and we discard all samples inconsistent with our data, leaving the samples of interest (the *posterior*). The Gaussian process allows us to do this analytically.}{gp-rejection-samples}
+\includepng{../slides/diagrams/gp/gp_rejection_sample005}{100%}}{One view of Bayesian inference is we have a machine for generating samples (the *prior*), and we discard all samples inconsistent with our data, leaving the samples of interest (the *posterior*). The Gaussian process allows us to do this analytically.}{gp-rejection-samples}}
 
 \endif
