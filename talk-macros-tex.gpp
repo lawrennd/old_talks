@@ -62,4 +62,9 @@
 \define{\includeimgclip{filename}{top}{right}{bottom}{left}{width}{class}{align}}{\includegraphics[width=\width]{\filename}}
 \define{\includehtml{filename}{width}{height}}{}
 
+\define{\columns{one}{two}{width1}{width2}}{\begin{table}[cc]
+\one & \two
+\end{table}}
+\define{\threeColumns{one}{two}{three}{width1}{width2}{width3}}{<table><tr><td width="\width1">\one</td><td width="\width2">\two</td><td width="\width3">\three</td></tr></table>}
+
 \endif

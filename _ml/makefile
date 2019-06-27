@@ -1,3 +1,3 @@
-BASE=interpretable-end-to-end-learning
+BASE=innovation-to-deployment
 include ../make-talk-flags.mk
 include ../make-talk.mk

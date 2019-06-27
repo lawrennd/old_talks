@@ -138,57 +138,9 @@ When Anne calls for a ride, she is provided with an estimate based on the expect
 This best guess may well be driven by previous data.
 }
 
-\newslide{Ride Sharing: Service Oriented}
+\include{_data-science/includes/ride-sharing-soa-doa.md}
+\include{_data-science/includes/information-dynamics.md}
 
-\slides{\includediagram{../slides/diagrams/data-science/ride-share-service-soa}{80%}}
-
-\newslide{Ride Sharing: Data Oriented}
-
-\slides{\includediagram{../slides/diagrams/data-science/ride-share-service-doa}{80%}}
-
-\newslide{Ride Sharing: Hypothetical}
-
-\slides{\includediagram{../slides/diagrams/data-science/ride-share-service-doa-hypothetical}{80%}}
-
-\notes{\figure{\includediagram{../slides/diagrams/data-science/ride-share-service-soa}{80%}}{Service oriented architecture. The data access is buried in the cost allocation service. Data dependencies of the service cannot be found without trawling through the underlying code base.}{ride-share-service-soa}}
-
-\notes{\figure{\includediagram{../slides/diagrams/data-science/ride-share-service-doa}{80%}}{Data oriented architecture. Now the joins and the updates are exposed within the streaming ecosystem. We can programatically determine the factor graph which gives the thread through the model.}{ride-share-service-doa}}
-
-\notes{\figure{\includediagram{../slides/diagrams/data-science/ride-share-service-doa-hypothetical}{80%}}{Data-oriented programing. There is a requirement for an estimate of the driver allocation to give a rough cost estimate before the user has confirmed the ride. In data-oriented programming, this is achieved through declaring a hypothetical stream which approximates the true driver allocation, but with restricted input information and constraints on the computational latency.}{ride-share-service-doa-hypothetical}}
-
-\notes{For the ride sharing system, we start to see a common issue with a more complex algorithmic decision-making system. Several decisions are being made multilple times. Let's look at the decisions we need along with some design criteria.
-
-1. Car Availability: Estimate time to arrival for Anne's ride using Anne's location and local available car locations. Latency 50 milliseconds
-2. Cost Estimate: Estimate cost for journey using Anne's destination, location and local available car current destinations and availability. Latency 50 milliseconds
-3. Driver Allocation: Allocate car to minimize transport cost to destination. Latency 2 seconds.
-
-So we need:
-
-1. a hypothetical to estimate availability. It is constrained by lacking destination information and a low latency requirement.
-2. a hypothetical to estimate cost. It is constrained by low latency requirement and 
-
-
-Simultaneously, drivers in this data ecosystem have an app which notifies them about new jobs and recommends them where to go.
-
-Further advantages. Strategies for data retention (when to snapshot) can be set globally.
-
-
-A few decisions need to be made in this system. First of all, when the user opens the app, the estimate of the time to the nearest ride may need to be computed quickly, to avoid latency in the service. 
-
-This may require a quick estimate of the ride availability.}
-
-\subsection{Information Dynamics}
-
-\slides{* Potential for information feedback loops.
-* Hypothetical streams are instantiated.
-* Nature hypothesis (e.g. price prediction) can effect reality.
-* Leads to information dynamics, similar to dynamics of governors.
-* See e.g. [Closed Loop Data Science](https://www.gla.ac.uk/schools/computing/research/researchsections/ida-section/closedloop/) at Glasgow.
-}
-
-\notes{With all the second guessing within a complex automated decision-making system, there are potential problems with information dynamics, the 'closed loop' problem, where the sub-systems are being approximated (second guessing) and predictions downstream are being affected.
-
-This leads to the need for a closed loop analysis, for example, see the ["Closed Loop Data Science"](https://www.gla.ac.uk/schools/computing/research/researchsections/ida-section/closedloop/) project led by Rod Murray-Smith at Glasgow.}
 
 \newslide{Our Efforts}
 \slides{* Our framework due for release end of June 2019 (pending approval).}
