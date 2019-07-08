@@ -31,6 +31,7 @@ incremental: True
 
 \newslide{Bits and Atoms}
 
+
 \include{_supply-chain/includes/supply-chain.md}
 \include{_supply-chain/includes/supply-chain-motto.md}
 
@@ -114,7 +115,7 @@ incremental: True
 
 2. **Deep emulation** is the combination of chains of different emulators across the system to assess downstream performance.
 
-3. **Bayesain System Optimization** is the resulting optimization of the entire system, end-to-end, in a manner that doesn't destroy interpretability because end-to-end signals are propagted down to the system components through the deep emulator.
+3. **Bayesian System Optimization** is the resulting optimization of the entire system, end-to-end, in a manner that doesn't destroy interpretability because end-to-end signals are propagted down to the system components through the deep emulator.
 
 4. **Auto AI** is the result, moving beyond Auto ML, we will be able to develop systems that identify problems in deployment and assess the appropriate system responses.}
 

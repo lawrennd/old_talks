@@ -92,11 +92,11 @@ domain.--> Recomposing the ML system requires structural learning of the network
 <!-- determining the ideal system decomposition. -->
 
 
-\newslide{}
+\newslide{Deep Emulation}
 
 \figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-pedestrian001}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
 
-\newslide{}
+\newslide{Deep Emulation}
 
 \figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-pedestrian}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
 

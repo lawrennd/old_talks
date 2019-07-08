@@ -19,8 +19,12 @@ ${BASE}.slides.html: ${BASE}.slides.html.markdown ${BIBDEPS}
 	cp ${BASE}.slides.html ../slides/${OUT}.slides.html
 	rm ../include.tmp
 
-${BASE}.pptx: ${BASE}.slides.pptx.markdown
-	pandoc -t pptx -o $@ $<
+${BASE}.pptx: ${BASE}.slides.pptx.markdown 
+	pandoc  -t pptx \
+		-o $@ $< \
+		-B ../_includes/talk-notation.tex \
+		${CITEFLAGS} \
+		${SFLAGS} 
 	cp ${BASE}.pptx ../slides/${OUT}.pptx
 
 ${BASE}.notes.pdf: ${BASE}.notes.aux ${BASE}.notes.bbl ${BASE}.notes.tex
@@ -47,6 +51,7 @@ ${BASE}.notes.tex: ${BASE}.notes.tex.markdown
 ${BASE}.notes.docx: ${BASE}.notes.docx.markdown ${BIBDEPS} ${DIAGDEPS}
 	pandoc  ${CITEFLAGS} \
 		--to docx \
+		-B ../_includes/talk-notation.tex \
 		--out ${BASE}.notes.docx  \
 		${BASE}.notes.docx.markdown 
 

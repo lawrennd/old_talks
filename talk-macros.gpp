@@ -25,6 +25,10 @@
 \include{talk-macros-docx.gpp}
 \endif
 
+\ifdef{PPTX}
+\include{talk-macros-pptx.gpp}
+\endif
+
 \ifdef{SLIDES}
 \ifdef{TEX}
 \include{talk-macros-slides-tex.gpp}
@@ -43,6 +47,11 @@
 \endif
 \endif
 
+\ifdef{SLIDES}
+\ifdef{PPTX}
+\include{talk-macros-slides-pptx.gpp}
+\endif
+\endif
 
 \ifdef{NOTES}
 \ifdef{TEX}
