@@ -10,12 +10,12 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="297mm"
-   height="215mm"
-   viewBox="0 0 297 215"
+   height="230mm"
+   viewBox="0 0 297 230"
    id="svg25590"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="ml-system-downstream-pedestrian.svg">
+   sodipodi:docname="ml-system-downstream-rider-allocation.svg">
   <defs
      id="defs25592">
     <marker
@@ -85,17 +85,21 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.43020532"
-     inkscape:cx="150.89363"
-     inkscape:cy="439.2513"
+     inkscape:zoom="0.42426407"
+     inkscape:cx="415.16667"
+     inkscape:cy="374.16667"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     showgrid="false"
-     inkscape:window-width="1280"
-     inkscape:window-height="756"
-     inkscape:window-x="319"
-     inkscape:window-y="15"
-     inkscape:window-maximized="0" />
+     showgrid="true"
+     inkscape:window-width="800"
+     inkscape:window-height="600"
+     inkscape:window-x="100"
+     inkscape:window-y="100"
+     inkscape:window-maximized="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid17143" />
+  </sodipodi:namedview>
   <metadata
      id="metadata25595">
     <rdf:RDF>
@@ -104,99 +108,104 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
-  <g
-     inkscape:label="Layer 1"
+  <g inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
     <path
        class="myarrow"
        d="M 30,30 90,100"
-       id="path25600"
+       id="availability-wait-line"
        inkscape:connector-curvature="0" />
     <path
        class="myarrow"
        d="M 90,100 160,100"
-       id="path34056"
+       id="wait-customer-line"
        inkscape:connector-curvature="0" />
     <path
        class="myarrow"
        d="M 160,100 220,180"
-       id="control-actuator-line"
+       id="customer-total-line"
        inkscape:connector-curvature="0" />
   </g>
-  <g
-     inkscape:label="Layer 2"
+  <g inkscape:label="Layer 2"
      inkscape:groupmode="layer"
      id="layer2">
-    <g
-       id="g34066">
+    <g id="g34066">
       <ellipse
          class="mycircle"
-         id="actuator"
+         id="total-demand"
          cx="220"
          cy="180"
          rx="20"
          ry="20" />
       <text
          class="mytext"
-         id="actuator-text"
+         id="total-demand-text"
          x="220"
          y="215">
         <tspan
            sodipodi:role="line"
            id="tspan34070">
-	actuator
+	total
+	</tspan>
+        <tspan
+           sodipodi:role="line"
+           id="tspan34070_1">
+	demand
 	</tspan>
       </text>
     </g>
-    <g
-       id="g34048">
+    <g id="g34048">
       <ellipse
          class="mycircle"
-         id="path-planner"
+         id="wait-prediction"
          cx="90"
          cy="100"
          rx="20"
          ry="20" />
       <text
          class="mytext"
-         id="planner-text"
+         id="wait-text"
          x="90"
          y="135">
         <tspan
            sodipodi:role="line"
            id="tspan34052">
-	  path
+	  wait
 	</tspan>
         <tspan
            sodipodi:role="line"
            id="tspan34054">
-	  planner
+	  prediction
 	</tspan>
       </text>
     </g>
-    <g
-       id="g34058">
+    <g id="g34058">
       <ellipse
          class="mycircle"
-         id="control-system"
+         id="customer-demand"
          cx="160"
          cy="100"
          rx="20"
          ry="20" />
       <text
          class="mytext"
-         id="control-text"
-         x="162"
-         y="72">
+         id="demand-text"
+         x="225"
+         y="100">
         <tspan
            sodipodi:role="line"
            id="tspan34062">
-	  controller
+	  customer 
+	</tspan>
+	<tspan
+           sodipodi:role="line"
+           id="tspan34062_2">
+	  demand
 	</tspan>
       </text>
     </g>
@@ -209,24 +218,20 @@
            rx="20"
            cy="30"
            cx="30"
-           id="pedestrian-detector"
+           id="driver-availability"
            class="mycircle" />
         <text
            sodipodi:linespacing="125%"
            y="30"
            x="95"
-           id="pedestrian-text"
+           id="driver-availability-text"
            class="mytext">
           <tspan
-             y="30"
-             x="95"
              id="tspan34635"
-             sodipodi:role="line">pedestrian</tspan>
+             sodipodi:role="line">driver</tspan>
           <tspan
-             y="42.5"
-             x="95"
              id="tspan34637"
-             sodipodi:role="line">detection</tspan>
+             sodipodi:role="line">availability</tspan>
         </text>
       </g>
     </g>
@@ -246,7 +251,7 @@
        id="path10310"
        inkscape:connector-curvature="0" />
     <g
-       id="pedestrian-detection-emulator">
+       id="driver-availability-emulator">
       <path
          sodipodi:nodetypes="cc"
          inkscape:connector-curvature="0"
@@ -261,7 +266,7 @@
          class="mycircle2" />
     </g>
     <g
-       id="path-planner-emulator">
+       id="wait-prediction-emulator">
       <path
          sodipodi:nodetypes="cc"
          inkscape:connector-curvature="0"
@@ -276,7 +281,7 @@
          class="mycircle2" />
     </g>
     <g
-       id="controller-emulator">
+       id="customer-demand-emulator">
       <path
          sodipodi:nodetypes="cc"
          inkscape:connector-curvature="0"
@@ -291,7 +296,7 @@
          class="mycircle2" />
     </g>
     <g
-       id="actuator-emulator">
+       id="total-demand-emulator">
       <path
          sodipodi:nodetypes="cc"
          inkscape:connector-curvature="0"

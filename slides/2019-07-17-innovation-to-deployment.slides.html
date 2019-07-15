@@ -358,17 +358,39 @@
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
 <!-- SECTION Introduction -->
 </section>
-<section id="automl" class="slide level3">
-<h3>AutoML</h3>
+<section id="fellowship-vision" class="slide level3">
+<h3>Fellowship Vision</h3>
+<ul>
+<li>Steer the international community</li>
+<li>Be a beacon for UK AI research</li>
+<li>An <em>inclusive</em> program</li>
+<li>Develop students, RSDEs and PDRAs for modern ML design</li>
+</ul>
+</section>
+<section id="how" class="slide level3">
+<h3>How?</h3>
+<p>Bridge between Academia and Industry</p>
+</section>
+<section id="lay-description" class="slide level3">
+<h3>Lay Description</h3>
 <blockquote>
-<p>Automatic fitting of ML models to data sets.</p>
+<p>It used to be true that computers only did what we programmed them to do, but today AI systems are learning from our data. This introduces new problems in how these systems respond to their environment. We need to better monitor how data is influencing decision making and take corrective action as required.</p>
 </blockquote>
 </section>
-<section id="autoai" class="slide level3">
-<h3>AutoAI</h3>
-<blockquote>
-<p>Automatic deployment and maintenance of AI</p>
-</blockquote>
+<section id="technical-consequence" class="slide level3">
+<h3>Technical Consequence</h3>
+<ul>
+<li>Classical systems design assumes <em>decomposability</em>.</li>
+<li>Decomposability is no longer a given</li>
+</ul>
+</section>
+<section id="technical-consequence-1" class="slide level3">
+<h3>Technical Consequence</h3>
+<p><span class="math display">\[\text{Bayesian Optimization} \rightarrow \text{Bayesian Systems Optimization}\]</span></p>
+</section>
+<section id="technical-consequence-2" class="slide level3">
+<h3>Technical Consequence</h3>
+<p><span class="math display">\[\text{Auto ML} \rightarrow \text{Auto AI}\]</span></p>
 </section>
 <section id="applications" class="slide level3">
 <h3>Applications</h3>
@@ -378,12 +400,6 @@
 </object>
 </div>
 </div>
-</section>
-<section id="safety-critical" class="slide level3">
-<h3>Safety Critical</h3>
-<ul>
-<li>What if instead of a ride sharing app, this was an allocation system for ambulances to patients?</li>
-</ul>
 <!-- SECTION Decomposability -->
 </section>
 <section id="emulation" class="slide level3">
@@ -433,10 +449,6 @@
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/gp/gp_rejection_sample005.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-</section>
-<section id="stochastic-process-composition" class="slide level3">
-<h3>Stochastic Process Composition</h3>
-<p><span class="math display">\[\dataVector = \mappingFunctionVector_4\left(\mappingFunctionVector_3\left(\mappingFunctionVector_2\left(\mappingFunctionVector_1\left(\inputVector\right)\right)\right)\right)\]</span></p>
 <!--include{_ai/includes/ai-vs-data-science-2.md}-->
 </section>
 <section id="deep-emulation" class="slide level3">
@@ -465,6 +477,22 @@
 </object>
 </div>
 </div>
+</section>
+<section id="stochastic-process-composition" class="slide level3">
+<h3>Stochastic Process Composition</h3>
+<p><span class="math display">\[\dataVector = \mappingFunctionVector_4\left(\mappingFunctionVector_3\left(\mappingFunctionVector_2\left(\mappingFunctionVector_1\left(\inputVector\right)\right)\right)\right)\]</span></p>
+</section>
+<section id="bayesian-optimisation" class="slide level3">
+<h3>Bayesian Optimisation</h3>
+<ul>
+<li>Acquisition function influenced by component’s objective.</li>
+</ul>
+</section>
+<section id="bayesian-systems-optimisation" class="slide level3">
+<h3>Bayesian Systems Optimisation</h3>
+<ul>
+<li>Acquisition function influenced by component, upstream and downstream objectives.</li>
+</ul>
 <!-- SECTION Data -->
 </section>
 <section id="ride-sharing-service-oriented" class="slide level3">

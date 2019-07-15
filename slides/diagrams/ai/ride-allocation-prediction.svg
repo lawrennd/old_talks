@@ -18,7 +18,8 @@
    sodipodi:docname="ride-allocation-prediction.svg">
   <defs
      id="defs4076" />
-  <style>
+  <style
+     id="style4186">
     tspan {
     text-anchor:middle;
     text-align:center;
@@ -33,9 +34,10 @@
     line-height:1.25;
     fill:#000000;
     fill-opacity:1;
-    writing-mode:lr-tb;
+    writing-mode:lr;
     text-align:center;
-    dominant-baseline:middle
+    dominant-baseline:middle;
+    text-anchor:middle"    
     }
     .myrect {
     fill:none;
@@ -82,14 +84,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7"
-     inkscape:cx="-1416.825"
-     inkscape:cy="-26.780349"
+     inkscape:zoom="1.245472"
+     inkscape:cx="202.35826"
+     inkscape:cy="217.18676"
      inkscape:document-units="mm"
-     inkscape:current-layer="driver-wait"
+     inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="3440"
-     inkscape:window-height="1352"
+     inkscape:window-width="1280"
+     inkscape:window-height="712"
      inkscape:window-x="0"
      inkscape:window-y="1"
      inkscape:window-maximized="1"
@@ -123,24 +125,21 @@
          height="25"
          x="135"
          y="175"
-         class="myrect"/>
+         class="myrect" />
       <text
          xml:space="preserve"
          class="mytext"
          x="160"
          y="185"
-         id="text4893">
-	<tspan
+         id="text4893"><tspan
            sodipodi:role="line"
            id="tspan5047"
-	   x="160"
-	   y="185">current</tspan>
-	<tspan
+           x="160"
+           y="185">current</tspan><tspan
            sodipodi:role="line"
            id="tspan5049"
-	   x="160"
-	   y="195">journeys</tspan>
-      </text>
+           x="160"
+           y="195">journeys</tspan></text>
     </g>
     <g
        id="driver-availability"
@@ -151,24 +150,21 @@
          cx="90"
          cy="167.5"
          rx="25"
-         ry="15"/>
+         ry="15" />
       <text
          xml:space="preserve"
          class="mytext"
          x="90"
          y="167.5"
-         id="text4955">
-	<tspan
-            sodipodi:role="line"
-            id="tspan4953"
-	    x="90"
-	    y="167.5">driver</tspan>
-      <tspan
+         id="text4955"><tspan
+           sodipodi:role="line"
+           id="tspan4953"
+           x="90"
+           y="167.5">driver</tspan><tspan
            sodipodi:role="line"
            id="tspan4957"
-	   x="90"
-	   y="177.5">availability</tspan>
-      </text>
+           x="90"
+           y="177.5">availability</tspan></text>
     </g>
     <g
        id="journey-route"
@@ -179,24 +175,21 @@
          cx="90"
          cy="202.5"
          rx="25"
-         ry="15"/>
+         ry="15" />
       <text
          xml:space="preserve"
          class="mytext"
          x="90"
          y="202.5"
-         id="text4893-7">
-	 <tspan
+         id="text4893-7"><tspan
            sodipodi:role="line"
            id="tspan22507"
-	   x="90"
-	   y="202.5">journey</tspan>
-	 <tspan
+           x="90"
+           y="202.5">journey</tspan><tspan
            sodipodi:role="line"
            id="tspan22509"
-	   x="90"
-	   y="212.5">route</tspan>
-      </text>
+           x="90"
+           y="212.5">route</tspan></text>
     </g>
     <g
        id="maps"
@@ -207,7 +200,7 @@
          height="25"
          x="215"
          y="95"
-         class="myrect"/>
+         class="myrect" />
       <text
          xml:space="preserve"
          class="mytext"
@@ -217,29 +210,25 @@
            sodipodi:role="line"
            id="tspan5022"
            x="240"
-           y="105">maps</tspan>
-      </text>
+           y="105">maps</tspan></text>
     </g>
-    <g
-       id="traffic"
-       class="real">
+    <g id="traffic">
       <rect
-         id="rect4084-1-9"
+         id="traffic-rect"
          width="50"
          height="25"
          x="135"
          y="95"
-         class="myrect"/>
+         class="myrect" />
       <text
-         xml:space="preserve"
          class="mytext"
          x="160"
          y="105"
-         id="text4893-5-3">
-	<tspan
-            sodipodi:role="line"
-            id="tspan5045">traffic</tspan>
-      </text>
+         id="traffic-text"><tspan
+           sodipodi:role="line"
+           id="traffic-tspan"
+           x="160"
+           y="105">traffic</tspan></text>
     </g>
     <g
        id="driver-locations"
@@ -250,26 +239,23 @@
          height="25"
          x="215"
          y="165"
-         class="myrect"/>
+         class="myrect" />
       <text
          xml:space="preserve"
          class="mytext"
          x="240"
          y="175"
-         id="text4893-2">
-	<tspan
-            sodipodi:role="line"
-            id="tspan5083"
-	    x="240"
-	    y="175">driver
-	</tspan>
-	<tspan
-            sodipodi:role="line"
-            id="tspan5085"
-	    x="240"
-	    y="185">locations
-	</tspan>
-      </text>
+         id="text4893-2"><tspan
+           sodipodi:role="line"
+           id="tspan5083"
+           x="240"
+           y="175">driver
+	</tspan><tspan
+           sodipodi:role="line"
+           id="tspan5085"
+           x="240"
+           y="185">locations
+	</tspan></text>
     </g>
     <g
        id="available-drivers"
@@ -280,26 +266,25 @@
          y="205"
          height="25"
          width="50"
-         id="rect4084-1-9-8"/>
+         id="rect4084-1-9-8" />
       <text
          id="text4893-5-3-5"
          x="160"
          y="215"
          class="mytext"
-         xml:space="preserve">
-	<tspan sodipodi:role="line"
-	       id="tspan5261"
-	       x="160"
-	       y="215">
+         xml:space="preserve"><tspan
+           sodipodi:role="line"
+           id="tspan5261"
+           x="160"
+           y="215">
 	  available
-	</tspan>
-	<tspan sodipodi:role="line"
-	       id="tspan5263"
-	       x="160"
-	       y="225">
+	</tspan><tspan
+           sodipodi:role="line"
+           id="tspan5263"
+           x="160"
+           y="225">
 	  drivers
-	</tspan>
-      </text>
+	</tspan></text>
     </g>
     <g
        id="journey-demand"
@@ -310,7 +295,7 @@
          cx="90"
          cy="237.5"
          rx="25"
-         ry="15"/>
+         ry="15" />
       <text
          xml:space="preserve"
          class="mytext"
@@ -319,12 +304,12 @@
          id="text4893-7-4"><tspan
            sodipodi:role="line"
            id="tspan5136"
-	   x="90"
-	   y="237.5">journey</tspan><tspan
+           x="90"
+           y="237.5">journey</tspan><tspan
            sodipodi:role="line"
            id="tspan5138"
-	   x="90"
-	   y="247.5">demand</tspan></text>
+           x="90"
+           y="247.5">demand</tspan></text>
     </g>
     <g
        id="driver-wait"
@@ -335,7 +320,7 @@
          cx="90"
          cy="132.5"
          rx="25"
-         ry="15"/>
+         ry="15" />
       <text
          xml:space="preserve"
          class="mytext"
@@ -345,27 +330,27 @@
            sodipodi:role="line"
            id="tspan22511">wait</tspan></text>
       <path
-	 class="input-stream"
+         class="input-stream"
          d="M 215,180 115,132.5"
          id="driver-locations-to-wait"
          inkscape:connector-curvature="0" />
       <path
-	  id="wait-to-pickup-status"
+         id="wait-to-pickup-status"
          class="output-stream"
          d="M 115,132.5 215,147.5"
          inkscape:connector-curvature="0" />
       <path
-          class="input-stream"
+         class="input-stream"
          d="M 135,107.5 115,132.5"
          id="traffic-to-wait"
          inkscape:connector-curvature="0" />
       <path
-	  class="input-stream"
+         class="input-stream"
          d="M 215,107.5 115,132.5"
          id="maps-to-wait"
          inkscape:connector-curvature="0" />
       <path
-	  class="input-stream"
+         class="input-stream"
          d="M 135,220 115,132.5"
          id="available-drivers-to-wait"
          inkscape:connector-curvature="0" />
@@ -379,24 +364,21 @@
          height="25"
          x="215"
          y="195"
-         class="myrect"/>
+         class="myrect" />
       <text
          xml:space="preserve"
          class="mytext"
          x="240"
          y="205"
-         id="text4893-5-3-5-8">
-	<tspan
-            sodipodi:role="line"
-            id="tspan5223"
-	    x="240"
-	    y="205">rider</tspan>
-	<tspan
+         id="text4893-5-3-5-8"><tspan
+           sodipodi:role="line"
+           id="tspan5223"
+           x="240"
+           y="205">rider</tspan><tspan
            sodipodi:role="line"
            id="tspan5225"
-	   x="240"
-	   y="215">destinations</tspan>
-      </text>
+           x="240"
+           y="215">destinations</tspan></text>
     </g>
     <g
        id="rider-driver-allocations"
@@ -407,7 +389,7 @@
          x="215"
          height="25"
          width="50"
-         id="rect4084-1-9-8-3"/>
+         id="rect4084-1-9-8-3" />
       <text
          id="text4893-5-3-5-6"
          y="235"
@@ -416,14 +398,12 @@
          xml:space="preserve"><tspan
            sodipodi:role="line"
            id="tspan5227"
-	   x="240"
-	   y="235">rider-driver</tspan>
-      <tspan
+           x="240"
+           y="235">rider-driver</tspan><tspan
            sodipodi:role="line"
            id="tspan5229"
-	   x="240"
-	   y="245">allocations</tspan>
-      </text>
+           x="240"
+           y="245">allocations</tspan></text>
     </g>
     <g
        id="pickup-status">
@@ -433,51 +413,48 @@
          height="25"
          x="215"
          y="135"
-         class="myrect"/>
+         class="myrect" />
       <text
-          xml:space="preserve"
-          class="mytext"
-          x="240"
-          y="145"
-          id="text4893-2-2">
-	<tspan
-	    sodipodi:role="line"
-	    id="tspan5255"
-	    x="240"
-	    y="145">pickup
-	</tspan>
-	<tspan
-            sodipodi:role="line"
-            id="tspan5257"
-	    x="240"
-	    y="155">status
-	</tspan>
-      </text>
+         xml:space="preserve"
+         class="mytext"
+         x="240"
+         y="145"
+         id="text4893-2-2"><tspan
+           sodipodi:role="line"
+           id="tspan5255"
+           x="240"
+           y="145">pickup
+	</tspan><tspan
+           sodipodi:role="line"
+           id="tspan5257"
+           x="240"
+           y="155">status
+	</tspan></text>
     </g>
     <path
        id="pickup-status-to-current-journeys"
        class="myarrow"
        d="M 215,145 185,185"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc"/>
+       sodipodi:nodetypes="cc" />
     <path
        id="driver-locations-to-current-journeys"
        class="myarrow"
        d="M 215,180 185,185"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc"/>
+       sodipodi:nodetypes="cc" />
     <path
        id="rider-destinations-to-current-journeys"
        class="myarrow"
        d="M 215,207 185,185"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc"/>
+       sodipodi:nodetypes="cc" />
     <path
        id="rider-driver-allocations-to-current-journeys"
        class="myarrow"
        d="M 215,237 185,185"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc"/>
+       sodipodi:nodetypes="cc" />
     <path
        id="rider-destinations-to-available-drivers"
        class="myarrow"

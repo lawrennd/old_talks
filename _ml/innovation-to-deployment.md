@@ -44,14 +44,44 @@ include [@Lawrence:threeds19]: the *decomposition* of the system, the
 *deployment*. Collectively we refer to these challenges as the "Three
 Ds of ML Systems Design".}
 
+\subsection{Fellowship Vision}
 
-\subsection{AutoML}
+\slides{* Steer the international community
+* Be a beacon for UK AI research
+* An *inclusive* program 
+* Provide tools and exemplar problems
+* Develop students, RSDEs and PDRAs for modern ML design
+}
 
-\slides{> Automatic fitting of ML models to data sets.}
+\subsection{How?}
 
-\newslide{AutoAI}
+\slides{* Bridge between Academia, Industry, Public & 3rd Sector
+* Influence beyond the fellowship
+* Leverage the Alan Turing Institute
+  * Chris Holmes (ATI Programme Director for Health and Medical Sciences)
+  * Mark Girolami (ATI Programme Director for Data-Centric Engineering)
+}
 
-\slides{> Automatic deployment and maintenance of AI} 
+\subsection{Lay Description}
+
+\slides{> It used to be true that computers only did what we programmed them to do, but today AI systems are learning from our data. This introduces new problems in how these systems respond to their environment. 
+
+We need to better monitor how data is influencing decision making and take corrective action as required. 
+
+This fellowship addresses that challenge.}
+
+\subsection{Technical Consequence}
+
+\slides{* Classical systems design assumes *decomposability*.
+* Decomposability is no longer a given}
+
+\newslide{Technical Consequence}
+
+\slides{$$\text{Bayesian Optimization} \rightarrow \text{Bayesian Systems Optimization}$$}
+
+\newslide{Technical Consequence}
+
+\slides{$$\text{Auto ML} \rightarrow \text{Auto AI}$$}
 
 
 \notes{Our aim is to scale our ability to deploy safe and reliable AI
@@ -66,9 +96,6 @@ monitoring of artificial intelligence systems.}
 
 \figure{\includediagram{../slides/diagrams/ai/ride-allocation-prediction}{60%}}{Some software components in a ride allocation system. Circled components are hypothetical, rectangles represent actual data.}{ride-allocation-system}
 
-\newslide{Safety Critical}
-
-\slides{* What if instead of a ride sharing app, this was an allocation system for ambulances to patients?}
 
 \notes{For validating our efforts, the work is a close collaboration with
 Data Science Africa (DSA)[^dsa]. They will provide applications and data to
@@ -208,7 +235,6 @@ optimization) in BSO we account for upstream and downstream
 interactions in the optimization, leveraging our end-to-end knowledge
 without damaging the interpretability of the underlying system.}
 
-
 \newslide{Emulation}
 
 \figure{\includediagram{../slides/diagrams/uq/statistical-emulation004}{80%}}{A statistical emulator is a system that reconstructs the simulation with a statistical model. As well as reconstructing the simulation, a statistical emulator can be used to correlate with the real world.}{statistical-emulation-5}
@@ -217,7 +243,6 @@ without damaging the interpretability of the underlying system.}
 
 \figure{\includediagram{../slides/diagrams/uq/statistical-emulation005}{80%}}{In modern machine learning system design, the emulator may also consider the output of ML models (for monitoring bias or accuracy) and Operations Research models..}{statistical-emulation-6}
 \include{_gp/includes/gp-intro-very-short.md}
-\include{_deepgp/includes/stochastic-process-composition.md}
 
 <!--include{_ai/includes/ai-vs-data-science-2.md}-->
 
@@ -249,15 +274,25 @@ system-wide tractability into consideration, it will be impossible.}
 
 \subsection{Deep Emulation}
 
-\slides{\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-pedestrian000}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}}
+\slides{\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-rider-allocation000}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}}
 
 \newslide{Deep Emulation}
 
-\slides{\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-pedestrian001}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}}
+\slides{\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-rider-allocation001}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}}
 
 \newslide{Deep Emulation}
 
-\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-pedestrian}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
+\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-rider-allocation}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
+
+\include{_deepgp/includes/stochastic-process-composition.md}
+
+\newslide{Bayesian Optimisation}
+
+* Acquisition function influenced by component's objective.
+
+\newslide{Bayesian Systems Optimisation}
+
+* Acquisition function influenced by component, upstream and downstream objectives.
 
 \notes{As a solution we propose the use of emulators. Emulators are
 meta-models; they are be deployed to model the underlying system. They
@@ -446,19 +481,21 @@ with a focus on the developing economies.}
 * Success is *not* one company, but *many* companies
 }
 
+\newslide{Thanks!}
+\slides{
+* podcast: [The Talking Machines](http://thetalkingmachines.com)
+* newspaper: [Guardian Profile Page](http://www.theguardian.com/profile/neil-lawrence)
+* advocacy: UK AI Council, Royal Society ML Working Group
+}
+
+
+
 \newslide{Why a Fellowship?}
 \slides{
 * Project critically relies on applicants convening power. 
    * Also technical ability as a research leader.
    * Industrial experience from Amazon at leading systems.
 * Candidate develops as an advocate for an internationally recognized advocate for AI in UK.
-}
-
-\newslide{Thanks!}
-\slides{
-* podcast: [The Talking Machines](http://thetalkingmachines.com)
-* newspaper: [Guardian Profile Page](http://www.theguardian.com/profile/neil-lawrence)
-* advocacy: UK AI Council, Royal Society ML Working Group
 }
 
 
