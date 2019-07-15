@@ -439,7 +439,7 @@ with a focus on the developing economies.}
 * Synergistic, but not critically interdependent
 }
 \newslide{Why not in a Company?}
-{
+\slides{
 * Big tech companies are too large to be responsive to user needs.
 * Companies do not have convening power:
   * Open source, community building. Sweet spot is close interaction between industry and academia.
@@ -447,7 +447,7 @@ with a focus on the developing economies.}
 }
 
 \newslide{Why a Fellowship?}
-{
+\slides{
 * Project critically relies on applicants convening power. 
    * Also technical ability as a research leader.
    * Industrial experience from Amazon at leading systems.
