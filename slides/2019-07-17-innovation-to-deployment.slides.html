@@ -358,11 +358,50 @@
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
 <!-- SECTION Introduction -->
 </section>
-<section id="aim" class="slide level3">
-<h3>Aim</h3>
+<section id="fellowship-vision" class="slide level3">
+<h3>Fellowship Vision</h3>
+<ul>
+<li>Steer the international community</li>
+<li>Be a beacon for UK AI research</li>
+<li>An <em>inclusive</em> program</li>
+<li>Provide tools and exemplar problems</li>
+<li>Develop students, RSDEs and PDRAs for modern ML design</li>
+</ul>
+</section>
+<section id="how" class="slide level3">
+<h3>How?</h3>
+<ul>
+<li>Bridge between Academia, Industry, Public &amp; 3rd Sector</li>
+<li>Influence beyond the fellowship</li>
+<li>Leverage the Alan Turing Institute
+<ul>
+<li>Chris Holmes (ATI Programme Director for Health and Medical Sciences)</li>
+<li>Mark Girolami (ATI Programme Director for Data-Centric Engineering)</li>
+</ul></li>
+</ul>
+</section>
+<section id="lay-description" class="slide level3">
+<h3>Lay Description</h3>
 <blockquote>
-<p>Scale our ability to deploy safe and reliable AI solutions.</p>
+<p>It used to be true that computers only did what we programmed them to do, but today AI systems are learning from our data. This introduces new problems in how these systems respond to their environment.</p>
+<p>We need to better monitor how data is influencing decision making and take corrective action as required.</p>
+<p>This fellowship addresses that challenge.</p>
 </blockquote>
+</section>
+<section id="technical-consequence" class="slide level3">
+<h3>Technical Consequence</h3>
+<ul>
+<li>Classical systems design assumes <em>decomposability</em>.</li>
+<li>Data-driven systems interfere with decomponsability.</li>
+</ul>
+</section>
+<section id="technical-consequence-1" class="slide level3">
+<h3>Technical Consequence</h3>
+<p><span class="math display">\[\text{Bayesian Optimization} \rightarrow \text{Bayesian Systems Optimization}\]</span></p>
+</section>
+<section id="technical-consequence-2" class="slide level3">
+<h3>Technical Consequence</h3>
+<p><span class="math display">\[\text{Auto ML} \rightarrow \text{Auto AI}\]</span></p>
 </section>
 <section id="applications" class="slide level3">
 <h3>Applications</h3>
@@ -372,56 +411,9 @@
 </object>
 </div>
 </div>
-</section>
-<section id="objectives" class="slide level3">
-<h3>Objectives</h3>
-<ol type="1">
-<li>Software Systems for Data Oriented Architectures</li>
-<li>Intelligence Systems for monitoring and emulating the underlying complexity of ML Systems</li>
-<li>Automated deployment and redeployment of ML Systems, or “AutoAI”</li>
-</ol>
 <!-- SECTION Decomposability -->
 </section>
-<section id="technical-context" class="slide level3">
-<h3>Technical Context</h3>
-</section>
 <section id="emulation" class="slide level3">
-<h3>Emulation</h3>
-<div class="figure">
-<div id="statistical-emulation-1-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/uq/statistical-emulation000.svg" width="80%" style=" ">
-</object>
-</div>
-</div>
-</section>
-<section id="emulation-1" class="slide level3">
-<h3>Emulation</h3>
-<div class="figure">
-<div id="statistical-emulation-2-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/uq/statistical-emulation001.svg" width="80%" style=" ">
-</object>
-</div>
-</div>
-</section>
-<section id="emulation-2" class="slide level3">
-<h3>Emulation</h3>
-<div class="figure">
-<div id="statistical-emulation-3-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/uq/statistical-emulation002.svg" width="80%" style=" ">
-</object>
-</div>
-</div>
-</section>
-<section id="emulation-3" class="slide level3">
-<h3>Emulation</h3>
-<div class="figure">
-<div id="statistical-emulation-4-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/uq/statistical-emulation003.svg" width="80%" style=" ">
-</object>
-</div>
-</div>
-</section>
-<section id="emulation-4" class="slide level3">
 <h3>Emulation</h3>
 <div class="figure">
 <div id="statistical-emulation-5-figure" class="figure-frame">
@@ -430,7 +422,7 @@
 </div>
 </div>
 </section>
-<section id="emulation-5" class="slide level3">
+<section id="emulation-1" class="slide level3">
 <h3>Emulation</h3>
 <div class="figure">
 <div id="statistical-emulation-6-figure" class="figure-frame">
@@ -468,96 +460,13 @@
 <div class="centered" style="">
 <img class="negate" src="../slides/diagrams/gp/gp_rejection_sample005.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-</section>
-<section id="cascade-of-gaussian-processes" class="slide level3">
-<h3>Cascade of Gaussian Processes</h3>
-<ul>
-<li><p>Replace each neural network with a Gaussian process <span class="math display">\[
-\begin{align}
-\latentVector_{1} &amp;= \mappingFunctionVector_1\left(\inputVector\right)\\
-\latentVector_{2} &amp;= \mappingFunctionVector_2\left(\latentVector_{1}\right)\\
-\latentVector_{3} &amp;= \mappingFunctionVector_3\left(\latentVector_{2}\right)\\
-\dataVector &amp;= \mappingFunctionVector_4\left(\latentVector_{3}\right)
-\end{align}
-\]</span></p></li>
-<li><p>Equivalent to prior over parameters, take width of each layer to infinity.</p></li>
-</ul>
-</section>
-<section id="stochastic-process-composition" class="slide level3">
-<h3>Stochastic Process Composition</h3>
-<p><span class="math display">\[\dataVector = \mappingFunctionVector_4\left(\mappingFunctionVector_3\left(\mappingFunctionVector_2\left(\mappingFunctionVector_1\left(\inputVector\right)\right)\right)\right)\]</span></p>
 <!--include{_ai/includes/ai-vs-data-science-2.md}-->
-<!-- in this short overview, don't introduce GPy or the data-->
-<!-- -->
-</section>
-<section id="motorcycle-helmet-data" class="slide level3">
-<h3>Motorcycle Helmet Data</h3>
-<div class="figure">
-<div id="motorcycle-helment-data-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/datasets/motorcycle-helmet.svg" width="80%" style=" ">
-</object>
-</div>
-</div>
-</section>
-<section id="motorcycle-helmet-data-gp" class="slide level3">
-<h3>Motorcycle Helmet Data GP</h3>
-<div class="figure">
-<div id="motorcycle-helmet-gp-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/gp/motorcycle-helmet-gp.svg" width="80%" style=" ">
-</object>
-</div>
-</div>
-</section>
-<section id="motorcycle-helmet-data-deep-gp" class="slide level3">
-<h3>Motorcycle Helmet Data Deep GP</h3>
-<div class="figure">
-<div id="motorcycle-helmet-deep-gp-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp.svg" width="80%" style=" ">
-</object>
-</div>
-</div>
-</section>
-<section id="motorcycle-helmet-data-deep-gp-1" class="slide level3">
-<h3>Motorcycle Helmet Data Deep GP</h3>
-<div class="figure">
-<div id="motorcycle-helmet-deep-gp-samples-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-samples.svg" width="80%" style=" ">
-</object>
-</div>
-</div>
-</section>
-<section id="motorcycle-helmet-data-latent-1" class="slide level3">
-<h3>Motorcycle Helmet Data Latent 1</h3>
-<div class="figure">
-<div id="motorcycle-helmet-deep-gp-layer-0-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-layer-0.svg" width="60%" style=" ">
-</object>
-</div>
-</div>
-</section>
-<section id="motorcycle-helmet-data-latent-2" class="slide level3">
-<h3>Motorcycle Helmet Data Latent 2</h3>
-<div class="figure">
-<div id="motorcycle-helmet-deep-gp-layer-1-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-layer-1.svg" width="60%" style=" ">
-</object>
-</div>
-</div>
-</section>
-<section id="motorcycle-helmet-pinball-plot" class="slide level3">
-<h3>Motorcycle Helmet Pinball Plot</h3>
-<div class="figure">
-<div id="motorcycle-helmet-deep-gp-pinball-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-pinball.svg" width="60%" style=" ">
-</object>
-</div>
-</div>
 </section>
 <section id="deep-emulation" class="slide level3">
 <h3>Deep Emulation</h3>
 <div class="figure">
 <div id="ml-system-downstream-pedestrain-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-pedestrian000.svg" width="80%" style=" ">
+<object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-rider-allocation000.svg" width="75%" style=" ">
 </object>
 </div>
 </div>
@@ -566,7 +475,7 @@
 <h3>Deep Emulation</h3>
 <div class="figure">
 <div id="ml-system-downstream-pedestrain-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-pedestrian001.svg" width="80%" style=" ">
+<object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-rider-allocation001.svg" width="75%" style=" ">
 </object>
 </div>
 </div>
@@ -575,66 +484,88 @@
 <h3>Deep Emulation</h3>
 <div class="figure">
 <div id="ml-system-downstream-pedestrain-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-pedestrian.svg" width="80%" style=" ">
+<object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-rider-allocation.svg" width="75%" style=" ">
 </object>
 </div>
 </div>
+</section>
+<section id="stochastic-process-composition" class="slide level3">
+<h3>Stochastic Process Composition</h3>
+<p><span class="math display">\[\dataVector = \mappingFunctionVector_4\left(\mappingFunctionVector_3\left(\mappingFunctionVector_2\left(\mappingFunctionVector_1\left(\inputVector\right)\right)\right)\right)\]</span></p>
+</section>
+<section id="bayesian-optimisation" class="slide level3">
+<h3>Bayesian Optimisation</h3>
+<ul>
+<li>Acquisition function influenced by component’s objective.</li>
+</ul>
+</section>
+<section id="bayesian-systems-optimisation" class="slide level3">
+<h3>Bayesian Systems Optimisation</h3>
+<ul>
+<li>Acquisition function influenced by component, upstream and downstream objectives.</li>
+</ul>
 <!-- SECTION Data -->
-</section>
-<section id="data-first-thinking" class="slide level3">
-<h3>Data First Thinking</h3>
-</section>
-<section id="ride-sharing-service-oriented" class="slide level3">
-<h3>Ride Sharing: Service Oriented</h3>
-<div class="figure">
-<div id="ride-share-service-soa-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/data-science/ride-share-service-soa.svg" width="80%" style=" ">
-</object>
-</div>
-</div>
-</section>
-<section id="ride-sharing-data-oriented" class="slide level3">
-<h3>Ride Sharing: Data Oriented</h3>
-<div class="figure">
-<div id="ride-share-service-doa-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/data-science/ride-share-service-doa.svg" width="80%" style=" ">
-</object>
-</div>
-</div>
-</section>
-<section id="ride-sharing-hypothetical" class="slide level3">
-<h3>Ride Sharing: Hypothetical</h3>
-<div class="figure">
-<div id="ride-share-service-doa-hypothetical-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/data-science/ride-share-service-doa-hypothetical.svg" width="80%" style=" ">
-</object>
-</div>
-</div>
 <!-- SECTION Deployment: Initial Application Domains -->
 <!-- SECTION Work Packages -->
-</section>
-<section id="work-packages" class="slide level3">
-<h3>Work Packages</h3>
-<ol type="1">
-<li>Data Oriented Architectures</li>
-<li>Data Readiness and Provenance</li>
-<li>Data Policy and Ethics</li>
-<li>Deep Structure Learning</li>
-<li>Continual Learning in Deployed Data Systems</li>
-<li>Information Dynamics</li>
-</ol>
 </section>
 <section id="thanks" class="slide level3">
 <h3>Thanks!</h3>
 <ul>
-<li>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></li>
 <li>podcast: <a href="http://thetalkingmachines.com">The Talking Machines</a></li>
-<li><p>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></p></li>
-<li><p>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></p></li>
+<li>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></li>
+<li>advocacy: UK AI Council, Royal Society ML Working Group</li>
 </ul>
 </section>
-<section id="references" class="slide level3">
-<h3>References</h3>
+<section id="too-ambitious" class="slide level3">
+<h3>Too Ambitious?</h3>
+<ul>
+<li>Is the proposal too ambitious?</li>
+<li>Precedent for Academic Success: Berkeley Systems</li>
+</ul>
+</section>
+<section id="uk-industry" class="slide level3">
+<h3>UK Industry</h3>
+<ul>
+<li>User panel (Renault F1, Mercedes F1, Fusion Group, Center for Digital Built Britain, Data Centric Engineering)</li>
+<li>Advisory Board: Sylvie Delacroix, Denis Therien, Joaquin Vanschoren, Mark Girolami</li>
+<li>Element AI and Democratisation of ML</li>
+</ul>
+</section>
+<section id="more-detail" class="slide level3">
+<h3>More Detail</h3>
+<ul>
+<li>Context: interpretable ML, fairness.</li>
+<li>Automatic deployment and redployment of ML systems.</li>
+<li>Significant advances from Bayesian Optimization to Bayesian Systems Optimization</li>
+</ul>
+</section>
+<section id="how-wps-interact" class="slide level3">
+<h3>How WPs interact</h3>
+<ul>
+<li>Synergistic, but not critically interdependent</li>
+</ul>
+</section>
+<section id="why-not-in-a-company" class="slide level3">
+<h3>Why not in a Company?</h3>
+<ul>
+<li>Big tech companies are too large to be responsive to user needs.</li>
+<li>Companies do not have convening power:
+<ul>
+<li>Open source, community building. Sweet spot is close interaction between industry and academia.</li>
+</ul></li>
+<li>Success is <em>not</em> one company, but <em>many</em> companies</li>
+</ul>
+</section>
+<section id="why-a-fellowship" class="slide level3">
+<h3>Why a Fellowship?</h3>
+<ul>
+<li>Project critically relies on applicants convening power.
+<ul>
+<li>Also technical ability as a research leader.</li>
+<li>Industrial experience from Amazon at leading systems.</li>
+</ul></li>
+<li>Candidate develops as an advocate for an internationally recognized advocate for AI in UK.</li>
+</ul>
 </section>
     </div>
   </div>

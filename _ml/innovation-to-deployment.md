@@ -44,9 +44,46 @@ include [@Lawrence:threeds19]: the *decomposition* of the system, the
 *deployment*. Collectively we refer to these challenges as the "Three
 Ds of ML Systems Design".}
 
-\subsection{Aim}
+\subsection{Fellowship Vision}
 
-\slides{> Scale our ability to deploy safe and reliable AI solutions.}
+\slides{* Steer the international community
+* Be a beacon for UK AI research
+* An *inclusive* program 
+* Provide tools and exemplar problems
+* Develop students, RSDEs and PDRAs for modern ML design
+}
+
+\subsection{How?}
+
+\slides{* Bridge between Academia, Industry, Public & 3rd Sector
+* Influence beyond the fellowship
+* Leverage the Alan Turing Institute
+  * Chris Holmes (ATI Programme Director for Health and Medical Sciences)
+  * Mark Girolami (ATI Programme Director for Data-Centric Engineering)
+}
+
+\subsection{Lay Description}
+
+\slides{
+> It used to be true that computers only did what we programmed them to do, but today AI systems are learning from our data. This introduces new problems in how these systems respond to their environment. 
+>
+>We need to better monitor how data is influencing decision making and take corrective action as required. 
+>
+>This fellowship addresses that challenge.}
+
+\subsection{Technical Consequence}
+
+\slides{* Classical systems design assumes *decomposability*.
+* Data-driven systems interfere with decomponsability.}
+
+\newslide{Technical Consequence}
+
+\slides{$$\text{Bayesian Optimization} \rightarrow \text{Bayesian Systems Optimization}$$}
+
+\newslide{Technical Consequence}
+
+\slides{$$\text{Auto ML} \rightarrow \text{Auto AI}$$}
+
 
 \notes{Our aim is to scale our ability to deploy safe and reliable AI
 solutions. Our technical approach is to do this through *data-oriented
@@ -59,6 +96,7 @@ monitoring of artificial intelligence systems.}
 \subsection{Applications}
 
 \figure{\includediagram{../slides/diagrams/ai/ride-allocation-prediction}{60%}}{Some software components in a ride allocation system. Circled components are hypothetical, rectangles represent actual data.}{ride-allocation-system}
+
 
 \notes{For validating our efforts, the work is a close collaboration with
 Data Science Africa (DSA)[^dsa]. They will provide applications and data to
@@ -118,11 +156,6 @@ The proposal requires innovation around ML architecture and new
 techniques for deploying, maintaining, understanding and redeploying
 ML systems.}
 
-\subsection{Objectives}
-
-\slides{1. Software Systems for Data Oriented Architectures
-2. Intelligence Systems for monitoring and emulating the underlying complexity of ML Systems
-3. Automated deployment and redeployment of ML Systems, or "AutoAI"}
 
 \notes{Our objectives are to enable (1) Software Systems for Data Oriented
 Architectures (\textsection \ref{sec:architecture} and
@@ -203,19 +236,18 @@ optimization) in BSO we account for upstream and downstream
 interactions in the optimization, leveraging our end-to-end knowledge
 without damaging the interpretability of the underlying system.}
 
-\subsection{Technical Context}
+\newslide{Emulation}
 
-\include{_uq/includes/emulation.md}
+\figure{\includediagram{../slides/diagrams/uq/statistical-emulation004}{80%}}{A statistical emulator is a system that reconstructs the simulation with a statistical model. As well as reconstructing the simulation, a statistical emulator can be used to correlate with the real world.}{statistical-emulation-5}
+
+\newslide{Emulation}
+
+\figure{\includediagram{../slides/diagrams/uq/statistical-emulation005}{80%}}{In modern machine learning system design, the emulator may also consider the output of ML models (for monitoring bias or accuracy) and Operations Research models..}{statistical-emulation-6}
 \include{_gp/includes/gp-intro-very-short.md}
-\include{_deepgp/includes/cascade-of-gps.md}
-\include{_deepgp/includes/stochastic-process-composition.md}
 
 <!--include{_ai/includes/ai-vs-data-science-2.md}-->
 
-<!-- in this short overview, don't introduce GPy or the data-->
-<!--\define{stepFunctionData} -->
-\define{gpySoftware}
-\include{_deepgp/includes/deep-motorcycle.md}
+\slides{}
 
 
 \notes{Conceptually thinking, we can think of any complex software
@@ -243,15 +275,25 @@ system-wide tractability into consideration, it will be impossible.}
 
 \subsection{Deep Emulation}
 
-\slides{\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-pedestrian000}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}}
+\slides{\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-rider-allocation000}{75%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}}
 
 \newslide{Deep Emulation}
 
-\slides{\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-pedestrian001}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}}
+\slides{\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-rider-allocation001}{75%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}}
 
 \newslide{Deep Emulation}
 
-\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-pedestrian}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
+\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-rider-allocation}{75%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
+
+\include{_deepgp/includes/stochastic-process-composition.md}
+
+\newslide{Bayesian Optimisation}
+
+* Acquisition function influenced by component's objective.
+
+\newslide{Bayesian Systems Optimisation}
+
+* Acquisition function influenced by component, upstream and downstream objectives.
 
 \notes{As a solution we propose the use of emulators. Emulators are
 meta-models; they are be deployed to model the underlying system. They
@@ -348,11 +390,9 @@ partner Element AI has been working with Nesta to drive this debate
 [@Nesta:datatrusts19]. We will integrate these regulatory ideas within
 our data management plans (WP2 \textsection \ref{sec:readiness}).}
 
-
-\subsection{Data First Thinking}
-
+\notes{
 \include{_data-science/includes/ride-sharing-soa-doa.md}
-
+}
 \notes{While the existence and/or substance of a right to explanation in the
 General Data Protection Regulation has been questioned
 [@Mittelstadt:explanation17] there is no doubt about the *intent* of
@@ -401,14 +441,7 @@ Africa. Element AI are funding two post-doctoral Research assistants as
 part of the proposal.}
 
 \section{Work Packages}
-\newslide{Work Packages}
 
-\slides{1. Data Oriented Architectures
-2. Data Readiness and Provenance
-3. Data Policy and Ethics
-4. Deep Structure Learning
-5. Continual Learning in Deployed Data Systems
-6. Information Dynamics}
 
 \notes{Our proposal formalizes the notion of ML systems design, and will
 develop best practices for deployment monitoring, maintenance and
@@ -418,7 +451,51 @@ technology. These systems will review and monitor deployment of the
 architecture. To develop these tools and techniques we will leverage a
 co-creation approach to support deployments of AI systems
 with a focus on the developing economies.}
-  
-\thanks
 
-\references
+
+\newslide{Thanks!}
+\slides{
+* podcast: [The Talking Machines](http://thetalkingmachines.com)
+* newspaper: [Guardian Profile Page](http://www.theguardian.com/profile/neil-lawrence)
+* advocacy: UK AI Council, Royal Society ML Working Group
+}
+
+
+\newslide{Too Ambitious?}
+\slides{
+* Is the proposal too ambitious?
+* Precedent for Academic Success: Berkeley Systems
+}
+\newslide{UK Industry}
+\slides{
+* User panel (Renault F1, Mercedes F1, Fusion Group, Center for Digital Built Britain, Data Centric Engineering)
+* Advisory Board: Sylvie Delacroix, Denis Therien, Joaquin Vanschoren, Mark Girolami
+* Element AI and Democratisation of ML
+}
+
+\newslide{More Detail}
+\slides{
+* Context: interpretable ML, fairness.
+* Automatic deployment and redployment of ML systems.
+* Significant advances from Bayesian Optimization to Bayesian Systems Optimization
+}
+\newslide{How WPs interact}
+\slides{
+* Synergistic, but not critically interdependent
+}
+\newslide{Why not in a Company?}
+\slides{
+* Big tech companies are too large to be responsive to user needs.
+* Companies do not have convening power:
+  * Open source, community building. Sweet spot is close interaction between industry and academia.
+* Success is *not* one company, but *many* companies
+}
+
+\newslide{Why a Fellowship?}
+\slides{
+* Project critically relies on applicants convening power. 
+   * Also technical ability as a research leader.
+   * Industrial experience from Amazon at leading systems.
+* Candidate develops as an advocate for an internationally recognized advocate for AI in UK.
+}
+
