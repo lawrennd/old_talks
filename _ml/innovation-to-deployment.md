@@ -44,7 +44,16 @@ include [@Lawrence:threeds19]: the *decomposition* of the system, the
 *deployment*. Collectively we refer to these challenges as the "Three
 Ds of ML Systems Design".}
 
-\subsection{Aim}
+
+\subsection{AutoML}
+
+\slides{> Automatic fitting of ML models to data sets.}
+
+\newslide{AutoAI}
+
+\slides{> Automatic deployment and maintenance of ML Systems} 
+
+\newslide{AutoAI}
 
 \slides{> Scale our ability to deploy safe and reliable AI solutions.}
 
@@ -203,19 +212,20 @@ optimization) in BSO we account for upstream and downstream
 interactions in the optimization, leveraging our end-to-end knowledge
 without damaging the interpretability of the underlying system.}
 
-\subsection{Technical Context}
 
-\include{_uq/includes/emulation.md}
+\newslide{Emulation}
+
+\figure{\includediagram{../slides/diagrams/uq/statistical-emulation004}{80%}}{A statistical emulator is a system that reconstructs the simulation with a statistical model. As well as reconstructing the simulation, a statistical emulator can be used to correlate with the real world.}{statistical-emulation-5}
+
+\newslide{Emulation}
+
+\figure{\includediagram{../slides/diagrams/uq/statistical-emulation005}{80%}}{In modern machine learning system design, the emulator may also consider the output of ML models (for monitoring bias or accuracy) and Operations Research models..}{statistical-emulation-6}
 \include{_gp/includes/gp-intro-very-short.md}
-\include{_deepgp/includes/cascade-of-gps.md}
 \include{_deepgp/includes/stochastic-process-composition.md}
 
 <!--include{_ai/includes/ai-vs-data-science-2.md}-->
 
-<!-- in this short overview, don't introduce GPy or the data-->
-<!--\define{stepFunctionData} -->
-\define{gpySoftware}
-\include{_deepgp/includes/deep-motorcycle.md}
+\slides{}
 
 
 \notes{Conceptually thinking, we can think of any complex software
@@ -349,8 +359,6 @@ partner Element AI has been working with Nesta to drive this debate
 our data management plans (WP2 \textsection \ref{sec:readiness}).}
 
 
-\subsection{Data First Thinking}
-
 \include{_data-science/includes/ride-sharing-soa-doa.md}
 
 \notes{While the existence and/or substance of a right to explanation in the
@@ -401,14 +409,7 @@ Africa. Element AI are funding two post-doctoral Research assistants as
 part of the proposal.}
 
 \section{Work Packages}
-\newslide{Work Packages}
 
-\slides{1. Data Oriented Architectures
-2. Data Readiness and Provenance
-3. Data Policy and Ethics
-4. Deep Structure Learning
-5. Continual Learning in Deployed Data Systems
-6. Information Dynamics}
 
 \notes{Our proposal formalizes the notion of ML systems design, and will
 develop best practices for deployment monitoring, maintenance and
@@ -418,7 +419,51 @@ technology. These systems will review and monitor deployment of the
 architecture. To develop these tools and techniques we will leverage a
 co-creation approach to support deployments of AI systems
 with a focus on the developing economies.}
-  
-\thanks
+
+\newslide{Too Ambitious?}
+\slides{
+* Is the proposal too ambitious?
+* Precedent for Academic Success: Berkeley Systems
+}
+\newslide{UK Industry}
+\slides{
+* User panel (Renault F1, Mercedes F1, Fusion Group, Center for Digital Built Britain, Data Centric Engineering)
+* Advisory Board: Sylvie Delacroix, Denis Therien, Joaquin Vanschoren, Mark Girolami
+* Element AI and Democratisation of ML
+}
+
+\newslide{More Detail}
+\slides{
+* Context: interpretable ML, fairness.
+* Automatic deployment and redployment of ML systems.
+* Significant advances from Bayesian Optimization to Bayesian Systems Optimization
+}
+\newslide{How WPs interact}
+\slides{
+* Synergistic, but not critically interdependent
+}
+\newslide{Why not in a Company?}
+{
+* Big tech companies are too large to be responsive to user needs.
+* Companies do not have convening power:
+  * Open source, community building. Sweet spot is close interaction between industry and academia.
+* Success is *not* one company, but *many* companies
+}
+
+\newslide{Why a Fellowship?}
+{
+* Project critically relies on applicants convening power. 
+   * Also technical ability as a research leader.
+   * Industrial experience from Amazon at leading systems.
+* Candidate develops as an advocate for an internationally recognized advocate for AI in UK.
+}
+
+\newslide{Thanks!}
+\slides{
+* podcast: [The Talking Machines](http://thetalkingmachines.com)
+* newspaper: [Guardian Profile Page](http://www.theguardian.com/profile/neil-lawrence)
+* advocacy: UK AI Council, Royal Society ML Working Group
+}
+
 
 \references

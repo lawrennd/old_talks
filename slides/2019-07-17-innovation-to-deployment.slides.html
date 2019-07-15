@@ -358,8 +358,20 @@
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
 <!-- SECTION Introduction -->
 </section>
-<section id="aim" class="slide level3">
-<h3>Aim</h3>
+<section id="automl" class="slide level3">
+<h3>AutoML</h3>
+<blockquote>
+<p>Automatic fitting of ML models to data sets.</p>
+</blockquote>
+</section>
+<section id="autoai" class="slide level3">
+<h3>AutoAI</h3>
+<blockquote>
+<p>Automatic deployment and maintenance of ML Systems</p>
+</blockquote>
+</section>
+<section id="autoai-1" class="slide level3">
+<h3>AutoAI</h3>
 <blockquote>
 <p>Scale our ability to deploy safe and reliable AI solutions.</p>
 </blockquote>
@@ -382,46 +394,7 @@
 </ol>
 <!-- SECTION Decomposability -->
 </section>
-<section id="technical-context" class="slide level3">
-<h3>Technical Context</h3>
-</section>
 <section id="emulation" class="slide level3">
-<h3>Emulation</h3>
-<div class="figure">
-<div id="statistical-emulation-1-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/uq/statistical-emulation000.svg" width="80%" style=" ">
-</object>
-</div>
-</div>
-</section>
-<section id="emulation-1" class="slide level3">
-<h3>Emulation</h3>
-<div class="figure">
-<div id="statistical-emulation-2-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/uq/statistical-emulation001.svg" width="80%" style=" ">
-</object>
-</div>
-</div>
-</section>
-<section id="emulation-2" class="slide level3">
-<h3>Emulation</h3>
-<div class="figure">
-<div id="statistical-emulation-3-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/uq/statistical-emulation002.svg" width="80%" style=" ">
-</object>
-</div>
-</div>
-</section>
-<section id="emulation-3" class="slide level3">
-<h3>Emulation</h3>
-<div class="figure">
-<div id="statistical-emulation-4-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/uq/statistical-emulation003.svg" width="80%" style=" ">
-</object>
-</div>
-</div>
-</section>
-<section id="emulation-4" class="slide level3">
 <h3>Emulation</h3>
 <div class="figure">
 <div id="statistical-emulation-5-figure" class="figure-frame">
@@ -430,7 +403,7 @@
 </div>
 </div>
 </section>
-<section id="emulation-5" class="slide level3">
+<section id="emulation-1" class="slide level3">
 <h3>Emulation</h3>
 <div class="figure">
 <div id="statistical-emulation-6-figure" class="figure-frame">
@@ -469,89 +442,10 @@
 <img class="negate" src="../slides/diagrams/gp/gp_rejection_sample005.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </section>
-<section id="cascade-of-gaussian-processes" class="slide level3">
-<h3>Cascade of Gaussian Processes</h3>
-<ul>
-<li><p>Replace each neural network with a Gaussian process <span class="math display">\[
-\begin{align}
-\latentVector_{1} &amp;= \mappingFunctionVector_1\left(\inputVector\right)\\
-\latentVector_{2} &amp;= \mappingFunctionVector_2\left(\latentVector_{1}\right)\\
-\latentVector_{3} &amp;= \mappingFunctionVector_3\left(\latentVector_{2}\right)\\
-\dataVector &amp;= \mappingFunctionVector_4\left(\latentVector_{3}\right)
-\end{align}
-\]</span></p></li>
-<li><p>Equivalent to prior over parameters, take width of each layer to infinity.</p></li>
-</ul>
-</section>
 <section id="stochastic-process-composition" class="slide level3">
 <h3>Stochastic Process Composition</h3>
 <p><span class="math display">\[\dataVector = \mappingFunctionVector_4\left(\mappingFunctionVector_3\left(\mappingFunctionVector_2\left(\mappingFunctionVector_1\left(\inputVector\right)\right)\right)\right)\]</span></p>
 <!--include{_ai/includes/ai-vs-data-science-2.md}-->
-<!-- in this short overview, don't introduce GPy or the data-->
-<!-- -->
-</section>
-<section id="motorcycle-helmet-data" class="slide level3">
-<h3>Motorcycle Helmet Data</h3>
-<div class="figure">
-<div id="motorcycle-helment-data-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/datasets/motorcycle-helmet.svg" width="80%" style=" ">
-</object>
-</div>
-</div>
-</section>
-<section id="motorcycle-helmet-data-gp" class="slide level3">
-<h3>Motorcycle Helmet Data GP</h3>
-<div class="figure">
-<div id="motorcycle-helmet-gp-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/gp/motorcycle-helmet-gp.svg" width="80%" style=" ">
-</object>
-</div>
-</div>
-</section>
-<section id="motorcycle-helmet-data-deep-gp" class="slide level3">
-<h3>Motorcycle Helmet Data Deep GP</h3>
-<div class="figure">
-<div id="motorcycle-helmet-deep-gp-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp.svg" width="80%" style=" ">
-</object>
-</div>
-</div>
-</section>
-<section id="motorcycle-helmet-data-deep-gp-1" class="slide level3">
-<h3>Motorcycle Helmet Data Deep GP</h3>
-<div class="figure">
-<div id="motorcycle-helmet-deep-gp-samples-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-samples.svg" width="80%" style=" ">
-</object>
-</div>
-</div>
-</section>
-<section id="motorcycle-helmet-data-latent-1" class="slide level3">
-<h3>Motorcycle Helmet Data Latent 1</h3>
-<div class="figure">
-<div id="motorcycle-helmet-deep-gp-layer-0-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-layer-0.svg" width="60%" style=" ">
-</object>
-</div>
-</div>
-</section>
-<section id="motorcycle-helmet-data-latent-2" class="slide level3">
-<h3>Motorcycle Helmet Data Latent 2</h3>
-<div class="figure">
-<div id="motorcycle-helmet-deep-gp-layer-1-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-layer-1.svg" width="60%" style=" ">
-</object>
-</div>
-</div>
-</section>
-<section id="motorcycle-helmet-pinball-plot" class="slide level3">
-<h3>Motorcycle Helmet Pinball Plot</h3>
-<div class="figure">
-<div id="motorcycle-helmet-deep-gp-pinball-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-pinball.svg" width="60%" style=" ">
-</object>
-</div>
-</div>
 </section>
 <section id="deep-emulation" class="slide level3">
 <h3>Deep Emulation</h3>
@@ -580,9 +474,6 @@
 </div>
 </div>
 <!-- SECTION Data -->
-</section>
-<section id="data-first-thinking" class="slide level3">
-<h3>Data First Thinking</h3>
 </section>
 <section id="ride-sharing-service-oriented" class="slide level3">
 <h3>Ride Sharing: Service Oriented</h3>
@@ -613,24 +504,44 @@
 <!-- SECTION Deployment: Initial Application Domains -->
 <!-- SECTION Work Packages -->
 </section>
-<section id="work-packages" class="slide level3">
-<h3>Work Packages</h3>
-<ol type="1">
-<li>Data Oriented Architectures</li>
-<li>Data Readiness and Provenance</li>
-<li>Data Policy and Ethics</li>
-<li>Deep Structure Learning</li>
-<li>Continual Learning in Deployed Data Systems</li>
-<li>Information Dynamics</li>
-</ol>
+<section id="too-ambitious" class="slide level3">
+<h3>Too Ambitious?</h3>
+</section>
+<section id="uk-industry" class="slide level3">
+<h3>UK Industry</h3>
+<ul>
+<li>User panel (Renault F1, Mercedes F1, Fusion Group, Center for Digital Built Britain, Data Centric Engineering)</li>
+<li>Element AI and Democratisation of ML</li>
+</ul>
+</section>
+<section id="too-ambitious-1" class="slide level3">
+<h3>Too Ambitious?</h3>
+<ul>
+<li>‘possibly impractically broad’ (Reviewer 2)</li>
+<li>‘few precedents for academic success, e.g. Berkeley’ (reviewer 2)</li>
+</ul>
+</section>
+<section id="more-detail" class="slide level3">
+<h3>More Detail</h3>
+<ul>
+<li>Context: interpretable ML, fairness.</li>
+</ul>
+</section>
+<section id="how-wps-interact" class="slide level3">
+<h3>How WPs interact</h3>
+<ul>
+<li>Synergistic, but not critically interdependent</li>
+</ul>
+</section>
+<section id="why-a-fellowship" class="slide level3">
+<h3>Why a Fellowship?</h3>
 </section>
 <section id="thanks" class="slide level3">
 <h3>Thanks!</h3>
 <ul>
-<li>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></li>
 <li>podcast: <a href="http://thetalkingmachines.com">The Talking Machines</a></li>
-<li><p>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></p></li>
-<li><p>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></p></li>
+<li>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></li>
+<li>advocacy: UK AI Council, Royal Society ML Working Group</li>
 </ul>
 </section>
 <section id="references" class="slide level3">
