@@ -64,16 +64,17 @@ Ds of ML Systems Design".}
 
 \subsection{Lay Description}
 
-\slides{> It used to be true that computers only did what we programmed them to do, but today AI systems are learning from our data. This introduces new problems in how these systems respond to their environment. 
-
-We need to better monitor how data is influencing decision making and take corrective action as required. 
-
-This fellowship addresses that challenge.}
+\slides{
+> It used to be true that computers only did what we programmed them to do, but today AI systems are learning from our data. This introduces new problems in how these systems respond to their environment. 
+>
+>We need to better monitor how data is influencing decision making and take corrective action as required. 
+>
+>This fellowship addresses that challenge.}
 
 \subsection{Technical Consequence}
 
 \slides{* Classical systems design assumes *decomposability*.
-* Decomposability is no longer a given}
+* Data-driven systems interfere with decomponsability.}
 
 \newslide{Technical Consequence}
 
@@ -274,15 +275,15 @@ system-wide tractability into consideration, it will be impossible.}
 
 \subsection{Deep Emulation}
 
-\slides{\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-rider-allocation000}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}}
+\slides{\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-rider-allocation000}{75%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}}
 
 \newslide{Deep Emulation}
 
-\slides{\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-rider-allocation001}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}}
+\slides{\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-rider-allocation001}{75%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}}
 
 \newslide{Deep Emulation}
 
-\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-rider-allocation}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
+\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-rider-allocation}{75%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
 
 \include{_deepgp/includes/stochastic-process-composition.md}
 
@@ -451,6 +452,15 @@ architecture. To develop these tools and techniques we will leverage a
 co-creation approach to support deployments of AI systems
 with a focus on the developing economies.}
 
+
+\newslide{Thanks!}
+\slides{
+* podcast: [The Talking Machines](http://thetalkingmachines.com)
+* newspaper: [Guardian Profile Page](http://www.theguardian.com/profile/neil-lawrence)
+* advocacy: UK AI Council, Royal Society ML Working Group
+}
+
+
 \newslide{Too Ambitious?}
 \slides{
 * Is the proposal too ambitious?
@@ -481,15 +491,6 @@ with a focus on the developing economies.}
 * Success is *not* one company, but *many* companies
 }
 
-\newslide{Thanks!}
-\slides{
-* podcast: [The Talking Machines](http://thetalkingmachines.com)
-* newspaper: [Guardian Profile Page](http://www.theguardian.com/profile/neil-lawrence)
-* advocacy: UK AI Council, Royal Society ML Working Group
-}
-
-
-
 \newslide{Why a Fellowship?}
 \slides{
 * Project critically relies on applicants convening power. 
@@ -498,5 +499,3 @@ with a focus on the developing economies.}
 * Candidate develops as an advocate for an internationally recognized advocate for AI in UK.
 }
 
-
-\references

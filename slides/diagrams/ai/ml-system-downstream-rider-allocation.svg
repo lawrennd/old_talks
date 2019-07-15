@@ -10,8 +10,8 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="297mm"
-   height="230mm"
-   viewBox="0 0 297 230"
+   height="235mm"
+   viewBox="0 0 297 235"
    id="svg25590"
    version="1.1"
    inkscape:version="0.91 r13725"
@@ -148,11 +148,15 @@
          x="220"
          y="215">
         <tspan
+	    x="220"
+	    y="215"
            sodipodi:role="line"
            id="tspan34070">
 	total
 	</tspan>
         <tspan
+	    x="220"
+	    y="227.5"
            sodipodi:role="line"
            id="tspan34070_1">
 	demand
@@ -173,11 +177,15 @@
          x="90"
          y="135">
         <tspan
+	    x="90"
+	    y="135"
            sodipodi:role="line"
            id="tspan34052">
 	  wait
 	</tspan>
         <tspan
+	    x="90"
+	    y="147.5"
            sodipodi:role="line"
            id="tspan34054">
 	  prediction
@@ -198,11 +206,15 @@
          x="225"
          y="100">
         <tspan
+            x="225"
+            y="100"	    
            sodipodi:role="line"
            id="tspan34062">
 	  customer 
 	</tspan>
 	<tspan
+            x="225"
+            y="112.5"	    
            sodipodi:role="line"
            id="tspan34062_2">
 	  demand
@@ -227,9 +239,13 @@
            id="driver-availability-text"
            class="mytext">
           <tspan
+              y="30"
+              x="95"
              id="tspan34635"
              sodipodi:role="line">driver</tspan>
           <tspan
+              y="42.5"
+              x="95"
              id="tspan34637"
              sodipodi:role="line">availability</tspan>
         </text>
