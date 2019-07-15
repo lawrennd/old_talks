@@ -390,9 +390,9 @@ partner Element AI has been working with Nesta to drive this debate
 [@Nesta:datatrusts19]. We will integrate these regulatory ideas within
 our data management plans (WP2 \textsection \ref{sec:readiness}).}
 
-
+\notes{
 \include{_data-science/includes/ride-sharing-soa-doa.md}
-
+}
 \notes{While the existence and/or substance of a right to explanation in the
 General Data Protection Regulation has been questioned
 [@Mittelstadt:explanation17] there is no doubt about the *intent* of
