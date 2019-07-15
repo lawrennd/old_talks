@@ -51,11 +51,8 @@ Ds of ML Systems Design".}
 
 \newslide{AutoAI}
 
-\slides{> Automatic deployment and maintenance of ML Systems} 
+\slides{> Automatic deployment and maintenance of AI} 
 
-\newslide{AutoAI}
-
-\slides{> Scale our ability to deploy safe and reliable AI solutions.}
 
 \notes{Our aim is to scale our ability to deploy safe and reliable AI
 solutions. Our technical approach is to do this through *data-oriented
@@ -68,6 +65,10 @@ monitoring of artificial intelligence systems.}
 \subsection{Applications}
 
 \figure{\includediagram{../slides/diagrams/ai/ride-allocation-prediction}{60%}}{Some software components in a ride allocation system. Circled components are hypothetical, rectangles represent actual data.}{ride-allocation-system}
+
+\newslide{Safety Critical}
+
+\slides{* What if instead of a ride sharing app, this was an allocation system for ambulances to patients?}
 
 \notes{For validating our efforts, the work is a close collaboration with
 Data Science Africa (DSA)[^dsa]. They will provide applications and data to
@@ -127,11 +128,6 @@ The proposal requires innovation around ML architecture and new
 techniques for deploying, maintaining, understanding and redeploying
 ML systems.}
 
-\subsection{Objectives}
-
-\slides{1. Software Systems for Data Oriented Architectures
-2. Intelligence Systems for monitoring and emulating the underlying complexity of ML Systems
-3. Automated deployment and redeployment of ML Systems, or "AutoAI"}
 
 \notes{Our objectives are to enable (1) Software Systems for Data Oriented
 Architectures (\textsection \ref{sec:architecture} and
