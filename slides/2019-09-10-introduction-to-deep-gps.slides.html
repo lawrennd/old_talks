@@ -645,7 +645,7 @@ p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mappingFu
 <ul>
 <li>Apply variational lower bound to the inner integral. <small><span class="math display">\[
   \begin{align}
-  \int &amp; \prod_{i=1}^\numData c_i \gaussianDist{\dataVector}{\expDist{\mappingFunctionVector}{p(\mappingFunctionVector|\inducingVector, \latentMatrix)}}{\dataStd^2\eye} p(\latentMatrix)\text{d}\latentMatrix\\ \geq &amp; \expDist{\sum_{i=1}^\numData\log  c_i}{q(\latentMatrix)}\\&amp; +\expDist{\log\gaussianDist{\dataVector}{\expDist{\mappingFunctionVector}{p(\mappingFunctionVector|\inducingVector, \latentMatrix)}}{\dataStd^2\eye}}{q(\latentMatrix)}\\&amp; + \KL{q(\latentMatrix)}{p(\latentMatrix)}    
+  \int \prod_{i=1}^\numData c_i \gaussianDist{\dataVector}{\expDist{\mappingFunctionVector}{p(\mappingFunctionVector|\inducingVector, \latentMatrix)}}{\dataStd^2\eye} p(\latentMatrix)\text{d}\latentMatrix \geq &amp; \expDist{\sum_{i=1}^\numData\log  c_i}{q(\latentMatrix)}\\ &amp; +\expDist{\log\gaussianDist{\dataVector}{\expDist{\mappingFunctionVector}{p(\mappingFunctionVector|\inducingVector, \latentMatrix)}}{\dataStd^2\eye}}{q(\latentMatrix)}\\&amp; + \KL{q(\latentMatrix)}{p(\latentMatrix)}    
   \end{align}
 \]</span></small></li>
 <li>Which is analytically tractable for Gaussian <span class="math inline">\(q(\latentMatrix)\)</span> and some covariance functions.</li>
@@ -654,13 +654,21 @@ p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mappingFu
 <section id="required-expectations" class="slide level3">
 <h3>Required Expectations</h3>
 <ul>
-<li>Need expectations under <span class="math inline">\(q(\latentMatrix)\)</span> of: <span class="math display">\[\log c_i = \frac{1}{2\dataStd^2} \left[\kernelScalar_{i, i} - \kernelVector_{i, \inducingVector}^\top \kernelMatrix_{\inducingVector, \inducingVector}^{-1} \kernelVector_{i, \inducingVector}\right]\]</span> and <span class="math display">\[\log \gaussianDist{\dataVector}{\expDist{\mappingFunctionVector}{p(\mappingFunctionVector|\inducingVector,\dataMatrix)}}{\dataStd^2\eye} = -\frac{1}{2}\log 2\pi\dataStd^2 - \frac{1}{2\dataStd^2}\left(\dataScalar_i - \kernelMatrix_{\mappingFunctionVector, \inducingVector}\kernelMatrix_{\inducingVector,\inducingVector}^{-1}\inducingVector\right)^2\]</span></li>
+<li>Need expectations under <span class="math inline">\(q(\latentMatrix)\)</span> of: <small><span class="math display">\[
+\log c_i = \frac{1}{2\dataStd^2} \left[\kernelScalar_{i, i} - \kernelVector_{i, \inducingVector}^\top \kernelMatrix_{\inducingVector, \inducingVector}^{-1} \kernelVector_{i, \inducingVector}\right]
+\]</span></small> and <small><span class="math display">\[
+\log \gaussianDist{\dataVector}{\expDist{\mappingFunctionVector}{p(\mappingFunctionVector|\inducingVector,\dataMatrix)}}{\dataStd^2\eye} = -\frac{1}{2}\log 2\pi\dataStd^2 - \frac{1}{2\dataStd^2}\left(\dataScalar_i - \kernelMatrix_{\mappingFunctionVector, \inducingVector}\kernelMatrix_{\inducingVector,\inducingVector}^{-1}\inducingVector\right)^2
+\]</span></small></li>
 </ul>
 </section>
 <section id="required-expectations-1" class="slide level3">
 <h3>Required Expectations</h3>
 <ul>
-<li>This requires the expectations <span class="math display">\[\expDist{\kernelMatrix_{\mappingFunctionVector,\inducingVector}}{q(\latentMatrix)}\]</span> and <span class="math display">\[\expDist{\kernelMatrix_{\mappingFunctionVector,\inducingVector}\kernelMatrix_{\inducingVector,\inducingVector}^{-1}\kernelMatrix_{\inducingVector,\mappingFunctionVector}}{q(\latentMatrix)}\]</span> which can be computed analytically for some covariance functions <span class="citation" data-cites="Damianou:variational15">(Damianou et al., 2016)</span> or through sampling <span class="citation" data-cites="Damianou:thesis2015 Salimbeni:doubly2017">(Damianou, 2015; Salimbeni and Deisenroth, 2017)</span>.</li>
+<li>This requires the expectations <span class="math display">\[
+\expDist{\kernelMatrix_{\mappingFunctionVector,\inducingVector}}{q(\latentMatrix)}
+\]</span> and <span class="math display">\[
+\expDist{\kernelMatrix_{\mappingFunctionVector,\inducingVector}\kernelMatrix_{\inducingVector,\inducingVector}^{-1}\kernelMatrix_{\inducingVector,\mappingFunctionVector}}{q(\latentMatrix)}
+\]</span> which can be computed analytically for some covariance functions <span class="citation" data-cites="Damianou:variational15">(Damianou et al., 2016)</span> or through sampling <span class="citation" data-cites="Damianou:thesis2015 Salimbeni:doubly2017">(Damianou, 2015; Salimbeni and Deisenroth, 2017)</span>.</li>
 </ul>
 </section>
 <section id="see-also" class="slide level3">
@@ -670,6 +678,17 @@ p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mappingFu
 <li>Hamiltonian Monte Carlo approach <span class="citation" data-cites="Havasi:deepgp18">(Havasi et al., 2018)</span>.</li>
 <li>Expectation Propagation approach <span class="citation" data-cites="Bui:deep16">(Bui et al., 2016)</span>.</li>
 </ul>
+</section>
+<section id="neural-networks" class="slide level3">
+<h3>Neural Networks</h3>
+<div class="figure">
+<div id="neural-network-uncertainty-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/deepgp/neural-network-uncertainty.png" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<p><span style="text-align:right"><span class="citation" data-cites="Izmailov:subspace19">Izmailov et al. (2019)</span></span></p>
 </section>
 <section id="deep-gaussian-processes-1" class="slide level3">
 <h3>Deep Gaussian Processes</h3>
@@ -1285,6 +1304,9 @@ showDivs(0, 'stack-gp-sample');
 </div>
 <div id="ref-Hinton:fast06">
 <p>Hinton, G.E., Osindero, S., 2006. A fast learning algorithm for deep belief nets. Neural Computation 18, 2006.</p>
+</div>
+<div id="ref-Izmailov:subspace19">
+<p>Izmailov, P., Maddox, W.J., Kirichenko, P., Garipov, T., Vetrov, D.P., Wilson, A.G., 2019. Subspace inference for bayesian deep learning. CoRR abs/1907.07504.</p>
 </div>
 <div id="ref-Kalaitzis:simple11">
 <p>Kalaitzis, A.A., Lawrence, N.D., 2011. A simple approach to ranking differentially expressed gene expression time courses through Gaussian process regression. BMC Bioinformatics 12. <a href="https://doi.org/10.1186/1471-2105-12-180" class="uri">https://doi.org/10.1186/1471-2105-12-180</a></p>
