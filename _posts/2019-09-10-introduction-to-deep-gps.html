@@ -322,6 +322,7 @@ $$</span><br /></li>
 <li><p>Need expectations under <span class="math inline">$q(\latentMatrix)$</span> of: <br /><span class="math display">$$\log c_i = \frac{1}{2\dataStd^2} \left[\kernelScalar_{i, i} - \kernelVector_{i, \inducingVector}^\top \kernelMatrix_{\inducingVector, \inducingVector}^{-1} \kernelVector_{i, \inducingVector}\right]$$</span><br /> and <br /><span class="math display">$$\log \gaussianDist{\dataVector}{\expDist{\mappingFunctionVector}{p(\mappingFunctionVector|\inducingVector,\dataMatrix)}}{\dataStd^2\eye} = -\frac{1}{2}\log 2\pi\dataStd^2 - \frac{1}{2\dataStd^2}\left(\dataScalar_i - \kernelMatrix_{\mappingFunctionVector, \inducingVector}\kernelMatrix_{\inducingVector,\inducingVector}^{-1}\inducingVector\right)^2$$</span><br /></p></li>
 <li><p>This requires the expectations <br /><span class="math display">$$\expDist{\kernelMatrix_{\mappingFunctionVector,\inducingVector}}{q(\latentMatrix)}$$</span><br /> and <br /><span class="math display">$$\expDist{\kernelMatrix_{\mappingFunctionVector,\inducingVector}\kernelMatrix_{\inducingVector,\inducingVector}^{-1}\kernelMatrix_{\inducingVector,\mappingFunctionVector}}{q(\latentMatrix)}$$</span><br /> which can be computed analytically for some covariance functions <span class="citation" data-cites="Damianou:variational15">(Damianou, Titsias, and Lawrence 2016)</span> or through sampling <span class="citation" data-cites="Damianou:thesis2015 Salimbeni:doubly2017">(Damianou 2015; Salimbeni and Deisenroth 2017)</span>.</p></li>
 </ul>
+<p>Variational approximations aren’t the only approach to approximate inference. The original work on deep Gaussian processes made use of MAP approximations <span class="citation" data-cites="Lawrence:hgplvm07">(Lawrence and Moore 2007)</span>, which couldn’t propagate the uncertainty through the model at the data points but sustain uncertainty elsewhere. Since the variational approximation was proposed researchers have also considered sampling approaches <span class="citation" data-cites="Havasi:deepgp18">(Havasi, Hernández-Lobato, and Murillo-Fuentes 2018)</span> and expectation propagation <span class="citation" data-cites="Bui:deep16">(Bui et al. 2016)</span>.</p>
 <p>The argument in the deep learning revolution is that deep architectures allow us to develop an abstraction of the feature set through model composition. Composing Gaussian processes is analytically intractable. To form deep Gaussian processes we use a variational approach to stack the models.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="im">import</span> pods</a></code></pre></div>
 <div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" data-line-number="1">pods.notebook.display_plots(<span class="st">&#39;stack-gp-sample-Linear-</span><span class="sc">{sample:0&gt;1}</span><span class="st">.svg&#39;</span>, </a>
@@ -1212,161 +1213,6 @@ _ = m_clean.optimize()</code></pre>
 <p>Figure: Pinball plot for the mapping from input to output layer for the motorcycle helmet accelerometer data.</p>
 </div>
 </div>
-<h2 id="robot-wireless-data-edit">Robot Wireless Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/robot-wireless-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/robot-wireless-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
-<p>The robot wireless data is taken from an experiment run by Brian Ferris at University of Washington. It consists of the measurements of WiFi access point signal strengths as Brian walked in a loop.</p>
-<div class="sourceCode" id="cb76"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb76-1" data-line-number="1">data<span class="op">=</span>pods.datasets.robot_wireless()</a>
-<a class="sourceLine" id="cb76-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb76-3" data-line-number="3">x <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">215</span>)[:, np.newaxis]</a>
-<a class="sourceLine" id="cb76-4" data-line-number="4">y <span class="op">=</span> data[<span class="st">&#39;Y&#39;</span>]</a>
-<a class="sourceLine" id="cb76-5" data-line-number="5">offset <span class="op">=</span> y.mean()</a>
-<a class="sourceLine" id="cb76-6" data-line-number="6">scale <span class="op">=</span> np.sqrt(y.var())</a>
-<a class="sourceLine" id="cb76-7" data-line-number="7">yhat <span class="op">=</span> (y<span class="op">-</span>offset)<span class="op">/</span>scale</a></code></pre></div>
-<p>The ground truth is recorded in the data, the actual loop is given in the plot below.</p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb77-1" data-line-number="1">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_figsize)</a>
-<a class="sourceLine" id="cb77-2" data-line-number="2">plt.plot(data[<span class="st">&#39;X&#39;</span>][:, <span class="dv">1</span>], data[<span class="st">&#39;X&#39;</span>][:, <span class="dv">2</span>], <span class="st">&#39;r.&#39;</span>, markersize<span class="op">=</span><span class="dv">5</span>)</a>
-<a class="sourceLine" id="cb77-3" data-line-number="3">ax.set_xlabel(<span class="st">&#39;x position&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>)</a>
-<a class="sourceLine" id="cb77-4" data-line-number="4">ax.set_ylabel(<span class="st">&#39;y position&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>)</a>
-<a class="sourceLine" id="cb77-5" data-line-number="5">mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../../slides/diagrams/datasets/robot-wireless-ground-truth.svg&#39;</span>, transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</a></code></pre></div>
-<h2 id="robot-wireless-ground-truth">Robot Wireless Ground Truth</h2>
-<div class="figure">
-<div id="robot-wireless-ground-truth-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/datasets/robot-wireless-ground-truth.svg" width="60%" style=" ">
-</object>
-</div>
-<div id="robot-wireless-ground-truth-magnify" class="magnify" onclick="magnifyFigure(&#39;robot-wireless-ground-truth&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
-</div>
-<div id="robot-wireless-ground-truth-caption" class="caption-frame">
-<p>Figure: Ground truth movement for the position taken while recording the multivariate time-course of wireless access point signal strengths.</p>
-</div>
-</div>
-<p>We will ignore this ground truth in making our predictions, but see if the model can recover something similar in one of the latent layers.</p>
-<div class="sourceCode" id="cb78"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb78-1" data-line-number="1">output_dim<span class="op">=</span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb78-2" data-line-number="2">xlim <span class="op">=</span> (<span class="op">-</span><span class="fl">0.3</span>, <span class="fl">1.3</span>)</a>
-<a class="sourceLine" id="cb78-3" data-line-number="3">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)</a>
-<a class="sourceLine" id="cb78-4" data-line-number="4">_ <span class="op">=</span> ax.plot(x.flatten(), y[:, output_dim], </a>
-<a class="sourceLine" id="cb78-5" data-line-number="5">            <span class="st">&#39;r.&#39;</span>, markersize<span class="op">=</span><span class="dv">5</span>)</a>
-<a class="sourceLine" id="cb78-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb78-7" data-line-number="7">ax.set_xlabel(<span class="st">&#39;time&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>)</a>
-<a class="sourceLine" id="cb78-8" data-line-number="8">ax.set_ylabel(<span class="st">&#39;signal strength&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>)</a>
-<a class="sourceLine" id="cb78-9" data-line-number="9">xlim <span class="op">=</span> (<span class="op">-</span><span class="fl">0.2</span>, <span class="fl">1.2</span>)</a>
-<a class="sourceLine" id="cb78-10" data-line-number="10">ylim <span class="op">=</span> (<span class="op">-</span><span class="fl">0.6</span>, <span class="fl">2.0</span>)</a>
-<a class="sourceLine" id="cb78-11" data-line-number="11">ax.set_xlim(xlim)</a>
-<a class="sourceLine" id="cb78-12" data-line-number="12">ax.set_ylim(ylim)</a>
-<a class="sourceLine" id="cb78-13" data-line-number="13"></a>
-<a class="sourceLine" id="cb78-14" data-line-number="14">mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/datasets/robot-wireless-dim-&#39;</span> <span class="op">+</span> <span class="bu">str</span>(output_dim) <span class="op">+</span> <span class="st">&#39;.svg&#39;</span>, </a>
-<a class="sourceLine" id="cb78-15" data-line-number="15">            transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</a></code></pre></div>
-<h2 id="robot-wifi-data">Robot WiFi Data</h2>
-<div class="figure">
-<div id="robot-wireless-data-dim-1-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/datasets/robot-wireless-dim-1.svg" width="60%" style=" ">
-</object>
-</div>
-<div id="robot-wireless-data-dim-1-magnify" class="magnify" onclick="magnifyFigure(&#39;robot-wireless-data-dim-1&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
-</div>
-<div id="robot-wireless-data-dim-1-caption" class="caption-frame">
-<p>Figure: Output dimension 1 from the robot wireless data. This plot shows signal strength changing over time.</p>
-</div>
-</div>
-<p>Perform a Gaussian process fit on the data using GPy.</p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb79-1" data-line-number="1">m_full <span class="op">=</span> GPy.models.GPRegression(x,yhat)</a>
-<a class="sourceLine" id="cb79-2" data-line-number="2">_ <span class="op">=</span> m_full.optimize() <span class="co"># Optimize parameters of covariance function</span></a></code></pre></div>
-<div class="sourceCode" id="cb80"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb80-1" data-line-number="1">fig, ax<span class="op">=</span>plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)</a>
-<a class="sourceLine" id="cb80-2" data-line-number="2">plot.model_output(m_full, output_dim<span class="op">=</span>output_dim, scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, ax<span class="op">=</span>ax, </a>
-<a class="sourceLine" id="cb80-3" data-line-number="3">                  xlabel<span class="op">=</span><span class="st">&#39;time&#39;</span>, ylabel<span class="op">=</span><span class="st">&#39;signal strength&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>, portion<span class="op">=</span><span class="fl">0.5</span>)</a>
-<a class="sourceLine" id="cb80-4" data-line-number="4">ax.set_ylim(ylim)</a>
-<a class="sourceLine" id="cb80-5" data-line-number="5">ax.set_xlim(xlim)</a>
-<a class="sourceLine" id="cb80-6" data-line-number="6">mlai.write_figure(filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/gp/robot-wireless-gp-dim-&#39;</span> <span class="op">+</span> <span class="bu">str</span>(output_dim)<span class="op">+</span> <span class="st">&#39;.svg&#39;</span>, </a>
-<a class="sourceLine" id="cb80-7" data-line-number="7">            transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</a></code></pre></div>
-<h2 id="robot-wifi-data-gp">Robot WiFi Data GP</h2>
-<div class="figure">
-<div id="-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/gp/robot-wireless-gp-dim-1.svg" width="80%" style=" ">
-</object>
-</div>
-<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
-</div>
-<div id="-caption" class="caption-frame">
-<p>Figure:</p>
-</div>
-</div>
-<p>}{Gaussian process fit to the Robot Wireless dimension 1.}{robot-wireless-gp-dim-1}</p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb81-1" data-line-number="1">layers <span class="op">=</span> [y.shape[<span class="dv">1</span>], <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">2</span>, x.shape[<span class="dv">1</span>]]</a>
-<a class="sourceLine" id="cb81-2" data-line-number="2">inits <span class="op">=</span> [<span class="st">&#39;PCA&#39;</span>]<span class="op">*</span>(<span class="bu">len</span>(layers)<span class="op">-</span><span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb81-3" data-line-number="3">kernels <span class="op">=</span> []</a>
-<a class="sourceLine" id="cb81-4" data-line-number="4"><span class="cf">for</span> i <span class="kw">in</span> layers[<span class="dv">1</span>:]:</a>
-<a class="sourceLine" id="cb81-5" data-line-number="5">    kernels <span class="op">+=</span> [GPy.kern.RBF(i, ARD<span class="op">=</span><span class="va">True</span>)]</a></code></pre></div>
-<div class="sourceCode" id="cb82"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb82-1" data-line-number="1">m <span class="op">=</span> deepgp.DeepGP(layers,Y<span class="op">=</span>y, X<span class="op">=</span>x, inits<span class="op">=</span>inits, </a>
-<a class="sourceLine" id="cb82-2" data-line-number="2">                  kernels<span class="op">=</span>kernels,</a>
-<a class="sourceLine" id="cb82-3" data-line-number="3">                  num_inducing<span class="op">=</span><span class="dv">50</span>, back_constraint<span class="op">=</span><span class="va">False</span>)</a>
-<a class="sourceLine" id="cb82-4" data-line-number="4">m.initialize()</a></code></pre></div>
-<div class="sourceCode" id="cb83"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb83-1" data-line-number="1">m.staged_optimize(messages<span class="op">=</span>(<span class="va">True</span>,<span class="va">True</span>,<span class="va">True</span>))</a></code></pre></div>
-<div class="sourceCode" id="cb84"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb84-1" data-line-number="1">fig, ax<span class="op">=</span>plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)</a>
-<a class="sourceLine" id="cb84-2" data-line-number="2">plot.model_output(m, output_dim<span class="op">=</span>output_dim, scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, ax<span class="op">=</span>ax, </a>
-<a class="sourceLine" id="cb84-3" data-line-number="3">                  xlabel<span class="op">=</span><span class="st">&#39;time&#39;</span>, ylabel<span class="op">=</span><span class="st">&#39;signal strength&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>, portion<span class="op">=</span><span class="fl">0.5</span>)</a>
-<a class="sourceLine" id="cb84-4" data-line-number="4">ax.set_ylim(ylim)</a>
-<a class="sourceLine" id="cb84-5" data-line-number="5">ax.set_xlim(xlim)</a>
-<a class="sourceLine" id="cb84-6" data-line-number="6">mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/robot-wireless-deep-gp-dim-&#39;</span> <span class="op">+</span> <span class="bu">str</span>(output_dim)<span class="op">+</span> <span class="st">&#39;.svg&#39;</span>, </a>
-<a class="sourceLine" id="cb84-7" data-line-number="7">                  transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</a></code></pre></div>
-<h2 id="robot-wifi-data-deep-gp">Robot WiFi Data Deep GP</h2>
-<div class="figure">
-<div id="robot-wireless-deep-gp-dim-1-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/deepgp/robot-wireless-deep-gp-dim-1.svg" width="80%" style=" ">
-</object>
-</div>
-<div id="robot-wireless-deep-gp-dim-1-magnify" class="magnify" onclick="magnifyFigure(&#39;robot-wireless-deep-gp-dim-1&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
-</div>
-<div id="robot-wireless-deep-gp-dim-1-caption" class="caption-frame">
-<p>Figure: Fit of the deep Gaussian process to dimension 1 of the robot wireless data.</p>
-</div>
-</div>
-<div class="sourceCode" id="cb85"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb85-1" data-line-number="1">fig, ax<span class="op">=</span>plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)</a>
-<a class="sourceLine" id="cb85-2" data-line-number="2">plot.model_sample(m, output_dim<span class="op">=</span>output_dim, scale<span class="op">=</span>scale, offset<span class="op">=</span>offset, samps<span class="op">=</span><span class="dv">10</span>, ax<span class="op">=</span>ax,</a>
-<a class="sourceLine" id="cb85-3" data-line-number="3">                  xlabel<span class="op">=</span><span class="st">&#39;time&#39;</span>, ylabel<span class="op">=</span><span class="st">&#39;signal strength&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>, portion<span class="op">=</span><span class="fl">0.5</span>)</a>
-<a class="sourceLine" id="cb85-4" data-line-number="4">ax.set_ylim(ylim)</a>
-<a class="sourceLine" id="cb85-5" data-line-number="5">ax.set_xlim(xlim)</a>
-<a class="sourceLine" id="cb85-6" data-line-number="6">mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/robot-wireless-deep-gp-samples-dim-&#39;</span> <span class="op">+</span> <span class="bu">str</span>(output_dim)<span class="op">+</span> <span class="st">&#39;.svg&#39;</span>, </a>
-<a class="sourceLine" id="cb85-7" data-line-number="7">                  transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</a></code></pre></div>
-<h2 id="robot-wifi-data-deep-gp-1">Robot WiFi Data Deep GP</h2>
-<div class="figure">
-<div id="robot-wireless-deep-gp-samples-dim-1-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/deepgp/robot-wireless-deep-gp-samples-dim-1.svg" width="80%" style=" ">
-</object>
-</div>
-<div id="robot-wireless-deep-gp-samples-dim-1-magnify" class="magnify" onclick="magnifyFigure(&#39;robot-wireless-deep-gp-samples-dim-1&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
-</div>
-<div id="robot-wireless-deep-gp-samples-dim-1-caption" class="caption-frame">
-<p>Figure: Samples from the deep Gaussian process fit to dimension 1 of the robot wireless data.</p>
-</div>
-</div>
-<h2 id="robot-wifi-data-latent-space">Robot WiFi Data Latent Space</h2>
-<p>}</p>
-<div class="sourceCode" id="cb86"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb86-1" data-line-number="1">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_figsize)</a>
-<a class="sourceLine" id="cb86-2" data-line-number="2">ax.plot(m.layers[<span class="op">-</span><span class="dv">2</span>].latent_space.mean[:, <span class="dv">0</span>], </a>
-<a class="sourceLine" id="cb86-3" data-line-number="3">        m.layers[<span class="op">-</span><span class="dv">2</span>].latent_space.mean[:, <span class="dv">1</span>], </a>
-<a class="sourceLine" id="cb86-4" data-line-number="4">        <span class="st">&#39;r.-&#39;</span>, markersize<span class="op">=</span><span class="dv">5</span>)</a>
-<a class="sourceLine" id="cb86-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb86-6" data-line-number="6">ax.set_xlabel(<span class="st">&#39;latent dimension 1&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>)</a>
-<a class="sourceLine" id="cb86-7" data-line-number="7">ax.set_ylabel(<span class="st">&#39;latent dimension 2&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>)</a>
-<a class="sourceLine" id="cb86-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb86-9" data-line-number="9">mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/deepgp/robot-wireless-latent-space.svg&#39;</span>, </a>
-<a class="sourceLine" id="cb86-10" data-line-number="10">            transparent<span class="op">=</span><span class="va">True</span>, frameon<span class="op">=</span><span class="va">True</span>)</a></code></pre></div>
-<div class="figure">
-<div id="robot-wireless-latent-space-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/deepgp/robot-wireless-latent-space.svg" width="60%" style=" ">
-</object>
-</div>
-<div id="robot-wireless-latent-space-magnify" class="magnify" onclick="magnifyFigure(&#39;robot-wireless-latent-space&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
-</div>
-<div id="robot-wireless-latent-space-caption" class="caption-frame">
-<p>Figure: Inferred two dimensional latent space of the model for the robot wireless data.</p>
-</div>
-</div>
 <h2 id="motion-capture-edit">Motion Capture <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/deep-high-five.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_deepgp/includes/deep-high-five.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <ul>
 <li>‘High five’ data.</li>
@@ -1401,62 +1247,62 @@ _ = m_clean.optimize()</code></pre>
 <p>We now look at the deep Gaussian processes’ capacity to perform unsupervised learning.</p>
 <p>We will look at a sub-sample of the MNIST digit data set.</p>
 <p>First load in the MNIST data set from scikit learn. This can take a little while because it’s large to download.</p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb87-1" data-line-number="1"><span class="im">from</span> sklearn.datasets <span class="im">import</span> fetch_mldata</a></code></pre></div>
-<div class="sourceCode" id="cb88"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb88-1" data-line-number="1">mnist <span class="op">=</span> fetch_mldata(<span class="st">&#39;MNIST original&#39;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb76-1" data-line-number="1"><span class="im">from</span> sklearn.datasets <span class="im">import</span> fetch_mldata</a></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb77-1" data-line-number="1">mnist <span class="op">=</span> fetch_mldata(<span class="st">&#39;MNIST original&#39;</span>)</a></code></pre></div>
 <p>Sub-sample the dataset to make the training faster.</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb89-1" data-line-number="1"><span class="im">import</span> numpy <span class="im">as</span> np</a></code></pre></div>
-<div class="sourceCode" id="cb90"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb90-1" data-line-number="1">np.random.seed(<span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb90-2" data-line-number="2">digits <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>]</a>
-<a class="sourceLine" id="cb90-3" data-line-number="3">N_per_digit <span class="op">=</span> <span class="dv">100</span></a>
-<a class="sourceLine" id="cb90-4" data-line-number="4">Y <span class="op">=</span> []</a>
-<a class="sourceLine" id="cb90-5" data-line-number="5">labels <span class="op">=</span> []</a>
-<a class="sourceLine" id="cb90-6" data-line-number="6"><span class="cf">for</span> d <span class="kw">in</span> digits:</a>
-<a class="sourceLine" id="cb90-7" data-line-number="7">    imgs <span class="op">=</span> mnist[<span class="st">&#39;data&#39;</span>][mnist[<span class="st">&#39;target&#39;</span>]<span class="op">==</span>d]</a>
-<a class="sourceLine" id="cb90-8" data-line-number="8">    Y.append(imgs[np.random.permutation(imgs.shape[<span class="dv">0</span>])][:N_per_digit])</a>
-<a class="sourceLine" id="cb90-9" data-line-number="9">    labels.append(np.ones(N_per_digit)<span class="op">*</span>d)</a>
-<a class="sourceLine" id="cb90-10" data-line-number="10">Y <span class="op">=</span> np.vstack(Y).astype(np.float64)</a>
-<a class="sourceLine" id="cb90-11" data-line-number="11">labels <span class="op">=</span> np.hstack(labels)</a>
-<a class="sourceLine" id="cb90-12" data-line-number="12">Y <span class="op">/=</span> <span class="fl">255.</span></a></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb78-1" data-line-number="1"><span class="im">import</span> numpy <span class="im">as</span> np</a></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb79-1" data-line-number="1">np.random.seed(<span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb79-2" data-line-number="2">digits <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>]</a>
+<a class="sourceLine" id="cb79-3" data-line-number="3">N_per_digit <span class="op">=</span> <span class="dv">100</span></a>
+<a class="sourceLine" id="cb79-4" data-line-number="4">Y <span class="op">=</span> []</a>
+<a class="sourceLine" id="cb79-5" data-line-number="5">labels <span class="op">=</span> []</a>
+<a class="sourceLine" id="cb79-6" data-line-number="6"><span class="cf">for</span> d <span class="kw">in</span> digits:</a>
+<a class="sourceLine" id="cb79-7" data-line-number="7">    imgs <span class="op">=</span> mnist[<span class="st">&#39;data&#39;</span>][mnist[<span class="st">&#39;target&#39;</span>]<span class="op">==</span>d]</a>
+<a class="sourceLine" id="cb79-8" data-line-number="8">    Y.append(imgs[np.random.permutation(imgs.shape[<span class="dv">0</span>])][:N_per_digit])</a>
+<a class="sourceLine" id="cb79-9" data-line-number="9">    labels.append(np.ones(N_per_digit)<span class="op">*</span>d)</a>
+<a class="sourceLine" id="cb79-10" data-line-number="10">Y <span class="op">=</span> np.vstack(Y).astype(np.float64)</a>
+<a class="sourceLine" id="cb79-11" data-line-number="11">labels <span class="op">=</span> np.hstack(labels)</a>
+<a class="sourceLine" id="cb79-12" data-line-number="12">Y <span class="op">/=</span> <span class="fl">255.</span></a></code></pre></div>
 <h2 id="fit-a-deep-gp">Fit a Deep GP</h2>
 <p>We’re going to fit a Deep Gaussian process model to the MNIST data with two hidden layers. Each of the two Gaussian processes (one from the first hidden layer to the second, one from the second hidden layer to the data) has an exponentiated quadratic covariance.</p>
-<div class="sourceCode" id="cb91"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb91-1" data-line-number="1"><span class="im">import</span> deepgp</a>
-<a class="sourceLine" id="cb91-2" data-line-number="2"><span class="im">import</span> GPy</a></code></pre></div>
-<div class="sourceCode" id="cb92"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb92-1" data-line-number="1">num_latent <span class="op">=</span> <span class="dv">2</span></a>
-<a class="sourceLine" id="cb92-2" data-line-number="2">num_hidden_2 <span class="op">=</span> <span class="dv">5</span></a>
-<a class="sourceLine" id="cb92-3" data-line-number="3">m <span class="op">=</span> deepgp.DeepGP([Y.shape[<span class="dv">1</span>],num_hidden_2,num_latent],</a>
-<a class="sourceLine" id="cb92-4" data-line-number="4">                  Y,</a>
-<a class="sourceLine" id="cb92-5" data-line-number="5">                  kernels<span class="op">=</span>[GPy.kern.RBF(num_hidden_2,ARD<span class="op">=</span><span class="va">True</span>), </a>
-<a class="sourceLine" id="cb92-6" data-line-number="6">                           GPy.kern.RBF(num_latent,ARD<span class="op">=</span><span class="va">False</span>)], </a>
-<a class="sourceLine" id="cb92-7" data-line-number="7">                  num_inducing<span class="op">=</span><span class="dv">50</span>, back_constraint<span class="op">=</span><span class="va">False</span>, </a>
-<a class="sourceLine" id="cb92-8" data-line-number="8">                  encoder_dims<span class="op">=</span>[[<span class="dv">200</span>],[<span class="dv">200</span>]])</a></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb80-1" data-line-number="1"><span class="im">import</span> deepgp</a>
+<a class="sourceLine" id="cb80-2" data-line-number="2"><span class="im">import</span> GPy</a></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb81-1" data-line-number="1">num_latent <span class="op">=</span> <span class="dv">2</span></a>
+<a class="sourceLine" id="cb81-2" data-line-number="2">num_hidden_2 <span class="op">=</span> <span class="dv">5</span></a>
+<a class="sourceLine" id="cb81-3" data-line-number="3">m <span class="op">=</span> deepgp.DeepGP([Y.shape[<span class="dv">1</span>],num_hidden_2,num_latent],</a>
+<a class="sourceLine" id="cb81-4" data-line-number="4">                  Y,</a>
+<a class="sourceLine" id="cb81-5" data-line-number="5">                  kernels<span class="op">=</span>[GPy.kern.RBF(num_hidden_2,ARD<span class="op">=</span><span class="va">True</span>), </a>
+<a class="sourceLine" id="cb81-6" data-line-number="6">                           GPy.kern.RBF(num_latent,ARD<span class="op">=</span><span class="va">False</span>)], </a>
+<a class="sourceLine" id="cb81-7" data-line-number="7">                  num_inducing<span class="op">=</span><span class="dv">50</span>, back_constraint<span class="op">=</span><span class="va">False</span>, </a>
+<a class="sourceLine" id="cb81-8" data-line-number="8">                  encoder_dims<span class="op">=</span>[[<span class="dv">200</span>],[<span class="dv">200</span>]])</a></code></pre></div>
 <h2 id="initialization">Initialization</h2>
 <p>Just like deep neural networks, there are some tricks to intitializing these models. The tricks we use here include some early training of the model with model parameters constrained. This gives the variational inducing parameters some scope to tighten the bound for the case where the noise variance is small and the variances of the Gaussian processes are around 1.</p>
-<div class="sourceCode" id="cb93"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb93-1" data-line-number="1">m.obslayer.likelihood.variance[:] <span class="op">=</span> Y.var()<span class="op">*</span><span class="fl">0.01</span></a>
-<a class="sourceLine" id="cb93-2" data-line-number="2"><span class="cf">for</span> layer <span class="kw">in</span> m.layers:</a>
-<a class="sourceLine" id="cb93-3" data-line-number="3">    layer.kern.variance.fix(warning<span class="op">=</span><span class="va">False</span>)</a>
-<a class="sourceLine" id="cb93-4" data-line-number="4">    layer.likelihood.variance.fix(warning<span class="op">=</span><span class="va">False</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb82-1" data-line-number="1">m.obslayer.likelihood.variance[:] <span class="op">=</span> Y.var()<span class="op">*</span><span class="fl">0.01</span></a>
+<a class="sourceLine" id="cb82-2" data-line-number="2"><span class="cf">for</span> layer <span class="kw">in</span> m.layers:</a>
+<a class="sourceLine" id="cb82-3" data-line-number="3">    layer.kern.variance.fix(warning<span class="op">=</span><span class="va">False</span>)</a>
+<a class="sourceLine" id="cb82-4" data-line-number="4">    layer.likelihood.variance.fix(warning<span class="op">=</span><span class="va">False</span>)</a></code></pre></div>
 <p>We now we optimize for a hundred iterations with the constrained model.</p>
-<div class="sourceCode" id="cb94"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb94-1" data-line-number="1">m.optimize(messages<span class="op">=</span><span class="va">False</span>,max_iters<span class="op">=</span><span class="dv">100</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb83-1" data-line-number="1">m.optimize(messages<span class="op">=</span><span class="va">False</span>,max_iters<span class="op">=</span><span class="dv">100</span>)</a></code></pre></div>
 <p>Now we remove the fixed constraint on the kernel variance parameters, but keep the noise output constrained, and run for a further 100 iterations.</p>
-<div class="sourceCode" id="cb95"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb95-1" data-line-number="1"><span class="cf">for</span> layer <span class="kw">in</span> m.layers:</a>
-<a class="sourceLine" id="cb95-2" data-line-number="2">    layer.kern.variance.constrain_positive(warning<span class="op">=</span><span class="va">False</span>)</a>
-<a class="sourceLine" id="cb95-3" data-line-number="3">m.optimize(messages<span class="op">=</span><span class="va">False</span>,max_iters<span class="op">=</span><span class="dv">100</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb84-1" data-line-number="1"><span class="cf">for</span> layer <span class="kw">in</span> m.layers:</a>
+<a class="sourceLine" id="cb84-2" data-line-number="2">    layer.kern.variance.constrain_positive(warning<span class="op">=</span><span class="va">False</span>)</a>
+<a class="sourceLine" id="cb84-3" data-line-number="3">m.optimize(messages<span class="op">=</span><span class="va">False</span>,max_iters<span class="op">=</span><span class="dv">100</span>)</a></code></pre></div>
 <p>Finally we unconstrain the layer likelihoods and allow the full model to be trained for 1000 iterations.</p>
-<div class="sourceCode" id="cb96"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb96-1" data-line-number="1"><span class="cf">for</span> layer <span class="kw">in</span> m.layers:</a>
-<a class="sourceLine" id="cb96-2" data-line-number="2">    layer.likelihood.variance.constrain_positive(warning<span class="op">=</span><span class="va">False</span>)</a>
-<a class="sourceLine" id="cb96-3" data-line-number="3">m.optimize(messages<span class="op">=</span><span class="va">True</span>,max_iters<span class="op">=</span><span class="dv">10000</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb85-1" data-line-number="1"><span class="cf">for</span> layer <span class="kw">in</span> m.layers:</a>
+<a class="sourceLine" id="cb85-2" data-line-number="2">    layer.likelihood.variance.constrain_positive(warning<span class="op">=</span><span class="va">False</span>)</a>
+<a class="sourceLine" id="cb85-3" data-line-number="3">m.optimize(messages<span class="op">=</span><span class="va">True</span>,max_iters<span class="op">=</span><span class="dv">10000</span>)</a></code></pre></div>
 <h2 id="visualize-the-latent-space-of-the-top-layer">Visualize the latent space of the top layer</h2>
 <p>Now the model is trained, let’s plot the mean of the posterior distributions in the top latent layer of the model.</p>
-<div class="sourceCode" id="cb97"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb97-1" data-line-number="1"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</a>
-<a class="sourceLine" id="cb97-2" data-line-number="2"><span class="im">from</span> matplotlib <span class="im">import</span> rc</a>
-<a class="sourceLine" id="cb97-3" data-line-number="3"><span class="im">import</span> teaching_plots <span class="im">as</span> plot</a>
-<a class="sourceLine" id="cb97-4" data-line-number="4"><span class="im">import</span> mlai</a></code></pre></div>
-<div class="sourceCode" id="cb98"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb98-1" data-line-number="1">rc(<span class="st">&quot;font&quot;</span>, <span class="op">**</span>{<span class="st">&#39;family&#39;</span>:<span class="st">&#39;sans-serif&#39;</span>,<span class="st">&#39;sans-serif&#39;</span>:[<span class="st">&#39;Helvetica&#39;</span>],<span class="st">&#39;size&#39;</span>:<span class="dv">20</span>})</a>
-<a class="sourceLine" id="cb98-2" data-line-number="2">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_figsize)</a>
-<a class="sourceLine" id="cb98-3" data-line-number="3"><span class="cf">for</span> d <span class="kw">in</span> digits:</a>
-<a class="sourceLine" id="cb98-4" data-line-number="4">    ax.plot(m.layer_1.X.mean[labels<span class="op">==</span>d,<span class="dv">0</span>],m.layer_1.X.mean[labels<span class="op">==</span>d,<span class="dv">1</span>],<span class="st">&#39;.&#39;</span>,label<span class="op">=</span><span class="bu">str</span>(d))</a>
-<a class="sourceLine" id="cb98-5" data-line-number="5">_ <span class="op">=</span> plt.legend()</a>
-<a class="sourceLine" id="cb98-6" data-line-number="6">mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&quot;../slides/diagrams/deepgp/usps-digits-latent.svg&quot;</span>, transparent<span class="op">=</span><span class="va">True</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb86-1" data-line-number="1"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</a>
+<a class="sourceLine" id="cb86-2" data-line-number="2"><span class="im">from</span> matplotlib <span class="im">import</span> rc</a>
+<a class="sourceLine" id="cb86-3" data-line-number="3"><span class="im">import</span> teaching_plots <span class="im">as</span> plot</a>
+<a class="sourceLine" id="cb86-4" data-line-number="4"><span class="im">import</span> mlai</a></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb87-1" data-line-number="1">rc(<span class="st">&quot;font&quot;</span>, <span class="op">**</span>{<span class="st">&#39;family&#39;</span>:<span class="st">&#39;sans-serif&#39;</span>,<span class="st">&#39;sans-serif&#39;</span>:[<span class="st">&#39;Helvetica&#39;</span>],<span class="st">&#39;size&#39;</span>:<span class="dv">20</span>})</a>
+<a class="sourceLine" id="cb87-2" data-line-number="2">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_figsize)</a>
+<a class="sourceLine" id="cb87-3" data-line-number="3"><span class="cf">for</span> d <span class="kw">in</span> digits:</a>
+<a class="sourceLine" id="cb87-4" data-line-number="4">    ax.plot(m.layer_1.X.mean[labels<span class="op">==</span>d,<span class="dv">0</span>],m.layer_1.X.mean[labels<span class="op">==</span>d,<span class="dv">1</span>],<span class="st">&#39;.&#39;</span>,label<span class="op">=</span><span class="bu">str</span>(d))</a>
+<a class="sourceLine" id="cb87-5" data-line-number="5">_ <span class="op">=</span> plt.legend()</a>
+<a class="sourceLine" id="cb87-6" data-line-number="6">mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&quot;../slides/diagrams/deepgp/usps-digits-latent.svg&quot;</span>, transparent<span class="op">=</span><span class="va">True</span>)</a></code></pre></div>
 <div class="figure">
 <div id="usps-digits-latent-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/usps-digits-latent.svg" width="60%" style=" ">
@@ -1471,22 +1317,22 @@ _ = m_clean.optimize()</code></pre>
 </div>
 <h2 id="visualize-the-latent-space-of-the-intermediate-layer">Visualize the latent space of the intermediate layer</h2>
 <p>We can also visualize dimensions of the intermediate layer. First the lengthscale of those dimensions is given by</p>
-<div class="sourceCode" id="cb99"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb99-1" data-line-number="1">m.obslayer.kern.lengthscale</a></code></pre></div>
-<div class="sourceCode" id="cb100"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb100-1" data-line-number="1"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</a>
-<a class="sourceLine" id="cb100-2" data-line-number="2"><span class="im">import</span> mlai</a></code></pre></div>
-<div class="sourceCode" id="cb101"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb101-1" data-line-number="1">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_figsize)</a>
-<a class="sourceLine" id="cb101-2" data-line-number="2"><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</a>
-<a class="sourceLine" id="cb101-3" data-line-number="3">    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(i):</a>
-<a class="sourceLine" id="cb101-4" data-line-number="4">        dims<span class="op">=</span>[i, j]</a>
-<a class="sourceLine" id="cb101-5" data-line-number="5">        ax.cla()</a>
-<a class="sourceLine" id="cb101-6" data-line-number="6">        <span class="cf">for</span> d <span class="kw">in</span> digits:</a>
-<a class="sourceLine" id="cb101-7" data-line-number="7">            ax.plot(m.obslayer.X.mean[labels<span class="op">==</span>d,dims[<span class="dv">0</span>]],</a>
-<a class="sourceLine" id="cb101-8" data-line-number="8">                 m.obslayer.X.mean[labels<span class="op">==</span>d,dims[<span class="dv">1</span>]],</a>
-<a class="sourceLine" id="cb101-9" data-line-number="9">                 <span class="st">&#39;.&#39;</span>, label<span class="op">=</span><span class="bu">str</span>(d))</a>
-<a class="sourceLine" id="cb101-10" data-line-number="10">        plt.legend()</a>
-<a class="sourceLine" id="cb101-11" data-line-number="11">        plt.xlabel(<span class="st">&#39;dimension &#39;</span> <span class="op">+</span> <span class="bu">str</span>(dims[<span class="dv">0</span>]))</a>
-<a class="sourceLine" id="cb101-12" data-line-number="12">        plt.ylabel(<span class="st">&#39;dimension &#39;</span> <span class="op">+</span> <span class="bu">str</span>(dims[<span class="dv">1</span>]))</a>
-<a class="sourceLine" id="cb101-13" data-line-number="13">        mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&quot;../slides/diagrams/deepgp/usps-digits-hidden-&quot;</span> <span class="op">+</span> <span class="bu">str</span>(dims[<span class="dv">0</span>]) <span class="op">+</span> <span class="st">&#39;-&#39;</span> <span class="op">+</span> <span class="bu">str</span>(dims[<span class="dv">1</span>]) <span class="op">+</span> <span class="st">&#39;.svg&#39;</span>, transparent<span class="op">=</span><span class="va">True</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb88-1" data-line-number="1">m.obslayer.kern.lengthscale</a></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb89-1" data-line-number="1"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</a>
+<a class="sourceLine" id="cb89-2" data-line-number="2"><span class="im">import</span> mlai</a></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb90-1" data-line-number="1">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_figsize)</a>
+<a class="sourceLine" id="cb90-2" data-line-number="2"><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</a>
+<a class="sourceLine" id="cb90-3" data-line-number="3">    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(i):</a>
+<a class="sourceLine" id="cb90-4" data-line-number="4">        dims<span class="op">=</span>[i, j]</a>
+<a class="sourceLine" id="cb90-5" data-line-number="5">        ax.cla()</a>
+<a class="sourceLine" id="cb90-6" data-line-number="6">        <span class="cf">for</span> d <span class="kw">in</span> digits:</a>
+<a class="sourceLine" id="cb90-7" data-line-number="7">            ax.plot(m.obslayer.X.mean[labels<span class="op">==</span>d,dims[<span class="dv">0</span>]],</a>
+<a class="sourceLine" id="cb90-8" data-line-number="8">                 m.obslayer.X.mean[labels<span class="op">==</span>d,dims[<span class="dv">1</span>]],</a>
+<a class="sourceLine" id="cb90-9" data-line-number="9">                 <span class="st">&#39;.&#39;</span>, label<span class="op">=</span><span class="bu">str</span>(d))</a>
+<a class="sourceLine" id="cb90-10" data-line-number="10">        plt.legend()</a>
+<a class="sourceLine" id="cb90-11" data-line-number="11">        plt.xlabel(<span class="st">&#39;dimension &#39;</span> <span class="op">+</span> <span class="bu">str</span>(dims[<span class="dv">0</span>]))</a>
+<a class="sourceLine" id="cb90-12" data-line-number="12">        plt.ylabel(<span class="st">&#39;dimension &#39;</span> <span class="op">+</span> <span class="bu">str</span>(dims[<span class="dv">1</span>]))</a>
+<a class="sourceLine" id="cb90-13" data-line-number="13">        mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&quot;../slides/diagrams/deepgp/usps-digits-hidden-&quot;</span> <span class="op">+</span> <span class="bu">str</span>(dims[<span class="dv">0</span>]) <span class="op">+</span> <span class="st">&#39;-&#39;</span> <span class="op">+</span> <span class="bu">str</span>(dims[<span class="dv">1</span>]) <span class="op">+</span> <span class="st">&#39;.svg&#39;</span>, transparent<span class="op">=</span><span class="va">True</span>)</a></code></pre></div>
 <div class="figure">
 <div id="usps-digits-hidden-1-0-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/usps-digits-hidden-1-0.svg" width="60%" style=" ">
@@ -1537,26 +1383,26 @@ _ = m_clean.optimize()</code></pre>
 </div>
 <h2 id="generate-from-model">Generate From Model</h2>
 <p>Now we can take a look at a sample from the model, by drawing a Gaussian random sample in the latent space and propagating it through the model.</p>
-<div class="sourceCode" id="cb102"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb102-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb102-2" data-line-number="2">rows <span class="op">=</span> <span class="dv">10</span></a>
-<a class="sourceLine" id="cb102-3" data-line-number="3">cols <span class="op">=</span> <span class="dv">20</span></a>
-<a class="sourceLine" id="cb102-4" data-line-number="4">t<span class="op">=</span>np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, rows<span class="op">*</span>cols)[:, <span class="va">None</span>]</a>
-<a class="sourceLine" id="cb102-5" data-line-number="5">kern <span class="op">=</span> GPy.kern.RBF(<span class="dv">1</span>,lengthscale<span class="op">=</span><span class="fl">0.05</span>)</a>
-<a class="sourceLine" id="cb102-6" data-line-number="6">cov <span class="op">=</span> kern.K(t, t)</a>
-<a class="sourceLine" id="cb102-7" data-line-number="7">x <span class="op">=</span> np.random.multivariate_normal(np.zeros(rows<span class="op">*</span>cols), cov, num_latent).T</a></code></pre></div>
-<div class="sourceCode" id="cb103"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb103-1" data-line-number="1"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</a>
-<a class="sourceLine" id="cb103-2" data-line-number="2"><span class="im">import</span> mlai</a></code></pre></div>
-<div class="sourceCode" id="cb104"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb104-1" data-line-number="1">yt <span class="op">=</span> m.predict(x)</a>
-<a class="sourceLine" id="cb104-2" data-line-number="2">fig, axs <span class="op">=</span> plt.subplots(rows,cols,figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">6</span>))</a>
-<a class="sourceLine" id="cb104-3" data-line-number="3"><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(rows):</a>
-<a class="sourceLine" id="cb104-4" data-line-number="4">    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(cols):</a>
-<a class="sourceLine" id="cb104-5" data-line-number="5">        <span class="co">#v = np.random.normal(loc=yt[0][i*cols+j, :], scale=np.sqrt(yt[1][i*cols+j, :]))</span></a>
-<a class="sourceLine" id="cb104-6" data-line-number="6">        v <span class="op">=</span> yt[<span class="dv">0</span>][i<span class="op">*</span>cols<span class="op">+</span>j, :]</a>
-<a class="sourceLine" id="cb104-7" data-line-number="7">        axs[i,j].imshow(v.reshape(<span class="dv">28</span>,<span class="dv">28</span>), </a>
-<a class="sourceLine" id="cb104-8" data-line-number="8">                        cmap<span class="op">=</span><span class="st">&#39;gray&#39;</span>, interpolation<span class="op">=</span><span class="st">&#39;none&#39;</span>,</a>
-<a class="sourceLine" id="cb104-9" data-line-number="9">                        aspect<span class="op">=</span><span class="st">&#39;equal&#39;</span>)</a>
-<a class="sourceLine" id="cb104-10" data-line-number="10">        axs[i,j].set_axis_off()</a>
-<a class="sourceLine" id="cb104-11" data-line-number="11">mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&quot;../slides/diagrams/deepgp/digit-samples-deep-gp.svg&quot;</span>, transparent<span class="op">=</span><span class="va">True</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb91-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb91-2" data-line-number="2">rows <span class="op">=</span> <span class="dv">10</span></a>
+<a class="sourceLine" id="cb91-3" data-line-number="3">cols <span class="op">=</span> <span class="dv">20</span></a>
+<a class="sourceLine" id="cb91-4" data-line-number="4">t<span class="op">=</span>np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, rows<span class="op">*</span>cols)[:, <span class="va">None</span>]</a>
+<a class="sourceLine" id="cb91-5" data-line-number="5">kern <span class="op">=</span> GPy.kern.RBF(<span class="dv">1</span>,lengthscale<span class="op">=</span><span class="fl">0.05</span>)</a>
+<a class="sourceLine" id="cb91-6" data-line-number="6">cov <span class="op">=</span> kern.K(t, t)</a>
+<a class="sourceLine" id="cb91-7" data-line-number="7">x <span class="op">=</span> np.random.multivariate_normal(np.zeros(rows<span class="op">*</span>cols), cov, num_latent).T</a></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb92-1" data-line-number="1"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</a>
+<a class="sourceLine" id="cb92-2" data-line-number="2"><span class="im">import</span> mlai</a></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb93-1" data-line-number="1">yt <span class="op">=</span> m.predict(x)</a>
+<a class="sourceLine" id="cb93-2" data-line-number="2">fig, axs <span class="op">=</span> plt.subplots(rows,cols,figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">6</span>))</a>
+<a class="sourceLine" id="cb93-3" data-line-number="3"><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(rows):</a>
+<a class="sourceLine" id="cb93-4" data-line-number="4">    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(cols):</a>
+<a class="sourceLine" id="cb93-5" data-line-number="5">        <span class="co">#v = np.random.normal(loc=yt[0][i*cols+j, :], scale=np.sqrt(yt[1][i*cols+j, :]))</span></a>
+<a class="sourceLine" id="cb93-6" data-line-number="6">        v <span class="op">=</span> yt[<span class="dv">0</span>][i<span class="op">*</span>cols<span class="op">+</span>j, :]</a>
+<a class="sourceLine" id="cb93-7" data-line-number="7">        axs[i,j].imshow(v.reshape(<span class="dv">28</span>,<span class="dv">28</span>), </a>
+<a class="sourceLine" id="cb93-8" data-line-number="8">                        cmap<span class="op">=</span><span class="st">&#39;gray&#39;</span>, interpolation<span class="op">=</span><span class="st">&#39;none&#39;</span>,</a>
+<a class="sourceLine" id="cb93-9" data-line-number="9">                        aspect<span class="op">=</span><span class="st">&#39;equal&#39;</span>)</a>
+<a class="sourceLine" id="cb93-10" data-line-number="10">        axs[i,j].set_axis_off()</a>
+<a class="sourceLine" id="cb93-11" data-line-number="11">mlai.write_figure(figure<span class="op">=</span>fig, filename<span class="op">=</span><span class="st">&quot;../slides/diagrams/deepgp/digit-samples-deep-gp.svg&quot;</span>, transparent<span class="op">=</span><span class="va">True</span>)</a></code></pre></div>
 <div class="figure">
 <div id="digit-samples-deep-gp-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/digit-samples-deep-gp.svg" width="80%" style=" ">
@@ -1585,6 +1431,9 @@ _ = m_clean.optimize()</code></pre>
 <p>From a machine learning perspective, we’d like to be able to interrelate all the different modalities that are informative about the state of the disease. For deep health, the notion is that the state of the disease is appearing at the more abstract levels, as we descend the model, we express relationships between the more abstract concept, that sits within the physician’s mind, and the data we can measure.</p>
 <h1 id="references" class="unnumbered">References</h1>
 <div id="refs" class="references">
+<div id="ref-Bui:deep16">
+<p>Bui, Thang, Daniel Hernandez-Lobato, Jose Hernandez-Lobato, Yingzhen Li, and Richard Turner. 2016. “Deep Gaussian Processes for Regression Using Approximate Expectation Propagation.” In <em>Proceedings of the 33rd International Conference on Machine Learning</em>, edited by Maria Florina Balcan and Kilian Q. Weinberger, 48:1472–81. Proceedings of Machine Learning Research. New York, New York, USA: PMLR. <a href="http://proceedings.mlr.press/v48/bui16.html" class="uri">http://proceedings.mlr.press/v48/bui16.html</a>.</p>
+</div>
 <div id="ref-Cho:deep09">
 <p>Cho, Youngmin, and Lawrence K. Saul. 2009. “Kernel Methods for Deep Learning.” In <em>Advances in Neural Information Processing Systems 22</em>, edited by Y. Bengio, D. Schuurmans, J. D. Lafferty, C. K. I. Williams, and A. Culotta, 342–50. Curran Associates, Inc. <a href="http://papers.nips.cc/paper/3628-kernel-methods-for-deep-learning.pdf" class="uri">http://papers.nips.cc/paper/3628-kernel-methods-for-deep-learning.pdf</a>.</p>
 </div>
@@ -1603,8 +1452,14 @@ _ = m_clean.optimize()</code></pre>
 <div id="ref-Duvenaud:pathologies14">
 <p>Duvenaud, David, Oren Rippel, Ryan Adams, and Zoubin Ghahramani. 2014. “Avoiding Pathologies in Very Deep Networks.” In.</p>
 </div>
+<div id="ref-Havasi:deepgp18">
+<p>Havasi, Marton, José Miguel Hernández-Lobato, and Juan José Murillo-Fuentes. 2018. “Inference in Deep Gaussian Processes Using Stochastic Gradient Hamiltonian Monte Carlo.” In <em>Advances in Neural Information Processing Systems 31</em>, edited by S. Bengio, H. Wallach, H. Larochelle, K. Grauman, N. Cesa-Bianchi, and R. Garnett, 7506–16. Curran Associates, Inc. <a href="http://papers.nips.cc/paper/7979-inference-in-deep-gaussian-processes-using-stochastic-gradient-hamiltonian-monte-carlo.pdf" class="uri">http://papers.nips.cc/paper/7979-inference-in-deep-gaussian-processes-using-stochastic-gradient-hamiltonian-monte-carlo.pdf</a>.</p>
+</div>
 <div id="ref-Kalaitzis:simple11">
 <p>Kalaitzis, Alfredo A., and Neil D. Lawrence. 2011. “A Simple Approach to Ranking Differentially Expressed Gene Expression Time Courses Through Gaussian Process Regression.” <em>BMC Bioinformatics</em> 12 (180). <a href="https://doi.org/10.1186/1471-2105-12-180" class="uri">https://doi.org/10.1186/1471-2105-12-180</a>.</p>
+</div>
+<div id="ref-Lawrence:hgplvm07">
+<p>Lawrence, Neil D., and Andrew J. Moore. 2007. “Hierarchical Gaussian Process Latent Variable Models.” In, 481–88.</p>
 </div>
 <div id="ref-MacKay:gpintroduction98">
 <p>MacKay, David J. C. n.d. “Introduction to Gaussian Processes.” In, 133–66.</p>

@@ -621,32 +621,33 @@ p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mappingFu
 <section id="standard-variational-approach-fails-1" class="slide level3">
 <h3>Standard Variational Approach Fails</h3>
 <ul>
-<li><p>Requires expectation of <span class="math inline">\(\log p(\dataVector|\latentMatrix)\)</span> under <span class="math inline">\(q(\latentMatrix)\)</span>. <span class="math display">\[
-\log p(\dataVector|\latentMatrix) = -\frac{1}{2}\dataVector^\top\left(\kernelMatrix_{\mappingFunctionVector, \mappingFunctionVector}+\dataStd^2\eye\right)^{-1}\dataVector -\frac{1}{2}\log \det{\kernelMatrix_{\mappingFunctionVector, \mappingFunctionVector}+\dataStd^2 \eye} -\frac{\numData}{2}\log 2\pi
-\]</span></p></li>
-<li><p>Extremely difficult to compute because <span class="math inline">\(\kernelMatrix_{\mappingFunctionVector, \mappingFunctionVector}\)</span> is dependent on <span class="math inline">\(\latentMatrix\)</span> and appears in the inverse.</p></li>
+<li>Requires expectation of <span class="math inline">\(\log p(\dataVector|\latentMatrix)\)</span> under <span class="math inline">\(q(\latentMatrix)\)</span>. <span class="math display">\[
+\begin{align}
+\log p(\dataVector|\latentMatrix) = &amp; -\frac{1}{2}\dataVector^\top\left(\kernelMatrix_{\mappingFunctionVector, \mappingFunctionVector}+\dataStd^2\eye\right)^{-1}\dataVector \\ &amp; -\frac{1}{2}\log \det{\kernelMatrix_{\mappingFunctionVector, \mappingFunctionVector}+\dataStd^2 \eye} -\frac{\numData}{2}\log 2\pi
+\end{align}
+\]</span> <span class="math inline">\(\kernelMatrix_{\mappingFunctionVector, \mappingFunctionVector}\)</span> is dependent on <span class="math inline">\(\latentMatrix\)</span> and it appears in the inverse.</li>
 </ul>
 </section>
 <section id="variational-bayesian-gp-lvm" class="slide level3">
 <h3>Variational Bayesian GP-LVM</h3>
 <ul>
-<li>Consider collapsed variational bound, <span class="math display">\[
+<li>Consider collapsed variational bound, <span class="fragment" data-fragment-index="1"><small><span class="math display">\[
   p(\dataVector)\geq \prod_{i=1}^\numData c_i \int \gaussianDist{\dataVector}{\expSamp{\mappingFunctionVector}}{\dataStd^2\eye}p(\inducingVector) \text{d}\inducingVector
-\]</span> <span class="math display">\[
+\]</span></small></span> <span class="fragment" data-fragment-index="2"><small><span class="math display">\[
   p(\dataVector|\latentMatrix )\geq \prod_{i=1}^\numData c_i \int \gaussianDist{\dataVector}{\expDist{\mappingFunctionVector}{p(\mappingFunctionVector|\inducingVector, \latentMatrix)}}{\dataStd^2\eye}p(\inducingVector) \text{d}\inducingVector
-\]</span> <span class="math display">\[
+\]</span></small></span> <span class="fragment" data-fragment-index="3"><small><span class="math display">\[
     \int p(\dataVector|\latentMatrix)p(\latentMatrix) \text{d}\latentMatrix \geq \int \prod_{i=1}^\numData c_i \gaussianDist{\dataVector}{\expDist{\mappingFunctionVector}{p(\mappingFunctionVector|\inducingVector, \latentMatrix)}}{\dataStd^2\eye} p(\latentMatrix)\text{d}\latentMatrix p(\inducingVector) \text{d}\inducingVector
-\]</span></li>
+\]</span></small></span></li>
 </ul>
 </section>
 <section id="variational-bayesian-gp-lvm-1" class="slide level3">
 <h3>Variational Bayesian GP-LVM</h3>
 <ul>
-<li>Apply variational lower bound to the inner integral. <span class="math display">\[
-\begin{align}
-          \int \prod_{i=1}^\numData c_i \gaussianDist{\dataVector}{\expDist{\mappingFunctionVector}{p(\mappingFunctionVector|\inducingVector, \latentMatrix)}}{\dataStd^2\eye}&amp; p(\latentMatrix)\text{d}\latentMatrix\\ \geq &amp; \expDist{\sum_{i=1}^\numData\log  c_i}{q(\latentMatrix)}\\&amp; +\expDist{\log\gaussianDist{\dataVector}{\expDist{\mappingFunctionVector}{p(\mappingFunctionVector|\inducingVector, \latentMatrix)}}{\dataStd^2\eye}}{q(\latentMatrix)}\\&amp; + \KL{q(\latentMatrix)}{p(\latentMatrix)}    
-          \end{align}
-\]</span></li>
+<li>Apply variational lower bound to the inner integral. <small><span class="math display">\[
+  \begin{align}
+  \int &amp; \prod_{i=1}^\numData c_i \gaussianDist{\dataVector}{\expDist{\mappingFunctionVector}{p(\mappingFunctionVector|\inducingVector, \latentMatrix)}}{\dataStd^2\eye} p(\latentMatrix)\text{d}\latentMatrix\\ \geq &amp; \expDist{\sum_{i=1}^\numData\log  c_i}{q(\latentMatrix)}\\&amp; +\expDist{\log\gaussianDist{\dataVector}{\expDist{\mappingFunctionVector}{p(\mappingFunctionVector|\inducingVector, \latentMatrix)}}{\dataStd^2\eye}}{q(\latentMatrix)}\\&amp; + \KL{q(\latentMatrix)}{p(\latentMatrix)}    
+  \end{align}
+\]</span></small></li>
 <li>Which is analytically tractable for Gaussian <span class="math inline">\(q(\latentMatrix)\)</span> and some covariance functions.</li>
 </ul>
 </section>
@@ -660,6 +661,14 @@ p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mappingFu
 <h3>Required Expectations</h3>
 <ul>
 <li>This requires the expectations <span class="math display">\[\expDist{\kernelMatrix_{\mappingFunctionVector,\inducingVector}}{q(\latentMatrix)}\]</span> and <span class="math display">\[\expDist{\kernelMatrix_{\mappingFunctionVector,\inducingVector}\kernelMatrix_{\inducingVector,\inducingVector}^{-1}\kernelMatrix_{\inducingVector,\mappingFunctionVector}}{q(\latentMatrix)}\]</span> which can be computed analytically for some covariance functions <span class="citation" data-cites="Damianou:variational15">(Damianou et al., 2016)</span> or through sampling <span class="citation" data-cites="Damianou:thesis2015 Salimbeni:doubly2017">(Damianou, 2015; Salimbeni and Deisenroth, 2017)</span>.</li>
+</ul>
+</section>
+<section id="see-also" class="slide level3">
+<h3>See also …</h3>
+<ul>
+<li>MAP approach <span class="citation" data-cites="Lawrence:hgplvm07">(Lawrence and Moore, 2007)</span>.</li>
+<li>Hamiltonian Monte Carlo approach <span class="citation" data-cites="Havasi:deepgp18">(Havasi et al., 2018)</span>.</li>
+<li>Expectation Propagation approach <span class="citation" data-cites="Bui:deep16">(Bui et al., 2016)</span>.</li>
 </ul>
 </section>
 <section id="deep-gaussian-processes-1" class="slide level3">
@@ -1074,18 +1083,6 @@ showDivs(0, 'stack-gp-sample');
 <h3>Step Function Data Latent 4</h3>
 <object class="svgplot " data="../slides/diagrams/deepgp/step-function-deep-gp-layer-3.svg" width style=" ">
 </object>
-<div class="figure">
-<div id="step-function-deep-gp-mappings-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/deepgp/step-function-deep-gp-layer-0.svg" width="60%" style=" ">
-</object>
-<object class="svgplot " data="../slides/diagrams/deepgp/step-function-deep-gp-layer-1.svg" width="60%" style=" ">
-</object>
-<object class="svgplot " data="../slides/diagrams/deepgp/step-function-deep-gp-layer-2.svg" width="60%" style=" ">
-</object>
-<object class="svgplot " data="../slides/diagrams/deepgp/step-function-deep-gp-layer-3.svg" width="60%" style=" ">
-</object>
-</div>
-</div>
 </section>
 <section id="step-function-pinball-plot" class="slide level3">
 <h3>Step Function Pinball Plot</h3>
@@ -1155,64 +1152,6 @@ showDivs(0, 'stack-gp-sample');
 <div class="figure">
 <div id="motorcycle-helmet-deep-gp-pinball-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/deepgp/motorcycle-helmet-deep-gp-pinball.svg" width="60%" style=" ">
-</object>
-</div>
-</div>
-</section>
-<section id="robot-wireless-ground-truth" class="slide level3">
-<h3>Robot Wireless Ground Truth</h3>
-<div class="figure">
-<div id="robot-wireless-ground-truth-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/datasets/robot-wireless-ground-truth.svg" width="60%" style=" ">
-</object>
-</div>
-</div>
-</section>
-<section id="robot-wifi-data" class="slide level3">
-<h3>Robot WiFi Data</h3>
-<div class="figure">
-<div id="robot-wireless-data-dim-1-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/datasets/robot-wireless-dim-1.svg" width="60%" style=" ">
-</object>
-</div>
-</div>
-</section>
-<section id="robot-wifi-data-gp" class="slide level3">
-<h3>Robot WiFi Data GP</h3>
-<div class="figure">
-<div id="-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/gp/robot-wireless-gp-dim-1.svg" width="80%" style=" ">
-</object>
-</div>
-</div>
-<p>}{Gaussian process fit to the Robot Wireless dimension 1.}{robot-wireless-gp-dim-1}</p>
-</section>
-<section id="robot-wifi-data-deep-gp" class="slide level3">
-<h3>Robot WiFi Data Deep GP</h3>
-<div class="figure">
-<div id="robot-wireless-deep-gp-dim-1-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/deepgp/robot-wireless-deep-gp-dim-1.svg" width="80%" style=" ">
-</object>
-</div>
-</div>
-</section>
-<section id="robot-wifi-data-deep-gp-1" class="slide level3">
-<h3>Robot WiFi Data Deep GP</h3>
-<div class="figure">
-<div id="robot-wireless-deep-gp-samples-dim-1-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/deepgp/robot-wireless-deep-gp-samples-dim-1.svg" width="80%" style=" ">
-</object>
-</div>
-</div>
-</section>
-<section id="robot-wifi-data-latent-space" class="slide level3">
-<h3>Robot WiFi Data Latent Space</h3>
-<object class="svgplot " data="../slides/diagrams/deepgp/robot-wireless-ground-truth.svg" width style=" ">
-</object>
-<p>}</p>
-<div class="figure">
-<div id="robot-wireless-latent-space-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/deepgp/robot-wireless-latent-space.svg" width="60%" style=" ">
 </object>
 </div>
 </div>
@@ -1323,6 +1262,9 @@ showDivs(0, 'stack-gp-sample');
 <div id="ref-Bengio:deep09">
 <p>Bengio, Y., 2009. Learning Deep Architectures for AI. Found. Trends Mach. Learn. 2, 1–127. <a href="https://doi.org/10.1561/2200000006" class="uri">https://doi.org/10.1561/2200000006</a></p>
 </div>
+<div id="ref-Bui:deep16">
+<p>Bui, T., Hernandez-Lobato, D., Hernandez-Lobato, J., Li, Y., Turner, R., 2016. Deep Gaussian processes for regression using approximate expectation propagation, in: Balcan, M.F., Weinberger, K.Q. (Eds.), Proceedings of the 33rd International Conference on Machine Learning, Proceedings of Machine Learning Research. PMLR, New York, New York, USA, pp. 1472–1481.</p>
+</div>
 <div id="ref-Damianou:thesis2015">
 <p>Damianou, A., 2015. Deep Gaussian processes and variational propagation of uncertainty (PhD thesis). University of Sheffield.</p>
 </div>
@@ -1338,11 +1280,17 @@ showDivs(0, 'stack-gp-sample');
 <div id="ref-Duvenaud:pathologies14">
 <p>Duvenaud, D., Rippel, O., Adams, R., Ghahramani, Z., 2014. Avoiding pathologies in very deep networks, in:.</p>
 </div>
+<div id="ref-Havasi:deepgp18">
+<p>Havasi, M., Hernández-Lobato, J.M., Murillo-Fuentes, J.J., 2018. Inference in deep Gaussian processes using stochastic gradient Hamiltonian Monte Carlo, in: Bengio, S., Wallach, H., Larochelle, H., Grauman, K., Cesa-Bianchi, N., Garnett, R. (Eds.), Advances in Neural Information Processing Systems 31. Curran Associates, Inc., pp. 7506–7516.</p>
+</div>
 <div id="ref-Hinton:fast06">
 <p>Hinton, G.E., Osindero, S., 2006. A fast learning algorithm for deep belief nets. Neural Computation 18, 2006.</p>
 </div>
 <div id="ref-Kalaitzis:simple11">
 <p>Kalaitzis, A.A., Lawrence, N.D., 2011. A simple approach to ranking differentially expressed gene expression time courses through Gaussian process regression. BMC Bioinformatics 12. <a href="https://doi.org/10.1186/1471-2105-12-180" class="uri">https://doi.org/10.1186/1471-2105-12-180</a></p>
+</div>
+<div id="ref-Lawrence:hgplvm07">
+<p>Lawrence, N.D., Moore, A.J., 2007. Hierarchical Gaussian process latent variable models, in:. pp. 481–488.</p>
 </div>
 <div id="ref-MacKay:gpintroduction98">
 <p>MacKay, D.J.C., n.d. Introduction to Gaussian processes, in:. pp. 133–166.</p>

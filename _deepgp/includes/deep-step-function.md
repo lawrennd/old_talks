@@ -76,10 +76,11 @@ mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/step-function-
 
 \slides{\includediagram{../slides/diagrams/deepgp/step-function-deep-gp-layer-3}}
 
+\notes{
 \figure{\includediagram{../slides/diagrams/deepgp/step-function-deep-gp-layer-0}{60%} 
 \includediagram{../slides/diagrams/deepgp/step-function-deep-gp-layer-1}{60%}
 \includediagram{../slides/diagrams/deepgp/step-function-deep-gp-layer-2}{60%}
-\includediagram{../slides/diagrams/deepgp/step-function-deep-gp-layer-3}{60%}}{From top to bottom, the Gaussian process mapping function that makes up each layer of the resulting deep Gaussian process.}{step-function-deep-gp-mappings}
+\includediagram{../slides/diagrams/deepgp/step-function-deep-gp-layer-3}{60%}}{From top to bottom, the Gaussian process mapping function that makes up each layer of the resulting deep Gaussian process.}{step-function-deep-gp-mappings}}
 
 \newslide{Step Function Pinball Plot}
 
