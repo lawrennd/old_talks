@@ -52,6 +52,8 @@
 \define{\smalltext{block}}{\block}
 \define{\small{block}}{\block}
 
+\define{\slidesmall{block}}{\block}
+
 \define{\includempfour{filename}{width}{height}}{\media{\filename}}
 
 

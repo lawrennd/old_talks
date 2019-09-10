@@ -10,21 +10,21 @@ author: Neil D. Lawrence
 
 <!--Introduction-->
 
-\include{../_deepgp/includes/deep_nn_gp.md}
-\include{../_gp/includes/gp_extremely_short.md}
+\include{_deepgp/includes/deep_nn_gp.md}
+\include{_gp/includes/gp_extremely_short.md}
 
 \newcommand{\hiddenScalar}{f}
 \newcommand{\latentScalar}{x}
 
 <!--Deep Gaussian Process Models-->
 
-\include{../_deepgp/includes/deeptheory.md}
-\include{../_gp/includes/gp-variational-complexity.md}
+\include{_deepgp/includes/deeptheory.md}
+\include{_gp/includes/gp-variational-complexity.md}
 
 <!--Parametric Bottleneck-->
 
-\include{../_gp/includes/bottleneck.md}
-\include{../_gp/includes/low-rank-motivation.md}
+\include{_gp/includes/bottleneck.md}
+\include{_gp/includes/low-rank-motivation.md}
 
 ### Information capture
 
@@ -40,9 +40,9 @@ $\mappingFunctionVector$]
 The posterior of $\mappingFunctionVector$ is the central object. This
 means inverting $\Kff$.
 
-\include{../_gp/includes/nystrom.md}
-\include{../_gp/includes/inducing-notation.md}
-\include{../_gp/includes/inducing-introduction.md}
+\include{_gp/includes/nystrom.md}
+\include{_gp/includes/inducing-notation.md}
+\include{_gp/includes/inducing-introduction.md}
 
 ### The alternative posterior
 
@@ -55,9 +55,9 @@ $$p(\inducingVector\given\dataVector,\inducingInputMatrix) = \frac{p(\dataVector
 
 <!--Flexible Parametric Approximation-->
 
-\include{../_gp/includes/larger_graph_intro.md}
-\include{../_gp/includes/larger_variational.md}
-\include{../_gp/includes/larger_factorize.md}
+\include{_gp/includes/larger-graph-intro.md}
+\include{_gp/includes/larger-variational.md}
+\include{_gp/includes/larger-factorize.md}
 
 
 ###
@@ -67,52 +67,52 @@ $$\dataVector|\mappingFunctionVector = \prod_{i} \gaussianSamp{\mappingFunction}
 
 <!--Variational Compression-->
 
-\include{../_gp/includes/variational_compression.md}
-\include{../_gp/includes/low_rank_variational.md}
-\include{../_gplvm/includes/bayes_gplvm_intro.md}
-\include{../_gplvm/includes/variational_bayes_gplvm_long.md}
-\include{../_gplvm/includes/nested_variational_compression.md}
-\include{../_gp/includes/larger_gaussian.md}
+\include{_gp/includes/variational-compression.md}
+\include{_gp/includes/low-rank-variational.md}
+\include{_gplvm/includes/bayes-gplvm-intro.md}
+\include{_gplvm/includes/variational-bayes-gplvm-long.md}
+\include{_gplvm/includes/nested-variational-compression.md}
+\include{_gp/includes/larger-gaussian.md}
 
 <!--Bayesian GP-LVM-->
 
 
-\include{../_gplvm/includes/ard_gplvm.md}
-\include{../_gplvm/includes/bayes_gplvm_intro.md}
-\include{../_gplvm/includes/variational_bayes_gplvm_long.md}
+\include{_gplvm/includes/ard-gplvm.md}
+\include{_gplvm/includes/bayes-gplvm-intro.md}
+\include{_gplvm/includes/variational-bayes-gplvm-long.md}
 
-\include{../_gp/includes/gp_big_data_technical.md}
-\include{../_gp/includes/gp_big_data.md}
+\include{_gp/includes/gp-big-data-technical.md}
+\include{_gp/includes/gp-big-data.md}
 
-\include{../_deepgp/includes/deep_gps.md}
+\include{_deepgp/includes/deep-gps.md}
 
-\include{../_deepgp/includes/deep-step-function.md}
-\include{../_deepgp/includes/deep-loop-detection.md}
+\include{_deepgp/includes/deep-step-function.md}
+\include{_deepgp/includes/deep-loop-detection.md}
 
 \newcommand{\latentScalar}{f}
 
-\include{../_health/includes/deep-health-model.md}
+\include{_health/includes/deep-health-model.md}
 
 
 <!--Conclusions-->
 
-\include{../_gplvm/includes/ard_model.md}
-\include{../_gplvm/includes/ard_results.md}
+\include{_gplvm/includes/ard_model.md}
+\include{_gplvm/includes/ard_results.md}
 
 <!--Gaussian Process Dynamical Systems-->
 
-\include{../_gplvm/includes/gpds.md}
+\include{_gplvm/includes/gpds.md}
 
 <!--Shared GP-LVM-->
 
-\include{../_gplvm/includes/mrd_gplvm.md}
-\include{../_deepgp/includes/stack-gp-intro.md}
-\include{../_deepgp/includes/stacked-pca.md}
-\include{../_deepgp/includes/stacked-gp.md}
-\include{../_deepgp/includes/deep-pathologies.md}
-\include{../_deepgp/includes/deep-results.md}
+\include{_gplvm/includes/mrd-gplvm.md}
+\include{_deepgp/includes/stack-gp-intro.md}
+\include{_deepgp/includes/stacked-pca.md}
+\include{_deepgp/includes/stacked-gp.md}
+\include{_deepgp/includes/deep-pathologies.md}
+\include{_deepgp/includes/deep-results.md}
 
-### What Can We Do that Google Can’t?
+\section{What Can We Do that Google Can’t?}
 
 -   Google’s resources give them access to volumes of data (or Facebook,
     or Microsoft, or Amazon).
@@ -128,13 +128,10 @@ $$\dataVector|\mappingFunctionVector = \prod_{i} \gaussianSamp{\mappingFunction}
 
 -   These methodologies are part of that picture.
 
-\include{../_health/includes/deep_health_model.md}
-\include{../_health/includes/deep_health_rangers.md}
+\include{_health/includes/deep-health-model.md}
+\include{_health/includes/deep-health-rangers.md}
 
-Summary
--------
-
-### Summary {#summary}
+\section{Summary}
 
 -   Deep Gaussian Processes allow unsupervised and supervised deep
     learning.
@@ -146,15 +143,7 @@ Summary
 -   Variational compression algorithms show promise for scaling these
     models to *massive* data sets.
 
-### References {.allowframebreaks data-background="../slides/diagrams/pres_bg.png"}
+\references
 
 
-\bibliographystyle{pdf_abbrvnat}
-\bibliography{lawrence,other,zbooks}
-  
-
-
-### Thanks!
-
-* twitter: @lawrennd
-* blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
+\thanks

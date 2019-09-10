@@ -2,7 +2,7 @@
 \define{dataReadinessLevelsShort}
 \editme
 
-\newslide{}
+\subsubsection{Data Readiness Levels}
 
 \slides{
 \includepng{../slides/diagrams/data-science/data-readiness-levels}

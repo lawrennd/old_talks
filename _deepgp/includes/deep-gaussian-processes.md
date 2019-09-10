@@ -6,8 +6,6 @@
 \include{_ml/includes/deep-learning-overview.md}
 \include{_deepgp/includes/deep-theory.md}
 \include{_deepgp/includes/deep-results.md}
-
-
 \include{_health/includes/deep-health-model.md}
 
 \endif

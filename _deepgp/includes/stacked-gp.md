@@ -11,7 +11,7 @@
                             directory='../../slides/diagrams/deepgp', sample=(0,4))}
 
 \slides{
-\define{width}{20%}
+\define{width}{10%}
 \startanimation{stack-gp-sample}{0}{4}
 \newframe{\includediagram{../slides/diagrams/stack-gp-sample-0}{\width}}{stack-gp-sample}
 \newframe{\includediagram{../slides/diagrams/stack-gp-sample-1}{\width}}{stack-gp-sample}

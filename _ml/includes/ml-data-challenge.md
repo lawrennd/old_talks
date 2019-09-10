@@ -49,9 +49,6 @@ improved programming paradigms (object orientated, functional) and
 better tools (CVS, then SVN, then git).}
 
 
-
-\newslide{The Data Crisis}
-
 \include{_data-science/includes/the-data-crisis.md}
 
 \notes{Data is the new software, and the data crisis is already upon us. It is
@@ -63,7 +60,7 @@ respect to the data they’re trained on).}
 \notes{Three principal changes need to occur in response. They are cultural and
 infrastructural.}
 
-\subsubsection{The Data First Paradigm}
+\notes{\subsubsection{The Data First Paradigm}}
 
 \notes{First of all, to excel in data driven decision making we need to move
 from a *software first* paradigm to a *data first* paradigm. That means
@@ -84,7 +81,7 @@ architecture*.
 
 [^technical-debt]: This is related to challenges of machine learning and technical debt [@Sculley:debt15], although we are trying to frame the solution here rather than the problem.}
 
-\subsubsection{Data Quality}
+\notes{\subsubsection{Data Quality}}
 
 \notes{Secondly, we need to improve our language around data quality. We cannot
 assess the costs of improving data quality unless we generate a language
@@ -94,13 +91,12 @@ put.
 [^data-readiness-levels]: [Data Readiness Levels](http://inverseprobability.com/2017/01/12/data-readiness-levels) [@Lawrence:drl17] are an attempt to develop a language around data quality that can bridge the gap between technical solutions and decision makers such as managers and project planners. They are inspired by Technology Readiness Levels which attempt to quantify the readiness of technologies for deployment.
 }
 
-\subsubsection{Data Readiness Levels}
 
 \include{_data-science/includes/data-readiness-levels-short.md}
 
 \recommendation{Build a shared understanding of the language of data readiness levels for use in planning documents and costing of data cleaning and the benefits of reusing cleaned data.}
 
-\subsubsection{Move Beyond Software Engineering to Data Engineering}
+\notes{\subsubsection{Move Beyond Software Engineering to Data Engineering}}
 
 \notes{Thirdly, we need to improve our mental model of the separation of data science from applied science. A common trap in our thinking around data is to see data science (and data engineering, data preparation) as a sub-set of the software engineer’s or applied scientist’s skill set. As a result, we recruit and deploy the wrong type of resource. Data preparation and question formulation is superficially similar to both because of the need for programming skills, but the day to day problems faced are very different.}
 

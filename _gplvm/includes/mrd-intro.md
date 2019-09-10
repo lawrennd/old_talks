@@ -1,8 +1,12 @@
+\ifndef{mrdIntro}
+\define{mrdIntro}
+
+\editme
 <!--frame failure start-->
 
-  \frametitle{Manifold Relevance Determination}
+\section{Manifold Relevance Determination}
   \begin{flushright}
-    \andreasPicture{1.5cm}\\{\scriptsize \cite{Damianou:manifold12}}
+    \andreasPicture{1.5cm}\\{\scriptsize @Damianou:manifold12}
   \end{flushright}
   
     \def\layersep{2cm}
@@ -38,7 +42,7 @@
 <!--frame failure end-->
 <!--frame failure start-->
 
-\frametitle{Shared GP-LVM}
+\section{Shared GP-LVM}
     \def\layersep{2cm}
     \begin{center}
       \begin{tikzpicture}[node distance=\layersep]
@@ -75,6 +79,5 @@
 \end{center}
   
 
-
-<!--frame failure end-->
+\endif
 

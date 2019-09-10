@@ -12,7 +12,7 @@
 
 \subsection{Stacked PCA}
 \slides{
-\define{\width}{20%}
+\define{\width}{10%}
 \startanimation{stack-pca-sample}{0}{4}
 \newframe{\includediagram{../slides/diagrams/stack-pca-sample-0}{\width}}{stack-pca-sample}
 \newframe{\includediagram{../slides/diagrams/stack-pca-sample-1}{\width}}{stack-pca-sample}

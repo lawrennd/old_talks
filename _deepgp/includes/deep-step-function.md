@@ -70,7 +70,7 @@ mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/step-function-
 
 \newslide{Step Function Data Latent 3}
 
-\slides{\newslide{../slides/diagrams/deepgp/step-function-deep-gp-layer-2.svg}}
+\slides{\includediagram{../slides/diagrams/deepgp/step-function-deep-gp-layer-2}}
 
 \newslide{Step Function Data Latent 4}
 

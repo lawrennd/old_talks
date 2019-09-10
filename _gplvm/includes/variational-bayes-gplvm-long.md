@@ -2,36 +2,44 @@
 \define{variationalBayesGplvmLong}
 \editme
 
-\newslide{Standard Variational Approach Fails}
+\subsection{Standard Variational Approach Fails}
 
-- \fragmentindex{Standard variational bound has the form:
+- Standard variational bound has the form:
   $$
   \likelihoodBound = \expDist{\log p(\dataVector|\latentMatrix)}{q(\latentMatrix)} + \KL{q(\latentMatrix)}{p(\latentMatrix)}
-  $$}{1}
+  $$
 
-- \fragmentindex{Requires expectation of $\log p(\dataVector|\latentMatrix)$ under $q(\latentMatrix)$.
+\newslide{Standard Variational Approach Fails}
+
+- Requires expectation of $\log p(\dataVector|\latentMatrix)$ under $q(\latentMatrix)$.
   $$
   \log p(\dataVector|\latentMatrix) = -\frac{1}{2}\dataVector^\top\left(\kernelMatrix_{\mappingFunctionVector, \mappingFunctionVector}+\dataStd^2\eye\right)^{-1}\dataVector -\frac{1}{2}\log \det{\kernelMatrix_{\mappingFunctionVector, \mappingFunctionVector}+\dataStd^2 \eye} -\frac{\numData}{2}\log 2\pi
-  $$}{2}
+  $$
 
-- \fragmentindex{Extremely difficult to compute because $\kernelMatrix_{\mappingFunctionVector, \mappingFunctionVector}$ is dependent on $\latentMatrix$ and appears in the inverse.}{3}
+- Extremely difficult to compute because $\kernelMatrix_{\mappingFunctionVector, \mappingFunctionVector}$ is dependent on $\latentMatrix$ and appears in the inverse.
+
+\subsection{Variational Bayesian GP-LVM}
+
+- Consider collapsed variational bound, 
+  $$
+    p(\dataVector)\geq \prod_{i=1}^\numData c_i \int \gaussianDist{\dataVector}{\expSamp{\mappingFunctionVector}}{\dataStd^2\eye}p(\inducingVector) \text{d}\inducingVector
+  $$ 
+  $$
+    p(\dataVector|\latentMatrix )\geq \prod_{i=1}^\numData c_i \int \gaussianDist{\dataVector}{\expDist{\mappingFunctionVector}{p(\mappingFunctionVector|\inducingVector, \latentMatrix)}}{\dataStd^2\eye}p(\inducingVector) \text{d}\inducingVector
+  $$
+  $$
+      \int p(\dataVector|\latentMatrix)p(\latentMatrix) \text{d}\latentMatrix \geq \int \prod_{i=1}^\numData c_i \gaussianDist{\dataVector}{\expDist{\mappingFunctionVector}{p(\mappingFunctionVector|\inducingVector, \latentMatrix)}}{\dataStd^2\eye} p(\latentMatrix)\text{d}\latentMatrix p(\inducingVector) \text{d}\inducingVector
+  $$
 
 \newslide{Variational Bayesian GP-LVM}
 
--   <1->Consider collapsed variational bound, \only<1>{\[
-              p(\dataVector)\geq \prod_{i=1}^\numData c_i \int \gaussianDist{\dataVector}{\expSamp{\mappingFunctionVector}}{\dataStd^2\eye}p(\inducingVector) \text{d}\inducingVector
-              \]} \only<2>{\[
-              p(\dataVector|\latentMatrix )\geq \prod_{i=1}^\numData c_i \int \gaussianDist{\dataVector}{\expDist{\mappingFunctionVector}{p(\mappingFunctionVector|\inducingVector, \latentMatrix)}}{\dataStd^2\eye}p(\inducingVector) \text{d}\inducingVector
-              \]} \only<3->{\[
-              \int p(\dataVector|\latentMatrix)p(\latentMatrix) \text{d}\latentMatrix \geq \int \prod_{i=1}^\numData c_i \gaussianDist{\dataVector}{\expDist{\mappingFunctionVector}{p(\mappingFunctionVector|\inducingVector, \latentMatrix)}}{\dataStd^2\eye} p(\latentMatrix)\text{d}\latentMatrix p(\inducingVector) \text{d}\inducingVector   
-              \]}
-
--   <4-> Apply variational lower bound to the inner integral.
-    \only<5->{\small\begin{align*}
+-   Apply variational lower bound to the inner integral.
+    $$
+	\begin{align}
               \int \prod_{i=1}^\numData c_i \gaussianDist{\dataVector}{\expDist{\mappingFunctionVector}{p(\mappingFunctionVector|\inducingVector, \latentMatrix)}}{\dataStd^2\eye}& p(\latentMatrix)\text{d}\latentMatrix\\ \geq & \expDist{\sum_{i=1}^\numData\log  c_i}{q(\latentMatrix)}\\& +\expDist{\log\gaussianDist{\dataVector}{\expDist{\mappingFunctionVector}{p(\mappingFunctionVector|\inducingVector, \latentMatrix)}}{\dataStd^2\eye}}{q(\latentMatrix)}\\& + \KL{q(\latentMatrix)}{p(\latentMatrix)}    
-              \end{align*}}
-
--   <6-> Which is analytically tractable for Gaussian
+              \end{align}
+$$
+-  Which is analytically tractable for Gaussian
     $q(\latentMatrix)$ and some covariance functions.
 
 \newslide{Required Expectations}
@@ -41,10 +49,13 @@
     and
     $$\log \gaussianDist{\dataVector}{\expDist{\mappingFunctionVector}{p(\mappingFunctionVector|\inducingVector,\dataMatrix)}}{\dataStd^2\eye} = -\frac{1}{2}\log 2\pi\dataStd^2 - \frac{1}{2\dataStd^2}\left(\dataScalar_i - \kernelMatrix_{\mappingFunctionVector, \inducingVector}\kernelMatrix_{\inducingVector,\inducingVector}^{-1}\inducingVector\right)^2$$
 
+\newslide{Required Expectations}
+
 -   This requires the expectations
     $$\expDist{\kernelMatrix_{\mappingFunctionVector,\inducingVector}}{q(\latentMatrix)}$$
     and
     $$\expDist{\kernelMatrix_{\mappingFunctionVector,\inducingVector}\kernelMatrix_{\inducingVector,\inducingVector}^{-1}\kernelMatrix_{\inducingVector,\mappingFunctionVector}}{q(\latentMatrix)}$$
-    which can be computed analytically for some covariance functions.
+    which can be computed analytically for some covariance functions [@Damianou:variational15] or through sampling [@Damianou:thesis2015;@Salimbeni:doubly2017].
+
 \endif
 

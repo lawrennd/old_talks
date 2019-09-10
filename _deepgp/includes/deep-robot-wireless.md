@@ -40,7 +40,7 @@ mlai.write_figure(figure=fig, filename='../slides/diagrams/deepgp/robot-wireless
 
 \subsection{Robot WiFi Data Deep GP}
 
-\figure{\includediagram{../slides/diagrams/deepgp/robot-wireless-deep-gp-samples-dim-1}{80%}{Samples from the deep Gaussian process fit to dimension 1 of the robot wireless data.}{robot-wireless-deep-gp-samples-dim-1}
+\figure{\includediagram{../slides/diagrams/deepgp/robot-wireless-deep-gp-samples-dim-1}{80%}}{Samples from the deep Gaussian process fit to dimension 1 of the robot wireless data.}{robot-wireless-deep-gp-samples-dim-1}
 
 \subsection{Robot WiFi Data Latent Space}
 
