@@ -4,6 +4,10 @@
 
 \section{The Physical World: Where Bits meet Atoms}
 
+> The change from atoms to bits is irrevocable and unstoppable. Why now? Because the change is also exponential — small differences of yesterday can have suddenly shocking consequences tomorrow. 
+>
+> Nicholas Negroponte, Being Digital 1995
+
 \notes{Before I joined Amazon I was invited to speak at their annual Machine Learning Conference. It has over two thousand attendees. I met the Vice President in charge of Amazon Special Projects, Babak Parviz. He said to me, the important thing about Amazon is that it's a "bits and atoms" company, meaning it moves both stuff (atoms) and information (bits). This quote resonated with me because it maps well on to my own definition of intelligence. Moving stuff requires resource. Moving, or processing, of information to move stuff more efficiently requires intelligence. 
 
 That notion is the most fundamental notion for how the modern information infrastructure can help society. At Amazon the place where bits meet atoms is the *supply chain*. The movement of goods from manufacturer to customer, the supply chain.}
