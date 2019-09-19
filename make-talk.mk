@@ -23,6 +23,7 @@ ${BASE}.pptx: ${BASE}.slides.pptx.markdown
 	pandoc  -t pptx \
 		-o $@ $< \
 		-B ../_includes/talk-notation.tex \
+		--reference-doc ../_includes/custom-reference.potx
 		${CITEFLAGS} \
 		${SFLAGS} 
 	cp ${BASE}.pptx ../slides/${OUT}.pptx

@@ -54,9 +54,7 @@ categories:
 <li><p>AI promises to be first wave of automation that adapts to us rather than us to it.</p></li>
 </ul>
 <h2 id="that-promise">That Promise …</h2>
-<ul>
-<li>That promise will remain unfulfilled with current systems design.</li>
-</ul>
+<p>… will remain unfulfilled with current systems design.</p>
 <h2 id="artificial-vs-natural-systems-edit">Artificial vs Natural Systems <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/artificial-vs-natural-systems.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/artificial-vs-natural-systems.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Let’s take a step back from artificial intelligence, and consider natural intelligence. Or even more generally, let’s consider the contrast between an artificial <em>system</em> and an natural system. The key difference between the two is that artificial systems are <em>designed</em> whereas natural systems are <em>evolved</em>.</p>
 <p>Systems design is a major component of all Engineering disciplines. The details differ, but there is a single common theme: achieve your objective with the minimal use of resources to do the job. That provides efficiency. The engineering designer imagines a solution that requires the minimal set of components to achieve the result. A water pump has one route through the pump. That minimises the number of components needed. Redundancy is introduced only in safety critical systems, such as aircraft control systems. Students of biology, however, will be aware that in nature system-redundancy is everywhere. Redundancy leads to robustness. For an organism to survive in an evolving environment it must first be robust, then it can consider how to be efficient. Indeed, organisms that evolve to be too efficient at a particular task, like those that occupy a niche environment, are particularly vulnerable to extinction.</p>
@@ -85,6 +83,7 @@ categories:
 <p>Of course, none of this prevents us emulating those aspects of human intelligence that we observe in humans. We can form those emulations based on data. But even if an artificial intelligence can emulate humans to a high degree of accuracy it is a different type of intelligence. It is not constrained in the way human intelligence is. You may ask does it matter? Well, it is certainly important to us in many domains that there’s a human pulling the strings. Even in pure commerce it matters: the narrative story behind a product is often as important as the product itself. Handmade goods attract a price premium over factory made. Or alternatively in entertainment: people pay more to go to a live concert than for streaming music over the internet. People will also pay more to go to see a play in the theatre rather than a movie in the cinema.</p>
 <p>In many respects I object to the use of the term Artificial Intelligence. It is poorly defined and means different things to different people. But there is one way in which the term is very accurate. The term artificial is appropriate in the same way we can describe a plastic plant as an artificial plant. It is often difficult to pick out from afar whether a plant is artificial or not. A plastic plant can fulfil many of the functions of a natural plant, and plastic plants are more convenient. But they can never replace natural plants.</p>
 <p>In the same way, our natural intelligence is an evolved thing of beauty, a consequence of our limitations. Limitations which don’t apply to artificial intelligences and can only be emulated through artificial means. Our natural intelligence, just like our natural landscapes, should be treasured and can never be fully replaced.</p>
+<h2 id="technical-consequence">Technical Consequence</h2>
 <ul>
 <li><p>The gap between the game and reality.</p></li>
 <li><p>The need for extrapolation over interpolation.</p></li>
@@ -141,6 +140,75 @@ categories:
 <p>These unforseen circumstances are likely to lead to need for much more efficient turn-around and update for our intelligent systems. Whether we are correcting for security flaws (which <em>are</em> bugs) or unenvisaged circumstantial challenges: an issue I’m referring to as <em>peppercorns</em>. Rapid deployment of system updates is required. For example, Apple have “fixed” the problem of Siri returning long numbers.</p>
 <p>The challenge is particularly acute because of the <em>scale</em> at which we can deploy AI solutions. This means when something does go wrong, it may be going wrong in billions of households simultaneously.</p>
 <p>You can also check my blog post on <a href="http://inverseprobability.com/2017/11/15/decision-making">“Decision Making and Diversity”</a>. You can also check my blog post on <a href="http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence">“Natural vs Artifical Intelligence”</a>.</p>
+<h2 id="ride-sharing-service-oriented-to-data-oriented-edit">Ride Sharing: Service Oriented to Data Oriented <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/ride-sharing-soa-doa.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/ride-sharing-soa-doa.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="figure">
+<div id="ride-share-service-soa-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/data-science/ride-share-service-soa.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="ride-share-service-soa-magnify" class="magnify" onclick="magnifyFigure(&#39;ride-share-service-soa&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="ride-share-service-soa-caption" class="caption-frame">
+<p>Figure: Service oriented architecture. The data access is buried in the cost allocation service. Data dependencies of the service cannot be found without trawling through the underlying code base.</p>
+</div>
+</div>
+<p>The modern approach to software systems design is known as a <em>service-oriented architectures</em> (SOA). The idea is that software engineers are responsible for the availability and reliability of the API that accesses the service they own. Quality of service is maintained by rigorous standards around <em>testing</em> of software systems.</p>
+<div class="figure">
+<div id="ride-share-service-doa-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/data-science/ride-share-service-doa.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="ride-share-service-doa-magnify" class="magnify" onclick="magnifyFigure(&#39;ride-share-service-doa&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="ride-share-service-doa-caption" class="caption-frame">
+<p>Figure: Data oriented architecture. Now the joins and the updates are exposed within the streaming ecosystem. We can programatically determine the factor graph which gives the thread through the model.</p>
+</div>
+</div>
+<p>In data driven decision-making systems, the quality of decision-making is determined by the quality of the data. We need to extend the notion of <em>service</em>-oriented architecture to <em>data</em>-oriented architecture (DOA).</p>
+<p>The focus in SOA is eliminating <em>hard</em> failures. Hard failures can occur due to bugs or systems overload. This notion needs to be extended in ML systems to capture <em>soft failures</em> associated with declining data quality, incorrect modeling assumptions and inappropriate re-deployments of models. We need to focus on data quality assessments. In data-oriented architectures engineering teams are responsible for the <em>quality</em> of their output data streams in addition to the <em>availability</em> of the service they support <span class="citation" data-cites="Lawrence:drl17">(Lawrence 2017)</span>. Quality here is not just accuracy, but fairness and explainability. This important cultural change would be capable of addressing both the challenge of <em>technical debt</em> <span class="citation" data-cites="Sculley:debt15">(Sculley et al. 2015)</span> and the social responsibility of ML systems.</p>
+<p>Software development proceeds with a <em>test-oriented</em> culture. One where tests are written before software, and software is not incorporated in the wider system until all tests pass. We must apply the same standards of care to our ML systems, although for ML we need statistical tests for quality, fairness and consistency within the environment. Fortunately, the main burden of this testing need not fall to the engineers themselves: through leveraging <em>classical statistics</em> and <em>emulation</em> we will automate the creation and redeployment of these tests across the software ecosystem, we call this <em>ML hypervision</em> (WP5 ).</p>
+<p>Modern AI can be based on ML models with many millions of parameters, trained on very large data sets. In ML, strong emphasis is placed on <em>predictive accuracy</em> whereas sister-fields such as statistics have a strong emphasis on <em>interpretability</em>. ML models are said to be ‘black boxes’ which make decisions that are not explainable.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<div class="figure">
+<div id="ride-share-service-doa-hypothetical-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/data-science/ride-share-service-doa-hypothetical.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="ride-share-service-doa-hypothetical-magnify" class="magnify" onclick="magnifyFigure(&#39;ride-share-service-doa-hypothetical&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="ride-share-service-doa-hypothetical-caption" class="caption-frame">
+<p>Figure: Data-oriented programing. There is a requirement for an estimate of the driver allocation to give a rough cost estimate before the user has confirmed the ride. In data-oriented programming, this is achieved through declaring a hypothetical stream which approximates the true driver allocation, but with restricted input information and constraints on the computational latency.</p>
+</div>
+</div>
+<p>For the ride sharing system, we start to see a common issue with a more complex algorithmic decision-making system. Several decisions are being made multilple times. Let’s look at the decisions we need along with some design criteria.</p>
+<ol type="1">
+<li>Driver Availability: Estimate time to arrival for Anne’s ride using Anne’s location and local available car locations. Latency 50 milliseconds</li>
+<li>Cost Estimate: Estimate cost for journey using Anne’s destination, location and local available car current destinations and availability. Latency 50 milliseconds</li>
+<li>Driver Allocation: Allocate car to minimize transport cost to destination. Latency 2 seconds.</li>
+</ol>
+<p>So we need:</p>
+<ol type="1">
+<li>a hypothetical to estimate availability. It is constrained by lacking destination information and a low latency requirement.</li>
+<li>a hypothetical to estimate cost. It is constrained by low latency requirement and</li>
+</ol>
+<p>Simultaneously, drivers in this data ecosystem have an app which notifies them about new jobs and recommends them where to go.</p>
+<p>Further advantages. Strategies for data retention (when to snapshot) can be set globally.</p>
+<p>A few decisions need to be made in this system. First of all, when the user opens the app, the estimate of the time to the nearest ride may need to be computed quickly, to avoid latency in the service.</p>
+<p>This may require a quick estimate of the ride availability.</p>
+<div class="figure">
+<div id="statistical-emulation-5-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/uq/statistical-emulation004.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="statistical-emulation-5-magnify" class="magnify" onclick="magnifyFigure(&#39;statistical-emulation-5&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="statistical-emulation-5-caption" class="caption-frame">
+<p>Figure: A statistical emulator is a system that reconstructs the simulation with a statistical model. As well as reconstructing the simulation, a statistical emulator can be used to correlate with the real world.</p>
+</div>
+</div>
 <h2 id="conclusion">Conclusion</h2>
 <ul>
 <li>AI is fundamentally ML System Design</li>
@@ -149,6 +217,9 @@ categories:
 </ul>
 <h1 id="references" class="unnumbered">References</h1>
 <div id="refs" class="references">
+<div id="ref-Lawrence:drl17">
+<p>Lawrence, Neil D. 2017. “Data Readiness Levels.” arXiv.</p>
+</div>
 <div id="ref-Sculley:debt15">
 <p>Sculley, D., Gary Holt, Daniel Golovin, Eugene Davydov, Todd Phillips, Dietmar Ebner, Vinay Chaudhary, Michael Young, Jean-François Crespo, and Dan Dennison. 2015. “Hidden Technical Debt in Machine Learning Systems.” In <em>Advances in Neural Information Processing Systems 28</em>, edited by Corinna Cortes, Neil D. Lawrence, Daniel D. Lee, Masashi Sugiyama, and Roman Garnett, 2503–11. Curran Associates, Inc. <a href="http://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems.pdf" class="uri">http://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems.pdf</a>.</p>
 </div>
@@ -157,6 +228,7 @@ categories:
 <hr />
 <ol>
 <li id="fn1"><p>Apple has fixed this issue so that Siri no longer does this.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>See for example <a href="https://www.technologyreview.com/s/604087/the-dark-secret-at-the-heart-of-ai/">“The Dark Secret at the Heart of AI” in Technology Review</a>.<a href="#fnref2" class="footnote-back">↩</a></p></li>
 </ol>
 </section>
 
