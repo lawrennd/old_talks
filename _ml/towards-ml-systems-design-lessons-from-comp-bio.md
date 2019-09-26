@@ -27,7 +27,7 @@ geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
 transition: None
 categories:
-- genoimics
+- genomics
 ---
 
 \include{talk-macros.tex}
