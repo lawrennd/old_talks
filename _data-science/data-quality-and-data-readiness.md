@@ -22,14 +22,28 @@ categories:
 
 \include{talk-macros.tex}
 
+\section{Introduction}
+
 \subsection{Machine Learning}
 
 $$\text{data} + \text{model} \rightarrow \text{prediction}$$
 
+\subsection{Code and Data Separation}
+
+* Classical computer science separates code and data.
+* Machine learning short-circuits this separation.
+
 \include{_data-science/includes/the-data-crisis.md}
+
+
 \include{_data-science/includes/data-science-as-debugging.md}
 \include{_data-science/includes/data-readiness-levels.md}
+\include{_data-science/includes/data-oriented-architectures.md}
 
+\subsection{Conclusions}
+
+* Data is modern software
+* We need to revisit software engineering and computer science in this context.
 
 
 \thanks

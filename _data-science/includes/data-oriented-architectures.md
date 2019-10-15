@@ -21,7 +21,7 @@
 }
 \notes{Characteristics of a streaming system include a move from *pull* updates to *push* updates, i.e. the computation is driven by a change in the input data rather than the service calling for input data when it decides to run a computation. Streaming systems operate on 'rows' of the data rather than 'columns'. This is because the full column isn't normally available as it changes over time. As an important design principle, the services themselves are stateless, they take their state from the streaming ecosystem. This ensures the inputs and outputs of given computations are easy to declare. As a result, persistence of the data is also handled by the streaming ecosystem and decisions around data retention or recomputation can be taken at the systems level rather than the component level.}
 
-\include{_data-science/includes/apache-flink.md}
+\include{_data-science/includes/data-oriented-programming.md}
 
 \subsection{Trading System}
 
