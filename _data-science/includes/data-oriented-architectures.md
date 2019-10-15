@@ -142,8 +142,5 @@ This best guess may well be driven by previous data.
 \include{_data-science/includes/information-dynamics.md}
 
 
-\newslide{Our Efforts}
-\slides{* Our framework due for release end of June 2019 (pending approval).}
-\notes{Our aim is to release our first version of a data-oriented programming environment by end of June 2019 (pending internal approval).}
 
 \endif
