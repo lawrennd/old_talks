@@ -15,7 +15,7 @@ unforeseen operation.}
 * Analogies: For Software Engineers [describe data science as *debugging*](http://inverseprobability.com/2017/03/14/data-science-as-debugging).
 }
 
-\addblog{Data Science as Debugging}{2017/03/14/data-science-as-debugging}.
+\addblog{Data Science as Debugging}{2017/03/14/data-science-as-debugging}
 
 \notes{Starting with the analysis of a data set, the nature of data
 science is somewhat difference from classical software engineering.}
