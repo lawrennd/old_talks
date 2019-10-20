@@ -74,10 +74,10 @@
 }
 \endif}
 
-\define{\addreading{reference}{section}}{\ifndef{blogPosts}\defeval{\blogPosts}{* \section of \reference 
+\define{\addreading{reference}{section}}{\ifndef{readingMaterial}\defeval{\readingMaterial}{* \section of \reference 
 }
 \else
-\defeval{\blogPosts}{\blogPosts
+\defeval{\readingMaterial}{\readingMaterial
 * \section of \reference 
 }
 \endif}
