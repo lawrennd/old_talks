@@ -21,6 +21,8 @@ from IPython.lib.display import YouTubeVideo
 YouTubeVideo('\id')
 ```}
 
+\define{\includeimg{filename}{width}{class}}{<img class="\class" src="http://inverseprobability.com/talks/slides/\filename" style="width:\width">}
+
 \define{\includediagram{filename}{align}{class}{style}}{<img src="http://inverseprobability.com/talks/slides/\filename.svg" class="\class" align="\align" style="vertical-align:middle;\style">}
 \define{\includediagramclass{filename}{class}{align}}{<img src="http://inverseprobability.com/talks/slides/\filename.svg" class="\class" align="\align" style="vertical-align:middle">}
 
