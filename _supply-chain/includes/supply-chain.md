@@ -25,8 +25,5 @@ By 1794 the Cromford canal was opened to bring coal in to Cromford and give bett
 
 \include{_supply-chain/includes/ml-and-supply-chain.md}
 
-\newslide{Amazon Supply Chain Optimization}
-
-\figure{\includeyoutube{ncwsr1Of6Cw}{800}{600}}{The Supply Chain Optimization Team (SCOT) at Amazon is responsible for the automated decision making in (probably) the world's largest AI.}{supply-chain-optimization-team}
 
 \endif

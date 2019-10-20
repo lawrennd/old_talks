@@ -4,6 +4,8 @@
 
 \section{Nigerian NMIS Data}
 
+\newslide{Nigerian NMIS Data: Notebook}
+
 \notes{As an example data set we will use Nigerian NMIS Health Facility data from openAFRICA. It can be found here <https://africaopendata.org/dataset/nigeria-nmis-health-facility-data-2014>}
 
 \notes{Taking from the information on the site, 

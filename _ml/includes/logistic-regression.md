@@ -3,6 +3,8 @@
 
 \editme
 
+\addreading{Section 5.2.2 up to pg 182}{@Rogers:book11}
+
 \notes{\subsection{Logistic Regression}}
 
 \notes{A logistic regression is an approach to classification which

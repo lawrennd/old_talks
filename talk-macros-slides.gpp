@@ -74,6 +74,14 @@
 }
 \endif}
 
+\define{\addreading{reference}{section}}{\ifndef{blogPosts}\defeval{\blogPosts}{* \section of \reference 
+}
+\else
+\defeval{\blogPosts}{\blogPosts
+* \section of \reference 
+}
+\endif}
+
 \define{\thanks}{
 \newslide{Thanks!}
 \slides{
@@ -85,6 +93,12 @@
 \else
 * blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
 \endif}}
+
+\define{\reading}{
+\ifdef{readingMaterial}
+\newslide{Further Reading}
+\readingMaterial
+\endif}
 
 
 

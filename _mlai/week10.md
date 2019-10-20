@@ -98,31 +98,9 @@ data = pods.datasets.olivetti_glasses()
 X = data['X']
 y = data['Y']}
 
-\subsection{Gradient Descent}
+\include{_ml/includes/logistic-regression-gradient-descent.md}
+\include{_ml/includes/logistic-regression-going-further.md}
 
-We will need to define some initial random values for our vector and then minimize the objective by descending the gradient.
-
-\setupcode{import numpy as np}
-\code{# gradient descent algorithm
-w = np.random.normal(size=(X.shape[1]+1, 1), scale = 0.001)
-eta = 1e-9
-iters = 10000
-for i in range(iters):
-    g, Phi = predict(w, X, linear)
-    w -= eta*gradient(g, Phi, y) + 0.001*w
-    if not i % 100:
-        print("Iter", i, "Objective", objective(g, y))}
-
-Let's look at the weights and how they relate to the inputs.
-
-\setupcode{import matplotlib.pyplot as plt}
-\code{plt.matshow(X[40, :].reshape(64, 64).T)}
-
-The weights are fairly small. This makes sense for year, and perhaps also body count, but given the genre only take the value of 0 or 1 it makes less sense for them. Why are the weights so small? What can you do to fix this?
-
-\subsection{Stochastic Gradient Descent}
-
-Now construct a stochastic gradient descent algorithm and run it on the data. Is it faster or slower than batch gradient descent? What can you do to improve convergence speed?
 
 \subsection{Going Further: Optimization}
 
@@ -131,19 +109,16 @@ Other optimization techniques for generalized linear models include [Newton's me
 Methods that are based on gradients only include [L-BFGS](http://en.wikipedia.org/wiki/Limited-memory_BFGS) and [conjugate gradients](http://en.wikipedia.org/wiki/Conjugate_gradient_method). Can you find these in python? Are they suitable for very large data sets?
 }
 
-\notes{
 \subsection{Other GLMs}
-
-We've introduced the formalism for generalized linear models. Have a think about how you might model count data using the [Poisson distribution](http://en.wikipedia.org/wiki/Poisson_distribution) and a log link function for the rate, $\lambda(\inputVector)$. If you want a data set you can try the `pods.datasets.google_trends()` for some count data.
-}
-
-\newslide{Other GLMs}
 
 \slides{
 * Logistic regression is part of a family known as *generalized linear models*
 * They all take the form 
   $$g^{-1}(\mappingFunction_i(x)) = \mappingVector^\top \basisVector(\inputVector_i)$$
-* As another example let's look at *Poisson regression*.}
+* Other examples include *Poisson regression*.}
+
+\notes{We've introduced the formalism for generalized linear models. Have a think about how you might model count data using the [Poisson distribution](http://en.wikipedia.org/wiki/Poisson_distribution) and a log link function for the rate, $\lambda(\inputVector)$. If you want a data set you can try the `pods.datasets.google_trends()` for some count data.}
+
 
 \include{_ml/includes/poisson-regression.md}
 
@@ -151,12 +126,10 @@ We've introduced the formalism for generalized linear models. Have a think about
 
 \exercise{Can you place a prior density over the parameters $\mappingVector$ and marginalize them out like we did for linear regression? If not why not?}
 
-
-\newslide{Reading}
-
-* Section 5.2.2 of @Rogers:book11 up to pg 182.
+\reading
 
 \thanks
 
 \references
+
 

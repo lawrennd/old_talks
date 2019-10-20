@@ -15,6 +15,69 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
   <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
   <link rel="stylesheet" href="talks.css"/>
   <!-- Printing and PDF exports -->
@@ -559,15 +622,6 @@
 </ul></li>
 </ul>
 </section>
-<section id="amazon-supply-chain-optimization" class="slide level3">
-<h3>Amazon Supply Chain Optimization</h3>
-<div class="figure">
-<div id="supply-chain-optimization-team-figure" class="figure-frame">
-<iframe width="800" height="600" src="https://www.youtube.com/embed/ncwsr1Of6Cw?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-</iframe>
-</div>
-</div>
-</section>
 <section id="for-africa" class="slide level3">
 <h3>For Africa</h3>
 <ul>
@@ -586,160 +640,14 @@
 <h3>Process Emulation</h3>
 <ul>
 <li>Key idea: emulate the process as a mathematical function.</li>
-<li>Each function has a set of <em>parameters</em> which control its behavior.</li>
+<li>Each function has a set of <em>parameters</em> which control its behaviour.</li>
 <li><em>Learning</em> is the process of changing these parameters to change the shape of the function</li>
 <li>Choice of which class of mathematical functions we use is a vital component of our <em>model</em>.</li>
 </ul>
+<!-- SECTION Nigerian NMIS Data -->
 </section>
-<section id="kapchorwa-district" class="slide level3">
-<h3>Kapchorwa District</h3>
-<div class="figure">
-<div id="kapchorwa-district-in-uganda-figure" class="figure-frame">
-<object class width="50%" data="../slides/diagrams/health/Kapchorwa_District_in_Uganda.svg">
-</object>
-</div>
-</div>
-</section>
-<section id="olympic-marathon-data" class="slide level3">
-<h3>Olympic Marathon Data</h3>
-<table>
-<tr>
-<td width="70%">
-<ul>
-<li>Gold medal times for Olympic Marathon since 1896.</li>
-<li>Marathons before 1924 didn’t have a standardised distance.</li>
-<li>Present results using pace per km.</li>
-<li>In 1904 Marathon was badly organised leading to very slow times.</li>
-</ul>
-</td>
-<td width="30%">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/Stephen_Kiprotich.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-<small>Image from Wikimedia Commons <a href="http://bit.ly/16kMKHQ" class="uri">http://bit.ly/16kMKHQ</a></small>
-</td>
-</tr>
-</table>
-</section>
-<section id="olympic-marathon-data-1" class="slide level3">
-<h3>Olympic Marathon Data</h3>
-<div class="figure">
-<div id="olympic-marathon-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/datasets/olympic-marathon.svg" width style=" ">
-</object>
-</div>
-</div>
-</section>
-<section id="polynomial-fits-to-olympic-data" class="slide level3">
-<h3>Polynomial Fits to Olympic Data</h3>
-<script>
-showDivs(1, 'olympic_LM_polynomial_number');
-</script>
-<p><small></small> <input id="range-olympic_LM_polynomial_number" type="range" min="1" max="26" value="1" onchange="setDivs('olympic_LM_polynomial_number')" oninput="setDivs('olympic_LM_polynomial_number')"> <button onclick="plusDivs(-1, 'olympic_LM_polynomial_number')">❮</button> <button onclick="plusDivs(1, 'olympic_LM_polynomial_number')">❯</button></p>
-<div class="olympic_LM_polynomial_number" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number001.svg" width="80%" style=" ">
-</object>
-</div>
-<div class="olympic_LM_polynomial_number" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number002.svg" width="80%" style=" ">
-</object>
-</div>
-<div class="olympic_LM_polynomial_number" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number003.svg" width="80%" style=" ">
-</object>
-</div>
-<div class="olympic_LM_polynomial_number" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number004.svg" width="80%" style=" ">
-</object>
-</div>
-<div class="olympic_LM_polynomial_number" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number005.svg" width="80%" style=" ">
-</object>
-</div>
-<div class="olympic_LM_polynomial_number" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number006.svg" width="80%" style=" ">
-</object>
-</div>
-<div class="olympic_LM_polynomial_number" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number007.svg" width="80%" style=" ">
-</object>
-</div>
-<div class="olympic_LM_polynomial_number" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number008.svg" width="80%" style=" ">
-</object>
-</div>
-<div class="olympic_LM_polynomial_number" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number009.svg" width="80%" style=" ">
-</object>
-</div>
-<div class="olympic_LM_polynomial_number" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number010.svg" width="80%" style=" ">
-</object>
-</div>
-<div class="olympic_LM_polynomial_number" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number011.svg" width="80%" style=" ">
-</object>
-</div>
-<div class="olympic_LM_polynomial_number" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number012.svg" width="80%" style=" ">
-</object>
-</div>
-<div class="olympic_LM_polynomial_number" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number013.svg" width="80%" style=" ">
-</object>
-</div>
-<div class="olympic_LM_polynomial_number" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number014.svg" width="80%" style=" ">
-</object>
-</div>
-<div class="olympic_LM_polynomial_number" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number015.svg" width="80%" style=" ">
-</object>
-</div>
-<div class="olympic_LM_polynomial_number" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number016.svg" width="80%" style=" ">
-</object>
-</div>
-<div class="olympic_LM_polynomial_number" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number017.svg" width="80%" style=" ">
-</object>
-</div>
-<div class="olympic_LM_polynomial_number" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number018.svg" width="80%" style=" ">
-</object>
-</div>
-<div class="olympic_LM_polynomial_number" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number019.svg" width="80%" style=" ">
-</object>
-</div>
-<div class="olympic_LM_polynomial_number" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number020.svg" width="80%" style=" ">
-</object>
-</div>
-<div class="olympic_LM_polynomial_number" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number021.svg" width="80%" style=" ">
-</object>
-</div>
-<div class="olympic_LM_polynomial_number" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number022.svg" width="80%" style=" ">
-</object>
-</div>
-<div class="olympic_LM_polynomial_number" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number023.svg" width="80%" style=" ">
-</object>
-</div>
-<div class="olympic_LM_polynomial_number" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number024.svg" width="80%" style=" ">
-</object>
-</div>
-<div class="olympic_LM_polynomial_number" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number025.svg" width="80%" style=" ">
-</object>
-</div>
-<div class="olympic_LM_polynomial_number" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number026.svg" width="80%" style=" ">
-</object>
-</div>
+<section id="nigerian-nmis-data-notebook" class="slide level3">
+<h3>Nigerian NMIS Data: Notebook</h3>
 </section>
 <section id="what-does-machine-learning-do" class="slide level3">
 <h3>What does Machine Learning do?</h3>
@@ -980,6 +888,16 @@ showDivs(1, 'olympic_LM_polynomial_number');
 <li><span class="math inline">\(\mappingFunction(\cdot)\)</span> is known as the <em>prediction function</em>.</li>
 </ul>
 </section>
+<section id="classification-examples" class="slide level3">
+<h3>Classification Examples</h3>
+<ul>
+<li>Classifiying hand written digits from binary images (automatic zip code reading)</li>
+<li>Detecting faces in images (e.g. digital cameras).</li>
+<li>Who a detected face belongs to (e.g. Facebook, DeepFace)</li>
+<li>Classifying type of cancer given gene expression data.</li>
+<li>Categorization of document types (different types of news article on the internet)</li>
+</ul>
+</section>
 <section id="perceptron" class="slide level3">
 <h3>Perceptron</h3>
 <script>
@@ -1164,12 +1082,320 @@ showDivs(1, 'perceptron-algorithm');
 </div>
 <p><em>Simple classification with the perceptron algorithm.</em></p>
 </section>
-<section id="regression-problems" class="slide level3">
-<h3>Regression Problems</h3>
+<section id="logistic-regression-and-glms" class="slide level3">
+<h3>Logistic Regression and GLMs</h3>
+<ul>
+<li>Modelling entire density allows any question to be answered (also missing data).</li>
+<li>Comes at the possible expense of <em>strong</em> assumptions about data generation distribution.</li>
+<li>In regression we model probability of <span class="math inline">\(\dataScalar_i |\inputVector_i\)</span> directly.
+<ul>
+<li><strong>Allows less flexibility in the question, but more flexibility in the model assumptions.</strong></li>
+</ul></li>
+<li>Can do this not just for regression, but classification.</li>
+<li>Framework is known as <em>generalized linear models</em>.</li>
+</ul>
+</section>
+<section id="log-odds" class="slide level3">
+<h3>Log Odds</h3>
+<ul>
+<li>model the <em>log-odds</em> with the basis functions.</li>
+<li><a href="http://en.wikipedia.org/wiki/Odds">odds</a> are defined as the ratio of the probability of a positive outcome, to the probability of a negative outcome.</li>
+<li>Probability is between zero and one, odds are: <span class="math display">\[ \frac{\pi}{1-\pi} \]</span></li>
+<li>Odds are between <span class="math inline">\(0\)</span> and <span class="math inline">\(\infty\)</span>.</li>
+<li>Logarithm of odds maps them to <span class="math inline">\(-\infty\)</span> to <span class="math inline">\(\infty\)</span>.</li>
+</ul>
+</section>
+<section id="logit-link-function" class="slide level3">
+<h3>Logit Link Function</h3>
+<ul>
+<li>The <a href="http://en.wikipedia.org/wiki/Logit">Logit function</a>, <span class="math display">\[g^{-1}(\pi_i) = \log\frac{\pi_i}{1-\pi_i}.\]</span> This function is known as a <em>link function</em>.</li>
+<li>For a standard regression we take, <span class="math display">\[f(\inputVector_i) = \mappingVector^\top \basisVector(\inputVector_i),\]</span></li>
+<li>For classification we perform a logistic regression. <span class="math display">\[\log \frac{\pi_i}{1-\pi_i} = \mappingVector^\top \basisVector(\inputVector_i)\]</span></li>
+</ul>
+</section>
+<section id="inverse-link-function" class="slide level3">
+<h3>Inverse Link Function</h3>
+<p>We have defined the link function as taking the form <span class="math inline">\(g^{-1}(\cdot)\)</span> implying that the inverse link function is given by <span class="math inline">\(g(\cdot)\)</span>. Since we have defined, <span class="math display">\[
+g^{-1}(\pi(\inputVector)) = \mappingVector^\top\basisVector(\inputVector)
+\]</span> we can write <span class="math inline">\(\pi\)</span> in terms of the <em>inverse link</em> function, <span class="math inline">\(g(\cdot)\)</span> as <span class="math display">\[
+\pi(\inputVector) = g(\mappingVector^\top\basisVector(\inputVector)).
+\]</span></p>
+</section>
+<section id="logistic-function" class="slide level3">
+<h3>Logistic function</h3>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Logistic_function">Logistic</a> (or sigmoid) squashes real line to between 0 &amp; 1. Sometimes also called a ‘squashing function’. <object class="svgplot " data="../slides/diagrams/ml/logistic.svg" width="" style=" "></object></li>
+</ul>
+</section>
+<section id="basis-function" class="slide level3">
+<h3>Basis Function</h3>
+</section>
+<section id="prediction-function" class="slide level3">
+<h3>Prediction Function</h3>
+<ul>
+<li>Can now write <span class="math inline">\(\pi\)</span> as a function of the input and the parameter vector as, <span class="math display">\[\pi(\inputVector,\mappingVector) = \frac{1}{1+
+\exp\left(-\mappingVector^\top \basisVector(\inputVector)\right)}.\]</span></li>
+<li>Compute the output of a standard linear basis function composition (<span class="math inline">\(\mappingVector^\top \basisVector(\inputVector)\)</span>, as we did for linear regression)</li>
+<li>Apply the inverse link function, <span class="math inline">\(g(\mappingVector^\top \basisVector(\inputVector))\)</span>.</li>
+<li>Use this value in a Bernoulli distribution to form the likelihood.</li>
+</ul>
+</section>
+<section id="bernoulli-reminder" class="slide level3">
+<h3>Bernoulli Reminder</h3>
+<ul>
+<li><p>From last time <span class="math display">\[P(\dataScalar_i|\mappingVector, \inputVector) = \pi_i^{\dataScalar_i} (1-\pi_i)^{1-\dataScalar_i}\]</span></p></li>
+<li><p>Trick for switching betwen probabilities</p></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">def</span> bernoulli(y, pi):</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">    <span class="cf">if</span> y <span class="op">==</span> <span class="dv">1</span>:</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">        <span class="cf">return</span> pi</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">    <span class="cf">else</span>:</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="cf">return</span> <span class="dv">1</span><span class="op">-</span>pi</a></code></pre></div>
+</section>
+<section id="maximum-likelihood" class="slide level3">
+<h3>Maximum Likelihood</h3>
+<ul>
+<li>Conditional independence of data: <span class="math display">\[P(\dataVector|\mappingVector, \inputMatrix) = \prod_{i=1}^\numData P(\dataScalar_i|\mappingVector,
+\inputVector_i). \]</span></li>
+</ul>
+</section>
+<section id="log-likelihood" class="slide level3">
+<h3>Log Likelihood</h3>
+<p><span class="math display">\[\begin{align*}
+  \log P(\dataVector|\mappingVector, \inputMatrix) = &amp;
+  \sum_{i=1}^\numData \log P(\dataScalar_i|\mappingVector, \inputVector_i) \\ = &amp;\sum_{i=1}^\numData \dataScalar_i \log
+  \pi_i \\ &amp; + \sum_{i=1}^\numData (1-\dataScalar_i)\log (1-\pi_i)
+\end{align*}\]</span></p>
+</section>
+<section id="objective-function" class="slide level3">
+<h3>Objective Function</h3>
+<ul>
+<li>Probability of positive outcome for the <span class="math inline">\(i\)</span>th data point <span class="math display">\[\pi_i = g\left(\mappingVector^\top \basisVector(\inputVector_i)\right),\]</span> where <span class="math inline">\(g(\cdot)\)</span> is the <em>inverse</em> link function</li>
+<li>Objective function of the form <span class="math display">\[\begin{align*}
+  E(\mappingVector) = &amp; -  \sum_{i=1}^\numData \dataScalar_i \log
+  g\left(\mappingVector^\top \basisVector(\inputVector_i)\right) \\&amp; -
+  \sum_{i=1}^\numData(1-\dataScalar_i)\log \left(1-g\left(\mappingVector^\top
+  \basisVector(\inputVector_i)\right)\right).
+ \end{align*}\]</span></li>
+</ul>
+</section>
+<section id="minimize-objective" class="slide level3">
+<h3>Minimize Objective</h3>
+<ul>
+<li>Grdient wrt <span class="math inline">\(\pi(\inputVector;\mappingVector)\)</span> <span class="math display">\[\begin{align*}
+\frac{\text{d}E(\mappingVector)}{\text{d}\mappingVector} = &amp;
+-\sum_{i=1}^\numData \frac{\dataScalar_i}{g\left(\mappingVector^\top
+\basisVector(\inputVector)\right)}\frac{\text{d}g(\mappingFunction_i)}{\text{d}\mappingFunction_i}
+\basisVector(\inputVector_i) \\ &amp; +  \sum_{i=1}^\numData
+\frac{1-\dataScalar_i}{1-g\left(\mappingVector^\top
+\basisVector(\inputVector)\right)}\frac{\text{d}g(\mappingFunction_i)}{\text{d}\mappingFunction_i}
+\basisVector(\inputVector_i)
+\end{align*}\]</span></li>
+</ul>
+</section>
+<section id="link-function-gradient" class="slide level3">
+<h3>Link Function Gradient</h3>
+<ul>
+<li>Also need gradient of inverse link function wrt parameters. <span class="math display">\[\begin{align*}
+g(\mappingFunction_i) &amp;= \frac{1}{1+\exp(-\mappingFunction_i)}\\
+&amp;=(1+\exp(-\mappingFunction_i))^{-1}
+\end{align*}\]</span> and the gradient can be computed as <span class="math display">\[\begin{align*}
+\frac{\text{d}g(\mappingFunction_i)}{\text{d} \mappingFunction_i} &amp; =
+\exp(-\mappingFunction_i)(1+\exp(-\mappingFunction_i))^{-2}\\
+&amp; = \frac{1}{1+\exp(-\mappingFunction_i)}
+\frac{\exp(-\mappingFunction_i)}{1+\exp(-\mappingFunction_i)} \\
+&amp; = g(\mappingFunction_i) (1-g(\mappingFunction_i))
+\end{align*}\]</span></li>
+</ul>
+</section>
+<section id="objective-gradient" class="slide level3">
+<h3>Objective Gradient</h3>
+<p><span class="math display">\[\begin{align*}
+\frac{\text{d}E(\mappingVector)}{\text{d}\mappingVector} = &amp; -\sum_{i=1}^\numData
+\dataScalar_i\left(1-g\left(\mappingVector^\top \basisVector(\inputVector)\right)\right)
+\basisVector(\inputVector_i) \\ &amp; + \sum_{i=1}^\numData
+(1-\dataScalar_i)\left(g\left(\mappingVector^\top \basisVector(\inputVector)\right)\right)
+\basisVector(\inputVector_i).
+\end{align*}\]</span></p>
+</section>
+<section id="optimization-of-the-function" class="slide level3">
+<h3>Optimization of the Function</h3>
+<ul>
+<li>Can’t find a stationary point of the objective function analytically.</li>
+<li>Optimization has to proceed by <em>numerical methods</em>.
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Newton%27s_method">Newton’s method</a> or</li>
+<li><a href="http://en.wikipedia.org/wiki/Gradient_method">gradient based optimization methods</a></li>
+</ul></li>
+<li>Similarly to matrix factorization, for large data <em>stochastic gradient descent</em> (Robbins Munro <span class="citation" data-cites="Robbins:stoch51">(Robbins and Monro, 1951)</span> optimization procedure) works well.</li>
+</ul>
+<p>The distributions show the parameters of the <em>independent</em> class conditional probabilities for no maternity services. It is a Bernoulli distribution with the parameter, <span class="math inline">\(\pi\)</span>, given by (<code>theta_0</code>) for the facilities without maternity services and <code>theta_1</code> for the facilities with maternity services. The parameters whow that, facilities with maternity services also are more likely to have other services such as grid electricity, emergency transport, immunization programs etc.</p>
+<p>The naive Bayes assumption says that the joint probability for these services is given by the product of each of these Bernoulli distributions.</p>
+<p>We have modelled the numbers in our table with a Gaussian density. Since several of these numbers are counts, a more appropriate distribution might be the Poisson distribution. But here we can see that the average number of nurses, healthworkers and doctors is <em>higher</em> in the facilities with maternal services (<code>mu_1</code>) than those without maternal services (<code>mu_0</code>). There is also a small difference between the mean latitude and longitudes. However, the <em>standard deviation</em> which would be given by the square root of the variance parameters (<code>sigma_0</code> and <code>sigma_1</code>) is large, implying that a difference in latitude and longitude may be due to sampling error. To be sure more analysis would be required.</p>
+</section>
+<section id="batch-gradient-descent" class="slide level3">
+<h3>Batch Gradient Descent</h3>
+</section>
+<section id="stochastic-gradient-descent" class="slide level3">
+<h3>Stochastic Gradient Descent</h3>
+
+</section>
+<section id="regression" class="slide level3">
+<h3>Regression</h3>
 <ul>
 <li>Classification is discrete output.</li>
 <li>Regression is a continuous output.</li>
 </ul>
+</section>
+<section id="regression-examples" class="slide level3">
+<h3>Regression Examples</h3>
+<ul>
+<li>Predict a real value, <span class="math inline">\(\dataScalar_i\)</span> given some inputs <span class="math inline">\(\inputVector_i\)</span>.</li>
+<li>Predict quality of meat given spectral measurements (Tecator data).</li>
+<li>Radiocarbon dating, the C14 calibration curve: predict age given quantity of C14 isotope.</li>
+<li>Predict quality of different Go or Backgammon moves given expert rated training data.</li>
+</ul>
+</section>
+<section id="olympic-marathon-data" class="slide level3">
+<h3>Olympic Marathon Data</h3>
+<table>
+<tr>
+<td width="70%">
+<ul>
+<li>Gold medal times for Olympic Marathon since 1896.</li>
+<li>Marathons before 1924 didn’t have a standardised distance.</li>
+<li>Present results using pace per km.</li>
+<li>In 1904 Marathon was badly organised leading to very slow times.</li>
+</ul>
+</td>
+<td width="30%">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/Stephen_Kiprotich.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<small>Image from Wikimedia Commons <a href="http://bit.ly/16kMKHQ" class="uri">http://bit.ly/16kMKHQ</a></small>
+</td>
+</tr>
+</table>
+</section>
+<section id="olympic-marathon-data-1" class="slide level3">
+<h3>Olympic Marathon Data</h3>
+<div class="figure">
+<div id="olympic-marathon-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/datasets/olympic-marathon.svg" width style=" ">
+</object>
+</div>
+</div>
+</section>
+<section id="polynomial-fits-to-olympic-data" class="slide level3">
+<h3>Polynomial Fits to Olympic Data</h3>
+<script>
+showDivs(1, 'olympic_LM_polynomial_number');
+</script>
+<p><small></small> <input id="range-olympic_LM_polynomial_number" type="range" min="1" max="26" value="1" onchange="setDivs('olympic_LM_polynomial_number')" oninput="setDivs('olympic_LM_polynomial_number')"> <button onclick="plusDivs(-1, 'olympic_LM_polynomial_number')">❮</button> <button onclick="plusDivs(1, 'olympic_LM_polynomial_number')">❯</button></p>
+<div class="olympic_LM_polynomial_number" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number001.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="olympic_LM_polynomial_number" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number002.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="olympic_LM_polynomial_number" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number003.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="olympic_LM_polynomial_number" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number004.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="olympic_LM_polynomial_number" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number005.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="olympic_LM_polynomial_number" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number006.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="olympic_LM_polynomial_number" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number007.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="olympic_LM_polynomial_number" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number008.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="olympic_LM_polynomial_number" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number009.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="olympic_LM_polynomial_number" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number010.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="olympic_LM_polynomial_number" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number011.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="olympic_LM_polynomial_number" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number012.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="olympic_LM_polynomial_number" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number013.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="olympic_LM_polynomial_number" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number014.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="olympic_LM_polynomial_number" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number015.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="olympic_LM_polynomial_number" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number016.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="olympic_LM_polynomial_number" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number017.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="olympic_LM_polynomial_number" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number018.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="olympic_LM_polynomial_number" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number019.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="olympic_LM_polynomial_number" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number020.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="olympic_LM_polynomial_number" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number021.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="olympic_LM_polynomial_number" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number022.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="olympic_LM_polynomial_number" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number023.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="olympic_LM_polynomial_number" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number024.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="olympic_LM_polynomial_number" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number025.svg" width="80%" style=" ">
+</object>
+</div>
+<div class="olympic_LM_polynomial_number" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number026.svg" width="80%" style=" ">
+</object>
+</div>
 </section>
 <section id="supervised-learning-challenges" class="slide level3">
 <h3>Supervised Learning Challenges</h3>
@@ -1983,7 +2209,7 @@ showDivs(1, 'olympic_5cv05_BLM_polynomial_number');
 <li>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></li>
 <li>podcast: <a href="http://thetalkingmachines.com">The Talking Machines</a></li>
 <li><p>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></p></li>
-<li><p>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></p></li>
+<li><p><span class="citation" data-cites="Rogers:book11">Rogers and Girolami (2011)</span> of Section 5.2.2 up to pg 182</p></li>
 </ul>
 </section>
 <section id="references" class="slide level3 unnumbered">
@@ -2000,6 +2226,12 @@ showDivs(1, 'olympic_5cv05_BLM_polynomial_number');
 </div>
 <div id="ref-Mubangizi:malaria14">
 <p>Mubangizi, M., Andrade-Pacheco, R., Smith, M.T., Quinn, J., Lawrence, N.D., 2014. Malaria surveillance with multiple data sources using Gaussian process models, in: 1st International Conference on the Use of Mobile Ict in Africa.</p>
+</div>
+<div id="ref-Robbins:stoch51">
+<p>Robbins, H., Monro, S., 1951. A stochastic approximation method. Annals of Mathematical Statistics 22, 400–407.</p>
+</div>
+<div id="ref-Rogers:book11">
+<p>Rogers, S., Girolami, M., 2011. A first course in machine learning. CRC Press.</p>
 </div>
 <div id="ref-Russakovsky-imagenet15">
 <p>Russakovsky, O., Deng, J., Su, H., Krause, J., Satheesh, S., Ma, S., Huang, Z., Karpathy, A., Khosla, A., Bernstein, M., Berg, A.C., Fei-Fei, L., 2015. ImageNet Large Scale Visual Recognition Challenge. International Journal of Computer Vision (IJCV) 115, 211–252. <a href="https://doi.org/10.1007/s11263-015-0816-y" class="uri">https://doi.org/10.1007/s11263-015-0816-y</a></p>

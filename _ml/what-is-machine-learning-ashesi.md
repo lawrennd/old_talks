@@ -53,13 +53,8 @@ $$
 
 \include{_ml/includes/process-emulation.md}
 
-\newslide{Kapchorwa District}
+\include{_ml/includes/nigerian-nmis-data.md}
 
-\figure{\includediagramclass{../slides/diagrams/health/Kapchorwa_District_in_Uganda}{50%}}{The Kapchorwa District, home district of Stephen Kiprotich.}{kapchorwa-district-in-uganda}
-
-\notes{Stephen Kiprotich, the 2012 gold medal winner from the London Olympics, comes from Kapchorwa district, in eastern Uganda, near the border with Kenya.}
-
-\include{_ml/includes/olympic-polynomials.md}
 \include{../_ml/includes/what-does-machine-learning-do.md}
 
 \include{_ml/includes/what-is-ml-2.md}
@@ -87,6 +82,8 @@ $$
 2. <s>Unsupervised learning</s>
 3. <s>Reinforcement learning</s>
 }
+
+
 \include{_ml/includes/supervised-learning.md}
 <!-- Leave unsupervised and reinforcement learning in the notes -->
 \notes{
@@ -97,6 +94,8 @@ $$
 
 
 \include{_ml/includes/deployment.md}}
+
+\reading
 
 \thanks
 
