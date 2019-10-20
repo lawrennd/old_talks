@@ -3,7 +3,7 @@
 
 \editme
 
-\addreading{Section 5.2.2 up to pg 182}{@Rogers:book11}
+\addreading{@Rogers:book11}{Section 5.2.2 up to pg 182}
 
 \notes{\subsection{Logistic Regression}}
 
