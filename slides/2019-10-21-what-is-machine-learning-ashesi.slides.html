@@ -863,7 +863,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="classification" class="slide level3">
 <h3>Classification</h3>
 <ul>
-<li><em>Wake word</em> classification (Global Pulse Project).</li>
+<li><em>Wake word</em> classification (<a href="https://radio.unglobalpulse.net/uganda/">Global Pulse Project</a>).</li>
 <li><p>Breakthrough in 2012 with ImageNet result of <a href="http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-">Alex Krizhevsky, Ilya Sutskever and Geoff Hinton</a></p></li>
 <li>We are given a data set containing ‘inputs’, <span class="math inline">\(\inputMatrix\)</span> and ‘targets’, <span class="math inline">\(\dataVector\)</span>.</li>
 <li>Each data point consists of an input vector <span class="math inline">\(\inputVector_i\)</span> and a class label, <span class="math inline">\(\dataScalar_i\)</span>.</li>
@@ -1229,9 +1229,6 @@ g(\mappingFunction_i) &amp;= \frac{1}{1+\exp(-\mappingFunction_i)}\\
 </ul></li>
 <li>Similarly to matrix factorization, for large data <em>stochastic gradient descent</em> (Robbins Munro <span class="citation" data-cites="Robbins:stoch51">(Robbins and Monro, 1951)</span> optimization procedure) works well.</li>
 </ul>
-<p>The distributions show the parameters of the <em>independent</em> class conditional probabilities for no maternity services. It is a Bernoulli distribution with the parameter, <span class="math inline">\(\pi\)</span>, given by (<code>theta_0</code>) for the facilities without maternity services and <code>theta_1</code> for the facilities with maternity services. The parameters whow that, facilities with maternity services also are more likely to have other services such as grid electricity, emergency transport, immunization programs etc.</p>
-<p>The naive Bayes assumption says that the joint probability for these services is given by the product of each of these Bernoulli distributions.</p>
-<p>We have modelled the numbers in our table with a Gaussian density. Since several of these numbers are counts, a more appropriate distribution might be the Poisson distribution. But here we can see that the average number of nurses, healthworkers and doctors is <em>higher</em> in the facilities with maternal services (<code>mu_1</code>) than those without maternal services (<code>mu_0</code>). There is also a small difference between the mean latitude and longitudes. However, the <em>standard deviation</em> which would be given by the square root of the variance parameters (<code>sigma_0</code> and <code>sigma_1</code>) is large, implying that a difference in latitude and longitude may be due to sampling error. To be sure more analysis would be required.</p>
 </section>
 <section id="batch-gradient-descent" class="slide level3">
 <h3>Batch Gradient Descent</h3>
@@ -2203,13 +2200,19 @@ showDivs(1, 'olympic_5cv05_BLM_polynomial_number');
 </div>
 <!-- Leave unsupervised and reinforcement learning in the notes -->
 </section>
+<section id="further-reading" class="slide level3">
+<h3>Further Reading</h3>
+<ul>
+<li><span class="citation" data-cites="Rogers:book11">Rogers and Girolami (2011)</span> of Section 5.2.2 up to pg 182</li>
+</ul>
+</section>
 <section id="thanks" class="slide level3">
 <h3>Thanks!</h3>
 <ul>
 <li>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></li>
 <li>podcast: <a href="http://thetalkingmachines.com">The Talking Machines</a></li>
 <li><p>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></p></li>
-<li><p><span class="citation" data-cites="Rogers:book11">Rogers and Girolami (2011)</span> of Section 5.2.2 up to pg 182</p></li>
+<li><p>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></p></li>
 </ul>
 </section>
 <section id="references" class="slide level3 unnumbered">

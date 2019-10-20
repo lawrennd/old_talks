@@ -204,13 +204,13 @@ class Basis():
 
 def linear(x, **kwargs):
     "Defines the linear basis."
-    return np.hstack([np.ones((X.shape[0], 1)), X])
+    return np.hstack([np.ones((x.shape[0], 1)), np.asarray(x, dtype=float)])
 
 def polynomial(x, num_basis=4, data_limits=[-1., 1.]):
     "Polynomial basis"
     centre = data_limits[0]/2. + data_limits[1]/2.
     span = data_limits[1] - data_limits[0]
-    z = x - centre
+    z = np.asarray(x, dtype=float) - centre
     z = 2*z/span
     Phi = np.zeros((x.shape[0], num_basis))
     for i in range(num_basis):
@@ -230,7 +230,7 @@ def radial(x, num_basis=4, data_limits=[-1., 1.], width=None):
     
     Phi = np.zeros((x.shape[0], num_basis))
     for i in range(num_basis):
-        Phi[:, i:i+1] = np.exp(-0.5*((x-centres[i])/width)**2)
+        Phi[:, i:i+1] = np.exp(-0.5*((np.asarray(x, dtype=float)-centres[i])/width)**2)
     return Phi
 
 
@@ -246,9 +246,9 @@ def fourier(x, num_basis=4, data_limits=[-1., 1.], frequency_range=None):
         else:
             frequency = frequency_range[i]
         if i % 2:
-            Phi[:, i:i+1] = np.sin(tau*frequency*x)
+            Phi[:, i:i+1] = np.sin(tau*frequency*np.asarray(x, dtype=float))
         else:
-            Phi[:, i:i+1] = np.cos(tau*frequency*x)
+            Phi[:, i:i+1] = np.cos(tau*frequency*np.asarray(x, dtype=float))
     return Phi
 
 def relu(x, num_basis=4, data_limits=[-1., 1.], gain=None):
@@ -265,7 +265,7 @@ def relu(x, num_basis=4, data_limits=[-1., 1.], gain=None):
     # Create the bias
     Phi[:, 0] = 1.0
     for i in range(1, num_basis):
-        Phi[:, i:i+1] = (gain[i-1]*x>centres[i-1])*(x-centres[i-1])
+        Phi[:, i:i+1] = (gain[i-1]*np.asarray(x, dtype=float)>centres[i-1])*(np.asarray(x, dtype=float)-centres[i-1])
     return Phi
 
 def tanh(x, num_basis=4, data_limits=[-1., 1.], gain=None):
@@ -285,7 +285,7 @@ def tanh(x, num_basis=4, data_limits=[-1., 1.], gain=None):
     # Create the bias
     Phi[:, 0] = 1.0
     for i in range(1, num_basis):
-        Phi[:, i:i+1] = np.tanh(gain[i-1]*(x-centres[i-1]))
+        Phi[:, i:i+1] = np.tanh(gain[i-1]*(np.asarray(x, dtype=float)-centres[i-1]))
     return Phi
 
 class Noise(ProbModel):

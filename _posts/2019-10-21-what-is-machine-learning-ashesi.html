@@ -419,6 +419,7 @@ $$</span><br /></p>
 <p>Supervised learning is one of the most widely deployed machine learning technologies, and a particular domain of success has been <em>classification</em>. Classification is the process of taking an input (which might be an image) and categorizing it into one of a number of different classes (e.g. dog or cat). This simple idea underpins a lot of machine learning. By scanning across the image we can also determine where the animal is in the image.</p>
 <h2 id="introduction-to-classification-edit">Introduction to Classification <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/classification-intro.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/classification-intro.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Classification is perhaps the technique most closely assocated with machine learning. In the speech based agents, on-device classifiers are used to determine when the wake word is used. A wake word is a word that wakes up the device. For the Amazon Echo it is “Alexa”, for Siri it is “Hey Siri”. Once the wake word detected with a classifier, the speech can be uploaded to the cloud for full processing, the speech recognition stages.</p>
+<p>This isn’t just useful for intelligent agents, the UN global pulse project on public discussion on radio also uses <a href="https://radio.unglobalpulse.net/uganda/">wake word detection for recording radio conversations</a>.</p>
 <p>A major breakthrough in image classification came in 2012 with the ImageNet result of <a href="http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-">Alex Krizhevsky, Ilya Sutskever and Geoff Hinton</a> from the University of Toronto. ImageNet is a large data base of 14 million images with many thousands of classes. The data is used in a community-wide challenge for object categorization. Krizhevsky et al used convolutional neural networks to outperform all previous approaches on the challenge. They formed a company which was purchased shortly after by Google. This challenge, known as object categorisation, was a major obstacle for practical computer vision systems. Modern object categorization systems are close to human performance.</p>
 <p>Machine learning problems normally involve a prediction function and an objective function. Regression is the case where the prediction function iss over the real numbers, so the codomain of the functions, <span class="math inline">$\mappingFunction(\inputMatrix)$</span> was the real numbers or sometimes real vectors. The classification problem consists of predicting whether or not a particular example is a member of a particular class. So we may want to know if a particular image represents a digit 6 or if a particular user will click on a given advert. These are classification problems, and they require us to map to <em>yes</em> or <em>no</em> answers. That makes them naturally discrete mappings.</p>
 <p>In classification we are given an input vector, <span class="math inline">$\inputVector$</span>, and an associated label, <span class="math inline">$\dataScalar$</span> which either takes the value <span class="math inline"> − 1</span> to represent <em>no</em> or <span class="math inline">1</span> to represent <em>yes</em>.</p>
@@ -525,9 +526,10 @@ $$</span><br /></p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="im">import</span> numpy <span class="im">as</span> np</a></code></pre></div>
 <div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="kw">def</span> objective(g, y):</a>
 <a class="sourceLine" id="cb22-2" data-line-number="2">    <span class="co">&quot;Computes the objective function.&quot;</span></a>
-<a class="sourceLine" id="cb22-3" data-line-number="3">    posind <span class="op">=</span> np.where(y.flatten()<span class="op">==</span><span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb22-4" data-line-number="4">    negind <span class="op">=</span> np.where(y.flatten()<span class="op">==</span><span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb22-5" data-line-number="5">    <span class="cf">return</span> <span class="op">-</span>np.log(g[posind, :]).<span class="bu">sum</span>() <span class="op">-</span> np.log(<span class="dv">1</span><span class="op">-</span>g[negind, :]).<span class="bu">sum</span>()</a></code></pre></div>
+<a class="sourceLine" id="cb22-3" data-line-number="3">    labs <span class="op">=</span> np.asarray(y, dtype<span class="op">=</span><span class="bu">float</span>).flatten()</a>
+<a class="sourceLine" id="cb22-4" data-line-number="4">    posind <span class="op">=</span> np.where(labs<span class="op">==</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb22-5" data-line-number="5">    negind <span class="op">=</span> np.where(labs<span class="op">==</span><span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb22-6" data-line-number="6">    <span class="cf">return</span> <span class="op">-</span>np.log(g[posind, :]).<span class="bu">sum</span>() <span class="op">-</span> np.log(<span class="dv">1</span><span class="op">-</span>g[negind, :]).<span class="bu">sum</span>()</a></code></pre></div>
 <p>As normal, we would like to minimize this objective. This can be done by differentiating with respect to the parameters of our prediction function, <span class="math inline">$\pi(\inputVector;\mappingVector)$</span>, for optimisation. The gradient of the likelihood with respect to <span class="math inline">$\pi(\inputVector;\mappingVector)$</span> is of the form, <br /><span class="math display">$$
 \frac{\text{d}E(\mappingVector)}{\text{d}\mappingVector} = -\sum_{i=1}^\numData
 \frac{\dataScalar_i}{g\left(\mappingVector^\top
@@ -557,11 +559,12 @@ $$</span><br /></p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="im">import</span> numpy <span class="im">as</span> np</a></code></pre></div>
 <div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="kw">def</span> gradient(g, Phi, y):</a>
 <a class="sourceLine" id="cb24-2" data-line-number="2">    <span class="co">&quot;Generates the gradient of the parameter vector.&quot;</span></a>
-<a class="sourceLine" id="cb24-3" data-line-number="3">    posind <span class="op">=</span> np.where(y.flatten()<span class="op">==</span><span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb24-4" data-line-number="4">    dw <span class="op">=</span> <span class="op">-</span>(Phi[posind]<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>g[posind])).<span class="bu">sum</span>(<span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb24-5" data-line-number="5">    negind <span class="op">=</span> np.where(y.flatten()<span class="op">==</span><span class="dv">0</span> )</a>
-<a class="sourceLine" id="cb24-6" data-line-number="6">    dw <span class="op">+=</span> (Phi[negind]<span class="op">*</span>g[negind]).<span class="bu">sum</span>(<span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb24-7" data-line-number="7">    <span class="cf">return</span> dw[:, <span class="va">None</span>]</a></code></pre></div>
+<a class="sourceLine" id="cb24-3" data-line-number="3">    labs <span class="op">=</span> np.asarray(y, dtype<span class="op">=</span><span class="bu">float</span>).flatten()</a>
+<a class="sourceLine" id="cb24-4" data-line-number="4">    posind <span class="op">=</span> np.where(labs<span class="op">==</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb24-5" data-line-number="5">    dw <span class="op">=</span> <span class="op">-</span>(Phi[posind]<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>g[posind])).<span class="bu">sum</span>(<span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb24-6" data-line-number="6">    negind <span class="op">=</span> np.where(labs<span class="op">==</span><span class="dv">0</span> )</a>
+<a class="sourceLine" id="cb24-7" data-line-number="7">    dw <span class="op">+=</span> (Phi[negind]<span class="op">*</span>g[negind]).<span class="bu">sum</span>(<span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb24-8" data-line-number="8">    <span class="cf">return</span> dw[:, <span class="va">None</span>]</a></code></pre></div>
 <h2 id="optimization-of-the-function">Optimization of the Function</h2>
 <p>Reorganizing the gradient to find a stationary point of the function with respect to the parameters <span class="math inline">$\mappingVector$</span> turns out to be impossible. Optimization has to proceed by <em>numerical methods</em>. Options include the multidimensional variant of <a href="http://en.wikipedia.org/wiki/Newton%27s_method">Newton’s method</a> or <a href="http://en.wikipedia.org/wiki/Gradient_method">gradient based optimization methods</a> like we used for optimizing matrix factorization for the movie recommender system. We recall from matrix factorization that, for large data, <em>stochastic gradient descent</em> or the Robbins Munro <span class="citation" data-cites="Robbins:stoch51">(Robbins and Monro 1951)</span> optimization procedure worked best for function minimization.</p>
 <h2 id="nigerian-nmis-data-edit-1">Nigerian NMIS Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/nigerian-nmis-data-classification.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/nigerian-nmis-data-classification.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
@@ -605,69 +608,33 @@ $$</span><br /></p>
 <a class="sourceLine" id="cb27-32" data-line-number="32">    X.loc[index, type_col] <span class="op">=</span> <span class="fl">1.0</span></a></code></pre></div>
 <p>This has given us a new data frame <code>X</code> which contains the different facility types in different columns.</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb28-1" data-line-number="1">X.describe()</a></code></pre></div>
-<h2 id="naive-bayes-nmis-edit">Naive Bayes NMIS <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/nigerian-nmis-data-logistic.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/nigerian-nmis-data-logistic.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
-<p>We can now specify the naive Bayes model. For the genres we want to model the data as Bernoulli distributed, and for the year and body count we want to model the data as Gaussian distributed. We set up two data frames to contain the parameters for the rows and the columns below.</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="co"># assume data is binary or real.</span></a>
-<a class="sourceLine" id="cb29-2" data-line-number="2"><span class="co"># this list encodes whether it is binary or real (1 for binary, 0 for real)</span></a>
-<a class="sourceLine" id="cb29-3" data-line-number="3">binary_columns <span class="op">=</span> [<span class="st">&#39;emergency_transport&#39;</span>,</a>
-<a class="sourceLine" id="cb29-4" data-line-number="4">          <span class="st">&#39;phcn_electricity&#39;</span>,</a>
-<a class="sourceLine" id="cb29-5" data-line-number="5">          <span class="st">&#39;child_health_measles_immun_calc&#39;</span>,</a>
-<a class="sourceLine" id="cb29-6" data-line-number="6">          <span class="st">&#39;improved_water_supply&#39;</span>, </a>
-<a class="sourceLine" id="cb29-7" data-line-number="7">          <span class="st">&#39;improved_sanitation&#39;</span>,</a>
-<a class="sourceLine" id="cb29-8" data-line-number="8">          <span class="st">&#39;antenatal_care_yn&#39;</span>, </a>
-<a class="sourceLine" id="cb29-9" data-line-number="9">          <span class="st">&#39;family_planning_yn&#39;</span>,</a>
-<a class="sourceLine" id="cb29-10" data-line-number="10">          <span class="st">&#39;malaria_treatment_artemisinin&#39;</span>] <span class="op">+</span> type_names</a>
-<a class="sourceLine" id="cb29-11" data-line-number="11">real_columns <span class="op">=</span> [<span class="st">&#39;num_chews_fulltime&#39;</span>, </a>
-<a class="sourceLine" id="cb29-12" data-line-number="12">                <span class="st">&#39;num_nurses_fulltime&#39;</span>, </a>
-<a class="sourceLine" id="cb29-13" data-line-number="13">                <span class="st">&#39;num_doctors_fulltime&#39;</span>, </a>
-<a class="sourceLine" id="cb29-14" data-line-number="14">                <span class="st">&#39;latitude&#39;</span>, </a>
-<a class="sourceLine" id="cb29-15" data-line-number="15">                <span class="st">&#39;longitude&#39;</span>]</a>
-<a class="sourceLine" id="cb29-16" data-line-number="16">Bernoulli <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>np.zeros((<span class="dv">2</span>,<span class="bu">len</span>(binary_columns))), columns<span class="op">=</span>binary_columns, index<span class="op">=</span>[<span class="st">&#39;theta_0&#39;</span>, <span class="st">&#39;theta_1&#39;</span>])</a>
-<a class="sourceLine" id="cb29-17" data-line-number="17">Gaussian <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>np.zeros((<span class="dv">4</span>,<span class="bu">len</span>(real_columns))), columns<span class="op">=</span>real_columns, index<span class="op">=</span>[<span class="st">&#39;mu_0&#39;</span>, <span class="st">&#39;sigma2_0&#39;</span>, <span class="st">&#39;mu_1&#39;</span>, <span class="st">&#39;sigma2_1&#39;</span>])</a></code></pre></div>
-<p>Now we have the data in a form ready for analysis, let’s construct our data matrix.</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb30-1" data-line-number="1">num_train <span class="op">=</span> <span class="dv">20000</span></a>
-<a class="sourceLine" id="cb30-2" data-line-number="2">indices <span class="op">=</span> np.random.permutation(X.shape[<span class="dv">0</span>])</a>
-<a class="sourceLine" id="cb30-3" data-line-number="3">train_indices <span class="op">=</span> indices[:num_train]</a>
-<a class="sourceLine" id="cb30-4" data-line-number="4">test_indices <span class="op">=</span> indices[num_train:]</a>
-<a class="sourceLine" id="cb30-5" data-line-number="5">X_train <span class="op">=</span> X.iloc[train_indices]</a>
-<a class="sourceLine" id="cb30-6" data-line-number="6">y_train <span class="op">=</span> y.iloc[train_indices]<span class="op">==</span><span class="va">True</span></a>
-<a class="sourceLine" id="cb30-7" data-line-number="7">X_test <span class="op">=</span> X.iloc[test_indices]</a>
-<a class="sourceLine" id="cb30-8" data-line-number="8">y_test <span class="op">=</span> y.iloc[test_indices]<span class="op">==</span><span class="va">True</span></a></code></pre></div>
-<p>And we can now train the model. For each feature we can make the fit independently. The fit is given by either counting the number of positives (for binary data) which gives us the maximum likelihood solution for the Bernoulli. Or by computing the empirical mean and variance of the data for the Gaussian, which also gives us the maximum likelihood solution.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="cf">for</span> column <span class="kw">in</span> X_train:</a>
-<a class="sourceLine" id="cb31-2" data-line-number="2">    <span class="cf">if</span> column <span class="kw">in</span> Gaussian:</a>
-<a class="sourceLine" id="cb31-3" data-line-number="3">        Gaussian[column][<span class="st">&#39;mu_0&#39;</span>] <span class="op">=</span> X_train[column][<span class="op">~</span>y_train].mean()</a>
-<a class="sourceLine" id="cb31-4" data-line-number="4">        Gaussian[column][<span class="st">&#39;mu_1&#39;</span>] <span class="op">=</span> X_train[column][y_train].mean()</a>
-<a class="sourceLine" id="cb31-5" data-line-number="5">        Gaussian[column][<span class="st">&#39;sigma2_0&#39;</span>] <span class="op">=</span> X_train[column][<span class="op">~</span>y_train].var(ddof<span class="op">=</span><span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb31-6" data-line-number="6">        Gaussian[column][<span class="st">&#39;sigma2_1&#39;</span>] <span class="op">=</span> X_train[column][y_train].var(ddof<span class="op">=</span><span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb31-7" data-line-number="7">    <span class="cf">if</span> column <span class="kw">in</span> Bernoulli:</a>
-<a class="sourceLine" id="cb31-8" data-line-number="8">        Bernoulli[column][<span class="st">&#39;theta_0&#39;</span>] <span class="op">=</span> X_train[column][<span class="op">~</span>y_train].<span class="bu">sum</span>()<span class="op">/</span>(<span class="op">~</span>y_train).<span class="bu">sum</span>()</a>
-<a class="sourceLine" id="cb31-9" data-line-number="9">        Bernoulli[column][<span class="st">&#39;theta_1&#39;</span>] <span class="op">=</span> X_train[column][y_train].<span class="bu">sum</span>()<span class="op">/</span>(y_train).<span class="bu">sum</span>()</a></code></pre></div>
-<p>We can examine the nature of the distributions we’ve fitted to the model by looking at the entries in these data frames.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb32-1" data-line-number="1">Bernoulli</a></code></pre></div>
-<p>The distributions show the parameters of the <em>independent</em> class conditional probabilities for no maternity services. It is a Bernoulli distribution with the parameter, <span class="math inline"><em>π</em></span>, given by (<code>theta_0</code>) for the facilities without maternity services and <code>theta_1</code> for the facilities with maternity services. The parameters whow that, facilities with maternity services also are more likely to have other services such as grid electricity, emergency transport, immunization programs etc.</p>
-<p>The naive Bayes assumption says that the joint probability for these services is given by the product of each of these Bernoulli distributions.</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb33-1" data-line-number="1">Gaussian</a></code></pre></div>
-<p>We have modelled the numbers in our table with a Gaussian density. Since several of these numbers are counts, a more appropriate distribution might be the Poisson distribution. But here we can see that the average number of nurses, healthworkers and doctors is <em>higher</em> in the facilities with maternal services (<code>mu_1</code>) than those without maternal services (<code>mu_0</code>). There is also a small difference between the mean latitude and longitudes. However, the <em>standard deviation</em> which would be given by the square root of the variance parameters (<code>sigma_0</code> and <code>sigma_1</code>) is large, implying that a difference in latitude and longitude may be due to sampling error. To be sure more analysis would be required.</p>
-<p>The final model parameter is the prior probability of the positive class, <span class="math inline"><em>π</em></span>, which is computed by maximum likelihood.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb34-1" data-line-number="1">prior <span class="op">=</span> <span class="bu">float</span>(y_train.<span class="bu">sum</span>())<span class="op">/</span><span class="bu">len</span>(y_train)</a></code></pre></div>
-<p>The prior probability tells us that slightly more facilities have maternity services than those that don’t.</p>
 <h2 id="batch-gradient-descent-edit">Batch Gradient Descent <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/logistic-regression-gradient-descent.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/logistic-regression-gradient-descent.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>We will need to define some initial random values for our vector and then minimize the objective by descending the gradient.</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="im">import</span> numpy <span class="im">as</span> np</a></code></pre></div>
-<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb36-1" data-line-number="1"><span class="co"># gradient descent algorithm</span></a>
-<a class="sourceLine" id="cb36-2" data-line-number="2">w <span class="op">=</span> np.random.normal(size<span class="op">=</span>(X.shape[<span class="dv">1</span>]<span class="op">+</span><span class="dv">1</span>, <span class="dv">1</span>), scale <span class="op">=</span> <span class="fl">0.001</span>)</a>
-<a class="sourceLine" id="cb36-3" data-line-number="3">eta <span class="op">=</span> <span class="fl">1e-9</span></a>
-<a class="sourceLine" id="cb36-4" data-line-number="4">iters <span class="op">=</span> <span class="dv">10000</span></a>
-<a class="sourceLine" id="cb36-5" data-line-number="5"><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(iters):</a>
-<a class="sourceLine" id="cb36-6" data-line-number="6">    g, Phi <span class="op">=</span> predict(w, X, linear)</a>
-<a class="sourceLine" id="cb36-7" data-line-number="7">    w <span class="op">-=</span> eta<span class="op">*</span>gradient(g, Phi, y) <span class="op">+</span> <span class="fl">0.001</span><span class="op">*</span>w</a>
-<a class="sourceLine" id="cb36-8" data-line-number="8">    <span class="cf">if</span> <span class="kw">not</span> i <span class="op">%</span> <span class="dv">100</span>:</a>
-<a class="sourceLine" id="cb36-9" data-line-number="9">        <span class="bu">print</span>(<span class="st">&quot;Iter&quot;</span>, i, <span class="st">&quot;Objective&quot;</span>, objective(g, y))</a></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="co"># Separate train and test</span></a>
+<a class="sourceLine" id="cb29-2" data-line-number="2">indices <span class="op">=</span> np.random.permutation(X.shape[<span class="dv">0</span>])</a>
+<a class="sourceLine" id="cb29-3" data-line-number="3">num_train <span class="op">=</span> np.ceil(X.shape[<span class="dv">0</span>]<span class="op">/</span><span class="dv">2</span>)r</a>
+<a class="sourceLine" id="cb29-4" data-line-number="4">train_indices <span class="op">=</span> indices[:num_train]</a>
+<a class="sourceLine" id="cb29-5" data-line-number="5">test_indices <span class="op">=</span> indices[num_train:]</a>
+<a class="sourceLine" id="cb29-6" data-line-number="6">X_train <span class="op">=</span> X.iloc[train_indices]</a>
+<a class="sourceLine" id="cb29-7" data-line-number="7">y_train <span class="op">=</span> y.iloc[train_indices]<span class="op">==</span><span class="va">True</span></a>
+<a class="sourceLine" id="cb29-8" data-line-number="8">X_test <span class="op">=</span> X.iloc[test_indices]</a>
+<a class="sourceLine" id="cb29-9" data-line-number="9">y_test <span class="op">=</span> y.iloc[test_indices]<span class="op">==</span><span class="va">True</span></a></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="im">import</span> numpy <span class="im">as</span> np</a></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="co"># gradient descent algorithm</span></a>
+<a class="sourceLine" id="cb31-2" data-line-number="2">w <span class="op">=</span> np.random.normal(size<span class="op">=</span>(X.shape[<span class="dv">1</span>]<span class="op">+</span><span class="dv">1</span>, <span class="dv">1</span>), scale <span class="op">=</span> <span class="fl">0.001</span>)</a>
+<a class="sourceLine" id="cb31-3" data-line-number="3">eta <span class="op">=</span> <span class="fl">1e-9</span></a>
+<a class="sourceLine" id="cb31-4" data-line-number="4">iters <span class="op">=</span> <span class="dv">10000</span></a>
+<a class="sourceLine" id="cb31-5" data-line-number="5"><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(iters):</a>
+<a class="sourceLine" id="cb31-6" data-line-number="6">    g, Phi <span class="op">=</span> predict(w, X_train, linear)</a>
+<a class="sourceLine" id="cb31-7" data-line-number="7">    w <span class="op">-=</span> eta<span class="op">*</span>gradient(g, Phi, y_train) <span class="op">+</span> <span class="fl">0.001</span><span class="op">*</span>w</a>
+<a class="sourceLine" id="cb31-8" data-line-number="8">    <span class="cf">if</span> <span class="kw">not</span> i <span class="op">%</span> <span class="dv">100</span>:</a>
+<a class="sourceLine" id="cb31-9" data-line-number="9">        <span class="bu">print</span>(<span class="st">&quot;Iter&quot;</span>, i, <span class="st">&quot;Objective&quot;</span>, objective(g, y_train))</a></code></pre></div>
 <p>Let’s look at the weights and how they relate to the inputs.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</a></code></pre></div>
-<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb38-1" data-line-number="1"><span class="bu">print</span>(w)</a></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</a></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="bu">print</span>(w)</a></code></pre></div>
 <p>What does the magnitude of the weight vectors tell you about the different parameters and their influence on outcome? Are the weights of roughly the same size, if not, how might you fix this?</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb34-1" data-line-number="1">g_test, Phi_test <span class="op">=</span> predict(w, X_test, linear)</a>
+<a class="sourceLine" id="cb34-2" data-line-number="2">np.<span class="bu">sum</span>(g_test[y_test]<span class="op">&gt;</span><span class="fl">0.5</span>)</a></code></pre></div>
 <h2 id="stochastic-gradient-descent">Stochastic Gradient Descent</h2>
 
 <h2 id="regression-edit">Regression <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/regression-intro.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/regression-intro.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
@@ -695,33 +662,33 @@ $$</span><br /></p>
 </tr>
 </table>
 <p>The first thing we will do is load a standard data set for regression modelling. The data consists of the pace of Olympic Gold Medal Marathon winners for the Olympics from 1896 to present. First we load in the data and plot.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="im">import</span> numpy <span class="im">as</span> np</a>
-<a class="sourceLine" id="cb39-2" data-line-number="2"><span class="im">import</span> pods</a></code></pre></div>
-<div class="sourceCode" id="cb40"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb40-1" data-line-number="1">data <span class="op">=</span> pods.datasets.olympic_marathon_men()</a>
-<a class="sourceLine" id="cb40-2" data-line-number="2">x <span class="op">=</span> data[<span class="st">&#39;X&#39;</span>]</a>
-<a class="sourceLine" id="cb40-3" data-line-number="3">y <span class="op">=</span> data[<span class="st">&#39;Y&#39;</span>]</a>
-<a class="sourceLine" id="cb40-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb40-5" data-line-number="5">offset <span class="op">=</span> y.mean()</a>
-<a class="sourceLine" id="cb40-6" data-line-number="6">scale <span class="op">=</span> np.sqrt(y.var())</a></code></pre></div>
-<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</a>
-<a class="sourceLine" id="cb41-2" data-line-number="2"><span class="im">import</span> teaching_plots <span class="im">as</span> plot</a>
-<a class="sourceLine" id="cb41-3" data-line-number="3"><span class="im">import</span> mlai</a></code></pre></div>
-<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb42-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb42-2" data-line-number="2">xlim <span class="op">=</span> (<span class="dv">1875</span>,<span class="dv">2030</span>)</a>
-<a class="sourceLine" id="cb42-3" data-line-number="3">ylim <span class="op">=</span> (<span class="fl">2.5</span>, <span class="fl">6.5</span>)</a>
-<a class="sourceLine" id="cb42-4" data-line-number="4">yhat <span class="op">=</span> (y<span class="op">-</span>offset)<span class="op">/</span>scale</a>
-<a class="sourceLine" id="cb42-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb42-6" data-line-number="6">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)</a>
-<a class="sourceLine" id="cb42-7" data-line-number="7">_ <span class="op">=</span> ax.plot(x, y, <span class="st">&#39;r.&#39;</span>,markersize<span class="op">=</span><span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb42-8" data-line-number="8">ax.set_xlabel(<span class="st">&#39;year&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>)</a>
-<a class="sourceLine" id="cb42-9" data-line-number="9">ax.set_ylabel(<span class="st">&#39;pace min/km&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>)</a>
-<a class="sourceLine" id="cb42-10" data-line-number="10">ax.set_xlim(xlim)</a>
-<a class="sourceLine" id="cb42-11" data-line-number="11">ax.set_ylim(ylim)</a>
-<a class="sourceLine" id="cb42-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb42-13" data-line-number="13">mlai.write_figure(figure<span class="op">=</span>fig, </a>
-<a class="sourceLine" id="cb42-14" data-line-number="14">                  filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/datasets/olympic-marathon.svg&#39;</span>, </a>
-<a class="sourceLine" id="cb42-15" data-line-number="15">                  transparent<span class="op">=</span><span class="va">True</span>, </a>
-<a class="sourceLine" id="cb42-16" data-line-number="16">                  frameon<span class="op">=</span><span class="va">True</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="im">import</span> numpy <span class="im">as</span> np</a>
+<a class="sourceLine" id="cb35-2" data-line-number="2"><span class="im">import</span> pods</a></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb36-1" data-line-number="1">data <span class="op">=</span> pods.datasets.olympic_marathon_men()</a>
+<a class="sourceLine" id="cb36-2" data-line-number="2">x <span class="op">=</span> data[<span class="st">&#39;X&#39;</span>]</a>
+<a class="sourceLine" id="cb36-3" data-line-number="3">y <span class="op">=</span> data[<span class="st">&#39;Y&#39;</span>]</a>
+<a class="sourceLine" id="cb36-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb36-5" data-line-number="5">offset <span class="op">=</span> y.mean()</a>
+<a class="sourceLine" id="cb36-6" data-line-number="6">scale <span class="op">=</span> np.sqrt(y.var())</a></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</a>
+<a class="sourceLine" id="cb37-2" data-line-number="2"><span class="im">import</span> teaching_plots <span class="im">as</span> plot</a>
+<a class="sourceLine" id="cb37-3" data-line-number="3"><span class="im">import</span> mlai</a></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb38-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb38-2" data-line-number="2">xlim <span class="op">=</span> (<span class="dv">1875</span>,<span class="dv">2030</span>)</a>
+<a class="sourceLine" id="cb38-3" data-line-number="3">ylim <span class="op">=</span> (<span class="fl">2.5</span>, <span class="fl">6.5</span>)</a>
+<a class="sourceLine" id="cb38-4" data-line-number="4">yhat <span class="op">=</span> (y<span class="op">-</span>offset)<span class="op">/</span>scale</a>
+<a class="sourceLine" id="cb38-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb38-6" data-line-number="6">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>plot.big_wide_figsize)</a>
+<a class="sourceLine" id="cb38-7" data-line-number="7">_ <span class="op">=</span> ax.plot(x, y, <span class="st">&#39;r.&#39;</span>,markersize<span class="op">=</span><span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb38-8" data-line-number="8">ax.set_xlabel(<span class="st">&#39;year&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>)</a>
+<a class="sourceLine" id="cb38-9" data-line-number="9">ax.set_ylabel(<span class="st">&#39;pace min/km&#39;</span>, fontsize<span class="op">=</span><span class="dv">20</span>)</a>
+<a class="sourceLine" id="cb38-10" data-line-number="10">ax.set_xlim(xlim)</a>
+<a class="sourceLine" id="cb38-11" data-line-number="11">ax.set_ylim(ylim)</a>
+<a class="sourceLine" id="cb38-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb38-13" data-line-number="13">mlai.write_figure(figure<span class="op">=</span>fig, </a>
+<a class="sourceLine" id="cb38-14" data-line-number="14">                  filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/datasets/olympic-marathon.svg&#39;</span>, </a>
+<a class="sourceLine" id="cb38-15" data-line-number="15">                  transparent<span class="op">=</span><span class="va">True</span>, </a>
+<a class="sourceLine" id="cb38-16" data-line-number="16">                  frameon<span class="op">=</span><span class="va">True</span>)</a></code></pre></div>
 <div class="figure">
 <div id="olympic-marathon-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/datasets/olympic-marathon.svg" width style=" ">
@@ -737,24 +704,24 @@ $$</span><br /></p>
 <p>Things to notice about the data include the outlier in 1904, in this year, the olympics was in St Louis, USA. Organizational problems and challenges with dust kicked up by the cars following the race meant that participants got lost, and only very few participants completed.</p>
 <p>More recent years see more consistently quick marathons.</p>
 <h2 id="polynomial-fits-to-olympic-data-edit">Polynomial Fits to Olympic Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/olympic-polynomials.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/olympic-polynomials.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
-<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="im">import</span> numpy <span class="im">as</span> np</a>
-<a class="sourceLine" id="cb43-2" data-line-number="2"><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</a>
-<a class="sourceLine" id="cb43-3" data-line-number="3"><span class="im">import</span> mlai</a>
-<a class="sourceLine" id="cb43-4" data-line-number="4"><span class="im">import</span> pods</a></code></pre></div>
-<div class="sourceCode" id="cb44"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb44-1" data-line-number="1">basis <span class="op">=</span> mlai.polynomial</a>
-<a class="sourceLine" id="cb44-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb44-3" data-line-number="3">data <span class="op">=</span> pods.datasets.olympic_marathon_men()</a>
-<a class="sourceLine" id="cb44-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb44-5" data-line-number="5">x <span class="op">=</span> data[<span class="st">&#39;X&#39;</span>]</a>
-<a class="sourceLine" id="cb44-6" data-line-number="6">y <span class="op">=</span> data[<span class="st">&#39;Y&#39;</span>]</a>
-<a class="sourceLine" id="cb44-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb44-8" data-line-number="8">xlim <span class="op">=</span> [<span class="dv">1892</span>, <span class="dv">2020</span>]</a>
-<a class="sourceLine" id="cb44-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb44-10" data-line-number="10">basis<span class="op">=</span>mlai.Basis(mlai.polynomial, number<span class="op">=</span><span class="dv">1</span>, data_limits<span class="op">=</span>xlim)</a></code></pre></div>
-<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb45-1" data-line-number="1"><span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</a></code></pre></div>
-<div class="sourceCode" id="cb46"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb46-1" data-line-number="1">pods.notebook.display_plots(<span class="st">&#39;olympic_LM_polynomial_number</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>,</a>
-<a class="sourceLine" id="cb46-2" data-line-number="2">                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, </a>
-<a class="sourceLine" id="cb46-3" data-line-number="3">                            num_basis<span class="op">=</span>IntSlider(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">27</span>,<span class="dv">1</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="im">import</span> numpy <span class="im">as</span> np</a>
+<a class="sourceLine" id="cb39-2" data-line-number="2"><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</a>
+<a class="sourceLine" id="cb39-3" data-line-number="3"><span class="im">import</span> mlai</a>
+<a class="sourceLine" id="cb39-4" data-line-number="4"><span class="im">import</span> pods</a></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb40-1" data-line-number="1">basis <span class="op">=</span> mlai.polynomial</a>
+<a class="sourceLine" id="cb40-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb40-3" data-line-number="3">data <span class="op">=</span> pods.datasets.olympic_marathon_men()</a>
+<a class="sourceLine" id="cb40-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb40-5" data-line-number="5">x <span class="op">=</span> data[<span class="st">&#39;X&#39;</span>]</a>
+<a class="sourceLine" id="cb40-6" data-line-number="6">y <span class="op">=</span> data[<span class="st">&#39;Y&#39;</span>]</a>
+<a class="sourceLine" id="cb40-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb40-8" data-line-number="8">xlim <span class="op">=</span> [<span class="dv">1892</span>, <span class="dv">2020</span>]</a>
+<a class="sourceLine" id="cb40-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb40-10" data-line-number="10">basis<span class="op">=</span>mlai.Basis(mlai.polynomial, number<span class="op">=</span><span class="dv">1</span>, data_limits<span class="op">=</span>xlim)</a></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</a></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb42-1" data-line-number="1">pods.notebook.display_plots(<span class="st">&#39;olympic_LM_polynomial_number</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>,</a>
+<a class="sourceLine" id="cb42-2" data-line-number="2">                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, </a>
+<a class="sourceLine" id="cb42-3" data-line-number="3">                            num_basis<span class="op">=</span>IntSlider(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">27</span>,<span class="dv">1</span>))</a></code></pre></div>
 <div class="figure">
 <div id="olympic-lm-polynomial-num-basis-02-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/ml/olympic_LM_polynomial_number002.svg" width="80%" style=" ">
@@ -876,11 +843,11 @@ $$</span><br /> The Olympic example is also a supervised learning challenge. But
 <p>Think of the location of the ball on the left-right axis as a single number. Our simple pinball machine can only take one number at a time. As the ball falls through the machine, each layer of pins can be thought of as a different layer of ‘neurons’. Each layer acts to move the ball from left to right.</p>
 <p>In a pinball machine, when the ball gets to the bottom it might fall into a hole defining a score, in a neural network, that is equivalent to the decision: a classification of the input object.</p>
 <p>An image has more than one number associated with it, so it is like playing pinball in a <em>hyper-space</em>.</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb47-1" data-line-number="1"><span class="im">import</span> pods</a>
-<a class="sourceLine" id="cb47-2" data-line-number="2"><span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</a></code></pre></div>
-<div class="sourceCode" id="cb48"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb48-1" data-line-number="1">pods.notebook.display_plots(<span class="st">&#39;pinball</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, </a>
-<a class="sourceLine" id="cb48-2" data-line-number="2">                            <span class="st">&#39;../slides/diagrams&#39;</span>,</a>
-<a class="sourceLine" id="cb48-3" data-line-number="3">                            sample<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="im">import</span> pods</a>
+<a class="sourceLine" id="cb43-2" data-line-number="2"><span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</a></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb44-1" data-line-number="1">pods.notebook.display_plots(<span class="st">&#39;pinball</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, </a>
+<a class="sourceLine" id="cb44-2" data-line-number="2">                            <span class="st">&#39;../slides/diagrams&#39;</span>,</a>
+<a class="sourceLine" id="cb44-3" data-line-number="3">                            sample<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>))</a></code></pre></div>
 <div class="figure">
 <div id="pinball-initialization-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/pinball001.svg" width="80%" style=" ">
@@ -925,11 +892,11 @@ $$</span><br /> where the data is provided to us as a set of <span class="math i
 <p>Supervised learning is one of the dominant approaches to learning. But the cost and time associated with labeling data is a major bottleneck for deploying machine learning systems. The process for creating training data requires significant human intervention. For example, internationalization of a speech recognition system would require large speech corpora in new languages.</p>
 <p>An important distinction in machine learning is the separation between training data and test data (or production data). Training data is the data that was used to find the model parameters. Test data (or production data) is the data that is used with the live system. The ability of a machine learning system to predict well on production systems given only its training data is known as its <em>generalization</em> ability. This is the system’s ability to predict in areas where it hasn’t previously seen data.</p>
 <h2 id="hold-out-validation-on-olympic-marathon-data-edit">Hold Out Validation on Olympic Marathon Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/hold-out-validation-olympics.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/hold-out-validation-olympics.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
-<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb49-1" data-line-number="1"><span class="im">import</span> pods</a>
-<a class="sourceLine" id="cb49-2" data-line-number="2"><span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</a></code></pre></div>
-<div class="sourceCode" id="cb50"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb50-1" data-line-number="1">pods.notebook.display_plots(<span class="st">&#39;olympic_val_extra_LM_polynomial_number</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>, </a>
-<a class="sourceLine" id="cb50-2" data-line-number="2">                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, </a>
-<a class="sourceLine" id="cb50-3" data-line-number="3">                            num_basis<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, max_basis, <span class="dv">1</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb45-1" data-line-number="1"><span class="im">import</span> pods</a>
+<a class="sourceLine" id="cb45-2" data-line-number="2"><span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</a></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb46-1" data-line-number="1">pods.notebook.display_plots(<span class="st">&#39;olympic_val_extra_LM_polynomial_number</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>, </a>
+<a class="sourceLine" id="cb46-2" data-line-number="2">                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, </a>
+<a class="sourceLine" id="cb46-3" data-line-number="3">                            num_basis<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, max_basis, <span class="dv">1</span>))</a></code></pre></div>
 <div class="figure">
 <div id="olympic-val-extra-LM-polynomial-number-11-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/ml/olympic_val_extra_LM_polynomial_number011.svg" width="80%" style=" ">
@@ -944,11 +911,11 @@ $$</span><br /> where the data is provided to us as a set of <span class="math i
 </div>
 <h2 id="extrapolation">Extrapolation</h2>
 <h2 id="interpolation">Interpolation</h2>
-<div class="sourceCode" id="cb51"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb51-1" data-line-number="1"><span class="im">import</span> pods</a>
-<a class="sourceLine" id="cb51-2" data-line-number="2"><span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</a></code></pre></div>
-<div class="sourceCode" id="cb52"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb52-1" data-line-number="1">pods.notebook.display_plots(<span class="st">&#39;olympic_val_inter_LM_polynomial_number</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>, </a>
-<a class="sourceLine" id="cb52-2" data-line-number="2">                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, </a>
-<a class="sourceLine" id="cb52-3" data-line-number="3">                            num_basis<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, max_basis, <span class="dv">1</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb47-1" data-line-number="1"><span class="im">import</span> pods</a>
+<a class="sourceLine" id="cb47-2" data-line-number="2"><span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</a></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb48-1" data-line-number="1">pods.notebook.display_plots(<span class="st">&#39;olympic_val_inter_LM_polynomial_number</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>, </a>
+<a class="sourceLine" id="cb48-2" data-line-number="2">                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, </a>
+<a class="sourceLine" id="cb48-3" data-line-number="3">                            num_basis<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, max_basis, <span class="dv">1</span>))</a></code></pre></div>
 <div class="figure">
 <div id="olympic-val-inter-LM-polynomial-number-11-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/ml/olympic_val_inter_LM_polynomial_number011.svg" width="80%" style=" ">
@@ -964,16 +931,16 @@ $$</span><br /> where the data is provided to us as a set of <span class="math i
 <h2 id="choice-of-validation-set">Choice of Validation Set</h2>
 <h2 id="hold-out-data">Hold Out Data</h2>
 <p>You have a conclusion as to which model fits best under the training error, but how do the two models perform in terms of validation? In this section we consider <em>hold out</em> validation. In hold out validation we remove a portion of the training data for <em>validating</em> the model on. The remaining data is used for fitting the model (training). Because this is a time series prediction, it makes sense for us to hold out data at the end of the time series. This means that we are validating on future predictions. We will hold out data from after 1980 and fit the model to the data before 1980.</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb53-1" data-line-number="1"><span class="co"># select indices of data to &#39;hold out&#39;</span></a>
-<a class="sourceLine" id="cb53-2" data-line-number="2">indices_hold_out <span class="op">=</span> np.flatnonzero(x<span class="op">&gt;</span><span class="dv">1980</span>)</a>
-<a class="sourceLine" id="cb53-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb53-4" data-line-number="4"><span class="co"># Create a training set</span></a>
-<a class="sourceLine" id="cb53-5" data-line-number="5">x_train <span class="op">=</span> np.delete(x, indices_hold_out, axis<span class="op">=</span><span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb53-6" data-line-number="6">y_train <span class="op">=</span> np.delete(y, indices_hold_out, axis<span class="op">=</span><span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb53-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb53-8" data-line-number="8"><span class="co"># Create a hold out set</span></a>
-<a class="sourceLine" id="cb53-9" data-line-number="9">x_valid <span class="op">=</span> np.take(x, indices_hold_out, axis<span class="op">=</span><span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb53-10" data-line-number="10">y_valid <span class="op">=</span> np.take(y, indices_hold_out, axis<span class="op">=</span><span class="dv">0</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb49-1" data-line-number="1"><span class="co"># select indices of data to &#39;hold out&#39;</span></a>
+<a class="sourceLine" id="cb49-2" data-line-number="2">indices_hold_out <span class="op">=</span> np.flatnonzero(x<span class="op">&gt;</span><span class="dv">1980</span>)</a>
+<a class="sourceLine" id="cb49-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb49-4" data-line-number="4"><span class="co"># Create a training set</span></a>
+<a class="sourceLine" id="cb49-5" data-line-number="5">x_train <span class="op">=</span> np.delete(x, indices_hold_out, axis<span class="op">=</span><span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb49-6" data-line-number="6">y_train <span class="op">=</span> np.delete(y, indices_hold_out, axis<span class="op">=</span><span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb49-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb49-8" data-line-number="8"><span class="co"># Create a hold out set</span></a>
+<a class="sourceLine" id="cb49-9" data-line-number="9">x_valid <span class="op">=</span> np.take(x, indices_hold_out, axis<span class="op">=</span><span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb49-10" data-line-number="10">y_valid <span class="op">=</span> np.take(y, indices_hold_out, axis<span class="op">=</span><span class="dv">0</span>)</a></code></pre></div>
 
 <h2 id="richer-basis-set">Richer Basis Set</h2>
 <p>Now we have an approach for deciding which model to retain, we can consider the entire family of polynomial bases, with arbitrary degrees.</p>
@@ -989,118 +956,118 @@ $$</span><br /> where the data is provided to us as a set of <span class="math i
 </ul>
 <h2 id="bias-vs-variance-error-plots-edit">Bias vs Variance Error Plots <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/bias-variance-plots.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/bias-variance-plots.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Helper function for sampling data from two different classes.</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb54-1" data-line-number="1"><span class="im">import</span> numpy <span class="im">as</span> np</a></code></pre></div>
-<div class="sourceCode" id="cb55"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb55-1" data-line-number="1"><span class="kw">def</span> create_data(per_cluster<span class="op">=</span><span class="dv">30</span>):</a>
-<a class="sourceLine" id="cb55-2" data-line-number="2">    <span class="co">&quot;&quot;&quot;Create a randomly sampled data set</span></a>
-<a class="sourceLine" id="cb55-3" data-line-number="3"><span class="co">    </span></a>
-<a class="sourceLine" id="cb55-4" data-line-number="4"><span class="co">    :param per_cluster: number of points in each cluster</span></a>
-<a class="sourceLine" id="cb55-5" data-line-number="5"><span class="co">    &quot;&quot;&quot;</span></a>
-<a class="sourceLine" id="cb55-6" data-line-number="6">    X <span class="op">=</span> []</a>
-<a class="sourceLine" id="cb55-7" data-line-number="7">    y <span class="op">=</span> []</a>
-<a class="sourceLine" id="cb55-8" data-line-number="8">    scale <span class="op">=</span> <span class="dv">3</span></a>
-<a class="sourceLine" id="cb55-9" data-line-number="9">    prec <span class="op">=</span> <span class="dv">1</span><span class="op">/</span>(scale<span class="op">*</span>scale)</a>
-<a class="sourceLine" id="cb55-10" data-line-number="10">    pos_mean <span class="op">=</span> [[<span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>],[<span class="dv">0</span>,<span class="fl">0.5</span>],[<span class="dv">1</span>,<span class="dv">0</span>]]</a>
-<a class="sourceLine" id="cb55-11" data-line-number="11">    pos_cov <span class="op">=</span> [[prec, <span class="fl">0.</span>], [<span class="fl">0.</span>, prec]]</a>
-<a class="sourceLine" id="cb55-12" data-line-number="12">    neg_mean <span class="op">=</span> [[<span class="dv">0</span>, <span class="fl">-0.5</span>],[<span class="dv">0</span>,<span class="op">-</span><span class="fl">0.5</span>],[<span class="dv">0</span>,<span class="op">-</span><span class="fl">0.5</span>]]</a>
-<a class="sourceLine" id="cb55-13" data-line-number="13">    neg_cov <span class="op">=</span> [[prec, <span class="fl">0.</span>], [<span class="fl">0.</span>, prec]]</a>
-<a class="sourceLine" id="cb55-14" data-line-number="14">    <span class="cf">for</span> mean <span class="kw">in</span> pos_mean:</a>
-<a class="sourceLine" id="cb55-15" data-line-number="15">        X.append(np.random.multivariate_normal(mean<span class="op">=</span>mean, cov<span class="op">=</span>pos_cov, size<span class="op">=</span>per_class))</a>
-<a class="sourceLine" id="cb55-16" data-line-number="16">        y.append(np.ones((per_class, <span class="dv">1</span>)))</a>
-<a class="sourceLine" id="cb55-17" data-line-number="17">    <span class="cf">for</span> mean <span class="kw">in</span> neg_mean:</a>
-<a class="sourceLine" id="cb55-18" data-line-number="18">        X.append(np.random.multivariate_normal(mean<span class="op">=</span>mean, cov<span class="op">=</span>neg_cov, size<span class="op">=</span>per_class))</a>
-<a class="sourceLine" id="cb55-19" data-line-number="19">        y.append(np.zeros((per_class, <span class="dv">1</span>)))</a>
-<a class="sourceLine" id="cb55-20" data-line-number="20">    <span class="cf">return</span> np.vstack(X), np.vstack(y).flatten()</a></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb50-1" data-line-number="1"><span class="im">import</span> numpy <span class="im">as</span> np</a></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb51-1" data-line-number="1"><span class="kw">def</span> create_data(per_cluster<span class="op">=</span><span class="dv">30</span>):</a>
+<a class="sourceLine" id="cb51-2" data-line-number="2">    <span class="co">&quot;&quot;&quot;Create a randomly sampled data set</span></a>
+<a class="sourceLine" id="cb51-3" data-line-number="3"><span class="co">    </span></a>
+<a class="sourceLine" id="cb51-4" data-line-number="4"><span class="co">    :param per_cluster: number of points in each cluster</span></a>
+<a class="sourceLine" id="cb51-5" data-line-number="5"><span class="co">    &quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb51-6" data-line-number="6">    X <span class="op">=</span> []</a>
+<a class="sourceLine" id="cb51-7" data-line-number="7">    y <span class="op">=</span> []</a>
+<a class="sourceLine" id="cb51-8" data-line-number="8">    scale <span class="op">=</span> <span class="dv">3</span></a>
+<a class="sourceLine" id="cb51-9" data-line-number="9">    prec <span class="op">=</span> <span class="dv">1</span><span class="op">/</span>(scale<span class="op">*</span>scale)</a>
+<a class="sourceLine" id="cb51-10" data-line-number="10">    pos_mean <span class="op">=</span> [[<span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>],[<span class="dv">0</span>,<span class="fl">0.5</span>],[<span class="dv">1</span>,<span class="dv">0</span>]]</a>
+<a class="sourceLine" id="cb51-11" data-line-number="11">    pos_cov <span class="op">=</span> [[prec, <span class="fl">0.</span>], [<span class="fl">0.</span>, prec]]</a>
+<a class="sourceLine" id="cb51-12" data-line-number="12">    neg_mean <span class="op">=</span> [[<span class="dv">0</span>, <span class="fl">-0.5</span>],[<span class="dv">0</span>,<span class="op">-</span><span class="fl">0.5</span>],[<span class="dv">0</span>,<span class="op">-</span><span class="fl">0.5</span>]]</a>
+<a class="sourceLine" id="cb51-13" data-line-number="13">    neg_cov <span class="op">=</span> [[prec, <span class="fl">0.</span>], [<span class="fl">0.</span>, prec]]</a>
+<a class="sourceLine" id="cb51-14" data-line-number="14">    <span class="cf">for</span> mean <span class="kw">in</span> pos_mean:</a>
+<a class="sourceLine" id="cb51-15" data-line-number="15">        X.append(np.random.multivariate_normal(mean<span class="op">=</span>mean, cov<span class="op">=</span>pos_cov, size<span class="op">=</span>per_class))</a>
+<a class="sourceLine" id="cb51-16" data-line-number="16">        y.append(np.ones((per_class, <span class="dv">1</span>)))</a>
+<a class="sourceLine" id="cb51-17" data-line-number="17">    <span class="cf">for</span> mean <span class="kw">in</span> neg_mean:</a>
+<a class="sourceLine" id="cb51-18" data-line-number="18">        X.append(np.random.multivariate_normal(mean<span class="op">=</span>mean, cov<span class="op">=</span>neg_cov, size<span class="op">=</span>per_class))</a>
+<a class="sourceLine" id="cb51-19" data-line-number="19">        y.append(np.zeros((per_class, <span class="dv">1</span>)))</a>
+<a class="sourceLine" id="cb51-20" data-line-number="20">    <span class="cf">return</span> np.vstack(X), np.vstack(y).flatten()</a></code></pre></div>
 <p>Helper function for plotting the decision boundary of the SVM.</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb56-1" data-line-number="1"><span class="kw">def</span> plot_contours(ax, cl, xx, yy, <span class="op">**</span>params):</a>
-<a class="sourceLine" id="cb56-2" data-line-number="2">    <span class="co">&quot;&quot;&quot;Plot the decision boundaries for a classifier.</span></a>
-<a class="sourceLine" id="cb56-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb56-4" data-line-number="4"><span class="co">    :param ax: matplotlib axes object</span></a>
-<a class="sourceLine" id="cb56-5" data-line-number="5"><span class="co">    :param cl: a classifier</span></a>
-<a class="sourceLine" id="cb56-6" data-line-number="6"><span class="co">    :param xx: meshgrid ndarray</span></a>
-<a class="sourceLine" id="cb56-7" data-line-number="7"><span class="co">    :param yy: meshgrid ndarray</span></a>
-<a class="sourceLine" id="cb56-8" data-line-number="8"><span class="co">    :param params: dictionary of params to pass to contourf, optional</span></a>
-<a class="sourceLine" id="cb56-9" data-line-number="9"><span class="co">    &quot;&quot;&quot;</span></a>
-<a class="sourceLine" id="cb56-10" data-line-number="10">    Z <span class="op">=</span> cl.decision_function(np.c_[xx.ravel(), yy.ravel()])</a>
-<a class="sourceLine" id="cb56-11" data-line-number="11">    Z <span class="op">=</span> Z.reshape(xx.shape)</a>
-<a class="sourceLine" id="cb56-12" data-line-number="12">    <span class="co"># Plot decision boundary and regions</span></a>
-<a class="sourceLine" id="cb56-13" data-line-number="13">    out <span class="op">=</span> ax.contour(xx, yy, Z, </a>
-<a class="sourceLine" id="cb56-14" data-line-number="14">                     levels<span class="op">=</span>[<span class="op">-</span><span class="fl">1.</span>, <span class="fl">0.</span>, <span class="dv">1</span>], </a>
-<a class="sourceLine" id="cb56-15" data-line-number="15">                     colors<span class="op">=</span><span class="st">&#39;black&#39;</span>, </a>
-<a class="sourceLine" id="cb56-16" data-line-number="16">                     linestyles<span class="op">=</span>[<span class="st">&#39;dashed&#39;</span>, <span class="st">&#39;solid&#39;</span>, <span class="st">&#39;dashed&#39;</span>])</a>
-<a class="sourceLine" id="cb56-17" data-line-number="17">    out <span class="op">=</span> ax.contourf(xx, yy, Z, </a>
-<a class="sourceLine" id="cb56-18" data-line-number="18">                     levels<span class="op">=</span>[Z.<span class="bu">min</span>(), <span class="dv">0</span>, Z.<span class="bu">max</span>()], </a>
-<a class="sourceLine" id="cb56-19" data-line-number="19">                     colors<span class="op">=</span>[[<span class="fl">0.5</span>, <span class="fl">1.0</span>, <span class="fl">0.5</span>], [<span class="fl">1.0</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>]])</a>
-<a class="sourceLine" id="cb56-20" data-line-number="20">    <span class="cf">return</span> out</a></code></pre></div>
-<div class="sourceCode" id="cb57"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb57-1" data-line-number="1"><span class="im">import</span> mlai</a>
-<a class="sourceLine" id="cb57-2" data-line-number="2"><span class="im">import</span> os</a></code></pre></div>
-<div class="sourceCode" id="cb58"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb58-1" data-line-number="1"><span class="kw">def</span> decision_boundary_plot(models, X, y, axs, filename, titles, xlim, ylim):</a>
-<a class="sourceLine" id="cb58-2" data-line-number="2">    <span class="co">&quot;&quot;&quot;Plot a decision boundary on the given axes</span></a>
-<a class="sourceLine" id="cb58-3" data-line-number="3"><span class="co">    </span></a>
-<a class="sourceLine" id="cb58-4" data-line-number="4"><span class="co">    :param axs: the axes to plot on.</span></a>
-<a class="sourceLine" id="cb58-5" data-line-number="5"><span class="co">    :param models: the SVM models to plot</span></a>
-<a class="sourceLine" id="cb58-6" data-line-number="6"><span class="co">    :param titles: the titles for each axis</span></a>
-<a class="sourceLine" id="cb58-7" data-line-number="7"><span class="co">    :param X: input training data</span></a>
-<a class="sourceLine" id="cb58-8" data-line-number="8"><span class="co">    :param y: target training data&quot;&quot;&quot;</span></a>
-<a class="sourceLine" id="cb58-9" data-line-number="9">    <span class="cf">for</span> ax <span class="kw">in</span> axs.flatten():</a>
-<a class="sourceLine" id="cb58-10" data-line-number="10">        ax.clear()</a>
-<a class="sourceLine" id="cb58-11" data-line-number="11">    X0, X1 <span class="op">=</span> X[:, <span class="dv">0</span>], X[:, <span class="dv">1</span>]</a>
-<a class="sourceLine" id="cb58-12" data-line-number="12">    <span class="cf">if</span> xlim <span class="kw">is</span> <span class="va">None</span>:</a>
-<a class="sourceLine" id="cb58-13" data-line-number="13">        xlim <span class="op">=</span> [X0.<span class="bu">min</span>()<span class="op">-</span><span class="dv">1</span>, X0.<span class="bu">max</span>()<span class="op">+</span><span class="dv">1</span>]</a>
-<a class="sourceLine" id="cb58-14" data-line-number="14">    <span class="cf">if</span> ylim <span class="kw">is</span> <span class="va">None</span>:</a>
-<a class="sourceLine" id="cb58-15" data-line-number="15">        ylim <span class="op">=</span> [X1.<span class="bu">min</span>()<span class="op">-</span><span class="dv">1</span>, X1.<span class="bu">max</span>()<span class="op">+</span><span class="dv">1</span>]</a>
-<a class="sourceLine" id="cb58-16" data-line-number="16">    xx, yy <span class="op">=</span> np.meshgrid(np.arange(xlim[<span class="dv">0</span>], xlim[<span class="dv">1</span>], <span class="fl">0.02</span>),</a>
-<a class="sourceLine" id="cb58-17" data-line-number="17">                         np.arange(ylim[<span class="dv">0</span>], ylim[<span class="dv">1</span>], <span class="fl">0.02</span>))</a>
-<a class="sourceLine" id="cb58-18" data-line-number="18">    <span class="cf">for</span> cl, title, ax <span class="kw">in</span> <span class="bu">zip</span>(models, titles, axs.flatten()):</a>
-<a class="sourceLine" id="cb58-19" data-line-number="19">        plot_contours(ax, cl, xx, yy,</a>
-<a class="sourceLine" id="cb58-20" data-line-number="20">                      cmap<span class="op">=</span>plt.cm.coolwarm, alpha<span class="op">=</span><span class="fl">0.8</span>)</a>
-<a class="sourceLine" id="cb58-21" data-line-number="21">        ax.plot(X0[y<span class="op">==</span><span class="dv">1</span>], X1[y<span class="op">==</span><span class="dv">1</span>], <span class="st">&#39;r.&#39;</span>, markersize<span class="op">=</span><span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb58-22" data-line-number="22">        ax.plot(X0[y<span class="op">==</span><span class="dv">0</span>], X1[y<span class="op">==</span><span class="dv">0</span>], <span class="st">&#39;g.&#39;</span>, markersize<span class="op">=</span><span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb58-23" data-line-number="23">        ax.set_xlim(xlim)</a>
-<a class="sourceLine" id="cb58-24" data-line-number="24">        ax.set_ylim(ylim)</a>
-<a class="sourceLine" id="cb58-25" data-line-number="25">        ax.set_xticks(())</a>
-<a class="sourceLine" id="cb58-26" data-line-number="26">        ax.set_yticks(())</a>
-<a class="sourceLine" id="cb58-27" data-line-number="27">        ax.set_title(title)</a>
-<a class="sourceLine" id="cb58-28" data-line-number="28">        mlai.write_figure(os.path.join(filename),</a>
-<a class="sourceLine" id="cb58-29" data-line-number="29">                          figure<span class="op">=</span>fig,</a>
-<a class="sourceLine" id="cb58-30" data-line-number="30">                          transparent<span class="op">=</span><span class="va">True</span>)</a>
-<a class="sourceLine" id="cb58-31" data-line-number="31">    <span class="cf">return</span> xlim, ylim</a></code></pre></div>
-<div class="sourceCode" id="cb59"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb59-1" data-line-number="1"><span class="im">import</span> matplotlib</a>
-<a class="sourceLine" id="cb59-2" data-line-number="2">font <span class="op">=</span> {<span class="st">&#39;family&#39;</span> : <span class="st">&#39;sans&#39;</span>,</a>
-<a class="sourceLine" id="cb59-3" data-line-number="3">        <span class="st">&#39;weight&#39;</span> : <span class="st">&#39;bold&#39;</span>,</a>
-<a class="sourceLine" id="cb59-4" data-line-number="4">        <span class="st">&#39;size&#39;</span>   : <span class="dv">22</span>}</a>
-<a class="sourceLine" id="cb59-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb59-6" data-line-number="6">matplotlib.rc(<span class="st">&#39;font&#39;</span>, <span class="op">**</span>font)</a>
-<a class="sourceLine" id="cb59-7" data-line-number="7"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</a></code></pre></div>
-<div class="sourceCode" id="cb60"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb60-1" data-line-number="1"><span class="co"># Create an instance of SVM and fit the data. </span></a>
-<a class="sourceLine" id="cb60-2" data-line-number="2">C <span class="op">=</span> <span class="fl">100.0</span>  <span class="co"># SVM regularization parameter</span></a>
-<a class="sourceLine" id="cb60-3" data-line-number="3">gammas <span class="op">=</span> [<span class="fl">0.001</span>, <span class="fl">0.01</span>, <span class="fl">0.1</span>, <span class="dv">1</span>]</a>
-<a class="sourceLine" id="cb60-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb60-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb60-6" data-line-number="6">per_class<span class="op">=</span><span class="dv">30</span></a>
-<a class="sourceLine" id="cb60-7" data-line-number="7">num_samps <span class="op">=</span> <span class="dv">20</span></a>
-<a class="sourceLine" id="cb60-8" data-line-number="8"><span class="co"># Set-up 2x2 grid for plotting.</span></a>
-<a class="sourceLine" id="cb60-9" data-line-number="9">fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">4</span>, figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">3</span>))</a>
-<a class="sourceLine" id="cb60-10" data-line-number="10">xlim<span class="op">=</span><span class="va">None</span></a>
-<a class="sourceLine" id="cb60-11" data-line-number="11">ylim<span class="op">=</span><span class="va">None</span></a>
-<a class="sourceLine" id="cb60-12" data-line-number="12"><span class="cf">for</span> samp <span class="kw">in</span> <span class="bu">range</span>(num_samps):</a>
-<a class="sourceLine" id="cb60-13" data-line-number="13">    X, y<span class="op">=</span>create_data(per_class)</a>
-<a class="sourceLine" id="cb60-14" data-line-number="14">    models <span class="op">=</span> []</a>
-<a class="sourceLine" id="cb60-15" data-line-number="15">    titles <span class="op">=</span> []</a>
-<a class="sourceLine" id="cb60-16" data-line-number="16">    <span class="cf">for</span> gamma <span class="kw">in</span> gammas:</a>
-<a class="sourceLine" id="cb60-17" data-line-number="17">        models.append(svm.SVC(kernel<span class="op">=</span><span class="st">&#39;rbf&#39;</span>, gamma<span class="op">=</span>gamma, C<span class="op">=</span>C))</a>
-<a class="sourceLine" id="cb60-18" data-line-number="18">        titles.append(<span class="st">&#39;$\gamma=</span><span class="sc">{}</span><span class="st">$&#39;</span>.<span class="bu">format</span>(gamma))</a>
-<a class="sourceLine" id="cb60-19" data-line-number="19">    models <span class="op">=</span> (cl.fit(X, y) <span class="cf">for</span> cl <span class="kw">in</span> models)</a>
-<a class="sourceLine" id="cb60-20" data-line-number="20">    xlim, ylim <span class="op">=</span> decision_boundary_plot(models, X, y, </a>
-<a class="sourceLine" id="cb60-21" data-line-number="21">                           axs<span class="op">=</span>ax, </a>
-<a class="sourceLine" id="cb60-22" data-line-number="22">                           filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml/bias-variance</span><span class="sc">{samp:0&gt;3}</span><span class="st">.svg&#39;</span>.<span class="bu">format</span>(samp<span class="op">=</span>samp), </a>
-<a class="sourceLine" id="cb60-23" data-line-number="23">                           titles<span class="op">=</span>titles,</a>
-<a class="sourceLine" id="cb60-24" data-line-number="24">                          xlim<span class="op">=</span>xlim,</a>
-<a class="sourceLine" id="cb60-25" data-line-number="25">                          ylim<span class="op">=</span>ylim)</a></code></pre></div>
-<div class="sourceCode" id="cb61"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb61-1" data-line-number="1"><span class="im">import</span> pods</a>
-<a class="sourceLine" id="cb61-2" data-line-number="2"><span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</a></code></pre></div>
-<div class="sourceCode" id="cb62"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb62-1" data-line-number="1">pods.notebook.display_plots(<span class="st">&#39;bias-variance</span><span class="sc">{samp:0&gt;3}</span><span class="st">.svg&#39;</span>, </a>
-<a class="sourceLine" id="cb62-2" data-line-number="2">                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, </a>
-<a class="sourceLine" id="cb62-3" data-line-number="3">                            samp<span class="op">=</span>IntSlider(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">10</span>,<span class="dv">1</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb52-1" data-line-number="1"><span class="kw">def</span> plot_contours(ax, cl, xx, yy, <span class="op">**</span>params):</a>
+<a class="sourceLine" id="cb52-2" data-line-number="2">    <span class="co">&quot;&quot;&quot;Plot the decision boundaries for a classifier.</span></a>
+<a class="sourceLine" id="cb52-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb52-4" data-line-number="4"><span class="co">    :param ax: matplotlib axes object</span></a>
+<a class="sourceLine" id="cb52-5" data-line-number="5"><span class="co">    :param cl: a classifier</span></a>
+<a class="sourceLine" id="cb52-6" data-line-number="6"><span class="co">    :param xx: meshgrid ndarray</span></a>
+<a class="sourceLine" id="cb52-7" data-line-number="7"><span class="co">    :param yy: meshgrid ndarray</span></a>
+<a class="sourceLine" id="cb52-8" data-line-number="8"><span class="co">    :param params: dictionary of params to pass to contourf, optional</span></a>
+<a class="sourceLine" id="cb52-9" data-line-number="9"><span class="co">    &quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb52-10" data-line-number="10">    Z <span class="op">=</span> cl.decision_function(np.c_[xx.ravel(), yy.ravel()])</a>
+<a class="sourceLine" id="cb52-11" data-line-number="11">    Z <span class="op">=</span> Z.reshape(xx.shape)</a>
+<a class="sourceLine" id="cb52-12" data-line-number="12">    <span class="co"># Plot decision boundary and regions</span></a>
+<a class="sourceLine" id="cb52-13" data-line-number="13">    out <span class="op">=</span> ax.contour(xx, yy, Z, </a>
+<a class="sourceLine" id="cb52-14" data-line-number="14">                     levels<span class="op">=</span>[<span class="op">-</span><span class="fl">1.</span>, <span class="fl">0.</span>, <span class="dv">1</span>], </a>
+<a class="sourceLine" id="cb52-15" data-line-number="15">                     colors<span class="op">=</span><span class="st">&#39;black&#39;</span>, </a>
+<a class="sourceLine" id="cb52-16" data-line-number="16">                     linestyles<span class="op">=</span>[<span class="st">&#39;dashed&#39;</span>, <span class="st">&#39;solid&#39;</span>, <span class="st">&#39;dashed&#39;</span>])</a>
+<a class="sourceLine" id="cb52-17" data-line-number="17">    out <span class="op">=</span> ax.contourf(xx, yy, Z, </a>
+<a class="sourceLine" id="cb52-18" data-line-number="18">                     levels<span class="op">=</span>[Z.<span class="bu">min</span>(), <span class="dv">0</span>, Z.<span class="bu">max</span>()], </a>
+<a class="sourceLine" id="cb52-19" data-line-number="19">                     colors<span class="op">=</span>[[<span class="fl">0.5</span>, <span class="fl">1.0</span>, <span class="fl">0.5</span>], [<span class="fl">1.0</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>]])</a>
+<a class="sourceLine" id="cb52-20" data-line-number="20">    <span class="cf">return</span> out</a></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb53-1" data-line-number="1"><span class="im">import</span> mlai</a>
+<a class="sourceLine" id="cb53-2" data-line-number="2"><span class="im">import</span> os</a></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb54-1" data-line-number="1"><span class="kw">def</span> decision_boundary_plot(models, X, y, axs, filename, titles, xlim, ylim):</a>
+<a class="sourceLine" id="cb54-2" data-line-number="2">    <span class="co">&quot;&quot;&quot;Plot a decision boundary on the given axes</span></a>
+<a class="sourceLine" id="cb54-3" data-line-number="3"><span class="co">    </span></a>
+<a class="sourceLine" id="cb54-4" data-line-number="4"><span class="co">    :param axs: the axes to plot on.</span></a>
+<a class="sourceLine" id="cb54-5" data-line-number="5"><span class="co">    :param models: the SVM models to plot</span></a>
+<a class="sourceLine" id="cb54-6" data-line-number="6"><span class="co">    :param titles: the titles for each axis</span></a>
+<a class="sourceLine" id="cb54-7" data-line-number="7"><span class="co">    :param X: input training data</span></a>
+<a class="sourceLine" id="cb54-8" data-line-number="8"><span class="co">    :param y: target training data&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb54-9" data-line-number="9">    <span class="cf">for</span> ax <span class="kw">in</span> axs.flatten():</a>
+<a class="sourceLine" id="cb54-10" data-line-number="10">        ax.clear()</a>
+<a class="sourceLine" id="cb54-11" data-line-number="11">    X0, X1 <span class="op">=</span> X[:, <span class="dv">0</span>], X[:, <span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb54-12" data-line-number="12">    <span class="cf">if</span> xlim <span class="kw">is</span> <span class="va">None</span>:</a>
+<a class="sourceLine" id="cb54-13" data-line-number="13">        xlim <span class="op">=</span> [X0.<span class="bu">min</span>()<span class="op">-</span><span class="dv">1</span>, X0.<span class="bu">max</span>()<span class="op">+</span><span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb54-14" data-line-number="14">    <span class="cf">if</span> ylim <span class="kw">is</span> <span class="va">None</span>:</a>
+<a class="sourceLine" id="cb54-15" data-line-number="15">        ylim <span class="op">=</span> [X1.<span class="bu">min</span>()<span class="op">-</span><span class="dv">1</span>, X1.<span class="bu">max</span>()<span class="op">+</span><span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb54-16" data-line-number="16">    xx, yy <span class="op">=</span> np.meshgrid(np.arange(xlim[<span class="dv">0</span>], xlim[<span class="dv">1</span>], <span class="fl">0.02</span>),</a>
+<a class="sourceLine" id="cb54-17" data-line-number="17">                         np.arange(ylim[<span class="dv">0</span>], ylim[<span class="dv">1</span>], <span class="fl">0.02</span>))</a>
+<a class="sourceLine" id="cb54-18" data-line-number="18">    <span class="cf">for</span> cl, title, ax <span class="kw">in</span> <span class="bu">zip</span>(models, titles, axs.flatten()):</a>
+<a class="sourceLine" id="cb54-19" data-line-number="19">        plot_contours(ax, cl, xx, yy,</a>
+<a class="sourceLine" id="cb54-20" data-line-number="20">                      cmap<span class="op">=</span>plt.cm.coolwarm, alpha<span class="op">=</span><span class="fl">0.8</span>)</a>
+<a class="sourceLine" id="cb54-21" data-line-number="21">        ax.plot(X0[y<span class="op">==</span><span class="dv">1</span>], X1[y<span class="op">==</span><span class="dv">1</span>], <span class="st">&#39;r.&#39;</span>, markersize<span class="op">=</span><span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb54-22" data-line-number="22">        ax.plot(X0[y<span class="op">==</span><span class="dv">0</span>], X1[y<span class="op">==</span><span class="dv">0</span>], <span class="st">&#39;g.&#39;</span>, markersize<span class="op">=</span><span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb54-23" data-line-number="23">        ax.set_xlim(xlim)</a>
+<a class="sourceLine" id="cb54-24" data-line-number="24">        ax.set_ylim(ylim)</a>
+<a class="sourceLine" id="cb54-25" data-line-number="25">        ax.set_xticks(())</a>
+<a class="sourceLine" id="cb54-26" data-line-number="26">        ax.set_yticks(())</a>
+<a class="sourceLine" id="cb54-27" data-line-number="27">        ax.set_title(title)</a>
+<a class="sourceLine" id="cb54-28" data-line-number="28">        mlai.write_figure(os.path.join(filename),</a>
+<a class="sourceLine" id="cb54-29" data-line-number="29">                          figure<span class="op">=</span>fig,</a>
+<a class="sourceLine" id="cb54-30" data-line-number="30">                          transparent<span class="op">=</span><span class="va">True</span>)</a>
+<a class="sourceLine" id="cb54-31" data-line-number="31">    <span class="cf">return</span> xlim, ylim</a></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb55-1" data-line-number="1"><span class="im">import</span> matplotlib</a>
+<a class="sourceLine" id="cb55-2" data-line-number="2">font <span class="op">=</span> {<span class="st">&#39;family&#39;</span> : <span class="st">&#39;sans&#39;</span>,</a>
+<a class="sourceLine" id="cb55-3" data-line-number="3">        <span class="st">&#39;weight&#39;</span> : <span class="st">&#39;bold&#39;</span>,</a>
+<a class="sourceLine" id="cb55-4" data-line-number="4">        <span class="st">&#39;size&#39;</span>   : <span class="dv">22</span>}</a>
+<a class="sourceLine" id="cb55-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb55-6" data-line-number="6">matplotlib.rc(<span class="st">&#39;font&#39;</span>, <span class="op">**</span>font)</a>
+<a class="sourceLine" id="cb55-7" data-line-number="7"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</a></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb56-1" data-line-number="1"><span class="co"># Create an instance of SVM and fit the data. </span></a>
+<a class="sourceLine" id="cb56-2" data-line-number="2">C <span class="op">=</span> <span class="fl">100.0</span>  <span class="co"># SVM regularization parameter</span></a>
+<a class="sourceLine" id="cb56-3" data-line-number="3">gammas <span class="op">=</span> [<span class="fl">0.001</span>, <span class="fl">0.01</span>, <span class="fl">0.1</span>, <span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb56-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb56-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb56-6" data-line-number="6">per_class<span class="op">=</span><span class="dv">30</span></a>
+<a class="sourceLine" id="cb56-7" data-line-number="7">num_samps <span class="op">=</span> <span class="dv">20</span></a>
+<a class="sourceLine" id="cb56-8" data-line-number="8"><span class="co"># Set-up 2x2 grid for plotting.</span></a>
+<a class="sourceLine" id="cb56-9" data-line-number="9">fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">4</span>, figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb56-10" data-line-number="10">xlim<span class="op">=</span><span class="va">None</span></a>
+<a class="sourceLine" id="cb56-11" data-line-number="11">ylim<span class="op">=</span><span class="va">None</span></a>
+<a class="sourceLine" id="cb56-12" data-line-number="12"><span class="cf">for</span> samp <span class="kw">in</span> <span class="bu">range</span>(num_samps):</a>
+<a class="sourceLine" id="cb56-13" data-line-number="13">    X, y<span class="op">=</span>create_data(per_class)</a>
+<a class="sourceLine" id="cb56-14" data-line-number="14">    models <span class="op">=</span> []</a>
+<a class="sourceLine" id="cb56-15" data-line-number="15">    titles <span class="op">=</span> []</a>
+<a class="sourceLine" id="cb56-16" data-line-number="16">    <span class="cf">for</span> gamma <span class="kw">in</span> gammas:</a>
+<a class="sourceLine" id="cb56-17" data-line-number="17">        models.append(svm.SVC(kernel<span class="op">=</span><span class="st">&#39;rbf&#39;</span>, gamma<span class="op">=</span>gamma, C<span class="op">=</span>C))</a>
+<a class="sourceLine" id="cb56-18" data-line-number="18">        titles.append(<span class="st">&#39;$\gamma=</span><span class="sc">{}</span><span class="st">$&#39;</span>.<span class="bu">format</span>(gamma))</a>
+<a class="sourceLine" id="cb56-19" data-line-number="19">    models <span class="op">=</span> (cl.fit(X, y) <span class="cf">for</span> cl <span class="kw">in</span> models)</a>
+<a class="sourceLine" id="cb56-20" data-line-number="20">    xlim, ylim <span class="op">=</span> decision_boundary_plot(models, X, y, </a>
+<a class="sourceLine" id="cb56-21" data-line-number="21">                           axs<span class="op">=</span>ax, </a>
+<a class="sourceLine" id="cb56-22" data-line-number="22">                           filename<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml/bias-variance</span><span class="sc">{samp:0&gt;3}</span><span class="st">.svg&#39;</span>.<span class="bu">format</span>(samp<span class="op">=</span>samp), </a>
+<a class="sourceLine" id="cb56-23" data-line-number="23">                           titles<span class="op">=</span>titles,</a>
+<a class="sourceLine" id="cb56-24" data-line-number="24">                          xlim<span class="op">=</span>xlim,</a>
+<a class="sourceLine" id="cb56-25" data-line-number="25">                          ylim<span class="op">=</span>ylim)</a></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb57-1" data-line-number="1"><span class="im">import</span> pods</a>
+<a class="sourceLine" id="cb57-2" data-line-number="2"><span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</a></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb58-1" data-line-number="1">pods.notebook.display_plots(<span class="st">&#39;bias-variance</span><span class="sc">{samp:0&gt;3}</span><span class="st">.svg&#39;</span>, </a>
+<a class="sourceLine" id="cb58-2" data-line-number="2">                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, </a>
+<a class="sourceLine" id="cb58-3" data-line-number="3">                            samp<span class="op">=</span>IntSlider(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">10</span>,<span class="dv">1</span>))</a></code></pre></div>
 <div class="figure">
 <div id="bias-variance-errors-figure" class="figure-frame">
 <div class="centered" style="">
@@ -1134,13 +1101,13 @@ $$</span><br /> where the data is provided to us as a set of <span class="math i
 <p>The generalization error is normally estimated by applying the objective function to a set of data that the model <em>wasn’t</em> trained on, the test data. To ensure good performance we normally want a model that gives us a low generalization error. If we weren’t sure of the right prediction function to use, then we could try 1,000 different prediction functions. Then we could use the one that gives us the lowest error on the test data. But you have to be careful. Selecting a model in this way is like a further stage of training where you are using the test data in the training.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> So when this is done, the data used for this is not known as test data, it is known as <em>validation data</em>. And the associated error is the <em>validation error</em>. Using the validation error for model selection is a standard machine learning technique, but it can be misleading about the final generalization error. Almost all machine learning practitioners know not to use the test data in your training procedure, but sometimes people forget that when validation data is used for model selection that validation error cannot be used as an unbiased estimate of the generalization performance.</p>
 <h2 id="olympic-data-with-bayesian-polynomials-edit">Olympic Data with Bayesian Polynomials <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/olympic-bayesian-polynomials.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/olympic-bayesian-polynomials.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Five fold cross validation tests the ability of the model to <em>interpolate</em>.</p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb63-1" data-line-number="1"><span class="im">import</span> mlai</a>
-<a class="sourceLine" id="cb63-2" data-line-number="2"><span class="im">import</span> pods</a></code></pre></div>
-<div class="sourceCode" id="cb64"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb64-1" data-line-number="1"><span class="im">import</span> pods</a>
-<a class="sourceLine" id="cb64-2" data-line-number="2"><span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</a></code></pre></div>
-<div class="sourceCode" id="cb65"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb65-1" data-line-number="1">pods.notebook.display_plots(<span class="st">&#39;olympic_BLM_polynomial_number</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>, </a>
-<a class="sourceLine" id="cb65-2" data-line-number="2">                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml/&#39;</span>, </a>
-<a class="sourceLine" id="cb65-3" data-line-number="3">                            num_basis<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">27</span>, <span class="dv">1</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb59-1" data-line-number="1"><span class="im">import</span> mlai</a>
+<a class="sourceLine" id="cb59-2" data-line-number="2"><span class="im">import</span> pods</a></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb60-1" data-line-number="1"><span class="im">import</span> pods</a>
+<a class="sourceLine" id="cb60-2" data-line-number="2"><span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</a></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb61-1" data-line-number="1">pods.notebook.display_plots(<span class="st">&#39;olympic_BLM_polynomial_number</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>, </a>
+<a class="sourceLine" id="cb61-2" data-line-number="2">                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml/&#39;</span>, </a>
+<a class="sourceLine" id="cb61-3" data-line-number="3">                            num_basis<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">27</span>, <span class="dv">1</span>))</a></code></pre></div>
 <div class="figure">
 <div id="olympic-blm-polynomial-number-26-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/ml/olympic_BLM_polynomial_number026.svg" width="80%" style=" ">
@@ -1155,11 +1122,11 @@ $$</span><br /> where the data is provided to us as a set of <span class="math i
 </div>
 <h2 id="hold-out-validation">Hold Out Validation</h2>
 <p>For the polynomial fit, we will now look at <em>hold out</em> validation, where we are holding out some of the most recent points. This tests the abilit of our model to <em>extrapolate</em>.</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb66-1" data-line-number="1"><span class="im">import</span> pods</a>
-<a class="sourceLine" id="cb66-2" data-line-number="2"><span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</a></code></pre></div>
-<div class="sourceCode" id="cb67"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb67-1" data-line-number="1">pods.notebook.display_plots(<span class="st">&#39;olympic_val_BLM_polynomial_number</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>, </a>
-<a class="sourceLine" id="cb67-2" data-line-number="2">                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, </a>
-<a class="sourceLine" id="cb67-3" data-line-number="3">                            num_basis<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">27</span>, <span class="dv">1</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb62-1" data-line-number="1"><span class="im">import</span> pods</a>
+<a class="sourceLine" id="cb62-2" data-line-number="2"><span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</a></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb63-1" data-line-number="1">pods.notebook.display_plots(<span class="st">&#39;olympic_val_BLM_polynomial_number</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>, </a>
+<a class="sourceLine" id="cb63-2" data-line-number="2">                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, </a>
+<a class="sourceLine" id="cb63-3" data-line-number="3">                            num_basis<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">27</span>, <span class="dv">1</span>))</a></code></pre></div>
 <div class="figure">
 <div id="olympic-val-blm-polynomial-number-26-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/ml/olympic_val_BLM_polynomial_number026.svg" width="80%" style=" ">
@@ -1174,12 +1141,12 @@ $$</span><br /> where the data is provided to us as a set of <span class="math i
 </div>
 <h2 id="fold-cross-validation">5-fold Cross Validation</h2>
 <p>Five fold cross validation tests the ability of the model to <em>interpolate</em>.</p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb68-1" data-line-number="1"><span class="im">import</span> pods</a>
-<a class="sourceLine" id="cb68-2" data-line-number="2"><span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</a></code></pre></div>
-<div class="sourceCode" id="cb69"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb69-1" data-line-number="1">pods.notebook.display_plots(<span class="st">&#39;olympic_5cv</span><span class="sc">{part:0&gt;2}</span><span class="st">_BLM_polynomial_number</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>, </a>
-<a class="sourceLine" id="cb69-2" data-line-number="2">                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, </a>
-<a class="sourceLine" id="cb69-3" data-line-number="3">                            part<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">5</span>), </a>
-<a class="sourceLine" id="cb69-4" data-line-number="4">                            num_basis<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">27</span>, <span class="dv">1</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb64-1" data-line-number="1"><span class="im">import</span> pods</a>
+<a class="sourceLine" id="cb64-2" data-line-number="2"><span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</a></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb65-1" data-line-number="1">pods.notebook.display_plots(<span class="st">&#39;olympic_5cv</span><span class="sc">{part:0&gt;2}</span><span class="st">_BLM_polynomial_number</span><span class="sc">{num_basis:0&gt;3}</span><span class="st">.svg&#39;</span>, </a>
+<a class="sourceLine" id="cb65-2" data-line-number="2">                            directory<span class="op">=</span><span class="st">&#39;../slides/diagrams/ml&#39;</span>, </a>
+<a class="sourceLine" id="cb65-3" data-line-number="3">                            part<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">5</span>), </a>
+<a class="sourceLine" id="cb65-4" data-line-number="4">                            num_basis<span class="op">=</span>IntSlider(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">27</span>, <span class="dv">1</span>))</a></code></pre></div>
 <div class="figure">
 <div id="olympic-5cv05-blm-polynomial-number-26-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/ml/olympic_5cv05_BLM_polynomial_number026.svg" width="80%" style=" ">

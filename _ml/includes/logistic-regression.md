@@ -236,8 +236,9 @@ $$
 \setupcode{import numpy as np}
 \code{def objective(g, y):
     "Computes the objective function."
-    posind = np.where(y.flatten()==1)
-    negind = np.where(y.flatten()==0)
+	labs = np.asarray(y, dtype=float).flatten()
+    posind = np.where(labs==1)
+    negind = np.where(labs==0)
     return -np.log(g[posind, :]).sum() - np.log(1-g[negind, :]).sum()}
 
 As normal, we would like to minimize this objective. This can be done
@@ -336,9 +337,10 @@ $$
 \setupcode{import numpy as np}
 \code{def gradient(g, Phi, y):
     "Generates the gradient of the parameter vector."
-    posind = np.where(y.flatten()==1)
+	labs = np.asarray(y, dtype=float).flatten()
+    posind = np.where(labs==1)
     dw = -(Phi[posind]*(1-g[posind])).sum(0)
-    negind = np.where(y.flatten()==0 )
+    negind = np.where(labs==0 )
     dw += (Phi[negind]*g[negind]).sum(0)
     return dw[:, None]}
 
