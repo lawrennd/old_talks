@@ -60,6 +60,8 @@ monitoring of artificial intelligence systems.}
 }
 
 
+\section{Motivating Example}
+
 \include{_ai/includes/safe-boda.md}
 
 \subsection{Announcement}
