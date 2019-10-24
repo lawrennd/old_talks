@@ -99,6 +99,7 @@ The project partners are [Element AI](https://www.elementai.com/),  [Open ML](ht
 
 \include{_ai/includes/ride-allocation-prediction.md}
 
+\include{_ai/includes/the-promise-of-ai.md}
 \include{_ai/includes/artificial-vs-natural-systems.md}
 \include{_ai/includes/ml-system-decomposability.md}
 \include{_ml/includes/ml-paradigm-shift.md}
