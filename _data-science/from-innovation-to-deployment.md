@@ -2,23 +2,15 @@
 title: "From Innovation to Deployment"
 subtitle: "Machine Learning Systems Design"
 abstract: >
-  There has been a great deal of interest in probabilistic programs:
-  placing modeling at the heart of programming language. In this talk
-  we set the scene for data oriented programming.
+  The AI systems we are developing and deploying are based on
+  interconnected machine learning components. There is a need for 
+  AI-assisted design and monitoring of these systems to ensure they perform
+  robustly, safely and accurately in their deployed environment. We address 
+  the entire pipeline of AI system development, from data acquisition to 
+  decision making. 
   
-  Data is a fundamental component of machine learning, yet the
-  availability, quality and discoverability of data are often ignored
-  in formal computer science.
-  
-  While languages for data manipulation exist (for example SQL), they
-  are not suitable for the modern world of machine learning
-  data. Modern data oriented languages should place data at the center
-  of modern digital systems design and provide an infrastructure in
-  which monitoring of data quality and model decision making are
-  automaticaly available.
-  
-  We provide the context for Modern Data Oriented Programming, and
-  give some insight into our initial ideas in this space.
+  Data Oriented Architectures are an ecosystem that includes system monitoring for performance, 
+  interpretability and fairness. 
 author:
 - family: Lawrence
   given: Neil D.
