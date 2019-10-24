@@ -22,8 +22,15 @@ In practice modern software systems involve continuous deployment of models into
 \notes{Once the decomposition is understood, the data is sourced and the models
 are created, the model code needs to be deployed.}
 
-\notes{To extend the USB stick analogy further, how would we deploy that code
-if we thought it was likely to evolve in production? This is what
+\ifndef{dataScienceAsDebugging}
+\notes{I normally use an analogy to describe data science to software engineers. Imagine, as a software engineer you are given a USB stick of unknown provenance with a software library on it. You are told to integrate that code into your system. All good software engineers would refuse to do this. But if they were forced to do it, they would do so very carefully.
+
+This is the role of the data scientist, incorporating data into the system is equivalent to incorporating software of some unknown provenance.}
+
+\addblog{Data Science as Debugging}{2017/03/14/data-science-as-debugging}
+\endif
+
+\notes{To extend the USB stick analogy further, how would as software engineer deploy the code if they thought that the code might evolve in production? This is what
 data does. We cannot assume that the conditions under which we trained
 our model will be retained as we move forward, indeed the only constant
 we have is change.}
