@@ -1,7 +1,9 @@
 ---
 title: "From Innovation to Deployment"
-subtitle: "Machine Learning Systems Design"
+subtitle: "Auto AI and Machine Learning Systems Design"
 abstract: >
+  In this talk we introduce a five year project funded by the UK's Turing Institute to shift the focus from developing AI systems to deploying AI systems that are safe and reliable. 
+  
   The AI systems we are developing and deploying are based on
   interconnected machine learning components. There is a need for 
   AI-assisted design and monitoring of these systems to ensure they perform
@@ -10,7 +12,7 @@ abstract: >
   decision making. 
   
   Data Oriented Architectures are an ecosystem that includes system monitoring for performance, 
-  interpretability and fairness. 
+  interpretability and fairness. The will enable us to move from individual component optimisation to full system monitoring and optimisation.
 author:
 - family: Lawrence
   given: Neil D.
@@ -26,7 +28,41 @@ transition: None
 
 \include{talk-macros.tex}
 
-\include{_ai/includes/centrifugal-governor.md}
+\subsection{Introduction}
+
+\notes{Artificial Intelligence (AI) solutions
+are based on machine learning algorithms (ML), but each ML
+solution is only capable of solving a restricted task, e.g. a
+supervised learning problem. Consequently, any AI that we deploy today
+takes the form of an ML System with interacting
+components. As these ML systems become larger and more complex,
+challenges in interpretation, explanation, accuracy and fairness
+arise. This project addresses these issues. The challenges
+include [@Lawrence:threeds19]: the *decomposition* of the system, the
+*data* availability, and the performance of the system in
+*deployment*. Collectively we refer to these challenges as the "Three
+Ds of ML Systems Design".}
+
+\subsection{Aim}
+
+\notes{Our aim is to scale our ability to deploy safe and reliable AI
+solutions. Our technical approach is to do this through *data-oriented
+software engineering* practices and *deep system emulation*. We will do this through  a
+significant extension of the notion of Automated ML
+(AutoML) to Automated AI (AutoAI), this relies on a shift from Bayesian Optimisation to *Bayesian System Optimisation*. The project will
+develop a toolkit for automating the deployment, maintenance and
+monitoring of artificial intelligence systems.}
+
+\slides{
+* Scale safe and reliable AI solutions. 
+* Move from Auto ML to Auto AI
+* Bayesian Optimisation to Bayesian System Optimisation
+}
+
+
+\include{_ai/includes/safe-boda.md}
+
+\include{_ai/includes/ride-allocation-prediction.md}
 
 \include{_ai/includes/artificial-vs-natural-systems.md}
 \include{_ai/includes/ml-system-decomposability.md}

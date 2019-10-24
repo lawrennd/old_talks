@@ -119,6 +119,7 @@ There are constraints on the hypothetical, they include: the *input* information
 
 \include{_ai/includes/ride-allocation-prediction.md}
 
+
 \notes{Let's consider a ride sharing app, for example the SafeBoda system. 
 
 Anne is on her way home now; she wishes to hail a car using a ride sharing app. 
