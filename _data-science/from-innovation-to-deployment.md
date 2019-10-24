@@ -95,7 +95,7 @@ monitoring of artificial intelligence systems.}
 }
 \notes{As of 24th October 2019, the [Turing Institute announced](https://www.turing.ac.uk/news/welcoming-world-class-turing-ai-fellows-institute) that this work has been funded through a Turing Institute Senior AI Fellowship. This is the first Senior AI fellowship and it provides funding for five years. 
 
-The project partners are [Element AI](https://www.elementai.com/),  [Open ML](https://openml.org), [Professor Sylvie Delacroix](https://www.birmingham.ac.uk/staff/profiles/law/delacroix-sylvie.aspx) and [Data Science Africa!](http://datascienceafrica.org).}
+The project partners are [Element AI](https://www.elementai.com/),  [Open ML](https://openml.org), [Professor Sylvie Delacroix](https://www.birmingham.ac.uk/staff/profiles/law/delacroix-sylvie.aspx) and [Data Science Africa](http://datascienceafrica.org).}
 
 \include{_ai/includes/ride-allocation-prediction.md}
 
