@@ -115,13 +115,15 @@ There are constraints on the hypothetical, they include: the *input* information
 
 \notes{What is the advantage to defining things in this way? By defining, clearly, the two streams as real and hypothetical variants of each other, we now enable automation of the deployment and any redeployment process. The hypothetical can be *instantiated* against the real, and design criteria can be constantly evaluated triggering retraining when necessary.}
 
+\include{_ai/includes/safe-boda.md}
+
 \include{_ai/includes/ride-allocation-prediction.md}
 
-\notes{As a second example, we'll consider a ride sharing app. 
+\notes{Let's consider a ride sharing app, for example the SafeBoda system. 
 
 Anne is on her way home now; she wishes to hail a car using a ride sharing app. 
 
-The app is designed in the following way. On opening her app Anne is notified about driverss in the nearby neighborhood. She is given an estimate of the time a ride may take to come.
+The app is designed in the following way. On opening her app Anne is notified about drivers in the nearby neighborhood. She is given an estimate of the time a ride may take to come.
 
 Given this information about driver availability, Anne may feel encouraged to enter a destination. Given this destination, a price estimate can be given. This price is conditioned on other riders that may wish to go in the same direction, but the price estimate needs to be made before the user agrees to the ride. 
 

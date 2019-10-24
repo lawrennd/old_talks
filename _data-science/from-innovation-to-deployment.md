@@ -19,7 +19,7 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 blog: 
-date: 2019-10-23
+date: 2019-10-24
 venue: Data Science Africa, Ashesi University
 transition: None
 ---

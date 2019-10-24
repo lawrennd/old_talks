@@ -10,10 +10,10 @@ author:
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
   orchid: 
-date: 2019-10-23
-published: 2019-10-23
-reveal: 2019-10-23-from-innovation-to-deployment.slides.html
-ipynb: 2019-10-23-from-innovation-to-deployment.ipynb
+date: 2019-10-24
+published: 2019-10-24
+reveal: 2019-10-24-from-innovation-to-deployment.slides.html
+ipynb: 2019-10-24-from-innovation-to-deployment.ipynb
 layout: talk
 categories:
 - notes
@@ -232,9 +232,27 @@ categories:
 <p>There are constraints on the hypothetical, they include: the <em>input</em> information, the upper limit of latency between input and prediction, and the decision Anne needs to make (how far ahead, what her upside, downside risks are). These three constraints mean that we can only recover an approximation to the hypothetical.</p>
 <h2 id="hypothetical-advantage">Hypothetical Advantage</h2>
 <p>What is the advantage to defining things in this way? By defining, clearly, the two streams as real and hypothetical variants of each other, we now enable automation of the deployment and any redeployment process. The hypothetical can be <em>instantiated</em> against the real, and design criteria can be constantly evaluated triggering retraining when necessary.</p>
-<p>As a second example, we’ll consider a ride sharing app.</p>
+<h2 id="safeboda-edit">SafeBoda <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/safe-boda.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/safe-boda.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="figure">
+<div id="safe-boda-system-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/ai/safe-boda.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="safe-boda-system-magnify" class="magnify" onclick="magnifyFigure(&#39;safe-boda-system&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="safe-boda-system-caption" class="caption-frame">
+<p>Figure: SafeBoda is a ride allocation system for Boda Boda drivers. Let’s imagine the capabilities we need for such an AI system.</p>
+</div>
+</div>
+<p><a href="https://safeboda.com/ug/index.php#whysafeboda">SafeBoda</a> is a Kampala based rider allocation system for Boda Boda drivers. Boda boda are motorcycle taxis which give employment to, often young men, across Kampala. Safe Boda is driven by the knowledge that road accidents are set to match HIV/AIDS as the highest cause of death in low/middle income families by 2030.</p>
+<blockquote>
+<p>With road accidents set to match HIV/AIDS as the highest cause of death in low/middle income countries by 2030, SafeBoda’s aim is to modernise informal transportation and ensure safe access to mobility.</p>
+</blockquote>
+<p>Let’s consider a ride sharing app, for example the SafeBoda system.</p>
 <p>Anne is on her way home now; she wishes to hail a car using a ride sharing app.</p>
-<p>The app is designed in the following way. On opening her app Anne is notified about driverss in the nearby neighborhood. She is given an estimate of the time a ride may take to come.</p>
+<p>The app is designed in the following way. On opening her app Anne is notified about drivers in the nearby neighborhood. She is given an estimate of the time a ride may take to come.</p>
 <p>Given this information about driver availability, Anne may feel encouraged to enter a destination. Given this destination, a price estimate can be given. This price is conditioned on other riders that may wish to go in the same direction, but the price estimate needs to be made before the user agrees to the ride.</p>
 <p>Business customer service constraints dictate that this price may not change after Anne’s order is confirmed.</p>
 <p>In this simple system, several decisions are being made, each of them on the basis of a hypothetical.</p>
