@@ -115,11 +115,7 @@ There are constraints on the hypothetical, they include: the *input* information
 
 \notes{What is the advantage to defining things in this way? By defining, clearly, the two streams as real and hypothetical variants of each other, we now enable automation of the deployment and any redeployment process. The hypothetical can be *instantiated* against the real, and design criteria can be constantly evaluated triggering retraining when necessary.}
 
-\subsection{Ride Sharing System}
-
-
-\figure{\includediagram{../slides/diagrams/ai/ride-allocation-prediction}{60%}}{Some software components in a ride allocation system. Circled components are hypothetical, rectangles represent actual data.}{ride-allocation-system}
-
+\include{_ai/includes/ride-allocation-prediction.md}
 
 \notes{As a second example, we'll consider a ride sharing app. 
 
