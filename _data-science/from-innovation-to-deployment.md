@@ -1,5 +1,6 @@
 ---
-title: "Data Oriented Architectures"
+title: "From Innovation to Deployment"
+subtitle: "Machine Learning Systems Design"
 abstract: >
   There has been a great deal of interest in probabilistic programs:
   placing modeling at the heart of programming language. In this talk
