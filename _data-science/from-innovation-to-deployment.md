@@ -99,12 +99,24 @@ monitoring of artificial intelligence systems.}
 
 The project partners are [Element AI](https://www.elementai.com/),  [Open ML](https://openml.org), [Professor Sylvie Delacroix](https://www.birmingham.ac.uk/staff/profiles/law/delacroix-sylvie.aspx) and [Data Science Africa](http://datascienceafrica.org).}
 
+\subsection{Inclusive Project}
+
+There is no way that the team we're building will be able to deliver on this agenda alone, so please join us in addressing these challenges! 
+
 \include{_ai/includes/ride-allocation-prediction.md}
 
 \include{_ai/includes/the-promise-of-ai.md}
-\include{_ai/includes/artificial-vs-natural-systems.md}
+
+\notes{This proposal is about addressing that gap, but to first understand the gap, let's look at comparisons between the approach we take to systems design, and the way that natural systems evolve.}
+
+\include{_ai/includes/artificial-vs-natural-systems-short.md}
+
+\notes{Currently, our main approach to systems design involves designing a system in a component-wise manner. Attempts to replicate the capabilities of evolved systems through specifying the objective, rather than evolving behaviour.}
+
 \include{_ai/includes/ml-system-decomposability.md}
 \include{_ml/includes/ml-paradigm-shift.md}
+
+\notes{This gives vulnerabilities that we are exposing to the natural environment. Many security problems that we face today are the result of bugs that mean that code and data are not separate in thee systems we deploy, imagine what will happen when we deploy systems that purposefully short-circuit this protection into uncontrolled environments.}
 
 \include{_ai/includes/intelligent-system-paolo.md}
 \include{_ai/includes/peppercorn.md}
