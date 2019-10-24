@@ -335,74 +335,154 @@ The main phenomenon we see across the board is the shift in dynamic from the dir
 
 
 -->
-<h2 id="human-communication-edit">Human Communication <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/conversation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/conversation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
-<p>For human conversation to work, we require an internal model of who we are speaking to. We model each other, and combine our sense of who they are, who they think we are, and what has been said. This is our approach to dealing with the limited bandwidth connection we have. Empathy and understanding of intent. Mental dispositional concepts are used to augment our limited communication bandwidth.</p>
-<p>Fritz Heider referred to the important point of a conversation as being that they are happenings that are “<em>psychologically represented</em> in each of the participants” (his emphasis) <span class="citation" data-cites="Heider:interpersonal58">(Heider 1958)</span></p>
-<h3 id="bandwidth-constrained-conversations">Bandwidth Constrained Conversations</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="im">import</span> pods</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="im">from</span> ipywidgets <span class="im">import</span> IntSlider</a></code></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" data-line-number="1">pods.notebook.display_plots(<span class="st">&#39;anne-bob-conversation</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, </a>
-<a class="sourceLine" id="cb4-2" data-line-number="2">                            <span class="st">&#39;../slides/diagrams&#39;</span>,  sample<span class="op">=</span>IntSlider(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">1</span>))</a></code></pre></div>
+<!--
+
+
+
+
+
+## Human Communication <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/conversation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/conversation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+
+
+For human conversation to work, we require an internal model of who we are speaking to. We model each other, and combine our sense of who they are, who they think we are, and what has been said. This is our approach to dealing with the limited bandwidth connection we have. Empathy and understanding of intent. Mental dispositional concepts are used to augment our limited communication bandwidth.
+
+Fritz Heider referred to the important point of a conversation as being that they are happenings that are "*psychologically represented* in each of the participants" (his emphasis) [@Heider:interpersonal58]
+
+
+
+### Bandwidth Constrained Conversations 
+
+```{.python}
+import pods
+from ipywidgets import IntSlider
+```
+
+
+```{.python}
+pods.notebook.display_plots('anne-bob-conversation{sample:0>3}.svg', 
+                            '../slides/diagrams',  sample=IntSlider(0, 0, 7, 1))
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="figure">
-<div id="anne-bob-conversation-civil-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/anne-bob-conversation006.svg" width="70%" style=" ">
-</object>
+<div class="figure-frame" id="anne-bob-conversation-civil-figure">
+<object class="svgplot " data="../slides/diagrams/anne-bob-conversation006.svg" width="70%" style=" "></object>
 </div>
-<div id="anne-bob-conversation-civil-magnify" class="magnify" onclick="magnifyFigure(&#39;anne-bob-conversation-civil&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<div class="magnify" id="anne-bob-conversation-civil-magnify" onclick="magnifyFigure('anne-bob-conversation-civil')">
+<img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex">
 </div>
-<div id="anne-bob-conversation-civil-caption" class="caption-frame">
-<p>Figure: Conversation relies on internal models of other individuals.</p>
+<div class="caption-frame" id="anne-bob-conversation-civil-caption">
+Figure: Conversation relies on internal models of other individuals.
 </div>
 </div>
 <div class="figure">
-<div id="anne-bob-conversation-argument-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/anne-bob-conversation007.svg" width="70%" style=" ">
-</object>
+<div class="figure-frame" id="anne-bob-conversation-argument-figure">
+<object class="svgplot " data="../slides/diagrams/anne-bob-conversation007.svg" width="70%" style=" "></object>
 </div>
-<div id="anne-bob-conversation-argument-magnify" class="magnify" onclick="magnifyFigure(&#39;anne-bob-conversation-argument&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<div class="magnify" id="anne-bob-conversation-argument-magnify" onclick="magnifyFigure('anne-bob-conversation-argument')">
+<img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex">
 </div>
-<div id="anne-bob-conversation-argument-caption" class="caption-frame">
-<p>Figure: Misunderstanding of context and who we are talking to leads to arguments.</p>
+<div class="caption-frame" id="anne-bob-conversation-argument-caption">
+Figure: Misunderstanding of context and who we are talking to leads to arguments.
 </div>
 </div>
-<p>Embodiment factors imply that, in our communication between humans, what is <em>not</em> said is, perhaps, more important than what is said. To communicate with each other we need to have a model of who each of us are.</p>
-<p>To aid this, in society, we are required to perform roles. Whether as a parent, a teacher, an employee or a boss. Each of these roles requires that we conform to certain standards of behaviour to facilitate communication between ourselves.</p>
-<p>Control of self is vitally important to these communications.</p>
-<p>The high availability of data available to humans undermines human-to-human communication channels by providing new routes to undermining our control of self.</p>
-<h3 id="a-six-word-novel-edit">A Six Word Novel <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/baby-shoes.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/baby-shoes.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
+
+Embodiment factors imply that, in our communication between humans, what is *not* said is, perhaps, more important than what is said. To communicate with each other we need to have a model of who each of us are. 
+
+To aid this, in society, we are required to perform roles. Whether as a parent, a teacher, an employee or a boss. Each of these roles requires that we conform to certain standards of behaviour to facilitate communication between ourselves.
+
+Control of self is vitally important to these communications.
+
+The high availability of data available to humans undermines human-to-human communication channels by providing new routes to undermining our control of self.
+
+
+
+
+
+
+
+
+
+### A Six Word Novel <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/baby-shoes.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/baby-shoes.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+
 <div class="figure">
-<div id="classic-baby-shoes-figure" class="figure-frame">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/Classic_baby_shoes.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div class="figure-frame" id="classic-baby-shoes-figure">
+<div class="centered centered" style=""><img class="" src="../slides/diagrams/Classic_baby_shoes.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div><center>For sale: baby shoes, never worn</center>
 </div>
-<center>
-For sale: baby shoes, never worn
-</center>
+<div class="magnify" id="classic-baby-shoes-magnify" onclick="magnifyFigure('classic-baby-shoes')">
+<img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex">
 </div>
-<div id="classic-baby-shoes-magnify" class="magnify" onclick="magnifyFigure(&#39;classic-baby-shoes&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
-</div>
-<div id="classic-baby-shoes-caption" class="caption-frame">
-<p>Figure: Consider the six word novel, apocraphally credited to Ernest Hemingway, “For sale: baby shoes, never worn”. To understand what that means to a human, you need a great deal of additional context. Context that is not directly accessible to a machine that has not got both the evolved and contextual understanding of our own condition to realize both the implication of the advert and what that implication means emotionally to the previous owner.</p>
+<div class="caption-frame" id="classic-baby-shoes-caption">
+Figure: Consider the six word novel, apocraphally credited to Ernest Hemingway, "For sale: baby shoes, never worn". To understand what that means to a human, you need a great deal of additional context. Context that is not directly accessible to a machine that has not got both the evolved and contextual understanding of our own condition to realize both the implication of the advert and what that implication means emotionally to the previous owner.
 </div>
 </div>
-<p>But this is a very different kind of intelligence than ours. A computer cannot understand the depth of the Ernest Hemingway’s apocryphal six word novel: “For Sale, Baby Shoes, Never worn”, because it isn’t equipped with that ability to model the complexity of humanity that underlies that statement.</p>
-<h3 id="heider-and-simmel-1944-edit">Heider and Simmel (1944) <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/heider-simmel.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/heider-simmel.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
+
+
+
+
+But this is a very different kind of intelligence than ours. A computer cannot understand the depth of the Ernest Hemingway's apocryphal six word novel: "For Sale, Baby Shoes, Never worn", because it isn't equipped with that ability to model the complexity of humanity that underlies that statement.
+
+
+
+
+
+
+
+### Heider and Simmel (1944) <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/heider-simmel.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/heider-simmel.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+
 <div class="figure">
-<div id="heider-simmel-shapes-figure" class="figure-frame">
-<iframe width="800" height="600" src="https://www.youtube.com/embed/8FIEZXMUM2I?start=7" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-</iframe>
+<div class="figure-frame" id="heider-simmel-shapes-figure">
+<iframe width="800" height="600" src="https://www.youtube.com/embed/8FIEZXMUM2I?start=7" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
-<div id="heider-simmel-shapes-magnify" class="magnify" onclick="magnifyFigure(&#39;heider-simmel-shapes&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<div class="magnify" id="heider-simmel-shapes-magnify" onclick="magnifyFigure('heider-simmel-shapes')">
+<img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex">
 </div>
-<div id="heider-simmel-shapes-caption" class="caption-frame">
-<p>Figure: Fritz Heider and Marianne Simmel’s video of shapes from <span class="citation" data-cites="Heider:experimental44">Heider and Simmel (1944)</span>.</p>
+<div class="caption-frame" id="heider-simmel-shapes-caption">
+Figure: Fritz Heider and Marianne Simmel's video of shapes from @Heider:experimental44.
 </div>
 </div>
-<p><a href="https://en.wikipedia.org/wiki/Fritz_Heider">Fritz Heider</a> and <a href="https://en.wikipedia.org/wiki/Marianne_Simmel">Marianne Simmel</a>’s experiments with animated shapes from 1944 <span class="citation" data-cites="Heider:experimental44">(Heider and Simmel 1944)</span>. Our interpretation of these objects as showing motives and even emotion is a combination of our desire for narrative, a need for understanding of each other, and our ability to empathise. At one level, these are crudely drawn objects, but in another key way, the animator has communicated a story through simple facets such as their relative motions, their sizes and their actions. We apply our psychological representations to these faceless shapes in an effort to interpret their actions.</p>
+
+[Fritz Heider](https://en.wikipedia.org/wiki/Fritz_Heider) and [Marianne Simmel](https://en.wikipedia.org/wiki/Marianne_Simmel)'s experiments with animated shapes from 1944 [@Heider:experimental44]. Our interpretation of these objects as showing motives and even emotion is a combination of our desire for narrative, a need for understanding of each other, and our ability to empathise. At one level, these are crudely drawn objects, but in another key way, the animator has communicated a story through simple facets such as their relative motions, their sizes and their actions. We apply our psychological representations to these faceless shapes in an effort to interpret their actions.
+
+
+
+
+
+-->
 <h2 id="turing-ai-fellowship-edit">Turing AI Fellowship <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/turing-ai-fellowship.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/turing-ai-fellowship.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <h2 id="aim">Aim</h2>
 <p>Our aim is to scale our ability to deploy safe and reliable AI solutions. Our technical approach is to do this through <em>data-oriented software engineering</em> practices and <em>deep system emulation</em>. We will do this through a significant extension of the notion of Automated ML (AutoML) to Automated AI (AutoAI), this relies on a shift from Bayesian Optimisation to <em>Bayesian System Optimisation</em>. The project will develop a toolkit for automating the deployment, maintenance and monitoring of artificial intelligence systems.</p>
@@ -468,12 +548,6 @@ For sale: baby shoes, never worn
 </div>
 <div id="ref-Edwards:privacy04">
 <p>Edwards, Lilian. 2004. “The Problem with Privacy.” <em>International Review of Law Computers &amp; Technology</em> 18 (3): 263–94.</p>
-</div>
-<div id="ref-Heider:interpersonal58">
-<p>Heider, Fritz. 1958. <em>The Psychology of Interpersonal Relations</em>. John Wiley.</p>
-</div>
-<div id="ref-Heider:experimental44">
-<p>Heider, F., and M. Simmel. 1944. “An Experimental Study of Apparent Behavior.” <em>The American Journal of Psychology</em> 57: 243–59.</p>
 </div>
 <div id="ref-Lawrence:trusts16">
 <p>Lawrence, Neil D. 2016. “Data Trusts Could Allay Our Privacy Fears.” The Guardian Media &amp; Tech Network. <a href="https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy" class="uri">https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy</a>.</p>
