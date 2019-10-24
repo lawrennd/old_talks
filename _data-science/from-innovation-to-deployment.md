@@ -62,6 +62,39 @@ monitoring of artificial intelligence systems.}
 
 \include{_ai/includes/safe-boda.md}
 
+\subsection{Announcement}
+\slides{
+* Today [the Turing Institute announced](https://www.turing.ac.uk/news/welcoming-world-class-turing-ai-fellows-institute) that this work would be funded as the inaugural "Senior Artificial Intelligence Fellow". 
+}
+
+\newslide{Announcement}
+\slides{
+* Five year program in collaboration with 
+
+. . .
+
+  \aligncenter{[Element AI](https://www.elementai.com/)}
+
+. . .
+
+  \aligncenter{[Open ML](https://openml.org)}
+
+. . .
+
+  \aligncenter{[Professor Sylvie Delacroix](https://www.birmingham.ac.uk/staff/profiles/law/delacroix-sylvie.aspx)}
+
+. . .
+
+  \aligncenter{and}
+
+. . .
+
+  \aligncenter{[Data Science Africa!](http://datascienceafrica.org)}
+}
+\notes{As of 24th October 2019, the [Turing Institute announced](https://www.turing.ac.uk/news/welcoming-world-class-turing-ai-fellows-institute) that this work has been funded through a Turing Institute Senior AI Fellowship. This is the first Senior AI fellowship and it provides funding for five years. 
+
+The project partners are [Element AI](https://www.elementai.com/),  [Open ML](https://openml.org), [Professor Sylvie Delacroix](https://www.birmingham.ac.uk/staff/profiles/law/delacroix-sylvie.aspx) and [Data Science Africa!](http://datascienceafrica.org).}
+
 \include{_ai/includes/ride-allocation-prediction.md}
 
 \include{_ai/includes/artificial-vs-natural-systems.md}
@@ -109,38 +142,6 @@ monitoring of artificial intelligence systems.}
 
 \include{_data-science/includes/data-oriented-conclusions.md}
 
-\subsection{Announcement}
-\slides{
-* Today [the Turing Institute announced](https://www.turing.ac.uk/news/welcoming-world-class-turing-ai-fellows-institute) that this work would be funded as the inaugural "Senior Artificial Intelligence Fellow". 
-}
-
-\subsection{Announcement}
-\slides{
-* Five year program in collaboration with 
-
-. . .
-
-  \aligncenter{[Element AI](https://www.elementai.com/)}
-
-. . .
-
-  \aligncenter{[Open ML](https://openml.org)}
-
-. . .
-
-  \aligncenter{[Professor Sylvie Delacroix](https://www.birmingham.ac.uk/staff/profiles/law/delacroix-sylvie.aspx)}
-
-. . .
-
-  \aligncenter{and}
-
-. . .
-
-  \aligncenter{[Data Science Africa!](http://datascienceafrica.org)}
-}
-\notes{As of 24th October 2019, the [Turing Institute announced](https://www.turing.ac.uk/news/welcoming-world-class-turing-ai-fellows-institute) that this work has been funded through a Turing Institute Senior AI Fellowship. This is the first Senior AI fellowship and it provides funding for five years. 
-
-The project partners are [Element AI](https://www.elementai.com/),  [Open ML](https://openml.org), [Professor Sylvie Delacroix](https://www.birmingham.ac.uk/staff/profiles/law/delacroix-sylvie.aspx) and [Data Science Africa!](http://datascienceafrica.org).}
 
 
 \thanks
