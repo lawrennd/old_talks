@@ -24,6 +24,16 @@ venue: Global Forum on AI for Humanity, Paris
 transition: None
 ---
 
+## Context
+
+This talk was given on a panel session organised by Joelle Pineau and Sylvie Delacroix.
+
+Paul refers to Paul Nemitz (who spoke before me), Sylvie refers to Sylvie Delacroix (who introduced the panel), Stuart refers to Stuart Russell (who spoke in the previous session). 
+
+The talk was given unscripted and without slides, but below is a transcript of what I said taken from a personal recording I made.
+
+## Talk Transcript
+
 It's a great pleasure to come after Paul.
 
 So my talks going to be in three parts where I try and talk about motivation and then end up where Paul also ended up around Data Co-operatives. But I wanted to start by taking the title of this meeting "Global Forum on AI for Humanity", it sounds great doesn't it. All positive there. But the first question for me is "So what is Humanity?". How many Africans are in the audience today? How many Chinese are in the audience today? Humanity is a diversity of opinion. And I was thinking about our hosts and I was thinking *liberte*, *egalite* and *fraternite*. Should probably be *solidarite*. But diversite. Diversite, my pronounciation isn't that good. Diversite is the main thing we should be adding, I believe, to those sentiments which are after all 18th century sentiments developed by white men. 
