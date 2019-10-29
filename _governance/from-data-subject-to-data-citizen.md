@@ -68,8 +68,6 @@ That's related to the previous one.
 
 "To be the earth's most customer centric company"
 
-Well these are all very lovely, but these are companies that are claiming they are mission driven but the reality of their revenues are driven by advertising. Their revenues are driven by looking at our personal data and we have no come-back to say "You are not conforming to your mission" now trust law does that, and of course these missions are in some sense meaningless because no one can question the company on what it's doing against its mission. If you force an organisation to have a mission that they have to stand beside, and you can do that through trust law, then you will find a more equitable approach to use and decisions that are made on the basis of our personal data. And I'll end there. 
-
-our personal data, b
+Well these are all very lovely, but these are companies that are claiming they are mission driven but the reality is that [much of] their revenues are driven by advertising. [Much of] Their revenues are driven by looking at our personal data and we have no come-back to say "You are not conforming to your mission" now trust law does that, and of course these missions are in some sense meaningless because no one can question the company on what it's doing against its mission. If you force an organisation to have a mission that they have to stand beside, and you can do that through trust law, then you will find a more equitable approach to use and decisions that are made on the basis of our personal data. And I'll end there. 
 
 [^significant]: Here I misspoke, I intended to say 'consequential'. 
