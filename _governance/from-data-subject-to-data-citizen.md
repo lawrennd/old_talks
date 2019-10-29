@@ -26,9 +26,9 @@ transition: None
 
 ## Context
 
-This talk was given on a panel session organised by Joelle Pineau and Sylvie Delacroix.
+This talk was given on a panel session organised by [Joelle Pineau](https://www.cs.mcgill.ca/~jpineau/) and [Sylvie Delacroix](https://www.birmingham.ac.uk/staff/profiles/law/delacroix-sylvie.aspx).
 
-Paul refers to Paul Nemitz (who spoke before me), Sylvie refers to Sylvie Delacroix (who introduced the panel), Stuart refers to Stuart Russell (who spoke in the previous session). 
+Paul refers to [Paul Nemitz](https://twitter.com/PaulNemitz) (who spoke before me), Sylvie refers to [Sylvie Delacroix](https://twitter.com/sylviedelacroix?lang=en) (who introduced the panel), Stuart refers to [Stuart Russell](https://people.eecs.berkeley.edu/~russell/) (who spoke in the previous session). 
 
 The talk was given unscripted and without slides, but below is a transcript of what I said taken from a personal recording I made.
 
