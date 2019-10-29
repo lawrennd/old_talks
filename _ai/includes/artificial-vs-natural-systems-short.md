@@ -52,7 +52,7 @@ The first rule of a natural system is not be intelligent, it is "don't be stupid
 
 \notes{A mistake we make in the design of our systems is to equate fitness with the objective function, and to assume it is known and static. In practice, a real environment would have an evolving fitness function which would be unknown at any given time.}
 
-\addblog{Natural and Artificial Intelligence}{2018/02/06/natural-and-artificial-intelligence}
+You can also read this \addblog{Natural and Artificial Intelligence}{2018/02/06/natural-and-artificial-intelligence}. 
 
 \notes{The first criterion of a natural intelligence is *don’t fail*, not because it has a will or intent of its own, but because if it had failed it wouldn’t have stood the test of time. It would no longer exist. In contrast, the mantra for artificial systems is to be more efficient. Our artificial systems are often given a single objective (in machine learning it is encoded in a mathematical function) and they aim to achieve that objective efficiently. These are different characteristics. Even if we wanted to incorporate *don’t fail* in some form, it is difficult to design for. To design for “don’t fail”, you have to consider every which way in which things can go wrong, if you miss one you fail. These cases are sometimes called corner cases. But in a real, uncontrolled environment, almost everything is a corner. It is difficult to imagine everything that can happen. This is why most of our automated systems operate in controlled environments, for example in a factory, or on a set of rails. Deploying automated systems in an uncontrolled environment requires a different approach to systems design. One that accounts for uncertainty in the environment and is robust to unforeseen circumstances.}
 

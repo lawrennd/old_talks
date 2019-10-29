@@ -12,8 +12,7 @@
 
 [^datareadiness]: To try and better embody the state of data readiness in organizations I've been proposing "Data Readiness Levels". More needs to be done in this area to improve the efficiency of the data science pipeline.} 
 
-\addblog{Data Readiness Levels}{2017/01/12/data-readiness-levels}
-\addblog{The 3Ds of Machine Learning Systems Design}{2018/11/05/the-3ds-of-machine-learning-systems-design}
+You can also check my \addblog{Data Readiness Levels}{2017/01/12/data-readiness-levels} and my \addblog{The 3Ds of Machine Learning Systems Design}{2018/11/05/the-3ds-of-machine-learning-systems-design}.
 
 \subsection{Where to Deploy?}
 \notes{In relation to what AI can and can't do today Andrew Ng is quoted as saying:}
@@ -34,7 +33,7 @@ One observation is that for *supervised* learning we seem to be moving beyond th
 
 [^dontpanic]: This trend was very clear at the moment, [I spoke about it]({{site.baseurl }}/) at a recent Dagstuhl workshop on new directions for kernel methods and Gaussian processes.} 
 
-\addblog{New Directions in Kernels and Gaussian Processes}{2016/11/29/new-directions-in-kernels-and-gaussian-processes}
+You can check my \addblog{New Directions in Kernels and Gaussian Processes}{2016/11/29/new-directions-in-kernels-and-gaussian-processes}.
 
 \notes{So if we can only emulate tasks that humans take around a second to do, how are we managing to deliver on self driving cars? The answer is that we are constructing engineered systems from sub-components, each of which is a machine learning subsystem. But they are tied together as a component based system in line with our traditional engineering approach. This has an advantage that each component in the system can be verified before its inclusion. This is important for debugging and safety. But in practice we can expect these systems to be very brittle. A human adapts the way in which they drive the car across their lifetime. A human can react to other road users. In extreme situations, such as a car jacking, a human can set to one side normal patterns of behavior, and purposely crash their car to draw attention to the situation.}
 

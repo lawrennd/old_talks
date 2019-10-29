@@ -15,6 +15,6 @@
 
 Alternatively, our data is publicly shared, as in an information commons. Akin to common land of the medieval village. But just as commons were subject to overgrazing and poor management, so it is that much of our data cannot be managed in this way. In particularly personal, sensitive data. 
 
-I explored this idea further in [this Guardian Op-Ed from 2015](https://www.theguardian.com/media-network/2015/nov/16/information-barons-threaten-autonomy-privacy-online).}
+I explored this idea further in this \addguardian{2015/nov/16/information-barons-threaten-autonomy-privacy-online}{Information Barons}.
 
 \endif

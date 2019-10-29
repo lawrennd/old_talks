@@ -42,11 +42,11 @@
 
 \slides{* *Singularianism* and religion equivalent to *scientology* and science?}
 
-\addblog{Singularianism}{2016/05/09/machine-learning-futures-5}
+You can read this \addblog{Singularianism}{2016/05/09/machine-learning-futures-5}. 
 
 \notes{See also this [paper by Luciano Floridi](http://www.academia.edu/15037984/Singularitarians_AItheists_and_Why_the_Problem_with_Artificial_Intelligence_is_H.A.L._Humanity_At_Large_not_HAL)}
 
-\addblog{Review of Superintelligence [@Bostrom-superintelligence14]}{2016/05/09/machine-learning-futures-6}
+You can see a review of this book in this \addblog{Superintelligence [@Bostrom-superintelligence14]}{2016/05/09/machine-learning-futures-6}
 
 \subsection{Artificial Intelligence and Introspection}
 

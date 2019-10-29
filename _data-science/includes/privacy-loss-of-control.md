@@ -20,7 +20,7 @@
 \slides{
 * can become more sinister when the target of the marketing is well understood and the (digital) environment of the target is also so well controlled
 
-See \href{https://www.theguardian.com/media-network/2015/jul/23/data-driven-economy-marketing}{The data-driven economy will help marketers exploit us}
+See \addguardian{The data-driven economy will help marketers exploit us}{2015/jul/23/data-driven-economy-marketing}.
 }
 
 \newslide{Free Will}

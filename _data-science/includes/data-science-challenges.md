@@ -17,6 +17,6 @@
 \include{_data-science/includes/value-of-data.md}
 \include{_data-science/includes/privacy-loss-of-control.md}
 
-\addblog{Three Data Science Challenges}{2016/07/01/data-science-challenges}
+You can also check this \addblog{Three Data Science Challenges}{2016/07/01/data-science-challenges}.
 
 \endif

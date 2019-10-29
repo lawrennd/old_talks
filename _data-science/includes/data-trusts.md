@@ -16,7 +16,7 @@ Formation of Data Trusts became the number one recommendation of the Hall-Presen
 
 \newslide{}
 
-\figure{\includepng{../slides/diagrams/data-science/data-trusts}{100%}}{For thoughts on data trusts see \href{https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy}{this Guardian Op-Ed.}}{data-trusts}
+\figure{\includepng{../slides/diagrams/data-science/data-trusts}{100%}}{For thoughts on data trusts see \addguardian{Data Trusts}{https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy}.}}{data-trusts}
 
 
 \newslide{}

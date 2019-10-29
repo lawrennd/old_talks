@@ -74,6 +74,14 @@
 }
 \endif}
 
+\define{\addguardian{title}{link}}{\ifndef{guardianArticles}\defeval{\guardianArticles}{* Guardian article on [\title](https://www.theguardian.com/media-network/\link)
+}
+\else
+\defeval{\guardianArticles}{\guardianArticles
+* Guardian article on [\title](https://www.theguardian.com/media-network/\link)
+}
+\endif}
+
 \define{\addreading{reference}{section}}{\ifndef{readingMaterial}\defeval{\readingMaterial}{* \section of \reference 
 }
 \else

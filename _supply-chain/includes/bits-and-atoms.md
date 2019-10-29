@@ -50,7 +50,10 @@ The High Peak Railway was opened in 1832, it is now converted to the High Peak T
 
 \newslide{Bits and Atoms: Information Meets Goods}
 
-* Example: [Kudu Project](https://kudu.ug) and [data science in Africa](https://www.theguardian.com/media-network/2015/aug/25/africa-benefit-data-science-information)
+* Examples
+    * \addguardian{Data Science Africa}(2015/aug/25/africa-benefit-data-science-information)
+    * [SafeBoda](https://safeboda.com/ug/) 
+    * [Kudu Project](https://kudu.ug) 
 
 
 \endif

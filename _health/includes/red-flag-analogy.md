@@ -25,7 +25,7 @@ The traction engine was preceded by a boy waving a red flag. It was restricted t
 
 \figure{\includepng{../slides/diagrams/health/a-brief-history-of-registration}{50%}}{\href{http://www.direct.gov.uk/prod_consum_dg/groups/dg_digitalassets/@dg/@en/@motor/documents/digitalasset/dg_180212.pdf}{The early regulation of the modern motor car.}}{regulation-motor}
 
-See this Guardian article: ["Let's learn the rules of the digital road before talking about a web Magna Carta"](http://www.theguardian.com/media-network/2015/apr/02/rules-digital-technology-internet-bill-rights)}
+See this \addguardian{Let's learn the rules of the digital road before talking about a web Magna Carta}{2015/apr/02/rules-digital-technology-internet-bill-rights}.
 
 
 \newslide{}

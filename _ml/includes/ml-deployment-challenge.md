@@ -27,7 +27,7 @@ are created, the model code needs to be deployed.}
 
 This is the role of the data scientist, incorporating data into the system is equivalent to incorporating software of some unknown provenance.}
 
-\addblog{Data Science as Debugging}{2017/03/14/data-science-as-debugging}
+You can also check my \addblog{Data Science as Debugging}{2017/03/14/data-science-as-debugging}
 \endif
 
 \notes{To extend the USB stick analogy further, how would as software engineer deploy the code if they thought that the code might evolve in production? This is what
