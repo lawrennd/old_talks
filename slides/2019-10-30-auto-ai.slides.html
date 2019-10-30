@@ -469,40 +469,6 @@
 <li>Example Apache Kafka + Apache Flink</li>
 </ul>
 </section>
-<section id="apache-flink" class="slide level3">
-<h3>Apache Flink</h3>
-<ul>
-<li>Streams and transformations</li>
-<li>a stream is a (potentially never-ending) flow of data records</li>
-<li>a transformation: streams as input, produces transformed streams as output</li>
-</ul>
-</section>
-<section id="join" class="slide level3">
-<h3>Join</h3>
-<pre><code>stream.join(otherStream)
-    .where(&lt;KeySelector&gt;)
-    .equalTo(&lt;KeySelector&gt;)
-    .window(&lt;WindowAssigner&gt;)
-    .apply(&lt;JoinFunction&gt;)</code></pre>
-</section>
-<section id="trading-system" class="slide level3">
-<h3>Trading System</h3>
-<ul>
-<li>High frequency share trading.</li>
-<li>Stream of prices with millisecond updates.</li>
-<li>Trades required on millisecond time line</li>
-</ul>
-</section>
-<section id="real-price" class="slide level3">
-<h3>Real Price</h3>
-<object class="svgplot " data="../slides/diagrams/data-science/real-prices.svg" width="80%" style=" ">
-</object>
-</section>
-<section id="future-price" class="slide level3">
-<h3>Future Price</h3>
-<object class="svgplot " data="../slides/diagrams/data-science/hypothetical-prices.svg" width="80%" style=" ">
-</object>
-</section>
 <section id="hypothetical-streams" class="slide level3">
 <h3>Hypothetical Streams</h3>
 <ul>
