@@ -6,7 +6,7 @@
 
 \notes{\subsection{Today's Artificial Systems}}
 
-\notes{The systems we produce today only work well when their tasks are pigeonholed, bounded in some way. To achieve robust artificial intelligences we need new approaches to both the design of the individual components, and the combination of components within our AI systems. We need to deal with uncertainty and increase robustness. Today, it is easy to make a fool of an artificial intelligent agent, technology needs to address the challenge of the uncertain environment to achieve robust intelligences.}
+\notes{The systems we produce today only work well when their tasks are pigeonholed, bounded in their scope. To achieve robust artificial intelligences we need new approaches to both the design of the individual components, and the combination of components within our AI systems. We need to deal with uncertainty and increase robustness. Today, it is easy to make a fool of an artificial intelligent agent, technology needs to address the challenge of the uncertain environment to achieve robust intelligences.}
 
 \notes{However, even if we find technological solutions for these challenges, it may be that the essence of human intelligence remains out of reach. It may be that the most quintessential element of our intelligence is defined by limitations. Limitations that computers have never experienced.}
 

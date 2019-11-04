@@ -16,6 +16,18 @@ transition: None
 
 \include{talk-macros.tex}
 
+\include{_ai/includes/ride-allocation-prediction.md}
+\include{_ai/includes/the-promise-of-ai.md}
+
+\subsection{Project Description}
+
+> It used to be true that computers only did what we programmed them to do, but today AI systems are learning from our data. This introduces new problems in how these systems respond to their environment. 
+>
+>We need to better monitor how data is influencing decision making and take corrective action as required. 
+>
+>This project addresses that challenge.
+
+
 \include{_ai/includes/artificial-vs-natural-systems.md}
 
 \include{_ai/includes/ml-system-decomposability.md}
@@ -25,8 +37,17 @@ transition: None
 \include{_data-science/includes/the-data-crisis.md}
 
 \include{_ml/includes/ml-paradigm-shift.md}
+
+\include{_ai/includes/intelligent-system-paolo.md}
+
 \include{_ai/includes/peppercorn.md}
 
+<!-- remove the data challenge -->
+\define{mlDataChallenge}
+
+\include{_ml/includes/the-3ds-of-machine-learning-systems-design.md}
+
+\subsection{The Machine Learning Bit}
 
 \include{_uq/includes/emulation.md}
 \include{_gp/includes/gp-intro-very-short.md}

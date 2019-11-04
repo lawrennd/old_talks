@@ -16,4 +16,15 @@ You can also check my \addblog{The 3Ds of Machine Learning Systems Design}{2018/
 
 \notes{The first two components *decomposition* and *data* are interlinked, but we will first outline the decomposition challenge. Below we will mainly focus on *supervised learning* because this is arguably the technology that is best understood within machine learning.}
 
+\ifdef{mlDataChallenge}
+\newslide{The Three Ds of Machine Learning Systems Design}
+
+\slides{
+* Three primary challenges of Machine Learning Systems Design.
+1. Decomposition
+2. <s>Data</s>
+3. Deployment
+}
+\endif
+
 \endif
