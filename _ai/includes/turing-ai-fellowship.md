@@ -9,6 +9,16 @@
 * Work in this space now funded by a [Senior AI Fellowship at the Turing Institute](https://www.turing.ac.uk/news/welcoming-world-class-turing-ai-fellows-institute). 
 }
 
+
+\subsection{Project Description}
+
+> It used to be true that computers only did what we programmed them to do, but today AI systems are learning from our data. This introduces new problems in how these systems respond to their environment. 
+>
+>We need to better monitor how data is influencing decision making and take corrective action as required. 
+>
+>This project addresses that challenge.
+
+
 \subsection{Aim}
 
 \notes{Our aim is to scale our ability to deploy safe and reliable AI

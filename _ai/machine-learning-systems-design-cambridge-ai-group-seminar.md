@@ -19,13 +19,7 @@ transition: None
 \include{_ai/includes/ride-allocation-prediction.md}
 \include{_ai/includes/the-promise-of-ai.md}
 
-\subsection{Project Description}
-
-> It used to be true that computers only did what we programmed them to do, but today AI systems are learning from our data. This introduces new problems in how these systems respond to their environment. 
->
->We need to better monitor how data is influencing decision making and take corrective action as required. 
->
->This project addresses that challenge.
+\include{_ai/includes/turing-ai-fellowship.md}
 
 
 \include{_ai/includes/artificial-vs-natural-systems.md}
