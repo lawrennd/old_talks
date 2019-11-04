@@ -9,9 +9,8 @@ author:
   institute: University of Sheffield
   twitter: lawrennd
   url: http://inverseprobability.com
-date: 2019-09-20
-ai-group
-venue: Re-work Deep Learning Summit
+date: 2019-11-05
+venue: AI Group Seminar
 transition: None
 ---
 
