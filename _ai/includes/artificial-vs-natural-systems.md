@@ -4,7 +4,7 @@
 
 \include{_ai/includes/artificial-vs-natural-systems-short.md}
 
-\notes{Today's Artificial Systems}
+\notes{\section{Today's Artificial Systems}}
 
 \notes{The systems we produce today only work well when their tasks are pigeonholed, bounded in some way. To achieve robust artificial intelligences we need new approaches to both the design of the individual components, and the combination of components within our AI systems. We need to deal with uncertainty and increase robustness. Today, it is easy to make a fool of an artificial intelligent agent, technology needs to address the challenge of the uncertain environment to achieve robust intelligences.}
 
@@ -26,6 +26,6 @@
 
 \notes{In many respects I object to the use of the term Artificial Intelligence. It is poorly defined and means different things to different people.  But there is one way in which the term is very accurate. The term artificial is appropriate  in the same way we can describe a plastic plant as an artificial plant. It is often difficult to pick out from afar whether a plant is artificial or not. A plastic plant can fulfil many of the functions of a natural plant, and plastic plants are more convenient. But they can never replace natural plants.}
 
-\notes{In the same way, our natural intelligence is an evolved thing of beauty, a consequence of our limitations. Limitations which don’t apply to artificial intelligences and can only be emulated through artificial means. Our natural intelligence, just like our natural landscapes, should be treasured and can never be fully replaced. }
+\notes{In the same way, our natural intelligence is an evolved thing of beauty, a consequence of our limitations. Limitations which don’t apply to artificial intelligences and can only be emulated through artificial means. Our natural intelligence, just like our natural landscapes, should be treasured and can never be fully replaced.}
 
 \endif

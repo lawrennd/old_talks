@@ -10,7 +10,7 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 date: 2019-11-05
-venue: AI Group Seminar
+venue: Cambridge AI Group Seminar
 transition: None
 ---
 
