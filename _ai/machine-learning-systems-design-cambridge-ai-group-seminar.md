@@ -45,7 +45,7 @@ transition: None
 <!-- remove the data challenge -->
 \define{mlDataChallenge}
 
-\include{_ml/includes/the-3ds-of-machine-learning-systems-design.md}
+\include{_ml/includes/the-3ds-of-ml-systems-design.md}
 
 \subsection{The Machine Learning Bit}
 
