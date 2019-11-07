@@ -49,108 +49,102 @@ categories:
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
 <h1 id="introduction">Introduction</h1>
 <!-- Embodiment Factors-->
-<h2 id="embodiment-factors-edit">Embodiment Factors <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<h2 id="embodiment-factors-edit">Embodiment Factors <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors-tedx.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors-tedx.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="figure">
+<div id="embodiment-factors-table-figure" class="figure-frame">
 <table>
 <tr>
 <td>
 </td>
 <td align="center">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
+<object class="svgplot " data="../slides/diagrams/computer.svg" width="100%" style=" ">
+</object>
+</td>
+<td align="center">
+<object class="svgplot " data="../slides/diagrams/human.svg" width="100%" style=" ">
+</object>
 </td>
 <td align="center">
 <div class="centered centered" style="">
-<img class="" src="../slides/diagrams/ClaudeShannon_MFO3807.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="../slides/diagrams/Jean-Dominique_Bauby.jpg" width="150%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </td>
 </tr>
 <tr>
 <td>
-compute
+bits/min
 </td>
 <td align="center">
-<br /><span class="math display"> ≈ 100 gigaflops</span><br />
+billions
 </td>
 <td align="center">
-<br /><span class="math display"> ≈ 16 petaflops</span><br />
+2000
+</td>
+<td align="center">
+6
 </td>
 </tr>
 <tr>
 <td>
-communicate
+billion<br>calculations/s
 </td>
 <td align="center">
-<br /><span class="math display">1 gigbit/s</span><br />
+~100
 </td>
 <td align="center">
-<br /><span class="math display">100 bit/s</span><br />
+a billion
+</td>
+<td align="center">
+a billion
 </td>
 </tr>
 <tr>
 <td>
-(compute/communicate)
+embodiment
 </td>
 <td align="center">
-<br /><span class="math display">10<sup>4</sup></span><br />
+20 minutes
 </td>
 <td align="center">
-<br /><span class="math display">10<sup>14</sup></span><br />
+5 billion years
+</td>
+<td align="center">
+15 trillion years
 </td>
 </tr>
 </table>
-<p>There is a fundamental limit placed on our intelligence based on our ability to communicate. Claude Shannon founded the field of information theory. The clever part of this theory is it allows us to separate our measurement of information from what the information pertains to<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
-<p>Shannon measured information in bits. One bit of information is the amount of information I pass to you when I give you the result of a coin toss. Shannon was also interested in the amount of information in the English language. He estimated that on average a word in the English language contains 12 bits of information.</p>
-<p>Given typical speaking rates, that gives us an estimate of our ability to communicate of around 100 bits per second <span class="citation" data-cites="Reed-information98">(Reed and Durlach 1998)</span>. Computers on the other hand can communicate much more rapidly. Current wired network speeds are around a billion bits per second, ten million times faster.</p>
-<p>When it comes to compute though, our best estimates indicate our computers are slower. A typical modern computer can process make around 100 billion floating point operations per second, each floating point operation involves a 64 bit number. So the computer is processing around 6,400 billion bits per second.</p>
-<p>It’s difficult to get similar estimates for humans, but by some estimates the amount of compute we would require to <em>simulate</em> a human brain is equivalent to that in the UK’s fastest computer <span class="citation" data-cites="Ananthanarayanan-cat09">(Ananthanarayanan et al. 2009)</span>, the MET office machine in Exeter, which in 2018 ranks as the 11th fastest computer in the world. That machine simulates the world’s weather each morning, and then simulates the world’s climate in the afternoon. It is a 16 petaflop machine, processing around 1,000 <em>trillion</em> bits per second.</p>
-<div class="figure">
-<div id="lotus-49-figure" class="figure-frame">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/Lotus_49-2.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-</div>
-<div id="lotus-49-magnify" class="magnify" onclick="magnifyFigure(&#39;lotus-49&#39;)">
+<div id="embodiment-factors-table-magnify" class="magnify" onclick="magnifyFigure(&#39;embodiment-factors-table&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
-<div id="lotus-49-caption" class="caption-frame">
-<p>Figure: The Lotus 49, view from the rear. The Lotus 49 was one of the last Formula One cars before the introduction of aerodynamic aids.</p>
+<div id="embodiment-factors-table-caption" class="caption-frame">
+<p>Figure: Embodiment factors are the ratio between our ability to compute and our ability to communicate. Jean Dominique Bauby suffered from locked-in syndrome. The embodiment factors show that relative to the machine we are also locked in. In the table we represent embodiment as the length of time it would take to communicate one second’s worth of computation. For computers it is a matter of minutes, but for a human, whether locked in or not, it is a matter of many millions of years.</p>
 </div>
 </div>
-<p>So when it comes to our ability to compute we are extraordinary, not compute in our conscious mind, but the underlying neuron firings that underpin both our consciousness, our subconsciousness as well as our motor control etc.</p>
-<p>If we think of ourselves as vehicles, then we are massively overpowered. Our ability to generate derived information from raw fuel is extraordinary. Intellectually we have formula one engines.</p>
-<p>But in terms of our ability to deploy that computation in actual use, to share the results of what we have inferred, we are very limited. So when you imagine the F1 car that represents a psyche, think of an F1 car with bicycle wheels.</p>
-<div class="figure">
-<div id="marcel-renault-figure" class="figure-frame">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/640px-Marcel_Renault_1903.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-<div id="marcel-renault-magnify" class="magnify" onclick="magnifyFigure(&#39;marcel-renault&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
-</div>
-<div id="marcel-renault-caption" class="caption-frame">
-<p>Figure: Marcel Renault races a Renault 40 cv during the Paris-Madrid race, an early Grand Prix, in 1903. Marcel died later in the race after missing a warning flag for a sharp corner at Couhé Vérac, likely due to dust reducing visibility.</p>
-</div>
-</div>
-<p>Just think of the control a driver would have to have to deploy such power through such a narrow channel of traction. That is the beauty and the skill of the human mind.</p>
-<p>In contrast, our computers are more like go-karts. Underpowered, but with well-matched tires. They can communicate far more fluidly. They are more efficient, but somehow less extraordinary, less beautiful.</p>
-<div class="figure">
-<div id="caleb-mcduff-figure" class="figure-frame">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/Caleb_McDuff_WIX_Silence_Racing_livery.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-<div id="caleb-mcduff-magnify" class="magnify" onclick="magnifyFigure(&#39;caleb-mcduff&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
-</div>
-<div id="caleb-mcduff-caption" class="caption-frame">
-<p>Figure: Caleb McDuff driving for WIX Silence Racing.</p>
-</div>
-</div>
-<p>For humans, that means much of our computation should be dedicated to considering <em>what</em> we should compute. To do that efficiently we need to model the world around us. The most complex thing in the world around us is other humans. So it is no surprise that we model them. We second guess what their intentions are, and our communication is only necessary when they are departing from how we model them. Naturally, for this to work well, we need to understand those we work closely with. So it is no surprise that social communication, social bonding, forms so much of a part of our use of our limited bandwidth.</p>
-<p>There is a second effect here, our need to anthropomorphise objects around us. Our tendency to model our fellow humans extends to when we interact with other entities in our environment. To our pets as well as inanimate objects around us, such as computers or even our cars. This tendency to over interpret could be a consequence of our limited ability to communicate.</p>
-<p>For more details see this paper <a href="https://arxiv.org/abs/1705.07996">“Living Together: Mind and Machine Intelligence”</a>, and this <a href="http://inverseprobability.com/talks/lawrence-tedx17/living-together.html">TEDx talk</a>.</p>
+<p>Let me explain what I mean. Claude Shannon introduced a mathematical concept of information for the purposes of understanding telephone exchanges.</p>
+<p>Information has many meanings, but mathematically, Shannon defined a bit of information to be the amount of information you get from tossing a coin.</p>
+<p>If I toss a coin, and look at it, I know the answer. You don’t. But if I now tell you the answer I communicate to you 1 bit of information. Shannon defined this as the fundamental unit of information.</p>
+<p>If I toss the coin twice, and tell you the result of both tosses, I give you two bits of information. Information is additive.</p>
+<p>Shannon also estimated the average information associated with the English language. He estimated that the average information in any word is 12 bits, equivalent to twelve coin tosses.</p>
+<p>So every two minutes Bauby was able to communicate 12 bits, or six bits per minute.</p>
+<p>This is the information transfer rate he was limited to, the rate at which he could communicate.</p>
+<p>Compare this to me, talking now. The average speaker for TEDX speaks around 160 words per minute. That’s 320 times faster than Bauby or around a 2000 bits per minute. 2000 coin tosses per minute.</p>
+<p>But, just think how much thought Bauby was putting into every sentence. Imagine how carefully chosen each of his words was. Because he was communication constrained he could put more thought into each of his words. Into thinking about his audience.</p>
+<p>So, his intelligence became locked in. He thinks as fast as any of us, but can communicate slower. Like the tree falling in the woods with no one there to hear it, his intelligence is embedded inside him.</p>
+<p>Two thousand coin tosses per minute sounds pretty impressive, but this talk is not just about us, it’s about our computers, and the type of intelligence we are creating within them.</p>
+<p>So how does two thousand compare to our digital companions? When computers talk to each other, they do so with billions of coin tosses per minute.</p>
+<p>Let’s imagine for a moment, that instead of talking about communication of information, we are actually talking about money. Bauby would have 6 dollars. I would have 2000 dollars, and my computer has billions of dollars.</p>
+<p>The internet has interconnected computers and equipped them with extremely high transfer rates.</p>
+<p>However, by our very best estimates, computers actually think slower than us.</p>
+<p>How can that be? You might ask, computers calculate much faster than me. That’s true, but underlying your conscious thoughts there are a lot of calculations going on.</p>
+<p>Each thought involves many thousands, millions or billions of calculations. How many exactly, we don’t know yet, because we don’t know how the brain turns calculations into thoughts.</p>
+<p>Our best estimates suggest that to simulate your brain a computer would have to be as large as the UK Met Office machine here in Exeter. That’s a 250 million pound machine, the fastest in the UK. It can do 16 billion billon calculations per second.</p>
+<p>It simulates the weather across the word every day, that’s how much power we think we need to simulate our brains.</p>
+<p>So, in terms of our computational power we are extraordinary, but in terms of our ability to explain ourselves, just like Bauby, we are locked in.</p>
+<p>For a typical computer, to communicate everything it computes in one second, it would only take it a couple of minutes. For us to do the same would take 15 billion years.</p>
+<p>If intelligence is fundamentally about processing and sharing of information. This gives us a fundamental constraint on human intelligence that dictates its nature.</p>
+<p>I call this ratio between the time it takes to compute something, and the time it takes to say it, the embodiment factor <span class="citation" data-cites="Lawrence:embodiment17">(Lawrence 2017)</span>. Because it reflects how embodied our cognition is.</p>
+<p>If it takes you two minutes to say the thing you have thought in a second, then you are a computer. If it takes you 15 billion years, then you are a human.</p>
 <!-- Data Science (why it's happening) -->
 <h1 id="evolved-relationship-with-information-edit">Evolved Relationship with Information <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/evolved-relationship.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/evolved-relationship.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
 <p>The high bandwidth of computers has resulted in a close relationship between the computer and data. Large amounts of information can flow between the two. The degree to which the computer is mediating our relationship with data means that we should consider it an intermediary.</p>
@@ -184,7 +178,7 @@ communicate
 <p>There are three types of lies: lies, damned lies and statistics</p>
 <p>Benjamin Disraeli 1804-1881</p>
 </blockquote>
-<p>Benjamin Disraeli said<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> that there three types of lies: lies, damned lies and statistics. Disraeli died in 1881, 30 years before the first academic department of applied statistics was founded at UCL. If Disraeli were alive today, it is likely that he’d rephrase his quote:</p>
+<p>Benjamin Disraeli said<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> that there three types of lies: lies, damned lies and statistics. Disraeli died in 1881, 30 years before the first academic department of applied statistics was founded at UCL. If Disraeli were alive today, it is likely that he’d rephrase his quote:</p>
 <blockquote>
 <p>There are three types of lies, lies damned lies and <em>big data</em>.</p>
 </blockquote>
@@ -227,30 +221,112 @@ communicate
 <p>Machine learning has been deployed in Speech Recognition (e.g. Alexa, deep neural networks, convolutional neural networks for speech recognition), in computer vision (e.g. Amazon Go, convolutional neural networks for person recognition and pose detection).</p>
 <p>The field of data science is related to AI, but philosophically different. It arises because we are increasingly creating large amounts of data through <em>happenstance</em> rather than active collection. In the modern era data is laid down by almost all our activities. The objective of data science is to extract insights from this data.</p>
 <p>Classically, in the field of statistics, data analysis proceeds by assuming that the question (or scientific hypothesis) comes before the data is created. E.g., if I want to determine the effectiveness of a particular drug, I perform a <em>design</em> for my data collection. I use foundational approaches such as randomization to account for confounders. This made a lot of sense in an era where data had to be actively collected. The reduction in cost of data collection and storage now means that many data sets are available which weren’t collected with a particular question in mind. This is a challenge because bias in the way data was acquired can corrupt the insights we derive. We can perform randomized control trials (or A/B tests) to verify our conclusions, but the opportunity is to use data science techniques to better guide our question selection or even answer a question without the expense of a full randomized control trial (referred to as A/B testing in modern internet parlance).</p>
-<h2 id="what-is-machine-learning-edit">What is Machine Learning? <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml-2.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml-2.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
-<p>Machine learning allows us to extract knowledge from data to form a prediction.</p>
-<p><br /><span class="math display">$$\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$</span><br /></p>
-<p>A machine learning prediction is made by combining a model with data to form the prediction. The manner in which this is done gives us the machine learning <em>algorithm</em>.</p>
-<p>Machine learning models are <em>mathematical models</em> which make weak assumptions about data, e.g. smoothness assumptions. By combining these assumptions with the data, we observe we can interpolate between data points or, occasionally, extrapolate into the future.</p>
-<p>Machine learning is a technology which strongly overlaps with the methodology of statistics. From a historical/philosophical view point, machine learning differs from statistics in that the focus in the machine learning community has been primarily on accuracy of prediction, whereas the focus in statistics is typically on the interpretability of a model and/or validating a hypothesis through data collection.</p>
-<p>The rapid increase in the availability of compute and data has led to the increased prominence of machine learning. This prominence is surfacing in two different but overlapping domains: data science and artificial intelligence.</p>
-<h2 id="from-model-to-decision-edit">From Model to Decision <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml-end-to-end.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml-end-to-end.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
-<p>The real challenge, however, is end-to-end decision making. Taking information from the environment and using it to drive decision making to achieve goals.</p>
-<h2 id="what-does-machine-learning-do-edit">What does Machine Learning do? <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-does-machine-learning-do.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-does-machine-learning-do.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
-<p>Any process of automation allows us to scale what we do by codifying a process in some way that makes it efficient and repeatable. Machine learning automates by emulating human (or other actions) found in data. Machine learning codifies in the form of a mathematical function that is learnt by a computer. If we can create these mathematical functions in ways in which they can interconnect, then we can also build systems.</p>
-<p>Machine learning works through codifing a prediction of interest into a mathematical function. For example, we can try and predict the probability that a customer wants to by a jersey given knowledge of their age, and the latitude where they live. The technique known as logistic regression estimates the odds that someone will by a jumper as a linear weighted sum of the features of interest.</p>
-<p><br /><span class="math display">$$ \text{odds} = \frac{p(\text{bought})}{p(\text{not bought})} $$</span><br /></p>
-<p><br /><span class="math display">log odds = <em>β</em><sub>0</sub> + <em>β</em><sub>1</sub>age + <em>β</em><sub>2</sub>latitude.</span><br /> Here <span class="math inline"><em>β</em><sub>0</sub></span>, <span class="math inline"><em>β</em><sub>1</sub></span> and <span class="math inline"><em>β</em><sub>2</sub></span> are the parameters of the model. If <span class="math inline"><em>β</em><sub>1</sub></span> and <span class="math inline"><em>β</em><sub>2</sub></span> are both positive, then the log-odds that someone will buy a jumper increase with increasing latitude and age, so the further north you are and the older you are the more likely you are to buy a jumper. The parameter <span class="math inline"><em>β</em><sub>0</sub></span> is an offset parameter, and gives the log-odds of buying a jumper at zero age and on the equator. It is likely to be negative<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> indicating that the purchase is odds-against. This is actually a classical statistical model, and models like logistic regression are widely used to estimate probabilities from ad-click prediction to risk of disease.</p>
-<p>This is called a generalized linear model, we can also think of it as estimating the <em>probability</em> of a purchase as a nonlinear function of the features (age, lattitude) and the parameters (the <span class="math inline"><em>β</em></span> values). The function is known as the <em>sigmoid</em> or <a href="https://en.wikipedia.org/wiki/Logistic_regression">logistic function</a>, thus the name <em>logistic</em> regression.</p>
-<p><br /><span class="math display">$$ p(\text{bought}) =  \sigmoid{\beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}}.$$</span><br /> In the case where we have <em>features</em> to help us predict, we sometimes denote such features as a vector, <span class="math inline">$\inputVector$</span>, and we then use an inner product between the features and the parameters, <span class="math inline">$\boldsymbol{\beta}^\top \inputVector = \beta_1 \inputScalar_1 + \beta_2 \inputScalar_2 + \beta_3 \inputScalar_3 ...$</span>, to represent the argument of the sigmoid.</p>
-<p><br /><span class="math display">$$ p(\text{bought}) =  \sigmoid{\boldsymbol{\beta}^\top \inputVector}.$$</span><br /> More generally, we aim to predict some aspect of our data, <span class="math inline">$\dataScalar$</span>, by relating it through a mathematical function, <span class="math inline">$\mappingFunction(\cdot)$</span>, to the parameters, <span class="math inline"><strong>β</strong></span> and the data, <span class="math inline">$\inputVector$</span>.</p>
-<p><br /><span class="math display">$$ \dataScalar =  \mappingFunction\left(\inputVector, \boldsymbol{\beta}\right).$$</span><br /> We call <span class="math inline">$\mappingFunction(\cdot)$</span> the <em>prediction function</em>.</p>
-<p>To obtain the fit to data, we use a separate function called the <em>objective function</em> that gives us a mathematical representation of the difference between our predictions and the real data.</p>
-<p><br /><span class="math display">$$\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix)$$</span><br /> A commonly used examples (for example in a regression problem) is least squares, <br /><span class="math display">$$\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingFunction(\inputVector_i, \boldsymbol{\beta})\right)^2.$$</span><br /></p>
-<p>If a linear prediction function is combined with the least squares objective function then that gives us a classical <em>linear regression</em>, another classical statistical model. Statistics often focusses on linear models because it makes interpretation of the model easier. Interpretation is key in statistics because the aim is normally to validate questions by analysis of data. Machine learning has typically focussed more on the prediction function itself and worried less about the interpretation of parameters, which are normally denoted by <span class="math inline"><strong>w</strong></span> instead of <span class="math inline"><strong>β</strong></span>. As a result <em>non-linear</em> functions are explored more often as they tend to improve quality of predictions but at the expense of interpretability.</p>
-<h1 id="deep-learning-edit">Deep Learning <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-overview.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-overview.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
-<p>Classical statistical models and simple machine learning models have a great deal in common. The main difference between the fields is philosophical. Machine learning practitioners are typically more concerned with the quality of prediciton (e.g. measured by ROC curve) while statisticians tend to focus more on the interpretability of the model and the validity of any decisions drawn from that interpretation. For example, a statistical model may be used to validate whether a large scale intervention (such as the mass provision of mosquito nets) has had a long term effect on disease (such as malaria). In this case one of the covariates is likely to be the provision level of nets in a particular region. The response variable would be the rate of malaria disease in the region. The parmaeter, <span class="math inline"><em>β</em><sub>1</sub></span> associated with that covariate will demonstrate a positive or negative effect which would be validated in answering the question. The focus in statistics would be less on the accuracy of the response variable and more on the validity of the interpretation of the effect variable, <span class="math inline"><em>β</em><sub>1</sub></span>.</p>
-<p>A machine learning practitioner on the other hand would typically denote the parameter <span class="math inline"><em>w</em><sub>1</sub></span>, instead of <span class="math inline"><em>β</em><sub>1</sub></span> and would only be interested in the output of the prediction function, <span class="math inline">$\mappingFunction(\cdot)$</span> rather than the parameter itself. The general formalism of the prediction function allows for <em>non-linear</em> models. In machine learning, the emphasis on prediction over interpretability means that non-linear models are often used. The parameters, <span class="math inline"><strong>w</strong></span>, are a means to an end (good prediction) rather than an end in themselves (interpretable).</p>
+<!--
+
+
+
+## What is Machine Learning? <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml-2.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml-2.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+
+Machine learning allows us to extract knowledge from data to
+form a prediction.
+
+
+
+$$\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$
+
+A machine learning prediction is made by combining a model with data to form the prediction. The manner in which this is done gives us the machine learning *algorithm*.
+
+Machine learning models are *mathematical models* which make weak assumptions about data, e.g. smoothness assumptions. By combining these assumptions with the data, we observe we can interpolate between data points or, occasionally, extrapolate into the future.
+
+Machine learning is a technology which strongly overlaps with the methodology of statistics. From a historical/philosophical view point, machine learning differs from statistics in that the focus in the machine learning community has been primarily on accuracy of prediction, whereas the focus in statistics is typically on the interpretability of a model and/or validating a hypothesis through data collection.
+
+The rapid increase in the availability of compute and data has led to the increased prominence of machine learning. This prominence is surfacing in two different but overlapping domains: data science and artificial intelligence.
+
+
+
+
+
+
+## From Model to Decision <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml-end-to-end.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-is-ml-end-to-end.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+
+
+
+
+
+The real challenge, however, is end-to-end decision making. Taking information from the environment and using it to drive decision making to achieve goals.
+
+
+
+
+
+-->
+<!--
+
+
+
+## What does Machine Learning do? <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-does-machine-learning-do.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/what-does-machine-learning-do.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+
+
+Any process of automation allows us to scale what we do by codifying a process in some way that makes it efficient and repeatable. Machine learning automates by emulating human (or other actions) found in data. Machine learning codifies in the form of a mathematical function that is learnt by a computer. If we can create these mathematical functions in ways in which they can interconnect, then we can also build systems.
+
+Machine learning works through codifing a prediction of interest into a mathematical function. For example, we can try and predict the probability that a customer wants to by a jersey given knowledge of their age, and the latitude where they live. The technique known as logistic regression estimates the odds that someone will by a jumper as a linear weighted sum of the features of interest.
+
+
+
+$$ \text{odds} = \frac{p(\text{bought})}{p(\text{not bought})} $$
+
+$$ \log \text{odds}  = \beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}.$$
+Here $\beta_0$, $\beta_1$ and $\beta_2$ are the parameters of the model. If $\beta_1$ and $\beta_2$  are both positive, then the log-odds that someone will buy a jumper increase with increasing latitude and age, so the further north you are and the older you are the more likely you are to buy a jumper. The parameter $\beta_0$ is an offset parameter, and gives the log-odds of buying a jumper at zero age and on the equator. It is likely to be negative[^logarithm] indicating that the purchase is odds-against. This is actually a classical statistical model, and models like logistic regression are widely used to estimate probabilities from ad-click prediction to risk of disease.
+
+[^logarithm]: The logarithm of a number less than one is negative, for a number greater than one the logarithm is positive. So if odds are greater than evens (odds-on) the log-odds are positive, if the odds are less than evens (odds-against) the log-odds will be negative.
+
+This is called a generalized linear model, we can also think of it as estimating the *probability* of a purchase as a nonlinear function of the features (age, lattitude) and the parameters (the $\beta$ values). The function is known as the *sigmoid* or [logistic function](https://en.wikipedia.org/wiki/Logistic_regression), thus the name *logistic* regression.
+
+
+
+$$ p(\text{bought}) =  \sigmoid{\beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}}.$$
+In the case where we have *features* to help us predict, we sometimes denote such features as a vector, $\inputVector$, and we then use an inner product between the features and the parameters, $\boldsymbol{\beta}^\top \inputVector = \beta_1 \inputScalar_1 + \beta_2 \inputScalar_2 + \beta_3 \inputScalar_3 ...$, to represent the argument of the sigmoid.
+
+
+
+$$ p(\text{bought}) =  \sigmoid{\boldsymbol{\beta}^\top \inputVector}.$$
+More generally, we aim to predict some aspect of our data, $\dataScalar$, by relating it through a mathematical function, $\mappingFunction(\cdot)$, to the parameters, $\boldsymbol{\beta}$ and the data, $\inputVector$.
+
+
+
+$$ \dataScalar =  \mappingFunction\left(\inputVector, \boldsymbol{\beta}\right).$$
+We call $\mappingFunction(\cdot)$ the *prediction function*.
+
+To obtain the fit to data, we use a separate function called the *objective function* that gives us a mathematical representation of the difference between our predictions and the real data. 
+
+
+
+$$\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix)$$
+A commonly used examples (for example in a regression problem) is least squares,
+$$\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingFunction(\inputVector_i, \boldsymbol{\beta})\right)^2.$$
+
+
+
+If a linear prediction function is combined with the least squares objective function then that gives us a classical *linear regression*, another classical statistical model. Statistics often focusses on linear models because it makes interpretation of the model easier. Interpretation is key in statistics because the aim is normally to validate questions by analysis of data. Machine learning has typically focussed more on the prediction function itself and worried less about the interpretation of parameters, which are normally denoted by $\mathbf{w}$ instead of $\boldsymbol{\beta}$. As a result *non-linear* functions are explored more often as they tend to improve quality of predictions but at the expense of interpretability.
+
+
+-->
+<!--
+
+
+
+# Deep Learning <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-overview.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-learning-overview.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+
+
+
+
+
+
+Classical statistical models and simple machine learning models have a great deal in common. The main difference between the fields is philosophical. Machine learning practitioners are typically more concerned with the quality of prediciton (e.g. measured by ROC curve) while statisticians tend to focus more on the interpretability of the model and the validity of any decisions drawn from that interpretation. For example, a statistical model may be used to validate whether a large scale intervention (such as the mass provision of mosquito nets) has had a long term effect on disease (such as malaria). In this case one of the covariates is likely to be the provision level of nets in a particular region. The response variable would be the rate of malaria disease in the region. The parmaeter, $\beta_1$ associated with that covariate will demonstrate a positive or negative effect which would be validated in answering the question. The focus in statistics would be less on the accuracy of the response variable and more on the validity of the interpretation of the effect variable, $\beta_1$. 
+
+A machine learning practitioner on the other hand would typically denote the parameter $w_1$, instead of $\beta_1$ and would only be interested in the output of the prediction function, $\mappingFunction(\cdot)$ rather than the parameter itself. The general formalism of the prediction function allows for *non-linear* models. In machine learning, the emphasis on prediction over interpretability means that non-linear models are often used. The parameters, $\mathbf{w}$, are a means to an end (good prediction) rather than an end in themselves (interpretable).
+
+
 <!-- No slide titles in this context -->
 <h3 id="deepface-edit">DeepFace <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-face.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/deep-face.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
 <div class="figure">
@@ -319,98 +395,154 @@ communicate
 <p>In a hyper-space you have to put a lot of data through the machine for to explore the positions of all the pins. Even when you feed many millions of data points through the machine, there are likely to be regions in the hyper-space where no ball has passed. When future test data passes through the machine in a new route unusual things can happen.</p>
 <p><em>Adversarial examples</em> exploit this high dimensional space. If you have access to the pinball machine, you can use gradient methods to find a position for the ball in the hyper space where the image looks like one thing, but will be classified as another.</p>
 <p>Probabilistic methods explore more of the space by considering a range of possible paths for the ball through the machine. This helps to make them more data efficient and gives some robustness to adversarial examples.</p>
+<p>–&gt;</p>
 <!-- Example of how these phenomena play out in a modern business environment.-->
 <!-- E.g. WBR with communicaiton of 'what's going on on the ground to the VP.-->
 <!-- Solutions are around how the software engineers are oparating. -->
-<h2 id="digital-transformation">Digital Transformation</h2>
-<h1 id="the-physical-world-where-bits-meet-atoms-edit">The Physical World: Where Bits meet Atoms <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_supply-chain/includes/bits-and-atoms.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_supply-chain/includes/bits-and-atoms.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
-<blockquote>
-<p>The change from atoms to bits is irrevocable and unstoppable. Why now? Because the change is also exponential — small differences of yesterday can have suddenly shocking consequences tomorrow.</p>
-<p>Nicholas Negroponte, Being Digital 1995</p>
-</blockquote>
-<p>Before I joined Amazon I was invited to speak at their annual Machine Learning Conference. It has over two thousand attendees. I met the Vice President in charge of Amazon Special Projects, Babak Parviz. He said to me, the important thing about Amazon is that it’s a “bits and atoms” company, meaning it moves both stuff (atoms) and information (bits). This quote resonated with me because it maps well on to my own definition of intelligence. Moving stuff requires resource. Moving, or processing, of information to move stuff more efficiently requires intelligence.</p>
-<p>That notion is the most fundamental notion for how the modern information infrastructure can help society. At Amazon the place where bits meet atoms is the <em>supply chain</em>. The movement of goods from manufacturer to customer, the supply chain.</p>
-<h2 id="supply-chain-edit">Supply Chain <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_supply-chain/includes/supply-chain.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_supply-chain/includes/supply-chain.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<!--## Digital Transformation -->
+<!--
+
+
+
+# The Physical World: Where Bits meet Atoms <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_supply-chain/includes/bits-and-atoms.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_supply-chain/includes/bits-and-atoms.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+
+> The change from atoms to bits is irrevocable and unstoppable. Why now? Because the change is also exponential — small differences of yesterday can have suddenly shocking consequences tomorrow. 
+>
+> Nicholas Negroponte, Being Digital 1995
+
+Before I joined Amazon I was invited to speak at their annual Machine Learning Conference. It has over two thousand attendees. I met the Vice President in charge of Amazon Special Projects, Babak Parviz. He said to me, the important thing about Amazon is that it's a "bits and atoms" company, meaning it moves both stuff (atoms) and information (bits). This quote resonated with me because it maps well on to my own definition of intelligence. Moving stuff requires resource. Moving, or processing, of information to move stuff more efficiently requires intelligence. 
+
+That notion is the most fundamental notion for how the modern information infrastructure can help society. At Amazon the place where bits meet atoms is the *supply chain*. The movement of goods from manufacturer to customer, the supply chain.
+
+
+
+
+
+
+## Supply Chain <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_supply-chain/includes/supply-chain.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_supply-chain/includes/supply-chain.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+
 <div class="figure">
-<div id="packhorse-bridge-burbage-brook-figure" class="figure-frame">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/supply-chain/packhorse-bridge-burbage-brook.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div class="figure-frame" id="packhorse-bridge-burbage-brook-figure">
+<div class="centered centered" style=""><img class="" src="../slides/diagrams/supply-chain/packhorse-bridge-burbage-brook.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
+</div>
+<div class="magnify" id="packhorse-bridge-burbage-brook-magnify" onclick="magnifyFigure('packhorse-bridge-burbage-brook')">
+<img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex">
+</div>
+<div class="caption-frame" id="packhorse-bridge-burbage-brook-caption">
+Figure: Packhorse Bridge under Burbage Edge. This packhorse route climbs steeply out of Hathersage and heads towards Sheffield. Packhorses were the main route for transporting goods across the Peak District. The high cost of transport is one driver of the 'smith' model, where there is a local skilled person responsible for assembling or creating goods (e.g. a blacksmith). 
 </div>
 </div>
-<div id="packhorse-bridge-burbage-brook-magnify" class="magnify" onclick="magnifyFigure(&#39;packhorse-bridge-burbage-brook&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
-</div>
-<div id="packhorse-bridge-burbage-brook-caption" class="caption-frame">
-<p>Figure: Packhorse Bridge under Burbage Edge. This packhorse route climbs steeply out of Hathersage and heads towards Sheffield. Packhorses were the main route for transporting goods across the Peak District. The high cost of transport is one driver of the ‘smith’ model, where there is a local skilled person responsible for assembling or creating goods (e.g. a blacksmith).</p>
-</div>
-</div>
-<p>On Sunday mornings in Sheffield, I often used to run across Packhorse Bridge in Burbage valley. The bridge is part of an ancient network of trails crossing the Pennines that, before Turnpike roads arrived in the 18th century, was the main way in which goods were moved. Given that the moors around Sheffield were home to sand quarries, tin mines, lead mines and the villages in the Derwent valley were known for nail and pin manufacture, this wasn’t simply movement of agricultural goods, but it was the infrastructure for industrial transport.</p>
-<p>The profession of leading the horses was known as a Jagger and leading out of the village of Hathersage is Jagger’s Lane, a trail that headed underneath Stanage Edge and into Sheffield.</p>
-<p>The movement of goods from regions of supply to areas of demand is fundamental to our society. The physical infrastructure of supply chain has evolved a great deal over the last 300 years.</p>
-<h2 id="cromford-edit">Cromford <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_supply-chain/includes/cromford.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_supply-chain/includes/cromford.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+
+On Sunday mornings in Sheffield, I often used to run across Packhorse Bridge in Burbage valley. The bridge is part of an ancient network of trails crossing the Pennines that, before Turnpike roads arrived in the 18th century, was the main way in which goods were moved. Given that the moors around Sheffield were home to sand quarries, tin mines, lead mines and the villages in the Derwent valley were known for nail and pin manufacture, this wasn't simply movement of agricultural goods, but it was the infrastructure for industrial transport.
+
+The profession of leading the horses was known as a Jagger and leading out of the village of Hathersage is Jagger's Lane, a trail that headed underneath Stanage Edge and into Sheffield. 
+
+The movement of goods from regions of supply to areas of demand is fundamental to our society. The physical infrastructure of supply chain has evolved a great deal over the last 300 years.
+
+
+
+
+
+
+## Cromford <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_supply-chain/includes/cromford.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_supply-chain/includes/cromford.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+
 <div class="figure">
-<div id="cromford-mill-figure" class="figure-frame">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/supply-chain/cromford-mill.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div class="figure-frame" id="cromford-mill-figure">
+<div class="centered centered" style=""><img class="" src="../slides/diagrams/supply-chain/cromford-mill.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
+</div>
+<div class="magnify" id="cromford-mill-magnify" onclick="magnifyFigure('cromford-mill')">
+<img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex">
+</div>
+<div class="caption-frame" id="cromford-mill-caption">
+Figure: Richard Arkwright is regarded of the founder of the modern factory system. Factories exploit distribution networks to centralize production of goods. Arkwright located his factory in Cromford due to proximity to Nottingham Weavers (his market) and availability of water power from the tributaries of the Derwent river. When he first arrived there was almost no transportation network. Over the following 200 years The Cromford Canal (1790s), a Turnpike (now the A6, 1816-18) and the High Peak Railway (now closed, 1820s) were all constructed to improve transportation access as the factory blossomed.
 </div>
 </div>
-<div id="cromford-mill-magnify" class="magnify" onclick="magnifyFigure(&#39;cromford-mill&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
-</div>
-<div id="cromford-mill-caption" class="caption-frame">
-<p>Figure: Richard Arkwright is regarded of the founder of the modern factory system. Factories exploit distribution networks to centralize production of goods. Arkwright located his factory in Cromford due to proximity to Nottingham Weavers (his market) and availability of water power from the tributaries of the Derwent river. When he first arrived there was almost no transportation network. Over the following 200 years The Cromford Canal (1790s), a Turnpike (now the A6, 1816-18) and the High Peak Railway (now closed, 1820s) were all constructed to improve transportation access as the factory blossomed.</p>
-</div>
-</div>
-<p>Richard Arkwright is known as the father of the modern factory system. In 1771 he set up a <a href="https://en.wikipedia.org/wiki/Cromford_Mill">Mill</a> for spinning cotton yarn in the village of Cromford, in the Derwent Valley. The Derwent valley is relatively inaccessible. Raw cotton arrived in Liverpool from the US and India. It needed to be transported on packhorse across the bridleways of the Pennines. But Cromford was a good location due to proximity to Nottingham, where weavers where consuming the finished thread, and the availability of water power from small tributaries of the Derwent river for Arkwright’s <a href="https://en.wikipedia.org/wiki/Spinning_jenny">water frames</a> which automated the production of yarn from raw cotton.</p>
-<p>By 1794 the <a href="https://en.wikipedia.org/wiki/Cromford_Canal">Cromford Canal</a> was opened to bring coal in to Cromford and give better transport to Nottingham. The construction of the canals was driven by the need to improve the transport infrastructure, facilitating the movement of goods across the UK. Canals, roads and railways were initially constructed by the economic need for moving goods. To improve supply chain.</p>
-<p>The A6 now does pass through Cromford, but at the time he moved there there was merely a track. The High Peak Railway was opened in 1832, it is now converted to the High Peak Trail, but it remains the highest railway built in Britain.</p>
-<p><span class="citation" data-cites="Cooper:transformation91">Cooper (1991)</span></p>
-<h2 id="containerization-edit">Containerization <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_supply-chain/includes/containerisation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_supply-chain/includes/containerisation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+
+Richard Arkwright is known as the father of the modern factory system. In 1771 he set up a [Mill](https://en.wikipedia.org/wiki/Cromford_Mill) for spinning cotton yarn in the village of Cromford, in the Derwent Valley. The Derwent valley is relatively inaccessible. Raw cotton arrived in Liverpool from the US and India. It needed to be transported on packhorse across the bridleways of the Pennines. But Cromford was a good location due to proximity to Nottingham, where weavers where consuming the finished thread, and  the availability of water power from small tributaries of the Derwent river for Arkwright's [water frames](https://en.wikipedia.org/wiki/Spinning_jenny) which automated the production of yarn from raw cotton.
+
+By 1794 the [Cromford Canal](https://en.wikipedia.org/wiki/Cromford_Canal) was opened to bring coal in to Cromford and give better transport to Nottingham. The construction of the canals was driven by the need to improve the transport infrastructure, facilitating the movement of goods across the UK. Canals, roads and railways were initially constructed by the economic need for moving goods. To improve supply chain.
+
+The A6 now does pass through Cromford, but at the time he moved there there was merely a track. The High Peak Railway was opened in 1832, it is now converted to the High Peak Trail, but it remains the highest railway built in Britain.
+
+@Cooper:transformation91
+
+
+
+
+
+
+
+
+
+## Containerization <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_supply-chain/includes/containerisation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_supply-chain/includes/containerisation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+
+
+
 <div class="figure">
-<div id="container-2539942_1920-figure" class="figure-frame">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/supply-chain/container-2539942_1920.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div class="figure-frame" id="container-2539942_1920-figure">
+<div class="centered centered" style=""><img class="" src="../slides/diagrams/supply-chain/container-2539942_1920.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
+</div>
+<div class="magnify" id="container-2539942_1920-magnify" onclick="magnifyFigure('container-2539942_1920')">
+<img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex">
+</div>
+<div class="caption-frame" id="container-2539942_1920-caption">
+Figure: The container is one of the major drivers of globalization, and arguably the largest agent of social change in the last 100 years. It reduces the cost of transportation, significantly changing the appropriate topology of distribution networks. The container makes it possible to ship goods halfway around the world for cheaper than it costs to process those goods, leading to an extended distribution topology.
 </div>
 </div>
-<div id="container-2539942_1920-magnify" class="magnify" onclick="magnifyFigure(&#39;container-2539942_1920&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
-</div>
-<div id="container-2539942_1920-caption" class="caption-frame">
-<p>Figure: The container is one of the major drivers of globalization, and arguably the largest agent of social change in the last 100 years. It reduces the cost of transportation, significantly changing the appropriate topology of distribution networks. The container makes it possible to ship goods halfway around the world for cheaper than it costs to process those goods, leading to an extended distribution topology.</p>
-</div>
-</div>
-<p>Containerization has had a dramatic effect on global economics, placing many people in the developing world at the end of the supply chain.</p>
+
+Containerization has had a dramatic effect on global economics, placing many people in the developing world at the end of the supply chain. 
+
+
+
+
+
+
+
+
 <div class="figure">
-<div id="wild-alaskan-cod-figure" class="figure-frame">
-<table>
-<tr>
-<td width="45%">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/supply-chain/wild-alaskan-cod.jpg" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div class="figure-frame" id="wild-alaskan-cod-figure">
+<table><tr><td width="45%"><div class="centered centered" style=""><img class="" src="../slides/diagrams/supply-chain/wild-alaskan-cod.jpg" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div></td><td width="45%"><div class="centered centered" style=""><img class="" src="../slides/diagrams/supply-chain/wild-alaskan-cod-made-in-china.jpg" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div></td></tr></table>
 </div>
-</td>
-<td width="45%">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/supply-chain/wild-alaskan-cod-made-in-china.jpg" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div class="magnify" id="wild-alaskan-cod-magnify" onclick="magnifyFigure('wild-alaskan-cod')">
+<img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex">
 </div>
-</td>
-</tr>
-</table>
-</div>
-<div id="wild-alaskan-cod-magnify" class="magnify" onclick="magnifyFigure(&#39;wild-alaskan-cod&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
-</div>
-<div id="wild-alaskan-cod-caption" class="caption-frame">
-<p>Figure: Wild Alaskan Cod, being solid in the Pacific Northwest, that is a product of China. It is cheaper to ship the deep frozen fish thousands of kilometers for processing than to process locally.</p>
+<div class="caption-frame" id="wild-alaskan-cod-caption">
+Figure: Wild Alaskan Cod, being solid in the Pacific Northwest, that is a product of China. It is cheaper to ship the deep frozen fish thousands of kilometers for processing than to process locally.
 </div>
 </div>
-<p>For example, you can buy Wild Alaskan Cod fished from Alaska, processed in China, sold in North America. This is driven by the low cost of transport for frozen cod vs the higher relative cost of cod processing in the US versus China. Similarly, <a href="https://www.telegraph.co.uk/news/uknews/1534286/12000-mile-trip-to-have-seafood-shelled.html" target="_blank" >Scottish prawns are also processed in China for sale in the UK.</a></p>
-<p>This effect on cost of transport vs cost of processing is the main driver of the topology of the modern supply chain and the associated effect of globalization. If transport is much cheaper than processing, then processing will tend to agglomerate in places where processing costs can be minimized.</p>
-<p>Large scale global economic change has principally been driven by changes in the technology that drives supply chain.</p>
-<p>Supply chain is a large-scale automated decision making network. Our aim is to make decisions not only based on our models of customer behavior (as observed through data), but also by accounting for the structure of our fulfilment center, and delivery network.</p>
-<p>Many of the most important questions in supply chain take the form of counterfactuals. E.g. “What would happen if we opened a manufacturing facility in Cambridge?” A counter factual is a question that implies a mechanistic understanding of a system. It goes beyond simple smoothness assumptions or translation invariants. It requires a physical, or <em>mechanistic</em> understanding of the supply chain network. For this reason, the type of models we deploy in supply chain often involve simulations or more mechanistic understanding of the network.</p>
-<p>In supply chain Machine Learning alone is not enough, we need to bridge between models that contain real mechanisms and models that are entirely data driven.</p>
-<p>This is challenging, because as we introduce more mechanism to the models we use, it becomes harder to develop efficient algorithms to match those models to data.</p>
+
+
+For example, you can buy Wild Alaskan Cod fished from Alaska, processed in China, sold in North America. This is driven by the low cost of transport for frozen cod vs the higher relative cost of cod processing in the US versus China. Similarly, <a href="https://www.telegraph.co.uk/news/uknews/1534286/12000-mile-trip-to-have-seafood-shelled.html" target="_blank" >Scottish prawns are also processed in China for sale in the UK.</a>
+
+This effect on cost of transport vs cost of processing is the main driver of the topology of the modern supply chain and the associated effect of globalization. If transport is much cheaper than processing, then processing will tend to agglomerate in places where processing costs can be minimized.
+
+Large scale global economic change has principally been driven by changes in the technology that drives supply chain.
+
+
+
+
+
+
+
+
+
+
+
+Supply chain is a large-scale automated decision making network. Our aim is to make decisions not only based on our models of customer behavior (as observed through data), but also by accounting for the structure of our fulfilment center, and delivery network.
+
+Many of the most important questions in supply chain take the form of counterfactuals. E.g. “What would happen if we opened a manufacturing facility in  Cambridge?” A counter factual is a question that implies a mechanistic understanding of a system. It goes beyond simple smoothness assumptions or translation invariants. It requires a physical, or *mechanistic* understanding of the supply chain network. For this reason, the type of models we deploy in supply chain often involve simulations or more mechanistic understanding of the network.
+
+In supply chain Machine Learning alone is not enough, we need to bridge between models that contain real mechanisms and models that are entirely data driven.
+
+This is challenging, because as we introduce more mechanism to the models we use, it becomes harder to develop efficient algorithms to match those models to data.
+
+
+
+
+
+
+
+
 <!--
 
 * Moving goods to where they need to be.
@@ -438,7 +570,9 @@ communicate
 <li><a href="https://kudu.ug">Kudu Project</a></li>
 </ul></li>
 </ul>
-<h2 id="post-digital-transformation">Post Digital Transformation</h2>
+<p>–&gt;</p>
+<h2 id="post-digital-transformation-edit">Post Digital Transformation <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/data-first-culture.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/data-first-culture.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<!--Duke of York Effect -->
 <h2 id="operations-research-control-econometrics-statistics-and-machine-learning-edit">Operations Research, Control, Econometrics, Statistics and Machine Learning <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/or-control-econometrics-statistics-ml.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/or-control-econometrics-statistics-ml.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p><span class="math inline">data + model</span> is not new, it dates back to Laplace and Gauss. Gauss fitted the orbit of Ceres using Keplers laws of planetary motion to generate his basis functions, and Laplace’s insights on the error function and uncertainty <span class="citation" data-cites="Stigler:table99">(Stigler 1999)</span>. Different fields such as Operations Research, Control, Econometrics, Statistics, Machine Learning and now Data Science and AI all rely on <span class="math inline">data + model</span>. Under a Popperian view of science, and equating experiment to data, one could argue that all science has <span class="math inline">data + model</span> underpinning it.</p>
 <p>Different academic fields are born in different eras, driven by different motivations and arrive at different solutions. For example, both Operations Research and Control emerged from the Second World War. Operations Research, the science of decision making, driven by the need for improved logistics and supply chain. Control emerged from cybernetics, a field that was driven in the by researchers who had been involved in radar and decryption <span class="citation" data-cites="Wiener:cybernetics48 Husband:mechanicalmind08">(Wiener 1948; Husband, Holland, and Wheeler 2008)</span>. The UK artificial intelligence community had similar origins <span class="citation" data-cites="Copeland:colossus06">(Copeland 2006)</span>.</p>
@@ -452,76 +586,198 @@ communicate
 <p>For our biggest challenges, focusing on the differences between these fields is unhelpful, we should consider their strengths and how they overlap. Fundamentally all these fields are focused on taking the right action given the information available to us. They need to work in <em>synergy</em> for us to make progress.</p>
 <p>While there is some discomfort in talking across field boundaries, it is critical to disconfirming our current beliefs and generating the new techniques we need to address the challenges before us.</p>
 <p><strong>Recommendation</strong>: We should be aware of the limitations of a single tribal view of any of our problem sets. Where our modelling is dominated by one perspective (e.g. economics, OR, control, ML) we should ensure cross fertilization of ideas occurs through scientific review and team rotation mechanisms that embed our scientists (for a short period) in different teams across our organizations.</p>
-<h2 id="the-data-crisis-edit">The Data Crisis <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/the-data-crisis.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/the-data-crisis.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
-<p>Anecdotally, talking to data modelling scientists. Most say they spend 80% of their time acquiring and cleaning data. This is precipitating what I refer to as the “data crisis”. This is an analogy with software. The “software crisis” was the phenomenon of inability to deliver software solutions due to increasing complexity of implementation. There was no single shot solution for the software crisis, it involved better practice (scrum, test orientated development, sprints, code review), improved programming paradigms (object orientated, functional) and better tools (CVS, then SVN, then git).</p>
-<p>However, these challenges aren’t new, they are merely taking a different form. From the computer’s perspective software <em>is</em> data. The first wave of the data crisis was known as the <em>software crisis</em>.</p>
-<h3 id="the-software-crisis">The Software Crisis</h3>
-<p>In the late sixties early software programmers made note of the increasing costs of software development and termed the challenges associated with it as the “<a href="https://en.wikipedia.org/wiki/Software_crisis">Software Crisis</a>”. Edsger Dijkstra referred to the crisis in his 1972 Turing Award winner’s address.</p>
-<blockquote>
-<p>The major cause of the software crisis is that the machines have become several orders of magnitude more powerful! To put it quite bluntly: as long as there were no machines, programming was no problem at all; when we had a few weak computers, programming became a mild problem, and now we have gigantic computers, programming has become an equally gigantic problem.</p>
-<p>Edsger Dijkstra (1930-2002), The Humble Programmer</p>
-</blockquote>
-<blockquote>
-<p>The major cause of the data crisis is that machines have become more interconnected than ever before. Data access is therefore cheap, but data quality is often poor. What we need is cheap high-quality data. That implies that we develop processes for improving and verifying data quality that are efficient.</p>
-<p>There would seem to be two ways for improving efficiency. Firstly, we should not duplicate work. Secondly, where possible we should automate work.</p>
-</blockquote>
-<p>What I term “The Data Crisis” is the modern equivalent of this problem. The quantity of modern data, and the lack of attention paid to data as it is initially “laid down” and the costs of data cleaning are bringing about a crisis in data-driven decision making. This crisis is at the core of the challenge of <em>technical debt</em> in machine learning <span class="citation" data-cites="Sculley:debt15">(Sculley et al. 2015)</span>.</p>
-<p>Just as with software, the crisis is most correctly addressed by ‘scaling’ the manner in which we process our data. Duplication of work occurs because the value of data cleaning is not correctly recognised in management decision making processes. Automation of work is increasingly possible through techniques in “artificial intelligence”, but this will also require better management of the data science pipeline so that data about data science (meta-data science) can be correctly assimilated and processed. The Alan Turing institute has a program focussed on this area, <a href="https://www.turing.ac.uk/research_projects/artificial-intelligence-data-analytics/">AI for Data Analytics</a>.</p>
-<h2 id="boulton-and-watts-steam-engine-edit">Boulton and Watt’s Steam Engine <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/watt-steam-engine.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/watt-steam-engine.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<!--
+
+ 
+
+## The Data Crisis <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/the-data-crisis.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/the-data-crisis.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+
+Anecdotally, talking to data modelling scientists. Most say they spend
+80% of their time acquiring and cleaning data. This is precipitating
+what I refer to as the “data crisis”. This is an analogy with software.
+The “software crisis” was the phenomenon of inability to deliver
+software solutions due to increasing complexity of implementation. There
+was no single shot solution for the software crisis, it involved better
+practice (scrum, test orientated development, sprints, code review),
+improved programming paradigms (object orientated, functional) and
+better tools (CVS, then SVN, then git).
+
+However, these challenges aren't new, they are merely taking a different
+form. From the computer's perspective software *is* data. The first wave
+of the data crisis was known as the *software crisis*.
+
+
+### The Software Crisis 
+
+In the late sixties early software programmers made note of the
+increasing costs of software development and termed the challenges
+associated with it as the "[Software
+Crisis](https://en.wikipedia.org/wiki/Software_crisis)". Edsger Dijkstra
+referred to the crisis in his 1972 Turing Award winner's address.
+
+
+
+>The major cause of the software crisis is that the machines have
+>become several orders of magnitude more powerful! To put it quite
+>bluntly: as long as there were no machines, programming was no problem
+>at all; when we had a few weak computers, programming became a mild
+>problem, and now we have gigantic computers, programming has become an
+>equally gigantic problem.
+>
+> Edsger Dijkstra (1930-2002), The Humble Programmer
+
+
+
+
+
+
+
+>The major cause of the data crisis is that machines have become more
+>interconnected than ever before. Data access is therefore cheap, but
+>data quality is often poor. What we need is cheap high-quality
+>data. That implies that we develop processes for improving and
+>verifying data quality that are efficient.
+>
+>There would seem to be two ways for improving efficiency. Firstly, we
+>should not duplicate work. Secondly, where possible we should automate
+>work. 
+
+
+What I term "The Data Crisis" is the modern equivalent of this problem.
+The quantity of modern data, and the lack of attention paid to data as
+it is initially "laid down" and the costs of data cleaning are bringing
+about a crisis in data-driven decision making. This crisis is at the
+core of the challenge of *technical debt* in machine learning [@Sculley:debt15].
+
+Just as with software, the crisis is most correctly addressed by
+'scaling' the manner in which we process our data. Duplication of work
+occurs because the value of data cleaning is not correctly recognised in
+management decision making processes. Automation of work is increasingly
+possible through techniques in "artificial intelligence", but this will
+also require better management of the data science pipeline so that data
+about data science (meta-data science) can be correctly assimilated and
+processed. The Alan Turing institute has a program focussed on this
+area, [AI for Data Analytics](https://www.turing.ac.uk/research_projects/artificial-intelligence-data-analytics/).
+
+
+-->
+<!--
+
+
+
+
+## Boulton and Watt's Steam Engine <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/watt-steam-engine.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/watt-steam-engine.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+
+
 <div class="figure">
-<div id="steam-engine-boulton-watt-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="negate" src="../slides/diagrams/SteamEngine_Boulton&Watt_1784.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div class="figure-frame" id="steam-engine-boulton-watt-figure">
+<div class="centered " style=""><img class="negate" src="../slides/diagrams/SteamEngine_Boulton&Watt_1784.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
+</div>
+<div class="magnify" id="steam-engine-boulton-watt-magnify" onclick="magnifyFigure('steam-engine-boulton-watt')">
+<img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex">
+</div>
+<div class="caption-frame" id="steam-engine-boulton-watt-caption">
+Figure: Watt's Steam Engine which made Steam Power Efficient and Practical.
 </div>
 </div>
-<div id="steam-engine-boulton-watt-magnify" class="magnify" onclick="magnifyFigure(&#39;steam-engine-boulton-watt&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
-</div>
-<div id="steam-engine-boulton-watt-caption" class="caption-frame">
-<p>Figure: Watt’s Steam Engine which made Steam Power Efficient and Practical.</p>
-</div>
-</div>
-<p>James Watt’s steam engine contained an early machine learning device. In the same way that modern systems are component based, his engine was composed of components. One of which is a speed regulator sometimes known as <em>Watt’s governor</em>. The two balls in the center of the image, when spun fast, rise, and through a linkage mechanism.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="im">import</span> pods</a></code></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" data-line-number="1">pods.notebook.display_plots(<span class="st">&#39;uk_tin_coal_railways</span><span class="sc">{sample:0&gt;3}</span><span class="st">.svg&#39;</span>, </a>
-<a class="sourceLine" id="cb4-2" data-line-number="2">                            <span class="st">&#39;../slides/diagrams/data-science&#39;</span>, sample<span class="op">=</span>(<span class="dv">1</span>,<span class="dv">5</span>))</a></code></pre></div>
+
+James Watt's steam engine contained an early machine learning device. In the same way that modern systems are component based, his engine was composed of components. One of which is a speed regulator sometimes known as *Watt's governor*. The two balls in the center of the image, when spun fast, rise, and through a linkage mechanism.
+
+
+
+
+
+
+
+```{.python}
+import pods
+```
+```{.python}
+pods.notebook.display_plots('uk_tin_coal_railways{sample:0>3}.svg', 
+                            '../slides/diagrams/data-science', sample=(1,5))
+```
+
 <div class="figure">
-<div id="-figure" class="figure-frame">
-<table>
-<tr>
-<td width="50%">
-<object class="svgplot " data="../slides/diagrams/data-science/uk_tin_coal_railways004.svg" width="100%" style=" ">
-</object>
-</td>
-<td width="50%">
-<object class="svgplot " data="../slides/diagrams/data-science/uk_tin_coal_railways005.svg" width="100%" style=" ">
-</object>
-</td>
-</tr>
-</table>
+<div class="figure-frame" id="-figure">
+<table><tr><td width="50%"><object class="svgplot " data="../slides/diagrams/data-science/uk_tin_coal_railways004.svg" width="100%" style=" "></object></td><td width="50%"><object class="svgplot " data="../slides/diagrams/data-science/uk_tin_coal_railways005.svg" width="100%" style=" "></object></td></tr></table>
 </div>
-<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+<div class="magnify" id="-magnify" onclick="magnifyFigure('')">
+<img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex">
 </div>
-<div id="-caption" class="caption-frame">
-<p>Figure:</p>
+<div class="caption-frame" id="-caption">
+Figure: 
 </div>
 </div>
-<p>By analogy, we can think of the evolution of transport infrastructure during the industrial revolution. Earlier railways actually seem to be more focussed on the coal fields. Coal was the energy resource that drove the industrial revolution in the 19th century, just like data is the information resource that drives the ongoing digital revolution today.</p>
+
+
+
+
+
+By analogy, we can think of the evolution of transport infrastructure during the industrial revolution. Earlier railways actually seem to be more focussed on the coal fields. Coal was the energy resource that drove the industrial revolution in the 19th century, just like data is the information resource that drives the ongoing digital revolution today.
+
+
+
+-->
+<h2 id="areas-of-good-data-edit">Areas of Good Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/data-first-culture.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/data-first-culture.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<h2 id="criteria-for-success">Criteria for Success</h2>
+<ul>
+<li>Executive sponsorship (Office of CEO).</li>
+<li>Technical Expertise (Open minded expert).</li>
+<li>Financial buy in (CFO).</li>
+<li>Assimilated knownledge (CTO).</li>
+</ul>
 <!-- Professionalisation of Data Science -->
-<h2 id="data-science-and-professionalisation-edit">Data Science and Professionalisation <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/a-time-for-professionalisation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/a-time-for-professionalisation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
-<p>The rise in data science and artificial intelligence technologies has been termed “Industrial Revolution 4.0”, so are we in the midst of an industrial change? Maybe, but if so, it is the first part of the industrial revolution to be named before it has happened. The original industrial revolution occurred between 1760 and 1840, but the term was introduced into English by Arnold Toynbee (1852-1883).</p>
-<p>Whether this is a new revolution or an extension of previous revolutions, an important aspect is that this revolution is dominated by <em>data</em> instead of just <em>capital</em>.</p>
-<p>One can also see the modern revolution as a revolution in <em>information</em> rather than <em>energy</em>.</p>
-<p>Disruptive technologies take time to assimilate, and best practices, as well as the pitfalls of new technologies take time to share. Historically, new technologies led to new professions. <a href="https://en.wikipedia.org/wiki/Isambard_Kingdom_Brunel">Isambard Kingdom Brunel</a> (born 1806) was a leading innovator in civil, mechanical and naval engineering. Each of these has its own professional institutions founded in 1818, 1847, and 1860 respectively.</p>
-<p><a href="https://en.wikipedia.org/wiki/Nikola_Tesla">Nikola Tesla</a> developed the modern approach to electrical distribution, he was born in 1856 and the American Instiute for Electrical Engineers was founded in 1884, the UK equivalent was founded in 1871.</p>
-<p><a href="https://en.wikipedia.org/wiki/William_Shockley">William Schockley Jr</a>, born 1910, led the group that developed the transistor, referred to as “the man who brought silicon to Silicon Valley”, in 1963 the American Institute for Electical Engineers merged with the Institute of Radio Engineers to form the Institute of Electrical and Electronic Engineers.</p>
-<p><a href="https://en.wikipedia.org/wiki/Watts_Humphrey">Watts S. Humphrey</a>, born 1927, was known as the “father of software quality”, in the 1980s he founded a program aimed at understanding and managing the software process. The British Computer Society was founded in 1956.</p>
-<p>Why the need for these professions? Much of it is about codification of best practice and developing trust between the public and practitioners. These fundamental characteristics of the professions are shared with the oldest professions (Medicine, Law) as well as the newest (Information Technology).</p>
-<p>So where are we today? My best guess is we are somewhere equivalent to the 1980s for Software Engineering. In terms of professional deployment we have a basic understanding of the equivalent of “programming” but much less understanding of <em>machine learning systems design</em> and <em>data infrastructure</em>. How the components we ahve developed interoperate together in a reliable and accountable manner. Best practice is still evolving, but perhaps isn’t being shared widely enough.</p>
-<p>One problem is that the art of data science is superficially similar to regular software engineering. Although in practice it is rather different. Modern software engineering practice operates to generate code which is well tested as it is written, agile programming techniques provide the appropriate degree of flexibility for the individual programmers alongside sufficient formalization and testing. These techniques have evolved from an overly restrictive formalization that was proposed in the early days of software engineering.</p>
-<p>While data science involves programming, it is different in the following way. Most of the work in data science involves understanding the data and the appropriate manipulations to apply to extract knowledge from the data. The eventual number of lines of code that are required to extract that knowledge are often very few, but the amount of thought and attention that needs to be applied to each line is much more than a traditional line of software code. Testing of those lines is also of a different nature, provisions have to be made for evolving data environments. Any development work is often done on a static snapshot of data, but deployment is made in a live environment where the nature of data changes. Quality control involves checking for degradation in performance arising form unanticipated changes in data quality. It may also need to check for regulatory conformity. For example, in the UK the General Data Protection Regulation stipulates standards of explainability and fairness that may need to be monitored. These concerns do not affect traditional software deployments.</p>
-<p>Others are also pointing out these challenges, <a href="https://medium.com/@karpathy/software-2-0-a64152b37c35">this post</a> from Andrej Karpathy (now head of AI at Tesla) covers the notion of “Software 2.0”. Google researchers have highlighted the challenges of “Technical Debt” in machine learning <span class="citation" data-cites="Sculley:debt15">(Sculley et al. 2015)</span>. Researchers at Berkeley have characterized the systems challenges associated with machine learning <span class="citation" data-cites="Stoica:systemsml17">(Stoica et al. 2017)</span>.</p>
+<!--
+
+
+
+## Data Science and Professionalisation <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/a-time-for-professionalisation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/a-time-for-professionalisation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+
+
+The rise in data science and artificial intelligence technologies has been termed "Industrial Revolution 4.0", so are we in the midst of an industrial change? Maybe, but if so, it is the first part of the industrial revolution to be named before it has happened. The original industrial revolution occurred between 1760 and 1840, but the term was introduced into English by Arnold Toynbee (1852-1883).
+
+Whether this is a new revolution or an extension of previous revolutions, an important aspect is that this revolution is dominated by *data* instead of just *capital*.
+
+One can also see the modern revolution as a revolution in *information* rather than *energy*.
+
+Disruptive technologies take time to assimilate, and best practices, as well as the pitfalls of new technologies take time to share. Historically, new technologies led to new professions. [Isambard Kingdom Brunel](https://en.wikipedia.org/wiki/Isambard_Kingdom_Brunel) (born 1806) was a leading innovator in civil, mechanical and naval engineering. Each of these has its own professional institutions founded in 1818, 1847, and 1860 respectively.
+
+[Nikola Tesla](https://en.wikipedia.org/wiki/Nikola_Tesla) developed the modern approach to electrical distribution, he was born in 1856 and the American Instiute for Electrical Engineers was founded in 1884, the UK equivalent was founded in 1871. 
+
+[William Schockley Jr](https://en.wikipedia.org/wiki/William_Shockley), born 1910, led the group that developed the transistor, referred to as "the man who brought silicon to Silicon Valley", in 1963 the American Institute for Electical Engineers merged with the Institute of Radio Engineers to form the Institute of Electrical and Electronic Engineers. 
+
+[Watts S. Humphrey](https://en.wikipedia.org/wiki/Watts_Humphrey), born 1927, was known as the "father of software quality", in the 1980s he founded a program aimed at understanding and managing the software process. The British Computer Society was founded in 1956.
+
+
+
+
+
+
+
+
+
+
+Why the need for these professions? Much of it is about codification of best practice and developing trust between the public and practitioners. These fundamental characteristics of the professions are shared with the oldest professions (Medicine, Law) as well as the newest (Information Technology).
+
+
+
+
+
+So where are we today? My best guess is we are somewhere equivalent to the 1980s for Software Engineering. In terms of professional deployment we have a basic understanding of the equivalent of "programming" but much less understanding of *machine learning systems design* and *data infrastructure*. How the components we ahve developed interoperate together in a reliable and accountable manner. Best practice is still evolving, but perhaps isn't being shared widely enough.
+
+One problem is that the art of data science is superficially similar to regular software engineering. Although in practice it is rather different. Modern software engineering practice operates to generate code which is well tested as it is written, agile programming techniques provide the appropriate degree of flexibility for the individual programmers alongside sufficient formalization and testing. These techniques have evolved from an overly restrictive formalization that was proposed in the early days of software engineering.
+
+While data science involves programming, it is different in the following way. Most of the work in data science involves understanding the data and the appropriate manipulations to apply to extract knowledge from the data. The eventual number of lines of code that are required to extract that knowledge are often very few, but the amount of thought and attention that needs to be applied to each line is much more than a traditional line of software code. Testing of those lines is also of a different nature, provisions have to be made for evolving data environments. Any development work is often done on a static snapshot of data, but deployment is made in a live environment where the nature of data changes. Quality control involves checking for degradation in performance arising form unanticipated changes in data quality. It may also need to check for regulatory conformity. For example, in the UK the General Data Protection Regulation stipulates standards of explainability and fairness that may need to be monitored. These concerns do not affect traditional software deployments.
+
+Others are also pointing out these challenges, [this post](https://medium.com/@karpathy/software-2-0-a64152b37c35) from Andrej Karpathy (now head of AI at Tesla) covers the notion of "Software 2.0". Google researchers have highlighted the challenges of "Technical Debt" in machine learning [@Sculley:debt15]. Researchers at Berkeley have characterized the systems challenges associated with machine learning [@Stoica:systemsml17].
+
+
+
+
+
+
+
+-->
 <!--
 
 
@@ -532,64 +788,164 @@ communicate
 
 
 -->
-<h1 id="data-first-thinking-edit">Data First Thinking <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-first-thinking.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-first-thinking.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
-<h2 id="data-edit">Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/ml-data-challenge.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/ml-data-challenge.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
-<p>It is difficult to overstate the importance of data. It is half of the equation for machine learning but is often utterly neglected. We can speculate that there are two reasons for this. Firstly, data cleaning is perceived as tedious. It doesn’t seem to consist of the same intellectual challenges that are inherent in constructing complex mathematical models and implementing them in code. Secondly, data cleaning is highly complex, it requires a deep understanding of how machine learning systems operate and good intuitions about the data itself, the domain from which data is drawn (e.g. Supply Chain) and what downstream problems might be caused by poor data quality.</p>
-<p>A consequence of these two reasons, data cleaning seems difficult to formulate into a readily teachable set of principles. As a result, it is heavily neglected in courses on machine learning and data science. Despite data being half the equation, most University courses spend little to no time on its challenges.</p>
-<p>Anecdotally, talking to data modelling scientists. Most say they spend 80% of their time acquiring and cleaning data. This is precipitating what I refer to as the “data crisis”. This is an analogy with software. The “software crisis” was the phenomenon of inability to deliver software solutions due to increasing complexity of implementation. There was no single shot solution for the software crisis, it involved better practice (scrum, test orientated development, sprints, code review), improved programming paradigms (object orientated, functional) and better tools (CVS, then SVN, then git).</p>
-<p>Data is the new software, and the data crisis is already upon us. It is driven by the cost of cleaning data, the paucity of tools for monitoring and maintaining our deployments, the provenance of our models (e.g. with respect to the data they’re trained on).</p>
-<p>Three principal changes need to occur in response. They are cultural and infrastructural.</p>
-<h3 id="the-data-first-paradigm">The Data First Paradigm</h3>
-<p>First of all, to excel in data driven decision making we need to move from a <em>software first</em> paradigm to a <em>data first</em> paradigm. That means refocusing on data as the product. Software is the intermediary to producing the data, and its quality standards must be maintained, but not at the expense of the data we are producing. Data cleaning and maintenance need to be prized as highly as software debugging and maintenance. Instead of <em>software</em> as a service, we should refocus around <em>data</em> as a service. This first change is a cultural change in which our teams think about their outputs in terms of data. Instead of decomposing our systems around the software components, we need to decompose them around the data generating and consuming components.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> Software first is only an intermediate step on the way to becoming <em>data first</em>. It is a necessary, but not a sufficient condition for efficient machine learning systems design and deployment. We must move from <em>software orientated architecture</em> to a <em>data orientated architecture</em>.</p>
-<h3 id="data-quality">Data Quality</h3>
-<p>Secondly, we need to improve our language around data quality. We cannot assess the costs of improving data quality unless we generate a language around what data quality means. Data Readiness Levels<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> are an assessment of data quality that is based on the usage to which data is put.</p>
-<h3 id="data-readiness-levels-edit">Data Readiness Levels <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-readiness-levels-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-readiness-levels-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
-<p><a href="http://inverseprobability.com/2017/01/12/data-readiness-levels">Data Readiness Levels</a> <span class="citation" data-cites="Lawrence:drl17">(Lawrence 2017)</span> are an attempt to develop a language around data quality that can bridge the gap between technical solutions and decision makers such as managers and project planners. The are inspired by Technology Readiness Levels which attempt to quantify the readiness of technologies for deployment.b</p>
-<h3 id="three-grades-of-data-readiness-edit">Three Grades of Data Readiness <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/three-grades-of-data-readiness.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/three-grades-of-data-readiness.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
-<p>Data-readiness describes, at its coarsest level, three separate stages of data graduation.</p>
+<!--
+
+
+
+
+# Data First Thinking <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-first-thinking.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-first-thinking.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+
+
+
+
+
+## Data <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/ml-data-challenge.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/ml-data-challenge.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+
+
+    
+It is difficult to overstate the importance of data. It is half of the
+equation for machine learning but is often utterly neglected. We can
+speculate that there are two reasons for this. Firstly, data cleaning is
+perceived as tedious. It doesn’t seem to consist of the same
+intellectual challenges that are inherent in constructing complex
+mathematical models and implementing them in code. Secondly, data
+cleaning is highly complex, it requires a deep understanding of how
+machine learning systems operate and good intuitions about the data
+itself, the domain from which data is drawn (e.g. Supply Chain) and what
+downstream problems might be caused by poor data quality.
+
+
+
+
+A consequence of these two reasons, data cleaning seems difficult to
+formulate into a readily teachable set of principles. As a result, it is
+heavily neglected in courses on machine learning and data science.
+Despite data being half the equation, most University courses spend
+little to no time on its challenges.
+
+Anecdotally, talking to data modelling scientists. Most say they spend
+80% of their time acquiring and cleaning data. This is precipitating
+what I refer to as the “data crisis”. This is an analogy with software.
+The “software crisis” was the phenomenon of inability to deliver
+software solutions due to increasing complexity of implementation. There
+was no single shot solution for the software crisis, it involved better
+practice (scrum, test orientated development, sprints, code review),
+improved programming paradigms (object orientated, functional) and
+better tools (CVS, then SVN, then git).
+
+
+
+
+
+Data is the new software, and the data crisis is already upon us. It is
+driven by the cost of cleaning data, the paucity of tools for monitoring
+and maintaining our deployments, the provenance of our models (e.g. with
+respect to the data they’re trained on).
+
+
+Three principal changes need to occur in response. They are cultural and
+infrastructural.
+
+### The Data First Paradigm 
+
+First of all, to excel in data driven decision making we need to move
+from a *software first* paradigm to a *data first* paradigm. That means
+refocusing on data as the product. Software is the intermediary to
+producing the data, and its quality standards must be maintained, but
+not at the expense of the data we are producing. Data cleaning and
+maintenance need to be prized as highly as software debugging and
+maintenance. Instead of *software* as a service, we should refocus
+around *data* as a service. This first change is a cultural change in
+which our teams think about their outputs in terms of data. Instead of
+decomposing our systems around the software components, we need to
+decompose them around the data generating and consuming components.[^technical-debt]
+Software first is only an intermediate step on the way to becoming
+*data first*. It is a necessary, but not a sufficient condition for
+efficient machine learning systems design and deployment. We must move
+from *software orientated architecture* to a *data orientated
+architecture*.
+
+[^technical-debt]: This is related to challenges of machine learning and technical debt [@Sculley:debt15], although we are trying to frame the solution here rather than the problem.
+
+### Data Quality 
+
+Secondly, we need to improve our language around data quality. We cannot
+assess the costs of improving data quality unless we generate a language
+around what data quality means. Data Readiness Levels[^data-readiness-levels] are an assessment of data quality that is based on the usage to which data is
+put.
+
+[^data-readiness-levels]: [Data Readiness Levels](http://inverseprobability.com/2017/01/12/data-readiness-levels) [@Lawrence:drl17] are an attempt to develop a language around data quality that can bridge the gap between technical solutions and decision makers such as managers and project planners. They are inspired by Technology Readiness Levels which attempt to quantify the readiness of technologies for deployment.
+
+
+
+
+
+
+
+### Data Readiness Levels <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-readiness-levels-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-readiness-levels-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+
+
+
+[Data Readiness Levels](http://inverseprobability.com/2017/01/12/data-readiness-levels) [@Lawrence:drl17] are an attempt to develop a language around data quality that can bridge the gap between technical solutions and decision makers such as managers and project planners. The are inspired by Technology Readiness Levels which attempt to quantify the readiness of technologies for deployment.b
+
+
+
+
+
+
+
+### Three Grades of Data Readiness <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/three-grades-of-data-readiness.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/three-grades-of-data-readiness.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+
+Data-readiness describes, at its coarsest level,  three separate stages of data graduation.
+
+* Grade C - accessibility
+  * Transition: data becomes electronically available 
+* Grade B - validity
+  * Transition: pose a question to the data.
+* Grade A - usability
+
+The important definitions are at the transition. The move from Grade C data to Grade B data is delimited by the *electronic availability* of the data. The move from Grade B to Grade A data is delimited by posing a question or task to the data [@Lawrence:drl17]. 
+
+
+
+
+
+
+
+**Recommendation**: Build a shared understanding of the language of data readiness levels for use in planning documents and costing of data cleaning and the benefits of reusing cleaned data.
+
+### Move Beyond Software Engineering to Data Engineering 
+
+Thirdly, we need to improve our mental model of the separation of data science from applied science. A common trap in our thinking around data is to see data science (and data engineering, data preparation) as a sub-set of the software engineer’s or applied scientist’s skill set. As a result, we recruit and deploy the wrong type of resource. Data preparation and question formulation is superficially similar to both because of the need for programming skills, but the day to day problems faced are very different.
+
+
+
+
+
+-->
+<h1 id="normal-organisational-rules-apply">Normal Organisational Rules Apply</h1>
 <ul>
-<li>Grade C - accessibility
+<li>AI is not magical pixie dust</li>
+<li>Standard organisational instincts apply</li>
+<li>Disruption requires <em>agile</em> thinking.
 <ul>
-<li>Transition: data becomes electronically available</li>
+<li>Don’t be the Duke of York</li>
+<li>Be Special Forces</li>
 </ul></li>
-<li>Grade B - validity
-<ul>
-<li>Transition: pose a question to the data.</li>
-</ul></li>
-<li>Grade A - usability</li>
 </ul>
-<p>The important definitions are at the transition. The move from Grade C data to Grade B data is delimited by the <em>electronic availability</em> of the data. The move from Grade B to Grade A data is delimited by posing a question or task to the data <span class="citation" data-cites="Lawrence:drl17">(Lawrence 2017)</span>.</p>
-<p><strong>Recommendation</strong>: Build a shared understanding of the language of data readiness levels for use in planning documents and costing of data cleaning and the benefits of reusing cleaned data.</p>
-<h3 id="move-beyond-software-engineering-to-data-engineering">Move Beyond Software Engineering to Data Engineering</h3>
-<p>Thirdly, we need to improve our mental model of the separation of data science from applied science. A common trap in our thinking around data is to see data science (and data engineering, data preparation) as a sub-set of the software engineer’s or applied scientist’s skill set. As a result, we recruit and deploy the wrong type of resource. Data preparation and question formulation is superficially similar to both because of the need for programming skills, but the day to day problems faced are very different.</p>
 <h1 id="references" class="unnumbered">References</h1>
 <div id="refs" class="references">
-<div id="ref-Ananthanarayanan-cat09">
-<p>Ananthanarayanan, Rajagopal, Steven K. Esser, Horst D. Simon, and Dharmendra S. Modha. 2009. “The Cat Is Out of the Bag: Cortical Simulations with <span class="math inline">10<sup>9</sup></span> Neurons, <span class="math inline">10<sup>13</sup></span> Synapses.” In <em>Proceedings of the Conference on High Performance Computing Networking, Storage and Analysis - Sc ’09</em>. <a href="https://doi.org/10.1145/1654059.1654124" class="uri">https://doi.org/10.1145/1654059.1654124</a>.</p>
-</div>
-<div id="ref-Cooper:transformation91">
-<p>Cooper, Brian. 1991. <em>Transformation of a Valley: Derbyshire Derwent</em>. Scarthin Books.</p>
-</div>
 <div id="ref-Copeland:colossus06">
 <p>Copeland, B. Jack, ed. 2006. <em>Colossus: The Secrets of Bletchley Park’s Code-Breaking Computers</em>. Oxford University Press.</p>
 </div>
 <div id="ref-Husband:mechanicalmind08">
 <p>Husband, Phil, Owen Holland, and Michael Wheeler, eds. 2008. <em>The Mechanical Mind in History</em>. mit.</p>
 </div>
-<div id="ref-Lawrence:drl17">
-<p>Lawrence, Neil D. 2017. “Data Readiness Levels.” arXiv.</p>
-</div>
-<div id="ref-Reed-information98">
-<p>Reed, Charlotte, and Nathaniel I. Durlach. 1998. “Note on Information Transfer Rates in Human Communication.” <em>Presence Teleoperators &amp; Virtual Environments</em> 7 (5): 509–18. <a href="https://doi.org/10.1162/105474698565893" class="uri">https://doi.org/10.1162/105474698565893</a>.</p>
-</div>
-<div id="ref-Sculley:debt15">
-<p>Sculley, D., Gary Holt, Daniel Golovin, Eugene Davydov, Todd Phillips, Dietmar Ebner, Vinay Chaudhary, Michael Young, Jean-François Crespo, and Dan Dennison. 2015. “Hidden Technical Debt in Machine Learning Systems.” In <em>Advances in Neural Information Processing Systems 28</em>, edited by Corinna Cortes, Neil D. Lawrence, Daniel D. Lee, Masashi Sugiyama, and Roman Garnett, 2503–11. Curran Associates, Inc. <a href="http://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems.pdf" class="uri">http://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems.pdf</a>.</p>
+<div id="ref-Lawrence:embodiment17">
+<p>Lawrence, Neil D. 2017. “Living Together: Mind and Machine Intelligence.” arXiv. <a href="https://arxiv.org/abs/1705.07996" class="uri">https://arxiv.org/abs/1705.07996</a>.</p>
 </div>
 <div id="ref-Stigler:table99">
 <p>Stigler, Stephen M. 1999. <em>Statistics on the Table: The History of Statistical Concepts and Methods</em>. Cambridge, MA: harvard.</p>
-</div>
-<div id="ref-Stoica:systemsml17">
-<p>Stoica, Ion, Dawn Song, Raluca Ada Popa, David A. Patterson, Michael W. Mahoney, Randy H. Katz, Anthony D. Joseph, et al. 2017. “A Berkeley View of Systems Challenges for Ai.” UCB/EECS-2017-159. EECS Department, University of California, Berkeley. <a href="http://www2.eecs.berkeley.edu/Pubs/TechRpts/2017/EECS-2017-159.html" class="uri">http://www2.eecs.berkeley.edu/Pubs/TechRpts/2017/EECS-2017-159.html</a>.</p>
 </div>
 <div id="ref-Taigman:deepface14">
 <p>Taigman, Yaniv, Ming Yang, Marc’Aurelio Ranzato, and Lior Wolf. 2014. “DeepFace: Closing the Gap to Human-Level Performance in Face Verification.” In <em>Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition</em>. <a href="https://doi.org/10.1109/CVPR.2014.220" class="uri">https://doi.org/10.1109/CVPR.2014.220</a>.</p>
@@ -601,11 +957,7 @@ communicate
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>the challenge of understanding what information pertains to is known as knowledge representation.<a href="#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p><a href="https://en.wikipedia.org/wiki/Lies,_damned_lies,_and_statistics">Disraeli is attributed this quote by Mark Twain</a>.<a href="#fnref2" class="footnote-back">↩</a></p></li>
-<li id="fn3"><p>The logarithm of a number less than one is negative, for a number greater than one the logarithm is positive. So if odds are greater than evens (odds-on) the log-odds are positive, if the odds are less than evens (odds-against) the log-odds will be negative.<a href="#fnref3" class="footnote-back">↩</a></p></li>
-<li id="fn4"><p>This is related to challenges of machine learning and technical debt <span class="citation" data-cites="Sculley:debt15">(Sculley et al. 2015)</span>, although we are trying to frame the solution here rather than the problem.<a href="#fnref4" class="footnote-back">↩</a></p></li>
-<li id="fn5"><p><a href="http://inverseprobability.com/2017/01/12/data-readiness-levels">Data Readiness Levels</a> <span class="citation" data-cites="Lawrence:drl17">(Lawrence 2017)</span> are an attempt to develop a language around data quality that can bridge the gap between technical solutions and decision makers such as managers and project planners. They are inspired by Technology Readiness Levels which attempt to quantify the readiness of technologies for deployment.<a href="#fnref5" class="footnote-back">↩</a></p></li>
+<li id="fn1"><p><a href="https://en.wikipedia.org/wiki/Lies,_damned_lies,_and_statistics">Disraeli is attributed this quote by Mark Twain</a>.<a href="#fnref1" class="footnote-back">↩</a></p></li>
 </ol>
 </section>
 
