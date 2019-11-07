@@ -3,7 +3,7 @@
 
 \editme
 
-\subsection{Machine Learning in Supply Chain}
+\subsection{Supply Chain}
 
 \figure{\includejpg{../slides/diagrams/supply-chain/packhorse-bridge-burbage-brook}{80%}}{Packhorse Bridge under Burbage Edge. This packhorse route climbs steeply out of Hathersage and heads towards Sheffield. Packhorses were the main route for transporting goods across the Peak District. The high cost of transport is one driver of the 'smith' model, where there is a local skilled person responsible for assembling or creating goods (e.g. a blacksmith). }{packhorse-bridge-burbage-brook}
 
