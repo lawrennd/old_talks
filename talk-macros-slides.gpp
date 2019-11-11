@@ -94,14 +94,10 @@
 \newslide{Thanks!}
 \slides{
 * twitter: [\@lawrennd](https://twitter.com/lawrennd)
-* podcast: [The Talking Machines](http://thetalkingmachines.com)
-\ifdef{guardianArticles}
-\guardianAricles
-\else
-* newspaper: [Guardian Profile Page](http://www.theguardian.com/profile/neil-lawrence)\endif}
-\ifdef{blogPosts}
-\blogPosts
-\else
+* podcast: [The Talking Machines](http://thetalkingmachines.com)\ifdef{guardianArticles}
+\guardianArticles\else
+* newspaper: [Guardian Profile Page](http://www.theguardian.com/profile/neil-lawrence)\endif}\ifdef{blogPosts}
+\blogPosts\else
 * blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
 \endif}}
 
