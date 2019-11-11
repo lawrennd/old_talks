@@ -57,7 +57,7 @@ categories:
 <p><strong>an objective function</strong> a function which defines the cost of misprediction. Typically it includes knowledge about the world’s generating processes (probabilistic objectives) or the costs we pay for mispredictions (empiricial risk minimization).</p>
 <p>The combination of data and model through the prediction function and the objectie function leads to a <em>learning algorithm</em>. The class of prediction functions and objective functions we can make use of is restricted by the algorithms they lead to. If the prediction function or the objective function are too complex, then it can be difficult to find an appropriate learning algorithm. Much of the acdemic field of machine learning is the quest for new learning algorithms that allow us to bring different types of models and data together.</p>
 <p>A useful reference for state of the art in machine learning is the UK Royal Society Report, <a href="https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf">Machine Learning: Power and Promise of Computers that Learn by Example</a>.</p>
-<p>You can also check my blog post on <a href="http://inverseprobability.com/2017/07/17/what-is-machine-learning">“What is Machine Learning?”</a>.</p>
+<p>You can also check my blog post on <a href="http://inverseprobability.com/2017/07/17/what-is-machine-learning">What is Machine Learning?</a>.</p>
 <h2 id="artificial-intelligence-and-data-science-edit">Artificial Intelligence and Data Science <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/data-science-vs-ai.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/data-science-vs-ai.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Machine learning technologies have been the driver of two related, but distinct disciplines. The first is <em>data science</em>. Data science is an emerging field that arises from the fact that we now collect so much data by happenstance, rather than by <em>experimental design</em>. Classical statistics is the science of drawing conclusions from data, and to do so statistical experiments are carefully designed. In the modern era we collect so much data that there’s a desire to draw inferences directly from the data.</p>
 <p>As well as machine learning, the field of data science draws from statistics, cloud computing, data storage (e.g. streaming data), visualization and data mining.</p>
@@ -150,340 +150,111 @@ Convention for the Protection of <em>Individuals</em> with regard to Automatic P
 <p>In a hyper-space you have to put a lot of data through the machine for to explore the positions of all the pins. Even when you feed many millions of data points through the machine, there are likely to be regions in the hyper-space where no ball has passed. When future test data passes through the machine in a new route unusual things can happen.</p>
 <p><em>Adversarial examples</em> exploit this high dimensional space. If you have access to the pinball machine, you can use gradient methods to find a position for the ball in the hyper space where the image looks like one thing, but will be classified as another.</p>
 <p>Probabilistic methods explore more of the space by considering a range of possible paths for the ball through the machine. This helps to make them more data efficient and gives some robustness to adversarial examples.</p>
-<h2 id="embodiment-factors-edit">Embodiment Factors <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<h2 id="embodiment-factors-edit">Embodiment Factors <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors-tedx.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/embodiment-factors-tedx.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<div class="figure">
+<div id="embodiment-factors-table-figure" class="figure-frame">
 <table>
 <tr>
 <td>
 </td>
 <td align="center">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
+<object class="svgplot " data="../slides/diagrams/computer.svg" width="100%" style=" ">
+</object>
+</td>
+<td align="center">
+<object class="svgplot " data="../slides/diagrams/human.svg" width="100%" style=" ">
+</object>
 </td>
 <td align="center">
 <div class="centered centered" style="">
-<img class="" src="../slides/diagrams/ClaudeShannon_MFO3807.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="../slides/diagrams/Jean-Dominique_Bauby.jpg" width="150%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </td>
 </tr>
 <tr>
 <td>
-compute
+bits/min
 </td>
 <td align="center">
-<br /><span class="math display"> ≈ 100 gigaflops</span><br />
+billions
 </td>
 <td align="center">
-<br /><span class="math display"> ≈ 16 petaflops</span><br />
+2000
+</td>
+<td align="center">
+6
 </td>
 </tr>
 <tr>
 <td>
-communicate
+billion<br>calculations/s
 </td>
 <td align="center">
-<br /><span class="math display">1 gigbit/s</span><br />
+~100
 </td>
 <td align="center">
-<br /><span class="math display">100 bit/s</span><br />
+a billion
+</td>
+<td align="center">
+a billion
 </td>
 </tr>
 <tr>
 <td>
-(compute/communicate)
+embodiment
 </td>
 <td align="center">
-<br /><span class="math display">10<sup>4</sup></span><br />
+20 minutes
 </td>
 <td align="center">
-<br /><span class="math display">10<sup>14</sup></span><br />
+5 billion years
+</td>
+<td align="center">
+15 trillion years
 </td>
 </tr>
 </table>
-<p>There is a fundamental limit placed on our intelligence based on our ability to communicate. Claude Shannon founded the field of information theory. The clever part of this theory is it allows us to separate our measurement of information from what the information pertains to<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>.</p>
-<p>Shannon measured information in bits. One bit of information is the amount of information I pass to you when I give you the result of a coin toss. Shannon was also interested in the amount of information in the English language. He estimated that on average a word in the English language contains 12 bits of information.</p>
-<p>Given typical speaking rates, that gives us an estimate of our ability to communicate of around 100 bits per second <span class="citation" data-cites="Reed-information98">(Reed and Durlach 1998)</span>. Computers on the other hand can communicate much more rapidly. Current wired network speeds are around a billion bits per second, ten million times faster.</p>
-<p>When it comes to compute though, our best estimates indicate our computers are slower. A typical modern computer can process make around 100 billion floating point operations per second, each floating point operation involves a 64 bit number. So the computer is processing around 6,400 billion bits per second.</p>
-<p>It’s difficult to get similar estimates for humans, but by some estimates the amount of compute we would require to <em>simulate</em> a human brain is equivalent to that in the UK’s fastest computer <span class="citation" data-cites="Ananthanarayanan-cat09">(Ananthanarayanan et al. 2009)</span>, the MET office machine in Exeter, which in 2018 ranks as the 11th fastest computer in the world. That machine simulates the world’s weather each morning, and then simulates the world’s climate in the afternoon. It is a 16 petaflop machine, processing around 1,000 <em>trillion</em> bits per second.</p>
-<div class="figure">
-<div id="lotus-49-figure" class="figure-frame">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/Lotus_49-2.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-</div>
-<div id="lotus-49-magnify" class="magnify" onclick="magnifyFigure(&#39;lotus-49&#39;)">
+<div id="embodiment-factors-table-magnify" class="magnify" onclick="magnifyFigure(&#39;embodiment-factors-table&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
-<div id="lotus-49-caption" class="caption-frame">
-<p>Figure: The Lotus 49, view from the rear. The Lotus 49 was one of the last Formula One cars before the introduction of aerodynamic aids.</p>
+<div id="embodiment-factors-table-caption" class="caption-frame">
+<p>Figure: Embodiment factors are the ratio between our ability to compute and our ability to communicate. Jean Dominique Bauby suffered from locked-in syndrome. The embodiment factors show that relative to the machine we are also locked in. In the table we represent embodiment as the length of time it would take to communicate one second’s worth of computation. For computers it is a matter of minutes, but for a human, whether locked in or not, it is a matter of many millions of years.</p>
 </div>
 </div>
-<p>So when it comes to our ability to compute we are extraordinary, not compute in our conscious mind, but the underlying neuron firings that underpin both our consciousness, our subconsciousness as well as our motor control etc.</p>
-<p>If we think of ourselves as vehicles, then we are massively overpowered. Our ability to generate derived information from raw fuel is extraordinary. Intellectually we have formula one engines.</p>
-<p>But in terms of our ability to deploy that computation in actual use, to share the results of what we have inferred, we are very limited. So when you imagine the F1 car that represents a psyche, think of an F1 car with bicycle wheels.</p>
-<div class="figure">
-<div id="marcel-renault-figure" class="figure-frame">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/640px-Marcel_Renault_1903.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-<div id="marcel-renault-magnify" class="magnify" onclick="magnifyFigure(&#39;marcel-renault&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
-</div>
-<div id="marcel-renault-caption" class="caption-frame">
-<p>Figure: Marcel Renault races a Renault 40 cv during the Paris-Madrid race, an early Grand Prix, in 1903. Marcel died later in the race after missing a warning flag for a sharp corner at Couhé Vérac, likely due to dust reducing visibility.</p>
-</div>
-</div>
-<p>Just think of the control a driver would have to have to deploy such power through such a narrow channel of traction. That is the beauty and the skill of the human mind.</p>
-<p>In contrast, our computers are more like go-karts. Underpowered, but with well-matched tires. They can communicate far more fluidly. They are more efficient, but somehow less extraordinary, less beautiful.</p>
-<div class="figure">
-<div id="caleb-mcduff-figure" class="figure-frame">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/Caleb_McDuff_WIX_Silence_Racing_livery.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-<div id="caleb-mcduff-magnify" class="magnify" onclick="magnifyFigure(&#39;caleb-mcduff&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
-</div>
-<div id="caleb-mcduff-caption" class="caption-frame">
-<p>Figure: Caleb McDuff driving for WIX Silence Racing.</p>
-</div>
-</div>
-<p>For humans, that means much of our computation should be dedicated to considering <em>what</em> we should compute. To do that efficiently we need to model the world around us. The most complex thing in the world around us is other humans. So it is no surprise that we model them. We second guess what their intentions are, and our communication is only necessary when they are departing from how we model them. Naturally, for this to work well, we need to understand those we work closely with. So it is no surprise that social communication, social bonding, forms so much of a part of our use of our limited bandwidth.</p>
-<p>There is a second effect here, our need to anthropomorphise objects around us. Our tendency to model our fellow humans extends to when we interact with other entities in our environment. To our pets as well as inanimate objects around us, such as computers or even our cars. This tendency to over interpret could be a consequence of our limited ability to communicate.</p>
-<p>For more details see this paper <a href="https://arxiv.org/abs/1705.07996">“Living Together: Mind and Machine Intelligence”</a>, and this <a href="http://inverseprobability.com/talks/lawrence-tedx17/living-together.html">TEDx talk</a>.</p>
-<!--
-
-
-
-
-
-
-
-
-# Evolved Relationship with Information <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/evolved-relationship.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/evolved-relationship.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-
-The high bandwidth of computers has resulted in a close relationship between the computer and data. Large amounts of information can flow between the two. The degree to which the computer is mediating our relationship with data means that we should consider it an intermediary. 
-
-Originaly our low bandwith relationship with data was affected by two characteristics. Firstly, our tendency to over-interpret driven by our need to extract as much knowledge from our low bandwidth information channel as possible. Secondly, by our improved understanding of the domain of *mathematical* statistics and how our cognitive biases can mislead us. 
-
-With this new set up there is a potential for assimilating far more information via the computer, but the computer can present this to us in various ways. If it's motives are not aligned with ours then it can misrepresent the information. This needn't be nefarious it can be simply as a result of the computer pursuing a different objective from us. For example, if the computer is aiming to maximize our interaction time that may be a different objective from ours which may be to summarize information in a representative manner in the *shortest* possible length of time. 
-
-For example, for me, it was a common experience to pick up my telephone with the intention of checking when my next appointment was, but to soon find myself  distracted by another application on the phone, and end up reading something on the internet. By the time I'd finished reading, I would often have forgotten the reason I picked up my phone in the first place. 
-
-There are great benefits to be had from the huge amount of information we can unlock from this evolved relationship between us and data. In biology, large scale data sharing has been driven by a revolution in genomic, transcriptomic and epigenomic measurement. The improved inferences that that can be drawn through summarizing data by computer have fundamentally changed the nature of biological science, now  this phenomenon is also infuencing us in our daily lives as data measured by *happenstance* is increasingly used to characterize us.
-
-Better mediation of this flow actually requires a better understanding of human-computer interaction. This in turn involves understanding our own intelligence better, what its cognitive biases are and how these might mislead us.
-
-For further thoughts see [this Guardian article](https://www.theguardian.com/media-network/2015/jul/23/data-driven-economy-marketing) from 2015 on marketing in the internet era.
-
-You can also check my blog post on ["System Zero"](http://inverseprobability.com/2015/12/04/what-kind-of-ai).
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="figure">
-<div class="figure-frame" id="trinity-human-data-computer-figure">
-<object class="svgplot " data="../slides/diagrams/data-science/new-flow-of-information002.svg" width="50%" style=" "></object>
-</div>
-<div class="magnify" id="trinity-human-data-computer-magnify" onclick="magnifyFigure('trinity-human-data-computer')">
-<img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex">
-</div>
-<div class="caption-frame" id="trinity-human-data-computer-caption">
-Figure: The trinity of human, data and computer, and highlights the modern phenomenon. The communication channel between computer and data now has an extremely high bandwidth. The channel between human and computer and the channel between data and human is narrow. New direction of information flow, information is reaching us mediated by the computer.
-</div>
-</div>
-
-
-
-
-
-
-
-
-## Societal Effects <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/societal-effects.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/societal-effects.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-
-
-We have already seen the effects of this changed dynamic in biology and computational biology. Improved sensorics have led to the new domains of transcriptomics, epigenomics, and 'rich phenomics' as well as considerably augmenting our capabilities in genomics. 
-
-Biologists have had to become data-savvy, they require a rich understanding of the available data resources and need to assimilate existing data sets in their hypothesis generation as well as their experimental design. Modern biology has become a far more quantitative science, but the quantitativeness has required new methods developed in the domains of *computational biology* and *bioinformatics*.
-
-There is also great promise for personalized health, but in health the wide data-sharing that has underpinned success in the computational biology community is much harder to cary out. 
-
-
-
-
-
-We can expect to see these phenomena reflected in wider society. Particularly as we make use of more automated decision making based only on data. This is leading to a requirement to better understand our own subjective biases to ensure that the human to computer interface allows domain experts to assimilate data driven conclusions in a well calibrated manner. This is particularly important where medical treatments are being prescribed. It also offers potential for different kinds of medical intervention. More subtle interventions are possible when the digital environment is able to respond to users in an bespoke manner. This has particular implications for treatment of mental health conditions.
-
-
-
-
-The main phenomenon we see across the board is the shift in dynamic from the direct pathway between human and data, as traditionally mediated by classical statistcs, to a new flow of information via the computer. This change of dynamics gives us the modern and emerging domain of *data science*, where the interactions between human and data are mediated by the machine.
-
-
-
-
-
--->
-<!--
-
-
-
-
-
-## Human Communication <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/conversation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/conversation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-
-
-For human conversation to work, we require an internal model of who we are speaking to. We model each other, and combine our sense of who they are, who they think we are, and what has been said. This is our approach to dealing with the limited bandwidth connection we have. Empathy and understanding of intent. Mental dispositional concepts are used to augment our limited communication bandwidth.
-
-Fritz Heider referred to the important point of a conversation as being that they are happenings that are "*psychologically represented* in each of the participants" (his emphasis) [@Heider:interpersonal58]
-
-
-
-### Bandwidth Constrained Conversations 
-
-```{.python}
-import pods
-from ipywidgets import IntSlider
-```
-
-
-```{.python}
-pods.notebook.display_plots('anne-bob-conversation{sample:0>3}.svg', 
-                            '../slides/diagrams',  sample=IntSlider(0, 0, 7, 1))
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="figure">
-<div class="figure-frame" id="anne-bob-conversation-civil-figure">
-<object class="svgplot " data="../slides/diagrams/anne-bob-conversation006.svg" width="70%" style=" "></object>
-</div>
-<div class="magnify" id="anne-bob-conversation-civil-magnify" onclick="magnifyFigure('anne-bob-conversation-civil')">
-<img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex">
-</div>
-<div class="caption-frame" id="anne-bob-conversation-civil-caption">
-Figure: Conversation relies on internal models of other individuals.
-</div>
-</div>
-<div class="figure">
-<div class="figure-frame" id="anne-bob-conversation-argument-figure">
-<object class="svgplot " data="../slides/diagrams/anne-bob-conversation007.svg" width="70%" style=" "></object>
-</div>
-<div class="magnify" id="anne-bob-conversation-argument-magnify" onclick="magnifyFigure('anne-bob-conversation-argument')">
-<img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex">
-</div>
-<div class="caption-frame" id="anne-bob-conversation-argument-caption">
-Figure: Misunderstanding of context and who we are talking to leads to arguments.
-</div>
-</div>
-
-Embodiment factors imply that, in our communication between humans, what is *not* said is, perhaps, more important than what is said. To communicate with each other we need to have a model of who each of us are. 
-
-To aid this, in society, we are required to perform roles. Whether as a parent, a teacher, an employee or a boss. Each of these roles requires that we conform to certain standards of behaviour to facilitate communication between ourselves.
-
-Control of self is vitally important to these communications.
-
-The high availability of data available to humans undermines human-to-human communication channels by providing new routes to undermining our control of self.
-
-
-
-
-
-
-
-
-
-### A Six Word Novel <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/baby-shoes.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/baby-shoes.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-
-<div class="figure">
-<div class="figure-frame" id="classic-baby-shoes-figure">
-<div class="centered centered" style=""><img class="" src="../slides/diagrams/Classic_baby_shoes.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div><center>For sale: baby shoes, never worn</center>
-</div>
-<div class="magnify" id="classic-baby-shoes-magnify" onclick="magnifyFigure('classic-baby-shoes')">
-<img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex">
-</div>
-<div class="caption-frame" id="classic-baby-shoes-caption">
-Figure: Consider the six word novel, apocraphally credited to Ernest Hemingway, "For sale: baby shoes, never worn". To understand what that means to a human, you need a great deal of additional context. Context that is not directly accessible to a machine that has not got both the evolved and contextual understanding of our own condition to realize both the implication of the advert and what that implication means emotionally to the previous owner.
-</div>
-</div>
-
-
-
-
-But this is a very different kind of intelligence than ours. A computer cannot understand the depth of the Ernest Hemingway's apocryphal six word novel: "For Sale, Baby Shoes, Never worn", because it isn't equipped with that ability to model the complexity of humanity that underlies that statement.
-
-
-
-
-
-
-
-### Heider and Simmel (1944) <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/heider-simmel.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/heider-simmel.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-
-<div class="figure">
-<div class="figure-frame" id="heider-simmel-shapes-figure">
-<iframe width="800" height="600" src="https://www.youtube.com/embed/8FIEZXMUM2I?start=7" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-</div>
-<div class="magnify" id="heider-simmel-shapes-magnify" onclick="magnifyFigure('heider-simmel-shapes')">
-<img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex">
-</div>
-<div class="caption-frame" id="heider-simmel-shapes-caption">
-Figure: Fritz Heider and Marianne Simmel's video of shapes from @Heider:experimental44.
-</div>
-</div>
-
-[Fritz Heider](https://en.wikipedia.org/wiki/Fritz_Heider) and [Marianne Simmel](https://en.wikipedia.org/wiki/Marianne_Simmel)'s experiments with animated shapes from 1944 [@Heider:experimental44]. Our interpretation of these objects as showing motives and even emotion is a combination of our desire for narrative, a need for understanding of each other, and our ability to empathise. At one level, these are crudely drawn objects, but in another key way, the animator has communicated a story through simple facets such as their relative motions, their sizes and their actions. We apply our psychological representations to these faceless shapes in an effort to interpret their actions.
-
-
-
-
-
--->
+<p>Let me explain what I mean. Claude Shannon introduced a mathematical concept of information for the purposes of understanding telephone exchanges.</p>
+<p>Information has many meanings, but mathematically, Shannon defined a bit of information to be the amount of information you get from tossing a coin.</p>
+<p>If I toss a coin, and look at it, I know the answer. You don’t. But if I now tell you the answer I communicate to you 1 bit of information. Shannon defined this as the fundamental unit of information.</p>
+<p>If I toss the coin twice, and tell you the result of both tosses, I give you two bits of information. Information is additive.</p>
+<p>Shannon also estimated the average information associated with the English language. He estimated that the average information in any word is 12 bits, equivalent to twelve coin tosses.</p>
+<p>So every two minutes Bauby was able to communicate 12 bits, or six bits per minute.</p>
+<p>This is the information transfer rate he was limited to, the rate at which he could communicate.</p>
+<p>Compare this to me, talking now. The average speaker for TEDX speaks around 160 words per minute. That’s 320 times faster than Bauby or around a 2000 bits per minute. 2000 coin tosses per minute.</p>
+<p>But, just think how much thought Bauby was putting into every sentence. Imagine how carefully chosen each of his words was. Because he was communication constrained he could put more thought into each of his words. Into thinking about his audience.</p>
+<p>So, his intelligence became locked in. He thinks as fast as any of us, but can communicate slower. Like the tree falling in the woods with no one there to hear it, his intelligence is embedded inside him.</p>
+<p>Two thousand coin tosses per minute sounds pretty impressive, but this talk is not just about us, it’s about our computers, and the type of intelligence we are creating within them.</p>
+<p>So how does two thousand compare to our digital companions? When computers talk to each other, they do so with billions of coin tosses per minute.</p>
+<p>Let’s imagine for a moment, that instead of talking about communication of information, we are actually talking about money. Bauby would have 6 dollars. I would have 2000 dollars, and my computer has billions of dollars.</p>
+<p>The internet has interconnected computers and equipped them with extremely high transfer rates.</p>
+<p>However, by our very best estimates, computers actually think slower than us.</p>
+<p>How can that be? You might ask, computers calculate much faster than me. That’s true, but underlying your conscious thoughts there are a lot of calculations going on.</p>
+<p>Each thought involves many thousands, millions or billions of calculations. How many exactly, we don’t know yet, because we don’t know how the brain turns calculations into thoughts.</p>
+<p>Our best estimates suggest that to simulate your brain a computer would have to be as large as the UK Met Office machine here in Exeter. That’s a 250 million pound machine, the fastest in the UK. It can do 16 billion billon calculations per second.</p>
+<p>It simulates the weather across the word every day, that’s how much power we think we need to simulate our brains.</p>
+<p>So, in terms of our computational power we are extraordinary, but in terms of our ability to explain ourselves, just like Bauby, we are locked in.</p>
+<p>For a typical computer, to communicate everything it computes in one second, it would only take it a couple of minutes. For us to do the same would take 15 billion years.</p>
+<p>If intelligence is fundamentally about processing and sharing of information. This gives us a fundamental constraint on human intelligence that dictates its nature.</p>
+<p>I call this ratio between the time it takes to compute something, and the time it takes to say it, the embodiment factor <span class="citation" data-cites="Lawrence:embodiment17">(Lawrence 2017)</span>. Because it reflects how embodied our cognition is.</p>
+<p>If it takes you two minutes to say the thing you have thought in a second, then you are a computer. If it takes you 15 billion years, then you are a human.</p>
+<!--include{_data-science/includes/evolved-relationship-society.md}-->
+<!--include{_ai/includes/embodiment-and-narrative.md}-->
 <h2 id="turing-ai-fellowship-edit">Turing AI Fellowship <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/turing-ai-fellowship.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/turing-ai-fellowship.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<h2 id="project-description">Project Description</h2>
+<blockquote>
+<p>It used to be true that computers only did what we programmed them to do, but today AI systems are learning from our data. This introduces new problems in how these systems respond to their environment.</p>
+<p>We need to better monitor how data is influencing decision making and take corrective action as required.</p>
+<p>This project addresses that challenge.</p>
+</blockquote>
 <h2 id="aim">Aim</h2>
 <p>Our aim is to scale our ability to deploy safe and reliable AI solutions. Our technical approach is to do this through <em>data-oriented software engineering</em> practices and <em>deep system emulation</em>. We will do this through a significant extension of the notion of Automated ML (AutoML) to Automated AI (AutoAI), this relies on a shift from Bayesian Optimisation to <em>Bayesian System Optimisation</em>. The project will develop a toolkit for automating the deployment, maintenance and monitoring of artificial intelligence systems.</p>
 <h2 id="motivating-example">Motivating Example</h2>
@@ -513,18 +284,19 @@ Figure: Fritz Heider and Marianne Simmel's video of shapes from @Heider:experime
 <p>A Data Trust would be a legal entity where the trustees responsibility was entirely to the members of the trust. So the motivation of the data-controllers is aligned only with the data-subjects. How data is handled would be subject to the terms under which the trust was convened. The success of an individual trust would be contingent on it satisfying its members with appropriate balancing of individual privacy with the benefits of data sharing.</p>
 <p>Formation of Data Trusts became the number one recommendation of the Hall-Presenti report on AI, but the manner in which this is done will have a significant impact on their utility. It feels important to have a diversity of approaches, and yet it feels important that any individual trust would be large enough to be taken seriously in representing the views of its members in wider negotiations.</p>
 <div class="figure">
-<div id="data-trusts-figure" class="figure-frame">
+<div id="-figure" class="figure-frame">
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/data-science/data-trusts.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
-<div id="data-trusts-magnify" class="magnify" onclick="magnifyFigure(&#39;data-trusts&#39;)">
+<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
-<div id="data-trusts-caption" class="caption-frame">
-<p>Figure: For thoughts on data trusts see <a href="https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy" target="_blank" >this Guardian Op-Ed.</a></p>
+<div id="-caption" class="caption-frame">
+<p>Figure: For thoughts on data trusts see Guardian article on <a href="https://www.theguardian.com/media-network/https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy">Data Trusts</a>.</p>
 </div>
 </div>
+<p>}{data-trusts}</p>
 <div class="figure">
 <div id="hall-presenti-report-figure" class="figure-frame">
 <div class="centered" style="">
@@ -540,11 +312,8 @@ Figure: Fritz Heider and Marianne Simmel's video of shapes from @Heider:experime
 </div>
 <h1 id="references" class="unnumbered">References</h1>
 <div id="refs" class="references">
-<div id="ref-Ananthanarayanan-cat09">
-<p>Ananthanarayanan, Rajagopal, Steven K. Esser, Horst D. Simon, and Dharmendra S. Modha. 2009. “The Cat Is Out of the Bag: Cortical Simulations with <span class="math inline">10<sup>9</sup></span> Neurons, <span class="math inline">10<sup>13</sup></span> Synapses.” In <em>Proceedings of the Conference on High Performance Computing Networking, Storage and Analysis - Sc ’09</em>. <a href="https://doi.org/10.1145/1654059.1654124" class="uri">https://doi.org/10.1145/1654059.1654124</a>.</p>
-</div>
 <div id="ref-Delacroix:trusts18">
-<p>Delacroix, Sylvie, and Neil D. Lawrence. 2018. “Disturbing the ‘One Size Fits All’ Approach to Data Governance: Bottom-up Data Trusts.” SSRN. <a href="https://doi.org/10.2139/ssrn.3265315" class="uri">https://doi.org/10.2139/ssrn.3265315</a>.</p>
+<p>Delacroix, Sylvie, and Neil D. Lawrence. 2018. “Disturbing the ‘One Size Fits All’ Approach to Data Governance: Bottom-up Data Trusts.” SSRN. <a href="https://doi.org/10.1093/idpl/ipz01410.2139/ssrn.3265315" class="uri">https://doi.org/10.1093/idpl/ipz01410.2139/ssrn.3265315</a>.</p>
 </div>
 <div id="ref-Edwards:privacy04">
 <p>Edwards, Lilian. 2004. “The Problem with Privacy.” <em>International Review of Law Computers &amp; Technology</em> 18 (3): 263–94.</p>
@@ -552,8 +321,8 @@ Figure: Fritz Heider and Marianne Simmel's video of shapes from @Heider:experime
 <div id="ref-Lawrence:trusts16">
 <p>Lawrence, Neil D. 2016. “Data Trusts Could Allay Our Privacy Fears.” The Guardian Media &amp; Tech Network. <a href="https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy" class="uri">https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy</a>.</p>
 </div>
-<div id="ref-Reed-information98">
-<p>Reed, Charlotte, and Nathaniel I. Durlach. 1998. “Note on Information Transfer Rates in Human Communication.” <em>Presence Teleoperators &amp; Virtual Environments</em> 7 (5): 509–18. <a href="https://doi.org/10.1162/105474698565893" class="uri">https://doi.org/10.1162/105474698565893</a>.</p>
+<div id="ref-Lawrence:embodiment17">
+<p>———. 2017. “Living Together: Mind and Machine Intelligence.” arXiv. <a href="https://arxiv.org/abs/1705.07996" class="uri">https://arxiv.org/abs/1705.07996</a>.</p>
 </div>
 <div id="ref-Taigman:deepface14">
 <p>Taigman, Yaniv, Ming Yang, Marc’Aurelio Ranzato, and Lior Wolf. 2014. “DeepFace: Closing the Gap to Human-Level Performance in Face Verification.” In <em>Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition</em>. <a href="https://doi.org/10.1109/CVPR.2014.220" class="uri">https://doi.org/10.1109/CVPR.2014.220</a>.</p>
@@ -566,7 +335,6 @@ Figure: Fritz Heider and Marianne Simmel's video of shapes from @Heider:experime
 <hr />
 <ol>
 <li id="fn1"><p>The logarithm of a number less than one is negative, for a number greater than one the logarithm is positive. So if odds are greater than evens (odds-on) the log-odds are positive, if the odds are less than evens (odds-against) the log-odds will be negative.<a href="#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>the challenge of understanding what information pertains to is known as knowledge representation.<a href="#fnref2" class="footnote-back">↩</a></p></li>
 </ol>
 </section>
 
