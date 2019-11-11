@@ -95,7 +95,10 @@
 \slides{
 * twitter: [\@lawrennd](https://twitter.com/lawrennd)
 * podcast: [The Talking Machines](http://thetalkingmachines.com)
-* newspaper: [Guardian Profile Page](http://www.theguardian.com/profile/neil-lawrence)
+\ifdef{guardianArticles}
+\guardianAricles
+\else
+* newspaper: [Guardian Profile Page](http://www.theguardian.com/profile/neil-lawrence)\endif}
 \ifdef{blogPosts}
 \blogPosts
 \else

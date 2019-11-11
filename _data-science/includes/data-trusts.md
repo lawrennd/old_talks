@@ -16,7 +16,7 @@ Formation of Data Trusts became the number one recommendation of the Hall-Presen
 
 \newslide{}
 
-\figure{\includepng{../slides/diagrams/data-science/data-trusts}{100%}}{For thoughts on data trusts see \addguardian{Data Trusts}{https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy}.}}{data-trusts}
+\figure{\includepng{../slides/diagrams/data-science/data-trusts}{100%}}{For thoughts on data trusts see \addguardian{Data Trusts}{https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy}.}{data-trusts}
 
 
 \newslide{}
@@ -35,9 +35,10 @@ Formation of Data Trusts became the number one recommendation of the Hall-Presen
 \newslide{Analogy}
 
 \slides{
-* Digital Democracy vs Digital Oligarchy @Lawrence:digitaloligarchy15 or Digital Feudalism @Lawrence:informationbarons15
+* Digital Democracy vs Digital Oligarchy @Lawrence:digitaloligarchy15 or Information Feudalism @Lawrence:informationbarons15
 * Data *subjects*, data *controllers* and data *processors*.
 }
+\notes{See Guardian articles on }\addguardian{Digital Oligarchies}{https://www.theguardian.com/media-network/2015/mar/05/digital-oligarchy-algorithms-personal-data}\notes{ and }\addguardian{Information Feudalism}{https://www.theguardian.com/media-network/2015/nov/16/information-barons-threaten-autonomy-privacy-online}\notes{.}
 
 \newslide{Legal Mechanism of Trusts}
 \slides{
@@ -46,7 +47,7 @@ Formation of Data Trusts became the number one recommendation of the Hall-Presen
 * Trustees are data *controllers*
 * Beneficiaries are data *subjects*
 * Power of data accumulation wielded on the beneficiaries behalf
-* See @Edwards:privacy04, @Delacroix:trusts18 and @Lawrence:trusts16
+* See @Edwards:privacy04, @Delacroix:trusts19 and @Lawrence:trusts16
 }
 
 \endif
