@@ -99,7 +99,7 @@
 * newspaper: [Guardian Profile Page](http://www.theguardian.com/profile/neil-lawrence)\endif}\ifdef{blogPosts}
 \blogPosts\else
 * blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
-\endif}}
+\endif}
 
 \define{\reading}{
 \ifdef{readingMaterial}
