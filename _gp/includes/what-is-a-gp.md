@@ -1,6 +1,7 @@
 \ifndef{whatIsAGp}
 \define{whatIsAGp}
 \editme
+
 \include{_ml/includes/what-is-ml.md}
 
 \newslide{Artificial Intelligence}
@@ -8,31 +9,10 @@
 * Machine learning is a mainstay because of importance of prediction.
 }
 
-\newslide{Uncertainty}
-
-\slides{
-* Uncertainty in prediction arises from:
-* scarcity of training data and 
-* mismatch between the set of prediction functions we choose and all possible prediction functions.
-* Also uncertainties in objective, leave those for another day.
-}
-\notes{
-In practice, we normally also have uncertainty associated with these functions. Uncertainty in the prediction function arises from 
-
-1. scarcity of training data and 
-2. mismatch between the set of prediction functions we choose and all possible prediction functions.
-
-There are also challenges around specification of the objective function, but for we will save those for another day. For the moment, let us focus on the prediction function. 
-}
-
+\include{_ml/includes/why-uncertainty.md}
 \include{_ml/includes/neural-networks.md}
+\include{_ml/includes/integrated-basis-functions.md}
 
-\newslide{Adaptive Basis Functions}
-\slides{
-* Revisit that decision: follow the path of @Neal:bayesian94 and @MacKay:bayesian92.
-
-* Consider the probabilistic approach.}
-\notes{We're going to go revisit that decision, and follow the path of Radford Neal [@Neal:bayesian94] who, inspired by work of David MacKay [@MacKay:bayesian92] and others did his PhD thesis on Bayesian Neural Networks. If we take a Bayesian approach to parameter inference (note I am using inference here in the classical sense, not in the sense of prediction of test data, which seems to be a newer usage), then we don't wish to fit parameters at all, rather we wish to integrate them away and understand the family of functions that the model describes.}
 
 
 \include{_ml/includes/probabilistic-modelling.md}
@@ -73,7 +53,7 @@ There are also challenges around specification of the objective function, but fo
 
 * Posterior mean
     $$\mappingFunction_D(\inputVector_*) = \kernelVector(\inputVector_*, \inputMatrix) \kernelMatrix^{-1}
-\mathbf{y}$$
+\dataVector$$
 
 * Posterior covariance
     $$\mathbf{C}_* = \kernelMatrix_{*,*} - \kernelMatrix_{*,\mappingFunctionVector}
@@ -89,29 +69,7 @@ There are also challenges around specification of the objective function, but fo
     $$\covarianceMatrix_* = \kernelMatrix_{*,*} - \kernelMatrix_{*,\mappingFunctionVector}
 \kernelMatrix^{-1} \kernelMatrix_{\mappingFunctionVector, *}$$
 
-\slides{
-\newslide{}
-
-\includepng{../slides/diagrams/gp/gp_rejection_sample001}{100%}{negate}
-
-\newslide{}
-
-\includepng{../slides/diagrams/gp/gp_rejection_sample002}{100%}{negate}
-
-\newslide{}
-
-\includepng{../slides/diagrams/gp/gp_rejection_sample003}{100%}{negate}
-
-\newslide{}
-
-\includepng{../slides/diagrams/gp/gp_rejection_sample004}{100%}{negate}
-
-\newslide{} 
-
-\includepng{../slides/diagrams/gp/gp_rejection_sample005}{100%}{negate}
-}
-
-
+\include{_gp/includes/gp-intro-very-short.md}
 
 \include{_kern/includes/eq-covariance.md}
 
