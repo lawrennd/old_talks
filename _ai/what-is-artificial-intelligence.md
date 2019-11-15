@@ -42,6 +42,8 @@ First we consider the challenge of designing and deploying large scale machine l
 
 \notes{In conclusion we consider five AI myths. Seemingly commonly accepted ideas that aren't true about our AI futures.}
 
+\include{_ai/includes/five-ai-myths.md}
+
 \subsection{Five AI Myths}
 
 1. AI will be the first wave of automation that adapts to us.

@@ -17,7 +17,7 @@ transition: None
 ---
 
 \include{talk-macros.tex}
-
+\include{_ml/includes/laplace-portrait.md}
 \include{_ai/includes/laplaces-determinism.md}
 \include{_gp/includes/gp-intro-very-short.md}
 
