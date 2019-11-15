@@ -85,10 +85,10 @@ architecture*.
 
 \notes{Secondly, we need to improve our language around data quality. We cannot
 assess the costs of improving data quality unless we generate a language
-around what data quality means. Data Readiness Levels[^data-readiness-levels] are an assessment of data quality that is based on the usage to which data is
+around what data quality means. <!--Data Readiness Levels[^data-readiness-levels] are an assessment of data quality that is based on the usage to which data is
 put.
 
-[^data-readiness-levels]: [Data Readiness Levels](http://inverseprobability.com/2017/01/12/data-readiness-levels) [@Lawrence:drl17] are an attempt to develop a language around data quality that can bridge the gap between technical solutions and decision makers such as managers and project planners. They are inspired by Technology Readiness Levels which attempt to quantify the readiness of technologies for deployment.
+[^data-readiness-levels]: [Data Readiness Levels](http://inverseprobability.com/2017/01/12/data-readiness-levels) [@Lawrence:drl17] are an attempt to develop a language around data quality that can bridge the gap between technical solutions and decision makers such as managers and project planners. They are inspired by Technology Readiness Levels which attempt to quantify the readiness of technologies for deployment.-->
 }
 
 

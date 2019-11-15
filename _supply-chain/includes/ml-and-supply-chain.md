@@ -6,7 +6,6 @@
 \newslide{Machine Learning in Supply Chain}
 \slides{
 * *Supply chain*: Large Automated Decision Making Network
-* Amazon's supply chain: Possibly the world's largest 'AI'
 * Major Challenge: 
     * We have a *mechanistic* understanding of supply chain.
     * Machine learning is a *data driven* technology.

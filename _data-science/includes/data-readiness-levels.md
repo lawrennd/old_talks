@@ -92,8 +92,6 @@ Deployment and maintenance of machine learning models in production is another i
 
 \notes{To find out more, or to contribute ideas go to <http://data-readiness.org>}
 
-You can also check this \addblog{Data Readiness Levels}{2017/01/12/data-readiness-levels}.
-
 \newslide{Also ...}
 \slides{
 * Encourage greater interaction between application domains and data scientists
