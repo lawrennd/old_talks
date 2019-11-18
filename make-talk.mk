@@ -23,7 +23,7 @@ ${BASE}.pptx: ${BASE}.slides.pptx.markdown
 	pandoc  -t pptx \
 		-o $@ $< \
 		-B ../_includes/talk-notation.tex \
-		--reference-doc ../_includes/custom-reference.potx
+		--reference-doc ../_includes/custom-reference.potx \
 		${CITEFLAGS} \
 		${SFLAGS} 
 	cp ${BASE}.pptx ../slides/${OUT}.pptx
@@ -92,7 +92,7 @@ ${BASE}.slides.ipynb: ${BASE}.slides.ipynb.markdown
 
 
 ${BASE}.slides.pptx.markdown: ${BASE}.md ${DEPS}
-	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -DPPTX=1 -DSLIDES=1 ${PPFLAGS} $< -o $@  
+	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -DPPTX=1 -DSLIDES=1 ${PPFLAGS} --include ../_includes/talk-notation.tex $< -o $@  
 
 ${BASE}.slides.html.markdown: ${BASE}.md ${DEPS}
 	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -DHTML=1 -DSLIDES=1 ${PPFLAGS} $< -o $@  

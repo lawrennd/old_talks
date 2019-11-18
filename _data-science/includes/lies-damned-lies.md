@@ -71,6 +71,6 @@
 
 \notes{Today the statement "There are three types of lies: lies, damned lies and 'big data'" may be more apt. We are revisiting many of the mistakes made in interpreting data from the 19th century. Big data is laid down by happenstance, rather than actively collected with a particular question in mind. That means it needs to be treated with care when conclusions are being drawn. For data science to succede it needs the same form of rigour that Pearson and Fisher brought to statistics, a "mathematical data science" is needed.}
 
-You can also check my \addblog{Lies, Damned Lies and Big Data}{2016/11/19/lies-damned-lies-big-data}.
+\notes{You can also check my blog post on}\addblog{Lies, Damned Lies and Big Data}{2016/11/19/lies-damned-lies-big-data}\notes{.}
 
 \endif

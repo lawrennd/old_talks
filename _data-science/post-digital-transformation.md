@@ -33,7 +33,7 @@ categories:
 
 <!-- Data Science (why it's happening) -->
 
-\include{_data-science/includes/evolved-relationship-society.md}
+\include{_data-science/includes/evolved-relationship.md}
 
 \include{_data-science/includes/lies-damned-lies.md}
 
@@ -47,29 +47,12 @@ categories:
 
 <!--Duke of York Effect -->
 
+\include{_data-science/includes/value-of-data.md}
+\include{_data-science/includes/data-readiness-levels.md}
 \include{_ml/includes/or-control-econometrics-statistics-ml.md}
 
 
 \include{_ai/includes/five-ai-myths.md}
-
-\subsection{Areas of Good Data}
-
-\slides{* Finance}
-
-\subsection{Criteria for Success}
-
-* Executive sponsorship (Office of CEO).
-* Technical Expertise (Open minded expert).
-* Financial buy in (CFO).
-* Assimilated knownledge (CTO).
-
-\subsection{Normal Organisational Rules Apply}
-
-* AI is not magical pixie dust
-* Standard organisational instincts apply
-* Disruption requires *agile* thinking.
-    * Don't be the Duke of York
-	* Be Special Forces
 
 
 \thanks

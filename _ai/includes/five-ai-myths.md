@@ -32,7 +32,7 @@ The first myth is the "promise of AI" myth, that AI will be the first wave of ma
 \newslide{Mythbusting}
 
 \slides{* Area of good data:
-\slides{   * Finance}
+   * Finance}
 
 \newslide{Criteria for Success}
 
