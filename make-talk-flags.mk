@@ -1,6 +1,5 @@
-DATE=$(shell date '+%Y-%m-%d')
-DATE=$(shell ../extractdate_talk.py ${BASE}.md)
-#CATEGORIES=$(shell ../extractcategories_talk.py ${BASE}.md)
+DATE=$(shell ../talkfield.py date ${BASE}.md)
+CATEGORIES=$(shell ../talkfield.py categories ${BASE}.md)
 MATHJAX="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG"
 CSS=talks.css
 SLIDESHEADER=../slides-header.html

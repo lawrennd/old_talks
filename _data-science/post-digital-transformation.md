@@ -12,6 +12,12 @@ author:
   gscholar: r3SJcvoAAAAJ
   orchid: 
 date: 2019-11-19
+pptx: True
+potx: ../_includes/judge-exec-reference.potx
+docx: False
+pdfnotes: False
+reveal: False
+ipynb: False
 venue: Google Cloud Day, Judge Business School, University of Cambridge
 layout: talk
 geometry: ["a4paper", "margin=2cm"]

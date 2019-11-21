@@ -78,7 +78,7 @@ and models need retraining or restructuring.
 * Historically we've been *software first*
     * A necessary but not sufficient condition for *data first*
 * Move from
-    1. software orientated architectures
+    1. service orientated architectures
 	2. *data orientated architectures*
 }
 

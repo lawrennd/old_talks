@@ -110,7 +110,7 @@ There are constraints on the hypothetical, they include: the *input* information
 * But modelling is declared in the ecosystem.
 * If it's manual, warnings can be used 
      * calibration, fairness, dataset shift
-* Opens door to auto-adaptable ML.
+* Opens door to Auto AI.
 }
 
 \notes{What is the advantage to defining things in this way? By defining, clearly, the two streams as real and hypothetical variants of each other, we now enable automation of the deployment and any redeployment process. The hypothetical can be *instantiated* against the real, and design criteria can be constantly evaluated triggering retraining when necessary.}

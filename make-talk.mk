@@ -1,10 +1,16 @@
+# Check header for which formats to create in notes and slides.
+# CReate PDF Of reveal slides with something like decktape https://github.com/astefanutti/decktape
 
 OUT=$(DATE)-$(BASE)
-DEPS=$(shell ../makedependency_talk.py $(BASE).md)
-DIAGDEPS=$(shell ../makediagdependency_talk.py $(BASE).md)
-BIBDEPS=../lawrence.bib ../other.bib ../zbooks.bib
+DEPS=$(shell ../dependencies.py inputs $(BASE).md)
+DIAGDEPS=$(shell ../dependencies.py diagrams $(BASE).md)
+BIBDEPS=$(shell ../dependencies.py bibinputs $(BASE).md)
+POSTFLAGS=$(shell ../flags.py post $(BASE))
+PPTXFLAGS=$(shell ../flags.py pptx $(BASE))
+DOCXFLAGS=$(shell ../flags.py docx $(BASE))
+ALL=$(shell ../dependencies.py all $(BASE).md)
 
-all: ${BASE}.slides.html ${BASE}.notes.html ${BASE}.posts.html ${BASE}.slides.ipynb ${BASE}.ipynb ${BASE}.notes.docx ${BASE}.notes.pdf ${BASE}.pptx
+all: $(ALL)
 
 ##${BASE}.notes.tex ${BASE}.notes.pdf 
 
@@ -23,10 +29,9 @@ ${BASE}.pptx: ${BASE}.slides.pptx.markdown
 	pandoc  -t pptx \
 		-o $@ $< \
 		-B ../_includes/talk-notation.tex \
-		--reference-doc ../_includes/custom-reference.potx \
+		${PPTXFLAGS} \
 		${CITEFLAGS} \
 		${SFLAGS} 
-	cp ${BASE}.pptx ../slides/${OUT}.pptx
 
 ${BASE}.notes.pdf: ${BASE}.notes.aux ${BASE}.notes.bbl ${BASE}.notes.tex
 	pdflatex -shell-escape ${BASE}.notes.tex
@@ -49,11 +54,12 @@ ${BASE}.notes.tex: ${BASE}.notes.tex.markdown
 		-o ${BASE}.notes.tex  \
 		${BASE}.notes.tex.markdown 
 
-${BASE}.notes.docx: ${BASE}.notes.docx.markdown ${BIBDEPS} ${DIAGDEPS}
+${BASE}.docx: ${BASE}.notes.docx.markdown ${BIBDEPS} ${DIAGDEPS}
 	pandoc  ${CITEFLAGS} \
 		--to docx \
 		-B ../_includes/talk-notation.tex \
-		--out ${BASE}.notes.docx  \
+		${DOCXFLAGS} \
+		--out ${BASE}.docx  \
 		${BASE}.notes.docx.markdown 
 
 ${BASE}.notes.html: ${BASE}.notes.html.markdown ${BIBDEPS}
@@ -64,12 +70,7 @@ ${BASE}.notes.html: ${BASE}.notes.html.markdown ${BIBDEPS}
 ${BASE}.posts.html: ${BASE}.notes.html.markdown
 	pandoc --template pandoc-jekyll-talk-template ${PDFLAGS} \
 	       --atx-headers \
-	       --metadata date=${DATE} \
-               --metadata layout=talk \
-               --metadata reveal=${OUT}.slides.html \
-               --metadata ipynb=${OUT}.ipynb \
-               --metadata pdf=${OUT}.notes.pdf \
-               --metadata published=${DATE} \
+	       ${POSTFLAGS} \
                --bibliography=../lawrence.bib \
                --bibliography=../other.bib \
                --bibliography=../zbooks.bib \
@@ -107,7 +108,7 @@ ${BASE}.slides.html.markdown: ${BASE}.md ${DEPS}
 	sed -i -e 's/height=\(.*\)\%/height=0.\1\\textheight/g' $@
 
 %.notes.docx.markdown: %.md ${DEPS}
-	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -DNOTES=1 -DDOCX=1 ${PPFLAGS} $< -o $@
+	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -DNOTES=1 -DDOCX=1 ${PPFLAGS} --include ../_includes/talk-notation.tex $< -o $@
 
 %.notes.ipynb.markdown: %.md ${DEPS}
 	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -DIPYNB=1 -DNOTES=1 ${PPFLAGS} $< -o $@
@@ -126,7 +127,8 @@ ${BASE}.slides.html.markdown: ${BASE}.md ${DEPS}
 	${INKSCAPE} $< --export-emf=$@ --without-gui
 
 clean:
-	rm ${BASE}.slides.html.markdown \
+	rm ${ALL} \
+	${BASE}.slides.html.markdown \
 		${BASE}.slides.html \
 		${BASE}.notes.docx.markdown \
 		${BASE}.notes.docx \

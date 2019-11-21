@@ -24,7 +24,7 @@
 \notes{The challenge is particularly acute because of the *scale* at which we can deploy AI solutions. This means when something does go wrong, it may be going wrong in billions of households simultaneously.}
 
 
-You can also check this \addblog{Decision Making and Diversity}{2017/11/15/decision-making} and this 
-\addblog{Natural vs Artifical Intelligence}{2018/02/06/natural-and-artificial-intelligence}.
+\notes{You can also check this }\addblog{Decision Making and Diversity}{2017/11/15/decision-making}\notes{ and this }
+\addblog{Natural vs Artifical Intelligence}{2018/02/06/natural-and-artificial-intelligence}\notes{.}
 
 \endif
