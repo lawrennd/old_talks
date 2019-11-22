@@ -1,3 +1,3 @@
-BASE=what-is-machine-learning-ashesi
+BASE=innovation-to-deployment-turing
 include ../make-talk-flags.mk
 include ../make-talk.mk
