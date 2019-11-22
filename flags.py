@@ -15,30 +15,20 @@ date = nt.header_field('date', fields).strftime("%Y-%m-%d")
 out = date + '-' + base
 
 if output == 'post':
-    lines = """--metadata date={date} \
-    --metadata layout=talk"""
+    lines = """--metadata date={date} --metadata layout=talk"""
     for ext in ['docx', 'pptx']:
         if nt.header_field(ext, fields):
-            lines += """\
-    --metadata {ext}={{out}}.{ext}""".format(ext=ext)
+            lines += """ --metadata {ext}={{out}}.{ext}""".format(ext=ext)
     if nt.header_field('reveal', fields):
-        lines += """\
-    --metadata reveal={out}.slides.html"""
+        lines += """ --metadata reveal={out}.slides.html"""
     if nt.header_field('ipynb', fields):
-        lines += """\
-    --metadata ipynb={out}.ipynb"""
+        lines += """ --metadata ipynb={out}.ipynb"""
     if nt.header_field('slidesipynb', fields):
-        lines += """\         
-    --metadata slidesipynb={out}.slides.ipynb"""
+        lines += """ --metadata slidesipynb={out}.slides.ipynb"""
     if nt.header_field('notespdf', fields):
-        lines += """\        
-    --metadata notespdf={out}.notes.pdf"""
+        lines += """ --metadata notespdf={out}.notes.pdf"""
     if nt.header_field('pdf', fields):
-        lines += """\        
-    --metadata pdf={out}.pdf"""
-
-    lines+="""\
-    --metadata published={date}"""
+        lines += """ --metadata pdf={out}.pdf"""
     
     print(lines.format(out=out, date=date))
 
