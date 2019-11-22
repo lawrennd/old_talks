@@ -127,20 +127,6 @@ ${BASE}.slides.html.markdown: ${BASE}.md ${DEPS}
 	${INKSCAPE} $< --export-emf=$@ --without-gui
 
 clean:
-	rm ${ALL} \
-	${BASE}.slides.html.markdown \
-		${BASE}.slides.html \
-		${BASE}.notes.docx.markdown \
-		${BASE}.notes.docx \
-		${BASE}.notes.tex.markdown \
-		${BASE}.notes.tex \
-		${BASE}.notes.out \
-		${BASE}.notes.log \
-		${BASE}.notes.bbl \
-		${BASE}.notes.aux \
-		${BASE}.notes.html.markdown \
-		${BASE}.notes.html \
-		${BASE}.posts.html \
-		${BASE}.ipynb \
-		${BASE}.slides.ipynb.markdown \
-		${BASE}.slides.ipynb
+	rm *.markdown
+	rm *.markdown-e
+	rm ${ALL}
