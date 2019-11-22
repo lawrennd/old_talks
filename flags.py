@@ -20,18 +20,26 @@ if output == 'post':
     for ext in ['docx', 'pptx']:
         if nt.header_field(ext, fields):
             lines += """\
-    --metadata reveal={{out}}.{ext}""".format(ext=ext)
-    if nt.header_field('pptx', fields):
+    --metadata {ext}={{out}}.{ext}""".format(ext=ext)
+    if nt.header_field('reveal', fields):
         lines += """\
-        \
-    --metadata notesipynb={out}.ipynb \
-    --metadata slidesipynb={out}.slides.ipynb \
-    --metadata notespdf={out}.notes.pdf \
-    --metadata slidespdf={out}.pdf \
-    --metadata docx={out}.notes.docx \
+    --metadata reveal={out}.slides.html"""
+    if nt.header_field('ipynb', fields):
+        lines += """\
+    --metadata ipynb={out}.ipynb"""
+    if nt.header_field('slidesipynb', fields):
+        lines += """\         
+    --metadata slidesipynb={out}.slides.ipynb"""
+    if nt.header_field('notespdf', fields):
+        lines += """\        
+    --metadata notespdf={out}.notes.pdf"""
+    if nt.header_field('pdf', fields):
+        lines += """\        
+    --metadata pdf={out}.pdf"""
 
+    lines+="""\
     --metadata published={date}"""
-
+    
     print(lines.format(out=out, date=date))
 
 if output=='docx':
