@@ -28,7 +28,7 @@ layout: post
     <p><b>{{ page.tagline }}</b> </p>
     {% endif %}
 
-    {% if page.video or page.blog or page.blog1 or page.blog2 or page.ppt or page.pdf or page.linkpdf or page.linkpsgz or page.linkps or page.linkppt or page.linkpptgz or page.demo or page.pdfnotes or page.linksoftware or page.extras.size > 0 %}
+    {% if page.video or page.blog or page.blog1 or page.blog2 or page.ppt or page.pptx or page.pdf or page.docx or page.pdf or page.linkpdf or page.linkpsgz or page.linkps or page.linkppt or page.linkpptgz or page.demo or page.pdfnotes or page.linksoftware or page.extras.size > 0 %}
     <h3>Links</h3>
     <div id="extras">
     <ul>
@@ -36,8 +36,9 @@ layout: post
       {%if page.blog %}<li><a href="{% assign elems = page.blog | split: '-' %}{% for elem in elems %}{% if forloop.index0 < 4 %}/{% else %}-{% endif %}{% if forloop.last %}{{ elem | remove_first: '.md' }}{% else %}{{ elem }}{% endif %}{% endfor %}">Related Blog Post</a></li>{% endif %}
       {%if page.blog1 %}<li><a href="{% assign elems = page.blog1 | split: '-' %}{% for elem in elems %}{% if forloop.index0 < 4 %}/{% else %}-{% endif %}{% if forloop.last %}{{ elem | remove_first: '.md' }}{% else %}{{ elem }}{% endif %}{% endfor %}">Further Related Blog Post</a></li>{% endif %}
       {%if page.blog2 %}<li><a href="{% assign elems = page.blog2 | split: '-' %}{% for elem in elems %}{% if forloop.index0 < 4 %}/{% else %}-{% endif %}{% if forloop.last %}{{ elem | remove_first: '.md' }}{% else %}{{ elem }}{% endif %}{% endfor %}">Yet another Related Blog Post</a></li>{% endif %}
-      {%if page.ppt %}<li><a href="{{ site.talk_files }}/{{ page.ppt }}" target="_blank" onclick="ga('send', 'event', 'PPT Downloads', 'Download', {{ post.ppt }}, 10);">Powerpoint</a></li>{% endif %}
-      {%if page.pptx %}<li><a href="{{ site.talk_files }}/{{ page.pptx }}" target="_blank" onclick="ga('send', 'event', 'PPTX Downloads', 'Download', {{ post.pptx }}, 10);">Powerpoint</a></li>{% endif %}
+      {%if page.ppt %}<li><a href="{{ site.talk_files }}/{{ page.ppt }}" target="_blank" onclick="ga('send', 'event', 'PPT Downloads', 'Download', {{ page.ppt }}, 10);">Powerpoint</a></li>{% endif %}
+      {%if page.pptx %}<li><a href="{{ site.talk_files }}/{{ page.pptx }}" target="_blank" onclick="ga('send', 'event', 'PPTX Downloads', 'Download', {{ page.pptx }}, 10);">Powerpoint</a></li>{% endif %}
+      {%if page.docx %}<li><a href="{{ site.talk_files }}/{{ page.docx }}" target="_blank" onclick="ga('send', 'event', 'DOCX Downloads', 'Download', {{ page.docx }}, 10);">Word</a></li>{% endif %}
       {%if page.pdf %}<li><a href="{{ site.talk_files }}/{{ page.pdf }}" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', {{ site.talk_files}}/{{ page.pdf}}, 10);">pdf</a></li>{% endif %}
       {%if page.linkpdf %}<li><a href="{{ page.linkpdf }}" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', {{ page.linkpdf}}, 10);">Download PDF</a></li>{% endif %}
       {%if page.linkpsgz %}<li><a href="{{ page.linkpsgz }} target="_blank" onclick="ga('send', 'event', 'PS Downloads', 'Download', {{ page.linkpsgz}}, 10);"">Download Gzipped Postscript</a></li>{% endif %}
