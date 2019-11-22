@@ -13,7 +13,6 @@ author:
 date: 2019-11-28
 published: 2019-11-28
 reveal: 2019-11-28-real-world-machine-learning-challenges.slides.html
-ipynb: 2019-11-28-real-world-machine-learning-challenges.ipynb
 layout: talk
 categories:
 - notes
@@ -56,7 +55,7 @@ categories:
 <p><strong>an objective function</strong> a function which defines the cost of misprediction. Typically it includes knowledge about the world’s generating processes (probabilistic objectives) or the costs we pay for mispredictions (empiricial risk minimization).</p>
 <p>The combination of data and model through the prediction function and the objectie function leads to a <em>learning algorithm</em>. The class of prediction functions and objective functions we can make use of is restricted by the algorithms they lead to. If the prediction function or the objective function are too complex, then it can be difficult to find an appropriate learning algorithm. Much of the acdemic field of machine learning is the quest for new learning algorithms that allow us to bring different types of models and data together.</p>
 <p>A useful reference for state of the art in machine learning is the UK Royal Society Report, <a href="https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf">Machine Learning: Power and Promise of Computers that Learn by Example</a>.</p>
-<p>You can also check my blog post on <a href="http://inverseprobability.com/2017/07/17/what-is-machine-learning">“What is Machine Learning?”</a>.</p>
+<p>You can also check my blog post on <a href="http://inverseprobability.com/2017/07/17/what-is-machine-learning">What is Machine Learning?</a>.</p>
 <h2 id="artificial-intelligence-and-data-science-edit">Artificial Intelligence and Data Science <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/data-science-vs-ai.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/data-science-vs-ai.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Machine learning technologies have been the driver of two related, but distinct disciplines. The first is <em>data science</em>. Data science is an emerging field that arises from the fact that we now collect so much data by happenstance, rather than by <em>experimental design</em>. Classical statistics is the science of drawing conclusions from data, and to do so statistical experiments are carefully designed. In the modern era we collect so much data that there’s a desire to draw inferences directly from the data.</p>
 <p>As well as machine learning, the field of data science draws from statistics, cloud computing, data storage (e.g. streaming data), visualization and data mining.</p>
@@ -175,8 +174,8 @@ communicate
 <p>For example, for me, it was a common experience to pick up my telephone with the intention of checking when my next appointment was, but to soon find myself distracted by another application on the phone, and end up reading something on the internet. By the time I’d finished reading, I would often have forgotten the reason I picked up my phone in the first place.</p>
 <p>There are great benefits to be had from the huge amount of information we can unlock from this evolved relationship between us and data. In biology, large scale data sharing has been driven by a revolution in genomic, transcriptomic and epigenomic measurement. The improved inferences that that can be drawn through summarizing data by computer have fundamentally changed the nature of biological science, now this phenomenon is also infuencing us in our daily lives as data measured by <em>happenstance</em> is increasingly used to characterize us.</p>
 <p>Better mediation of this flow actually requires a better understanding of human-computer interaction. This in turn involves understanding our own intelligence better, what its cognitive biases are and how these might mislead us.</p>
-<p>For further thoughts see <a href="https://www.theguardian.com/media-network/2015/jul/23/data-driven-economy-marketing">this Guardian article</a> from 2015 on marketing in the internet era.</p>
-<p>You can also check my blog post on <a href="http://inverseprobability.com/2015/12/04/what-kind-of-ai">“System Zero”</a>.</p>
+<p>For further thoughts see Guardian article on <a href="https://www.theguardian.com/media-network/2015/jul/23/data-driven-economy-marketing">marketing in the internet era</a> from 2015.</p>
+<p>You can also check my blog post on <a href="http://inverseprobability.com/2015/12/04/what-kind-of-ai">System Zero</a>..</p>
 <div class="figure">
 <div id="trinity-human-data-computer-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/data-science/new-flow-of-information002.svg" width="50%" style=" ">
@@ -679,8 +678,9 @@ area, [AI for Data Analytics](https://www.turing.ac.uk/research_projects/artific
 
 
 
-[Data Readiness Levels](http://inverseprobability.com/2017/01/12/data-readiness-levels) [@Lawrence:drl17] are an attempt to develop a language around data quality that can bridge the gap between technical solutions and decision makers such as managers and project planners. The are inspired by Technology Readiness Levels which attempt to quantify the readiness of technologies for deployment.b
+[Data Readiness Levels](http://inverseprobability.com/2017/01/12/data-readiness-levels) [@Lawrence:drl17] are an attempt to develop a language around data quality that can bridge the gap between technical solutions and decision makers such as managers and project planners. The are inspired by Technology Readiness Levels which attempt to quantify the readiness of technologies for deployment.
 
+See this blog onblog post on [Data Readiness Levels](http://inverseprobability.com/2017/01/12/data-readiness-levels)..
 
 
 
@@ -753,8 +753,6 @@ Deployment and maintenance of machine learning models in production is another i
 
 
 To find out more, or to contribute ideas go to <http://data-readiness.org>
-
-You can also check my blog post on ["Data Readiness Levels"](http://inverseprobability.com/2017/01/12/data-readiness-levels).
 
 
 
@@ -892,7 +890,7 @@ These stages of data science are also ridden with ambiguity. In the long term th
 <p>This challenge of facing a circumstance that was unenvisaged in design but has consequences in deployment becomes far larger when the environment is uncontrolled. Or in the extreme case, where actions of the intelligent system effect the wider environment and change it.</p>
 <p>These unforseen circumstances are likely to lead to need for much more efficient turn-around and update for our intelligent systems. Whether we are correcting for security flaws (which <em>are</em> bugs) or unenvisaged circumstantial challenges: an issue I’m referring to as <em>peppercorns</em>. Rapid deployment of system updates is required. For example, Apple have “fixed” the problem of Siri returning long numbers.</p>
 <p>The challenge is particularly acute because of the <em>scale</em> at which we can deploy AI solutions. This means when something does go wrong, it may be going wrong in billions of households simultaneously.</p>
-<p>You can also check my blog post on <a href="http://inverseprobability.com/2017/11/15/decision-making">“Decision Making and Diversity”</a>. You can also check my blog post on <a href="http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence">“Natural vs Artifical Intelligence”</a>.</p>
+<p>You can also check this blog post on <a href="http://inverseprobability.com/2017/11/15/decision-making">Decision Making and Diversity</a>. and this blog post on <a href="http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence">Natural vs Artifical Intelligence</a>..</p>
 <h2 id="uncertainty-quantification-edit">Uncertainty Quantification <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/uq-intro.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_uq/includes/uq-intro.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <blockquote>
 <p>Uncertainty quantification (UQ) is the science of quantitative characterization and reduction of uncertainties in both computational and real world applications. It tries to determine how likely certain outcomes are if some aspects of the system are not exactly known.</p>
