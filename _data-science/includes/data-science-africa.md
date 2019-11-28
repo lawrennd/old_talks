@@ -14,7 +14,7 @@
 
 As of 2019 there have been five workshops and five schools, located in Nyeri, Kenya (twice); Kampala, Uganda; Arusha, Tanzania; Abuja, Nigeria; Addis Ababa, Ethiopia and Accra, Ghana. The next event is scheduled for June 2020 in Kampala, Uganda.
 
-The main notion is *end-to-end* data science. For example, going from data collection in the farmer's field to decision making in the Ministry of Agriculture. Or going from malaria disease counts in health centers, to medicine distribution.}
+The main notion is *end-to-end* data science. For example, going from data collection in the farmer's field to decision making in the Ministry of Agriculture. Or going from malaria disease counts in health centers to medicine distribution.}
 
 \notes{The philosophy is laid out in [@Lawrence:dsa15]. The key idea is that the modern *information infrastructure* presents new solutions to old problems. Modes of development change because less capital investment is required to take advantage of this infrastructure. The philosophy is that local capacity building is the right way to leverage these challenges in addressing data science problems in the African context.}
 
