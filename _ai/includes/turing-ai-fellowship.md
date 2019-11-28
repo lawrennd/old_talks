@@ -37,7 +37,10 @@ monitoring of artificial intelligence systems.}
 }
 
 
+
+\ifndef{safeBoda}
 \subsection{Motivating Examples}
+\endif
 
 \include{_ai/includes/safe-boda.md}
 
