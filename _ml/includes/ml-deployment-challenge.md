@@ -72,32 +72,7 @@ and models need retraining or restructuring.
 [^emulation]: Emulation, or surrogate modelling, is one very promising approach to forming such a hypervisor. Emulators are models we fit to other models, often simulations, but the could also be other machine learning models. These models operate at the meta-level, not on the systems directly. This means they can be used to model how the sub-systems interact. As well as emulators we should consider real time dash boards, anomaly detection, mutlivariate analysis, data visualization and classical statistical approaches for hypervision of our deployed systems.
 }
 
-\newslide{Data Orientated Architectures}
-
-\slides{
-* Historically we've been *software first*
-    * A necessary but not sufficient condition for *data first*
-* Move from
-    1. service orientated architectures
-	2. *data orientated architectures*
-}
-
-\newslide{Streaming Architectures}
-\slides{
-* AWS Kinesis, Apache Kafka
-* Not just about streaming
-    * Nodes in the architecture are *stateless* 
-	* They persist through storing state on *streams*
-* This brings the data *inside out*
-}
-
-\recommendation{We should consider a major re-architecting of systems around our services. In particular we should scope the use of a *streaming architecture* (such as Apache Kafka) that ensures data persistence and enables asynchronous operation of our systems.[^data-orientated-architecture] This would enable the provision of QC streams, and real time dash boards as well as hypervisors.
-
-[^data-orientated-architecture]: These approaches are one area of focus for my own team's research. A data first architecture is a prerequisite for efficient deployment of machine learning systems.
-
-Importantly a streaming architecture implies the services we build are
-*stateless*, internal state is deployed on streams alongside external
-state. This allows for rapid assessment of other services' data.
-}
+\include{_data-science/includes/data-oriented-architectures.md}
+\include{_data-science/includes/data-oriented-programming.md}
 
 \endif
