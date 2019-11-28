@@ -43,7 +43,7 @@ monitoring of artificial intelligence systems.}
 
 \notes{SafeBoda and other projects like [Kudu](https://kudu.ug/about/) provide us with our motivating examples. Our aim is to create an ecosystem for machine learing system deployment that minimises the operational load. Ideally, we would like complex AI systems to be maintainable by a small team, e.g. two people, with Masters-level education from the institutions that host Data Science Africa (e.g. Ashesi University, Makerere University, Dedan Kimathi University of Technology, AUST, AIST, Addis Ababa).}
 
-\newslide{Announcement}
+\newslide{Turing AI Fellowship}
 \slides{
 * Five year program in collaboration with 
 
