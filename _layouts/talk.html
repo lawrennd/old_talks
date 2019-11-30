@@ -17,7 +17,7 @@ layout: post
     <p><iframe width="{{ site.reveal.width }}" height="{{ site.reveal.height }}" src="{{ site.talk_files }}{{ page.reveal }}" frameborder="0" allowfullscreen></iframe></p>
     {% endif %}
     {% if page.youtube %}
-    <p><iframe width="{{ site.youtube.width }}" height="{{ site.youtube.height }}" src="https://www.youtube.com/embed/{{ page.youtube }}{% if page.youtube_start %}?start={{ page.youtube_start}}{% if page.youtube_end %}&{{ page.youtube_end }}{% endif %}{% endif %}" frameborder="0" allowfullscreen></iframe></p>
+    <p><iframe width="{{ site.youtube.width }}" height="{{ site.youtube.height }}" src="https://www.youtube.com/embed/{{ page.youtube }}{% if page.youtube_start %}?start={{ page.youtube_start}}{% if page.youtube_end %}&end={{ page.youtube_end }}{% endif %}{% endif %}" frameborder="0" allowfullscreen></iframe></p>
     {% endif %}
     {% if page.videolectures %}
     <h4>Videolectures</h4>
