@@ -1,3 +1,3 @@
-BASE=future-debates-this-house-believes-an-artificial-intelligence-will-benefit-society
+BASE=embodiment-factors-and-privacy
 include ../make-talk-flags.mk
 include ../make-talk.mk

@@ -5,6 +5,6 @@
 
 \newslide{}
 
-\includejpg../slides/diagrams/Thinking,_Fast_and_Slow.jpg}{40%}
+\includejpg{../slides/diagrams/Thinking,_Fast_and_Slow.jpg}{40%}
 
 \endif
