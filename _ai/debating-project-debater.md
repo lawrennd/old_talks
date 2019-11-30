@@ -22,7 +22,9 @@ On 21st November along with Harish Natarajan, Sharmila Parmanand, Sylvie Delacro
 
 \notes{You can my speech from the debate in the video above. Below I include a transcript of my speech and some answers to questions put to me before the debate by [Katia Mwoskvitch](http://www.katiamoskvitch.com). The debate featured on [BBC Click](https://www.bbc.co.uk/programmes/m000bsy1), CNN, [Fortune Magazine](https://fortune.com/2019/11/22/ibm-ai-debate-arguments-cambridge-union/) and Newsweek.
 
-I also answered some questions for Katia Moskvitch of the IBM Research Communicaitons team, I've included them below. [Katia's very comprehensive write up is available as a medium post](https://medium.com/@IBMResearch/augmenting-humans-ibms-project-debater-ai-gives-human-debating-teams-a-hand-at-cambridge-69a29bcd4eff).}
+I also answered some questions for Katia Moskvitch of the IBM Research Communicaitons team, I've included them below. [Katia's very comprehensive write up is available as a medium post](https://medium.com/@IBMResearch/augmenting-humans-ibms-project-debater-ai-gives-human-debating-teams-a-hand-at-cambridge-69a29bcd4eff).
+
+You can also read a blog post on \addblog{System Zero}{2015/12/04/what-kind-of-ai}.}
 
 
 \notes{\subsection{Transcript}
