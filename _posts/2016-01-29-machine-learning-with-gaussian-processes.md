@@ -1,5 +1,5 @@
 ---
-title: Machine Learning with <span>Gaussian</span> Processes
+title: Machine Learning with Gaussian Processes
 abstract: Gaussian processes (GPs) provide a principled probabilistic approach to
   prior probability distributions for functions. In this talk we will give an overview
   of some uses of GPs and their extensions. In particular we will introduce mechanistic
@@ -20,10 +20,9 @@ extras: []
 key: Lawrence-oxwasp16
 layout: talk
 month: 1
-pdf: 2016-01-29-OxWaSPGPTalk.pdf
-pptx: 2016-01-29-OxWaSPGPTalk.pptx
+pdf: 2016-01-29-machine-learning-with-gaussian-processes.pdf
+pptx: 2016-01-29-machine-learning-with-gaussian-processes.pptx
 published: 2016-01-29
-section: pre
 venue: OxWaSP Symposium, University of Warwick
 year: '2016'
 ---
