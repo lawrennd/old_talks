@@ -16,7 +16,7 @@ transition: None
 
 \notes{\subsection{Introduction}
 
-On 21st November along with Harish Natarajan, Sharmila Parmanand, Sylvie Delacroix and Harish Natarahan I debated with IBM's Project Debater, a machine debating team put together by IBM in a project led by Noam Slonim. The motion was "This House Believes AI Will Bring More Harm Than Good", I was speaking for the motion. Note in this style of debate, you don't necessarily believe in the motion you speak for, but it's an exercise in building arguments and making points.}
+On 21st November along with [Sharmila Parmanand](https://www.gender.cam.ac.uk/PhD/current-phd-students-1/sharmila-parmanand) [Sylvie Delacroix](https://www.birmingham.ac.uk/staff/profiles/law/delacroix-sylvie.aspx) and [Harish Natarajan](https://twitter.com/hknatarajan) I debated with [IBM's Project Debater](https://www.research.ibm.com/artificial-intelligence/project-debater/), a machine debating team put together by IBM in a project led by [Noam Slonim](https://researcher.watson.ibm.com/researcher/view.php?person=il-NOAMS). The motion was "This House Believes AI Will Bring More Harm Than Good", I was speaking for the motion. Note in this style of debate, you don't necessarily believe in the motion you speak for, but it's an exercise in building arguments and making points.}
 
 \notes{Project Debater opened the debate for both sides (for and against the motion). In the past Project Debater has also constructed a response and a closing, but in this debate the idea was to show a capability of crowd sourcing arguments. Project Debater's opening was distilled, in each case, from over 500 arguments submitted by members of the public.}
 
