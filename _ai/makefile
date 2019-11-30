@@ -1,3 +1,3 @@
-BASE=the-rise-of-the-algorithm
+BASE=future-debates-this-house-believes-an-artificial-intelligence-will-benefit-society
 include ../make-talk-flags.mk
 include ../make-talk.mk
