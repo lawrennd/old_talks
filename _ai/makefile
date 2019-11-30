@@ -1,3 +1,3 @@
-BASE=what-is-artificial-intelligence
+BASE=rage-against-the-machine
 include ../make-talk-flags.mk
 include ../make-talk.mk
