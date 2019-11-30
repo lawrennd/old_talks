@@ -13,6 +13,7 @@ author:
 venue: NIPS Tutorial 2017
 youtube: NHTGY8VCinY
 transition: None
+date: 2017-12-04
 bibliography: deep-probabilistic-modelling-with-gaussian-processes.bib
 ---
 

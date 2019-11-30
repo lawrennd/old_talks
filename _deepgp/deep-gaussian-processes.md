@@ -1,7 +1,13 @@
 ---
-layout: slides
 title: "DRAFT SLIDES: Deep Gaussian Processes"
-author: Neil D. Lawrence
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
+  institute: Amazon and University of Sheffield
+  twitter: lawrennd
+  url: http://inverseprobability.com
+date: 1970-01-01
 ---
 
 ### DRAFT SLIDES

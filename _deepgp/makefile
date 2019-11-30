@@ -1,3 +1,3 @@
-BASE=introduction-to-deep-gps
+BASE=what-is-a-deep-gp
 include ../make-talk-flags.mk
 include ../make-talk.mk
