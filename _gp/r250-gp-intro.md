@@ -11,6 +11,7 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 date: 2019-11-14
+venue: Computer Lab, University of Cambridge
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
 transition: None
