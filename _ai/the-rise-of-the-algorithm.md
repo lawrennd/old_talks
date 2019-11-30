@@ -4,6 +4,7 @@ venue: Guardian Media Summit
 layout: talk
 date: 2017-03-16
 reveal: False
+pptx: True
 author:
 - family: Lawrence
   given: Neil D.
@@ -11,7 +12,6 @@ author:
   institute: Amazon Cambridge and University of Sheffield
   twitter: lawrennd
   url: http://inverseprobability.com
-date: 2018-11-14
 transition: None
 ---
 
