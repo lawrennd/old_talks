@@ -16,41 +16,67 @@
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
   <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
   <link rel="stylesheet" href="talks.css"/>
@@ -66,40 +92,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   <script src="reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
-      <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-          TeX: {
-            extensions: ["color.js"]
-          }
-        });
-      </script>
-      <script>
-  
-  function setDivs(group) {
-    var frame = document.getElementById("range-".concat(group)).value
-    slideIndex = parseInt(frame)
-    showDivs(slideIndex, group);
-  }
-  
-  function plusDivs(n, group) {
-    showDivs(slideIndex += n, group);
-    document.setElementById("range-".concat(group)) = slideIndex
-  }
-  
-  function showDivs(n,group) {
-    var i;
-    var x = document.getElementsByClassName(group);
-    if (n > x.length) {slideIndex = 1}    
-    if (n < 1) {slideIndex = x.length}
-    for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";  
-    }
-    x[slideIndex-1].style.display = "block";  
-  }
-      </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    TeX: {
+         extensions: ["color.js"]
+      }
+    });
+  </script>
+  <script src="figure-animate.js"></script>
 </head>
 <body>
-\[\newcommand{\Amatrix}{\mathbf{A}}
+\[\newcommand{\tk}[1]{}
+%\newcommand{\tk}[1]{\textbf{TK}: #1}
+\newcommand{\Amatrix}{\mathbf{A}}
 \newcommand{\KL}[2]{\text{KL}\left( #1\,\|\,#2 \right)}
 \newcommand{\Kaast}{\kernelMatrix_{\mathbf{ \ast}\mathbf{ \ast}}}
 \newcommand{\Kastu}{\kernelMatrix_{\mathbf{ \ast} \inducingVector}}
@@ -404,34 +409,72 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <section class="slide level3">
 
-<!-- Enables links to pages-->
-<p><!--% not ipynb--></p>
-<p><!--% not notes--></p>
+<!-- Front matter -->
+<!-- Front matter -->
+<!-- Do not edit this file locally. -->
+<!-- Do not edit this file locally. -->
+<!-- Do not edit this file locally. -->
+<!---->
+<!-- Do not edit this file locally. -->
+<!--Back matter-->
+<!-- Do not edit this file locally. -->
+<!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
 </section>
 <section id="section" class="slide level3">
 <h3></h3>
-<div style="text-align:center">
-<img class="" src="../slides/diagrams/science-holborn-viaduct.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+<div class="figure">
+<div id="science-holborn-viaduct-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/science-holborn-viaduct.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
 </div>
 </section>
 <section id="section-1" class="slide level3">
 <h3></h3>
-<div style="text-align:center">
-<img class="negate" src="../slides/diagrams/SteamEngine_Boulton&Watt_1784.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+<div class="figure">
+<div id="steam-engine-boulton-watt-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/SteamEngine_Boulton&Watt_1784.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<center>
-<em>Watt’s Steam Engine which made Steam Power Efficient and Practical </em>
-</center>
+</div>
+</div>
 </section>
 <section id="section-2" class="slide level3">
 <h3></h3>
-<div style="text-align:center">
-<img class="negate" src="../slides/diagrams/Centrifugal_governor.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+<div class="figure">
+<div id="centrifugal-governor-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/Centrifugal_governor.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
 </div>
 </section>
 <section id="section-3" class="slide level3">
 <h3></h3>
-<p><span class="math display">\[ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span></p>
+<p><span class="math display">\[\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span></p>
+</section>
+<section id="from-model-to-decision" class="slide level3">
+<h3>From Model to Decision</h3>
+</section>
+<section id="section-4" class="slide level3">
+<h3></h3>
+<table>
+<tr>
+<td width="35%">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/earth_PNG37.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</td>
+<td width="45%">
+<span class="math display">\[\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span>
+</td>
+<td width="20%">
+<object class="svgplot " data="../slides/diagrams/ai/1969018.svg" width="100%" style="center ">
+</object>
+</td>
+</tr>
+</table>
 </section>
 <section id="efficiency" class="slide level3">
 <h3>Efficiency</h3>
@@ -450,15 +493,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <section id="physical-processes" class="slide level3">
 <h3>Physical Processes</h3>
 <ul>
-<li>Manufacturing processes consist of production lines and robotic automation.</li>
-<li>Logistics can also be decomposed into the supply chain processes.</li>
-<li>Efficiency can be improved by automation.</li>
+<li>Production lines, robotic automation</li>
+<li>Supply chain, logistics</li>
+<li>Efficiency through automation.</li>
 </ul>
 </section>
 <section id="goods-and-information" class="slide level3">
 <h3>Goods and Information</h3>
 <ul>
-<li>For modern society: management of flow of goods and information.</li>
+<li>Manage flow of goods and information.</li>
 <li>Flow of information is highly automated.</li>
 <li>Processing of data is decomposed into stages in computer code.</li>
 </ul>
@@ -497,8 +540,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section>
 <section id="worked-example-delivery-drones" class="slide level3">
 <h3>Worked Example: Delivery Drones</h3>
-<iframe width="800" height="600" src="https://www.youtube.com/embed/vNySOrI2Ny8?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+<!-- first drone delivery vNySOrI2Ny8 -->
+<div class="figure">
+<div id="amazon-drone-delivery-figure" class="figure-frame">
+<iframe width="800" height="600" src="https://www.youtube.com/embed/3HJtmx5f1Fc?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
+</div>
+</div>
 </section>
 <section id="artificial-intelligence-and-data-science" class="slide level3">
 <h3>Artificial Intelligence and Data Science</h3>
@@ -545,11 +593,60 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>E.g. Causal understanding.</li>
 </ul>
 </section>
+<section id="supply-chain" class="slide level3">
+<h3>Supply Chain</h3>
+<div class="figure">
+<div id="packhorse-bridge-burbage-brook-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/supply-chain/packhorse-bridge-burbage-brook.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+</section>
+<section id="cromford" class="slide level3">
+<h3>Cromford</h3>
+<div class="figure">
+<div id="cromford-mill-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/supply-chain/cromford-mill.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+</section>
+<section id="section-5" class="slide level3">
+<h3></h3>
+<div class="figure">
+<div id="container-2539942_1920-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/supply-chain/container-2539942_1920.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+</section>
+<section id="deep-freeze" class="slide level3">
+<h3>Deep Freeze</h3>
+<div class="figure">
+<div id="wild-alaskan-cod-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/supply-chain/wild-alaskan-cod.jpg" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+</section>
+<section id="deep-freeze-1" class="slide level3">
+<h3>Deep Freeze</h3>
+<div class="figure">
+<div id="wild-alaskan-cod-made-in-china-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/supply-chain/wild-alaskan-cod-made-in-china.jpg" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+</section>
 <section id="machine-learning-in-supply-chain" class="slide level3">
 <h3>Machine Learning in Supply Chain</h3>
 <ul>
 <li><em>Supply chain</em>: Large Automated Decision Making Network</li>
-<li>Amazon’s supply chain: Possibly the world’s largest ‘AI’</li>
 <li>Major Challenge:
 <ul>
 <li>We have a <em>mechanistic</em> understanding of supply chain.</li>
@@ -573,7 +670,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3>Process Emulation</h3>
 <ul>
 <li>Key idea: emulate the process as a mathematical function.</li>
-<li>Each function has a set of <em>parameters</em> which control its behavior.</li>
+<li>Each function has a set of <em>parameters</em> which control its behaviour.</li>
 <li><em>Learning</em> is the process of changing these parameters to change the shape of the function</li>
 <li>Choice of which class of mathematical functions we use is a vital component of our <em>model</em>.</li>
 </ul>
@@ -587,14 +684,22 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section>
 <section id="emukit-playground-1" class="slide level3">
 <h3>Emukit Playground</h3>
-<div style="text-align:center">
-<a href="https://amzn.github.io/emukit-playground/"><img class="" src="../slides/diagrams/uq/emukit-playground.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none;"></a>
+<div class="figure">
+<div id="emukit-playground-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/uq/emukit-playground.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
 </div>
 </section>
 <section id="emukit-playground-2" class="slide level3">
 <h3>Emukit Playground</h3>
-<div style="text-align:center">
-<a href="https://amzn.github.io/emukit-playground/#!/learn/bayesian_optimization"><img class="negate" src="../slides/diagrams/uq/emukit-playground-bayes-opt.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none;"></a>
+<div class="figure">
+<div id="emukit-playground-bayes-opt-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/uq/emukit-playground-bayes-opt.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
 </div>
 </section>
 <section id="uncertainty-quantification-1" class="slide level3">
@@ -645,8 +750,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section>
 <section id="mountain-car-simulator" class="slide level3">
 <h3>Mountain Car Simulator</h3>
-<div style="text-align:center">
-<img class="negate" src="../slides/diagrams/uq/mountaincar.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+<div class="figure">
+<div id="mountain-car-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/uq/mountaincar.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
 </div>
 </section>
 <section id="car-dynamics" class="slide level3">
@@ -673,13 +782,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section>
 <section id="random-linear-controller" class="slide level3">
 <h3>Random Linear Controller</h3>
-<iframe src="../slides/diagrams/uq/mountain_car_random.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+<div class="figure">
+<div id="mountain-car-random-figure" class="figure-frame">
+<iframe src="../slides/diagrams/uq/mountain_car_random.html" width="800px" height="600px" allowtransparency="true" frameborder="0">
 </iframe>
+</div>
+</div>
 </section>
 <section id="best-controller-after-50-iterations-of-bayesian-optimization" class="slide level3">
 <h3>Best Controller after 50 Iterations of Bayesian Optimization</h3>
-<iframe src="../slides/diagrams/uq/mountain_car_simulated.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+<div class="figure">
+<div id="mountain-car-similated-bayes-opt-figure" class="figure-frame">
+<iframe src="../slides/diagrams/uq/mountain_car_simulated.html" width="800px" height="600px" allowtransparency="true" frameborder="0">
 </iframe>
+</div>
+</div>
 </section>
 <section id="data-efficient-emulation" class="slide level3">
 <h3>Data Efficient Emulation</h3>
@@ -700,9 +817,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section>
 <section id="comparison-of-emulation-and-simulation" class="slide level3">
 <h3>Comparison of Emulation and Simulation</h3>
-<div style="text-align:">
-<object class="svgplot " align data="../slides/diagrams/uq/emu_sim_comparison.svg" style>
+<div class="figure">
+<div id="emu-sim-comparison-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/uq/emu_sim_comparison.svg" width="80%" style=" ">
 </object>
+</div>
 </div>
 </section>
 <section id="data-efficiency" class="slide level3">
@@ -714,25 +833,50 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section>
 <section id="best-controller-using-emulator-of-dynamics" class="slide level3">
 <h3>Best Controller using Emulator of Dynamics</h3>
-<iframe src="../slides/diagrams/uq/mountain_car_emulated.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+<div class="figure">
+<div id="mountain-car-emulated-figure" class="figure-frame">
+<iframe src="../slides/diagrams/uq/mountain_car_emulated.html" width="800px" height="600px" allowtransparency="true" frameborder="0">
 </iframe>
+</div>
+</div>
 <p>500 calls to the simulator vs 37,500 calls to the simulator</p>
-<p><span class="math display">\[\mappingFunction_i\left(\inputVector\right) = \rho\mappingFunction_{i-1}\left(\inputVector\right) + \delta_i\left(\inputVector \right)\]</span></p>
 </section>
 <section id="multi-fidelity-emulation" class="slide level3">
 <h3>Multi-Fidelity Emulation</h3>
+<p><span class="math display">\[\mappingFunction_i\left(\inputVector\right) = \rho\mappingFunction_{i-1}\left(\inputVector\right) + \delta_i\left(\inputVector \right)\]</span></p>
 <p><span class="math display">\[\mappingFunction_i\left(\inputVector\right) = \mappingFunctionTwo_{i}\left(\mappingFunction_{i-1}\left(\inputVector\right)\right) + \delta_i\left(\inputVector \right),\]</span></p>
 </section>
 <section id="best-controller-with-multi-fidelity-emulator" class="slide level3">
 <h3>Best Controller with Multi-Fidelity Emulator</h3>
-<iframe src="../slides/diagrams/uq/mountain_car_multi_fidelity.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+<div class="figure">
+<div id="mountain-car-multi-fidelity-figure" class="figure-frame">
+<iframe src="../slides/diagrams/uq/mountain_car_multi_fidelity.html" width="800px" height="600px" allowtransparency="true" frameborder="0">
 </iframe>
+</div>
+</div>
 <p>250 observations of high fidelity simulator and 250 of the low fidelity simulator</p>
 </section>
 <section id="emukit" class="slide level3">
 <h3>Emukit</h3>
+<div class="figure">
+<div id="emukit-software-page-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/uq/emukit-software-page.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+</section>
+<section id="emukit-1" class="slide level3">
+<h3>Emukit</h3>
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/uq/emukit-software-page2.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+
+</section>
+<section id="emukit-2" class="slide level3">
+<h3>Emukit</h3>
 <ul>
-<li>Work by Javier Gonzalez, Andrei Paleyes, Mark Pullin, Maren Mahsereci.</li>
+<li>Work by Javier Gonzalez, Andrei Paleyes, Mark Pullin, Maren Mahsereci, Alex Gessner, Aaron Klein.</li>
 <li>Available on <a href="https://github.com/amzn/emukit">Github</a></li>
 <li>Example <a href="https://github.com/amzn/emukit/blob/develop/notebooks/Emukit-sensitivity-montecarlo.ipynb">sensitivity notebook</a>.</li>
 </ul>
@@ -747,22 +891,41 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><em>Bayesian quadrature</em>: compute integrals of functions that are expensive to evaluate.</li>
 </ul>
 </section>
+<section id="mxfusion-modular-probabilistic-programming-on-mxnet" class="slide level3">
+<h3>MXFusion: Modular Probabilistic Programming on MXNet</h3>
+<div class="figure">
+<div id="mxfusion-software-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/ml/mxfusion.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<center>
+<a href="https://github.com/amzn/MXFusion" class="uri">https://github.com/amzn/MXFusion</a>
+</center>
+</section>
 <section id="mxfusion" class="slide level3">
 <h3>MxFusion</h3>
+<div class="figure">
+<div id="mxfusion-software-logo-figure" class="figure-frame">
 <table>
 <tr>
 <td width="70%">
 <ul>
 <li>Work by Eric Meissner and Zhenwen Dai.</li>
 <li>Probabilistic programming.</li>
-<li>Available on <a href="https://github.com/amzn/mxfusion">Github</a>
+<li>Available on <a href="https://github.com/amzn/mxfusion">Github</a></li>
+</ul>
 </td>
 <td width="30%">
-<img class="" src="../slides/diagrams/mxfusion-logo.png" width="" height="auto" align="" style="background:none; border:none; box-shadow:none;">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/mxfusion-logo.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
 </td>
 </tr>
-</table></li>
-</ul>
+</table>
+</div>
+</div>
 </section>
 <section id="mxfusion-1" class="slide level3">
 <h3>MxFusion</h3>
@@ -775,8 +938,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section>
 <section id="why-another-framework" class="slide level3">
 <h3>Why another framework?</h3>
-<p>Existing libraries had either: * Probabilistic modelling with rich, flexible models and universal inference or * Specialized, efficient inference over a subset of models</p>
-<p><strong>We needed both</strong></p>
+<ul>
+<li>Existing libraries had either:
+<ul>
+<li>Probabilistic modelling with rich, flexible models and universal inference or</li>
+<li>Specialized, efficient inference over a subset of models</li>
+</ul></li>
+</ul>
+<p><strong>We need both</strong></p>
 </section>
 <section id="key-requirements" class="slide level3">
 <h3>Key Requirements</h3>
@@ -820,10 +989,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section>
 <section id="example" class="slide level3">
 <h3>Example</h3>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">m <span class="op">=</span> Model()
-m.mu <span class="op">=</span> Variable()
-m.s <span class="op">=</span> Variable(transformation<span class="op">=</span>PositiveTransformation())
-m.Y <span class="op">=</span> Normal.define_variable(mean<span class="op">=</span>m.mu, variance<span class="op">=</span>m.s)</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" data-line-number="1">m <span class="op">=</span> Model()</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">m.mu <span class="op">=</span> Variable()</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">m.s <span class="op">=</span> Variable(transformation<span class="op">=</span>PositiveTransformation())</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">m.Y <span class="op">=</span> Normal.define_variable(mean<span class="op">=</span>m.mu, variance<span class="op">=</span>m.s)</a></code></pre></div>
 </section>
 <section id="primary-components-in-modeling" class="slide level3">
 <h3>3 primary components in modeling</h3>
@@ -849,8 +1018,8 @@ m.Y <span class="op">=</span> Normal.define_variable(mean<span class="op">=</spa
 </section>
 <section id="example-1" class="slide level3">
 <h3>Example</h3>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">infr <span class="op">=</span> GradBasedInference(inference_algorithm<span class="op">=</span>MAP(model<span class="op">=</span>m, observed<span class="op">=</span>[m.Y]))
-infr.run(Y<span class="op">=</span>data)</code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" data-line-number="1">infr <span class="op">=</span> GradBasedInference(inference_algorithm<span class="op">=</span>MAP(model<span class="op">=</span>m, observed<span class="op">=</span>[m.Y]))</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">infr.run(Y<span class="op">=</span>data)</a></code></pre></div>
 </section>
 <section id="modules" class="slide level3">
 <h3>Modules</h3>
@@ -879,7 +1048,7 @@ infr.run(Y<span class="op">=</span>data)</code></pre></div>
 </section>
 <section id="preparation" class="slide level3">
 <h3>Preparation</h3>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">pip</span> install mxnet mxfusion gym</code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="ex">pip</span> install mxnet mxfusion gym</a></code></pre></div>
 <p>Set the global configuration.</p>
 </section>
 <section id="example-pendulum" class="slide level3">
@@ -887,8 +1056,12 @@ infr.run(Y<span class="op">=</span>data)</code></pre></div>
 </section>
 <section id="pendulum" class="slide level3">
 <h3>Pendulum</h3>
-<iframe src="../slides/diagrams/ml/animation_random_policy.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+<div class="figure">
+<div id="pendulum-random-policy-figure" class="figure-frame">
+<iframe src="../slides/diagrams/ml/animation_random_policy.html" width="100%" height="auto" allowtransparency="true" frameborder="0">
 </iframe>
+</div>
+</div>
 </section>
 <section id="fit-the-dynamics-model" class="slide level3">
 <h3>Fit the Dynamics Model</h3>
@@ -917,14 +1090,22 @@ p(\dataScalar_{t+1}|\dataScalar_t, a_t)
 <section id="after-first-epsiode" class="slide level3">
 <h3>After First Epsiode</h3>
 <p>Policy after the first episode (random exploration):</p>
-<iframe src="../slides/diagrams/ml/animation_policy_iter_0.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+<div class="figure">
+<div id="pilco-pendulum-policy-iter-0-figure" class="figure-frame">
+<iframe src="../slides/diagrams/ml/animation_policy_iter_0.html" width="100%" height="auto" allowtransparency="true" frameborder="0">
 </iframe>
+</div>
+</div>
 </section>
 <section id="after-fifth-episode" class="slide level3">
 <h3>After Fifth Episode</h3>
 <p>Policy after the 5th episode:</p>
-<iframe src="../slides/diagrams/ml/animation_policy_iter_4.html" width="1024" height="768" allowtransparency="true" frameborder="0">
+<div class="figure">
+<div id="pilco-pendulum-policy-iter-0-figure" class="figure-frame">
+<iframe src="../slides/diagrams/ml/animation_policy_iter_4.html" width="100%" height="auto" allowtransparency="true" frameborder="0">
 </iframe>
+</div>
+</div>
 </section>
 <section id="contribute" class="slide level3">
 <h3>Contribute!</h3>
@@ -950,6 +1131,15 @@ p(\dataScalar_{t+1}|\dataScalar_t, a_t)
 <ul>
 <li>Maintain interpretability.</li>
 </ul></li>
+</ul>
+</section>
+<section id="thanks" class="slide level3">
+<h3>Thanks!</h3>
+<ul>
+<li>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></li>
+<li>podcast: <a href="http://thetalkingmachines.com">The Talking Machines</a></li>
+<li>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></li>
+<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
 </ul>
 </section>
 <section id="references" class="slide level3 unnumbered">
@@ -978,11 +1168,28 @@ p(\dataScalar_{t+1}|\dataScalar_t, a_t)
         history: true,
         // Transition style
         transition: 'None', // none/fade/slide/convex/concave/zoom
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
 
         // Optional reveal.js plugins
         dependencies: [
           { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/math/math.js', async: true },
           { src: 'reveal.js/plugin/notes/notes.js', async: true }
         ]
       });

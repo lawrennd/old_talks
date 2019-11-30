@@ -16,41 +16,67 @@
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
   <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
   <link rel="stylesheet" href="talks.css"/>
@@ -66,40 +92,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   <script src="reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
-      <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-          TeX: {
-            extensions: ["color.js"]
-          }
-        });
-      </script>
-      <script>
-  
-  function setDivs(group) {
-    var frame = document.getElementById("range-".concat(group)).value
-    slideIndex = parseInt(frame)
-    showDivs(slideIndex, group);
-  }
-  
-  function plusDivs(n, group) {
-    showDivs(slideIndex += n, group);
-    document.setElementById("range-".concat(group)) = slideIndex
-  }
-  
-  function showDivs(n,group) {
-    var i;
-    var x = document.getElementsByClassName(group);
-    if (n > x.length) {slideIndex = 1}    
-    if (n < 1) {slideIndex = x.length}
-    for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";  
-    }
-    x[slideIndex-1].style.display = "block";  
-  }
-      </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    TeX: {
+         extensions: ["color.js"]
+      }
+    });
+  </script>
+  <script src="figure-animate.js"></script>
 </head>
 <body>
-\[\newcommand{\Amatrix}{\mathbf{A}}
+\[\newcommand{\tk}[1]{}
+%\newcommand{\tk}[1]{\textbf{TK}: #1}
+\newcommand{\Amatrix}{\mathbf{A}}
 \newcommand{\KL}[2]{\text{KL}\left( #1\,\|\,#2 \right)}
 \newcommand{\Kaast}{\kernelMatrix_{\mathbf{ \ast}\mathbf{ \ast}}}
 \newcommand{\Kastu}{\kernelMatrix_{\mathbf{ \ast} \inducingVector}}
@@ -405,8 +410,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <section class="slide level3">
 
-<p><!--% not ipynb--></p>
-<p><!--% not notes--></p>
+<!-- Front matter -->
+<!-- Front matter -->
+<!-- Do not edit this file locally. -->
+<!-- Do not edit this file locally. -->
+<!-- Do not edit this file locally. -->
+<!---->
+<!-- Do not edit this file locally. -->
+<!--Back matter-->
+<!-- Do not edit this file locally. -->
+<!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
 <!-- SECTION What is Machine Learning? -->
 </section>
 <section id="what-is-machine-learning" class="slide level3">
@@ -440,11 +453,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p><span class="math display">\[\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span></p>
 <ul>
 <li class="fragment">To combine data with a model need:</li>
-<li class="fragment"><strong>a prediction function</strong> <span class="math inline">\(\mappingFunction(\cdot)\)</span> includes our beliefs about the regularities of the universe</li>
-<li class="fragment"><strong>an objective function</strong> <span class="math inline">\(\errorFunction(\cdot)\)</span> defines the cost of misprediction.</li>
+<li class="fragment"><strong>a prediction function</strong> <span class="math inline">\(\mappingFunction (\cdot)\)</span> includes our beliefs about the regularities of the universe</li>
+<li class="fragment"><strong>an objective function</strong> <span class="math inline">\(\errorFunction (\cdot)\)</span> defines the cost of misprediction.</li>
 </ul>
-<!-- SECTION Probabilities -->
 <!-- SECTION Nigerian NMIS Data -->
+</section>
+<section id="nigerian-nmis-data-notebook" class="slide level3">
+<h3>Nigerian NMIS Data: Notebook</h3>
+<!-- SECTION Probabilities -->
+</section>
+<section id="probability-and-the-nmis-data" class="slide level3">
+<h3>Probability and the NMIS Data</h3>
 <!-- SECTION Conditioning -->
 </section>
 <section id="probability-review" class="slide level3">
@@ -488,8 +507,12 @@ The different basic probability distributions.
 </section>
 <section id="a-pictorial-definition-of-probability" class="slide level3">
 <h3>A Pictorial Definition of Probability</h3>
-<object class="svgplot " align data="../slides/diagrams/mlai/prob_diagram.svg" style>
+<div class="figure">
+<div id="prob-diagram-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/mlai/prob_diagram.svg" width="60%" style=" ">
 </object>
+</div>
+</div>
 <p><span style="text-align:right">Inspired by lectures from Christopher Bishop</span></p>
 </section>
 <section id="definition-of-probability-distributions" class="slide level3">
@@ -531,9 +554,11 @@ The different basic probability distributions.
 <ul>
 <li><p>Typically we should write out <span class="math inline">\(P\left(X=x,Y=y\right)\)</span>.</p></li>
 <li>In practice, we often use <span class="math inline">\(P\left(x,y\right)\)</span>.</li>
-<li>This looks very much like we might write a multivariate function, <em>e.g.</em> <span class="math inline">\(f\left(x,y\right)=\frac{x}{y}\)</span>.</li>
+<li>This looks very much like we might write a multivariate function, <em>e.g.</em> <span class="math inline">\(f\left(x,y\right)=\frac{x}{y}\)</span>.
+<ul>
 <li>For a multivariate function though, <span class="math inline">\(f\left(x,y\right)\neq f\left(y,x\right)\)</span>.</li>
 <li>However <span class="math inline">\(P\left(x,y\right)=P\left(y,x\right)\)</span> because <span class="math inline">\(P\left(X=x,Y=y\right)=P\left(Y=y,X=x\right)\)</span>.</li>
+</ul></li>
 <li><p>We now quickly review the ‘rules of probability’.</p></li>
 </ul>
 </section>
@@ -545,13 +570,13 @@ The different basic probability distributions.
 <h3>The Product Rule</h3>
 <ul>
 <li><span class="math inline">\(P\left(x|y\right)\)</span> is <span class="math display">\[
-  {\lim_{N\rightarrow\infty}}\frac{n_{x,y}}{n_{y}}.
-  \]</span></li>
+{\lim_{N\rightarrow\infty}}\frac{n_{x,y}}{n_{y}}.
+\]</span></li>
 <li><span class="math inline">\(P\left(x,y\right)\)</span> is <span class="math display">\[
-  {\lim_{N\rightarrow\infty}}\frac{n_{x,y}}{N}={\lim_{N\rightarrow\infty}}\frac{n_{x,y}}{n_{y}}\frac{n_{y}}{N}
-  \]</span> or in other words <span class="math display">\[
-  P\left(x,y\right)=P\left(x|y\right)P\left(y\right).
-  \]</span> This is known as the product rule of probability.</li>
+{\lim_{N\rightarrow\infty}}\frac{n_{x,y}}{N}={\lim_{N\rightarrow\infty}}\frac{n_{x,y}}{n_{y}}\frac{n_{y}}{N}
+\]</span> or in other words <span class="math display">\[
+P\left(x,y\right)=P\left(x|y\right)P\left(y\right).
+\]</span> This is known as the product rule of probability.</li>
 </ul>
 </section>
 <section id="the-sum-rule" class="slide level3">
@@ -566,11 +591,11 @@ The different basic probability distributions.
 <h3>Bayes’ Rule</h3>
 <ul>
 <li>From the product rule, <span class="math display">\[
-  P\left(y,x\right)=P\left(x,y\right)=P\left(x|y\right)P\left(y\right),\]</span> so <span class="math display">\[
-  P\left(y|x\right)P\left(x\right)=P\left(x|y\right)P\left(y\right)
-  \]</span> which leads to Bayes’ rule, <span class="math display">\[
-  P\left(y|x\right)=\frac{P\left(x|y\right)P\left(y\right)}{P\left(x\right)}.
-  \]</span></li>
+P\left(y,x\right)=P\left(x,y\right)=P\left(x|y\right)P\left(y\right),\]</span> so <span class="math display">\[
+P\left(y|x\right)P\left(x\right)=P\left(x|y\right)P\left(y\right)
+\]</span> which leads to Bayes’ rule, <span class="math display">\[
+P\left(y|x\right)=\frac{P\left(x|y\right)P\left(y\right)}{P\left(x\right)}.
+\]</span></li>
 </ul>
 </section>
 <section id="bayes-theorem-example" class="slide level3">
@@ -583,24 +608,24 @@ The different basic probability distributions.
 <h3>Bayes’ Theorem Example: Answer I</h3>
 <ul>
 <li>We are given that: <span class="math display">\[\begin{aligned}
-P(\text{F}=\text{A}|\text{B}=1) = &amp; 20/24 \\
-P(\text{F}=\text{A}|\text{B}=2) = &amp; 4/12 \\
-P(\text{B}=1) = &amp; 0.5 \\
-P(\text{B}=2) = &amp; 0.5
-  \end{aligned}\]</span></li>
+  P(\text{F}=\text{A}|\text{B}=1) = &amp; 20/24 \\
+  P(\text{F}=\text{A}|\text{B}=2) = &amp; 4/12 \\
+  P(\text{B}=1) = &amp; 0.5 \\
+  P(\text{B}=2) = &amp; 0.5
+\end{aligned}\]</span></li>
 </ul>
 </section>
 <section id="bayes-theorem-example-answer-ii" class="slide level3">
 <h3>Bayes’ Theorem Example: Answer II</h3>
 <ul>
 <li>We use the sum rule to compute: <span class="math display">\[\begin{aligned}
-P(\text{F}=\text{A}) = &amp; P(\text{F}=\text{A}|\text{B}=1)P(\text{B}=1) \\&amp; + P(\text{F}=\text{A}|\text{B}=2)P(\text{B}=2) \\
-      = &amp; 20/24\times 0.5 + 4/12 \times 0.5 = 7/12
-   \end{aligned}\]</span></li>
+  P(\text{F}=\text{A}) = &amp; P(\text{F}=\text{A}|\text{B}=1)P(\text{B}=1) \\&amp; + P(\text{F}=\text{A}|\text{B}=2)P(\text{B}=2) \\
+        = &amp; 20/24\times 0.5 + 4/12 \times 0.5 = 7/12
+ \end{aligned}\]</span></li>
 <li>And Bayes’ theorem tells us that: <span class="math display">\[\begin{aligned}
-P(\text{B}=1|\text{F}=\text{A}) = &amp; \frac{P(\text{F} = \text{A}|\text{B}=1)P(\text{B}=1)}{P(\text{F}=\text{A})}\\ 
-     = &amp; \frac{20/24 \times 0.5}{7/12} = 5/7
-  \end{aligned}\]</span></li>
+  P(\text{B}=1|\text{F}=\text{A}) = &amp; \frac{P(\text{F} = \text{A}|\text{B}=1)P(\text{B}=1)}{P(\text{F}=\text{A})}\\ 
+       = &amp; \frac{20/24 \times 0.5}{7/12} = 5/7
+\end{aligned}\]</span></li>
 </ul>
 </section>
 <section id="reading-exercises" class="slide level3">
@@ -864,7 +889,7 @@ p(\dataScalar_*|\dataVector, \inputMatrix, \inputVector_*) = \int p(\dataScalar_
 <p><span class="math inline">\(p(\dataScalar|\inputVector, \mappingMatrix)\)</span> is the <em>likelihood</em> of data point</p>
 <div class="fragment">
 <p>Normally assume independence: <span class="math display">\[
-p(\dataVector|\inputMatrix, \mappingMatrix) \prod_{i=1}^\numData p(\dataScalar_i|\inputVector_i, \mappingMatrix),\]</span></p>
+p(\dataVector|\inputMatrix, \mappingMatrix) = \prod_{i=1}^\numData p(\dataScalar_i|\inputVector_i, \mappingMatrix),\]</span></p>
 </div>
 </section>
 <section id="likelihood-and-prediction-function" class="slide level3">
@@ -897,23 +922,36 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatr
 <li>E.g. Markov chain</li>
 </ul>
 <p><span class="math display">\[p(\dataVector) = p(\dataScalar_\numData | \dataScalar_{\numData-1}) p(\dataScalar_{\numData-1}|\dataScalar_{\numData-2}) \dots p(\dataScalar_{2} | \dataScalar_{1})\]</span></p>
-<object class="svgplot " align data="../slides/diagrams/ml/markov.svg" style>
+<div class="figure">
+<div id="markov-chain-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/markov.svg" width="50%" style=" ">
 </object>
+</div>
+</div>
 </section>
 <section id="section-1" class="slide level3">
 <h3></h3>
 <p>Predict Perioperative Risk of Clostridium Difficile Infection Following Colon Surgery <span class="citation" data-cites="Steele:predictive12">(Steele et al., 2012)</span></p>
-<div style="text-align:center">
-<img class="negate" src="../slides/diagrams/bayes-net-diagnosis.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none;">
+<div class="figure">
+<div id="c-difficile-bayes-net-diagnosis-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/bayes-net-diagnosis.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+</div>
+</div>
+</section>
+<section id="introduction-to-classification" class="slide level3">
+<h3>Introduction to Classification</h3>
 </section>
 <section id="classification" class="slide level3">
 <h3>Classification</h3>
 <ul>
+<li><em>Wake word</em> classification (<a href="https://radio.unglobalpulse.net/uganda/">Global Pulse Project</a>).</li>
+<li><p>Breakthrough in 2012 with ImageNet result of <a href="http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-">Alex Krizhevsky, Ilya Sutskever and Geoff Hinton</a></p></li>
 <li>We are given a data set containing ‘inputs’, <span class="math inline">\(\inputMatrix\)</span> and ‘targets’, <span class="math inline">\(\dataVector\)</span>.</li>
 <li>Each data point consists of an input vector <span class="math inline">\(\inputVector_i\)</span> and a class label, <span class="math inline">\(\dataScalar_i\)</span>.</li>
 <li>For binary classification assume <span class="math inline">\(\dataScalar_i\)</span> should be either <span class="math inline">\(1\)</span> (yes) or <span class="math inline">\(-1\)</span> (no).</li>
-<li>Input vector can be thought of as features.</li>
+<li><p>Input vector can be thought of as features.</p></li>
 </ul>
 </section>
 <section id="discrete-probability" class="slide level3">
@@ -924,12 +962,21 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatr
 <li>In classification we are given an input vector, <span class="math inline">\(\inputVector\)</span>, and an associated label, <span class="math inline">\(\dataScalar\)</span> which either takes the value <span class="math inline">\(-1\)</span> or <span class="math inline">\(1\)</span>.</li>
 </ul>
 </section>
+<section id="classification-1" class="slide level3">
+<h3>Classification</h3>
+<ul>
+<li>Inputs, <span class="math inline">\(\inputVector\)</span>, mapped to a label, <span class="math inline">\(\dataScalar\)</span>, through a function <span class="math inline">\(\mappingFunction(\cdot)\)</span> dependent on parameters, <span class="math inline">\(\weightVector\)</span>, <span class="math display">\[
+\dataScalar = \mappingFunction(\inputVector; \weightVector).
+\]</span></li>
+<li><span class="math inline">\(\mappingFunction(\cdot)\)</span> is known as the <em>prediction function</em>.</li>
+</ul>
+</section>
 <section id="classification-examples" class="slide level3">
 <h3>Classification Examples</h3>
 <ul>
 <li>Classifiying hand written digits from binary images (automatic zip code reading)</li>
 <li>Detecting faces in images (e.g. digital cameras).</li>
-<li>Who a detected face belongs to (e.g. Picasa, Facebook, DeepFace, GaussianFace)</li>
+<li>Who a detected face belongs to (e.g. Facebook, DeepFace)</li>
 <li>Classifying type of cancer given gene expression data.</li>
 <li>Categorization of document types (different types of news article on the internet)</li>
 </ul>
@@ -937,18 +984,22 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatr
 <section id="reminder-on-the-term-bayesian" class="slide level3">
 <h3>Reminder on the Term “Bayesian”</h3>
 <ul>
-<li>We use Bayes’ rule to invert probabilities in the Bayesian approach.</li>
+<li>We use Bayes’ rule to invert probabilities in the Bayesian approach.
+<ul>
 <li>Bayesian is not named after Bayes’ rule (v. common confusion).</li>
 <li>The term Bayesian refers to the treatment of the parameters as stochastic variables.</li>
 <li>Proposed by <span class="citation" data-cites="Laplace:memoire74">Laplace (1774)</span> and <span class="citation" data-cites="Bayes:doctrine63">Bayes (1763)</span> independently.</li>
 <li>For early statisticians this was very controversial (Fisher et al).</li>
+</ul></li>
 </ul>
 </section>
 <section id="reminder-on-the-term-bayesian-1" class="slide level3">
 <h3>Reminder on the Term “Bayesian”</h3>
 <ul>
-<li>The use of Bayes’ rule does <em>not</em> imply you are being Bayesian.</li>
+<li>The use of Bayes’ rule does <em>not</em> imply you are being Bayesian.
+<ul>
 <li>It is just an application of the product rule of probability.</li>
+</ul></li>
 </ul>
 </section>
 <section id="bernoulli-distribution" class="slide level3">
@@ -980,15 +1031,15 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatr
 <h3>Mathematical Switch</h3>
 <ul>
 <li><p>The Bernoulli distribution <span class="math display">\[
-  P(\dataScalar) = \pi^\dataScalar (1-\pi)^{(1-\dataScalar)}
-  \]</span></p></li>
+P(\dataScalar) = \pi^\dataScalar (1-\pi)^{(1-\dataScalar)}
+\]</span></p></li>
 <li><p>Is a clever trick for switching probabilities, as code it would be</p></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> bernoulli(y_i, pi):
-    <span class="cf">if</span> y_i <span class="op">==</span> <span class="dv">1</span>:
-        <span class="cf">return</span> pi
-    <span class="cf">else</span>:
-        <span class="cf">return</span> <span class="dv">1</span><span class="op">-</span>pi</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">def</span> bernoulli(y_i, pi):</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">    <span class="cf">if</span> y_i <span class="op">==</span> <span class="dv">1</span>:</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">        <span class="cf">return</span> pi</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">    <span class="cf">else</span>:</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">        <span class="cf">return</span> <span class="dv">1</span><span class="op">-</span>pi</a></code></pre></div>
 </section>
 <section id="jacob-bernoullis-bernoulli" class="slide level3">
 <h3>Jacob Bernoulli’s Bernoulli</h3>
@@ -1001,13 +1052,17 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatr
 </section>
 <section id="section-2" class="slide level3">
 <h3></h3>
-<iframe frameborder="0" scrolling="no" style="border:0px" src="http://books.google.co.uk/books?id=CF4UAAAAQAAJ&amp;pg=PA87&amp;output=embed" , width="700" height="500">
+<iframe frameborder="0" scrolling="no" style="border:0px" src="http://books.google.co.uk/books?id=CF4UAAAAQAAJ&amp;pg=PA87&amp;output=embed" width="700" height="500">
 </iframe>
 </section>
 <section id="jacob-bernoullis-bernoulli-1" class="slide level3">
 <h3>Jacob Bernoulli’s Bernoulli</h3>
-<object class="svgplot " align data="../slides/diagrams/ml/bernoulli-urn.svg" style>
+<div class="figure">
+<div id="bernoulli-urn-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ml/bernoulli-urn.svg" width="40%" style=" ">
 </object>
+</div>
+</div>
 </section>
 <section id="thomas-bayess-bernoulli" class="slide level3">
 <h3>Thomas Bayes’s Bernoulli</h3>
@@ -1024,54 +1079,47 @@ p(\dataVector_*|\dataVector) = \int p(\dataVector_*|\inputMatrix_*, \mappingMatr
 <script>
 showDivs(1, 'bayes_billiard');
 </script>
-<input id="range-bayes_billiard" type="range" min="1" max="10" value="1" onchange="setDivs('bayes_billiard')" oninput="setDivs('bayes_billiard')">
-<button onclick="plusDivs(-1, 'bayes_billiard')">
-❮
-</button>
-<button onclick="plusDivs(1, 'bayes_billiard')">
-❯
-</button>
-<div class="bayes_billiard" style="text-align:center">
-<object class="svgplot " align data="../slides/diagrams/ml/bayes-billiard000.svg" style>
+<p><small></small> <input id="range-bayes_billiard" type="range" min="1" max="10" value="1" onchange="setDivs('bayes_billiard')" oninput="setDivs('bayes_billiard')"> <button onclick="plusDivs(-1, 'bayes_billiard')">❮</button> <button onclick="plusDivs(1, 'bayes_billiard')">❯</button></p>
+<div class="bayes_billiard" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/bayes-billiard000.svg" width="40%" style=" ">
 </object>
 </div>
-<div class="bayes_billiard" style="text-align:center">
-<object class="svgplot " align data="../slides/diagrams/ml/bayes-billiard001.svg" style>
+<div class="bayes_billiard" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/bayes-billiard001.svg" width="40%" style=" ">
 </object>
 </div>
-<div class="bayes_billiard" style="text-align:center">
-<object class="svgplot " align data="../slides/diagrams/ml/bayes-billiard002.svg" style>
+<div class="bayes_billiard" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/bayes-billiard002.svg" width="40%" style=" ">
 </object>
 </div>
-<div class="bayes_billiard" style="text-align:center">
-<object class="svgplot " align data="../slides/diagrams/ml/bayes-billiard003.svg" style>
+<div class="bayes_billiard" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/bayes-billiard003.svg" width="40%" style=" ">
 </object>
 </div>
-<div class="bayes_billiard" style="text-align:center">
-<object class="svgplot " align data="../slides/diagrams/ml/bayes-billiard004.svg" style>
+<div class="bayes_billiard" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/bayes-billiard004.svg" width="40%" style=" ">
 </object>
 </div>
-<div class="bayes_billiard" style="text-align:center">
-<object class="svgplot " align data="../slides/diagrams/ml/bayes-billiard005.svg" style>
+<div class="bayes_billiard" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/bayes-billiard005.svg" width="40%" style=" ">
 </object>
 </div>
-<div class="bayes_billiard" style="text-align:center">
-<object class="svgplot " align data="../slides/diagrams/ml/bayes-billiard006.svg" style>
+<div class="bayes_billiard" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/bayes-billiard006.svg" width="40%" style=" ">
 </object>
 </div>
-<div class="bayes_billiard" style="text-align:center">
-<object class="svgplot " align data="../slides/diagrams/ml/bayes-billiard007.svg" style>
+<div class="bayes_billiard" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/bayes-billiard007.svg" width="40%" style=" ">
 </object>
 </div>
-<div class="bayes_billiard" style="text-align:center">
-<object class="svgplot " align data="../slides/diagrams/ml/bayes-billiard008.svg" style>
+<div class="bayes_billiard" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/bayes-billiard008.svg" width="40%" style=" ">
 </object>
 </div>
-<div class="bayes_billiard" style="text-align:center">
-<object class="svgplot " align data="../slides/diagrams/ml/bayes-billiard009.svg" style>
+<div class="bayes_billiard" style="text-align:center;">
+<object class="svgplot " data="../slides/diagrams/ml/bayes-billiard009.svg" width="40%" style=" ">
 </object>
 </div>
-
 </section>
 <section id="maximum-likelihood-in-the-bernoulli" class="slide level3">
 <h3>Maximum Likelihood in the Bernoulli</h3>
@@ -1086,9 +1134,9 @@ p(\dataVector|\pi) = \prod_{i=1}^{\numData} \pi^{\dataScalar_i} (1-\pi)^{1-\data
 <h3>Negative Log Likelihood</h3>
 <ul>
 <li>Minimize the negative log likelihood <span class="math display">\[\begin{align*}
-  \errorFunction(\pi)&amp; = -\log p(\dataVector|\pi)\\ 
-                 &amp; = -\sum_{i=1}^{\numData} \dataScalar_i \log \pi - \sum_{i=1}^{\numData} (1-\dataScalar_i) \log(1-\pi),
-  \end{align*}\]</span></li>
+\errorFunction(\pi)&amp; = -\log p(\dataVector|\pi)\\ 
+                   &amp; = -\sum_{i=1}^{\numData} \dataScalar_i \log \pi - \sum_{i=1}^{\numData} (1-\dataScalar_i) \log(1-\pi),
+\end{align*}\]</span></li>
 <li>Take gradient with respect to the parameter <span class="math inline">\(\pi\)</span>. <span class="math display">\[\frac{\text{d}\errorFunction(\pi)}{\text{d}\pi} = -\frac{\sum_{i=1}^{\numData} \dataScalar_i}{\pi}  + \frac{\sum_{i=1}^{\numData} (1-\dataScalar_i)}{1-\pi},\]</span></li>
 </ul>
 </section>
@@ -1140,8 +1188,8 @@ p(\dataVector|\pi) = \prod_{i=1}^{\numData} \pi^{\dataScalar_i} (1-\pi)^{1-\data
 <li>Given label data <span class="math inline">\(\dataVector\)</span> and the inputs <span class="math inline">\(\inputMatrix\)</span> could specify joint density of all potential values of <span class="math inline">\(\dataVector\)</span> and <span class="math inline">\(\inputMatrix\)</span>, <span class="math inline">\(p(\dataVector, \inputMatrix)\)</span>.</li>
 <li>If <span class="math inline">\(\inputMatrix\)</span> and <span class="math inline">\(\dataVector\)</span> are training data.</li>
 <li>If <span class="math inline">\(\inputVector^*\)</span> is a test input and <span class="math inline">\(\dataScalar^*\)</span> a test location we want <span class="math display">\[
-  p(\dataScalar^*|\inputMatrix, \dataVector, \inputVector^*),
-  \]</span></li>
+p(\dataScalar^*|\inputMatrix, \dataVector, \inputVector^*),
+\]</span></li>
 </ul>
 </section>
 <section id="answer-from-rules-of-probability" class="slide level3">
@@ -1169,8 +1217,8 @@ p(\dataVector|\pi) = \prod_{i=1}^{\numData} \pi^{\dataScalar_i} (1-\pi)^{1-\data
 <h3>Data Conditional Independence</h3>
 <ul>
 <li><p>Given model parameters <span class="math inline">\(\paramVector\)</span> we assume that all data points in the model are independent. <span class="math display">\[
-  p(\dataScalar^*, \inputVector^*, \dataVector, \inputMatrix|\paramVector) = p(\dataScalar^*, \inputVector^*|\paramVector)\prod_{i=1}^{\numData} p(\dataScalar_i, \inputVector_i | \paramVector).
-  \]</span></p></li>
+p(\dataScalar^*, \inputVector^*, \dataVector, \inputMatrix|\paramVector) = p(\dataScalar^*, \inputVector^*|\paramVector)\prod_{i=1}^{\numData} p(\dataScalar_i, \inputVector_i | \paramVector).
+\]</span></p></li>
 <li><p>This is a conditional independence assumption.</p></li>
 <li><p>We also make similar assumptions for regression (where <span class="math inline">\(\paramVector = \left\{\mappingVector,\dataStd^2\right\}\)</span>).</p></li>
 <li><p>Here we assume <em>joint</em> density of <span class="math inline">\(\dataVector\)</span> and <span class="math inline">\(\inputMatrix\)</span> is independent across the data given the parameters.</p></li>
@@ -1199,8 +1247,8 @@ p(\dataVector|\pi) = \prod_{i=1}^{\numData} \pi^{\dataScalar_i} (1-\pi)^{1-\data
 <h3>Joint Density for Naive Bayes</h3>
 <ul>
 <li>This allows us to write down the full joint density of the training data, <span class="math display">\[
-  p(\dataVector, \inputMatrix|\paramVector, \pi) = \prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)
-  \]</span> which can now be fit by maximum likelihood.</li>
+p(\dataVector, \inputMatrix|\paramVector, \pi) = \prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)
+\]</span> which can now be fit by maximum likelihood.</li>
 </ul>
 </section>
 <section id="objective-function" class="slide level3">
@@ -1216,76 +1264,79 @@ p(\dataVector|\pi) = \prod_{i=1}^{\numData} \pi^{\dataScalar_i} (1-\pi)^{1-\data
 <h3>Fit Prior</h3>
 <ul>
 <li>We can minimize prior. For Bernoulli likelihood over the labels we have, <span class="math display">\[\begin{align*}
-  \errorFunction(\pi) &amp; = - \sum_{i=1}^{\numData}\log p(\dataScalar_i|\pi)\\ &amp; = -\sum_{i=1}^{\numData} \dataScalar_i \log \pi - \sum_{i=1}^{\numData} (1-\dataScalar_i) \log (1-\pi)
-  \end{align*}\]</span></li>
+\errorFunction(\pi) &amp; = - \sum_{i=1}^{\numData}\log p(\dataScalar_i|\pi)\\ &amp; = -\sum_{i=1}^{\numData} \dataScalar_i \log \pi - \sum_{i=1}^{\numData} (1-\dataScalar_i) \log (1-\pi)
+\end{align*}\]</span></li>
 <li>Solution from above is <span class="math display">\[
-  \pi = \frac{\sum_{i=1}^{\numData} \dataScalar_i}{\numData}.
-  \]</span></li>
+\pi = \frac{\sum_{i=1}^{\numData} \dataScalar_i}{\numData}.
+\]</span></li>
 </ul>
 </section>
 <section id="fit-conditional" class="slide level3">
 <h3>Fit Conditional</h3>
 <ul>
 <li>Minimize conditional distribution: <span class="math display">\[
-  \errorFunction(\paramVector) = -\sum_{i=1}^{\numData} \sum_{j=1}^{\dataDim} \log p(\inputScalar_{i, j} |\dataScalar_i, \paramVector),
-  \]</span></li>
+\errorFunction(\paramVector) = -\sum_{i=1}^{\numData} \sum_{j=1}^{\dataDim} \log p(\inputScalar_{i, j} |\dataScalar_i, \paramVector),
+\]</span></li>
 <li>Implies making an assumption about it’s form.</li>
 <li>The right assumption will depend on the data.</li>
 <li>E.g. for real valued data, use a Gaussian <span class="math display">\[
-  p(\inputScalar_{i, j} | \dataScalar_i,\paramVector) =
+p(\inputScalar_{i, j} | \dataScalar_i,\paramVector) =
 \frac{1}{\sqrt{2\pi \dataStd_{\dataScalar_i,j}^2}} \exp \left(-\frac{(\inputScalar_{i,j} - \mu_{\dataScalar_i,
 j})^2}{\dataStd_{\dataScalar_i,j}^2}\right),
-  \]</span></li>
+\]</span></li>
 </ul>
+<p>The distributions show the parameters of the <em>independent</em> class conditional probabilities for no maternity services. It is a Bernoulli distribution with the parameter, <span class="math inline">\(\pi\)</span>, given by (<code>theta_0</code>) for the facilities without maternity services and <code>theta_1</code> for the facilities with maternity services. The parameters whow that, facilities with maternity services also are more likely to have other services such as grid electricity, emergency transport, immunization programs etc.</p>
+<p>The naive Bayes assumption says that the joint probability for these services is given by the product of each of these Bernoulli distributions.</p>
+<p>We have modelled the numbers in our table with a Gaussian density. Since several of these numbers are counts, a more appropriate distribution might be the Poisson distribution. But here we can see that the average number of nurses, healthworkers and doctors is <em>higher</em> in the facilities with maternal services (<code>mu_1</code>) than those without maternal services (<code>mu_0</code>). There is also a small difference between the mean latitude and longitudes. However, the <em>standard deviation</em> which would be given by the square root of the variance parameters (<code>sigma_0</code> and <code>sigma_1</code>) is large, implying that a difference in latitude and longitude may be due to sampling error. To be sure more analysis would be required.</p>
 </section>
 <section id="compute-posterior-for-test-point-label" class="slide level3">
 <h3>Compute Posterior for Test Point Label</h3>
 <ul>
 <li>We know that <span class="math display">\[
-  P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector)p(\dataVector,\inputMatrix, \inputVector^*|\paramVector) = p(\dataScalar*, \dataVector, \inputMatrix,\inputVector^*| \paramVector)
-  \]</span></li>
+P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector)p(\dataVector,\inputMatrix, \inputVector^*|\paramVector) = p(\dataScalar*, \dataVector, \inputMatrix,\inputVector^*| \paramVector)
+\]</span></li>
 <li>This implies <span class="math display">\[
-  P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector) = \frac{p(\dataScalar*, \dataVector, \inputMatrix, \inputVector^*| \paramVector)}{p(\dataVector, \inputMatrix, \inputVector^*|\paramVector)}
-  \]</span></li>
+P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector) = \frac{p(\dataScalar*, \dataVector, \inputMatrix, \inputVector^*| \paramVector)}{p(\dataVector, \inputMatrix, \inputVector^*|\paramVector)}
+\]</span></li>
 </ul>
 </section>
 <section id="compute-posterior-for-test-point-label-1" class="slide level3">
 <h3>Compute Posterior for Test Point Label</h3>
 <ul>
 <li>From conditional independence assumptions <span class="math display">\[
-  p(\dataScalar^*, \dataVector, \inputMatrix, \inputVector^*| \paramVector) = \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)
-  \]</span></li>
+p(\dataScalar^*, \dataVector, \inputMatrix, \inputVector^*| \paramVector) = \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)
+\]</span></li>
 <li>We also need <span class="math display">\[
-  p(\dataVector, \inputMatrix, \inputVector^*|\paramVector)\]</span> which can be found from <span class="math display">\[p(\dataScalar^*, \dataVector, \inputMatrix, \inputVector^*| \paramVector)
-  \]</span></li>
+p(\dataVector, \inputMatrix, \inputVector^*|\paramVector)\]</span> which can be found from <span class="math display">\[p(\dataScalar^*, \dataVector, \inputMatrix, \inputVector^*| \paramVector)
+\]</span></li>
 <li>Using the <em>sum rule</em> of probability, <span class="math display">\[
-  p(\dataVector, \inputMatrix, \inputVector^*|\paramVector) = \sum_{\dataScalar^*=0}^1 p(\dataScalar^*, \dataVector, \inputMatrix, \inputVector^*| \paramVector).
-  \]</span></li>
+p(\dataVector, \inputMatrix, \inputVector^*|\paramVector) = \sum_{\dataScalar^*=0}^1 p(\dataScalar^*, \dataVector, \inputMatrix, \inputVector^*| \paramVector).
+\]</span></li>
 </ul>
 </section>
 <section id="independence-assumptions" class="slide level3">
 <h3>Independence Assumptions</h3>
 <ul>
 <li>From independence assumptions <span class="math display">\[
-  p(\dataVector, \inputMatrix, \inputVector^*| \paramVector) = \sum_{\dataScalar^*=0}^1 \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi).
-  \]</span></li>
+p(\dataVector, \inputMatrix, \inputVector^*| \paramVector) = \sum_{\dataScalar^*=0}^1 \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi).
+\]</span></li>
 <li>Substitute both forms to recover, <span class="math display">\[
-  P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector)  = \frac{\prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)}{\sum_{\dataScalar^*=0}^1 \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)}
-  \]</span></li>
+P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector)  = \frac{\prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)}{\sum_{\dataScalar^*=0}^1 \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)}
+\]</span></li>
 </ul>
 </section>
 <section id="cancelation" class="slide level3">
 <h3>Cancelation</h3>
 <ul>
 <li>Note training data terms cancel. <span class="math display">\[
-  p(\dataScalar^*| \inputVector^*, \paramVector) = \frac{\prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)}{\sum_{\dataScalar^*=0}^1 \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)}
-  \]</span></li>
+p(\dataScalar^*| \inputVector^*, \paramVector) = \frac{\prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)}{\sum_{\dataScalar^*=0}^1 \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)}
+\]</span></li>
 <li>This formula is also fairly straightforward to implement for different class conditional distributions.</li>
 </ul>
 </section>
 <section id="laplace-smoothing" class="slide level3">
 <h3>Laplace Smoothing</h3>
-<iframe frameborder="0" scrolling="no" style="border:0px" src="http://books.google.co.uk/books?id=1YQPAAAAQAAJ&amp;pg=PA16&amp;output=embed" , width="700" height="500">
+<iframe frameborder="0" scrolling="no" style="border:0px" src="http://books.google.co.uk/books?id=1YQPAAAAQAAJ&amp;pg=PA16&amp;output=embed" width="700" height="500">
 </iframe>
 </section>
 <section id="pseudo-counts" class="slide level3">
@@ -1300,9 +1351,11 @@ j})^2}{\dataStd_{\dataScalar_i,j}^2}\right),
 <h3>Naive Bayes Summary</h3>
 <ul>
 <li>Model <em>full</em> joint distribution of data, <span class="math inline">\(p(\dataVector, \inputMatrix | \paramVector, \pi)\)</span></li>
-<li>Make conditional independence assumptions about the data.</li>
+<li>Make conditional independence assumptions about the data.
+<ul>
 <li>feature conditional independence</li>
 <li>data conditional independence</li>
+</ul></li>
 <li>Fast to implement, works on very large data.</li>
 <li>Despite simple assumptions can perform better than expected.</li>
 </ul>
@@ -1313,8 +1366,17 @@ j})^2}{\dataStd_{\dataScalar_i,j}^2}\right),
 <li>Chapter 5 of <span class="citation" data-cites="Rogers:book11">Rogers and Girolami (2011)</span> up to pg 179 (Section 5.1, and 5.2 up to 5.2.2).</li>
 </ul>
 </section>
-<section id="references" class="slide level3 unnumbered">
+<section id="references" class="slide level3">
 <h3>References</h3>
+</section>
+<section id="thanks" class="slide level3">
+<h3>Thanks!</h3>
+<ul>
+<li>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></li>
+<li>podcast: <a href="http://thetalkingmachines.com">The Talking Machines</a></li>
+<li>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></li>
+<li>Blog post on <a href="http://inverseprobability.com/2017/07/17/what-is-machine-learning">What is Machine Learning?</a></li>
+</ul>
 <div id="refs" class="references">
 <div id="ref-Bayes:doctrine63">
 <p>Bayes, T., 1763. An essay towards solving a problem in the doctrine of chances. Philosophical Transactions of the Royal Society 53, 370–418. <a href="https://doi.org/10.1098/rstl.1763.0053" class="uri">https://doi.org/10.1098/rstl.1763.0053</a></p>
@@ -1348,11 +1410,28 @@ j})^2}{\dataStd_{\dataScalar_i,j}^2}\right),
         history: true,
         // Transition style
         transition: 'None', // none/fade/slide/convex/concave/zoom
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
 
         // Optional reveal.js plugins
         dependencies: [
           { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/math/math.js', async: true },
           { src: 'reveal.js/plugin/notes/notes.js', async: true }
         ]
       });

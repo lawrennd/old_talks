@@ -29,7 +29,6 @@
   <script src="reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
     TeX: {
@@ -40,8 +39,8 @@
   <script src="figure-animate.js"></script>
 </head>
 <body>
-\[<!--\newcommand{\tk}[1]{}-->
-\newcommand{\tk}[1]{\textbf{TK}: #1}
+\[\newcommand{\tk}[1]{}
+%\newcommand{\tk}[1]{\textbf{TK}: #1}
 \newcommand{\Amatrix}{\mathbf{A}}
 \newcommand{\KL}[2]{\text{KL}\left( #1\,\|\,#2 \right)}
 \newcommand{\Kaast}{\kernelMatrix_{\mathbf{ \ast}\mathbf{ \ast}}}
@@ -374,9 +373,11 @@
 <ul>
 <li>Bridge between Academia, Industry, Public &amp; 3rd Sector</li>
 <li>Influence beyond the fellowship</li>
-<li>Leverage the Alan Turing Institute</li>
+<li>Leverage the Alan Turing Institute
+<ul>
 <li>Chris Holmes (ATI Programme Director for Health and Medical Sciences)</li>
 <li>Mark Girolami (ATI Programme Director for Data-Centric Engineering)</li>
+</ul></li>
 </ul>
 </section>
 <section id="lay-description" class="slide level3">
@@ -495,7 +496,7 @@
 <section id="bayesian-optimisation" class="slide level3">
 <h3>Bayesian Optimisation</h3>
 <ul>
-<li>Acquisition function influenced by component's objective.</li>
+<li>Acquisition function influenced by component’s objective.</li>
 </ul>
 </section>
 <section id="bayesian-systems-optimisation" class="slide level3">
@@ -548,17 +549,21 @@
 <h3>Why not in a Company?</h3>
 <ul>
 <li>Big tech companies are too large to be responsive to user needs.</li>
-<li>Companies do not have convening power:</li>
+<li>Companies do not have convening power:
+<ul>
 <li>Open source, community building. Sweet spot is close interaction between industry and academia.</li>
+</ul></li>
 <li>Success is <em>not</em> one company, but <em>many</em> companies</li>
 </ul>
 </section>
 <section id="why-a-fellowship" class="slide level3">
 <h3>Why a Fellowship?</h3>
 <ul>
-<li>Project critically relies on applicants convening power.</li>
+<li>Project critically relies on applicants convening power.
+<ul>
 <li>Also technical ability as a research leader.</li>
 <li>Industrial experience from Amazon at leading systems.</li>
+</ul></li>
 <li>Candidate develops as an advocate for an internationally recognized advocate for AI in UK.</li>
 </ul>
 </section>
@@ -577,11 +582,28 @@
         history: true,
         // Transition style
         transition: 'None', // none/fade/slide/convex/concave/zoom
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
 
         // Optional reveal.js plugins
         dependencies: [
           { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/math/math.js', async: true },
           { src: 'reveal.js/plugin/notes/notes.js', async: true }
         ]
       });

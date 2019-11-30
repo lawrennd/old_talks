@@ -389,7 +389,6 @@
 <blockquote>
 <p>It used to be true that computers only did what we programmed them to do, but today AI systems are learning from our data. This introduces new problems in how these systems respond to their environment.</p>
 <p>We need to better monitor how data is influencing decision making and take corrective action as required.</p>
-<p>This project addresses that challenge.</p>
 </blockquote>
 </section>
 <section id="aim" class="slide level3">
@@ -400,8 +399,8 @@
 <li>Bayesian Optimisation to Bayesian System Optimisation</li>
 </ul>
 </section>
-<section id="motivating-example" class="slide level3">
-<h3>Motivating Example</h3>
+<section id="motivating-examples" class="slide level3">
+<h3>Motivating Examples</h3>
 </section>
 <section id="safeboda" class="slide level3">
 <h3>SafeBoda</h3>
@@ -418,6 +417,36 @@
 <blockquote>
 <p>With road accidents set to match HIV/AIDS as the highest cause of death in low/middle income countries by 2030, SafeBoda’s aim is to modernise informal transportation and ensure safe access to mobility.</p>
 </blockquote>
+</section>
+<section id="turing-ai-fellowship-1" class="slide level3">
+<h3>Turing AI Fellowship</h3>
+<ul>
+<li><p>Five year program in collaboration with</p>
+<center>
+<a href="https://www.elementai.com/">Element AI</a>
+</center>
+<center>
+<a href="https://openml.org">Open ML</a>
+</center>
+<center>
+<a href="https://www.birmingham.ac.uk/staff/profiles/law/delacroix-sylvie.aspx">Professor Sylvie Delacroix</a>
+</center>
+<center>
+<a href="http://datascienceafrica.org">Data Science Africa</a>
+</center></li>
+</ul>
+<div class="fragment">
+<center>
+and
+</center>
+<center>
+Your Name Here
+</center>
+</div>
+</section>
+<section id="inclusive-project" class="slide level3">
+<h3>Inclusive Project</h3>
+<p>There is no way that the team we’re building will be able to deliver on this agenda alone, so please join us in addressing these challenges!</p>
 </section>
 <section id="artificial-vs-natural-systems" class="slide level3">
 <h3>Artificial vs Natural Systems</h3>
@@ -562,9 +591,6 @@
 </iframe>
 </div>
 </div>
-<p>You can also check this</p>
-<p>and this</p>
-<p>.</p>
 <!-- remove the data challenge -->
 <!-- SECTION The Three Ds of Machine Learning Systems Design -->
 </section>
@@ -578,7 +604,6 @@
 <li>Data</li>
 <li>Deployment</li>
 </ol>
-<p>You can also check my</p>
 </section>
 <section id="the-three-ds-of-machine-learning-systems-design-1" class="slide level3">
 <h3>The Three Ds of Machine Learning Systems Design</h3>
@@ -726,6 +751,14 @@
 <li>Update our notions of testing: <em>progression testing</em></li>
 </ul>
 </section>
+<section id="data-oriented-architectures" class="slide level3">
+<h3>Data Oriented Architectures</h3>
+<ul>
+<li>Convert data to a <em>first-class citizen</em>.</li>
+<li>View system as operations on <em>data streams</em>.</li>
+<li>Expose data operations in a programmatic way.</li>
+</ul>
+</section>
 <section id="data-orientated-architectures" class="slide level3">
 <h3>Data Orientated Architectures</h3>
 <ul>
@@ -735,9 +768,18 @@
 </ul></li>
 <li>Move from
 <ol type="1">
-<li>software orientated architectures</li>
+<li>service orientated architectures</li>
 <li><em>data orientated architectures</em></li>
 </ol></li>
+</ul>
+</section>
+<section id="streaming-system" class="slide level3">
+<h3>Streaming System</h3>
+<ul>
+<li>Move from pull updates to push updates.</li>
+<li>Operate on rows rather than columns.</li>
+<li>Lead to stateless logic: persistence handled by system.</li>
+<li>Example Apache Kafka + Apache Flink</li>
 </ul>
 </section>
 <section id="streaming-architectures" class="slide level3">
@@ -750,6 +792,113 @@
 <li>They persist through storing state on <em>streams</em></li>
 </ul></li>
 <li>This brings the data <em>inside out</em></li>
+</ul>
+</section>
+<section id="apache-flink" class="slide level3">
+<h3>Apache Flink</h3>
+<ul>
+<li>Streams and transformations</li>
+<li>a stream is a (potentially never-ending) flow of data records</li>
+<li>a transformation: streams as input, produces transformed streams as output</li>
+</ul>
+</section>
+<section id="join" class="slide level3">
+<h3>Join</h3>
+<pre><code>stream.join(otherStream)
+    .where(&lt;KeySelector&gt;)
+    .equalTo(&lt;KeySelector&gt;)
+    .window(&lt;WindowAssigner&gt;)
+    .apply(&lt;JoinFunction&gt;)</code></pre>
+</section>
+<section id="milan" class="slide level3">
+<h3>Milan</h3>
+<ul>
+<li>Data Oriented Programming Language and runtime.</li>
+<li>DSL Embedded in Scala converts to an intermediate langugage.</li>
+<li>Intermediate language for compilation on different platforms (currently Flink)</li>
+</ul>
+<p><a href="https://github.com/amzn/milan" class="uri">https://github.com/amzn/milan</a></p>
+</section>
+<section id="trading-system" class="slide level3">
+<h3>Trading System</h3>
+<ul>
+<li>High frequency share trading.</li>
+<li>Stream of prices with millisecond updates.</li>
+<li>Trades required on millisecond time line</li>
+</ul>
+</section>
+<section id="real-price" class="slide level3">
+<h3>Real Price</h3>
+<object class="svgplot " data="../slides/diagrams/data-science/real-prices.svg" width="80%" style=" ">
+</object>
+</section>
+<section id="future-price" class="slide level3">
+<h3>Future Price</h3>
+<object class="svgplot " data="../slides/diagrams/data-science/hypothetical-prices.svg" width="80%" style=" ">
+</object>
+</section>
+<section id="hypothetical-streams" class="slide level3">
+<h3>Hypothetical Streams</h3>
+<ul>
+<li>Real stream — share prices
+<ul>
+<li>derived <em>hypothetical</em> stream — share prices in future.</li>
+</ul></li>
+<li>Hypothetical constrained by
+<ul>
+<li>input constraints.</li>
+<li>decision functional</li>
+<li>computational requirements (latency)</li>
+</ul></li>
+</ul>
+</section>
+<section id="hypothetical-advantage" class="slide level3">
+<h3>Hypothetical Advantage</h3>
+<ul>
+<li>Modelling is now required.</li>
+<li>But modelling is declared in the ecosystem.</li>
+<li>If it’s manual, warnings can be used
+<ul>
+<li>calibration, fairness, dataset shift</li>
+</ul></li>
+<li>Opens door to Auto AI.</li>
+</ul>
+</section>
+<section id="ride-sharing-service-oriented" class="slide level3">
+<h3>Ride Sharing: Service Oriented</h3>
+<div class="figure">
+<div id="ride-share-service-soa-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/data-science/ride-share-service-soa.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+</section>
+<section id="ride-sharing-data-oriented" class="slide level3">
+<h3>Ride Sharing: Data Oriented</h3>
+<div class="figure">
+<div id="ride-share-service-doa-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/data-science/ride-share-service-doa.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+</section>
+<section id="ride-sharing-hypothetical" class="slide level3">
+<h3>Ride Sharing: Hypothetical</h3>
+<div class="figure">
+<div id="ride-share-service-doa-hypothetical-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/data-science/ride-share-service-doa-hypothetical.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+</section>
+<section id="information-dynamics" class="slide level3">
+<h3>Information Dynamics</h3>
+<ul>
+<li>Potential for information feedback loops.</li>
+<li>Hypothetical streams are instantiated.</li>
+<li>Nature hypothesis (e.g. price prediction) can effect reality.</li>
+<li>Leads to information dynamics, similar to dynamics of governors.</li>
+<li>See e.g. <a href="https://www.gla.ac.uk/schools/computing/research/researchsections/ida-section/closedloop/">Closed Loop Data Science</a> at Glasgow.</li>
 </ul>
 </section>
 <section id="the-machine-learning-bit" class="slide level3">
@@ -894,7 +1043,7 @@
 <ul>
 <li>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></li>
 <li>podcast: <a href="http://thetalkingmachines.com">The Talking Machines</a></li>
-<li><p>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></p></li>
+<li>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></li>
 <li><p>Blog post on <a href="http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence">Natural and Artificial Intelligence</a></p></li>
 <li><p>Blog post on <a href="http://inverseprobability.com/2017/11/15/decision-making">Decision Making and Diversity</a></p></li>
 <li><p>Blog post on <a href="http://inverseprobability.com/2018/02/06/natural-and-artificial-intelligence">Natural vs Artifical Intelligence</a></p></li>

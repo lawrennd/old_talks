@@ -39,8 +39,8 @@
   <script src="figure-animate.js"></script>
 </head>
 <body>
-\[<!--\newcommand{\tk}[1]{}-->
-\newcommand{\tk}[1]{\textbf{TK}: #1}
+\[\newcommand{\tk}[1]{}
+%\newcommand{\tk}[1]{\textbf{TK}: #1}
 \newcommand{\Amatrix}{\mathbf{A}}
 \newcommand{\KL}[2]{\text{KL}\left( #1\,\|\,#2 \right)}
 \newcommand{\Kaast}{\kernelMatrix_{\mathbf{ \ast}\mathbf{ \ast}}}
@@ -367,8 +367,8 @@
 <section id="bits-and-atoms" class="slide level3">
 <h3>Bits and Atoms</h3>
 </section>
-<section id="machine-learning-in-supply-chain" class="slide level3">
-<h3>Machine Learning in Supply Chain</h3>
+<section id="supply-chain" class="slide level3">
+<h3>Supply Chain</h3>
 <div class="figure">
 <div id="packhorse-bridge-burbage-brook-figure" class="figure-frame">
 <div class="centered centered" style="">
@@ -377,8 +377,8 @@
 </div>
 </div>
 </section>
-<section id="section" class="slide level3">
-<h3></h3>
+<section id="cromford" class="slide level3">
+<h3>Cromford</h3>
 <div class="figure">
 <div id="cromford-mill-figure" class="figure-frame">
 <div class="centered centered" style="">
@@ -387,7 +387,7 @@
 </div>
 </div>
 </section>
-<section id="section-1" class="slide level3">
+<section id="section" class="slide level3">
 <h3></h3>
 <div class="figure">
 <div id="container-2539942_1920-figure" class="figure-frame">
@@ -417,26 +417,16 @@
 </div>
 </div>
 </section>
-<section id="machine-learning-in-supply-chain-1" class="slide level3">
+<section id="machine-learning-in-supply-chain" class="slide level3">
 <h3>Machine Learning in Supply Chain</h3>
 <ul>
 <li><em>Supply chain</em>: Large Automated Decision Making Network</li>
-<li>Amazon’s supply chain: Possibly the world’s largest ‘AI’</li>
 <li>Major Challenge:
 <ul>
 <li>We have a <em>mechanistic</em> understanding of supply chain.</li>
 <li>Machine learning is a <em>data driven</em> technology.</li>
 </ul></li>
 </ul>
-</section>
-<section id="amazon-supply-chain-optimization" class="slide level3">
-<h3>Amazon Supply Chain Optimization</h3>
-<div class="figure">
-<div id="supply-chain-optimization-team-figure" class="figure-frame">
-<iframe width="800" height="600" src="https://www.youtube.com/embed/ncwsr1Of6Cw?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-</iframe>
-</div>
-</div>
 </section>
 <section id="motto" class="slide level3">
 <h3>Motto</h3>
@@ -448,7 +438,7 @@
 <section id="from-model-to-decision" class="slide level3">
 <h3>From Model to Decision</h3>
 </section>
-<section id="section-2" class="slide level3">
+<section id="section-1" class="slide level3">
 <h3></h3>
 <table>
 <tr>
@@ -498,6 +488,20 @@
 <li>Expose data operations in a programmatic way.</li>
 </ul>
 </section>
+<section id="data-orientated-architectures" class="slide level3">
+<h3>Data Orientated Architectures</h3>
+<ul>
+<li>Historically we’ve been <em>software first</em>
+<ul>
+<li>A necessary but not sufficient condition for <em>data first</em></li>
+</ul></li>
+<li>Move from
+<ol type="1">
+<li>service orientated architectures</li>
+<li><em>data orientated architectures</em></li>
+</ol></li>
+</ul>
+</section>
 <section id="streaming-system" class="slide level3">
 <h3>Streaming System</h3>
 <ul>
@@ -505,6 +509,18 @@
 <li>Operate on rows rather than columns.</li>
 <li>Lead to stateless logic: persistence handled by system.</li>
 <li>Example Apache Kafka + Apache Flink</li>
+</ul>
+</section>
+<section id="streaming-architectures" class="slide level3">
+<h3>Streaming Architectures</h3>
+<ul>
+<li>AWS Kinesis, Apache Kafka</li>
+<li>Not just about streaming
+<ul>
+<li>Nodes in the architecture are <em>stateless</em></li>
+<li>They persist through storing state on <em>streams</em></li>
+</ul></li>
+<li>This brings the data <em>inside out</em></li>
 </ul>
 </section>
 <section id="apache-flink" class="slide level3">
@@ -522,6 +538,15 @@
     .equalTo(&lt;KeySelector&gt;)
     .window(&lt;WindowAssigner&gt;)
     .apply(&lt;JoinFunction&gt;)</code></pre>
+</section>
+<section id="milan" class="slide level3">
+<h3>Milan</h3>
+<ul>
+<li>Data Oriented Programming Language and runtime.</li>
+<li>DSL Embedded in Scala converts to an intermediate langugage.</li>
+<li>Intermediate language for compilation on different platforms (currently Flink)</li>
+</ul>
+<p><a href="https://github.com/amzn/milan" class="uri">https://github.com/amzn/milan</a></p>
 </section>
 <section id="trading-system" class="slide level3">
 <h3>Trading System</h3>
@@ -565,11 +590,27 @@
 <ul>
 <li>calibration, fairness, dataset shift</li>
 </ul></li>
-<li>Opens door to auto-adaptable ML.</li>
+<li>Opens door to Auto AI.</li>
 </ul>
 </section>
-<section id="ride-sharing-system" class="slide level3">
-<h3>Ride Sharing System</h3>
+<section id="safeboda" class="slide level3">
+<h3>SafeBoda</h3>
+<div class="figure">
+<div id="safe-boda-system-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/ai/safe-boda.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+</section>
+<section id="safeboda-1" class="slide level3">
+<h3>SafeBoda</h3>
+<blockquote>
+<p>With road accidents set to match HIV/AIDS as the highest cause of death in low/middle income countries by 2030, SafeBoda’s aim is to modernise informal transportation and ensure safe access to mobility.</p>
+</blockquote>
+</section>
+<section id="ride-allocation-prediction" class="slide level3">
+<h3>Ride Allocation Prediction</h3>
 <div class="figure">
 <div id="ride-allocation-system-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/ai/ride-allocation-prediction.svg" width="60%" style=" ">
@@ -579,18 +620,30 @@
 </section>
 <section id="ride-sharing-service-oriented" class="slide level3">
 <h3>Ride Sharing: Service Oriented</h3>
+<div class="figure">
+<div id="ride-share-service-soa-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/data-science/ride-share-service-soa.svg" width="80%" style=" ">
 </object>
+</div>
+</div>
 </section>
 <section id="ride-sharing-data-oriented" class="slide level3">
 <h3>Ride Sharing: Data Oriented</h3>
+<div class="figure">
+<div id="ride-share-service-doa-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/data-science/ride-share-service-doa.svg" width="80%" style=" ">
 </object>
+</div>
+</div>
 </section>
 <section id="ride-sharing-hypothetical" class="slide level3">
 <h3>Ride Sharing: Hypothetical</h3>
+<div class="figure">
+<div id="ride-share-service-doa-hypothetical-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/data-science/ride-share-service-doa-hypothetical.svg" width="80%" style=" ">
 </object>
+</div>
+</div>
 </section>
 <section id="information-dynamics" class="slide level3">
 <h3>Information Dynamics</h3>
@@ -600,12 +653,6 @@
 <li>Nature hypothesis (e.g. price prediction) can effect reality.</li>
 <li>Leads to information dynamics, similar to dynamics of governors.</li>
 <li>See e.g. <a href="https://www.gla.ac.uk/schools/computing/research/researchsections/ida-section/closedloop/">Closed Loop Data Science</a> at Glasgow.</li>
-</ul>
-</section>
-<section id="our-efforts" class="slide level3">
-<h3>Our Efforts</h3>
-<ul>
-<li>Our framework due for release end of June 2019 (pending approval).</li>
 </ul>
 </section>
 <section id="autonomous-vehicles" class="slide level3">
@@ -675,7 +722,7 @@
 <h3>Deep Emulation</h3>
 <div class="figure">
 <div id="ml-system-downstream-pedestrain-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-pedestrian000.svg" width="80%" style=" ">
+<object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-rider-allocation000.svg" width="75%" style=" ">
 </object>
 </div>
 </div>
@@ -690,7 +737,7 @@
 <h3>Deep Emulation</h3>
 <div class="figure">
 <div id="ml-system-downstream-pedestrain-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-pedestrian001.svg" width="80%" style=" ">
+<object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-rider-allocation001.svg" width="75%" style=" ">
 </object>
 </div>
 </div>
@@ -699,7 +746,7 @@
 <h3>Deep Emulation</h3>
 <div class="figure">
 <div id="ml-system-downstream-pedestrain-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-pedestrian.svg" width="80%" style=" ">
+<object class="svgplot " data="../slides/diagrams/ai/ml-system-downstream-rider-allocation.svg" width="75%" style=" ">
 </object>
 </div>
 </div>
@@ -707,7 +754,7 @@
 <section id="bayesian-system-optimization" class="slide level3">
 <h3>Bayesian <em>System</em> Optimization</h3>
 <ul>
-<li>Aim: maintain interpretable compoents.</li>
+<li>Aim: maintain interpretable components.</li>
 <li>Monitor downstream/upstream effects through emulation.</li>
 <li>Optimize individual components considering upstream and downstream.</li>
 </ul>
@@ -822,12 +869,12 @@
 </div>
 </div>
 </section>
-<section id="deep-neural-network-2" class="slide level3">
-<h3>Deep Neural Network</h3>
+<section id="bottleneck-layers-in-deep-neural-networks" class="slide level3">
+<h3>Bottleneck Layers in Deep Neural Networks</h3>
 <object class="svgplot " data="../slides/diagrams/deepgp/deep-nn-bottleneck1.svg" width="60%" style=" ">
 </object>
 </section>
-<section id="deep-neural-network-3" class="slide level3">
+<section id="deep-neural-network-2" class="slide level3">
 <h3>Deep Neural Network</h3>
 <object class="svgplot " data="../slides/diagrams/deepgp/deep-nn-bottleneck2.svg" width="60%" style=" ">
 </object>
@@ -955,7 +1002,7 @@
 </div>
 </div>
 </section>
-<section id="section-3" class="slide level3">
+<section id="section-2" class="slide level3">
 <h3></h3>
 <p>Predict Perioperative Risk of Clostridium Difficile Infection Following Colon Surgery <span class="citation" data-cites="Steele:predictive12">(Steele et al., 2012)</span></p>
 <div class="figure">
@@ -969,10 +1016,10 @@
 <section id="conclusion" class="slide level3">
 <h3>Conclusion</h3>
 <ul>
-<li>Challenges in <em>design</em>, <em>data curation</em> and <em>model deployment</em> for ML.</li>
+<li>Challenges in <em>decomposition</em>, <em>data</em> and <em>model deployment</em> for ML.</li>
 <li>Data oriented architectures and data first thinking are the solution.</li>
 <li>Data oriented programming creates systems that are ready to deploy.</li>
-<li>Opens the door to auto-adaptive ML and information dynamics analysis.</li>
+<li>Opens the door to AutoAI and information dynamics analysis.</li>
 </ul>
 <!--
 
@@ -1149,8 +1196,8 @@
 <ul>
 <li>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></li>
 <li>podcast: <a href="http://thetalkingmachines.com">The Talking Machines</a></li>
-<li><p>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></p></li>
-<li><p>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></p></li>
+<li>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></li>
+<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
 </ul>
 </section>
 <section id="references" class="slide level3 unnumbered">

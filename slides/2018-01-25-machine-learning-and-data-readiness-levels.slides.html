@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="author" content="Neil D. Lawrence">
+  <meta name="dcterms.date" content="2018-01-25">
   <title>Machine Learning and Data Readiness Levels</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -12,7 +12,7 @@
   <style type="text/css">
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
-      div.line-block{white-space: pre-line;}
+      span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
   <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
@@ -28,499 +28,496 @@
   <!--[if lt IE 9]>
   <script src="reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
-      <script type="text/javascript" src="svg_mathjax.js">
-      </script>
-      <script type="text/javascript">
-          new Svg_MathJax().install();
-      </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    TeX: {
+         extensions: ["color.js"]
+      }
+    });
+  </script>
+  <script src="figure-animate.js"></script>
 </head>
 <body>
+\[\newcommand{\tk}[1]{}
+%\newcommand{\tk}[1]{\textbf{TK}: #1}
+\newcommand{\Amatrix}{\mathbf{A}}
+\newcommand{\KL}[2]{\text{KL}\left( #1\,\|\,#2 \right)}
+\newcommand{\Kaast}{\kernelMatrix_{\mathbf{ \ast}\mathbf{ \ast}}}
+\newcommand{\Kastu}{\kernelMatrix_{\mathbf{ \ast} \inducingVector}}
+\newcommand{\Kff}{\kernelMatrix_{\mappingFunctionVector \mappingFunctionVector}}
+\newcommand{\Kfu}{\kernelMatrix_{\mappingFunctionVector \inducingVector}}
+\newcommand{\Kuast}{\kernelMatrix_{\inducingVector \bf\ast}}
+\newcommand{\Kuf}{\kernelMatrix_{\inducingVector \mappingFunctionVector}}
+\newcommand{\Kuu}{\kernelMatrix_{\inducingVector \inducingVector}}
+\newcommand{\Kuui}{\Kuu^{-1}}
+\newcommand{\Qaast}{\mathbf{Q}_{\bf \ast \ast}}
+\newcommand{\Qastf}{\mathbf{Q}_{\ast \mappingFunction}}
+\newcommand{\Qfast}{\mathbf{Q}_{\mappingFunctionVector \bf \ast}}
+\newcommand{\Qff}{\mathbf{Q}_{\mappingFunctionVector \mappingFunctionVector}}
+\newcommand{\aMatrix}{\mathbf{A}}
+\newcommand{\aScalar}{a}
+\newcommand{\aVector}{\mathbf{a}}
+\newcommand{\acceleration}{a}
+\newcommand{\bMatrix}{\mathbf{B}}
+\newcommand{\bScalar}{b}
+\newcommand{\bVector}{\mathbf{b}}
+\newcommand{\basisFunc}{\phi}
+\newcommand{\basisFuncVector}{\boldsymbol{ \basisFunc}}
+\newcommand{\basisFunction}{\phi}
+\newcommand{\basisLocation}{\mu}
+\newcommand{\basisMatrix}{\boldsymbol{ \Phi}}
+\newcommand{\basisScalar}{\basisFunction}
+\newcommand{\basisVector}{\boldsymbol{ \basisFunction}}
+\newcommand{\activationFunction}{\phi}
+\newcommand{\activationMatrix}{\boldsymbol{ \Phi}}
+\newcommand{\activationScalar}{\basisFunction}
+\newcommand{\activationVector}{\boldsymbol{ \basisFunction}}
+\newcommand{\bigO}{\mathcal{O}}
+\newcommand{\binomProb}{\pi}
+\newcommand{\cMatrix}{\mathbf{C}}
+\newcommand{\cbasisMatrix}{\hat{\boldsymbol{ \Phi}}}
+\newcommand{\cdataMatrix}{\hat{\dataMatrix}}
+\newcommand{\cdataScalar}{\hat{\dataScalar}}
+\newcommand{\cdataVector}{\hat{\dataVector}}
+\newcommand{\centeredKernelMatrix}{\mathbf{ \MakeUppercase{\centeredKernelScalar}}}
+\newcommand{\centeredKernelScalar}{b}
+\newcommand{\centeredKernelVector}{\centeredKernelScalar}
+\newcommand{\centeringMatrix}{\mathbf{H}}
+\newcommand{\chiSquaredDist}[2]{\chi_{#1}^{2}\left(#2\right)}
+\newcommand{\chiSquaredSamp}[1]{\chi_{#1}^{2}}
+\newcommand{\conditionalCovariance}{\boldsymbol{ \Sigma}}
+\newcommand{\coregionalizationMatrix}{\mathbf{B}}
+\newcommand{\coregionalizationScalar}{b}
+\newcommand{\coregionalizationVector}{\mathbf{ \coregionalizationScalar}}
+\newcommand{\covDist}[2]{\text{cov}_{#2}\left(#1\right)}
+\newcommand{\covSamp}[1]{\text{cov}\left(#1\right)}
+\newcommand{\covarianceScalar}{c}
+\newcommand{\covarianceVector}{\mathbf{ \covarianceScalar}}
+\newcommand{\covarianceMatrix}{\mathbf{C}}
+\newcommand{\covarianceMatrixTwo}{\boldsymbol{ \Sigma}}
+\newcommand{\croupierScalar}{s}
+\newcommand{\croupierVector}{\mathbf{ \croupierScalar}}
+\newcommand{\croupierMatrix}{\mathbf{ \MakeUppercase{\croupierScalar}}}
+\newcommand{\dataDim}{p}
+\newcommand{\dataIndex}{i}
+\newcommand{\dataIndexTwo}{j}
+\newcommand{\dataMatrix}{\mathbf{Y}}
+\newcommand{\dataScalar}{y}
+\newcommand{\dataSet}{\mathcal{D}}
+\newcommand{\dataStd}{\sigma}
+\newcommand{\dataVector}{\mathbf{ \dataScalar}}
+\newcommand{\decayRate}{d}
+\newcommand{\degreeMatrix}{\mathbf{ \MakeUppercase{\degreeScalar}}}
+\newcommand{\degreeScalar}{d}
+\newcommand{\degreeVector}{\mathbf{ \degreeScalar}}
+% Already defined by latex
+%\newcommand{\det}[1]{\left|#1\right|}
+\newcommand{\diag}[1]{\text{diag}\left(#1\right)}
+\newcommand{\diagonalMatrix}{\mathbf{D}}
+\newcommand{\diff}[2]{\frac{\text{d}#1}{\text{d}#2}}
+\newcommand{\diffTwo}[2]{\frac{\text{d}^2#1}{\text{d}#2^2}}
+\newcommand{\displacement}{x}
+\newcommand{\displacementVector}{\textbf{\displacement}}
+\newcommand{\distanceMatrix}{\mathbf{ \MakeUppercase{\distanceScalar}}}
+\newcommand{\distanceScalar}{d}
+\newcommand{\distanceVector}{\mathbf{ \distanceScalar}}
+\newcommand{\eigenvaltwo}{\ell}
+\newcommand{\eigenvaltwoMatrix}{\mathbf{L}}
+\newcommand{\eigenvaltwoVector}{\mathbf{l}}
+\newcommand{\eigenvalue}{\lambda}
+\newcommand{\eigenvalueMatrix}{\boldsymbol{ \Lambda}}
+\newcommand{\eigenvalueVector}{\boldsymbol{ \lambda}}
+\newcommand{\eigenvector}{\mathbf{ \eigenvectorScalar}}
+\newcommand{\eigenvectorMatrix}{\mathbf{U}}
+\newcommand{\eigenvectorScalar}{u}
+\newcommand{\eigenvectwo}{\mathbf{v}}
+\newcommand{\eigenvectwoMatrix}{\mathbf{V}}
+\newcommand{\eigenvectwoScalar}{v}
+\newcommand{\entropy}[1]{\mathcal{H}\left(#1\right)}
+\newcommand{\errorFunction}{E}
+\newcommand{\expDist}[2]{\left<#1\right>_{#2}}
+\newcommand{\expSamp}[1]{\left<#1\right>}
+\newcommand{\expectation}[1]{\left\langle #1 \right\rangle }
+\newcommand{\expectationDist}[2]{\left\langle #1 \right\rangle _{#2}}
+\newcommand{\expectedDistanceMatrix}{\mathcal{D}}
+\newcommand{\eye}{\mathbf{I}}
+\newcommand{\fantasyDim}{r}
+\newcommand{\fantasyMatrix}{\mathbf{ \MakeUppercase{\fantasyScalar}}}
+\newcommand{\fantasyScalar}{z}
+\newcommand{\fantasyVector}{\mathbf{ \fantasyScalar}}
+\newcommand{\featureStd}{\varsigma}
+\newcommand{\gammaCdf}[3]{\mathcal{GAMMA CDF}\left(#1|#2,#3\right)}
+\newcommand{\gammaDist}[3]{\mathcal{G}\left(#1|#2,#3\right)}
+\newcommand{\gammaSamp}[2]{\mathcal{G}\left(#1,#2\right)}
+\newcommand{\gaussianDist}[3]{\mathcal{N}\left(#1|#2,#3\right)}
+\newcommand{\gaussianSamp}[2]{\mathcal{N}\left(#1,#2\right)}
+\newcommand{\given}{|}
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\heaviside}{H}
+\newcommand{\hiddenMatrix}{\mathbf{ \MakeUppercase{\hiddenScalar}}}
+\newcommand{\hiddenScalar}{h}
+\newcommand{\hiddenVector}{\mathbf{ \hiddenScalar}}
+\newcommand{\identityMatrix}{\eye}
+\newcommand{\inducingInputScalar}{z}
+\newcommand{\inducingInputVector}{\mathbf{ \inducingInputScalar}}
+\newcommand{\inducingInputMatrix}{\mathbf{Z}}
+\newcommand{\inducingScalar}{u}
+\newcommand{\inducingVector}{\mathbf{ \inducingScalar}}
+\newcommand{\inducingMatrix}{\mathbf{U}}
+\newcommand{\inlineDiff}[2]{\text{d}#1/\text{d}#2}
+\newcommand{\inputDim}{q}
+\newcommand{\inputMatrix}{\mathbf{X}}
+\newcommand{\inputScalar}{x}
+\newcommand{\inputSpace}{\mathcal{X}}
+\newcommand{\inputVals}{\inputVector}
+\newcommand{\inputVector}{\mathbf{ \inputScalar}}
+\newcommand{\iterNum}{k}
+\newcommand{\kernel}{\kernelScalar}
+\newcommand{\kernelMatrix}{\mathbf{K}}
+\newcommand{\kernelScalar}{k}
+\newcommand{\kernelVector}{\mathbf{ \kernelScalar}}
+\newcommand{\kff}{\kernelScalar_{\mappingFunction \mappingFunction}}
+\newcommand{\kfu}{\kernelVector_{\mappingFunction \inducingScalar}}
+\newcommand{\kuf}{\kernelVector_{\inducingScalar \mappingFunction}}
+\newcommand{\kuu}{\kernelVector_{\inducingScalar \inducingScalar}}
+\newcommand{\lagrangeMultiplier}{\lambda}
+\newcommand{\lagrangeMultiplierMatrix}{\boldsymbol{ \Lambda}}
+\newcommand{\lagrangian}{L}
+\newcommand{\laplacianFactor}{\mathbf{ \MakeUppercase{\laplacianFactorScalar}}}
+\newcommand{\laplacianFactorScalar}{m}
+\newcommand{\laplacianFactorVector}{\mathbf{ \laplacianFactorScalar}}
+\newcommand{\laplacianMatrix}{\mathbf{L}}
+\newcommand{\laplacianScalar}{\ell}
+\newcommand{\laplacianVector}{\mathbf{ \ell}}
+\newcommand{\latentDim}{q}
+\newcommand{\latentDistanceMatrix}{\boldsymbol{ \Delta}}
+\newcommand{\latentDistanceScalar}{\delta}
+\newcommand{\latentDistanceVector}{\boldsymbol{ \delta}}
+\newcommand{\latentForce}{f}
+\newcommand{\latentFunction}{u}
+\newcommand{\latentFunctionVector}{\mathbf{ \latentFunction}}
+\newcommand{\latentFunctionMatrix}{\mathbf{ \MakeUppercase{\latentFunction}}}
+\newcommand{\latentIndex}{j}
+\newcommand{\latentScalar}{z}
+\newcommand{\latentVector}{\mathbf{ \latentScalar}}
+\newcommand{\latentMatrix}{\mathbf{Z}}
+\newcommand{\learnRate}{\eta}
+\newcommand{\lengthScale}{\ell}
+\newcommand{\rbfWidth}{\ell}
+\newcommand{\likelihoodBound}{\mathcal{L}}
+\newcommand{\likelihoodFunction}{L}
+\newcommand{\locationScalar}{\mu}
+\newcommand{\locationVector}{\boldsymbol{ \locationScalar}}
+\newcommand{\locationMatrix}{\mathbf{M}}
+\newcommand{\variance}[1]{\text{var}\left( #1 \right)}
+\newcommand{\mappingFunction}{f}
+\newcommand{\mappingFunctionMatrix}{\mathbf{F}}
+\newcommand{\mappingFunctionTwo}{g}
+\newcommand{\mappingFunctionTwoMatrix}{\mathbf{G}}
+\newcommand{\mappingFunctionTwoVector}{\mathbf{ \mappingFunctionTwo}}
+\newcommand{\mappingFunctionVector}{\mathbf{ \mappingFunction}}
+\newcommand{\scaleScalar}{s}
+\newcommand{\mappingScalar}{w}
+\newcommand{\mappingVector}{\mathbf{ \mappingScalar}}
+\newcommand{\mappingMatrix}{\mathbf{W}}
+\newcommand{\mappingScalarTwo}{v}
+\newcommand{\mappingVectorTwo}{\mathbf{ \mappingScalarTwo}}
+\newcommand{\mappingMatrixTwo}{\mathbf{V}}
+\newcommand{\maxIters}{K}
+\newcommand{\meanMatrix}{\mathbf{M}}
+\newcommand{\meanScalar}{\mu}
+\newcommand{\meanTwoMatrix}{\mathbf{M}}
+\newcommand{\meanTwoScalar}{m}
+\newcommand{\meanTwoVector}{\mathbf{ \meanTwoScalar}}
+\newcommand{\meanVector}{\boldsymbol{ \meanScalar}}
+\newcommand{\mrnaConcentration}{m}
+\newcommand{\naturalFrequency}{\omega}
+\newcommand{\neighborhood}[1]{\mathcal{N}\left( #1 \right)}
+\newcommand{\neilurl}{http://inverseprobability.com/}
+\newcommand{\noiseMatrix}{\boldsymbol{ E}}
+\newcommand{\noiseScalar}{\epsilon}
+\newcommand{\noiseVector}{\boldsymbol{ \epsilon}}
+\newcommand{\norm}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\normalizedLaplacianMatrix}{\hat{\mathbf{L}}}
+\newcommand{\normalizedLaplacianScalar}{\hat{\ell}}
+\newcommand{\normalizedLaplacianVector}{\hat{\mathbf{ \ell}}}
+\newcommand{\numActive}{m}
+\newcommand{\numBasisFunc}{m}
+\newcommand{\numComponents}{m}
+\newcommand{\numComps}{K}
+\newcommand{\numData}{n}
+\newcommand{\numFeatures}{K}
+\newcommand{\numHidden}{h}
+\newcommand{\numInducing}{m}
+\newcommand{\numLayers}{\ell}
+\newcommand{\numNeighbors}{K}
+\newcommand{\numSequences}{s}
+\newcommand{\numSuccess}{s}
+\newcommand{\numTasks}{m}
+\newcommand{\numTime}{T}
+\newcommand{\numTrials}{S}
+\newcommand{\outputIndex}{j}
+\newcommand{\paramVector}{\boldsymbol{ \theta}}
+\newcommand{\parameterMatrix}{\boldsymbol{ \Theta}}
+\newcommand{\parameterScalar}{\theta}
+\newcommand{\parameterVector}{\boldsymbol{ \parameterScalar}}
+\newcommand{\partDiff}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\precisionScalar}{j}
+\newcommand{\precisionVector}{\mathbf{ \precisionScalar}}
+\newcommand{\precisionMatrix}{\mathbf{J}}
+\newcommand{\pseudotargetScalar}{\widetilde{y}}
+\newcommand{\pseudotargetVector}{\mathbf{ \pseudotargetScalar}}
+\newcommand{\pseudotargetMatrix}{\mathbf{ \widetilde{Y}}}
+\newcommand{\rank}[1]{\text{rank}\left(#1\right)}
+\newcommand{\rayleighDist}[2]{\mathcal{R}\left(#1|#2\right)}
+\newcommand{\rayleighSamp}[1]{\mathcal{R}\left(#1\right)}
+\newcommand{\responsibility}{r}
+\newcommand{\rotationScalar}{r}
+\newcommand{\rotationVector}{\mathbf{ \rotationScalar}}
+\newcommand{\rotationMatrix}{\mathbf{R}}
+\newcommand{\sampleCovScalar}{s}
+\newcommand{\sampleCovVector}{\mathbf{ \sampleCovScalar}}
+\newcommand{\sampleCovMatrix}{\mathbf{s}}
+\newcommand{\scalarProduct}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\sign}[1]{\text{sign}\left(#1\right)}
+\newcommand{\sigmoid}[1]{\sigma\left(#1\right)}
+\newcommand{\singularvalue}{\ell}
+\newcommand{\singularvalueMatrix}{\mathbf{L}}
+\newcommand{\singularvalueVector}{\mathbf{l}}
+\newcommand{\sorth}{\mathbf{u}}
+\newcommand{\spar}{\lambda}
+\newcommand{\trace}[1]{\text{tr}\left(#1\right)}
+\newcommand{\BasalRate}{B}
+\newcommand{\DampingCoefficient}{C}
+\newcommand{\DecayRate}{D}
+\newcommand{\Displacement}{X}
+\newcommand{\LatentForce}{F}
+\newcommand{\Mass}{M}
+\newcommand{\Sensitivity}{S}
+\newcommand{\basalRate}{b}
+\newcommand{\dampingCoefficient}{c}
+\newcommand{\mass}{m}
+\newcommand{\sensitivity}{s}
+\newcommand{\springScalar}{\kappa}
+\newcommand{\springVector}{\boldsymbol{ \kappa}}
+\newcommand{\springMatrix}{\boldsymbol{ \mathcal{K}}}
+\newcommand{\tfConcentration}{p}
+\newcommand{\tfDecayRate}{\delta}
+\newcommand{\tfMrnaConcentration}{f}
+\newcommand{\tfVector}{\mathbf{ \tfConcentration}}
+\newcommand{\velocity}{v}
+\newcommand{\sufficientStatsScalar}{g}
+\newcommand{\sufficientStatsVector}{\mathbf{ \sufficientStatsScalar}}
+\newcommand{\sufficientStatsMatrix}{\mathbf{G}}
+\newcommand{\switchScalar}{s}
+\newcommand{\switchVector}{\mathbf{ \switchScalar}}
+\newcommand{\switchMatrix}{\mathbf{S}}
+\newcommand{\tr}[1]{\text{tr}\left(#1\right)}
+\newcommand{\loneNorm}[1]{\left\Vert #1 \right\Vert_1}
+\newcommand{\ltwoNorm}[1]{\left\Vert #1 \right\Vert_2}
+\newcommand{\onenorm}[1]{\left\vert#1\right\vert_1}
+\newcommand{\twonorm}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\vScalar}{v}
+\newcommand{\vVector}{\mathbf{v}}
+\newcommand{\vMatrix}{\mathbf{V}}
+\newcommand{\varianceDist}[2]{\text{var}_{#2}\left( #1 \right)}
+% Already defined by latex
+%\newcommand{\vec}{#1:}
+\newcommand{\vecb}[1]{\left(#1\right):}
+\newcommand{\weightScalar}{w}
+\newcommand{\weightVector}{\mathbf{ \weightScalar}}
+\newcommand{\weightMatrix}{\mathbf{W}}
+\newcommand{\weightedAdjacencyMatrix}{\mathbf{A}}
+\newcommand{\weightedAdjacencyScalar}{a}
+\newcommand{\weightedAdjacencyVector}{\mathbf{ \weightedAdjacencyScalar}}
+\newcommand{\onesVector}{\mathbf{1}}
+\newcommand{\zerosVector}{\mathbf{0}}
+\]
   <div class="reveal">
     <div class="slides">
 
-<section>
+<section id="title-slide">
   <h1 class="title">Machine Learning and Data Readiness Levels</h1>
-  <p class="author">Neil D. Lawrence</p>
+  <p class="author" style="text-align:center"><a href="http://inverseprobability.com">Neil D. Lawrence</a></p>
+  <p class="date" style="text-align:center"><time>2018-01-25</time></p>
 </section>
 
 <section class="slide level3">
 
-<h4 id="machine-learning-and-data-readiness-levels">Machine Learning and Data Readiness Levels</h4>
-<h4 id="section">2018-01-25</h4>
-<h4 id="neil-d.-lawrence">Neil D. Lawrence</h4>
-<h4 id="amazon-research-cambridge-and-university-of-sheffield">Amazon Research Cambridge and University of Sheffield</h4>
-<p><code>@lawrennd</code> <a href="http://inverseprobability.com">inverseprobability.com</a></p>
-</section>
-<section id="what-is-machine-learning" class="slide level3" data-transition="none">
-<h3>What is Machine Learning?</h3>
-<div class="fragment">
-<p><span class="math display">\[ \text{data} + \text{model} \rightarrow \text{prediction}\]</span></p>
-</div>
-<div class="fragment">
-<ul>
-<li><span class="math inline">\(\text{data}\)</span> : observations, could be actively or passively acquired (meta-data).</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><span class="math inline">\(\text{model}\)</span> : assumptions, based on previous experience (other data! transfer learning etc), or beliefs about the regularities of the universe. Inductive bias.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><span class="math inline">\(\text{prediction}\)</span> : an action to be taken or a categorization or a quality score.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Royal Society Report: <a href="https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf">Machine Learning: Power and Promise of Computers that Learn by Example</a></li>
-</ul>
-</div>
-</section>
-<section id="machine-learning-as-the-driver" class="slide level3 slide:" data-transition="none">
-<h3>Machine Learning as the Driver …</h3>
-<p>… of two different domains</p>
-<ol type="1">
-<li><p><em>Data Science</em>: arises from the fact that we now capture data by happenstance.</p></li>
-<li><p><em>Artificial Intelligence</em>: emulation of human behaviour.</p></li>
-</ol>
-</section>
-<section id="what-does-machine-learning-do" class="slide level3">
-<h3>What does Machine Learning do?</h3>
-<ul>
-<li><p>ML Automates through Data</p>
-<ul>
-<li><p><em>Strongly</em> related to statistics.</p></li>
-<li><p>Field underpins revolution in <em>data science</em> and <em>AI</em></p></li>
-</ul></li>
-<li><p>With AI: logic, robotics, computer vision, speech</p></li>
-<li><p>With Data Science: databases, data mining, statistics, visualization</p></li>
-</ul>
-</section>
-<section id="embodiment-factors" class="slide level3">
-<h3>“Embodiment Factors”</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\table{
 <table>
 <tr>
 <td>
 </td>
 <td align="center">
-<img src="../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="60%" style="background:none; border:none; box-shadow:none;" align="center">
+\includejpg{../slides/diagrams/IBM_Blue_Gene_P_supercomputer}{50%}
 </td>
 <td align="center">
-<img src="../slides/diagrams/ClaudeShannon_MFO3807.jpg" width="100%" style="background:none; border:none; box-shadow:none;" align="center">
-</td>
-</tr>
-<tr>
-<td>
-compute
-</td>
-<td align="center">
-~10 gigaflops
-</td>
-<td align="center">
-~ 1000 teraflops?
-</td>
-</tr>
-<tr>
-<td>
-communicate
-</td>
-<td align="center">
-~1 gigbit/s
-</td>
-<td align="center">
-~ 100 bit/s
-</tr>
-<td>
-(compute/communicate)
-</td>
-<td align="center">
-10
-</td>
-<td align="center">
-~ 10<sup>13</sup>
-</tr>
-</table>
-<p>See <a href="https://arxiv.org/abs/1705.07996">“Living Together: Mind and Machine Intelligence”</a></p>
-</section>
-<section id="evolved-relationship" class="slide level3 slide:" data-transition="none">
-<h3>Evolved Relationship</h3>
-<object type="image/svg+xml" data="../slides/diagrams/data-science-information-flow_neg001.svg">
-</object>
-</section>
-<section id="evolved-relationship-1" class="slide level3 slide:" data-transition="none">
-<h3>Evolved Relationship</h3>
-<object type="image/svg+xml" data="../slides/diagrams/data-science-information-flow_neg002.svg">
-</object>
-</section>
-<section id="evolved-relationship-2" class="slide level3 slide:" data-transition="none">
-<h3>Evolved Relationship</h3>
-<object type="image/svg+xml" data="../slides/diagrams/data-science-information-flow_neg003.svg">
-</object>
-</section>
-<section id="what-does-machine-learning-do-1" class="slide level3">
-<h3>What does Machine Learning do?</h3>
+
+
+
+
+
+<p>\figure{\includejpg{../slides/diagrams/Lotus_49-2}{70%}}{The Lotus 49, view from the rear. The Lotus 49 was one of the last Formula One cars before the introduction of aerodynamic aids.}{lotus-49}</p>
+
+
+
+
+
+<p>\figure{\includejpg{../slides/diagrams/640px-Marcel_Renault_1903}{70%}}{Marcel Renault races a Renault 40 cv during the Paris-Madrid race, an early Grand Prix, in 1903. Marcel died later in the race after missing a warning flag for a sharp corner at Couhé Vérac, likely due to dust reducing visibility.}{marcel-renault}</p>
+
+
+
+
+<p>\figure{\includejpg{../slides/diagrams/Caleb_McDuff_WIX_Silence_Racing_livery}{70%}}{Caleb McDuff driving for WIX Silence Racing.}{caleb-mcduff}</p>
+
+
+
+
+
+<p>.</p>
+
+<p>\slides{\div{\includediagram{../slides/diagrams/data-science/new-flow-of-information001}{70%}{}{height:50%}}{new-flow-of-information}{max-width:100vw; max-height:100vh}}</p>
+
+<p>\slides{\div{\includediagram{../slides/diagrams/data-science/new-flow-of-information002}{70%}{}{height:50%}}{new-flow-of-information}{max-width:100vw; max-height:100vh}}</p>
+<p>\notes{\figure{\includediagram{../slides/diagrams/data-science/new-flow-of-information002}{50%}}{The trinity of human, data and computer, and highlights the modern phenomenon. The communication channel between computer and data now has an extremely high bandwidth. The channel between human and computer and the channel between data and human is narrow. New direction of information flow, information is reaching us mediated by the computer.}{trinity-human-data-computer}}</p>
+
+
+
+
+
+<p><span class="math display">\[ \text{odds} = \frac{p(\text{bought})}{p(\text{not bought})} \]</span></p>
+<p><span class="math display">\[ \log \text{odds}  = \beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}.\]</span> </p>
+
+<p><span class="math display">\[ p(\text{bought}) =  \sigmoid{\beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}}.\]</span> </p>
+
+<p><span class="math display">\[ p(\text{bought}) =  \sigmoid{\boldsymbol{\beta}^\top \inputVector}.\]</span> </p>
+
+<p><span class="math display">\[ \dataScalar =  \mappingFunction\left(\inputVector, \boldsymbol{\beta}\right).\]</span> We call <span class="math inline">\(\mappingFunction(\cdot)\)</span> the <em>prediction function</em>.</p>
+
+
+<p><span class="math display">\[\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix)\]</span>  <span class="math display">\[\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingFunction(\inputVector_i, \boldsymbol{\beta})\right)^2.\]</span></p>
+
+
+
+
+
+<!-- No slide titles in this context -->
+
+
+<p>\slides{\fragment{\smalltext{Outline of the DeepFace architecture. A front-end of a single convolution-pooling-convolution filtering on the rectified input, followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected.}}{fade-in}}</p>
+<p>\figure{\includepng{../slides/diagrams/deepface_neg}{100%}}{The DeepFace architecture <span class="citation" data-cites="Taigman:deepface14">(Taigman et al., 2014)</span>, visualized through colors to represent the functional mappings at each layer. There are 120 million parameters in the model.}{deep-face} </p>
+<p>\notes{The DeepFace architecture <span class="citation" data-cites="Taigman:deepface14">(Taigman et al., 2014)</span> consists of layers that deal with <em>translation</em> and <em>rotational</em> invariances. These layers are followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The neural network includes more than 120 million parameters, where more than 95% come from the local and fully connected layers.}</p>
+
+
+<p>\figure{\includejpg{../slides/diagrams/576px-Early_Pinball}{50%}}{Deep learning models are composition of simple functions. We can think of a pinball machine as an analogy. Each layer of pins corresponds to one of the layers of functions in the model. Input data is represented by the location of the ball from left to right when it is dropped in from the top. Output class comes from the position of the ball as it leaves the pins at the bottom.}{early-pinball}</p>
+
+
+
+<p>\figure{\includediagram{../slides/diagrams/pinball001}{80%}}{At initialization, the pins, which represent the parameters of the function, aren’t in the right place to bring the balls to the correct decisions.}{pinball-initialization}</p>
+
+<p>\figure{\includediagram{../slides/diagrams/pinball002}{80%}}{After learning the pins are now in the right place to bring the balls to the correct decisions.}{pinball-trained}</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <ul>
-<li><p>We scale by codifying processes and automating them.</p>
+<li>Grade C - accessibility
 <ul>
-<li><p>Ensure components are compatible (Whitworth threads)</p></li>
-<li><p>Then interconnect them as efficiently as possible.</p></li>
-<li><p>cf Colt 45, Ford Model T</p></li>
+<li>Transition: data becomes electronically available</li>
 </ul></li>
-</ul>
-</section>
-<section id="codify-through-mathematical-functions" class="slide level3">
-<h3>Codify Through Mathematical Functions</h3>
+<li>Grade B - validity
 <ul>
-<li><p>How does machine learning work?</p></li>
-<li><p>Jumper (jersey/sweater) purchase with logistic regression</p></li>
-</ul>
-<p><span class="math display">\[ \text{odds} = \frac{\text{bought}}{\text{not bought}} \]</span></p>
-<p><span class="math display">\[ \log \text{odds}  = \beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}\]</span></p>
-</section>
-<section id="codify-through-mathematical-functions-1" class="slide level3 slide:" data-transition="none">
-<h3>Codify Through Mathematical Functions</h3>
-<ul>
-<li><p>How does machine learning work?</p></li>
-<li><p>Jumper (jersey/sweater) purchase with logistic regression</p></li>
-</ul>
-<p><span class="math display">\[ p(\text{bought}) =  f\left(\beta_0 + \beta_1 \text{age} + \beta_2 \text{lattitude}\right)\]</span></p>
-</section>
-<section id="codify-through-mathematical-functions-2" class="slide level3 slide:" data-transition="none">
-<h3>Codify Through Mathematical Functions</h3>
-<ul>
-<li><p>How does machine learning work?</p></li>
-<li><p>Jumper (jersey/sweater) purchase with logistic regression</p></li>
-</ul>
-<p><span class="math display">\[ p(\text{bought}) =  f\left(\boldsymbol{\beta}^\top \mathbf{x}\right)\]</span></p>
-</section>
-<section id="section-1" class="slide level3">
-<h3></h3>
-<p><span class="fragment fade-in"><small>Outline of the DeepFace architecture. A front-end of a single convolution-pooling-convolution filtering on the rectified input, followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected.</small></span></p>
-<p><img src="./diagrams/deepface_neg.png" width="100%" style="background:none; border:none; box-shadow:none;" align="center"></p>
-<p align="right">
-<small>Source: DeepFace</small>
-</p>
-</section>
-<section id="section-2" class="slide level3">
-<h3></h3>
-<p><img src="../slides/diagrams/576px-Early_Pinball.jpg" height="576px" style="background:none; border:none; box-shadow:none;" align="center"></p>
-</section>
-<section id="section-3" class="slide level3">
-<h3></h3>
-<object data="../slides/diagrams/pinball-initial.svg" type="image/svg+xml">
-</object>
-</section>
-<section id="section-4" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object data="../slides/diagrams/pinball-final.svg" type="image/svg+xml">
-</object>
-</section>
-<section id="deep-learning" class="slide level3">
-<h3>Deep Learning</h3>
-<ul>
-<li><p>These are interpretable models: vital for disease etc.</p></li>
-<li><p>Modern machine learning methods are less interpretable</p></li>
-<li><p>Example: face recognition</p></li>
-</ul>
-</section>
-<section id="section-5" class="slide level3">
-<h3></h3>
-<p><span class="fragment fade-in"><small>Outline of the DeepFace architecture. A front-end of a single convolution-pooling-convolution filtering on the rectified input, followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected.</small></span></p>
-<p><img src="./diagrams/deepface_neg.png" width="100%" style="background:none; border:none; box-shadow:none;" align="center"></p>
-<p align="right">
-<small>Source: DeepFace</small>
-</p>
-</section>
-<section id="section-6" class="slide level3">
-<h3></h3>
-<p><img src="./diagrams/576px-Early_Pinball.jpg" height="576px" style="background:none; border:none; box-shadow:none;" align="center"></p>
-</section>
-<section id="section-7" class="slide level3">
-<h3></h3>
-<object data="./diagrams/pinball-initial.svg" type="image/svg+xml">
-</object>
-</section>
-<section id="section-8" class="slide level3 slide:" data-transition="none">
-<h3></h3>
-<object data="./diagrams/pinball-final.svg" type="image/svg+xml">
-</object>
-</section>
-<section id="data-science" class="slide level3">
-<h3>Data Science</h3>
-<ul>
-<li><p>Industrial Revolution 4.0?</p></li>
-<li><p><em>Industrial Revolution</em> (1760-1840) term coined by Arnold Toynbee, late 19th century.</p></li>
-<li><p>Maybe: But this one is dominated by <em>data</em> not <em>capital</em></p></li>
-<li><p>That presents <em>challenges</em> and <em>opportunities</em></p></li>
-</ul>
-<p>cf <a href="https://www.theguardian.com/media-network/2015/mar/05/digital-oligarchy-algorithms-personal-data">digital oligarchy</a> vs <a href="https://www.theguardian.com/media-network/2015/aug/25/africa-benefit-data-science-information">how Africa can benefit from the data revolution</a></p>
-<ul>
-<li>Apple vs Nokia: How you handle disruption.</li>
-</ul>
-</section>
-<section id="a-time-for-professionalisation" class="slide level3">
-<h3>A Time for Professionalisation?</h3>
-<ul>
-<li><p>New technologies historically led to new professions:</p>
-<ul>
-<li><p>Brunel (born 1806): Civil, mechanical, naval</p></li>
-<li><p>Tesla (born 1856): Electrical and power</p></li>
-<li><p>William Shockley (born 1910): Electronic</p></li>
-<li><p>Watts S. Humphrey (born 1927): Software</p></li>
+<li>Transition: pose a question to the data.</li>
 </ul></li>
+<li>Grade A - usability</li>
 </ul>
-</section>
-<section id="why" class="slide level3">
-<h3>Why?</h3>
-<ul>
-<li><p>Codification of best practice.</p></li>
-<li><p>Developing trust</p></li>
-</ul>
-</section>
-<section id="where-are-we" class="slide level3">
-<h3>Where are we?</h3>
-<ul>
-<li><p>Perhaps around the 1980s of programming.</p>
-<ul>
-<li><p>We understand if, for, procedures</p></li>
-<li><p>But we don’t share best practice.</p></li>
-</ul></li>
-<li><p>Let’s <em>avoid</em> the over formalisation of software engineering.</p></li>
-</ul>
-</section>
-<section id="the-software-crisis" class="slide level3">
-<h3>The Software Crisis</h3>
-<blockquote>
-<p>The major cause of the software crisis is that the machines have become several orders of magnitude more powerful! To put it quite bluntly: as long as there were no machines, programming was no problem at all; when we had a few weak computers, programming became a mild problem, and now we have gigantic computers, programming has become an equally gigantic problem.</p>
-<p>Edsger Dijkstra, The Humble Programmer</p>
-</blockquote>
-</section>
-<section id="the-data-crisis" class="slide level3">
-<h3>The Data Crisis</h3>
-<blockquote>
-<p>The major cause of the data crisis is that machines have become more interconnected than ever before. Data access is therefore cheap, but data quality is often poor. What we need is cheap high quality data. That implies that we develop processes for improving and verifying data quality that are efficient.</p>
-<p>There would seem to be two ways for improving efficiency. Firstly, we should not duplicate work. Secondly, where possible we should automate work.</p>
-<p>Me</p>
-</blockquote>
-</section>
-<section id="rest-of-this-talk-two-areas-of-focus" class="slide level3 slide:" data-transition="none">
-<h3>Rest of this Talk: Two Areas of Focus</h3>
-<ul>
-<li><p>Reusability of Data</p></li>
-<li><p>Deployment of Machine Learning Systems</p></li>
-</ul>
-</section>
-<section id="rest-of-this-talk-two-areas-of-focus-1" class="slide level3 slide:" data-transition="none">
-<h3>Rest of this Talk: Two Areas of Focus</h3>
-<ul>
-<li><p>Reusability of Data</p></li>
-<li><p><s>Deployment of Machine Learning Systems</s></p></li>
-</ul>
-</section>
-<section id="quantifying-the-value-of-data" class="slide level3">
-<h3>Quantifying the Value of Data</h3>
-<p>There’s a sea of data, but most of it is undrinkable</p>
-<p><img src="../slides/diagrams/sea-water-ocean-waves.jpg" width="50%"></p>
-<p>We require data-desalination before it can be consumed!</p>
-</section>
-<section id="data-quotes" class="slide level3">
-<h3>Data Quotes</h3>
-<ul>
-<li>90% of our time is spent on validation and integration (Leo Anthony Celi)</li>
-<li>“The Dirty Work We Don’t Want to Think About” (Eric Xing)</li>
-<li>“Voodoo to get it decompressed” (Francisco Giminez)</li>
-<li>Getting money from management for data collection and annotation can be a total nightmare.</li>
-</ul>
-</section>
-<section id="value" class="slide level3">
-<h3>Value</h3>
-<ul>
-<li><p>How do we measure value in the data economy?</p></li>
-<li><p>How do we encourage data workers: curation and management</p>
-<ul>
-<li><p>Incentivization for sharing and production.</p></li>
-<li><p>Quantifying the value in the contribution of <em>each actor</em>.</p></li>
-</ul></li>
-</ul>
-</section>
-<section id="data-readiness-levels" class="slide level3">
-<h3>Data Readiness Levels</h3>
-<p><a href="http://inverseprobability.com/2017/01/12/data-readiness-levels">Data Readiness Levels</a> (see also <a href="https://arxiv.org/pdf/1705.02245.pdf">arxiv</a>)</p>
-<ul>
-<li><p>Three Grades of Data Readiness:</p></li>
-<li><p>Grade C - accessibility</p></li>
-<li><p>Grade B - validity</p></li>
-<li><p>Grade A - usability</p></li>
-</ul>
-</section>
-<section id="accessibility-grade-c" class="slide level3">
-<h3>Accessibility: Grade C</h3>
-<ul>
-<li>Hearsay data.</li>
-<li>Availability, is it actually being recorded?</li>
-<li>privacy or legal constraints on the accessibility of the recorded data, have ethical constraints been alleviated?</li>
-<li>Format: log books, PDF …</li>
-<li>limitations on access due to topology (e.g. it’s distributed across a number of devices)</li>
-<li>At the end of Grade C data is ready to be loaded into analysis software (R, SPSS, Matlab, Python, Mathematica)</li>
-</ul>
-</section>
-<section id="validity-grade-b" class="slide level3">
-<h3>Validity: Grade B</h3>
-<ul>
-<li>faithfulness and representation</li>
-<li>visualisations.</li>
-<li>exploratory data analysis</li>
-<li>noise characterisation.</li>
-<li>Missing values.</li>
-<li>Schema alignment, record linkage, data fusion?</li>
-<li>Example, was a column or columns accidentally perturbed (e.g. through a sort operation that missed one or more columns)? Or was a <a href="http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-5-80">gene name accidentally converted to a date</a>?</li>
-<li>At the end of Grade B, ready to define a candidate question, the context, load into OpenML</li>
-</ul>
-</section>
-<section id="usability-grade-a" class="slide level3">
-<h3>Usability: Grade A</h3>
-<ul>
-<li>The usability of data</li>
-<li>Grade A is about data in context.</li>
-<li>Consider appropriateness of a given data set to answer a particular question or to be subject to a particular analysis.</li>
-<li>Data integration?</li>
-<li>At the end of Grade A it’s ready for data platforms such as RAMP, Kaggle, define a <em>task</em> in OpenML.</li>
-</ul>
-</section>
-<section id="recursive-effects" class="slide level3">
-<h3>Recursive Effects</h3>
-<ul>
-<li><p>Grade A may also require:</p>
-<ul>
-<li><p>active collection of new data.</p></li>
-<li><p>rebalancing of data to ensure fairness</p></li>
-<li><p>annotation of data by human experts</p></li>
-<li><p>revisiting the collection (and running through the appropriate stages again)</p></li>
-</ul></li>
-</ul>
-</section>
-<section id="contribute" class="slide level3">
-<h3>Contribute!</h3>
-<ul>
-<li><a href="http://data-readiness.org" class="uri">http://data-readiness.org</a></li>
-</ul>
-</section>
-<section id="also" class="slide level3">
-<h3>Also …</h3>
-<ul>
-<li><p>Encourage greater interaction between application domains and data scientists</p></li>
-<li><p>Encourage <em>visualization</em> of data</p></li>
-<li><p>Incentivise the delivery of data.</p></li>
-<li><p>Analogies: For Software Engineers <a href="http://inverseprobability.com/2017/03/14/data-science-as-debugging">describe data science as <em>debugging</em></a>.</p></li>
-</ul>
-</section>
-<section id="see-also" class="slide level3">
-<h3>See Also …</h3>
-<ul>
-<li>Data Joel Tests
-<ul>
-<li><a href="https://medium.com/@damoncivin/the-joel-test-for-data-readiness-4882aae64753">proposal by Damon Civin</a> and</li>
-<li><a href="https://blog.dominodatalab.com/joel-test-data-science/">proposal by Nick Elprin</a></li>
-</ul></li>
-</ul>
-<!--
-### Artificial Intelligence
 
-* Challenges in deploying AI.
 
-* Currently this is in the form of "machine learning systems"
 
-### Internet of People
 
-* Fog computing: barrier between cloud and device blurring.
 
-* Complex feedback between algorithm and implementation
-  
-### Deploying ML in Real World: Machine Learning Systems Design
 
-* Major new challenge for systems designers.
 
-* Internet of Intelligence but currently:
 
-    * AI systems are *fragile*
--->
-<!--### Fragility of AI Systems
 
-* They are componentwise built from ML Capabilities.
 
-* Each capability is independently constructed and verified.
 
-    * Pedestrian detection
-    * Road line detection
 
-* Important for verification purposes.
 
-### Rapid Reimplementation
 
-* Whole systems are being deployed.
 
-* But they change their environment.
 
-* The experience evolved adversarial behaviour.
 
-### Early AI
+<!--include{_ai/includes/deploying-ai.md}-->
+<!--include{_ai/includes/ml-systems-design-long.md}-->
 
-<img src="../slides/diagrams/2017-10-12 16.47.34.jpg" width="40%" class="rotateimg90" style="border:none">
+<p>\thanks</p>
 
-### Machine Learning Systems Design
-
-<img src="../slides/diagrams/SteamEngine_Boulton&Watt_1784_neg.png" width="50%" style="border:none">
-
-### Adversaries
-
-* Stuxnet
-
-* Mischevious-Adversarial
-
-### Turnaround And Update
-
-* There is a massive need for turn around and update
-
-* A redeploy of the entire system.
-
-    * This involves changing the way we design and deploy.
-
-* Interface between security engineering and machine learning.
-
-### Peppercorns
-
-* A new name for system failures which aren't bugs.
-
-* Difference between finding a fly in your soup vs a peppercorn in
-  your soup. 
-
-<!--### {.slide: data-transition="none"}
-
-<center><video height="600" type="video/mp4"><source src="../slides/diagrams/paolo-peppercorn.mp4" height="80%"></video></center>
-
-### {.slide: data-transition="none"}
-
-<center><video type="video/mp4"><source src="../slides/diagrams/paolo-save.mp4"></video></center>-->
-<!--  LocalWords:  Mischevious
- -->
-<p>–&gt;</p>
-</section>
-<section id="conclusion" class="slide level3">
-<h3>Conclusion</h3>
-<ul>
-<li><p>Artificial Intelligence and Data Science are fundamentally different.</p></li>
-<li><p>In one you are dealing with data collected by happenstance.</p></li>
-<li><p>In the other you are trying to build systems in the real world, often by actively collecting data.</p></li>
-<li><p>Our ability to exploit ML will be limited in the near term by the poor quality of our data infrastructures.</p></li>
-</ul>
-</section>
-<section id="thanks" class="slide level3">
-<h3>Thanks!</h3>
-<ul>
-<li>twitter: @lawrennd</li>
-<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
-</ul>
+<div id="refs" class="references">
+<div id="ref-Taigman:deepface14">
+<p>Taigman, Y., Yang, M., Ranzato, M., Wolf, L., 2014. DeepFace: Closing the gap to human-level performance in face verification, in: Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition. <a href="https://doi.org/10.1109/CVPR.2014.220" class="uri">https://doi.org/10.1109/CVPR.2014.220</a></p>
+</div>
+</div>
 </section>
     </div>
   </div>
@@ -535,9 +532,23 @@ communicate
       Reveal.initialize({
         // Push each slide change to the browser history
         history: true,
+        // Transition style
+        transition: 'None', // none/fade/slide/convex/concave/zoom
         math: {
           mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
           config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
         },
 
         // Optional reveal.js plugins

@@ -1,11 +1,16 @@
 ---
 title: "Bayesian Methods"
 subtitle: Probabilistic Machine Learning
-abstract: "In this session we review the *probabilistic* approach to machine learning. We start with a review of probability, and introduce the concepts of probabilistic modelling. We then apply the approach in practice to Naive Bayesian classification. 
+abstract: >
+  In this session we review the *probabilistic* approach to machine
+  learning. We start with a review of probability, and introduce the
+  concepts of probabilistic modelling. We then apply the approach in
+  practice to Naive Bayesian classification.
 
-In this session we review the probabilistic formulation of a classification model, reviewing initially maximum likelihood and the naive Bayes model."
-ipynb: 2018-11-14-bayesian-methods-abuja.ipynb
-reveal: 2018-11-14-bayesian-methods-abuja.slides.html
+  In this session we review the probabilistic formulation of a
+  classification model, reviewing initially maximum likelihood and
+  the naive Bayes model.
+ipynb: True
 author:
 - family: Lawrence
   given: Neil D.

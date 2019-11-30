@@ -1,6 +1,6 @@
 ---
 title: "Machine Learning and Data Readiness Levels"
-abstract: "<p>In this talk we will look at the challenges facing deployment of machine learning, with a particular focus on the reuse of data and data quality. We suggest data readiness levels as a mechanism for monitoring data quality.</p>"
+abstract: "In this talk we will look at the challenges facing deployment of machine learning, with a particular focus on the reuse of data and data quality. We suggest data readiness levels as a mechanism for monitoring data quality."
 author:
 - given: Neil D.
   family: Lawrence
@@ -12,7 +12,6 @@ author:
 date: 2018-01-25
 published: 2018-01-25
 reveal: 2018-01-25-machine-learning-and-data-readiness-levels.slides.html
-ipynb: 2018-01-25-machine-learning-and-data-readiness-levels.ipynb
 layout: talk
 categories:
 - notes
@@ -40,9 +39,6 @@ categories:
 
 
 
-<p> </p>
-
-<p> </p>
 
 
 
@@ -62,65 +58,79 @@ categories:
 
 
 
+\table{
+<table>
+<tr>
+<td>
+</td>
+<td align="center">
+\includejpg{../slides/diagrams/IBM_Blue_Gene_P_supercomputer}{50%}
+</td>
+<td align="center">
 
 
 
 
 
+<p>\figure{\includejpg{../slides/diagrams/Lotus_49-2}{70%}}{The Lotus 49, view from the rear. The Lotus 49 was one of the last Formula One cars before the introduction of aerodynamic aids.}{lotus-49}</p>
 
 
 
 
 
+<p>\figure{\includejpg{../slides/diagrams/640px-Marcel_Renault_1903}{70%}}{Marcel Renault races a Renault 40 cv during the Paris-Madrid race, an early Grand Prix, in 1903. Marcel died later in the race after missing a warning flag for a sharp corner at Couhé Vérac, likely due to dust reducing visibility.}{marcel-renault}</p>
+
+
+
+
+<p>\figure{\includejpg{../slides/diagrams/Caleb_McDuff_WIX_Silence_Racing_livery}{70%}}{Caleb McDuff driving for WIX Silence Racing.}{caleb-mcduff}</p>
 
 
 
 
 
+<p>.</p>
+
+<p>\slides{\div{\includediagram{../slides/diagrams/data-science/new-flow-of-information001}{70%}{}{height:50%}}{new-flow-of-information}{max-width:100vw; max-height:100vh}}</p>
+
+<p>\slides{\div{\includediagram{../slides/diagrams/data-science/new-flow-of-information002}{70%}{}{height:50%}}{new-flow-of-information}{max-width:100vw; max-height:100vh}}</p>
+<p>\notes{\figure{\includediagram{../slides/diagrams/data-science/new-flow-of-information002}{50%}}{The trinity of human, data and computer, and highlights the modern phenomenon. The communication channel between computer and data now has an extremely high bandwidth. The channel between human and computer and the channel between data and human is narrow. New direction of information flow, information is reaching us mediated by the computer.}{trinity-human-data-computer}}</p>
 
 
 
 
 
+<p><br /><span class="math display">$$ \text{odds} = \frac{p(\text{bought})}{p(\text{not bought})} $$</span><br /></p>
+<p><br /><span class="math display">log odds = <em>β</em><sub>0</sub> + <em>β</em><sub>1</sub>age + <em>β</em><sub>2</sub>latitude.</span><br /> </p>
+
+<p><br /><span class="math display">$$ p(\text{bought}) =  \sigmoid{\beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}}.$$</span><br /> </p>
+
+<p><br /><span class="math display">$$ p(\text{bought}) =  \sigmoid{\boldsymbol{\beta}^\top \inputVector}.$$</span><br /> </p>
+
+<p><br /><span class="math display">$$ \dataScalar =  \mappingFunction\left(\inputVector, \boldsymbol{\beta}\right).$$</span><br /> We call <span class="math inline">$\mappingFunction(\cdot)$</span> the <em>prediction function</em>.</p>
+
+
+<p><br /><span class="math display">$$\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix)$$</span><br />  <br /><span class="math display">$$\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingFunction(\inputVector_i, \boldsymbol{\beta})\right)^2.$$</span><br /></p>
 
 
 
 
-
-
-
-
-
-
-<p>  <br /><span class="math display">$$ \text{odds} = \frac{p(\text{bought})}{p(\text{not bought})} $$</span><br /></p>
-<p><br /><span class="math display">logodds = <em>β</em><sub>0</sub> + <em>β</em><sub>1</sub>age + <em>β</em><sub>2</sub>latitude.</span><br /> </p>
-<p>  <br /><span class="math display">$$ p(\text{bought}) =  \sigmoid{\beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}}.$$</span><br /> </p>
-<p>  <br /><span class="math display">$$ p(\text{bought}) =  \sigmoid{\boldsymbol{\beta}^\top \inputVector}.$$</span><br /> </p>
-<p>  <br /><span class="math display">$$ \dataScalar =  \mappingFunction\left(\inputVector, \boldsymbol{\beta}\right).$$</span><br /> We call <span class="math inline">$\mappingFunction(\cdot)$</span> the <em>prediction function</em>.</p>
-
-<p>  <br /><span class="math display">$$\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix)$$</span><br />  <br /><span class="math display">$$\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingFunction(\inputVector_i, \boldsymbol{\beta})\right)^2.$$</span><br /></p>
-<p>  </p>
-
-
-<p> </p>
 
 <!-- No slide titles in this context -->
 
 
-
-<p> </p>
-
-
-
+<p>\slides{\fragment{\smalltext{Outline of the DeepFace architecture. A front-end of a single convolution-pooling-convolution filtering on the rectified input, followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected.}}{fade-in}}</p>
+<p>\figure{\includepng{../slides/diagrams/deepface_neg}{100%}}{The DeepFace architecture <span class="citation" data-cites="Taigman:deepface14">(Taigman et al. 2014)</span>, visualized through colors to represent the functional mappings at each layer. There are 120 million parameters in the model.}{deep-face} </p>
+<p>\notes{The DeepFace architecture <span class="citation" data-cites="Taigman:deepface14">(Taigman et al. 2014)</span> consists of layers that deal with <em>translation</em> and <em>rotational</em> invariances. These layers are followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The neural network includes more than 120 million parameters, where more than 95% come from the local and fully connected layers.}</p>
 
 
-<p> </p>
+<p>\figure{\includejpg{../slides/diagrams/576px-Early_Pinball}{50%}}{Deep learning models are composition of simple functions. We can think of a pinball machine as an analogy. Each layer of pins corresponds to one of the layers of functions in the model. Input data is represented by the location of the ball from left to right when it is dropped in from the top. Output class comes from the position of the ball as it leaves the pins at the bottom.}{early-pinball}</p>
 
 
 
+<p>\figure{\includediagram{../slides/diagrams/pinball001}{80%}}{At initialization, the pins, which represent the parameters of the function, aren’t in the right place to bring the balls to the correct decisions.}{pinball-initialization}</p>
 
-
-
+<p>\figure{\includediagram{../slides/diagrams/pinball002}{80%}}{After learning the pins are now in the right place to bring the balls to the correct decisions.}{pinball-trained}</p>
 
 
 
@@ -146,10 +156,12 @@ categories:
 
 
 
-<p> </p>
 
-<p>  </p>
-<p> </p>
+
+
+
+
+
 
 
 
@@ -160,10 +172,14 @@ categories:
 
 
 <ul>
-<li>Grade C - accessibility</li>
+<li>Grade C - accessibility
+<ul>
 <li>Transition: data becomes electronically available</li>
-<li>Grade B - validity</li>
+</ul></li>
+<li>Grade B - validity
+<ul>
 <li>Transition: pose a question to the data.</li>
+</ul></li>
 <li>Grade A - usability</li>
 </ul>
 
@@ -171,23 +187,27 @@ categories:
 
 
 
-<p>   </p>
-
-<p> </p>
-<p> </p>
 
 
 
 
 
-<p> </p>
-<p> </p>
 
 
-<p> </p>
+
+
+
+
 
 <!--include{_ai/includes/deploying-ai.md}-->
 <!--include{_ai/includes/ml-systems-design-long.md}-->
-<p>  </p>
+
+<p>\thanks</p>
+
+<div id="refs" class="references">
+<div id="ref-Taigman:deepface14">
+<p>Taigman, Yaniv, Ming Yang, Marc’Aurelio Ranzato, and Lior Wolf. 2014. “DeepFace: Closing the Gap to Human-Level Performance in Face Verification.” In <em>Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition</em>. <a href="https://doi.org/10.1109/CVPR.2014.220" class="uri">https://doi.org/10.1109/CVPR.2014.220</a>.</p>
+</div>
+</div>
 
 
