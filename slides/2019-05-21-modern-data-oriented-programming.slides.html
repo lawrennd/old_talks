@@ -39,7 +39,9 @@
   <script src="figure-animate.js"></script>
 </head>
 <body>
-\[\newcommand{\Amatrix}{\mathbf{A}}
+\[\newcommand{\tk}[1]{}
+%\newcommand{\tk}[1]{\textbf{TK}: #1}
+\newcommand{\Amatrix}{\mathbf{A}}
 \newcommand{\KL}[2]{\text{KL}\left( #1\,\|\,#2 \right)}
 \newcommand{\Kaast}{\kernelMatrix_{\mathbf{ \ast}\mathbf{ \ast}}}
 \newcommand{\Kastu}{\kernelMatrix_{\mathbf{ \ast} \inducingVector}}
@@ -453,6 +455,9 @@ showDivs(0, 'ai-bd-dm-dl-ml-google-trends');
 <h3></h3>
 <p><span class="math display">\[\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span></p>
 </section>
+<section id="from-model-to-decision" class="slide level3">
+<h3>From Model to Decision</h3>
+</section>
 <section id="section-4" class="slide level3">
 <h3></h3>
 <table>
@@ -575,8 +580,8 @@ include{_data-science/includes/data-readiness-levels.md}
 
 -->
 </section>
-<section id="machine-learning-in-supply-chain" class="slide level3">
-<h3>Machine Learning in Supply Chain</h3>
+<section id="supply-chain" class="slide level3">
+<h3>Supply Chain</h3>
 <div class="figure">
 <div id="packhorse-bridge-burbage-brook-figure" class="figure-frame">
 <div class="centered centered" style="">
@@ -585,8 +590,8 @@ include{_data-science/includes/data-readiness-levels.md}
 </div>
 </div>
 </section>
-<section id="section-5" class="slide level3">
-<h3></h3>
+<section id="cromford" class="slide level3">
+<h3>Cromford</h3>
 <div class="figure">
 <div id="cromford-mill-figure" class="figure-frame">
 <div class="centered centered" style="">
@@ -595,7 +600,7 @@ include{_data-science/includes/data-readiness-levels.md}
 </div>
 </div>
 </section>
-<section id="section-6" class="slide level3">
+<section id="section-5" class="slide level3">
 <h3></h3>
 <div class="figure">
 <div id="container-2539942_1920-figure" class="figure-frame">
@@ -605,38 +610,36 @@ include{_data-science/includes/data-readiness-levels.md}
 </div>
 </div>
 </section>
-<section id="wild-alaskan-cod" class="slide level3">
-<h3>Wild Alaskan Cod</h3>
+<section id="deep-freeze" class="slide level3">
+<h3>Deep Freeze</h3>
+<div class="figure">
+<div id="wild-alaskan-cod-figure" class="figure-frame">
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/supply-chain/wild-alaskan-cod.jpg" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+</div>
+</div>
 </section>
-<section id="wild-alaskan-cod-1" class="slide level3">
-<h3>Wild Alaskan Cod</h3>
+<section id="deep-freeze-1" class="slide level3">
+<h3>Deep Freeze</h3>
+<div class="figure">
+<div id="wild-alaskan-cod-made-in-china-figure" class="figure-frame">
 <div class="centered centered" style="">
 <img class="" src="../slides/diagrams/supply-chain/wild-alaskan-cod-made-in-china.jpg" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
+</div>
+</div>
 </section>
-<section id="machine-learning-in-supply-chain-1" class="slide level3">
+<section id="machine-learning-in-supply-chain" class="slide level3">
 <h3>Machine Learning in Supply Chain</h3>
 <ul>
 <li><em>Supply chain</em>: Large Automated Decision Making Network</li>
-<li>Amazon’s supply chain: Possibly the world’s largest ‘AI’</li>
 <li>Major Challenge:
 <ul>
 <li>We have a <em>mechanistic</em> understanding of supply chain.</li>
 <li>Machine learning is a <em>data driven</em> technology.</li>
 </ul></li>
 </ul>
-</section>
-<section id="amazon-supply-chain-optimization" class="slide level3">
-<h3>Amazon Supply Chain Optimization</h3>
-<div class="figure">
-<div id="supply-chain-optimization-team-figure" class="figure-frame">
-<iframe width="100%" height="auto" src="https://www.youtube.com/embed/ncwsr1Of6Cw?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-</iframe>
-</div>
-</div>
 </section>
 <section id="motto" class="slide level3">
 <h3>Motto</h3>
@@ -705,9 +708,6 @@ include{_data-science/includes/data-readiness-levels.md}
 <li>In practice most scientists spend around 80% of time data cleaning.</li>
 </ul>
 </section>
-<section id="the-data-crisis" class="slide level3">
-<h3>The Data Crisis</h3>
-</section>
 <section id="the-software-crisis" class="slide level3">
 <h3>The Software Crisis</h3>
 <p><small></p>
@@ -717,26 +717,17 @@ include{_data-science/includes/data-readiness-levels.md}
 </blockquote>
 <p></small></p>
 </section>
-<section id="the-data-crisis-1" class="slide level3">
+<section id="the-data-crisis" class="slide level3">
 <h3>The Data Crisis</h3>
 <p><small></p>
 <blockquote>
-<p>The major cause of the data crisis is that machines have become more interconnected than ever before. Data access is therefore cheap, but data quality is often poor. What we need is cheap high quality data. That implies that we develop processes for improving and verifying data quality that are efficient.</p>
+<p>The major cause of the data crisis is that machines have become more interconnected than ever before. Data access is therefore cheap, but data quality is often poor. What we need is cheap high-quality data. That implies that we develop processes for improving and verifying data quality that are efficient.</p>
 <p>There would seem to be two ways for improving efficiency. Firstly, we should not duplicate work. Secondly, where possible we should automate work.</p>
 <p>Me </small></p>
 </blockquote>
 </section>
-<section id="the-data-first-paradigm" class="slide level3">
-<h3>The Data First Paradigm</h3>
-</section>
-<section id="data-quality" class="slide level3">
-<h3>Data Quality</h3>
-</section>
 <section id="data-readiness-levels" class="slide level3">
 <h3>Data Readiness Levels</h3>
-</section>
-<section id="section-7" class="slide level3">
-<h3></h3>
 <div class="centered" style="">
 <img class="" src="../slides/diagrams/data-science/data-readiness-levels.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
@@ -756,9 +747,6 @@ include{_data-science/includes/data-readiness-levels.md}
 <li>Grade A - usability</li>
 </ul>
 </section>
-<section id="move-beyond-software-engineering-to-data-engineering" class="slide level3">
-<h3>Move Beyond Software Engineering to Data Engineering</h3>
-</section>
 <section id="data-science-as-debugging" class="slide level3">
 <h3>Data Science as Debugging</h3>
 <ul>
@@ -776,7 +764,7 @@ include{_data-science/includes/data-readiness-levels.md}
 <li>Many companies employ ML Engineers focussing on <em>models</em> not <em>data</em>.</li>
 </ul>
 </section>
-<section id="section-8" class="slide level3">
+<section id="section-6" class="slide level3">
 <h3></h3>
 <div class="figure">
 <div id="derwent-valley-resevoir-figure" class="figure-frame">
@@ -786,7 +774,7 @@ include{_data-science/includes/data-readiness-levels.md}
 </div>
 </div>
 </section>
-<section id="section-9" class="slide level3">
+<section id="section-7" class="slide level3">
 <h3></h3>
 <div class="figure">
 <div id="lake-district-stream-figure" class="figure-frame">
@@ -807,9 +795,23 @@ include{_data-science/includes/data-readiness-levels.md}
 <section id="data-oriented-architectures" class="slide level3">
 <h3>Data Oriented Architectures</h3>
 <ul>
-<li>Convert data to a <em>first class citizen</em>.</li>
+<li>Convert data to a <em>first-class citizen</em>.</li>
 <li>View system as operations on <em>data streams</em>.</li>
 <li>Expose data operations in a programmatic way.</li>
+</ul>
+</section>
+<section id="data-orientated-architectures" class="slide level3">
+<h3>Data Orientated Architectures</h3>
+<ul>
+<li>Historically we’ve been <em>software first</em>
+<ul>
+<li>A necessary but not sufficient condition for <em>data first</em></li>
+</ul></li>
+<li>Move from
+<ol type="1">
+<li>service orientated architectures</li>
+<li><em>data orientated architectures</em></li>
+</ol></li>
 </ul>
 </section>
 <section id="streaming-system" class="slide level3">
@@ -821,12 +823,24 @@ include{_data-science/includes/data-readiness-levels.md}
 <li>Example Apache Kafka + Apache Flink</li>
 </ul>
 </section>
+<section id="streaming-architectures" class="slide level3">
+<h3>Streaming Architectures</h3>
+<ul>
+<li>AWS Kinesis, Apache Kafka</li>
+<li>Not just about streaming
+<ul>
+<li>Nodes in the architecture are <em>stateless</em></li>
+<li>They persist through storing state on <em>streams</em></li>
+</ul></li>
+<li>This brings the data <em>inside out</em></li>
+</ul>
+</section>
 <section id="apache-flink" class="slide level3">
 <h3>Apache Flink</h3>
 <ul>
 <li>Streams and transformations</li>
 <li>a stream is a (potentially never-ending) flow of data records</li>
-<li>a transformation is an operation that takes one or more streams as input, and produces one or more output streams as a result.</li>
+<li>a transformation: streams as input, produces transformed streams as output</li>
 </ul>
 </section>
 <section id="join" class="slide level3">
@@ -836,6 +850,15 @@ include{_data-science/includes/data-readiness-levels.md}
     .equalTo(&lt;KeySelector&gt;)
     .window(&lt;WindowAssigner&gt;)
     .apply(&lt;JoinFunction&gt;)</code></pre>
+</section>
+<section id="milan" class="slide level3">
+<h3>Milan</h3>
+<ul>
+<li>Data Oriented Programming Language and runtime.</li>
+<li>DSL Embedded in Scala converts to an intermediate langugage.</li>
+<li>Intermediate language for compilation on different platforms (currently Flink)</li>
+</ul>
+<p><a href="https://github.com/amzn/milan" class="uri">https://github.com/amzn/milan</a></p>
 </section>
 <section id="trading-system" class="slide level3">
 <h3>Trading System</h3>
@@ -860,7 +883,7 @@ include{_data-science/includes/data-readiness-levels.md}
 <ul>
 <li>Real stream — share prices
 <ul>
-<li>derived <em>hypothetical</em> stream — share prices in futrure.</li>
+<li>derived <em>hypothetical</em> stream — share prices in future.</li>
 </ul></li>
 <li>Hypothetical constrained by
 <ul>
@@ -879,26 +902,60 @@ include{_data-science/includes/data-readiness-levels.md}
 <ul>
 <li>calibration, fairness, dataset shift</li>
 </ul></li>
-<li>Opens door to auto-adaptable ML.</li>
+<li>Opens door to Auto AI.</li>
 </ul>
 </section>
-<section id="ride-sharing-system" class="slide level3">
-<h3>Ride Sharing System</h3>
+<section id="safeboda" class="slide level3">
+<h3>SafeBoda</h3>
+<div class="figure">
+<div id="safe-boda-system-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/ai/safe-boda.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+</section>
+<section id="safeboda-1" class="slide level3">
+<h3>SafeBoda</h3>
+<blockquote>
+<p>With road accidents set to match HIV/AIDS as the highest cause of death in low/middle income countries by 2030, SafeBoda’s aim is to modernise informal transportation and ensure safe access to mobility.</p>
+</blockquote>
+</section>
+<section id="ride-allocation-prediction" class="slide level3">
+<h3>Ride Allocation Prediction</h3>
+<div class="figure">
+<div id="ride-allocation-system-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ai/ride-allocation-prediction.svg" width="60%" style=" ">
+</object>
+</div>
+</div>
 </section>
 <section id="ride-sharing-service-oriented" class="slide level3">
 <h3>Ride Sharing: Service Oriented</h3>
+<div class="figure">
+<div id="ride-share-service-soa-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/data-science/ride-share-service-soa.svg" width="80%" style=" ">
 </object>
+</div>
+</div>
 </section>
 <section id="ride-sharing-data-oriented" class="slide level3">
 <h3>Ride Sharing: Data Oriented</h3>
+<div class="figure">
+<div id="ride-share-service-doa-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/data-science/ride-share-service-doa.svg" width="80%" style=" ">
 </object>
+</div>
+</div>
 </section>
 <section id="ride-sharing-hypothetical" class="slide level3">
 <h3>Ride Sharing: Hypothetical</h3>
+<div class="figure">
+<div id="ride-share-service-doa-hypothetical-figure" class="figure-frame">
 <object class="svgplot " data="../slides/diagrams/data-science/ride-share-service-doa-hypothetical.svg" width="80%" style=" ">
 </object>
+</div>
+</div>
 </section>
 <section id="information-dynamics" class="slide level3">
 <h3>Information Dynamics</h3>
@@ -910,17 +967,13 @@ include{_data-science/includes/data-readiness-levels.md}
 <li>See e.g. <a href="https://www.gla.ac.uk/schools/computing/research/researchsections/ida-section/closedloop/">Closed Loop Data Science</a> at Glasgow.</li>
 </ul>
 </section>
-<section id="our-efforts" class="slide level3">
-<h3>Our Efforts</h3>
-
-</section>
 <section id="conclusion" class="slide level3">
 <h3>Conclusion</h3>
 <ul>
-<li>Challenges in <em>design</em>, <em>data curation</em> and <em>model deployment</em> for ML.</li>
+<li>Challenges in <em>decomposition</em>, <em>data</em> and <em>model deployment</em> for ML.</li>
 <li>Data oriented architectures and data first thinking are the solution.</li>
 <li>Data oriented programming creates systems that are ready to deploy.</li>
-<li>Opens the door to auto-adaptive ML and information dynamics analysis.</li>
+<li>Opens the door to AutoAI and information dynamics analysis.</li>
 </ul>
 </section>
 <section id="thanks" class="slide level3">
@@ -928,7 +981,8 @@ include{_data-science/includes/data-readiness-levels.md}
 <ul>
 <li>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></li>
 <li>podcast: <a href="http://thetalkingmachines.com">The Talking Machines</a></li>
-<li><p>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></p></li>
+<li>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></li>
+<li><p>Blog post on <a href="http://inverseprobability.com/2017/01/12/data-readiness-levels">Data Readiness Levels</a></p></li>
 <li><p>Blog post on <a href="http://inverseprobability.com/2017/03/14/data-science-as-debugging">Data Science as Debugging</a></p></li>
 </ul>
 </section>
