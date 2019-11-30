@@ -1,6 +1,13 @@
 ---
 title: "Debating IBM's Project Debater"
 subtitle: Rage Against the Machine
+author:
+- family: Lawrence
+  given: Neil D.
+  gscholar: r3SJcvoAAAAJ
+  institute: University of Cambridge
+  twitter: lawrennd
+  url: http://inverseprobability.com
 youtube: lWkvopzAvoQ
 youtube_start: 4206
 youtube_end: 4725
@@ -24,7 +31,7 @@ On 21st November along with [Sharmila Parmanand](https://www.gender.cam.ac.uk/Ph
 
 I also answered some questions for Katia Moskvitch of the IBM Research Communicaitons team, I've included them below. [Katia's very comprehensive write up is available as a medium post](https://medium.com/@IBMResearch/augmenting-humans-ibms-project-debater-ai-gives-human-debating-teams-a-hand-at-cambridge-69a29bcd4eff).
 
-You can also read a blog post on \addblog{System Zero}{2015/12/04/what-kind-of-ai}.}
+You might also be interested in this blog post on \addblog{System Zero}{2015/12/04/what-kind-of-ai}}
 
 
 \notes{\subsection{Transcript}
