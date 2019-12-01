@@ -1,6 +1,7 @@
 ---
 title: "Challenges for Data Science in Healthcare"
 layout: slides
+author:
 - given: Neil D.
   family: Lawrence
   url: http://inverseprobability.com
@@ -47,7 +48,7 @@ transition: None
 * There are challenges and pitfalls
 * Here discussed two solutions for the Data Crisis
     1. Data Readiness Levels
-	2. Data Trusts
+    2. Data Trusts
 
 
 \thanks
