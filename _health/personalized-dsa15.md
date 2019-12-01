@@ -48,5 +48,6 @@ transition: None
 * Major issues in privacy and interfacing with the patient.
 * But: the revolution \emph{is} coming. We need to steer it.
 
+\thanks
 
-\subsection{References}
+\references
