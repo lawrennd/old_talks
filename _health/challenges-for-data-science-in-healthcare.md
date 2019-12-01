@@ -1,8 +1,13 @@
 ---
 title: "Challenges for Data Science in Healthcare"
 layout: slides
-author: Neil D. Lawrence
-affiliation: Amazon and University of Sheffield
+- given: Neil D.
+  family: Lawrence
+  url: http://inverseprobability.com
+  institute: Amazon Cambridge and University of Sheffield
+  twitter: lawrennd
+  gscholar: r3SJcvoAAAAJ
+  orchid: 
 transition: None
 ---
 
@@ -12,19 +17,17 @@ transition: None
 \include{_ml/includes/what-is-ml.md}
 \include{_ml/includes/data-science-vs-ai.md}
 
-### Background: Big Data
+\subsection)Background: Big Data}
 
 * The pervasiveness of data brings forward particular challenges.
-
 * Those challenges are most sharply in focus for personalized health.
-
 * Particular opportunities, in challenging areas such as *mental health*.
 
 \include{_data-science/includes/evolved-relationship.md}
 \include{_ai/includes/embodiment-factors.md}
 
 
-### Evolved Relationship
+\subsection{Evolved Relationship}
 
 \includediagram{../slides/diagrams/data-science/information-flow003}
 
@@ -38,7 +41,7 @@ transition: None
 \include{_data-science/includes/data-trusts.md}
 
 
-### Conclusion 
+\subsection{Conclusion} 
 
 * Data science offers a great deal of promise for healthcare
 * There are challenges and pitfalls
@@ -47,9 +50,6 @@ transition: None
 	2. Data Trusts
 
 
+\thanks
 
-### Thanks! 
-
-* twitter: \@lawrennd
-* blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
-* [Guardian articles](https://www.theguardian.com/profile/neil-lawrence)
+\references
