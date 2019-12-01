@@ -20,7 +20,8 @@ key: Lawrence-cfi17
 layout: talk
 month: 10
 published: 2017-07-13
-youtube: ExTDnppYB0w&t=6h20m0s
+youtube: ExTDnppYB0w
+youtube_start: 22800
 reveal: 2017-07-13-once-upon-a-universal-standard-time.slides.html
 venue: CFI Conference
 ---
