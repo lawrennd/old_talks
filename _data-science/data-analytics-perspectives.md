@@ -1,48 +1,43 @@
 ---
-layout: slides
-title: "Data Analytics Perspectives: Machine Learning"
+title: Data Analytics Perspectives
+subtitle: Machine Learning
 venue: CSaP Annual Conference, Royal Society
-author: Neil D. Lawrence
+author:
+- given: Neil D.
+  family: Lawrence
+  url: http://inverseprobability.com
+  institute: Amazon Cambridge and University of Sheffield
+  twitter: lawrennd
+  gscholar: r3SJcvoAAAAJ
+  orchid: 0000-0001-9258-1030
 abstract: >
   In this talk we will firstly set the landscape of machine learning, artificial intelligence and data science by describing what characteristics they share, and how they differ. We'll then shift focus to the promise and challenges associated with both Data Science and Artficial Intelligence, with particular attention paid to the potential for a "data crisis" and challenges in "machine learning systems design".
 ---
 
-#### Data Analytics Perspectives: Machine Learning
-#### CSaP Annual Conference, Royal Society
-#### 29th June 2017
-#### Neil Lawrence
-#### Amazon Research Cambridge and University of Sheffield
-```@lawrennd``` [inverseprobability.com](http://inverseprobability.com)
 
 
 \include{talk-macros.tex}
 \include{_ml/includes/what-is-ml.md}
 \include{_ml/includes/data-science-vs-ai.md}
 
-### Two Phenomena underpinned by ML
+\subsection{Two Phenomena underpinned by ML}
 
 * Data Science
-
 * Artificial Intelligence
 
-### Operating at Different Time Scales
+\subsection{Operating at Different Time Scales}
 
 \includediagram{../slides/diagrams/data-science/ai-time-frame}
 
 \center{\coloryellow{data science}&nbsp;&nbsp;\colorcyan{artificial intelligence}}
 
-### Data Science
 
-### Data Science
+\subsection{Data Science}
 
 * New technologies historically led to new professions:
-
     * Brunel (born 1806): Civil, mechanical, naval
-
     * Tesla (born 1856): Electrical and power
- 
     * William Shockley (born 1910): Electronic 
-
     * Watts S. Humphrey (born 1927): Software
 
 
@@ -66,25 +61,25 @@ abstract: >
 >
 > Me (born 1972)
 
-### Artificial Intelligence
+\subsection{Artificial Intelligence}
 
-### AI Bubble? {.slide: data-transition="none"}
+\subsection{AI Bubble?}
 
 <center><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">If 1997 to 2001 was the dot com bubble, are we now in the dot ai bubble?</p>&mdash; Neil Lawrence (@lawrennd) <a href="https://twitter.com/lawrennd/status/880160513329688576">June 28, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js"
 charset="utf-8"></script></center>
 
-### AI Bubble? {.slide: data-transition="none"}
+\newslide{AI Bubble?}
 
 <center><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">It&#39;s not a bubble as long as it&#39;s not filled with hot air. AI is based on actual testable results and deployed in real life situations.</p>&mdash; visarga (@visarga) <a href="https://twitter.com/visarga/status/880266521045585922">June 29, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></center>
 
-### AI Bubble? {.slide: data-transition="none"}
+\newslide{AI Bubble?}
 
 <center><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">dot com was also based on real deployable technology. Boom vs bubble is driven by expectations.</p>&mdash; Neil Lawrence (@lawrennd) <a href="https://twitter.com/lawrennd/status/880307062231748608">June 29, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></center>
 
-### Artificial Intelligence {.slide: data-transition="none"}
+\newslide{Artificial Intelligence}
 
 * Challenge of empathy.
 
@@ -92,7 +87,7 @@ charset="utf-8"></script></center>
 >
 > BEIS Discussion Under Chatham House Rule
 
-### Artificial Intelligence {.slide: data-transition="none"}
+\newslide{Artificial Intelligence}
 
 * Challenge of empathy.
 
@@ -100,48 +95,36 @@ charset="utf-8"></script></center>
 >
 > Thinks me
 
-### Deploying ML in Real World: Machine Learning Systems Design {.slide: data-transition="none"}
+\subsection{Deploying ML in Real World: Machine Learning Systems Design}
 
 * Internet of Things
-
 * Major new challenge for systems designers.
-
 * AI systems are currently *fragile*
-
     * Example: Stuxnet
 
-### Deploying ML in Real World: Machine Learning Systems Design {.slide: data-transition="none"}
+\newslide{Deploying ML in Real World: Machine Learning Systems Design}
 
 * Internet of ~~Things~~
-
 * Major new challenge for systems designers.
-
 * AI systems are currently *fragile*
-
     * Example: Stuxnet
 
-### Deploying ML in Real World: Machine Learning Systems Design {.slide: data-transition="none"}
+\newslide{Deploying ML in Real World: Machine Learning Systems Design}
 
 * Internet of **People**
-
 * Major new challenge for systems designers.
-
 * AI systems are currently *fragile*
-
     * Example: Stuxnet
 
-### Machine Learning Systems Design
+\newslide{Machine Learning Systems Design}
 
-<img src="./diagrams/SteamEngine_Boulton&Watt_1784_neg.png" width="50%" style="border:none">
+\includepng{../diagrams/SteamEngine_Boulton&Watt_1784}{50%}
 
-### Peppercorns
+\subsection{Peppercorns}
 
 * A new name for system failures which aren't bugs.
+* Difference between finding a fly in your soup vs a peppercorn in your soup. 
 
-* Difference between finding a fly in your soup vs a peppercorn in
-  your soup. 
+\thanks
 
-### Thanks!
-
-* twitter: @lawrennd
-* blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
+\references
