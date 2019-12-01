@@ -17,58 +17,56 @@ published: 2009-09-06
 
 \include{talk-macros.tex}
 
+\subsection{Online Resources}
 
-\begin{frame}
-\frametitle{Online Resources}
+**All source code and slides are available online**
 
-\textbf{All source code and slides are available online}
-\begin{itemize}
-\item Tutorial homepage is 
-
-\begin{itemize}
-\item \url{http://www.cs.man.ac.uk/~neill/interspeech_tutorial.html}.
-\item MATLAB/Octave commands used for examples given in \texttt{typewriter
+* Tutorial homepage is 
+    * <http://www.cs.man.ac.uk/~neill/interspeech_tutorial.html>
+    * MATLAB/Octave commands used for examples given in \texttt{typewriter
 font}.
-\end{itemize}
-\end{itemize}
-\end{frame}
+
+\section{Thinking in High Dimensions}
 
 \include{_dimred/includes/thinking.md}
+
+\section{Probabilistic Linear Dimensionality Reduction}
+
 \include{_dimred/includes/linear.md}
+
+\section{Spectral Methods}
+
 \include{_dimred/includes/spectral.md}
+
+\section{Density Networks and GTM}
+
 \include{_dimred/includes/generative.md}
+
+\section{Dual Probabilistic PCA and GP-LVM}
+
 \include{_dimred/includes/gplvm.md}
 
-### Conclusions
+\section{Conclusions}
 
-### References
+\include{_dimred/includes/conclusions.md}
+
+\thanks 
+
+\references
+
+\section{Probabilistic PCA Proof}
 
 \include{_dimred/includes/supplementary.md}
 
-\section{Thinking in High Dimensions}
+
 \include{_dimred/tex/talks/thinking}
-\section{Probabilistic Linear Dimensionality Reduction}
 \include{_dimred/tex/talks/linear}
-\section{Spectral Methods}
 \include{_dimred/tex/talks/spectral}
-\section{Density Networks and GTM}
 \include{_dimred/tex/talks/generative}
-\section{Dual Probabilistic PCA and GP-LVM}
 \include{_dimred/tex/talks/gplvm}
-\section{Conclusions}
+
 \include{_dimred/tex/talks/conclusions}
-
-\begin{frame}[allowframebreaks]
-  \frametitle{References}
-
-  {\tiny \bibliographystyle{pdf_abbrvnat}
-    \bibliography{lawrence,other,zbooks}
-  }
-  
-  
-\end{frame}
-\appendix
-\section{Probabilistic PCA Proof}{_dimred/tex/talks/supplementary}
+\include{_dimred/tex/talks/supplementary}
 
 \thanks
 
