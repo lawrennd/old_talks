@@ -60,13 +60,11 @@ The machine knows who we are. That is limiting our freedoms, it's limiting our a
 
 The rewards of this technology are many, and have been elucidated beautifully by project debater. And I'm sure they're going to be even more so by Harish. 
 
-But bear this in mind, over the next 10 years we are going to be on a perilous journey. A journey where we are going to the heart of who we are and undermining our very selves. 
+But bear this in mind, over the next 10 years we will be on a perilous journey. A journey where we are going to the heart of who we are and undermining our very selves. 
 
 Now my main argument is akin to Pascal's wager, we should believe that AI will do us harm because it's the best way to prevent us from falling into those harms. If we state here that AI is some universal good that will take us on a journey of freedom and health we'll be in for a very sorry ending as a civilization. 
 
 Thank you.
-
-
 }
 
 

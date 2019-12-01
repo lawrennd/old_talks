@@ -6,7 +6,7 @@
 \newslide{}
 
 \slides{
-\aligncenter{Are we close to creating intelligence?</center>}
+\aligncenter{Are we close to creating intelligence?}
 }
 \notes{*How are we making computers do the things we used to associated only with humans? Have we made a breakthrough in understanding human intelligence?*
 
