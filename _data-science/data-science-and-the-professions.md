@@ -13,10 +13,10 @@ author:
   institute: Amazon Cambridge and University of Sheffield
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
-  orchid: 
+  orcid:
+venue: IRSG Ethics, Privacy, Transparency and Bias in Information Retrieval, Sheffield, UK
 published: 2018-09-05
-reveal: 2018-09-05-data-science-time-for-professionalism.slides.html
-ipynb: 2018-09-05-data-science-time-for-professionalism.ipynb
+reveal: 2018-09-05-data-science-and-the-professions.slides.html
 layout: talk
 transition: None
 date: 2018-09-05
