@@ -1,6 +1,7 @@
 ---
 title: Deep Gaussian Processes
-abstract: 'In this talk we will introduce deep Gaussian process (GP) models. Deep
+abstract: >
+  In this talk we will introduce deep Gaussian process (GP) models. Deep
   GPs are a deep probabilistic model based on Gaussian process mappings. The data
   is modelled as the output of a multivariate GP. The inputs to that Gaussian process
   are then governed by another GP. A single layer model is equivalent to a standard
@@ -16,7 +17,7 @@ abstract: 'In this talk we will introduce deep Gaussian process (GP) models. Dee
   that a five layer hierarchy is justified even when modelling a digit data set containing
   only 150 examples. In the seminar we will briefly review dimensionality reduction
   via Gaussian processes, before showing how this framework can be extended to build
-  deep models.'
+  deep models.
 author:
 - family: Lawrence
   given: Neil D.
