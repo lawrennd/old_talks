@@ -25,7 +25,7 @@ author:
   institute: University of Sheffield
   twitter: lawrennd
   url: http://inverseprobability.com
-  orcid
+  orcid:
 categories:
 - Lawrence-oxford14
 layout: talk
