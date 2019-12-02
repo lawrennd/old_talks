@@ -3,6 +3,7 @@
 
 \editme
 
+\newslide{}
 \notes{\subsection{Amazon's New Delivery Drone}}
 
 \notes{One example is autonomous vehicles, both those we intend to operate on the ground and also those in the air.}

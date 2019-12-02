@@ -1,3 +1,3 @@
-BASE=week5
+BASE=guest-lecture
 include ../make-talk-flags.mk
 include ../make-talk.mk

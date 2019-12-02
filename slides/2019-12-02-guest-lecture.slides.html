@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="dcterms.date" content="2019-12-02">
+  <title>Naive Days</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="talks.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    TeX: {
+         extensions: ["color.js"]
+      }
+    });
+  </script>
+  <script src="figure-animate.js"></script>
+</head>
+<body>
+\[\newcommand{\tk}[1]{}
+%\newcommand{\tk}[1]{\textbf{TK}: #1}
+\newcommand{\Amatrix}{\mathbf{A}}
+\newcommand{\KL}[2]{\text{KL}\left( #1\,\|\,#2 \right)}
+\newcommand{\Kaast}{\kernelMatrix_{\mathbf{ \ast}\mathbf{ \ast}}}
+\newcommand{\Kastu}{\kernelMatrix_{\mathbf{ \ast} \inducingVector}}
+\newcommand{\Kff}{\kernelMatrix_{\mappingFunctionVector \mappingFunctionVector}}
+\newcommand{\Kfu}{\kernelMatrix_{\mappingFunctionVector \inducingVector}}
+\newcommand{\Kuast}{\kernelMatrix_{\inducingVector \bf\ast}}
+\newcommand{\Kuf}{\kernelMatrix_{\inducingVector \mappingFunctionVector}}
+\newcommand{\Kuu}{\kernelMatrix_{\inducingVector \inducingVector}}
+\newcommand{\Kuui}{\Kuu^{-1}}
+\newcommand{\Qaast}{\mathbf{Q}_{\bf \ast \ast}}
+\newcommand{\Qastf}{\mathbf{Q}_{\ast \mappingFunction}}
+\newcommand{\Qfast}{\mathbf{Q}_{\mappingFunctionVector \bf \ast}}
+\newcommand{\Qff}{\mathbf{Q}_{\mappingFunctionVector \mappingFunctionVector}}
+\newcommand{\aMatrix}{\mathbf{A}}
+\newcommand{\aScalar}{a}
+\newcommand{\aVector}{\mathbf{a}}
+\newcommand{\acceleration}{a}
+\newcommand{\bMatrix}{\mathbf{B}}
+\newcommand{\bScalar}{b}
+\newcommand{\bVector}{\mathbf{b}}
+\newcommand{\basisFunc}{\phi}
+\newcommand{\basisFuncVector}{\boldsymbol{ \basisFunc}}
+\newcommand{\basisFunction}{\phi}
+\newcommand{\basisLocation}{\mu}
+\newcommand{\basisMatrix}{\boldsymbol{ \Phi}}
+\newcommand{\basisScalar}{\basisFunction}
+\newcommand{\basisVector}{\boldsymbol{ \basisFunction}}
+\newcommand{\activationFunction}{\phi}
+\newcommand{\activationMatrix}{\boldsymbol{ \Phi}}
+\newcommand{\activationScalar}{\basisFunction}
+\newcommand{\activationVector}{\boldsymbol{ \basisFunction}}
+\newcommand{\bigO}{\mathcal{O}}
+\newcommand{\binomProb}{\pi}
+\newcommand{\cMatrix}{\mathbf{C}}
+\newcommand{\cbasisMatrix}{\hat{\boldsymbol{ \Phi}}}
+\newcommand{\cdataMatrix}{\hat{\dataMatrix}}
+\newcommand{\cdataScalar}{\hat{\dataScalar}}
+\newcommand{\cdataVector}{\hat{\dataVector}}
+\newcommand{\centeredKernelMatrix}{\mathbf{ \MakeUppercase{\centeredKernelScalar}}}
+\newcommand{\centeredKernelScalar}{b}
+\newcommand{\centeredKernelVector}{\centeredKernelScalar}
+\newcommand{\centeringMatrix}{\mathbf{H}}
+\newcommand{\chiSquaredDist}[2]{\chi_{#1}^{2}\left(#2\right)}
+\newcommand{\chiSquaredSamp}[1]{\chi_{#1}^{2}}
+\newcommand{\conditionalCovariance}{\boldsymbol{ \Sigma}}
+\newcommand{\coregionalizationMatrix}{\mathbf{B}}
+\newcommand{\coregionalizationScalar}{b}
+\newcommand{\coregionalizationVector}{\mathbf{ \coregionalizationScalar}}
+\newcommand{\covDist}[2]{\text{cov}_{#2}\left(#1\right)}
+\newcommand{\covSamp}[1]{\text{cov}\left(#1\right)}
+\newcommand{\covarianceScalar}{c}
+\newcommand{\covarianceVector}{\mathbf{ \covarianceScalar}}
+\newcommand{\covarianceMatrix}{\mathbf{C}}
+\newcommand{\covarianceMatrixTwo}{\boldsymbol{ \Sigma}}
+\newcommand{\croupierScalar}{s}
+\newcommand{\croupierVector}{\mathbf{ \croupierScalar}}
+\newcommand{\croupierMatrix}{\mathbf{ \MakeUppercase{\croupierScalar}}}
+\newcommand{\dataDim}{p}
+\newcommand{\dataIndex}{i}
+\newcommand{\dataIndexTwo}{j}
+\newcommand{\dataMatrix}{\mathbf{Y}}
+\newcommand{\dataScalar}{y}
+\newcommand{\dataSet}{\mathcal{D}}
+\newcommand{\dataStd}{\sigma}
+\newcommand{\dataVector}{\mathbf{ \dataScalar}}
+\newcommand{\decayRate}{d}
+\newcommand{\degreeMatrix}{\mathbf{ \MakeUppercase{\degreeScalar}}}
+\newcommand{\degreeScalar}{d}
+\newcommand{\degreeVector}{\mathbf{ \degreeScalar}}
+% Already defined by latex
+%\newcommand{\det}[1]{\left|#1\right|}
+\newcommand{\diag}[1]{\text{diag}\left(#1\right)}
+\newcommand{\diagonalMatrix}{\mathbf{D}}
+\newcommand{\diff}[2]{\frac{\text{d}#1}{\text{d}#2}}
+\newcommand{\diffTwo}[2]{\frac{\text{d}^2#1}{\text{d}#2^2}}
+\newcommand{\displacement}{x}
+\newcommand{\displacementVector}{\textbf{\displacement}}
+\newcommand{\distanceMatrix}{\mathbf{ \MakeUppercase{\distanceScalar}}}
+\newcommand{\distanceScalar}{d}
+\newcommand{\distanceVector}{\mathbf{ \distanceScalar}}
+\newcommand{\eigenvaltwo}{\ell}
+\newcommand{\eigenvaltwoMatrix}{\mathbf{L}}
+\newcommand{\eigenvaltwoVector}{\mathbf{l}}
+\newcommand{\eigenvalue}{\lambda}
+\newcommand{\eigenvalueMatrix}{\boldsymbol{ \Lambda}}
+\newcommand{\eigenvalueVector}{\boldsymbol{ \lambda}}
+\newcommand{\eigenvector}{\mathbf{ \eigenvectorScalar}}
+\newcommand{\eigenvectorMatrix}{\mathbf{U}}
+\newcommand{\eigenvectorScalar}{u}
+\newcommand{\eigenvectwo}{\mathbf{v}}
+\newcommand{\eigenvectwoMatrix}{\mathbf{V}}
+\newcommand{\eigenvectwoScalar}{v}
+\newcommand{\entropy}[1]{\mathcal{H}\left(#1\right)}
+\newcommand{\errorFunction}{E}
+\newcommand{\expDist}[2]{\left<#1\right>_{#2}}
+\newcommand{\expSamp}[1]{\left<#1\right>}
+\newcommand{\expectation}[1]{\left\langle #1 \right\rangle }
+\newcommand{\expectationDist}[2]{\left\langle #1 \right\rangle _{#2}}
+\newcommand{\expectedDistanceMatrix}{\mathcal{D}}
+\newcommand{\eye}{\mathbf{I}}
+\newcommand{\fantasyDim}{r}
+\newcommand{\fantasyMatrix}{\mathbf{ \MakeUppercase{\fantasyScalar}}}
+\newcommand{\fantasyScalar}{z}
+\newcommand{\fantasyVector}{\mathbf{ \fantasyScalar}}
+\newcommand{\featureStd}{\varsigma}
+\newcommand{\gammaCdf}[3]{\mathcal{GAMMA CDF}\left(#1|#2,#3\right)}
+\newcommand{\gammaDist}[3]{\mathcal{G}\left(#1|#2,#3\right)}
+\newcommand{\gammaSamp}[2]{\mathcal{G}\left(#1,#2\right)}
+\newcommand{\gaussianDist}[3]{\mathcal{N}\left(#1|#2,#3\right)}
+\newcommand{\gaussianSamp}[2]{\mathcal{N}\left(#1,#2\right)}
+\newcommand{\given}{|}
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\heaviside}{H}
+\newcommand{\hiddenMatrix}{\mathbf{ \MakeUppercase{\hiddenScalar}}}
+\newcommand{\hiddenScalar}{h}
+\newcommand{\hiddenVector}{\mathbf{ \hiddenScalar}}
+\newcommand{\identityMatrix}{\eye}
+\newcommand{\inducingInputScalar}{z}
+\newcommand{\inducingInputVector}{\mathbf{ \inducingInputScalar}}
+\newcommand{\inducingInputMatrix}{\mathbf{Z}}
+\newcommand{\inducingScalar}{u}
+\newcommand{\inducingVector}{\mathbf{ \inducingScalar}}
+\newcommand{\inducingMatrix}{\mathbf{U}}
+\newcommand{\inlineDiff}[2]{\text{d}#1/\text{d}#2}
+\newcommand{\inputDim}{q}
+\newcommand{\inputMatrix}{\mathbf{X}}
+\newcommand{\inputScalar}{x}
+\newcommand{\inputSpace}{\mathcal{X}}
+\newcommand{\inputVals}{\inputVector}
+\newcommand{\inputVector}{\mathbf{ \inputScalar}}
+\newcommand{\iterNum}{k}
+\newcommand{\kernel}{\kernelScalar}
+\newcommand{\kernelMatrix}{\mathbf{K}}
+\newcommand{\kernelScalar}{k}
+\newcommand{\kernelVector}{\mathbf{ \kernelScalar}}
+\newcommand{\kff}{\kernelScalar_{\mappingFunction \mappingFunction}}
+\newcommand{\kfu}{\kernelVector_{\mappingFunction \inducingScalar}}
+\newcommand{\kuf}{\kernelVector_{\inducingScalar \mappingFunction}}
+\newcommand{\kuu}{\kernelVector_{\inducingScalar \inducingScalar}}
+\newcommand{\lagrangeMultiplier}{\lambda}
+\newcommand{\lagrangeMultiplierMatrix}{\boldsymbol{ \Lambda}}
+\newcommand{\lagrangian}{L}
+\newcommand{\laplacianFactor}{\mathbf{ \MakeUppercase{\laplacianFactorScalar}}}
+\newcommand{\laplacianFactorScalar}{m}
+\newcommand{\laplacianFactorVector}{\mathbf{ \laplacianFactorScalar}}
+\newcommand{\laplacianMatrix}{\mathbf{L}}
+\newcommand{\laplacianScalar}{\ell}
+\newcommand{\laplacianVector}{\mathbf{ \ell}}
+\newcommand{\latentDim}{q}
+\newcommand{\latentDistanceMatrix}{\boldsymbol{ \Delta}}
+\newcommand{\latentDistanceScalar}{\delta}
+\newcommand{\latentDistanceVector}{\boldsymbol{ \delta}}
+\newcommand{\latentForce}{f}
+\newcommand{\latentFunction}{u}
+\newcommand{\latentFunctionVector}{\mathbf{ \latentFunction}}
+\newcommand{\latentFunctionMatrix}{\mathbf{ \MakeUppercase{\latentFunction}}}
+\newcommand{\latentIndex}{j}
+\newcommand{\latentScalar}{z}
+\newcommand{\latentVector}{\mathbf{ \latentScalar}}
+\newcommand{\latentMatrix}{\mathbf{Z}}
+\newcommand{\learnRate}{\eta}
+\newcommand{\lengthScale}{\ell}
+\newcommand{\rbfWidth}{\ell}
+\newcommand{\likelihoodBound}{\mathcal{L}}
+\newcommand{\likelihoodFunction}{L}
+\newcommand{\locationScalar}{\mu}
+\newcommand{\locationVector}{\boldsymbol{ \locationScalar}}
+\newcommand{\locationMatrix}{\mathbf{M}}
+\newcommand{\variance}[1]{\text{var}\left( #1 \right)}
+\newcommand{\mappingFunction}{f}
+\newcommand{\mappingFunctionMatrix}{\mathbf{F}}
+\newcommand{\mappingFunctionTwo}{g}
+\newcommand{\mappingFunctionTwoMatrix}{\mathbf{G}}
+\newcommand{\mappingFunctionTwoVector}{\mathbf{ \mappingFunctionTwo}}
+\newcommand{\mappingFunctionVector}{\mathbf{ \mappingFunction}}
+\newcommand{\scaleScalar}{s}
+\newcommand{\mappingScalar}{w}
+\newcommand{\mappingVector}{\mathbf{ \mappingScalar}}
+\newcommand{\mappingMatrix}{\mathbf{W}}
+\newcommand{\mappingScalarTwo}{v}
+\newcommand{\mappingVectorTwo}{\mathbf{ \mappingScalarTwo}}
+\newcommand{\mappingMatrixTwo}{\mathbf{V}}
+\newcommand{\maxIters}{K}
+\newcommand{\meanMatrix}{\mathbf{M}}
+\newcommand{\meanScalar}{\mu}
+\newcommand{\meanTwoMatrix}{\mathbf{M}}
+\newcommand{\meanTwoScalar}{m}
+\newcommand{\meanTwoVector}{\mathbf{ \meanTwoScalar}}
+\newcommand{\meanVector}{\boldsymbol{ \meanScalar}}
+\newcommand{\mrnaConcentration}{m}
+\newcommand{\naturalFrequency}{\omega}
+\newcommand{\neighborhood}[1]{\mathcal{N}\left( #1 \right)}
+\newcommand{\neilurl}{http://inverseprobability.com/}
+\newcommand{\noiseMatrix}{\boldsymbol{ E}}
+\newcommand{\noiseScalar}{\epsilon}
+\newcommand{\noiseVector}{\boldsymbol{ \epsilon}}
+\newcommand{\norm}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\normalizedLaplacianMatrix}{\hat{\mathbf{L}}}
+\newcommand{\normalizedLaplacianScalar}{\hat{\ell}}
+\newcommand{\normalizedLaplacianVector}{\hat{\mathbf{ \ell}}}
+\newcommand{\numActive}{m}
+\newcommand{\numBasisFunc}{m}
+\newcommand{\numComponents}{m}
+\newcommand{\numComps}{K}
+\newcommand{\numData}{n}
+\newcommand{\numFeatures}{K}
+\newcommand{\numHidden}{h}
+\newcommand{\numInducing}{m}
+\newcommand{\numLayers}{\ell}
+\newcommand{\numNeighbors}{K}
+\newcommand{\numSequences}{s}
+\newcommand{\numSuccess}{s}
+\newcommand{\numTasks}{m}
+\newcommand{\numTime}{T}
+\newcommand{\numTrials}{S}
+\newcommand{\outputIndex}{j}
+\newcommand{\paramVector}{\boldsymbol{ \theta}}
+\newcommand{\parameterMatrix}{\boldsymbol{ \Theta}}
+\newcommand{\parameterScalar}{\theta}
+\newcommand{\parameterVector}{\boldsymbol{ \parameterScalar}}
+\newcommand{\partDiff}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\precisionScalar}{j}
+\newcommand{\precisionVector}{\mathbf{ \precisionScalar}}
+\newcommand{\precisionMatrix}{\mathbf{J}}
+\newcommand{\pseudotargetScalar}{\widetilde{y}}
+\newcommand{\pseudotargetVector}{\mathbf{ \pseudotargetScalar}}
+\newcommand{\pseudotargetMatrix}{\mathbf{ \widetilde{Y}}}
+\newcommand{\rank}[1]{\text{rank}\left(#1\right)}
+\newcommand{\rayleighDist}[2]{\mathcal{R}\left(#1|#2\right)}
+\newcommand{\rayleighSamp}[1]{\mathcal{R}\left(#1\right)}
+\newcommand{\responsibility}{r}
+\newcommand{\rotationScalar}{r}
+\newcommand{\rotationVector}{\mathbf{ \rotationScalar}}
+\newcommand{\rotationMatrix}{\mathbf{R}}
+\newcommand{\sampleCovScalar}{s}
+\newcommand{\sampleCovVector}{\mathbf{ \sampleCovScalar}}
+\newcommand{\sampleCovMatrix}{\mathbf{s}}
+\newcommand{\scalarProduct}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\sign}[1]{\text{sign}\left(#1\right)}
+\newcommand{\sigmoid}[1]{\sigma\left(#1\right)}
+\newcommand{\singularvalue}{\ell}
+\newcommand{\singularvalueMatrix}{\mathbf{L}}
+\newcommand{\singularvalueVector}{\mathbf{l}}
+\newcommand{\sorth}{\mathbf{u}}
+\newcommand{\spar}{\lambda}
+\newcommand{\trace}[1]{\text{tr}\left(#1\right)}
+\newcommand{\BasalRate}{B}
+\newcommand{\DampingCoefficient}{C}
+\newcommand{\DecayRate}{D}
+\newcommand{\Displacement}{X}
+\newcommand{\LatentForce}{F}
+\newcommand{\Mass}{M}
+\newcommand{\Sensitivity}{S}
+\newcommand{\basalRate}{b}
+\newcommand{\dampingCoefficient}{c}
+\newcommand{\mass}{m}
+\newcommand{\sensitivity}{s}
+\newcommand{\springScalar}{\kappa}
+\newcommand{\springVector}{\boldsymbol{ \kappa}}
+\newcommand{\springMatrix}{\boldsymbol{ \mathcal{K}}}
+\newcommand{\tfConcentration}{p}
+\newcommand{\tfDecayRate}{\delta}
+\newcommand{\tfMrnaConcentration}{f}
+\newcommand{\tfVector}{\mathbf{ \tfConcentration}}
+\newcommand{\velocity}{v}
+\newcommand{\sufficientStatsScalar}{g}
+\newcommand{\sufficientStatsVector}{\mathbf{ \sufficientStatsScalar}}
+\newcommand{\sufficientStatsMatrix}{\mathbf{G}}
+\newcommand{\switchScalar}{s}
+\newcommand{\switchVector}{\mathbf{ \switchScalar}}
+\newcommand{\switchMatrix}{\mathbf{S}}
+\newcommand{\tr}[1]{\text{tr}\left(#1\right)}
+\newcommand{\loneNorm}[1]{\left\Vert #1 \right\Vert_1}
+\newcommand{\ltwoNorm}[1]{\left\Vert #1 \right\Vert_2}
+\newcommand{\onenorm}[1]{\left\vert#1\right\vert_1}
+\newcommand{\twonorm}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\vScalar}{v}
+\newcommand{\vVector}{\mathbf{v}}
+\newcommand{\vMatrix}{\mathbf{V}}
+\newcommand{\varianceDist}[2]{\text{var}_{#2}\left( #1 \right)}
+% Already defined by latex
+%\newcommand{\vec}{#1:}
+\newcommand{\vecb}[1]{\left(#1\right):}
+\newcommand{\weightScalar}{w}
+\newcommand{\weightVector}{\mathbf{ \weightScalar}}
+\newcommand{\weightMatrix}{\mathbf{W}}
+\newcommand{\weightedAdjacencyMatrix}{\mathbf{A}}
+\newcommand{\weightedAdjacencyScalar}{a}
+\newcommand{\weightedAdjacencyVector}{\mathbf{ \weightedAdjacencyScalar}}
+\newcommand{\onesVector}{\mathbf{1}}
+\newcommand{\zerosVector}{\mathbf{0}}
+\]
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Naive Days</h1>
+  <p class="subtitle" style="text-align:center">Challenges Before the AI Revolution Arrives</p>
+  <p class="author" style="text-align:center"><a href="http://inverseprobability.com">Neil D. Lawrence</a></p>
+  <p class="date" style="text-align:center"><time>2019-12-02</time></p>
+  <p class="venue" style="text-align:center">University of Sheffield</p>
+</section>
+
+<section class="slide level3">
+
+<!-- Front matter -->
+<!-- Front matter -->
+<!-- Do not edit this file locally. -->
+<!-- Do not edit this file locally. -->
+<!-- Do not edit this file locally. -->
+<!---->
+<!-- Do not edit this file locally. -->
+<!--Back matter-->
+<!-- Do not edit this file locally. -->
+<!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
+</section>
+<section id="section" class="slide level3">
+<h3></h3>
+<blockquote>
+<p>There are three types of lies: lies, damned lies and statistics</p>
+<p>??</p>
+</blockquote>
+</section>
+<section id="section-1" class="slide level3">
+<h3></h3>
+<blockquote>
+<p>There are three types of lies: lies, damned lies and statistics</p>
+<p>Benjamin Disraeli</p>
+</blockquote>
+</section>
+<section id="section-2" class="slide level3">
+<h3></h3>
+<blockquote>
+<p>There are three types of lies: lies, damned lies and statistics</p>
+<p>Benjamin Disraeli 1804-1881</p>
+</blockquote>
+</section>
+<section id="section-3" class="slide level3">
+<h3></h3>
+<blockquote>
+<p>There are three types of lies: lies, damned lies and ‘big data’</p>
+<p>Neil Lawrence 1972-?</p>
+</blockquote>
+</section>
+<section id="mathematical-statistics" class="slide level3">
+<h3><em>Mathematical</em> Statistics</h3>
+<div class="figure">
+<div id="portrait-of-karl-pearson-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/Portrait_of_Karl_Pearson.jpg" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+</section>
+<section id="mathematical-data-science" class="slide level3">
+<h3>‘Mathematical Data Science’</h3>
+<div class="figure">
+<div id="question-mark-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/Question_mark.png" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<!-- SECTION What is Machine Learning? -->
+</section>
+<section id="what-is-machine-learning" class="slide level3">
+<h3>What is Machine Learning?</h3>
+<div class="fragment">
+<p><span class="math display">\[ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span></p>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>data</strong> : observations, could be actively or passively acquired (meta-data).</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>model</strong> : assumptions, based on previous experience (other data! transfer learning etc), or beliefs about the regularities of the universe. Inductive bias.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>prediction</strong> : an action to be taken or a categorization or a quality score.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Royal Society Report: <a href="https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf">Machine Learning: Power and Promise of Computers that Learn by Example</a></li>
+</ul>
+</div>
+</section>
+<section id="what-is-machine-learning-1" class="slide level3">
+<h3>What is Machine Learning?</h3>
+<p><span class="math display">\[\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span></p>
+<ul>
+<li class="fragment">To combine data with a model need:</li>
+<li class="fragment"><strong>a prediction function</strong> <span class="math inline">\(\mappingFunction (\cdot)\)</span> includes our beliefs about the regularities of the universe</li>
+<li class="fragment"><strong>an objective function</strong> <span class="math inline">\(\errorFunction (\cdot)\)</span> defines the cost of misprediction.</li>
+</ul>
+</section>
+<section id="machine-learning" class="slide level3">
+<h3>Machine Learning</h3>
+<ul>
+<li>Driver of two different domains:
+<ol type="1">
+<li><em>Data Science</em>: arises from the fact that we now capture data by happenstance.</li>
+<li><em>Artificial Intelligence</em>: emulation of human behaviour.</li>
+</ol></li>
+<li>Connection: Internet of Things</li>
+</ul>
+</section>
+<section id="machine-learning-1" class="slide level3">
+<h3>Machine Learning</h3>
+<ul>
+<li>Driver of two different domains:
+<ol type="1">
+<li><em>Data Science</em>: arises from the fact that we now capture data by happenstance.</li>
+<li><em>Artificial Intelligence</em>: emulation of human behaviour.</li>
+</ol></li>
+<li>Connection: Internet of <del>Things</del></li>
+</ul>
+</section>
+<section id="machine-learning-2" class="slide level3">
+<h3>Machine Learning</h3>
+<ul>
+<li>Driver of two different domains:
+<ol type="1">
+<li><em>Data Science</em>: arises from the fact that we now capture data by happenstance.</li>
+<li><em>Artificial Intelligence</em>: emulation of human behaviour.</li>
+</ol></li>
+<li>Connection: Internet of People</li>
+</ul>
+</section>
+<section id="section-4" class="slide level3">
+<h3></h3>
+<center>
+Convention for the Protection of <em>Individuals</em> with regard to Automatic Processing of <em>Personal Data</em> (1981/1/28)
+</center>
+</section>
+<section id="what-does-machine-learning-do" class="slide level3">
+<h3>What does Machine Learning do?</h3>
+<ul>
+<li>ML Automates through Data
+<ul>
+<li><em>Strongly</em> related to statistics.</li>
+<li>Field underpins revolution in <em>data science</em> and <em>AI</em></li>
+</ul></li>
+<li>With AI:
+<ul>
+<li><em>logic</em>, <em>robotics</em>, <em>computer vision</em>, <em>speech</em></li>
+</ul></li>
+<li>With Data Science:
+<ul>
+<li><em>databases</em>, <em>data mining</em>, <em>statistics</em>, <em>visualization</em></li>
+</ul></li>
+</ul>
+</section>
+<section id="what-does-machine-learning-do-1" class="slide level3">
+<h3>What does Machine Learning do?</h3>
+<ul>
+<li>Automation scales by codifying processes and automating them.</li>
+<li>Need:
+<ul>
+<li>Interconnected components</li>
+<li>Compatible components</li>
+</ul></li>
+<li>Early examples:
+<ul>
+<li>cf Colt 45, Ford Model T</li>
+</ul></li>
+</ul>
+</section>
+<section id="codify-through-mathematical-functions" class="slide level3">
+<h3>Codify Through Mathematical Functions</h3>
+<ul>
+<li>How does machine learning work?</li>
+<li>Jumper (jersey/sweater) purchase with logistic regression</li>
+</ul>
+<p><span class="math display">\[ \text{odds} = \frac{p(\text{bought})}{p(\text{not bought})} \]</span></p>
+<p><span class="math display">\[ \log \text{odds}  = \beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}.\]</span></p>
+</section>
+<section id="codify-through-mathematical-functions-1" class="slide level3">
+<h3>Codify Through Mathematical Functions</h3>
+<ul>
+<li>How does machine learning work?</li>
+<li>Jumper (jersey/sweater) purchase with logistic regression</li>
+</ul>
+<p><span class="math display">\[ p(\text{bought}) =  \sigmoid{\beta_0 + \beta_1 \text{age} + \beta_2 \text{latitude}}.\]</span></p>
+</section>
+<section id="codify-through-mathematical-functions-2" class="slide level3">
+<h3>Codify Through Mathematical Functions</h3>
+<ul>
+<li>How does machine learning work?</li>
+<li>Jumper (jersey/sweater) purchase with logistic regression</li>
+</ul>
+<p><span class="math display">\[ p(\text{bought}) =  \sigmoid{\boldsymbol{\beta}^\top \inputVector}.\]</span></p>
+</section>
+<section id="codify-through-mathematical-functions-3" class="slide level3">
+<h3>Codify Through Mathematical Functions</h3>
+<ul>
+<li>How does machine learning work?</li>
+<li>Jumper (jersey/sweater) purchase with logistic regression</li>
+</ul>
+<p><span class="math display">\[ \dataScalar =  \mappingFunction\left(\inputVector, \boldsymbol{\beta}\right).\]</span></p>
+<div class="fragment">
+<p>We call <span class="math inline">\(\mappingFunction(\cdot)\)</span> the <em>prediction function</em>.</p>
+</div>
+</section>
+<section id="fit-to-data" class="slide level3">
+<h3>Fit to Data</h3>
+<ul>
+<li>Use an objective function</li>
+</ul>
+<p><span class="math display">\[\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix)\]</span></p>
+<div class="fragment">
+<ul>
+<li>E.g. least squares <span class="math display">\[\errorFunction(\boldsymbol{\beta}, \dataMatrix, \inputMatrix) = \sum_{i=1}^\numData \left(\dataScalar_i - \mappingFunction(\inputVector_i, \boldsymbol{\beta})\right)^2.\]</span></li>
+</ul>
+</div>
+</section>
+<section id="two-components" class="slide level3">
+<h3>Two Components</h3>
+<ul>
+<li>Prediction function, <span class="math inline">\(\mappingFunction(\cdot)\)</span></li>
+<li>Objective function, <span class="math inline">\(\errorFunction(\cdot)\)</span></li>
+</ul>
+</section>
+<section id="deep-learning" class="slide level3">
+<h3>Deep Learning</h3>
+<ul>
+<li><p>These are interpretable models: vital for disease etc.</p></li>
+<li><p>Modern machine learning methods are less interpretable</p></li>
+<li><p>Example: face recognition</p></li>
+</ul>
+<!-- SECTION Deep Learning -->
+</section>
+<section id="deep-learning-1" class="slide level3">
+<h3>Deep Learning</h3>
+<ul>
+<li><p>These are interpretable models: vital for disease modeling etc.</p></li>
+<li><p>Modern machine learning methods are less interpretable</p></li>
+<li><p>Example: face recognition</p></li>
+</ul>
+<!-- No slide titles in this context -->
+</section>
+<section id="deepface" class="slide level3">
+<h3>DeepFace</h3>
+<p><span class="fragment fade-in"><small>Outline of the DeepFace architecture. A front-end of a single convolution-pooling-convolution filtering on the rectified input, followed by three locally-connected layers and two fully-connected layers. Color illustrates feature maps produced at each layer. The net includes more than 120 million parameters, where more than 95% come from the local and fully connected.</small></span></p>
+<div class="figure">
+<div id="deep-face-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/deepface_neg.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<p><span style="text-align:right"><small>Source: DeepFace <span class="citation" data-cites="Taigman:deepface14">(Taigman et al., 2014)</span></small></span></p>
+</section>
+<section id="deep-learning-as-pinball" class="slide level3">
+<h3>Deep Learning as Pinball</h3>
+<div class="figure">
+<div id="early-pinball-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/576px-Early_Pinball.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+</section>
+<section id="section-5" class="slide level3">
+<h3></h3>
+<div class="figure">
+<div id="pinball-initialization-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/pinball001.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+</section>
+<section id="section-6" class="slide level3">
+<h3></h3>
+<div class="figure">
+<div id="pinball-trained-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/pinball002.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+</section>
+<section id="from-model-to-decision" class="slide level3">
+<h3>From Model to Decision</h3>
+</section>
+<section id="section-7" class="slide level3">
+<h3></h3>
+<table>
+<tr>
+<td width="35%">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/earth_PNG37.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</td>
+<td width="45%">
+<span class="math display">\[\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}\]</span>
+</td>
+<td width="20%">
+<object class="svgplot " data="../slides/diagrams/ai/1969018.svg" width="100%" style="center ">
+</object>
+</td>
+</tr>
+</table>
+</section>
+<section id="section-8" class="slide level3">
+<h3></h3>
+<div class="figure">
+<div id="delivery-drone-figure" class="figure-frame">
+<iframe width="800" height="600" src="https://www.youtube.com/embed/3HJtmx5f1Fc?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+</div>
+</div>
+</section>
+<section id="machine-learning-in-supply-chain" class="slide level3">
+<h3>Machine Learning in Supply Chain</h3>
+<ul>
+<li><em>Supply chain</em>: Large Automated Decision Making Network</li>
+<li>Major Challenge:
+<ul>
+<li>We have a <em>mechanistic</em> understanding of supply chain.</li>
+<li>Machine learning is a <em>data driven</em> technology.</li>
+</ul></li>
+</ul>
+</section>
+<section id="motto" class="slide level3">
+<h3>Motto</h3>
+<blockquote>
+<p>Solve Supply Chain, then solve everything else.</p>
+</blockquote>
+</section>
+<section id="supply-chain" class="slide level3">
+<h3>Supply Chain</h3>
+<div class="figure">
+<div id="packhorse-bridge-burbage-brook-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/supply-chain/packhorse-bridge-burbage-brook.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+</section>
+<section id="cromford" class="slide level3">
+<h3>Cromford</h3>
+<div class="figure">
+<div id="cromford-mill-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/supply-chain/cromford-mill.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+</section>
+<section id="section-9" class="slide level3">
+<h3></h3>
+<div class="figure">
+<div id="container-2539942_1920-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/supply-chain/container-2539942_1920.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+</section>
+<section id="deep-freeze" class="slide level3">
+<h3>Deep Freeze</h3>
+<div class="figure">
+<div id="wild-alaskan-cod-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/supply-chain/wild-alaskan-cod.jpg" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+</section>
+<section id="deep-freeze-1" class="slide level3">
+<h3>Deep Freeze</h3>
+<div class="figure">
+<div id="wild-alaskan-cod-made-in-china-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/supply-chain/wild-alaskan-cod-made-in-china.jpg" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+</section>
+<section id="safeboda" class="slide level3">
+<h3>SafeBoda</h3>
+<div class="figure">
+<div id="safe-boda-system-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/ai/safe-boda.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+</section>
+<section id="safeboda-1" class="slide level3">
+<h3>SafeBoda</h3>
+<blockquote>
+<p>With road accidents set to match HIV/AIDS as the highest cause of death in low/middle income countries by 2030, SafeBoda’s aim is to modernise informal transportation and ensure safe access to mobility.</p>
+</blockquote>
+</section>
+<section id="section-10" class="slide level3">
+<h3></h3>
+<div class="figure">
+<div id="data-science-africa-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/data-science-africa-logo.png" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<p>Data Science Africa is a bottom up initiative for capacity building in data science, machine learning and AI on the African continent</p>
+</section>
+<section id="section-11" class="slide level3">
+<h3></h3>
+<div class="figure">
+<div id="africa-benefit-data-revolution-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/data-science/africa-benefit-data-revolution.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+</section>
+<section id="example-prediction-of-malaria-incidence-in-uganda" class="slide level3">
+<h3>Example: Prediction of Malaria Incidence in Uganda</h3>
+<p><span style="text-align:right"><img class="" src="../slides/diagrams/people/2013_03_28_180606.JPG" width="1.5cm" style="background:none; border:none; box-shadow:none; position:absolute; clip:rect(2662px,1780px,1110px,600px);vertical-align:middle"></span></p>
+<ul>
+<li>Work with Ricardo Andrade Pacheco, John Quinn and Martin Mubaganzi (Makerere University, Uganda)</li>
+<li>See <a href="http://air.ug/research.html">AI-DEV Group</a>.</li>
+</ul>
+</section>
+<section id="malaria-prediction-in-uganda" class="slide level3">
+<h3>Malaria Prediction in Uganda</h3>
+<div class="figure">
+<div id="uganda-districts-2006-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/health/uganda-districts-2006.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<p><span style="text-align:right"><span class="citation" data-cites="Andrade:consistent14 Mubangizi:malaria14">(Andrade-Pacheco et al., 2014; Mubangizi et al., 2014)</span></span></p>
+</section>
+<section id="tororo-district" class="slide level3">
+<h3>Tororo District</h3>
+<div class="figure">
+<div id="tororo-district-in-uganda-figure" class="figure-frame">
+<object class width="50%" data="../slides/diagrams/health/Tororo_District_in_Uganda.svg">
+</object>
+</div>
+</div>
+</section>
+<section id="malaria-prediction-in-nagongera-sentinel-site" class="slide level3">
+<h3>Malaria Prediction in Nagongera (Sentinel Site)</h3>
+<div class="figure">
+<div id="sentinel-nagongera-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="negate" src="../slides/diagrams/health/sentinel_nagongera.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+</section>
+<section id="mubende-district" class="slide level3">
+<h3>Mubende District</h3>
+<div class="figure">
+<div id="mubende-district-in-uganda-figure" class="figure-frame">
+<object class width="50%" data="../slides/diagrams/health/Mubende_District_in_Uganda.svg">
+</object>
+</div>
+</div>
+</section>
+<section id="malaria-prediction-in-uganda-1" class="slide level3">
+<h3>Malaria Prediction in Uganda</h3>
+<div class="figure">
+<div id="malaria-prediction-mubende-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/health/mubende.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+</section>
+<section id="gp-school-at-makerere" class="slide level3">
+<h3>GP School at Makerere</h3>
+<div class="figure">
+<div id="-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/gpss/1157497_513423392066576_1845599035_n.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+</section>
+<section id="kabarole-district" class="slide level3">
+<h3>Kabarole District</h3>
+<div class="figure">
+<div id="kabarole-district-in-uganda-figure" class="figure-frame">
+<object class width="50%" data="../slides/diagrams/health/Kabarole_District_in_Uganda.svg">
+</object>
+</div>
+</div>
+</section>
+<section id="early-warning-system" class="slide level3">
+<h3>Early Warning System</h3>
+<div class="figure">
+<div id="kabarole-disease-over-time-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/health/kabarole.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+</section>
+<section id="early-warning-systems" class="slide level3">
+<h3>Early Warning Systems</h3>
+<div class="figure">
+<div id="early-warning-system-map-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/health/monitor.gif" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+</section>
+<section id="deployment" class="slide level3">
+<h3>Deployment</h3>
+</section>
+<section id="premise" class="slide level3">
+<h3>Premise</h3>
+<p>Our <em>machine learning</em> is based on a <em>software systems</em> view that is 20 years out of date.</p>
+</section>
+<section id="continuous-deployment" class="slide level3">
+<h3>Continuous Deployment</h3>
+<ul>
+<li>Deployment of modeling code.</li>
+<li>Data dependent models in production need <em>continuous monitoring</em>.</li>
+<li>Continous monitoring implies <em>statistical tests</em> rather than classic software tests.</li>
+</ul>
+<p>You can also check my</p>
+</section>
+<section id="continuous-monitoring" class="slide level3">
+<h3>Continuous Monitoring</h3>
+<ul>
+<li>Continuous deployment:
+<ul>
+<li>We’ve changed the code, we should test the effect.</li>
+</ul></li>
+<li>Continuous Monitoring:
+<ul>
+<li>The world around us is changing, we should monitor the effect.</li>
+</ul></li>
+<li>Update our notions of testing: <em>progression testing</em></li>
+</ul>
+</section>
+<section id="data-oriented-architectures" class="slide level3">
+<h3>Data Oriented Architectures</h3>
+<ul>
+<li>Convert data to a <em>first-class citizen</em>.</li>
+<li>View system as operations on <em>data streams</em>.</li>
+<li>Expose data operations in a programmatic way.</li>
+</ul>
+</section>
+<section id="data-orientated-architectures" class="slide level3">
+<h3>Data Orientated Architectures</h3>
+<ul>
+<li>Historically we’ve been <em>software first</em>
+<ul>
+<li>A necessary but not sufficient condition for <em>data first</em></li>
+</ul></li>
+<li>Move from
+<ol type="1">
+<li>service orientated architectures</li>
+<li><em>data orientated architectures</em></li>
+</ol></li>
+</ul>
+</section>
+<section id="streaming-system" class="slide level3">
+<h3>Streaming System</h3>
+<ul>
+<li>Move from pull updates to push updates.</li>
+<li>Operate on rows rather than columns.</li>
+<li>Lead to stateless logic: persistence handled by system.</li>
+<li>Example Apache Kafka + Apache Flink</li>
+</ul>
+</section>
+<section id="streaming-architectures" class="slide level3">
+<h3>Streaming Architectures</h3>
+<ul>
+<li>AWS Kinesis, Apache Kafka</li>
+<li>Not just about streaming
+<ul>
+<li>Nodes in the architecture are <em>stateless</em></li>
+<li>They persist through storing state on <em>streams</em></li>
+</ul></li>
+<li>This brings the data <em>inside out</em></li>
+</ul>
+</section>
+<section id="apache-flink" class="slide level3">
+<h3>Apache Flink</h3>
+<ul>
+<li>Streams and transformations</li>
+<li>a stream is a (potentially never-ending) flow of data records</li>
+<li>a transformation: streams as input, produces transformed streams as output</li>
+</ul>
+</section>
+<section id="join" class="slide level3">
+<h3>Join</h3>
+<pre><code>stream.join(otherStream)
+    .where(&lt;KeySelector&gt;)
+    .equalTo(&lt;KeySelector&gt;)
+    .window(&lt;WindowAssigner&gt;)
+    .apply(&lt;JoinFunction&gt;)</code></pre>
+</section>
+<section id="milan" class="slide level3">
+<h3>Milan</h3>
+<ul>
+<li>Data Oriented Programming Language and runtime.</li>
+<li>DSL Embedded in Scala converts to an intermediate langugage.</li>
+<li>Intermediate language for compilation on different platforms (currently Flink)</li>
+</ul>
+<p><a href="https://github.com/amzn/milan" class="uri">https://github.com/amzn/milan</a></p>
+</section>
+<section id="trading-system" class="slide level3">
+<h3>Trading System</h3>
+<ul>
+<li>High frequency share trading.</li>
+<li>Stream of prices with millisecond updates.</li>
+<li>Trades required on millisecond time line</li>
+</ul>
+</section>
+<section id="real-price" class="slide level3">
+<h3>Real Price</h3>
+<object class="svgplot " data="../slides/diagrams/data-science/real-prices.svg" width="80%" style=" ">
+</object>
+</section>
+<section id="future-price" class="slide level3">
+<h3>Future Price</h3>
+<object class="svgplot " data="../slides/diagrams/data-science/hypothetical-prices.svg" width="80%" style=" ">
+</object>
+</section>
+<section id="hypothetical-streams" class="slide level3">
+<h3>Hypothetical Streams</h3>
+<ul>
+<li>Real stream — share prices
+<ul>
+<li>derived <em>hypothetical</em> stream — share prices in future.</li>
+</ul></li>
+<li>Hypothetical constrained by
+<ul>
+<li>input constraints.</li>
+<li>decision functional</li>
+<li>computational requirements (latency)</li>
+</ul></li>
+</ul>
+</section>
+<section id="hypothetical-advantage" class="slide level3">
+<h3>Hypothetical Advantage</h3>
+<ul>
+<li>Modelling is now required.</li>
+<li>But modelling is declared in the ecosystem.</li>
+<li>If it’s manual, warnings can be used
+<ul>
+<li>calibration, fairness, dataset shift</li>
+</ul></li>
+<li>Opens door to Auto AI.</li>
+</ul>
+</section>
+<section id="ride-allocation-prediction" class="slide level3">
+<h3>Ride Allocation Prediction</h3>
+<div class="figure">
+<div id="ride-allocation-system-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/ai/ride-allocation-prediction.svg" width="60%" style=" ">
+</object>
+</div>
+</div>
+</section>
+<section id="ride-sharing-service-oriented" class="slide level3">
+<h3>Ride Sharing: Service Oriented</h3>
+<div class="figure">
+<div id="ride-share-service-soa-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/data-science/ride-share-service-soa.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+</section>
+<section id="ride-sharing-data-oriented" class="slide level3">
+<h3>Ride Sharing: Data Oriented</h3>
+<div class="figure">
+<div id="ride-share-service-doa-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/data-science/ride-share-service-doa.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+</section>
+<section id="ride-sharing-hypothetical" class="slide level3">
+<h3>Ride Sharing: Hypothetical</h3>
+<div class="figure">
+<div id="ride-share-service-doa-hypothetical-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/data-science/ride-share-service-doa-hypothetical.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+</section>
+<section id="information-dynamics" class="slide level3">
+<h3>Information Dynamics</h3>
+<ul>
+<li>Potential for information feedback loops.</li>
+<li>Hypothetical streams are instantiated.</li>
+<li>Nature hypothesis (e.g. price prediction) can effect reality.</li>
+<li>Leads to information dynamics, similar to dynamics of governors.</li>
+<li>See e.g. <a href="https://www.gla.ac.uk/schools/computing/research/researchsections/ida-section/closedloop/">Closed Loop Data Science</a> at Glasgow.</li>
+</ul>
+</section>
+<section id="conclusions" class="slide level3">
+<h3>Conclusions</h3>
+<ul>
+<li>Challenge is in data and model ecosystem.</li>
+<li>Also problems of
+<ul>
+<li>data quality (see e.g. <span class="citation" data-cites="Lawrence:drl17">Lawrence (2017)</span>) and</li>
+<li>data sharing (article on</li>
+</ul></li>
+</ul>
+<p>and <span class="citation" data-cites="Delacroix:trusts19">Delacroix and Lawrence (2019)</span>) * Physical systems can be easier to deploy becaue they’re contained.</p>
+</section>
+<section id="thanks" class="slide level3">
+<h3>Thanks!</h3>
+<ul>
+<li>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></li>
+<li>podcast: <a href="http://thetalkingmachines.com">The Talking Machines</a></li>
+<li><p>Guardian article on <a href="https://www.theguardian.com/media-network/2015/aug/25/africa-benefit-data-science-information">How African can benefit from the data revolution</a></p></li>
+<li><p>Guardian article on <a href="https://www.theguardian.com/media-network/https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy">Data Trusts</a></p></li>
+<li><p>Blog post on <a href="http://inverseprobability.com/2016/11/19/lies-damned-lies-big-data">Lies, Damned Lies and Big Data</a></p></li>
+<li><p>Blog post on <a href="http://inverseprobability.com/2017/07/17/what-is-machine-learning">What is Machine Learning?</a></p></li>
+<li><p>Blog post on <a href="http://inverseprobability.com/2017/03/14/data-science-as-debugging">Data Science as Debugging</a></p></li>
+</ul>
+</section>
+<section id="references" class="slide level3 unnumbered">
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Andrade:consistent14">
+<p>Andrade-Pacheco, R., Mubangizi, M., Quinn, J., Lawrence, N.D., 2014. Consistent mapping of government malaria records across a changing territory delimitation. Malaria Journal 13. <a href="https://doi.org/10.1186/1475-2875-13-S1-P5" class="uri">https://doi.org/10.1186/1475-2875-13-S1-P5</a></p>
+</div>
+<div id="ref-Delacroix:trusts19">
+<p>Delacroix, S., Lawrence, N.D., 2019. Bottom-up data trusts: Disturbing the “one size fits all” approach to data governance. International Data Privacy Law. <a href="https://doi.org/10.1093/idpl/ipz014" class="uri">https://doi.org/10.1093/idpl/ipz014</a></p>
+</div>
+<div id="ref-Lawrence:drl17">
+<p>Lawrence, N.D., 2017. Data readiness levels. arXiv.</p>
+</div>
+<div id="ref-Mubangizi:malaria14">
+<p>Mubangizi, M., Andrade-Pacheco, R., Smith, M.T., Quinn, J., Lawrence, N.D., 2014. Malaria surveillance with multiple data sources using Gaussian process models, in: 1st International Conference on the Use of Mobile ICT in Africa.</p>
+</div>
+<div id="ref-Taigman:deepface14">
+<p>Taigman, Y., Yang, M., Ranzato, M., Wolf, L., 2014. DeepFace: Closing the gap to human-level performance in face verification, in: Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition. <a href="https://doi.org/10.1109/CVPR.2014.220" class="uri">https://doi.org/10.1109/CVPR.2014.220</a></p>
+</div>
+</div>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // Transition style
+        transition: 'None', // none/fade/slide/convex/concave/zoom
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/math/math.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
