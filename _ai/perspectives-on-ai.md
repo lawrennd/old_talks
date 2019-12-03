@@ -10,8 +10,8 @@ author:
   orcid: 0000-0001-9258-1030
 youtube: 
 youtube_start: 
-youtube_end: 4725
-venue: Sheffield ML Meetup, Kollider, Castle House Castle Street, Sheffield
+youtube_end: 
+venue: Sheffield ML Meetup, Kollider, Castle House, Castle Street, Sheffield
 date: 2019-12-02
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
