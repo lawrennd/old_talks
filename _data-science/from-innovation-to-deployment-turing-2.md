@@ -78,7 +78,9 @@ Ds of ML Systems Design".}
 \thanks
 
 \define{appendixOn}
-\slides{\section{The Three Ds of Machine Learning Systems Design}
+\slides{
+
+\subsection{APPENDIX} 
 
 \include{_ml/includes/ml-three-primary-challenges.md}
 \include{_ml/includes/ml-decomposition-challenge.md}
