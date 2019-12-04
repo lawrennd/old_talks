@@ -24,6 +24,7 @@ reveal: False
 youtube: pWTQ1ZpyanM
 youtube_start: 972
 youtube_end: 1597
+youtube_remote: True
 venue: Global Forum on AI for Humanity, Paris
 transition: None
 ---
