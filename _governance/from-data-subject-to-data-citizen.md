@@ -20,6 +20,9 @@ author:
   url: http://inverseprobability.com
 blog: 
 date: 2019-10-28
+youtube: G7NbyCcuGmg
+youtube_start: 972
+youtube_end: 1597
 venue: Global Forum on AI for Humanity, Paris
 transition: None
 ---
