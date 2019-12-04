@@ -20,6 +20,7 @@ author:
   url: http://inverseprobability.com
 blog: 
 date: 2019-10-28
+reveal: False
 youtube: pWTQ1ZpyanM
 youtube_start: 972
 youtube_end: 1597
