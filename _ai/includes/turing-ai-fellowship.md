@@ -3,17 +3,8 @@
 
 \editme
 
-\subsection{Turing AI Fellowship}
 
-\slides{
-* Work in this space now funded by a [Senior AI Fellowship at the Turing Institute](https://www.turing.ac.uk/news/welcoming-world-class-turing-ai-fellows-institute). 
-}
-\notes{From December 2019 I begin a [Senior AI Fellowship at the Turing Institute](https://www.turing.ac.uk/news/welcoming-world-class-turing-ai-fellows-institute) funded by the Office for AI to investigate the consequences of deploying complex AI systems.
-
-The notion relates from the "Promise of AI": it promises to be the first generation of automation technology that will adapt to us, rather than us adapting to it. The premise of the project is that this promise will remain unfulfilled with current approaches to systems design and deployment.}
-
-
-\subsection{Project Description}
+\subsection{Challenge}
 
 > It used to be true that computers only did what we programmed them to do, but today AI systems are learning from our data. This introduces new problems in how these systems respond to their environment. 
 >
@@ -36,6 +27,16 @@ monitoring of artificial intelligence systems.}
 * Bayesian Optimisation to Bayesian System Optimisation
 }
 
+
+\subsection{Turing AI Fellowship}
+
+\slides{
+* Work in this space now funded by a [Senior AI Fellowship at the Turing Institute](https://www.turing.ac.uk/news/welcoming-world-class-turing-ai-fellows-institute). 
+}
+
+\notes{From December 2019 I begin a [Senior AI Fellowship at the Turing Institute](https://www.turing.ac.uk/news/welcoming-world-class-turing-ai-fellows-institute) funded by the Office for AI to investigate the consequences of deploying complex AI systems.
+
+The notion relates from the "Promise of AI": it promises to be the first generation of automation technology that will adapt to us, rather than us adapting to it. The premise of the project is that this promise will remain unfulfilled with current approaches to systems design and deployment.}
 
 
 \ifndef{safeBoda}
