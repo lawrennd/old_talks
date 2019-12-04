@@ -36,6 +36,8 @@ Paul refers to [Paul Nemitz](https://twitter.com/PaulNemitz) (who spoke before m
 
 The talk was given unscripted and without slides, but below is a transcript of what I said taken from a personal recording I made.
 
+Youtube video is now included above, transcript below.
+
 ## Talk Transcript
 
 It's a great pleasure to come after Paul.
