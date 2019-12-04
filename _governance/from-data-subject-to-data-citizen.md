@@ -1,7 +1,7 @@
 ---
 title: From Data Subject to Data Citizen
 abstract: > 
-  Resolutely complementary to rop-down regulation, bottom-up data
+  Resolutely complementary to top-down regulation, bottom-up data
   trusts aim to 'give a voice' to data subjects whose choices when it
   comes to data governance are often reduced to binary, ill-informed
   consent. While the rights granted by instruments like the GDPR can
