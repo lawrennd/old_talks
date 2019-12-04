@@ -513,9 +513,376 @@ Your name here
 <li><p>Blog posts:</p>
 <p><a href="http://inverseprobability.com/2018/11/05/the-3ds-of-machine-learning-systems-design">The 3Ds of Machine Learning Systems Design</a></p></li>
 </ul>
+<!-- SECTION The Three Ds of Machine Learning Systems Design -->
 </section>
-<section id="references" class="slide level3">
+<section id="the-three-ds-of-machine-learning-systems-design-1" class="slide level3">
+<h3>The Three Ds of Machine Learning Systems Design</h3>
+<ul>
+<li>Three primary challenges of Machine Learning Systems Design.</li>
+</ul>
+<ol type="1">
+<li>Decomposition</li>
+<li>Data</li>
+<li>Deployment</li>
+</ol>
+</section>
+<section id="decomposition" class="slide level3">
+<h3>Decomposition</h3>
+<ul>
+<li>ML is not Magical Pixie Dust.</li>
+<li>It cannot be sprinkled thoughtlessly.</li>
+<li>We cannot simply <em>automate all decisions through data</em></li>
+</ul>
+</section>
+<section id="decomposition-1" class="slide level3">
+<h3>Decomposition</h3>
+<p>We are constrained by:</p>
+<ol type="1">
+<li>Our <em>data</em>.</li>
+<li>The <em>models</em>.</li>
+</ol>
+</section>
+<section id="decomposition-of-task" class="slide level3">
+<h3>Decomposition of Task</h3>
+<ul>
+<li>Careful thought needs to be put into sub-processes of task.</li>
+<li>Any repetitive task is a candidate for automation.</li>
+</ul>
+</section>
+<section id="pigeonholing" class="slide level3">
+<h3>Pigeonholing</h3>
+<div class="figure">
+<div id="too-many-pigeons2-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/TooManyPigeons.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+</section>
+<section id="pigeonholing-1" class="slide level3">
+<h3>Pigeonholing</h3>
+<ol type="1">
+<li>Can we decompose decision we need to repetitive sub-tasks where inputs and outputs are well defined?</li>
+<li>Are those repetitive sub-tasks well represent by a mathematical mapping?</li>
+</ol>
+</section>
+<section id="a-trap" class="slide level3">
+<h3>A Trap</h3>
+<ul>
+<li>Over emphasis on the <em>type</em> of model we’re deploying.</li>
+<li>Under emphasis on the appropriateness of the task decomposition.</li>
+</ul>
+</section>
+<section id="chicken-and-egg" class="slide level3">
+<h3>Chicken and Egg</h3>
+<div class="figure">
+<div id="chicken-and-egg2-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/ai/chicken-and-egg.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+</section>
+<section id="co-evolution" class="slide level3">
+<h3>Co-evolution</h3>
+<ul>
+<li>Absolute decomposition is impossible.</li>
+<li>If we deploy a weak component in one place, downstream system will compensate.</li>
+<li>Systems <em>co-evolve</em> … there is no <em>simple</em> solution</li>
+<li>Trade off between <em>performance</em> and <em>decomposability</em>.
+<ul>
+<li>Need to monitor deployment</li>
+</ul></li>
+</ul>
+</section>
+<section id="data" class="slide level3">
+<h3>Data</h3>
+<ul>
+<li>Hard to overstate its importance.</li>
+<li>Half the equation of <span class="math inline">\(\text{data} + \text{model}\)</span>.</li>
+<li>Often utterly neglected.</li>
+</ul>
+</section>
+<section id="data-neglect" class="slide level3">
+<h3>Data Neglect</h3>
+<ul>
+<li>Arises for two reasons.
+<ol type="1">
+<li>Data cleaning is perceived as tedious.</li>
+<li>Data cleaning is complex.</li>
+</ol></li>
+</ul>
+</section>
+<section id="data-cleaning" class="slide level3">
+<h3>Data Cleaning</h3>
+<ul>
+<li>Seems difficult to formulate into readily teachable princples.</li>
+<li>Heavily neglected in data science, statistics and ML courses.</li>
+<li>In practice most scientists spend around 80% of time data cleaning.</li>
+</ul>
+</section>
+<section id="the-software-crisis" class="slide level3">
+<h3>The Software Crisis</h3>
+<p><small></p>
+<blockquote>
+<p>The major cause of the software crisis is that the machines have become several orders of magnitude more powerful! To put it quite bluntly: as long as there were no machines, programming was no problem at all; when we had a few weak computers, programming became a mild problem, and now we have gigantic computers, programming has become an equally gigantic problem.</p>
+<p>Edsger Dijkstra (1930-2002), The Humble Programmer</p>
+</blockquote>
+<p></small></p>
+</section>
+<section id="the-data-crisis" class="slide level3">
+<h3>The Data Crisis</h3>
+<p><small></p>
+<blockquote>
+<p>The major cause of the data crisis is that machines have become more interconnected than ever before. Data access is therefore cheap, but data quality is often poor. What we need is cheap high-quality data. That implies that we develop processes for improving and verifying data quality that are efficient.</p>
+<p>There would seem to be two ways for improving efficiency. Firstly, we should not duplicate work. Secondly, where possible we should automate work.</p>
+<p>Me </small></p>
+</blockquote>
+</section>
+<section id="data-readiness-levels" class="slide level3">
+<h3>Data Readiness Levels</h3>
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/data-science/data-readiness-levels.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<p><a href="https://arxiv.org/pdf/1705.02245.pdf" class="uri">https://arxiv.org/pdf/1705.02245.pdf</a> <a href="http://inverseprobability.com/2017/01/12/data-readiness-levels">Data Readiness Levels</a> <span class="citation" data-cites="Lawrence:drl17">(Lawrence, 2017)</span></p>
+</section>
+<section id="three-grades-of-data-readiness" class="slide level3">
+<h3>Three Grades of Data Readiness</h3>
+<ul>
+<li>Grade C - accessibility
+<ul>
+<li>Transition: data becomes electronically available</li>
+</ul></li>
+<li>Grade B - validity
+<ul>
+<li>Transition: pose a question to the data.</li>
+</ul></li>
+<li>Grade A - usability</li>
+</ul>
+</section>
+<section id="data-science-as-debugging" class="slide level3">
+<h3>Data Science as Debugging</h3>
+<ul>
+<li>Analogies: For Software Engineers <a href="http://inverseprobability.com/2017/03/14/data-science-as-debugging">describe data science as <em>debugging</em></a>.</li>
+</ul>
+</section>
+<section id="in-data-science" class="slide level3">
+<h3>80/20 in Data Science</h3>
+<ul>
+<li>Anecdotally for a given challenge
+<ul>
+<li>80% of time is spent on data wrangling.</li>
+<li>20% of time spent on modelling.</li>
+</ul></li>
+<li>Many companies employ ML Engineers focussing on <em>models</em> not <em>data</em>.</li>
+</ul>
+</section>
+<section id="section" class="slide level3">
+<h3></h3>
+<div class="figure">
+<div id="derwent-valley-resevoir-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/data-science/water-bridge-hill-transport-arch-calm-544448-pxhere.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+</section>
+<section id="section-1" class="slide level3">
+<h3></h3>
+<div class="figure">
+<div id="lake-district-stream-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/data-science/1024px-Lake_District_picture.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+</section>
+<section id="deployment" class="slide level3">
+<h3>Deployment</h3>
+</section>
+<section id="premise" class="slide level3">
+<h3>Premise</h3>
+<p>Our <em>machine learning</em> is based on a <em>software systems</em> view that is 20 years out of date.</p>
+</section>
+<section id="continuous-deployment" class="slide level3">
+<h3>Continuous Deployment</h3>
+<ul>
+<li>Deployment of modeling code.</li>
+<li>Data dependent models in production need <em>continuous monitoring</em>.</li>
+<li>Continous monitoring implies <em>statistical tests</em> rather than classic software tests.</li>
+</ul>
+</section>
+<section id="continuous-monitoring" class="slide level3">
+<h3>Continuous Monitoring</h3>
+<ul>
+<li>Continuous deployment:
+<ul>
+<li>We’ve changed the code, we should test the effect.</li>
+</ul></li>
+<li>Continuous Monitoring:
+<ul>
+<li>The world around us is changing, we should monitor the effect.</li>
+</ul></li>
+<li>Update our notions of testing: <em>progression testing</em></li>
+</ul>
+</section>
+<section id="data-oriented-architectures" class="slide level3">
+<h3>Data Oriented Architectures</h3>
+<ul>
+<li>Convert data to a <em>first-class citizen</em>.</li>
+<li>View system as operations on <em>data streams</em>.</li>
+<li>Expose data operations in a programmatic way.</li>
+</ul>
+</section>
+<section id="data-orientated-architectures" class="slide level3">
+<h3>Data Orientated Architectures</h3>
+<ul>
+<li>Historically we’ve been <em>software first</em>
+<ul>
+<li>A necessary but not sufficient condition for <em>data first</em></li>
+</ul></li>
+<li>Move from
+<ol type="1">
+<li>service orientated architectures</li>
+<li><em>data orientated architectures</em></li>
+</ol></li>
+</ul>
+</section>
+<section id="streaming-system" class="slide level3">
+<h3>Streaming System</h3>
+<ul>
+<li>Move from pull updates to push updates.</li>
+<li>Operate on rows rather than columns.</li>
+<li>Lead to stateless logic: persistence handled by system.</li>
+<li>Example Apache Kafka + Apache Flink</li>
+</ul>
+</section>
+<section id="streaming-architectures" class="slide level3">
+<h3>Streaming Architectures</h3>
+<ul>
+<li>AWS Kinesis, Apache Kafka</li>
+<li>Not just about streaming
+<ul>
+<li>Nodes in the architecture are <em>stateless</em></li>
+<li>They persist through storing state on <em>streams</em></li>
+</ul></li>
+<li>This brings the data <em>inside out</em></li>
+</ul>
+</section>
+<section id="apache-flink" class="slide level3">
+<h3>Apache Flink</h3>
+<ul>
+<li>Streams and transformations</li>
+<li>a stream is a (potentially never-ending) flow of data records</li>
+<li>a transformation: streams as input, produces transformed streams as output</li>
+</ul>
+</section>
+<section id="join" class="slide level3">
+<h3>Join</h3>
+<pre><code>stream.join(otherStream)
+    .where(&lt;KeySelector&gt;)
+    .equalTo(&lt;KeySelector&gt;)
+    .window(&lt;WindowAssigner&gt;)
+    .apply(&lt;JoinFunction&gt;)</code></pre>
+</section>
+<section id="milan" class="slide level3">
+<h3>Milan</h3>
+<ul>
+<li>Data Oriented Programming Language and runtime.</li>
+<li>DSL Embedded in Scala converts to an intermediate langugage.</li>
+<li>Intermediate language for compilation on different platforms (currently Flink)</li>
+</ul>
+<p><a href="https://github.com/amzn/milan" class="uri">https://github.com/amzn/milan</a></p>
+</section>
+<section id="trading-system" class="slide level3">
+<h3>Trading System</h3>
+<ul>
+<li>High frequency share trading.</li>
+<li>Stream of prices with millisecond updates.</li>
+<li>Trades required on millisecond time line</li>
+</ul>
+</section>
+<section id="real-price" class="slide level3">
+<h3>Real Price</h3>
+<object class="svgplot " data="../slides/diagrams/data-science/real-prices.svg" width="80%" style=" ">
+</object>
+</section>
+<section id="future-price" class="slide level3">
+<h3>Future Price</h3>
+<object class="svgplot " data="../slides/diagrams/data-science/hypothetical-prices.svg" width="80%" style=" ">
+</object>
+</section>
+<section id="hypothetical-streams" class="slide level3">
+<h3>Hypothetical Streams</h3>
+<ul>
+<li>Real stream — share prices
+<ul>
+<li>derived <em>hypothetical</em> stream — share prices in future.</li>
+</ul></li>
+<li>Hypothetical constrained by
+<ul>
+<li>input constraints.</li>
+<li>decision functional</li>
+<li>computational requirements (latency)</li>
+</ul></li>
+</ul>
+</section>
+<section id="hypothetical-advantage" class="slide level3">
+<h3>Hypothetical Advantage</h3>
+<ul>
+<li>Modelling is now required.</li>
+<li>But modelling is declared in the ecosystem.</li>
+<li>If it’s manual, warnings can be used
+<ul>
+<li>calibration, fairness, dataset shift</li>
+</ul></li>
+<li>Opens door to Auto AI.</li>
+</ul>
+</section>
+<section id="ride-sharing-service-oriented" class="slide level3">
+<h3>Ride Sharing: Service Oriented</h3>
+<div class="figure">
+<div id="ride-share-service-soa-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/data-science/ride-share-service-soa.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+</section>
+<section id="ride-sharing-data-oriented" class="slide level3">
+<h3>Ride Sharing: Data Oriented</h3>
+<div class="figure">
+<div id="ride-share-service-doa-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/data-science/ride-share-service-doa.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+</section>
+<section id="ride-sharing-hypothetical" class="slide level3">
+<h3>Ride Sharing: Hypothetical</h3>
+<div class="figure">
+<div id="ride-share-service-doa-hypothetical-figure" class="figure-frame">
+<object class="svgplot " data="../slides/diagrams/data-science/ride-share-service-doa-hypothetical.svg" width="80%" style=" ">
+</object>
+</div>
+</div>
+</section>
+<section id="information-dynamics" class="slide level3">
+<h3>Information Dynamics</h3>
+<ul>
+<li>Potential for information feedback loops.</li>
+<li>Hypothetical streams are instantiated.</li>
+<li>Nature hypothesis (e.g. price prediction) can effect reality.</li>
+<li>Leads to information dynamics, similar to dynamics of governors.</li>
+<li>See e.g. <a href="https://www.gla.ac.uk/schools/computing/research/researchsections/ida-section/closedloop/">Closed Loop Data Science</a> at Glasgow.</li>
+</ul>
+</section>
+<section id="references" class="slide level3 unnumbered">
 <h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Lawrence:drl17">
+<p>Lawrence, N.D., 2017. Data readiness levels. arXiv.</p>
+</div>
+</div>
 </section>
     </div>
   </div>
