@@ -66,11 +66,12 @@
 \define{\displaycode{block}}{}
 \define{\notesfigure{block}}{}
 
-\define{\addblog{title}{link}}{\ifndef{blogPosts}\defeval{\blogPosts}{* Blog post on [\title](http://inverseprobability.com/\link)
+\define{\addblog{title}{link}}{\ifndef{blogPosts}\defeval{\blogPosts}{
+   [\title](http://inverseprobability.com/\link)
 }
 \else
 \defeval{\blogPosts}{\blogPosts
-* Blog post on [\title](http://inverseprobability.com/\link)
+   [\title](http://inverseprobability.com/\link)
 }
 \endif}
 
@@ -97,6 +98,7 @@
 * podcast: [The Talking Machines](http://thetalkingmachines.com)\ifdef{guardianArticles}
 \guardianArticles\else
 * newspaper: [Guardian Profile Page](http://www.theguardian.com/profile/neil-lawrence)\endif}\ifdef{blogPosts}
+* Blog posts:
 \blogPosts\else
 * blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
 \endif}
@@ -106,7 +108,6 @@
 \newslide{Further Reading}
 \readingMaterial
 \endif}
-
 
 
 \endif

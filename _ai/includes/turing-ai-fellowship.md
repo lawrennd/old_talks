@@ -67,17 +67,18 @@ The notion relates from the "Promise of AI": it promises to be the first generat
 
   \aligncenter{and}
 
-  \aligncenter{Your Name Here}
+  \aligncenter{Your name here}
 
 
 }
-\notes{As of 24th October 2019, the [Turing Institute announced](https://www.turing.ac.uk/news/welcoming-world-class-turing-ai-fellows-institute) that this work has been funded through a Turing Institute Senior AI Fellowship. This is the first Senior AI fellowship and it provides funding for five years. 
+\notes{As of 24th October 2019, the [Turing Institute announced](https://www.turing.ac.uk/news/welcoming-world-class-turing-ai-fellows-institute) that this work has been funded through an Alan Turing Institute Senior AI Fellowship. This is the first Senior AI fellowship and it provides funding for five years. 
 
 The project partners are [Element AI](https://www.elementai.com/),  [Open ML](https://openml.org), [Professor Sylvie Delacroix](https://www.birmingham.ac.uk/staff/profiles/law/delacroix-sylvie.aspx) and [Data Science Africa](http://datascienceafrica.org).}
 
-\subsection{Inclusive Project}
 
-There is no way that the team we're building will be able to deliver on this agenda alone, so please join us in addressing these challenges! 
+\notes{\subsection{Inclusive Project}
+
+There is no way that the team we're building will be able to deliver on this agenda alone, so please join us in addressing these challenges!}
 
 
 \endif
