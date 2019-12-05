@@ -10,6 +10,7 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 date: 2015-11-03
+ipynb: True
 venue: University of Sheffield
 transition: None
 youtube: 17zr5dGcUzE

@@ -4,8 +4,7 @@ title: "Objective Functions: A Simple Example with Matrix Factorisation"
 abstract: |
   In this session we introduce the notion of objective functions and show how they can be used in a simple recommender system based on *matrix factorisation*.
 date: 2015-10-06
-ipynb: 2015-10-06-week2.ipynb
-reveal: 2015-10-06-week2.slides.html
+ipynb: True
 author:
 - family: Lawrence
   given: Neil D.
