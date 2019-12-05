@@ -69,7 +69,8 @@ Parameters are gradient, $m$, offset, $c$ of the function and noise variance $\d
 }
 
 \newslide{Data Set Likelihood}
-\sides{
+
+\slides{
 If the noise, $\epsilon_i$ is sampled independently for each data point.
 Each data point is independent (given $m$ and $c$).
 For *independent* variables:
@@ -174,8 +175,7 @@ He continues
 
 \notes{This is the earliest know printed version of the problem of least squares. The notation, however, is a little awkward for mordern eyes. In particular Legendre doesn't make use of the sum sign,
 $$
-\sum_{i=1}^3 z_i = z_1
-+ z_2 + z_3
+\sum_{i=1}^3 z_i = z_1 + z_2 + z_3
 $$
 nor does he make use of the inner product.}
 
@@ -196,11 +196,7 @@ and finally the gradient of the function
 $$x \leftarrow -m.$$
 The remaining coefficients ($c$ and $f$) would then be zero. That would give us 
 $$\begin{align*}   &(\dataScalar_1 -
-(m\inputScalar_1+c))^2 \\
-+ &(\dataScalar_2 -(m\inputScalar_2 + c))^2\\
-+ &(\dataScalar_3 -(m\inputScalar_3 + c))^2 \\
-+ &
-\text{etc.}
+(m\inputScalar_1+c))^2 \\ + &(\dataScalar_2 -(m\inputScalar_2 + c))^2\\ + &(\dataScalar_3 -(m\inputScalar_3 + c))^2 \\ + & \text{etc.}
 \end{align*}$$
 which we would write in the modern notation for sums as
 $$

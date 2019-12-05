@@ -80,13 +80,21 @@ ${BASE}.posts.html: ${BASE}.notes.html.markdown
 
 
 ${BASE}.ipynb: ${BASE}.notes.ipynb.markdown
-	pandoc  ${PDFLAGS} -B ../_includes/talk-notation.tex --template pandoc-jekyll-ipynb-template --atx-headers --bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib -o ${BASE}.tmp.markdown  ${BASE}.notes.ipynb.markdown
+	pandoc  --template pandoc-jekyll-ipynb-template ${PDFLAGS} \
+		--atx-headers \
+		-B ../_includes/talk-notation.tex \
+		${CITEFLAGS} \
+		-out ${BASE}.tmp.markdown  ${BASE}.notes.ipynb.markdown
 	notedown ${BASE}.tmp.markdown > ${BASE}.ipynb
 	cp ${BASE}.ipynb ../_notebooks/${OUT}.ipynb
 	rm ${BASE}.tmp.markdown
 
 ${BASE}.slides.ipynb: ${BASE}.slides.ipynb.markdown
-	pandoc  ${PDFLAGS} -B ../_includes/talk-notation.tex --template pandoc-jekyll-ipynb-template --atx-headers --bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib -o ${BASE}.tmp.markdown  ${BASE}.slides.ipynb.markdown
+	pandoc  --template pandoc-jekyll-ipynb-template ${PDFLAGS} \
+		--atx-headers \
+		-B ../_includes/talk-notation.tex \
+		${CITEFLAGS} \
+		-out ${BASE}.tmp.markdown  ${BASE}.slides.ipynb.markdown
 	notedown ${BASE}.tmp.markdown > ${BASE}.slides.ipynb
 	cp ${BASE}.slides.ipynb ../_notebooks/${OUT}.slides.ipynb
 	rm ${BASE}.tmp.markdown

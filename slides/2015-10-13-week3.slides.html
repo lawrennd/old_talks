@@ -690,7 +690,11 @@ p\left(\dataScalar_i|\inputScalar_i,m,c\right)=\frac{1}{\sqrt{2\pi \dataStd^2}}\
 </section>
 <section id="data-set-likelihood" class="slide level3">
 <h3>Data Set Likelihood</h3>
-
+<p>If the noise, <span class="math inline">\(\epsilon_i\)</span> is sampled independently for each data point. Each data point is independent (given <span class="math inline">\(m\)</span> and <span class="math inline">\(c\)</span>). For <em>independent</em> variables: <span class="math display">\[
+p(\dataVector) = \prod_{i=1}^\numData p(\dataScalar_i)
+\]</span> <span class="math display">\[
+p(\dataVector|\inputVector, m, c) = \prod_{i=1}^\numData p(\dataScalar_i|\inputScalar_i, m, c)
+\]</span></p>
 </section>
 <section id="for-gaussian" class="slide level3">
 <h3>For Gaussian</h3>

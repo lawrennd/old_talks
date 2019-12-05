@@ -309,7 +309,6 @@ $$</span><br /></p>
   \end{align*}
 $$</span><br /></p>
 <p>Assume <span class="math inline">$\dataScalar_i$</span> is height and <span class="math inline">$\inputScalar_i$</span> is weight.</p>
-
 <h1 id="sum-of-squares-error">Sum of Squares Error</h1>
 <p>Minimizing the sum of squares error was first proposed by <a href="http://en.wikipedia.org/wiki/Adrien-Marie_Legendre">Legendre</a> in 1805. His book, which was on the orbit of comets, is available on google books, we can take a look at the relevant page by calling the code below.</p>
 <iframe frameborder="0" scrolling="no" style="border:0px" src="http://books.google.co.uk/books?id=spcAAAAAMAAJ&amp;pg=PA72&amp;output=embed" width="700" height="500">
@@ -323,8 +322,7 @@ $$</span><br /></p>
 <p>Of all the principles that we can offer for this item, I think it is not broader, more accurate, nor easier than the one we have used in previous research application, and that is to make the minimum sum of the squares of the errors. By this means, it is between the errors a kind of balance that prevents extreme to prevail, is very specific to make known the state of the closest to the truth system. The sum of the squares of the errors <span class="math inline"><em>E</em><sup>2</sup> + <em>E</em><sup>′</sup><sup>2</sup> + <em>E</em><sup>′′</sup><sup>2</sup> + <em>e</em><em>t</em><em>c</em></span> being  if we wanted a minimum, by varying x alone, we will have the equation …</p>
 </blockquote>
 <p>This is the earliest know printed version of the problem of least squares. The notation, however, is a little awkward for mordern eyes. In particular Legendre doesn’t make use of the sum sign, <br /><span class="math display">$$
-\sum_{i=1}^3 z_i = z_1
-+ z_2 + z_3
+\sum_{i=1}^3 z_i = z_1 + z_2 + z_3
 $$</span><br /> nor does he make use of the inner product.</p>
 <p>In our notation, if we were to do linear regression, we would need to subsititue: <br /><span class="math display">$$\begin{align*}
 a &amp;\leftarrow \dataScalar_1-c, \\ a^\prime &amp;\leftarrow \dataScalar_2-c,\\ a^{\prime\prime} &amp;\leftarrow
@@ -336,11 +334,7 @@ b^\prime &amp; \leftarrow \inputScalar_2,\\
 b^{\prime\prime} &amp; \leftarrow \inputScalar_3\\
 \text{etc.}
 \end{align*}$$</span><br /> and finally the gradient of the function <br /><span class="math display"><em>x</em> ←  − <em>m</em>.</span><br /> The remaining coefficients (<span class="math inline"><em>c</em></span> and <span class="math inline"><em>f</em></span>) would then be zero. That would give us <br /><span class="math display">$$\begin{align*}   &amp;(\dataScalar_1 -
-(m\inputScalar_1+c))^2 \\
-+ &amp;(\dataScalar_2 -(m\inputScalar_2 + c))^2\\
-+ &amp;(\dataScalar_3 -(m\inputScalar_3 + c))^2 \\
-+ &amp;
-\text{etc.}
+(m\inputScalar_1+c))^2 \\ + &amp;(\dataScalar_2 -(m\inputScalar_2 + c))^2\\ + &amp;(\dataScalar_3 -(m\inputScalar_3 + c))^2 \\ + &amp; \text{etc.}
 \end{align*}$$</span><br /> which we would write in the modern notation for sums as <br /><span class="math display">$$
 \sum_{i=1}^\numData (\dataScalar_i-(m\inputScalar_i + c))^2
 $$</span><br /> which is recognised as the sum of squares error for a linear regression.</p>

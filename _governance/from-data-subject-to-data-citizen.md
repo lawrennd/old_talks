@@ -18,6 +18,7 @@ author:
   institute: University of Cambridge
   twitter: lawrennd
   url: http://inverseprobability.com
+  orcid:
 blog: 
 date: 2019-10-28
 reveal: False
