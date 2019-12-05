@@ -15,11 +15,11 @@ author:
   institute: Amazon Cambridge and University of Sheffield
   twitter: lawrennd
   url: http://inverseprobability.com
-  orcid: 0000-0001-9258-1030  
+  orcid: 0000-0001-9258-1030
 date: 2017-07-13
 venue: CFI Annual Conference
 youtube: ExTDnppYB0w
-youtube_start: 22800
+youtube_start: 22820
 youtube_end: 23760
 youtube_remote: True
 geometry: ["a4paper", "margin=2cm"]
