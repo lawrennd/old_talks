@@ -16,41 +16,67 @@
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
   <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
   <link rel="stylesheet" href="talks.css"/>
@@ -66,7 +92,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   <script src="reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
     TeX: {
@@ -77,7 +102,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   <script src="figure-animate.js"></script>
 </head>
 <body>
-\[\newcommand{\Amatrix}{\mathbf{A}}
+\[\newcommand{\tk}[1]{}
+%\newcommand{\tk}[1]{\textbf{TK}: #1}
+\newcommand{\Amatrix}{\mathbf{A}}
 \newcommand{\KL}[2]{\text{KL}\left( #1\,\|\,#2 \right)}
 \newcommand{\Kaast}{\kernelMatrix_{\mathbf{ \ast}\mathbf{ \ast}}}
 \newcommand{\Kastu}{\kernelMatrix_{\mathbf{ \ast} \inducingVector}}
@@ -383,9 +410,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <section class="slide level3">
 
 <!-- Front matter -->
+<!-- Front matter -->
+<!-- Do not edit this file locally. -->
+<!-- Do not edit this file locally. -->
+<!-- Do not edit this file locally. -->
 <!---->
+<!-- Do not edit this file locally. -->
 <!--Back matter-->
-<p>.</p>
+<!-- Do not edit this file locally. -->
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
 </section>
 <section id="review" class="slide level3">
@@ -394,9 +426,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Last week: Specified Class Conditional Distributions, <span class="math inline">\(p(\inputVector_i|\dataScalar_i, \parameterVector)\)</span>.</li>
 <li>Used Bayes Classifier + naive Bayes model to specify joint distribution.</li>
 <li>Used Bayes rule to compute posterior probability of class membership.</li>
-<li>This week:</li>
+<li>This week:
+<ul>
 <li>direct estimation of probability of class membership.</li>
 <li>introduction of generalised linear models.</li>
+</ul></li>
 </ul>
 </section>
 <section id="logistic-regression-and-glms" class="slide level3">
@@ -404,8 +438,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <ul>
 <li>Modelling entire density allows any question to be answered (also missing data).</li>
 <li>Comes at the possible expense of <em>strong</em> assumptions about data generation distribution.</li>
-<li>In regression we model probability of <span class="math inline">\(\dataScalar_i |\inputVector_i\)</span> directly.</li>
+<li>In regression we model probability of <span class="math inline">\(\dataScalar_i |\inputVector_i\)</span> directly.
+<ul>
 <li><strong>Allows less flexibility in the question, but more flexibility in the model assumptions.</strong></li>
+</ul></li>
 <li>Can do this not just for regression, but classification.</li>
 <li>Framework is known as <em>generalized linear models</em>.</li>
 </ul>
@@ -439,7 +475,7 @@ g^{-1}(\pi(\inputVector)) = \mappingVector^\top\basisVector(\inputVector)
 <section id="logistic-function" class="slide level3">
 <h3>Logistic function</h3>
 <ul>
-<li><a href="http://en.wikipedia.org/wiki/Logistic_function">Logistic</a> (or sigmoid) squashes real line to between 0 &amp; 1. Sometimes also called a ‘squashing function’. <object class="svgplot "  data="../slides/diagrams/ml/logistic.svg"  style="vertical-align:middle;"></object></li>
+<li><a href="http://en.wikipedia.org/wiki/Logistic_function">Logistic</a> (or sigmoid) squashes real line to between 0 &amp; 1. Sometimes also called a ‘squashing function’. <object class="svgplot " data="../slides/diagrams/ml/logistic.svg" width="" style=" "></object></li>
 </ul>
 </section>
 <section id="basis-function" class="slide level3">
@@ -461,11 +497,11 @@ g^{-1}(\pi(\inputVector)) = \mappingVector^\top\basisVector(\inputVector)
 <li><p>From last time <span class="math display">\[P(\dataScalar_i|\mappingVector, \inputVector) = \pi_i^{\dataScalar_i} (1-\pi_i)^{1-\dataScalar_i}\]</span></p></li>
 <li><p>Trick for switching betwen probabilities</p></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> bernoulli(y, pi):
-    <span class="cf">if</span> y <span class="op">==</span> <span class="dv">1</span>:
-        <span class="cf">return</span> pi
-    <span class="cf">else</span>:
-<span class="cf">return</span> <span class="dv">1</span><span class="op">-</span>pi</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">def</span> bernoulli(y, pi):</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">    <span class="cf">if</span> y <span class="op">==</span> <span class="dv">1</span>:</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">        <span class="cf">return</span> pi</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">    <span class="cf">else</span>:</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="cf">return</span> <span class="dv">1</span><span class="op">-</span>pi</a></code></pre></div>
 </section>
 <section id="maximum-likelihood" class="slide level3">
 <h3>Maximum Likelihood</h3>
@@ -487,25 +523,25 @@ g^{-1}(\pi(\inputVector)) = \mappingVector^\top\basisVector(\inputVector)
 <ul>
 <li>Probability of positive outcome for the <span class="math inline">\(i\)</span>th data point <span class="math display">\[\pi_i = g\left(\mappingVector^\top \basisVector(\inputVector_i)\right),\]</span> where <span class="math inline">\(g(\cdot)\)</span> is the <em>inverse</em> link function</li>
 <li>Objective function of the form <span class="math display">\[\begin{align*}
-E(\mappingVector) = &amp; -  \sum_{i=1}^\numData \dataScalar_i \log
-g\left(\mappingVector^\top \basisVector(\inputVector_i)\right) \\&amp; -
-\sum_{i=1}^\numData(1-\dataScalar_i)\log \left(1-g\left(\mappingVector^\top
-\basisVector(\inputVector_i)\right)\right).
-   \end{align*}\]</span></li>
+  E(\mappingVector) = &amp; -  \sum_{i=1}^\numData \dataScalar_i \log
+  g\left(\mappingVector^\top \basisVector(\inputVector_i)\right) \\&amp; -
+  \sum_{i=1}^\numData(1-\dataScalar_i)\log \left(1-g\left(\mappingVector^\top
+  \basisVector(\inputVector_i)\right)\right).
+ \end{align*}\]</span></li>
 </ul>
 </section>
 <section id="minimize-objective" class="slide level3">
 <h3>Minimize Objective</h3>
 <ul>
 <li>Grdient wrt <span class="math inline">\(\pi(\inputVector;\mappingVector)\)</span> <span class="math display">\[\begin{align*}
-  \frac{\text{d}E(\mappingVector)}{\text{d}\mappingVector} = &amp;
-  -\sum_{i=1}^\numData \frac{\dataScalar_i}{g\left(\mappingVector^\top
-  \basisVector(\inputVector)\right)}\frac{\text{d}g(\mappingFunction_i)}{\text{d}\mappingFunction_i}
-  \basisVector(\inputVector_i) \\ &amp; +  \sum_{i=1}^\numData
-  \frac{1-\dataScalar_i}{1-g\left(\mappingVector^\top
-  \basisVector(\inputVector)\right)}\frac{\text{d}g(\mappingFunction_i)}{\text{d}\mappingFunction_i}
-  \basisVector(\inputVector_i)
-  \end{align*}\]</span></li>
+\frac{\text{d}E(\mappingVector)}{\text{d}\mappingVector} = &amp;
+-\sum_{i=1}^\numData \frac{\dataScalar_i}{g\left(\mappingVector^\top
+\basisVector(\inputVector)\right)}\frac{\text{d}g(\mappingFunction_i)}{\text{d}\mappingFunction_i}
+\basisVector(\inputVector_i) \\ &amp; +  \sum_{i=1}^\numData
+\frac{1-\dataScalar_i}{1-g\left(\mappingVector^\top
+\basisVector(\inputVector)\right)}\frac{\text{d}g(\mappingFunction_i)}{\text{d}\mappingFunction_i}
+\basisVector(\inputVector_i)
+\end{align*}\]</span></li>
 </ul>
 </section>
 <section id="link-function-gradient" class="slide level3">
@@ -549,20 +585,36 @@ g(\mappingFunction_i) &amp;= \frac{1}{1+\exp(-\mappingFunction_i)}\\
 <h3>Ad Matching for Facebook</h3>
 <ul>
 <li>This approach used in many internet companies.</li>
-<li>Example: ad matching for Facebook.</li>
+<li>Example: ad matching for Facebook.
+<ul>
 <li>Millions of advertisers</li>
 <li>Billions of users</li>
 <li>How do you choose who to show what?</li>
+</ul></li>
 <li>Logistic regression used in combination with <a href="">decision trees</a></li>
 <li><a href="http://www.herbrich.me/papers/adclicksfacebook.pdf">Paper available here</a></li>
 </ul>
+<p>{ ### Olivetti Glasses Data</p>
+<p>Let’s classify images with logistic regression. We’ll look at a data set of individuals with glasses. We can load in the data from <code>pods</code> as follows.</p>
+</section>
+<section id="batch-gradient-descent" class="slide level3">
+<h3>Batch Gradient Descent</h3>
+</section>
+<section id="stochastic-gradient-descent" class="slide level3">
+<h3>Stochastic Gradient Descent</h3>
+
+</section>
+<section id="going-further-optimization" class="slide level3">
+<h3>Going Further: Optimization</h3>
+<p>Other optimization techniques for generalized linear models include <a href="http://en.wikipedia.org/wiki/Newton%27s_method">Newton’s method</a>, it requires you to compute the Hessian, or second derivative of the objective function.</p>
+<p>Methods that are based on gradients only include <a href="http://en.wikipedia.org/wiki/Limited-memory_BFGS">L-BFGS</a> and <a href="http://en.wikipedia.org/wiki/Conjugate_gradient_method">conjugate gradients</a>. Can you find these in python? Are they suitable for very large data sets? }</p>
 </section>
 <section id="other-glms" class="slide level3">
 <h3>Other GLMs</h3>
 <ul>
 <li>Logistic regression is part of a family known as <em>generalized linear models</em></li>
 <li>They all take the form <span class="math display">\[g^{-1}(\mappingFunction_i(x)) = \mappingVector^\top \basisVector(\inputVector_i)\]</span></li>
-<li>As another example let’s look at <em>Poisson regression</em>.</li>
+<li>Other examples include <em>Poisson regression</em>.</li>
 </ul>
 </section>
 <section id="poisson-distribution" class="slide level3">
@@ -577,7 +629,7 @@ g(\mappingFunction_i) &amp;= \frac{1}{1+\exp(-\mappingFunction_i)}\\
 <h3>Poisson Distribution</h3>
 <div class="figure">
 <div id="the-poisson-distribution-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/poisson.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/poisson.svg" width="80%" style=" ">
 </object>
 </div>
 </div>
@@ -605,10 +657,10 @@ g(\mappingFunction_i) &amp;= \frac{1}{1+\exp(-\mappingFunction_i)}\\
 <h3>Bayesian Approaches</h3>
 
 </section>
-<section id="reading" class="slide level3">
-<h3>Reading</h3>
+<section id="further-reading" class="slide level3">
+<h3>Further Reading</h3>
 <ul>
-<li>Section 5.2.2 of <span class="citation" data-cites="Rogers:book11">Rogers and Girolami (2011)</span> up to pg 182.</li>
+<li>Section 5.2.2 up to pg 182 of <span class="citation" data-cites="Rogers:book11">Rogers and Girolami (2011)</span></li>
 </ul>
 </section>
 <section id="thanks" class="slide level3">
@@ -616,8 +668,8 @@ g(\mappingFunction_i) &amp;= \frac{1}{1+\exp(-\mappingFunction_i)}\\
 <ul>
 <li>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></li>
 <li>podcast: <a href="http://thetalkingmachines.com">The Talking Machines</a></li>
-<li><p>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></p></li>
-<li><p>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></p></li>
+<li>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></li>
+<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
 </ul>
 </section>
 <section id="references" class="slide level3 unnumbered">
@@ -646,11 +698,28 @@ g(\mappingFunction_i) &amp;= \frac{1}{1+\exp(-\mappingFunction_i)}\\
         history: true,
         // Transition style
         transition: 'None', // none/fade/slide/convex/concave/zoom
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
 
         // Optional reveal.js plugins
         dependencies: [
           { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/math/math.js', async: true },
           { src: 'reveal.js/plugin/notes/notes.js', async: true }
         ]
       });
