@@ -16,41 +16,67 @@
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
   <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
   <link rel="stylesheet" href="talks.css"/>
@@ -66,7 +92,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   <script src="reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG" type="text/javascript"></script>
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
     TeX: {
@@ -77,7 +102,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   <script src="figure-animate.js"></script>
 </head>
 <body>
-\[\newcommand{\Amatrix}{\mathbf{A}}
+\[\newcommand{\tk}[1]{}
+%\newcommand{\tk}[1]{\textbf{TK}: #1}
+\newcommand{\Amatrix}{\mathbf{A}}
 \newcommand{\KL}[2]{\text{KL}\left( #1\,\|\,#2 \right)}
 \newcommand{\Kaast}{\kernelMatrix_{\mathbf{ \ast}\mathbf{ \ast}}}
 \newcommand{\Kastu}{\kernelMatrix_{\mathbf{ \ast} \inducingVector}}
@@ -383,9 +410,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <section class="slide level3">
 
 <!-- Front matter -->
+<!-- Front matter -->
+<!-- Do not edit this file locally. -->
+<!-- Do not edit this file locally. -->
+<!-- Do not edit this file locally. -->
 <!---->
+<!-- Do not edit this file locally. -->
 <!--Back matter-->
-<p>.</p>
+<!-- Do not edit this file locally. -->
 <!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
 </section>
 <section id="review" class="slide level3">
@@ -398,11 +430,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section>
 <section id="introduction-to-classification" class="slide level3">
 <h3>Introduction to Classification</h3>
+</section>
+<section id="classification" class="slide level3">
+<h3>Classification</h3>
 <ul>
+<li><em>Wake word</em> classification (<a href="https://radio.unglobalpulse.net/uganda/">Global Pulse Project</a>).</li>
+<li><p>Breakthrough in 2012 with ImageNet result of <a href="http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-">Alex Krizhevsky, Ilya Sutskever and Geoff Hinton</a></p></li>
 <li>We are given a data set containing ‘inputs’, <span class="math inline">\(\inputMatrix\)</span> and ‘targets’, <span class="math inline">\(\dataVector\)</span>.</li>
 <li>Each data point consists of an input vector <span class="math inline">\(\inputVector_i\)</span> and a class label, <span class="math inline">\(\dataScalar_i\)</span>.</li>
 <li>For binary classification assume <span class="math inline">\(\dataScalar_i\)</span> should be either <span class="math inline">\(1\)</span> (yes) or <span class="math inline">\(-1\)</span> (no).</li>
-<li>Input vector can be thought of as features.</li>
+<li><p>Input vector can be thought of as features.</p></li>
 </ul>
 </section>
 <section id="discrete-probability" class="slide level3">
@@ -411,6 +448,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Algorithms based on <em>prediction</em> function and <em>objective</em> function.</li>
 <li>For regression the <em>codomain</em> of the functions, <span class="math inline">\(f(\inputMatrix)\)</span> was the real numbers or sometimes real vectors.</li>
 <li>In classification we are given an input vector, <span class="math inline">\(\inputVector\)</span>, and an associated label, <span class="math inline">\(\dataScalar\)</span> which either takes the value <span class="math inline">\(-1\)</span> or <span class="math inline">\(1\)</span>.</li>
+</ul>
+</section>
+<section id="classification-1" class="slide level3">
+<h3>Classification</h3>
+<ul>
+<li>Inputs, <span class="math inline">\(\inputVector\)</span>, mapped to a label, <span class="math inline">\(\dataScalar\)</span>, through a function <span class="math inline">\(\mappingFunction(\cdot)\)</span> dependent on parameters, <span class="math inline">\(\weightVector\)</span>, <span class="math display">\[
+\dataScalar = \mappingFunction(\inputVector; \weightVector).
+\]</span></li>
+<li><span class="math inline">\(\mappingFunction(\cdot)\)</span> is known as the <em>prediction function</em>.</li>
 </ul>
 </section>
 <section id="classification-examples" class="slide level3">
@@ -426,18 +472,22 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <section id="reminder-on-the-term-bayesian" class="slide level3">
 <h3>Reminder on the Term “Bayesian”</h3>
 <ul>
-<li>We use Bayes’ rule to invert probabilities in the Bayesian approach.</li>
+<li>We use Bayes’ rule to invert probabilities in the Bayesian approach.
+<ul>
 <li>Bayesian is not named after Bayes’ rule (v. common confusion).</li>
 <li>The term Bayesian refers to the treatment of the parameters as stochastic variables.</li>
 <li>Proposed by <span class="citation" data-cites="Laplace:memoire74">Laplace (1774)</span> and <span class="citation" data-cites="Bayes:doctrine63">Bayes (1763)</span> independently.</li>
 <li>For early statisticians this was very controversial (Fisher et al).</li>
+</ul></li>
 </ul>
 </section>
 <section id="reminder-on-the-term-bayesian-1" class="slide level3">
 <h3>Reminder on the Term “Bayesian”</h3>
 <ul>
-<li>The use of Bayes’ rule does <em>not</em> imply you are being Bayesian.</li>
+<li>The use of Bayes’ rule does <em>not</em> imply you are being Bayesian.
+<ul>
 <li>It is just an application of the product rule of probability.</li>
+</ul></li>
 </ul>
 </section>
 <section id="bernoulli-distribution" class="slide level3">
@@ -469,15 +519,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3>Mathematical Switch</h3>
 <ul>
 <li><p>The Bernoulli distribution <span class="math display">\[
-  P(\dataScalar) = \pi^\dataScalar (1-\pi)^{(1-\dataScalar)}
-  \]</span></p></li>
+P(\dataScalar) = \pi^\dataScalar (1-\pi)^{(1-\dataScalar)}
+\]</span></p></li>
 <li><p>Is a clever trick for switching probabilities, as code it would be</p></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> bernoulli(y_i, pi):
-    <span class="cf">if</span> y_i <span class="op">==</span> <span class="dv">1</span>:
-        <span class="cf">return</span> pi
-    <span class="cf">else</span>:
-        <span class="cf">return</span> <span class="dv">1</span><span class="op">-</span>pi</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">def</span> bernoulli(y_i, pi):</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">    <span class="cf">if</span> y_i <span class="op">==</span> <span class="dv">1</span>:</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">        <span class="cf">return</span> pi</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">    <span class="cf">else</span>:</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">        <span class="cf">return</span> <span class="dv">1</span><span class="op">-</span>pi</a></code></pre></div>
 </section>
 <section id="jacob-bernoullis-bernoulli" class="slide level3">
 <h3>Jacob Bernoulli’s Bernoulli</h3>
@@ -490,14 +540,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section>
 <section id="section" class="slide level3">
 <h3></h3>
-<iframe frameborder="0" scrolling="no" style="border:0px" src="http://books.google.co.uk/books?id=CF4UAAAAQAAJ&amp;pg=PA87&amp;output=embed" , width="700" height="500">
+<iframe frameborder="0" scrolling="no" style="border:0px" src="http://books.google.co.uk/books?id=CF4UAAAAQAAJ&amp;pg=PA87&amp;output=embed" width="700" height="500">
 </iframe>
 </section>
 <section id="jacob-bernoullis-bernoulli-1" class="slide level3">
 <h3>Jacob Bernoulli’s Bernoulli</h3>
 <div class="figure">
 <div id="bernoulli-urn-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ml/bernoulli-urn.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/bernoulli-urn.svg" width="40%" style=" ">
 </object>
 </div>
 </div>
@@ -517,51 +567,45 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <script>
 showDivs(1, 'bayes_billiard');
 </script>
-<small></small> <input id="range-bayes_billiard" type="range" min="1" max="10" value="1" onchange="setDivs('bayes_billiard')" oninput="setDivs('bayes_billiard')">
-<button onclick="plusDivs(-1, 'bayes_billiard')">
-❮
-</button>
-<button onclick="plusDivs(1, 'bayes_billiard')">
-❯
-</button>
+<p><small></small> <input id="range-bayes_billiard" type="range" min="1" max="10" value="1" onchange="setDivs('bayes_billiard')" oninput="setDivs('bayes_billiard')"> <button onclick="plusDivs(-1, 'bayes_billiard')">❮</button> <button onclick="plusDivs(1, 'bayes_billiard')">❯</button></p>
 <div class="bayes_billiard" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/bayes-billiard000.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/bayes-billiard000.svg" width="40%" style=" ">
 </object>
 </div>
 <div class="bayes_billiard" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/bayes-billiard001.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/bayes-billiard001.svg" width="40%" style=" ">
 </object>
 </div>
 <div class="bayes_billiard" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/bayes-billiard002.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/bayes-billiard002.svg" width="40%" style=" ">
 </object>
 </div>
 <div class="bayes_billiard" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/bayes-billiard003.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/bayes-billiard003.svg" width="40%" style=" ">
 </object>
 </div>
 <div class="bayes_billiard" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/bayes-billiard004.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/bayes-billiard004.svg" width="40%" style=" ">
 </object>
 </div>
 <div class="bayes_billiard" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/bayes-billiard005.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/bayes-billiard005.svg" width="40%" style=" ">
 </object>
 </div>
 <div class="bayes_billiard" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/bayes-billiard006.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/bayes-billiard006.svg" width="40%" style=" ">
 </object>
 </div>
 <div class="bayes_billiard" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/bayes-billiard007.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/bayes-billiard007.svg" width="40%" style=" ">
 </object>
 </div>
 <div class="bayes_billiard" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/bayes-billiard008.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/bayes-billiard008.svg" width="40%" style=" ">
 </object>
 </div>
 <div class="bayes_billiard" style="text-align:center;">
-<object class="svgplot " data="../slides/diagrams/ml/bayes-billiard009.svg" style="vertical-align:middle;">
+<object class="svgplot " data="../slides/diagrams/ml/bayes-billiard009.svg" width="40%" style=" ">
 </object>
 </div>
 </section>
@@ -578,9 +622,9 @@ p(\dataVector|\pi) = \prod_{i=1}^{\numData} \pi^{\dataScalar_i} (1-\pi)^{1-\data
 <h3>Negative Log Likelihood</h3>
 <ul>
 <li>Minimize the negative log likelihood <span class="math display">\[\begin{align*}
-  \errorFunction(\pi)&amp; = -\log p(\dataVector|\pi)\\ 
-                 &amp; = -\sum_{i=1}^{\numData} \dataScalar_i \log \pi - \sum_{i=1}^{\numData} (1-\dataScalar_i) \log(1-\pi),
-  \end{align*}\]</span></li>
+\errorFunction(\pi)&amp; = -\log p(\dataVector|\pi)\\ 
+                   &amp; = -\sum_{i=1}^{\numData} \dataScalar_i \log \pi - \sum_{i=1}^{\numData} (1-\dataScalar_i) \log(1-\pi),
+\end{align*}\]</span></li>
 <li>Take gradient with respect to the parameter <span class="math inline">\(\pi\)</span>. <span class="math display">\[\frac{\text{d}\errorFunction(\pi)}{\text{d}\pi} = -\frac{\sum_{i=1}^{\numData} \dataScalar_i}{\pi}  + \frac{\sum_{i=1}^{\numData} (1-\dataScalar_i)}{1-\pi},\]</span></li>
 </ul>
 </section>
@@ -632,8 +676,8 @@ p(\dataVector|\pi) = \prod_{i=1}^{\numData} \pi^{\dataScalar_i} (1-\pi)^{1-\data
 <li>Given label data <span class="math inline">\(\dataVector\)</span> and the inputs <span class="math inline">\(\inputMatrix\)</span> could specify joint density of all potential values of <span class="math inline">\(\dataVector\)</span> and <span class="math inline">\(\inputMatrix\)</span>, <span class="math inline">\(p(\dataVector, \inputMatrix)\)</span>.</li>
 <li>If <span class="math inline">\(\inputMatrix\)</span> and <span class="math inline">\(\dataVector\)</span> are training data.</li>
 <li>If <span class="math inline">\(\inputVector^*\)</span> is a test input and <span class="math inline">\(\dataScalar^*\)</span> a test location we want <span class="math display">\[
-  p(\dataScalar^*|\inputMatrix, \dataVector, \inputVector^*),
-  \]</span></li>
+p(\dataScalar^*|\inputMatrix, \dataVector, \inputVector^*),
+\]</span></li>
 </ul>
 </section>
 <section id="answer-from-rules-of-probability" class="slide level3">
@@ -661,8 +705,8 @@ p(\dataVector|\pi) = \prod_{i=1}^{\numData} \pi^{\dataScalar_i} (1-\pi)^{1-\data
 <h3>Data Conditional Independence</h3>
 <ul>
 <li><p>Given model parameters <span class="math inline">\(\paramVector\)</span> we assume that all data points in the model are independent. <span class="math display">\[
-  p(\dataScalar^*, \inputVector^*, \dataVector, \inputMatrix|\paramVector) = p(\dataScalar^*, \inputVector^*|\paramVector)\prod_{i=1}^{\numData} p(\dataScalar_i, \inputVector_i | \paramVector).
-  \]</span></p></li>
+p(\dataScalar^*, \inputVector^*, \dataVector, \inputMatrix|\paramVector) = p(\dataScalar^*, \inputVector^*|\paramVector)\prod_{i=1}^{\numData} p(\dataScalar_i, \inputVector_i | \paramVector).
+\]</span></p></li>
 <li><p>This is a conditional independence assumption.</p></li>
 <li><p>We also make similar assumptions for regression (where <span class="math inline">\(\paramVector = \left\{\mappingVector,\dataStd^2\right\}\)</span>).</p></li>
 <li><p>Here we assume <em>joint</em> density of <span class="math inline">\(\dataVector\)</span> and <span class="math inline">\(\inputMatrix\)</span> is independent across the data given the parameters.</p></li>
@@ -691,8 +735,8 @@ p(\dataVector|\pi) = \prod_{i=1}^{\numData} \pi^{\dataScalar_i} (1-\pi)^{1-\data
 <h3>Joint Density for Naive Bayes</h3>
 <ul>
 <li>This allows us to write down the full joint density of the training data, <span class="math display">\[
-  p(\dataVector, \inputMatrix|\paramVector, \pi) = \prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)
-  \]</span> which can now be fit by maximum likelihood.</li>
+p(\dataVector, \inputMatrix|\paramVector, \pi) = \prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)
+\]</span> which can now be fit by maximum likelihood.</li>
 </ul>
 </section>
 <section id="objective-function" class="slide level3">
@@ -708,26 +752,26 @@ p(\dataVector|\pi) = \prod_{i=1}^{\numData} \pi^{\dataScalar_i} (1-\pi)^{1-\data
 <h3>Fit Prior</h3>
 <ul>
 <li>We can minimize prior. For Bernoulli likelihood over the labels we have, <span class="math display">\[\begin{align*}
-  \errorFunction(\pi) &amp; = - \sum_{i=1}^{\numData}\log p(\dataScalar_i|\pi)\\ &amp; = -\sum_{i=1}^{\numData} \dataScalar_i \log \pi - \sum_{i=1}^{\numData} (1-\dataScalar_i) \log (1-\pi)
-  \end{align*}\]</span></li>
+\errorFunction(\pi) &amp; = - \sum_{i=1}^{\numData}\log p(\dataScalar_i|\pi)\\ &amp; = -\sum_{i=1}^{\numData} \dataScalar_i \log \pi - \sum_{i=1}^{\numData} (1-\dataScalar_i) \log (1-\pi)
+\end{align*}\]</span></li>
 <li>Solution from above is <span class="math display">\[
-  \pi = \frac{\sum_{i=1}^{\numData} \dataScalar_i}{\numData}.
-  \]</span></li>
+\pi = \frac{\sum_{i=1}^{\numData} \dataScalar_i}{\numData}.
+\]</span></li>
 </ul>
 </section>
 <section id="fit-conditional" class="slide level3">
 <h3>Fit Conditional</h3>
 <ul>
 <li>Minimize conditional distribution: <span class="math display">\[
-  \errorFunction(\paramVector) = -\sum_{i=1}^{\numData} \sum_{j=1}^{\dataDim} \log p(\inputScalar_{i, j} |\dataScalar_i, \paramVector),
-  \]</span></li>
+\errorFunction(\paramVector) = -\sum_{i=1}^{\numData} \sum_{j=1}^{\dataDim} \log p(\inputScalar_{i, j} |\dataScalar_i, \paramVector),
+\]</span></li>
 <li>Implies making an assumption about it’s form.</li>
 <li>The right assumption will depend on the data.</li>
 <li>E.g. for real valued data, use a Gaussian <span class="math display">\[
-  p(\inputScalar_{i, j} | \dataScalar_i,\paramVector) =
+p(\inputScalar_{i, j} | \dataScalar_i,\paramVector) =
 \frac{1}{\sqrt{2\pi \dataStd_{\dataScalar_i,j}^2}} \exp \left(-\frac{(\inputScalar_{i,j} - \mu_{\dataScalar_i,
 j})^2}{\dataStd_{\dataScalar_i,j}^2}\right),
-  \]</span></li>
+\]</span></li>
 </ul>
 <p>The distributions show the parameters of the <em>independent</em> class conditional probabilities for no maternity services. It is a Bernoulli distribution with the parameter, <span class="math inline">\(\pi\)</span>, given by (<code>theta_0</code>) for the facilities without maternity services and <code>theta_1</code> for the facilities with maternity services. The parameters whow that, facilities with maternity services also are more likely to have other services such as grid electricity, emergency transport, immunization programs etc.</p>
 <p>The naive Bayes assumption says that the joint probability for these services is given by the product of each of these Bernoulli distributions.</p>
@@ -737,50 +781,50 @@ j})^2}{\dataStd_{\dataScalar_i,j}^2}\right),
 <h3>Compute Posterior for Test Point Label</h3>
 <ul>
 <li>We know that <span class="math display">\[
-  P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector)p(\dataVector,\inputMatrix, \inputVector^*|\paramVector) = p(\dataScalar*, \dataVector, \inputMatrix,\inputVector^*| \paramVector)
-  \]</span></li>
+P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector)p(\dataVector,\inputMatrix, \inputVector^*|\paramVector) = p(\dataScalar*, \dataVector, \inputMatrix,\inputVector^*| \paramVector)
+\]</span></li>
 <li>This implies <span class="math display">\[
-  P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector) = \frac{p(\dataScalar*, \dataVector, \inputMatrix, \inputVector^*| \paramVector)}{p(\dataVector, \inputMatrix, \inputVector^*|\paramVector)}
-  \]</span></li>
+P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector) = \frac{p(\dataScalar*, \dataVector, \inputMatrix, \inputVector^*| \paramVector)}{p(\dataVector, \inputMatrix, \inputVector^*|\paramVector)}
+\]</span></li>
 </ul>
 </section>
 <section id="compute-posterior-for-test-point-label-1" class="slide level3">
 <h3>Compute Posterior for Test Point Label</h3>
 <ul>
 <li>From conditional independence assumptions <span class="math display">\[
-  p(\dataScalar^*, \dataVector, \inputMatrix, \inputVector^*| \paramVector) = \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)
-  \]</span></li>
+p(\dataScalar^*, \dataVector, \inputMatrix, \inputVector^*| \paramVector) = \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)
+\]</span></li>
 <li>We also need <span class="math display">\[
-  p(\dataVector, \inputMatrix, \inputVector^*|\paramVector)\]</span> which can be found from <span class="math display">\[p(\dataScalar^*, \dataVector, \inputMatrix, \inputVector^*| \paramVector)
-  \]</span></li>
+p(\dataVector, \inputMatrix, \inputVector^*|\paramVector)\]</span> which can be found from <span class="math display">\[p(\dataScalar^*, \dataVector, \inputMatrix, \inputVector^*| \paramVector)
+\]</span></li>
 <li>Using the <em>sum rule</em> of probability, <span class="math display">\[
-  p(\dataVector, \inputMatrix, \inputVector^*|\paramVector) = \sum_{\dataScalar^*=0}^1 p(\dataScalar^*, \dataVector, \inputMatrix, \inputVector^*| \paramVector).
-  \]</span></li>
+p(\dataVector, \inputMatrix, \inputVector^*|\paramVector) = \sum_{\dataScalar^*=0}^1 p(\dataScalar^*, \dataVector, \inputMatrix, \inputVector^*| \paramVector).
+\]</span></li>
 </ul>
 </section>
 <section id="independence-assumptions" class="slide level3">
 <h3>Independence Assumptions</h3>
 <ul>
 <li>From independence assumptions <span class="math display">\[
-  p(\dataVector, \inputMatrix, \inputVector^*| \paramVector) = \sum_{\dataScalar^*=0}^1 \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi).
-  \]</span></li>
+p(\dataVector, \inputMatrix, \inputVector^*| \paramVector) = \sum_{\dataScalar^*=0}^1 \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi).
+\]</span></li>
 <li>Substitute both forms to recover, <span class="math display">\[
-  P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector)  = \frac{\prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)}{\sum_{\dataScalar^*=0}^1 \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)}
-  \]</span></li>
+P(\dataScalar^*| \dataVector, \inputMatrix, \inputVector^*, \paramVector)  = \frac{\prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)}{\sum_{\dataScalar^*=0}^1 \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)\prod_{i=1}^{\numData} \prod_{j=1}^{\dataDim} p(\inputScalar_{i,j}|\dataScalar_i, \paramVector)p(\dataScalar_i|\pi)}
+\]</span></li>
 </ul>
 </section>
 <section id="cancelation" class="slide level3">
 <h3>Cancelation</h3>
 <ul>
 <li>Note training data terms cancel. <span class="math display">\[
-  p(\dataScalar^*| \inputVector^*, \paramVector) = \frac{\prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)}{\sum_{\dataScalar^*=0}^1 \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)}
-  \]</span></li>
+p(\dataScalar^*| \inputVector^*, \paramVector) = \frac{\prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)}{\sum_{\dataScalar^*=0}^1 \prod_{j=1}^{\dataDim} p(\inputScalar^*_{j}|\dataScalar^*_i, \paramVector)p(\dataScalar^*|\pi)}
+\]</span></li>
 <li>This formula is also fairly straightforward to implement for different class conditional distributions.</li>
 </ul>
 </section>
 <section id="laplace-smoothing" class="slide level3">
 <h3>Laplace Smoothing</h3>
-<iframe frameborder="0" scrolling="no" style="border:0px" src="http://books.google.co.uk/books?id=1YQPAAAAQAAJ&amp;pg=PA16&amp;output=embed" , width="700" height="500">
+<iframe frameborder="0" scrolling="no" style="border:0px" src="http://books.google.co.uk/books?id=1YQPAAAAQAAJ&amp;pg=PA16&amp;output=embed" width="700" height="500">
 </iframe>
 </section>
 <section id="pseudo-counts" class="slide level3">
@@ -795,9 +839,11 @@ j})^2}{\dataStd_{\dataScalar_i,j}^2}\right),
 <h3>Naive Bayes Summary</h3>
 <ul>
 <li>Model <em>full</em> joint distribution of data, <span class="math inline">\(p(\dataVector, \inputMatrix | \paramVector, \pi)\)</span></li>
-<li>Make conditional independence assumptions about the data.</li>
+<li>Make conditional independence assumptions about the data.
+<ul>
 <li>feature conditional independence</li>
 <li>data conditional independence</li>
+</ul></li>
 <li>Fast to implement, works on very large data.</li>
 <li>Despite simple assumptions can perform better than expected.</li>
 </ul>
@@ -837,11 +883,28 @@ j})^2}{\dataStd_{\dataScalar_i,j}^2}\right),
         history: true,
         // Transition style
         transition: 'None', // none/fade/slide/convex/concave/zoom
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
 
         // Optional reveal.js plugins
         dependencies: [
           { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/math/math.js', async: true },
           { src: 'reveal.js/plugin/notes/notes.js', async: true }
         ]
       });

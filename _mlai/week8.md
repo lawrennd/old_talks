@@ -11,10 +11,10 @@ author:
   institute: University of Sheffield
   twitter: lawrennd
   url: http://inverseprobability.com
+  orcid:
 date: 2015-11-17
 venue: University of Sheffield
-transition: None
-author: Neil D. Lawrence
+youtube: 0mtK2_rc0IY
 transition: None
 ---
 

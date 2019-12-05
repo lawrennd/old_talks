@@ -14,6 +14,7 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 venue: University of Sheffield
+youtube: Gq6bjcm8AqQ
 transition: None
 ---
 

@@ -10,6 +10,7 @@ author:
   url: http://inverseprobability.com
 venue: University of Sheffield
 youtube: B2XhFoCehy8
+ipynb: True
 date: 2015-12-15
 abstract: 
 transition: None

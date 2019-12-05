@@ -4,8 +4,7 @@ title: Probability and an Introduction to Jupyter, Python and Pandas
 abstract: |
   In this first session we will introduce *machine learning*, review *probability* and begin familiarization with the Jupyter notebook, python and pandas.
 date: 2015-09-29
-ipynb: 2015-09-29-week1.ipynb
-reveal: 2015-09-29-week1.slides.html
+ipynb: Yes
 author:
 - family: Lawrence
   given: Neil D.
@@ -14,6 +13,7 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 venue: University of Sheffield
+youtube: M67rG3cZoVg
 transition: None
 ---
 

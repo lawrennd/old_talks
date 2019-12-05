@@ -6,8 +6,7 @@ abstract: |
   
   In this session we will introduce *basis functions* which allow us to implement *non-linear regression models*.
 date: 2015-10-20
-ipynb: 2015-10-20-week4.ipynb
-reveal: 2015-10-20-week4.slides.html
+ipynb: True
 author:
 - family: Lawrence
   given: Neil D.
