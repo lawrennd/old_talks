@@ -22,6 +22,7 @@ month: 10
 published: 2017-07-13
 youtube: ExTDnppYB0w
 youtube_start: 22800
+youtube_remote: True
 reveal: 2017-07-13-once-upon-a-universal-standard-time.slides.html
 venue: CFI Conference
 ---
