@@ -11,8 +11,8 @@ author:
   orchid: 
 date: 2015-12-15
 published: 2015-12-15
-reveal: 2015-12-15-week12.slides.html
-ipynb: 2015-12-15-week12.ipynb
+reveal: 2015-12-15-gaussian-processes.slides.html
+ipynb: 2015-12-15-gaussian-processes.ipynb
 youtube: "B2XhFoCehy8"
 layout: talk
 categories:
@@ -70,9 +70,9 @@ categories:
 $$</span><br /> where <span class="math inline">$\mappingFunction(\inputVector; \mappingVector)$</span> is a linear-in-the-parameters function (here the parameters are <span class="math inline">$\mappingVector$</span>, which is generally non-linear in the inputs. So far we have considered basis function models of the form <br /><span class="math display">$$
 \mappingFunction(\inputVector) =
 \mappingVector^\top \basisVector(\inputVector).
-$$</span><br /></p>
-<h2 id="gaussian-processes">Gaussian Processes</h2>
-<p>When we form a Gaussian process we do something that is slightly more akin to the naive Bayes approach, but actually is closely related to the generalized linear model approach. Models where we model the entire joint distribution of our training data, <span class="math inline">$p(\dataVector, \inputMatrix)$</span> are sometimes described as <em>generative models</em>. Because we can use sampling to generate data sets that represent all our assumptions. However, as we discussed in the sessions on logistic regression and naive Bayes, this can be a bad idea, because if our assumptions are wrong then we can make poor predictions. We can try to make more complex assumptions about data to alleviate the problem, but then this typically leads to challenges for tractable application of the sum and rules of probability that are needed to compute the relevant marginal and conditional densities. If we know the form of the question we wish to answer then we typically try and represent that directly, through <span class="math inline">$p(\dataVector|\inputMatrix)$</span>. In practice, we also have been making assumptions of conditional independence given the model parameters, <br /><span class="math display">$$
+$$</span><br /> When we form a Gaussian process we do something that is slightly more akin to the naive Bayes approach, but actually is closely related to the generalized linear model approach.</p>
+<h2 id="gaussian-processes-edit">Gaussian Processes <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gp-intro-lectures.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gp/includes/gp-intro-lectures.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>Models where we model the entire joint distribution of our training data, <span class="math inline">$p(\dataVector, \inputMatrix)$</span> are sometimes described as <em>generative models</em>. Because we can use sampling to generate data sets that represent all our assumptions. However, as we discussed in the sessions on  and , this can be a bad idea, because if our assumptions are wrong then we can make poor predictions. We can try to make more complex assumptions about data to alleviate the problem, but then this typically leads to challenges for tractable application of the sum and rules of probability that are needed to compute the relevant marginal and conditional densities. If we know the form of the question we wish to answer then we typically try and represent that directly, through <span class="math inline">$p(\dataVector|\inputMatrix)$</span>. In practice, we also have been making assumptions of conditional independence given the model parameters, <br /><span class="math display">$$
 p(\dataVector|\inputMatrix, \mappingVector) =
 \prod_{i=1}^{\numData} p(\dataScalar_i | \inputVector_i, \mappingVector)
 $$</span><br /> Gaussian processes are <em>not</em> normally considered to be <em>generative models</em>, but we will be much more interested in the principles of conditioning in Gaussian processes because we will use conditioning to make predictions between our test and training data. We will avoid the data conditional indpendence assumption in favour of a richer assumption about the data, in a Gaussian process we assume data is <em>jointly Gaussian</em> with a particular mean and covariance, <br /><span class="math display">$$
@@ -178,8 +178,8 @@ $$</span><br /> </large></p></li>
 $$</span><br /></p></li>
 </ul>
 </div>
-<h2 id="marginal-likelihood-edit">Marginal Likelihood <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/week12.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/week12.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
-<p>To understand the Gaussian process we’re going to build on our understanding of the marginal likelihood for Bayesian regression. In the session on <a href="./week7.ipynb">Bayesian regression</a> we sampled directly from the weight vector, <span class="math inline">$\mappingVector$</span> and applied it to the basis matrix <span class="math inline">$\basisMatrix$</span> to obtain a sample from the prior and a sample from the posterior. It is often helpful to think of modeling techniques as <em>generative</em> models. To give some thought as to what the process for obtaining data from the model is. From the perspective of Gaussian processes, we want to start by thinking of basis function models, where the parameters are sampled from a prior, but move to thinking about sampling from the marginal likelihood directly.</p>
+<h2 id="marginal-likelihood-edit">Marginal Likelihood <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/gaussian-processes.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/gaussian-processes.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>To understand the Gaussian process we’re going to build on our understanding of the marginal likelihood for Bayesian regression. In the session on  we sampled directly from the weight vector, <span class="math inline">$\mappingVector$</span> and applied it to the basis matrix <span class="math inline">$\basisMatrix$</span> to obtain a sample from the prior and a sample from the posterior. It is often helpful to think of modeling techniques as <em>generative</em> models. To give some thought as to what the process for obtaining data from the model is. From the perspective of Gaussian processes, we want to start by thinking of basis function models, where the parameters are sampled from a prior, but move to thinking about sampling from the marginal likelihood directly.</p>
 <h2 id="sampling-from-the-prior">Sampling from the Prior</h2>
 <p>The first thing we’ll do is to set up the parameters of the model, these include the parameters of the prior, the parameters of the basis functions and the noise level.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co"># set prior variance on w</span></a>
@@ -226,8 +226,7 @@ $$</span><br /> We can now sample from the prior density to obtain a vector <spa
 <p>The process we have used to generate the samples is a two stage process. To obtain each function, we first generated a sample from the prior, <br /><span class="math display">$$
 \weightVector \sim \gaussianSamp{\zerosVector}{\alpha \eye}
 $$</span><br /> then if we compose our basis matrix, <span class="math inline">$\basisMatrix$</span> from the basis functions associated with each row then we get, <br /><span class="math display">$$
-\basisMatrix =
-\begin{bmatrix}\basisVector(\inputVector_1) \\ \vdots \\
+\basisMatrix = \begin{bmatrix}\basisVector(\inputVector_1) \\ \vdots \\
 \basisVector(\inputVector_n)\end{bmatrix}
 $$</span><br /> then we can write down the vector of function values, as evaluated at <br /><span class="math display">$$
 \mappingFunctionVector = \begin{bmatrix} \mappingFunction_1
@@ -235,7 +234,7 @@ $$</span><br /> then we can write down the vector of function values, as evaluat
 $$</span><br /> in the form <br /><span class="math display">$$
 \mappingFunctionVector = \basisMatrix
 \weightVector.
-$$</span><br /></p>
+$$</span><br />}</p>
 <p>Now we can use standard properties of multivariate Gaussians to write down the probability density that is implied over <span class="math inline">$\mappingFunctionVector$</span>. In particular we know that if <span class="math inline">$\weightVector$</span> is sampled from a multivariate normal (or multivariate Gaussian) with covariance <span class="math inline">$\alpha \eye$</span> and zero mean, then assuming that <span class="math inline">$\basisMatrix$</span> is a deterministic matrix (i.e. it is not sampled from a probability density) then the vector <span class="math inline">$\mappingFunctionVector$</span> will also be distributed according to a zero mean multivariate normal as follows, <br /><span class="math display">$$
 \mappingFunctionVector \sim \gaussianSamp{\zerosVector}{\alpha \basisMatrix\basisMatrix^\top}.
 $$</span><br /></p>
@@ -252,7 +251,7 @@ $$</span><br /></p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb17-1" data-line-number="1">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">8</span>))</a>
 <a class="sourceLine" id="cb17-2" data-line-number="2">im <span class="op">=</span> ax.imshow(K, interpolation<span class="op">=</span><span class="st">&#39;none&#39;</span>)</a>
 <a class="sourceLine" id="cb17-3" data-line-number="3">fig.colorbar(im)</a></code></pre></div>
-<p>This image is the covariance expressed between different points on the function. In regression we normally also add independent Gaussian noise to obtain our observations <span class="math inline">$\dataVector$</span>, <br /><span class="math display">$$
+<p>{This image is the covariance expressed between different points on the function. In regression we normally also add independent Gaussian noise to obtain our observations <span class="math inline">$\dataVector$</span>, <br /><span class="math display">$$
 \dataVector = \mappingFunctionVector + \boldsymbol{\epsilon}
 $$</span><br /> where the noise is sampled from an independent Gaussian distribution with variance <span class="math inline">$\dataStd^2$</span>, <br /><span class="math display">$$
 \epsilon \sim \gaussianSamp{\zerosVector}{\dataStd^2\eye}.
@@ -306,7 +305,7 @@ $$</span><br /> And that’s not <em>only</em> for Gaussian <span class="math in
 <p>To understand this argument in more detail, I highly recommend reading chapter 2 of Neal’s thesis <span class="citation" data-cites="Neal:bayesian94">(Neal 1994)</span>, which remains easy to read and clear today. Indeed, for readers interested in Bayesian neural networks, both Raford Neal’s and David MacKay’s PhD thesis <span class="citation" data-cites="MacKay:bayesian92">(MacKay 1992)</span> remain essential reading. Both theses embody a clarity of thought, and an ability to weave together threads from different fields that was the business of machine learning in the 1990s. Radford and David were also pioneers in making their software widely available and publishing material on the web.</p>
 <h2 id="gaussian-process">Gaussian Process</h2>
 <p>In our <a href="./week7.ipynb">session on Bayesian regression</a> we sampled from the prior over paraemters. Through the properties of multivariate Gaussian densities this prior over parameters implies a particular density for our data observations, <span class="math inline">$\dataVector$</span>. In this session we sampled directly from this distribution for our data, avoiding the intermediate weight-space representation. This is the approach taken by <em>Gaussian processes</em>. In a Gaussian process you specify the <em>covariance function</em> directly, rather than <em>implicitly</em> through a basis matrix and a prior over parameters. Gaussian processes have the advantage that they can be <em>nonparametric</em>, which in simple terms means that they can have <em>infinite</em> basis functions. In the lectures we introduced the <em>exponentiated quadratic</em> covariance, also known as the RBF or the Gaussian or the squared exponential covariance function. This covariance function is specified by <br /><span class="math display">$$
-\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \exp\left( -\frac{\left\Vert \inputVector-\inputVector^\prime\right\Vert^2}{2\ell^2}\right).
+\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \exp\left( -\frac{\left\Vert \inputVector-\inputVector^\prime\right\Vert^2}{2\ell^2}\right),
 $$</span><br /> where <span class="math inline">$\left\Vert\inputVector - \inputVector^\prime\right\Vert^2$</span> is the squared distance between the two input vectors <br /><span class="math display">$$
 \left\Vert\inputVector - \inputVector^\prime\right\Vert^2 = (\inputVector - \inputVector^\prime)^\top (\inputVector - \inputVector^\prime) 
 $$</span><br /> Let’s build a covariance matrix based on this function. First we define the form of the covariance function,</p>
@@ -366,7 +365,7 @@ p(\dataVector|\inputMatrix) =
 \eye\right)^{-1}\dataVector\right)
 $$</span><br /> where the input data, <span class="math inline">$\inputMatrix$</span>, influences the density through the covariance matrix, <span class="math inline">$\kernelMatrix$</span> whose elements are computed through the covariance function, <span class="math inline">$\kernelScalar(\inputVector, \inputVector^\prime)$</span>.</p>
 <p>This means that the negative log likelihood (the objective function) is given by, <br /><span class="math display">$$
-E(\boldsymbol{\theta}) = \frac{1}{2} \log |\kernelMatrix|
+\errorFunction(\boldsymbol{\theta}) = \frac{1}{2} \log |\kernelMatrix|
 + \frac{1}{2} \dataVector^\top \left(\kernelMatrix +
 \dataStd^2\eye\right)^{-1}\dataVector
 $$</span><br /> where the <em>parameters</em> of the model are also embedded in the covariance function, they include the parameters of the kernel (such as lengthscale and variance), and the noise variance, <span class="math inline">$\dataStd^2$</span>. Let’s create a class in python for storing these variables.</p>
@@ -386,7 +385,7 @@ $$</span><br /> where here <span class="math inline">$\kernelMatrix$</span> is t
 <a class="sourceLine" id="cb28-8" data-line-number="8">K <span class="op">=</span> kernel.K(x, x)</a>
 <a class="sourceLine" id="cb28-9" data-line-number="9">K_star <span class="op">=</span> kernel.K(x, x_pred)</a>
 <a class="sourceLine" id="cb28-10" data-line-number="10">K_starstar <span class="op">=</span> kernel.K(x_pred, x_pred)</a></code></pre></div>
-<p>Now we use this structure to visualise the covariance between test data and training data. This structure is how information is passed between trest and training data. Unlike the maximum likelihood formalisms we’ve been considering so far, the structure expresses <em>correlation</em> between our different data points. However, just like the <a href="./week9.ipynb">naive Bayes approach</a> we now have a <em>joint density</em> between some variables of interest. In particular we have the joint density over <span class="math inline">$p(\mappingFunctionVector, \mappingFunctionVector^*)$</span>. The joint density is <em>Gaussian</em> and <em>zero mean</em>. It is specified entirely by the <em>covariance matrix</em>, <span class="math inline">$\kernelMatrix$</span>. That covariance matrix is, in turn, defined by a covariance function. Now we will visualise the form of that covariance in the form of the matrix, <br /><span class="math display">$$
+<p>Now we use this structure to visualise the covariance between test data and training data. This structure is how information is passed between test and training data. Unlike the maximum likelihood formalisms we’ve been considering so far, the structure expresses <em>correlation</em> between our different data points. However, just like the <a href="./week9.ipynb">naive Bayes approach</a> we now have a <em>joint density</em> between some variables of interest. In particular we have the joint density over <span class="math inline">$p(\mappingFunctionVector, \mappingFunctionVector^*)$</span>. The joint density is <em>Gaussian</em> and <em>zero mean</em>. It is specified entirely by the <em>covariance matrix</em>, <span class="math inline">$\kernelMatrix$</span>. That covariance matrix is, in turn, defined by a covariance function. Now we will visualise the form of that covariance in the form of the matrix, <br /><span class="math display">$$
 \begin{bmatrix} \kernelMatrix &amp; \kernelMatrix_\ast \\ \kernelMatrix_\ast^\top
 &amp; \kernelMatrix_{\ast,\ast}\end{bmatrix}
 $$</span><br /></p>
@@ -416,8 +415,9 @@ $$</span><br /> Let’s compute what those posterior predictions are for the oly
 <div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb32-1" data-line-number="1">model <span class="op">=</span> GP(x, y, sigma2, exponentiated_quadratic, variance<span class="op">=</span>variance, lengthscale<span class="op">=</span>lengthscale)</a>
 <a class="sourceLine" id="cb32-2" data-line-number="2">mu_f, C_f <span class="op">=</span> model.posterior_f(x_pred)</a></code></pre></div>
 <p>where for convenience we’ve defined</p>
-<p><br /><span class="math display">$$\mathbf{A} = \left[\kernelMatrix +
-\dataStd^2\eye\right]^{-1}\kernelMatrix_*.$$</span><br /></p>
+<p><br /><span class="math display">$$
+\mathbf{A} = \left[\kernelMatrix + \dataStd^2\eye\right]^{-1}\kernelMatrix_*.
+$$</span><br /></p>
 <p>We can visualize the covariance of the <em>conditional</em>,</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb33-1" data-line-number="1">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">8</span>))</a>
 <a class="sourceLine" id="cb33-2" data-line-number="2">im <span class="op">=</span> ax.imshow(C_f, interpolation<span class="op">=</span><span class="st">&#39;none&#39;</span>)</a>
@@ -458,8 +458,11 @@ $$</span><br /> So we see that the kernel function is developed from an inner pr
 <h2 id="capacity-control-and-data-fit">Capacity Control and Data Fit</h2>
 <p>The objective function can be decomposed into two terms, a capacity control term, and a data fit term. The capacity control term is the log determinant of the covariance. The data fit term is the matrix inner product between the data and the inverse covariance.</p>
 <p>Can we determine covariance parameters from the data?</p>
-<p><br /><span class="math display">$$\gaussianDist{\dataVector}{\mathbf{0}}{\kernelMatrix}=\frac{1}{(2\pi)^\frac{\numData}{2}{\det{\kernelMatrix}^{\frac{1}{2}}}}{\exp\left(-\frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}\right)}$$</span><br /></p>
-<p><br /><span class="math display">$$\begin{aligned}
+<p><br /><span class="math display">$$
+\gaussianDist{\dataVector}{\mathbf{0}}{\kernelMatrix}=\frac{1}{(2\pi)^\frac{\numData}{2}{\det{\kernelMatrix}^{\frac{1}{2}}}}{\exp\left(-\frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}\right)}
+$$</span><br /></p>
+<p><br /><span class="math display">$$
+\begin{aligned}
     \gaussianDist{\dataVector}{\mathbf{0}}{\kernelMatrix}=\frac{1}{(2\pi)^\frac{\numData}{2}{\color{black} \det{\kernelMatrix}^{\frac{1}{2}}}}{\color{black}\exp\left(-\frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}\right)}
 \end{aligned}
 $$</span><br /></p>
@@ -1180,7 +1183,7 @@ $$</span><br /></p>
 <p>GPy is a BSD licensed software code base for implementing Gaussian process models in python. This allows GPs to be combined with a wide variety of software libraries.</p>
 <p>The software itself is available on <a href="https://github.com/SheffieldML/GPy">GitHub</a> and the team welcomes contributions.</p>
 <p>The aim for GPy is to be a probabilistic-style programming language, i.e. you specify the model rather than the algorithm. As well as a large range of covariance functions the software allows for non-Gaussian likelihoods, multivariate outputs, dimensionality reduction and approximations for larger data sets.</p>
-<h2 id="references" class="unnumbered">References</h2>
+<h1 id="references" class="unnumbered">References</h1>
 <div id="refs" class="references">
 <div id="ref-Andrade:consistent14">
 <p>Andrade-Pacheco, Ricardo, Martin Mubangizi, John Quinn, and Neil D. Lawrence. 2014. “Consistent Mapping of Government Malaria Records Across a Changing Territory Delimitation.” <em>Malaria Journal</em> 13 (Suppl 1). <a href="https://doi.org/10.1186/1475-2875-13-S1-P5" class="uri">https://doi.org/10.1186/1475-2875-13-S1-P5</a>.</p>

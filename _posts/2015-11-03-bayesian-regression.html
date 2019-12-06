@@ -12,8 +12,8 @@ author:
   orchid: 
 date: 2015-11-03
 published: 2015-11-03
-reveal: 2015-11-03-week6.slides.html
-ipynb: 2015-11-03-week6.ipynb
+reveal: 2015-11-03-bayesian-regression.slides.html
+ipynb: 2015-11-03-bayesian-regression.ipynb
 youtube: "17zr5dGcUzE"
 layout: talk
 categories:
@@ -175,7 +175,7 @@ $$</span><br /> I like the term marginalisation, and the description of the prob
     &amp; + c\frac{\sum_{i=1}^\numData(\dataScalar_i-m\inputScalar_i)}{\dataStd^2},
   \end{aligned}$$</span><br /></p>
 <p>complete the square of the quadratic form to obtain <br /><span class="math display">$$\log p(c | \dataVector, \inputVector, m, \dataStd^2) = -\frac{1}{2\tau^2}(c - \mu)^2 +\text{const},$$</span><br /> where <span class="math inline">$\tau^2 = \left(\numData\dataStd^{-2} +\alpha_1^{-1}\right)^{-1}$</span> and <span class="math inline">$\mu = \frac{\tau^2}{\dataStd^2} \sum_{i=1}^\numData(\dataScalar_i-m\inputScalar_i)$</span>.</p>
-<h2 id="the-joint-density-edit">The Joint Density <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/week6.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/week6.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<h2 id="the-joint-density-edit">The Joint Density <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/bayesian-regression.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/bayesian-regression.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <ul>
 <li>Really want to know the <em>joint</em> posterior density over the parameters <span class="math inline"><em>c</em></span> <em>and</em> <span class="math inline"><em>m</em></span>.</li>
 <li>Could now integrate out over <span class="math inline"><em>m</em></span>, but it’s easier to consider the multivariate case.</li>

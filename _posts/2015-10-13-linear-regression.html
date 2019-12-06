@@ -12,8 +12,8 @@ author:
   orchid: 
 date: 2015-10-13
 published: 2015-10-13
-reveal: 2015-10-13-week3.slides.html
-ipynb: 2015-10-13-week3.ipynb
+reveal: 2015-10-13-linear-regression.slides.html
+ipynb: 2015-10-13-linear-regression.ipynb
 youtube: "5VPr6NbHHjg"
 layout: talk
 categories:
@@ -136,7 +136,7 @@ categories:
 <p>The combination of data and model through the prediction function and the objectie function leads to a <em>learning algorithm</em>. The class of prediction functions and objective functions we can make use of is restricted by the algorithms they lead to. If the prediction function or the objective function are too complex, then it can be difficult to find an appropriate learning algorithm. Much of the acdemic field of machine learning is the quest for new learning algorithms that allow us to bring different types of models and data together.</p>
 <p>A useful reference for state of the art in machine learning is the UK Royal Society Report, <a href="https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf">Machine Learning: Power and Promise of Computers that Learn by Example</a>.</p>
 <p>You can also check my post blog post on <a href="http://inverseprobability.com/2017/07/17/what-is-machine-learning">What is Machine Learning?</a>..</p>
-<h1 id="sum-of-squares-error-edit">Sum of Squares Error <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/week3.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/week3.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
+<h1 id="sum-of-squares-error-edit">Sum of Squares Error <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/linear-regression.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/linear-regression.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
 <p>Last week we considered a cost function for minimization of the error. We considered items (films) and users and assumed that each movie rating, <span class="math inline">$\dataScalar_{i,j}$</span> could be summarised by an inner product between a vector associated with the item, <span class="math inline"><strong>v</strong><sub><em>j</em></sub></span> and one associated with the user <span class="math inline"><strong>u</strong><sub><em>i</em></sub></span>. We justified the inner product as a measure of similarity in the space of ‘movie subjects’, where both the users and the items lived, giving the analogy of a library.</p>
 <p>To make predictions we encouraged the similarity to be high if the movie rating was high using the quadratic error function, <br /><span class="math display">$$
 E_{i,j}(\mathbf{u}_i, \mathbf{v}_j) = \left(\mathbf{u}_i^\top \mathbf{v}_j -

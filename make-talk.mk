@@ -84,7 +84,7 @@ ${BASE}.ipynb: ${BASE}.notes.ipynb.markdown
 		--atx-headers \
 		-B ../_includes/talk-notation.tex \
 		${CITEFLAGS} \
-		-out ${BASE}.tmp.markdown  ${BASE}.notes.ipynb.markdown
+		--out ${BASE}.tmp.markdown  ${BASE}.notes.ipynb.markdown
 	notedown ${BASE}.tmp.markdown > ${BASE}.ipynb
 	cp ${BASE}.ipynb ../_notebooks/${OUT}.ipynb
 	rm ${BASE}.tmp.markdown
@@ -94,7 +94,7 @@ ${BASE}.slides.ipynb: ${BASE}.slides.ipynb.markdown
 		--atx-headers \
 		-B ../_includes/talk-notation.tex \
 		${CITEFLAGS} \
-		-out ${BASE}.tmp.markdown  ${BASE}.slides.ipynb.markdown
+		--out ${BASE}.tmp.markdown  ${BASE}.slides.ipynb.markdown
 	notedown ${BASE}.tmp.markdown > ${BASE}.slides.ipynb
 	cp ${BASE}.slides.ipynb ../_notebooks/${OUT}.slides.ipynb
 	rm ${BASE}.tmp.markdown

@@ -507,11 +507,46 @@ p(\mappingFunctionVector_*|\mappingFunctionVector) = {\mathcal{N}\left(\mappingF
 </section>
 <section id="weight-space-view" class="slide level3">
 <h3>Weight Space View</h3>
+<p><span class="math display">\[
+\weightVector \sim \gaussianSamp{\zerosVector}{\alpha\eye},
+\]</span></p>
+<p><span class="math display">\[
+\mappingFunction(\inputVector) =
+\weightVector^\top \basisVector(\inputVector).
+\]</span></p>
 </section>
 <section id="function-space-view" class="slide level3">
 <h3>Function Space View</h3>
-<p>Now we can use the <code>np.random.multivariate_normal</code> command for sampling from a multivariate normal with covariance given by <span class="math inline">\(\kernelMatrix\)</span> and zero mean,</p>
-<p>where the effect of our noise term is to roughen the sampled functions, we can also increase the variance of the noise to see a different effect,</p>
+<p><span class="math display">\[
+\weightVector \sim \gaussianSamp{\zerosVector}{\alpha \eye}
+\]</span></p>
+<p><span class="math display">\[
+\basisMatrix = \begin{bmatrix}\basisVector(\inputVector_1) \\ \vdots \\
+\basisVector(\inputVector_n)\end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\mappingFunctionVector = \begin{bmatrix} \mappingFunction_1
+\\ \vdots \mappingFunction_n\end{bmatrix}
+\]</span> in the form <span class="math display">\[
+\mappingFunctionVector = \basisMatrix
+\weightVector.
+\]</span>}</p>
+<p><span class="math display">\[
+\mappingFunctionVector \sim \gaussianSamp{\zerosVector}{\alpha \basisMatrix\basisMatrix^\top}.
+\]</span></p>
+<p><span class="math display">\[
+\kernelMatrix = \alpha
+\basisMatrix\basisMatrix^\top.
+\]</span></p>
+<p>{This image is the covariance expressed between different points on the function. In regression we normally also add independent Gaussian noise to obtain our observations <span class="math inline">\(\dataVector\)</span>, <span class="math display">\[
+\dataVector = \mappingFunctionVector + \boldsymbol{\epsilon}
+\]</span></p>
+<p><span class="math display">\[
+\epsilon \sim \gaussianSamp{\zerosVector}{\dataStd^2\eye}.
+\]</span></p>
+<p><span class="math display">\[
+\dataVector \sim \gaussianSamp{\zerosVector}{\basisMatrix\basisMatrix^\top +\dataStd^2\eye}.
+\]</span></p>
 
 </section>
 <section id="non-degenerate-gaussian-processes" class="slide level3">
@@ -576,9 +611,12 @@ p(\mappingFunctionVector_*|\mappingFunctionVector) = {\mathcal{N}\left(\mappingF
 </section>
 <section id="gaussian-process" class="slide level3">
 <h3>Gaussian Process</h3>
-<p>Now we can image the resulting covariance,</p>
-<p>To visualise the covariance between the points we can use the <code>imshow</code> function in matplotlib.</p>
-<p>Finally, we can sample functions from the marginal likelihood.</p>
+<p><span class="math display">\[
+\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \exp\left( -\frac{\left\Vert \inputVector-\inputVector^\prime\right\Vert^2}{2\ell^2}\right),
+\]</span></p>
+<p><span class="math display">\[
+\left\Vert\inputVector - \inputVector^\prime\right\Vert^2 = (\inputVector - \inputVector^\prime)^\top (\inputVector - \inputVector^\prime) 
+\]</span></p>
 
 </section>
 <section id="section" class="slide level3">
@@ -613,35 +651,32 @@ p(\mappingFunctionVector_*|\mappingFunctionVector) = {\mathcal{N}\left(\mappingF
 </section>
 <section id="gaussian-process-1" class="slide level3">
 <h3>Gaussian Process</h3>
-<p>The Gaussian process perspective takes the marginal likelihood of the data to be a joint Gaussian density with a covariance given by <span class="math inline">\(\kernelMatrix\)</span>. So the model likelihood is of the form, <span class="math display">\[
+<p><span class="math display">\[
 p(\dataVector|\inputMatrix) =
 \frac{1}{(2\pi)^{\frac{\numData}{2}}|\kernelMatrix|^{\frac{1}{2}}}
 \exp\left(-\frac{1}{2}\dataVector^\top \left(\kernelMatrix+\dataStd^2
 \eye\right)^{-1}\dataVector\right)
-\]</span> where the input data, <span class="math inline">\(\inputMatrix\)</span>, influences the density through the covariance matrix, <span class="math inline">\(\kernelMatrix\)</span> whose elements are computed through the covariance function, <span class="math inline">\(\kernelScalar(\inputVector, \inputVector^\prime)\)</span>.</p>
-<p>This means that the negative log likelihood (the objective function) is given by, <span class="math display">\[
-E(\boldsymbol{\theta}) = \frac{1}{2} \log |\kernelMatrix|
+\]</span></p>
+<p><span class="math display">\[
+\errorFunction(\boldsymbol{\theta}) = \frac{1}{2} \log |\kernelMatrix|
 + \frac{1}{2} \dataVector^\top \left(\kernelMatrix +
 \dataStd^2\eye\right)^{-1}\dataVector
-\]</span> where the <em>parameters</em> of the model are also embedded in the covariance function, they include the parameters of the kernel (such as lengthscale and variance), and the noise variance, <span class="math inline">\(\dataStd^2\)</span>. Let’s create a class in python for storing these variables.</p>
+\]</span></p>
 </section>
 <section id="making-predictions" class="slide level3">
 <h3>Making Predictions</h3>
-<p>We now have a probability density that represents functions. How do we make predictions with this density? The density is known as a process because it is <em>consistent</em>. By consistency, here, we mean that the model makes predictions for <span class="math inline">\(\mappingFunctionVector\)</span> that are unaffected by future values of <span class="math inline">\(\mappingFunctionVector^*\)</span> that are currently unobserved (such as test points). If we think of <span class="math inline">\(\mappingFunctionVector^*\)</span> as test points, we can still write down a joint probability density over the training observations, <span class="math inline">\(\mappingFunctionVector\)</span> and the test observations, <span class="math inline">\(\mappingFunctionVector^*\)</span>. This joint probability density will be Gaussian, with a covariance matrix given by our covariance function, <span class="math inline">\(\kernelScalar(\inputVector_i, \inputVector_j)\)</span>. <span class="math display">\[
+<p><span class="math display">\[
 \begin{bmatrix}\mappingFunctionVector \\ \mappingFunctionVector^*\end{bmatrix} \sim \gaussianSamp{\zerosVector}{\begin{bmatrix} \kernelMatrix &amp; \kernelMatrix_\ast \\
 \kernelMatrix_\ast^\top &amp; \kernelMatrix_{\ast,\ast}\end{bmatrix}}
-\]</span> where here <span class="math inline">\(\kernelMatrix\)</span> is the covariance computed between all the training points, <span class="math inline">\(\kernelMatrix_\ast\)</span> is the covariance matrix computed between the training points and the test points and <span class="math inline">\(\kernelMatrix_{\ast,\ast}\)</span> is the covariance matrix computed betwen all the tests points and themselves. To be clear, let’s compute these now for our example, using <code>x</code> and <code>y</code> for the training data (although <code>y</code> doesn’t enter the covariance) and <code>x_pred</code> as the test locations.</p>
-<p>Now we use this structure to visualise the covariance between test data and training data. This structure is how information is passed between trest and training data. Unlike the maximum likelihood formalisms we’ve been considering so far, the structure expresses <em>correlation</em> between our different data points. However, just like the <a href="./week9.ipynb">naive Bayes approach</a> we now have a <em>joint density</em> between some variables of interest. In particular we have the joint density over <span class="math inline">\(p(\mappingFunctionVector, \mappingFunctionVector^*)\)</span>. The joint density is <em>Gaussian</em> and <em>zero mean</em>. It is specified entirely by the <em>covariance matrix</em>, <span class="math inline">\(\kernelMatrix\)</span>. That covariance matrix is, in turn, defined by a covariance function. Now we will visualise the form of that covariance in the form of the matrix, <span class="math display">\[
+\]</span></p>
+<p><span class="math display">\[
 \begin{bmatrix} \kernelMatrix &amp; \kernelMatrix_\ast \\ \kernelMatrix_\ast^\top
 &amp; \kernelMatrix_{\ast,\ast}\end{bmatrix}
 \]</span></p>
-<p>There are four blocks to this color plot. The upper left block is the covariance of the training data with itself, <span class="math inline">\(\kernelMatrix\)</span>. We see some structure here due to the missing data from the first and second world wars. Alongside this covariance (to the right and below) we see the cross covariance between the training and the test data (<span class="math inline">\(\kernelMatrix_*\)</span> and <span class="math inline">\(\kernelMatrix_*^\top\)</span>). This is giving us the covariation between our training and our test data. Finally the lower right block The banded structure we now observe is because some of the training points are near to some of the test points. This is how we obtain ‘communication’ between our training data and our test data. If there is no structure in <span class="math inline">\(\kernelMatrix_*\)</span> then our belief about the test data simply matches our prior.</p>
 </section>
 <section id="conditional-density" class="slide level3">
 <h3>Conditional Density</h3>
-<p>Just as in naive Bayes, we first defined the joint density (although there it was over both the labels and the inputs, <span class="math inline">\(p(\dataVector, \inputMatrix)\)</span> and now we need to define <em>conditional</em> distributions that answer particular questions of interest. In particular we might be interested in finding out the values of the function for the prediction function at the test data given those at the training data, <span class="math inline">\(p(\mappingFunctionVector_*|\mappingFunctionVector)\)</span>. Or if we include noise in the training observations then we are interested in the conditional density for the prediction function at the test locations given the training observations, <span class="math inline">\(p(\mappingFunctionVector^*|\dataVector)\)</span>.</p>
-<p>As ever all the various questions we could ask about this density can be answered using the <em>sum rule</em> and the <em>product rule</em>. For the multivariate normal density the mathematics involved is that of <em>linear algebra</em>, with a particular emphasis on the <em>partitioned inverse</em> or <a href="http://en.wikipedia.org/wiki/Invertible_matrix#Blockwise_inversion"><em>block matrix inverse</em></a>, but they are beyond the scope of this course, so you don’t need to worry about remembering them or rederiving them. We are simply writing them here because it is this <em>conditional</em> density that is necessary for making predictions.</p>
-<p>The conditional density is also a multivariate normal, <span class="math display">\[
+<p><span class="math display">\[
 \mappingFunctionVector^* | \mappingFunctionVector \sim \gaussianSamp{\meanVector_\mappingFunction}{\mathbf{C}_\mappingFunction}
 \]</span> with a mean given by <span class="math display">\[
 \meanVector_\mappingFunction = \kernelMatrix_*^\top \left[\kernelMatrix + \dataStd^2
@@ -650,24 +685,20 @@ E(\boldsymbol{\theta}) = \frac{1}{2} \log |\kernelMatrix|
 \mathbf{C}_\mappingFunction
 = \kernelMatrix_{*,*} - \kernelMatrix_*^\top \left[\kernelMatrix + \dataStd^2
 \eye\right]^{-1} \kernelMatrix_\ast.
-\]</span> Let’s compute what those posterior predictions are for the olympic marathon data.</p>
-<p>where for convenience we’ve defined</p>
-<p><span class="math display">\[\mathbf{A} = \left[\kernelMatrix +
-\dataStd^2\eye\right]^{-1}\kernelMatrix_*.\]</span></p>
-<p>We can visualize the covariance of the <em>conditional</em>,</p>
-<p>and we can plot the mean of the conditional</p>
-<p>as well as the associated error bars. These are given (similarly to the Bayesian parametric model from the last lab) by the standard deviations of the marginal posterior densities. The marginal posterior variances are given by the diagonal elements of the posterior covariance,</p>
-<p>They can be added to the underlying mean function to give the error bars,</p>
-<p>This gives us a prediction from the Gaussian process. Remember machine learning is <span class="math display">\[
+\]</span></p>
+<p><span class="math display">\[
+\mathbf{A} = \left[\kernelMatrix + \dataStd^2\eye\right]^{-1}\kernelMatrix_*.
+\]</span></p>
+<p><span class="math display">\[
 \text{data} + \text{model} \rightarrow \text{prediction}.
-\]</span> Here our data is from the olympics, and our model is a Gaussian process with two parameters. The assumptions about the world are encoded entirely into our Gaussian process covariance. The GP covariance assumes that the function is highly smooth, and that correlation falls off with distance (scaled according to the length scale, <span class="math inline">\(\ell\)</span>). The model sustains the uncertainty about the function, this means we see an increase in the size of the error bars during periods like the 1st and 2nd World Wars when no olympic marathon was held.</p>
+\]</span></p>
 
 </section>
 <section id="the-importance-of-the-covariance-function" class="slide level3">
 <h3>The Importance of the Covariance Function</h3>
-<p>The covariance function encapsulates our assumptions about the data. The equations for the distribution of the prediction function, given the training observations, are highly sensitive to the covariation between the test locations and the training locations as expressed by the matrix <span class="math inline">\(\kernelMatrix_*\)</span>. We defined a matrix <span class="math inline">\(\mathbf{A}\)</span> which allowed us to express our conditional mean in the form, <span class="math display">\[
+<p><span class="math display">\[
 \meanVector_\mappingFunction = \mathbf{A}^\top \dataVector,
-\]</span> where <span class="math inline">\(\dataVector\)</span> were our <em>training observations</em>. In other words our mean predictions are always a linear weighted combination of our <em>training data</em>. The weights are given by computing the covariation between the training and the test data (<span class="math inline">\(\kernelMatrix_*\)</span>) and scaling it by the inverse covariance of the training data observations, <span class="math inline">\(\left[\kernelMatrix + \dataStd^2 \eye\right]^{-1}\)</span>. This inverse is the main computational object that needs to be resolved for a Gaussian process. It has a computational burden which is <span class="math inline">\(O(\numData^3)\)</span> and a storage burden which is <span class="math inline">\(O(\numData^2)\)</span>. This makes working with Gaussian processes computationally intensive for the situation where <span class="math inline">\(\numData&gt;10,000\)</span>.</p>
+\]</span></p>
 <iframe width height src="https://www.youtube.com/embed/ewJ3AxKclOg?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
 </section>
@@ -683,11 +714,9 @@ E(\boldsymbol{\theta}) = \frac{1}{2} \log |\kernelMatrix|
 </section>
 <section id="overall-process-scale" class="slide level3">
 <h3>Overall Process Scale</h3>
-<p>In general we won’t be able to find parameters of the covariance function through fixed point equations, we will need to do gradient based optimization.</p>
 </section>
 <section id="capacity-control-and-data-fit" class="slide level3">
 <h3>Capacity Control and Data Fit</h3>
-<p>The objective function can be decomposed into two terms, a capacity control term, and a data fit term. The capacity control term is the log determinant of the covariance. The data fit term is the matrix inner product between the data and the inverse covariance.</p>
 </section>
 <section id="learning-covariance-parameters" class="slide level3">
 <h3>Learning Covariance Parameters</h3>
@@ -695,11 +724,14 @@ E(\boldsymbol{\theta}) = \frac{1}{2} \log |\kernelMatrix|
 </section>
 <section id="section-5" class="slide level3">
 <h3></h3>
-<p><span class="math display">\[\gaussianDist{\dataVector}{\mathbf{0}}{\kernelMatrix}=\frac{1}{(2\pi)^\frac{\numData}{2}{\det{\kernelMatrix}^{\frac{1}{2}}}}{\exp\left(-\frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}\right)}\]</span></p>
+<p><span class="math display">\[
+\gaussianDist{\dataVector}{\mathbf{0}}{\kernelMatrix}=\frac{1}{(2\pi)^\frac{\numData}{2}{\det{\kernelMatrix}^{\frac{1}{2}}}}{\exp\left(-\frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}\right)}
+\]</span></p>
 </section>
 <section id="section-6" class="slide level3">
 <h3></h3>
-<p><span class="math display">\[\begin{aligned}
+<p><span class="math display">\[
+\begin{aligned}
     \gaussianDist{\dataVector}{\mathbf{0}}{\kernelMatrix}=\frac{1}{(2\pi)^\frac{\numData}{2}{\color{white} \det{\kernelMatrix}^{\frac{1}{2}}}}{\color{white}\exp\left(-\frac{\dataVector^{\top}\kernelMatrix^{-1}\dataVector}{2}\right)}
 \end{aligned}
 \]</span></p>
@@ -1366,6 +1398,15 @@ showDivs(0, 'gp-optimise');
 <li>Multivariate outputs.</li>
 <li>Dimensionality reduction.</li>
 <li>Approximations for large data sets.</li>
+</ul>
+</section>
+<section id="thanks" class="slide level3">
+<h3>Thanks!</h3>
+<ul>
+<li>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></li>
+<li>podcast: <a href="http://thetalkingmachines.com">The Talking Machines</a></li>
+<li>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></li>
+<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
 </ul>
 </section>
 <section id="references" class="slide level3 unnumbered">
