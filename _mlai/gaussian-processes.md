@@ -10,6 +10,7 @@ author:
   url: http://inverseprobability.com
 venue: University of Sheffield
 youtube: B2XhFoCehy8
+week: 12
 ipynb: True
 date: 2015-12-15
 abstract: 
@@ -48,26 +49,15 @@ $$
 \mappingFunction(\inputVector) =
 \mappingVector^\top \basisVector(\inputVector).
 $$
+\notes{When we form a Gaussian process we do something that is slightly more akin to the naive Bayes approach, but actually is closely related to the generalized linear model approach.}
 
-\subsection{Gaussian Processes}
-
-\notes{When we form a Gaussian process we do something that is slightly more akin to the naive Bayes approach, but actually is closely related to the generalized linear model approach. Models where we model the entire joint distribution of our training data, $p(\dataVector, \inputMatrix)$ are sometimes described as *generative models*. Because we can use sampling to generate data sets that represent all our assumptions. However, as we discussed in the sessions on logistic regression and naive Bayes, this can be a bad idea, because if our assumptions are wrong then we can make poor predictions. We can try to make more complex assumptions about data to alleviate the problem, but then this typically leads to challenges for tractable application of the sum and rules of probability that are needed to compute the relevant marginal and conditional densities. If we know the form of the question we wish to answer then we typically try and represent that directly, through $p(\dataVector|\inputMatrix)$.  In practice, we also have been making assumptions of conditional independence given the model parameters,
-$$
-p(\dataVector|\inputMatrix, \mappingVector) =
-\prod_{i=1}^{\numData} p(\dataScalar_i | \inputVector_i, \mappingVector)
-$$
-Gaussian processes are *not* normally considered to be *generative models*, but we will be much more interested in the principles of conditioning in Gaussian processes because we will use conditioning to make predictions between our test and training data. We will avoid the data conditional indpendence assumption in favour of a richer assumption about the data, in a Gaussian process we assume data is *jointly Gaussian* with a particular mean and covariance,
-$$
-\dataVector|\inputMatrix \sim \gaussianSamp{\mathbf{m}(\inputMatrix)}{\kernelMatrix(\inputMatrix)},
-$$
-where the conditioning is on the inputs $\inputMatrix$ which are used for computing the mean and covariance. For this reason they are known as mean and covariance functions.}
-
+\include{_gp/includes/gp-intro-lectures.md}
 \include{_gp/includes/gptwopointpred.md}
 
 
 \subsection{Marginal Likelihood}
 
-\notes{To understand the Gaussian process we're going to build on our understanding of the marginal likelihood for Bayesian regression. In the session on [Bayesian regression](./week7.ipynb) we sampled directly from the weight vector, $\mappingVector$ and applied it to the basis matrix $\basisMatrix$ to obtain a sample from the prior and a sample from the posterior. It is often helpful to think of modeling techniques as *generative* models. To give some thought as to what the process for obtaining data from the model is. From the perspective of Gaussian processes, we want to start by thinking of basis function models, where the parameters are sampled from a prior, but move to thinking about sampling from the marginal likelihood directly.}
+\notes{To understand the Gaussian process we're going to build on our understanding of the marginal likelihood for Bayesian regression. In the session on \refnotes{Bayesian regression}{bayesian-regression} we sampled directly from the weight vector, $\mappingVector$ and applied it to the basis matrix $\basisMatrix$ to obtain a sample from the prior and a sample from the posterior. It is often helpful to think of modeling techniques as *generative* models. To give some thought as to what the process for obtaining data from the model is. From the perspective of Gaussian processes, we want to start by thinking of basis function models, where the parameters are sampled from a prior, but move to thinking about sampling from the marginal likelihood directly.}
 
 \subsection{Sampling from the Prior}
 
@@ -107,17 +97,17 @@ Phi = polynomial(x, degree=degree, loc=loc, scale=scale)}
 
 \subsection{Weight Space View}
 
-\notes{To generate typical functional predictions from the model, we need a set of model parameters. We assume that the parameters are drawn independently from a Gaussian density,
+\notes{To generate typical functional predictions from the model, we need a set of model parameters. We assume that the parameters are drawn independently from a Gaussian density,}
 $$
 \weightVector \sim \gaussianSamp{\zerosVector}{\alpha\eye},
 $$
-then we can combine this with the
-definition of our prediction function $\mappingFunction(\inputVector)$,
+\notes{then we can combine this with the
+definition of our prediction function $\mappingFunction(\inputVector)$,}
 $$
 \mappingFunction(\inputVector) =
 \weightVector^\top \basisVector(\inputVector).
 $$
-We can now sample from the
+\notes{We can now sample from the
 prior density to obtain a vector $\weightVector$ using the function
 `np.random.normal` and combine these parameters with our basis to create some
 samples of what $\mappingFunction(\inputVector)$ looks like,}
@@ -137,20 +127,17 @@ for i in range(num_samples):
 
 \notes{The process we have used to generate the samples is a
 two stage process. To obtain each function, we first generated a sample from the
-prior,
+prior,}
 $$
 \weightVector \sim \gaussianSamp{\zerosVector}{\alpha \eye}
 $$
-then if
-we compose our basis matrix, $\basisMatrix$ from the basis functions
-associated with each row then we get,
+\notes{then if we compose our basis matrix, $\basisMatrix$ from the basis
+functions associated with each row then we get,}
 $$
-\basisMatrix =
-\begin{bmatrix}\basisVector(\inputVector_1) \\ \vdots \\
+\basisMatrix = \begin{bmatrix}\basisVector(\inputVector_1) \\ \vdots \\
 \basisVector(\inputVector_n)\end{bmatrix}
 $$
-then we can write down the
-vector of function values, as evaluated at
+\notes{then we can write down the vector of function values, as evaluated at}
 $$
 \mappingFunctionVector = \begin{bmatrix} \mappingFunction_1
 \\ \vdots \mappingFunction_n\end{bmatrix}
@@ -164,21 +151,22 @@ $$}
 \notes{Now we can use standard properties of multivariate Gaussians to
 write down the probability density that is implied over $\mappingFunctionVector$. In particular we know that if $\weightVector$ is sampled from a multivariate normal (or multivariate Gaussian) with covariance $\alpha \eye$ and zero mean,
 then assuming that $\basisMatrix$ is a deterministic matrix (i.e. it is not
-sampled from a probability density) then the vector $\mappingFunctionVector$ will also be distributed according to a zero mean multivariate normal as follows,
+sampled from a probability density) then the vector $\mappingFunctionVector$ will also be distributed according to a zero mean multivariate normal as follows,}
 $$
 \mappingFunctionVector \sim \gaussianSamp{\zerosVector}{\alpha \basisMatrix\basisMatrix^\top}.
-$$}
+$$
 
-\notes{The question now is, what happens if we sample $\mappingFunctionVector$ directly from this density, rather than first sampling $\weightVector$ and then multiplying by $\basisMatrix$. Let's try this. First of all we define the covariance as
+\notes{The question now is, what happens if we sample $\mappingFunctionVector$ directly from this density, rather than first sampling $\weightVector$ and then multiplying by $\basisMatrix$. Let's try this. First of all we define the covariance as}
 $$
 \kernelMatrix = \alpha
 \basisMatrix\basisMatrix^\top.
-$$}
+$$
 
 \code{K = alpha*np.dot(Phi_pred, Phi_pred.T)}
 
-Now we can use the `np.random.multivariate_normal` command for sampling from a
-multivariate normal with covariance given by $\kernelMatrix$ and zero mean,
+\notes{Now we can use the `np.random.multivariate_normal` command for
+sampling from a multivariate normal with covariance given by
+$\kernelMatrix$ and zero mean,}
 
 \code{for i in np.arange(10):
     f_sample = np.random.multivariate_normal(mean=np.zeros(x_pred.size), cov=K)
@@ -194,19 +182,19 @@ fig.colorbar(im)}
 $$
 \dataVector = \mappingFunctionVector + \boldsymbol{\epsilon}
 $$
-where the noise is sampled from an independent Gaussian distribution with
-variance $\dataStd^2$,
+\notes{where the noise is sampled from an independent Gaussian distribution with
+variance $\dataStd^2$,}
 $$
 \epsilon \sim \gaussianSamp{\zerosVector}{\dataStd^2\eye}.
 $$
-we can use properties of Gaussian variables, i.e. the fact that
+\notes{we can use properties of Gaussian variables, i.e. the fact that
 sum of two Gaussian variables is also Gaussian, and that it's covariance is
 given by the sum of the two covariances, whilst the mean is given by the sum of
-the means, to write down the marginal likelihood,
+the means, to write down the marginal likelihood,}
 $$
 \dataVector \sim \gaussianSamp{\zerosVector}{\basisMatrix\basisMatrix^\top +\dataStd^2\eye}.
 $$
-Sampling directly from this density gives us the noise
+\notes{Sampling directly from this density gives us the noise
 corrupted functions,}
 
 \code{K = alpha*np.dot(Phi_pred, Phi_pred.T) + sigma2*np.eye(x_pred.size)
@@ -214,8 +202,7 @@ for i in range(10):
     y_sample = np.random.multivariate_normal(mean=np.zeros(x_pred.size), cov=K)
     plt.plot(x_pred.flatten(), y_sample.flatten())}
 
-where the effect of our noise term is to roughen the sampled functions, we can
-also increase the variance of the noise to see a different effect,
+\notes{where the effect of our noise term is to roughen the sampled functions, we can also increase the variance of the noise to see a different effect,}
 
 \code{sigma2 = 1.
 K = alpha*np.dot(Phi_pred, Phi_pred.T) + sigma2*np.eye(x_pred.size)
@@ -229,15 +216,15 @@ for i in range(10):
 
 \subsection{Gaussian Process}
 
-\notes{In our [session on Bayesian regression](./week7.ipynb) we sampled from the prior over paraemters. Through the properties of multivariate Gaussian densities this prior over parameters implies a particular density for our data observations, $\dataVector$. In this session we sampled directly from this distribution for our data, avoiding the intermediate weight-space representation. This is the approach taken by *Gaussian processes*. In a Gaussian process you specify the *covariance function* directly, rather than *implicitly* through a basis matrix and a prior over parameters. Gaussian processes have the advantage that they can be *nonparametric*, which in simple terms means that they can have *infinite* basis functions. In the lectures we introduced the *exponentiated quadratic* covariance, also known as the RBF or the Gaussian or the squared exponential covariance function. This covariance function is specified by 
+\notes{In our [session on Bayesian regression](./week7.ipynb) we sampled from the prior over paraemters. Through the properties of multivariate Gaussian densities this prior over parameters implies a particular density for our data observations, $\dataVector$. In this session we sampled directly from this distribution for our data, avoiding the intermediate weight-space representation. This is the approach taken by *Gaussian processes*. In a Gaussian process you specify the *covariance function* directly, rather than *implicitly* through a basis matrix and a prior over parameters. Gaussian processes have the advantage that they can be *nonparametric*, which in simple terms means that they can have *infinite* basis functions. In the lectures we introduced the *exponentiated quadratic* covariance, also known as the RBF or the Gaussian or the squared exponential covariance function. This covariance function is specified by}
 $$
-\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \exp\left( -\frac{\left\Vert \inputVector-\inputVector^\prime\right\Vert^2}{2\ell^2}\right).
+\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \exp\left( -\frac{\left\Vert \inputVector-\inputVector^\prime\right\Vert^2}{2\ell^2}\right),
 $$
-where $\left\Vert\inputVector - \inputVector^\prime\right\Vert^2$ is the squared distance between the two input vectors 
+\notes{where $\left\Vert\inputVector - \inputVector^\prime\right\Vert^2$ is the squared distance between the two input vectors}
 $$
 \left\Vert\inputVector - \inputVector^\prime\right\Vert^2 = (\inputVector - \inputVector^\prime)^\top (\inputVector - \inputVector^\prime) 
 $$
-Let's build a covariance matrix based on this function. First we define the form of the covariance function,}
+\notes{Let's build a covariance matrix based on this function. First we define the form of the covariance function,}
 
 \loadcode{eq_cov}{mlai}
 
@@ -245,19 +232,18 @@ Let's build a covariance matrix based on this function. First we define the form
 
 \loadcode{Kernel}{mlai}
 
-Now we can image the resulting covariance,
+\notes{Now we can image the resulting covariance,}
 
 \code{kernel = Kernel(function=eq_cov, variance=1., lengthscale=10.)
 K = kernel.K(x_pred, x_pred)}
 
-To visualise the covariance between the points we can use the `imshow` function
-in matplotlib.
+\notes{To visualise the covariance between the points we can use the `imshow` function in matplotlib.}
 
 \displaycode{fig, ax = plt.subplots(figsize=(8,8))
 im = ax.imshow(K, interpolation='none')
 fig.colorbar(im)}
 
-Finally, we can sample functions from the marginal likelihood.
+\notes{Finally, we can sample functions from the marginal likelihood.}
 
 \displaycode{fig, ax = plt.subplots(figsize(8, 5))
 for i in range(10):
@@ -273,57 +259,58 @@ parameters have on the types of functions you observe.}
 
 \subsection{Gaussian Process}
 
-The Gaussian process perspective takes the marginal
-likelihood of the data to be a joint Gaussian density with a covariance given by
-$\kernelMatrix$. So the model likelihood is of the form,
+\notes{The Gaussian process perspective takes the marginal likelihood
+of the data to be a joint Gaussian density with a covariance given by
+$\kernelMatrix$. So the model likelihood is of the form,}
 $$
 p(\dataVector|\inputMatrix) =
 \frac{1}{(2\pi)^{\frac{\numData}{2}}|\kernelMatrix|^{\frac{1}{2}}}
 \exp\left(-\frac{1}{2}\dataVector^\top \left(\kernelMatrix+\dataStd^2
 \eye\right)^{-1}\dataVector\right)
 $$
-where the input data, $\inputMatrix$,
+\notes{where the input data, $\inputMatrix$,
 influences the density through the covariance matrix, $\kernelMatrix$ whose
-elements are computed through the covariance function, $\kernelScalar(\inputVector,
-\inputVector^\prime)$.
+elements are computed through the covariance function, $\kernelScalar(\inputVector, \inputVector^\prime)$.}
 
-This means that the negative log likelihood (the objective
-function) is given by,
+\notes{This means that the negative log likelihood (the objective
+function) is given by,}
 $$
-E(\boldsymbol{\theta}) = \frac{1}{2} \log |\kernelMatrix|
+\errorFunction(\boldsymbol{\theta}) = \frac{1}{2} \log |\kernelMatrix|
 + \frac{1}{2} \dataVector^\top \left(\kernelMatrix +
 \dataStd^2\eye\right)^{-1}\dataVector
 $$
-where the *parameters* of the model
-are also embedded in the covariance function, they include the parameters of the
-kernel (such as lengthscale and variance), and the noise variance, $\dataStd^2$.
-Let's create a class in python for storing these variables.
+\notes{where the *parameters* of the model are also embedded in the
+covariance function, they include the parameters of the kernel (such
+as lengthscale and variance), and the noise variance, $\dataStd^2$.
+Let's create a class in python for storing these variables.}
 
 \loadcode{GP}{mlai}
 
 \subsection{Making Predictions}
 
-We now have a probability density that represents
-functions. How do we make predictions with this density? The density is known as
-a process because it is *consistent*. By consistency, here, we mean that the
-model makes predictions for $\mappingFunctionVector$ that are unaffected by future values of
-$\mappingFunctionVector^*$ that are currently unobserved (such as test points). If we think
-of $\mappingFunctionVector^*$ as test points, we can still write down a joint probability
-density over the training observations, $\mappingFunctionVector$ and the test observations,
-$\mappingFunctionVector^*$. This joint probability density will be Gaussian, with a
-covariance matrix given by our covariance function, $\kernelScalar(\inputVector_i,
-\inputVector_j)$. 
+\notes{We now have a probability density that represents
+functions. How do we make predictions with this density? The density
+is known as a process because it is *consistent*. By consistency,
+here, we mean that the model makes predictions for
+$\mappingFunctionVector$ that are unaffected by future values of
+$\mappingFunctionVector^*$ that are currently unobserved (such as test
+points). If we think of $\mappingFunctionVector^*$ as test points, we
+can still write down a joint probability density over the training
+observations, $\mappingFunctionVector$ and the test observations,
+$\mappingFunctionVector^*$. This joint probability density will be
+Gaussian, with a covariance matrix given by our covariance function,
+$\kernelScalar(\inputVector_i, \inputVector_j)$.}
 $$
 \begin{bmatrix}\mappingFunctionVector \\ \mappingFunctionVector^*\end{bmatrix} \sim \gaussianSamp{\zerosVector}{\begin{bmatrix} \kernelMatrix & \kernelMatrix_\ast \\
 \kernelMatrix_\ast^\top & \kernelMatrix_{\ast,\ast}\end{bmatrix}}
 $$
-where here
-$\kernelMatrix$ is the covariance computed between all the training points,
-$\kernelMatrix_\ast$ is the covariance matrix computed between the training points
-and the test points and $\kernelMatrix_{\ast,\ast}$ is the covariance matrix
-computed betwen all the tests points and themselves. To be clear, let's compute
-these now for our example, using `x` and `y` for the training data (although `y`
-doesn't enter the covariance) and `x_pred` as the test locations.
+\notes{where here $\kernelMatrix$ is the covariance computed between all the
+training points, $\kernelMatrix_\ast$ is the covariance matrix
+computed between the training points and the test points and
+$\kernelMatrix_{\ast,\ast}$ is the covariance matrix computed betwen
+all the tests points and themselves. To be clear, let's compute these
+now for our example, using `x` and `y` for the training data (although
+`y` doesn't enter the covariance) and `x_pred` as the test locations.}
 
 \code{# set covariance function parameters
 variance = 16.0
@@ -336,17 +323,19 @@ K = kernel.K(x, x)
 K_star = kernel.K(x, x_pred)
 K_starstar = kernel.K(x_pred, x_pred)}
 
-Now we use this structure to visualise the covariance between test data and
-training data. This structure is how information is passed between trest and
-training data. Unlike the maximum likelihood formalisms we've been considering
-so far, the structure expresses *correlation* between our different data points.
-However, just like the [naive Bayes approach](./week9.ipynb) we now have a
-*joint density* between some variables of interest. In particular we have the
-joint density over $p(\mappingFunctionVector, \mappingFunctionVector^*)$. The joint density is
-*Gaussian* and *zero mean*. It is specified entirely by the *covariance matrix*,
-$\kernelMatrix$. That covariance matrix is, in turn, defined by a covariance
-function. Now we will visualise the form of that covariance in the form of the
-matrix,
+\notes{Now we use this structure to visualise the covariance between
+test data and training data. This structure is how information is
+passed between test and training data. Unlike the maximum likelihood
+formalisms we've been considering so far, the structure expresses
+*correlation* between our different data points.  However, just like
+the [naive Bayes approach](./week9.ipynb) we now have a *joint
+density* between some variables of interest. In particular we have the
+joint density over $p(\mappingFunctionVector,
+\mappingFunctionVector^*)$. The joint density is *Gaussian* and *zero
+mean*. It is specified entirely by the *covariance matrix*,
+$\kernelMatrix$. That covariance matrix is, in turn, defined by a
+covariance function. Now we will visualise the form of that covariance
+in the form of the matrix,}
 $$
 \begin{bmatrix} \kernelMatrix & \kernelMatrix_\ast \\ \kernelMatrix_\ast^\top
 & \kernelMatrix_{\ast,\ast}\end{bmatrix}
@@ -359,43 +348,47 @@ ax.axvline(x.shape[0]-1, color='w')
 ax.axhline(x.shape[0]-1, color='w')
 fig.colorbar(im)}
 
-There are four blocks to this color plot. The upper left block is the covariance
-of the training data with itself, $\kernelMatrix$. We see some structure here due
-to the missing data from the first and second world wars. Alongside this
-covariance (to the right and below) we see the cross covariance between the
-training and the test data ($\kernelMatrix_*$ and $\kernelMatrix_*^\top$). This is
-giving us the covariation between our training and our test data. Finally the
-lower right block The banded structure we now observe is because some of the
-training points are near to some of the test points. This is how we obtain
-'communication' between our training data and our test data. If there is no
-structure in $\kernelMatrix_*$ then our belief about the test data simply matches
-our prior.
+\notes{There are four blocks to this color plot. The upper left block
+is the covariance of the training data with itself,
+$\kernelMatrix$. We see some structure here due to the missing data
+from the first and second world wars. Alongside this covariance (to
+the right and below) we see the cross covariance between the training
+and the test data ($\kernelMatrix_*$ and $\kernelMatrix_*^\top$). This
+is giving us the covariation between our training and our test
+data. Finally the lower right block The banded structure we now
+observe is because some of the training points are near to some of the
+test points. This is how we obtain 'communication' between our
+training data and our test data. If there is no structure in
+$\kernelMatrix_*$ then our belief about the test data simply matches
+our prior.}
 
 \subsection{Conditional Density}
 
-Just as in naive Bayes, we first defined the
-joint density (although there it was over both the labels and the inputs,
+\notes{Just as in naive Bayes, we first defined the joint density
+(although there it was over both the labels and the inputs,
 $p(\dataVector, \inputMatrix)$ and now we need to define *conditional*
-distributions that answer particular questions of interest. In particular we
-might be interested in finding out the values of the function for the prediction
-function at the test data given those at the training data,
-$p(\mappingFunctionVector_*|\mappingFunctionVector)$. Or if we include noise in the training
-observations then we are interested in the conditional density for the
-prediction function at the test locations given the training observations,
-$p(\mappingFunctionVector^*|\dataVector)$. 
+distributions that answer particular questions of interest. In
+particular we might be interested in finding out the values of the
+function for the prediction function at the test data given those at
+the training data,
+$p(\mappingFunctionVector_*|\mappingFunctionVector)$. Or if we include
+noise in the training observations then we are interested in the
+conditional density for the prediction function at the test locations
+given the training observations,
+$p(\mappingFunctionVector^*|\dataVector)$.}
 
-As ever all the various questions we could ask
-about this density can be answered using the *sum rule* and the *product rule*.
-For the multivariate normal density the mathematics involved is that of *linear
-algebra*, with a particular emphasis on the *partitioned inverse* or [*block
-matrix
-inverse*](http://en.wikipedia.org/wiki/Invertible_matrix#Blockwise_inversion),
-but they are beyond the scope of this course, so you don't need to worry about
-remembering them or rederiving them. We are simply writing them here because it
-is this *conditional* density that is necessary for making predictions.
+\notes{As ever all the various questions we could ask about this density can
+be answered using the *sum rule* and the *product rule*.  For the
+multivariate normal density the mathematics involved is that of
+*linear algebra*, with a particular emphasis on the *partitioned
+inverse* or
+[*block matrix inverse*](http://en.wikipedia.org/wiki/Invertible_matrix#Blockwise_inversion),
+but they are beyond the scope of this course, so you don't need to
+worry about remembering them or rederiving them. We are simply writing
+them here because it is this *conditional* density that is necessary
+for making predictions.}
 
-The
-conditional density is also a multivariate normal,
+\notes{The conditional density is also a multivariate normal,}
 $$
 \mappingFunctionVector^* | \mappingFunctionVector \sim \gaussianSamp{\meanVector_\mappingFunction}{\mathbf{C}_\mappingFunction}
 $$
@@ -410,8 +403,7 @@ $$
 = \kernelMatrix_{*,*} - \kernelMatrix_*^\top \left[\kernelMatrix + \dataStd^2
 \eye\right]^{-1} \kernelMatrix_\ast.
 $$
-Let's compute what those posterior
-predictions are for the olympic marathon data.
+\notes{Let's compute what those posterior predictions are for the olympic marathon data.}
 
 \loadcode{posterior_f}{mlai}
 
@@ -422,51 +414,52 @@ GP.posterior_f = posterior_f}
 mu_f, C_f = model.posterior_f(x_pred)
 }
 
-where for convenience we've defined
+\notes{where for convenience we've defined}
 
-$$\mathbf{A} = \left[\kernelMatrix +
-\dataStd^2\eye\right]^{-1}\kernelMatrix_*.$$ 
+$$
+\mathbf{A} = \left[\kernelMatrix + \dataStd^2\eye\right]^{-1}\kernelMatrix_*.
+$$ 
 
-We can visualize the covariance
-of the *conditional*,
+\notes{We can visualize the covariance of the *conditional*,}
 
 \displaycode{fig, ax = plt.subplots(figsize=(8,8))
 im = ax.imshow(C_f, interpolation='none')
 fig.colorbar(im)}
 
-and we can plot the mean of the conditional
+\notes{and we can plot the mean of the conditional}
 
 \displaycode{plt.plot(x, y, 'rx')
 plt.plot(x_pred, mu_f, 'b-')}
 
-as well as the associated error bars. These are given (similarly to the Bayesian
-parametric model from the last lab) by the standard deviations of the marginal
-posterior densities. The marginal posterior variances are given by the diagonal
-elements of the posterior covariance,
+\notes{as well as the associated error bars. These are given
+(similarly to the Bayesian parametric model from the last lab) by the
+standard deviations of the marginal posterior densities. The marginal
+posterior variances are given by the diagonal elements of the
+posterior covariance,}
 
 \code{var_f = np.diag(C_f)[:, None]
 std_f = np.sqrt(var_f)}
 
-They can be added to the underlying mean function to give the error bars,
+\notes{They can be added to the underlying mean function to give the error bars,}
 
 \displaycode{plt.plot(x, y, 'rx')
 plt.plot(x_pred, mu_f, 'b-')
 plt.plot(x_pred, mu_f+2*std_f, 'b--')
 plt.plot(x_pred, mu_f-2*std_f, 'b--')}
 
-This gives us a prediction from the Gaussian process. Remember machine learning
-is 
+\notes{This gives us a prediction from the Gaussian process. Remember machine learning is}
 $$
 \text{data} + \text{model} \rightarrow \text{prediction}.
 $$
-Here our
-data is from the olympics, and our model is a Gaussian process with two
-parameters. The assumptions about the world are encoded entirely into our
-Gaussian process covariance. The GP covariance assumes that the function is
-highly smooth, and that correlation falls off with distance (scaled according to
-the length scale, $\ell$). The model sustains the uncertainty about the
-function, this means we see an increase in the size of the error bars during
-periods like the 1st and 2nd World Wars when no olympic marathon was held. 
+\notes{Here our data is from the olympics, and our model is a Gaussian
+process with two parameters. The assumptions about the world are
+encoded entirely into our Gaussian process covariance. The GP
+covariance assumes that the function is highly smooth, and that
+correlation falls off with distance (scaled according to the length
+scale, $\ell$). The model sustains the uncertainty about the function,
+this means we see an increase in the size of the error bars during
+periods like the 1st and 2nd World Wars when no olympic marathon was
+held. }
 
 \exercise{Now try changing the parameters of the covariance function (and the
 noise) to see how the predictions change.
@@ -475,11 +468,11 @@ Then try sampling from this conditional density to see what your predictions loo
 
 \subsection{The Importance of the Covariance Function}
 
-The covariance function encapsulates our assumptions about the data. The equations for the distribution of the prediction function, given the training observations, are highly sensitive to the covariation between the test locations and the training locations as expressed by the matrix $\kernelMatrix_*$. We defined a matrix $\mathbf{A}$ which allowed us to express our conditional mean in the form,
+\notes{The covariance function encapsulates our assumptions about the data. The equations for the distribution of the prediction function, given the training observations, are highly sensitive to the covariation between the test locations and the training locations as expressed by the matrix $\kernelMatrix_*$. We defined a matrix $\mathbf{A}$ which allowed us to express our conditional mean in the form,}
 $$
 \meanVector_\mappingFunction = \mathbf{A}^\top \dataVector,
 $$
-where $\dataVector$ were our *training observations*. In other words our mean predictions are always a linear weighted combination of our *training data*. The weights are given by computing the covariation between the training and the test data ($\kernelMatrix_*$) and scaling it by the inverse covariance of the training data observations, $\left[\kernelMatrix + \dataStd^2 \eye\right]^{-1}$. This inverse is the main computational object that needs to be resolved for a Gaussian process. It has a computational burden which is $O(\numData^3)$ and a storage burden which is $O(\numData^2)$.  This makes working with Gaussian processes computationally intensive for the situation where $\numData>10,000$.
+\notes{where $\dataVector$ were our *training observations*. In other words our mean predictions are always a linear weighted combination of our *training data*. The weights are given by computing the covariation between the training and the test data ($\kernelMatrix_*$) and scaling it by the inverse covariance of the training data observations, $\left[\kernelMatrix + \dataStd^2 \eye\right]^{-1}$. This inverse is the main computational object that needs to be resolved for a Gaussian process. It has a computational burden which is $O(\numData^3)$ and a storage burden which is $O(\numData^2)$.  This makes working with Gaussian processes computationally intensive for the situation where $\numData>10,000$.}
 
 \includeyoutube{ewJ3AxKclOg}
 
@@ -510,11 +503,11 @@ So we see that the kernel function is developed from an inner product between th
 
 \subsection{Overall Process Scale}
 
-In general we won't be able to find parameters of the covariance function through fixed point equations, we will need to do gradient based optimization.
+\notes{In general we won't be able to find parameters of the covariance function through fixed point equations, we will need to do gradient based optimization.}
 
 \subsection{Capacity Control and Data Fit}
 
-The objective function can be decomposed into two terms, a capacity control term, and a data fit term. The capacity control term is the log determinant of the covariance. The data fit term is the matrix inner product between the data and the inverse covariance.
+\notes{The objective function can be decomposed into two terms, a capacity control term, and a data fit term. The capacity control term is the log determinant of the covariance. The data fit term is the matrix inner product between the data and the inverse covariance.}
 
 \include{_gp/includes/gp-optimize.md}
 
@@ -535,5 +528,8 @@ The objective function can be decomposed into two terms, a capacity control term
 \include{_gp/includes/gp-summer-school.md}
 \include{_gp/includes/gpy-software.md}
 
-\subsection{References}
+\thanks
+
+\references
+
 

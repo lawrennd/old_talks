@@ -2,7 +2,7 @@
 layout: lectures
 title: "Dimensionality Reduction: Latent Variable Modelling"
 abstract: "In this lecture we turn to *unsupervised learning*. Specifically, we introduce the idea of a latent variable model. Latent variable models are a probabilistic perspective on unsupervised learning which lead to dimensionality reduction algorithms. "
-ipynb: True
+week: 8
 author:
 - family: Lawrence
   given: Neil D.
@@ -12,6 +12,7 @@ author:
   url: http://inverseprobability.com
   orcid:
 date: 2015-11-17
+week: 8
 venue: University of Sheffield
 youtube: 0mtK2_rc0IY
 transition: None
@@ -373,8 +374,8 @@ Now we are going to
 turn to a different form of learning, commonly known as *unsupervised* learning.
 In unsupervised learning our data isn't necessarily labelled in any form, but we
 want models that give us a better understanding of the data. We've actually seen
-an example of this already with [*matrix factorization* for collaborative
-filtering](./week2.ipynb),  which we introduces in the context of *objective
+an example of this already with \refnotes{*matrix factorization* for collaborative
+filtering}{matrix-factorization},  which we introduces in the context of *objective
 functions*. Now we will introduce a more probabilistic approach to such models,
 specifically we are interested in *latent variable* modelling.
 
@@ -497,7 +498,7 @@ $$
 where we have introduced a
 matrix $\mappingMatrix$ that is sometimes referred to as the *factor loadings* but
 we also immediately see is related to our *multivariate linear regression*
-models from the [previous session on linear regression](./week3.ipynb). That is
+models from the \refnotes{previous session on linear regression}{linear-regression}. That is
 because our vector valued function is of the form
 $$
 \mathbf{f}(\latentVector) =
@@ -850,10 +851,9 @@ involves a sum of squares term, before estimating the eigenvectors. We can
 estimate the eigenvectors directly either through [QR
 decomposition](http://en.wikipedia.org/wiki/QR_decomposition) or [singular value
 decomposition](http://en.wikipedia.org/wiki/Singular_value_decomposition). We
-saw a similar issue arise when [computing the weights in a regression
-problem](./week3.ipynb), where we also wished to avoid computation of
-$\latentMatrix^\top\latentMatrix$ (or in the case of [nonlinear regression with basis
-functions](./week4.ipynb) $\boldsymbol{\Phi}^\top\boldsymbol{\Phi}$).
+saw a similar issue arise when \refnotes{computing the weights in a regression
+problem}{linear-regression}, where we also wished to avoid computation of
+$\latentMatrix^\top\latentMatrix$ (or in the case of \refnotes{nonlinear regression with basis functions}{basis-functions} $\boldsymbol{\Phi}^\top\boldsymbol{\Phi}$).
 
 \section{Posterior for Principal Component Analysis}
 
@@ -946,8 +946,8 @@ def posterior(Y, W, sigma2):
 
 # Numerically Stable and Efficient Version
 
-Just as we saw for [linear
-regression](./week3.ipynb) and [regression with basis functions](./week4)
+Just as we saw for \refnotes{linear
+regression}{linear-regression} and \refnotes{regression with basis functions}{basis-functions}
 computation of a matrix such as $\dataMatrix^\top\dataMatrix$ (or its centred
 version) can be a bad idea in terms of loss of numerical accuracy. Fortunately,
 we can find the eigenvalues and eigenvectors of the matrix
@@ -1102,8 +1102,8 @@ ax.set_title('Access Point Inferred Locations')}
 \section{Relationship to Matrix Factorization}
 
 We can use the robot naviation example
-to realise that PCA (and factor analysis) are very reminiscient of the [*matrix
-factorization* example](./week2.ipynb) that we used for introducing objective
+to realise that PCA (and factor analysis) are very reminiscient of the \refnotes{*matrix
+factorization* example}{matrix-factorization} that we used for introducing objective
 functions. In that system we used slightly different notation, $\mathbf{u}_{i,
 :}$ for *user* location in our metaphorical library and $\mathbf{v}_{j, :}$ for
 *item* location in our metaphorical library. To see how these systems are

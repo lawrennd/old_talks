@@ -5,6 +5,7 @@ abstract: |
   In this first session we will introduce *machine learning*, review *probability* and begin familiarization with the Jupyter notebook, python and pandas.
 date: 2015-09-29
 ipynb: Yes
+week: 1
 author:
 - family: Lawrence
   given: Neil D.

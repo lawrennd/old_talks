@@ -3,6 +3,7 @@ layout: lectures
 title: "Generalization: Model Validation"
 ipynb: True
 abstract: "Generalization is the main objective of a machine learning algorithm. The models we design should work on data they have not seen before. Confirming whether a model generalizes well or not is the domain of *model validation*. In this lecture we introduce approaches to model validation such as hold out validation and cross validation."
+week: 5
 author:
 - family: Lawrence
   given: Neil D.

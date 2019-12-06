@@ -2,6 +2,7 @@
 layout: lectures
 title: "Bayesian Regression"
 abstract: "Bayesian formalisms deal with uncertainty in parameters, "
+week: 6
 author:
 - family: Lawrence
   given: Neil D.

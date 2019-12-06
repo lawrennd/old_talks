@@ -10,6 +10,7 @@ author:
   url: http://inverseprobability.com
   orcid:
 youtube: e-BWWidfbT4
+week: 10
 ipynb: True
 venue: University of Sheffield
 date: 2015-12-01
