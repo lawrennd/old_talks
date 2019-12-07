@@ -92,14 +92,13 @@ $$}
 \include{_ml/includes/underdetermined-system.md}
 \include{_ml/includes/types-of-uncertainty.md}
 
-\subsection{Reading}
+\addreading{@Bishop:book06}{Section 1.2.3 (pg 21–24)}
+)}
+\addreading{@Rogers:book11}{Sections 3.1-3.4 (pg 95-117)}
+\addreading{@Bishop:book06}{Section 1.2.3 (pg 21–24)}
+\addreading{@Bishop:book06}{Section 1.2.6 (start from just past eq 1.64 pg 30-32)}
 
-* @Bishop:book06 Section 1.2.3 (pg 21–24).
-* @Bishop:book06 Section 1.2.6 (start from just past eq 1.64 pg 30-32).
-* Bayesian Inference
-  - @Rogers:book11 use an example of a coin toss for introducing Bayesian inference Chapter 3, Sections 3.1-3.4 (pg 95-117). Although you also need the beta density which we haven’t yet discussed. This is also the example that @Laplace:memoire74 used.
-  - @Bishop:book06 Section 1.2.3 (pg 21–24).
-* @Bishop:book06 Section 1.2.6 (start from just past eq 1.64 pg 30-32).
+\reading
 
 \notes{
 \subsection{Sum of Squares and Probability}
@@ -117,7 +116,7 @@ It's on the strength of this paragraph that the density is known as the Gaussian
 
 \code{pods.notebook.display_google_book(id='ORUOAAAAQAAJ', page='217')}
 
-where the crediting to the Laplace is about halfway through the last paragraph. This book was published in 1809, four years after [Legendre presented least squares](./week3.ipynb) in an appendix to one of his chapters on the orbit of comets. Gauss goes on to make a claim for priority on the method on page 221 (towards the end of the first paragraph ...).
+where the crediting to the Laplace is about halfway through the last paragraph. This book was published in 1809, four years after \refnotes{Legendre presented least squares}{linear-regression} in an appendix to one of his chapters on the orbit of comets. Gauss goes on to make a claim for priority on the method on page 221 (towards the end of the first paragraph ...).
 
 \code{pods.notebook.display_google_book(id='ORUOAAAAQAAJ', page='221')}
 }
@@ -153,11 +152,10 @@ order = 5
 sigma2 = 0.01}
 
 
-\subsection{Reading}
+\addreading{@Bishop:book06}{Multivariate Gaussians: Section 2.3 up to top of pg 85}
+\addreading{@Bishop:book06}{Section 3.3 up to 159 (pg 152–159)}
 
-* Section 2.3 of @Bishop:book06 up to top of pg 85 (multivariate Gaussians).
-
-* Section 3.3 of @Bishop:book06 up to 159 (pg 152–159).
+\reading
 
 \newslide{Revisit Olympics Data}
 \slides{
@@ -201,11 +199,12 @@ sigma2 = 0.01}
 \include{_ml/includes/polynomial-marginal-likelihood.md}
 \include{_ml/includes/compute-output-expectations.md}
 
-\subsection{Reading}
+\addreading{@Rogers:book11}{Section 3.7–3.8 (pg 122–133)}
+\addreading{@Bishop:book06}{Section 3.4 (pg 161–165)}
 
-*   Section 3.7–3.8 of @Rogers:book11 (pg 122–133).
+\reading
 
-*   Section 3.4 of @Bishop:book06 (pg 161–165).
+\thanks
 
 \references
 

@@ -70,36 +70,29 @@ for movie in ia.search_movie('python'):
 
 -   See probability review at end of slides for reminders.
 
--   Read and *understand* @Rogers:book11 on:
+\addreading{@Rogers:book11}{Section 2.2 (pg 41–53)}
+\addreading{@Rogers:book11}{Section 2.4 (pg 55–58)}
+\addreading{@Rogers:book11}{Section 2.5.1 (pg 58–60)}
+\addreading{@Rogers:book11}{Section 2.5.3 (pg 61–62)}
 
-    1.  Section 2.2 (pg 41–53).
+- For other material in  read:
 
-    2.  Section 2.4 (pg 55–58).
+\addreading{@Bishop:book06}{Probability densities: Section 1.2.1 (Pages 17–19)}
+\addreading{@Bishop:book06}{Expectations and Covariances: Section 1.2.2 (Pages 19–20)}
 
-    3.  Section 2.5.1 (pg 58–60).
+\addreading{@Bishop:book06}{The Gaussian density: Section 1.2.4 (Pages 24–28) (don’t worry about material on bias)}
+\addreading{@Bishop:book06}{For material on information theory and KL divergence try Section 1.6 & 1.6.1 (pg 48 onwards)}
 
-    4.  Section 2.5.3 (pg 61–62).
-
--   For other material in @Bishop:book06 read:
-
-    1.  Probability densities: Section 1.2.1 (Pages 17–19).
-
-    2.  Expectations and Covariances: Section 1.2.2 (Pages 19–20).
-
-    3.  The Gaussian density: Section 1.2.4 (Pages 24–28) (don’t worry
-        about material on bias).
-
-    4.  For material on information theory and KL divergence try Section
-        1.6 & 1.6.1 of @Bishop:book06 (pg 48 onwards).
-
--   If you are unfamiliar with probabilities you should complete the
+- If you are unfamiliar with probabilities you should complete the
     following exercises:
 
-    1.  @Bishop:book06 Exercise 1.7
+\addexercise{@Bishop:book06}{Exercise 1.7}
+\addexercise{@Bishop:book06}{Exercise 1.8}
+\addexercise{@Bishop:book06}{Exercise 1.9}
 
-    2.  @Bishop:book06 Exercise 1.8
+\reading
 
-    3.  @Bishop:book06 Exercise 1.9}
+\exercises
 
 \thanks
 

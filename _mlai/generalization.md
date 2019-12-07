@@ -31,10 +31,9 @@ transition: None
 \include{_ml/includes/validation.md}
 \include{_ml/includes/bias-variance-dilemma.md}
 
+\addreading{@Rogers:book11}{Section 1.5}
 
-\subsection{Reading}
-
-* Section 1.5 of @Rogers:book11
+\reading
 
 \thanks
 

@@ -32,7 +32,7 @@ transition: None
 }
 
 
-\notes{The [naive Bayes assumption](./week9.ipynb) allowed us to
+\notes{The \refnotes{naive Bayes assumption}{naive-bayes} allowed us to
 specify a class conditional density, $p(\inputVector_i|\dataScalar_i,
 \parameterVector)$, through assuming that the features were
 conditionally independent given the label.  Combined with our
@@ -71,7 +71,7 @@ input given a particular observation.  That would require placing an
 additional prior over the input location for each point,
 $p(\inputVector_i)$. Of course, it's possible to conceive of a model
 like this, and indeed that is how we proceeded for
-[dimensionality reduction](./week8.ipynb). However, if we know we will
+\refnotes{dimensionality reduction}{dimensionality-reduction}. However, if we know we will
 always have all the inputs at run time, it may make sense to
 *directly* model the conditional density,
 $p(\dataVector|\inputMatrix)$.}

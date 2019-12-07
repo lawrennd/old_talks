@@ -66,11 +66,11 @@ $$
 \include{_ml/includes/basis-functions.md}
 \include{_ml/includes/basis-function-models.md}
 
-\subsection{Reading}
+\addreading{@Rogers:book11}{Section 1.4}
+\addreading{@Bishop:book06}{Chapter 1, pg 1-6}
+\addreading{@Bishop:book06}{Chapter 3, Section 3.1 up to pg 143}
 
-* Section 1.4 of @Rogers:book11.
-* Chapter 1, pg 1-6 of @Bishop:book06.
-* Chapter 3, Section 3.1 of @Bishop:book06 up to pg 143.
+\reading
 
 \subsection{Lecture on Basis Functions from GPRS Uganda}
 
@@ -92,4 +92,6 @@ $$
 
 \code{Phi*Phi}
 
-\subsection{References}
+\thanks
+
+\references

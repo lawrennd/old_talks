@@ -358,30 +358,30 @@ $$p\left(\dataMatrix|\mappingMatrix\right)=\prod_{i=1}^{\numData}\gaussianDist{\
   $$
   where $\mathbf{R}$ is an arbitrary rotation matrix.
 
-\newslide{Reading}
 
-- Chapter 7 of @Rogers:book11 up to pg 249.
+\addreading{@Rogers:book11}{Chapter 7 up to pg 249}
 
+\reading
 
-So far in our classes we have focussed mainly on regression
+\notes{So far in our classes we have focussed mainly on regression
 problems, which are examples of supervised learning. We have considered the
 relationship between the likelihood and the objective function and we have shown
 how we can find paramters by maximizing the likelihood (equivalent to minimizing
 the objective function) and in the last session we saw how we can *marginalize*
-the parameters in a process known as Bayesian inference.
+the parameters in a process known as Bayesian inference.}
 
-Now we are going to
+\notes{Now we are going to
 turn to a different form of learning, commonly known as *unsupervised* learning.
 In unsupervised learning our data isn't necessarily labelled in any form, but we
 want models that give us a better understanding of the data. We've actually seen
 an example of this already with \refnotes{*matrix factorization* for collaborative
 filtering}{matrix-factorization},  which we introduces in the context of *objective
 functions*. Now we will introduce a more probabilistic approach to such models,
-specifically we are interested in *latent variable* modelling.
+specifically we are interested in *latent variable* modelling.}
 
 \section{Latent Variables}
 
-Latent means hidden, and hidden variables are simply *unobservable*
+\notes{Latent means hidden, and hidden variables are simply *unobservable*
 variables. The idea of a latent variable is crucial to the concept of artificial
 intelligence, machine learning and experimental design. A latent variable could
 take many forms. We might observe a man walking along a road with a large bag of
@@ -403,9 +403,9 @@ large enough flat to have a washing machine, or because he's carrying a duvet,
 or because he doesn't like ironing. All of these may *increase* in probability
 given our observation, but they are still *latent* variables. Unless we follow
 the man back to his appartment, or start making other enquirires about the man,
-we don't know the true answer. 
+we don't know the true answer.}
 
-It's clear that to do inference about any
+\notes{It's clear that to do inference about any
 complex system we *must* include latent variables. Latent variables are
 extremely powerful. In robotics, they are used to represent the *state* of the
 robot. The state of the robot may include its position (in x, y coordinates) its
@@ -417,9 +417,9 @@ of that position. If you go walking or running in the hills around Sheffield,
 you can take a very high quality ordnance survey map with you. However, unless
 you are a really excellent orienteer, when you are far from any given landmark,
 you will probably be *uncertain* about your true position on the map. These
-states are also latent variables. 
+states are also latent variables.}
 
-In statistical analysis of experiments you
+\notes{In statistical analysis of experiments you
 try to control for each aspect of the experiment, in particular by
 *randomization*. So if I'm interested in the ability of a particular fertilizer
 to improve the yield of a particular plant I may design an experiment where I
@@ -434,10 +434,9 @@ design *randomization* is used to attempt to eliminate the correlated effects of
 these confounders: you aim to ensure that if these confounders *do* exist their
 effects are not correlated with treatment and contorl. This is known as a
 [randomized control
-trial](http://en.wikipedia.org/wiki/Randomized_controlled_trial). 
+trial](http://en.wikipedia.org/wiki/Randomized_controlled_trial).}
 
-Greek
-philosophers worried a great deal about what was knowable and what was
+\notes{Greek philosophers worried a great deal about what was knowable and what was
 unknowable. Adherents of [philosophical
 Skeptisism](http://en.wikipedia.org/wiki/Skepticism) were inspired by the idea
 that since your senses sometimes give you contradictory information, they cannot
@@ -445,27 +444,27 @@ be trusted, and in extreme cases they chose to *ignore* their senses. This is an
 acknowledgement that very often the true state of the world cannot be known with
 precision. Unfortunately, these philosophers didn't have a good understanding of
 probability, so they were unable to encapsulate their ideas through a *degree*
-of belief.
+of belief.}
 
-We often use language to express the compression of a complex
+\notes{We often use language to express the compression of a complex
 behavior or patterns in a simpler way, for example we talk about motives as a
 useful distallation for a perhaps very complex patter of behavior. In physics we
 use principles of causation and simple laws to describe the world around us.
 Such motives or underlying principles are difficult to observe directly, our
 conclusions about them emerge over a period of time by observing indirect
-consequences of the latent variables.
+consequences of the latent variables.}
 
-Epistemic uncertainty allows us to deal
+\notes{Epistemic uncertainty allows us to deal
 with these worries by associating our degree of belief about the state of the
 world with a probaiblity distribution. This core idea underpins state space
 modelling, probabilistic graphical models and the wider field of latent variable
 modelling. In this session we are going to explore the idea in a simple linear
 system and see how it relates to *factor analysis* and *principal component
-analysis*.
+analysis*.}
 
 \section{Your Personality}
 
-At the beginning of the 20th century there was
+\notes{At the beginning of the 20th century there was
 a great deal of interest amoungst psychologists in formalizing patterns of
 thought. The approach they used became known as factor analysis. The principle
 is that we observe a potentially high dimensional vector of characteristics
@@ -476,43 +475,43 @@ dictate the behavior. These models are known as latent trait models and the
 analysis is sometimes known as factor analysis. The idea is that there are a few
 characteristic traits that we are looking to discern. These traits or factors
 can be extracted by assimilating the high dimensional characteristics of the
-individual into a few latent factors. 
+individual into a few latent factors. }
 
 \subsection{Factor Analysis Model}
 
-This causes
+\notes{This causes
 us to consider a model as follows, if we are given a high dimensional vector of
 features (perhaps questionaire answers) associated with an individual,
 $\dataVector$, we assume that these factors are actually generated from a low
 dimensional vector latent traits, or latent variables, which determine the
-personality.
+personality.}
 $$
-\dataVector = \mathbf{f}(\latentVector) + \noiseVector
+\dataVector = \mathbf{f}(\latentVector) + \noiseVector,
 $$
-where $\mathbf{f}(\latentVector)$ is a *vector valued* function that is dependent
+\notes{where $\mathbf{f}(\latentVector)$ is a *vector valued* function that is dependent
 on the latent traits and $\noiseVector$ is some corrupting noise. For
-simplicity, we assume that the function is given by a *linear* relationship,
+simplicity, we assume that the function is given by a *linear* relationship,}
 $$
 \mathbf{f}(\latentVector) = \mappingMatrix\latentVector
 $$
-where we have introduced a
+\notes{where we have introduced a
 matrix $\mappingMatrix$ that is sometimes referred to as the *factor loadings* but
 we also immediately see is related to our *multivariate linear regression*
 models from the \refnotes{previous session on linear regression}{linear-regression}. That is
-because our vector valued function is of the form
+because our vector valued function is of the form}
 $$
 \mathbf{f}(\latentVector) =
 \begin{bmatrix} f_1(\latentVector) \\ f_2(\latentVector) \\ \vdots \\
 f_p(\latentVector)\end{bmatrix}
 $$
-where there are $p$ features associated with the
+\notes{where there are $\dataDim$ features associated with the
 individual. If we consider any of these functions individually we have a
-prediction function that looks like a regression model,
+prediction function that looks like a regression model,}
 $$
 f_j(\latentVector) =
 \weightVector_{j, :}^\top \latentVector,
 $$
-for each element of the vector valued
+\notes{for each element of the vector valued
 function, where $\weightVector_{:, j}$ is the $j$th column of the matrix
 $\mappingMatrix$. In that context each column of $\mappingMatrix$ is a vector of
 *regression weights*. This is a multiple input and multiple output regression.
@@ -523,11 +522,11 @@ standard regression, we are assuming that we don't observe the function directly
 observe some corrupted variant of the function, where the corruption is given by
 $\noiseVector$. Just as in linear regression we can assume that this
 corruption is given by Gaussian noise, where the noise for the $j$th element of
-$\dataVector$ is by,
+$\dataVector$ is by,}
 $$
 \epsilon_j \sim \gaussianSamp{0}{\noiseStd^2_j}.
 $$
-Of course,
+\notes{Of course,
 just as in a regression problem we also need to make an assumption across the
 individual data points to form our full likelihood. Our data set now consists of
 many observations of $\dataVector$ for diffetent individuals. We store these
@@ -535,24 +534,24 @@ observations in a *design matrix*, $\dataMatrix$, where each *row* of
 $\dataMatrix$ contains the observation for one individual. To emphasize that
 $\dataVector$ is a vector derived from a row of $\dataMatrix$ we represent the
 observation of the features associated with the $i$th individual by
-$\dataVector_{i, :}$, and place each individual in our data matrix,
+$\dataVector_{i, :}$, and place each individual in our data matrix,}
 $$
 \dataMatrix
 = \begin{bmatrix} \dataVector_{1, :}^\top \\ \dataVector_{2, :}^\top \\ \vdots \\
 \dataVector_{n, :}^\top\end{bmatrix},
 $$
-where we have $n$ data points. Our data
+\notes{where we have $n$ data points. Our data
 matrix therefore has $n$ rows and $p$ columns. The point to notice here is that
 each data obsesrvation appears as a row vector in the design matrix (thus the
 transpose operation inside the brackets). Our prediction functions are now
-actually a *matrix value* function, 
+actually a *matrix value* function,}
 $$
 \mathbf{F} = \latentMatrix\mappingMatrix^\top,
 $$
-where for each matrix the data points are in the rows and the data features
+\notes{where for each matrix the data points are in the rows and the data features
 are in the columns. This implies that if we have $q$ inputs to the function we
 have $\mathbf{F}\in \Re^{n\times p}$, $\mappingMatrix \in \Re^{p \times q}$ and
-$\latentMatrix \in \Re^{n\times q}$.
+$\latentMatrix \in \Re^{n\times q}$.}
 
 ### Assignment Question 1
 

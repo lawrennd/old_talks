@@ -16,4 +16,11 @@ $$
 $$
 where the conditioning is on the inputs $\inputMatrix$ which are used for computing the mean and covariance. For this reason they are known as mean and covariance functions.}
 
+\newslide{Gaussian Processes}
+\slides{
+* Basis function models give non-linear predictions.
+* Need to choose number and location of basis functions. 
+* Gaussian processes is a general framework (basis functions special case)
+* Within the framework you can consider models with infinite basis functions.
+}
 \endif

@@ -439,10 +439,10 @@ Why do we need so many iterations to get to the solution?}{3}{25}
 * Effective heuristics such as momentum.
 * Local vs global solutions.
 
-\subsection{Reading}
+\addreading{@Rogers:book11}{For fitting linear models: Section 1.1-1.2}
+\addreading{@Bishop:book06}{Section 1.2.5 up to equation 1.65}
 
-* Section 1.1-1.2 of @Rogers:book11 for fitting linear models. 
-* Section 1.2.5 of @Bishop:book06 up to equation 1.65.
+\reading
 
 \newslide{Multi-dimensional Inputs}
 \slides{

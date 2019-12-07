@@ -216,7 +216,7 @@ for i in range(10):
 
 \subsection{Gaussian Process}
 
-\notes{In our [session on Bayesian regression](./week7.ipynb) we sampled from the prior over paraemters. Through the properties of multivariate Gaussian densities this prior over parameters implies a particular density for our data observations, $\dataVector$. In this session we sampled directly from this distribution for our data, avoiding the intermediate weight-space representation. This is the approach taken by *Gaussian processes*. In a Gaussian process you specify the *covariance function* directly, rather than *implicitly* through a basis matrix and a prior over parameters. Gaussian processes have the advantage that they can be *nonparametric*, which in simple terms means that they can have *infinite* basis functions. In the lectures we introduced the *exponentiated quadratic* covariance, also known as the RBF or the Gaussian or the squared exponential covariance function. This covariance function is specified by}
+\notes{In our \refnotes{session on Bayesian regression}{bayesian-regression} we sampled from the prior over paraemters. Through the properties of multivariate Gaussian densities this prior over parameters implies a particular density for our data observations, $\dataVector$. In this session we sampled directly from this distribution for our data, avoiding the intermediate weight-space representation. This is the approach taken by *Gaussian processes*. In a Gaussian process you specify the *covariance function* directly, rather than *implicitly* through a basis matrix and a prior over parameters. Gaussian processes have the advantage that they can be *nonparametric*, which in simple terms means that they can have *infinite* basis functions. In the lectures we introduced the *exponentiated quadratic* covariance, also known as the RBF or the Gaussian or the squared exponential covariance function. This covariance function is specified by}
 $$
 \kernelScalar(\inputVector, \inputVector^\prime) = \alpha \exp\left( -\frac{\left\Vert \inputVector-\inputVector^\prime\right\Vert^2}{2\ell^2}\right),
 $$
@@ -328,7 +328,7 @@ test data and training data. This structure is how information is
 passed between test and training data. Unlike the maximum likelihood
 formalisms we've been considering so far, the structure expresses
 *correlation* between our different data points.  However, just like
-the [naive Bayes approach](./week9.ipynb) we now have a *joint
+the \refnotes{naive Bayes approach}{naive-bayes} we now have a *joint
 density* between some variables of interest. In particular we have the
 joint density over $p(\mappingFunctionVector,
 \mappingFunctionVector^*)$. The joint density is *Gaussian* and *zero

@@ -1,6 +1,9 @@
-frame start
+\ifndef{notation}
+\define{notation}
 
-### Notation
+\editme
+
+\subsection{Notation}
 
 $\latentDim$— dimension of latent/embedded space\
 $\dataDim$— dimension of data space\
@@ -17,16 +20,13 @@ $\mathbf{A}$\
 $\mathbf{a}_{:,j}$ is a vector from the $j$th row of a given matrix
 $\mathbf{A}$
 
-frame end
 
-frame start
-
-### Reading Notation
+\subsection{Reading Notation}
 
 **$\latentMatrix$ and $\dataMatrix$ are *design matrices***
 
--   Covariance given by $\numData^{-1}\dataMatrix^{\top}\dataMatrix$.
+- Covariance given by $\numData^{-1}\dataMatrix^{\top}\dataMatrix$.
 
--   Inner product matrix given by $\dataMatrix\dataMatrix^{\top}$.
+- Inner product matrix given by $\dataMatrix\dataMatrix^{\top}$.
 
-frame end
+\endif

@@ -31,17 +31,19 @@ transition: None
 }
 
 
-\subsection{Lab Class}
+\newslide{Lab Class}
 
+\slides{
 - You will take the ideas you have learnt.
 - You will apply them in the domain of *matrix factorisation*.
 - Matrix factorization presents a different error function.
+}
 
-\subsection{Reading}
+\addreading{@Rogers:book11}{Section 1.1.3} for loss functions.
 
-- Section 1.1.3 of @Rogers:book11 for loss functions.
+\reading
 
-\notes{In [last week's](./week1.ipynb) class we saw how
+\notes{In \refnotes{the introduction}{intro-probability} we saw how
 we could load in a data set to pandas and use it for some simple data
 processing. We computed variaous probabilities on the data and I encouraged you
 to think about what sort of probabilities you need for prediction. This week we

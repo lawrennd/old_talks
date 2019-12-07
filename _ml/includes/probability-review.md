@@ -219,11 +219,13 @@ which is known as Bayes' rule (or Bayes's rule, it depends how you choose to pro
   \end{aligned}$$}
 
 
-\newslide{Reading & Exercises}
 
-\slides{
-* @Bishop:book06 on probability distributions: page 12–17 (Section 1.2).
-* Complete Exercise 1.3 in @Bishop:book06.}
+\addreading{@Bishop:book06}{Probability distributions: page 12–17 (Section 1.2)}
+\addexercise{@Bishop:book06}{Exercise 1.3}
+
+\reading
+
+\exercises
 
 \include{_ml/includes/probability-examples.md}
 

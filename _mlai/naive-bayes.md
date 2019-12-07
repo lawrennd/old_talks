@@ -35,11 +35,13 @@ transition: None
 \include{_ml/includes/bayes-rule-reminder.md}
 \include{_ml/includes/naive-bayes.md}
 
-### Further Reading
+\addreading{@Rogers:book11}{Chapter 5 up to pg 179 (Section 5.1, and 5.2 up to 5.2.2)}
 
-* Chapter 5 of @Rogers:book11 up to pg 179 (Section 5.1, and 5.2 up to 5.2.2).
+\reading
 
-### References
+\thanks
+
+\references
 
 
 
