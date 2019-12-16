@@ -92,17 +92,9 @@ $$</span><br /></p>
 <p>Figure: The philosophical underpinnings of uncertainty, as discussed in 2012 MLAI lecture.</p>
 </div>
 </div>
-<h2 id="reading">Reading</h2>
-<ul>
-<li><span class="citation" data-cites="Bishop:book06">Bishop (2006)</span> Section 1.2.3 (pg 21–24).</li>
-<li><span class="citation" data-cites="Bishop:book06">Bishop (2006)</span> Section 1.2.6 (start from just past eq 1.64 pg 30-32).</li>
-<li>Bayesian Inference
-<ul>
-<li><span class="citation" data-cites="Rogers:book11">Rogers and Girolami (2011)</span> use an example of a coin toss for introducing Bayesian inference Chapter 3, Sections 3.1-3.4 (pg 95-117). Although you also need the beta density which we haven’t yet discussed. This is also the example that <span class="citation" data-cites="Laplace:memoire74">Laplace (1774)</span> used.</li>
-<li><span class="citation" data-cites="Bishop:book06">Bishop (2006)</span> Section 1.2.3 (pg 21–24).</li>
-</ul></li>
-<li><span class="citation" data-cites="Bishop:book06">Bishop (2006)</span> Section 1.2.6 (start from just past eq 1.64 pg 30-32).</li>
-</ul>
+
+<p>)}   </p>
+
 <h2 id="sum-of-squares-and-probability">Sum of Squares and Probability</h2>
 <p>In the overdetermined system we introduced a new set of slack variables, <span class="math inline">$\{\noiseScalar_i\}_{i=1}^\numData$</span>, on top of our parameters <span class="math inline"><em>m</em></span> and <span class="math inline"><em>c</em></span>. We dealt with the variables by placing a probability distribution over them. This gives rise to the likelihood and for the case of Gaussian distributed variables, it gives rise to the sum of squares error. It was Gauss who first made this connection in his volume on “Theoria Motus Corprum Coelestium” (written in Latin)</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="im">import</span> pods</a></code></pre></div>
@@ -113,7 +105,7 @@ $$</span><br /></p>
 </blockquote>
 <p>It’s on the strength of this paragraph that the density is known as the Gaussian, despite the fact that four pages later Gauss credits the necessary integral for the density to Laplace, and it was also Laplace that did a lot of the original work on dealing with these errors through probability. <a href="http://www.hup.harvard.edu/catalog.php?isbn=9780674403413">Stephen Stigler’s book on the measurement of uncertainty before 1900</a> has a nice chapter on this.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb5-1" data-line-number="1">pods.notebook.display_google_book(<span class="bu">id</span><span class="op">=</span><span class="st">&#39;ORUOAAAAQAAJ&#39;</span>, page<span class="op">=</span><span class="st">&#39;217&#39;</span>)</a></code></pre></div>
-<p>where the crediting to the Laplace is about halfway through the last paragraph. This book was published in 1809, four years after <a href="./week3.ipynb">Legendre presented least squares</a> in an appendix to one of his chapters on the orbit of comets. Gauss goes on to make a claim for priority on the method on page 221 (towards the end of the first paragraph …).</p>
+<p>where the crediting to the Laplace is about halfway through the last paragraph. This book was published in 1809, four years after  in an appendix to one of his chapters on the orbit of comets. Gauss goes on to make a claim for priority on the method on page 221 (towards the end of the first paragraph …).</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" data-line-number="1">pods.notebook.display_google_book(<span class="bu">id</span><span class="op">=</span><span class="st">&#39;ORUOAAAAQAAJ&#39;</span>, page<span class="op">=</span><span class="st">&#39;221&#39;</span>)</a></code></pre></div>
 <h2 id="the-bayesian-approach-edit">The Bayesian Approach <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/the-bayesian-approach.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/the-bayesian-approach.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>Now we will study Bayesian approaches to regression. In the Bayesian approach we define a <em>prior</em> density over our parameters, <span class="math inline"><em>m</em></span> and <span class="math inline"><em>c</em></span> or more generally <span class="math inline">$\mappingVector$</span>. This prior distribution gives us a range of expected values for our parameter <em>before</em> we have seen the data. The object in Bayesian inference is to then compute the<em>posterior</em> density which is the effect on the density of having observed the data. In standard probability notation we write the prior distribution as, <br /><span class="math display">$$
@@ -280,11 +272,8 @@ $$</span><br /> Let’s start by assigning the parameter of the prior distributi
 <a class="sourceLine" id="cb13-4" data-line-number="4">order <span class="op">=</span> <span class="dv">5</span></a>
 <a class="sourceLine" id="cb13-5" data-line-number="5"><span class="co"># set the noise variance</span></a>
 <a class="sourceLine" id="cb13-6" data-line-number="6">sigma2 <span class="op">=</span> <span class="fl">0.01</span></a></code></pre></div>
-<h2 id="reading-1">Reading</h2>
-<ul>
-<li><p>Section 2.3 of <span class="citation" data-cites="Bishop:book06">Bishop (2006)</span> up to top of pg 85 (multivariate Gaussians).</p></li>
-<li><p>Section 3.3 of <span class="citation" data-cites="Bishop:book06">Bishop (2006)</span> up to 159 (pg 152–159).</p></li>
-</ul>
+
+
 <h2 id="generating-from-the-model-edit">Generating from the Model <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/prior-sampling-basis.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ml/includes/prior-sampling-basis.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>A very important aspect of probabilistic modelling is to <em>sample</em> from your model to see what type of assumptions you are making about your data. In this case that involves a two stage process.</p>
 <ol type="1">
@@ -619,23 +608,9 @@ $$</span><br /></p>
 <p>Now we will test the generalisation ability of these models. Firstly we are going to use hold out validation to attempt to see which model is best for extrapolating.</p>
 
 
-<h2 id="reading-2">Reading</h2>
-<ul>
-<li><p>Section 3.7–3.8 of <span class="citation" data-cites="Rogers:book11">Rogers and Girolami (2011)</span> (pg 122–133).</p></li>
-<li><p>Section 3.4 of <span class="citation" data-cites="Bishop:book06">Bishop (2006)</span> (pg 161–165).</p></li>
-</ul>
-<h1 id="references" class="unnumbered">References</h1>
-<div id="refs" class="references">
-<div id="ref-Bishop:book06">
-<p>Bishop, Christopher M. 2006. <em>Pattern Recognition and Machine Learning</em>. springer.</p>
-</div>
-<div id="ref-Laplace:memoire74">
-<p>Laplace, Pierre Simon. 1774. “Mémoire Sur La Probabilité Des Causes Par Les évènemens.” In <em>Mémoires de Mathèmatique et de Physique, Presentés à lAcadémie Royale Des Sciences, Par Divers Savans, &amp; Lù Dans Ses Assemblées 6</em>, 621–56.</p>
-</div>
-<div id="ref-Rogers:book11">
-<p>Rogers, Simon, and Mark Girolami. 2011. <em>A First Course in Machine Learning</em>. CRC Press.</p>
-</div>
-</div>
+
+
+<h1 id="references">References</h1>
 <section class="footnotes">
 <hr />
 <ol>

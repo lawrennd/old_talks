@@ -6,9 +6,9 @@ SLIDESHEADER=../slides-header.html
 POSTSHEADER=../posts-header.html
 PP=gpp
 PPFLAGS=-T 
-PPFLAGS=-I./..
+PPFLAGS=-I./.. 
 BIBFLAGS=--bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib 
 CITEFLAGS=--filter pandoc-citeproc --csl=../elsevier-harvard.csl ${BIBFLAGS}
 PDSFLAGS=-s ${CITEFLAGS} --mathjax=${MATHJAX} 
-SFLAGS=--slide-level 3
+SFLAGS=--slide-level 2
 INKSCAPE=inkscape #/Applications/Inkscape.app/Contents/Resources/bin/inkscape

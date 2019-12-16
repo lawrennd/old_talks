@@ -1,5 +1,8 @@
 <!-- Front matter -->
+\include{color-scheme.gpp}
 \include{talk-macros-front.gpp}
+
+\include{talk-macros-svg.gpp}
 
 \ifdef{SLIDES}
 \include{talk-macros-slides.gpp}

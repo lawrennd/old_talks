@@ -1,0 +1,26 @@
+
+<svg width="254mm" height="127mm" viewBox="0 0 800 400">
+  <defs><linearGradient id="vulnerability-gradient"><stop offset="0" style="stop-color:\vulnerabilityColor;stop-opacity:1;"/><stop offset="1" style="stop-color:black;stop-opacity:1;" /></linearGradient></defs>
+\dpath{M 0 190 l 35 35 l 0 -15 l 730 0 l 0 15 l 35 -35 l -35 -35 l 0 15 l -730 0 l 0 -15 l -35 35 z}{fill:url('#vulnerability-gradient');fill-opacity:1.0}{double-arrow}\fragmentgroup{\dtext{utopia}{40}{30}{font-size:0.75em}{utopia-text}
+\dtext{dystopia}{750}{30}{font-size:0.75em}{dystopia-text}}{1}
+\fragmentgroup{\dtext{abuse}{700}{55}{fill:\vulnerabilityColor}{abuse-text}
+\dtext{support}{100}{55}{fill:\vulnerabilityColor}{support-text}}{2}
+\fragmentgroup{\dtext{ethical}{80}{155}{fill:\vulnerabilityColor}{ethical-text}
+\dtext{unethical}{700}{155}{fill:\vulnerabilityColor}{unethical-text}}{3}
+\fragmentgroup{\dtext{exploitation}{730}{75}{fill:\vulnerabilityColor}{exploitation-text}
+\dtext{flourishing}{70}{75}{fill:\vulnerabilityColor}{flourishing-text}}{4}
+\fragmentgroup{
+\dtext{haven}{80}{85}{fill:\vulnerabilityColor}{haven-text}
+\dtext{safe}{100}{125}{fill:\vulnerabilityColor}{safe-text}
+\dtext{shelter}{100}{105}{fill:\vulnerabilityColor}{shelter-text}
+\dtext{dialogue}{300}{125}{fill:\vulnerabilityColor}{dialogue-text}
+\dtext{conversation}{360}{155}{fill:\vulnerabilityColor}{conversation-text}
+\dtext{mis-use}{600}{85}{fill:\vulnerabilityColor}{mis-use-text}
+\dtext{injury}{650}{85}{fill:\vulnerabilityColor}{injury-text}
+\dtext{mainpulation}{700}{85}{fill:\vulnerabilityColor}{mainpulation-text}
+\dtext{modern-slavery}{730}{110}{fill:\vulnerabilityColor}{slavery-text}}{5}
+\fragmentgroup{\dtext{Examples}{60}{275}{font-size:0.75em}{examples-text}
+\dtext{homeless shelters?}{105}{300}{fill:\vulnerabilityColor}{homeless-text}
+\dtext{sweat shops?}{105}{340}{fill:\vulnerabilityColor}{homeless-text}}{6}
+</svg>
+

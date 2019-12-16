@@ -100,30 +100,36 @@ ${BASE}.slides.ipynb: ${BASE}.slides.ipynb.markdown
 	rm ${BASE}.tmp.markdown
 
 
-${BASE}.slides.pptx.markdown: ${BASE}.md ${DEPS}
+${BASE}.slides.pptx.markdown: ${BASE}.markdown ${DEPS}
 	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -DPPTX=1 -DSLIDES=1 ${PPFLAGS} --include ../_includes/talk-notation.tex $< -o $@  
 
-${BASE}.slides.html.markdown: ${BASE}.md ${DEPS}
-	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -DHTML=1 -DSLIDES=1 ${PPFLAGS} $< -o $@  
+${BASE}.slides.html.markdown: ${BASE}.markdown ${DEPS}
+	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -DHTML=1 -DSLIDES=1 ${PPFLAGS} --include ../talk-macros.gpp $< -o $@
 
-%.notes.html.markdown: %.md ${DEPS}
-	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -DNOTES=1 -DHTML=1 ${PPFLAGS} $< -o $@
+%.notes.html.markdown: %.markdown ${DEPS}
+	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -DNOTES=1 -DHTML=1 ${PPFLAGS} --include ../talk-macros.gpp $< -o $@
 
-%.notes.tex.markdown: %.md ${DEPS}
-	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -DNOTES=1 -DTEX=1 ${PPFLAGS} $< -o $@
+%.notes.tex.markdown: %.markdown ${DEPS}
+	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -DNOTES=1 -DTEX=1 ${PPFLAGS} --include ../talk-macros.gpp $< -o $@
 	# Fix percentage width for latex.
 	sed -i -e 's/width=\(.*\)\%/width=0.\1\\textwidth/g' $@
 	sed -i -e 's/height=\(.*\)\%/height=0.\1\\textheight/g' $@
 
-%.notes.docx.markdown: %.md ${DEPS}
-	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -DNOTES=1 -DDOCX=1 ${PPFLAGS} --include ../_includes/talk-notation.tex $< -o $@
+%.notes.docx.markdown: %.markdown ${DEPS}
+	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -DNOTES=1 -DDOCX=1 ${PPFLAGS} --include ../talk-macros.gpp  $< -o $@
 
-%.notes.ipynb.markdown: %.md ${DEPS}
-	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -DIPYNB=1 -DNOTES=1 ${PPFLAGS} $< -o $@
+%.notes.ipynb.markdown: %.markdown ${DEPS}
+	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -DIPYNB=1 -DNOTES=1 ${PPFLAGS} --include ../talk-macros.gpp $< -o $@
 
-%.slides.ipynb.markdown: %.md ${DEPS}
-	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -DIPYNB=1 -DSLIDES=1 ${PPFLAGS} $< -o $@
+%.slides.ipynb.markdown: %.markdown ${DEPS}
+	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -DIPYNB=1 -DSLIDES=1 ${PPFLAGS} --include ../talk-macros.gpp $< -o $@
 
+
+%.markdown: %.md
+	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" ${PPFLAGS} --include ../talk-macros-include.gpp $< -o $@
+
+%.svg: %.svgi
+	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -DHTML=1 -DNOTES=1 ${PPFLAGS} --include svgi-includes.gpp $< -o $@
 
 %.pdf: %.svg
 	${INKSCAPE} $< --export-pdf=$@ --without-gui

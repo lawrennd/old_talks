@@ -28,11 +28,8 @@ transition: None
 
 \include{_deepgp/includes/deep-gaussian-processes.md}
 
-\subsection{Thanks!}
+\thanks
 
-* twitter: \@lawrennd
-* blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
-
-\subsection{References}
+\references
 
 

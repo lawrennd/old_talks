@@ -1,0 +1,22 @@
+
+<svg width="254mm" height="127mm" viewBox="0 0 800 400">
+  <defs><linearGradient id="individual-gradient"><stop offset="0" style="stop-color:\individualColor;stop-opacity:1;"/><stop offset="1" style="stop-color:black;stop-opacity:1;" /></linearGradient></defs>
+\dpath{M 0 190 l 35 35 l 0 -15 l 730 0 l 0 15 l 35 -35 l -35 -35 l 0 15 l -730 0 l 0 -15 l -35 35 z}{fill:url('#individual-gradient');fill-opacity:1.0}{double-arrow}\fragmentgroup{\dtext{utopia}{40}{30}{font-size:0.75em}{utopia-text}
+\dtext{dystopia}{750}{30}{font-size:0.75em}{dystopia-text}}{1}
+\fragmentgroup{\dtext{liberty}{100}{85}{fill:\individualColor}{liberty-text}\dtext{oppression}{750}{85}{fill:\individualColor}{oppression-text}}{2}
+\fragmentgroup{\dtext{merit}{150}{155}{fill:\individualColor}{totalitarian-text}\dtext{cronyism}{700}{155}{fill:\individualColor}{cronyism-text}}{3}
+\fragmentgroup{\dtext{opportunity}{70}{95}{fill:\individualColor}{opportunity-text}
+\dtext{authorship}{100}{125}{fill:\individualColor}{authorship-text}
+\dtext{independence}{150}{110}{fill:\individualColor}{independence-text}
+\dtext{agency}{200}{125}{fill:\individualColor}{agency-text}
+\dtext{autonomy}{200}{75}{fill:\individualColor}{autonomy-text}
+\dtext{credit}{300}{110}{fill:\individualColor}{credit-text}
+\dtext{self-regulation}{500}{65}{fill:\individualColor}{self-regulation-text}
+\dtext{paternalism}{600}{105}{fill:\individualColor}{paternalism-text}
+\dtext{uniformity}{650}{125}{fill:\individualColor}{uniformity-text}
+\dtext{control}{650}{95}{fill:\individualColor}{control-text}}{4}
+\fragmentgroup{\dtext{Examples}{60}{275}{font-size:0.75em}{examples-text}
+\dtext{Example 1?}{105}{300}{fill:\individualColor}{ex1-text}
+\dtext{Example 2?}{105}{340}{fill:\individualColor}{ex2-text}}{5}
+</svg>
+

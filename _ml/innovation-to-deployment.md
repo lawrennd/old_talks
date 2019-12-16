@@ -27,7 +27,7 @@ transition: None
 incremental: True
 ---
 
-\include{talk-macros.gpp}
+\include{talk-macros.tex}
 
 \section{Introduction}
 

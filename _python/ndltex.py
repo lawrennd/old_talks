@@ -133,7 +133,7 @@ def process_file(filename, extension='.tex'):
     return lines
 
 def extract_inputs(lines):
-
+    """Extract latex file dependencies."""
     def extract_input(lines, matchstr):
         inp_list = []
         for line in lines:
@@ -155,8 +155,6 @@ def extract_inputs(lines):
                               r"""\\include *{([^}]*)}""")
     inp_list += extract_input(lines,
                               r"""\\input{([^}]*)}""")
-
-
     return inp_list
 
 def extract_diagrams(lines, type='all'):

@@ -80,24 +80,29 @@ def extract_all(filename):
 
 def extract_inputs(filename):
     """Extract input files from a talk"""
+    print(filename)
     f = open(filename, 'r')
     lines = f.readlines()
     f.close()
 
     filenames = latex.extract_inputs(lines)
     list_files=[]
+    not_present=[]
     for i, filename in enumerate(filenames):
         includepos = os.path.join('../', filename)
         if os.path.isfile(filename):
             list_files.append(filename)
         elif os.path.isfile(includepos):
             list_files.append(includepos)
+        else:
+            not_present.append(filename)
+                
     filenames = list_files
     
     for i, filename in enumerate(filenames):
         list_files[i+1:i+1] = extract_inputs(filename) 
 
-    return list_files
+    return list_files + not_present
 
 def extract_diagrams(filename):
     """Extract diagrams from a talk"""

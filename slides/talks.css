@@ -69,3 +69,14 @@
   left: -50%;
 }
 
+
+.scrollable {
+    height: 600px;
+    overflow-y: auto !important;
+}
+
+.dtext {
+    dominant-baseline:middle;
+    text-anchor:middle;
+    font-size:0.5em
+}

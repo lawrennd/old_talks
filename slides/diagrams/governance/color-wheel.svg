@@ -1,180 +1,328 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<!-- Front matter -->
 
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="297mm"
-   height="210mm"
-   viewBox="0 0 1052.3622 744.09448"
-   id="svg2"
-   version="1.1"
-   inkscape:version="0.91 r13725"
-   sodipodi:docname="color-wheel.svg">
-  <defs
-     id="defs4" />
-  <style
-     id="style13234">
-      .mysegment {
-      stroke:none;
-      fill-opacity:1
-      }
-  .mytext {
-  font-style:normal;
-  font-variant:normal;
-  font-weight:bold;
-  font-stretch:normal;
-  font-size:30px;
-  line-height:1.25;
-  font-family:sans-serif;
-  -inkscape-font-specification:'sans-serif, Normal';
-  font-variant-ligatures:normal;
-  font-variant-caps:normal;
-  font-variant-numeric:normal;
-  font-feature-settings:normal;
-  text-align:center;
-  verticle-align:middle;
-  letter-spacing:0px;
-  word-spacing:0px;
-  writing-mode:lr-tb;
-  dominant-baseline:middle;
-  text-anchor:middle;
-  fill:#000000;
-  fill-opacity:1;
-  stroke:none
-  }
-  </style>
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="0.38642857"
-     inkscape:cx="155.45287"
-     inkscape:cy="423.0224"
-     inkscape:document-units="px"
-     inkscape:current-layer="layer1"
-     showgrid="false"
-     inkscape:window-width="1280"
-     inkscape:window-height="712"
-     inkscape:window-x="-51"
-     inkscape:window-y="0"
-     inkscape:window-maximized="0" />
-  <metadata
-     id="metadata7">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(0,-300)">
-    <path
-       class="mysegment"
-       style="fill:#dd4e4e;fill-opacity:1;stroke:none"
-       id="red-segment2"
-       sodipodi:type="arc"
-       sodipodi:cx="525"
-       sodipodi:cy="665"
-       sodipodi:rx="250"
-       sodipodi:ry="250"
-       sodipodi:start="0"
-       sodipodi:end="1.5707963"
-       d="M 775,665 A 250,250 0 0 1 525.00001,915 L 525,665 Z" />
-    <text
-       xml:space="preserve"
-       class="mytext"
-       style="fill:#dd4e4e"
-       x="800"
-       y="900"
-       id="individual-text"><tspan
-         sodipodi:role="line"
-         id="tspan4460"
-         x="800"
-         y="900">individual</tspan></text>
-    <path
-       class="mysegment"
-       style="fill:#4e4edd"
-       id="blue-segment2"
-       sodipodi:type="arc"
-       sodipodi:cx="525"
-       sodipodi:cy="665"
-       sodipodi:rx="250"
-       sodipodi:ry="250"
-       sodipodi:start="1.5707963"
-       sodipodi:end="3.1415927"
-       d="M 525.00001,915 A 250,250 0 0 1 348.2233,841.77669 250,250 0 0 1 275,664.99999 L 525,665 Z" />
-    <text
-       xml:space="preserve"
-       class="mytext"
-       style="fill:#4e4edd"
-       x="250"
-       y="900"
-       id="enfranchisement-text"><tspan
-         sodipodi:role="line"
-         id="tspan4460"
-         x="250"
-         y="900">enfranchisement</tspan></text>
-    <path
-       class="mysegment"
-       style="fill:#4edd4e"
-       id="green-segment2"
-       sodipodi:type="arc"
-       sodipodi:cx="525"
-       sodipodi:cy="665"
-       sodipodi:rx="250"
-       sodipodi:ry="250"
-       sodipodi:start="3.1415927"
-       sodipodi:end="4.712389"
-       d="M 275,665 A 250,250 0 0 1 525,415 l 0,250 z" />
-    <text
-       xml:space="preserve"
-       class="mytext"
-       style="fill:#4edd4e"
-       x="250"
-       y="425"
-       id="vulnerabilities-text"><tspan
-         sodipodi:role="line"
-         id="tspan4460"
-         x="250"
-         y="425">vulnerabilities</tspan></text>
-    <path
-       class="mysegment"
-       style="fill:#dddd4e"
-       id="yellow-segment2"
-       sodipodi:type="arc"
-       sodipodi:cx="525"
-       sodipodi:cy="665"
-       sodipodi:rx="250"
-       sodipodi:ry="250"
-       sodipodi:start="4.712389"
-       sodipodi:end="0"
-       d="m 525,415 a 250,250 0 0 1 250,250 l -250,0 z" />
-    <text
-       xml:space="preserve"
-       class="mytext"
-       style="fill:#dddd4e"
-       x="800"
-       y="425"
-       id="society-text"><tspan
-         sodipodi:role="line"
-         id="tspan4460"
-         x="800"
-         y="425">society</tspan></text>
-  </g>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Do not edit this file locally. -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Do not edit this file locally. -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!---->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Do not edit this file locally. -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Back matter-->
+
+
+<!-- Do not edit this file locally. -->
+<!-- The last names to be defined. Should be defined entirely in terms of macros from above-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<svg width="254mm" height="127mm" viewBox="0 0 600 300">
+  <path style="fill:rgb(221,221,78);fill-opacity:1;stroke:none" id="society-segment" class="dpath" d="M 300,50 a 100,100 0 0 1 100,100 l -100,0 z"/>
+  <text style="fill:rgb(221,221,78)" x="400" y="50" class="dtext" id="society-text"><tspan x="400" y="50">society</tspan></text>
+  \fragmentgroup{<path style="fill:rgb(78,221,78);fill-opacity:1;stroke:none" id="vulnerability-segment" class="dpath" d="M 200,150 a 100,100 0 0 1 100,-100 l 0,100 z"/>
+  <text style="fill:rgb(78,221,78)" x="175" y="50" class="dtext" id="vulnerability-text"><tspan x="175" y="50">vulnerabilities</tspan></text>}{1}
+  \fragmentgroup{<path style="fill:rgb(78,78,221);fill-opacity:1;stroke:none" id="enfranchisement-segment" class="dpath" d="M 300,250 a 100,100 0 0 1 -100,-100 l 100,0 z"/>
+  <text style="fill:rgb(78,78,221)" x="175" y="250" class="dtext" id="enfranchisement-text"><tspan x="175" y="250">enfranchisement</tspan></text>}{2}
+  \fragmentgroup{<path style="fill:rgb(221,78,78);fill-opacity:1;stroke:none" id="individual-segment" class="dpath" d="M 400,150 a 100,100 0 0 1 -100,100 l 0,-100 z"/>
+  <text style="fill:rgb(221,78,78)" x="400" y="250" class="dtext" id="individual-text"><tspan x="400" y="250">individual</tspan></text>}{3}
 </svg>

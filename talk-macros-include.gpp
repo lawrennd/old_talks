@@ -1,0 +1,3 @@
+\ifndef{talkInclude}\define{talkInclude}\define{\concat{argone}{argtwo}}{\argone\argtwo}\define{\input{filename}}{\mode{push}\mode{standard}{default}concat(\\,include){filename}
+#mode pop}
+\defeval{\inputdiagram{filename}}{\input{\filename.svg}}\endif

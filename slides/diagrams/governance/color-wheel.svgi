@@ -1,0 +1,10 @@
+<svg width="254mm" height="127mm" viewBox="0 0 600 300">
+  \dpath{M 300,50 a 100,100 0 0 1 100,100 l -100,0 z}{fill:\societyColor;fill-opacity:1;stroke:none}{society-segment}
+  \dtext{society}{400}{50}{fill:\societyColor}{society-text}
+  \fragmentgroup{\dpath{M 200,150 a 100,100 0 0 1 100,-100 l 0,100 z}{fill:\vulnerabilityColor;fill-opacity:1;stroke:none}{vulnerability-segment}
+  \dtext{vulnerabilities}{175}{50}{fill:\vulnerabilityColor}{vulnerability-text}}{1}
+  \fragmentgroup{\dpath{M 300,250 a 100,100 0 0 1 -100,-100 l 100,0 z}{fill:\enfranchisementColor;fill-opacity:1;stroke:none}{enfranchisement-segment}
+  \dtext{enfranchisement}{175}{250}{fill:\enfranchisementColor}{enfranchisement-text}}{2}
+  \fragmentgroup{\dpath{M 400,150 a 100,100 0 0 1 -100,100 l 0,-100 z}{fill:\individualColor;fill-opacity:1;stroke:none}{individual-segment}
+  \dtext{individual}{400}{250}{fill:\individualColor}{individual-text}}{3}
+</svg>
