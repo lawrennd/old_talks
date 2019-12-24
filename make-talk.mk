@@ -100,36 +100,33 @@ ${BASE}.slides.ipynb: ${BASE}.slides.ipynb.markdown
 	rm ${BASE}.tmp.markdown
 
 
-${BASE}.slides.pptx.markdown: ${BASE}.markdown ${DEPS}
-	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -DPPTX=1 -DSLIDES=1 ${PPFLAGS} --include ../_includes/talk-notation.tex $< -o $@  
+%.slides.pptx.markdown: %.md ${DEPS}
+	${PP} $< -o $@ --to pptx --format slides ${PPFLAGS} -B ../_includes/talk-notation.tex
 
-${BASE}.slides.html.markdown: ${BASE}.markdown ${DEPS}
-	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -DHTML=1 -DSLIDES=1 ${PPFLAGS} --include ../talk-macros.gpp $< -o $@
+%.slides.html.markdown: %.md ${DEPS}
+	${PP} $< -o $@ --to html --format slides ${PPFLAGS} 
 
-%.notes.html.markdown: %.markdown ${DEPS}
-	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -DNOTES=1 -DHTML=1 ${PPFLAGS} --include ../talk-macros.gpp $< -o $@
+%.notes.html.markdown: %.md ${DEPS}
+	${PP} $< -o $@ --format notes --to html ${PPFLAGS} 
 
-%.notes.tex.markdown: %.markdown ${DEPS}
-	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -DNOTES=1 -DTEX=1 ${PPFLAGS} --include ../talk-macros.gpp $< -o $@
+%.notes.tex.markdown: %.md ${DEPS}
+	${PP} $< -o $@ --format notes --to tex ${PPFLAGS} 
 	# Fix percentage width for latex.
 	sed -i -e 's/width=\(.*\)\%/width=0.\1\\textwidth/g' $@
 	sed -i -e 's/height=\(.*\)\%/height=0.\1\\textheight/g' $@
 
-%.notes.docx.markdown: %.markdown ${DEPS}
-	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -DNOTES=1 -DDOCX=1 ${PPFLAGS} --include ../talk-macros.gpp  $< -o $@
+%.notes.docx.markdown: %.md ${DEPS}
+	${PP} $< -o $@ --format notes --to docx ${PPFLAGS} 
 
-%.notes.ipynb.markdown: %.markdown ${DEPS}
-	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -DIPYNB=1 -DNOTES=1 ${PPFLAGS} --include ../talk-macros.gpp $< -o $@
+%.notes.ipynb.markdown: %.md ${DEPS}
+	${PP} $< -o $@ --format notes --to ipynb ${PPFLAGS} 
 
-%.slides.ipynb.markdown: %.markdown ${DEPS}
-	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -DIPYNB=1 -DSLIDES=1 ${PPFLAGS} --include ../talk-macros.gpp $< -o $@
+%.slides.ipynb.markdown: %.md ${DEPS}
+	${PP} $< -o $@ --format slides --to ipynb ${PPFLAGS} 
 
-
-%.markdown: %.md
-	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" ${PPFLAGS} --include ../talk-macros-include.gpp $< -o $@
 
 %.svg: %.svgi
-	${PP} -U "\\" "" "{" "}{" "}" "{" "}" "#" "" -DHTML=1 -DNOTES=1 ${PPFLAGS} --include svgi-includes.gpp $< -o $@
+	${PP} $< -o $@ --format notes --to svg ${PPFLAGS} --include svgi-includes.gpp 
 
 %.pdf: %.svg
 	${INKSCAPE} $< --export-pdf=$@ --without-gui

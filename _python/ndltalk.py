@@ -19,19 +19,26 @@ defaults = {'categories': ['notes'],
             'potx': '../_includes/custom-reference.potx',
             'dotx': '../_includes/custom-reference.dotx'}
 
-def header_fields(filename):
-    """Extract headers from a talk file."""
+class FileFormatError(Exception):
+    pass
+
+def extract_header_body(filename):
+    """Extract the text of the headers and body from a talk file."""
     md= open(filename, 'r')
     text = md.read()
     md.close()
-    match = re.findall('^---[\s\S]+?---', text)
-    if match:
-        # Strips `---` to create a valid yaml object
-        ymd = match[0].replace('---', '')
-        return yaml.load(ymd, Loader=yaml.FullLoader)
-    md.close()
+    z = re.fullmatch("(^---[\s\S]+---)\n([\s\S]*)", text)
+    if z:
+        return z.groups()[0].replace('---', ''), z.groups()[1]
+    else:
+        raise FileFormatError(1, "This does not appear to be a valid talk file.", filename)
+    
+def header_fields(filename):
+    """Extract headers from a talk file."""
+    head, _ = extract_header_body(filename)
+    return yaml.load(head, Loader=yaml.FullLoader)
 
-    raise OSError(1, "This does not appear to be a valid talk file.", filename)
+    raise FileFormatError(1, "This does not appear to be a valid talk file.", filename)
 
 def talk_field(field, filename):
     """Return one field from a talk."""
@@ -45,7 +52,7 @@ def header_field(field, fields):
         if field in defaults:
             answer=defaults[field]
         else:
-            raise OSError(1, "Field not found in file or defaults.", filename)
+            raise FileFormatError(1, "Field not found in file or defaults.", filename)
     else:
         answer = fields[field]
     return answer
@@ -80,7 +87,6 @@ def extract_all(filename):
 
 def extract_inputs(filename):
     """Extract input files from a talk"""
-    print(filename)
     f = open(filename, 'r')
     lines = f.readlines()
     f.close()

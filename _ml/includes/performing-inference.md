@@ -8,7 +8,7 @@
 * High dimensional integrals typically require approximation.
 }
 
-\notes{As far as combining our data and our model to form our prediction, the devil is in the detail. While everything is easy to write in terms of probability densities, as we move from $\text{data}$ and $\text{model}$ to $\text{prediction}$ there is that simple $\xrightarrow{\text{compute}}$ sign, which is now burying a wealth of difficulties. Each integral sign above is a high dimensional integral which will typically need approximation. Approximations also come with computational demands. As we consider more complex classes of functions, the challenges around the integrals become harder and prediction of future test data given our model and the data becomes so involved as to be impractical or impossible. 
+\notes{As far as combining our data and our model to form our prediction, the devil is in the detail. While everything is easy to write in terms of probability densities, as we move from $\text{data}$ and $\text{model}$ to $\text{prediction}$ there is that simple $\stackrel{\text{compute}}{\rightarrow}$ sign, which is now burying a wealth of difficulties. Each integral sign above is a high dimensional integral which will typically need approximation. Approximations also come with computational demands. As we consider more complex classes of functions, the challenges around the integrals become harder and prediction of future test data given our model and the data becomes so involved as to be impractical or impossible. 
 }
 
 \newslide{Linear Models}

@@ -4,9 +4,9 @@ MATHJAX="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=
 CSS=talks.css
 SLIDESHEADER=../slides-header.html
 POSTSHEADER=../posts-header.html
-PP=gpp
+PP=../mdpp.py
 PPFLAGS=-T 
-PPFLAGS=-I./.. 
+PPFLAGS=--include-path ./.. 
 BIBFLAGS=--bibliography=../lawrence.bib --bibliography=../other.bib --bibliography=../zbooks.bib 
 CITEFLAGS=--filter pandoc-citeproc --csl=../elsevier-harvard.csl ${BIBFLAGS}
 PDSFLAGS=-s ${CITEFLAGS} --mathjax=${MATHJAX} 

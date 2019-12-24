@@ -1,3 +1,3 @@
-BASE=machine-learning-and-the-physical-world
+BASE=what-is-machine-learning
 include ../make-talk-flags.mk
 include ../make-talk.mk

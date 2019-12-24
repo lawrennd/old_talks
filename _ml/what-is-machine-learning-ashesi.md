@@ -37,7 +37,7 @@ transition: None
 * Fundamentally dependent on models
 }\notes{Machine learning is the combination of data and models, through computation, to make predictions.}
 $$
-\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}
+\text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{prediction}
 $$
 
 \subsection{Data Revolution}

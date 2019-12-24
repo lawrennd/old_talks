@@ -9,7 +9,7 @@ form a prediction.}
 
 \newslide{}
 
-$$\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$
+$$\text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{prediction}$$
 
 \notes{A machine learning prediction is made by combining a model with data to form the prediction. The manner in which this is done gives us the machine learning *algorithm*.}
 

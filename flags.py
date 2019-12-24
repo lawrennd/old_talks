@@ -1,20 +1,29 @@
 #!/usr/bin/env python3
 
-import sys
+import argparse
 import os
 import _python.ndltalk as nt
 
 
+parser = argparse.ArgumentParser()
+parser.add_argument("output",
+                    type=str,
+                    choices=['post', 'docx', 'pptx'],
+                    help="The type of output file (post is for a jekyll post, docx for word, pptx for powerpoint)")
+parser.add_argument("base",
+                    type=str,
+                    help="The base part of the filename")
 
-output = sys.argv[1]
-base = sys.argv[2]
-filename = base + '.md'
+
+args = parser.parse_args()
+
+filename = args.base + '.md'
 
 fields = nt.header_fields(filename)
 date = nt.header_field('date', fields).strftime("%Y-%m-%d")
-out = date + '-' + base
+out = date + '-' + args.base
 
-if output == 'post':
+if args.output == 'post':
     lines = """--metadata date={date} --metadata layout=talk"""
     for ext in ['docx', 'pptx']:
         if nt.header_field(ext, fields):
@@ -32,11 +41,11 @@ if output == 'post':
     
     print(lines.format(out=out, date=date))
 
-if output=='docx':
+if args.output=='docx':
     lines = '--reference-doc ' + nt.header_field('dotx', fields)
     print(lines)
 
-if output=='pptx':
+if args.output=='pptx':
     lines = '--reference-doc ' + nt.header_field('potx', fields)
     print(lines)
     

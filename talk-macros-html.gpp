@@ -84,6 +84,7 @@ Store Caption: \storeCaption
 \define{\includeimgclip{filename}{top}{right}{bottom}{left}{width}{class}{align}}{<img class="\class" src="\filename" style="width:\width;clip:rect(\top,\right,\bottom,\left)">}
 \define{\includeimgclip{filename}{top}{right}{bottom}{left}{width}{class}}{<img class="\class" src="\filename" width="\width" style="background:none; border:none; box-shadow:none; position:absolute; clip:rect(\top,\right,\bottom,\left);vertical-align:middle">}
 \defeval{\includediagram{filename}{width}{class}{style}}{<object class="svgplot \class" data="\filename.svg" width="\width" style="\style "></object>}
+\defeval{\includediagramclass{filename}{width}{class}{style}}{<object class="\class" data="\filename.svg" width="\width" style="\style "></object>}
 \define{\inlinediagram{svgcode}}{\svgcode}
 \define{\inputdiagram{filename}}{\input{\filename.svg}}
 \define{\includehtml{filename}{width}{height}}{<iframe src="\filename" width="\width" height="\height" allowtransparency="true" frameborder="0">

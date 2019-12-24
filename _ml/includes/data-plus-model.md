@@ -6,7 +6,7 @@
 \slides{
 . . .
 
-$$ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$
+$$ \text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{prediction}$$
 
 . . .
 
@@ -32,7 +32,7 @@ $$ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$
 
 \notes{What is machine learning? At its most basic level machine learning is a combination of
 
-$$\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$
+$$\text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{prediction}$$
 
 where *data* is our observations. They can be actively or passively
 acquired (meta-data). The *model* contains our assumptions, based on

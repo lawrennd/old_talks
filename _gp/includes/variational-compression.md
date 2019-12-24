@@ -73,7 +73,7 @@ $$\det{\mathbf{Q}} < \prod_{i=1}^k \exp\left(q_{i,i}\right)$$
     be seen as a *communication channel*.
 
 -   Normally we have: [\Large
-    $$\text{Transmitter} \xrightarrow{\inducingVector} \begin{smallmatrix}p(\mappingFunctionVector|\inducingVector) \\ \text{Channel}\end{smallmatrix} \xrightarrow{\mappingFunctionVector} \text{Receiver}$$]{}
+    $$\text{Transmitter} \stackrel{\inducingVector}{\rightarrow} \begin{smallmatrix}p(\mappingFunctionVector|\inducingVector) \\ \text{Channel}\end{smallmatrix} \stackrel{\mappingFunctionVector}{\rightarrow} \text{Receiver}$$]{}
     and we control $p(\inducingVector)$ (the source density).
 
 -   *Here* we can also control the transmission channel

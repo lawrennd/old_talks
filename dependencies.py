@@ -1,25 +1,34 @@
 #!/usr/bin/env python3
 
-import sys
+import argparse
 import _python.ndltalk as nt
 
-dependency = sys.argv[1]
-filename = sys.argv[2]
+parser = argparse.ArgumentParser()
+parser.add_argument("dependency",
+                    type=str,
+                    choices=['all', 'diagrams', 'inputs', 'bibinputs'],
+                    help="The type of dependency that is required")
+parser.add_argument("filename",
+                    type=str,
+                    help="The filename where dependencies are being searched")
 
-if dependency == 'all':
-    listfiles = nt.extract_all(filename)
+
+args = parser.parse_args()
+
+if args.dependency == 'all':
+    listfiles = nt.extract_all(args.filename)
     print(' '.join(listfiles))
 
-elif dependency == 'diagrams':
-    listfiles = nt.extract_diagrams(filename)
+elif args.dependency == 'diagrams':
+    listfiles = nt.extract_diagrams(args.filename)
     print(' '.join(listfiles))
     
-elif dependency == 'inputs':    
-    listfiles = nt.extract_inputs(filename)
-    print(filename + ' ' + ' '.join(listfiles))
+elif args.dependency == 'inputs':    
+    listfiles = nt.extract_inputs(args.filename)
+    print(args.filename + ' ' + ' '.join(listfiles))
 
-elif dependency == 'bibinputs':
-    listfiles = nt.extract_bibinputs(filename)
+elif args.dependency == 'bibinputs':
+    listfiles = nt.extract_bibinputs(args.filename)
     print(' '.join(listfiles))
 
     

@@ -18,11 +18,11 @@ transition: None
 \include{_data-science/includes/gartner-hype-cycle-bd-ds-iot-ml.md}
 
 
-### Machine Learning
+\newslide{Machine Learning}
 
-$$ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$
+$$ \text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{prediction}$$
 
-### Machine Learning
+\newslide{Machine Learning}
 
 * Normal ML (& stats?) focus: model
 
@@ -30,7 +30,7 @@ $$ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$
 
 * motivation for data science
 
-### Background: Big Data
+\newslide{Background: Big Data}
 
 * The pervasiveness of data brings forward particular challenges.
 
@@ -41,7 +41,7 @@ $$ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$
 \include{_ai/includes/embodiment-factors.md}
 \include{_data-science/includes/evolved-relationship.md}
 
-### Effects
+\newslide{Effects}
 
 * This phenomenon has already revolutionised biology.
 
@@ -49,7 +49,7 @@ $$ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$
 
 * What does it mean for IoT
 
-### Internet of People
+\newslide{Internet of People}
 
 * Fog computing: barrier between cloud and device blurring.
     * Computing on the Edge
@@ -59,7 +59,7 @@ $$ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$
 * Complex feedback between algorithm and implementation
   
 
-### Challenges
+\newslide{Challenges}
 
 1. Paradoxes of the Data Society
 
@@ -69,7 +69,7 @@ $$ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$
 
 4. Deploying AI in the real world.
 
-### Challenges {.slide: data-transition="none"}
+\newslide{Challenges}
 
 1. ~~Paradoxes of the Data Society~~
 
@@ -80,7 +80,7 @@ $$ \text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$
 4. Deploying AI in the real world.
 
 
-### Quantifying the Value of Data
+\newslide{Quantifying the Value of Data}
 
 There's a sea of data, but most of it is undrinkable
 
@@ -89,14 +89,14 @@ There's a sea of data, but most of it is undrinkable
 We require data-desalination before it can be consumed!
 
 
-### Data --- Quotes from NIPS Workshop on ML for Healthcare
+\newslide{Data --- Quotes from NIPS Workshop on ML for Healthcare}
 
 * 90% of our time is spent on validation and integration (Leo Anthony Celi)
 * "The Dirty Work We Don't Want to Think About" (Eric Xing)
 * "Voodoo to get it decompressed" (Francisco Giminez)
 * In health care clinicians collect the data and often control the direction of research through guardianship of data.
 
-### Value
+\newslide{Value}
 
 * How do we measure value in the data economy?
 * How do we encourage data workers: curation and management
@@ -107,7 +107,7 @@ We require data-desalination before it can be consumed!
 \include{_data-science/includes/data-joel-tests.md}
 \include{_ai/includes/ml-systems-design.md}
 
-### Conclusion
+\newslide{Conclusion}
 
 * Data science offers a great deal of promise for personalized health
 * There are challenges and pitfalls
@@ -117,7 +117,9 @@ We require data-desalination before it can be consumed!
 
 * There are particular challenges around the Internet of Intelligence. 
 
-### Thanks!
+\thanks
 
 * twitter: \@lawrennd
 * blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
+
+\references

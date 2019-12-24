@@ -8,7 +8,7 @@
 
 \newslide{What is Machine Learning?}
 \slides{
-$$\text{data} + \text{model} \xrightarrow{\text{compute}} \text{prediction}$$
+$$\text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{prediction}$$
 
 > - To combine data with a model need:
       + **a prediction function** $\mappingFunction (\cdot)$ includes our beliefs about the regularities of the universe
