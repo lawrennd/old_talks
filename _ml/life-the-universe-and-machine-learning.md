@@ -9,7 +9,7 @@ abstract: "What is Machine Learning? Why is it useful for us? Machine
   transactions on your credit card. To put it simply, machine learning
   is about understanding data.
 
-  <p>In this lecture I will try and give a sense of the challenges we
+  In this lecture I will try and give a sense of the challenges we
   face in machine learning, with a particular focus on those that have
   inspired my research. We will look at applications of data modelling
   from the early 18th century to the present, and see how they relate
@@ -37,6 +37,7 @@ transition: None
 ---
 
 \include{talk-macros.tex}
+
 \include{_ml/includes/ceres-discovery.md}
 \include{_ml/includes/entropy-intro.md}
 \include{_ml/includes/uncertainty-in-practice.md}

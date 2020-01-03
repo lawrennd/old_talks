@@ -1,43 +1,49 @@
-\notes{### Discovery of Ceres
+\ifndef{ceresDiscovery}
+\define{ceresDiscovery}
+
+\editme
+
+\notes{\subsection{Discovery of Ceres}
 
 Year is 1801 Planet Ceres discovered in January by Giuseppe Piazzi, an italian priest, born in Lombardy, but working in Palermo, where he founded the observatory. He was later to die in Naples.}
 
 
 \slides{
-###  {data-transition="none"} 
+\newslide{} 
 
-\includeimg{../slides/diagrams/ceres/ceres-optimized-totally-faint.png}
+\includepng{../slides/diagrams/ceres/ceres-optimized-totally-faint}
 
-###  {data-transition="none"}
+\newslide{}
 
-\includeimg{../slides/diagrams/ceres/ceres-optimized-extremely-faint.png}
+\includepng{../slides/diagrams/ceres/ceres-optimized-extremely-faint}
 
-###  {data-transition="none"}
+\newslide{}
 
-\includeimg{../slides/diagrams/ceres/ceres-optimized-very-faint.png}
+\includepng{../slides/diagrams/ceres/ceres-optimized-very-faint}
 
-###  {data-transition="none"}
+\newslide{}
 
-\includeimg{../slides/diagrams/ceres/ceres-optimized-faint.png}
+\includepng{../slides/diagrams/ceres/ceres-optimized-faint}
 
-###  {data-transition="none"}
+\newslide{}
 }
-\includeimg{../slides/diagrams/ceres/ceres-optimized.png}
+\includepng{../slides/diagrams/ceres/ceres-optimized}
 
-###
+\newslide{}
 
-\includeimg{../slides/diagrams/ceres/giuseppe-piazzi.png}
+\includepng{../slides/diagrams/ceres/giuseppe-piazzi}
 
-###
+\newslide{}
 
-\includeimg{../slides/diagrams/ceres/monthly-magazine-ceres-piazzi.png}
+\includepng{../slides/diagrams/ceres/monthly-magazine-ceres-piazzi}
 
-###
+\newslide{}
 
 \includegooglebook{JBw4AAAAMAAJ}{PA280}
+
 @Piazzi:monatliche1801
 
-<!--[\includeimg{../slides/diagrams/ceres/ceres-beobachtung-von-piazzi.png}{100%}](https://play.google.com/books/reader?printsec=frontcover&output=reader&id=JBw4AAAAMAAJ&pg=GBS.PA280)-->
+<!--[\includepng{../slides/diagrams/ceres/ceres-beobachtung-von-piazzi}{100%}](https://play.google.com/books/reader?printsec=frontcover&output=reader&id=JBw4AAAAMAAJ&pg=GBS.PA280)-->
 
 \speakernotes{Image data ```wget http://server3.sky-map.org/imgcut?survey=DSS2&img_id=all&angle=4&ra=3.5&de=17.25&width=1600&height=1600&projection=tan&interpolation=bicubic&jpeg_quality=0.8&output_type=png```}
 
@@ -76,40 +82,41 @@ Year is 1801 Planet Ceres discovered in January by Giuseppe Piazzi, an italian p
     printLatexPlot('ceresData', '../../../ceres/tex/diagrams', 0.9*textWidth)
 }
 
-###
+\newslide{}
 
 \includediagram{../slides/diagrams/ceres/ceres-data}
 
-###
+\newslide{}
 
-\includeimg{../slides/diagrams/ceres/godfrey-kneller-isaac-newton-1689.png}
+\figure{\includepng{../slides/diagrams/ceres/godfrey-kneller-isaac-newton-1689}}{}{Godfrey Kneller portrait of Isaac Newton}{godfrey-kneller-isaac-newton}
 
 \notes{@Gauss:monatliche1801,@Gauss:astronomische02}
 
 \speakernotes{Named ceres because Ceres is strongly associated with Sicily}
 
 
-###
+\newslide{}
 
 \includegooglebook{JBw4AAAAMAAJ}{PA647}
 
-<!--[\includeimg{../slides/diagrams/ceres/gauss-ceres-prediction-monatliche.png}](https://play.google.com/books/reader?printsec=frontcover&output=reader&id=JBw4AAAAMAAJ&pg=GBS.PA647)-->
+<!--[\includepng{../slides/diagrams/ceres/gauss-ceres-prediction-monatliche}](https://play.google.com/books/reader?printsec=frontcover&output=reader&id=JBw4AAAAMAAJ&pg=GBS.PA647)-->
 
-###
-trim=0cm 9cm 0cm 12cm, clip=true
+\newslide{}
+<!--trim=0cm 9cm 0cm 12cm, clip=true-->
 \includegooglebook{JBw4AAAAMAAJ}{PA647}
-[\includeimg{../slides/diagrams/ceres/gauss-ceres-prediction-monatliche.png}](https://play.google.com/books/reader?printsec=frontcover&output=reader&id=JBw4AAAAMAAJ&pg=GBS.PA647)
 
-###
+<!--[\includepng{../slides/diagrams/ceres/gauss-ceres-prediction-monatliche}](https://play.google.com/books/reader?printsec=frontcover&output=reader&id=JBw4AAAAMAAJ&pg=GBS.PA647)-->
+
+\newslide{}
 
 <!---
 
-\includeimg{../slides/diagrams/ceres/ceres-orbit-gauss.png}
+\includepng{../slides/diagrams/ceres/ceres-orbit-gauss}
 -->
 
-###
+\newslide{}
 
-\includeimg{../slides/diagrams/ceres/bendixen-carl-friedrich-gauss-1828.png}
+\includepng{../slides/diagrams/ceres/bendixen-carl-friedrich-gauss-1828}
 
 
 <!--
@@ -118,9 +125,9 @@ trim=0cm 9cm 0cm 12cm, clip=true
 
 -->
 
-###
+\newslide{}
 
-\includeimg{../slides/diagrams/ceres/piazzi-cerere.png}
+\includepng{../slides/diagrams/ceres/piazzi-cerere}
 
 \speakernotes{Use image of the earth to introduce the unpredictability of the weather. 
 
@@ -134,23 +141,22 @@ Moon is 0.273 earths wide.
 Ceres is 0.0764 earths wide.
 }
 
-###
+\newslide{}
   
-\includeimg{../slides/diagrams/ceres/ceres-optimized.png}{3.82%}
-\includeimg{../slides/diagrams/ceres/full-moon-2010.png}{13.65%}
-\includeimg{../slides/diagrams/ceres/the-earth-seen-from-apollo-17.png}{50%}
+\figure{\includepng{../slides/diagrams/ceres/ceres-optimized}{3.82%}{}{left}
+\includepng{../slides/diagrams/ceres/full-moon-2010}{13.65%}{}{center}
+\includepng{../slides/diagrams/ceres/the-earth-seen-from-apollo-17}{50%}{right}}{}{ceres-moon-earth}
 
-###
+\newslide{}
   
-\notes{This image from http://upload.wikimedia.org/wikipedia/commons/c/c4/Planets2008.jpg}
 
-\includeimg{../slides/diagrams/ceres/planets-2008.jpg}
+\figure{\includejpg{../slides/diagrams/ceres/planets-2008}{}}{This image from http://upload.wikimedia.org/wikipedia/commons/c/c4/Planets2008.jpg}{planets-2008}
   
-###
-
-\notes{This image from http://www.popsci.com/sites/popsci.com/files/styles/large_1x_/public/dawn-two-bright-spots.jpg?itok=P5oeSRrc}
-
-\includeimg{../slides/diagrams/ceres/ceres.jpg}
+\newslide{}
 
 
+\figure{\includejpg{../slides/diagrams/ceres/ceres}{}}{This image from http://www.popsci.com/sites/popsci.com/files/styles/large_1x_/public/dawn-two-bright-spots.jpg?itok=P5oeSRrc}{ceres}
 
+
+
+\endif

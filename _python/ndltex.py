@@ -161,31 +161,24 @@ def extract_diagrams(lines, type='all'):
     """Extract all the diagrams listed in the file."""
     diagram_list = []
 
-    if type == 'all':
-        rebases = [r'\\includegraphics',
-                   r'\\includediagram',
-                   r'\\includediagramclass',
-                   r'\\includeimg',
-                   r'\\includegif',
-                   r'\\includepng',
-                   r'\\includejpg']
-    elif type == 'diagram':
-        rebases = [r'\\includediagram',
-                   r'\\includediagramclass']
-    elif type == 'img':
-        rebases = [r'\\includeimg']
-    elif type == 'png':
-        rebases = [r'\\includepng']
-    elif type == 'gif':
-        rebases = [r'\\includegif']
-    elif type == 'jpg':
-        rebases = [r'\\includejpg']
+    rebases={}
+    rebases['diagram'] = [r'\\includediagram',
+                          r'\\includediagramclass',
+                          r'\\inlinediagram']
+    rebases['img'] = [r'\\includeimg']
+    rebases['png'] = [r'\\includepng']
+    rebases['gif'] = [r'\\includegif']
+    rebases['jpg'] = [r'\\includejpg']
+    all_val = []
+    for key in rebases:
+        all_val += rebases[key]
+    rebases['all'] = all_val
         
     retails = [r" *\[[^\]]*\] *{([^}]*)}",
                 r"<[^>]*>{([^}]*)}",
                 r"<[^>]*>\[[^\]]*\]{([^}]*)}",
                 r"{([^}]*)}"]
-    for rebase in rebases:
+    for rebase in rebases[type]:
         for retail in retails:
             match_diagram = re.compile(rebase + retail)
             for line in lines:

@@ -87,32 +87,45 @@ def extract_all(filename):
 
 def extract_inputs(filename):
     """Extract input files from a talk"""
-    f = open(filename, 'r')
-    lines = f.readlines()
-    f.close()
+    if filename=='\\filename.svg':
+        return []
+    elif not os.path.exists(filename):
+        print("Warning the file {} does not exist.".format(filename))
+        return []
+    else:
 
-    filenames = latex.extract_inputs(lines)
-    list_files=[]
-    not_present=[]
-    for i, filename in enumerate(filenames):
-        includepos = os.path.join('../', filename)
-        if os.path.isfile(filename):
-            list_files.append(filename)
-        elif os.path.isfile(includepos):
-            list_files.append(includepos)
-        else:
-            not_present.append(filename)
-                
-    filenames = list_files
-    
-    for i, filename in enumerate(filenames):
-        list_files[i+1:i+1] = extract_inputs(filename) 
+        f = open(filename, 'r')
+        lines = f.readlines()
+        f.close()
 
-    return list_files + not_present
+        filenames = latex.extract_inputs(lines)
+        list_files=[]
+        not_present=[]
+        for i, filename in enumerate(filenames):
+            includepos = os.path.join('../', filename)
+            if os.path.isfile(filename):
+                list_files.append(filename)
+            elif os.path.isfile(includepos):
+                list_files.append(includepos)
+            elif filename == '\\filename.svg':
+                pass
+            else:
+                not_present.append(filename)
+
+        filenames = list_files
+
+        for i, filename in enumerate(filenames):
+            list_files[i+1:i+1] = extract_inputs(filename) 
+
+        return list_files + not_present
 
 def extract_diagrams(filename):
     """Extract diagrams from a talk"""
-    filenames = [filename] + extract_inputs(filename)
+    if os.path.exists(filename):
+        filenames = [filename] + extract_inputs(filename)
+    else:
+        print("Warning, input file {} doesn't exist.".format(filename))
+        return
 
     listdiagrams = []
     for filename in filenames:
@@ -120,9 +133,12 @@ def extract_diagrams(filename):
         if filename[:14] =='../talk-macros':
             continue
 
-        f = open(filename, 'r')
-        lines = f.readlines()
-        f.close()
+        if filename == '\\filename.svg':
+            continue
+        else:
+            f = open(filename, 'r')
+            lines = f.readlines()
+            f.close()
 
         for ext in ['png', 'jpg', 'gif']:
             diagrams = latex.extract_diagrams(lines, ext)
@@ -152,3 +168,5 @@ def extract_diagrams(filename):
     for diag in listdiagrams:
         full_list.append(os.path.abspath(diag))
     return full_list
+
+    

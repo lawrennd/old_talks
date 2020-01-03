@@ -72,4 +72,5 @@ import os
 runlist = ['gpp'] + arglist + ['tmp.md']
 print(' '.join(runlist))
 os.system(' '.join(runlist))
+os.system('rm tmp.md')
 #gpp  -DPPTX=1 -DSLIDES=1 ${PPFLAGS} --include ../_includes/talk-notation.tex $< -o $output
