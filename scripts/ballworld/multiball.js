@@ -25,7 +25,7 @@
 // SOFTWARE.
 
 
-var canvas = document.getElementById("skyCanvas");
+var canvas = document.getElementById("billiardsCanvas");
 var ctx = canvas.getContext("2d");
 
 var groundColor = 'rgba(56, 256, 56, 0.8)';

@@ -6,7 +6,7 @@
 \newslide{}
 
 \figure{<div>
-<canvas id="skyCanvas" width="900" height="500" style="border:1px solid black;display: block; "></canvas>
+<canvas id="billiardsCanvas" width="900" height="500" style="border:1px solid black;display: block; "></canvas>
 <script src="../scripts/ballworld/constructors.js"></script>
 <script src="../scripts/ballworld/script2.js"></script>
 <script src="../scripts/ballworld/ballworld.js"></script>

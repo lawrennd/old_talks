@@ -6,7 +6,7 @@
 \newslide{}
 
 \figure{<div>
-<canvas id="skyCanvas" width="900" height="500" style="border:1px solid black;display: block; "></canvas>
+<canvas id="kappenballCanvas" width="900" height="500" style="border:1px solid black;display: block; "></canvas>
 <input type="range" min="0" max="100" value="0" class="slider" id="stochasticityRange"/>
 <output id="scoreBox"></output>
 <output id="ballCountBox"></output>

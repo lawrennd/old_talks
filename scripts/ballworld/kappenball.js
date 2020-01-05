@@ -24,7 +24,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-var canvas = document.getElementById("skyCanvas");
+var canvas = document.getElementById("kappenballCanvas");
 var ctx = canvas.getContext("2d");
 
 var slider = document.getElementById("stochasticityRange");
