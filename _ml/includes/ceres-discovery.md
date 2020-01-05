@@ -11,31 +11,31 @@ Year is 1801 Planet Ceres discovered in January by Giuseppe Piazzi, an italian p
 \slides{
 \newslide{} 
 
-\includepng{../slides/diagrams/ceres/ceres-optimized-totally-faint}
+\figure{\includepng{../slides/diagrams/ceres/ceres-optimized-totally-faint}{60%}}{}{ceres-optimized-totally-faint}
 
 \newslide{}
 
-\includepng{../slides/diagrams/ceres/ceres-optimized-extremely-faint}
+\figure{\includepng{../slides/diagrams/ceres/ceres-optimized-extremely-faint}{60%}}{}{ceres-optimized-extremely-faint}
 
 \newslide{}
 
-\includepng{../slides/diagrams/ceres/ceres-optimized-very-faint}
+\figure{\includepng{../slides/diagrams/ceres/ceres-optimized-very-faint}{60%}}{}{ceres-optimized-very-faint}
 
 \newslide{}
 
-\includepng{../slides/diagrams/ceres/ceres-optimized-faint}
+\figure{}{\includepng{../slides/diagrams/ceres/ceres-optimized-faint}{60%}}{}{ceres-optimized-faint}
 
 \newslide{}
 }
-\includepng{../slides/diagrams/ceres/ceres-optimized}
+\figure{\includepng{../slides/diagrams/ceres/ceres-optimized}{60%}}{}{ceres-optimized}
 
 \newslide{}
 
-\includepng{../slides/diagrams/ceres/giuseppe-piazzi}
+\figure{\includepng{../slides/diagrams/ceres/giuseppe-piazzi}{60%}}{}{giuseppe-piazzi}
 
 \newslide{}
 
-\includepng{../slides/diagrams/ceres/monthly-magazine-ceres-piazzi}
+\figure{\includepng{../slides/diagrams/ceres/monthly-magazine-ceres-piazzi}}{}{monthly-magazine-ceres-piazzi}
 
 \newslide{}
 
@@ -84,7 +84,7 @@ Year is 1801 Planet Ceres discovered in January by Giuseppe Piazzi, an italian p
 
 \newslide{}
 
-\includediagram{../slides/diagrams/ceres/ceres-data}
+\figure{\includediagram{../slides/diagrams/ceres/ceres-data}{80%}}{}{ceres-data}
 
 \newslide{}
 
@@ -116,7 +116,7 @@ Year is 1801 Planet Ceres discovered in January by Giuseppe Piazzi, an italian p
 
 \newslide{}
 
-\includepng{../slides/diagrams/ceres/bendixen-carl-friedrich-gauss-1828}
+\figure{\includepng{../slides/diagrams/ceres/bendixen-carl-friedrich-gauss-1828}}{}{bendixen-carl-friedrich-gauss-1828}
 
 
 <!--
@@ -127,7 +127,7 @@ Year is 1801 Planet Ceres discovered in January by Giuseppe Piazzi, an italian p
 
 \newslide{}
 
-\includepng{../slides/diagrams/ceres/piazzi-cerere}
+\figure{\includepng{../slides/diagrams/ceres/piazzi-cerere}{60%}}{}{piazzi-cerere}
 
 \speakernotes{Use image of the earth to introduce the unpredictability of the weather. 
 
@@ -143,9 +143,9 @@ Ceres is 0.0764 earths wide.
 
 \newslide{}
   
-\figure{\includepng{../slides/diagrams/ceres/ceres-optimized}{3.82%}{}{left}
-\includepng{../slides/diagrams/ceres/full-moon-2010}{13.65%}{}{center}
-\includepng{../slides/diagrams/ceres/the-earth-seen-from-apollo-17}{50%}{right}}{}{ceres-moon-earth}
+\figure{\includeimg{../slides/diagrams/ceres/ceres-optimized.png}{3.82%}{}{left}
+\includeimg{../slides/diagrams/ceres/full-moon-2010.png}{13.65%}{}{center}
+\includeimg{../slides/diagrams/ceres/the-earth-seen-from-apollo-17.png}{50%}{right}}{}{ceres-moon-earth}
 
 \newslide{}
   
