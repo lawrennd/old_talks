@@ -88,7 +88,7 @@ Year is 1801 Planet Ceres discovered in January by Giuseppe Piazzi, an italian p
 
 \newslide{}
 
-\figure{\includepng{../slides/diagrams/ceres/godfrey-kneller-isaac-newton-1689}}{}{Godfrey Kneller portrait of Isaac Newton}{godfrey-kneller-isaac-newton}
+\figure{\includepng{../slides/diagrams/ml/godfrey-kneller-isaac-newton-1689}}{}{Godfrey Kneller portrait of Isaac Newton}{godfrey-kneller-isaac-newton}
 
 \notes{@Gauss:monatliche1801,@Gauss:astronomische02}
 
@@ -143,9 +143,9 @@ Ceres is 0.0764 earths wide.
 
 \newslide{}
   
-\figure{\includeimg{../slides/diagrams/ceres/ceres-optimized.png}{3.82%}{}{left}
-\includeimg{../slides/diagrams/ceres/full-moon-2010.png}{13.65%}{}{center}
-\includeimg{../slides/diagrams/ceres/the-earth-seen-from-apollo-17.png}{50%}{right}}{}{ceres-moon-earth}
+\figure{\centerdiv{\includeimg{../slides/diagrams/ceres/ceres-optimized.png}{3.82%}{}{left}
+\includeimg{../slides/diagrams/ceres/full-moon-2010.png}{13.65%}{}{left}
+\includeimg{../slides/diagrams/ceres/the-earth-seen-from-apollo-17.png}{50%}{}{left}}}{The surface area of Ceres is 2,850,000 square kilometers, it's a little bigger than Greenland, but quite a lot colder. The moone is about 27% of the width of the Earth. Ceres is 7% of the width of the Earth.}{ceres-moon-earth}
 
 \newslide{}
   
