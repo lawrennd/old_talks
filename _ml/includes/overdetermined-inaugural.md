@@ -83,8 +83,8 @@ $$2.5 = 2m + c$$}
 
 \notes{The solution was proposed by Pierre-Simon Laplace. His idea was to accept that the model was an incomplete representation of the real world, and the manner in which it was incomplete is *unknown*. His idea was that such unknowns could be dealt with through probability.}
 
-\include{_ml/includes/laplace-portrait.md}
-\include{_ai/includes/laplaces-determinism.md}
+\include{_physics/includes/laplace-portrait.md}
+\include{_physics/includes/laplaces-determinism.md}
 
 \notes{Laplace's concept was that the reason that the data doesn't match up to the model is because of unconsidered factors, and that these might be well represented through probability densities. He tackles the challenge of the unknown factors by adding a variable, $\noiseScalar$, that represents the unknown. In modern parlance we would call this a *latent* variable. But in the context Laplace uses it, the variable is so common that it has other names such as a "slack" variable or the *noise* in the system.
 

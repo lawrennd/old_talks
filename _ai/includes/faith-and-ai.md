@@ -21,8 +21,8 @@
 
 \notes{Ultraintelligence [@Good:ultraintelligent66] is similar to the notion of an interventionist god, with omniscience in the past, present and the future. This notion was described by Pierre Simon Laplace.}
 
-\include{_ml/includes/laplace-portrait.md}
-\include{_ai/includes/laplaces-determinism.md}
+\include{_physics/includes/laplace-portrait.md}
+\include{_physics/includes/laplaces-determinism.md}
 
 \newslide{Singularians}
 

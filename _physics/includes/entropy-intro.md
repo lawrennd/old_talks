@@ -2,23 +2,18 @@
 \define{entropyIntro}
 
 
-\include{_ml/includes/laplace-portrait.md}
-\include{_ai/includes/laplaces-determinism.md}
-
 \editme
 
-\newslide{}
-
-\figure{\includejpg{../slides/diagrams/ml/daniel-bernoulli}}{Daniel Bernoulli 1700-1782 Pressure from a gas is given by velocity of gas acting on sides (but constant velocity).}{daniel-bernoulli}
-
-\include{_ml/includes/entropy-billiards.md}
-\newslide{}
-
-\figure{\inputdiagram{../slides/diagrams/ml/gaussian-histogram}}}{James Clerk Maxwell 1831-1879 Derived distribution of velocities of particles in an ideal gas (elastic fluid).}{gaussian-histogram}
+\include{_physics/includes/daniel-bernoulli-hydrodynamica.md}
+\include{_physics/includes/entropy-billiards.md}
 
 \newslide{}
 
-\figure{\includepng{../slides/diagrams/ml/james-clerk-maxwell}{30%}{}{left}\includejpg{../slides/diagrams/ml/boltzmann2}{30%}{}{center}\includejpg{../slides/diagrams/ml/j-w-gibbs}{30%}{}{right}}{James Clerk Maxwell (1831-1879), Ludwig Boltzmann (1844-1906) Josiah Willard Gibbs (1839-1903)}{maxwell-boltzmann-gibbs}
+\figure{\inputdiagram{../slides/diagrams/ml/gaussian-histogram}}{James Clerk Maxwell 1831-1879 Derived distribution of velocities of particles in an ideal gas (elastic fluid).}{gaussian-histogram}
+
+\newslide{}
+
+\figure{\include{../slides/diagrams/ml/james-clerk-maxwell.png}{30%}{}{left}\includeimg{../slides/diagrams/ml/boltzmann2.jpg}{30%}{}{center}\includeimg{../slides/diagrams/ml/j-w-gibbs.jpg}{30%}{}{right}}{James Clerk Maxwell (1831-1879), Ludwig Boltzmann (1844-1906) Josiah Willard Gibbs (1839-1903)}{maxwell-boltzmann-gibbs}
 
 \newslide{}
 

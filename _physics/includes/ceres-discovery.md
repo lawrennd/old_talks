@@ -155,8 +155,7 @@ Ceres is 0.0764 earths wide.
 \newslide{}
 
 
-\figure{\includejpg{../slides/diagrams/ceres/ceres}{}}{This image from http://www.popsci.com/sites/popsci.com/files/styles/large_1x_/public/dawn-two-bright-spots.jpg?itok=P5oeSRrc}{ceres}
-
+\figure{\includejpg{../slides/diagrams/ceres/ceres}{60%}}{This image from http://www.popsci.com/sites/popsci.com/files/styles/large_1x_/public/dawn-two-bright-spots.jpg?itok=P5oeSRrc}{ceres}
 
 
 \endif

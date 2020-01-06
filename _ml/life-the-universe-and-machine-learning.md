@@ -38,8 +38,9 @@ transition: None
 
 \include{talk-macros.tex}
 
-\include{_ml/includes/ceres-discovery.md}
-\include{_ml/includes/entropy-intro.md}
+\include{_physics/includes/ceres-discovery.md}
+\include{_ml/includes/overdetermined-inaugural.md}
+\include{_physics/includes/entropy-intro.md}
 \include{_ml/includes/uncertainty-in-practice.md}
 <!--include{_ml/includes/firstOrderSystem.tex}-->
 \include{_sysbio/includes/p53-example.md}
