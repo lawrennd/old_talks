@@ -13,7 +13,7 @@ author:
   gscholar: r3SJcvoAAAAJ
   orchid: 0000-0001-9258-1030
 date: 2020-01-09
-venue: TERM
+venue: The Royal College for Emergency Medicine, London
 layout: talk
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
