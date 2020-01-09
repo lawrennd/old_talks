@@ -406,7 +406,71 @@ categories:
 <p>An excellent way of considering these two challenges can be done today, without major AI expertise. If you have an idea for how AI can help you in your job, here’s my suggestion. Go back to your department and mock-it-up. Whatever decision the AI is going to take can be first taken by a human. Decide what information that human will have available. Choose something where the human is going to make a decision quickly on the basis of only the information they have in front of them. The decision should be one that can take less than a second. Now install that human in your decision making pipeline. How is that decision going to be presented to patients, nurses and doctors? What does the interface look like? Remember, you don’t get to ask the decision maker to contextualise it, you need to be able to take the decision at face value and integrate it into your existing processes.</p>
 <p>I suspect there are very few areas where this can be usefully done in an exising A&amp;E department. Why aren’t there more? Because currently most of the processes rely on human flexibility and ability to contextualise. They are poorly documented, and in many cases deliberately obscured in an effort to protect individual domains. The very excercise of understanding why these decisions are difficult to make can be helpful in improving processes in any organisation, and I suspect A&amp;E departments in hospitals are no different.</p>
 <p>It’s equivalent to turning up in a 16th century farm with an internal combustion engine. At that time in the UK<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> 58% of the labour force worked in agriculture, today 1.2% of the labour force are in agriculture. But the only people who are empowered to make this change are the domain experts. The people in this room.</p>
-<h2 id="propagation-of-best-practice">Propagation of Best Practice</h2>
+<h1 id="public-use-of-data-for-public-good-edit">Public Use of Data for Public Good <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_health/includes/rolls-royce-analogy.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_health/includes/rolls-royce-analogy.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h1>
+<p>Since machine learning methods are so dependent on data, Understanding public attitudes to the use of their data is key to developing machine learning methods that maintain the trust of the public. Nowhere are the benefits of machine learning more profound, and the potential pitfalls more catastrophic than in the use of machine learning in health data.</p>
+<p>The promise is for methods that take a personalized perspective on our individual health, but health data is some of the most sensitive data available to us. This is recognised both by the public and by regulation.</p>
+<p>With this in mind The Wellcome Trust launched a report on <a href="https://wellcome.ac.uk/news/understanding-patient-data-launches-today">“Understanding Patient Data”</a> authored by Nicola Perrin, driven by the National Data Guardian’s recommendations.</p>
+<div class="figure">
+<div id="wellcome-trust-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/health/understanding-patient-data.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="wellcome-trust-magnify" class="magnify" onclick="magnifyFigure(&#39;wellcome-trust&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="wellcome-trust-caption" class="caption-frame">
+<p>Figure: The Wellcome Trust <a href="https://wellcome.ac.uk/news/understanding-patient-data-launches-today" target="_blank" >surveyed patients</a> to determine their attitudes to the sharing of their data.</p>
+</div>
+</div>
+<p>From this report we know that patients trust Universities and hospitals more than the trust commercial entities and insurers. However, there are a number of different ways in which data can be mishandled, it is not only the intent of the data-controllers that effects our data security.</p>
+<p>For example, the recent WannaCry virus attack which demonstrated the unpreparedness of much of the NHS IT infrastructure for a virus exhibiting an exploit that was well known to the security community. The key point is that the public trust the <em>intent</em> of academics and medical professionals, but actual <em>capability</em> could be at variance with the intent.</p>
+<div class="figure">
+<div id="bush-pilot-grant-mcconachie-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/health/bush-pilot-grant-mcconachie.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="bush-pilot-grant-mcconachie-magnify" class="magnify" onclick="magnifyFigure(&#39;bush-pilot-grant-mcconachie&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="bush-pilot-grant-mcconachie-caption" class="caption-frame">
+<p>Figure: Bush Pilot Grant McConachie. A Bush Pilot is expected to fly the plane, but also to be able to repair it in difficult and isolated conditions.</p>
+</div>
+</div>
+<p>The situation is somewhat reminiscient of early aviation. This is where we are with our data science capabilities. By analogy, the engine of the plane is our data security infrastructure, the basic required technology to make us safe. The pilot is the health professional performing data analytics. The nature of the job of early pilots and indeed today’s <em>bush pilots</em> (who fly to remote places) included a need to understand the mechanics of the engine. Just as a health data scientist, today, needs to deal with security of the infrastructure as well as the nature of the analysis.</p>
+<div class="figure">
+<div id="british-airways-at-sfo-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/health/British_Airways_at_SFO.jpg" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="british-airways-at-sfo-magnify" class="magnify" onclick="magnifyFigure(&#39;british-airways-at-sfo&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="british-airways-at-sfo-caption" class="caption-frame">
+<p>Figure: British Airways 747 at SFO. Today airlines lease their engines from Rolls Royce who take care of maintenance independently from the pilot.</p>
+</div>
+</div>
+<p>I suspect most passengers would find it disconcerting if the pilot of a 747 was seen working on the engine shortly before a flight. As aviation has become more widespread, there is now a separation of responsibilities between pilots and mechanics. For example, Rolls Royce goes so far as to maintain ownership of their engines, and lease them to the airline. The responsibility for maintenance of the engine is entirely with Rolls Royce, yet the pilot is responsibility for the safety of the aircraft and its passengers.</p>
+<p>We need to develop a modern data-infrastructure for which separates the need for security of infrastructure from the decision making of the data analyst.</p>
+<p>This separation of responsibility according to expertise needs to be emulated when considering health data infrastructure. This resolves the <em>intent-capability</em> dilemma, by ensuring a separation of responsibilities to those that are best placed to address the issues.</p>
+<div class="figure">
+<div id="black-box-thinking-figure" class="figure-frame">
+<a href="https://www.amazon.co.uk/Black-Box-Thinking-Surprising-Success-ebook/dp/B00PW634YQ" target="_blank" >
+<div class="centered centered" style="">
+<img class="" src="../slides/diagrams/health/black-box-thinking.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<p></a></p>
+</div>
+<div id="black-box-thinking-magnify" class="magnify" onclick="magnifyFigure(&#39;black-box-thinking&#39;)">
+<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
+</div>
+<div id="black-box-thinking-caption" class="caption-frame">
+<p>Figure: Black Box Thinking by Matthew Syed. Matthew compares the open approach to erros taken in the airline industry to way errors are dealt with in the health system.</p>
+</div>
+</div>
+<h2 id="propagation-of-best-practice-edit">Propagation of Best Practice <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_health/includes/black-box-thinking.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_health/includes/black-box-thinking.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
 <p>We must also be careful to maintain openness in this new genaration of digital solutions for patient care. Matthew Syed’s book, “Black Box Thinking” <span class="citation" data-cites="Syed:blackbox15">(Syed 2015)</span>, emphasizes the importance of surfacing errors as a route to learning and improved process. Taking aviation as an example, and contrasting it with the culture in medicine, Matthew relates the story of <a href="https://chfg.org/trustees/martin-bromiley/">Martin Bromiley</a>, an airline pilot whose wife died during a routine hospital procedure and his efforts to improve the culture of safety in medicine. The motivation for the book is the difference in culture between aviation and medicine in how errors are acknowledged and dealt with. We must ensure that these high standards of oversight apply to the era of data-driven automated decision making.</p>
 <p>In particular, while there is much to be gained by involving comemrcial companies, if the process by which they are drawing inference about patient condition is hidden (for example, due to commercial confidentiality), this may prevent us from understanding errors in diagnosis or treatment. This would be a retrograde step. It may be that health device certification needs modification or reform for data-driven automated decision making, but we need a spirit of transparency around how these systems are deriving their inferences to ensure best practice.</p>
 <h1 id="references" class="unnumbered">References</h1>
