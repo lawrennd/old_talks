@@ -51,6 +51,11 @@ Although the computer is more advanced than the steam engine in many respects, i
 
 \figure{\includejpg{../slides/diagrams/ai/person-cute-portrait-young-small-child-684477-pxhere.com}}{Machines are as helpless and unaware as small children, and less cute. Just like a small child they require us to maintain and service them.}{young-baby-image}
 
+\newslide{}
+
+\figure{\includejpg{../slides/diagrams/ai/Giant_BabyOne}}{When we deploy at scale the damage done by deploying a naive machine can feel exactly like the damage done by deploying a maliscious machine.}{giant-baby-image}
+
+
 \notes{The machine is also relentless, as long as it is fed, it can complete actions tirelessly, day or night.}
 
 \notes{Having said that, it's remarkable what we're doing today with computers and statistics. And the drive for this is really the quantity of data available. In particular we have significant advances in what we might think of as tasks that traditionally needed human perception to solve. For example, object detection in images. We can now train computers to identify and highlight objects that a decade ago were only identifiable by humans.
