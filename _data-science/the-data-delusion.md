@@ -1,4 +1,5 @@
 ---
+title: The Data Delusion
 abstract: "The race on to develop the next generation of artificially intelligent
   algorithms, recent successes in hitherto unmanageable problems have somewhat blinded
   us to our own capabilities. Despite the commercial success of the current generation
@@ -23,6 +24,5 @@ pdf: True
 ppt: True
 published: 2016-03-21
 section: pre
-title: The Data Delusion
 venue: MARS Conference, Parker Palm Springs, Palm Springs, CA
 ---

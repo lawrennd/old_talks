@@ -1,5 +1,8 @@
 ---
 title: "Machine Learning and Emergency Medicine"
+extras:
+- link: https://arxiv.org/abs/1705.07996
+  label: Paper on Mind and Machine Intelligence
 layout: slides
 author:
 - given: Neil D.
@@ -50,7 +53,8 @@ The truth is that the current generation of artificial intelligence solutions ar
 \define{\stubname}{anne-computer-conversation}
 \include{_ai/includes/anne-bob-talk.md}
 
-\notes{Two particular biases that are important are [automation bias](https://en.wikipedia.org/wiki/Automation_bias) and 
+
+\notes{A particular bias that is important is [automation bias](https://en.wikipedia.org/wiki/Automation_bias)}
 
 \notes{I was skimming a recent nature paper about these techniques in medicine, a paper that used machine learning to classify potentially cancerous images. Throuhout the paper they refer to an 'AI system'. Whether it is conscious or not, the paper plays on our tendency to anthrox. It makes the work feel like it's doing something magical, that it relates to our intelligence. This is a particularly dangerous trap for a medical professional to fall into.}
 
@@ -60,6 +64,8 @@ Domain experts have an understanding of context of decisions, and an intuition a
 
 Users are placing trust in the decision making process. They want to believe in the outcome, and like to think that it considers there personal circumstances and that it is fair in some way.}
 
+\include{_ai/includes/newcomen-steam-engine.md}
+
 \notes{The promise of artificial intelligence is that it is the first generation of automation that will adapt to us rather than us adapting to it. What do I mean by that? The challenges of automation are not new. In the 18th century, automation of the physical labour of pumping mines clear of water was a priority, and the steam engine was invented and evolved for that task. The challenge is that the engine is not flexible, it is designed to do one job repetitively. It is like a small baby. It needs feeding, it needs cleaning, and it has regular emissions. It has no concept of time or convenience of those that maintain it. 
 
 Although the computer is more advanced than the steam engine in many respects, it is still utterly dependent on its human operators. For the information it gets in the form of data (the input coal) to the actions it takes in response (the operation of the mine pump). It doesn't have a contextual awareness of side effects of those decisions because they don't fall within its cognitive landscape. Just like the steam engine, it doesn't wear nappies, so any unaccounted for side effects of feeding it with data are felt by the environment.}
@@ -67,6 +73,9 @@ Although the computer is more advanced than the steam engine in many respects, i
 \newslide{}
 
 \figure{\includejpg{../slides/diagrams/ai/person-cute-portrait-young-small-child-684477-pxhere.com}{70%}}{Machines are as helpless and unaware as small children, and less cute. Just like a small child they require us to maintain and service them.}{young-baby-image}
+
+
+\include{_health/includes/doctor-and-patient.md}
 
 \newslide{}
 
@@ -85,6 +94,8 @@ How have we achieved this?}
 
 \notes{On average we may be able to show that these machines outperform us, but this also can bring problems. It turns out to be important not just whether we are wrong, but how we are wrong.}
 
+
+\include{_ai/includes/watt-steam-engine.md}
 
 \include{_ml/includes/bias-variance-plots.md}
 

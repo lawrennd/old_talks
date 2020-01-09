@@ -50,9 +50,7 @@ transition: None
 
 \div{\includediagram{../slides/diagrams/data-science/hilbert-info-growth}}{}{text-align:center}
 
-\newslide{}
-
-\div{\includeimg{../slides/diagrams/Newcomen6325.png}{}{negate}}{}{height:600px;text-align:center}
+\include{_data-science/includes/newcomen-engine.md}
 
 \newslide{}
 
@@ -68,7 +66,7 @@ transition: None
 
 \newslide{}
 
-\div{\includeimg{../slides/diagrams/Steen_Doctor_and_His_Patient.jpg}}{}{height:600px;text-align:center}
+\include{_health/includes/doctor-and-patient.md}
 
 \newslide{}
 
