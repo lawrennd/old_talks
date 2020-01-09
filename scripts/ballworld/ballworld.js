@@ -45,6 +45,10 @@ var beep = new Audio('beep');
 beep.volume = 1
 
 
+// By default inelastic collisions with no drag.
+var inelasticityFactor = 1.0;
+var dragFactor = 1.0;
+
 document.addEventListener("keydown", keyDownHandler);
 document.addEventListener("keyup", keyUpHandler);
 
@@ -133,6 +137,7 @@ function wallCollision(ball) {
 	if (ball.x - ball.radius + ball.dx < 0 ||
             ball.x + ball.radius + ball.dx > canvas.width) {
             ball.dx *= -1;
+	    applyInelasticity(ball);
 	}
 	if (ball.x + ball.radius > canvas.width) {
             ball.x = canvas.width - ball.radius;
@@ -149,6 +154,7 @@ function floorCollision(ball) {
 	if (ball.y - ball.radius + ball.dy < 0 ||
             ball.y + ball.radius + ball.dy > canvas.height) {
             ball.dy *= -1;
+	    applyInelasticity(ball);
 	}
 	if (ball.y + ball.radius > canvas.height) {
             ball.y = canvas.height - ball.radius;
@@ -255,6 +261,7 @@ function boxCollision() {
 		var dn = d.x*vec.x + d.y*vec.y;
 		ballArray[obj1].dx -= 2*dn*vec.x;
 		ballArray[obj1].dy -= 2*dn*vec.y;
+		applyInelasticity(ballArray[obj1]);
 	    }
 	}
     }
@@ -273,6 +280,7 @@ function Collision() {
 		var dn = d.x*vec.x + d.y*vec.y;
 		ballArray[obj1].dx -= 2*dn*vec.x;
 		ballArray[obj1].dy -= 2*dn*vec.y;
+		applyInelasticity(ballArray[obj1]);
 	    }
 	}
     }
@@ -299,7 +307,8 @@ function ballCollision() {
                 ballArray[obj1].dy = dy1F;                
                 ballArray[obj2].dx = dx2F;                
                 ballArray[obj2].dy = dy2F;
-                
+		applyInelasticity(ballArray[obj1]);
+		applyInelasticity(ballArray[obj2]);
                 if (soundOn)
                     beep.play();
             }            
@@ -327,6 +336,7 @@ function postCollision() {
 
                 ballArray[obj1].dx = dx1F;                
                 ballArray[obj1].dy = dy1F;                
+		applyInelasticity(ballArray[obj1]);
                 
                 if (soundOn)
                     beep.play();
@@ -414,6 +424,12 @@ function applyDiffusion() {
         ballArray[obj].dx += diffuseRandom(stochasticityScale*stochasticity);
     }
 }
+
+function applyInelasticity(ball) {
+    ball.dx *= inelasticityFactor;
+    ball.dy *= inelasticityFactor;
+}
+    
 
 function moveObjects() {
     for (var obj in ballArray) {

@@ -29,11 +29,13 @@ var ctx = canvas.getContext("2d");
 
 var slider = document.getElementById("stochasticityRange");
 var score = document.getElementById("scoreBox");
-score.value = 0
 var ballCount = document.getElementById("ballCountBox");
-ballCount.value = 0
 var energy = document.getElementById("energyBox");
+
+score.value = 0
+ballCount.value = 0
 energy.value = 0
+
 // Update the current slider value (each time you drag the slider handle)
 var stochasticity=slider.value
 slider.oninput = function() {
@@ -41,7 +43,6 @@ slider.oninput = function() {
 }
 
 var paused = false;
-
 var gravityOn = true;
 var dragOn = true;
 var soundOn = true;

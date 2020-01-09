@@ -1,3 +1,3 @@
-BASE=challenges-for-data-science-in-healthcare
+BASE=machine-learning-and-emergency-medicine
 include ../make-talk-flags.mk
 include ../make-talk.mk
