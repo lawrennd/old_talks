@@ -17,5 +17,5 @@ function showDivs(n,group) {
   for (i = 0; i < x.length; i++) {
      x[i].style.display = "none";  
   }
-  x[slideIndex-1].style.display = "block";  
+  //x[slideIndex-1].style.display = "block";  
 }

@@ -134,10 +134,10 @@ from ipywidgets import IntSlider}
 \newslide{}
 
 
-\slides{
+<!--\slides{
 \define{width}{80%} 
 \define{animationName}{bias-variance-plots}
-\startanimation{bias-variance-plots}{1}{26} 
+\startanimation{\animationName}{0}{10} 
 \newframe{\includepng{../slides/diagrams/ml/bias-variance000}{\width}}{\animationName}
 \newframe{\includepng{../slides/diagrams/ml/bias-variance001}{\width}}{\animationName}
 \newframe{\includepng{../slides/diagrams/ml/bias-variance002}{\width}}{\animationName}
@@ -152,6 +152,52 @@ from ipywidgets import IntSlider}
 
 \endanimation
 \caption{simple models on left complex models on right}
+}-->
+
+\slides{
+\newslide{}
+
+\figure{\includepng{../slides/diagrams/ml/bias-variance000}{\width}}{}{bias-variance}
+
+\newslide{}
+
+\figure{\includepng{../slides/diagrams/ml/bias-variance001}{\width}}{}{bias-variance}
+
+\newslide{}
+
+\figure{\includepng{../slides/diagrams/ml/bias-variance002}{\width}}{}{bias-variance}
+
+\newslide{}
+
+\figure{\includepng{../slides/diagrams/ml/bias-variance003}{\width}}{}{bias-variance}
+
+\newslide{}
+
+\figure{\includepng{../slides/diagrams/ml/bias-variance004}{\width}}{}{bias-variance}
+
+\newslide{}
+
+\figure{\includepng{../slides/diagrams/ml/bias-variance005}{\width}}{}{bias-variance}
+
+\newslide{}
+
+\figure{\includepng{../slides/diagrams/ml/bias-variance006}{\width}}{}{bias-variance}
+
+\newslide{}
+
+\figure{\includepng{../slides/diagrams/ml/bias-variance007}{\width}}{}{bias-variance}
+
+\newslide{}
+
+\figure{\includepng{../slides/diagrams/ml/bias-variance008}{\width}}{}{bias-variance}
+
+\newslide{}
+
+\figure{\includepng{../slides/diagrams/ml/bias-variance009}{\width}}{}{bias-variance}
+
+\newslide{}
+
+\figure{\includepng{../slides/diagrams/ml/bias-variance010}{\width}}{}{bias-variance}
 }
 
 \notes{\figure{\includepng{../slides/diagrams/ml/bias-variance000}{80%}\includepng{../slides/diagrams/ml/bias-variance010}{80%}}{In each figure the more simple model is on the left, and the more complex model is on the right. Each fit is done to a different version of the data set. The simpler model is more consistent in its errors (bias error), whereas the more complex model is varying in its errors (variance error).}{bias-variance-errors}}
