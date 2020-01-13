@@ -45,18 +45,10 @@ $$
 \notes{Machine learning has risen in prominence due to the rise in data availability, and its interconnection with computers. The high bandwidth connection between data and computer leads to a new interaction between us and data via the computer. It is that channel that is being mediated by machine learning techniques.}
 \figure{\includediagram{../slides/diagrams/data-science/new-flow-of-information}{60%}}{Large amounts of data and high interconnection bandwidth mean that we receive much of our information about the world around us through computers.}{data-science-information-flow}
 
-\include{_supply-chain/includes/supply-chain.md}
-\subsection{For Africa}
-\slides{
-* Infrastructure dominated by information.}
-\notes{There is a large opportunity because infrastructures around automation are moving from physical infrastructure towards information infrastructures. How can African countries benefit from a modern information infrastructure? The aim of Data Science Africa is to answer this question, with the answers coming from the attendees.}
-
+\include{_supply-chain/includes/supply-chain-africa.md}
 \include{_ml/includes/process-emulation.md}
-
 \include{_ml/includes/nigerian-nmis-data.md}
-
-\include{../_ml/includes/what-does-machine-learning-do.md}
-
+\include{_ml/includes/what-does-machine-learning-do.md}
 \include{_ml/includes/what-is-ml-2.md}
 \include{_ai/includes/ai-vs-data-science-2.md}
 \include{_ml/includes/neural-networks.md}

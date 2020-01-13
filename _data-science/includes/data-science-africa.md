@@ -2,6 +2,7 @@
 \define{dataScienceAfrica}
 \editme
 
+
 \notes{\subsection{Data Science Africa}}
 
 \newslide{} 

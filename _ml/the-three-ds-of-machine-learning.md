@@ -28,6 +28,7 @@ transition: None
 \subsection{Amazon: Bits and Atoms}
 
 \include{_supply-chain/includes/supply-chain.md}
+\include{_supply-chain/includes/ml-and-supply-chain.md}
 \include{_supply-chain/includes/supply-chain-motto.md}
 
 \include{_ml/includes/the-3ds-of-ml-systems-design.md}

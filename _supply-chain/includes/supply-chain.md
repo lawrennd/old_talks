@@ -17,7 +17,5 @@ The movement of goods from regions of supply to areas of demand is fundamental t
 
 \include{_supply-chain/includes/containerisation.md}
 
-\include{_supply-chain/includes/ml-and-supply-chain.md}
-
 
 \endif

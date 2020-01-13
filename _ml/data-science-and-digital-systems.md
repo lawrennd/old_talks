@@ -88,6 +88,7 @@ transition: None
 	* AI systems are *fragile*
 
 \include{_supply-chain/includes/supply-chain.md}
+\include{_supply-chain/includes/ml-and-supply-chain.md}
 \include{_ml/includes/or-control-econometrics-statistics-ml.md}
 
 \newslide{THE THREE Ds of ML SYSTEMS DESIGN}

@@ -2,7 +2,7 @@
 \define{bitsAndAtoms}
 \editme
 
-\section{The Physical World: Where Bits meet Atoms}
+\subsection{The Physical World: Where Bits meet Atoms}
 
 > The change from atoms to bits is irrevocable and unstoppable. Why now? Because the change is also exponential — small differences of yesterday can have suddenly shocking consequences tomorrow. 
 >
@@ -12,7 +12,16 @@
 
 That notion is the most fundamental notion for how the modern information infrastructure can help society. At Amazon the place where bits meet atoms is the *supply chain*. The movement of goods from manufacturer to customer, the supply chain.}
 
+\newslide{The Gap}
+
+\slides{* There is a gap between the world of data science and AI.
+* The mapping of the virtual onto the physical world.
+* E.g. Causal understanding. }
+
+\notes{There is a gap between the world of data science and AI. The mapping of the virtual onto the physical world, e.g causal and mechanistic understanding.}
+
 \include{_supply-chain/includes/supply-chain.md}
+\include{_supply-chain/includes/ml-and-supply-chain.md}
 
 <!--\newslide{The Supply Chain}
 

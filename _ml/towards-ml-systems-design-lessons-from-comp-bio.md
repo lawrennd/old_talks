@@ -36,6 +36,7 @@ categories:
 \include{_ml/includes/data-science-vs-ai.md}
 \include{_ml/includes/what-does-machine-learning-do.md}
 \include{_supply-chain/includes/supply-chain.md}
+\include{_supply-chain/includes/ml-and-supply-chain.md}
 \include{_ai/includes/deploying-ai.md}
 \include{_ai/includes/ml-systems-design-long.md}
 

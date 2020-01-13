@@ -32,9 +32,10 @@ transition: None
 * E.g. Causal understanding. 
 
 \include{_supply-chain/includes/supply-chain.md}
+\include{_supply-chain/includes/ml-and-supply-chain.md}
 <!--include{_ml/includes/or-control-econometrics-statistics-ml.md}-->
 
-\newslide{UNCERTAINTY QUANTIFICATION}
+\section{UNCERTAINTY QUANTIFICATION}
 
 \include{_ml/includes/process-emulation.md}
 \include{_uq/includes/emukit-playground.md}

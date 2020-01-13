@@ -41,6 +41,7 @@ categories:
 \include{_gp/includes/gp-intro-very-short.md}
 \include{_deepgp/includes/deep-olympic.md}
 \include{_supply-chain/includes/supply-chain.md}
+\include{_supply-chain/includes/ml-and-supply-chain.md}
 \include{_ai/includes/deploying-ai.md}
 \include{_ai/includes/ml-systems-design-long.md}
 \include{_uq/includes/emukit-software.md}

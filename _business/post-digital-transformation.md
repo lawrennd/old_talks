@@ -50,6 +50,7 @@ categories:
 \subsection{Example: Supply Chain}
 
 \include{_supply-chain/includes/supply-chain.md}
+\include{_supply-chain/includes/ml-and-supply-chain.md}
 
 <!--Duke of York Effect -->
 
