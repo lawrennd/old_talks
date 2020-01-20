@@ -33,7 +33,7 @@ include{../_ml/includes/what-does-machine-learning-do.md}-->
 
 \subsection{Example}
 
-\include{_ml/supply-chain/ml-and-supply-chain.md}
+\include{_supply-chain/includes/ml-and-supply-chain.md}
 \include{_ml/includes/or-control-econometrics-statistics-ml.md}
 \include{_ml/includes/general-ml-challenges.md}
 \include{_ml/includes/ml-outlook.md}
