@@ -99,6 +99,7 @@ And Jeff's store already does this. His store is actually a collection of many s
 
 So the little Jeff and little Narayan have realised that the solution to the innovators dilemma is the supply chain of ideas. To have great communications, like the dabbawalas between the origin of the ideas and the destination of the ideas.}
 
+\slides{\undefine{theDabbaWalas}}
 \include{_business/includes/the-dabbawalas.md}
 
 
