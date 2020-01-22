@@ -26,18 +26,18 @@ incremental: True
 
 \section{Introduction}
 
-\include{_ai/includes/embodiment-factors.md}
+\include{_ai/includes/embodiment-factors-tedx.md}
 \include{_ai/includes/embodiment-and-narrative.md}
 \include{_ai/includes/conversation-computer.md}
-\include{_cognitive-science/includes/mind-is-flat.md}
+\include{_cognitive-science/includes/the-mind-is-flat.md}
 
-locked in
+<!--locked in
 
 conversation
 
 kappenball
 
-Mind is flat (who you are is determined by who is around you)
+Mind is flat (who you are is determined by who is around you)-->
 
 \thanks
 

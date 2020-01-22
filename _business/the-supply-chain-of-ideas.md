@@ -54,7 +54,7 @@ Jeff sees this challenge as the innovator's dilemma. The idea that one day his s
 
 I never got a chance to talk to Jeff in person about this, but I did spend a lot of time with the Jeff inside my head. And here's what he said to me.
 
-He said: Neil, I don't know what the future's going to look like in terms of innovation. But I do know that my store is never going to want to pay more for ideas, it's never going to want to have to wait longer for those ideas to be deployed for our customers and it's never going to want to have fewer ideas available.
+He said: "Neil, I don't know what the future's going to look like in terms of innovation. But I do know that my store is never going to want to pay more for ideas, it's never going to want to have to wait longer for those ideas to be deployed for our customers and it's never going to want to have fewer ideas available."
 
 Now, apart maybe I'm not a very imaginative person, or maybe I was putting too little effort into imagining Jeff, or maybe I was spending too much time working on supply chain, but I started thinking. Huh, that sounds an awful lot like what Jeff says about delivering parcels. And that's how the idea for the "Supply Chain of Ideas" came about.
 
@@ -97,7 +97,7 @@ Now before he met little Narayan, he really liked the coconut model. He knew tha
 
 And Jeff's store already does this. His store is actually a collection of many stores, if you want to sell something you can do it by renting space in Jeff's store. He will bring the customers in, you just need to rent the space and deliver your sales.
 
-So the little Jeff and little Narayan have realised that the solution to the innovators dilemma is the supply chain of ideas. To have great communications, like the dabbawalas between the origin of the ideas and the destination of the ideas.}
+So the little Jeff and little Narayan have realised that the solution to the innovator's dilemma is the supply chain of ideas. To have great communications, like the dabbawalas between the origin of the ideas and the destination of the ideas.}
 
 \slides{\undefine{theDabbaWalas}}
 \include{_business/includes/the-dabbawalas.md}
@@ -105,7 +105,25 @@ So the little Jeff and little Narayan have realised that the solution to the inn
 
 \notes{This means they need to understand what the ideas are and where they should be deployed.
 
-The first step is forming an inventory of existing ideas, and where they are being deployed. The next step is assessing the future demand for ideas, and the final step is matching that demand to the suppliers of those ideas. This requires the intellectual transport network. Little Jeff knows that it will be impossible for his store to have all the ideas from his own employees that he needs to keep on innovating. He can make a research center, an idea factory, and that will help. But the reality of the supply chain of ideas is about the discoverability of the ideas and the assessment of demand for the ideas.}
+The first step is forming an inventory of existing ideas, and where they are being deployed. The next step is assessing the future demand for ideas, and the final step is matching that demand to the suppliers of those ideas. This requires the intellectual transport network. 
+
+Little Jeff knows that it will be impossible for his store to have all the ideas from his own employees that he needs to keep on innovating. He can make a research center, an idea factory, and that will help. But the reality of the supply chain of ideas is about the discoverability of the ideas and the assessment of demand for the ideas.
+
+Real Narayan once told me about the difference between a pull and a push supply chain. In a pull supply chain, the pressure of flow of goods through the supply chain is controlled by the distributors. Controlled by those who have access to the customer. The production of goods is controlled by the people closest to the customer. 
+
+In a push supply chain, their is a shortage of goods, the manufacturer decides where to distribute those goods because they can sell more product than they can make.
+
+In a pull supply chain the money is made at the storefront. The flow of the supply chain is controlled by the customer facing entity. In a push supply chain, the money is made by the manufacturer. They decide which distributors to sell to and make the largest margin.
+
+Narayan explained that the biggest shift over the 20th century was a move between push supply chain (where manufacturers make money) to a pull supply chain where big stores like Jeff's make the money.
+
+A pull supply chain benefits the customer because as long as there's competition between stores, prices stay low. But a pull supply chain is bad for the manufacturer because margins are low so they have to apply pressure to costs. A pull supply chain is indicative of a consumer society.
+
+The magic of the coconut tree 
+
+In Jeff's store, innovation is only important when it's deployed. So the supply chain of ideas needs to be a pull supply chain. The ideas need to be delivered just in time Little Jeff and little Narayan got to talking about what sort of supply chain is needed for ideas and imm
+
+So when little Jeff and little Narayan got around to }
 
 
 \thanks
