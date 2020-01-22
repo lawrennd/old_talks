@@ -3,7 +3,7 @@
 
 \newslide{}
 
-\figure{\includeyoutube{vxcz1XIKUmo}{800}{600}}{Arthur Christmas is the tale of delivering packages to children across the world in one night using 1.6 million elves using flying sleds. Truth is almost as strange as fiction, Amazon has over half a million employees, and drones aren't yet approved for more than test flights.}{arthur-christmas}
+\include{_supply-chain/includes/arthur-christmas-trailer.md}
 
 \notes{\subsection{Arthur Christmas}}
 
@@ -16,6 +16,6 @@ Of course, gift giving occurs at different times in different cultures, internal
 
 \notes{In Arthur Christmas the entire operation was run from a flying ship for present delivery, of course, that's a little ridiculous. The truth is that Amazon wants to use lots of little ships, or drones, and the team had the pleasure of working on developing those too.}
 
-\figure{\includeyoutube{3HJtmx5f1Fc}{800}{600}}{An actual Santa's sleigh. The transition from vertical to horizontal flight is vital for efficiency and requires sophisticated machine learning to achieve.}{amazon-drone-flight}
+\include{_supply-chain/includes/amazon-drone-flight.md}
 
 \endif
