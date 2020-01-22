@@ -10,6 +10,6 @@
 
 \newslide{}
 
-\figure{\includejpg{../slides/diagrams/business/mumbai-dabbawals}{60%}}{These dabbawalas are walking with the Tiffin Boxes, but trains, bicycles and carts are all used.}{tiffin-box}
+\figure{\includejpg{../slides/diagrams/business/mumbai-dabbawalas}{60%}}{These dabbawalas are walking with the Tiffin Boxes, but trains, bicycles and carts are all used.}{tiffin-box}
 
 \endif
