@@ -40,6 +40,8 @@ I like the simplicity of Jeff's perspective. Predicting what will happen in the 
 
 \include{_supply-chain/includes/prime-air-plane.md}
 
+\include{_supply-chain/includes/amazon-drone-flight.md}
+
 \notes{Jeff has another big worry. He thinks his store is the most innovative, but he's always horizon scanning. Jeff grew his store by exploiting the latest technology, being agile in his thinking and always staying one step ahead of his rivals. He asks all his staff to always be looking out for ways they can improve, to see what the new innovations are, to think about how the store can use them.
 
 Jeff knows that one day a young rival will come along with a new way of delivering products, of delivering gifts, and that young rival will put him out of business. Although he's never said it, I think that deep down, Jeff actually likes this idea, he thinks that's the way it should be. But still, he wants to delay the day that this happens to his store as long as possible.
