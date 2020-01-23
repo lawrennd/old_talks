@@ -120,8 +120,8 @@ How have we achieved this?}
 }
 
 \include{_health/includes/rolls-royce-analogy.md}
-\include{_health/includes/black-box-thinking.md}
-\include{_ai/includes/rebel-ideas.md}
+\include{_business/includes/black-box-thinking.md}
+\include{_business/includes/rebel-ideas.md}
 
 
 \thanks
