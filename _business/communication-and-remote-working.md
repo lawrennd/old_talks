@@ -33,8 +33,9 @@ incremental: True
 \include{_ai/includes/conversation-computer.md}
 \include{_cognitive-science/includes/why-red-doesnt-sound-like-a-bell.md}
 \include{_cognitive-science/includes/the-mind-is-flat.md}
+\include{_ai/includes/rebel-ideas.md}
 
-\newslide{Conclusions}
+\subsection{Conclusions}
 
 * Both Local and Remote Environments are Important
 * Regular Social Alignment is Missing
@@ -44,7 +45,7 @@ incremental: True
 * There *will* be background processes for remote people.
   * Is this healthy or us and them?
   
-\newslide{Next Steps}
+\subsection{Next Steps}
 
 * Agree challenges and meeting tenets across both sites.
 * Ensure local teams buy in. 
