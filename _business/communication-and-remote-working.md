@@ -24,8 +24,6 @@ incremental: True
 
 \include{talk-macros.tex}
 
-\section{Introduction}
-
 \include{_ai/includes/the-diving-bell-butterfly.md}
 \include{_ai/includes/jean-dominique-bauby.md}
 \include{_ai/includes/embodiment-factors-tedx.md}
@@ -35,6 +33,16 @@ incremental: True
 \include{_ai/includes/conversation-computer.md}
 \include{_cognitive-science/includes/why-red-doesnt-sound-like-a-bell.md}
 \include{_cognitive-science/includes/the-mind-is-flat.md}
+
+\newslide{Conclusions}
+
+* Both Local and Remote Environments are Important
+* Regular Social Alignment is Missing
+  * Trust is easily lost and difficult to regain.
+* More Structured Meetings might be Necessary
+* Mechanisms to Hear Everyone
+* There *will* be background processes for remote people.
+  * Is this healthy or us and them?
 
 <!--locked in
 
