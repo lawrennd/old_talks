@@ -43,6 +43,13 @@ incremental: True
 * Mechanisms to Hear Everyone
 * There *will* be background processes for remote people.
   * Is this healthy or us and them?
+  
+\newslide{Next Steps}
+
+* Agree challenges and meeting tenets across both sites.
+* Ensure local teams buy in. 
+* Rigorously apply those tenets.
+* Rigorously review those tenets.
 
 <!--locked in
 
