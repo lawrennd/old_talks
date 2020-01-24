@@ -20,7 +20,7 @@ pdfnotes: False
 reveal: False
 ipynb: False
 date: 2020-01-22
-venue: Lunchtime Talk, Intellect Cambridge Leadership Programme
+venue: "Lunchtime Talk, Cambridge Intellect Leadership Programme – Digital Transformation by Design"
 transition: None
 incremental: True
 ---
