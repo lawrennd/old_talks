@@ -27,7 +27,7 @@ incremental: True
 
 \include{talk-macros.tex}
 
-\section{Introduction}
+\section{Jeff's Shop}
 
 \notes{Jeff owns a large shop. He doesn't know what the future looks like, but what he does know is that his customers won't want to pay more than they pay today. They won't want to wait longer for orders. And they won't want a reduced selection in his store. 
 
@@ -44,6 +44,8 @@ I like the simplicity of Jeff's perspective. Predicting what will happen in the 
 \slides{\include{_supply-chain/includes/prime-air-plane.md}}
 
 \slides{\include{_supply-chain/includes/amazon-drone-flight.md}}
+
+\section{Innovation}
 
 \notes{Jeff has another big worry. He thinks his store is the most
 innovative, but he's always horizon scanning. Jeff grew his store by
@@ -66,6 +68,8 @@ he thinks that an idea can never be disruptive unless its deployed to
 the customer.}
 
 \include{_business/includes/the-innovators-dilemma.md}
+
+\section{Little Jeff}
 
 \notes{I used to work for Jeff, and one of the things I noticed about
 working for Jeff is he puts a lot of effort in trying to get you to
@@ -109,6 +113,8 @@ is popping up the tree and bringing us a fresh one down.}
 
 
 \include{_business/includes/kerala-coconut.md}
+
+\section{Dabawallas}
 
 \notes{Narayan once visited me in Cambridge. He wanted to go out to
 eat so he got a restaurant recommendation. Narayan lives in California
@@ -158,7 +164,9 @@ time to think and reflect.
 
 So maybe when Jeff says he needs the team to deliver faster, not
 everyone's always had the time to reflect on how we might be doing
-that. The teams focussed on delivering, not innovating.
+that. The team's focussed on delivering, not innovating.
+
+\section{Coconut Science}
 
 This, says real Narayan, is where a "supply chain of ideas" comes
 in. Now I'm not a very imaginative person, or maybe I was putting too
@@ -184,7 +192,7 @@ institute where all the ideas are developed together. The problem with
 this model is that the Walmart is too far from the river bank. So none
 of these scientific ideas get converted to products. Little Jeff dislikes this idea even more than coconut science, because Jeff doesn't like innovation for innovations sake, he likes innovation when it makes a differentce for the customer.
 
-What little Jeff hss learnt from little Narayan is that disruptive nnovation needs the magic of supply chain. Disruptive innovation needs the dabbawallas of ideas. Disruptive innovation requires that you are ambivalent to the origin of ideas and the route by which those ideas reach the customer as long as there is a wide diversity of ideas available, the ideas are delivered cheaply and they are available quickly.}
+What little Jeff hss learnt from little Narayan is that disruptive nnovation needs the magic of supply chain. Disruptive innovation needs the dabbawallas of ideas. Disruptive innovation requires that you are ambivalent to the origin of ideas and the route by which those ideas reach the customer. The important thing is that there is a wide diversity of ideas available, the ideas are delivered cheaply and they can be made available quickly.}
 
 \slides{\undefine{theDabbaWalas}}
 \include{_business/includes/the-dabbawalas.md}
