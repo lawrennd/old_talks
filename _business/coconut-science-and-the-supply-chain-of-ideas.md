@@ -173,7 +173,7 @@ that. The team's focussed on delivering, not innovating.
 
 This, says real Narayan, is where a "supply chain of ideas" comes
 in. The infrastructure for taking innovative ideas from their source
-to where they'are required.
+to where they're required.
 
 Now I'm not a very imaginative person, or maybe I was putting too
 little effort into imagining Jeff, or maybe I was spending too much
