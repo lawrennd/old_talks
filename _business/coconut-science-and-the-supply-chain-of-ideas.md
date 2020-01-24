@@ -37,13 +37,13 @@ I like the simplicity of Jeff's perspective. Predicting what will happen in the 
 
 \notes{The way Jeff does this is that he focusses on his supply chain. He realises that always having the right things in stock brings customers back. So he's prepared to make a loss on some products to maintain customer loyalty. Jeff's main business is deliveries, and his biggest sales occur in the Christmas period. Jeff's supply chain is designed to deliver Christmas. He is Father Christmas, Papa Noel, Santa Claus, Christkind, Bom Velhinho and the Befana rolled into one. His entire supply chain is designed to deliver on the gift giving at this time of year.}
 
-\include{_supply-chain/includes/arthur-christmas-trailer.md}
+\slides{\include{_supply-chain/includes/arthur-christmas-trailer.md}}
 
 \notes{To deliver all these presents, just like Santa, Jeff has a fleet of flying machines. Some of these flying machines are designed to go across continents. And some of these flying machines are designed to go across towns. They don't drop presents down your chimney, but they come close.}
 
-\include{_supply-chain/includes/prime-air-plane.md}
+\slides{\include{_supply-chain/includes/prime-air-plane.md}}
 
-\include{_supply-chain/includes/amazon-drone-flight.md}
+\slides{\include{_supply-chain/includes/amazon-drone-flight.md}}
 
 \notes{Jeff has another big worry. He thinks his store is the most
 innovative, but he's always horizon scanning. Jeff grew his store by
