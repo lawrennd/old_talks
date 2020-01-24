@@ -10,7 +10,9 @@ author:
   institute: University of Cambridge
   twitter: lawrennd
   url: http://inverseprobability.com
-date: 2019-11-14
+reveal: True
+ipynb: True
+date: 2020-01-24
 venue: Computer Lab, University of Cambridge
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
@@ -18,9 +20,10 @@ transition: None
 ---
 
 \include{talk-macros.tex}
-\include{_ml/includes/laplace-portrait.md}
-\include{_ai/includes/laplaces-determinism.md}
+\include{_physics/includes/laplace-portrait.md}
+\include{_physics/includes/laplaces-determinism.md}
 \include{_gp/includes/gp-intro-very-short.md}
+\include{_gp/includes/what-is-a-gp.md}
 
 \subsection{Extensions}
 \slides{

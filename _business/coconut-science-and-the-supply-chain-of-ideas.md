@@ -222,7 +222,7 @@ This talk summarises conversations Narayan and I used to have over beers about s
 
 Back outside my head and in the real world, I don't know if there's any company that has understood Narayan's idea. There are many consequences to how you should be doing innovation once you understand the supply chain of ideas. In particular, there is the difference between a pull and a push supply chain. There are issues around stimulating both demand and supply and there is the issue of the information infrastructure required to match these two.
 
-Any company that gets this right will benefit from cheap and efficient delivery of innovation, but just as Amazon's delivery infrastructure required time and investment, I don't think this is going to happen overnight.}
+Any company that gets this right will benefit from cheap and efficient delivery of innovation, but Jeff's delivery infrastructure required time and investment. The supply chain of ideas won't happen overnight.}
 
 
 \thanks
