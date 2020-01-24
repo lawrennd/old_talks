@@ -184,8 +184,8 @@ voice). But when Narayan said "supply chain of ideas" I realised that I was a co
 I was like the guy sitting beside the river under a coconut
 palm. Every time someone stopped at the bank, I climbed the tree and
 gave them a coconunt. But my coconut was a scientific solution, my
-coconuts were machine learning algorithms. You could have idea you liked, as long
-as it was a coconut.
+coconuts were machine learning algorithms. You could have any idea you
+liked, as long as it was a coconut.
 
 The challenge is that companies don't think about their supply chain
 of ideas holistically. Jeff's company is customer driven, that means
