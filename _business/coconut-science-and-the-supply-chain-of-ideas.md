@@ -202,13 +202,13 @@ this idea even more than coconut science. If there's one thing that
 gets little Jeff stomping its when people innovate for the sake of
 innovation, rather than for the sake of the customer.
 
-In my head, what little Jeff has learnt from little Narayan was that disruptive
-innovation needs the magic of supply chain. Disruptive innovation needs
-the dabbawalas of ideas. Disruptive innovation requires that you are
-ambivalent to the origin of ideas and the route by which those ideas
-reach the customer. The important thing is that there is a wide
-diversity of ideas available, the ideas are delivered cheaply and they
-can be made available quickly.}
+In my head, what little Jeff has learnt from little Narayan was that
+disruptive innovation needs the magic of supply chain. Disruptive
+innovation requires that you are ambivalent to the origin of ideas and
+the route by which those ideas reach the customer. The important thing
+is that there is a wide diversity of ideas available, the ideas are
+delivered cheaply and they can be made available quickly. Disruptive
+innovation needs the dabbawalas of ideas. }
 
 \slides{\undefine{theDabbaWalas}}
 \include{_business/includes/the-dabbawalas.md}
