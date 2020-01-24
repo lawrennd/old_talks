@@ -141,7 +141,7 @@ another. Some dabbawallas are on trains and some are on bicycles and
 some are on foot. Eventually a fresh lunch from your home arrives at
 your desk. After you are finished, the dabbawalas take your Tiffin Box
 back home for you. So they also manage a reverse-supply chain. The
-magic of supply chain is in the links that makes this happen.
+magic of supply chain is in the links and planning that make this happen.
 
 Because Narayan worked in California and I worked in Cambridge. We
 would always be in meetings on video screens. Because I was new in the
@@ -184,7 +184,7 @@ voice). But when Narayan said "supply chain of ideas" I realised that I was a co
 I was like the guy sitting beside the river under a coconut
 palm. Every time someone stopped at the bank, I climbed the tree and
 gave them a coconunt. But my coconut was a scientific solution, my
-coconuts were machine learning. You could have idea you liked, as long
+coconuts were machine learning algorithms. You could have idea you liked, as long
 as it was a coconut.
 
 The challenge is that companies don't think about their supply chain
