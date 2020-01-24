@@ -1,7 +1,11 @@
 ---
-title: "Innovation and Business"
-subtitle: "The Supply Chain of Ideas"
+title: "Coconut Science and the Supply Chain of Ideas"
 abstract: >
+  Ideas help companies innovate. Different businesses have different approaches to innovation. Some companies centralise their innovation, other companies deploy scientists close to the business. 
+  
+  There are two types of business, those where the demand for ideas is driven by customer needs (customer led), and those where ideas are being imposed by a business on the population (technology led). 
+  
+  The focus in companies is on the generation of ideas, but this is an error. The focus should be on the supply chain of ideas. The process by which ideas are translated from their point of origin to solving a business task.
 author: 
 - given: Neil D. 
   family: Lawrence 
@@ -10,14 +14,13 @@ author:
   twitter: lawrennd 
   gscholar: r3SJcvoAAAAJ 
   orchid: 
-layout: slides
-pptx: True
+pptx: False
 docx: False
 pdfnotes: False
-reveal: True
+reveal: False
 ipynb: False
 date: 2020-01-22
-venue: Cambridge Intellectual Leadership Programme
+venue: Lunchtime Talk, Intellect Cambridge Leadership Programme
 transition: None
 incremental: True
 ---
@@ -42,88 +45,156 @@ I like the simplicity of Jeff's perspective. Predicting what will happen in the 
 
 \include{_supply-chain/includes/amazon-drone-flight.md}
 
-\notes{Jeff has another big worry. He thinks his store is the most innovative, but he's always horizon scanning. Jeff grew his store by exploiting the latest technology, being agile in his thinking and always staying one step ahead of his rivals. He asks all his staff to always be looking out for ways they can improve, to see what the new innovations are, to think about how the store can use them.
+\notes{Jeff has another big worry. He thinks his store is the most
+innovative, but he's always horizon scanning. Jeff grew his store by
+exploiting the latest technology, being agile in his thinking and
+always staying one step ahead of his rivals. He asks all his staff to
+always be looking out for ways they can improve, to see what the new
+innovations are, to think about how the store can use them.
 
-Jeff knows that one day a young rival will come along with a new way of delivering products, of delivering gifts, and that young rival will put him out of business. Although he's never said it, I think that deep down, Jeff actually likes this idea, he thinks that's the way it should be. But still, he wants to delay the day that this happens to his store as long as possible.
+Jeff knows that one day a young rival will come along with a new way
+of delivering products, of delivering gifts, and that young rival will
+put him out of business. Although he's never said it, I think that
+deep down, Jeff actually likes this idea, he thinks that's the way it
+should be. But still, he wants to delay the day that this happens to
+his store as long as possible.
 
-Jeff sees this challenge as the innovator's dilemma. The idea that one day his staff will become complacent, they'll stop looking at ways to improve. I've not talked to Jeff much about innovation, but I do know he thinks that an idea can never be disruptive unless its deployed to the customer.}
+Jeff sees this challenge as the innovator's dilemma. The idea that one
+day his staff will become complacent, they'll stop looking at ways to
+improve. I've not talked to Jeff much about innovation, but I do know
+he thinks that an idea can never be disruptive unless its deployed to
+the customer.}
 
 \include{_business/includes/the-innovators-dilemma.md}
 
-\notes{I used to work for Jeff, and one of the things I noticed about working for Jeff is he puts a lot of effort in trying to get you to understand how he thinks. He doesn't want to tell you what to do, he doesn't have the time. His company is too big. He wants you to know how he thinks about stuff. He wants to put a little Jeff inside your head. So when you're making a decision about something, you don't have to ask the real Jeff, you just ask the little Jeff inside your head. When I was working for Jeff, I was responsible for innovation. Jeff got interested in a set of techniques I'm an expert in and he wanted me to look at how they might help his store. I did work on that, but I'm not going to tell you too much about that today. But before I left I got to thinking about how innovation works, and how it might work better for Jeff's store. 
+\notes{I used to work for Jeff, and one of the things I noticed about
+working for Jeff is he puts a lot of effort in trying to get you to
+understand how he thinks. He doesn't want to tell you what to do, he
+doesn't have the time. His company is too big. He wants you to know
+how he thinks about stuff. He wants to put a little Jeff inside your
+head. So when you're making a decision about something, you don't have
+to ask the real Jeff, you just ask the little Jeff inside your
+head. When I was working for Jeff, I was responsible for
+innovation. Jeff got interested in a set of techniques I'm an expert
+in and he wanted me to look at how they might help his store. I did
+work on that, but I'm not going to tell you too much about that
+today. But before I left I got to thinking about how innovation works,
+and how it might work better for Jeff's store.
 
-I never got a chance to talk to Jeff in person about this, but I did spend a lot of time with the Jeff inside my head. And here's what he said to me.
+I never got a chance to talk to Jeff in person about this, but I did
+spend a lot of time with the Jeff inside my head. And here's what he
+said to me.
 
-He said: "Neil, I don't know what the future's going to look like in terms of innovation. But I do know that my store is never going to want to pay more for ideas, it's never going to want to have to wait longer for those ideas to be deployed for our customers and it's never going to want to have fewer ideas available."
+He said: "Neil, I don't know what the future's going to look like in
+terms of innovation. But I do know that my store is never going to
+want to pay more for ideas, it's never going to want to have to wait
+longer for those ideas to be deployed for our customers and it's never
+going to want to have fewer ideas available."
 
-Now, apart maybe I'm not a very imaginative person, or maybe I was putting too little effort into imagining Jeff, or maybe I was spending too much time working on supply chain, but I started thinking. Huh, that sounds an awful lot like what Jeff says about delivering parcels. And that's how the idea for the "Supply Chain of Ideas" came about.
+Another friend of mine who still works for Jeff is called Narayan. He
+liked to tell me about a man by a river in Kerala, South India who
+sold coconuts. The man sat beside a river and sold coconuts to people
+on boats. The man would sit under a coconut tree. When someone stopped
+to buy a coconut the man would climb the tree and cut down a coconut
+and sell it to the customer. When that tree ran out of coconuts the
+man would move to another tree. Narayan used to say that this man had
+the shortest supply chain in the world. Then Narayan would laugh his
+booming laugh.
 
-Another friend of mine who still works for Jeff is called Narayan. He liked to tell me about a man by a river in Kerala, South India who sold coconuts. The man sat beside a river and sold coconuts to people on boats. The man would sit under a coconut tree. When someone stopped to buy a coconut the man would climb the tree and cut down a coconut and sell it to the customer. When that tree ran out of coconuts the man would move to another tree. Narayan used to say that this man had the shortest supply chain in the world. Then Narayan would laugh his booming laugh.
-
-When he'd stopped laughing, Narayan would tell me that the magic of supply chain is it takes the waiting away. It makes all the customers feel that everything grows on trees, and its all sitting there ripe and ready to pluck. And all that's happening is that the store-owner is popping up the tree and bringing us a fresh one down.}
+When he'd stopped laughing, Narayan would tell me that the magic of
+supply chain is it takes the waiting away. It makes all the customers
+feel that everything grows on trees, and its all sitting there ripe
+and ready to pluck. And all that's happening is that the store-owner
+is popping up the tree and bringing us a fresh one down.}
 
 
 \include{_business/includes/kerala-coconut.md}
 
-\notes{Narayan once visited me in Cambridge. He wanted to go out to eat so he got a restaurant recommendation. Narayan lives in California but he's originally from Mumbai. I suppose whoever he asked was very proud of the Indian food in Cambridge because they told him to go to the best Indian Restaurant in Cambridge. That restaurant is called the Tiffin Truck.}
+\notes{Narayan once visited me in Cambridge. He wanted to go out to
+eat so he got a restaurant recommendation. Narayan lives in California
+but he's originally from Mumbai. I suppose whoever he asked was very
+proud of the Indian food in Cambridge because they told him to go to
+the best Indian Restaurant in Cambridge. That restaurant is called the
+Tiffin Truck.}
 
 \include{_business/includes/the-dabbawalas.md}
 
-\notes{The next day I saw Narayan and when I asked him about his dinner he scowled a bit. He asked if I knew what a Tiffin Box was. I didn't. Then Narayan told me about the dabbawalas. 
+\notes{The next day I saw Narayan and when I asked him about his
+dinner he scowled a bit. He asked if I knew what a Tiffin Box was. I
+didn't. Then Narayan told me about the dabbawalas.
 
-The dabbawalas work mainly in Mumbai. Every day they deliver lunches to people's offices. But they are not like Just Eat, or Deliveroo, or any of the new gig economy services. They deliver each lunch freshly made from people's *homes*. They are a distribution system that takes a freshly made lunch from your house to your desk. The lunches are stored in Tiffin Boxes. The Tiffin Boxes are passed form one dabbawala to another. Some are on trains and some are on bicycles. Eventually a fresh lunch from your home arrives at your desk. After you are finished, the dabbawalas take your Tiffin Box back home for you. The magic of supply chain is in the links that makes this happen.
+The dabbawalas work mainly in Mumbai. Every day they deliver lunches
+to people's offices. But they are not like Just Eat, or Deliveroo, or
+any of the new gig economy services. They deliver each lunch freshly
+made from people's *homes*. They are a distribution system that takes
+a freshly made lunch from your house to your desk. The lunches are
+stored in Tiffin Boxes. The Tiffin Boxes are passed form one dabbawala
+to another. Some are on trains and some are on bicycles. Eventually a
+fresh lunch from your home arrives at your desk. After you are
+finished, the dabbawalas take your Tiffin Box back home for you. The
+magic of supply chain is in the links that makes this happen.
 
-Because Narayan worked in California and I worked in Cambridge. We would always be in meetings on video screens. Because I was new in the team, and he was an expert in supply chain, after each meeting Narayan would spend some time explaining to me what was going on. I think this is how I ended up with a little Narayan in my head to keep the little Jeff company.
+Because Narayan worked in California and I worked in Cambridge. We
+would always be in meetings on video screens. Because I was new in the
+team, and he was an expert in supply chain, after each meeting Narayan
+would spend some time explaining to me what was going on. I think this
+is how I ended up with a little Narayan in my head to keep the little
+Jeff company.
 
-[There are around 5000 dabbawalas in Mumbai](https://hbr.org/2012/11/mumbais-models-of-service-excellence), and each day they deliver around 130,000 lunch boxes. The service is over 120 years old. It continues to deliver during monsoons, riots, famines and terrorist attacks. Can you imagine how important it is for the system that everyday they turn up and do their job? If anything goes wrong, they have to quickly adapt and plug the gap. 
+[There are around 5000 dabbawalas in Mumbai](https://hbr.org/2012/11/mumbais-models-of-service-excellence),
+and each day they deliver around 130,000 lunch boxes. The service is
+over 120 years old. It continues to deliver during monsoons, riots,
+famines and terrorist attacks. Can you imagine how important it is for
+the system that everyday they turn up and do their job? If anything
+goes wrong, they have to quickly adapt and plug the gap.
 
-There is a parallel between the dabbawalas and the supply chain in Jeff's store. There is constant troubleshooting and a daily pressure to deliver, to keep the system moving. And this is where the innovator's dilemma comes back in. If you're so busy efficiently delivering parcels on a daily basis, you can't stop and think about how you might want to deliver parcels in the future. You don't have time to think and reflect. 
+There is a parallel between the dabbawalas and the supply chain in
+Jeff's store. There is constant troubleshooting and a daily pressure
+to deliver, to keep the system moving. And this is where the
+innovator's dilemma comes back in. If you're so busy efficiently
+delivering parcels on a daily basis, you can't stop and think about
+how you might want to deliver parcels in the future. You don't have
+time to think and reflect.
 
-So maybe when Jeff says he needs the team to deliver faster, not everyone's always had the time to reflect on how we might be doing that. The teams focussed on delivering, not innovating.
+So maybe when Jeff says he needs the team to deliver faster, not
+everyone's always had the time to reflect on how we might be doing
+that. The teams focussed on delivering, not innovating.
 
-This is where the supply chain of ideas comes in. As a scientist in the team, I was a bit like the guy sitting beside the river under a coconut palm. My tree contained a team that could design machine learning solutions. You could have idea you liked, as long as it was a coconut. 
+This, says real Narayan, is where a "supply chain of ideas" comes
+in. Now I'm not a very imaginative person, or maybe I was putting too
+little effort into imagining Jeff, or maybe I was spending too much
+time working on supply chain, or maybe little Narayan was really
+starting to get in my head (real Narayan has a very resonant
+voice). But I started realising that I was a coconut-scientist, I was
+like the guy sitting beside the river under a coconut palm. Every time
+someone stopped at the bank, I climbed the tree and gave them a
+coconunt. But my coconut was a scientific solution, my coconuts were
+machine learning. You could have idea you liked, as long as it was a
+coconut.
 
-Other companies like to do it differently, they like to put their scientists together in one big research center. They like them to be dreaming up any kind of new idea. 
+The challenge is that companies don't think about their supply chain
+of ideas holistically. Jeff's company is customer driven, that means
+he wants a 'pull' supply chain of ideas. One where the supply chain is
+driven by customer demand, not by the supply side. But little Jeff still
+wants that magical effect where the right idea appears by the river
+bank, just as the relevant tech team is coming by.
 
-The research center is like having a warehouse of ideas. It contains coconuts, and pappaya and mango and any type of fruit you can think of. The problem is, it's nowhere near the river. And the people The problem is that its the people on the river that need the coconuts. And the river's a long way from the research center. 
+Right, you think, you just need to build a Walmart of ideas. A large
+institute where all the ideas are developed together. The problem with
+this model is that the Walmart is too far from the river bank. So none
+of these scientific ideas get converted to products. Little Jeff dislikes this idea even more than coconut science, because Jeff doesn't like innovation for innovations sake, he likes innovation when it makes a differentce for the customer.
 
-Now before he met little Narayan, he really liked the coconut model. He knew that we also need mango-ideas and pappaya-ideas, but he also knows that there's no point in having a warehouse far away from the river. Those mangos and pappayas will just rot on the shelf of academic publication.}
-
-\include{_business/includes/the-general-store.md}
-
-\notes{So the right thing to do is build a 'general store' near the river. This general store will hold on to ideas that are thought to be needed, and a supply chain of ideas will feed the general store.}
-
-\notes{But as Jeff's store gets bigger and more innovation is required, an entire network of innovation is needed. The range of ideas is so wide and the demand for ideas so unpredictable that it becomes like the dabbawala. 
-
-And Jeff's store already does this. His store is actually a collection of many stores, if you want to sell something you can do it by renting space in Jeff's store. He will bring the customers in, you just need to rent the space and deliver your sales.
-
-So the little Jeff and little Narayan have realised that the solution to the innovator's dilemma is the supply chain of ideas. To have great communications, like the dabbawalas between the origin of the ideas and the destination of the ideas.}
+What little Jeff hss learnt from little Narayan is that disruptive nnovation needs the magic of supply chain. Disruptive innovation needs the dabbawallas of ideas. Disruptive innovation requires that you are ambivalent to the origin of ideas and the route by which those ideas reach the customer as long as there is a wide diversity of ideas available, the ideas are delivered cheaply and they are available quickly.}
 
 \slides{\undefine{theDabbaWalas}}
 \include{_business/includes/the-dabbawalas.md}
 
 
-\notes{This means they need to understand what the ideas are and where they should be deployed.
 
-The first step is forming an inventory of existing ideas, and where they are being deployed. The next step is assessing the future demand for ideas, and the final step is matching that demand to the suppliers of those ideas. This requires the intellectual transport network. 
+\notes{
+\section{Epilogue}
 
-Little Jeff knows that it will be impossible for his store to have all the ideas from his own employees that he needs to keep on innovating. He can make a research center, an idea factory, and that will help. But the reality of the supply chain of ideas is about the discoverability of the ideas and the assessment of demand for the ideas.
-
-Real Narayan once told me about the difference between a pull and a push supply chain. In a pull supply chain, the pressure of flow of goods through the supply chain is controlled by the distributors. Controlled by those who have access to the customer. The production of goods is controlled by the people closest to the customer. 
-
-In a push supply chain, their is a shortage of goods, the manufacturer decides where to distribute those goods because they can sell more product than they can make.
-
-In a pull supply chain the money is made at the storefront. The flow of the supply chain is controlled by the customer facing entity. In a push supply chain, the money is made by the manufacturer. They decide which distributors to sell to and make the largest margin.
-
-Narayan explained that the biggest shift over the 20th century was a move between push supply chain (where manufacturers make money) to a pull supply chain where big stores like Jeff's make the money.
-
-A pull supply chain benefits the customer because as long as there's competition between stores, prices stay low. But a pull supply chain is bad for the manufacturer because margins are low so they have to apply pressure to costs. A pull supply chain is indicative of a consumer society.
-
-The magic of the coconut tree 
-
-In Jeff's store, innovation is only important when it's deployed. So the supply chain of ideas needs to be a pull supply chain. The ideas need to be delivered just in time Little Jeff and little Narayan got to talking about what sort of supply chain is needed for ideas and imm
-
-So when little Jeff and little Narayan got around to }
+This talk summarises conversations Narayan and I used to have over beers about supply chain and science. Narayan says he thinks the idea of supply chain of ideas first came to him just before the INFORMS conference in 1999 (an OR conference). Just around the point when he was having to chose between academia and industry ... he chose industry.}
 
 
 \thanks
