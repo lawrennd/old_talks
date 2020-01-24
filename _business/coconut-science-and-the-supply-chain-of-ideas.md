@@ -86,7 +86,7 @@ thinking about how innovation works, and how it might work better for
 Jeff's store.
 
 I never got a chance to talk to Jeff in person about this, but I did
-spend a lot of time with the Jeff inside my head. And here's what he
+spend a lot of time with the little Jeff inside my head. And here's what he
 said to me.
 
 He said: "Neil, I don't know what the future's going to look like. But
@@ -115,7 +115,7 @@ is popping up the tree and bringing us a fresh one down.}
 
 \include{_business/includes/kerala-coconut.md}
 
-\section{Dabawallas}
+\section{Dabbawalas}
 
 \notes{Narayan once visited me in Cambridge. He wanted to go out to
 eat so he got a restaurant recommendation. Narayan lives in California
@@ -204,7 +204,7 @@ innovation, rather than for the sake of the customer.
 
 In my head, what little Jeff has learnt from little Narayan was that disruptive
 innovation needs the magic of supply chain. Disruptive innovation needs
-the dabbawallas of ideas. Disruptive innovation requires that you are
+the dabbawalas of ideas. Disruptive innovation requires that you are
 ambivalent to the origin of ideas and the route by which those ideas
 reach the customer. The important thing is that there is a wide
 diversity of ideas available, the ideas are delivered cheaply and they
