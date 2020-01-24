@@ -17,6 +17,8 @@
 
 \figure{\includepng{../slides/diagrams/physics/laplacesDeterminismEnglish}{60%}}{Laplace's determinsim in English translation.}{laplaces-determinism-english}
 
+\newslide{}
+
 \slides{
 \figure{\includepng{../slides/diagrams/physics/philosophicaless00lapliala_16_cropped}{60%}}{}{laplaces-demon-cropped}
 p
@@ -34,6 +36,8 @@ p
 \newslide{}
 
 \figure{\includepng{../slides/diagrams/physics/philosophicaless00lapliala}{60%}}{To Laplace, determinism is a strawman. Ignorance of mechanism and data leads to uncertainty which should be dealt with through probability.}{probability-relative-in-part}
+
+\newslide{}
 
 \slides{
 \figure{\includepng{../slides/diagrams/physics/philosophicaless00lapliala_18_cropped}{60%}}{}{probability-relative-in-part-cropped}
