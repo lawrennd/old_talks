@@ -11,10 +11,10 @@ author:
   gscholar: r3SJcvoAAAAJ 
   orchid: 
 layout: slides
-pptx: True
+pptx: False
 docx: False
 pdfnotes: False
-reveal: True
+reveal: False
 ipynb: False
 date: 2020-01-23
 venue: FPE Meeting, McGrath Centre, University of Cambridge
@@ -33,7 +33,7 @@ incremental: True
 \include{_ai/includes/conversation-computer.md}
 \include{_cognitive-science/includes/why-red-doesnt-sound-like-a-bell.md}
 \include{_cognitive-science/includes/the-mind-is-flat.md}
-\include{_ai/includes/rebel-ideas.md}
+\include{_business/includes/rebel-ideas.md}
 
 \subsection{Conclusions}
 
