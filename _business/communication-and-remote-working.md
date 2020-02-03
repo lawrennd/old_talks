@@ -14,7 +14,7 @@ layout: slides
 pptx: False
 docx: False
 pdfnotes: False
-reveal: False
+reveal: True
 ipynb: False
 date: 2020-01-23
 venue: FPE Meeting, McGrath Centre, University of Cambridge
