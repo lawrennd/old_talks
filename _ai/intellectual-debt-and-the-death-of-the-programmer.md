@@ -21,6 +21,7 @@ transition: None
 
 \include{talk-macros.tex}
 
+https://medium.com/berkman-klein-center/from-technical-debt-to-intellectual-debt-in-ai-e05ac56a502c
 
 \thanks
 

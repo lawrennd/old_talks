@@ -1,3 +1,3 @@
-BASE=intellectual-debt-and-the-death-of-the-programmer
+BASE=the-promise-and-reality-of-ai
 include ../make-talk-flags.mk
 include ../make-talk.mk

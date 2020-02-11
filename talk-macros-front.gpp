@@ -15,4 +15,6 @@
 \define{\tk{text}}{}
 \endif
 
+\define{\addDownload{name}}{\ifndef{downloadList}\defeval{\downloadList}{\name}\else\defeval{\downloadList}{\downloadList,\name}\endif}
+
 \endif
