@@ -1,3 +1,3 @@
-BASE=the-promise-and-reality-of-ai
+BASE=intellectual-debt-and-artificial-intelligence
 include ../make-talk-flags.mk
 include ../make-talk.mk
