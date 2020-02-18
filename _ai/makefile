@@ -1,3 +1,3 @@
-BASE=intellectual-debt-and-the-death-of-the-programmer
+BASE=the-great-ai-fallacy
 include ../make-talk-flags.mk
 include ../make-talk.mk

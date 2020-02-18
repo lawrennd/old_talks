@@ -198,7 +198,7 @@ pair programming, code review, test-oriented development are all
 mechanisms that help us quantify the quality of what we are doing and
 maintain standards. Regardless, in a complex legacy code base the
 intellectual debt is significant. The main route to dealing with it is
-to hope you have an old-hand Engineer, let's call him Lancelot, who's
+to hope you have an old-hand Engineer, let's call him Lancelot, whose
 long-standing presence in your organisation gives them a handle on how
 things are constructed.}
 
@@ -211,7 +211,7 @@ cannot be made without running them by Lancelot first. Initially this
 isn't policy, but it becomes the de facto approach because leaders learn
 that if Lancelot doesn't approve the change then the system fails.
 Lancelot becomes a bottleneck for change, overloaded and eventually loses
-track where the system is.}
+track of where the system is.}
 
 \subsection{Adding Data}
 
