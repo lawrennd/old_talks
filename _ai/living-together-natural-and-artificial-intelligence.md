@@ -2,7 +2,7 @@
 title: Living Together
 subtitle: Natural and Artificial Intelligence
 abstract: Fears that Artificial Intelligence will replace human intelligence, and the way we deploy it, are unlikely to materialise because our intelligence is also the consequence of our limitations, many of which computers don’t have. AI can only emulate our intelligence so instead we should focus on how we co-exist.
-venue: Hay Festival
+venue: Cambridge 30th Anniversary Alumi Festival
 reveal: True
 author:
 - family: Lawrence
@@ -11,7 +11,7 @@ author:
   institute: University of Cambridge
   twitter: lawrennd
   url: http://inverseprobability.com
-date: 2020-05-30
+date: 2020-09-26
 transition: None
 ---
 

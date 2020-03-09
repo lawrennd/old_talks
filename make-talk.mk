@@ -126,16 +126,16 @@ ${BASE}.slides.ipynb: ${BASE}.slides.ipynb.markdown
 
 
 %.svg: %.svgi
-	${PP} $< -o $@ --format notes --to svg ${PPFLAGS} --include svgi-includes.gpp 
+	${PP} $< -o $@ --format notes --to svg ${PPFLAGS} --include-before-body ../svgi-includes.gpp  --no-header
 
 %.pdf: %.svg
-	${INKSCAPE} $< --export-pdf=$@ --without-gui
+	${INKSCAPE} ${PWD}/$< --export-pdf=${PWD}/$@ --without-gui
 
 %.png: %.svg
-	${INKSCAPE} $< --export-png=$@ --without-gui
+	${INKSCAPE} ${PWD}/$< --export-png=${PWD}/$@ --without-gui
 
 %.emf: %.svg
-	${INKSCAPE} $< --export-emf=$@ --without-gui
+	${INKSCAPE} ${PWD}/$< --export-emf=${PWD}/$@ --without-gui
 
 clean:
 	rm *.markdown

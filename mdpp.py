@@ -13,6 +13,9 @@ parser.add_argument("filename", type=str,
 parser.add_argument("-o", "--output", type=str,
                     help="Output filename")
 
+parser.add_argument("--no-header", default=False, action='store_true',
+                    help="Whether to search for a header in the input file (default False).")
+
 parser.add_argument("-B", "--include-before-body", type=str,
                     help="File to include before body.")
 
@@ -56,13 +59,20 @@ if args.include_after_body:
 else:
    after_text = ''
 
-header,body = nt.extract_header_body(args.filename)
+if args.no_header:
+   md= open(args.filename, 'r')
+   body = md.read()
+   md.close()
+else:
+   header,body = nt.extract_header_body(args.filename)
 
 
 with open('tmp.md','w') as fd:
-   fd.write('---')
-   fd.write(header)
-   fd.write('---\n')
+   if not args.no_header:
+      fd.write('---')
+      fd.write(header)
+      fd.write('---\n')
+   
    fd.write(before_text)
    fd.write(body)
    fd.write(after_text)

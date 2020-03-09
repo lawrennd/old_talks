@@ -164,7 +164,8 @@ def extract_diagrams(lines, type='all'):
     rebases={}
     rebases['diagram'] = [r'\\includediagram',
                           r'\\includediagramclass',
-                          r'\\inlinediagram']
+                          r'\\inlinediagram',
+                          r'\\inputdiagram']
     rebases['img'] = [r'\\includeimg']
     rebases['png'] = [r'\\includepng']
     rebases['gif'] = [r'\\includegif']
