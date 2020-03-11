@@ -2,17 +2,19 @@
 \define{dataTrusts}
 \editme
 
-\section{Data Trusts}
+\subsection{Personal Data Trusts}
 
 \notes{The machine learning solutions we are dependent on to drive automated decision making are dependent on data. But with regard to personal data there are important issues of privacy. Data sharing brings benefits, but also exposes our digital selves. From the use of social media data for targeted advertising to influence us, to the use of genetic data to identify criminals, or natural family members. Control of our virtual selves maps on to control of our actual selves. 
 
 The fuedal system that is implied by current data protection legislation has signficant power asymmetries at its heart, in that the data controller has a duty of care over the data subject, but the data subject may only discover failings in that duty of care when it's too late. Data controllers also may have conflicting motivations, and often their primary motivation is *not* towards the data-subject, but that is a consideration in their wider agenda.
 
-[Data Trusts](https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy) [@Edwards:privacy04;@Lawrence:trusts16;@Delacroix:trusts18] are a potential solution to this problem. Inspired by *land societies* that formed in the 19th century to bring democratic representation to the growing middle classes. A land society was a mutual organisation where resources were pooled for the common good. 
+[Personal Data Trusts](https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy) [@Edwards:privacy04;@Lawrence:trusts16;@Delacroix:trusts18] are a potential solution to this problem. Inspired by *land societies* that formed in the 19th century to bring democratic representation to the growing middle classes. A land society was a mutual organisation where resources were pooled for the common good. 
 
-A Data Trust would be a legal entity where the trustees responsibility was entirely to the members of the trust. So the motivation of the data-controllers is aligned only with the data-subjects. How data is handled would be subject to the terms under which the trust was convened. The success of an individual trust would be contingent on it satisfying its members with appropriate balancing of individual privacy with the benefits of data sharing. 
+A Personal Data Trust would be a legal entity where the trustees responsibility was entirely to the members of the trust. So the motivation of the data-controllers is aligned only with the data-subjects. How data is handled would be subject to the terms under which the trust was convened. The success of an individual trust would be contingent on it satisfying its members with appropriate balancing of individual privacy with the benefits of data sharing. 
 
-Formation of Data Trusts became the number one recommendation of the Hall-Presenti report on AI, but the manner in which this is done will have a significant impact on their utility. It feels important to have a diversity of approaches, and yet it feels important that any individual trust would be large enough to be taken seriously in representing the views of its members in wider negotiations.}
+Formation of Data Trusts became the number one recommendation of the Hall-Presenti report on AI, but unfortunately, the term was confounded with more general approaches to data sharing that don't necessarily involve fiduciary responsibilities or personal data rights. It seems clear that we need to better characterise the data sharing landscape as well as propose mechanisms for tackling specific issues in data sharing.
+
+It feels important to have a diversity of approaches, and yet it feels important that any individual trust would be large enough to be taken seriously in representing the views of its members in wider negotiations.}
 
 \newslide{}
 
@@ -21,7 +23,7 @@ Formation of Data Trusts became the number one recommendation of the Hall-Presen
 
 \newslide{}
 
-\figure{\includepng{../slides/diagrams/data-science/data-trusts-review}{50%}}{Data Trusts were the first recommendation of the \href{https://www.out-law.com/en/articles/2017/october/review-calls-for-data-trusts-to-help-grow-artificial-intelligence-in-the-uk/}{Hall-Presenti Report}}{hall-presenti-report}
+\figure{\includepng{../slides/diagrams/data-science/data-trusts-review}{50%}}{Data Trusts were the first recommendation of the \href{https://www.out-law.com/en/articles/2017/october/review-calls-for-data-trusts-to-help-grow-artificial-intelligence-in-the-uk/}{Hall-Presenti Report}. Unfortunately, since then the role of data trusts vs other data sharing mechanisms in the UK has been somewhat confused.}{hall-presenti-report}
 
 
 \newslide{Motivation}
@@ -39,6 +41,12 @@ Formation of Data Trusts became the number one recommendation of the Hall-Presen
 * Data *subjects*, data *controllers* and data *processors*.
 }
 \notes{See Guardian articles on }\addguardian{Digital Oligarchies}{https://www.theguardian.com/media-network/2015/mar/05/digital-oligarchy-algorithms-personal-data}\notes{ and }\addguardian{Information Feudalism}{https://www.theguardian.com/media-network/2015/nov/16/information-barons-threaten-autonomy-privacy-online}\notes{.}
+
+\subsection{Website}
+
+\notes{To help clarify some of the issues around data sharing we've produced a new website focussing on data trusts, explaining what they do and what they don't do.}
+
+\figure{\includepng{../slides/diagrams/governance/data-trusts-uk-website}{60%}}{The \href{https://datatrusts.uk/}{http://datatrusts.uk} website provides a new information source for what data trusts are and how they can be used in data sharing.}{data-trusts-uk-website}
 
 \newslide{Legal Mechanism of Trusts}
 \slides{

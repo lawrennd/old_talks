@@ -47,7 +47,4 @@ With this in mind The Wellcome Trust launched a report on ["Understanding Patien
  
 This separation of responsibility according to expertise needs to be emulated when considering health data infrastructure. This resolves the *intent-capability* dilemma, by ensuring a separation of responsibilities to those that are best placed to address the issues.}
 
-\include{_health/includes/black-box-thinking.md}
-
-
 \endif

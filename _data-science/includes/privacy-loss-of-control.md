@@ -65,7 +65,7 @@ See \addguardian{The data-driven economy will help marketers exploit us}{2015/ju
 \include{_data-science/includes/data-science-africa.md}
 \include{_health/includes/malaria-gp.md}
 
-\include{_data-science/includes/data-trusts.md}
+\include{_governance/includes/data-trusts.md}
 
 
 \newslide{Amelioration}

@@ -59,7 +59,7 @@ transition: None
 \include{_data-science/includes/a-time-for-professionalisation.md}
 \include{_data-science/includes/the-data-crisis.md}
 
-\include{_data-science/includes/feudal-era-data-ecosystem.md}
+\include{_governance/includes/feudal-era-data-ecosystem.md}
 
 \newslide{Rest of the Talk}
 \slides{
@@ -69,11 +69,12 @@ transition: None
 <!--include{_data-science/includes/data-readiness-levels.md}-->
 <!--include{_data-science/includes/data-science-as-debugging.md}-->
 \include{_health/includes/rolls-royce-analogy.md}
+\include{_business/includes/black-box-thinking.md}
 <!--include{_data-science/includes/gdpr.md}-->
 
 <!--include{_ai/includes/government-reports.md}-->
 
-\include{_data-science/includes/data-trusts.md}
+\include{_governance/includes/data-trusts.md}
 
 <!--include{_ml/includes/resolve-deploy-innovate.md}-->
 

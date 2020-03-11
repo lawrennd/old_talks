@@ -38,7 +38,7 @@ First we consider the challenge of designing and deploying large scale machine l
 
 
 \include{_ai/includes/turing-ai-fellowship.md}
-\include{_data-science/includes/data-trusts.md}
+\include{_governance/includes/data-trusts.md}
 
 \notes{In conclusion we consider five AI myths. Seemingly commonly accepted ideas that aren't true about our AI futures.}
 

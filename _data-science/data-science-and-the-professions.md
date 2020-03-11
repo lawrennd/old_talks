@@ -47,7 +47,7 @@ date: 2018-09-05
 
 \include{ _data-science/includes/gdpr.md}
 \include{ _data-science/includes/the-assault-on-privacy.md}
-\include{ _data-science/includes/data-trusts.md}
+\include{ _governance/includes/data-trusts.md}
 
 
 \newslide{Rest of this Talk: Two Areas of Focus}

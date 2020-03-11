@@ -44,4 +44,8 @@
 
 \notes{More recently, the health services are taking a more mature view of data and its utility in aiding an aging population. The Topol review is a recent report in to how the NHS can benefit from the data revolution.}
 
+\subsection{UK Biobank}
+
+\notes{A more positive story is around UK biobank which is able to centralise records for individuals based on very permissive consent. Still there are challenges to assimilating data in the same location.}
+
 \endif

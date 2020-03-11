@@ -35,11 +35,12 @@ transition: None
 \include{_data-science/includes/societal-effects.md}
 
 \include{_data-science/includes/the-data-crisis.md}
-\include{_data-science/includes/feudal-era-data-ecosystem.md}
+\include{_governance/includes/feudal-era-data-ecosystem.md}
 
 \include{_data-science/includes/value-of-data.md}
 \include{_health/includes/rolls-royce-analogy.md}
-\include{_data-science/includes/data-trusts.md}
+\include{_business/includes/black-box-thinking.md}
+\include{_governance/includes/data-trusts.md}
 
 
 \subsection{Conclusion} 

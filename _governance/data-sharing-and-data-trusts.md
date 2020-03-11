@@ -21,7 +21,7 @@ transition: None
 
 \include{_health/includes/rolls-royce-analogy.md}
 \include{_governance/includes/data-governance-toolkit.md}
-\include{_data-science/includes/data-trusts.md}
+\include{_governance/includes/data-trusts.md}
 
 \thanks
 

@@ -28,7 +28,7 @@ incremental: True
 
 \include{_ml/includes/ml-three-primary-challenges.md}
 \include{_data-science/includes/data-readiness-levels-short.md}
-\include{_data-science/includes/data-trusts.md}
+\include{_governance/includes/data-trusts.md}
 
 \section{Model}
 
