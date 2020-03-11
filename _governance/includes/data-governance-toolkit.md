@@ -23,13 +23,13 @@ Unfortunately, the idea has since been promoted as a universal panacea for data 
 
 \figure{\includediagramclass{../slides/diagrams/governance/society}{100%}}{The society diagram shows the different words associated with positive outcomes and negative outcomes for different data sharing frameworks based around society.}{society}
 
-\notes{Typical social benefits derived from data sharing include better health, and better security. By sharing information widely about society we can better understand how to manage society to wider benefit. 
+\notes{Typical social benefits derived from data sharing include better health, and better security. By sharing information widely about society we can better understand how to manage society to wider benefit.}
 
 \newbanner{Vulnerabilities}{\vulnerabilityColor}
 
 \figure{\includediagramclass{../slides/diagrams/governance/vulnerabilities}{100%}}{}{vulnerability}
 
-\notes{There are individuals in society who are vulnerable due to disempowerment. Many of these vulnerabilities are due to minority status or particular conditions. Protecting vulnerable individuals is a vital component of good governance. This is reflected in, for example, data rights legislation such as the GDPR which defines protected characteristics and prohibited discriminations around sensitive areas such as health, race, religion, sexuality and gender. These protections very often recognise past injustices or systemic biases that we wish to prevent in future. }
+\notes{There are individuals in society who are vulnerable due to disempowerment. Many of these vulnerabilities are due to minority status or particular conditions. Protecting vulnerable individuals is a vital component of good governance. This is reflected in, for example, data rights legislation such as the GDPR which defines protected characteristics and prohibited discriminations around sensitive areas such as health, race, religion, sexuality and gender. These protections very often recognise past injustices or systemic biases that we wish to prevent in future. Other vulnerable groups include those we don't empower to decide for themselves, such as children.}
 
 
 \newbanner{Enfranchisement}{\enfranchisementColor}

@@ -23,7 +23,7 @@ transition: None
 \include{_health/includes/rolls-royce-analogy.md}
 \include{_governance/includes/feudal-era-data-ecosystem.md}
 \include{_governance/includes/data-governance-toolkit.md}
-<!--include{_data-science/includes/gdpr.md}-->
+\include{_data-science/includes/gdpr.md}
 
 <!--include{_ai/includes/government-reports.md}-->
 \include{_governance/includes/data-trusts.md}
