@@ -1,0 +1,9 @@
+{% if page.youtube %}{% if page.youtube_remote %}
+<p><a href="https://www.youtube.com/watch?v={{ page.youtube }}{% if page.youtube_start %}&start={{ page.youtube_start}}{% if page.youtube_end %}&end={{ page.youtube_end }}{% endif %}{% endif %}"><img src="https://img.youtube.com/vi/{{ page.youtube }}/0.jpg" border=0 target="_blank"></a></p>
+{% else %}
+<p><iframe width="{{ site.youtube.width }}" height="{{ site.youtube.height }}" src="https://www.youtube.com/embed/{{ page.youtube }}{% if page.youtube_start %}?start={{ page.youtube_start}}{% if page.youtube_end %}&end={{ page.youtube_end }}{% endif %}{% endif %}" frameborder="0" allowfullscreen></iframe></p>
+{% endif %}{% endif %}
+{% if page.videolectures %}
+<h4>Videolectures</h4>
+<p><a href="http://videolectures.net/{{ page.videolectures }}/"><img src="http://videolectures.net/{{ page.videolectures }}/thumb.jpg" border=0 target="_blank"></a></p>
+{% endif %}

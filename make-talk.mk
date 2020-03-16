@@ -126,7 +126,7 @@ ${BASE}.slides.ipynb: ${BASE}.slides.ipynb.markdown
 
 
 %.svg: %.svgi
-	${PP} $< -o $@ --format notes --to svg ${PPFLAGS} --include-before-body ../svgi-includes.gpp  --no-header
+	${PP} $< -o $@ --format slides --to svg ${PPFLAGS} --include-before-body ../svgi-includes.gpp  --no-header
 
 %.pdf: %.svg
 	${INKSCAPE} ${PWD}/$< --export-pdf=${PWD}/$@ --without-gui
