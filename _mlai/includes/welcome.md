@@ -6,7 +6,7 @@
 
 \figure{\includejpg{../slides/diagrams/mlai/a-first-course-in-machine-learning}{40%}}{The main course text is "A First Course in Machine Learning" by @Rogers:book11.}{a-first-course-in-machine-learning}
 
-\slides{\alignright{@Rogers:book11}}}
+\slides{\alignright{@Rogers:book11}}
 
 \newslide{Additional Course Text}
 
