@@ -1,5 +1,5 @@
 ---
-layout: slides
+layout: talk
 title: "Natural and Artificial Intelligence"
 subtitle: "Embodiment Factors"
 abstract: >

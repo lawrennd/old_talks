@@ -14,6 +14,10 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 venue: University of Sheffield
+postdir: ../../../mlatcl/mlai/_lectures/
+slidedir: ../../../mlatcl/mlai/slides/
+notedir: ../../../mlatcl/mlai/_notes/
+notebookdir: ../../../mlatcl/mlai/_notebooks/
 youtube: 5VPr6NbHHjg
 transition: None
 ---

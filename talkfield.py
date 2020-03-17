@@ -7,8 +7,21 @@ from datetime import date
 
 field = sys.argv[1]
 filename = sys.argv[2]
-answer = nt.talk_field(field, filename)
 
+defaults = {'slidedir': '../slides/',
+            'notedir': '../_notes/',
+            'notebookdir': '../_notebooks/',
+            'postdir': '../_posts/',
+            'week': 0}
+
+try:
+    answer = nt.talk_field(field, filename)
+except nt.FileFormatError:
+    if field in defaults:
+        answer= defaults[field]
+    else:
+        answer = ''
+        
 if field=='categories':
     print("['" + "', '".join(answer) + "']")
 else:

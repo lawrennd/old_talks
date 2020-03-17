@@ -52,7 +52,7 @@ def header_field(field, fields):
         if field in defaults:
             answer=defaults[field]
         else:
-            raise FileFormatError(1, "Field not found in file or defaults.", filename)
+            raise FileFormatError(1, "Field not found in file or defaults.", field)
     else:
         answer = fields[field]
     return answer
@@ -119,7 +119,7 @@ def extract_inputs(filename):
 
         return list_files + not_present
 
-def extract_diagrams(filename):
+def extract_diagrams(filename, absolute_path=True, diagram_exts=['svg', 'png', 'emf', 'pdf']):
     """Extract diagrams from a talk"""
     if os.path.exists(filename):
         filenames = [filename] + extract_inputs(filename)
@@ -148,25 +148,24 @@ def extract_diagrams(filename):
                     diag_list.append(diag_str + '.' + ext)
             listdiagrams.extend(diag_list)
         diagrams = latex.extract_diagrams(lines, 'diagram')
-        png_list = []
-        emf_list = []
-        pdf_list = []
-        diag_list = []
+        diag_dict = {}
+        for ext in diagram_exts:
+            diag_dict[ext] = []
         for i, diag_str in enumerate(diagrams):
             if "\\" not in diag_str:
-                diag_list.append(diag_str + '.svg')
-                png_list.append(diag_str + '.png')
-                emf_list.append(diag_str + '.emf')
-                pdf_list.append(diag_str + '.pdf')
+                for ext in diagram_exts:
+                     diag_dict[ext].append(diag_str + '.' + ext)
 
-        listdiagrams.extend(diag_list)
-        listdiagrams.extend(png_list)
-        listdiagrams.extend(emf_list)
-        listdiagrams.extend(pdf_list)
+        for ext in diagram_exts:
+            listdiagrams.extend(diag_dict[ext])
 
     full_list = []
-    for diag in listdiagrams:
-        full_list.append(os.path.abspath(diag))
+    if absolute_path:
+        for diag in listdiagrams:
+            full_list.append(os.path.abspath(diag))
+    else:
+        for diag in listdiagrams:
+            full_list.append(diag)
     return full_list
 
     

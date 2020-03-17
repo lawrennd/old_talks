@@ -6,7 +6,7 @@ import _python.ndltalk as nt
 parser = argparse.ArgumentParser()
 parser.add_argument("dependency",
                     type=str,
-                    choices=['all', 'diagrams', 'inputs', 'bibinputs'],
+                    choices=['all', 'diagrams', 'inputs', 'bibinputs', 'slidediagrams'],
                     help="The type of dependency that is required")
 parser.add_argument("filename",
                     type=str,
@@ -21,6 +21,10 @@ if args.dependency == 'all':
 
 elif args.dependency == 'diagrams':
     listfiles = nt.extract_diagrams(args.filename)
+    print(' '.join(listfiles))
+
+elif args.dependency == 'slidediagrams':
+    listfiles = nt.extract_diagrams(args.filename, absolute_path=False, diagram_exts=['svg'])
     print(' '.join(listfiles))
     
 elif args.dependency == 'inputs':    

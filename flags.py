@@ -8,7 +8,7 @@ import _python.ndltalk as nt
 parser = argparse.ArgumentParser()
 parser.add_argument("output",
                     type=str,
-                    choices=['post', 'docx', 'pptx'],
+                    choices=['post', 'docx', 'pptx', 'prefix'],
                     help="The type of output file (post is for a jekyll post, docx for word, pptx for powerpoint)")
 parser.add_argument("base",
                     type=str,
@@ -21,10 +21,32 @@ filename = args.base + '.md'
 
 fields = nt.header_fields(filename)
 date = nt.header_field('date', fields).strftime("%Y-%m-%d")
-out = date + '-' + args.base
+try:
+    week = int(nt.header_field('week', fields))
+    weekarg = """ --metadata week={week}""".format(week=week)
+except nt.FileFormatError:
+    week = 0
+    weekarg = ''
 
-if args.output == 'post':
-    lines = """--metadata date={date} --metadata layout=talk"""
+try:
+    layout = nt.header_field('layout', fields)
+except nt.FileFormatError:
+    layout = 'talk'
+
+if layout == 'lecture':
+    prefix = '{0:02}'.format(week)
+else:
+    prefix = date
+
+out = prefix + '-' + args.base
+    
+if args.output == 'prefix':
+    print(prefix)
+    
+
+
+elif args.output == 'post':
+    lines = """--metadata date={date} """
     for ext in ['docx', 'pptx']:
         if nt.header_field(ext, fields):
             lines += """ --metadata {ext}={{out}}.{ext}""".format(ext=ext)
@@ -38,14 +60,16 @@ if args.output == 'post':
         lines += """ --metadata notespdf={out}.notes.pdf"""
     if nt.header_field('pdf', fields):
         lines += """ --metadata pdf={out}.pdf"""
-    
+    if args.output == 'post':
+        lines += weekarg + """ --metadata layout={layout}""".format(layout=layout)
+        
     print(lines.format(out=out, date=date))
 
-if args.output=='docx':
+elif args.output=='docx':
     lines = '--reference-doc ' + nt.header_field('dotx', fields)
     print(lines)
 
-if args.output=='pptx':
+elif args.output=='pptx':
     lines = '--reference-doc ' + nt.header_field('potx', fields)
     print(lines)
     

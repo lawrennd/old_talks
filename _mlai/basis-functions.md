@@ -1,5 +1,5 @@
 ---
-layout: lectures
+layout: lecture
 title: Basis Functions
 abstract: |
   In the last session we explored least squares for univariate and multivariate *regression*. We introduced *matrices*, *linear algebra* and *derivatives*. 
@@ -16,6 +16,10 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 venue: University of Sheffield
+postdir: ../../../mlatcl/mlai/_lectures/
+slidedir: ../../../mlatcl/mlai/slides/
+notedir: ../../../mlatcl/mlai/_notes/
+notebookdir: ../../../mlatcl/mlai/_notebooks/
 transition: None
 ---
 
