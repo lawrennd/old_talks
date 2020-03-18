@@ -151,9 +151,9 @@ $$
 }
 \section{Sum of Squares Error}
 
-\notes{Minimizing the sum of squares error was first proposed by [Legendre](http://en.wikipedia.org/wiki/Adrien-Marie_Legendre) in 1805. His book, which was on the orbit of comets, is available on google books, we can take a look at the relevant page by calling the code below.
+\notes{Minimizing the sum of squares error was first proposed by [Legendre](http://en.wikipedia.org/wiki/Adrien-Marie_Legendre) in 1805 [@Legendre:nouvelles05]. His book, which was on the orbit of comets, is available on google books, we can take a look at the relevant page by calling the code below.
 
-\includegooglebook{spcAAAAAMAAJ}{PA72}
+\figure{\includegooglebook{spcAAAAAMAAJ}{PA72}}{Legendre's book was on the determination of orbits of comets. This page describes the formulation of least squares}{legendre-least-squares}
 
 Of course, the main text is in French, but the key part we are interested in can be roughly translated as
 
