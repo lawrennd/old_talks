@@ -97,33 +97,13 @@ $$}
 \include{_ml/includes/types-of-uncertainty.md}
 
 \addreading{@Bishop:book06}{Section 1.2.3 (pg 21–24)}
-)}
 \addreading{@Rogers:book11}{Sections 3.1-3.4 (pg 95-117)}
 \addreading{@Bishop:book06}{Section 1.2.3 (pg 21–24)}
 \addreading{@Bishop:book06}{Section 1.2.6 (start from just past eq 1.64 pg 30-32)}
 
 \reading
 
-\subsection{Sum of Squares and Probability}
-
-\notes{In the overdetermined system we introduced a new set of slack variables, $\{\noiseScalar_i\}_{i=1}^\numData$, on top of our parameters $m$ and $c$. We dealt with the variables by placing a probability distribution over them. This gives rise to the likelihood and for the case of Gaussian distributed variables, it gives rise to the sum of squares error. It was Gauss who first made this connection in his volume on *Theoria Motus Corprum Coelestium* (written in Latin)}
-
-\includegooglebook{ORUOAAAAQAAJ}{PA213}
-
-\notes{The relevant section roughly translates as}
-
->... It is clear, that for the product $\Omega = h^\mu \pi^{-frac{1}{2}\mu} e^{-hh(vv + v^\prime v^\prime + v^{\prime\prime} v^{\prime\prime} + \dots)}$ to be maximised the sum $vv + v ^\prime v^\prime + v^{\prime\prime} v^{\prime\prime} + \text{etc}.$ ought to be minimized. *Therefore, the most probable values of the unknown quantities $p , q, r , s \text{etc}.$, should be that in which the sum of the squares of the differences between the functions $V, V^\prime, V^{\prime\prime} \text{etc}$, and the observed values is minimized*, for all observations of the same degree of precision is presumed.
-
-\notes{It's on the strength of this paragraph that the density is known as the Gaussian, despite the fact that four pages later Gauss credits the necessary integral for the density to Laplace, and it was also Laplace that did a lot of the original work on dealing with these errors through probability. [Stephen Stigler's book on the measurement of uncertainty before 1900](http://www.hup.harvard.edu/catalog.php?isbn=9780674403413) [@Stigler:table99] has a nice chapter on this.}
-
-\notes{
-\includegooglebook{ORUOAAAAQAAJ}{PA217}
-
-where the crediting to the Laplace is about halfway through the last paragraph. This book was published in 1809, four years after \refnotes{Legendre presented least squares}{linear-regression} in an appendix to one of his chapters on the orbit of comets. Gauss goes on to make a claim for priority on the method on page 221 (towards the end of the first paragraph ...).
-
-\includegooglebook{ORUOAAAAQAAJ}{PA221}
-}
-
+\include{_physics/includes/gauss-least-squares.md}
 \include{_ml/includes/the-bayesian-approach.md}
 \include{_ml/includes/bayesian-regression1d.md}
 \include{_ml/includes/bayesian-1d-maths.md}
