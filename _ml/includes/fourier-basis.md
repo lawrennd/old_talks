@@ -46,7 +46,7 @@ from ipywidgets import IntSlider}
 \subsection{Functions Derived from Fourier Basis}
 
 $$
-\mappingFunction(\inputScalar) = {\color{cyan}\mappingScalar_0}  + {\color{green}\mappingScalar_1 \sin(\inputScalar)} + {\color{yellow}\mappingScalar_2 \cos(\inputScalar)} + {\color{magenta}\mappingScalar_3 \sin(2\inputScalar)} + {\color{red}\mappingScalar_4 \cos(2\inputScalar)}
+\mappingFunction(\inputScalar) = {\color{\redColor}\mappingScalar_0}  + {\color{\magentaColor}\mappingScalar_1 \sin(\inputScalar)} + {\color{\blueColor}\mappingScalar_2 \cos(\inputScalar)} + {\color{\greenColor}\mappingScalar_3 \sin(2\inputScalar)} + {\color{\cyanColor}\mappingScalar_4 \cos(2\inputScalar)}
 $$
 
 \slides{
@@ -55,8 +55,6 @@ $$
 \newframe{\includediagram{../slides/diagrams/ml/fourier_function000}{\width}}{fourier_function}
 \newframe{\includediagram{../slides/diagrams/ml/fourier_function001}{\width}}{fourier_function}
 \newframe{\includediagram{../slides/diagrams/ml/fourier_function002}{\width}}{fourier_function}
-\newframe{\includediagram{../slides/diagrams/ml/fourier_function003}{\width}}{fourier_function}
-\newframe{\includediagram{../slides/diagrams/ml/fourier_function004}{\width}}{fourier_function}
 \endanimation
 }
 

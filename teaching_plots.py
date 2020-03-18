@@ -1278,7 +1278,7 @@ def basis(function, x_min, x_max, fig, ax, loc, text, diagrams='./diagrams', fon
     """Plot examples of the basis vectors."""
     x = np.linspace(x_min, x_max, 100)[:, None]
 
-    basis = mlai.basis(function, num_basis)
+    basis = mlai.Basis(function, num_basis)
     Phi = basis.Phi(x)
     diag=1/basis.number*(Phi*Phi).sum(1)
 

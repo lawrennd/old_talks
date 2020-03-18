@@ -35,7 +35,7 @@ plot.basis(mlai.tanh, x_min=-2.0, x_max=2.0,
 \subsection{Functions Derived from Tanh Basis}
 
 $$
-\mappingFunction(\inputScalar) = {\color{cyan}\mappingScalar_0}   + {\color{green}\mappingScalar_1 } + {\color{yellow}\mappingScalar_3 }
+\mappingFunction(\inputScalar) = {\color{\redColor}\mappingScalar_0}   + {\color{\magentaColor}\mappingScalar_1 \text{tanh}\left(\inputScalar+1\right)}  + {\color{\blueColor}\mappingScalar_2 \text{tanh}\left(\inputScalar+0.33\right)}  + {\color{\greenColor}\mappingScalar_3 \text{tanh}\left(\inputScalar-0.33\right)} + {\color{\cyanColor}\mappingScalar_4 \text{tanh}\left(\inputScalar-1\right)}
 $$
 
 \slides{
@@ -44,8 +44,6 @@ $$
 \newframe{\includediagram{../slides/diagrams/ml/tanh_function000}{\width}}{tanh_function}
 \newframe{\includediagram{../slides/diagrams/ml/tanh_function001}{\width}}{tanh_function}
 \newframe{\includediagram{../slides/diagrams/ml/tanh_function002}{\width}}{tanh_function}
-\newframe{\includediagram{../slides/diagrams/ml/tanh_function003}{\width}}{tanh_function}
-\newframe{\includediagram{../slides/diagrams/ml/tanh_function004}{\width}}{tanh_function}
 \endanimation
 }
 

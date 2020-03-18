@@ -36,7 +36,7 @@ plot.basis(mlai.relu, x_min=-2.0, x_max=2.0,
 \subsection{Functions Derived from Relu Basis}
 
 $$
-\mappingFunction(\inputScalar) = {\color{cyan}\mappingScalar_0}   + {\color{green}\mappingScalar_1 xH(x+1.0) } + {\color{yellow}\mappingScalar_2 xH(x+0.33) } + {\color{magenta}\mappingScalar_3 xH(x-0.33)} +  {\color{red}\mappingScalar_4 xH(x-1.0)}
+\mappingFunction(\inputScalar) = {\color{\redColor}\mappingScalar_0}   + {\color{\magentaColor}\mappingScalar_1 xH(x+1.0) } + {\color{\blueColor}\mappingScalar_2 xH(x+0.33) } + {\color{\greenColor}\mappingScalar_3 xH(x-0.33)} +  {\color{\cyanColor}\mappingScalar_4 xH(x-1.0)}
 $$
 
 \slides{

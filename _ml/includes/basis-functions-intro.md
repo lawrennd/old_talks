@@ -42,7 +42,7 @@ $$
 $$
 \notes{where we are still in the one dimensional input setting so $\inputVector$ here represents a vector of our inputs with $\numData$ elements.}
 
-\notes{Let's try constructing such a matrix for a set of inputs. First of all, we create a function that returns the matrix valued function}
+\notes{Let's try constructing such a matrix for a set of inputs. First of all, we create a function that returns the matrix valued function.}
 
 \setupcode{import numpy as np}
 
@@ -55,7 +55,7 @@ $$
 \subsection{Functions Derived from Quadratic Basis}
 
 $$
-\mappingFunction(\inputScalar) = {\colorRed\mappingScalar_0}   + {\colorMagenta\mappingScalar_1 \inputScalar} + {\colorBlue\mappingScalar_2 \inputScalar^2}
+\mappingFunction(\inputScalar) = {\color{\redColor}\mappingScalar_0}   + {\color{\magentaColor}\mappingScalar_1 \inputScalar} + {\color{\blueColor}\mappingScalar_2 \inputScalar^2}
 $$
 
 \setupplotcode{import matplotlib.pyplot as plt
@@ -88,6 +88,7 @@ plot.basis(quadratic, x_min=-1.3, x_max=1.3,
 
 \displaycode{import pods
 from ipywidgets import IntSlider}
+
 \displaycode{pods.notebook.display_plots('\basisfunction{num_basis:0>3}.svg', 
                             directory='../slides/diagrams/ml', 
 							num_basis=IntSlider(0,0,2,1))}
@@ -122,10 +123,12 @@ _ = ax.set_title('Quadratic Basis Functions')}
 \newframe{\includediagram{../slides/diagrams/ml/quadratic_function002}{\width}}{quadratic_function}
 \endanimation
 }
+
 \notes{\figure{\includediagram{../slides/diagrams/ml/quadratic_function002}{80%}}{Functions constructed by weighted sum of the components of a quadratic basis.}{quadratic-function-2}}
 
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
+
 \displaycode{pods.notebook.display_plots('quadratic_function{num_function:0>3}.svg', 
                             directory='../slides/diagrams/ml', 
 							num_basis=IntSlider(0,0,2,1))}

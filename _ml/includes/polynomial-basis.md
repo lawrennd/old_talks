@@ -26,7 +26,7 @@ plot.basis(mlai.polynomial, x_min=-1.3, x_max=1.3,
 \subsection{Functions Derived from Polynomial Basis}
 
 $$
-\mappingFunction(\inputScalar) = {\color{cyan}\mappingScalar_0}   + {\color{green}\mappingScalar_1 \inputScalar} + {\color{yellow}\mappingScalar_2 \inputScalar^2}
+\mappingFunction(\inputScalar) = {\color{\redColor}\mappingScalar_0} + {\color{\magentaColor}\mappingScalar_1 \inputScalar} + {\color{\blueColor}\mappingScalar_2 \inputScalar^2}
 $$
 
 \slides{

@@ -37,7 +37,7 @@ import pods}
 \subsection{Functions Derived from Radial Basis}
 
 $$
-\mappingFunction(\inputScalar) = {\color{cyan}\mappingScalar_1 e^{-2(\inputScalar+1)^2}}  + {\color{green}\mappingScalar_2e^{-2\inputScalar^2}} + {\color{yellow}\mappingScalar_3 e^{-2(\inputScalar-1)^2}}
+\mappingFunction(\inputScalar) = {\color{\redColor}\mappingScalar_1 e^{-2(\inputScalar+1)^2}}  + {\color{\magentaColor}\mappingScalar_2e^{-2\inputScalar^2}} + {\color{\blueColor}\mappingScalar_3 e^{-2(\inputScalar-1)^2}}
 $$
 
 \slides{
