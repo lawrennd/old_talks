@@ -1,5 +1,5 @@
 ---
-layout: lectures
+layout: lecture
 title: "Objective Functions: A Simple Example with Matrix Factorisation"
 abstract: |
   In this session we introduce the notion of objective functions and show how they can be used in a simple recommender system based on *matrix factorisation*.

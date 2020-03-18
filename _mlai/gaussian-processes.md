@@ -1,5 +1,5 @@
 ---
-layout: lectures
+layout: lecture
 title: "Special Topics: Gaussian Processes"
 author:
 - family: Lawrence
@@ -14,6 +14,10 @@ week: 12
 ipynb: True
 date: 2015-12-15
 abstract: 
+postdir: ../../../mlatcl/mlai/_lectures/
+slidedir: ../../../mlatcl/mlai/slides/
+notedir: ../../../mlatcl/mlai/_notes/
+notebookdir: ../../../mlatcl/mlai/_notebooks/
 transition: None
 ---
 

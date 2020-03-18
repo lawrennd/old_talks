@@ -24,7 +24,10 @@ parser.add_argument("-A", "--include-after-body", type=str,
 
 parser.add_argument("-t", "--to", type=str,
 		    choices=['pptx', 'html', 'docx', 'ipynb', 'svg', 'tex'],
-                    help="Target ouptut file format")
+                    help="Target output file format")
+
+parser.add_argument("-w", "--whitespace", default=True, action='store_true',
+                    help="Whether to remove whitespace from gpp files.")
 
 parser.add_argument("-I", "--include-path", type=str,
                     help="include diractories")
@@ -45,6 +48,7 @@ if args.include_path:
    arglist.append('-I{include}'.format(include=args.include_path))
 if args.output:
    arglist.append('-o {}'.format(args.output))
+
    
 filelist = []
 if args.include_before_body:
@@ -66,6 +70,9 @@ if args.no_header:
 else:
    header,body = nt.extract_header_body(args.filename)
 
+
+if args.whitespace:
+   print("Whitespace is true")
 
 with open('tmp.md','w') as fd:
    if not args.no_header:
