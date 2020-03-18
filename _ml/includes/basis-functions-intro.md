@@ -55,7 +55,7 @@ $$
 \subsection{Functions Derived from Quadratic Basis}
 
 $$
-\mappingFunction(\inputScalar) = {\color{cyan}\mappingScalar_0}   + {\color{green}\mappingScalar_1 \inputScalar} + {\color{yellow}\mappingScalar_2 \inputScalar^2}
+\mappingFunction(\inputScalar) = {\colorRed\mappingScalar_0}   + {\colorMagenta\mappingScalar_1 \inputScalar} + {\colorBlue\mappingScalar_2 \inputScalar^2}
 $$
 
 \setupplotcode{import matplotlib.pyplot as plt
@@ -84,7 +84,7 @@ plot.basis(quadratic, x_min=-1.3, x_max=1.3,
 \endanimation
 }
 
-\notes{\figure{\includediagram{../slides/diagrams/ml/\concat{\basisfunction}{002}{80%}}{The set of functions which are combined to form a *quadratic* basis.}{quadratic-basis-2}
+\notes{\figure{\includediagram{../slides/diagrams/ml/\concat{\basisfunction}{002}{80%}}{The set of functions which are combined to form a *quadratic* basis.}{quadratic-basis-2}}
 
 \displaycode{import pods
 from ipywidgets import IntSlider}
