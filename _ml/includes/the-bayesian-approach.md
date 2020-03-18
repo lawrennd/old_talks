@@ -27,7 +27,7 @@ which arises from the assumption that our observation is given by
 $$
 \dataScalar_i = \mappingVector^\top \inputVector_i + \noiseScalar_i.
 $$
-In other words this is the Gaussian likelihood we have been fitting by minimizing the sum of squares. Have a look at [the session on multivariate regression](./week3.ipynb) as a reminder.
+In other words this is the Gaussian likelihood we have been fitting by minimizing the sum of squares. Have a look at [the session on multivariate regression](./03-linear-regression.html) as a reminder.
 
 We've introduce the likelihood, but we don't have  relationship with the posterior, however, the product rule can also be written in the following way 
 $$
