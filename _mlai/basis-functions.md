@@ -23,7 +23,7 @@ notebookdir: ../../../mlatcl/mlai/_notebooks/
 transition: None
 ---
 
-\include{talk-macros.tex}
+\include{talk-macros.gpp}
 
 \displaycode{%matplotlib inline}
 
