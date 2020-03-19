@@ -46,4 +46,51 @@
 \define{\addguardian{title}{link}}{Guardian article on [\title](https://www.theguardian.com/media-network/\link)}
 \define{\addblog{title}{link}}{blog post on [\title](http://inverseprobability.com/\link).}
 
+\define{\addreading{reference}{section}}{\ifndef{readingMaterial}\defeval{\readingMaterial}{* \section of \reference 
+}
+\else
+\defeval{\readingMaterial}{\readingMaterial
+* \section of \reference 
+}
+\endif}
+
+\define{\addexercise{reference}{exercise}}{\ifndef{exerciseMaterial}\defeval{\exerciseMaterial}{* \exercise of \reference 
+}
+\else
+\defeval{\exerciseMaterial}{\exerciseMaterial
+* \exercise of \reference 
+}
+\endif}
+
+\define{\thanks}{
+\subsection{Thanks!}
+
+For more information on these subjects and more you might want to check the following resources.
+
+* twitter: [\@lawrennd](https://twitter.com/lawrennd)
+* podcast: [The Talking Machines](http://thetalkingmachines.com)\ifdef{guardianArticles}
+\guardianArticles\else
+* newspaper: [Guardian Profile Page](http://www.theguardian.com/profile/neil-lawrence)\endif\ifdef{blogPosts}
+* blog posts:
+\blogPosts\else
+* blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
+\endif}
+
+
+\define{\reading}{
+\ifdef{readingMaterial}
+\subsection{Further Reading}
+
+\readingMaterial\undef{readingMaterial}
+
+\endif}
+
+\define{\exercises}{
+\ifdef{exerciseMaterial}
+\subsection{Exercises}
+
+\exerciseMaterial\undef{exerciseMaterial}
+
+\endif}
+
 \endif
