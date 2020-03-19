@@ -34,7 +34,7 @@ from \filename import \object\endif
 \ifdef{DISPLAYCODE}
 \define{\setupdisplaycode{block}}{\setupcode{\block}}
 \define{\loaddisplaycode{object}{filename}}{\loadcode{\object}{\filename}}
-\define{\displaycode{block}}{\displaycode{\block}}
+\define{\displaycode{block}}{\code{\block}}
 \endif
 
 \endif
