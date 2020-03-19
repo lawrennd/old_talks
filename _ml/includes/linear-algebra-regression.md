@@ -358,7 +358,7 @@ These cells use [Markdown format](http://en.wikipedia.org/wiki/Markdown). You ca
 
 ```(b) m = x.mean()```
 
-```(c) g = (x*w).sum()```}{1}{15}
+```(c) g = (x*w).sum()```}{15}
 
 
 \subsection{Fixed Point Updates}
@@ -383,7 +383,7 @@ Now that you've had a little training in writing maths with $\LaTeX$, we will be
 \writeassignment{Derive the the gradient of the objective function
 with respect to the slope, $m$. Rearrange it to show that the update equation
 written above does find the stationary points of the objective function. By
-computing its derivative show that it's a minimum.}{2}{20}
+computing its derivative show that it's a minimum.}{20}
 
 \code{m = ((y - c)*x).sum()/(x**2).sum()
 print(m)}
@@ -430,7 +430,7 @@ week](./week2.ipynb)).
 over less than 10 iterations is smaller than $1\times10^{-4}$. This is known as
 a stopping criterion.
 
-Why do we need so many iterations to get to the solution?}{3}{25}
+Why do we need so many iterations to get to the solution?}{}{25}
 
 \subsection{Important Concepts Not Covered}
 
@@ -674,7 +674,7 @@ function was then
 $$
 E = \sum_{i,j} s_{i,j}(\dataScalar_{i,j} - f_{i, j})^2
 $$
-Try writing this down in matrix and vector form. How many of the terms can you do? For each variable and parameter carefully think about whether it should be represented as a matrix or vector. Do as many of the terms as you can. Use $\LaTeX$ to give your answers and give the *dimensions* of any matrices you create.}{4}{20}
+Try writing this down in matrix and vector form. How many of the terms can you do? For each variable and parameter carefully think about whether it should be represented as a matrix or vector. Do as many of the terms as you can. Use $\LaTeX$ to give your answers and give the *dimensions* of any matrices you create.}{20}
 
 
 \section{Objective Optimisation}
@@ -813,7 +813,7 @@ where we have exploited the fact that $\inputMatrix^\top\inputMatrix$ is symmetr
 
 \writeassignment{Use the equivalence between our vector and our matrix
 formulations of linear regression, alongside our definition of vector derivates,
-to match the gradients we've computed directly for $\frac{\text{d}\errorFunction(c, m)}{\text{d}c}$ and $\frac{\text{d}\errorFunction(c, m)}{\text{d}m}$ to those for $\frac{\text{d}\errorFunction(\mappingVector)}{\text{d}\mappingVector}$.}{5}{20}
+to match the gradients we've computed directly for $\frac{\text{d}\errorFunction(c, m)}{\text{d}c}$ and $\frac{\text{d}\errorFunction(c, m)}{\text{d}m}$ to those for $\frac{\text{d}\errorFunction(\mappingVector)}{\text{d}\mappingVector}$.}{20}
 
 
 \section{Update Equation for Global Optimum}

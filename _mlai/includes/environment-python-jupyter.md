@@ -18,7 +18,7 @@ doc/2/notebook/index.html).}
 
 \writeassignment{Who invented python and why? What was the language
 designed to do? What is the origin of the name "python"? Is the language a
-compiled language? Is it an object orientated language?}{1}{10}
+compiled language? Is it an object orientated language?}{10}
 
 \section{Choice of Environment}
 

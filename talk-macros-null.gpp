@@ -32,7 +32,7 @@
 
 \defeval{\dtext{text}{x}{y}{style}{id}}{}
 \defeval{\dpath{path}{style}{id}}{}
-\define{\svgiStart}{
+\define{\svgiStart}{}
 
 \define{\editme}{}
 
@@ -84,6 +84,14 @@
 \define{\slidesincremental{text}}{}
 \define{\newslide{text}}{}
 
+\define{\codeblockstart}{}
+\define{\codeblockend}{}
+\define{\pythonblockstart}{}
+\define{\pythonblockend}{}
+\define{\matlabblockstart}{}
+\define{\matlabblockend}{}
+
+
 \define{\setupplotcode{block}}{}
 \define{\loadplotcode{object}{filename}}{}
 \define{\plotcode{block}}{}
@@ -101,7 +109,5 @@
 \define{\helpercode{block}}{}
 
 \define{\matlabcode{block}}{}
-
-
 
 \endif

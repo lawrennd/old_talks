@@ -1,41 +1,40 @@
 \ifndef{talkMacrosCode}
 \define{talkMacrosCode}
 
-\define{\setupplotcode{block}}{```{.python}
-\block
-```}
-\define{\loadplotcode{object}{filename}}{```{.python}
-from \filename import \object
-```}
-\define{\plotcode{block}}{```{.python}
-\block
-```}
-\define{\setupdisplaycode{block}}{```{.python}
-\block
-```}
-\define{\displaycode{block}}{```{.python}
-\block
-```}
-\define{\setupcode{block}}{```{.python}
-\block
-```}
-\define{\loadcode{object}{filename}}{```{.python}
-%load -s \object \filename.py
-```}
-\define{\setuphelpercode{block}}{```{.python}
-\block
-```}
-\define{\helpercode{block}}{```{.python}
-\block
-```}
-\define{\code{block}}{
-\block
-}
-\define{\matlabcode{block}}{```{.matlab}
-\block
-```}
-
 \define{\installcode{library}}{\code{%pip install \library}}
+\define{\setupcode{block}}{\pythonblockstart
+\block
+\pythonblockend}
+\define{\loadcode{object}{filename}}{\pythonblockstart
+\if{MAGICCODE}%load -s \object \filename.py\else
+from \filename import \object\endif
+\pythonblockend}
+\define{\code{block}}{\pythonblockstart
+\block
+\pythonblockend}
 
+\ifdef{HELPERCODE}
+\define{\setuphelpercode{block}}{\setupcode{\block}}
+\define{\loadhelpercode{object}{filename}}{\loadcode{\object}{\filename}}
+\define{\helpercode{block}}{\code{\block}}
+\endif
+
+\ifdef{MATLABCODE}
+\define{\matlabcode{block}}{\matlabblockstart
+\block
+\matlabblockend}
+\endif
+
+\ifdef{PLOTCODE}
+\define{\setupplotcode{block}}{\setupcode{\block}}
+\define{\loadplotcode{object}{filename}}{\loadcode{\object}{\filename}}
+\define{\plotcode{block}}{\code{\block}}
+\endif
+
+\ifdef{DISPLAYCODE}
+\define{\setupdisplaycode{block}}{\setupcode{\block}}
+\define{\loaddisplaycode{object}{filename}}{\loadcode{\object}{\filename}}
+\define{\displaycode{block}}{\displaycode{\block}}
+\endif
 
 \endif

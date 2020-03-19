@@ -37,10 +37,8 @@ prob_both_large = large/total_large_doctors
 print("Probability of number of nurses being greater than 2 given number of doctors is greater than 1 is:", prob_both_large)
 }
 
-\codeassignment{Write code that prints out the probability of nurses being greater than 2 for different numbers of doctors.}{2}{15}
+\codeassignment{Write code that prints out the probability of nurses being greater than 2 for different numbers of doctors.}{}{15}
 
-
-\notes{#### Notes for Question }
 
 \notes{Make sure the plot is included in *this* notebook
 file (the `IPython` magic command `%matplotlib inline` we ran above will do that

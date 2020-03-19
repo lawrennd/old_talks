@@ -558,9 +558,7 @@ are in the columns. This implies that if we have $q$ inputs to the function we
 have $\mathbf{F}\in \Re^{n\times p}$, $\mappingMatrix \in \Re^{p \times q}$ and
 $\latentMatrix \in \Re^{n\times q}$.}
 
-### Assignment Question 1
-
-Show that, given all the definitions above, if,
+\writeassignment{Show that, given all the definitions above, if,
 $$
 \mathbf{F} = \latentMatrix\mappingMatrix^\top
 $$
@@ -574,15 +572,9 @@ $\latentMatrix$, then show that
 $$
 f_j(\latentVector_{i, :}) = \weightVector_{j, :}^\top
 \latentVector_{i, :}
-$$
+$$}{10}
 
-*10 marks*
-
-#### Question 1 Answer
-
-Write your answer to the question in this box.
-
-## Latent Variables
+\subsection{Latent Variables}
 
 The difference between this model and a multiple output
 regression is that in the regression case we are provided with the covariates
@@ -772,7 +764,7 @@ to be all zeros.
 express $c_{i,j}$, the value of the element at the $i$th row and the $j$th
 column of $\covarianceMatrix$, in terms of the columns of $\mathbf{A}$. Use this to
 show that (i) the matrix is symmetric and (ii) the matrix has positive elements
-along its diagonal.}{2}{15}
+along its diagonal.}{15}
 
 
 \section{Eigenvectors of a Symmetric Matric}
@@ -914,7 +906,7 @@ $$
 $$
 Compare this to
 the posterior for the Bayesian linear regression from last week, do they have
-similar forms? What matches and what differs?}{3}{30}
+similar forms? What matches and what differs?}{30}
 
 \subsection{Python Implementation of the Posterior}
 
@@ -933,7 +925,7 @@ posterior covariance for the given $\dataMatrix$.
 Don't forget to subtract the
 mean of the data `Y` inside your function before computing the posterior:
 remember we assumed at the beginning of our analysis that the data had been
-centred (i.e. the mean was removed).}{4}{20}
+centred (i.e. the mean was removed).}{20}
 
 \code{# Question 4 Answer Code
 # Write code for you answer to this question in this box
@@ -1358,7 +1350,7 @@ we can replot the original data as a function of the input space.
 
 We will now try to reconstruct the motion capture figure form some different places in the latent plot.
 
-\writeassignment{Project the motion capture data onto its principal components, and then use the *mean posterior estimate* to reconstruct the data from the latent variables at the data points. Use two latent dimensions. What is the sum of squares error for the reconstruction?}{5}{25}
+\writeassignment{Project the motion capture data onto its principal components, and then use the *mean posterior estimate* to reconstruct the data from the latent variables at the data points. Use two latent dimensions. What is the sum of squares error for the reconstruction?}{25}
 
 \subsection{Other Data Sets to Explore}
 

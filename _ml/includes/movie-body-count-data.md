@@ -99,7 +99,7 @@ plt.title('Histogram of Film Kill Count')}
 \writeassignment{Read on the internet about the following python
 libraries: `numpy`, `matplotlib`, `scipy` and `pandas`. What functionality does
 each provide python. What is the `pylab` library and how does it relate to the
-other libraries?}{2}{10}
+other libraries?}{10}
 
 \notes{We could try and remove these outliers, but another approach would be plot the logarithm of the counts against the year.}
 

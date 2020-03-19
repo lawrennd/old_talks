@@ -44,10 +44,10 @@ $$
 $$
 }
 
-\codeassignment{Compute the covariance for $\mappingVector$ given the training data, call the resulting variable `w_cov`. Compute the mean for $\mappingVector$ given the training data. Call the resulting variable `w_mean`. Assume that $\dataStd^2 = 0.01$}{1}{10}{sigma2 = 
+\codeassignment{Compute the covariance for $\mappingVector$ given the training data, call the resulting variable `w_cov`. Compute the mean for $\mappingVector$ given the training data. Call the resulting variable `w_mean`. Assume that $\dataStd^2 = 0.01$}{sigma2 = 
 w_cov = 
 w_mean = 
-}
+}{10}
 
 
 \endif

@@ -16,9 +16,6 @@
 \ifdef{IPYNB}
 \include{talk-macros-ipynb.gpp}
 \endif
-\ifdef{CODEONLY}
-\include{talk-macros-code.gpp}
-\endif
 \ifdef{TEX}
 \include{talk-macros-tex.gpp}
 \endif
@@ -76,3 +73,9 @@
 \include{talk-macros-back.gpp}
 \include{talk-people.gpp}
 \include{talk-logos.gpp}
+\ifdef{EXERCISES}
+\include{talk-macros-exercises.gpp}
+\endif
+\ifdef{CODE}
+\include{talk-macros-code.gpp}
+\endif

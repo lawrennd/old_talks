@@ -12,6 +12,10 @@ defaults = {'slidedir': '../slides/',
             'notedir': '../_notes/',
             'notebookdir': '../_notebooks/',
             'postdir': '../_posts/',
+            'talkcss': 'talks.css',
+            'slidesheader': '../slides-header.html',
+            'postsheader': '../posts-header.html',
+            'assignment': False,
             'week': 0}
 
 try:

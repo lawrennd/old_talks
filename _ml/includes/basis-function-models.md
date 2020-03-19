@@ -19,7 +19,7 @@ x = data['X']
 y -= y.mean()
 y /= y.std()}
 
-\writeassignment{Now we are going to redefine our polynomial basis. Have a careful look at the operations we perform on `x` to create `z`. We use `z` in the polynomial computation. What are we doing to the inputs? Why do you think we are changing `x` in this manner?}{2}{10}
+\writeassignment{Now we are going to redefine our polynomial basis. Have a careful look at the operations we perform on `x` to create `z`. We use `z` in the polynomial computation. What are we doing to the inputs? Why do you think we are changing `x` in this manner?}{10}
 
 \loadcode{polynomial}{mlai}
 
@@ -47,7 +47,7 @@ you used for the
 (b) Radial basis
 (c) Fourier basis
 
-Write your answers in the code box below creating a new vector of parameters (in the correct order!) for each basis.}{3}{15}{
+Write your answers in the code box below creating a new vector of parameters (in the correct order!) for each basis.}{
 # (a) polynomial
 ###### Edit these lines #####
 # w_0 =
@@ -73,7 +73,7 @@ Write your answers in the code box below creating a new vector of parameters (in
 # w_2 = 
 # w_3 =
 ##############################
-# w_fourier = np.asarray([[w_0], [w_1], [w_2], [w_3]])}
+# w_fourier = np.asarray([[w_0], [w_1], [w_2], [w_3]])}{15}
 
 \code{np.asarray([[1, 2, 3, 4]]).shape}
 
@@ -241,7 +241,7 @@ the model is linear in the inputs, the parameters or both.
 
 (d) $\mappingFunction(\inputScalar) = \exp(-\sum_i(\inputScalar_i - \mappingScalar_i)^2)$
 
-(e) $\mappingFunction(\inputScalar) = \exp(-\mappingVector^\top \inputVector)$}{4}{25}
+(e) $\mappingFunction(\inputScalar) = \exp(-\mappingVector^\top \inputVector)$}{25}
 
 \notes{
 \subsection{Fitting the Model Yourself}
@@ -258,6 +258,6 @@ $$
 Compute the corresponding error on the training data. How does it
 compare to the error you were able to achieve fitting the basis above? Plot the
 form of your prediction function from the least squares estimate alongside the
-form of you prediction function you fitted by hand.}{5}{35}
+form of you prediction function you fitted by hand.}{}{35}
 
 \endif

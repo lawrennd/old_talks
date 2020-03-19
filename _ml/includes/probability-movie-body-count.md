@@ -13,7 +13,7 @@ print("Probability of deaths being greather than 40 is:", prob_death)}
 greater than 40 deaths. The estimate seems quite high. What could be wrong with
 the estimate? Do you think any film you go to in the cinema has this probability
 of having greater than 40 deaths?
-}{4}{10}
+}{10}
 
 \section{Conditioning}
 
@@ -44,11 +44,10 @@ being over 40 for each year we have in our `data` data frame. Store the
 result in a `numpy` array and plot the probabilities against the years using the
 `plot` command from `matplotlib`. Do you think the estimate we have created of
 $P(y|t)$ is a good estimate? Write your code and your written answers in the box
-below.}{5}{20}
+below.}{# Make sure the plot is included in *this* notebook
+file 
+# (the `IPython` magic command `%matplotlib inline` we ran above will do that
+for you, it only needs to be run once per file).}{20}
 
 
-\notes{#### Notes for Question }
-
-\notes{Make sure the plot is included in *this* notebook
-file (the `IPython` magic command `%matplotlib inline` we ran above will do that
-for you, it only needs to be run once per file).}
+\notes{}

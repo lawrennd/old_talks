@@ -8,7 +8,7 @@ import _python.ndltalk as nt
 parser = argparse.ArgumentParser()
 parser.add_argument("output",
                     type=str,
-                    choices=['post', 'docx', 'pptx', 'prefix'],
+                    choices=['pp', 'post', 'docx', 'pptx', 'prefix'],
                     help="The type of output file (post is for a jekyll post, docx for word, pptx for powerpoint)")
 parser.add_argument("base",
                     type=str,
@@ -35,16 +35,14 @@ except nt.FileFormatError:
 
 if layout == 'lecture':
     prefix = '{0:02}'.format(week)
-else:
-    prefix = date
+elif layout == 'test':
+    prefix = 'XXXX-XX-XX'
 
 out = prefix + '-' + args.base
     
 if args.output == 'prefix':
     print(prefix)
     
-
-
 elif args.output == 'post':
     lines = """--metadata date={date} """
     for ext in ['docx', 'pptx']:
@@ -72,4 +70,10 @@ elif args.output=='docx':
 elif args.output=='pptx':
     lines = '--reference-doc ' + nt.header_field('potx', fields)
     print(lines)
-    
+
+elif args.output=='pp':
+    lines = '--include-path ./..'
+    # Flags for the preprocessor.
+    if nt.header_field('assignment', fields):
+        lines += """ --assignment"""
+    print(lines)

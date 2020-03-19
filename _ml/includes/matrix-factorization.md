@@ -88,7 +88,7 @@ respect to $v_{k, \ell}$? Write your answer in the box below, and
 explain which differentiation techniques you used to get there. You
 will be expected to justify your answer in class by oral
 questioning. Create a function for computing this gradient that is
-used in the algorithm below.}{4}{20}
+used in the algorithm below.}{20}
 
 \subsection{Steepest Descent Algorithm}
 
@@ -146,11 +146,11 @@ for i in range(iterations):
     V -= learn_rate*gV}
 	
 \codeassignment{What happens as you increase the number of iterations?
-What happens if you increase the learning rate?}{5}{10}
+What happens if you increase the learning rate?}{}{10}
 
 \subsection{Stochastic Gradient Descent or Robbins Monroe Algorithm}
 
-Stochastic gradient descent involves updating separating each gradient
+Stochastic gradient descent [@Robbins:stoch51] involves updating separating each gradient
 update according to each separate observation, rather than summing
 over them all. It is an approximate optimization method, but it has
 proven convergence under certain conditions and can be much faster in
@@ -162,7 +162,7 @@ uses stochastic gradient descent.
 algorithm. Monitor the objective function after every 1000 updates to
 ensure that it is decreasing. When you have finished, plot the movie
 map and the user map in two dimensions. Label the plots with the name
-of the movie or user.}{6}{30}
+of the movie or user.}{}{30}
 
 \subsection{Making Predictions}
 
@@ -213,6 +213,6 @@ Y=d['Y']}
 
 \codeassignment{Use stochastic gradient descent to make a movie map
 for the movielens data. Plot the map of the movies when you are
-finished.}{7}{15}
+finished.}{}{15}
 
 \endif

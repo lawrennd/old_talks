@@ -13,6 +13,7 @@ include ../make-post.mk
 include ../make-ipynb.mk
 include ../make-markdown.mk
 include ../make-figures.mk
+include ../make-python.mk
 
 
 clean:

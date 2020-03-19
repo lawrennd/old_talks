@@ -44,7 +44,7 @@ Create a function that solves the linear system for the set of parameters that m
 
 ```w = fit(x, y, linear)```
 
-Fit a linear model to the olympic data using these functions and plot the resulting prediction between 1890 and 2020. Set the title of the plot to be the error of the fit on the *training data*.}{1}{15}
+Fit a linear model to the olympic data using these functions and plot the resulting prediction between 1890 and 2020. Set the title of the plot to be the error of the fit on the *training data*.}{}{15}
 
 \subsection{Polynomial Fit: Training Error}
 
@@ -61,7 +61,7 @@ It should be called in the following form:
 
 ```Phi = quadratic(x)```
 
-Use this to compute the quadratic fit for the model, again plotting the result titled by the error.}{2}{10}
+Use this to compute the quadratic fit for the model, again plotting the result titled by the error.}{}{10}
 
 \subsection{Polynomial Fits to Olympics Data}
 

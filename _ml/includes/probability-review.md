@@ -163,7 +163,7 @@ P(y) = \sum_{x} P(y, x)
 $$}
 
 \codeassignment{Write code that computes $P(y)$ by adding $P(y, x)$
-for all values of $x$.}{3}{10}
+for all values of $x$.}{}{10}
 
 \subsection{Bayes’ Rule}
 
@@ -244,6 +244,6 @@ Using what you've learnt about joint, conditional and marginal
 probabilities, as well as the sum and product rule, how would you formulate the
 question you want to answer in terms of probabilities? Should you be using a
 joint or a conditional distribution? If it's conditional, what should the
-distribution be over, and what should it be conditioned on?}{4}{20}
+distribution be over, and what should it be conditioned on?}{20}
 
 \endif

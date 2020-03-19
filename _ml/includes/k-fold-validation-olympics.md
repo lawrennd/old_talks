@@ -143,6 +143,6 @@ cross validation always select the same model?
 *Note*: The data doesn't divide into 5 equal size partitions for the five fold
 cross validation error. Don't worry about this too much. Two of the partitions
 will have an extra data point. You might find `np.random.permutation?` useful.
-}{6}{20}
+}{}{20}
 
 \endif

@@ -23,7 +23,7 @@ parser.add_argument("-A", "--include-after-body", type=str,
                     help="File to include after body.")
 
 parser.add_argument("-t", "--to", type=str,
-		    choices=['pptx', 'html', 'docx', 'ipynb', 'svg', 'tex'],
+		    choices=['pptx', 'html', 'docx', 'ipynb', 'svg', 'tex', 'python'],
                     help="Target output file format")
 
 parser.add_argument("-w", "--whitespace", default=True, action='store_true',
@@ -33,22 +33,52 @@ parser.add_argument("-I", "--include-path", type=str,
                     help="include diractories")
 
 parser.add_argument("-F", "--format", type=str,
-		   choices=['notes', 'slides'],
+		   choices=['notes', 'slides', 'code'],
 		   help="Target output file contents")
+
+parser.add_argument("-c", "--code", type=str, default=None,
+		    choices=['none', 'sparse', 'ipynb', 'diagnostic', 'plot'],
+                    help="Which parts of the code to include.")
+
+parser.add_argument("-e", "--exercises", default=True, action='store_true',
+		   help="Whether to include exercises")
+
+parser.add_argument("-a", "--assignment", default=False, action='store_true',
+		   help="Whether notes are an assignment or not")
+
 
 
 args = parser.parse_args()
 
-arglist = ['-U "\\\\" "" "{" "}{" "}" "{" "}" "#" ""']
+arglist = ['+n', '-U "\\\\" "" "{" "}{" "}" "{" "}" "#" ""']
 if args.to:
    arglist.append('-D{to}=1'.format(to=args.to.upper()))
 if args.format:
    arglist.append('-D{format}=1'.format(format=args.format.upper()))
+if args.exercises:
+   arglist.append('-DEXERCISES=1')
+if args.assignment:
+   arglist.append('-DASSIGNMENT=1')
+
+if args.code is not None and args.code != 'none':
+   arglist.append('-DCODE=1')
+   if args.code == 'ipynb':
+      arglist.append('-DDISPLAYCODE=1')
+      arglist.append('-DHELPERCODE=1')
+      arglist.append('-DMAGICCODE=1')
+   elif args.code == 'diagnostic':
+      arglist.append('-DDISPLAYCODE=1')
+      arglist.append('-DHELPERCODE=1')
+      arglist.append('-DPLOTCODE=1')
+      arglist.append('-DMAGICCODE=1')
+   if args.code == 'plot':
+      arglist.append('-DHELPERCODE=1')
+      arglist.append('-DPLOTCODE=1')
+      
 if args.include_path:
    arglist.append('-I{include}'.format(include=args.include_path))
 if args.output:
    arglist.append('-o {}'.format(args.output))
-
    
 filelist = []
 if args.include_before_body:

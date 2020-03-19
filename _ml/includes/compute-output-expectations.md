@@ -21,7 +21,7 @@ $$
 E = \sum_{i=1}^\numData (\dataScalar_i - \langle \mappingFunction_i\rangle)^2
 $$
 where
-$\langle \mappingFunction_i\rangle$ is the expected output of the model at point $\inputScalar_i$.}{2}{15}{# compute mean under posterior density
+$\langle \mappingFunction_i\rangle$ is the expected output of the model at point $\inputScalar_i$.}{# compute mean under posterior density
 f_pred_mean = 
 
 # plot the predictions
@@ -29,7 +29,7 @@ f_pred_mean =
 # compute mean at the training data and sum of squares error
 f_mean = 
 sum_squares = 
-print('The error is: ', sum_squares)}
+print('The error is: ', sum_squares)}{15}
 
 \subsection{Computing Error Bars}
 
@@ -55,19 +55,19 @@ $\basisVector_{i, :}$ is the basis vector associated with the input
 location, $\inputVector_i$.
 
 Plot the mean function and the error bars for your
-basis.}{3}{20}{# Compute variance at function values
+basis.}{# Compute variance at function values
 f_pred_var = 
 f_pred_std = 
 
-# plot the mean and error bars at 2 standard deviations above and below the mean}
+# plot the mean and error bars at 2 standard deviations above and below the mean}{20}
 
 \subsection{Validation}
 
 Now we will test the generalisation ability of these models.  Firstly we are going to use hold out validation to attempt to see which model is best for extrapolating.
 
-\codeassignment{Now split the data into training and *hold out* validation sets. Hold out the data for years after 1980. Compute the predictions for different model orders between 0 and 8. Find the model order which fits best according to *hold out* validation. Is it the same as the maximum likelihood result fom last week?}{4}{25}
+\codeassignment{Now split the data into training and *hold out* validation sets. Hold out the data for years after 1980. Compute the predictions for different model orders between 0 and 8. Find the model order which fits best according to *hold out* validation. Is it the same as the maximum likelihood result fom last week?}{}{25}
 
-\codeassignment{Now we will use leave one out cross validation to attempt to see which model is best at interpolating. Do you get the same result as for hold out validation? Compare plots of the hold out validation area for different degrees and the cross validation error for different degrees. Why are they so different? Select a suitable polynomial for characterising the differences in the predictions. Plot the mean function and the error bars for the full data set (to represent the leave one out solution) and the training data from the hold out experiment. Discuss your answer.}{5}{30}
+\codeassignment{Now we will use leave one out cross validation to attempt to see which model is best at interpolating. Do you get the same result as for hold out validation? Compare plots of the hold out validation area for different degrees and the cross validation error for different degrees. Why are they so different? Select a suitable polynomial for characterising the differences in the predictions. Plot the mean function and the error bars for the full data set (to represent the leave one out solution) and the training data from the hold out experiment. Discuss your answer.}{}{30}
 }
 
 

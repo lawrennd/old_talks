@@ -30,7 +30,7 @@ transition: None
 
 \writeassignment{What is jupyter and why was it invented? Give some
 examples of functionality it gives over standard python. What is the jupyter
-project? Name two languages involved in the Jupyter project other than python.}{3}{10}
+project? Name two languages involved in the Jupyter project other than python.}{10}
 
 \include{_ml/includes/what-is-ml.md}
 \include{_ml/includes/overdetermined-inaugural.md}
@@ -68,7 +68,7 @@ ia = IMDb()
 for movie in ia.search_movie('python'):
     print(movie)}-->
 
-\includeyoutube{GX8VLYUYScM}{800}{600}
+\figure{\includeyoutube{GX8VLYUYScM}{800}{600}}{MLAI Lecture 2 from 2012.}{mlai-lecture-2012}
 
 \newslide{Reading}
 
@@ -79,7 +79,7 @@ for movie in ia.search_movie('python'):
 \addreading{@Rogers:book11}{Section 2.5.1 (pg 58–60)}
 \addreading{@Rogers:book11}{Section 2.5.3 (pg 61–62)}
 
-- For other material in  read:
+- For other material in Bishop read:
 
 \addreading{@Bishop:book06}{Probability densities: Section 1.2.1 (Pages 17–19)}
 \addreading{@Bishop:book06}{Expectations and Covariances: Section 1.2.2 (Pages 19–20)}

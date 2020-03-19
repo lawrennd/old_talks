@@ -1,0 +1,70 @@
+\ifndef{talkMacrosAssignment}
+\define{talkMacrosAssignment}
+
+\define{\exerciseTitle}{Exercise}
+\define{\exerciseCounter}{0}
+
+\ifdef{ASSIGNMENT}
+\define{\questionTitle}{Question}
+\else
+\define{\questionTitle}{Exercise}
+\endif
+\define{\questionCounter}{0}
+\define{\questionMarkCounter}{0}
+
+
+\define{\incrementExerciseCounter}{\defeval{\exerciseCounter}{\eval{\exerciseCounter+1}}}
+
+<!--\define{\incrementQuestionMarkCounter{marks}}{\defeval{increment}{\marks}\defeval{\questionMarkCounter}{\eval{\questionMarkCounter+\increment}}}
+
+\defeval{\totalMarks}{*Total Marks*: \questionMarkCounter}-->
+
+\define{\incrementQuestionCounter}{\ifdef{ASSIGNMENT}\defeval{\questionCounter}{\eval{\questionCounter+1}}\else\incrementExerciseCounter\defeval{\questionCounter}{\exerciseCounter}\endif}
+
+\defeval{\writeassignment{text}{marks}}{\incrementQuestionCounter\incrementQuestionMarkCounter{\marks}
+\subsubsection \questionTitle \questionCounter
+
+\text
+
+\ifdef{ASSIGNMENT}*\marks marks*\endif
+\ifdef{NOTES}\ifdef{IPYNB}
+\subsubsection Write your answer to \questionTitle \questionCounter here
+
+\endif\endif
+}
+\define{\codeassignment{text}{codestub}{marks}}{\incrementQuestionCounter\incrementQuestionMarkCounter{\marks}
+\subsubsection \questionTitle \questionCounter
+
+\text
+
+\ifdef{ASSIGNMENT}*\marks marks*\endif
+
+\ifdef{NOTES}\ifdef{IPYNB}
+\pythonblockstart
+# Write your answer to \questionTitle \questionCounter here
+\ifdef{ASSIGNMENT}# provide the answers so that the code runs correctly otherwise you will loose marks!\endif
+
+\codestub
+
+\pythonblockend
+\endif\endif
+}
+\define{\exercise{text}{answerstub}{codestub}}{\incrementExerciseCounter\subsubsection \exerciseTitle \exerciseCounter
+
+\text
+
+\ifdef{NOTES}\ifdef{IPYNB}
+\subsubsection Write your answer to \exerciseTitle \exerciseCounter here
+
+\answerstub
+
+\pythonblockstart
+# Use this box for any code you need
+
+\codestub
+
+\pythonblockend
+\endif\endif
+}
+
+\endif
