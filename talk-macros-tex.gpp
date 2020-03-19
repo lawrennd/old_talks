@@ -60,7 +60,6 @@
 \define{\includeimg{filename}{width}{class}{align}}{\includegraphics[width=\width]{\filename}}
 
 \define{\includeimgclip{filename}{top}{right}{bottom}{left}{width}{class}{align}}{\includegraphics[width=\width]{\filename}}
-\define{\includehtml{filename}{width}{height}}{}
 
 \define{\columns{one}{two}{width1}{width2}}{\begin{table}[cc]
 \one & \two

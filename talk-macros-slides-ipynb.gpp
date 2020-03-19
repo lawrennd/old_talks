@@ -47,11 +47,7 @@ from \filename import \object
 \define{\code{block}}{```{.python}
 \block
 ```}
-\define{\matlabcode{block}}{}
 
-\define{\recommendation{text}}{}
-\define{\writeassignment{text}{question}{marks}}{}
-\define{\codeassignment{text}{question}{marks}}{}
 \define{\exercise{text}{answerstub}{codestub}}{### Exercise
 
 \text

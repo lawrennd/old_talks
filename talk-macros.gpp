@@ -1,3 +1,4 @@
+\include{talk-macros-null.gpp}
 \include{color-scheme.gpp}
 \include{talk-macros-front.gpp}
 \ifdef{SVG}
@@ -14,6 +15,9 @@
 \endif
 \ifdef{IPYNB}
 \include{talk-macros-ipynb.gpp}
+\endif
+\ifdef{CODEONLY}
+\include{talk-macros-code.gpp}
 \endif
 \ifdef{TEX}
 \include{talk-macros-tex.gpp}

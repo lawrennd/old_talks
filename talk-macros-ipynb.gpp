@@ -16,7 +16,7 @@ Figure: <i>\captionContents</i>}
 import pods
 pods.notebook.display_google_book(id='\id', page='\page')
 ```}
-\define{\includeyoutube{id}{width}{height}{time}}{```{.python}
+\define{\includeyoutube{id}{width}{height}{start}{end}}{```{.python}
 from IPython.lib.display import YouTubeVideo
 YouTubeVideo('\id')
 ```}

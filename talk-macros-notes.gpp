@@ -6,14 +6,10 @@
 \define{\includeyoutube{id}{width}{height}{time}}{[![](https://img.youtube.com/vi/\id/0.jpg)](https://www.youtube.com/watch?v=\id&t=\time)}
 
 \define{\recommendation{text}}{**Recommendation**: \text}
-\define{\slides{text}}{}
 \define{\slidenotes{slidetext}{notetext}}{\notetext}
-\define{\slidesincremental{text}}{}
-\define{\newslide{text}}{}
 \define{\fragment{text}{type}}{\text}
 \define{\fragmentindex{text}{type}{index}}{\text}
 \define{\fragmentdiv{contents}{number}{style}}{\contents}
-\define{\speakernotes{text}}{}
 \define{\notes{text}}{\text}
 \define{\notesfigure{block}}{\block}
 \define{\recommendation{text}}{**Recommendation**: \text}
@@ -29,51 +25,38 @@
 \define{\editme}{\define{editText}{\span{[}{editsection-bracket}\span{\href{\githubBaseUrl\file}{edit}{onclick="ga('send', 'event', 'Edit Page', 'Edit', '\githubBaseUrl\file', 13);"}}{editsection}\span{]}{editsection-bracket}}}
 \endif
 
-\define{\startanimation{group}{start}{finish}{name}}{}
 \define{\newframe{contents}{name}{style}}{\contents}
-\define{\endanimation}{}
 
 \define{\section{text}}{# \text \ifdef{editText}\editText\undef{editText}\endif}
 \define{\subsection{text}}{## \text \ifdef{editText}\editText\undef{editText}\endif}
 \define{\subsubsection{text}}{### \text \ifdef{editText}\editText\undef{editText}\endif}
 
+\define{\setupcode{block}}{```{.python}
+\block
+```}
+\define{\loadcode{object}{filename}}{```{.python}
+from \filename import \object
+```}
 \define{\code{block}}{```{.python}
+\block
+```}
+\define{\setuphelpercode{block}}{```{.python}
 \block
 ```}
 \define{\helpercode{block}}{```{.python}
 \block
 ```}
-\define{\setupdisplaycode{block}}{}
-\define{\displaycode{block}}{}
-\define{\displaynotes{block}}{}
-\define{\plotcode{block}}{}
-\define{\setupplotcode{block}}{}
-\define{\loadplotcode{object}{filename}}{}
-\define{\setuphelpercode{block}}{}
 \define{\matlabcode{block}}{```{.matlab}
 \block
 ```}
-\define{\setupcode{block}}{```{.python}
-\block
-```}
 
-\define{\loadcode{object}{filename}}{```{.python}
-from \filename import \object
-```}
 
 \define{\notesfigure{block}}{\block}
 \define{\slidesmall{block}}{\block}
 
-
 \define{\references}{\section{References}}
 
-\define{\speakernotes{text}}{}
 \define{\addguardian{title}{link}}{Guardian article on [\title](https://www.theguardian.com/media-network/\link)}
 \define{\addblog{title}{link}}{blog post on [\title](http://inverseprobability.com/\link).}
-
-
-\define{\thanks}{}
-
-
 
 \endif
