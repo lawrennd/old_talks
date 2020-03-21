@@ -1,22 +1,9 @@
 ---
 layout: lecture
+week: 6
 title: "Bayesian Regression"
 abstract: "Bayesian formalisms deal with uncertainty in parameters, "
-week: 6
-author:
-- family: Lawrence
-  given: Neil D.
-  gscholar: r3SJcvoAAAAJ
-  institute: University of Sheffield
-  twitter: lawrennd
-  url: http://inverseprobability.com
 date: 2015-11-03
-ipynb: True
-venue: University of Sheffield
-postdir: ../../../mlatcl/mlai/_lectures/
-slidedir: ../../../mlatcl/mlai/slides/
-notedir: ../../../mlatcl/mlai/_notes/
-notebookdir: ../../../mlatcl/mlai/_notebooks/
 transition: None
 youtube: 17zr5dGcUzE
 ---

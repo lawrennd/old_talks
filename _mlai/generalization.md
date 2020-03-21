@@ -1,21 +1,8 @@
 ---
 layout: lecture
 title: "Generalization: Model Validation"
-ipynb: True
 abstract: "Generalization is the main objective of a machine learning algorithm. The models we design should work on data they have not seen before. Confirming whether a model generalizes well or not is the domain of *model validation*. In this lecture we introduce approaches to model validation such as hold out validation and cross validation."
 week: 5
-author:
-- family: Lawrence
-  given: Neil D.
-  gscholar: r3SJcvoAAAAJ
-  institute: University of Sheffield
-  twitter: lawrennd
-  url: http://inverseprobability.com
-venue: University of Sheffield
-postdir: ../../../mlatcl/mlai/_lectures/
-slidedir: ../../../mlatcl/mlai/slides/
-notedir: ../../../mlatcl/mlai/_notes/
-notebookdir: ../../../mlatcl/mlai/_notebooks/
 youtube: wy0J6cgqlf8
 date: 2015-10-27
 transition: None

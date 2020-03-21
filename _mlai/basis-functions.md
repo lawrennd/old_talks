@@ -7,25 +7,15 @@ abstract: |
   In this session we will introduce *basis functions* which allow us to implement *non-linear regression models*.
 date: 2015-10-20
 week: 4
-ipynb: True
-author:
-- family: Lawrence
-  given: Neil D.
-  gscholar: r3SJcvoAAAAJ
-  institute: University of Sheffield
-  twitter: lawrennd
-  url: http://inverseprobability.com
-venue: University of Sheffield
-postdir: ../../../mlatcl/mlai/_lectures/
-slidedir: ../../../mlatcl/mlai/slides/
-notedir: ../../../mlatcl/mlai/_notes/
-notebookdir: ../../../mlatcl/mlai/_notebooks/
 transition: None
 ---
 
 \include{talk-macros.gpp}
 
-\displaycode{%matplotlib inline}
+\installcode{pods}
+\downloadcode{mlai}
+\downloadcode{teaching_plots}
+\downloadcode{gp_tutorial}
 
 \subsection{Nonlinear Regression}
 

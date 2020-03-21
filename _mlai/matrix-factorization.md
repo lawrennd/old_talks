@@ -4,20 +4,7 @@ title: "Objective Functions: A Simple Example with Matrix Factorisation"
 abstract: |
   In this session we introduce the notion of objective functions and show how they can be used in a simple recommender system based on *matrix factorisation*.
 date: 2015-10-06
-ipynb: True
 week: 2
-author:
-- family: Lawrence
-  given: Neil D.
-  gscholar: r3SJcvoAAAAJ
-  institute: University of Sheffield
-  twitter: lawrennd
-  url: http://inverseprobability.com
-venue: University of Sheffield
-postdir: ../../../mlatcl/mlai/_lectures/
-slidedir: ../../../mlatcl/mlai/slides/
-notedir: ../../../mlatcl/mlai/_notes/
-notebookdir: ../../../mlatcl/mlai/_notebooks/
 youtube: Gq6bjcm8AqQ
 transition: None
 ---
@@ -59,7 +46,7 @@ are going to take a slightly different tack.}
 
 \notes{This week we are going to try and build a simple movie recommender system using an objective function. To do this, the first thing I'd like you to do is to install some software we've written for sharing information across google documents.}
 
-\include{_ml/includes/pods-software.md}
+\include{_data-science/includes/pods-software.md}
 
 \include{_ml/includes/movie-body-count-data.md}
 

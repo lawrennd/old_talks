@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import sys
+import os
 import _python.ndltalk as nt
 import yaml
 from datetime import date
@@ -8,15 +9,6 @@ from datetime import date
 field = sys.argv[1]
 filename = sys.argv[2]
 
-defaults = {'slidedir': '../slides/',
-            'notedir': '../_notes/',
-            'notebookdir': '../_notebooks/',
-            'postdir': '../_posts/',
-            'talkcss': 'talks.css',
-            'slidesheader': '../slides-header.html',
-            'postsheader': '../posts-header.html',
-            'assignment': False,
-            'week': 0}
 
 try:
     answer = nt.talk_field(field, filename)

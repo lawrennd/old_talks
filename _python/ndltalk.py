@@ -6,7 +6,16 @@ import _python.ndltex as latex
 
 
 today = date.today()
-defaults = {'categories': ['notes'],
+
+defaults = {'slidedir': '../slides/',
+            'notedir': '../_notes/',
+            'notebookdir': '../_notebooks/',
+            'postdir': '../_posts/',
+            'talkcss': 'talks.css',
+            'slidesheader': '../slides-header.html',
+            'postsheader': '../posts-header.html',
+            'week': 0,
+            'categories': ['notes'],
             'date': today,
             'ipynb': False,
             'pptx': False,
@@ -19,6 +28,15 @@ defaults = {'categories': ['notes'],
             'notespdf': False,
             'potx': '../_includes/custom-reference.potx',
             'dotx': '../_includes/custom-reference.dotx'}
+
+# Load defaults from config file if it exists.
+default_file = '_config.yml'
+if os.path.isfile(default_file):
+    md= open(default_file, 'r')
+    text = md.read()
+    md.close()
+    defaults.update(yaml.load(text, Loader=yaml.FullLoader))
+    
 
 class FileFormatError(Exception):
     pass

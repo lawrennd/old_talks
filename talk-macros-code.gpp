@@ -1,7 +1,11 @@
 \ifndef{talkMacrosCode}
 \define{talkMacrosCode}
 
-\define{\installcode{library}}{\code{%pip install \library}}
+\define{\downloadfile{url}{filename}}{\ifndef{downloadFileSetup}\define{downloadFileSetup}\setupcode{import urllib.request}\endif
+\code{urllib.request.urlretrieve('\url','\filename')}
+}
+\define{\downloadcode{filename}}{\downloadfile{https://raw.githubusercontent.com/lawrennd/talks/gh-pages/\filename.py}{\filename.py}}
+\define{\installcode{library}}{\code{\ifeq{\library}{pods}%pip install --upgrade git+https://github.com/sods/ods\else%pip install \library\endif}}
 \define{\setupcode{block}}{\pythonblockstart
 \block
 \pythonblockend}
