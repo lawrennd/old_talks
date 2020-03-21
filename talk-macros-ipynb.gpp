@@ -22,14 +22,14 @@
 Figure: <i>\captionContents</i>}
 
 
-\define{\includegooglebook{id}{page}}{```
+\define{\includegooglebook{id}{page}}{\pythonblockstart
 import pods
 pods.notebook.display_google_book(id='\id', page='\page')
-```}
-\define{\includeyoutube{id}{width}{height}{start}{end}}{```{.python}
+\pythonblockend}
+\define{\includeyoutube{id}{width}{height}{start}{end}}{\pythonblockstart
 from IPython.lib.display import YouTubeVideo
 YouTubeVideo('\id')
-```}
+\pythonblockend}
 
 \define{\includeimg{filename}{width}{class}}{<img class="\class" src="http://inverseprobability.com/talks/slides/\filename" style="width:\width">}
 
