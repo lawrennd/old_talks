@@ -28,7 +28,7 @@ fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 
 ax.plot(x, y, 'rx')}
 
-\setupdisplaycode{pods}
+\setupdisplaycode{import pods}
 \displaycode{pods.notebook.display_prediction(basis=dict(radial=mlai.radial, 
 	                                        polynomial=mlai.polynomial, 
 											fourier=mlai.fourier, 
