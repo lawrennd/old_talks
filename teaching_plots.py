@@ -2530,8 +2530,12 @@ def stack_gp_sample(kernel=None,
                     diagrams='../diagrams'):
     """Draw a sample from a deep Gaussian process."""
 
-    import GPy
     if kernel is None:
+        try:
+            import GPy
+        except ImportError:
+            print('GPy unavailable, see https://github.com/SheffieldML/GPy pip install GPy')
+            return
         kernel=GPy.kern.RBF
     
     
