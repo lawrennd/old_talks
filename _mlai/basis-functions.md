@@ -12,6 +12,10 @@ transition: None
 
 \include{talk-macros.gpp}
 
+\notes{\subsection{Setup}
+
+First we download some libraries and files to support the notebook.}
+
 \installcode{pods}
 \downloadcode{mlai}
 \downloadcode{teaching_plots}
