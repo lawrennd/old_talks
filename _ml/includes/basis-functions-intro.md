@@ -74,8 +74,8 @@ plot.basis(quadratic, x_min=-1.3, x_max=1.3,
 		   diagrams='../slides/diagrams/ml')
 }
 
-\slides{
 \define{\basisfunction}{quadratic_basis}
+\slides{
 \define{\width}{80%}
 \startanimation{\basisfunction}{0}{2}
 \newframe{\includediagram{../slides/diagrams/ml/\concat{\basisfunction}{000}{\width}}}{\basisfunction}
