@@ -5,8 +5,6 @@ import IPython
 from mpl_toolkits.mplot3d import Axes3D
 
 
-import GPy
-
 try:
     import daft
 except ImportError:
