@@ -2524,12 +2524,17 @@ def box(lim_val=0.5, side_length=25):
     t = np.vstack((t, tnew))
     return t
 
-def stack_gp_sample(kernel=GPy.kern.RBF,
+def stack_gp_sample(kernel=None,
                     latent_dims=[2, 2, 2, 2, 2],
                     side_length=25, lim_val=0.5, num_samps=5,figsize=(1.4, 7),
                     diagrams='../diagrams'):
     """Draw a sample from a deep Gaussian process."""
 
+    import GPy
+    if kernel is None:
+        kernel=GPy.kern.RBF
+    
+    
     depth=len(latent_dims)
     num_time = side_length*4
     t = box(lim_val=lim_val, side_length=side_length)
@@ -2836,6 +2841,11 @@ def multiple_optima(ax=None, gene_number=937, resolution=80, model_restarts=10, 
 
     yhat = (y-offset)/scale
 
+    try:
+        import GPy
+    except ImportError:
+        print('GPy unavailable, see https://github.com/SheffieldML/GPy pip install GPy')
+        return
     kernel = GPy.kern.RBF(1, variance=1., lengthscale=1.)
     model = GPy.models.GPRegression(x, yhat, kernel=kernel)
     lls = mlai.contour_data(model, data, length_scales, log_SNRs)
