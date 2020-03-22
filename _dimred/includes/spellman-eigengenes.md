@@ -9,8 +9,9 @@ Each of the cells in your body stores your entire genetic code in your DNA, but 
 
 We will now load in one of the earliest gene expression data sets from a [1998 paper by Spellman et al.](http://www.ncbi.nlm.nih.gov/pubmed/9843569), it consists of gene expression measurements of over six thousand genes in a range of conditions for brewer's yeast. The experiment was designed for understanding the cell cycle of the genes. The expectation is that there should be oscillating signals inside the cell.
 
-First we extract the principale components of the gene expression.
+First we extract the principal components of the gene expression.
 
+\setupcode{import pods}
 \code{# load in data and replace missing values with zero
 data=pods.datasets.spellman_yeast_cdc15()
 Y = data['Y'].fillna(0)
