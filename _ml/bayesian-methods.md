@@ -30,7 +30,7 @@ categories:
 
 \include{_ml/includes/basis-functions-intro.md}
 
-\include{_ml/includes/olympic-polynomials.md}
+\include{_ml/includes/olympic-marathon-polynomial.md}
 
 \include{_ml/includes/underdetermined-system.md}
 

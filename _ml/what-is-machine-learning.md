@@ -54,7 +54,7 @@ $$
 
 \notes{Stephen Kiprotich, the 2012 gold medal winner from the London Olympics, comes from Kapchorwa district, in eastern Uganda, near the border with Kenya.}
 
-\include{_ml/includes/olympic-polynomials.md}
+\include{_ml/includes/olympic-marathon-polynomial.md}
 \include{../_ml/includes/what-does-machine-learning-do.md}
 
 \include{_ml/includes/what-is-ml-2.md}
