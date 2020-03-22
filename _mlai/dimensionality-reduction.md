@@ -1,22 +1,16 @@
 ---
-layout: lecture
+week: 8
 title: "Dimensionality Reduction: Latent Variable Modelling"
 abstract: "In this lecture we turn to *unsupervised learning*. Specifically, we introduce the idea of a latent variable model. Latent variable models are a probabilistic perspective on unsupervised learning which lead to dimensionality reduction algorithms. "
-week: 8
 date: 2015-11-17
 youtube: 0mtK2_rc0IY
-transition: None
 ---
 
 \include{talk-macros.tex}
 
-\code{import pods
-import mlai
-import numpy as np
-import matplotlib.pyplot as plt
-%matplotlib inline}
+\include{_mlai/includes/mlai-notebook-setup.md}
 
-\newslide{Review}
+\subsection{Review}
 
 * Last time: Looked at Bayesian Regression.
 * Introduced priors and marginal likelihoods.
@@ -29,6 +23,10 @@ import matplotlib.pyplot as plt
 * Often thought of as structure discovery.
   * Finding features in the data
   * Exploratory data analysis
+
+\setupplotcode{import matplotlib.pyplot as plt
+import numpy as np
+import mlai}
 
 \plotcode{fig, ax = plt.subplots(figsize=(5,5))
 
@@ -56,6 +54,7 @@ for i in range(num_centres):
     ax.plot(centres[i, 0] + el[:, 0], centres[i, 1] + el[:, 1], linewidth=2, color=[0,0,0])
 mlai.write_figure(../slides/diagrams/ml/cluster_data01.svg')}
 
+\setupdisplaycode{import pods}
 \displaycode{pods.notebook.display_plots('cluster_data{counter:0>2}.svg', directory='../slides/diagrams/ml', counter=(0, 1))}
 
 \newslide{Clustering}
@@ -98,6 +97,9 @@ mlai.write_figure(../slides/diagrams/ml/cluster_data01.svg')}
   *i.e.* it minimizes thesum of Euclidean squared distances betwen points and their associated centres.
 * The minimum is *not* guaranteed to be *global* or *unique*.
 * This objective is a non-convex optimization problem.
+
+\setupplotcode{import mlai
+import numpy as np}
 
 \plotcode{def write_plot(counter, caption):
     filebase = '../slides/diagrams/ml/kmeans_clustering_{counter:0>3}'.format(counter=counter)
@@ -151,6 +153,7 @@ for i in range(6):
     mlai.write_figure(../slides/diagrams/ml/kmeans_clustering_{counter:0>3}.svg'.format(counter=counter))
     write_plot(counter, 'Allocate each data point to the nearest cluster centre.')}
 
+\setupdisplaycode{import pods}
 \displaycode{pods.notebook.display_plots('kmeans_clustering_{counter:0>3}.svg', directory='../slides/diagrams/ml', 
                             text_top='kmeans_clustering_{counter:0>3}.tex', counter=(0, 13))}
 
@@ -170,6 +173,9 @@ clusters
 * 3648 dimensions (64 rows, 57 columns)
 * Space contains much more than just this digit.
 
+\setupplotcode{import matplotlib.pyplot as plt
+import numpy as np
+import mlai}
 \plotcode{fig, ax = plt.subplots(figsize=(5,5))
 
 six_image = mlai.load_pgm('br1561_6.3.pgm', directory ='../slides/diagrams/ml')
@@ -183,7 +189,8 @@ for i in range(3):
     ax.imshow(rand_image,interpolation='none').set_cmap('gray')
     mlai.write_figure(../slides/diagrams/ml/dem_six{i:0>3}.png'.format(i=i+1))}
 
-\setupcode{from ipywidgets import IntSlider}
+\setupdisplaycode{from ipywidgets import IntSlider
+import pods}
 \displaycode{pods.notebook.display_plots('dem_six{counter:0>3}.png', directory='../slides/diagrams/ml', counter=IntSlider(0, 0, 3, 1))}
 
 \newslide{USPS Samples}
@@ -635,7 +642,7 @@ of factor analysis.
 
 In 1933 [Harold
 Hotelling](http://en.wikipedia.org/wiki/Harold_Hotelling) published on
-*principal component analysis* the first mention of this approach. Hotelling's
+*principal component analysis* the first mention of this approach [@Hotelling:analysis33]. Hotelling's
 inspiration was to provide mathematical foundation for factor analysis methods
 that were by then widely used within psychology and the social sciences. His
 model was a factor analysis model, but he considered the noiseless 'limit' of
@@ -681,8 +688,7 @@ is this special case that leads to a particular algorithm, namely that the
 factor loadings (or principal components as Hotelling referred to them) are
 given by an *eigenvalue decomposition* of the empirical covariance matrix.
 
-##
-Eigenvalue Decomposition
+\subsection{Eigenvalue Decomposition}
 
 Eigenvalue problems are widespreads in physics and
 mathematics, they are often written as a matrix/vector equation but we prefer to
@@ -752,333 +758,19 @@ show that (i) the matrix is symmetric and (ii) the matrix has positive elements
 along its diagonal.}{15}
 
 
-\section{Eigenvectors of a Symmetric Matric}
+\subsection{Eigenvectors of a Symmetric Matric}
 
-Symmetric matrices have *orthonormal*
-eigenvectors. This means that $\mathbf{U}$ is an [orthogonal
-matrix](http://en.wikipedia.org/wiki/Orthogonal_matrix),
-$\mathbf{U}^\top\mathbf{U} = \eye$. This implies that $\mathbf{u}_{:, i}
-^\top \mathbf{u}_{:, j}$ is equal to 0 if $i\neq j$ and 1 if $i=j$.
+Symmetric matrices have *orthonormal* eigenvectors. This means that
+$\mathbf{U}$ is an
+[orthogonal matrix](http://en.wikipedia.org/wiki/Orthogonal_matrix),
+$\mathbf{U}^\top\mathbf{U} = \eye$. This implies that $\mathbf{u}_{:,
+i} ^\top \mathbf{u}_{:, j}$ is equal to 0 if $i\neq j$ and 1 if $i=j$.
 
-\section{Probabilistic PCA}
+\include{_dimred/includes/probabilistic-pca.md}
 
-In 1997 [Tipping and
-Bishop](http://research.microsoft.com/pubs/67218/bishop-ppca-jrss.pdf)  and
-[Roweis](https://www.cs.nyu.edu/~roweis/papers/empca.pdf) independently
-revisited Hotelling's model and considered the case where the noise variance was
-finite, but *shared* across all output dimensons. Their model can be thought of
-as a factor analysis where
-$$
-\boldsymbol{\Sigma} = \noiseStd^2 \eye.
-$$
-This
-leads to a marginal likelihood of the form
-$$
-p(\dataMatrix|\mappingMatrix, \noiseStd^2)
-= \prod_{i=1}^\numData\gaussianDist{\dataVector_{i, :}}{\zerosVector}{\mappingMatrix\mappingMatrix^\top + \noiseStd^2 \eye}
-$$
-where the limit of
-$\noiseStd^2\rightarrow 0$ is *not* taken. This defines a proper probabilistic
-model. Tippping and Bishop then went on to prove that the *maximum likelihood*
-solution of this model with respect to $\mappingMatrix$ is given by an eigenvalue
-problem. In the probabilistic PCA case the eigenvalues and eigenvectors are
-given as follows. 
-$$
-\mappingMatrix = \mathbf{U}\mathbf{L} \mathbf{R}^\top
-$$
-where
-$\mathbf{U}$ is the eigenvectors of the empirical covariance matrix 
-$$
-\mathbf{S} = \sum_{i=1}^\numData (\dataVector_{i, :} - \meanVector)(\dataVector_{i,
-:} - \meanVector)^\top,
-$$ 
-which can be written $\mathbf{S} = \frac{1}{\numData}
-\dataMatrix^\top\dataMatrix$ if the data is zero mean. The matrix $\mathbf{L}$ is
-diagonal and is dependent on the *eigenvalues* of $\mathbf{S}$,
-$\boldsymbol{\Lambda}$. If the $i$th diagonal element of this matrix is given by
-$\lambda_i$ then the corresponding element of $\mathbf{L}$ is 
-$$
-\ell_i =
-\sqrt{\lambda_i - \noiseStd^2}
-$$
-where $\noiseStd^2$ is the noise variance. Note that
-if $\noiseStd^2$ is larger than any particular eigenvalue, then that eigenvalue
-(along with its corresponding eigenvector) is *discarded* from the solution.
+\include{_dimred/includes/mocap-ppca.md}
+\include{_dimred/includes/robot-wireless-ppca.md}
 
-\subsection{Python Implementation of Probabilistic PCA}
-
-We will now implement this
-algorithm in python.
-
-\code{# probabilistic PCA algorithm
-def ppca(Y, q):
-    # remove mean
-    Y_cent = Y - Y.mean(0)
-    import numpy as np
-
-    # Comute covariance
-    S = np.dot(Y_cent.T, Y_cent)/Y.shape[0]
-    lambd, U = np.linalg.eig(S)
-
-    # Choose number of eigenvectors
-    sigma2 = np.sum(lambd[q:])/(Y.shape[1]-q)
-    l = np.sqrt(lambd[:q]-sigma2)
-    W = U[:, :q]*l[None, :]
-    return W, sigma2}
-
-In practice we may not wish to compute the eigenvectors of the covariance matrix
-directly. This is because it requires us to estimate the covariance, which
-involves a sum of squares term, before estimating the eigenvectors. We can
-estimate the eigenvectors directly either through [QR
-decomposition](http://en.wikipedia.org/wiki/QR_decomposition) or [singular value
-decomposition](http://en.wikipedia.org/wiki/Singular_value_decomposition). We
-saw a similar issue arise when \refnotes{computing the weights in a regression
-problem}{linear-regression}, where we also wished to avoid computation of
-$\latentMatrix^\top\latentMatrix$ (or in the case of \refnotes{nonlinear regression with basis functions}{basis-functions} $\boldsymbol{\Phi}^\top\boldsymbol{\Phi}$).
-
-\section{Posterior for Principal Component Analysis}
-
-Under the latent variable model
-justification for principal component analysis, we are normally interested in
-inferring something about the latent variables given the data. This is the
-distribution,
-$$
-p(\latentVector_{i, :} | \dataVector_{i, :})
-$$
-for any given data
-point. Determining this density turns out to be very similar to the approach for
-determining the Bayesian posterior of $\weightVector$ in Bayesian linear
-regression, only this time we place the prior density over $\latentVector_{i, :}$
-instead of $\weightVector$. The posterior is proportional to the joint density as
-follows,
-$$
-p(\latentVector_{i, :} | \dataVector_{i, :}) \propto p(\dataVector_{i,
-:}|\mappingMatrix, \latentVector_{i, :}, \noiseStd^2) p(\latentVector_{i, :})
-$$
-And as in
-the Bayesian linear regression case we first consider the log posterior,
-$$
-\log
-p(\latentVector_{i, :} | \dataVector_{i, :}) = \log p(\dataVector_{i, :}|\mappingMatrix,
-\latentVector_{i, :}, \noiseStd^2) + \log p(\latentVector_{i, :}) + \text{const}
-$$
-where
-the constant is not dependent on $\latentVector$. As before we collect the
-quadratic terms in $\latentVector_{i, :}$ and we assemble them into a Gaussian
-density over $\latentVector$.
-$$
-\log p(\latentVector_{i, :} | \dataVector_{i, :}) =
--\frac{1}{2\noiseStd^2} (\dataVector_{i, :} - \mappingMatrix\latentVector_{i,
-:})^\top(\dataVector_{i, :} - \mappingMatrix\latentVector_{i, :}) - \frac{1}{2}
-\latentVector_{i, :}^\top \latentVector_{i, :} + \text{const}
-$$
-
-\writeassignment{Multiply out the terms in the brackets. Then collect
-the quadratic term and the linear terms together. Show that the posterior has
-the form
-$$
-\latentVector_{i, :} | \mappingMatrix \sim \gaussianSamp{\meanVector_x}{\covarianceMatrix_x}
-$$
-where 
-$$
-\covarianceMatrix_x = \left(\noiseStd^{-2}
-\mappingMatrix^\top\mappingMatrix + \eye\right)^{-1}
-$$
-and 
-$$
-\meanVector_x
-= \covarianceMatrix_x \noiseStd^{-2}\mappingMatrix^\top \dataVector_{i, :} 
-$$
-Compare this to
-the posterior for the Bayesian linear regression from last week, do they have
-similar forms? What matches and what differs?}{30}
-
-\subsection{Python Implementation of the Posterior}
-
-Now let's implement the system in
-code.
-
-
-\codeassignment{Use the values for $\mappingMatrix$ and $\noiseStd^2$ you
-have computed, along with the data set $\dataMatrix$ to compute the posterior
-density over $\latentMatrix$. Write a function of the form}python
-mu_x, C_x =
-posterior(Y, W, sigma2)}
-where `mu_x` and `C_x` are the posterior mean and
-posterior covariance for the given $\dataMatrix$. 
-
-Don't forget to subtract the
-mean of the data `Y` inside your function before computing the posterior:
-remember we assumed at the beginning of our analysis that the data had been
-centred (i.e. the mean was removed).}{20}
-
-\code{# Question 4 Answer Code
-# Write code for you answer to this question in this box
-# Do not delete these comments, otherwise you will get zero for this answer.
-# Make sure your code has run and the answer is correct *before* submitting your notebook for marking.
-import numpy as np
-import scipy as sp
-def posterior(Y, W, sigma2):
-    Y_cent = Y - Y.mean(0)
-    # Compute posterior over X
-    C_x = 
-    mu_x = 
-    return mu_x, C_x}
-
-# Numerically Stable and Efficient Version
-
-Just as we saw for \refnotes{linear
-regression}{linear-regression} and \refnotes{regression with basis functions}{basis-functions}
-computation of a matrix such as $\dataMatrix^\top\dataMatrix$ (or its centred
-version) can be a bad idea in terms of loss of numerical accuracy. Fortunately,
-we can find the eigenvalues and eigenvectors of the matrix
-$\dataMatrix^\top\dataMatrix$ without direct computation of the matrix. This can
-be done with the [*singular value
-decomposition*](http://en.wikipedia.org/wiki/Singular_value_decomposition). The
-singular value decompsition takes a matrix, $\mathbf{Z}$ and represents it in
-the form,
-$$
-\mathbf{Z} = \mathbf{U}\boldsymbol{\Lambda}\mathbf{V}^\top
-$$
-where
-$\mathbf{U}$ is a matrix of orthogonal vectors in the columns, meaning
-$\mathbf{U}^\top\mathbf{U} = \eye$. It has the same number of rows and
-columns as $\mathbf{Z}$. The matrices $\mathbf{\Lambda}$ and $\mathbf{V}$ are
-both square with dimensionality given by the number of columns of $\mathbf{Z}$.
-The matrix $\mathbf{\Lambda}$ is *diagonal* and $\mathbf{V}$ is an orthogonal
-matrix so $\mathbf{V}^\top\mathbf{V} = \mathbf{V}\mathbf{V}^\top = \eye$.
-The eigenvalues of the matrix $\dataMatrix^\top\dataMatrix$ are then given by the
-singular values of the matrix $\dataMatrix^\top$ squared and the eigenvectors are
-given by $\mathbf{U}$.
-
-\subsection{Solution for $\mappingMatrix$}
-
-Given the singular value
-decomposition of $\dataMatrix$ then we have
-$$
-\mappingMatrix =
-\mathbf{U}\mathbf{L}\mathbf{R}^\top
-$$
-where $\mathbf{R}$ is an arbitrary
-rotation matrix. This implies that the posterior is given by
-$$
-\covarianceMatrix_x =
-\left[\noiseStd^{-2}\mathbf{R}\mathbf{L}^2\mathbf{R}^\top + \eye\right]^{-1}
-$$
-because $\mathbf{U}^\top \mathbf{U} = \eye$. Since, by convention, we
-normally take $\mathbf{R} = \eye$ to ensure that the principal components
-are orthonormal we can write
-$$
-\covarianceMatrix_x = \left[\noiseStd^{-2}\mathbf{L}^2 +
-\eye\right]^{-1}
-$$
-which implies that $\covarianceMatrix_x$ is actually diagonal
-with elements given by
-$$
-c_i = \frac{\noiseStd^2}{\noiseStd^2 + \ell^2_i}
-$$
-and
-allows us to write
-$$
-\meanVector_x = [\mathbf{L}^2 + \noiseStd^2
-\eye]^{-1} \mathbf{L} \mathbf{U}^\top \dataVector_{i, :}
-$$
-$$
-\meanVector_x = \mathbf{D}\mathbf{U}^\top \dataVector_{i, :}
-$$
-where
-$\mathbf{D}$ is a diagonal matrix with diagonal elements given by $d_{i} =
-\frac{\ell_i}{\noiseStd^2 + \ell_i^2}$.
-
-\setupcode{import scipy as sp
-import numpy as np}
-\code{# probabilistic PCA algorithm using SVD
-def ppca(Y, q, center=True):
-    """Probabilistic PCA through singular value decomposition"""
-    # remove mean
-    if center:
-        Y_cent = Y - Y.mean(0)
-    else:
-        Y_cent = Y
-        
-    # Comute singluar values, discard 'R' as we will assume orthogonal
-    U, sqlambd, _ = sp.linalg.svd(Y_cent.T,full_matrices=False)
-    lambd = (sqlambd**2)/Y.shape[0]
-    # Compute residual and extract eigenvectors
-    sigma2 = np.sum(lambd[q:])/(Y.shape[1]-q)
-    ell = np.sqrt(lambd[:q]-sigma2)
-    return U[:, :q], ell, sigma2
-
-def posterior(Y, U, ell, sigma2, center=True):
-    """Posterior computation for the latent variables given the eigendecomposition."""
-    if center:
-        Y_cent = Y - Y.mean(0)
-    else:
-        Y_cent = Y
-    C_x = np.diag(sigma2/(sigma2+ell**2))
-    d = ell/(sigma2+ell**2)
-    mu_x = np.dot(Y_cent, U)*d[None, :]
-    return mu_x, C_x}
-
-\section{Examples}
-
-For our first example we'll consider some motion capture data of a
-man breaking into a run. [Motion capture data](http://en.wikipedia.org/wiki/Motion_capture) involves capturing a 3-d point cloud to represent a character, often by an underlying skeleton. For this data set, from Ohio State University, we have 54 frame of motion capture, each frame containing 102 values, which are the 3-d locations of 34 different points from the subjects skeleton.
-
-\setupcode{import pods}
-\code{data = pods.datasets.osu_run1()
-Y = data['Y']}
-
-Once the data is loaded in we can examine the first two principal components as
-follows,
-
-\code{q = 2
-U, ell, sigma2 = ppca(Y, q)
-mu_x, C_x = posterior(Y, U, ell, sigma2)}
-\setupplotcode{import matplotlib.pyplot as plt
-%matplotlib inline}
-\plotcode{plt.plot(mu_x[:, 0], mu_x[:, 1], 'rx-')}
-
-Here because the data is a time course, we have connected points that are
-neighbouring in time. This highlights the form of the run, which involves 3
-paces. This projects in our low dimensional space to 3 loops. We can examin how
-much residual variance there is in the system by looking at `sigma2`.
-
-\code{print(sigma2)}
-
-\section{Robot Navigation Example}
-
-In the next example we will load in data from a
-robot navigation problem. The data consists of wireless access point strengths
-as recorded by a robot performing a loop around the University of Washington's
-Computer Science department in Seattle. The robot records all the wireless
-access points it can cache and stores their signal strength.
-
-\code{data = pods.datasets.robot_wireless()
-Y = data['Y']
-Y.shape}
-
-There are 215 observations of 30 different access points. In this case the model
-is suggesting that the access point signal strength should be linearly dependent
-on the location in the map. In other words we are expecting the access point
-strength for the $j$th access point at robot position $x_{i, :}$ to be
-represented by $y_{i, j} = \weightVector_{j, :}^\top \latentVector_{i, :} +
-\epsilon_{i,j}$.
-
-\code{q = 2
-U, ell, sigma2 = ppca(Y, q)
-mu_x, C_x = posterior(Y, U, ell, sigma2)
-import matplotlib.pyplot as plt
-%matplotlib inline
-fig, ax = plt.subplots(figsize=(8,8))
-ax.plot(mu_x[:, 0], mu_x[:, 1], 'rx-')
-ax.set_title('Latent Variable: Robot Inferred Locations')
-fig, ax = plt.subplots(figsize=(8,8))
-W = U*ell[None, :]
-ax.plot(W[:, 0], W[:, 1], 'bo')
-ax.set_title('Access Point Inferred Locations')}
-
-\code{U, ell, sigma2 = ppca(Y.T, q)}
 
 \section{Relationship to Matrix Factorization}
 
@@ -1135,7 +827,7 @@ ellipsoid have been known since the middle of the 19th century as the principal
 axes of the elipsoid, and they arise through the following additional ideas:
 seeking the orthogonal directions of *maximum variance* in a dataset. Pearson in
 1901 arrived at the same algorithm driven by a desire to seek a *symmetric
-regression* between two covariate/response variables $x$ and $y$. He is,
+regression* between two covariate/response variables $x$ and $y$ [@Pearson:01]. He is,
 therefore, often credited with the invention of principal component analysis,
 but to me this seems disengenous. His aim was very different from Hotellings, it
 was just happened that the optimal solution for his model was coincident with
@@ -1146,7 +838,7 @@ operation can be shown to be minimising a particular objective function based on
 interpoint distances in the data and the latent space (see the section on
 Classical Multidimensional Scaling in [Mardia, Kent and
 Bibby](http://store.elsevier.com/Multivariate-Analysis/Kanti-
-Mardia/isbn-9780124712522/)). One of my own contributions to machine learning
+Mardia/isbn-9780124712522/)) [@Mardia:multivariate79]. One of my own contributions to machine learning
 was deriving yet another model whose linear variant was solved by finding the
 principal subspace of the covariance matrix (an approach I termed dual
 probabilistic PCA or probabilistic principal coordinate analysis). Finally, the
@@ -1172,28 +864,30 @@ another approach to determining the principal components.
 
 \subsection{Separating Model and Algorithm}
 
-I've given a fair amount of personal thought to this situation
-and my own opinion that this confusion about method arises because of a
-conflation of model and algorithm. The model of Hotelling, that which he termed
-principal component analysis, was really a variant of factor analysis, and it
-was unfortunate that he chose to rename it. However, the algorithm he derived
-was a very convenient way of optimising a (simplified) factor analysis, and it's
-therefore become very popular. The algorithm is also the optimal solution for
-many other models of the data, even some which might seem initally to be
-unrelated (e.g. seeking directions of maximum variance). It is only through the
-mathematics of this linear system (which also contains some intersting
-symmetries) that all these ides become related. However, as soon as we choose to
-non-linearise the system (e.g. through basis functions) we find that each of the
-non-linear intepretations we can derive for the different models each leads to a
-very different algorithm (if such an algorithm is possible). For example
+I've given a fair amount of personal thought to this situation and my
+own opinion that this confusion about method arises because of a
+conflation of model and algorithm. The model of Hotelling, that which
+he termed principal component analysis, was really a variant of factor
+analysis, and it was unfortunate that he chose to rename it. However,
+the algorithm he derived was a very convenient way of optimising a
+(simplified) factor analysis, and it's therefore become very
+popular. The algorithm is also the optimal solution for many other
+models of the data, even some which might seem initally to be
+unrelated (e.g. seeking directions of maximum variance). It is only
+through the mathematics of this linear system (which also contains
+some intersting symmetries) that all these ides become
+related. However, as soon as we choose to non-linearise the system
+(e.g. through basis functions) we find that each of the non-linear
+intepretations we can derive for the different models each leads to a
+very different algorithm (if such an algorithm is possible). For
+example
 [principal curves](http://web.stanford.edu/~hastie/Papers/Principal_Curves.pdf)
-of Hastie and Stuezle attempt to non-linearise the maximum variance
-interpretation, [kernel
-PCA](http://en.wikipedia.org/wiki/Kernel_principal_component_analysis) of
-Schoelkopf, Smola and Mueller uses basis functions to form the eigenvalue
-problem in a nonlinear space, and my own work in this area [non-linearises the
-dual probabilistic
-PCA](http://jmlr.org/papers/volume6/lawrence05a/lawrence05a.pdf). 
+of @Hastie:pcurves89 attempt to non-linearise the maximum variance
+interpretation,
+[kernel PCA](http://en.wikipedia.org/wiki/Kernel_principal_component_analysis)
+of @Scholkopf:nonlinear98 uses basis functions to form the eigenvalue
+problem in a nonlinear space, and my own work in this area
+[non-linearises the dual probabilistic PCA](http://jmlr.org/papers/volume6/lawrence05a/lawrence05a.pdf) [@Lawrence:pnpca05].
 
 My conclusion is that when you are doing machine learning you should
 always have it clear in your mind what your *model* is and what your
@@ -1368,81 +1062,6 @@ $$
 \left.\mathbf{U}^\prime\right.^\top\mathbf{U}^\prime = \eye
 $$
 
-\subsection{Olivetti Faces}
+\include{_dimred/includes/olivetti-eigenfaces.md}
+\include{_dimred/includes/spellman-eigengenes.md}
 
-You too can create your own eigenfaces. In this example we load in the 'Olivetti Face' data set, a small data set of 200 faces from the [Olivetti Research Laboratory](http://en.wikipedia.org/wiki/Olivetti_Research_Laboratory). Below we load in the data and display an image of the second face in the data set (i.e., indexed by 1).
-
-\plotcode{data = pods.datasets.olivetti_glasses()
-Y = data['X'] # this data set is set up for classification, but we will model the outputs.
-lbls = data['Y']
-import matplotlib.cm as cm # import color map
-display_index = 0
-plt.imshow(np.reshape(Y[display_index, :].flatten(), (64, 64)).T, cmap = cm.Greys_r)}
-
-Note that to display the face we had to reshape the appropriate row of the data matrix. This is because the images are turned into vectors by stacking columns of the image on top of each other to form a vector. The operation
-
-```im = np.reshape(Y[1, :].flatten(), (64, 64)).T}```
-
-recovers the original image into a matrix `im` by using the `np.reshape` function to return the vector to a matrix.
-
-\subsection{Visualizing the Eigenvectors}
-
-Each retained eigenvector is stored in the $j$th column of $\mathbf{U}$. Each of these eigenvectors is associated with particular directions of variation in the original data. Principal component analysis implies that we can reconstruct any face by using a weighted sum of these eigenvectors where the weights for each face are given by the relevant vector of the latent variables, $\latentVector_{i, :}$ and the diagonal elements of the matrix $\mathbf{L}$. We can visualize the eigenvectors $\mathbf{U}$ as images by performing the same reshape operation we used to recover the image associated with a data point above. Below we do this for the first nine eigenvectors of the Olivetti Faces data.
-
-\plotcode{width=3
-height=3
-q = width*height
-fig, ax = plt.subplots(width,height,figsize=(12,12))
-
-U, ell, sigma2 = ppca(Y, q)
-lat = 0
-for i in range(width):
-    for j in range(height):
-        ax[i, j].imshow(np.reshape(U[:, lat].flatten(), (64, 64)).T, cmap = cm.Greys_r)
-        ax[i, j].set_title('Principle Component ' + str(lat+1))
-        lat += 1}
-
-\subsection{Reconstruction}
-
-We can now attempt to reconstruct a given training point from these eigenvectors. As we mentioned above, the reconstruction is dependent on the value of the latent variable and the weights from the matrix $\mathbf{L}$. First let's compute the value of the latent variables for the point we want to construct. Then we'll use them to compute the weightings of each of the eigenvectors.
-
-\code{mu_x, C_x = posterior(Y, U, ell, sigma2)
-reconstruction_weights = mu_x[display_index, :]*ell
-print(reconstruction_weights)}
-
-This vector of reconstruction weights is applied to the 'template images' given by the eigenvectors to give us our reconstruction. Below we weight these templates and combine to form the reconstructed image, and show the comparison to the original image.
-
-\plotcode{fig, ax = plt.subplots(1, 2,figsize=(12,6))
-ax[0].imshow(np.reshape(Y[display_index, :].flatten(), (64, 64)).T, cmap = cm.Greys_r)
-ax[0].set_title('Original Example no ' + str(display_index))
-ax[1].imshow(np.reshape(np.dot(U,reconstruction_weights) + Y.mean(axis=0)[None, :], (64, 64)).T, cmap = cm.Greys_r)
-ax[1].set_title('Reconstruction of Example from ' + str(len(reconstruction_weights)) + ' Latent Variables')}
-
-The quality of the reconstruction is a bit blurry, it can be improved by increasing the number of template images used (i.e. increasing the *latent dimensionality*).
-
-\subsection{Gene Expression}
-
-Each of the cells in your body stores your entire genetic code in your DNA, but at any one moment it is only 'expressing' a small portion of that code. Your cells are mainly constructed of protein, and these proteins are manufactured by first transcribing the DNA to RNA and then translating the RNA to protein. If the DNA is the cells hard drive, then one role of the RNA is to act like a cache of data that is being read from the hard drive at any one time. Gene expression arrays allow us to measure the quantity of different types of RNA in the cell, effectively analyzing what's in the cache (although we have to destroy the cell or the tissue to access it). A gene expression experiment often consists of a time course or a series of experiments that characterise the gene expression of cells at any given time.
-
-We will now load in one of the earliest gene expression data sets from a [1998 paper by Spellman et al.](http://www.ncbi.nlm.nih.gov/pubmed/9843569), it consists of gene expression measurements of over six thousand genes in a range of conditions for brewer's yeast. The experiment was designed for understanding the cell cycle of the genes. The expectation is that there should be oscillating signals inside the cell.
-
-First we extract the principale components of the gene expression.
-
-\code{# load in data and replace missing values with zero
-data=pods.datasets.spellman_yeast_cdc15()
-Y = data['Y'].fillna(0)
-q = 5
-U, ell, sigma2 = ppca(Y, q)
-mu_x, C_x = posterior(Y, U, ell, sigma2)}
-
-Now, looking through, we find that there is indeed a latent variable that appears to oscilate at approximately the right frequency. The 4th latent dimension (`index=3`) can be plotted across the time course as follows.
-
-\plotcode{plt.plot(mu_x[:, 3])}
-
-To reveal an oscillating shape. We can see which genes correspond to this shape by examining the associated column of $\mathbf{U}$. Let's augment our data matrix with this score.
-
-\code{gene_list = Y.T
-gene_list['oscilation'] = np.sqrt(U[:, 3]**2)
-gene_list.sort(columns='oscilation', ascending=False).index[:4]}
-
-We can look up the first three genes in this list which now ranks the genes according to how strongly they respond to the fourth latent dimension. [The NCBI gene database](http://www.ncbi.nlm.nih.gov/gene/) allows us to search for the function of these genes. Looking at the function of the four genes that respond most strongly to the third latent variable they are all genes that encode [histone](http://en.wikipedia.org/wiki/Histone) proteins. The histone is thesupport scaffold for the DNA that ensures it folds correctly within the cell creating the nucleosomes. It seems to make sense that production of histone proteins should be strongly correlated with the cell cycle, as when the cell divides it needs to create a large number of histone proteins for creating the duplicated nucleosomes. The relevant links giving the descriptions of each gene given here: [YDR224C](http://www.ncbi.nlm.nih.gov/gene/851810), [YDR225W](http://www.ncbi.nlm.nih.gov/gene/851811), [YBL003C](http://www.ncbi.nlm.nih.gov/gene/852283) and [YNL030W](http://www.ncbi.nlm.nih.gov/gene/855701).

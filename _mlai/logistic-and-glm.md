@@ -1,28 +1,14 @@
 ---
-layout: lecture
-title: "Logistic Regression and GLMs"
-author:
-- family: Lawrence
-  given: Neil D.
-  gscholar: r3SJcvoAAAAJ
-  institute: University of Sheffield
-  twitter: lawrennd
-  url: http://inverseprobability.com
-  orcid:
-youtube: e-BWWidfbT4
 week: 10
-ipynb: True
-venue: University of Sheffield
-date: 2015-12-01
+title: "Logistic Regression and GLMs"
 abstract: Naive Bayes assumptions allow us to specify class conditional densities through assuming that the data are conditionally independent given parameters. A logistic regression is an approach to classification which extends the linear basis function models we've already explored. Rather than modeling the output of the function directly the assumption is that we model the *log-odds* with the basis functions.
-postdir: ../../../mlatcl/mlai/_lectures/
-slidedir: ../../../mlatcl/mlai/slides/
-notedir: ../../../mlatcl/mlai/_notes/
-notebookdir: ../../../mlatcl/mlai/_notebooks/
-transition: None
+youtube: e-BWWidfbT4
+date: 2015-12-01
 ---
 
 \include{talk-macros.tex}
+
+\include{_mlai/includes/mlai-notebook-setup.md}
 
 \subsection{Review}
 

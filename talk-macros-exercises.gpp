@@ -22,18 +22,20 @@
 \define{\incrementQuestionCounter}{\ifdef{ASSIGNMENT}\defeval{\questionCounter}{\eval{\questionCounter+1}}\else\incrementExerciseCounter\defeval{\questionCounter}{\exerciseCounter}\endif}
 
 \defeval{\writeassignment{text}{marks}}{\incrementQuestionCounter\incrementQuestionMarkCounter{\marks}
-\subsubsection \questionTitle \questionCounter
+\subsubsection{\questionTitle \questionCounter}
 
 \text
 
 \ifdef{ASSIGNMENT}*\marks marks*\endif
 \ifdef{NOTES}\ifdef{IPYNB}
-\subsubsection Write your answer to \questionTitle \questionCounter here
+\subsubsection{\questionTitle \questionCounter Answer}
+
+Write your answer to \questionTitle \questionCounter here
 
 \endif\endif
 }
 \define{\codeassignment{text}{codestub}{marks}}{\incrementQuestionCounter\incrementQuestionMarkCounter{\marks}
-\subsubsection \questionTitle \questionCounter
+\subsubsection{\questionTitle \questionCounter}
 
 \text
 
@@ -49,12 +51,14 @@
 \pythonblockend
 \endif\endif
 }
-\define{\exercise{text}{answerstub}{codestub}}{\incrementExerciseCounter\subsubsection \exerciseTitle \exerciseCounter
+\define{\exercise{text}{answerstub}{codestub}}{\incrementExerciseCounter\subsubsection{\exerciseTitle \exerciseCounter}
 
 \text
 
 \ifdef{NOTES}\ifdef{IPYNB}
-\subsubsection Write your answer to \exerciseTitle \exerciseCounter here
+\subsubsection{\exerciseTitle \exerciseCounter Answer}
+
+Write your answer to \exerciseTitle \exerciseCounter here
 
 \answerstub
 

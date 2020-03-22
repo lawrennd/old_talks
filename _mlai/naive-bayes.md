@@ -1,14 +1,14 @@
 ---
-layout: lecture
-title: "Probabilistic Classification: Naive Bayes"
-date: 2015-11-24
 week: 9 
-youtube: G7NbyCcuGmg
+title: "Probabilistic Classification: Naive Bayes"
 abstract: In the last lecture we looked at unsupervised learning. We introduced latent variables, dimensionality reduction and clustering. In this lecture we're going to look at clustering, specifically the probabilistic approach to clustering. We'll focus on a simple but often effective algorithm known as *naive Bayes*.
-transition: None
+date: 2015-11-24
+youtube: G7NbyCcuGmg
 ---
 
 \include{talk-macros.tex}
+
+\include{_mlai/includes/mlai-notebook-setup.md}
 
 \newslide{Review}
 

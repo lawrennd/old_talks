@@ -1,14 +1,14 @@
 ---
-layout: lecture
 week: 6
 title: "Bayesian Regression"
 abstract: "Bayesian formalisms deal with uncertainty in parameters, "
 date: 2015-11-03
-transition: None
 youtube: 17zr5dGcUzE
 ---
 
 \include{talk-macros.tex}
+
+\include{_mlai/includes/mlai-notebook-setup.md}
 
 \subsection{Overdetermined System}
 

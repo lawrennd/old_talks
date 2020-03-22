@@ -1,12 +1,10 @@
 ---
-layout: lecture
+week: 1
 title: Probability and an Introduction to Jupyter, Python and Pandas
 abstract: |
   In this first session we will introduce *machine learning*, review *probability* and begin familiarization with the Jupyter notebook, python and pandas.
 date: 2015-09-29
-week: 1
 youtube: M67rG3cZoVg
-transition: None
 ---
 
 \include{talk-macros.tex}

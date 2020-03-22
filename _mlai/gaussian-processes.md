@@ -1,14 +1,14 @@
 ---
-layout: lecture
-title: "Special Topics: Gaussian Processes"
-youtube: B2XhFoCehy8
 week: 12
-date: 2015-12-15
+title: "Special Topics: Gaussian Processes"
 abstract: 
-transition: None
+youtube: B2XhFoCehy8
+date: 2015-12-15
 ---
 
 \include{talk-macros.tex}
+
+\include{_mlai/includes/mlai-notebook-setup.md}
 
 \subsection{Review}
 

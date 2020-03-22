@@ -6,20 +6,8 @@ abstract: >
   However, computational demands and the joint Gaussian assumption make them inappropriate for some applications. In this talk we review low rank approximations for Gaussian processes and use stochastic process composition to create non-Gaussian processes. 
   
   We illustrate the models on simple regression tasks to give a sense of how uncertainty propagates through the model. We end will demonstrations on unsupervised learning of digits and motion capture data.
-ipynb: 2019-01-11-deep-gaussian-processes.ipynb
-reveal: 2019-01-11-deep-gaussian-processes.slides.html
 youtube: b635kuSqLww
-author:
-- family: Lawrence
-  given: Neil D.
-  gscholar: r3SJcvoAAAAJ
-  institute: Amazon Cambridge and University of Sheffield
-  twitter: lawrennd
-  url: http://inverseprobability.com
-geometry: ["a4paper", "margin=2cm"]
-papersize: a4paper
 date: 2019-01-11
-venue: MLSS, Stellenbosch, South Africa
 transition: None
 ---
 <!--define{draft}-->

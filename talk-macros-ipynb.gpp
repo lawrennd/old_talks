@@ -4,14 +4,23 @@
 
 \include{talk-macros-html.gpp}
 
-\define{\pythonblockstart}{:::
+\define{\endCell}{\ifdef{inCell}\undef{inCell}:::\endif\ifdef{inMarkdownCell}\undef{inMarkdownCell}\endif\ifdef{inCodeCell}\undef{inCodeCell}\endif}
 
-::: {.cell .code}
+\define{\startMarkdownCell}{\endCell
+
+::: {.cell .markdown}\define{inMarkdownCell}\define{inCell}
+}
+
+\define{\startCodeCell}{\endCell
+
+::: {.cell .code}\define{inCodeCell}\define{inCell}
+}
+
+
+\define{\pythonblockstart}{\startCodeCell
 ```{.python}}
 \define{\pythonblockend}{```
-:::
-
-::: {.cell .markdown}}
+\endCell}
 
 
 \define{\centerdiv{contents}{class}{style}}{\contents}
@@ -20,8 +29,6 @@
 \contents
 
 Figure: <i>\captionContents</i>}
-
-
 \define{\includegooglebook{id}{page}}{\pythonblockstart
 import pods
 pods.notebook.display_google_book(id='\id', page='\page')
@@ -38,9 +45,7 @@ YouTubeVideo('\id')
 \define{\includediagram{filename}{align}{class}{style}}{<img src="http://inverseprobability.com/talks/slides/\filename.svg" class="\class" align="\align" style="vertical-align:middle;\style">}
 \define{\includediagramclass{filename}{class}{align}}{<img src="http://inverseprobability.com/talks/slides/\filename.svg" class="\class" align="\align" style="vertical-align:middle">}
 
-\define{\references}{::: {.cell .markdown}
-
-# References
+\define{\references}{\subsection{References}
 
 }
 

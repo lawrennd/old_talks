@@ -1,25 +1,16 @@
 ---
-layout: lecture
+week: 4
 title: Basis Functions
 abstract: |
   In the last session we explored least squares for univariate and multivariate *regression*. We introduced *matrices*, *linear algebra* and *derivatives*. 
   
   In this session we will introduce *basis functions* which allow us to implement *non-linear regression models*.
 date: 2015-10-20
-week: 4
-transition: None
 ---
 
 \include{talk-macros.gpp}
 
-\notes{\subsection{Setup}
-
-First we download some libraries and files to support the notebook.}
-
-\installcode{pods}
-\downloadcode{mlai}
-\downloadcode{teaching_plots}
-\downloadcode{gp_tutorial}
+\include{_mlai/includes/mlai-notebook-setup.md}
 
 \subsection{Nonlinear Regression}
 

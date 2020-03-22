@@ -12,18 +12,18 @@
 \define{\editme}{\define{editText}{[\href{\githubBaseUrl\file}{edit}]}}
 \endif
 
-\define{\section{text}}{:::
+\define{\section{text}}{\endCell
 
-::: {.cell .markdown}
+\startMarkdownCell
 # \text \ifdef{editText}\editText\undef{editText}\endif}
 
-\define{\subsection{text}}{:::
+\define{\subsection{text}}{\endCell
 
-::: {.cell .markdown}
+\startMarkdownCell
 ## \text \ifdef{editText}\editText\undef{editText}\endif}
-\define{\subsubsection{text}}{:::
+\define{\subsubsection{text}}{\endCell
 
-::: {.cell .markdown}
+\startMarkdownCell
 ### \text \ifdef{editText}\editText\undef{editText}\endif}
 
 

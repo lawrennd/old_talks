@@ -2,7 +2,9 @@
 # Markdown Preprocessor for talks.
 # Requries gpp (the generic preprocessor) to be installed.
 
+import os
 import argparse
+import yaml
 import _python.ndltalk as nt
 
 parser = argparse.ArgumentParser()
@@ -98,26 +100,38 @@ if args.no_header:
    body = md.read()
    md.close()
 else:
-   header,body = nt.extract_header_body(args.filename)
+   headertxt,bodytxt = nt.extract_header_body(args.filename)
 
+header = {}
+default_file = '_config.yml'
+if os.path.isfile(default_file):
+    md= open(default_file, 'r')
+    text = md.read()
+    md.close()
+    header.update(yaml.load(text, Loader=yaml.FullLoader))
+
+header.update(yaml.load(headertxt, Loader=yaml.FullLoader))
+headertxt = yaml.dump(header)
 
 if args.whitespace:
    print("Whitespace is true")
 
-with open('tmp.md','w') as fd:
+
+tmp_file = args.filename + 'tmp.md'
+with open(tmp_file,'w') as fd:
    if not args.no_header:
-      fd.write('---')
-      fd.write(header)
+      fd.write('---\n')
+      fd.write(headertxt)
       fd.write('---\n')
    
    fd.write(before_text)
-   fd.write(body)
+   fd.write(bodytxt)
    fd.write(after_text)
 
 
 import os
-runlist = ['gpp'] + arglist + ['tmp.md']
+runlist = ['gpp'] + arglist + [tmp_file]
 print(' '.join(runlist))
 os.system(' '.join(runlist))
-os.system('rm tmp.md')
+#os.system('rm ' + tmp_file)
 #gpp  -DPPTX=1 -DSLIDES=1 ${PPFLAGS} --include ../_includes/talk-notation.tex $< -o $output

@@ -1,28 +1,15 @@
 ---
-layout: lecture
+week: 3
 title: Linear Algebra and Linear Regression
 abstract: |
   In this session we combine the objective function perspective and the probabilistic perspective on *linear regression*. We motivate the importance of *linear algebra* by showing how much faster we can complete a linear regression using linear algebra.
 date: 2015-10-13
-week: 3
-ipynb: True
-author:
-- family: Lawrence
-  given: Neil D.
-  gscholar: r3SJcvoAAAAJ
-  institute: University of Sheffield
-  twitter: lawrennd
-  url: http://inverseprobability.com
-venue: University of Sheffield
-postdir: ../../../mlatcl/mlai/_lectures/
-slidedir: ../../../mlatcl/mlai/slides/
-notedir: ../../../mlatcl/mlai/_notes/
-notebookdir: ../../../mlatcl/mlai/_notebooks/
 youtube: 5VPr6NbHHjg
-transition: None
 ---
 
 \include{talk-macros.tex}
+
+\include{_mlai/includes/mlai-notebook-setup.md}
 
 \subsection{Review}
 
