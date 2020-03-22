@@ -4,25 +4,25 @@
 
 \setupplotcode{import teaching_plots as plot}
 \plotcode{plot.stack_gp_sample(kernel=GPy.kern.Linear,
-                     diagrams="../../slides/diagrams/deepgp")}
+                     diagrams="../\diagramsDir/deepgp")}
 
 \setupdisplaycode{import pods}
 \displaycode{pods.notebook.display_plots('stack-gp-sample-Linear-{sample:0>1}.svg', 
-                            directory='../../slides/diagrams/deepgp', sample=(0,4))}
+                            directory='../\diagramsDir/deepgp', sample=(0,4))}
 
 \subsection{Stacked PCA}
 \slides{
 \define{\width}{10%}
 \startanimation{stack-pca-sample}{0}{4}
-\newframe{\includediagram{../slides/diagrams/stack-pca-sample-0}{\width}}{stack-pca-sample}
-\newframe{\includediagram{../slides/diagrams/stack-pca-sample-1}{\width}}{stack-pca-sample}
-\newframe{\includediagram{../slides/diagrams/stack-pca-sample-2}{\width}}{stack-pca-sample}
-\newframe{\includediagram{../slides/diagrams/stack-pca-sample-3}{\width}}{stack-pca-sample}
-\newframe{\includediagram{../slides/diagrams/stack-pca-sample-4}{\width}}{stack-pca-sample}
+\newframe{\includediagram{\diagramsDir/stack-pca-sample-0}{\width}}{stack-pca-sample}
+\newframe{\includediagram{\diagramsDir/stack-pca-sample-1}{\width}}{stack-pca-sample}
+\newframe{\includediagram{\diagramsDir/stack-pca-sample-2}{\width}}{stack-pca-sample}
+\newframe{\includediagram{\diagramsDir/stack-pca-sample-3}{\width}}{stack-pca-sample}
+\newframe{\includediagram{\diagramsDir/stack-pca-sample-4}{\width}}{stack-pca-sample}
 \endanimation
 }
 
-\notes{\figure{\includediagram{../slides/diagrams/stack-pca-sample-4}{20%}}{Composition of linear functions just leads to a new linear function. Here you see the result of multiple affine transformations applied to a square in two dimensions.}{stack-pca-sample}}
+\notes{\figure{\includediagram{\diagramsDir/stack-pca-sample-4}{20%}}{Composition of linear functions just leads to a new linear function. Here you see the result of multiple affine transformations applied to a square in two dimensions.}{stack-pca-sample}}
 
 \notes{Stacking a series of linear functions simply leads to a new linear function. The use of multiple linear function merely changes the covariance of the resulting Gaussian. If
 $$

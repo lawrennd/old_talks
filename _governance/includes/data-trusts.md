@@ -18,12 +18,12 @@ It feels important to have a diversity of approaches, and yet it feels important
 
 \newslide{}
 
-\figure{\includepng{../slides/diagrams/data-science/data-trusts}{100%}}{For thoughts on data trusts see \addguardian{Data Trusts}{https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy}.}{data-trusts}
+\figure{\includepng{\diagramsDir/data-science/data-trusts}{100%}}{For thoughts on data trusts see \addguardian{Data Trusts}{https://www.theguardian.com/media-network/2016/jun/03/data-trusts-privacy-fears-feudalism-democracy}.}{data-trusts}
 
 
 \newslide{}
 
-\figure{\includepng{../slides/diagrams/data-science/data-trusts-review}{50%}}{Data Trusts were the first recommendation of the \href{https://www.out-law.com/en/articles/2017/october/review-calls-for-data-trusts-to-help-grow-artificial-intelligence-in-the-uk/}{Hall-Presenti Report}. Unfortunately, since then the role of data trusts vs other data sharing mechanisms in the UK has been somewhat confused.}{hall-presenti-report}
+\figure{\includepng{\diagramsDir/data-science/data-trusts-review}{50%}}{Data Trusts were the first recommendation of the \href{https://www.out-law.com/en/articles/2017/october/review-calls-for-data-trusts-to-help-grow-artificial-intelligence-in-the-uk/}{Hall-Presenti Report}. Unfortunately, since then the role of data trusts vs other data sharing mechanisms in the UK has been somewhat confused.}{hall-presenti-report}
 
 
 \newslide{Motivation}
@@ -46,7 +46,7 @@ It feels important to have a diversity of approaches, and yet it feels important
 
 \notes{To help clarify some of the issues around data sharing we've produced a new website focussing on data trusts, explaining what they do and what they don't do.}
 
-\figure{\includepng{../slides/diagrams/governance/data-trusts-uk-website}{60%}}{The \href{https://datatrusts.uk/}{http://datatrusts.uk} website provides a new information source for what data trusts are and how they can be used in data sharing.}{data-trusts-uk-website}
+\figure{\includepng{\diagramsDir/governance/data-trusts-uk-website}{60%}}{The \href{https://datatrusts.uk/}{http://datatrusts.uk} website provides a new information source for what data trusts are and how they can be used in data sharing.}{data-trusts-uk-website}
 
 \newslide{Legal Mechanism of Trusts}
 \slides{

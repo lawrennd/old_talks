@@ -35,7 +35,7 @@ incremental: True
 
 \newslide{Autonomous Vehicles}
 
-\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-pedestrian000}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
+\figure{\includediagram{\diagramsDir/ai/ml-system-downstream-pedestrian000}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
 
 \include{_uq/includes/emulation.md}
 \include{_uq/includes/deep-emulation.md}

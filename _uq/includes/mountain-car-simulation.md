@@ -6,7 +6,7 @@
 
 \notes{To illustrate the above mentioned concepts we we use the [mountain car simulator](https://github.com/openai/gym/wiki/MountainCarContinuous-v0). This simulator is widely used in machine learning to test reinforcement learning algorithms. The goal is to define a control policy on a car whose objective is to climb a mountain. Graphically, the problem looks as follows:}
 
-\figure{\includepng{../slides/diagrams/uq/mountaincar}{60%}{negate}}{The mountain car simulation from the Open AI gym.}{mountain-car}
+\figure{\includepng{\diagramsDir/uq/mountaincar}{60%}{negate}}{The mountain car simulation from the Open AI gym.}{mountain-car}
 
 \notes{The goal is to define a sequence of actions (push the car right or left with certain intensity) to make the car reach the flag after a number $T$ of time steps.
 
@@ -97,12 +97,12 @@ anim=mc.animate_frames(frames, 'Random linear controller')}
 \displaycode{HTML(anim.to_jshtml())}
 
 \plotcode{mc.save_frames(frames, 
-                  diagrams='../slides/diagrams/uq', 
+                  diagrams='\diagramsDir/uq', 
 				  filename='mountain_car_random.html')}
 
 \newslide{Random Linear Controller}
 
-\figure{\includehtml{../slides/diagrams/uq/mountain_car_random.html}{800px}{600px}}{Random linear controller for the Mountain car. It fails to move the car to the top of the mountain.}{mountain-car-random}
+\figure{\includehtml{\diagramsDir/uq/mountain_car_random.html}{800px}{600px}}{Random linear controller for the Mountain car. It fails to move the car to the top of the mountain.}{mountain-car-random}
 
 
 \notes{As we can see the random linear controller does not manage to push the car to the top of the mountain. Now, let's optimize the regret using Bayesian optimization and the emulator for the reward. We try 50 new parameters chosen by the EI.}
@@ -119,12 +119,12 @@ anim=mc.animate_frames(frames, 'Best controller after 50 iterations of Bayesian 
 \displaycode{HTML(anim.to_jshtml())}
 
 \plotcode{mc.save_frames(frames, 
-                  diagrams='../slides/diagrams/uq', 
+                  diagrams='\diagramsDir/uq', 
 				  filename='mountain_car_simulated.html')}
 
 \newslide{Best Controller after 50 Iterations of Bayesian Optimization}
 
-\figure{\includehtml{../slides/diagrams/uq/mountain_car_simulated.html}{800px}{600px}{auto}}{Mountain car simulator trained using Bayesian optimization and the simulator of the dynamics. Fifty iterations of Bayesian optimization are used to optimize the controler.}{mountain-car-similated-bayes-opt}
+\figure{\includehtml{\diagramsDir/uq/mountain_car_simulated.html}{800px}{600px}{auto}}{Mountain car simulator trained using Bayesian optimization and the simulator of the dynamics. Fifty iterations of Bayesian optimization are used to optimize the controler.}{mountain-car-similated-bayes-opt}
 
 \notes{he car can now make it to the top of the mountain! Emulating the reward function and using the EI helped as to find a linear controller that solves the problem.}
 

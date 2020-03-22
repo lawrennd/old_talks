@@ -95,7 +95,7 @@ monitoring of artificial intelligence systems.}
 
 \subsection{Applications}
 
-\figure{\includediagram{../slides/diagrams/ai/ride-allocation-prediction}{60%}}{Some software components in a ride allocation system. Circled components are hypothetical, rectangles represent actual data.}{ride-allocation-system}
+\figure{\includediagram{\diagramsDir/ai/ride-allocation-prediction}{60%}}{Some software components in a ride allocation system. Circled components are hypothetical, rectangles represent actual data.}{ride-allocation-system}
 
 
 \notes{For validating our efforts, the work is a close collaboration with
@@ -238,11 +238,11 @@ without damaging the interpretability of the underlying system.}
 
 \newslide{Emulation}
 
-\figure{\includediagram{../slides/diagrams/uq/statistical-emulation004}{80%}}{A statistical emulator is a system that reconstructs the simulation with a statistical model. As well as reconstructing the simulation, a statistical emulator can be used to correlate with the real world.}{statistical-emulation-5}
+\figure{\includediagram{\diagramsDir/uq/statistical-emulation004}{80%}}{A statistical emulator is a system that reconstructs the simulation with a statistical model. As well as reconstructing the simulation, a statistical emulator can be used to correlate with the real world.}{statistical-emulation-5}
 
 \newslide{Emulation}
 
-\figure{\includediagram{../slides/diagrams/uq/statistical-emulation005}{80%}}{In modern machine learning system design, the emulator may also consider the output of ML models (for monitoring bias or accuracy) and Operations Research models..}{statistical-emulation-6}
+\figure{\includediagram{\diagramsDir/uq/statistical-emulation005}{80%}}{In modern machine learning system design, the emulator may also consider the output of ML models (for monitoring bias or accuracy) and Operations Research models..}{statistical-emulation-6}
 \include{_gp/includes/gp-intro-very-short.md}
 
 <!--include{_ai/includes/ai-vs-data-science-2.md}-->
@@ -275,15 +275,15 @@ system-wide tractability into consideration, it will be impossible.}
 
 \subsection{Deep Emulation}
 
-\slides{\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-rider-allocation000}{75%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}}
+\slides{\figure{\includediagram{\diagramsDir/ai/ml-system-downstream-rider-allocation000}{75%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}}
 
 \newslide{Deep Emulation}
 
-\slides{\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-rider-allocation001}{75%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}}
+\slides{\figure{\includediagram{\diagramsDir/ai/ml-system-downstream-rider-allocation001}{75%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}}
 
 \newslide{Deep Emulation}
 
-\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-rider-allocation}{75%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
+\figure{\includediagram{\diagramsDir/ai/ml-system-downstream-rider-allocation}{75%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
 
 \include{_deepgp/includes/stochastic-process-composition.md}
 

@@ -19,41 +19,41 @@
 
 \newslide{Cloaking}
 
-\includediagram{../slides/diagrams/privacy/dp-firstpoint000}{80%}
+\includediagram{\diagramsDir/privacy/dp-firstpoint000}{80%}
 
 *Left*: Function change. *Right*: test point change
 
 \newslide{Cloaking}
 
-\includediagram{../slides/diagrams/privacy/dp-firstpoint002}{80%}
+\includediagram{\diagramsDir/privacy/dp-firstpoint002}{80%}
 
 *Left*: Function change. *Right*: test point change
 
 \newslide{Cloaking}
 
-\includediagram{../slides/diagrams/privacy/dp-secondpoint000}{80%}
+\includediagram{\diagramsDir/privacy/dp-secondpoint000}{80%}
 
 *Left*: Function change. *Right*: test point change
 
 \newslide{Cloaking}
 
-\includediagram{../slides/diagrams/privacy/dp-secondpoint002}{80%}
+\includediagram{\diagramsDir/privacy/dp-secondpoint002}{80%}
 
 *Left*: Function change. *Right*: test point change
 
 \newslide{Cloaking}
 
-\includediagram{../slides/diagrams/privacy/dp-with-ellipse001}{80%}
+\includediagram{\diagramsDir/privacy/dp-with-ellipse001}{80%}
 
 *Left*: Function change. *Right*: test point change
 
 \newslide{Cloaking}
 
-\includediagram{../slides/diagrams/privacy/dp-with-ellipse002}{80%}
+\includediagram{\diagramsDir/privacy/dp-with-ellipse002}{80%}
 
 *Left*: Function change. *Right*: test point change
 
-\newslide{DP Vectors}{data-background="../slides/diagrams/pres_bg.png"}
+\newslide{DP Vectors}{data-background="\diagramsDir/pres_bg.png"}
 
 * Hall et al. (2013) also presented a bound on vectors.
 
@@ -69,7 +69,7 @@ its Mahalanobis distance (wrt the added noise covariance).
     We get to pick $\mathbf{M}$
 
 
-\newslide{Cloaking}{data-background="../slides/diagrams/pres_bg.png"}
+\newslide{Cloaking}{data-background="\diagramsDir/pres_bg.png"}
 
 * Intuitively we want to construct $\mathbf{M}$ so that it has greatest
 covariance in those directions most affected by changes in training
@@ -85,7 +85,7 @@ represented in the cloaking matrix,
   $$\mathbf{C} = \kernelMatrix_{*f} \kernelMatrix^{-1}$$
 
 
-\newslide{Cloaking}{data-background="../slides/diagrams/pres_bg.png"}
+\newslide{Cloaking}{data-background="\diagramsDir/pres_bg.png"}
 
 * We assume we are protecting only one training input's change, by at most
 $d$.
@@ -104,7 +104,7 @@ element, $i$.\
   where $\mathbf{c}_i \triangleq \mathbf{C}_{:i}$
 
 
-\newslide{Cloaking}{data-background="../slides/diagrams/pres_bg.png"}
+\newslide{Cloaking}{data-background="\diagramsDir/pres_bg.png"}
 
 * Dealing with $d$ elsewhere and setting $\Delta = 1$ (thus $0 \leq
 \mathbf{c}_i^\top \mathbf{M}^{-1} \mathbf{c}_i \leq 1$) and minimise
@@ -119,11 +119,11 @@ $\log |\mathbf{M}|$ (minimises the partial entropy).
 
 The noise added by this method is now practical.
 
-\figure{\includepng{../slides/diagrams/privacy/kung_cloaking_simple}{100%}{negate}}{}{kung-cloaking-simple}
+\figure{\includepng{\diagramsDir/privacy/kung_cloaking_simple}{100%}{negate}}{}{kung-cloaking-simple}
 
 EQ kernel, $l = 25$ years, $\Delta=100$cm, $\varepsilon=1$
 
-\newslide{Cloaking: Results}{data-background="../slides/diagrams/pres_bg.png"}
+\newslide{Cloaking: Results}{data-background="\diagramsDir/pres_bg.png"}
 
 It also has some interesting features;
 
@@ -133,12 +133,12 @@ It also has some interesting features;
 
 \newslide{Cloaking: Results}
 
-\figure{\includepng{../slides/diagrams/privacy/kung_cloaking_simple}{100%}{negate}}{Simple cloaking function.}{kung-cloaking-simple}
+\figure{\includepng{\diagramsDir/privacy/kung_cloaking_simple}{100%}{negate}}{Simple cloaking function.}{kung-cloaking-simple}
 
 
 \newslide{House Prices Around London}
 
-\figure{\includepng{../slides/diagrams/privacy/houseprices_bigcirc_15km_0_labels}{60%}{negate}}{Simple cloaking function on house price data.}{house-prices-cloaking}
+\figure{\includepng{\diagramsDir/privacy/houseprices_bigcirc_15km_0_labels}{60%}{negate}}{Simple cloaking function on house price data.}{house-prices-cloaking}
 
 \newslide{Citibike}
 
@@ -150,7 +150,7 @@ reasonable $\varepsilon$).
 
 \newslide{Citibike}
 
-\figure{\includepng{../slides/diagrams/privacy/newtable2}{80%}{negate}}{Citibike data. Lengthscale in degrees, values above, journey duration (in seconds).}{citibike-data} 
+\figure{\includepng{\diagramsDir/privacy/newtable2}{80%}{negate}}{Citibike data. Lengthscale in degrees, values above, journey duration (in seconds).}{citibike-data} 
 
 \slides{lengthscale in degrees, values above, journey duration (in seconds)}
 
@@ -164,11 +164,11 @@ reasonable $\varepsilon$).
 
 \newslide{Cloaking (no) Inducing Inputs}
 
-\figure{\includepng{../slides/diagrams/privacy/cloaking-no-inducing}{100%}{negate}}{Cloaking function with no inducing inputs.}{cloaking-no-inducing}
+\figure{\includepng{\diagramsDir/privacy/cloaking-no-inducing}{100%}{negate}}{Cloaking function with no inducing inputs.}{cloaking-no-inducing}
 
 \newslide{Cloaking and Inducing Inputs}
 
-\figure{\includepng{../slides/diagrams/privacy/cloaking-inducing}{80%}{negate}}{Cloaking function with inducing inputs.}{cloaking-inducing}
+\figure{\includepng{\diagramsDir/privacy/cloaking-inducing}{80%}{negate}}{Cloaking function with inducing inputs.}{cloaking-inducing}
 
 \newslide{Results}
 
@@ -182,10 +182,10 @@ reasonable $\varepsilon$).
 
 \newslide{Cloaking (no) Inducing Inputs}
 
-\figure{\includepng{../slides/diagrams/privacy/housing-no-inducing}{80%}{negate}}{Cloaking functions on the housing data with no inducing inputs.}{cloaking-housing-no-inducing}
+\figure{\includepng{\diagramsDir/privacy/housing-no-inducing}{80%}{negate}}{Cloaking functions on the housing data with no inducing inputs.}{cloaking-housing-no-inducing}
 
 \newslide{Cloaking and Inducing Inputs}
 
-\figure{\includepng{../slides/diagrams/privacy/housing-inducing}{80%}{negate}}{Cloaking functions on the housing data with inducing inputs.}{cloaking-housing-inducing}
+\figure{\includepng{\diagramsDir/privacy/housing-inducing}{80%}{negate}}{Cloaking functions on the housing data with inducing inputs.}{cloaking-housing-inducing}
 
 \endif

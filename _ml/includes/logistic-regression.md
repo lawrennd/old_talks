@@ -108,13 +108,13 @@ $$
 
 \setupplotcode{import teaching_plots as plot}
 
-\plotcode{plot.logistic('../slides/diagrams/ml/logistic.svg')}
+\plotcode{plot.logistic('\diagramsDir/ml/logistic.svg')}
 
 \newslide{Logistic function}
 \slides{
 * [Logistic](http://en.wikipedia.org/wiki/Logistic_function) (or sigmoid) squashes
 real line to between 0  & 1. Sometimes also called a 'squashing function'.
-\includediagram{../slides/diagrams/ml/logistic}
+\includediagram{\diagramsDir/ml/logistic}
 }
 
 \subsection{Basis Function}

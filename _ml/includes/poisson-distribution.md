@@ -14,10 +14,10 @@
 
 \setupplotcode{import teaching_plots as plot}
 
-\plotcode{plot.poisson('../slides/diagrams/ml/')}
+\plotcode{plot.poisson('\diagramsDir/ml/')}
 
 \newslide{Poisson Distribution}
 
-\figure{\includediagram{../slides/diagrams/ml/poisson}{80%}}{The Poisson distribution.}{the-poisson-distribution}
+\figure{\includediagram{\diagramsDir/ml/poisson}{80%}}{The Poisson distribution.}{the-poisson-distribution}
 
 \endif

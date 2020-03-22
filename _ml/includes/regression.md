@@ -45,9 +45,9 @@ $$\dataScalar_i = m\inputScalar_i + c$$ is translated to code as follows:}
 
 \plotcode{plt.plot(x, y, 'r.', markersize=10) # plot data as red dots
 plt.xlim([-3, 3])
-mlai.write_figure(filename="../slides/diagrams/ml/regression.svg", transparent=True)}
+mlai.write_figure(filename="\diagramsDir/ml/regression.svg", transparent=True)}
 
-\figure{\includediagram{../slides/diagrams/ml/regression}{60%}}{A simple linear regression.}{linear-regression}
+\figure{\includediagram{\diagramsDir/ml/regression}{60%}}{A simple linear regression.}{linear-regression}
 
 \slides{These points lie exactly on a straight line, that's not very realistic, let's corrupt them with a bit of Gaussian 'noise'.}
 
@@ -57,8 +57,8 @@ mlai.write_figure(filename="../slides/diagrams/ml/regression.svg", transparent=T
 y = m_true*x + c_true + noise
 plt.plot(x, y, 'r.', markersize=10)
 plt.xlim([-3, 3])
-mlai.write_figure(filename="../slides/diagrams/ml/regression_noise.svg", transparent=True)}
+mlai.write_figure(filename="\diagramsDir/ml/regression_noise.svg", transparent=True)}
 
-\figure{\includediagram{../slides/diagrams/ml/regression_noise}{60%}}{A simple linear regression with noise.}{linear-regression-noise}
+\figure{\includediagram{\diagramsDir/ml/regression_noise}{60%}}{A simple linear regression with noise.}{linear-regression-noise}
 
 \endif

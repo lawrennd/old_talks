@@ -5,6 +5,6 @@
 \notes{\subsubsection{The Circle}}
 \newslide{}
 
-\includejpg{../slides/diagrams/The_Circle_(Dave_Eggers_novel_-_cover_art)}{40%}
+\includejpg{\diagramsDir/The_Circle_(Dave_Eggers_novel_-_cover_art)}{40%}
 
 \endif

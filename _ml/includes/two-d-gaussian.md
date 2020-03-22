@@ -17,9 +17,9 @@
 
 \newslide{Height and Weight Models}
 \setupplotcode{import teaching_plots as plot}
-\plotcode{plot.height_weight(diagrams='../slides/diagrams/ml')}
+\plotcode{plot.height_weight(diagrams='\diagramsDir/ml')}
 
-\figure{\includediagram{../slides/diagrams/ml/height_weight_gaussian}{70%}}{Gaussian distributions for height and weight.}{height-weight-gaussian}
+\figure{\includediagram{\diagramsDir/ml/height_weight_gaussian}{70%}}{Gaussian distributions for height and weight.}{height-weight-gaussian}
 
 
 \subsection{Independence Assumption}

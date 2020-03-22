@@ -5,7 +5,7 @@
 
 \newslide{Experiment, Analyze, Design}
 
-\figure{\includediagram{../slides/diagrams/ml/experiment-analyze-design}{50%}}{The experiment, analyze, design flywheel for scientific innovation.}{experiment-analyze-design}
+\figure{\includediagram{\diagramsDir/ml/experiment-analyze-design}{50%}}{The experiment, analyze, design flywheel for scientific innovation.}{experiment-analyze-design}
 
 \newslide{Our Vision}
 

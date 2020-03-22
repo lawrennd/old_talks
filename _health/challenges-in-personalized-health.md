@@ -28,7 +28,7 @@ transition: None
 
 \subsection{Evolved Relationship}
 
-\includediagram{../slides/diagrams/data-science-information-flow_neg003}
+\includediagram{\diagramsDir/data-science-information-flow_neg003}
 
 \include{_data-science/includes/societal-effects.md}
 

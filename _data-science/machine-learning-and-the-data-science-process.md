@@ -84,7 +84,7 @@ $$ \text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{predi
 
 There's a sea of data, but most of it is undrinkable
 
-\includeimg{../slides/diagrams/sea-water-ocean-waves.jpg}{50%}
+\includeimg{\diagramsDir/sea-water-ocean-waves.jpg}{50%}
 
 We require data-desalination before it can be consumed!
 

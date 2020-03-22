@@ -4,7 +4,7 @@
 
 \subsection{Justice: What's The Right Thing to Do?}
 
-\figure{\includejpg{../slides/diagrams/philosophy/justice-whats-the-right-thing-to-do}{40%}}{Sandel's book looks at how to do the right thing with a context of moreal philosophy. @Sandel-justice10}{justice-whats-the-right-thing-to-do}
+\figure{\includejpg{\diagramsDir/philosophy/justice-whats-the-right-thing-to-do}{40%}}{Sandel's book looks at how to do the right thing with a context of moreal philosophy. @Sandel-justice10}{justice-whats-the-right-thing-to-do}
 
 \slides{@Sandel-jusrtice10}
 

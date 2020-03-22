@@ -26,7 +26,7 @@ import numpy as np}
                      formula='\formula',
 					 w=2)
 					 
-plot.covariance_func(kernel, diagrams='../slides/diagrams/kern/')}
+plot.covariance_func(kernel, diagrams='\diagramsDir/kern/')}
 
 \includecovariane{sinc}{\formula}{Sinc covariance function.}
 

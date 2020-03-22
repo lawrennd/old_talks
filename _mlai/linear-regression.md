@@ -22,7 +22,7 @@ youtube: 5VPr6NbHHjg
 \subsection{Olympic 100m Data}
 
 *  Gold medal times for Olympic 100 m runners since 1896.
-\includeimg{../slides/diagrams/ml/100m_final_start.jpg}
+\includeimg{\diagramsDir/ml/100m_final_start.jpg}
 \aligncenter{*Image from Wikimedia Commons*}<http://bit.ly/191adDC>
 
 \subsection{Olympic 100m Data}

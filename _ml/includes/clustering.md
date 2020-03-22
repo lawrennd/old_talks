@@ -91,25 +91,25 @@ $$
 \define{\width}{40%}
 \define{animationName}{kmeans-clustering}
 \startanimation{\animationName}{1}{26}
-\newframe{\includediagram{../slides/diagrams/ml/kmeans-clustering/kmeans_clustering_001}{\width}}{\animationName}
-\newframe{\includediagram{../slides/diagrams/ml/kmeans-clustering/kmeans_clustering_002}{\width}}{\animationName}
-\newframe{\includediagram{../slides/diagrams/ml/kmeans-clustering/kmeans_clustering_003}{\width}}{\animationName}
-\newframe{\includediagram{../slides/diagrams/ml/kmeans-clustering/kmeans_clustering_004}{\width}}{\animationName}
-\newframe{\includediagram{../slides/diagrams/ml/kmeans-clustering/kmeans_clustering_005}{\width}}{\animationName}
-\newframe{\includediagram{../slides/diagrams/ml/kmeans-clustering/kmeans_clustering_006}{\width}}{\animationName}
-\newframe{\includediagram{../slides/diagrams/ml/kmeans-clustering/kmeans_clustering_007}{\width}}{\animationName}
-\newframe{\includediagram{../slides/diagrams/ml/kmeans-clustering/kmeans_clustering_008}{\width}}{\animationName}
-\newframe{\includediagram{../slides/diagrams/ml/kmeans-clustering/kmeans_clustering_009}{\width}}{\animationName}
-\newframe{\includediagram{../slides/diagrams/ml/kmeans-clustering/kmeans_clustering_010}{\width}}{\animationName}
-\newframe{\includediagram{../slides/diagrams/ml/kmeans-clustering/kmeans_clustering_011}{\width}}{\animationName}
-\newframe{\includediagram{../slides/diagrams/ml/kmeans-clustering/kmeans_clustering_012}{\width}}{\animationName}
-\newframe{\includediagram{../slides/diagrams/ml/kmeans-clustering/kmeans_clustering_013}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/kmeans-clustering/kmeans_clustering_001}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/kmeans-clustering/kmeans_clustering_002}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/kmeans-clustering/kmeans_clustering_003}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/kmeans-clustering/kmeans_clustering_004}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/kmeans-clustering/kmeans_clustering_005}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/kmeans-clustering/kmeans_clustering_006}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/kmeans-clustering/kmeans_clustering_007}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/kmeans-clustering/kmeans_clustering_008}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/kmeans-clustering/kmeans_clustering_009}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/kmeans-clustering/kmeans_clustering_010}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/kmeans-clustering/kmeans_clustering_011}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/kmeans-clustering/kmeans_clustering_012}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/kmeans-clustering/kmeans_clustering_013}{\width}}{\animationName}
 \endanimation
 
 *Clustering with the $k$-means clustering algorithm.*
 }
 
-\notes{\figure{\includediagram{../slides/diagrams/ml/kmeans-clustering/kmeans_clustering_013}{\width}}{Clustering with the $k$-means clustering algorithm.}{kmeans-clustering-13}}
+\notes{\figure{\includediagram{\diagramsDir/ml/kmeans-clustering/kmeans_clustering_013}{\width}}{Clustering with the $k$-means clustering algorithm.}{kmeans-clustering-13}}
 
 \newslide{$k$-Means Clustering}
 

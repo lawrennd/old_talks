@@ -20,7 +20,7 @@ import numpy as np}
 \displaycode{HTML(anim.to_jshtml())}
 
 \displaycode{plot.save_animation(anim, 
-                    diagrams='../slides/diagrams/kern', 
+                    diagrams='\diagramsDir/kern', 
 				    filename='icm_covariance.html')}
 
 

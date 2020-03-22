@@ -1,12 +1,11 @@
 \ifndef{pydeepgpInclude}
 \define{pydeepgpInclude}
 \editme
+
 \include{_gp/includes/gpy-include.md}
 
-\notes{This notebook depends on PyDeepGP. These libraries can be installed via pip:
+\notes{This notebook depends on PyDeepGP. This library can be installed via pip.}
 
-```
-pip install git+https://github.com/SheffieldML/PyDeepGP.git
-```}
+\installCode{PyDeepGP}
 
 \endif

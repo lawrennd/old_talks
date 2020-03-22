@@ -29,7 +29,7 @@ text =['$\phi(x) = 1$',
        '$\phi(x) = xH(x-1.0)$']
 plot.basis(mlai.relu, x_min=-2.0, x_max=2.0, 
            fig=f, ax=ax, loc=loc, text=text,
-		   diagrams='../slides/diagrams/ml',
+		   diagrams='\diagramsDir/ml',
 		   num_basis=5)
 }
 
@@ -42,19 +42,19 @@ $$
 \slides{
 \define{width}{80%}
 \startanimation{relu_function}{0}{4}
-\newframe{\includediagram{../slides/diagrams/ml/relu_function000}{\width}}{relu_function}
-\newframe{\includediagram{../slides/diagrams/ml/relu_function001}{\width}}{relu_function}
-\newframe{\includediagram{../slides/diagrams/ml/relu_function002}{\width}}{relu_function}
-\newframe{\includediagram{../slides/diagrams/ml/relu_function003}{\width}}{relu_function}
-\newframe{\includediagram{../slides/diagrams/ml/relu_function004}{\width}}{relu_function}
+\newframe{\includediagram{\diagramsDir/ml/relu_function000}{\width}}{relu_function}
+\newframe{\includediagram{\diagramsDir/ml/relu_function001}{\width}}{relu_function}
+\newframe{\includediagram{\diagramsDir/ml/relu_function002}{\width}}{relu_function}
+\newframe{\includediagram{\diagramsDir/ml/relu_function003}{\width}}{relu_function}
+\newframe{\includediagram{\diagramsDir/ml/relu_function004}{\width}}{relu_function}
 \endanimation
 }
-\notes{\figure{\includediagram{../slides/diagrams/ml/relu_basis004}{80%}}{A rectified linear unit basis is made up of different rectified linear unit functions centered at different points.}{relu-basis-4}}
+\notes{\figure{\includediagram{\diagramsDir/ml/relu_basis004}{80%}}{A rectified linear unit basis is made up of different rectified linear unit functions centered at different points.}{relu-basis-4}}
 
 
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('relu_basis{num_basis:0>3}.svg', 
-                            directory='../slides/diagrams/ml', 
+                            directory='\diagramsDir/ml', 
 			    num_basis=IntSlider(0,0,4,1))}
 \endif

@@ -5,22 +5,22 @@
 \subsection{Stacked GP}
 
 \plotcode{plot.stack_gp_sample(kernel=GPy.kern.RBF,
-                     diagrams="../../slides/diagrams/deepgp")}
+                     diagrams="../\diagramsDir/deepgp")}
 				
 \displaycode{pods.notebook.display_plots('stack-gp-sample-RBF-{sample:0>1}.svg', 
-                            directory='../../slides/diagrams/deepgp', sample=(0,4))}
+                            directory='../\diagramsDir/deepgp', sample=(0,4))}
 
 \slides{
 \define{width}{10%}
 \startanimation{stack-gp-sample}{0}{4}
-\newframe{\includediagram{../slides/diagrams/stack-gp-sample-0}{\width}}{stack-gp-sample}
-\newframe{\includediagram{../slides/diagrams/stack-gp-sample-1}{\width}}{stack-gp-sample}
-\newframe{\includediagram{../slides/diagrams/stack-gp-sample-2}{\width}}{stack-gp-sample}
-\newframe{\includediagram{../slides/diagrams/stack-gp-sample-3}{\width}}{stack-gp-sample}
-\newframe{\includediagram{../slides/diagrams/stack-gp-sample-4}{\width}}{stack-gp-sample}
+\newframe{\includediagram{\diagramsDir/stack-gp-sample-0}{\width}}{stack-gp-sample}
+\newframe{\includediagram{\diagramsDir/stack-gp-sample-1}{\width}}{stack-gp-sample}
+\newframe{\includediagram{\diagramsDir/stack-gp-sample-2}{\width}}{stack-gp-sample}
+\newframe{\includediagram{\diagramsDir/stack-gp-sample-3}{\width}}{stack-gp-sample}
+\newframe{\includediagram{\diagramsDir/stack-gp-sample-4}{\width}}{stack-gp-sample}
 \endanimation
 }
-\notes{\figure{\includediagram{../slides/diagrams/stack-gp-sample-4}{20%}}{Stacking Gaussian process models leads to non linear mappings at each stage. Here we are mapping from two dimensions to two dimensions in each layer.}{stack-gp-sample}}
+\notes{\figure{\includediagram{\diagramsDir/stack-gp-sample-4}{20%}}{Stacking Gaussian process models leads to non linear mappings at each stage. Here we are mapping from two dimensions to two dimensions in each layer.}{stack-gp-sample}}
 
 \notes{Note that once the box has folded over on itself, it cannot be unfolded. So a feature that is generated near the top of the model cannot be removed further down the model.
 

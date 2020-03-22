@@ -10,7 +10,7 @@ $$p(\dataVector,\mappingFunctionVector,\inducingVector) = p(\dataVector\given \m
 
 \newslide{Introducing $\inducingVector$}
 
-\includeimg{../slides/diagrams/cov_inducing_withX.png}{60%}{negate}
+\includeimg{\diagramsDir/cov_inducing_withX.png}{60%}{negate}
 
 \newslide{Introducing $\inducingVector$}
 
@@ -29,7 +29,7 @@ $$\begin{aligned}
 \columns{
 $$\inputMatrix,\,\dataVector$$ $$\mappingFunction(\inputVector) \sim {\mathcal GP}$$ $$p(\mappingFunctionVector) = \gaussianSamp{\zerosVector}{\Kff}$$ $$p(\mappingFunctionVector\given \dataVector,\inputMatrix)$$
 }{
-\includeimg{../slides/diagrams/nomenclature4}{90%}{negate}
+\includeimg{\diagramsDir/nomenclature4}{90%}{negate}
 }{30%}{70%}
 $$
 \begin{align}
@@ -41,5 +41,5 @@ $$
 \columns{
 $$\inputMatrix,\,\dataVector$$ $$\mappingFunction(\inputVector) \sim {\mathcal GP}$$ $$p(\mappingFunctionVector) = \gaussianSamp{\zerosVector}{\Kff}$$ $$p(\mappingFunctionVector\given \dataVector,\inputMatrix)$$ $$p(\inducingVector)  = \gaussianSamp{\zerosVector}{\Kuu}$$ $$\widetilde p({\color{red}\inducingVector}\given \dataVector,\inputMatrix)$$
 }{
-\includeimg{../slides/diagrams/nomenclature5.png}{90%}{negate}
+\includeimg{\diagramsDir/nomenclature5.png}{90%}{negate}
 }{30%}{70%}

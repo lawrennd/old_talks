@@ -82,7 +82,7 @@ real['21/5/2019':] = np.NaN}
 import teaching_plots as plot
 import matplotlib.pyplot as plt}
 
-\plotcode{diagrams = '../slides/diagrams/data-science/'
+\plotcode{diagrams = '\diagramsDir/data-science/'
 fontsize=16}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.wide_figsize)
@@ -100,14 +100,14 @@ ax.set_ylim(ylim)}
 
 \newslide{Real Price}
 
-\slides{\includediagram{../slides/diagrams/data-science/real-prices}{80%}}
+\slides{\includediagram{\diagramsDir/data-science/real-prices}{80%}}
 
 \newslide{Future Price}
 
-\slides{\includediagram{../slides/diagrams/data-science/hypothetical-prices}{80%}}
+\slides{\includediagram{\diagramsDir/data-science/hypothetical-prices}{80%}}
 
 
-\notes{\figure{\includediagram{../slides/diagrams/data-science/hypothetical-prices}{80%}}{Anne has access to the share prices in the black stream but not in the blue stream. A hypothetical stream is the stream of future prices. Anne can define this hypothetical under constraints (latency, input etc). The need for a model is now exposed in the software infrastructure}{hypothetical-prices}}
+\notes{\figure{\includediagram{\diagramsDir/data-science/hypothetical-prices}{80%}}{Anne has access to the share prices in the black stream but not in the blue stream. A hypothetical stream is the stream of future prices. Anne can define this hypothetical under constraints (latency, input etc). The need for a model is now exposed in the software infrastructure}{hypothetical-prices}}
 
 \subsection{Hypothetical Streams}
 

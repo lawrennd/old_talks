@@ -5,7 +5,7 @@
 
 \subsection{Electricity}
 
-\figure{\includejpg{../slides/diagrams/why-didnt-electricity-immediately-change-manufacturing}{70%}{negate}}{\href{http://www.bbc.co.uk/news/business-40673694}{Why didn't electricity immediately change manufacturing?} by Tim Harford}{why-didnt-electiricty-immediately-change}
+\figure{\includejpg{\diagramsDir/why-didnt-electricity-immediately-change-manufacturing}{70%}{negate}}{\href{http://www.bbc.co.uk/news/business-40673694}{Why didn't electricity immediately change manufacturing?} by Tim Harford}{why-didnt-electiricty-immediately-change}
 
 \slides{\href{http://www.bbc.co.uk/news/business-40673694}{Why didn't electricity immediately change manufacturing?} by Tim Harford}
 

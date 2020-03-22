@@ -27,6 +27,6 @@ The problem is compounded because many of the techniques that we're
 speaking of were originally developed in academic laboratories in
 isolation from real-world deployment.}
 
-\figure{\includejpg{../slides/diagrams/ai/Jeeves_in_the_Springtime_01}{50%}}{We seem to have fallen for a perspective on AI that suggests it will adapt to our schedule, rather in the manner of a 1930s manservant.}{jeeves-springtime}
+\figure{\includejpg{\diagramsDir/ai/Jeeves_in_the_Springtime_01}{50%}}{We seem to have fallen for a perspective on AI that suggests it will adapt to our schedule, rather in the manner of a 1930s manservant.}{jeeves-springtime}
 
 \endif

@@ -32,22 +32,22 @@ transition: None
 
 \section{High Profile Advances}
 
-\includejpg{../slides/diagrams/ai/elon-musk-2015}{40%}
+\includejpg{\diagramsDir/ai/elon-musk-2015}{40%}
 
 \newslide{}
 
-\includepng{../slides/diagrams/ai/GoogleDeepMind-Logotype-Vertical_Black}{80%}
+\includepng{\diagramsDir/ai/GoogleDeepMind-Logotype-Vertical_Black}{80%}
 
 \newslide{}
 
-\includediagram{../slides/diagrams/ai/IP_stack_connections}
+\includediagram{\diagramsDir/ai/IP_stack_connections}
 
 
 \section{Dual Process Models}
 
 <!--\newslide{}
 
-\includejpg{../slides/diagrams/ai/superintelligence-paths-dangers-strategies}{50%}-->
+\includejpg{\diagramsDir/ai/superintelligence-paths-dangers-strategies}{50%}-->
 
 \include{_ai/includes/thinking-fast-and-slow.md}
 
@@ -59,106 +59,106 @@ transition: None
 
 \newslide{}
 
-\includejpg{../slides/diagrams/ai/the-chimp-paradox}{30%}
+\includejpg{\diagramsDir/ai/the-chimp-paradox}{30%}
 
 \newslide{}
 
-\includejpg{../slides/diagrams/ai/cute-chimp}{80%}
+\includejpg{\diagramsDir/ai/cute-chimp}{80%}
 
 \newslide{}
 
-\includejpg{../slides/diagrams/ai/gangsta-chimp}{80%}
+\includejpg{\diagramsDir/ai/gangsta-chimp}{80%}
 
 <!--\newslide{}
 
-\includejpg{../slides/diagrams/ai/freuds-theory-to-explain-personality}{80%}
+\includejpg{\diagramsDir/ai/freuds-theory-to-explain-personality}{80%}
 
 \newslide{}
 
-\includejpg{../slides/diagrams/ai/star-trek-spock1}{60%}
+\includejpg{\diagramsDir/ai/star-trek-spock1}{60%}
 
 \newslide{}
 
-\includejpg{../slides/diagrams/ai/star-trek-romulan}{50%}
+\includejpg{\diagramsDir/ai/star-trek-romulan}{50%}
 
 \newslide{}
 
-\includejpg{../slides/diagrams/ai/star-trek-william-shatner}{40%}
+\includejpg{\diagramsDir/ai/star-trek-william-shatner}{40%}
 
 \newslide{}
 
-\includejpg{../slides/diagrams/ai/star-trek-klingons}{70%}
+\includejpg{\diagramsDir/ai/star-trek-klingons}{70%}
 
 \newslide{}
 
-\includediagram{../slides/diagrams/mouse-47172}-->
+\includediagram{\diagramsDir/mouse-47172}-->
 
 \section{Models and Emulation}
 
 \newslide{}
 
-\includejpg{../slides/diagrams/ai/human-brain-project}{80%}
+\includejpg{\diagramsDir/ai/human-brain-project}{80%}
 
 <!--\newslide{}
 
-\includediagram{../slides/diagrams/ai/IP_stack_connections}
+\includediagram{\diagramsDir/ai/IP_stack_connections}
 
 -->
 
 \newslide{}
 
-\includepng{../slides/diagrams/ai/big-data}{70%}
+\includepng{\diagramsDir/ai/big-data}{70%}
 
 \newslide{}
 
-\includegif{../slides/diagrams/ai/rude-goldbergs-self-operating-napikin}{60%}
+\includegif{\diagramsDir/ai/rude-goldbergs-self-operating-napikin}{60%}
 
 \newslide{}
 
-\includejpg{../slides/diagrams/ai/holmes-watson}{80%}
+\includejpg{\diagramsDir/ai/holmes-watson}{80%}
 
 \newslide{}
 
-\includejpg{../slides/diagrams/ai/nature-go}{50%}
+\includejpg{\diagramsDir/ai/nature-go}{50%}
 
 \newslide{}
 
-\includejpg{../slides/diagrams/ai/alpha-go-wins}{90%}
+\includejpg{\diagramsDir/ai/alpha-go-wins}{90%}
 
 \newslide{}
 
-\columns{\includejpg{../slides/diagrams/ai/david-silver}}{\includejpg{../slides/diagrams/ai/demis-hassabis}}{40%}{20%}
+\columns{\includejpg{\diagramsDir/ai/david-silver}}{\includejpg{\diagramsDir/ai/demis-hassabis}}{40%}{20%}
 
 \newslide{}
 
-\includejpg{../slides/diagrams/ai/traquair-house-maze}{70%}
+\includejpg{\diagramsDir/ai/traquair-house-maze}{70%}
 
 \newslide{}
 
-\includediagram{../slides/diagrams/ai/sorted-binary-tree}
+\includediagram{\diagramsDir/ai/sorted-binary-tree}
 
 \newslide{}
 
-\includediagram{../slides/diagrams/ai/tic-tac-toe-game-tree}
+\includediagram{\diagramsDir/ai/tic-tac-toe-game-tree}
 
 \newslide{}
 
-\includejpg{../slides/diagrams/ai/jubilee-maze}{70%}
+\includejpg{\diagramsDir/ai/jubilee-maze}{70%}
 
 \newslide{}
 
-\includejpg{../slides/diagrams/ai/rick-clemons-coming-out-lounge}{80%}
+\includejpg{\diagramsDir/ai/rick-clemons-coming-out-lounge}{80%}
 
 
 \newslide{}
 
-\includejpg{../slides/diagrams/ai/the-new-revelation}{60%}
+\includejpg{\diagramsDir/ai/the-new-revelation}{60%}
 
 \notes{Next slide represents cold reading.}
 
 \newslide{} 
 
-\includediagram{../slides/diagrams/girls-152345}
+\includediagram{\diagramsDir/girls-152345}
 
 \newslide{}
 
@@ -166,15 +166,15 @@ transition: None
 
 \newslide{} 
 
-\includediagram{../slides/diagrams/data-science/hilbert-info-growth}
+\includediagram{\diagramsDir/data-science/hilbert-info-growth}
 
 \newslide{}
 
-\includejpg{../slides/diagrams/ai/emulation}{60%}
+\includejpg{\diagramsDir/ai/emulation}{60%}
 
 \newslide{}
 
-\includepng{../slides/diagrams/deepface_neg}{80%}
+\includepng{\diagramsDir/deepface_neg}{80%}
 
 \addblog{The Mechanistic Fallacy}{2015/11/09/artificial-stupidity/}
 
@@ -194,7 +194,7 @@ transition: None
 
 \newslide{}
 
-\includejpg{../slides/diagrams/ai/star-trek-borg}{80%}
+\includejpg{\diagramsDir/ai/star-trek-borg}{80%}
 
 \include{_ai/includes/thinking-fast-and-slow.md}
 \include{_ml/includes/deep-learning-overview.md}
@@ -202,15 +202,15 @@ transition: None
 
 \newslide{}
 
-\includejpg{../slides/diagrams/ai/discworld-anhk-morpork-cover-art}{70%}
+\includejpg{\diagramsDir/ai/discworld-anhk-morpork-cover-art}{70%}
 
 \newslide{}
 
-\threeColumns{\includepng{../slides/diagrams/ai/big-data}{100%}{\includegif{../slides/diagrams/ai/rude-goldbergs-self-operating-napkin}{100%}{\includejpg{../slides/diagrams/ai/discworld-anhk-morpork-cover-art}{100%}}{30%}{30%}{30%}
+\threeColumns{\includepng{\diagramsDir/ai/big-data}{100%}{\includegif{\diagramsDir/ai/rude-goldbergs-self-operating-napkin}{100%}{\includejpg{\diagramsDir/ai/discworld-anhk-morpork-cover-art}{100%}}{30%}{30%}{30%}
 
 \newslide{}
 
-\includejpg{../slides/diagrams/ai/world-turtle-model}{80%}
+\includejpg{\diagramsDir/ai/world-turtle-model}{80%}
 
 \ifdef{blogPosts}
 \defeval{\blogPosts}{

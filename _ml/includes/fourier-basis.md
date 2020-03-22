@@ -30,13 +30,13 @@ text =['$\phi(x) = 1$',
        '$\phi(x) = \cos(2x)$']
 plot.basis(mlai.fourier, x_min=0, x_max=2, 
            fig=f, ax=ax, loc=loc, text=text,
-           diagrams='../slides/diagrams/ml',
+           diagrams='\diagramsDir/ml',
            num_basis=5)}
 
 \setupcode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('fourier_basis{num_basis:0>3}.svg', 
-                            directory='../slides/diagrams/ml', 
+                            directory='\diagramsDir/ml', 
 							num_basis=IntSlider(0,0,4,1))}
 
 \notes{In this code, basis functions with an *odd* index are sine and basis functions with an *even* index are cosine. The first basis function (index 0, so cosine) has a frequency of 0 and then frequencies increase every time a sine and cosine are included.}
@@ -52,17 +52,17 @@ $$
 \slides{
 \define{width}{80%}
 \startanimation{fourier_function}{0}{4}
-\newframe{\includediagram{../slides/diagrams/ml/fourier_function000}{\width}}{fourier_function}
-\newframe{\includediagram{../slides/diagrams/ml/fourier_function001}{\width}}{fourier_function}
-\newframe{\includediagram{../slides/diagrams/ml/fourier_function002}{\width}}{fourier_function}
+\newframe{\includediagram{\diagramsDir/ml/fourier_function000}{\width}}{fourier_function}
+\newframe{\includediagram{\diagramsDir/ml/fourier_function001}{\width}}{fourier_function}
+\newframe{\includediagram{\diagramsDir/ml/fourier_function002}{\width}}{fourier_function}
 \endanimation
 }
 
-\notes{\figure{\includediagram{../slides/diagrams/ml/fourier_basis004}{80%}}{A Fourier basis is made up of sine and cosine functions with different frequencies.}{fourier-basis-4}}
+\notes{\figure{\includediagram{\diagramsDir/ml/fourier_basis004}{80%}}{A Fourier basis is made up of sine and cosine functions with different frequencies.}{fourier-basis-4}}
 
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
-\displaycode{pods.notebook.display_plots('fourier_function{func_num:0>3}.svg', directory='../slides/diagrams/ml', func_num=IntSlider(0,0,2,1))}
+\displaycode{pods.notebook.display_plots('fourier_function{func_num:0>3}.svg', directory='\diagramsDir/ml', func_num=IntSlider(0,0,2,1))}
 
 
 \endif

@@ -15,14 +15,14 @@
 
 \newslide{}
 
-\figure{\includepng{../slides/diagrams/physics/laplacesDeterminismEnglish}{60%}}{Laplace's determinsim in English translation.}{laplaces-determinism-english}
+\figure{\includepng{\diagramsDir/physics/laplacesDeterminismEnglish}{60%}}{Laplace's determinsim in English translation.}{laplaces-determinism-english}
 
 \newslide{}
 
 \slides{
-\figure{\includepng{../slides/diagrams/physics/philosophicaless00lapliala_16_cropped}{60%}}{}{laplaces-demon-cropped}
+\figure{\includepng{\diagramsDir/physics/philosophicaless00lapliala_16_cropped}{60%}}{}{laplaces-demon-cropped}
 p
-<!--\includepdfclip{../slides/diagrams/physics/philosophicaless00lapliala.pdf}{0cm 6cm 0cm 3.2cm}{16}{80%}{}-->}
+<!--\includepdfclip{\diagramsDir/physics/philosophicaless00lapliala.pdf}{0cm 6cm 0cm 3.2cm}{16}{80%}{}-->}
 \notes{Unfortunately, most analyses of his ideas stop at that point, whereas his real point is that such a notion is unreachable. Not so much *superman* as *strawman*. Just three pages later in the "Philosophical Essay on Probabilities" [@Laplace:essai14], Laplace goes on to observe:
 
 > The curve described by a simple molecule of air or vapor is regulated in a manner just as certain as the planetary orbits; the only difference between them is that which comes from our ignorance.
@@ -35,14 +35,14 @@ p
 
 \newslide{}
 
-\figure{\includepng{../slides/diagrams/physics/philosophicaless00lapliala}{60%}}{To Laplace, determinism is a strawman. Ignorance of mechanism and data leads to uncertainty which should be dealt with through probability.}{probability-relative-in-part}
+\figure{\includepng{\diagramsDir/physics/philosophicaless00lapliala}{60%}}{To Laplace, determinism is a strawman. Ignorance of mechanism and data leads to uncertainty which should be dealt with through probability.}{probability-relative-in-part}
 
 \newslide{}
 
 \slides{
-\figure{\includepng{../slides/diagrams/physics/philosophicaless00lapliala_18_cropped}{60%}}{}{probability-relative-in-part-cropped}
+\figure{\includepng{\diagramsDir/physics/philosophicaless00lapliala_18_cropped}{60%}}{}{probability-relative-in-part-cropped}
 p
-<!--\includepdfclip{../slides/diagrams/physics/philosophicaless00lapliala.pdf}{0cm 6cm 0cm 5cm}{18}{80%}{}
+<!--\includepdfclip{\diagramsDir/physics/philosophicaless00lapliala.pdf}{0cm 6cm 0cm 5cm}{18}{80%}{}
 -->}
 
 \notes{In other words, we can never make use of the idealistic deterministic Universe due to our ignorance about the world, Laplace's suggestion, and focus in this essay is that we turn to probability to deal with this uncertainty. This is also our inspiration for using probability in machine learning. 

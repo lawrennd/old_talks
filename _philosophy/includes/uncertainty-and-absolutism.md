@@ -28,12 +28,12 @@
 
 * A simple switch in the points, is deterministic/mechanistic
 
-\figure{\includejpg{../slides/diagrams/ai/Trolley_1}{60%}{negate}}{The original trolley problem. The decision is deterministic.}{trolley-problem-1}
+\figure{\includejpg{\diagramsDir/ai/Trolley_1}{60%}{negate}}{The original trolley problem. The decision is deterministic.}{trolley-problem-1}
 
 
 \newslide{Tigers and Trolleys}
 
 * The second example is largely contrived, and riddled with uncertainty.
 
-\figure{\includejpg{../slides/diagrams/ai/trolley2}{60%}{negate}}{In the situation where you push an overweight gentleman, the decision is riddled with uncertainty. Doubt inevitably creeps in.}{trolley-problem-2}
+\figure{\includejpg{\diagramsDir/ai/trolley2}{60%}{negate}}{In the situation where you push an overweight gentleman, the decision is riddled with uncertainty. Doubt inevitably creeps in.}{trolley-problem-2}
 

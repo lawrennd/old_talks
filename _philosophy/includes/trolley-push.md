@@ -5,6 +5,6 @@
 
 \subsection{The Push and the Trolley}
 
-\figure{\includejpg{../slides/diagrams/ai/trolley2}{80%}{negate}}{The trolley problem.}{the-trolley-problem}
+\figure{\includejpg{\diagramsDir/ai/trolley2}{80%}{negate}}{The trolley problem.}{the-trolley-problem}
 
 \endif

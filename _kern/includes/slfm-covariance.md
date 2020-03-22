@@ -22,7 +22,7 @@ import numpy as np}
 \displaycode{HTML(anim.to_jshtml())}
 
 \plotcode{plot.save_animation(anim, 
-                    diagrams='../slides/diagrams/kern', 
+                    diagrams='\diagramsDir/kern', 
 				    filename='slfm_covariance.html')}
 
 

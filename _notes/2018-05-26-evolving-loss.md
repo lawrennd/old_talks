@@ -605,7 +605,7 @@ ax.set_xlim(data_limits[0], data_limits[1])
 ax.set_xlabel('year')
 ax.set_ylabel('pace min/km')
 _ = ax.set_ylim(2, 6)
-mlai.write_figure('../slides/diagrams/ml/olympic-loss-linear-regression000.svg', transparent=True)
+mlai.write_figure('\diagramsDir/ml/olympic-loss-linear-regression000.svg', transparent=True)
 ax.plot(x_test, f_test, linewidth=3, color='b')
 ax.plot(x, y, 'g.', markersize=10)
 ax2 = ax.twinx()
@@ -613,14 +613,14 @@ ax2.bar(x.flatten(), model.s.flatten(), width=2, color='b')
 ax2.set_ylim(0, 4)
 ax2.set_yticks([0, 1, 2])
 ax2.set_ylabel('$\langle s_i \\rangle$')
-mlai.write_figure('../slides/diagrams/ml/olympic-loss-linear-regression001.svg', transparent=True)
+mlai.write_figure('\diagramsDir/ml/olympic-loss-linear-regression001.svg', transparent=True)
 
 ```
 
 ```{.python .input}
 import pods
 pods.notebook.display_plots('olympic-loss-linear-regression{number:0>3}.svg', 
-                            directory='../slides/diagrams/ml', number=(0, 1))
+                            directory='\diagramsDir/ml', number=(0, 1))
 ```
 
 ## Parameter Uncertainty
@@ -735,7 +735,7 @@ ax.set_xlim(data_limits[0], data_limits[1])
 ax.set_xlabel('year')
 ax.set_ylabel('pace min/km')
 _ = ax.set_ylim(2, 6)
-mlai.write_figure('../slides/diagrams/ml/olympic-loss-bayes-linear-regression000.svg', transparent=True)
+mlai.write_figure('\diagramsDir/ml/olympic-loss-bayes-linear-regression000.svg', transparent=True)
 gp_tutorial.gpplot(x_test, f_test, f_test - 2*np.sqrt(f_var), f_test + 2*np.sqrt(f_var), ax=ax, edgecol='b', fillcol='#0033CC')
 #ax.plot(x_test, f_test, linewidth=3, color='b')
 ax.plot(x, y, 'g.', markersize=10)
@@ -744,14 +744,14 @@ ax2.bar(x.flatten(), model.s.flatten(), width=2, color='b')
 ax2.set_ylim(0, 0.2)
 ax2.set_yticks([0, 0.1, 0.2])
 ax2.set_ylabel('$\langle s_i \\rangle$')
-mlai.write_figure('../slides/diagrams/ml/olympic-loss-bayes-linear-regression001.svg', transparent=True)
+mlai.write_figure('\diagramsDir/ml/olympic-loss-bayes-linear-regression001.svg', transparent=True)
 
 ```
 
 ```{.python .input}
 import pods
 pods.notebook.display_plots('olympic-loss-bayes-linear-regression{number:0>3}.svg', 
-                            directory='../slides/diagrams/ml', number=(0, 1))
+                            directory='\diagramsDir/ml', number=(0, 1))
 ```
 
 ## Correlated Scales
@@ -901,7 +901,7 @@ ax.set_xlim(data_limits[0], data_limits[1])
 ax.set_xlabel('year')
 ax.set_ylabel('pace min/km')
 _ = ax.set_ylim(2, 6)
-mlai.write_figure('../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression000.svg', transparent=True)
+mlai.write_figure('\diagramsDir/ml/olympic-gp-loss-bayes-linear-regression000.svg', transparent=True)
 gp_tutorial.gpplot(x_test, f_test, f_test - 2*np.sqrt(f_var), f_test + 2*np.sqrt(f_var), ax=ax, edgecol='b', fillcol='#0033CC')
 #ax.plot(x_test, f_test, linewidth=3, color='b')
 ax.plot(x, y, 'g.', markersize=10)
@@ -910,13 +910,13 @@ ax2.bar(x.flatten(), model.s.flatten(), width=2, color='b')
 ax2.set_ylim(0, 3)
 ax2.set_yticks([0, 0.5, 1])
 ax2.set_ylabel('$\langle s_i \\rangle$')
-mlai.write_figure('../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression001.svg', transparent=True)
+mlai.write_figure('\diagramsDir/ml/olympic-gp-loss-bayes-linear-regression001.svg', transparent=True)
 ```
 
 ```{.python .input}
 import pods
 pods.notebook.display_plots('olympic-gp-loss-bayes-linear-regression{number:0>3}.svg', 
-                            directory='../slides/diagrams/ml', number=(0, 1))
+                            directory='\diagramsDir/ml', number=(0, 1))
 ```
 
 ### Joint Uncertainty
@@ -932,7 +932,7 @@ ax.plot(x, samps, '-x', markersize=10, linewidth=2)
 ax.set_xlim(data_limits[0], data_limits[1])
 ax.set_xlabel('year')
 _ = ax.set_ylabel('$s_i$')
-mlai.write_figure('../slides/diagrams/ml/olympic-gp-loss-samples.svg', transparent=True)
+mlai.write_figure('\diagramsDir/ml/olympic-gp-loss-samples.svg', transparent=True)
 ```
 
 ```{.python .input}
@@ -943,7 +943,7 @@ ax.set_ylim(2, 6)
 ax.set_xlabel('year')
 ax.set_ylabel('pace min/km')
 gp_tutorial.gpplot(x_test, f_test, f_test - 2*np.sqrt(f_var), f_test + 2*np.sqrt(f_var), ax=ax, edgecol='b', fillcol='#0033CC')
-mlai.write_figure('../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression-and-samples000.svg', transparent=True)
+mlai.write_figure('\diagramsDir/ml/olympic-gp-loss-bayes-linear-regression-and-samples000.svg', transparent=True)
 allsamps = []
 for i in range(samps.shape[1]):
     model.s = samps[:, i:i+1]
@@ -952,18 +952,18 @@ for i in range(samps.shape[1]):
     f_samp = np.random.multivariate_normal(f_bar.flatten(), f_cov, size=10).T
     ax.plot(x_test, f_samp, linewidth=0.5, color='k')
     allsamps+=list(f_samp[-1, :])
-mlai.write_figure('../slides/diagrams/ml/olympic-gp-loss-bayes-linear-regression-and-samples001.svg', transparent=True)
+mlai.write_figure('\diagramsDir/ml/olympic-gp-loss-bayes-linear-regression-and-samples001.svg', transparent=True)
 ```
 
 ```{.python .input}
 import pods
 pods.notebook.display_plots('olympic-gp-loss-bayes-linear-regression-and-samples{number:0>3}.svg', 
-                            directory='../slides/diagrams/ml', number=(0, 1))
+                            directory='\diagramsDir/ml', number=(0, 1))
 ```
 
 ```{.python .input}
 fig, ax = plt.subplots(figsize=plot.big_figsize)
 ax.hist(np.asarray(allsamps), bins=30, density=True)
 ax.set_xlabel='pace min/kim'
-mlai.write_figure('../slides/diagrams/ml/olympic-gp-loss-histogram-2020.svg', transparent=True)
+mlai.write_figure('\diagramsDir/ml/olympic-gp-loss-histogram-2020.svg', transparent=True)
 ```

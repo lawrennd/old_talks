@@ -1,37 +1,17 @@
-\ifndef{deepUspsDigits}
-\define{deepUspsDigits}
+\ifndef{mnistDigitsSubsampleDeepGp}
+\define{mnistDigitsSubsampleDeepGp}
+
+\include{_ml/includes/mnist-digits-subsample-data.md}
+
 \editme
 
-\subsection{Fitting a GP to the USPS Digits Data}
+\subsection{Fitting a Deep GP to a the MNIST Digits Subsample}
 
 \credit{Zhenwen Dai and Neil D. Lawrence}
 
-\notes{We now look at the deep Gaussian processes' capacity to perform unsupervised learning.
-
-We will look at a sub-sample of the MNIST digit data set.}
+\notes{We now look at the deep Gaussian processes' capacity to perform unsupervised learning.}
 
 \include{_deepgp/includes/pydeepgp-include.md}
-
-\notes{First load in the MNIST data set from scikit learn. This can take a little while because it's large to download.}
-
-\setupcode{from sklearn.datasets import fetch_mldata}
-\code{mnist = fetch_mldata('MNIST original')}
-
-\notes{Sub-sample the dataset to make the training faster.}
-
-\setupcode{import numpy as np}
-\code{np.random.seed(0)
-digits = [0,1,2,3,4]
-N_per_digit = 100
-Y = []
-labels = []
-for d in digits:
-    imgs = mnist['data'][mnist['target']==d]
-    Y.append(imgs[np.random.permutation(imgs.shape[0])][:N_per_digit])
-    labels.append(np.ones(N_per_digit)*d)
-Y = np.vstack(Y).astype(np.float64)
-labels = np.hstack(labels)
-Y /= 255.}
 
 \notes{
 \subsection{Fit a Deep GP}
@@ -91,11 +71,11 @@ fig, ax = plt.subplots(figsize=plot.big_figsize)
 for d in digits:
     ax.plot(m.layer_1.X.mean[labels==d,0],m.layer_1.X.mean[labels==d,1],'.',label=str(d))
 _ = plt.legend()
-mlai.write_figure(figure=fig, filename="../slides/diagrams/deepgp/usps-digits-latent.svg", transparent=True)}
+mlai.write_figure(figure=fig, filename="\diagramsDir/deepgp/mnist-digits-subsample-latent.svg", transparent=True)}
 
 \newslide{}
 
-\figure{\includediagram{../slides/diagrams/usps-digits-latent}{60%}}{Latent space for the deep Gaussian process learned through unsupervised learning and fitted to a subset of the USPS digit data.}{usps-digits-latent}
+\figure{\includediagram{\diagramsDir/mnist-digits-subsample-latent}{60%}}{Latent space for the deep Gaussian process learned through unsupervised learning and fitted to a subset of the MNIST digits subsample.}{mnist-digits-subsample-latent}
 
 \notes{
 \subsection{Visualize the latent space of the intermediate layer}
@@ -119,23 +99,23 @@ for i in range(5):
         plt.legend()
         plt.xlabel('dimension ' + str(dims[0]))
         plt.ylabel('dimension ' + str(dims[1]))
-        mlai.write_figure(figure=fig, filename="../slides/diagrams/deepgp/usps-digits-hidden-" + str(dims[0]) + '-' + str(dims[1]) + '.svg', transparent=True)}
+        mlai.write_figure(figure=fig, filename="\diagramsDir/deepgp/mnist-digits-subsample-hidden-" + str(dims[0]) + '-' + str(dims[1]) + '.svg', transparent=True)}
 		
 \newslide{}
 
-\figure{\includediagram{../slides/diagrams/usps-digits-hidden-1-0}{60%}}{Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.}{usps-digits-hidden-1-0}
+\figure{\includediagram{\diagramsDir/mnist-digits-subsample-hidden-1-0}{60%}}{Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.}{mnist-digits-subsample-hidden-1-0}
 
 \newslide{}
 
-\figure{\includediagram{../slides/diagrams/usps-digits-hidden-2-0}{60%}}{Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.}{usps-digits-hidden-1-0}
+\figure{\includediagram{\diagramsDir/mnist-digits-subsample-hidden-2-0}{60%}}{Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.}{mnist-digits-subsample-hidden-1-0}
 
 \newslide{}
 
-\figure{\includediagram{../slides/diagrams/usps-digits-hidden-3-0}{60%}}{Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.}{usps-digits-hidden-1-0}
+\figure{\includediagram{\diagramsDir/mnist-digits-subsample-hidden-3-0}{60%}}{Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.}{mnist-digits-subsample-hidden-1-0}
 
 \newslide{}
 
-\figure{\includediagram{../slides/diagrams/usps-digits-hidden-4-0}{60%}}{Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.}{usps-digits-hidden-1-0}
+\figure{\includediagram{\diagramsDir/mnist-digits-subsample-hidden-4-0}{60%}}{Visualisation of the intermediate layer, plot of dimension 1 vs dimension 0.}{mnist-digits-subsample-hidden-1-0}
 
 \notes{
 \subsection{Generate From Model}
@@ -164,10 +144,10 @@ for i in range(rows):
                         cmap='gray', interpolation='none',
                         aspect='equal')
         axs[i,j].set_axis_off()
-mlai.write_figure(figure=fig, filename="../slides/diagrams/deepgp/digit-samples-deep-gp.svg", transparent=True)}
+mlai.write_figure(figure=fig, filename="\diagramsDir/deepgp/digit-samples-deep-gp.svg", transparent=True)}
 
 \newslide{}
 
-\figure{\includediagram{../slides/diagrams/digit-samples-deep-gp}{80%}}{These digits are produced by taking a tour of the two dimensional latent space (as described by a Gaussian process sample) and mapping the tour into the data space. We visualize the mean of the mapping in the images.}{digit-samples-deep-gp}
+\figure{\includediagram{\diagramsDir/digit-samples-deep-gp}{80%}}{These digits are produced by taking a tour of the two dimensional latent space (as described by a Gaussian process sample) and mapping the tour into the data space. We visualize the mean of the mapping in the images.}{digit-samples-deep-gp}
 
 \endif

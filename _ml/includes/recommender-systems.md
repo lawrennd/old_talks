@@ -44,7 +44,7 @@ Roman Empire spreads into
 Egypt. This image from Wikipedia shows a map of the Cathaginian Empire
 which fell after fighting with Rome. }
 
-\figure{\includepng{../slides/diagrams/mlai/carthaginian-empire}{60%}}{The Carhaginian Empire at its peak.}{carthaginian-empire}
+\figure{\includepng{\diagramsDir/mlai/carthaginian-empire}{60%}}{The Carhaginian Empire at its peak.}{carthaginian-empire}
 
 \notes{We now need to make a decision about whether Roman Histories
 are European or African, ideally we'd like them to be somewhere

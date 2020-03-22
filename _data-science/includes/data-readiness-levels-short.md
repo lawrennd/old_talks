@@ -5,7 +5,7 @@
 \subsubsection{Data Readiness Levels}
 
 \slides{
-\includepng{../slides/diagrams/data-science/data-readiness-levels}
+\includepng{\diagramsDir/data-science/data-readiness-levels}
 
 <https://arxiv.org/pdf/1705.02245.pdf> [Data Readiness Levels](http://inverseprobability.com/2017/01/12/data-readiness-levels) [@Lawrence:drl17]
 }

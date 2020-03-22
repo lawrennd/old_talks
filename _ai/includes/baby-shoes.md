@@ -5,7 +5,7 @@
 \newslide{}
 \notes{\subsubsection{A Six Word Novel}}
 
-\figure{\includejpg{../slides/diagrams/Classic_baby_shoes}{60%}\aligncenter{For sale: baby shoes, never worn}}{Consider the six word novel, apocraphally credited to Ernest Hemingway, "For sale: baby shoes, never worn". To understand what that means to a human, you need a great deal of additional context. Context that is not directly accessible to a machine that has not got both the evolved and contextual understanding of our own condition to realize both the implication of the advert and what that implication means emotionally to the previous owner.}{classic-baby-shoes}
+\figure{\includejpg{\diagramsDir/Classic_baby_shoes}{60%}\aligncenter{For sale: baby shoes, never worn}}{Consider the six word novel, apocraphally credited to Ernest Hemingway, "For sale: baby shoes, never worn". To understand what that means to a human, you need a great deal of additional context. Context that is not directly accessible to a machine that has not got both the evolved and contextual understanding of our own condition to realize both the implication of the advert and what that implication means emotionally to the previous owner.}{classic-baby-shoes}
 
 \speakernotes{Ernest Hemingway's apocrophal six word novel would mean nothing to a computer.}
 

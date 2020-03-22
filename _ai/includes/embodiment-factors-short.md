@@ -8,8 +8,8 @@
 <table>
  <tr>
   <td></td>
-  <td align="center">\includejpg{../slides/diagrams/IBM_Blue_Gene_P_supercomputer}{50%}</td>
-  <td align="center">\includejpg{../slides/diagrams/ClaudeShannon_MFO3807}{50%}{}</td>
+  <td align="center">\includejpg{\diagramsDir/IBM_Blue_Gene_P_supercomputer}{50%}</td>
+  <td align="center">\includejpg{\diagramsDir/ClaudeShannon_MFO3807}{50%}{}</td>
  </tr>
  <tr>
   <td>compute</td>

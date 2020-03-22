@@ -3,17 +3,17 @@
 \editme
 
 \setupcode{import teaching_plots as plot}
-\plotcode{plot.deep_nn(diagrams='../slides/diagrams/deepgp/')}
+\plotcode{plot.deep_nn(diagrams='\diagramsDir/deepgp/')}
 
 \newslide{Deep Neural Network}
 
-\slides{\includediagram{../slides/diagrams/deepgp/deep-nn1}{50%}}
+\slides{\includediagram{\diagramsDir/deepgp/deep-nn1}{50%}}
 
 \newslide{Deep Neural Network}
 
-\slides{\includediagram{../slides/diagrams/deepgp/deep-nn2}{50%}}
+\slides{\includediagram{\diagramsDir/deepgp/deep-nn2}{50%}}
 
-\notes{\figure{\includediagram{../slides/diagrams/deepgp/deep-nn2}{70%}}{A deep neural network. Input nodes are shown at the bottom. Each hidden layer is the result of applying an affine transformation to the previous layer and placing through an activation function.}{deep-neural-network}}
+\notes{\figure{\includediagram{\diagramsDir/deepgp/deep-nn2}{70%}}{A deep neural network. Input nodes are shown at the bottom. Each hidden layer is the result of applying an affine transformation to the previous layer and placing through an activation function.}{deep-neural-network}}
 
 \newslide{Mathematically}
 

@@ -49,7 +49,7 @@ $$\kernelMatrix = \rotationMatrix \eigenvalueMatrix^2 \rotationMatrix^\top$$]{}
 
 \code{gpoptimizePlot1}
 
-\columns{\includepng{../slides/diagrams/gp/gp-optimize-eigen}{100%}{negate}}{$\eigenvalueMatrix$ represents distance on axes.
+\columns{\includepng{\diagramsDir/gp/gp-optimize-eigen}{100%}{negate}}{$\eigenvalueMatrix$ represents distance on axes.
 $\rotationMatrix$ gives rotation.}{50%}{50%}
 
 

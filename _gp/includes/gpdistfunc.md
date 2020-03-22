@@ -23,35 +23,35 @@ $$
 \setupplotcode{import teaching_plots as plot
 from mlai import Kernel, exponentiated_quadratic}
 \plotcode{kernel=Kernel(function=exponentiated_quadratic, lengthscale=0.5)
-plot.two_point_sample(kernel.K, diagrams='../slides/diagrams/gp')}
+plot.two_point_sample(kernel.K, diagrams='\diagramsDir/gp')}
 
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
-\displaycode{pods.notebook.display_plots('two_point_sample{sample:0>3}.svg', '../slides/diagrams/gp', sample=IntSlider(0, 0, 8, 1))}
+\displaycode{pods.notebook.display_plots('two_point_sample{sample:0>3}.svg', '\diagramsDir/gp', sample=IntSlider(0, 0, 8, 1))}
 
 							
 \newslide{Gaussian Distribution Sample}
 \slides{
 \startanimation{two_point_sample}{0}{8}
-\newframe{\includediagram{../slides/diagrams/gp/two_point_sample000}}{two_point_sample}
-\newframe{\includediagram{../slides/diagrams/gp/two_point_sample001}}{two_point_sample}
-\newframe{\includediagram{../slides/diagrams/gp/two_point_sample002}}{two_point_sample}
-\newframe{\includediagram{../slides/diagrams/gp/two_point_sample003}}{two_point_sample}
-\newframe{\includediagram{../slides/diagrams/gp/two_point_sample004}}{two_point_sample}
-\newframe{\includediagram{../slides/diagrams/gp/two_point_sample005}}{two_point_sample}
-\newframe{\includediagram{../slides/diagrams/gp/two_point_sample006}}{two_point_sample}
-\newframe{\includediagram{../slides/diagrams/gp/two_point_sample007}}{two_point_sample}
-\newframe{\includediagram{../slides/diagrams/gp/two_point_sample008}}{two_point_sample}
+\newframe{\includediagram{\diagramsDir/gp/two_point_sample000}}{two_point_sample}
+\newframe{\includediagram{\diagramsDir/gp/two_point_sample001}}{two_point_sample}
+\newframe{\includediagram{\diagramsDir/gp/two_point_sample002}}{two_point_sample}
+\newframe{\includediagram{\diagramsDir/gp/two_point_sample003}}{two_point_sample}
+\newframe{\includediagram{\diagramsDir/gp/two_point_sample004}}{two_point_sample}
+\newframe{\includediagram{\diagramsDir/gp/two_point_sample005}}{two_point_sample}
+\newframe{\includediagram{\diagramsDir/gp/two_point_sample006}}{two_point_sample}
+\newframe{\includediagram{\diagramsDir/gp/two_point_sample007}}{two_point_sample}
+\newframe{\includediagram{\diagramsDir/gp/two_point_sample008}}{two_point_sample}
 \endanimation
 }
 
-\notes{\figure{\includediagram{../slides/diagrams/gp/two_point_sample008}{80%}}{A 25 dimensional correlated random variable (values ploted against index)}{gp-two-point-sample-1}}
+\notes{\figure{\includediagram{\diagramsDir/gp/two_point_sample008}{80%}}{A 25 dimensional correlated random variable (values ploted against index)}{gp-two-point-sample-1}}
 
 \include{_gp/includes/gaussian-predict-index-one-and-two.md}
 
 \subsection{Uluru}
 
-\figure{\includejpg{../slides/diagrams/gp/799px-Uluru_Panorama}}{Uluru, the sacred rock in Australia. If we think of it as a probability density, viewing it from this side gives us one *marginal* from the density. Figuratively speaking, slicing through the rock would give a conditional density.}{uluru-as-probability}
+\figure{\includejpg{\diagramsDir/gp/799px-Uluru_Panorama}}{Uluru, the sacred rock in Australia. If we think of it as a probability density, viewing it from this side gives us one *marginal* from the density. Figuratively speaking, slicing through the rock would give a conditional density.}{uluru-as-probability}
 
 \notes{When viewing these contour plots, I sometimes find it helpful to think of Uluru, the prominent rock formation in Australia. The rock rises above the surface of the plane, just like a probability density rising above the zero line. The rock is three dimensional, but when we view Uluru from the classical position, we are looking at one side of it. This is equivalent to viewing the marginal density. 
 

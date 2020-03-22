@@ -28,7 +28,7 @@ text =['$\phi(x) = 1$',
        '$\phi(x) = \\tanh(x-1.0)$']
 plot.basis(mlai.tanh, x_min=-2.0, x_max=2.0,
            fig=f, ax=ax, loc=loc, text=text,
-           diagrams='../slides/diagrams/ml',
+           diagrams='\diagramsDir/ml',
            num_basis=5)
 }
 
@@ -41,17 +41,17 @@ $$
 \slides{
 \define{width}{80%}
 \startanimation{tanh_function}{0}{4}
-\newframe{\includediagram{../slides/diagrams/ml/tanh_function000}{\width}}{tanh_function}
-\newframe{\includediagram{../slides/diagrams/ml/tanh_function001}{\width}}{tanh_function}
-\newframe{\includediagram{../slides/diagrams/ml/tanh_function002}{\width}}{tanh_function}
+\newframe{\includediagram{\diagramsDir/ml/tanh_function000}{\width}}{tanh_function}
+\newframe{\includediagram{\diagramsDir/ml/tanh_function001}{\width}}{tanh_function}
+\newframe{\includediagram{\diagramsDir/ml/tanh_function002}{\width}}{tanh_function}
 \endanimation
 }
 
-\notes{\figure{\includediagram{../slides/diagrams/ml/tanh_basis004}{80%}}{A hyperbolic tangent basis is made up of s-shaped basis functions centered at different points.}{tanh-basis-4}}
+\notes{\figure{\includediagram{\diagramsDir/ml/tanh_basis004}{80%}}{A hyperbolic tangent basis is made up of s-shaped basis functions centered at different points.}{tanh-basis-4}}
 
 \setupcode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('tanh_basis{num_basis:0>3}.svg', 
-                            directory='../slides/diagrams/ml', 
+                            directory='\diagramsDir/ml', 
 							num_basis=IntSlider(0,0,4,1))}
 \endif

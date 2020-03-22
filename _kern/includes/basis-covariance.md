@@ -38,7 +38,7 @@ kernel = mlai.Kernel(function=basis_cov,
                      formula='\formula',
 					 basis=basis)
 					 
-plot.covariance_func(kernel, diagrams='../slides/diagrams/kern/')}
+plot.covariance_func(kernel, diagrams='\diagramsDir/kern/')}
 
 
 \includecovariance{basis}{\formula}{A covariance function based on a non-linear basis given by $\basisVector(\inputVector)$.}

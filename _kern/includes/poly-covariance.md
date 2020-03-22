@@ -18,7 +18,7 @@ import numpy as np}
                      formula='\formula',
 					 degree=5)
 					 
-plot.covariance_func(kernel, diagrams='../slides/diagrams/kern/')}
+plot.covariance_func(kernel, diagrams='\diagramsDir/kern/')}
 
 \includecovariance{polynomial}{\formula}{Polynomial covariance function.}
 

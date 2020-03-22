@@ -4,6 +4,6 @@
 \notes{\subsubsection{Elephant as System One}}
 \newslide{}
 
-\includejpg{../slides/diagrams/Sahe_tchadensis}{80%}
+\includejpg{\diagramsDir/Sahe_tchadensis}{80%}
 
 \endif

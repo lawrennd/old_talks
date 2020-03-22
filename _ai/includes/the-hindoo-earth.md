@@ -5,6 +5,6 @@
 \notes{\subsubsection{The Hindoo Earth}}
 \newslide{}
 
-\includejpg{../slides/diagrams/The_hindoo_earth}{70%}
+\includejpg{\diagramsDir/The_hindoo_earth}{70%}
 
 \endif

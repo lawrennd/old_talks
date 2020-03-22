@@ -21,11 +21,11 @@ yhat = (y-offset)/scale}
 plt.plot(data['X'][:, 1], data['X'][:, 2], 'r.', markersize=5)
 ax.set_xlabel('x position', fontsize=20)
 ax.set_ylabel('y position', fontsize=20)
-mlai.write_figure(figure=fig, filename='../../slides/diagrams/datasets/robot-wireless-ground-truth.svg', transparent=True, frameon=True)}
+mlai.write_figure(figure=fig, filename='../\diagramsDir/datasets/robot-wireless-ground-truth.svg', transparent=True, frameon=True)}
 
 \subsection{Robot Wireless Ground Truth}
 
-\figure{\includediagram{../slides/diagrams/datasets/robot-wireless-ground-truth}{60%}}{Ground truth movement for the position taken while recording the multivariate time-course of wireless access point signal strengths.}{robot-wireless-ground-truth}
+\figure{\includediagram{\diagramsDir/datasets/robot-wireless-ground-truth}{60%}}{Ground truth movement for the position taken while recording the multivariate time-course of wireless access point signal strengths.}{robot-wireless-ground-truth}
 
 \notes{We will ignore this ground truth in making our predictions, but see if the model can recover something similar in one of the latent layers.}
 
@@ -42,11 +42,11 @@ ylim = (-0.6, 2.0)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 
-mlai.write_figure(figure=fig, filename='../slides/diagrams/datasets/robot-wireless-dim-' + str(output_dim) + '.svg', 
+mlai.write_figure(figure=fig, filename='\diagramsDir/datasets/robot-wireless-dim-' + str(output_dim) + '.svg', 
             transparent=True, frameon=True)}
 
 
 \subsection{Robot WiFi Data}
 			
-\figure{\includediagram{../slides/diagrams/datasets/robot-wireless-dim-1}{60%}}{Output dimension 1 from the robot wireless data. This plot shows signal strength changing over time.}{robot-wireless-data-dim-1}
+\figure{\includediagram{\diagramsDir/datasets/robot-wireless-dim-1}{60%}}{Output dimension 1 from the robot wireless data. This plot shows signal strength changing over time.}{robot-wireless-data-dim-1}
 \endif

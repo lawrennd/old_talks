@@ -52,11 +52,11 @@ def bernoulli(y_i, pi):
 import teaching_plots as plot}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.one_figsize)
-plot.bernoulli_urn(ax, diagrams='../slides/diagrams/ml/')}
+plot.bernoulli_urn(ax, diagrams='\diagramsDir/ml/')}
 
 \newslide{Jacob Bernoulli's Bernoulli}
 
-\figure{\includediagram{../slides/diagrams/ml/bernoulli-urn}{40%}}{Jacob Bernoulli described the Bernoulli distribution through an urn in which there are black and red balls.}{bernoulli-urn}
+\figure{\includediagram{\diagramsDir/ml/bernoulli-urn}{40%}}{Jacob Bernoulli described the Bernoulli distribution through an urn in which there are black and red balls.}{bernoulli-urn}
 
 \newslide{Thomas Bayes's Bernoulli}
 
@@ -80,28 +80,28 @@ For this reason in Bayes's distribution there is considered to be *aleatoric* un
 import teaching_plots as plot}
 
 \plotcode{fig, ax = plt.subplots(figsize=plot.one_figsize)
-plot.bayes_billiard(ax, diagrams='../slides/diagrams/ml/')}
+plot.bayes_billiard(ax, diagrams='\diagramsDir/ml/')}
 
 \slides{
 \define{width}{40%}
 \startanimation{bayes_billiard}{1}{10}
-\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard000}{\width}}{bayes_billiard}
-\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard001}{\width}}{bayes_billiard}
-\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard002}{\width}}{bayes_billiard}
-\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard003}{\width}}{bayes_billiard}
-\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard004}{\width}}{bayes_billiard}
-\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard005}{\width}}{bayes_billiard}
-\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard006}{\width}}{bayes_billiard}
-\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard007}{\width}}{bayes_billiard}
-\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard008}{\width}}{bayes_billiard}
-\newframe{\includediagram{../slides/diagrams/ml/bayes-billiard009}{\width}}{bayes_billiard}
+\newframe{\includediagram{\diagramsDir/ml/bayes-billiard000}{\width}}{bayes_billiard}
+\newframe{\includediagram{\diagramsDir/ml/bayes-billiard001}{\width}}{bayes_billiard}
+\newframe{\includediagram{\diagramsDir/ml/bayes-billiard002}{\width}}{bayes_billiard}
+\newframe{\includediagram{\diagramsDir/ml/bayes-billiard003}{\width}}{bayes_billiard}
+\newframe{\includediagram{\diagramsDir/ml/bayes-billiard004}{\width}}{bayes_billiard}
+\newframe{\includediagram{\diagramsDir/ml/bayes-billiard005}{\width}}{bayes_billiard}
+\newframe{\includediagram{\diagramsDir/ml/bayes-billiard006}{\width}}{bayes_billiard}
+\newframe{\includediagram{\diagramsDir/ml/bayes-billiard007}{\width}}{bayes_billiard}
+\newframe{\includediagram{\diagramsDir/ml/bayes-billiard008}{\width}}{bayes_billiard}
+\newframe{\includediagram{\diagramsDir/ml/bayes-billiard009}{\width}}{bayes_billiard}
 }
 
-\notes{\figure{\includediagram{../slides/diagrams/ml/bayes-billiard009}{40%}}{Thomas Bayes described the Bernoulli distribution independently of Jacob Bernoulli. He used the analogy of a billiard table. Any ball on the table is given a uniformly random position between the left and right side of the table. The first ball (\colorBlack in the figure) gives the parameter of the Bernoulli distribution. The second ball (\colorRed in the figure) gives the outcome as either left or right (relative to the first ball). This is the origin of the term Bayesian because the parameter of the distribution is drawn from a probsbility.}{bayes-billiard-9}}
+\notes{\figure{\includediagram{\diagramsDir/ml/bayes-billiard009}{40%}}{Thomas Bayes described the Bernoulli distribution independently of Jacob Bernoulli. He used the analogy of a billiard table. Any ball on the table is given a uniformly random position between the left and right side of the table. The first ball (\colorBlack in the figure) gives the parameter of the Bernoulli distribution. The second ball (\colorRed in the figure) gives the outcome as either left or right (relative to the first ball). This is the origin of the term Bayesian because the parameter of the distribution is drawn from a probsbility.}{bayes-billiard-9}}
 
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('bayes-billiard{counter:0>3}.svg', 
-                            directory='../slides/diagrams/ml', 
+                            directory='\diagramsDir/ml', 
 							counter=IntSlider(0,0,9,1))}
 \endif

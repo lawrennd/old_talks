@@ -5,7 +5,7 @@
 \newslide{}
 
 
-\figure{\includejpg{../slides/diagrams/Lotus_49-2}{70%}}{The Lotus 49, view from the rear. The Lotus 49 was one of the last Formula One cars before the introduction of aerodynamic aids.}{lotus-49}
+\figure{\includejpg{\diagramsDir/Lotus_49-2}{70%}}{The Lotus 49, view from the rear. The Lotus 49 was one of the last Formula One cars before the introduction of aerodynamic aids.}{lotus-49}
 
 \notes{So when it comes to our ability to compute we are extraordinary, not compute in our conscious mind, but the underlying neuron firings that underpin both our consciousness, our subconsciousness as well as our motor control etc.}
 

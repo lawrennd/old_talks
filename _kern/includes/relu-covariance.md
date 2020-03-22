@@ -23,7 +23,7 @@ import numpy as np}
                      formula='\kernelScalar(\inputVector, \inputVector^\prime) = \alpha \arcsin\left(\frac{w \inputVector^\top \inputVector^\prime + b}{\sqrt{\left(w \inputVector^\top \inputVector + b + 1\right)\left(w \left.\inputVector^\prime\right.^\top \inputVector^\prime + b + 1\right)}}\right)',
 					 w=5, b=0.5)
 					 
-plot.covariance_func(kernel, diagrams='../slides/diagrams/kern/')}
+plot.covariance_func(kernel, diagrams='\diagramsDir/kern/')}
 
 \includecovariance{relu}{\formula}{Rectified linear unit covariance function.}
 

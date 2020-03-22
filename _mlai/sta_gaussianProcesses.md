@@ -84,9 +84,9 @@ $$
 real line to between 0   & 1. Sometimes also called a 'squashing function'.
 
 \setupplotcode{import teaching_plots as plot}
-\plotcode{plot.logistic(diagrams='../slides/diagrams/ml')}
+\plotcode{plot.logistic(diagrams='\diagramsDir/ml')}
 
-\includediagram{../slides/diagrams/ml/logistic}
+\includediagram{\diagramsDir/ml/logistic}
 
 
 \newslide{Prediction Function}
@@ -218,11 +218,11 @@ non-negative integers, $y$, $$P(y) = \frac{\lambda^y}{y!}\exp(-y)$$
 
 * Poisson distributions can be used for disease count data. E.g. number of incidence of malaria in a district.
 
-\plotcode{plot.poisson(diagrams='../slides/diagrams/ml')}
+\plotcode{plot.poisson(diagrams='\diagramsDir/ml')}
 
 \newslide{Poisson Distribution
 
-\includediagram{../slides/diagrams/ml/poisson}
+\includediagram{\diagramsDir/ml/poisson}
 
 \newslide{Poisson Regression}
 

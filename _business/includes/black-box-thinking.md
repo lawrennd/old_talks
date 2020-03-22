@@ -5,7 +5,7 @@
 
 \newslide{}
 
-\figure{\includejpg{../slides/diagrams/health/black-box-thinking}{40%}}{[Black Box Thinking by Matthew Syed](https://www.amazon.co.uk/Black-Box-Thinking-Surprising-Success-ebook/dp/B00PW634YQ). Matthew compares the open approach to erros taken in the airline industry to way errors are dealt with in the health system.}{black-box-thinking}
+\figure{\includejpg{\diagramsDir/health/black-box-thinking}{40%}}{[Black Box Thinking by Matthew Syed](https://www.amazon.co.uk/Black-Box-Thinking-Surprising-Success-ebook/dp/B00PW634YQ). Matthew compares the open approach to erros taken in the airline industry to way errors are dealt with in the health system.}{black-box-thinking}
 
 \notes{\subsection{Propagation of Best Practice}
 

@@ -29,23 +29,23 @@
 \newslide{Bayes Update}
 
 \setupplotcode{import teaching_plots as plot}
-\plotcode{plot.bayes_update(diagrams='../slides/diagrams/ml')}
+\plotcode{plot.bayes_update(diagrams='\diagramsDir/ml')}
 
 \setupdisplaycode{from ipywidgets import IntSlider
 import pods}
 \displaycode{pods.notebook.display_plots('dem_gaussian{stage:0>2}.svg', 
-                            diagrams='../slides/diagrams/ml', 
+                            diagrams='\diagramsDir/ml', 
 							stage=IntSlider(1, 1, 3, 1))}
 \slides{
 \define{width}{70%}
 \startanimation{dem_gaussian}{1}{3}
-\newframe{\includediagram{../slides/diagrams/ml/dem_gaussian001}{\width}}{dem_gaussian}
-\newframe{\includediagram{../slides/diagrams/ml/dem_gaussian002}{\width}}{dem_gaussian}
-\newframe{\includediagram{../slides/diagrams/ml/dem_gaussian003}{\width}}{dem_gaussian}
+\newframe{\includediagram{\diagramsDir/ml/dem_gaussian001}{\width}}{dem_gaussian}
+\newframe{\includediagram{\diagramsDir/ml/dem_gaussian002}{\width}}{dem_gaussian}
+\newframe{\includediagram{\diagramsDir/ml/dem_gaussian003}{\width}}{dem_gaussian}
 \endanimation
 }
 
-\notes{\figure{\includediagram{../slides/diagrams/ml/dem_gaussian003}{70%}}{Combining a Gaussian likelihood with a Gaussian prior to form a Gaussian posterior}{dem-gaussian-3}}
+\notes{\figure{\includediagram{\diagramsDir/ml/dem_gaussian003}{70%}}{Combining a Gaussian likelihood with a Gaussian prior to form a Gaussian posterior}{dem-gaussian-3}}
 
 \notes{Another way of seeing what's going on is to note that the numerator of Bayes' rule merely multiplies the likelihood by the prior. The denominator, is not a function of $c$. So the functional form is entirely determined by the multiplication of prior and likelihood. This has the effect of ensuring that the posterior only has probability mass in regions where both the prior and the likelihood have probability mass.}
 

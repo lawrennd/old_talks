@@ -2,7 +2,7 @@
 
 \slides{* Automatic data curation: from curated data to curation of publicly available data.
 * Open Data: <http://www.openstreetmap.org/?lat=53.38086&lon=-1.48545&zoom=17&layers=M>.}
-  \figure{\columns{\includejpg{../slides/diagrams/health/2013_07_18_111545}{100%}}{\includejpg{../slides/diagrams/health/2013_10_04_140622}{100%}}{45%}{45%}}{John's Van in Sheffield provides reasonably priced tea and bacon butties. What is the health effect on those that live nearby?}{johns-van}
+  \figure{\columns{\includejpg{\diagramsDir/health/2013_07_18_111545}{100%}}{\includejpg{\diagramsDir/health/2013_10_04_140622}{100%}}{45%}{45%}}{John's Van in Sheffield provides reasonably priced tea and bacon butties. What is the health effect on those that live nearby?}{johns-van}
 \slides{
 * Social network data, music information (Spotify), exercise.}
 

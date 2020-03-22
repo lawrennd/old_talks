@@ -96,34 +96,34 @@ This motivates a simple `if` statement to check which situation we're in.}
 
 \loadcode{update_perceptron}{mlai}
 
-\plotcode{plots = plot.perceptron(x_plus, x_minus, diagrams='../slides/diagrams/mlai')}
+\plotcode{plots = plot.perceptron(x_plus, x_minus, diagrams='\diagramsDir/mlai')}
 
 \setupcode{import pods}
 
-\displaycode{pods.notebook.display_plots('perceptron{samp:0>3}.svg', directory='../slides/diagrams/ml', samp=(0, plots))}
+\displaycode{pods.notebook.display_plots('perceptron{samp:0>3}.svg', directory='\diagramsDir/ml', samp=(0, plots))}
 
 \slides{
 \define{width}{60%}
 \startanimation{perceptron}{0}{14}
-\newframe{\includediagram{../slides/diagrams/ml/perceptron000}{\width}}{perceptron}
-\newframe{\includediagram{../slides/diagrams/ml/perceptron001}{\width}}{perceptron}
-\newframe{\includediagram{../slides/diagrams/ml/perceptron002}{\width}}{perceptron}
-\newframe{\includediagram{../slides/diagrams/ml/perceptron003}{\width}}{perceptron}
-\newframe{\includediagram{../slides/diagrams/ml/perceptron004}{\width}}{perceptron}
-\newframe{\includediagram{../slides/diagrams/ml/perceptron005}{\width}}{perceptron}
-\newframe{\includediagram{../slides/diagrams/ml/perceptron006}{\width}}{perceptron}
-\newframe{\includediagram{../slides/diagrams/ml/perceptron007}{\width}}{perceptron}
-\newframe{\includediagram{../slides/diagrams/ml/perceptron008}{\width}}{perceptron}
-\newframe{\includediagram{../slides/diagrams/ml/perceptron009}{\width}}{perceptron}
-\newframe{\includediagram{../slides/diagrams/ml/perceptron010}{\width}}{perceptron}
-\newframe{\includediagram{../slides/diagrams/ml/perceptron011}{\width}}{perceptron}
-\newframe{\includediagram{../slides/diagrams/ml/perceptron012}{\width}}{perceptron}
-\newframe{\includediagram{../slides/diagrams/ml/perceptron013}{\width}}{perceptron}
-\newframe{\includediagram{../slides/diagrams/ml/perceptron014}{\width}}{perceptron}
+\newframe{\includediagram{\diagramsDir/ml/perceptron000}{\width}}{perceptron}
+\newframe{\includediagram{\diagramsDir/ml/perceptron001}{\width}}{perceptron}
+\newframe{\includediagram{\diagramsDir/ml/perceptron002}{\width}}{perceptron}
+\newframe{\includediagram{\diagramsDir/ml/perceptron003}{\width}}{perceptron}
+\newframe{\includediagram{\diagramsDir/ml/perceptron004}{\width}}{perceptron}
+\newframe{\includediagram{\diagramsDir/ml/perceptron005}{\width}}{perceptron}
+\newframe{\includediagram{\diagramsDir/ml/perceptron006}{\width}}{perceptron}
+\newframe{\includediagram{\diagramsDir/ml/perceptron007}{\width}}{perceptron}
+\newframe{\includediagram{\diagramsDir/ml/perceptron008}{\width}}{perceptron}
+\newframe{\includediagram{\diagramsDir/ml/perceptron009}{\width}}{perceptron}
+\newframe{\includediagram{\diagramsDir/ml/perceptron010}{\width}}{perceptron}
+\newframe{\includediagram{\diagramsDir/ml/perceptron011}{\width}}{perceptron}
+\newframe{\includediagram{\diagramsDir/ml/perceptron012}{\width}}{perceptron}
+\newframe{\includediagram{\diagramsDir/ml/perceptron013}{\width}}{perceptron}
+\newframe{\includediagram{\diagramsDir/ml/perceptron014}{\width}}{perceptron}
 \endanimation
 }
 
-\notes{\figure{\includediagram{../slides/diagrams/ml/perceptron014}{60%}}{The perceptron decision boundary.}{perceptron-decision-boundary}
+\notes{\figure{\includediagram{\diagramsDir/ml/perceptron014}{60%}}{The perceptron decision boundary.}{perceptron-decision-boundary}
 
 \newslide{Perceptron Reflection}
 

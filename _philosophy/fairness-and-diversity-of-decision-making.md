@@ -40,7 +40,7 @@ include{_philosophy/includes/trolley-push.md}-->
 <!-- \newslide{Trolleys!?!} -->
 <!-- \slides{ -->
 
-<!-- \includejpg{../slides/diagrams/ai/Trolley_1}{80%}{} -->
+<!-- \includejpg{\diagramsDir/ai/Trolley_1}{80%}{} -->
 <!-- } -->
 \newslide{References}
 

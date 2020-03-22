@@ -18,39 +18,39 @@ from ipywidgets import IntSlider}
 \define{\widthVal}{80%}
 \newslide{}
 
-\slides{\includediagram{../slides/diagrams/\concat{\stubname}{000}}{\widthVal}}
+\slides{\includediagram{\diagramsDir/\concat{\stubname}{000}}{\widthVal}}
 
 \newslide{}
 
-\slides{\includediagram{../slides/diagrams/\concat{\stubname}{001}}{\widthVal}}
+\slides{\includediagram{\diagramsDir/\concat{\stubname}{001}}{\widthVal}}
 
 \newslide{}
 
-\slides{\includediagram{../slides/diagrams/\concat{\stubname}{002}}{\widthVal}}
+\slides{\includediagram{\diagramsDir/\concat{\stubname}{002}}{\widthVal}}
 
 \newslide{}
 
-\slides{\includediagram{../slides/diagrams/\concat{\stubname}{003}}{\widthVal}}
+\slides{\includediagram{\diagramsDir/\concat{\stubname}{003}}{\widthVal}}
 
 \newslide{}
 
-\slides{\includediagram{../slides/diagrams/\concat{\stubname}{004}}{\widthVal}}
+\slides{\includediagram{\diagramsDir/\concat{\stubname}{004}}{\widthVal}}
 
 \newslide{}
 
-\slides{\includediagram{../slides/diagrams/\concat{\stubname}{005}}{\widthVal}}
+\slides{\includediagram{\diagramsDir/\concat{\stubname}{005}}{\widthVal}}
 
 \newslide{}
 
-\slides{\includediagram{../slides/diagrams/\concat{\stubname}{006}}{\widthVal}}
+\slides{\includediagram{\diagramsDir/\concat{\stubname}{006}}{\widthVal}}
 
 \newslide{}
 
-\slides{\includediagram{../slides/diagrams/\concat{\stubname}{007}}{\widthVal}}
+\slides{\includediagram{\diagramsDir/\concat{\stubname}{007}}{\widthVal}}
 
-\notes{\figure{\includediagram{../slides/diagrams/\concat{\stubname}{006}}{80%}}{Conversation relies on internal models of other individuals.}{anne-computer-conversation-6}}
+\notes{\figure{\includediagram{\diagramsDir/\concat{\stubname}{006}}{80%}}{Conversation relies on internal models of other individuals.}{anne-computer-conversation-6}}
 
-\notes{\figure{\includediagram{../slides/diagrams/\concat{\stubname}{007}}{80%}}{Misunderstanding of context and who we are talking to leads to arguments.}{anne-computer-conversation-8}}
+\notes{\figure{\includediagram{\diagramsDir/\concat{\stubname}{007}}{80%}}{Misunderstanding of context and who we are talking to leads to arguments.}{anne-computer-conversation-8}}
 
 \speakernotes{This can be disturbing to humans because we are used to a low bandwidth communication rate. }
 

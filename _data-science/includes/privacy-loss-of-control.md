@@ -56,7 +56,7 @@ See \addguardian{The data-driven economy will help marketers exploit us}{2015/ju
 }
 \newslide{Digital Revolution and Inequality?}
 
-\figure{\includejpg{../slides/diagrams/woman-tends-house-in-village-of-uganda-africa}{60%}}{A woman tends her house in a village in Uganda.}{woman-tends-house-in-village-of-uganda-africa}
+\figure{\includejpg{\diagramsDir/woman-tends-house-in-village-of-uganda-africa}{60%}}{A woman tends her house in a village in Uganda.}{woman-tends-house-in-village-of-uganda-africa}
 
 \notes{Statistics as a community is also focussed on the single consequential effect of an analysis (efficacy of drugs, or distribution of Mosquito nets). Associated with happenstance data is *happenstance decision making*.}
 

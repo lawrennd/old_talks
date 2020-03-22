@@ -2,7 +2,7 @@
 
 * Can either see a wood or a tree. 
 
-\includejpg{../slides/diagrams/Grib_skov}{50%}
+\includejpg{\diagramsDir/Grib_skov}{50%}
 
 \newslide{Examples}
 

@@ -7,7 +7,7 @@
 
 \newslide{Ride Sharing: Service Oriented}
 
-\figure{\includediagram{../slides/diagrams/data-science/ride-share-service-soa}{80%}}{Service oriented architecture. The data access is buried in the cost allocation service. Data dependencies of the service cannot be found without trawling through the underlying code base.}{ride-share-service-soa}
+\figure{\includediagram{\diagramsDir/data-science/ride-share-service-soa}{80%}}{Service oriented architecture. The data access is buried in the cost allocation service. Data dependencies of the service cannot be found without trawling through the underlying code base.}{ride-share-service-soa}
 
 \notes{The modern approach to software systems design is known as a
 *service-oriented architectures* (SOA). The idea is that software
@@ -17,7 +17,7 @@ maintained by rigorous standards around *testing* of software systems.}
 
 \newslide{Ride Sharing: Data Oriented}
 
-\figure{\includediagram{../slides/diagrams/data-science/ride-share-service-doa}{80%}}{Data oriented architecture. Now the joins and the updates are exposed within the streaming ecosystem. We can programatically determine the factor graph which gives the thread through the model.}{ride-share-service-doa}
+\figure{\includediagram{\diagramsDir/data-science/ride-share-service-doa}{80%}}{Data oriented architecture. Now the joins and the updates are exposed within the streaming ecosystem. We can programatically determine the factor graph which gives the thread through the model.}{ride-share-service-doa}
 
 \notes{In data driven decision-making systems, the quality of decision-making
 is determined by the quality of the data. We need to extend the notion
@@ -58,7 +58,7 @@ boxes' which make decisions that are not explainable.[^dark-secret]
 
 \newslide{Ride Sharing: Hypothetical}
 
-\figure{\includediagram{../slides/diagrams/data-science/ride-share-service-doa-hypothetical}{80%}}{Data-oriented programing. There is a requirement for an estimate of the driver allocation to give a rough cost estimate before the user has confirmed the ride. In data-oriented programming, this is achieved through declaring a hypothetical stream which approximates the true driver allocation, but with restricted input information and constraints on the computational latency.}{ride-share-service-doa-hypothetical}
+\figure{\includediagram{\diagramsDir/data-science/ride-share-service-doa-hypothetical}{80%}}{Data-oriented programing. There is a requirement for an estimate of the driver allocation to give a rough cost estimate before the user has confirmed the ride. In data-oriented programming, this is achieved through declaring a hypothetical stream which approximates the true driver allocation, but with restricted input information and constraints on the computational latency.}{ride-share-service-doa-hypothetical}
 
 \notes{For the ride sharing system, we start to see a common issue with a more complex algorithmic decision-making system. Several decisions are being made multilple times. Let's look at the decisions we need along with some design criteria.
 

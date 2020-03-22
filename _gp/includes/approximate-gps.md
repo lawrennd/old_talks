@@ -64,7 +64,7 @@ $$
 \columns{
 $$p(\dataVector)$$
 }{
-\includediagram{../slides/diagrams/gp/py}
+\includediagram{\diagramsDir/gp/py}
 }
 
 \newslide{Variational Compression}
@@ -73,7 +73,7 @@ $$p(\dataVector)$$
 \columns{
 $$p(\dataVector)=\int p(\dataVector|\mappingFunctionVector)p(\mappingFunctionVector)\text{d}\mappingFunctionVector$$
 }{
-\includediagram{../slides/diagrams/gp/pygfpf}
+\includediagram{\diagramsDir/gp/pygfpf}
 }
 
 \newslide{Variational Compression}
@@ -82,7 +82,7 @@ $$p(\dataVector)=\int p(\dataVector|\mappingFunctionVector)p(\mappingFunctionVec
 \columns{
 $$p(\dataVector)=\int p(\dataVector|\mappingFunctionVector)p(\inducingVector|\mappingFunctionVector)p(\mappingFunctionVector)\text{d}\mappingFunctionVector\text{d}\inducingVector$$
 }{
-\includediagram{../slides/diagrams/gp/pygfpugfpf}
+\includediagram{\diagramsDir/gp/pygfpugfpf}
 }
 
 \newslide{Variational Compression}
@@ -90,7 +90,7 @@ $$p(\dataVector)=\int p(\dataVector|\mappingFunctionVector)p(\inducingVector|\ma
 \columns{
 $$p(\dataVector)=\int \int p(\dataVector|\mappingFunctionVector)p(\mappingFunctionVector|\inducingVector)\text{d}\mappingFunctionVector p(\inducingVector)\text{d}\inducingVector$$
 }{
-\includediagram{../slides/diagrams/gp/pygfpfgupu}
+\includediagram{\diagramsDir/gp/pygfpfgupu}
 }
 
 \newslide{Variational Compression}
@@ -98,7 +98,7 @@ $$p(\dataVector)=\int \int p(\dataVector|\mappingFunctionVector)p(\mappingFuncti
 \columns{
 $$p(\dataVector)=\int \int p(\dataVector|\mappingFunctionVector)p(\mappingFunctionVector|\inducingVector)\text{d}\mappingFunctionVector p(\inducingVector)\text{d}\inducingVector$$
 }{
-\includediagram{../slides/diagrams/gp/pygfpfgupu2}
+\includediagram{\diagramsDir/gp/pygfpfgupu2}
 }
 
 \newslide{Variational Compression}
@@ -106,7 +106,7 @@ $$p(\dataVector)=\int \int p(\dataVector|\mappingFunctionVector)p(\mappingFuncti
 \columns{
 $$p(\dataVector|\inducingVector)=\int p(\dataVector|\mappingFunctionVector)p(\mappingFunctionVector|\inducingVector)\text{d}\mappingFunctionVector$$
 }{
-\includediagram{../slides/diagrams/gp/pygfpfgu}
+\includediagram{\diagramsDir/gp/pygfpfgu}
 }
 
 \newslide{Variational Compression}
@@ -114,7 +114,7 @@ $$p(\dataVector|\inducingVector)=\int p(\dataVector|\mappingFunctionVector)p(\ma
 \columns{
 $$p(\dataVector|\inducingVector)$$
 }{
-\includediagram{../slides/diagrams/gp/pygu}
+\includediagram{\diagramsDir/gp/pygu}
 }
 
 \newslide{Variational Compression}
@@ -122,7 +122,7 @@ $$p(\dataVector|\inducingVector)$$
 \columns{
 $$p(\dataVector|\paramVector)$$
 }{
-\includediagram{../slides/diagrams/gp/pygtheta}
+\includediagram{\diagramsDir/gp/pygtheta}
 }
 
 \newslide{Compression}

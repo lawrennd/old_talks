@@ -7,7 +7,7 @@
 
 \newslide{} 
 
-\figure{\includepng{../slides/diagrams/data-science-africa-logo}{30%}}{Data Science Africa <http://datascienceafrica.org> is a ground up initiative for capacity building around data science, machine learning and artificial intelligence on the African continent.}{data-science-africa}
+\figure{\includepng{\diagramsDir/data-science-africa-logo}{30%}}{Data Science Africa <http://datascienceafrica.org> is a ground up initiative for capacity building around data science, machine learning and artificial intelligence on the African continent.}{data-science-africa}
 
 \slides{Data Science Africa is a bottom up initiative for capacity building in data science, machine learning and AI on the African continent}
 
@@ -23,6 +23,6 @@ The main notion is *end-to-end* data science. For example, going from data colle
 
 \newslide{}
 
-\figure{\includepng{../slides/diagrams/data-science/africa-benefit-data-revolution}{70%}}{The lack of existing physical infrastructure on the African continent makes it a particularly interesting environment for deploying solutions based on the *information infrastructure*. The idea is explored more in this Guardian op-ed on \addguardian{How African can benefit from the data revolution}{2015/aug/25/africa-benefit-data-science-information}.}{africa-benefit-data-revolution}
+\figure{\includepng{\diagramsDir/data-science/africa-benefit-data-revolution}{70%}}{The lack of existing physical infrastructure on the African continent makes it a particularly interesting environment for deploying solutions based on the *information infrastructure*. The idea is explored more in this Guardian op-ed on \addguardian{How African can benefit from the data revolution}{2015/aug/25/africa-benefit-data-science-information}.}{africa-benefit-data-revolution}
 
 \endif

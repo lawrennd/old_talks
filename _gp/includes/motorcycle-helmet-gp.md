@@ -1,8 +1,9 @@
 \ifndef{motorcycleHelmetGp}
 \define{motorcycleHelmetGp}
-\editme
 
 \include{_ml/includes/motorcycle-helmet-data.md}
+
+\editme
 
 \code{m_full = GPy.models.GPRegression(x,yhat)
 _ = m_full.optimize() # Optimize parameters of covariance function}
@@ -13,12 +14,12 @@ xlim=(-20,80)
 ylim=(-180,120)
 ax.set_ylim(ylim)
 ax.set_xlim(xlim)
-mlai.write_figure(figure=fig,filename='../../slides/diagrams/gp/motorcycle-helmet-gp.svg', 
+mlai.write_figure(figure=fig,filename='../\diagramsDir/gp/motorcycle-helmet-gp.svg', 
             transparent=True, frameon=True)}
 
 
 \subsection{Motorcycle Helmet Data GP}
 
-\figure{\includediagram{../slides/diagrams/gp/motorcycle-helmet-gp}{80%}}{Gaussian process fit to the motorcycle helmet accelerometer data.}{motorcycle-helmet-gp}
+\figure{\includediagram{\diagramsDir/gp/motorcycle-helmet-gp}{80%}}{Gaussian process fit to the motorcycle helmet accelerometer data.}{motorcycle-helmet-gp}
 
 \endif

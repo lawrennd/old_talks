@@ -48,21 +48,21 @@ transition: None
 \define{\newslide{text}}{---}
 \newslide{}
 
-\div{\includediagram{../slides/diagrams/data-science/hilbert-info-growth}}{}{text-align:center}
+\div{\includediagram{\diagramsDir/data-science/hilbert-info-growth}}{}{text-align:center}
 
 \include{_data-science/includes/newcomen-engine.md}
 
 \newslide{}
 
-\div{\includediagram{../slides/diagrams/data-science/uk_tin_coal_railways001}}{}{text-align:center}
+\div{\includediagram{\diagramsDir/data-science/uk_tin_coal_railways001}}{}{text-align:center}
 
 \newslide{}
 
-\div{\includediagram{../slides/diagrams/data-science/uk_tin_coal_railways002}}{}{text-align:center}
+\div{\includediagram{\diagramsDir/data-science/uk_tin_coal_railways002}}{}{text-align:center}
 
 \newslide{}
 
-\div{\includediagram{../slides/diagrams/data-science/uk_tin_coal_railways003}}{}{text-align:center}
+\div{\includediagram{\diagramsDir/data-science/uk_tin_coal_railways003}}{}{text-align:center}
 
 \newslide{}
 
@@ -70,20 +70,20 @@ transition: None
 
 \newslide{}
 
-\div{\includeimg{../slides/diagrams/Watt7783.png}{}{negate}}{}{height:600px;text-align:center}
+\div{\includeimg{\diagramsDir/Watt7783.png}{}{negate}}{}{height:600px;text-align:center}
 @Uglow:lunar02
 
 
 \newslide{}
 
-\div{\includeimg{../slides/diagrams/SteamEngine_Boulton&Watt_1784.png}{}{negate}}{}{height:600px;text-align:center}
+\div{\includeimg{\diagramsDir/SteamEngine_Boulton&Watt_1784.png}{}{negate}}{}{height:600px;text-align:center}
 
 \include{_ml/includes/deep-learning-overview.md}
 
 \newslide{}
  
 <!--<span class="fragment fade-in">-->
-\div{\includediagram{../slides/diagrams/data-science/user-centric-data}}{}{text-align:center}
+\div{\includediagram{\diagramsDir/data-science/user-centric-data}}{}{text-align:center}
 <!--</span>-->
 
 
@@ -91,11 +91,11 @@ transition: None
 
 \newslide{}
 
-\div{\includediagram{../slides/diagrams/data-science/uk_tin_coal_railways004}}{}{text-align:center}
+\div{\includediagram{\diagramsDir/data-science/uk_tin_coal_railways004}}{}{text-align:center}
 
 \newslide{}
 
-\div{\includediagram{../slides/diagrams/data-science/uk_tin_coal_railways005}}{}{text-align:center}
+\div{\includediagram{\diagramsDir/data-science/uk_tin_coal_railways005}}{}{text-align:center}
 
 \define{\newslide{text}}{### \text}
 

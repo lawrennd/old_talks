@@ -138,7 +138,7 @@ def extract_inputs(filename):
 
         return list_files + not_present
 
-def extract_diagrams(filename, absolute_path=True, diagram_exts=['svg', 'png', 'emf', 'pdf']):
+def extract_diagrams(filename, absolute_path=True, diagram_exts=['svg', 'png', 'emf', 'pdf'], diagrams_dir=None):
     """Extract diagrams from a talk"""
     if os.path.exists(filename):
         filenames = [filename] + extract_inputs(filename)
@@ -147,15 +147,15 @@ def extract_diagrams(filename, absolute_path=True, diagram_exts=['svg', 'png', '
         return
 
     listdiagrams = []
-    for filename in filenames:
+    for filen in filenames:
         # exclude talk-macros file.
-        if filename[:14] =='../talk-macros':
+        if filen[:14] =='../talk-macros':
             continue
 
-        if filename == '\\filename.svg':
+        if filen == '\\filename.svg':
             continue
         else:
-            f = open(filename, 'r')
+            f = open(filen, 'r')
             lines = f.readlines()
             f.close()
 
@@ -163,7 +163,9 @@ def extract_diagrams(filename, absolute_path=True, diagram_exts=['svg', 'png', '
             diagrams = latex.extract_diagrams(lines, ext)
             diag_list = []
             for i, diag_str in enumerate(diagrams):
-                if "\\" not in diag_str:
+                if diagrams_dir is not None: # Substitute if diagrams_dir exists
+                    diag_str = diag_str.replace('\\diagramsDir', diagrams_dir)
+                if "\\" not in diag_str: # Ignore remaining tex macros
                     diag_list.append(diag_str + '.' + ext)
             listdiagrams.extend(diag_list)
         diagrams = latex.extract_diagrams(lines, 'diagram')
@@ -171,7 +173,9 @@ def extract_diagrams(filename, absolute_path=True, diagram_exts=['svg', 'png', '
         for ext in diagram_exts:
             diag_dict[ext] = []
         for i, diag_str in enumerate(diagrams):
-            if "\\" not in diag_str:
+            if diagrams_dir is not None: # Substitute if diagrams_dir exists
+                diag_str = diag_str.replace('\\diagramsDir', diagrams_dir)
+            if "\\" not in diag_str: # Ignore remaining tex macros
                 for ext in diagram_exts:
                      diag_dict[ext].append(diag_str + '.' + ext)
 

@@ -72,14 +72,14 @@ Although the computer is more advanced than the steam engine in many respects, i
 
 \newslide{}
 
-\figure{\includejpg{../slides/diagrams/ai/person-cute-portrait-young-small-child-684477-pxhere.com}{70%}}{Machines are as helpless and unaware as small children, and less cute. Just like a small child they require us to maintain and service them.}{young-baby-image}
+\figure{\includejpg{\diagramsDir/ai/person-cute-portrait-young-small-child-684477-pxhere.com}{70%}}{Machines are as helpless and unaware as small children, and less cute. Just like a small child they require us to maintain and service them.}{young-baby-image}
 
 
 \include{_health/includes/doctor-and-patient.md}
 
 \newslide{}
 
-\figure{\includejpg{../slides/diagrams/ai/Giant_Baby_One}{70%}}{When we deploy at scale the damage done by deploying a naive machine can feel exactly like the damage done by deploying a maliscious machine.}{giant-baby-image}
+\figure{\includejpg{\diagramsDir/ai/Giant_Baby_One}{70%}}{When we deploy at scale the damage done by deploying a naive machine can feel exactly like the damage done by deploying a maliscious machine.}{giant-baby-image}
 
 
 \notes{The machine is also relentless, as long as it is fed, it can complete actions tirelessly, day or night.}

@@ -87,11 +87,11 @@ Given some input parameters of the linear controlling, how do the dynamics of th
 \code{controller_gains = np.atleast_2d([0, .6, 1])  # change the valus of the linear controller to observe the trayectories.}
 
 \plotcode{mc.emu_sim_comparison(env, controller_gains, [position_model, velocity_model], 
-                      max_steps=500, diagrams='../slides/diagrams/uq')}
+                      max_steps=500, diagrams='\diagramsDir/uq')}
 
 \newslide{Comparison of Emulation and Simulation}
 
-\figure{\includediagram{../slides/diagrams/uq/emu_sim_comparison}{80%}}{Comparison between the mountain car simulator and the emulator.}{emu-sim-comparison}
+\figure{\includediagram{\diagramsDir/uq/emu_sim_comparison}{80%}}{Comparison between the mountain car simulator and the emulator.}{emu-sim-comparison}
 
 \notes{We now make explicit use of the emulator, using it to replace the simulator and optimize the linear controller. Note that in this optimization, we don't need to query the simulator anymore as we can reproduce the full dynamics of an episode using the emulator. For illustrative purposes, in this example we fix the initial location of the car. 
 
@@ -137,7 +137,7 @@ anim=mc.animate_frames(frames, 'Best controller using the emulator of the dynami
 \displaycode{HTML(anim.to_jshtml())}
 
 \plotcode{mc.save_frames(frames, 
-                  diagrams='../slides/diagrams/uq', 
+                  diagrams='\diagramsDir/uq', 
 				  filename='mountain_car_emulated.html')}
 
 \newslide{Data Efficiency}
@@ -150,7 +150,7 @@ anim=mc.animate_frames(frames, 'Best controller using the emulator of the dynami
 
 \newslide{Best Controller using Emulator of Dynamics}
 
-\figure{\includehtml{../slides/diagrams/uq/mountain_car_emulated.html}{800px}{600px}}{Mountain car controller learnt through emulation. Here 500 calls to the simulator are used to fit the controller rather than 37,500 calls to the simulator required in the standard learning.}{mountain-car-emulated}
+\figure{\includehtml{\diagramsDir/uq/mountain_car_emulated.html}{800px}{600px}}{Mountain car controller learnt through emulation. Here 500 calls to the simulator are used to fit the controller rather than 37,500 calls to the simulator required in the standard learning.}{mountain-car-emulated}
 
 \slides{500 calls to the simulator vs 37,500 calls to the simulator}
 

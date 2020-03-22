@@ -17,7 +17,7 @@ kernel = mlai.Kernel(function=brownian_cov,
                      name='Brownian',
                      formula='\formula',
                      shortname='brownian')
-plot.covariance_func(kernel, t, diagrams='../slides/diagrams/kern/')}
+plot.covariance_func(kernel, t, diagrams='\diagramsDir/kern/')}
 
 \notes{Brownian motion is also a Gaussian process. It follows a Gaussian random walk, with diffusion occuring at each time point driven by a Gaussian input. This implies it is both Markov and Gaussian. The covariance function for Brownian motion has the form
 $$

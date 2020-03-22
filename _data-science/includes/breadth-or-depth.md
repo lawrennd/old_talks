@@ -58,7 +58,7 @@
 \newslide{Wood or Tree}
 \slides{
 * Can either see a wood or a tree.}
-\figure{\includejpg{../slides/diagrams/Grib_skov}{50%}}{Our methods give us either the woods or the trees, not the local structure such as a glade in the woods.}{wood-or-tree}
+\figure{\includejpg{\diagramsDir/Grib_skov}{50%}}{Our methods give us either the woods or the trees, not the local structure such as a glade in the woods.}{wood-or-tree}
 
 <!-- https://upload.wikimedia.org/wikipedia/commons/5/5b/Grib_skov.jpg-->
 

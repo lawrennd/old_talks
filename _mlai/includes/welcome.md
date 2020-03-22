@@ -4,13 +4,13 @@
 
 \subsection{Course Text}
 
-\figure{\includejpg{../slides/diagrams/mlai/a-first-course-in-machine-learning}{40%}}{The main course text is "A First Course in Machine Learning" by @Rogers:book11.}{a-first-course-in-machine-learning}
+\figure{\includejpg{\diagramsDir/mlai/a-first-course-in-machine-learning}{40%}}{The main course text is "A First Course in Machine Learning" by @Rogers:book11.}{a-first-course-in-machine-learning}
 
 \slides{\alignright{@Rogers:book11}}
 
 \newslide{Additional Course Text}
 
-\figure{\includepng{../slides/diagrams/mlai/978-0-387-31073-2}{40%}}{For additional reading we will regularly refer to "Pattern Recognition and Machine Learning" by @Bishop:book06}{pattern-recognition-and-machine-learning}
+\figure{\includepng{\diagramsDir/mlai/978-0-387-31073-2}{40%}}{For additional reading we will regularly refer to "Pattern Recognition and Machine Learning" by @Bishop:book06}{pattern-recognition-and-machine-learning}
 
 \slides{\alignright{@Bishop:book06}}
 

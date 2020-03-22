@@ -36,7 +36,7 @@ date: 2018-05-08
 
 \newslide{Evolved Relationship}
 
-\figure{\includediagram{../slides/diagrams/data-science/information-flow004}{60%}}{The mechanism by which data moves is changing, it is now mediated by the computer.}{information-flow}
+\figure{\includediagram{\diagramsDir/data-science/information-flow004}{60%}}{The mechanism by which data moves is changing, it is now mediated by the computer.}{information-flow}
 
 \include{_data-science/includes/societal-effects.md}
 

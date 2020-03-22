@@ -4,11 +4,11 @@
 
 \subsection{Emukit}
 
-\figure{\includepng{../slides/diagrams/uq/emukit-software-page}{80%}}{The Emukit software is a set of software tools for emulation and surrogate modeling. <https://amzn.github.io/emukit/>}{emukit-software-page}
+\figure{\includepng{\diagramsDir/uq/emukit-software-page}{80%}}{The Emukit software is a set of software tools for emulation and surrogate modeling. <https://amzn.github.io/emukit/>}{emukit-software-page}
 
 \newslide{Emukit}
 \slides{
-\includepng{../slides/diagrams/uq/emukit-software-page2}{80%}
+\includepng{\diagramsDir/uq/emukit-software-page2}{80%}
 \center{<https://amzn.github.io/emukit/>}
 }
 

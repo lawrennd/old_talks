@@ -119,7 +119,7 @@ for samp in range(num_samps):
     models = (cl.fit(X, y) for cl in models)
     xlim, ylim = decision_boundary_plot(models, X, y, 
                            axs=ax, 
-                           filename='../slides/diagrams/ml/bias-variance{samp:0>3}.svg'.format(samp=samp), 
+                           filename='\diagramsDir/ml/bias-variance{samp:0>3}.svg'.format(samp=samp), 
                            titles=titles,
                           xlim=xlim,
                           ylim=ylim)}
@@ -128,7 +128,7 @@ for samp in range(num_samps):
 \displaycode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('bias-variance{samp:0>3}.svg', 
-                            directory='../slides/diagrams/ml', 
+                            directory='\diagramsDir/ml', 
 						    samp=IntSlider(0,0,10,1))}
 							
 \newslide{}
@@ -138,17 +138,17 @@ from ipywidgets import IntSlider}
 \define{width}{80%} 
 \define{animationName}{bias-variance-plots}
 \startanimation{\animationName}{0}{10} 
-\newframe{\includepng{../slides/diagrams/ml/bias-variance000}{\width}}{\animationName}
-\newframe{\includepng{../slides/diagrams/ml/bias-variance001}{\width}}{\animationName}
-\newframe{\includepng{../slides/diagrams/ml/bias-variance002}{\width}}{\animationName}
-\newframe{\includepng{../slides/diagrams/ml/bias-variance003}{\width}}{\animationName}
-\newframe{\includepng{../slides/diagrams/ml/bias-variance004}{\width}}{\animationName}
-\newframe{\includepng{../slides/diagrams/ml/bias-variance005}{\width}}{\animationName}
-\newframe{\includepng{../slides/diagrams/ml/bias-variance006}{\width}}{\animationName}
-\newframe{\includepng{../slides/diagrams/ml/bias-variance007}{\width}}{\animationName}
-\newframe{\includepng{../slides/diagrams/ml/bias-variance008}{\width}}{\animationName}
-\newframe{\includepng{../slides/diagrams/ml/bias-variance009}{\width}}{\animationName}
-\newframe{\includepng{../slides/diagrams/ml/bias-variance010}{\width}}{\animationName}
+\newframe{\includepng{\diagramsDir/ml/bias-variance000}{\width}}{\animationName}
+\newframe{\includepng{\diagramsDir/ml/bias-variance001}{\width}}{\animationName}
+\newframe{\includepng{\diagramsDir/ml/bias-variance002}{\width}}{\animationName}
+\newframe{\includepng{\diagramsDir/ml/bias-variance003}{\width}}{\animationName}
+\newframe{\includepng{\diagramsDir/ml/bias-variance004}{\width}}{\animationName}
+\newframe{\includepng{\diagramsDir/ml/bias-variance005}{\width}}{\animationName}
+\newframe{\includepng{\diagramsDir/ml/bias-variance006}{\width}}{\animationName}
+\newframe{\includepng{\diagramsDir/ml/bias-variance007}{\width}}{\animationName}
+\newframe{\includepng{\diagramsDir/ml/bias-variance008}{\width}}{\animationName}
+\newframe{\includepng{\diagramsDir/ml/bias-variance009}{\width}}{\animationName}
+\newframe{\includepng{\diagramsDir/ml/bias-variance010}{\width}}{\animationName}
 
 \endanimation
 \caption{simple models on left complex models on right}
@@ -157,49 +157,49 @@ from ipywidgets import IntSlider}
 \slides{
 \newslide{}
 
-\figure{\includepng{../slides/diagrams/ml/bias-variance000}{\width}}{}{bias-variance}
+\figure{\includepng{\diagramsDir/ml/bias-variance000}{\width}}{}{bias-variance}
 
 \newslide{}
 
-\figure{\includepng{../slides/diagrams/ml/bias-variance001}{\width}}{}{bias-variance}
+\figure{\includepng{\diagramsDir/ml/bias-variance001}{\width}}{}{bias-variance}
 
 \newslide{}
 
-\figure{\includepng{../slides/diagrams/ml/bias-variance002}{\width}}{}{bias-variance}
+\figure{\includepng{\diagramsDir/ml/bias-variance002}{\width}}{}{bias-variance}
 
 \newslide{}
 
-\figure{\includepng{../slides/diagrams/ml/bias-variance003}{\width}}{}{bias-variance}
+\figure{\includepng{\diagramsDir/ml/bias-variance003}{\width}}{}{bias-variance}
 
 \newslide{}
 
-\figure{\includepng{../slides/diagrams/ml/bias-variance004}{\width}}{}{bias-variance}
+\figure{\includepng{\diagramsDir/ml/bias-variance004}{\width}}{}{bias-variance}
 
 \newslide{}
 
-\figure{\includepng{../slides/diagrams/ml/bias-variance005}{\width}}{}{bias-variance}
+\figure{\includepng{\diagramsDir/ml/bias-variance005}{\width}}{}{bias-variance}
 
 \newslide{}
 
-\figure{\includepng{../slides/diagrams/ml/bias-variance006}{\width}}{}{bias-variance}
+\figure{\includepng{\diagramsDir/ml/bias-variance006}{\width}}{}{bias-variance}
 
 \newslide{}
 
-\figure{\includepng{../slides/diagrams/ml/bias-variance007}{\width}}{}{bias-variance}
+\figure{\includepng{\diagramsDir/ml/bias-variance007}{\width}}{}{bias-variance}
 
 \newslide{}
 
-\figure{\includepng{../slides/diagrams/ml/bias-variance008}{\width}}{}{bias-variance}
+\figure{\includepng{\diagramsDir/ml/bias-variance008}{\width}}{}{bias-variance}
 
 \newslide{}
 
-\figure{\includepng{../slides/diagrams/ml/bias-variance009}{\width}}{}{bias-variance}
+\figure{\includepng{\diagramsDir/ml/bias-variance009}{\width}}{}{bias-variance}
 
 \newslide{}
 
-\figure{\includepng{../slides/diagrams/ml/bias-variance010}{\width}}{}{bias-variance}
+\figure{\includepng{\diagramsDir/ml/bias-variance010}{\width}}{}{bias-variance}
 }
 
-\notes{\figure{\includepng{../slides/diagrams/ml/bias-variance000}{80%}\includepng{../slides/diagrams/ml/bias-variance010}{80%}}{In each figure the more simple model is on the left, and the more complex model is on the right. Each fit is done to a different version of the data set. The simpler model is more consistent in its errors (bias error), whereas the more complex model is varying in its errors (variance error).}{bias-variance-errors}}
+\notes{\figure{\includepng{\diagramsDir/ml/bias-variance000}{80%}\includepng{\diagramsDir/ml/bias-variance010}{80%}}{In each figure the more simple model is on the left, and the more complex model is on the right. Each fit is done to a different version of the data set. The simpler model is more consistent in its errors (bias error), whereas the more complex model is varying in its errors (variance error).}{bias-variance-errors}}
 
 \endif

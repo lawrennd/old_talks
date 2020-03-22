@@ -19,7 +19,7 @@ import numpy as np}
                      formula='\formula',
 					 w=5, b=0.5)
 					 
-plot.covariance_func(kernel, diagrams='../slides/diagrams/kern/')}
+plot.covariance_func(kernel, diagrams='\diagramsDir/kern/')}
 
 
 \notes{The multi-layer perceptron (MLP) covariance, also known as the neural network covariance or the arcsin covariance, is derived by considering the infinite limit of a neural network.} 

@@ -81,7 +81,7 @@ ax.plot(f, g, 'r-', linewidth=3)
 ax.set_title('Logistic Function', fontsize=20)
 ax.set_xlabel('$f_i$', fontsize=20)
 ax.set_ylabel('$g_i$', fontsize=20)
-plt.savefig('../slides/diagrams/ml/logistic.svg')}
+plt.savefig('\diagramsDir/ml/logistic.svg')}
 
 \newslide{Logistic function}
 
@@ -89,7 +89,7 @@ plt.savefig('../slides/diagrams/ml/logistic.svg')}
 * [Logistic](http://en.wikipedia.org/wiki/Logistic_function) (or sigmoid) squashes
 real line to between 0   & 1. Sometimes also called a 'squashing function'.
 
-\includediagram{../slides/diagrams/ml/logistic}
+\includediagram{\diagramsDir/ml/logistic}
 }
 
 \newslide{Prediction Function}
@@ -254,11 +254,11 @@ ax.set_title('Poisson Distribution', fontsize=20)
 ax.set_xlabel('$y_i$', fontsize=20)
 ax.set_ylabel('$p(y_i)$', fontsize=20)
 ax.legend(fontsize=20)
-plt.savefig('../slides/diagrams/ml/poisson.svg')}
+plt.savefig('\diagramsDir/ml/poisson.svg')}
 
 \newslide{Poisson Distribution}
 
-\includediagram{../slides/diagrams/ml/poisson}
+\includediagram{\diagramsDir/ml/poisson}
 
 \newslide{Poisson Regression}
 

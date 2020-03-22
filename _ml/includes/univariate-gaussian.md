@@ -15,11 +15,11 @@
   \end{align}$$
  
 \setupplotcode{import teaching_plots as plot}
-\plotcode{plot.gaussian_of_height(diagrams='../../slides/diagrams/ml')}
+\plotcode{plot.gaussian_of_height(diagrams='../\diagramsDir/ml')}
 
 \newslide{Gaussian Density}
 
-\figure{\includediagram{../slides/diagrams/ml/gaussian_of_height}{60%}}{The Gaussian PDF with ${\meanScalar}=1.7$ and variance ${\dataStd}^2=0.0225$. Mean shown as \slides{cyan}\notes{red} line. It could represent the heights of a population of students.}{gaussian-of-height}
+\figure{\includediagram{\diagramsDir/ml/gaussian_of_height}{60%}}{The Gaussian PDF with ${\meanScalar}=1.7$ and variance ${\dataStd}^2=0.0225$. Mean shown as \slides{cyan}\notes{red} line. It could represent the heights of a population of students.}{gaussian-of-height}
 
 \newslide{Gaussian Density}
 \slides{

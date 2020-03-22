@@ -52,7 +52,7 @@
 }
 
 \newslide{The Centrifugal Governor}
-\figure{\includejpg{../slides/diagrams/science-holborn-viaduct}{30%}}{Science on Holborn Viaduct, cradling the Centrifugal Governor.}{science-holborn-viaduct}
+\figure{\includejpg{\diagramsDir/science-holborn-viaduct}{30%}}{Science on Holborn Viaduct, cradling the Centrifugal Governor.}{science-holborn-viaduct}
 
 \slides{
 \caption{Science on Holborn Viaduct, cradling the Centrifugal Governor.}

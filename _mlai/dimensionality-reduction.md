@@ -44,7 +44,7 @@ ax.plot(Y[:, 0], Y[:, 1], 'rx')
 ax.set_xlabel('$y_1$', fontsize=20)
 ax.set_ylabel('$y_2$', fontsize=20)
 
-mlai.write_figure(../slides/diagrams/ml/cluster_data00.svg')
+mlai.write_figure(\diagramsDir/ml/cluster_data00.svg')
 pi_vals = np.linspace(-np.pi, np.pi, 200)[:, None]
 for i in range(num_centres):
     ax.plot(centres[i, 0], centres[i, 1], 'o', markersize=5, color=[0, 0, 0], linewidth=2)
@@ -52,10 +52,10 @@ for i in range(num_centres):
     L = np.linalg.cholesky(np.outer(w[i, :],w[i, :]) + sigma[i]**2*np.eye(2))
     el = np.dot(x, L.T)
     ax.plot(centres[i, 0] + el[:, 0], centres[i, 1] + el[:, 1], linewidth=2, color=[0,0,0])
-mlai.write_figure(../slides/diagrams/ml/cluster_data01.svg')}
+mlai.write_figure(\diagramsDir/ml/cluster_data01.svg')}
 
 \setupdisplaycode{import pods}
-\displaycode{pods.notebook.display_plots('cluster_data{counter:0>2}.svg', directory='../slides/diagrams/ml', counter=(0, 1))}
+\displaycode{pods.notebook.display_plots('cluster_data{counter:0>2}.svg', directory='\diagramsDir/ml', counter=(0, 1))}
 
 \newslide{Clustering}
 
@@ -102,7 +102,7 @@ mlai.write_figure(../slides/diagrams/ml/cluster_data01.svg')}
 import numpy as np}
 
 \plotcode{def write_plot(counter, caption):
-    filebase = '../slides/diagrams/ml/kmeans_clustering_{counter:0>3}'.format(counter=counter)
+    filebase = '\diagramsDir/ml/kmeans_clustering_{counter:0>3}'.format(counter=counter)
     plt.savefig(filebase + '.svg')
     f = open(filebase + '.tex', 'w')
     f.write(caption)
@@ -150,11 +150,11 @@ for i in range(6):
           centres[j, :] = np.mean(Y[ind==j, :], 0)
     c[0].set_data(centres[:, 0], centres[:, 1])
     counter+=1
-    mlai.write_figure(../slides/diagrams/ml/kmeans_clustering_{counter:0>3}.svg'.format(counter=counter))
+    mlai.write_figure(\diagramsDir/ml/kmeans_clustering_{counter:0>3}.svg'.format(counter=counter))
     write_plot(counter, 'Allocate each data point to the nearest cluster centre.')}
 
 \setupdisplaycode{import pods}
-\displaycode{pods.notebook.display_plots('kmeans_clustering_{counter:0>3}.svg', directory='../slides/diagrams/ml', 
+\displaycode{pods.notebook.display_plots('kmeans_clustering_{counter:0>3}.svg', directory='\diagramsDir/ml', 
                             text_top='kmeans_clustering_{counter:0>3}.tex', counter=(0, 13))}
 
 \newslide{Other Clustering Approaches}
@@ -178,20 +178,20 @@ import numpy as np
 import mlai}
 \plotcode{fig, ax = plt.subplots(figsize=(5,5))
 
-six_image = mlai.load_pgm('br1561_6.3.pgm', directory ='../slides/diagrams/ml')
+six_image = mlai.load_pgm('br1561_6.3.pgm', directory ='\diagramsDir/ml')
 rows = six_image.shape[0]
 col = six_image.shape[1]
       
 ax.imshow(six_image,interpolation='none').set_cmap('gray')
-mlai.write_figure(../slides/diagrams/ml/dem_six000.png')
+mlai.write_figure(\diagramsDir/ml/dem_six000.png')
 for i in range(3):
     rand_image = np.random.rand(rows, col)<((six_image>0).sum()/float(rows*col))
     ax.imshow(rand_image,interpolation='none').set_cmap('gray')
-    mlai.write_figure(../slides/diagrams/ml/dem_six{i:0>3}.png'.format(i=i+1))}
+    mlai.write_figure(\diagramsDir/ml/dem_six{i:0>3}.png'.format(i=i+1))}
 
 \setupdisplaycode{from ipywidgets import IntSlider
 import pods}
-\displaycode{pods.notebook.display_plots('dem_six{counter:0>3}.png', directory='../slides/diagrams/ml', counter=IntSlider(0, 0, 3, 1))}
+\displaycode{pods.notebook.display_plots('dem_six{counter:0>3}.png', directory='\diagramsDir/ml', counter=IntSlider(0, 0, 3, 1))}
 
 \newslide{USPS Samples}
 
@@ -215,7 +215,7 @@ for angle in angles:
     crop_image = rot_image[start[0]+np.array(range(dim_one[0])), start[1]+np.array(range(dim_one[1]))]
     Y[i, :] = crop_image.flatten()}
 
-\displaycode{pods.notebook.display_plots('dem_six_rotate{counter:0>3}.png', directory='../slides/diagrams/ml', counter=(0, 3))}
+\displaycode{pods.notebook.display_plots('dem_six_rotate{counter:0>3}.png', directory='\diagramsDir/ml', counter=(0, 3))}
 
 \newslide{Low Dimensional Manifolds}
 

@@ -24,11 +24,11 @@ transition: None
 
 \newslide{}
 
-\div{\includeimg{../slides/diagrams/2017-10-12 16.47.34.jpg}{50%}{rotateimg90}{center}}{}{text-align:center}
+\div{\includeimg{\diagramsDir/2017-10-12 16.47.34.jpg}{50%}{rotateimg90}{center}}{}{text-align:center}
 
 \newslide{}
 
-\div{\includeimg{../slides/diagrams/SteamEngine_Boulton&Watt_1784_neg.png}{50%}{center}}{}{text-align:center}
+\div{\includeimg{\diagramsDir/SteamEngine_Boulton&Watt_1784_neg.png}{50%}{center}}{}{text-align:center}
 
 \include{../_ai/includes/embodiment-factors.md}
 <!--include{../_data-science/includes/evolved-relationship.md}

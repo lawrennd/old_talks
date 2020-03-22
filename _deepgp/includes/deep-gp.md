@@ -6,20 +6,20 @@
 \subsection{Bottleneck Layers in Deep Neural Networks}
 
 \setupcode{import teaching_plots as plot}
-\plotcode{plot.deep_nn_bottleneck(diagrams='../slides/diagrams/deepgp')}
+\plotcode{plot.deep_nn_bottleneck(diagrams='\diagramsDir/deepgp')}
 
 
 \slides{
-\includediagram{../slides/diagrams/deepgp/deep-nn-bottleneck1}{60%}
+\includediagram{\diagramsDir/deepgp/deep-nn-bottleneck1}{60%}
 }
 
 \newslide{Deep Neural Network}
 
 \slides{
-\includediagram{../slides/diagrams/deepgp/deep-nn-bottleneck2}{60%}
+\includediagram{\diagramsDir/deepgp/deep-nn-bottleneck2}{60%}
 }
 
-\notes{\figure{\includediagram{../slides/diagrams/deepgp/deep-nn-bottleneck2}{70%}}{Inserting the bottleneck layers introduces a new set of variables.}{deep-nn-bottleneck}}
+\notes{\figure{\includediagram{\diagramsDir/deepgp/deep-nn-bottleneck2}{70%}}{Inserting the bottleneck layers introduces a new set of variables.}{deep-nn-bottleneck}}
 
 \newslide{Mathematically}
 

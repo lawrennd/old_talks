@@ -26,7 +26,7 @@ transition: None
 
 \subsection{The News}
 
-\figure{\includepng{../slides/diagrams/ai/2020-02-12-today-programme}{70%}}{Three news items from the Today programme seemed to combine on Wednesday for me.}{today-programme}
+\figure{\includepng{\diagramsDir/ai/2020-02-12-today-programme}{70%}}{Three news items from the Today programme seemed to combine on Wednesday for me.}{today-programme}
 
 \notes{I was woken up on Wednesday morning with three news headlines that don't
 seem connected. But I'd like to connect them today. The connections I'll
@@ -65,7 +65,7 @@ that vision.}
 
 \section{Intellectual Debt}
 
-\figure{\includepng{../slides/diagrams/ai/2020-02-12-intellectual-debt}{70%}}{Jonathan Zittrain's term to describe the challenges of explanation that come with AI is Intellectual Debt.}{intellectual-debt}
+\figure{\includepng{\diagramsDir/ai/2020-02-12-intellectual-debt}{70%}}{Jonathan Zittrain's term to describe the challenges of explanation that come with AI is Intellectual Debt.}{intellectual-debt}
 
 
 \notes{These challenges are multi-faceted, but today I want to focus on the
@@ -119,7 +119,7 @@ for machine learning models around technical debt.}
 
 \subsection{The Mythical Man-month}
 
-\figure{\includejpg{../slides/diagrams/ai/Mythical_man-month_(book_cover)}{40%}}{The Mythical Man-month [@Brooks:mythical75] is a 1975 book focussed on the challenges of software project coordination.}{intellectual-debt}
+\figure{\includejpg{\diagramsDir/ai/Mythical_man-month_(book_cover)}{40%}}{The Mythical Man-month [@Brooks:mythical75] is a 1975 book focussed on the challenges of software project coordination.}{intellectual-debt}
 
 \notes{However, when managing systems in production, you soon discover
 maintenance of a rapidly deployed system is not your only problem.
@@ -204,7 +204,7 @@ things are constructed.}
 
 \subsection{Lancelot}
 
-\figure{\includepng{../slides/diagrams/ai/Lancelot_fighting_the_dragons_of_the_Val_without_return}{60%}}{Lancelot quashing another software issue. Lancelot was Arthur's most trusted knight. In the software ecosystem the Lancelot figure is an old-hand software engineer who comes closest to having the full system overview. }{lancelot-software}
+\figure{\includepng{\diagramsDir/ai/Lancelot_fighting_the_dragons_of_the_Val_without_return}{60%}}{Lancelot quashing another software issue. Lancelot was Arthur's most trusted knight. In the software ecosystem the Lancelot figure is an old-hand software engineer who comes closest to having the full system overview. }{lancelot-software}
 
 \notes{Eventually, a characteristic of the legacy system, is that changes
 cannot be made without running them by Lancelot first. Initially this
@@ -269,7 +269,7 @@ unfortunately, the death of the programmer enters.}
 
 \subsection{The Death of the Programmer}
 
-\figure{\includejpg{../slides/diagrams/ai/lemortedarthur}{40%}}{Malory's book "Le Morte d'Arthur. A guide to team building in the age of chivalry.}{arthur-book}
+\figure{\includejpg{\diagramsDir/ai/lemortedarthur}{40%}}{Malory's book "Le Morte d'Arthur. A guide to team building in the age of chivalry.}{arthur-book}
 
 
 \notes{By "The Death of the Programmer" we are giving a nod to ["The Death of
@@ -416,7 +416,7 @@ the Milan IL.}
 
 \subsection{Meta Modelling}
 
-\figure{\includepng{../slides/diagrams/uq/emukit-software-page}{80%}}{The Emukit software is a set of software tools for emulation and surrogate modeling. <https://amzn.github.io/emukit/>}{emukit-software-page}
+\figure{\includepng{\diagramsDir/uq/emukit-software-page}{80%}}{The Emukit software is a set of software tools for emulation and surrogate modeling. <https://amzn.github.io/emukit/>}{emukit-software-page}
 
 \notes{Where does machine learning come in? The strategy I propose is that the
 Milan IL is integrated with meta-modelling approaches to assist in the

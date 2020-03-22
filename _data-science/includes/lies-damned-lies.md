@@ -51,7 +51,7 @@
 
 \notes{[Karl Pearson](https://en.wikipedia.org/wiki/Karl_Pearson) (1857-1936), [Ronald Fisher](https://en.wikipedia.org/wiki/Ronald_Fisher) (1890-1962) and others considered the question of what conclusions can truly be drawn from data. Their mathematical studies act as a restraint on our tendency to over-interpret and see patterns where there are none. They introduced concepts such as randomized control trials that form a mainstay of the our decision making today, from government, to clinicians to large scale A/B testing that determines the nature of the web interfaces we interact with on social media and shopping.}
 
-\figure{\includejpg{../slides/diagrams/Portrait_of_Karl_Pearson}{30%}}{Karl Pearson (1857-1936), one of the founders of Mathematical Statistics.}{portrait-of-karl-pearson}
+\figure{\includejpg{\diagramsDir/Portrait_of_Karl_Pearson}{30%}}{Karl Pearson (1857-1936), one of the founders of Mathematical Statistics.}{portrait-of-karl-pearson}
 
 \notes{Their movement did the most to put statistics to rights, to eradicate the 'damned lies'. It was known as ['mathematical statistics'](https://en.wikipedia.org/wiki/Mathematical_statistics). Today I believe we should look to the emerging field of  *data science* to provide the same role. Data science is an amalgam of statistics, data mining, computer systems, databases, computation, machine learning and artificial intelligence. Spread across these fields are the tools we need to realize data's potential. For many businesses this might be thought of as the challenge of 'converting bits into atoms'. Bits: the data stored on computer, atoms: the physical manifestation of what we do; the transfer of goods, the delivery of service. From fungible to tangible. When solving a challenge through data there are a series of obstacles that need to be addressed.}
 
@@ -64,7 +64,7 @@
 \subsection{'Mathematical Data Science'}
 
 \slides{
-  \figure{\includepng{../slides/diagrams/Question_mark}{30%}}{'Founded' by ? (?-?)}{question-mark}
+  \figure{\includepng{\diagramsDir/Question_mark}{30%}}{'Founded' by ? (?-?)}{question-mark}
 }
 
 \notes{As a term 'big data' promises much and delivers little, to get true value from data, it needs to be curated and evaluated. The three stages of awareness, availability and analysis provide a broad framework through which organizations should be assessing the potential in the data they hold. Hand waving about big data solutions will not do, it will only lead to self-deception. The castles we build on our data landscapes must be based on firm foundations, process and scientific analysis. If we do things right, those are the foundations that will be provided by the new field of data science.}

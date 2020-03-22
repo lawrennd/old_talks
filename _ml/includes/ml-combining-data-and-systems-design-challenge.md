@@ -8,14 +8,14 @@
 
 \newslide{}
 
-\figure{\includejpg{../slides/diagrams/data-science/water-bridge-hill-transport-arch-calm-544448-pxhere}{80%}}{A reservoir of data has more value if the data is
+\figure{\includejpg{\diagramsDir/data-science/water-bridge-hill-transport-arch-calm-544448-pxhere}{80%}}{A reservoir of data has more value if the data is
 consumable. The data crisis can only be addressed if we focus on
 outputs rather than inputs.}{derwent-valley-resevoir}
 
 
 \newslide{}
 
-\figure{\includejpg{../slides/diagrams/data-science/1024px-Lake_District_picture}{80%}}{For a data first architecture we need to clean our
+\figure{\includejpg{\diagramsDir/data-science/1024px-Lake_District_picture}{80%}}{For a data first architecture we need to clean our
 data at source, rather than individually cleaning data for each
 task. This involves a shift of focus from our inputs to our
 outputs. We should provide data streams that are consumable by many

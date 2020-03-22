@@ -4,7 +4,7 @@
 
 \newslide{}
 
-\slides{\includepng{../slides/diagrams/gp/mackay-baby}}
+\slides{\includepng{\diagramsDir/gp/mackay-baby}}
 
 \newslide{Structure of Priors}
 

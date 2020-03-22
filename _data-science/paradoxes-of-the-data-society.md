@@ -54,7 +54,7 @@ incremental: True
 
 There's a sea of data, but most of it is undrinkable
 
-\includejpg{../slides/diagrams/sea-water-ocean-waves}
+\includejpg{\diagramsDir/sea-water-ocean-waves}
 
 We require data-desalination before it can be consumed!
 
@@ -149,7 +149,7 @@ question or to be subject to a particular analysis.
 
 \newslide{Digital Revolution and Inequality?}
 
-<img src="../slides/diagrams/woman-tends-house-in-village-of-uganda-africa.jpg" width="50%" style="border:none">
+<img src="\diagramsDir/woman-tends-house-in-village-of-uganda-africa.jpg" width="50%" style="border:none">
 
 \newslide{Amelioration}
 

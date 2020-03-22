@@ -7,15 +7,15 @@
 
 \newslide{}
 
-\figure{\includediagram{../slides/diagrams/gplvm/andreas-deep-talk-0}{90%}}{The Yale Faces data set shows different people under different lighting conditions}{yale-faces-0}
+\figure{\includediagram{\diagramsDir/gplvm/andreas-deep-talk-0}{90%}}{The Yale Faces data set shows different people under different lighting conditions}{yale-faces-0}
 
 \newslide{}
 
-\figure{\includediagram{../slides/diagrams/gplvm/andreas-deep-talk-1}{90%}}{ARD Demonstrates not all of the latent space is used.}{yale-faces-1}
+\figure{\includediagram{\diagramsDir/gplvm/andreas-deep-talk-1}{90%}}{ARD Demonstrates not all of the latent space is used.}{yale-faces-1}
 
 \newslide{}
 
-\figure{\includediagram{../slides/diagrams/gplvm/andreas-deep-talk-2}{90%}}{Other applications include inferring pose from silhouette}{yale-faces-2}
+\figure{\includediagram{\diagramsDir/gplvm/andreas-deep-talk-2}{90%}}{Other applications include inferring pose from silhouette}{yale-faces-2}
 
 \newslide{Manifold Relevance Determination}
 

@@ -26,7 +26,7 @@
     blackColor = 1- blackColor;
     fillColor = 1-fillColor;
   end
-  directory = '../slides/diagrams/sysbio/';
+  directory = '\diagramsDir/sysbio/';
 }
 
 ###
@@ -133,5 +133,5 @@ end
 
 }
 
-include{../slides/diagrams/sysbio/infer-tf-from-gene-text.md}
+include{\diagramsDir/sysbio/infer-tf-from-gene-text.md}
 

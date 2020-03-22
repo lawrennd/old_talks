@@ -30,12 +30,12 @@ plot.model_output(m_full, scale=scale, offset=offset, ax=ax, xlabel='year', ylab
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 mlai.write_figure(figure=fig,
-                  filename='../slides/diagrams/gp/olympic-marathon-gp.svg', 
+                  filename='\diagramsDir/gp/olympic-marathon-gp.svg', 
                   transparent=True, frameon=True)}
 
 \newslide{Olympic Marathon Data GP}
 
-\figure{\includediagram{../slides/diagrams/gp/olympic-marathon-gp}}{Gaussian process fit to the Olympic Marathon data. The error bars are too large, perhaps due to the outlier from 1904.}{olympic-marathon-gp}
+\figure{\includediagram{\diagramsDir/gp/olympic-marathon-gp}}{Gaussian process fit to the Olympic Marathon data. The error bars are too large, perhaps due to the outlier from 1904.}{olympic-marathon-gp}
 
 
 \notes{

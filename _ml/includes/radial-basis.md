@@ -24,14 +24,14 @@ text = ['$\phi_1(x) = e^{-(x + 1)^2}$',
         '$\phi_3(x) = e^{-2(x-1)^2}$']
 plot.basis(mlai.radial, x_min=-2, x_max=2, 
            fig=f, ax=ax, loc=loc, text=text,
-           diagrams='../slides/diagrams/ml')}
+           diagrams='\diagramsDir/ml')}
 
 \displaycode{pods.notebook.display_prediction(basis=mlai.radial, num_basis=4)}
 
 \setupcode{from ipywidgets import IntSlider
 import pods}
 \displaycode{pods.notebook.display_plots('radial_basis{num_basis:0>3}.svg', 
-                            directory='../slides/diagrams/ml', 
+                            directory='\diagramsDir/ml', 
 							num_basis=IntSlider(0,0,2,1))}
 
 \subsection{Functions Derived from Radial Basis}
@@ -43,17 +43,17 @@ $$
 \slides{
 \define{width}{80%}
 \startanimation{radial_function}{0}{2}
-\newframe{\includediagram{../slides/diagrams/ml/radial_function000}{\width}}{radial_function}
-\newframe{\includediagram{../slides/diagrams/ml/radial_function001}{\width}}{radial_function}
-\newframe{\includediagram{../slides/diagrams/ml/radial_function002}{\width}}{radial_function}
+\newframe{\includediagram{\diagramsDir/ml/radial_function000}{\width}}{radial_function}
+\newframe{\includediagram{\diagramsDir/ml/radial_function001}{\width}}{radial_function}
+\newframe{\includediagram{\diagramsDir/ml/radial_function002}{\width}}{radial_function}
 \endanimation
 }
 
-\notes{\figure{\includediagram{../slides/diagrams/ml/radial_basis002}{80%}}{A radial basis is made up of different locally effective functions centered at different points.}{radial-basis-2}}
+\notes{\figure{\includediagram{\diagramsDir/ml/radial_basis002}{80%}}{A radial basis is made up of different locally effective functions centered at different points.}{radial-basis-2}}
 
 \setupdisplaycode{from ipywidgets import IntSlider
 import pods}
-\displaycode{pods.notebook.display_plots('radial_function{func_num:0>3}.svg', directory='../slides/diagrams/ml', func_num=IntSlider(0,0,2,1))}
+\displaycode{pods.notebook.display_plots('radial_function{func_num:0>3}.svg', directory='\diagramsDir/ml', func_num=IntSlider(0,0,2,1))}
 
 
 \endif

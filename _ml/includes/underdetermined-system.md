@@ -5,7 +5,7 @@
 \section{Underdetermined System}
 
 \setupplotcode{import teaching_plots as plot}
-\plotcode{plot.under_determined_system(diagrams='../slides/diagrams/ml')}
+\plotcode{plot.under_determined_system(diagrams='\diagramsDir/ml')}
 
 \notes{What about the situation where you have more parameters than data in your simultaneous equation? This is known as an *underdetermined* system. In fact this set up is in some sense *easier* to solve, because we don't need to think about introducing a slack variable (although it might make a lot of sense from a *modelling* perspective to do so).
 
@@ -32,24 +32,24 @@ $$m = \frac{\dataScalar_1 - c}{\inputScalar}$$
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('under_determined_system{samp:0>3}.svg', 
-                            directory='../slides/diagrams/ml', samp=IntSlider(0, 0, 10, 1))}
+                            directory='\diagramsDir/ml', samp=IntSlider(0, 0, 10, 1))}
 
 \slides{
 \define{width}{40%}
 \startanimation{under_determined_system}{0}{9}
-\newframe{\includediagram{../slides/diagrams/ml/under_determined_system000}{\width}}{under_determined_system}
-\newframe{\includediagram{../slides/diagrams/ml/under_determined_system001}{\width}}{under_determined_system}
-\newframe{\includediagram{../slides/diagrams/ml/under_determined_system002}{\width}}{under_determined_system}
-\newframe{\includediagram{../slides/diagrams/ml/under_determined_system003}{\width}}{under_determined_system}
-\newframe{\includediagram{../slides/diagrams/ml/under_determined_system004}{\width}}{under_determined_system}
-\newframe{\includediagram{../slides/diagrams/ml/under_determined_system005}{\width}}{under_determined_system}
-\newframe{\includediagram{../slides/diagrams/ml/under_determined_system006}{\width}}{under_determined_system}
-\newframe{\includediagram{../slides/diagrams/ml/under_determined_system007}{\width}}{under_determined_system}
-\newframe{\includediagram{../slides/diagrams/ml/under_determined_system008}{\width}}{under_determined_system}
-\newframe{\includediagram{../slides/diagrams/ml/under_determined_system009}{\width}}{under_determined_system}
+\newframe{\includediagram{\diagramsDir/ml/under_determined_system000}{\width}}{under_determined_system}
+\newframe{\includediagram{\diagramsDir/ml/under_determined_system001}{\width}}{under_determined_system}
+\newframe{\includediagram{\diagramsDir/ml/under_determined_system002}{\width}}{under_determined_system}
+\newframe{\includediagram{\diagramsDir/ml/under_determined_system003}{\width}}{under_determined_system}
+\newframe{\includediagram{\diagramsDir/ml/under_determined_system004}{\width}}{under_determined_system}
+\newframe{\includediagram{\diagramsDir/ml/under_determined_system005}{\width}}{under_determined_system}
+\newframe{\includediagram{\diagramsDir/ml/under_determined_system006}{\width}}{under_determined_system}
+\newframe{\includediagram{\diagramsDir/ml/under_determined_system007}{\width}}{under_determined_system}
+\newframe{\includediagram{\diagramsDir/ml/under_determined_system008}{\width}}{under_determined_system}
+\newframe{\includediagram{\diagramsDir/ml/under_determined_system009}{\width}}{under_determined_system}
 \endanimation
 }
 
-\notes{\figure{\includediagram{../slides/diagrams/ml/under_determined_system009}{40%}}{An underdetermined system can be fit by considering uncertainty. Multiple solutions are consistent with one specified point.}{under-determined-system-9}}
+\notes{\figure{\includediagram{\diagramsDir/ml/under_determined_system009}{40%}}{An underdetermined system can be fit by considering uncertainty. Multiple solutions are consistent with one specified point.}{under-determined-system-9}}
 
 \endif

@@ -23,14 +23,14 @@ conditional | $P(X=x\vert Y=y)$ | prob. that X=x *given that* Y=y
   
 
 \setupplotcode{import teaching_plots as plot}
-\plotcode{plot.prob_diagram(diagrams='../slides/diagrams/mlai')}
+\plotcode{plot.prob_diagram(diagrams='\diagramsDir/mlai')}
 
 \subsection{A Pictorial Definition of Probability}
 
 \setupplotcode{import teaching_plots as plot}
 \plotcode{plot.prob_diagram(diagrams='../slides/diagrams')}
 
-\figure{\includediagram{../slides/diagrams/mlai/prob_diagram}{60%}}{Diagram representing the different probabilities, joint, marginal and conditional. This diagram was inspired by lectures given by Christopher Bishop.}{prob-diagram}
+\figure{\includediagram{\diagramsDir/mlai/prob_diagram}{60%}}{Diagram representing the different probabilities, joint, marginal and conditional. This diagram was inspired by lectures given by Christopher Bishop.}{prob-diagram}
 
 \alignright{Inspired by lectures from Christopher Bishop}
 

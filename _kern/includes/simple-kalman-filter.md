@@ -29,17 +29,17 @@
 		
 \setupcode{import teaching_plots as plot}
 
-\plotcode{plot.kronecker_illustrate(diagrams='../slides/diagrams/kern')}
+\plotcode{plot.kronecker_illustrate(diagrams='\diagramsDir/kern')}
 
 ### Kronecker Product
 
-\includediagram{../slides/diagrams/kern/kronecker_illustrate}
+\includediagram{\diagramsDir/kern/kronecker_illustrate}
 
-\plotcode{plot.kronecker_IK(diagrams='../slides/diagrams/kern')}
+\plotcode{plot.kronecker_IK(diagrams='\diagramsDir/kern')}
 
 ### Kronecker Product
 
-\includediagram{../slides/diagrams/kern/kronecker_IK}
+\includediagram{\diagramsDir/kern/kronecker_IK}
 
 
 ### Stacking and Kronecker Products
@@ -62,31 +62,31 @@ gpKalmanFilterKroneckerPlot2
 For this stacking the marginal distribution over *time* is given
 by the block diagonals.
 
-\plotcode{plot.kronecker_IK_highlight(diagrams='../slides/diagrams/kern')}
+\plotcode{plot.kronecker_IK_highlight(diagrams='\diagramsDir/kern')}
 
 \setupcode{import pods}
 \displaycode{pods.notebook.display_plots('kronecker_IK_highlighted{count:0>3}.svg', 
-                            diagrams='../slides/diagrams/kern', count=(1,5))}
+                            diagrams='\diagramsDir/kern', count=(1,5))}
 
 ### {data-transition="none"}
 
-\includediagram{../slides/diagrams/kern/kronecker_IK_highlighted001}
+\includediagram{\diagramsDir/kern/kronecker_IK_highlighted001}
 
 ### {data-transition="none"}
 
-\includediagram{../slides/diagrams/kern/kronecker_IK_highlighted002}
+\includediagram{\diagramsDir/kern/kronecker_IK_highlighted002}
 
 ### {data-transition="none"}
 
-\includediagram{../slides/diagrams/kern/kronecker_IK_highlighted003}
+\includediagram{\diagramsDir/kern/kronecker_IK_highlighted003}
 
 ### {data-transition="none"}
 
-\includediagram{../slides/diagrams/kern/kronecker_IK_highlighted004}
+\includediagram{\diagramsDir/kern/kronecker_IK_highlighted004}
 
 ### {data-transition="none"}
 
-\includediagram{../slides/diagrams/kern/kronecker_IK_highlighted005}
+\includediagram{\diagramsDir/kern/kronecker_IK_highlighted005}
 
 ### Two Ways of Stacking
 
@@ -107,36 +107,36 @@ gpKalmanFilterKroneckerPlot3
 For this stacking the marginal distribution over the latent
 *dimensions* is given by the block diagonals.
 
-\plotcode{plot.kronecker_IK_highlight(reverse=True, diagrams='../slides/diagrams/kern')}
+\plotcode{plot.kronecker_IK_highlight(reverse=True, diagrams='\diagramsDir/kern')}
 
-\displaycode{pods.notebook.display_plots('kronecker_KI_highlighted{count:0>3}.svg', '../slides/diagrams/kern', count=(1,5))}
+\displaycode{pods.notebook.display_plots('kronecker_KI_highlighted{count:0>3}.svg', '\diagramsDir/kern', count=(1,5))}
 
-\plotcode{plot.kronecker_IK(reverse=True, diagrams='../slides/diagrams/kern')}
-
-### {data-transition="none"}
-
-\includediagram{../slides/diagrams/kern/kronecker_KI_highlighted001}
+\plotcode{plot.kronecker_IK(reverse=True, diagrams='\diagramsDir/kern')}
 
 ### {data-transition="none"}
 
-\includediagram{../slides/diagrams/kern/kronecker_KI_highlighted002}
+\includediagram{\diagramsDir/kern/kronecker_KI_highlighted001}
 
 ### {data-transition="none"}
 
-\includediagram{../slides/diagrams/kern/kronecker_KI_highlighted003}
+\includediagram{\diagramsDir/kern/kronecker_KI_highlighted002}
 
 ### {data-transition="none"}
 
-\includediagram{../slides/diagrams/kern/kronecker_KI_highlighted004}
+\includediagram{\diagramsDir/kern/kronecker_KI_highlighted003}
 
 ### {data-transition="none"}
 
-\includediagram{../slides/diagrams/kern/kronecker_KI_highlighted005}
+\includediagram{\diagramsDir/kern/kronecker_KI_highlighted004}
+
+### {data-transition="none"}
+
+\includediagram{\diagramsDir/kern/kronecker_KI_highlighted005}
 
 
 ### Mapping from Latent Process to Observed {data-transition="none"}
 
-\includediagram{../slides/diagrams/kern/kronecker_KI}
+\includediagram{\diagramsDir/kern/kronecker_KI}
 gpKalmanFilterKroneckerPlot4
 
 
@@ -147,11 +147,11 @@ matrix,
 $$\dataVector_{i, :} = \mappingMatrix\inputVector_{i, :} + \noiseVector_{i, :}$$
 $$\noiseVector \sim \gaussianSamp{\zerosVector}{\dataStd^2\eye}$$
 
-\plotcode{plot.kronecker_WX(diagrams='../slides/diagrams/kern')}
+\plotcode{plot.kronecker_WX(diagrams='\diagramsDir/kern')}
 
 ### {data-transition="none"}
 
-\includediagram{../slides/diagrams/kern/kronecker_WX}
+\includediagram{\diagramsDir/kern/kronecker_WX}
 
 ### Output Covariance {data-transition="none"}
 

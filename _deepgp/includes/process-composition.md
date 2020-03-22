@@ -18,7 +18,7 @@ rc("font", **{'family':'sans-serif','sans-serif':['Helvetica'],'size':30})
 rc("text", usetex=True)}
 
 \plotcode{pgm = plot.horizontal_chain(depth=5)
-pgm.render().figure.savefig("../slides/diagrams/deepgp/deep-markov.svg", transparent=True)}
+pgm.render().figure.savefig("\diagramsDir/deepgp/deep-markov.svg", transparent=True)}
 
 \newslide{Equivalent to Markov Chain}
 \slides{
@@ -27,18 +27,18 @@ pgm.render().figure.savefig("../slides/diagrams/deepgp/deep-markov.svg", transpa
   p(\dataVector|\inputVector)= p(\dataVector|\mappingFunctionVector_5)p(\mappingFunctionVector_5|\mappingFunctionVector_4)p(\mappingFunctionVector_4|\mappingFunctionVector_3)p(\mappingFunctionVector_3|\mappingFunctionVector_2)p(\mappingFunctionVector_2|\mappingFunctionVector_1)p(\mappingFunctionVector_1|\inputVector)
   $$
 
-\figure{\includediagram{../slides/diagrams/deepgp/deep-markov}{80%}}{Probabilistically the deep Gaussian process can be represented as a Markov chain.}{deep-markov}
+\figure{\includediagram{\diagramsDir/deepgp/deep-markov}{80%}}{Probabilistically the deep Gaussian process can be represented as a Markov chain.}{deep-markov}
 
 \setupplotcode{from matplotlib import rc
 rc("font", **{'family':'sans-serif','sans-serif':['Helvetica'], 'size':15})
 rc("text", usetex=True)}
 
 \plotcode{pgm = plot.vertical_chain(depth=5)
-pgm.render().figure.savefig("../slides/diagrams/deepgp/deep-markov-vertical.svg", transparent=True)}
+pgm.render().figure.savefig("\diagramsDir/deepgp/deep-markov-vertical.svg", transparent=True)}
 
 \newslide{}
 
-\figure{\includediagram{../slides/diagrams/deepgp/deep-markov-vertical}{7%}}{More usually deep probabilistic models are written vertically rather than horizontally as in the Markov chain.}{deep-markov-vertical}
+\figure{\includediagram{\diagramsDir/deepgp/deep-markov-vertical}{7%}}{More usually deep probabilistic models are written vertically rather than horizontally as in the Markov chain.}{deep-markov-vertical}
 
 \subsection{Why Deep?}
 
@@ -63,18 +63,18 @@ A one off discontinuity is easy to model with a Gaussian process, or even multip
 
 \newslide{}
 
-\slides{\includediagram{../slides/diagrams/deepgp/deep-markov-vertical}}
+\slides{\includediagram{\diagramsDir/deepgp/deep-markov-vertical}}
 
 \plotcode{pgm = plot.vertical_chain(depth=5, shape=[2, 7])
 pgm.add_node(daft.Node('y_2', r'$\mathbf{y}_2$', 1.5, 3.5, observed=True))
 pgm.add_edge('f_2', 'y_2')
-pgm.render().figure.savefig("../slides/diagrams/deepgp/deep-markov-vertical-side.svg", transparent=True)}
+pgm.render().figure.savefig("\diagramsDir/deepgp/deep-markov-vertical-side.svg", transparent=True)}
 
 \newslide{}
 
 \notes{Additionally, we are not constrained to the formalism of the chain. For example, we can easily add single nodes emerging from some point in the depth of the chain. This allows us to combine the benefits of the graphical modelling formalism, but with a powerful framework for relating one set of variables to another, that of Gaussian processes}
 
-\figure{\includediagram{../slides/diagrams/deepgp/deep-markov-vertical-side}{15%}}{More generally we aren't constrained by the Markov chain. We can design structures that respect our belief about the underlying conditional dependencies. Here we are adding a side note from the chain.}{deep-markov-vertical-side}
+\figure{\includediagram{\diagramsDir/deepgp/deep-markov-vertical-side}{15%}}{More generally we aren't constrained by the Markov chain. We can design structures that respect our belief about the underlying conditional dependencies. Here we are adding a side note from the chain.}{deep-markov-vertical-side}
 
 
 \endif

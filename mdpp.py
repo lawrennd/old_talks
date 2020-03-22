@@ -48,9 +48,15 @@ parser.add_argument("-e", "--exercises", default=True, action='store_true',
 parser.add_argument("-a", "--assignment", default=False, action='store_true',
 		   help="Whether notes are an assignment or not")
 
+parser.add_argument("-d", "--diagrams-dir", type=str,
+                    help="Directory to find the diagrams in")
 
 
 args = parser.parse_args()
+
+diagrams_dir = '../slides/diagrams'
+if args.diagrams_dir:
+    diagrams_dir = args.diagrams_dir
 
 arglist = ['+n', '-U "\\\\" "" "{" "}{" "}" "{" "}" "#" ""']
 if args.to:
@@ -76,7 +82,9 @@ if args.code is not None and args.code != 'none':
    if args.code == 'plot':
       arglist.append('-DHELPERCODE=1')
       arglist.append('-DPLOTCODE=1')
-      
+
+arglist.append('-DdiagramsDir={diagrams_dir}'.format(diagrams_dir=diagrams_dir))
+
 if args.include_path:
    arglist.append('-I{include}'.format(include=args.include_path))
 if args.output:

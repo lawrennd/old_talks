@@ -3,7 +3,7 @@
 \editme
 \newslide{Nystr\"om Method}
 
-\includeimg{../slides/diagrams/cov_approx.png}{90%}{negate}
+\includeimg{\diagramsDir/cov_approx.png}{90%}{negate}
 \caption{Figure originally from presentation by Ed Snelson at NIPS}
 \notes{The Nystr\"om approximation takes the form,}
 $$

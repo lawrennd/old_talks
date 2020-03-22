@@ -8,13 +8,13 @@
 \newslide{An Intelligent System}
 
 
-\figure{\includempfour{../slides/diagrams/personal/paolo-save.mp4}{80%}}{An advanced adaptable machine learning system.}{paolo-save}
+\figure{\includempfour{\diagramsDir/personal/paolo-save.mp4}{80%}}{An advanced adaptable machine learning system.}{paolo-save}
 
 \alignright{\smalltext{Joint work with M. Milo}}
 
 \newslide{An Intelligent System}
 
-\figure{\includempfour{../slides/diagrams/personal/paolo-peppercorn.mp4}{40%}}{A peppercorn is a system failure that's the result of designed behavior.}{paolo-peppercorn}
+\figure{\includempfour{\diagramsDir/personal/paolo-peppercorn.mp4}{40%}}{A peppercorn is a system failure that's the result of designed behavior.}{paolo-peppercorn}
 
 \alignright{\smalltext{Joint work with M. Milo}}
 

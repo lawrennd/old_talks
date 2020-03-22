@@ -13,7 +13,7 @@ import mlai
 import gp_tutorial}
 
 \plotcode{np.random.seed(125)
-diagrams = '../slides/diagrams/gp'
+diagrams = '\diagramsDir/gp'
 
 black_color=[0., 0., 0.]
 red_color=[1., 0., 0.]
@@ -135,21 +135,21 @@ for i, ls in enumerate(lengthscales):
 
 \slides{
 \startanimation{gp-optimise}{0}{10}
-\newframe{\columns{\includediagram{../slides/diagrams/gp/gp-optimise000}}{\includediagram{../slides/diagrams/gp/gp-optimise001}}{50%}{50%}}{gp-optimise}
-\newframe{\columns{\includediagram{../slides/diagrams/gp/gp-optimise002}}{\includediagram{../slides/diagrams/gp/gp-optimise003}}{50%}{50%}}{gp-optimise}
-\newframe{\columns{\includediagram{../slides/diagrams/gp/gp-optimise004}}{\includediagram{../slides/diagrams/gp/gp-optimise005}}{50%}{50%}}{gp-optimise}
-\newframe{\columns{\includediagram{../slides/diagrams/gp/gp-optimise006}}{\includediagram{../slides/diagrams/gp/gp-optimise007}}{50%}{50%}}{gp-optimise}
-\newframe{\columns{\includediagram{../slides/diagrams/gp/gp-optimise008}}{\includediagram{../slides/diagrams/gp/gp-optimise009}}{50%}{50%}}{gp-optimise}
-\newframe{\columns{\includediagram{../slides/diagrams/gp/gp-optimise010}}{\includediagram{../slides/diagrams/gp/gp-optimise011}}{50%}{50%}}{gp-optimise}
-\newframe{\columns{\includediagram{../slides/diagrams/gp/gp-optimise012}}{\includediagram{../slides/diagrams/gp/gp-optimise013}}{50%}{50%}}{gp-optimise}
-\newframe{\columns{\includediagram{../slides/diagrams/gp/gp-optimise014}}{\includediagram{../slides/diagrams/gp/gp-optimise015}}{50%}{50%}}{gp-optimise}
-\newframe{\columns{\includediagram{../slides/diagrams/gp/gp-optimise016}}{\includediagram{../slides/diagrams/gp/gp-optimise017}}{50%}{50%}}{gp-optimise}
-\newframe{\columns{\includediagram{../slides/diagrams/gp/gp-optimise018}}{\includediagram{../slides/diagrams/gp/gp-optimise019}}{50%}{50%}}{gp-optimise}
-\newframe{\columns{\includediagram{../slides/diagrams/gp/gp-optimise020}}{\includediagram{../slides/diagrams/gp/gp-optimise021}}{50%}{50%}}{gp-optimise}
+\newframe{\columns{\includediagram{\diagramsDir/gp/gp-optimise000}}{\includediagram{\diagramsDir/gp/gp-optimise001}}{50%}{50%}}{gp-optimise}
+\newframe{\columns{\includediagram{\diagramsDir/gp/gp-optimise002}}{\includediagram{\diagramsDir/gp/gp-optimise003}}{50%}{50%}}{gp-optimise}
+\newframe{\columns{\includediagram{\diagramsDir/gp/gp-optimise004}}{\includediagram{\diagramsDir/gp/gp-optimise005}}{50%}{50%}}{gp-optimise}
+\newframe{\columns{\includediagram{\diagramsDir/gp/gp-optimise006}}{\includediagram{\diagramsDir/gp/gp-optimise007}}{50%}{50%}}{gp-optimise}
+\newframe{\columns{\includediagram{\diagramsDir/gp/gp-optimise008}}{\includediagram{\diagramsDir/gp/gp-optimise009}}{50%}{50%}}{gp-optimise}
+\newframe{\columns{\includediagram{\diagramsDir/gp/gp-optimise010}}{\includediagram{\diagramsDir/gp/gp-optimise011}}{50%}{50%}}{gp-optimise}
+\newframe{\columns{\includediagram{\diagramsDir/gp/gp-optimise012}}{\includediagram{\diagramsDir/gp/gp-optimise013}}{50%}{50%}}{gp-optimise}
+\newframe{\columns{\includediagram{\diagramsDir/gp/gp-optimise014}}{\includediagram{\diagramsDir/gp/gp-optimise015}}{50%}{50%}}{gp-optimise}
+\newframe{\columns{\includediagram{\diagramsDir/gp/gp-optimise016}}{\includediagram{\diagramsDir/gp/gp-optimise017}}{50%}{50%}}{gp-optimise}
+\newframe{\columns{\includediagram{\diagramsDir/gp/gp-optimise018}}{\includediagram{\diagramsDir/gp/gp-optimise019}}{50%}{50%}}{gp-optimise}
+\newframe{\columns{\includediagram{\diagramsDir/gp/gp-optimise020}}{\includediagram{\diagramsDir/gp/gp-optimise021}}{50%}{50%}}{gp-optimise}
 \endanimation
 }
 
-\notes{\figure{\columns{\includediagram{../slides/diagrams/gp/gp-optimise006}{100%}}{\includediagram{../slides/diagrams/gp/gp-optimise010}{100%}}{50%}{50%}
-\columns{\includediagram{../slides/diagrams/gp/gp-optimise016}{100%}}{\includediagram{../slides/diagrams/gp/gp-optimise021}{100%}}{50%}{50%}}{Variation in the data fit term, the capacity term and the negative log likelihood for different lengthscales.}{gp-optimise}}
+\notes{\figure{\columns{\includediagram{\diagramsDir/gp/gp-optimise006}{100%}}{\includediagram{\diagramsDir/gp/gp-optimise010}{100%}}{50%}{50%}
+\columns{\includediagram{\diagramsDir/gp/gp-optimise016}{100%}}{\includediagram{\diagramsDir/gp/gp-optimise021}{100%}}{50%}{50%}}{Variation in the data fit term, the capacity term and the negative log likelihood for different lengthscales.}{gp-optimise}}
 
 \endif

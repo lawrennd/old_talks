@@ -43,14 +43,14 @@ $$
 \subsection{Data Revolution}
 
 \notes{Machine learning has risen in prominence due to the rise in data availability, and its interconnection with computers. The high bandwidth connection between data and computer leads to a new interaction between us and data via the computer. It is that channel that is being mediated by machine learning techniques.}
-\figure{\includediagram{../slides/diagrams/data-science/new-flow-of-information}{60%}}{Large amounts of data and high interconnection bandwidth mean that we receive much of our information about the world around us through computers.}{data-science-information-flow}
+\figure{\includediagram{\diagramsDir/data-science/new-flow-of-information}{60%}}{Large amounts of data and high interconnection bandwidth mean that we receive much of our information about the world around us through computers.}{data-science-information-flow}
 
 \include{_supply-chain/includes/supply-chain-africa.md}
 \include{_ml/includes/process-emulation.md}
 
 \newslide{Kapchorwa District}
 
-\figure{\includediagramclass{../slides/diagrams/health/Kapchorwa_District_in_Uganda}{50%}}{The Kapchorwa District, home district of Stephen Kiprotich.}{kapchorwa-district-in-uganda}
+\figure{\includediagramclass{\diagramsDir/health/Kapchorwa_District_in_Uganda}{50%}}{The Kapchorwa District, home district of Stephen Kiprotich.}{kapchorwa-district-in-uganda}
 
 \notes{Stephen Kiprotich, the 2012 gold medal winner from the London Olympics, comes from Kapchorwa district, in eastern Uganda, near the border with Kenya.}
 

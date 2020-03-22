@@ -16,7 +16,7 @@
 
 \newslide{}
 
-\figure{\includepng{../slides/diagrams/ml/entropy-billiards}}{Bernoulli's simple kinetic models of gases assume that the molecules of air operate like billiard balls.}{entropy-billiards}
+\figure{\includepng{\diagramsDir/ml/entropy-billiards}}{Bernoulli's simple kinetic models of gases assume that the molecules of air operate like billiard balls.}{entropy-billiards}
 
 \newslide{}
 
@@ -34,6 +34,6 @@
     line(x, y, 'color', redColor, 'linewidth', 3);
     line([xlim(1) xlim(1)], ylim, 'color', blackColor);
     line(xlim, [ylim(1) ylim(1)], 'color', blackColor);
-    printLatexPlot('gaussian-histogram', '../slides/diagrams/ml', 0.75*textWidth)}
+    printLatexPlot('gaussian-histogram', '\diagramsDir/ml', 0.75*textWidth)}
 
 \endif

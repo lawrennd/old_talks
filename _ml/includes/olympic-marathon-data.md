@@ -8,7 +8,7 @@
 * Present results using pace per km.
 * In 1904 Marathon was badly organised leading to very slow times.
 }{
-\includejpg{../slides/diagrams/Stephen_Kiprotich}{100%}
+\includejpg{\diagramsDir/Stephen_Kiprotich}{100%}
 \smalltext{Image from Wikimedia Commons <http://bit.ly/16kMKHQ>}
 }{70%}{30%}
 
@@ -43,13 +43,13 @@ ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 
 mlai.write_figure(figure=fig, 
-                  filename='../slides/diagrams/datasets/olympic-marathon.svg', 
+                  filename='\diagramsDir/datasets/olympic-marathon.svg', 
 				  transparent=True, 
 				  frameon=True)}
 
 \newslide{Olympic Marathon Data}
 
-\figure{\includediagram{../slides/diagrams/datasets/olympic-marathon}}{Olympic marathon pace times since 1892.}{olympic-marathon}
+\figure{\includediagram{\diagramsDir/datasets/olympic-marathon}}{Olympic marathon pace times since 1892.}{olympic-marathon}
 
 \notes{Things to notice about the data include the outlier in 1904, in this year, the olympics was in St Louis, USA. Organizational problems and challenges with dust kicked up by the cars following the race meant that participants got lost, and only very few participants completed. 
 

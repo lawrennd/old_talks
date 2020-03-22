@@ -14,7 +14,7 @@
 
 \newslide{}
 
-\figure{\includepng{../slides/diagrams/health/1471-2105-12-180_1}{80%}}{The example is taken from the paper "A Simple Approach to Ranking Differentially Expressed Gene Expression Time Courses through Gaussian Process Regression." @Kalaitzis:simple11.}{a-simple-approach-to-ranking}
+\figure{\includepng{\diagramsDir/health/1471-2105-12-180_1}{80%}}{The example is taken from the paper "A Simple Approach to Ranking Differentially Expressed Gene Expression Time Courses through Gaussian Process Regression." @Kalaitzis:simple11.}{a-simple-approach-to-ranking}
 
 \aligncenter{<http://www.biomedcentral.com/1471-2105/12/180>}
 
@@ -44,12 +44,12 @@ ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 ax.set_title('log likelihood: {ll:.3}'.format(ll=m_full.log_likelihood()), fontsize=20)
 mlai.write_figure(figure=fig,
-                  filename='../slides/diagrams/gp/della-gatta-gene-gp.svg', 
+                  filename='\diagramsDir/gp/della-gatta-gene-gp.svg', 
                   transparent=True, frameon=True)}
 
 \newslide{TP53 Gene Data GP}
 
-\figure{\includediagram{../slides/diagrams/gp/della-gatta-gene-gp}{80%}}{Result of the fit of the Gaussian process model with the time scale parameter initialized to 50 minutes.}{della-gatta-gene-gp}
+\figure{\includediagram{\diagramsDir/gp/della-gatta-gene-gp}{80%}}{Result of the fit of the Gaussian process model with the time scale parameter initialized to 50 minutes.}{della-gatta-gene-gp}
 
 \notes{Now we try a model initialized with a longer length scale.}
 
@@ -65,12 +65,12 @@ ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 ax.set_title('log likelihood: {ll:.3}'.format(ll=m_full2.log_likelihood()), fontsize=20)
 mlai.write_figure(figure=fig,
-                  filename='../slides/diagrams/gp/della-gatta-gene-gp2.svg', 
+                  filename='\diagramsDir/gp/della-gatta-gene-gp2.svg', 
                   transparent=True, frameon=True)}
 
 \newslide{TP53 Gene Data GP}
 
-\figure{\includediagram{../slides/diagrams/gp/della-gatta-gene-gp2}{80%}}{Result of the fit of the Gaussian process model with the time scale parameter initialized to 2000 minutes.}{della-gatta-gene-gp2}
+\figure{\includediagram{\diagramsDir/gp/della-gatta-gene-gp2}{80%}}{Result of the fit of the Gaussian process model with the time scale parameter initialized to 2000 minutes.}{della-gatta-gene-gp2}
 
 \notes{Now we try a model initialized with a lower noise.}
 
@@ -87,24 +87,24 @@ ax.set_xlim(xlim)
 ax.set_ylim(ylim)
 ax.set_title('log likelihood: {ll:.3}'.format(ll=m_full3.log_likelihood()), fontsize=20)
 mlai.write_figure(figure=fig,
-                  filename='../slides/diagrams/gp/della-gatta-gene-gp3.svg', 
+                  filename='\diagramsDir/gp/della-gatta-gene-gp3.svg', 
                   transparent=True, frameon=True)}
 
 \newslide{TP53 Gene Data GP}
 
-\figure{\includediagram{../slides/diagrams/gp/della-gatta-gene-gp3}{80%}}{Result of the fit of the Gaussian process model with the noise initialized low (standard deviation 0.1) and the time scale parameter initialized to 20 minutes.}{della-gatta-gene-gp3}
+\figure{\includediagram{\diagramsDir/gp/della-gatta-gene-gp3}{80%}}{Result of the fit of the Gaussian process model with the noise initialized low (standard deviation 0.1) and the time scale parameter initialized to 20 minutes.}{della-gatta-gene-gp3}
 
 
 \setupplotcode{import teaching_plots as plot}
 
-\plotcode{plot.multiple_optima(diagrams='../slides/diagrams/gp')}
+\plotcode{plot.multiple_optima(diagrams='\diagramsDir/gp')}
 
 \newslide{Multiple Optima}
 
-\figure{\includediagram{../slides/diagrams/gp/multiple-optima000}{50%}}{}{gp-multiple-optima000}
+\figure{\includediagram{\diagramsDir/gp/multiple-optima000}{50%}}{}{gp-multiple-optima000}
 
 <!--\newslide{Multiple Optima}
 
-\includediagram{../slides/diagrams/gp/multiple-optima001}-->
+\includediagram{\diagramsDir/gp/multiple-optima001}-->
 
 \endif

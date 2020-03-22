@@ -18,6 +18,6 @@
 <script src="../scripts/ballworld/kappenball.js"></script>
 </div>}{Kappen Ball}{kappen-ball}
 
-<!--\includepng{../slides/diagrams/ml/kappen-ball}-->
+<!--\includepng{\diagramsDir/ml/kappen-ball}-->
 
 \endif

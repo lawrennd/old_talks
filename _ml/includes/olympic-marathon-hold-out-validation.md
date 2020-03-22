@@ -25,12 +25,12 @@ max_basis = 11}
                  model=mlai.LM, basis=basis, 
                  permute=False, objective_ylim=[0, 0.8], 
                  xlim=data_limits, prefix='olympic_val_extra', 
-                 diagrams='../slides/diagrams/ml')}
+                 diagrams='\diagramsDir/ml')}
 
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('olympic_val_extra_LM_polynomial_number{num_basis:0>3}.svg', 
-                            directory='../slides/diagrams/ml', 
+                            directory='\diagramsDir/ml', 
 							num_basis=IntSlider(1, 1, max_basis, 1))}
 
 \newslide{Future Prediction: Extrapolation}
@@ -38,21 +38,21 @@ from ipywidgets import IntSlider}
 \define{width}{80%}
 \define{animationName}{olympic_val_extra_LM_polynomial_number}
 \startanimation{\animationName}{1}{11}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_number001}{\width}}{\animationName}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_number002}{\width}}{\animationName}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_number003}{\width}}{\animationName}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_number004}{\width}}{\animationName}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_number005}{\width}}{\animationName}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_number006}{\width}}{\animationName}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_number007}{\width}}{\animationName}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_number008}{\width}}{\animationName}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_number009}{\width}}{\animationName}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_number010}{\width}}{\animationName}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_number011}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/olympic_val_extra_LM_polynomial_number001}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/olympic_val_extra_LM_polynomial_number002}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/olympic_val_extra_LM_polynomial_number003}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/olympic_val_extra_LM_polynomial_number004}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/olympic_val_extra_LM_polynomial_number005}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/olympic_val_extra_LM_polynomial_number006}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/olympic_val_extra_LM_polynomial_number007}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/olympic_val_extra_LM_polynomial_number008}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/olympic_val_extra_LM_polynomial_number009}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/olympic_val_extra_LM_polynomial_number010}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/olympic_val_extra_LM_polynomial_number011}{\width}}{\animationName}
 \endanimation
 }
 
-\notes{\figure{\includediagram{../slides/diagrams/ml/olympic_val_extra_LM_polynomial_number011}{80%}}{Olympic marathon data with validation error for extrapolation.}{olympic-val-extra-LM-polynomial-number-11}}
+\notes{\figure{\includediagram{\diagramsDir/ml/olympic_val_extra_LM_polynomial_number011}{80%}}{Olympic marathon data with validation error for extrapolation.}{olympic-val-extra-LM-polynomial-number-11}}
 
 
 
@@ -76,12 +76,12 @@ from ipywidgets import IntSlider}
                  model=mlai.LM, basis=basis, 
                  xlim=data_limits, prefix='olympic_val_inter', 
 				 objective_ylim=[0.1, 0.6], permute=True,
-   			     diagrams='../slides/diagrams/ml')}
+   			     diagrams='\diagramsDir/ml')}
 
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('olympic_val_inter_LM_polynomial_number{num_basis:0>3}.svg', 
-                            directory='../slides/diagrams/ml', 
+                            directory='\diagramsDir/ml', 
 							num_basis=IntSlider(1, 1, max_basis, 1))}
 
 \newslide{Future Prediction: Interpolation}
@@ -90,21 +90,21 @@ from ipywidgets import IntSlider}
 \define{width}{80%}
 \define{animationName}{olympic_val_inter_LM_polynomial_number}
 \startanimation{\animationName}{1}{11}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_number001}{\width}}{\animationName}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_number002}{\width}}{\animationName}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_number003}{\width}}{\animationName}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_number004}{\width}}{\animationName}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_number005}{\width}}{\animationName}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_number006}{\width}}{\animationName}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_number007}{\width}}{\animationName}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_number008}{\width}}{\animationName}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_number009}{\width}}{\animationName}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_number010}{\width}}{\animationName}
-\newframe{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_number011}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/olympic_val_inter_LM_polynomial_number001}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/olympic_val_inter_LM_polynomial_number002}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/olympic_val_inter_LM_polynomial_number003}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/olympic_val_inter_LM_polynomial_number004}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/olympic_val_inter_LM_polynomial_number005}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/olympic_val_inter_LM_polynomial_number006}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/olympic_val_inter_LM_polynomial_number007}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/olympic_val_inter_LM_polynomial_number008}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/olympic_val_inter_LM_polynomial_number009}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/olympic_val_inter_LM_polynomial_number010}{\width}}{\animationName}
+\newframe{\includediagram{\diagramsDir/ml/olympic_val_inter_LM_polynomial_number011}{\width}}{\animationName}
 \endanimation
 }
 
-\notes{\figure{\includediagram{../slides/diagrams/ml/olympic_val_inter_LM_polynomial_number011}{80%}}{Olympic marathon data with validation error for interpolation.}{olympic-val-inter-LM-polynomial-number-11}}
+\notes{\figure{\includediagram{\diagramsDir/ml/olympic_val_inter_LM_polynomial_number011}{80%}}{Olympic marathon data with validation error for interpolation.}{olympic-val-inter-LM-polynomial-number-11}}
 
 
 \subsection{Choice of Validation Set}

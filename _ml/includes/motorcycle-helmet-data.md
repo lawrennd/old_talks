@@ -19,11 +19,11 @@ xlim = (-20, 80)
 ylim = (-175, 125)
 ax.set_xlim(xlim)
 ax.set_ylim(ylim)
-mlai.write_figure(filename='../slides/diagrams/datasets/motorcycle-helmet.svg', 
+mlai.write_figure(filename='\diagramsDir/datasets/motorcycle-helmet.svg', 
             transparent=True, frameon=True)}
 
 \subsection{Motorcycle Helmet Data}
 
-\figure{\includediagram{../slides/diagrams/datasets/motorcycle-helmet}{80%}}{Motorcycle helmet data. The data consists of acceleration readings on a motorcycle helmet undergoing a collision. The data exhibits heteroschedastic (time varying) noise levles and non-stationarity.}{motorcycle-helment-data}
+\figure{\includediagram{\diagramsDir/datasets/motorcycle-helmet}{80%}}{Motorcycle helmet data. The data consists of acceleration readings on a motorcycle helmet undergoing a collision. The data exhibits heteroschedastic (time varying) noise levles and non-stationarity.}{motorcycle-helment-data}
 
 \endif

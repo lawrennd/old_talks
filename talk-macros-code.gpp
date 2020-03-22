@@ -5,7 +5,7 @@
 \code{urllib.request.urlretrieve('\url','\filename')}
 }
 \define{\downloadcode{filename}}{\downloadfile{https://raw.githubusercontent.com/lawrennd/talks/gh-pages/\filename.py}{\filename.py}}
-\define{\installcode{library}}{\code{\ifeq{\library}{pods}%pip install --upgrade git+https://github.com/sods/ods\else%pip install \library\endif}}
+\define{\installcode{library}}{\code{\ifeq{\library}{pods}%pip install --upgrade git+https://github.com/sods/ods\else\ifeq{\library}{PyDeepGP}%pip install --upgrade git+https://github.com/SheffieldML/PyDeepGP.git\endif\else%pip install \library\endif}}
 \define{\setupcode{block}}{\pythonblockstart
 \block
 \pythonblockend}

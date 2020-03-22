@@ -12,38 +12,38 @@ from ipywidgets import IntSlider}
 
 \newslide{}
 
-\slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{000}}{\widthVal}}{\stubname}{\divoptions}}
+\slides{\div{\includediagram{\diagramsDir/\concat{\stubname}{000}}{\widthVal}}{\stubname}{\divoptions}}
 
 \newslide{}
 
-\slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{001}}{\widthVal}}{\stubname}{\divoptions}}
+\slides{\div{\includediagram{\diagramsDir/\concat{\stubname}{001}}{\widthVal}}{\stubname}{\divoptions}}
 
 \newslide{}
 
-\slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{002}}{\widthVal}}{\stubname}{\divoptions}}
+\slides{\div{\includediagram{\diagramsDir/\concat{\stubname}{002}}{\widthVal}}{\stubname}{\divoptions}}
 
 \newslide{}
 
-\slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{003}}{\widthVal}}{\stubname}{\divoptions}}
+\slides{\div{\includediagram{\diagramsDir/\concat{\stubname}{003}}{\widthVal}}{\stubname}{\divoptions}}
 
 \newslide{}
 
-\slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{004}}{\widthVal}}{\stubname}{\divoptions}}
+\slides{\div{\includediagram{\diagramsDir/\concat{\stubname}{004}}{\widthVal}}{\stubname}{\divoptions}}
 
 \newslide{}
 
-\slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{005}}{\widthVal}}{\stubname}{\divoptions}}
+\slides{\div{\includediagram{\diagramsDir/\concat{\stubname}{005}}{\widthVal}}{\stubname}{\divoptions}}
 
 \newslide{}
 
-\slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{006}}{\widthVal}}{\stubname}{\divoptions}}
+\slides{\div{\includediagram{\diagramsDir/\concat{\stubname}{006}}{\widthVal}}{\stubname}{\divoptions}}
 
 \newslide{}
 
-\slides{\div{\includediagram{../slides/diagrams/\concat{\stubname}{007}}{\widthVal}}{\stubname}{\divoptions}}
+\slides{\div{\includediagram{\diagramsDir/\concat{\stubname}{007}}{\widthVal}}{\stubname}{\divoptions}}
 
-\notes{\figure{\includediagram{../slides/diagrams/\concat{\stubname}{006}}{\widthVal}}{Conversation relies on internal models of other individuals.}{\concat{\stubname}{-civil}}
-\figure{\includediagram{../slides/diagrams/\concat{\stubname}{007}}{\widthVal}}{Misunderstanding of context and who we are talking to leads to arguments.}{\concat{\stubname}{-argument}}}
+\notes{\figure{\includediagram{\diagramsDir/\concat{\stubname}{006}}{\widthVal}}{Conversation relies on internal models of other individuals.}{\concat{\stubname}{-civil}}
+\figure{\includediagram{\diagramsDir/\concat{\stubname}{007}}{\widthVal}}{Misunderstanding of context and who we are talking to leads to arguments.}{\concat{\stubname}{-argument}}}
 
 \notes{Embodiment factors imply that, in our communication between humans, what is *not* said is, perhaps, more important than what is said. To communicate with each other we need to have a model of who each of us are.} 
 

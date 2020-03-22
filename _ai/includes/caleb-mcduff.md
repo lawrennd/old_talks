@@ -6,7 +6,7 @@
 
 \newslide{}
 
-\figure{\includejpg{../slides/diagrams/Caleb_McDuff_WIX_Silence_Racing_livery}{70%}}{Caleb McDuff driving for WIX Silence Racing.}{caleb-mcduff}
+\figure{\includejpg{\diagramsDir/Caleb_McDuff_WIX_Silence_Racing_livery}{70%}}{Caleb McDuff driving for WIX Silence Racing.}{caleb-mcduff}
 
 
 \endif

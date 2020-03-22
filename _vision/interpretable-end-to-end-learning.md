@@ -31,7 +31,7 @@ incremental: True
 
 \newslide{Bits and Atoms}
 
-\figure{\includejpg{../slides/diagrams/supply-chain/container-2539942_1920}{80%}}{The container is one of the major drivers of globalization, and arguably the largest agent of social change in the last 100 years. It reduces the cost of transportation, significantly changing the appropriate topology of distribution networks. The container makes it possible to ship goods halfway around the world for cheaper than it costs to process those goods, leading to an extended distribution topology.}{container-2539942_1920}
+\figure{\includejpg{\diagramsDir/supply-chain/container-2539942_1920}{80%}}{The container is one of the major drivers of globalization, and arguably the largest agent of social change in the last 100 years. It reduces the cost of transportation, significantly changing the appropriate topology of distribution networks. The container makes it possible to ship goods halfway around the world for cheaper than it costs to process those goods, leading to an extended distribution topology.}{container-2539942_1920}
 
 \section{End-to-End: Environment and Decision}
 
@@ -39,26 +39,26 @@ incremental: True
 
 \newslide{}
 
-\figure{\includediagram{../slides/diagrams/ai/ride-allocation-prediction}{60%}}{Some software components in a ride allocation system. Circled components are hypothetical, rectangles represent actual data.}{ride-allocation-system}
+\figure{\includediagram{\diagramsDir/ai/ride-allocation-prediction}{60%}}{Some software components in a ride allocation system. Circled components are hypothetical, rectangles represent actual data.}{ride-allocation-system}
 
 \newslide{}
 
-\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-pedestrian000}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
+\figure{\includediagram{\diagramsDir/ai/ml-system-downstream-pedestrian000}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
 
 \include{_uq/includes/emulation.md}
 
 \newslide{}
 
-\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-pedestrian000}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
+\figure{\includediagram{\diagramsDir/ai/ml-system-downstream-pedestrian000}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
 
 
 \newslide{}
 
-\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-pedestrian001}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
+\figure{\includediagram{\diagramsDir/ai/ml-system-downstream-pedestrian001}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
 
 \newslide{}
 
-\figure{\includediagram{../slides/diagrams/ai/ml-system-downstream-pedestrian}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
+\figure{\includediagram{\diagramsDir/ai/ml-system-downstream-pedestrian}{80%}}{A potential path of models in a machine learning system.}{ml-system-downstream-pedestrain}
 
 \newslide{Bayesian *System* Optimization}
 

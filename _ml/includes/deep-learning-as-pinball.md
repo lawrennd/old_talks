@@ -4,7 +4,7 @@
 
 \subsubsection{Deep Learning as Pinball}
 
-\figure{\includejpg{../slides/diagrams/576px-Early_Pinball}{50%}}{Deep learning models are composition of simple functions. We can think of a pinball machine as an analogy. Each layer of pins corresponds to one of the layers of functions in the model. Input data is represented by the location of the ball from left to right when it is dropped in from the top. Output class comes from the position of the ball as it leaves the pins at the bottom.}{early-pinball}
+\figure{\includejpg{\diagramsDir/576px-Early_Pinball}{50%}}{Deep learning models are composition of simple functions. We can think of a pinball machine as an analogy. Each layer of pins corresponds to one of the layers of functions in the model. Input data is represented by the location of the ball from left to right when it is dropped in from the top. Output class comes from the position of the ball as it leaves the pins at the bottom.}{early-pinball}
 
 \notes{Sometimes deep learning models are described as being like the brain, or too complex to understand, but one analogy I find useful to help the gist of these models is to think of them as being similar to early pin ball machines. 
 
@@ -24,11 +24,11 @@ from ipywidgets import IntSlider}
 
 \newslide{}
 
-\figure{\includediagram{../slides/diagrams/pinball001}{80%}}{At initialization, the pins, which represent the parameters of the function, aren't in the right place to bring the balls to the correct decisions.}{pinball-initialization}
+\figure{\includediagram{\diagramsDir/pinball001}{80%}}{At initialization, the pins, which represent the parameters of the function, aren't in the right place to bring the balls to the correct decisions.}{pinball-initialization}
 
 \newslide{}
 
-\figure{\includediagram{../slides/diagrams/pinball002}{80%}}{After learning the pins are now in the right place to bring the balls to the correct decisions.}{pinball-trained}
+\figure{\includediagram{\diagramsDir/pinball002}{80%}}{After learning the pins are now in the right place to bring the balls to the correct decisions.}{pinball-trained}
 
 \notes{Learning involves moving all the pins to be in the correct position, so that the ball ends up in the right place when it's fallen through the machine. But moving all these pins in hyperspace can be difficult. 
 

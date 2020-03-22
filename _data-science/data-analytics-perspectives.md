@@ -27,7 +27,7 @@ abstract: >
 
 \subsection{Operating at Different Time Scales}
 
-\includediagram{../slides/diagrams/data-science/ai-time-frame}
+\includediagram{\diagramsDir/data-science/ai-time-frame}
 
 \center{\coloryellow{data science}&nbsp;&nbsp;\colorcyan{artificial intelligence}}
 

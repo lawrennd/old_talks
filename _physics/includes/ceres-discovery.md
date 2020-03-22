@@ -11,31 +11,31 @@ Year is 1801 Planet Ceres discovered in January by Giuseppe Piazzi, an italian p
 \slides{
 \newslide{} 
 
-\figure{\includepng{../slides/diagrams/ceres/ceres-optimized-totally-faint}{60%}}{}{ceres-optimized-totally-faint}
+\figure{\includepng{\diagramsDir/ceres/ceres-optimized-totally-faint}{60%}}{}{ceres-optimized-totally-faint}
 
 \newslide{}
 
-\figure{\includepng{../slides/diagrams/ceres/ceres-optimized-extremely-faint}{60%}}{}{ceres-optimized-extremely-faint}
+\figure{\includepng{\diagramsDir/ceres/ceres-optimized-extremely-faint}{60%}}{}{ceres-optimized-extremely-faint}
 
 \newslide{}
 
-\figure{\includepng{../slides/diagrams/ceres/ceres-optimized-very-faint}{60%}}{}{ceres-optimized-very-faint}
+\figure{\includepng{\diagramsDir/ceres/ceres-optimized-very-faint}{60%}}{}{ceres-optimized-very-faint}
 
 \newslide{}
 
-\figure{}{\includepng{../slides/diagrams/ceres/ceres-optimized-faint}{60%}}{}{ceres-optimized-faint}
+\figure{}{\includepng{\diagramsDir/ceres/ceres-optimized-faint}{60%}}{}{ceres-optimized-faint}
 
 \newslide{}
 }
-\figure{\includepng{../slides/diagrams/ceres/ceres-optimized}{60%}}{}{ceres-optimized}
+\figure{\includepng{\diagramsDir/ceres/ceres-optimized}{60%}}{}{ceres-optimized}
 
 \newslide{}
 
-\figure{\includepng{../slides/diagrams/ceres/giuseppe-piazzi}{60%}}{}{giuseppe-piazzi}
+\figure{\includepng{\diagramsDir/ceres/giuseppe-piazzi}{60%}}{}{giuseppe-piazzi}
 
 \newslide{}
 
-\figure{\includepng{../slides/diagrams/ceres/monthly-magazine-ceres-piazzi}}{}{monthly-magazine-ceres-piazzi}
+\figure{\includepng{\diagramsDir/ceres/monthly-magazine-ceres-piazzi}}{}{monthly-magazine-ceres-piazzi}
 
 \newslide{}
 
@@ -43,7 +43,7 @@ Year is 1801 Planet Ceres discovered in January by Giuseppe Piazzi, an italian p
 
 @Piazzi:monatliche1801
 
-<!--[\includepng{../slides/diagrams/ceres/ceres-beobachtung-von-piazzi}{100%}](https://play.google.com/books/reader?printsec=frontcover&output=reader&id=JBw4AAAAMAAJ&pg=GBS.PA280)-->
+<!--[\includepng{\diagramsDir/ceres/ceres-beobachtung-von-piazzi}{100%}](https://play.google.com/books/reader?printsec=frontcover&output=reader&id=JBw4AAAAMAAJ&pg=GBS.PA280)-->
 
 \speakernotes{Image data ```wget http://server3.sky-map.org/imgcut?survey=DSS2&img_id=all&angle=4&ra=3.5&de=17.25&width=1600&height=1600&projection=tan&interpolation=bicubic&jpeg_quality=0.8&output_type=png```}
 
@@ -84,11 +84,11 @@ Year is 1801 Planet Ceres discovered in January by Giuseppe Piazzi, an italian p
 
 \newslide{}
 
-\figure{\includediagram{../slides/diagrams/ceres/ceres-data}{80%}}{}{ceres-data}
+\figure{\includediagram{\diagramsDir/ceres/ceres-data}{80%}}{}{ceres-data}
 
 \newslide{}
 
-\figure{\includepng{../slides/diagrams/ml/godfrey-kneller-isaac-newton-1689}}{}{Godfrey Kneller portrait of Isaac Newton}{godfrey-kneller-isaac-newton}
+\figure{\includepng{\diagramsDir/ml/godfrey-kneller-isaac-newton-1689}}{}{Godfrey Kneller portrait of Isaac Newton}{godfrey-kneller-isaac-newton}
 
 \notes{@Gauss:monatliche1801,@Gauss:astronomische02}
 
@@ -99,24 +99,24 @@ Year is 1801 Planet Ceres discovered in January by Giuseppe Piazzi, an italian p
 
 \includegooglebook{JBw4AAAAMAAJ}{PA647}
 
-<!--[\includepng{../slides/diagrams/ceres/gauss-ceres-prediction-monatliche}](https://play.google.com/books/reader?printsec=frontcover&output=reader&id=JBw4AAAAMAAJ&pg=GBS.PA647)-->
+<!--[\includepng{\diagramsDir/ceres/gauss-ceres-prediction-monatliche}](https://play.google.com/books/reader?printsec=frontcover&output=reader&id=JBw4AAAAMAAJ&pg=GBS.PA647)-->
 
 \newslide{}
 <!--trim=0cm 9cm 0cm 12cm, clip=true-->
 \includegooglebook{JBw4AAAAMAAJ}{PA647}
 
-<!--[\includepng{../slides/diagrams/ceres/gauss-ceres-prediction-monatliche}](https://play.google.com/books/reader?printsec=frontcover&output=reader&id=JBw4AAAAMAAJ&pg=GBS.PA647)-->
+<!--[\includepng{\diagramsDir/ceres/gauss-ceres-prediction-monatliche}](https://play.google.com/books/reader?printsec=frontcover&output=reader&id=JBw4AAAAMAAJ&pg=GBS.PA647)-->
 
 \newslide{}
 
 <!---
 
-\includepng{../slides/diagrams/ceres/ceres-orbit-gauss}
+\includepng{\diagramsDir/ceres/ceres-orbit-gauss}
 -->
 
 \newslide{}
 
-\figure{\includepng{../slides/diagrams/ceres/bendixen-carl-friedrich-gauss-1828}}{}{bendixen-carl-friedrich-gauss-1828}
+\figure{\includepng{\diagramsDir/ceres/bendixen-carl-friedrich-gauss-1828}}{}{bendixen-carl-friedrich-gauss-1828}
 
 
 <!--
@@ -127,7 +127,7 @@ Year is 1801 Planet Ceres discovered in January by Giuseppe Piazzi, an italian p
 
 \newslide{}
 
-\figure{\includepng{../slides/diagrams/ceres/piazzi-cerere}{60%}}{}{piazzi-cerere}
+\figure{\includepng{\diagramsDir/ceres/piazzi-cerere}{60%}}{}{piazzi-cerere}
 
 \speakernotes{Use image of the earth to introduce the unpredictability of the weather. 
 
@@ -143,19 +143,19 @@ Ceres is 0.0764 earths wide.
 
 \newslide{}
   
-\figure{\centerdiv{\includeimg{../slides/diagrams/ceres/ceres-optimized.png}{3.82%}{}{left}
-\includeimg{../slides/diagrams/ceres/full-moon-2010.png}{13.65%}{}{left}
-\includeimg{../slides/diagrams/ceres/the-earth-seen-from-apollo-17.png}{50%}{}{left}}}{The surface area of Ceres is 2,850,000 square kilometers, it's a little bigger than Greenland, but quite a lot colder. The moone is about 27% of the width of the Earth. Ceres is 7% of the width of the Earth.}{ceres-moon-earth}
+\figure{\centerdiv{\includeimg{\diagramsDir/ceres/ceres-optimized.png}{3.82%}{}{left}
+\includeimg{\diagramsDir/ceres/full-moon-2010.png}{13.65%}{}{left}
+\includeimg{\diagramsDir/ceres/the-earth-seen-from-apollo-17.png}{50%}{}{left}}}{The surface area of Ceres is 2,850,000 square kilometers, it's a little bigger than Greenland, but quite a lot colder. The moone is about 27% of the width of the Earth. Ceres is 7% of the width of the Earth.}{ceres-moon-earth}
 
 \newslide{}
   
 
-\figure{\includejpg{../slides/diagrams/ceres/planets-2008}{}}{This image from http://upload.wikimedia.org/wikipedia/commons/c/c4/Planets2008.jpg}{planets-2008}
+\figure{\includejpg{\diagramsDir/ceres/planets-2008}{}}{This image from http://upload.wikimedia.org/wikipedia/commons/c/c4/Planets2008.jpg}{planets-2008}
   
 \newslide{}
 
 
-\figure{\includejpg{../slides/diagrams/ceres/ceres}{60%}}{This image from http://www.popsci.com/sites/popsci.com/files/styles/large_1x_/public/dawn-two-bright-spots.jpg?itok=P5oeSRrc}{ceres}
+\figure{\includejpg{\diagramsDir/ceres/ceres}{60%}}{This image from http://www.popsci.com/sites/popsci.com/files/styles/large_1x_/public/dawn-two-bright-spots.jpg?itok=P5oeSRrc}{ceres}
 
 
 \endif

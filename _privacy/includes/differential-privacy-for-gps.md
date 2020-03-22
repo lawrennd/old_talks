@@ -3,7 +3,7 @@
 
 \editme
 
-\newslide{Differential Privacy, summary}{data-background="../slides/diagrams/pres_bg.png"}
+\newslide{Differential Privacy, summary}{data-background="\diagramsDir/pres_bg.png"}
 
 * We want to protect a user from a linkage attack...
 
@@ -28,7 +28,7 @@ Privacy](https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf) by
 We have a dataset in which the inputs, $\inputMatrix$, are **public**. The
 outputs, $\dataVector$, we want to keep **private**.
 
-\includepng{../slides/diagrams/privacy/kung_pseudo_pert}{65%}{negate}
+\includepng{\diagramsDir/privacy/kung_pseudo_pert}{65%}{negate}
 
 **Data consists of the heights and weights of 287 women from a census of
 the !Kung [@Howell:kungsan67]**
@@ -39,11 +39,11 @@ the !Kung [@Howell:kungsan67]**
 function $\tilde{f}$ is $(\varepsilon, \delta)$-differentially
 private by adding a scaled sample from a GP prior.
 
-\includeimg{../slides/diagrams/privacy/hall1.png}{30%}{negate}
+\includeimg{\diagramsDir/privacy/hall1.png}{30%}{negate}
 
 3 pages of maths ahead!
 
-\newslide{Applied to Gaussian Processes}{data-background="../slides/diagrams/pres_bg.png"}
+\newslide{Applied to Gaussian Processes}{data-background="\diagramsDir/pres_bg.png"}
 
 * We applied this method to the GP posterior.
 
@@ -64,7 +64,7 @@ $\dataVector$.
 $\dataVector$.
 
 
-\newslide{Applied to Gaussian Processes}{data-background="../slides/diagrams/pres_bg.png"}
+\newslide{Applied to Gaussian Processes}{data-background="\diagramsDir/pres_bg.png"}
 
 * Using the representer theorem, we can write
     $$|| \mappingFunction_D(\inputVector_*) -
@@ -79,7 +79,7 @@ $\dataVector$.
 \left(\dataVector - \dataVector^\prime \right)$
 
 
-\newslide{}{data-background="../slides/diagrams/pres_bg.png" }
+\newslide{}{data-background="\diagramsDir/pres_bg.png" }
 
 * L2 Norm
 
@@ -105,7 +105,7 @@ $d\;||\kernelMatrix^{-1}||_\infty$
 This 'works' in that it allows DP predictions...but to avoid too much
 noise, the value of $\varepsilon$ is too large (here it is 100)
 
-\includepng{../slides/diagrams/privacy/kung_standard_simple}{50%}{negate}
+\includepng{\diagramsDir/privacy/kung_standard_simple}{50%}{negate}
 
 EQ kernel, $\lengthScale = 25$ years, $\Delta=100$cm
 
@@ -115,6 +115,6 @@ EQ kernel, $\lengthScale = 25$ years, $\Delta=100$cm
 Using sparse methods (i.e. inducing inputs) can help reduce the
 sensitivity a little. We'll see more on this later.
 
-\includepng{../slides/diagrams/privacy/kung_inducing_simple}{70%}{negate}
+\includepng{\diagramsDir/privacy/kung_inducing_simple}{70%}{negate}
 
 \endif

@@ -22,7 +22,7 @@ text =['$\phi(x) = 1$',
 
 plot.basis(mlai.polynomial, x_min=-1.3, x_max=1.3, 
            fig=f, ax=ax, loc=loc, text=text, num_basis=5,
-		   diagrams='../slides/diagrams/ml')
+		   diagrams='\diagramsDir/ml')
 }
 
 \subsection{Functions Derived from Polynomial Basis}
@@ -34,19 +34,19 @@ $$
 \slides{
 \define{width}{80%}
 \startanimation{polynomial_basis}{0}{4}
-\newframe{\includediagram{../slides/diagrams/ml/polynomial_basis000}{\width}}{polynomial_basis}
-\newframe{\includediagram{../slides/diagrams/ml/polynomial_basis001}{\width}}{polynomial_basis}
-\newframe{\includediagram{../slides/diagrams/ml/polynomial_basis002}{\width}}{polynomial_basis}
-\newframe{\includediagram{../slides/diagrams/ml/polynomial_basis003}{\width}}{polynomial_basis}
-\newframe{\includediagram{../slides/diagrams/ml/polynomial_basis004}{\width}}{polynomial_basis}
+\newframe{\includediagram{\diagramsDir/ml/polynomial_basis000}{\width}}{polynomial_basis}
+\newframe{\includediagram{\diagramsDir/ml/polynomial_basis001}{\width}}{polynomial_basis}
+\newframe{\includediagram{\diagramsDir/ml/polynomial_basis002}{\width}}{polynomial_basis}
+\newframe{\includediagram{\diagramsDir/ml/polynomial_basis003}{\width}}{polynomial_basis}
+\newframe{\includediagram{\diagramsDir/ml/polynomial_basis004}{\width}}{polynomial_basis}
 \endanimation
 }
-\notes{\figure{\includediagram{../slides/diagrams/ml/polynomial_basis004}{80%}}{A polynomial basis is made up of different degrees of polynomial.}{polynomial-basis-4}}
+\notes{\figure{\includediagram{\diagramsDir/ml/polynomial_basis004}{80%}}{A polynomial basis is made up of different degrees of polynomial.}{polynomial-basis-4}}
 
 \displaycode{import pods
 from ipywidgets import IntSlider}
 \displaycode{pods.notebook.display_plots('polynomial_basis{num_basis:0>3}.svg', 
-                            directory='../slides/diagrams/ml', 
+                            directory='\diagramsDir/ml', 
 			    num_basis=IntSlider(1,1,5,1))}
 
 \endif

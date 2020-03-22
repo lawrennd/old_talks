@@ -38,12 +38,12 @@ plot.model_output(m_full, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portio
 xlim = ax.get_xlim()
 ylim = ax.get_ylim()
 mlai.write_figure(figure=fig,
-                  filename='../slides/diagrams/gp/sparse-demo-full-gp.svg', 
+                  filename='\diagramsDir/gp/sparse-demo-full-gp.svg', 
                   transparent=True, frameon=True)}
 
 \newslide{Full Gaussian Process Fit}
 
-\figure{\includediagram{../slides/diagrams/gp/sparse-demo-full-gp}{80%}}{Full Gaussian process fitted to the data set.}{sparse-demo-full-gp}
+\figure{\includediagram{\diagramsDir/gp/sparse-demo-full-gp}{80%}}{Full Gaussian process fitted to the data set.}{sparse-demo-full-gp}
 
 \notes{Now we set up the inducing variables, $\mathbf{u}$. Each inducing variable has its own associated input index, $\mathbf{Z}$, which lives in the same space as $\inputMatrix$. Here we are using the true covariance function parameters to generate the fit.}
 
@@ -59,12 +59,12 @@ display(m)}
 \displaycode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot.model_output(m, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2, xlim=xlim, ylim=ylim)
 mlai.write_figure(figure=fig,
-                  filename='../slides/diagrams/gp/sparse-demo-constrained-inducing-6-unlearned-gp.svg', 
+                  filename='\diagramsDir/gp/sparse-demo-constrained-inducing-6-unlearned-gp.svg', 
                   transparent=True, frameon=True)}
 
 \newslide{Inducing Variable Fit}
 
-\figure{\includediagram{../slides/diagrams/gp/sparse-demo-constrained-inducing-6-unlearned-gp}{80%}}{Sparse Gaussian process fitted with six inducing variables, no optimization of parameters or inducing variables.}{sparse-demo-constrained-inducing-6-unlearned-gp}
+\figure{\includediagram{\diagramsDir/gp/sparse-demo-constrained-inducing-6-unlearned-gp}{80%}}{Sparse Gaussian process fitted with six inducing variables, no optimization of parameters or inducing variables.}{sparse-demo-constrained-inducing-6-unlearned-gp}
 
 \code{_ = m.optimize(messages=True)
 display(m)}
@@ -72,12 +72,12 @@ display(m)}
 \displaycode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot.model_output(m, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2, xlim=xlim, ylim=ylim)
 mlai.write_figure(figure=fig,
-                  filename='../slides/diagrams/gp/sparse-demo-constrained-inducing-6-learned-gp.svg', 
+                  filename='\diagramsDir/gp/sparse-demo-constrained-inducing-6-learned-gp.svg', 
                   transparent=True, frameon=True)}
 
 \newslide{Inducing Variable Param Optimize}
 
-\figure{\includediagram{../slides/diagrams/gp/sparse-demo-constrained-inducing-6-learned-gp}{80%}}{Gaussian process fitted with inducing variables fixed and parameters optimized}{sparse-demo-constrained-inducing-6-learned-gp}
+\figure{\includediagram{\diagramsDir/gp/sparse-demo-constrained-inducing-6-learned-gp}{80%}}{Gaussian process fitted with inducing variables fixed and parameters optimized}{sparse-demo-constrained-inducing-6-learned-gp}
 
 \code{m.randomize()
 m.inducing_inputs.unconstrain()
@@ -86,12 +86,12 @@ _ = m.optimize(messages=True)}
 \displaycode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot.model_output(m, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2,xlim=xlim, ylim=ylim)
 mlai.write_figure(figure=fig,
-                  filename='../slides/diagrams/gp/sparse-demo-unconstrained-inducing-6-gp.svg', 
+                  filename='\diagramsDir/gp/sparse-demo-unconstrained-inducing-6-gp.svg', 
                   transparent=True, frameon=True)}
 
 \newslide{Inducing Variable Full Optimize}
 
-\figure{\includediagram{../slides/diagrams/gp/sparse-demo-unconstrained-inducing-6-gp}{80%}}{Gaussian process fitted with location of inducing variables and parameters both optimized}{sparse-demo-unconstrained-inducing-6-gp}
+\figure{\includediagram{\diagramsDir/gp/sparse-demo-unconstrained-inducing-6-gp}{80%}}{Gaussian process fitted with location of inducing variables and parameters both optimized}{sparse-demo-unconstrained-inducing-6-gp}
 
 \notes{Now we will vary the number of inducing points used to form the approximation.}
 
@@ -105,21 +105,21 @@ _ = m.optimize(messages=True)}
 \displaycode{fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 plot.model_output(m, ax=ax, xlabel='$x$', ylabel='$y$', fontsize=20, portion=0.2, xlim=xlim, ylim=ylim)
 mlai.write_figure(figure=fig,
-                  filename='../slides/diagrams/gp/sparse-demo-sparse-inducing-8-gp.svg', 
+                  filename='\diagramsDir/gp/sparse-demo-sparse-inducing-8-gp.svg', 
                   transparent=True, frameon=True)}
 
 \slides{
 \newslide{Eight Optimized Inducing Variables}
 
-\includediagram{../slides/diagrams/gp/sparse-demo-sparse-inducing-8-gp}
+\includediagram{\diagramsDir/gp/sparse-demo-sparse-inducing-8-gp}
 
 \newslide{Full Gaussian Process Fit}
 
-\includediagram{../slides/diagrams/gp/sparse-demo-full-gp}
+\includediagram{\diagramsDir/gp/sparse-demo-full-gp}
 }
 
-\figure{\includediagram{../slides/diagrams/gp/sparse-demo-sparse-inducing-8-gp}{80%}
-\includediagram{../slides/diagrams/gp/sparse-demo-full-gp}{80%}}{Comparison of the full Gaussian process fit with a sparse Gaussian process using eight inducing varibles. Both inducing variables and parameters are optimized.}{sparse-demo-sparse-inducing-8}
+\figure{\includediagram{\diagramsDir/gp/sparse-demo-sparse-inducing-8-gp}{80%}
+\includediagram{\diagramsDir/gp/sparse-demo-full-gp}{80%}}{Comparison of the full Gaussian process fit with a sparse Gaussian process using eight inducing varibles. Both inducing variables and parameters are optimized.}{sparse-demo-sparse-inducing-8}
 
 \notes{And we can compare the probability of the result to the full model.}
 \code{print(m.log_likelihood(), m_full.log_likelihood())}

@@ -71,26 +71,26 @@ text =['$\phi(x) = 1$',
 
 plot.basis(quadratic, x_min=-1.3, x_max=1.3, 
            fig=f, ax=ax, loc=loc, text=text,
-		   diagrams='../slides/diagrams/ml')
+		   diagrams='\diagramsDir/ml')
 }
 
 \define{\basisfunction}{quadratic_basis}
 \slides{
 \define{\width}{80%}
 \startanimation{\basisfunction}{0}{2}
-\newframe{\includediagram{../slides/diagrams/ml/\concat{\basisfunction}{000}{\width}}}{\basisfunction}
-\newframe{\includediagram{../slides/diagrams/ml/\concat{\basisfunction}{001}{\width}}}{\basisfunction}
-\newframe{\includediagram{../slides/diagrams/ml/\concat{\basisfunction}{002}{\width}}}{\basisfunction}
+\newframe{\includediagram{\diagramsDir/ml/\concat{\basisfunction}{000}{\width}}}{\basisfunction}
+\newframe{\includediagram{\diagramsDir/ml/\concat{\basisfunction}{001}{\width}}}{\basisfunction}
+\newframe{\includediagram{\diagramsDir/ml/\concat{\basisfunction}{002}{\width}}}{\basisfunction}
 \endanimation
 }
 
-\notes{\figure{\includediagram{../slides/diagrams/ml/\concat{\basisfunction}{002}{80%}}{The set of functions which are combined to form a *quadratic* basis.}{quadratic-basis-2}}}
+\notes{\figure{\includediagram{\diagramsDir/ml/\concat{\basisfunction}{002}{80%}}{The set of functions which are combined to form a *quadratic* basis.}{quadratic-basis-2}}}
 
 \displaycode{import pods
 from ipywidgets import IntSlider}
 
 \displaycode{pods.notebook.display_plots('\basisfunction{num_basis:0>3}.svg', 
-                            directory='../slides/diagrams/ml', 
+                            directory='\diagramsDir/ml', 
 							num_basis=IntSlider(0,0,2,1))}
 
 
@@ -118,19 +118,19 @@ _ = ax.set_title('Quadratic Basis Functions')}
 \slides{
 \define{\width}{80%}
 \startanimation{quadratic_function}{0}{2}
-\newframe{\includediagram{../slides/diagrams/ml/quadratic_function000}{\width}}{quadratic_function}
-\newframe{\includediagram{../slides/diagrams/ml/quadratic_function001}{\width}}{quadratic_function}
-\newframe{\includediagram{../slides/diagrams/ml/quadratic_function002}{\width}}{quadratic_function}
+\newframe{\includediagram{\diagramsDir/ml/quadratic_function000}{\width}}{quadratic_function}
+\newframe{\includediagram{\diagramsDir/ml/quadratic_function001}{\width}}{quadratic_function}
+\newframe{\includediagram{\diagramsDir/ml/quadratic_function002}{\width}}{quadratic_function}
 \endanimation
 }
 
-\notes{\figure{\includediagram{../slides/diagrams/ml/quadratic_function002}{80%}}{Functions constructed by weighted sum of the components of a quadratic basis.}{quadratic-function-2}}
+\notes{\figure{\includediagram{\diagramsDir/ml/quadratic_function002}{80%}}{Functions constructed by weighted sum of the components of a quadratic basis.}{quadratic-function-2}}
 
 \setupdisplaycode{import pods
 from ipywidgets import IntSlider}
 
 \displaycode{pods.notebook.display_plots('quadratic_function{num_function:0>3}.svg', 
-                            directory='../slides/diagrams/ml', 
+                            directory='\diagramsDir/ml', 
 							num_basis=IntSlider(0,0,2,1))}
 
 \endif

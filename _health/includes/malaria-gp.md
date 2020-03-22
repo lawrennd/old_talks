@@ -17,7 +17,7 @@ The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboratio
 
 \notes{Malaria data is spatial data. Uganda is split into districts, and health reports can be found for each district. This suggests that models such as conditional random fields could be used for spatial modelling, but there are two complexities with this. First of all, occasionally districts split into two. Secondly, sentinel sites are a specific location within a district, such as Nagongera which is a sentinel site based in the Tororo district.}
 
-\figure{\includepng{../slides/diagrams/health/uganda-districts-2006}{50%}}{Ugandan districs. Data SRTM/NASA from <https://dds.cr.usgs.gov/srtm/version2_1>.}{uganda-districts-2006}
+\figure{\includepng{\diagramsDir/health/uganda-districts-2006}{50%}}{Ugandan districs. Data SRTM/NASA from <https://dds.cr.usgs.gov/srtm/version2_1>.}{uganda-districts-2006}
 
 \alignright{[@Andrade:consistent14;@Mubangizi:malaria14]}
 
@@ -25,7 +25,7 @@ The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboratio
 \ifdef{olympicMarathonData}
 \newslide{Kapchorwa District}
 
-\figure{\includediagramclass{../slides/diagrams/health/Kapchorwa_District_in_Uganda}{50%}}{The Kapchorwa District, home district of Stephen Kiprotich.}{kapchorwa-district-in-uganda}
+\figure{\includediagramclass{\diagramsDir/health/Kapchorwa_District_in_Uganda}{50%}}{The Kapchorwa District, home district of Stephen Kiprotich.}{kapchorwa-district-in-uganda}
 
 \notes{Stephen Kiprotich, the 2012 gold medal winner from the London Olympics, comes from Kapchorwa district, in eastern Uganda, near the border with Kenya.}
 
@@ -35,13 +35,13 @@ The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboratio
 
 \notes{The common standard for collecting health data on the African continent is from the Health management information systems (HMIS). However, this data suffers from missing values [@Gething:hmis06] and diagnosis of diseases like typhoid and malaria may be confounded.}
 
-\figure{\includediagramclass{../slides/diagrams/health/Tororo_District_in_Uganda}{50%}}{The Tororo district, where the sentinel site, Nagongera, is located.}{tororo-district-in-uganda}
+\figure{\includediagramclass{\diagramsDir/health/Tororo_District_in_Uganda}{50%}}{The Tororo district, where the sentinel site, Nagongera, is located.}{tororo-district-in-uganda}
 
 \notes{[World Health Organization Sentinel Surveillance systems](https://www.who.int/immunization/monitoring_surveillance/burden/vpd/surveillance_type/sentinel/en/) are set up "when high-quality data are needed about a particular disease that cannot be obtained through a passive system". Several sentinel sites give accurate assessment of malaria disease levels in Uganda, including a site in Nagongera.}
 
 \newslide{Malaria Prediction in Nagongera (Sentinel Site)}
 
-\figure{\includepng{../slides/diagrams/health/sentinel_nagongera}{100%}{negate}}{Sentinel and HMIS data along with rainfall and temperature for the Nagongera sentinel station in the Tororo district.}{sentinel-nagongera}
+\figure{\includepng{\diagramsDir/health/sentinel_nagongera}{100%}{negate}}{Sentinel and HMIS data along with rainfall and temperature for the Nagongera sentinel station in the Tororo district.}{sentinel-nagongera}
 
 \notes{In collaboration with the AI Research Group at Makerere we chose to investigate whether Gaussian process models could be used to assimilate information from these two different sources of disease informaton. Further, we were interested in whether local information on rainfall and temperature could be used to improve malaria estimates.}
 
@@ -49,25 +49,25 @@ The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboratio
 
 \newslide{Mubende District}
 
-\figure{\includediagramclass{../slides/diagrams/health/Mubende_District_in_Uganda}{50%}}{The Mubende District.}{mubende-district-in-uganda}
+\figure{\includediagramclass{\diagramsDir/health/Mubende_District_in_Uganda}{50%}}{The Mubende District.}{mubende-district-in-uganda}
 
 \newslide{Malaria Prediction in Uganda}
 
-\figure{\includepng{../slides/diagrams/health/mubende}{80%}}{Prediction of malaria incidence in Mubende.}{malaria-prediction-mubende}
+\figure{\includepng{\diagramsDir/health/mubende}{80%}}{Prediction of malaria incidence in Mubende.}{malaria-prediction-mubende}
 
 \newslide{GP School at Makerere}
 
-\figure{\includejpg{../slides/diagrams/gpss/1157497_513423392066576_1845599035_n}{80%}}{The project arose out of the Gaussian process summer school held at Makerere in Kampala in 2013. The school led, in turn, to the Data Science Africa initiative.}
+\figure{\includejpg{\diagramsDir/gpss/1157497_513423392066576_1845599035_n}{80%}}{The project arose out of the Gaussian process summer school held at Makerere in Kampala in 2013. The school led, in turn, to the Data Science Africa initiative.}
 
 \notes{\subsection{Early Warning Systems}}
 
 \newslide{Kabarole District}
 
-\figure{\includediagramclass{../slides/diagrams/health/Kabarole_District_in_Uganda}{50%}}{The Kabarole district in Uganda.}{kabarole-district-in-uganda}
+\figure{\includediagramclass{\diagramsDir/health/Kabarole_District_in_Uganda}{50%}}{The Kabarole district in Uganda.}{kabarole-district-in-uganda}
 
 \newslide{Early Warning System}
 
-\figure{\includegif{../slides/diagrams/health/kabarole}{100%}}{Estimate of the current disease situation in the Kabarole district over time. Estimate is constructed with a Gaussian process with an additive covariance funciton.}{kabarole-disease-over-time}
+\figure{\includegif{\diagramsDir/health/kabarole}{100%}}{Estimate of the current disease situation in the Kabarole district over time. Estimate is constructed with a Gaussian process with an additive covariance funciton.}{kabarole-disease-over-time}
 
 \notes{Health monitoring system for the Kabarole district. Here we have fitted the reports with a Gaussian process with an additive covariance function. It has two components, one is a long time scale component (in red above) the other is a short time scale component (in blue).}
 
@@ -79,7 +79,7 @@ The work is from Ricardo Andrade Pacheco's PhD thesis, completed in collaboratio
 
 \newslide{Early Warning Systems}
 
-\figure{\includegif{../slides/diagrams/health/monitor}{50%}}{The map of Ugandan districts with an overview of the Malaria situation in each district.}{early-warning-system-map}
+\figure{\includegif{\diagramsDir/health/monitor}{50%}}{The map of Ugandan districts with an overview of the Malaria situation in each district.}{early-warning-system-map}
 
 \notes{These colors can now be observed directly on a spatial map of the districts to give an immediate impression of the current status of the disease across the country.}
 
