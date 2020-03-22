@@ -1,5 +1,5 @@
-\ifndef{kFoldValidationOlympics}
-\define{kFoldValidationOlympics}
+\ifndef{olympicMarathonKFoldValidation}
+\define{olympicMarathonKFoldValidation}
 
 \include{_ml/includes/olympic-marathon-data.md}
 

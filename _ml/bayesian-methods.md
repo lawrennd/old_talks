@@ -42,7 +42,7 @@ categories:
 
 \include{_ml/includes/prior-sampling-basis.md}
 \include{_ml/includes/posterior-computation-gaussian.md}
-\include{_ml/includes/olympic-bayesian-polynomials.md}
+\include{_ml/includes/olympic-marathon-bayesian-polynomial.md}
 \include{_ml/includes/polynomial-marginal-likelihood.md}
 
 \thanks

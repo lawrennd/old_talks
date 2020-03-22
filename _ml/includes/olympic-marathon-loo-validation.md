@@ -1,5 +1,5 @@
-\ifndef{looValidationOlympics}
-\define{looValidationOlympics}
+\ifndef{olympicMarathonLooValidation}
+\define{olympicMarathonLooValidation}
 
 \include{_ml/includes/olympic-marathon-data.md}
 

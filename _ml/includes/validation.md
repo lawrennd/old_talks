@@ -11,9 +11,9 @@ In machine learning, we are looking to minimise the value of our objective funct
 We will review the different methods of model selection on the Olympics marathon data. Firstly we import the Olympic marathon data.}
 
 \include{_ml/includes/olympic-marathon-data.md}
-\include{_ml/includes/validation-olympic-fit.md}
-\include{_ml/includes/hold-out-validation-olympics.md}
-\include{_ml/includes/loo-validation-olympics.md}
-\include{_ml/includes/k-fold-validation-olympics.md}
+\include{_ml/includes/olympic-marathon-validation-fit.md}
+\include{_ml/includes/olympic-marathon-hold-out-validation.md}
+\include{_ml/includes/olympic-marathon-loo-validation.md}
+\include{_ml/includes/olympic-marathon-k-fold-validation.md}
 
 \endif

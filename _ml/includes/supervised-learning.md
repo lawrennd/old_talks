@@ -13,7 +13,7 @@
 \include{_ml/includes/nigerian-nmis-data-logistic.md}
 \include{_ml/includes/regression-intro.md}
 \include{_ml/includes/regression-examples.md}
-\include{_ml/includes/olympic-polynomials.md}
+\include{_ml/includes/olympic-marathon-polynomial.md}
 
 \include{_ml/includes/supervised-learning-challenges.md}
 

@@ -15,6 +15,6 @@
 \include{_ml/includes/class-of-function.md}
 \include{_ml/includes/parameter-estimation.md}
 \include{_ml/includes/generalization-and-overfitting.md}
-\include{_ml/includes/olympic-bayesian-polynomials.md}
+\include{_ml/includes/olympic-marathon-bayesian-polynomial.md}
 
 \endif

@@ -22,7 +22,7 @@ An important distinction in machine learning is the separation between training 
 * Vital that you avoid test data in training.
 * Validation data is different from test data. }
 
-\include{_ml/includes/hold-out-validation-olympics.md}
+\include{_ml/includes/olympic-marathon-hold-out-validation.md}
 
 \include{_ml/includes/bias-variance-dilemma.md}
 

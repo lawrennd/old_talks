@@ -1,5 +1,5 @@
-\ifndef{olympicBayesianPolynomials}
-\define{olympicBayesianPolynomials}
+\ifndef{olympicMarathonBayesianPolynomial}
+\define{olympicMarathonBayesianPolynomial}
 
 \include{_ml/includes/olympic-marathon-data.md}
 

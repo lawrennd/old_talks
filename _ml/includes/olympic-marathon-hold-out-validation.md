@@ -1,5 +1,5 @@
-\ifndef{holdOutValidationOlympics}
-\define{holdOutValidationOlympics}
+\ifndef{olympicMarathonHoldOutValidation}
+\define{olympicMarathonHoldOutValidation}
 
 \include{_ml/includes/olympic-marathon-data.md}
 

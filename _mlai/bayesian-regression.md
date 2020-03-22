@@ -138,7 +138,7 @@ sigma2 = 0.01}
 
 \include{_ml/includes/prior-sampling-basis.md}
 \include{_ml/includes/posterior-computation-gaussian.md}
-\include{_ml/includes/olympic-bayesian-polynomials.md}
+\include{_ml/includes/olympic-marathon-bayesian-polynomial.md}
 
 \newslide{Model Fit}
 

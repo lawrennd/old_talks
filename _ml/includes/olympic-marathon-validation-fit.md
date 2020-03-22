@@ -1,5 +1,5 @@
-\ifndef{validationOlympicFit}
-\define{validationOlympicFit}
+\ifndef{olympicMarathonValidationFit}
+\define{olympicMarathonValidationFit}
 
 \include{_ml/includes/olympic-marathon-data.md}
 
