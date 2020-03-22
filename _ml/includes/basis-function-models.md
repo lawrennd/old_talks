@@ -9,9 +9,7 @@ Now we are going to consider how these basis functions can be adjusted to fit to
 a particular data set. We will return to the olympic marathon data from last
 time. First we will scale the output of the data to be zero mean and variance 1.
 
-\setupcode{import pods
-import numpy as np
-import matplotlib.pyplot as plt}
+\setupcode{import pods}
 
 \code{data = pods.datasets.olympic_marathon_men()
 y = data['Y']
@@ -21,9 +19,12 @@ y /= y.std()}
 
 \writeassignment{Now we are going to redefine our polynomial basis. Have a careful look at the operations we perform on `x` to create `z`. We use `z` in the polynomial computation. What are we doing to the inputs? Why do you think we are changing `x` in this manner?}{10}
 
+\setupcode{import numpy as np}
 \loadcode{polynomial}{mlai}
 
-\plotcode{#x[:, 0] = np.linspace(1888, 2020, 1000)
+
+\setupcode{import matplotlib.pyplot as plt}
+\code{#x[:, 0] = np.linspace(1888, 2020, 1000)
 fig, ax = plt.subplots(figsize=plot.big_wide_figsize)
 
 ax.plot(x, y, 'rx')}
@@ -161,25 +162,25 @@ $$
 
 \subsection{Update Equations}
 
-* Update for $\mappingVector^{*}$
+\slides{* Update for $\mappingVector^{*}$}
   $$
   \mappingVector^{*} = \left(\basisMatrix^\top \basisMatrix\right)^{-1} \basisMatrix^\top \dataVector
   $$
-* The equation for $\left.\dataStd^2\right.^{*}$ may also be found
+\slides{* The equation for $\left.\dataStd^2\right.^{*}$ may also be found}
   $$
   \left.\dataStd^2\right.^{{*}}=\frac{\sum_{i=1}^{\numData}\left(\dataScalar_i-\left.\mappingVector^{*}\right.^{\top}\basisVector_i\right)^{2}}{\numData}.
   $$
 
 
 
-\subsection{Avoid Direct Inverse}
+\newslide{Avoid Direct Inverse}
 
-* E.g. Solve for $\mappingVector$
+\slides{* E.g. Solve for $\mappingVector$}
   $$
   \left(\basisMatrix^\top \basisMatrix\right)\mappingVector = \basisMatrix^\top \dataVector
   $$
-* See `np.linalg.solve`
-* In practice use $\mathbf{Q}\mathbf{R}$ decomposition (see lab class notes).
+\slides{* See `np.linalg.solve`
+* In practice use $\mathbf{Q}\mathbf{R}$ decomposition (see lab class notes).}
 
 \subsection{Polynomial Fits to Olympic Data}
 
@@ -203,7 +204,7 @@ ll = np.array([np.nan]*(max_basis))
 sum_squares = np.array([np.nan]*(max_basis))
 basis=mlai.Basis(mlai.polynomial, number=1, data_limits=xlim)}
 
-\plotcode{plot.rmse_fit(x, y, param_name='number', param_range=(1, 28), 
+\code{plot.rmse_fit(x, y, param_name='number', param_range=(1, 28), 
               model=mlai.LM, basis=basis, 
               xlim=xlim, objective_ylim=[0, 0.8],
               diagrams='../slides/diagrams/ml')}
