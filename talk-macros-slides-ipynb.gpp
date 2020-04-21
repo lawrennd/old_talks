@@ -17,36 +17,6 @@
 
 Figure: *\captionContents*}
 
-\define{\setupplotcode{block}}{```{.python}
-\block
-```}
-\define{\loadplotcode{object}{filename}}{```{.python}
-from \filename import \object
-```}
-\define{\plotcode{block}}{```{.python}
-\block
-```}
-\define{\setupdisplaycode{block}}{```{.python}
-\block
-```}
-\define{\displaycode{block}}{```{.python}
-\block
-```}
-\define{\setupcode{block}}{```{.python}
-\block
-```}
-\define{\loadcode{object}{filename}}{```{.python}
-%load -s \object \filename.py
-```}
-\define{\setuphelpercode{block}}{```{.python}
-\block
-```}
-\define{\helpercode{block}}{```{.python}
-\block
-```}
-\define{\code{block}}{```{.python}
-\block
-```}
 
 \define{\exercise{text}{answerstub}{codestub}}{### Exercise
 

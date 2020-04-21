@@ -64,16 +64,16 @@ state. This allows for rapid assessment of other services' data.
 
 Let's assume that price trading data is available as a data stream. But the price now is not the only information that Anne needs, she needs an estimate of the price in the future.}
 
-\setupcode{import pandas as pd
+\setupplotcode{import pandas as pd
 import numpy as np
 import os}
 
-\code{# Generate an artificial trading stream
+\plotcode{# Generate an artificial trading stream
 days=pd.date_range(start='21/5/2017', end='21/05/2020')
 z = np.random.randn(len(days), 1)
 x = z.cumsum()+400}
 
-\code{prices = pd.Series(x, index=days)
+\plotcode{prices = pd.Series(x, index=days)
 hypothetical = prices.loc['21/5/2019':]
 real = prices.copy()
 real['21/5/2019':] = np.NaN}

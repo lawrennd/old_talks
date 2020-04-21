@@ -22,10 +22,13 @@ We are constrained by:
 }
 \newslide{Decomposition of Task}
 \slides{
+* Separation of Concerns
 * Careful thought needs to be put into sub-processes of task.
 * Any repetitive task is a candidate for automation.
 }
-\notes{Any repetitive task is a candidate for automation, but many of the repetitive tasks we perform as humans are more complex than any individual algorithm can replace. The selection of which task to automate becomes critical and has downstream effects on our overall system design.}
+\notes{Any repetitive task is a candidate for automation, but many of the repetitive tasks we perform as humans are more complex than any individual algorithm can replace. The selection of which task to automate becomes critical and has downstream effects on our overall system design.
+
+Our approach to complex system design is separation of concerns, decompose the large scale system into smaller parts, each of which can be managed by a separate team.}
 
 \subsubsection{Pigeonholing}
 
@@ -104,6 +107,8 @@ AutoML.}
 compensated by downstream corrections.}
 
 \notes{To embrace this characteristic, end-to-end training could be considered. Why produce the best forecast by metrics when we can just produce the best forecast for our systems? End-to-end training can lead to improvements in performance, but it would also damage our systems decomposability and its interpretability, and perhaps its adaptability.}
+
+\notes{Poor systems decomposition, and a lack of interpretability can compound challenges around *intellectual debt*.}
 
 \notes{The less human interpretable our systems are, the harder they are to adapt to different circumstances or diagnose when there's a challenge.  The trade-off between interpretability and performance is a constant tension which we should always retain in our minds when performing our system design.}
 

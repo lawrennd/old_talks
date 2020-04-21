@@ -3,9 +3,9 @@
 
 \section{The Great AI Fallacy}
 
-\notes{I don't know what Artificial Intelligence means, but one commonality I
-see in the use of the term is an idea which I'm coming to think of as "The Great AI
-Fallacy".
+\notes{There is a lot of variation in the use of the term artificial intelligence. I'm sometimes asked to define it, but depending on whether you're speaking to a member of the public, a fellow machine learning researcher, or someone from the business community, the sense of the term differs.
+
+However, underlying its use I've detected one disturbing trend. A trend I'm beginining to think of as  "The Great AI Fallacy".
 
 The fallacy is associated with an implicit promise that is embedded in
 many statements about Artificial Intelligence. Artificial Intelligence,

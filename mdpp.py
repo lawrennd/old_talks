@@ -38,7 +38,7 @@ parser.add_argument("-F", "--format", type=str,
 		   choices=['notes', 'slides', 'code'],
 		   help="Target output file contents")
 
-parser.add_argument("-c", "--code", type=str, default=None,
+parser.add_argument("-c", "--code", type=str, default='none',
 		    choices=['none', 'sparse', 'ipynb', 'diagnostic', 'plot'],
                     help="Which parts of the code to include.")
 

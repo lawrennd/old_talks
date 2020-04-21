@@ -7,11 +7,12 @@ all: $(ALL)
 
 ##${BASE}.notes.tex ${BASE}.notes.pdf 
 
+include ../make-markdown.mk
+
 include ../make-slides.mk 
 include ../make-notes.mk
 include ../make-post.mk
 include ../make-ipynb.mk
-include ../make-markdown.mk
 include ../make-figures.mk
 include ../make-python.mk
 

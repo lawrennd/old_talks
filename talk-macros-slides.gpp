@@ -19,6 +19,14 @@
 \define{\subsubsection{text}}{## \text \ifdef{editText}\editText\undef{editText}\endif
 
 }
+
+\define{\codeblockstart}{```}
+\define{\codeblockend}{```}
+\define{\pythonblockstart}{```{.python}}
+\define{\pythonblockend}{```}
+\define{\matlabblockstart}{```{.matlab}}
+\define{\matlabblockend}{```}
+
 \define{\slides{text}}{\text}
 \define{\slidesincremental{text}}{::: incremental
 

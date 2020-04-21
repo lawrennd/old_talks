@@ -37,6 +37,8 @@ if layout == 'lecture':
     prefix = '{0:02}'.format(week)
 elif layout == 'test':
     prefix = 'XXXX-XX-XX'
+elif layout == 'talk':
+    prefix = date
 
 out = prefix + '-' + args.base
     

@@ -2,7 +2,6 @@
 
 # Extract the date and the prefix of the produced files.
 DATE=$(shell ../talkfield.py date ${BASE}.md)
-PREFIX=$(shell ../flags.py prefix ${BASE})
 
 CATEGORIES=$(shell ../talkfield.py categories ${BASE}.md)
 
@@ -14,6 +13,8 @@ CSS=$(shell ../talkfield.py talkcss ${BASE}.md)
 SLIDESHEADER=$(shell ../talkfield.py slidesheader ${BASE}.md)
 POSTSHEADER=$(shell ../talkfield.py postssheader ${BASE}.md)
 ASSIGNMENT=$(shell ../talkfield.py assignment ${BASE}.md)
+
+PREFIX=$(shell ../flags.py prefix ${BASE})
 
 # Local calls for the preprocessor and inkscape
 INKSCAPE=inkscape #/Applications/Inkscape.app/Contents/Resources/bin/inkscape
@@ -40,7 +41,7 @@ DIAGDEPS=$(shell ../dependencies.py diagrams $(BASE).md)
 BIBDEPS=$(shell ../dependencies.py bibinputs $(BASE).md)
 
 POSTFLAGS=$(shell ../flags.py post $(BASE))
-LECTUREFLAGS=$(shell ../flags.py lecture $(BASE))
 PPTXFLAGS=$(shell ../flags.py pptx $(BASE))
 DOCXFLAGS=$(shell ../flags.py docx $(BASE))
+
 ALL=$(shell ../dependencies.py all $(BASE).md)

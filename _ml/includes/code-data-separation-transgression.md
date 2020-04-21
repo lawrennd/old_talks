@@ -8,7 +8,7 @@
 * Von Neuman Architecture:
   * Code and data integrated in memory
   
-* Today:
+* Today (Harvard Architecture):
   * Code and data separated for security
 }
 \notes{The next wave of machine learning is a paradigm shift in the way we think about computer science.

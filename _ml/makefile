@@ -1,3 +1,3 @@
-BASE=machine-learning-a-revolution-in-computer-science
+BASE=action-team-sync
 include ../make-talk-flags.mk
 include ../make-talk.mk
