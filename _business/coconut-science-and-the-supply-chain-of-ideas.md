@@ -31,7 +31,7 @@ incremental: True
 
 \notes{Jeff owns a large shop. He doesn't know what the future looks like, but what he does know is that his customers won't want to pay more than they pay today. They won't want to wait longer for orders. And they won't want a reduced selection in his store. 
 
-Jeff worries about the future a lot, and so he's always making sure that his cusotmers pay less, don't have to wait and have the best selection available.
+Jeff worries about the future a lot, and so he's always making sure that his customers pay less, don't have to wait and have the best selection available.
 
 I like the simplicity of Jeff's perspective. Predicting what will happen in the future is difficult, but predicting what won't happen is easier. Jeff's real point is that for his shop, he wants all his staff to be focussing on all of these things all the time.}
 
