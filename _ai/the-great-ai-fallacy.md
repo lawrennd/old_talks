@@ -14,7 +14,7 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 date: 2020-04-21
-venue: The Cambridge Network
+venue: Webinar for The Cambridge Network
 transition: None
 ---
 
