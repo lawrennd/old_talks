@@ -1,0 +1,12 @@
+\ifndef{talkMacrosSvg}
+\define{talkMacrosSvg}
+\defeval{\dtext{text}{x}{y}{style}{id}}{<text style="\style" x="\x" y="\y" class="dtext" id="\id"><tspan x="\x" y="\y">\text</tspan></text>}
+\defeval{\dpath{path}{style}{id}}{<path style="\style" id="\id" class="dpath" d="\path"/>}
+\define{\svgiStart}{<!--
+\mode{push}
+\mode{standard}{default}
+concat(\\,includediagram)#mode pop{\file}
+#mode pop 
+-->}
+\endif
+

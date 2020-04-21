@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Pinball</title>
+  <link rel="shortcut icon" href="favicon.ico"/>
+  <style>
+
+  body {
+    background-color: whiteg;
+    text-align: center;
+    font-family: Ubuntu Mono;
+  }
+
+  #title {
+    color: black;
+    font-size: 200%;
+    font-style: normal;
+    margin: 1px;
+    border: 1px;
+  }
+
+  #balls {
+    margin-top: 5px;
+  }
+
+  #myCanvas {
+    margin-top: -20px;
+  }
+
+  section.footer {
+    color: black;
+    font-family: Ubuntu Mono;
+    font-style: normal;
+    font-size: small;
+  }
+  #disclaimer {
+  	font-size: 74%;
+  	color: gray;
+  }
+
+  </style>
+</head>
+<body style="text-align: center">
+  <section>
+    <div id="title"><p id="balls" style="font-size: 15pt">Pinball</p><br/></div>
+  </section>
+  <div>
+    <canvas id="pinballCanvas" width="900" height="500" style="border:1px solid black;display: block; "></canvas>
+    <output id="scoreBox"></output>
+    <output id="ballCountBox"></output>
+    <output id="energyBox"></output>
+    
+    <script src="./scripts/ballworld/constructors.js"></script>
+    <script src="./scripts/ballworld/script2.js"></script>
+    <script src="./scripts/ballworld/ballworld.js"></script>
+    <script src="./scripts/ballworld/pinball.js"></script>
+  </div>
+  <section class="footer">
+
+    <p>
+      <strong>[W-A-S-D]</strong> to accelerate all <br>      
+      <strong>[G]</strong>: toggle gravity + drag <br>
+      <strong>[C]</strong> to spawn more balls<br>
+      <strong>[K]</strong> to toggle clearCanvas(); <br>
+      <strong>[M]</strong> to mute the geiger sound ._. <br>
+      <strong>[P]</strong>: pause/unpause || <strong>[R]</strong>: [RESET]
+    </p>
+
+  </section>
+</body>
+</html>
