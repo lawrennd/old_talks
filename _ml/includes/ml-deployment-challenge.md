@@ -72,7 +72,10 @@ and models need retraining or restructuring.
 [^emulation]: Emulation, or surrogate modelling, is one very promising approach to forming such a hypervisor. Emulators are models we fit to other models, often simulations, but the could also be other machine learning models. These models operate at the meta-level, not on the systems directly. This means they can be used to model how the sub-systems interact. As well as emulators we should consider real time dash boards, anomaly detection, mutlivariate analysis, data visualization and classical statistical approaches for hypervision of our deployed systems.
 }
 
+\ifndef{shortVersion}
 \include{_data-science/includes/data-oriented-architectures.md}
-\include{_data-science/includes/data-oriented-programming.md}
+\else
+\include{_data-science/includes/data-oriented-architectures-short.md}
+\endif
 
 \endif

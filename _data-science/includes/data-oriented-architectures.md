@@ -52,7 +52,8 @@ state. This allows for rapid assessment of other services' data.
 }
 
 
-\include{_data-science/includes/data-oriented-programming.md}
+\include{_data-science/includes/apache-flink.md}
+\include{_data-science/includes/milan.md}
 
 \subsection{Trading System}
 

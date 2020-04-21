@@ -216,7 +216,7 @@ embodiment
 <p>So, in terms of our computational power we are extraordinary, but in terms of our ability to explain ourselves, just like Bauby, we are locked in.</p>
 <p>For a typical computer, to communicate everything it computes in one second, it would only take it a couple of minutes. For us to do the same would take 15 billion years.</p>
 <p>If intelligence is fundamentally about processing and sharing of information. This gives us a fundamental constraint on human intelligence that dictates its nature.</p>
-<p>I call this ratio between the time it takes to compute something, and the time it takes to say it, the embodiment factor <span class="citation" data-cites="Lawrence:embodiment17">(Lawrence 2017a)</span>. Because it reflects how embodied our cognition is.</p>
+<p>I call this ratio between the time it takes to compute something, and the time it takes to say it, the embodiment factor <span class="citation" data-cites="Lawrence:embodiment17">(Lawrence 2017)</span>. Because it reflects how embodied our cognition is.</p>
 <p>If it takes you two minutes to say the thing you have thought in a second, then you are a computer. If it takes you 15 billion years, then you are a human.</p>
 <h3 id="a-six-word-novel-edit">A Six Word Novel <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/baby-shoes.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/baby-shoes.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h3>
 <div class="figure">
@@ -424,163 +424,44 @@ For sale: baby shoes, never worn
 <p>Progression tests are likely to be <em>statistical</em> tests in contrast to classical software tests. The tests should be monitoring model performance and quality measures. They could also monitor conformance to standardized <em>fairness</em> measures.</p>
 <p>If the world has changed around our decision-making ecosystem, how are we alerted to those changes?</p>
 <p><strong>Recommendation</strong>: We establish best practice around model deployment. We need to shift our culture from standing up a software service, to standing up a <em>data as a service</em>. Data as a Service would involve continual monitoring of our deployed models in production. This would be regulated by ‘hypervisor’ systems<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> that understand the context in which models are deployed and recognize when circumstances have changed, and models need retraining or restructuring.</p>
-<h2 id="data-oriented-architectures-edit">Data Oriented Architectures <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-oriented-architectures.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-oriented-architectures.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
-<p>In a streaming architecture we shift from management of services, to management of data streams. Instead of worrying about availability of the services we shift to worrying about the quality of the data those services are producing.</p>
-<p>Historically we’ve been <em>software first</em>, this is a necessary but insufficient condition for <em>data first</em>. We need to move from software-as-a-service to data-as-a-service, from service oriented architectures to <em>data oriented architectures</em>.</p>
-<h2 id="streaming-system">Streaming System</h2>
-<p>Characteristics of a streaming system include a move from <em>pull</em> updates to <em>push</em> updates, i.e. the computation is driven by a change in the input data rather than the service calling for input data when it decides to run a computation. Streaming systems operate on ‘rows’ of the data rather than ‘columns’. This is because the full column isn’t normally available as it changes over time. As an important design principle, the services themselves are stateless, they take their state from the streaming ecosystem. This ensures the inputs and outputs of given computations are easy to declare. As a result, persistence of the data is also handled by the streaming ecosystem and decisions around data retention or recomputation can be taken at the systems level rather than the component level.</p>
-<p><strong>Recommendation</strong>: We should consider a major re-architecting of systems around our services. In particular we should scope the use of a <em>streaming architecture</em> (such as Apache Kafka) that ensures data persistence and enables asynchronous operation of our systems.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> This would enable the provision of QC streams, and real time dash boards as well as hypervisors.</p>
-<p>Importantly a streaming architecture implies the services we build are <em>stateless</em>, internal state is deployed on streams alongside external state. This allows for rapid assessment of other services’ data.</p>
-<h2 id="apache-flink-edit">Apache Flink <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/apache-flink.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/apache-flink.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
-<p><a href="https://en.wikipedia.org/wiki/Apache_Flink">Apache Flink</a> is a stream processing framework. Flink is a foundation for event driven processing. This gives a high throughput and low latency framework that operates on dataflows.</p>
-<p>Data storage is handled by other systems such as Apache Kafka or AWS Kinesis.</p>
-<pre><code>stream.join(otherStream)
-    .where(&lt;KeySelector&gt;)
-    .equalTo(&lt;KeySelector&gt;)
-    .window(&lt;WindowAssigner&gt;)
-    .apply(&lt;JoinFunction&gt;)</code></pre>
-<p>Apache Flink allows operations on streams. For example, the join operation above. In a traditional data base management system, this join operation may be written in SQL and called on demand. In a streaming ecosystem, computations occur as and when the streams update.</p>
-<p>The join is handled by the ecosystem surrounding the business logic.</p>
+<h2 id="data-oriented-architectures-edit">Data-oriented Architectures <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-oriented-architectures-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/data-oriented-architectures-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>Data-oriented architectures aim to address the rat’s nest that is the current interaction between the services in a service-oriented architecture. It does this by introducing data-oriented programming. The data-oriented programming language tracks the movement of data between each service.</p>
+<p>Service-oriented programming style is a necessary, but not sufficient approach to data-oriented programming. Data-oriented programming is not only about the individual services, but how they are connected. Which service is calling which and where the flow of the data through the system occurs?</p>
+<p>If each service has its inputs and outputs declared on a wider ecosystem, then we can programmatically determine which inputs effect which decisions. This programmatic discovery is vital because as systems are built compositionally, the actual inputs that affect a final decision may not be known to any of the software engineers who are maintaining the system.</p>
 <h2 id="milan-edit">Milan <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/milan.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/milan.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
-<p>Milan is a data-oriented programming language and runtime infrastructure.</p>
-<p><a href="https://github.com/amzn/milan" class="uri">https://github.com/amzn/milan</a></p>
-<p>The Milan language is a DSL embedded in Scala. The output is an intermediate language that can be compiled to run on different target platforms. Currently there exists a single compiler that produces Flink applications.</p>
-<p>The Milan runtime infrastructure compiles and runs Milan applications on a Flink cluster.</p>
-<h2 id="trading-system">Trading System</h2>
-<p>As a simple example we’ll consider a high frequency trading system. Anne wishes to build a share trading system. She has access to a high frequency trading system which provides prices and allows trades at millisecond intervals. She wishes to build an automated trading system.</p>
-<p>Let’s assume that price trading data is available as a data stream. But the price now is not the only information that Anne needs, she needs an estimate of the price in the future.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="im">import</span> os</span></code></pre></div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Generate an artificial trading stream</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a>days<span class="op">=</span>pd.date_range(start<span class="op">=</span><span class="st">&#39;21/5/2017&#39;</span>, end<span class="op">=</span><span class="st">&#39;21/05/2020&#39;</span>)</span>
-<span id="cb3-3"><a href="#cb3-3"></a>z <span class="op">=</span> np.random.randn(<span class="bu">len</span>(days), <span class="dv">1</span>)</span>
-<span id="cb3-4"><a href="#cb3-4"></a>x <span class="op">=</span> z.cumsum()<span class="op">+</span><span class="dv">400</span></span></code></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>prices <span class="op">=</span> pd.Series(x, index<span class="op">=</span>days)</span>
-<span id="cb4-2"><a href="#cb4-2"></a>hypothetical <span class="op">=</span> prices.loc[<span class="st">&#39;21/5/2019&#39;</span>:]</span>
-<span id="cb4-3"><a href="#cb4-3"></a>real <span class="op">=</span> prices.copy()</span>
-<span id="cb4-4"><a href="#cb4-4"></a>real[<span class="st">&#39;21/5/2019&#39;</span>:] <span class="op">=</span> np.NaN</span></code></pre></div>
-<div class="figure">
-<div id="hypothetical-prices-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/data-science/hypothetical-prices.svg" width="80%" style=" ">
-</object>
-</div>
-<div id="hypothetical-prices-magnify" class="magnify" onclick="magnifyFigure(&#39;hypothetical-prices&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
-</div>
-<div id="hypothetical-prices-caption" class="caption-frame">
-<p>Figure: Anne has access to the share prices in the black stream but not in the blue stream. A hypothetical stream is the stream of future prices. Anne can define this hypothetical under constraints (latency, input etc). The need for a model is now exposed in the software infrastructure</p>
-</div>
-</div>
-<h2 id="hypothetical-streams">Hypothetical Streams</h2>
-<p>We’ll call the future price a hypothetical stream.</p>
-<p>A hypothetical stream is a desired stream of information which cannot be directly accessed. The lack of direct access may be because the events happen in the future, or there may be some latency between the event and the availability of the data.</p>
-<p>Any hypothetical stream will only be provided as a prediction, ideally with an error bar.</p>
-<p>The nature of the hypothetical Anne needs is dependent on her decision-making process. In Anne’s case it will depend over what period she is expecting her returns. In MDOP Anne specifies a hypothetical that is derived from the pricing stream.</p>
-<p>It is not the price stream directly, but Anne looks for <em>future</em> predictions from the price stream, perhaps for price in <span class="math inline"><em>T</em></span> days’ time.</p>
-<p>At this stage, this stream is merely typed as a hypothetical.</p>
-<p>There are constraints on the hypothetical, they include: the <em>input</em> information, the upper limit of latency between input and prediction, and the decision Anne needs to make (how far ahead, what her upside, downside risks are). These three constraints mean that we can only recover an approximation to the hypothetical.</p>
-<h2 id="hypothetical-advantage">Hypothetical Advantage</h2>
-<p>What is the advantage to defining things in this way? By defining, clearly, the two streams as real and hypothetical variants of each other, we now enable automation of the deployment and any redeployment process. The hypothetical can be <em>instantiated</em> against the real, and design criteria can be constantly evaluated triggering retraining when necessary.</p>
-<h2 id="safeboda-edit">SafeBoda <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/safe-boda.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_ai/includes/safe-boda.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
-<div class="figure">
-<div id="safe-boda-system-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="../slides/diagrams/ai/safe-boda.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-<div id="safe-boda-system-magnify" class="magnify" onclick="magnifyFigure(&#39;safe-boda-system&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
-</div>
-<div id="safe-boda-system-caption" class="caption-frame">
-<p>Figure: SafeBoda is a ride allocation system for Boda Boda drivers. Let’s imagine the capabilities we need for such an AI system.</p>
-</div>
-</div>
-<p><a href="https://safeboda.com/ug/index.php#whysafeboda">SafeBoda</a> is a Kampala based rider allocation system for Boda Boda drivers. Boda boda are motorcycle taxis which give employment to, often young men, across Kampala. Safe Boda is driven by the knowledge that road accidents are set to match HIV/AIDS as the highest cause of death in low/middle income families by 2030.</p>
+<p>At Amazon my team built a <em>data-oriented programming</em> language which is <a href="https://github.com/amzn/milan">now available through BSD license</a>. The language is called Milan. The team was led by Tom Borchert, quoting from <a href="https://tborchertblog.wordpress.com/2020/02/13/28/">Tom’s blog on Milan</a>:</p>
 <blockquote>
-<p>With road accidents set to match HIV/AIDS as the highest cause of death in low/middle income countries by 2030, SafeBoda’s aim is to modernise informal transportation and ensure safe access to mobility.</p>
+<p>Milan has three components:</p>
+<ol type="1">
+<li><p>A general-purpose stream algebra that encodes relationships between data streams (the Milan Intermediate Language or Milan IL)</p></li>
+<li><p>A Scala library for building programs in that algebra.</p></li>
+<li><p>A compiler that takes programs expressed in Milan IL and produces a Flink application that executes the program.</p></li>
+</ol>
+<p>Component (2) can be extended to support interfaces in additional languages, and component (3) can be extended to support additional runtime targets. Considering just the multiple interfaces and the multiple runtimes, Milan looks a lot like the much more mature Apache Beam. The difference lies in (1), Milan’s general-purpose stream algebra.</p>
 </blockquote>
+<p>It is through the general-purpose stream algebra that we hope to make significant inroads on the intellectual debt challenge.</p>
+<p>The stream algebra defines the relationship between different machine learning components in the wider software architecture. Composition of multiple services cannot occur without a signature existing within the stream algebra. The Milan IL becomes the key information structure that is required to reason about the wider software system.</p>
+<h2 id="context">Context</h2>
+<p>This deals with the challenges that arise through the <em>death of the programmer</em> because we can now see the context around each service. This allows us to design the relevant validation checks to ensure that accuracy and fairness are maintained. By recompiling the algebra to focus on a particular decision within the system we can also derive new statistical tests to validate performance. These are the checks that we refer to as progression testing. The loss of programmer control means that we can no longer rely on software tests written at design time, we must have the capability to deploy new (statistical) tests after deployment as the uses to which each service is placed extend to previously un-envisaged domains.</p>
+<h2 id="stateless-services">Stateless Services</h2>
+<p>Importantly, Milan does not place onerous constraints on the builders of individual machine learning models (or other components). Standard modelling frameworks can be used. The main constraint is that any code that is not visible to the ecosystem does not maintain or store global state. This condition implies that the parameters of any machine learning model need to also be declared as an input to the model within the Milan IL.</p>
+<h2 id="meta-modelling">Meta Modelling</h2>
 <div class="figure">
-<div id="ride-allocation-system-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/ai/ride-allocation-prediction.svg" width="60%" style=" ">
-</object>
+<div id="emukit-software-page-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="../slides/diagrams/uq/emukit-software-page.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<div id="ride-allocation-system-magnify" class="magnify" onclick="magnifyFigure(&#39;ride-allocation-system&#39;)">
+</div>
+<div id="emukit-software-page-magnify" class="magnify" onclick="magnifyFigure(&#39;emukit-software-page&#39;)">
 <p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
 </div>
-<div id="ride-allocation-system-caption" class="caption-frame">
-<p>Figure: Some software components in a ride allocation system. Circled components are hypothetical, rectangles represent actual data.</p>
+<div id="emukit-software-page-caption" class="caption-frame">
+<p>Figure: The Emukit software is a set of software tools for emulation and surrogate modeling. <a href="https://amzn.github.io/emukit/" class="uri">https://amzn.github.io/emukit/</a></p>
 </div>
 </div>
-<p>Let’s consider a ride sharing app, for example the SafeBoda system.</p>
-<p>Anne is on her way home now; she wishes to hail a car using a ride sharing app.</p>
-<p>The app is designed in the following way. On opening her app Anne is notified about drivers in the nearby neighborhood. She is given an estimate of the time a ride may take to come.</p>
-<p>Given this information about driver availability, Anne may feel encouraged to enter a destination. Given this destination, a price estimate can be given. This price is conditioned on other riders that may wish to go in the same direction, but the price estimate needs to be made before the user agrees to the ride.</p>
-<p>Business customer service constraints dictate that this price may not change after Anne’s order is confirmed.</p>
-<p>In this simple system, several decisions are being made, each of them on the basis of a hypothetical.</p>
-<p>When Anne calls for a ride, she is provided with an estimate based on the expected time a ride can be with her. But this estimate is made without knowing where Anne wants to go. There are constraints on drivers imposed by regional boundaries, reaching the end of their shift, or their current passengers mean that this estimate can only be a best guess.</p>
-<p>This best guess may well be driven by previous data.</p>
-<h2 id="ride-sharing-service-oriented-to-data-oriented-edit">Ride Sharing: Service Oriented to Data Oriented <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/ride-sharing-soa-doa.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/ride-sharing-soa-doa.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
-<div class="figure">
-<div id="ride-share-service-soa-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/data-science/ride-share-service-soa.svg" width="80%" style=" ">
-</object>
-</div>
-<div id="ride-share-service-soa-magnify" class="magnify" onclick="magnifyFigure(&#39;ride-share-service-soa&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
-</div>
-<div id="ride-share-service-soa-caption" class="caption-frame">
-<p>Figure: Service oriented architecture. The data access is buried in the cost allocation service. Data dependencies of the service cannot be found without trawling through the underlying code base.</p>
-</div>
-</div>
-<p>The modern approach to software systems design is known as a <em>service-oriented architectures</em> (SOA). The idea is that software engineers are responsible for the availability and reliability of the API that accesses the service they own. Quality of service is maintained by rigorous standards around <em>testing</em> of software systems.</p>
-<div class="figure">
-<div id="ride-share-service-doa-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/data-science/ride-share-service-doa.svg" width="80%" style=" ">
-</object>
-</div>
-<div id="ride-share-service-doa-magnify" class="magnify" onclick="magnifyFigure(&#39;ride-share-service-doa&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
-</div>
-<div id="ride-share-service-doa-caption" class="caption-frame">
-<p>Figure: Data oriented architecture. Now the joins and the updates are exposed within the streaming ecosystem. We can programatically determine the factor graph which gives the thread through the model.</p>
-</div>
-</div>
-<p>In data driven decision-making systems, the quality of decision-making is determined by the quality of the data. We need to extend the notion of <em>service</em>-oriented architecture to <em>data</em>-oriented architecture (DOA).</p>
-<p>The focus in SOA is eliminating <em>hard</em> failures. Hard failures can occur due to bugs or systems overload. This notion needs to be extended in ML systems to capture <em>soft failures</em> associated with declining data quality, incorrect modeling assumptions and inappropriate re-deployments of models. We need to focus on data quality assessments. In data-oriented architectures engineering teams are responsible for the <em>quality</em> of their output data streams in addition to the <em>availability</em> of the service they support <span class="citation" data-cites="Lawrence:drl17">(Lawrence 2017b)</span>. Quality here is not just accuracy, but fairness and explainability. This important cultural change would be capable of addressing both the challenge of <em>technical debt</em> <span class="citation" data-cites="Sculley:debt15">(Sculley et al. 2015)</span> and the social responsibility of ML systems.</p>
-<p>Software development proceeds with a <em>test-oriented</em> culture. One where tests are written before software, and software is not incorporated in the wider system until all tests pass. We must apply the same standards of care to our ML systems, although for ML we need statistical tests for quality, fairness and consistency within the environment. Fortunately, the main burden of this testing need not fall to the engineers themselves: through leveraging <em>classical statistics</em> and <em>emulation</em> we will automate the creation and redeployment of these tests across the software ecosystem, we call this <em>ML hypervision</em> (WP5 ).</p>
-<p>Modern AI can be based on ML models with many millions of parameters, trained on very large data sets. In ML, strong emphasis is placed on <em>predictive accuracy</em> whereas sister-fields such as statistics have a strong emphasis on <em>interpretability</em>. ML models are said to be ‘black boxes’ which make decisions that are not explainable.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
-<div class="figure">
-<div id="ride-share-service-doa-hypothetical-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/data-science/ride-share-service-doa-hypothetical.svg" width="80%" style=" ">
-</object>
-</div>
-<div id="ride-share-service-doa-hypothetical-magnify" class="magnify" onclick="magnifyFigure(&#39;ride-share-service-doa-hypothetical&#39;)">
-<p><img class="img-button" src="/icons/Magnify_Large.svg" style="width:1.5ex"></p>
-</div>
-<div id="ride-share-service-doa-hypothetical-caption" class="caption-frame">
-<p>Figure: Data-oriented programing. There is a requirement for an estimate of the driver allocation to give a rough cost estimate before the user has confirmed the ride. In data-oriented programming, this is achieved through declaring a hypothetical stream which approximates the true driver allocation, but with restricted input information and constraints on the computational latency.</p>
-</div>
-</div>
-<p>For the ride sharing system, we start to see a common issue with a more complex algorithmic decision-making system. Several decisions are being made multilple times. Let’s look at the decisions we need along with some design criteria.</p>
-<ol type="1">
-<li>Driver Availability: Estimate time to arrival for Anne’s ride using Anne’s location and local available car locations. Latency 50 milliseconds</li>
-<li>Cost Estimate: Estimate cost for journey using Anne’s destination, location and local available car current destinations and availability. Latency 50 milliseconds</li>
-<li>Driver Allocation: Allocate car to minimize transport cost to destination. Latency 2 seconds.</li>
-</ol>
-<p>So we need:</p>
-<ol type="1">
-<li>a hypothetical to estimate availability. It is constrained by lacking destination information and a low latency requirement.</li>
-<li>a hypothetical to estimate cost. It is constrained by low latency requirement and</li>
-</ol>
-<p>Simultaneously, drivers in this data ecosystem have an app which notifies them about new jobs and recommends them where to go.</p>
-<p>Further advantages. Strategies for data retention (when to snapshot) can be set globally.</p>
-<p>A few decisions need to be made in this system. First of all, when the user opens the app, the estimate of the time to the nearest ride may need to be computed quickly, to avoid latency in the service.</p>
-<p>This may require a quick estimate of the ride availability.</p>
-<h2 id="information-dynamics-edit">Information Dynamics <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/information-dynamics.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_data-science/includes/information-dynamics.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
-<p>With all the second guessing within a complex automated decision-making system, there are potential problems with information dynamics, the ‘closed loop’ problem, where the sub-systems are being approximated (second guessing) and predictions downstream are being affected.</p>
-<p>This leads to the need for a closed loop analysis, for example, see the <a href="https://www.gla.ac.uk/schools/computing/research/researchsections/ida-section/closedloop/">“Closed Loop Data Science”</a> project led by Rod Murray-Smith at Glasgow.</p>
-<h2 id="conclusion-edit">Conclusion <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/the-great-ai-fallacy.mdtmp.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/the-great-ai-fallacy.mdtmp.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></h2>
+<p>Where does machine learning come in? The strategy I propose is that the Milan IL is integrated with meta-modelling approaches to assist in the explanation of the decision-making framework. At their simplest these approaches may be novelty detection algorithms on the data streams that are emerging from a given service. This is a form of <em>progression testing</em>. But we can go much further. By knowing the training data, the inputs and outputs of the individual services in the software ecosystem, we can build meta-models that test for fairness, accuracy not just of individual system components, but short or long cascades of decision making. Through the use of the Milan IL algebra all these tests could be automatically deployed. The focus of machine learning is on the models-that-model-the-models. The meta-models.</p>
+<p>In Amazon, our own focus was on the use of statistical emulators, sometimes known as surrogate models, for fulfilling this task. The work we were putting into this route is available through another software package, <a href="https://amzn.github.io/emukit/">Emukit, a framework for decision making under uncertainty</a>. With collaborators my current focus for addressing these issues is a form of fusion of Emukit and Milan (Milemukit??). But the nature of this fusion requires testing on real world problem sets. A task we hope to carry out in close collaboration with colleagues at <a href="http://www.datascienceafrica.org/">Data Science Africa</a>.</p>
+<h2 id="conclusion">Conclusion</h2>
 <p>The Great AI Fallacy is an implicit promise behind AI systems that they will be the first generation of automation to adapt to the human, rather than the human having to adapt to the machine. In reality, we have no evidence that we’ve achieved this.</p>
 <p>What we see in practice is that the humans will have to adadpt even more to the machine.</p>
 <h2 id="thanks">Thanks!</h2>
@@ -600,10 +481,7 @@ For sale: baby shoes, never worn
 <p>Feurer, Matthias, Aaron Klein, Katharina Eggensperger, Jost Tobias Springenberg, Manuel Blum, and Frank Hutter. n.d. “Efficient and Robust Automated Machine Learning.” In <em>Advances in Neural Information Processing Systems</em>.</p>
 </div>
 <div id="ref-Lawrence:embodiment17">
-<p>Lawrence, Neil D. 2017a. “Living Together: Mind and Machine Intelligence.” arXiv. <a href="https://arxiv.org/abs/1705.07996">https://arxiv.org/abs/1705.07996</a>.</p>
-</div>
-<div id="ref-Lawrence:drl17">
-<p>———. 2017b. “Data Readiness Levels.” arXiv.</p>
+<p>Lawrence, Neil D. 2017. “Living Together: Mind and Machine Intelligence.” arXiv. <a href="https://arxiv.org/abs/1705.07996">https://arxiv.org/abs/1705.07996</a>.</p>
 </div>
 <div id="ref-Maxwell:governors1867">
 <p>Maxwell, James Clerk. 1867. “On Governors.” <em>Proceedings of the Royal Society of London</em> 16: 270–83. <a href="http://www.jstor.org/stable/112510">http://www.jstor.org/stable/112510</a>.</p>
@@ -623,8 +501,6 @@ For sale: baby shoes, never worn
 <ol>
 <li id="fn1" role="doc-endnote"><p>We can also become constrained by our tribal thinking, just as each of the other groups can.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2" role="doc-endnote"><p>Emulation, or surrogate modelling, is one very promising approach to forming such a hypervisor. Emulators are models we fit to other models, often simulations, but the could also be other machine learning models. These models operate at the meta-level, not on the systems directly. This means they can be used to model how the sub-systems interact. As well as emulators we should consider real time dash boards, anomaly detection, mutlivariate analysis, data visualization and classical statistical approaches for hypervision of our deployed systems.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3" role="doc-endnote"><p>These approaches are one area of focus for my own team’s research. A data first architecture is a prerequisite for efficient deployment of machine learning systems.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4" role="doc-endnote"><p>See for example <a href="https://www.technologyreview.com/s/604087/the-dark-secret-at-the-heart-of-ai/">“The Dark Secret at the Heart of AI” in Technology Review</a>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

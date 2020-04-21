@@ -29,7 +29,7 @@ transition: None
 * \addblog{Natural and Artifical Intelligence}{2018/02/06/natural-and-artificial-intelligence}
 \include{_ml/includes/code-data-separation-transgression.md}
 \include{_ai/includes/intellectual-debt.md}
-\define{mlDataChallenge}
+\define{mlDataChallenge}\define{shortVersion}
 \include{_ml/includes/the-3ds-of-ml-systems-design.md}
 
 \subsection{Conclusion}
