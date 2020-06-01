@@ -49,12 +49,12 @@
      id="vulnerability-text"
      class="dtext"
      y="50"
-     x="175"
+     x="150"
      style="fill:rgb(78,221,78)">
     <tspan
        id="tspan10"
        y="50"
-       x="175">vulnerabilities</tspan>
+       x="150">vulnerabilities</tspan>
   </text>
   <path
      d="M 300,250 a 100,100 0 0 1 -100,-100 l 100,0 z"
@@ -64,13 +64,13 @@
   <text
      id="enfranchisement-text"
      class="dtext"
-     y="250"
-     x="175"
+     y="275"
+     x="150"
      style="fill:rgb(78,78,221)">
     <tspan
        id="tspan14"
-       y="250"
-       x="175">enfranchisement</tspan>
+       y="275"
+       x="150">enfranchisement</tspan>
   </text>
   <path
      d="M 400,150 a 100,100 0 0 1 -100,100 l 0,-100 z"
@@ -80,12 +80,12 @@
   <text
      id="individual-text"
      class="dtext"
-     y="250"
+     y="275"
      x="400"
      style="fill:rgb(221,78,78)">
     <tspan
        id="tspan18"
-       y="250"
+       y="275"
        x="400">individual</tspan>
   </text>
 </svg>
