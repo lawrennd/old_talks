@@ -17,7 +17,7 @@ date: 2020-06-10
 layout: talk
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
-pptx: True
+pptx: False
 potx: ../_includes/judge-exec-reference.potx
 transition: None
 ---
