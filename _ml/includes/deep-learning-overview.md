@@ -26,10 +26,9 @@ A machine learning practitioner on the other hand would typically denote the par
 \define{unDefineMe}
 \endif
 
-
-
 \include{_ml/includes/deep-face.md}
 \include{_ml/includes/deep-learning-as-pinball.md}
+
 \ifdef{unDefineMe}
 \undef{unDefineMe}
 \undef{noSlideTitle}

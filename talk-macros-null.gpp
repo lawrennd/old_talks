@@ -84,6 +84,8 @@
 \define{\slidesincremental{text}}{}
 \define{\newslide{text}}{}
 
+\define{\notes{text}}{}
+
 \define{\codeblockstart}{}
 \define{\codeblockend}{}
 \define{\pythonblockstart}{}
