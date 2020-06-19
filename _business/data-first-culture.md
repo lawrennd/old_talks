@@ -10,7 +10,7 @@ author:
   institute: University of Cambridge
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
-  orchid: 
+  orcid: 
 date: 2019-11-07
 venue: Advanced Leadership Programme, Judge Business School, University of Cambridge
 layout: talk
