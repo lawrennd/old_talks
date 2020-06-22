@@ -14,6 +14,15 @@
      Flink application that executes the program.
 }
 
+\newslide{}
+
+\figure{\includediagram{\diagramsDir/software/milan-schematic}{80%}}{The Milan Software has a general purpose stream algebra at its core, the Milan IL.}{milan-schematic}
+
+\newslide{}
+
+\figure{\includepng{\diagramsDir/software/milan}{80%}}{The Milan Software is designed for building modern AI systems. <https://github.com/amzn/milan/>}{milan-software-page}
+
+
 \notes{At Amazon my team built a *data-oriented programming* language which is
 [now available through BSD license](https://github.com/amzn/milan). The language is called Milan. The
 team was led by Tom Borchert, quoting from [Tom's blog

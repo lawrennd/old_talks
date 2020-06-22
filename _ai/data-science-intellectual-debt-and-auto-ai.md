@@ -1,5 +1,6 @@
 ---
-title: Open Challenges for Automated Machine Learning: Solving Intellectual Debt with Auto AI
+layout: talk
+title: "Data Science, Intellectual Debt and Auto AI"
 abstract: Machine learning models are deployed as part of wider systems where outputs of one model are consumed by other models. This composite structure for machine learning systems is the dominant approach for deploying artificial intelligence. Such deployed systems can be complex to understand, they bring with them intellectual debt. In this talk we'll argue that the next frontier for automated machine learning is to move to automation of the systems design, going from AutoML to AutoAI.
 author:
 - family: Lawrence
@@ -8,8 +9,8 @@ author:
   institute: University of Cambridge
   twitter: lawrennd
   url: http://inverseprobability.com
-date: 2020-07-18
-venue: ICML Workshop on Automated Machine Learning
+date: 2020-06-23
+venue: Advances in Data Science
 transition: None
 ---
 
@@ -17,20 +18,16 @@ transition: None
 
 \include{talk-macros.tex}
 
-\include{_ai/includes/artificial-vs-natural-systems.md}
+\include{_ai/includes/the-great-ai-fallacy.md}
+\include{_ai/includes/ml-systems-design-short.md}
+\include{_ai/includes/intellectual-debt.md}
 
 \include{_ai/includes/ml-system-decomposability.md}
 \include{_ai/includes/ride-allocation-prediction.md}
 
-\include{_ai/includes/ml-systems-design-short.md}
-\include{_data-science/includes/the-data-crisis.md}
-
-\include{_ml/includes/ml-paradigm-shift.md}
-\include{_ai/includes/peppercorn.md}
-
-
-\include{_uq/includes/emulation.md}
-\include{_gp/includes/gp-intro-very-short.md}
+\include{_ai/includes/fit-systems.md}
+\include{_data-science/includes/data-oriented-architectures-short.md}
+\include{_data-science/includes/milan.md}
 \include{_uq/includes/deep-emulation.md}
 
 
