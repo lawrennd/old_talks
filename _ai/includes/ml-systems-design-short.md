@@ -8,6 +8,8 @@
 
 Most of our experience with deployment relies on some approximation to the component based model, this is also important for verification of the system. If the components of the system can be verified then the composed system can also, potentially, be verified.}
 
+\speakernotes{But how are we building these AI systems? Predominant technology is machine learning, but those are merely components being injected into a system.}
+
 \newslide{Fragility of AI Systems}
 
 \slides{
@@ -17,5 +19,7 @@ Most of our experience with deployment relies on some approximation to the compo
    * Road line detection
 * Important for verification purposes.
 }
+
+\speakernotes{Our current AI systems are composed of components that often have machine learning algorithms at the core (or they may have an OR model, or an economics model or even a logic model).}
 
 \endif

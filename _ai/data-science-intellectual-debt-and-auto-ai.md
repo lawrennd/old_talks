@@ -14,8 +14,6 @@ venue: Advances in Data Science
 transition: None
 ---
 
-25 mins + 10 mins for quests
-
 \include{talk-macros.tex}
 
 \include{_ai/includes/the-great-ai-fallacy.md}
