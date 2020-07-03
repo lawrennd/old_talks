@@ -181,7 +181,7 @@ for all values of $x$.}{}{10}
   $$
 }
 
-\notes{Bayes rule is a very simple rule, it's hardly worth the name of a rule at all. It follows directly from the product rule of probability. Because $P(y, x) = P(y|x)P(x)$ and by symmetry $P(y,x)=P(x,y)=P(x|y)P(y)$ then by equating these two equations and dividing through by $P(y)$ we have
+\notes{Bayes' rule is a very simple rule, it's hardly worth the name of a rule at all. It follows directly from the product rule of probability. Because $P(y, x) = P(y|x)P(x)$ and by symmetry $P(y,x)=P(x,y)=P(x|y)P(y)$ then by equating these two equations and dividing through by $P(y)$ we have
 $$
 P(x|y) =
 \frac{P(y|x)P(x)}{P(y)}
@@ -192,7 +192,7 @@ which is known as Bayes' rule (or Bayes's rule, it depends how you choose to pro
 
 \slides{* There are two barrels in front of you. Barrel One contains 20 apples and 4 oranges. Barrel Two other contains 4 apples and 8 oranges. You choose a barrel randomly and select a fruit. It is an apple. What is the probability that the barrel was Barrel One?}
 
-\newslide{Bayes’ Theorem Example: Answer I}
+\newslide{Bayes’ Rule Example: Answer I}
 
 \slides{
 * We are given that: 
@@ -204,7 +204,7 @@ which is known as Bayes' rule (or Bayes's rule, it depends how you choose to pro
   \end{aligned}$$
 }
 
-\newslide{Bayes’ Theorem Example: Answer II}
+\newslide{Bayes’ Rule Example: Answer II}
 
 \slides{
 * We use the sum rule to compute: 
@@ -212,7 +212,7 @@ which is known as Bayes' rule (or Bayes's rule, it depends how you choose to pro
     P(\text{F}=\text{A}) = & P(\text{F}=\text{A}|\text{B}=1)P(\text{B}=1) \\& + P(\text{F}=\text{A}|\text{B}=2)P(\text{B}=2) \\
           = & 20/24\times 0.5 + 4/12 \times 0.5 = 7/12
    \end{aligned}$$
-* And Bayes’ theorem tells us that: 
+* And Bayes’ rule tells us that: 
   $$\begin{aligned}
     P(\text{B}=1|\text{F}=\text{A}) = & \frac{P(\text{F} = \text{A}|\text{B}=1)P(\text{B}=1)}{P(\text{F}=\text{A})}\\ 
          = & \frac{20/24 \times 0.5}{7/12} = 5/7
