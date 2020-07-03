@@ -41,7 +41,7 @@ print("Probability of number of nurses being greater than 2 given number of doct
 
 
 \notes{Make sure the plot is included in *this* notebook
-file (the `IPython` magic command `%matplotlib inline` we ran above will do that
+file (the Jupyter magic command `%matplotlib inline` we ran above will do that
 for you, it only needs to be run once per file).}
 
 \endif
