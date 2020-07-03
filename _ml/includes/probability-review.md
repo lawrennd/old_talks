@@ -56,9 +56,9 @@ Conditional Probability | $\lim_{N\rightarrow\infty}\frac{n_{X=3,Y=4}}{n_{Y=4}}$
 
 \notes{Typically we should write out
 $P\left(X=x,Y=y\right)$, but in practice we often shorten this to $P\left(x,y\right)$. This looks very much like we might write a multivariate function, *e.g.*
-  $$
-  f\left(x,y\right)=\frac{x}{y},
-  $$ 
+$$
+f\left(x,y\right)=\frac{x}{y},
+$$ 
 but for a multivariate function
 $$
 f\left(x,y\right)\neq f\left(y,x\right).
