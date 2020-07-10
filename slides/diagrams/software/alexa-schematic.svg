@@ -224,7 +224,7 @@
      id="path-cloud-tts" />
   <path
      class="myarrow"
-     d="M 220.35,314.65 310,230"
+     d="M 310,230 220.35,314.65"
      id="path-tts-echo" />
   <path
      class="myarrow"
@@ -232,6 +232,6 @@
      id="path-stt-cloud" />
   <path
      class="myarrow"
-     d="m 60,230 88.65,83.65"
+     d="M 148.65,313.65 60,230"
      id="path-stt-echo" />
 </svg>
