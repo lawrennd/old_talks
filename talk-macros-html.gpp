@@ -70,8 +70,19 @@ Store Caption: \storeCaption
 
 \define{\includeimg{filename}{width}{class}}{<img class="\class" src="\filename" style="width:\width">}
 <!--\define{\includeimg{filename}{width}{class}{align}}{<img class="\class" src="\filename" width="\width" height="auto" align="\align" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">}-->
-\define{\includeimgclip{filename}{top}{right}{bottom}{left}{width}{class}{align}}{<img class="\class" src="\filename" style="width:\width;clip:rect(\top,\right,\bottom,\left)">}
-\define{\includeimgclip{filename}{top}{right}{bottom}{left}{width}{class}}{<img class="\class" src="\filename" width="\width" style="background:none; border:none; box-shadow:none; position:absolute; clip:rect(\top,\right,\bottom,\left);vertical-align:middle">}
+\defeval{\includeimgclip{filename}{llx}{lly}{urx}{ury}{width}}{<svg viewBox \llx \ury \eval{\urx-\llx} \eval{\lly-\ury}>
+<defs>
+  <clipPath id="clip">
+  <style>
+  rect {
+      fill: black;
+         }
+  </style>
+  <rect x="\llx" y="\ury" width="\eval{\urx-\llx}" height="\eval{\lly-\ury}"/>
+  </clipPath>
+ </defs>
+ <image preserveAspectRatio="xMinYMin slice"  xlink:href="\filename" clip-path="url(#clip)" />
+</svg>}
 \defeval{\includediagram{filename}{width}{class}{style}}{<object class="svgplot \class" data="\filename.svg" width="\width" style="\style "></object>}
 \defeval{\includediagramclass{filename}{width}{class}{style}}{<object class="\class" data="\filename.svg" width="\width" style="\style "></object>}
 \define{\inlinediagram{svgcode}}{\svgcode}

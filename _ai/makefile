@@ -1,3 +1,3 @@
-BASE=data-science-intellectual-debt-and-auto-ai
+BASE=auto-ai-talk
 include ../make-talk-flags.mk
 include ../make-talk.mk

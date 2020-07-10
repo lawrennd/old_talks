@@ -59,7 +59,7 @@
 \define{\includempfour{filename}{width}{height}}{\media{\filename}}
 \define{\includeimg{filename}{width}{class}{align}}{\includegraphics[width=\width]{\filename}}
 
-\define{\includeimgclip{filename}{top}{right}{bottom}{left}{width}{class}{align}}{\includegraphics[width=\width]{\filename}}
+\define{\includeimgclip{filename}{llx}{lly}{urx}{ury}{width}{class}{align}}{\includegraphics[width=\width,bb=\concat{\llx}{px} \concat{\lly}{px} \concat{\urx}{px} \concat{\ury}{px},clip=true]{\filename}}
 
 \define{\columns{one}{two}{width1}{width2}}{\begin{table}[cc]
 \one & \two

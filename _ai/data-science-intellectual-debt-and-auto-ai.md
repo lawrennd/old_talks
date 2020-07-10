@@ -13,17 +13,22 @@ date: 2020-06-23
 venue: Advances in Data Science
 transition: None
 ---
-
+Didn't have a chance to give you feedback during the call, so here goes:
+- Saying that tech debt originated from Lean is just an insult to Lean. Lean isn't about developing prototypes and taking shortcuts. It can lead to tech debt, but so can other approaches! If you need one most common cause of tech debt, I would name time constraints and poor risk management, not Lean methodology.
+- When introducing DOA, it isn't immediately obvious that streams are at a heart of it. And then Milan comes a bit of a surprise.
+- It's probably worth spending a minute discussing how the ride booking system could be built using today's approaches, in service oriented way. Just saying "service A called service B with that input and got that answer, both of which are never stored" would make it immediately clear how the data is dissappearing.
+- Emukit page looks really out of place, it's isn't as famous as we'd like to it be. So maybe just replace it with a quick intution about emulator are?
 \include{talk-macros.tex}
 
-\include{_ai/includes/the-great-ai-fallacy.md}
 \include{_ai/includes/ml-systems-design-short.md}
+\include{_ai/includes/ride-allocation-prediction.md}
+\include{_ai/includes/fit-systems.md}
 \include{_ai/includes/intellectual-debt.md}
 
 \include{_ai/includes/ml-system-decomposability.md}
-\include{_ai/includes/ride-allocation-prediction.md}
 
-\include{_ai/includes/fit-systems.md}
+\include{_ai/includes/the-great-ai-fallacy.md}
+
 \include{_data-science/includes/data-oriented-architectures-short.md}
 \include{_data-science/includes/milan.md}
 \include{_uq/includes/deep-emulation.md}
