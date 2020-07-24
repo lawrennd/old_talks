@@ -418,19 +418,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!--
 
 -->
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>zones_gdf.columns</span></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="bu">set</span>(hosp_gdf.columns).intersection(<span class="bu">set</span>(zones_gdf.columns))</span></code></pre></div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>hosp_state_joined <span class="op">=</span> sjoin(hosp_gdf, zones_gdf, how<span class="op">=</span><span class="st">&#39;left&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="bu">set</span>(hosp_gdf.columns).union(<span class="bu">set</span>(zones_gdf.columns))</span></code></pre></div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="bu">set</span>(hosp_state_joined.columns)</span></code></pre></div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>hosp_state_joined.head()</span></code></pre></div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>conn <span class="op">=</span> create_connection(<span class="st">&quot;db.sqlite&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>Let<span class="st">&#39;s have a go at calling the command to extract the first three facilities from our health center database. Let&#39;</span>s <span class="cf">try</span> creating a function that does the same thing the pandas .head() method does so we can inspect our database.</span></code></pre></div>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">def</span> head(conn, table, n<span class="op">=</span><span class="dv">5</span>):</span>
-<span id="cb9-2"><a href="#cb9-2"></a>  rows <span class="op">=</span> select_top(conn, table)</span>
-<span id="cb9-3"><a href="#cb9-3"></a>  <span class="cf">for</span> r <span class="kw">in</span> rows:</span>
-<span id="cb9-4"><a href="#cb9-4"></a>      <span class="bu">print</span>(r)</span></code></pre></div>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>head(conn, <span class="st">&#39;facilities&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>Let<span class="st">&#39;s have a go at calling the command to extract the first three facilities from our health center database. Let&#39;</span>s <span class="cf">try</span> creating a function that does the same thing the pandas .head() method does so we can inspect our database.</span></code></pre></div>
 </section>
 <section id="thanks" class="slide level2 scrollable">
 <h2 class="scrollable">Thanks!</h2>
