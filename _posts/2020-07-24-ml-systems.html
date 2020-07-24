@@ -74,7 +74,7 @@ $$</span><br /> and many machine learning courses focus a lot on the model part.
 <p>First, we’re going to download some particular python libraries for dealing with geospatial data. We’re dowloading <a href="https://geopandas.org"><code>geopandas</code></a> which will help us deal with ‘shape files’ that give the geographical lay out of Nigeria. We’ll also download <a href="https://pygeos.readthedocs.io/en/latest/"><code>pygeos</code></a>, a library for dealing with points rapidly in python. And finally, to get a small database set up running quickly, we’re installing <a href="https://pypi.org/project/csv-to-sqlite/"><code>csv-to-sqlite</code></a> which allows us to convert CSV data to a simple database.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="op">%</span>pip install geopandas pygeos</span></code></pre></div>
 <h2 id="databases-and-joins">Databases and Joins</h2>
-<p>The main idea we will be working with today is called the ‘join’. A join does exactly what it sounds like, it combines two databases.</p>
+<p>The main idea we will be working with today is called the ‘join’. A join does exactly what it sounds like, it combines two database tables.</p>
 <p>You have already started to look at data structures, in particular you have been learning about <code>pandas</code> which is a great way of storing and structuring your data set to make it easier to plot and manipulate your data.</p>
 <p>Pandas is great for the data scientist to analyze data because it makes many operations easier. But it is not so good for building the machine learning system. In a machine learning system, you may have to handle a lot of data. Even if you start with building a system where you only have a few customers, perhaps you build an online taxi system (like SafeBoda) for Kampala. Maybe you will have 50 customers. Then maybe your system can be handled with some python scripts and pandas.</p>
 <h2 id="scaling-ml-systems">Scaling ML Systems</h2>
@@ -266,18 +266,19 @@ $$</span><br /> and many machine learning courses focus a lot on the model part.
 <div class="sourceCode" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1"></a>state_cases_hosps <span class="op">=</span> join_counts(conn)</span></code></pre></div>
 <div class="sourceCode" id="cb48"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1"></a><span class="cf">for</span> row <span class="kw">in</span> state_cases_hosps:</span>
 <span id="cb48-2"><a href="#cb48-2"></a>    <span class="bu">print</span>(<span class="st">&quot;State </span><span class="sc">{}</span><span class="st"> </span><span class="ch">\t\t</span><span class="st"> Covid Cases </span><span class="sc">{}</span><span class="st"> </span><span class="ch">\t\t</span><span class="st"> Health Facilities </span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(row[<span class="dv">0</span>], row[<span class="dv">1</span>], row[<span class="dv">2</span>]))</span></code></pre></div>
-<h2 id="exercise">Exercise</h2>
-<ol type="1">
-<li><p>Add a new column the dataframe for covid cases per 10,000 population, in the same way we computed health facilities per 10k capita.</p></li>
-<li><p>Add a new column for covid cases per health facility.</p></li>
-</ol>
-<p>Do this in both the SQL and the Pandas styles to get a feel for how they differ.</p>
 <div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1"></a>base <span class="op">=</span> nigeria.plot(color<span class="op">=</span><span class="st">&#39;white&#39;</span>, edgecolor<span class="op">=</span><span class="st">&#39;black&#39;</span>, alpha<span class="op">=</span><span class="dv">0</span>, figsize<span class="op">=</span>(<span class="dv">11</span>, <span class="dv">11</span>))</span>
 <span id="cb49-2"><a href="#cb49-2"></a>pop_joined.plot(ax<span class="op">=</span>base, column<span class="op">=</span><span class="st">&#39;population&#39;</span>, edgecolor<span class="op">=</span><span class="st">&#39;black&#39;</span>, legend<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb49-3"><a href="#cb49-3"></a>base.set_title(<span class="st">&quot;Population of Nigerian States&quot;</span>)</span></code></pre></div>
 <div class="sourceCode" id="cb50"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1"></a>base <span class="op">=</span> nigeria.plot(color<span class="op">=</span><span class="st">&#39;white&#39;</span>, edgecolor<span class="op">=</span><span class="st">&#39;black&#39;</span>, alpha<span class="op">=</span><span class="dv">0</span>, figsize<span class="op">=</span>(<span class="dv">11</span>, <span class="dv">11</span>))</span>
 <span id="cb50-2"><a href="#cb50-2"></a>pop_joined.plot(ax<span class="op">=</span>base, column<span class="op">=</span><span class="st">&#39;hosp_per_capita_10k&#39;</span>, edgecolor<span class="op">=</span><span class="st">&#39;black&#39;</span>, legend<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb50-3"><a href="#cb50-3"></a>base.set_title(<span class="st">&quot;Hospitals Per Capita (10k) of Nigerian States&quot;</span>)</span></code></pre></div>
+<h2 id="exercise">Exercise</h2>
+<ol type="1">
+<li><p>Add a new column the dataframe for covid cases per 10,000 population, in the same way we computed health facilities per 10k capita.</p></li>
+<li><p>Add a new column for covid cases per health facility.</p></li>
+</ol>
+<p>Do this in both the SQL and the Pandas styles to get a feel for how they differ.</p>
+<p>{<code>{.python} # pop_joined['cases_per_capita_10k'] = ??? # pop_joined['cases_per_facility'] = ???</code></p>
 <div class="sourceCode" id="cb51"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1"></a>base <span class="op">=</span> nigeria.plot(color<span class="op">=</span><span class="st">&#39;white&#39;</span>, edgecolor<span class="op">=</span><span class="st">&#39;black&#39;</span>, alpha<span class="op">=</span><span class="dv">0</span>, figsize<span class="op">=</span>(<span class="dv">11</span>, <span class="dv">11</span>))</span>
 <span id="cb51-2"><a href="#cb51-2"></a>pop_joined.plot(ax<span class="op">=</span>base, column<span class="op">=</span><span class="st">&#39;cases_per_capita_10k&#39;</span>, edgecolor<span class="op">=</span><span class="st">&#39;black&#39;</span>, legend<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb51-3"><a href="#cb51-3"></a>base.set_title(<span class="st">&quot;Covid Cases Per Capita (10k) of Nigerian States&quot;</span>)</span></code></pre></div>
