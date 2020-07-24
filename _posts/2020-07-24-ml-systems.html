@@ -183,15 +183,63 @@ $$</span><br /> and many machine learning courses focus a lot on the model part.
 <pre><code>SELECT * FROM [table_name] LIMIT : N</code></pre>
 <p>in python code. This SQL command selects the first <code>N</code> entries from a given database called <code>table_name</code>.</p>
 <p>We can pass the <code>table_name</code> and number of rows, <code>N</code> to the python command.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>Let<span class="st">&#39;s have a go at calling the command to extract the first three facilities from our health center database. Let&#39;</span>s <span class="cf">try</span> creating a function that does the same thing the pandas .head() method does so we can inspect our database.</span></code></pre></div>
-<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a><span class="kw">def</span> head(conn, table, n<span class="op">=</span><span class="dv">5</span>):</span>
-<span id="cb25-2"><a href="#cb25-2"></a>  rows <span class="op">=</span> select_top(conn, table)</span>
-<span id="cb25-3"><a href="#cb25-3"></a>  <span class="cf">for</span> r <span class="kw">in</span> rows:</span>
-<span id="cb25-4"><a href="#cb25-4"></a>      <span class="bu">print</span>(r)</span></code></pre></div>
-<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a>head(conn, <span class="st">&#39;facilities&#39;</span>)</span></code></pre></div>
+<p>Let’s have a go at calling the command to extract the first three facilities from our health center database. Let’s try creating a function that does the same thing the pandas .head() method does so we can inspect our database.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a><span class="kw">def</span> head(conn, table, n<span class="op">=</span><span class="dv">5</span>):</span>
+<span id="cb24-2"><a href="#cb24-2"></a>  rows <span class="op">=</span> select_top(conn, table, n)</span>
+<span id="cb24-3"><a href="#cb24-3"></a>  <span class="cf">for</span> r <span class="kw">in</span> rows:</span>
+<span id="cb24-4"><a href="#cb24-4"></a>      <span class="bu">print</span>(r)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a>head(conn, <span class="st">&#39;facilities&#39;</span>)</span></code></pre></div>
 <p>Great! We now have the data base in SQLite, and some python functions that operate on the data base by wrapping SQL commands.</p>
 <p>We will return to the SQL command style after download and add the other datasets to the database using a combination of <code>pandas</code> and the <code>csv-to-sqlite</code> utility.</p>
 <p>Our next task will be to introduce data on COVID19 so that we can join that to our other data sets.</p>
+<h2 id="covid-data">Covid Data</h2>
+<p>Now we have the health data, we’re going to combine it with <a href="https://github.com/dsfsi/covid19africa">data about COVID-19 cases in Nigeria over time</a>. This data is kindly provided by Africa open COVID-19 data working group, which Elaine Nsoesie has been working with. The data is taken from Twitter, and only goes up until May 2020.</p>
+<p>They provide their data in github. We can access the cases we’re interested in from the following URL.</p>
+<p>For convenience, we’ll load the data into pandas first, but our next step will be to create a new SQLite table containing the data. Then we’ll join that table to our existing tables.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a>covid_data_url <span class="op">=</span> <span class="st">&#39;https://raw.githubusercontent.com/dsfsi/covid19africa/master/data/line_lists/line-list-nigeria.csv&#39;</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a>covid_data_csv <span class="op">=</span> <span class="st">&#39;cases.csv&#39;</span></span>
+<span id="cb26-3"><a href="#cb26-3"></a>urllib.request.urlretrieve(covid_data_url, covid_data_csv)</span>
+<span id="cb26-4"><a href="#cb26-4"></a>covid_data <span class="op">=</span> pd.read_csv(covid_data_csv)</span></code></pre></div>
+<p>As normal, we should inspect our data to check that it contains what we expect.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a>covid_data.head()</span></code></pre></div>
+<p>And we can get an idea of all the information in the data from looking at the columns.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a>covid_data.columns</span></code></pre></div>
+<p>Now we convert this CSV file we’ve downloaded into a new table in the database file. We can do this, again, with the csv-to-sqlite script.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a><span class="op">!</span>csv<span class="op">-</span>to<span class="op">-</span>sqlite <span class="op">-</span>f cases.csv <span class="op">-</span>t full <span class="op">-</span>o db.sqlite</span></code></pre></div>
+<h2 id="population-data">Population Data</h2>
+<p>Now we have information about COVID cases, and we have information about how many health centers and how many doctors and nurses there are in each health center. But unless we understand how many people there are in each state, then we cannot make decisions about where they may be problems with the disease.</p>
+<p>If we were running our ride hailing service, we would also need information about how many people there were in different areas, so we could understand what the <em>demand</em> for the boda boda rides might be.</p>
+<p>To access the number of people we can get population statistics from the <a href="https://data.humdata.org/">Humanitarian Data Exchange</a>.</p>
+<p>We also want to have population data for each state in Nigeria, so that we can see attributes like whether there are zones of high health facility density but low population density.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a>pop_url <span class="op">=</span> <span class="st">&#39;https://data.humdata.org/dataset/a7c3de5e-ff27-4746-99cd-05f2ad9b1066/resource/d9fc551a-b5e4-4bed-9d0d-b047b6961817/download/nga_pop_adm1_2016.csv&#39;</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a>_, msg <span class="op">=</span> urllib.request.urlretrieve(pop_url,<span class="st">&#39;nga_pop_adm1_2016.csv&#39;</span>)</span>
+<span id="cb30-3"><a href="#cb30-3"></a>pop_data <span class="op">=</span> pd.read_csv(<span class="st">&#39;nga_pop_adm1_2016.csv&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a>pop_data.head()</span></code></pre></div>
+<p>To do joins with this data, we must first make sure that the columns have the right names. The name should match the same name of the column in our existing data. So we reset the column names, and the name of the index, as follows.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a>pop_data.columns <span class="op">=</span> [<span class="st">&#39;admin1Name_en&#39;</span>, <span class="st">&#39;admin1Pcode&#39;</span>, <span class="st">&#39;admin0Name_en&#39;</span>, <span class="st">&#39;admin0Pcode&#39;</span>, <span class="st">&#39;population&#39;</span>]</span>
+<span id="cb32-2"><a href="#cb32-2"></a>pop_data <span class="op">=</span> pop_data.set_index(<span class="st">&#39;admin1Name_en&#39;</span>)</span></code></pre></div>
+<p>When doing this for real world data, you should also make sure that the names used in the rows are the same across the different data bases. For example, has someone decided to use an abbreviation for ‘Federal Capital Territory’ and set it as ‘FCT’. The computer won’t understand these are the same states, and if you do a join with such data you can get duplicate entries or missing entries. This sort of thing happens a lot in real world data and takes a lot of time to sort out. Fortunately, in this case, the data is well curated and we don’t have these problems.</p>
+<h2 id="save-to-database-file">Save to database file</h2>
+<p>The next step is to add this new CSV file as an additional table in our SQLite database. This is done using the script as before.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a>pop_data.to_csv(<span class="st">&#39;pop_data.csv&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a><span class="op">!</span>csv<span class="op">-</span>to<span class="op">-</span>sqlite <span class="op">-</span>f pop_data.csv <span class="op">-</span>t full <span class="op">-</span>o db.sqlite</span></code></pre></div>
+<h2 id="computing-per-capita-hospitals-and-covid">Computing per capita hospitals and COVID</h2>
+<p>The Minister of Health in Abuja may be interested in which states are most vulnerable to COVID19. We now have all the information in our SQL data bases to compute what our health center provision is per capita, and what the COVID19 situation is.</p>
+<p>To do this, we will use the <code>JOIN</code> operation from SQL and introduce a new operation called <code>GROUPBY</code>.</p>
+<h4 id="joining-in-pandas">Joining in Pandas</h4>
+<p>As before, these operations can be done in pandas or GeoPandas. Before we create the SQL commands, we’ll show how you can do that in pandas.</p>
+<p>In pandas, the equivalent of a database table is a dataframe. So the JOIN operation takes two dataframes and joins them based on the key. The key is that special shared column between the two tables. The place where the ‘holes align’ so the two databases can be joined together.</p>
+<p>In GeoPandas we used an outer join. In an outer join you keep all rows from both tables, even if there is no match on the key. In an inner join, you only keep the rows if the two tables have a matching key.</p>
+<p>This is sometimes where problems can creep in. If in one table Lagos’s state is encoded as ‘FCT’, and in another table it’s encoded as ‘Federal Capital Territory’, they won’t match and that data wouldn’t appear in the joined table.</p>
+<p>In simple terms, a JOIN operation takes two tables (or dataframes) and combines them based on some key, in this case the index of the Pandas data frame which is the state name.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a>pop_joined <span class="op">=</span> zones_gdf.join(pop_data[<span class="st">&#39;population&#39;</span>], how<span class="op">=</span><span class="st">&#39;inner&#39;</span>)</span></code></pre></div>
+<h2 id="groupby-in-pandas">GroupBy in Pandas</h2>
+<p>Our COVID19 data is in the form of individual cases. But we are interested in total case counts for each state. There is a special data base operation known as <code>GROUP BY</code> for collecting information about the individual states. The type of information you might want could be a sum, the maximum value, an average, the minimum value. We can use a GroupBy operation in <code>pandas</code> and SQL to summarize the counts of covid cases in each state.</p>
+<p>A <code>GROUPBY</code> operation groups rows with the same key (in this case ‘province/state’) into separate objects, that we can operate on further such as to count the rows in each group, or to sum or take the mean over the values in some column (imagine each case row had the age of the patient, and you were interested in the mean age of patients.)</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a>covid_cases_by_state <span class="op">=</span> covid_data.groupby([<span class="st">&#39;province/state&#39;</span>]).count()[<span class="st">&#39;case_id&#39;</span>]</span></code></pre></div>
+<p>The <code>.groupby()</code> method on the dataframe has now given us a new data series that contains the total number of covid cases in each state. We can examine it to check we have something sensible.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1"></a>covid_cases_by_state</span></code></pre></div>
+<p>Now we have this new data series, it can be added to the pandas data frame as a new column.</p>
 <h2 id="thanks">Thanks!</h2>
 <p>For more information on these subjects and more you might want to check the following resources.</p>
 <ul>
