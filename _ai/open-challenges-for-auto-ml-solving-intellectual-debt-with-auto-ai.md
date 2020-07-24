@@ -15,7 +15,7 @@ transition: None
 
 \include{../talk-macros.gpp}
 
-\section{AI via ML Systems}
+\slides{\section{AI via ML Systems}
 
 \include{_ai/includes/alexa-system.md}
 \include{_ai/includes/prime-air-system.md}
@@ -48,6 +48,7 @@ transition: None
 * Real world systems involve interaction of components
 * Leads to intellectual debt
 * Need for sophisticated emulation techniques for making deployment scalable.
+}
 
 \thanks
 
