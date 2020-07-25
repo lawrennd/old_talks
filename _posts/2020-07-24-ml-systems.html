@@ -5,23 +5,23 @@ abstract: "This notebook introduces some of the challenges of building machine l
 author:
 - given: Eric
   family: Meissner
-  url: 
+  url: https://www.linkedin.com/in/meissnereric/
   institute: 
-  twitter: 
+  twitter: meissner_eric_7
   gscholar: 
   orchid: 
 - given: Andrei
   family: Paleyes
-  url: 
+  url: https://www.linkedin.com/in/andreipaleyes/
   institute: 
   twitter: 
   gscholar: 
   orchid: 
 - given: Neil D.
   family: Lawrence
-  url: 
+  url: http://inverseprobability.com
   institute: 
-  twitter: 
+  twitter: lawrennd
   gscholar: 
   orchid: 
 date: 2020-07-24
@@ -238,7 +238,7 @@ $$</span><br /> and many machine learning courses focus a lot on the model part.
 <p>As before, these operations can be done in pandas or GeoPandas. Before we create the SQL commands, we’ll show how you can do that in pandas.</p>
 <p>In pandas, the equivalent of a database table is a dataframe. So the JOIN operation takes two dataframes and joins them based on the key. The key is that special shared column between the two tables. The place where the ‘holes align’ so the two databases can be joined together.</p>
 <p>In GeoPandas we used an outer join. In an outer join you keep all rows from both tables, even if there is no match on the key. In an inner join, you only keep the rows if the two tables have a matching key.</p>
-<p>This is sometimes where problems can creep in. If in one table Lagos’s state is encoded as ‘FCT’, and in another table it’s encoded as ‘Federal Capital Territory’, they won’t match and that data wouldn’t appear in the joined table.</p>
+<p>This is sometimes where problems can creep in. If in one table Abuja’s state is encoded as ‘FCT’ or ‘FCT-Abuja’, and in another table it’s encoded as ‘Federal Capital Territory’, they won’t match and that data wouldn’t appear in the joined table.</p>
 <p>In simple terms, a JOIN operation takes two tables (or dataframes) and combines them based on some key, in this case the index of the Pandas data frame which is the state name.</p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a>pop_joined <span class="op">=</span> zones_gdf.join(pop_data[<span class="st">&#39;population&#39;</span>], how<span class="op">=</span><span class="st">&#39;inner&#39;</span>)</span></code></pre></div>
 <h2 id="groupby-in-pandas">GroupBy in Pandas</h2>

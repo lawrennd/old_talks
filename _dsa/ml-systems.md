@@ -5,10 +5,15 @@ layout: talk
 author:
 - given: Eric
   family: Meissner
+  url: https://www.linkedin.com/in/meissnereric/
+  twitter: meissner_eric_7 
 - given: Andrei
   family: Paleyes
+  url: https://www.linkedin.com/in/andreipaleyes/
 - given: Neil D.
   family: Lawrence
+  twitter: lawrennd
+  url: http://inverseprobability.com
 date: 2020-07-24
 ipynb: true
 venue: Virtual DSA
@@ -427,7 +432,7 @@ In pandas, the equivalent of a database table is a dataframe. So the JOIN operat
 
 In GeoPandas we used an outer join. In an outer join you keep all rows from both tables, even if there is no match on the key. In an inner join, you only keep the rows if the two tables have a matching key.
 
-This is sometimes where problems can creep in. If in one table Lagos's state is encoded as 'FCT', and in another table it's encoded as 'Federal Capital Territory', they won't match and that data wouldn't appear in the joined table.
+This is sometimes where problems can creep in. If in one table Abuja's state is encoded as 'FCT' or 'FCT-Abuja', and in another table it's encoded as 'Federal Capital Territory', they won't match and that data wouldn't appear in the joined table.
 
 In simple terms, a JOIN operation takes two tables (or dataframes) and combines them based on some key, in this case the index of the Pandas data frame which is the state name.}
 
